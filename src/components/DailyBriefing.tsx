@@ -1,22 +1,21 @@
 "use client";
 
 import {
-  getTodayDeals,
-  formatValue,
+  getRecentDeals,
   formatDate,
   formatTime,
   getSectorColor,
-  getStatusClass,
+  getCategoryColor,
   getDealStats,
 } from "@/data/deals";
 import type { Deal } from "@/data/deals";
 import {
   ExternalLink,
   Clock,
-  TrendingUp,
   BarChart3,
   Zap,
-  ArrowUpRight,
+  Hash,
+  Layers,
 } from "lucide-react";
 
 function BriefingHeader() {
@@ -31,7 +30,7 @@ function BriefingHeader() {
         </h1>
       </div>
       <p className="text-sm text-zinc-400 mb-6">
-        North American Infrastructure M&A activity feed — real-time market
+        Infrastructure M&amp;A activity feed &mdash; real-time market
         intelligence.
       </p>
 
@@ -39,24 +38,12 @@ function BriefingHeader() {
         <div className="glass-card rounded-lg p-4">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
-              Today&apos;s Volume
+              Total Deals
             </span>
-            <TrendingUp className="h-3.5 w-3.5 text-emerald-500" />
+            <Hash className="h-3.5 w-3.5 text-blue-500" />
           </div>
           <span className="mono text-xl font-semibold text-zinc-50">
-            {formatValue(stats.totalVolume)}
-          </span>
-        </div>
-
-        <div className="glass-card rounded-lg p-4">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
-              Active Deals
-            </span>
-            <BarChart3 className="h-3.5 w-3.5 text-blue-500" />
-          </div>
-          <span className="mono text-xl font-semibold text-zinc-50">
-            {stats.activeCount}
+            {stats.totalCount}
           </span>
         </div>
 
@@ -65,12 +52,7 @@ function BriefingHeader() {
             <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
               Top Sector
             </span>
-            <div
-              className="h-2.5 w-2.5 rounded-full"
-              style={{
-                backgroundColor: getSectorColor(stats.topSector),
-              }}
-            />
+            <BarChart3 className="h-3.5 w-3.5 text-amber-500" />
           </div>
           <span className="text-xl font-semibold text-zinc-50">
             {stats.topSector}
@@ -79,12 +61,29 @@ function BriefingHeader() {
             ({stats.topSectorCount} deals)
           </span>
         </div>
+
+        <div className="glass-card rounded-lg p-4">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
+              Top Category
+            </span>
+            <Layers className="h-3.5 w-3.5 text-violet-500" />
+          </div>
+          <span className="text-xl font-semibold text-zinc-50">
+            {stats.topCategory}
+          </span>
+          <span className="text-xs text-zinc-500 ml-2">
+            ({stats.topCategoryCount})
+          </span>
+        </div>
       </div>
     </div>
   );
 }
 
 function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
+  const categoryColor = getCategoryColor(deal.category);
+
   return (
     <div
       className="relative pl-10 pb-8 animate-fade-in"
@@ -103,7 +102,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
       {/* Card */}
       <div className="glass-card rounded-lg p-5 transition-colors hover:border-zinc-700">
         {/* Meta row */}
-        <div className="flex items-center gap-3 mb-3">
+        <div className="flex items-center gap-3 mb-3 flex-wrap">
           <div className="flex items-center gap-1.5">
             <Clock className="h-3 w-3 text-zinc-500" />
             <span className="mono text-xs text-zinc-500">
@@ -122,10 +121,8 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
           >
             {deal.sector}
           </span>
-          <span
-            className={`text-[11px] font-medium px-2 py-0.5 rounded-full ${getStatusClass(deal.status)}`}
-          >
-            {deal.status}
+          <span className="text-[10px] text-zinc-500">
+            {deal.subsector}
           </span>
         </div>
 
@@ -134,22 +131,34 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
           {deal.title}
         </h3>
 
+        {/* Category badge */}
+        <div className="mb-3">
+          <span
+            className="text-[11px] font-medium px-2 py-0.5 rounded-full"
+            style={{
+              color: categoryColor,
+              backgroundColor: `${categoryColor}15`,
+              border: `1px solid ${categoryColor}30`,
+            }}
+          >
+            {deal.category}
+          </span>
+        </div>
+
         {/* Details */}
-        <div className="flex items-center gap-4 mb-3 text-sm">
+        <div className="flex items-center gap-4 mb-3 text-sm flex-wrap">
           <div>
             <span className="text-zinc-500">Buyer </span>
             <span className="text-zinc-300 font-medium">{deal.buyer}</span>
           </div>
           <div className="h-3 w-px bg-zinc-800" />
           <div>
-            <span className="text-zinc-500">Value </span>
-            <span className="mono text-emerald-400 font-semibold">
-              {formatValue(deal.value)}
-            </span>
+            <span className="text-zinc-500">Seller </span>
+            <span className="text-zinc-300 font-medium">{deal.seller}</span>
           </div>
         </div>
 
-        <p className="text-sm text-zinc-400 leading-relaxed line-clamp-2 mb-4">
+        <p className="text-sm text-zinc-400 leading-relaxed mb-4">
           {deal.description}
         </p>
 
@@ -174,7 +183,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
 }
 
 export function DailyBriefing() {
-  const todayDeals = getTodayDeals();
+  const recentDeals = getRecentDeals();
 
   return (
     <div className="mx-auto max-w-[800px] px-6 py-8">
@@ -185,7 +194,7 @@ export function DailyBriefing() {
         {/* Vertical line */}
         <div className="timeline-line" />
 
-        {todayDeals.map((deal, i) => (
+        {recentDeals.map((deal, i) => (
           <TimelineCard key={deal.id} deal={deal} index={i} />
         ))}
 
@@ -195,7 +204,7 @@ export function DailyBriefing() {
             <div className="h-2 w-2 rounded-full bg-zinc-700" />
           </div>
           <p className="text-xs text-zinc-600 pt-0.5">
-            End of briefing — {todayDeals.length} items
+            End of briefing &mdash; {recentDeals.length} items
           </p>
         </div>
       </div>

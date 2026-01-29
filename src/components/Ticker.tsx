@@ -1,41 +1,28 @@
 "use client";
 
-import { deals, formatValue, getSectorColor } from "@/data/deals";
-import { TrendingUp, TrendingDown, Minus } from "lucide-react";
+import { deals, getSectorColor } from "@/data/deals";
 
 function TickerItem({
   title,
-  value,
-  status,
   sector,
+  category,
 }: {
   title: string;
-  value: number;
-  status: string;
   sector: string;
+  category: string;
 }) {
-  const icon =
-    status === "Active" ? (
-      <TrendingUp className="h-3 w-3 text-emerald-500" />
-    ) : status === "Terminated" ? (
-      <TrendingDown className="h-3 w-3 text-red-500" />
-    ) : (
-      <Minus className="h-3 w-3 text-zinc-500" />
-    );
-
   return (
     <div className="inline-flex items-center gap-3 px-6">
       <div
         className="h-1.5 w-1.5 rounded-full"
         style={{ backgroundColor: getSectorColor(sector as any) }}
       />
-      <span className="text-xs font-medium text-zinc-300 max-w-[200px] truncate">
+      <span className="text-xs font-medium text-zinc-300 max-w-[260px] truncate">
         {title}
       </span>
-      <span className="mono text-xs font-semibold text-zinc-100">
-        {formatValue(value)}
+      <span className="text-[10px] text-zinc-500 font-medium">
+        {category.split(" (")[0]}
       </span>
-      {icon}
       <div className="h-3 w-px bg-zinc-800" />
     </div>
   );
@@ -55,9 +42,8 @@ export function Ticker() {
             <TickerItem
               key={`${deal.id}-${i}`}
               title={deal.title}
-              value={deal.value}
-              status={deal.status}
               sector={deal.sector}
+              category={deal.category}
             />
           ))}
         </div>
