@@ -62,8 +62,8 @@ export const deals: Deal[] = [
       "Actis announced the acquisition of a 100% stake in the Vindhyachal Expressway in India from Kalpataru Projects International Limited for an enterprise value of ~₹775 crore.",
     targetDescription:
       "Vindhyachal Expressway Private Limited (VEPL), a road infrastructure asset in India.",
-    sourceName: "Actis",
-    sourceUrl: "https://www.act.is/news-insights/",
+    sourceName: "Solar Quarter",
+    sourceUrl: "https://solarquarter.com/2026/01/19/kalpataru-projects-divests-vindhyachal-expressway-to-actis-in-%E2%82%B9775-crore-sustainable-infrastructure-transaction/",
   },
   // ─── 2. ADIA ───────────────────────────────────────────────
   {
@@ -79,8 +79,8 @@ export const deals: Deal[] = [
       "ADIA acquired a ~3.17% stake (33.3 million shares) in Helios Towers via a secondary placing from Danish pension fund ATP.",
     targetDescription:
       "Helios Towers, a leading independent telecommunications tower company in Africa and the Middle East.",
-    sourceName: "ADIA",
-    sourceUrl: "https://www.adia.ae/en/media",
+    sourceName: "London Stock Exchange",
+    sourceUrl: "https://www.londonstockexchange.com/news-article/market-news/results-of-secondary-placing-of-helios-towers-plc/16772385",
   },
   // ─── 3. Allianz Global Investors ──────────────────────────
   {
@@ -97,7 +97,7 @@ export const deals: Deal[] = [
     targetDescription:
       "Îles d'Yeu et Noirmoutier, a 496 MW offshore wind farm off the coast of Vendée, France, currently under construction.",
     sourceName: "Allianz GI",
-    sourceUrl: "https://www.allianzgi.com/en/press-centre/media/press-releases",
+    sourceUrl: "https://www.allianzgi.com/en/press-centre/media/press-releases/20260122-allianz-invests-in-the-500mw-french-offshore-wind-farm-iles-dyeu-et-noirmoutier",
   },
   // ─── 4. Antin Infrastructure Partners ─────────────────────
   {
@@ -113,8 +113,8 @@ export const deals: Deal[] = [
       "Antin announced the acquisition of a majority stake in Emsere, a provider of mission-critical logistics for medical clinical trials, from Gryphion via its Mid Cap Fund I.",
     targetDescription:
       "Emsere, a provider of mission-critical logistics and equipment services for medical clinical trials.",
-    sourceName: "Antin",
-    sourceUrl: "https://www.antin-ip.com/media/our-news",
+    sourceName: "BusinessWire",
+    sourceUrl: "https://www.businesswire.com/news/home/20260107074378/en/Antin-to-Acquire-Emsere-a-Global-Leader-in-Clinical-Trial-Equipment-Infrastructure",
   },
   // ─── 5. APG Infrastructure ────────────────────────────────
   {
@@ -131,7 +131,7 @@ export const deals: Deal[] = [
     targetDescription:
       "Exolum (formerly CLH), a European leader in liquid bulk storage and logistics infrastructure.",
     sourceName: "APG",
-    sourceUrl: "https://assetmanagement.apg.nl/en/news/",
+    sourceUrl: "https://assetmanagement.apg.nl/publications/apg-has-sold-its-10-stake-in-exolum-to-a-consortium-led-by-banca-march-and-stoneshield-capital/",
   },
   // ─── 6. Ara Partners ──────────────────────────────────────
   {
@@ -147,8 +147,8 @@ export const deals: Deal[] = [
       "Ara Partners participated in a Series B/C equivalent growth funding round for portfolio company Divert, Inc. to scale facilities in Washington and North Carolina.",
     targetDescription:
       "Divert, Inc., an impact technology company converting wasted food into renewable natural gas.",
-    sourceName: "Ara Partners",
-    sourceUrl: "https://www.arapartners.com/news-insights/",
+    sourceName: "BusinessWire",
+    sourceUrl: "https://www.businesswire.com/news/home/20260120452855/en/Divert-Inc.-Secures-Funding-to-Scale-Infrastructure-Addressing-the-Wasted-Food-Crisis-in-North-America",
   },
   // ─── 7. Ares Management ───────────────────────────────────
   {
@@ -164,8 +164,8 @@ export const deals: Deal[] = [
       "Ares expanded its partnership with ENGIE by acquiring an equity stake in a 730 MW portfolio of wind and solar assets in the US (ERCOT market).",
     targetDescription:
       "A 730 MW portfolio of wind and solar assets in the US ERCOT market operated by ENGIE North America.",
-    sourceName: "Ares Management",
-    sourceUrl: "https://www.aresmgmt.com/news",
+    sourceName: "PR Newswire",
+    sourceUrl: "https://www.prnewswire.com/news-releases/engie-and-ares-partnership-further-expands-with-addition-of-730-mw-portfolio-of-new-us-solar-and-wind-assets-302659666.html",
   },
   // ─── 8. Asterion Industrial Partners ──────────────────────
   {
@@ -182,7 +182,7 @@ export const deals: Deal[] = [
     targetDescription:
       "Asterion Bioenergy (ABIO), an integrated pan-European biomethane production and distribution platform.",
     sourceName: "Asterion",
-    sourceUrl: "https://www.asterionindustrial.com/news-insights/",
+    sourceUrl: "https://www.asterionindustrial.com/asterion-to-invest-e1-5-bn-into-european-biomethane/",
   },
   // ─── 9. Brookfield Infrastructure Partners ────────────────
   {
@@ -198,8 +198,8 @@ export const deals: Deal[] = [
       "BIP agreed to sell the largest of its four Brazilian electricity transmission concessions (1,200 km) for approximately $150 million in net proceeds.",
     targetDescription:
       "A 1,200 km Brazilian electricity transmission concession, the largest in BIP's portfolio of four concessions.",
-    sourceName: "Brookfield",
-    sourceUrl: "https://bip.brookfield.com/press-releases",
+    sourceName: "GlobeNewsWire",
+    sourceUrl: "https://www.globenewswire.com/news-release/2026/01/29/3228425/0/en/Brookfield-Infrastructure-Reports-Solid-2025-Year-End-Results-Declares-17th-Consecutive-Distribution-Increase.html",
   },
   // ─── 10. Brookfield Renewable Partners ────────────────────
   {
@@ -215,8 +215,8 @@ export const deals: Deal[] = [
       "BEP announced an agreement to sell a two-thirds stake in a utility-scale portfolio of operating wind and solar projects in the US for ~$860 million in gross proceeds.",
     targetDescription:
       "A utility-scale portfolio of operating wind and solar projects in the United States.",
-    sourceName: "Brookfield",
-    sourceUrl: "https://bep.brookfield.com/press-releases",
+    sourceName: "GlobeNewsWire",
+    sourceUrl: "https://www.globenewswire.com/news-release/2026/01/30/3229438/0/en/Brookfield-Renewable-Reports-Strong-2025-Results-and-Announces-5-Distribution-Increase.html",
   },
   // ─── 11. CDPQ ─────────────────────────────────────────────
   {
@@ -232,8 +232,8 @@ export const deals: Deal[] = [
       "CDPQ announced the sale of an ~11% block of shares in Cogeco for C$229 million, while retaining its position as the largest holder of subordinate shares.",
     targetDescription:
       "Cogeco Communications Inc., a Canadian broadband and telecommunications company.",
-    sourceName: "CDPQ",
-    sourceUrl: "https://www.cdpq.com/en/news",
+    sourceName: "Newswire",
+    sourceUrl: "https://www.newswire.ca/news-releases/la-caisse-to-sell-part-of-its-stake-in-cogeco-communications-883137758.html",
   },
   // ─── 12. CIP – Fengmiao I ────────────────────────────────
   {
@@ -249,8 +249,8 @@ export const deals: Deal[] = [
       "CIP agreed to divest a 10% equity stake in the 495 MW Fengmiao I project to Mitsui O.S.K. Lines.",
     targetDescription:
       "Fengmiao I, a 495 MW offshore wind farm project in Taiwan.",
-    sourceName: "CIP",
-    sourceUrl: "https://cip.com/news/",
+    sourceName: "White & Case",
+    sourceUrl: "https://www.whitecase.com/news/press-release/white-case-advises-copenhagen-infrastructure-partners-divestment-fengmiao-1",
   },
   // ─── 13. CIP – Coalburn 2 ────────────────────────────────
   {
@@ -266,8 +266,8 @@ export const deals: Deal[] = [
       "CIP agreed to divest a 50% stake in the Coalburn 2 battery energy storage system in Scotland to AIP Management.",
     targetDescription:
       "Coalburn 2, a battery energy storage system (BESS) located in Scotland.",
-    sourceName: "CIP",
-    sourceUrl: "https://cip.com/news/",
+    sourceName: "GlobeNewsWire",
+    sourceUrl: "https://www.globenewswire.com/news-release/2025/10/15/3166846/0/en/Copenhagen-Infrastructure-Partners-divests-50-of-Coalburn-2-to-AIP-Management.html",
   },
   // ─── 14. CVC DIF – iPark ─────────────────────────────────
   {
@@ -284,7 +284,7 @@ export const deals: Deal[] = [
     targetDescription:
       "iPark, a leading operator of off-street parking concessions in Spain and Portugal with over 30,000 spaces.",
     sourceName: "CVC",
-    sourceUrl: "https://www.cvc.com/media/news/",
+    sourceUrl: "https://www.cvc.com/media/news/2026/cvc-dif-to-acquire-leading-iberian-parking-infrastructure-platform-ipark-from-elliott-investment-management/",
   },
   // ─── 15. CVC DIF – Celeste ────────────────────────────────
   {
@@ -301,7 +301,7 @@ export const deals: Deal[] = [
     targetDescription:
       "Celeste, a French B2B fiber and cloud infrastructure operator.",
     sourceName: "CVC",
-    sourceUrl: "https://www.cvc.com/media/news/",
+    sourceUrl: "https://www.cvc.com/media/news/2026/cvc-dif-has-entered-exclusive-negotiations-to-acquire-a-significant-majority-stake-in-celeste/",
   },
   // ─── 16. EnCap Investments ────────────────────────────────
   {
@@ -317,8 +317,8 @@ export const deals: Deal[] = [
       "EnCap launched Quantica Infrastructure to develop \"shovel-ready\" data center sites in the US.",
     targetDescription:
       "Quantica Infrastructure, a new platform focused on developing shovel-ready data center sites in the United States.",
-    sourceName: "EnCap",
-    sourceUrl: "https://www.encapinvestments.com/news",
+    sourceName: "BusinessWire",
+    sourceUrl: "https://www.businesswire.com/news/home/20250728852214/en/EnCap-Investments-LP-Launches-Quantica-Infrastructure-to-Deliver-Integrated-AI--and-Hyperscale-Ready-Site-Infrastructure-across-North-America",
   },
   // ─── 17. Energy Capital Partners ──────────────────────────
   {
@@ -334,8 +334,8 @@ export const deals: Deal[] = [
       "ECP agreed to sell the Cornerstone portfolio to Talen Energy for $3.45 billion.",
     targetDescription:
       "The Cornerstone portfolio comprising the Waterford and Darby natural gas power generation plants.",
-    sourceName: "ECP",
-    sourceUrl: "https://www.ecp.com/news",
+    sourceName: "Talen Energy",
+    sourceUrl: "https://ir.talenenergy.com/news-releases/news-release-details/talen-energy-continues-portfolio-expansion-acquisition",
   },
   // ─── 18. Equitix – UK Portfolio ───────────────────────────
   {
@@ -351,8 +351,8 @@ export const deals: Deal[] = [
       "Equitix announced the acquisition of stakes in 10 UK assets (OFTOs, PFI lighting, roads) from Balfour Beatty. The deal was signed/completed in Dec 2025 but announced in Jan 2026.",
     targetDescription:
       "A diversified portfolio of 10 UK infrastructure assets including offshore transmission owners (OFTOs), PFI lighting, and road concessions.",
-    sourceName: "Equitix",
-    sourceUrl: "https://equitix.com/news-insight/",
+    sourceName: "Balfour Beatty",
+    sourceUrl: "https://www.balfourbeatty.com/media-centre/latest/balfour-beatty-completes-disposal-of-ten-infrastructure-investments-assets/",
   },
   // ─── 19. Equitix – Italian Solar ──────────────────────────
   {
@@ -368,8 +368,8 @@ export const deals: Deal[] = [
       "Equitix announced it increased its stake in its partnership with ACEA to 90% and funded the acquisition of additional solar assets.",
     targetDescription:
       "A portfolio of photovoltaic solar plants in Italy operated through a joint venture with ACEA.",
-    sourceName: "Equitix",
-    sourceUrl: "https://equitix.com/news-insight/",
+    sourceName: "IREI",
+    sourceUrl: "https://irei.com/news/equitix-expands-clean-energy-partnership-with-italys-acea/",
   },
   // ─── 20. GIP – Rio Grande LNG ─────────────────────────────
   {
@@ -385,8 +385,8 @@ export const deals: Deal[] = [
       "GIP agreed to sell a 7.6% equity interest in Trains 4 and 5 of the Rio Grande LNG export project to an investment vehicle of the Abu Dhabi ruling family.",
     targetDescription:
       "Trains 4 and 5 of the Rio Grande LNG export project in Texas.",
-    sourceName: "GIP",
-    sourceUrl: "https://www.global-infra.com/news",
+    sourceName: "Hydrocarbon Engineering",
+    sourceUrl: "https://www.hydrocarbonengineering.com/gas-processing/27012026/xrg-to-increase-stake-in-rio-grande-lng/",
   },
   // ─── 21. I Squared – Ramudden ─────────────────────────────
   {
@@ -402,8 +402,8 @@ export const deals: Deal[] = [
       "I Squared reached an agreement to acquire Ramudden Global, a provider of temporary traffic management services, from Triton Partners.",
     targetDescription:
       "Ramudden Global, a leading provider of temporary traffic management and work zone safety services.",
-    sourceName: "I Squared Capital",
-    sourceUrl: "https://isquaredcapital.com/news/",
+    sourceName: "BusinessWire",
+    sourceUrl: "https://www.businesswire.com/news/home/20260107644696/en/I-Squared-Capital-Acquires-Ramudden-Global-a-Leader-in-Traffic-Management-and-Infrastructure-Safety",
   },
   // ─── 22. I Squared – ANZA Power ──────────────────────────
   {
@@ -419,8 +419,8 @@ export const deals: Deal[] = [
       "I Squared launched ANZA Power with a $300 million equity commitment to develop solar, wind, and storage assets in Australia and New Zealand.",
     targetDescription:
       "ANZA Power, a new independent power producer platform targeting solar, wind, and storage in Australia and New Zealand.",
-    sourceName: "I Squared Capital",
-    sourceUrl: "https://isquaredcapital.com/news/",
+    sourceName: "BusinessWire",
+    sourceUrl: "https://www.businesswire.com/news/home/20260115746889/en/I-Squared-Capital-Launches-ANZA-Power-with-USD-$300-Million-Commitment-to-Deliver-Reliable-Clean-Energy-in-Australia-and-New-Zealand",
   },
   // ─── 23. I Squared – Radiant Energy Solutions ─────────────
   {
@@ -436,8 +436,8 @@ export const deals: Deal[] = [
       "I Squared launched Radiant Energy Solutions to target distributed renewables in the Middle East, seeded with the acquisition of FAS Renewables and Zahra Energy.",
     targetDescription:
       "Radiant Energy Solutions, a distributed renewable energy platform in the Middle East seeded with FAS Renewables and Zahra Energy.",
-    sourceName: "I Squared Capital",
-    sourceUrl: "https://isquaredcapital.com/news/",
+    sourceName: "BusinessWire",
+    sourceUrl: "https://www.businesswire.com/news/home/20260121714056/en/I-Squared-Announces-Launch-of-Radiant-Energy-Solutions",
   },
   // ─── 24. InfraVia – Celeste ───────────────────────────────
   {
@@ -453,8 +453,8 @@ export const deals: Deal[] = [
       "InfraVia entered exclusive negotiations to sell its majority stake in Celeste to CVC DIF.",
     targetDescription:
       "Celeste, a French B2B fiber and cloud infrastructure operator.",
-    sourceName: "InfraVia",
-    sourceUrl: "https://www.infraviacapital.com/news/",
+    sourceName: "CVC",
+    sourceUrl: "https://www.cvc.com/media/news/2026/cvc-dif-has-entered-exclusive-negotiations-to-acquire-a-significant-majority-stake-in-celeste/",
   },
   // ─── 25. KKR – GTR ────────────────────────────────────────
   {
@@ -470,8 +470,8 @@ export const deals: Deal[] = [
       "KKR announced an additional $1.5 billion equity commitment to GTR to accelerate its European data center development pipeline.",
     targetDescription:
       "Global Technical Realty (GTR), a build-to-suit data center platform operating across key European markets.",
-    sourceName: "KKR",
-    sourceUrl: "https://media.kkr.com/",
+    sourceName: "BusinessWire",
+    sourceUrl: "https://www.businesswire.com/news/home/20260107040486/en/KKR-and-Oak-Hill-Capital-Commit-Nearly-$2-Billion-to-Leading-European-Data-Center-Platform-Global-Technical-Realty",
   },
   // ─── 26. Patrizia ─────────────────────────────────────────
   {
@@ -488,7 +488,7 @@ export const deals: Deal[] = [
     targetDescription:
       "A portfolio of 49 preschool and care properties located across the Nordic countries.",
     sourceName: "Patrizia",
-    sourceUrl: "https://www.patrizia.ag/en/news-events/",
+    sourceUrl: "https://www.patrizia.ag/en/news-detail/patrizias-kinland-adds-49-social-infrastructure-assets-in-eur-170m-nordic-bolt-on-programme",
   },
   // ─── 27. Quinbrook ────────────────────────────────────────
   {
@@ -504,8 +504,8 @@ export const deals: Deal[] = [
       "Quinbrook announced the sale of Flexitricity, a UK flexible power aggregator, to Drax Group for ~£42 million.",
     targetDescription:
       "Flexitricity, a UK-based flexible power aggregator and virtual power plant operator.",
-    sourceName: "Quinbrook",
-    sourceUrl: "https://www.quinbrook.com/news-insights/",
+    sourceName: "Yahoo Finance",
+    sourceUrl: "https://finance.yahoo.com/news/quinbrook-sells-flexitricity-drax-071200531.html",
   },
   // ─── 28. Ridgewood Infrastructure ─────────────────────────
   {
@@ -521,8 +521,8 @@ export const deals: Deal[] = [
       "Ridgewood agreed to sell APP Jet Center, an operator of Fixed-Base Operators (FBOs) at US airports, to Bain Capital.",
     targetDescription:
       "APP Jet Center, an operator of Fixed-Base Operators (FBOs) providing aviation services at US airports.",
-    sourceName: "Ridgewood",
-    sourceUrl: "https://ridgewoodinfrastructure.com/news/",
+    sourceName: "Bain Capital",
+    sourceUrl: "https://www.baincapital.com/news/bain-capital-enters-fixed-base-operator-sector-acquisition-app-jet-center",
   },
   // ─── 29. Schroders Greencoat ──────────────────────────────
   {
@@ -538,8 +538,8 @@ export const deals: Deal[] = [
       "Schroders Greencoat announced the acquisition of three operational solar farms in the UK from METLEN Energy & Metals.",
     targetDescription:
       "A portfolio of three operational solar farms in the UK totaling 110 MWp.",
-    sourceName: "Schroders Greencoat",
-    sourceUrl: "https://www.schrodersgreencoat.com/news/",
+    sourceName: "Schroders",
+    sourceUrl: "https://www.schroders.com/en/global/individual/media-centre/schroders-greencoat-expands-uk-solar-portfolio-with-110mwp-acquisition-from-metlen-energy-metals/",
   },
   // ─── 30. Stonepeak ────────────────────────────────────────
   {
@@ -556,7 +556,7 @@ export const deals: Deal[] = [
     targetDescription:
       "United Ports LLC, a new platform holding 10 key container terminals globally in partnership with CMA CGM.",
     sourceName: "Stonepeak",
-    sourceUrl: "https://stonepeak.com/category/press-releases",
+    sourceUrl: "https://stonepeak.com/news/cma-cgm-and-stonepeak-announce-groundbreaking-terminal-joint-venture-united-ports-llc",
   },
   // ─── 31. Tiger Infrastructure Partners ────────────────────
   {
@@ -572,8 +572,8 @@ export const deals: Deal[] = [
       "Tiger-backed Qwello announced its entry into the Danish market after winning a tender from the City of Copenhagen to deploy EV charging infrastructure.",
     targetDescription:
       "Qwello's expansion into the Danish EV charging market via a City of Copenhagen tender.",
-    sourceName: "Tiger Infrastructure",
-    sourceUrl: "https://www.tigerinfrastructure.com/news/",
+    sourceName: "Qwello",
+    sourceUrl: "https://qwello.eu/news/qwello-enters-the-danish-market-after-winning-a-contested-tender-in-copenhagen/",
   },
 ];
 
