@@ -62,8 +62,8 @@ export const deals: Deal[] = [
       "Actis announced the acquisition of a 100% stake in the Vindhyachal Expressway in India from Kalpataru Projects International Limited for an enterprise value of ~₹775 crore.",
     targetDescription:
       "Vindhyachal Expressway Private Limited (VEPL), a road infrastructure asset in India.",
-    sourceName: "Solar Quarter",
-    sourceUrl: "https://solarquarter.com/2026/01/19/kalpataru-projects-divests-vindhyachal-expressway-to-actis-in-%E2%82%B9775-crore-sustainable-infrastructure-transaction/",
+    sourceName: "BSE India",
+    sourceUrl: "https://www.bseindia.com/xml-data/corpfiling/AttachLive/be947c62-f3c2-4bc9-bf0f-6dc6c57fe073.pdf",
   },
   // ─── 2. ADIA ───────────────────────────────────────────────
   {
@@ -80,7 +80,7 @@ export const deals: Deal[] = [
     targetDescription:
       "Helios Towers, a leading independent telecommunications tower company in Africa and the Middle East.",
     sourceName: "London Stock Exchange",
-    sourceUrl: "https://www.londonstockexchange.com/news-article/market-news/results-of-secondary-placing-of-helios-towers-plc/16772385",
+    sourceUrl: "https://www.londonstockexchange.com/news-article/market-news/results-of-secondary-placing-of-helios-towers-plc/16526020",
   },
   // ─── 3. Allianz Global Investors ──────────────────────────
   {
@@ -538,8 +538,8 @@ export const deals: Deal[] = [
       "Schroders Greencoat announced the acquisition of three operational solar farms in the UK from METLEN Energy & Metals.",
     targetDescription:
       "A portfolio of three operational solar farms in the UK totaling 110 MWp.",
-    sourceName: "Schroders",
-    sourceUrl: "https://www.schroders.com/en/global/individual/media-centre/schroders-greencoat-expands-uk-solar-portfolio-with-110mwp-acquisition-from-metlen-energy-metals/",
+    sourceName: "Schroders Capital",
+    sourceUrl: "https://www.schroderscapital.com/en/global/professional/media-centre/schroders-greencoat-expands-uk-solar-portfolio-with-110mwp-acquisition-from-metlen-energy-metals/",
   },
   // ─── 30. Stonepeak ────────────────────────────────────────
   {
