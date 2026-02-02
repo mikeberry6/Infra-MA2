@@ -174,7 +174,7 @@ function DealCard({
               border: `1px solid ${catColor}30`,
             }}
           >
-            {deal.category.split(" (")[0]}
+            {deal.category}
           </span>
         </div>
         <ChevronRight className="h-4 w-4 text-zinc-600 shrink-0" />
@@ -313,7 +313,7 @@ function DealTable({
                           border: `1px solid ${catColor}30`,
                         }}
                       >
-                        {deal.category.split(" (")[0]}
+                        {deal.category}
                       </span>
                     </td>
                     <td className="px-4 py-3">
