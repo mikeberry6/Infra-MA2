@@ -12,7 +12,7 @@ function TickerItem({
   category: string;
 }) {
   return (
-    <div className="inline-flex items-center gap-3 px-6">
+    <div className="inline-flex items-center gap-2 px-3 sm:gap-3 sm:px-6">
       <div
         className="h-1.5 w-1.5 rounded-full"
         style={{ backgroundColor: getSectorColor(sector as any) }}

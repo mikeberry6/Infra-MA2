@@ -34,7 +34,7 @@ function BriefingHeader() {
         intelligence.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         <div className="glass-card rounded-lg p-4">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
@@ -62,7 +62,7 @@ function BriefingHeader() {
           </span>
         </div>
 
-        <div className="glass-card rounded-lg p-4">
+        <div className="glass-card rounded-lg p-4 col-span-2 sm:col-span-1">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
               Top Category
@@ -100,7 +100,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
       </div>
 
       {/* Card */}
-      <div className="glass-card rounded-lg p-5 transition-colors hover:border-zinc-700">
+      <div className="glass-card rounded-lg p-4 sm:p-5 transition-colors hover:border-zinc-700">
         {/* Meta row */}
         <div className="flex items-center gap-3 mb-3 flex-wrap">
           <div className="flex items-center gap-1.5">
@@ -171,7 +171,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
             href={deal.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-400 hover:text-blue-400 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-400 hover:text-blue-400 transition-colors py-1"
           >
             <span>Source: {deal.sourceName}</span>
             <ExternalLink className="h-3 w-3" />
@@ -186,7 +186,7 @@ export function DailyBriefing() {
   const recentDeals = getRecentDeals();
 
   return (
-    <div className="mx-auto max-w-[800px] px-6 py-8">
+    <div className="mx-auto max-w-[800px] px-4 sm:px-6 py-8">
       <BriefingHeader />
 
       {/* Timeline */}
