@@ -2,19 +2,35 @@ export type DealSector = "Energy" | "Digital" | "Transport" | "Social" | "Servic
 
 export type DealCategory =
   | "Acquisition"
+  | "Acquisition (100% Stake)"
   | "Acquisition (Majority Stake)"
+  | "Acquisition (Buyout)"
   | "Acquisition (Take-Private)"
   | "Acquisition (Asset Deal)"
+  | "Acquisition (Secondary Market)"
+  | "Acquisition (Bolt-on)"
+  | "Acquisition (Exclusive Negotiations)"
   | "Minority Stake Acquisition"
+  | "Minority Stake Acquisition (Secondary)"
   | "Minority Stake Acquisition (Additional Stake)"
   | "Minority Stake Acquisition (via JV)"
   | "Divestiture"
   | "Divestiture (Minority Stake)"
+  | "Divestiture (Stake Sale)"
+  | "Divestiture (Partial)"
+  | "Divestiture (Trade Sale)"
+  | "Divestiture (Agreed to Sell)"
+  | "Divestiture (Exclusive Negotiations)"
   | "Divestiture (Internal/Related Party)"
   | "Investment"
   | "Investment (Growth Capital)"
   | "Investment (Platform Commitment)"
-  | "Partnership/JV";
+  | "Growth Investment"
+  | "Platform Launch"
+  | "Platform Expansion"
+  | "Stake Increase"
+  | "Partnership/JV"
+  | "Joint Venture";
 
 export interface Deal {
   id: string;
@@ -32,412 +48,532 @@ export interface Deal {
 }
 
 export const deals: Deal[] = [
-  // ─── Energy & Power ───────────────────────────────────────
+  // ─── 1. Actis ──────────────────────────────────────────────
   {
     id: "INF-2026-001",
-    title: "Allianz invests in the 500MW French offshore wind farm \u00eeles d\u2019Yeu et Noirmoutier",
+    title: "Actis acquires 100% stake in Vindhyachal Expressway from Kalpataru",
+    buyer: "Actis",
+    seller: "Kalpataru Projects International Limited",
+    sector: "Transport",
+    subsector: "Roads",
+    category: "Acquisition (100% Stake)",
+    date: "2026-01-16T08:00:00Z",
+    description:
+      "Actis announced the acquisition of a 100% stake in the Vindhyachal Expressway in India from Kalpataru Projects International Limited for an enterprise value of ~₹775 crore.",
+    targetDescription:
+      "Vindhyachal Expressway Private Limited (VEPL), a road infrastructure asset in India.",
+    sourceName: "Actis",
+    sourceUrl: "https://www.act.is/news-insights/",
+  },
+  // ─── 2. ADIA ───────────────────────────────────────────────
+  {
+    id: "INF-2026-002",
+    title: "ADIA acquires ~3.17% stake in Helios Towers via secondary placing",
+    buyer: "Abu Dhabi Investment Authority (ADIA)",
+    seller: "ATP (Danish Pension Fund)",
+    sector: "Digital",
+    subsector: "Telecom Towers",
+    category: "Minority Stake Acquisition (Secondary)",
+    date: "2026-01-09T08:00:00Z",
+    description:
+      "ADIA acquired a ~3.17% stake (33.3 million shares) in Helios Towers via a secondary placing from Danish pension fund ATP.",
+    targetDescription:
+      "Helios Towers, a leading independent telecommunications tower company in Africa and the Middle East.",
+    sourceName: "ADIA",
+    sourceUrl: "https://www.adia.ae/en/media",
+  },
+  // ─── 3. Allianz Global Investors ──────────────────────────
+  {
+    id: "INF-2026-003",
+    title: "Allianz acquires 20.25% stake in Îles d'Yeu et Noirmoutier Offshore Wind Farm",
     buyer: "Allianz Global Investors",
     seller: "Ocean Winds",
     sector: "Energy",
-    subsector: "Renewables (Offshore Wind)",
+    subsector: "Offshore Wind",
     category: "Minority Stake Acquisition",
     date: "2026-01-22T08:00:00Z",
     description:
-      "Allianz Global Investors acquires a 20.25% minority stake in a French offshore wind farm project from Ocean Winds.",
+      "Allianz acquired a 20.25% minority stake in this 496 MW French offshore wind farm (currently under construction) from Ocean Winds.",
     targetDescription:
-      "A 496 MW offshore wind farm located off the coast of Vend\u00e9e, France, currently under construction.",
+      "Îles d'Yeu et Noirmoutier, a 496 MW offshore wind farm off the coast of Vendée, France, currently under construction.",
     sourceName: "Allianz GI",
     sourceUrl: "https://www.allianzgi.com/en/press-centre/media/press-releases",
   },
+  // ─── 4. Antin Infrastructure Partners ─────────────────────
   {
-    id: "INF-2026-002",
-    title: "Divert, Inc. Secures Funding to Scale Infrastructure Addressing the Wasted Food Crisis in North America",
+    id: "INF-2026-004",
+    title: "Antin acquires majority stake in Emsere from Gryphion",
+    buyer: "Antin Infrastructure Partners",
+    seller: "Gryphion",
+    sector: "Social",
+    subsector: "Healthcare Logistics",
+    category: "Acquisition (Buyout)",
+    date: "2026-01-08T08:00:00Z",
+    description:
+      "Antin announced the acquisition of a majority stake in Emsere, a provider of mission-critical logistics for medical clinical trials, from Gryphion via its Mid Cap Fund I.",
+    targetDescription:
+      "Emsere, a provider of mission-critical logistics and equipment services for medical clinical trials.",
+    sourceName: "Antin",
+    sourceUrl: "https://www.antin-ip.com/media/our-news",
+  },
+  // ─── 5. APG Infrastructure ────────────────────────────────
+  {
+    id: "INF-2026-005",
+    title: "APG sells 10% equity stake in Exolum to Banca March / Stoneshield consortium",
+    buyer: "Banca March / Stoneshield Capital",
+    seller: "APG Infrastructure",
+    sector: "Energy",
+    subsector: "Storage & Logistics",
+    category: "Divestiture (Minority Stake)",
+    date: "2026-01-20T08:00:00Z",
+    description:
+      "APG announced the sale of its 10% equity stake in Exolum to a consortium led by Banca March and Stoneshield Capital.",
+    targetDescription:
+      "Exolum (formerly CLH), a European leader in liquid bulk storage and logistics infrastructure.",
+    sourceName: "APG",
+    sourceUrl: "https://assetmanagement.apg.nl/en/news/",
+  },
+  // ─── 6. Ara Partners ──────────────────────────────────────
+  {
+    id: "INF-2026-006",
+    title: "Ara Partners leads growth funding round for Divert, Inc.",
     buyer: "Ara Partners",
     seller: "Divert, Inc.",
     sector: "Energy",
     subsector: "Waste-to-Energy / Circular Economy",
-    category: "Investment (Growth Capital)",
+    category: "Growth Investment",
     date: "2026-01-20T09:00:00Z",
     description:
-      "Ara Partners leads a funding round to support the expansion of Divert\u2019s infrastructure facilities across North America.",
+      "Ara Partners participated in a Series B/C equivalent growth funding round for portfolio company Divert, Inc. to scale facilities in Washington and North Carolina.",
     targetDescription:
-      "An impact technology company that converts wasted food into renewable natural gas and energy.",
+      "Divert, Inc., an impact technology company converting wasted food into renewable natural gas.",
     sourceName: "Ara Partners",
     sourceUrl: "https://www.arapartners.com/news-insights/",
   },
+  // ─── 7. Ares Management ───────────────────────────────────
   {
-    id: "INF-2026-003",
-    title: "Asterion to invest \u20ac1.5 bn into European biomethane",
-    buyer: "Asterion Industrial Partners",
-    seller: "ABIO",
+    id: "INF-2026-007",
+    title: "Ares expands partnership with ENGIE, acquires stake in 730 MW US renewables portfolio",
+    buyer: "Ares Management",
+    seller: "ENGIE North America",
     sector: "Energy",
-    subsector: "Renewables (Biomethane)",
-    category: "Investment (Platform Commitment)",
-    date: "2026-01-14T07:00:00Z",
+    subsector: "Wind & Solar",
+    category: "Acquisition",
+    date: "2026-01-13T08:00:00Z",
     description:
-      "Asterion commits \u20ac1.5 billion to accelerate the growth of ABIO, its pan-European biomethane platform.",
+      "Ares expanded its partnership with ENGIE by acquiring an equity stake in a 730 MW portfolio of wind and solar assets in the US (ERCOT market).",
     targetDescription:
-      "An integrated biomethane platform covering the entire value chain from production to distribution.",
+      "A 730 MW portfolio of wind and solar assets in the US ERCOT market operated by ENGIE North America.",
+    sourceName: "Ares Management",
+    sourceUrl: "https://www.aresmgmt.com/news",
+  },
+  // ─── 8. Asterion Industrial Partners ──────────────────────
+  {
+    id: "INF-2026-008",
+    title: "Asterion commits €1.5 billion to scale ABIO biomethane platform",
+    buyer: "Asterion Industrial Partners",
+    seller: "Asterion Bioenergy (ABIO)",
+    sector: "Energy",
+    subsector: "Biomethane / Energy Transition",
+    category: "Platform Expansion",
+    date: "2026-01-14T08:00:00Z",
+    description:
+      "Asterion committed €1.5 billion (including €800 million in equity) to scale its ABIO platform, targeting 20 operational biomethane plants by the end of 2026.",
+    targetDescription:
+      "Asterion Bioenergy (ABIO), an integrated pan-European biomethane production and distribution platform.",
     sourceName: "Asterion",
     sourceUrl: "https://www.asterionindustrial.com/news-insights/",
   },
+  // ─── 9. Brookfield Infrastructure Partners ────────────────
   {
-    id: "INF-2026-004",
-    title: "Copenhagen Infrastructure Partners Acquires 1 GWh Battery Storage Project (Beehive) in Arizona",
-    buyer: "Copenhagen Infrastructure Partners",
-    seller: "Local Developer",
+    id: "INF-2026-009",
+    title: "BIP to sell Brazilian electricity transmission concession for ~$150M",
+    buyer: "Undisclosed Buyer",
+    seller: "Brookfield Infrastructure Partners (BIP)",
     sector: "Energy",
-    subsector: "Energy Storage",
-    category: "Acquisition",
-    date: "2026-01-19T10:00:00Z",
+    subsector: "Power Transmission / Utilities",
+    category: "Divestiture (Agreed to Sell)",
+    date: "2026-01-29T08:00:00Z",
     description:
-      "CIP, through its Flagship Fund V, acquires the Beehive Battery Energy Storage System project from a local developer.",
+      "BIP agreed to sell the largest of its four Brazilian electricity transmission concessions (1,200 km) for approximately $150 million in net proceeds.",
     targetDescription:
-      "A 1 GWh standalone battery energy storage system (BESS) located in Phoenix, Arizona.",
+      "A 1,200 km Brazilian electricity transmission concession, the largest in BIP's portfolio of four concessions.",
+    sourceName: "Brookfield",
+    sourceUrl: "https://bip.brookfield.com/press-releases",
+  },
+  // ─── 10. Brookfield Renewable Partners ────────────────────
+  {
+    id: "INF-2026-010",
+    title: "BEP to sell two-thirds stake in US wind and solar portfolio for ~$860M",
+    buyer: "Undisclosed Buyer",
+    seller: "Brookfield Renewable Partners (BEP)",
+    sector: "Energy",
+    subsector: "Renewable Energy (Wind & Solar)",
+    category: "Divestiture (Agreed to Sell)",
+    date: "2026-01-30T08:00:00Z",
+    description:
+      "BEP announced an agreement to sell a two-thirds stake in a utility-scale portfolio of operating wind and solar projects in the US for ~$860 million in gross proceeds.",
+    targetDescription:
+      "A utility-scale portfolio of operating wind and solar projects in the United States.",
+    sourceName: "Brookfield",
+    sourceUrl: "https://bep.brookfield.com/press-releases",
+  },
+  // ─── 11. CDPQ ─────────────────────────────────────────────
+  {
+    id: "INF-2026-011",
+    title: "CDPQ sells ~11% block of Cogeco Communications shares for C$229M",
+    buyer: "Public Market",
+    seller: "CDPQ",
+    sector: "Digital",
+    subsector: "Broadband / Telecom",
+    category: "Divestiture (Minority Stake)",
+    date: "2026-01-26T08:00:00Z",
+    description:
+      "CDPQ announced the sale of an ~11% block of shares in Cogeco for C$229 million, while retaining its position as the largest holder of subordinate shares.",
+    targetDescription:
+      "Cogeco Communications Inc., a Canadian broadband and telecommunications company.",
+    sourceName: "CDPQ",
+    sourceUrl: "https://www.cdpq.com/en/news",
+  },
+  // ─── 12. CIP – Fengmiao I ────────────────────────────────
+  {
+    id: "INF-2026-012",
+    title: "CIP divests 10% equity stake in 495 MW Fengmiao I offshore wind project to MOL",
+    buyer: "Mitsui O.S.K. Lines",
+    seller: "Copenhagen Infrastructure Partners (CIP)",
+    sector: "Energy",
+    subsector: "Offshore Wind",
+    category: "Divestiture (Stake Sale)",
+    date: "2026-01-30T09:00:00Z",
+    description:
+      "CIP agreed to divest a 10% equity stake in the 495 MW Fengmiao I project to Mitsui O.S.K. Lines.",
+    targetDescription:
+      "Fengmiao I, a 495 MW offshore wind farm project in Taiwan.",
     sourceName: "CIP",
     sourceUrl: "https://cip.com/news/",
   },
-  {
-    id: "INF-2026-005",
-    title: "Talen Energy Continues Portfolio Expansion with Acquisition of Additional High-Quality PJM Natural Gas Assets from Energy Capital Partners",
-    buyer: "Talen Energy",
-    seller: "Energy Capital Partners",
-    sector: "Energy",
-    subsector: "Power Generation (Gas)",
-    category: "Divestiture (Internal/Related Party)",
-    date: "2026-01-15T08:30:00Z",
-    description:
-      "Talen Energy acquires a portfolio of natural gas-fired generation assets located in PJM from its major shareholder, ECP.",
-    targetDescription:
-      "A portfolio of natural gas power generation facilities providing reliable capacity to the PJM market.",
-    sourceName: "ECP",
-    sourceUrl: "https://www.ecp.com/news",
-  },
-  {
-    id: "INF-2026-006",
-    title: "Energy Capital Partners (ECP) successfully closes sale of Symmetry Energy Solutions to NextEra Energy Resources",
-    buyer: "NextEra Energy Resources",
-    seller: "Energy Capital Partners",
-    sector: "Energy",
-    subsector: "Midstream / Gas Infrastructure",
-    category: "Divestiture",
-    date: "2026-01-09T11:00:00Z",
-    description:
-      "ECP completes the sale of its portfolio company, Symmetry Energy Solutions, to NextEra Energy Resources.",
-    targetDescription:
-      "A leading energy infrastructure company providing natural gas solutions and renewable natural gas services.",
-    sourceName: "ECP",
-    sourceUrl: "https://www.ecp.com/news",
-  },
-  {
-    id: "INF-2026-007",
-    title: "Energy Capital Partners (ECP) and Constellation complete Calpine Transaction",
-    buyer: "Energy Capital Partners / Constellation",
-    seller: "Calpine Corporation",
-    sector: "Energy",
-    subsector: "Power Generation",
-    category: "Acquisition (Take-Private)",
-    date: "2026-01-07T07:00:00Z",
-    description:
-      "The consortium led by ECP completes the acquisition and take-private of Calpine Corporation.",
-    targetDescription:
-      "America\u2019s largest generator of electricity from natural gas and geothermal resources.",
-    sourceName: "ECP",
-    sourceUrl: "https://www.ecp.com/news",
-  },
-  {
-    id: "INF-2026-008",
-    title: "Equitix strengthens position in Italy\u2019s solar market by increasing its stake in joint venture with ACEA",
-    buyer: "Equitix",
-    seller: "ACEA",
-    sector: "Energy",
-    subsector: "Renewables (Solar)",
-    category: "Minority Stake Acquisition (Additional Stake)",
-    date: "2026-01-13T09:30:00Z",
-    description:
-      "Equitix acquires an additional stake in its Italian solar partnership with utility company ACEA.",
-    targetDescription:
-      "A portfolio of photovoltaic solar plants located across Italy.",
-    sourceName: "Equitix",
-    sourceUrl: "https://equitix.com/news-insight/",
-  },
-  {
-    id: "INF-2026-009",
-    title: "KKR Announces Strategic Partnership With RWE to Realise UK Offshore Windfarms",
-    buyer: "KKR",
-    seller: "RWE",
-    sector: "Energy",
-    subsector: "Renewables (Offshore Wind)",
-    category: "Partnership/JV",
-    date: "2026-01-14T08:00:00Z",
-    description:
-      "KKR enters a strategic partnership to co-invest in and develop offshore wind projects in the UK alongside RWE.",
-    targetDescription:
-      "A pipeline of offshore wind farm developments in the United Kingdom.",
-    sourceName: "KKR",
-    sourceUrl: "https://media.kkr.com/",
-  },
-  {
-    id: "INF-2026-010",
-    title: "KKR and PSP Investments Acquire Minority Stake in Two American Electric Power Transmission Companies",
-    buyer: "KKR / PSP Investments",
-    seller: "American Electric Power (AEP)",
-    sector: "Energy",
-    subsector: "Utilities / Transmission",
-    category: "Minority Stake Acquisition",
-    date: "2026-01-09T10:00:00Z",
-    description:
-      "A consortium of KKR and PSP Investments acquires a minority equity interest in AEP\u2019s transmission subsidiaries.",
-    targetDescription:
-      "Regulated electricity transmission businesses serving customers in the US Midwest.",
-    sourceName: "PSP Investments",
-    sourceUrl: "https://www.investpsp.com/en/news/",
-  },
-  {
-    id: "INF-2026-011",
-    title: "Quinbrook sells Flexitricity to Drax",
-    buyer: "Drax Group",
-    seller: "Quinbrook Infrastructure Partners",
-    sector: "Energy",
-    subsector: "Energy Services / Grid Tech",
-    category: "Divestiture",
-    date: "2026-01-21T12:00:00Z",
-    description:
-      "Quinbrook completes the sale of Flexitricity to Drax Group.",
-    targetDescription:
-      "A demand response and flexible energy aggregator in the UK, managing a virtual power plant.",
-    sourceName: "Quinbrook",
-    sourceUrl: "https://www.quinbrook.com/news-insights/",
-  },
-
-  // ─── Digital Infrastructure ───────────────────────────────
-  {
-    id: "INF-2026-012",
-    title: "CVC DIF has entered exclusive negotiations to acquire a significant majority stake in Celeste",
-    buyer: "CVC DIF",
-    seller: "InfraVia Capital Partners",
-    sector: "Digital",
-    subsector: "Fiber",
-    category: "Acquisition (Majority Stake)",
-    date: "2026-01-14T10:00:00Z",
-    description:
-      "CVC DIF enters exclusivity to acquire a majority stake in Celeste from InfraVia Capital Partners.",
-    targetDescription:
-      "A leading B2B fiber infrastructure operator in France providing high-speed connectivity to businesses.",
-    sourceName: "CVC",
-    sourceUrl: "https://www.cvc.com/media/news/",
-  },
+  // ─── 13. CIP – Coalburn 2 ────────────────────────────────
   {
     id: "INF-2026-013",
-    title: "ACS Group and Global Infrastructure Partners Complete the Creation of Global Data Center Platform",
-    buyer: "Global Infrastructure Partners / ACS Group",
-    seller: "N/A (Platform Formation)",
-    sector: "Digital",
-    subsector: "Data Centers",
-    category: "Partnership/JV",
-    date: "2026-01-09T09:00:00Z",
+    title: "CIP divests 50% stake in Coalburn 2 battery storage to AIP Management",
+    buyer: "AIP Management",
+    seller: "Copenhagen Infrastructure Partners (CIP)",
+    sector: "Energy",
+    subsector: "Battery Energy Storage",
+    category: "Divestiture (Stake Sale)",
+    date: "2026-01-30T10:00:00Z",
     description:
-      "GIP and ACS Group finalize the formation of a joint venture to develop and operate data centers globally.",
+      "CIP agreed to divest a 50% stake in the Coalburn 2 battery energy storage system in Scotland to AIP Management.",
     targetDescription:
-      "A new global platform focused on developing hyperscale data centers.",
-    sourceName: "GIP",
-    sourceUrl: "https://www.global-infra.com/news",
+      "Coalburn 2, a battery energy storage system (BESS) located in Scotland.",
+    sourceName: "CIP",
+    sourceUrl: "https://cip.com/news/",
   },
+  // ─── 14. CVC DIF – iPark ─────────────────────────────────
   {
     id: "INF-2026-014",
-    title: "KKR and Oak Hill Capital Commit Nearly $2 Billion to Leading European Data Center Platform Global Technical Realty",
-    buyer: "KKR / Oak Hill Capital",
-    seller: "Global Technical Realty",
-    sector: "Digital",
-    subsector: "Data Centers",
-    category: "Investment",
-    date: "2026-01-07T08:00:00Z",
-    description:
-      "KKR and Oak Hill Capital announce a new capital commitment to fund the expansion of Global Technical Realty.",
-    targetDescription:
-      "A build-to-suit data center platform operating across key European markets.",
-    sourceName: "KKR",
-    sourceUrl: "https://media.kkr.com/",
-  },
-
-  // ─── Transport & Logistics ────────────────────────────────
-  {
-    id: "INF-2026-015",
-    title: "APG has sold its 10% stake in Exolum to a consortium led by Banca March and Stoneshield Capital",
-    buyer: "Banca March / Stoneshield Capital",
-    seller: "APG Infrastructure",
-    sector: "Transport",
-    subsector: "Liquid Logistics / Storage",
-    category: "Divestiture (Minority Stake)",
-    date: "2026-01-20T11:00:00Z",
-    description:
-      "APG divests its 10% shareholding in Exolum to a consortium of Spanish investors.",
-    targetDescription:
-      "A leading European logistics company for liquid bulk products, including refined oil and biofuels.",
-    sourceName: "APG",
-    sourceUrl: "https://assetmanagement.apg.nl/en/news/",
-  },
-  {
-    id: "INF-2026-016",
-    title: "CVC DIF to acquire leading Iberian parking infrastructure platform iPark from Elliott Investment Management",
+    title: "CVC DIF acquires iPark, leading Iberian parking platform, from Elliott",
     buyer: "CVC DIF",
     seller: "Elliott Investment Management",
     sector: "Transport",
     subsector: "Parking Infrastructure",
     category: "Acquisition",
-    date: "2026-01-08T08:00:00Z",
+    date: "2026-01-08T09:00:00Z",
     description:
-      "CVC DIF agrees to acquire iPark from its current owner, Elliott Investment Management.",
+      "CVC DIF agreed to acquire iPark, a leading Iberian parking platform with 30,000+ spaces, from Elliott Investment Management.",
     targetDescription:
-      "A leading operator of off-street parking concessions in Spain and Portugal.",
+      "iPark, a leading operator of off-street parking concessions in Spain and Portugal with over 30,000 spaces.",
     sourceName: "CVC",
     sourceUrl: "https://www.cvc.com/media/news/",
   },
+  // ─── 15. CVC DIF – Celeste ────────────────────────────────
+  {
+    id: "INF-2026-015",
+    title: "CVC DIF enters exclusive negotiations to acquire ~88% of Celeste from InfraVia",
+    buyer: "CVC DIF",
+    seller: "InfraVia Capital Partners",
+    sector: "Digital",
+    subsector: "Fiber & Cloud",
+    category: "Acquisition (Exclusive Negotiations)",
+    date: "2026-01-14T08:00:00Z",
+    description:
+      "CVC DIF entered exclusive negotiations to acquire a majority stake (~88%) in Celeste, a French B2B fiber operator, from InfraVia Capital Partners.",
+    targetDescription:
+      "Celeste, a French B2B fiber and cloud infrastructure operator.",
+    sourceName: "CVC",
+    sourceUrl: "https://www.cvc.com/media/news/",
+  },
+  // ─── 16. EnCap Investments ────────────────────────────────
+  {
+    id: "INF-2026-016",
+    title: "EnCap launches Quantica Infrastructure for US data center development",
+    buyer: "EnCap Investments",
+    seller: "N/A (Platform Launch)",
+    sector: "Digital",
+    subsector: "Data Centers",
+    category: "Platform Launch",
+    date: "2026-01-19T08:00:00Z",
+    description:
+      "EnCap launched Quantica Infrastructure to develop \"shovel-ready\" data center sites in the US.",
+    targetDescription:
+      "Quantica Infrastructure, a new platform focused on developing shovel-ready data center sites in the United States.",
+    sourceName: "EnCap",
+    sourceUrl: "https://www.encapinvestments.com/news",
+  },
+  // ─── 17. Energy Capital Partners ──────────────────────────
   {
     id: "INF-2026-017",
-    title: "Norwegian Travel sells gondola and rail operations to a European Infrastructure Fund managed by DWS",
-    buyer: "DWS Infrastructure",
-    seller: "Norwegian Travel",
-    sector: "Transport",
-    subsector: "Tourism / Rail",
-    category: "Acquisition (Asset Deal)",
-    date: "2026-01-23T07:30:00Z",
+    title: "ECP agrees to sell Cornerstone portfolio to Talen Energy for $3.45 billion",
+    buyer: "Talen Energy",
+    seller: "Energy Capital Partners (ECP)",
+    sector: "Energy",
+    subsector: "Power Generation",
+    category: "Divestiture (Agreed to Sell)",
+    date: "2026-01-15T08:00:00Z",
     description:
-      "DWS acquires specific gondola and rail tourism assets from Norwegian Travel.",
+      "ECP agreed to sell the Cornerstone portfolio to Talen Energy for $3.45 billion.",
     targetDescription:
-      "Iconic transportation assets facilitating tourism in Norway, including gondolas and rail lines.",
-    sourceName: "DWS",
-    sourceUrl: "https://group.dws.com/press/",
+      "The Cornerstone portfolio comprising the Waterford and Darby natural gas power generation plants.",
+    sourceName: "ECP",
+    sourceUrl: "https://www.ecp.com/news",
   },
+  // ─── 18. Equitix – UK Portfolio ───────────────────────────
   {
     id: "INF-2026-018",
-    title: "Equitix acquires a portfolio of OFTO and PPP assets from Balfour Beatty",
+    title: "Equitix acquires stakes in 10 UK infrastructure assets from Balfour Beatty",
     buyer: "Equitix",
     seller: "Balfour Beatty",
     sector: "Transport",
-    subsector: "Transmission / Social Infrastructure",
-    category: "Acquisition",
-    date: "2026-01-06T09:00:00Z",
+    subsector: "Transmission, Lighting, Roads",
+    category: "Acquisition (Secondary Market)",
+    date: "2026-01-06T08:00:00Z",
     description:
-      "Equitix purchases a portfolio of operational infrastructure assets from Balfour Beatty.",
+      "Equitix announced the acquisition of stakes in 10 UK assets (OFTOs, PFI lighting, roads) from Balfour Beatty. The deal was signed/completed in Dec 2025 but announced in Jan 2026.",
     targetDescription:
-      "A portfolio comprising Offshore Transmission Owner (OFTO) assets and Public-Private Partnership (PPP) concessions.",
+      "A diversified portfolio of 10 UK infrastructure assets including offshore transmission owners (OFTOs), PFI lighting, and road concessions.",
     sourceName: "Equitix",
     sourceUrl: "https://equitix.com/news-insight/",
   },
+  // ─── 19. Equitix – Italian Solar ──────────────────────────
   {
     id: "INF-2026-019",
-    title: "Latham Advises Global Infrastructure Partners in Acquisition of 40% Stake in Aboitiz InfraCapital",
-    buyer: "Global Infrastructure Partners",
-    seller: "Aboitiz Group",
-    sector: "Transport",
-    subsector: "Airports / Water / Industrial",
-    category: "Minority Stake Acquisition",
-    date: "2026-01-05T10:00:00Z",
+    title: "Equitix increases stake in ACEA solar partnership to 90%",
+    buyer: "Equitix",
+    seller: "ACEA",
+    sector: "Energy",
+    subsector: "Solar",
+    category: "Stake Increase",
+    date: "2026-01-13T08:00:00Z",
     description:
-      "GIP acquires a significant minority stake in the infrastructure arm of the Philippines-based Aboitiz Group.",
+      "Equitix announced it increased its stake in its partnership with ACEA to 90% and funded the acquisition of additional solar assets.",
     targetDescription:
-      "The infrastructure subsidiary of Aboitiz Group, managing airports, water utilities, and economic estates.",
+      "A portfolio of photovoltaic solar plants in Italy operated through a joint venture with ACEA.",
+    sourceName: "Equitix",
+    sourceUrl: "https://equitix.com/news-insight/",
+  },
+  // ─── 20. GIP – Rio Grande LNG ─────────────────────────────
+  {
+    id: "INF-2026-020",
+    title: "GIP sells 7.6% equity interest in Rio Grande LNG Trains 4 & 5",
+    buyer: "Abu Dhabi Royal Family Investment Vehicle",
+    seller: "Global Infrastructure Partners (GIP)",
+    sector: "Energy",
+    subsector: "LNG",
+    category: "Divestiture (Partial)",
+    date: "2026-01-27T08:00:00Z",
+    description:
+      "GIP agreed to sell a 7.6% equity interest in Trains 4 and 5 of the Rio Grande LNG export project to an investment vehicle of the Abu Dhabi ruling family.",
+    targetDescription:
+      "Trains 4 and 5 of the Rio Grande LNG export project in Texas.",
     sourceName: "GIP",
     sourceUrl: "https://www.global-infra.com/news",
   },
-  {
-    id: "INF-2026-020",
-    title: "AviAlliance completes acquisition of AGS Airports",
-    buyer: "PSP Investments (AviAlliance)",
-    seller: "AGS Airports",
-    sector: "Transport",
-    subsector: "Airports",
-    category: "Acquisition",
-    date: "2026-01-28T08:00:00Z",
-    description:
-      "AviAlliance, a wholly-owned subsidiary of PSP Investments, closes the acquisition of AGS Airports.",
-    targetDescription:
-      "The owner and operator of Aberdeen, Glasgow, and Southampton airports in the United Kingdom.",
-    sourceName: "PSP Investments",
-    sourceUrl: "https://www.investpsp.com/en/news/",
-  },
+  // ─── 21. I Squared – Ramudden ─────────────────────────────
   {
     id: "INF-2026-021",
-    title: "Bain Capital Enters Fixed-Base Operator Sector with Acquisition of APP Jet Center from Ridgewood Infrastructure",
+    title: "I Squared Capital acquires Ramudden Global from Triton Partners",
+    buyer: "I Squared Capital",
+    seller: "Triton Partners",
+    sector: "Services",
+    subsector: "Transport Safety",
+    category: "Acquisition (Buyout)",
+    date: "2026-01-07T08:00:00Z",
+    description:
+      "I Squared reached an agreement to acquire Ramudden Global, a provider of temporary traffic management services, from Triton Partners.",
+    targetDescription:
+      "Ramudden Global, a leading provider of temporary traffic management and work zone safety services.",
+    sourceName: "I Squared Capital",
+    sourceUrl: "https://isquaredcapital.com/news/",
+  },
+  // ─── 22. I Squared – ANZA Power ──────────────────────────
+  {
+    id: "INF-2026-022",
+    title: "I Squared launches ANZA Power with $300M equity commitment for ANZ renewables",
+    buyer: "I Squared Capital",
+    seller: "N/A (Platform Launch)",
+    sector: "Energy",
+    subsector: "Renewable Energy (IPP)",
+    category: "Platform Launch",
+    date: "2026-01-15T09:00:00Z",
+    description:
+      "I Squared launched ANZA Power with a $300 million equity commitment to develop solar, wind, and storage assets in Australia and New Zealand.",
+    targetDescription:
+      "ANZA Power, a new independent power producer platform targeting solar, wind, and storage in Australia and New Zealand.",
+    sourceName: "I Squared Capital",
+    sourceUrl: "https://isquaredcapital.com/news/",
+  },
+  // ─── 23. I Squared – Radiant Energy Solutions ─────────────
+  {
+    id: "INF-2026-023",
+    title: "I Squared launches Radiant Energy Solutions for Middle East distributed renewables",
+    buyer: "I Squared Capital",
+    seller: "N/A (Platform Launch)",
+    sector: "Energy",
+    subsector: "Distributed Energy",
+    category: "Platform Launch",
+    date: "2026-01-22T09:00:00Z",
+    description:
+      "I Squared launched Radiant Energy Solutions to target distributed renewables in the Middle East, seeded with the acquisition of FAS Renewables and Zahra Energy.",
+    targetDescription:
+      "Radiant Energy Solutions, a distributed renewable energy platform in the Middle East seeded with FAS Renewables and Zahra Energy.",
+    sourceName: "I Squared Capital",
+    sourceUrl: "https://isquaredcapital.com/news/",
+  },
+  // ─── 24. InfraVia – Celeste ───────────────────────────────
+  {
+    id: "INF-2026-024",
+    title: "InfraVia enters exclusive negotiations to sell majority stake in Celeste to CVC DIF",
+    buyer: "CVC DIF",
+    seller: "InfraVia Capital Partners",
+    sector: "Digital",
+    subsector: "Fiber",
+    category: "Divestiture (Exclusive Negotiations)",
+    date: "2026-01-14T08:00:00Z",
+    description:
+      "InfraVia entered exclusive negotiations to sell its majority stake in Celeste to CVC DIF.",
+    targetDescription:
+      "Celeste, a French B2B fiber and cloud infrastructure operator.",
+    sourceName: "InfraVia",
+    sourceUrl: "https://www.infraviacapital.com/news/",
+  },
+  // ─── 25. KKR – GTR ────────────────────────────────────────
+  {
+    id: "INF-2026-025",
+    title: "KKR commits additional $1.5 billion to Global Technical Realty data center platform",
+    buyer: "KKR",
+    seller: "Global Technical Realty (GTR)",
+    sector: "Digital",
+    subsector: "Data Centers",
+    category: "Investment (Platform Commitment)",
+    date: "2026-01-07T08:00:00Z",
+    description:
+      "KKR announced an additional $1.5 billion equity commitment to GTR to accelerate its European data center development pipeline.",
+    targetDescription:
+      "Global Technical Realty (GTR), a build-to-suit data center platform operating across key European markets.",
+    sourceName: "KKR",
+    sourceUrl: "https://media.kkr.com/",
+  },
+  // ─── 26. Patrizia ─────────────────────────────────────────
+  {
+    id: "INF-2026-026",
+    title: "Kinland (Patrizia) acquires 49 Nordic preschool properties for ~€170M",
+    buyer: "Patrizia (via Kinland)",
+    seller: "Undisclosed Sellers",
+    sector: "Social",
+    subsector: "Preschool & Care Properties",
+    category: "Acquisition (Bolt-on)",
+    date: "2026-01-13T08:00:00Z",
+    description:
+      "Kinland, managed by Patrizia, announced the acquisition of a portfolio of 49 preschool properties across the Nordics for ~€170 million.",
+    targetDescription:
+      "A portfolio of 49 preschool and care properties located across the Nordic countries.",
+    sourceName: "Patrizia",
+    sourceUrl: "https://www.patrizia.ag/en/news-events/",
+  },
+  // ─── 27. Quinbrook ────────────────────────────────────────
+  {
+    id: "INF-2026-027",
+    title: "Quinbrook sells Flexitricity to Drax Group for ~£42 million",
+    buyer: "Drax Group",
+    seller: "Quinbrook Infrastructure Partners",
+    sector: "Energy",
+    subsector: "Virtual Power Plant / Energy Transition",
+    category: "Divestiture (Trade Sale)",
+    date: "2026-01-21T08:00:00Z",
+    description:
+      "Quinbrook announced the sale of Flexitricity, a UK flexible power aggregator, to Drax Group for ~£42 million.",
+    targetDescription:
+      "Flexitricity, a UK-based flexible power aggregator and virtual power plant operator.",
+    sourceName: "Quinbrook",
+    sourceUrl: "https://www.quinbrook.com/news-insights/",
+  },
+  // ─── 28. Ridgewood Infrastructure ─────────────────────────
+  {
+    id: "INF-2026-028",
+    title: "Ridgewood sells APP Jet Center to Bain Capital",
     buyer: "Bain Capital",
     seller: "Ridgewood Infrastructure",
     sector: "Transport",
-    subsector: "Aviation Services",
-    category: "Divestiture",
+    subsector: "Aviation (FBO)",
+    category: "Divestiture (Trade Sale)",
     date: "2026-01-27T09:00:00Z",
     description:
-      "Ridgewood Infrastructure sells its portfolio company, APP Jet Center, to Bain Capital.",
+      "Ridgewood agreed to sell APP Jet Center, an operator of Fixed-Base Operators (FBOs) at US airports, to Bain Capital.",
     targetDescription:
-      "A fixed-base operator (FBO) network providing aviation infrastructure services in Washington D.C. and Florida.",
+      "APP Jet Center, an operator of Fixed-Base Operators (FBOs) providing aviation services at US airports.",
     sourceName: "Ridgewood",
     sourceUrl: "https://ridgewoodinfrastructure.com/news/",
   },
+  // ─── 29. Schroders Greencoat ──────────────────────────────
   {
-    id: "INF-2026-022",
-    title: "CMA CGM and Stonepeak Form $10 Billion Joint Venture for Port Terminals",
+    id: "INF-2026-029",
+    title: "Schroders Greencoat acquires 110 MWp UK solar portfolio from METLEN",
+    buyer: "Schroders Greencoat",
+    seller: "METLEN Energy & Metals",
+    sector: "Energy",
+    subsector: "Solar",
+    category: "Acquisition",
+    date: "2026-01-22T10:00:00Z",
+    description:
+      "Schroders Greencoat announced the acquisition of three operational solar farms in the UK from METLEN Energy & Metals.",
+    targetDescription:
+      "A portfolio of three operational solar farms in the UK totaling 110 MWp.",
+    sourceName: "Schroders Greencoat",
+    sourceUrl: "https://www.schrodersgreencoat.com/news/",
+  },
+  // ─── 30. Stonepeak ────────────────────────────────────────
+  {
+    id: "INF-2026-030",
+    title: "Stonepeak invests $2.4B for 25% stake in CMA CGM port terminal JV",
     buyer: "Stonepeak",
     seller: "CMA CGM",
     sector: "Transport",
     subsector: "Ports",
-    category: "Minority Stake Acquisition (via JV)",
-    date: "2026-01-28T10:30:00Z",
+    category: "Joint Venture",
+    date: "2026-01-28T08:00:00Z",
     description:
-      "Stonepeak enters a strategic partnership with CMA CGM, investing $2.4 billion for a 25% stake in a port terminal platform.",
+      "Stonepeak announced a $2.4 billion investment for a 25% stake in a new platform holding 10 key container terminals globally.",
     targetDescription:
-      "A portfolio of container terminals and port assets located in the United States.",
+      "United Ports LLC, a new platform holding 10 key container terminals globally in partnership with CMA CGM.",
     sourceName: "Stonepeak",
     sourceUrl: "https://stonepeak.com/category/press-releases",
   },
-
-  // ─── Social & Services ────────────────────────────────────
+  // ─── 31. Tiger Infrastructure Partners ────────────────────
   {
-    id: "INF-2026-023",
-    title: "Antin to acquire Emsere, a global leader in clinical trial equipment infrastructure",
-    buyer: "Antin Infrastructure Partners",
-    seller: "Emsere",
-    sector: "Social",
-    subsector: "Healthcare Infrastructure Services",
-    category: "Acquisition",
-    date: "2026-01-08T10:00:00Z",
+    id: "INF-2026-031",
+    title: "Tiger-backed Qwello wins Copenhagen EV charging tender, enters Danish market",
+    buyer: "Tiger Infrastructure Partners (via Qwello)",
+    seller: "N/A (Platform Launch)",
+    sector: "Transport",
+    subsector: "EV Charging",
+    category: "Platform Launch",
+    date: "2026-01-22T08:00:00Z",
     description:
-      "Antin enters into an agreement to acquire a majority stake in Emsere.",
+      "Tiger-backed Qwello announced its entry into the Danish market after winning a tender from the City of Copenhagen to deploy EV charging infrastructure.",
     targetDescription:
-      "A provider of equipment rental and logistics infrastructure services for clinical trials.",
-    sourceName: "Antin",
-    sourceUrl: "https://www.antin-ip.com/media/our-news",
-  },
-  {
-    id: "INF-2026-024",
-    title: "Blackstone Energy Transition Partners Announces Acquisition of Alliance Technical Group",
-    buyer: "Blackstone",
-    seller: "Morgan Stanley Capital Partners",
-    sector: "Services",
-    subsector: "Environmental Services",
-    category: "Acquisition",
-    date: "2026-01-06T08:30:00Z",
-    description:
-      "Blackstone Energy Transition Partners acquires Alliance Technical Group from Morgan Stanley Capital Partners.",
-    targetDescription:
-      "A provider of environmental testing, compliance, and monitoring services for critical infrastructure.",
-    sourceName: "Blackstone",
-    sourceUrl: "https://www.blackstone.com/news/press/",
-  },
-  {
-    id: "INF-2026-025",
-    title: "I Squared Capital Acquires Ramudden Global, a Leader in Traffic Management and Infrastructure Safety",
-    buyer: "I Squared Capital",
-    seller: "Triton Partners",
-    sector: "Services",
-    subsector: "Transport Services",
-    category: "Acquisition",
-    date: "2026-01-07T09:00:00Z",
-    description:
-      "I Squared Capital acquires Ramudden Global from Triton Partners.",
-    targetDescription:
-      "A provider of temporary traffic management and work zone safety services for critical infrastructure projects.",
-    sourceName: "I Squared Capital",
-    sourceUrl: "https://isquaredcapital.com/news/",
+      "Qwello's expansion into the Danish EV charging market via a City of Copenhagen tender.",
+    sourceName: "Tiger Infrastructure",
+    sourceUrl: "https://www.tigerinfrastructure.com/news/",
   },
 ];
 
@@ -465,7 +601,10 @@ export function getCategoryColor(category: DealCategory): string {
   if (category.startsWith("Minority")) return "#8b5cf6";
   if (category.startsWith("Divestiture")) return "#f59e0b";
   if (category.startsWith("Investment")) return "#10b981";
-  if (category.startsWith("Partnership")) return "#06b6d4";
+  if (category.startsWith("Partnership") || category === "Joint Venture") return "#06b6d4";
+  if (category.startsWith("Platform")) return "#06b6d4";
+  if (category === "Growth Investment") return "#10b981";
+  if (category === "Stake Increase") return "#8b5cf6";
   return "#a1a1aa";
 }
 
