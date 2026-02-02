@@ -1,35 +1,14 @@
 export type DealSector = "Energy" | "Digital" | "Transport" | "Social" | "Services";
 
 export type DealCategory =
-  | "Acquisition"
-  | "Acquisition (100% Stake)"
-  | "Acquisition (Majority Stake)"
   | "Acquisition (Buyout)"
-  | "Acquisition (Take-Private)"
-  | "Acquisition (Asset Deal)"
-  | "Acquisition (Secondary Market)"
-  | "Acquisition (Bolt-on)"
-  | "Acquisition (Exclusive Negotiations)"
-  | "Minority Stake Acquisition"
-  | "Minority Stake Acquisition (Secondary)"
-  | "Minority Stake Acquisition (Additional Stake)"
-  | "Minority Stake Acquisition (via JV)"
-  | "Divestiture"
-  | "Divestiture (Minority Stake)"
-  | "Divestiture (Stake Sale)"
-  | "Divestiture (Partial)"
-  | "Divestiture (Trade Sale)"
-  | "Divestiture (Agreed to Sell)"
-  | "Divestiture (Exclusive Negotiations)"
-  | "Divestiture (Internal/Related Party)"
-  | "Investment"
-  | "Investment (Growth Capital)"
-  | "Investment (Platform Commitment)"
-  | "Growth Investment"
+  | "Acquisition (Majority Stake)"
+  | "Acquisition (Minority Stake)"
+  | "Sale (Buyout)"
+  | "Sale (Majority Stake)"
+  | "Sale (Minority Stake)"
   | "Platform Launch"
-  | "Platform Expansion"
-  | "Stake Increase"
-  | "Partnership/JV"
+  | "IPO"
   | "Joint Venture";
 
 export interface Deal {
@@ -56,7 +35,7 @@ export const deals: Deal[] = [
     seller: "Kalpataru Projects International Limited",
     sector: "Transport",
     subsector: "Roads",
-    category: "Acquisition (100% Stake)",
+    category: "Acquisition (Buyout)",
     date: "2026-01-16T08:00:00Z",
     description:
       "Actis announced the acquisition of a 100% stake in the Vindhyachal Expressway in India from Kalpataru Projects International Limited for an enterprise value of ~₹775 crore.",
@@ -73,7 +52,7 @@ export const deals: Deal[] = [
     seller: "ATP (Danish Pension Fund)",
     sector: "Digital",
     subsector: "Telecom Towers",
-    category: "Minority Stake Acquisition (Secondary)",
+    category: "Acquisition (Minority Stake)",
     date: "2026-01-09T08:00:00Z",
     description:
       "ADIA acquired a ~3.17% stake (33.3 million shares) in Helios Towers via a secondary placing from Danish pension fund ATP.",
@@ -90,7 +69,7 @@ export const deals: Deal[] = [
     seller: "Ocean Winds",
     sector: "Energy",
     subsector: "Offshore Wind",
-    category: "Minority Stake Acquisition",
+    category: "Acquisition (Minority Stake)",
     date: "2026-01-22T08:00:00Z",
     description:
       "Allianz acquired a 20.25% minority stake in this 496 MW French offshore wind farm (currently under construction) from Ocean Winds.",
@@ -107,7 +86,7 @@ export const deals: Deal[] = [
     seller: "Gryphion",
     sector: "Social",
     subsector: "Healthcare Logistics",
-    category: "Acquisition (Buyout)",
+    category: "Acquisition (Majority Stake)",
     date: "2026-01-08T08:00:00Z",
     description:
       "Antin announced the acquisition of a majority stake in Emsere, a provider of mission-critical logistics for medical clinical trials, from Gryphion via its Mid Cap Fund I.",
@@ -124,7 +103,7 @@ export const deals: Deal[] = [
     seller: "APG Infrastructure",
     sector: "Energy",
     subsector: "Storage & Logistics",
-    category: "Divestiture (Minority Stake)",
+    category: "Sale (Minority Stake)",
     date: "2026-01-20T08:00:00Z",
     description:
       "APG announced the sale of its 10% equity stake in Exolum to a consortium led by Banca March and Stoneshield Capital.",
@@ -141,7 +120,7 @@ export const deals: Deal[] = [
     seller: "Divert, Inc.",
     sector: "Energy",
     subsector: "Waste-to-Energy / Circular Economy",
-    category: "Growth Investment",
+    category: "Acquisition (Minority Stake)",
     date: "2026-01-20T09:00:00Z",
     description:
       "Ara Partners participated in a Series B/C equivalent growth funding round for portfolio company Divert, Inc. to scale facilities in Washington and North Carolina.",
@@ -158,7 +137,7 @@ export const deals: Deal[] = [
     seller: "ENGIE North America",
     sector: "Energy",
     subsector: "Wind & Solar",
-    category: "Acquisition",
+    category: "Acquisition (Minority Stake)",
     date: "2026-01-13T08:00:00Z",
     description:
       "Ares expanded its partnership with ENGIE by acquiring an equity stake in a 730 MW portfolio of wind and solar assets in the US (ERCOT market).",
@@ -175,7 +154,7 @@ export const deals: Deal[] = [
     seller: "Asterion Bioenergy (ABIO)",
     sector: "Energy",
     subsector: "Biomethane / Energy Transition",
-    category: "Platform Expansion",
+    category: "Platform Launch",
     date: "2026-01-14T08:00:00Z",
     description:
       "Asterion committed €1.5 billion (including €800 million in equity) to scale its ABIO platform, targeting 20 operational biomethane plants by the end of 2026.",
@@ -192,7 +171,7 @@ export const deals: Deal[] = [
     seller: "Brookfield Infrastructure Partners (BIP)",
     sector: "Energy",
     subsector: "Power Transmission / Utilities",
-    category: "Divestiture (Agreed to Sell)",
+    category: "Sale (Buyout)",
     date: "2026-01-29T08:00:00Z",
     description:
       "BIP agreed to sell the largest of its four Brazilian electricity transmission concessions (1,200 km) for approximately $150 million in net proceeds.",
@@ -209,7 +188,7 @@ export const deals: Deal[] = [
     seller: "Brookfield Renewable Partners (BEP)",
     sector: "Energy",
     subsector: "Renewable Energy (Wind & Solar)",
-    category: "Divestiture (Agreed to Sell)",
+    category: "Sale (Majority Stake)",
     date: "2026-01-30T08:00:00Z",
     description:
       "BEP announced an agreement to sell a two-thirds stake in a utility-scale portfolio of operating wind and solar projects in the US for ~$860 million in gross proceeds.",
@@ -226,7 +205,7 @@ export const deals: Deal[] = [
     seller: "CDPQ",
     sector: "Digital",
     subsector: "Broadband / Telecom",
-    category: "Divestiture (Minority Stake)",
+    category: "Sale (Minority Stake)",
     date: "2026-01-26T08:00:00Z",
     description:
       "CDPQ announced the sale of an ~11% block of shares in Cogeco for C$229 million, while retaining its position as the largest holder of subordinate shares.",
@@ -243,7 +222,7 @@ export const deals: Deal[] = [
     seller: "Copenhagen Infrastructure Partners (CIP)",
     sector: "Energy",
     subsector: "Offshore Wind",
-    category: "Divestiture (Stake Sale)",
+    category: "Sale (Minority Stake)",
     date: "2026-01-30T09:00:00Z",
     description:
       "CIP agreed to divest a 10% equity stake in the 495 MW Fengmiao I project to Mitsui O.S.K. Lines.",
@@ -260,7 +239,7 @@ export const deals: Deal[] = [
     seller: "Copenhagen Infrastructure Partners (CIP)",
     sector: "Energy",
     subsector: "Battery Energy Storage",
-    category: "Divestiture (Stake Sale)",
+    category: "Sale (Majority Stake)",
     date: "2026-01-30T10:00:00Z",
     description:
       "CIP agreed to divest a 50% stake in the Coalburn 2 battery energy storage system in Scotland to AIP Management.",
@@ -277,7 +256,7 @@ export const deals: Deal[] = [
     seller: "Elliott Investment Management",
     sector: "Transport",
     subsector: "Parking Infrastructure",
-    category: "Acquisition",
+    category: "Acquisition (Buyout)",
     date: "2026-01-08T09:00:00Z",
     description:
       "CVC DIF agreed to acquire iPark, a leading Iberian parking platform with 30,000+ spaces, from Elliott Investment Management.",
@@ -294,7 +273,7 @@ export const deals: Deal[] = [
     seller: "InfraVia Capital Partners",
     sector: "Digital",
     subsector: "Fiber & Cloud",
-    category: "Acquisition (Exclusive Negotiations)",
+    category: "Acquisition (Majority Stake)",
     date: "2026-01-14T08:00:00Z",
     description:
       "CVC DIF entered exclusive negotiations to acquire a majority stake (~88%) in Celeste, a French B2B fiber operator, from InfraVia Capital Partners.",
@@ -328,7 +307,7 @@ export const deals: Deal[] = [
     seller: "Energy Capital Partners (ECP)",
     sector: "Energy",
     subsector: "Power Generation",
-    category: "Divestiture (Agreed to Sell)",
+    category: "Sale (Buyout)",
     date: "2026-01-15T08:00:00Z",
     description:
       "ECP agreed to sell the Cornerstone portfolio to Talen Energy for $3.45 billion.",
@@ -345,7 +324,7 @@ export const deals: Deal[] = [
     seller: "Balfour Beatty",
     sector: "Transport",
     subsector: "Transmission, Lighting, Roads",
-    category: "Acquisition (Secondary Market)",
+    category: "Acquisition (Minority Stake)",
     date: "2026-01-06T08:00:00Z",
     description:
       "Equitix announced the acquisition of stakes in 10 UK assets (OFTOs, PFI lighting, roads) from Balfour Beatty. The deal was signed/completed in Dec 2025 but announced in Jan 2026.",
@@ -362,7 +341,7 @@ export const deals: Deal[] = [
     seller: "ACEA",
     sector: "Energy",
     subsector: "Solar",
-    category: "Stake Increase",
+    category: "Acquisition (Majority Stake)",
     date: "2026-01-13T08:00:00Z",
     description:
       "Equitix announced it increased its stake in its partnership with ACEA to 90% and funded the acquisition of additional solar assets.",
@@ -379,7 +358,7 @@ export const deals: Deal[] = [
     seller: "Global Infrastructure Partners (GIP)",
     sector: "Energy",
     subsector: "LNG",
-    category: "Divestiture (Partial)",
+    category: "Sale (Minority Stake)",
     date: "2026-01-27T08:00:00Z",
     description:
       "GIP agreed to sell a 7.6% equity interest in Trains 4 and 5 of the Rio Grande LNG export project to an investment vehicle of the Abu Dhabi ruling family.",
@@ -439,32 +418,15 @@ export const deals: Deal[] = [
     sourceName: "I Squared Capital",
     sourceUrl: "https://isquaredcapital.com/news/",
   },
-  // ─── 24. InfraVia – Celeste ───────────────────────────────
+  // ─── 24. KKR – GTR ────────────────────────────────────────
   {
     id: "INF-2026-024",
-    title: "InfraVia enters exclusive negotiations to sell majority stake in Celeste to CVC DIF",
-    buyer: "CVC DIF",
-    seller: "InfraVia Capital Partners",
-    sector: "Digital",
-    subsector: "Fiber",
-    category: "Divestiture (Exclusive Negotiations)",
-    date: "2026-01-14T08:00:00Z",
-    description:
-      "InfraVia entered exclusive negotiations to sell its majority stake in Celeste to CVC DIF.",
-    targetDescription:
-      "Celeste, a French B2B fiber and cloud infrastructure operator.",
-    sourceName: "InfraVia",
-    sourceUrl: "https://www.infraviacapital.com/news/",
-  },
-  // ─── 25. KKR – GTR ────────────────────────────────────────
-  {
-    id: "INF-2026-025",
     title: "KKR commits additional $1.5 billion to Global Technical Realty data center platform",
     buyer: "KKR",
     seller: "Global Technical Realty (GTR)",
     sector: "Digital",
     subsector: "Data Centers",
-    category: "Investment (Platform Commitment)",
+    category: "Acquisition (Minority Stake)",
     date: "2026-01-07T08:00:00Z",
     description:
       "KKR announced an additional $1.5 billion equity commitment to GTR to accelerate its European data center development pipeline.",
@@ -473,15 +435,15 @@ export const deals: Deal[] = [
     sourceName: "KKR",
     sourceUrl: "https://media.kkr.com/",
   },
-  // ─── 26. Patrizia ─────────────────────────────────────────
+  // ─── 25. Patrizia ─────────────────────────────────────────
   {
-    id: "INF-2026-026",
+    id: "INF-2026-025",
     title: "Kinland (Patrizia) acquires 49 Nordic preschool properties for ~€170M",
     buyer: "Patrizia (via Kinland)",
     seller: "Undisclosed Sellers",
     sector: "Social",
     subsector: "Preschool & Care Properties",
-    category: "Acquisition (Bolt-on)",
+    category: "Acquisition (Buyout)",
     date: "2026-01-13T08:00:00Z",
     description:
       "Kinland, managed by Patrizia, announced the acquisition of a portfolio of 49 preschool properties across the Nordics for ~€170 million.",
@@ -490,15 +452,15 @@ export const deals: Deal[] = [
     sourceName: "Patrizia",
     sourceUrl: "https://www.patrizia.ag/en/news-events/",
   },
-  // ─── 27. Quinbrook ────────────────────────────────────────
+  // ─── 26. Quinbrook ────────────────────────────────────────
   {
-    id: "INF-2026-027",
+    id: "INF-2026-026",
     title: "Quinbrook sells Flexitricity to Drax Group for ~£42 million",
     buyer: "Drax Group",
     seller: "Quinbrook Infrastructure Partners",
     sector: "Energy",
     subsector: "Virtual Power Plant / Energy Transition",
-    category: "Divestiture (Trade Sale)",
+    category: "Sale (Buyout)",
     date: "2026-01-21T08:00:00Z",
     description:
       "Quinbrook announced the sale of Flexitricity, a UK flexible power aggregator, to Drax Group for ~£42 million.",
@@ -507,15 +469,15 @@ export const deals: Deal[] = [
     sourceName: "Quinbrook",
     sourceUrl: "https://www.quinbrook.com/news-insights/",
   },
-  // ─── 28. Ridgewood Infrastructure ─────────────────────────
+  // ─── 27. Ridgewood Infrastructure ─────────────────────────
   {
-    id: "INF-2026-028",
+    id: "INF-2026-027",
     title: "Ridgewood sells APP Jet Center to Bain Capital",
     buyer: "Bain Capital",
     seller: "Ridgewood Infrastructure",
     sector: "Transport",
     subsector: "Aviation (FBO)",
-    category: "Divestiture (Trade Sale)",
+    category: "Sale (Buyout)",
     date: "2026-01-27T09:00:00Z",
     description:
       "Ridgewood agreed to sell APP Jet Center, an operator of Fixed-Base Operators (FBOs) at US airports, to Bain Capital.",
@@ -524,15 +486,15 @@ export const deals: Deal[] = [
     sourceName: "Ridgewood",
     sourceUrl: "https://ridgewoodinfrastructure.com/news/",
   },
-  // ─── 29. Schroders Greencoat ──────────────────────────────
+  // ─── 28. Schroders Greencoat ──────────────────────────────
   {
-    id: "INF-2026-029",
+    id: "INF-2026-028",
     title: "Schroders Greencoat acquires 110 MWp UK solar portfolio from METLEN",
     buyer: "Schroders Greencoat",
     seller: "METLEN Energy & Metals",
     sector: "Energy",
     subsector: "Solar",
-    category: "Acquisition",
+    category: "Acquisition (Buyout)",
     date: "2026-01-22T10:00:00Z",
     description:
       "Schroders Greencoat announced the acquisition of three operational solar farms in the UK from METLEN Energy & Metals.",
@@ -541,9 +503,9 @@ export const deals: Deal[] = [
     sourceName: "Schroders Greencoat",
     sourceUrl: "https://www.schrodersgreencoat.com/news/",
   },
-  // ─── 30. Stonepeak ────────────────────────────────────────
+  // ─── 29. Stonepeak ────────────────────────────────────────
   {
-    id: "INF-2026-030",
+    id: "INF-2026-029",
     title: "Stonepeak invests $2.4B for 25% stake in CMA CGM port terminal JV",
     buyer: "Stonepeak",
     seller: "CMA CGM",
@@ -558,9 +520,9 @@ export const deals: Deal[] = [
     sourceName: "Stonepeak",
     sourceUrl: "https://stonepeak.com/category/press-releases",
   },
-  // ─── 31. Tiger Infrastructure Partners ────────────────────
+  // ─── 30. Tiger Infrastructure Partners ────────────────────
   {
-    id: "INF-2026-031",
+    id: "INF-2026-030",
     title: "Tiger-backed Qwello wins Copenhagen EV charging tender, enters Danish market",
     buyer: "Tiger Infrastructure Partners (via Qwello)",
     seller: "N/A (Platform Launch)",
@@ -598,13 +560,10 @@ export function getSectorColor(sector: DealSector): string {
 // Helper to get category badge color
 export function getCategoryColor(category: DealCategory): string {
   if (category.startsWith("Acquisition")) return "#3b82f6";
-  if (category.startsWith("Minority")) return "#8b5cf6";
-  if (category.startsWith("Divestiture")) return "#f59e0b";
-  if (category.startsWith("Investment")) return "#10b981";
-  if (category.startsWith("Partnership") || category === "Joint Venture") return "#06b6d4";
-  if (category.startsWith("Platform")) return "#06b6d4";
-  if (category === "Growth Investment") return "#10b981";
-  if (category === "Stake Increase") return "#8b5cf6";
+  if (category.startsWith("Sale")) return "#f59e0b";
+  if (category === "Platform Launch") return "#06b6d4";
+  if (category === "IPO") return "#10b981";
+  if (category === "Joint Venture") return "#06b6d4";
   return "#a1a1aa";
 }
 
