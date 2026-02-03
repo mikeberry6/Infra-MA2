@@ -127,7 +127,7 @@ export const deals: Deal[] = [
     targetDescription:
       "Divert, Inc., an impact technology company converting wasted food into renewable natural gas.",
     sourceName: "Ara Partners",
-    sourceUrl: "https://divertinc.com/divert-inc-announces-significant-business-momentum/",
+    sourceUrl: "https://www.businesswire.com/news/home/20260120452855/en/Divert-Inc.-Secures-Funding-to-Scale-Infrastructure-Addressing-the-Wasted-Food-Crisis-in-North-America",
   },
   // ─── 7. Ares Management ───────────────────────────────────
   {
@@ -314,7 +314,7 @@ export const deals: Deal[] = [
     targetDescription:
       "The Cornerstone portfolio comprising the Waterford and Darby natural gas power generation plants.",
     sourceName: "ECP",
-    sourceUrl: "https://ir.talenenergy.com/news-releases/news-release-details/talen-energy-continues-portfolio-expansion-acquisition",
+    sourceUrl: "https://www.bridgepointgroup.com/about-us/news-and-insights/press-releases/2026/energy-capital-partners-ecp-agrees-to-sell-cornerstone-to-talen-energy",
   },
   // ─── 18. Equitix – UK Portfolio ───────────────────────────
   {
