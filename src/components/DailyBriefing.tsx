@@ -16,6 +16,9 @@ import {
   Zap,
   Hash,
   Layers,
+  Building2,
+  Briefcase,
+  Target,
 } from "lucide-react";
 
 function BriefingHeader() {
@@ -145,22 +148,35 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
           </span>
         </div>
 
-        {/* Details */}
-        <div className="flex items-center gap-4 mb-3 text-sm flex-wrap">
-          <div>
-            <span className="text-zinc-500">Buyer </span>
-            <span className="text-zinc-300 font-medium">{deal.buyer}</span>
+        {/* Key Parties */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
+          <div className="rounded-md border border-zinc-800 bg-zinc-900/40 px-3 py-2.5">
+            <div className="flex items-center gap-1.5 mb-1">
+              <Building2 className="h-3 w-3 text-blue-500" />
+              <span className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider">Buyer</span>
+            </div>
+            <span className="text-sm font-medium text-zinc-200">{deal.buyer}</span>
           </div>
-          <div className="h-3 w-px bg-zinc-800" />
-          <div>
-            <span className="text-zinc-500">Seller </span>
-            <span className="text-zinc-300 font-medium">{deal.seller}</span>
+          <div className="rounded-md border border-zinc-800 bg-zinc-900/40 px-3 py-2.5">
+            <div className="flex items-center gap-1.5 mb-1">
+              <Briefcase className="h-3 w-3 text-violet-500" />
+              <span className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider">Seller</span>
+            </div>
+            <span className="text-sm font-medium text-zinc-200">{deal.seller}</span>
           </div>
         </div>
 
-        <p className="text-sm text-zinc-400 leading-relaxed mb-4">
+        <p className="text-sm text-zinc-400 leading-relaxed mb-2">
           {deal.description}
         </p>
+
+        {/* Target */}
+        <div className="flex items-start gap-1.5 mb-4">
+          <Target className="h-3 w-3 text-zinc-500 mt-0.5 shrink-0" />
+          <p className="text-xs text-zinc-500 leading-relaxed">
+            <span className="font-medium text-zinc-400">Target:</span> {deal.targetDescription}
+          </p>
+        </div>
 
         {/* Footer */}
         <div className="flex items-center justify-between">

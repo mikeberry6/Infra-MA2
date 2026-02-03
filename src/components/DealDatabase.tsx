@@ -228,9 +228,17 @@ function DealCard({
       <h3 className="text-sm font-medium text-zinc-200 mb-1.5 leading-snug">
         {deal.title}
       </h3>
-      <div className="flex items-center gap-3 text-xs text-zinc-500">
-        <span className="truncate max-w-[160px]">{deal.buyer}</span>
-        <div className="h-3 w-px bg-zinc-800" />
+      <div className="grid grid-cols-2 gap-2 mt-2 mb-1">
+        <div>
+          <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Buyer</span>
+          <div className="text-xs text-zinc-300 font-medium truncate">{deal.buyer}</div>
+        </div>
+        <div>
+          <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Seller</span>
+          <div className="text-xs text-zinc-300 font-medium truncate">{deal.seller}</div>
+        </div>
+      </div>
+      <div className="flex items-center text-xs text-zinc-500 mt-1">
         <span className="mono">{formatDate(deal.date)}</span>
       </div>
     </button>
@@ -292,7 +300,7 @@ function DealTable({
                   Deal
                 </th>
                 <th className="text-left px-4 py-3 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
-                  Buyer
+                  Parties
                 </th>
                 <th className="text-left px-4 py-3 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
                   Sector
@@ -336,8 +344,9 @@ function DealTable({
                         <ChevronRight className="h-3 w-3 text-zinc-600 opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                       </div>
                     </td>
-                    <td className="px-4 py-3 text-zinc-400 truncate max-w-[180px]">
-                      {deal.buyer}
+                    <td className="px-4 py-3 max-w-[220px]">
+                      <div className="text-sm text-zinc-200 font-medium truncate">{deal.buyer}</div>
+                      <div className="text-xs text-zinc-500 truncate">{deal.seller}</div>
                     </td>
                     <td className="px-4 py-3">
                       <span
@@ -508,14 +517,14 @@ function DealDrawer({
           </div>
 
           {/* Target Description */}
-          <div>
+          <div className="glass-card rounded-lg p-4">
             <div className="flex items-center gap-2 mb-2">
-              <Target className="h-3.5 w-3.5 text-zinc-500" />
+              <Target className="h-3.5 w-3.5 text-emerald-500" />
               <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
-                Target Description
+                Target
               </span>
             </div>
-            <p className="text-sm text-zinc-400 leading-relaxed">
+            <p className="text-sm text-zinc-300 leading-relaxed">
               {deal.targetDescription}
             </p>
           </div>
