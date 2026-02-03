@@ -1,4 +1,4 @@
-export type DealSector = "Energy" | "Digital" | "Transport" | "Social" | "Services";
+export type DealSector = "Transportation" | "Power & ET" | "Midstream" | "Utilities" | "Environmental" | "Digital" | "Social";
 
 export type DealCategory =
   | "Acquisition (Buyout)"
@@ -33,7 +33,7 @@ export const deals: Deal[] = [
     title: "Actis acquires 100% stake in Vindhyachal Expressway from Kalpataru",
     buyer: "Actis",
     seller: "Kalpataru Projects International Limited",
-    sector: "Transport",
+    sector: "Transportation",
     subsector: "Roads",
     category: "Acquisition (Buyout)",
     date: "2026-01-16T08:00:00Z",
@@ -67,7 +67,7 @@ export const deals: Deal[] = [
     title: "Allianz acquires 20.25% stake in Îles d'Yeu et Noirmoutier Offshore Wind Farm",
     buyer: "Allianz Global Investors",
     seller: "Ocean Winds",
-    sector: "Energy",
+    sector: "Power & ET",
     subsector: "Offshore Wind",
     category: "Acquisition (Minority Stake)",
     date: "2026-01-22T08:00:00Z",
@@ -101,7 +101,7 @@ export const deals: Deal[] = [
     title: "APG sells 10% equity stake in Exolum to Banca March / Stoneshield consortium",
     buyer: "Banca March / Stoneshield Capital",
     seller: "APG Infrastructure",
-    sector: "Energy",
+    sector: "Midstream",
     subsector: "Storage & Logistics",
     category: "Sale (Minority Stake)",
     date: "2026-01-20T08:00:00Z",
@@ -118,7 +118,7 @@ export const deals: Deal[] = [
     title: "Ara Partners leads growth funding round for Divert, Inc.",
     buyer: "Ara Partners",
     seller: "Divert, Inc.",
-    sector: "Energy",
+    sector: "Environmental",
     subsector: "Waste-to-Energy / Circular Economy",
     category: "Acquisition (Minority Stake)",
     date: "2026-01-20T09:00:00Z",
@@ -135,7 +135,7 @@ export const deals: Deal[] = [
     title: "Ares expands partnership with ENGIE, acquires stake in 730 MW US renewables portfolio",
     buyer: "Ares Management",
     seller: "ENGIE North America",
-    sector: "Energy",
+    sector: "Power & ET",
     subsector: "Wind & Solar",
     category: "Acquisition (Minority Stake)",
     date: "2026-01-13T08:00:00Z",
@@ -152,7 +152,7 @@ export const deals: Deal[] = [
     title: "Asterion commits €1.5 billion to scale ABIO biomethane platform",
     buyer: "Asterion Industrial Partners",
     seller: "Asterion Bioenergy (ABIO)",
-    sector: "Energy",
+    sector: "Environmental",
     subsector: "Biomethane / Energy Transition",
     category: "Platform Launch",
     date: "2026-01-14T08:00:00Z",
@@ -169,7 +169,7 @@ export const deals: Deal[] = [
     title: "BIP to sell Brazilian electricity transmission concession for ~$150M",
     buyer: "Undisclosed Buyer",
     seller: "Brookfield Infrastructure Partners (BIP)",
-    sector: "Energy",
+    sector: "Utilities",
     subsector: "Power Transmission / Utilities",
     category: "Sale (Buyout)",
     date: "2026-01-29T08:00:00Z",
@@ -186,7 +186,7 @@ export const deals: Deal[] = [
     title: "BEP to sell two-thirds stake in US wind and solar portfolio for ~$860M",
     buyer: "Undisclosed Buyer",
     seller: "Brookfield Renewable Partners (BEP)",
-    sector: "Energy",
+    sector: "Power & ET",
     subsector: "Renewable Energy (Wind & Solar)",
     category: "Sale (Majority Stake)",
     date: "2026-01-30T08:00:00Z",
@@ -220,7 +220,7 @@ export const deals: Deal[] = [
     title: "CIP divests 10% equity stake in 495 MW Fengmiao I offshore wind project to MOL",
     buyer: "Mitsui O.S.K. Lines",
     seller: "Copenhagen Infrastructure Partners (CIP)",
-    sector: "Energy",
+    sector: "Power & ET",
     subsector: "Offshore Wind",
     category: "Sale (Minority Stake)",
     date: "2026-01-30T09:00:00Z",
@@ -237,7 +237,7 @@ export const deals: Deal[] = [
     title: "CIP divests 50% stake in Coalburn 2 battery storage to AIP Management",
     buyer: "AIP Management",
     seller: "Copenhagen Infrastructure Partners (CIP)",
-    sector: "Energy",
+    sector: "Power & ET",
     subsector: "Battery Energy Storage",
     category: "Sale (Majority Stake)",
     date: "2026-01-30T10:00:00Z",
@@ -254,7 +254,7 @@ export const deals: Deal[] = [
     title: "CVC DIF acquires iPark, leading Iberian parking platform, from Elliott",
     buyer: "CVC DIF",
     seller: "Elliott Investment Management",
-    sector: "Transport",
+    sector: "Transportation",
     subsector: "Parking Infrastructure",
     category: "Acquisition (Buyout)",
     date: "2026-01-08T09:00:00Z",
@@ -305,7 +305,7 @@ export const deals: Deal[] = [
     title: "ECP agrees to sell Cornerstone portfolio to Talen Energy for $3.45 billion",
     buyer: "Talen Energy",
     seller: "Energy Capital Partners (ECP)",
-    sector: "Energy",
+    sector: "Power & ET",
     subsector: "Power Generation",
     category: "Sale (Buyout)",
     date: "2026-01-15T08:00:00Z",
@@ -322,7 +322,7 @@ export const deals: Deal[] = [
     title: "Equitix acquires stakes in 10 UK infrastructure assets from Balfour Beatty",
     buyer: "Equitix",
     seller: "Balfour Beatty",
-    sector: "Transport",
+    sector: "Utilities",
     subsector: "Transmission, Lighting, Roads",
     category: "Acquisition (Minority Stake)",
     date: "2026-01-06T08:00:00Z",
@@ -339,7 +339,7 @@ export const deals: Deal[] = [
     title: "Equitix increases stake in ACEA solar partnership to 90%",
     buyer: "Equitix",
     seller: "ACEA",
-    sector: "Energy",
+    sector: "Power & ET",
     subsector: "Solar",
     category: "Acquisition (Majority Stake)",
     date: "2026-01-13T08:00:00Z",
@@ -356,7 +356,7 @@ export const deals: Deal[] = [
     title: "GIP sells 7.6% equity interest in Rio Grande LNG Trains 4 & 5",
     buyer: "Abu Dhabi Royal Family Investment Vehicle",
     seller: "Global Infrastructure Partners (GIP)",
-    sector: "Energy",
+    sector: "Midstream",
     subsector: "LNG",
     category: "Sale (Minority Stake)",
     date: "2026-01-27T08:00:00Z",
@@ -373,7 +373,7 @@ export const deals: Deal[] = [
     title: "I Squared Capital acquires Ramudden Global from Triton Partners",
     buyer: "I Squared Capital",
     seller: "Triton Partners",
-    sector: "Services",
+    sector: "Transportation",
     subsector: "Transport Safety",
     category: "Acquisition (Buyout)",
     date: "2026-01-07T08:00:00Z",
@@ -390,7 +390,7 @@ export const deals: Deal[] = [
     title: "I Squared launches ANZA Power with $300M equity commitment for ANZ renewables",
     buyer: "I Squared Capital",
     seller: "N/A (Platform Launch)",
-    sector: "Energy",
+    sector: "Power & ET",
     subsector: "Renewable Energy (IPP)",
     category: "Platform Launch",
     date: "2026-01-15T09:00:00Z",
@@ -407,7 +407,7 @@ export const deals: Deal[] = [
     title: "I Squared launches Radiant Energy Solutions for Middle East distributed renewables",
     buyer: "I Squared Capital",
     seller: "N/A (Platform Launch)",
-    sector: "Energy",
+    sector: "Power & ET",
     subsector: "Distributed Energy",
     category: "Platform Launch",
     date: "2026-01-22T09:00:00Z",
@@ -458,7 +458,7 @@ export const deals: Deal[] = [
     title: "Quinbrook sells Flexitricity to Drax Group for ~£42 million",
     buyer: "Drax Group",
     seller: "Quinbrook Infrastructure Partners",
-    sector: "Energy",
+    sector: "Power & ET",
     subsector: "Virtual Power Plant / Energy Transition",
     category: "Sale (Buyout)",
     date: "2026-01-21T08:00:00Z",
@@ -475,7 +475,7 @@ export const deals: Deal[] = [
     title: "Ridgewood sells APP Jet Center to Bain Capital",
     buyer: "Bain Capital",
     seller: "Ridgewood Infrastructure",
-    sector: "Transport",
+    sector: "Transportation",
     subsector: "Aviation (FBO)",
     category: "Sale (Buyout)",
     date: "2026-01-27T09:00:00Z",
@@ -492,7 +492,7 @@ export const deals: Deal[] = [
     title: "Schroders Greencoat acquires 110 MWp UK solar portfolio from METLEN",
     buyer: "Schroders Greencoat",
     seller: "METLEN Energy & Metals",
-    sector: "Energy",
+    sector: "Power & ET",
     subsector: "Solar",
     category: "Acquisition (Buyout)",
     date: "2026-01-22T10:00:00Z",
@@ -509,7 +509,7 @@ export const deals: Deal[] = [
     title: "Stonepeak invests $2.4B for 25% stake in CMA CGM port terminal JV",
     buyer: "Stonepeak",
     seller: "CMA CGM",
-    sector: "Transport",
+    sector: "Transportation",
     subsector: "Ports",
     category: "Joint Venture",
     date: "2026-01-28T08:00:00Z",
@@ -526,7 +526,7 @@ export const deals: Deal[] = [
     title: "Tiger-backed Qwello wins Copenhagen EV charging tender, enters Danish market",
     buyer: "Tiger Infrastructure Partners (via Qwello)",
     seller: "N/A (Platform Launch)",
-    sector: "Transport",
+    sector: "Transportation",
     subsector: "EV Charging",
     category: "Platform Launch",
     date: "2026-01-22T08:00:00Z",
@@ -542,16 +542,20 @@ export const deals: Deal[] = [
 // Helper to get sector color
 export function getSectorColor(sector: DealSector): string {
   switch (sector) {
-    case "Energy":
+    case "Transportation":
+      return "#8b5cf6";
+    case "Power & ET":
       return "#f59e0b";
+    case "Midstream":
+      return "#f97316";
+    case "Utilities":
+      return "#06b6d4";
+    case "Environmental":
+      return "#10b981";
     case "Digital":
       return "#3b82f6";
-    case "Transport":
-      return "#8b5cf6";
     case "Social":
       return "#ec4899";
-    case "Services":
-      return "#10b981";
     default:
       return "#a1a1aa";
   }

@@ -8,7 +8,7 @@ import {
   getCategoryColor,
   getDealStats,
 } from "@/data/deals";
-import type { Deal, DealSector } from "@/data/deals";
+import type { Deal, DealSector, DealCategory } from "@/data/deals";
 import {
   Search,
   Hash,
@@ -83,18 +83,34 @@ function KPICards() {
 }
 
 // ─── Filters ────────────────────────────────────────────────
-const SECTORS: DealSector[] = ["Energy", "Digital", "Transport", "Social", "Services"];
+const SECTORS: DealSector[] = ["Transportation", "Power & ET", "Midstream", "Utilities", "Environmental", "Digital", "Social"];
+
+const CATEGORIES: DealCategory[] = [
+  "Acquisition (Buyout)",
+  "Acquisition (Majority Stake)",
+  "Acquisition (Minority Stake)",
+  "Sale (Buyout)",
+  "Sale (Majority Stake)",
+  "Sale (Minority Stake)",
+  "Platform Launch",
+  "IPO",
+  "Joint Venture",
+];
 
 function FilterBar({
   search,
   onSearchChange,
   activeSectors,
   onToggleSector,
+  activeCategories,
+  onToggleCategory,
 }: {
   search: string;
   onSearchChange: (v: string) => void;
   activeSectors: Set<DealSector>;
   onToggleSector: (s: DealSector) => void;
+  activeCategories: Set<DealCategory>;
+  onToggleCategory: (c: DealCategory) => void;
 }) {
   return (
     <div className="mb-4 space-y-3">
@@ -110,7 +126,7 @@ function FilterBar({
         />
       </div>
 
-      {/* Filter pills — horizontally scrollable on mobile */}
+      {/* Sector filter pills */}
       <div className="flex items-center gap-2 overflow-x-auto pb-1 -mb-1" style={{ WebkitOverflowScrolling: "touch" }}>
         <span className="text-[11px] font-medium text-zinc-600 uppercase tracking-wider mr-1 shrink-0">
           Sector
@@ -135,6 +151,36 @@ function FilterBar({
             {sector}
           </button>
         ))}
+      </div>
+
+      {/* Category filter pills */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 -mb-1" style={{ WebkitOverflowScrolling: "touch" }}>
+        <span className="text-[11px] font-medium text-zinc-600 uppercase tracking-wider mr-1 shrink-0">
+          Type
+        </span>
+        {CATEGORIES.map((category) => {
+          const color = getCategoryColor(category);
+          return (
+            <button
+              key={category}
+              onClick={() => onToggleCategory(category)}
+              className={`shrink-0 ${
+                activeCategories.has(category) ? "filter-pill-active" : "filter-pill"
+              }`}
+              style={
+                activeCategories.has(category)
+                  ? {
+                      color: color,
+                      borderColor: `${color}66`,
+                      backgroundColor: `${color}15`,
+                    }
+                  : undefined
+              }
+            >
+              {category}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
@@ -534,6 +580,9 @@ export function DealDatabase() {
   const [activeSectors, setActiveSectors] = useState<Set<DealSector>>(
     new Set(),
   );
+  const [activeCategories, setActiveCategories] = useState<Set<DealCategory>>(
+    new Set(),
+  );
   const [selectedDeal, setSelectedDeal] = useState<Deal | null>(null);
 
   function toggleSector(sector: DealSector) {
@@ -543,6 +592,18 @@ export function DealDatabase() {
         next.delete(sector);
       } else {
         next.add(sector);
+      }
+      return next;
+    });
+  }
+
+  function toggleCategory(category: DealCategory) {
+    setActiveCategories((prev) => {
+      const next = new Set(prev);
+      if (next.has(category)) {
+        next.delete(category);
+      } else {
+        next.add(category);
       }
       return next;
     });
@@ -566,9 +627,13 @@ export function DealDatabase() {
         return false;
       }
 
+      if (activeCategories.size > 0 && !activeCategories.has(deal.category)) {
+        return false;
+      }
+
       return true;
     });
-  }, [search, activeSectors]);
+  }, [search, activeSectors, activeCategories]);
 
   return (
     <div className="mx-auto max-w-[1400px] px-4 sm:px-6 py-8">
@@ -588,6 +653,8 @@ export function DealDatabase() {
         onSearchChange={setSearch}
         activeSectors={activeSectors}
         onToggleSector={toggleSector}
+        activeCategories={activeCategories}
+        onToggleCategory={toggleCategory}
       />
       <DealTable filteredDeals={filteredDeals} onSelectDeal={setSelectedDeal} />
 
