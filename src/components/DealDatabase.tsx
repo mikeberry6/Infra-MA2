@@ -6,9 +6,10 @@ import {
   formatDate,
   getSectorColor,
   getCategoryColor,
+  getRegionColor,
   getDealStats,
 } from "@/data/deals";
-import type { Deal, DealSector, DealCategory } from "@/data/deals";
+import type { Deal, DealSector, DealCategory, DealRegion } from "@/data/deals";
 import {
   Search,
   Hash,
@@ -18,6 +19,7 @@ import {
   ExternalLink,
   X,
   ChevronRight,
+  ChevronDown,
   ArrowUpDown,
   Building2,
   Briefcase,
@@ -25,6 +27,7 @@ import {
   Target,
   Calendar,
   Tag,
+  Check,
 } from "lucide-react";
 
 // ─── KPI Cards ──────────────────────────────────────────────
@@ -97,20 +100,192 @@ const CATEGORIES: DealCategory[] = [
   "Joint Venture",
 ];
 
+const REGIONS: DealRegion[] = [
+  "North America",
+  "Europe",
+  "Asia-Pacific",
+  "Middle East & Africa",
+  "Latin America",
+];
+
+// ─── Multi-Select Dropdown ──────────────────────────────────
+function MultiSelectDropdown({
+  label,
+  options,
+  selected,
+  onToggle,
+  getColor,
+}: {
+  label: string;
+  options: string[];
+  selected: Set<string>;
+  onToggle: (value: string) => void;
+  getColor: (value: string) => string;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border text-sm transition-colors ${
+          selected.size > 0
+            ? "border-zinc-600 bg-zinc-800/50 text-zinc-200"
+            : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700"
+        }`}
+      >
+        <span>{label}</span>
+        {selected.size > 0 && (
+          <span className="bg-blue-500/20 text-blue-400 text-xs font-medium px-1.5 py-0.5 rounded">
+            {selected.size}
+          </span>
+        )}
+        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+
+      {isOpen && (
+        <>
+          <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+          <div className="absolute top-full left-0 mt-1 z-50 w-64 max-h-64 overflow-y-auto rounded-lg border border-zinc-800 bg-zinc-900 shadow-xl">
+            {options.map((option) => {
+              const color = getColor(option);
+              const isSelected = selected.has(option);
+              return (
+                <button
+                  key={option}
+                  onClick={() => onToggle(option)}
+                  className={`w-full flex items-center gap-3 px-3 py-2 text-sm text-left transition-colors ${
+                    isSelected ? "bg-zinc-800/50" : "hover:bg-zinc-800/30"
+                  }`}
+                >
+                  <div
+                    className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 ${
+                      isSelected ? "border-blue-500 bg-blue-500" : "border-zinc-600"
+                    }`}
+                  >
+                    {isSelected && <Check className="h-3 w-3 text-white" />}
+                  </div>
+                  <span
+                    className="truncate"
+                    style={{ color: isSelected ? color : undefined }}
+                  >
+                    {option}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+// ─── Active Filters Chips ───────────────────────────────────
+function ActiveFiltersChips({
+  activeSectors,
+  activeRegions,
+  activeCategories,
+  onClearSector,
+  onClearRegion,
+  onClearCategory,
+  onClearAll,
+}: {
+  activeSectors: Set<DealSector>;
+  activeRegions: Set<DealRegion>;
+  activeCategories: Set<DealCategory>;
+  onClearSector: (s: DealSector) => void;
+  onClearRegion: (r: DealRegion) => void;
+  onClearCategory: (c: DealCategory) => void;
+  onClearAll: () => void;
+}) {
+  const totalFilters = activeSectors.size + activeRegions.size + activeCategories.size;
+
+  if (totalFilters === 0) return null;
+
+  return (
+    <div className="flex items-center gap-2 flex-wrap">
+      <span className="text-[11px] font-medium text-zinc-600 uppercase tracking-wider">
+        Active Filters:
+      </span>
+      {Array.from(activeSectors).map((sector) => (
+        <button
+          key={`sector-${sector}`}
+          onClick={() => onClearSector(sector)}
+          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
+          style={{
+            color: getSectorColor(sector),
+            backgroundColor: `${getSectorColor(sector)}15`,
+            border: `1px solid ${getSectorColor(sector)}30`,
+          }}
+        >
+          {sector}
+          <X className="h-3 w-3" />
+        </button>
+      ))}
+      {Array.from(activeRegions).map((region) => (
+        <button
+          key={`region-${region}`}
+          onClick={() => onClearRegion(region)}
+          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
+          style={{
+            color: getRegionColor(region),
+            backgroundColor: `${getRegionColor(region)}15`,
+            border: `1px solid ${getRegionColor(region)}30`,
+          }}
+        >
+          {region}
+          <X className="h-3 w-3" />
+        </button>
+      ))}
+      {Array.from(activeCategories).map((category) => (
+        <button
+          key={`category-${category}`}
+          onClick={() => onClearCategory(category)}
+          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
+          style={{
+            color: getCategoryColor(category),
+            backgroundColor: `${getCategoryColor(category)}15`,
+            border: `1px solid ${getCategoryColor(category)}30`,
+          }}
+        >
+          {category}
+          <X className="h-3 w-3" />
+        </button>
+      ))}
+      {totalFilters > 1 && (
+        <button
+          onClick={onClearAll}
+          className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors ml-1"
+        >
+          Clear all
+        </button>
+      )}
+    </div>
+  );
+}
+
+// ─── Filter Bar ─────────────────────────────────────────────
 function FilterBar({
   search,
   onSearchChange,
   activeSectors,
   onToggleSector,
+  activeRegions,
+  onToggleRegion,
   activeCategories,
   onToggleCategory,
+  onClearAll,
 }: {
   search: string;
   onSearchChange: (v: string) => void;
   activeSectors: Set<DealSector>;
   onToggleSector: (s: DealSector) => void;
+  activeRegions: Set<DealRegion>;
+  onToggleRegion: (r: DealRegion) => void;
   activeCategories: Set<DealCategory>;
   onToggleCategory: (c: DealCategory) => void;
+  onClearAll: () => void;
 }) {
   return (
     <div className="mb-4 space-y-3">
@@ -126,62 +301,87 @@ function FilterBar({
         />
       </div>
 
-      {/* Sector filter pills */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-1 -mb-1" style={{ WebkitOverflowScrolling: "touch" }}>
-        <span className="text-[11px] font-medium text-zinc-600 uppercase tracking-wider mr-1 shrink-0">
-          Sector
-        </span>
-        {SECTORS.map((sector) => (
-          <button
-            key={sector}
-            onClick={() => onToggleSector(sector)}
-            className={`shrink-0 ${
-              activeSectors.has(sector) ? "filter-pill-active" : "filter-pill"
-            }`}
-            style={
-              activeSectors.has(sector)
-                ? {
-                    color: getSectorColor(sector),
-                    borderColor: `${getSectorColor(sector)}66`,
-                    backgroundColor: `${getSectorColor(sector)}15`,
-                  }
-                : undefined
-            }
-          >
-            {sector}
-          </button>
-        ))}
-      </div>
-
-      {/* Category filter pills */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-1 -mb-1" style={{ WebkitOverflowScrolling: "touch" }}>
-        <span className="text-[11px] font-medium text-zinc-600 uppercase tracking-wider mr-1 shrink-0">
-          Type
-        </span>
-        {CATEGORIES.map((category) => {
-          const color = getCategoryColor(category);
-          return (
+      {/* Unified Filter Panel */}
+      <div className="glass-card rounded-lg p-4 space-y-4">
+        {/* Sector filter pills */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 -mb-1" style={{ WebkitOverflowScrolling: "touch" }}>
+          <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider mr-1 shrink-0">
+            Sector
+          </span>
+          {SECTORS.map((sector) => (
             <button
-              key={category}
-              onClick={() => onToggleCategory(category)}
+              key={sector}
+              onClick={() => onToggleSector(sector)}
               className={`shrink-0 ${
-                activeCategories.has(category) ? "filter-pill-active" : "filter-pill"
+                activeSectors.has(sector) ? "filter-pill-active" : "filter-pill"
               }`}
               style={
-                activeCategories.has(category)
+                activeSectors.has(sector)
                   ? {
-                      color: color,
-                      borderColor: `${color}66`,
-                      backgroundColor: `${color}15`,
+                      color: getSectorColor(sector),
+                      borderColor: `${getSectorColor(sector)}66`,
+                      backgroundColor: `${getSectorColor(sector)}15`,
                     }
                   : undefined
               }
             >
-              {category}
+              {sector}
             </button>
-          );
-        })}
+          ))}
+        </div>
+
+        {/* Region filter pills */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 -mb-1" style={{ WebkitOverflowScrolling: "touch" }}>
+          <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider mr-1 shrink-0">
+            Region
+          </span>
+          {REGIONS.map((region) => (
+            <button
+              key={region}
+              onClick={() => onToggleRegion(region)}
+              className={`shrink-0 ${
+                activeRegions.has(region) ? "filter-pill-active" : "filter-pill"
+              }`}
+              style={
+                activeRegions.has(region)
+                  ? {
+                      color: getRegionColor(region),
+                      borderColor: `${getRegionColor(region)}66`,
+                      backgroundColor: `${getRegionColor(region)}15`,
+                    }
+                  : undefined
+              }
+            >
+              {region}
+            </button>
+          ))}
+        </div>
+
+        {/* Type dropdown */}
+        <div className="flex items-center gap-2">
+          <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider mr-1 shrink-0">
+            Type
+          </span>
+          <MultiSelectDropdown
+            label="Select transaction types"
+            options={CATEGORIES}
+            selected={activeCategories as Set<string>}
+            onToggle={(v) => onToggleCategory(v as DealCategory)}
+            getColor={(v) => getCategoryColor(v as DealCategory)}
+          />
+        </div>
       </div>
+
+      {/* Active filters chips */}
+      <ActiveFiltersChips
+        activeSectors={activeSectors}
+        activeRegions={activeRegions}
+        activeCategories={activeCategories}
+        onClearSector={onToggleSector}
+        onClearRegion={onToggleRegion}
+        onClearCategory={onToggleCategory}
+        onClearAll={onClearAll}
+      />
     </div>
   );
 }
@@ -589,6 +789,9 @@ export function DealDatabase() {
   const [activeSectors, setActiveSectors] = useState<Set<DealSector>>(
     new Set(),
   );
+  const [activeRegions, setActiveRegions] = useState<Set<DealRegion>>(
+    new Set(),
+  );
   const [activeCategories, setActiveCategories] = useState<Set<DealCategory>>(
     new Set(),
   );
@@ -606,6 +809,18 @@ export function DealDatabase() {
     });
   }
 
+  function toggleRegion(region: DealRegion) {
+    setActiveRegions((prev) => {
+      const next = new Set(prev);
+      if (next.has(region)) {
+        next.delete(region);
+      } else {
+        next.add(region);
+      }
+      return next;
+    });
+  }
+
   function toggleCategory(category: DealCategory) {
     setActiveCategories((prev) => {
       const next = new Set(prev);
@@ -616,6 +831,12 @@ export function DealDatabase() {
       }
       return next;
     });
+  }
+
+  function clearAllFilters() {
+    setActiveSectors(new Set());
+    setActiveRegions(new Set());
+    setActiveCategories(new Set());
   }
 
   const filteredDeals = useMemo(() => {
@@ -636,13 +857,17 @@ export function DealDatabase() {
         return false;
       }
 
+      if (activeRegions.size > 0 && !activeRegions.has(deal.region)) {
+        return false;
+      }
+
       if (activeCategories.size > 0 && !activeCategories.has(deal.category)) {
         return false;
       }
 
       return true;
     });
-  }, [search, activeSectors, activeCategories]);
+  }, [search, activeSectors, activeRegions, activeCategories]);
 
   return (
     <div className="mx-auto max-w-[1400px] px-4 sm:px-6 py-8">
@@ -662,8 +887,11 @@ export function DealDatabase() {
         onSearchChange={setSearch}
         activeSectors={activeSectors}
         onToggleSector={toggleSector}
+        activeRegions={activeRegions}
+        onToggleRegion={toggleRegion}
         activeCategories={activeCategories}
         onToggleCategory={toggleCategory}
+        onClearAll={clearAllFilters}
       />
       <DealTable filteredDeals={filteredDeals} onSelectDeal={setSelectedDeal} />
 
