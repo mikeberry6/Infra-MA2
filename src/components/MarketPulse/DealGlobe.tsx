@@ -1,448 +1,402 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
-import {
-  deals,
-  getSectorColor,
-  getRecentDeals,
-  getDealStats,
-} from "@/data/deals";
-import type { Deal, DealRegion } from "@/data/deals";
+import { useMemo } from "react";
+import { getRecentDeals, getDealStats, getSectorColor } from "@/data/deals";
+import type { DealRegion } from "@/data/deals";
 
-// Region coordinates on our stylized map (x, y as percentages)
-const REGION_COORDS: Record<DealRegion, { x: number; y: number }> = {
-  "North America": { x: 22, y: 35 },
-  "Europe": { x: 48, y: 28 },
-  "Asia-Pacific": { x: 78, y: 38 },
-  "Middle East & Africa": { x: 55, y: 50 },
-  "Latin America": { x: 28, y: 62 },
+// Convert lat/lng to x,y on a sphere projection
+function latLngToSphere(
+  lat: number,
+  lng: number,
+  cx: number,
+  cy: number,
+  radius: number
+): { x: number; y: number; visible: boolean } {
+  // Convert to radians
+  const latRad = (lat * Math.PI) / 180;
+  const lngRad = ((lng + 20) * Math.PI) / 180; // Rotate to show Americas and Europe
+
+  // Orthographic projection
+  const x = cx + radius * Math.cos(latRad) * Math.sin(lngRad);
+  const y = cy - radius * Math.sin(latRad);
+  const z = Math.cos(latRad) * Math.cos(lngRad);
+
+  return { x, y, visible: z > -0.1 };
+}
+
+// Region approximate coordinates (lat, lng)
+const REGION_LOCATIONS: Record<DealRegion, { lat: number; lng: number }> = {
+  "North America": { lat: 40, lng: -100 },
+  Europe: { lat: 50, lng: 10 },
+  "Asia-Pacific": { lat: 35, lng: 120 },
+  "Middle East & Africa": { lat: 25, lng: 30 },
+  "Latin America": { lat: -15, lng: -60 },
 };
 
-// Slight variations for deals in same region
-function getJitteredPosition(region: DealRegion, index: number) {
-  const base = REGION_COORDS[region];
-  const angle = (index * 137.5) % 360; // Golden angle for nice distribution
-  const radius = 3 + (index % 3) * 2;
-  return {
-    x: base.x + Math.cos((angle * Math.PI) / 180) * radius,
-    y: base.y + Math.sin((angle * Math.PI) / 180) * radius,
-  };
+// Generate globe grid lines
+function generateGraticule(
+  cx: number,
+  cy: number,
+  radius: number
+): string[] {
+  const paths: string[] = [];
+
+  // Latitude lines (every 30 degrees)
+  for (let lat = -60; lat <= 60; lat += 30) {
+    let path = "";
+    for (let lng = -180; lng <= 180; lng += 5) {
+      const { x, y, visible } = latLngToSphere(lat, lng, cx, cy, radius);
+      if (visible) {
+        path += path === "" ? `M ${x} ${y}` : ` L ${x} ${y}`;
+      } else if (path !== "") {
+        paths.push(path);
+        path = "";
+      }
+    }
+    if (path) paths.push(path);
+  }
+
+  // Longitude lines (every 30 degrees)
+  for (let lng = -180; lng < 180; lng += 30) {
+    let path = "";
+    for (let lat = -90; lat <= 90; lat += 5) {
+      const { x, y, visible } = latLngToSphere(lat, lng, cx, cy, radius);
+      if (visible) {
+        path += path === "" ? `M ${x} ${y}` : ` L ${x} ${y}`;
+      } else if (path !== "") {
+        paths.push(path);
+        path = "";
+      }
+    }
+    if (path) paths.push(path);
+  }
+
+  return paths;
 }
 
-// Connection arc between two points
-function ConnectionArc({
-  from,
-  to,
-  color,
-  delay,
-}: {
-  from: { x: number; y: number };
-  to: { x: number; y: number };
-  color: string;
-  delay: number;
-}) {
-  // Calculate control point for curved arc
-  const midX = (from.x + to.x) / 2;
-  const midY = (from.y + to.y) / 2;
-  const distance = Math.sqrt(
-    Math.pow(to.x - from.x, 2) + Math.pow(to.y - from.y, 2)
-  );
-  const curveHeight = distance * 0.3;
+// Simplified continent outlines (key points for each continent)
+const CONTINENTS: Array<{ name: string; points: Array<{ lat: number; lng: number }> }> = [
+  {
+    name: "North America",
+    points: [
+      { lat: 50, lng: -125 }, { lat: 55, lng: -130 }, { lat: 65, lng: -165 },
+      { lat: 70, lng: -160 }, { lat: 72, lng: -130 }, { lat: 70, lng: -100 },
+      { lat: 60, lng: -95 }, { lat: 55, lng: -80 }, { lat: 45, lng: -65 },
+      { lat: 35, lng: -75 }, { lat: 30, lng: -85 }, { lat: 25, lng: -80 },
+      { lat: 25, lng: -100 }, { lat: 20, lng: -105 }, { lat: 30, lng: -115 },
+      { lat: 35, lng: -120 }, { lat: 45, lng: -125 }, { lat: 50, lng: -125 },
+    ],
+  },
+  {
+    name: "South America",
+    points: [
+      { lat: 10, lng: -75 }, { lat: 5, lng: -80 }, { lat: -5, lng: -80 },
+      { lat: -15, lng: -75 }, { lat: -20, lng: -70 }, { lat: -35, lng: -70 },
+      { lat: -50, lng: -75 }, { lat: -55, lng: -70 }, { lat: -55, lng: -65 },
+      { lat: -40, lng: -62 }, { lat: -35, lng: -55 }, { lat: -25, lng: -50 },
+      { lat: -20, lng: -40 }, { lat: -5, lng: -35 }, { lat: 5, lng: -50 },
+      { lat: 10, lng: -65 }, { lat: 10, lng: -75 },
+    ],
+  },
+  {
+    name: "Europe",
+    points: [
+      { lat: 70, lng: -10 }, { lat: 60, lng: -10 }, { lat: 50, lng: -10 },
+      { lat: 45, lng: 0 }, { lat: 38, lng: -5 }, { lat: 36, lng: 0 },
+      { lat: 40, lng: 5 }, { lat: 42, lng: 10 }, { lat: 40, lng: 15 },
+      { lat: 42, lng: 20 }, { lat: 40, lng: 25 }, { lat: 42, lng: 30 },
+      { lat: 45, lng: 35 }, { lat: 50, lng: 40 }, { lat: 55, lng: 40 },
+      { lat: 60, lng: 30 }, { lat: 65, lng: 25 }, { lat: 70, lng: 30 },
+      { lat: 70, lng: -10 },
+    ],
+  },
+  {
+    name: "Africa",
+    points: [
+      { lat: 35, lng: -5 }, { lat: 30, lng: 10 }, { lat: 32, lng: 30 },
+      { lat: 25, lng: 35 }, { lat: 15, lng: 40 }, { lat: 10, lng: 45 },
+      { lat: 0, lng: 42 }, { lat: -10, lng: 40 }, { lat: -20, lng: 35 },
+      { lat: -30, lng: 30 }, { lat: -35, lng: 20 }, { lat: -30, lng: 18 },
+      { lat: -20, lng: 15 }, { lat: -10, lng: 12 }, { lat: 0, lng: 10 },
+      { lat: 5, lng: 0 }, { lat: 10, lng: -10 }, { lat: 15, lng: -15 },
+      { lat: 25, lng: -15 }, { lat: 35, lng: -5 },
+    ],
+  },
+  {
+    name: "Asia",
+    points: [
+      { lat: 70, lng: 70 }, { lat: 65, lng: 100 }, { lat: 70, lng: 140 },
+      { lat: 65, lng: 170 }, { lat: 60, lng: 160 }, { lat: 55, lng: 140 },
+      { lat: 45, lng: 140 }, { lat: 35, lng: 130 }, { lat: 30, lng: 120 },
+      { lat: 20, lng: 110 }, { lat: 10, lng: 105 }, { lat: 5, lng: 100 },
+      { lat: 10, lng: 80 }, { lat: 20, lng: 70 }, { lat: 25, lng: 60 },
+      { lat: 30, lng: 50 }, { lat: 40, lng: 45 }, { lat: 45, lng: 50 },
+      { lat: 50, lng: 55 }, { lat: 55, lng: 60 }, { lat: 60, lng: 70 },
+      { lat: 70, lng: 70 },
+    ],
+  },
+  {
+    name: "Australia",
+    points: [
+      { lat: -15, lng: 130 }, { lat: -20, lng: 145 }, { lat: -30, lng: 150 },
+      { lat: -35, lng: 140 }, { lat: -35, lng: 135 }, { lat: -30, lng: 130 },
+      { lat: -25, lng: 115 }, { lat: -20, lng: 115 }, { lat: -15, lng: 125 },
+      { lat: -15, lng: 130 },
+    ],
+  },
+];
 
-  // Perpendicular offset for curve
-  const dx = to.x - from.x;
-  const dy = to.y - from.y;
-  const perpX = -dy / distance;
-  const perpY = dx / distance;
+function generateContinentPath(
+  points: Array<{ lat: number; lng: number }>,
+  cx: number,
+  cy: number,
+  radius: number
+): string {
+  let path = "";
+  let lastVisible = false;
 
-  const controlX = midX + perpX * curveHeight;
-  const controlY = midY + perpY * curveHeight - curveHeight * 0.5;
+  points.forEach((point, i) => {
+    const { x, y, visible } = latLngToSphere(point.lat, point.lng, cx, cy, radius);
+    if (visible) {
+      if (!lastVisible || i === 0) {
+        path += `M ${x} ${y}`;
+      } else {
+        path += ` L ${x} ${y}`;
+      }
+      lastVisible = true;
+    } else {
+      lastVisible = false;
+    }
+  });
 
-  const pathD = `M ${from.x} ${from.y} Q ${controlX} ${controlY} ${to.x} ${to.y}`;
-
-  return (
-    <g className="arc-group" style={{ animationDelay: `${delay}ms` }}>
-      {/* Glow layer */}
-      <path
-        d={pathD}
-        fill="none"
-        stroke={color}
-        strokeWidth="2"
-        strokeOpacity="0.15"
-        filter="url(#arcGlow)"
-        className="animate-arc-draw"
-        style={{ animationDelay: `${delay}ms` }}
-      />
-      {/* Main arc */}
-      <path
-        d={pathD}
-        fill="none"
-        stroke={color}
-        strokeWidth="0.8"
-        strokeOpacity="0.6"
-        strokeLinecap="round"
-        className="animate-arc-draw"
-        style={{ animationDelay: `${delay}ms` }}
-      />
-      {/* Traveling dot */}
-      <circle r="1.5" fill={color} className="animate-travel-dot" style={{ animationDelay: `${delay + 500}ms` }}>
-        <animateMotion dur="2s" repeatCount="indefinite" begin={`${delay + 500}ms`}>
-          <mpath href={`#path-${delay}`} />
-        </animateMotion>
-      </circle>
-      <path id={`path-${delay}`} d={pathD} fill="none" stroke="none" />
-    </g>
-  );
-}
-
-// Pulsing deal dot
-function DealDot({
-  deal,
-  position,
-  index,
-  isRecent,
-  onHover,
-  onLeave,
-  isHovered,
-}: {
-  deal: Deal;
-  position: { x: number; y: number };
-  index: number;
-  isRecent: boolean;
-  onHover: () => void;
-  onLeave: () => void;
-  isHovered: boolean;
-}) {
-  const color = getSectorColor(deal.sector);
-  const delay = index * 100;
-
-  return (
-    <g
-      className="deal-dot cursor-pointer"
-      style={{ animationDelay: `${delay}ms` }}
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
-    >
-      {/* Outer pulse ring - only for recent deals */}
-      {isRecent && (
-        <circle
-          cx={position.x}
-          cy={position.y}
-          r="6"
-          fill="none"
-          stroke={color}
-          strokeWidth="1"
-          className="animate-ping-slow"
-          style={{ animationDelay: `${delay}ms` }}
-        />
-      )}
-      {/* Glow */}
-      <circle
-        cx={position.x}
-        cy={position.y}
-        r={isHovered ? 5 : 3}
-        fill={color}
-        filter="url(#dotGlow)"
-        opacity={isHovered ? 1 : 0.8}
-        className="transition-all duration-200"
-      />
-      {/* Core dot */}
-      <circle
-        cx={position.x}
-        cy={position.y}
-        r={isHovered ? 3 : 1.5}
-        fill="#fff"
-        opacity={isHovered ? 1 : 0.9}
-        className="transition-all duration-200"
-      />
-    </g>
-  );
-}
-
-// Tooltip component
-function Tooltip({
-  deal,
-  position,
-}: {
-  deal: Deal;
-  position: { x: number; y: number };
-}) {
-  const color = getSectorColor(deal.sector);
-
-  return (
-    <foreignObject
-      x={position.x + 8}
-      y={position.y - 30}
-      width="200"
-      height="80"
-      className="pointer-events-none"
-    >
-      <div className="bg-zinc-900/95 backdrop-blur-sm border border-zinc-700 rounded-lg p-2.5 shadow-2xl animate-fade-in">
-        <div className="flex items-center gap-2 mb-1">
-          <div
-            className="w-2 h-2 rounded-full"
-            style={{ backgroundColor: color }}
-          />
-          <span className="text-[10px] font-medium" style={{ color }}>
-            {deal.sector}
-          </span>
-        </div>
-        <p className="text-xs text-zinc-200 font-medium leading-tight line-clamp-2">
-          {deal.title.length > 60 ? deal.title.slice(0, 60) + "..." : deal.title}
-        </p>
-        <p className="text-[10px] text-zinc-500 mt-1">{deal.buyer}</p>
-      </div>
-    </foreignObject>
-  );
+  return path;
 }
 
 export function DealGlobe() {
-  const [hoveredDeal, setHoveredDeal] = useState<Deal | null>(null);
-  const [hoveredPosition, setHoveredPosition] = useState<{ x: number; y: number } | null>(null);
   const stats = getDealStats();
   const recentDeals = getRecentDeals();
 
-  // Get positions for all deals
+  const cx = 150;
+  const cy = 150;
+  const radius = 120;
+
+  // Generate grid lines
+  const graticule = useMemo(() => generateGraticule(cx, cy, radius), []);
+
+  // Generate continent paths
+  const continentPaths = useMemo(
+    () =>
+      CONTINENTS.map((c) => ({
+        name: c.name,
+        path: generateContinentPath(c.points, cx, cy, radius),
+      })),
+    []
+  );
+
+  // Position deals on globe
   const dealPositions = useMemo(() => {
     const regionCounts: Record<string, number> = {};
-    return recentDeals.map((deal) => {
+
+    return recentDeals.slice(0, 20).map((deal) => {
       const count = regionCounts[deal.region] || 0;
       regionCounts[deal.region] = count + 1;
+
+      const baseCoords = REGION_LOCATIONS[deal.region];
+      // Add jitter for multiple deals in same region
+      const jitterLat = (Math.random() - 0.5) * 15;
+      const jitterLng = (Math.random() - 0.5) * 20;
+
+      const pos = latLngToSphere(
+        baseCoords.lat + jitterLat,
+        baseCoords.lng + jitterLng,
+        cx,
+        cy,
+        radius
+      );
+
       return {
         deal,
-        position: getJitteredPosition(deal.region, count),
-        isRecent: recentDeals.indexOf(deal) < 5,
+        ...pos,
+        color: getSectorColor(deal.sector),
       };
     });
   }, [recentDeals]);
 
-  // Generate some cross-region arcs (for visual effect - showing deal flow)
-  const arcs = useMemo(() => {
-    const connections: Array<{
-      from: { x: number; y: number };
-      to: { x: number; y: number };
-      color: string;
-    }> = [];
-
-    // Create arcs between regions with deals
-    const regions = Object.keys(REGION_COORDS) as DealRegion[];
-    for (let i = 0; i < 4; i++) {
-      const fromRegion = regions[i % regions.length];
-      const toRegion = regions[(i + 1) % regions.length];
-      const deal = recentDeals.find((d) => d.region === fromRegion);
-      if (deal) {
-        connections.push({
-          from: REGION_COORDS[fromRegion],
-          to: REGION_COORDS[toRegion],
-          color: getSectorColor(deal.sector),
-        });
-      }
-    }
-    return connections;
-  }, [recentDeals]);
-
   return (
-    <div className="relative w-full rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-950">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/50 via-transparent to-zinc-900/80" />
+    <div className="relative w-full rounded-2xl overflow-hidden border border-zinc-800/50 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black">
+      {/* Stars background */}
+      <div className="absolute inset-0">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-px h-px bg-white rounded-full opacity-40"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+      </div>
 
-      {/* Grid lines for depth */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `
-          linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-        `,
-        backgroundSize: '40px 40px',
-      }} />
-
-      <svg
-        viewBox="0 0 100 70"
-        className="w-full h-auto"
-        style={{ minHeight: "300px" }}
-      >
+      <svg viewBox="0 0 300 300" className="w-full h-auto" style={{ minHeight: "350px" }}>
         <defs>
-          {/* Glow filters */}
-          <filter id="dotGlow" x="-100%" y="-100%" width="300%" height="300%">
-            <feGaussianBlur stdDeviation="2" result="blur" />
+          {/* Globe gradient - gives 3D depth */}
+          <radialGradient id="globeGradient" cx="35%" cy="35%" r="60%">
+            <stop offset="0%" stopColor="#1e3a5f" />
+            <stop offset="50%" stopColor="#0f172a" />
+            <stop offset="100%" stopColor="#020617" />
+          </radialGradient>
+
+          {/* Atmosphere glow */}
+          <radialGradient id="atmosphereGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="85%" stopColor="transparent" />
+            <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.3" />
+          </radialGradient>
+
+          {/* Outer glow */}
+          <filter id="outerGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="8" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
-          <filter id="arcGlow" x="-50%" y="-50%" width="200%" height="200%">
+
+          {/* Deal dot glow */}
+          <filter id="dealGlow" x="-200%" y="-200%" width="500%" height="500%">
             <feGaussianBlur stdDeviation="3" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
-          <filter id="regionGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="8" result="blur" />
-          </filter>
 
-          {/* Gradient for map */}
-          <radialGradient id="mapGradient" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="rgba(59, 130, 246, 0.05)" />
-            <stop offset="100%" stopColor="transparent" />
-          </radialGradient>
+          {/* Clip for globe contents */}
+          <clipPath id="globeClip">
+            <circle cx={cx} cy={cy} r={radius} />
+          </clipPath>
         </defs>
 
-        {/* Stylized world map outline - simplified continents */}
-        <g className="map-outlines" opacity="0.15">
-          {/* North America */}
-          <path
-            d="M10,20 Q15,15 25,18 Q35,20 30,35 Q25,45 15,40 Q8,35 10,20"
-            fill="none"
-            stroke="#3b82f6"
-            strokeWidth="0.3"
-          />
-          {/* South America */}
-          <path
-            d="M22,50 Q30,48 32,55 Q35,65 28,70 Q20,68 22,50"
-            fill="none"
-            stroke="#3b82f6"
-            strokeWidth="0.3"
-          />
-          {/* Europe */}
-          <path
-            d="M42,18 Q50,15 55,20 Q52,30 45,32 Q40,28 42,18"
-            fill="none"
-            stroke="#3b82f6"
-            strokeWidth="0.3"
-          />
-          {/* Africa */}
-          <path
-            d="M45,35 Q55,33 58,45 Q55,60 48,62 Q42,55 45,35"
-            fill="none"
-            stroke="#3b82f6"
-            strokeWidth="0.3"
-          />
-          {/* Asia */}
-          <path
-            d="M58,15 Q75,12 88,20 Q90,35 80,42 Q70,45 60,35 Q55,25 58,15"
-            fill="none"
-            stroke="#3b82f6"
-            strokeWidth="0.3"
-          />
-          {/* Australia */}
-          <path
-            d="M78,52 Q88,50 90,58 Q85,65 78,62 Q75,57 78,52"
-            fill="none"
-            stroke="#3b82f6"
-            strokeWidth="0.3"
-          />
+        {/* Outer atmosphere glow */}
+        <circle
+          cx={cx}
+          cy={cy}
+          r={radius + 15}
+          fill="url(#atmosphereGlow)"
+          className="animate-pulse-slow"
+        />
+
+        {/* Globe base */}
+        <circle
+          cx={cx}
+          cy={cy}
+          r={radius}
+          fill="url(#globeGradient)"
+          stroke="#1e40af"
+          strokeWidth="0.5"
+          strokeOpacity="0.3"
+        />
+
+        {/* Globe contents (clipped) */}
+        <g clipPath="url(#globeClip)">
+          {/* Grid lines */}
+          {graticule.map((path, i) => (
+            <path
+              key={`grid-${i}`}
+              d={path}
+              fill="none"
+              stroke="#3b82f6"
+              strokeWidth="0.3"
+              strokeOpacity="0.15"
+            />
+          ))}
+
+          {/* Continents */}
+          {continentPaths.map((c) => (
+            <path
+              key={c.name}
+              d={c.path}
+              fill="#1e3a5f"
+              fillOpacity="0.6"
+              stroke="#3b82f6"
+              strokeWidth="0.8"
+              strokeOpacity="0.5"
+            />
+          ))}
+
+          {/* Deal dots */}
+          {dealPositions
+            .filter((d) => d.visible)
+            .map((d, i) => (
+              <g key={d.deal.id}>
+                {/* Glow */}
+                <circle
+                  cx={d.x}
+                  cy={d.y}
+                  r={6}
+                  fill={d.color}
+                  filter="url(#dealGlow)"
+                  opacity={0.6}
+                />
+                {/* Pulse ring */}
+                <circle
+                  cx={d.x}
+                  cy={d.y}
+                  r={4}
+                  fill="none"
+                  stroke={d.color}
+                  strokeWidth="1"
+                  opacity={0.8}
+                  className="animate-ping-slow"
+                  style={{ animationDelay: `${i * 200}ms` }}
+                />
+                {/* Core dot */}
+                <circle cx={d.x} cy={d.y} r={2.5} fill={d.color} opacity={0.9} />
+                <circle cx={d.x} cy={d.y} r={1} fill="#fff" opacity={0.9} />
+              </g>
+            ))}
         </g>
 
-        {/* Region hotspots - glowing areas */}
-        {Object.entries(REGION_COORDS).map(([region, pos]) => {
-          const regionDeals = recentDeals.filter((d) => d.region === region);
-          const intensity = regionDeals.length / recentDeals.length;
-          const dominantSector = regionDeals[0]?.sector;
-          const color = dominantSector ? getSectorColor(dominantSector) : "#3b82f6";
-
-          return (
-            <circle
-              key={region}
-              cx={pos.x}
-              cy={pos.y}
-              r={12 + intensity * 8}
-              fill={color}
-              filter="url(#regionGlow)"
-              opacity={0.1 + intensity * 0.15}
-              className="animate-pulse-slow"
-            />
-          );
-        })}
-
-        {/* Connection arcs */}
-        {arcs.map((arc, i) => (
-          <ConnectionArc
-            key={i}
-            from={arc.from}
-            to={arc.to}
-            color={arc.color}
-            delay={i * 800}
-          />
-        ))}
-
-        {/* Deal dots */}
-        {dealPositions.map(({ deal, position, isRecent }, i) => (
-          <DealDot
-            key={deal.id}
-            deal={deal}
-            position={position}
-            index={i}
-            isRecent={isRecent}
-            isHovered={hoveredDeal?.id === deal.id}
-            onHover={() => {
-              setHoveredDeal(deal);
-              setHoveredPosition(position);
-            }}
-            onLeave={() => {
-              setHoveredDeal(null);
-              setHoveredPosition(null);
-            }}
-          />
-        ))}
-
-        {/* Tooltip */}
-        {hoveredDeal && hoveredPosition && (
-          <Tooltip deal={hoveredDeal} position={hoveredPosition} />
-        )}
-
-        {/* Region labels */}
-        {Object.entries(REGION_COORDS).map(([region, pos]) => {
-          const regionDeals = recentDeals.filter((d) => d.region === region);
-          return (
-            <g key={`label-${region}`}>
-              <text
-                x={pos.x}
-                y={pos.y + 15}
-                textAnchor="middle"
-                className="fill-zinc-600 text-[2.5px] font-medium uppercase tracking-wider"
-              >
-                {region.split(" ")[0]}
-              </text>
-              <text
-                x={pos.x}
-                y={pos.y + 18}
-                textAnchor="middle"
-                className="fill-zinc-500 text-[2px] font-mono"
-              >
-                {regionDeals.length} deals
-              </text>
-            </g>
-          );
-        })}
+        {/* Specular highlight (makes it look 3D) */}
+        <ellipse
+          cx={cx - 35}
+          cy={cy - 40}
+          rx={40}
+          ry={25}
+          fill="white"
+          opacity="0.03"
+        />
       </svg>
 
       {/* Stats overlay */}
-      <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
-        <div>
-          <p className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider mb-1">
-            Global Deal Activity
-          </p>
-          <p className="text-2xl font-semibold text-zinc-100">
-            <span className="mono">{stats.totalCount}</span>
-            <span className="text-sm text-zinc-500 ml-2">deals tracked</span>
-          </p>
-        </div>
-        <div className="text-right">
-          <p className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider mb-1">
-            January 2026
-          </p>
-          <div className="flex items-center gap-2">
-            {Object.entries(stats.sectorCounts)
-              .sort(([, a], [, b]) => b - a)
-              .slice(0, 4)
-              .map(([sector]) => (
-                <div
-                  key={sector}
-                  className="w-2 h-2 rounded-full"
-                  style={{ backgroundColor: getSectorColor(sector as any) }}
-                  title={sector}
-                />
-              ))}
+      <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
+        <div className="flex items-end justify-between">
+          <div>
+            <p className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider mb-1">
+              Global Deal Activity
+            </p>
+            <p className="text-3xl font-semibold text-zinc-100">
+              <span className="mono">{stats.totalCount}</span>
+              <span className="text-base text-zinc-500 ml-2">deals tracked</span>
+            </p>
+          </div>
+          <div className="text-right">
+            <p className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider mb-2">
+              January 2026
+            </p>
+            <div className="flex items-center gap-1.5">
+              {Object.entries(stats.sectorCounts)
+                .sort(([, a], [, b]) => b - a)
+                .slice(0, 5)
+                .map(([sector]) => (
+                  <div
+                    key={sector}
+                    className="w-2.5 h-2.5 rounded-full"
+                    style={{ backgroundColor: getSectorColor(sector as any) }}
+                    title={sector}
+                  />
+                ))}
+            </div>
           </div>
         </div>
       </div>

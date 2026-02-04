@@ -2,177 +2,212 @@
 
 import { useMemo } from "react";
 import {
-  deals,
-  getSectorColor,
   getRecentDeals,
   getDealStats,
+  getSectorColor,
   getRegionStats,
 } from "@/data/deals";
 import type { DealRegion } from "@/data/deals";
 
-// Region coordinates on our stylized map (x, y as percentages)
-const REGION_COORDS: Record<DealRegion, { x: number; y: number }> = {
-  "North America": { x: 22, y: 35 },
-  "Europe": { x: 48, y: 28 },
-  "Asia-Pacific": { x: 78, y: 38 },
-  "Middle East & Africa": { x: 55, y: 50 },
-  "Latin America": { x: 28, y: 62 },
+// Convert lat/lng to x,y on a sphere projection
+function latLngToSphere(
+  lat: number,
+  lng: number,
+  cx: number,
+  cy: number,
+  radius: number
+): { x: number; y: number; visible: boolean } {
+  const latRad = (lat * Math.PI) / 180;
+  const lngRad = ((lng + 20) * Math.PI) / 180;
+
+  const x = cx + radius * Math.cos(latRad) * Math.sin(lngRad);
+  const y = cy - radius * Math.sin(latRad);
+  const z = Math.cos(latRad) * Math.cos(lngRad);
+
+  return { x, y, visible: z > -0.1 };
+}
+
+const REGION_LOCATIONS: Record<DealRegion, { lat: number; lng: number }> = {
+  "North America": { lat: 40, lng: -100 },
+  Europe: { lat: 50, lng: 10 },
+  "Asia-Pacific": { lat: 35, lng: 120 },
+  "Middle East & Africa": { lat: 25, lng: 30 },
+  "Latin America": { lat: -15, lng: -60 },
 };
+
+// Simplified continent paths for compact view
+const SIMPLE_CONTINENTS = [
+  { name: "NAmerica", points: [{ lat: 45, lng: -100 }, { lat: 35, lng: -80 }, { lat: 25, lng: -100 }, { lat: 35, lng: -120 }, { lat: 45, lng: -100 }] },
+  { name: "SAmerica", points: [{ lat: 5, lng: -60 }, { lat: -10, lng: -50 }, { lat: -30, lng: -60 }, { lat: -20, lng: -70 }, { lat: 5, lng: -60 }] },
+  { name: "Europe", points: [{ lat: 55, lng: 10 }, { lat: 45, lng: 0 }, { lat: 40, lng: 20 }, { lat: 50, lng: 30 }, { lat: 55, lng: 10 }] },
+  { name: "Africa", points: [{ lat: 30, lng: 10 }, { lat: 0, lng: 20 }, { lat: -30, lng: 25 }, { lat: 10, lng: 40 }, { lat: 30, lng: 10 }] },
+  { name: "Asia", points: [{ lat: 50, lng: 80 }, { lat: 30, lng: 120 }, { lat: 20, lng: 100 }, { lat: 40, lng: 60 }, { lat: 50, lng: 80 }] },
+];
+
+function generateSimplePath(
+  points: Array<{ lat: number; lng: number }>,
+  cx: number,
+  cy: number,
+  radius: number
+): string {
+  let path = "";
+  points.forEach((point, i) => {
+    const { x, y, visible } = latLngToSphere(point.lat, point.lng, cx, cy, radius);
+    if (visible) {
+      path += i === 0 ? `M ${x} ${y}` : ` L ${x} ${y}`;
+    }
+  });
+  return path;
+}
 
 export function DealGlobeCompact() {
   const stats = getDealStats();
   const regionStats = getRegionStats();
   const recentDeals = getRecentDeals();
 
-  // Calculate region intensities
-  const regionIntensities = useMemo(() => {
-    const counts: Record<string, number> = {};
-    recentDeals.forEach((deal) => {
-      counts[deal.region] = (counts[deal.region] || 0) + 1;
+  const cx = 80;
+  const cy = 80;
+  const radius = 65;
+
+  const continentPaths = useMemo(
+    () => SIMPLE_CONTINENTS.map((c) => ({
+      name: c.name,
+      path: generateSimplePath(c.points, cx, cy, radius),
+    })),
+    []
+  );
+
+  const dealPositions = useMemo(() => {
+    return recentDeals.slice(0, 12).map((deal) => {
+      const baseCoords = REGION_LOCATIONS[deal.region];
+      const jitterLat = (Math.random() - 0.5) * 10;
+      const jitterLng = (Math.random() - 0.5) * 15;
+
+      const pos = latLngToSphere(
+        baseCoords.lat + jitterLat,
+        baseCoords.lng + jitterLng,
+        cx,
+        cy,
+        radius
+      );
+
+      return {
+        deal,
+        ...pos,
+        color: getSectorColor(deal.sector),
+      };
     });
-    return counts;
   }, [recentDeals]);
 
   return (
     <div className="glass-card-elevated rounded-xl overflow-hidden">
       <div className="flex flex-col lg:flex-row">
         {/* Globe visualization */}
-        <div className="relative flex-1 min-h-[200px] bg-zinc-950">
-          {/* Grid background */}
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-            `,
-              backgroundSize: "30px 30px",
-            }}
-          />
-
-          <svg viewBox="0 0 100 70" className="w-full h-full">
+        <div className="relative flex-1 min-h-[180px] bg-gradient-to-br from-zinc-900 via-zinc-950 to-black flex items-center justify-center p-4">
+          <svg viewBox="0 0 160 160" className="w-full max-w-[200px] h-auto">
             <defs>
-              <filter
-                id="compactGlow"
-                x="-50%"
-                y="-50%"
-                width="200%"
-                height="200%"
-              >
-                <feGaussianBlur stdDeviation="4" result="blur" />
-              </filter>
-              <filter
-                id="compactDotGlow"
-                x="-100%"
-                y="-100%"
-                width="300%"
-                height="300%"
-              >
-                <feGaussianBlur stdDeviation="1.5" result="blur" />
+              <radialGradient id="compactGlobeGradient" cx="35%" cy="35%" r="60%">
+                <stop offset="0%" stopColor="#1e3a5f" />
+                <stop offset="50%" stopColor="#0f172a" />
+                <stop offset="100%" stopColor="#020617" />
+              </radialGradient>
+              <radialGradient id="compactAtmosphere" cx="50%" cy="50%" r="50%">
+                <stop offset="80%" stopColor="transparent" />
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.25" />
+              </radialGradient>
+              <filter id="compactDealGlow" x="-200%" y="-200%" width="500%" height="500%">
+                <feGaussianBlur stdDeviation="2" result="blur" />
                 <feMerge>
                   <feMergeNode in="blur" />
                   <feMergeNode in="SourceGraphic" />
                 </feMerge>
               </filter>
+              <clipPath id="compactGlobeClip">
+                <circle cx={cx} cy={cy} r={radius} />
+              </clipPath>
             </defs>
 
-            {/* Simplified map outlines */}
-            <g className="map-outlines" opacity="0.1">
-              <path
-                d="M10,20 Q15,15 25,18 Q35,20 30,35 Q25,45 15,40 Q8,35 10,20"
-                fill="none"
-                stroke="#3b82f6"
-                strokeWidth="0.3"
-              />
-              <path
-                d="M22,50 Q30,48 32,55 Q35,65 28,70 Q20,68 22,50"
-                fill="none"
-                stroke="#3b82f6"
-                strokeWidth="0.3"
-              />
-              <path
-                d="M42,18 Q50,15 55,20 Q52,30 45,32 Q40,28 42,18"
-                fill="none"
-                stroke="#3b82f6"
-                strokeWidth="0.3"
-              />
-              <path
-                d="M45,35 Q55,33 58,45 Q55,60 48,62 Q42,55 45,35"
-                fill="none"
-                stroke="#3b82f6"
-                strokeWidth="0.3"
-              />
-              <path
-                d="M58,15 Q75,12 88,20 Q90,35 80,42 Q70,45 60,35 Q55,25 58,15"
-                fill="none"
-                stroke="#3b82f6"
-                strokeWidth="0.3"
-              />
-              <path
-                d="M78,52 Q88,50 90,58 Q85,65 78,62 Q75,57 78,52"
-                fill="none"
-                stroke="#3b82f6"
-                strokeWidth="0.3"
-              />
+            {/* Atmosphere */}
+            <circle cx={cx} cy={cy} r={radius + 8} fill="url(#compactAtmosphere)" />
+
+            {/* Globe */}
+            <circle
+              cx={cx}
+              cy={cy}
+              r={radius}
+              fill="url(#compactGlobeGradient)"
+              stroke="#1e40af"
+              strokeWidth="0.5"
+              strokeOpacity="0.3"
+            />
+
+            <g clipPath="url(#compactGlobeClip)">
+              {/* Grid lines */}
+              {[-30, 0, 30].map((lat) => {
+                let path = "";
+                for (let lng = -180; lng <= 180; lng += 10) {
+                  const { x, y, visible } = latLngToSphere(lat, lng, cx, cy, radius);
+                  if (visible) path += path === "" ? `M ${x} ${y}` : ` L ${x} ${y}`;
+                }
+                return (
+                  <path
+                    key={`lat-${lat}`}
+                    d={path}
+                    fill="none"
+                    stroke="#3b82f6"
+                    strokeWidth="0.3"
+                    strokeOpacity="0.12"
+                  />
+                );
+              })}
+
+              {/* Continents */}
+              {continentPaths.map((c) => (
+                <path
+                  key={c.name}
+                  d={c.path}
+                  fill="#1e3a5f"
+                  fillOpacity="0.5"
+                  stroke="#3b82f6"
+                  strokeWidth="0.6"
+                  strokeOpacity="0.4"
+                />
+              ))}
+
+              {/* Deal dots */}
+              {dealPositions
+                .filter((d) => d.visible)
+                .map((d, i) => (
+                  <g key={d.deal.id}>
+                    <circle
+                      cx={d.x}
+                      cy={d.y}
+                      r={4}
+                      fill={d.color}
+                      filter="url(#compactDealGlow)"
+                      opacity={0.5}
+                    />
+                    <circle cx={d.x} cy={d.y} r={1.5} fill={d.color} opacity={0.9} />
+                    <circle cx={d.x} cy={d.y} r={0.5} fill="#fff" opacity={0.9} />
+                  </g>
+                ))}
             </g>
 
-            {/* Region hotspots */}
-            {Object.entries(REGION_COORDS).map(([region, pos]) => {
-              const count = regionIntensities[region] || 0;
-              const intensity = count / recentDeals.length;
-              const regionDeals = recentDeals.filter((d) => d.region === region);
-              const dominantSector = regionDeals[0]?.sector;
-              const color = dominantSector
-                ? getSectorColor(dominantSector)
-                : "#3b82f6";
-
-              return (
-                <g key={region}>
-                  {/* Glow */}
-                  <circle
-                    cx={pos.x}
-                    cy={pos.y}
-                    r={8 + intensity * 6}
-                    fill={color}
-                    filter="url(#compactGlow)"
-                    opacity={0.15 + intensity * 0.2}
-                    className="animate-pulse-slow"
-                  />
-                  {/* Dot */}
-                  <circle
-                    cx={pos.x}
-                    cy={pos.y}
-                    r={2 + intensity * 2}
-                    fill={color}
-                    filter="url(#compactDotGlow)"
-                    opacity={0.9}
-                  />
-                  <circle
-                    cx={pos.x}
-                    cy={pos.y}
-                    r={1}
-                    fill="#fff"
-                    opacity={0.9}
-                  />
-                  {/* Label */}
-                  <text
-                    x={pos.x}
-                    y={pos.y + 10}
-                    textAnchor="middle"
-                    className="fill-zinc-500 text-[2px] font-medium"
-                  >
-                    {count}
-                  </text>
-                </g>
-              );
-            })}
+            {/* Highlight */}
+            <ellipse
+              cx={cx - 20}
+              cy={cy - 25}
+              rx={25}
+              ry={15}
+              fill="white"
+              opacity="0.02"
+            />
           </svg>
         </div>
 
         {/* Stats panel */}
-        <div className="lg:w-[280px] p-5 border-t lg:border-t-0 lg:border-l border-zinc-800 flex flex-col justify-center">
+        <div className="lg:w-[260px] p-5 border-t lg:border-t-0 lg:border-l border-zinc-800 flex flex-col justify-center">
           <div className="space-y-4">
-            {/* Deal count */}
             <div>
               <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
                 Global Activity
@@ -185,7 +220,6 @@ export function DealGlobeCompact() {
               </div>
             </div>
 
-            {/* Top region */}
             <div>
               <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
                 Most Active Region
@@ -200,7 +234,6 @@ export function DealGlobeCompact() {
               </div>
             </div>
 
-            {/* Sector breakdown mini */}
             <div>
               <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
                 Sector Mix
