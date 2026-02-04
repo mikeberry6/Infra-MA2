@@ -125,10 +125,10 @@ function MultiSelectDropdown({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative">
+    <div className="relative inline-block">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border text-sm transition-colors ${
+        className={`flex items-center gap-2 px-3 py-2 rounded-lg border text-sm transition-colors whitespace-nowrap ${
           selected.size > 0
             ? "border-zinc-600 bg-zinc-800/50 text-zinc-200"
             : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700"
@@ -145,8 +145,15 @@ function MultiSelectDropdown({
 
       {isOpen && (
         <>
-          <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
-          <div className="absolute top-full left-0 mt-1 z-50 w-64 max-h-64 overflow-y-auto rounded-lg border border-zinc-800 bg-zinc-900 shadow-xl">
+          <div
+            className="fixed inset-0"
+            style={{ zIndex: 9998 }}
+            onClick={() => setIsOpen(false)}
+          />
+          <div
+            className="absolute top-full left-0 mt-1 w-64 max-h-64 overflow-y-auto rounded-lg border border-zinc-800 bg-zinc-900 shadow-xl"
+            style={{ zIndex: 9999 }}
+          >
             {options.map((option) => {
               const color = getColor(option);
               const isSelected = selected.has(option);
@@ -301,75 +308,29 @@ function FilterBar({
         />
       </div>
 
-      {/* Unified Filter Panel */}
-      <div className="glass-card rounded-lg p-4 space-y-4">
-        {/* Sector filter pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 -mb-1" style={{ WebkitOverflowScrolling: "touch" }}>
-          <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider mr-1 shrink-0">
-            Sector
-          </span>
-          {SECTORS.map((sector) => (
-            <button
-              key={sector}
-              onClick={() => onToggleSector(sector)}
-              className={`shrink-0 ${
-                activeSectors.has(sector) ? "filter-pill-active" : "filter-pill"
-              }`}
-              style={
-                activeSectors.has(sector)
-                  ? {
-                      color: getSectorColor(sector),
-                      borderColor: `${getSectorColor(sector)}66`,
-                      backgroundColor: `${getSectorColor(sector)}15`,
-                    }
-                  : undefined
-              }
-            >
-              {sector}
-            </button>
-          ))}
-        </div>
-
-        {/* Region filter pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 -mb-1" style={{ WebkitOverflowScrolling: "touch" }}>
-          <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider mr-1 shrink-0">
-            Region
-          </span>
-          {REGIONS.map((region) => (
-            <button
-              key={region}
-              onClick={() => onToggleRegion(region)}
-              className={`shrink-0 ${
-                activeRegions.has(region) ? "filter-pill-active" : "filter-pill"
-              }`}
-              style={
-                activeRegions.has(region)
-                  ? {
-                      color: getRegionColor(region),
-                      borderColor: `${getRegionColor(region)}66`,
-                      backgroundColor: `${getRegionColor(region)}15`,
-                    }
-                  : undefined
-              }
-            >
-              {region}
-            </button>
-          ))}
-        </div>
-
-        {/* Type dropdown */}
-        <div className="flex items-center gap-2">
-          <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider mr-1 shrink-0">
-            Type
-          </span>
-          <MultiSelectDropdown
-            label="Select transaction types"
-            options={CATEGORIES}
-            selected={activeCategories as Set<string>}
-            onToggle={(v) => onToggleCategory(v as DealCategory)}
-            getColor={(v) => getCategoryColor(v as DealCategory)}
-          />
-        </div>
+      {/* Filter Dropdowns Row */}
+      <div className="flex flex-wrap items-center gap-3">
+        <MultiSelectDropdown
+          label="Sector"
+          options={SECTORS}
+          selected={activeSectors as Set<string>}
+          onToggle={(v) => onToggleSector(v as DealSector)}
+          getColor={(v) => getSectorColor(v as DealSector)}
+        />
+        <MultiSelectDropdown
+          label="Region"
+          options={REGIONS}
+          selected={activeRegions as Set<string>}
+          onToggle={(v) => onToggleRegion(v as DealRegion)}
+          getColor={(v) => getRegionColor(v as DealRegion)}
+        />
+        <MultiSelectDropdown
+          label="Type"
+          options={CATEGORIES}
+          selected={activeCategories as Set<string>}
+          onToggle={(v) => onToggleCategory(v as DealCategory)}
+          getColor={(v) => getCategoryColor(v as DealCategory)}
+        />
       </div>
 
       {/* Active filters chips */}
