@@ -22,7 +22,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
 
   return (
     <div
-      className="relative pl-10 pb-8 animate-fade-in"
+      className="relative pl-10 lg:pl-12 pb-8 lg:pb-10 animate-fade-in"
       style={{ animationDelay: `${index * 80}ms` }}
     >
       {/* Timeline dot */}
@@ -36,7 +36,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
       </div>
 
       {/* Card */}
-      <div className="glass-card rounded-lg p-4 sm:p-5 transition-colors hover:border-zinc-700">
+      <div className="glass-card rounded-lg p-4 sm:p-5 lg:p-6 transition-colors hover:border-zinc-700">
         {/* Meta row */}
         <div className="flex items-center gap-3 mb-3 flex-wrap">
           <div className="flex items-center gap-1.5">
@@ -63,7 +63,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
         </div>
 
         {/* Headline */}
-        <h3 className="text-base font-semibold text-zinc-100 mb-2 leading-snug">
+        <h3 className="text-base lg:text-lg font-semibold text-zinc-100 mb-2 leading-snug">
           {deal.title}
         </h3>
 
@@ -82,7 +82,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
         </div>
 
         {/* Key Parties */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-3 mb-3">
           <div className="rounded-md border border-zinc-800 bg-zinc-900/40 px-3 py-2.5">
             <div className="flex items-center gap-1.5 mb-1">
               <Building2 className="h-3 w-3 text-blue-500" />
@@ -99,7 +99,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
           </div>
         </div>
 
-        <p className="text-sm text-zinc-400 leading-relaxed mb-2">
+        <p className="text-sm lg:text-base text-zinc-400 leading-relaxed mb-2">
           {deal.description}
         </p>
 
@@ -135,13 +135,13 @@ export function DailyBriefing() {
   const recentDeals = getRecentDeals();
 
   return (
-    <div className="mx-auto max-w-[900px] px-4 sm:px-6 py-8">
+    <div className="mx-auto max-w-[900px] lg:max-w-[1100px] xl:max-w-[1400px] px-4 sm:px-6 lg:px-8 xl:px-12 py-8 lg:py-12">
       <MarketInsightHero />
 
       {/* Timeline header */}
-      <div className="mt-10 mb-6">
-        <h2 className="text-lg font-semibold text-zinc-100">Recent Activity</h2>
-        <p className="text-sm text-zinc-500">Latest infrastructure M&A deals</p>
+      <div className="mt-10 lg:mt-14 mb-6 lg:mb-8">
+        <h2 className="text-lg lg:text-xl xl:text-2xl font-semibold text-zinc-100">Recent Activity</h2>
+        <p className="text-sm lg:text-base text-zinc-500">Latest infrastructure M&A deals</p>
       </div>
 
       {/* Timeline */}

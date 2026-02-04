@@ -48,7 +48,7 @@ export function MarketInsightHero() {
 
   return (
     <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-900/40 overflow-hidden">
-      <div className="relative z-10 p-4">
+      <div className="relative z-10 p-4 lg:p-6 xl:p-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-1.5">
@@ -59,24 +59,24 @@ export function MarketInsightHero() {
         </div>
 
         {/* Hero stat */}
-        <div className="flex items-baseline gap-2 mb-4">
-          <span className="font-mono text-4xl font-semibold text-zinc-50 tracking-tight tabular-nums">
+        <div className="flex items-baseline gap-2 mb-4 lg:mb-6">
+          <span className="font-mono text-4xl lg:text-5xl xl:text-6xl font-semibold text-zinc-50 tracking-tight tabular-nums">
             {stats.totalCount}
           </span>
-          <span className="text-sm text-zinc-500">deals</span>
+          <span className="text-sm lg:text-base xl:text-lg text-zinc-500">deals</span>
         </div>
 
         {/* Two-column stats grid */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 lg:gap-6 xl:gap-8">
           {/* Region column */}
           <div>
-            <h3 className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider mb-2">
+            <h3 className="text-[10px] lg:text-[11px] font-medium text-zinc-600 uppercase tracking-wider mb-2 lg:mb-3">
               Region
             </h3>
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 lg:space-y-2">
               {regionBreakdown.map((r, i) => (
                 <div key={r.region} className="flex items-center gap-2">
-                  <div className="w-12 h-1.5 bg-zinc-800 rounded-full overflow-hidden shrink-0">
+                  <div className="w-12 lg:w-16 xl:w-20 h-1.5 lg:h-2 bg-zinc-800 rounded-full overflow-hidden shrink-0">
                     <div
                       className="h-full rounded-full"
                       style={{
@@ -85,10 +85,10 @@ export function MarketInsightHero() {
                       }}
                     />
                   </div>
-                  <span className="text-[11px] text-zinc-400 truncate flex-1 min-w-0">
+                  <span className="text-[11px] lg:text-xs text-zinc-400 truncate flex-1 min-w-0">
                     {shortRegion(r.region)}
                   </span>
-                  <span className="font-mono text-[11px] text-zinc-300 tabular-nums shrink-0">
+                  <span className="font-mono text-[11px] lg:text-xs text-zinc-300 tabular-nums shrink-0">
                     {r.count}
                   </span>
                 </div>
@@ -98,13 +98,13 @@ export function MarketInsightHero() {
 
           {/* Sector column */}
           <div>
-            <h3 className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider mb-2">
+            <h3 className="text-[10px] lg:text-[11px] font-medium text-zinc-600 uppercase tracking-wider mb-2 lg:mb-3">
               Sector
             </h3>
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 lg:space-y-2">
               {sectorBreakdown.map((s, i) => (
                 <div key={s.sector} className="flex items-center gap-2">
-                  <div className="w-12 h-1.5 bg-zinc-800 rounded-full overflow-hidden shrink-0">
+                  <div className="w-12 lg:w-16 xl:w-20 h-1.5 lg:h-2 bg-zinc-800 rounded-full overflow-hidden shrink-0">
                     <div
                       className="h-full rounded-full"
                       style={{
@@ -113,10 +113,10 @@ export function MarketInsightHero() {
                       }}
                     />
                   </div>
-                  <span className="text-[11px] text-zinc-400 truncate flex-1 min-w-0">
+                  <span className="text-[11px] lg:text-xs text-zinc-400 truncate flex-1 min-w-0">
                     {s.sector}
                   </span>
-                  <span className="font-mono text-[11px] text-zinc-300 tabular-nums shrink-0">
+                  <span className="font-mono text-[11px] lg:text-xs text-zinc-300 tabular-nums shrink-0">
                     {s.count}
                   </span>
                 </div>

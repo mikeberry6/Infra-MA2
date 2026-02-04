@@ -65,15 +65,15 @@ export function MarketContextBar() {
   const regionStats = getRegionStats();
 
   return (
-    <div className="glass-card-elevated rounded-xl p-5 mb-6">
-      <div className="flex flex-col sm:flex-row sm:items-stretch gap-6 sm:divide-x sm:divide-zinc-800">
+    <div className="glass-card-elevated rounded-xl p-5 lg:p-6 xl:p-8 mb-6 lg:mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-stretch gap-6 lg:gap-8 sm:divide-x sm:divide-zinc-800">
         {/* Deal Count */}
         <div className="sm:pr-6">
           <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
             Deals Tracked
           </span>
           <div className="mt-1">
-            <span className="mono text-2xl font-semibold text-zinc-50">
+            <span className="mono text-2xl lg:text-3xl xl:text-4xl font-semibold text-zinc-50">
               <CountUp end={stats.totalCount} />
             </span>
           </div>
@@ -87,7 +87,7 @@ export function MarketContextBar() {
           </span>
           <div className="mt-1">
             <span
-              className="text-2xl font-semibold"
+              className="text-2xl lg:text-3xl xl:text-4xl font-semibold"
               style={{ color: getSectorColor(stats.topSector) }}
             >
               {stats.topSector}
@@ -105,7 +105,7 @@ export function MarketContextBar() {
             Top Activity
           </span>
           <div className="mt-1">
-            <span className="text-2xl font-semibold text-zinc-50">
+            <span className="text-2xl lg:text-3xl xl:text-4xl font-semibold text-zinc-50">
               {stats.topCategory}
             </span>
           </div>
@@ -120,7 +120,7 @@ export function MarketContextBar() {
             Top Region
           </span>
           <div className="mt-1">
-            <span className="text-2xl font-semibold text-zinc-50">
+            <span className="text-2xl lg:text-3xl xl:text-4xl font-semibold text-zinc-50">
               {regionStats.topRegion.split(" ")[0]}
             </span>
           </div>

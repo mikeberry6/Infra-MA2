@@ -256,7 +256,7 @@ function FilterBar({
   onClearAll: () => void;
 }) {
   return (
-    <div className="mb-4 space-y-3">
+    <div className="mb-4 lg:mb-6 space-y-3 lg:space-y-4">
       {/* Search */}
       <div className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-500" />
@@ -461,13 +461,13 @@ function DealTable({
                     </td>
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-2">
-                        <span className="font-medium text-zinc-200 group-hover:text-zinc-50 transition-colors truncate max-w-[280px]">
+                        <span className="font-medium text-zinc-200 group-hover:text-zinc-50 transition-colors truncate max-w-[280px] xl:max-w-[400px] 2xl:max-w-none">
                           {deal.title}
                         </span>
                         <ChevronRight className="h-3 w-3 text-zinc-600 opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                       </div>
                     </td>
-                    <td className="px-4 py-3 max-w-[220px]">
+                    <td className="px-4 py-3 max-w-[220px] xl:max-w-[300px] 2xl:max-w-none">
                       <div className="text-sm text-zinc-200 font-medium truncate">{deal.buyer}</div>
                       <div className="text-xs text-zinc-500 truncate">{deal.seller}</div>
                     </td>
@@ -567,12 +567,12 @@ function DealDrawer({
       />
 
       {/* Drawer */}
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg border-l border-zinc-800 bg-zinc-950 overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-zinc-800 bg-zinc-950 overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-md px-4 sm:px-6 py-4">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
           <div className="pr-2 min-w-0">
             <span className="mono text-xs text-zinc-600">{deal.id}</span>
-            <h2 className="text-base sm:text-lg font-semibold text-zinc-50 mt-0.5 leading-tight">
+            <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-zinc-50 mt-0.5 leading-tight">
               {deal.title}
             </h2>
           </div>
@@ -585,7 +585,7 @@ function DealDrawer({
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-6 space-y-6">
+        <div className="p-4 sm:p-6 lg:p-8 space-y-6 lg:space-y-8">
           {/* Badges */}
           <div className="flex items-center gap-3 flex-wrap">
             <span
@@ -612,7 +612,7 @@ function DealDrawer({
           </div>
 
           {/* Key parties */}
-          <div className="grid grid-cols-1 gap-3">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
             <div className="glass-card rounded-lg p-4">
               <div className="flex items-center gap-2 mb-2">
                 <Building2 className="h-3.5 w-3.5 text-blue-500" />
@@ -815,18 +815,18 @@ export function DealDatabase() {
   }, [filteredDeals, selectedDeal]);
 
   return (
-    <div className="mx-auto max-w-[1400px] px-4 sm:px-6 py-8">
+    <div className="mx-auto max-w-[1400px] xl:max-w-[1600px] 2xl:max-w-[1800px] px-4 sm:px-6 lg:px-8 xl:px-12 py-8 lg:py-12">
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold tracking-tight mb-1">
+        <h1 className="text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-tight mb-1 lg:mb-2">
           Deal Database
         </h1>
-        <p className="text-sm text-zinc-400">
+        <p className="text-sm lg:text-base text-zinc-400">
           Comprehensive infrastructure M&amp;A tracker &mdash; all deals,
           January 2026.
         </p>
       </div>
 
-      <div className="mb-6">
+      <div className="mb-6 lg:mb-8">
         <DynamicInsightsHero filteredDeals={filteredDeals} />
       </div>
       <FilterBar
