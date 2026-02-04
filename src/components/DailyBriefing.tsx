@@ -15,7 +15,7 @@ import {
   Briefcase,
   Target,
 } from "lucide-react";
-import { DealGlobe } from "./MarketPulse";
+import { MarketInsightHero } from "./MarketPulse";
 
 function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
   const categoryColor = getCategoryColor(deal.category);
@@ -136,7 +136,7 @@ export function DailyBriefing() {
 
   return (
     <div className="mx-auto max-w-[900px] px-4 sm:px-6 py-8">
-      <DealGlobe />
+      <MarketInsightHero />
 
       {/* Timeline header */}
       <div className="mt-10 mb-6">

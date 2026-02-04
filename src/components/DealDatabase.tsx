@@ -24,7 +24,7 @@ import {
   Tag,
   Check,
 } from "lucide-react";
-import { DealGlobeCompact } from "./MarketPulse";
+import { MarketInsightCompact } from "./MarketPulse";
 
 // ─── Filters ────────────────────────────────────────────────
 const SECTORS: DealSector[] = ["Transportation", "Power & ET", "Midstream", "Utilities", "Environmental", "Digital", "Social"];
@@ -784,7 +784,7 @@ export function DealDatabase() {
       </div>
 
       <div className="mb-6">
-        <DealGlobeCompact />
+        <MarketInsightCompact />
       </div>
       <FilterBar
         search={search}
