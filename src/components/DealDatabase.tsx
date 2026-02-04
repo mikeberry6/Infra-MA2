@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import {
   deals,
   formatDate,
@@ -24,7 +24,8 @@ import {
   Tag,
   Check,
 } from "lucide-react";
-import { MarketInsightCompact } from "./MarketPulse";
+import { DynamicInsightsHero } from "./DealDatabase/DynamicInsightsHero";
+import { useDebounce } from "@/hooks/useDebounce";
 
 // ─── Filters ────────────────────────────────────────────────
 const SECTORS: DealSector[] = ["Transportation", "Power & ET", "Midstream", "Utilities", "Environmental", "Digital", "Social"];
@@ -65,10 +66,25 @@ function MultiSelectDropdown({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Escape key to close
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
   return (
     <div className="relative inline-block">
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
+        aria-label={`Filter by ${label}`}
         className={`flex items-center gap-2 px-3 py-2 rounded-lg border text-sm transition-colors whitespace-nowrap ${
           selected.size > 0
             ? "border-zinc-600 bg-zinc-800/50 text-zinc-200"
@@ -92,6 +108,8 @@ function MultiSelectDropdown({
             onClick={() => setIsOpen(false)}
           />
           <div
+            role="listbox"
+            aria-label={`${label} options`}
             className="absolute top-full left-0 mt-1 w-64 max-h-64 overflow-y-auto rounded-lg border border-zinc-800 bg-zinc-900 shadow-xl"
             style={{ zIndex: 9999 }}
           >
@@ -101,6 +119,8 @@ function MultiSelectDropdown({
               return (
                 <button
                   key={option}
+                  role="option"
+                  aria-selected={isSelected}
                   onClick={() => onToggle(option)}
                   className={`w-full flex items-center gap-3 px-3 py-2 text-sm text-left transition-colors ${
                     isSelected ? "bg-zinc-800/50" : "hover:bg-zinc-800/30"
@@ -245,7 +265,8 @@ function FilterBar({
           value={search}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Search deals by title, buyer, seller, or ID..."
-          className="w-full rounded-lg border border-zinc-800 bg-zinc-900/50 pl-10 pr-4 py-2.5 text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700 focus:ring-1 focus:ring-zinc-700 transition-colors"
+          aria-label="Search deals"
+          className="w-full rounded-lg border border-zinc-800 bg-zinc-900/50 pl-10 pr-4 py-3 text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700 focus:ring-1 focus:ring-zinc-700 transition-colors"
         />
       </div>
 
@@ -526,6 +547,17 @@ function DealDrawer({
 }) {
   const catColor = getCategoryColor(deal.category);
 
+  // Escape key to close
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
   return (
     <>
       {/* Backdrop */}
@@ -699,7 +731,10 @@ export function DealDatabase() {
   );
   const [selectedDeal, setSelectedDeal] = useState<Deal | null>(null);
 
-  function toggleSector(sector: DealSector) {
+  // Debounce search for performance
+  const debouncedSearch = useDebounce(search, 300);
+
+  const toggleSector = useCallback((sector: DealSector) => {
     setActiveSectors((prev) => {
       const next = new Set(prev);
       if (next.has(sector)) {
@@ -709,9 +744,9 @@ export function DealDatabase() {
       }
       return next;
     });
-  }
+  }, []);
 
-  function toggleRegion(region: DealRegion) {
+  const toggleRegion = useCallback((region: DealRegion) => {
     setActiveRegions((prev) => {
       const next = new Set(prev);
       if (next.has(region)) {
@@ -721,9 +756,9 @@ export function DealDatabase() {
       }
       return next;
     });
-  }
+  }, []);
 
-  function toggleCategory(category: DealCategory) {
+  const toggleCategory = useCallback((category: DealCategory) => {
     setActiveCategories((prev) => {
       const next = new Set(prev);
       if (next.has(category)) {
@@ -733,18 +768,19 @@ export function DealDatabase() {
       }
       return next;
     });
-  }
+  }, []);
 
-  function clearAllFilters() {
+  const clearAllFilters = useCallback(() => {
     setActiveSectors(new Set());
     setActiveRegions(new Set());
     setActiveCategories(new Set());
-  }
+    setSearch("");
+  }, []);
 
   const filteredDeals = useMemo(() => {
     return deals.filter((deal) => {
-      if (search) {
-        const q = search.toLowerCase();
+      if (debouncedSearch) {
+        const q = debouncedSearch.toLowerCase();
         const match =
           deal.title.toLowerCase().includes(q) ||
           deal.buyer.toLowerCase().includes(q) ||
@@ -769,7 +805,14 @@ export function DealDatabase() {
 
       return true;
     });
-  }, [search, activeSectors, activeRegions, activeCategories]);
+  }, [debouncedSearch, activeSectors, activeRegions, activeCategories]);
+
+  // Close drawer if selected deal is filtered out
+  useEffect(() => {
+    if (selectedDeal && !filteredDeals.find((d) => d.id === selectedDeal.id)) {
+      setSelectedDeal(null);
+    }
+  }, [filteredDeals, selectedDeal]);
 
   return (
     <div className="mx-auto max-w-[1400px] px-4 sm:px-6 py-8">
@@ -784,7 +827,7 @@ export function DealDatabase() {
       </div>
 
       <div className="mb-6">
-        <MarketInsightCompact />
+        <DynamicInsightsHero filteredDeals={filteredDeals} />
       </div>
       <FilterBar
         search={search}
