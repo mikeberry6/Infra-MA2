@@ -1,5 +1,7 @@
 export type DealSector = "Transportation" | "Power & ET" | "Midstream" | "Utilities" | "Environmental" | "Digital" | "Social";
 
+export type DealRegion = "North America" | "Europe" | "Asia-Pacific" | "Middle East & Africa" | "Latin America";
+
 export type DealCategory =
   | "Acquisition (Buyout)"
   | "Acquisition (Majority Stake)"
@@ -18,6 +20,7 @@ export interface Deal {
   seller: string;
   sector: DealSector;
   subsector: string;
+  region: DealRegion;
   category: DealCategory;
   date: string;
   description: string;
@@ -35,6 +38,7 @@ export const deals: Deal[] = [
     seller: "Kalpataru Projects International Limited",
     sector: "Transportation",
     subsector: "Roads",
+    region: "Asia-Pacific",
     category: "Acquisition (Buyout)",
     date: "2026-01-16T08:00:00Z",
     description:
@@ -52,6 +56,7 @@ export const deals: Deal[] = [
     seller: "ATP (Danish Pension Fund)",
     sector: "Digital",
     subsector: "Telecom Towers",
+    region: "Middle East & Africa",
     category: "Acquisition (Minority Stake)",
     date: "2026-01-09T08:00:00Z",
     description:
@@ -69,6 +74,7 @@ export const deals: Deal[] = [
     seller: "Ocean Winds",
     sector: "Power & ET",
     subsector: "Offshore Wind",
+    region: "Europe",
     category: "Acquisition (Minority Stake)",
     date: "2026-01-22T08:00:00Z",
     description:
@@ -86,6 +92,7 @@ export const deals: Deal[] = [
     seller: "Gryphion",
     sector: "Social",
     subsector: "Healthcare Logistics",
+    region: "Europe",
     category: "Acquisition (Majority Stake)",
     date: "2026-01-08T08:00:00Z",
     description:
@@ -103,6 +110,7 @@ export const deals: Deal[] = [
     seller: "APG Infrastructure",
     sector: "Midstream",
     subsector: "Storage & Logistics",
+    region: "Europe",
     category: "Sale (Minority Stake)",
     date: "2026-01-20T08:00:00Z",
     description:
@@ -120,6 +128,7 @@ export const deals: Deal[] = [
     seller: "Divert, Inc.",
     sector: "Environmental",
     subsector: "Waste-to-Energy / Circular Economy",
+    region: "North America",
     category: "Acquisition (Minority Stake)",
     date: "2026-01-20T09:00:00Z",
     description:
@@ -137,6 +146,7 @@ export const deals: Deal[] = [
     seller: "ENGIE North America",
     sector: "Power & ET",
     subsector: "Wind & Solar",
+    region: "North America",
     category: "Acquisition (Minority Stake)",
     date: "2026-01-13T08:00:00Z",
     description:
@@ -154,6 +164,7 @@ export const deals: Deal[] = [
     seller: "Asterion Bioenergy (ABIO)",
     sector: "Environmental",
     subsector: "Biomethane / Energy Transition",
+    region: "Europe",
     category: "Platform Launch",
     date: "2026-01-14T08:00:00Z",
     description:
@@ -171,6 +182,7 @@ export const deals: Deal[] = [
     seller: "Brookfield Infrastructure Partners (BIP)",
     sector: "Utilities",
     subsector: "Power Transmission / Utilities",
+    region: "Latin America",
     category: "Sale (Buyout)",
     date: "2026-01-29T08:00:00Z",
     description:
@@ -188,6 +200,7 @@ export const deals: Deal[] = [
     seller: "Brookfield Renewable Partners (BEP)",
     sector: "Power & ET",
     subsector: "Renewable Energy (Wind & Solar)",
+    region: "North America",
     category: "Sale (Majority Stake)",
     date: "2026-01-30T08:00:00Z",
     description:
@@ -205,6 +218,7 @@ export const deals: Deal[] = [
     seller: "CDPQ",
     sector: "Digital",
     subsector: "Broadband / Telecom",
+    region: "North America",
     category: "Sale (Minority Stake)",
     date: "2026-01-26T08:00:00Z",
     description:
@@ -222,6 +236,7 @@ export const deals: Deal[] = [
     seller: "Copenhagen Infrastructure Partners (CIP)",
     sector: "Power & ET",
     subsector: "Offshore Wind",
+    region: "Asia-Pacific",
     category: "Sale (Minority Stake)",
     date: "2026-01-30T09:00:00Z",
     description:
@@ -239,6 +254,7 @@ export const deals: Deal[] = [
     seller: "Copenhagen Infrastructure Partners (CIP)",
     sector: "Power & ET",
     subsector: "Battery Energy Storage",
+    region: "Europe",
     category: "Sale (Majority Stake)",
     date: "2026-01-30T10:00:00Z",
     description:
@@ -256,6 +272,7 @@ export const deals: Deal[] = [
     seller: "Elliott Investment Management",
     sector: "Transportation",
     subsector: "Parking Infrastructure",
+    region: "Europe",
     category: "Acquisition (Buyout)",
     date: "2026-01-08T09:00:00Z",
     description:
@@ -273,6 +290,7 @@ export const deals: Deal[] = [
     seller: "InfraVia Capital Partners",
     sector: "Digital",
     subsector: "Fiber & Cloud",
+    region: "Europe",
     category: "Acquisition (Majority Stake)",
     date: "2026-01-14T08:00:00Z",
     description:
@@ -290,6 +308,7 @@ export const deals: Deal[] = [
     seller: "N/A (Platform Launch)",
     sector: "Digital",
     subsector: "Data Centers",
+    region: "North America",
     category: "Platform Launch",
     date: "2026-01-19T08:00:00Z",
     description:
@@ -307,6 +326,7 @@ export const deals: Deal[] = [
     seller: "Energy Capital Partners (ECP)",
     sector: "Power & ET",
     subsector: "Power Generation",
+    region: "North America",
     category: "Sale (Buyout)",
     date: "2026-01-15T08:00:00Z",
     description:
@@ -324,6 +344,7 @@ export const deals: Deal[] = [
     seller: "Balfour Beatty",
     sector: "Utilities",
     subsector: "Transmission, Lighting, Roads",
+    region: "Europe",
     category: "Acquisition (Minority Stake)",
     date: "2026-01-06T08:00:00Z",
     description:
@@ -341,6 +362,7 @@ export const deals: Deal[] = [
     seller: "ACEA",
     sector: "Power & ET",
     subsector: "Solar",
+    region: "Europe",
     category: "Acquisition (Majority Stake)",
     date: "2026-01-13T08:00:00Z",
     description:
@@ -358,6 +380,7 @@ export const deals: Deal[] = [
     seller: "Global Infrastructure Partners (GIP)",
     sector: "Midstream",
     subsector: "LNG",
+    region: "North America",
     category: "Sale (Minority Stake)",
     date: "2026-01-27T08:00:00Z",
     description:
@@ -375,6 +398,7 @@ export const deals: Deal[] = [
     seller: "Triton Partners",
     sector: "Transportation",
     subsector: "Transport Safety",
+    region: "Europe",
     category: "Acquisition (Buyout)",
     date: "2026-01-07T08:00:00Z",
     description:
@@ -392,6 +416,7 @@ export const deals: Deal[] = [
     seller: "N/A (Platform Launch)",
     sector: "Power & ET",
     subsector: "Renewable Energy (IPP)",
+    region: "Asia-Pacific",
     category: "Platform Launch",
     date: "2026-01-15T09:00:00Z",
     description:
@@ -409,6 +434,7 @@ export const deals: Deal[] = [
     seller: "N/A (Platform Launch)",
     sector: "Power & ET",
     subsector: "Distributed Energy",
+    region: "Middle East & Africa",
     category: "Platform Launch",
     date: "2026-01-22T09:00:00Z",
     description:
@@ -426,6 +452,7 @@ export const deals: Deal[] = [
     seller: "Global Technical Realty (GTR)",
     sector: "Digital",
     subsector: "Data Centers",
+    region: "Europe",
     category: "Acquisition (Minority Stake)",
     date: "2026-01-07T08:00:00Z",
     description:
@@ -443,6 +470,7 @@ export const deals: Deal[] = [
     seller: "Undisclosed Sellers",
     sector: "Social",
     subsector: "Preschool & Care Properties",
+    region: "Europe",
     category: "Acquisition (Buyout)",
     date: "2026-01-13T08:00:00Z",
     description:
@@ -460,6 +488,7 @@ export const deals: Deal[] = [
     seller: "Quinbrook Infrastructure Partners",
     sector: "Power & ET",
     subsector: "Virtual Power Plant / Energy Transition",
+    region: "Europe",
     category: "Sale (Buyout)",
     date: "2026-01-21T08:00:00Z",
     description:
@@ -477,6 +506,7 @@ export const deals: Deal[] = [
     seller: "Ridgewood Infrastructure",
     sector: "Transportation",
     subsector: "Aviation (FBO)",
+    region: "North America",
     category: "Sale (Buyout)",
     date: "2026-01-27T09:00:00Z",
     description:
@@ -494,6 +524,7 @@ export const deals: Deal[] = [
     seller: "METLEN Energy & Metals",
     sector: "Power & ET",
     subsector: "Solar",
+    region: "Europe",
     category: "Acquisition (Buyout)",
     date: "2026-01-22T10:00:00Z",
     description:
@@ -511,6 +542,7 @@ export const deals: Deal[] = [
     seller: "CMA CGM",
     sector: "Transportation",
     subsector: "Ports",
+    region: "North America",
     category: "Joint Venture",
     date: "2026-01-28T08:00:00Z",
     description:
@@ -528,6 +560,7 @@ export const deals: Deal[] = [
     seller: "N/A (Platform Launch)",
     sector: "Transportation",
     subsector: "EV Charging",
+    region: "Europe",
     category: "Platform Launch",
     date: "2026-01-22T08:00:00Z",
     description:
@@ -569,6 +602,24 @@ export function getCategoryColor(category: DealCategory): string {
   if (category === "IPO") return "#10b981";
   if (category === "Joint Venture") return "#06b6d4";
   return "#a1a1aa";
+}
+
+// Helper to get region color
+export function getRegionColor(region: DealRegion): string {
+  switch (region) {
+    case "North America":
+      return "#3b82f6";
+    case "Europe":
+      return "#8b5cf6";
+    case "Asia-Pacific":
+      return "#f59e0b";
+    case "Middle East & Africa":
+      return "#10b981";
+    case "Latin America":
+      return "#ec4899";
+    default:
+      return "#a1a1aa";
+  }
 }
 
 // Utility: format date for display
