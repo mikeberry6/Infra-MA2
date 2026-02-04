@@ -15,7 +15,7 @@ import {
   Briefcase,
   Target,
 } from "lucide-react";
-import { MarketPulseHero } from "./MarketPulse";
+import { DealGlobe } from "./MarketPulse";
 
 function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
   const categoryColor = getCategoryColor(deal.category);
@@ -135,8 +135,14 @@ export function DailyBriefing() {
   const recentDeals = getRecentDeals();
 
   return (
-    <div className="mx-auto max-w-[800px] px-4 sm:px-6 py-8">
-      <MarketPulseHero />
+    <div className="mx-auto max-w-[900px] px-4 sm:px-6 py-8">
+      <DealGlobe />
+
+      {/* Timeline header */}
+      <div className="mt-10 mb-6">
+        <h2 className="text-lg font-semibold text-zinc-100">Recent Activity</h2>
+        <p className="text-sm text-zinc-500">Latest infrastructure M&A deals</p>
+      </div>
 
       {/* Timeline */}
       <div className="relative">
