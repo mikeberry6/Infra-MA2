@@ -186,23 +186,23 @@ export function DynamicInsightsHero({
 
   return (
     <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-900/40 overflow-hidden">
-      <div className="p-4 sm:p-5">
+      <div className="p-4 sm:p-5 lg:p-6 xl:p-8">
         {/* Header row: Counts + Top badges */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 lg:gap-4 mb-4 lg:mb-6">
           {/* Animated count */}
           <div className="flex items-baseline gap-2">
-            <span className="font-mono text-3xl sm:text-4xl font-semibold text-zinc-50 tabular-nums tracking-tight">
+            <span className="font-mono text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-zinc-50 tabular-nums tracking-tight">
               {animatedFiltered}
             </span>
             {insights.hasFilters && (
               <>
                 <span className="text-zinc-600">/</span>
-                <span className="font-mono text-lg text-zinc-500 tabular-nums">
+                <span className="font-mono text-lg lg:text-xl xl:text-2xl text-zinc-500 tabular-nums">
                   {animatedTotal}
                 </span>
               </>
             )}
-            <span className="text-sm text-zinc-500 ml-1">deals</span>
+            <span className="text-sm lg:text-base xl:text-lg text-zinc-500 ml-1">deals</span>
           </div>
 
           {/* Top sector & region badges */}
@@ -242,7 +242,7 @@ export function DynamicInsightsHero({
 
         {/* Narrative */}
         <p
-          className={`text-sm leading-relaxed mb-4 transition-colors duration-300 ${
+          className={`text-sm lg:text-base leading-relaxed mb-4 lg:mb-6 transition-colors duration-300 ${
             isEmpty ? "text-zinc-500" : "text-zinc-400"
           }`}
         >
@@ -251,7 +251,7 @@ export function DynamicInsightsHero({
 
         {/* Comparison bars - only show when filtered */}
         {insights.hasFilters && !isEmpty && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3 border-t border-zinc-800/50">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 xl:gap-8 pt-3 lg:pt-4 border-t border-zinc-800/50">
             <ComparisonBar
               label="By Sector"
               filtered={insights.sectorCounts}
