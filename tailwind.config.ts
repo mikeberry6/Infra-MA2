@@ -24,6 +24,8 @@ const config: Config = {
         "ticker-scroll": "ticker-scroll 60s linear infinite",
         "fade-in": "fade-in 0.5s ease-out forwards",
         "slide-in-right": "slide-in-right 0.3s ease-out forwards",
+        "pulse-slow": "pulse-slow 8s ease-in-out infinite",
+        "pulse-slower": "pulse-slower 12s ease-in-out infinite",
       },
       keyframes: {
         "ticker-scroll": {
@@ -37,6 +39,26 @@ const config: Config = {
         "slide-in-right": {
           "0%": { transform: "translateX(100%)", opacity: "0" },
           "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        "pulse-slow": {
+          "0%, 100%": {
+            transform: "scale(1) translate(0, 0)",
+            opacity: "0.07",
+          },
+          "50%": {
+            transform: "scale(1.1) translate(5%, -5%)",
+            opacity: "0.1",
+          },
+        },
+        "pulse-slower": {
+          "0%, 100%": {
+            transform: "scale(1) translate(0, 0)",
+            opacity: "0.04",
+          },
+          "50%": {
+            transform: "scale(1.15) translate(-5%, 5%)",
+            opacity: "0.06",
+          },
         },
       },
     },

@@ -7,15 +7,10 @@ import {
   getSectorColor,
   getCategoryColor,
   getRegionColor,
-  getDealStats,
 } from "@/data/deals";
 import type { Deal, DealSector, DealCategory, DealRegion } from "@/data/deals";
 import {
   Search,
-  Hash,
-  BarChart3,
-  Crown,
-  Layers,
   ExternalLink,
   X,
   ChevronRight,
@@ -29,61 +24,7 @@ import {
   Tag,
   Check,
 } from "lucide-react";
-
-// ─── KPI Cards ──────────────────────────────────────────────
-function KPICards() {
-  const stats = getDealStats();
-
-  const cards = [
-    {
-      label: "Deal Count",
-      value: stats.totalCount.toString(),
-      icon: Hash,
-      iconColor: "text-blue-500",
-    },
-    {
-      label: "Top Sector",
-      value: stats.topSector,
-      extra: `${stats.topSectorCount} deals`,
-      icon: Crown,
-      iconColor: "text-amber-500",
-    },
-    {
-      label: "Top Category",
-      value: stats.topCategory,
-      extra: `${stats.topCategoryCount} deals`,
-      icon: Layers,
-      iconColor: "text-violet-500",
-    },
-    {
-      label: "Sectors Covered",
-      value: Object.keys(stats.sectorCounts).length.toString(),
-      icon: BarChart3,
-      iconColor: "text-emerald-500",
-    },
-  ];
-
-  return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-      {cards.map((card) => (
-        <div key={card.label} className="glass-card-elevated rounded-lg p-3 sm:p-4">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
-              {card.label}
-            </span>
-            <card.icon className={`h-4 w-4 ${card.iconColor}`} />
-          </div>
-          <span className="mono text-xl sm:text-2xl font-semibold text-zinc-50">
-            {card.value}
-          </span>
-          {card.extra && (
-            <span className="text-xs text-zinc-500 ml-2">{card.extra}</span>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
+import { MarketContextBar } from "./MarketPulse";
 
 // ─── Filters ────────────────────────────────────────────────
 const SECTORS: DealSector[] = ["Transportation", "Power & ET", "Midstream", "Utilities", "Environmental", "Digital", "Social"];
@@ -881,7 +822,7 @@ export function DealDatabase() {
         </p>
       </div>
 
-      <KPICards />
+      <MarketContextBar />
       <FilterBar
         search={search}
         onSearchChange={setSearch}

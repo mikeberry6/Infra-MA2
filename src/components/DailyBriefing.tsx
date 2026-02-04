@@ -6,83 +6,16 @@ import {
   formatTime,
   getSectorColor,
   getCategoryColor,
-  getDealStats,
 } from "@/data/deals";
 import type { Deal } from "@/data/deals";
 import {
   ExternalLink,
   Clock,
-  BarChart3,
-  Zap,
-  Hash,
-  Layers,
   Building2,
   Briefcase,
   Target,
 } from "lucide-react";
-
-function BriefingHeader() {
-  const stats = getDealStats();
-
-  return (
-    <div className="mb-10">
-      <div className="flex items-center gap-3 mb-2">
-        <Zap className="h-5 w-5 text-blue-500" />
-        <h1 className="text-2xl font-semibold tracking-tight">
-          Daily Briefing
-        </h1>
-      </div>
-      <p className="text-sm text-zinc-400 mb-6">
-        Infrastructure M&amp;A activity feed &mdash; real-time market
-        intelligence.
-      </p>
-
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-        <div className="glass-card rounded-lg p-4">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
-              Total Deals
-            </span>
-            <Hash className="h-3.5 w-3.5 text-blue-500" />
-          </div>
-          <span className="mono text-xl font-semibold text-zinc-50">
-            {stats.totalCount}
-          </span>
-        </div>
-
-        <div className="glass-card rounded-lg p-4">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
-              Top Sector
-            </span>
-            <BarChart3 className="h-3.5 w-3.5 text-amber-500" />
-          </div>
-          <span className="text-xl font-semibold text-zinc-50">
-            {stats.topSector}
-          </span>
-          <span className="text-xs text-zinc-500 ml-2">
-            ({stats.topSectorCount} deals)
-          </span>
-        </div>
-
-        <div className="glass-card rounded-lg p-4 col-span-2 sm:col-span-1">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
-              Top Category
-            </span>
-            <Layers className="h-3.5 w-3.5 text-violet-500" />
-          </div>
-          <span className="text-xl font-semibold text-zinc-50">
-            {stats.topCategory}
-          </span>
-          <span className="text-xs text-zinc-500 ml-2">
-            ({stats.topCategoryCount})
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
+import { MarketPulseHero } from "./MarketPulse";
 
 function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
   const categoryColor = getCategoryColor(deal.category);
@@ -203,7 +136,7 @@ export function DailyBriefing() {
 
   return (
     <div className="mx-auto max-w-[800px] px-4 sm:px-6 py-8">
-      <BriefingHeader />
+      <MarketPulseHero />
 
       {/* Timeline */}
       <div className="relative">

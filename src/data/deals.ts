@@ -685,3 +685,69 @@ export function getRecentDeals(): Deal[] {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 }
+
+// Get region stats
+export function getRegionStats() {
+  const regionCounts = deals.reduce(
+    (acc, d) => {
+      acc[d.region] = (acc[d.region] || 0) + 1;
+      return acc;
+    },
+    {} as Record<DealRegion, number>,
+  );
+
+  const sorted = Object.entries(regionCounts).sort(([, a], [, b]) => b - a);
+
+  return {
+    regionCounts,
+    topRegion: sorted[0][0] as DealRegion,
+    topRegionCount: sorted[0][1],
+    topRegionShare: Math.round((sorted[0][1] / deals.length) * 100),
+  };
+}
+
+// Generate market narrative based on stats
+export function getMarketNarrative(): {
+  headline: string;
+  subtext: string;
+  sentiment: "concentrated" | "leading" | "balanced";
+} {
+  const stats = getDealStats();
+  const topSectorShare = (stats.topSectorCount / stats.totalCount) * 100;
+
+  if (topSectorShare > 40) {
+    return {
+      headline: "is dominating",
+      subtext: `commanding ${Math.round(topSectorShare)}% of all activity`,
+      sentiment: "concentrated",
+    };
+  } else if (topSectorShare > 25) {
+    return {
+      headline: "is leading the market",
+      subtext: `with ${stats.topSectorCount} deals this month`,
+      sentiment: "leading",
+    };
+  } else {
+    return {
+      headline: "leads a diversified market",
+      subtext: `across ${Object.keys(stats.sectorCounts).length} active sectors`,
+      sentiment: "balanced",
+    };
+  }
+}
+
+// Get sector distribution sorted by count
+export function getSectorDistribution(): Array<{
+  sector: DealSector;
+  count: number;
+  percentage: number;
+}> {
+  const stats = getDealStats();
+  return Object.entries(stats.sectorCounts)
+    .map(([sector, count]) => ({
+      sector: sector as DealSector,
+      count,
+      percentage: (count / stats.totalCount) * 100,
+    }))
+    .sort((a, b) => b.count - a.count);
+}
