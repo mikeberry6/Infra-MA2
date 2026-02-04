@@ -3,17 +3,15 @@
 import {
   getDealStats,
   getRegionStats,
-  getRecentDeals,
   getSectorColor,
   getRegionColor,
 } from "@/data/deals";
 import type { DealRegion, DealSector } from "@/data/deals";
-import { TrendingUp, MapPin, Briefcase, ArrowRight } from "lucide-react";
+import { MapPin, Briefcase } from "lucide-react";
 
 export function MarketInsightHero() {
   const stats = getDealStats();
   const regionStats = getRegionStats();
-  const recentDeals = getRecentDeals();
 
   // Calculate region breakdown
   const regionBreakdown = Object.entries(regionStats.regionCounts)
@@ -34,32 +32,19 @@ export function MarketInsightHero() {
     .sort((a, b) => b.count - a.count)
     .slice(0, 4);
 
-  // Get the headline insight
-  const topRegion = regionBreakdown[0];
-  const topSector = sectorBreakdown[0];
-
   return (
     <div className="rounded-2xl border border-zinc-800/50 bg-gradient-to-br from-zinc-900/80 via-zinc-950 to-black overflow-hidden">
       {/* Main content */}
       <div className="p-6 sm:p-8">
-        {/* Headline insight */}
+        {/* Brief qualitative overview */}
         <div className="mb-8">
-          <p className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider mb-2">
-            Market Snapshot — January 2026
+          <p className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider mb-3">
+            2026 YTD
           </p>
-          <h2 className="text-2xl sm:text-3xl font-semibold text-zinc-100 leading-tight">
-            <span style={{ color: getRegionColor(topRegion.region) }}>
-              {topRegion.region}
-            </span>{" "}
-            leads with{" "}
-            <span className="text-zinc-100">{topRegion.percentage}%</span> of deals
-          </h2>
-          <p className="mt-2 text-base text-zinc-400">
-            {stats.totalCount} infrastructure transactions tracked.{" "}
-            <span style={{ color: getSectorColor(topSector.sector) }}>
-              {topSector.sector}
-            </span>{" "}
-            is the most active sector.
+          <p className="text-sm text-zinc-400 leading-relaxed max-w-2xl">
+            European energy transition deals continue to dominate early-year activity.
+            North American digital infrastructure remains a close second as data center
+            demand accelerates. Watch for increased cross-border activity in transportation assets.
           </p>
         </div>
 
@@ -151,38 +136,6 @@ export function MarketInsightHero() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom stats bar */}
-      <div className="border-t border-zinc-800/50 bg-zinc-900/30 px-6 sm:px-8 py-4">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-6">
-            <div>
-              <span className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider">
-                Total Deals
-              </span>
-              <p className="mono text-xl font-semibold text-zinc-100">
-                {stats.totalCount}
-              </p>
-            </div>
-            <div className="w-px h-8 bg-zinc-800" />
-            <div>
-              <span className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider">
-                Top Category
-              </span>
-              <p className="text-sm font-medium text-zinc-100">
-                {stats.topCategory}
-                <span className="text-zinc-500 ml-1">
-                  ({stats.topCategoryCount})
-                </span>
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2 text-zinc-400 text-sm">
-            <TrendingUp className="w-4 h-4 text-emerald-500" />
-            <span>Active market</span>
           </div>
         </div>
       </div>
