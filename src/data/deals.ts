@@ -570,6 +570,222 @@ export const deals: Deal[] = [
     sourceName: "Tiger Infrastructure",
     sourceUrl: "https://qwello.eu/news/qwello-enters-the-danish-market-after-winning-a-contested-tender-in-copenhagen/",
   },
+  // ─── 31. CIP – Ørsted Onshore Europe ────────────────────
+  {
+    id: "INF-2026-031",
+    title: "CIP agrees to acquire Ørsted Onshore Europe 578 MW wind/solar portfolio and pipeline",
+    buyer: "Copenhagen Infrastructure Partners (CIP)",
+    seller: "Ørsted",
+    sector: "Power & ET",
+    subsector: "Onshore Wind & Solar",
+    region: "Europe",
+    category: "Acquisition (Buyout)",
+    date: "2026-02-03T08:00:00Z",
+    description:
+      "Copenhagen Infrastructure Partners agreed to acquire a 578 MW operating wind and solar portfolio and development pipeline across the UK, Germany, and Spain from Ørsted Onshore Europe.",
+    targetDescription:
+      "Ørsted Onshore Europe, a 578 MW operating wind and solar portfolio and development pipeline across the UK, Germany, and Spain.",
+    sourceName: "CIP",
+    sourceUrl: "",
+  },
+  // ─── 32. Antin – Vigor Marine Group ──────────────────────
+  {
+    id: "INF-2026-032",
+    title: "Antin signs definitive agreement to acquire Vigor Marine Group from Lone Star",
+    buyer: "Antin Infrastructure Partners",
+    seller: "Lone Star Funds",
+    sector: "Transportation",
+    subsector: "Maritime Infrastructure",
+    region: "North America",
+    category: "Acquisition (Buyout)",
+    date: "2026-02-04T08:00:00Z",
+    description:
+      "Antin Infrastructure Partners signed a definitive agreement to acquire Vigor Marine Group, a critical maritime infrastructure provider operating shipyards and drydocks, from Lone Star Funds.",
+    targetDescription:
+      "Vigor Marine Group, a critical maritime infrastructure provider operating shipyards and drydocks.",
+    sourceName: "Antin",
+    sourceUrl: "",
+  },
+  // ─── 33. ECP & KKR – AI Infrastructure Platform (JV) ────
+  {
+    id: "INF-2026-033",
+    title: "ECP and KKR announce $50B partnership and launch hyperscale data center JV in Texas",
+    buyer: "Energy Capital Partners & KKR",
+    seller: "N/A (Joint Venture)",
+    sector: "Digital",
+    subsector: "Data Centers",
+    region: "North America",
+    category: "Joint Venture",
+    date: "2026-02-04T09:00:00Z",
+    description:
+      "Energy Capital Partners and KKR announced a $50 billion strategic partnership and launched a joint venture to develop a hyperscale data center campus in Texas.",
+    targetDescription:
+      "AI Infrastructure Platform, a joint venture to develop a hyperscale data center campus in Texas.",
+    sourceName: "ECP / KKR",
+    sourceUrl: "",
+  },
+  // ─── 34. DWS Infrastructure – Open Hub Med ──────────────
+  {
+    id: "INF-2026-034",
+    title: "DWS Infrastructure acquires Open Hub Med carrier-neutral data center in Palermo",
+    buyer: "DWS Infrastructure",
+    seller: "Open Hub Med",
+    sector: "Digital",
+    subsector: "Data Centers",
+    region: "Europe",
+    category: "Acquisition (Buyout)",
+    date: "2026-02-04T10:00:00Z",
+    description:
+      "DWS Infrastructure, via its portfolio company Mediterra, acquired Open Hub Med, a carrier-neutral data center hub located in Palermo, Sicily.",
+    targetDescription:
+      "Open Hub Med, a carrier-neutral data center hub located in Palermo, Sicily.",
+    sourceName: "DWS",
+    sourceUrl: "",
+  },
+  // ─── 35. Schroders Greencoat – UK Solar Portfolio ───────
+  {
+    id: "INF-2026-035",
+    title: "Schroders Greencoat agrees to acquire 283 MW UK solar portfolio from METLEN",
+    buyer: "Schroders Greencoat",
+    seller: "METLEN Energy & Metals",
+    sector: "Power & ET",
+    subsector: "Solar",
+    region: "Europe",
+    category: "Acquisition (Buyout)",
+    date: "2026-02-04T11:00:00Z",
+    description:
+      "Schroders Greencoat entered an agreement to acquire 283 MW of solar PV assets, both operational and under construction, from METLEN Energy & Metals.",
+    targetDescription:
+      "A 283 MW portfolio of solar PV assets (operational and under construction) in the UK.",
+    sourceName: "Schroders Greencoat",
+    sourceUrl: "",
+  },
+  // ─── 36. KKR & Singtel – STT GDC ───────────────────────
+  {
+    id: "INF-2026-036",
+    title: "KKR and Singtel enter agreements to acquire controlling 82% stake in STT GDC",
+    buyer: "KKR & Singtel",
+    seller: "ST Telemedia Global Data Centres",
+    sector: "Digital",
+    subsector: "Data Centers",
+    region: "Asia-Pacific",
+    category: "Acquisition (Majority Stake)",
+    date: "2026-02-04T12:00:00Z",
+    description:
+      "KKR and Singtel entered definitive agreements to acquire a controlling 82% stake in ST Telemedia Global Data Centres (STT GDC), a global data center platform.",
+    targetDescription:
+      "ST Telemedia Global Data Centres (STT GDC), a global data center platform.",
+    sourceName: "KKR / Singtel",
+    sourceUrl: "",
+  },
+  // ─── 37. IFM Investors – Mobius Renewables ──────────────
+  {
+    id: "INF-2026-037",
+    title: "IFM Investors launches Mobius Renewables platform for renewable natural gas development",
+    buyer: "IFM Investors",
+    seller: "N/A (Platform Launch)",
+    sector: "Environmental",
+    subsector: "Renewable Natural Gas",
+    region: "North America",
+    category: "Platform Launch",
+    date: "2026-02-04T13:00:00Z",
+    description:
+      "IFM Investors announced the launch of Mobius Renewables, a new vertically integrated platform for renewable natural gas (RNG) development.",
+    targetDescription:
+      "Mobius Renewables, a vertically integrated platform for renewable natural gas (RNG) development.",
+    sourceName: "IFM Investors",
+    sourceUrl: "",
+  },
+  // ─── 38. Igneo – Vault Digital Infrastructure (Altum) ───
+  {
+    id: "INF-2026-038",
+    title: "Igneo acquires Vault Digital Infrastructure US data center platform",
+    buyer: "Igneo Infrastructure Partners",
+    seller: "CVC DIF / Northleaf Capital",
+    sector: "Digital",
+    subsector: "Data Centers",
+    region: "North America",
+    category: "Acquisition (Buyout)",
+    date: "2026-02-05T08:00:00Z",
+    description:
+      "Igneo Infrastructure Partners announced the acquisition of Vault Digital Infrastructure (Altum), a US data center platform, from CVC DIF and Northleaf Capital.",
+    targetDescription:
+      "Vault Digital Infrastructure (Altum), a US data center platform.",
+    sourceName: "Igneo",
+    sourceUrl: "",
+  },
+  // ─── 39. Pilot Fiber – ExteNet Enterprise Fiber ─────────
+  {
+    id: "INF-2026-039",
+    title: "Pilot Fiber agrees to acquire ExteNet Systems enterprise fiber business",
+    buyer: "Pilot Fiber",
+    seller: "ExteNet Systems",
+    sector: "Digital",
+    subsector: "Fiber",
+    region: "North America",
+    category: "Acquisition (Buyout)",
+    date: "2026-02-05T09:00:00Z",
+    description:
+      "Pilot Fiber agreed to acquire the metro-focused enterprise fiber business unit carved out from ExteNet Systems.",
+    targetDescription:
+      "ExteNet Systems enterprise fiber business, a metro-focused enterprise fiber unit.",
+    sourceName: "Pilot Fiber",
+    sourceUrl: "",
+  },
+  // ─── 40. Macquarie – Energy Assets Group (EAG) ──────────
+  {
+    id: "INF-2026-040",
+    title: "Macquarie agrees to acquire 100% of Energy Assets Group UK utility provider",
+    buyer: "Macquarie Asset Management",
+    seller: "Energy Assets Group",
+    sector: "Utilities",
+    subsector: "Utility & Metering Infrastructure",
+    region: "Europe",
+    category: "Acquisition (Buyout)",
+    date: "2026-02-05T10:00:00Z",
+    description:
+      "Macquarie Asset Management agreed to acquire a 100% stake in Energy Assets Group (EAG), a UK vertical utility and metering infrastructure provider.",
+    targetDescription:
+      "Energy Assets Group (EAG), a UK vertical utility and metering infrastructure provider.",
+    sourceName: "Macquarie",
+    sourceUrl: "",
+  },
+  // ─── 41. Macquarie – Last Mile Infrastructure ───────────
+  {
+    id: "INF-2026-041",
+    title: "Macquarie enters binding agreement to acquire remaining 50% of Last Mile Infrastructure",
+    buyer: "Macquarie Asset Management",
+    seller: "Last Mile Infrastructure",
+    sector: "Utilities",
+    subsector: "Multi-Utility Connections",
+    region: "Europe",
+    category: "Acquisition (Buyout)",
+    date: "2026-02-05T11:00:00Z",
+    description:
+      "Macquarie Asset Management entered a binding agreement to acquire the remaining 50% stake in Last Mile Infrastructure, a UK multi-utility connections provider.",
+    targetDescription:
+      "Last Mile Infrastructure, a UK multi-utility connections provider.",
+    sourceName: "Macquarie",
+    sourceUrl: "",
+  },
+  // ─── 42. TPG Rise Climate – Sabre Industries ────────────
+  {
+    id: "INF-2026-042",
+    title: "TPG Rise Climate signs agreements to acquire majority stake in Sabre Industries",
+    buyer: "TPG Rise Climate",
+    seller: "Sabre Industries",
+    sector: "Utilities",
+    subsector: "Power Transmission & Wireless Towers",
+    region: "North America",
+    category: "Acquisition (Majority Stake)",
+    date: "2026-02-06T08:00:00Z",
+    description:
+      "TPG Rise Climate signed definitive agreements to acquire a majority stake in Sabre Industries, a manufacturer of power transmission structures and wireless towers.",
+    targetDescription:
+      "Sabre Industries, a manufacturer of power transmission structures and wireless towers.",
+    sourceName: "TPG",
+    sourceUrl: "",
+  },
 ];
 
 // Helper to get sector color
