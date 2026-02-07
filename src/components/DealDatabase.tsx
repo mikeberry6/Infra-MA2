@@ -631,8 +631,6 @@ function DealDrawer({
     deal.financialAdvisorSeller ||
     deal.legalAdvisorBuyer ||
     deal.legalAdvisorSeller;
-  const hasEconomics =
-    deal.enterpriseValue || deal.equityValue || deal.stake || deal.valuationMultiple;
 
   // Escape key to close
   useEffect(() => {
@@ -645,6 +643,13 @@ function DealDrawer({
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
+  // Build compact economics items
+  const econItems: { label: string; value: string }[] = [];
+  if (deal.enterpriseValue) econItems.push({ label: "EV", value: deal.enterpriseValue });
+  if (deal.equityValue) econItems.push({ label: "Equity", value: deal.equityValue });
+  if (deal.stake) econItems.push({ label: "Stake", value: deal.stake });
+  if (deal.valuationMultiple) econItems.push({ label: "Multiple", value: deal.valuationMultiple });
+
   return (
     <>
       {/* Backdrop */}
@@ -656,30 +661,30 @@ function DealDrawer({
       {/* Drawer */}
       <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-zinc-800 bg-zinc-950 overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
-          <div className="pr-2 min-w-0">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="mono text-xs text-zinc-600">{deal.id}</span>
-              <StatusBadge status={deal.status} />
+        <div className="sticky top-0 z-10 border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                <span className="mono text-xs text-zinc-600">{deal.id}</span>
+                <StatusBadge status={deal.status} />
+                <span className="mono text-xs text-zinc-600">{formatDate(deal.date)}</span>
+              </div>
+              <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-zinc-50 leading-tight">
+                {deal.title}
+              </h2>
             </div>
-            <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-zinc-50 mt-0.5 leading-tight">
-              {deal.title}
-            </h2>
+            <button
+              onClick={onClose}
+              className="rounded-md p-2 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors shrink-0"
+            >
+              <X className="h-5 w-5" />
+            </button>
           </div>
-          <button
-            onClick={onClose}
-            className="rounded-md p-2 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors shrink-0"
-          >
-            <X className="h-5 w-5" />
-          </button>
-        </div>
 
-        {/* Content */}
-        <div className="p-4 sm:p-6 lg:p-8 space-y-6 lg:space-y-8">
-          {/* Badges */}
-          <div className="flex items-center gap-3 flex-wrap">
+          {/* Inline badges */}
+          <div className="flex items-center gap-2 mt-3 flex-wrap">
             <span
-              className="text-xs font-medium px-2.5 py-1 rounded"
+              className="text-xs font-medium px-2 py-0.5 rounded"
               style={{
                 color: getSectorColor(deal.sector),
                 backgroundColor: `${getSectorColor(deal.sector)}15`,
@@ -687,10 +692,10 @@ function DealDrawer({
             >
               {deal.sector}
             </span>
-            <span className="text-xs text-zinc-400">{deal.subsector}</span>
-            <div className="h-4 w-px bg-zinc-800" />
+            <span className="text-xs text-zinc-500">{deal.subsector}</span>
+            <div className="h-3.5 w-px bg-zinc-800" />
             <span
-              className="text-xs font-medium px-2.5 py-1 rounded-full"
+              className="text-[11px] font-medium px-2 py-0.5 rounded-full"
               style={{
                 color: catColor,
                 backgroundColor: `${catColor}15`,
@@ -699,95 +704,101 @@ function DealDrawer({
             >
               {deal.category}
             </span>
+            <div className="h-3.5 w-px bg-zinc-800" />
+            <span className="text-xs text-zinc-500">{deal.country}</span>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-4 sm:p-6 lg:p-8 space-y-5 lg:space-y-6">
+          {/* Compact parties + economics bar */}
+          <div className="glass-card rounded-lg p-4 space-y-3">
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Buyer</span>
+                <div className="text-sm font-medium text-zinc-200 mt-0.5">{deal.buyer}</div>
+              </div>
+              <div>
+                <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Seller</span>
+                <div className="text-sm font-medium text-zinc-200 mt-0.5">{deal.seller}</div>
+              </div>
+            </div>
+
+            {econItems.length > 0 && (
+              <>
+                <div className="border-t border-zinc-800/60" />
+                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                  {econItems.map((item) => (
+                    <div key={item.label}>
+                      <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">{item.label}</span>
+                      <div className="text-sm font-semibold text-zinc-100 mt-0.5">{item.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {/* Timeline row */}
+            <div className="border-t border-zinc-800/60" />
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              <div>
+                <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Announced</span>
+                <div className="mono text-sm text-zinc-300 mt-0.5">{formatDate(deal.date)}</div>
+              </div>
+              {deal.closingDate && (
+                <div>
+                  <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Expected Close</span>
+                  <div className="text-sm text-zinc-300 mt-0.5">{deal.closingDate}</div>
+                </div>
+              )}
+              {deal.assetScale && (
+                <div>
+                  <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Scale</span>
+                  <div className="text-sm text-zinc-300 mt-0.5">{deal.assetScale}</div>
+                </div>
+              )}
+              {deal.fundVehicle && (
+                <div>
+                  <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Fund</span>
+                  <div className="text-sm text-zinc-300 mt-0.5">{deal.fundVehicle}</div>
+                </div>
+              )}
+            </div>
           </div>
 
-          {/* Key parties */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
-            <div className="glass-card rounded-lg p-4">
-              <div className="flex items-center gap-2 mb-2">
-                <Building2 className="h-3.5 w-3.5 text-blue-500" />
-                <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
-                  Buyer
-                </span>
-              </div>
-              <span className="text-sm font-medium text-zinc-200">
-                {deal.buyer}
-              </span>
-            </div>
-            <div className="glass-card rounded-lg p-4">
-              <div className="flex items-center gap-2 mb-2">
-                <Briefcase className="h-3.5 w-3.5 text-violet-500" />
-                <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
-                  Seller
-                </span>
-              </div>
-              <span className="text-sm font-medium text-zinc-200">
-                {deal.seller}
-              </span>
-            </div>
-          </div>
-
-          {/* Deal Economics */}
-          {hasEconomics && (
-            <div className="space-y-3">
-              <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
-                Deal Economics
-              </span>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {deal.enterpriseValue && (
-                  <DetailRow icon={DollarSign} iconColor="text-emerald-500" label="Enterprise Value">
-                    <span className="font-semibold text-zinc-100">{deal.enterpriseValue}</span>
-                  </DetailRow>
-                )}
-                {deal.equityValue && (
-                  <DetailRow icon={Wallet} iconColor="text-blue-500" label="Equity Value">
-                    <span className="font-semibold text-zinc-100">{deal.equityValue}</span>
-                  </DetailRow>
-                )}
-                {deal.stake && (
-                  <DetailRow icon={Percent} iconColor="text-amber-500" label="Stake">
-                    {deal.stake}
-                  </DetailRow>
-                )}
-                {deal.valuationMultiple && (
-                  <DetailRow icon={Gauge} iconColor="text-violet-500" label="Valuation Multiple">
-                    {deal.valuationMultiple}
-                  </DetailRow>
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Transaction Description */}
+          {/* Target overview */}
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <FileText className="h-3.5 w-3.5 text-zinc-500" />
-              <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
-                Transaction Description
-              </span>
-            </div>
             <p className="text-sm text-zinc-400 leading-relaxed">
-              {deal.description}
-            </p>
-          </div>
-
-          {/* Target Description */}
-          <div className="glass-card rounded-lg p-4">
-            <div className="flex items-center gap-2 mb-2">
-              <Target className="h-3.5 w-3.5 text-emerald-500" />
-              <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
-                Target
-              </span>
-            </div>
-            <p className="text-sm text-zinc-300 leading-relaxed">
               {deal.targetDescription}
             </p>
           </div>
 
+          {/* Key Highlights — the main content */}
+          {deal.keyHighlights && deal.keyHighlights.length > 0 && (
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <FileText className="h-3.5 w-3.5 text-blue-400" />
+                <span className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider">
+                  Key Highlights
+                </span>
+              </div>
+              <ul className="space-y-2">
+                {deal.keyHighlights.map((highlight, i) => (
+                  <li key={i} className="flex gap-3 text-sm">
+                    <span className="text-blue-500 mt-1 shrink-0">
+                      <ChevronRight className="h-3 w-3" />
+                    </span>
+                    <span className="text-zinc-300 leading-relaxed">{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {/* Advisors */}
           {hasAdvisors && (
-            <div className="space-y-3">
-              <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
+            <div>
+              <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider block mb-3">
                 Advisors
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -823,59 +834,17 @@ function DealDrawer({
             </div>
           )}
 
-          {/* Details grid */}
-          <div className="space-y-3">
-            <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
-              Deal Details
-            </span>
-            <div className="grid grid-cols-1 gap-2">
-              <DetailRow icon={Tag} iconColor="text-zinc-500" label="M&amp;A Category">
-                {deal.category}
-              </DetailRow>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <DetailRow icon={Calendar} iconColor="text-zinc-500" label="Announced">
-                  <span className="mono">{formatDate(deal.date)}</span>
-                </DetailRow>
-                {deal.closingDate && (
-                  <DetailRow icon={Clock} iconColor="text-zinc-500" label="Expected Close">
-                    {deal.closingDate}
-                  </DetailRow>
-                )}
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <DetailRow icon={MapPin} iconColor="text-zinc-500" label="Country">
-                  {deal.country}
-                </DetailRow>
-                {deal.assetScale && (
-                  <DetailRow icon={Zap} iconColor="text-zinc-500" label="Asset Scale">
-                    {deal.assetScale}
-                  </DetailRow>
-                )}
-              </div>
-              {deal.fundVehicle && (
-                <DetailRow icon={Landmark} iconColor="text-zinc-500" label="Fund / Vehicle">
-                  {deal.fundVehicle}
-                </DetailRow>
-              )}
-            </div>
-          </div>
-
-          {/* Source */}
+          {/* Source link */}
           <div className="border-t border-zinc-800 pt-4">
-            <div className="flex items-center justify-between">
-              <span className="mono text-xs text-zinc-600">
-                {formatDate(deal.date)}
-              </span>
-              <a
-                href={deal.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-medium text-blue-400 hover:text-blue-300 transition-colors py-1"
-              >
-                View on {deal.sourceName}
-                <ExternalLink className="h-3 w-3" />
-              </a>
-            </div>
+            <a
+              href={deal.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              View source on {deal.sourceName}
+              <ExternalLink className="h-3 w-3" />
+            </a>
           </div>
         </div>
       </div>

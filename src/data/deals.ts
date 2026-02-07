@@ -48,6 +48,9 @@ export interface Deal {
   assetScale: string | null;
   valuationMultiple: string | null;
   fundVehicle: string | null;
+
+  // Press Release Detail
+  keyHighlights: string[] | null;
 }
 
 export const deals: Deal[] = [
@@ -74,13 +77,19 @@ export const deals: Deal[] = [
     status: "Announced",
     closingDate: null,
     financialAdvisorBuyer: null,
-    financialAdvisorSeller: ["ICICI Securities"],
-    legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
+    financialAdvisorSeller: ["Equirus Capital"],
+    legalAdvisorBuyer: ["Anangram Partners"],
+    legalAdvisorSeller: ["Khaitan & Co"],
     country: "India",
-    assetScale: null,
+    assetScale: "89.3 km four-lane highway",
     valuationMultiple: null,
     fundVehicle: "Actis Long Life Infrastructure Fund",
+    keyHighlights: [
+      "89.3 km four-lane road connecting Rewa to Hanumana on NH-7, operating under a DBFOT toll concession awarded by MPRDC with 20+ years residual life",
+      "Traffic grew at 6% CAGR between FY2018-2024; toll collections rose 12.7% YoY to ₹70.6 crore in first nine months of FY2025",
+      "Definitive agreements signed October 2024, transaction closed January 2026",
+      "Part of KPIL's strategy to dispose non-core assets (road contributed just ~0.43% of FY24 consolidated revenue) and redeploy capital into core EPC business",
+    ],
   },
   // ─── 2. ADIA ───────────────────────────────────────────────
   {
@@ -105,13 +114,19 @@ export const deals: Deal[] = [
     status: "Closed",
     closingDate: "January 2026",
     financialAdvisorBuyer: null,
-    financialAdvisorSeller: ["Barclays"],
+    financialAdvisorSeller: ["BofA Securities"],
     legalAdvisorBuyer: null,
     legalAdvisorSeller: null,
     country: "United Kingdom",
-    assetScale: "~14,000 towers across Africa & Middle East",
+    assetScale: "~14,515 towers across Africa & Middle East",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "ATP sold ~50.6 million shares at 94p/share (~10% discount to prior close), raising ~£48 million; ADIA purchased ~33.3 million of those shares",
+      "Helios Towers operates ~14,515 tower sites across nine countries (eight in Africa, one in Oman) with tenancy ratio of 2.11x",
+      "Contracted future revenues of $5.3 billion with average remaining contract life of 6.9 years",
+      "2025 guided adjusted EBITDA of $460-470 million; net leverage reduced to 3.6x from 4.2x prior year",
+    ],
   },
   // ─── 3. Allianz Global Investors ──────────────────────────
   {
@@ -130,8 +145,8 @@ export const deals: Deal[] = [
       "Îles d'Yeu et Noirmoutier, a 496 MW offshore wind farm off the coast of Vendée, France, currently under construction.",
     sourceName: "Allianz GI",
     sourceUrl: "https://www.allianzgi.com/en/press-centre/media/press-releases/20260122-allianz-invests-in-the-500mw-french-offshore-wind-farm-iles-dyeu-et-noirmoutier",
-    enterpriseValue: null,
-    equityValue: null,
+    enterpriseValue: "~€2.5 billion (total project investment)",
+    equityValue: "€200 million",
     stake: "20.25%",
     status: "Closed",
     closingDate: "January 2026",
@@ -140,9 +155,15 @@ export const deals: Deal[] = [
     legalAdvisorBuyer: null,
     legalAdvisorSeller: null,
     country: "France",
-    assetScale: "496 MW",
+    assetScale: "~500 MW (61 x Siemens Gamesa 8.2 MW turbines)",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "61 Siemens Gamesa 8.2 MW turbines located 11 km off Île d'Yeu and 16 km from Noirmoutier, producing ~1,900 GWh annually (enough for ~800,000 people)",
+      "20-year fixed inflation-linked feed-in tariff; began generating electricity June 2025 with full commissioning expected Q1 2026",
+      "Post-transaction ownership: Ocean Winds 40%, Sumitomo 29.5%, Allianz 20.25%, Banque des Territoires 9.75%, Vendée Énergie 0.5%",
+      "Allianz's third direct offshore wind investment (after Netherlands and Germany) and first in France; active in French renewables since 2008",
+    ],
   },
   // ─── 4. Antin Infrastructure Partners ─────────────────────
   {
@@ -165,15 +186,22 @@ export const deals: Deal[] = [
     equityValue: null,
     stake: "Majority",
     status: "Announced",
-    closingDate: "H1 2026",
-    financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
+    closingDate: "Q1 2026",
+    financialAdvisorBuyer: ["Macquarie"],
+    financialAdvisorSeller: ["Moelis & Company"],
+    legalAdvisorBuyer: ["Loyens & Loeff"],
+    legalAdvisorSeller: ["DLA Piper"],
     country: "Netherlands",
     assetScale: null,
     valuationMultiple: null,
-    fundVehicle: "Antin Mid Cap Fund I",
+    fundVehicle: "Antin Mid Cap Fund I (€2.2B)",
+    keyHighlights: [
+      "8th investment by Antin's €2.2 billion Mid Cap Fund I",
+      "Emsere (formerly MediCapital Rent) manages 13,000+ pieces of medical equipment, delivering to 100+ countries",
+      "Serves 6 of the top 10 global pharmaceutical companies and 7 of the top 10 CROs",
+      "CEO Patrice Gerard and senior management reinvesting alongside Antin",
+      "Strategic agreement with Clario for ophthalmic medical imaging in clinical trials",
+    ],
   },
   // ─── 5. APG Infrastructure ────────────────────────────────
   {
@@ -198,13 +226,19 @@ export const deals: Deal[] = [
     status: "Closed",
     closingDate: "January 2026",
     financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
+    financialAdvisorSeller: ["Jefferies", "Macquarie Capital"],
+    legalAdvisorBuyer: ["Uria Menendez"],
+    legalAdvisorSeller: ["Clifford Chance"],
     country: "Spain",
-    assetScale: null,
+    assetScale: "4,000 km pipelines, 39 facilities, 8M m³ storage",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "Exolum (formerly CLH, founded 1927) manages 4,000 km of pipelines, 39 facilities, and 8 million cubic meters of storage capacity in Spain with operations across 10 regions globally",
+      "Post-transaction ownership: CVC 25%, OMERS 24.77%, KKR 20%, Crédit Agricole 10%, WSIB 10%, Banca March 5%, Stoneshield Capital 5%",
+      "Banca March acquired 5% via co-investment vehicle with its clients; Stoneshield Capital (founded by Juan Pepa and Felipe Morenes) acquired the remaining 5%",
+      "APG had been a shareholder since 2017; KKR purchased Macquarie Asset Management's 20% stake in 2025",
+    ],
   },
   // ─── 6. Ara Partners ──────────────────────────────────────
   {
@@ -236,6 +270,12 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "Funding led by Wittington Investments (Weston family investment arm); builds on prior $100M growth equity round led by Ara Partners with GIC and Ontario Power Generation",
+      "Accelerates buildout of facilities in Longview, WA (100,000 tons/year capacity) and Lexington, NC (28-acre site), both expected operational later in 2026",
+      "Uses anaerobic digestion to convert unsold food into carbon-negative RNG, soil amendment, and fertilizer; already operates a 100,000 tons/year facility in Turlock, CA",
+      "Targeting 30 facilities by 2031 to handle 5% of all U.S. wasted food; also secured a $1 billion infrastructure development agreement with Enbridge Inc.",
+    ],
   },
   // ─── 7. Ares Management ───────────────────────────────────
   {
@@ -267,6 +307,12 @@ export const deals: Deal[] = [
     assetScale: "730 MW (wind & solar)",
     valuationMultiple: null,
     fundVehicle: "Ares Climate Infrastructure Partners",
+    keyHighlights: [
+      "Expands total ENGIE/Ares partnership to 4.3 GW of U.S. solar, wind, and storage assets",
+      "All 730 MW assets already operational on the ERCOT grid in Texas",
+      "ENGIE retains controlling share and continues to operate and manage the portfolio",
+      "ENGIE invests $10 billion+ annually on energy transition globally, targeting 95 GW renewables by 2030",
+    ],
   },
   // ─── 8. Asterion Industrial Partners ──────────────────────
   {
@@ -295,9 +341,16 @@ export const deals: Deal[] = [
     legalAdvisorBuyer: null,
     legalAdvisorSeller: null,
     country: "Spain",
-    assetScale: "20 biomethane plants (target)",
+    assetScale: "20 biomethane plants (target), ~3 TWh production",
     valuationMultiple: null,
-    fundVehicle: "Asterion Industrial Infra Fund III",
+    fundVehicle: "Asterion Industrial Infra Fund III (€3.4B)",
+    keyHighlights: [
+      "€800M equity split equally between Fund III (€400M) and LP co-investment (€400M), plus project-level debt to total €1.5B commitment",
+      "Six plants operational with six more under construction; nearly ten transactions completed (greenfield, acquisitions, conversions) targeting ~3 TWh production within 3-4 years",
+      "Operates across five European markets: Iberia (FiveBioenergy), Italy (Fiamma Verde), Benelux (Byont), Germany (Byont DE), and UK (Pinta Energy)",
+      "Fully integrated circular economy model converting agricultural residues into biomethane, captured CO₂ for industrial use, and digestate as natural fertilizer",
+      "Fund III closed at €3.4B (exceeding €3.2B target); ABIO is a flagship investment alongside minority stake in Dunkerque LNG, 49% in 2i Aeroporti, and Revalue Energies",
+    ],
   },
   // ─── 9. Brookfield Infrastructure Partners ────────────────
   {
@@ -329,6 +382,12 @@ export const deals: Deal[] = [
     assetScale: "1,200 km transmission line",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "Transaction generates an IRR of 45% and 8.5x multiple of invested capital, crystallizing exceptional returns on an infrastructure concession",
+      "Following this sale, BIP will have divested six of its nine original Brazilian transmission concessions",
+      "Concession was fully commissioned as of Q2 2024; closing anticipated Q1 2026",
+      "Part of BIP's record capital recycling year — raised $3.1B in asset sale proceeds in 2025, targeting $3B additional in 2026",
+    ],
   },
   // ─── 10. Brookfield Renewable Partners ────────────────────
   {
@@ -360,6 +419,12 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "Selling a two-thirds stake for ~$860M gross proceeds (~$210M net to BEP), with closing expected H1 2026",
+      "BEP actively progressing sale of remaining one-third stake; framework agreement with same buyers provides for future sale of up to $1.5B of additional assets",
+      "Part of BEP's 2025 asset recycling program that generated $4.5B aggregate proceeds ($1.3B net to BEP) at returns above the high end of targets",
+      "BEP reported FFO of $2.01/unit for 2025 (+10% YoY), announced 17th consecutive annual distribution increase of 5%, and ended year with $4.6B available liquidity",
+    ],
   },
   // ─── 11. CDPQ ─────────────────────────────────────────────
   {
@@ -391,6 +456,12 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "Selling ~11% of subordinate voting shares at C$67.45/share for ~C$229M; characterized as periodic portfolio rebalancing",
+      "La Caisse remains largest holder of subordinate shares post-transaction; Cogeco serves 1.6 million residential and business customers in Canada and the US",
+      "La Caisse first invested in Cogeco in 2013 (C$50M loan), contributed C$315M toward MetroCast acquisition in 2017, and purchased Rogers' stake for C$350M in 2023",
+      "Sale proceeds to be redeployed into Quebec-based companies per La Caisse's mandate",
+    ],
   },
   // ─── 12. CIP – Fengmiao I ────────────────────────────────
   {
@@ -415,13 +486,19 @@ export const deals: Deal[] = [
     status: "Closed",
     closingDate: null,
     financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
+    financialAdvisorSeller: ["BNP Paribas"],
     legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
+    legalAdvisorSeller: ["White & Case"],
     country: "Taiwan",
-    assetScale: "495 MW",
+    assetScale: "495 MW (33 x Vestas V236-15.0 MW)",
     valuationMultiple: null,
-    fundVehicle: "Copenhagen Infrastructure III",
+    fundVehicle: "Copenhagen Infrastructure V",
+    keyHighlights: [
+      "33 Vestas V236-15.0 MW turbines; first phase of larger 1,800 MW three-phase initiative off Taichung County, Taiwan",
+      "MOL invested ~JPY 25 billion (~US$172.6M) for the 10% stake to gain construction-phase offshore wind experience",
+      "Project secured ~TWD 103 billion (~US$3.1B) financing from 27 banks and four export credit agencies; financial close March 2025",
+      "All 495 MW fully contracted through long-term PPAs with six local and international energy users; equivalent to ~650,000 Taiwanese households",
+    ],
   },
   // ─── 13. CIP – Coalburn 2 ────────────────────────────────
   {
@@ -450,9 +527,16 @@ export const deals: Deal[] = [
     legalAdvisorBuyer: null,
     legalAdvisorSeller: null,
     country: "United Kingdom",
-    assetScale: null,
+    assetScale: "500 MW / 1,000 MWh BESS",
     valuationMultiple: null,
     fundVehicle: "Copenhagen Infrastructure Energy Transition Fund I",
+    keyHighlights: [
+      "500 MW / 1,000 MWh (2-hour duration) lithium-ion BESS on a 22-hectare former opencast coal mine in South Lanarkshire — among Europe's largest battery storage facilities",
+      "Revenue underpinned by 10-year optimization agreement with SSE and 15-year capacity market agreement providing stable return foundation",
+      "5 blocks of 100 MW each using ~450 SolBank 3.0 battery containers; FID taken December 2024, commissioning scheduled for 2027",
+      "AIP Management (60% owned by Storebrand, €8B+ infrastructure AUM) acquiring 50% as part of its UK BESS portfolio strategy",
+      "One of three CIP/Alcemi transmission-connected BESS assets under construction in Scotland with collective capacity of 1.5 GW / 3 GWh",
+    ],
   },
   // ─── 14. CVC DIF – iPark ─────────────────────────────────
   {
@@ -471,19 +555,26 @@ export const deals: Deal[] = [
       "iPark, a leading operator of off-street parking concessions in Spain and Portugal with over 30,000 spaces.",
     sourceName: "CVC",
     sourceUrl: "https://www.cvc.com/media/news/2026/cvc-dif-to-acquire-leading-iberian-parking-infrastructure-platform-ipark-from-elliott-investment-management/",
-    enterpriseValue: null,
+    enterpriseValue: "~€300 million",
     equityValue: null,
     stake: "100%",
     status: "Announced",
     closingDate: "H1 2026",
-    financialAdvisorBuyer: ["Rothschild & Co"],
-    financialAdvisorSeller: ["Houlihan Lokey"],
-    legalAdvisorBuyer: ["Clifford Chance"],
-    legalAdvisorSeller: null,
+    financialAdvisorBuyer: ["RBC Capital Markets"],
+    financialAdvisorSeller: ["DC Advisory"],
+    legalAdvisorBuyer: ["Uria & Menendez"],
+    legalAdvisorSeller: ["Eversheds"],
     country: "Spain",
     assetScale: "30,000+ parking spaces",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "80+ parking facilities primarily in urban centers, hospitals, and transport hubs across Spain and Portugal",
+      "Long-term concession contracts with high-visibility cash flows",
+      "CVC DIF won competitive process over other bidders including parking operator Indigo",
+      "Investment via DIF Infrastructure VIII, a closed-end fund targeting €6 billion",
+      "CEO Juan Manuel Mogarra and team to continue leading iPark's buy-and-build growth strategy",
+    ],
   },
   // ─── 15. CVC DIF – Celeste ────────────────────────────────
   {
@@ -507,14 +598,21 @@ export const deals: Deal[] = [
     stake: "~88%",
     status: "Announced",
     closingDate: "H1 2026",
-    financialAdvisorBuyer: null,
+    financialAdvisorBuyer: ["Oddo BHF"],
     financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
+    legalAdvisorBuyer: ["De Pardieu"],
     legalAdvisorSeller: null,
     country: "France",
-    assetScale: null,
+    assetScale: "13,600 km fiber, 6 data centers, 20,000+ business customers",
     valuationMultiple: null,
-    fundVehicle: null,
+    fundVehicle: "DIF Value-Add IV",
+    keyHighlights: [
+      "First investment from CVC DIF's Value-Add IV fund; acquiring ~88% from InfraVia with founder/CEO Nicolas Aubé reinvesting in a significant minority stake",
+      "Celeste (founded 2001) serves 20,000+ businesses and 3,000 municipalities in France and Switzerland via 13,600 km of proprietary fiber and six data centers",
+      "Integrated platform covering connectivity, hosting/cloud, and cybersecurity services for B2B customers",
+      "CVC DIF (formerly DIF Capital Partners, Netherlands, founded 2005) manages €18B (~US$20.9B) in infrastructure AUM",
+      "Completion expected Q1 2026 subject to French employee representative body consultation and customary conditions",
+    ],
   },
   // ─── 16. EnCap Investments ────────────────────────────────
   {
@@ -543,9 +641,15 @@ export const deals: Deal[] = [
     legalAdvisorBuyer: null,
     legalAdvisorSeller: null,
     country: "United States",
-    assetScale: null,
+    assetScale: "500 MW Phase I, expanding to 1 GW",
     valuationMultiple: null,
-    fundVehicle: "EnCap Investments",
+    fundVehicle: "EnCap Investments (Energy Transition)",
+    keyHighlights: [
+      "CEO John Chesser, formerly CFO of Talen Energy (which developed and sold its PA data center project to Amazon); leadership team has developed 15+ GW of energy projects across 22 US states",
+      "First project in Montana: Phase I of 500 MW with phased growth to 1 GW; initial electric service as early as 2026, reaching 500 MW by 2030",
+      "EnCap has raised ~US$47 billion in private capital since 1988; Quantica delivers 'shovel-ready' sites integrating renewables, grid power, and network connectivity",
+      "NorthWestern Energy actively working with Quantica to optimize transmission infrastructure and generation resources",
+    ],
   },
   // ─── 17. Energy Capital Partners ──────────────────────────
   {
@@ -577,6 +681,11 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "Portfolio comprises the Waterford and Darby natural gas power generation plants",
+      "Talen Energy acquiring assets to expand its power generation capacity",
+      "One of the largest US power generation portfolio transactions in 2026",
+    ],
   },
   // ─── 18. Equitix – UK Portfolio ───────────────────────────
   {
@@ -608,6 +717,12 @@ export const deals: Deal[] = [
     assetScale: "10 assets (OFTOs, PFI, roads)",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "Combined proceeds of £87 million for 10 assets, generating £7 million gain on disposals — exceeding Balfour Beatty Directors' valuation as of June 2025",
+      "Portfolio comprises three OFTOs (including connection for RWE's 576 MW Gwynt y Môr offshore wind), five street lighting PFIs, one biomass plant, and one road concession",
+      "Part of Balfour Beatty's strategy to optimize value through disposal of operational assets while investing in new opportunities",
+      "Equitix (founded 2007) is an active UK mid-market infrastructure investor; closed second European infrastructure fund with €1.4B commitments in 2025",
+    ],
   },
   // ─── 19. Equitix – Italian Solar ──────────────────────────
   {
@@ -631,14 +746,20 @@ export const deals: Deal[] = [
     stake: "90%",
     status: "Closed",
     closingDate: "January 2026",
-    financialAdvisorBuyer: null,
+    financialAdvisorBuyer: ["L&B Partners"],
     financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
+    legalAdvisorBuyer: ["Legance"],
     legalAdvisorSeller: null,
     country: "Italy",
-    assetScale: null,
+    assetScale: "144 MWp total (including 40 MW acquired from ACEA)",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "Equitix increased stake from 60% to 90% in AE Sun Capital Srl (JV with Acea Produzione); concurrently acquired EASolar Srl (three PV plants in Sicily and Lazio, 40 MW)",
+      "Total portfolio now 144 MWp of installed solar capacity across Italy; original 60% JV formed March 2022 for €220 million",
+      "ACEA retains 10% plus long-term O&M and asset management contracts; committed to purchase electricity under long-term PPAs from new-build plants",
+      "AE Sun Capital holds an option to access a pipeline of up to ~500 MW of PV plants under development by ACEA",
+    ],
   },
   // ─── 20. GIP – Rio Grande LNG ─────────────────────────────
   {
@@ -667,9 +788,15 @@ export const deals: Deal[] = [
     legalAdvisorBuyer: null,
     legalAdvisorSeller: null,
     country: "United States",
-    assetScale: "Trains 4 & 5",
+    assetScale: "Trains 4 & 5 (~12 mtpa combined)",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "XRG (ADNOC's international lower-carbon energy investment arm, launched Nov 2024 with EV exceeding US$150B) exercised options for the additional 7.6% stake from GIP/BlackRock",
+      "Builds on XRG's initial 11.7% stake in Trains 1-3; ADNOC Trading also secured 20-year LNG offtake agreement for 1.9 mtpa from Train 4",
+      "Trains 4 and 5 each have ~6 mtpa capacity; NextDecade took positive FID on Train 4 in September 2025, issuing full NTP to Bechtel Energy",
+      "Currently employs 5,000+ construction workers; Phase 1 on track for 2027 start-up; other partners include GIC and Mubadala",
+    ],
   },
   // ─── 21. I Squared – Ramudden ─────────────────────────────
   {
@@ -688,19 +815,26 @@ export const deals: Deal[] = [
       "Ramudden Global, a leading provider of temporary traffic management and work zone safety services.",
     sourceName: "I Squared Capital",
     sourceUrl: "https://isquaredcapital.com/cpt_news/i-squared-capital-acquires-ramudden-global-a-leader-in-traffic-management-and-infrastructure-safety/",
-    enterpriseValue: null,
+    enterpriseValue: "~€2.5 billion",
     equityValue: null,
     stake: "100%",
     status: "Announced",
     closingDate: "H1 2026",
     financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
+    financialAdvisorSeller: ["Goldman Sachs", "Deutsche Bank"],
+    legalAdvisorBuyer: ["Skadden, Arps, Slate, Meagher & Flom"],
     legalAdvisorSeller: null,
     country: "Sweden",
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "ISQ Global Infrastructure Fund III",
+    keyHighlights: [
+      "190+ depots across 13 countries in Europe and North America with 5,000+ employees",
+      "Annual turnover exceeds €1 billion, grown from ~€280 million at formation in 2017-2018",
+      "66+ add-on acquisitions completed under Triton ownership",
+      "2024 acquisition of RSG International created first pan-Atlantic traffic management platform",
+      "Triton retains option to re-invest up to 20% of the equity",
+    ],
   },
   // ─── 22. I Squared – ANZA Power ──────────────────────────
   {
@@ -731,7 +865,14 @@ export const deals: Deal[] = [
     country: "Australia",
     assetScale: null,
     valuationMultiple: null,
-    fundVehicle: "ISQ Global Infrastructure Fund III",
+    fundVehicle: "ISQ Growth Markets Infrastructure Fund II",
+    keyHighlights: [
+      "Acquired 1.4 GW solar development pipeline and 3.4 GWh+ battery storage pipeline from Bison Energy",
+      "80 MWac / 320 MWh solar hybrid plants in Victoria and NSW secured by 20-year agreements with Tier 1 hyperscale customer",
+      "300 MW / 1,200 MWh Sheffield battery system (Tasmania) and 200 MW / 800 MWh Albury battery (NSW)",
+      "New Zealand pipeline includes 30 MW Somerton, 100 MW Norwood, and 70 MW Highfield solar farms",
+      "Additional 80 MW of renewable assets targeting construction start in H1 2026",
+    ],
   },
   // ─── 23. I Squared – Radiant Energy Solutions ─────────────
   {
@@ -757,12 +898,18 @@ export const deals: Deal[] = [
     closingDate: null,
     financialAdvisorBuyer: null,
     financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
+    legalAdvisorBuyer: ["Latham & Watkins"],
     legalAdvisorSeller: null,
     country: "United Arab Emirates",
-    assetScale: null,
+    assetScale: "100+ MWp secured pipeline, targeting 1 GW+",
     valuationMultiple: null,
     fundVehicle: "ISQ Global Infrastructure Fund III",
+    keyHighlights: [
+      "Seeded with acquisition of FAS Renewables and subsidiary Zahra Energy (Saudi-based distributed solar) with 100+ MWp of secured projects under long-term contracted PPAs, including with Cenomi Centers",
+      "I Squared committed US$150 million to support growth, targeting 1+ GW of behind-the-meter renewables, storage, and energy transition solutions across the GCC",
+      "ISQ Global Infrastructure Fund III closed at $15.5B in April 2022; expanding regional presence with Abu Dhabi office and planned Riyadh office",
+      "Joins I Squared's global renewables portfolio exceeding 10,000 MW; platform-building strategy to scale via bolt-on acquisitions across solar, storage, and C&I customers",
+    ],
   },
   // ─── 24. KKR – GTR ────────────────────────────────────────
   {
@@ -788,12 +935,19 @@ export const deals: Deal[] = [
     closingDate: null,
     financialAdvisorBuyer: null,
     financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
+    legalAdvisorBuyer: ["Simpson Thacher & Bartlett"],
     legalAdvisorSeller: null,
     country: "Germany",
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "KKR Global Infrastructure Investors IV",
+    keyHighlights: [
+      "Total KKR commitment now $2.5 billion (original $1B in 2020 + additional $1.5B)",
+      "Oak Hill Capital contributing ~$400 million as new co-investor",
+      "Founded by Franek Sodzawiczny, who previously built and sold Sentrum (~$1B to Digital Realty) and Zenium ($442M to CyrusOne)",
+      "Slough (UK) campus: 40.5 MW IT load upon completion; 94+ MW under development across Europe",
+      "Part of KKR's ~$34 billion digital infrastructure portfolio across 155+ facilities",
+    ],
   },
   // ─── 25. Patrizia ─────────────────────────────────────────
   {
@@ -822,9 +976,15 @@ export const deals: Deal[] = [
     legalAdvisorBuyer: null,
     legalAdvisorSeller: null,
     country: "Sweden",
-    assetScale: "49 preschool properties",
+    assetScale: "421 total properties serving ~34,000 people",
     valuationMultiple: null,
     fundVehicle: "Kinland (managed by Patrizia)",
+    keyHighlights: [
+      "Bolt-on of 49 properties grew Kinland portfolio from 372 to 421 properties serving ~34,000 people; Swedish footprint more than doubled from 15 to 34 properties",
+      "Assets primarily in Greater Stockholm and Greater Helsinki with long-term triple-net leases of up to 15 years with government-backed care service operators",
+      "Kinland secured ~€900 million in refinancing (NOK and EUR tranches) via substantially oversubscribed senior debt transaction in September 2025",
+      "Since Patrizia's 2019 acquisition, Kinland's asset base has grown by over 115%; bolt-ons underscore Nordic social infrastructure demand driven by urbanisation",
+    ],
   },
   // ─── 26. Quinbrook ────────────────────────────────────────
   {
@@ -849,13 +1009,19 @@ export const deals: Deal[] = [
     status: "Closed",
     closingDate: "January 2026",
     financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
+    financialAdvisorSeller: ["Jefferies"],
     legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
+    legalAdvisorSeller: ["DLA Piper"],
     country: "United Kingdom",
-    assetScale: null,
+    assetScale: "~1.3 GW distributed flexible capacity",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "~£42M total proceeds (£36M EV plus ~£6M net working capital/cash adjustment); Quinbrook originally acquired Flexitricity in 2020 for £15.2M, implying ~2.8x gross MOIC",
+      "Under Quinbrook's ownership, contracted portfolio more than doubled from 540 MW to ~1.3 GW of distributed capacity (BESS, demand response, flexible generation)",
+      "Proprietary AI/ML-enabled controls platform managing 900+ MW of operational assets across wholesale, balancing, and ancillary markets",
+      "Drax intends to use Flexitricity to accelerate development of a GW-scale BESS pipeline; Velox Power (Quinbrook's flexible generation business) excluded from sale",
+    ],
   },
   // ─── 27. Ridgewood Infrastructure ─────────────────────────
   {
@@ -887,6 +1053,13 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "5 FBO locations: Opa-locka (South FL), Dulles (DC), Centennial (Denver), San Jose & second Bay Area location",
+      "Mark Johnstone, former CEO of Signature Aviation, to lead the business",
+      "Focus on capacity-constrained airports where new FBO development is restricted",
+      "Joint investment by Bain Capital Real Estate and Bain Capital Special Situations",
+      "Intended as foundation for broader FBO platform via selective add-on acquisitions",
+    ],
   },
   // ─── 28. Schroders Greencoat ──────────────────────────────
   {
@@ -918,6 +1091,12 @@ export const deals: Deal[] = [
     assetScale: "110 MWp (3 solar farms)",
     valuationMultiple: null,
     fundVehicle: "Greencoat Solar",
+    keyHighlights: [
+      "Three operational solar farms: Gorse Lane (Lincolnshire), Defford (Worcestershire), and Watnall (Nottinghamshire), powering ~41,300 homes/year",
+      "Farms benefit from corporate PPA signed April 2022 between METLEN/Centrica and Vodafone UK, providing long-term contracted revenue",
+      "Reinforces Schroders Greencoat's position as largest manager of operating ground-mount solar farms in the UK with ~1.9 GWp total managed portfolio",
+      "Led to a second, larger deal in February 2026: 283 MWp portfolio of seven UK solar projects from METLEN with Vodafone and Engie offtake",
+    ],
   },
   // ─── 29. Stonepeak ────────────────────────────────────────
   {
@@ -936,8 +1115,8 @@ export const deals: Deal[] = [
       "United Ports LLC, a new platform holding 10 key container terminals globally in partnership with CMA CGM.",
     sourceName: "Stonepeak",
     sourceUrl: "https://stonepeak.com/news/cma-cgm-and-stonepeak-announce-groundbreaking-terminal-joint-venture-united-ports-llc",
-    enterpriseValue: "$2.4 billion (Stonepeak investment)",
-    equityValue: null,
+    enterpriseValue: "~$9.6 billion (implied JV valuation)",
+    equityValue: "$2.4 billion (Stonepeak for 25%)",
     stake: "25%",
     status: "Announced",
     closingDate: "H1 2026",
@@ -949,6 +1128,13 @@ export const deals: Deal[] = [
     assetScale: "10 container terminals globally",
     valuationMultiple: null,
     fundVehicle: "Stonepeak Infrastructure Fund V",
+    keyHighlights: [
+      "10 terminals: Fenix (LA), Port Liberty (NY), Santos (Brazil), Valencia, Bilbao, Algeciras, Guadalquivir (Spain), Nhava Sheva (India), Kaohsiung (Taiwan), Gemalink (Vietnam)",
+      "CMA CGM retains 75% ownership and full operational control; Stonepeak option to contribute additional $3.6B for future terminals",
+      "CMA CGM reinvesting $2.4B proceeds into core shipping and logistics",
+      "CMA CGM directly controls 41 terminals, plus 21 via Terminal Link JV with China Merchants Port",
+      "Subject to antitrust and foreign direct investment regulatory approvals",
+    ],
   },
   // ─── 30. Tiger Infrastructure Partners ────────────────────
   {
@@ -977,9 +1163,16 @@ export const deals: Deal[] = [
     legalAdvisorBuyer: null,
     legalAdvisorSeller: null,
     country: "Denmark",
-    assetScale: null,
+    assetScale: "140 AC charging stations (Copenhagen)",
     valuationMultiple: null,
-    fundVehicle: "Tiger Infrastructure Partners Fund III",
+    fundVehicle: "Tiger Infrastructure Partners Fund III ($1.3B)",
+    keyHighlights: [
+      "Won two contracts in contested public tender to install and operate up to 140 public AC charging stations across multiple Copenhagen districts",
+      "Deploying next-gen CP22 model: dual-connector (Type 2), 7-inch screen, 40x30 cm footprint designed for dense urban residential areas",
+      "Fully privately-financed, subsidy-free model enabling municipalities to scale EV charging without public investment",
+      "Qwello now operates 16,000+ charge points across Germany, Netherlands, Sweden, UK, France, Spain, Poland, and Denmark",
+      "Tiger Infrastructure invested €50 million in Qwello in 2021; Fund III raised $1.3B at hard cap",
+    ],
   },
   // ─── 31. CIP – Ørsted Onshore Europe ────────────────────
   {
@@ -998,19 +1191,25 @@ export const deals: Deal[] = [
       "Ørsted Onshore Europe, a 578 MW operating wind and solar portfolio with development pipeline across the UK, Germany, and Spain.",
     sourceName: "CIP",
     sourceUrl: "https://cipartners.dk/2026/02/03/cip-acquires-orsted-onshore-europe/",
-    enterpriseValue: null,
+    enterpriseValue: "€1.44 billion (DKK 10.7B / ~US$1.7B)",
     equityValue: null,
     stake: "100%",
     status: "Announced",
-    closingDate: "H1 2026",
+    closingDate: "Q2 2026",
     financialAdvisorBuyer: null,
     financialAdvisorSeller: ["Evercore"],
     legalAdvisorBuyer: null,
     legalAdvisorSeller: null,
     country: "United Kingdom",
-    assetScale: "578 MW (operating) + development pipeline",
+    assetScale: "578 MW operating + 248 MW under construction + multi-GW pipeline",
     valuationMultiple: null,
-    fundVehicle: null,
+    fundVehicle: "Copenhagen Infrastructure V (€12B / US$14B)",
+    keyHighlights: [
+      "Acquiring Ørsted's entire European onshore business for €1.44B (DKK 10.7B); 578 MW operating, 248 MW under construction, plus multi-GW development pipeline across Ireland, UK, Germany, and Spain",
+      "CI V reached final close March 2025 raising €12B (US$14B), exceeding target, with ~€24B total potential commitment capacity",
+      "Business to operate as independent entity under new brand with Cork remaining as European headquarters post-close",
+      "Part of Ørsted's cornerstone divestment programme (alongside 50% Hornsea 3 to Apollo and 55% Changhua 2 to Cathay Life), bringing total signed proceeds to ~DKK 46B vs DKK 35B target",
+    ],
   },
   // ─── 32. Antin – Vigor Marine Group ─────────────────────
   {
@@ -1034,14 +1233,21 @@ export const deals: Deal[] = [
     stake: "100%",
     status: "Announced",
     closingDate: "H1 2026",
-    financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
+    financialAdvisorBuyer: ["J.P. Morgan"],
+    financialAdvisorSeller: ["Evercore", "Macquarie Capital"],
+    legalAdvisorBuyer: ["Latham & Watkins", "Milbank"],
+    legalAdvisorSeller: ["Kirkland & Ellis"],
     country: "United States",
-    assetScale: null,
+    assetScale: "6 drydocks, 29 berths, ~$1B revenue (2024)",
     valuationMultiple: null,
-    fundVehicle: "Antin Infrastructure Partners Fund V",
+    fundVehicle: "Antin Infrastructure Partners Fund V ($11.8B)",
+    keyHighlights: [
+      "Leading U.S. maritime MRO and fabrication provider based in Portland, OR, operating shipyard facilities in Seattle, Vancouver (WA), San Diego, and Norfolk with 6 drydocks and 29 berths",
+      "Generated nearly $1 billion in revenue in 2024 with ~2,700 employees; seventh investment by Antin's $11.8B Flagship Fund V",
+      "Under Lone Star Funds' ownership, consolidated five separate entities under single brand and invested $170M+ in facility improvements and technology upgrades",
+      "CEO Francesco Valente and management team to remain; Antin plans to expand capacity across all five locations to meet increasing U.S. naval and defense demand",
+      "Antin manages over €33 billion in AUM across Flagship, Mid Cap, and NextGen strategies",
+    ],
   },
   // ─── 33. ECP & KKR – AI Infrastructure Platform (JV) ───
   {
@@ -1073,6 +1279,11 @@ export const deals: Deal[] = [
     assetScale: "Hyperscale data center campus",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "$50 billion strategic partnership for AI infrastructure development",
+      "Initial JV to develop a hyperscale data center campus in Texas",
+      "Combines ECP's energy expertise with KKR's digital infrastructure track record",
+    ],
   },
   // ─── 34. DWS Infrastructure – Open Hub Med ──────────────
   {
@@ -1101,9 +1312,15 @@ export const deals: Deal[] = [
     legalAdvisorBuyer: null,
     legalAdvisorSeller: null,
     country: "Italy",
-    assetScale: null,
+    assetScale: "2 MW (expandable to 4 MW), 1,000 sqm (expandable to 4,000 sqm)",
     valuationMultiple: null,
-    fundVehicle: "DWS Infrastructure Trust",
+    fundVehicle: "Pan-European Infrastructure III (DWS)",
+    keyHighlights: [
+      "2 MW, 1,000 sqm carrier-neutral data center in Carini near Palermo, expandable to 4 MW and 4,000 sqm with secured additional space and power",
+      "Less than 1 km from coast with proximity to major submarine cable landings — strategic hub for Europe-Africa-Asia data traffic",
+      "Acquired by Mediterra DataCenters (backed by PEIF III / DWS); second Italian operation after Cloud Europe (Tier IV DC in Rome) acquired July 2024",
+      "Originally launched ~2017 by consortium including Equinix Italia, Fastweb, Italtel, Retelit, MIX, and SuperNAP Italia, providing established tenant/connectivity ecosystem",
+    ],
   },
   // ─── 35. Schroders Greencoat – UK Solar Portfolio ───────
   {
@@ -1128,13 +1345,19 @@ export const deals: Deal[] = [
     status: "Announced",
     closingDate: "H1 2026",
     financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
+    financialAdvisorSeller: ["Akereos Capital"],
     legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
+    legalAdvisorSeller: ["Pinsent Masons"],
     country: "United Kingdom",
-    assetScale: "283 MW (operational & under construction)",
+    assetScale: "283 MWp (143 MW operational + 140 MW under construction)",
     valuationMultiple: null,
     fundVehicle: "Greencoat Solar",
+    keyHighlights: [
+      "Seven solar projects across England and Scotland: 143 MW operational/mechanically complete and 140 MW under construction with expected COD within Q2 2026",
+      "Long-term power purchase agreements with Vodafone and Engie providing high revenue visibility and cash flow stability",
+      "Second transaction between Schroders Greencoat and METLEN following the ~110 MWp UK solar deal in 2024, deepening bilateral relationship",
+      "Schroders Greencoat manages ~£9.7 billion and 430+ renewable infrastructure assets exceeding 7.4 GW net generation capacity globally",
+    ],
   },
   // ─── 36. KKR & Singtel – STT GDC ───────────────────────
   {
@@ -1153,19 +1376,25 @@ export const deals: Deal[] = [
       "ST Telemedia Global Data Centres (STT GDC), a global data center platform.",
     sourceName: "KKR / Singtel",
     sourceUrl: "https://www.kkr.com/news/2026/kkr-singtel-acquire-stt-gdc/",
-    enterpriseValue: null,
-    equityValue: null,
+    enterpriseValue: "S$13.8 billion (~US$10.9B)",
+    equityValue: "S$6.6 billion (~US$5.2B) for 82%",
     stake: "82%",
     status: "Announced",
     closingDate: "H2 2026",
-    financialAdvisorBuyer: ["Morgan Stanley", "Citi"],
-    financialAdvisorSeller: ["Goldman Sachs"],
+    financialAdvisorBuyer: ["Citi", "Bank of America"],
+    financialAdvisorSeller: ["J.P. Morgan"],
     legalAdvisorBuyer: ["Simpson Thacher & Bartlett"],
     legalAdvisorSeller: null,
     country: "Singapore",
-    assetScale: null,
+    assetScale: "~100 data centers, 12 markets, 2.3 GW design capacity",
     valuationMultiple: null,
     fundVehicle: "KKR Global Infrastructure Investors IV",
+    keyHighlights: [
+      "S$6.6B (~US$5.2B) in two equal cash tranches for remaining 82% from ST Telemedia (Temasek subsidiary); EV of S$13.8B (~US$10.9B) — Southeast Asia's largest DC deal ever",
+      "Post-completion: KKR 75%, Singtel 25%; builds on initial S$1.75B minority investment in June 2024 and KKR's $800M stake in Singtel's Nxera DC business (2023)",
+      "~100 data centers across 12 markets in Asia Pacific and UK/Europe with 2.3 GW design capacity, serving hyperscalers and enterprise customers",
+      "Consortium secured US$5B in debt facilities for acquisition and future capex; Singtel cash contribution is US$740M",
+    ],
   },
   // ─── 37. IFM Investors – Mobius Renewables ──────────────
   {
@@ -1194,9 +1423,15 @@ export const deals: Deal[] = [
     legalAdvisorBuyer: null,
     legalAdvisorSeller: null,
     country: "United States",
-    assetScale: null,
+    assetScale: "5.5+ million MMBtu/year biomethane production",
     valuationMultiple: null,
-    fundVehicle: "IFM Global Infrastructure Fund",
+    fundVehicle: "IFM Net Zero Infrastructure Fund / IFM Global Infrastructure Fund",
+    keyHighlights: [
+      "Vertically integrated low-carbon fuels platform headquartered in Houston, TX; unites IFM's existing GreenGasUSA with Mobius Fuels LLC (founded by CEO Cynthia Walker)",
+      "Expected to produce and distribute 5.5+ million MMBtu/year of biomethane from landfill gas and anaerobic digestion, positioning as a leading global biomethane producer",
+      "Key offtake partners include Mercedes-Benz, Berkshire Hathaway Energy, and Duke University; targeting transport, marine, power, utility, and industrial markets",
+      "IFM manages ~US$161.2B in AUM (as of September 2025) on behalf of 800+ institutional investors",
+    ],
   },
   // ─── 38. Igneo – Vault Digital Infrastructure (Altum) ──
   {
@@ -1222,12 +1457,18 @@ export const deals: Deal[] = [
     closingDate: null,
     financialAdvisorBuyer: null,
     financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
+    legalAdvisorBuyer: ["Gibson Dunn"],
+    legalAdvisorSeller: ["Akin Gump"],
     country: "United States",
-    assetScale: null,
+    assetScale: "75 MW, ~750,000 sq ft, 7 data centers",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "Seven colocation/enterprise data centers totaling 75 MW and ~750,000 sq ft in Phoenix, Richardson (TX), Santa Clara, Charlotte, Clarksville (VA), Hazelwood (MO), and Indianapolis",
+      "CVC DIF and Northleaf each held 49% (Landmark Dividend 2%); JV created in 2018 and grew from single facility into scaled platform",
+      "Rebranded as Altum Digital Infrastructure, led by CEO Timothy Doherty and COO Chris Kent; plans to scale capacity within 18 months",
+      "Igneo Infrastructure Partners (direct infrastructure business of First Sentier Investors) manages ~$23B in AUM; all locations characterized by low vacancy and high barriers to entry",
+    ],
   },
   // ─── 39. Pilot Fiber – ExteNet Enterprise Fiber ─────────
   {
@@ -1252,13 +1493,19 @@ export const deals: Deal[] = [
     status: "Announced",
     closingDate: null,
     financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
+    financialAdvisorSeller: ["Bank Street Group"],
     legalAdvisorBuyer: null,
     legalAdvisorSeller: null,
     country: "United States",
-    assetScale: null,
+    assetScale: "300+ miles fiber, 3,500+ businesses, 1,000+ buildings",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "Carve-out of enterprise fiber from ExteNet Systems (owned by DigitalBridge and Stonepeak); ExteNet retains core distributed networks, small-cell, and mobility businesses",
+      "Acquired assets include Hudson Fiber Network (purpose-built fiber connecting Manhattan to NJ via Hudson River crossing for financial services) and Axiom Fiber Network (high-capacity dark fiber between NYC data centers)",
+      "Serves ~200 enterprise, carrier, and institutional customers across financial services, healthcare, media, and higher education",
+      "Expands Pilot Fiber's footprint into New Jersey and adds 20+ additional data centers to its network; Pilot owns 300+ miles of fiber throughout NYC serving 3,500+ businesses",
+    ],
   },
   // ─── 40. Macquarie – Energy Assets Group (EAG) ─────────
   {
@@ -1290,6 +1537,13 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "Macquarie Asset Management Infrastructure",
+    keyHighlights: [
+      "Acquiring 100% from consortium of Asterion Industrial Partners (controller), EDF Invest, and Swiss Life Asset Managers, who purchased EAG in June 2020 from Alinda/Hermes for ~$648M",
+      "EAG is the largest independent provider of Industrial & Commercial gas metering services in the UK, headquartered in Livingston, Scotland",
+      "Stable, long-term contractual revenue from creditworthy counterparties; provides integrated multi-utility metering services and management",
+      "Complements Macquarie's UK smart metering strategy following May 2025 acquisition of Iberdrola's UK smart meter portfolio (2.7M meters) for ~£900M",
+      "Macquarie has operated in UK 35+ years, investing and arranging £65B+ in UK infrastructure including stakes in National Gas and Cadent Gas",
+    ],
   },
   // ─── 41. Macquarie – Last Mile Infrastructure ──────────
   {
@@ -1318,9 +1572,16 @@ export const deals: Deal[] = [
     legalAdvisorBuyer: null,
     legalAdvisorSeller: null,
     country: "United Kingdom",
-    assetScale: null,
+    assetScale: "930,000 connections + 725,000 order book",
     valuationMultiple: null,
-    fundVehicle: "Macquarie Asset Management Infrastructure",
+    fundVehicle: "Macquarie European Infrastructure Fund 7",
+    keyHighlights: [
+      "MAM acquiring additional 50% from Infracapital (M&G's infrastructure PE arm) for full 100% ownership; initial 50% acquired in 2023 via MEIF 7",
+      "Connections base grown from 675,000 to 930,000 electricity, gas, water, and wastewater connections since 2023 partnership, with ~725,000 additional in order book",
+      "Under Infracapital ownership (since 2018), grew from regional electricity/gas provider to UK-wide multi-utility business, quadrupling live connections; 800 employees",
+      "Supports UK Government target to build 1.5 million new homes by 2029 — designs, installs, owns, and operates last-mile utility connections including smart meters",
+      "Macquarie Capital previously owned Last Mile (as 'Energetics') between 2013-2018, giving deep institutional familiarity with the asset",
+    ],
   },
   // ─── 42. TPG Rise Climate – Sabre Industries ───────────
   {
@@ -1339,19 +1600,25 @@ export const deals: Deal[] = [
       "Sabre Industries, a manufacturer of power transmission structures and wireless towers.",
     sourceName: "TPG",
     sourceUrl: "https://www.tpg.com/news/2026/tpg-rise-climate-acquires-sabre-industries/",
-    enterpriseValue: null,
+    enterpriseValue: "~$3.5 billion",
     equityValue: null,
     stake: "Majority",
     status: "Announced",
-    closingDate: "H1 2026",
+    closingDate: "Q2 2026",
     financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
+    financialAdvisorSeller: ["Harris Williams", "Jefferies", "Wells Fargo"],
+    legalAdvisorBuyer: ["Latham & Watkins", "Kirkland & Ellis"],
+    legalAdvisorSeller: ["Vinson & Elkins"],
     country: "United States",
-    assetScale: null,
+    assetScale: "2.3M+ sq ft manufacturing, ~2,800 employees",
     valuationMultiple: null,
     fundVehicle: "TPG Rise Climate Fund",
+    keyHighlights: [
+      "Valued at $3.5 billion; TPG Rise Climate acquiring from Blackstone Energy Transition Partners (invested 2021), which retains a significant minority stake",
+      "Founded 1977, headquartered in Alvarado, TX; designs, engineers, and manufactures electrical T&D structures, wireless/telecom towers, and integrated electrical enclosures",
+      "~2,800 employees and 2.3M+ sq ft of domestic manufacturing; utility business (largest segment) supports grid modernization and reliability",
+      "Positioned at intersection of energy transition, AI/data center, and 5G megatrends — enclosures increasingly used for large-scale data center projects",
+    ],
   },
 ];
 
