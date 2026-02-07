@@ -23,6 +23,14 @@ import {
   Calendar,
   Tag,
   Check,
+  DollarSign,
+  MapPin,
+  Landmark,
+  Clock,
+  Percent,
+  Zap,
+  Gauge,
+  Wallet,
 } from "lucide-react";
 import { DynamicInsightsHero } from "./DealDatabase/DynamicInsightsHero";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -537,6 +545,78 @@ function DealTable({
   );
 }
 
+// ─── Status Badge ───────────────────────────────────────────
+function StatusBadge({ status }: { status: string }) {
+  const config: Record<string, { color: string; bg: string; border: string }> = {
+    Announced: { color: "#3b82f6", bg: "#3b82f615", border: "#3b82f630" },
+    Closed: { color: "#10b981", bg: "#10b98115", border: "#10b98130" },
+    "Pending Regulatory Approval": { color: "#f59e0b", bg: "#f59e0b15", border: "#f59e0b30" },
+    Terminated: { color: "#ef4444", bg: "#ef444415", border: "#ef444430" },
+  };
+  const s = config[status] || config.Announced;
+  return (
+    <span
+      className="text-[11px] font-semibold px-2.5 py-1 rounded-full inline-flex items-center gap-1.5"
+      style={{ color: s.color, backgroundColor: s.bg, border: `1px solid ${s.border}` }}
+    >
+      <span
+        className="w-1.5 h-1.5 rounded-full"
+        style={{ backgroundColor: s.color }}
+      />
+      {status}
+    </span>
+  );
+}
+
+// ─── Detail Row Helper ──────────────────────────────────────
+function DetailRow({
+  icon: Icon,
+  iconColor,
+  label,
+  children,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  iconColor: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="glass-card rounded-lg px-4 py-3 flex items-start gap-3">
+      <Icon className={`h-4 w-4 mt-0.5 shrink-0 ${iconColor}`} />
+      <div className="min-w-0">
+        <span className="text-[11px] text-zinc-600 block">{label}</span>
+        <div className="text-sm text-zinc-300">{children}</div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Advisor Card ───────────────────────────────────────────
+function AdvisorCard({
+  label,
+  firms,
+  iconColor,
+}: {
+  label: string;
+  firms: string[];
+  iconColor: string;
+}) {
+  return (
+    <div className="glass-card rounded-lg p-4">
+      <span className={`text-[11px] font-medium uppercase tracking-wider block mb-2 ${iconColor}`}>
+        {label}
+      </span>
+      <div className="space-y-1">
+        {firms.map((firm) => (
+          <div key={firm} className="text-sm text-zinc-200 font-medium">
+            {firm}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── Side Drawer ────────────────────────────────────────────
 function DealDrawer({
   deal,
@@ -546,6 +626,13 @@ function DealDrawer({
   onClose: () => void;
 }) {
   const catColor = getCategoryColor(deal.category);
+  const hasAdvisors =
+    deal.financialAdvisorBuyer ||
+    deal.financialAdvisorSeller ||
+    deal.legalAdvisorBuyer ||
+    deal.legalAdvisorSeller;
+  const hasEconomics =
+    deal.enterpriseValue || deal.equityValue || deal.stake || deal.valuationMultiple;
 
   // Escape key to close
   useEffect(() => {
@@ -571,7 +658,10 @@ function DealDrawer({
         {/* Header */}
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
           <div className="pr-2 min-w-0">
-            <span className="mono text-xs text-zinc-600">{deal.id}</span>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="mono text-xs text-zinc-600">{deal.id}</span>
+              <StatusBadge status={deal.status} />
+            </div>
             <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-zinc-50 mt-0.5 leading-tight">
               {deal.title}
             </h2>
@@ -637,6 +727,37 @@ function DealDrawer({
             </div>
           </div>
 
+          {/* Deal Economics */}
+          {hasEconomics && (
+            <div className="space-y-3">
+              <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
+                Deal Economics
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {deal.enterpriseValue && (
+                  <DetailRow icon={DollarSign} iconColor="text-emerald-500" label="Enterprise Value">
+                    <span className="font-semibold text-zinc-100">{deal.enterpriseValue}</span>
+                  </DetailRow>
+                )}
+                {deal.equityValue && (
+                  <DetailRow icon={Wallet} iconColor="text-blue-500" label="Equity Value">
+                    <span className="font-semibold text-zinc-100">{deal.equityValue}</span>
+                  </DetailRow>
+                )}
+                {deal.stake && (
+                  <DetailRow icon={Percent} iconColor="text-amber-500" label="Stake">
+                    {deal.stake}
+                  </DetailRow>
+                )}
+                {deal.valuationMultiple && (
+                  <DetailRow icon={Gauge} iconColor="text-violet-500" label="Valuation Multiple">
+                    {deal.valuationMultiple}
+                  </DetailRow>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* Transaction Description */}
           <div>
             <div className="flex items-center gap-2 mb-2">
@@ -663,34 +784,79 @@ function DealDrawer({
             </p>
           </div>
 
+          {/* Advisors */}
+          {hasAdvisors && (
+            <div className="space-y-3">
+              <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
+                Advisors
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {deal.financialAdvisorBuyer && (
+                  <AdvisorCard
+                    label="Financial Advisor (Buyer)"
+                    firms={deal.financialAdvisorBuyer}
+                    iconColor="text-blue-400"
+                  />
+                )}
+                {deal.financialAdvisorSeller && (
+                  <AdvisorCard
+                    label="Financial Advisor (Seller)"
+                    firms={deal.financialAdvisorSeller}
+                    iconColor="text-amber-400"
+                  />
+                )}
+                {deal.legalAdvisorBuyer && (
+                  <AdvisorCard
+                    label="Legal Counsel (Buyer)"
+                    firms={deal.legalAdvisorBuyer}
+                    iconColor="text-violet-400"
+                  />
+                )}
+                {deal.legalAdvisorSeller && (
+                  <AdvisorCard
+                    label="Legal Counsel (Seller)"
+                    firms={deal.legalAdvisorSeller}
+                    iconColor="text-rose-400"
+                  />
+                )}
+              </div>
+            </div>
+          )}
+
           {/* Details grid */}
           <div className="space-y-3">
             <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
               Deal Details
             </span>
             <div className="grid grid-cols-1 gap-2">
-              <div className="glass-card rounded-lg px-4 py-3 flex items-start gap-3">
-                <Tag className="h-4 w-4 text-zinc-500 mt-0.5 shrink-0" />
-                <div>
-                  <span className="text-[11px] text-zinc-600 block">
-                    M&amp;A Category
-                  </span>
-                  <span className="text-sm text-zinc-300">
-                    {deal.category}
-                  </span>
-                </div>
+              <DetailRow icon={Tag} iconColor="text-zinc-500" label="M&amp;A Category">
+                {deal.category}
+              </DetailRow>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <DetailRow icon={Calendar} iconColor="text-zinc-500" label="Announced">
+                  <span className="mono">{formatDate(deal.date)}</span>
+                </DetailRow>
+                {deal.closingDate && (
+                  <DetailRow icon={Clock} iconColor="text-zinc-500" label="Expected Close">
+                    {deal.closingDate}
+                  </DetailRow>
+                )}
               </div>
-              <div className="glass-card rounded-lg px-4 py-3 flex items-start gap-3">
-                <Calendar className="h-4 w-4 text-zinc-500 mt-0.5 shrink-0" />
-                <div>
-                  <span className="text-[11px] text-zinc-600 block">
-                    Date
-                  </span>
-                  <span className="mono text-sm text-zinc-300">
-                    {formatDate(deal.date)}
-                  </span>
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <DetailRow icon={MapPin} iconColor="text-zinc-500" label="Country">
+                  {deal.country}
+                </DetailRow>
+                {deal.assetScale && (
+                  <DetailRow icon={Zap} iconColor="text-zinc-500" label="Asset Scale">
+                    {deal.assetScale}
+                  </DetailRow>
+                )}
               </div>
+              {deal.fundVehicle && (
+                <DetailRow icon={Landmark} iconColor="text-zinc-500" label="Fund / Vehicle">
+                  {deal.fundVehicle}
+                </DetailRow>
+              )}
             </div>
           </div>
 
