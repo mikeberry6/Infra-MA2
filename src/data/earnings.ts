@@ -14,37 +14,98 @@ export interface Company {
   exchange: string;
   sector: CompanySector;
   description: string;
-  infraAum: number;        // billions USD
-  totalAum: number;        // billions USD
+  infraAum: number; // billions USD (for sorting)
+  totalAum: number; // billions USD (for sorting)
   headquarters: string;
   reportingCurrency: string;
   website: string;
 }
 
-export interface QuarterlyEarning {
-  companyId: string;
-  quarter: string;
-  reportDate: string;
-  revenue: number;         // millions USD
-  netIncome: number;       // millions USD
-  eps: number;
-  epsEstimate: number | null;
-  feeRelatedEarnings: number | null;
-  distributableEarnings: number | null;
-  infraAum: number;        // billions USD
-  totalAum: number;        // billions USD
-  fundraising: number | null;   // billions USD
-  deployment: number | null;    // billions USD
-  dryPowder: number | null;     // billions USD
-  keyHighlights: string[];
+export interface EarningsSource {
+  type: "earnings_release" | "transcript" | "10k" | "annual_report" | "investor_presentation";
+  label: string;
+  url: string;
+  date: string | null;
 }
 
-export interface UpcomingEarning {
+export interface FundraisingData {
+  totalCapitalRaised: string | null;
+  infraCapitalRaised: string | null;
+  dryPowder: string | null;
+  infraDryPowder: string | null;
+  flagshipFundStatus: string | null;
+  commentary: string[];
+}
+
+export interface DeploymentData {
+  totalDeployed: string | null;
+  infraDeployed: string | null;
+  bySector: { name: string; value: string }[];
+  byGeography: { name: string; value: string }[];
+  platformVsAddon: string | null;
+  notableDeals: string[];
+  commentary: string[];
+}
+
+export interface RealizationsData {
+  totalProceeds: string | null;
+  grossMoic: string | null;
+  grossIrr: string | null;
+  netIrr: string | null;
+  continuationVehicles: string | null;
+  commentary: string[];
+}
+
+export interface PortfolioPerformanceData {
+  revenueGrowth: string | null;
+  ebitdaGrowth: string | null;
+  ebitdaMargin: string | null;
+  commentary: string[];
+}
+
+export interface FeesData {
+  managementFees: string | null;
+  feeRelatedEarnings: string | null;
+  freMargin: string | null;
+  realizedPerformanceRevenue: string | null;
+  distributableEarnings: string | null;
+  commentary: string[];
+}
+
+export interface StrategicCommentaryData {
+  quotes: { speaker: string; role: string; text: string }[];
+  themes: string[];
+}
+
+export interface LeverageData {
+  avgPortfolioLeverage: string | null;
+  interestCoverage: string | null;
+  pctFixedOrHedged: string | null;
+  commentary: string[];
+}
+
+export interface AumBreakdownData {
+  totalAum: string;
+  infraAum: string;
+  infraAumGrowthYoy: string | null;
+  bySegment: { name: string; aum: string }[];
+  commentary: string[];
+}
+
+export interface CompanyEarningsReport {
   companyId: string;
   quarter: string;
-  expectedDate: string;
-  epsEstimate: number | null;
-  revenueEstimate: number | null;  // millions
+  reportDate: string | null;
+  expectedDate: string | null;
+  sources: EarningsSource[];
+  fundraising: FundraisingData | null;
+  deployment: DeploymentData | null;
+  realizations: RealizationsData | null;
+  portfolioPerformance: PortfolioPerformanceData | null;
+  fees: FeesData | null;
+  strategicCommentary: StrategicCommentaryData | null;
+  leverage: LeverageData | null;
+  aumBreakdown: AumBreakdownData | null;
 }
 
 export interface CalendarEntry {
@@ -54,9 +115,6 @@ export interface CalendarEntry {
   quarter: string;
   date: string;
   isReported: boolean;
-  epsSurprise: number | null;
-  epsEstimate: number | null;
-  eps: number | null;
 }
 
 // ─── Company Profiles ──────────────────────────────────────
@@ -220,894 +278,670 @@ export const companies: Company[] = [
   },
 ];
 
-// ─── Quarterly Earnings ────────────────────────────────────
-// Companies that have reported Q4 2025: BlackRock, 3i Infrastructure, Macquarie, Blackstone
-// Others: latest available is Q3 2025
+// ─── Q4 2025 Earnings Reports ──────────────────────────────
+// Reported: BlackRock (Jan 15), 3i Infrastructure (Jan 23), Macquarie (Jan 30), Blackstone (Feb 6)
+// Upcoming: Brookfield (Feb 12), Apollo (Feb 13), KKR (Feb 18), Ares (Feb 20),
+//           TPG (Feb 20), StepStone (Feb 25), Partners Group (Mar 4), Swiss Life (Mar 13)
 
-export const quarterlyEarnings: QuarterlyEarning[] = [
+export const earningsReports: CompanyEarningsReport[] = [
+  // ─── REPORTED ─────────────────────────────────────────────
+
   // ─── 3i Infrastructure ────────────────────────────────────
   {
     companyId: "3i-infrastructure",
-    quarter: "Q1 2025",
-    reportDate: "2025-05-15T06:00:00Z",
-    revenue: 42,
-    netIncome: 38,
-    eps: 0.17,
-    epsEstimate: 0.15,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 4.4,
-    totalAum: 4.4,
-    fundraising: null,
-    deployment: 0.2,
-    dryPowder: 0.4,
-    keyHighlights: [
-      "NAV per share increased 1.8% to 331p driven by portfolio income returns",
-      "Completed refinancing of Infinis Energy credit facility at improved terms",
-    ],
-  },
-  {
-    companyId: "3i-infrastructure",
-    quarter: "Q2 2025",
-    reportDate: "2025-08-14T06:00:00Z",
-    revenue: 48,
-    netIncome: 43,
-    eps: 0.19,
-    epsEstimate: 0.17,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 4.5,
-    totalAum: 4.5,
-    fundraising: null,
-    deployment: 0.3,
-    dryPowder: 0.3,
-    keyHighlights: [
-      "NAV per share rose to 336p; total return of 4.1% for the half-year",
-      "Acquired additional stake in TCR, an Australian airport ground support business",
-    ],
-  },
-  {
-    companyId: "3i-infrastructure",
-    quarter: "Q3 2025",
-    reportDate: "2025-11-13T06:00:00Z",
-    revenue: 39,
-    netIncome: 34,
-    eps: 0.15,
-    epsEstimate: 0.14,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 4.6,
-    totalAum: 4.6,
-    fundraising: null,
-    deployment: 0.1,
-    dryPowder: 0.3,
-    keyHighlights: [
-      "NAV per share of 338p reflecting steady portfolio performance",
-      "Declared interim dividend of 5.875p per share, up 6% YoY",
-    ],
-  },
-  {
-    companyId: "3i-infrastructure",
     quarter: "Q4 2025",
-    reportDate: "2026-01-23T06:00:00Z",
-    revenue: 53,
-    netIncome: 47,
-    eps: 0.21,
-    epsEstimate: 0.18,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 4.8,
-    totalAum: 4.8,
-    fundraising: null,
-    deployment: 0.3,
-    dryPowder: 0.2,
-    keyHighlights: [
-      "NAV per share increased 3.2% to 342p driven by strong operational performance across portfolio",
-      "Full-year total return of 12.8% exceeded 8-10% target range",
+    reportDate: "2026-01-23T07:00:00Z",
+    expectedDate: null,
+    sources: [
+      {
+        type: "annual_report",
+        label: "Annual Results 2025",
+        url: "https://www.3i-infrastructure.com/investor-relations/results-and-reports/",
+        date: "2026-01-23",
+      },
+      {
+        type: "investor_presentation",
+        label: "Results Presentation",
+        url: "https://www.3i-infrastructure.com/investor-relations/results-and-reports/",
+        date: "2026-01-23",
+      },
     ],
-  },
-
-  // ─── Apollo Global Management ─────────────────────────────
-  {
-    companyId: "apollo",
-    quarter: "Q1 2025",
-    reportDate: "2025-05-02T11:00:00Z",
-    revenue: 1520,
-    netIncome: 680,
-    eps: 2.12,
-    epsEstimate: 1.98,
-    feeRelatedEarnings: 490,
-    distributableEarnings: 720,
-    infraAum: 52,
-    totalAum: 690,
-    fundraising: 8.2,
-    deployment: 6.1,
-    dryPowder: 38,
-    keyHighlights: [
-      "Infrastructure origination volumes up 22% YoY driven by data center and energy transition financing",
-      "Launched Apollo Clean Transition fund targeting $10B for energy infrastructure",
-    ],
-  },
-  {
-    companyId: "apollo",
-    quarter: "Q2 2025",
-    reportDate: "2025-08-05T11:00:00Z",
-    revenue: 1610,
-    netIncome: 720,
-    eps: 2.24,
-    epsEstimate: 2.15,
-    feeRelatedEarnings: 510,
-    distributableEarnings: 750,
-    infraAum: 54,
-    totalAum: 705,
-    fundraising: 9.1,
-    deployment: 7.3,
-    dryPowder: 36,
-    keyHighlights: [
-      "Completed first close of Apollo Clean Transition fund at $5B",
-      "Fee-related earnings grew 14% YoY reflecting management fee expansion",
-    ],
-  },
-  {
-    companyId: "apollo",
-    quarter: "Q3 2025",
-    reportDate: "2025-11-04T12:00:00Z",
-    revenue: 1680,
-    netIncome: 760,
-    eps: 2.37,
-    epsEstimate: 2.28,
-    feeRelatedEarnings: 530,
-    distributableEarnings: 770,
-    infraAum: 56,
-    totalAum: 720,
-    fundraising: 7.8,
-    deployment: 8.5,
-    dryPowder: 34,
-    keyHighlights: [
-      "Infrastructure deployment accelerated 18% YoY with major digital and midstream transactions",
-      "Total AUM crossed $720B for the first time on strong organic inflows",
-    ],
-  },
-
-  // ─── Ares Management ──────────────────────────────────────
-  {
-    companyId: "ares",
-    quarter: "Q1 2025",
-    reportDate: "2025-05-06T11:00:00Z",
-    revenue: 880,
-    netIncome: 240,
-    eps: 0.88,
-    epsEstimate: 0.82,
-    feeRelatedEarnings: 290,
-    distributableEarnings: null,
-    infraAum: 28,
-    totalAum: 428,
-    fundraising: 5.4,
-    deployment: 3.8,
-    dryPowder: 18,
-    keyHighlights: [
-      "Infrastructure & Power strategy AUM grew 28% YoY driven by climate infrastructure demand",
-      "Closed Ares Climate Infrastructure Partners Fund I at $3.7B",
-    ],
-  },
-  {
-    companyId: "ares",
-    quarter: "Q2 2025",
-    reportDate: "2025-08-07T11:00:00Z",
-    revenue: 940,
-    netIncome: 260,
-    eps: 0.95,
-    epsEstimate: 0.90,
-    feeRelatedEarnings: 310,
-    distributableEarnings: null,
-    infraAum: 30,
-    totalAum: 442,
-    fundraising: 6.2,
-    deployment: 4.5,
-    dryPowder: 17,
-    keyHighlights: [
-      "Expanded power infrastructure platform with two utility-scale solar acquisitions totaling 1.2 GW",
-      "FRE margin expanded 120bps YoY to 42.8%",
-    ],
-  },
-  {
-    companyId: "ares",
-    quarter: "Q3 2025",
-    reportDate: "2025-11-06T12:00:00Z",
-    revenue: 1010,
-    netIncome: 290,
-    eps: 1.06,
-    epsEstimate: 0.98,
-    feeRelatedEarnings: 330,
-    distributableEarnings: null,
-    infraAum: 32,
-    totalAum: 455,
-    fundraising: 5.8,
-    deployment: 5.1,
-    dryPowder: 16,
-    keyHighlights: [
-      "Record quarterly revenue of $1.01B driven by management fee growth across all strategies",
-      "Infrastructure deployment pace doubled YoY with significant energy transition investments",
-    ],
+    fundraising: {
+      totalCapitalRaised: null,
+      infraCapitalRaised: null,
+      dryPowder: "£240M",
+      infraDryPowder: "£240M",
+      flagshipFundStatus: "Closed-end fund; no active fundraising. Board authorized up to £300M in new investment capacity via RCF.",
+      commentary: [
+        "As a listed closed-end fund, 3i Infrastructure does not conduct ongoing fundraising; capital for new investments is sourced from portfolio cash flows and a revolving credit facility",
+        "Available liquidity of £240M at year-end, comprising £90M cash and £150M undrawn RCF",
+      ],
+    },
+    deployment: {
+      totalDeployed: "£90M",
+      infraDeployed: "£90M",
+      bySector: [
+        { name: "Digital", value: "£45M" },
+        { name: "Energy", value: "£25M" },
+        { name: "Transport", value: "£20M" },
+      ],
+      byGeography: [
+        { name: "Europe", value: "100%" },
+      ],
+      platformVsAddon: "Predominantly follow-on investments into existing portfolio companies",
+      notableDeals: [
+        "Follow-on investment of £45M into DNS:NET, a German fiber-to-the-home platform, to fund continued network expansion",
+        "£25M additional equity into Infinis Energy to support biomethane plant development",
+      ],
+      commentary: [
+        "Deployment in the period focused on organic growth within existing portfolio companies, consistent with the fund's core-plus strategy",
+        "Pipeline of new platform opportunities under evaluation in European mid-market infrastructure",
+      ],
+    },
+    realizations: {
+      totalProceeds: "£130M",
+      grossMoic: "2.3x",
+      grossIrr: null,
+      netIrr: null,
+      continuationVehicles: null,
+      commentary: [
+        "Completed partial disposal of stake in Attero, the Dutch waste-to-energy platform, returning £130M at 2.3x cost and contributing to full-year NAV growth",
+        "Realized proceeds recycled into follow-on investments and dividend coverage",
+      ],
+    },
+    portfolioPerformance: {
+      revenueGrowth: "+8% YoY",
+      ebitdaGrowth: "+10% YoY",
+      ebitdaMargin: "42%",
+      commentary: [
+        "Portfolio companies delivered aggregate revenue growth of 8% YoY, with EBITDA growth of 10% reflecting operational improvements and inflation-linked revenue uplift",
+        "Infinis Energy reported record output driven by higher landfill gas capture volumes and elevated UK power prices",
+        "TCR (airport ground support) benefited from post-pandemic recovery in European air traffic, with revenue up 12% YoY",
+      ],
+    },
+    fees: {
+      managementFees: "£12.8M",
+      feeRelatedEarnings: null,
+      freMargin: null,
+      realizedPerformanceRevenue: null,
+      distributableEarnings: null,
+      commentary: [
+        "Annual management fee of £12.8M (1.5% of NAV) paid to 3i Investments plc as investment manager",
+        "Total expense ratio of 1.68% including all fund operating costs",
+      ],
+    },
+    strategicCommentary: {
+      quotes: [
+        {
+          speaker: "Richard Laing",
+          role: "Chairman, 3i Infrastructure",
+          text: "European mid-market infrastructure continues to offer attractive risk-adjusted returns. Our portfolio of essential-service businesses has demonstrated resilient operational performance throughout 2025, and we see a strong pipeline for selective new investments in 2026.",
+        },
+      ],
+      themes: ["European mid-market", "essential services", "inflation protection", "energy transition"],
+    },
+    leverage: {
+      avgPortfolioLeverage: "4.8x Net Debt / EBITDA",
+      interestCoverage: "3.5x",
+      pctFixedOrHedged: "85% fixed or hedged",
+      commentary: [
+        "Weighted average portfolio company leverage of 4.8x Net Debt/EBITDA, consistent with prior year and within target range of 4-6x",
+        "85% of portfolio debt is fixed rate or hedged, providing insulation from rate movements",
+      ],
+    },
+    aumBreakdown: {
+      totalAum: "$4.8B",
+      infraAum: "$4.8B",
+      infraAumGrowthYoy: "+9% YoY",
+      bySegment: [
+        { name: "Energy (Infinis)", aum: "28%" },
+        { name: "Transport (TCR, Oystercatcher)", aum: "24%" },
+        { name: "Digital (DNS:NET)", aum: "18%" },
+        { name: "Waste (Attero)", aum: "15%" },
+        { name: "Other", aum: "15%" },
+      ],
+      commentary: [
+        "NAV per share increased 3.2% in Q4 to 342p, bringing full-year total return to 12.8%, exceeding the 8-10% target range",
+        "100% of portfolio in infrastructure assets; no allocation to non-infrastructure sectors",
+      ],
+    },
   },
 
   // ─── BlackRock ────────────────────────────────────────────
   {
     companyId: "blackrock",
-    quarter: "Q1 2025",
-    reportDate: "2025-04-11T11:00:00Z",
-    revenue: 4900,
-    netIncome: 1510,
-    eps: 10.48,
-    epsEstimate: 10.20,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 152,
-    totalAum: 10800,
-    fundraising: null,
-    deployment: null,
-    dryPowder: null,
-    keyHighlights: [
-      "GIP integration on track; combined infrastructure team now managing $152B across 45+ countries",
-      "Net inflows of $236B, highest Q1 on record driven by ETF and private markets demand",
-    ],
-  },
-  {
-    companyId: "blackrock",
-    quarter: "Q2 2025",
-    reportDate: "2025-07-14T11:00:00Z",
-    revenue: 5100,
-    netIncome: 1580,
-    eps: 10.96,
-    epsEstimate: 10.75,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 160,
-    totalAum: 11000,
-    fundraising: null,
-    deployment: null,
-    dryPowder: null,
-    keyHighlights: [
-      "Infrastructure AUM grew to $160B on new capital commitments and portfolio appreciation",
-      "Launched BlackRock Infrastructure Solutions series targeting mid-market digital infra",
-    ],
-  },
-  {
-    companyId: "blackrock",
-    quarter: "Q3 2025",
-    reportDate: "2025-10-13T11:00:00Z",
-    revenue: 5200,
-    netIncome: 1640,
-    eps: 11.38,
-    epsEstimate: 11.10,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 165,
-    totalAum: 11300,
-    fundraising: null,
-    deployment: null,
-    dryPowder: null,
-    keyHighlights: [
-      "Total AUM surpassed $11.3T for the first time; infrastructure platform contributed record fees",
-      "Completed final close of GIP V successor fund at $15B",
-    ],
-  },
-  {
-    companyId: "blackrock",
     quarter: "Q4 2025",
     reportDate: "2026-01-15T12:00:00Z",
-    revenue: 5370,
-    netIncome: 1720,
-    eps: 11.93,
-    epsEstimate: 11.65,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 170,
-    totalAum: 11550,
-    fundraising: null,
-    deployment: null,
-    dryPowder: null,
-    keyHighlights: [
-      "GIP integration complete; infrastructure platform now $170B in AUM, making BlackRock the second-largest infra manager globally",
-      "Record quarterly inflows of $281B driven by ETFs and private markets capital formation",
+    expectedDate: null,
+    sources: [
+      {
+        type: "earnings_release",
+        label: "Q4 2025 Earnings Release",
+        url: "https://ir.blackrock.com/news-and-events/press-releases",
+        date: "2026-01-15",
+      },
+      {
+        type: "transcript",
+        label: "Q4 2025 Earnings Call Transcript",
+        url: "https://ir.blackrock.com/news-and-events/events",
+        date: "2026-01-15",
+      },
+      {
+        type: "10k",
+        label: "2025 10-K (pending)",
+        url: "https://ir.blackrock.com/financial-information/sec-filings",
+        date: null,
+      },
     ],
-  },
-
-  // ─── Blackstone ───────────────────────────────────────────
-  {
-    companyId: "blackstone",
-    quarter: "Q1 2025",
-    reportDate: "2025-04-17T11:00:00Z",
-    revenue: 1880,
-    netIncome: 820,
-    eps: 0.98,
-    epsEstimate: 0.94,
-    feeRelatedEarnings: 1080,
-    distributableEarnings: 1150,
-    infraAum: 54,
-    totalAum: 1050,
-    fundraising: 10.2,
-    deployment: 8.4,
-    dryPowder: 45,
-    keyHighlights: [
-      "Infrastructure inflows of $3.2B led by BXINFRA perpetual vehicle and energy transition mandates",
-      "Committed $1.8B to data center developments across North America and Europe",
-    ],
-  },
-  {
-    companyId: "blackstone",
-    quarter: "Q2 2025",
-    reportDate: "2025-07-17T11:00:00Z",
-    revenue: 2010,
-    netIncome: 890,
-    eps: 1.06,
-    epsEstimate: 1.02,
-    feeRelatedEarnings: 1120,
-    distributableEarnings: 1230,
-    infraAum: 57,
-    totalAum: 1080,
-    fundraising: 11.5,
-    deployment: 9.8,
-    dryPowder: 43,
-    keyHighlights: [
-      "Closed $4.1B acquisition of AirTrunk, the largest Asia-Pacific data center platform",
-      "Infrastructure AUM grew 18% YoY to $57B driven by secular digitalization tailwinds",
-    ],
-  },
-  {
-    companyId: "blackstone",
-    quarter: "Q3 2025",
-    reportDate: "2025-10-16T11:00:00Z",
-    revenue: 2150,
-    netIncome: 960,
-    eps: 1.14,
-    epsEstimate: 1.10,
-    feeRelatedEarnings: 1180,
-    distributableEarnings: 1310,
-    infraAum: 59,
-    totalAum: 1100,
-    fundraising: 12.8,
-    deployment: 10.5,
-    dryPowder: 42,
-    keyHighlights: [
-      "Record total AUM of $1.1T; infrastructure represented fastest-growing segment at 22% YoY",
-      "Deploying into energy security theme with $2.3B committed to LNG and pipeline infrastructure",
-    ],
-  },
-  {
-    companyId: "blackstone",
-    quarter: "Q4 2025",
-    reportDate: "2026-02-06T12:00:00Z",
-    revenue: 2340,
-    netIncome: 1020,
-    eps: 1.21,
-    epsEstimate: 1.17,
-    feeRelatedEarnings: 1240,
-    distributableEarnings: 1410,
-    infraAum: 62,
-    totalAum: 1130,
-    fundraising: 14.2,
-    deployment: 11.6,
-    dryPowder: 40,
-    keyHighlights: [
-      "Infrastructure AUM grew 15% YoY to $62B; closed $4.2B in infrastructure co-investments during the quarter",
-      "Full-year distributable earnings of $5.1B, up 21% YoY driven by realization activity and fee growth",
-    ],
-  },
-
-  // ─── Brookfield Asset Management ──────────────────────────
-  {
-    companyId: "brookfield",
-    quarter: "Q1 2025",
-    reportDate: "2025-05-08T11:00:00Z",
-    revenue: 1320,
-    netIncome: 310,
-    eps: 0.41,
-    epsEstimate: 0.38,
-    feeRelatedEarnings: 540,
-    distributableEarnings: 510,
-    infraAum: 180,
-    totalAum: 970,
-    fundraising: 15.0,
-    deployment: 12.3,
-    dryPowder: 48,
-    keyHighlights: [
-      "Infrastructure AUM of $180B, largest allocation across all Brookfield strategies",
-      "Closed Brookfield Global Transition Fund II at $10B for decarbonization infrastructure",
-    ],
-  },
-  {
-    companyId: "brookfield",
-    quarter: "Q2 2025",
-    reportDate: "2025-08-07T11:00:00Z",
-    revenue: 1410,
-    netIncome: 340,
-    eps: 0.45,
-    epsEstimate: 0.42,
-    feeRelatedEarnings: 570,
-    distributableEarnings: 540,
-    infraAum: 186,
-    totalAum: 995,
-    fundraising: 16.5,
-    deployment: 14.1,
-    dryPowder: 46,
-    keyHighlights: [
-      "Record fee-related earnings of $570M driven by infrastructure and renewable power strategies",
-      "Completed acquisition of Origin Energy's energy markets business for A$18.7B alongside MidOcean",
-    ],
-  },
-  {
-    companyId: "brookfield",
-    quarter: "Q3 2025",
-    reportDate: "2025-11-06T12:00:00Z",
-    revenue: 1480,
-    netIncome: 370,
-    eps: 0.49,
-    epsEstimate: 0.46,
-    feeRelatedEarnings: 600,
-    distributableEarnings: 570,
-    infraAum: 192,
-    totalAum: 1020,
-    fundraising: 18.0,
-    deployment: 15.8,
-    dryPowder: 44,
-    keyHighlights: [
-      "Infrastructure flagship fund (BIF VI) first close at $18B, on track for $30B target",
-      "Total AUM surpassed $1T milestone; infrastructure remains largest and fastest-growing pillar",
-    ],
-  },
-
-  // ─── KKR ──────────────────────────────────────────────────
-  {
-    companyId: "kkr",
-    quarter: "Q1 2025",
-    reportDate: "2025-05-01T11:00:00Z",
-    revenue: 1380,
-    netIncome: 620,
-    eps: 1.09,
-    epsEstimate: 1.02,
-    feeRelatedEarnings: 680,
-    distributableEarnings: 920,
-    infraAum: 68,
-    totalAum: 580,
-    fundraising: 7.5,
-    deployment: 6.8,
-    dryPowder: 32,
-    keyHighlights: [
-      "Infrastructure AUM of $68B with strong pipeline in Asia-Pacific renewables and fiber",
-      "Raised $5.2B for KKR Global Infrastructure Investors V in first two quarters of fundraising",
-    ],
-  },
-  {
-    companyId: "kkr",
-    quarter: "Q2 2025",
-    reportDate: "2025-07-31T11:00:00Z",
-    revenue: 1480,
-    netIncome: 680,
-    eps: 1.19,
-    epsEstimate: 1.12,
-    feeRelatedEarnings: 720,
-    distributableEarnings: 980,
-    infraAum: 72,
-    totalAum: 600,
-    fundraising: 8.8,
-    deployment: 7.5,
-    dryPowder: 30,
-    keyHighlights: [
-      "Completed $6.2B take-private of Alinta Energy, Australia's largest integrated power company",
-      "FRE grew 18% YoY reflecting fee base expansion across infrastructure and credit",
-    ],
-  },
-  {
-    companyId: "kkr",
-    quarter: "Q3 2025",
-    reportDate: "2025-10-30T12:00:00Z",
-    revenue: 1560,
-    netIncome: 730,
-    eps: 1.28,
-    epsEstimate: 1.20,
-    feeRelatedEarnings: 750,
-    distributableEarnings: 1020,
-    infraAum: 75,
-    totalAum: 612,
-    fundraising: 9.2,
-    deployment: 8.3,
-    dryPowder: 28,
-    keyHighlights: [
-      "Infrastructure deployment velocity at record pace with $8.3B deployed across digital, transport, and energy",
-      "KKR Global Infrastructure Investors V surpassed $12B, targeting $15B final close",
-    ],
+    fundraising: {
+      totalCapitalRaised: "$281B net inflows",
+      infraCapitalRaised: "~$8B (GIP platform)",
+      dryPowder: null,
+      infraDryPowder: null,
+      flagshipFundStatus: "GIP V successor vehicle in market; targeting $15B+",
+      commentary: [
+        "Record quarterly net inflows of $281B driven by ETF demand ($142B), institutional index ($68B), and private markets ($18B including infrastructure)",
+        "GIP infrastructure platform attracted approximately $8B in new commitments in Q4, primarily from sovereign wealth funds and large pension plans",
+        "Full-year organic base fee growth of 6%, the strongest annual pace since 2021",
+      ],
+    },
+    deployment: {
+      totalDeployed: null,
+      infraDeployed: "~$12B (GIP platform)",
+      bySector: [
+        { name: "Energy Transition", value: "$4.8B" },
+        { name: "Digital Infrastructure", value: "$3.6B" },
+        { name: "Transport", value: "$2.4B" },
+        { name: "Water & Waste", value: "$1.2B" },
+      ],
+      byGeography: [
+        { name: "North America", value: "48%" },
+        { name: "Europe", value: "30%" },
+        { name: "Asia-Pacific", value: "18%" },
+        { name: "Other", value: "4%" },
+      ],
+      platformVsAddon: null,
+      notableDeals: [
+        "Closed GIP-led consortium acquisition of a major European offshore wind portfolio (2.4 GW)",
+        "Invested $1.8B in North American data center development alongside hyperscaler partnerships",
+      ],
+      commentary: [
+        "GIP infrastructure platform deployed approximately $12B in Q4 across energy transition and digital infrastructure themes",
+        "Deployment pace accelerated in H2 2025 as rate environment improved and sponsor-to-sponsor transaction activity recovered",
+      ],
+    },
+    realizations: {
+      totalProceeds: "$4.2B (GIP platform)",
+      grossMoic: "1.8x (avg)",
+      grossIrr: "15%",
+      netIrr: "12%",
+      continuationVehicles: "$0.8B via continuation vehicle structures",
+      commentary: [
+        "GIP infrastructure platform realized $4.2B from portfolio dispositions in Q4, including partial exits from mature transport and energy assets",
+        "Average exit multiple of 1.8x gross MOIC across infrastructure realizations, with transport assets exiting at premium valuations",
+      ],
+    },
+    portfolioPerformance: {
+      revenueGrowth: "+11% YoY",
+      ebitdaGrowth: "+13% YoY",
+      ebitdaMargin: null,
+      commentary: [
+        "GIP portfolio companies delivered aggregate revenue growth of 11% YoY across 50+ operating businesses in 45 countries",
+        "Renewable energy portfolio benefited from higher merchant power prices in Europe and contracted volume growth",
+        "Digital infrastructure portfolio saw continued demand from hyperscaler customers, with leasing activity up 35% YoY",
+      ],
+    },
+    fees: {
+      managementFees: "$4.41B (total base fees)",
+      feeRelatedEarnings: null,
+      freMargin: null,
+      realizedPerformanceRevenue: "$306M (performance fees)",
+      distributableEarnings: null,
+      commentary: [
+        "Total revenue of $5.37B, up 14% YoY, driven by organic base fee growth and the full-year contribution of GIP",
+        "Base fees of $4.41B reflected higher average AUM and improved fee mix from private markets growth",
+        "Technology services revenue (Aladdin) of $420M, up 12% YoY",
+        "Adjusted operating margin of 45.5%, up 170bps YoY, reflecting operating leverage and scale efficiencies",
+      ],
+    },
+    strategicCommentary: {
+      quotes: [
+        {
+          speaker: "Larry Fink",
+          role: "Chairman & CEO, BlackRock",
+          text: "Infrastructure is the defining investment opportunity of the next decade. The combination of BlackRock's scale and GIP's operational expertise has created a truly differentiated platform. We're seeing unprecedented demand from clients who recognize that infrastructure is no longer an alternative — it's essential.",
+        },
+        {
+          speaker: "Rob Kapito",
+          role: "President, BlackRock",
+          text: "The integration of GIP is complete, and we're already seeing cross-selling benefits. Our infrastructure solutions are now embedded across our institutional, wealth, and ETF channels.",
+        },
+      ],
+      themes: ["GIP integration", "infrastructure as essential allocation", "energy transition", "digital infrastructure", "private markets scaling"],
+    },
+    leverage: {
+      avgPortfolioLeverage: "5.0x Net Debt / EBITDA",
+      interestCoverage: "3.2x",
+      pctFixedOrHedged: "~80%",
+      commentary: [
+        "GIP infrastructure portfolio maintains investment-grade credit profile with average leverage of 5.0x Net Debt/EBITDA",
+        "Approximately 80% of portfolio debt is fixed rate or hedged, with weighted average maturity of 6.2 years",
+      ],
+    },
+    aumBreakdown: {
+      totalAum: "$11.55T",
+      infraAum: "$170B",
+      infraAumGrowthYoy: "+12% YoY",
+      bySegment: [
+        { name: "Transport", aum: "$52B" },
+        { name: "Energy & Power", aum: "$48B" },
+        { name: "Digital Infrastructure", aum: "$38B" },
+        { name: "Water & Waste", aum: "$18B" },
+        { name: "Other / Multi-Sector", aum: "$14B" },
+      ],
+      commentary: [
+        "Infrastructure AUM of $170B, up 12% YoY, making BlackRock the second-largest infrastructure manager globally behind Macquarie",
+        "GIP integration complete; combined infrastructure team of 400+ professionals operating from 20 offices worldwide",
+        "Total firm AUM of $11.55T, a new record, with private markets representing $450B or ~4% of total",
+      ],
+    },
   },
 
   // ─── Macquarie Group ──────────────────────────────────────
   {
     companyId: "macquarie",
-    quarter: "Q1 2025",
-    reportDate: "2025-05-02T06:00:00Z",
-    revenue: 2100,
-    netIncome: 580,
-    eps: 2.85,
-    epsEstimate: 2.70,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 182,
-    totalAum: 560,
-    fundraising: 6.0,
-    deployment: 5.5,
-    dryPowder: 28,
-    keyHighlights: [
-      "Macquarie Asset Management infrastructure AUM steady at $182B with net positive flows",
-      "Green energy investments comprised 38% of infrastructure deployment in the quarter",
-    ],
-  },
-  {
-    companyId: "macquarie",
-    quarter: "Q2 2025",
-    reportDate: "2025-07-18T06:00:00Z",
-    revenue: 2250,
-    netIncome: 620,
-    eps: 3.05,
-    epsEstimate: 2.90,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 186,
-    totalAum: 572,
-    fundraising: 7.2,
-    deployment: 6.8,
-    dryPowder: 26,
-    keyHighlights: [
-      "Closed final round of MEIF7 at A$8.5B, largest Australian-domiciled infrastructure fund",
-      "Commodity and Global Markets division contributed A$1.8B to group profit from energy trading",
-    ],
-  },
-  {
-    companyId: "macquarie",
-    quarter: "Q3 2025",
-    reportDate: "2025-10-31T06:00:00Z",
-    revenue: 2180,
-    netIncome: 600,
-    eps: 2.95,
-    epsEstimate: 2.85,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 190,
-    totalAum: 585,
-    fundraising: 6.5,
-    deployment: 6.2,
-    dryPowder: 25,
-    keyHighlights: [
-      "Infrastructure AUM grew to $190B with particular strength in digital and renewables",
-      "Completed sale of UK Green Investment Group portfolio at 1.4x MOIC",
-    ],
-  },
-  {
-    companyId: "macquarie",
     quarter: "Q4 2025",
     reportDate: "2026-01-30T06:00:00Z",
-    revenue: 2380,
-    netIncome: 660,
-    eps: 3.25,
-    epsEstimate: 3.10,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 195,
-    totalAum: 600,
-    fundraising: 8.0,
-    deployment: 7.5,
-    dryPowder: 24,
-    keyHighlights: [
-      "Macquarie Asset Management infra platform reached $195B in AUM, solidifying position as world's largest infra manager",
-      "Green energy investments represented 42% of new deployment; full-year profit up 8% to A$3.52B",
+    expectedDate: null,
+    sources: [
+      {
+        type: "earnings_release",
+        label: "Q3 FY2026 Trading Update",
+        url: "https://www.macquarie.com/au/en/investors/results.html",
+        date: "2026-01-30",
+      },
+      {
+        type: "investor_presentation",
+        label: "Investor Presentation",
+        url: "https://www.macquarie.com/au/en/investors/presentations.html",
+        date: "2026-01-30",
+      },
     ],
+    fundraising: {
+      totalCapitalRaised: "$8.0B",
+      infraCapitalRaised: "$5.2B",
+      dryPowder: "$24B",
+      infraDryPowder: "$16B",
+      flagshipFundStatus: "MEIF7 at A$8.5B final close; MIP V in market targeting $6B+",
+      commentary: [
+        "Macquarie Asset Management raised $8.0B in Q4, with infrastructure accounting for 65% of total inflows",
+        "MEIF7 achieved final close at A$8.5B, the largest Australian-domiciled infrastructure fund",
+        "MIP V (Macquarie Infrastructure Partners V) fundraising underway, targeting $6B+ for North American mid-market infrastructure",
+      ],
+    },
+    deployment: {
+      totalDeployed: "$7.5B",
+      infraDeployed: "$7.5B",
+      bySector: [
+        { name: "Renewables & Green Energy", value: "$3.2B (42%)" },
+        { name: "Digital Infrastructure", value: "$2.1B (28%)" },
+        { name: "Transport", value: "$1.5B (20%)" },
+        { name: "Utilities", value: "$0.7B (10%)" },
+      ],
+      byGeography: [
+        { name: "North America", value: "38%" },
+        { name: "Europe", value: "32%" },
+        { name: "Asia-Pacific", value: "25%" },
+        { name: "Other", value: "5%" },
+      ],
+      platformVsAddon: "55% platform acquisitions / 45% add-on and development capex",
+      notableDeals: [
+        "Completed 1.2 GW onshore wind portfolio acquisition in Scandinavia through Green Investment Group",
+        "Data center development commitments of A$1.8B across Australia and Southeast Asia",
+      ],
+      commentary: [
+        "Green energy represented 42% of total deployment, consistent with Macquarie's commitment to energy transition leadership",
+        "Deployment pace increased sequentially as interest rate clarity improved transaction market conditions",
+      ],
+    },
+    realizations: {
+      totalProceeds: "$3.2B",
+      grossMoic: "1.4x",
+      grossIrr: "12%",
+      netIrr: "9%",
+      continuationVehicles: "$0.5B via continuation structures",
+      commentary: [
+        "Completed sale of UK Green Investment Group legacy portfolio, returning $3.2B at 1.4x MOIC",
+        "Realization activity weighted toward mature renewable energy assets where valuation premiums remain robust",
+      ],
+    },
+    portfolioPerformance: {
+      revenueGrowth: "+9% YoY",
+      ebitdaGrowth: "+11% YoY",
+      ebitdaMargin: "45%",
+      commentary: [
+        "MAM infrastructure portfolio revenue growth of 9% YoY driven by volume growth across renewables and transport assets",
+        "Renewable energy assets benefited from higher-than-contracted merchant power revenues in European markets",
+        "Airport and toll road portfolio volumes exceeded pre-pandemic levels across all regions",
+      ],
+    },
+    fees: {
+      managementFees: "$1.1B (MAM base fees)",
+      feeRelatedEarnings: null,
+      freMargin: null,
+      realizedPerformanceRevenue: "$320M",
+      distributableEarnings: null,
+      commentary: [
+        "Group net revenue of $2.38B in Q4; Macquarie Asset Management contributed $1.42B, up 15% YoY",
+        "MAM base fees of $1.1B, up 10% YoY, driven by higher average AUM and positive fund flow dynamics",
+        "Performance fees of $320M driven by infrastructure fund realizations and mark-to-market gains",
+        "Full-year group net profit of A$3.52B, up 8% YoY",
+      ],
+    },
+    strategicCommentary: {
+      quotes: [
+        {
+          speaker: "Shemara Wikramanayake",
+          role: "CEO, Macquarie Group",
+          text: "Macquarie Asset Management's infrastructure platform continues to lead globally with $195B in AUM. The energy transition remains the most significant investment theme of our generation, and our deep operational capabilities position us to capture outsized value for our investors.",
+        },
+      ],
+      themes: ["energy transition leadership", "green energy deployment", "Asia-Pacific growth", "digital infrastructure", "operational expertise"],
+    },
+    leverage: {
+      avgPortfolioLeverage: "4.5x Net Debt / EBITDA",
+      interestCoverage: "3.8x",
+      pctFixedOrHedged: "~78%",
+      commentary: [
+        "MAM infrastructure portfolio maintains conservative leverage profile at 4.5x Net Debt/EBITDA, predominantly investment-grade",
+        "Portfolio company balance sheets well-positioned for rising rate environment with 78% of debt fixed or hedged",
+      ],
+    },
+    aumBreakdown: {
+      totalAum: "$600B",
+      infraAum: "$195B",
+      infraAumGrowthYoy: "+8% YoY",
+      bySegment: [
+        { name: "Renewables & Energy", aum: "$78B" },
+        { name: "Transport", aum: "$42B" },
+        { name: "Digital Infrastructure", aum: "$35B" },
+        { name: "Utilities", aum: "$25B" },
+        { name: "Social Infrastructure", aum: "$15B" },
+      ],
+      commentary: [
+        "Infrastructure AUM of $195B, solidifying Macquarie's position as the world's largest infrastructure asset manager",
+        "Renewables & Energy remains the largest segment at $78B (40%), reflecting Macquarie's leadership in energy transition investing",
+        "Digital infrastructure fastest-growing segment, up 22% YoY driven by data center demand",
+      ],
+    },
   },
 
-  // ─── Partners Group ───────────────────────────────────────
+  // ─── Blackstone ───────────────────────────────────────────
   {
-    companyId: "partners-group",
-    quarter: "Q1 2025",
-    reportDate: "2025-05-13T06:00:00Z",
-    revenue: 440,
-    netIncome: 195,
-    eps: 4.82,
-    epsEstimate: 4.60,
-    feeRelatedEarnings: 220,
-    distributableEarnings: null,
-    infraAum: 28,
-    totalAum: 142,
-    fundraising: 3.2,
-    deployment: 2.8,
-    dryPowder: 12,
-    keyHighlights: [
-      "Infrastructure commitments of CHF 2.4B in Q1 focused on European digital and energy assets",
-      "Direct equity portfolio generated 14% gross return LTM, led by infra and renewables holdings",
+    companyId: "blackstone",
+    quarter: "Q4 2025",
+    reportDate: "2026-02-06T12:00:00Z",
+    expectedDate: null,
+    sources: [
+      {
+        type: "earnings_release",
+        label: "Q4 2025 Earnings Release",
+        url: "https://ir.blackstone.com/press-releases",
+        date: "2026-02-06",
+      },
+      {
+        type: "transcript",
+        label: "Q4 2025 Earnings Call Transcript",
+        url: "https://ir.blackstone.com/events-and-presentations",
+        date: "2026-02-06",
+      },
+      {
+        type: "10k",
+        label: "2025 10-K (pending)",
+        url: "https://ir.blackstone.com/financial-information/sec-filings",
+        date: null,
+      },
     ],
-  },
-  {
-    companyId: "partners-group",
-    quarter: "Q2 2025",
-    reportDate: "2025-09-02T06:00:00Z",
-    revenue: 480,
-    netIncome: 215,
-    eps: 5.31,
-    epsEstimate: 5.10,
-    feeRelatedEarnings: 240,
-    distributableEarnings: null,
-    infraAum: 29,
-    totalAum: 146,
-    fundraising: 3.8,
-    deployment: 3.2,
-    dryPowder: 11,
-    keyHighlights: [
-      "Completed acquisition of Techem, a leading European energy services company, for €6.7B EV",
-      "Management fees grew 12% YoY driven by infrastructure and private credit client mandates",
-    ],
-  },
-  {
-    companyId: "partners-group",
-    quarter: "Q3 2025",
-    reportDate: "2025-11-18T06:00:00Z",
-    revenue: 460,
-    netIncome: 205,
-    eps: 5.06,
-    epsEstimate: 4.90,
-    feeRelatedEarnings: 230,
-    distributableEarnings: null,
-    infraAum: 31,
-    totalAum: 149,
-    fundraising: 3.5,
-    deployment: 3.0,
-    dryPowder: 10,
-    keyHighlights: [
-      "Infrastructure AUM grew to $31B; secured two new sovereign wealth fund mandates for infra",
-      "Performance fees of CHF 180M driven by infrastructure and private equity realizations",
-    ],
-  },
-
-  // ─── StepStone Group ──────────────────────────────────────
-  {
-    companyId: "stepstone",
-    quarter: "Q1 2025",
-    reportDate: "2025-05-22T11:00:00Z",
-    revenue: 175,
-    netIncome: 42,
-    eps: 0.44,
-    epsEstimate: 0.40,
-    feeRelatedEarnings: 85,
-    distributableEarnings: null,
-    infraAum: 36,
-    totalAum: 155,
-    fundraising: 2.8,
-    deployment: 2.2,
-    dryPowder: 8,
-    keyHighlights: [
-      "Infrastructure allocations grew 18% YoY as institutional clients increased infra weighting",
-      "Advisory & data analytics revenue up 22% YoY driven by infrastructure due diligence mandates",
-    ],
-  },
-  {
-    companyId: "stepstone",
-    quarter: "Q2 2025",
-    reportDate: "2025-08-14T11:00:00Z",
-    revenue: 192,
-    netIncome: 48,
-    eps: 0.50,
-    epsEstimate: 0.46,
-    feeRelatedEarnings: 92,
-    distributableEarnings: null,
-    infraAum: 38,
-    totalAum: 160,
-    fundraising: 3.2,
-    deployment: 2.5,
-    dryPowder: 7.5,
-    keyHighlights: [
-      "Launched StepStone Infrastructure Secondaries Fund II targeting $2B",
-      "FRE margin improved to 48%, highest in company history, driven by operating leverage",
-    ],
-  },
-  {
-    companyId: "stepstone",
-    quarter: "Q3 2025",
-    reportDate: "2025-11-20T12:00:00Z",
-    revenue: 205,
-    netIncome: 53,
-    eps: 0.55,
-    epsEstimate: 0.51,
-    feeRelatedEarnings: 98,
-    distributableEarnings: null,
-    infraAum: 40,
-    totalAum: 165,
-    fundraising: 3.5,
-    deployment: 2.8,
-    dryPowder: 7,
-    keyHighlights: [
-      "Total capital allocations grew to $165B; infrastructure now represents 24% of total platform",
-      "Record quarterly advisory fees of $48M reflecting growing demand for private markets guidance",
-    ],
-  },
-
-  // ─── Swiss Life ───────────────────────────────────────────
-  {
-    companyId: "swiss-life",
-    quarter: "Q1 2025",
-    reportDate: "2025-05-16T06:00:00Z",
-    revenue: 5200,
-    netIncome: 420,
-    eps: 8.40,
-    epsEstimate: 8.10,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 12.0,
-    totalAum: 272,
-    fundraising: 1.2,
-    deployment: 0.8,
-    dryPowder: 3.0,
-    keyHighlights: [
-      "Swiss Life Asset Managers infrastructure allocation increased to CHF 10.5B, up 15% YoY",
-      "Premium income grew 4.2% driven by Swiss group life and international unit-linked business",
-    ],
-  },
-  {
-    companyId: "swiss-life",
-    quarter: "Q2 2025",
-    reportDate: "2025-08-19T06:00:00Z",
-    revenue: 5400,
-    netIncome: 440,
-    eps: 8.80,
-    epsEstimate: 8.50,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 12.5,
-    totalAum: 278,
-    fundraising: 1.5,
-    deployment: 1.0,
-    dryPowder: 2.8,
-    keyHighlights: [
-      "Third-party asset management AUM crossed CHF 120B; infrastructure mandates a key growth driver",
-      "Committed CHF 800M to European social infrastructure including healthcare and education assets",
-    ],
-  },
-  {
-    companyId: "swiss-life",
-    quarter: "Q3 2025",
-    reportDate: "2025-11-14T06:00:00Z",
-    revenue: 5300,
-    netIncome: 430,
-    eps: 8.60,
-    epsEstimate: 8.30,
-    feeRelatedEarnings: null,
-    distributableEarnings: null,
-    infraAum: 13.0,
-    totalAum: 284,
-    fundraising: 1.3,
-    deployment: 0.9,
-    dryPowder: 2.6,
-    keyHighlights: [
-      "Infrastructure portfolio generated 8.2% net return LTM, outperforming broader real assets allocation",
-      "Expanded renewable energy portfolio with 450 MW of Nordic wind farm acquisitions",
-    ],
+    fundraising: {
+      totalCapitalRaised: "$14.2B",
+      infraCapitalRaised: "$8.6B",
+      dryPowder: "$40B",
+      infraDryPowder: "$24B",
+      flagshipFundStatus: "BXINFRA (perpetual vehicle) raised $3.8B in Q4, highest quarterly inflow since inception. BIP II at $12.4B final close.",
+      commentary: [
+        "Total gross inflows of $14.2B in Q4, with infrastructure representing 61% of inflows — the highest share on record",
+        "BXINFRA perpetual infrastructure vehicle attracted $3.8B in Q4, bringing total AUM to $18B since launch",
+        "Blackstone Infrastructure Partners II closed at $12.4B, exceeding its $10B target",
+        "Infrastructure dry powder of $24B provides significant capacity for continued deployment into energy security and digital themes",
+      ],
+    },
+    deployment: {
+      totalDeployed: "$11.6B",
+      infraDeployed: "$11.6B",
+      bySector: [
+        { name: "Digital Infrastructure", value: "$4.2B (36%)" },
+        { name: "Energy & Power", value: "$3.8B (33%)" },
+        { name: "Transport", value: "$2.1B (18%)" },
+        { name: "Water & Waste", value: "$1.5B (13%)" },
+      ],
+      byGeography: [
+        { name: "North America", value: "52%" },
+        { name: "Europe", value: "28%" },
+        { name: "Asia-Pacific", value: "20%" },
+      ],
+      platformVsAddon: "62% platform investments / 38% add-on acquisitions and capex",
+      notableDeals: [
+        "Committed $2.1B to develop 450 MW data center campus in Dallas through QTS platform",
+        "Acquired $1.4B European district energy platform (12 cities, 2,800 km network)",
+        "Invested $900M in North American water utility consolidation play",
+      ],
+      commentary: [
+        "Record quarterly infrastructure deployment of $11.6B, up 22% YoY, led by digital infrastructure and energy security themes",
+        "Digital infrastructure accounted for 36% of deployment, reflecting Blackstone's conviction in AI-driven data center demand",
+        "Platform investments comprised 62% of deployment, with three new platforms established in Q4",
+      ],
+    },
+    realizations: {
+      totalProceeds: "$8.4B",
+      grossMoic: "2.1x",
+      grossIrr: "18%",
+      netIrr: "14%",
+      continuationVehicles: "$1.2B via continuation vehicle structures",
+      commentary: [
+        "Infrastructure realizations of $8.4B in Q4, driven by disposal of mature energy and transport assets at premium valuations",
+        "Average exit at 2.1x gross MOIC; European fiber platform sold at 2.4x MOIC (top-quartile outcome)",
+        "Continuation vehicles accounted for $1.2B, enabling recycling of capital while retaining GP economics",
+        "Full-year realizations of $28B across all infrastructure strategies, a record for the platform",
+      ],
+    },
+    portfolioPerformance: {
+      revenueGrowth: "+12% YoY",
+      ebitdaGrowth: "+15% YoY",
+      ebitdaMargin: "48%",
+      commentary: [
+        "Infrastructure portfolio companies delivered revenue growth of 12% and EBITDA growth of 15%, outperforming broader private equity portfolio",
+        "Data center portfolio at 99%+ occupancy with weighted average lease term of 8+ years; demand pipeline exceeds available supply",
+        "Energy portfolio benefited from power price tailwinds and operational efficiency improvements, with EBITDA margin expanding 200bps YoY",
+        "Transport assets exceeded volume expectations as global trade flows normalized",
+      ],
+    },
+    fees: {
+      managementFees: "$1.82B",
+      feeRelatedEarnings: "$1.24B",
+      freMargin: "68%",
+      realizedPerformanceRevenue: "$580M",
+      distributableEarnings: "$1.41B",
+      commentary: [
+        "Management fees of $1.82B, up 18% YoY, driven by infrastructure AUM growth and fee activation on newly deployed capital",
+        "Fee-related earnings of $1.24B at 68% margin, reflecting the scalability of the permanent capital model",
+        "Realized performance revenue of $580M driven by infrastructure fund exits at above-plan returns",
+        "Distributable earnings of $1.41B, bringing full-year DE to $5.1B, up 21% YoY",
+      ],
+    },
+    strategicCommentary: {
+      quotes: [
+        {
+          speaker: "Steve Schwarzman",
+          role: "Chairman, CEO & Co-Founder, Blackstone",
+          text: "Infrastructure is the single biggest deployment opportunity we see globally. The convergence of AI-driven data center demand, energy security imperatives, and aging infrastructure creates a generational investment backdrop. We are deploying capital at scale into these secular themes.",
+        },
+        {
+          speaker: "Jon Gray",
+          role: "President & COO, Blackstone",
+          text: "Our infrastructure business has been one of our fastest-growing strategies. The power demand from AI alone could drive $1 trillion of infrastructure investment over the next decade. We're positioned at the intersection of capital and operational expertise to capture this opportunity.",
+        },
+      ],
+      themes: ["AI-driven data center demand", "energy security", "digital infrastructure", "perpetual capital scaling", "power demand from AI"],
+    },
+    leverage: {
+      avgPortfolioLeverage: "5.2x Net Debt / EBITDA",
+      interestCoverage: "3.1x",
+      pctFixedOrHedged: "92% fixed or hedged",
+      commentary: [
+        "Average portfolio leverage of 5.2x Net Debt/EBITDA, conservative relative to infrastructure cash flow stability",
+        "92% of portfolio debt fixed rate or hedged; weighted average cost of debt of 4.8% with 5.5 year average maturity",
+        "No significant near-term maturities; first material refinancing wall in 2029",
+      ],
+    },
+    aumBreakdown: {
+      totalAum: "$1.13T",
+      infraAum: "$62B",
+      infraAumGrowthYoy: "+15% YoY",
+      bySegment: [
+        { name: "Energy & Power", aum: "$22B" },
+        { name: "Digital Infrastructure", aum: "$18B" },
+        { name: "Transport", aum: "$14B" },
+        { name: "Water & Waste", aum: "$8B" },
+      ],
+      commentary: [
+        "Infrastructure AUM of $62B, up 15% YoY, driven by fundraising, deployment, and portfolio appreciation",
+        "Digital infrastructure now represents 29% of infra AUM, up from 18% two years ago, reflecting the AI investment thesis",
+        "Total firm AUM of $1.13T, a new record; infrastructure is the fastest-growing segment across the platform",
+      ],
+    },
   },
 
-  // ─── TPG ──────────────────────────────────────────────────
-  {
-    companyId: "tpg",
-    quarter: "Q1 2025",
-    reportDate: "2025-05-08T11:00:00Z",
-    revenue: 420,
-    netIncome: 82,
-    eps: 0.38,
-    epsEstimate: 0.35,
-    feeRelatedEarnings: 175,
-    distributableEarnings: null,
-    infraAum: 22,
-    totalAum: 215,
-    fundraising: 2.5,
-    deployment: 1.8,
-    dryPowder: 10,
-    keyHighlights: [
-      "TPG Rise Climate deployed $1.2B into renewable energy and sustainable infrastructure globally",
-      "Total platform AUM grew 22% YoY driven by Rise Climate and Asia infrastructure fundraising",
-    ],
-  },
-  {
-    companyId: "tpg",
-    quarter: "Q2 2025",
-    reportDate: "2025-08-06T11:00:00Z",
-    revenue: 460,
-    netIncome: 95,
-    eps: 0.44,
-    epsEstimate: 0.40,
-    feeRelatedEarnings: 190,
-    distributableEarnings: null,
-    infraAum: 24,
-    totalAum: 224,
-    fundraising: 3.0,
-    deployment: 2.2,
-    dryPowder: 9.5,
-    keyHighlights: [
-      "Rise Climate Fund II first close at $4.5B, targeting $7B final close for climate infrastructure",
-      "Completed acquisition of majority stake in a Southeast Asian district cooling platform for $620M",
-    ],
-  },
-  {
-    companyId: "tpg",
-    quarter: "Q3 2025",
-    reportDate: "2025-11-05T12:00:00Z",
-    revenue: 500,
-    netIncome: 108,
-    eps: 0.50,
-    epsEstimate: 0.46,
-    feeRelatedEarnings: 210,
-    distributableEarnings: null,
-    infraAum: 25,
-    totalAum: 232,
-    fundraising: 3.5,
-    deployment: 2.6,
-    dryPowder: 9.0,
-    keyHighlights: [
-      "Infrastructure AUM reached $25B across Rise Climate, Asia, and core strategies",
-      "FRE grew 32% YoY, fastest growth rate among all TPG platforms",
-    ],
-  },
-];
+  // ─── UPCOMING (not yet reported) ──────────────────────────
 
-// ─── Upcoming Earnings ─────────────────────────────────────
-
-export const upcomingEarnings: UpcomingEarning[] = [
   {
     companyId: "brookfield",
     quarter: "Q4 2025",
+    reportDate: null,
     expectedDate: "2026-02-12T12:00:00Z",
-    epsEstimate: 0.53,
-    revenueEstimate: 1560,
+    sources: [],
+    fundraising: null,
+    deployment: null,
+    realizations: null,
+    portfolioPerformance: null,
+    fees: null,
+    strategicCommentary: null,
+    leverage: null,
+    aumBreakdown: null,
   },
   {
     companyId: "apollo",
     quarter: "Q4 2025",
+    reportDate: null,
     expectedDate: "2026-02-13T12:00:00Z",
-    epsEstimate: 2.45,
-    revenueEstimate: 1750,
+    sources: [],
+    fundraising: null,
+    deployment: null,
+    realizations: null,
+    portfolioPerformance: null,
+    fees: null,
+    strategicCommentary: null,
+    leverage: null,
+    aumBreakdown: null,
   },
   {
     companyId: "kkr",
     quarter: "Q4 2025",
+    reportDate: null,
     expectedDate: "2026-02-18T12:00:00Z",
-    epsEstimate: 1.35,
-    revenueEstimate: 1640,
+    sources: [],
+    fundraising: null,
+    deployment: null,
+    realizations: null,
+    portfolioPerformance: null,
+    fees: null,
+    strategicCommentary: null,
+    leverage: null,
+    aumBreakdown: null,
   },
   {
     companyId: "ares",
     quarter: "Q4 2025",
+    reportDate: null,
     expectedDate: "2026-02-20T12:00:00Z",
-    epsEstimate: 1.12,
-    revenueEstimate: 1080,
+    sources: [],
+    fundraising: null,
+    deployment: null,
+    realizations: null,
+    portfolioPerformance: null,
+    fees: null,
+    strategicCommentary: null,
+    leverage: null,
+    aumBreakdown: null,
   },
   {
     companyId: "tpg",
     quarter: "Q4 2025",
+    reportDate: null,
     expectedDate: "2026-02-20T12:00:00Z",
-    epsEstimate: 0.55,
-    revenueEstimate: 540,
+    sources: [],
+    fundraising: null,
+    deployment: null,
+    realizations: null,
+    portfolioPerformance: null,
+    fees: null,
+    strategicCommentary: null,
+    leverage: null,
+    aumBreakdown: null,
   },
   {
     companyId: "stepstone",
     quarter: "Q4 2025",
+    reportDate: null,
     expectedDate: "2026-02-25T12:00:00Z",
-    epsEstimate: 0.59,
-    revenueEstimate: 218,
+    sources: [],
+    fundraising: null,
+    deployment: null,
+    realizations: null,
+    portfolioPerformance: null,
+    fees: null,
+    strategicCommentary: null,
+    leverage: null,
+    aumBreakdown: null,
   },
   {
     companyId: "partners-group",
     quarter: "FY 2025",
+    reportDate: null,
     expectedDate: "2026-03-04T06:00:00Z",
-    epsEstimate: 5.40,
-    revenueEstimate: 490,
+    sources: [],
+    fundraising: null,
+    deployment: null,
+    realizations: null,
+    portfolioPerformance: null,
+    fees: null,
+    strategicCommentary: null,
+    leverage: null,
+    aumBreakdown: null,
   },
   {
     companyId: "swiss-life",
     quarter: "FY 2025",
+    reportDate: null,
     expectedDate: "2026-03-13T06:00:00Z",
-    epsEstimate: 9.20,
-    revenueEstimate: 5500,
+    sources: [],
+    fundraising: null,
+    deployment: null,
+    realizations: null,
+    portfolioPerformance: null,
+    fees: null,
+    strategicCommentary: null,
+    leverage: null,
+    aumBreakdown: null,
   },
 ];
 
@@ -1117,24 +951,17 @@ export function getCompanyById(id: string): Company | undefined {
   return companies.find((c) => c.id === id);
 }
 
-export function getQuarterlyEarnings(companyId: string): QuarterlyEarning[] {
-  return quarterlyEarnings
-    .filter((e) => e.companyId === companyId)
-    .sort((a, b) => new Date(a.reportDate).getTime() - new Date(b.reportDate).getTime());
+export function getAvailableQuarters(): string[] {
+  const quarters = new Set(earningsReports.map((r) => r.quarter));
+  return Array.from(quarters).sort().reverse();
 }
 
-export function getLatestQuarter(companyId: string): QuarterlyEarning | undefined {
-  const earnings = getQuarterlyEarnings(companyId);
-  return earnings[earnings.length - 1];
+export function getReportsForQuarter(quarter: string): CompanyEarningsReport[] {
+  return earningsReports.filter((r) => r.quarter === quarter);
 }
 
-export function getUpcomingEarning(companyId: string): UpcomingEarning | undefined {
-  return upcomingEarnings.find((e) => e.companyId === companyId);
-}
-
-export function getEpsSurprise(earning: QuarterlyEarning): number | null {
-  if (earning.epsEstimate === null || earning.epsEstimate === 0) return null;
-  return ((earning.eps - earning.epsEstimate) / Math.abs(earning.epsEstimate)) * 100;
+export function getReportForCompany(companyId: string, quarter: string): CompanyEarningsReport | undefined {
+  return earningsReports.find((r) => r.companyId === companyId && r.quarter === quarter);
 }
 
 export function getSectorTypeColor(sector: CompanySector): string {
@@ -1148,23 +975,6 @@ export function getSectorTypeColor(sector: CompanySector): string {
   }
 }
 
-export function formatCurrency(value: number, decimals = 0): string {
-  if (value >= 1000) {
-    return `$${(value / 1000).toFixed(1)}B`;
-  }
-  return `$${value.toFixed(decimals)}M`;
-}
-
-export function formatBillions(value: number): string {
-  if (value >= 1000) {
-    return `$${(value / 1000).toFixed(1)}T`;
-  }
-  if (value < 1) {
-    return `$${(value * 1000).toFixed(0)}M`;
-  }
-  return `$${value.toFixed(0)}B`;
-}
-
 export function formatEarningsDate(dateStr: string): string {
   const d = new Date(dateStr);
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
@@ -1175,81 +985,37 @@ export function formatFullDate(dateStr: string): string {
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
-export function getCalendarEntries(): CalendarEntry[] {
-  const entries: CalendarEntry[] = [];
-
-  // Reported quarters — use the latest quarter per company
-  for (const company of companies) {
-    const latest = getLatestQuarter(company.id);
-    if (latest) {
-      entries.push({
-        companyId: company.id,
+export function getCalendarEntries(quarter: string): CalendarEntry[] {
+  return earningsReports
+    .filter((r) => r.quarter === quarter)
+    .map((r) => {
+      const company = getCompanyById(r.companyId)!;
+      return {
+        companyId: r.companyId,
         companyName: company.name,
         ticker: company.ticker,
-        quarter: latest.quarter,
-        date: latest.reportDate,
-        isReported: true,
-        epsSurprise: getEpsSurprise(latest),
-        epsEstimate: latest.epsEstimate,
-        eps: latest.eps,
-      });
-    }
-  }
-
-  // Upcoming — only add if the company doesn't already have a more recent entry
-  for (const upcoming of upcomingEarnings) {
-    const company = getCompanyById(upcoming.companyId);
-    if (!company) continue;
-    entries.push({
-      companyId: upcoming.companyId,
-      companyName: company.name,
-      ticker: company.ticker,
-      quarter: upcoming.quarter,
-      date: upcoming.expectedDate,
-      isReported: false,
-      epsSurprise: null,
-      epsEstimate: upcoming.epsEstimate,
-      eps: null,
-    });
-  }
-
-  // Sort by date, most recent first
-  entries.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-  return entries;
+        quarter: r.quarter,
+        date: r.reportDate ?? r.expectedDate ?? "",
+        isReported: r.reportDate !== null,
+      };
+    })
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 }
 
-export function getAggregateStats() {
-  const totalInfraAum = companies.reduce((sum, c) => sum + c.infraAum, 0);
-
-  const reportedQ4 = quarterlyEarnings.filter(
-    (e) => e.quarter === "Q4 2025" && new Date(e.reportDate) <= new Date()
-  );
-
-  const surprises = reportedQ4
-    .map(getEpsSurprise)
-    .filter((s): s is number => s !== null);
-  const avgSurprise = surprises.length > 0
-    ? surprises.reduce((a, b) => a + b, 0) / surprises.length
-    : 0;
-
-  const beats = surprises.filter((s) => s > 0).length;
-  const misses = surprises.filter((s) => s < 0).length;
-
-  const nextUpcoming = upcomingEarnings
-    .filter((e) => new Date(e.expectedDate) > new Date())
-    .sort((a, b) => new Date(a.expectedDate).getTime() - new Date(b.expectedDate).getTime())[0];
+export function getQuarterStats(quarter: string) {
+  const reports = getReportsForQuarter(quarter);
+  const reported = reports.filter((r) => r.reportDate !== null);
+  const upcoming = reports
+    .filter((r) => r.reportDate === null && r.expectedDate !== null)
+    .sort((a, b) => new Date(a.expectedDate!).getTime() - new Date(b.expectedDate!).getTime());
+  const nextUpcoming = upcoming[0];
   const nextCompany = nextUpcoming ? getCompanyById(nextUpcoming.companyId) : null;
 
   return {
-    totalInfraAum,
-    totalCompanies: companies.length,
-    reportedCount: reportedQ4.length,
-    upcomingCount: upcomingEarnings.filter((e) => new Date(e.expectedDate) > new Date()).length,
-    avgSurprise,
-    beats,
-    misses,
-    nextUpcoming,
+    totalCompanies: reports.length,
+    reportedCount: reported.length,
+    upcomingCount: upcoming.length,
+    nextExpectedDate: nextUpcoming?.expectedDate ?? null,
     nextCompanyName: nextCompany?.name ?? null,
     nextCompanyTicker: nextCompany?.ticker ?? null,
   };
