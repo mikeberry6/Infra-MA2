@@ -1,75 +1,31 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useMemo } from "react";
 import {
   companies,
   earningsReports,
-  getCompanyById,
-  getReportForCompany,
-  getCalendarEntries,
   getQuarterStats,
   getAvailableQuarters,
   getSectorTypeColor,
   formatEarningsDate,
-  formatFullDate,
 } from "@/data/earnings";
 import type {
   Company,
   CompanySector,
   CompanyEarningsReport,
-  FundraisingData,
-  DeploymentData,
-  RealizationsData,
-  PortfolioPerformanceData,
-  FeesData,
-  StrategicCommentaryData,
-  LeverageData,
-  AumBreakdownData,
 } from "@/data/earnings";
 import {
-  Search,
-  Calendar,
   ChevronDown,
   ChevronRight,
-  X,
-  Check,
-  ArrowUpDown,
   ExternalLink,
   FileText,
   Mic,
   FileSpreadsheet,
-  Wallet,
-  Zap,
-  TrendingUp,
   BarChart3,
-  DollarSign,
-  MessageSquare,
-  Scale,
-  Landmark,
   Clock,
 } from "lucide-react";
-import { useDebounce } from "@/hooks/useDebounce";
 
-// ─── Constants ──────────────────────────────────────────────
-
-const SECTORS: CompanySector[] = [
-  "Alternative Asset Manager",
-  "Global Asset Manager",
-  "Private Markets Specialist",
-  "Infrastructure Fund",
-  "Insurance & Asset Management",
-];
-
-type SortOption = "infraAum" | "totalAum" | "name" | "reportDate";
-
-const SORT_OPTIONS: { value: SortOption; label: string }[] = [
-  { value: "infraAum", label: "Infra AUM" },
-  { value: "totalAum", label: "Total AUM" },
-  { value: "name", label: "Company Name" },
-  { value: "reportDate", label: "Report Date" },
-];
-
-// ─── Source Icon Helper ─────────────────────────────────────
+// ─── Source Icon Helper ─────────────────────────────
 
 function SourceIcon({ type }: { type: string }) {
   switch (type) {
@@ -87,510 +43,9 @@ function SourceIcon({ type }: { type: string }) {
   }
 }
 
-// ─── Header with Quarter Selector ───────────────────────────
+// ─── Reported Company Card (collapsed) ──────────────
 
-function EarningsHeader({
-  quarter,
-  onQuarterChange,
-}: {
-  quarter: string;
-  onQuarterChange: (q: string) => void;
-}) {
-  const stats = useMemo(() => getQuarterStats(quarter), [quarter]);
-  const quarters = useMemo(() => getAvailableQuarters(), []);
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    if (!isOpen) return;
-    const h = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsOpen(false);
-    };
-    document.addEventListener("keydown", h);
-    return () => document.removeEventListener("keydown", h);
-  }, [isOpen]);
-
-  return (
-    <div className="mb-8 lg:mb-10">
-      <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
-        <div>
-          <h1 className="text-2xl lg:text-3xl font-bold text-zinc-50 mb-2">
-            Earnings Intelligence
-          </h1>
-          <p className="text-sm lg:text-base text-zinc-400">
-            Infrastructure-focused earnings analysis sourced from filings, transcripts, and investor presentations
-          </p>
-        </div>
-        <div className="relative">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg border border-zinc-700 bg-zinc-900/80 text-sm font-semibold text-zinc-100 hover:border-zinc-600 transition-colors"
-          >
-            {quarter}
-            <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
-          </button>
-          {isOpen && (
-            <>
-              <div className="fixed inset-0" style={{ zIndex: 9998 }} onClick={() => setIsOpen(false)} />
-              <div className="absolute top-full right-0 mt-1 min-w-[140px] rounded-lg border border-zinc-800 bg-zinc-900 shadow-xl" style={{ zIndex: 9999 }}>
-                <div className="p-1">
-                  {quarters.map((q) => (
-                    <button
-                      key={q}
-                      onClick={() => { onQuarterChange(q); setIsOpen(false); }}
-                      className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors ${
-                        quarter === q ? "bg-zinc-800 text-zinc-100" : "text-zinc-400 hover:bg-zinc-800/50 hover:text-zinc-200"
-                      }`}
-                    >
-                      {q}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
-
-      <div className="glass-card rounded-lg p-5 lg:p-6">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          <div>
-            <span className="text-[11px] font-medium uppercase tracking-widest text-zinc-500">Reported</span>
-            <div className="text-2xl lg:text-3xl font-bold text-zinc-50 mt-1">
-              {stats.reportedCount} <span className="text-base font-normal text-zinc-500">/ {stats.totalCompanies}</span>
-            </div>
-          </div>
-          <div>
-            <span className="text-[11px] font-medium uppercase tracking-widest text-zinc-500">Upcoming</span>
-            <div className="text-2xl lg:text-3xl font-bold text-amber-400 mt-1">
-              {stats.upcomingCount}
-            </div>
-          </div>
-          <div className="col-span-2">
-            <span className="text-[11px] font-medium uppercase tracking-widest text-zinc-500">Next Report</span>
-            {stats.nextExpectedDate ? (
-              <div className="mt-1">
-                <span className="text-2xl lg:text-3xl font-bold text-zinc-50">
-                  {formatEarningsDate(stats.nextExpectedDate)}
-                </span>
-                <span className="text-sm text-zinc-400 ml-2">
-                  {stats.nextCompanyTicker} · {stats.nextCompanyName}
-                </span>
-              </div>
-            ) : (
-              <div className="text-xl text-zinc-500 mt-1">All reported</div>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ─── Earnings Calendar ──────────────────────────────────────
-
-function EarningsCalendar({ quarter }: { quarter: string }) {
-  const entries = useMemo(() => getCalendarEntries(quarter), [quarter]);
-
-  return (
-    <div className="mb-8 lg:mb-10">
-      <div className="flex items-center gap-2 mb-4">
-        <Calendar className="h-4 w-4 text-zinc-400" />
-        <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">
-          Report Calendar
-        </h2>
-      </div>
-      <div className="overflow-x-auto -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 xl:-mx-12 xl:px-12">
-        <div className="flex gap-3 pb-2" style={{ minWidth: "max-content" }}>
-          {entries.map((entry) => {
-            const isToday = new Date(entry.date).toDateString() === new Date().toDateString();
-            return (
-              <div
-                key={entry.companyId}
-                className={`flex-shrink-0 w-[110px] rounded-lg border p-3 transition-colors ${
-                  isToday
-                    ? "border-blue-500/50 bg-blue-500/5"
-                    : entry.isReported
-                    ? "border-zinc-800 bg-zinc-900/30"
-                    : "border-zinc-800 bg-zinc-900/50"
-                }`}
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="mono text-xs font-bold text-zinc-200">{entry.ticker}</span>
-                  {entry.isReported ? (
-                    <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded text-emerald-400 bg-emerald-500/10">
-                      Done
-                    </span>
-                  ) : (
-                    <span className="text-[10px] font-medium text-amber-400/70 px-1.5 py-0.5 rounded bg-amber-500/10">
-                      Pending
-                    </span>
-                  )}
-                </div>
-                <div className="text-xs text-zinc-400">{formatEarningsDate(entry.date)}</div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ─── Multi-Select Dropdown ──────────────────────────────────
-
-function MultiSelectDropdown({
-  label,
-  options,
-  selected,
-  onToggle,
-  getColor,
-}: {
-  label: string;
-  options: string[];
-  selected: Set<string>;
-  onToggle: (value: string) => void;
-  getColor: (value: string) => string;
-}) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    if (!isOpen) return;
-    const h = (e: KeyboardEvent) => { if (e.key === "Escape") setIsOpen(false); };
-    document.addEventListener("keydown", h);
-    return () => document.removeEventListener("keydown", h);
-  }, [isOpen]);
-
-  return (
-    <div className="relative inline-block">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-2 px-3 py-2 rounded-lg border text-sm transition-colors whitespace-nowrap ${
-          selected.size > 0
-            ? "border-zinc-600 bg-zinc-800/50 text-zinc-200"
-            : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700"
-        }`}
-      >
-        <span>{label}</span>
-        {selected.size > 0 && (
-          <span className="bg-blue-500/20 text-blue-400 text-xs font-medium px-1.5 py-0.5 rounded">{selected.size}</span>
-        )}
-        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
-      </button>
-      {isOpen && (
-        <>
-          <div className="fixed inset-0" style={{ zIndex: 9998 }} onClick={() => setIsOpen(false)} />
-          <div className="absolute top-full left-0 mt-1 min-w-[240px] rounded-lg border border-zinc-800 bg-zinc-900 shadow-xl" style={{ zIndex: 9999 }}>
-            <div className="p-1">
-              {options.map((opt) => {
-                const color = getColor(opt);
-                const sel = selected.has(opt);
-                return (
-                  <button
-                    key={opt}
-                    onClick={() => onToggle(opt)}
-                    className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-md text-sm transition-colors ${
-                      sel ? "bg-zinc-800 text-zinc-100" : "text-zinc-400 hover:bg-zinc-800/50 hover:text-zinc-200"
-                    }`}
-                  >
-                    <div className="h-2.5 w-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
-                    <span className="flex-1 text-left">{opt}</span>
-                    {sel && <Check className="h-3.5 w-3.5 text-blue-400" />}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </>
-      )}
-    </div>
-  );
-}
-
-// ─── Sort Dropdown ──────────────────────────────────────────
-
-function SortDropdown({ value, onChange }: { value: SortOption; onChange: (v: SortOption) => void }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    if (!isOpen) return;
-    const h = (e: KeyboardEvent) => { if (e.key === "Escape") setIsOpen(false); };
-    document.addEventListener("keydown", h);
-    return () => document.removeEventListener("keydown", h);
-  }, [isOpen]);
-
-  const currentLabel = SORT_OPTIONS.find((o) => o.value === value)?.label ?? "Sort";
-
-  return (
-    <div className="relative inline-block">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg border border-zinc-800 bg-zinc-900/50 text-sm text-zinc-400 hover:border-zinc-700 transition-colors whitespace-nowrap"
-      >
-        <ArrowUpDown className="h-3.5 w-3.5" />
-        <span>{currentLabel}</span>
-        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
-      </button>
-      {isOpen && (
-        <>
-          <div className="fixed inset-0" style={{ zIndex: 9998 }} onClick={() => setIsOpen(false)} />
-          <div className="absolute top-full right-0 mt-1 min-w-[160px] rounded-lg border border-zinc-800 bg-zinc-900 shadow-xl" style={{ zIndex: 9999 }}>
-            <div className="p-1">
-              {SORT_OPTIONS.map((opt) => (
-                <button
-                  key={opt.value}
-                  onClick={() => { onChange(opt.value); setIsOpen(false); }}
-                  className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors ${
-                    value === opt.value ? "bg-zinc-800 text-zinc-100" : "text-zinc-400 hover:bg-zinc-800/50 hover:text-zinc-200"
-                  }`}
-                >
-                  {opt.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </>
-      )}
-    </div>
-  );
-}
-
-// ─── Section Panel ──────────────────────────────────────────
-
-function SectionPanel({
-  icon,
-  title,
-  children,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="border-b border-zinc-800/50 pb-5 mb-5 last:border-0 last:mb-0 last:pb-0">
-      <div className="flex items-center gap-2 mb-3">
-        <span className="text-zinc-400">{icon}</span>
-        <h4 className="text-sm font-semibold text-zinc-200 uppercase tracking-wider">{title}</h4>
-      </div>
-      {children}
-    </div>
-  );
-}
-
-// ─── Metric Item ────────────────────────────────────────────
-
-function Metric({ label, value }: { label: string; value: string | null }) {
-  if (!value) return null;
-  return (
-    <div className="rounded-md border border-zinc-800 bg-zinc-900/40 p-2.5">
-      <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-500 block mb-1">{label}</span>
-      <span className="text-sm font-semibold text-zinc-200 mono">{value}</span>
-    </div>
-  );
-}
-
-// ─── Commentary List ────────────────────────────────────────
-
-function Commentary({ items }: { items: string[] }) {
-  if (items.length === 0) return null;
-  return (
-    <ul className="space-y-1.5 mt-3">
-      {items.map((item, i) => (
-        <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-400 leading-relaxed">
-          <span className="text-blue-500 mt-1 flex-shrink-0">•</span>
-          {item}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-// ─── Inline Tags ────────────────────────────────────────────
-
-function Tags({ items, color }: { items: { name: string; value: string }[]; color: string }) {
-  if (items.length === 0) return null;
-  return (
-    <div className="flex flex-wrap gap-2 mt-2">
-      {items.map((item) => (
-        <span
-          key={item.name}
-          className="text-[11px] font-medium px-2 py-1 rounded-md border"
-          style={{
-            color,
-            backgroundColor: `${color}10`,
-            borderColor: `${color}25`,
-          }}
-        >
-          {item.name}: {item.value}
-        </span>
-      ))}
-    </div>
-  );
-}
-
-// ─── 8 Section Renderers ────────────────────────────────────
-
-function FundraisingSection({ data }: { data: FundraisingData }) {
-  return (
-    <SectionPanel icon={<Wallet className="h-4 w-4" />} title="Fundraising & Dry Powder">
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-        <Metric label="Capital Raised" value={data.totalCapitalRaised} />
-        <Metric label="Infra Capital Raised" value={data.infraCapitalRaised} />
-        <Metric label="Dry Powder" value={data.dryPowder} />
-        <Metric label="Infra Dry Powder" value={data.infraDryPowder} />
-      </div>
-      {data.flagshipFundStatus && (
-        <p className="text-[13px] text-zinc-400 mt-3 leading-relaxed">
-          <span className="text-zinc-500 font-medium">Flagship: </span>
-          {data.flagshipFundStatus}
-        </p>
-      )}
-      <Commentary items={data.commentary} />
-    </SectionPanel>
-  );
-}
-
-function DeploymentSection({ data }: { data: DeploymentData }) {
-  return (
-    <SectionPanel icon={<Zap className="h-4 w-4" />} title="Deployment Activity">
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-        <Metric label="Total Deployed" value={data.totalDeployed} />
-        <Metric label="Infra Deployed" value={data.infraDeployed} />
-        {data.platformVsAddon && <Metric label="Platform vs Add-on" value={data.platformVsAddon} />}
-      </div>
-      {data.bySector.length > 0 && (
-        <div className="mt-3">
-          <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-600">By Sector</span>
-          <Tags items={data.bySector.map((s) => ({ name: s.name, value: s.value }))} color="#3b82f6" />
-        </div>
-      )}
-      {data.byGeography.length > 0 && (
-        <div className="mt-3">
-          <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-600">By Geography</span>
-          <Tags items={data.byGeography.map((g) => ({ name: g.name, value: g.value }))} color="#06b6d4" />
-        </div>
-      )}
-      {data.notableDeals.length > 0 && (
-        <div className="mt-3">
-          <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-600">Notable Deals</span>
-          <ul className="space-y-1 mt-1.5">
-            {data.notableDeals.map((deal, i) => (
-              <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-300 leading-relaxed">
-                <span className="text-emerald-500 mt-1 flex-shrink-0">▸</span>
-                {deal}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-      <Commentary items={data.commentary} />
-    </SectionPanel>
-  );
-}
-
-function RealizationsSection({ data }: { data: RealizationsData }) {
-  return (
-    <SectionPanel icon={<TrendingUp className="h-4 w-4" />} title="Realizations & Exits">
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
-        <Metric label="Total Proceeds" value={data.totalProceeds} />
-        <Metric label="Gross MOIC" value={data.grossMoic} />
-        <Metric label="Gross IRR" value={data.grossIrr} />
-        <Metric label="Net IRR" value={data.netIrr} />
-        <Metric label="Continuation Vehicles" value={data.continuationVehicles} />
-      </div>
-      <Commentary items={data.commentary} />
-    </SectionPanel>
-  );
-}
-
-function PortfolioPerformanceSection({ data }: { data: PortfolioPerformanceData }) {
-  return (
-    <SectionPanel icon={<BarChart3 className="h-4 w-4" />} title="Portfolio Operating Performance">
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-        <Metric label="Revenue Growth" value={data.revenueGrowth} />
-        <Metric label="EBITDA Growth" value={data.ebitdaGrowth} />
-        <Metric label="EBITDA Margin" value={data.ebitdaMargin} />
-      </div>
-      <Commentary items={data.commentary} />
-    </SectionPanel>
-  );
-}
-
-function FeesSection({ data }: { data: FeesData }) {
-  return (
-    <SectionPanel icon={<DollarSign className="h-4 w-4" />} title="Management Fees & Fee-Related Earnings">
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
-        <Metric label="Management Fees" value={data.managementFees} />
-        <Metric label="FRE" value={data.feeRelatedEarnings} />
-        <Metric label="FRE Margin" value={data.freMargin} />
-        <Metric label="Performance Revenue" value={data.realizedPerformanceRevenue} />
-        <Metric label="Distributable Earnings" value={data.distributableEarnings} />
-      </div>
-      <Commentary items={data.commentary} />
-    </SectionPanel>
-  );
-}
-
-function StrategicCommentarySection({ data }: { data: StrategicCommentaryData }) {
-  return (
-    <SectionPanel icon={<MessageSquare className="h-4 w-4" />} title="Strategic & Macro Commentary">
-      {data.quotes.map((q, i) => (
-        <blockquote key={i} className="border-l-2 border-zinc-700 pl-4 py-2 mb-4 last:mb-0">
-          <p className="text-[13px] text-zinc-300 leading-relaxed italic">
-            &ldquo;{q.text}&rdquo;
-          </p>
-          <footer className="mt-1.5 text-[11px] text-zinc-500">
-            — {q.speaker}, {q.role}
-          </footer>
-        </blockquote>
-      ))}
-      {data.themes.length > 0 && (
-        <div className="flex flex-wrap gap-1.5 mt-3">
-          {data.themes.map((theme) => (
-            <span key={theme} className="text-[10px] font-medium px-2 py-0.5 rounded-full border border-zinc-800 bg-zinc-900 text-zinc-400">
-              {theme}
-            </span>
-          ))}
-        </div>
-      )}
-    </SectionPanel>
-  );
-}
-
-function LeverageSection({ data }: { data: LeverageData }) {
-  return (
-    <SectionPanel icon={<Scale className="h-4 w-4" />} title="Portfolio Leverage & Capital Structure">
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-        <Metric label="Avg Portfolio Leverage" value={data.avgPortfolioLeverage} />
-        <Metric label="Interest Coverage" value={data.interestCoverage} />
-        <Metric label="Fixed / Hedged" value={data.pctFixedOrHedged} />
-      </div>
-      <Commentary items={data.commentary} />
-    </SectionPanel>
-  );
-}
-
-function AumSection({ data }: { data: AumBreakdownData }) {
-  return (
-    <SectionPanel icon={<Landmark className="h-4 w-4" />} title="Infrastructure AUM & Segment Breakdown">
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-        <Metric label="Total AUM" value={data.totalAum} />
-        <Metric label="Infra AUM" value={data.infraAum} />
-        <Metric label="Infra Growth" value={data.infraAumGrowthYoy} />
-      </div>
-      {data.bySegment.length > 0 && (
-        <div className="mt-3">
-          <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-600">By Segment</span>
-          <Tags items={data.bySegment.map((s) => ({ name: s.name, value: s.aum }))} color="#8b5cf6" />
-        </div>
-      )}
-      <Commentary items={data.commentary} />
-    </SectionPanel>
-  );
-}
-
-// ─── Company Row (collapsed card) ───────────────────────────
-
-function CompanyRow({
+function CompanyCard({
   company,
   report,
   isExpanded,
@@ -598,167 +53,457 @@ function CompanyRow({
   index,
 }: {
   company: Company;
-  report: CompanyEarningsReport | undefined;
+  report: CompanyEarningsReport;
   isExpanded: boolean;
   onToggle: () => void;
   index: number;
 }) {
-  const isReported = report?.reportDate !== null;
   const sectorColor = getSectorTypeColor(company.sector);
+  const firstQuote = report.strategicCommentary?.quotes[0];
+
+  // Collect key headline figures for the collapsed card
+  const figures: { label: string; value: string }[] = [];
+  if (report.aumBreakdown) {
+    let v = report.aumBreakdown.infraAum;
+    if (report.aumBreakdown.infraAumGrowthYoy) v += ` (${report.aumBreakdown.infraAumGrowthYoy})`;
+    figures.push({ label: "Infra AUM", value: v });
+  }
+  if (report.deployment?.infraDeployed || report.deployment?.totalDeployed) {
+    figures.push({ label: "Deployed", value: (report.deployment.infraDeployed || report.deployment.totalDeployed)! });
+  }
+  if (report.fundraising?.infraDryPowder || report.fundraising?.dryPowder) {
+    figures.push({ label: "Dry Powder", value: (report.fundraising.infraDryPowder || report.fundraising.dryPowder)! });
+  }
+  if (report.fees?.feeRelatedEarnings) {
+    figures.push({ label: "FRE", value: report.fees.feeRelatedEarnings });
+  }
+  if (report.realizations?.grossMoic) {
+    figures.push({ label: "Exit MOIC", value: report.realizations.grossMoic });
+  }
 
   return (
-    <div className="animate-fade-in" style={{ animationDelay: `${index * 40}ms` }}>
-      <button
-        onClick={onToggle}
-        disabled={!isReported}
-        className={`w-full text-left glass-card rounded-lg p-4 lg:p-5 transition-all ${
-          isReported ? "hover:border-zinc-700 cursor-pointer" : "opacity-70 cursor-default"
-        } ${isExpanded ? "border-zinc-600 ring-1 ring-zinc-700/50" : ""}`}
+    <div className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
+      <div
+        className={`glass-card rounded-lg transition-all ${
+          isExpanded ? "border-zinc-600 ring-1 ring-zinc-700/50" : ""
+        }`}
       >
-        {/* Top row: name + status + sources */}
-        <div className="flex items-start justify-between gap-4 mb-3">
-          <div className="flex items-center gap-3 min-w-0">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900 text-xs font-bold mono text-zinc-200 flex-shrink-0">
-              {company.ticker.slice(0, 4)}
-            </div>
-            <div className="min-w-0">
-              <h3 className="text-sm lg:text-base font-semibold text-zinc-100 leading-tight truncate">
+        <button onClick={onToggle} className="w-full text-left p-4 lg:p-5">
+          {/* Row 1: Company info + date */}
+          <div className="flex items-center justify-between gap-4 mb-2.5">
+            <div className="flex items-center gap-3 min-w-0">
+              <span className="mono text-xs font-bold text-zinc-300 bg-zinc-800/80 px-2 py-1 rounded flex-shrink-0">
+                {company.ticker}
+              </span>
+              <h3 className="text-sm lg:text-base font-semibold text-zinc-100 truncate">
                 {company.name}
               </h3>
-              <div className="flex items-center gap-2 mt-0.5 flex-wrap">
-                <span className="mono text-[11px] text-zinc-500">{company.ticker} · {company.exchange}</span>
-                <span
-                  className="text-[10px] font-medium px-1.5 py-0.5 rounded"
-                  style={{ color: sectorColor, backgroundColor: `${sectorColor}15` }}
-                >
-                  {company.sector}
-                </span>
-              </div>
+              <span
+                className="hidden sm:inline text-[10px] font-medium px-1.5 py-0.5 rounded flex-shrink-0"
+                style={{ color: sectorColor, backgroundColor: `${sectorColor}15` }}
+              >
+                {company.sector}
+              </span>
+            </div>
+            <div className="flex items-center gap-2 flex-shrink-0">
+              <span className="text-[11px] font-medium text-emerald-400/80">
+                {report.reportDate ? formatEarningsDate(report.reportDate) : ""}
+              </span>
+              <ChevronRight
+                className={`h-4 w-4 text-zinc-500 transition-transform ${isExpanded ? "rotate-90" : ""}`}
+              />
             </div>
           </div>
-          <div className="flex items-center gap-3 flex-shrink-0">
-            {isReported ? (
-              <span className="text-[11px] font-semibold px-2 py-1 rounded text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 whitespace-nowrap">
-                Reported {report?.reportDate ? formatEarningsDate(report.reportDate) : ""}
-              </span>
-            ) : (
-              <span className="text-[11px] font-semibold px-2 py-1 rounded text-amber-400 bg-amber-500/10 border border-amber-500/20 whitespace-nowrap">
-                Expected {report?.expectedDate ? formatEarningsDate(report.expectedDate) : "TBD"}
-              </span>
-            )}
-            {isReported && (
-              <ChevronRight className={`h-4 w-4 text-zinc-500 transition-transform ${isExpanded ? "rotate-90" : ""}`} />
-            )}
-          </div>
-        </div>
+
+          {/* Row 2: Key quote snippet */}
+          {firstQuote && (
+            <p className="text-[13px] text-zinc-400 leading-relaxed mb-2.5 line-clamp-2">
+              <span className="text-zinc-600">&ldquo;</span>
+              {firstQuote.text.length > 200 ? firstQuote.text.slice(0, 200) + "…" : firstQuote.text}
+              <span className="text-zinc-600">&rdquo;</span>
+              <span className="text-zinc-600 ml-1">— {firstQuote.speaker}</span>
+            </p>
+          )}
+
+          {/* Row 3: Key figures inline */}
+          {figures.length > 0 && (
+            <div className="flex flex-wrap gap-x-5 gap-y-1 text-[12px]">
+              {figures.map((f) => (
+                <span key={f.label} className="text-zinc-500">
+                  {f.label}{" "}
+                  <span className="font-semibold text-zinc-200 mono">{f.value}</span>
+                </span>
+              ))}
+            </div>
+          )}
+        </button>
 
         {/* Source links */}
-        {report && report.sources.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-3">
+        {report.sources.length > 0 && (
+          <div className="px-4 lg:px-5 pb-3 flex flex-wrap gap-3">
             {report.sources.map((src, i) => (
               <a
                 key={i}
                 href={src.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className={`inline-flex items-center gap-1 text-[11px] font-medium px-2 py-1 rounded border transition-colors ${
-                  src.date
-                    ? "text-blue-400 border-blue-500/20 bg-blue-500/5 hover:bg-blue-500/10"
-                    : "text-zinc-500 border-zinc-800 bg-zinc-900/50"
-                }`}
+                className="inline-flex items-center gap-1 text-[11px] text-zinc-500 hover:text-blue-400 transition-colors"
               >
                 <SourceIcon type={src.type} />
-                {src.label}
+                <span>{src.label}</span>
                 <ExternalLink className="h-2.5 w-2.5" />
               </a>
             ))}
           </div>
         )}
+      </div>
 
-        {/* Key metrics for reported companies */}
-        {isReported && report && (
-          <div className="flex flex-wrap gap-x-6 gap-y-1 text-[12px]">
-            {report.aumBreakdown && (
-              <span className="text-zinc-400">
-                <span className="text-zinc-600">Infra AUM</span>{" "}
-                <span className="font-semibold text-blue-400 mono">{report.aumBreakdown.infraAum}</span>
-              </span>
-            )}
-            {report.fees?.feeRelatedEarnings && (
-              <span className="text-zinc-400">
-                <span className="text-zinc-600">FRE</span>{" "}
-                <span className="font-semibold text-zinc-200 mono">{report.fees.feeRelatedEarnings}</span>
-              </span>
-            )}
-            {report.fundraising?.dryPowder && (
-              <span className="text-zinc-400">
-                <span className="text-zinc-600">Dry Powder</span>{" "}
-                <span className="font-semibold text-zinc-200 mono">{report.fundraising.dryPowder}</span>
-              </span>
-            )}
-            {report.deployment?.totalDeployed && (
-              <span className="text-zinc-400">
-                <span className="text-zinc-600">Deployed</span>{" "}
-                <span className="font-semibold text-zinc-200 mono">{report.deployment.totalDeployed}</span>
-              </span>
-            )}
-            {report.fundraising?.totalCapitalRaised && (
-              <span className="text-zinc-400">
-                <span className="text-zinc-600">Raised</span>{" "}
-                <span className="font-semibold text-zinc-200 mono">{report.fundraising.totalCapitalRaised}</span>
-              </span>
-            )}
-            {report.realizations?.grossMoic && (
-              <span className="text-zinc-400">
-                <span className="text-zinc-600">MOIC</span>{" "}
-                <span className="font-semibold text-zinc-200 mono">{report.realizations.grossMoic}</span>
-              </span>
-            )}
-          </div>
-        )}
-      </button>
+      {/* Expanded Detail */}
+      {isExpanded && <CompanyDetail report={report} />}
     </div>
   );
 }
 
-// ─── Company Detail (expanded 8-section view) ───────────────
+// ─── Expanded Detail (Research Note Style) ──────────
 
 function CompanyDetail({ report }: { report: CompanyEarningsReport }) {
+  const allQuotes = report.strategicCommentary?.quotes ?? [];
+  const themes = report.strategicCommentary?.themes ?? [];
+
+  // Capital activity bullets: fundraising → deployment → realizations
+  const capitalBullets: string[] = [];
+  if (report.fundraising) {
+    capitalBullets.push(...report.fundraising.commentary);
+    if (report.fundraising.flagshipFundStatus) {
+      capitalBullets.push(`Flagship: ${report.fundraising.flagshipFundStatus}`);
+    }
+  }
+  if (report.deployment) {
+    capitalBullets.push(...report.deployment.commentary);
+  }
+  if (report.realizations) {
+    capitalBullets.push(...report.realizations.commentary);
+  }
+
+  const notableDeals = report.deployment?.notableDeals ?? [];
+
+  // Portfolio & economics bullets: performance → leverage → fees
+  const portfolioBullets: string[] = [];
+  if (report.portfolioPerformance) {
+    portfolioBullets.push(...report.portfolioPerformance.commentary);
+  }
+  if (report.leverage) {
+    portfolioBullets.push(...report.leverage.commentary);
+  }
+  if (report.fees) {
+    portfolioBullets.push(...report.fees.commentary);
+  }
+
+  // Deployment breakdowns
+  const bySector = report.deployment?.bySector ?? [];
+  const byGeo = report.deployment?.byGeography ?? [];
+
+  // AUM segments
+  const segments = report.aumBreakdown?.bySegment ?? [];
+  const aumCommentary = report.aumBreakdown?.commentary ?? [];
+
   return (
-    <div className="animate-fade-in mt-1">
-      <div className="glass-card rounded-lg p-5 lg:p-6 border-zinc-700">
-        {report.fundraising && <FundraisingSection data={report.fundraising} />}
-        {report.deployment && <DeploymentSection data={report.deployment} />}
-        {report.realizations && <RealizationsSection data={report.realizations} />}
-        {report.portfolioPerformance && <PortfolioPerformanceSection data={report.portfolioPerformance} />}
-        {report.fees && <FeesSection data={report.fees} />}
-        {report.strategicCommentary && <StrategicCommentarySection data={report.strategicCommentary} />}
-        {report.leverage && <LeverageSection data={report.leverage} />}
-        {report.aumBreakdown && <AumSection data={report.aumBreakdown} />}
+    <div className="animate-fade-in mt-2 mb-1">
+      <div className="glass-card rounded-lg p-5 lg:p-6 border-zinc-700/50 space-y-5">
+        {/* Strategic Quotes */}
+        {allQuotes.length > 0 && (
+          <div>
+            {allQuotes.map((q, i) => (
+              <blockquote
+                key={i}
+                className="border-l-2 border-blue-500/30 pl-4 py-1.5 mb-4 last:mb-0"
+              >
+                <p className="text-[13px] text-zinc-300 leading-relaxed italic">
+                  &ldquo;{q.text}&rdquo;
+                </p>
+                <footer className="mt-1 text-[11px] text-zinc-500">
+                  — {q.speaker}, {q.role}
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+        )}
+
+        {/* Key Figures Strip */}
+        <div>
+          <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
+            Key Figures
+          </h4>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-2 text-[13px]">
+            {report.aumBreakdown && (
+              <>
+                <div>
+                  <span className="text-zinc-500 text-[11px]">Total AUM</span>
+                  <div className="font-semibold text-zinc-200 mono">{report.aumBreakdown.totalAum}</div>
+                </div>
+                <div>
+                  <span className="text-zinc-500 text-[11px]">Infra AUM</span>
+                  <div className="font-semibold text-blue-400 mono">
+                    {report.aumBreakdown.infraAum}
+                    {report.aumBreakdown.infraAumGrowthYoy && (
+                      <span className="text-emerald-400/60 ml-1 text-[11px]">
+                        {report.aumBreakdown.infraAumGrowthYoy}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </>
+            )}
+            {(report.fundraising?.infraDryPowder || report.fundraising?.dryPowder) && (
+              <div>
+                <span className="text-zinc-500 text-[11px]">Dry Powder</span>
+                <div className="font-semibold text-zinc-200 mono">
+                  {report.fundraising!.infraDryPowder || report.fundraising!.dryPowder}
+                </div>
+              </div>
+            )}
+            {(report.deployment?.infraDeployed || report.deployment?.totalDeployed) && (
+              <div>
+                <span className="text-zinc-500 text-[11px]">Deployed</span>
+                <div className="font-semibold text-zinc-200 mono">
+                  {report.deployment!.infraDeployed || report.deployment!.totalDeployed}
+                </div>
+              </div>
+            )}
+            {report.fees?.feeRelatedEarnings && (
+              <div>
+                <span className="text-zinc-500 text-[11px]">FRE</span>
+                <div className="font-semibold text-zinc-200 mono">{report.fees.feeRelatedEarnings}</div>
+              </div>
+            )}
+            {report.realizations?.totalProceeds && (
+              <div>
+                <span className="text-zinc-500 text-[11px]">Realizations</span>
+                <div className="font-semibold text-zinc-200 mono">{report.realizations.totalProceeds}</div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Capital Activity */}
+        {capitalBullets.length > 0 && (
+          <div>
+            <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
+              Capital Activity
+            </h4>
+            {/* Inline exit metrics if available */}
+            {report.realizations && (report.realizations.grossMoic || report.realizations.grossIrr) && (
+              <div className="flex flex-wrap gap-x-5 gap-y-1 text-[12px] mb-2">
+                {report.realizations.grossMoic && (
+                  <span className="text-zinc-500">
+                    Exit MOIC <span className="mono font-semibold text-zinc-300">{report.realizations.grossMoic}</span>
+                  </span>
+                )}
+                {report.realizations.grossIrr && (
+                  <span className="text-zinc-500">
+                    Gross IRR <span className="mono font-semibold text-zinc-300">{report.realizations.grossIrr}</span>
+                  </span>
+                )}
+                {report.realizations.netIrr && (
+                  <span className="text-zinc-500">
+                    Net IRR <span className="mono font-semibold text-zinc-300">{report.realizations.netIrr}</span>
+                  </span>
+                )}
+                {report.realizations.continuationVehicles && (
+                  <span className="text-zinc-500">
+                    CVs <span className="mono font-semibold text-zinc-300">{report.realizations.continuationVehicles}</span>
+                  </span>
+                )}
+              </div>
+            )}
+            <ul className="space-y-1.5">
+              {capitalBullets.map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-400 leading-relaxed">
+                  <span className="text-zinc-600 mt-0.5 flex-shrink-0">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            {/* Deployment breakdown */}
+            {(bySector.length > 0 || byGeo.length > 0) && (
+              <div className="mt-3 space-y-1.5 text-[12px]">
+                {bySector.length > 0 && (
+                  <div className="flex flex-wrap items-baseline gap-x-1">
+                    <span className="text-zinc-600">Sectors:</span>
+                    {bySector.map((s, i) => (
+                      <span key={s.name} className="text-zinc-400">
+                        {s.name} <span className="mono text-zinc-300">{s.value}</span>
+                        {i < bySector.length - 1 && <span className="text-zinc-700 mx-0.5">·</span>}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {byGeo.length > 0 && (
+                  <div className="flex flex-wrap items-baseline gap-x-1">
+                    <span className="text-zinc-600">Geography:</span>
+                    {byGeo.map((g, i) => (
+                      <span key={g.name} className="text-zinc-400">
+                        {g.name} <span className="mono text-zinc-300">{g.value}</span>
+                        {i < byGeo.length - 1 && <span className="text-zinc-700 mx-0.5">·</span>}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Notable Deals */}
+        {notableDeals.length > 0 && (
+          <div>
+            <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
+              Notable Deals
+            </h4>
+            <ul className="space-y-1.5">
+              {notableDeals.map((deal, i) => (
+                <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-300 leading-relaxed">
+                  <span className="text-emerald-500/70 mt-0.5 flex-shrink-0">▸</span>
+                  <span>{deal}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Portfolio & Economics */}
+        {portfolioBullets.length > 0 && (
+          <div>
+            <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
+              Portfolio & Economics
+            </h4>
+            {/* Inline performance stats */}
+            <div className="flex flex-wrap gap-x-5 gap-y-1 text-[12px] mb-2">
+              {report.portfolioPerformance?.revenueGrowth && (
+                <span className="text-zinc-500">
+                  Revenue <span className="mono font-semibold text-zinc-300">{report.portfolioPerformance.revenueGrowth}</span>
+                </span>
+              )}
+              {report.portfolioPerformance?.ebitdaGrowth && (
+                <span className="text-zinc-500">
+                  EBITDA <span className="mono font-semibold text-zinc-300">{report.portfolioPerformance.ebitdaGrowth}</span>
+                </span>
+              )}
+              {report.portfolioPerformance?.ebitdaMargin && (
+                <span className="text-zinc-500">
+                  Margin <span className="mono font-semibold text-zinc-300">{report.portfolioPerformance.ebitdaMargin}</span>
+                </span>
+              )}
+              {report.leverage?.avgPortfolioLeverage && (
+                <span className="text-zinc-500">
+                  Leverage <span className="mono font-semibold text-zinc-300">{report.leverage.avgPortfolioLeverage}</span>
+                </span>
+              )}
+              {report.fees?.freMargin && (
+                <span className="text-zinc-500">
+                  FRE Margin <span className="mono font-semibold text-zinc-300">{report.fees.freMargin}</span>
+                </span>
+              )}
+              {report.fees?.managementFees && (
+                <span className="text-zinc-500">
+                  Mgmt Fees <span className="mono font-semibold text-zinc-300">{report.fees.managementFees}</span>
+                </span>
+              )}
+            </div>
+            <ul className="space-y-1.5">
+              {portfolioBullets.map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-400 leading-relaxed">
+                  <span className="text-zinc-600 mt-0.5 flex-shrink-0">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* AUM Segments */}
+        {segments.length > 0 && (
+          <div>
+            <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
+              Infrastructure Segments
+            </h4>
+            <div className="flex flex-wrap gap-1.5">
+              {segments.map((s) => (
+                <span
+                  key={s.name}
+                  className="text-[11px] font-medium px-2 py-0.5 rounded border border-zinc-800 bg-zinc-900/50 text-zinc-400"
+                >
+                  {s.name} <span className="mono text-zinc-300">{s.aum}</span>
+                </span>
+              ))}
+            </div>
+            {aumCommentary.length > 0 && (
+              <ul className="space-y-1 mt-2">
+                {aumCommentary.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-[12px] text-zinc-500 leading-relaxed">
+                    <span className="text-zinc-700 mt-0.5 flex-shrink-0">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+
+        {/* Themes */}
+        {themes.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 pt-1">
+            {themes.map((theme) => (
+              <span
+                key={theme}
+                className="text-[10px] font-medium px-2 py-0.5 rounded-full border border-zinc-800 text-zinc-500"
+              >
+                #{theme}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-// ─── Main Component ─────────────────────────────────────────
+// ─── Upcoming Company Row ────────────────────────────
+
+function UpcomingRow({
+  company,
+  report,
+}: {
+  company: Company;
+  report: CompanyEarningsReport;
+}) {
+  return (
+    <div className="flex items-center justify-between py-2.5 px-1">
+      <div className="flex items-center gap-3 min-w-0">
+        <span className="mono text-xs font-bold text-zinc-500 w-12">
+          {company.ticker}
+        </span>
+        <span className="text-sm text-zinc-400 truncate">{company.name}</span>
+      </div>
+      <div className="flex items-center gap-2 flex-shrink-0">
+        <Clock className="h-3 w-3 text-zinc-600" />
+        <span className="text-[12px] mono text-amber-400/70">
+          {report.expectedDate ? formatEarningsDate(report.expectedDate) : "TBD"}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+// ─── Main Component ──────────────────────────────────
 
 export function Earnings() {
   const [selectedQuarter, setSelectedQuarter] = useState("Q4 2025");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSectors, setSelectedSectors] = useState<Set<string>>(new Set());
-  const [sortBy, setSortBy] = useState<SortOption>("infraAum");
   const [expandedId, setExpandedId] = useState<string | null>(null);
-  const debouncedSearch = useDebounce(searchQuery, 300);
+  const [quarterOpen, setQuarterOpen] = useState(false);
 
-  const handleToggleSector = useCallback((sector: string) => {
-    setSelectedSectors((prev) => {
-      const next = new Set(prev);
-      if (next.has(sector)) next.delete(sector);
-      else next.add(sector);
-      return next;
-    });
-  }, []);
+  const quarters = useMemo(() => getAvailableQuarters(), []);
+  const stats = useMemo(() => getQuarterStats(selectedQuarter), [selectedQuarter]);
 
   const reportsMap = useMemo(() => {
     const map = new Map<string, CompanyEarningsReport>();
@@ -770,125 +515,120 @@ export function Earnings() {
     return map;
   }, [selectedQuarter]);
 
-  const filteredCompanies = useMemo(() => {
-    let result = [...companies];
+  const { reported, upcoming } = useMemo(() => {
+    const reported: { company: Company; report: CompanyEarningsReport }[] = [];
+    const upcoming: { company: Company; report: CompanyEarningsReport }[] = [];
 
-    if (debouncedSearch) {
-      const q = debouncedSearch.toLowerCase();
-      result = result.filter(
-        (c) =>
-          c.name.toLowerCase().includes(q) ||
-          c.ticker.toLowerCase().includes(q) ||
-          c.sector.toLowerCase().includes(q) ||
-          c.headquarters.toLowerCase().includes(q)
-      );
-    }
-
-    if (selectedSectors.size > 0) {
-      result = result.filter((c) => selectedSectors.has(c.sector));
-    }
-
-    // Reported companies first, then upcoming, then sort within each group
-    result.sort((a, b) => {
-      const ra = reportsMap.get(a.id);
-      const rb = reportsMap.get(b.id);
-      const aReported = ra?.reportDate ? 1 : 0;
-      const bReported = rb?.reportDate ? 1 : 0;
-      if (aReported !== bReported) return bReported - aReported;
-
-      switch (sortBy) {
-        case "infraAum":
-          return b.infraAum - a.infraAum;
-        case "totalAum":
-          return b.totalAum - a.totalAum;
-        case "name":
-          return a.name.localeCompare(b.name);
-        case "reportDate": {
-          const da = ra?.reportDate ?? ra?.expectedDate ?? "";
-          const db = rb?.reportDate ?? rb?.expectedDate ?? "";
-          return new Date(da).getTime() - new Date(db).getTime();
-        }
-        default:
-          return 0;
+    for (const company of companies) {
+      const report = reportsMap.get(company.id);
+      if (!report) continue;
+      if (report.reportDate) {
+        reported.push({ company, report });
+      } else {
+        upcoming.push({ company, report });
       }
+    }
+
+    // Reported: sort by infra AUM desc (largest/most relevant first)
+    reported.sort((a, b) => b.company.infraAum - a.company.infraAum);
+    // Upcoming: sort by expected date asc
+    upcoming.sort((a, b) => {
+      const da = a.report.expectedDate ?? "";
+      const db = b.report.expectedDate ?? "";
+      return new Date(da).getTime() - new Date(db).getTime();
     });
 
-    return result;
-  }, [debouncedSearch, selectedSectors, sortBy, reportsMap]);
-
-  const activeFilters = selectedSectors.size + (debouncedSearch ? 1 : 0);
+    return { reported, upcoming };
+  }, [reportsMap]);
 
   return (
     <div className="mx-auto max-w-[1400px] xl:max-w-[1600px] 2xl:max-w-[1800px] px-4 sm:px-6 lg:px-8 xl:px-12 py-6 lg:py-8">
-      <EarningsHeader quarter={selectedQuarter} onQuarterChange={setSelectedQuarter} />
-      <EarningsCalendar quarter={selectedQuarter} />
-
-      {/* Filter Bar */}
-      <div className="flex flex-wrap items-center gap-3 mb-6">
-        <div className="relative flex-1 min-w-[200px] max-w-sm">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-500" />
-          <input
-            type="text"
-            placeholder="Search companies..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-lg border border-zinc-800 bg-zinc-900/50 pl-10 pr-4 py-2 text-sm text-zinc-200 placeholder:text-zinc-600 focus:border-zinc-600 focus:outline-none focus:ring-1 focus:ring-zinc-700 transition-colors"
-          />
-          {searchQuery && (
-            <button onClick={() => setSearchQuery("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300">
-              <X className="h-3.5 w-3.5" />
+      {/* Header */}
+      <div className="mb-8 lg:mb-10">
+        <div className="flex items-end justify-between gap-4 mb-1.5">
+          <h1 className="text-2xl lg:text-3xl font-bold text-zinc-50">
+            Earnings Intelligence
+          </h1>
+          <div className="relative">
+            <button
+              onClick={() => setQuarterOpen(!quarterOpen)}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg border border-zinc-700 bg-zinc-900/80 text-sm font-semibold text-zinc-100 hover:border-zinc-600 transition-colors"
+            >
+              {selectedQuarter}
+              <ChevronDown className={`h-4 w-4 transition-transform ${quarterOpen ? "rotate-180" : ""}`} />
             </button>
-          )}
+            {quarterOpen && (
+              <>
+                <div className="fixed inset-0 z-[9998]" onClick={() => setQuarterOpen(false)} />
+                <div className="absolute top-full right-0 mt-1 min-w-[140px] rounded-lg border border-zinc-800 bg-zinc-900 shadow-xl z-[9999]">
+                  <div className="p-1">
+                    {quarters.map((q) => (
+                      <button
+                        key={q}
+                        onClick={() => {
+                          setSelectedQuarter(q);
+                          setQuarterOpen(false);
+                        }}
+                        className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors ${
+                          selectedQuarter === q
+                            ? "bg-zinc-800 text-zinc-100"
+                            : "text-zinc-400 hover:bg-zinc-800/50 hover:text-zinc-200"
+                        }`}
+                      >
+                        {q}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
         </div>
-
-        <MultiSelectDropdown
-          label="Sector"
-          options={SECTORS}
-          selected={selectedSectors}
-          onToggle={handleToggleSector}
-          getColor={(v) => getSectorTypeColor(v as CompanySector)}
-        />
-
-        <SortDropdown value={sortBy} onChange={setSortBy} />
-
-        {activeFilters > 0 && (
-          <button
-            onClick={() => { setSearchQuery(""); setSelectedSectors(new Set()); }}
-            className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
-          >
-            Clear filters
-          </button>
-        )}
-
-        <span className="ml-auto text-xs text-zinc-600">
-          {filteredCompanies.length} of {companies.length} companies
-        </span>
+        <p className="text-sm text-zinc-500">
+          {stats.reportedCount} reported · {stats.upcomingCount} upcoming
+          {stats.nextCompanyTicker && (
+            <>
+              {" "}· Next:{" "}
+              <span className="mono text-zinc-400">{stats.nextCompanyTicker}</span>{" "}
+              {stats.nextExpectedDate ? formatEarningsDate(stats.nextExpectedDate) : ""}
+            </>
+          )}
+        </p>
       </div>
 
-      {/* Company List */}
-      <div className="space-y-3">
-        {filteredCompanies.map((company, index) => {
-          const report = reportsMap.get(company.id);
-          const isReported = report?.reportDate !== null;
-          const isExpanded = expandedId === company.id && isReported;
-          return (
-            <div key={company.id}>
-              <CompanyRow
-                company={company}
-                report={report}
-                isExpanded={isExpanded}
-                onToggle={() => setExpandedId(isExpanded ? null : company.id)}
-                index={index}
-              />
-              {isExpanded && report && <CompanyDetail report={report} />}
-            </div>
-          );
-        })}
-      </div>
+      {/* Reported Companies */}
+      {reported.length > 0 && (
+        <div className="space-y-3">
+          {reported.map(({ company, report }, index) => (
+            <CompanyCard
+              key={company.id}
+              company={company}
+              report={report}
+              isExpanded={expandedId === company.id}
+              onToggle={() => setExpandedId(expandedId === company.id ? null : company.id)}
+              index={index}
+            />
+          ))}
+        </div>
+      )}
 
-      {filteredCompanies.length === 0 && (
+      {/* Upcoming Reports */}
+      {upcoming.length > 0 && (
+        <div className="mt-10">
+          <h2 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-3">
+            Upcoming Reports
+          </h2>
+          <div className="glass-card rounded-lg divide-y divide-zinc-800/50 px-4">
+            {upcoming.map(({ company, report }) => (
+              <UpcomingRow key={company.id} company={company} report={report} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {reported.length === 0 && upcoming.length === 0 && (
         <div className="text-center py-16">
-          <p className="text-zinc-500 text-sm">No companies match your filters.</p>
+          <p className="text-zinc-500 text-sm">No earnings data for this quarter.</p>
         </div>
       )}
     </div>
