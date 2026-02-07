@@ -72,8 +72,10 @@ export interface FeesData {
   commentary: string[];
 }
 
+export type InsightTopic = "scale" | "fundraising" | "deployment" | "exits" | "portfolio" | "fees" | "macro";
+
 export interface StrategicCommentaryData {
-  quotes: { speaker: string; role: string; text: string }[];
+  quotes: { speaker: string; role: string; text: string; topic?: InsightTopic }[];
   themes: string[];
 }
 
@@ -98,6 +100,7 @@ export interface CompanyEarningsReport {
   reportDate: string | null;
   expectedDate: string | null;
   sources: EarningsSource[];
+  highlights: string[];
   fundraising: FundraisingData | null;
   deployment: DeploymentData | null;
   realizations: RealizationsData | null;
@@ -306,6 +309,13 @@ export const earningsReports: CompanyEarningsReport[] = [
         date: "2026-01-23",
       },
     ],
+    highlights: [
+      "Full-year total return 12.8%, exceeding 8-10% target — NAV per share up 3.2% in Q4 to 342p",
+      "Partial Attero disposal returned £130M at 2.3x cost; proceeds recycled into follow-on investments",
+      "Portfolio EBITDA +10% YoY — Infinis at record output, TCR revenue +12% on air traffic recovery",
+      "Deployed £90M in follow-ons: £45M DNS:NET fiber expansion, £25M Infinis biomethane development",
+      "Conservative leverage at 4.8x with 85% fixed/hedged — within 4-6x target range",
+    ],
     fundraising: {
       totalCapitalRaised: null,
       infraCapitalRaised: null,
@@ -376,6 +386,7 @@ export const earningsReports: CompanyEarningsReport[] = [
           speaker: "Richard Laing",
           role: "Chairman, 3i Infrastructure",
           text: "European mid-market infrastructure continues to offer attractive risk-adjusted returns. Our portfolio of essential-service businesses has demonstrated resilient operational performance throughout 2025, and we see a strong pipeline for selective new investments in 2026.",
+          topic: "portfolio",
         },
       ],
       themes: ["European mid-market", "essential services", "inflation protection", "energy transition"],
@@ -432,6 +443,14 @@ export const earningsReports: CompanyEarningsReport[] = [
         url: "https://ir.blackrock.com/financial-information/sec-filings",
         date: null,
       },
+    ],
+    highlights: [
+      "GIP integration complete — combined $170B infra platform (+12% YoY), 400+ professionals across 20 offices",
+      "Record $281B net inflows in Q4; GIP platform attracted ~$8B from sovereign wealth and pension clients",
+      "Deployed ~$12B via GIP: energy transition ($4.8B), digital infra ($3.6B), transport ($2.4B)",
+      "Exited $4.2B at 1.8x MOIC / 15% gross IRR; continuation vehicles accounted for $0.8B",
+      "Digital infra leasing activity up 35% YoY on hyperscaler demand; renewables benefiting from higher merchant power",
+      "Base fees $4.41B (+14% YoY); adjusted operating margin 45.5%, up 170bps",
     ],
     fundraising: {
       totalCapitalRaised: "$281B net inflows",
@@ -510,11 +529,13 @@ export const earningsReports: CompanyEarningsReport[] = [
           speaker: "Larry Fink",
           role: "Chairman & CEO, BlackRock",
           text: "Infrastructure is the defining investment opportunity of the next decade. The combination of BlackRock's scale and GIP's operational expertise has created a truly differentiated platform. We're seeing unprecedented demand from clients who recognize that infrastructure is no longer an alternative — it's essential.",
+          topic: "scale",
         },
         {
           speaker: "Rob Kapito",
           role: "President, BlackRock",
           text: "The integration of GIP is complete, and we're already seeing cross-selling benefits. Our infrastructure solutions are now embedded across our institutional, wealth, and ETF channels.",
+          topic: "fundraising",
         },
       ],
       themes: ["GIP integration", "infrastructure as essential allocation", "energy transition", "digital infrastructure", "private markets scaling"],
@@ -572,6 +593,14 @@ export const earningsReports: CompanyEarningsReport[] = [
         url: "https://www.macquarie.com/assets/macq/investor/results-and-presentations/2026/macquarie-group-hy26-presentation.pdf",
         date: "2026-01-30",
       },
+    ],
+    highlights: [
+      "World's largest infra manager: $195B AUM (+8% YoY) — digital infra fastest-growing segment at +22%",
+      "MEIF7 final close at A$8.5B — largest Australian-domiciled infra fund; MIP V targeting $6B+",
+      "Deployed $7.5B with 42% into renewables — 1.2 GW Scandinavian wind, A$1.8B data center commitments",
+      "Sold UK Green Investment Group legacy portfolio at $3.2B / 1.4x MOIC",
+      "Airports and toll roads exceeded pre-pandemic volumes across all regions",
+      "MAM base fees $1.1B (+10% YoY); group net profit A$3.52B (+8%)",
     ],
     fundraising: {
       totalCapitalRaised: "$8.0B",
@@ -650,6 +679,7 @@ export const earningsReports: CompanyEarningsReport[] = [
           speaker: "Shemara Wikramanayake",
           role: "CEO, Macquarie Group",
           text: "Macquarie Asset Management's infrastructure platform continues to lead globally with $195B in AUM. The energy transition remains the most significant investment theme of our generation, and our deep operational capabilities position us to capture outsized value for our investors.",
+          topic: "scale",
         },
       ],
       themes: ["energy transition leadership", "green energy deployment", "Asia-Pacific growth", "digital infrastructure", "operational expertise"],
@@ -707,6 +737,14 @@ export const earningsReports: CompanyEarningsReport[] = [
         url: "https://ir.blackstone.com/financial-information/sec-filings",
         date: null,
       },
+    ],
+    highlights: [
+      "Record infra deployment of $11.6B (+22% YoY) — 36% into digital, led by AI-driven data center demand",
+      "BIP II closed at $12.4B (exceeded $10B target); BXINFRA perpetual vehicle raised $3.8B in Q4 alone",
+      "$24B infra dry powder — infrastructure now 61% of firm inflows, highest share on record",
+      "Exits at 2.1x MOIC / 18% gross IRR; European fiber platform sold at 2.4x (top quartile)",
+      "Data center portfolio at 99%+ occupancy, 8+ year WALT — demand pipeline exceeds supply",
+      "FRE $1.24B at 68% margin; full-year distributable earnings $5.1B, up 21%",
     ],
     fundraising: {
       totalCapitalRaised: "$14.2B",
@@ -790,11 +828,13 @@ export const earningsReports: CompanyEarningsReport[] = [
           speaker: "Steve Schwarzman",
           role: "Chairman, CEO & Co-Founder, Blackstone",
           text: "Infrastructure is the single biggest deployment opportunity we see globally. The convergence of AI-driven data center demand, energy security imperatives, and aging infrastructure creates a generational investment backdrop. We are deploying capital at scale into these secular themes.",
+          topic: "deployment",
         },
         {
           speaker: "Jon Gray",
           role: "President & COO, Blackstone",
           text: "Our infrastructure business has been one of our fastest-growing strategies. The power demand from AI alone could drive $1 trillion of infrastructure investment over the next decade. We're positioned at the intersection of capital and operational expertise to capture this opportunity.",
+          topic: "scale",
         },
       ],
       themes: ["AI-driven data center demand", "energy security", "digital infrastructure", "perpetual capital scaling", "power demand from AI"],
@@ -835,6 +875,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-02-12T12:00:00Z",
     sources: [],
+    highlights: [],
     fundraising: null,
     deployment: null,
     realizations: null,
@@ -850,6 +891,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-02-13T12:00:00Z",
     sources: [],
+    highlights: [],
     fundraising: null,
     deployment: null,
     realizations: null,
@@ -865,6 +907,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-02-18T12:00:00Z",
     sources: [],
+    highlights: [],
     fundraising: null,
     deployment: null,
     realizations: null,
@@ -880,6 +923,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-02-20T12:00:00Z",
     sources: [],
+    highlights: [],
     fundraising: null,
     deployment: null,
     realizations: null,
@@ -895,6 +939,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-02-20T12:00:00Z",
     sources: [],
+    highlights: [],
     fundraising: null,
     deployment: null,
     realizations: null,
@@ -910,6 +955,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-02-25T12:00:00Z",
     sources: [],
+    highlights: [],
     fundraising: null,
     deployment: null,
     realizations: null,
@@ -925,6 +971,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-03-04T06:00:00Z",
     sources: [],
+    highlights: [],
     fundraising: null,
     deployment: null,
     realizations: null,
@@ -940,6 +987,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-03-13T06:00:00Z",
     sources: [],
+    highlights: [],
     fundraising: null,
     deployment: null,
     realizations: null,

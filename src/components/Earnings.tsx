@@ -11,8 +11,8 @@ import {
 } from "@/data/earnings";
 import type {
   Company,
-  CompanySector,
   CompanyEarningsReport,
+  InsightTopic,
 } from "@/data/earnings";
 import {
   ChevronDown,
@@ -25,7 +25,7 @@ import {
   Clock,
 } from "lucide-react";
 
-// ─── Source Icon Helper ─────────────────────────────
+// ─── Source Icon ─────────────────────────────────────
 
 function SourceIcon({ type }: { type: string }) {
   switch (type) {
@@ -41,6 +41,115 @@ function SourceIcon({ type }: { type: string }) {
     default:
       return <FileText className="h-3 w-3" />;
   }
+}
+
+// ─── Quote helper: find quote by topic ──────────────
+
+function getQuoteForTopic(report: CompanyEarningsReport, topic: InsightTopic) {
+  return report.strategicCommentary?.quotes.find((q) => q.topic === topic);
+}
+
+// ─── Inline Quote Block ─────────────────────────────
+
+function QuoteBlock({ text, speaker, role }: { text: string; speaker: string; role: string }) {
+  return (
+    <blockquote className="border-l-2 border-blue-500/30 pl-4 py-1.5 mt-3">
+      <p className="text-[13px] text-zinc-300 leading-relaxed italic">
+        &ldquo;{text}&rdquo;
+      </p>
+      <footer className="mt-1 text-[11px] text-zinc-500">
+        — {speaker}, {role}
+      </footer>
+    </blockquote>
+  );
+}
+
+// ─── Insight Section ────────────────────────────────
+
+function InsightSection({
+  title,
+  metrics,
+  bullets,
+  quote,
+  deals,
+  breakdowns,
+  children,
+}: {
+  title: string;
+  metrics?: { label: string; value: string }[];
+  bullets?: string[];
+  quote?: { text: string; speaker: string; role: string };
+  deals?: string[];
+  breakdowns?: { label: string; items: { name: string; value: string }[] }[];
+  children?: React.ReactNode;
+}) {
+  const hasContent = (metrics && metrics.length > 0) || (bullets && bullets.length > 0) || quote || (deals && deals.length > 0) || children;
+  if (!hasContent) return null;
+
+  return (
+    <div className="border-t border-zinc-800/60 pt-4">
+      <h4 className="text-[10px] font-semibold uppercase tracking-widest text-zinc-500 mb-2.5">
+        {title}
+      </h4>
+
+      {/* Inline metrics row */}
+      {metrics && metrics.length > 0 && (
+        <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-[12px] mb-2.5">
+          {metrics.map((m) => (
+            <span key={m.label} className="text-zinc-500">
+              {m.label} <span className="mono font-semibold text-zinc-200">{m.value}</span>
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* Breakdowns (sector/geo) */}
+      {breakdowns && breakdowns.length > 0 && (
+        <div className="space-y-1.5 text-[12px] mb-2.5">
+          {breakdowns.map((bd) => (
+            <div key={bd.label} className="flex flex-wrap items-baseline gap-x-1">
+              <span className="text-zinc-600">{bd.label}:</span>
+              {bd.items.map((item, i) => (
+                <span key={item.name} className="text-zinc-400">
+                  {item.name} <span className="mono text-zinc-300">{item.value}</span>
+                  {i < bd.items.length - 1 && <span className="text-zinc-700 mx-0.5">·</span>}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Notable deals */}
+      {deals && deals.length > 0 && (
+        <ul className="space-y-1.5 mb-2.5">
+          {deals.map((deal, i) => (
+            <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-300 leading-relaxed">
+              <span className="text-emerald-500/70 mt-0.5 flex-shrink-0">▸</span>
+              <span>{deal}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {/* Commentary bullets */}
+      {bullets && bullets.length > 0 && (
+        <ul className="space-y-1.5">
+          {bullets.map((item, i) => (
+            <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-400 leading-relaxed">
+              <span className="text-zinc-600 mt-0.5 flex-shrink-0">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {children}
+
+      {/* Validating quote */}
+      {quote && <QuoteBlock text={quote.text} speaker={quote.speaker} role={quote.role} />}
+    </div>
+  );
 }
 
 // ─── Reported Company Card (collapsed) ──────────────
@@ -59,27 +168,6 @@ function CompanyCard({
   index: number;
 }) {
   const sectorColor = getSectorTypeColor(company.sector);
-  const firstQuote = report.strategicCommentary?.quotes[0];
-
-  // Collect key headline figures for the collapsed card
-  const figures: { label: string; value: string }[] = [];
-  if (report.aumBreakdown) {
-    let v = report.aumBreakdown.infraAum;
-    if (report.aumBreakdown.infraAumGrowthYoy) v += ` (${report.aumBreakdown.infraAumGrowthYoy})`;
-    figures.push({ label: "Infra AUM", value: v });
-  }
-  if (report.deployment?.infraDeployed || report.deployment?.totalDeployed) {
-    figures.push({ label: "Deployed", value: (report.deployment.infraDeployed || report.deployment.totalDeployed)! });
-  }
-  if (report.fundraising?.infraDryPowder || report.fundraising?.dryPowder) {
-    figures.push({ label: "Dry Powder", value: (report.fundraising.infraDryPowder || report.fundraising.dryPowder)! });
-  }
-  if (report.fees?.feeRelatedEarnings) {
-    figures.push({ label: "FRE", value: report.fees.feeRelatedEarnings });
-  }
-  if (report.realizations?.grossMoic) {
-    figures.push({ label: "Exit MOIC", value: report.realizations.grossMoic });
-  }
 
   return (
     <div className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
@@ -89,8 +177,8 @@ function CompanyCard({
         }`}
       >
         <button onClick={onToggle} className="w-full text-left p-4 lg:p-5">
-          {/* Row 1: Company info + date */}
-          <div className="flex items-center justify-between gap-4 mb-2.5">
+          {/* Header: company info + date */}
+          <div className="flex items-center justify-between gap-4 mb-3">
             <div className="flex items-center gap-3 min-w-0">
               <span className="mono text-xs font-bold text-zinc-300 bg-zinc-800/80 px-2 py-1 rounded flex-shrink-0">
                 {company.ticker}
@@ -115,26 +203,16 @@ function CompanyCard({
             </div>
           </div>
 
-          {/* Row 2: Key quote snippet */}
-          {firstQuote && (
-            <p className="text-[13px] text-zinc-400 leading-relaxed mb-2.5 line-clamp-2">
-              <span className="text-zinc-600">&ldquo;</span>
-              {firstQuote.text.length > 200 ? firstQuote.text.slice(0, 200) + "…" : firstQuote.text}
-              <span className="text-zinc-600">&rdquo;</span>
-              <span className="text-zinc-600 ml-1">— {firstQuote.speaker}</span>
-            </p>
-          )}
-
-          {/* Row 3: Key figures inline */}
-          {figures.length > 0 && (
-            <div className="flex flex-wrap gap-x-5 gap-y-1 text-[12px]">
-              {figures.map((f) => (
-                <span key={f.label} className="text-zinc-500">
-                  {f.label}{" "}
-                  <span className="font-semibold text-zinc-200 mono">{f.value}</span>
-                </span>
+          {/* Curated highlights */}
+          {report.highlights.length > 0 && (
+            <ul className="space-y-1.5 mb-3">
+              {report.highlights.map((h, i) => (
+                <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-400 leading-relaxed">
+                  <span className="text-blue-500/60 mt-0.5 flex-shrink-0">•</span>
+                  <span>{h}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           )}
         </button>
 
@@ -164,295 +242,197 @@ function CompanyCard({
   );
 }
 
-// ─── Expanded Detail (Research Note Style) ──────────
+// ─── Expanded Detail (6 Named Sections) ─────────────
 
 function CompanyDetail({ report }: { report: CompanyEarningsReport }) {
-  const allQuotes = report.strategicCommentary?.quotes ?? [];
   const themes = report.strategicCommentary?.themes ?? [];
 
-  // Capital activity bullets: fundraising → deployment → realizations
-  const capitalBullets: string[] = [];
-  if (report.fundraising) {
-    capitalBullets.push(...report.fundraising.commentary);
-    if (report.fundraising.flagshipFundStatus) {
-      capitalBullets.push(`Flagship: ${report.fundraising.flagshipFundStatus}`);
-    }
-  }
-  if (report.deployment) {
-    capitalBullets.push(...report.deployment.commentary);
-  }
-  if (report.realizations) {
-    capitalBullets.push(...report.realizations.commentary);
-  }
+  // Build metrics and bullets for each section from existing data
 
-  const notableDeals = report.deployment?.notableDeals ?? [];
-
-  // Portfolio & economics bullets: performance → leverage → fees
-  const portfolioBullets: string[] = [];
-  if (report.portfolioPerformance) {
-    portfolioBullets.push(...report.portfolioPerformance.commentary);
+  // 1. Infrastructure Scale
+  const scaleMetrics: { label: string; value: string }[] = [];
+  if (report.aumBreakdown) {
+    scaleMetrics.push({ label: "Total AUM", value: report.aumBreakdown.totalAum });
+    let infraVal = report.aumBreakdown.infraAum;
+    if (report.aumBreakdown.infraAumGrowthYoy) infraVal += ` (${report.aumBreakdown.infraAumGrowthYoy})`;
+    scaleMetrics.push({ label: "Infra AUM", value: infraVal });
   }
-  if (report.leverage) {
-    portfolioBullets.push(...report.leverage.commentary);
-  }
-  if (report.fees) {
-    portfolioBullets.push(...report.fees.commentary);
-  }
+  const scaleSegments = report.aumBreakdown?.bySegment ?? [];
+  const scaleBullets = report.aumBreakdown?.commentary ?? [];
+  const scaleQuote = getQuoteForTopic(report, "scale");
 
-  // Deployment breakdowns
-  const bySector = report.deployment?.bySector ?? [];
-  const byGeo = report.deployment?.byGeography ?? [];
+  // 2. Capital Formation
+  const capMetrics: { label: string; value: string }[] = [];
+  if (report.fundraising?.totalCapitalRaised) capMetrics.push({ label: "Raised", value: report.fundraising.totalCapitalRaised });
+  if (report.fundraising?.infraCapitalRaised) capMetrics.push({ label: "Infra Raised", value: report.fundraising.infraCapitalRaised });
+  if (report.fundraising?.infraDryPowder || report.fundraising?.dryPowder) {
+    capMetrics.push({ label: "Dry Powder", value: (report.fundraising!.infraDryPowder || report.fundraising!.dryPowder)! });
+  }
+  const capBullets = [...(report.fundraising?.commentary ?? [])];
+  if (report.fundraising?.flagshipFundStatus) capBullets.push(report.fundraising.flagshipFundStatus);
+  const capQuote = getQuoteForTopic(report, "fundraising");
 
-  // AUM segments
-  const segments = report.aumBreakdown?.bySegment ?? [];
-  const aumCommentary = report.aumBreakdown?.commentary ?? [];
+  // 3. Deployment & Deals
+  const deployMetrics: { label: string; value: string }[] = [];
+  if (report.deployment?.infraDeployed || report.deployment?.totalDeployed) {
+    deployMetrics.push({ label: "Deployed", value: (report.deployment!.infraDeployed || report.deployment!.totalDeployed)! });
+  }
+  if (report.deployment?.platformVsAddon) deployMetrics.push({ label: "Mix", value: report.deployment.platformVsAddon });
+  const deployBreakdowns: { label: string; items: { name: string; value: string }[] }[] = [];
+  if (report.deployment?.bySector && report.deployment.bySector.length > 0) {
+    deployBreakdowns.push({ label: "Sectors", items: report.deployment.bySector });
+  }
+  if (report.deployment?.byGeography && report.deployment.byGeography.length > 0) {
+    deployBreakdowns.push({ label: "Geography", items: report.deployment.byGeography });
+  }
+  const deployDeals = report.deployment?.notableDeals ?? [];
+  const deployBullets = report.deployment?.commentary ?? [];
+  const deployQuote = getQuoteForTopic(report, "deployment");
+
+  // 4. Exits & Returns
+  const exitMetrics: { label: string; value: string }[] = [];
+  if (report.realizations?.totalProceeds) exitMetrics.push({ label: "Proceeds", value: report.realizations.totalProceeds });
+  if (report.realizations?.grossMoic) exitMetrics.push({ label: "MOIC", value: report.realizations.grossMoic });
+  if (report.realizations?.grossIrr) exitMetrics.push({ label: "Gross IRR", value: report.realizations.grossIrr });
+  if (report.realizations?.netIrr) exitMetrics.push({ label: "Net IRR", value: report.realizations.netIrr });
+  if (report.realizations?.continuationVehicles) exitMetrics.push({ label: "CVs", value: report.realizations.continuationVehicles });
+  const exitBullets = report.realizations?.commentary ?? [];
+  const exitQuote = getQuoteForTopic(report, "exits");
+
+  // 5. Portfolio Operations
+  const portMetrics: { label: string; value: string }[] = [];
+  if (report.portfolioPerformance?.revenueGrowth) portMetrics.push({ label: "Revenue", value: report.portfolioPerformance.revenueGrowth });
+  if (report.portfolioPerformance?.ebitdaGrowth) portMetrics.push({ label: "EBITDA", value: report.portfolioPerformance.ebitdaGrowth });
+  if (report.portfolioPerformance?.ebitdaMargin) portMetrics.push({ label: "Margin", value: report.portfolioPerformance.ebitdaMargin });
+  if (report.leverage?.avgPortfolioLeverage) portMetrics.push({ label: "Leverage", value: report.leverage.avgPortfolioLeverage });
+  if (report.leverage?.interestCoverage) portMetrics.push({ label: "Coverage", value: report.leverage.interestCoverage });
+  if (report.leverage?.pctFixedOrHedged) portMetrics.push({ label: "Fixed/Hedged", value: report.leverage.pctFixedOrHedged });
+  const portBullets = [
+    ...(report.portfolioPerformance?.commentary ?? []),
+    ...(report.leverage?.commentary ?? []),
+  ];
+  const portQuote = getQuoteForTopic(report, "portfolio");
+
+  // 6. Fee Economics
+  const feeMetrics: { label: string; value: string }[] = [];
+  if (report.fees?.managementFees) feeMetrics.push({ label: "Mgmt Fees", value: report.fees.managementFees });
+  if (report.fees?.feeRelatedEarnings) feeMetrics.push({ label: "FRE", value: report.fees.feeRelatedEarnings });
+  if (report.fees?.freMargin) feeMetrics.push({ label: "FRE Margin", value: report.fees.freMargin });
+  if (report.fees?.realizedPerformanceRevenue) feeMetrics.push({ label: "Perf Revenue", value: report.fees.realizedPerformanceRevenue });
+  if (report.fees?.distributableEarnings) feeMetrics.push({ label: "DE", value: report.fees.distributableEarnings });
+  const feeBullets = report.fees?.commentary ?? [];
+  const feeQuote = getQuoteForTopic(report, "fees");
+
+  // Check which sections have content
+  const hasScale = scaleMetrics.length > 0 || scaleBullets.length > 0;
+  const hasCap = capMetrics.length > 0 || capBullets.length > 0;
+  const hasDeploy = deployMetrics.length > 0 || deployBullets.length > 0 || deployDeals.length > 0;
+  const hasExits = exitMetrics.length > 0 || exitBullets.length > 0;
+  const hasPort = portMetrics.length > 0 || portBullets.length > 0;
+  const hasFees = feeMetrics.length > 0 || feeBullets.length > 0;
+
+  // Collect any quotes that weren't placed in a section (topic undefined or "macro")
+  const placedTopics = new Set<string>();
+  if (hasScale && scaleQuote) placedTopics.add("scale");
+  if (hasCap && capQuote) placedTopics.add("fundraising");
+  if (hasDeploy && deployQuote) placedTopics.add("deployment");
+  if (hasExits && exitQuote) placedTopics.add("exits");
+  if (hasPort && portQuote) placedTopics.add("portfolio");
+  if (hasFees && feeQuote) placedTopics.add("fees");
+  const unplacedQuotes = (report.strategicCommentary?.quotes ?? []).filter(
+    (q) => !q.topic || q.topic === "macro" || !placedTopics.has(q.topic)
+  );
 
   return (
     <div className="animate-fade-in mt-2 mb-1">
-      <div className="glass-card rounded-lg p-5 lg:p-6 border-zinc-700/50 space-y-5">
-        {/* Strategic Quotes */}
-        {allQuotes.length > 0 && (
+      <div className="glass-card rounded-lg p-5 lg:p-6 border-zinc-700/50 space-y-4">
+        {/* Unplaced / macro quotes at the top */}
+        {unplacedQuotes.length > 0 && (
           <div>
-            {allQuotes.map((q, i) => (
-              <blockquote
-                key={i}
-                className="border-l-2 border-blue-500/30 pl-4 py-1.5 mb-4 last:mb-0"
-              >
-                <p className="text-[13px] text-zinc-300 leading-relaxed italic">
-                  &ldquo;{q.text}&rdquo;
-                </p>
-                <footer className="mt-1 text-[11px] text-zinc-500">
-                  — {q.speaker}, {q.role}
-                </footer>
-              </blockquote>
+            {unplacedQuotes.map((q, i) => (
+              <QuoteBlock key={i} text={q.text} speaker={q.speaker} role={q.role} />
             ))}
           </div>
         )}
 
-        {/* Key Figures Strip */}
-        <div>
-          <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
-            Key Figures
-          </h4>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-2 text-[13px]">
-            {report.aumBreakdown && (
-              <>
-                <div>
-                  <span className="text-zinc-500 text-[11px]">Total AUM</span>
-                  <div className="font-semibold text-zinc-200 mono">{report.aumBreakdown.totalAum}</div>
-                </div>
-                <div>
-                  <span className="text-zinc-500 text-[11px]">Infra AUM</span>
-                  <div className="font-semibold text-blue-400 mono">
-                    {report.aumBreakdown.infraAum}
-                    {report.aumBreakdown.infraAumGrowthYoy && (
-                      <span className="text-emerald-400/60 ml-1 text-[11px]">
-                        {report.aumBreakdown.infraAumGrowthYoy}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </>
-            )}
-            {(report.fundraising?.infraDryPowder || report.fundraising?.dryPowder) && (
-              <div>
-                <span className="text-zinc-500 text-[11px]">Dry Powder</span>
-                <div className="font-semibold text-zinc-200 mono">
-                  {report.fundraising!.infraDryPowder || report.fundraising!.dryPowder}
-                </div>
-              </div>
-            )}
-            {(report.deployment?.infraDeployed || report.deployment?.totalDeployed) && (
-              <div>
-                <span className="text-zinc-500 text-[11px]">Deployed</span>
-                <div className="font-semibold text-zinc-200 mono">
-                  {report.deployment!.infraDeployed || report.deployment!.totalDeployed}
-                </div>
-              </div>
-            )}
-            {report.fees?.feeRelatedEarnings && (
-              <div>
-                <span className="text-zinc-500 text-[11px]">FRE</span>
-                <div className="font-semibold text-zinc-200 mono">{report.fees.feeRelatedEarnings}</div>
-              </div>
-            )}
-            {report.realizations?.totalProceeds && (
-              <div>
-                <span className="text-zinc-500 text-[11px]">Realizations</span>
-                <div className="font-semibold text-zinc-200 mono">{report.realizations.totalProceeds}</div>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Capital Activity */}
-        {capitalBullets.length > 0 && (
-          <div>
-            <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
-              Capital Activity
-            </h4>
-            {/* Inline exit metrics if available */}
-            {report.realizations && (report.realizations.grossMoic || report.realizations.grossIrr) && (
-              <div className="flex flex-wrap gap-x-5 gap-y-1 text-[12px] mb-2">
-                {report.realizations.grossMoic && (
-                  <span className="text-zinc-500">
-                    Exit MOIC <span className="mono font-semibold text-zinc-300">{report.realizations.grossMoic}</span>
+        {/* 1. Infrastructure Scale */}
+        {hasScale && (
+          <InsightSection
+            title="Infrastructure Scale"
+            metrics={scaleMetrics}
+            bullets={scaleBullets}
+            quote={scaleQuote}
+          >
+            {scaleSegments.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mt-2.5">
+                {scaleSegments.map((s) => (
+                  <span
+                    key={s.name}
+                    className="text-[11px] font-medium px-2 py-0.5 rounded border border-zinc-800 bg-zinc-900/50 text-zinc-400"
+                  >
+                    {s.name} <span className="mono text-zinc-300">{s.aum}</span>
                   </span>
-                )}
-                {report.realizations.grossIrr && (
-                  <span className="text-zinc-500">
-                    Gross IRR <span className="mono font-semibold text-zinc-300">{report.realizations.grossIrr}</span>
-                  </span>
-                )}
-                {report.realizations.netIrr && (
-                  <span className="text-zinc-500">
-                    Net IRR <span className="mono font-semibold text-zinc-300">{report.realizations.netIrr}</span>
-                  </span>
-                )}
-                {report.realizations.continuationVehicles && (
-                  <span className="text-zinc-500">
-                    CVs <span className="mono font-semibold text-zinc-300">{report.realizations.continuationVehicles}</span>
-                  </span>
-                )}
-              </div>
-            )}
-            <ul className="space-y-1.5">
-              {capitalBullets.map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-400 leading-relaxed">
-                  <span className="text-zinc-600 mt-0.5 flex-shrink-0">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            {/* Deployment breakdown */}
-            {(bySector.length > 0 || byGeo.length > 0) && (
-              <div className="mt-3 space-y-1.5 text-[12px]">
-                {bySector.length > 0 && (
-                  <div className="flex flex-wrap items-baseline gap-x-1">
-                    <span className="text-zinc-600">Sectors:</span>
-                    {bySector.map((s, i) => (
-                      <span key={s.name} className="text-zinc-400">
-                        {s.name} <span className="mono text-zinc-300">{s.value}</span>
-                        {i < bySector.length - 1 && <span className="text-zinc-700 mx-0.5">·</span>}
-                      </span>
-                    ))}
-                  </div>
-                )}
-                {byGeo.length > 0 && (
-                  <div className="flex flex-wrap items-baseline gap-x-1">
-                    <span className="text-zinc-600">Geography:</span>
-                    {byGeo.map((g, i) => (
-                      <span key={g.name} className="text-zinc-400">
-                        {g.name} <span className="mono text-zinc-300">{g.value}</span>
-                        {i < byGeo.length - 1 && <span className="text-zinc-700 mx-0.5">·</span>}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Notable Deals */}
-        {notableDeals.length > 0 && (
-          <div>
-            <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
-              Notable Deals
-            </h4>
-            <ul className="space-y-1.5">
-              {notableDeals.map((deal, i) => (
-                <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-300 leading-relaxed">
-                  <span className="text-emerald-500/70 mt-0.5 flex-shrink-0">▸</span>
-                  <span>{deal}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* Portfolio & Economics */}
-        {portfolioBullets.length > 0 && (
-          <div>
-            <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
-              Portfolio & Economics
-            </h4>
-            {/* Inline performance stats */}
-            <div className="flex flex-wrap gap-x-5 gap-y-1 text-[12px] mb-2">
-              {report.portfolioPerformance?.revenueGrowth && (
-                <span className="text-zinc-500">
-                  Revenue <span className="mono font-semibold text-zinc-300">{report.portfolioPerformance.revenueGrowth}</span>
-                </span>
-              )}
-              {report.portfolioPerformance?.ebitdaGrowth && (
-                <span className="text-zinc-500">
-                  EBITDA <span className="mono font-semibold text-zinc-300">{report.portfolioPerformance.ebitdaGrowth}</span>
-                </span>
-              )}
-              {report.portfolioPerformance?.ebitdaMargin && (
-                <span className="text-zinc-500">
-                  Margin <span className="mono font-semibold text-zinc-300">{report.portfolioPerformance.ebitdaMargin}</span>
-                </span>
-              )}
-              {report.leverage?.avgPortfolioLeverage && (
-                <span className="text-zinc-500">
-                  Leverage <span className="mono font-semibold text-zinc-300">{report.leverage.avgPortfolioLeverage}</span>
-                </span>
-              )}
-              {report.fees?.freMargin && (
-                <span className="text-zinc-500">
-                  FRE Margin <span className="mono font-semibold text-zinc-300">{report.fees.freMargin}</span>
-                </span>
-              )}
-              {report.fees?.managementFees && (
-                <span className="text-zinc-500">
-                  Mgmt Fees <span className="mono font-semibold text-zinc-300">{report.fees.managementFees}</span>
-                </span>
-              )}
-            </div>
-            <ul className="space-y-1.5">
-              {portfolioBullets.map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-400 leading-relaxed">
-                  <span className="text-zinc-600 mt-0.5 flex-shrink-0">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* AUM Segments */}
-        {segments.length > 0 && (
-          <div>
-            <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
-              Infrastructure Segments
-            </h4>
-            <div className="flex flex-wrap gap-1.5">
-              {segments.map((s) => (
-                <span
-                  key={s.name}
-                  className="text-[11px] font-medium px-2 py-0.5 rounded border border-zinc-800 bg-zinc-900/50 text-zinc-400"
-                >
-                  {s.name} <span className="mono text-zinc-300">{s.aum}</span>
-                </span>
-              ))}
-            </div>
-            {aumCommentary.length > 0 && (
-              <ul className="space-y-1 mt-2">
-                {aumCommentary.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-[12px] text-zinc-500 leading-relaxed">
-                    <span className="text-zinc-700 mt-0.5 flex-shrink-0">•</span>
-                    <span>{item}</span>
-                  </li>
                 ))}
-              </ul>
+              </div>
             )}
-          </div>
+          </InsightSection>
+        )}
+
+        {/* 2. Capital Formation */}
+        {hasCap && (
+          <InsightSection
+            title="Capital Formation"
+            metrics={capMetrics}
+            bullets={capBullets}
+            quote={capQuote}
+          />
+        )}
+
+        {/* 3. Deployment & Deals */}
+        {hasDeploy && (
+          <InsightSection
+            title="Deployment & Deals"
+            metrics={deployMetrics}
+            breakdowns={deployBreakdowns}
+            deals={deployDeals}
+            bullets={deployBullets}
+            quote={deployQuote}
+          />
+        )}
+
+        {/* 4. Exits & Returns */}
+        {hasExits && (
+          <InsightSection
+            title="Exits & Returns"
+            metrics={exitMetrics}
+            bullets={exitBullets}
+            quote={exitQuote}
+          />
+        )}
+
+        {/* 5. Portfolio Operations */}
+        {hasPort && (
+          <InsightSection
+            title="Portfolio Operations"
+            metrics={portMetrics}
+            bullets={portBullets}
+            quote={portQuote}
+          />
+        )}
+
+        {/* 6. Fee Economics */}
+        {hasFees && (
+          <InsightSection
+            title="Fee Economics"
+            metrics={feeMetrics}
+            bullets={feeBullets}
+            quote={feeQuote}
+          />
         )}
 
         {/* Themes */}
         {themes.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 pt-1">
+          <div className="border-t border-zinc-800/60 pt-3 flex flex-wrap gap-1.5">
             {themes.map((theme) => (
               <span
                 key={theme}
@@ -529,9 +509,7 @@ export function Earnings() {
       }
     }
 
-    // Reported: sort by infra AUM desc (largest/most relevant first)
     reported.sort((a, b) => b.company.infraAum - a.company.infraAum);
-    // Upcoming: sort by expected date asc
     upcoming.sort((a, b) => {
       const da = a.report.expectedDate ?? "";
       const db = b.report.expectedDate ?? "";
