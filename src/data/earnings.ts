@@ -295,14 +295,14 @@ export const earningsReports: CompanyEarningsReport[] = [
     sources: [
       {
         type: "annual_report",
-        label: "Annual Results 2025",
-        url: "https://www.3i-infrastructure.com/investor-relations/results-and-reports/",
+        label: "Half-Year Results (PDF)",
+        url: "https://www.3i-infrastructure.com/media/buejtni2/3in-september-2025-half-year-results-full-report.pdf",
         date: "2026-01-23",
       },
       {
         type: "investor_presentation",
-        label: "Results Presentation",
-        url: "https://www.3i-infrastructure.com/investor-relations/results-and-reports/",
+        label: "Results Presentation (PDF)",
+        url: "https://www.3i-infrastructure.com/media/hw0o1caz/3in-september-2025-half-year-results-press-release-highlights.pdf",
         date: "2026-01-23",
       },
     ],
@@ -416,14 +416,14 @@ export const earningsReports: CompanyEarningsReport[] = [
     sources: [
       {
         type: "earnings_release",
-        label: "Q4 2025 Earnings Release",
-        url: "https://ir.blackrock.com/news-and-events/press-releases",
+        label: "Q4 2025 Earnings Release (PDF)",
+        url: "https://s24.q4cdn.com/856567660/files/doc_financials/2025/Q4/BLK-4Q25-Earnings-Release.pdf",
         date: "2026-01-15",
       },
       {
         type: "transcript",
         label: "Q4 2025 Earnings Call Transcript",
-        url: "https://ir.blackrock.com/news-and-events/events",
+        url: "https://www.fool.com/earnings/call-transcripts/2026/01/15/blackrock-blk-q4-2025-earnings-call-transcript/",
         date: "2026-01-15",
       },
       {
@@ -556,14 +556,20 @@ export const earningsReports: CompanyEarningsReport[] = [
     sources: [
       {
         type: "earnings_release",
-        label: "Q3 FY2026 Trading Update",
-        url: "https://www.macquarie.com/au/en/investors/results.html",
+        label: "H1 FY2026 Results (PDF)",
+        url: "https://www.macquarie.com/assets/macq/investor/results-and-presentations/2026/macquarie-group-hy26-mda.pdf",
+        date: "2026-01-30",
+      },
+      {
+        type: "transcript",
+        label: "H1 FY2026 Results Transcript (PDF)",
+        url: "https://www.macquarie.com/assets/macq/investor/results-and-presentations/2026/macquarie-group-hy26-transcript.pdf",
         date: "2026-01-30",
       },
       {
         type: "investor_presentation",
-        label: "Investor Presentation",
-        url: "https://www.macquarie.com/au/en/investors/presentations.html",
+        label: "H1 FY2026 Presentation (PDF)",
+        url: "https://www.macquarie.com/assets/macq/investor/results-and-presentations/2026/macquarie-group-hy26-presentation.pdf",
         date: "2026-01-30",
       },
     ],
@@ -685,14 +691,14 @@ export const earningsReports: CompanyEarningsReport[] = [
     sources: [
       {
         type: "earnings_release",
-        label: "Q4 2025 Earnings Release",
-        url: "https://ir.blackstone.com/press-releases",
+        label: "Q4 2025 Earnings Release (PDF)",
+        url: "https://www.blackstone.com/wp-content/uploads/sites/2/2026/01/Blackstone4Q25EarningsPressRelease.pdf",
         date: "2026-02-06",
       },
       {
         type: "transcript",
         label: "Q4 2025 Earnings Call Transcript",
-        url: "https://ir.blackstone.com/events-and-presentations",
+        url: "https://www.fool.com/earnings/call-transcripts/2026/01/29/blackstone-bx-q4-2025-earnings-call-transcript/",
         date: "2026-02-06",
       },
       {
