@@ -48,6 +48,9 @@ export interface Deal {
   assetScale: string | null;
   valuationMultiple: string | null;
   fundVehicle: string | null;
+
+  // Press Release Detail
+  keyHighlights: string[] | null;
 }
 
 export const deals: Deal[] = [
@@ -81,6 +84,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "Actis Long Life Infrastructure Fund",
+    keyHighlights: null,
   },
   // ─── 2. ADIA ───────────────────────────────────────────────
   {
@@ -112,6 +116,7 @@ export const deals: Deal[] = [
     assetScale: "~14,000 towers across Africa & Middle East",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 3. Allianz Global Investors ──────────────────────────
   {
@@ -143,6 +148,7 @@ export const deals: Deal[] = [
     assetScale: "496 MW",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 4. Antin Infrastructure Partners ─────────────────────
   {
@@ -165,15 +171,22 @@ export const deals: Deal[] = [
     equityValue: null,
     stake: "Majority",
     status: "Announced",
-    closingDate: "H1 2026",
-    financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
+    closingDate: "Q1 2026",
+    financialAdvisorBuyer: ["Macquarie"],
+    financialAdvisorSeller: ["Moelis & Company"],
+    legalAdvisorBuyer: ["Loyens & Loeff"],
+    legalAdvisorSeller: ["DLA Piper"],
     country: "Netherlands",
     assetScale: null,
     valuationMultiple: null,
-    fundVehicle: "Antin Mid Cap Fund I",
+    fundVehicle: "Antin Mid Cap Fund I (€2.2B)",
+    keyHighlights: [
+      "8th investment by Antin's €2.2 billion Mid Cap Fund I",
+      "Emsere (formerly MediCapital Rent) manages 13,000+ pieces of medical equipment, delivering to 100+ countries",
+      "Serves 6 of the top 10 global pharmaceutical companies and 7 of the top 10 CROs",
+      "CEO Patrice Gerard and senior management reinvesting alongside Antin",
+      "Strategic agreement with Clario for ophthalmic medical imaging in clinical trials",
+    ],
   },
   // ─── 5. APG Infrastructure ────────────────────────────────
   {
@@ -205,6 +218,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 6. Ara Partners ──────────────────────────────────────
   {
@@ -236,6 +250,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 7. Ares Management ───────────────────────────────────
   {
@@ -267,6 +282,12 @@ export const deals: Deal[] = [
     assetScale: "730 MW (wind & solar)",
     valuationMultiple: null,
     fundVehicle: "Ares Climate Infrastructure Partners",
+    keyHighlights: [
+      "Expands total ENGIE/Ares partnership to 4.3 GW of U.S. solar, wind, and storage assets",
+      "All 730 MW assets already operational on the ERCOT grid in Texas",
+      "ENGIE retains controlling share and continues to operate and manage the portfolio",
+      "ENGIE invests $10 billion+ annually on energy transition globally, targeting 95 GW renewables by 2030",
+    ],
   },
   // ─── 8. Asterion Industrial Partners ──────────────────────
   {
@@ -298,6 +319,7 @@ export const deals: Deal[] = [
     assetScale: "20 biomethane plants (target)",
     valuationMultiple: null,
     fundVehicle: "Asterion Industrial Infra Fund III",
+    keyHighlights: null,
   },
   // ─── 9. Brookfield Infrastructure Partners ────────────────
   {
@@ -329,6 +351,7 @@ export const deals: Deal[] = [
     assetScale: "1,200 km transmission line",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 10. Brookfield Renewable Partners ────────────────────
   {
@@ -360,6 +383,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 11. CDPQ ─────────────────────────────────────────────
   {
@@ -391,6 +415,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 12. CIP – Fengmiao I ────────────────────────────────
   {
@@ -422,6 +447,7 @@ export const deals: Deal[] = [
     assetScale: "495 MW",
     valuationMultiple: null,
     fundVehicle: "Copenhagen Infrastructure III",
+    keyHighlights: null,
   },
   // ─── 13. CIP – Coalburn 2 ────────────────────────────────
   {
@@ -453,6 +479,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "Copenhagen Infrastructure Energy Transition Fund I",
+    keyHighlights: null,
   },
   // ─── 14. CVC DIF – iPark ─────────────────────────────────
   {
@@ -471,19 +498,26 @@ export const deals: Deal[] = [
       "iPark, a leading operator of off-street parking concessions in Spain and Portugal with over 30,000 spaces.",
     sourceName: "CVC",
     sourceUrl: "https://www.cvc.com/media/news/2026/cvc-dif-to-acquire-leading-iberian-parking-infrastructure-platform-ipark-from-elliott-investment-management/",
-    enterpriseValue: null,
+    enterpriseValue: "~€300 million",
     equityValue: null,
     stake: "100%",
     status: "Announced",
     closingDate: "H1 2026",
-    financialAdvisorBuyer: ["Rothschild & Co"],
-    financialAdvisorSeller: ["Houlihan Lokey"],
-    legalAdvisorBuyer: ["Clifford Chance"],
-    legalAdvisorSeller: null,
+    financialAdvisorBuyer: ["RBC Capital Markets"],
+    financialAdvisorSeller: ["DC Advisory"],
+    legalAdvisorBuyer: ["Uria & Menendez"],
+    legalAdvisorSeller: ["Eversheds"],
     country: "Spain",
     assetScale: "30,000+ parking spaces",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "80+ parking facilities primarily in urban centers, hospitals, and transport hubs across Spain and Portugal",
+      "Long-term concession contracts with high-visibility cash flows",
+      "CVC DIF won competitive process over other bidders including parking operator Indigo",
+      "Investment via DIF Infrastructure VIII, a closed-end fund targeting €6 billion",
+      "CEO Juan Manuel Mogarra and team to continue leading iPark's buy-and-build growth strategy",
+    ],
   },
   // ─── 15. CVC DIF – Celeste ────────────────────────────────
   {
@@ -515,6 +549,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 16. EnCap Investments ────────────────────────────────
   {
@@ -546,6 +581,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "EnCap Investments",
+    keyHighlights: null,
   },
   // ─── 17. Energy Capital Partners ──────────────────────────
   {
@@ -577,6 +613,11 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "Portfolio comprises the Waterford and Darby natural gas power generation plants",
+      "Talen Energy acquiring assets to expand its power generation capacity",
+      "One of the largest US power generation portfolio transactions in 2026",
+    ],
   },
   // ─── 18. Equitix – UK Portfolio ───────────────────────────
   {
@@ -608,6 +649,7 @@ export const deals: Deal[] = [
     assetScale: "10 assets (OFTOs, PFI, roads)",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 19. Equitix – Italian Solar ──────────────────────────
   {
@@ -639,6 +681,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 20. GIP – Rio Grande LNG ─────────────────────────────
   {
@@ -670,6 +713,7 @@ export const deals: Deal[] = [
     assetScale: "Trains 4 & 5",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 21. I Squared – Ramudden ─────────────────────────────
   {
@@ -688,19 +732,26 @@ export const deals: Deal[] = [
       "Ramudden Global, a leading provider of temporary traffic management and work zone safety services.",
     sourceName: "I Squared Capital",
     sourceUrl: "https://isquaredcapital.com/cpt_news/i-squared-capital-acquires-ramudden-global-a-leader-in-traffic-management-and-infrastructure-safety/",
-    enterpriseValue: null,
+    enterpriseValue: "~€2.5 billion",
     equityValue: null,
     stake: "100%",
     status: "Announced",
     closingDate: "H1 2026",
     financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
+    financialAdvisorSeller: ["Goldman Sachs", "Deutsche Bank"],
+    legalAdvisorBuyer: ["Skadden, Arps, Slate, Meagher & Flom"],
     legalAdvisorSeller: null,
     country: "Sweden",
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "ISQ Global Infrastructure Fund III",
+    keyHighlights: [
+      "190+ depots across 13 countries in Europe and North America with 5,000+ employees",
+      "Annual turnover exceeds €1 billion, grown from ~€280 million at formation in 2017-2018",
+      "66+ add-on acquisitions completed under Triton ownership",
+      "2024 acquisition of RSG International created first pan-Atlantic traffic management platform",
+      "Triton retains option to re-invest up to 20% of the equity",
+    ],
   },
   // ─── 22. I Squared – ANZA Power ──────────────────────────
   {
@@ -731,7 +782,14 @@ export const deals: Deal[] = [
     country: "Australia",
     assetScale: null,
     valuationMultiple: null,
-    fundVehicle: "ISQ Global Infrastructure Fund III",
+    fundVehicle: "ISQ Growth Markets Infrastructure Fund II",
+    keyHighlights: [
+      "Acquired 1.4 GW solar development pipeline and 3.4 GWh+ battery storage pipeline from Bison Energy",
+      "80 MWac / 320 MWh solar hybrid plants in Victoria and NSW secured by 20-year agreements with Tier 1 hyperscale customer",
+      "300 MW / 1,200 MWh Sheffield battery system (Tasmania) and 200 MW / 800 MWh Albury battery (NSW)",
+      "New Zealand pipeline includes 30 MW Somerton, 100 MW Norwood, and 70 MW Highfield solar farms",
+      "Additional 80 MW of renewable assets targeting construction start in H1 2026",
+    ],
   },
   // ─── 23. I Squared – Radiant Energy Solutions ─────────────
   {
@@ -763,6 +821,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "ISQ Global Infrastructure Fund III",
+    keyHighlights: null,
   },
   // ─── 24. KKR – GTR ────────────────────────────────────────
   {
@@ -788,12 +847,19 @@ export const deals: Deal[] = [
     closingDate: null,
     financialAdvisorBuyer: null,
     financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
+    legalAdvisorBuyer: ["Simpson Thacher & Bartlett"],
     legalAdvisorSeller: null,
     country: "Germany",
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "KKR Global Infrastructure Investors IV",
+    keyHighlights: [
+      "Total KKR commitment now $2.5 billion (original $1B in 2020 + additional $1.5B)",
+      "Oak Hill Capital contributing ~$400 million as new co-investor",
+      "Founded by Franek Sodzawiczny, who previously built and sold Sentrum (~$1B to Digital Realty) and Zenium ($442M to CyrusOne)",
+      "Slough (UK) campus: 40.5 MW IT load upon completion; 94+ MW under development across Europe",
+      "Part of KKR's ~$34 billion digital infrastructure portfolio across 155+ facilities",
+    ],
   },
   // ─── 25. Patrizia ─────────────────────────────────────────
   {
@@ -825,6 +891,7 @@ export const deals: Deal[] = [
     assetScale: "49 preschool properties",
     valuationMultiple: null,
     fundVehicle: "Kinland (managed by Patrizia)",
+    keyHighlights: null,
   },
   // ─── 26. Quinbrook ────────────────────────────────────────
   {
@@ -856,6 +923,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 27. Ridgewood Infrastructure ─────────────────────────
   {
@@ -887,6 +955,13 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "5 FBO locations: Opa-locka (South FL), Dulles (DC), Centennial (Denver), San Jose & second Bay Area location",
+      "Mark Johnstone, former CEO of Signature Aviation, to lead the business",
+      "Focus on capacity-constrained airports where new FBO development is restricted",
+      "Joint investment by Bain Capital Real Estate and Bain Capital Special Situations",
+      "Intended as foundation for broader FBO platform via selective add-on acquisitions",
+    ],
   },
   // ─── 28. Schroders Greencoat ──────────────────────────────
   {
@@ -918,6 +993,7 @@ export const deals: Deal[] = [
     assetScale: "110 MWp (3 solar farms)",
     valuationMultiple: null,
     fundVehicle: "Greencoat Solar",
+    keyHighlights: null,
   },
   // ─── 29. Stonepeak ────────────────────────────────────────
   {
@@ -936,8 +1012,8 @@ export const deals: Deal[] = [
       "United Ports LLC, a new platform holding 10 key container terminals globally in partnership with CMA CGM.",
     sourceName: "Stonepeak",
     sourceUrl: "https://stonepeak.com/news/cma-cgm-and-stonepeak-announce-groundbreaking-terminal-joint-venture-united-ports-llc",
-    enterpriseValue: "$2.4 billion (Stonepeak investment)",
-    equityValue: null,
+    enterpriseValue: "~$9.6 billion (implied JV valuation)",
+    equityValue: "$2.4 billion (Stonepeak for 25%)",
     stake: "25%",
     status: "Announced",
     closingDate: "H1 2026",
@@ -949,6 +1025,13 @@ export const deals: Deal[] = [
     assetScale: "10 container terminals globally",
     valuationMultiple: null,
     fundVehicle: "Stonepeak Infrastructure Fund V",
+    keyHighlights: [
+      "10 terminals: Fenix (LA), Port Liberty (NY), Santos (Brazil), Valencia, Bilbao, Algeciras, Guadalquivir (Spain), Nhava Sheva (India), Kaohsiung (Taiwan), Gemalink (Vietnam)",
+      "CMA CGM retains 75% ownership and full operational control; Stonepeak option to contribute additional $3.6B for future terminals",
+      "CMA CGM reinvesting $2.4B proceeds into core shipping and logistics",
+      "CMA CGM directly controls 41 terminals, plus 21 via Terminal Link JV with China Merchants Port",
+      "Subject to antitrust and foreign direct investment regulatory approvals",
+    ],
   },
   // ─── 30. Tiger Infrastructure Partners ────────────────────
   {
@@ -980,6 +1063,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "Tiger Infrastructure Partners Fund III",
+    keyHighlights: null,
   },
   // ─── 31. CIP – Ørsted Onshore Europe ────────────────────
   {
@@ -1011,6 +1095,7 @@ export const deals: Deal[] = [
     assetScale: "578 MW (operating) + development pipeline",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 32. Antin – Vigor Marine Group ─────────────────────
   {
@@ -1042,6 +1127,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "Antin Infrastructure Partners Fund V",
+    keyHighlights: null,
   },
   // ─── 33. ECP & KKR – AI Infrastructure Platform (JV) ───
   {
@@ -1073,6 +1159,11 @@ export const deals: Deal[] = [
     assetScale: "Hyperscale data center campus",
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: [
+      "$50 billion strategic partnership for AI infrastructure development",
+      "Initial JV to develop a hyperscale data center campus in Texas",
+      "Combines ECP's energy expertise with KKR's digital infrastructure track record",
+    ],
   },
   // ─── 34. DWS Infrastructure – Open Hub Med ──────────────
   {
@@ -1104,6 +1195,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "DWS Infrastructure Trust",
+    keyHighlights: null,
   },
   // ─── 35. Schroders Greencoat – UK Solar Portfolio ───────
   {
@@ -1135,6 +1227,7 @@ export const deals: Deal[] = [
     assetScale: "283 MW (operational & under construction)",
     valuationMultiple: null,
     fundVehicle: "Greencoat Solar",
+    keyHighlights: null,
   },
   // ─── 36. KKR & Singtel – STT GDC ───────────────────────
   {
@@ -1166,6 +1259,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "KKR Global Infrastructure Investors IV",
+    keyHighlights: null,
   },
   // ─── 37. IFM Investors – Mobius Renewables ──────────────
   {
@@ -1197,6 +1291,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "IFM Global Infrastructure Fund",
+    keyHighlights: null,
   },
   // ─── 38. Igneo – Vault Digital Infrastructure (Altum) ──
   {
@@ -1228,6 +1323,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 39. Pilot Fiber – ExteNet Enterprise Fiber ─────────
   {
@@ -1259,6 +1355,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: null,
+    keyHighlights: null,
   },
   // ─── 40. Macquarie – Energy Assets Group (EAG) ─────────
   {
@@ -1290,6 +1387,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "Macquarie Asset Management Infrastructure",
+    keyHighlights: null,
   },
   // ─── 41. Macquarie – Last Mile Infrastructure ──────────
   {
@@ -1321,6 +1419,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "Macquarie Asset Management Infrastructure",
+    keyHighlights: null,
   },
   // ─── 42. TPG Rise Climate – Sabre Industries ───────────
   {
@@ -1352,6 +1451,7 @@ export const deals: Deal[] = [
     assetScale: null,
     valuationMultiple: null,
     fundVehicle: "TPG Rise Climate Fund",
+    keyHighlights: null,
   },
 ];
 
