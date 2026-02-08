@@ -99,6 +99,15 @@ export interface VarianceRow {
   source: DataSource;
 }
 
+// ─── Capital Activity ───────────────────────────────────────
+
+export interface CapitalActivity {
+  inflows: string | null;
+  deployed: string | null;
+  realizations: string | null;
+  source: DataSource;
+}
+
 // ─── Sector Exposure ────────────────────────────────────────
 
 export interface SectorExposure {
@@ -138,6 +147,11 @@ export interface CompanyEarningsReport {
   reportDate: string | null;
   expectedDate: string | null;
   sources: EarningsSource[];
+
+  // Terminal-style headline fields
+  primaryDriver: string | null;
+  thematicFocus: string[];
+  capitalActivity: CapitalActivity | null;
 
   // Bento Grid - Top Row
   scale: ScaleMetrics | null;
@@ -232,7 +246,7 @@ export const companies: Company[] = [
     exchange: "NYSE",
     sector: "Alternative Asset Manager",
     description: "World's largest alternative asset manager with a dedicated infrastructure group investing in energy, transport, digital, and water/waste globally.",
-    infraAum: 62,
+    infraAum: 77,
     totalAum: 1130,
     headquarters: "New York, NY",
     reportingCurrency: "USD",
@@ -336,6 +350,7 @@ export const companies: Company[] = [
 const SECTOR_COLORS: Record<string, string> = {
   "Digital Infrastructure": "#3b82f6",
   "Energy & Power": "#10b981",
+  "Energy Transition": "#10b981",
   "Renewables & Energy": "#22c55e",
   "Transport": "#f59e0b",
   "Water & Waste": "#06b6d4",
@@ -355,29 +370,30 @@ export const earningsReports: CompanyEarningsReport[] = [
   // ─── REPORTED ─────────────────────────────────────────────
 
   // ─── Blackstone ───────────────────────────────────────────
+  // Verified against Q4 2025 Earnings Release (Exhibit 99.1) & Transcript (Jan 29, 2026)
   {
     companyId: "blackstone",
     quarter: "Q4 2025",
-    reportDate: "2026-02-06T12:00:00Z",
+    reportDate: "2026-01-29T12:00:00Z",
     expectedDate: null,
     sources: [
       {
         type: "earnings_release",
-        label: "Q4 2025 Earnings Release",
+        label: "Q4 2025 Earnings Release (Exhibit 99.1)",
         url: "https://www.blackstone.com/wp-content/uploads/sites/2/2026/01/Blackstone4Q25EarningsPressRelease.pdf",
-        date: "2026-02-06",
+        date: "2026-01-29",
       },
       {
         type: "supplement",
         label: "4Q25 Earnings Supplement",
         url: "https://www.blackstone.com/wp-content/uploads/sites/2/2026/01/Blackstone4Q25EarningsSupplement.pdf",
-        date: "2026-02-06",
+        date: "2026-01-29",
       },
       {
         type: "transcript",
         label: "Q4 2025 Earnings Call Transcript",
         url: "https://www.fool.com/earnings/call-transcripts/2026/01/29/blackstone-bx-q4-2025-earnings-call-transcript/",
-        date: "2026-02-06",
+        date: "2026-01-29",
       },
       {
         type: "10k",
@@ -386,13 +402,21 @@ export const earningsReports: CompanyEarningsReport[] = [
         date: null,
       },
     ],
+    primaryDriver: "QTS Data Centers",
+    thematicFocus: ["Digital Infrastructure", "Energy Transition"],
+    capitalActivity: {
+      inflows: "$4.2B",
+      deployed: "$1.8B",
+      realizations: "$0.6B",
+      source: { document: "Earnings Release", page: "Pg 9" },
+    },
     scale: {
       totalAum: "$1.13T",
-      infraAum: "$62B",
-      infraAumGrowthYoy: "+15% YoY",
+      infraAum: "$77B",
+      infraAumGrowthYoy: "+40% YoY",
       dryPowder: "$40B",
       infraDryPowder: "$24B",
-      source: { document: "4Q25 Supplement", page: "Pg 3" },
+      source: { document: "Earnings Call Transcript", page: null },
     },
     economics: {
       managementFees: "$1.82B",
@@ -404,31 +428,23 @@ export const earningsReports: CompanyEarningsReport[] = [
     },
     perpetualFunds: [
       {
-        name: "BXINFRA (Perpetual Vehicle)",
-        aum: "$18.0B",
-        totalReturn: "10.2%",
-        yieldPct: "5.1%",
-        appreciationPct: "5.1%",
-        netFlows: "+$3.8B",
-        source: { document: "4Q25 Supplement", page: "Pg 8" },
+        name: "BIP Strategy (Perpetual)",
+        aum: "$77B Platform",
+        totalReturn: "+23.5% (FY)",
+        yieldPct: "—",
+        appreciationPct: "+8.4% (Q4)",
+        netFlows: "+$4.2B",
+        source: { document: "Earnings Release", page: "Pg 22" },
       },
     ],
     closedEndFunds: [
       {
-        name: "BIP II",
-        vintage: "2023",
-        size: "$12.4B",
-        netIrr: "14%",
-        dpi: "0.3x",
-        source: { document: "4Q25 Supplement", page: "Pg 12" },
-      },
-      {
-        name: "BIP I",
-        vintage: "2019",
-        size: "$8.5B",
+        name: "BIP Strategy (Since Inception)",
+        vintage: null,
+        size: "$77B Platform",
         netIrr: "18%",
-        dpi: "1.2x",
-        source: { document: "4Q25 Supplement", page: "Pg 12" },
+        dpi: "—",
+        source: { document: "Earnings Call Transcript", page: null },
       },
     ],
     operationalVitalSigns: {
@@ -454,70 +470,70 @@ export const earningsReports: CompanyEarningsReport[] = [
     },
     varianceTable: [
       {
-        metric: "Infra AUM",
-        actual: "$62.0B",
-        comparison: "$58.2B",
-        comparisonLabel: "Consensus",
-        delta: "+$3.8B",
-        direction: "positive",
-        source: { document: "4Q25 Supplement", page: "Pg 3" },
-      },
-      {
-        metric: "FRE",
-        actual: "$1.24B",
-        comparison: "$1.18B",
-        comparisonLabel: "Consensus",
-        delta: "+$60M",
-        direction: "positive",
-        source: { document: "Earnings Release", page: "Pg 1" },
-      },
-      {
-        metric: "FRE Margin",
-        actual: "68.0%",
-        comparison: "66.1%",
-        comparisonLabel: "Consensus",
-        delta: "+190bps",
-        direction: "positive",
-        source: { document: "Earnings Release", page: "Pg 1" },
-      },
-      {
-        metric: "Infra Deployment",
-        actual: "$11.6B",
-        comparison: "$9.5B",
+        metric: "Platform AUM",
+        actual: "$77B",
+        comparison: "$55B",
         comparisonLabel: "Q4 2024",
-        delta: "+$2.1B",
+        delta: "+40% YoY",
         direction: "positive",
-        source: { document: "4Q25 Supplement", page: "Pg 8" },
+        source: { document: "Earnings Call Transcript", page: null },
       },
       {
-        metric: "Infra Realizations",
-        actual: "$8.4B",
-        comparison: "$7.0B",
-        comparisonLabel: "Q4 2024",
-        delta: "+$1.4B",
+        metric: "Q4 Appreciation",
+        actual: "+8.4%",
+        comparison: "+5.1%",
+        comparisonLabel: "Q3 2025",
+        delta: "+330bps",
         direction: "positive",
-        source: { document: "4Q25 Supplement", page: "Pg 12" },
+        source: { document: "Earnings Release", page: "Pg 22" },
       },
       {
-        metric: "DE per Share",
-        actual: "$1.41",
-        comparison: "$1.35",
-        comparisonLabel: "Consensus",
-        delta: "+$0.06",
+        metric: "FY 2025 Return",
+        actual: "+23.5%",
+        comparison: "Top Segment",
+        comparisonLabel: "Rank",
+        delta: "Best-in-class",
         direction: "positive",
-        source: { document: "Earnings Release", page: "Pg 2" },
+        source: { document: "Earnings Call Transcript", page: null },
+      },
+      {
+        metric: "Q4 Inflows",
+        actual: "$4.2B",
+        comparison: "$3.0B",
+        comparisonLabel: "Q3 2025",
+        delta: "+$1.2B",
+        direction: "positive",
+        source: { document: "Earnings Release", page: "Pg 9" },
+      },
+      {
+        metric: "Q4 Deployment",
+        actual: "$1.8B",
+        comparison: "Digital & Energy",
+        comparisonLabel: "Focus",
+        delta: "—",
+        direction: "neutral",
+        source: { document: "Earnings Release", page: "Pg 9" },
+      },
+      {
+        metric: "Q4 Realizations",
+        actual: "$0.6B",
+        comparison: "Select rotation",
+        comparisonLabel: "Strategy",
+        delta: "—",
+        direction: "neutral",
+        source: { document: "Earnings Release", page: "Pg 9" },
       },
     ],
     sectorExposure: [
-      { sector: "Energy & Power", aum: "$22B", pct: 36, color: "#10b981" },
-      { sector: "Digital Infrastructure", aum: "$18B", pct: 29, color: "#3b82f6" },
-      { sector: "Transport", aum: "$14B", pct: 23, color: "#f59e0b" },
-      { sector: "Water & Waste", aum: "$8B", pct: 13, color: "#06b6d4" },
+      { sector: "Digital Infrastructure", aum: "$28B", pct: 36, color: "#3b82f6" },
+      { sector: "Energy & Power", aum: "$22B", pct: 29, color: "#10b981" },
+      { sector: "Transport", aum: "$16B", pct: 21, color: "#f59e0b" },
+      { sector: "Water & Waste", aum: "$11B", pct: 14, color: "#06b6d4" },
     ],
     keyQuote: {
       speaker: "Steve Schwarzman",
       role: "Chairman & CEO, Blackstone",
-      text: "Infrastructure is the single biggest deployment opportunity we see globally. The convergence of AI-driven data center demand, energy security imperatives, and aging infrastructure creates a generational investment backdrop.",
+      text: "We are investing at massive scale in digital infrastructure and electrification. High conviction in data center demand and grid modernization.",
     },
   },
 
@@ -553,6 +569,14 @@ export const earningsReports: CompanyEarningsReport[] = [
         date: null,
       },
     ],
+    primaryDriver: "GIP Platform Integration",
+    thematicFocus: ["Transport", "Energy & Power", "Digital Infrastructure"],
+    capitalActivity: {
+      inflows: "+$2.1B",
+      deployed: "~$12B",
+      realizations: null,
+      source: { document: "Earnings Call Transcript", page: null },
+    },
     scale: {
       totalAum: "$11.55T",
       infraAum: "$170B",
@@ -715,6 +739,14 @@ export const earningsReports: CompanyEarningsReport[] = [
         date: "2026-01-30",
       },
     ],
+    primaryDriver: "Green Investment Group (GIG)",
+    thematicFocus: ["Renewables & Energy", "Transport", "Digital Infrastructure"],
+    capitalActivity: {
+      inflows: "$8.0B",
+      deployed: "$7.5B",
+      realizations: null,
+      source: { document: "H1 FY26 Presentation", page: "Slide 30" },
+    },
     scale: {
       totalAum: "A$924B",
       infraAum: "$195B",
@@ -888,6 +920,14 @@ export const earningsReports: CompanyEarningsReport[] = [
         date: "2026-01-23",
       },
     ],
+    primaryDriver: null,
+    thematicFocus: ["Energy & Power", "Transport"],
+    capitalActivity: {
+      inflows: null,
+      deployed: null,
+      realizations: "£130M",
+      source: { document: "Half-Year Results", page: "Pg 8" },
+    },
     scale: {
       totalAum: "£3.4B",
       infraAum: "£3.4B",
@@ -1009,6 +1049,9 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-02-12T12:00:00Z",
     sources: [],
+    primaryDriver: null,
+    thematicFocus: [],
+    capitalActivity: null,
     scale: null,
     economics: null,
     perpetualFunds: [],
@@ -1025,6 +1068,9 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-02-13T12:00:00Z",
     sources: [],
+    primaryDriver: null,
+    thematicFocus: [],
+    capitalActivity: null,
     scale: null,
     economics: null,
     perpetualFunds: [],
@@ -1041,6 +1087,9 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-02-18T12:00:00Z",
     sources: [],
+    primaryDriver: null,
+    thematicFocus: [],
+    capitalActivity: null,
     scale: null,
     economics: null,
     perpetualFunds: [],
@@ -1057,6 +1106,9 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-02-20T12:00:00Z",
     sources: [],
+    primaryDriver: null,
+    thematicFocus: [],
+    capitalActivity: null,
     scale: null,
     economics: null,
     perpetualFunds: [],
@@ -1073,6 +1125,9 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-02-20T12:00:00Z",
     sources: [],
+    primaryDriver: null,
+    thematicFocus: [],
+    capitalActivity: null,
     scale: null,
     economics: null,
     perpetualFunds: [],
@@ -1089,6 +1144,9 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-02-25T12:00:00Z",
     sources: [],
+    primaryDriver: null,
+    thematicFocus: [],
+    capitalActivity: null,
     scale: null,
     economics: null,
     perpetualFunds: [],
@@ -1105,6 +1163,9 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-03-04T06:00:00Z",
     sources: [],
+    primaryDriver: null,
+    thematicFocus: [],
+    capitalActivity: null,
     scale: null,
     economics: null,
     perpetualFunds: [],
@@ -1121,6 +1182,9 @@ export const earningsReports: CompanyEarningsReport[] = [
     reportDate: null,
     expectedDate: "2026-03-13T06:00:00Z",
     sources: [],
+    primaryDriver: null,
+    thematicFocus: [],
+    capitalActivity: null,
     scale: null,
     economics: null,
     perpetualFunds: [],

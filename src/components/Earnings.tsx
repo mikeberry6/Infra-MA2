@@ -7,7 +7,9 @@ import {
   getQuarterStats,
   getAvailableQuarters,
   getSectorTypeColor,
+  getSectorExposureColor,
   formatEarningsDate,
+  formatFullDate,
   formatSource,
 } from "@/data/earnings";
 import type {
@@ -36,6 +38,7 @@ import {
   Zap,
   Server,
   Gauge,
+  ArrowUpRight,
 } from "lucide-react";
 
 // ─── Source Citation ───────────────────────────────────────
@@ -478,7 +481,133 @@ function SectorExposureChart({ report }: { report: CompanyEarningsReport }) {
   );
 }
 
-// ─── Reported Company Card (collapsed) ────────────────────
+// ─── Ticker Row (Data Terminal Style) ─────────────────────
+
+function TickerRow({ report }: { report: CompanyEarningsReport }) {
+  const metrics: { label: string; value: string; delta?: string | null }[] = [];
+
+  if (report.scale) {
+    metrics.push({ label: "AUM", value: report.scale.infraAum, delta: report.scale.infraAumGrowthYoy });
+  }
+  if (report.perpetualFunds.length > 0) {
+    metrics.push({ label: "FY Rtn", value: report.perpetualFunds[0].totalReturn });
+  }
+  if (report.closedEndFunds.length > 0 && report.closedEndFunds[0].netIrr !== "n/m") {
+    metrics.push({ label: "Net IRR", value: report.closedEndFunds[0].netIrr });
+  }
+  if (report.economics?.freMargin) {
+    metrics.push({ label: "FRE Margin", value: report.economics.freMargin });
+  }
+  if (report.capitalActivity?.inflows) {
+    metrics.push({ label: "Inflows", value: report.capitalActivity.inflows });
+  } else if (report.perpetualFunds.length > 0 && !report.capitalActivity?.inflows) {
+    metrics.push({ label: "Net Flows", value: report.perpetualFunds[0].netFlows });
+  }
+
+  if (metrics.length === 0) return null;
+
+  return (
+    <div className="flex flex-wrap items-center py-2 px-3 rounded bg-zinc-900/80 border border-zinc-800/60">
+      {metrics.map((m, i) => (
+        <span key={m.label} className="flex items-center">
+          {i > 0 && <span className="mx-2.5 text-zinc-700 text-[10px]">│</span>}
+          <span className="text-[9px] text-zinc-600 uppercase tracking-wider mr-1.5">{m.label}</span>
+          <span className="text-[13px] font-bold mono text-zinc-100">{m.value}</span>
+          {m.delta && (
+            <span className="text-[11px] mono text-emerald-400 ml-1.5 flex items-center gap-0.5">
+              {m.delta}
+            </span>
+          )}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+// ─── Thematic Tags (Color-Coded Pills) ───────────────────
+
+function ThematicTags({ themes }: { themes: string[] }) {
+  if (themes.length === 0) return null;
+
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {themes.map((theme) => {
+        const color = getSectorExposureColor(theme);
+        return (
+          <span
+            key={theme}
+            className="px-2 py-0.5 rounded text-[10px] font-medium tracking-wide"
+            style={{ color, backgroundColor: `${color}15` }}
+          >
+            {theme}
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
+// ─── Source Verification Footnote ─────────────────────────
+
+function SourceVerification({ company, report }: { company: Company; report: CompanyEarningsReport }) {
+  if (report.sources.length === 0) return null;
+
+  const releaseSource = report.sources.find((s) => s.type === "earnings_release");
+  const transcriptSource = report.sources.find((s) => s.type === "transcript");
+  const parts: string[] = [];
+  if (releaseSource) parts.push(releaseSource.label);
+  if (transcriptSource) {
+    const dateStr = transcriptSource.date ? ` (${formatFullDate(transcriptSource.date)})` : "";
+    parts.push(`Transcript${dateStr}`);
+  }
+
+  if (parts.length === 0) return null;
+
+  return (
+    <div className="text-[10px] text-zinc-600 italic border-t border-zinc-800/30 pt-2">
+      Source: {company.name} {parts.join(" & ")}
+    </div>
+  );
+}
+
+// ─── Capital Activity Panel ──────────────────────────────
+
+function CapitalActivityPanel({ report }: { report: CompanyEarningsReport }) {
+  if (!report.capitalActivity) return null;
+  const ca = report.capitalActivity;
+  const hasData = ca.inflows || ca.deployed || ca.realizations;
+  if (!hasData) return null;
+
+  return (
+    <BentoCell title={`Capital Activity (${report.quarter})`} icon={<ArrowUpRight className="h-3.5 w-3.5" />}>
+      <div className="grid grid-cols-3 gap-3">
+        {ca.inflows && (
+          <div>
+            <div className="text-[10px] text-zinc-600">Inflows</div>
+            <div className="text-lg font-bold mono text-emerald-400">{ca.inflows}</div>
+          </div>
+        )}
+        {ca.deployed && (
+          <div>
+            <div className="text-[10px] text-zinc-600">Deployed</div>
+            <div className="text-lg font-bold mono text-blue-400">{ca.deployed}</div>
+          </div>
+        )}
+        {ca.realizations && (
+          <div>
+            <div className="text-[10px] text-zinc-600">Realizations</div>
+            <div className="text-lg font-bold mono text-amber-400">{ca.realizations}</div>
+          </div>
+        )}
+      </div>
+      <div className="mt-2">
+        <SourceTag source={ca.source} />
+      </div>
+    </BentoCell>
+  );
+}
+
+// ─── Reported Company Card (Data Terminal Style) ──────────
 
 function CompanyCard({
   company,
@@ -493,28 +622,6 @@ function CompanyCard({
   onToggle: () => void;
   index: number;
 }) {
-  const sectorColor = getSectorTypeColor(company.sector);
-
-  // Headline figures for collapsed card
-  const figures: { label: string; value: string }[] = [];
-  if (report.scale) {
-    let v = report.scale.infraAum;
-    if (report.scale.infraAumGrowthYoy) v += ` (${report.scale.infraAumGrowthYoy})`;
-    figures.push({ label: "Infra AUM", value: v });
-  }
-  if (report.economics?.freMargin) {
-    figures.push({ label: "FRE Margin", value: report.economics.freMargin });
-  }
-  if (report.perpetualFunds.length > 0) {
-    figures.push({ label: "Perpetual Return", value: report.perpetualFunds[0].totalReturn });
-  }
-  if (report.closedEndFunds.length > 0 && report.closedEndFunds[0].netIrr !== "n/m") {
-    figures.push({ label: "Net IRR", value: report.closedEndFunds[0].netIrr });
-  }
-  if (report.riskDashboard) {
-    figures.push({ label: "Leverage", value: `${report.riskDashboard.lookThroughLeverage} Debt/EBITDA` });
-  }
-
   return (
     <div className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
       <div
@@ -523,8 +630,8 @@ function CompanyCard({
         }`}
       >
         <button onClick={onToggle} className="w-full text-left p-4 lg:p-5">
-          {/* Row 1: Company info + date */}
-          <div className="flex items-center justify-between gap-4 mb-2.5">
+          {/* Row 1: Ticker + Name + Quarter + Date */}
+          <div className="flex items-center justify-between gap-4 mb-3">
             <div className="flex items-center gap-3 min-w-0">
               <span className="mono text-xs font-bold text-zinc-300 bg-zinc-800/80 px-2 py-1 rounded flex-shrink-0">
                 {company.ticker}
@@ -532,14 +639,10 @@ function CompanyCard({
               <h3 className="text-sm lg:text-base font-semibold text-zinc-100 truncate">
                 {company.name}
               </h3>
-              <span
-                className="hidden sm:inline text-[10px] font-medium px-1.5 py-0.5 rounded flex-shrink-0"
-                style={{ color: sectorColor, backgroundColor: `${sectorColor}15` }}
-              >
-                {company.sector}
-              </span>
             </div>
             <div className="flex items-center gap-2 flex-shrink-0">
+              <span className="text-[11px] mono text-zinc-500">{report.quarter}</span>
+              <span className="text-zinc-700">·</span>
               <span className="text-[11px] font-medium text-emerald-400/80">
                 {report.reportDate ? formatEarningsDate(report.reportDate) : ""}
               </span>
@@ -549,47 +652,43 @@ function CompanyCard({
             </div>
           </div>
 
-          {/* Row 2: Key quote snippet */}
-          {report.keyQuote && (
-            <p className="text-[13px] text-zinc-400 leading-relaxed mb-2.5 line-clamp-2">
-              <span className="text-zinc-600">&ldquo;</span>
-              {report.keyQuote.text.length > 200 ? report.keyQuote.text.slice(0, 200) + "..." : report.keyQuote.text}
-              <span className="text-zinc-600">&rdquo;</span>
-              <span className="text-zinc-600 ml-1">— {report.keyQuote.speaker}</span>
-            </p>
-          )}
+          {/* Row 2: Ticker-style metrics bar */}
+          <div className="mb-3">
+            <TickerRow report={report} />
+          </div>
 
-          {/* Row 3: Key figures inline */}
-          {figures.length > 0 && (
-            <div className="flex flex-wrap gap-x-5 gap-y-1 text-[12px]">
-              {figures.map((f) => (
-                <span key={f.label} className="text-zinc-500">
-                  {f.label}{" "}
-                  <span className="font-semibold text-zinc-200 mono">{f.value}</span>
-                </span>
+          {/* Row 3: Primary Driver + Thematic Tags */}
+          <div className="flex flex-wrap items-center gap-3">
+            {report.primaryDriver && (
+              <span className="text-[11px] text-zinc-500">
+                Driver: <span className="text-zinc-200 font-medium mono">{report.primaryDriver}</span>
+              </span>
+            )}
+            <ThematicTags themes={report.thematicFocus} />
+          </div>
+        </button>
+
+        {/* Source links + Verification footnote */}
+        <div className="px-4 lg:px-5 pb-3 space-y-2">
+          {report.sources.length > 0 && (
+            <div className="flex flex-wrap items-center gap-3">
+              {report.sources.map((src, i) => (
+                <a
+                  key={i}
+                  href={src.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[11px] text-zinc-500 hover:text-blue-400 transition-colors"
+                >
+                  <SourceIcon type={src.type} />
+                  <span>{src.label}</span>
+                  <ExternalLink className="h-2.5 w-2.5" />
+                </a>
               ))}
             </div>
           )}
-        </button>
-
-        {/* Source links */}
-        {report.sources.length > 0 && (
-          <div className="px-4 lg:px-5 pb-3 flex flex-wrap gap-3">
-            {report.sources.map((src, i) => (
-              <a
-                key={i}
-                href={src.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[11px] text-zinc-500 hover:text-blue-400 transition-colors"
-              >
-                <SourceIcon type={src.type} />
-                <span>{src.label}</span>
-                <ExternalLink className="h-2.5 w-2.5" />
-              </a>
-            ))}
-          </div>
-        )}
+          <SourceVerification company={company} report={report} />
+        </div>
       </div>
 
       {/* Expanded Detail — Bento Grid */}
@@ -609,6 +708,9 @@ function CompanyBentoGrid({ report }: { report: CompanyEarningsReport }) {
         {/* Row 1: Scale + Economics */}
         <ScalePanel report={report} />
         <EconomicsPanel report={report} />
+
+        {/* Row 1.5: Capital Activity (if available) */}
+        <CapitalActivityPanel report={report} />
 
         {/* Row 2: Platform Split (full width) */}
         {hasPlatformData && (
