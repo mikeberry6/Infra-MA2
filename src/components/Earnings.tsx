@@ -8,11 +8,15 @@ import {
   getAvailableQuarters,
   getSectorTypeColor,
   formatEarningsDate,
+  formatSource,
 } from "@/data/earnings";
 import type {
   Company,
-  CompanySector,
   CompanyEarningsReport,
+  DataSource,
+  VarianceRow,
+  PerpetualFundMetrics,
+  ClosedEndFundMetrics,
 } from "@/data/earnings";
 import {
   ChevronDown,
@@ -23,9 +27,29 @@ import {
   FileSpreadsheet,
   BarChart3,
   Clock,
+  Shield,
+  Activity,
+  TrendingUp,
+  TrendingDown,
+  Minus,
+  Database,
+  Zap,
+  Server,
+  Gauge,
 } from "lucide-react";
 
-// ─── Source Icon Helper ─────────────────────────────
+// ─── Source Citation ───────────────────────────────────────
+
+function SourceTag({ source }: { source: DataSource }) {
+  return (
+    <span className="inline-flex items-center gap-1 text-[10px] text-zinc-600 italic">
+      <FileText className="h-2.5 w-2.5" />
+      Source: {formatSource(source)}
+    </span>
+  );
+}
+
+// ─── Source Icon Helper ───────────────────────────────────
 
 function SourceIcon({ type }: { type: string }) {
   switch (type) {
@@ -37,13 +61,424 @@ function SourceIcon({ type }: { type: string }) {
     case "annual_report":
       return <FileSpreadsheet className="h-3 w-3" />;
     case "investor_presentation":
+    case "supplement":
       return <BarChart3 className="h-3 w-3" />;
     default:
       return <FileText className="h-3 w-3" />;
   }
 }
 
-// ─── Reported Company Card (collapsed) ──────────────
+// ─── Direction Indicator ──────────────────────────────────
+
+function DirectionIcon({ direction }: { direction: "positive" | "negative" | "neutral" }) {
+  if (direction === "positive") return <TrendingUp className="h-3 w-3 text-emerald-400" />;
+  if (direction === "negative") return <TrendingDown className="h-3 w-3 text-red-400" />;
+  return <Minus className="h-3 w-3 text-zinc-500" />;
+}
+
+function directionColor(direction: "positive" | "negative" | "neutral") {
+  if (direction === "positive") return "text-emerald-400";
+  if (direction === "negative") return "text-red-400";
+  return "text-zinc-400";
+}
+
+// ─── Bento Cell Wrapper ───────────────────────────────────
+
+function BentoCell({
+  children,
+  className = "",
+  icon,
+  title,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  icon?: React.ReactNode;
+  title: string;
+}) {
+  return (
+    <div className={`glass-card rounded-lg p-4 ${className}`}>
+      <div className="flex items-center gap-2 mb-3">
+        {icon && <span className="text-zinc-500">{icon}</span>}
+        <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-500">
+          {title}
+        </h4>
+      </div>
+      {children}
+    </div>
+  );
+}
+
+// ─── Scale Panel (AUM & Dry Powder) ───────────────────────
+
+function ScalePanel({ report }: { report: CompanyEarningsReport }) {
+  if (!report.scale) return null;
+  const s = report.scale;
+
+  return (
+    <BentoCell title="The Scale" icon={<Database className="h-3.5 w-3.5" />}>
+      <div className="space-y-3">
+        <div>
+          <div className="text-[11px] text-zinc-500">Infra AUM</div>
+          <div className="flex items-baseline gap-2">
+            <span className="text-xl font-bold mono text-zinc-100">{s.infraAum}</span>
+            {s.infraAumGrowthYoy && (
+              <span className="text-[11px] font-medium text-emerald-400">{s.infraAumGrowthYoy}</span>
+            )}
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <div className="text-[11px] text-zinc-500">Total AUM</div>
+            <div className="text-sm font-semibold mono text-zinc-300">{s.totalAum}</div>
+          </div>
+          {(s.infraDryPowder || s.dryPowder) && (
+            <div>
+              <div className="text-[11px] text-zinc-500">Dry Powder</div>
+              <div className="text-sm font-semibold mono text-zinc-300">
+                {s.infraDryPowder || s.dryPowder}
+              </div>
+            </div>
+          )}
+        </div>
+        <SourceTag source={s.source} />
+      </div>
+    </BentoCell>
+  );
+}
+
+// ─── Economics Panel (Fees & FRE) ─────────────────────────
+
+function EconomicsPanel({ report }: { report: CompanyEarningsReport }) {
+  if (!report.economics) return null;
+  const e = report.economics;
+
+  const metrics: { label: string; value: string; highlight?: boolean }[] = [];
+  if (e.feeRelatedEarnings) metrics.push({ label: "FRE", value: e.feeRelatedEarnings, highlight: true });
+  if (e.freMargin) metrics.push({ label: "FRE Margin", value: e.freMargin, highlight: true });
+  if (e.managementFees) metrics.push({ label: "Mgmt Fees", value: e.managementFees });
+  if (e.realizedPerformanceRevenue) metrics.push({ label: "Perf. Revenue", value: e.realizedPerformanceRevenue });
+  if (e.distributableEarnings) metrics.push({ label: "Dist. Earnings", value: e.distributableEarnings });
+
+  return (
+    <BentoCell title="The Economics" icon={<TrendingUp className="h-3.5 w-3.5" />}>
+      <div className="space-y-2">
+        {metrics.map((m) => (
+          <div key={m.label} className="flex items-center justify-between">
+            <span className="text-[12px] text-zinc-500">{m.label}</span>
+            <span className={`text-sm font-semibold mono ${m.highlight ? "text-blue-400" : "text-zinc-200"}`}>
+              {m.value}
+            </span>
+          </div>
+        ))}
+        <div className="pt-1">
+          <SourceTag source={e.source} />
+        </div>
+      </div>
+    </BentoCell>
+  );
+}
+
+// ─── Perpetual Funds Table ────────────────────────────────
+
+function PerpetualFundsTable({ funds }: { funds: PerpetualFundMetrics[] }) {
+  if (funds.length === 0) return null;
+
+  return (
+    <div>
+      <h5 className="text-[10px] font-medium uppercase tracking-widest text-blue-400/70 mb-2.5 flex items-center gap-1.5">
+        <span className="w-1.5 h-1.5 rounded-full bg-blue-400/60" />
+        Perpetual / Open-Ended
+      </h5>
+      <div className="overflow-x-auto">
+        <table className="w-full text-[12px]">
+          <thead>
+            <tr className="text-zinc-600 text-left">
+              <th className="pb-1.5 pr-3 font-medium">Fund</th>
+              <th className="pb-1.5 pr-3 font-medium text-right">AUM</th>
+              <th className="pb-1.5 pr-3 font-medium text-right">Total Return</th>
+              <th className="pb-1.5 pr-3 font-medium text-right">Yield</th>
+              <th className="pb-1.5 pr-3 font-medium text-right">Appr.</th>
+              <th className="pb-1.5 font-medium text-right">Net Flows</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-zinc-800/50">
+            {funds.map((f) => (
+              <tr key={f.name} className="text-zinc-300">
+                <td className="py-1.5 pr-3 text-zinc-200 font-medium">{f.name}</td>
+                <td className="py-1.5 pr-3 text-right mono">{f.aum}</td>
+                <td className="py-1.5 pr-3 text-right mono font-semibold text-emerald-400">{f.totalReturn}</td>
+                <td className="py-1.5 pr-3 text-right mono text-zinc-400">{f.yieldPct}</td>
+                <td className="py-1.5 pr-3 text-right mono text-zinc-400">{f.appreciationPct}</td>
+                <td className="py-1.5 text-right mono text-blue-400">{f.netFlows}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="mt-1.5">
+        <SourceTag source={funds[0].source} />
+      </div>
+    </div>
+  );
+}
+
+// ─── Closed-End Funds Table ───────────────────────────────
+
+function ClosedEndFundsTable({ funds }: { funds: ClosedEndFundMetrics[] }) {
+  if (funds.length === 0) return null;
+
+  return (
+    <div>
+      <h5 className="text-[10px] font-medium uppercase tracking-widest text-amber-400/70 mb-2.5 flex items-center gap-1.5">
+        <span className="w-1.5 h-1.5 rounded-full bg-amber-400/60" />
+        Closed-End / Secondaries
+      </h5>
+      <div className="overflow-x-auto">
+        <table className="w-full text-[12px]">
+          <thead>
+            <tr className="text-zinc-600 text-left">
+              <th className="pb-1.5 pr-3 font-medium">Fund</th>
+              <th className="pb-1.5 pr-3 font-medium text-right">Vintage</th>
+              <th className="pb-1.5 pr-3 font-medium text-right">Size</th>
+              <th className="pb-1.5 pr-3 font-medium text-right">Net IRR</th>
+              <th className="pb-1.5 font-medium text-right">DPI</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-zinc-800/50">
+            {funds.map((f) => (
+              <tr key={f.name} className="text-zinc-300">
+                <td className="py-1.5 pr-3 text-zinc-200 font-medium">{f.name}</td>
+                <td className="py-1.5 pr-3 text-right mono text-zinc-500">{f.vintage ?? "—"}</td>
+                <td className="py-1.5 pr-3 text-right mono">{f.size}</td>
+                <td className="py-1.5 pr-3 text-right mono font-semibold text-emerald-400">{f.netIrr}</td>
+                <td className="py-1.5 text-right mono text-amber-400">{f.dpi}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="mt-1.5">
+        <SourceTag source={funds[0].source} />
+      </div>
+    </div>
+  );
+}
+
+// ─── Operational Vital Signs ──────────────────────────────
+
+function VitalSignsPanel({ report }: { report: CompanyEarningsReport }) {
+  if (!report.operationalVitalSigns) return null;
+  const ops = report.operationalVitalSigns;
+  if (!ops.dataCenters && !ops.energy) return null;
+
+  return (
+    <BentoCell title="Operational Vital Signs" icon={<Activity className="h-3.5 w-3.5" />}>
+      <div className="space-y-4">
+        {ops.dataCenters && (
+          <div>
+            <div className="flex items-center gap-1.5 mb-2">
+              <Server className="h-3 w-3 text-blue-400/60" />
+              <span className="text-[11px] font-medium text-blue-400/80">Data Centers</span>
+            </div>
+            <div className="grid grid-cols-3 gap-2">
+              <div>
+                <div className="text-[10px] text-zinc-600">Leased MW</div>
+                <div className="text-[13px] font-semibold mono text-zinc-200">{ops.dataCenters.leasedMW}</div>
+              </div>
+              <div>
+                <div className="text-[10px] text-zinc-600">Dev. Pipeline</div>
+                <div className="text-[13px] font-semibold mono text-zinc-200">{ops.dataCenters.developmentPipelineMW}</div>
+              </div>
+              <div>
+                <div className="text-[10px] text-zinc-600">Leasing Spreads</div>
+                <div className="text-[13px] font-semibold mono text-emerald-400">{ops.dataCenters.leasingSpreads}</div>
+              </div>
+            </div>
+            <div className="mt-1">
+              <SourceTag source={ops.dataCenters.source} />
+            </div>
+          </div>
+        )}
+        {ops.energy && (
+          <div>
+            <div className="flex items-center gap-1.5 mb-2">
+              <Zap className="h-3 w-3 text-emerald-400/60" />
+              <span className="text-[11px] font-medium text-emerald-400/80">Energy</span>
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              <div>
+                <div className="text-[10px] text-zinc-600">PPA Wtd Avg Life</div>
+                <div className="text-[13px] font-semibold mono text-zinc-200">{ops.energy.ppaWeightedAvgLife}</div>
+              </div>
+              <div>
+                <div className="text-[10px] text-zinc-600">% Rev. Inflation-Linked</div>
+                <div className="text-[13px] font-semibold mono text-zinc-200">{ops.energy.pctRevenueInflationLinked}</div>
+              </div>
+            </div>
+            <div className="mt-1">
+              <SourceTag source={ops.energy.source} />
+            </div>
+          </div>
+        )}
+      </div>
+    </BentoCell>
+  );
+}
+
+// ─── Risk Dashboard ───────────────────────────────────────
+
+function RiskPanel({ report }: { report: CompanyEarningsReport }) {
+  if (!report.riskDashboard) return null;
+  const r = report.riskDashboard;
+
+  // Compute the fixed-rate bar width
+  const fixedPct = parseFloat(r.pctDebtFixed.replace("%", ""));
+
+  return (
+    <BentoCell title="Risk Dashboard" icon={<Shield className="h-3.5 w-3.5" />}>
+      <div className="space-y-3">
+        {/* Leverage */}
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <div className="text-[10px] text-zinc-600">Look-Through Leverage</div>
+            <div className="text-lg font-bold mono text-zinc-100">{r.lookThroughLeverage}</div>
+            <div className="text-[10px] text-zinc-600">Net Debt / EBITDA</div>
+          </div>
+          <div>
+            <div className="text-[10px] text-zinc-600">Interest Coverage</div>
+            <div className="text-lg font-bold mono text-zinc-100">{r.interestCoverage}</div>
+            <div className="text-[10px] text-zinc-600">EBITDA / Interest</div>
+          </div>
+        </div>
+
+        {/* Rate Exposure Bar */}
+        <div>
+          <div className="text-[10px] text-zinc-600 mb-1.5">Rate Exposure</div>
+          <div className="flex items-center gap-2">
+            <div className="flex-1 h-2.5 bg-zinc-800 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all"
+                style={{ width: `${fixedPct}%` }}
+              />
+            </div>
+          </div>
+          <div className="flex justify-between mt-1 text-[10px]">
+            <span className="text-blue-400">Fixed {r.pctDebtFixed}</span>
+            <span className="text-amber-400">Floating {r.pctDebtFloating}</span>
+          </div>
+        </div>
+
+        {r.weightedAvgMaturity && (
+          <div className="flex items-center justify-between text-[12px]">
+            <span className="text-zinc-500">Wtd Avg Maturity</span>
+            <span className="mono font-semibold text-zinc-300">{r.weightedAvgMaturity}</span>
+          </div>
+        )}
+
+        <SourceTag source={r.source} />
+      </div>
+    </BentoCell>
+  );
+}
+
+// ─── Variance Table ───────────────────────────────────────
+
+function VarianceTable({ rows }: { rows: VarianceRow[] }) {
+  if (rows.length === 0) return null;
+
+  return (
+    <BentoCell
+      title="Key Metrics: Actual vs. Comparison"
+      icon={<Gauge className="h-3.5 w-3.5" />}
+      className="col-span-1 lg:col-span-2"
+    >
+      <div className="overflow-x-auto">
+        <table className="w-full text-[12px]">
+          <thead>
+            <tr className="text-zinc-600 text-left border-b border-zinc-800">
+              <th className="pb-2 pr-4 font-medium">Metric</th>
+              <th className="pb-2 pr-4 font-medium text-right">Actual</th>
+              <th className="pb-2 pr-4 font-medium text-right">Comparison</th>
+              <th className="pb-2 pr-4 font-medium text-right">Delta</th>
+              <th className="pb-2 font-medium text-right">Source</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-zinc-800/50">
+            {rows.map((row) => (
+              <tr key={row.metric}>
+                <td className="py-2 pr-4 text-zinc-300 font-medium">{row.metric}</td>
+                <td className="py-2 pr-4 text-right mono font-semibold text-zinc-100">{row.actual}</td>
+                <td className="py-2 pr-4 text-right">
+                  <span className="mono text-zinc-500">{row.comparison}</span>
+                  <span className="text-[10px] text-zinc-600 ml-1">({row.comparisonLabel})</span>
+                </td>
+                <td className="py-2 pr-4 text-right">
+                  <span className={`inline-flex items-center gap-1 mono font-semibold ${directionColor(row.direction)}`}>
+                    <DirectionIcon direction={row.direction} />
+                    {row.delta}
+                  </span>
+                </td>
+                <td className="py-2 text-right text-[10px] text-zinc-600 italic whitespace-nowrap">
+                  {formatSource(row.source)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </BentoCell>
+  );
+}
+
+// ─── Sector Exposure Bar Chart ────────────────────────────
+
+function SectorExposureChart({ report }: { report: CompanyEarningsReport }) {
+  if (report.sectorExposure.length === 0) return null;
+  const maxPct = Math.max(...report.sectorExposure.map((s) => s.pct));
+
+  return (
+    <BentoCell
+      title="Sector Exposure"
+      icon={<BarChart3 className="h-3.5 w-3.5" />}
+      className="col-span-1 lg:col-span-2"
+    >
+      <div className="space-y-2.5">
+        {report.sectorExposure.map((sector) => (
+          <div key={sector.sector} className="flex items-center gap-3">
+            <div className="w-[140px] flex-shrink-0 text-[12px] text-zinc-400 truncate">
+              {sector.sector}
+            </div>
+            <div className="flex-1 h-5 bg-zinc-800/50 rounded overflow-hidden relative">
+              <div
+                className="h-full rounded transition-all duration-500"
+                style={{
+                  width: `${(sector.pct / maxPct) * 100}%`,
+                  backgroundColor: sector.color,
+                  opacity: 0.7,
+                }}
+              />
+              <span
+                className="absolute inset-y-0 flex items-center text-[11px] mono font-semibold px-2"
+                style={{
+                  left: `${(sector.pct / maxPct) * 100}%`,
+                  marginLeft: "4px",
+                  color: sector.color,
+                }}
+              >
+                {sector.pct}%
+              </span>
+            </div>
+            <div className="w-[60px] flex-shrink-0 text-right text-[11px] mono text-zinc-500">
+              {sector.aum}
+            </div>
+          </div>
+        ))}
+      </div>
+    </BentoCell>
+  );
+}
+
+// ─── Reported Company Card (collapsed) ────────────────────
 
 function CompanyCard({
   company,
@@ -59,26 +494,25 @@ function CompanyCard({
   index: number;
 }) {
   const sectorColor = getSectorTypeColor(company.sector);
-  const firstQuote = report.strategicCommentary?.quotes[0];
 
-  // Collect key headline figures for the collapsed card
+  // Headline figures for collapsed card
   const figures: { label: string; value: string }[] = [];
-  if (report.aumBreakdown) {
-    let v = report.aumBreakdown.infraAum;
-    if (report.aumBreakdown.infraAumGrowthYoy) v += ` (${report.aumBreakdown.infraAumGrowthYoy})`;
+  if (report.scale) {
+    let v = report.scale.infraAum;
+    if (report.scale.infraAumGrowthYoy) v += ` (${report.scale.infraAumGrowthYoy})`;
     figures.push({ label: "Infra AUM", value: v });
   }
-  if (report.deployment?.infraDeployed || report.deployment?.totalDeployed) {
-    figures.push({ label: "Deployed", value: (report.deployment.infraDeployed || report.deployment.totalDeployed)! });
+  if (report.economics?.freMargin) {
+    figures.push({ label: "FRE Margin", value: report.economics.freMargin });
   }
-  if (report.fundraising?.infraDryPowder || report.fundraising?.dryPowder) {
-    figures.push({ label: "Dry Powder", value: (report.fundraising.infraDryPowder || report.fundraising.dryPowder)! });
+  if (report.perpetualFunds.length > 0) {
+    figures.push({ label: "Perpetual Return", value: report.perpetualFunds[0].totalReturn });
   }
-  if (report.fees?.feeRelatedEarnings) {
-    figures.push({ label: "FRE", value: report.fees.feeRelatedEarnings });
+  if (report.closedEndFunds.length > 0 && report.closedEndFunds[0].netIrr !== "n/m") {
+    figures.push({ label: "Net IRR", value: report.closedEndFunds[0].netIrr });
   }
-  if (report.realizations?.grossMoic) {
-    figures.push({ label: "Exit MOIC", value: report.realizations.grossMoic });
+  if (report.riskDashboard) {
+    figures.push({ label: "Leverage", value: `${report.riskDashboard.lookThroughLeverage} Debt/EBITDA` });
   }
 
   return (
@@ -116,12 +550,12 @@ function CompanyCard({
           </div>
 
           {/* Row 2: Key quote snippet */}
-          {firstQuote && (
+          {report.keyQuote && (
             <p className="text-[13px] text-zinc-400 leading-relaxed mb-2.5 line-clamp-2">
               <span className="text-zinc-600">&ldquo;</span>
-              {firstQuote.text.length > 200 ? firstQuote.text.slice(0, 200) + "…" : firstQuote.text}
+              {report.keyQuote.text.length > 200 ? report.keyQuote.text.slice(0, 200) + "..." : report.keyQuote.text}
               <span className="text-zinc-600">&rdquo;</span>
-              <span className="text-zinc-600 ml-1">— {firstQuote.speaker}</span>
+              <span className="text-zinc-600 ml-1">— {report.keyQuote.speaker}</span>
             </p>
           )}
 
@@ -158,317 +592,55 @@ function CompanyCard({
         )}
       </div>
 
-      {/* Expanded Detail */}
-      {isExpanded && <CompanyDetail report={report} />}
+      {/* Expanded Detail — Bento Grid */}
+      {isExpanded && <CompanyBentoGrid report={report} />}
     </div>
   );
 }
 
-// ─── Expanded Detail (Research Note Style) ──────────
+// ─── Company Bento Grid (Expanded Detail) ─────────────────
 
-function CompanyDetail({ report }: { report: CompanyEarningsReport }) {
-  const allQuotes = report.strategicCommentary?.quotes ?? [];
-  const themes = report.strategicCommentary?.themes ?? [];
-
-  // Capital activity bullets: fundraising → deployment → realizations
-  const capitalBullets: string[] = [];
-  if (report.fundraising) {
-    capitalBullets.push(...report.fundraising.commentary);
-    if (report.fundraising.flagshipFundStatus) {
-      capitalBullets.push(`Flagship: ${report.fundraising.flagshipFundStatus}`);
-    }
-  }
-  if (report.deployment) {
-    capitalBullets.push(...report.deployment.commentary);
-  }
-  if (report.realizations) {
-    capitalBullets.push(...report.realizations.commentary);
-  }
-
-  const notableDeals = report.deployment?.notableDeals ?? [];
-
-  // Portfolio & economics bullets: performance → leverage → fees
-  const portfolioBullets: string[] = [];
-  if (report.portfolioPerformance) {
-    portfolioBullets.push(...report.portfolioPerformance.commentary);
-  }
-  if (report.leverage) {
-    portfolioBullets.push(...report.leverage.commentary);
-  }
-  if (report.fees) {
-    portfolioBullets.push(...report.fees.commentary);
-  }
-
-  // Deployment breakdowns
-  const bySector = report.deployment?.bySector ?? [];
-  const byGeo = report.deployment?.byGeography ?? [];
-
-  // AUM segments
-  const segments = report.aumBreakdown?.bySegment ?? [];
-  const aumCommentary = report.aumBreakdown?.commentary ?? [];
+function CompanyBentoGrid({ report }: { report: CompanyEarningsReport }) {
+  const hasPlatformData = report.perpetualFunds.length > 0 || report.closedEndFunds.length > 0;
 
   return (
     <div className="animate-fade-in mt-2 mb-1">
-      <div className="glass-card rounded-lg p-5 lg:p-6 border-zinc-700/50 space-y-5">
-        {/* Strategic Quotes */}
-        {allQuotes.length > 0 && (
-          <div>
-            {allQuotes.map((q, i) => (
-              <blockquote
-                key={i}
-                className="border-l-2 border-blue-500/30 pl-4 py-1.5 mb-4 last:mb-0"
-              >
-                <p className="text-[13px] text-zinc-300 leading-relaxed italic">
-                  &ldquo;{q.text}&rdquo;
-                </p>
-                <footer className="mt-1 text-[11px] text-zinc-500">
-                  — {q.speaker}, {q.role}
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-        )}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+        {/* Row 1: Scale + Economics */}
+        <ScalePanel report={report} />
+        <EconomicsPanel report={report} />
 
-        {/* Key Figures Strip */}
-        <div>
-          <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
-            Key Figures
-          </h4>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-2 text-[13px]">
-            {report.aumBreakdown && (
-              <>
-                <div>
-                  <span className="text-zinc-500 text-[11px]">Total AUM</span>
-                  <div className="font-semibold text-zinc-200 mono">{report.aumBreakdown.totalAum}</div>
-                </div>
-                <div>
-                  <span className="text-zinc-500 text-[11px]">Infra AUM</span>
-                  <div className="font-semibold text-blue-400 mono">
-                    {report.aumBreakdown.infraAum}
-                    {report.aumBreakdown.infraAumGrowthYoy && (
-                      <span className="text-emerald-400/60 ml-1 text-[11px]">
-                        {report.aumBreakdown.infraAumGrowthYoy}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </>
-            )}
-            {(report.fundraising?.infraDryPowder || report.fundraising?.dryPowder) && (
-              <div>
-                <span className="text-zinc-500 text-[11px]">Dry Powder</span>
-                <div className="font-semibold text-zinc-200 mono">
-                  {report.fundraising!.infraDryPowder || report.fundraising!.dryPowder}
-                </div>
-              </div>
-            )}
-            {(report.deployment?.infraDeployed || report.deployment?.totalDeployed) && (
-              <div>
-                <span className="text-zinc-500 text-[11px]">Deployed</span>
-                <div className="font-semibold text-zinc-200 mono">
-                  {report.deployment!.infraDeployed || report.deployment!.totalDeployed}
-                </div>
-              </div>
-            )}
-            {report.fees?.feeRelatedEarnings && (
-              <div>
-                <span className="text-zinc-500 text-[11px]">FRE</span>
-                <div className="font-semibold text-zinc-200 mono">{report.fees.feeRelatedEarnings}</div>
-              </div>
-            )}
-            {report.realizations?.totalProceeds && (
-              <div>
-                <span className="text-zinc-500 text-[11px]">Realizations</span>
-                <div className="font-semibold text-zinc-200 mono">{report.realizations.totalProceeds}</div>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Capital Activity */}
-        {capitalBullets.length > 0 && (
-          <div>
-            <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
-              Capital Activity
-            </h4>
-            {/* Inline exit metrics if available */}
-            {report.realizations && (report.realizations.grossMoic || report.realizations.grossIrr) && (
-              <div className="flex flex-wrap gap-x-5 gap-y-1 text-[12px] mb-2">
-                {report.realizations.grossMoic && (
-                  <span className="text-zinc-500">
-                    Exit MOIC <span className="mono font-semibold text-zinc-300">{report.realizations.grossMoic}</span>
-                  </span>
-                )}
-                {report.realizations.grossIrr && (
-                  <span className="text-zinc-500">
-                    Gross IRR <span className="mono font-semibold text-zinc-300">{report.realizations.grossIrr}</span>
-                  </span>
-                )}
-                {report.realizations.netIrr && (
-                  <span className="text-zinc-500">
-                    Net IRR <span className="mono font-semibold text-zinc-300">{report.realizations.netIrr}</span>
-                  </span>
-                )}
-                {report.realizations.continuationVehicles && (
-                  <span className="text-zinc-500">
-                    CVs <span className="mono font-semibold text-zinc-300">{report.realizations.continuationVehicles}</span>
-                  </span>
-                )}
-              </div>
-            )}
-            <ul className="space-y-1.5">
-              {capitalBullets.map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-400 leading-relaxed">
-                  <span className="text-zinc-600 mt-0.5 flex-shrink-0">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            {/* Deployment breakdown */}
-            {(bySector.length > 0 || byGeo.length > 0) && (
-              <div className="mt-3 space-y-1.5 text-[12px]">
-                {bySector.length > 0 && (
-                  <div className="flex flex-wrap items-baseline gap-x-1">
-                    <span className="text-zinc-600">Sectors:</span>
-                    {bySector.map((s, i) => (
-                      <span key={s.name} className="text-zinc-400">
-                        {s.name} <span className="mono text-zinc-300">{s.value}</span>
-                        {i < bySector.length - 1 && <span className="text-zinc-700 mx-0.5">·</span>}
-                      </span>
-                    ))}
-                  </div>
-                )}
-                {byGeo.length > 0 && (
-                  <div className="flex flex-wrap items-baseline gap-x-1">
-                    <span className="text-zinc-600">Geography:</span>
-                    {byGeo.map((g, i) => (
-                      <span key={g.name} className="text-zinc-400">
-                        {g.name} <span className="mono text-zinc-300">{g.value}</span>
-                        {i < byGeo.length - 1 && <span className="text-zinc-700 mx-0.5">·</span>}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Notable Deals */}
-        {notableDeals.length > 0 && (
-          <div>
-            <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
-              Notable Deals
-            </h4>
-            <ul className="space-y-1.5">
-              {notableDeals.map((deal, i) => (
-                <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-300 leading-relaxed">
-                  <span className="text-emerald-500/70 mt-0.5 flex-shrink-0">▸</span>
-                  <span>{deal}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* Portfolio & Economics */}
-        {portfolioBullets.length > 0 && (
-          <div>
-            <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
-              Portfolio & Economics
-            </h4>
-            {/* Inline performance stats */}
-            <div className="flex flex-wrap gap-x-5 gap-y-1 text-[12px] mb-2">
-              {report.portfolioPerformance?.revenueGrowth && (
-                <span className="text-zinc-500">
-                  Revenue <span className="mono font-semibold text-zinc-300">{report.portfolioPerformance.revenueGrowth}</span>
-                </span>
-              )}
-              {report.portfolioPerformance?.ebitdaGrowth && (
-                <span className="text-zinc-500">
-                  EBITDA <span className="mono font-semibold text-zinc-300">{report.portfolioPerformance.ebitdaGrowth}</span>
-                </span>
-              )}
-              {report.portfolioPerformance?.ebitdaMargin && (
-                <span className="text-zinc-500">
-                  Margin <span className="mono font-semibold text-zinc-300">{report.portfolioPerformance.ebitdaMargin}</span>
-                </span>
-              )}
-              {report.leverage?.avgPortfolioLeverage && (
-                <span className="text-zinc-500">
-                  Leverage <span className="mono font-semibold text-zinc-300">{report.leverage.avgPortfolioLeverage}</span>
-                </span>
-              )}
-              {report.fees?.freMargin && (
-                <span className="text-zinc-500">
-                  FRE Margin <span className="mono font-semibold text-zinc-300">{report.fees.freMargin}</span>
-                </span>
-              )}
-              {report.fees?.managementFees && (
-                <span className="text-zinc-500">
-                  Mgmt Fees <span className="mono font-semibold text-zinc-300">{report.fees.managementFees}</span>
-                </span>
-              )}
+        {/* Row 2: Platform Split (full width) */}
+        {hasPlatformData && (
+          <div className="glass-card rounded-lg p-4 col-span-1 lg:col-span-2">
+            <div className="flex items-center gap-2 mb-4">
+              <BarChart3 className="h-3.5 w-3.5 text-zinc-500" />
+              <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-500">
+                Platform Performance
+              </h4>
             </div>
-            <ul className="space-y-1.5">
-              {portfolioBullets.map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-[13px] text-zinc-400 leading-relaxed">
-                  <span className="text-zinc-600 mt-0.5 flex-shrink-0">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* AUM Segments */}
-        {segments.length > 0 && (
-          <div>
-            <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-600 mb-2">
-              Infrastructure Segments
-            </h4>
-            <div className="flex flex-wrap gap-1.5">
-              {segments.map((s) => (
-                <span
-                  key={s.name}
-                  className="text-[11px] font-medium px-2 py-0.5 rounded border border-zinc-800 bg-zinc-900/50 text-zinc-400"
-                >
-                  {s.name} <span className="mono text-zinc-300">{s.aum}</span>
-                </span>
-              ))}
+            <div className={`grid grid-cols-1 ${report.perpetualFunds.length > 0 && report.closedEndFunds.length > 0 ? "lg:grid-cols-2" : ""} gap-6`}>
+              <PerpetualFundsTable funds={report.perpetualFunds} />
+              <ClosedEndFundsTable funds={report.closedEndFunds} />
             </div>
-            {aumCommentary.length > 0 && (
-              <ul className="space-y-1 mt-2">
-                {aumCommentary.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-[12px] text-zinc-500 leading-relaxed">
-                    <span className="text-zinc-700 mt-0.5 flex-shrink-0">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
           </div>
         )}
 
-        {/* Themes */}
-        {themes.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 pt-1">
-            {themes.map((theme) => (
-              <span
-                key={theme}
-                className="text-[10px] font-medium px-2 py-0.5 rounded-full border border-zinc-800 text-zinc-500"
-              >
-                #{theme}
-              </span>
-            ))}
-          </div>
-        )}
+        {/* Row 3: Vital Signs + Risk */}
+        <VitalSignsPanel report={report} />
+        <RiskPanel report={report} />
+
+        {/* Row 4: Variance Table (full width) */}
+        <VarianceTable rows={report.varianceTable} />
+
+        {/* Row 5: Sector Exposure (full width) */}
+        <SectorExposureChart report={report} />
       </div>
     </div>
   );
 }
 
-// ─── Upcoming Company Row ────────────────────────────
+// ─── Upcoming Company Row ─────────────────────────────────
 
 function UpcomingRow({
   company,
@@ -495,7 +667,7 @@ function UpcomingRow({
   );
 }
 
-// ─── Main Component ──────────────────────────────────
+// ─── Main Component ───────────────────────────────────────
 
 export function Earnings() {
   const [selectedQuarter, setSelectedQuarter] = useState("Q4 2025");
@@ -529,9 +701,7 @@ export function Earnings() {
       }
     }
 
-    // Reported: sort by infra AUM desc (largest/most relevant first)
     reported.sort((a, b) => b.company.infraAum - a.company.infraAum);
-    // Upcoming: sort by expected date asc
     upcoming.sort((a, b) => {
       const da = a.report.expectedDate ?? "";
       const db = b.report.expectedDate ?? "";
