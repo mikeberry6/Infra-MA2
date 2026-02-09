@@ -375,6 +375,7 @@ export const companies: Company[] = [
 // ─── Sector Exposure Colors ─────────────────────────────────
 
 const SECTOR_COLORS: Record<string, string> = {
+  // Core sectors
   "Digital Infrastructure": "#3b82f6",
   "Energy & Power": "#10b981",
   "Energy Transition": "#10b981",
@@ -384,6 +385,28 @@ const SECTOR_COLORS: Record<string, string> = {
   "Utilities": "#8b5cf6",
   "Social Infrastructure": "#ec4899",
   "Waste": "#64748b",
+  // Thematic tags
+  "AI Factories": "#8b5cf6",
+  "Data Centers": "#3b82f6",
+  "Private Wealth": "#f59e0b",
+  "Retail Capital": "#f59e0b",
+  "GIP Integration": "#3b82f6",
+  "Private Markets Pivot": "#06b6d4",
+  "Decarbonization": "#22c55e",
+  "Asia Infrastructure": "#ec4899",
+  "Climate Strategy": "#22c55e",
+  "K-Series (Wealth)": "#f59e0b",
+  "Infrastructure Debt": "#06b6d4",
+  "Climate Infrastructure": "#22c55e",
+  "M&A Integration": "#a78bfa",
+  "Asset-Backed Finance": "#06b6d4",
+  "Retirement Services": "#f59e0b",
+  "Climate Transition": "#22c55e",
+  "Impact Investing": "#10b981",
+  "Angelo Gordon": "#a78bfa",
+  "Infrastructure Secondaries": "#3b82f6",
+  "Data Services": "#8b5cf6",
+  "Private Credit": "#06b6d4",
   "Other": "#71717a",
 };
 
@@ -806,8 +829,8 @@ export const earningsReports: CompanyEarningsReport[] = [
     },
     scale: {
       totalAum: "A$736B",
-      infraAum: "A$422B",
-      infraAumGrowthYoy: "+1% QoQ",
+      infraAum: "A$195B",
+      infraAumGrowthYoy: "+3% YoY",
       dryPowder: "A$25.9B",
       infraDryPowder: null,
       source: { document: "3Q FY26 Update", page: null },
@@ -824,60 +847,16 @@ export const earningsReports: CompanyEarningsReport[] = [
       {
         name: "MAM Private Markets (Real Assets)",
         aum: "A$422B",
-        totalReturn: "+1% QoQ",
-        yieldPct: "—",
-        appreciationPct: "—",
+        totalReturn: "+9.1% (FY)",
+        yieldPct: "5.5%",
+        appreciationPct: "3.6%",
         netFlows: "+A$6.3B",
         source: { document: "3Q FY26 Update", page: null },
       },
     ],
-    closedEndFunds: [
-      {
-        name: "MIP IV",
-        vintage: "2020",
-        size: "$4.8B",
-        netIrr: "11%",
-        dpi: "0.9x",
-        source: { document: "H1 FY26 Presentation", page: "Slide 36" },
-      },
-      {
-        name: "MIP V",
-        vintage: "2025",
-        size: "$6.0B (target)",
-        netIrr: "n/m",
-        dpi: "0.0x",
-        source: { document: "H1 FY26 Presentation", page: "Slide 36" },
-      },
-      {
-        name: "GIG Renewables Fund II",
-        vintage: "2022",
-        size: "$3.8B",
-        netIrr: "9%",
-        dpi: "0.4x",
-        source: { document: "H1 FY26 Presentation", page: "Slide 38" },
-      },
-    ],
-    operationalVitalSigns: {
-      dataCenters: {
-        leasedMW: "320 MW",
-        developmentPipelineMW: "0.8 GW",
-        leasingSpreads: "+12%",
-        source: { document: "H1 FY26 Presentation", page: "Slide 42" },
-      },
-      energy: {
-        ppaWeightedAvgLife: "18 years",
-        pctRevenueInflationLinked: "72%",
-        source: { document: "H1 FY26 Presentation", page: "Slide 44" },
-      },
-    },
-    riskDashboard: {
-      lookThroughLeverage: "4.5x",
-      interestCoverage: "3.8x",
-      pctDebtFixed: "78%",
-      pctDebtFloating: "22%",
-      weightedAvgMaturity: "7.1 years",
-      source: { document: "H1 FY26 MDA", page: "Pg 32" },
-    },
+    closedEndFunds: [],
+    operationalVitalSigns: null,
+    riskDashboard: null,
     varianceTable: [
       {
         metric: "Total MAM AUM",
@@ -1186,7 +1165,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     economics: {
       managementFees: null,
       feeRelatedEarnings: "$1.0B",
-      freMargin: null,
+      freMargin: "67%",
       realizedPerformanceRevenue: null,
       distributableEarnings: null,
       source: { document: "Earnings Release", page: "Pg 1" },
@@ -1533,7 +1512,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     economics: {
       managementFees: null,
       feeRelatedEarnings: "$326M",
-      freMargin: null,
+      freMargin: "52%",
       realizedPerformanceRevenue: null,
       distributableEarnings: null,
       source: { document: "Earnings Release", page: "Pg 1" },
@@ -1687,7 +1666,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     economics: {
       managementFees: null,
       feeRelatedEarnings: "$89M",
-      freMargin: null,
+      freMargin: "39%",
       realizedPerformanceRevenue: null,
       distributableEarnings: null,
       source: { document: "Earnings Release", page: "Pg 1" },
@@ -1806,13 +1785,13 @@ export const earningsReports: CompanyEarningsReport[] = [
     thematicFocus: ["Energy Transition", "Asset-Backed Finance", "Retirement Services"],
     capitalActivity: {
       inflows: "$11.8B",
-      deployed: "Active",
+      deployed: null,
       realizations: null,
       source: { document: "Earnings Release", page: "Pg 4" },
     },
     scale: {
       totalAum: "$938B",
-      infraAum: "6%",
+      infraAum: "$56B",
       infraAumGrowthYoy: "+25% YoY",
       dryPowder: null,
       infraDryPowder: null,
@@ -1921,7 +1900,7 @@ export const earningsReports: CompanyEarningsReport[] = [
       fullYearLabel: "Trend",
       rows: [
         { metric: "Fundraising", quarterly: "$11.8B", fullYear: "\u{1F7E2} High", insight: "Q4 inflows for \"Infrastructure & Asset-Based Credit\"." },
-        { metric: "Infra Holdings", quarterly: "6%", fullYear: "\u2014", insight: "Of total Asset Management investment holdings." },
+        { metric: "Infra Holdings", quarterly: "~$56B (6%)", fullYear: "\u2014", insight: "Of total Asset Management investment holdings." },
         { metric: "Performance", quarterly: "+2.3%", fullYear: "\u26AA Stable", insight: "Q4 Gross Return (Real Assets Equity)." },
         { metric: "Origination", quarterly: "$97B", fullYear: "\u{1F7E2} Record", insight: "Massive private credit engine driving infrastructure deployment." },
       ],
