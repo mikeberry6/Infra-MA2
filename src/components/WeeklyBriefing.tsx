@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  getRecentDeals,
+  getWeeklyDeals,
   formatDate,
   formatTime,
   getSectorColor,
@@ -132,7 +132,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
 }
 
 export function WeeklyBriefing() {
-  const recentDeals = getRecentDeals();
+  const recentDeals = getWeeklyDeals();
 
   return (
     <div className="mx-auto max-w-[900px] lg:max-w-[1100px] xl:max-w-[1400px] px-4 sm:px-6 lg:px-8 xl:px-12 py-8 lg:py-12">

@@ -1736,6 +1736,15 @@ export function getRecentDeals(): Deal[] {
   );
 }
 
+// Get deals from the past 7 days
+export function getWeeklyDeals(): Deal[] {
+  const now = new Date();
+  const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+  return deals
+    .filter((d) => new Date(d.date) >= weekAgo)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
 // Get region stats
 export function getRegionStats() {
   const regionCounts = deals.reduce(
