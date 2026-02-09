@@ -374,7 +374,7 @@ function UpcomingRow({
 
 export function Earnings() {
   const [selectedQuarter, setSelectedQuarter] = useState("Q4 2025");
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
   const [quarterOpen, setQuarterOpen] = useState(false);
 
   const quarters = useMemo(() => getAvailableQuarters(), []);
@@ -477,8 +477,13 @@ export function Earnings() {
               key={company.id}
               company={company}
               report={report}
-              isExpanded={expandedId === company.id}
-              onToggle={() => setExpandedId(expandedId === company.id ? null : company.id)}
+              isExpanded={expandedIds.has(company.id)}
+              onToggle={() => setExpandedIds((prev) => {
+                const next = new Set(prev);
+                if (next.has(company.id)) next.delete(company.id);
+                else next.add(company.id);
+                return next;
+              })}
               index={index}
             />
           ))}
