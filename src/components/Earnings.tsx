@@ -6,7 +6,6 @@ import {
   earningsReports,
   getQuarterStats,
   getAvailableQuarters,
-  getSectorTypeColor,
   getSectorExposureColor,
   formatEarningsDate,
   formatFullDate,
@@ -16,9 +15,8 @@ import type {
   Company,
   CompanyEarningsReport,
   DataSource,
-  VarianceRow,
-  PerpetualFundMetrics,
-  ClosedEndFundMetrics,
+  AssetAllocationTable,
+  InfraVitalsTable,
 } from "@/data/earnings";
 import {
   ChevronDown,
@@ -29,16 +27,6 @@ import {
   FileSpreadsheet,
   BarChart3,
   Clock,
-  Shield,
-  Activity,
-  TrendingUp,
-  TrendingDown,
-  Minus,
-  Database,
-  Zap,
-  Server,
-  Gauge,
-  ArrowUpRight,
 } from "lucide-react";
 
 // ─── Source Citation ───────────────────────────────────────
@@ -71,413 +59,95 @@ function SourceIcon({ type }: { type: string }) {
   }
 }
 
-// ─── Direction Indicator ──────────────────────────────────
+// ─── Asset Allocation Overview Table ──────────────────────
 
-function DirectionIcon({ direction }: { direction: "positive" | "negative" | "neutral" }) {
-  if (direction === "positive") return <TrendingUp className="h-3 w-3 text-emerald-400" />;
-  if (direction === "negative") return <TrendingDown className="h-3 w-3 text-red-400" />;
-  return <Minus className="h-3 w-3 text-zinc-500" />;
-}
-
-function directionColor(direction: "positive" | "negative" | "neutral") {
-  if (direction === "positive") return "text-emerald-400";
-  if (direction === "negative") return "text-red-400";
-  return "text-zinc-400";
-}
-
-// ─── Bento Cell Wrapper ───────────────────────────────────
-
-function BentoCell({
-  children,
-  className = "",
-  icon,
-  title,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  icon?: React.ReactNode;
-  title: string;
-}) {
+function AssetAllocationSection({ table }: { table: AssetAllocationTable }) {
   return (
-    <div className={`glass-card rounded-lg p-4 ${className}`}>
-      <div className="flex items-center gap-2 mb-3">
-        {icon && <span className="text-zinc-500">{icon}</span>}
-        <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-500">
-          {title}
-        </h4>
-      </div>
-      {children}
-    </div>
-  );
-}
-
-// ─── Scale Panel (AUM & Dry Powder) ───────────────────────
-
-function ScalePanel({ report }: { report: CompanyEarningsReport }) {
-  if (!report.scale) return null;
-  const s = report.scale;
-
-  return (
-    <BentoCell title="The Scale" icon={<Database className="h-3.5 w-3.5" />}>
-      <div className="space-y-3">
-        <div>
-          <div className="text-[11px] text-zinc-500">Infra AUM</div>
-          <div className="flex items-baseline gap-2">
-            <span className="text-xl font-bold mono text-zinc-100">{s.infraAum}</span>
-            {s.infraAumGrowthYoy && (
-              <span className="text-[11px] font-medium text-emerald-400">{s.infraAumGrowthYoy}</span>
-            )}
-          </div>
-        </div>
-        <div className="grid grid-cols-2 gap-3">
-          <div>
-            <div className="text-[11px] text-zinc-500">Total AUM</div>
-            <div className="text-sm font-semibold mono text-zinc-300">{s.totalAum}</div>
-          </div>
-          {(s.infraDryPowder || s.dryPowder) && (
-            <div>
-              <div className="text-[11px] text-zinc-500">Dry Powder</div>
-              <div className="text-sm font-semibold mono text-zinc-300">
-                {s.infraDryPowder || s.dryPowder}
-              </div>
-            </div>
-          )}
-        </div>
-        <SourceTag source={s.source} />
-      </div>
-    </BentoCell>
-  );
-}
-
-// ─── Economics Panel (Fees & FRE) ─────────────────────────
-
-function EconomicsPanel({ report }: { report: CompanyEarningsReport }) {
-  if (!report.economics) return null;
-  const e = report.economics;
-
-  const metrics: { label: string; value: string; highlight?: boolean }[] = [];
-  if (e.feeRelatedEarnings) metrics.push({ label: "FRE", value: e.feeRelatedEarnings, highlight: true });
-  if (e.freMargin) metrics.push({ label: "FRE Margin", value: e.freMargin, highlight: true });
-  if (e.managementFees) metrics.push({ label: "Mgmt Fees", value: e.managementFees });
-  if (e.realizedPerformanceRevenue) metrics.push({ label: "Perf. Revenue", value: e.realizedPerformanceRevenue });
-  if (e.distributableEarnings) metrics.push({ label: "Dist. Earnings", value: e.distributableEarnings });
-
-  return (
-    <BentoCell title="The Economics" icon={<TrendingUp className="h-3.5 w-3.5" />}>
-      <div className="space-y-2">
-        {metrics.map((m) => (
-          <div key={m.label} className="flex items-center justify-between">
-            <span className="text-[12px] text-zinc-500">{m.label}</span>
-            <span className={`text-sm font-semibold mono ${m.highlight ? "text-blue-400" : "text-zinc-200"}`}>
-              {m.value}
-            </span>
-          </div>
-        ))}
-        <div className="pt-1">
-          <SourceTag source={e.source} />
-        </div>
-      </div>
-    </BentoCell>
-  );
-}
-
-// ─── Perpetual Funds Table ────────────────────────────────
-
-function PerpetualFundsTable({ funds }: { funds: PerpetualFundMetrics[] }) {
-  if (funds.length === 0) return null;
-
-  return (
-    <div>
-      <h5 className="text-[10px] font-medium uppercase tracking-widest text-blue-400/70 mb-2.5 flex items-center gap-1.5">
-        <span className="w-1.5 h-1.5 rounded-full bg-blue-400/60" />
-        Perpetual / Open-Ended
-      </h5>
+    <div className="glass-card rounded-lg p-4 lg:p-5">
+      <h4 className="text-[11px] font-medium uppercase tracking-widest text-zinc-500 mb-4">
+        Asset Allocation Overview
+      </h4>
       <div className="overflow-x-auto">
-        <table className="w-full text-[12px]">
-          <thead>
-            <tr className="text-zinc-600 text-left">
-              <th className="pb-1.5 pr-3 font-medium">Fund</th>
-              <th className="pb-1.5 pr-3 font-medium text-right">AUM</th>
-              <th className="pb-1.5 pr-3 font-medium text-right">Total Return</th>
-              <th className="pb-1.5 pr-3 font-medium text-right">Yield</th>
-              <th className="pb-1.5 pr-3 font-medium text-right">Appr.</th>
-              <th className="pb-1.5 font-medium text-right">Net Flows</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-zinc-800/50">
-            {funds.map((f) => (
-              <tr key={f.name} className="text-zinc-300">
-                <td className="py-1.5 pr-3 text-zinc-200 font-medium">{f.name}</td>
-                <td className="py-1.5 pr-3 text-right mono">{f.aum}</td>
-                <td className="py-1.5 pr-3 text-right mono font-semibold text-emerald-400">{f.totalReturn}</td>
-                <td className="py-1.5 pr-3 text-right mono text-zinc-400">{f.yieldPct}</td>
-                <td className="py-1.5 pr-3 text-right mono text-zinc-400">{f.appreciationPct}</td>
-                <td className="py-1.5 text-right mono text-blue-400">{f.netFlows}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div className="mt-1.5">
-        <SourceTag source={funds[0].source} />
-      </div>
-    </div>
-  );
-}
-
-// ─── Closed-End Funds Table ───────────────────────────────
-
-function ClosedEndFundsTable({ funds }: { funds: ClosedEndFundMetrics[] }) {
-  if (funds.length === 0) return null;
-
-  return (
-    <div>
-      <h5 className="text-[10px] font-medium uppercase tracking-widest text-amber-400/70 mb-2.5 flex items-center gap-1.5">
-        <span className="w-1.5 h-1.5 rounded-full bg-amber-400/60" />
-        Closed-End / Secondaries
-      </h5>
-      <div className="overflow-x-auto">
-        <table className="w-full text-[12px]">
-          <thead>
-            <tr className="text-zinc-600 text-left">
-              <th className="pb-1.5 pr-3 font-medium">Fund</th>
-              <th className="pb-1.5 pr-3 font-medium text-right">Vintage</th>
-              <th className="pb-1.5 pr-3 font-medium text-right">Size</th>
-              <th className="pb-1.5 pr-3 font-medium text-right">Net IRR</th>
-              <th className="pb-1.5 font-medium text-right">DPI</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-zinc-800/50">
-            {funds.map((f) => (
-              <tr key={f.name} className="text-zinc-300">
-                <td className="py-1.5 pr-3 text-zinc-200 font-medium">{f.name}</td>
-                <td className="py-1.5 pr-3 text-right mono text-zinc-500">{f.vintage ?? "—"}</td>
-                <td className="py-1.5 pr-3 text-right mono">{f.size}</td>
-                <td className="py-1.5 pr-3 text-right mono font-semibold text-emerald-400">{f.netIrr}</td>
-                <td className="py-1.5 text-right mono text-amber-400">{f.dpi}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div className="mt-1.5">
-        <SourceTag source={funds[0].source} />
-      </div>
-    </div>
-  );
-}
-
-// ─── Operational Vital Signs ──────────────────────────────
-
-function VitalSignsPanel({ report }: { report: CompanyEarningsReport }) {
-  if (!report.operationalVitalSigns) return null;
-  const ops = report.operationalVitalSigns;
-  if (!ops.dataCenters && !ops.energy) return null;
-
-  return (
-    <BentoCell title="Operational Vital Signs" icon={<Activity className="h-3.5 w-3.5" />}>
-      <div className="space-y-4">
-        {ops.dataCenters && (
-          <div>
-            <div className="flex items-center gap-1.5 mb-2">
-              <Server className="h-3 w-3 text-blue-400/60" />
-              <span className="text-[11px] font-medium text-blue-400/80">Data Centers</span>
-            </div>
-            <div className="grid grid-cols-3 gap-2">
-              <div>
-                <div className="text-[10px] text-zinc-600">Leased MW</div>
-                <div className="text-[13px] font-semibold mono text-zinc-200">{ops.dataCenters.leasedMW}</div>
-              </div>
-              <div>
-                <div className="text-[10px] text-zinc-600">Dev. Pipeline</div>
-                <div className="text-[13px] font-semibold mono text-zinc-200">{ops.dataCenters.developmentPipelineMW}</div>
-              </div>
-              <div>
-                <div className="text-[10px] text-zinc-600">Leasing Spreads</div>
-                <div className="text-[13px] font-semibold mono text-emerald-400">{ops.dataCenters.leasingSpreads}</div>
-              </div>
-            </div>
-            <div className="mt-1">
-              <SourceTag source={ops.dataCenters.source} />
-            </div>
-          </div>
-        )}
-        {ops.energy && (
-          <div>
-            <div className="flex items-center gap-1.5 mb-2">
-              <Zap className="h-3 w-3 text-emerald-400/60" />
-              <span className="text-[11px] font-medium text-emerald-400/80">Energy</span>
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <div>
-                <div className="text-[10px] text-zinc-600">PPA Wtd Avg Life</div>
-                <div className="text-[13px] font-semibold mono text-zinc-200">{ops.energy.ppaWeightedAvgLife}</div>
-              </div>
-              <div>
-                <div className="text-[10px] text-zinc-600">% Rev. Inflation-Linked</div>
-                <div className="text-[13px] font-semibold mono text-zinc-200">{ops.energy.pctRevenueInflationLinked}</div>
-              </div>
-            </div>
-            <div className="mt-1">
-              <SourceTag source={ops.energy.source} />
-            </div>
-          </div>
-        )}
-      </div>
-    </BentoCell>
-  );
-}
-
-// ─── Risk Dashboard ───────────────────────────────────────
-
-function RiskPanel({ report }: { report: CompanyEarningsReport }) {
-  if (!report.riskDashboard) return null;
-  const r = report.riskDashboard;
-
-  // Compute the fixed-rate bar width
-  const fixedPct = parseFloat(r.pctDebtFixed.replace("%", ""));
-
-  return (
-    <BentoCell title="Risk Dashboard" icon={<Shield className="h-3.5 w-3.5" />}>
-      <div className="space-y-3">
-        {/* Leverage */}
-        <div className="grid grid-cols-2 gap-3">
-          <div>
-            <div className="text-[10px] text-zinc-600">Look-Through Leverage</div>
-            <div className="text-lg font-bold mono text-zinc-100">{r.lookThroughLeverage}</div>
-            <div className="text-[10px] text-zinc-600">Net Debt / EBITDA</div>
-          </div>
-          <div>
-            <div className="text-[10px] text-zinc-600">Interest Coverage</div>
-            <div className="text-lg font-bold mono text-zinc-100">{r.interestCoverage}</div>
-            <div className="text-[10px] text-zinc-600">EBITDA / Interest</div>
-          </div>
-        </div>
-
-        {/* Rate Exposure Bar */}
-        <div>
-          <div className="text-[10px] text-zinc-600 mb-1.5">Rate Exposure</div>
-          <div className="flex items-center gap-2">
-            <div className="flex-1 h-2.5 bg-zinc-800 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all"
-                style={{ width: `${fixedPct}%` }}
-              />
-            </div>
-          </div>
-          <div className="flex justify-between mt-1 text-[10px]">
-            <span className="text-blue-400">Fixed {r.pctDebtFixed}</span>
-            <span className="text-amber-400">Floating {r.pctDebtFloating}</span>
-          </div>
-        </div>
-
-        {r.weightedAvgMaturity && (
-          <div className="flex items-center justify-between text-[12px]">
-            <span className="text-zinc-500">Wtd Avg Maturity</span>
-            <span className="mono font-semibold text-zinc-300">{r.weightedAvgMaturity}</span>
-          </div>
-        )}
-
-        <SourceTag source={r.source} />
-      </div>
-    </BentoCell>
-  );
-}
-
-// ─── Variance Table ───────────────────────────────────────
-
-function VarianceTable({ rows }: { rows: VarianceRow[] }) {
-  if (rows.length === 0) return null;
-
-  return (
-    <BentoCell
-      title="Key Metrics: Actual vs. Comparison"
-      icon={<Gauge className="h-3.5 w-3.5" />}
-      className="col-span-1 lg:col-span-2"
-    >
-      <div className="overflow-x-auto">
-        <table className="w-full text-[12px]">
+        <table className="w-full text-[12px] lg:text-[13px]">
           <thead>
             <tr className="text-zinc-600 text-left border-b border-zinc-800">
-              <th className="pb-2 pr-4 font-medium">Metric</th>
-              <th className="pb-2 pr-4 font-medium text-right">Actual</th>
-              <th className="pb-2 pr-4 font-medium text-right">Comparison</th>
-              <th className="pb-2 pr-4 font-medium text-right">Delta</th>
-              <th className="pb-2 font-medium text-right">Source</th>
+              <th className="pb-2.5 pr-4 font-medium">Asset Class Segment</th>
+              <th className="pb-2.5 pr-4 font-medium text-right whitespace-nowrap">{table.priorPeriodLabel} AUM</th>
+              <th className="pb-2.5 pr-4 font-medium text-right whitespace-nowrap">{table.currentPeriodLabel} AUM</th>
+              <th className="pb-2.5 pr-4 font-medium text-right">YoY Growth</th>
+              <th className="pb-2.5 font-medium text-right">% of Total Firm</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-zinc-800/50">
-            {rows.map((row) => (
-              <tr key={row.metric}>
-                <td className="py-2 pr-4 text-zinc-300 font-medium">{row.metric}</td>
-                <td className="py-2 pr-4 text-right mono font-semibold text-zinc-100">{row.actual}</td>
-                <td className="py-2 pr-4 text-right">
-                  <span className="mono text-zinc-500">{row.comparison}</span>
-                  <span className="text-[10px] text-zinc-600 ml-1">({row.comparisonLabel})</span>
-                </td>
-                <td className="py-2 pr-4 text-right">
-                  <span className={`inline-flex items-center gap-1 mono font-semibold ${directionColor(row.direction)}`}>
-                    <DirectionIcon direction={row.direction} />
-                    {row.delta}
-                  </span>
-                </td>
-                <td className="py-2 text-right text-[10px] text-zinc-600 italic whitespace-nowrap">
-                  {formatSource(row.source)}
-                </td>
+          <tbody>
+            {table.rows.map((row) => {
+              const growthIcon = row.yoyDirection === "up" ? "\u2197" : row.yoyDirection === "down" ? "\u2198" : "\u2192";
+              const growthColor = row.yoyDirection === "up" ? "text-emerald-400" : row.yoyDirection === "down" ? "text-red-400" : "text-zinc-400";
+
+              return (
+                <tr
+                  key={row.segment}
+                  className={row.isTotal ? "border-t-2 border-zinc-700" : "border-t border-zinc-800/50"}
+                >
+                  <td className={`py-2.5 pr-4 ${row.isTotal ? "text-zinc-100 font-semibold" : "text-zinc-300"}`}>
+                    {row.segment}
+                    {row.note && (
+                      <span className="text-[10px] text-zinc-500 ml-1.5">({row.note})</span>
+                    )}
+                  </td>
+                  <td className="py-2.5 pr-4 text-right mono text-zinc-500">{row.priorAum}</td>
+                  <td className={`py-2.5 pr-4 text-right mono font-semibold ${row.isTotal ? "text-zinc-100" : "text-zinc-200"}`}>{row.currentAum}</td>
+                  <td className={`py-2.5 pr-4 text-right mono ${growthColor}`}>
+                    <span className="mr-1">{growthIcon}</span>
+                    {row.yoyGrowth}
+                  </td>
+                  <td className={`py-2.5 text-right mono ${row.isTotal ? "text-zinc-100 font-semibold" : "text-zinc-400"}`}>{row.pctOfTotal}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <div className="mt-3">
+        <SourceTag source={table.source} />
+      </div>
+    </div>
+  );
+}
+
+// ─── Infrastructure Vitals Table ─────────────────────────
+
+function InfraVitalsSection({ table }: { table: InfraVitalsTable }) {
+  return (
+    <div className="glass-card rounded-lg p-4 lg:p-5">
+      <h4 className="text-[11px] font-medium uppercase tracking-widest text-zinc-500 mb-4">
+        Infrastructure &ldquo;Vitals&rdquo;
+      </h4>
+      <div className="overflow-x-auto">
+        <table className="w-full text-[12px] lg:text-[13px]">
+          <thead>
+            <tr className="text-zinc-600 text-left border-b border-zinc-800">
+              <th className="pb-2.5 pr-4 font-medium">Metric</th>
+              <th className="pb-2.5 pr-4 font-medium text-right whitespace-nowrap">{table.quarterLabel}</th>
+              <th className="pb-2.5 pr-4 font-medium text-right whitespace-nowrap">{table.fullYearLabel}</th>
+              <th className="pb-2.5 font-medium">Insight for Investors</th>
+            </tr>
+          </thead>
+          <tbody>
+            {table.rows.map((row) => (
+              <tr key={row.metric} className="border-t border-zinc-800/50">
+                <td className="py-3 pr-4 text-zinc-200 font-medium align-top whitespace-nowrap">{row.metric}</td>
+                <td className="py-3 pr-4 text-right mono font-semibold text-blue-400 align-top whitespace-nowrap">{row.quarterly}</td>
+                <td className="py-3 pr-4 text-right mono font-semibold text-zinc-100 align-top whitespace-nowrap">{row.fullYear}</td>
+                <td className="py-3 text-zinc-400 leading-relaxed text-[11px] lg:text-[12px] align-top">{row.insight}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-    </BentoCell>
-  );
-}
-
-// ─── Sector Exposure Bar Chart ────────────────────────────
-
-function SectorExposureChart({ report }: { report: CompanyEarningsReport }) {
-  if (report.sectorExposure.length === 0) return null;
-  const maxPct = Math.max(...report.sectorExposure.map((s) => s.pct));
-
-  return (
-    <BentoCell
-      title="Sector Exposure"
-      icon={<BarChart3 className="h-3.5 w-3.5" />}
-      className="col-span-1 lg:col-span-2"
-    >
-      <div className="space-y-2.5">
-        {report.sectorExposure.map((sector) => (
-          <div key={sector.sector} className="flex items-center gap-3">
-            <div className="w-[140px] flex-shrink-0 text-[12px] text-zinc-400 truncate">
-              {sector.sector}
-            </div>
-            <div className="flex-1 h-5 bg-zinc-800/50 rounded overflow-hidden relative">
-              <div
-                className="h-full rounded transition-all duration-500"
-                style={{
-                  width: `${(sector.pct / maxPct) * 100}%`,
-                  backgroundColor: sector.color,
-                  opacity: 0.7,
-                }}
-              />
-              <span
-                className="absolute inset-y-0 flex items-center text-[11px] mono font-semibold px-2"
-                style={{
-                  left: `${(sector.pct / maxPct) * 100}%`,
-                  marginLeft: "4px",
-                  color: sector.color,
-                }}
-              >
-                {sector.pct}%
-              </span>
-            </div>
-            <div className="w-[60px] flex-shrink-0 text-right text-[11px] mono text-zinc-500">
-              {sector.aum}
-            </div>
-          </div>
-        ))}
+      <div className="mt-3">
+        <SourceTag source={table.source} />
       </div>
-    </BentoCell>
+    </div>
   );
 }
 
@@ -570,43 +240,6 @@ function SourceVerification({ company, report }: { company: Company; report: Com
   );
 }
 
-// ─── Capital Activity Panel ──────────────────────────────
-
-function CapitalActivityPanel({ report }: { report: CompanyEarningsReport }) {
-  if (!report.capitalActivity) return null;
-  const ca = report.capitalActivity;
-  const hasData = ca.inflows || ca.deployed || ca.realizations;
-  if (!hasData) return null;
-
-  return (
-    <BentoCell title={`Capital Activity (${report.quarter})`} icon={<ArrowUpRight className="h-3.5 w-3.5" />}>
-      <div className="grid grid-cols-3 gap-3">
-        {ca.inflows && (
-          <div>
-            <div className="text-[10px] text-zinc-600">Inflows</div>
-            <div className="text-lg font-bold mono text-emerald-400">{ca.inflows}</div>
-          </div>
-        )}
-        {ca.deployed && (
-          <div>
-            <div className="text-[10px] text-zinc-600">Deployed</div>
-            <div className="text-lg font-bold mono text-blue-400">{ca.deployed}</div>
-          </div>
-        )}
-        {ca.realizations && (
-          <div>
-            <div className="text-[10px] text-zinc-600">Realizations</div>
-            <div className="text-lg font-bold mono text-amber-400">{ca.realizations}</div>
-          </div>
-        )}
-      </div>
-      <div className="mt-2">
-        <SourceTag source={ca.source} />
-      </div>
-    </BentoCell>
-  );
-}
-
 // ─── Reported Company Card (Data Terminal Style) ──────────
 
 function CompanyCard({
@@ -691,53 +324,21 @@ function CompanyCard({
         </div>
       </div>
 
-      {/* Expanded Detail — Bento Grid */}
-      {isExpanded && <CompanyBentoGrid report={report} />}
+      {/* Expanded Detail — Two Tables */}
+      {isExpanded && <CompanyDetailTables report={report} />}
     </div>
   );
 }
 
-// ─── Company Bento Grid (Expanded Detail) ─────────────────
+// ─── Company Detail (Expanded — Two Tables) ──────────────
 
-function CompanyBentoGrid({ report }: { report: CompanyEarningsReport }) {
-  const hasPlatformData = report.perpetualFunds.length > 0 || report.closedEndFunds.length > 0;
+function CompanyDetailTables({ report }: { report: CompanyEarningsReport }) {
+  if (!report.assetAllocation && !report.infraVitals) return null;
 
   return (
-    <div className="animate-fade-in mt-2 mb-1">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-        {/* Row 1: Scale + Economics */}
-        <ScalePanel report={report} />
-        <EconomicsPanel report={report} />
-
-        {/* Row 1.5: Capital Activity (if available) */}
-        <CapitalActivityPanel report={report} />
-
-        {/* Row 2: Platform Split (full width) */}
-        {hasPlatformData && (
-          <div className="glass-card rounded-lg p-4 col-span-1 lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <BarChart3 className="h-3.5 w-3.5 text-zinc-500" />
-              <h4 className="text-[10px] font-medium uppercase tracking-widest text-zinc-500">
-                Platform Performance
-              </h4>
-            </div>
-            <div className={`grid grid-cols-1 ${report.perpetualFunds.length > 0 && report.closedEndFunds.length > 0 ? "lg:grid-cols-2" : ""} gap-6`}>
-              <PerpetualFundsTable funds={report.perpetualFunds} />
-              <ClosedEndFundsTable funds={report.closedEndFunds} />
-            </div>
-          </div>
-        )}
-
-        {/* Row 3: Vital Signs + Risk */}
-        <VitalSignsPanel report={report} />
-        <RiskPanel report={report} />
-
-        {/* Row 4: Variance Table (full width) */}
-        <VarianceTable rows={report.varianceTable} />
-
-        {/* Row 5: Sector Exposure (full width) */}
-        <SectorExposureChart report={report} />
-      </div>
+    <div className="animate-fade-in mt-2 mb-1 space-y-3">
+      {report.assetAllocation && <AssetAllocationSection table={report.assetAllocation} />}
+      {report.infraVitals && <InfraVitalsSection table={report.infraVitals} />}
     </div>
   );
 }

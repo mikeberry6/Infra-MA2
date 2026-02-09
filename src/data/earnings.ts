@@ -108,6 +108,42 @@ export interface CapitalActivity {
   source: DataSource;
 }
 
+// ─── Asset Allocation Overview ─────────────────────────────
+
+export interface AssetAllocationRow {
+  segment: string;
+  priorAum: string;
+  currentAum: string;
+  yoyGrowth: string;
+  yoyDirection: "up" | "down" | "flat";
+  pctOfTotal: string;
+  note: string | null;
+  isTotal?: boolean;
+}
+
+export interface AssetAllocationTable {
+  priorPeriodLabel: string;
+  currentPeriodLabel: string;
+  rows: AssetAllocationRow[];
+  source: DataSource;
+}
+
+// ─── Infrastructure Vitals ────────────────────────────────
+
+export interface InfraVitalRow {
+  metric: string;
+  quarterly: string;
+  fullYear: string;
+  insight: string;
+}
+
+export interface InfraVitalsTable {
+  quarterLabel: string;
+  fullYearLabel: string;
+  rows: InfraVitalRow[];
+  source: DataSource;
+}
+
 // ─── Sector Exposure ────────────────────────────────────────
 
 export interface SectorExposure {
@@ -170,6 +206,10 @@ export interface CompanyEarningsReport {
 
   // Sector Exposure (for bar chart)
   sectorExposure: SectorExposure[];
+
+  // NEW: Two-table scorecard
+  assetAllocation: AssetAllocationTable | null;
+  infraVitals: InfraVitalsTable | null;
 
   // One key quote for collapsed card
   keyQuote: { speaker: string; role: string; text: string } | null;
@@ -530,6 +570,29 @@ export const earningsReports: CompanyEarningsReport[] = [
       { sector: "Transport", aum: "$16B", pct: 21, color: "#f59e0b" },
       { sector: "Water & Waste", aum: "$11B", pct: 14, color: "#06b6d4" },
     ],
+    assetAllocation: {
+      priorPeriodLabel: "Q4 2024",
+      currentPeriodLabel: "Q4 2025",
+      rows: [
+        { segment: "Credit & Insurance", priorAum: "$375.5B", currentAum: "$443.0B", yoyGrowth: "+18%", yoyDirection: "up", pctOfTotal: "35%", note: "Largest" },
+        { segment: "Private Equity", priorAum: "$352.2B", currentAum: "$416.4B", yoyGrowth: "+18%", yoyDirection: "up", pctOfTotal: "33%", note: "Houses Infra Equity" },
+        { segment: "Real Estate", priorAum: "$315.4B", currentAum: "$319.3B", yoyGrowth: "+1%", yoyDirection: "flat", pctOfTotal: "25%", note: null },
+        { segment: "Multi-Asset", priorAum: "$84.2B", currentAum: "$96.2B", yoyGrowth: "+14%", yoyDirection: "up", pctOfTotal: "7%", note: null },
+        { segment: "TOTAL", priorAum: "$1,127.2B", currentAum: "$1,274.9B", yoyGrowth: "+13%", yoyDirection: "up", pctOfTotal: "100%", note: null, isTotal: true },
+      ],
+      source: { document: "4Q25 Earnings Supplement", page: "Pg 3" },
+    },
+    infraVitals: {
+      quarterLabel: "Q4 2025",
+      fullYearLabel: "Full Year 2025",
+      rows: [
+        { metric: "Appreciation (Asset Performance)", quarterly: "+8.4%", fullYear: "+23.5%", insight: "Top Performer. Driven by \"Digital Infrastructure\" (Data Centers) and \"Energy Transition\" themes." },
+        { metric: "Capital Inflows (Fundraising)", quarterly: "$4.2B", fullYear: "$13.3B", insight: "Robust demand. Includes $728M raised in Q4 for BXINFRA (retail/wealth vehicle)." },
+        { metric: "Capital Deployed", quarterly: "$1.8B", fullYear: "$6.8B", insight: "Disciplined Pacing. Deployment is selectively focused (only ~50% of inflows were deployed), implying a rigorous valuation discipline." },
+        { metric: "Realizations (Exits)", quarterly: "$0.6B", fullYear: "$2.4B", insight: "Low Exit Volume. Represents a \"Buy & Build\" strategy; the firm is holding assets to compound value rather than selling." },
+      ],
+      source: { document: "Earnings Release & Transcript", page: null },
+    },
     keyQuote: {
       speaker: "Steve Schwarzman",
       role: "Chairman & CEO, Blackstone",
@@ -706,6 +769,30 @@ export const earningsReports: CompanyEarningsReport[] = [
       { sector: "Water & Waste", aum: "$18B", pct: 11, color: "#06b6d4" },
       { sector: "Other", aum: "$14B", pct: 8, color: "#71717a" },
     ],
+    assetAllocation: {
+      priorPeriodLabel: "Q4 2024",
+      currentPeriodLabel: "Q4 2025",
+      rows: [
+        { segment: "Equity ETFs & Index", priorAum: "$5,220B", currentAum: "$5,690B", yoyGrowth: "+9%", yoyDirection: "up", pctOfTotal: "49%", note: "Largest" },
+        { segment: "Fixed Income", priorAum: "$2,810B", currentAum: "$3,050B", yoyGrowth: "+9%", yoyDirection: "up", pctOfTotal: "26%", note: null },
+        { segment: "Multi-Asset & Other", priorAum: "$1,430B", currentAum: "$1,600B", yoyGrowth: "+12%", yoyDirection: "up", pctOfTotal: "14%", note: null },
+        { segment: "Cash Management", priorAum: "$700B", currentAum: "$810B", yoyGrowth: "+16%", yoyDirection: "up", pctOfTotal: "7%", note: null },
+        { segment: "Alternatives", priorAum: "$350B", currentAum: "$400B", yoyGrowth: "+14%", yoyDirection: "up", pctOfTotal: "3%", note: "Houses GIP Infrastructure" },
+        { segment: "TOTAL", priorAum: "$10,510B", currentAum: "$11,550B", yoyGrowth: "+10%", yoyDirection: "up", pctOfTotal: "100%", note: null, isTotal: true },
+      ],
+      source: { document: "4Q25 Earnings Supplement", page: "Pg 5" },
+    },
+    infraVitals: {
+      quarterLabel: "Q4 2025",
+      fullYearLabel: "Full Year 2025",
+      rows: [
+        { metric: "Total Return (GIP Open-End)", quarterly: "+4.2%", fullYear: "+8.4%", insight: "Steady Performer. Balanced 50/50 split between yield (4.2%) and appreciation (4.2%), demonstrating stable cash generation." },
+        { metric: "Platform Scale", quarterly: "$170B AUM", fullYear: "+12% YoY", insight: "Milestone. First full year post-GIP acquisition; infrastructure is now BlackRock's fastest-growing alternatives segment." },
+        { metric: "Capital Deployed", quarterly: "~$12B", fullYear: "~$35B", insight: "Accelerating. GIP integration enabled cross-selling to BlackRock's $11.5T client base and larger deal capacity." },
+        { metric: "Net Inflows", quarterly: "+$2.1B", fullYear: "~$8B", insight: "Strong Demand. GIP V targeting $15B with robust institutional LP pipeline. BXINFRA-style retail vehicle under development." },
+      ],
+      source: { document: "Earnings Release & Transcript", page: null },
+    },
     keyQuote: {
       speaker: "Larry Fink",
       role: "Chairman & CEO, BlackRock",
@@ -893,6 +980,31 @@ export const earningsReports: CompanyEarningsReport[] = [
       { sector: "Utilities", aum: "$25B", pct: 13, color: "#8b5cf6" },
       { sector: "Social Infrastructure", aum: "$15B", pct: 8, color: "#ec4899" },
     ],
+    assetAllocation: {
+      priorPeriodLabel: "H1 FY25",
+      currentPeriodLabel: "H1 FY26",
+      rows: [
+        { segment: "Infrastructure Equity (MIRA)", priorAum: "A$280B", currentAum: "A$300B", yoyGrowth: "+7%", yoyDirection: "up", pctOfTotal: "32%", note: "Largest MAM Segment" },
+        { segment: "Fixed Income", priorAum: "A$210B", currentAum: "A$230B", yoyGrowth: "+10%", yoyDirection: "up", pctOfTotal: "25%", note: null },
+        { segment: "Equities & Multi-Asset", priorAum: "A$150B", currentAum: "A$160B", yoyGrowth: "+7%", yoyDirection: "up", pctOfTotal: "17%", note: null },
+        { segment: "Private Credit", priorAum: "A$80B", currentAum: "A$95B", yoyGrowth: "+19%", yoyDirection: "up", pctOfTotal: "10%", note: "Fastest Growing" },
+        { segment: "Real Assets (ex-Infra)", priorAum: "A$75B", currentAum: "A$82B", yoyGrowth: "+9%", yoyDirection: "up", pctOfTotal: "9%", note: null },
+        { segment: "Other / Advisory", priorAum: "A$52B", currentAum: "A$57B", yoyGrowth: "+10%", yoyDirection: "up", pctOfTotal: "6%", note: null },
+        { segment: "TOTAL MAM", priorAum: "A$847B", currentAum: "A$924B", yoyGrowth: "+9%", yoyDirection: "up", pctOfTotal: "100%", note: null, isTotal: true },
+      ],
+      source: { document: "H1 FY26 Presentation", page: "Slide 28" },
+    },
+    infraVitals: {
+      quarterLabel: "H1 FY26",
+      fullYearLabel: "FY26 Run-Rate",
+      rows: [
+        { metric: "Capital Raised", quarterly: "A$12B", fullYear: "A$24B (ann.)", insight: "Strong Fundraising. GIG renewables and MIRA equity strategies attracting global institutional capital." },
+        { metric: "Capital Deployed", quarterly: "A$11B", fullYear: "A$22B (ann.)", insight: "Full Deployment. Near-complete utilization of raised capital, focused on energy transition and digital infrastructure." },
+        { metric: "GIG Renewables Pipeline", quarterly: "12 GW", fullYear: "25 GW pipeline", insight: "Scale Leader. Green Investment Group remains the largest dedicated renewables developer globally." },
+        { metric: "MAM Base Fees", quarterly: "A$1.7B", fullYear: "A$3.4B (ann.)", insight: "Margin Expansion. +10% YoY growth driven by infrastructure platform scale and performance fee crystallizations." },
+      ],
+      source: { document: "H1 FY26 MDA & Presentation", page: null },
+    },
     keyQuote: {
       speaker: "Shemara Wikramanayake",
       role: "CEO, Macquarie Group",
@@ -1034,6 +1146,31 @@ export const earningsReports: CompanyEarningsReport[] = [
       { sector: "Waste", aum: "15%", pct: 15, color: "#64748b" },
       { sector: "Other", aum: "15%", pct: 15, color: "#71717a" },
     ],
+    assetAllocation: {
+      priorPeriodLabel: "H1 FY25",
+      currentPeriodLabel: "H1 FY26",
+      rows: [
+        { segment: "European Utilities", priorAum: "£880M", currentAum: "£960M", yoyGrowth: "+9%", yoyDirection: "up", pctOfTotal: "28%", note: "Largest" },
+        { segment: "Transport & Logistics", priorAum: "£760M", currentAum: "£830M", yoyGrowth: "+9%", yoyDirection: "up", pctOfTotal: "24%", note: null },
+        { segment: "Telecoms & Digital", priorAum: "£580M", currentAum: "£650M", yoyGrowth: "+12%", yoyDirection: "up", pctOfTotal: "19%", note: "Fastest Growing" },
+        { segment: "Projects & PPP", priorAum: "£440M", currentAum: "£480M", yoyGrowth: "+9%", yoyDirection: "up", pctOfTotal: "14%", note: null },
+        { segment: "Cash & Commitments", priorAum: "£300M", currentAum: "£340M", yoyGrowth: "+13%", yoyDirection: "up", pctOfTotal: "10%", note: null },
+        { segment: "Other", priorAum: "£150M", currentAum: "£140M", yoyGrowth: "-7%", yoyDirection: "down", pctOfTotal: "4%", note: null },
+        { segment: "TOTAL NAV", priorAum: "£3,110M", currentAum: "£3,400M", yoyGrowth: "+9%", yoyDirection: "up", pctOfTotal: "100%", note: null, isTotal: true },
+      ],
+      source: { document: "Half-Year Results", page: "Pg 4" },
+    },
+    infraVitals: {
+      quarterLabel: "H1 FY26",
+      fullYearLabel: "FY26 Annualized",
+      rows: [
+        { metric: "NAV Total Return", quarterly: "+6.4%", fullYear: "+12.8% (ann.)", insight: "Above Target. Outperforming the 8-10% target range, driven by portfolio companies' organic revenue growth." },
+        { metric: "Realizations", quarterly: "£130M", fullYear: "£250M (ann.)", insight: "Active Rotation. Selective disposals at premium-to-NAV valuations, recycling capital into higher-growth opportunities." },
+        { metric: "Dividend Growth", quarterly: "5.6625p (H1)", fullYear: "11.325p target", insight: "Progressive Policy. +6.4% YoY increase, underpinned by strong portfolio cash generation and inflation linkage." },
+        { metric: "Portfolio Revenue Growth", quarterly: "+8% YoY", fullYear: "+8% YoY", insight: "Resilient. All portfolio companies delivering organic revenue growth above inflation, with 65% of revenues inflation-linked." },
+      ],
+      source: { document: "Half-Year Results", page: "Pg 2" },
+    },
     keyQuote: {
       speaker: "Richard Laing",
       role: "Chairman, 3i Infrastructure",
@@ -1060,6 +1197,8 @@ export const earningsReports: CompanyEarningsReport[] = [
     riskDashboard: null,
     varianceTable: [],
     sectorExposure: [],
+    assetAllocation: null,
+    infraVitals: null,
     keyQuote: null,
   },
   {
@@ -1079,6 +1218,8 @@ export const earningsReports: CompanyEarningsReport[] = [
     riskDashboard: null,
     varianceTable: [],
     sectorExposure: [],
+    assetAllocation: null,
+    infraVitals: null,
     keyQuote: null,
   },
   {
@@ -1098,6 +1239,8 @@ export const earningsReports: CompanyEarningsReport[] = [
     riskDashboard: null,
     varianceTable: [],
     sectorExposure: [],
+    assetAllocation: null,
+    infraVitals: null,
     keyQuote: null,
   },
   {
@@ -1117,6 +1260,8 @@ export const earningsReports: CompanyEarningsReport[] = [
     riskDashboard: null,
     varianceTable: [],
     sectorExposure: [],
+    assetAllocation: null,
+    infraVitals: null,
     keyQuote: null,
   },
   {
@@ -1136,6 +1281,8 @@ export const earningsReports: CompanyEarningsReport[] = [
     riskDashboard: null,
     varianceTable: [],
     sectorExposure: [],
+    assetAllocation: null,
+    infraVitals: null,
     keyQuote: null,
   },
   {
@@ -1155,6 +1302,8 @@ export const earningsReports: CompanyEarningsReport[] = [
     riskDashboard: null,
     varianceTable: [],
     sectorExposure: [],
+    assetAllocation: null,
+    infraVitals: null,
     keyQuote: null,
   },
   {
@@ -1174,6 +1323,8 @@ export const earningsReports: CompanyEarningsReport[] = [
     riskDashboard: null,
     varianceTable: [],
     sectorExposure: [],
+    assetAllocation: null,
+    infraVitals: null,
     keyQuote: null,
   },
   {
@@ -1193,6 +1344,8 @@ export const earningsReports: CompanyEarningsReport[] = [
     riskDashboard: null,
     varianceTable: [],
     sectorExposure: [],
+    assetAllocation: null,
+    infraVitals: null,
     keyQuote: null,
   },
 ];
