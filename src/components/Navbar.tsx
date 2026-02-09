@@ -10,7 +10,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
-    { href: "/", label: "Daily Briefing" },
+    { href: "/", label: "Weekly Briefing" },
     { href: "/tracker", label: "Deal Database" },
     { href: "/earnings", label: "Earnings" },
   ];

@@ -131,7 +131,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
   );
 }
 
-export function DailyBriefing() {
+export function WeeklyBriefing() {
   const recentDeals = getRecentDeals();
 
   return (
@@ -140,8 +140,8 @@ export function DailyBriefing() {
 
       {/* Timeline header */}
       <div className="mt-10 lg:mt-14 mb-6 lg:mb-8">
-        <h2 className="text-lg lg:text-xl xl:text-2xl font-semibold text-zinc-100">Recent Activity</h2>
-        <p className="text-sm lg:text-base text-zinc-500">Latest infrastructure M&A deals</p>
+        <h2 className="text-lg lg:text-xl xl:text-2xl font-semibold text-zinc-100">This Week&#39;s Activity</h2>
+        <p className="text-sm lg:text-base text-zinc-500">Infrastructure M&A transactions announced this week</p>
       </div>
 
       {/* Timeline */}
@@ -159,7 +159,7 @@ export function DailyBriefing() {
             <div className="h-2 w-2 rounded-full bg-zinc-700" />
           </div>
           <p className="text-xs text-zinc-600 pt-0.5">
-            End of briefing &mdash; {recentDeals.length} items
+            End of weekly briefing &mdash; {recentDeals.length} transactions
           </p>
         </div>
       </div>
