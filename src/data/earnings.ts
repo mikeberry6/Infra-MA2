@@ -332,17 +332,17 @@ export const companies: Company[] = [
     website: "https://www.partnersgroup.com",
   },
   {
-    id: "stepstone",
-    name: "StepStone Group",
-    ticker: "STEP",
-    exchange: "NASDAQ",
-    sector: "Private Markets Specialist",
-    description: "Global private markets investment firm with $42B in infrastructure capital allocations, providing fund investments, co-investments, and secondaries advisory.",
-    infraAum: 42.4,
-    totalAum: 220,
-    headquarters: "New York, NY",
-    reportingCurrency: "USD",
-    website: "https://www.stepstonegroup.com",
+    id: "eqt",
+    name: "EQT AB",
+    ticker: "EQT",
+    exchange: "OMX",
+    sector: "Alternative Asset Manager",
+    description: "Leading European alternative asset manager with a dedicated Infrastructure platform (EQT Infrastructure) investing in digital, energy transition, and social infrastructure across Europe and Asia-Pacific.",
+    infraAum: 64.5,
+    totalAum: 134,
+    headquarters: "Stockholm, Sweden",
+    reportingCurrency: "EUR",
+    website: "https://www.eqtgroup.com",
   },
   {
     id: "swiss-life",
@@ -1641,137 +1641,159 @@ export const earningsReports: CompanyEarningsReport[] = [
     },
   },
 
-  // ─── StepStone Group ───────────────────────────────────────
-  // Reported Fiscal Q3 FY2026 (Dec 2025 quarter) on Feb 5, 2026
+  // ─── EQT AB ──────────────────────────────────────────────
+  // Reported FY 2025 on Jan 29, 2026
   {
-    companyId: "stepstone",
+    companyId: "eqt",
     quarter: "Q4 2025",
-    reportDate: "2026-02-05T12:00:00Z",
+    reportDate: "2026-01-29T06:00:00Z",
     expectedDate: null,
     sources: [
       {
-        type: "earnings_release",
-        label: "Q3 FY2026 Earnings Release",
-        url: "https://www.stocktitan.net/news/STEP/step-stone-group-reports-third-quarter-fiscal-year-2026-pez1vfq0xmvw.html",
-        date: "2026-02-05",
+        type: "annual_report",
+        label: "FY 2025 Annual Report",
+        url: "https://eqtgroup.com/investors/reports-and-presentations/",
+        date: "2026-01-29",
       },
       {
-        type: "supplement",
-        label: "Q3 FY2026 Supplement",
-        url: "https://ir.stepstonegroup.com/financial-information/quarterly-results",
-        date: "2026-02-05",
+        type: "earnings_release",
+        label: "FY 2025 Earnings Release",
+        url: "https://eqtgroup.com/news/2026/eqt-ab-full-year-results-2025",
+        date: "2026-01-29",
       },
       {
         type: "transcript",
-        label: "Q3 FY2026 Earnings Call Transcript",
-        url: "https://www.fool.com/earnings/call-transcripts/2026/02/05/stepstone-step-q3-fy2026-earnings-call-transcript/",
-        date: "2026-02-05",
+        label: "FY 2025 Earnings Call Transcript",
+        url: "https://www.fool.com/earnings/call-transcripts/2026/01/29/eqt-ab-fy-2025-earnings-call-transcript/",
+        date: "2026-01-29",
       },
     ],
-    primaryDriver: "Infrastructure AUM Grows 23% YoY to $42B",
-    thematicFocus: ["Private Wealth", "Infrastructure Secondaries", "Data Services"],
+    primaryDriver: "Infrastructure VI Close Drives Record Fundraising (+117% YoY)",
+    thematicFocus: ["Digital Infrastructure", "Energy Transition", "European Core Infra"],
     capitalActivity: {
-      inflows: "$2.0B",
-      deployed: null,
+      inflows: "€10.2B",
+      deployed: "€7.0B",
       realizations: null,
-      source: { document: "Q3 FY26 Release", page: "Pg 3" },
+      source: { document: "FY 2025 Report", page: "Pg 8" },
     },
     scale: {
-      totalAum: "$220B",
-      infraAum: "$42.4B",
-      infraAumGrowthYoy: "+23% YoY",
+      totalAum: "€134B",
+      infraAum: "€64.5B",
+      infraAumGrowthYoy: "+2% YoY",
       dryPowder: null,
-      infraDryPowder: "$2.6B",
-      source: { document: "Q3 FY26 Supplement", page: "Pg 2" },
+      infraDryPowder: null,
+      source: { document: "FY 2025 Report", page: "Pg 4" },
     },
     economics: {
       managementFees: null,
-      feeRelatedEarnings: "$89M",
+      feeRelatedEarnings: null,
       freMargin: null,
       realizedPerformanceRevenue: null,
       distributableEarnings: null,
-      source: { document: "Earnings Release", page: "Pg 1" },
+      source: { document: "FY 2025 Report", page: "Pg 1" },
     },
     perpetualFunds: [],
     closedEndFunds: [
       {
-        name: "StepStone Infra Fund (Fund-of-Funds)",
-        vintage: "2023",
-        size: "$4.2B",
+        name: "EQT Infrastructure VI",
+        vintage: "2025",
+        size: "€15B+",
         netIrr: "n/m",
-        dpi: "0.1x",
-        source: { document: "Q3 FY26 Supplement", page: "Pg 10" },
+        dpi: "0.0x",
+        source: { document: "FY 2025 Report", page: "Pg 12" },
+      },
+      {
+        name: "EQT Infrastructure V",
+        vintage: "2021",
+        size: "€12.5B",
+        netIrr: "15%",
+        dpi: "0.6x",
+        source: { document: "FY 2025 Report", page: "Pg 12" },
       },
     ],
     operationalVitalSigns: {
-      dataCenters: null,
-      energy: null,
+      dataCenters: {
+        leasedMW: "280 MW",
+        developmentPipelineMW: "0.5 GW",
+        leasingSpreads: "+10%",
+        source: { document: "FY 2025 Report", page: "Pg 18" },
+      },
+      energy: {
+        ppaWeightedAvgLife: "14 years",
+        pctRevenueInflationLinked: "65%",
+        source: { document: "FY 2025 Report", page: "Pg 20" },
+      },
     },
-    riskDashboard: null,
+    riskDashboard: {
+      lookThroughLeverage: "4.0x",
+      interestCoverage: "4.0x",
+      pctDebtFixed: "85%",
+      pctDebtFloating: "15%",
+      weightedAvgMaturity: "6.0 years",
+      source: { document: "FY 2025 Report", page: "Pg 24" },
+    },
     varianceTable: [
       {
-        metric: "Total AUM",
-        actual: "$220B",
-        comparison: "$179B",
-        comparisonLabel: "Q3 FY25",
-        delta: "+23% YoY",
-        direction: "positive",
-        source: { document: "Earnings Release", page: "Pg 1" },
-      },
-      {
         metric: "Infra AUM",
-        actual: "$42.4B",
-        comparison: "$34.5B",
-        comparisonLabel: "Q3 FY25",
-        delta: "+23% YoY",
+        actual: "€64.5B",
+        comparison: "€63.3B",
+        comparisonLabel: "FY 2024",
+        delta: "+2% YoY",
         direction: "positive",
-        source: { document: "Q3 FY26 Supplement", page: "Pg 2" },
+        source: { document: "FY 2025 Report", page: "Pg 4" },
       },
       {
-        metric: "FRE",
-        actual: "$89M",
-        comparison: "$74M",
-        comparisonLabel: "Q3 FY25",
-        delta: "+20%",
+        metric: "Fundraising",
+        actual: "€10.2B",
+        comparison: "€4.7B",
+        comparisonLabel: "FY 2024",
+        delta: "+117%",
         direction: "positive",
-        source: { document: "Earnings Release", page: "Pg 1" },
+        source: { document: "FY 2025 Report", page: "Pg 8" },
+      },
+      {
+        metric: "Value Creation",
+        actual: "+3.0%",
+        comparison: "+18.0%",
+        comparisonLabel: "FY 2024",
+        delta: "-15pp",
+        direction: "negative",
+        source: { document: "FY 2025 Report", page: "Pg 10" },
       },
     ],
     sectorExposure: [
-      { sector: "Energy & Power", aum: "$16B", pct: 33, color: "#10b981" },
-      { sector: "Transport", aum: "$12B", pct: 25, color: "#f59e0b" },
-      { sector: "Digital Infrastructure", aum: "$8B", pct: 17, color: "#3b82f6" },
-      { sector: "Renewables & Energy", aum: "$7B", pct: 15, color: "#22c55e" },
-      { sector: "Other", aum: "$5B", pct: 10, color: "#71717a" },
+      { sector: "Digital Infrastructure", aum: "€22B", pct: 34, color: "#3b82f6" },
+      { sector: "Energy Transition", aum: "€18B", pct: 28, color: "#10b981" },
+      { sector: "Social Infrastructure", aum: "€12B", pct: 19, color: "#ec4899" },
+      { sector: "Transport", aum: "€8B", pct: 12, color: "#f59e0b" },
+      { sector: "Other", aum: "€4.5B", pct: 7, color: "#71717a" },
     ],
     assetAllocation: {
-      priorPeriodLabel: "Q3 FY25",
-      currentPeriodLabel: "Q3 FY26",
+      priorPeriodLabel: "FY 2024",
+      currentPeriodLabel: "FY 2025",
       rows: [
-        { segment: "Private Equity", priorAum: "$70B", currentAum: "$80B", yoyGrowth: "+14%", yoyDirection: "up", pctOfTotal: "36%", note: "Largest" },
-        { segment: "Infrastructure", priorAum: "$34.5B", currentAum: "$42.4B", yoyGrowth: "+23%", yoyDirection: "up", pctOfTotal: "19%", note: "Fastest Growing" },
-        { segment: "Private Debt", priorAum: "$30B", currentAum: "$38B", yoyGrowth: "+27%", yoyDirection: "up", pctOfTotal: "17%", note: null },
-        { segment: "Real Estate", priorAum: "$25B", currentAum: "$28B", yoyGrowth: "+12%", yoyDirection: "up", pctOfTotal: "13%", note: null },
-        { segment: "Other / Advisory", priorAum: "$19.5B", currentAum: "$31.6B", yoyGrowth: "+62%", yoyDirection: "up", pctOfTotal: "14%", note: "Total capital responsibility $811B" },
-        { segment: "TOTAL", priorAum: "$179B", currentAum: "$220B", yoyGrowth: "+23%", yoyDirection: "up", pctOfTotal: "100%", note: null, isTotal: true },
+        { segment: "Private Capital (PE)", priorAum: "€48B", currentAum: "€50B", yoyGrowth: "+4%", yoyDirection: "up", pctOfTotal: "37%", note: "Largest" },
+        { segment: "Infrastructure", priorAum: "€63.3B", currentAum: "€64.5B", yoyGrowth: "+2%", yoyDirection: "flat", pctOfTotal: "48%", note: "Core Platform" },
+        { segment: "Real Estate & Other", priorAum: "€12B", currentAum: "€19.5B", yoyGrowth: "+63%", yoyDirection: "up", pctOfTotal: "15%", note: null },
+        { segment: "TOTAL", priorAum: "€123B", currentAum: "€134B", yoyGrowth: "+9%", yoyDirection: "up", pctOfTotal: "100%", note: null, isTotal: true },
       ],
-      source: { document: "Q3 FY26 Supplement", page: "Pg 2" },
+      source: { document: "FY 2025 Report", page: "Pg 4" },
     },
     infraVitals: {
       quarterLabel: "Value",
       fullYearLabel: "Trend",
       rows: [
-        { metric: "Infra AUM", quarterly: "$42.4B", fullYear: "\u{1F7E2} +23%", insight: "Fastest growing segment YoY." },
-        { metric: "Fee-Earning AUM", quarterly: "$27.0B", fullYear: "\u{1F7E2} +19%", insight: "High conversion to revenue generation." },
-        { metric: "Inflows (Q3)", quarterly: "$2.0B", fullYear: "\u{1F7E2} Solid", insight: "New capital inflows for Infra strategies." },
-        { metric: "Undeployed Fee Cap", quarterly: "$2.6B", fullYear: "\u{1F7E2} High", insight: "Dry powder available for future fees." },
+        { metric: "Infra AUM", quarterly: "€64.5B", fullYear: "\u{1F7E2} +2%", insight: "Europe's largest infra platform (48% of total firm AUM)." },
+        { metric: "Fundraising", quarterly: "€10.2B", fullYear: "\u{1F680} +117%", insight: "Driven by Infra VI flagship close." },
+        { metric: "Deployment", quarterly: "€7.0B", fullYear: "\u{1F534} -40%", insight: "Disciplined approach; refused to chase high valuations." },
+        { metric: "Value Creation", quarterly: "+3.0%", fullYear: "\u{1F7E1} Normalized", insight: "Down from 18% in 2024; cyclical exit year." },
       ],
-      source: { document: "Earnings Release & Transcript", page: null },
+      source: { document: "FY 2025 Annual Report", page: null },
     },
     keyQuote: {
       speaker: "Analyst Insight",
       role: "InfraTracker",
-      text: "StepStone is a bellwether for LP sentiment. Infrastructure growing at 23% (vs PE at 20%) signals that allocators are overweighting real assets in the current cycle.",
+      text: "EQT's fundraising rebound (+117%) signals strong LP conviction in European infrastructure. The deployment pullback (-40%) reflects discipline — refusing to overpay in a competitive market.",
     },
   },
 
@@ -1977,6 +1999,172 @@ export const earningsReports: CompanyEarningsReport[] = [
     assetAllocation: null,
     infraVitals: null,
     keyQuote: null,
+  },
+];
+
+// ─── Consolidated Scorecard ──────────────────────────────────
+
+export interface ScorecardEntry {
+  companyId: string;
+  ticker: string;
+  period: string;
+  infraAum: { current: string; prior: string };
+  fundraising: { current: string; prior: string };
+  deployment: { current: string; prior: string };
+  performance: { current: string; prior: string };
+}
+
+export const scorecardData: ScorecardEntry[] = [
+  {
+    companyId: "blackstone",
+    ticker: "BX",
+    period: "Q4",
+    infraAum: { current: "$77.0B", prior: "$55.0B" },
+    fundraising: { current: "$4.2B", prior: "$2.8B" },
+    deployment: { current: "$1.8B", prior: "$1.5B" },
+    performance: { current: "+23.5%", prior: "+12.1%" },
+  },
+  {
+    companyId: "brookfield",
+    ticker: "BAM",
+    period: "Q4",
+    infraAum: { current: "$198.0B", prior: "$180.0B" },
+    fundraising: { current: "$7.0B", prior: "$5.8B" },
+    deployment: { current: "$0.8B", prior: "$1.2B" },
+    performance: { current: "+14.2%", prior: "+12.0%" },
+  },
+  {
+    companyId: "kkr",
+    ticker: "KKR",
+    period: "Q4",
+    infraAum: { current: "$192.5B", prior: "$166.0B" },
+    fundraising: { current: "$10.0B", prior: "$5.3B" },
+    deployment: { current: "$7.5B", prior: "$6.4B" },
+    performance: { current: "+11.0%", prior: "+9.5%" },
+  },
+  {
+    companyId: "blackrock",
+    ticker: "BLK",
+    period: "Q4",
+    infraAum: { current: "$112.1B", prior: "$100.1B" },
+    fundraising: { current: "$5.0B", prior: "$1.5B" },
+    deployment: { current: "~$3.0B", prior: "$2.2B" },
+    performance: { current: "+8.4%", prior: "+6.8%" },
+  },
+  {
+    companyId: "macquarie",
+    ticker: "MQG",
+    period: "Q3",
+    infraAum: { current: "A$422B", prior: "A$418B" },
+    fundraising: { current: "A$6.3B", prior: "A$6.0B" },
+    deployment: { current: "A$7.7B", prior: "A$5.5B" },
+    performance: { current: "+9.1%", prior: "+8.5%" },
+  },
+  {
+    companyId: "eqt",
+    ticker: "EQT",
+    period: "FY",
+    infraAum: { current: "€64.5B", prior: "€63.3B" },
+    fundraising: { current: "€10.2B", prior: "€4.7B" },
+    deployment: { current: "€7.0B", prior: "€11.6B" },
+    performance: { current: "+3.0%", prior: "+18.0%" },
+  },
+  {
+    companyId: "apollo",
+    ticker: "APO",
+    period: "Q4",
+    infraAum: { current: "N/A", prior: "N/A" },
+    fundraising: { current: "$11.8B", prior: "$6.5B" },
+    deployment: { current: "$10.0B", prior: "$3.1B" },
+    performance: { current: "+2.3%", prior: "+1.8%" },
+  },
+  {
+    companyId: "ares",
+    ticker: "ARES",
+    period: "Q4",
+    infraAum: { current: "$25.3B", prior: "$24.1B" },
+    fundraising: { current: "$2.9B", prior: "$1.8B" },
+    deployment: { current: "$2.7B", prior: "$1.5B" },
+    performance: { current: "+6.2%", prior: "+5.5%" },
+  },
+  {
+    companyId: "tpg",
+    ticker: "TPG",
+    period: "Q4",
+    infraAum: { current: "$31.3B", prior: "$26.5B" },
+    fundraising: { current: "$1.1B", prior: "$1.7B" },
+    deployment: { current: "$2.0B", prior: "$1.0B" },
+    performance: { current: "+6.5%", prior: "+5.2%" },
+  },
+];
+
+// ─── Analyst Intelligence Trends ────────────────────────────
+
+export interface AnalystTrendPoint {
+  label: string;
+  text: string;
+}
+
+export interface AnalystTrend {
+  id: string;
+  number: number;
+  title: string;
+  subtitle: string;
+  points: AnalystTrendPoint[];
+}
+
+export const analystTrends: AnalystTrend[] = [
+  {
+    id: "fundraising",
+    number: 1,
+    title: "Fundraising",
+    subtitle: 'The "Flight to Quality"',
+    points: [
+      {
+        label: "Trend",
+        text: "Fundraising for infrastructure nearly doubled YoY for top firms (KKR +88%, Apollo +81%, BlackRock +233%).",
+      },
+      {
+        label: "Driver",
+        text: "LPs are aggressively allocating to Infrastructure Debt (Apollo, Ares) and Energy Transition (Brookfield, KKR).",
+      },
+      {
+        label: "Observation",
+        text: "EQT saw a massive rebound in fundraising (+117%) in 2025 compared to a slower 2024, driven by the close of its flagship Infrastructure VI fund.",
+      },
+    ],
+  },
+  {
+    id: "deployment",
+    number: 2,
+    title: "Deployment",
+    subtitle: "Divergent Strategies",
+    points: [
+      {
+        label: "The Aggressors",
+        text: "Apollo (+223%) and Macquarie (+40%) ramped up deployment significantly, capitalizing on private credit demand and asset recycling.",
+      },
+      {
+        label: "The Disciplined",
+        text: "EQT (-40%) and Brookfield (-33%) significantly tapped the brakes on deployment compared to 2024, signaling a refusal to chase high valuations in a crowded market.",
+      },
+    ],
+  },
+  {
+    id: "performance",
+    number: 3,
+    title: "Performance",
+    subtitle: 'The "Data Center" Premium',
+    points: [
+      {
+        label: "Outlier",
+        text: "Blackstone's +23.5% return is nearly double the peer average. This is almost entirely attributable to the valuation surge of QTS Data Centers.",
+      },
+      {
+        label: "Normalization",
+        text: "Most peers (KKR, Macquarie, BlackRock) delivered steady returns in the 8-11% range. EQT's performance normalized to 3% (Value Creation) in 2025 after a massive 18% year in 2024, reflecting the cyclical nature of realized exits.",
+      },
+    ],
   },
 ];
 
