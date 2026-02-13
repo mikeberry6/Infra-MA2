@@ -370,6 +370,58 @@ export const companies: Company[] = [
     reportingCurrency: "USD",
     website: "https://www.tpg.com",
   },
+  {
+    id: "gip",
+    name: "Global Infrastructure Partners",
+    ticker: "BLK",
+    exchange: "NYSE",
+    sector: "Infrastructure Fund",
+    description: "Acquired by BlackRock in Oct 2024 for $12.5B. GIP's infrastructure AUM is now reported under BlackRock's alternatives segment. Shown separately for historical tracking.",
+    infraAum: 0,
+    totalAum: 0,
+    headquarters: "New York, NY",
+    reportingCurrency: "USD",
+    website: "https://www.global-infra.com",
+  },
+  {
+    id: "stonepeak",
+    name: "Stonepeak",
+    ticker: "Private",
+    exchange: "Private",
+    sector: "Infrastructure Fund",
+    description: "US-based infrastructure-focused private equity firm managing ~$70B across infrastructure equity, credit, and real assets.",
+    infraAum: 70,
+    totalAum: 70,
+    headquarters: "New York, NY",
+    reportingCurrency: "USD",
+    website: "https://www.stonepeakpartners.com",
+  },
+  {
+    id: "isquared",
+    name: "I Squared Capital",
+    ticker: "Private",
+    exchange: "Private",
+    sector: "Infrastructure Fund",
+    description: "Independent global infrastructure investment manager focused on energy, utilities, digital infrastructure, transport, and social infrastructure.",
+    infraAum: 40,
+    totalAum: 40,
+    headquarters: "Miami, FL",
+    reportingCurrency: "USD",
+    website: "https://www.isquaredcapital.com",
+  },
+  {
+    id: "ecp",
+    name: "Energy Capital Partners",
+    ticker: "Private",
+    exchange: "Private",
+    sector: "Infrastructure Fund",
+    description: "North America-focused energy infrastructure investor specializing in power generation, renewables, midstream, and energy transition.",
+    infraAum: 35,
+    totalAum: 35,
+    headquarters: "Short Hills, NJ",
+    reportingCurrency: "USD",
+    website: "https://www.ecpartners.com",
+  },
 ];
 
 // ─── Sector Exposure Colors ─────────────────────────────────
@@ -2012,6 +2064,18 @@ export interface ScorecardEntry {
   fundraising: { current: string; prior: string };
   deployment: { current: string; prior: string };
   performance: { current: string; prior: string };
+  isPlaceholder?: boolean;
+}
+
+export interface RowExpansionContent {
+  companyId: string;
+  period: string;
+  reportDate: string | null;
+  periodType: "Q3" | "Q4" | "FY";
+  keyQuotes: { text: string; speaker: string; role: string }[];
+  flagshipFunds: { name: string; target: string; status: string }[];
+  notableDeals: string[];
+  outlook: string;
 }
 
 export const scorecardData: ScorecardEntry[] = [
@@ -2096,6 +2160,223 @@ export const scorecardData: ScorecardEntry[] = [
     deployment: { current: "$2.0B", prior: "$1.0B" },
     performance: { current: "+6.5%", prior: "+5.2%" },
   },
+  {
+    companyId: "gip",
+    ticker: "BLK",
+    period: "—",
+    infraAum: { current: "See BLK", prior: "—" },
+    fundraising: { current: "—", prior: "—" },
+    deployment: { current: "—", prior: "—" },
+    performance: { current: "—", prior: "—" },
+    isPlaceholder: true,
+  },
+  {
+    companyId: "stonepeak",
+    ticker: "Private",
+    period: "—",
+    infraAum: { current: "~$70B", prior: "—" },
+    fundraising: { current: "—", prior: "—" },
+    deployment: { current: "—", prior: "—" },
+    performance: { current: "—", prior: "—" },
+    isPlaceholder: true,
+  },
+  {
+    companyId: "isquared",
+    ticker: "Private",
+    period: "—",
+    infraAum: { current: "~$40B", prior: "—" },
+    fundraising: { current: "—", prior: "—" },
+    deployment: { current: "—", prior: "—" },
+    performance: { current: "—", prior: "—" },
+    isPlaceholder: true,
+  },
+  {
+    companyId: "ecp",
+    ticker: "Private",
+    period: "—",
+    infraAum: { current: "~$35B", prior: "—" },
+    fundraising: { current: "—", prior: "—" },
+    deployment: { current: "—", prior: "—" },
+    performance: { current: "—", prior: "—" },
+    isPlaceholder: true,
+  },
+];
+
+// ─── Row Expansion Content ──────────────────────────────────
+
+export const rowExpansionContent: RowExpansionContent[] = [
+  {
+    companyId: "blackstone",
+    period: "Q4 2025",
+    reportDate: "2026-01-29",
+    periodType: "Q4",
+    keyQuotes: [
+      { text: "Infrastructure was our highest-returning asset class in 2025, delivering 23.5% — nearly double real estate.", speaker: "Jon Gray", role: "President, Blackstone" },
+    ],
+    flagshipFunds: [
+      { name: "Blackstone Infrastructure Partners (BIP)", target: "$77B platform AUM", status: "Evergreen" },
+      { name: "BXINFRA (Retail Vehicle)", target: "Growing", status: "Open" },
+    ],
+    notableDeals: [
+      "QTS Realty data center portfolio revaluation drove majority of Q4 appreciation",
+      "Continued buildout of 2.8 GW data center development pipeline",
+      "New energy transition investments in renewable power platforms",
+    ],
+    outlook: "Management sees infrastructure as the firm's top-performing asset class going forward, with AI-driven data center demand providing a multi-year tailwind. Targeting continued retail capital expansion through BXINFRA.",
+  },
+  {
+    companyId: "brookfield",
+    period: "Q4 2025",
+    reportDate: "2026-02-04",
+    periodType: "Q4",
+    keyQuotes: [
+      { text: "We are building the world's largest AI infrastructure platform — this is our moment.", speaker: "Bruce Flatt", role: "CEO, Brookfield" },
+    ],
+    flagshipFunds: [
+      { name: "Brookfield Infrastructure Fund V (BIF V)", target: "$30B", status: "In market" },
+      { name: "Brookfield Global Transition Fund II (BGTF II)", target: "$17B", status: "Final close" },
+    ],
+    notableDeals: [
+      "Closed $5B AI infrastructure fund for hyperscaler data centers",
+      "Acquired Colonial Pipeline stake expansion",
+      "$4B in realizations from mature infrastructure assets",
+    ],
+    outlook: "Brookfield sees 2026 as a deployment acceleration year, with record dry powder and a massive pipeline of AI/data center and energy transition opportunities. Private wealth channel is scaling rapidly.",
+  },
+  {
+    companyId: "kkr",
+    period: "Q4 2025",
+    reportDate: "2026-02-04",
+    periodType: "Q4",
+    keyQuotes: [
+      { text: "Our infrastructure business has nearly doubled in three years. We see $1 trillion of infrastructure investment needed annually.", speaker: "Scott Nuttall", role: "Co-CEO, KKR" },
+    ],
+    flagshipFunds: [
+      { name: "KKR Global Infrastructure Investors V (GII V)", target: "$17B", status: "Final close expected 2026" },
+      { name: "KKR Diversified Core Infrastructure Fund", target: "Evergreen", status: "Open" },
+    ],
+    notableDeals: [
+      "$7.5B deployed across digital infrastructure, energy transition, and transport",
+      "Continued investment in Singtel's data center platform (Southeast Asia)",
+      "European fiber and renewable energy platform acquisitions",
+    ],
+    outlook: "KKR expects infrastructure to remain its fastest-growing real assets strategy, with fundraising momentum accelerating into 2026. Strong LP demand for both drawdown and perpetual vehicles.",
+  },
+  {
+    companyId: "blackrock",
+    period: "Q4 2025",
+    reportDate: "2026-01-15",
+    periodType: "Q4",
+    keyQuotes: [
+      { text: "Infrastructure is now BlackRock's fastest-growing alternatives segment, validating the GIP acquisition thesis.", speaker: "Larry Fink", role: "Chairman & CEO, BlackRock" },
+    ],
+    flagshipFunds: [
+      { name: "GIP V", target: "$15B", status: "In market" },
+      { name: "GIP IV", target: "$22B", status: "Fully invested" },
+      { name: "Climate Infrastructure Fund", target: "$5B+", status: "Fundraising" },
+    ],
+    notableDeals: [
+      "$5B in net infrastructure inflows — strongest of any alternatives sub-segment",
+      "GIP integration fully completed ahead of schedule",
+      "New climate infrastructure mandates from sovereign wealth funds",
+    ],
+    outlook: "BlackRock views infrastructure as a cornerstone of its private markets pivot. The GIP platform provides differentiated origination capabilities, and the firm expects infrastructure AUM to surpass $150B by 2027.",
+  },
+  {
+    companyId: "macquarie",
+    period: "Q3 FY2026",
+    reportDate: "2026-02-10",
+    periodType: "Q3",
+    keyQuotes: [
+      { text: "Private markets resilience continues to offset public investment divestments, with strong deployment momentum.", speaker: "Shemara Wikramanayake", role: "CEO, Macquarie Group" },
+    ],
+    flagshipFunds: [
+      { name: "MIP V (Macquarie Infrastructure Partners V)", target: "~$6B", status: "Fundraising" },
+      { name: "GIG Renewables Fund III", target: "$5B+", status: "In market" },
+    ],
+    notableDeals: [
+      "A$7.7B deployed across 23 deals in Q3 — highest quarterly pace",
+      "Sold Green Investment Group (GIG) public equity assets for significant gain",
+      "New data center investments in Asia-Pacific region",
+    ],
+    outlook: "Macquarie maintains its position as the highest-velocity deployer in infrastructure. The firm sees sustained deal flow in energy transition and digital infrastructure across Asia-Pacific and Europe.",
+  },
+  {
+    companyId: "eqt",
+    period: "FY 2025",
+    reportDate: "2026-01-23",
+    periodType: "FY",
+    keyQuotes: [
+      { text: "2025 was a record fundraising year for EQT Infrastructure, driven by the successful close of our flagship Fund VI.", speaker: "Christian Sinding", role: "CEO, EQT" },
+    ],
+    flagshipFunds: [
+      { name: "EQT Infrastructure VI", target: "€20B+", status: "Final close achieved" },
+      { name: "EQT Active Core Infrastructure", target: "Evergreen", status: "Open" },
+    ],
+    notableDeals: [
+      "€7.0B deployed across digital infrastructure and energy transition",
+      "Major European fiber platform consolidation plays",
+      "Exited several mature assets contributing to €4.5B in realizations",
+    ],
+    outlook: "EQT sees European digital infrastructure as a multi-decade opportunity. The firm is shifting toward longer-duration capital through its Active Core Infrastructure vehicle while maintaining its flagship drawdown series.",
+  },
+  {
+    companyId: "apollo",
+    period: "Q4 2025",
+    reportDate: "2026-02-04",
+    periodType: "Q4",
+    keyQuotes: [
+      { text: "We originated a record $97 billion in the quarter. Our infrastructure credit strategy is the fastest-growing part of our platform.", speaker: "Marc Rowan", role: "CEO, Apollo" },
+    ],
+    flagshipFunds: [
+      { name: "Apollo Clean Transition Capital (ACT)", target: "$20B+", status: "Growing platform" },
+      { name: "Apollo Infrastructure Equity", target: "Multi-strategy", status: "Active" },
+    ],
+    notableDeals: [
+      "$11.8B in infrastructure-related fundraising, dominated by credit strategies",
+      "$10B deployed — largest quarterly infrastructure deployment in firm history",
+      "Athene balance sheet driving significant infrastructure debt origination",
+    ],
+    outlook: "Apollo's infrastructure strategy is uniquely credit-heavy, leveraging its Athene insurance platform for origination scale. Management expects infrastructure credit to become a $100B+ book within 3 years.",
+  },
+  {
+    companyId: "ares",
+    period: "Q4 2025",
+    reportDate: "2026-02-06",
+    periodType: "Q4",
+    keyQuotes: [
+      { text: "Infrastructure debt and our power strategy are becoming core growth vectors for Ares.", speaker: "Michael Arougheti", role: "CEO, Ares Management" },
+    ],
+    flagshipFunds: [
+      { name: "Ares Climate Infrastructure Partners", target: "$3.5B", status: "In market" },
+      { name: "Ares Infrastructure Debt Fund IV", target: "$5B+", status: "Fundraising" },
+    ],
+    notableDeals: [
+      "$2.7B deployed across infrastructure debt and climate strategies",
+      "New energy transition credit facilities for renewable developers",
+      "Expanded power strategy with utility-scale battery storage investments",
+    ],
+    outlook: "Ares sees infrastructure credit as one of the largest addressable markets in alternatives. The firm is scaling its power strategy and expects infrastructure to grow from ~4% to 8-10% of firm AUM over the next 3 years.",
+  },
+  {
+    companyId: "tpg",
+    period: "Q4 2025",
+    reportDate: "2026-02-05",
+    periodType: "Q4",
+    keyQuotes: [
+      { text: "TPG Rise Climate continues to attract significant LP interest, with our impact-focused infrastructure strategy resonating globally.", speaker: "Jon Winkelried", role: "CEO, TPG" },
+    ],
+    flagshipFunds: [
+      { name: "TPG Rise Climate Fund", target: "$10B+", status: "Deploying" },
+      { name: "TPG Rise Climate II", target: "In planning", status: "Expected 2026" },
+    ],
+    notableDeals: [
+      "$2.0B deployed in Q4 across climate infrastructure and energy transition",
+      "New investments in utility-scale solar and grid-scale storage",
+      "Asian clean energy platform expansion",
+    ],
+    outlook: "TPG is positioning Rise Climate as one of the largest dedicated climate infrastructure funds. The firm expects to launch Rise Climate II in 2026, targeting $15B+ as LP demand for impact-oriented infrastructure grows.",
+  },
 ];
 
 // ─── Analyst Intelligence Trends ────────────────────────────
@@ -2163,6 +2444,34 @@ export const analystTrends: AnalystTrend[] = [
       {
         label: "Normalization",
         text: "Most peers (KKR, Macquarie, BlackRock) delivered steady returns in the 8-11% range. EQT's performance normalized to 3% (Value Creation) in 2025 after a massive 18% year in 2024, reflecting the cyclical nature of realized exits.",
+      },
+      {
+        label: "So What",
+        text: "The data center premium is creating a bifurcation in 2026 deployment appetite — firms with digital infrastructure exposure (Blackstone, KKR) are accelerating capital deployment, while those without are competing on yield. Blackstone's QTS-driven outperformance likely reflects a one-time mark-to-market revaluation rather than sustainable recurring returns, but it validates the thesis that digital infrastructure commands a structural premium. For LPs, this performance divergence is accelerating the 'barbell' allocation trend: core infrastructure for yield stability, and digital/energy transition for outsized returns.",
+      },
+    ],
+  },
+  {
+    id: "credit-crossover",
+    number: 4,
+    title: "Infrastructure Debt",
+    subtitle: 'The "Credit Crossover"',
+    points: [
+      {
+        label: "Trend",
+        text: "Apollo ($11.8B) and Ares ($2.9B) are leading deployment through infrastructure debt and private credit strategies, blurring the line between traditional infrastructure equity and credit.",
+      },
+      {
+        label: "Shift",
+        text: "Apollo's $97B quarterly origination record was fueled by its Athene insurance balance sheet, enabling infrastructure debt origination at a scale that traditional equity-focused GPs cannot match.",
+      },
+      {
+        label: "Competitive Dynamics",
+        text: "The credit crossover is reshaping competitive dynamics: hybrid platforms (Apollo, Ares, Brookfield) that can offer both equity and debt solutions are winning mandates over pure-play infrastructure equity funds. LPs increasingly want one-stop-shop infrastructure platforms.",
+      },
+      {
+        label: "Implication",
+        text: "Traditional infrastructure equity funds face margin pressure as credit alternatives offer comparable risk-adjusted returns with shorter duration and better downside protection. The winners in 2026 will be platforms that can originate across the entire capital structure.",
       },
     ],
   },
