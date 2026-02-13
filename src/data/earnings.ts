@@ -2064,7 +2064,27 @@ export interface ScorecardEntry {
   fundraising: { current: string; prior: string };
   deployment: { current: string; prior: string };
   performance: { current: string; prior: string };
+  activeThemes?: string[];
   isPlaceholder?: boolean;
+}
+
+export interface FlagshipFundDetail {
+  name: string;
+  vintage: number | null;
+  targetSize: string;
+  finalClose: string | null;
+  estPctDeployed: string;
+  successorSignaled: boolean;
+  target?: string;
+  status?: string;
+}
+
+export interface DealSignal {
+  signal: "Net Buyer" | "Net Seller" | "Balanced";
+  grossRealizations: string | null;
+  notableExits: string[];
+  flagshipDPI: string | null;
+  dryPowderPressure: "high" | "moderate" | "harvest";
 }
 
 export interface RowExpansionContent {
@@ -2073,9 +2093,11 @@ export interface RowExpansionContent {
   reportDate: string | null;
   periodType: "Q3" | "Q4" | "FY";
   keyQuotes: { text: string; speaker: string; role: string }[];
-  flagshipFunds: { name: string; target: string; status: string }[];
+  flagshipFunds: FlagshipFundDetail[];
   notableDeals: string[];
   outlook: string;
+  dealSignal?: DealSignal;
+  sectorAppetite?: string[];
 }
 
 export const scorecardData: ScorecardEntry[] = [
@@ -2087,6 +2109,7 @@ export const scorecardData: ScorecardEntry[] = [
     fundraising: { current: "$4.2B", prior: "$2.8B" },
     deployment: { current: "$1.8B", prior: "$1.5B" },
     performance: { current: "+23.5%", prior: "+12.1%" },
+    activeThemes: ["Data Centers", "Renewables", "Transport"],
   },
   {
     companyId: "brookfield",
@@ -2096,6 +2119,7 @@ export const scorecardData: ScorecardEntry[] = [
     fundraising: { current: "$7.0B", prior: "$5.8B" },
     deployment: { current: "$0.8B", prior: "$1.2B" },
     performance: { current: "+14.2%", prior: "+12.0%" },
+    activeThemes: ["Renewables", "Utilities", "Data Centers"],
   },
   {
     companyId: "kkr",
@@ -2105,6 +2129,7 @@ export const scorecardData: ScorecardEntry[] = [
     fundraising: { current: "$10.0B", prior: "$5.3B" },
     deployment: { current: "$7.5B", prior: "$6.4B" },
     performance: { current: "+11.0%", prior: "+9.5%" },
+    activeThemes: ["Digital Infra", "Asian Telecom", "Energy"],
   },
   {
     companyId: "blackrock",
@@ -2114,6 +2139,7 @@ export const scorecardData: ScorecardEntry[] = [
     fundraising: { current: "$5.0B", prior: "$1.5B" },
     deployment: { current: "~$3.0B", prior: "$2.2B" },
     performance: { current: "+8.4%", prior: "+6.8%" },
+    activeThemes: ["Renewables", "Digital Infra", "Climate"],
   },
   {
     companyId: "macquarie",
@@ -2123,6 +2149,7 @@ export const scorecardData: ScorecardEntry[] = [
     fundraising: { current: "A$6.3B", prior: "A$6.0B" },
     deployment: { current: "A$7.7B", prior: "A$5.5B" },
     performance: { current: "+9.1%", prior: "+8.5%" },
+    activeThemes: ["Digital Infra", "Renewables", "Utilities"],
   },
   {
     companyId: "eqt",
@@ -2132,6 +2159,7 @@ export const scorecardData: ScorecardEntry[] = [
     fundraising: { current: "€10.2B", prior: "€4.7B" },
     deployment: { current: "€7.0B", prior: "€11.6B" },
     performance: { current: "+3.0%", prior: "+18.0%" },
+    activeThemes: ["Digital Infra", "Fiber", "Energy Transition"],
   },
   {
     companyId: "apollo",
@@ -2141,6 +2169,7 @@ export const scorecardData: ScorecardEntry[] = [
     fundraising: { current: "$11.8B", prior: "$6.5B" },
     deployment: { current: "$10.0B", prior: "$3.1B" },
     performance: { current: "+2.3%", prior: "+1.8%" },
+    activeThemes: ["Clean Transition", "Infra Debt", "Power"],
   },
   {
     companyId: "ares",
@@ -2150,6 +2179,7 @@ export const scorecardData: ScorecardEntry[] = [
     fundraising: { current: "$2.9B", prior: "$1.8B" },
     deployment: { current: "$2.7B", prior: "$1.5B" },
     performance: { current: "+6.2%", prior: "+5.5%" },
+    activeThemes: ["Infra Debt", "Renewables", "Climate"],
   },
   {
     companyId: "tpg",
@@ -2159,6 +2189,7 @@ export const scorecardData: ScorecardEntry[] = [
     fundraising: { current: "$1.1B", prior: "$1.7B" },
     deployment: { current: "$2.0B", prior: "$1.0B" },
     performance: { current: "+6.5%", prior: "+5.2%" },
+    activeThemes: ["Energy Transition", "Decarbonization", "Industrial"],
   },
   {
     companyId: "gip",
@@ -2214,8 +2245,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       { text: "Infrastructure was our highest-returning asset class in 2025, delivering 23.5% — nearly double real estate.", speaker: "Jon Gray", role: "President, Blackstone" },
     ],
     flagshipFunds: [
-      { name: "Blackstone Infrastructure Partners (BIP)", target: "$77B platform AUM", status: "Evergreen" },
-      { name: "BXINFRA (Retail Vehicle)", target: "Growing", status: "Open" },
+      { name: "Blackstone Infrastructure Partners III", vintage: 2023, targetSize: "$10.0B", finalClose: null, estPctDeployed: "~30%", successorSignaled: false },
+      { name: "BXINFRA (Retail Vehicle)", vintage: null, targetSize: "Evergreen", finalClose: null, estPctDeployed: "N/A", successorSignaled: false },
     ],
     notableDeals: [
       "QTS Realty data center portfolio revaluation drove majority of Q4 appreciation",
@@ -2223,6 +2254,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       "New energy transition investments in renewable power platforms",
     ],
     outlook: "Management sees infrastructure as the firm's top-performing asset class going forward, with AI-driven data center demand providing a multi-year tailwind. Targeting continued retail capital expansion through BXINFRA.",
+    dealSignal: { signal: "Net Buyer", grossRealizations: "$0.9B", notableExits: [], flagshipDPI: "0.1x", dryPowderPressure: "moderate" },
+    sectorAppetite: ["Digital Infrastructure", "Energy Transition", "Transport"],
   },
   {
     companyId: "brookfield",
@@ -2233,8 +2266,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       { text: "We are building the world's largest AI infrastructure platform — this is our moment.", speaker: "Bruce Flatt", role: "CEO, Brookfield" },
     ],
     flagshipFunds: [
-      { name: "Brookfield Infrastructure Fund V (BIF V)", target: "$30B", status: "In market" },
-      { name: "Brookfield Global Transition Fund II (BGTF II)", target: "$17B", status: "Final close" },
+      { name: "Brookfield Infrastructure Fund V (BIF V)", vintage: 2024, targetSize: "$30B", finalClose: null, estPctDeployed: "~15%", successorSignaled: false },
+      { name: "Brookfield Global Transition Fund II (BGTF II)", vintage: 2023, targetSize: "$17B", finalClose: "$17B", estPctDeployed: "~40%", successorSignaled: false },
     ],
     notableDeals: [
       "Closed $5B AI infrastructure fund for hyperscaler data centers",
@@ -2242,6 +2275,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       "$4B in realizations from mature infrastructure assets",
     ],
     outlook: "Brookfield sees 2026 as a deployment acceleration year, with record dry powder and a massive pipeline of AI/data center and energy transition opportunities. Private wealth channel is scaling rapidly.",
+    dealSignal: { signal: "Net Buyer", grossRealizations: "$4.0B", notableExits: ["Partial Colonial Pipeline sale"], flagshipDPI: "0.3x", dryPowderPressure: "moderate" },
+    sectorAppetite: ["Renewables", "Utilities", "Data Centers"],
   },
   {
     companyId: "kkr",
@@ -2252,8 +2287,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       { text: "Our infrastructure business has nearly doubled in three years. We see $1 trillion of infrastructure investment needed annually.", speaker: "Scott Nuttall", role: "Co-CEO, KKR" },
     ],
     flagshipFunds: [
-      { name: "KKR Global Infrastructure Investors V (GII V)", target: "$17B", status: "Final close expected 2026" },
-      { name: "KKR Diversified Core Infrastructure Fund", target: "Evergreen", status: "Open" },
+      { name: "KKR Global Infrastructure Investors V (GII V)", vintage: 2024, targetSize: "$17B", finalClose: null, estPctDeployed: "~20%", successorSignaled: false },
+      { name: "KKR Diversified Core Infrastructure Fund", vintage: null, targetSize: "Evergreen", finalClose: null, estPctDeployed: "N/A", successorSignaled: false },
     ],
     notableDeals: [
       "$7.5B deployed across digital infrastructure, energy transition, and transport",
@@ -2261,6 +2296,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       "European fiber and renewable energy platform acquisitions",
     ],
     outlook: "KKR expects infrastructure to remain its fastest-growing real assets strategy, with fundraising momentum accelerating into 2026. Strong LP demand for both drawdown and perpetual vehicles.",
+    dealSignal: { signal: "Net Buyer", grossRealizations: "$2.1B", notableExits: [], flagshipDPI: "0.2x", dryPowderPressure: "moderate" },
+    sectorAppetite: ["Digital Infrastructure", "Asian Telecom", "Energy Transition"],
   },
   {
     companyId: "blackrock",
@@ -2271,9 +2308,9 @@ export const rowExpansionContent: RowExpansionContent[] = [
       { text: "Infrastructure is now BlackRock's fastest-growing alternatives segment, validating the GIP acquisition thesis.", speaker: "Larry Fink", role: "Chairman & CEO, BlackRock" },
     ],
     flagshipFunds: [
-      { name: "GIP V", target: "$15B", status: "In market" },
-      { name: "GIP IV", target: "$22B", status: "Fully invested" },
-      { name: "Climate Infrastructure Fund", target: "$5B+", status: "Fundraising" },
+      { name: "GIP V", vintage: 2024, targetSize: "$15B", finalClose: null, estPctDeployed: "~25%", successorSignaled: false },
+      { name: "GIP IV", vintage: 2021, targetSize: "$22B", finalClose: "$22B", estPctDeployed: "~85%", successorSignaled: true },
+      { name: "Climate Infrastructure Fund", vintage: 2024, targetSize: "$5B+", finalClose: null, estPctDeployed: "~10%", successorSignaled: false },
     ],
     notableDeals: [
       "$5B in net infrastructure inflows — strongest of any alternatives sub-segment",
@@ -2281,6 +2318,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       "New climate infrastructure mandates from sovereign wealth funds",
     ],
     outlook: "BlackRock views infrastructure as a cornerstone of its private markets pivot. The GIP platform provides differentiated origination capabilities, and the firm expects infrastructure AUM to surpass $150B by 2027.",
+    dealSignal: { signal: "Net Buyer", grossRealizations: "$1.5B", notableExits: [], flagshipDPI: "0.4x", dryPowderPressure: "harvest" },
+    sectorAppetite: ["Renewables", "Digital Infrastructure", "Climate"],
   },
   {
     companyId: "macquarie",
@@ -2291,8 +2330,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       { text: "Private markets resilience continues to offset public investment divestments, with strong deployment momentum.", speaker: "Shemara Wikramanayake", role: "CEO, Macquarie Group" },
     ],
     flagshipFunds: [
-      { name: "MIP V (Macquarie Infrastructure Partners V)", target: "~$6B", status: "Fundraising" },
-      { name: "GIG Renewables Fund III", target: "$5B+", status: "In market" },
+      { name: "MIP V (Macquarie Infrastructure Partners V)", vintage: 2024, targetSize: "~$6B", finalClose: null, estPctDeployed: "~20%", successorSignaled: false },
+      { name: "GIG Renewables Fund III", vintage: 2023, targetSize: "$5B+", finalClose: null, estPctDeployed: "~35%", successorSignaled: false },
     ],
     notableDeals: [
       "A$7.7B deployed across 23 deals in Q3 — highest quarterly pace",
@@ -2300,6 +2339,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       "New data center investments in Asia-Pacific region",
     ],
     outlook: "Macquarie maintains its position as the highest-velocity deployer in infrastructure. The firm sees sustained deal flow in energy transition and digital infrastructure across Asia-Pacific and Europe.",
+    dealSignal: { signal: "Net Buyer", grossRealizations: "A$2.1B", notableExits: ["GIG public equity asset sale"], flagshipDPI: "0.3x", dryPowderPressure: "moderate" },
+    sectorAppetite: ["Digital Infrastructure", "Renewables", "Utilities"],
   },
   {
     companyId: "eqt",
@@ -2310,8 +2351,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       { text: "2025 was a record fundraising year for EQT Infrastructure, driven by the successful close of our flagship Fund VI.", speaker: "Christian Sinding", role: "CEO, EQT" },
     ],
     flagshipFunds: [
-      { name: "EQT Infrastructure VI", target: "€20B+", status: "Final close achieved" },
-      { name: "EQT Active Core Infrastructure", target: "Evergreen", status: "Open" },
+      { name: "EQT Infrastructure VI", vintage: 2024, targetSize: "€20B+", finalClose: "€21B", estPctDeployed: "~35%", successorSignaled: false },
+      { name: "EQT Active Core Infrastructure", vintage: null, targetSize: "Evergreen", finalClose: null, estPctDeployed: "N/A", successorSignaled: false },
     ],
     notableDeals: [
       "€7.0B deployed across digital infrastructure and energy transition",
@@ -2319,6 +2360,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       "Exited several mature assets contributing to €4.5B in realizations",
     ],
     outlook: "EQT sees European digital infrastructure as a multi-decade opportunity. The firm is shifting toward longer-duration capital through its Active Core Infrastructure vehicle while maintaining its flagship drawdown series.",
+    dealSignal: { signal: "Balanced", grossRealizations: "€4.5B", notableExits: ["Multiple mature asset exits"], flagshipDPI: "0.5x", dryPowderPressure: "moderate" },
+    sectorAppetite: ["Digital Infrastructure", "Fiber", "Energy Transition"],
   },
   {
     companyId: "apollo",
@@ -2329,8 +2372,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       { text: "We originated a record $97 billion in the quarter. Our infrastructure credit strategy is the fastest-growing part of our platform.", speaker: "Marc Rowan", role: "CEO, Apollo" },
     ],
     flagshipFunds: [
-      { name: "Apollo Clean Transition Capital (ACT)", target: "$20B+", status: "Growing platform" },
-      { name: "Apollo Infrastructure Equity", target: "Multi-strategy", status: "Active" },
+      { name: "Apollo Clean Transition Capital (ACT)", vintage: 2022, targetSize: "$20B+", finalClose: null, estPctDeployed: "~45%", successorSignaled: false },
+      { name: "Apollo Infrastructure Equity", vintage: null, targetSize: "Multi-strategy", finalClose: null, estPctDeployed: "N/A", successorSignaled: false },
     ],
     notableDeals: [
       "$11.8B in infrastructure-related fundraising, dominated by credit strategies",
@@ -2338,6 +2381,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       "Athene balance sheet driving significant infrastructure debt origination",
     ],
     outlook: "Apollo's infrastructure strategy is uniquely credit-heavy, leveraging its Athene insurance platform for origination scale. Management expects infrastructure credit to become a $100B+ book within 3 years.",
+    dealSignal: { signal: "Net Buyer", grossRealizations: "$1.2B", notableExits: [], flagshipDPI: "0.1x", dryPowderPressure: "high" },
+    sectorAppetite: ["Clean Transition", "Infrastructure Debt", "Power"],
   },
   {
     companyId: "ares",
@@ -2348,8 +2393,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       { text: "Infrastructure debt and our power strategy are becoming core growth vectors for Ares.", speaker: "Michael Arougheti", role: "CEO, Ares Management" },
     ],
     flagshipFunds: [
-      { name: "Ares Climate Infrastructure Partners", target: "$3.5B", status: "In market" },
-      { name: "Ares Infrastructure Debt Fund IV", target: "$5B+", status: "Fundraising" },
+      { name: "Ares Climate Infrastructure Partners", vintage: 2023, targetSize: "$3.5B", finalClose: null, estPctDeployed: "~40%", successorSignaled: false },
+      { name: "Ares Infrastructure Debt Fund IV", vintage: 2024, targetSize: "$5B+", finalClose: null, estPctDeployed: "~20%", successorSignaled: false },
     ],
     notableDeals: [
       "$2.7B deployed across infrastructure debt and climate strategies",
@@ -2357,6 +2402,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       "Expanded power strategy with utility-scale battery storage investments",
     ],
     outlook: "Ares sees infrastructure credit as one of the largest addressable markets in alternatives. The firm is scaling its power strategy and expects infrastructure to grow from ~4% to 8-10% of firm AUM over the next 3 years.",
+    dealSignal: { signal: "Net Buyer", grossRealizations: "$0.8B", notableExits: [], flagshipDPI: "0.2x", dryPowderPressure: "moderate" },
+    sectorAppetite: ["Infrastructure Debt", "Renewables", "Climate"],
   },
   {
     companyId: "tpg",
@@ -2367,8 +2414,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       { text: "TPG Rise Climate continues to attract significant LP interest, with our impact-focused infrastructure strategy resonating globally.", speaker: "Jon Winkelried", role: "CEO, TPG" },
     ],
     flagshipFunds: [
-      { name: "TPG Rise Climate Fund", target: "$10B+", status: "Deploying" },
-      { name: "TPG Rise Climate II", target: "In planning", status: "Expected 2026" },
+      { name: "TPG Rise Climate Fund", vintage: 2022, targetSize: "$10B+", finalClose: "$7.3B", estPctDeployed: "~55%", successorSignaled: true },
+      { name: "TPG Rise Climate II", vintage: null, targetSize: "In planning", finalClose: null, estPctDeployed: "0%", successorSignaled: false },
     ],
     notableDeals: [
       "$2.0B deployed in Q4 across climate infrastructure and energy transition",
@@ -2376,6 +2423,8 @@ export const rowExpansionContent: RowExpansionContent[] = [
       "Asian clean energy platform expansion",
     ],
     outlook: "TPG is positioning Rise Climate as one of the largest dedicated climate infrastructure funds. The firm expects to launch Rise Climate II in 2026, targeting $15B+ as LP demand for impact-oriented infrastructure grows.",
+    dealSignal: { signal: "Net Buyer", grossRealizations: "$0.5B", notableExits: [], flagshipDPI: "0.1x", dryPowderPressure: "moderate" },
+    sectorAppetite: ["Energy Transition", "Decarbonization", "Industrial"],
   },
 ];
 
@@ -2472,6 +2521,26 @@ export const analystTrends: AnalystTrend[] = [
       {
         label: "Implication",
         text: "Traditional infrastructure equity funds face margin pressure as credit alternatives offer comparable risk-adjusted returns with shorter duration and better downside protection. The winners in 2026 will be platforms that can originate across the entire capital structure.",
+      },
+    ],
+  },
+  {
+    id: "sector-convergence",
+    number: 5,
+    title: "Sector Convergence",
+    subtitle: "Where Capital Is Concentrating",
+    points: [
+      {
+        label: "Crowding Risk",
+        text: "Five of nine tracked firms cited digital infrastructure as a priority deployment theme, suggesting elevated competition and potential valuation pressure in data center and fiber M&A processes. Renewables and energy transition are similarly crowded, with 7 of 9 firms active.",
+      },
+      {
+        label: "White Space",
+        text: "Transport and utilities remain relatively uncrowded, with only 2-3 firms actively deploying. Firms with established positions in these sectors (Brookfield, Macquarie) may benefit from less competitive dynamics and more favorable entry multiples.",
+      },
+      {
+        label: "Implication",
+        text: "Deal professionals should expect compressed timelines and higher multiples in digital infrastructure processes. The most attractive risk-adjusted opportunities may be in sectors where fewer mega-funds are competing — particularly transport logistics, water infrastructure, and regulated utilities.",
       },
     ],
   },
