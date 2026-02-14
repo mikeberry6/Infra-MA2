@@ -1598,8 +1598,8 @@ export const deals: Deal[] = [
       "I Squared Capital agreed to acquire a 90% interest in Delaware Basin Residue LLC (DBR) from WhiteWater, involving pipeline infrastructure connecting the Permian Basin to the Waha Hub.",
     targetDescription:
       "Delaware Basin Residue LLC (DBR), a midstream pipeline infrastructure platform connecting the Permian Basin to the Waha Hub.",
-    sourceName: "I Squared Capital",
-    sourceUrl: "https://www.isquaredcapital.com/news/",
+    sourceName: "Proximo Infra",
+    sourceUrl: "https://www.proximoinfra.com/news/62419/i-squared-signs-on-dbr-acquisition-debt",
     enterpriseValue: null,
     equityValue: null,
     stake: "90%",
@@ -1634,8 +1634,8 @@ export const deals: Deal[] = [
       "3i Infrastructure portfolio company Joulz completed the acquisition of Centrica's energy solutions businesses in Italy and the Netherlands, expanding its European energy infrastructure platform.",
     targetDescription:
       "Centrica Energy Solutions, the energy solutions businesses of Centrica operating in Italy and the Netherlands.",
-    sourceName: "3i Infrastructure",
-    sourceUrl: "https://www.3i-infrastructure.com/news/",
+    sourceName: "Centrica",
+    sourceUrl: "https://www.centrica.com/media-centre/news/2026/sale-of-european-energy-solutions-businesses-and-panoramic-power/",
     enterpriseValue: null,
     equityValue: null,
     stake: "100%",
@@ -1670,8 +1670,8 @@ export const deals: Deal[] = [
       "Freedom Fibre, backed by InfraBridge and Equitix, merged with Truespeed to create a combined fiber broadband platform passing 412,000 premises across the UK.",
     targetDescription:
       "Truespeed, a UK-based fiber broadband provider, merged with Freedom Fibre to create a combined platform.",
-    sourceName: "InfraBridge",
-    sourceUrl: "https://www.infrabridge.com/news/",
+    sourceName: "Freedom Fibre",
+    sourceUrl: "https://www.freedomfibre.com/post/freedom-fibre-and-truespeed-announce-intention-to-merge",
     enterpriseValue: null,
     equityValue: null,
     stake: "100% (merger)",
@@ -1707,7 +1707,7 @@ export const deals: Deal[] = [
     targetDescription:
       "Urbaser, a Spain-headquartered global leader in waste management and environmental services.",
     sourceName: "Blackstone",
-    sourceUrl: "https://www.blackstone.com/news/",
+    sourceUrl: "https://www.blackstone.com/news/press/blackstone-infrastructure-and-eqt-to-acquire-urbaser/",
     enterpriseValue: "~$6.6 billion",
     equityValue: null,
     stake: "100%",
@@ -1743,8 +1743,8 @@ export const deals: Deal[] = [
       "Temasek invested approximately ₹760 crore as part of a $142 million pre-IPO funding round for a 6.79% stake in CleanMax, India's largest commercial and industrial renewable energy provider.",
     targetDescription:
       "CleanMax, India's largest commercial and industrial (C&I) renewable energy provider.",
-    sourceName: "Temasek",
-    sourceUrl: "https://www.temasek.com.sg/news/",
+    sourceName: "SolarQuarter",
+    sourceUrl: "https://solarquarter.com/2026/02/09/cleanmax-enviro-nears-%E2%82%B91500-cr-pre-ipo-round-with-temasek-backing/",
     enterpriseValue: null,
     equityValue: "~$142M (total round)",
     stake: "6.79%",
@@ -1779,8 +1779,8 @@ export const deals: Deal[] = [
       "CPP Investments signed a definitive agreement to acquire a 50% stake in Inkia Energy at a total enterprise value of $3.4 billion. I Squared Capital rolled the remaining 50% into a new GP-led continuation vehicle.",
     targetDescription:
       "Inkia Energy, a Peruvian power generation platform with diversified generation assets across Latin America.",
-    sourceName: "I Squared Capital / CPP Investments",
-    sourceUrl: "https://www.isquaredcapital.com/news/",
+    sourceName: "CPP Investments (Newswire)",
+    sourceUrl: "https://www.newswire.ca/news-releases/cpp-investments-to-invest-in-inkia-alongside-i-squared-capital-811136352.html",
     enterpriseValue: "$3.4 billion",
     equityValue: null,
     stake: "50% (sold to CPP) / 50% (rolled into continuation vehicle)",
@@ -1815,8 +1815,8 @@ export const deals: Deal[] = [
       "The Renewables Infrastructure Group (TRIG), managed by InfraRed Capital Partners, acquired 100% of Fig Power, a battery storage developer with a 1.7 GW UK development pipeline.",
     targetDescription:
       "Fig Power, a UK-based battery storage developer with a 1.7 GW development pipeline.",
-    sourceName: "InfraRed Capital Partners",
-    sourceUrl: "https://www.ircp.com/news/",
+    sourceName: "TRIG",
+    sourceUrl: "https://www.trig-ltd.com/news-media/news/trig-acquires-fig-power-a-uk-energy-projects-developer/",
     enterpriseValue: null,
     equityValue: null,
     stake: "100%",
@@ -1852,7 +1852,7 @@ export const deals: Deal[] = [
     targetDescription:
       "American Roads, a toll bridge and tunnel platform including the Detroit-Windsor Tunnel connecting the United States and Canada.",
     sourceName: "CVC",
-    sourceUrl: "https://www.cvc.com/news/",
+    sourceUrl: "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
     enterpriseValue: null,
     equityValue: null,
     stake: "100%",
@@ -1888,7 +1888,7 @@ export const deals: Deal[] = [
     targetDescription:
       "Corelink Rail Infrastructure, a rolling stock leasing company.",
     sourceName: "DWS Infrastructure",
-    sourceUrl: "",
+    sourceUrl: "https://www.railwaygazette.com/uk/porterbrook-acquires-corelink-multiple-units/70232.article",
     enterpriseValue: null,
     equityValue: null,
     stake: "100%",
@@ -1923,7 +1923,7 @@ export const deals: Deal[] = [
     targetDescription:
       "Ntirety, a managed cloud and security services provider.",
     sourceName: "Tiger Infrastructure Partners",
-    sourceUrl: "",
+    sourceUrl: "https://www.businesswire.com/news/home/20260108600465/en/1111-Systems-Successfully-Completes-Acquisition-of-Ntirety",
     enterpriseValue: null,
     equityValue: null,
     stake: "100%",
@@ -1958,7 +1958,7 @@ export const deals: Deal[] = [
     targetDescription:
       "Cordelio Power, a 1,550+ MW renewable energy platform across North America.",
     sourceName: "CPP Investments",
-    sourceUrl: "",
+    sourceUrl: "https://patternenergy.com/pattern-energy-announces-agreement-to-acquire-cordelio-power/",
     enterpriseValue: null,
     equityValue: null,
     stake: "100%",
@@ -1993,7 +1993,7 @@ export const deals: Deal[] = [
     targetDescription:
       "Furukraft, a 62 MW onshore wind farm located in Sweden.",
     sourceName: "Ardian",
-    sourceUrl: "",
+    sourceUrl: "https://globallegalchronicle.com/post-227343/",
     enterpriseValue: null,
     equityValue: null,
     stake: "100%",
@@ -2028,7 +2028,7 @@ export const deals: Deal[] = [
     targetDescription:
       "A 229 MW operational solar portfolio located in Spain.",
     sourceName: "InfraVia Capital Partners",
-    sourceUrl: "",
+    sourceUrl: "https://edp.com/en/about-us/edp-completes-asset-rotation-deal-190-mwac-229-mwdc-solar-portfolio-spain",
     enterpriseValue: null,
     equityValue: null,
     stake: "100%",
@@ -2063,7 +2063,7 @@ export const deals: Deal[] = [
     targetDescription:
       "Vantage Data Centers APAC, the Asia-Pacific operations of Vantage Data Centers.",
     sourceName: "DigitalBridge",
-    sourceUrl: "",
+    sourceUrl: "https://www.digitalbridge.com/news/2026-01-20-aware-super-extends-digital-infrastructure-footprint-with-us-300-million-apac-data-centre-business-investment",
     enterpriseValue: null,
     equityValue: "$300 million",
     stake: "Minority",
@@ -2098,7 +2098,7 @@ export const deals: Deal[] = [
     targetDescription:
       "Norwegian Travel, a gondola and scenic rail operations platform in Norway.",
     sourceName: "DWS Infrastructure",
-    sourceUrl: "",
+    sourceUrl: "https://www.longship.no/en/investment/norwegian-travel/",
     enterpriseValue: null,
     equityValue: null,
     stake: "100%",
@@ -2133,7 +2133,7 @@ export const deals: Deal[] = [
     targetDescription:
       "A data center located in Aurora, Illinois.",
     sourceName: "Igneo Infrastructure Partners",
-    sourceUrl: "",
+    sourceUrl: "https://www.prnewswire.com/news-releases/us-signal-expands-data-center-footprint-with-acquisition-of-new-facility-in-aurora-il-launches-immediate-capacity-and-cloud-investment-302674607.html",
     enterpriseValue: null,
     equityValue: null,
     stake: "100%",
@@ -2168,7 +2168,7 @@ export const deals: Deal[] = [
     targetDescription:
       "IndiGrid Infrastructure Trust, an Indian infrastructure investment trust focused on power transmission assets.",
     sourceName: "GIC",
-    sourceUrl: "",
+    sourceUrl: "https://solarquarter.com/2026/02/06/government-of-singapore-expands-indigrid-invit-divestment-to-7-36-stake-via-oversubscription-option/",
     enterpriseValue: null,
     equityValue: null,
     stake: "7.36%",
