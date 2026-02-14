@@ -36,6 +36,17 @@ const NON_INFRA_FUND_BUYERS = new Set([
   "Pattern Energy",
 ]);
 
+// ─── Fund name aliases for matching variants to canonical names ──
+// Maps variant fund names (e.g. "CVC (CVC DIF)") to their canonical form
+const FUND_NAME_ALIASES: Record<string, string> = {
+  "CVC (CVC DIF)": "CVC DIF",
+};
+
+/** Normalize a fund name to its canonical form using known aliases */
+function normalizeFundName(name: string): string {
+  return FUND_NAME_ALIASES[name] ?? name;
+}
+
 // ─── Data derivation ────────────────────────────────────────
 
 interface FundRow {
@@ -67,16 +78,18 @@ function deriveFundRanking(deals: Deal[]): FundRow[] {
         // Attribute Sale activity to the seller(s), not the buyer
         if (d.seller.startsWith("N/A")) continue;
         const sellers = splitEntities(d.seller);
-        for (const seller of sellers) {
+        for (const rawSeller of sellers) {
+          const seller = normalizeFundName(rawSeller);
           if (NON_INFRA_FUND_BUYERS.has(seller)) continue;
           if (!fundActivities[seller]) fundActivities[seller] = {};
           fundActivities[seller][act] = (fundActivities[seller][act] ?? 0) + 1;
         }
       } else {
         // Attribute Acquisition, Platform Launch, IPO, Joint Venture to the buyer
-        if (NON_INFRA_FUND_BUYERS.has(d.buyer)) continue;
-        if (!fundActivities[d.buyer]) fundActivities[d.buyer] = {};
-        fundActivities[d.buyer][act] = (fundActivities[d.buyer][act] ?? 0) + 1;
+        const buyer = normalizeFundName(d.buyer);
+        if (NON_INFRA_FUND_BUYERS.has(buyer)) continue;
+        if (!fundActivities[buyer]) fundActivities[buyer] = {};
+        fundActivities[buyer][act] = (fundActivities[buyer][act] ?? 0) + 1;
       }
     }
   }
