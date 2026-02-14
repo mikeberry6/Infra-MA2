@@ -32,6 +32,8 @@ const NON_INFRA_FUND_BUYERS = new Set([
   "Talen Energy",
   "Drax Group",
   "Pilot Fiber",
+  "Porterbrook",
+  "Pattern Energy",
 ]);
 
 // ─── Data derivation ────────────────────────────────────────
