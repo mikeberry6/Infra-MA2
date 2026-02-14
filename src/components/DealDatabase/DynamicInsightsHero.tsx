@@ -34,17 +34,22 @@ const NON_INFRA_FUND_BUYERS = new Set([
   "Pilot Fiber",
   "Porterbrook",
   "Pattern Energy",
+  "Singtel",
 ]);
 
 // ─── Fund name aliases for matching variants to canonical names ──
 // Maps variant fund names (e.g. "CVC (CVC DIF)") to their canonical form
 const FUND_NAME_ALIASES: Record<string, string> = {
   "CVC (CVC DIF)": "CVC DIF",
+  "Infracapital (M&G)": "Infracapital",
 };
 
 /** Normalize a fund name to its canonical form using known aliases */
 function normalizeFundName(name: string): string {
-  return FUND_NAME_ALIASES[name] ?? name;
+  if (FUND_NAME_ALIASES[name]) return FUND_NAME_ALIASES[name];
+  // Strip "(via ...)" suffixes used for subsidiary/portfolio company context
+  const stripped = name.replace(/\s*\(via\s+[^)]+\)\s*$/, "").trim();
+  return FUND_NAME_ALIASES[stripped] ?? stripped;
 }
 
 // ─── Data derivation ────────────────────────────────────────
@@ -85,11 +90,14 @@ function deriveFundRanking(deals: Deal[]): FundRow[] {
           fundActivities[seller][act] = (fundActivities[seller][act] ?? 0) + 1;
         }
       } else {
-        // Attribute Acquisition, Platform Launch, IPO, Joint Venture to the buyer
-        const buyer = normalizeFundName(d.buyer);
-        if (NON_INFRA_FUND_BUYERS.has(buyer)) continue;
-        if (!fundActivities[buyer]) fundActivities[buyer] = {};
-        fundActivities[buyer][act] = (fundActivities[buyer][act] ?? 0) + 1;
+        // Attribute Acquisition, Platform Launch, IPO, Joint Venture to the buyer(s)
+        const buyers = splitEntities(d.buyer);
+        for (const rawBuyer of buyers) {
+          const buyer = normalizeFundName(rawBuyer);
+          if (NON_INFRA_FUND_BUYERS.has(buyer)) continue;
+          if (!fundActivities[buyer]) fundActivities[buyer] = {};
+          fundActivities[buyer][act] = (fundActivities[buyer][act] ?? 0) + 1;
+        }
       }
     }
   }
