@@ -325,8 +325,6 @@ function DealCard({
   deal: Deal;
   onSelect: (deal: Deal) => void;
 }) {
-  const catColor = getCategoryColor(deal.category);
-
   return (
     <button
       onClick={() => onSelect(deal)}
@@ -343,16 +341,22 @@ function DealCard({
           >
             {deal.sector}
           </span>
-          <span
-            className="text-[11px] font-medium px-2 py-0.5 rounded-full"
-            style={{
-              color: catColor,
-              backgroundColor: `${catColor}15`,
-              border: `1px solid ${catColor}30`,
-            }}
-          >
-            {deal.category}
-          </span>
+          {deal.category.map((cat) => {
+            const catColor = getCategoryColor(cat);
+            return (
+              <span
+                key={cat}
+                className="text-[11px] font-medium px-2 py-0.5 rounded-full"
+                style={{
+                  color: catColor,
+                  backgroundColor: `${catColor}15`,
+                  border: `1px solid ${catColor}30`,
+                }}
+              >
+                {cat}
+              </span>
+            );
+          })}
         </div>
         <ChevronRight className="h-4 w-4 text-zinc-600 shrink-0" />
       </div>
@@ -455,7 +459,6 @@ function DealTable({
             </thead>
             <tbody>
               {sorted.map((deal) => {
-                const catColor = getCategoryColor(deal.category);
                 return (
                   <tr
                     key={deal.id}
@@ -491,16 +494,24 @@ function DealTable({
                       </span>
                     </td>
                     <td className="px-4 py-3">
-                      <span
-                        className="text-[11px] font-medium px-2 py-0.5 rounded-full whitespace-nowrap"
-                        style={{
-                          color: catColor,
-                          backgroundColor: `${catColor}15`,
-                          border: `1px solid ${catColor}30`,
-                        }}
-                      >
-                        {deal.category}
-                      </span>
+                      <div className="flex flex-wrap gap-1">
+                        {deal.category.map((cat) => {
+                          const catColor = getCategoryColor(cat);
+                          return (
+                            <span
+                              key={cat}
+                              className="text-[11px] font-medium px-2 py-0.5 rounded-full whitespace-nowrap"
+                              style={{
+                                color: catColor,
+                                backgroundColor: `${catColor}15`,
+                                border: `1px solid ${catColor}30`,
+                              }}
+                            >
+                              {cat}
+                            </span>
+                          );
+                        })}
+                      </div>
                     </td>
                     <td className="px-4 py-3">
                       <span className="mono text-xs text-zinc-500">
@@ -625,7 +636,6 @@ function DealDrawer({
   deal: Deal;
   onClose: () => void;
 }) {
-  const catColor = getCategoryColor(deal.category);
   const hasAdvisors =
     deal.financialAdvisorBuyer ||
     deal.financialAdvisorSeller ||
@@ -694,16 +704,22 @@ function DealDrawer({
             </span>
             <span className="text-xs text-zinc-500">{deal.subsector}</span>
             <div className="h-3.5 w-px bg-zinc-800" />
-            <span
-              className="text-[11px] font-medium px-2 py-0.5 rounded-full"
-              style={{
-                color: catColor,
-                backgroundColor: `${catColor}15`,
-                border: `1px solid ${catColor}30`,
-              }}
-            >
-              {deal.category}
-            </span>
+            {deal.category.map((cat) => {
+              const catColor = getCategoryColor(cat);
+              return (
+                <span
+                  key={cat}
+                  className="text-[11px] font-medium px-2 py-0.5 rounded-full"
+                  style={{
+                    color: catColor,
+                    backgroundColor: `${catColor}15`,
+                    border: `1px solid ${catColor}30`,
+                  }}
+                >
+                  {cat}
+                </span>
+              );
+            })}
             <div className="h-3.5 w-px bg-zinc-800" />
             <span className="text-xs text-zinc-500">{deal.country}</span>
           </div>
@@ -921,7 +937,7 @@ export function DealDatabase() {
           deal.buyer.toLowerCase().includes(q) ||
           deal.seller.toLowerCase().includes(q) ||
           deal.id.toLowerCase().includes(q) ||
-          deal.category.toLowerCase().includes(q) ||
+          deal.category.some((c) => c.toLowerCase().includes(q)) ||
           deal.subsector.toLowerCase().includes(q);
         if (!match) return false;
       }
@@ -934,7 +950,7 @@ export function DealDatabase() {
         return false;
       }
 
-      if (activeCategories.size > 0 && !activeCategories.has(deal.category)) {
+      if (activeCategories.size > 0 && !deal.category.some((c) => activeCategories.has(c))) {
         return false;
       }
 

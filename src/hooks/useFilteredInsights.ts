@@ -56,9 +56,11 @@ export function useFilteredInsights(filteredDeals: Deal[]): FilteredInsights {
       // Region
       regionCounts[deal.region] = (regionCounts[deal.region] || 0) + 1;
 
-      // Category (base only)
-      const baseCategory = deal.category.split(" (")[0];
-      categoryCounts[baseCategory] = (categoryCounts[baseCategory] || 0) + 1;
+      // Category (base only) — count each category in the array
+      for (const cat of deal.category) {
+        const baseCategory = cat.split(" (")[0];
+        categoryCounts[baseCategory] = (categoryCounts[baseCategory] || 0) + 1;
+      }
 
       // Buyers/Sellers
       buyers.add(deal.buyer);

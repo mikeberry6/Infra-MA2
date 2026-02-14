@@ -18,7 +18,7 @@ import {
 import { MarketInsightHero } from "./MarketPulse";
 
 function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
-  const categoryColor = getCategoryColor(deal.category);
+  const categoryColor = getCategoryColor(deal.category[0]);
 
   return (
     <div
@@ -67,18 +67,24 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
           {deal.title}
         </h3>
 
-        {/* Category badge */}
-        <div className="mb-3">
-          <span
-            className="text-[11px] font-medium px-2 py-0.5 rounded-full"
-            style={{
-              color: categoryColor,
-              backgroundColor: `${categoryColor}15`,
-              border: `1px solid ${categoryColor}30`,
-            }}
-          >
-            {deal.category}
-          </span>
+        {/* Category badges */}
+        <div className="mb-3 flex flex-wrap gap-1.5">
+          {deal.category.map((cat) => {
+            const color = getCategoryColor(cat);
+            return (
+              <span
+                key={cat}
+                className="text-[11px] font-medium px-2 py-0.5 rounded-full"
+                style={{
+                  color: color,
+                  backgroundColor: `${color}15`,
+                  border: `1px solid ${color}30`,
+                }}
+              >
+                {cat}
+              </span>
+            );
+          })}
         </div>
 
         {/* Key Parties */}

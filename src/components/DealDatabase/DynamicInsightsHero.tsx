@@ -27,7 +27,7 @@ function generateNarrative(
 
   // Single result
   if (filteredCount === 1 && singleDeal) {
-    return `Found: ${singleDeal.buyer}'s ${singleDeal.category.toLowerCase()} in ${singleDeal.region}.`;
+    return `Found: ${singleDeal.buyer}'s ${singleDeal.category[0].toLowerCase()} in ${singleDeal.region}.`;
   }
 
   // No filters - show overview
