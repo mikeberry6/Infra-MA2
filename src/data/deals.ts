@@ -23,7 +23,7 @@ export interface Deal {
   sector: DealSector;
   subsector: string;
   region: DealRegion;
-  category: DealCategory;
+  category: DealCategory[];
   date: string;
   description: string;
   targetDescription: string;
@@ -63,7 +63,7 @@ export const deals: Deal[] = [
     sector: "Transportation",
     subsector: "Roads",
     region: "Asia-Pacific",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-01-16T08:00:00Z",
     description:
       "Actis announced the acquisition of a 100% stake in the Vindhyachal Expressway in India from Kalpataru Projects International Limited for an enterprise value of ~₹775 crore.",
@@ -100,7 +100,7 @@ export const deals: Deal[] = [
     sector: "Digital",
     subsector: "Telecom Towers",
     region: "Middle East & Africa",
-    category: "Acquisition (Minority Stake)",
+    category: ["Acquisition (Minority Stake)"],
     date: "2026-01-09T08:00:00Z",
     description:
       "ADIA acquired a ~3.17% stake (33.3 million shares) in Helios Towers via a secondary placing from Danish pension fund ATP.",
@@ -137,7 +137,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Offshore Wind",
     region: "Europe",
-    category: "Acquisition (Minority Stake)",
+    category: ["Acquisition (Minority Stake)"],
     date: "2026-01-22T08:00:00Z",
     description:
       "Allianz acquired a 20.25% minority stake in this 496 MW French offshore wind farm (currently under construction) from Ocean Winds.",
@@ -174,7 +174,7 @@ export const deals: Deal[] = [
     sector: "Social",
     subsector: "Healthcare Logistics",
     region: "Europe",
-    category: "Acquisition (Majority Stake)",
+    category: ["Acquisition (Majority Stake)"],
     date: "2026-01-08T08:00:00Z",
     description:
       "Antin announced the acquisition of a majority stake in Emsere, a provider of mission-critical logistics for medical clinical trials, from Gryphion via its Mid Cap Fund I.",
@@ -212,7 +212,7 @@ export const deals: Deal[] = [
     sector: "Midstream",
     subsector: "Storage & Logistics",
     region: "Europe",
-    category: "Sale (Minority Stake)",
+    category: ["Sale (Minority Stake)"],
     date: "2026-01-20T08:00:00Z",
     description:
       "APG announced the sale of its 10% equity stake in Exolum to a consortium led by Banca March and Stoneshield Capital.",
@@ -249,7 +249,7 @@ export const deals: Deal[] = [
     sector: "Environmental",
     subsector: "Waste-to-Energy / Circular Economy",
     region: "North America",
-    category: "Acquisition (Minority Stake)",
+    category: ["Acquisition (Minority Stake)"],
     date: "2026-01-20T09:00:00Z",
     description:
       "Ara Partners participated in a Series B/C equivalent growth funding round for portfolio company Divert, Inc. to scale facilities in Washington and North Carolina.",
@@ -286,7 +286,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Wind & Solar",
     region: "North America",
-    category: "Acquisition (Minority Stake)",
+    category: ["Acquisition (Minority Stake)"],
     date: "2026-01-13T08:00:00Z",
     description:
       "Ares expanded its partnership with ENGIE by acquiring an equity stake in a 730 MW portfolio of wind and solar assets in the US (ERCOT market).",
@@ -323,7 +323,7 @@ export const deals: Deal[] = [
     sector: "Environmental",
     subsector: "Biomethane / Energy Transition",
     region: "Europe",
-    category: "Platform Launch",
+    category: ["Platform Launch"],
     date: "2026-01-14T08:00:00Z",
     description:
       "Asterion committed €1.5 billion (including €800 million in equity) to scale its ABIO platform, targeting 20 operational biomethane plants by the end of 2026.",
@@ -361,7 +361,7 @@ export const deals: Deal[] = [
     sector: "Utilities",
     subsector: "Power Transmission / Utilities",
     region: "Latin America",
-    category: "Sale (Buyout)",
+    category: ["Sale (Buyout)"],
     date: "2026-01-29T08:00:00Z",
     description:
       "BIP agreed to sell the largest of its four Brazilian electricity transmission concessions (1,200 km) for approximately $150 million in net proceeds.",
@@ -398,7 +398,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Renewable Energy (Wind & Solar)",
     region: "North America",
-    category: "Sale (Majority Stake)",
+    category: ["Sale (Majority Stake)"],
     date: "2026-01-30T08:00:00Z",
     description:
       "BEP announced an agreement to sell a two-thirds stake in a utility-scale portfolio of operating wind and solar projects in the US for ~$860 million in gross proceeds.",
@@ -435,7 +435,7 @@ export const deals: Deal[] = [
     sector: "Digital",
     subsector: "Broadband / Telecom",
     region: "North America",
-    category: "Sale (Minority Stake)",
+    category: ["Sale (Minority Stake)"],
     date: "2026-01-26T08:00:00Z",
     description:
       "CDPQ announced the sale of an ~11% block of shares in Cogeco for C$229 million, while retaining its position as the largest holder of subordinate shares.",
@@ -472,7 +472,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Offshore Wind",
     region: "Asia-Pacific",
-    category: "Sale (Minority Stake)",
+    category: ["Sale (Minority Stake)"],
     date: "2026-01-30T09:00:00Z",
     description:
       "CIP agreed to divest a 10% equity stake in the 495 MW Fengmiao I project to Mitsui O.S.K. Lines.",
@@ -509,7 +509,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Battery Energy Storage",
     region: "Europe",
-    category: "Sale (Majority Stake)",
+    category: ["Sale (Majority Stake)", "Acquisition (Majority Stake)"],
     date: "2026-01-30T10:00:00Z",
     description:
       "CIP agreed to divest a 50% stake in the Coalburn 2 battery energy storage system in Scotland to AIP Management.",
@@ -547,7 +547,7 @@ export const deals: Deal[] = [
     sector: "Transportation",
     subsector: "Parking Infrastructure",
     region: "Europe",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-01-08T09:00:00Z",
     description:
       "CVC DIF agreed to acquire iPark, a leading Iberian parking platform with 30,000+ spaces, from Elliott Investment Management.",
@@ -585,7 +585,7 @@ export const deals: Deal[] = [
     sector: "Digital",
     subsector: "Fiber & Cloud",
     region: "Europe",
-    category: "Acquisition (Majority Stake)",
+    category: ["Acquisition (Majority Stake)", "Sale (Majority Stake)"],
     date: "2026-01-14T08:00:00Z",
     description:
       "CVC DIF entered exclusive negotiations to acquire a majority stake (~88%) in Celeste, a French B2B fiber operator, from InfraVia Capital Partners.",
@@ -623,7 +623,7 @@ export const deals: Deal[] = [
     sector: "Digital",
     subsector: "Data Centers",
     region: "North America",
-    category: "Platform Launch",
+    category: ["Platform Launch"],
     date: "2026-01-19T08:00:00Z",
     description:
       "EnCap launched Quantica Infrastructure to develop \"shovel-ready\" data center sites in the US.",
@@ -660,7 +660,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Power Generation",
     region: "North America",
-    category: "Sale (Buyout)",
+    category: ["Sale (Buyout)"],
     date: "2026-01-15T08:00:00Z",
     description:
       "ECP agreed to sell the Cornerstone portfolio to Talen Energy for $3.45 billion.",
@@ -696,7 +696,7 @@ export const deals: Deal[] = [
     sector: "Utilities",
     subsector: "Transmission, Lighting, Roads",
     region: "Europe",
-    category: "Acquisition (Minority Stake)",
+    category: ["Acquisition (Minority Stake)"],
     date: "2026-01-06T08:00:00Z",
     description:
       "Equitix announced the acquisition of stakes in 10 UK assets (OFTOs, PFI lighting, roads) from Balfour Beatty. The deal was signed/completed in Dec 2025 but announced in Jan 2026.",
@@ -733,7 +733,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Solar",
     region: "Europe",
-    category: "Acquisition (Majority Stake)",
+    category: ["Acquisition (Majority Stake)"],
     date: "2026-01-13T08:00:00Z",
     description:
       "Equitix announced it increased its stake in its partnership with ACEA to 90% and funded the acquisition of additional solar assets.",
@@ -770,7 +770,7 @@ export const deals: Deal[] = [
     sector: "Midstream",
     subsector: "LNG",
     region: "North America",
-    category: "Sale (Minority Stake)",
+    category: ["Sale (Minority Stake)"],
     date: "2026-01-27T08:00:00Z",
     description:
       "GIP agreed to sell a 7.6% equity interest in Trains 4 and 5 of the Rio Grande LNG export project to an investment vehicle of the Abu Dhabi ruling family.",
@@ -807,7 +807,7 @@ export const deals: Deal[] = [
     sector: "Transportation",
     subsector: "Transport Safety",
     region: "Europe",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-01-07T08:00:00Z",
     description:
       "I Squared reached an agreement to acquire Ramudden Global, a provider of temporary traffic management services, from Triton Partners.",
@@ -845,7 +845,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Renewable Energy (IPP)",
     region: "Asia-Pacific",
-    category: "Platform Launch",
+    category: ["Platform Launch"],
     date: "2026-01-15T09:00:00Z",
     description:
       "I Squared launched ANZA Power with a $300 million equity commitment to develop solar, wind, and storage assets in Australia and New Zealand.",
@@ -883,7 +883,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Distributed Energy",
     region: "Middle East & Africa",
-    category: "Platform Launch",
+    category: ["Platform Launch"],
     date: "2026-01-22T09:00:00Z",
     description:
       "I Squared launched Radiant Energy Solutions to target distributed renewables in the Middle East, seeded with the acquisition of FAS Renewables and Zahra Energy.",
@@ -920,7 +920,7 @@ export const deals: Deal[] = [
     sector: "Digital",
     subsector: "Data Centers",
     region: "Europe",
-    category: "Acquisition (Minority Stake)",
+    category: ["Acquisition (Minority Stake)"],
     date: "2026-01-07T08:00:00Z",
     description:
       "KKR announced an additional $1.5 billion equity commitment to GTR to accelerate its European data center development pipeline.",
@@ -958,7 +958,7 @@ export const deals: Deal[] = [
     sector: "Social",
     subsector: "Preschool & Care Properties",
     region: "Europe",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-01-13T08:00:00Z",
     description:
       "Kinland, managed by Patrizia, announced the acquisition of a portfolio of 49 preschool properties across the Nordics for ~€170 million.",
@@ -995,7 +995,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Virtual Power Plant / Energy Transition",
     region: "Europe",
-    category: "Sale (Buyout)",
+    category: ["Sale (Buyout)"],
     date: "2026-01-21T08:00:00Z",
     description:
       "Quinbrook announced the sale of Flexitricity, a UK flexible power aggregator, to Drax Group for ~£42 million.",
@@ -1032,7 +1032,7 @@ export const deals: Deal[] = [
     sector: "Transportation",
     subsector: "Aviation (FBO)",
     region: "North America",
-    category: "Sale (Buyout)",
+    category: ["Sale (Buyout)"],
     date: "2026-01-27T09:00:00Z",
     description:
       "Ridgewood agreed to sell APP Jet Center, an operator of Fixed-Base Operators (FBOs) at US airports, to Bain Capital.",
@@ -1070,7 +1070,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Solar",
     region: "Europe",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-01-22T10:00:00Z",
     description:
       "Schroders Greencoat announced the acquisition of three operational solar farms in the UK from METLEN Energy & Metals.",
@@ -1107,7 +1107,7 @@ export const deals: Deal[] = [
     sector: "Transportation",
     subsector: "Ports",
     region: "North America",
-    category: "Joint Venture",
+    category: ["Joint Venture"],
     date: "2026-01-28T08:00:00Z",
     description:
       "Stonepeak announced a $2.4 billion investment for a 25% stake in a new platform holding 10 key container terminals globally.",
@@ -1145,7 +1145,7 @@ export const deals: Deal[] = [
     sector: "Transportation",
     subsector: "EV Charging",
     region: "Europe",
-    category: "Platform Launch",
+    category: ["Platform Launch"],
     date: "2026-01-22T08:00:00Z",
     description:
       "Tiger-backed Qwello announced its entry into the Danish market after winning a tender from the City of Copenhagen to deploy EV charging infrastructure.",
@@ -1183,7 +1183,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Onshore Wind & Solar",
     region: "Europe",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-02-03T08:00:00Z",
     description:
       "Copenhagen Infrastructure Partners (CIP) agreed to acquire a 578 MW operating wind and solar portfolio along with a development pipeline across the UK, Germany, and Spain from Ørsted's onshore European business.",
@@ -1220,7 +1220,7 @@ export const deals: Deal[] = [
     sector: "Transportation",
     subsector: "Maritime / Shipyards",
     region: "North America",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-02-04T08:00:00Z",
     description:
       "Antin Infrastructure Partners signed a definitive agreement to acquire Vigor Marine Group, a critical maritime infrastructure provider operating shipyards and drydocks, from Lone Star Funds.",
@@ -1258,7 +1258,7 @@ export const deals: Deal[] = [
     sector: "Digital",
     subsector: "Data Centers",
     region: "North America",
-    category: "Joint Venture",
+    category: ["Joint Venture"],
     date: "2026-02-04T09:00:00Z",
     description:
       "Energy Capital Partners and KKR announced a $50 billion strategic partnership and launched a Joint Venture to develop a hyperscale data center campus in Texas for AI infrastructure.",
@@ -1294,7 +1294,7 @@ export const deals: Deal[] = [
     sector: "Digital",
     subsector: "Data Centers",
     region: "Europe",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-02-04T10:00:00Z",
     description:
       "DWS Infrastructure, via its portfolio company Mediterra, acquired Open Hub Med, a carrier-neutral data center hub located in Palermo, Sicily.",
@@ -1331,7 +1331,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Solar",
     region: "Europe",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-02-04T11:00:00Z",
     description:
       "Schroders Greencoat entered an agreement to acquire 283 MW of solar PV assets, both operational and under construction, from METLEN Energy & Metals in the UK.",
@@ -1368,7 +1368,7 @@ export const deals: Deal[] = [
     sector: "Digital",
     subsector: "Data Centers",
     region: "Asia-Pacific",
-    category: "Acquisition (Majority Stake)",
+    category: ["Acquisition (Majority Stake)"],
     date: "2026-02-04T12:00:00Z",
     description:
       "KKR and Singtel entered definitive agreements to acquire a controlling 82% stake in ST Telemedia Global Data Centres (STT GDC), a global data center platform.",
@@ -1405,7 +1405,7 @@ export const deals: Deal[] = [
     sector: "Environmental",
     subsector: "Renewable Natural Gas",
     region: "North America",
-    category: "Platform Launch",
+    category: ["Platform Launch"],
     date: "2026-02-04T13:00:00Z",
     description:
       "IFM Investors announced the launch of Mobius Renewables, a new vertically integrated platform for renewable natural gas (RNG) development.",
@@ -1442,7 +1442,7 @@ export const deals: Deal[] = [
     sector: "Digital",
     subsector: "Data Centers",
     region: "North America",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)", "Sale (Buyout)"],
     date: "2026-02-05T08:00:00Z",
     description:
       "Igneo Infrastructure Partners announced the acquisition of Vault Digital Infrastructure (Altum), a US data center platform, from CVC DIF and Northleaf Capital.",
@@ -1479,7 +1479,7 @@ export const deals: Deal[] = [
     sector: "Digital",
     subsector: "Fiber",
     region: "North America",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-02-05T09:00:00Z",
     description:
       "Pilot Fiber agreed to acquire the metro-focused enterprise fiber business unit carved out from ExteNet Systems.",
@@ -1512,11 +1512,11 @@ export const deals: Deal[] = [
     id: "INF-2026-040",
     title: "Macquarie agrees to acquire 100% of Energy Assets Group, UK utility and metering provider",
     buyer: "Macquarie Asset Management",
-    seller: "Energy Assets Group (EAG)",
+    seller: "Asterion Industrial Partners / EDF Invest / Swiss Life",
     sector: "Utilities",
     subsector: "Utility Metering",
     region: "Europe",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)", "Sale (Buyout)"],
     date: "2026-02-05T10:00:00Z",
     description:
       "Macquarie Asset Management agreed to acquire a 100% stake in Energy Assets Group (EAG), a UK vertical utility and metering infrastructure provider.",
@@ -1550,11 +1550,11 @@ export const deals: Deal[] = [
     id: "INF-2026-041",
     title: "Macquarie enters binding agreement to acquire remaining 50% of Last Mile Infrastructure",
     buyer: "Macquarie Asset Management",
-    seller: "Last Mile Infrastructure",
+    seller: "Infracapital (M&G)",
     sector: "Utilities",
     subsector: "Multi-Utility Connections",
     region: "Europe",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)", "Sale (Majority Stake)"],
     date: "2026-02-05T11:00:00Z",
     description:
       "Macquarie Asset Management entered a binding agreement to acquire the remaining 50% stake in Last Mile Infrastructure, a UK multi-utility connections provider.",
@@ -1588,11 +1588,11 @@ export const deals: Deal[] = [
     id: "INF-2026-042",
     title: "TPG Rise Climate signs definitive agreements to acquire majority stake in Sabre Industries",
     buyer: "TPG Rise Climate",
-    seller: "Sabre Industries",
+    seller: "Blackstone Energy Transition Partners",
     sector: "Power & ET",
     subsector: "Power Transmission & Wireless Towers",
     region: "North America",
-    category: "Acquisition (Majority Stake)",
+    category: ["Acquisition (Majority Stake)", "Sale (Majority Stake)"],
     date: "2026-02-06T08:00:00Z",
     description:
       "TPG Rise Climate signed definitive agreements to acquire a majority stake in Sabre Industries, a manufacturer of power transmission structures and wireless towers.",
@@ -1629,7 +1629,7 @@ export const deals: Deal[] = [
     sector: "Midstream",
     subsector: "Gas Gathering & Processing",
     region: "North America",
-    category: "Acquisition (Majority Stake)",
+    category: ["Acquisition (Majority Stake)"],
     date: "2026-02-08T08:00:00Z",
     description:
       "I Squared Capital agreed to acquire a 90% interest in Delaware Basin Residue LLC (DBR) from WhiteWater, involving pipeline infrastructure connecting the Permian Basin to the Waha Hub.",
@@ -1665,7 +1665,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Energy Solutions",
     region: "Europe",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-02-09T08:00:00Z",
     description:
       "3i Infrastructure portfolio company Joulz completed the acquisition of Centrica's energy solutions businesses in Italy and the Netherlands, expanding its European energy infrastructure platform.",
@@ -1701,7 +1701,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Renewable Energy (Wind & Solar)",
     region: "North America",
-    category: "Joint Venture",
+    category: ["Joint Venture"],
     date: "2026-02-09T10:00:00Z",
     description:
       "InfraRed Capital Partners acquired a 60% interest in Brazos Wind (182 MW) and a 50% interest in Madison Fields (180 MW) from Shell, adding 362 MW of contracted renewable capacity.",
@@ -1737,7 +1737,7 @@ export const deals: Deal[] = [
     sector: "Digital",
     subsector: "Fiber Broadband",
     region: "Europe",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-02-11T08:00:00Z",
     description:
       "Freedom Fibre, backed by InfraBridge and Equitix, merged with Truespeed to create a combined fiber broadband platform passing 412,000 premises across the UK.",
@@ -1773,7 +1773,7 @@ export const deals: Deal[] = [
     sector: "Environmental",
     subsector: "Waste Management",
     region: "Europe",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-02-12T08:00:00Z",
     description:
       "Blackstone and EQT jointly acquired Urbaser, a Spain-based global waste management leader, from Platinum Equity for approximately $6.6 billion.",
@@ -1810,7 +1810,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Renewable Energy (C&I Solar)",
     region: "Asia-Pacific",
-    category: "Acquisition (Minority Stake)",
+    category: ["Acquisition (Minority Stake)"],
     date: "2026-02-12T09:00:00Z",
     description:
       "Temasek invested approximately ₹760 crore as part of a $142 million pre-IPO funding round for a 6.79% stake in CleanMax, India's largest commercial and industrial renewable energy provider.",
@@ -1837,62 +1837,26 @@ export const deals: Deal[] = [
       "Investment positions Temasek ahead of CleanMax's anticipated public listing, reflecting conviction in India's C&I clean energy transition",
     ],
   },
-  // ─── 49. I Squared Capital – Inkia Energy (Divestiture) ─
+  // ─── 49. I Squared Capital / CPP Investments – Inkia Energy ─
   {
     id: "INF-2026-049",
-    title: "I Squared Capital divests 50% of Inkia Energy and rolls remainder into continuation vehicle",
-    buyer: "Continuation Vehicle (I Squared Capital)",
-    seller: "I Squared Capital (existing fund)",
-    sector: "Power & ET",
-    subsector: "Power Generation",
-    region: "Latin America",
-    category: "Sale (Majority Stake)",
-    date: "2026-02-12T10:00:00Z",
-    description:
-      "I Squared Capital split ownership of its Peruvian power portfolio Inkia Energy, rolling 50% into a new continuation vehicle while selling the other 50% to CPP Investments at a total enterprise value of $3.4 billion.",
-    targetDescription:
-      "Inkia Energy, a Peruvian power generation platform.",
-    sourceName: "I Squared Capital",
-    sourceUrl: "https://www.isquaredcapital.com/news/",
-    enterpriseValue: "$3.4 billion (total)",
-    equityValue: null,
-    stake: "50% (sold) / 50% (rolled into continuation vehicle)",
-    status: "Announced",
-    closingDate: null,
-    financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
-    country: "Peru",
-    assetScale: "Peruvian power generation portfolio",
-    valuationMultiple: null,
-    fundVehicle: "I Squared Capital Continuation Vehicle",
-    keyHighlights: [
-      "I Squared Capital split its ownership of Inkia Energy, selling 50% to CPP Investments while rolling the other 50% into a new GP-led continuation vehicle",
-      "Transaction values the full Inkia Energy platform at a total enterprise value of $3.4 billion",
-      "Continuation vehicle structure allows I Squared to maintain exposure to the asset while providing liquidity to existing fund investors",
-    ],
-  },
-  // ─── 50. CPP Investments – Inkia Energy ────────────────
-  {
-    id: "INF-2026-050",
-    title: "CPP Investments signs agreement to acquire 50% stake in Inkia Energy at $3.4B TEV",
+    title: "CPP Investments acquires 50% of Inkia Energy from I Squared Capital at $3.4B TEV",
     buyer: "CPP Investments",
     seller: "I Squared Capital",
     sector: "Power & ET",
     subsector: "Power Generation",
     region: "Latin America",
-    category: "Acquisition (Majority Stake)",
-    date: "2026-02-12T11:00:00Z",
+    category: ["Sale (Majority Stake)", "Acquisition (Majority Stake)"],
+    date: "2026-02-12T10:00:00Z",
     description:
-      "CPP Investments signed a definitive agreement to acquire a 50% stake in Inkia Energy at a total enterprise value of $3.4 billion, partnering with I Squared Capital's continuation vehicle.",
+      "CPP Investments signed a definitive agreement to acquire a 50% stake in Inkia Energy at a total enterprise value of $3.4 billion. I Squared Capital rolled the remaining 50% into a new GP-led continuation vehicle.",
     targetDescription:
       "Inkia Energy, a Peruvian power generation platform with diversified generation assets across Latin America.",
-    sourceName: "CPP Investments",
-    sourceUrl: "https://www.cppinvestments.com/news/",
+    sourceName: "I Squared Capital / CPP Investments",
+    sourceUrl: "https://www.isquaredcapital.com/news/",
     enterpriseValue: "$3.4 billion",
     equityValue: null,
-    stake: "50%",
+    stake: "50% (sold to CPP) / 50% (rolled into continuation vehicle)",
     status: "Announced",
     closingDate: null,
     financialAdvisorBuyer: null,
@@ -1902,10 +1866,10 @@ export const deals: Deal[] = [
     country: "Peru",
     assetScale: "Diversified Latin American power generation portfolio",
     valuationMultiple: null,
-    fundVehicle: null,
+    fundVehicle: "I Squared Capital Continuation Vehicle",
     keyHighlights: [
       "CPP Investments acquiring a 50% stake in Inkia Energy from I Squared Capital at a total enterprise value of $3.4 billion",
-      "Will co-own Inkia alongside I Squared Capital's newly formed continuation vehicle, which retains the other 50%",
+      "I Squared Capital rolled the remaining 50% into a new GP-led continuation vehicle, maintaining exposure while providing liquidity to existing fund investors",
       "Inkia Energy is one of the largest independent power producers in Peru with a diversified generation portfolio across Latin America",
     ],
   },
@@ -1918,7 +1882,7 @@ export const deals: Deal[] = [
     sector: "Power & ET",
     subsector: "Battery Storage",
     region: "Europe",
-    category: "Acquisition (Buyout)",
+    category: ["Acquisition (Buyout)"],
     date: "2026-02-12T12:00:00Z",
     description:
       "The Renewables Infrastructure Group (TRIG), managed by InfraRed Capital Partners, acquired 100% of Fig Power, a battery storage developer with a 1.7 GW UK development pipeline.",
@@ -1954,7 +1918,7 @@ export const deals: Deal[] = [
     sector: "Transportation",
     subsector: "Toll Roads & Bridges",
     region: "North America",
-    category: "Sale (Buyout)",
+    category: ["Sale (Buyout)", "Acquisition (Buyout)"],
     date: "2026-02-13T08:00:00Z",
     description:
       "CVC DIF agreed to sell American Roads, a toll bridge and tunnel platform including the Detroit-Windsor Tunnel, to John Laing Group in a full divestiture.",
@@ -2069,8 +2033,10 @@ export function getDealStats() {
 
   const categoryCounts = deals.reduce(
     (acc, d) => {
-      const base = d.category.split(" (")[0];
-      acc[base] = (acc[base] || 0) + 1;
+      for (const cat of d.category) {
+        const base = cat.split(" (")[0];
+        acc[base] = (acc[base] || 0) + 1;
+      }
       return acc;
     },
     {} as Record<string, number>,

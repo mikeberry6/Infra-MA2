@@ -5,11 +5,11 @@ import { deals, getSectorColor } from "@/data/deals";
 function TickerItem({
   title,
   sector,
-  category,
+  categories,
 }: {
   title: string;
   sector: string;
-  category: string;
+  categories: string[];
 }) {
   return (
     <div className="inline-flex items-center gap-2 px-3 sm:gap-3 sm:px-6">
@@ -21,7 +21,7 @@ function TickerItem({
         {title}
       </span>
       <span className="text-[10px] text-zinc-500 font-medium">
-        {category.split(" (")[0]}
+        {categories.map((c) => c.split(" (")[0]).join(" / ")}
       </span>
       <div className="h-3 w-px bg-zinc-800" />
     </div>
@@ -43,7 +43,7 @@ export function Ticker() {
               key={`${deal.id}-${i}`}
               title={deal.title}
               sector={deal.sector}
-              category={deal.category}
+              categories={deal.category}
             />
           ))}
         </div>
