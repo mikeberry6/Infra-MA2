@@ -142,7 +142,7 @@ export function WeeklyBriefing() {
 
   return (
     <div className="mx-auto max-w-[900px] lg:max-w-[1100px] xl:max-w-[1400px] px-4 sm:px-6 lg:px-8 xl:px-12 py-8 lg:py-12">
-      <MarketInsightHero />
+      <MarketInsightHero deals={recentDeals} />
 
       {/* Timeline header */}
       <div className="mt-10 lg:mt-14 mb-6 lg:mb-8">

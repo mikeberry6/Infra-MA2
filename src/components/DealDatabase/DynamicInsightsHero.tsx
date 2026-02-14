@@ -23,6 +23,17 @@ function baseActivity(cat: string): string {
   return base;
 }
 
+// ─── Non-infrastructure-fund buyers to exclude from fund ranking ──
+const NON_INFRA_FUND_BUYERS = new Set([
+  "Undisclosed Buyer",
+  "Public Market",
+  "Bain Capital",
+  "Mitsui O.S.K. Lines",
+  "Talen Energy",
+  "Drax Group",
+  "Pilot Fiber",
+]);
+
 // ─── Data derivation ────────────────────────────────────────
 
 interface FundRow {
@@ -42,6 +53,7 @@ function deriveFundRanking(deals: Deal[]): FundRow[] {
   const buyerActivities: Record<string, Record<string, number>> = {};
 
   for (const d of deals) {
+    if (NON_INFRA_FUND_BUYERS.has(d.buyer)) continue;
     if (!buyerActivities[d.buyer]) buyerActivities[d.buyer] = {};
     const activities = buyerActivities[d.buyer];
     for (const cat of d.category) {
