@@ -48,21 +48,38 @@ interface SimpleRow {
   color: string;
 }
 
+/** Split compound entity strings like "A & B" or "X / Y / Z" into individual names */
+function splitEntities(field: string): string[] {
+  return field.split(/\s+&\s+|\s+\/\s+/).map((s) => s.trim()).filter(Boolean);
+}
+
 function deriveFundRanking(deals: Deal[]): FundRow[] {
-  // buyer → activity → count
-  const buyerActivities: Record<string, Record<string, number>> = {};
+  // fund → activity → count
+  const fundActivities: Record<string, Record<string, number>> = {};
 
   for (const d of deals) {
-    if (NON_INFRA_FUND_BUYERS.has(d.buyer)) continue;
-    if (!buyerActivities[d.buyer]) buyerActivities[d.buyer] = {};
-    const activities = buyerActivities[d.buyer];
     for (const cat of d.category) {
       const act = baseActivity(cat);
-      activities[act] = (activities[act] ?? 0) + 1;
+
+      if (act === "Sale") {
+        // Attribute Sale activity to the seller(s), not the buyer
+        if (d.seller.startsWith("N/A")) continue;
+        const sellers = splitEntities(d.seller);
+        for (const seller of sellers) {
+          if (NON_INFRA_FUND_BUYERS.has(seller)) continue;
+          if (!fundActivities[seller]) fundActivities[seller] = {};
+          fundActivities[seller][act] = (fundActivities[seller][act] ?? 0) + 1;
+        }
+      } else {
+        // Attribute Acquisition, Platform Launch, IPO, Joint Venture to the buyer
+        if (NON_INFRA_FUND_BUYERS.has(d.buyer)) continue;
+        if (!fundActivities[d.buyer]) fundActivities[d.buyer] = {};
+        fundActivities[d.buyer][act] = (fundActivities[d.buyer][act] ?? 0) + 1;
+      }
     }
   }
 
-  const rows: FundRow[] = Object.entries(buyerActivities).map(([name, activities]) => {
+  const rows: FundRow[] = Object.entries(fundActivities).map(([name, activities]) => {
     const breakdown = Object.entries(activities)
       .map(([activity, count]) => ({ activity, count }))
       .sort((a, b) => b.count - a.count);
