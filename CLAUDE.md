@@ -33,6 +33,11 @@ The fund activity ranking must ONLY show infrastructure fund managers. Exclude n
 - Undisclosed Buyer, Public Market, Bain Capital, Mitsui O.S.K. Lines, Talen Energy, Drax Group, Pilot Fiber
 - If new deals are added with non-infrastructure-fund buyers (corporate acquirers, operating companies, undisclosed parties), add them to the `NON_INFRA_FUND_BUYERS` set in `DynamicInsightsHero.tsx`
 
+### Fund Name Aliases
+
+Fund names sometimes appear in variant forms across deals (e.g. `"CVC (CVC DIF)"` vs `"CVC DIF"`). The `FUND_NAME_ALIASES` map in `DynamicInsightsHero.tsx` normalizes these to a canonical name so all transactions for the same fund are counted together.
+- If a new deal uses a variant name for an existing fund (e.g. parent company prefix, abbreviation difference), add an entry to `FUND_NAME_ALIASES` mapping the variant to the canonical name
+
 ## Design Principles
 
 - **Mobile-first**: All components must look good on mobile devices. Avoid cramming too much into the hero/infographic sections.
@@ -45,4 +50,5 @@ The fund activity ranking must ONLY show infrastructure fund managers. Exclude n
 When adding deals to `src/data/deals.ts`:
 - Follow the existing `Deal` interface exactly
 - If the buyer is not an infrastructure fund, add them to `NON_INFRA_FUND_BUYERS` in `DynamicInsightsHero.tsx`
+- If a buyer or seller name is a variant of an existing fund (e.g. `"CVC (CVC DIF)"` for `"CVC DIF"`), add it to `FUND_NAME_ALIASES` in `DynamicInsightsHero.tsx`
 - Use existing `DealSector`, `DealRegion`, `DealCategory`, and `DealStatus` union types
