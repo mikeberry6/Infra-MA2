@@ -1,33 +1,42 @@
 "use client";
 
 import {
-  getDealStats,
-  getRegionStats,
   getSectorColor,
   getRegionColor,
 } from "@/data/deals";
-import type { DealRegion, DealSector } from "@/data/deals";
+import type { Deal, DealRegion, DealSector } from "@/data/deals";
 
-export function MarketInsightHero() {
-  const stats = getDealStats();
-  const regionStats = getRegionStats();
+export function MarketInsightHero({ deals }: { deals: Deal[] }) {
+  const totalCount = deals.length;
+
+  // Sector counts
+  const sectorCounts: Record<string, number> = {};
+  for (const d of deals) {
+    sectorCounts[d.sector] = (sectorCounts[d.sector] || 0) + 1;
+  }
+
+  // Region counts
+  const regionCounts: Record<string, number> = {};
+  for (const d of deals) {
+    regionCounts[d.region] = (regionCounts[d.region] || 0) + 1;
+  }
 
   // Calculate region breakdown (top 4)
-  const regionBreakdown = Object.entries(regionStats.regionCounts)
+  const regionBreakdown = Object.entries(regionCounts)
     .map(([region, count]) => ({
       region: region as DealRegion,
       count,
-      percentage: Math.round((count / stats.totalCount) * 100),
+      percentage: Math.round((count / totalCount) * 100),
     }))
     .sort((a, b) => b.count - a.count)
     .slice(0, 4);
 
   // Calculate sector breakdown (top 4)
-  const sectorBreakdown = Object.entries(stats.sectorCounts)
+  const sectorBreakdown = Object.entries(sectorCounts)
     .map(([sector, count]) => ({
       sector: sector as DealSector,
       count,
-      percentage: Math.round((count / stats.totalCount) * 100),
+      percentage: Math.round((count / totalCount) * 100),
     }))
     .sort((a, b) => b.count - a.count)
     .slice(0, 4);
@@ -46,6 +55,14 @@ export function MarketInsightHero() {
     return map[region] || region;
   };
 
+  if (totalCount === 0) {
+    return (
+      <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-900/40 p-6 text-center">
+        <p className="text-sm text-zinc-500">No deals this week.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-900/40 overflow-hidden">
       <div className="relative z-10 p-4 lg:p-6 xl:p-8">
@@ -55,13 +72,13 @@ export function MarketInsightHero() {
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-[11px] font-medium text-zinc-500">Live</span>
           </div>
-          <span className="text-[11px] text-zinc-600">2026 YTD</span>
+          <span className="text-[11px] text-zinc-600">This Week</span>
         </div>
 
         {/* Hero stat */}
         <div className="flex items-baseline gap-2 mb-4 lg:mb-6">
           <span className="font-mono text-4xl lg:text-5xl xl:text-6xl font-semibold text-zinc-50 tracking-tight tabular-nums">
-            {stats.totalCount}
+            {totalCount}
           </span>
           <span className="text-sm lg:text-base xl:text-lg text-zinc-500">deals</span>
         </div>
