@@ -13,9 +13,10 @@
 
 - The `MarketInsightHero` component receives the weekly deals as a prop (`deals: Deal[]`)
 - It must ONLY reflect that week's deals (the same deals listed in the timeline below it), NOT all deals in the database
-- Weekly deals are sourced from `getWeeklyDeals()` — a rolling 7-day window
-- **The weekly briefing is manually curated by the user.** Do NOT add, remove, or modify deals in the weekly window without explicit user instruction. Changes to deal data directly affect this page.
+- Weekly deals are sourced from `getWeeklyDeals()` which uses a **fixed anchor date** (`WEEKLY_ANCHOR` in `src/data/deals.ts`) set to the publish date. It returns all Announced deals in the 7 days up to and including that date.
+- **The weekly briefing is manually curated by the user.** Do NOT change `WEEKLY_ANCHOR` or add/remove/modify deals in the weekly window without explicit user instruction.
 - `getWeeklyDeals()` excludes `status: "Closed"` deals as a safeguard — only announced deals appear in the briefing
+- When the user publishes a new weekly briefing, update `WEEKLY_ANCHOR` to the new publish date
 
 ## Deal Database Page (`/tracker`)
 

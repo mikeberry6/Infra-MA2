@@ -2277,12 +2277,17 @@ export function getRecentDeals(): Deal[] {
   );
 }
 
-// Get deals from the past 7 days (only Announced — never include Closed deals)
+// Weekly briefing deals — manually set anchor date to match the publish date.
+// Update WEEKLY_ANCHOR when publishing a new weekly briefing.
+const WEEKLY_ANCHOR = new Date("2026-02-13T23:59:59Z");
+
 export function getWeeklyDeals(): Deal[] {
-  const now = new Date();
-  const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const weekAgo = new Date(WEEKLY_ANCHOR.getTime() - 7 * 24 * 60 * 60 * 1000);
   return deals
-    .filter((d) => new Date(d.date) >= weekAgo && d.status !== "Closed")
+    .filter((d) => {
+      const dt = new Date(d.date);
+      return dt >= weekAgo && dt <= WEEKLY_ANCHOR && d.status !== "Closed";
+    })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
