@@ -14,6 +14,8 @@
 - The `MarketInsightHero` component receives the weekly deals as a prop (`deals: Deal[]`)
 - It must ONLY reflect that week's deals (the same deals listed in the timeline below it), NOT all deals in the database
 - Weekly deals are sourced from `getWeeklyDeals()` — a rolling 7-day window
+- **The weekly briefing is manually curated by the user.** Do NOT add, remove, or modify deals in the weekly window without explicit user instruction. Changes to deal data directly affect this page.
+- `getWeeklyDeals()` excludes `status: "Closed"` deals as a safeguard — only announced deals appear in the briefing
 
 ## Deal Database Page (`/tracker`)
 
@@ -53,6 +55,8 @@ Fund names sometimes appear in variant forms across deals (e.g. `"CVC (CVC DIF)"
 
 When adding deals to `src/data/deals.ts`:
 - Follow the existing `Deal` interface exactly
+- **Only add deals with `status: "Announced"`** — never add closed/completed transactions. The Weekly Briefing page is curated to show newly announced deals only. If a deal has already closed, it does not belong in the database.
 - If the buyer is not an infrastructure fund, add them to `NON_INFRA_FUND_BUYERS` in `DynamicInsightsHero.tsx`
 - If a buyer or seller name is a variant of an existing fund (e.g. `"CVC (CVC DIF)"` for `"CVC DIF"`), add it to `FUND_NAME_ALIASES` in `DynamicInsightsHero.tsx`
 - Use existing `DealSector`, `DealRegion`, `DealCategory`, and `DealStatus` union types
+- **Do NOT batch-add deals without user review** — always confirm individual deals with the user before adding them

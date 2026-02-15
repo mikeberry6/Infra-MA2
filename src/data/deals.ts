@@ -1619,42 +1619,6 @@ export const deals: Deal[] = [
       "Permian Basin remains the most active U.S. production basin, driving continued demand for residue gas takeaway capacity",
     ],
   },
-  // ─── 44. 3i Infrastructure – Centrica Energy Solutions ─
-  {
-    id: "INF-2026-044",
-    title: "3i Infrastructure's Joulz completes acquisition of Centrica Energy Solutions in Italy and Netherlands",
-    buyer: "3i Infrastructure (via Joulz)",
-    seller: "Centrica",
-    sector: "Power & ET",
-    subsector: "Energy Solutions",
-    region: "Europe",
-    category: ["Acquisition (Buyout)"],
-    date: "2026-02-09T08:00:00Z",
-    description:
-      "3i Infrastructure portfolio company Joulz completed the acquisition of Centrica's energy solutions businesses in Italy and the Netherlands, expanding its European energy infrastructure platform.",
-    targetDescription:
-      "Centrica Energy Solutions, the energy solutions businesses of Centrica operating in Italy and the Netherlands.",
-    sourceName: "Centrica",
-    sourceUrl: "https://www.centrica.com/media-centre/news/2026/sale-of-european-energy-solutions-businesses-and-panoramic-power/",
-    enterpriseValue: null,
-    equityValue: null,
-    stake: "100%",
-    status: "Closed",
-    closingDate: "February 2026",
-    financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
-    country: "Italy / Netherlands",
-    assetScale: "Energy solutions operations across Italy and the Netherlands",
-    valuationMultiple: null,
-    fundVehicle: null,
-    keyHighlights: [
-      "Bolt-on acquisition by Joulz, a 3i Infrastructure portfolio company focused on energy infrastructure services",
-      "Expands Joulz's European footprint into Italy and the Netherlands through Centrica's established energy solutions operations",
-      "Aligns with 3i Infrastructure's strategy of building scale in essential energy infrastructure platforms",
-    ],
-  },
   // ─── 45. InfraBridge & Equitix – Truespeed ─────────────
   {
     id: "INF-2026-046",
@@ -2313,12 +2277,12 @@ export function getRecentDeals(): Deal[] {
   );
 }
 
-// Get deals from the past 7 days
+// Get deals from the past 7 days (only Announced — never include Closed deals)
 export function getWeeklyDeals(): Deal[] {
   const now = new Date();
   const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
   return deals
-    .filter((d) => new Date(d.date) >= weekAgo)
+    .filter((d) => new Date(d.date) >= weekAgo && d.status !== "Closed")
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
