@@ -2579,6 +2579,7 @@ export interface AssetManagerCard {
   deployment: CardMetric;
   realizations: CardMetric;
   notes?: string[];
+  commentary?: string[];
 }
 
 export const assetManagerCards: AssetManagerCard[] = [
@@ -2614,6 +2615,11 @@ export const assetManagerCards: AssetManagerCard[] = [
       "Fundraising includes $5.0B for its inaugural AI infrastructure fund.",
       "Realizations include the partial sale of PD Ports and the IPO of Rockpoint Gas Storage.",
     ],
+    commentary: [
+      "In November, we launched a $100 billion global AI infrastructure program, anchored by the Brookfield AI Infrastructure Fund ('BAIIF').",
+      "The fund is targeting $10 billion of equity commitments, of which it has already secured $5 billion of commitments. This first-of-its-kind strategy will focus on investing in the physical infrastructure that powers AI...",
+      "In December, we announced a strategic partnership with Qai, Qatar's national AI company, to establish a $20 billion joint venture focused on artificial intelligence infrastructure.",
+    ],
   },
   {
     companyId: "blackstone",
@@ -2645,6 +2651,11 @@ export const assetManagerCards: AssetManagerCard[] = [
         { label: "YoY", value: "Not Disclosed" },
       ],
     },
+    commentary: [
+      "Our focus on investing at massive scale in the buildout of digital and energy infrastructure continues to create significant value for our investors.",
+      "Inflows in the quarter included $8.0 billion in Secondaries... $4.2 billion in Infrastructure, $1.6 billion in Tactical Opportunities...",
+      "Infrastructure appreciated 8.4% in the quarter and 23.5% for the year.",
+    ],
   },
   {
     companyId: "tpg",
@@ -2674,6 +2685,11 @@ export const assetManagerCards: AssetManagerCard[] = [
         { label: "YoY", value: "$105M" },
       ],
     },
+    commentary: [
+      "2025 was an outstanding year for TPG, marked by exceptional execution across our global franchise. We achieved new records, with more than $51 billion raised and $52 billion deployed...",
+      "We started 2026 with significant momentum and our increased scale and diversification, coupled with $72 billion in dry powder, position us well to navigate the evolving market landscape.",
+      "Fee-Earning Capital Raised [included] $10.6 billion in TPG X in the Capital platform and $1.9 billion in Rise Climate II in the Impact platform.",
+    ],
   },
   {
     companyId: "kkr",
@@ -2681,7 +2697,7 @@ export const assetManagerCards: AssetManagerCard[] = [
     reportingContext: "Real Assets Segment (Combines Infrastructure & Real Estate)",
     period: "Q4 2025",
     currency: "USD",
-    reportDate: "2026-02-04",
+    reportDate: "2026-02-05",
     fundraising: {
       value: "$10.0B",
       comparisons: [
@@ -2706,6 +2722,11 @@ export const assetManagerCards: AssetManagerCard[] = [
       "Q4 fundraising was primarily driven by infrastructure vehicles.",
       "$26.4M in Net Realized Performance Income for the segment was driven specifically by global and European infrastructure.",
     ],
+    commentary: [
+      "New capital raised in the quarter was primarily driven by K-Series Infrastructure, with additional inflows from Global Infrastructure V and Asia Infrastructure III.",
+      "Realizations: Carried Interest in 4Q was driven by global and European infrastructure.",
+      "The infrastructure portfolio appreciated 11% and the opportunistic real estate portfolio appreciated 5% during the year.",
+    ],
   },
   {
     companyId: "ares",
@@ -2713,11 +2734,14 @@ export const assetManagerCards: AssetManagerCard[] = [
     reportingContext: "Hybrid (Direct Infra for raises/deployments; Broader Real Assets for realizations)",
     period: "Q4 2025",
     currency: "USD",
-    reportDate: "2026-02-06",
+    reportDate: "2026-02-05",
     fundraising: {
       value: "$2.9B",
       label: "Direct Infra",
-      comparisons: [],
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
       additionalLines: [
         { label: "Infra Secondaries", value: "$0.8B" },
       ],
@@ -2725,7 +2749,10 @@ export const assetManagerCards: AssetManagerCard[] = [
     deployment: {
       value: "$2.7B",
       label: "Direct Infra",
-      comparisons: [],
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
     },
     realizations: {
       value: "Not Isolated",
@@ -2733,6 +2760,11 @@ export const assetManagerCards: AssetManagerCard[] = [
       segmentNote: "Total Real Assets Segment distributions: $1.93B",
       comparisons: [],
     },
+    commentary: [
+      "Capital raised of $2.0 billion by our open-ended infrastructure fund.",
+      "[We saw] equity and debt commitments to various funds, including... equity commitments of $2.5 billion and debt commitments of $0.5 billion to our sixth infrastructure debt fund and equity commitments of $0.7 billion to Ares Climate Infrastructure Partners II.",
+      "Equity commitments of $3.3 billion to Ares Secondaries Infrastructure Solutions III, L.P. ('ASIS III') and related vehicles...",
+    ],
   },
   {
     companyId: "blackrock",
@@ -2751,7 +2783,10 @@ export const assetManagerCards: AssetManagerCard[] = [
     },
     deployment: {
       value: "Not Disclosed",
-      comparisons: [],
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
     },
     realizations: {
       value: "$3.00B",
@@ -2760,6 +2795,11 @@ export const assetManagerCards: AssetManagerCard[] = [
         { label: "YoY", value: "Not Disclosed" },
       ],
     },
+    commentary: [
+      "2026 will be our first full year as a unified platform with GIP, HPS and Preqin. Around the world, clients are looking to do more across BlackRock.",
+      "BlackRock is differentiated as a scale operator in public and private markets investing and technology... We're a leader in public and private markets, and in technology and data.",
+      "We're seeing excellent fundraising activity as we work toward our goal of $400 billion in private markets fundraising by 2030.",
+    ],
   },
   {
     companyId: "apollo",
@@ -2767,11 +2807,14 @@ export const assetManagerCards: AssetManagerCard[] = [
     reportingContext: "Credit Segment (Houses Infrastructure & Asset-Based Credit)",
     period: "Q4 2025",
     currency: "USD",
-    reportDate: "2026-02-04",
+    reportDate: "2026-02-09",
     fundraising: {
       value: "$11.8B",
       label: "Combined inflows across infra and asset-based credit",
-      comparisons: [],
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
     },
     deployment: {
       value: "Not Isolated",
@@ -2785,6 +2828,11 @@ export const assetManagerCards: AssetManagerCard[] = [
       segmentNote: "Total Credit Segment realized $25.6B",
       comparisons: [],
     },
+    commentary: [
+      "Inflows in the quarter included... $11.8 billion for the infrastructure and asset based credit strategies, inclusive of $8.0 billion for insurance SMAs.",
+      "Capital Deployed: $22.9 billion in the quarter and $67.7 billion for the year driven by U.S. direct lending as well as infrastructure and asset based credit strategies.",
+      "Capital solutions fees grew 21% in 2025 primarily driven by continued strength and growing diversification across Apollo's origination ecosystem including direct origination, asset-backed finance, multi-credit and opportunistic credit transactions.",
+    ],
   },
   {
     companyId: "eqt",
@@ -2793,7 +2841,7 @@ export const assetManagerCards: AssetManagerCard[] = [
     period: "H2 2025",
     periodNote: "Six months ended Dec 31, 2025",
     currency: "EUR",
-    reportDate: "2026-01-23",
+    reportDate: "2026-01-22",
     fundraising: {
       value: "€4.6B",
       comparisons: [
@@ -2818,6 +2866,11 @@ export const assetManagerCards: AssetManagerCard[] = [
     notes: [
       "EQT highlighted the final close of EQT Infrastructure VI at a €21.5B hard cap.",
       "Exit of its remaining stake in Kodiak Gas Services.",
+    ],
+    commentary: [
+      "We closed EQT Infrastructure VI at €21.5 billion, hitting the hard cap. This represents a 35% increase on the fund's predecessor, owing to strong support from both existing and new investors.",
+      "In 2025, we introduced our first open ended structure for institutional clients with the latest Active Core Infrastructure strategy... and just last week we introduced another US-domiciled vehicle that enables access to our global infrastructure platform.",
+      "In connection with the sell-down announced in December 2025, EQT Infrastructure exited its remaining stake in Kodiak Gas Services, a leading provider of natural gas contract compression services in the US.",
     ],
   },
   {
@@ -2849,6 +2902,11 @@ export const assetManagerCards: AssetManagerCard[] = [
         { label: "YoY", value: "Not Disclosed" },
       ],
     },
+    commentary: [
+      "As energy transition characteristics create new risk management challenges, CGM has continued to evolve its presence and product capability - developing battery and flexible power offtakes that help tailor solutions for real client needs.",
+      "Raised $A6.3b in new equity in 3Q26, $A17.0b YTD, from clients across a diverse range of strategies, including energy transition, regional and global infrastructure, agriculture and private credit.",
+      "Invested $A7.7b of equity in 3Q26, $A20.2b YTD across 23 investments including 9 in private credit, 9 in real assets and 5 in real estate.",
+    ],
   },
 ];
 
@@ -2883,12 +2941,14 @@ export function getSectorTypeColor(sector: CompanySector): string {
 }
 
 export function formatEarningsDate(dateStr: string): string {
-  const d = new Date(dateStr);
+  const [year, month, day] = dateStr.split("-").map(Number);
+  const d = new Date(year, month - 1, day);
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
 export function formatFullDate(dateStr: string): string {
-  const d = new Date(dateStr);
+  const [year, month, day] = dateStr.split("-").map(Number);
+  const d = new Date(year, month - 1, day);
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 

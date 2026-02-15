@@ -174,6 +174,25 @@ function AssetManagerCardComponent({ card }: { card: AssetManagerCard }) {
             </ul>
           </div>
         )}
+
+        {/* Earnings Commentary */}
+        {card.commentary && card.commentary.length > 0 && (
+          <div className="mt-3 pt-3 border-t border-zinc-800/50">
+            <p className="text-[9px] font-medium uppercase tracking-wider text-zinc-600 mb-2">
+              Earnings Commentary
+            </p>
+            <div className="space-y-2">
+              {card.commentary.map((quote, idx) => (
+                <blockquote
+                  key={idx}
+                  className="text-[10px] text-zinc-400 leading-relaxed pl-2.5 border-l border-zinc-700 italic"
+                >
+                  &ldquo;{quote}&rdquo;
+                </blockquote>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
