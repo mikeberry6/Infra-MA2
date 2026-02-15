@@ -825,7 +825,7 @@ function CompanyCard({
 // ─── Analyst Trends Section ─────────────────────────────────
 
 function AnalystTrends() {
-  const [expandedTrend, setExpandedTrend] = useState<string | null>(null);
+  const [expandedTrends, setExpandedTrends] = useState<Set<string>>(new Set());
 
   const trendColors = [
     "#3b82f6", // blue
@@ -842,14 +842,19 @@ function AnalystTrends() {
       </h2>
       <div className="space-y-3">
         {analystTrends.map((trend, idx) => {
-          const isOpen = expandedTrend === trend.id;
+          const isOpen = expandedTrends.has(trend.id);
           const color = trendColors[idx % trendColors.length];
 
           return (
             <div key={trend.id} className="glass-card rounded-lg overflow-hidden">
               <button
                 onClick={() =>
-                  setExpandedTrend(isOpen ? null : trend.id)
+                  setExpandedTrends((prev) => {
+                    const next = new Set(prev);
+                    if (isOpen) next.delete(trend.id);
+                    else next.add(trend.id);
+                    return next;
+                  })
                 }
                 className="w-full text-left p-4 lg:p-5 cursor-pointer"
               >
@@ -906,7 +911,7 @@ function AnalystTrends() {
 // ─── Main Component ─────────────────────────────────────────
 
 export function Earnings() {
-  const [expandedCompany, setExpandedCompany] = useState<string | null>(null);
+  const [expandedCompanies, setExpandedCompanies] = useState<Set<string>>(new Set());
 
   const activeScorecard = scorecardData.filter((d) => !d.isPlaceholder);
 
@@ -962,13 +967,14 @@ export function Earnings() {
                 key={entry.companyId}
                 entry={entry}
                 expansion={expansion}
-                isExpanded={expandedCompany === entry.companyId}
+                isExpanded={expandedCompanies.has(entry.companyId)}
                 onToggle={() =>
-                  setExpandedCompany(
-                    expandedCompany === entry.companyId
-                      ? null
-                      : entry.companyId
-                  )
+                  setExpandedCompanies((prev) => {
+                    const next = new Set(prev);
+                    if (next.has(entry.companyId)) next.delete(entry.companyId);
+                    else next.add(entry.companyId);
+                    return next;
+                  })
                 }
               />
             );
