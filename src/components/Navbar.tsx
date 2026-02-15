@@ -12,7 +12,7 @@ export function Navbar() {
   const links = [
     { href: "/", label: "Weekly Briefing" },
     { href: "/tracker", label: "Deal Database" },
-    { href: "/earnings", label: "Earnings" },
+    { href: "/earnings", label: "Public Asset Managers" },
   ];
 
   return (
