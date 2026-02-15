@@ -7,6 +7,7 @@ import {
   getSectorColor,
   getCategoryColor,
   getRegionColor,
+  getLatestDealDate,
 } from "@/data/deals";
 import type { Deal, DealSector, DealCategory, DealRegion } from "@/data/deals";
 import {
@@ -870,6 +871,11 @@ function DealDrawer({
 
 // ─── Main Component ─────────────────────────────────────────
 export function DealDatabase() {
+  const latestDealDate = useMemo(() => {
+    const d = getLatestDealDate();
+    return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  }, []);
+
   const [search, setSearch] = useState("");
   const [activeSectors, setActiveSectors] = useState<Set<DealSector>>(
     new Set(),
@@ -972,8 +978,8 @@ export function DealDatabase() {
           Deal Database
         </h1>
         <p className="text-sm lg:text-base text-zinc-400">
-          Comprehensive infrastructure M&amp;A tracker &mdash; all deals,
-          January 2026.
+          Comprehensive infrastructure M&amp;A tracker &mdash; 2026 year-to-date
+          as of {latestDealDate}.
         </p>
       </div>
 

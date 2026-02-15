@@ -17,6 +17,10 @@
 
 ## Deal Database Page (`/tracker`)
 
+### YTD Subtitle
+
+The page subtitle reads "2026 year-to-date as of {date}" where the date is **automatically derived** from the most recent deal in the database via `getLatestDealDate()` in `src/data/deals.ts`. No manual date updates are needed when adding new deals — the subtitle updates itself.
+
 ### Insights Hero (`DynamicInsightsHero`)
 
 The hero section displays exactly **3 ranked lists** (no donut charts, no KPI cards, no sparklines):
