@@ -13,9 +13,10 @@
 
 - The `MarketInsightHero` component receives the weekly deals as a prop (`deals: Deal[]`)
 - It must ONLY reflect that week's deals (the same deals listed in the timeline below it), NOT all deals in the database
-- Weekly deals are sourced from `getWeeklyDeals()` — a rolling 7-day window
-- **The weekly briefing is manually curated by the user.** Do NOT add, remove, or modify deals in the weekly window without explicit user instruction. Changes to deal data directly affect this page.
-- `getWeeklyDeals()` excludes `status: "Closed"` deals as a safeguard — only announced deals appear in the briefing
+- Weekly deals are sourced from `getWeeklyDeals()` which uses a **fixed anchor date** (`WEEKLY_ANCHOR` in `src/data/deals.ts`) set to the publish date. It returns all Announced deals in the 7 days up to and including that date.
+- **The weekly briefing is manually curated by the user.** Do NOT change `WEEKLY_ANCHOR` or add/remove/modify deals in the weekly window without explicit user instruction.
+- `getWeeklyDeals()` includes deals of any status — some deals are simultaneously announced and closed (e.g. sign-and-close transactions), and these should still appear in the briefing
+- When the user publishes a new weekly briefing, update `WEEKLY_ANCHOR` to the new publish date
 
 ## Deal Database Page (`/tracker`)
 
@@ -55,7 +56,7 @@ Fund names sometimes appear in variant forms across deals (e.g. `"CVC (CVC DIF)"
 
 When adding deals to `src/data/deals.ts`:
 - Follow the existing `Deal` interface exactly
-- **Only add deals with `status: "Announced"`** — never add closed/completed transactions. The Weekly Briefing page is curated to show newly announced deals only. If a deal has already closed, it does not belong in the database.
+- Deals may have `status: "Announced"` or `status: "Closed"`. Some transactions are simultaneously announced and closed (sign-and-close deals like bolt-on acquisitions). These are valid and should be captured with `status: "Closed"`. Do NOT exclude a deal just because it has already closed — what matters is that it was newly disclosed during the relevant period.
 - If the buyer is not an infrastructure fund, add them to `NON_INFRA_FUND_BUYERS` in `DynamicInsightsHero.tsx`
 - If a buyer or seller name is a variant of an existing fund (e.g. `"CVC (CVC DIF)"` for `"CVC DIF"`), add it to `FUND_NAME_ALIASES` in `DynamicInsightsHero.tsx`
 - Use existing `DealSector`, `DealRegion`, `DealCategory`, and `DealStatus` union types
