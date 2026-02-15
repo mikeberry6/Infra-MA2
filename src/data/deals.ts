@@ -2298,6 +2298,14 @@ export function getDealStats() {
   };
 }
 
+// Get the date of the most recently added/updated deal
+export function getLatestDealDate(): Date {
+  return deals.reduce((latest, d) => {
+    const dt = new Date(d.date);
+    return dt > latest ? dt : latest;
+  }, new Date(deals[0].date));
+}
+
 // Get deals sorted by most recent
 export function getRecentDeals(): Deal[] {
   return [...deals].sort(
