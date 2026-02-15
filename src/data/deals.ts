@@ -1639,8 +1639,8 @@ export const deals: Deal[] = [
     enterpriseValue: null,
     equityValue: null,
     stake: "100%",
-    status: "Announced",
-    closingDate: null,
+    status: "Closed",
+    closingDate: "February 2026",
     financialAdvisorBuyer: null,
     financialAdvisorSeller: null,
     legalAdvisorBuyer: null,
@@ -2322,7 +2322,7 @@ export function getWeeklyDeals(): Deal[] {
   return deals
     .filter((d) => {
       const dt = new Date(d.date);
-      return dt >= weekAgo && dt <= WEEKLY_ANCHOR && d.status !== "Closed";
+      return dt >= weekAgo && dt <= WEEKLY_ANCHOR;
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
