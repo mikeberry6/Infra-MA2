@@ -2546,6 +2546,312 @@ export const analystTrends: AnalystTrend[] = [
   },
 ];
 
+// ─── Verified Asset Manager Cards ────────────────────────────
+
+export interface MetricComparison {
+  label: string; // "QoQ", "YoY", "HoH"
+  value: string; // "$3.5B", "Not Disclosed"
+}
+
+export interface MetricLine {
+  label: string;
+  value: string;
+}
+
+export interface CardMetric {
+  value: string;
+  label?: string; // e.g., "Net Inflows", "Direct Infra"
+  isIsolated?: boolean; // false = broader segment, defaults to true
+  segmentNote?: string; // e.g., "Real Assets Segment total distributions: $3.96B"
+  comparisons: MetricComparison[];
+  additionalLines?: MetricLine[]; // e.g., Ares secondaries line
+}
+
+export interface AssetManagerCard {
+  companyId: string;
+  ticker: string;
+  reportingContext: string;
+  period: string;
+  periodNote?: string;
+  currency: string;
+  reportDate: string;
+  fundraising: CardMetric;
+  deployment: CardMetric;
+  realizations: CardMetric;
+  notes?: string[];
+}
+
+export const assetManagerCards: AssetManagerCard[] = [
+  {
+    companyId: "brookfield",
+    ticker: "BAM",
+    reportingContext: "Standalone Infrastructure Segment",
+    period: "Q4 2025",
+    currency: "USD",
+    reportDate: "2026-02-04",
+    fundraising: {
+      value: "$7.0B",
+      comparisons: [
+        { label: "QoQ", value: "$3.5B" },
+        { label: "YoY", value: "$2.5B" },
+      ],
+    },
+    deployment: {
+      value: "$800M",
+      comparisons: [
+        { label: "QoQ", value: "$9.3B" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
+    },
+    realizations: {
+      value: "$1.6B",
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "$300M" },
+      ],
+    },
+    notes: [
+      "Fundraising includes $5.0B for its inaugural AI infrastructure fund.",
+      "Realizations include the partial sale of PD Ports and the IPO of Rockpoint Gas Storage.",
+    ],
+  },
+  {
+    companyId: "blackstone",
+    ticker: "BX",
+    reportingContext: "Infrastructure Sub-Segment (Housed within Private Equity)",
+    period: "Q4 2025",
+    currency: "USD",
+    reportDate: "2026-01-29",
+    fundraising: {
+      value: "$4.16B",
+      label: "Inflows",
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
+    },
+    deployment: {
+      value: "$1.77B",
+      label: "Capital Deployed",
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
+    },
+    realizations: {
+      value: "$566M",
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
+    },
+  },
+  {
+    companyId: "tpg",
+    ticker: "TPG",
+    reportingContext: "Impact Platform (Houses Climate & Energy Transition)",
+    period: "Q4 2025",
+    currency: "USD",
+    reportDate: "2026-02-05",
+    fundraising: {
+      value: "$1.11B",
+      comparisons: [
+        { label: "QoQ", value: "$440M" },
+        { label: "YoY", value: "$1.71B" },
+      ],
+    },
+    deployment: {
+      value: "$2.00B",
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "$951M" },
+      ],
+    },
+    realizations: {
+      value: "$636M",
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "$105M" },
+      ],
+    },
+  },
+  {
+    companyId: "kkr",
+    ticker: "KKR",
+    reportingContext: "Real Assets Segment (Combines Infrastructure & Real Estate)",
+    period: "Q4 2025",
+    currency: "USD",
+    reportDate: "2026-02-04",
+    fundraising: {
+      value: "$10.0B",
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "$5.34B" },
+      ],
+    },
+    deployment: {
+      value: "$7.45B",
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "$6.40B" },
+      ],
+    },
+    realizations: {
+      value: "Not Isolated",
+      isIsolated: false,
+      segmentNote: "Real Assets Segment total distributions: $3.96B",
+      comparisons: [],
+    },
+    notes: [
+      "Q4 fundraising was primarily driven by infrastructure vehicles.",
+      "$26.4M in Net Realized Performance Income for the segment was driven specifically by global and European infrastructure.",
+    ],
+  },
+  {
+    companyId: "ares",
+    ticker: "ARES",
+    reportingContext: "Hybrid (Direct Infra for raises/deployments; Broader Real Assets for realizations)",
+    period: "Q4 2025",
+    currency: "USD",
+    reportDate: "2026-02-06",
+    fundraising: {
+      value: "$2.9B",
+      label: "Direct Infra",
+      comparisons: [],
+      additionalLines: [
+        { label: "Infra Secondaries", value: "$0.8B" },
+      ],
+    },
+    deployment: {
+      value: "$2.7B",
+      label: "Direct Infra",
+      comparisons: [],
+    },
+    realizations: {
+      value: "Not Isolated",
+      isIsolated: false,
+      segmentNote: "Total Real Assets Segment distributions: $1.93B",
+      comparisons: [],
+    },
+  },
+  {
+    companyId: "blackrock",
+    ticker: "BLK",
+    reportingContext: "Infrastructure (Private Markets Product Type)",
+    period: "Q4 2025",
+    currency: "USD",
+    reportDate: "2026-01-15",
+    fundraising: {
+      value: "$4.99B",
+      label: "Net Inflows",
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
+    },
+    deployment: {
+      value: "Not Disclosed",
+      comparisons: [],
+    },
+    realizations: {
+      value: "$3.00B",
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
+    },
+  },
+  {
+    companyId: "apollo",
+    ticker: "APO",
+    reportingContext: "Credit Segment (Houses Infrastructure & Asset-Based Credit)",
+    period: "Q4 2025",
+    currency: "USD",
+    reportDate: "2026-02-04",
+    fundraising: {
+      value: "$11.8B",
+      label: "Combined inflows across infra and asset-based credit",
+      comparisons: [],
+    },
+    deployment: {
+      value: "Not Isolated",
+      isIsolated: false,
+      segmentNote: "Total Credit Segment deployed $22.9B",
+      comparisons: [],
+    },
+    realizations: {
+      value: "Not Isolated",
+      isIsolated: false,
+      segmentNote: "Total Credit Segment realized $25.6B",
+      comparisons: [],
+    },
+  },
+  {
+    companyId: "eqt",
+    ticker: "EQT",
+    reportingContext: "Real Assets Segment (Combines Infra & Real Estate; Half-Year Reporting)",
+    period: "H2 2025",
+    periodNote: "Six months ended Dec 31, 2025",
+    currency: "EUR",
+    reportDate: "2026-01-23",
+    fundraising: {
+      value: "€4.6B",
+      comparisons: [
+        { label: "HoH", value: "€5.6B" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
+    },
+    deployment: {
+      value: "€3.1B",
+      comparisons: [
+        { label: "HoH", value: "€3.9B" },
+        { label: "YoY", value: "€5.2B" },
+      ],
+    },
+    realizations: {
+      value: "€1.5B",
+      comparisons: [
+        { label: "HoH", value: "€0.6B" },
+        { label: "YoY", value: "€4.1B" },
+      ],
+    },
+    notes: [
+      "EQT highlighted the final close of EQT Infrastructure VI at a €21.5B hard cap.",
+      "Exit of its remaining stake in Kodiak Gas Services.",
+    ],
+  },
+  {
+    companyId: "macquarie",
+    ticker: "MQG",
+    reportingContext: "Private Markets (Combines Infra, Real Estate, Ag, Private Credit)",
+    period: "Q3 FY2026",
+    periodNote: "Corresponds to Calendar Q4 2025",
+    currency: "AUD",
+    reportDate: "2026-02-10",
+    fundraising: {
+      value: "A$6.3B",
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
+    },
+    deployment: {
+      value: "A$7.7B",
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
+    },
+    realizations: {
+      value: "A$1.6B",
+      comparisons: [
+        { label: "QoQ", value: "Not Disclosed" },
+        { label: "YoY", value: "Not Disclosed" },
+      ],
+    },
+  },
+];
+
 // ─── Helper Functions ──────────────────────────────────────
 
 export function getCompanyById(id: string): Company | undefined {
