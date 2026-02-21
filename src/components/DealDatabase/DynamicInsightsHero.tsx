@@ -35,6 +35,13 @@ const NON_INFRA_FUND_BUYERS = new Set([
   "Porterbrook",
   "Pattern Energy",
   "Singtel",
+  "nexfibre",
+  "IHS Towers",
+  "Commerz Real",
+  "Allianz Insurance Companies",
+  "One Power",
+  "Kalfresh",
+  "Qube Holdings",
 ]);
 
 // ─── Fund name aliases for matching variants to canonical names ──
