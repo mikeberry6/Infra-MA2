@@ -2414,8 +2414,8 @@ export const deals: Deal[] = [
       "Schroders Greencoat signed a Memorandum of Understanding with CATL and Lochpine Capital to co-develop up to 10 GWh of battery energy storage systems across Europe. The MoU was signed in Beijing on January 30 during a UK trade delegation and officially syndicated to the press on February 2.",
     targetDescription:
       "Up to 10 GWh of battery energy storage systems (BESS) to be developed across European markets.",
-    sourceName: "Reuters",
-    sourceUrl: "https://www.reuters.com/business/energy/schroders-catl-lochpine-sign-mou-european-battery-storage-2026-01-30/",
+    sourceName: "Power Technology",
+    sourceUrl: "https://www.power-technology.com/news/schroders-catl-lochpine-sign-mou/",
     enterpriseValue: null,
     equityValue: null,
     stake: null,
@@ -2430,9 +2430,9 @@ export const deals: Deal[] = [
     valuationMultiple: null,
     fundVehicle: null,
     keyHighlights: [
-      "MoU signed in Beijing on January 30 during a UK trade delegation led by Energy Secretary Ed Miliband; officially syndicated to the press on February 2",
-      "Partnership between Schroders Greencoat (infrastructure investor), CATL (world's largest battery manufacturer), and Lochpine Capital (BESS developer) to co-develop up to 10 GWh of BESS across Europe",
-      "Reflects growing institutional appetite for utility-scale battery storage as a critical enabler of Europe's renewable energy transition",
+      "MoU signed in Beijing on January 30 during UK PM Sir Keir Starmer's trade delegation, witnessed by Lucy Rigby KC MP; Schroders Greencoat manages ~450 renewable infrastructure assets with 7.7 GW+ net capacity",
+      "Three-way partnership: Schroders Greencoat (part of Schroders Capital, ~$111B private markets AUM), CATL (world's largest battery manufacturer and battery supplier under the platform), and Lochpine Capital (Hong Kong-based PE firm specializing in BESS and renewable solutions)",
+      "Targets up to 10 GWh of BESS across Europe; part of a wave of multi-GWh international BESS agreements by Chinese energy storage players at the start of 2026",
     ],
   },
   // ─── 71. Vauban (Indigo Group) – Central Parking Colombia ───
