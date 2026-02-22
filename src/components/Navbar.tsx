@@ -13,6 +13,7 @@ export function Navbar() {
     { href: "/", label: "Weekly Briefing" },
     { href: "/tracker", label: "Deal Database" },
     { href: "/earnings", label: "Public Asset Managers" },
+    { href: "/medals", label: "Medal Count" },
   ];
 
   return (
