@@ -2544,42 +2544,6 @@ export const deals: Deal[] = [
       "Bolt-on acquisition expands Velocity's footprint into the Gulf South; part of a broader PE consolidation trend in private aviation FBOs",
     ],
   },
-  // ─── 76. Infratil – Contact Energy Equity Raise ─────────────
-  {
-    id: "INF-2026-076",
-    title: "Infratil supports Contact Energy's NZ$525M equity raise for renewables expansion",
-    buyer: "Infratil",
-    seller: "Contact Energy (primary issuance)",
-    sector: "Power & ET",
-    subsector: "Renewable Energy",
-    region: "Asia-Pacific",
-    category: ["Acquisition (Minority Stake)"],
-    date: "2026-02-16T08:00:00Z",
-    description:
-      "Contact Energy announced a NZ$525 million equity raise (NZ$450M fully underwritten placement at NZ$8.75/share + NZ$75M retail offer) to fund three renewable energy projects. Infratil (14.3% stake) took up its pro rata share (~NZ$64M estimated), maintaining its position as a strategic shareholder.",
-    targetDescription:
-      "Contact Energy Limited (NZX: CEN), New Zealand's largest listed gentailer with 97% renewable generation, NZ$2.4B in renewable investment committed over 5 years.",
-    sourceName: "NZ Herald",
-    sourceUrl: "https://www.nzherald.co.nz/business/companies/energy/contact-energy-profit-jumps-44-to-205m-plans-525m-equity-raise/C4C6MK3HT5EKHDC3TVJJIUA45U/",
-    enterpriseValue: null,
-    equityValue: "NZ$525 million (total raise); Infratil pro rata ~NZ$64M",
-    stake: "14.3% (maintained)",
-    status: "Closed",
-    closingDate: "February 2026",
-    financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
-    country: "New Zealand",
-    assetScale: "NZ's largest listed gentailer; 97% renewable generation; NZ$2.4B committed to renewables over 5 years",
-    valuationMultiple: null,
-    fundVehicle: null,
-    keyHighlights: [
-      "Proceeds fund: Glenbrook Battery 2.0 (200 MW / 400 MWh Tesla Megapack 2 XL, ~NZ$235M, Q1 2028 COD, doubling site to 300 MW), Glorit Solar Farm (150 MWac, 50/50 JV with Lightsource bp, ~NZ$305M, Q3 2028 COD), and Tauhara 2 geothermal pre-FID drilling (60-70 MW, ~NZ$30M, FID targeted FY27)",
-      "Infratil (14.3% stake) took pro rata share (~NZ$64M); stake built through July 2025 Manawa Energy merger (~9.4%) and October 2025 TECT acquisition (4.92% for NZ$437.7M at NZ$8.95/share)",
-      "Contact reported H1 FY26 net profit up 44% to NZ$205M, EBITDAF NZ$500M (+24%), operating FCF NZ$249M (+80%); equity raise reduces net debt/EBITDA from 2.8x to 2.3x; expects 3-5 TWh new grid demand over 5 years",
-    ],
-  },
   // ─── 77. APG Asset Management – Utility Global Series D ─────
   {
     id: "INF-2026-077",
