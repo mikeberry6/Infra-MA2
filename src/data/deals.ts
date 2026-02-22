@@ -2654,7 +2654,7 @@ export const deals: Deal[] = [
   // ─── 77. APG Asset Management – Utility Global Series D ─────
   {
     id: "INF-2026-077",
-    title: "APG leads $100M first close of Utility Global Series D for industrial decarbonization",
+    title: "APG and Ara Partners lead $100M first close of Utility Global Series D for H2Gen platform",
     buyer: "APG Asset Management",
     seller: "Utility Global (primary issuance)",
     sector: "Power & ET",
@@ -2663,9 +2663,9 @@ export const deals: Deal[] = [
     category: ["Acquisition (Minority Stake)"],
     date: "2026-02-17T08:00:00Z",
     description:
-      "Utility Global announced the $100 million first close of its Series D financing round, with APG Asset Management as a lead investor, to deploy its economic industrial decarbonization platform globally.",
+      "Utility Global announced the $100 million first close of its Series D financing round, co-led by APG Asset Management (~€590B AUM) and Ara Partners (~$6.6B AUM), to scale its proprietary H2Gen electrochemical technology for clean hydrogen production and deploy it across the Americas, Europe, and Asia.",
     targetDescription:
-      "Utility Global, a clean technology company deploying an industrial decarbonization platform for hydrogen and syngas production.",
+      "Utility Global, a Houston-based clean technology company with proprietary H2Gen technology that converts water into clean hydrogen and high-purity CO2 using industrial off-gases, without requiring electricity.",
     sourceName: "PR Newswire",
     sourceUrl: "https://www.prnewswire.com/news-releases/utility-global-announces-100-million-first-close-of-series-d-financing-to-deploy-its-economic-industrial-decarbonization-platform-globally-302689146.html",
     enterpriseValue: null,
@@ -2674,17 +2674,17 @@ export const deals: Deal[] = [
     status: "Closed",
     closingDate: "February 2026",
     financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
+    financialAdvisorSeller: ["TPH & Co. (Perella Weinberg Partners)", "BDA Partners"],
     legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
+    legalAdvisorSeller: ["Latham & Watkins"],
     country: "United States",
-    assetScale: "Industrial decarbonization platform for hydrogen and syngas production",
+    assetScale: "H2Gen modular clean hydrogen platform; deployments in Americas, Europe, and Asia",
     valuationMultiple: null,
     fundVehicle: null,
     keyHighlights: [
-      "APG Asset Management leads $100M first close of Series D financing for Utility Global's industrial decarbonization platform",
-      "Utility Global develops proprietary technology for economic hydrogen and syngas production, targeting hard-to-abate industrial sectors",
-      "Proceeds to fund global deployment of the company's decarbonization technology platform",
+      "Co-led by APG Asset Management (~€590B AUM, Netherlands' largest pension manager) and Ara Partners (~$6.6B AUM, majority investor since 2021); prior investors include Aramco Ventures, ArcelorMittal, Ontario Power Generation",
+      "Utility Global's H2Gen technology converts water into clean hydrogen and high-purity CO2 using industrial off-gases — no electricity required; targets steel, refining, petrochemicals, and low-carbon fuels",
+      "Active projects include ArcelorMittal blast furnace gas-to-hydrogen in Brazil and Seongnam (South Korea) biogas-to-hydrogen for municipal transit",
     ],
   },
   // ─── 78. DESRI – Linea Energy (EnCap) Duffy BESS ───────────
