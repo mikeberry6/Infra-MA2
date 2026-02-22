@@ -2044,41 +2044,6 @@ export const deals: Deal[] = [
       "Strengthens US Signal's Midwest data center footprint and connectivity platform",
     ],
   },
-  // ─── 60. GIC – IndiGrid Infrastructure Trust ─────────────────
-  {
-    id: "INF-2026-060",
-    title: "GIC sells 7.36% stake in IndiGrid Infrastructure Trust via OFS",
-    buyer: "Public Market",
-    seller: "GIC",
-    sector: "Power & ET",
-    subsector: "Power Transmission",
-    region: "Asia-Pacific",
-    category: ["Sale (Minority Stake)"],
-    date: "2026-02-06T08:00:00Z",
-    description:
-      "GIC sold a 7.36% stake in IndiGrid Infrastructure Trust via an offer for sale (OFS) on Indian exchanges.",
-    targetDescription:
-      "IndiGrid Infrastructure Trust, an Indian infrastructure investment trust focused on power transmission assets.",
-    sourceName: "GIC",
-    sourceUrl: "https://solarquarter.com/2026/02/06/government-of-singapore-expands-indigrid-invit-divestment-to-7-36-stake-via-oversubscription-option/",
-    enterpriseValue: null,
-    equityValue: null,
-    stake: "7.36%",
-    status: "Closed",
-    closingDate: "February 2026",
-    financialAdvisorBuyer: null,
-    financialAdvisorSeller: null,
-    legalAdvisorBuyer: null,
-    legalAdvisorSeller: null,
-    country: "India",
-    assetScale: null,
-    valuationMultiple: null,
-    fundVehicle: null,
-    keyHighlights: [
-      "GIC disposed of a 7.36% stake in IndiGrid Infrastructure Trust via an offer for sale (OFS) on Indian stock exchanges",
-      "IndiGrid is India's first infrastructure investment trust (InvIT), focused on power transmission assets",
-    ],
-  },
   // ─── 61. InfraVia / DigitalBridge – Substantial Group (Netomnia) ──
   {
     id: "INF-2026-061",
@@ -2301,7 +2266,7 @@ export const deals: Deal[] = [
     sector: "Transportation",
     subsector: "Airports",
     region: "Europe",
-    category: ["Acquisition (Minority Stake)"],
+    category: ["Acquisition (Minority Stake)", "Sale (Minority Stake)"],
     date: "2026-02-18T08:00:00Z",
     description:
       "Blackstone (via its Infrastructure Strategies Fund) acquired a 10% minority equity stake in Fraport Greece from the Marguerite Fund for approximately €200 million ($236.2 million). Fraport Greece holds a 40-year concession to operate, maintain, and develop 14 regional airports across Greece.",
