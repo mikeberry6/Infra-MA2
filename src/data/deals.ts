@@ -6,9 +6,11 @@ export type DealCategory =
   | "Acquisition (Buyout)"
   | "Acquisition (Majority Stake)"
   | "Acquisition (Minority Stake)"
+  | "Acquisition (Bolt-On)"
   | "Sale (Buyout)"
   | "Sale (Majority Stake)"
   | "Sale (Minority Stake)"
+  | "Sale (Carve-Out)"
   | "Platform Launch"
   | "IPO"
   | "Joint Venture";
