@@ -26,22 +26,7 @@ function baseActivity(cat: string): string {
 // ─── Non-infrastructure-fund buyers to exclude from fund ranking ──
 const NON_INFRA_FUND_BUYERS = new Set([
   "Undisclosed Buyer",
-  "Public Market",
-  "Bain Capital",
-  "Mitsui O.S.K. Lines",
-  "Talen Energy",
-  "Drax Group",
-  "Pilot Fiber",
-  "Porterbrook",
-  "Pattern Energy",
-  "Singtel",
-  "nexfibre",
-  "IHS Towers",
-  "Commerz Real",
-  "Allianz Insurance Companies",
-  "One Power",
-  "Kalfresh",
-  "Qube Holdings",
+  "Undisclosed Seller",
 ]);
 
 // ─── Fund name aliases for matching variants to canonical names ──
@@ -49,6 +34,7 @@ const NON_INFRA_FUND_BUYERS = new Set([
 const FUND_NAME_ALIASES: Record<string, string> = {
   "CVC (CVC DIF)": "CVC DIF",
   "Infracapital (M&G)": "Infracapital",
+  "GIP (BlackRock)": "GIP",
 };
 
 /** Normalize a fund name to its canonical form using known aliases */
