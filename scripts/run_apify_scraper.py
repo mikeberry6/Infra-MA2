@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Run the HarvestAPI LinkedIn Company Posts Scraper on Apify.
+Run the API Maestro LinkedIn Company Posts Scraper on Apify.
 
 Usage:
     export APIFY_TOKEN="apify_api_..."
     python3 scripts/run_apify_scraper.py
 
 This script:
-1. Sends 100 LinkedIn company URLs to the HarvestAPI LinkedIn Company Posts
-   Scraper (no cookies required)
-2. Waits for the actor run to complete
+1. Sends 100 LinkedIn company slugs to the apimaestro/linkedin-company-posts
+   actor (no cookies required), one company per actor run
+2. Runs companies in concurrent batches to stay within Apify limits
 3. Downloads the full dataset as JSON
 4. Saves it to scripts/linkedin_raw_posts.json
 """
@@ -27,11 +27,11 @@ if not APIFY_TOKEN:
     print('  export APIFY_TOKEN="apify_api_..."')
     sys.exit(1)
 
-# Actor: HarvestAPI LinkedIn Company Posts Scraper (No Cookies)
-ACTOR_ID = "harvestapi~linkedin-company-posts"
+# Actor: API Maestro LinkedIn Company Posts Scraper (No Cookies)
+ACTOR_ID = "apimaestro~linkedin-company-posts"
 BASE_URL = "https://api.apify.com/v2"
 
-# All 100 LinkedIn company URLs from Step 1
+# All 100 LinkedIn company slugs
 COMPANY_URLS = [
     "https://www.linkedin.com/company/3i-group-plc",
     "https://www.linkedin.com/company/acadia-infrastructure",
@@ -242,6 +242,9 @@ URL_TO_FUND = {
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE = os.path.join(SCRIPT_DIR, "linkedin_raw_posts.json")
 
+# How many actor runs to have in-flight at once
+CONCURRENCY = 5
+
 
 def api_request(method, path, body=None):
     """Make a request to the Apify API."""
@@ -263,42 +266,76 @@ def api_request(method, path, body=None):
         raise
 
 
-BATCH_SIZE = 50  # Apify limits targetUrls to 50 per run
+def slug_from_url(url):
+    """Extract the company slug from a LinkedIn URL."""
+    return url.rstrip("/").split("/")[-1]
 
 
-def run_batch(batch_urls, batch_num, total_batches):
-    """Run a single batch of URLs through the actor and return dataset items."""
+def start_run(slug):
+    """Start an actor run for a single company and return run metadata."""
     actor_input = {
-        "targetUrls": [{"url": u} for u in batch_urls],
-        "maxPosts": 10,
+        "identifier": slug,
+        "page_number": 1,
+    }
+    result = api_request("POST", f"/acts/{ACTOR_ID}/runs", body=actor_input)
+    return {
+        "slug": slug,
+        "run_id": result["data"]["id"],
+        "dataset_id": result["data"]["defaultDatasetId"],
     }
 
-    print(f"Launching batch {batch_num}/{total_batches} ({len(batch_urls)} URLs)...")
-    result = api_request("POST", f"/acts/{ACTOR_ID}/runs", body=actor_input)
-    run_id = result["data"]["id"]
-    dataset_id = result["data"]["defaultDatasetId"]
-    print(f"  Run ID: {run_id}")
-    print(f"  Dataset ID: {dataset_id}")
 
-    # Poll until complete
-    print("  Waiting for actor run to complete...")
+def poll_run(run_info):
+    """Poll until an actor run finishes. Returns the final status."""
+    run_id = run_info["run_id"]
     while True:
-        run_info = api_request("GET", f"/actor-runs/{run_id}")
-        status = run_info["data"]["status"]
-        print(f"  Status: {status}")
-
+        resp = api_request("GET", f"/actor-runs/{run_id}")
+        status = resp["data"]["status"]
         if status in ("SUCCEEDED", "FAILED", "ABORTED", "TIMED-OUT"):
-            break
-        time.sleep(15)
+            return status
+        time.sleep(10)
 
-    if status != "SUCCEEDED":
-        print(f"ERROR: Batch {batch_num} ended with status: {status}")
-        sys.exit(1)
 
-    # Download dataset items
-    print(f"  Downloading dataset items for batch {batch_num}...")
-    items = api_request("GET", f"/datasets/{dataset_id}/items?limit=2000")
-    print(f"  Got {len(items)} posts from batch {batch_num}")
+def download_dataset(dataset_id):
+    """Download all items from an Apify dataset."""
+    return api_request("GET", f"/datasets/{dataset_id}/items?limit=2000")
+
+
+def process_batch(urls):
+    """Process a batch of URLs concurrently: start runs, poll, download."""
+    # Start all runs in this batch
+    runs = []
+    for url in urls:
+        slug = slug_from_url(url)
+        fund = URL_TO_FUND.get(slug, slug)
+        print(f"  Starting run for {fund} ({slug})...")
+        try:
+            run_info = start_run(slug)
+            runs.append(run_info)
+        except Exception as e:
+            print(f"  ERROR starting run for {slug}: {e}")
+            continue
+
+    # Poll all runs until complete
+    items = []
+    for run_info in runs:
+        slug = run_info["slug"]
+        fund = URL_TO_FUND.get(slug, slug)
+        print(f"  Waiting for {fund}...", end="", flush=True)
+        status = poll_run(run_info)
+        print(f" {status}")
+
+        if status == "SUCCEEDED":
+            dataset_items = download_dataset(run_info["dataset_id"])
+            # Enrich with fund name
+            for item in dataset_items:
+                item["_fundName"] = fund
+                item["_slug"] = slug
+            items.extend(dataset_items)
+            print(f"    -> {len(dataset_items)} posts")
+        else:
+            print(f"    -> SKIPPED (status: {status})")
+
     return items
 
 
@@ -306,27 +343,21 @@ def main():
     print(f"Starting LinkedIn Company Posts Scraper...")
     print(f"  Actor: {ACTOR_ID}")
     print(f"  Companies: {len(COMPANY_URLS)}")
-    print(f"  Max posts per company: 10")
-    print(f"  Batch size: {BATCH_SIZE}")
+    print(f"  Concurrency: {CONCURRENCY}")
     print()
 
-    # Split URLs into batches of 50
-    batches = [COMPANY_URLS[i:i + BATCH_SIZE] for i in range(0, len(COMPANY_URLS), BATCH_SIZE)]
-    total_batches = len(batches)
-    print(f"  Split into {total_batches} batches")
-    print()
-
+    # Process in concurrent batches
     all_items = []
-    for i, batch in enumerate(batches, 1):
-        items = run_batch(batch, i, total_batches)
+    total = len(COMPANY_URLS)
+    for i in range(0, total, CONCURRENCY):
+        batch = COMPANY_URLS[i:i + CONCURRENCY]
+        batch_num = (i // CONCURRENCY) + 1
+        total_batches = (total + CONCURRENCY - 1) // CONCURRENCY
+        print(f"Batch {batch_num}/{total_batches} ({len(batch)} companies):")
+        items = process_batch(batch)
         all_items.extend(items)
+        print(f"  Batch total: {len(items)} posts")
         print()
-
-    # Enrich each post with the fund name
-    for item in all_items:
-        author_url = item.get("authorUrl", "") or item.get("profileUrl", "")
-        slug = author_url.rstrip("/").split("/")[-1] if author_url else ""
-        item["_fundName"] = URL_TO_FUND.get(slug, slug)
 
     print(f"Total: {len(all_items)} posts from {len(COMPANY_URLS)} companies")
 
