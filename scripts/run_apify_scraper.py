@@ -253,8 +253,14 @@ def api_request(method, path, body=None):
     headers = {"Content-Type": "application/json"} if body else {}
 
     req = urllib.request.Request(url, data=data, headers=headers, method=method)
-    with urllib.request.urlopen(req) as resp:
-        return json.loads(resp.read().decode())
+    try:
+        with urllib.request.urlopen(req) as resp:
+            return json.loads(resp.read().decode())
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode()
+        print(f"HTTP Error {e.code}: {e.reason}")
+        print(f"Response body: {error_body}")
+        raise
 
 
 def main():
