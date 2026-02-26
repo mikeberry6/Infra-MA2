@@ -274,6 +274,10 @@ def run_batch(batch_urls, batch_num, total_batches):
     """Run a single batch of URLs through the actor and return dataset items."""
     actor_input = {
         "urls": batch_urls,
+        "proxy": {
+            "useApifyProxy": True,
+            "apifyProxyGroups": ["RESIDENTIAL"],
+        },
     }
 
     print(f"Launching batch {batch_num}/{total_batches} ({len(batch_urls)} URLs)...")
@@ -326,7 +330,7 @@ def main():
 
     # Enrich each post with the fund name
     for item in all_items:
-        author_url = item.get("authorUrl", "") or item.get("profileUrl", "") or item.get("companyUrl", "")
+        author_url = item.get("authorProfileUrl", "") or item.get("authorUrl", "") or item.get("companyUrl", "")
         slug = slug_from_url(author_url) if author_url else ""
         item["_fundName"] = URL_TO_FUND.get(slug, slug)
 
