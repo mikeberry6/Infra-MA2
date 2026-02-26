@@ -263,30 +263,25 @@ def api_request(method, path, body=None):
         raise
 
 
-def main():
-    print(f"Starting LinkedIn Company Posts Scraper...")
-    print(f"  Actor: {ACTOR_ID}")
-    print(f"  Companies: {len(COMPANY_URLS)}")
-    print(f"  Max posts per company: 10")
-    print()
+BATCH_SIZE = 50  # Apify limits targetUrls to 50 per run
 
-    # Start the actor run
-    # Apify expects URLs as objects with a "url" key
+
+def run_batch(batch_urls, batch_num, total_batches):
+    """Run a single batch of URLs through the actor and return dataset items."""
     actor_input = {
-        "targetUrls": [{"url": u} for u in COMPANY_URLS],
+        "targetUrls": [{"url": u} for u in batch_urls],
         "maxPosts": 10,
     }
 
-    print("Launching actor run...")
+    print(f"Launching batch {batch_num}/{total_batches} ({len(batch_urls)} URLs)...")
     result = api_request("POST", f"/acts/{ACTOR_ID}/runs", body=actor_input)
     run_id = result["data"]["id"]
     dataset_id = result["data"]["defaultDatasetId"]
     print(f"  Run ID: {run_id}")
     print(f"  Dataset ID: {dataset_id}")
-    print()
 
     # Poll until complete
-    print("Waiting for actor run to complete...")
+    print("  Waiting for actor run to complete...")
     while True:
         run_info = api_request("GET", f"/actor-runs/{run_id}")
         status = run_info["data"]["status"]
@@ -297,26 +292,48 @@ def main():
         time.sleep(15)
 
     if status != "SUCCEEDED":
-        print(f"ERROR: Actor run ended with status: {status}")
+        print(f"ERROR: Batch {batch_num} ended with status: {status}")
         sys.exit(1)
 
     # Download dataset items
-    print()
-    print("Downloading dataset items...")
+    print(f"  Downloading dataset items for batch {batch_num}...")
     items = api_request("GET", f"/datasets/{dataset_id}/items?limit=2000")
+    print(f"  Got {len(items)} posts from batch {batch_num}")
+    return items
+
+
+def main():
+    print(f"Starting LinkedIn Company Posts Scraper...")
+    print(f"  Actor: {ACTOR_ID}")
+    print(f"  Companies: {len(COMPANY_URLS)}")
+    print(f"  Max posts per company: 10")
+    print(f"  Batch size: {BATCH_SIZE}")
+    print()
+
+    # Split URLs into batches of 50
+    batches = [COMPANY_URLS[i:i + BATCH_SIZE] for i in range(0, len(COMPANY_URLS), BATCH_SIZE)]
+    total_batches = len(batches)
+    print(f"  Split into {total_batches} batches")
+    print()
+
+    all_items = []
+    for i, batch in enumerate(batches, 1):
+        items = run_batch(batch, i, total_batches)
+        all_items.extend(items)
+        print()
 
     # Enrich each post with the fund name
-    for item in items:
+    for item in all_items:
         author_url = item.get("authorUrl", "") or item.get("profileUrl", "")
         slug = author_url.rstrip("/").split("/")[-1] if author_url else ""
         item["_fundName"] = URL_TO_FUND.get(slug, slug)
 
-    print(f"  Downloaded {len(items)} posts")
+    print(f"Total: {len(all_items)} posts from {len(COMPANY_URLS)} companies")
 
     # Save to file
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(items, f, indent=2, ensure_ascii=False)
-    print(f"  Saved to {OUTPUT_FILE}")
+        json.dump(all_items, f, indent=2, ensure_ascii=False)
+    print(f"Saved to {OUTPUT_FILE}")
     print()
     print("Done! Now run: python3 scripts/filter_linkedin_posts.py")
 
