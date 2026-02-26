@@ -7,7 +7,7 @@ Usage:
     python3 scripts/run_apify_scraper.py
 
 This script:
-1. Sends 100 LinkedIn company URLs to the HarvestAPI LinkedIn Profile Posts
+1. Sends 100 LinkedIn company URLs to the HarvestAPI LinkedIn Company Posts
    Scraper (no cookies required)
 2. Waits for the actor run to complete
 3. Downloads the full dataset as JSON
@@ -27,8 +27,8 @@ if not APIFY_TOKEN:
     print('  export APIFY_TOKEN="apify_api_..."')
     sys.exit(1)
 
-# Actor: HarvestAPI LinkedIn Profile Posts Scraper (No Cookies)
-ACTOR_ID = "harvestapi~linkedin-profile-posts"
+# Actor: HarvestAPI LinkedIn Company Posts Scraper (No Cookies)
+ACTOR_ID = "harvestapi~linkedin-company-posts"
 BASE_URL = "https://api.apify.com/v2"
 
 # All 100 LinkedIn company URLs from Step 1
