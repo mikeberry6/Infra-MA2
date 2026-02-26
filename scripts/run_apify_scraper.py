@@ -33,7 +33,7 @@ BASE_URL = "https://api.apify.com/v2"
 
 # All 100 LinkedIn company slugs
 COMPANY_URLS = [
-    "https://www.linkedin.com/company/3i-group-plc",
+    "https://www.linkedin.com/company/3i-infrastructure-plc",
     "https://www.linkedin.com/company/acadia-infrastructure",
     "https://www.linkedin.com/company/actis",
     "https://www.linkedin.com/company/adia",
@@ -137,7 +137,7 @@ COMPANY_URLS = [
 
 # Map LinkedIn URL slug -> original fund name for downstream matching
 URL_TO_FUND = {
-    "3i-group-plc": "3i Infrastructure",
+    "3i-infrastructure-plc": "3i Infrastructure",
     "acadia-infrastructure": "Acadia Infrastructure Capital",
     "actis": "Actis",
     "adia": "ADIA Infrastructure",
