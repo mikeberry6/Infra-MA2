@@ -274,10 +274,6 @@ def run_batch(batch_urls, batch_num, total_batches):
     """Run a single batch of URLs through the actor and return dataset items."""
     actor_input = {
         "urls": batch_urls,
-        "proxy": {
-            "useApifyProxy": True,
-            "apifyProxyGroups": ["RESIDENTIAL"],
-        },
     }
 
     print(f"Launching batch {batch_num}/{total_batches} ({len(batch_urls)} URLs)...")
