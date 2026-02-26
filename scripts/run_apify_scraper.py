@@ -265,8 +265,9 @@ def main():
     print()
 
     # Start the actor run
+    # Apify expects URLs as objects with a "url" key
     actor_input = {
-        "targetUrls": COMPANY_URLS,
+        "targetUrls": [{"url": u} for u in COMPANY_URLS],
         "maxPosts": 10,
     }
 
