@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Run the HarvestAPI LinkedIn Company Posts Scraper on Apify.
+Run the Scraper Engine LinkedIn Company Post Scraper on Apify.
 
 Usage:
     export APIFY_TOKEN="apify_api_..."
     python3 scripts/run_apify_scraper.py
 
 This script:
-1. Sends 100 LinkedIn company URLs to the HarvestAPI LinkedIn Profile Posts
-   Scraper (no cookies required)
-2. Waits for the actor run to complete
+1. Sends 100 LinkedIn company URLs to the scraper-engine/linkedin-company-post-scraper
+   actor (no cookies required) in batches
+2. Waits for each batch to complete
 3. Downloads the full dataset as JSON
 4. Saves it to scripts/linkedin_raw_posts.json
 """
@@ -27,13 +27,13 @@ if not APIFY_TOKEN:
     print('  export APIFY_TOKEN="apify_api_..."')
     sys.exit(1)
 
-# Actor: HarvestAPI LinkedIn Profile Posts Scraper (No Cookies)
-ACTOR_ID = "harvestapi~linkedin-profile-posts"
+# Actor: Scraper Engine LinkedIn Company Post Scraper (No Cookies)
+ACTOR_ID = "scraper-engine~linkedin-company-post-scraper"
 BASE_URL = "https://api.apify.com/v2"
 
-# All 100 LinkedIn company URLs from Step 1
+# All 100 LinkedIn company slugs
 COMPANY_URLS = [
-    "https://www.linkedin.com/company/3i-group-plc",
+    "https://www.linkedin.com/company/3i-infrastructure-plc",
     "https://www.linkedin.com/company/acadia-infrastructure",
     "https://www.linkedin.com/company/actis",
     "https://www.linkedin.com/company/adia",
@@ -57,7 +57,7 @@ COMPANY_URLS = [
     "https://www.linkedin.com/company/bernhard-capital-partners-llc",
     "https://www.linkedin.com/company/blackrock",
     "https://www.linkedin.com/company/blackstonegroup",
-    "https://www.linkedin.com/company/brookfield-asset-management",
+    "https://www.linkedin.com/company/brookfield",
     "https://www.linkedin.com/company/the-carlyle-group",
     "https://www.linkedin.com/company/cbreim",
     "https://www.linkedin.com/company/cdpq",
@@ -97,7 +97,7 @@ COMPANY_URLS = [
     "https://www.linkedin.com/company/jpmorganassetmanagement",
     "https://www.linkedin.com/company/kimmeridge",
     "https://www.linkedin.com/company/kkr",
-    "https://www.linkedin.com/showcase/macquarie-asset-management",
+    "https://www.linkedin.com/company/macquariegroup",
     "https://www.linkedin.com/company/meag",
     "https://www.linkedin.com/company/meridiam",
     "https://www.linkedin.com/company/mirova",
@@ -137,7 +137,7 @@ COMPANY_URLS = [
 
 # Map LinkedIn URL slug -> original fund name for downstream matching
 URL_TO_FUND = {
-    "3i-group-plc": "3i Infrastructure",
+    "3i-infrastructure-plc": "3i Infrastructure",
     "acadia-infrastructure": "Acadia Infrastructure Capital",
     "actis": "Actis",
     "adia": "ADIA Infrastructure",
@@ -161,7 +161,7 @@ URL_TO_FUND = {
     "bernhard-capital-partners-llc": "Bernhard Capital Partners",
     "blackrock": "BlackRock",
     "blackstonegroup": "Blackstone",
-    "brookfield-asset-management": "Brookfield Asset Management",
+    "brookfield": "Brookfield",
     "the-carlyle-group": "Carlyle Infrastructure",
     "cbreim": "CBRE Investment Management",
     "cdpq": "CDPQ",
@@ -201,7 +201,7 @@ URL_TO_FUND = {
     "jpmorganassetmanagement": "J.P. Morgan Asset Management",
     "kimmeridge": "Kimmeridge Energy",
     "kkr": "KKR",
-    "macquarie-asset-management": "Macquarie Asset Management",
+    "macquariegroup": "Macquarie Asset Management",
     "meag": "MEAG",
     "meridiam": "Meridiam",
     "mirova": "Mirova",
@@ -242,6 +242,8 @@ URL_TO_FUND = {
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE = os.path.join(SCRIPT_DIR, "linkedin_raw_posts.json")
 
+BATCH_SIZE = 50  # URLs per actor run
+
 
 def api_request(method, path, body=None):
     """Make a request to the Apify API."""
@@ -253,33 +255,36 @@ def api_request(method, path, body=None):
     headers = {"Content-Type": "application/json"} if body else {}
 
     req = urllib.request.Request(url, data=data, headers=headers, method=method)
-    with urllib.request.urlopen(req) as resp:
-        return json.loads(resp.read().decode())
+    try:
+        with urllib.request.urlopen(req) as resp:
+            return json.loads(resp.read().decode())
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode()
+        print(f"HTTP Error {e.code}: {e.reason}")
+        print(f"Response body: {error_body}")
+        raise
 
 
-def main():
-    print(f"Starting LinkedIn Company Posts Scraper...")
-    print(f"  Actor: {ACTOR_ID}")
-    print(f"  Companies: {len(COMPANY_URLS)}")
-    print(f"  Max posts per company: 10")
-    print()
+def slug_from_url(url):
+    """Extract the company slug from a LinkedIn URL."""
+    return url.rstrip("/").split("/")[-1]
 
-    # Start the actor run
+
+def run_batch(batch_urls, batch_num, total_batches):
+    """Run a single batch of URLs through the actor and return dataset items."""
     actor_input = {
-        "targetUrls": COMPANY_URLS,
-        "maxPosts": 10,
+        "urls": batch_urls,
     }
 
-    print("Launching actor run...")
+    print(f"Launching batch {batch_num}/{total_batches} ({len(batch_urls)} URLs)...")
     result = api_request("POST", f"/acts/{ACTOR_ID}/runs", body=actor_input)
     run_id = result["data"]["id"]
     dataset_id = result["data"]["defaultDatasetId"]
     print(f"  Run ID: {run_id}")
     print(f"  Dataset ID: {dataset_id}")
-    print()
 
     # Poll until complete
-    print("Waiting for actor run to complete...")
+    print("  Waiting for actor run to complete...")
     while True:
         run_info = api_request("GET", f"/actor-runs/{run_id}")
         status = run_info["data"]["status"]
@@ -290,26 +295,47 @@ def main():
         time.sleep(15)
 
     if status != "SUCCEEDED":
-        print(f"ERROR: Actor run ended with status: {status}")
+        print(f"ERROR: Batch {batch_num} ended with status: {status}")
         sys.exit(1)
 
     # Download dataset items
-    print()
-    print("Downloading dataset items...")
+    print(f"  Downloading dataset items for batch {batch_num}...")
     items = api_request("GET", f"/datasets/{dataset_id}/items?limit=2000")
+    print(f"  Got {len(items)} posts from batch {batch_num}")
+    return items
+
+
+def main():
+    print(f"Starting LinkedIn Company Posts Scraper...")
+    print(f"  Actor: {ACTOR_ID}")
+    print(f"  Companies: {len(COMPANY_URLS)}")
+    print(f"  Batch size: {BATCH_SIZE}")
+    print()
+
+    # Split URLs into batches
+    batches = [COMPANY_URLS[i:i + BATCH_SIZE] for i in range(0, len(COMPANY_URLS), BATCH_SIZE)]
+    total_batches = len(batches)
+    print(f"  Split into {total_batches} batches")
+    print()
+
+    all_items = []
+    for i, batch in enumerate(batches, 1):
+        items = run_batch(batch, i, total_batches)
+        all_items.extend(items)
+        print()
 
     # Enrich each post with the fund name
-    for item in items:
-        author_url = item.get("authorUrl", "") or item.get("profileUrl", "")
-        slug = author_url.rstrip("/").split("/")[-1] if author_url else ""
+    for item in all_items:
+        author_url = item.get("authorProfileUrl", "") or item.get("authorUrl", "") or item.get("companyUrl", "")
+        slug = slug_from_url(author_url) if author_url else ""
         item["_fundName"] = URL_TO_FUND.get(slug, slug)
 
-    print(f"  Downloaded {len(items)} posts")
+    print(f"Total: {len(all_items)} posts from {len(COMPANY_URLS)} companies")
 
     # Save to file
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(items, f, indent=2, ensure_ascii=False)
-    print(f"  Saved to {OUTPUT_FILE}")
+        json.dump(all_items, f, indent=2, ensure_ascii=False)
+    print(f"Saved to {OUTPUT_FILE}")
     print()
     print("Done! Now run: python3 scripts/filter_linkedin_posts.py")
 
