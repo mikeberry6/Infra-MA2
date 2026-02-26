@@ -37,7 +37,7 @@ import { DynamicInsightsHero } from "./DealDatabase/DynamicInsightsHero";
 import { useDebounce } from "@/hooks/useDebounce";
 
 // ─── Filters ────────────────────────────────────────────────
-const SECTORS: DealSector[] = ["Transportation", "Power & ET", "Midstream", "Utilities", "Environmental", "Digital", "Social"];
+const SECTORS: DealSector[] = ["Transportation", "Power & ET", "Midstream", "Utilities", "Waste & ES", "Digital", "Social"];
 
 const CATEGORIES: DealCategory[] = [
   "Acquisition (Buyout)",

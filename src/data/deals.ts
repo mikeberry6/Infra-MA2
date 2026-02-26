@@ -1,4 +1,4 @@
-export type DealSector = "Transportation" | "Power & ET" | "Midstream" | "Utilities" | "Environmental" | "Digital" | "Social" | "Waste & ES";
+export type DealSector = "Transportation" | "Power & ET" | "Midstream" | "Utilities" | "Waste & ES" | "Digital" | "Social";
 
 export type DealRegion = "North America" | "Europe" | "Asia-Pacific" | "Middle East & Africa" | "Latin America";
 
@@ -1353,7 +1353,7 @@ export const deals: Deal[] = [
     title: "Blackstone acquires Alliance Technical Group platform",
     buyer: "Blackstone",
     seller: "Undisclosed Seller",
-    sector: "Environmental",
+    sector: "Waste & ES",
     subsector: "Environmental Services",
     region: "North America",
     category: ["Acquisition (Buyout)"],
@@ -1385,7 +1385,7 @@ export const deals: Deal[] = [
     title: "Blackstone and EQT Infrastructure co-acquire Urbaser (50/50 platform buyout)",
     buyer: "Blackstone / EQT Infrastructure",
     seller: "Undisclosed Seller",
-    sector: "Environmental",
+    sector: "Waste & ES",
     subsector: "Waste Management",
     region: "Europe",
     category: ["Acquisition (Buyout)", "Joint Venture"],
@@ -2586,14 +2586,12 @@ export function getSectorColor(sector: DealSector): string {
       return "#f97316";
     case "Utilities":
       return "#06b6d4";
-    case "Environmental":
+    case "Waste & ES":
       return "#10b981";
     case "Digital":
       return "#3b82f6";
     case "Social":
       return "#ec4899";
-    case "Waste & ES":
-      return "#84cc16";
     default:
       return "#a1a1aa";
   }
