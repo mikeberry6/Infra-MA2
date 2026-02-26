@@ -1,4 +1,4 @@
-export type DealSector = "Transportation" | "Power & ET" | "Midstream" | "Utilities" | "Environmental" | "Digital" | "Social";
+export type DealSector = "Transportation" | "Power & ET" | "Midstream" | "Utilities" | "Environmental" | "Digital" | "Social" | "Waste & ES";
 
 export type DealRegion = "North America" | "Europe" | "Asia-Pacific" | "Middle East & Africa" | "Latin America";
 
@@ -736,7 +736,7 @@ export const deals: Deal[] = [
     title: "QIC Global Infrastructure co-invests in Kalfresh Bioenergy Facility",
     buyer: "QIC Global Infrastructure",
     seller: "Kalfresh",
-    sector: "Power & ET",
+    sector: "Waste & ES",
     subsector: "Bioenergy",
     region: "Asia-Pacific",
     category: ["Acquisition (Minority Stake)"],
@@ -2592,6 +2592,8 @@ export function getSectorColor(sector: DealSector): string {
       return "#3b82f6";
     case "Social":
       return "#ec4899";
+    case "Waste & ES":
+      return "#84cc16";
     default:
       return "#a1a1aa";
   }
