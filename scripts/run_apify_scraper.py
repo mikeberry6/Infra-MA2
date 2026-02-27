@@ -274,6 +274,8 @@ def run_batch(batch_urls, batch_num, total_batches):
     """Run a single batch of URLs through the actor and return dataset items."""
     actor_input = {
         "targets": batch_urls,
+        "deepScrape": True,
+        "count": 100,
     }
 
     print(f"Launching batch {batch_num}/{total_batches} ({len(batch_urls)} URLs)...")
@@ -300,7 +302,7 @@ def run_batch(batch_urls, batch_num, total_batches):
 
     # Download dataset items
     print(f"  Downloading dataset items for batch {batch_num}...")
-    items = api_request("GET", f"/datasets/{dataset_id}/items?limit=2000")
+    items = api_request("GET", f"/datasets/{dataset_id}/items?limit=10000")
     print(f"  Got {len(items)} posts from batch {batch_num}")
     return items
 
@@ -323,6 +325,13 @@ def main():
         items = run_batch(batch, i, total_batches)
         all_items.extend(items)
         print()
+
+    # Filter to only 2026 posts
+    cutoff = "2026-01-01T00:00:00"
+    pre_filter_count = len(all_items)
+    all_items = [item for item in all_items if item.get("postedAtISO", "") >= cutoff]
+    print(f"Filtered to 2026 posts: {pre_filter_count} -> {len(all_items)}")
+    print()
 
     # Enrich each post with the fund name
     for item in all_items:
