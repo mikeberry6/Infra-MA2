@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Run the Scraper Engine LinkedIn Company Post Scraper on Apify.
+Run the HarvestAPI LinkedIn Company Posts Scraper on Apify.
 
 Usage:
     export APIFY_TOKEN="apify_api_..."
     python3 scripts/run_apify_scraper.py
 
 This script:
-1. Sends 100 LinkedIn company URLs to the scraper-engine/linkedin-company-post-scraper
+1. Sends 100 LinkedIn company URLs to the harvestapi/linkedin-company-posts
    actor (no cookies required) in batches
 2. Waits for each batch to complete
 3. Downloads the full dataset as JSON
@@ -27,8 +27,8 @@ if not APIFY_TOKEN:
     print('  export APIFY_TOKEN="apify_api_..."')
     sys.exit(1)
 
-# Actor: Scraper Engine LinkedIn Company Post Scraper (No Cookies)
-ACTOR_ID = "scraper-engine~linkedin-company-post-scraper"
+# Actor: HarvestAPI LinkedIn Company Posts Scraper (No Cookies)
+ACTOR_ID = "harvestapi~linkedin-company-posts"
 BASE_URL = "https://api.apify.com/v2"
 
 # ---------------------------------------------------------------------------
@@ -301,9 +301,8 @@ def slug_from_url(url):
 def run_batch(batch_urls, batch_num, total_batches, count):
     """Run a single batch of URLs through the actor and return dataset items."""
     actor_input = {
-        "targets": batch_urls,
-        "deepScrape": True,
-        "count": count,
+        "profileUrls": batch_urls,
+        "maxPosts": count,
     }
 
     print(f"Launching batch {batch_num}/{total_batches} ({len(batch_urls)} URLs, count={count})...")
@@ -365,16 +364,36 @@ def main():
         print()
 
     # Filter to only 2026 posts
+    # HarvestAPI nests the date under postedAt.date (ISO string)
     cutoff = "2026-01-01T00:00:00"
     pre_filter_count = len(all_items)
-    all_items = [item for item in all_items if item.get("postedAtISO", "") >= cutoff]
+
+    def get_posted_date(item):
+        """Extract ISO date string from either schema."""
+        posted_at = item.get("postedAt")
+        if isinstance(posted_at, dict):
+            return posted_at.get("date", "")
+        # Fallback for flat schema
+        return item.get("postedAtISO", "")
+
+    all_items = [item for item in all_items if get_posted_date(item) >= cutoff]
     print(f"Filtered to 2026 posts: {pre_filter_count} -> {len(all_items)}")
     print()
 
     # Enrich each post with the fund name
     for item in all_items:
-        author_url = item.get("authorProfileUrl", "") or item.get("authorUrl", "") or item.get("companyUrl", "")
-        slug = slug_from_url(author_url) if author_url else ""
+        # HarvestAPI nests author info under author.linkedinUrl / author.publicIdentifier
+        author = item.get("author") or {}
+        if isinstance(author, dict):
+            author_url = author.get("linkedinUrl", "") or ""
+            public_id = author.get("publicIdentifier", "") or ""
+        else:
+            author_url = ""
+            public_id = ""
+        # Fallback to flat fields from older schemas
+        if not author_url:
+            author_url = item.get("authorProfileUrl", "") or item.get("authorUrl", "") or item.get("companyUrl", "")
+        slug = public_id or (slug_from_url(author_url) if author_url else "")
         item["_fundName"] = URL_TO_FUND.get(slug, slug)
 
     print(f"Total: {len(all_items)} posts from {len(COMPANY_URLS)} companies")
