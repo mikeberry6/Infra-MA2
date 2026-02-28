@@ -35,6 +35,8 @@ const FUND_NAME_ALIASES: Record<string, string> = {
   "CVC (CVC DIF)": "CVC DIF",
   "Infracapital (M&G)": "Infracapital",
   "GIP (BlackRock)": "GIP",
+  "Macquarie Infrastructure Partners": "Macquarie Asset Management",
+  "CPP Investments / Equinix": "CPP Investments",
 };
 
 /** Normalize a fund name to its canonical form using known aliases */
