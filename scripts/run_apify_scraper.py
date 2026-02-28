@@ -341,7 +341,7 @@ def diagnose_actor_schema():
 
     if not input_schema:
         print("  WARNING: Could not retrieve input schema from Apify API.")
-        print("  Will use current parameter names (profileUrls, maxPosts).")
+        print("  Will use current parameter names (targetUrls, maxPosts).")
         return None
 
     props = input_schema.get("properties", {})
@@ -370,8 +370,8 @@ def diagnose_actor_schema():
     print(f"  Detected count field: {count_field or '(not found)'}")
 
     if url_field and count_field:
-        if url_field != "profileUrls" or count_field != "maxPosts":
-            print(f"  >>> MISMATCH: Script uses profileUrls/maxPosts but actor expects {url_field}/{count_field}")
+        if url_field != "targetUrls" or count_field != "maxPosts":
+            print(f"  >>> MISMATCH: Script uses targetUrls/maxPosts but actor expects {url_field}/{count_field}")
         else:
             print(f"  >>> MATCH: Script parameters match actor schema.")
     print("=" * 60)
@@ -385,7 +385,7 @@ def slug_from_url(url):
     return url.rstrip("/").split("/")[-1]
 
 
-def run_batch(batch_urls, batch_num, total_batches, count, urls_field="profileUrls", count_field="maxPosts"):
+def run_batch(batch_urls, batch_num, total_batches, count, urls_field="targetUrls", count_field="maxPosts"):
     """Run a single batch of URLs through the actor and return dataset items."""
     actor_input = {
         urls_field: batch_urls,
@@ -451,7 +451,7 @@ def main():
 
     # Diagnose actor schema to verify correct parameter names
     schema = diagnose_actor_schema()
-    urls_field = schema["urls_field"] if schema else "profileUrls"
+    urls_field = schema["urls_field"] if schema else "targetUrls"
     count_field = schema["count_field"] if schema else "maxPosts"
     print(f"Using parameter names: urls={urls_field}, count={count_field}")
     print()
