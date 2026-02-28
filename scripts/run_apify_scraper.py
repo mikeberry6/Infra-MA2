@@ -20,6 +20,7 @@ import sys
 import time
 import urllib.request
 import urllib.error
+from collections import Counter
 
 APIFY_TOKEN = os.environ.get("APIFY_TOKEN")
 if not APIFY_TOKEN:
@@ -293,19 +294,106 @@ def api_request(method, path, body=None):
         raise
 
 
+def diagnose_actor_schema():
+    """Query the actor metadata to discover the correct input parameter names.
+
+    Returns a dict with keys 'urls_field' and 'count_field' mapping to the
+    actual parameter names the actor expects, or None on failure.
+    """
+    print("=" * 60)
+    print("DIAGNOSING ACTOR INPUT SCHEMA")
+    print("=" * 60)
+
+    try:
+        actor_info = api_request("GET", f"/acts/{ACTOR_ID}")
+    except Exception as exc:
+        print(f"  Could not fetch actor info: {exc}")
+        return None
+
+    # The actor detail includes version info with the input schema
+    versions = actor_info.get("data", {}).get("versions", [])
+    latest_version = actor_info.get("data", {}).get("versions", [{}])[-1] if versions else {}
+    version_number = latest_version.get("versionNumber") or actor_info.get("data", {}).get("defaultRunOptions", {}).get("build", "latest")
+
+    # Try fetching the input schema directly from the version endpoint
+    input_schema = None
+    if version_number:
+        try:
+            version_info = api_request("GET", f"/acts/{ACTOR_ID}/versions/{version_number}")
+            source = version_info.get("data", {}).get("inputSchema")
+            if isinstance(source, str):
+                input_schema = json.loads(source)
+            elif isinstance(source, dict):
+                input_schema = source
+        except Exception:
+            pass
+
+    # Fallback: check if inputSchema is embedded in the actor info directly
+    if not input_schema:
+        for v in reversed(versions):
+            source = v.get("inputSchema")
+            if source:
+                if isinstance(source, str):
+                    input_schema = json.loads(source)
+                elif isinstance(source, dict):
+                    input_schema = source
+                break
+
+    if not input_schema:
+        print("  WARNING: Could not retrieve input schema from Apify API.")
+        print("  Will use current parameter names (profileUrls, maxPosts).")
+        return None
+
+    props = input_schema.get("properties", {})
+    print(f"  Actor input schema has {len(props)} properties:")
+    for name, spec in props.items():
+        ptype = spec.get("type", "?")
+        default = spec.get("default", "(none)")
+        desc = spec.get("description", "")[:80]
+        print(f"    {name:25s}  type={ptype:10s}  default={default!s:10s}  {desc}")
+    print()
+
+    # Identify the URL field (array of strings that accepts LinkedIn URLs)
+    url_field = None
+    count_field = None
+    for name, spec in props.items():
+        ptype = spec.get("type", "")
+        desc = (spec.get("description", "") + " " + spec.get("title", "")).lower()
+        # URL field: array type containing "url" in name or description
+        if ptype == "array" and ("url" in name.lower() or "url" in desc):
+            url_field = name
+        # Count field: integer type with "max" or "count" or "posts" in name
+        if ptype == "integer" and any(kw in name.lower() for kw in ("max", "count", "post", "limit")):
+            count_field = name
+
+    print(f"  Detected URL field:   {url_field or '(not found)'}")
+    print(f"  Detected count field: {count_field or '(not found)'}")
+
+    if url_field and count_field:
+        if url_field != "profileUrls" or count_field != "maxPosts":
+            print(f"  >>> MISMATCH: Script uses profileUrls/maxPosts but actor expects {url_field}/{count_field}")
+        else:
+            print(f"  >>> MATCH: Script parameters match actor schema.")
+    print("=" * 60)
+    print()
+
+    return {"urls_field": url_field, "count_field": count_field} if url_field and count_field else None
+
+
 def slug_from_url(url):
     """Extract the company slug from a LinkedIn URL."""
     return url.rstrip("/").split("/")[-1]
 
 
-def run_batch(batch_urls, batch_num, total_batches, count):
+def run_batch(batch_urls, batch_num, total_batches, count, urls_field="profileUrls", count_field="maxPosts"):
     """Run a single batch of URLs through the actor and return dataset items."""
     actor_input = {
-        "profileUrls": batch_urls,
-        "maxPosts": count,
+        urls_field: batch_urls,
+        count_field: count,
     }
 
-    print(f"Launching batch {batch_num}/{total_batches} ({len(batch_urls)} URLs, count={count})...")
+    print(f"Launching batch {batch_num}/{total_batches} ({len(batch_urls)} URLs, {count_field}={count})...")
+    print(f"  Actor input JSON: {json.dumps(actor_input, indent=2)[:500]}")
     result = api_request("POST", f"/acts/{ACTOR_ID}/runs", body=actor_input)
     run_id = result["data"]["id"]
     dataset_id = result["data"]["defaultDatasetId"]
@@ -331,6 +419,21 @@ def run_batch(batch_urls, batch_num, total_batches, count):
     print(f"  Downloading dataset items for batch {batch_num}...")
     items = api_request("GET", f"/datasets/{dataset_id}/items?limit=10000")
     print(f"  Got {len(items)} posts from batch {batch_num}")
+
+    # Validate: check per-company post counts to detect if maxPosts was ignored
+    company_counts = Counter()
+    for item in items:
+        author = item.get("author") or {}
+        pub_id = author.get("publicIdentifier", "") if isinstance(author, dict) else ""
+        company_counts[pub_id or "unknown"] += 1
+    if company_counts:
+        max_seen = max(company_counts.values())
+        min_seen = min(company_counts.values())
+        print(f"  Per-company post range: {min_seen}-{max_seen} (expected up to {count})")
+        if max_seen <= 10 and count > 10:
+            print(f"  WARNING: Max posts per company is {max_seen} but {count_field} was set to {count}.")
+            print(f"           The actor may be ignoring the {count_field} parameter!")
+
     return items
 
 
@@ -346,6 +449,13 @@ def main():
     print(f"  Batch size limit: {BATCH_SIZE}")
     print()
 
+    # Diagnose actor schema to verify correct parameter names
+    schema = diagnose_actor_schema()
+    urls_field = schema["urls_field"] if schema else "profileUrls"
+    count_field = schema["count_field"] if schema else "maxPosts"
+    print(f"Using parameter names: urls={urls_field}, count={count_field}")
+    print()
+
     # Build batches: split each tier's URLs into sub-batches of BATCH_SIZE,
     # each tagged with that tier's count value
     batches = []  # list of (count, url_list)
@@ -359,7 +469,7 @@ def main():
 
     all_items = []
     for i, (count, batch_urls) in enumerate(batches, 1):
-        items = run_batch(batch_urls, i, total_batches, count)
+        items = run_batch(batch_urls, i, total_batches, count, urls_field=urls_field, count_field=count_field)
         all_items.extend(items)
         print()
 
@@ -407,4 +517,11 @@ def main():
 
 
 if __name__ == "__main__":
+    if "--diagnose-only" in sys.argv:
+        schema = diagnose_actor_schema()
+        if schema:
+            print(f"Recommended actor_input keys: {schema}")
+        else:
+            print("Could not determine schema. Check actor ID and token.")
+        sys.exit(0)
     main()
