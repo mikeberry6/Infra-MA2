@@ -3243,7 +3243,7 @@ export function getRecentDeals(): Deal[] {
 
 // Weekly briefing deals — manually set anchor date to match the publish date.
 // Update WEEKLY_ANCHOR when publishing a new weekly briefing.
-const WEEKLY_ANCHOR = new Date("2026-02-21T23:59:59Z");
+const WEEKLY_ANCHOR = new Date("2026-02-28T23:59:59Z");
 
 export function getWeeklyDeals(): Deal[] {
   const weekAgo = new Date(WEEKLY_ANCHOR.getTime() - 7 * 24 * 60 * 60 * 1000);
