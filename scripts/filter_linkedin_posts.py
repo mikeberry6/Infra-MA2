@@ -116,13 +116,14 @@ def extract_text(post: dict) -> str:
         val = post.get(key)
         if isinstance(val, str) and val.strip():
             parts.append(val.strip())
-    # Also check nested article data
-    article = post.get("article") or post.get("sharedContent") or {}
-    if isinstance(article, dict):
-        for key in ("title", "subtitle", "description", "text"):
-            val = article.get(key)
-            if isinstance(val, str) and val.strip():
-                parts.append(val.strip())
+    # Also check nested article / document data (HarvestAPI uses "document")
+    for nested_key in ("article", "sharedContent", "document"):
+        nested = post.get(nested_key) or {}
+        if isinstance(nested, dict):
+            for key in ("title", "subtitle", "description", "text"):
+                val = nested.get(key)
+                if isinstance(val, str) and val.strip():
+                    parts.append(val.strip())
     return "\n".join(parts)
 
 
