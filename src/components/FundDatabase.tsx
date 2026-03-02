@@ -32,12 +32,8 @@ import {
   ChevronDown,
   Check,
   Building2,
-  Briefcase,
   MapPin,
-  Calendar,
   Layers,
-  DollarSign,
-  ArrowUpDown,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
 
@@ -146,11 +142,11 @@ function ActiveFiltersChips({
   activeRegions,
   activeStructures,
   activeSizeRanges,
-  onClearStrategy,
-  onClearSector,
-  onClearRegion,
-  onClearStructure,
-  onClearSizeRange,
+  onToggleStrategy,
+  onToggleSector,
+  onToggleRegion,
+  onToggleStructure,
+  onToggleSizeRange,
   onClearAll,
 }: {
   activeStrategies: Set<FundStrategy>;
@@ -158,11 +154,11 @@ function ActiveFiltersChips({
   activeRegions: Set<FundRegion>;
   activeStructures: Set<FundStructure>;
   activeSizeRanges: Set<FundSizeRange>;
-  onClearStrategy: (s: FundStrategy) => void;
-  onClearSector: (s: FundSector) => void;
-  onClearRegion: (r: FundRegion) => void;
-  onClearStructure: (s: FundStructure) => void;
-  onClearSizeRange: (r: FundSizeRange) => void;
+  onToggleStrategy: (s: FundStrategy) => void;
+  onToggleSector: (s: FundSector) => void;
+  onToggleRegion: (r: FundRegion) => void;
+  onToggleStructure: (s: FundStructure) => void;
+  onToggleSizeRange: (r: FundSizeRange) => void;
   onClearAll: () => void;
 }) {
   const total =
@@ -182,7 +178,7 @@ function ActiveFiltersChips({
       {Array.from(activeStrategies).map((s) => (
         <button
           key={`strat-${s}`}
-          onClick={() => onClearStrategy(s)}
+          onClick={() => onToggleStrategy(s)}
           className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
           style={{
             color: getStrategyColor(s),
@@ -197,7 +193,7 @@ function ActiveFiltersChips({
       {Array.from(activeSectors).map((s) => (
         <button
           key={`sec-${s}`}
-          onClick={() => onClearSector(s)}
+          onClick={() => onToggleSector(s)}
           className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
           style={{
             color: getFundSectorColor(s),
@@ -212,7 +208,7 @@ function ActiveFiltersChips({
       {Array.from(activeRegions).map((r) => (
         <button
           key={`reg-${r}`}
-          onClick={() => onClearRegion(r)}
+          onClick={() => onToggleRegion(r)}
           className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
           style={{
             color: getFundRegionColor(r),
@@ -227,7 +223,7 @@ function ActiveFiltersChips({
       {Array.from(activeStructures).map((s) => (
         <button
           key={`str-${s}`}
-          onClick={() => onClearStructure(s)}
+          onClick={() => onToggleStructure(s)}
           className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
           style={{
             color: getStructureColor(s),
@@ -242,7 +238,7 @@ function ActiveFiltersChips({
       {Array.from(activeSizeRanges).map((r) => (
         <button
           key={`size-${r}`}
-          onClick={() => onClearSizeRange(r)}
+          onClick={() => onToggleSizeRange(r)}
           className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
           style={{
             color: getSizeRangeColor(),
@@ -358,11 +354,11 @@ function FilterBar({
         activeRegions={activeRegions}
         activeStructures={activeStructures}
         activeSizeRanges={activeSizeRanges}
-        onClearStrategy={onToggleStrategy}
-        onClearSector={onToggleSector}
-        onClearRegion={onToggleRegion}
-        onClearStructure={onToggleStructure}
-        onClearSizeRange={onToggleSizeRange}
+        onToggleStrategy={onToggleStrategy}
+        onToggleSector={onToggleSector}
+        onToggleRegion={onToggleRegion}
+        onToggleStructure={onToggleStructure}
+        onToggleSizeRange={onToggleSizeRange}
         onClearAll={onClearAll}
       />
     </div>
