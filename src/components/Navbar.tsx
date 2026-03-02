@@ -12,6 +12,7 @@ export function Navbar() {
   const links = [
     { href: "/", label: "Weekly Briefing" },
     { href: "/tracker", label: "Deal Database" },
+    { href: "/funds", label: "Fund Database" },
     { href: "/earnings", label: "Public Asset Managers" },
   ];
 
