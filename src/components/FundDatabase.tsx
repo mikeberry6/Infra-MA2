@@ -179,75 +179,50 @@ function ActiveFiltersChips({
         <button
           key={`strat-${s}`}
           onClick={() => onToggleStrategy(s)}
-          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
-          style={{
-            color: getStrategyColor(s),
-            backgroundColor: `${getStrategyColor(s)}15`,
-            border: `1px solid ${getStrategyColor(s)}30`,
-          }}
+          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium text-zinc-300 bg-zinc-800/60 border border-zinc-700/50 transition-colors hover:bg-zinc-700/50"
         >
           {s}
-          <X className="h-3 w-3" />
+          <X className="h-3 w-3 text-zinc-500" />
         </button>
       ))}
       {Array.from(activeSectors).map((s) => (
         <button
           key={`sec-${s}`}
           onClick={() => onToggleSector(s)}
-          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
-          style={{
-            color: getFundSectorColor(s),
-            backgroundColor: `${getFundSectorColor(s)}15`,
-            border: `1px solid ${getFundSectorColor(s)}30`,
-          }}
+          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium text-zinc-300 bg-zinc-800/60 border border-zinc-700/50 transition-colors hover:bg-zinc-700/50"
         >
           {s}
-          <X className="h-3 w-3" />
+          <X className="h-3 w-3 text-zinc-500" />
         </button>
       ))}
       {Array.from(activeRegions).map((r) => (
         <button
           key={`reg-${r}`}
           onClick={() => onToggleRegion(r)}
-          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
-          style={{
-            color: getFundRegionColor(r),
-            backgroundColor: `${getFundRegionColor(r)}15`,
-            border: `1px solid ${getFundRegionColor(r)}30`,
-          }}
+          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium text-zinc-300 bg-zinc-800/60 border border-zinc-700/50 transition-colors hover:bg-zinc-700/50"
         >
           {r}
-          <X className="h-3 w-3" />
+          <X className="h-3 w-3 text-zinc-500" />
         </button>
       ))}
       {Array.from(activeStructures).map((s) => (
         <button
           key={`str-${s}`}
           onClick={() => onToggleStructure(s)}
-          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
-          style={{
-            color: getStructureColor(s),
-            backgroundColor: `${getStructureColor(s)}15`,
-            border: `1px solid ${getStructureColor(s)}30`,
-          }}
+          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium text-zinc-300 bg-zinc-800/60 border border-zinc-700/50 transition-colors hover:bg-zinc-700/50"
         >
           {s}
-          <X className="h-3 w-3" />
+          <X className="h-3 w-3 text-zinc-500" />
         </button>
       ))}
       {Array.from(activeSizeRanges).map((r) => (
         <button
           key={`size-${r}`}
           onClick={() => onToggleSizeRange(r)}
-          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
-          style={{
-            color: getSizeRangeColor(),
-            backgroundColor: `${getSizeRangeColor()}15`,
-            border: `1px solid ${getSizeRangeColor()}30`,
-          }}
+          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium text-zinc-300 bg-zinc-800/60 border border-zinc-700/50 transition-colors hover:bg-zinc-700/50"
         >
           {r}
-          <X className="h-3 w-3" />
+          <X className="h-3 w-3 text-zinc-500" />
         </button>
       ))}
       {total > 1 && (
@@ -533,47 +508,20 @@ function FundVehicleCard({
       onClick={() => onSelect(fund)}
       className="w-full text-left glass-card rounded-lg p-3 transition-colors hover:border-zinc-700 active:bg-zinc-800/40"
     >
-      <div className="flex items-center justify-between mb-1.5">
+      <div className="flex items-center justify-between mb-1">
         <h4 className="text-sm font-medium text-zinc-200 leading-snug truncate pr-2">
           {fund.fundName}
         </h4>
         <ChevronRight className="h-4 w-4 text-zinc-600 shrink-0" />
       </div>
 
-      <div className="flex flex-wrap gap-1.5 mb-2">
-        {fund.strategies.map((s) => (
-          <span
-            key={s}
-            className="text-[10px] font-medium px-1.5 py-0.5 rounded-full"
-            style={{
-              color: getStrategyColor(s),
-              backgroundColor: `${getStrategyColor(s)}15`,
-              border: `1px solid ${getStrategyColor(s)}30`,
-            }}
-          >
-            {s}
-          </span>
-        ))}
-        <span
-          className="text-[10px] font-medium px-1.5 py-0.5 rounded"
-          style={{
-            color: getStructureColor(fund.structure),
-            backgroundColor: `${getStructureColor(fund.structure)}15`,
-          }}
-        >
-          {fund.structure}
+      <div className="flex items-center justify-between">
+        <span className="text-xs text-zinc-500 truncate">
+          {fund.strategies.join(" · ")}
         </span>
-      </div>
-
-      <div className="grid grid-cols-2 gap-2">
-        <div>
-          <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Size</span>
-          <div className="text-xs text-zinc-300 truncate">{fund.size}</div>
-        </div>
-        <div>
-          <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Vintage</span>
-          <div className="text-xs text-zinc-300">{fund.vintage}</div>
-        </div>
+        <span className="text-xs text-zinc-400 whitespace-nowrap ml-3 shrink-0">
+          {fund.size}
+        </span>
       </div>
     </button>
   );
@@ -594,22 +542,10 @@ function FundManagerAccordion({
 }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
-  // Aggregate unique sectors, strategies, regions across all vehicles
-  const aggregateSectors = useMemo(() => {
-    const set = new Set<FundSector>();
-    for (const f of managerFunds) for (const s of f.sectors) set.add(s);
-    return Array.from(set);
-  }, [managerFunds]);
-
+  // Aggregate unique strategies across all vehicles (for collapsed summary)
   const aggregateStrategies = useMemo(() => {
     const set = new Set<FundStrategy>();
     for (const f of managerFunds) for (const s of f.strategies) set.add(s);
-    return Array.from(set);
-  }, [managerFunds]);
-
-  const aggregateRegions = useMemo(() => {
-    const set = new Set<FundRegion>();
-    for (const f of managerFunds) for (const r of f.regions) set.add(r);
     return Array.from(set);
   }, [managerFunds]);
 
@@ -633,59 +569,11 @@ function FundManagerAccordion({
             </span>
           </div>
 
-          {/* Collapsed summary tags */}
-          {!isOpen && (
-            <div className="flex flex-wrap gap-1.5 mt-2">
-              {aggregateStrategies.slice(0, 3).map((s) => (
-                <span
-                  key={s}
-                  className="text-[10px] font-medium px-1.5 py-0.5 rounded-full"
-                  style={{
-                    color: getStrategyColor(s),
-                    backgroundColor: `${getStrategyColor(s)}15`,
-                    border: `1px solid ${getStrategyColor(s)}30`,
-                  }}
-                >
-                  {s}
-                </span>
-              ))}
-              {aggregateStrategies.length > 3 && (
-                <span className="text-[10px] text-zinc-500">+{aggregateStrategies.length - 3}</span>
-              )}
-              <span className="text-zinc-800 mx-0.5">|</span>
-              {aggregateRegions.slice(0, 2).map((r) => (
-                <span
-                  key={r}
-                  className="text-[10px] font-medium px-1.5 py-0.5 rounded-full"
-                  style={{
-                    color: getFundRegionColor(r),
-                    backgroundColor: `${getFundRegionColor(r)}15`,
-                    border: `1px solid ${getFundRegionColor(r)}30`,
-                  }}
-                >
-                  {r}
-                </span>
-              ))}
-              {aggregateRegions.length > 2 && (
-                <span className="text-[10px] text-zinc-500">+{aggregateRegions.length - 2}</span>
-              )}
-              <span className="text-zinc-800 mx-0.5">|</span>
-              {aggregateSectors.slice(0, 3).map((s) => (
-                <span
-                  key={s}
-                  className="text-[10px] font-medium px-1.5 py-0.5 rounded"
-                  style={{
-                    color: getFundSectorColor(s),
-                    backgroundColor: `${getFundSectorColor(s)}15`,
-                  }}
-                >
-                  {s}
-                </span>
-              ))}
-              {aggregateSectors.length > 3 && (
-                <span className="text-[10px] text-zinc-500">+{aggregateSectors.length - 3}</span>
-              )}
-            </div>
+          {/* Collapsed summary — plain text, no colored pills */}
+          {!isOpen && aggregateStrategies.length > 0 && (
+            <p className="text-xs text-zinc-500 mt-1 truncate">
+              {aggregateStrategies.join(" · ")}
+            </p>
           )}
         </div>
       </button>
@@ -705,12 +593,6 @@ function FundManagerAccordion({
                     Strategy
                   </th>
                   <th className="text-left px-4 py-2 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
-                    Sectors
-                  </th>
-                  <th className="text-left px-4 py-2 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
-                    Region
-                  </th>
-                  <th className="text-left px-4 py-2 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
                     Size
                   </th>
                   <th className="text-left px-4 py-2 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
@@ -725,7 +607,7 @@ function FundManagerAccordion({
                     onClick={() => onSelectFund(fund)}
                     className="border-b border-zinc-800/40 hover:bg-zinc-800/30 cursor-pointer transition-colors group"
                   >
-                    <td className="px-4 py-3 max-w-[300px]">
+                    <td className="px-4 py-3">
                       <div className="flex items-center gap-2">
                         <span className="font-medium text-zinc-200 group-hover:text-zinc-50 transition-colors truncate">
                           {fund.fundName}
@@ -734,52 +616,9 @@ function FundManagerAccordion({
                       </div>
                     </td>
                     <td className="px-4 py-3">
-                      <div className="flex flex-wrap gap-1">
-                        {fund.strategies.map((s) => (
-                          <span
-                            key={s}
-                            className="text-[11px] font-medium px-2 py-0.5 rounded-full whitespace-nowrap"
-                            style={{
-                              color: getStrategyColor(s),
-                              backgroundColor: `${getStrategyColor(s)}15`,
-                              border: `1px solid ${getStrategyColor(s)}30`,
-                            }}
-                          >
-                            {s}
-                          </span>
-                        ))}
-                      </div>
-                    </td>
-                    <td className="px-4 py-3 max-w-[240px]">
-                      <div className="flex flex-wrap gap-1">
-                        {fund.sectors.slice(0, 3).map((s) => (
-                          <span
-                            key={s}
-                            className="text-[11px] font-medium px-2 py-0.5 rounded whitespace-nowrap"
-                            style={{
-                              color: getFundSectorColor(s),
-                              backgroundColor: `${getFundSectorColor(s)}15`,
-                            }}
-                          >
-                            {s}
-                          </span>
-                        ))}
-                        {fund.sectors.length > 3 && (
-                          <span className="text-[11px] text-zinc-500">+{fund.sectors.length - 3}</span>
-                        )}
-                      </div>
-                    </td>
-                    <td className="px-4 py-3">
-                      <div className="flex flex-wrap gap-1">
-                        {fund.regions.map((r) => (
-                          <span
-                            key={r}
-                            className="text-[11px] text-zinc-400"
-                          >
-                            {r}
-                          </span>
-                        ))}
-                      </div>
+                      <span className="text-xs text-zinc-400">
+                        {fund.strategies.join(" · ")}
+                      </span>
                     </td>
                     <td className="px-4 py-3">
                       <span className="text-xs text-zinc-300 whitespace-nowrap">
@@ -919,7 +758,7 @@ function FundDrawer({
           {/* Sectors */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <Layers className="h-3.5 w-3.5 text-blue-400" />
+              <Layers className="h-3.5 w-3.5 text-zinc-500" />
               <span className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider">
                 Target Sectors
               </span>
@@ -928,12 +767,7 @@ function FundDrawer({
               {fund.sectors.map((s) => (
                 <span
                   key={s}
-                  className="text-xs font-medium px-2.5 py-1 rounded"
-                  style={{
-                    color: getFundSectorColor(s),
-                    backgroundColor: `${getFundSectorColor(s)}15`,
-                    border: `1px solid ${getFundSectorColor(s)}30`,
-                  }}
+                  className="text-xs font-medium px-2.5 py-1 rounded text-zinc-300 bg-zinc-800/50 border border-zinc-700/50"
                 >
                   {s}
                 </span>
@@ -944,7 +778,7 @@ function FundDrawer({
           {/* Regions */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <MapPin className="h-3.5 w-3.5 text-emerald-400" />
+              <MapPin className="h-3.5 w-3.5 text-zinc-500" />
               <span className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider">
                 Investment Regions
               </span>
@@ -953,12 +787,7 @@ function FundDrawer({
               {fund.regions.map((r) => (
                 <span
                   key={r}
-                  className="text-xs font-medium px-2.5 py-1 rounded"
-                  style={{
-                    color: getFundRegionColor(r),
-                    backgroundColor: `${getFundRegionColor(r)}15`,
-                    border: `1px solid ${getFundRegionColor(r)}30`,
-                  }}
+                  className="text-xs font-medium px-2.5 py-1 rounded text-zinc-300 bg-zinc-800/50 border border-zinc-700/50"
                 >
                   {r}
                 </span>
