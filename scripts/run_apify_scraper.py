@@ -37,18 +37,18 @@ BASE_URL = "https://api.apify.com/v2"
 # uses an appropriate "count" value.  Derived from 10-post samples in
 # linkedin_raw_posts.json (date-span extrapolation to posts/week).
 #
-# Tier 1  (count 120) — 5+ posts/wk    —  8 companies
-# Tier 2  (count  60) — 2.5-5.5/wk     — 36 companies
-# Tier 3  (count  25) — 1-2.5/wk       — 21 companies
-# Tier 4  (count  10) — <1/wk or zero   — 35 companies
+# Tier 1  (count  12) — 5+ posts/wk    —  8 companies
+# Tier 2  (count  10) — 2.5-5.5/wk     — 36 companies
+# Tier 3  (count   5) — 1-2.5/wk       — 21 companies
+# Tier 4  (count   3) — <1/wk or zero   — 35 companies
 #                                  Total: 100 companies
 # ---------------------------------------------------------------------------
 
 _LI = "https://www.linkedin.com/company"
 
 TIERS = [
-    # ── Tier 1: HIGH VOLUME (count=120) ──────────────────────────────────
-    (120, [
+    # ── Tier 1: HIGH VOLUME (count=12) ───────────────────────────────────
+    (12, [
         f"{_LI}/meridiam",
         f"{_LI}/fengate-asset-management",
         f"{_LI}/goldman-sachs",
@@ -58,8 +58,8 @@ TIERS = [
         f"{_LI}/australiansuper",
         f"{_LI}/mubadala",
     ]),
-    # ── Tier 2: MEDIUM-HIGH VOLUME (count=60) ────────────────────────────
-    (60, [
+    # ── Tier 2: MEDIUM-HIGH VOLUME (count=10) ────────────────────────────
+    (10, [
         f"{_LI}/allianz-global-investors",
         f"{_LI}/qic",
         f"{_LI}/actis",
@@ -97,8 +97,8 @@ TIERS = [
         f"{_LI}/patria-investments",
         f"{_LI}/tigerinfrastructurepartners",
     ]),
-    # ── Tier 3: MEDIUM-LOW VOLUME (count=25) ─────────────────────────────
-    (25, [
+    # ── Tier 3: MEDIUM-LOW VOLUME (count=5) ──────────────────────────────
+    (5, [
         f"{_LI}/i-squared-capital",
         f"{_LI}/ofi-infravia",
         f"{_LI}/h-i-g--capital",
@@ -121,8 +121,8 @@ TIERS = [
         f"{_LI}/infrared-capital-partners-ltd",
         f"{_LI}/eig-partners",
     ]),
-    # ── Tier 4: LOW VOLUME (count=10) ────────────────────────────────────
-    (10, [
+    # ── Tier 4: LOW VOLUME (count=3) ─────────────────────────────────────
+    (3, [
         f"{_LI}/asterion-industrial-partners",
         f"{_LI}/infratil",
         f"{_LI}/energy-infrastructure-partners-ag",
@@ -430,7 +430,7 @@ def run_batch(batch_urls, batch_num, total_batches, count, urls_field="targetUrl
         max_seen = max(company_counts.values())
         min_seen = min(company_counts.values())
         print(f"  Per-company post range: {min_seen}-{max_seen} (expected up to {count})")
-        if max_seen <= 10 and count > 10:
+        if max_seen <= 2 and count > 3:
             print(f"  WARNING: Max posts per company is {max_seen} but {count_field} was set to {count}.")
             print(f"           The actor may be ignoring the {count_field} parameter!")
 
@@ -473,9 +473,10 @@ def main():
         all_items.extend(items)
         print()
 
-    # Filter to only 2026 posts
+    # Filter to posts within the target week (Feb 28 – Mar 6, 2026)
     # HarvestAPI nests the date under postedAt.date (ISO string)
-    cutoff = "2026-01-01T00:00:00"
+    cutoff_start = "2026-02-28T00:00:00"
+    cutoff_end = "2026-03-06T23:59:59"
     pre_filter_count = len(all_items)
 
     def get_posted_date(item):
@@ -486,8 +487,8 @@ def main():
         # Fallback for flat schema
         return item.get("postedAtISO", "")
 
-    all_items = [item for item in all_items if get_posted_date(item) >= cutoff]
-    print(f"Filtered to 2026 posts: {pre_filter_count} -> {len(all_items)}")
+    all_items = [item for item in all_items if cutoff_start <= get_posted_date(item) <= cutoff_end]
+    print(f"Filtered to Feb 28 – Mar 6 posts: {pre_filter_count} -> {len(all_items)}")
     print()
 
     # Enrich each post with the fund name
