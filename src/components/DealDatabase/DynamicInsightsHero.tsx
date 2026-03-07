@@ -27,6 +27,12 @@ function baseActivity(cat: string): string {
 const NON_INFRA_FUND_BUYERS = new Set([
   "Undisclosed Buyer",
   "Undisclosed Seller",
+  "Public Market",
+  "Bain Capital",
+  "Mitsui O.S.K. Lines",
+  "Talen Energy",
+  "Drax Group",
+  "Pilot Fiber",
 ]);
 
 // ─── Fund name aliases for matching variants to canonical names ──
@@ -37,6 +43,7 @@ const FUND_NAME_ALIASES: Record<string, string> = {
   "GIP (BlackRock)": "GIP",
   "Macquarie Infrastructure Partners": "Macquarie Asset Management",
   "CPP Investments / Equinix": "CPP Investments",
+  "Northleaf Capital": "Northleaf",
 };
 
 /** Normalize a fund name to its canonical form using known aliases */
