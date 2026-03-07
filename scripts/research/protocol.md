@@ -51,9 +51,9 @@ Capture transactions whose first formal announcement falls STRICTLY within the T
 
 For EACH of the 5 firms in the current batch, use your web search tools to run targeted queries. Suggested queries:
 
-1. `"[Firm Name]" infrastructure acquisition February 2026`
+1. `"[Firm Name]" infrastructure acquisition March 2026`
 2. `"[Firm Name]" acquires OR sells OR divests infrastructure 2026`
-3. `"[Firm Name]" binding agreement OR definitive agreement February 2026`
+3. `"[Firm Name]" binding agreement OR definitive agreement March 2026`
 4. `"[Firm Name]" infrastructure deal announcement 2026`
 5. `"[Firm Name]" power OR utilities OR "energy transition" OR "digital infrastructure" acquisition 2026`
 
