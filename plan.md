@@ -1,266 +1,134 @@
-# Infrastructure Funds Database — Implementation Plan
+# Plan: Organize Fund Database with Detailed Portfolio Companies
 
 ## Overview
 
-A new `/funds` page that serves as a searchable, filterable database of 100+ infrastructure fund vehicles, grouped by fund manager. Designed to answer questions like "Who would buy a $1bn US transportation company at core-plus/value-add?" by filtering on strategy, sector, geography, size, and structure.
+Restructure the fund database page (`/funds`) to support ~100 fund managers with richly detailed portfolio companies. Add a dual-tab view: **Tab 1** for Firms & Funds (current accordion), **Tab 2** for a flat, searchable Portfolio Companies table with full cross-filtering.
 
 ---
 
-## 1. Data Model — `src/data/funds.ts`
+## Step 1: Expand the `PortfolioCompany` Data Model
 
-### TypeScript Types
+**File:** `src/data/funds.ts`
 
-```ts
-// Normalized strategy tags (a fund can have multiple)
-export type FundStrategy =
-  | "Core"
-  | "Core-Plus"
-  | "Value-Add"
-  | "Opportunistic"
-  | "Growth"
-  | "Credit / Debt"
-  | "Fund-of-Funds"
-  | "Secondaries"
-  | "Co-Investments";
-
-// Sectors the fund targets
-export type FundSector =
-  | "Transportation"
-  | "Utilities"
-  | "Digital Infrastructure"
-  | "Renewables / Energy Transition"
-  | "Waste / Environmental Services"
-  | "Power Generation"
-  | "Midstream / Energy"
-  | "Social Infrastructure"
-  | "Communications"
-  | "Logistics"
-  | "Water";
-
-// Geographic regions where the fund deploys capital
-export type FundRegion =
-  | "North America"
-  | "Europe"
-  | "Asia-Pacific"
-  | "Latin America"
-  | "Middle East & Africa"
-  | "Global";
-
-// Open/Closed end structure
-export type FundStructure = "Open-End" | "Closed-End" | "Permanent Capital" | "Evergreen";
-```
-
-### Fund Interface
+Replace `portfolioCompanies: string[]` with a structured interface:
 
 ```ts
-export interface Fund {
-  id: string;                        // e.g. "FUND-001a"
-  managerName: string;               // e.g. "3i Group"
-  fundName: string;                  // e.g. "3i Infrastructure plc"
-  ticker: string | null;             // e.g. "3IN" (only for public vehicles)
-  description: string;               // Full fund description paragraph
-  size: string;                      // Display string: "~£3.8 Billion"
-  sizeUsdMm: number | null;         // Normalized USD in millions for range filtering (e.g. 3800 for $3.8B). null if unknown/variable
-  vintage: string;                   // e.g. "2007", "2023", "Evergreen", "2024/2025"
-  strategies: FundStrategy[];        // e.g. ["Core-Plus", "Value-Add"]
-  structure: FundStructure;          // e.g. "Closed-End"
-  sectors: FundSector[];             // e.g. ["Utilities", "Communications", "Transportation"]
-  regions: FundRegion[];             // Where the fund invests, e.g. ["North America"]
-  portfolioCompanies: string[];      // e.g. ["DNS:NET", "ESVAGT", ...]
+export interface PortfolioCompany {
+  name: string;                    // e.g. "Belfast City Airport"
+  sector: FundSector;              // reuse existing FundSector type
+  subsector?: string;              // e.g. "Airports", "Fiber Networks"
+  region: FundRegion;              // reuse existing FundRegion type
+  country: string;                 // e.g. "United Kingdom", "Germany"
+  description?: string;            // 1-2 sentence summary of the asset
 }
 ```
 
-### Fund Size Ranges (for filter dropdown)
+- Keeps it lean — no status field needed (all active per user)
+- Reuses existing `FundSector` and `FundRegion` types for consistency with filters
+- `subsector` and `description` are optional to keep data entry manageable
+- Each portfolio company is still nested inside its parent `Fund`, so the firm → fund → portco hierarchy is preserved naturally
 
-```ts
-export type FundSizeRange =
-  | "< $500M"
-  | "$500M – $1B"
-  | "$1B – $5B"
-  | "$5B – $10B"
-  | "$10B+";
-```
-
-Filtering logic: compare `sizeUsdMm` against range thresholds. Funds with `sizeUsdMm: null` appear in all ranges (not excluded).
-
-### Data Structure
-
-Funds stored as a flat array `export const funds: Fund[] = [...]`, sorted/grouped by manager name in the source code with section comments (same pattern as `deals.ts`):
-
-```ts
-export const funds: Fund[] = [
-  // ═══════════════════════════════════════════════════════════
-  // 3i Group
-  // ═══════════════════════════════════════════════════════════
-  { id: "FUND-001a", managerName: "3i Group", fundName: "3i Infrastructure plc", ... },
-  { id: "FUND-001b", managerName: "3i Group", fundName: "3i North American Infrastructure Fund", ... },
-  { id: "FUND-001c", managerName: "3i Group", fundName: "3i Managed Infrastructure Acquisitions LP", ... },
-  // ═══════════════════════════════════════════════════════════
-  // Acadia Infrastructure Capital
-  // ═══════════════════════════════════════════════════════════
-  { id: "FUND-002a", managerName: "Acadia Infrastructure Capital", ... },
-  ...
-];
-```
-
-### Color Helpers
-
-```ts
-export function getStrategyColor(strategy: FundStrategy): string { ... }
-export function getFundSectorColor(sector: FundSector): string { ... }
-export function getFundRegionColor(region: FundRegion): string { ... }
-export function getStructureColor(structure: FundStructure): string { ... }
-```
-
-Color palettes chosen to be distinct from existing deal colors but harmonious with the dark theme.
-
-### Utility Functions
-
-```ts
-// Group flat fund array into manager groups for the accordion display
-export function groupFundsByManager(fundList: Fund[]): Map<string, Fund[]>
-
-// Get unique managers count, fund count, etc. for hero stats
-export function getFundStats(fundList: Fund[]): { managers: number; funds: number; ... }
-```
+**Migration:** Convert existing `portfolioCompanies: ["name1", "name2"]` entries to the new object format. For existing entries where sector/region aren't known yet, default to the parent fund's primary sector/region.
 
 ---
 
-## 2. Component Architecture — `src/components/FundDatabase.tsx`
+## Step 2: Add Utility Functions for Portfolio Companies
 
-A single-file component (matching the `DealDatabase.tsx` pattern) containing:
+**File:** `src/data/funds.ts`
 
-### Sub-components (defined inside the file)
-
-1. **`MultiSelectDropdown`** — Reused pattern from DealDatabase. Filter dropdowns for Strategy, Sector, Region, Structure, and Size Range.
-
-2. **`ActiveFiltersChips`** — Shows active filter tags with X to remove. Reused pattern.
-
-3. **`FilterBar`** — Combines search input + all 5 filter dropdowns + active chips. Search searches across: fund name, manager name, portfolio companies, description.
-
-4. **`FundManagerAccordion`** — An expandable row representing a fund manager. Shows:
-   - Manager name
-   - Fund count badge (e.g. "3 vehicles")
-   - Aggregate sector tags (combined unique sectors across all vehicles)
-   - Aggregate strategy tags
-   - Aggregate regions
-   - Expand/collapse chevron
-   - When expanded: shows nested fund vehicle rows/cards
-
-5. **`FundVehicleRow`** (desktop) / **`FundVehicleCard`** (mobile) — Nested row for each fund vehicle within an accordion:
-   - Fund name, size, vintage, strategy tags, sector tags, structure badge
-   - Click opens detail drawer
-
-6. **`FundDrawer`** — Side drawer (matching DealDrawer pattern) showing full fund details:
-   - Fund name, manager name, ticker (if applicable)
-   - Full description
-   - Strategy, structure, vintage, size
-   - Sectors as colored tags
-   - Regions as colored tags
-   - Portfolio companies list
-   - Links to other vehicles from same manager at bottom
-
-7. **`FundsInsightsHero`** — Top hero section with 3 ranked bar charts (matching DynamicInsightsHero pattern):
-   - **Top Strategies** — Strategy types ranked by fund count
-   - **Top Sectors** — Sectors ranked by fund count
-   - **Top Regions** — Regions ranked by fund count
-   - All reactive to current filters
-   - Summary stat line: "X managers · Y fund vehicles · $Z total AUM tracked"
-
-### Filtering Logic
+Add helpers to flatten and aggregate portfolio companies across all funds:
 
 ```ts
-// Filter funds → then group by manager → only show managers that have matching vehicles
-const filteredFunds = funds.filter(fund => {
-  // Text search: fund name, manager name, portfolio companies, description
-  // Strategy filter: fund.strategies intersects active strategies
-  // Sector filter: fund.sectors intersects active sectors
-  // Region filter: fund.regions intersects active regions
-  // Structure filter: fund.structure matches
-  // Size range filter: fund.sizeUsdMm falls within selected range
-});
-
-const groupedFunds = groupFundsByManager(filteredFunds);
-```
-
-### Sorting
-
-Manager accordion rows sorted alphabetically by manager name (default). Optional toggle to sort by total fund count or total AUM.
-
----
-
-## 3. Page Route — `src/app/funds/page.tsx`
-
-```ts
-import { FundDatabase } from "@/components/FundDatabase";
-
-export default function FundsPage() {
-  return <FundDatabase />;
+export interface PortfolioCompanyWithContext extends PortfolioCompany {
+  fundId: string;
+  fundName: string;
+  managerName: string;
 }
+
+export function getAllPortfolioCompanies(fundList: Fund[]): PortfolioCompanyWithContext[]
+export function getPortfolioCompanyStats(companies: PortfolioCompanyWithContext[]): { ... }
+export function getUniqueCountries(companies: PortfolioCompanyWithContext[]): string[]
+export function getUniqueSubsectors(companies: PortfolioCompanyWithContext[]): string[]
 ```
 
----
-
-## 4. Navbar Update — `src/components/Navbar.tsx`
-
-Add new link to the `links` array:
-
-```ts
-const links = [
-  { href: "/", label: "Weekly Briefing" },
-  { href: "/tracker", label: "Deal Database" },
-  { href: "/funds", label: "Fund Database" },     // ← NEW
-  { href: "/earnings", label: "Public Asset Managers" },
-];
-```
+These functions join each portfolio company with its parent fund/manager context, enabling cross-filtering in the UI.
 
 ---
 
-## 5. Files to Create / Modify
+## Step 3: Add Dual-Tab UI to FundDatabase Component
 
-| Action | File | Description |
-|--------|------|-------------|
-| **Create** | `src/data/funds.ts` | Types, interfaces, fund data array, color helpers, utility functions |
-| **Create** | `src/components/FundDatabase.tsx` | Main page component with all sub-components |
-| **Create** | `src/app/funds/page.tsx` | Next.js page route |
-| **Modify** | `src/components/Navbar.tsx` | Add "Fund Database" link |
+**File:** `src/components/FundDatabase.tsx`
 
----
+Add a tab bar at the top of the page with two tabs:
 
-## 6. Implementation Order
+- **Firms & Funds** — The existing accordion view (unchanged)
+- **Portfolio Companies** — A new flat, searchable table view
 
-1. Create `src/data/funds.ts` — types, interfaces, color helpers, utility functions, and seed the first 5 fund managers (from user-provided data)
-2. Create `src/components/FundDatabase.tsx` — full component with filtering, accordion, table/cards, drawer, and hero
-3. Create `src/app/funds/page.tsx` — page route
-4. Update `src/components/Navbar.tsx` — add nav link
-5. Verify the build passes and the page renders correctly
+The tab state is a simple `useState<"funds" | "portfolio">`. Both tabs share the same page header. The filter bar and insights hero adapt based on the active tab.
 
 ---
 
-## 7. Data Entry Notes for the First 5 Managers
+## Step 4: Build the Portfolio Companies Tab
 
-The user's 5 fund managers map to **20 individual fund vehicles**:
+**File:** `src/components/FundDatabase.tsx` (or a new sub-component if it gets too large)
 
-| # | Manager | Vehicles |
-|---|---------|----------|
-| 1 | 3i Group | 3i Infrastructure plc, 3i North American Infrastructure Fund, 3i MIA |
-| 2 | Acadia Infrastructure Capital | CCIC, Acadia SMAs |
-| 3 | Actis | AE6, AE5, ALLIF 2, AACT |
-| 4 | ADIA | Direct Infrastructure / Proprietary Balance Sheet |
-| 5 | Allianz Global Investors | AEIF I & II, AGDIEF I & II, AICOF II, Asia Pacific Credit, Global Infrastructure ELTIF |
+### Filter Bar (Portfolio Tab)
+New filter dropdowns specific to portfolio companies:
+- **Sector** — FundSector multi-select (reuses existing dropdown)
+- **Region** — FundRegion multi-select
+- **Country** — Multi-select from unique countries in the data
+- **Fund Manager** — Multi-select from unique manager names
+- **Subsector** — Multi-select from unique subsectors
+- **Text search** — Searches across: company name, description, subsector, country, fund name, manager name
 
-Geography (regions) will be inferred from the fund descriptions:
-- 3i Infrastructure plc → Europe
-- 3i North American Fund → North America
-- Actis AE6 → Global (emerging markets focus)
-- ADIA → Global
-- Allianz AEIF → Europe
-- etc.
+### Table/Card View
+- **Desktop:** Sortable table with columns: Company Name | Sector | Subsector | Region/Country | Fund Manager | Fund Vehicle
+- **Mobile:** Card layout with key info and tap-to-expand
+- Click a row to open a detail drawer showing full company info + link to parent fund
 
-Strategy tags will be normalized from the description strings:
-- "Core-plus / Value-add" → ["Core-Plus", "Value-Add"]
-- "Fund-of-Funds / Secondaries / Co-investments" → ["Fund-of-Funds", "Secondaries", "Co-Investments"]
-- "Core infrastructure / Long-term buy-and-hold" → ["Core"]
-- "Subordinated debt, mezzanine financing" → ["Credit / Debt"]
+### Portfolio Company Drawer
+When clicking a portfolio company, show:
+- Company name, sector badge, region badge, country
+- Description (if available)
+- Subsector
+- **Parent fund card** with fund name, manager, strategy badges — clickable to open the fund drawer
+- If the same company appears in multiple fund vehicles under the same manager, show all
 
-Size will include both display string and normalized USD millions for filtering.
+---
+
+## Step 5: Update the Insights Hero for Portfolio Tab
+
+**File:** `src/components/FundDatabase.tsx`
+
+When the Portfolio Companies tab is active, the insights hero switches to show:
+1. **Top Sectors** — by portfolio company count
+2. **Top Regions** — by portfolio company count
+3. **Top Fund Managers** — by number of portfolio companies
+
+Same horizontal bar chart pattern as the existing fund insights hero.
+
+---
+
+## Step 6: Update the Fund Drawer's Portfolio Section
+
+**File:** `src/components/FundDatabase.tsx`
+
+In the existing fund detail drawer, upgrade the portfolio companies section from plain name pills to rich cards showing:
+- Company name (bold)
+- Sector + subsector badges
+- Country label
+- Short description (if available)
+
+---
+
+## Files Changed
+
+| File | Change |
+|------|--------|
+| `src/data/funds.ts` | Add `PortfolioCompany` interface, update `Fund.portfolioCompanies` type, add utility functions, migrate existing data |
+| `src/components/FundDatabase.tsx` | Add tab bar, portfolio companies tab with table/filters/drawer, update insights hero, update fund drawer |
+
+## Not Changed
+- No new routes needed (stays on `/funds`)
+- No changes to the deal database, weekly briefing, or navbar
+- No new dependencies needed
