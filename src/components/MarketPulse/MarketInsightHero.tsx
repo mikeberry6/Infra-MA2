@@ -57,14 +57,14 @@ export function MarketInsightHero({ deals }: { deals: Deal[] }) {
 
   if (totalCount === 0) {
     return (
-      <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-900/40 p-6 text-center">
+      <div className="relative rounded-xl border border-[#1f2a25] bg-[#141917] p-6 text-center">
         <p className="text-sm text-zinc-500">No deals this week.</p>
       </div>
     );
   }
 
   return (
-    <div className="relative rounded-xl border border-zinc-800/60 bg-zinc-900/40 overflow-hidden">
+    <div className="relative rounded-xl border border-[#1f2a25] bg-[#141917] overflow-hidden">
       <div className="relative z-10 p-4 lg:p-6 xl:p-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-3">
@@ -93,12 +93,12 @@ export function MarketInsightHero({ deals }: { deals: Deal[] }) {
             <div className="space-y-1.5 lg:space-y-2">
               {regionBreakdown.map((r, i) => (
                 <div key={r.region} className="flex items-center gap-2">
-                  <div className="w-12 lg:w-16 xl:w-20 h-1.5 lg:h-2 bg-zinc-800 rounded-full overflow-hidden shrink-0">
+                  <div className="w-12 lg:w-16 xl:w-20 h-1.5 lg:h-2 bg-[#1c2321] rounded-full overflow-hidden shrink-0">
                     <div
                       className="h-full rounded-full"
                       style={{
                         width: `${(r.count / topRegion.count) * 100}%`,
-                        backgroundColor: i === 0 ? getRegionColor(r.region) : "#52525b",
+                        backgroundColor: i === 0 ? getRegionColor(r.region) : "#4b5563",
                       }}
                     />
                   </div>
@@ -121,12 +121,12 @@ export function MarketInsightHero({ deals }: { deals: Deal[] }) {
             <div className="space-y-1.5 lg:space-y-2">
               {sectorBreakdown.map((s, i) => (
                 <div key={s.sector} className="flex items-center gap-2">
-                  <div className="w-12 lg:w-16 xl:w-20 h-1.5 lg:h-2 bg-zinc-800 rounded-full overflow-hidden shrink-0">
+                  <div className="w-12 lg:w-16 xl:w-20 h-1.5 lg:h-2 bg-[#1c2321] rounded-full overflow-hidden shrink-0">
                     <div
                       className="h-full rounded-full"
                       style={{
                         width: `${(s.count / topSector.count) * 100}%`,
-                        backgroundColor: i === 0 ? getSectorColor(s.sector) : "#52525b",
+                        backgroundColor: i === 0 ? getSectorColor(s.sector) : "#4b5563",
                       }}
                     />
                   </div>

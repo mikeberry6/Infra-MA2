@@ -7,7 +7,7 @@ interface AmbientGradientProps {
 
 export function AmbientGradient({
   primaryColor,
-  secondaryColor = "#8b5cf6",
+  secondaryColor = "#34B27B",
 }: AmbientGradientProps) {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">

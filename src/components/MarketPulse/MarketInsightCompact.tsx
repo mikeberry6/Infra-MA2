@@ -23,7 +23,7 @@ export function MarketInsightCompact() {
     .slice(0, 4);
 
   return (
-    <div className="glass-card-elevated rounded-xl p-5">
+    <div className="surface-card-elevated rounded-xl p-5">
       <div className="flex flex-col sm:flex-row sm:items-center gap-6">
         {/* Key stats */}
         <div className="flex items-center gap-6">
@@ -35,7 +35,7 @@ export function MarketInsightCompact() {
               {stats.totalCount}
             </p>
           </div>
-          <div className="w-px h-10 bg-zinc-800" />
+          <div className="w-px h-10 bg-[#1f2a25]" />
           <div>
             <span className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider">
               Top Region
@@ -47,7 +47,7 @@ export function MarketInsightCompact() {
               </span>
             </p>
           </div>
-          <div className="w-px h-10 bg-zinc-800 hidden sm:block" />
+          <div className="w-px h-10 bg-[#1f2a25] hidden sm:block" />
           <div className="hidden sm:block">
             <span className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider">
               Top Category

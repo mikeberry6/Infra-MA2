@@ -16,7 +16,7 @@ export function MarketPulseHero() {
   const primaryColor = getSectorColor(stats.topSector);
 
   return (
-    <section className="relative mb-12 overflow-hidden rounded-2xl border border-zinc-800/50">
+    <section className="relative mb-12 overflow-hidden rounded-2xl border border-[#1f2a25]">
       {/* Ambient gradient background */}
       <AmbientGradient primaryColor={primaryColor} />
 
@@ -56,14 +56,14 @@ export function MarketPulseHero() {
           <span>
             <span className="mono text-zinc-300">{stats.totalCount}</span> deals
           </span>
-          <span className="text-zinc-700">&middot;</span>
+          <span className="text-[#2a3730]">&middot;</span>
           <span>
             <span className="mono text-zinc-300">
               {Object.keys(stats.sectorCounts).length}
             </span>{" "}
             sectors
           </span>
-          <span className="text-zinc-700">&middot;</span>
+          <span className="text-[#2a3730]">&middot;</span>
           <span>
             <span className="mono text-zinc-300">5</span> regions
           </span>

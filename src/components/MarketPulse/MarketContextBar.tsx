@@ -51,7 +51,7 @@ function MicroDistribution() {
             style={{ backgroundColor: getSectorColor(item.sector) }}
           />
           {/* Tooltip */}
-          <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-zinc-900 border border-zinc-700 px-2 py-1 rounded text-[10px] text-zinc-300 whitespace-nowrap pointer-events-none z-20">
+          <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#141917] border border-[#2a3730] px-2 py-1 rounded text-[10px] text-zinc-300 whitespace-nowrap pointer-events-none z-20">
             {item.sector}: {item.count}
           </div>
         </div>
@@ -65,8 +65,8 @@ export function MarketContextBar() {
   const regionStats = getRegionStats();
 
   return (
-    <div className="glass-card-elevated rounded-xl p-5 lg:p-6 xl:p-8 mb-6 lg:mb-8">
-      <div className="flex flex-col sm:flex-row sm:items-stretch gap-6 lg:gap-8 sm:divide-x sm:divide-zinc-800">
+    <div className="surface-card-elevated rounded-xl p-5 lg:p-6 xl:p-8 mb-6 lg:mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-stretch gap-6 lg:gap-8 sm:divide-x sm:divide-[#1f2a25]">
         {/* Deal Count */}
         <div className="sm:pr-6">
           <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">

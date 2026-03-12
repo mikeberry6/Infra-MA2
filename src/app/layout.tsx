@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
-import { Ticker } from "@/components/Ticker";
 
 export const metadata: Metadata = {
   title: "InfraTracker | North American Infrastructure M&A Intelligence",
@@ -16,10 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="min-h-screen bg-zinc-950 text-zinc-50 antialiased">
+      <body className="min-h-screen bg-[#0c0f0e] text-zinc-50 antialiased">
         <Navbar />
-        <Ticker />
-        <main className="pt-[104px]">{children}</main>
+        <main className="pt-14">{children}</main>
       </body>
     </html>
   );

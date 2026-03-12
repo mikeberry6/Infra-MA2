@@ -116,11 +116,11 @@ function AssetManagerCardComponent({ card }: { card: AssetManagerCard }) {
               </span>
               {card.periodNote && (
                 <>
-                  <span className="text-zinc-700">|</span>
+                  <span className="text-[#2a3730]">|</span>
                   <span className="text-zinc-500">{card.periodNote}</span>
                 </>
               )}
-              <span className="text-zinc-700">|</span>
+              <span className="text-[#2a3730]">|</span>
               <span>Reported {formatFullDate(card.reportDate)}</span>
             </div>
           </div>
@@ -138,11 +138,11 @@ function AssetManagerCardComponent({ card }: { card: AssetManagerCard }) {
         </div>
 
         {/* Metrics grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3 border-t border-zinc-800">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3 border-t border-[#1f2a25]">
           <MetricCell
             title="Fundraising"
             metric={card.fundraising}
-            color="#3b82f6"
+            color="#34B27B"
           />
           <MetricCell
             title="Deployment"
@@ -158,7 +158,7 @@ function AssetManagerCardComponent({ card }: { card: AssetManagerCard }) {
 
         {/* Notes */}
         {card.notes && card.notes.length > 0 && (
-          <div className="mt-3 pt-3 border-t border-zinc-800/50">
+          <div className="mt-3 pt-3 border-t border-[#1f2a25]/50">
             <p className="text-[9px] font-medium uppercase tracking-wider text-zinc-600 mb-1">
               Note
             </p>
@@ -166,7 +166,7 @@ function AssetManagerCardComponent({ card }: { card: AssetManagerCard }) {
               {card.notes.map((note, idx) => (
                 <li
                   key={idx}
-                  className="text-[10px] text-zinc-500 leading-relaxed pl-2.5 relative before:content-[''] before:absolute before:left-0 before:top-[6px] before:h-1 before:w-1 before:rounded-full before:bg-zinc-700"
+                  className="text-[10px] text-zinc-500 leading-relaxed pl-2.5 relative before:content-[''] before:absolute before:left-0 before:top-[6px] before:h-1 before:w-1 before:rounded-full before:bg-[#2a3730]"
                 >
                   {note}
                 </li>
@@ -177,7 +177,7 @@ function AssetManagerCardComponent({ card }: { card: AssetManagerCard }) {
 
         {/* Earnings Commentary */}
         {card.commentary && card.commentary.length > 0 && (
-          <div className="mt-3 pt-3 border-t border-zinc-800/50">
+          <div className="mt-3 pt-3 border-t border-[#1f2a25]/50">
             <p className="text-[9px] font-medium uppercase tracking-wider text-zinc-600 mb-2">
               Earnings Commentary
             </p>
@@ -185,7 +185,7 @@ function AssetManagerCardComponent({ card }: { card: AssetManagerCard }) {
               {card.commentary.map((quote, idx) => (
                 <blockquote
                   key={idx}
-                  className="text-[10px] text-zinc-400 leading-relaxed pl-2.5 border-l border-zinc-700 italic"
+                  className="text-[10px] text-zinc-400 leading-relaxed pl-2.5 border-l border-[#2a3730] italic"
                 >
                   &ldquo;{quote}&rdquo;
                 </blockquote>
@@ -217,7 +217,7 @@ export function Earnings() {
       </div>
 
       {/* Disclaimer */}
-      <div className="glass-card rounded-lg p-4 mb-6 border-zinc-700/50">
+      <div className="glass-card rounded-lg p-4 mb-6 border-[#2a3730]/50">
         <p className="text-[10px] text-zinc-500 leading-relaxed">
           <span className="text-zinc-400 font-medium">Disclosure:</span>{" "}
           Metrics below are sourced directly from each company&apos;s most
