@@ -41,6 +41,8 @@ import {
   Layers,
   Globe,
   Briefcase,
+  LayoutList,
+  Users,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
 
@@ -890,6 +892,168 @@ function FundManagerAccordion({
   );
 }
 
+// ─── All Funds Flat Table ────────────────────────────────────
+
+function AllFundsTable({
+  funds: displayFunds,
+  onSelectFund,
+}: {
+  funds: Fund[];
+  onSelectFund: (fund: Fund) => void;
+}) {
+  const [sortField, setSortField] = useState<"name" | "manager" | "strategy" | "size" | "vintage">("manager");
+  const [sortAsc, setSortAsc] = useState(true);
+
+  const sorted = useMemo(() => {
+    const list = [...displayFunds];
+    list.sort((a, b) => {
+      let cmp = 0;
+      switch (sortField) {
+        case "name": cmp = a.fundName.localeCompare(b.fundName); break;
+        case "manager": cmp = a.managerName.localeCompare(b.managerName) || a.fundName.localeCompare(b.fundName); break;
+        case "strategy": cmp = (a.strategies[0] ?? "").localeCompare(b.strategies[0] ?? ""); break;
+        case "size": cmp = (a.sizeUsdMm ?? 0) - (b.sizeUsdMm ?? 0); break;
+        case "vintage": cmp = a.vintage.localeCompare(b.vintage); break;
+      }
+      return sortAsc ? cmp : -cmp;
+    });
+    return list;
+  }, [displayFunds, sortField, sortAsc]);
+
+  const toggleSort = (field: typeof sortField) => {
+    if (sortField === field) {
+      setSortAsc(!sortAsc);
+    } else {
+      setSortField(field);
+      setSortAsc(field === "size" ? false : true);
+    }
+  };
+
+  const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
+    <th
+      className="text-left px-4 py-2 text-[11px] font-medium text-zinc-500 uppercase tracking-wider cursor-pointer hover:text-zinc-300 transition-colors select-none"
+      onClick={() => toggleSort(field)}
+    >
+      {label}
+      {sortField === field && (
+        <span className="ml-1">{sortAsc ? "↑" : "↓"}</span>
+      )}
+    </th>
+  );
+
+  if (displayFunds.length === 0) {
+    return (
+      <div className="flex items-center justify-center py-16 text-sm text-zinc-600">
+        No funds match your current filters.
+      </div>
+    );
+  }
+
+  return (
+    <>
+      {/* Desktop table */}
+      <div className="hidden md:block border border-zinc-800 rounded-lg overflow-hidden">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-zinc-800/60 bg-zinc-900/30">
+              <SortHeader field="name" label="Fund Vehicle" />
+              <SortHeader field="manager" label="Manager" />
+              <SortHeader field="strategy" label="Strategy" />
+              <th className="text-left px-4 py-2 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
+                Sectors
+              </th>
+              <th className="text-left px-4 py-2 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
+                Region
+              </th>
+              <SortHeader field="size" label="Size" />
+              <SortHeader field="vintage" label="Vintage" />
+            </tr>
+          </thead>
+          <tbody>
+            {sorted.map((fund) => (
+              <tr
+                key={fund.id}
+                onClick={() => onSelectFund(fund)}
+                className="border-b border-zinc-800/40 hover:bg-zinc-800/30 cursor-pointer transition-colors group"
+              >
+                <td className="px-4 py-3 max-w-[280px]">
+                  <div className="flex items-center gap-2">
+                    <span className="font-medium text-zinc-200 group-hover:text-zinc-50 transition-colors truncate">
+                      {fund.fundName}
+                    </span>
+                    <ChevronRight className="h-3 w-3 text-zinc-600 opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                  </div>
+                </td>
+                <td className="px-4 py-3 max-w-[200px]">
+                  <span className="text-xs text-zinc-400 truncate block">{fund.managerName}</span>
+                </td>
+                <td className="px-4 py-3">
+                  <div className="flex flex-wrap gap-1">
+                    {fund.strategies.map((s) => (
+                      <span
+                        key={s}
+                        className="text-[11px] font-medium px-2 py-0.5 rounded-full whitespace-nowrap"
+                        style={{
+                          color: getStrategyColor(s),
+                          backgroundColor: `${getStrategyColor(s)}15`,
+                          border: `1px solid ${getStrategyColor(s)}30`,
+                        }}
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </td>
+                <td className="px-4 py-3 max-w-[220px]">
+                  <div className="flex flex-wrap gap-1">
+                    {fund.sectors.slice(0, 3).map((s) => (
+                      <span
+                        key={s}
+                        className="text-[11px] font-medium px-2 py-0.5 rounded whitespace-nowrap"
+                        style={{
+                          color: getFundSectorColor(s),
+                          backgroundColor: `${getFundSectorColor(s)}15`,
+                        }}
+                      >
+                        {s}
+                      </span>
+                    ))}
+                    {fund.sectors.length > 3 && (
+                      <span className="text-[11px] text-zinc-500">+{fund.sectors.length - 3}</span>
+                    )}
+                  </div>
+                </td>
+                <td className="px-4 py-3">
+                  <div className="flex flex-wrap gap-1">
+                    {fund.regions.map((r) => (
+                      <span key={r} className="text-[11px] text-zinc-400">
+                        {r}
+                      </span>
+                    ))}
+                  </div>
+                </td>
+                <td className="px-4 py-3">
+                  <span className="text-xs text-zinc-300 whitespace-nowrap">{fund.size}</span>
+                </td>
+                <td className="px-4 py-3">
+                  <span className="mono text-xs text-zinc-500">{fund.vintage}</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Mobile cards */}
+      <div className="md:hidden space-y-2">
+        {sorted.map((fund) => (
+          <FundVehicleCard key={fund.id} fund={fund} onSelect={onSelectFund} />
+        ))}
+      </div>
+    </>
+  );
+}
+
 // ─── Fund Detail Drawer ─────────────────────────────────────
 
 function FundDrawer({
@@ -1520,6 +1684,7 @@ export function FundDatabase() {
   const [activeStructures, setActiveStructures] = useState<Set<FundStructure>>(new Set());
   const [activeSizeRanges, setActiveSizeRanges] = useState<Set<FundSizeRange>>(new Set());
   const [selectedFund, setSelectedFund] = useState<Fund | null>(null);
+  const [fundView, setFundView] = useState<"managers" | "all">("managers");
 
   // ── Portfolio tab state ──
   const [portfolioSearch, setPortfolioSearch] = useState("");
@@ -1705,31 +1870,65 @@ export function FundDatabase() {
             onClearAll={clearFundFilters}
           />
 
-          <div className="space-y-3">
-            {sortedManagers.map(([manager, managerFunds]) => (
-              <FundManagerAccordion
-                key={manager}
-                managerName={manager}
-                managerFunds={managerFunds}
-                onSelectFund={setSelectedFund}
-                defaultOpen={true}
-              />
-            ))}
-
-            {sortedManagers.length === 0 && (
-              <div className="flex items-center justify-center py-16 text-sm text-zinc-600">
-                No funds match your current filters.
-              </div>
-            )}
-
-            <div className="px-1 py-2.5">
-              <span className="text-xs text-zinc-600">
-                Showing{" "}
-                <span className="mono text-zinc-400">{sortedManagers.length}</span> managers /{" "}
-                <span className="mono text-zinc-400">{filteredFunds.length}</span> vehicles of{" "}
-                <span className="mono text-zinc-400">{funds.length}</span> total
-              </span>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex gap-1 p-0.5 rounded-lg bg-zinc-900/50 border border-zinc-800">
+              <button
+                onClick={() => setFundView("managers")}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                  fundView === "managers"
+                    ? "bg-zinc-800 text-zinc-100"
+                    : "text-zinc-500 hover:text-zinc-300"
+                }`}
+              >
+                <Users className="h-3.5 w-3.5" />
+                By Manager
+              </button>
+              <button
+                onClick={() => setFundView("all")}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                  fundView === "all"
+                    ? "bg-zinc-800 text-zinc-100"
+                    : "text-zinc-500 hover:text-zinc-300"
+                }`}
+              >
+                <LayoutList className="h-3.5 w-3.5" />
+                All Funds
+              </button>
             </div>
+          </div>
+
+          {fundView === "managers" ? (
+            <div className="space-y-3">
+              {sortedManagers.map(([manager, managerFunds]) => (
+                <FundManagerAccordion
+                  key={manager}
+                  managerName={manager}
+                  managerFunds={managerFunds}
+                  onSelectFund={setSelectedFund}
+                  defaultOpen={true}
+                />
+              ))}
+
+              {sortedManagers.length === 0 && (
+                <div className="flex items-center justify-center py-16 text-sm text-zinc-600">
+                  No funds match your current filters.
+                </div>
+              )}
+            </div>
+          ) : (
+            <AllFundsTable
+              funds={filteredFunds}
+              onSelectFund={setSelectedFund}
+            />
+          )}
+
+          <div className="px-1 py-2.5">
+            <span className="text-xs text-zinc-600">
+              Showing{" "}
+              <span className="mono text-zinc-400">{sortedManagers.length}</span> managers /{" "}
+              <span className="mono text-zinc-400">{filteredFunds.length}</span> vehicles of{" "}
+              <span className="mono text-zinc-400">{funds.length}</span> total
+            </span>
           </div>
 
           {selectedFund && (
