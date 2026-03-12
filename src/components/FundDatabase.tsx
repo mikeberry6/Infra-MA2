@@ -1712,7 +1712,7 @@ export function FundDatabase() {
                 managerName={manager}
                 managerFunds={managerFunds}
                 onSelectFund={setSelectedFund}
-                defaultOpen={sortedManagers.length <= 5}
+                defaultOpen={true}
               />
             ))}
 
