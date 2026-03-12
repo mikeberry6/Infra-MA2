@@ -28,7 +28,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
       {/* Timeline dot */}
       <div className="absolute left-[15px] top-1 z-10 flex h-[10px] w-[10px] items-center justify-center">
         <div
-          className="h-2.5 w-2.5 rounded-full ring-[3px] ring-zinc-950"
+          className="h-2.5 w-2.5 rounded-full ring-[3px] ring-[#0c0f0e]"
           style={{
             backgroundColor: getSectorColor(deal.sector),
           }}
@@ -36,7 +36,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
       </div>
 
       {/* Card */}
-      <div className="glass-card rounded-lg p-4 sm:p-5 lg:p-6 transition-colors hover:border-zinc-700">
+      <div className="surface-card rounded-lg p-4 sm:p-5 lg:p-6 transition-colors hover:border-[#2a3730]">
         {/* Meta row */}
         <div className="flex items-center gap-3 mb-3 flex-wrap">
           <div className="flex items-center gap-1.5">
@@ -45,9 +45,9 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
               {formatTime(deal.date)}
             </span>
           </div>
-          <div className="h-3 w-px bg-zinc-800" />
+          <div className="h-3 w-px bg-[#1f2a25]" />
           <span className="mono text-[11px] text-zinc-600">{deal.id}</span>
-          <div className="h-3 w-px bg-zinc-800" />
+          <div className="h-3 w-px bg-[#1f2a25]" />
           <span
             className="text-xs font-medium px-2 py-0.5 rounded"
             style={{
@@ -89,14 +89,14 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
 
         {/* Key Parties */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-3 mb-3">
-          <div className="rounded-md border border-zinc-800 bg-zinc-900/40 px-3 py-2.5">
+          <div className="rounded-md border border-[#1f2a25] bg-[#141917] px-3 py-2.5">
             <div className="flex items-center gap-1.5 mb-1">
-              <Building2 className="h-3 w-3 text-blue-500" />
+              <Building2 className="h-3 w-3 text-emerald-500" />
               <span className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider">Buyer</span>
             </div>
             <span className="text-sm font-medium text-zinc-200">{deal.buyer}</span>
           </div>
-          <div className="rounded-md border border-zinc-800 bg-zinc-900/40 px-3 py-2.5">
+          <div className="rounded-md border border-[#1f2a25] bg-[#141917] px-3 py-2.5">
             <div className="flex items-center gap-1.5 mb-1">
               <Briefcase className="h-3 w-3 text-violet-500" />
               <span className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider">Seller</span>
@@ -126,7 +126,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
             href={deal.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-400 hover:text-blue-400 transition-colors py-1"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-400 hover:text-emerald-400 transition-colors py-1"
           >
             <span>Source: {deal.sourceName}</span>
             <ExternalLink className="h-3 w-3" />
@@ -162,7 +162,7 @@ export function WeeklyBriefing() {
         {/* Terminal dot */}
         <div className="relative pl-10 pb-4">
           <div className="absolute left-[15px] top-1 flex h-[10px] w-[10px] items-center justify-center">
-            <div className="h-2 w-2 rounded-full bg-zinc-700" />
+            <div className="h-2 w-2 rounded-full bg-[#2a3730]" />
           </div>
           <p className="text-xs text-zinc-600 pt-0.5">
             End of weekly briefing &mdash; {recentDeals.length} transactions

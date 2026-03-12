@@ -278,7 +278,7 @@ export function DynamicInsightsHero({
 
   if (filteredDeals.length === 0) {
     return (
-      <div className="rounded-xl border border-zinc-800/60 bg-zinc-900/40 p-6 text-center">
+      <div className="rounded-xl border border-[#1f2a25] bg-[#141917] p-6 text-center">
         <p className="text-sm text-zinc-500">
           No deals match your current filters. Try broadening your search.
         </p>
@@ -287,7 +287,7 @@ export function DynamicInsightsHero({
   }
 
   return (
-    <div className="rounded-xl border border-zinc-800/60 bg-zinc-900/40 overflow-hidden">
+    <div className="rounded-xl border border-[#1f2a25] bg-[#141917] overflow-hidden">
       <div className="p-4 sm:p-5">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* ── Fund Activity ─────────────────────────────── */}

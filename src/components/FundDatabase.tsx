@@ -81,13 +81,13 @@ function MultiSelectDropdown({
         aria-label={`Filter by ${label}`}
         className={`flex items-center gap-2 px-3 py-2 rounded-lg border text-sm transition-colors whitespace-nowrap ${
           selected.size > 0
-            ? "border-zinc-600 bg-zinc-800/50 text-zinc-200"
-            : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700"
+            ? "border-[#2a3730] bg-[#1c2321]/50 text-zinc-200"
+            : "border-[#1f2a25] bg-[#141917]/50 text-zinc-400 hover:border-[#2a3730]"
         }`}
       >
         <span>{label}</span>
         {selected.size > 0 && (
-          <span className="bg-blue-500/20 text-blue-400 text-xs font-medium px-1.5 py-0.5 rounded">
+          <span className="bg-emerald-500/20 text-emerald-400 text-xs font-medium px-1.5 py-0.5 rounded">
             {selected.size}
           </span>
         )}
@@ -104,7 +104,7 @@ function MultiSelectDropdown({
           <div
             role="listbox"
             aria-label={`${label} options`}
-            className="absolute top-full left-0 mt-1 w-72 max-h-64 overflow-y-auto rounded-lg border border-zinc-800 bg-zinc-900 shadow-xl"
+            className="absolute top-full left-0 mt-1 w-72 max-h-64 overflow-y-auto rounded-lg border border-[#1f2a25] bg-[#141917] shadow-xl"
             style={{ zIndex: 9999 }}
           >
             {options.map((option) => {
@@ -117,12 +117,12 @@ function MultiSelectDropdown({
                   aria-selected={isSelected}
                   onClick={() => onToggle(option)}
                   className={`w-full flex items-center gap-3 px-3 py-2 text-sm text-left transition-colors ${
-                    isSelected ? "bg-zinc-800/50" : "hover:bg-zinc-800/30"
+                    isSelected ? "bg-[#1c2321]/50" : "hover:bg-[#1c2321]/30"
                   }`}
                 >
                   <div
                     className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 ${
-                      isSelected ? "border-blue-500 bg-blue-500" : "border-zinc-600"
+                      isSelected ? "border-emerald-500 bg-emerald-500" : "border-[#2a3730]"
                     }`}
                   >
                     {isSelected && <Check className="h-3 w-3 text-white" />}
@@ -218,7 +218,7 @@ function FundFilterBar({
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Search by fund name, manager, portfolio company..."
           aria-label="Search funds"
-          className="w-full rounded-lg border border-zinc-800 bg-zinc-900/50 pl-10 pr-4 py-3 text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700 focus:ring-1 focus:ring-zinc-700 transition-colors"
+          className="w-full rounded-lg border border-[#1f2a25] bg-[#141917]/50 pl-10 pr-4 py-3 text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-emerald-500/40 focus:ring-1 focus:ring-emerald-500/30 transition-colors"
         />
       </div>
 
@@ -348,7 +348,7 @@ function PortfolioFilterBar({
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Search by company name, description, subsector, country, fund manager..."
           aria-label="Search portfolio companies"
-          className="w-full rounded-lg border border-zinc-800 bg-zinc-900/50 pl-10 pr-4 py-3 text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700 focus:ring-1 focus:ring-zinc-700 transition-colors"
+          className="w-full rounded-lg border border-[#1f2a25] bg-[#141917]/50 pl-10 pr-4 py-3 text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-emerald-500/40 focus:ring-1 focus:ring-emerald-500/30 transition-colors"
         />
       </div>
 
@@ -516,7 +516,7 @@ function FundsInsightsHero({ filteredFunds }: { filteredFunds: Fund[] }) {
 
   if (filteredFunds.length === 0) {
     return (
-      <div className="rounded-xl border border-zinc-800/60 bg-zinc-900/40 p-6 text-center">
+      <div className="rounded-xl border border-[#1f2a25]/60 bg-[#141917]/40 p-6 text-center">
         <p className="text-sm text-zinc-500">
           No funds match your current filters. Try broadening your search.
         </p>
@@ -525,7 +525,7 @@ function FundsInsightsHero({ filteredFunds }: { filteredFunds: Fund[] }) {
   }
 
   return (
-    <div className="rounded-xl border border-zinc-800/60 bg-zinc-900/40 overflow-hidden">
+    <div className="rounded-xl border border-[#1f2a25]/60 bg-[#141917]/40 overflow-hidden">
       <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-2">
         <p className="text-xs text-zinc-500">
           <span className="mono text-zinc-300 font-medium">{stats.managers}</span> managers
@@ -574,7 +574,7 @@ function PortfolioInsightsHero({ companies }: { companies: PortfolioCompanyWithC
 
   if (companies.length === 0) {
     return (
-      <div className="rounded-xl border border-zinc-800/60 bg-zinc-900/40 p-6 text-center">
+      <div className="rounded-xl border border-[#1f2a25]/60 bg-[#141917]/40 p-6 text-center">
         <p className="text-sm text-zinc-500">
           No portfolio companies match your current filters. Try broadening your search.
         </p>
@@ -583,7 +583,7 @@ function PortfolioInsightsHero({ companies }: { companies: PortfolioCompanyWithC
   }
 
   return (
-    <div className="rounded-xl border border-zinc-800/60 bg-zinc-900/40 overflow-hidden">
+    <div className="rounded-xl border border-[#1f2a25]/60 bg-[#141917]/40 overflow-hidden">
       <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-2">
         <p className="text-xs text-zinc-500">
           <span className="mono text-zinc-300 font-medium">{companies.length}</span> portfolio companies
@@ -620,7 +620,7 @@ function FundVehicleCard({
   return (
     <button
       onClick={() => onSelect(fund)}
-      className="w-full text-left glass-card rounded-lg p-3 transition-colors hover:border-zinc-700 active:bg-zinc-800/40"
+      className="w-full text-left surface-card rounded-lg p-3 transition-colors hover:border-[#2a3730] active:bg-[#1c2321]/40"
     >
       <div className="flex items-center justify-between mb-1.5">
         <h4 className="text-sm font-medium text-zinc-200 leading-snug truncate pr-2">
@@ -702,10 +702,10 @@ function FundManagerAccordion({
   }, [managerFunds]);
 
   return (
-    <div className="border border-zinc-800 rounded-lg overflow-hidden">
+    <div className="border border-[#1f2a25] rounded-lg overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-start gap-3 p-4 text-left hover:bg-zinc-800/30 transition-colors group"
+        className="w-full flex items-start gap-3 p-4 text-left hover:bg-[#1c2321]/30 transition-colors group"
       >
         <ChevronRight
           className={`h-4 w-4 text-zinc-500 mt-0.5 shrink-0 transition-transform ${isOpen ? "rotate-90" : ""}`}
@@ -715,7 +715,7 @@ function FundManagerAccordion({
             <h3 className="text-sm sm:text-base font-semibold text-zinc-100 group-hover:text-zinc-50 transition-colors">
               {managerName}
             </h3>
-            <span className="text-[11px] font-medium text-zinc-500 bg-zinc-800/50 px-2 py-0.5 rounded">
+            <span className="text-[11px] font-medium text-zinc-500 bg-[#1c2321]/50 px-2 py-0.5 rounded">
               {managerFunds.length} {managerFunds.length === 1 ? "vehicle" : "vehicles"}
             </span>
           </div>
@@ -738,7 +738,7 @@ function FundManagerAccordion({
               {aggregateStrategies.length > 3 && (
                 <span className="text-[10px] text-zinc-500">+{aggregateStrategies.length - 3}</span>
               )}
-              <span className="text-zinc-800 mx-0.5">|</span>
+              <span className="text-[#1f2a25] mx-0.5">|</span>
               {aggregateRegions.slice(0, 2).map((r) => (
                 <span
                   key={r}
@@ -755,7 +755,7 @@ function FundManagerAccordion({
               {aggregateRegions.length > 2 && (
                 <span className="text-[10px] text-zinc-500">+{aggregateRegions.length - 2}</span>
               )}
-              <span className="text-zinc-800 mx-0.5">|</span>
+              <span className="text-[#1f2a25] mx-0.5">|</span>
               {aggregateSectors.slice(0, 3).map((s) => (
                 <span
                   key={s}
@@ -777,12 +777,12 @@ function FundManagerAccordion({
       </button>
 
       {isOpen && (
-        <div className="border-t border-zinc-800">
+        <div className="border-t border-[#1f2a25]">
           {/* Desktop table */}
           <div className="hidden md:block">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-zinc-800/60 bg-zinc-900/30">
+                <tr className="border-b border-[#1f2a25]/60 bg-[#141917]/30">
                   <th className="text-left px-4 py-2 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
                     Fund Vehicle
                   </th>
@@ -808,7 +808,7 @@ function FundManagerAccordion({
                   <tr
                     key={fund.id}
                     onClick={() => onSelectFund(fund)}
-                    className="border-b border-zinc-800/40 hover:bg-zinc-800/30 cursor-pointer transition-colors group"
+                    className="border-b border-[#1f2a25]/40 hover:bg-[#1c2321]/30 cursor-pointer transition-colors group"
                   >
                     <td className="px-4 py-3 max-w-[300px]">
                       <div className="flex items-center gap-2">
@@ -952,10 +952,10 @@ function AllFundsTable({
   return (
     <>
       {/* Desktop table */}
-      <div className="hidden md:block border border-zinc-800 rounded-lg overflow-hidden">
+      <div className="hidden md:block border border-[#1f2a25] rounded-lg overflow-hidden">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-zinc-800/60 bg-zinc-900/30">
+            <tr className="border-b border-[#1f2a25]/60 bg-[#141917]/30">
               <SortHeader field="name" label="Fund Vehicle" />
               <SortHeader field="manager" label="Manager" />
               <SortHeader field="strategy" label="Strategy" />
@@ -974,7 +974,7 @@ function AllFundsTable({
               <tr
                 key={fund.id}
                 onClick={() => onSelectFund(fund)}
-                className="border-b border-zinc-800/40 hover:bg-zinc-800/30 cursor-pointer transition-colors group"
+                className="border-b border-[#1f2a25]/40 hover:bg-[#1c2321]/30 cursor-pointer transition-colors group"
               >
                 <td className="px-4 py-3 max-w-[280px]">
                   <div className="flex items-center gap-2">
@@ -1085,15 +1085,15 @@ function FundDrawer({
         className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-zinc-800 bg-zinc-950 overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#1f2a25] bg-[#0c0f0e] overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
+        <div className="sticky top-0 z-10 border-b border-[#1f2a25] bg-[#0c0f0e]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
                 <span className="text-xs text-zinc-500">{fund.managerName}</span>
                 {fund.ticker && (
-                  <span className="mono text-xs text-zinc-600 bg-zinc-800/50 px-1.5 py-0.5 rounded">
+                  <span className="mono text-xs text-zinc-600 bg-[#1c2321]/50 px-1.5 py-0.5 rounded">
                     {fund.ticker}
                   </span>
                 )}
@@ -1104,7 +1104,7 @@ function FundDrawer({
             </div>
             <button
               onClick={onClose}
-              className="rounded-md p-2 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors shrink-0"
+              className="rounded-md p-2 text-zinc-400 hover:text-zinc-200 hover:bg-[#1c2321] transition-colors shrink-0"
             >
               <X className="h-5 w-5" />
             </button>
@@ -1124,7 +1124,7 @@ function FundDrawer({
                 {s}
               </span>
             ))}
-            <div className="h-3.5 w-px bg-zinc-800" />
+            <div className="h-3.5 w-px bg-[#1c2321]" />
             <span
               className="text-[11px] font-medium px-2 py-0.5 rounded"
               style={{
@@ -1140,7 +1140,7 @@ function FundDrawer({
         {/* Content */}
         <div className="p-4 sm:p-6 lg:p-8 space-y-5 lg:space-y-6">
           {/* Fund overview card */}
-          <div className="glass-card rounded-lg p-4 space-y-3">
+          <div className="surface-card rounded-lg p-4 space-y-3">
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Fund Size</span>
@@ -1161,7 +1161,7 @@ function FundDrawer({
           {/* Sectors */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <Layers className="h-3.5 w-3.5 text-blue-400" />
+              <Layers className="h-3.5 w-3.5 text-emerald-400" />
               <span className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider">
                 Target Sectors
               </span>
@@ -1221,7 +1221,7 @@ function FundDrawer({
                 {fund.portfolioCompanies.map((company) => (
                   <div
                     key={company.name}
-                    className="glass-card rounded-lg p-3"
+                    className="surface-card rounded-lg p-3"
                   >
                     <div className="flex items-start justify-between gap-2 mb-1.5">
                       <h4 className="text-sm font-medium text-zinc-200">{company.name}</h4>
@@ -1267,7 +1267,7 @@ function FundDrawer({
 
           {/* Sibling funds */}
           {siblingFunds.length > 0 && (
-            <div className="border-t border-zinc-800 pt-4">
+            <div className="border-t border-[#1f2a25] pt-4">
               <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider block mb-3">
                 Other {fund.managerName} Vehicles
               </span>
@@ -1276,7 +1276,7 @@ function FundDrawer({
                   <button
                     key={sib.id}
                     onClick={() => onSelectFund(sib)}
-                    className="w-full text-left glass-card rounded-lg p-3 hover:border-zinc-700 transition-colors flex items-center justify-between gap-2"
+                    className="w-full text-left surface-card rounded-lg p-3 hover:border-[#2a3730] transition-colors flex items-center justify-between gap-2"
                   >
                     <div className="min-w-0">
                       <div className="text-sm font-medium text-zinc-200 truncate">{sib.fundName}</div>
@@ -1325,9 +1325,9 @@ function PortfolioCompanyDrawer({
         className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-zinc-800 bg-zinc-950 overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#1f2a25] bg-[#0c0f0e] overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
+        <div className="sticky top-0 z-10 border-b border-[#1f2a25] bg-[#0c0f0e]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-zinc-50 leading-tight">
@@ -1340,7 +1340,7 @@ function PortfolioCompanyDrawer({
             </div>
             <button
               onClick={onClose}
-              className="rounded-md p-2 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors shrink-0"
+              className="rounded-md p-2 text-zinc-400 hover:text-zinc-200 hover:bg-[#1c2321] transition-colors shrink-0"
             >
               <X className="h-5 w-5" />
             </button>
@@ -1386,7 +1386,7 @@ function PortfolioCompanyDrawer({
           {/* Parent Fund(s) */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <Briefcase className="h-3.5 w-3.5 text-blue-400" />
+              <Briefcase className="h-3.5 w-3.5 text-emerald-400" />
               <span className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider">
                 Fund Vehicle{relatedEntries.length > 1 ? "s" : ""}
               </span>
@@ -1402,7 +1402,7 @@ function PortfolioCompanyDrawer({
                       onClose();
                       onSelectFund(fund);
                     }}
-                    className="w-full text-left glass-card rounded-lg p-3 hover:border-zinc-700 transition-colors"
+                    className="w-full text-left surface-card rounded-lg p-3 hover:border-[#2a3730] transition-colors"
                   >
                     <div className="flex items-center justify-between gap-2 mb-1.5">
                       <div className="min-w-0">
@@ -1435,7 +1435,7 @@ function PortfolioCompanyDrawer({
 
           {/* Other portcos in the same fund */}
           {parentFund && parentFund.portfolioCompanies.length > 1 && (
-            <div className="border-t border-zinc-800 pt-4">
+            <div className="border-t border-[#1f2a25] pt-4">
               <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider block mb-3">
                 Other Companies in {parentFund.fundName}
               </span>
@@ -1445,7 +1445,7 @@ function PortfolioCompanyDrawer({
                   .map((pc) => (
                     <span
                       key={pc.name}
-                      className="text-xs text-zinc-300 bg-zinc-800/50 border border-zinc-700/50 px-2.5 py-1 rounded"
+                      className="text-xs text-zinc-300 bg-[#1c2321]/50 border border-[#2a3730]/50 px-2.5 py-1 rounded"
                     >
                       {pc.name}
                     </span>
@@ -1471,7 +1471,7 @@ function PortfolioCompanyCard({
   return (
     <button
       onClick={() => onSelect(company)}
-      className="w-full text-left glass-card rounded-lg p-3 transition-colors hover:border-zinc-700 active:bg-zinc-800/40"
+      className="w-full text-left surface-card rounded-lg p-3 transition-colors hover:border-[#2a3730] active:bg-[#1c2321]/40"
     >
       <div className="flex items-center justify-between mb-1.5">
         <h4 className="text-sm font-medium text-zinc-200 leading-snug truncate pr-2">
@@ -1558,10 +1558,10 @@ function PortfolioCompanyTable({
   return (
     <>
       {/* Desktop table */}
-      <div className="hidden md:block border border-zinc-800 rounded-lg overflow-hidden">
+      <div className="hidden md:block border border-[#1f2a25] rounded-lg overflow-hidden">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-zinc-800/60 bg-zinc-900/30">
+            <tr className="border-b border-[#1f2a25]/60 bg-[#141917]/30">
               <SortHeader field="name" label="Company" />
               <SortHeader field="sector" label="Sector" />
               <th className="text-left px-4 py-2 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
@@ -1579,7 +1579,7 @@ function PortfolioCompanyTable({
               <tr
                 key={`${company.name}-${company.fundId}-${i}`}
                 onClick={() => onSelect(company)}
-                className="border-b border-zinc-800/40 hover:bg-zinc-800/30 cursor-pointer transition-colors group"
+                className="border-b border-[#1f2a25]/40 hover:bg-[#1c2321]/30 cursor-pointer transition-colors group"
               >
                 <td className="px-4 py-3 max-w-[260px]">
                   <div className="flex items-center gap-2">
@@ -1646,12 +1646,12 @@ type TabType = "funds" | "portfolio";
 
 function TabBar({ activeTab, onTabChange }: { activeTab: TabType; onTabChange: (tab: TabType) => void }) {
   return (
-    <div className="flex gap-1 p-1 rounded-lg bg-zinc-900/50 border border-zinc-800 w-fit mb-6">
+    <div className="flex gap-1 p-1 rounded-lg bg-[#141917]/50 border border-[#1f2a25] w-fit mb-6">
       <button
         onClick={() => onTabChange("funds")}
         className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
           activeTab === "funds"
-            ? "bg-zinc-800 text-zinc-100"
+            ? "bg-[#1c2321] text-zinc-100"
             : "text-zinc-500 hover:text-zinc-300"
         }`}
       >
@@ -1661,7 +1661,7 @@ function TabBar({ activeTab, onTabChange }: { activeTab: TabType; onTabChange: (
         onClick={() => onTabChange("portfolio")}
         className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
           activeTab === "portfolio"
-            ? "bg-zinc-800 text-zinc-100"
+            ? "bg-[#1c2321] text-zinc-100"
             : "text-zinc-500 hover:text-zinc-300"
         }`}
       >
@@ -1871,12 +1871,12 @@ export function FundDatabase() {
           />
 
           <div className="flex items-center justify-between mb-4">
-            <div className="flex gap-1 p-0.5 rounded-lg bg-zinc-900/50 border border-zinc-800">
+            <div className="flex gap-1 p-0.5 rounded-lg bg-[#141917]/50 border border-[#1f2a25]">
               <button
                 onClick={() => setFundView("managers")}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
                   fundView === "managers"
-                    ? "bg-zinc-800 text-zinc-100"
+                    ? "bg-[#1c2321] text-zinc-100"
                     : "text-zinc-500 hover:text-zinc-300"
                 }`}
               >
@@ -1887,7 +1887,7 @@ export function FundDatabase() {
                 onClick={() => setFundView("all")}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
                   fundView === "all"
-                    ? "bg-zinc-800 text-zinc-100"
+                    ? "bg-[#1c2321] text-zinc-100"
                     : "text-zinc-500 hover:text-zinc-300"
                 }`}
               >

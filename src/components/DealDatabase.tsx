@@ -98,13 +98,13 @@ function MultiSelectDropdown({
         aria-label={`Filter by ${label}`}
         className={`flex items-center gap-2 px-3 py-2 rounded-lg border text-sm transition-colors whitespace-nowrap ${
           selected.size > 0
-            ? "border-zinc-600 bg-zinc-800/50 text-zinc-200"
-            : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700"
+            ? "border-[#2a3730] bg-[#1c2321] text-zinc-200"
+            : "border-[#1f2a25] bg-[#141917] text-zinc-400 hover:border-[#2a3730]"
         }`}
       >
         <span>{label}</span>
         {selected.size > 0 && (
-          <span className="bg-blue-500/20 text-blue-400 text-xs font-medium px-1.5 py-0.5 rounded">
+          <span className="bg-emerald-500/20 text-emerald-400 text-xs font-medium px-1.5 py-0.5 rounded">
             {selected.size}
           </span>
         )}
@@ -121,7 +121,7 @@ function MultiSelectDropdown({
           <div
             role="listbox"
             aria-label={`${label} options`}
-            className="absolute top-full left-0 mt-1 w-64 max-h-64 overflow-y-auto rounded-lg border border-zinc-800 bg-zinc-900 shadow-xl"
+            className="absolute top-full left-0 mt-1 w-64 max-h-64 overflow-y-auto rounded-lg border border-[#1f2a25] bg-[#141917] shadow-xl"
             style={{ zIndex: 9999 }}
           >
             {options.map((option) => {
@@ -134,12 +134,12 @@ function MultiSelectDropdown({
                   aria-selected={isSelected}
                   onClick={() => onToggle(option)}
                   className={`w-full flex items-center gap-3 px-3 py-2 text-sm text-left transition-colors ${
-                    isSelected ? "bg-zinc-800/50" : "hover:bg-zinc-800/30"
+                    isSelected ? "bg-[#1c2321]/50" : "hover:bg-[#1c2321]/50"
                   }`}
                 >
                   <div
                     className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 ${
-                      isSelected ? "border-blue-500 bg-blue-500" : "border-zinc-600"
+                      isSelected ? "border-emerald-500 bg-emerald-500" : "border-[#2a3730]"
                     }`}
                   >
                     {isSelected && <Check className="h-3 w-3 text-white" />}
@@ -277,7 +277,7 @@ function FilterBar({
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Search deals by title, buyer, seller, or ID..."
           aria-label="Search deals"
-          className="w-full rounded-lg border border-zinc-800 bg-zinc-900/50 pl-10 pr-4 py-3 text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700 focus:ring-1 focus:ring-zinc-700 transition-colors"
+          className="w-full rounded-lg border border-[#1f2a25] bg-[#141917]/50 pl-10 pr-4 py-3 text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-emerald-500/40 focus:ring-1 focus:ring-emerald-500/30 transition-colors"
         />
       </div>
 
@@ -331,7 +331,7 @@ function DealCard({
   return (
     <button
       onClick={() => onSelect(deal)}
-      className="w-full text-left glass-card rounded-lg p-4 transition-colors hover:border-zinc-700 active:bg-zinc-800/40"
+      className="w-full text-left glass-card rounded-lg p-4 transition-colors hover:border-[#2a3730] active:bg-[#1c2321]/60"
     >
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2 flex-wrap">
@@ -426,11 +426,11 @@ function DealTable({
       </div>
 
       {/* Desktop table */}
-      <div className="hidden md:block border border-zinc-800 rounded-lg overflow-hidden">
+      <div className="hidden md:block border border-[#1f2a25] rounded-lg overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-zinc-800 bg-zinc-900/40">
+              <tr className="border-b border-[#1f2a25] bg-[#141917]/60">
                 <th className="text-left px-4 py-3 text-[11px] font-medium text-zinc-500 uppercase tracking-wider w-[100px]">
                   ID
                 </th>
@@ -466,7 +466,7 @@ function DealTable({
                   <tr
                     key={deal.id}
                     onClick={() => onSelectDeal(deal)}
-                    className="border-b border-zinc-800/60 hover:bg-zinc-800/30 cursor-pointer transition-colors group"
+                    className="border-b border-[#1f2a25]/60 hover:bg-[#1c2321]/50 cursor-pointer transition-colors group"
                   >
                     <td className="px-4 py-3">
                       <span className="mono text-xs text-zinc-600">
@@ -527,7 +527,7 @@ function DealTable({
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1 text-xs text-zinc-400 hover:text-blue-400 transition-colors"
+                        className="inline-flex items-center gap-1 text-xs text-zinc-400 hover:text-emerald-400 transition-colors"
                         title={`Source: ${deal.sourceName}`}
                       >
                         <span className="font-medium">{deal.sourceName}</span>
@@ -547,7 +547,7 @@ function DealTable({
           </div>
         )}
 
-        <div className="border-t border-zinc-800 px-4 py-2.5 bg-zinc-900/30">
+        <div className="border-t border-[#1f2a25] px-4 py-2.5 bg-[#141917]/40">
           <span className="text-xs text-zinc-600">
             Showing{" "}
             <span className="mono text-zinc-400">{sorted.length}</span> of{" "}
@@ -672,9 +672,9 @@ function DealDrawer({
       />
 
       {/* Drawer */}
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-zinc-800 bg-zinc-950 overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#1f2a25] bg-[#0c0f0e] overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
+        <div className="sticky top-0 z-10 border-b border-[#1f2a25] bg-[#0c0f0e]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -688,7 +688,7 @@ function DealDrawer({
             </div>
             <button
               onClick={onClose}
-              className="rounded-md p-2 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors shrink-0"
+              className="rounded-md p-2 text-zinc-400 hover:text-zinc-200 hover:bg-[#1c2321] transition-colors shrink-0"
             >
               <X className="h-5 w-5" />
             </button>
@@ -706,7 +706,7 @@ function DealDrawer({
               {deal.sector}
             </span>
             <span className="text-xs text-zinc-500">{deal.subsector}</span>
-            <div className="h-3.5 w-px bg-zinc-800" />
+            <div className="h-3.5 w-px bg-[#1f2a25]" />
             {deal.category.map((cat) => {
               const catColor = getCategoryColor(cat);
               return (
@@ -723,7 +723,7 @@ function DealDrawer({
                 </span>
               );
             })}
-            <div className="h-3.5 w-px bg-zinc-800" />
+            <div className="h-3.5 w-px bg-[#1f2a25]" />
             <span className="text-xs text-zinc-500">{deal.country}</span>
           </div>
         </div>
@@ -745,7 +745,7 @@ function DealDrawer({
 
             {econItems.length > 0 && (
               <>
-                <div className="border-t border-zinc-800/60" />
+                <div className="border-t border-[#1f2a25]/60" />
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
                   {econItems.map((item) => (
                     <div key={item.label}>
@@ -758,7 +758,7 @@ function DealDrawer({
             )}
 
             {/* Timeline row */}
-            <div className="border-t border-zinc-800/60" />
+            <div className="border-t border-[#1f2a25]/60" />
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               <div>
                 <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Announced</span>
@@ -796,7 +796,7 @@ function DealDrawer({
           {deal.keyHighlights && deal.keyHighlights.length > 0 && (
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <FileText className="h-3.5 w-3.5 text-blue-400" />
+                <FileText className="h-3.5 w-3.5 text-emerald-400" />
                 <span className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider">
                   Key Highlights
                 </span>
@@ -804,7 +804,7 @@ function DealDrawer({
               <ul className="space-y-2">
                 {deal.keyHighlights.map((highlight, i) => (
                   <li key={i} className="flex gap-3 text-sm">
-                    <span className="text-blue-500 mt-1 shrink-0">
+                    <span className="text-emerald-500 mt-1 shrink-0">
                       <ChevronRight className="h-3 w-3" />
                     </span>
                     <span className="text-zinc-300 leading-relaxed">{highlight}</span>
@@ -825,7 +825,7 @@ function DealDrawer({
                   <AdvisorCard
                     label="Financial Advisor (Buyer)"
                     firms={deal.financialAdvisorBuyer}
-                    iconColor="text-blue-400"
+                    iconColor="text-emerald-400"
                   />
                 )}
                 {deal.financialAdvisorSeller && (
@@ -854,12 +854,12 @@ function DealDrawer({
           )}
 
           {/* Source link */}
-          <div className="border-t border-zinc-800 pt-4">
+          <div className="border-t border-[#1f2a25] pt-4">
             <a
               href={deal.sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-medium text-blue-400 hover:text-blue-300 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
             >
               View source on {deal.sourceName}
               <ExternalLink className="h-3 w-3" />

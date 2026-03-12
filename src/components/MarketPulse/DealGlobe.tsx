@@ -223,7 +223,7 @@ export function DealGlobe() {
   }, [recentDeals]);
 
   return (
-    <div className="relative w-full rounded-2xl overflow-hidden border border-zinc-800/50 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black">
+    <div className="relative w-full rounded-2xl overflow-hidden border border-[#1f2a25] bg-gradient-to-b from-[#141917] via-[#0c0f0e] to-black">
       {/* Stars background */}
       <div className="absolute inset-0">
         {[...Array(50)].map((_, i) => (
@@ -242,15 +242,15 @@ export function DealGlobe() {
         <defs>
           {/* Globe gradient - gives 3D depth */}
           <radialGradient id="globeGradient" cx="35%" cy="35%" r="60%">
-            <stop offset="0%" stopColor="#1e3a5f" />
-            <stop offset="50%" stopColor="#0f172a" />
-            <stop offset="100%" stopColor="#020617" />
+            <stop offset="0%" stopColor="#1a3a30" />
+            <stop offset="50%" stopColor="#0c1510" />
+            <stop offset="100%" stopColor="#030706" />
           </radialGradient>
 
           {/* Atmosphere glow */}
           <radialGradient id="atmosphereGlow" cx="50%" cy="50%" r="50%">
             <stop offset="85%" stopColor="transparent" />
-            <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#34B27B" stopOpacity="0.3" />
           </radialGradient>
 
           {/* Outer glow */}
@@ -292,7 +292,7 @@ export function DealGlobe() {
           cy={cy}
           r={radius}
           fill="url(#globeGradient)"
-          stroke="#1e40af"
+          stroke="#1a6b4a"
           strokeWidth="0.5"
           strokeOpacity="0.3"
         />
@@ -305,7 +305,7 @@ export function DealGlobe() {
               key={`grid-${i}`}
               d={path}
               fill="none"
-              stroke="#3b82f6"
+              stroke="#34B27B"
               strokeWidth="0.3"
               strokeOpacity="0.15"
             />
@@ -316,9 +316,9 @@ export function DealGlobe() {
             <path
               key={c.name}
               d={c.path}
-              fill="#1e3a5f"
+              fill="#1a3a30"
               fillOpacity="0.6"
-              stroke="#3b82f6"
+              stroke="#34B27B"
               strokeWidth="0.8"
               strokeOpacity="0.5"
             />

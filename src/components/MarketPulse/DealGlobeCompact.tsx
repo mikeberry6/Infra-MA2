@@ -100,20 +100,20 @@ export function DealGlobeCompact() {
   }, [recentDeals]);
 
   return (
-    <div className="glass-card-elevated rounded-xl overflow-hidden">
+    <div className="surface-card-elevated rounded-xl overflow-hidden">
       <div className="flex flex-col lg:flex-row">
         {/* Globe visualization */}
-        <div className="relative flex-1 min-h-[180px] bg-gradient-to-br from-zinc-900 via-zinc-950 to-black flex items-center justify-center p-4">
+        <div className="relative flex-1 min-h-[180px] bg-gradient-to-br from-[#141917] via-[#0c0f0e] to-black flex items-center justify-center p-4">
           <svg viewBox="0 0 160 160" className="w-full max-w-[200px] h-auto">
             <defs>
               <radialGradient id="compactGlobeGradient" cx="35%" cy="35%" r="60%">
-                <stop offset="0%" stopColor="#1e3a5f" />
-                <stop offset="50%" stopColor="#0f172a" />
-                <stop offset="100%" stopColor="#020617" />
+                <stop offset="0%" stopColor="#1a3a30" />
+                <stop offset="50%" stopColor="#0c1510" />
+                <stop offset="100%" stopColor="#030706" />
               </radialGradient>
               <radialGradient id="compactAtmosphere" cx="50%" cy="50%" r="50%">
                 <stop offset="80%" stopColor="transparent" />
-                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#34B27B" stopOpacity="0.25" />
               </radialGradient>
               <filter id="compactDealGlow" x="-200%" y="-200%" width="500%" height="500%">
                 <feGaussianBlur stdDeviation="2" result="blur" />
@@ -136,7 +136,7 @@ export function DealGlobeCompact() {
               cy={cy}
               r={radius}
               fill="url(#compactGlobeGradient)"
-              stroke="#1e40af"
+              stroke="#1a6b4a"
               strokeWidth="0.5"
               strokeOpacity="0.3"
             />
@@ -154,7 +154,7 @@ export function DealGlobeCompact() {
                     key={`lat-${lat}`}
                     d={path}
                     fill="none"
-                    stroke="#3b82f6"
+                    stroke="#34B27B"
                     strokeWidth="0.3"
                     strokeOpacity="0.12"
                   />
@@ -166,9 +166,9 @@ export function DealGlobeCompact() {
                 <path
                   key={c.name}
                   d={c.path}
-                  fill="#1e3a5f"
+                  fill="#1a3a30"
                   fillOpacity="0.5"
-                  stroke="#3b82f6"
+                  stroke="#34B27B"
                   strokeWidth="0.6"
                   strokeOpacity="0.4"
                 />
@@ -206,7 +206,7 @@ export function DealGlobeCompact() {
         </div>
 
         {/* Stats panel */}
-        <div className="lg:w-[260px] p-5 border-t lg:border-t-0 lg:border-l border-zinc-800 flex flex-col justify-center">
+        <div className="lg:w-[260px] p-5 border-t lg:border-t-0 lg:border-l border-[#1f2a25] flex flex-col justify-center">
           <div className="space-y-4">
             <div>
               <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
