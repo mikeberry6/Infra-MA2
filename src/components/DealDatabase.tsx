@@ -96,19 +96,17 @@ function MultiSelectDropdown({
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         aria-label={`Filter by ${label}`}
-        className={`flex items-center gap-2 px-3 py-2 rounded-lg border text-sm transition-colors whitespace-nowrap ${
+        className={`flex items-center gap-2 px-2.5 py-1.5 rounded-[4px] border text-xs-dense font-medium transition-colors whitespace-nowrap ${
           selected.size > 0
-            ? "border-[#2a3730] bg-[#1c2321] text-zinc-200"
-            : "border-[#1f2a25] bg-[#141917] text-zinc-400 hover:border-[#2a3730]"
+            ? "border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.1)] text-[#818CF8]"
+            : "border-[#27272A] bg-[#18181B] text-[#A1A1AA] hover:border-[#3f3f46] hover:text-[#EDEDED] hover:bg-[rgba(255,255,255,0.03)]"
         }`}
       >
         <span>{label}</span>
         {selected.size > 0 && (
-          <span className="bg-emerald-500/20 text-emerald-400 text-xs font-medium px-1.5 py-0.5 rounded">
-            {selected.size}
-          </span>
+          <span className="font-mono text-micro">{selected.size}</span>
         )}
-        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown className={`h-3.5 w-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
       {isOpen && (
@@ -121,7 +119,7 @@ function MultiSelectDropdown({
           <div
             role="listbox"
             aria-label={`${label} options`}
-            className="absolute top-full left-0 mt-1 w-64 max-h-64 overflow-y-auto rounded-lg border border-[#1f2a25] bg-[#141917] shadow-xl"
+            className="absolute top-full left-0 mt-1 w-64 max-h-64 overflow-y-auto rounded-[4px] border border-[#27272A] bg-[#18181B] shadow-xl"
             style={{ zIndex: 9999 }}
           >
             {options.map((option) => {
@@ -133,20 +131,20 @@ function MultiSelectDropdown({
                   role="option"
                   aria-selected={isSelected}
                   onClick={() => onToggle(option)}
-                  className={`w-full flex items-center gap-3 px-3 py-2 text-sm text-left transition-colors ${
-                    isSelected ? "bg-[#1c2321]/50" : "hover:bg-[#1c2321]/50"
+                  className={`w-full flex items-center gap-3 px-3 py-2 text-sm-dense text-left transition-colors ${
+                    isSelected ? "bg-[rgba(255,255,255,0.03)]" : "hover:bg-[rgba(255,255,255,0.03)]"
                   }`}
                 >
                   <div
-                    className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 ${
-                      isSelected ? "border-emerald-500 bg-emerald-500" : "border-[#2a3730]"
+                    className={`w-4 h-4 rounded-[3px] border flex items-center justify-center shrink-0 ${
+                      isSelected ? "border-[#818CF8] bg-[#818CF8]" : "border-[#3f3f46]"
                     }`}
                   >
                     {isSelected && <Check className="h-3 w-3 text-white" />}
                   </div>
                   <span
                     className="truncate"
-                    style={{ color: isSelected ? color : undefined }}
+                    style={{ color: isSelected ? color : "#A1A1AA" }}
                   >
                     {option}
                   </span>
@@ -184,58 +182,67 @@ function ActiveFiltersChips({
 
   return (
     <div className="flex items-center gap-2 flex-wrap">
-      <span className="text-[11px] font-medium text-zinc-600 uppercase tracking-wider">
-        Active Filters:
+      <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">
+        Active:
       </span>
-      {Array.from(activeSectors).map((sector) => (
-        <button
-          key={`sector-${sector}`}
-          onClick={() => onClearSector(sector)}
-          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
-          style={{
-            color: getSectorColor(sector),
-            backgroundColor: `${getSectorColor(sector)}15`,
-            border: `1px solid ${getSectorColor(sector)}30`,
-          }}
-        >
-          {sector}
-          <X className="h-3 w-3" />
-        </button>
-      ))}
-      {Array.from(activeRegions).map((region) => (
-        <button
-          key={`region-${region}`}
-          onClick={() => onClearRegion(region)}
-          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
-          style={{
-            color: getRegionColor(region),
-            backgroundColor: `${getRegionColor(region)}15`,
-            border: `1px solid ${getRegionColor(region)}30`,
-          }}
-        >
-          {region}
-          <X className="h-3 w-3" />
-        </button>
-      ))}
-      {Array.from(activeCategories).map((category) => (
-        <button
-          key={`category-${category}`}
-          onClick={() => onClearCategory(category)}
-          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-colors hover:opacity-80"
-          style={{
-            color: getCategoryColor(category),
-            backgroundColor: `${getCategoryColor(category)}15`,
-            border: `1px solid ${getCategoryColor(category)}30`,
-          }}
-        >
-          {category}
-          <X className="h-3 w-3" />
-        </button>
-      ))}
+      {Array.from(activeSectors).map((sector) => {
+        const color = getSectorColor(sector);
+        return (
+          <button
+            key={`sector-${sector}`}
+            onClick={() => onClearSector(sector)}
+            className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-[4px] text-micro font-medium transition-colors hover:opacity-80"
+            style={{
+              color,
+              backgroundColor: `${color}1a`,
+              border: `1px solid ${color}33`,
+            }}
+          >
+            {sector}
+            <X className="h-3 w-3" />
+          </button>
+        );
+      })}
+      {Array.from(activeRegions).map((region) => {
+        const color = getRegionColor(region);
+        return (
+          <button
+            key={`region-${region}`}
+            onClick={() => onClearRegion(region)}
+            className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-[4px] text-micro font-medium transition-colors hover:opacity-80"
+            style={{
+              color,
+              backgroundColor: `${color}1a`,
+              border: `1px solid ${color}33`,
+            }}
+          >
+            {region}
+            <X className="h-3 w-3" />
+          </button>
+        );
+      })}
+      {Array.from(activeCategories).map((category) => {
+        const color = getCategoryColor(category);
+        return (
+          <button
+            key={`category-${category}`}
+            onClick={() => onClearCategory(category)}
+            className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-[4px] text-micro font-medium transition-colors hover:opacity-80"
+            style={{
+              color,
+              backgroundColor: `${color}1a`,
+              border: `1px solid ${color}33`,
+            }}
+          >
+            {category}
+            <X className="h-3 w-3" />
+          </button>
+        );
+      })}
       {totalFilters > 1 && (
         <button
           onClick={onClearAll}
-          className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors ml-1"
+          className="text-micro text-[#52525B] hover:text-[#A1A1AA] transition-colors ml-1"
         >
           Clear all
         </button>
@@ -267,22 +274,21 @@ function FilterBar({
   onClearAll: () => void;
 }) {
   return (
-    <div className="mb-4 lg:mb-6 space-y-3 lg:space-y-4">
-      {/* Search */}
-      <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-500" />
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => onSearchChange(e.target.value)}
-          placeholder="Search deals by title, buyer, seller, or ID..."
-          aria-label="Search deals"
-          className="w-full rounded-lg border border-[#1f2a25] bg-[#141917]/50 pl-10 pr-4 py-3 text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-emerald-500/40 focus:ring-1 focus:ring-emerald-500/30 transition-colors"
-        />
-      </div>
-
-      {/* Filter Dropdowns Row */}
-      <div className="flex flex-wrap items-center gap-3">
+    <div className="mb-4 lg:mb-6 space-y-3">
+      {/* Search + Filter row */}
+      <div className="flex items-center gap-3">
+        <div className="relative flex-1 max-w-sm">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#52525B]" />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => onSearchChange(e.target.value)}
+            placeholder="Search deals..."
+            aria-label="Search deals"
+            className="w-full rounded-[4px] border border-[#27272A] bg-[#18181B] pl-10 pr-4 py-1.5 text-sm-dense text-[#EDEDED] placeholder:text-[#52525B] focus:outline-none focus:border-[#A1A1AA] transition-colors"
+          />
+        </div>
+        <div className="w-px h-5 bg-[#27272A]" />
         <MultiSelectDropdown
           label="Sector"
           options={SECTORS}
@@ -328,56 +334,63 @@ function DealCard({
   deal: Deal;
   onSelect: (deal: Deal) => void;
 }) {
+  const sectorColor = getSectorColor(deal.sector);
   return (
     <button
       onClick={() => onSelect(deal)}
-      className="w-full text-left glass-card rounded-lg p-4 transition-colors hover:border-[#2a3730] active:bg-[#1c2321]/60"
+      className="w-full text-left glass-card rounded-[4px] p-4 transition-colors hover:bg-[rgba(255,255,255,0.03)] active:bg-[rgba(255,255,255,0.05)]"
     >
       <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-1.5 flex-wrap">
           <span
-            className="text-xs font-medium px-2 py-0.5 rounded"
+            className="text-micro font-mono px-1.5 py-0.5 rounded-[4px]"
             style={{
-              color: getSectorColor(deal.sector),
-              backgroundColor: `${getSectorColor(deal.sector)}15`,
+              color: sectorColor,
+              backgroundColor: `${sectorColor}1a`,
+              border: `1px solid ${sectorColor}33`,
             }}
           >
             {deal.sector}
           </span>
-          {deal.category.map((cat) => {
+          {deal.category.slice(0, 2).map((cat) => {
             const catColor = getCategoryColor(cat);
             return (
               <span
                 key={cat}
-                className="text-[11px] font-medium px-2 py-0.5 rounded-full"
+                className="text-micro font-mono px-1.5 py-0.5 rounded-[4px]"
                 style={{
                   color: catColor,
-                  backgroundColor: `${catColor}15`,
-                  border: `1px solid ${catColor}30`,
+                  backgroundColor: `${catColor}1a`,
+                  border: `1px solid ${catColor}33`,
                 }}
               >
                 {cat}
               </span>
             );
           })}
+          {deal.category.length > 2 && (
+            <span className="text-micro font-mono px-1.5 py-0.5 rounded-[4px] text-[#52525B] border border-dashed border-[#27272A]">
+              +{deal.category.length - 2}
+            </span>
+          )}
         </div>
-        <ChevronRight className="h-4 w-4 text-zinc-600 shrink-0" />
+        <ChevronRight className="h-4 w-4 text-[#52525B] shrink-0" />
       </div>
-      <h3 className="text-sm font-medium text-zinc-200 mb-1.5 leading-snug">
+      <h3 className="text-sm-dense font-medium text-[#EDEDED] mb-1.5 leading-snug tracking-tight">
         {deal.title}
       </h3>
       <div className="grid grid-cols-2 gap-2 mt-2 mb-1">
         <div>
-          <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Buyer</span>
-          <div className="text-xs text-zinc-300 font-medium truncate">{deal.buyer}</div>
+          <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Buyer</span>
+          <div className="text-xs-dense text-[#A1A1AA] font-medium truncate">{deal.buyer}</div>
         </div>
         <div>
-          <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Seller</span>
-          <div className="text-xs text-zinc-300 font-medium truncate">{deal.seller}</div>
+          <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Seller</span>
+          <div className="text-xs-dense text-[#A1A1AA] font-medium truncate">{deal.seller}</div>
         </div>
       </div>
-      <div className="flex items-center text-xs text-zinc-500 mt-1">
-        <span className="mono">{formatDate(deal.date)}</span>
+      <div className="flex items-center text-micro text-[#52525B] mt-1">
+        <span className="font-mono tabular-nums">{formatDate(deal.date)}</span>
       </div>
     </button>
   );
@@ -407,127 +420,138 @@ function DealTable({
   return (
     <>
       {/* Mobile card list */}
-      <div className="md:hidden space-y-3">
+      <div className="md:hidden space-y-2">
         {sorted.map((deal) => (
           <DealCard key={deal.id} deal={deal} onSelect={onSelectDeal} />
         ))}
         {sorted.length === 0 && (
-          <div className="flex items-center justify-center py-16 text-sm text-zinc-600">
+          <div className="flex items-center justify-center py-16 text-sm-dense text-[#52525B]">
             No deals match your current filters.
           </div>
         )}
         <div className="px-1 py-2.5">
-          <span className="text-xs text-zinc-600">
+          <span className="text-micro text-[#52525B]">
             Showing{" "}
-            <span className="mono text-zinc-400">{sorted.length}</span> of{" "}
-            <span className="mono text-zinc-400">{deals.length}</span> deals
+            <span className="font-mono text-[#A1A1AA] tabular-nums">{sorted.length}</span> of{" "}
+            <span className="font-mono text-[#A1A1AA] tabular-nums">{deals.length}</span> deals
           </span>
         </div>
       </div>
 
       {/* Desktop table */}
-      <div className="hidden md:block border border-[#1f2a25] rounded-lg overflow-hidden">
+      <div className="hidden md:block overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full text-left text-sm-dense border-collapse whitespace-nowrap">
             <thead>
-              <tr className="border-b border-[#1f2a25] bg-[#141917]/60">
-                <th className="text-left px-4 py-3 text-[11px] font-medium text-zinc-500 uppercase tracking-wider w-[100px]">
+              <tr className="border-b border-[#27272A]">
+                <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider w-[80px]">
                   ID
                 </th>
-                <th className="text-left px-4 py-3 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
+                <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
                   Deal
                 </th>
-                <th className="text-left px-4 py-3 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
+                <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
                   Parties
                 </th>
-                <th className="text-left px-4 py-3 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
+                <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
                   Sector
                 </th>
-                <th className="text-left px-4 py-3 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
+                <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
                   Category
                 </th>
                 <th
                   onClick={toggleSort}
-                  className="text-left px-4 py-3 text-[11px] font-medium text-zinc-500 uppercase tracking-wider cursor-pointer hover:text-zinc-300 transition-colors"
+                  className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider cursor-pointer hover:text-[#EDEDED] transition-colors"
                 >
                   <span className="inline-flex items-center gap-1">
                     Date
                     <ArrowUpDown className="h-3 w-3" />
                   </span>
                 </th>
-                <th className="text-center px-4 py-3 text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
-                  Verification
+                <th className="text-center px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                  Source
                 </th>
               </tr>
             </thead>
             <tbody>
               {sorted.map((deal) => {
+                const sectorColor = getSectorColor(deal.sector);
                 return (
                   <tr
                     key={deal.id}
                     onClick={() => onSelectDeal(deal)}
-                    className="border-b border-[#1f2a25]/60 hover:bg-[#1c2321]/50 cursor-pointer transition-colors group"
+                    className="border-b border-[rgba(255,255,255,0.08)] hover:bg-[rgba(255,255,255,0.03)] cursor-pointer transition-colors group"
                   >
-                    <td className="px-4 py-3">
-                      <span className="mono text-xs text-zinc-600">
+                    <td className="px-4 py-2.5">
+                      <span className="font-mono text-micro text-[#52525B] tabular-nums">
                         {deal.id}
                       </span>
                     </td>
-                    <td className="px-4 py-3">
+                    <td className="px-4 py-2.5">
                       <div className="flex items-center gap-2">
-                        <span className="font-medium text-zinc-200 group-hover:text-zinc-50 transition-colors truncate max-w-[280px] xl:max-w-[400px] 2xl:max-w-none">
+                        <span className="font-medium text-[#EDEDED] tracking-tight group-hover:text-white transition-colors truncate max-w-[280px] xl:max-w-[400px] 2xl:max-w-none">
                           {deal.title}
                         </span>
-                        <ChevronRight className="h-3 w-3 text-zinc-600 opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                        <ChevronRight className="h-3 w-3 text-[#52525B] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                       </div>
                     </td>
-                    <td className="px-4 py-3 max-w-[220px] xl:max-w-[300px] 2xl:max-w-none">
-                      <div className="text-sm text-zinc-200 font-medium truncate">{deal.buyer}</div>
-                      <div className="text-xs text-zinc-500 truncate">{deal.seller}</div>
+                    <td className="px-4 py-2.5 max-w-[220px] xl:max-w-[300px] 2xl:max-w-none">
+                      <div className="flex flex-col">
+                        <span className="text-sm-dense text-[#EDEDED] font-medium truncate">{deal.buyer}</span>
+                        <div className="flex items-center gap-1.5 mt-0.5">
+                          <span className="text-xs-dense text-[#52525B] group-hover:text-[#A1A1AA] transition-colors truncate">{deal.seller}</span>
+                        </div>
+                      </div>
                     </td>
-                    <td className="px-4 py-3">
+                    <td className="px-4 py-2.5">
                       <span
-                        className="text-xs font-medium px-2 py-0.5 rounded"
+                        className="inline-flex items-center px-1.5 py-0.5 rounded-[4px] text-micro font-mono"
                         style={{
-                          color: getSectorColor(deal.sector),
-                          backgroundColor: `${getSectorColor(deal.sector)}15`,
+                          color: sectorColor,
+                          backgroundColor: `${sectorColor}1a`,
+                          border: `1px solid ${sectorColor}33`,
                         }}
                       >
                         {deal.sector}
                       </span>
                     </td>
-                    <td className="px-4 py-3">
-                      <div className="flex flex-wrap gap-1">
-                        {deal.category.map((cat) => {
+                    <td className="px-4 py-2.5">
+                      <div className="flex items-center gap-1.5">
+                        {deal.category.slice(0, 2).map((cat) => {
                           const catColor = getCategoryColor(cat);
                           return (
                             <span
                               key={cat}
-                              className="text-[11px] font-medium px-2 py-0.5 rounded-full whitespace-nowrap"
+                              className="text-micro font-mono px-1.5 py-0.5 rounded-[4px]"
                               style={{
                                 color: catColor,
-                                backgroundColor: `${catColor}15`,
-                                border: `1px solid ${catColor}30`,
+                                backgroundColor: `${catColor}1a`,
+                                border: `1px solid ${catColor}33`,
                               }}
                             >
                               {cat}
                             </span>
                           );
                         })}
+                        {deal.category.length > 2 && (
+                          <span className="inline-flex items-center px-1.5 py-0.5 rounded-[4px] text-micro font-mono bg-transparent text-[#52525B] border border-dashed border-[#27272A]">
+                            +{deal.category.length - 2}
+                          </span>
+                        )}
                       </div>
                     </td>
-                    <td className="px-4 py-3">
-                      <span className="mono text-xs text-zinc-500">
+                    <td className="px-4 py-2.5">
+                      <span className="font-mono text-[#A1A1AA] group-hover:text-[#EDEDED] transition-colors tabular-nums tracking-tight text-xs-dense">
                         {formatDate(deal.date)}
                       </span>
                     </td>
-                    <td className="px-4 py-3 text-center">
+                    <td className="px-4 py-2.5 text-center">
                       <a
                         href={deal.sourceUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1 text-xs text-zinc-400 hover:text-emerald-400 transition-colors"
+                        className="inline-flex items-center gap-1 text-micro text-[#52525B] hover:text-[#A1A1AA] transition-colors"
                         title={`Source: ${deal.sourceName}`}
                       >
                         <span className="font-medium">{deal.sourceName}</span>
@@ -542,16 +566,16 @@ function DealTable({
         </div>
 
         {sorted.length === 0 && (
-          <div className="flex items-center justify-center py-16 text-sm text-zinc-600">
+          <div className="flex items-center justify-center py-16 text-sm-dense text-[#52525B]">
             No deals match your current filters.
           </div>
         )}
 
-        <div className="border-t border-[#1f2a25] px-4 py-2.5 bg-[#141917]/40">
-          <span className="text-xs text-zinc-600">
+        <div className="border-t border-[#27272A] px-4 py-2.5">
+          <span className="text-micro text-[#52525B]">
             Showing{" "}
-            <span className="mono text-zinc-400">{sorted.length}</span> of{" "}
-            <span className="mono text-zinc-400">{deals.length}</span> deals
+            <span className="font-mono text-[#A1A1AA] tabular-nums">{sorted.length}</span> of{" "}
+            <span className="font-mono text-[#A1A1AA] tabular-nums">{deals.length}</span> deals
           </span>
         </div>
       </div>
@@ -561,17 +585,21 @@ function DealTable({
 
 // ─── Status Badge ───────────────────────────────────────────
 function StatusBadge({ status }: { status: string }) {
-  const config: Record<string, { color: string; bg: string; border: string }> = {
-    Announced: { color: "#3b82f6", bg: "#3b82f615", border: "#3b82f630" },
-    Closed: { color: "#10b981", bg: "#10b98115", border: "#10b98130" },
-    "Pending Regulatory Approval": { color: "#f59e0b", bg: "#f59e0b15", border: "#f59e0b30" },
-    Terminated: { color: "#ef4444", bg: "#ef444415", border: "#ef444430" },
+  const config: Record<string, { color: string }> = {
+    Announced: { color: "#3b82f6" },
+    Closed: { color: "#10b981" },
+    "Pending Regulatory Approval": { color: "#f59e0b" },
+    Terminated: { color: "#ef4444" },
   };
   const s = config[status] || config.Announced;
   return (
     <span
-      className="text-[11px] font-semibold px-2.5 py-1 rounded-full inline-flex items-center gap-1.5"
-      style={{ color: s.color, backgroundColor: s.bg, border: `1px solid ${s.border}` }}
+      className="text-micro font-semibold px-2 py-0.5 rounded-[4px] inline-flex items-center gap-1.5 font-mono"
+      style={{
+        color: s.color,
+        backgroundColor: `${s.color}1a`,
+        border: `1px solid ${s.color}33`,
+      }}
     >
       <span
         className="w-1.5 h-1.5 rounded-full"
@@ -595,11 +623,11 @@ function DetailRow({
   children: React.ReactNode;
 }) {
   return (
-    <div className="glass-card rounded-lg px-4 py-3 flex items-start gap-3">
+    <div className="glass-card rounded-[4px] px-4 py-3 flex items-start gap-3">
       <Icon className={`h-4 w-4 mt-0.5 shrink-0 ${iconColor}`} />
       <div className="min-w-0">
-        <span className="text-[11px] text-zinc-600 block">{label}</span>
-        <div className="text-sm text-zinc-300">{children}</div>
+        <span className="text-micro text-[#52525B] block">{label}</span>
+        <div className="text-sm-dense text-[#A1A1AA]">{children}</div>
       </div>
     </div>
   );
@@ -616,13 +644,13 @@ function AdvisorCard({
   iconColor: string;
 }) {
   return (
-    <div className="glass-card rounded-lg p-4">
-      <span className={`text-[11px] font-medium uppercase tracking-wider block mb-2 ${iconColor}`}>
+    <div className="glass-card rounded-[4px] p-4">
+      <span className={`text-micro font-medium uppercase tracking-wider block mb-2 ${iconColor}`}>
         {label}
       </span>
       <div className="space-y-1">
         {firms.map((firm) => (
-          <div key={firm} className="text-sm text-zinc-200 font-medium">
+          <div key={firm} className="text-sm-dense text-[#EDEDED] font-medium">
             {firm}
           </div>
         ))}
@@ -672,23 +700,23 @@ function DealDrawer({
       />
 
       {/* Drawer */}
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#1f2a25] bg-[#0c0f0e] overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#27272A] bg-[#09090B] overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-[#1f2a25] bg-[#0c0f0e]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
+        <div className="sticky top-0 z-10 border-b border-[#27272A] bg-[#09090B]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                <span className="mono text-xs text-zinc-600">{deal.id}</span>
+                <span className="font-mono text-micro text-[#52525B] tabular-nums">{deal.id}</span>
                 <StatusBadge status={deal.status} />
-                <span className="mono text-xs text-zinc-600">{formatDate(deal.date)}</span>
+                <span className="font-mono text-micro text-[#52525B] tabular-nums">{formatDate(deal.date)}</span>
               </div>
-              <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-zinc-50 leading-tight">
+              <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-[#EDEDED] leading-tight tracking-tight">
                 {deal.title}
               </h2>
             </div>
             <button
               onClick={onClose}
-              className="rounded-md p-2 text-zinc-400 hover:text-zinc-200 hover:bg-[#1c2321] transition-colors shrink-0"
+              className="rounded-[4px] p-2 text-[#52525B] hover:text-[#EDEDED] hover:bg-[rgba(255,255,255,0.05)] transition-colors shrink-0"
             >
               <X className="h-5 w-5" />
             </button>
@@ -696,61 +724,67 @@ function DealDrawer({
 
           {/* Inline badges */}
           <div className="flex items-center gap-2 mt-3 flex-wrap">
-            <span
-              className="text-xs font-medium px-2 py-0.5 rounded"
-              style={{
-                color: getSectorColor(deal.sector),
-                backgroundColor: `${getSectorColor(deal.sector)}15`,
-              }}
-            >
-              {deal.sector}
-            </span>
-            <span className="text-xs text-zinc-500">{deal.subsector}</span>
-            <div className="h-3.5 w-px bg-[#1f2a25]" />
+            {(() => {
+              const sectorColor = getSectorColor(deal.sector);
+              return (
+                <span
+                  className="text-micro font-mono px-1.5 py-0.5 rounded-[4px]"
+                  style={{
+                    color: sectorColor,
+                    backgroundColor: `${sectorColor}1a`,
+                    border: `1px solid ${sectorColor}33`,
+                  }}
+                >
+                  {deal.sector}
+                </span>
+              );
+            })()}
+            <span className="text-xs-dense text-[#52525B]">{deal.subsector}</span>
+            <div className="h-3.5 w-px bg-[#27272A]" />
             {deal.category.map((cat) => {
               const catColor = getCategoryColor(cat);
               return (
                 <span
                   key={cat}
-                  className="text-[11px] font-medium px-2 py-0.5 rounded-full"
+                  className="text-micro font-mono px-1.5 py-0.5 rounded-[4px]"
                   style={{
                     color: catColor,
-                    backgroundColor: `${catColor}15`,
-                    border: `1px solid ${catColor}30`,
+                    backgroundColor: `${catColor}1a`,
+                    border: `1px solid ${catColor}33`,
                   }}
                 >
                   {cat}
                 </span>
               );
             })}
-            <div className="h-3.5 w-px bg-[#1f2a25]" />
-            <span className="text-xs text-zinc-500">{deal.country}</span>
+            <div className="h-3.5 w-px bg-[#27272A]" />
+            <span className="text-xs-dense text-[#52525B]">{deal.country}</span>
           </div>
         </div>
 
         {/* Content */}
         <div className="p-4 sm:p-6 lg:p-8 space-y-5 lg:space-y-6">
           {/* Compact parties + economics bar */}
-          <div className="glass-card rounded-lg p-4 space-y-3">
+          <div className="glass-card rounded-[4px] p-4 space-y-3">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Buyer</span>
-                <div className="text-sm font-medium text-zinc-200 mt-0.5">{deal.buyer}</div>
+                <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Buyer</span>
+                <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{deal.buyer}</div>
               </div>
               <div>
-                <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Seller</span>
-                <div className="text-sm font-medium text-zinc-200 mt-0.5">{deal.seller}</div>
+                <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Seller</span>
+                <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{deal.seller}</div>
               </div>
             </div>
 
             {econItems.length > 0 && (
               <>
-                <div className="border-t border-[#1f2a25]/60" />
+                <div className="border-t border-[rgba(255,255,255,0.08)]" />
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
                   {econItems.map((item) => (
                     <div key={item.label}>
-                      <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">{item.label}</span>
-                      <div className="text-sm font-semibold text-zinc-100 mt-0.5">{item.value}</div>
+                      <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">{item.label}</span>
+                      <div className="text-sm-dense font-semibold text-[#EDEDED] font-mono tabular-nums mt-0.5">{item.value}</div>
                     </div>
                   ))}
                 </div>
@@ -758,28 +792,28 @@ function DealDrawer({
             )}
 
             {/* Timeline row */}
-            <div className="border-t border-[#1f2a25]/60" />
+            <div className="border-t border-[rgba(255,255,255,0.08)]" />
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               <div>
-                <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Announced</span>
-                <div className="mono text-sm text-zinc-300 mt-0.5">{formatDate(deal.date)}</div>
+                <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Announced</span>
+                <div className="font-mono text-sm-dense text-[#A1A1AA] tabular-nums mt-0.5">{formatDate(deal.date)}</div>
               </div>
               {deal.closingDate && (
                 <div>
-                  <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Expected Close</span>
-                  <div className="text-sm text-zinc-300 mt-0.5">{deal.closingDate}</div>
+                  <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Expected Close</span>
+                  <div className="text-sm-dense text-[#A1A1AA] mt-0.5">{deal.closingDate}</div>
                 </div>
               )}
               {deal.assetScale && (
                 <div>
-                  <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Scale</span>
-                  <div className="text-sm text-zinc-300 mt-0.5">{deal.assetScale}</div>
+                  <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Scale</span>
+                  <div className="text-sm-dense text-[#A1A1AA] mt-0.5">{deal.assetScale}</div>
                 </div>
               )}
               {deal.fundVehicle && (
                 <div>
-                  <span className="text-[10px] font-medium text-zinc-600 uppercase tracking-wider">Fund</span>
-                  <div className="text-sm text-zinc-300 mt-0.5">{deal.fundVehicle}</div>
+                  <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Fund</span>
+                  <div className="text-sm-dense text-[#A1A1AA] mt-0.5">{deal.fundVehicle}</div>
                 </div>
               )}
             </div>
@@ -787,27 +821,27 @@ function DealDrawer({
 
           {/* Target overview */}
           <div>
-            <p className="text-sm text-zinc-400 leading-relaxed">
+            <p className="text-sm-dense text-[#A1A1AA] leading-relaxed">
               {deal.targetDescription}
             </p>
           </div>
 
-          {/* Key Highlights — the main content */}
+          {/* Key Highlights */}
           {deal.keyHighlights && deal.keyHighlights.length > 0 && (
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <FileText className="h-3.5 w-3.5 text-emerald-400" />
-                <span className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider">
+                <FileText className="h-3.5 w-3.5 text-[#818CF8]" />
+                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
                   Key Highlights
                 </span>
               </div>
               <ul className="space-y-2">
                 {deal.keyHighlights.map((highlight, i) => (
-                  <li key={i} className="flex gap-3 text-sm">
-                    <span className="text-emerald-500 mt-1 shrink-0">
+                  <li key={i} className="flex gap-3 text-sm-dense">
+                    <span className="text-[#818CF8] mt-1 shrink-0">
                       <ChevronRight className="h-3 w-3" />
                     </span>
-                    <span className="text-zinc-300 leading-relaxed">{highlight}</span>
+                    <span className="text-[#A1A1AA] leading-relaxed">{highlight}</span>
                   </li>
                 ))}
               </ul>
@@ -817,7 +851,7 @@ function DealDrawer({
           {/* Advisors */}
           {hasAdvisors && (
             <div>
-              <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider block mb-3">
+              <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider block mb-3">
                 Advisors
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -825,28 +859,28 @@ function DealDrawer({
                   <AdvisorCard
                     label="Financial Advisor (Buyer)"
                     firms={deal.financialAdvisorBuyer}
-                    iconColor="text-emerald-400"
+                    iconColor="text-[#818CF8]"
                   />
                 )}
                 {deal.financialAdvisorSeller && (
                   <AdvisorCard
                     label="Financial Advisor (Seller)"
                     firms={deal.financialAdvisorSeller}
-                    iconColor="text-amber-400"
+                    iconColor="text-[#FBBF24]"
                   />
                 )}
                 {deal.legalAdvisorBuyer && (
                   <AdvisorCard
                     label="Legal Counsel (Buyer)"
                     firms={deal.legalAdvisorBuyer}
-                    iconColor="text-violet-400"
+                    iconColor="text-[#8b5cf6]"
                   />
                 )}
                 {deal.legalAdvisorSeller && (
                   <AdvisorCard
                     label="Legal Counsel (Seller)"
                     firms={deal.legalAdvisorSeller}
-                    iconColor="text-rose-400"
+                    iconColor="text-[#ec4899]"
                   />
                 )}
               </div>
@@ -854,12 +888,12 @@ function DealDrawer({
           )}
 
           {/* Source link */}
-          <div className="border-t border-[#1f2a25] pt-4">
+          <div className="border-t border-[#27272A] pt-4">
             <a
               href={deal.sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
+              className="inline-flex items-center gap-1.5 text-micro font-medium text-[#A1A1AA] hover:text-[#EDEDED] transition-colors"
             >
               View source on {deal.sourceName}
               <ExternalLink className="h-3 w-3" />
@@ -973,16 +1007,36 @@ export function DealDatabase() {
     }
   }, [filteredDeals, selectedDeal]);
 
+  // Unique sector/region counts
+  const uniqueSectors = useMemo(() => new Set(filteredDeals.map((d) => d.sector)).size, [filteredDeals]);
+  const uniqueRegions = useMemo(() => new Set(filteredDeals.map((d) => d.region)).size, [filteredDeals]);
+
   return (
     <div className="mx-auto max-w-[1400px] xl:max-w-[1600px] 2xl:max-w-[1800px] px-4 sm:px-6 lg:px-8 xl:px-12 py-8 lg:py-12">
-      <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-tight mb-1 lg:mb-2">
-          Deal Database
-        </h1>
-        <p className="text-sm lg:text-base text-zinc-400">
-          Comprehensive infrastructure M&amp;A tracker &mdash; 2026 year-to-date
-          as of {latestDealDate}.
-        </p>
+      {/* Header with stats ribbon */}
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <h1 className="text-base font-medium tracking-tight text-[#EDEDED] mb-1">
+            Deal Database
+          </h1>
+          <p className="text-xs-dense text-[#52525B]">
+            2026 year-to-date as of {latestDealDate}
+          </p>
+        </div>
+        <div className="hidden sm:flex items-center gap-6 text-xs-dense">
+          <div className="flex items-baseline gap-2">
+            <span className="text-[#A1A1AA]">Deals</span>
+            <span className="font-mono text-[#EDEDED] tabular-nums">{filteredDeals.length}</span>
+          </div>
+          <div className="flex items-baseline gap-2">
+            <span className="text-[#A1A1AA]">Sectors</span>
+            <span className="font-mono text-[#EDEDED] tabular-nums">{uniqueSectors}</span>
+          </div>
+          <div className="flex items-baseline gap-2">
+            <span className="text-[#A1A1AA]">Regions</span>
+            <span className="font-mono text-[#EDEDED] tabular-nums">{uniqueRegions}</span>
+          </div>
+        </div>
       </div>
 
       <div className="mb-6 lg:mb-8">

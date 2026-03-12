@@ -24,10 +24,10 @@ function MetricCell({
 
   return (
     <div>
-      <p className="text-[9px] font-medium uppercase tracking-wider text-zinc-600 mb-1">
+      <p className="text-[9px] font-medium uppercase tracking-wider text-[#52525B] mb-1">
         {title}
         {metric.label && (
-          <span className="normal-case tracking-normal text-zinc-600">
+          <span className="normal-case tracking-normal text-[#52525B]">
             {" "}
             ({metric.label})
           </span>
@@ -36,7 +36,7 @@ function MetricCell({
 
       {/* Primary value */}
       <p
-        className="mono text-sm font-semibold mb-1"
+        className="font-mono tabular-nums text-sm font-semibold mb-1"
         style={{ color: isNotDisclosed ? "#71717a" : color }}
       >
         {metric.value}
@@ -44,7 +44,7 @@ function MetricCell({
 
       {/* Segment note for non-isolated metrics */}
       {metric.isIsolated === false && metric.segmentNote && (
-        <p className="text-[9px] text-zinc-500 italic mb-1">
+        <p className="text-[9px] text-[#52525B] italic mb-1">
           {metric.segmentNote}
         </p>
       )}
@@ -52,9 +52,9 @@ function MetricCell({
       {/* Additional lines (e.g., Ares secondaries) */}
       {metric.additionalLines &&
         metric.additionalLines.map((line, idx) => (
-          <p key={idx} className="text-[10px] text-zinc-400 mono">
+          <p key={idx} className="text-micro text-[#A1A1AA] font-mono tabular-nums">
             + {line.value}{" "}
-            <span className="text-zinc-600 text-[9px]">({line.label})</span>
+            <span className="text-[#52525B] text-[9px]">({line.label})</span>
           </p>
         ))}
 
@@ -62,13 +62,13 @@ function MetricCell({
       {metric.comparisons.length > 0 && (
         <div className="flex flex-wrap gap-x-3 gap-y-0.5 mt-1">
           {metric.comparisons.map((comp) => (
-            <span key={comp.label} className="text-[9px] mono text-zinc-500">
-              <span className="text-zinc-600">{comp.label}:</span>{" "}
+            <span key={comp.label} className="text-[9px] font-mono tabular-nums text-[#52525B]">
+              <span className="text-[#52525B]">{comp.label}:</span>{" "}
               <span
                 className={
                   comp.value === "Not Disclosed"
-                    ? "text-zinc-600"
-                    : "text-zinc-400"
+                    ? "text-[#52525B]"
+                    : "text-[#A1A1AA]"
                 }
               >
                 {comp.value}
@@ -89,48 +89,48 @@ function AssetManagerCardComponent({ card }: { card: AssetManagerCard }) {
   const sectorColor = getSectorTypeColor(company.sector);
 
   return (
-    <div className="glass-card rounded-lg overflow-hidden">
+    <div className="glass-card rounded-[4px] overflow-hidden">
       <div className="p-4 lg:p-5">
         {/* Header: Company name & ticker */}
         <div className="flex items-start justify-between gap-3 mb-3">
           <div className="min-w-0">
             <div className="flex items-center gap-2 mb-1 flex-wrap">
-              <h3 className="text-sm lg:text-base font-semibold text-zinc-100">
+              <h3 className="text-sm lg:text-base font-semibold text-[#EDEDED] tracking-tight">
                 {company.name}
               </h3>
-              <span className="mono text-[11px] text-zinc-500 shrink-0">
+              <span className="font-mono tabular-nums text-micro text-[#52525B] shrink-0">
                 {card.ticker}:{company.exchange}
               </span>
             </div>
 
             {/* Reporting Context */}
-            <p className="text-[10px] text-zinc-500 mb-1">
-              <span className="text-zinc-600">Reporting Context:</span>{" "}
+            <p className="text-micro text-[#52525B] mb-1">
+              <span className="text-[#52525B]">Reporting Context:</span>{" "}
               {card.reportingContext}
             </p>
 
             {/* Period & report date */}
-            <div className="flex items-center gap-3 text-[10px] text-zinc-600">
-              <span className="mono font-medium text-zinc-400">
+            <div className="flex items-center gap-3 text-micro text-[#52525B]">
+              <span className="font-mono tabular-nums font-medium text-[#A1A1AA]">
                 {card.period}
               </span>
               {card.periodNote && (
                 <>
-                  <span className="text-[#2a3730]">|</span>
-                  <span className="text-zinc-500">{card.periodNote}</span>
+                  <span className="text-[#3f3f46]">|</span>
+                  <span className="text-[#52525B]">{card.periodNote}</span>
                 </>
               )}
-              <span className="text-[#2a3730]">|</span>
+              <span className="text-[#3f3f46]">|</span>
               <span>Reported {formatFullDate(card.reportDate)}</span>
             </div>
           </div>
 
           {/* Sector badge */}
           <span
-            className="text-[10px] font-medium px-1.5 py-0.5 rounded shrink-0"
+            className="text-micro font-medium px-1.5 py-0.5 rounded-[4px] shrink-0"
             style={{
               color: sectorColor,
-              backgroundColor: `${sectorColor}15`,
+              backgroundColor: `${sectorColor}1a`,
             }}
           >
             {company.sector}
@@ -138,11 +138,11 @@ function AssetManagerCardComponent({ card }: { card: AssetManagerCard }) {
         </div>
 
         {/* Metrics grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3 border-t border-[#1f2a25]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3 border-t border-[#27272A]">
           <MetricCell
             title="Fundraising"
             metric={card.fundraising}
-            color="#34B27B"
+            color="#818CF8"
           />
           <MetricCell
             title="Deployment"
@@ -158,15 +158,15 @@ function AssetManagerCardComponent({ card }: { card: AssetManagerCard }) {
 
         {/* Notes */}
         {card.notes && card.notes.length > 0 && (
-          <div className="mt-3 pt-3 border-t border-[#1f2a25]/50">
-            <p className="text-[9px] font-medium uppercase tracking-wider text-zinc-600 mb-1">
+          <div className="mt-3 pt-3 border-t border-[#27272A]/50">
+            <p className="text-[9px] font-medium uppercase tracking-wider text-[#52525B] mb-1">
               Note
             </p>
             <ul className="space-y-0.5">
               {card.notes.map((note, idx) => (
                 <li
                   key={idx}
-                  className="text-[10px] text-zinc-500 leading-relaxed pl-2.5 relative before:content-[''] before:absolute before:left-0 before:top-[6px] before:h-1 before:w-1 before:rounded-full before:bg-[#2a3730]"
+                  className="text-micro text-[#52525B] leading-relaxed pl-2.5 relative before:content-[''] before:absolute before:left-0 before:top-[6px] before:h-1 before:w-1 before:rounded-full before:bg-[#3f3f46]"
                 >
                   {note}
                 </li>
@@ -177,15 +177,15 @@ function AssetManagerCardComponent({ card }: { card: AssetManagerCard }) {
 
         {/* Earnings Commentary */}
         {card.commentary && card.commentary.length > 0 && (
-          <div className="mt-3 pt-3 border-t border-[#1f2a25]/50">
-            <p className="text-[9px] font-medium uppercase tracking-wider text-zinc-600 mb-2">
+          <div className="mt-3 pt-3 border-t border-[#27272A]/50">
+            <p className="text-[9px] font-medium uppercase tracking-wider text-[#52525B] mb-2">
               Earnings Commentary
             </p>
             <div className="space-y-2">
               {card.commentary.map((quote, idx) => (
                 <blockquote
                   key={idx}
-                  className="text-[10px] text-zinc-400 leading-relaxed pl-2.5 border-l border-[#2a3730] italic"
+                  className="text-micro text-[#A1A1AA] leading-relaxed pl-2.5 border-l border-[#3f3f46] italic"
                 >
                   &ldquo;{quote}&rdquo;
                 </blockquote>
@@ -205,10 +205,10 @@ export function Earnings() {
     <div className="mx-auto max-w-[1400px] xl:max-w-[1600px] 2xl:max-w-[1800px] px-4 sm:px-6 lg:px-8 xl:px-12 py-6 lg:py-8">
       {/* Header */}
       <div className="mb-6 lg:mb-8">
-        <h1 className="text-2xl lg:text-3xl font-bold text-zinc-50 mb-2">
+        <h1 className="text-2xl lg:text-3xl font-bold text-[#EDEDED] tracking-tight mb-2">
           Public Asset Managers
         </h1>
-        <p className="text-sm text-zinc-500 leading-relaxed max-w-3xl">
+        <p className="text-sm text-[#52525B] leading-relaxed max-w-3xl">
           Infrastructure-specific fundraising, deployment, and realizations
           from nine public asset managers. Verified from Q4 2025 / H2 2025
           earnings releases. Each card reflects the reporting segment and
@@ -217,9 +217,9 @@ export function Earnings() {
       </div>
 
       {/* Disclaimer */}
-      <div className="glass-card rounded-lg p-4 mb-6 border-[#2a3730]/50">
-        <p className="text-[10px] text-zinc-500 leading-relaxed">
-          <span className="text-zinc-400 font-medium">Disclosure:</span>{" "}
+      <div className="glass-card rounded-[4px] p-4 mb-6 border-[#3f3f46]/50">
+        <p className="text-micro text-[#52525B] leading-relaxed">
+          <span className="text-[#A1A1AA] font-medium">Disclosure:</span>{" "}
           Metrics below are sourced directly from each company&apos;s most
           recent earnings release. Because firms report through different
           segments (standalone infrastructure, broader real assets, credit

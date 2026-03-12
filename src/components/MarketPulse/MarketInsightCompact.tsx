@@ -23,38 +23,38 @@ export function MarketInsightCompact() {
     .slice(0, 4);
 
   return (
-    <div className="surface-card-elevated rounded-xl p-5">
+    <div className="surface-card-elevated rounded-[4px] p-5">
       <div className="flex flex-col sm:flex-row sm:items-center gap-6">
         {/* Key stats */}
         <div className="flex items-center gap-6">
           <div>
-            <span className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider">
+            <span className="text-[10px] font-medium text-[#52525B] uppercase tracking-wider">
               Total Deals
             </span>
-            <p className="mono text-2xl font-semibold text-zinc-100">
+            <p className="mono font-mono text-2xl font-semibold text-[#EDEDED] tabular-nums">
               {stats.totalCount}
             </p>
           </div>
-          <div className="w-px h-10 bg-[#1f2a25]" />
+          <div className="w-px h-10 bg-[#27272A]" />
           <div>
-            <span className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider">
+            <span className="text-[10px] font-medium text-[#52525B] uppercase tracking-wider">
               Top Region
             </span>
             <p className="text-lg font-semibold" style={{ color: getRegionColor(regionStats.topRegion) }}>
               {regionStats.topRegion.split(" ")[0]}
-              <span className="text-sm text-zinc-500 ml-1">
+              <span className="text-sm text-[#52525B] ml-1 font-mono tabular-nums">
                 {regionStats.topRegionShare}%
               </span>
             </p>
           </div>
-          <div className="w-px h-10 bg-[#1f2a25] hidden sm:block" />
+          <div className="w-px h-10 bg-[#27272A] hidden sm:block" />
           <div className="hidden sm:block">
-            <span className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider">
+            <span className="text-[10px] font-medium text-[#52525B] uppercase tracking-wider">
               Top Category
             </span>
-            <p className="text-lg font-semibold text-zinc-100">
+            <p className="text-lg font-semibold text-[#EDEDED]">
               {stats.topCategory.split(" ")[0]}
-              <span className="text-sm text-zinc-500 ml-1">
+              <span className="text-sm text-[#52525B] ml-1 font-mono tabular-nums">
                 {stats.topCategoryCount}
               </span>
             </p>
@@ -63,14 +63,14 @@ export function MarketInsightCompact() {
 
         {/* Sector breakdown */}
         <div className="flex-1">
-          <span className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider mb-2 block">
+          <span className="text-[10px] font-medium text-[#52525B] uppercase tracking-wider mb-2 block">
             Sector Distribution
           </span>
           <div className="flex items-center gap-1 h-3">
             {topSectors.map((s) => (
               <div
                 key={s.sector}
-                className="h-full rounded-full transition-all hover:opacity-80"
+                className="h-full rounded-[3px] transition-all hover:opacity-80"
                 style={{
                   width: `${s.percentage}%`,
                   minWidth: "12px",
@@ -87,7 +87,7 @@ export function MarketInsightCompact() {
                   className="w-1.5 h-1.5 rounded-full"
                   style={{ backgroundColor: getSectorColor(s.sector) }}
                 />
-                <span className="text-[10px] text-zinc-500">{s.sector.split(" ")[0]}</span>
+                <span className="text-[10px] text-[#52525B]">{s.sector.split(" ")[0]}</span>
               </div>
             ))}
           </div>

@@ -157,15 +157,12 @@ function FundStackedBar({
 
   return (
     <div className="flex items-center gap-3 min-w-0">
-      {/* Rank label */}
-      <span className="text-[11px] sm:text-xs text-zinc-300 truncate w-28 sm:w-36 flex-shrink-0 text-right">
+      <span className="text-micro sm:text-xs-dense text-[#EDEDED] truncate w-28 sm:w-36 flex-shrink-0 text-right tracking-tight">
         {row.name}
       </span>
-
-      {/* Stacked bar */}
       <div className="flex-1 flex items-center gap-2 min-w-0">
         <div
-          className="flex h-5 rounded overflow-hidden transition-all duration-500 ease-out"
+          className="flex h-4 rounded-[3px] overflow-hidden transition-all duration-500 ease-out"
           style={{ width: `${Math.max(barPct, 3)}%` }}
         >
           {row.breakdown.map((seg) => {
@@ -177,6 +174,7 @@ function FundStackedBar({
                 style={{
                   width: `${segPct}%`,
                   backgroundColor: getActivityColor(seg.activity),
+                  opacity: 0.8,
                 }}
               >
                 <title>{`${seg.activity}: ${seg.count}`}</title>
@@ -184,7 +182,7 @@ function FundStackedBar({
             );
           })}
         </div>
-        <span className="text-[11px] font-mono text-zinc-400 tabular-nums flex-shrink-0">
+        <span className="text-micro font-mono text-[#A1A1AA] tabular-nums flex-shrink-0">
           {row.total}
         </span>
       </div>
@@ -204,20 +202,21 @@ function SimpleBarRow({
 
   return (
     <div className="flex items-center gap-3 min-w-0">
-      <span className="text-[11px] sm:text-xs text-zinc-300 truncate w-28 sm:w-36 flex-shrink-0 text-right">
+      <span className="text-micro sm:text-xs-dense text-[#EDEDED] truncate w-28 sm:w-36 flex-shrink-0 text-right tracking-tight">
         {row.name}
       </span>
       <div className="flex-1 flex items-center gap-2 min-w-0">
         <div
-          className="h-5 rounded transition-all duration-500 ease-out"
+          className="h-4 rounded-[3px] transition-all duration-500 ease-out"
           style={{
             width: `${Math.max(barPct, 3)}%`,
             backgroundColor: row.color,
+            opacity: 0.8,
           }}
         >
           <title>{`${row.name}: ${row.count}`}</title>
         </div>
-        <span className="text-[11px] font-mono text-zinc-400 tabular-nums flex-shrink-0">
+        <span className="text-micro font-mono text-[#A1A1AA] tabular-nums flex-shrink-0">
           {row.count}
         </span>
       </div>
@@ -228,7 +227,7 @@ function SimpleBarRow({
 // ─── Section heading ────────────────────────────────────────
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="text-[11px] sm:text-xs font-medium text-zinc-500 uppercase tracking-wider mb-2.5">
+    <h3 className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider mb-2.5">
       {children}
     </h3>
   );
@@ -241,10 +240,10 @@ function ActivityLegend({ activities }: { activities: string[] }) {
       {activities.map((act) => (
         <div key={act} className="flex items-center gap-1.5">
           <div
-            className="w-2 h-2 rounded-sm flex-shrink-0"
-            style={{ backgroundColor: getActivityColor(act) }}
+            className="w-2 h-2 rounded-[2px] flex-shrink-0"
+            style={{ backgroundColor: getActivityColor(act), opacity: 0.8 }}
           />
-          <span className="text-[10px] sm:text-[11px] text-zinc-500">{act}</span>
+          <span className="text-micro text-[#52525B]">{act}</span>
         </div>
       ))}
     </div>
@@ -278,8 +277,8 @@ export function DynamicInsightsHero({
 
   if (filteredDeals.length === 0) {
     return (
-      <div className="rounded-xl border border-[#1f2a25] bg-[#141917] p-6 text-center">
-        <p className="text-sm text-zinc-500">
+      <div className="rounded-[4px] border border-[#27272A] bg-[#18181B] p-6 text-center">
+        <p className="text-sm-dense text-[#52525B]">
           No deals match your current filters. Try broadening your search.
         </p>
       </div>
@@ -287,7 +286,7 @@ export function DynamicInsightsHero({
   }
 
   return (
-    <div className="rounded-xl border border-[#1f2a25] bg-[#141917] overflow-hidden">
+    <div className="rounded-[4px] border border-[#27272A] bg-[#18181B] overflow-hidden">
       <div className="p-4 sm:p-5">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* ── Fund Activity ─────────────────────────────── */}

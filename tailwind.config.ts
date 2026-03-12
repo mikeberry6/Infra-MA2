@@ -10,29 +10,34 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["Geist", "Inter", "system-ui", "sans-serif"],
+        mono: ["Geist Mono", "JetBrains Mono", "monospace"],
+      },
+      fontSize: {
+        micro: ["11px", "14px"],
+        "xs-dense": ["12px", "16px"],
+        "sm-dense": ["13px", "20px"],
       },
       colors: {
+        canvas: "#09090B",
         surface: {
-          DEFAULT: "#141917",
-          light: "#1c2321",
-          lighter: "#243029",
-        },
-        brand: {
-          DEFAULT: "#34B27B",
-          light: "#3ecf8e",
-          dark: "#2a9468",
+          DEFAULT: "#18181B",
+          light: "#1f1f23",
+          lighter: "#27272A",
         },
         "border-subtle": {
-          DEFAULT: "#1f2a25",
-          light: "#2a3730",
+          DEFAULT: "#27272A",
+          light: "#3f3f46",
         },
         glass: {
           50: "rgba(255, 255, 255, 0.03)",
           100: "rgba(255, 255, 255, 0.05)",
           200: "rgba(255, 255, 255, 0.08)",
         },
+        primary: "#EDEDED",
+        muted: "#A1A1AA",
+        tertiary: "#52525B",
+        hover: "rgba(255, 255, 255, 0.03)",
       },
       animation: {
         "fade-in": "fade-in 0.5s ease-out forwards",

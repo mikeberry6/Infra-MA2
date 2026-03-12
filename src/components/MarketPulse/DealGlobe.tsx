@@ -223,7 +223,7 @@ export function DealGlobe() {
   }, [recentDeals]);
 
   return (
-    <div className="relative w-full rounded-2xl overflow-hidden border border-[#1f2a25] bg-gradient-to-b from-[#141917] via-[#0c0f0e] to-black">
+    <div className="relative w-full rounded-[4px] overflow-hidden border border-[#27272A] bg-gradient-to-b from-[#18181B] via-[#09090B] to-black">
       {/* Stars background */}
       <div className="absolute inset-0">
         {[...Array(50)].map((_, i) => (
@@ -242,15 +242,15 @@ export function DealGlobe() {
         <defs>
           {/* Globe gradient - gives 3D depth */}
           <radialGradient id="globeGradient" cx="35%" cy="35%" r="60%">
-            <stop offset="0%" stopColor="#1a3a30" />
-            <stop offset="50%" stopColor="#0c1510" />
-            <stop offset="100%" stopColor="#030706" />
+            <stop offset="0%" stopColor="#1f1f3a" />
+            <stop offset="50%" stopColor="#0c0c15" />
+            <stop offset="100%" stopColor="#030307" />
           </radialGradient>
 
           {/* Atmosphere glow */}
           <radialGradient id="atmosphereGlow" cx="50%" cy="50%" r="50%">
             <stop offset="85%" stopColor="transparent" />
-            <stop offset="100%" stopColor="#34B27B" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#818CF8" stopOpacity="0.3" />
           </radialGradient>
 
           {/* Outer glow */}
@@ -292,7 +292,7 @@ export function DealGlobe() {
           cy={cy}
           r={radius}
           fill="url(#globeGradient)"
-          stroke="#1a6b4a"
+          stroke="#4a4a6b"
           strokeWidth="0.5"
           strokeOpacity="0.3"
         />
@@ -305,7 +305,7 @@ export function DealGlobe() {
               key={`grid-${i}`}
               d={path}
               fill="none"
-              stroke="#34B27B"
+              stroke="#818CF8"
               strokeWidth="0.3"
               strokeOpacity="0.15"
             />
@@ -316,9 +316,9 @@ export function DealGlobe() {
             <path
               key={c.name}
               d={c.path}
-              fill="#1a3a30"
+              fill="#1f1f3a"
               fillOpacity="0.6"
-              stroke="#34B27B"
+              stroke="#818CF8"
               strokeWidth="0.8"
               strokeOpacity="0.5"
             />
@@ -372,16 +372,16 @@ export function DealGlobe() {
       <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
         <div className="flex items-end justify-between">
           <div>
-            <p className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider mb-1">
+            <p className="text-[10px] font-medium text-[#52525B] uppercase tracking-wider mb-1">
               Global Deal Activity
             </p>
-            <p className="text-3xl font-semibold text-zinc-100">
-              <span className="mono">{stats.totalCount}</span>
-              <span className="text-base text-zinc-500 ml-2">deals tracked</span>
+            <p className="text-3xl font-semibold text-[#EDEDED] tracking-tight">
+              <span className="mono font-mono tabular-nums">{stats.totalCount}</span>
+              <span className="text-base text-[#52525B] ml-2">deals tracked</span>
             </p>
           </div>
           <div className="text-right">
-            <p className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider mb-2">
+            <p className="text-[10px] font-medium text-[#52525B] uppercase tracking-wider mb-2">
               January 2026
             </p>
             <div className="flex items-center gap-1.5">
