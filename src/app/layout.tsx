@@ -3,9 +3,9 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "InfraTracker | North American Infrastructure M&A Intelligence",
+  title: "InfraTracker | Global Infrastructure M&A Intelligence",
   description:
-    "Premium institutional intelligence platform for North American infrastructure mergers, acquisitions, and project finance.",
+    "Institutional intelligence platform tracking global infrastructure mergers, acquisitions, and fund activity.",
 };
 
 export default function RootLayout({
