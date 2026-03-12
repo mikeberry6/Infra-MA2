@@ -100,20 +100,20 @@ export function DealGlobeCompact() {
   }, [recentDeals]);
 
   return (
-    <div className="surface-card-elevated rounded-xl overflow-hidden">
+    <div className="surface-card-elevated rounded-[4px] overflow-hidden">
       <div className="flex flex-col lg:flex-row">
         {/* Globe visualization */}
-        <div className="relative flex-1 min-h-[180px] bg-gradient-to-br from-[#141917] via-[#0c0f0e] to-black flex items-center justify-center p-4">
+        <div className="relative flex-1 min-h-[180px] bg-gradient-to-br from-[#18181B] via-[#09090B] to-black flex items-center justify-center p-4">
           <svg viewBox="0 0 160 160" className="w-full max-w-[200px] h-auto">
             <defs>
               <radialGradient id="compactGlobeGradient" cx="35%" cy="35%" r="60%">
-                <stop offset="0%" stopColor="#1a3a30" />
-                <stop offset="50%" stopColor="#0c1510" />
-                <stop offset="100%" stopColor="#030706" />
+                <stop offset="0%" stopColor="#1f1f3a" />
+                <stop offset="50%" stopColor="#0c0c15" />
+                <stop offset="100%" stopColor="#030307" />
               </radialGradient>
               <radialGradient id="compactAtmosphere" cx="50%" cy="50%" r="50%">
                 <stop offset="80%" stopColor="transparent" />
-                <stop offset="100%" stopColor="#34B27B" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#818CF8" stopOpacity="0.25" />
               </radialGradient>
               <filter id="compactDealGlow" x="-200%" y="-200%" width="500%" height="500%">
                 <feGaussianBlur stdDeviation="2" result="blur" />
@@ -136,7 +136,7 @@ export function DealGlobeCompact() {
               cy={cy}
               r={radius}
               fill="url(#compactGlobeGradient)"
-              stroke="#1a6b4a"
+              stroke="#4a4a6b"
               strokeWidth="0.5"
               strokeOpacity="0.3"
             />
@@ -154,7 +154,7 @@ export function DealGlobeCompact() {
                     key={`lat-${lat}`}
                     d={path}
                     fill="none"
-                    stroke="#34B27B"
+                    stroke="#818CF8"
                     strokeWidth="0.3"
                     strokeOpacity="0.12"
                   />
@@ -166,9 +166,9 @@ export function DealGlobeCompact() {
                 <path
                   key={c.name}
                   d={c.path}
-                  fill="#1a3a30"
+                  fill="#1f1f3a"
                   fillOpacity="0.5"
-                  stroke="#34B27B"
+                  stroke="#818CF8"
                   strokeWidth="0.6"
                   strokeOpacity="0.4"
                 />
@@ -206,36 +206,36 @@ export function DealGlobeCompact() {
         </div>
 
         {/* Stats panel */}
-        <div className="lg:w-[260px] p-5 border-t lg:border-t-0 lg:border-l border-[#1f2a25] flex flex-col justify-center">
+        <div className="lg:w-[260px] p-5 border-t lg:border-t-0 lg:border-l border-[#27272A] flex flex-col justify-center">
           <div className="space-y-4">
             <div>
-              <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
+              <span className="text-[11px] font-medium text-[#52525B] uppercase tracking-wider">
                 Global Activity
               </span>
               <div className="mt-1 flex items-baseline gap-2">
-                <span className="mono text-3xl font-semibold text-zinc-50">
+                <span className="mono font-mono text-3xl font-semibold text-[#EDEDED] tabular-nums">
                   {stats.totalCount}
                 </span>
-                <span className="text-sm text-zinc-500">deals</span>
+                <span className="text-sm text-[#52525B]">deals</span>
               </div>
             </div>
 
             <div>
-              <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
+              <span className="text-[11px] font-medium text-[#52525B] uppercase tracking-wider">
                 Most Active Region
               </span>
               <div className="mt-1">
-                <span className="text-lg font-semibold text-zinc-100">
+                <span className="text-lg font-semibold text-[#EDEDED]">
                   {regionStats.topRegion}
                 </span>
-                <span className="text-sm text-zinc-500 ml-2">
+                <span className="text-sm text-[#52525B] ml-2 font-mono tabular-nums">
                   {regionStats.topRegionShare}%
                 </span>
               </div>
             </div>
 
             <div>
-              <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
+              <span className="text-[11px] font-medium text-[#52525B] uppercase tracking-wider">
                 Sector Mix
               </span>
               <div className="mt-2 flex items-center gap-1">
@@ -245,7 +245,7 @@ export function DealGlobeCompact() {
                   .map(([sector, count]) => (
                     <div
                       key={sector}
-                      className="h-2 rounded-full transition-all"
+                      className="h-2 rounded-[3px] transition-all"
                       style={{
                         width: `${(count / stats.totalCount) * 100}%`,
                         minWidth: "8px",

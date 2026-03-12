@@ -16,18 +16,18 @@ export function MarketPulseHero() {
   const primaryColor = getSectorColor(stats.topSector);
 
   return (
-    <section className="relative mb-12 overflow-hidden rounded-2xl border border-[#1f2a25]">
+    <section className="relative mb-12 overflow-hidden rounded-[4px] border border-[#27272A]">
       {/* Ambient gradient background */}
       <AmbientGradient primaryColor={primaryColor} />
 
       <div className="relative z-10 text-center py-12 sm:py-16 px-6">
         {/* Date context */}
-        <span className="inline-block text-[11px] font-medium text-zinc-500 uppercase tracking-wider mb-4">
+        <span className="inline-block text-[11px] font-medium text-[#52525B] uppercase tracking-wider mb-4">
           January 2026
         </span>
 
         {/* Main narrative headline */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-zinc-100 leading-tight">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#EDEDED] leading-tight tracking-tight">
           <span
             className="font-medium"
             style={{
@@ -42,7 +42,7 @@ export function MarketPulseHero() {
           {narrative.headline}
         </h2>
 
-        <p className="mt-3 text-base sm:text-lg text-zinc-400">
+        <p className="mt-3 text-base sm:text-lg text-[#A1A1AA]">
           {narrative.subtext}
         </p>
 
@@ -52,20 +52,20 @@ export function MarketPulseHero() {
         </div>
 
         {/* Footer stats */}
-        <div className="mt-8 flex items-center justify-center gap-3 sm:gap-4 text-sm text-zinc-500">
+        <div className="mt-8 flex items-center justify-center gap-3 sm:gap-4 text-sm text-[#52525B]">
           <span>
-            <span className="mono text-zinc-300">{stats.totalCount}</span> deals
+            <span className="mono font-mono tabular-nums text-[#EDEDED]">{stats.totalCount}</span> deals
           </span>
-          <span className="text-[#2a3730]">&middot;</span>
+          <span className="text-[#3f3f46]">&middot;</span>
           <span>
-            <span className="mono text-zinc-300">
+            <span className="mono font-mono tabular-nums text-[#EDEDED]">
               {Object.keys(stats.sectorCounts).length}
             </span>{" "}
             sectors
           </span>
-          <span className="text-[#2a3730]">&middot;</span>
+          <span className="text-[#3f3f46]">&middot;</span>
           <span>
-            <span className="mono text-zinc-300">5</span> regions
+            <span className="mono font-mono tabular-nums text-[#EDEDED]">5</span> regions
           </span>
         </div>
       </div>
