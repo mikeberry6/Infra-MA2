@@ -1433,6 +1433,28 @@ function PortfolioCompanyDrawer({
             </div>
           </div>
 
+          {/* Co-Investors */}
+          {company.coInvestors && company.coInvestors.length > 0 && (
+            <div className="border-t border-[#1f2a25] pt-4">
+              <div className="flex items-center gap-2 mb-3">
+                <Users className="h-3.5 w-3.5 text-sky-400" />
+                <span className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider">
+                  Co-Investor{company.coInvestors.length > 1 ? "s" : ""}
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {company.coInvestors.map((ci) => (
+                  <span
+                    key={ci}
+                    className="text-xs text-sky-300 bg-sky-400/10 border border-sky-400/20 px-2.5 py-1 rounded"
+                  >
+                    {ci}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Other portcos in the same fund */}
           {parentFund && parentFund.portfolioCompanies.length > 1 && (
             <div className="border-t border-[#1f2a25] pt-4">
@@ -1801,18 +1823,20 @@ export function FundDatabase() {
           c.managerName.toLowerCase().includes(q) ||
           c.fundName.toLowerCase().includes(q) ||
           c.sector.toLowerCase().includes(q) ||
-          c.region.toLowerCase().includes(q);
+          c.region.toLowerCase().includes(q) ||
+          (c.coInvestors?.some((ci) => ci.toLowerCase().includes(q)) ?? false);
         if (!match) return false;
       }
       if (activePortfolioSectors.size > 0 && !activePortfolioSectors.has(c.sector)) return false;
       if (activePortfolioRegions.size > 0 && !activePortfolioRegions.has(c.region)) return false;
       if (activeCountries.size > 0 && !activeCountries.has(c.country)) return false;
       if (activeManagers.size > 0) {
-        // Check if the company appears in a fund from any of the selected managers
+        // Check if the company appears in a fund from any of the selected managers (or as co-investor)
         const companyManagers = allPortfolioCompanies
           .filter((pc) => pc.name === c.name)
           .map((pc) => pc.managerName);
-        if (!companyManagers.some((m) => activeManagers.has(m))) return false;
+        const coInvestorMatch = c.coInvestors?.some((ci) => activeManagers.has(ci)) ?? false;
+        if (!companyManagers.some((m) => activeManagers.has(m)) && !coInvestorMatch) return false;
       }
       if (activeSubsectors.size > 0 && (!c.subsector || !activeSubsectors.has(c.subsector))) return false;
       return true;
