@@ -3811,48 +3811,7 @@ export const funds: Fund[] = [
     ],
   },
   // ═══════════════════════════════════════════════════════════
-  // 81. Oaktree Capital
-  // ═══════════════════════════════════════════════════════════
-  {
-    id: "FUND-081a",
-    managerName: "Oaktree Capital",
-    fundName: "Oaktree Infrastructure Fund",
-    ticker: null,
-    description: "Oaktree Capital Management's infrastructure platform invests in mid-market North American infrastructure across transport, utilities, energy services, and digital.",
-    size: "~$5 Billion (infrastructure)",
-    sizeUsdMm: 5000,
-    vintage: "Various",
-    strategies: ["Value-Add", "Opportunistic"],
-    structure: "Closed-End",
-    sectors: ["Transportation", "Utilities", "Digital Infrastructure", "Power Generation"],
-    regions: ["North America"],
-    portfolioCompanies: [
-      { name: "Aecon Utilities", sector: "Utilities", subsector: "Utility Services", region: "North America", country: "Canada", description: "Canadian utility infrastructure services." },
-      { name: "Aggreko", sector: "Power Generation", subsector: "Temporary Power", region: "Global", country: "United Kingdom", description: "Global temporary power provider." },
-      { name: "American Corporate Airport Partners", sector: "Transportation", subsector: "Airports", region: "North America", country: "United States", description: "US corporate airport operator." },
-      { name: "Aqseptence Group", sector: "Utilities", subsector: "Water Treatment", region: "Europe", country: "Germany", description: "German water technology company." },
-      { name: "COL Group", sector: "Transportation", subsector: "Parking", region: "Asia-Pacific", country: "Australia", description: "Australian parking technology company." },
-      { name: "Electro Switch", sector: "Utilities", subsector: "Electrical Equipment", region: "North America", country: "United States", description: "US electrical switch manufacturer." },
-      { name: "Electro-Mechanical, LLC", sector: "Utilities", subsector: "Utility Services", region: "North America", country: "United States", description: "US electromechanical services company." },
-      { name: "Enercon Services, Inc.", sector: "Power Generation", subsector: "Power Plant Services", region: "North America", country: "United States", description: "US power plant maintenance company." },
-      { name: "Energy Systems Group", sector: "Utilities", subsector: "Energy Services", region: "North America", country: "United States", description: "US energy services and performance contracting." },
-      { name: "ITG Communications", sector: "Digital Infrastructure", subsector: "Fiber Networks", region: "North America", country: "United States", description: "US fiber infrastructure company." },
-      { name: "Industrial Rail Services", sector: "Transportation", subsector: "Rail Services", region: "North America", country: "United States", description: "US railroad services company." },
-      { name: "LPW Group", sector: "Utilities", subsector: "Utility Services", region: "North America", country: "United States", description: "US utility services company." },
-      { name: "LoneStar Airport Holdings", sector: "Transportation", subsector: "Airports", region: "North America", country: "United States", description: "US airport operations company." },
-      { name: "Neighborhood Property Group", sector: "Social Infrastructure", subsector: "Real Estate Services", region: "North America", country: "United States", description: "US property services company." },
-      { name: "OTG Management", sector: "Transportation", subsector: "Airport F&B", region: "North America", country: "United States", description: "US airport food and beverage operator." },
-      { name: "Ports America", sector: "Transportation", subsector: "Ports", region: "North America", country: "United States", description: "US port terminal operator." },
-      { name: "Priority Power Management", sector: "Power Generation", subsector: "Distributed Power", region: "North America", country: "United States", description: "US behind-the-meter power company." },
-      { name: "REEF Technology, Inc.", sector: "Transportation", subsector: "Parking & Logistics", region: "North America", country: "United States", description: "US parking and urban logistics company." },
-      { name: "Rand Logistics, Inc.", sector: "Transportation", subsector: "Maritime", region: "North America", country: "United States", description: "Great Lakes maritime shipping company." },
-      { name: "STG Logistics", sector: "Transportation", subsector: "Intermodal", region: "North America", country: "United States", description: "US intermodal logistics company." },
-      { name: "System One Services", sector: "Utilities", subsector: "Utility Services", region: "North America", country: "United States", description: "US utility construction services." },
-      { name: "Universal Plant Services", sector: "Midstream / Energy", subsector: "Industrial Services", region: "North America", country: "United States", description: "US industrial plant services." },
-      { name: "Vantage Point Solutions", sector: "Communications", subsector: "Telecom Consulting", region: "North America", country: "United States", description: "US telecom consulting and services." },
-      { name: "Watco Companies, LLC", sector: "Transportation", subsector: "Short-Line Rail", region: "North America", country: "United States", description: "US short-line railroad and terminal operator." },
-    ],
-  },
+  // 81. (Deleted – Oaktree Infrastructure Fund removed; transport team spun out to Duration Capital Partners)
   // ═══════════════════════════════════════════════════════════
   // 82. OMERS Infrastructure
   // ═══════════════════════════════════════════════════════════
@@ -9748,12 +9707,15 @@ export const funds: Fund[] = [
     regions: ["North America", "Europe"],
     portfolioCompanies: [],
   },
+  // ═══════════════════════════════════════════════════════════
+  // Duration Capital Partners (spun out from Oaktree Capital's transportation team)
+  // ═══════════════════════════════════════════════════════════
   {
     id: "FUND-170e",
-    managerName: "Oaktree Capital",
-    fundName: "Oaktree Transportation Infrastructure",
+    managerName: "Duration Capital Partners",
+    fundName: "Duration Transportation Infrastructure Fund",
     ticker: null,
-    description: "Strategy team spun out to Duration Capital in 2024.",
+    description: "Formerly Oaktree Transportation Infrastructure; management team spun out to Duration Capital Partners in 2024.",
     size: "$1.1B",
     sizeUsdMm: 1100,
     vintage: "2017",
@@ -9765,10 +9727,10 @@ export const funds: Fund[] = [
   },
   {
     id: "FUND-170f",
-    managerName: "Oaktree Capital",
-    fundName: "Oaktree Transportation Infra Capital",
+    managerName: "Duration Capital Partners",
+    fundName: "Duration Transportation Infra Capital",
     ticker: null,
-    description: "Evergreen pool; management spun out to Duration Capital.",
+    description: "Formerly Oaktree Transportation Infra Capital; evergreen pool now managed by Duration Capital Partners.",
     size: "$3.0B",
     sizeUsdMm: 3000,
     vintage: "2022",
