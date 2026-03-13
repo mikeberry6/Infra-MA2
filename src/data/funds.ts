@@ -10,7 +10,8 @@ export type FundStrategy =
   | "Fund-of-Funds"
   | "Secondaries"
   | "Co-Investments"
-  | "Greenfield";
+  | "Greenfield"
+  | "Retail Act '40";
 
 export type FundStatus = "Evergreen" | "Deploying" | "Raising";
 
@@ -100,6 +101,7 @@ export const FUND_STRATEGIES: FundStrategy[] = [
   "Fund-of-Funds",
   "Secondaries",
   "Co-Investments",
+  "Retail Act '40",
 ];
 
 export const FUND_STATUSES: FundStatus[] = [
@@ -159,6 +161,7 @@ const STRATEGY_COLORS: Record<FundStrategy, string> = {
   "Secondaries": "#f97316",
   "Co-Investments": "#14b8a6",
   "Greenfield": "#22c55e",
+  "Retail Act '40": "#ef4444",
 };
 
 const STATUS_COLORS: Record<FundStatus, string> = {
@@ -450,13 +453,11 @@ export const funds: Fund[] = [
   f("FUND-071", "Cube Infrastructure Managers", "Cube Infrastructure Fund III", "2021", "€1.35B", 1485, "Core-Plus", "Deploying"),
   f("FUND-072", "Cube Infrastructure Managers", "Cube Infrastructure Fund IV", "2025", "€1.5B", 1650, "Core-Plus", "Raising"),
 
-  // CVC Capital Partners
-  f("FUND-073", "CVC Capital Partners", "CVC DIF Infrastructure VIII", "2025", "€6.0B", 6600, "Core-Plus", "Raising"),
-  f("FUND-074", "CVC Capital Partners", "CVC DIF Value-Add IV", "2025", "€2.0B", 2200, "Value-Add", "Raising"),
-
-  // DIF Capital Partners
-  f("FUND-075", "DIF Capital Partners", "DIF Infrastructure VII", "2022", "€4.40B", 4840, "Core", "Deploying"),
-  f("FUND-076", "DIF Capital Partners", "DIF Core-Plus Infrastructure Fund III (CIF III)", "2022", "€1.60B", 1760, "Core-Plus", "Deploying"),
+  // CVC DIF
+  f("FUND-073", "CVC DIF", "CVC DIF Infrastructure VIII", "2025", "€6.0B", 6600, "Core-Plus", "Raising"),
+  f("FUND-074", "CVC DIF", "CVC DIF Value-Add IV", "2025", "€2.0B", 2200, "Value-Add", "Raising"),
+  f("FUND-075", "CVC DIF", "DIF Infrastructure VII", "2022", "€4.40B", 4840, "Core", "Deploying"),
+  f("FUND-076", "CVC DIF", "DIF Core-Plus Infrastructure Fund III (CIF III)", "2022", "€1.60B", 1760, "Core-Plus", "Deploying"),
 
   // DigitalBridge
   f("FUND-077", "DigitalBridge", "DigitalBridge Partners III", "2023", "$7.2B", 7200, "Value-Add", "Deploying"),
