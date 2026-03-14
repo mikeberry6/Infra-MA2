@@ -33,6 +33,9 @@ const NON_INFRA_FUND_BUYERS = new Set([
   "Talen Energy",
   "Drax Group",
   "Pilot Fiber",
+  "Siris",
+  "Polus Capital Management",
+  "Corsair Capital",
 ]);
 
 // ─── Fund name aliases for matching variants to canonical names ──
@@ -44,6 +47,8 @@ const FUND_NAME_ALIASES: Record<string, string> = {
   "Macquarie Infrastructure Partners": "Macquarie Asset Management",
   "CPP Investments / Equinix": "CPP Investments",
   "Northleaf Capital": "Northleaf",
+  "Blackstone Energy Transition Partners": "Blackstone",
+  "InfraBridge": "DigitalBridge",
 };
 
 /** Normalize a fund name to its canonical form using known aliases */
