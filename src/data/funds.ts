@@ -707,4 +707,63 @@ export const funds: Fund[] = [
 
   // Wren House Infrastructure
   f("FUND-217", "Wren House Infrastructure", "Wren House Infrastructure (Captive Platform)", "2013", "$10.0B+", 10000, "Core", "Evergreen"),
+
+  // ── Sovereign Wealth Funds, Pension Funds & Other Institutional Investors ──
+
+  // ADIA (Abu Dhabi Investment Authority)
+  f("FUND-218", "ADIA (Abu Dhabi Investment Authority)", "ADIA Direct Infrastructure", "Evergreen", "N/A", null, "Core", "Evergreen"),
+
+  // Ancala Partners
+  f("FUND-219", "Ancala Partners", "Ancala Essential Growth Infrastructure Fund", "2023", "£551M", 700, "Growth", "Deploying"),
+
+  // APG Asset Management
+  f("FUND-220", "APG Asset Management", "APG Direct Infrastructure Pool", "Evergreen", ">€33B", 36000, "Core", "Evergreen"),
+
+  // Apollo Global Management
+  f("FUND-221", "Apollo Global Management", "Apollo Infrastructure Opportunities Fund II", "2022", "$2.54B", 2540, "Value-Add", "Deploying"),
+
+  // BCI (British Columbia Investment Management Corp)
+  f("FUND-222", "BCI (British Columbia Investment Management Corp)", "BCI Infrastructure & Renewable Resources Program", "2005", "~C$28B", 21000, "Core", "Evergreen"),
+
+  // Charlesbank Capital Partners
+  f("FUND-223", "Charlesbank Capital Partners", "Charlesbank Technology Opportunities Fund", "2020", "~$5B", 5000, "Growth", "Deploying"),
+
+  // AustralianSuper
+  f("FUND-224", "AustralianSuper", "AustralianSuper Infrastructure Portfolio", "Evergreen", ">$30B", 30000, "Core", "Evergreen"),
+
+  // CPP Investments
+  f("FUND-225", "CPP Investments", "CPP Investments Infrastructure", "Evergreen", "~$60B", 60000, "Core", "Evergreen"),
+
+  // IMCO
+  f("FUND-226", "IMCO", "IMCO Infrastructure Fund", "Evergreen", "~$10B", 10000, "Core", "Evergreen"),
+
+  // Mubadala Investment Company
+  f("FUND-227", "Mubadala Investment Company", "Mubadala Infrastructure", "Evergreen", "~$30B", 30000, "Core", "Evergreen"),
+
+  // OMERS Infrastructure
+  f("FUND-228", "OMERS Infrastructure", "OMERS Infrastructure Fund", "Evergreen", "~$30B", 30000, "Core", "Evergreen"),
+
+  // Ontario Teachers' Pension Plan
+  f("FUND-229", "Ontario Teachers' Pension Plan", "OTPP Infrastructure & Natural Resources", "Evergreen", "~$30B", 30000, "Core", "Evergreen"),
+
+  // Pantheon Ventures
+  f("FUND-230", "Pantheon Ventures", "Pantheon Infrastructure Fund", "Various", "~$5B", 5000, "Core-Plus", "Deploying"),
+
+  // Ridgemont Equity Partners
+  f("FUND-231", "Ridgemont Equity Partners", "Ridgemont Infrastructure Fund", "Various", "~$2B", 2000, "Value-Add", "Deploying"),
+
+  // Riverstone Holdings
+  f("FUND-232", "Riverstone Holdings", "Riverstone Holdings Fund", "Various", "~$8B", 8000, "Value-Add", "Deploying"),
+
+  // Sixth Street
+  f("FUND-233", "Sixth Street", "Sixth Street Infrastructure Fund", "Various", "~$5B", 5000, "Value-Add", "Deploying"),
+
+  // StepStone Group
+  f("FUND-234", "StepStone Group", "StepStone Infrastructure Fund", "Various", "~$5B", 5000, "Core-Plus", "Deploying"),
+
+  // UBS Asset Management
+  f("FUND-235", "UBS Asset Management", "UBS Infrastructure Fund", "Various", "~$5B", 5000, "Core", "Deploying"),
+
+  // GIC
+  f("FUND-236", "GIC", "GIC Infrastructure", "Evergreen", ">$50B", 50000, "Core", "Evergreen"),
 ];
