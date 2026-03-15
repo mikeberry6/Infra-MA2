@@ -12,6 +12,7 @@ export function Navbar() {
   const links = [
     { href: "/", label: "Deal Database" },
     { href: "/funds", label: "Fund Database" },
+    { href: "/portfolio", label: "Portfolio Database" },
   ];
 
   return (
