@@ -296,6 +296,8 @@ export function getUniqueManagers(companies: PortfolioCompanyWithContext[]): str
 
 // ─── Helper to create fund entries ──────────────────────────
 
+import { PORTFOLIO_DATA } from "./portfolios";
+
 function f(
   id: string,
   managerName: string,
@@ -320,7 +322,7 @@ function f(
     status,
     sectors: [],
     regions: [],
-    portfolioCompanies: [],
+    portfolioCompanies: PORTFOLIO_DATA[id] ?? [],
   };
 }
 
