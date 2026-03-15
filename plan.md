@@ -1,134 +1,104 @@
-# Plan: Organize Fund Database with Detailed Portfolio Companies
+# Audit Plan: Portfolio Company → Fund Mapping Verification
 
-## Overview
-
-Restructure the fund database page (`/funds`) to support ~100 fund managers with richly detailed portfolio companies. Add a dual-tab view: **Tab 1** for Firms & Funds (current accordion), **Tab 2** for a flat, searchable Portfolio Companies table with full cross-filtering.
-
----
-
-## Step 1: Expand the `PortfolioCompany` Data Model
-
-**File:** `src/data/funds.ts`
-
-Replace `portfolioCompanies: string[]` with a structured interface:
-
-```ts
-export interface PortfolioCompany {
-  name: string;                    // e.g. "Belfast City Airport"
-  sector: FundSector;              // reuse existing FundSector type
-  subsector?: string;              // e.g. "Airports", "Fiber Networks"
-  region: FundRegion;              // reuse existing FundRegion type
-  country: string;                 // e.g. "United Kingdom", "Germany"
-  description?: string;            // 1-2 sentence summary of the asset
-}
-```
-
-- Keeps it lean — no status field needed (all active per user)
-- Reuses existing `FundSector` and `FundRegion` types for consistency with filters
-- `subsector` and `description` are optional to keep data entry manageable
-- Each portfolio company is still nested inside its parent `Fund`, so the firm → fund → portco hierarchy is preserved naturally
-
-**Migration:** Convert existing `portfolioCompanies: ["name1", "name2"]` entries to the new object format. For existing entries where sector/region aren't known yet, default to the parent fund's primary sector/region.
+## Objective
+Verify that every single portfolio company in `src/data/portfolios.ts` is mapped to the correct fund in `src/data/funds.ts`. Ensure 100% coverage — no company skipped.
 
 ---
 
-## Step 2: Add Utility Functions for Portfolio Companies
+## Phase 1: Inventory & Cross-Reference Validation
 
-**File:** `src/data/funds.ts`
+### Step 1.1 — Extract Complete Inventory
+- Write a Node.js audit script (`scripts/audit-portfolio-mapping.ts`) that:
+  - Imports `PORTFOLIO_DATA` from `portfolios.ts` and `funds` from `funds.ts`
+  - Lists every fund ID key in `PORTFOLIO_DATA` and confirms it exists in the `funds` array
+  - Flags any fund ID in `PORTFOLIO_DATA` that has NO matching entry in `funds` (orphaned portfolio data)
+  - Flags any fund in `funds` that has an ID NOT present in `PORTFOLIO_DATA` (fund with no portfolio companies — acceptable but flagged)
+  - Counts total portfolio companies across all funds
+  - Outputs a complete CSV/report: `Fund ID | Manager Name | Fund Name | # Portfolio Companies | Company Names`
 
-Add helpers to flatten and aggregate portfolio companies across all funds:
-
-```ts
-export interface PortfolioCompanyWithContext extends PortfolioCompany {
-  fundId: string;
-  fundName: string;
-  managerName: string;
-}
-
-export function getAllPortfolioCompanies(fundList: Fund[]): PortfolioCompanyWithContext[]
-export function getPortfolioCompanyStats(companies: PortfolioCompanyWithContext[]): { ... }
-export function getUniqueCountries(companies: PortfolioCompanyWithContext[]): string[]
-export function getUniqueSubsectors(companies: PortfolioCompanyWithContext[]): string[]
-```
-
-These functions join each portfolio company with its parent fund/manager context, enabling cross-filtering in the UI.
+### Step 1.2 — Structural Integrity Checks
+- Verify no duplicate company names within the same fund
+- Verify no fund ID appears more than once in `PORTFOLIO_DATA`
+- Check that every portfolio company has all required fields (`name`, `sector`, `region`, `country`)
+- Validate `sector` and `region` values against the allowed `FundSector` and `FundRegion` union types
 
 ---
 
-## Step 3: Add Dual-Tab UI to FundDatabase Component
+## Phase 2: Fund-by-Fund Portfolio Verification (Web Research)
 
-**File:** `src/components/FundDatabase.tsx`
+This is the core audit. For each fund that has portfolio companies, research the fund manager's actual portfolio and verify every company is correctly assigned.
 
-Add a tab bar at the top of the page with two tabs:
+The audit will proceed manager-by-manager through all ~112 fund entries that have portfolio data. For each:
 
-- **Firms & Funds** — The existing accordion view (unchanged)
-- **Portfolio Companies** — A new flat, searchable table view
+1. **Look up the fund manager's actual portfolio** via web search (official website, press releases, PitchBook, Preqin, InfraLogic, etc.)
+2. **Cross-check every listed company** — confirm it is actually held/was held by that specific fund vehicle
+3. **Flag mismatches** where a company is assigned to the wrong fund vehicle (e.g., assigned to Fund V but actually held by Fund IV)
+4. **Flag missing companies** that should be in the portfolio but aren't (note: we won't add without user approval, just flag)
+5. **Verify co-investor data** where listed — confirm co-investors are accurate
 
-The tab state is a simple `useState<"funds" | "portfolio">`. Both tabs share the same page header. The filter bar and insights hero adapt based on the active tab.
+### Fund Groups to Audit (complete list of all PORTFOLIO_DATA keys):
 
----
-
-## Step 4: Build the Portfolio Companies Tab
-
-**File:** `src/components/FundDatabase.tsx` (or a new sub-component if it gets too large)
-
-### Filter Bar (Portfolio Tab)
-New filter dropdowns specific to portfolio companies:
-- **Sector** — FundSector multi-select (reuses existing dropdown)
-- **Region** — FundRegion multi-select
-- **Country** — Multi-select from unique countries in the data
-- **Fund Manager** — Multi-select from unique manager names
-- **Subsector** — Multi-select from unique subsectors
-- **Text search** — Searches across: company name, description, subsector, country, fund name, manager name
-
-### Table/Card View
-- **Desktop:** Sortable table with columns: Company Name | Sector | Subsector | Region/Country | Fund Manager | Fund Vehicle
-- **Mobile:** Card layout with key info and tap-to-expand
-- Click a row to open a detail drawer showing full company info + link to parent fund
-
-### Portfolio Company Drawer
-When clicking a portfolio company, show:
-- Company name, sector badge, region badge, country
-- Description (if available)
-- Subsector
-- **Parent fund card** with fund name, manager, strategy badges — clickable to open the fund drawer
-- If the same company appears in multiple fund vehicles under the same manager, show all
+**Batch 1 — FUND-001 to FUND-020** (3i Group, Acadia, Actis, Allianz, Amber, Ancala, Antin, Apollo)
+**Batch 2 — FUND-021 to FUND-040** (Apollo cont., Ara, ArcLight, Ardian, Ares, Argo, Astatine, Asterion, Axium)
+**Batch 3 — FUND-041 to FUND-060** (Axium cont., Basalt, Bernhard, BlackRock, BlackRock GIP, Blackstone, Brookfield)
+**Batch 4 — FUND-061 to FUND-080** (Brookfield cont., Carlyle, CBRE, CIM, Copenhagen, Cube, CVC DIF, DigitalBridge)
+**Batch 5 — FUND-081 to FUND-100** (DWS, EIG, Ember, EnCap, Energy Capital, Energy Infra Partners, EQT, Equitix, Fengate)
+**Batch 6 — FUND-101 to FUND-120** (Generate, Goldman Sachs, Harbert, Harrison Street, H.I.G., I Squared, iCON, IFM, Igneo)
+**Batch 7 — FUND-121 to FUND-140** (Igneo cont., InfraRed, InfraVia, Infratil, J.P. Morgan, Kimmeridge, KKR, Macquarie)
+**Batch 8 — FUND-141 to FUND-160** (Macquarie cont., MEAG, Meridiam, Mirova, Morgan Stanley)
+**Batch 9 — FUND-161 to FUND-180** (Northleaf, NOVA, Nuveen, Oaktree, Partners Group, Patria, Patrizia, PSP, QIC)
+**Batch 10 — FUND-181 to FUND-200** (Quinbrook, Ridgewood, Schroders Greencoat, Stonepeak, Swiss Life)
+**Batch 11 — FUND-201 to FUND-220** (Swiss Life cont., Tallvine, Temasek, Tiger, TPG, True Green, Vauban, Vision Ridge, Wafra, Wren House, ADIA, Ancala)
+**Batch 12 — FUND-221 to FUND-236** (Apollo, BCI, Charlesbank, AustralianSuper, CPP, IMCO, Mubadala, OMERS, OTPP, Pantheon, Ridgemont, Riverstone, Sixth Street, StepStone, UBS, GIC)
 
 ---
 
-## Step 5: Update the Insights Hero for Portfolio Tab
+## Phase 3: Issue Tracking & Correction
 
-**File:** `src/components/FundDatabase.tsx`
+### Step 3.1 — Compile Findings
+- Create a findings report listing every discrepancy found:
+  - **Wrong fund**: Company X is under FUND-NNN but should be under FUND-MMM
+  - **Wrong manager**: Portfolio data references a company not actually managed by that fund manager
+  - **Wrong metadata**: Sector, region, country, or description is incorrect
+  - **Missing co-investors**: Known co-investors not listed
+  - **Orphan fund IDs**: Portfolio data keys that don't match any fund
 
-When the Portfolio Companies tab is active, the insights hero switches to show:
-1. **Top Sectors** — by portfolio company count
-2. **Top Regions** — by portfolio company count
-3. **Top Fund Managers** — by number of portfolio companies
-
-Same horizontal bar chart pattern as the existing fund insights hero.
-
----
-
-## Step 6: Update the Fund Drawer's Portfolio Section
-
-**File:** `src/components/FundDatabase.tsx`
-
-In the existing fund detail drawer, upgrade the portfolio companies section from plain name pills to rich cards showing:
-- Company name (bold)
-- Sector + subsector badges
-- Country label
-- Short description (if available)
+### Step 3.2 — Apply Corrections
+- For each confirmed discrepancy, edit `portfolios.ts` to move/fix the company
+- If a company belongs to a fund not in the database, document it but keep it mapped to the closest correct fund (or remove if no match)
+- Update co-investor arrays as needed
 
 ---
 
-## Files Changed
+## Phase 4: Self-Checking Mechanism
 
-| File | Change |
-|------|--------|
-| `src/data/funds.ts` | Add `PortfolioCompany` interface, update `Fund.portfolioCompanies` type, add utility functions, migrate existing data |
-| `src/components/FundDatabase.tsx` | Add tab bar, portfolio companies tab with table/filters/drawer, update insights hero, update fund drawer |
+### Step 4.1 — Automated Validation Script
+- Enhance the audit script to run as a comprehensive validator:
+  - Re-verify all fund ID cross-references after edits
+  - Count companies per fund before and after — ensure no companies were lost or duplicated
+  - Verify TypeScript compilation still passes (`npx tsc --noEmit`)
+  - Verify the app builds successfully (`npm run build`)
 
-## Not Changed
-- No new routes needed (stays on `/funds`)
-- No changes to the deal database, weekly briefing, or navbar
-- No new dependencies needed
+### Step 4.2 — Second-Pass Web Verification
+- After all corrections, do a second complete pass through all funds
+- Run a spot-check on 20+ random portfolio companies to re-confirm they're in the right fund
+- Compare total company counts before and after audit to ensure nothing was accidentally deleted
+
+### Step 4.3 — Summary Report
+- Generate final report with:
+  - Total funds audited
+  - Total portfolio companies verified
+  - Number of corrections made (itemized)
+  - Number of companies confirmed correct
+  - Any unresolved items requiring user input
+
+---
+
+## Execution Order
+
+1. Build the audit script (Phase 1) — ~15 min
+2. Run structural checks — ~5 min
+3. Web-research verification, batch by batch (Phase 2) — bulk of the work, ~10-15 min per batch × 12 batches
+4. Compile findings and apply corrections (Phase 3) — ~30 min
+5. Run self-checks and second pass (Phase 4) — ~30 min
+6. Commit and push to branch `claude/audit-portfolio-fund-mapping-CTnix`
