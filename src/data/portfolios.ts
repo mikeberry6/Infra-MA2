@@ -40,12 +40,11 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "Stillhouse Solar Project", sector: "Renewables / Energy Transition", subsector: "Solar", region: "North America", country: "United States", description: "Utility-scale solar generation facility." },
   ],
   "FUND-005": [
-    { name: "Argo Energy", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Latin America", country: "Brazil", description: "Integrated renewable energy platform in Brazil." },
     { name: "BluPine Energy", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Asia-Pacific", country: "India", description: "Indian renewable energy independent power producer." },
-    { name: "Bridgin Power", sector: "Power Generation", subsector: "Gas-to-Power", region: "Middle East & Africa", country: "Senegal", description: "Gas-to-power platform across West Africa." },
-    { name: "Catalyze", sector: "Renewables / Energy Transition", subsector: "Distributed Energy", region: "Asia-Pacific", country: "India", description: "Distributed energy solutions platform in India.", coInvestors: ["EnCap Investments"] },
-    { name: "Levanta Renewables", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Asia-Pacific", country: "Australia", description: "Australian renewable energy development platform." },
-    { name: "MTerra Solar", sector: "Renewables / Energy Transition", subsector: "Solar", region: "Latin America", country: "Brazil", description: "Solar energy developer in Brazil." },
+    { name: "Bridgin Power", sector: "Power Generation", subsector: "Gas-to-Power", region: "Asia-Pacific", country: "Singapore", description: "Gas-to-power platform across West Africa." },
+    { name: "Catalyze", sector: "Renewables / Energy Transition", subsector: "Distributed Energy", region: "North America", country: "United States", description: "Distributed energy solutions platform in India.", coInvestors: ["EnCap Investments"] },
+    { name: "Levanta Renewables", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Asia-Pacific", country: "Vietnam", description: "Australian renewable energy development platform." },
+    { name: "MTerra Solar", sector: "Renewables / Energy Transition", subsector: "Solar", region: "Latin America", country: "Philippines", description: "Solar energy developer in Brazil." },
     { name: "Nozomi Energy", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Asia-Pacific", country: "Japan", description: "Japanese renewable energy platform." },
     { name: "Rezolv Energy", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Europe", country: "Romania", description: "Central and Eastern European renewables platform.", coInvestors: ["Mubadala Investment Company"] },
     { name: "Yellow Door Energy", sector: "Renewables / Energy Transition", subsector: "Distributed Solar", region: "Middle East & Africa", country: "UAE", description: "Distributed solar and energy solutions in the Middle East and Africa." },
@@ -53,13 +52,10 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "Athena Renewable Energy", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Middle East & Africa", country: "South Africa", description: "Renewable energy platform in Southern Africa." },
     { name: "Oman Green Hydrogen Project", sector: "Renewables / Energy Transition", subsector: "Green Hydrogen", region: "Middle East & Africa", country: "Oman", description: "Large-scale green hydrogen production facility." },
     { name: "Orygen", sector: "Renewables / Energy Transition", subsector: "Green Hydrogen", region: "Middle East & Africa", country: "Egypt", description: "Green hydrogen and ammonia project in Egypt." },
-    { name: "Stride Climate Investments", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Asia-Pacific", country: "India", description: "Indian climate infrastructure investment platform." },
     { name: "Valia Energía", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Latin America", country: "Brazil", description: "Brazilian renewable energy platform." },
   ],
   "FUND-006": [
     { name: "800 Super Holdings", sector: "Waste / Environmental Services", subsector: "Waste Management", region: "Asia-Pacific", country: "Singapore", description: "Environmental services and waste management company in Singapore." },
-    { name: "Barghest Building Performance (bbp)", sector: "Utilities", subsector: "Energy Efficiency", region: "Asia-Pacific", country: "Singapore", description: "Building energy efficiency and cooling-as-a-service platform." },
-    { name: "BGPL", sector: "Utilities", subsector: "Gas Distribution", region: "Asia-Pacific", country: "India", description: "City gas distribution company in India." },
     { name: "Chayora", sector: "Digital Infrastructure", subsector: "Data Centers", region: "Asia-Pacific", country: "China", description: "Hyperscale data center platform in China." },
     { name: "Colombian Toll Road Portfolio", sector: "Transportation", subsector: "Toll Roads", region: "Latin America", country: "Colombia", description: "Portfolio of toll road concessions in Colombia." },
     { name: "Emicool", sector: "Utilities", subsector: "District Cooling", region: "Middle East & Africa", country: "UAE", description: "District cooling provider in Dubai." },
@@ -73,10 +69,13 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "Rack Centre", sector: "Digital Infrastructure", subsector: "Data Centers", region: "Middle East & Africa", country: "Nigeria", description: "Tier III data center facility in Lagos, Nigeria." },
     { name: "Swiftnet", sector: "Digital Infrastructure", subsector: "Towers", region: "Middle East & Africa", country: "South Africa", description: "Telecommunications tower and rooftop infrastructure company." },
     { name: "TERRANOVA", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Latin America", country: "Chile", description: "Renewable energy platform in Chile." },
+    { name: "Stride Climate Investments", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Asia-Pacific", country: "India", description: "Indian climate infrastructure investment platform." },
   ],
   "FUND-007": [
-    { name: "Argo Energy", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Latin America", country: "Brazil", description: "Integrated renewable energy platform in Brazil." },
+    { name: "Argo Energy", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Latin America", country: "South Korea", description: "Integrated renewable energy platform in Brazil." },
     { name: "Terra Solar", sector: "Renewables / Energy Transition", subsector: "Solar", region: "Asia-Pacific", country: "Philippines", description: "Large-scale solar development platform in the Philippines." },
+    { name: "Barghest Building Performance (bbp)", sector: "Utilities", subsector: "Energy Efficiency", region: "Asia-Pacific", country: "Singapore", description: "Building energy efficiency and cooling-as-a-service platform." },
+    { name: "BGPL", sector: "Utilities", subsector: "Gas Distribution", region: "Asia-Pacific", country: "India", description: "City gas distribution company in India." },
   ],
   "FUND-008": [
     { name: "Affinity Water", sector: "Water", subsector: "Water Supply", region: "Europe", country: "United Kingdom", description: "Largest water-only supplier in the UK, serving 3.6 million customers.", coInvestors: ["InfraRed Capital Partners"] },
@@ -195,7 +194,7 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "Empire Access", sector: "Digital Infrastructure", subsector: "Fiber Networks", region: "North America", country: "United States", description: "Rural fiber broadband provider in upstate New York." },
   ],
   "FUND-017": [
-    { name: "GTL Leasing", sector: "Transportation", subsector: "Hydrogen Equipment Leasing", region: "Europe", country: "United Kingdom", description: "Leading lessor of high-pressure hydrogen midstream equipment and trailers." },
+    { name: "GTL Leasing", sector: "Transportation", subsector: "Hydrogen Equipment Leasing", region: "North America", country: "United States", description: "Leading lessor of high-pressure hydrogen midstream equipment and trailers." },
     { name: "Matawan", sector: "Transportation", subsector: "Smart Mobility", region: "Europe", country: "France", description: "French smart mobility and public transport ticketing/information platform." },
     { name: "Pearl", sector: "Renewables / Energy Transition", subsector: "Distributed Energy", region: "North America", country: "United States", description: "US distributed energy and sustainability solutions provider." },
     { name: "Power Dot", sector: "Transportation", subsector: "EV Charging", region: "Europe", country: "Portugal", description: "European electric vehicle charging network operator." },
@@ -204,7 +203,6 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
   ],
   "FUND-018": [
     { name: "GFL Environmental Services", sector: "Waste / Environmental Services", subsector: "Waste Collection", region: "North America", country: "Canada", description: "One of North America's largest diversified environmental services companies." },
-    { name: "Hyperoptic", sector: "Digital Infrastructure", subsector: "Fiber Networks", region: "Europe", country: "United Kingdom", description: "UK's largest gigabit-speed full-fiber broadband provider." },
     { name: "Modern Aviation", sector: "Transportation", subsector: "Aviation Services", region: "North America", country: "United States", description: "Fixed base operator (FBO) providing aviation fueling and services.", coInvestors: ["Tiger Infrastructure Partners"] },
     { name: "Stack Infrastructure", sector: "Digital Infrastructure", subsector: "Data Centers", region: "North America", country: "United States", description: "Hyperscale data center platform across the US." },
     { name: "Apterra Infrastructure Capital", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "North America", country: "United States", description: "Clean energy infrastructure investment platform.", coInvestors: ["Apollo Global Management"] },
@@ -242,9 +240,6 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "CycleØ", sector: "Waste / Environmental Services", subsector: "Recycling", region: "Europe", country: "Norway", description: "Circular economy and industrial recycling platform." },
     { name: "Divert", sector: "Waste / Environmental Services", subsector: "Food Waste", region: "North America", country: "United States", description: "Food waste diversion and renewable energy company.", coInvestors: ["GIC"] },
     { name: "Fluitron", sector: "Renewables / Energy Transition", subsector: "Hydrogen Equipment", region: "North America", country: "United States", description: "Hydrogen compression and gas handling equipment manufacturer." },
-    { name: "Lincoln Terminal", sector: "Midstream / Energy", subsector: "Tank Storage", region: "North America", country: "United States", description: "Bulk liquid storage terminal." },
-    { name: "Natural World Products (NWP)", sector: "Waste / Environmental Services", subsector: "Biomaterials", region: "Europe", country: "United Kingdom", description: "Producer of sustainable peat-free growing media from recycled materials." },
-    { name: "USD Clean Fuels", sector: "Renewables / Energy Transition", subsector: "Biofuels", region: "North America", country: "United States", description: "Clean fuels blending and distribution platform." },
   ],
   "FUND-025": [
     { name: "Advanced Power", sector: "Power Generation", subsector: "Gas-to-Power", region: "North America", country: "United States", description: "Power plant developer and operator." },
@@ -286,7 +281,6 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "GreenYellow", sector: "Renewables / Energy Transition", subsector: "Distributed Solar", region: "Global", country: "France", description: "Global distributed solar and energy efficiency company." },
     { name: "Hamnefjell Vinkraft", sector: "Renewables / Energy Transition", subsector: "Wind", region: "Europe", country: "Norway", description: "Norwegian wind farm." },
     { name: "Heathrow Airport", sector: "Transportation", subsector: "Airports", region: "Europe", country: "United Kingdom", description: "London's primary international airport, one of the world's busiest." },
-    { name: "Honkajoki Wind Park", sector: "Renewables / Energy Transition", subsector: "Wind", region: "Europe", country: "Finland", description: "Finnish onshore wind farm." },
     { name: "ICQ Holding", sector: "Social Infrastructure", subsector: "Healthcare", region: "Europe", country: "France", description: "French medical imaging and diagnostics platform." },
     { name: "InEnergy Solar Italy", sector: "Renewables / Energy Transition", subsector: "Solar", region: "Europe", country: "Italy", description: "Italian solar energy platform." },
     { name: "INWIT", sector: "Communications", subsector: "Towers", region: "Europe", country: "Italy", description: "Italian telecommunications tower company." },
@@ -297,7 +291,6 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "MXT Holdings", sector: "Digital Infrastructure", subsector: "Data Centers", region: "Europe", country: "France", description: "French data center platform." },
     { name: "Nevel", sector: "Utilities", subsector: "District Heating", region: "Europe", country: "Finland", description: "Finnish district heating and energy solutions company." },
     { name: "Novasol Invest La Isla", sector: "Renewables / Energy Transition", subsector: "Solar", region: "Europe", country: "Spain", description: "Spanish solar energy project." },
-    { name: "Skyline Renewables", sector: "Renewables / Energy Transition", subsector: "Wind", region: "North America", country: "United States", description: "US wind energy platform." },
     { name: "SPMR", sector: "Transportation", subsector: "Rail", region: "Europe", country: "France", description: "French regional rail infrastructure." },
     { name: "Tacna and Panamericana", sector: "Transportation", subsector: "Toll Roads", region: "Latin America", country: "Peru", description: "Peruvian toll road concessions." },
     { name: "Tolve Windfarms Holding", sector: "Renewables / Energy Transition", subsector: "Wind", region: "Europe", country: "Italy", description: "Italian wind farm portfolio." },
@@ -364,8 +357,8 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "National Broadband Ireland (NBI)", sector: "Digital Infrastructure", subsector: "Fiber Networks", region: "Europe", country: "Ireland", description: "National broadband deployment for rural Ireland." },
     { name: "Olin Group / Olivenet", sector: "Digital Infrastructure", subsector: "Fiber Networks", region: "Europe", country: "Spain", description: "Spanish fiber telecommunications operator." },
     { name: "Retelit / Irideos", sector: "Digital Infrastructure", subsector: "Fiber Networks", region: "Europe", country: "Italy", description: "Italian fiber network and data center operator." },
-    { name: "Revalue Energies", sector: "Renewables / Energy Transition", subsector: "Solar", region: "Europe", country: "Spain", description: "Spanish solar energy platform." },
-    { name: "Samso", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Europe", country: "Denmark", description: "Danish renewable energy island and platform." },
+    { name: "Revalue Energies", sector: "Renewables / Energy Transition", subsector: "Solar", region: "Europe", country: "Italy", description: "Spanish solar energy platform." },
+    { name: "Samso", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "Europe", country: "Italy", description: "Danish renewable energy island and platform." },
     { name: "Total Energies Greece Renewables JV", sector: "Renewables / Energy Transition", subsector: "Wind & Solar", region: "Europe", country: "Greece", description: "Greek renewables JV with TotalEnergies." },
   ],
   "FUND-041": [
@@ -575,7 +568,7 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "ClearGen Holdings", sector: "Renewables / Energy Transition", subsector: "Distributed Generation", region: "North America", country: "United States", description: "Distributed energy and clean generation platform." },
     { name: "Connect Bus", sector: "Transportation", subsector: "Bus Services", region: "Europe", country: "Sweden", description: "Swedish public bus transportation operator.", coInvestors: ["CBRE Investment Management"] },
     { name: "Gateway Fiber", sector: "Digital Infrastructure", subsector: "Fiber Networks", region: "North America", country: "United States", description: "US fiber-to-the-home broadband provider serving Midwest communities." },
-    { name: "Geonova", sector: "Renewables / Energy Transition", subsector: "Geothermal", region: "Europe", country: "France", description: "Geothermal energy platform in France." },
+    { name: "Geonova", sector: "Renewables / Energy Transition", subsector: "Geothermal", region: "Europe", country: "Finland", description: "Geothermal energy platform in France." },
     { name: "Norled AS", sector: "Transportation", subsector: "Ferry Services", region: "Europe", country: "Norway", description: "Major Norwegian ferry and express boat operator, pioneering electric and hydrogen vessels." },
     { name: "Vantage Data Centers (Stabilized Portfolio)", sector: "Digital Infrastructure", subsector: "Data Centers", region: "North America", country: "United States", description: "Stabilized hyperscale data center portfolio from Vantage's North American campuses.", coInvestors: ["GIC", "MEAG", "Wafra"] },
     { name: "WANRack", sector: "Digital Infrastructure", subsector: "Fiber Networks", region: "North America", country: "United States", description: "Provider of managed fiber and broadband infrastructure to school districts and municipalities." },
@@ -1658,7 +1651,7 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "Puna Geothermal Venture", sector: "Renewables / Energy Transition", subsector: "Geothermal", region: "North America", country: "United States", description: "Hawaii geothermal power plant." },
     { name: "Quantem", sector: "Midstream / Energy", subsector: "Bulk Liquid Storage", region: "North America", country: "United States", description: "US bulk liquid terminal operator." },
     { name: "Quickline Communications", sector: "Digital Infrastructure", subsector: "Fiber & Broadband", region: "Europe", country: "United Kingdom", description: "UK rural broadband provider." },
-    { name: "Shared Tower", sector: "Communications", subsector: "Towers", region: "Asia-Pacific", country: "Bangladesh", description: "Bangladeshi telecom tower company." },
+    { name: "Shared Tower", sector: "Communications", subsector: "Towers", region: "North America", country: "Canada", description: "Bangladeshi telecom tower company." },
     { name: "Thames Clippers", sector: "Transportation", subsector: "River Transport", region: "Europe", country: "United Kingdom", description: "London river bus service." },
     { name: "Tillman Fiber", sector: "Digital Infrastructure", subsector: "Fiber Networks", region: "North America", country: "United States", description: "US fiber broadband company." },
     { name: "WASH Multifamily Holdings Inc.", sector: "Utilities", subsector: "Laundry Services", region: "North America", country: "United States", description: "US multifamily laundry services." },
@@ -2016,9 +2009,6 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "Altus Power", sector: "Renewables / Energy Transition", subsector: "Solar", region: "North America", country: "United States", description: "US commercial-scale solar company." },
     { name: "Aurora Energy Research", sector: "Renewables / Energy Transition", subsector: "Energy Analytics", region: "Europe", country: "United Kingdom", description: "Energy analytics and advisory.", coInvestors: ["TPG"] },
     { name: "BETA Technologies", sector: "Transportation", subsector: "Electric Aviation", region: "North America", country: "United States", description: "US electric aircraft manufacturer." },
-    { name: "Blue Sky Towers", sector: "Communications", subsector: "Towers", region: "Asia-Pacific", country: "India", description: "Indian telecom tower company.", coInvestors: ["TPG"] },
-    { name: "Connected Infra Group", sector: "Communications", subsector: "Towers", region: "Europe", country: "United Kingdom", description: "UK telecom infrastructure.", coInvestors: ["TPG"] },
-    { name: "Everest Infrastructure Partners", sector: "Communications", subsector: "Towers", region: "Asia-Pacific", country: "India", description: "Indian telecom tower company." },
     { name: "Form Energy", sector: "Renewables / Energy Transition", subsector: "Long-Duration Storage", region: "North America", country: "United States", description: "US iron-air battery company." },
     { name: "Gridserve", sector: "Renewables / Energy Transition", subsector: "Solar & EV Charging", region: "Europe", country: "United Kingdom", description: "UK solar and EV charging." },
     { name: "Intersect Power", sector: "Renewables / Energy Transition", subsector: "Solar & Storage", region: "North America", country: "United States", description: "US clean energy company." },
@@ -2117,7 +2107,6 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
   ],
 
   "FUND-218": [
-    { name: "Aligned Data Centers", sector: "Digital Infrastructure", subsector: "Data Centers", region: "North America", country: "United States", description: "Hyperscale and enterprise data center platform across the US.", coInvestors: ["Global Infrastructure Partners", "Mubadala Investment Company"] },
     { name: "AlphaGen", sector: "Renewables / Energy Transition", subsector: "Renewables Platform", region: "North America", country: "United States", description: "Clean energy generation platform.", coInvestors: ["CPP Investments"] },
     { name: "Anglian Water Group", sector: "Utilities", subsector: "Water & Wastewater", region: "Europe", country: "United Kingdom", description: "One of the largest water and wastewater companies in England and Wales.", coInvestors: ["CPP Investments"] },
     { name: "Arevon Energy", sector: "Renewables / Energy Transition", subsector: "Solar & Storage", region: "North America", country: "United States", description: "Major US renewable energy operator with solar and storage assets." },
@@ -2143,11 +2132,9 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "Sempra Infrastructure Partners", sector: "Midstream / Energy", subsector: "LNG & Pipelines", region: "North America", country: "United States", description: "LNG export, pipelines, and energy infrastructure in North America.", coInvestors: ["CPP Investments", "Mubadala Investment Company"] },
     { name: "Sumatra Toll Roads", sector: "Transportation", subsector: "Toll Roads", region: "Asia-Pacific", country: "Indonesia", description: "Toll road concessions across Sumatra, Indonesia." },
     { name: "Sydney Airport", sector: "Transportation", subsector: "Airports", region: "Asia-Pacific", country: "Australia", description: "Australia's busiest airport.", coInvestors: ["Australian Super", "Global Infrastructure Partners"] },
-    { name: "Terna Energy", sector: "Renewables / Energy Transition", subsector: "Wind & Solar", region: "Europe", country: "Greece", description: "Leading Greek renewable energy producer." },
     { name: "Trans-Java Toll Roads", sector: "Transportation", subsector: "Toll Roads", region: "Asia-Pacific", country: "Indonesia", description: "Toll road network across Java, Indonesia." },
     { name: "Transgrid", sector: "Utilities", subsector: "Electricity Transmission", region: "Asia-Pacific", country: "Australia", description: "Operator of the high-voltage electricity transmission network in New South Wales.", coInvestors: ["GIC", "Igneo Infrastructure Partners"] },
     { name: "Vantage Data Centers APAC", sector: "Digital Infrastructure", subsector: "Data Centers", region: "Asia-Pacific", country: "Japan", description: "Asia-Pacific hyperscale data center platform.", coInvestors: ["GIC", "MEAG", "Wafra"] },
-    { name: "VTG", sector: "Transportation", subsector: "Rail Freight", region: "Europe", country: "Germany", description: "Europe's largest private railcar leasing and rail logistics company." },
     { name: "VTTI", sector: "Midstream / Energy", subsector: "Tank Storage", region: "Global", country: "Netherlands", description: "Global energy storage terminal operator." },
     { name: "WestConnex", sector: "Transportation", subsector: "Toll Roads", region: "Asia-Pacific", country: "Australia", description: "Major motorway network in Sydney, Australia.", coInvestors: ["Australian Super"] },
   ],
@@ -2328,6 +2315,7 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "Transportation Equipment Network (TEN)", sector: "Transportation", subsector: "Container Leasing", region: "Global", country: "Switzerland", description: "Global container leasing company." },
     { name: "Yondr Group", sector: "Digital Infrastructure", subsector: "Data Centers", region: "Global", country: "United Kingdom", description: "Global hyperscale data center developer.", coInvestors: ["Apollo Global Management", "DigitalBridge", "Mubadala Investment Company"] },
     { name: "ZENOBE", sector: "Renewables / Energy Transition", subsector: "Battery Storage & EV", region: "Europe", country: "United Kingdom", description: "UK battery storage and EV fleet operator." },
+    { name: "Terna Energy", sector: "Renewables / Energy Transition", subsector: "Wind & Solar", region: "Europe", country: "Greece", description: "Leading Greek renewable energy producer." },
   ],
   "FUND-228": [
     { name: "Alectra", sector: "Utilities", subsector: "Electricity Distribution", region: "North America", country: "Canada", description: "Ontario electricity distribution utility." },
@@ -2367,7 +2355,7 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "Caruna", sector: "Utilities", subsector: "Electricity Distribution", region: "Europe", country: "Finland", description: "Finland's largest electricity distribution company.", coInvestors: ["Ontario Teachers' Pension Plan"] },
     { name: "Chicago Skyway", sector: "Transportation", subsector: "Toll Roads", region: "North America", country: "United States", description: "Chicago toll road concession.", coInvestors: ["Ontario Teachers' Pension Plan"] },
     { name: "Compass Datacenters", sector: "Digital Infrastructure", subsector: "Data Centers", region: "North America", country: "United States", description: "US wholesale data center company.", coInvestors: ["Ontario Teachers' Pension Plan"] },
-    { name: "Connexa", sector: "Communications", subsector: "Towers", region: "Europe", country: "Spain", description: "Spanish telecom tower company.", coInvestors: ["Ontario Teachers' Pension Plan"] },
+    { name: "Connexa", sector: "Communications", subsector: "Towers", region: "Asia-Pacific", country: "New Zealand", description: "Spanish telecom tower company.", coInvestors: ["Ontario Teachers' Pension Plan"] },
     { name: "Corio Generation", sector: "Renewables / Energy Transition", subsector: "Offshore Wind", region: "Global", country: "United Kingdom", description: "Global offshore wind developer.", coInvestors: ["Ontario Teachers' Pension Plan"] },
     { name: "Cubico Sustainable Investments", sector: "Renewables / Energy Transition", subsector: "Wind & Solar", region: "Global", country: "United Kingdom", description: "Global renewable energy company.", coInvestors: ["Ontario Teachers' Pension Plan", "PSP Investments"] },
     { name: "Enwave Energy Corporation", sector: "Utilities", subsector: "District Energy", region: "North America", country: "Canada", description: "Canadian district heating and cooling.", coInvestors: ["Ontario Teachers' Pension Plan"] },
@@ -2515,5 +2503,29 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "Storegga", sector: "Renewables / Energy Transition", subsector: "Carbon Capture & Storage", region: "Europe", country: "United Kingdom", description: "UK-based carbon capture and storage developer." },
     { name: "Summit Digitel (Reliance Jio Towers)", sector: "Digital Infrastructure", subsector: "Towers", region: "Asia-Pacific", country: "India", description: "India's largest telecom tower company, managing Reliance Jio's tower portfolio." },
     { name: "Teréga (TIGF)", sector: "Midstream / Energy", subsector: "Gas Transmission & Storage", region: "Europe", country: "France", description: "French gas transmission and storage operator in southwest France." },
+  ],
+
+  // ── Ara Infrastructure Fund I ──────────────────────────────────
+  "FUND-023": [
+    { name: "Lincoln Terminal", sector: "Midstream / Energy", subsector: "Tank Storage", region: "North America", country: "United States", description: "Bulk liquid storage terminal." },
+    { name: "Natural World Products (NWP)", sector: "Waste / Environmental Services", subsector: "Biomaterials", region: "Europe", country: "United Kingdom", description: "Producer of sustainable peat-free growing media from recycled materials." },
+    { name: "USD Clean Fuels", sector: "Renewables / Energy Transition", subsector: "Biofuels", region: "North America", country: "United States", description: "Clean fuels blending and distribution platform." },
+  ],
+
+  // ── Ardian Americas Infrastructure Fund V ──────────────────────────────────
+  "FUND-028": [
+    { name: "Skyline Renewables", sector: "Renewables / Energy Transition", subsector: "Wind", region: "North America", country: "United States", description: "US wind energy platform." },
+  ],
+
+  // ── Ardian Clean Energy Evergreen Fund ──────────────────────────────────
+  "FUND-029": [
+    { name: "Honkajoki Wind Park", sector: "Renewables / Energy Transition", subsector: "Wind", region: "Europe", country: "Finland", description: "Finnish onshore wind farm." },
+  ],
+
+  // ── TPG Peppertree ──────────────────────────────────
+  "FUND-208": [
+    { name: "Blue Sky Towers", sector: "Communications", subsector: "Towers", region: "Asia-Pacific", country: "India", description: "Indian telecom tower company.", coInvestors: ["TPG"] },
+    { name: "Everest Infrastructure Partners", sector: "Communications", subsector: "Towers", region: "Asia-Pacific", country: "India", description: "Indian telecom tower company." },
+    { name: "Connected Infra Group", sector: "Communications", subsector: "Towers", region: "Europe", country: "United Kingdom", description: "UK telecom infrastructure.", coInvestors: ["TPG"] },
   ],
 };
