@@ -1,5 +1,5 @@
-import { WeeklyBriefing } from "@/components/WeeklyBriefing";
+import { DealDatabase } from "@/components/DealDatabase";
 
 export default function Home() {
-  return <WeeklyBriefing />;
+  return <DealDatabase />;
 }
