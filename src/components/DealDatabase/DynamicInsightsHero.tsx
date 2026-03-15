@@ -36,6 +36,10 @@ const NON_INFRA_FUND_BUYERS = new Set([
   "Siris",
   "Polus Capital Management",
   "Corsair Capital",
+  "Equinix",
+  "Exus Renewables",
+  "IHS Towers",
+  "TPI Composites",
 ]);
 
 // ─── Fund name aliases for matching variants to canonical names ──
@@ -45,10 +49,24 @@ const FUND_NAME_ALIASES: Record<string, string> = {
   "Infracapital (M&G)": "Infracapital",
   "GIP (BlackRock)": "GIP",
   "Macquarie Infrastructure Partners": "Macquarie Asset Management",
-  "CPP Investments / Equinix": "CPP Investments",
   "Northleaf Capital": "Northleaf",
   "Blackstone Energy Transition Partners": "Blackstone",
   "InfraBridge": "DigitalBridge",
+  "Blackstone Infrastructure": "Blackstone",
+  "Brookfield Infrastructure": "Brookfield Asset Management",
+  "Brookfield Renewable": "Brookfield Asset Management",
+  "IFM": "IFM Investors",
+  "Greencoat Renewables": "Schroders Greencoat",
+  "Goldman Sachs Alternatives": "Goldman Sachs Asset Management",
+  "Apollo": "Apollo Global Management",
+  "Vauban Infrastructure": "Vauban Infrastructure Partners",
+  "Tallvine Partners": "Tallvine",
+  "TPG Rise Climate": "TPG",
+  "APG Infrastructure": "APG Asset Management",
+  "Quinbrook Infrastructure Partners": "Quinbrook Infrastructure",
+  "Basalt Infrastructure": "Basalt Infrastructure Partners",
+  "EIG": "EIG Global Energy Partners",
+  "InfraVia": "InfraVia Capital Partners",
 };
 
 /** Normalize a fund name to its canonical form using known aliases */
