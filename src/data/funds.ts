@@ -334,15 +334,15 @@ function f(
 export const funds: Fund[] = [
   // 3i Group
   f("FUND-001", "3i Group", "3i Infrastructure plc", "2007", "£3.8B", 4940, "Core-Plus", "Evergreen", {
-    description: "London-listed investment company targeting mid-market core-plus infrastructure assets with stable, long-term cash flows across Europe, North America, and Asia.",
-    sectors: ["Transportation", "Utilities", "Social Infrastructure", "Communications"],
+    description: "London-listed core-plus infrastructure company investing in mid-market economic infrastructure businesses across Europe, with a focused portfolio spanning digital, transport, utilities, and energy transition assets.",
+    sectors: ["Digital Infrastructure", "Transportation", "Utilities", "Renewables / Energy Transition", "Waste / Environmental Services"],
     regions: ["Europe", "North America", "Asia-Pacific"],
     structure: "Listed / Evergreen",
     ticker: "3IN.L",
   }),
   f("FUND-002", "3i Group", "3i North American Infrastructure Fund", "2022", "$739M", 739, "Core-Plus", "Deploying", {
-    description: "Closed-end fund investing in mid-market infrastructure businesses across North America, targeting essential services in transportation, utilities, and environmental services.",
-    sectors: ["Transportation", "Utilities", "Waste / Environmental Services"],
+    description: "Inaugural North American fund targeting mid-market core-plus infrastructure opportunities across digital, transport, environmental services, and communications in the US and Canada.",
+    sectors: ["Digital Infrastructure", "Transportation", "Waste / Environmental Services", "Communications"],
     regions: ["North America"],
   }),
 
@@ -417,21 +417,21 @@ export const funds: Fund[] = [
 
   // Ancala Partners
   f("FUND-014", "Ancala Partners", "Ancala Infrastructure Fund III", "2022", "€1.4B", 1540, "Core-Plus", "Deploying", {
-    description: "Mid-market European infrastructure fund targeting essential services businesses in utilities, transportation, and environmental services with buy-and-build value creation strategies.",
-    sectors: ["Utilities", "Transportation", "Waste / Environmental Services", "Digital Infrastructure"],
+    description: "Mid-market core-plus infrastructure fund investing in essential infrastructure businesses across the UK and Europe, including renewable energy, transport, utilities, water, and the circular economy.",
+    sectors: ["Renewables / Energy Transition", "Transportation", "Utilities", "Water", "Waste / Environmental Services"],
     regions: ["Europe"],
   }),
 
   // Antin Infrastructure Partners
   f("FUND-015", "Antin Infrastructure Partners", "Flagship Fund V", "2022", "€10.2B", 11220, "Value-Add", "Deploying", {
-    description: "Large-cap value-add fund investing in essential infrastructure businesses across telecommunications, energy transition, transportation, and social infrastructure in Europe and North America.",
-    sectors: ["Communications", "Renewables / Energy Transition", "Transportation", "Social Infrastructure"],
+    description: "Antin's largest flagship fund targeting controlling equity investments in established infrastructure businesses across energy & environment, digital, transport, and social infrastructure in Europe and North America.",
+    sectors: ["Renewables / Energy Transition", "Digital Infrastructure", "Transportation", "Social Infrastructure", "Waste / Environmental Services"],
     regions: ["Europe", "North America"],
   }),
   f("FUND-016", "Antin Infrastructure Partners", "Mid Cap Fund I", "2021", "€2.2B", 2420, "Value-Add", "Deploying", {
-    description: "Mid-market infrastructure fund targeting smaller essential service businesses in Europe with operational improvement potential across telecom, energy, and environmental services.",
-    sectors: ["Communications", "Renewables / Energy Transition", "Waste / Environmental Services"],
-    regions: ["Europe"],
+    description: "Antin's inaugural mid-cap strategy targeting smaller infrastructure opportunities across energy & environment, digital, transport, and social sectors in Europe and North America.",
+    sectors: ["Renewables / Energy Transition", "Digital Infrastructure", "Transportation", "Social Infrastructure", "Waste / Environmental Services"],
+    regions: ["Europe", "North America"],
   }),
   f("FUND-017", "Antin Infrastructure Partners", "NextGen Fund I", "2021", "€1.2B", 1320, "Value-Add", "Deploying", {
     description: "Growth-oriented fund targeting next-generation digital and energy transition infrastructure, including fiber, data centers, EV charging, and distributed energy in Europe.",
@@ -442,8 +442,8 @@ export const funds: Fund[] = [
 
   // Apollo Global Management
   f("FUND-018", "Apollo Global Management", "Apollo Infrastructure Opportunities Fund III", "2022", "$2.4B", 2400, "Value-Add", "Deploying", {
-    description: "Value-add infrastructure fund targeting complex situations in energy, power, utilities, and transportation across North America and Europe with an emphasis on operational improvement.",
-    sectors: ["Power Generation", "Utilities", "Transportation", "Midstream / Energy"],
+    description: "Mid-market value-add infrastructure fund making control-oriented equity investments in communications, power & renewables, transportation, and corporate carveouts in the US and Europe.",
+    sectors: ["Communications", "Power Generation", "Renewables / Energy Transition", "Transportation", "Digital Infrastructure"],
     regions: ["North America", "Europe"],
   }),
   f("FUND-019", "Apollo Global Management", "Apollo Core Infrastructure Fund", "2022", "Undisclosed", null, "Core", "Deploying", {
@@ -453,9 +453,9 @@ export const funds: Fund[] = [
     structure: "Open-End",
   }),
   f("FUND-020", "Apollo Global Management", "Apollo Infrastructure Company LLC (AIC)", "2023", "~$1.7B", 1700, "Core-Plus", "Evergreen", {
-    description: "Permanent capital vehicle providing flexible, long-duration capital for core-plus infrastructure investments in energy, utilities, and transportation with stable cash flows.",
-    sectors: ["Utilities", "Power Generation", "Transportation", "Renewables / Energy Transition"],
-    regions: ["North America"],
+    description: "Perpetual-life operating company investing in energy transition, communications and digital infrastructure, and transportation & logistics assets globally.",
+    sectors: ["Renewables / Energy Transition", "Digital Infrastructure", "Communications", "Transportation", "Logistics"],
+    regions: ["North America", "Europe"],
     structure: "Permanent Capital",
   }),
   f("FUND-021", "Apollo Global Management", "Apollo Clean Transition Equity Partners II", "2023", "$411M+", 411, "Value-Add", "Deploying", {
