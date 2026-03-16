@@ -1029,20 +1029,20 @@ export const funds: Fund[] = [
 
   // IFM Investors
   f("FUND-114", "IFM Investors", "IFM Global Infrastructure Fund (GIF)", "2004", ">$73.0B", 73000, "Core", "Evergreen", {
-    description: "One of the world's largest open-end core infrastructure funds, owned by Australian pension funds, investing in airports, toll roads, ports, and regulated utilities globally.",
-    sectors: ["Transportation", "Utilities", "Power Generation", "Digital Infrastructure"],
-    regions: ["Global"],
+    description: "The world's largest open-end core infrastructure fund investing in essential, monopoly-like infrastructure assets with strong market positions, predictable regulatory environments, and high barriers to entry across developed markets.",
+    sectors: ["Transportation", "Utilities", "Midstream / Energy", "Communications"],
+    regions: ["North America", "Europe", "Asia-Pacific"],
     structure: "Open-End",
   }),
   f("FUND-115", "IFM Investors", "IFM Australian Infrastructure Fund (AIF)", "1995", "~$8.7B", 8700, "Core", "Evergreen", {
-    description: "Australia's longest-running infrastructure fund investing in essential domestic assets including airports, ports, toll roads, and regulated utilities.",
-    sectors: ["Transportation", "Utilities"],
+    description: "Australia's longest-running infrastructure fund investing in essential domestic assets including airports, ports, toll roads, regulated utilities, and telecommunications infrastructure.",
+    sectors: ["Transportation", "Utilities", "Communications"],
     regions: ["Asia-Pacific"],
     structure: "Open-End",
   }),
   f("FUND-116", "IFM Investors", "IFM Net Zero Infrastructure Fund (NZIF)", "2022", "$3.0B", 3000, "Core-Plus", "Evergreen", {
-    description: "Open-end fund investing in infrastructure assets aligned with net-zero pathways, targeting renewable energy, grid modernization, and sustainable transport globally.",
-    sectors: ["Renewables / Energy Transition", "Transportation", "Utilities"],
+    description: "Open-end fund targeting essential infrastructure assets that accelerate the transition to a net-zero emissions economy, including renewables, energy storage, EV charging, hydrogen, and alternative fuels.",
+    sectors: ["Renewables / Energy Transition", "Power Generation", "Midstream / Energy"],
     regions: ["Global"],
     structure: "Open-End",
   }),
@@ -1054,18 +1054,18 @@ export const funds: Fund[] = [
 
   // Igneo Infrastructure Partners
   f("FUND-118", "Igneo Infrastructure Partners", "European Diversified Infrastructure Fund III (EDIF III)", "2020", "€5.3B", 5830, "Core-Plus", "Deploying", {
-    description: "Diversified European infrastructure fund investing in mid-market essential assets across utilities, transportation, renewables, and social infrastructure with active ownership.",
-    sectors: ["Utilities", "Transportation", "Renewables / Energy Transition", "Social Infrastructure"],
+    description: "Third vintage closed-end fund targeting European mid-market, sustainable economic infrastructure assets across energy, transportation, utility, telecommunications, and environmental sectors.",
+    sectors: ["Renewables / Energy Transition", "Transportation", "Utilities", "Communications", "Waste / Environmental Services"],
     regions: ["Europe"],
   }),
   f("FUND-119", "Igneo Infrastructure Partners", "European Diversified Infrastructure Fund IV (EDIF IV)", "2025", "€4.0B", 4400, "Core-Plus", "Raising", {
-    description: "Successor European fund continuing Igneo's strategy of mid-market infrastructure investing in essential services across utilities, transport, and energy transition.",
-    sectors: ["Utilities", "Transportation", "Renewables / Energy Transition", "Social Infrastructure"],
+    description: "Fourth vintage of Igneo's flagship European infrastructure series, continuing the strategy of investing in mid-market, sustainable economic infrastructure across energy, transport, utility, and telecom sectors.",
+    sectors: ["Renewables / Energy Transition", "Transportation", "Utilities", "Communications", "Waste / Environmental Services"],
     regions: ["Europe"],
   }),
   f("FUND-120", "Igneo Infrastructure Partners", "Global Diversified Infrastructure Fund (GDIF)", "N/A", "~$7.5B", 7500, "Core-Plus", "Evergreen", {
-    description: "Open-end global infrastructure fund targeting diversified essential assets across transportation, utilities, renewables, and social infrastructure in developed markets.",
-    sectors: ["Transportation", "Utilities", "Renewables / Energy Transition", "Social Infrastructure"],
+    description: "Open-end global infrastructure fund investing in mid-market infrastructure businesses across waste, water, renewables, transportation, and digital sectors with a long-term sustainable value creation approach.",
+    sectors: ["Waste / Environmental Services", "Water", "Renewables / Energy Transition", "Transportation", "Digital Infrastructure"],
     regions: ["Global"],
     structure: "Open-End",
   }),
@@ -1076,8 +1076,8 @@ export const funds: Fund[] = [
     structure: "Open-End",
   }),
   f("FUND-122", "Igneo Infrastructure Partners", "Australian Diversified Infrastructure Fund (ADIF)", "2003", "A$1.0B+", 660, "Core-Plus", "Evergreen", {
-    description: "Open-end fund investing in essential Australian infrastructure including airports, ports, utilities, and social infrastructure assets with stable cash flows.",
-    sectors: ["Transportation", "Utilities", "Social Infrastructure"],
+    description: "Rebranded open-end fund (formerly WIIF) targeting majority stakes in Australian and New Zealand mid-market infrastructure companies across digital, energy, waste, and water sectors.",
+    sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Waste / Environmental Services", "Water"],
     regions: ["Asia-Pacific"],
     structure: "Open-End",
   }),
@@ -1101,10 +1101,10 @@ export const funds: Fund[] = [
     ticker: "HICL.L",
   }),
   f("FUND-126", "InfraRed Capital Partners", "The Renewables Infrastructure Group (TRIG)", "2013", "~£1.9B", 2470, "Core-Plus", "Evergreen", {
-    description: "London-listed investment company investing in operational onshore and offshore wind farms, solar parks, and battery storage assets across the UK and Europe.",
+    description: "FTSE 250 listed closed-ended investment company providing long-term stable dividends from a diversified portfolio of operational wind farms, solar parks, and battery storage across the UK and Europe.",
     sectors: ["Renewables / Energy Transition"],
     regions: ["Europe"],
-    structure: "Listed / Evergreen",
+    structure: "Listed / Closed-End",
     ticker: "TRIG.L",
   }),
   f("FUND-127", "InfraRed Capital Partners", "North American Core Income Energy Transition Fund", "2023", "$900M", 900, "Core-Plus", "Evergreen", {
@@ -1132,9 +1132,9 @@ export const funds: Fund[] = [
 
   // J.P. Morgan Asset Management
   f("FUND-130", "J.P. Morgan Asset Management", "Infrastructure Investments Fund (IIF)", "2006", "~$40.0B", 40000, "Core", "Evergreen", {
-    description: "One of the world's largest open-end core infrastructure funds investing in regulated utilities, contracted transportation, and essential services across global developed markets.",
-    sectors: ["Utilities", "Transportation", "Power Generation", "Renewables / Energy Transition"],
-    regions: ["Global"],
+    description: "One of the world's largest open-end core infrastructure funds, acquiring mature infrastructure assets with stable cash flows, monopolistic frameworks, and long-term contracts across energy, water, and transportation in OECD countries.",
+    sectors: ["Utilities", "Transportation", "Midstream / Energy", "Water"],
+    regions: ["North America", "Europe", "Asia-Pacific"],
     structure: "Open-End",
   }),
   f("FUND-131", "J.P. Morgan Asset Management", "Global Transport Income Fund (GTIF)", "2018", "$4.1B", 4100, "Core-Plus", "Evergreen", {
@@ -1168,9 +1168,9 @@ export const funds: Fund[] = [
     regions: ["Asia-Pacific"],
   }),
   f("FUND-136", "KKR", "Diversified Core Infra Fund (DCIF)", "2020", "~$11.0B+", 11000, "Core", "Evergreen", {
-    description: "Open-end core infrastructure fund targeting essential assets with long-term contracted or regulated revenues in transportation, utilities, and renewables globally.",
-    sectors: ["Transportation", "Utilities", "Renewables / Energy Transition", "Digital Infrastructure"],
-    regions: ["Global"],
+    description: "Open-end core infrastructure fund acquiring mature brownfield assets with stable, regulated or contracted cash flows across energy, transport, telecom, water, and utilities, primarily sourced on a proprietary basis in OECD markets.",
+    sectors: ["Utilities", "Transportation", "Communications", "Midstream / Energy", "Water"],
+    regions: ["North America", "Europe"],
     structure: "Open-End",
   }),
   f("FUND-137", "KKR", "Global Climate Transition Fund", "2023", "$7.0B", 7000, "Value-Add", "Deploying", {
