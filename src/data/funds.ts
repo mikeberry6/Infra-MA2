@@ -1566,15 +1566,15 @@ export const funds: Fund[] = [
     regions: ["Europe"],
   }),
   f("FUND-201", "Swiss Life Asset Managers", "Clean Energy Infrastructure Switzerland 3 (CEIS 3)", "2022", "CHF 1.0B+", 1120, "Core-Plus", "Deploying", {
-    description: "Swiss domestic clean energy fund investing in solar, wind, and hydropower infrastructure across Switzerland, supporting the country's energy transition strategy.",
-    sectors: ["Renewables / Energy Transition", "Power Generation"],
+    description: "Largest closed-end infrastructure vehicle in Switzerland, co-managed with UBS, investing in hydropower, solar, biomass, e-mobility, and district heating infrastructure supporting Switzerland's energy transition.",
+    sectors: ["Renewables / Energy Transition", "Utilities", "Power Generation"],
     regions: ["Europe"],
   }),
 
   // Tallvine
   f("FUND-202", "Tallvine", "Tallvine Middle Market Infrastructure Fund I", "2024", "$1.5B", 1500, "Value-Add", "Raising", {
-    description: "Inaugural mid-market infrastructure fund targeting essential services businesses in North America across utilities, environmental services, and transportation with operational improvement.",
-    sectors: ["Utilities", "Waste / Environmental Services", "Transportation"],
+    description: "Debut fund from I Squared Capital spinout targeting operationally intensive, value-add investments in lower middle-market infrastructure across North America, with platforms in small-craft aviation, marine services, and data centers.",
+    sectors: ["Transportation", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["North America"],
   }),
 
@@ -1610,22 +1610,22 @@ export const funds: Fund[] = [
     regions: ["Asia-Pacific", "Middle East & Africa", "Latin America"],
   }),
   f("FUND-208", "TPG", "TPG Peppertree Capital Fund X", "2023", "$2.04B", 2040, "Value-Add", "Deploying", {
-    description: "Energy and power infrastructure fund investing in midstream, power generation, and energy transition assets across North America.",
-    sectors: ["Midstream / Energy", "Power Generation", "Renewables / Energy Transition"],
+    description: "Specialized digital infrastructure fund investing in wireless communications towers, fiber networks, spectrum assets, small cells, and distributed antenna systems across the United States.",
+    sectors: ["Digital Infrastructure", "Communications"],
     regions: ["North America"],
   }),
 
   // True Green Capital
   f("FUND-209", "True Green Capital", "True Green Capital Fund IV", "2022", "$661M", 661, "Value-Add", "Deploying", {
-    description: "Distributed solar fund developing and acquiring commercial and industrial solar projects across the United States with long-term contracted offtake.",
+    description: "Renewable energy infrastructure fund investing in distributed commercial and industrial (C&I) solar, batteries, and microgrids across the US, UK, and EU with over 600 MW of operating distributed solar.",
     sectors: ["Renewables / Energy Transition"],
-    regions: ["North America"],
+    regions: ["North America", "Europe"],
     strategies: ["Value-Add", "Greenfield"],
   }),
   f("FUND-210", "True Green Capital", "True Green Capital Fund V", "2025", "$500M+", 500, "Value-Add", "Raising", {
-    description: "Successor fund continuing True Green's distributed C&I solar strategy, expanding into community solar and battery storage across North America.",
+    description: "Successor fund continuing True Green's distributed C&I solar strategy, expanding into community solar and battery storage across the US and Europe.",
     sectors: ["Renewables / Energy Transition"],
-    regions: ["North America"],
+    regions: ["North America", "Europe"],
     strategies: ["Value-Add", "Greenfield"],
   }),
 
@@ -1648,28 +1648,28 @@ export const funds: Fund[] = [
 
   // Vision Ridge Partners
   f("FUND-214", "Vision Ridge Partners", "Sustainable Asset Fund IV (SAF IV)", "2024", "$2.4B", 2400, "Value-Add", "Deploying", {
-    description: "Sustainable real assets fund investing in clean energy, water, agriculture, and waste management infrastructure across North America with measurable impact outcomes.",
-    sectors: ["Renewables / Energy Transition", "Water", "Waste / Environmental Services"],
-    regions: ["North America"],
+    description: "Sustainable real assets fund investing in utility-scale battery storage, clean mobility platforms, electric utilities, and agricultural decarbonization infrastructure globally, targeting 15-20% net IRR.",
+    sectors: ["Renewables / Energy Transition", "Transportation", "Power Generation"],
+    regions: ["Global"],
   }),
 
   // Wafra
   f("FUND-215", "Wafra", "Wafra Real Assets & Infrastructure Fund II", "2022", "Undisclosed", null, "Core-Plus", "Deploying", {
-    description: "Kuwait-backed infrastructure fund investing in essential services across energy, digital, and transportation infrastructure in developed markets.",
-    sectors: ["Power Generation", "Digital Infrastructure", "Transportation"],
-    regions: ["North America", "Europe"],
+    description: "Kuwait-backed infrastructure fund investing in aviation, digital infrastructure, marine/shipping, solar and battery storage, and logistics assets globally.",
+    sectors: ["Transportation", "Digital Infrastructure", "Renewables / Energy Transition", "Logistics"],
+    regions: ["Global"],
   }),
   f("FUND-216", "Wafra", "Wafra Real Assets & Infrastructure Platform (SMA)", "1985", "Undisclosed", null, "Core", "Evergreen", {
-    description: "Long-standing separately managed account platform investing in core infrastructure across global markets on behalf of the Kuwait Investment Authority.",
-    sectors: ["Utilities", "Transportation", "Power Generation"],
+    description: "Separately managed account platform providing permanent capital infrastructure exposure across aviation, digital infrastructure, shipping, renewable energy, and logistics for Kuwait's Public Institution for Social Security.",
+    sectors: ["Transportation", "Digital Infrastructure", "Renewables / Energy Transition", "Logistics"],
     regions: ["Global"],
     structure: "Permanent Capital",
   }),
 
   // Wren House Infrastructure
   f("FUND-217", "Wren House Infrastructure", "Wren House Infrastructure (Captive Platform)", "2013", "$10.0B+", 10000, "Core", "Evergreen", {
-    description: "Kuwait Investment Authority's captive infrastructure platform investing directly in large-scale core infrastructure assets globally across utilities, transportation, and energy.",
-    sectors: ["Utilities", "Transportation", "Power Generation", "Digital Infrastructure"],
+    description: "London-based captive infrastructure arm of Kuwait Investment Authority investing globally in airports, ports, water utilities, energy generation and transmission, midstream, and digital infrastructure with long-term hold mandates.",
+    sectors: ["Transportation", "Utilities", "Power Generation", "Digital Infrastructure", "Midstream / Energy", "Water"],
     regions: ["Global"],
     structure: "Permanent Capital",
   }),
@@ -1678,16 +1678,16 @@ export const funds: Fund[] = [
 
   // ADIA (Abu Dhabi Investment Authority)
   f("FUND-218", "ADIA (Abu Dhabi Investment Authority)", "ADIA Direct Infrastructure", "Evergreen", "N/A", null, "Core", "Evergreen", {
-    description: "Abu Dhabi sovereign wealth fund's direct infrastructure program investing in large-scale essential assets globally across utilities, transportation, energy, and digital infrastructure.",
-    sectors: ["Utilities", "Transportation", "Power Generation", "Digital Infrastructure", "Renewables / Energy Transition"],
+    description: "Abu Dhabi sovereign wealth fund's dedicated infrastructure department investing directly across four core sectors: utilities, energy, transport, and digital, supporting approximately 22 GW of renewable energy projects globally.",
+    sectors: ["Utilities", "Midstream / Energy", "Transportation", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["Global"],
     structure: "Permanent Capital",
   }),
 
   // Ancala Partners
   f("FUND-219", "Ancala Partners", "Ancala Essential Growth Infrastructure Fund", "2023", "£551M", 700, "Growth", "Deploying", {
-    description: "Growth-focused European fund investing in earlier-stage essential infrastructure businesses in energy, digital, and utilities with high-growth potential and platform-building strategies.",
-    sectors: ["Renewables / Energy Transition", "Digital Infrastructure", "Utilities"],
+    description: "Continuation-style growth fund providing expansion capital to existing Ancala portfolio companies including Portsmouth Water, Biogen (biogas/gas-to-grid), and Leep Utilities (last-mile utility networks) in the UK.",
+    sectors: ["Water", "Renewables / Energy Transition", "Utilities"],
     regions: ["Europe"],
   }),
 
@@ -1771,10 +1771,12 @@ export const funds: Fund[] = [
 
   // Pantheon Ventures
   f("FUND-230", "Pantheon Ventures", "Pantheon Infrastructure Fund", "Various", "~$5B", 5000, "Core-Plus", "Deploying", {
-    description: "Infrastructure fund-of-funds and co-investment platform providing diversified access to global infrastructure across transportation, energy, utilities, and digital sectors.",
-    sectors: ["Transportation", "Power Generation", "Utilities", "Digital Infrastructure"],
+    description: "London-listed closed-end investment company providing access to a globally diversified portfolio of infrastructure co-investments across digital, power, renewables, transport, and social infrastructure.",
+    sectors: ["Digital Infrastructure", "Power Generation", "Renewables / Energy Transition", "Transportation", "Social Infrastructure"],
     regions: ["Global"],
-    strategies: ["Core-Plus", "Fund-of-Funds", "Co-Investments"],
+    structure: "Listed / Closed-End",
+    ticker: "PINT.L",
+    strategies: ["Core-Plus", "Co-Investments"],
   }),
 
   // Ridgemont Equity Partners
@@ -1793,9 +1795,9 @@ export const funds: Fund[] = [
 
   // Sixth Street
   f("FUND-233", "Sixth Street", "Sixth Street Infrastructure Fund", "Various", "~$5B", 5000, "Value-Add", "Deploying", {
-    description: "Infrastructure credit and equity fund investing in energy, digital infrastructure, and essential services with flexible capital solutions across North America.",
-    sectors: ["Power Generation", "Digital Infrastructure", "Renewables / Energy Transition"],
-    regions: ["North America"],
+    description: "Global investment firm providing flexible capital across infrastructure, energy, and renewables sectors, with over 6 GW of renewable power invested and active in power, midstream, social infrastructure, and data centers.",
+    sectors: ["Power Generation", "Renewables / Energy Transition", "Midstream / Energy", "Social Infrastructure", "Digital Infrastructure"],
+    regions: ["Global"],
     strategies: ["Value-Add", "Credit / Debt"],
   }),
 
@@ -1809,15 +1811,16 @@ export const funds: Fund[] = [
 
   // UBS Asset Management
   f("FUND-235", "UBS Asset Management", "UBS Infrastructure Fund", "Various", "~$5B", 5000, "Core", "Deploying", {
-    description: "Global core infrastructure fund investing in essential infrastructure assets across utilities, transportation, and energy with long-term contracted revenue streams.",
-    sectors: ["Utilities", "Transportation", "Power Generation", "Renewables / Energy Transition"],
+    description: "Open-end global infrastructure equity strategy investing in core/core-plus operational infrastructure assets across OECD countries in utilities, energy transition, telecommunications, transportation, and social infrastructure.",
+    sectors: ["Utilities", "Renewables / Energy Transition", "Communications", "Transportation", "Social Infrastructure"],
     regions: ["Global"],
+    structure: "Open-End",
   }),
 
   // GIC
   f("FUND-236", "GIC", "GIC Infrastructure", "Evergreen", ">$50B", 50000, "Core", "Evergreen", {
-    description: "Singapore sovereign wealth fund's infrastructure platform, one of the world's largest direct investors, targeting essential utilities, transportation, energy, and digital infrastructure globally.",
-    sectors: ["Utilities", "Transportation", "Power Generation", "Digital Infrastructure", "Renewables / Energy Transition"],
+    description: "Singapore sovereign wealth fund's infrastructure program investing directly in utilities, digital infrastructure (including data center JVs), energy, and transport globally, with approximately $800 billion total fund AUM.",
+    sectors: ["Digital Infrastructure", "Utilities", "Transportation", "Renewables / Energy Transition", "Midstream / Energy"],
     regions: ["Global"],
     structure: "Permanent Capital",
   }),
