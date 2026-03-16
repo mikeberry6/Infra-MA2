@@ -1096,7 +1096,7 @@ export function FundDatabase() {
             Fund Database
           </h1>
           <p className="text-xs-dense text-[#52525B]">
-            Infrastructure fund manager profiles &mdash; filter by strategy, status, and fund size.
+            Infrastructure fund manager profiles. Filter by strategy, status, and fund size.
           </p>
         </div>
         <div className="hidden sm:flex items-center gap-6 text-xs-dense">
