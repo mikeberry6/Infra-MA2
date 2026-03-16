@@ -199,9 +199,8 @@ function FundStackedBar({
                   backgroundColor: getActivityColor(seg.activity),
                   opacity: 0.8,
                 }}
-              >
-                <title>{`${seg.activity}: ${seg.count}`}</title>
-              </div>
+                aria-label={`${seg.activity}: ${seg.count}`}
+              />
             );
           })}
         </div>
@@ -236,9 +235,8 @@ function SimpleBarRow({
             backgroundColor: row.color,
             opacity: 0.8,
           }}
-        >
-          <title>{`${row.name}: ${row.count}`}</title>
-        </div>
+          aria-label={`${row.name}: ${row.count}`}
+        />
         <span className="text-micro font-mono text-[#A1A1AA] tabular-nums flex-shrink-0">
           {row.count}
         </span>

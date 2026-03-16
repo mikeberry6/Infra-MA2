@@ -275,9 +275,8 @@ function SimpleBarRow({ row, maxCount }: { row: SimpleRow; maxCount: number }) {
             backgroundColor: row.color,
             opacity: 0.8,
           }}
-        >
-          <title>{`${row.name}: ${row.count}`}</title>
-        </div>
+          aria-label={`${row.name}: ${row.count}`}
+        />
         <span className="text-micro font-mono text-[#A1A1AA] tabular-nums flex-shrink-0">
           {row.count}
         </span>
