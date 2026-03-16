@@ -1933,20 +1933,13 @@ export const funds: Fund[] = [
 
   // BCI (British Columbia Investment Management Corp)
   // Source: https://www.bci.ca/investments-performance/portfolio/infrastructure-renewable-resources/ | https://www.bci.ca/breaking-new-ground-bci-irrs-milestone-year-in-2025/
-  f("FUND-222", "BCI (British Columbia Investment Management Corp)", "BCI Infrastructure & Renewable Resources Program", "2005", "~C$28B", 21000, "Core", "Evergreen", {
+  f("FUND-222", "BCI (British Columbia Investment Management Corp)", "BCI Infrastructure & Renewable Resources Program", "2005", "~C$32B", 32000, "Core", "Evergreen", {
     description: "Canadian pension fund's infrastructure platform investing directly in essential assets across utilities, transportation, renewable energy, and timber/agriculture globally.\nPortfolio:\nDigital Infrastructure: Frontier Towers (Towers), Rakuten Mobile (Infra JV) (Mobile Network), Summit Digitel (Data Infrastructure Trust) (Towers)\nLogistics: Linx Cargo Care Group (Intermodal Logistics)\nMidstream / Energy: Exolum (CLH) (Fuel Storage & Transport), Nova Transportadora do Sudeste (NTS) (Gas Pipelines), Open Grid Europe (OGE) (Gas Transmission)\nPower Generation: Isagen SA (Hydroelectric)\nRenewables / Energy Transition: Eku Energy (Battery Storage), Northview Energy (Solar & Storage), Reden Solar (Solar)\nSocial Infrastructure: BBGI Global Infrastructure S.A. (PPP / PFI)\nTransportation: Arteris (Toll Roads), Cube Highways Trust (Toll Roads), Dalrymple Bay Coal Terminal (Port Terminal), Pacific National (Rail Freight), Patrick Terminals (Port Terminal)\nUtilities: Cleco Partners LP (Electric Utility), Corix Infrastructure Inc. (Water & Gas Distribution), Endeavour Energy (Electricity Distribution), National Gas (Gas Transmission), Puget Sound Energy (Electric & Gas Utility), Transelec (Electricity Transmission), Trencap LP (Energir) (Gas Distribution)\nWaste / Environmental Services: Renewi PLC (Waste Management)\nWater: Thames Water (Water & Wastewater Utility)",
     sectors: ["Utilities", "Transportation", "Renewables / Energy Transition"],
     regions: ["Global"],
     structure: "Permanent Capital",
   }),
 
-  // Charlesbank Capital Partners
-  // Source: https://www.charlesbank.com/strategies/technology/ | https://pitchbook.com/profiles/fund/23032-90F
-  f("FUND-223", "Charlesbank Capital Partners", "Charlesbank Technology Opportunities Fund", "2020", "~$5B", 5000, "Growth", "Deploying", {
-    description: "Growth equity fund investing in technology-enabled infrastructure services including data centers, fiber, and managed IT services across North America.\nPortfolio:\nDigital Infrastructure: Six Degrees (Managed IT & Cloud)",
-    sectors: ["Digital Infrastructure", "Communications"],
-    regions: ["North America"],
-  }),
 
   // AustralianSuper
   // Source: https://www.australiansuper.com/investments/what-we-invest-in | https://www.australiansuper.com/global-investors/capabilities
@@ -1986,7 +1979,7 @@ export const funds: Fund[] = [
 
   // OMERS Infrastructure
   // Source: https://www.omersinfrastructure.com/ | https://www.omersinfrastructure.com/about-us
-  f("FUND-228", "OMERS Infrastructure", "OMERS Infrastructure Fund", "Evergreen", "~$30B", 30000, "Core", "Evergreen", {
+  f("FUND-228", "OMERS Infrastructure", "OMERS Infrastructure Fund", "Evergreen", "~C$39B", 28000, "Core", "Evergreen", {
     description: "Ontario municipal employees' pension fund's infrastructure platform investing directly in essential infrastructure assets globally, including utilities, transportation, and energy.\nPortfolio:\nDigital Infrastructure: Beanfield (Fiber Networks), Deutsche Glasfaser (Fiber Networks), Teranet (Land Registry), Waveconn (Fiber Networks), XPFibre (Fiber Networks)\nMidstream / Energy: Exolum (Pipelines & Storage)\nPower Generation: Bruce Power (Nuclear)\nRenewables / Energy Transition: Azure Power (Solar), FRV Australia (Solar), Groendus (Wind & Solar), Interise Trust (Diversified Renewables), Leeward Renewable Energy (Wind & Solar), Navisun (Solar)\nSocial Infrastructure: amedes (Healthcare), Northstar New Jersey Lottery (Lottery)\nTransportation: Associated British Ports (Ports), Bangalore International Airport (Airports), Direct ChassisLink Inc. (Chassis Leasing), Grandi Stazioni Retail (Rail Stations), Port of Melbourne (Ports), Tank & Rast (Motorway Services), VTG (Rail Freight)\nUtilities: Alectra (Electricity Distribution), Ellevio (Electricity Distribution), Kenter (Smart Metering), Oncor (Electricity Transmission), Puget Sound Energy (Electric & Gas Utilities), Thames Water (Water & Wastewater), Transgrid (Electricity Transmission)",
     sectors: ["Utilities", "Transportation", "Power Generation", "Renewables / Energy Transition"],
     regions: ["Global"],
@@ -1995,7 +1988,7 @@ export const funds: Fund[] = [
 
   // Ontario Teachers' Pension Plan
   // Source: https://www.otpp.com/en-ca/investments/our-investments/infrastructure-and-natural-resources/infrastructure/ | https://en.wikipedia.org/wiki/Ontario_Teachers%27_Pension_Plan
-  f("FUND-229", "Ontario Teachers' Pension Plan", "OTPP Infrastructure & Natural Resources", "Evergreen", "~$30B", 30000, "Core", "Evergreen", {
+  f("FUND-229", "Ontario Teachers' Pension Plan", "OTPP Infrastructure & Natural Resources", "Evergreen", "~C$43B", 31000, "Core", "Evergreen", {
     description: "Canadian pension fund's direct infrastructure investment program targeting large-scale essential assets in utilities, energy, transportation, and water globally.\nPortfolio:\nCommunications: Connexa (Towers)\nDigital Infrastructure: Compass Datacenters (Data Centers)\nMidstream / Energy: Aethon Energy (Natural Gas E&P)\nRenewables / Energy Transition: ACES Delta (Green Hydrogen), Azure Power (Solar), Corio Generation (Offshore Wind), Cubico Sustainable Investments (Wind & Solar), Equis Development (Diversified Renewables), Mahindra Susten (Solar), Sevana Bioenergy (Biomass)\nTransportation: Chicago Skyway (Toll Roads), Global Container Terminals (GCT) (Ports), IDEAL (Toll Roads), National Highways Infra Trust (NHIT) (Toll Roads)\nUtilities: Caruna (Electricity Distribution), Enwave Energy Corporation (District Energy), Evoltz (Electricity Transmission), Puget Sound Energy (PSE) (Electric & Gas Utilities), Scotia Gas Networks Ltd (SGN) (Gas Distribution), Spark Infrastructure (Electricity Distribution)",
     sectors: ["Utilities", "Power Generation", "Transportation", "Water"],
     regions: ["Global"],
@@ -2013,26 +2006,19 @@ export const funds: Fund[] = [
     strategies: ["Core-Plus", "Co-Investments"],
   }),
 
-  // Ridgemont Equity Partners
-  // Source: https://www.ridgemontep.com/ | https://pitchbook.com/profiles/investor/10026-82
-  f("FUND-231", "Ridgemont Equity Partners", "Ridgemont Infrastructure Fund", "Various", "~$2B", 2000, "Value-Add", "Deploying", {
-    description: "Mid-market fund investing in essential infrastructure services companies in North America across power, utilities, and environmental services with operational improvement.\nPortfolio:\nMidstream / Energy: M6 Midstream (Gathering & Processing)\nPower Generation: National Power (Distributed Power)\nTransportation: Omni Logistics / Forward Air (Logistics), RoadOne IntermodaLogistics (Intermodal)\nUtilities: Crete United (HVAC & Energy Services), Sparus Holdings (Utility Services)\nWaste / Environmental Services: Northstar Recycling Company (Recycling)",
-    sectors: ["Power Generation", "Utilities", "Waste / Environmental Services"],
-    regions: ["North America"],
-  }),
 
   // Riverstone Holdings
   // Source: https://www.riverstonellc.com/en/home/ | https://en.wikipedia.org/wiki/Riverstone_Holdings
-  f("FUND-232", "Riverstone Holdings", "Riverstone Holdings Fund", "Various", "~$8B", 8000, "Value-Add", "Deploying", {
-    description: "Energy-focused private equity firm investing in power generation, midstream, renewable energy, and energy transition infrastructure across North America and globally.\nPortfolio:\nMidstream / Energy: EPIC Propane Pipeline (Pipelines), ILX FCV (Oil & Gas), IMTT (Terminals & Storage), Max Midstream (Terminals), Teton Range (Oil & Gas)\nRenewables / Energy Transition: A2 Renovables (Solar), Abaco FCV (Solar), Clean Energy Fuels Corp (RNG & CNG), Energia Real (Solar), RIC Energy (Solar), SkySense (Solar), White River Renewables (Hydropower)\nTransportation: VEMO (EV Fleet)\nUtilities: Seawolf Water Resources (Water)",
+  f("FUND-232", "Riverstone Holdings", "Riverstone Renewable Energy Infrastructure Funds", "Various", "~$4B", 4000, "Value-Add", "Deploying", {
+    description: "Energy-focused PE firm's dedicated renewable energy infrastructure vehicles (REIF I & II, ~$4.1B combined) within a broader ~$41B multi-fund platform spanning energy and power.\nPortfolio:\nMidstream / Energy: EPIC Propane Pipeline (Pipelines), ILX FCV (Oil & Gas), IMTT (Terminals & Storage), Max Midstream (Terminals), Teton Range (Oil & Gas)\nRenewables / Energy Transition: A2 Renovables (Solar), Abaco FCV (Solar), Clean Energy Fuels Corp (RNG & CNG), Energia Real (Solar), RIC Energy (Solar), SkySense (Solar), White River Renewables (Hydropower)\nTransportation: VEMO (EV Fleet)\nUtilities: Seawolf Water Resources (Water)",
     sectors: ["Power Generation", "Midstream / Energy", "Renewables / Energy Transition"],
     regions: ["North America", "Global"],
   }),
 
   // Sixth Street
   // Source: https://sixthstreet.com/energy-renewables-infrastructure/ | https://en.wikipedia.org/wiki/Sixth_Street_Partners
-  f("FUND-233", "Sixth Street", "Sixth Street Infrastructure Fund", "Various", "~$5B", 5000, "Value-Add", "Deploying", {
-    description: "Global investment firm providing flexible capital across infrastructure, energy, and renewables sectors, with over 6 GW of renewable power invested and active in power, midstream, social infrastructure, and data centers.\nPortfolio:\nDigital Infrastructure: Blue Stream Fiber (Fiber Networks), EdgeConneX (Data Centers)\nMidstream / Energy: Antero Resources Royalty (Royalties), bp Onshore Midstream Assets (Gathering & Processing), Caliche Development Partners (Oil & Gas)\nPower Generation: Enipower (Gas-to-Power), Sorgenia (Gas-to-Power)\nRenewables / Energy Transition: Spanish Solar PV Portfolio (Solar), US Energy Logistics Wind & Solar (Wind & Solar)",
+  f("FUND-233", "Sixth Street", "Sixth Street Energy, Renewables & Infrastructure", "Various", "~$80B (firm-wide)", 5000, "Value-Add", "Deploying", {
+    description: "Multi-strategy $80B investment firm; infrastructure is one of nine platforms (no separately disclosed AUM). Active in power, midstream, renewables, social infrastructure, and data centers with 6+ GW of renewable power invested.\nPortfolio:\nDigital Infrastructure: Blue Stream Fiber (Fiber Networks), EdgeConneX (Data Centers)\nMidstream / Energy: Antero Resources Royalty (Royalties), bp Onshore Midstream Assets (Gathering & Processing), Caliche Development Partners (Oil & Gas)\nPower Generation: Enipower (Gas-to-Power), Sorgenia (Gas-to-Power)\nRenewables / Energy Transition: Spanish Solar PV Portfolio (Solar), US Energy Logistics Wind & Solar (Wind & Solar)",
     sectors: ["Power Generation", "Renewables / Energy Transition", "Midstream / Energy", "Social Infrastructure", "Digital Infrastructure"],
     regions: ["Global"],
     strategies: ["Value-Add", "Credit / Debt"],
@@ -2040,8 +2026,8 @@ export const funds: Fund[] = [
 
   // StepStone Group
   // Source: https://www.stepstonegroup.com/what-we-do/asset-classes/infrastructure/ | https://shareholders.stepstonegroup.com/news-releases/news-release-details/stepstone-group-closes-inaugural-infrastructure-co-investment
-  f("FUND-234", "StepStone Group", "StepStone Infrastructure Fund", "Various", "~$5B", 5000, "Core-Plus", "Deploying", {
-    description: "Infrastructure fund-of-funds, secondaries, and co-investment platform providing diversified exposure to global infrastructure across strategies and sectors.\nPortfolio:\nDigital Infrastructure: KKR Devonshire Co-Invest L.P. (Co-Investment SPV), KKR Optics Co-Invest Blocker L.P. (Co-Investment SPV), Verrus (Data Centers)\nMidstream / Energy: Buckeye Partners (Pipelines & Terminals), Stonepeak Ace Holdings LP (Energy Infrastructure)\nRenewables / Energy Transition: Australian Battery Storage Project (Battery Storage), Blue Road Capital PV II, L.P. (Solar), Eco-Stor (Battery Storage), ECP V (California Co-Invest), LP (Co-Investment SPV), Era Blade Continuation Fund Parallel Lp (Wind), NIC Battery Acquisition LP (Battery Storage), Peggy Aggregator, LLC (Co-Investment SPV), rPlus Energies (Solar & Storage), Sandbrook rPlus Co-Invest II LP (Solar & Storage), Walker Aggregator LP (Renewables Platform)\nTransportation: Brussels Airport (Airports), Mundys (Toll Roads), Triton International (Container Leasing)",
+  f("FUND-234", "StepStone Group", "StepStone Infrastructure Platform", "Various", "~$27B", 27000, "Core-Plus", "Deploying", {
+    description: "Infrastructure fund-of-funds, secondaries, and co-investment platform (~$27B infrastructure AUM within $199B firm-wide) providing diversified exposure to global infrastructure across strategies and sectors.\nPortfolio:\nDigital Infrastructure: KKR Devonshire Co-Invest L.P. (Co-Investment SPV), KKR Optics Co-Invest Blocker L.P. (Co-Investment SPV), Verrus (Data Centers)\nMidstream / Energy: Buckeye Partners (Pipelines & Terminals), Stonepeak Ace Holdings LP (Energy Infrastructure)\nRenewables / Energy Transition: Australian Battery Storage Project (Battery Storage), Blue Road Capital PV II, L.P. (Solar), Eco-Stor (Battery Storage), ECP V (California Co-Invest), LP (Co-Investment SPV), Era Blade Continuation Fund Parallel Lp (Wind), NIC Battery Acquisition LP (Battery Storage), Peggy Aggregator, LLC (Co-Investment SPV), rPlus Energies (Solar & Storage), Sandbrook rPlus Co-Invest II LP (Solar & Storage), Walker Aggregator LP (Renewables Platform)\nTransportation: Brussels Airport (Airports), Mundys (Toll Roads), Triton International (Container Leasing)",
     sectors: ["Transportation", "Utilities", "Power Generation", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["Global"],
     strategies: ["Core-Plus", "Fund-of-Funds", "Secondaries", "Co-Investments"],
