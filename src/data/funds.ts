@@ -408,7 +408,7 @@ export const funds: Fund[] = [
     regions: ["Europe", "North America", "Asia-Pacific"],
     structure: "Listed / Evergreen",
     ticker: "INPP.L",
-    strategyUrl: "https://www.internationalpublicpartnerships.com",
+    strategyUrl: "https://www.amberinfrastructure.com/our-funds/international-public-partnerships",
   }),
   // Source: https://www.amberinfrastructure.com/funds/us-solar-fund-plc/ | https://www.ussolarfund.co.uk/sites/default/files/usf_annual_report_2024_pres_vfinal.pdf
   f("FUND-010", "Amber Infrastructure", "US Solar Fund plc (USF)", "2019", "~$250M", 250, "Core", "Evergreen", {
@@ -440,7 +440,7 @@ export const funds: Fund[] = [
     description: "Geopolitically-driven infrastructure fund investing in energy, transportation, and digital infrastructure connecting Central and Eastern European countries between the Baltic, Adriatic, and Black Seas.\nPortfolio:\nDigital Infrastructure: Greenergy Data Centers (Data Centers)\nLogistics: BMF Port Burgas (Ports)\nRenewables / Energy Transition: Enery (Solar & Wind), R.Power Renewables (Solar)\nTransportation: Cargounit (Rolling Stock Leasing)",
     sectors: ["Transportation", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["Europe"],
-    strategyUrl: "https://3siif.eu",
+    strategyUrl: "https://www.amberinfrastructure.com/our-funds/three-seas-initiative-investment-fund",
   }),
 
   // Ancala Partners
@@ -528,7 +528,7 @@ export const funds: Fund[] = [
     description: "Successor fund scaling industrial decarbonization investments in hard-to-abate sectors, targeting energy efficiency, circular economy, and low-carbon manufacturing infrastructure.\nPortfolio:\nDigital Infrastructure: Centric Fiber (Fiber Networks)\nMidstream / Energy: Lincoln Terminal (Tank Storage)\nRenewables / Energy Transition: Anesco (Solar & Storage), Fluitron (Hydrogen Equipment), USD Clean Fuels (Biofuels)\nWaste / Environmental Services: CycleØ (Recycling), Divert (Food Waste), Natural World Products (NWP) (Biomaterials)",
     sectors: ["Renewables / Energy Transition", "Waste / Environmental Services", "Power Generation"],
     regions: ["North America"],
-    strategyUrl: "https://www.arapartners.com",
+    strategyUrl: "https://www.arapartners.com/what-we-do/strategies/infrastructure",
   }),
 
   // ArcLight Capital
@@ -537,7 +537,7 @@ export const funds: Fund[] = [
     description: "Value-add energy infrastructure fund investing in North American power generation, midstream, and renewable energy assets with operational improvement opportunities.\nPortfolio:\nMidstream / Energy: Gulf Coast Express (GCX) (Gas Pipelines), Natural Gas Pipeline Company of America (NGPL) (Gas Pipelines), Naugatuck Avenue Storage (Gas Storage)\nPower Generation: Advanced Power (Gas-to-Power), Alpha Generation (AlphaGen) (Gas-to-Power), Eastern Generation (Gas-to-Power), Generation Bridge (Gas-to-Power), Griffith Energy (Gas-to-Power), Kleen Energy Systems (Gas-to-Power), Lordstown Energy Center (Gas-to-Power), Middletown Energy Center (Gas-to-Power), Parkway Generation (Gas-to-Power), Takanock (Gas-to-Power)\nRenewables / Energy Transition: Elevate Renewables (Wind & Solar), Infinigen Renewables (Wind), REC Solar (Solar), SkyVest Renewables (Wind), Swift Current Energy (Solar & Storage), Thunderbird Renewables (Wind)",
     sectors: ["Power Generation", "Midstream / Energy", "Renewables / Energy Transition"],
     regions: ["North America"],
-    strategyUrl: "https://arclight.com",
+    strategyUrl: "https://irei.com/news/arclight-infrastructure-partners-fund-viii-nears-3b-fundraising-goal",
   }),
   // Source: https://arclight.com/ | https://pitchbook.com/profiles/fund/27828-01F
   f("FUND-026", "ArcLight Capital", "ArcLight Power Infrastructure Partners", "2024", "$250M", 250, "Value-Add", "Deploying", {
@@ -670,7 +670,7 @@ export const funds: Fund[] = [
     sectors: ["Renewables / Energy Transition", "Social Infrastructure"],
     regions: ["Europe"],
     structure: "Open-End",
-    strategyUrl: "https://www.axiuminfra.com/?lang=en",
+    strategyUrl: "https://www.axiuminfra.com/2022/09/01/september-1-2022-axium-infrastructure-opens-london-office/?lang=en",
   }),
 
   // Basalt Infrastructure Partners
@@ -711,7 +711,7 @@ export const funds: Fund[] = [
     description: "Global diversified infrastructure fund investing in transportation, energy, utilities, and digital infrastructure across developed and select emerging markets.\nPortfolio:\nDigital Infrastructure: Gigapower (Fiber Networks), True IDC (Data Centers)\nMidstream / Energy: Kellas Midstream (Gas Processing)\nRenewables / Energy Transition: Akaysha Energy (Battery Storage), DSD Renewables (Community Solar), Jupiter Power (Battery Storage), Recurrent Energy (Solar & Storage), Vanguard Renewables (Biogas)\nTransportation: GasLog (LNG Shipping)\nUtilities: Calisen (Smart Metering)\nWaste / Environmental Services: Biffa (Waste Management)",
     sectors: ["Transportation", "Utilities", "Renewables / Energy Transition", "Digital Infrastructure"],
     regions: ["Global"],
-    strategyUrl: "https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/blackRock-agrees-to-acquire-global-infrastructure-partners",
+    strategyUrl: "https://www.businesswire.com/news/home/20221024005921/en/BlackRock-Global-Infrastructure-Fund-IV-Raises-US4.5-Billion-at-First-Close",
   }),
   // Source: https://www.infrastructureinvestor.com/blackrocks-global-renewable-power-fund-returns-to-market-with-7bn-target/ | https://pitchbook.com/profiles/fund/24793-39F
   f("FUND-047", "BlackRock", "BlackRock Global Renewable Power Fund IV (GRP IV)", "2023", "$1.35B", 1350, "Core-Plus", "Raising", {
@@ -897,7 +897,7 @@ export const funds: Fund[] = [
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["Europe", "North America"],
     strategies: ["Value-Add", "Greenfield"],
-    strategyUrl: "https://www.cip.com/funds/advanced-bioenergy-funds",
+    strategyUrl: "https://www.globenewswire.com/news-release/2023/10/16/2760294/0/en/Copenhagen-Infrastructure-Partners-reaches-final-close-of-EUR-2-billion-for-two-new-funds.html",
   }),
   // Source: https://www.cip.com/funds/advanced-bioenergy-funds/ | https://en.wikipedia.org/wiki/Copenhagen_Infrastructure_Partners
   f("FUND-070", "Copenhagen Infrastructure Partners", "CI Advanced Bioenergy Fund II (CI ABF II)", "2025", "€1.5B", 1650, "Value-Add", "Raising", {
@@ -921,7 +921,7 @@ export const funds: Fund[] = [
     description: "Successor fund continuing Cube's European mid-market strategy across public transport operators, fiber networks, and energy transition infrastructure.",
     sectors: ["Transportation", "Communications", "Renewables / Energy Transition"],
     regions: ["Europe"],
-    strategyUrl: "https://www.cubeinfrastructure.com",
+    strategyUrl: "https://www.cubeinfrastructure.com/about-us",
   }),
 
   // CVC DIF
@@ -975,7 +975,7 @@ export const funds: Fund[] = [
     description: "Fund investing in digital infrastructure across emerging markets including cell towers, fiber, and data centers in Africa, Asia, and Latin America.",
     sectors: ["Digital Infrastructure", "Communications"],
     regions: ["Asia-Pacific", "Latin America", "Middle East & Africa"],
-    strategyUrl: "https://www.digitalbridge.com/business",
+    strategyUrl: "https://www.aiib.org/en/projects/details/2023/approved/Multicountry-DigitalBridge-Emerging-Market-Digital-Infrastructure-Fund.html",
   }),
   // Source: https://www.infrabridge.com/ | https://ir.digitalbridge.com/static-files/e40385bc-2520-41a2-97f8-dd9fae2201ca
   f("FUND-080", "DigitalBridge", "InfraBridge Global Infrastructure Fund III (GIF III)", "2023", "Undisclosed", null, "Value-Add", "Deploying", {
@@ -1025,7 +1025,7 @@ export const funds: Fund[] = [
     description: "Middle-market platform delivering capital solutions to businesses that reduce carbon intensity and enhance resource efficiency across energy, water, waste, and industrial infrastructure.\nPortfolio:\nRenewables / Energy Transition: Caban Systems (Battery Storage), ReGenerate Energy (Biogas), SunShare (Community Solar)\nUtilities: Ground/Water Treatment & Technology (GWTT) (Water Treatment), H2O Innovation (Water Treatment), Lama Sistemas de Filtrado (Water Filtration), Low Impact Development Technologies (Stormwater Management), OnSyte Performance (Water & Wastewater)\nWaste / Environmental Services: Advanced Recycling Technologies (Recycling), Earthwise Environmental Solutions (Environmental Services)",
     sectors: ["Renewables / Energy Transition", "Water", "Waste / Environmental Services", "Power Generation"],
     regions: ["North America"],
-    strategyUrl: "https://ember-infra.com",
+    strategyUrl: "https://ember-infra.com/portfolio",
   }),
 
   // EnCap Investments
@@ -1034,7 +1034,7 @@ export const funds: Fund[] = [
     description: "Midstream-focused fund investing in natural gas gathering, processing, and transportation infrastructure serving North American shale basins.",
     sectors: ["Midstream / Energy"],
     regions: ["North America"],
-    strategyUrl: "https://www.efmidstream.com",
+    strategyUrl: "https://www.efmidstream.com/about",
   }),
   // Source: https://encapinvestments.com/news/encap-energy-transition-closes-15-billion-energy-transition-fund-ii | https://pitchbook.com/profiles/fund/21788-02F
   f("FUND-087", "EnCap Investments", "EnCap Energy Transition Fund II", "2023", "$1.5B", 1500, "Value-Add", "Deploying", {
@@ -1161,7 +1161,7 @@ export const funds: Fund[] = [
     description: "Growth fund targeting emerging sustainable infrastructure technologies including community solar, battery storage, water treatment, and circular economy assets.",
     sectors: ["Renewables / Energy Transition", "Water", "Waste / Environmental Services"],
     regions: ["North America"],
-    strategyUrl: "https://generatecapital.com",
+    strategyUrl: "https://www.esgtoday.com/generate-capital-raises-1-5-billion-for-sustainable-infrastructure-investments",
   }),
 
   // Goldman Sachs Asset Management
@@ -1170,14 +1170,14 @@ export const funds: Fund[] = [
     description: "Value-add infrastructure fund investing in energy, transportation, digital, and utility infrastructure across North America, Europe, and select Asia-Pacific markets.",
     sectors: ["Power Generation", "Transportation", "Digital Infrastructure", "Utilities"],
     regions: ["North America", "Europe", "Asia-Pacific"],
-    strategyUrl: "https://am.gs.com/en-kw/institutions/news/press-release/2023/goldman-sachs-asset-management-raises-4-billion-for-west-street-infrastructure-partners-iv",
+    strategyUrl: "https://am.gs.com/en-us/advisors/products/infrastructure",
   }),
   // Source: https://am.gs.com/en-kw/institutions/news/press-release/2023/goldman-sachs-asset-management-raises-4-billion-for-west-street-infrastructure-partners-iv | https://www.preqin.com/news/goldman-sachs-hits-4bn-target-for-west-street-infrastructure-fund
   f("FUND-104", "Goldman Sachs Asset Management", "West Street Infrastructure Partners IV (WSIP IV)", "2023", "$4.0B", 4000, "Value-Add", "Deploying", {
     description: "Value-add fund targeting mid-to-large-cap infrastructure businesses in energy, transport, and digital sectors with operational improvement opportunities.\nPortfolio:\nDigital Infrastructure: CityFibre (Fiber Networks), Elea Digital (Data Centers), Global Compute Infrastructure (Data Centers), ImOn Communications (Fiber & Broadband), Melita Ltd (Fiber & Broadband)\nMidstream / Energy: HES International (Bulk Terminals)\nRenewables / Energy Transition: BrightNight (Hybrid Renewables), GridStor (Battery Storage), Synthica Energy (RNG), Verdalia Bioenergy (Biomass)\nSocial Infrastructure: Adapteo (Modular Buildings)\nTransportation: Frøy ASA (Maritime Services)\nUtilities: Atlas-SSI (Water Management Equipment)\nWaste / Environmental Services: Liquid Environmental Solutions (Liquid Waste), Synagro Technologies (Biosolids)",
     sectors: ["Power Generation", "Transportation", "Digital Infrastructure", "Utilities"],
     regions: ["North America", "Europe"],
-    strategyUrl: "https://am.gs.com/en-kw/institutions/news/press-release/2023/goldman-sachs-asset-management-raises-4-billion-for-west-street-infrastructure-partners-iv",
+    strategyUrl: "https://am.gs.com/en-us/advisors/news/press-release/2023/goldman-sachs-asset-management-raises-4-billion-for-west-street-infrastructure-partners-iv",
   }),
   // Source: https://www.channel-gsam.com.au/infrastructure/home | https://eqtgroup.com/infrastructure (N/A — no independent cross-reference found for this specific vehicle)
   f("FUND-105", "Goldman Sachs Asset Management", "West Street Private Infrastructure Fund (G-INFRA)", "2023", "Undisclosed", null, "Core-Plus", "Evergreen", {
@@ -1252,7 +1252,7 @@ export const funds: Fund[] = [
     description: "Mid-market core-plus fund targeting essential infrastructure businesses in utilities, transportation, and environmental services across North America, Europe, and Australasia.\nPortfolio:\nCommunications: TruVista Telecommunications (Telecoms)\nDigital Infrastructure: BornFiber (Fiber Networks), Dobson Fiber (Fiber Networks), GIM Glasfaser Infrastruktur (Fiber Networks), Northern Access GmbH (Fiber Networks), Nua (Fiber Networks), Sonnet (Fiber Networks), SYLTEL (Fiber Networks)\nLogistics: Gruppo Spinelli (Port Logistics), Service Terminal Rotterdam (Ports & Terminals), Verbrugge International (Ports & Terminals)\nPower Generation: Capstone Infrastructure (Diversified Power)\nRenewables / Energy Transition: Enoé (Solar), Green Recovery Projects (Diversified Renewables), H2air (Wind), Rothes CoRDe (Biomass), Wind Estate (Wind)\nSocial Infrastructure: Alliance Medical Group (Healthcare Imaging), Choice Care Group (Specialist Care), Meinhardt Group (Engineering Services), Mercurius Health (Healthcare), Vanguard Healthcare Solutions (Healthcare), Vista Services (Facilities Management)\nTransportation: Bardonecchia Ski (Leisure Infrastructure), Cruise Terminals International (Ports), GMP (Générale de Manutention Portuaire) (Ports), Iowa Interstate Railroad (Short-Line Rail), Sestrieres (Motorway Services)\nUtilities: EGEA (Multi-Utility), firmus energy (Gas Distribution), GridLink (Interconnectors), Manicargas (Gas Distribution), Sonorgás (Gas Distribution), Stockholm Gas (Gas Distribution), UPL (Utility Pipeline Ltd) (Gas Distribution), USG (Multi-Utility)\nWaste / Environmental Services: Eco Eridania (Hazardous Waste), Meinhardt Städtereinigung (Waste Collection), Sommers Waste Solutions (Waste Management)\nWater: SESW (Sutton and East Surrey Water) (Water Utility)",
     sectors: ["Utilities", "Transportation", "Waste / Environmental Services", "Renewables / Energy Transition"],
     regions: ["North America", "Europe", "Asia-Pacific"],
-    strategyUrl: "https://iconinfrastructure.com",
+    strategyUrl: "https://www.friedfrank.com/news-and-insights/icon-infrastructure-closes-latest-3-7b-fund-12555",
   }),
 
   // IFM Investors
@@ -1262,7 +1262,7 @@ export const funds: Fund[] = [
     sectors: ["Transportation", "Utilities", "Midstream / Energy", "Communications"],
     regions: ["North America", "Europe", "Asia-Pacific"],
     structure: "Open-End",
-    strategyUrl: "https://www.ifminvestors.com/investment-capabilities/infrastructure",
+    strategyUrl: "https://www.ifminvestors.com/capabilities/infrastructure/our-strategies",
   }),
   // Source: https://www.ifminvestors.com/en-au/capabilities/infrastructure/ | https://pitchbook.com/profiles/fund/13795-66F
   f("FUND-115", "IFM Investors", "IFM Australian Infrastructure Fund (AIF)", "1995", "~$8.7B", 8700, "Core", "Evergreen", {
@@ -1278,14 +1278,14 @@ export const funds: Fund[] = [
     sectors: ["Renewables / Energy Transition", "Power Generation", "Midstream / Energy"],
     regions: ["Global"],
     structure: "Open-End",
-    strategyUrl: "https://www.ifminvestors.com/investment-capabilities/infrastructure",
+    strategyUrl: "https://www.ifminvestors.com/capabilities/infrastructure/our-strategies",
   }),
   // Source: https://www.ifminvestors.com/investment-capabilities/infrastructure | https://ionanalytics.com/insights/infralogic/ifm-prepares-first-global-value-add-infra-fund/
   f("FUND-117", "IFM Investors", "IFM Global Value Add Infrastructure Fund", "2025", "$3.0B", 3000, "Value-Add", "Deploying", {
     description: "First value-add fund from IFM targeting infrastructure businesses requiring active management and operational improvement in energy transition, digital, and transport sectors.",
     sectors: ["Renewables / Energy Transition", "Digital Infrastructure", "Transportation"],
     regions: ["Global"],
-    strategyUrl: "https://www.ifminvestors.com/investment-capabilities/infrastructure",
+    strategyUrl: "https://www.ifminvestors.com/news-and-insights/thought-leadership/the-infrastructure-growth-engine-creating-tomorrows-core-infrastructure-today",
   }),
 
   // Igneo Infrastructure Partners
@@ -1376,7 +1376,7 @@ export const funds: Fund[] = [
     description: "Flagship European mid-market fund investing in digital infrastructure, energy transition, transportation, and healthcare infrastructure with active value creation.\nPortfolio:\nDigital Infrastructure: Celeste (Fiber & Cloud), Fibre Networks Ireland (Fiber Networks), IFT (Investissement Fibre Territoires) (Fiber Networks), Netomnia (Fiber Networks), nexfibre (Fiber Networks), OpCore (Data Centers), PSO (Polski Światłowód Otwarty) (Fiber Networks)\nMidstream / Energy: Molgas (LNG Distribution)\nRenewables / Energy Transition: Aurora (Solar), EDP Renováveis Solar Portfolio (Solar), Giga Storage (Battery Storage), Green Utility (Solar), Kyotherm (Geothermal / Biomass), Podini Group PV Portfolio (Solar), Prosolia Energy (Solar), Soparsol (Solar), Treblade (Onshore Wind)\nSocial Infrastructure: CareChoice (Senior Care), Grandir (Childcare), Mater Private Network (Healthcare), Quartz Healthcare (Healthcare), Sandaya (Outdoor Hospitality), Univet (Veterinary)\nTransportation: Autostrada Wielkopolska (A2) (Toll Roads), LDA (Louis Dreyfus Armateurs) (Maritime), Nexrail (Rail Leasing), Tramlink (Light Rail)\nUtilities: Heygaz (Gas Distribution)\nWaste / Environmental Services: Blue Phoenix (Waste Recycling)",
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation", "Social Infrastructure"],
     regions: ["Europe"],
-    strategyUrl: "https://infraviacapital.com",
+    strategyUrl: "https://infraviacapital.com/infravia-closes-its-new-infrastructure-fund-at-e5bn-hard-cap",
   }),
 
   // Infratil
@@ -1387,7 +1387,7 @@ export const funds: Fund[] = [
     regions: ["Asia-Pacific", "North America", "Europe"],
     structure: "Listed / Evergreen",
     ticker: "IFT.NZ",
-    strategyUrl: "https://infratil.com",
+    strategyUrl: "https://infratil.com/for-investors",
   }),
 
   // J.P. Morgan Asset Management
@@ -1414,7 +1414,7 @@ export const funds: Fund[] = [
     description: "Carbon management fund investing in carbon capture, utilization, and sequestration infrastructure, as well as emissions reduction technology across North America.\nPortfolio:\nMidstream / Energy: Caturus (Oil & Gas E&P), Commonwealth LNG (LNG)\nRenewables / Energy Transition: 38 Degrees North (Distributed Generation), Chestnut Carbon (Carbon Offset)",
     sectors: ["Renewables / Energy Transition", "Midstream / Energy"],
     regions: ["North America"],
-    strategyUrl: "https://kimmeridge.com",
+    strategyUrl: "https://kimmeridge.com/select-investments",
   }),
 
   // KKR
@@ -1452,14 +1452,14 @@ export const funds: Fund[] = [
     description: "Climate-focused fund investing in renewable energy, energy storage, grid modernization, and clean transportation infrastructure across global markets.",
     sectors: ["Renewables / Energy Transition", "Power Generation", "Transportation"],
     regions: ["Global"],
-    strategyUrl: "https://www.kkr.com/invest/infrastructure",
+    strategyUrl: "https://media.kkr.com/rss-feed/news-release?news_id=2cbf963d-a998-46fc-bcc7-fe1f3cce97a9",
   }),
   // Source: https://www.kkr.com/invest/infrastructure | https://pitchbook.com/profiles/fund/25504-39F
   f("FUND-138", "KKR", "Asia Climate Fund", "2024", "$1.0B", 1000, "Value-Add", "Deploying", {
     description: "Asia-focused climate fund investing in renewable energy, clean transportation, and energy transition infrastructure across emerging and developed Asian markets.",
     sectors: ["Renewables / Energy Transition", "Transportation", "Power Generation"],
     regions: ["Asia-Pacific"],
-    strategyUrl: "https://www.kkr.com/invest/infrastructure",
+    strategyUrl: "https://media.kkr.com/rss-feed/news-release?news_id=2cbf963d-a998-46fc-bcc7-fe1f3cce97a9",
   }),
   // Source: https://kseries.kkr.com/kif/ | https://kseries.kkr.com/kif/information/
   f("FUND-139", "KKR", "KKR Infrastructure Fund (K-INFRA)", "2023", "Undisclosed", null, "Core-Plus", "Evergreen", {
@@ -1521,7 +1521,7 @@ export const funds: Fund[] = [
     sectors: ["Utilities", "Transportation", "Renewables / Energy Transition", "Digital Infrastructure"],
     regions: ["Global"],
     structure: "Open-End",
-    strategyUrl: "https://www.macquarie.com/us/en/about/news/2024/macquarie-green-energy-and-climate-opportunities-fund-acquires-portfolio-of-six-investments.html",
+    strategyUrl: "https://www.macquarie.com/us/en/about/company/macquarie-asset-management/general-public/capabilities/Infrastructure.html",
   }),
   // Source: https://www.macquarie.com/us/en/about/news/2025/macquarie-asset-management-reaches-us3-billion-close-of-green-energy-transition-solutions-fund-and-co-investment-commitment.html | https://pitchbook.com/profiles/fund/25578-37F (if available for MGETS)
   f("FUND-147", "Macquarie Asset Management", "Macquarie Green Energy Transition Solutions (MGETS)", "2022", "$2.4B", 2400, "Value-Add", "Deploying", {
@@ -1611,7 +1611,7 @@ export const funds: Fund[] = [
     sectors: ["Renewables / Energy Transition", "Transportation", "Water", "Social Infrastructure"],
     regions: ["Middle East & Africa"],
     strategies: ["Value-Add", "Greenfield"],
-    strategyUrl: "https://www.meridiam.com/news/meridiam-successfully-raises-over-6-billion-e5-billion-of-new-capital-to-fuel-future-sustainable-and-impact-investments",
+    strategyUrl: "https://www.bii.co.uk/en/our-impact/fund/meridiam-infrastructure-africa-parallel-fund-ii-slp-miapf-ii",
   }),
   // Source: https://www.meridiam.com/assets/sustainable-and-resilient-cities-of-tomorrow/ | https://www.eib.org/en/projects/all/20200085
   f("FUND-158", "Meridiam", "The Urban Resilience Fund (TURF)", "2021", "€350M", 385, "Value-Add", "Deploying", {
@@ -1663,7 +1663,7 @@ export const funds: Fund[] = [
     description: "Mid-market fund investing in essential North American infrastructure services businesses in power, utilities, environmental services, and transportation.\nPortfolio:\nCommunications: Xchange Telecom (Skywire) (Fixed Wireless)\nDigital Infrastructure: DartPoints (Edge Data Centers), telMAX Inc. (Fiber Networks)\nRenewables / Energy Transition: Nopetro Renewables / Nopetro Energy (RNG & CNG), UGE International (Community Solar)\nTransportation: A&R Bulk-Pak (Bulk Logistics), Ascension FBO Network (FBO / Aviation), Harbor Logistics (Port Logistics)",
     sectors: ["Power Generation", "Utilities", "Waste / Environmental Services", "Transportation"],
     regions: ["North America"],
-    strategyUrl: "https://www.novainfrastructure.com",
+    strategyUrl: "https://www.novainfrastructure.com/investments-index",
   }),
 
   // Nuveen Infrastructure
@@ -1700,7 +1700,7 @@ export const funds: Fund[] = [
     sectors: ["Transportation", "Logistics"],
     regions: ["North America"],
     structure: "Permanent Capital",
-    strategyUrl: "https://durationcapitalpartners.com",
+    strategyUrl: "https://www.prnewswire.com/news-releases/duration-capital-partners-completes-spin-out-from-oaktree-as-an-industry-leading-long-term-transportation-infrastructure-investment-platform-302193139.html",
   }),
 
   // Partners Group
@@ -1793,7 +1793,7 @@ export const funds: Fund[] = [
     description: "Second flagship infrastructure equity fund with ~70% allocated to Australian energy transition investments including renewables, smart metering, and transport decarbonization.\nPortfolio:\nMidstream / Energy: Epic Energy (Pipelines), Lochard Energy (Gas Storage)\nPower Generation: Pacific Energy (Remote Power)\nRenewables / Energy Transition: Generate Capital (Diversified Clean Energy), Renewa (Wind & Solar), Tilt Renewables (Wind)\nSocial Infrastructure: Evolution Healthcare (Healthcare), Nexus Hospitals (Healthcare), Titles Queensland (Land Registry)\nTransportation: Brisbane Airport (Airports), Brussels Airport (Airports), ConnectEast Group (EastLink) (Toll Roads), Hobart International Airport (Airports), Northwestern Roads Group (Toll Roads), Port of Brisbane (Ports), Port of Melbourne (Ports), Sea Swift (Maritime Logistics)\nUtilities: Bluecurrent (Vector Metering) (Smart Metering), CenTrio (District Energy), Powerco (Electricity & Gas Distribution), Thames Water (Water & Wastewater)",
     sectors: ["Renewables / Energy Transition", "Transportation", "Utilities"],
     regions: ["Asia-Pacific", "Global"],
-    strategyUrl: "https://www.qic.com/Investment-Capabilities/Infrastructure",
+    strategyUrl: "https://www.cefc.com.au/media/media-release/cefc-backs-new-qic-infrastructure-investment-to-accelerate-energy-transition",
   }),
   // Source: https://www.qic.com/Investment-Capabilities/Infrastructure | https://en.wikipedia.org/wiki/Queensland_Investment_Corporation
   f("FUND-179", "QIC Global Infrastructure", "QIC Infrastructure Portfolio (QIP)", "2006", "Undisclosed", null, "Core", "Evergreen", {
@@ -1853,7 +1853,7 @@ export const funds: Fund[] = [
     regions: ["Europe"],
     structure: "Listed / Evergreen",
     ticker: "UKW.L",
-    strategyUrl: "https://www.greencoat-ukwind.com",
+    strategyUrl: "https://www.schroderscapital.com/en/global/professional/capabilities/infrastructure/schrodersgreencoat/uk-wind",
   }),
   // Source: https://www.greencoat-renewables.com/ | https://www.schroderscapital.com/en/global/professional/capabilities/infrastructure/schrodersgreencoat/europe/
   f("FUND-186", "Schroders Greencoat", "Greencoat Renewables PLC", "2017", "€1.2B+", 1320, "Core", "Evergreen", {
@@ -1862,7 +1862,7 @@ export const funds: Fund[] = [
     regions: ["Europe"],
     structure: "Listed / Evergreen",
     ticker: "GRN.IR",
-    strategyUrl: "https://www.greencoat-renewables.com",
+    strategyUrl: "https://www.schroderscapital.com/en/global/professional/capabilities/infrastructure/schrodersgreencoat/europe",
   }),
   // Source: https://www.schroderscapital.com/en/global/professional/media-centre/schroders-greencoat-secures-170-million-commitment-from-environment-agency-pension-fund/ | https://www.preqin.com/data/profile/fund-manager/schroders-greencoat/107183
   f("FUND-187", "Schroders Greencoat", "Greencoat Renewable Income LP (GRI)", "2020", "£1.35B", 1755, "Core-Plus", "Deploying", {
@@ -1908,7 +1908,7 @@ export const funds: Fund[] = [
     description: "Fifth-generation flagship fund targeting investments in digital infrastructure, energy and energy transition, transportation and logistics, and social infrastructure primarily in North America.\nPortfolio:\nCommunications: Cellnex Nordics (Towers), GTA (TeleGuam) (Telecoms), Intrado (Communications Technology), Philippines Tower JVCo (Towers)\nDigital Infrastructure: Astound Broadband (Fiber & Broadband), Cirion Technologies (Data Centers & Fiber), Cologix (Data Centers), CoreSite (Data Centers), DELTA Fiber (Fiber Networks), Digital Edge (Data Centers), Equalbase (Data Centers), euNetworks (Fiber Networks), Omni Fiber (Fiber Networks), Princeton Digital Group (Data Centers), Xplore (Fiber & Broadband)\nLogistics: IFCO Group (Reusable Packaging), LOGISTEC (Marine Services), Rinchem (Chemical Logistics), Stonepeak Infrastructure Logistics (Infrastructure Logistics)\nMidstream / Energy: IOR (Oilfield Services), KAPS (Pipelines), Longview Infrastructure (Water Midstream), Louisiana LNG (LNG), Paradigm Energy Partners (Water Midstream), Pelican Pipeline (Pipelines)\nRenewables / Energy Transition: AGP Sustainable Real Assets (Diversified), Coastal Virginia Offshore Wind (Offshore Wind), Joule Terra (Solar), Kingdom Energy Storage (Battery Storage), Maas Energy Works (Biogas), NorthStar Renewable Power (Solar), Peak Energy (Battery Storage), Repsol U.S. Renewables (Wind & Solar), Stonepeak Island Transition (Energy Transition), Synera Renewable Energy (Solar), TerraWind Renewables (Wind)\nSocial Infrastructure: Akumin (Healthcare Imaging), Arvida (Senior Living), Inspired Education Group (Education)\nTransportation: ATSG (Air Cargo), Dupré Logistics (Logistics), Emergent Cold LatAm (Cold Storage), Lineage Logistics (Cold Storage), Seapeak / Stonepeak Marine (LNG & Marine), Stonepeak Aviation Platform (Aircraft Leasing), Textainer (Container Leasing), TRAC Intermodal (Chassis Leasing), UNITED PORTS LLC (Ports)\nUtilities: Aura Holdings (Energy Services), Carlsbad Desalination Plant (Water Desalination), Lestari Cooling Energy (District Cooling), Montera Infrastructure (Utility Services)",
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation", "Logistics", "Utilities"],
     regions: ["North America"],
-    strategyUrl: "https://stonepeak.com/investments/infrastructure",
+    strategyUrl: "https://inforcapital.com/funds/stonepeak-infrastructure-fund-v",
   }),
   // Source: https://stonepeak.com/ | https://pitchbook.com/profiles/fund/25534-54F
   f("FUND-193", "Stonepeak", "Stonepeak Global Renewables Fund II", "2024", "$5.0B", 5000, "Core-Plus", "Raising", {
@@ -1923,7 +1923,7 @@ export const funds: Fund[] = [
     description: "Second Asia-focused fund investing in digital infrastructure, energy, transportation, logistics, and cold storage in developed East Asia, Southeast Asia, and India.",
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation", "Logistics"],
     regions: ["Asia-Pacific"],
-    strategyUrl: "https://stonepeak.com/news/stonepeak-closes-asia-infrastructure-fund-with-3-3-billion-of-commitments",
+    strategyUrl: "https://stonepeak.com/news-insights",
   }),
   // Source: https://stonepeak.com/news/stonepeak-closes-opportunities-fund-with-3-15-billion-of-commitments | https://pitchbook.com/profiles/fund/22877-47F
   f("FUND-195", "Stonepeak", "Stonepeak Opportunities Fund", "2022", "$3.15B", 3150, "Value-Add", "Deploying", {
@@ -1945,7 +1945,7 @@ export const funds: Fund[] = [
     sectors: ["Digital Infrastructure", "Transportation", "Logistics", "Renewables / Energy Transition"],
     regions: ["Global"],
     structure: "Open-End",
-    strategyUrl: "https://stonepeak.com/investments/infrastructure",
+    strategyUrl: "https://inforcapital.com/funds/stonepeak-core-fund",
   }),
 
   // Swiss Life Asset Managers
@@ -1995,7 +1995,7 @@ export const funds: Fund[] = [
     sectors: ["Renewables / Energy Transition", "Transportation", "Waste / Environmental Services"],
     regions: ["Global"],
     structure: "Permanent Capital",
-    strategyUrl: "https://genzero.co",
+    strategyUrl: "https://genzero.co/portfolio",
   }),
 
   // Tiger Infrastructure Partners
@@ -2020,7 +2020,7 @@ export const funds: Fund[] = [
     description: "Core-plus fund targeting operational and contracted clean energy infrastructure assets including solar, wind, storage, and grid infrastructure globally.",
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["Global"],
-    strategyUrl: "https://www.tpg.com/platforms/impact/rise-climate",
+    strategyUrl: "https://www.tpg.com/news-and-insights/the-transition-infrastructure-opportunity-jim-coulter-and-scott-lebovitz-on-the-next-era-of-climate-investing",
   }),
   // Source: https://www.tpg.com/news-and-insights/tpg-announces-progress-for-global-south-initiative-anchored-by-alterra | https://www.aiib.org/en/projects/details/2026/approved/multicounty-tpg-rise-climate-global-south-initiative-fund.html
   f("FUND-207", "TPG", "TPG Rise Climate Global South Initiative", "2024", "$2.5B", 2500, "Value-Add", "Raising", {
@@ -2044,7 +2044,7 @@ export const funds: Fund[] = [
     sectors: ["Renewables / Energy Transition"],
     regions: ["North America", "Europe"],
     strategies: ["Value-Add", "Greenfield"],
-    strategyUrl: "https://truegreencapital.com",
+    strategyUrl: "https://www.prnewswire.com/news-releases/true-green-capital-management-closes-fourth-fund-at-over-650-million-exceeding-its-500-million-target-301561227.html",
   }),
   // Source: https://truegreencapital.com/ | https://companiesbio.com/CIK-0002055378-company-true-green-capital-fund-v-l-p-info.html (SEC EDGAR CIK)
   f("FUND-210", "True Green Capital", "True Green Capital Fund V", "2025", "$500M+", 500, "Value-Add", "Raising", {
@@ -2084,7 +2084,7 @@ export const funds: Fund[] = [
     description: "Sustainable real assets fund investing in utility-scale battery storage, clean mobility platforms, electric utilities, and agricultural decarbonization infrastructure globally, targeting 15-20% net IRR.\nPortfolio:\nRenewables / Energy Transition: Earthrise Energy (Solar), GSSG Chikuden (Battery Storage), Guzman Energy (Clean Energy Retail), Homer (Energy Analytics), Pelican Energy TCI (Solar), Sparkfund (Energy-as-a-Service), VisionRNG (RNG)\nTransportation: TeraWatt Infrastructure (EV Charging), VEMO (EV Fleet), YMX Logistics (Logistics)",
     sectors: ["Renewables / Energy Transition", "Transportation", "Power Generation"],
     regions: ["Global"],
-    strategyUrl: "https://vision-ridge.com",
+    strategyUrl: "https://www.businesswire.com/news/home/20260211626032/en/Vision-Ridge-Partners-Raises-2.4-Billion-for-Flagship-Sustainable-Real-Assets-Strategy",
   }),
 
   // Wafra
@@ -2212,7 +2212,7 @@ export const funds: Fund[] = [
     sectors: ["Utilities", "Transportation", "Power Generation", "Renewables / Energy Transition"],
     regions: ["Global"],
     structure: "Permanent Capital",
-    strategyUrl: "https://www.omersinfrastructure.com",
+    strategyUrl: "https://www.omersinfrastructure.com/investments",
   }),
 
   // Ontario Teachers' Pension Plan
@@ -2234,7 +2234,7 @@ export const funds: Fund[] = [
     structure: "Listed / Closed-End",
     ticker: "PINT.L",
     strategies: ["Core-Plus", "Co-Investments"],
-    strategyUrl: "https://www.pantheoninfrastructure.com",
+    strategyUrl: "https://www.pantheoninfrastructure.com/about-us/overview-and-investment-strategy",
   }),
 
 
