@@ -1695,11 +1695,17 @@ export const funds: Fund[] = [
 
   // Duration Capital Partners (spun out from Oaktree Capital, July 2024)
   // Source: https://durationcapitalpartners.com/ | https://www.infrastructureinvestor.com/oaktrees-transport-team-spins-out-to-become-duration-capital/
-  f("FUND-167", "Duration Capital Partners", "Duration Transportation Infrastructure Capital Partners", "2017", "$3.5B+", 3500, "Core-Plus", "Evergreen", {
-    description: "Long-term transportation infrastructure platform spun out from Oaktree Capital in 2024, investing in essential businesses serving the aviation, ports, and railroad sectors across North America with a focus on operational excellence.",
+  f("FUND-167", "Duration Capital Partners", "Duration Transportation Infrastructure Capital Partners", "2017", "$1.1B", 1100, "Value-Add", "Deploying", {
+    description: "Long-term transportation infrastructure fund spun out from Oaktree Capital in 2024, investing in essential businesses serving the aviation, ports, and railroad sectors across North America with a focus on operational excellence.",
     sectors: ["Transportation", "Logistics"],
     regions: ["North America"],
-    structure: "Permanent Capital",
+    strategyUrl: "https://www.prnewswire.com/news-releases/duration-capital-partners-completes-spin-out-from-oaktree-as-an-industry-leading-long-term-transportation-infrastructure-investment-platform-302193139.html",
+  }),
+  // Source: https://durationcapitalpartners.com/ | https://www.infrastructureinvestor.com/oaktrees-transport-team-spins-out-to-become-duration-capital/
+  f("FUND-235", "Duration Capital Partners", "Duration Transportation Infrastructure Capital Partners Fund II", "2022", "$3.0B", 3000, "Core-Plus", "Deploying", {
+    description: "Successor transportation infrastructure fund continuing Duration's strategy of investing in essential aviation, ports, and railroad businesses across North America, transferred during the 2024 spin-out from Oaktree Capital.",
+    sectors: ["Transportation", "Logistics"],
+    regions: ["North America"],
     strategyUrl: "https://www.prnewswire.com/news-releases/duration-capital-partners-completes-spin-out-from-oaktree-as-an-industry-leading-long-term-transportation-infrastructure-investment-platform-302193139.html",
   }),
 
