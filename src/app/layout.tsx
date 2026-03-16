@@ -3,7 +3,10 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "InfraTracker | Global Infrastructure M&A Intelligence",
+  title: {
+    template: "%s | InfraTracker",
+    default: "Deal Database | InfraTracker",
+  },
   description:
     "Institutional intelligence platform tracking global infrastructure mergers, acquisitions, and fund activity.",
 };
