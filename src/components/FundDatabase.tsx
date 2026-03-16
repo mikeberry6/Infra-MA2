@@ -531,7 +531,14 @@ function FundManagerAccordion({
         <div className="border-t border-[#27272A]">
           {/* Desktop table */}
           <div className="hidden md:block">
-            <table className="w-full text-sm-dense">
+            <table className="w-full text-sm-dense table-fixed">
+              <colgroup>
+                <col className="w-[36%]" />
+                <col className="w-[26%]" />
+                <col className="w-[16%]" />
+                <col className="w-[10%]" />
+                <col className="w-[12%]" />
+              </colgroup>
               <thead>
                 <tr className="border-b border-[#27272A]">
                   <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
@@ -558,7 +565,7 @@ function FundManagerAccordion({
                     onClick={() => onSelectFund(fund)}
                     className="border-b border-[rgba(255,255,255,0.08)] hover:bg-[rgba(255,255,255,0.03)] cursor-pointer transition-colors group"
                   >
-                    <td className="px-4 py-2.5 max-w-[300px]">
+                    <td className="px-4 py-2.5 overflow-hidden">
                       <div className="flex items-center gap-2">
                         <span className="font-medium text-[#EDEDED] group-hover:text-[#EDEDED] transition-colors truncate">
                           {fund.fundName}
@@ -683,7 +690,15 @@ function AllFundsTable({
       {/* Desktop table */}
       <div className="hidden md:block overflow-hidden">
         <div className="overflow-x-auto">
-        <table className="w-full text-left text-sm-dense border-collapse whitespace-nowrap">
+        <table className="w-full text-left text-sm-dense border-collapse table-fixed">
+          <colgroup>
+            <col className="w-[28%]" />
+            <col className="w-[18%]" />
+            <col className="w-[22%]" />
+            <col className="w-[14%]" />
+            <col className="w-[8%]" />
+            <col className="w-[10%]" />
+          </colgroup>
           <thead>
             <tr className="border-b border-[#27272A]">
               <SortHeader field="name" label="Fund Vehicle" />
@@ -703,7 +718,7 @@ function AllFundsTable({
                 onClick={() => onSelectFund(fund)}
                 className="border-b border-[rgba(255,255,255,0.08)] hover:bg-[rgba(255,255,255,0.03)] cursor-pointer transition-colors group"
               >
-                <td className="px-4 py-3 max-w-[280px]">
+                <td className="px-4 py-3 overflow-hidden">
                   <div className="flex items-center gap-2">
                     <span className="font-medium text-[#EDEDED] group-hover:text-[#EDEDED] transition-colors truncate">
                       {fund.fundName}
@@ -711,7 +726,7 @@ function AllFundsTable({
                     <ChevronRight className="h-3 w-3 text-[#52525B] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                   </div>
                 </td>
-                <td className="px-4 py-3 max-w-[200px]">
+                <td className="px-4 py-3 overflow-hidden">
                   <span className="text-xs text-[#A1A1AA] truncate block">{fund.managerName}</span>
                 </td>
                 <td className="px-4 py-3">
