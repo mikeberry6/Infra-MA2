@@ -1286,9 +1286,10 @@ export const funds: Fund[] = [
     strategies: ["Value-Add", "Greenfield"],
   }),
   f("FUND-156", "Meridiam", "Meridiam Infrastructure Agri Transition", "2025", "€500M", 550, "Value-Add", "Deploying", {
-    description: "Specialist fund investing in agricultural infrastructure supporting the food system transition, including cold chain logistics, water efficiency, and sustainable farming infrastructure.",
-    sectors: ["Water", "Logistics", "Social Infrastructure"],
+    description: "Maiden agricultural transition fund investing in sustainable agriculture and food system infrastructure in Europe, supporting the ecological transition through biogas, regenerative farming, and food value chain projects.",
+    sectors: ["Renewables / Energy Transition", "Waste / Environmental Services"],
     regions: ["Europe"],
+    strategies: ["Value-Add", "Greenfield"],
   }),
   f("FUND-157", "Meridiam", "Meridiam Infrastructure Africa Fund II (MIAF II)", "2021", "€750M", 825, "Value-Add", "Deploying", {
     description: "Africa-focused fund investing in essential infrastructure development including renewable energy, transportation, water, and social infrastructure across Sub-Saharan Africa.",
@@ -1353,9 +1354,9 @@ export const funds: Fund[] = [
 
   // Oaktree Capital
   f("FUND-166", "Oaktree Capital", "Oaktree Power Opportunities Fund VII", "2024", "$2.5B", 2500, "Value-Add", "Deploying", {
-    description: "Value-add fund investing in power generation, renewable energy, and energy storage assets across North America with turnaround and development capabilities.",
-    sectors: ["Power Generation", "Renewables / Energy Transition"],
-    regions: ["North America"],
+    description: "Value-add fund investing in companies providing essential products and services to electric power, natural gas, water, wastewater, and utility infrastructure in North America and Europe, capitalizing on decarbonization and electrification trends.",
+    sectors: ["Utilities", "Power Generation", "Renewables / Energy Transition", "Water"],
+    regions: ["North America", "Europe"],
   }),
   f("FUND-167", "Oaktree Capital", "Oaktree Transportation Infrastructure Capital Partners", "2022", "$3.0B", 3000, "Core-Plus", "Evergreen", {
     description: "Permanent capital vehicle investing in essential transportation infrastructure including airports, ports, rail, and logistics assets globally with long-term holding periods.",
@@ -1378,49 +1379,51 @@ export const funds: Fund[] = [
 
   // Patria Investments
   f("FUND-170", "Patria Investments", "Patria Infrastructure Fund V", "2023", "$2.9B", 2900, "Value-Add", "Deploying", {
-    description: "Latin America-focused infrastructure fund investing in energy, transportation, logistics, and utilities across Brazil and other key Latin American markets.",
-    sectors: ["Power Generation", "Transportation", "Logistics", "Utilities"],
+    description: "Largest infrastructure fund in Latin America, investing across toll roads, data centers, water desalination, renewable energy, and electric mobility in Brazil, Colombia, and Chile.",
+    sectors: ["Transportation", "Digital Infrastructure", "Water", "Renewables / Energy Transition", "Waste / Environmental Services"],
     regions: ["Latin America"],
   }),
   f("FUND-171", "Patria Investments", "Patria Infrastructure Core Fund (PIER)", "2021", "~$1.0B", 1000, "Core", "Evergreen", {
-    description: "Open-end core infrastructure fund targeting contracted and regulated Latin American infrastructure assets in energy, transportation, and utilities with stable yields.",
-    sectors: ["Power Generation", "Transportation", "Utilities"],
+    description: "Brazilian-listed core infrastructure fund on B3, focused on yield-generating operational power generation and transmission assets in Brazil with long-term contracted revenues.",
+    sectors: ["Power Generation", "Renewables / Energy Transition"],
     regions: ["Latin America"],
-    structure: "Open-End",
+    structure: "Listed / Evergreen",
+    ticker: "PIER11",
   }),
 
   // Patrizia
   f("FUND-172", "Patrizia", "Patrizia European Infrastructure Fund III", "2023", "€1.5B", 1650, "Core-Plus", "Raising", {
-    description: "European core-plus infrastructure fund targeting mid-market essential assets in digital infrastructure, energy transition, and social infrastructure.",
-    sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Social Infrastructure"],
+    description: "European core-plus infrastructure fund targeting mid-cap investments in energy transition, digital infrastructure, social infrastructure, green mobility, and environmental services.",
+    sectors: ["Renewables / Energy Transition", "Digital Infrastructure", "Social Infrastructure", "Transportation", "Waste / Environmental Services"],
     regions: ["Europe"],
   }),
   f("FUND-173", "Patrizia", "APAC Sustainable Infrastructure Fund (A-SIF)", "2022", "$130M", 130, "Value-Add", "Deploying", {
-    description: "Asia-Pacific sustainable infrastructure fund investing in renewable energy and energy transition projects across developed and emerging Asian markets.",
-    sectors: ["Renewables / Energy Transition", "Power Generation"],
+    description: "PATRIZIA and Mitsui's flagship strategy for sustainable mid-market infrastructure in developed Asia-Pacific markets, targeting energy, digital, social, and mobility assets.",
+    sectors: ["Renewables / Energy Transition", "Digital Infrastructure", "Social Infrastructure", "Transportation"],
     regions: ["Asia-Pacific"],
   }),
   f("FUND-174", "Patrizia", "Emerging Asia Sustainable Infrastructure Fund (ESIF)", "2025", "$500M", 500, "Value-Add", "Deploying", {
-    description: "Emerging Asia fund targeting sustainable infrastructure investments in renewable energy, clean water, and social infrastructure across Southeast Asia and India.",
-    sectors: ["Renewables / Energy Transition", "Water", "Social Infrastructure"],
+    description: "Climate-focused fund targeting greenfield sustainable infrastructure in emerging Asian markets including Malaysia, Philippines, Thailand, Vietnam, Indonesia, and India, with EIB as cornerstone investor.",
+    sectors: ["Renewables / Energy Transition", "Digital Infrastructure", "Social Infrastructure"],
     regions: ["Asia-Pacific"],
+    strategies: ["Value-Add", "Greenfield"],
   }),
   f("FUND-175", "Patrizia", "PATRIZIA Infrastructure Invest ELTIF", "2024", "Undisclosed", null, "Core-Plus", "Evergreen", {
-    description: "European Long-Term Investment Fund providing retail investors access to core-plus infrastructure investments in digital, energy transition, and social infrastructure.",
-    sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Social Infrastructure"],
-    regions: ["Europe"],
+    description: "First European Long-Term Investment Fund targeting private and professional investors, investing in infrastructure equity and debt across digital, energy transition, urban mobility, and social infrastructure.",
+    sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation", "Social Infrastructure"],
+    regions: ["Europe", "Global"],
   }),
   f("FUND-176", "Patrizia", "PATRIZIA Low Carbon Core Infrastructure Fund", "2019", "Undisclosed", null, "Core", "Evergreen", {
-    description: "Core infrastructure fund investing in low-carbon and climate-aligned European infrastructure including renewable energy, grid infrastructure, and clean transportation.",
-    sectors: ["Renewables / Energy Transition", "Utilities", "Transportation"],
-    regions: ["Europe"],
+    description: "Listed open-end fund investing in infrastructure and utility companies that can maintain earnings as economies transition to net zero, excluding companies with 10%+ fossil fuel revenue.",
+    sectors: ["Utilities", "Water", "Transportation", "Renewables / Energy Transition"],
+    regions: ["Global"],
     structure: "Open-End",
   }),
 
   // PSP Investments
   f("FUND-177", "PSP Investments", "Canada Growth Fund", "2023", "C$15.0B", 11100, "Value-Add", "Deploying", {
-    description: "Federal government-backed investment vehicle catalyzing private capital into Canadian clean economy projects including clean energy, critical minerals, and low-carbon infrastructure.",
-    sectors: ["Renewables / Energy Transition", "Power Generation", "Transportation"],
+    description: "C$15B independent investment vehicle managed by PSP Investments, investing to unlock private capital for decarbonization, clean technology scale-up, and low-carbon supply chain development across Canada.",
+    sectors: ["Renewables / Energy Transition", "Midstream / Energy", "Power Generation"],
     regions: ["North America"],
     structure: "Permanent Capital",
     strategies: ["Value-Add", "Growth"],
@@ -1428,9 +1431,9 @@ export const funds: Fund[] = [
 
   // QIC Global Infrastructure
   f("FUND-178", "QIC Global Infrastructure", "QIC Global Infrastructure Fund II (QGIF II)", "2023", "US$2.0B", 2000, "Core-Plus", "Deploying", {
-    description: "Global infrastructure fund managed by Queensland's sovereign wealth fund, investing in essential transportation, utilities, and energy assets in developed markets.",
-    sectors: ["Transportation", "Utilities", "Power Generation"],
-    regions: ["Global"],
+    description: "Second flagship infrastructure equity fund with ~70% allocated to Australian energy transition investments including renewables, smart metering, and transport decarbonization.",
+    sectors: ["Renewables / Energy Transition", "Transportation", "Utilities"],
+    regions: ["Asia-Pacific", "Global"],
   }),
   f("FUND-179", "QIC Global Infrastructure", "QIC Infrastructure Portfolio (QIP)", "2006", "Undisclosed", null, "Core", "Evergreen", {
     description: "Open-end core infrastructure portfolio for Australian institutional investors, targeting regulated and contracted essential infrastructure globally.",
@@ -1439,9 +1442,10 @@ export const funds: Fund[] = [
     structure: "Open-End",
   }),
   f("FUND-180", "QIC Global Infrastructure", "Queensland Critical Minerals and Battery Technology Fund", "2023", "A$100M", 66, "Value-Add", "Deploying", {
-    description: "Queensland government-backed fund investing in critical minerals mining, processing, and battery technology supply chain infrastructure.",
-    sectors: ["Renewables / Energy Transition"],
+    description: "Queensland government fund providing venture/growth capital to businesses across the critical minerals and battery technology supply chain, from mining to advanced materials processing.",
+    sectors: ["Midstream / Energy", "Renewables / Energy Transition"],
     regions: ["Asia-Pacific"],
+    structure: "Permanent Capital",
   }),
 
   // Quinbrook Infrastructure
@@ -1514,9 +1518,9 @@ export const funds: Fund[] = [
 
   // Stonepeak
   f("FUND-192", "Stonepeak", "Stonepeak Infrastructure Fund V", "2023", "$15.0B", 15000, "Value-Add", "Raising", {
-    description: "Large-cap value-add fund investing in essential infrastructure across digital, energy and power, transportation, and water/waste sectors in North America and globally.",
-    sectors: ["Digital Infrastructure", "Power Generation", "Transportation", "Water", "Renewables / Energy Transition"],
-    regions: ["North America", "Global"],
+    description: "Fifth-generation flagship fund targeting investments in digital infrastructure, energy and energy transition, transportation and logistics, and social infrastructure primarily in North America.",
+    sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation", "Logistics", "Utilities"],
+    regions: ["North America"],
   }),
   f("FUND-193", "Stonepeak", "Stonepeak Global Renewables Fund II", "2024", "$5.0B", 5000, "Core-Plus", "Raising", {
     description: "Dedicated global renewables fund investing in wind, solar, battery storage, and green hydrogen projects with development and operational capabilities.",
@@ -1525,26 +1529,24 @@ export const funds: Fund[] = [
     strategies: ["Core-Plus", "Greenfield"],
   }),
   f("FUND-194", "Stonepeak", "Stonepeak Asia Infrastructure Fund II", "2024", "$4.0B", 4000, "Value-Add", "Raising", {
-    description: "Asia-Pacific infrastructure fund investing in digital, energy, transportation, and utilities assets across developed and emerging Asian markets.",
-    sectors: ["Digital Infrastructure", "Power Generation", "Transportation", "Utilities"],
+    description: "Second Asia-focused fund investing in digital infrastructure, energy, transportation, logistics, and cold storage in developed East Asia, Southeast Asia, and India.",
+    sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation", "Logistics"],
     regions: ["Asia-Pacific"],
   }),
   f("FUND-195", "Stonepeak", "Stonepeak Opportunities Fund", "2022", "$3.15B", 3150, "Value-Add", "Deploying", {
-    description: "Opportunistic fund targeting complex infrastructure situations including distressed assets, special situations, and structured capital solutions across North America.",
-    sectors: ["Power Generation", "Digital Infrastructure", "Transportation", "Midstream / Energy"],
-    regions: ["North America"],
-    strategies: ["Value-Add", "Opportunistic"],
+    description: "Mid-market opportunities fund targeting core-plus and value-add infrastructure investments including control positions and structured capital solutions in communications, transport/logistics, and energy transition.",
+    sectors: ["Communications", "Transportation", "Logistics", "Renewables / Energy Transition"],
+    regions: ["North America", "Europe"],
   }),
   f("FUND-196", "Stonepeak", "Stonepeak Opportunities Fund II", "2024", "~$3.0B", 3000, "Value-Add", "Raising", {
-    description: "Successor opportunistic fund continuing Stonepeak's strategy of investing in complex, special situation infrastructure opportunities across energy, digital, and transport.",
-    sectors: ["Power Generation", "Digital Infrastructure", "Transportation"],
-    regions: ["North America"],
-    strategies: ["Value-Add", "Opportunistic"],
+    description: "Successor mid-market infrastructure fund continuing Stonepeak's strategy of targeting core-plus and value-add opportunities in communications, transport/logistics, and energy transition.",
+    sectors: ["Communications", "Transportation", "Logistics", "Renewables / Energy Transition"],
+    regions: ["North America", "Europe"],
   }),
   f("FUND-197", "Stonepeak", "Stonepeak Core Fund", "2021", "$3.1B+", 3100, "Core", "Evergreen", {
-    description: "Open-end core fund targeting essential infrastructure with long-term contracted or regulated revenue streams in digital, energy, and transportation assets.",
-    sectors: ["Digital Infrastructure", "Power Generation", "Transportation", "Utilities"],
-    regions: ["North America"],
+    description: "Open-ended core infrastructure fund with $3.7B+ AUM, targeting developed-market assets with long-term inflation-linked revenue streams across digital infrastructure, transportation/logistics, and energy transition.",
+    sectors: ["Digital Infrastructure", "Transportation", "Logistics", "Renewables / Energy Transition"],
+    regions: ["Global"],
     structure: "Open-End",
   }),
 
