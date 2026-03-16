@@ -9,6 +9,7 @@ import {
   getStrategyColor,
   getStatusColor,
   getSizeRangeColor,
+  getFundSectorColor,
   matchesSizeRange,
   groupFundsByManager,
   getFundStats,
@@ -18,6 +19,8 @@ import type {
   FundStrategy,
   FundStatus,
   FundSizeRange,
+  FundSector,
+  PortfolioCompany,
 } from "@/data/funds";
 import {
   Search,
@@ -788,6 +791,38 @@ function FundDrawer({
     (f) => f.managerName === fund.managerName && f.id !== fund.id
   );
 
+  // Aggregate all portfolio companies across the firm (all funds for this manager)
+  const firmFunds = [fund, ...siblingFunds];
+  const firmPortfolio = useMemo(() => {
+    const companiesByFund: { company: PortfolioCompany; fundName: string; strategies: FundStrategy[] }[] = [];
+    for (const ff of firmFunds) {
+      for (const pc of ff.portfolioCompanies) {
+        companiesByFund.push({ company: pc, fundName: ff.fundName, strategies: ff.strategies });
+      }
+    }
+    // Group by sector → subsector
+    const bySector: Record<string, Record<string, { company: PortfolioCompany; fundName: string; strategies: FundStrategy[] }[]>> = {};
+    for (const entry of companiesByFund) {
+      const sector = entry.company.sector;
+      const subsector = entry.company.subsector || "General";
+      if (!bySector[sector]) bySector[sector] = {};
+      if (!bySector[sector][subsector]) bySector[sector][subsector] = [];
+      bySector[sector][subsector].push(entry);
+    }
+    // Sort sectors by company count (desc), subsectors alphabetically
+    const sortedSectors = Object.entries(bySector)
+      .map(([sector, subsectors]) => ({
+        sector: sector as FundSector,
+        subsectors: Object.entries(subsectors)
+          .map(([sub, entries]) => ({ subsector: sub, entries: entries.sort((a, b) => a.company.name.localeCompare(b.company.name)) }))
+          .sort((a, b) => a.subsector.localeCompare(b.subsector)),
+        count: Object.values(subsectors).reduce((sum, arr) => sum + arr.length, 0),
+      }))
+      .sort((a, b) => b.count - a.count);
+    return { sectors: sortedSectors, total: companiesByFund.length };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fund.id, siblingFunds.length]);
+
   return (
     <>
       <div
@@ -863,10 +898,81 @@ function FundDrawer({
             </div>
           </div>
 
-          {/* Description */}
+          {/* Description — strip inline Portfolio section since we show it below */}
           <div>
-            <p className="text-sm-dense text-[#A1A1AA] leading-relaxed">{fund.description}</p>
+            <p className="text-sm-dense text-[#A1A1AA] leading-relaxed whitespace-pre-line">
+              {fund.description.split("\nPortfolio:")[0].trim()}
+            </p>
           </div>
+
+          {/* Portfolio Companies */}
+          {firmPortfolio.total > 0 && (
+            <div className="border-t border-[#27272A] pt-4">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                  Portfolio Companies
+                </span>
+                <span className="text-micro text-[#52525B]">
+                  {firmPortfolio.total} {firmPortfolio.total === 1 ? "company" : "companies"}
+                </span>
+              </div>
+              <div className="space-y-4">
+                {firmPortfolio.sectors.map(({ sector, subsectors, count }) => (
+                  <div key={sector}>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span
+                        className="text-xs-dense font-medium px-2 py-0.5 rounded-[4px]"
+                        style={{
+                          color: getFundSectorColor(sector),
+                          backgroundColor: `${getFundSectorColor(sector)}1a`,
+                          border: `1px solid ${getFundSectorColor(sector)}33`,
+                        }}
+                      >
+                        {sector}
+                      </span>
+                      <span className="text-micro text-[#52525B]">{count}</span>
+                    </div>
+                    <div className="space-y-2 ml-1">
+                      {subsectors.map(({ subsector, entries }) => (
+                        <div key={subsector}>
+                          <span className="text-micro text-[#52525B] uppercase tracking-wider">{subsector}</span>
+                          <div className="mt-1 space-y-1">
+                            {entries.map(({ company, fundName, strategies }) => (
+                              <div
+                                key={`${company.name}-${fundName}`}
+                                className="glass-card rounded-[4px] px-3 py-2 flex items-start justify-between gap-2"
+                              >
+                                <div className="min-w-0">
+                                  <div className="text-sm-dense text-[#EDEDED]">{company.name}</div>
+                                  <div className="text-micro text-[#52525B] mt-0.5">
+                                    {company.country}{firmFunds.length > 1 ? ` · ${fundName}` : ""}
+                                  </div>
+                                </div>
+                                <div className="flex gap-1 shrink-0 flex-wrap justify-end">
+                                  {strategies.slice(0, 1).map((s) => (
+                                    <span
+                                      key={s}
+                                      className="text-micro px-1.5 py-0.5 rounded-[4px]"
+                                      style={{
+                                        color: getStrategyColor(s),
+                                        backgroundColor: `${getStrategyColor(s)}1a`,
+                                      }}
+                                    >
+                                      {s}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Sibling funds */}
           {siblingFunds.length > 0 && (
