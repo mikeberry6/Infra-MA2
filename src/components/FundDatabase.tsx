@@ -865,7 +865,7 @@ function FundDrawer({
 
           {/* Description */}
           <div>
-            <p className="text-sm-dense text-[#A1A1AA] leading-relaxed">{fund.description}</p>
+            <p className="text-sm-dense text-[#A1A1AA] leading-relaxed whitespace-pre-line">{fund.description}</p>
           </div>
 
           {/* Sibling funds */}
