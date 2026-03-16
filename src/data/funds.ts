@@ -1309,7 +1309,7 @@ export const funds: Fund[] = [
     sectors: ["Waste / Environmental Services", "Water", "Renewables / Energy Transition", "Transportation", "Digital Infrastructure"],
     regions: ["Global"],
     structure: "Open-End",
-    strategyUrl: "https://www.firstsentierinvestors.com.au/au/en/institutional/footer/media-releases/gdif-green-loan.html",
+    strategyUrl: "https://www.igneoip.com/australia/en/institutional/news-and-insights/press/igneo-invests-in-recycle-central-group.html",
   }),
   // Source: https://www.igneoip.com/europe/en/institutional/our-offering/north-american-middle-market-infrastructure.html | https://pitchbook.com/profiles/fund/25885-27F
   f("FUND-121", "Igneo Infrastructure Partners", "North American Diversified Infrastructure Fund (NADIF)", "2024", "$1.0B", 1000, "Core-Plus", "Evergreen", {
