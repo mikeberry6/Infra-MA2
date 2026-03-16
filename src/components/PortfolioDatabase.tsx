@@ -858,7 +858,7 @@ export function PortfolioDatabase() {
             Portfolio Database
           </h1>
           <p className="text-xs-dense text-[#52525B]">
-            Infrastructure fund portfolio companies &mdash; filter by sector, region, country, and fund manager.
+            Infrastructure fund portfolio companies. Filter by sector, region, country, and fund manager.
           </p>
         </div>
         <div className="hidden sm:flex items-center gap-6 text-xs-dense">
