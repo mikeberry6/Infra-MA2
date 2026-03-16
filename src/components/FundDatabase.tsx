@@ -32,6 +32,7 @@ import {
   Briefcase,
   LayoutList,
   Users,
+  ExternalLink,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
 
@@ -896,6 +897,19 @@ function FundDrawer({
               </div>
             </div>
           </div>
+
+          {/* Strategy URL */}
+          {fund.strategyUrl && (
+            <a
+              href={fund.strategyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-micro font-medium text-[#A1A1AA] hover:text-[#EDEDED] transition-colors"
+            >
+              Learn more about fund strategy
+              <ExternalLink className="h-3 w-3" />
+            </a>
+          )}
 
           {/* Description — strip inline Portfolio section since we show it below */}
           <div>
