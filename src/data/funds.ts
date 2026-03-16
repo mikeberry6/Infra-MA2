@@ -342,7 +342,7 @@ export const funds: Fund[] = [
     regions: ["Europe", "North America", "Asia-Pacific"],
     structure: "Listed / Evergreen",
     ticker: "3IN.L",
-    strategyUrl: "https://www.3i-infrastructure.com",
+    strategyUrl: "https://www.3i-infrastructure.com/investors",
   }),
   // Source: https://www.3i.com/infrastructure/our-funds/ | https://pitchbook.com/profiles/fund/21142-54F
   f("FUND-002", "3i Group", "3i North American Infrastructure Fund", "2022", "$739M", 739, "Core-Plus", "Deploying", {
@@ -358,7 +358,7 @@ export const funds: Fund[] = [
     description: "Emerging manager focused on climate-aligned infrastructure investments in underserved US communities, targeting clean energy and environmental resilience projects.\nPortfolio:\nRenewables / Energy Transition: JVR Energy Park (Solar), Peregrine Energy Storage (Battery Storage), Pivot Energy Portfolio (Community Solar), Project Soho (Solar), Stillhouse Solar Project (Solar)",
     sectors: ["Renewables / Energy Transition", "Utilities", "Social Infrastructure"],
     regions: ["North America"],
-    strategyUrl: "https://www.acadiainfrastructure.com",
+    strategyUrl: "https://www.prnewswire.com/news-releases/acadia-infrastructure-capital-launches-investment-platform-to-accelerate-us-energy-transition-301987696.html",
   }),
   // Source: https://www.prnewswire.com/news-releases/acadia-infrastructure-capital-launches-climate-and-communities-investment-coalition-with-microsoft-302328219.html | https://esgnews.com/microsoft-acadia-launch-climate-investment-coalition-backing-9b-in-renewable-projects/
   f("FUND-004", "Acadia Infrastructure Capital", "Climate and Communities Investment Coalition", "2024", "$9.0B", 9000, "Core-Plus", "Deploying", {
@@ -686,7 +686,7 @@ export const funds: Fund[] = [
     description: "Successor fund continuing Basalt's mid-market strategy investing in essential infrastructure businesses across transportation, utilities, and energy in developed markets.",
     sectors: ["Transportation", "Utilities", "Renewables / Energy Transition", "Digital Infrastructure"],
     regions: ["North America", "Europe", "Asia-Pacific"],
-    strategyUrl: "https://www.basaltinfra.com",
+    strategyUrl: "https://realassets.ipe.com/news/basalt-infrastructure-fund-secures-200m-from-south-carolina-retirement/10135680.article",
   }),
 
   // Bernhard Capital Partners
@@ -750,7 +750,7 @@ export const funds: Fund[] = [
     description: "Emerging markets infrastructure fund investing in energy, transportation, and digital assets in high-growth developing economies across Asia, Latin America, and the Middle East.",
     sectors: ["Power Generation", "Transportation", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["Asia-Pacific", "Latin America", "Middle East & Africa"],
-    strategyUrl: "https://www.global-infra.com",
+    strategyUrl: "https://www.infrastructureinvestor.com/gip-seeks-more-than-6bn-for-emerging-markets",
   }),
   // Source: https://www.global-infra.com/news/gip-australia-fund-ii-announces-a4-0-billion-final-closing/ | https://www.businesswire.com/news/home/20240409033295/en/GIP-Australia-Fund-II-Announces-A%244.0-Billion-Final-Closing
   f("FUND-052", "BlackRock (GIP)", "GIP Australia Fund II", "2024", "A$4.0B", 2640, "Core-Plus", "Deploying", {
@@ -1154,7 +1154,7 @@ export const funds: Fund[] = [
     sectors: ["Renewables / Energy Transition", "Water", "Waste / Environmental Services", "Transportation"],
     regions: ["North America"],
     structure: "Permanent Capital",
-    strategyUrl: "https://generatecapital.com",
+    strategyUrl: "https://www.cnbc.com/2021/07/19/generate-capital-raises-2-billion-for-sustainable-infrastructure-investments.html",
   }),
   // Source: https://generatecapital.com/ | https://www.esgtoday.com/generate-capital-raises-1-5-billion-for-sustainable-infrastructure-investments/
   f("FUND-102", "Generate Capital", "Generate Capital Sustainable Infrastructure Fund", "2024", "$1.5B", 1500, "Value-Add", "Deploying", {
@@ -1243,7 +1243,7 @@ export const funds: Fund[] = [
     description: "Dedicated energy transition fund investing in renewable energy, energy storage, grid infrastructure, and clean transportation globally.",
     sectors: ["Renewables / Energy Transition", "Power Generation", "Transportation"],
     regions: ["Global"],
-    strategyUrl: "https://isquaredcapital.com/strategies",
+    strategyUrl: "https://isquaredcapital.com/cpt_news/i-squared-to-invest-200-million-for-last-mile-electric-grid-infrastructure-in-the-uk",
   }),
 
   // iCON Infrastructure
@@ -1350,7 +1350,7 @@ export const funds: Fund[] = [
     regions: ["Europe", "North America"],
     structure: "Listed / Evergreen",
     ticker: "HICL.L",
-    strategyUrl: "https://www.hicl.com",
+    strategyUrl: "https://www.hicl.com/about-hicl/company-overview",
   }),
   // Source: https://www.trig-ltd.com/about-us/ | https://en.wikipedia.org/wiki/The_Renewables_Infrastructure_Group
   f("FUND-126", "InfraRed Capital Partners", "The Renewables Infrastructure Group (TRIG)", "2013", "~£1.9B", 2470, "Core-Plus", "Evergreen", {
@@ -1673,7 +1673,7 @@ export const funds: Fund[] = [
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["Europe"],
     strategies: ["Value-Add", "Greenfield"],
-    strategyUrl: "https://www.glennmont.com",
+    strategyUrl: "https://renews.biz/94693/nuveen-closes-fourth-clean-energy-strategy",
   }),
   // Source: https://www.glennmont.com/glennmont-and-mn-launch-e700m-evergreen-strategy-to-invest-in-renewable-energy/ | https://pitchbook.com/profiles/fund/22433-23F
   f("FUND-165", "Nuveen Infrastructure", "Nuveen European Core Renewable Infrastructure (NECRI)", "2022", "€700M", 770, "Core", "Evergreen", {
@@ -1916,7 +1916,7 @@ export const funds: Fund[] = [
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["Global"],
     strategies: ["Core-Plus", "Greenfield"],
-    strategyUrl: "https://stonepeak.com",
+    strategyUrl: "https://www.infrastructureinvestor.com/stonepeak-to-target-5bn-for-second-renewables-fund-exclusive",
   }),
   // Source: https://stonepeak.com/news/stonepeak-closes-asia-infrastructure-fund-with-3-3-billion-of-commitments | https://pitchbook.com/profiles/fund/29020-24F (note: this is the PitchBook for Fund II, not Fund I)
   f("FUND-194", "Stonepeak", "Stonepeak Asia Infrastructure Fund II", "2024", "$4.0B", 4000, "Value-Add", "Raising", {
@@ -1985,7 +1985,7 @@ export const funds: Fund[] = [
     description: "Debut fund from I Squared Capital spinout targeting operationally intensive, value-add investments in lower middle-market infrastructure across North America, with platforms in small-craft aviation, marine services, and data centers.\nPortfolio:\nDigital Infrastructure: TRG Datacenters (Data Centers)\nTransportation: Donjon Marine Co., LLC (Maritime Services), Velocity FBO Network (Odyssey Aviation / BTR Jet) (FBO / Aviation)",
     sectors: ["Transportation", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["North America"],
-    strategyUrl: "https://www.tallvinepartners.com",
+    strategyUrl: "https://www.themiddlemarket.com/news-analysis/tallvine-raising-1-5b-for-debut-fund-as-infra-spinouts-gather-pace",
   }),
 
   // Temasek
@@ -2034,7 +2034,7 @@ export const funds: Fund[] = [
     description: "Specialized digital infrastructure fund investing in wireless communications towers, fiber networks, spectrum assets, small cells, and distributed antenna systems across the United States.",
     sectors: ["Digital Infrastructure", "Communications"],
     regions: ["North America"],
-    strategyUrl: "https://www.peppertreecapital.com",
+    strategyUrl: "https://realassets.ipe.com/news/peppertree-capital-raises-11bn-for-digital-infrastructure-fund/10070683.article",
   }),
 
   // True Green Capital
@@ -2052,7 +2052,7 @@ export const funds: Fund[] = [
     sectors: ["Renewables / Energy Transition"],
     regions: ["North America", "Europe"],
     strategies: ["Value-Add", "Greenfield"],
-    strategyUrl: "https://truegreencapital.com",
+    strategyUrl: "https://realassets.ipe.com/news/virginia-retirement-invests-100m-in-true-green-infrastructure-fund/10130119.article",
   }),
 
   // Vauban Infrastructure Partners
