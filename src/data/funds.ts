@@ -668,9 +668,9 @@ export const funds: Fund[] = [
 
   // Blackstone
   f("FUND-055", "Blackstone", "Blackstone Infrastructure Partners (BIP)", "2017", "~$51.0B", 51000, "Core-Plus", "Evergreen", {
-    description: "Permanent capital platform investing in large-scale core-plus infrastructure assets across energy, transportation, digital, and water/waste sectors globally.",
-    sectors: ["Power Generation", "Transportation", "Digital Infrastructure", "Water", "Renewables / Energy Transition"],
-    regions: ["Global"],
+    description: "Open-ended permanent capital vehicle investing in large-scale infrastructure assets across energy, transportation, digital, and water/waste sectors, applying an operationally intensive buy-and-hold approach.",
+    sectors: ["Power Generation", "Transportation", "Digital Infrastructure", "Water", "Renewables / Energy Transition", "Utilities", "Midstream / Energy", "Communications"],
+    regions: ["North America", "Europe"],
     structure: "Permanent Capital",
   }),
   f("FUND-056", "Blackstone", "Blackstone Energy Transition Partners V", "2025", "Undisclosed", null, "Value-Add", "Raising", {
@@ -686,8 +686,8 @@ export const funds: Fund[] = [
 
   // Brookfield Asset Management
   f("FUND-058", "Brookfield Asset Management", "Brookfield Infrastructure Fund V (BIF V)", "2022", "$30.0B", 30000, "Value-Add", "Deploying", {
-    description: "Flagship value-add fund investing in large-scale infrastructure businesses across utilities, transportation, midstream, and data infrastructure globally.",
-    sectors: ["Utilities", "Transportation", "Midstream / Energy", "Digital Infrastructure"],
+    description: "World's largest closed-end private infrastructure fund targeting high-quality essential assets driven by digitalization, decarbonization, and deglobalization themes globally.",
+    sectors: ["Utilities", "Transportation", "Midstream / Energy", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["Global"],
   }),
   f("FUND-059", "Brookfield Asset Management", "Brookfield Super-Core Infrastructure Partners", "2018", "$15.5B", 15500, "Core", "Evergreen", {
@@ -722,8 +722,8 @@ export const funds: Fund[] = [
 
   // Carlyle Infrastructure
   f("FUND-064", "Carlyle Infrastructure", "Carlyle Global Infrastructure Opportunity Fund II", "2024", "$3.0B", 3000, "Value-Add", "Deploying", {
-    description: "Value-add fund targeting mid-market infrastructure businesses in energy, power, renewables, and transport across North America and Europe with active operational management.",
-    sectors: ["Power Generation", "Renewables / Energy Transition", "Transportation", "Utilities"],
+    description: "Value-add fund targeting middle-market essential infrastructure businesses across OECD markets, with a focus on building and scaling platforms in transportation, digital, renewables, and midstream energy.",
+    sectors: ["Transportation", "Digital Infrastructure", "Renewables / Energy Transition", "Midstream / Energy", "Logistics"],
     regions: ["North America", "Europe"],
   }),
   f("FUND-065", "Carlyle Infrastructure", "Carlyle Renewable & Sustainable Energy Fund II", "2022", "$2.0B", 2000, "Value-Add", "Deploying", {
@@ -741,8 +741,8 @@ export const funds: Fund[] = [
 
   // CIM Group
   f("FUND-067", "CIM Group", "CIM Infrastructure Fund III", "2021", "$1.76B", 1760, "Value-Add", "Deploying", {
-    description: "Value-add fund investing in digital infrastructure, renewable energy, and transportation assets across North America with hands-on development capabilities.",
-    sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation"],
+    description: "Value-add fund investing in assets supporting the optimization, sustainability, and digitalization of infrastructure underpinning North American communities, including renewables, waste-to-value, and data centers.",
+    sectors: ["Renewables / Energy Transition", "Digital Infrastructure", "Waste / Environmental Services", "Transportation", "Social Infrastructure"],
     regions: ["North America"],
   }),
 
@@ -791,7 +791,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-075", "CVC DIF", "DIF Infrastructure VII", "2022", "€4.40B", 4840, "Core", "Deploying", {
     description: "Core infrastructure fund investing in contracted and regulated essential assets in European energy, PPP/social infrastructure, and telecom with availability-based revenues.",
-    sectors: ["Renewables / Energy Transition", "Social Infrastructure", "Communications", "Transportation"],
+    sectors: ["Renewables / Energy Transition", "Social Infrastructure", "Communications", "Transportation", "Utilities", "Water"],
     regions: ["Europe", "North America"],
   }),
   f("FUND-076", "CVC DIF", "DIF Core-Plus Infrastructure Fund III (CIF III)", "2022", "€1.60B", 1760, "Core-Plus", "Deploying", {
@@ -851,8 +851,8 @@ export const funds: Fund[] = [
 
   // Ember Infrastructure
   f("FUND-085", "Ember Infrastructure", "Ember Infrastructure Fund II", "2024", "$831M", 831, "Value-Add", "Deploying", {
-    description: "Mid-market fund investing in essential North American infrastructure services businesses across utilities, environmental services, and transportation.",
-    sectors: ["Utilities", "Waste / Environmental Services", "Transportation"],
+    description: "Middle-market platform delivering capital solutions to businesses that reduce carbon intensity and enhance resource efficiency across energy, water, waste, and industrial infrastructure.",
+    sectors: ["Renewables / Energy Transition", "Water", "Waste / Environmental Services", "Power Generation"],
     regions: ["North America"],
   }),
 
@@ -900,9 +900,9 @@ export const funds: Fund[] = [
 
   // EQT Infrastructure
   f("FUND-093", "EQT Infrastructure", "EQT Infrastructure VI", "2023", "€21.5B", 23650, "Value-Add", "Deploying", {
-    description: "Flagship large-cap infrastructure fund investing in digital infrastructure, energy, transportation, and social infrastructure with thematic operational improvement in Europe and North America.",
-    sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation", "Social Infrastructure"],
-    regions: ["Europe", "North America"],
+    description: "Largest-ever European infrastructure fund making control-oriented value-add investments in digital, energy/environmental, transport/logistics, and social infrastructure across Europe, North America, and Asia-Pacific.",
+    sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation", "Logistics", "Social Infrastructure", "Waste / Environmental Services"],
+    regions: ["North America", "Europe", "Asia-Pacific"],
   }),
   f("FUND-094", "EQT Infrastructure", "EQT Active Core Infrastructure I", "2022", "€2.9B", 3190, "Core", "Deploying", {
     description: "Long-hold core infrastructure fund targeting essential regulated and contracted assets in utilities, renewables, and transport across Europe with active ownership.",
@@ -934,13 +934,13 @@ export const funds: Fund[] = [
 
   // Fengate Asset Management
   f("FUND-099", "Fengate Asset Management", "Fengate Infrastructure Fund IV", "2021", "$1.1B", 1100, "Value-Add", "Deploying", {
-    description: "Canadian mid-market infrastructure fund investing in renewable energy, social infrastructure, and essential services across North America with development capabilities.",
-    sectors: ["Renewables / Energy Transition", "Social Infrastructure", "Utilities"],
+    description: "North American mid-market fund investing as a control investor with a developer mindset in energy transition, digital, social, and transportation infrastructure.",
+    sectors: ["Renewables / Energy Transition", "Digital Infrastructure", "Social Infrastructure", "Transportation"],
     regions: ["North America"],
   }),
   f("FUND-100", "Fengate Asset Management", "Fengate Infrastructure Yield Fund", "2019", "$1.22B", 1220, "Core", "Evergreen", {
-    description: "Open-end yield-focused fund investing in operating Canadian and North American infrastructure assets with contracted revenues including renewables and PPP social infrastructure.",
-    sectors: ["Renewables / Energy Transition", "Social Infrastructure"],
+    description: "Core open-ended fund providing stable income through investments in operational North American infrastructure assets across energy transition, digital, social, and transportation sectors.",
+    sectors: ["Renewables / Energy Transition", "Digital Infrastructure", "Social Infrastructure", "Transportation"],
     regions: ["North America"],
     structure: "Open-End",
   }),
