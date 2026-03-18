@@ -335,7 +335,7 @@ function f(
   };
 }
 
-// ─── Fund Manifest (155 funds) ──────────────────────────────
+// ─── Fund Manifest (160 funds) ──────────────────────────────
 // FUND-001: 3i Infrastructure plc (3i Group)
 // FUND-002: 3i North American Infrastructure Fund (3i Group)
 // FUND-003: ADIA Direct Infrastructure (Abu Dhabi Investment Authority)
@@ -491,6 +491,11 @@ function f(
 // FUND-153: Sustainable Asset Fund IV (SAF IV) (Vision Ridge Partners)
 // FUND-154: Wafra Real Assets & Infrastructure Fund II (Wafra Inc.)
 // FUND-155: Wafra Real Assets & Infrastructure Platform (SMA) (Wafra Inc.)
+// FUND-157: Axium Infrastructure Canada II L.P. (Axium Infrastructure)
+// FUND-158: AxInfra US L.P. (Axium Infrastructure)
+// FUND-161: AxInfra US II L.P. (Axium Infrastructure)
+// FUND-164: AxInfra US III L.P. (Axium Infrastructure)
+// FUND-166: Axium Infrastructure NA IV L.P. (Axium Infrastructure)
 // ─── End Manifest ──────────────────────────────────────────
 
 export const funds: Fund[] = [
@@ -1940,6 +1945,53 @@ export const funds: Fund[] = [
     structure: "Permanent Capital",
     strategyUrl: "https://www.wafra.com/our-strategies/real-assets/",
   }),
+
+  // ── Axium Infrastructure ────────────────────────────────
+  f("FUND-157", "Axium Infrastructure", "Axium Infrastructure Canada II L.P.", "2012", "C$891M", 660, "Core", "Evergreen", {
+    description: "Open-ended core infrastructure fund (formerly Fiera Axium Infrastructure Canada II L.P.) focused exclusively on Canadian assets. Part of the broader AxInfra NA II platform alongside AxInfra US II, investing in high-quality operational and greenfield infrastructure with stable, long-term contracted cash flows across energy, transportation, and social sectors.",
+    investmentStrategy: "Targets core Canadian infrastructure under long-term contract, regulated frameworks, or concession-based structures, targeting a net IRR of 7–9% with 3–5% cash yield. Sectors include renewable power (wind and solar), social PPP assets (correctional facilities, long-term care homes), and regulated transportation, with strict single-asset concentration limits.",
+    sourceUrls: ["https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_Recurrent-Fiera-Axium-news-release-EN.pdf", "https://www.axiuminfra.com/wp-content/uploads/2024/12/Axium_News-Release_Quality-and-PDN-Wind-Projects-closing_Vf.pdf"],
+    sectors: ["Renewables / Energy Transition", "Social Infrastructure", "Transportation", "Utilities"],
+    regions: ["North America"],
+    structure: "Open-End",
+    strategyUrl: "https://www.axiuminfra.com/wp-content/uploads/2024/12/Axium_News-Release_Quality-and-PDN-Wind-Projects-closing_Vf.pdf",
+  }),
+  f("FUND-158", "Axium Infrastructure", "AxInfra US L.P.", "2013", "Undisclosed", null, "Core", "Evergreen", {
+    description: "Axium's original open-ended US infrastructure fund (formerly Fiera Axium Infrastructure US L.P.), launched in 2013 as the firm expanded its investment mandate into the United States. Invests exclusively in operational US infrastructure assets under long-term offtake agreements or regulated frameworks.",
+    investmentStrategy: "Targets mid-market core US infrastructure assets across renewable energy (wind, solar), network utilities, electric transmission, and essential transportation. Operates as an open-ended evergreen vehicle with no fixed term, co-investing alongside operating partners and targeting net returns of 7–9% with 3–5% current cash yield.",
+    sourceUrls: ["https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_FAI-EDPR-Wheat-Field-News-Release-2013-09-10-EN.pdf", "https://www.axiuminfra.com/wp-content/uploads/2024/12/Axium_News-Release_Quality-and-PDN-Wind-Projects-closing_Vf.pdf"],
+    sectors: ["Renewables / Energy Transition", "Transportation", "Utilities"],
+    regions: ["North America"],
+    structure: "Open-End",
+    strategyUrl: "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_FAI-EDPR-Wheat-Field-News-Release-2013-09-10-EN.pdf",
+  }),
+  f("FUND-161", "Axium Infrastructure", "AxInfra US II L.P.", "2017", "$7.1B", 7100, "Core", "Evergreen", {
+    description: "Second-generation US open-ended core infrastructure fund forming the primary US-denominated vehicle within the $7.1B AxInfra NA II platform alongside Axium Infrastructure Canada II L.P. Attracted significant institutional commitments from pension plans including Kansas PERS ($100M) and Connecticut CRPTF ($150M).",
+    investmentStrategy: "Invests in core North American infrastructure assets (96% US, 4% Canada) with a diversified portfolio of 250+ individual assets across renewable power (39%), network utilities (34%), transportation (13%), conventional power (9%), and social infrastructure (5%). Targets net IRR of 7–9% with 3–5% cash yield, with concentration limits of no more than 20% of commitments or $75M per single asset.",
+    sourceUrls: ["https://www.infrastructureinvestor.com/axium-infrastructure-outlines-plan-for-first-co-investment-fund/", "https://www.sec.gov/Archives/edgar/data/1716753/000171675320000001/xslFormDX01/primary_doc.xml"],
+    sectors: ["Renewables / Energy Transition", "Utilities", "Transportation", "Social Infrastructure", "Power Generation"],
+    regions: ["North America"],
+    structure: "Open-End",
+    strategyUrl: "https://www.infrastructureinvestor.com/axium-infrastructure-outlines-plan-for-first-co-investment-fund/",
+  }),
+  f("FUND-164", "Axium Infrastructure", "AxInfra US III L.P.", "2021", "$114M", 114, "Core", "Deploying", {
+    description: "Third-generation US open-ended core infrastructure fund registered with the SEC in 2021. Channels LP capital into the master US infrastructure portfolio (AIUS LP), providing exposure to a diversified set of 250+ operational North American infrastructure assets.",
+    investmentStrategy: "Targets core US infrastructure assets across renewable energy, network utilities, transportation, and social infrastructure, with 100% of capital deployed into the US country-level fund. Investments are made in operational assets under long-term contracts with creditworthy counterparties, targeting net IRR of 7–9% with a 3–5% cash yield component. Article 8 SFDR-compliant.",
+    sourceUrls: ["https://www.sec.gov/Archives/edgar/data/1884031/000188403121000001/0001884031-21-000001-index.html", "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BDEBFA23A-6D6A-4C97-B954-059077F511D1%7D"],
+    sectors: ["Renewables / Energy Transition", "Utilities", "Transportation", "Social Infrastructure"],
+    regions: ["North America"],
+    structure: "Open-End",
+    strategyUrl: "https://www.sec.gov/Archives/edgar/data/1884031/000188403121000001/0001884031-21-000001-index.html",
+  }),
+  f("FUND-166", "Axium Infrastructure", "Axium Infrastructure NA IV L.P.", "2016", "$1.35B", 1350, "Core", "Evergreen", {
+    description: "Open-ended North American core infrastructure fund with its date of first sale on March 18, 2016, and subsequent capital raises reaching approximately $1.35B. A multi-LP pooled vehicle providing pan-North American core infrastructure exposure, managed by Axium Infrastructure Inc. from Montreal.",
+    investmentStrategy: "Invests in core North American energy, transportation, and social infrastructure assets, emphasizing operational brownfield assets under long-term contract, regulated frameworks, or concession structures. Open-ended evergreen vehicle with no fixed term, Article 8 SFDR-compliant, with investments in energy generation, transmission, and essential services across the US and Canada.",
+    sourceUrls: ["https://www.sec.gov/Archives/edgar/data/1671710/000167171019000001/xslFormDX01/primary_doc.xml", "https://www.axiuminfra.com/wp-content/uploads/2023/06/Principal-Adverse-Impact-Statement-EN.pdf"],
+    sectors: ["Renewables / Energy Transition", "Utilities", "Transportation", "Social Infrastructure"],
+    regions: ["North America"],
+    structure: "Open-End",
+    strategyUrl: "https://www.axiuminfra.com/wp-content/uploads/2023/06/Principal-Adverse-Impact-Statement-EN.pdf",
+  }),
 ];
 
 // ─── Build-Time Data Validation ─────────────────────────────
@@ -1947,7 +1999,7 @@ export const funds: Fund[] = [
 function validateFundData(): void {
   const errors: string[] = [];
   const idSet = new Set<string>();
-  const EXPECTED_COUNT = 155;
+  const EXPECTED_COUNT = 160;
 
   for (const fund of funds) {
     // Unique IDs
