@@ -1244,7 +1244,7 @@ export const funds: Fund[] = [
   // ── H.I.G. Capital ─────────────────────────────────────────
   f("FUND-082", "H.I.G. Capital", "H.I.G. Infrastructure Partners Fund I", "2021", "$1.3B", 1300, "Value-Add", "Deploying", {
     description: "A 2024-vintage dedicated private equity infrastructure fund actively targeting NA/EU middle-market assets. Raised $1.3 billion for infrastructure investments spanning energy, transport, and environmental services.",
-    investmentStrategy: "A 2024-vintage dedicated private equity infrastructure fund actively targeting NA/EU middle-market assets.",
+    investmentStrategy: "Targets middle-market infrastructure equity investments across energy (clean and renewable), transportation, and telecommunications in North America and Europe, applying a value-add and core-plus approach that leverages H.I.G.'s operational expertise to reposition and grow assets. Pursues control-oriented stakes in 12–15 companies with a strong orientation toward low-carbon and sustainable infrastructure.",
     sourceUrls: ["https://hig.com/news/h-i-g-capital-raises-1-3-billion-for-infrastructure-fund/"],
     sectors: ["Renewables / Energy Transition", "Transportation", "Utilities"],
     regions: ["North America", "Europe"],
@@ -1255,7 +1255,7 @@ export const funds: Fund[] = [
   // ── Harbert Management Corporation ────────────────────────
   f("FUND-083", "Harbert Management Corporation", "Harbert Infrastructure Fund VI", "2019", "$905M", 905, "Core-Plus", "Deploying", {
     description: "Classic closed-end primary infrastructure equity fund strictly focused on North American power generation and renewables. Closed at $905M, targeting operational power and energy assets.",
-    investmentStrategy: "Classic closed-end primary infrastructure equity fund strictly focused on North American power generation and renewables.",
+    investmentStrategy: "Lower-middle-market fund focused on power and energy infrastructure assets in North America, targeting contracted cash flows across renewable energy, dispatchable generation, and distributed generation. Applies an active asset management approach capitalizing on the decarbonization and electrification transition underway in U.S. power markets.",
     sourceUrls: ["https://www.globenewswire.com/news-release/2022/10/06/2529666/0/en/Harbert-Infrastructure-Fund-VI-LP-Announces-Final-Close.html"],
     sectors: ["Power Generation", "Renewables / Energy Transition"],
     regions: ["North America"],
@@ -1265,7 +1265,7 @@ export const funds: Fund[] = [
   // ── Harrison Street ───────────────────────────────────────
   f("FUND-084", "Harrison Street", "Harrison Street Social Infrastructure Fund", "2018", "$2.45B", 2450, "Core-Plus", "Evergreen", {
     description: "An active, open-ended/evergreen vehicle focused on public-private partnership (P3) infrastructure equity across North America. Targets education, healthcare, and government services infrastructure.",
-    investmentStrategy: "An active, open-ended/evergreen vehicle focused on public-private partnership (P3) infrastructure equity across North America.",
+    investmentStrategy: "Open-ended core infrastructure vehicle targeting highly structured investments in critical assets serving universities, health systems, and government entities, including campus housing, renewable energy, district energy systems, and P3 buildings. Focuses on the lower-to-middle market in North America with long-term contracted revenues (typically 10–45 year weighted average durations), targeting gross returns of 8–10%.",
     sourceUrls: ["https://www.sec.gov/Archives/edgar/data/1744140/000174414023000002/xslFormDX01/primary_doc.xml", "https://www.harrisonst.com/wp-content/uploads/2020/05/HSRE_ESG-Impact_2019.pdf", "https://irei.com/news/harrison-street-launches-open-end-social-infrastructure-fund/"],
     sectors: ["Social Infrastructure"],
     regions: ["North America"],
@@ -1274,7 +1274,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-085", "Harrison Street", "Harrison Street Energy Transition Fund", "2023", "$750M", 750, "Value-Add", "Raising", {
     description: "Primary closed-ended fund established in 2023 targeting value-add energy transition and renewable asset equity in North America.",
-    investmentStrategy: "Primary closed-ended fund established in 2023 targeting value-add energy transition and renewable asset equity in North America.",
+    investmentStrategy: "Closed-end vehicle targeting clean and renewable energy infrastructure in North America, building on Harrison Street's social infrastructure franchise with a focus on decarbonization-driven opportunities such as solar, storage, and other clean energy assets in the lower-to-mid-market energy transition space.",
     sourceUrls: ["https://www.infrastructureinvestor.com/harrison-street-to-launch-750m-energy-transition-fund-exclusive/"],
     sectors: ["Renewables / Energy Transition"],
     regions: ["North America"],
@@ -1282,7 +1282,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-086", "Harrison Street", "Harrison Street Digital Fund", "2024", "$600M", 600, "Value-Add", "Deploying", {
     description: "Newly closed dedicated digital infrastructure fund acquiring North American data center and telecommunications equity. Raised $600 million for data center and connectivity investments.",
-    investmentStrategy: "Newly closed dedicated digital infrastructure fund acquiring North American data center and telecommunications equity.",
+    investmentStrategy: "Focuses exclusively on digital infrastructure development in U.S. markets, deploying capital into data center campuses, powered shells, colocation facilities, carrier hotels, and dark fiber networks. Takes a primary development orientation — targeting new builds with hyperscale and enterprise tenants — leveraging five operating partnerships to access the full digital ecosystem.",
     sourceUrls: ["https://harrisonst.com/harrison-street-closes-600-million-for-digital-asset-investments/"],
     sectors: ["Digital Infrastructure", "Communications"],
     regions: ["North America"],
@@ -1292,7 +1292,7 @@ export const funds: Fund[] = [
   // ── I Squared Capital ─────────────────────────────────────
   f("FUND-087", "I Squared Capital", "ISQ Global Infrastructure Fund IV", "2024", "$15.0B", 15000, "Value-Add", "Raising", {
     description: "Active global infrastructure equity fund targeting value-add investments across North America. ATRS committed $75M. One of the largest infrastructure funds globally targeting digital, energy, and transport assets.",
-    investmentStrategy: "This is an active global infrastructure equity fund targeting value-add investments across North America.",
+    investmentStrategy: "Global value-add strategy targeting middle-market infrastructure assets across power and utilities, digital, transport and logistics, social, and environmental infrastructure, with a primary focus on OECD markets and up to 25% in select growth economies. Deploys capital through build-and-scale platform roll-ups and larger opportunistic acquisitions, growing small platforms into scaled infrastructure businesses.",
     sourceUrls: ["https://www.infrastructureinvestor.com/atrs-commits-75m-to-infrastructure/"],
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation", "Utilities"],
     regions: ["Global", "North America"],
@@ -1300,7 +1300,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-088", "I Squared Capital", "ISQ Energy Transition Infrastructure Fund", "2023", "$719M", 719, "Value-Add", "Deploying", {
     description: "An active, dedicated energy transition equity vehicle making controlling investments in OECD countries including the US. SFDR Article 9 fund. Recently acquired Oregon's premier renewable fuels terminal.",
-    investmentStrategy: "An active, dedicated energy transition equity vehicle making controlling investments in OECD countries including the US.",
+    investmentStrategy: "Dedicated SFDR Article 9 vehicle focused on accelerating the shift to renewable and low-carbon energy, investing in mid-sized platform companies across renewables generation, battery storage, grid stability, clean fuels (including renewable diesel and SAF), distributed generation, and electrification of transport, primarily in North America and Europe.",
     sourceUrls: ["https://pitchbook.com/profiles/fund/23895-19F", "https://www.fundrock-lis.com/media/a2njuroq/isq-etf-sfdr-level-2-article-9-website-disclosures_weil.pdf", "https://www.businesswire.com/news/home/20251216019924/en/I-Squared-Capital-Accelerates-U.S.-Energy-Transition-with-Acquisition-of-Oregons-Premier-Renewable-Fuels-Terminal"],
     sectors: ["Renewables / Energy Transition", "Midstream / Energy"],
     regions: ["North America", "Europe"],
@@ -1310,7 +1310,7 @@ export const funds: Fund[] = [
   // ── ICON Infrastructure ───────────────────────────────────
   f("FUND-089", "ICON Infrastructure", "iCON Infrastructure Partners VII", "2025", "$3.7B", 3700, "Core-Plus", "Deploying", {
     description: "ICON VII is a recently closed, active mid-market core-plus fund focusing on North American and European infrastructure equity. Targets essential services infrastructure across utilities, digital, and transport.",
-    investmentStrategy: "ICON VII fully qualifies as a recently closed, active mid-market core-plus fund focusing on North American and European infrastructure equity.",
+    investmentStrategy: "Core-to-core-plus fund targeting privately held, mid-market infrastructure businesses in Europe and North America across transport, utilities, telecoms, energy and environment, and social infrastructure, with added emphasis on renewable energy and waste management. Targets approximately 15 brownfield transactions over 6–10 year hold periods, combining active asset management with board-level governance, targeting low double-digit net IRRs.",
     sourceUrls: ["https://iconinfrastructure.com/", "https://inforcapital.com/funds/icon-infrastructure-partners-vii-icon-vii/"],
     sectors: ["Utilities", "Digital Infrastructure", "Transportation"],
     regions: ["North America", "Europe"],
@@ -1320,7 +1320,7 @@ export const funds: Fund[] = [
   // ── IFM Investors ─────────────────────────────────────────
   f("FUND-090", "IFM Investors", "IFM Global Infrastructure Fund (GIF)", "2004", "$73.6B", 73600, "Core", "Evergreen", {
     description: "IFM's massive global flagship core equity platform, heavily active in the North American infrastructure space. Manages $73.6B for 812 institutional investors. US portfolio includes Indiana Toll Road ($5.7B acquisition), Buckeye Partners ($10.3B — 5,000+ miles of pipeline, 130M barrels storage), Colonial Pipeline, Freeport LNG, Swift Current Energy, and Switch (data centers).",
-    investmentStrategy: "This is IFM's massive global flagship core equity platform, heavily active in the North American infrastructure space.",
+    investmentStrategy: "Large open-ended core infrastructure fund investing in essential, monopoly-like assets with strong market positions, high barriers to entry, and predictable cash flows in OECD developed markets — principally North America, the UK and Europe, and Australia. Focused on transportation, energy midstream, communications, and utilities, pursuing a long-term hold-and-manage strategy with opportunistic exits.",
     sourceUrls: ["https://outside.vermont.gov/dept/VPIC/Shared%20Documents/VPIC%20Website/Meetings/VPIC%20General%20Meetings/Meeting%20Materials/2022/09-27-2022/2022-09%20IFM%20GIF%20Recommendation%20vF%20(Redacted).pdf", "https://pitchbook.com/profiles/fund/13416-94F"],
     sectors: ["Transportation", "Utilities", "Midstream / Energy", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["Global", "North America", "Europe", "Asia-Pacific"],
@@ -1329,7 +1329,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-091", "IFM Investors", "IFM Net Zero Infrastructure Fund (NZIF)", "2022", "$3.0B", 3000, "Core-Plus", "Evergreen", {
     description: "Active, evergreen infrastructure equity platform driving the energy transition across North America. Recently completed acquisition of GreenGas, a US renewable natural gas developer and operator.",
-    investmentStrategy: "Included because it fits all parameters as an active, evergreen infrastructure equity platform driving the energy transition across North America.",
+    investmentStrategy: "Open-ended core infrastructure fund investing in assets that directly accelerate the global energy transition, targeting renewable energy, low-carbon fuels (including renewable natural gas), climate tech, and cleantech infrastructure globally. Invests up to $500M per opportunity and prioritizes assets with measurable real-world emissions reduction impact.",
     sourceUrls: ["https://sfrhctf.org/wp-content/uploads/2023/05/Private-Market-Spacing-Study-V2.pdf", "https://www.ifminvestors.com/news-and-insights/media-centre/ifm-net-zero-infrastructure-fund-completes-greengas-acquisition-marking-next-era-of-growth-for-renewable-energy-company/"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["North America", "Global"],
@@ -1337,7 +1337,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-092", "IFM Investors", "IFM Global Value Add Infrastructure Fund", "2025", "$2.5B", 2500, "Value-Add", "Raising", {
     description: "Newly active global fund pursuing higher-yielding value-add infrastructure equity, bringing its deployment purview over North America. IFM's first dedicated value-add vehicle.",
-    investmentStrategy: "It is a newly active global fund pursuing higher-yielding value-add infrastructure equity, bringing its deployment purview over North America.",
+    investmentStrategy: "IFM's first dedicated move beyond its traditional core mandate, targeting mid-market and growth-stage infrastructure assets at the intersection of infrastructure and private equity across global markets, with particular focus on digitalization, decarbonization, and deglobalization themes. Pursues buy-and-build, operational improvement, and platform consolidation in sectors such as digital infrastructure, grid modernization, and energy transition.",
     sourceUrls: ["https://ionanalytics.com/insights/infralogic/ifm-prepares-first-global-value-add-infra-fund/"],
     sectors: ["Transportation", "Utilities", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["Global", "North America"],
@@ -1346,7 +1346,7 @@ export const funds: Fund[] = [
   // ── Igneo Infrastructure Partners (First Sentier) ──────────
   f("FUND-093", "Igneo Infrastructure Partners", "North American Diversified Infrastructure Fund (NADIF)", "2024", "$1.0B", 1000, "Core-Plus", "Deploying", {
     description: "NADIF is a recently launched, active closed-end core-plus infrastructure equity fund managed by Igneo specifically dedicated to the North American market. Texas ERS committed $100M. Debuted with an aviation infrastructure acquisition.",
-    investmentStrategy: "NADIF is a recently launched, active closed-end core-plus infrastructure equity fund managed by Igneo specifically dedicated to the North American market.",
+    investmentStrategy: "Closed-end, core-plus vehicle targeting mid-market infrastructure companies in the United States and Canada across commercial transportation, energy, communications, and networking sectors. Applies Igneo's established proactive asset management approach — securing lead or sole ownership positions to drive operational value creation — as the firm's dedicated North American regional strategy.",
     sourceUrls: ["https://irei.com/news/texas-ers-pours-100m-into-igneo-chambers-energy-funds/", "https://www.infrastructureinvestordeals.com/deals/igneo-makes-debut-north-american-strategy-investment-with-aviation-acquisition"],
     sectors: ["Transportation", "Utilities", "Digital Infrastructure"],
     regions: ["North America"],
@@ -1354,7 +1354,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-094", "Igneo Infrastructure Partners", "Global Diversified Infrastructure Fund (GDIF)", "2007", "$7.5B+", 7500, "Core", "Evergreen", {
     description: "GDIF is a robust, open-ended global core infrastructure equity fund proactively building its presence across North American asset operations. Manages $7.5B+ across utilities, transport, and essential services. Recently invested in Recycle Central Group.",
-    investmentStrategy: "GDIF is a robust, open-ended global core infrastructure equity fund proactively building its presence across North American asset operations.",
+    investmentStrategy: "Open-ended, core-plus vehicle investing in high-quality, mature, mid-market infrastructure companies across OECD countries in the UK, Europe, North America, and Australia/New Zealand, targeting renewables, digital infrastructure, waste management, water utilities, and transportation. Typically holds controlling or lead positions for the long term — some in excess of 25 years — creating value through proactive asset management and ESG integration.",
     sourceUrls: ["https://www.infrastructureinvestor.com/gilchrist-igneo-a-clean-sheet-of-paper-in-terms-of-opportunity/", "https://www.land.nd.gov/sites/www/files/documents/Board%20Agenda%20Packets/1%20-%2010%20-%20October%2028%202021%20Full%20Agenda%20Packet.pdf", "https://www.igneoip.com/australia/en/institutional/news-and-insights/press/igneo-invests-in-recycle-central-group.html"],
     sectors: ["Transportation", "Utilities", "Waste / Environmental Services"],
     regions: ["Global", "North America", "Europe", "Asia-Pacific"],
@@ -1365,7 +1365,7 @@ export const funds: Fund[] = [
   // ── InfraBridge (DigitalBridge) ───────────────────────────
   f("FUND-095", "InfraBridge", "InfraBridge Global Infrastructure Fund III (GIF III)", "2022", "$4.75B", 4750, "Value-Add", "Deploying", {
     description: "An active mid-market value-add infrastructure strategy targeting North America that was recently integrated into the InfraBridge platform under DigitalBridge's AMP International franchise.",
-    investmentStrategy: "An active mid-market value-add infrastructure strategy targeting North America that was recently integrated into the InfraBridge platform.",
+    investmentStrategy: "Targets the value-add, mid-market infrastructure segment in North America and Europe, focusing on transportation and logistics, digital infrastructure (including fiber, towers, and data centers), and energy transition. Applies private-equity-style rigor to asset management and operational improvement, continuing the strategy established under AMP Capital before rebranding to InfraBridge.",
     sourceUrls: ["https://dgtlinfra.com/digitalbridge-amp-international-infrastructure-equity/"],
     sectors: ["Digital Infrastructure", "Transportation", "Utilities"],
     regions: ["North America", "Europe", "Asia-Pacific"],
@@ -1375,7 +1375,7 @@ export const funds: Fund[] = [
   // ── InfraRed Capital Partners ─────────────────────────────
   f("FUND-096", "InfraRed Capital Partners", "InfraRed Infrastructure Fund VI", "2022", "$1.0B+", 1000, "Value-Add", "Deploying", {
     description: "Active closed-end fund targeting value-add mid-market infrastructure equity in North America and Western Europe. Reached $1 billion final close for sixth flagship vehicle.",
-    investmentStrategy: "This is an active closed-end fund targeting value-add mid-market infrastructure equity in North America and Western Europe.",
+    investmentStrategy: "Value-add strategy in the lower mid-market across North America and Western Europe, targeting essential infrastructure in energy transition, digital, and transport sectors at early to growth stages, with an emphasis on creating and de-risking assets into cash-generating platforms. Typically invests $100–200M per company, working closely with management teams through active asset management.",
     sourceUrls: ["https://www.ircp.com/news/infrared-capital-partners-announces-1-billion-close-for-sixth-value-add-fund/", "https://www.infrastructureinvestor.com/infrared-in-1bn-final-close-for-sixth-flagship-exclusive/"],
     sectors: ["Utilities", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["North America", "Europe"],
@@ -1383,7 +1383,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-097", "InfraRed Capital Partners", "InfraRed Infrastructure Fund VII", "2025", "$1.5B", 1500, "Value-Add", "Raising", {
     description: "Active successor fund currently raising capital to make direct value-add infrastructure equity investments in North America. Targets $1.5 billion for mid-market infrastructure.",
-    investmentStrategy: "It is an active successor fund currently raising capital to make direct value-add infrastructure equity investments in North America.",
+    investmentStrategy: "Continues InfraRed's lower-mid-market value-add strategy targeting essential infrastructure across OECD markets in North America and Western Europe, with a focus on transport, energy transition, digital infrastructure, and social infrastructure. Each investment typically ranges between $100–200M, deploying active development and construction expertise alongside in-house asset management.",
     sourceUrls: ["https://irei.com/news/infrared-seeks-1-5b-for-seventh-value-add-infrastructure-fund/", "https://ionanalytics.com/insights/infralogic/infrared-readies-usd-1-5bn-seventh-infra-fund/", "https://www.infrastructureinvestor.com/the-pipeline-infravia-reaches-e5bn-infra-steadies-omers-ship-equitix-leads-500m-storage-push/"],
     sectors: ["Utilities", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["North America", "Europe"],
@@ -1391,7 +1391,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-098", "InfraRed Capital Partners", "HICL Infrastructure PLC", "2006", "£3.0B", 3900, "Core", "Evergreen", {
     description: "HICL is an actively managed, publicly listed permanent capital infrastructure vehicle that acquires core infrastructure equity globally, including in North America. Managed by InfraRed, recently moved domicile.",
-    investmentStrategy: "HICL is an actively managed, publicly listed permanent capital infrastructure vehicle that acquires core infrastructure equity globally, including in North America.",
+    investmentStrategy: "London-listed, open-ended core infrastructure investment company focused primarily on PPP/PFI projects, regulated assets (electricity and gas networks, water utilities), and demand-based transport concessions across the UK (~66% of portfolio), with additional exposure in Europe, North America, and Australia. Targets stable, inflation-linked income from a diversified portfolio of over 100 essential assets at the lower end of the infrastructure risk spectrum.",
     sourceUrls: ["https://www.dcfmodeling.com/blogs/history/hicll-history-mission-ownership", "https://www.ircp.com/news/hicl-infrastructure-plc-move-domicile/"],
     sectors: ["Social Infrastructure", "Utilities", "Transportation"],
     regions: ["Global", "North America", "Europe"],
@@ -1401,7 +1401,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-099", "InfraRed Capital Partners", "North American Core Income Energy Transition Fund", "2023", "$900M", 900, "Core", "Evergreen", {
     description: "Active evergreen platform explicitly dedicated to acquiring core income-producing North American energy transition equity. Targets operational renewable and clean energy assets with contracted revenues.",
-    investmentStrategy: "This is an active evergreen platform explicitly dedicated to acquiring core income-producing North American energy transition equity.",
+    investmentStrategy: "Core income strategy targeting contracted, decarbonization-oriented renewable energy infrastructure in North America, seeded with $400M from Sun Life and launched following InfraRed's partnership with SLC Management. Focuses on operational wind and solar generation assets, applying InfraRed's renewable energy expertise to generate stable, income-producing returns from the clean energy transition.",
     sourceUrls: ["https://www.infrastructureinvestor.com/infrared-in-1bn-final-close-for-sixth-flagship-exclusive/"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["North America"],
@@ -1411,7 +1411,7 @@ export const funds: Fund[] = [
   // ── InfraVia Capital Partners ─────────────────────────────
   f("FUND-100", "InfraVia Capital Partners", "InfraVia European Fund VI", "2023", "€8.0B", 8800, "Value-Add", "Deploying", {
     description: "Despite the European branding, official US LP board memos confirm the fund is legally mandated to invest in infrastructure across both Europe and North America. LACERA committed to the fund.",
-    investmentStrategy: "Official US LP board memos confirm the fund is legally mandated to invest in infrastructure across both Europe and North America.",
+    investmentStrategy: "Core-plus fund targeting mid-market infrastructure companies across Europe in energy and the energy transition, digital infrastructure, mobility, and social infrastructure, combining resilient contracted cash flows with active value creation. Closed at its €8B hard cap — the largest in the firm's history — reflecting strong demand for InfraVia's differentiated European mid-market approach.",
     sourceUrls: ["https://www.infrastructureinvestor.com/infravia-raises-e8bn-for-latest-european-infra-fund-exclusive/", "https://www.lacera.gov/sites/default/files/assets/documents/board/2024/BOI/2024-11-13-boi_agnd.pdf"],
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation"],
     regions: ["Europe", "North America"],
@@ -1422,7 +1422,7 @@ export const funds: Fund[] = [
   // ── IMCO ──────────────────────────────────────────────────
   f("FUND-101", "Investment Management Corporation of Ontario (IMCO)", "IMCO Infrastructure Fund", "2016", "C$11.3B", 8249, "Core-Plus", "Evergreen", {
     description: "Active captive permanent capital platform making direct infrastructure equity investments primarily in North America. C$11.3 billion infrastructure portfolio as of 2024. Strategic focus on digitalization and connectivity infrastructure.",
-    investmentStrategy: "It is an active captive permanent capital platform making direct infrastructure equity investments primarily in North America.",
+    investmentStrategy: "Direct infrastructure portfolio targeting global core and core-plus assets across digital infrastructure (data centers, fiber, towers), regulated utilities (including electrification-linked networks), and clean energy transition, with geographic diversification spanning North America, the UK and Europe, and Latin America. Pursues both direct investments and fund co-investments, prioritizing high-quality businesses with strong contracted cash flows and barriers to entry.",
     sourceUrls: ["https://www.imcoinvest.com/news/imco-annual-report-2024.html", "https://www.top1000funds.com/asset_owner/investment-management-corporation-of-ontario-imco/", "https://www.top1000funds.com/2025/07/imco-reconsiders-us-exposure-as-geopolitical-landscape-shifts/", "https://www.imcoinvest.com/articles/strategic-approach-to-digitalization-and-connectivity.html"],
     sectors: ["Digital Infrastructure", "Transportation", "Utilities", "Renewables / Energy Transition"],
     regions: ["North America", "Global"],
@@ -1433,7 +1433,7 @@ export const funds: Fund[] = [
   // ── J.P. Morgan Asset Management ──────────────────────────
   f("FUND-102", "J.P. Morgan Asset Management", "Infrastructure Investments Fund (IIF)", "2007", "$41.0B", 41000, "Core", "Evergreen", {
     description: "An active, mature open-ended infrastructure equity fund heavily deployed across North American utility, transport, and energy sectors. One of the largest core infrastructure funds globally with $41 billion in assets.",
-    investmentStrategy: "An active, mature open-ended infrastructure equity fund heavily deployed across North American utility, transport, and energy sectors.",
+    investmentStrategy: "Large open-ended core and core-plus infrastructure fund targeting essential service companies in energy, water, and transportation with predictable contracted or regulated cash flows, primarily in the United States, Western Europe, and Australia. Pursues control or majority positions across 20+ companies and 800+ assets, targeting net returns of 8–12% and annual cash yield of 5–7%, with a platform-building approach that aggregates middle-market assets outside competitive auctions.",
     sourceUrls: ["https://www.cincinnati-oh.gov/sites/retirement/assets/Committee%20Meetings/Investment/Packet/2025/Investment-Packet-5-1-25.pdf"],
     sectors: ["Utilities", "Transportation", "Power Generation", "Renewables / Energy Transition"],
     regions: ["Global", "North America", "Europe"],
@@ -1442,7 +1442,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-103", "J.P. Morgan Asset Management", "Global Transport Income Fund (GTIF)", "2017", "$4.07B", 4070, "Core", "Evergreen", {
     description: "Specialized core open-ended real asset fund driving direct equity investments into transportation infrastructure networks globally. Targets airports, toll roads, ports, and rail assets.",
-    investmentStrategy: "Fits the inclusion definitions as a specialized core open-ended real asset fund driving direct equity investments into transportation infrastructure networks globally.",
+    investmentStrategy: "Income-oriented infrastructure fund focused on generating current income from assets and businesses across global transportation industries, investing through a master fund structure targeting diversified exposure to the transport sector across geographies including airports, toll roads, ports, and rail assets.",
     sourceUrls: ["https://pitchbook.com/profiles/fund/16687-45F", "https://am.jpmorgan.com/content/dam/jpm-am-aem/emea/gb/en/regulatory/annual-and-half-year-reports/global-core-real-ar-2023.pdf", "https://www.formds.com/issuers/global-transport-income-fund-master-partnership-scsp"],
     sectors: ["Transportation"],
     regions: ["Global", "North America", "Europe"],
@@ -1452,7 +1452,7 @@ export const funds: Fund[] = [
   // ── Kimmeridge ─────────────────────────────────────────────
   f("FUND-104", "Kimmeridge", "Kimmeridge Carbon Solutions Fund II", "2024", "Undisclosed", null, "Opportunistic", "Deploying", {
     description: "Kimmeridge's newest vehicle targeting direct placements into U.S.-based decarbonization assets and energy transition infrastructure projects. Partners with Storegga on CCUS projects and has interests in LNG infrastructure.",
-    investmentStrategy: "Kimmeridge's newest vehicle targeting direct placements into U.S.-based decarbonization assets and energy transition infrastructure projects.",
+    investmentStrategy: "Buyout-style fund investing in the decarbonization segment of the North American energy sector, targeting carbon capture and storage (CCUS) projects, carbon markets (including forest carbon offsets), clean fuels, and integrated natural gas infrastructure with certified low-emission credentials. Leverages Kimmeridge's subsurface geotechnical expertise and land aggregation capabilities to develop large-scale CCUS initiatives.",
     sourceUrls: ["https://disclosurequest.com/results?search_form%5Bcik%5D=0002035811", "https://www.prnewswire.com/news-releases/kimmeridge-carbon-solutions-and-storegga-partner-to-advance-ccus-projects-301999822.html", "https://www.energy.gov/sites/default/files/2024-10/Commonwealth%20LNG%20LLC%20%28Docket%20No.%2019-134%29%20-%20Supplement%20to%20Notice%20of%20Change%20in%20Control%20and%20Amendment%20to%20Pending%20Application.pdf"],
     sectors: ["Midstream / Energy", "Renewables / Energy Transition"],
     regions: ["North America"],
@@ -1462,7 +1462,7 @@ export const funds: Fund[] = [
   // ── KKR ───────────────────────────────────────────────────
   f("FUND-105", "KKR", "KKR Global Infrastructure Investors V", "2024", "$20.0B", 15000, "Value-Add", "Raising", {
     description: "KKR's massive, active flagship fund making control/co-control value-add infrastructure investments across North America and Europe. Has raised $15 billion toward $20 billion target with ~$31 billion committed to digital infrastructure. Notable investments include Metronet (US fiber broadband, JV with T-Mobile across 300+ communities in 19 states) and Telecom Italia Netco (Italy's national fiber network).",
-    investmentStrategy: "KKR's massive, active flagship fund making control/co-control value-add infrastructure investments across North America and Europe.",
+    investmentStrategy: "Large-cap global value-add infrastructure fund targeting assets with entrenched customer bases, contractual and regulatory protections, and strong growth potential across the themes of decarbonization, digitalization, and deconsolidation. Invests across a broad range of infrastructure sectors in developed markets, applying KKR's operational expertise and platform-scale relationships.",
     sourceUrls: ["https://www.artrs.gov/board/documents/CY2024/2024-06-12/BOT_Packet.pdf", "https://www.nhrs.org/docs/default-source/iic-public-materials/iic-public-materials---december-2025.pdf?sfvrsn=856013b4_3"],
     sectors: ["Digital Infrastructure", "Transportation", "Renewables / Energy Transition", "Utilities"],
     regions: ["North America", "Europe", "Global"],
@@ -1470,7 +1470,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-106", "KKR", "Diversified Core Infra Fund (DCIF)", "2020", "$11.8B", 11800, "Core", "Evergreen", {
     description: "An active perpetual vehicle by KKR structured specifically to hold long-term core/yield-bearing infrastructure equity assets globally including North America. MainePERS committed $125M.",
-    investmentStrategy: "An active perpetual vehicle by KKR structured specifically to hold long-term core/yield-bearing infrastructure equity assets globally (including NA).",
+    investmentStrategy: "Open-ended core infrastructure fund targeting mature, brownfield assets with stable contracted or regulated revenue streams across energy, transportation, telecommunications, water, and utilities in OECD developed markets. Pursues long-term buy-and-hold positions with investment tickets of $250–750M, targeting net IRRs of 7–9%, and sources the majority of deals on a proprietary, non-auction basis.",
     sourceUrls: ["https://www.infrastructureinvestor.com/mainepers-commits-125m-to-infrastructure/", "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FAssembly%2FMeeting+Attachments%2F000%2F27500%2FExhibit+H.06.a+-+ATRS+-+ATRS+Submission+of+1211+Items.pdf"],
     sectors: ["Utilities", "Transportation", "Renewables / Energy Transition"],
     regions: ["Global", "North America"],
@@ -1479,7 +1479,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-107", "KKR", "Global Climate Transition Fund", "2023", "$7.0B", 7000, "Opportunistic", "Raising", {
     description: "Active KKR fund executing direct investments globally to bridge the climate transition funding gap, including massive mandates within North America. Nearing $3 billion initial close.",
-    investmentStrategy: "Fully qualifies as an active KKR fund executing direct investments globally to bridge the climate transition funding gap, including massive mandates within North America.",
+    investmentStrategy: "Dedicated climate infrastructure vehicle targeting high-growth energy transition assets across renewables, battery storage, transportation electrification, green hydrogen, and decarbonization of existing power and industrial infrastructure in North America, Western Europe, and Asia-Pacific. Carries a 12-year lifespan and targets high-teens gross IRRs through investments of $300–750M per transaction.",
     sourceUrls: ["https://www.newprivatemarkets.com/in-brief-kkr-invests-in-australian-energy-transition-platform/", "https://ionanalytics.com/insights/infralogic/kkrs-global-climate-fund-nears-usd-3bn-initial-close/", "https://pitchbook.com/profiles/fund/24809-95F"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["Global", "North America"],
@@ -1487,7 +1487,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-108", "KKR", "KKR Infrastructure Fund (K-INFRA)", "2022", "$5.33B", 5330, "Core-Plus", "Evergreen", {
     description: "Valid active perpetual entity created specifically for wealth channel distribution to feed KKR's North American and global operating infrastructure platform. Non-traded vehicle providing quarterly liquidity.",
-    investmentStrategy: "Valid active perpetual entity created specifically for wealth channel distribution to feed KKR's North American and global operating infrastructure platform.",
+    investmentStrategy: "Non-traded, perpetual-life infrastructure vehicle designed to provide eligible individual investors with access to KKR's institutional infrastructure platform, allocating approximately 85% of assets to KKR's global infrastructure investments across telecommunications, energy transition, utilities, midstream, transportation, and waste. Forms joint ventures alongside KKR institutional vehicles, targeting both current income and capital appreciation with inflation protection.",
     sourceUrls: ["https://fintel.io/doc/sec-kkr-infrastructure-conglomerate-llc-1948056-10q-2025-november-14-20406-5830", "https://www.kinfra.com/"],
     sectors: ["Utilities", "Digital Infrastructure", "Transportation", "Renewables / Energy Transition"],
     regions: ["North America", "Global"],
