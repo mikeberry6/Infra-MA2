@@ -349,21 +349,23 @@ export const funds: Fund[] = [
     rationale: "Qualifies as an active listed evergreen investment vehicle equipped with permanent capital to directly acquire Core-Plus infrastructure equity assets in North America.",
     sourceUrls: ["https://www.3i.com/infrastructure/our-funds/", "https://www.3i-infrastructure.com/about-us/investment-manager/investment-policy/"],
   }),
-  // Source: https://www.3i.com/infrastructure/our-funds/ | https://pitchbook.com/profiles/fund/21142-54F
   f("FUND-002", "3i Group", "3i North American Infrastructure Fund", "2022", "$739M", 739, "Core-Plus", "Deploying", {
-    description: "Inaugural North American fund targeting mid-market core-plus infrastructure opportunities across digital, transport, environmental services, and communications in the US and Canada.\nPortfolio:\nTransportation: Regional Rail (Rail), Smarte Carte (Airport & Travel Services)\nWaste / Environmental Services: Amwaste (Waste Collection), EC Waste (Waste Collection)",
+    description: "Inaugural dedicated North American fund from 3i, targeting mid-market core-plus infrastructure across four key verticals: digital infrastructure (cell towers, fiber), transportation (airport services), environmental services (waste management), and communications. Final close of $739M in December 2023; currently managing ~$1B of assets and 75% invested as of March 2024. Notable transactions include Shared Tower (Canada's leading carrier-neutral comms developer — tower portfolio tripled during hold, sold to Northleaf in Feb 2025 for the fund's first exit), EC Waste (largest integrated solid waste company in Puerto Rico), AmWaste (300,000+ customers weekly across Alabama, Georgia, Louisiana), and Smarte Carte (operating in 300+ airports globally).",
     sectors: ["Digital Infrastructure", "Transportation", "Waste / Environmental Services", "Communications"],
     regions: ["North America"],
     strategyUrl: "https://www.3i.com/infrastructure/our-funds",
+    rationale: "Traditional closed-end fund actively making direct infrastructure equity investments exclusively in the North American market.",
+    sourceUrls: ["https://www.3i.com/media/fkcntktr/infrastructure_business_review.pdf", "https://www.3i.com/media/news/2025/3i-announces-sale-of-its-investment-in-shared-tower/"],
   }),
 
-  // Acadia Infrastructure Capital
-  // Source: https://www.acadiainfrastructure.com/ | https://adviserinfo.sec.gov/firm/summary/326032
-  f("FUND-003", "Acadia Infrastructure Capital", "Acadia Infrastructure Capital LP", "2023", "$107M+", 107, "Value-Add", "Deploying", {
-    description: "Emerging manager focused on climate-aligned infrastructure investments in underserved US communities, targeting clean energy and environmental resilience projects.\nPortfolio:\nRenewables / Energy Transition: JVR Energy Park (Solar), Peregrine Energy Storage (Battery Storage), Pivot Energy Portfolio (Community Solar), Project Soho (Solar), Stillhouse Solar Project (Solar)",
+  // ── Acadia Infrastructure Capital ─────────────────────────
+  f("FUND-003", "Acadia Infrastructure Capital", "Acadia Infrastructure Capital LP", "2023", "$107.4M", 107, "Value-Add", "Deploying", {
+    description: "SEC-registered investment adviser (CRD #326032) focused on driving the US energy transition through strategic mid-market deployment of common equity, structured equity, and tax credit transfers. Addresses the equity funding gap created by the Inflation Reduction Act in a market expected to attract $2 trillion over the next decade. Notable investments include JVR Energy Park (San Diego, 90 MWac solar + 70 MWac/280 MWh battery storage, $416M funding) and a 210 MW Texas solar farm with Matrix Renewables. Leadership includes Tim Short (Founder, 20+ years energy/infrastructure), Michael Hamilton (ex-KKR, Capital Dynamics, BlackRock), and Oleg Shamovsky (Partner, 10 years building KKR's European infrastructure business).",
     sectors: ["Renewables / Energy Transition", "Utilities", "Social Infrastructure"],
     regions: ["North America"],
     strategyUrl: "https://www.prnewswire.com/news-releases/acadia-infrastructure-capital-launches-investment-platform-to-accelerate-us-energy-transition-301987696.html",
+    rationale: "Active RIA management platform structured to deploy bespoke direct infrastructure equity in North America.",
+    sourceUrls: ["https://radientanalytics.com/firm/adv/acadia-infrastructure-capital-lp-326032", "https://www.acadiainfrastructure.com/team", "https://www.acadiainfrastructure.com/about"],
   }),
   // Source: https://www.prnewswire.com/news-releases/acadia-infrastructure-capital-launches-climate-and-communities-investment-coalition-with-microsoft-302328219.html | https://esgnews.com/microsoft-acadia-launch-climate-investment-coalition-backing-9b-in-renewable-projects/
   f("FUND-004", "Acadia Infrastructure Capital", "Climate and Communities Investment Coalition", "2024", "$9.0B", 9000, "Core-Plus", "Deploying", {
