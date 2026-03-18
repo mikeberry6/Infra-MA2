@@ -10,6 +10,7 @@ import {
   getStatusColor,
   getSizeRangeColor,
   getFundSectorColor,
+  getStructureColor,
   matchesSizeRange,
   groupFundsByManager,
   getFundStats,
@@ -901,7 +902,7 @@ function FundDrawer({
         <div className="p-4 sm:p-6 lg:p-8 space-y-5 lg:space-y-6">
           {/* Fund overview card */}
           <div className="glass-card rounded-[4px] p-4 space-y-3">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               <div>
                 <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Fund Size</span>
                 <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{fund.size}</div>
@@ -910,28 +911,73 @@ function FundDrawer({
                 <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Vintage</span>
                 <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{fund.vintage}</div>
               </div>
+              <div>
+                <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Structure</span>
+                <div className="mt-0.5">
+                  <span
+                    className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
+                    style={{
+                      color: getStructureColor(fund.structure),
+                      backgroundColor: `${getStructureColor(fund.structure)}1a`,
+                      border: `1px solid ${getStructureColor(fund.structure)}33`,
+                    }}
+                  >
+                    {fund.structure}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Strategy URL */}
-          {fund.strategyUrl && (
-            <a
-              href={fund.strategyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-micro font-medium text-[#A1A1AA] hover:text-[#EDEDED] transition-colors"
-            >
-              Learn more about fund strategy
-              <ExternalLink className="h-3 w-3" />
-            </a>
+          {/* Description */}
+          {fund.description && (
+            <div>
+              <p className="text-sm-dense text-[#A1A1AA] leading-relaxed whitespace-pre-line">
+                {fund.description}
+              </p>
+            </div>
           )}
 
-          {/* Description — strip inline Portfolio section since we show it below */}
-          <div>
-            <p className="text-sm-dense text-[#A1A1AA] leading-relaxed whitespace-pre-line">
-              {fund.description.split("\nPortfolio:")[0].trim()}
-            </p>
-          </div>
+          {/* Investment Rationale */}
+          {fund.rationale && (
+            <div className="border-t border-[#27272A] pt-4">
+              <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider block mb-2">
+                Investment Rationale
+              </span>
+              <div className="glass-card rounded-[4px] p-3">
+                <p className="text-sm-dense text-[#A1A1AA] leading-relaxed italic">
+                  {fund.rationale}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Source URLs */}
+          {fund.sourceUrls.length > 0 && (
+            <div className="border-t border-[#27272A] pt-4">
+              <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider block mb-2">
+                Sources
+              </span>
+              <div className="space-y-1.5">
+                {fund.sourceUrls.map((url, i) => {
+                  let hostname = url;
+                  try { hostname = new URL(url).hostname.replace(/^www\./, ""); } catch {}
+                  return (
+                    <a
+                      key={i}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-micro text-[#52525B] hover:text-[#EDEDED] transition-colors group"
+                    >
+                      <ExternalLink className="h-3 w-3 shrink-0 text-[#3f3f46] group-hover:text-[#A1A1AA]" />
+                      <span className="truncate">{hostname}</span>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* Portfolio Companies */}
           {firmPortfolio.total > 0 && (
