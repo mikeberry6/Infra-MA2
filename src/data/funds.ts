@@ -497,7 +497,7 @@ export const funds: Fund[] = [
   // ── 3i Group ──────────────────────────────────────────────
   f("FUND-001", "3i Group", "3i Infrastructure plc", "2007", "£3.8B", 4940, "Core-Plus", "Evergreen", {
     description: "London-listed evergreen investment vehicle with permanent capital, directly acquiring core-plus infrastructure equity assets. The portfolio spans digital infrastructure, transport, utilities, and energy transition across Europe and North America, including assets such as Tampnet (offshore telecoms), Belfast City Airport, and Infinis (landfill gas-to-energy).",
-    investmentStrategy: "Qualifies as an active listed evergreen investment vehicle equipped with permanent capital to directly acquire Core-Plus infrastructure equity assets in North America.",
+    investmentStrategy: "London-listed, FTSE 250 evergreen investment company targeting mid-market core-plus infrastructure equity in utilities, transportation, digital (towers, data centres, fibre), and social infrastructure. Seeks controlling or significant minority positions in businesses benefiting from megatrends such as the energy transition and digitalisation, primarily across the UK and Western Europe, with a target total return of 8–10% per annum.",
     sourceUrls: ["https://www.3i.com/infrastructure/our-funds/", "https://www.3i-infrastructure.com/about-us/investment-manager/investment-policy/"],
     sectors: ["Digital Infrastructure", "Transportation", "Utilities", "Renewables / Energy Transition", "Waste / Environmental Services"],
     regions: ["Europe", "North America", "Asia-Pacific"],
@@ -507,7 +507,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-002", "3i Group", "3i North American Infrastructure Fund", "2022", "$739M", 739, "Core-Plus", "Deploying", {
     description: "Traditional closed-end fund actively making direct infrastructure equity investments exclusively in the North American market. Portfolio includes Regional Rail, Smarte Carte (airport services), and waste management platforms Amwaste and EC Waste.",
-    investmentStrategy: "Traditional closed-end fund actively making direct infrastructure equity investments exclusively in the North American market.",
+    investmentStrategy: "Closed-end mid-market core-plus fund targeting equity investments exclusively in North American infrastructure across transportation, waste management, and essential services. Applies an active, theme-driven asset management approach — identifying megatrends such as the energy transition, digitalisation, and demographic change — and pursues bolt-on acquisitions alongside direct platform investments.",
     sourceUrls: ["https://www.3i.com/media/fkcntktr/infrastructure_business_review.pdf", "https://www.3i.com/media/news/2025/3i-announces-sale-of-its-investment-in-shared-tower/"],
     sectors: ["Digital Infrastructure", "Transportation", "Waste / Environmental Services", "Communications"],
     regions: ["North America"],
@@ -517,7 +517,7 @@ export const funds: Fund[] = [
   // ── Abu Dhabi Investment Authority (ADIA) ─────────────────
   f("FUND-003", "Abu Dhabi Investment Authority (ADIA)", "ADIA Direct Infrastructure", "2007", "$47.6B", 47600, "Core", "Evergreen", {
     description: "Massive evergreen captive platform with the mandate and capital to acquire direct infrastructure equity globally, including North America. ADIA's infrastructure portfolio includes stakes in NSW Ports (Australia), Gatwick Airport, and major utility and transport assets across OECD markets.",
-    investmentStrategy: "Functions as a massive, evergreen captive platform with the mandate and capital to acquire direct infrastructure equity in North America.",
+    investmentStrategy: "Sovereign wealth vehicle deploying long-term direct capital into infrastructure globally across four core verticals: transportation, digital infrastructure, utilities, and energy (including a growing renewable energy portfolio). Typically takes minority equity stakes alongside experienced partners, with a focus on developed markets complemented by increasing exposure to high-growth emerging economies.",
     sourceUrls: ["https://www.adia.ae/en/investments/infrastructure", "https://www.infrastructureinvestor.com/global-investor-ranking/", "https://www.nswports.com.au/about-nsw-ports", "https://www.adia.ae/en/investments"],
     sectors: ["Transportation", "Utilities", "Power Generation", "Digital Infrastructure"],
     regions: ["Global", "North America", "Europe", "Asia-Pacific"],
@@ -528,7 +528,7 @@ export const funds: Fund[] = [
   // ── Acadia Infrastructure Capital ─────────────────────────
   f("FUND-004", "Acadia Infrastructure Capital", "Climate and Communities Investment Coalition", "2024", "$9.0B", 9000, "Value-Add", "Deploying", {
     description: "Permanent captive platform anchored by Microsoft corporate capital, deploying equity directly into new U.S. renewable energy developments in disadvantaged communities. Targets solar, battery storage, and community energy projects.",
-    investmentStrategy: "Permanent captive platform anchored by corporate capital, deploying equity directly into new U.S. renewable energy developments.",
+    investmentStrategy: "US-focused investment coalition anchored by Microsoft, targeting the development of 5 GW of mid-market renewable energy projects — beginning with utility-scale solar — that deliver both clean energy procurement and measurable community and environmental justice benefits. Deploys structured and tax equity instruments alongside traditional equity into projects supported by the Sustain Our Future Foundation.",
     sourceUrls: ["https://carboncredits.com/microsofts-9-billion-power-move-revolutionizing-u-s-clean-energy-and-communities/", "https://www.sustainourfuture.org/news-updates"],
     sectors: ["Renewables / Energy Transition", "Social Infrastructure"],
     regions: ["North America"],
@@ -537,7 +537,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-005", "Acadia Infrastructure Capital", "Acadia Infrastructure Capital LP", "2023", "$107.4M", 107, "Value-Add", "Deploying", {
     description: "Active RIA management platform structured to deploy bespoke direct infrastructure equity in North America. Investments include JVR Energy Park, Peregrine Energy Storage, Pivot Energy (community solar), and Stillhouse Solar Project.",
-    investmentStrategy: "Active RIA management platform structured to deploy bespoke direct infrastructure equity in North America.",
+    investmentStrategy: "US-focused specialist manager deploying tax credits, structured equity, and hybrid capital into mid-market clean energy and decarbonization infrastructure projects across North America, with an emphasis on proven energy transition assets including renewable generation and storage. Applies bespoke product structuring — including alternatives to traditional IRA-driven tax equity — to serve projects underserved by conventional capital.",
     sourceUrls: ["https://radientanalytics.com/firm/adv/acadia-infrastructure-capital-lp-326032", "https://www.acadiainfrastructure.com/team", "https://www.acadiainfrastructure.com/about"],
     sectors: ["Renewables / Energy Transition", "Utilities"],
     regions: ["North America"],
@@ -547,7 +547,7 @@ export const funds: Fund[] = [
   // ── Amber Infrastructure Group ────────────────────────────
   f("FUND-006", "Amber Infrastructure Group", "International Public Partnerships (INPP)", "2006", "£2.6B", 3380, "Core", "Evergreen", {
     description: "Active evergreen, publicly listed investment company managed by Amber, acquiring long-term core infrastructure equity across OECD markets including North America. The portfolio spans PPP/PFI social infrastructure, regulated utilities, and transmission assets.",
-    investmentStrategy: "Active evergreen, publicly listed investment company managed by Amber, acquiring long-term Core infrastructure equity across OECD markets, including North America.",
+    investmentStrategy: "London Stock Exchange-listed core infrastructure investment company investing in a diversified portfolio of over 140 operational and construction-phase public infrastructure assets across the UK, Australia, Europe, and North America. Targets PPP/PFI projects and public-facing regulated assets — including gas distribution, education, healthcare, digital, transport, and nuclear — generating long-term, availability-based or regulated revenues with high inflation linkage.",
     sourceUrls: ["https://www.internationalpublicpartnerships.com/media/ydhbl4op/inpp-2023-fy-factsheet-vf.pdf", "https://www.edisongroup.com/research/responsible-growing-and-protected/BM-2225/"],
     sectors: ["Social Infrastructure", "Utilities", "Transportation"],
     regions: ["Europe", "North America", "Asia-Pacific"],
@@ -559,7 +559,7 @@ export const funds: Fund[] = [
   // ── Ancala Partners ───────────────────────────────────────
   f("FUND-007", "Ancala Partners", "Ancala Infrastructure Fund III", "2022", "€1.4B", 1540, "Value-Add", "Deploying", {
     description: "Active 2022-vintage infrastructure equity fund targeting mid-market value-add investments across Europe and North America. Focuses on essential services infrastructure including utilities, digital, and environmental services.",
-    investmentStrategy: "Active 2022-vintage infrastructure equity fund that targets mid-market value-add investments across Europe and North America.",
+    investmentStrategy: "Mid-market, core-to-core-plus European infrastructure fund targeting bilateral, off-market acquisitions in essential sectors including renewable energy and the energy transition, transport, utilities, and the circular economy. Emphasises downside protection, inflation linkage, and strong cash yield alongside active asset management to drive sustainable value creation, with a primary geographic focus on Western Europe.",
     sourceUrls: ["https://ancala.com/ancala-announces-final-close-of-third-flagship-infrastructure-fund/", "https://irei.com/news/texas-trs-commits-124m-to-infrastructure-in-august/"],
     sectors: ["Utilities", "Digital Infrastructure", "Waste / Environmental Services"],
     regions: ["Europe", "North America"],
@@ -569,7 +569,7 @@ export const funds: Fund[] = [
   // ── Antin Infrastructure Partners ─────────────────────────
   f("FUND-008", "Antin Infrastructure Partners", "Flagship Fund V", "2022", "€10.2B", 11220, "Value-Add", "Deploying", {
     description: "Active mega-cap closed-ended fund with a strict mandate for value-add infrastructure equity acquisitions in Europe and North America. Antin focuses on mid-market assets in digital, energy transition, transport, and social infrastructure sectors.",
-    investmentStrategy: "Active, mega-cap closed-ended fund with a strict mandate for value-add infrastructure equity acquisitions in Europe and North America.",
+    investmentStrategy: "Large-cap infrastructure fund targeting controlling equity stakes in energy and environment, digital infrastructure, transport, and social infrastructure businesses across Europe and North America. Writes cheques of €600 million to over €1 billion per investment and pursues buy-and-build growth strategies, with a significantly expanded North American LP base.",
     sourceUrls: ["https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-closes-flagship-fund-v-above-e10-billion-target"],
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation", "Social Infrastructure"],
     regions: ["Europe", "North America"],
@@ -577,7 +577,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-009", "Antin Infrastructure Partners", "Mid Cap Fund I", "2021", "€2.2B", 2420, "Value-Add", "Deploying", {
     description: "Active 2021-vintage closed-end fund dedicated to executing value-add infrastructure equity buyouts in the middle market across Europe and North America. Targets digital and environmental infrastructure platforms.",
-    investmentStrategy: "Active 2021-vintage closed-end fund dedicated to executing value-add infrastructure equity buyouts in the middle market across Europe and North America.",
+    investmentStrategy: "Mid-cap fund targeting smaller and mid-sized infrastructure companies across energy and environment, digital/telecom, transport, and social sectors in Europe and North America, with individual investments typically ranging from €50M to €300M. Capitalises on the underserved mid-cap segment of the infrastructure market vacated by larger managers.",
     sourceUrls: ["https://www.goodwinlaw.com/en/news-and-events/news/2021/07/07_01-goodwin-advises-antin-infrastructure", "https://pitchbook.com/profiles/fund/18601-12F", "https://www.antin-ip.com/media/our-news/swiftair-european-leader-in-outsourced-express-airfreight-welcomes-antin-to-accelerate-its-growth"],
     sectors: ["Digital Infrastructure", "Waste / Environmental Services", "Transportation"],
     regions: ["Europe", "North America"],
@@ -585,7 +585,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-010", "Antin Infrastructure Partners", "NextGen Fund I", "2021", "€1.2B", 1320, "Opportunistic", "Deploying", {
     description: "Active 2021-vintage opportunistic infrastructure fund focused on scaling up next-generation energy and digital transition assets in North America and Europe. Investments include smart mobility platforms and energy transition infrastructure.",
-    investmentStrategy: "Active 2021-vintage opportunistic infrastructure fund focused on scaling up next-generation energy and digital transition assets in North America and Europe.",
+    investmentStrategy: "Opportunistic, growth-oriented fund targeting businesses with proven models and technologies that require substantial capital to scale into the next generation of infrastructure, investing across energy transition, digital transition, sustainable mobility, and social sectors in Europe and North America. Seeks mid-teen returns from assets with infrastructure-like characteristics such as long-term public sector contracts and high barriers to entry.",
     sourceUrls: ["https://www.businesswire.com/news/home/20240306210403/en/Antin-Strong-Financial-Performance-in-2023-Net-Income-up-60", "https://www.antin-ip.com/media/our-news/antin-plans-to-take-a-majority-stake-in-matawan-a-leading-smart-mobility-platform", "https://ionanalytics.com/insights/infralogic/antin-pushes-infra-boundaries-with-transport-software-investment/"],
     sectors: ["Renewables / Energy Transition", "Digital Infrastructure", "Transportation"],
     regions: ["North America", "Europe"],
@@ -595,7 +595,7 @@ export const funds: Fund[] = [
   // ── APG Asset Management ──────────────────────────────────
   f("FUND-011", "APG Asset Management", "APG Direct Infrastructure Pool", "2004", "€32B", 35200, "Core-Plus", "Evergreen", {
     description: "APG's infrastructure arm is an active, open-ended captive pension platform deploying significant direct equity into core and core-plus essential infrastructure assets globally, including North America. Notable holdings include Brisa (Portuguese motorways) and stakes in major European utilities.",
-    investmentStrategy: "APG's infrastructure arm is an active, open-ended captive pension platform deploying significant direct equity into core and core-plus essential infrastructure assets globally, including North America.",
+    investmentStrategy: "Europe's largest pension investor deploying long-duration capital directly into global unlisted infrastructure across five strategic themes: decarbonised mobility and transport, clean and connected renewable power, digital infrastructure, circular economy, and quality of life assets. Invests through a bespoke asset management approach, increasingly expanding into Asia-Pacific alongside its established European and North American base, often co-investing collaboratively with other large pension partners.",
     sourceUrls: ["https://assetmanagement.apg.nl/infrastructure/", "https://apg.nl/media/oyim14yz/201013-brisa-closing.pdf"],
     sectors: ["Transportation", "Utilities", "Renewables / Energy Transition", "Digital Infrastructure"],
     regions: ["Global", "North America", "Europe"],
@@ -606,7 +606,7 @@ export const funds: Fund[] = [
   // ── Apollo (Argo Infrastructure Partners) ─────────────────
   f("FUND-012", "Apollo Global Management", "Argo Infrastructure Partners Series 4", "2024", "$6.0B", 6000, "Core-Plus", "Deploying", {
     description: "Argo is an active GP running multiple closed-end series targeting North American utilities and renewables via a core/core-plus equity strategy. Apollo acquired Argo in 2024 to expand its infrastructure capabilities across power, utilities, and energy transition.",
-    investmentStrategy: "Argo is an active GP running multiple closed-end series targeting North American utilities and renewables via a core/core-plus equity strategy.",
+    investmentStrategy: "Core and core-plus mid-market North American infrastructure fund targeting essential services assets across digital infrastructure, renewable energy, transportation, and utilities across the US and Canada. Long-term, responsible investment philosophy focuses on assets that provide essential services to communities over long operational lives, building a portfolio including data centre, parking, utility gas, and environmental services platforms.",
     sourceUrls: ["https://ir.apollo.com/news-events/press-releases/detail/533/apollo-to-acquire-argo-infrastructure-partners"],
     sectors: ["Utilities", "Renewables / Energy Transition", "Power Generation"],
     regions: ["North America"],
@@ -614,7 +614,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-013", "Apollo Global Management", "Apollo Infrastructure Opportunities Fund III", "2023", "$2.5B", 2500, "Value-Add", "Deploying", {
     description: "AIOF III is an active traditional closed-end fund making direct infrastructure equity acquisitions across North America. Apollo's infrastructure franchise targets value-add opportunities in energy, transport, and digital assets.",
-    investmentStrategy: "AIOF III is an active traditional closed-end fund making direct infrastructure equity acquisitions across North America.",
+    investmentStrategy: "Mid-market value-add infrastructure fund targeting control-oriented acquisitions, corporate carve-outs, and structured solutions across communications, power and renewables, transportation, and digital infrastructure in North America and Europe. Leverages Apollo's integrated capital markets capabilities to source complexity-driven deals at attractive entry points.",
     sourceUrls: ["https://ionanalytics.com/insights/uncategory/apollo-nears-flagship-infra-fund-close-below-target/", "https://www.infrastructureinvestor.com/apollo-bulks-up-capabilities-with-argo-infrastructure-partners-acquisition/"],
     sectors: ["Renewables / Energy Transition", "Digital Infrastructure", "Transportation"],
     regions: ["North America"],
@@ -622,7 +622,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-014", "Apollo Global Management", "Apollo Core Infrastructure Fund", "2021", "$389.2M", 389, "Core", "Deploying", {
     description: "Active 2021/2022-vintage core infrastructure fund targeting direct infrastructure equity investments with stable, long-duration cash flows.",
-    investmentStrategy: "Active 2021/2022-vintage core infrastructure fund targeting direct infrastructure equity investments.",
+    investmentStrategy: "Core infrastructure vehicle targeting assets with stable, long-term contracted cash flows and predictable income — primarily in digital infrastructure, energy transition, power/utilities, and transportation/logistics. Leverages Apollo's full origination platform, including direct debt capabilities and operational asset management resources.",
     sourceUrls: ["https://pitchbook.com/profiles/fund/23399-11F", "https://capedge.com/company/1398053/apollo-management-lp"],
     sectors: ["Utilities", "Transportation", "Power Generation"],
     regions: ["North America"],
@@ -630,7 +630,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-015", "Apollo Global Management", "Apollo Infrastructure Company LLC (AIC)", "2023", "$1.7B", 1700, "Core-Plus", "Evergreen", {
     description: "AIC is an open-ended, evergreen operating company offering wealth investors access to a platform of direct infrastructure equity acquisitions globally, including North America. Structured as a non-traded vehicle targeting stable income and capital appreciation.",
-    investmentStrategy: "AIC is an open-ended, evergreen operating company offering wealth investors access to a platform of direct infrastructure equity acquisitions globally, including North America.",
+    investmentStrategy: "Perpetual-capital operating company structured to be a long-term owner, operator, and capital provider to infrastructure assets globally, seeking a combination of current income and capital appreciation across digital infrastructure, energy transition, transportation, and sustainable living subsectors. Taps Apollo's integrated platform — including proprietary deal flow and credit origination — to execute control-oriented acquisitions and carve-outs.",
     sourceUrls: ["https://www.apollo.com/wealth/strategies/products/apollo-infrastructure-company", "https://www.sec.gov/Archives/edgar/data/1971381/000119312525068918/d888030d10k.htm"],
     sectors: ["Utilities", "Transportation", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["Global", "North America"],
@@ -638,7 +638,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-016", "Apollo Global Management", "Apollo Clean Transition Equity Partners II", "2023", "$411M", 411, "Opportunistic", "Deploying", {
     description: "Active 2023-vintage fund focused on energy transition and clean infrastructure opportunistic/buyout deals. Targets decarbonization platforms and renewable energy assets.",
-    investmentStrategy: "Active 2023-vintage fund focused on energy transition and clean infrastructure opportunistic/buyout deals.",
+    investmentStrategy: "Dedicated closed-end fund investing in companies and projects at the core of the energy transition and industrial decarbonization, including energy transition infrastructure, sustainable mobility, sustainable resource use, and sustainable real estate globally. Part of Apollo's broader Clean Transition Capital platform targeting $50B in climate capital deployment.",
     sourceUrls: ["https://pitchbook.com/profiles/fund/24869-17F"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["North America", "Europe"],
@@ -646,7 +646,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-017", "Apollo Global Management", "Apollo Clean Transition Equity ELTIF", "2023", "Undisclosed", null, "Opportunistic", "Deploying", {
     description: "Closed-end European wealth product providing direct exposure to Apollo's global (US-heavy) clean transition infrastructure and private equity capability. Distributed through UniCredit and other European wealth channels.",
-    investmentStrategy: "Closed-end European wealth product providing direct exposure to Apollo's global (US-heavy) clean transition infrastructure and private equity capability.",
+    investmentStrategy: "Luxembourg-domiciled ELTIF designed to offer European wealth investors access to private equity opportunities in clean energy transition and sustainable industrial transformation, mirroring the strategy of Apollo's Clean Transition Equity Partners series. Distributed via bank and wealth management networks across Europe through an ELTIF 2.0-compliant vehicle.",
     sourceUrls: ["https://ir.apollo.com/news-events/press-releases/detail/483/apollo-adds-eltif-to-wealth-product-platform-following-cssf", "https://www.unicreditgroup.eu/en/press-media/press-releases/2024/january/unicredit-to-offer-apollo-clean-transition-equity-eltif-to-wealt.html", "https://www.scopeexplorer.com/en/details/apollo-clean-transition-equity-eltif/149638"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["Global", "North America", "Europe"],
@@ -654,7 +654,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-018", "Apollo Global Management", "Apollo Infrastructure Opportunities Fund II", "2020", "$2.54B", 2540, "Value-Add", "Deploying", {
     description: "Closed-ended infrastructure value-add fund that successfully closed in 2022 targeting North America. AIOF II focuses on value-add infrastructure equity with an emphasis on energy transition and essential services.",
-    investmentStrategy: "Closed-ended infrastructure value-add fund that successfully closed in 2022 targeting North America.",
+    investmentStrategy: "Mid-market value-add infrastructure fund targeting control acquisitions, carve-outs, and structured solutions across communications/digital, power and renewables (including offshore wind, energy storage, and solar), and transportation in North America and Europe. Built a portfolio spanning fibre telecom, renewable royalties, utility-scale offshore wind, and battery energy storage.",
     sourceUrls: ["https://ir.apollo.com/news-events/press-releases/detail/38/apollo-closes-second-dedicated-infrastructure-fund-with"],
     sectors: ["Renewables / Energy Transition", "Utilities", "Transportation"],
     regions: ["North America"],
@@ -663,7 +663,7 @@ export const funds: Fund[] = [
   // ── Ara Partners ───────────────────────────────────────────
   f("FUND-019", "Ara Partners", "Ara Infrastructure Fund I", "2022", "$800M", 800, "Value-Add", "Deploying", {
     description: "Active traditional closed-end infrastructure equity fund targeting North America and Europe. Focuses on industrial decarbonization, sustainable materials, and climate solutions infrastructure.",
-    investmentStrategy: "Active traditional closed-end infrastructure equity fund targeting North America and Europe.",
+    investmentStrategy: "Inaugural infrastructure fund targeting mid-market assets focused on the decarbonization of the industrial economy across North America and Europe, investing in the development, re-purposing, and optimization of infrastructure in sectors including industrial and manufacturing, chemicals, logistics, fuels, and waste management. Targets assets often overlooked by larger-cap and conventional renewables managers, with a mandate to deliver 60%+ greenhouse gas emissions reductions at the asset level.",
     sourceUrls: ["https://www.prnewswire.com/news-releases/ara-partners-reaches-final-close-for-inaugural-infrastructure-fund-surpassing-target-302443285.html"],
     sectors: ["Renewables / Energy Transition", "Waste / Environmental Services"],
     regions: ["North America", "Europe"],
@@ -671,7 +671,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-020", "Ara Partners", "Ara Energy Decarbonization Fund I", "2024", "$725M", 725, "Value-Add", "Deploying", {
     description: "Newly formed 2024 active strategy acquiring and retrofitting traditional energy infrastructure in North America. Partners with HF Capital to target assets across the conventional energy value chain for decarbonization.",
-    investmentStrategy: "Newly formed 2024 active strategy acquiring and retrofitting traditional energy infrastructure in North America.",
+    investmentStrategy: "Strategy launched in partnership with HF Capital targeting the acquisition, optimization, and decarbonization of conventional energy assets across North America — specifically in thermal power generation, merchant biofuels production, and retail energy distribution. Applies Ara's proven industrial decarbonization methods to hard-to-abate conventional energy infrastructure such as ethanol plants and natural gas power generation.",
     sourceUrls: ["https://www.prnewswire.com/news-releases/ara-partners-launches-new-strategy-to-decarbonize-conventional-energy-value-chain-in-partnership-with-hf-capital-302248969.html"],
     sectors: ["Midstream / Energy", "Renewables / Energy Transition", "Power Generation"],
     regions: ["North America"],
@@ -681,7 +681,7 @@ export const funds: Fund[] = [
   // ── ArcLight Capital Partners ─────────────────────────────
   f("FUND-021", "ArcLight Capital Partners", "ArcLight Infrastructure Partners Fund VIII", "2023", "$3.0B", 3000, "Opportunistic", "Raising", {
     description: "Active 2023-vintage closed-end infrastructure equity fund with a pure focus on North American hard assets. ArcLight targets power generation, renewables, midstream energy, and related infrastructure.",
-    investmentStrategy: "Active 2023-vintage closed-end infrastructure equity fund with a pure focus on North American hard assets.",
+    investmentStrategy: "Value-add, middle-market infrastructure fund targeting power generation, renewable energy, battery storage, and strategic gas infrastructure in North America, capitalising on the tightening power market driven by data centre growth and electrification. Operationally intensive investment approach supported by in-house strategic, technical, and commercial specialists focusing on repurposing, repositioning, and optimising hard assets.",
     sourceUrls: ["https://irei.com/news/arclight-infrastructure-partners-fund-viii-nears-3b-fundraising-goal/", "https://pitchbook.com/profiles/fund/24871-06F"],
     sectors: ["Power Generation", "Renewables / Energy Transition", "Midstream / Energy"],
     regions: ["North America"],
@@ -689,7 +689,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-022", "ArcLight Capital Partners", "ArcLight Power Infrastructure Partners", "2024", "$250M", 250, "Opportunistic", "Deploying", {
     description: "Active 2024 infrastructure equity vehicle under ArcLight targeting North American energy and power deals. Focuses on smaller-scale power generation and energy infrastructure opportunities.",
-    investmentStrategy: "Passes as an active 2024 infrastructure equity vehicle under ArcLight targeting North American energy and power deals.",
+    investmentStrategy: "Middle-market, operationally intensive fund focused on electric power generation, renewable energy (wind, solar, hydro, battery storage), strategic gas transmission and storage, and transformative electrification infrastructure across North America. Leverages ArcLight's 20+ year track record of owning and managing over 65 GW of power assets, with a growing emphasis on assets enabling the data centre and electrification megatrends.",
     sourceUrls: ["https://radientanalytics.com/firm/adv/arclight-capital-partners-llc-161228", "https://pitchbook.com/profiles/fund/27828-01F"],
     sectors: ["Power Generation", "Renewables / Energy Transition"],
     regions: ["North America"],
@@ -699,7 +699,7 @@ export const funds: Fund[] = [
   // ── Ardian ────────────────────────────────────────────────
   f("FUND-023", "Ardian", "Ardian Infrastructure Fund VI", "2023", "€13.5B", 14850, "Core-Plus", "Deploying", {
     description: "Active core-plus infrastructure equity fund that permits direct asset acquisitions in North America and Europe. Part of Ardian's flagship infrastructure platform that has raised over €20 billion across multiple vintages.",
-    investmentStrategy: "Active core-plus infrastructure equity fund that permits direct asset acquisitions in North America.",
+    investmentStrategy: "Record-setting core-plus European infrastructure fund (part of a €20B platform including co-investments) targeting essential infrastructure across three verticals — energy (renewable power and utilities), transport (including major airports), and digital infrastructure (data centres and fibre) — primarily in Europe. Pursues large, capital-intensive platform acquisitions with a value creation discipline rooted in operational improvement.",
     sourceUrls: ["https://pulse2.com/ardian-20-billion-raised-for-flagship-infrastructure-platform/", "https://inforcapital.com/funds/ardian-infrastructure-fund-vi-aif-vi/"],
     sectors: ["Transportation", "Utilities", "Renewables / Energy Transition", "Digital Infrastructure"],
     regions: ["Europe", "North America"],
@@ -707,7 +707,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-024", "Ardian", "Ardian Americas Infrastructure Fund V", "2022", "$2.1B", 2100, "Core-Plus", "Deploying", {
     description: "Closed-end fund dedicated exclusively to acquiring core-plus infrastructure equity in North America. Second-generation Americas fund building on Ardian's established North American infrastructure portfolio.",
-    investmentStrategy: "Closed-end fund dedicated exclusively to acquiring core-plus infrastructure equity in North America.",
+    investmentStrategy: "Core-plus, Article 9 fund targeting high-quality mid-market essential infrastructure assets across the US and other OECD Americas markets in three sectors: telecommunications, transportation, and energy transition. Ardian's second-generation Americas vehicle, significantly oversubscribed versus its hard cap.",
     sourceUrls: ["https://www.ardian.com/press-releases/ardian-closes-its-second-generation-americas-infrastructure-fund-us21bn", "https://pitchbook.com/profiles/fund/18278-74F"],
     sectors: ["Transportation", "Utilities", "Renewables / Energy Transition"],
     regions: ["North America"],
@@ -715,7 +715,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-025", "Ardian", "Ardian Clean Energy Evergreen Fund (ACEEF)", "2022", "€1.0B", 1100, "Core-Plus", "Evergreen", {
     description: "Active, perpetual capital (evergreen) vehicle making core and core-plus renewable energy equity investments globally, including the Americas. Recently expanded into the Nordic renewables market.",
-    investmentStrategy: "Active, perpetual capital (evergreen) vehicle making core and core-plus renewable energy equity investments globally, including the Americas.",
+    investmentStrategy: "Open-ended, Article 9 evergreen fund investing in highly contracted brownfield renewable energy assets — primarily operational wind, solar, hydro, biogas, biomass, and battery energy storage systems — with a focus on Europe. Targets established generation technologies under incentive tariffs or long-term PPAs, optimising asset performance through Ardian's proprietary OPTA data analytics platform.",
     sourceUrls: ["https://www.ardian.com/news-insights/press-releases/ardian-clean-energy-evergreen-fund-aceef-expands-nordics-portfolio", "https://www.fundscouter.com/funds/ardian/ardian-clean-energy-evergreen-fund"],
     sectors: ["Renewables / Energy Transition"],
     regions: ["Global", "North America", "Europe"],
@@ -725,7 +725,7 @@ export const funds: Fund[] = [
   // ── Ares Management ───────────────────────────────────────
   f("FUND-026", "Ares Management", "Ares Climate Infrastructure Partners II", "2023", "$3.0B", 3000, "Value-Add", "Raising", {
     description: "Active 2023-vintage closed-end fund targeting direct value-add climate infrastructure equity acquisitions, prominently featuring the US market. Passed $1.3 billion in commitments as of latest reporting.",
-    investmentStrategy: "Active 2023-vintage closed-end fund targeting direct value-add climate infrastructure equity acquisitions, prominently featuring the US market.",
+    investmentStrategy: "Value-add infrastructure fund deploying flexible capital — across equity, preferred equity, and structured debt — into assets and companies accelerating the transition to a low-carbon economy, with a focus on renewable energy, energy storage, resource efficiency, vehicle electrification, and transmission. Invests across the capital structure in essential infrastructure assets with stable cash flow profiles.",
     sourceUrls: ["https://www.newprivatemarkets.com/in-brief-ares-passes-1-3bn-for-second-climate-infra-fundraise/", "https://www.infrastructureinvestor.com/the-pipeline-ares-reaches-1-3bn-infranodes-new-partner-kkr-and-psps-2-8bn-transmission-play/", "https://pitchbook.com/profiles/fund/24186-70F"],
     sectors: ["Renewables / Energy Transition", "Power Generation", "Utilities"],
     regions: ["North America", "Europe"],
@@ -733,7 +733,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-027", "Ares Management", "Ares Core Infrastructure Fund (ACI)", "2024", "$3.9B", 3900, "Core", "Evergreen", {
     description: "ACI is an active, open-ended (evergreen) BDC platform buying core infrastructure equity strictly focused on North America. Targets long-duration, essential services infrastructure generating stable cash yields.",
-    investmentStrategy: "ACI is an active, open-ended (evergreen) BDC platform buying core infrastructure equity strictly focused on North America.",
+    investmentStrategy: "Perpetual, semi-liquid core infrastructure vehicle targeting operating assets with high cash flow predictability, long-term contracted revenues with creditworthy counterparties, and income-oriented returns, primarily across digital infrastructure (data centres, fibre), energy transition, utilities/power, and transportation. Provides both controlling and non-controlling equity positions, targeting assets with resilient, inflation-hedged cash flows.",
     sourceUrls: ["https://www.areswms.com/solutions/aci", "https://www.heronfinance.com/private-infrastructure", "https://www.areswms.com.au/our-funds/ares-core-infrastructure-fund-aci-aut/"],
     sectors: ["Utilities", "Transportation", "Power Generation"],
     regions: ["North America"],
@@ -744,7 +744,7 @@ export const funds: Fund[] = [
   // ── Astatine Investment Partners ──────────────────────────
   f("FUND-028", "Astatine Investment Partners", "Astatine Infrastructure Fund IV", "2022", "$586M", 586, "Core-Plus", "Deploying", {
     description: "Active mid-cap North American core-plus infrastructure equity fund executing corporate carve-outs. Formerly Alinda Capital Partners' mid-market strategy, rebranded to Astatine. Investments include Kansas City fiber network.",
-    investmentStrategy: "Active mid-cap North American core-plus infrastructure equity fund executing corporate carve-outs.",
+    investmentStrategy: "Mid-market, core-plus infrastructure fund targeting equity investments primarily in North America and Europe across digital (fibre broadband), transportation, utility-related, and essential services subsectors, with a focus on assets offering long-term contracted cash flows, inflation linkage, and strong income yield. Formerly Alinda Capital Partners' mid-market strategy (rebranded 2022), applying a private equity–style, operationally engaged approach.",
     sourceUrls: ["https://pitchbook.com/profiles/fund/18186-76F", "https://astatineip.com/2022/03/03/fund-iv-signs-definitive-agreement-to-acquire-kansas-city-fiber-network/", "https://www.private-equitynews.com/news/alinda-capital-partners-rebrands-its-mid-market-infrastructure-strategy-to-astatine-investment-partners/"],
     sectors: ["Digital Infrastructure", "Utilities", "Communications"],
     regions: ["North America"],
