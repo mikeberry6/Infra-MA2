@@ -8,6 +8,7 @@ import {
   FUND_SIZE_RANGES,
   getStrategyColor,
   getStatusColor,
+  getStructureColor,
   getSizeRangeColor,
   getFundSectorColor,
   matchesSizeRange,
@@ -894,6 +895,17 @@ function FundDrawer({
             >
               {fund.status}
             </span>
+            <div className="h-3.5 w-px bg-[#27272A]" />
+            <span
+              className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
+              style={{
+                color: getStructureColor(fund.structure),
+                backgroundColor: `${getStructureColor(fund.structure)}1a`,
+                border: `1px solid ${getStructureColor(fund.structure)}33`,
+              }}
+            >
+              {fund.structure}
+            </span>
           </div>
         </div>
 
@@ -901,7 +913,7 @@ function FundDrawer({
         <div className="p-4 sm:p-6 lg:p-8 space-y-5 lg:space-y-6">
           {/* Fund overview card */}
           <div className="glass-card rounded-[4px] p-4 space-y-3">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-3 gap-4">
               <div>
                 <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Fund Size</span>
                 <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{fund.size}</div>
@@ -909,6 +921,10 @@ function FundDrawer({
               <div>
                 <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Vintage</span>
                 <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{fund.vintage}</div>
+              </div>
+              <div>
+                <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Structure</span>
+                <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{fund.structure}</div>
               </div>
             </div>
           </div>
@@ -932,6 +948,45 @@ function FundDrawer({
               {fund.description.split("\nPortfolio:")[0].trim()}
             </p>
           </div>
+
+          {/* Investment Rationale */}
+          {fund.rationale && (
+            <div className="glass-card rounded-[4px] p-4 border border-[#27272A]">
+              <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider block mb-2">
+                Investment Rationale
+              </span>
+              <p className="text-sm-dense text-[#D4D4D8] leading-relaxed">
+                {fund.rationale}
+              </p>
+            </div>
+          )}
+
+          {/* Sources & References */}
+          {fund.sourceUrls.length > 0 && (
+            <div>
+              <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider block mb-2">
+                Sources & References
+              </span>
+              <div className="space-y-1.5">
+                {fund.sourceUrls.map((url, i) => {
+                  let domain = "";
+                  try { domain = new URL(url).hostname.replace(/^www\./, ""); } catch { domain = url; }
+                  return (
+                    <a
+                      key={i}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-micro text-[#71717A] hover:text-[#EDEDED] transition-colors group"
+                    >
+                      <ExternalLink className="h-3 w-3 shrink-0 text-[#52525B] group-hover:text-[#EDEDED]" />
+                      <span className="truncate">{domain}</span>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* Portfolio Companies */}
           {firmPortfolio.total > 0 && (

@@ -81,6 +81,8 @@ export interface Fund {
   regions: FundRegion[];
   portfolioCompanies: PortfolioCompany[];
   strategyUrl: string;
+  rationale: string;
+  sourceUrls: string[];
 }
 
 // Flattened portfolio company with parent fund/manager context
@@ -310,7 +312,7 @@ function f(
   sizeUsdMm: number | null,
   strategy: FundStrategy,
   status: FundStatus,
-  overrides?: Partial<Pick<Fund, "description" | "sectors" | "regions" | "strategies" | "structure" | "ticker" | "strategyUrl">>,
+  overrides?: Partial<Pick<Fund, "description" | "sectors" | "regions" | "strategies" | "structure" | "ticker" | "strategyUrl" | "rationale" | "sourceUrls">>,
 ): Fund {
   return {
     id,
@@ -328,21 +330,24 @@ function f(
     regions: overrides?.regions ?? [],
     portfolioCompanies: PORTFOLIO_DATA[id] ?? [],
     strategyUrl: overrides?.strategyUrl ?? "",
+    rationale: overrides?.rationale ?? "",
+    sourceUrls: overrides?.sourceUrls ?? [],
   };
 }
 
 // ─── Fund Data ───────────────────────────────────────────────
 
 export const funds: Fund[] = [
-  // 3i Group
-  // Source: https://www.3i-infrastructure.com/ | https://www.3i.com/infrastructure/our-funds/
+  // ── 3i Group ──────────────────────────────────────────────
   f("FUND-001", "3i Group", "3i Infrastructure plc", "2007", "£3.8B", 4940, "Core-Plus", "Evergreen", {
-    description: "London-listed core-plus infrastructure company investing in mid-market economic infrastructure businesses across Europe, with a focused portfolio spanning digital, transport, utilities, and energy transition assets.\nPortfolio:\nCommunications: Global Cloud Xchange (FLAG) (Subsea Cables), Tampnet (Offshore Telecoms)\nDigital Infrastructure: DNS:NET (Fiber Networks)\nMidstream / Energy: Oystercatcher (Tank Storage)\nRenewables / Energy Transition: Future Biogas (Biogas), Infinis (Landfill Gas)\nSocial Infrastructure: Ionisos (Sterilization Services)\nTransportation: Belfast City Airport (Airports), ESVAGT (Offshore Marine Services), SRL Traffic Systems (Traffic Management), TCR (Ground Support Equipment)\nUtilities: ESP Utilities Group (Gas & Electric Distribution), Joulz (Energy Infrastructure Services)\nWaste / Environmental Services: Herambiente (Waste-to-Energy)",
+    description: "London-listed (FTSE 250) core-plus infrastructure company managed by 3i Investments plc, investing in a concentrated portfolio of mid-market economic infrastructure businesses. Portfolio value of approximately £3.8 billion with £466M available liquidity. Focuses on structural growth markets across digital, transport, utilities, and energy transition. Active management approach emphasizing growth capex within portfolio companies and accretive realizations — recent exits include TCR (sold for ~£1B, March 2026) and Valorem (€310M net proceeds, 21% gross IRR). Capital raised through public equity markets with FY25 dividend ~2.5x covered by net income.",
     sectors: ["Digital Infrastructure", "Transportation", "Utilities", "Renewables / Energy Transition", "Waste / Environmental Services"],
     regions: ["Europe", "North America", "Asia-Pacific"],
     structure: "Listed / Evergreen",
     ticker: "3IN.L",
     strategyUrl: "https://www.3i-infrastructure.com/investors",
+    rationale: "Qualifies as an active listed evergreen investment vehicle equipped with permanent capital to directly acquire Core-Plus infrastructure equity assets in North America.",
+    sourceUrls: ["https://www.3i.com/infrastructure/our-funds/", "https://www.3i-infrastructure.com/about-us/investment-manager/investment-policy/"],
   }),
   // Source: https://www.3i.com/infrastructure/our-funds/ | https://pitchbook.com/profiles/fund/21142-54F
   f("FUND-002", "3i Group", "3i North American Infrastructure Fund", "2022", "$739M", 739, "Core-Plus", "Deploying", {
