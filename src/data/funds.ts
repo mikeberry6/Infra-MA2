@@ -612,7 +612,7 @@ export const funds: Fund[] = [
     regions: ["North America"],
     strategyUrl: "https://ir.apollo.com/news-events/press-releases/detail/533/apollo-to-acquire-argo-infrastructure-partners",
   }),
-  f("FUND-013", "Apollo Global Management", "Apollo Infrastructure Opportunities Fund III", "2023", "$2.5B", 2500, "Value-Add", "Raising", {
+  f("FUND-013", "Apollo Global Management", "Apollo Infrastructure Opportunities Fund III", "2023", "$2.5B", 2500, "Value-Add", "Deploying", {
     description: "AIOF III is an active traditional closed-end fund making direct infrastructure equity acquisitions across North America. Apollo's infrastructure franchise targets value-add opportunities in energy, transport, and digital assets.",
     rationale: "AIOF III is an active traditional closed-end fund making direct infrastructure equity acquisitions across North America.",
     sourceUrls: ["https://ionanalytics.com/insights/uncategory/apollo-nears-flagship-infra-fund-close-below-target/", "https://www.infrastructureinvestor.com/apollo-bulks-up-capabilities-with-argo-infrastructure-partners-acquisition/"],
@@ -1089,7 +1089,7 @@ export const funds: Fund[] = [
   }),
 
   // ── Energy Infrastructure Partners (EIP) ──────────────────
-  f("FUND-066", "Energy Infrastructure Partners", "EIP III (Global Energy Transition Infrastructure)", "2022", "€4.0B", 4400, "Core-Plus", "Raising", {
+  f("FUND-066", "Energy Infrastructure Partners", "EIP III (Global Energy Transition Infrastructure)", "2022", "€4.0B", 4400, "Core-Plus", "Deploying", {
     description: "Fund meets all criteria as an active global OECD infrastructure equity vehicle that targets North America as part of its developed economies mandate. Held first close at €1 billion for energy transition infrastructure.",
     rationale: "Fund meets all criteria as an active global OECD infrastructure equity vehicle that targets North America as part of its developed economies mandate.",
     sourceUrls: ["https://energy-infrastructure-partners.com/wp-content/uploads/2023/11/With-funding-of-EUR-1bn-EIP-holds-first-close-of-its-energy-transition-infrastructure-fund.pdf"],
@@ -1673,7 +1673,7 @@ export const funds: Fund[] = [
   }),
 
   // ── Partners Group ────────────────────────────────────────
-  f("FUND-127", "Partners Group", "Partners Group Direct Infrastructure IV", "2023", "$8.0B", 8000, "Value-Add", "Raising", {
+  f("FUND-127", "Partners Group", "Partners Group Direct Infrastructure IV", "2023", "$8.0B", 8000, "Value-Add", "Deploying", {
     description: "Active, closed-end direct infrastructure equity fund with a global mandate inclusive of North American investments. Targeting $8 billion for direct equity acquisitions in infrastructure platforms.",
     rationale: "Meets all inclusion criteria as a traditional, active, closed-end direct infrastructure equity fund with a global mandate inclusive of North American investments.",
     sourceUrls: ["https://inforcapital.com/funds/partners-group-direct-infrastructure-iv/", "https://www.infrastructureinvestor.com/the-pipeline-gip-reaches-12-5bn-on-ai-fund-stonepeaks-ir-lead-down-under-kkr-forms-15bn-offshore-jv/"],
