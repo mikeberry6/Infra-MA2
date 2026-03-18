@@ -754,7 +754,7 @@ export const funds: Fund[] = [
   // ── AustralianSuper ───────────────────────────────────────
   f("FUND-029", "AustralianSuper", "Australian Super Infrastructure Portfolio", "N/A", "$75.0B", 75000, "Core-Plus", "Evergreen", {
     description: "Captive direct investment platform actively executing large-scale unlisted infrastructure equity acquisitions in North America as an evergreen pool of capital. Recently expanded US private equity team with senior hires to accelerate direct deployment.",
-    investmentStrategy: "Captive direct investment platform actively executing large-scale unlisted infrastructure equity acquisitions in North America as an evergreen pool of capital.",
+    investmentStrategy: "Large-scale direct investment program in unlisted infrastructure across transport, digital infrastructure, ports, and utilities, operating across Australia, the UK, and North America with a core-plus risk profile and a long-term, internally managed ownership approach. Increasingly supplements direct deals with commitments to value-add fund managers to access segments less suited to internal origination.",
     sourceUrls: ["https://www.infrastructureinvestor.com/australiansuper-loosens-direct-investment-model-to-consider-more-infra-fund-commitments-exclusive/", "https://www.prnewswire.com/news-releases/australiansuper-expands-us-private-equity-team-with-senior-hire-302511523.html"],
     sectors: ["Transportation", "Utilities", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["Global", "North America"],
@@ -765,7 +765,7 @@ export const funds: Fund[] = [
   // ── Basalt Infrastructure Partners ────────────────────────
   f("FUND-030", "Basalt Infrastructure Partners", "Basalt Infrastructure Partners IV", "2022", "$4.0B", 4000, "Core-Plus", "Deploying", {
     description: "Recently closed, North America-targeted direct infrastructure equity fund. Basalt focuses on mid-market core-plus infrastructure with Colliers as a strategic investor in the platform.",
-    investmentStrategy: "Recently closed, North America-targeted direct infrastructure equity fund.",
+    investmentStrategy: "Mid-market equity investments in utilities, power and renewables, transport, and digital/communications infrastructure across North America and Western Europe, targeting a core-plus risk profile with a differentiated deal-sourcing approach and active asset management to drive operational improvement.",
     sourceUrls: ["https://www.ijglobal.com/Widget/Download/168818?home=2"],
     sectors: ["Transportation", "Utilities", "Digital Infrastructure"],
     regions: ["North America"],
@@ -773,7 +773,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-031", "Basalt Infrastructure Partners", "Basalt Infrastructure Partners V", "2025", "Undisclosed", null, "Core-Plus", "Raising", {
     description: "Eligible active fund targeting mid-market direct infrastructure equity in North America. Successor to the successful Fund IV, currently in fundraising.",
-    investmentStrategy: "Eligible active fund targeting mid-market direct infrastructure equity in North America.",
+    investmentStrategy: "Continues Basalt's transatlantic mid-market strategy, targeting core-plus and value-add equity investments across power and renewables, utilities, transport, and digital/communications infrastructure in North America and Western Europe. Applies the same operationally intensive approach as its predecessors, seeking assets with contracted or regulated revenues alongside selective value creation opportunities.",
     sourceUrls: ["https://pitchbook.com/profiles/fund/29059-75F", "https://corporate.colliers.com/news/news-details/2022/Colliers-to-invest-in-leading-infrastructure-investment-firm-01-24-2022/default.aspx", "https://www.sec.gov/Archives/edgar/data/2099775/000209977525000001/xslFormDX01/primary_doc.xml"],
     sectors: ["Transportation", "Utilities", "Digital Infrastructure"],
     regions: ["North America"],
@@ -782,7 +782,7 @@ export const funds: Fund[] = [
   // ── Bernhard Capital Partners ───────────────────────────────
   f("FUND-032", "Bernhard Capital Partners", "BCP Infrastructure Fund II", "2024", "$75M+", 75, "Value-Add", "Raising", {
     description: "Active 2024 vintage infrastructure fund focused on direct acquisitions of middle-market utilities and energy transition assets in the U.S. Louisiana Teachers' Retirement System among committed LPs.",
-    investmentStrategy: "Active 2024 vintage infrastructure fund focused on direct acquisitions of middle-market utilities and energy transition assets in the U.S.",
+    investmentStrategy: "North American value-add infrastructure fund focused on energy services companies spanning the midstream, downstream, and power verticals, with investments typically sized between $75–150M. Employs a buy-and-build strategy, leveraging deep operational expertise inherited from the firm's roots in engineering, procurement, and construction to acquire and scale service businesses across the energy infrastructure supply chain.",
     sourceUrls: ["https://www.realfin.com/fund/31373/bcp-infrastructure-fund-ii", "https://www.dakota.com/hubfs/Dakota%20July%202025%20Pension%20Brief.pdf", "https://www.connectmoney.com/stories/louisiana-teachers-retirement-system-commits-200m-to-private-markets/"],
     sectors: ["Utilities", "Renewables / Energy Transition"],
     regions: ["North America"],
@@ -792,7 +792,7 @@ export const funds: Fund[] = [
   // ── BlackRock ─────────────────────────────────────────────
   f("FUND-033", "BlackRock", "BlackRock Global Infrastructure Fund IV", "2022", "$6.1B", 6100, "Core-Plus", "Deploying", {
     description: "Active mega-cap global infrastructure equity fund managed by BlackRock that actively deploys capital in North America. Raised $4.5 billion at first close before reaching $6.1 billion final close.",
-    investmentStrategy: "Active mega-cap global infrastructure equity fund managed by BlackRock that actively deploys capital in North America.",
+    investmentStrategy: "Diversified global core-plus infrastructure fund guided by the themes of decarbonization, decentralization, and digitalization, with investments across energy and environmental, low-carbon power, regulated utilities, transportation and logistics, and digital infrastructure. Targets a net IRR of approximately 10%, drawing on long-term contracted cash flows and a global institutional investor base.",
     sourceUrls: ["https://www.infrastructureinvestor.com/gip-to-seek-7bn-for-rebranded-mid-market-fund-exclusive/", "https://www.businesswire.com/news/home/20221024005921/en/BlackRock-Global-Infrastructure-Fund-IV-Raises-US%244.5-Billion-at-First-Close"],
     sectors: ["Transportation", "Utilities", "Renewables / Energy Transition", "Digital Infrastructure"],
     regions: ["Global", "North America", "Europe"],
@@ -800,7 +800,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-034", "BlackRock", "BlackRock Global Renewable Power Fund IV (GRP IV)", "2023", "$7.0B", 7000, "Core-Plus", "Raising", {
     description: "Active global renewable energy infrastructure equity fund deploying into the Americas. GRP IV invests in solar, wind, and battery storage assets at scale across OECD markets.",
-    investmentStrategy: "Active global renewable energy infrastructure equity fund deploying into the Americas.",
+    investmentStrategy: "Core-plus, impact-oriented fund targeting equity investments in renewable power and clean energy infrastructure — principally wind, solar, battery storage, and grid assets — across OECD markets globally, classified as Article 9 under EU SFDR. Seeks risk diversification across geographies, technologies, and regulatory regimes.",
     sourceUrls: ["https://media.infrastructureinvestor.com/uploads/2025/11/Infrastructure-America-2025-final.pdf", "https://www.stblaw.com/about-us/news/view/2024/01/24/blackrock-s-global-renewable-power-fund-to-acquire-shares-in-recurrent-energy", "https://www.fondsinfo.be/en/articles/952365-blackrock-launches-fundraise-for-global-renewable-power-fund-iv-grp-iv"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["Global", "North America"],
@@ -808,7 +808,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-035", "BlackRock", "BlackRock Evergreen Infra Partners Fund", "2022", "$1.0B", 1000, "Core", "Evergreen", {
     description: "Active evergreen structure making direct core infrastructure equity investments in North America. Secured $1 billion from European investors at initial close.",
-    investmentStrategy: "Qualifies as an active evergreen structure making direct core infrastructure equity investments in North America.",
+    investmentStrategy: "Perpetual, open-ended core infrastructure strategy focused on energy transition, energy security, digital infrastructure, and sustainable mobility, with an initial emphasis on Western Europe expanding to North America. Targets stable, inflation-linked contracted returns by investing in long-duration core assets across renewable energy, gas storage, telecommunications, and sustainable transportation.",
     sourceUrls: ["https://esgnews.com/blackrocks-evergreen-infrastructure-fund-secures-1-billion-from-european-investors/"],
     sectors: ["Utilities", "Transportation", "Power Generation"],
     regions: ["North America"],
@@ -818,7 +818,7 @@ export const funds: Fund[] = [
   // ── Blackstone ────────────────────────────────────────────
   f("FUND-036", "Blackstone", "Blackstone Infrastructure Partners (BIP)", "2017", "$53.0B", 53000, "Core-Plus", "Evergreen", {
     description: "BIP is Blackstone's flagship open-ended infrastructure equity vehicle targeting direct infrastructure assets with a strong primary mandate for North America. Portfolio includes Carrix (largest NA marine terminal operator), Invenergy (top US renewables developer), QTS Realty Trust (data centers), Phoenix Tower International, and AirTrunk. The fund has generated 17% net annual returns since inception.",
-    investmentStrategy: "BIP is Blackstone's flagship open-ended infrastructure equity vehicle, explicitly targeting direct infrastructure assets with a strong primary mandate for North America.",
+    investmentStrategy: "Large-scale, open-ended core-plus infrastructure vehicle investing primarily in North America (70%+) across energy, transportation, digital infrastructure, and water and waste, with selective European exposure. Pursues essential, high-barrier assets with long-term contracted or regulated cash flows, building significant positions in data centers, cell towers, toll roads, and marine terminals through both control and partnership transactions.",
     sourceUrls: ["https://www.infrastructureinvestor.com/the-pipeline-eqt-vi-nears-target-blackstones-data-centres-success-australiansupers-us-data-centre-splash/", "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2018/res02.pdf", "https://www.txnmenergy.com/~/media/Files/P/PNM-Resources/rates-and-filings/2025%20Blackstone%20Infrastructure/PNM/Application/25-00-2025-08-25-PNM-Direct%20Testimony%20and%20Exhibits%20of%20Sebastien%20Sherman.pdf"],
     sectors: ["Transportation", "Digital Infrastructure", "Renewables / Energy Transition", "Power Generation", "Midstream / Energy", "Utilities"],
     regions: ["Global", "North America", "Europe", "Asia-Pacific"],
@@ -827,7 +827,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-037", "Blackstone", "Blackstone Energy Transition Partners IV", "2022", "$5.6B", 5600, "Opportunistic", "Deploying", {
     description: "BETP IV successfully executes massive energy transition buyouts with direct equity infrastructure, holding a heavy North American portfolio. Closed at hard cap of $5.6 billion, representing one of the largest dedicated energy transition vehicles.",
-    investmentStrategy: "BETP IV successfully executes massive energy transition buyouts with direct equity infrastructure, holding a heavy North American portfolio.",
+    investmentStrategy: "Global energy transition private equity fund investing across the full decarbonization value chain — including grid infrastructure, transmission equipment, power generation, energy software, data center power access, and thermal management — with a particular concentration in North America. Backs management teams with flexible capital to help energy companies grow, targeting businesses well-positioned to benefit from long-term power demand growth driven by AI, electrification, and the energy transition.",
     sourceUrls: ["https://www.blackstone.com/news/press/blackstone-announces-5-6-billion-final-close-for-blackstone-energy-transition-partners-iv-at-hard-cap/"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["North America", "Europe"],
@@ -837,7 +837,7 @@ export const funds: Fund[] = [
   // ── British Columbia Investment Management Corporation (BCI) ───
   f("FUND-038", "British Columbia Investment Management Corporation (BCI)", "BCI Infrastructure & Renewable Resources Program", "2005", "C$32.2B", 23500, "Core", "Evergreen", {
     description: "BCI's internal infrastructure arm functions as a captive open-ended platform making direct core equity investments in North America. Manages over C$32 billion in infrastructure and renewable resources for British Columbia public sector pension plans.",
-    investmentStrategy: "BCI's internal infrastructure arm functions precisely as a captive open-ended platform making direct core equity investments in NA.",
+    investmentStrategy: "Large, globally diversified direct investment platform targeting core infrastructure assets with high barriers to entry, stable cash flows, and long holding periods typically exceeding 20 years, with subsectors spanning utilities, renewable energy, digital infrastructure, transport, agriculture, and timberlands. Invests primarily through direct ownership and co-investments across developed markets, with growing exposure to energy transition and circular economy assets.",
     sourceUrls: ["https://www.bci.ca/investments/infrastructure-renewable-resources/overview/"],
     sectors: ["Utilities", "Transportation", "Renewables / Energy Transition", "Power Generation"],
     regions: ["North America", "Global"],
@@ -848,7 +848,7 @@ export const funds: Fund[] = [
   // ── Brookfield Asset Management ───────────────────────────
   f("FUND-039", "Brookfield Asset Management", "Brookfield Infrastructure Fund V (BIF V)", "2022", "$30.0B", 30000, "Value-Add", "Deploying", {
     description: "Active, heavily capitalized North America-inclusive global flagship fund actively deploying equity into direct infrastructure acquisitions. BIF V is the world's largest closed-ended private infrastructure fund, having already deployed ~40% of its capital across renewables, transport, data centers, and telecom towers. Backed by ~200 LPs including NY State Common Retirement Fund ($300M commitment). Focused on digitalization, decarbonization, and deglobalization themes.",
-    investmentStrategy: "Active, heavily capitalized North America-inclusive global flagship fund actively deploying equity into direct infrastructure acquisitions.",
+    investmentStrategy: "Closed-ended flagship infrastructure equity fund pursuing large-scale, high-quality essential assets globally, with investment themes centered on digitalization (data centers, telecom towers), decarbonization (renewable energy), and deglobalization (transport and logistics). Targets core-plus to value-add returns through active asset management and control-oriented ownership across diversified infrastructure sectors.",
     sourceUrls: ["https://bam.brookfield.com/press-releases/brookfield-raises-record-30-billion-flagship-infrastructure-strategy"],
     sectors: ["Transportation", "Digital Infrastructure", "Renewables / Energy Transition", "Utilities"],
     regions: ["Global", "North America", "Europe", "Asia-Pacific"],
@@ -856,7 +856,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-040", "Brookfield Asset Management", "Brookfield Super-Core Infrastructure Partners", "2018", "$13.2B", 13200, "Core", "Evergreen", {
     description: "Actively raising evergreen core infrastructure vehicle investing across developed markets including North America. Targets essential, contracted infrastructure assets generating stable, long-duration cash yields.",
-    investmentStrategy: "Actively raising evergreen core infrastructure vehicle investing across developed markets (including North America).",
+    investmentStrategy: "Large open-ended, perpetual-life core infrastructure fund targeting assets in utilities, energy, transportation, and communications that provide essential services with long-duration, inflation-linked contracted or regulated revenues. Designed to deliver lower but highly stable returns compared to Brookfield's closed-ended flagship funds, investing globally with a strong emphasis on OECD markets.",
     sourceUrls: ["https://pitchbook.com/profiles/fund/16563-16F", "https://www.sec.gov/Archives/edgar/data/1937926/000162828026013098/bam-20251231.htm"],
     sectors: ["Utilities", "Transportation", "Renewables / Energy Transition"],
     regions: ["Global", "North America", "Europe"],
@@ -864,7 +864,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-041", "Brookfield Asset Management", "Brookfield Global Transition Fund II (BGTF II)", "2023", "$20.0B", 20000, "Value-Add", "Deploying", {
     description: "BGTF II executes large-scale direct equity acquisitions related to decarbonization across North America and globally. Set a new record as the largest dedicated transition fund, targeting clean energy, electrification, and sustainable industrial infrastructure.",
-    investmentStrategy: "BGTF II executes large-scale direct equity acquisitions related to decarbonization, passing the active and NA inclusion rules.",
+    investmentStrategy: "The world's largest dedicated clean energy transition fund, targeting equity investments across renewable power expansion (wind, solar, hydro), corporate decarbonization, carbon capture and storage, nuclear, battery storage, and grid modernization across North America, South America, Europe, and Asia Pacific. Focuses on accelerating the global shift to a net-zero economy by backing established platforms and transforming carbon-intensive businesses.",
     sourceUrls: ["https://bam.brookfield.com/press-releases/brookfield-raises-20-billion-record-transition-fund", "https://www.connectmoney.com/stories/brookfield-closes-20b-global-energy-transition-fund-ii-setting-new-record/"],
     sectors: ["Renewables / Energy Transition", "Power Generation", "Utilities"],
     regions: ["Global", "North America"],
@@ -872,7 +872,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-042", "Brookfield Asset Management", "Brookfield Infrastructure Solutions (BISS I)", "2024", "$1.0B", 1000, "Opportunistic", "Deploying", {
     description: "Newly raised closed-end vehicle providing opportunistic structured and common equity exclusively to mid-market infrastructure projects in North America and globally.",
-    investmentStrategy: "Newly raised closed-end vehicle providing opportunistic structured and common equity exclusively to mid-market infrastructure projects in NA and globally.",
+    investmentStrategy: "Debut middle-market infrastructure fund providing structured and common equity capital to sponsors, developers, and corporates across Brookfield's areas of greatest operational expertise, including renewable energy and in-building wireless infrastructure. Blends attributes of infrastructure debt and equity to offer flexible, solutions-oriented capital at the smaller end of the market.",
     sourceUrls: ["https://bam.brookfield.com/press-releases/brookfield-closes-infrastructure-structured-solutions-fund"],
     sectors: ["Utilities", "Transportation", "Renewables / Energy Transition"],
     regions: ["North America", "Global"],
@@ -880,7 +880,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-043", "Brookfield Asset Management", "Brookfield Infrastructure Income Fund (BII)", "2023", "$5.1B", 5100, "Core-Plus", "Evergreen", {
     description: "BII is an active, open-ended infrastructure income fund heavily weighted toward direct equity ownership of infrastructure assets in North America. Distributed through private wealth channels, targeting 7-9% net returns with quarterly income distributions.",
-    investmentStrategy: "BII is an active, open-ended infrastructure income fund heavily weighted toward direct equity ownership of infrastructure assets in North America.",
+    investmentStrategy: "Evergreen, semi-liquid vehicle designed for private wealth investors, providing exposure to a diversified blend of private infrastructure equity and debt across renewable power and transition, data infrastructure, utilities, transport, and midstream globally. Targets total returns split between current income and capital appreciation, with monthly subscriptions, monthly distributions, and quarterly share repurchase liquidity.",
     sourceUrls: ["https://privatewealth.brookfield.com/sites/default/files/funds/tender-offer-funds/brookfield-infrastructure-income-fund-flyer.pdf", "https://privatewealth.brookfield.com/fund/brookfield-infrastructure-income-fund-inc"],
     sectors: ["Utilities", "Transportation", "Midstream / Energy", "Renewables / Energy Transition"],
     regions: ["North America", "Global"],
@@ -889,7 +889,7 @@ export const funds: Fund[] = [
   // ── Canada Development Investment Corporation ──────────────
   f("FUND-044", "Canada Development Investment Corporation", "Canada Growth Fund", "2022", "C$15.0B", 11100, "Value-Add", "Evergreen", {
     description: "Active, permanent-capital investment vehicle making direct infrastructure equity investments explicitly focused on the North American (Canadian) market. Established by the Canadian federal government to attract private capital into building Canada's clean economy.",
-    investmentStrategy: "Active, permanent-capital investment vehicle making direct infrastructure equity investments explicitly focused on the North American (Canadian) market.",
+    investmentStrategy: "Canadian government-backed investment vehicle that catalyzes private capital into clean economy projects in Canada, using concessional instruments such as carbon contracts for difference, equity, and other risk-absorbing tools to improve project economics. Targets carbon capture and storage, clean hydrogen, renewable power, transportation electrification, and industrial decarbonization.",
     sourceUrls: ["https://www.budget.canada.ca/fes-eea/2022/doc/gf-fc-en.pdf", "https://www.cgf-fcc.ca/en/who-we-are/", "https://www.cgf-fcc.ca/en/"],
     sectors: ["Renewables / Energy Transition", "Utilities", "Transportation"],
     regions: ["North America"],
@@ -900,7 +900,7 @@ export const funds: Fund[] = [
   // ── Carlyle Group ─────────────────────────────────────────
   f("FUND-045", "Carlyle Group", "Carlyle Global Infrastructure Opportunity Fund II", "2024", "$3.0B", 3000, "Opportunistic", "Raising", {
     description: "A targeted opportunistic infrastructure equity fund with an aggressive footprint in North American asset acquisition. Texas TRS committed $200M. Carlyle targets power, renewables, and digital infrastructure globally.",
-    investmentStrategy: "A targeted opportunistic infrastructure equity fund with an aggressive footprint in North American asset acquisition.",
+    investmentStrategy: "Opportunistic infrastructure equity fund targeting essential assets across transportation and logistics, digital infrastructure, and renewables in North America and other OECD markets. Applies Carlyle's value creation approach from private equity to infrastructure — investing across development, construction, and growth stages — with a focus on contracted revenues, inflation protection, and active management to drive EBITDA expansion.",
     sourceUrls: ["https://www.privateequitywire.co.uk/carlyle-targets-over-3bn-for-new-infrastructure-fund/", "https://pe-insights.com/carlyle-eyes-over-3bn-for-new-infrastructure-fund-amid-growing-investor-interest/", "https://pitchbook.com/profiles/fund/27355-60F", "https://irei.com/news/texas-trs-slates-200m-to-carlyle-global-infrastructure-opportunity-fund-ii/"],
     sectors: ["Power Generation", "Renewables / Energy Transition", "Digital Infrastructure"],
     regions: ["North America", "Global"],
@@ -908,7 +908,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-046", "Carlyle Group", "Carlyle Renewable & Sustainable Energy Fund II", "2022", "$1.6B", 1600, "Value-Add", "Deploying", {
     description: "Active 2022-vintage closed-end fund making direct equity value-add infrastructure investments in North America. NY Common Retirement Fund among major LPs. Focuses on renewable energy and sustainable infrastructure projects.",
-    investmentStrategy: "Active 2022-vintage closed-end fund making direct equity value-add infrastructure investments in North America.",
+    investmentStrategy: "Global value-add infrastructure fund focused on clean energy, targeting solar, wind, battery storage, green hydrogen, and related cleantech across North America, Europe, and Australia, with per-investment commitments typically between $75–250M. Pursues both development-stage and operating renewable assets through platform creation and growth equity.",
     sourceUrls: ["https://www.buyoutsinsider.com/carlyles-second-renewables-fund-tops-1bn-with-help-of-new-york-common/", "https://www.osc.ny.gov/press/releases/2024/08/dinapoli-ny-pension-fund-reaches-climate-agreements-five-portfolio-companies", "https://www.boston.gov/sites/default/files/file/2023/07/2023%C2%A006%C2%A0Investment%20Performance%20Report.pdf"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["North America"],
@@ -918,7 +918,7 @@ export const funds: Fund[] = [
   // ── CBRE Caledon ──────────────────────────────────────────
   f("FUND-047", "CBRE Caledon", "CBRE Musselshell Infrastructure Investments", "2022", "$235M", 235, "Opportunistic", "Deploying", {
     description: "Active customized opportunistic infrastructure SMA formed in 2022 for the Montana Board of Investments with a global/North American mandate. Consultant-led infrastructure allocation vehicle.",
-    investmentStrategy: "Qualifies as an active customized opportunistic infrastructure SMA formed in 2022 for the Montana Board of Investments with a global/North American mandate.",
+    investmentStrategy: "Mid-market, core and core-plus infrastructure fund targeting diversified OECD-market investments across renewable energy, transportation, digital infrastructure, social infrastructure, and utilities. Constructs diversified portfolios through direct and indirect investments, seeking consistent inflation-linked cash flows from assets with monopolistic characteristics and high barriers to entry.",
     sourceUrls: ["https://pitchbook.com/profiles/fund/22373-92F", "https://irei.com/news/montana-boi-commits-135m-to-cbre-musselshell-infrastructure-investments/", "https://www.dakota.com/resources/blog/consultant-led-private-infrastructure-allocations-from-q4-2025"],
     sectors: ["Utilities", "Transportation", "Digital Infrastructure"],
     regions: ["North America", "Global"],
@@ -928,7 +928,7 @@ export const funds: Fund[] = [
   // ── CIM Group ─────────────────────────────────────────────
   f("FUND-048", "CIM Group", "CIM Infrastructure Fund III", "2021", "$1.76B", 1760, "Value-Add", "Deploying", {
     description: "Active value-add closed-end infrastructure equity fund targeting middle-market assets strictly in North America. CIM Group focuses on real assets across digital, transport, and environmental infrastructure in the US.",
-    investmentStrategy: "Meets all guidelines as an active value-add closed-end infrastructure equity fund targeting middle-market assets strictly in North America.",
+    investmentStrategy: "Value-add infrastructure fund targeting opportunities exclusively in North America across three high-conviction subsectors — digital infrastructure (data centers, fiber, wireless towers), renewable energy and storage, and waste and water management — through active ownership and operational improvement. Draws on CIM Group's integrated platform as an owner, operator, and developer to originate and manage assets benefiting from AI-driven data growth and the energy transition.",
     sourceUrls: ["https://pitchbook.com/profiles/fund/21118-06F", "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2022/cim%20infrastructure%20fund%20iii%20-%20public%20im.pdf"],
     sectors: ["Digital Infrastructure", "Transportation", "Waste / Environmental Services"],
     regions: ["North America"],
@@ -938,7 +938,7 @@ export const funds: Fund[] = [
   // ── Copenhagen Infrastructure Partners ────────────────────
   f("FUND-049", "Copenhagen Infrastructure Partners", "Copenhagen Infrastructure V (CI V)", "2023", "€12.0B", 13200, "Value-Add", "Deploying", {
     description: "Active flagship vehicle undertaking direct equity and greenfield energy infrastructure acquisitions across North America, Europe, and APAC. CIP is one of the world's largest dedicated energy infrastructure fund managers.",
-    investmentStrategy: "Active flagship vehicle undertaking direct equity and greenfield energy infrastructure acquisitions across North America, Europe, and APAC.",
+    investmentStrategy: "Large-scale greenfield renewable energy fund investing early-stage in offshore wind, onshore wind, solar PV, and battery storage across low-risk OECD markets in Western Europe, North America, and Asia Pacific. Captures a greenfield development premium by entering projects at early development, significantly de-risking and optimizing them prior to construction, applying CIP's industrial value-creation model.",
     sourceUrls: ["https://www.cip.com/funds/flagship-funds/", "https://outside.vermont.gov/dept/VPIC/Shared%20Documents/VPIC%20Website/Meetings/VPIC%20General%20Meetings/Meeting%20Materials/2023/12-12-2023/2023-12%20CIP%20V%20Strategy%20Summary_v1%20(Redacted).pdf"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["North America", "Europe", "Asia-Pacific"],
@@ -946,7 +946,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-050", "Copenhagen Infrastructure Partners", "CI Advanced Bioenergy Fund I (CI ABF I)", "2022", "€750M", 825, "Value-Add", "Deploying", {
     description: "Vehicle explicitly deploying capital into advanced bioenergy direct equity projects within North America and Europe. Targets next-generation biofuels and sustainable aviation fuel infrastructure.",
-    investmentStrategy: "This vehicle explicitly deployed capital into advanced bioenergy direct equity projects within North America and Europe.",
+    investmentStrategy: "Greenfield bioenergy fund investing in advanced bioenergy infrastructure producing biomethane, bio-LNG, and second-generation biofuels from sustainable organic waste feedstocks across Europe and North America. Targets the decarbonization of hard-to-abate sectors including shipping, aviation, and heavy industry, classified as Article 9 (dark green) under EU SFDR.",
     sourceUrls: ["https://www.cip.com/funds/"],
     sectors: ["Renewables / Energy Transition"],
     regions: ["North America", "Europe"],
@@ -954,7 +954,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-051", "Copenhagen Infrastructure Partners", "CI Advanced Bioenergy Fund II (CI ABF II)", "2025", "€1.5B", 1650, "Value-Add", "Raising", {
     description: "Active successor fund (Vintage 2025) raising capital to make direct infrastructure equity investments in North America and Europe. Builds on ABF I's track record in advanced bioenergy and sustainable fuels.",
-    investmentStrategy: "Active successor fund (Vintage 2025) raising capital to make direct infrastructure equity investments in North America and Europe.",
+    investmentStrategy: "Successor fund continuing the strategy of CI ABF I, making greenfield equity investments in advanced bioenergy infrastructure — producing biomethane, bio-LNG, and advanced biofuels from sustainable organic waste feedstocks — primarily across Europe and North America. Leverages the seed portfolio and operational capabilities built through ABF I to decarbonize hard-to-abate sectors.",
     sourceUrls: ["https://www.cip.com/funds/"],
     sectors: ["Renewables / Energy Transition"],
     regions: ["North America", "Europe"],
@@ -964,7 +964,7 @@ export const funds: Fund[] = [
   // ── CPP Investments ───────────────────────────────────────
   f("FUND-052", "CPP Investments", "CPP Investments Infrastructure", "1999", "C$780.7B", 577700, "Core", "Evergreen", {
     description: "A permanent captive evergreen platform conducting large-scale direct core infrastructure equity acquisitions globally, including heavy deployment in North America. CPP manages the Canada Pension Plan fund and has been among the most active direct infrastructure investors globally.",
-    investmentStrategy: "A permanent captive evergreen platform conducting large-scale direct core infrastructure equity acquisitions globally, including heavy deployment in North America.",
+    investmentStrategy: "Deploys large-scale direct capital globally across utilities, renewable and conventional energy, transportation networks, midstream assets, and digital infrastructure, with a long-term ownership horizon and a preference for significant ownership stakes that enable active governance. Operates across developed and emerging markets through direct investments, co-investments, and fund commitments, with global offices supporting on-the-ground origination.",
     sourceUrls: ["https://www.cppinvestments.com/newsroom/cpp-investments-net-assets-total-780-7-billion-at-third-quarter-fiscal-2026/", "https://www.cppinvestments.com/the-fund/investment-programs/investment-real-assets/", "https://en.wikipedia.org/wiki/CPP_Investments"],
     sectors: ["Transportation", "Utilities", "Power Generation", "Renewables / Energy Transition"],
     regions: ["Global", "North America"],
@@ -976,7 +976,7 @@ export const funds: Fund[] = [
   // ── CVC DIF ───────────────────────────────────────────────
   f("FUND-053", "CVC DIF", "CVC DIF Infrastructure VIII", "2025", "€6.0B", 6600, "Core-Plus", "Raising", {
     description: "Active 2025-vintage flagship infrastructure equity fund cleared to deploy core-plus capital across North America and Europe. Multiple US state pension boards (NJ, PA) have approved commitments to this vehicle.",
-    investmentStrategy: "Active 2025-vintage flagship infrastructure equity fund cleared to deploy core-plus capital across North America and Europe.",
+    investmentStrategy: "Flagship core and core-plus mid-market infrastructure equity fund targeting essential assets in energy transition, digital infrastructure, transport, and utilities across Europe, North America, and Australia. Employs a 'build-to-core' approach, acquiring and operating assets with long-term contract cover that provide downside protection and stable yield, while capturing additional value from development pipelines and operational improvements.",
     sourceUrls: ["https://www.nj.gov/treasury/doinvest/pdf/AlternativeInvestments/RealAsset/DIF_Infrastructure_VIII_SCSp.pdf", "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025-58%20pserb%20resolution%20dif%20infrastructure%20fund%20viii%20scsp.pdf", "https://inforcapital.com/funds/dif-infrastructure-viii/"],
     sectors: ["Utilities", "Renewables / Energy Transition", "Digital Infrastructure", "Transportation"],
     regions: ["North America", "Europe"],
@@ -984,7 +984,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-054", "CVC DIF", "CVC DIF Value-Add IV", "2024", "€2.0B", 2200, "Value-Add", "Raising", {
     description: "Active, recently launched value-add infrastructure equity fund with a global mandate that includes North American exposure. Targets higher-return infrastructure platforms requiring operational improvement.",
-    investmentStrategy: "Active, recently launched value-add infrastructure equity fund with a global mandate that includes North American exposure.",
+    investmentStrategy: "Pursues a 'buy-and-build' strategy targeting growth-oriented mid-market infrastructure companies — particularly in digital infrastructure, energy transition, sustainable transportation, and healthcare — primarily across Europe and North America. Focuses on businesses with strong competitive positions and significant growth potential through pipeline development, business line expansion, and platform aggregation.",
     sourceUrls: ["https://www.nj.gov/treasury/doinvest/pdf/AlternativeInvestments/RealAsset/DIF_Infrastructure_VIII_SCSp.pdf"],
     sectors: ["Utilities", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["Global", "North America", "Europe"],
@@ -992,7 +992,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-055", "CVC DIF", "DIF Infrastructure VII", "2022", "€4.4B", 4840, "Core", "Deploying", {
     description: "Active, recently closed flagship core infrastructure equity fund pursuing North American assets. DIF beat its target and raised €6.8 billion across its two infrastructure funds in the same vintage.",
-    investmentStrategy: "Meets all inclusion criteria as an active, recently closed flagship core infrastructure equity fund pursuing North American assets.",
+    investmentStrategy: "Core and core-plus infrastructure equity fund targeting essential assets in PPP/concessions, renewable energy, broader energy transition, and utilities across Europe, North America, and Oceania. Combines brownfield and selective greenfield investment to generate long-term, inflation-linked contracted or regulated cash flows, with active value enhancement through cost optimization, debt refinancing, and asset combination strategies.",
     sourceUrls: ["https://www.preqin.net.cn/news/dif-capital-partners-beats-targets-after-raising-eur6-8bn-for-two-infrastructure-funds", "https://pitchbook.com/profiles/fund/22326-94F"],
     sectors: ["Utilities", "Transportation", "Digital Infrastructure"],
     regions: ["Europe", "North America"],
@@ -1000,7 +1000,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-056", "CVC DIF", "DIF Core-Plus Infrastructure Fund III (CIF III)", "2022", "€1.6B", 1760, "Core-Plus", "Deploying", {
     description: "Active, traditional closed-end core-plus vehicle with capital to deploy into equity infrastructure across North America and Europe. Part of DIF's dual-fund strategy alongside the flagship core vehicle.",
-    investmentStrategy: "Successfully verified as an active, traditional closed-end core-plus vehicle with capital to deploy into equity infrastructure across North America.",
+    investmentStrategy: "Small-to-mid-cap core-plus infrastructure equity fund targeting digital infrastructure (data centers, fiber networks), energy transition, and sustainable transportation across Europe and North America, with deals typically sized between €30–150M. Pursues both operational and greenfield assets in sectors benefiting from decarbonization and digitalization megatrends.",
     sourceUrls: ["https://www.preqin.net.cn/news/dif-capital-partners-beats-targets-after-raising-eur6-8bn-for-two-infrastructure-funds", "https://www.ccpc.ie/business/mergers-acquisitions/merger-notifications/m-22-053-dif-talbot-group/"],
     sectors: ["Utilities", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["Europe", "North America"],
