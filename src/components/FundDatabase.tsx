@@ -938,15 +938,15 @@ function FundDrawer({
             </div>
           )}
 
-          {/* Investment Rationale */}
-          {fund.rationale && (
+          {/* Investment Strategy */}
+          {fund.investmentStrategy && (
             <div className="border-t border-[#27272A] pt-4">
               <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider block mb-2">
-                Investment Rationale
+                Investment Strategy
               </span>
               <div className="glass-card rounded-[4px] p-3">
                 <p className="text-sm-dense text-[#A1A1AA] leading-relaxed italic">
-                  {fund.rationale}
+                  {fund.investmentStrategy}
                 </p>
               </div>
             </div>
