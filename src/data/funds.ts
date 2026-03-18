@@ -1498,7 +1498,7 @@ export const funds: Fund[] = [
   // ── Kuwait Investment Authority (KIA) ─────────────────────
   f("FUND-109", "Kuwait Investment Authority (KIA)", "Wren House Infrastructure (Captive Platform)", "2013", "$5.0B", 5000, "Core", "Evergreen", {
     description: "Active, evergreen captive platform acting as the sovereign wealth direct-investment arm for core/core-plus infrastructure equity across North America. Portfolio includes QTS Realty Trust data center JV, North Sea Midstream Partners, and European utility/energy assets.",
-    investmentStrategy: "Qualifies flawlessly as an active, evergreen captive platform acting as the sovereign wealth direct-investment arm for core/core-plus infrastructure equity across North America.",
+    investmentStrategy: "Kuwait Investment Authority's wholly-owned captive infrastructure manager deploying capital globally across transport, energy, utilities, digital infrastructure (including fibre, towers, and data centres), and social infrastructure with a long-term, hold-oriented mandate. Targets core and core-plus assets primarily in Europe and North America, evolving toward a more active value-creation and asset-rotation approach.",
     sourceUrls: ["https://www.macquarie.com/au/en/about/news/2018/mira-and-wren-house-divest-part-of-viesgos-portfolio-to-repsol-for-750-million.html", "https://www.whinfra.com/qts-realty-trust-and-wren-house-successfully-complete-joint-venture-for-three-northern-virginia-data-centers-2/", "https://www.prnewswire.com/news-releases/wren-house-to-acquire-north-sea-midstream-partners-limited-from-arclight-300684909.html"],
     sectors: ["Utilities", "Digital Infrastructure", "Midstream / Energy"],
     regions: ["Global", "North America", "Europe"],
@@ -1510,7 +1510,7 @@ export const funds: Fund[] = [
   // ── Macquarie Asset Management ────────────────────────────
   f("FUND-110", "Macquarie Asset Management", "Macquarie Energy Transition Infrastructure Fund (METI)", "2024", "$653.6M", 654, "Core-Plus", "Evergreen", {
     description: "Active, open-ended infrastructure equity fund that makes direct acquisitions in North American energy transition platforms. Targets operational renewable energy and clean power assets.",
-    investmentStrategy: "This is an active, open-ended infrastructure equity fund that makes direct acquisitions in North American energy transition platforms.",
+    investmentStrategy: "Open-ended, core-plus private infrastructure fund targeting the energy transition sector across OECD countries, with an initial focus on decarbonizing the electricity sector through mature, deployable technologies. Subsectors include energy storage, distributed energy, renewable fuels, clean transportation, carbon capture, and circular economy solutions.",
     sourceUrls: ["https://www.macquarie.com/assets/macq/mam/au/performance-report/macquarie-energy-transition-infrastructure-performance-report.pdf", "https://www.macquarie.com/assets/macq/mam/au/flyer/macquarie-energy-transition-infrastructure-fund-asset-flyer.pdf", "https://pitchbook.com/profiles/fund/28207-63F"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["North America"],
@@ -1518,7 +1518,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-111", "Macquarie Asset Management", "Macquarie Infrastructure Partners VI (MIP VI)", "2022", "$8.0B", 8000, "Core-Plus", "Deploying", {
     description: "Active, Americas-focused core-plus infrastructure equity fund heavily deployed in North America. One of Macquarie's flagship vehicles targeting utilities, transport, and digital infrastructure.",
-    investmentStrategy: "It passes all criteria as it is an active, Americas-focused core-plus infrastructure equity fund that is heavily deployed in North America.",
+    investmentStrategy: "Core-plus, closed-end fund targeting mid-market infrastructure assets across the Americas, seeking net IRRs of 10–12% and annual cash yields of 4–6%. Focuses on essential, contracted assets with high barriers to entry across transportation, digital infrastructure, utilities, energy, waste, and social infrastructure, deploying equity tickets of $50–125M per investment with an active ownership model.",
     sourceUrls: ["https://www.macquarie.com/au/en/about/news/2025/macquarie-asset-management-closes-macquarie-infrastructure-partners-vi.html", "https://inforcapital.com/funds/macquarie-infrastructure-partners-vi/"],
     sectors: ["Utilities", "Transportation", "Digital Infrastructure"],
     regions: ["North America"],
@@ -1526,7 +1526,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-112", "Macquarie Asset Management", "Macquarie Infrastructure Partners VII (MIP VII)", "2025", "$7.0B", 7000, "Core-Plus", "Raising", {
     description: "Recently launched active follow-on to Macquarie's flagship Americas infrastructure equity fund series. Targeting $7 billion for North American infrastructure.",
-    investmentStrategy: "Included because it is the recently launched active follow-on to Macquarie's flagship Americas infrastructure equity fund series.",
+    investmentStrategy: "Latest fund in Macquarie's Americas-focused, core-plus infrastructure series targeting essential, contracted mid-market assets across transportation, digital infrastructure, utilities, energy, and waste sectors in the Americas. Builds on a track record spanning more than 22 years of investing in the region with an active ownership approach.",
     sourceUrls: ["https://www.infrastructureinvestor.com/macquarie-launches-latest-americas-infra-fund-targeting-7bn-exclusive/", "https://www.infrastructureinvestor.com/funds-in-market/"],
     sectors: ["Utilities", "Transportation", "Digital Infrastructure"],
     regions: ["North America"],
@@ -1534,7 +1534,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-113", "Macquarie Asset Management", "Macquarie Global Infrastructure Fund (MGIF)", "2021", "$4.0B", 3000, "Core", "Evergreen", {
     description: "Global, open-ended infrastructure equity fund actively acquiring core assets directly in North America. Secured $3 billion in commitments for the new open-end core strategy.",
-    investmentStrategy: "Included as it is a global, open-ended infrastructure equity fund actively acquiring core assets directly in North America.",
+    investmentStrategy: "Open-ended, core-plus private infrastructure fund with a global mandate, deploying capital across energy and transport assets in Europe and the United States. Targets essential infrastructure across energy and utilities, renewables, transportation, and digital sectors, offering diversified exposure with inflation-linked, income-generating characteristics through a perpetual-capital structure.",
     sourceUrls: ["https://www.infrastructureinvestor.com/macquarie-secures-3bn-for-new-open-end-core-fund-exclusive/", "https://www.frontieradvisors.com.au/wp-content/uploads/2022/10/Market-Insights-RAT-quarterly-Q3-2022-Fundraising.pdf"],
     sectors: ["Utilities", "Transportation", "Power Generation"],
     regions: ["Global", "North America"],
@@ -1543,7 +1543,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-114", "Macquarie Asset Management", "Macquarie Green Energy Transition Solutions (MGETS)", "2022", "$3.0B+", 3000, "Value-Add", "Deploying", {
     description: "Recently closed active fund acquiring direct equity stakes in growth-stage/value-add energy transition platforms globally, including the US. Closed oversubscribed at $2.4 billion before reaching $3 billion with co-investments.",
-    investmentStrategy: "A recently closed active fund acquiring direct equity stakes in growth-stage/value-add energy transition platforms globally, including the US.",
+    investmentStrategy: "Macquarie's first dedicated energy transition fund targeting opportunities beyond mature renewables, investing in companies that apply proven technologies to decarbonize energy sectors globally. Targets six subsectors — energy storage, distributed energy, renewable fuels, clean transportation, carbon capture, and circular economy — with a globally diversified portfolio spanning EMEA, APAC, and the Americas.",
     sourceUrls: ["https://www.macquarie.com/au/en/about/news/2025/macquarie-asset-management-reaches-us3-billion-close-of-green-energy-transition-solutions-fund-and-co-investment-commitment.html", "https://www.infrastructureinvestor.com/macquarie-closes-mgets-fund-oversubscribed-on-2-4bn/"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["Global", "North America"],
@@ -1551,7 +1551,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-115", "Macquarie Asset Management", "Macquarie Green Energy and Climate Opportunities Fund", "2023", "$1.14B", 1140, "Core-Plus", "Evergreen", {
     description: "Active, open-ended global vehicle that directly acquires mature green energy platforms and operates across geographies including the Americas. Recently acquired a portfolio of six diversified green energy investments.",
-    investmentStrategy: "An active, open-ended global vehicle that directly acquires mature green energy platforms and operates across geographies including the Americas.",
+    investmentStrategy: "Open-ended, opportunistic fund providing diversified exposure to large-scale renewable energy and natural climate solutions across OECD markets, with investments spanning solar, wind, energy storage, and natural climate solutions. Targets equity investments across multiple asset lifecycle stages — development, construction, and operations — spanning the Americas, Asia-Pacific, and Europe.",
     sourceUrls: ["https://www.macquarie.com/au/en/about/news/2024/macquarie-green-energy-and-climate-opportunities-fund-acquires-portfolio-of-six-investments.html", "https://pitchbook.com/profiles/fund/25578-37F"],
     sectors: ["Renewables / Energy Transition"],
     regions: ["Global", "North America"],
@@ -1561,7 +1561,7 @@ export const funds: Fund[] = [
   // ── Meridiam ───────────────────────────────────────────────
   f("FUND-116", "Meridiam", "Meridiam Infrastructure North America IV (MINA IV)", "2024", "$1.8B", 1800, "Value-Add", "Deploying", {
     description: "MINA IV is an active, closed-end infrastructure equity fund geographically dedicated to developing and acquiring assets in North America. Successfully closed raising more than $1.8 billion.",
-    investmentStrategy: "MINA IV is an active, closed-end infrastructure equity fund that is geographically dedicated to developing and acquiring assets in North America.",
+    investmentStrategy: "Long-term, greenfield-first infrastructure fund focused on public-private partnership (PPP) projects in the United States and Canada, targeting transportation (roads, bridges, express lanes, transit), social infrastructure (schools, healthcare), environmental services, and low-carbon energy solutions. Employs a 25-year hold period aligned with concession durations, emphasizing contracted revenue streams and measurable sustainability outcomes.",
     sourceUrls: ["https://www.businesswire.com/news/home/20251002014398/en/Meridiam-Successfully-Closes-MINA-IV-Its-Flagship-North-America-Infrastructure-Fund-Raising-More-Than-%241.8-Billion", "https://data.treasury.ri.gov/dataset/5df8d940-feaf-4ab5-9713-4e746753beb0/resource/dd81494e-7749-4c75-a843-94eb0e16d7dc/download/1a-meridiam-infrastructure-north-america-iv-staff-memo-final.pdf"],
     sectors: ["Transportation", "Social Infrastructure", "Renewables / Energy Transition"],
     regions: ["North America"],
@@ -1571,7 +1571,7 @@ export const funds: Fund[] = [
   // ── Mirova ────────────────────────────────────────────────
   f("FUND-117", "Mirova", "Mirova Energy Transition 6 (MET6)", "2023", "€2.0B", 2200, "Core-Plus", "Raising", {
     description: "Active 2023-vintage energy transition infrastructure equity fund making direct acquisitions across OECD markets, inclusive of North America. Reached €1.2 billion at second close and targeting €2 billion final close.",
-    investmentStrategy: "It is an active 2023-vintage energy transition infrastructure equity fund making direct acquisitions across OECD markets, inclusive of North America.",
+    investmentStrategy: "Infrastructure fund investing in greenfield, brownfield, and corporate energy transition assets with a primary focus on Europe and selective exposure to other OECD markets. Target subsectors span onshore and offshore wind, solar PV, hydropower, energy storage, energy efficiency, low-carbon electric mobility, and hydrogen, financing projects through their full lifecycle to generate stable, inflation-linked cash flows.",
     sourceUrls: ["https://www.im.natixis.com/en-gb/about/investment-manager-news/2025/mirova-energy-transition-6-fund-reaches-1-2-Billion-euro-at-second-close", "https://www.esgtoday.com/mirova-raises-1-4-billion-for-flagship-energy-transition-fund/", "https://pitchbook.com/profiles/fund/24431-95F", "https://www.mirova.com/sites/default/files/2023-10/Press%20release_Mirova%20Energy%20Transition%206_EN.pdf"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["Europe", "North America"],
@@ -1581,7 +1581,7 @@ export const funds: Fund[] = [
   // ── Morgan Stanley Investment Management ──────────────────
   f("FUND-118", "Morgan Stanley Investment Management", "North Haven Infrastructure Partners IV", "2022", "$4.1B", 4100, "Value-Add", "Deploying", {
     description: "Active, recent-vintage global infrastructure fund actively targeting value-add equity acquisitions globally, inclusive of North America. Closed at $4.1 billion, slightly below its $6 billion target.",
-    investmentStrategy: "It fully qualifies as an active, recent-vintage global infrastructure fund actively targeting value-add equity acquisitions globally, inclusive of North America.",
+    investmentStrategy: "Value-add global infrastructure fund investing in essential assets that provide public goods and services with long useful lives and stable, inflation-linked cash flows. Targets transportation, digital infrastructure, energy transition (with a preference for renewables), and utilities, primarily in North America and OECD countries, with active asset management to drive value creation.",
     sourceUrls: ["https://www.morganstanley.com/im/en-us/individual-investor/insights/press-release/msim-closes-fourth-global-ingrastructure-fund-at-4B.html", "https://www.themiddlemarket.com/news-analysis/why-morgan-stanley-missed-the-6b-mark-on-its-fourth-infra-vintage"],
     sectors: ["Utilities", "Digital Infrastructure", "Transportation", "Renewables / Energy Transition"],
     regions: ["Global", "North America", "Europe"],
@@ -1591,7 +1591,7 @@ export const funds: Fund[] = [
   // ── Morrison & Co. ────────────────────────────────────────
   f("FUND-119", "Morrison & Co.", "Infratil Limited", "1994", "NZ$19.0B", 11780, "Core-Plus", "Evergreen", {
     description: "Infratil is a massive permanent capital infrastructure company (PLC) that actively develops and acquires growth-oriented core-plus infrastructure platforms globally, including across North America. Listed on NZX with investments spanning digital, renewables, and healthcare infrastructure.",
-    investmentStrategy: "Infratil is a massive permanent capital infrastructure company (PLC) that actively develops and acquires growth-oriented core-plus infrastructure platforms globally, including across North America.",
+    investmentStrategy: "Publicly listed, permanent-capital infrastructure investor targeting long-term annual after-tax shareholder returns of 11–15% across digital infrastructure, renewable energy, and healthcare assets in New Zealand, Australia, Europe, Asia, and the United States. Portfolio heavily weighted toward data centres (notably CDC Data Centres) and renewable energy developers, reflecting a deliberate pivot toward digitalization and decarbonization growth themes.",
     sourceUrls: ["https://infratil.com/for-investors/annual-reports/interim-report-2025/", "https://www.perplexity.ai/finance/IFT.NZ/history", "https://discountingcashflows.com/company/IFT.NZ/overview/", "https://www.annualreports.com/Company/infratil"],
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Social Infrastructure"],
     regions: ["Global", "North America", "Asia-Pacific"],
@@ -1603,7 +1603,7 @@ export const funds: Fund[] = [
   // ── Mubadala Investment Company ───────────────────────────
   f("FUND-120", "Mubadala Investment Company", "Mubadala Infrastructure (Real Assets)", "2008", "AED 1.2T", 326700, "Core-Plus", "Evergreen", {
     description: "The entity operates as the direct and active captive infrastructure arm of Abu Dhabi's sovereign wealth fund, deploying into North American infrastructure equity. AED 1.2 trillion firm AUM across all strategies. US office established for direct North American investment.",
-    investmentStrategy: "The entity operates as the direct and active captive infrastructure arm of a major sovereign wealth fund, satisfying the active evergreen/platform criteria for North American infrastructure equity deployment.",
+    investmentStrategy: "Sovereign investor deploying capital across six high-conviction sectors: energy transition, digital infrastructure (data centres, fibre, towers), transport, power and utilities, industrial infrastructure, and sustainable assets. Operates through direct investments, co-investments, and GP partnerships across North America, Europe, the Middle East, and increasingly Asia, targeting capital-intensive assets with predictable, long-term cash flows.",
     sourceUrls: ["https://www.mubadala.com/en/news/mubadala-investment-company-reports-2024-financial-results", "https://www.mubadala.com/en/who-we-are/our-structure", "https://www.mubadala.com/us"],
     sectors: ["Utilities", "Digital Infrastructure", "Renewables / Energy Transition", "Transportation"],
     regions: ["Global", "North America", "Middle East & Africa"],
@@ -1614,7 +1614,7 @@ export const funds: Fund[] = [
   // ── Northleaf Capital Partners ────────────────────────────
   f("FUND-121", "Northleaf Capital Partners", "Northleaf Infrastructure Capital Partners IV (NICP IV)", "2023", "$2.6B", 2600, "Core-Plus", "Deploying", {
     description: "Active, recently closed middle-market fund focused explicitly on North American infrastructure equity. Hit hard cap at $2.6 billion final close. Recognized in Infrastructure Investor's 2025 annual review.",
-    investmentStrategy: "It strongly fits the criteria as an active, recently closed middle-market fund focused explicitly on North American infrastructure equity.",
+    investmentStrategy: "Core-plus, closed-end fund targeting control investments in contracted, mid-market infrastructure assets primarily in North America, with selective exposure to Western Europe and Australia. Focuses on renewable energy, digital infrastructure (fibre, towers, data centres), transportation (including rail), and outsourced services, deploying average equity tickets of approximately $250M per deal.",
     sourceUrls: ["https://www.businesswire.com/news/home/20250508377063/en/Northleaf-Hits-Hard-Cap-with-Final-Close-of-its-US%242.6-Billion-Infrastructure-Fund", "https://pitchbook.com/profiles/fund/23058-19F", "https://www.northleafcapital.com/news/northleaf-recognized-infrastructure-investors-2025-annual-review"],
     sectors: ["Utilities", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["North America"],
@@ -1622,7 +1622,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-122", "Northleaf Capital Partners", "Northleaf Essential Infrastructure Fund (NEIF)", "2021", "$800M", 800, "Core", "Evergreen", {
     description: "Functions as Northleaf's active core open-ended vehicle structured to acquire stable infrastructure equity across its mandate. Targets essential services with contracted or regulated revenues.",
-    investmentStrategy: "Functions as Northleaf's active core open-ended vehicle structured to acquire stable infrastructure equity across its mandate.",
+    investmentStrategy: "Open-ended, core infrastructure vehicle targeting mature, mid-market infrastructure assets with contracted and regulated revenue frameworks, emphasizing stable long-term cash flows and lower risk profiles. Provides diversification across geography and subsector, primarily in North America, with a focus on renewable energy and digital infrastructure, while offering enhanced liquidity options relative to traditional closed-end structures.",
     sourceUrls: ["https://www.torys.com/work/2021/11/bf8cb41e-38a3-4b2c-947d-2792fc424d7b"],
     sectors: ["Utilities", "Transportation"],
     regions: ["North America"],
