@@ -1009,7 +1009,7 @@ export const funds: Fund[] = [
   // ── DigitalBridge ──────────────────────────────────────────
   f("FUND-057", "DigitalBridge", "DigitalBridge Partners III", "2022", "$7.2B", 7200, "Value-Add", "Deploying", {
     description: "Verified as a recently closed flagship value-add digital infrastructure fund with a major focus on North American equity. Closed at $7.2 billion with $11.7 billion including co-investments, targeting data centers, fiber, and cell towers.",
-    investmentStrategy: "Verified as a recently closed flagship value-add digital infrastructure fund with a major focus on North American equity.",
+    investmentStrategy: "Value-add digital infrastructure fund targeting cell towers, data centers (including hyperscale and AI-enabling facilities), fiber networks, small cells, and edge infrastructure, primarily across North America, Europe, and Asia-Pacific. Applies an operator-driven model — leveraging deep platform expertise in building and scaling digital infrastructure businesses — to create value through proprietary sourcing and active asset management.",
     sourceUrls: ["https://www.infrastructureinvestor.com/digitalbridge-closes-third-flagship-on-7-2bn/", "https://inforcapital.com/funds/digitalbridge-partners-iii/", "https://ionanalytics.com/insights/infralogic/digitalbridge-fund-nears-final-close-slightly-below-target/"],
     sectors: ["Digital Infrastructure", "Communications"],
     regions: ["North America", "Europe", "Asia-Pacific"],
@@ -1017,7 +1017,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-058", "DigitalBridge", "DigitalBridge Strategic Asset Fund", "2023", "$300M", 300, "Core", "Evergreen", {
     description: "Active evergreen vehicle structured for long-term core digital infrastructure equity acquisitions. Provides permanent capital for DigitalBridge's most stable digital infrastructure holdings.",
-    investmentStrategy: "Active evergreen vehicle structured for long-term core digital infrastructure equity acquisitions.",
+    investmentStrategy: "Opportunistic vehicle targeting high-conviction equity and credit opportunities across the digital ecosystem including data centers, fiber, satellite broadband, and cloud infrastructure. Complements DigitalBridge's flagship value-add fund series by allowing selective deployment into specific digital infrastructure assets where operating network and sector relationships provide proprietary sourcing advantage.",
     sourceUrls: ["https://ionanalytics.com/insights/infralogic/digitalbridge-fund-nears-final-close-slightly-below-target/", "https://ir.digitalbridge.com/node/12376/html"],
     sectors: ["Digital Infrastructure", "Communications"],
     regions: ["North America", "Global"],
@@ -1027,7 +1027,7 @@ export const funds: Fund[] = [
   // ── Duration Capital ──────────────────────────────────────
   f("FUND-059", "Duration Capital Partners", "Duration Transportation Infrastructure Capital Partners", "2022", "$780M", 780, "Core-Plus", "Evergreen", {
     description: "Active evergreen vehicle dedicated exclusively to buying transportation equity in North America. Michigan Retirement System committed $100M. Focuses on airports, toll roads, and mobility infrastructure with long-duration cash flows.",
-    investmentStrategy: "Meets all criteria as an active evergreen vehicle dedicated exclusively to buying transportation equity in North America.",
+    investmentStrategy: "Value-add/opportunistic strategy focused exclusively on North American transportation infrastructure, targeting airports, railroads, ports, terminals, and aviation support businesses. Builds platform companies through buy-and-build acquisitions and organic growth, partnering closely with management teams to drive operational improvements and long-term value creation across essential transportation networks.",
     sourceUrls: ["https://irei.com/news/michigan-retirement-system-commits-100m-to-duration-transportation-infrastructure-capital-partners/", "https://pitchbook.com/profiles/fund/21718-54F"],
     sectors: ["Transportation"],
     regions: ["North America"],
@@ -1037,7 +1037,7 @@ export const funds: Fund[] = [
   // ── Ember Infrastructure Management ───────────────────────
   f("FUND-060", "Ember Infrastructure Management", "Ember Infrastructure Fund II", "2023", "$831M", 831, "Opportunistic", "Deploying", {
     description: "Active infrastructure equity fund targeting North American middle-market sustainability and energy transition assets. Focuses on waste-to-energy, renewable fuels, and environmental services platforms.",
-    investmentStrategy: "Active infrastructure equity fund targeting North American middle-market sustainability and energy transition assets.",
+    investmentStrategy: "Middle-market opportunistic infrastructure fund targeting U.S. and Canadian businesses across energy transition, distributed generation, energy efficiency, water and wastewater, and waste management. Focuses on climate solutions with proven technologies and commercially viable models, pursuing privately sourced or bilaterally negotiated investments in companies occupying a capital gap between traditional PE and large-scale infrastructure.",
     sourceUrls: ["https://pitchbook.com/profiles/fund/24516-82F", "https://inforcapital.com/funds/ember-infrastructure-fund-ii/", "https://assets.bbhub.io/professional/sites/41/Bloomberg-Infrastructure-Energy-Annual-Report-EOY-2025.pdf"],
     sectors: ["Renewables / Energy Transition", "Waste / Environmental Services"],
     regions: ["North America"],
@@ -1047,7 +1047,7 @@ export const funds: Fund[] = [
   // ── EnCap Investments ─────────────────────────────────────
   f("FUND-061", "EnCap Investments", "EnCap Flatrock Midstream Fund V", "2024", "$1.0B", 1000, "Value-Add", "Deploying", {
     description: "Active, closed-end growth equity infrastructure fund focused purely on the North American midstream energy market. EnCap Flatrock targets pipeline, gathering, processing, and transportation assets.",
-    investmentStrategy: "Meets all criteria as an active, closed-end growth equity infrastructure fund focused purely on the North American midstream energy market.",
+    investmentStrategy: "Deploys venture-style growth capital into early-stage North American midstream companies focused on natural gas gathering, treating, processing, and transportation infrastructure. Builds platforms by backing management teams with well-defined business plans, advancing capital incrementally as each business matures, with selective exposure to adjacent energy transition themes including renewable natural gas and hydrogen.",
     sourceUrls: ["https://www.encapinvestments.com/about/midstream", "https://www.privateequityinternational.com/institution-profiles/encap-flatrock-midstream.html", "https://www.encapinvestments.com/about/our-story"],
     sectors: ["Midstream / Energy"],
     regions: ["North America"],
@@ -1055,7 +1055,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-062", "EnCap Investments", "EnCap Energy Transition Fund II", "2022", "$1.5B", 1500, "Value-Add", "Deploying", {
     description: "Active, closed-end equity fund deploying growth capital into energy transition and renewable generation infrastructure in North America. Supported by Oregon Public Employees' Fund.",
-    investmentStrategy: "Active, closed-end equity fund deploying growth capital into energy transition and renewable generation infrastructure in North America.",
+    investmentStrategy: "Growth equity fund targeting utility-scale renewable power (solar, wind, and battery storage), low-carbon fuels (renewable natural gas, hydrogen, SAF), and carbon management businesses across North America. Backs experienced management teams developing or operating projects with proven renewable technologies, deploying equity checks of $50–400M per company, capitalizing on IRA clean energy incentives.",
     sourceUrls: ["https://encapinvestments.com/news/encap-energy-transition-closes-15-billion-energy-transition-fund-ii", "https://www.infrastructureinvestor.com/opf-invests-in-a-new-energy-infrastructure-fund/"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["North America"],
@@ -1063,7 +1063,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-063", "EnCap Investments", "EnCap Energy Transition Fund III", "2025", "Undisclosed", null, "Value-Add", "Raising", {
     description: "Active successor fund to EnCap's energy transition series, providing infrastructure growth equity across North America. Currently in market raising capital.",
-    investmentStrategy: "Active successor fund to EnCap's energy transition series, providing infrastructure growth equity across North America.",
+    investmentStrategy: "Continues the predecessor fund's growth equity strategy of partnering with experienced management teams to develop, build, and operate low-carbon power, clean fuels, and carbon management platforms across North America. Building on over $2.7B managed across the prior fund series, targets proven technology investments in utility-scale renewables, storage, renewable natural gas, and adjacent decarbonization infrastructure.",
     sourceUrls: ["https://www.realfin.com/fund/36105/encap-energy-transition-fund-iii", "https://www.privateequityinternational.com/institution-profiles/encap-investments.html"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["North America"],
@@ -1073,7 +1073,7 @@ export const funds: Fund[] = [
   // ── Energy Capital Partners (ECP) ─────────────────────────
   f("FUND-064", "Energy Capital Partners", "Energy Capital Partners VI", "2024", "$5.0B", 5000, "Core-Plus", "Raising", {
     description: "ECP's flagship core-plus infrastructure fund targeting North American energy, renewables, and decarbonization generation assets. Returned $5.5 billion to investors in 2025, signaling strong deployment track record.",
-    investmentStrategy: "ECP's flagship core-plus infrastructure fund targeting North American energy, renewables, and decarbonization generation assets.",
+    investmentStrategy: "Value-add buyout fund targeting control investments in power generation, renewable energy and storage, and critical sustainability and decarbonization infrastructure across North America. Focuses on transforming and scaling companies in high-demand sectors — including gas-fired power, renewables, and grid reliability services — at a time when electrification from AI data centers, EVs, and industrial onshoring is driving unprecedented electricity demand growth.",
     sourceUrls: ["https://www.privateequitywire.co.uk/energy-capital-partners-returns-5-5bn-to-investors-in-2025/", "https://pitchbook.com/profiles/fund/27050-50F", "https://www.bridgepointgroup.com/content/dam/bridgepoint/corporate2022/documents/financial-information/results_reports_presentations/2025/bridgepoint-interim-results-2025-presentation.pdf.downloadasset.pdf"],
     sectors: ["Power Generation", "Renewables / Energy Transition"],
     regions: ["North America"],
@@ -1081,7 +1081,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-065", "Energy Capital Partners", "ECP Energy Transition Opportunities Fund", "2021", "$500M", 500, "Opportunistic", "Deploying", {
     description: "Active ECP private equity vehicle dedicated to opportunistic infrastructure investments and decarbonization platforms in North America. Investments include Anza (solar/storage procurement platform) spun out from Borrego.",
-    investmentStrategy: "Active ECP private equity vehicle dedicated to opportunistic infrastructure investments and decarbonization platforms in North America.",
+    investmentStrategy: "Focused private equity vehicle targeting energy and clean technology investments, primarily in power generation, renewable energy, battery storage, and decarbonization infrastructure across North America, deploying control-oriented, value-add capital into a concentrated portfolio of 10–15 companies. Builds on ECP's three-decade track record investing through multiple energy cycles.",
     sourceUrls: ["https://pitchbook.com/profiles/fund/19478-89F", "https://radientanalytics.com/firm/adv/ecp-155020", "https://www.businesswire.com/news/home/20230516005316/en/Anza-Completes-Separation-from-Borrego-and-Receives-New-Investment-from-Energy-Capital-Partners-Led-Consortium-to-Transform-Solar-and-Storage-Procurement"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["North America"],
@@ -1091,7 +1091,7 @@ export const funds: Fund[] = [
   // ── Energy Infrastructure Partners (EIP) ──────────────────
   f("FUND-066", "Energy Infrastructure Partners", "EIP III (Global Energy Transition Infrastructure)", "2022", "€4.0B", 4400, "Core-Plus", "Deploying", {
     description: "Fund meets all criteria as an active global OECD infrastructure equity vehicle that targets North America as part of its developed economies mandate. Held first close at €1 billion for energy transition infrastructure.",
-    investmentStrategy: "Fund meets all criteria as an active global OECD infrastructure equity vehicle that targets North America as part of its developed economies mandate.",
+    investmentStrategy: "Targets large-scale, system-critical energy infrastructure — including carbon-free power generation (renewables), energy transmission (grids and networks), and energy storage — across developed economies in Europe and the Americas. Takes long-duration equity stakes alongside strategic industrial partners such as major European utilities, targeting stable and visible long-term cash flows aligned with asset economic lifetimes.",
     sourceUrls: ["https://energy-infrastructure-partners.com/wp-content/uploads/2023/11/With-funding-of-EUR-1bn-EIP-holds-first-close-of-its-energy-transition-infrastructure-fund.pdf"],
     sectors: ["Renewables / Energy Transition", "Utilities", "Power Generation"],
     regions: ["Global", "North America", "Europe"],
@@ -1101,7 +1101,7 @@ export const funds: Fund[] = [
   // ── EQT ───────────────────────────────────────────────────
   f("FUND-067", "EQT", "EQT Infrastructure VI", "2023", "€21.5B", 23650, "Value-Add", "Deploying", {
     description: "EQT's latest flagship infrastructure vehicle, raising €21.5 billion at hard cap — the largest European-headquartered infrastructure fund ever. Targets value-add infrastructure across digital, energy transition, environmental services, and transport in Europe and North America.",
-    investmentStrategy: "EQT's latest flagship infrastructure vehicle meets all inclusion criteria given its active status, dedicated North American purview, and value-add equity strategy.",
+    investmentStrategy: "EQT's flagship value-add infrastructure fund — raising €21.5B at hard cap — targeting essential-service businesses across digital infrastructure, energy transition and decarbonization, resource efficiency, transport and logistics, and social infrastructure in Europe, North America, and Asia-Pacific. Applies a hands-on industrial ownership model with more than 600 industrial advisors to accelerate operational improvements, digitalization, and sustainability transformation.",
     sourceUrls: ["https://eqtgroup.com/news/eqt-infrastructure-vi-holds-final-close-at-its-hard-cap-raising-eur-215-billion-in-total-commitments-2025-03-28"],
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Waste / Environmental Services", "Transportation"],
     regions: ["Europe", "North America"],
@@ -1109,7 +1109,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-068", "EQT", "EQT Active Core Infrastructure I", "2022", "$3.2B", 3200, "Core", "Evergreen", {
     description: "Recently closed core infrastructure fund from EQT with a hybrid/open-ended structure actively deploying capital in North America. Targets essential infrastructure with stable, long-duration cash flows.",
-    investmentStrategy: "Recently closed core infrastructure fund from EQT with a hybrid/open-ended structure actively deploying capital in North America.",
+    investmentStrategy: "Applies EQT's active ownership approach to core infrastructure assets in Europe and North America, targeting longer-hold investments in essential-service businesses with strong downside protection through regulation, long-term contracts, stable cash yields, and inflation linkage. Invests across digital, energy, transport, and social infrastructure themes with a focus on setting tailored decarbonization plans for each portfolio company.",
     sourceUrls: ["https://eqtgroup.com/news/eqt-active-core-infrastructure-fund-holds-final-close-2024-09-24", "https://eqtgroup.com/infrastructure/eqt-active-core-infrastructure", "https://www.alphaspread.com/security/sto/eqt/investor-relations/earnings-call/q3-2025"],
     sectors: ["Utilities", "Transportation", "Digital Infrastructure"],
     regions: ["North America", "Europe"],
@@ -1118,7 +1118,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-069", "EQT", "EQT Transition Infrastructure", "2024", "€4.0B", 4400, "Value-Add", "Raising", {
     description: "Active fund executing equity investments to scale energy transition infrastructure across North America and other developed regions. Targets decarbonization platforms, renewables, and grid modernization.",
-    investmentStrategy: "Active fund executing equity investments to scale energy transition infrastructure across North America and other developed regions.",
+    investmentStrategy: "Dedicated energy transition strategy investing globally across Europe, North America, and Asia-Pacific in businesses enabling the shift to a low-carbon and circular economy, with particular emphasis on battery energy storage, distributed energy (including microgrids), and other proven but undercapitalized clean energy subsectors. Applies EQT's industrial value creation playbook to scale transition infrastructure companies with strong secular tailwinds.",
     sourceUrls: ["https://eqtgroup.com/infrastructure/eqt-transition-infrastructure", "https://www.infrastructureinvestor.com/fubon-life-insurance-makes-e65m-commitment-to-eqt-infrastructure-fund/"],
     sectors: ["Renewables / Energy Transition", "Power Generation", "Utilities"],
     regions: ["North America", "Europe"],
@@ -1127,7 +1127,7 @@ export const funds: Fund[] = [
   // ── Fengate Asset Management ───────────────────────────────
   f("FUND-070", "Fengate Asset Management", "Fengate Infrastructure Fund IV", "2021", "$1.1B", 1100, "Value-Add", "Deploying", {
     description: "Fully qualifies as an active, newly closed North American core-plus and value-add infrastructure equity vehicle. Closed above US$1.1 billion target. Fengate targets mid-market infrastructure across energy, transport, and social sectors.",
-    investmentStrategy: "Fully qualifies as an active, newly closed North American Core-Plus and Value-Add infrastructure equity vehicle.",
+    investmentStrategy: "Core-plus and value-add fund targeting mid-market North American infrastructure across social, transportation, energy transition, and digital sectors, with assets in both the U.S. and Canada. Originates deals through long-standing relationships with design-build contractors, project developers, and government procurement agencies, actively managing investments to protect and enhance equity returns.",
     sourceUrls: ["https://www.globenewswire.com/news-release/2025/01/23/3014203/0/en/Fengate-announces-final-close-of-US-1-1-billion-flagship-infrastructure-fund-above-target.html"],
     sectors: ["Renewables / Energy Transition", "Transportation", "Social Infrastructure"],
     regions: ["North America"],
@@ -1136,7 +1136,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-071", "Fengate Asset Management", "Fengate Infrastructure Yield Fund", "2019", "C$1.2B+", 888, "Core", "Evergreen", {
     description: "Active, open-ended (evergreen) core infrastructure yield fund acquiring direct equity assets throughout North America. Portfolio includes US wireless communications towers and healthcare facilities.",
-    investmentStrategy: "Active, open-ended (evergreen) core infrastructure yield fund acquiring direct equity assets throughout North America.",
+    investmentStrategy: "Core infrastructure vehicle focused on long-term, contracted cash flows from essential North American assets, with investments spanning wireless communications tower portfolios (partnering with TowerCom across 4G/5G infrastructure) and social infrastructure including healthcare facilities. Designed to deliver stable, predictable, inflation-linked distributions to institutional investors.",
     sourceUrls: ["https://gowlingwlg.com/en/people/alan-james", "https://fengate.com/news/fengate-expands-its-portfolio-of-u-s-wireless-communications-towers-with-new-acquisition", "https://fengate.com/news/fengate-asset-management-announces-financial-close-on-two-u-s-healthcare-facilities"],
     sectors: ["Communications", "Social Infrastructure", "Utilities"],
     regions: ["North America"],
@@ -1147,7 +1147,7 @@ export const funds: Fund[] = [
   // ── Generate Capital ──────────────────────────────────────
   f("FUND-072", "Generate Capital", "Generate Capital Sustainable Infrastructure Fund", "2014", "$1.5B", 1500, "Value-Add", "Evergreen", {
     description: "Active, permanent capital vehicle (evergreen) heavily deploying equity into North American clean energy, mobility, and sustainable infrastructure. Latest raise brought in $1.5 billion for continued expansion.",
-    investmentStrategy: "Active, permanent capital vehicle (evergreen) heavily deploying equity into North American clean energy, mobility, and sustainable infrastructure.",
+    investmentStrategy: "Invests in sustainable resource infrastructure across North America and Europe, spanning renewable power (solar, fuel cells, green hydrogen), sustainable mobility (EV charging, electric and hydrogen fleets), water and waste (biogas, RNG, anaerobic digesters, recycling), and sustainable cities. Operates as a one-stop-shop owner, operator, and financier with an Infrastructure-as-a-Service model serving municipalities, school districts, universities, and commercial customers.",
     sourceUrls: ["https://www.esgtoday.com/generate-capital-raises-1-5-billion-for-sustainable-infrastructure-investments/", "https://globalfintechseries.com/fintech/generate-capital-closed-capital-raise-with-1-5-billion/"],
     sectors: ["Renewables / Energy Transition", "Transportation", "Water"],
     regions: ["North America"],
@@ -1157,7 +1157,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-073", "Generate Capital", "Generate Capital (Permanent Capital Vehicle)", "2014", "$10.0B+", 10000, "Value-Add", "Evergreen", {
     description: "Massive permanent capital/evergreen firm that actively acquires, builds, and manages direct infrastructure equity assets natively across North America. Recently raised over $1 billion for infrastructure credit solutions, expanding its sustainable infrastructure platform.",
-    investmentStrategy: "Massive permanent capital/evergreen firm that actively acquires, builds, and manages direct infrastructure equity assets natively across North America.",
+    investmentStrategy: "Permanent capital vehicle deploying equity and infrastructure credit on a long-duration, open-ended basis into sustainable resource infrastructure across six sectors — power, mobility, waste, water, agriculture, and industrial decarbonization — with a growing emphasis on middle-market infrastructure lending. Structures bespoke financing solutions for sectors including green steel, data center power, thermal storage, and community solar.",
     sourceUrls: ["https://www.esgtoday.com/generate-capital-raises-1-5-billion-for-sustainable-infrastructure-investments/", "https://mcj.vc/inevitable-podcast/scott-jacobs", "https://www.prnewswire.com/news-releases/generate-capital-raises-over-1-billion-to-expand-infrastructure-credit-solutions-302607095.html"],
     sectors: ["Renewables / Energy Transition", "Transportation", "Water", "Waste / Environmental Services"],
     regions: ["North America"],
@@ -1168,7 +1168,7 @@ export const funds: Fund[] = [
   // ── GIC ───────────────────────────────────────────────────
   f("FUND-074", "GIC", "GIC Infrastructure", "1981", "$744B", 744000, "Core", "Evergreen", {
     description: "Captive direct-investing arm of Singapore's sovereign wealth fund with a clear mandate and track record of acquiring core North American infrastructure equity. Recently increased infrastructure allocation and invested alongside EQT in Reworld (waste-to-energy).",
-    investmentStrategy: "Captive direct-investing arm of a global SWF with a clear mandate and track record of acquiring Core North American infrastructure equity.",
+    investmentStrategy: "Large-scale, long-duration direct investing strategy spanning the capital structure — equity and non-investment grade credit, across private and public markets — targeting essential-service assets with resilient cash flows including gas and electricity networks, renewables, digital infrastructure (data centers), water utilities, airports, seaports, and highways globally. Operates through a dedicated 70-person team across Singapore, London, New York, and São Paulo, integrating ESG throughout the investment lifecycle.",
     sourceUrls: ["https://www.gic.com.sg/thinkspace/investment-strategies/infrastructure-a-resilient-strategy-in-uncertain-times/", "https://www.privateequityinternational.com/side-letter-gics-allocation-uplift/", "https://eqtgroup.com/news/eqt-broadens-reworld-investor-base-welcoming-gic-as-strategic-investor-2024-10-02/"],
     sectors: ["Transportation", "Utilities", "Digital Infrastructure", "Renewables / Energy Transition", "Waste / Environmental Services"],
     regions: ["Global", "North America", "Europe", "Asia-Pacific"],
@@ -1180,7 +1180,7 @@ export const funds: Fund[] = [
   // ── GIP/MGX/Microsoft ─────────────────────────────────────
   f("FUND-075", "Global Infrastructure Partners (BlackRock)", "AI Infrastructure Partnership (AIP)", "2024", "$30.0B", 12500, "Value-Add", "Evergreen", {
     description: "Active, open-ended direct investment infrastructure partnership specifically designed to acquire and build U.S. data centers and energy grid elements. Partnership between GIP (BlackRock), MGX, and Microsoft, with NVIDIA and xAI as additional partners. Raised $12.5 billion toward $30 billion target. Recently acquiring all equity in Aligned Data Centers.",
-    investmentStrategy: "Qualifies as an active, open-ended (\"evergreen\") direct investment infrastructure partnership specifically designed to acquire and build U.S. data centers and energy grid elements.",
+    investmentStrategy: "Strategic co-investment platform co-founded by BlackRock/GIP, Microsoft, MGX, NVIDIA, xAI, and sovereign partners, targeting large-scale AI-enabling infrastructure — primarily hyperscale data centers and the power and energy infrastructure required to support them — with a primary focus on the United States. Aims to mobilize up to $30B in private equity and $100B in total investment capacity, deploying at the intersection of AI technology and hard infrastructure.",
     sourceUrls: ["https://www.infrastructureinvestor.com/the-pipeline-gip-reaches-12-5bn-on-ai-fund-stonepeaks-ir-lead-down-under-kkr-forms-15bn-offshore-jv/", "https://ir.blackrock.com/news-and-events/press-releases/press-releases-details/2025/BlackRock-Global-Infrastructure-Partners-Microsoft-and-MGX-Welcome-NVIDIA-and-xAI-to-the-AI-Infrastructure-Partnership-to-Drive-Investment-in-Data-Centers-and-Enabling-Infrastructure/default.aspx", "https://www.global-infra.com/news/ai-infrastructure-partnership-aip-mgx-and-blackrocks-global-infrastructure-partners-gip-to-acquire-all-equity-in-aligned-data-centers/"],
     sectors: ["Digital Infrastructure", "Power Generation", "Utilities"],
     regions: ["North America"],
@@ -1191,7 +1191,7 @@ export const funds: Fund[] = [
   // ── Global Infrastructure Partners (BlackRock) ────────────
   f("FUND-076", "Global Infrastructure Partners (BlackRock)", "Global Infrastructure Partners V (GIP V)", "2022", "$25.2B", 25200, "Core-Plus", "Deploying", {
     description: "Fully verified active mega-cap global infrastructure equity fund that strongly targets North America. Deploys $1-3B equity checks with 15-20% gross return targets. Portfolio highlights include Columbia Pipelines (40% stake), Rio Grande LNG, Allete (US utility), and Hutchison Ports. Over 40 portfolio companies generating $75+ billion in annual revenue.",
-    investmentStrategy: "Fully verified active mega-cap global infrastructure equity fund that strongly targets North America.",
+    investmentStrategy: "GIP's largest-ever flagship fund pursuing a core-plus infrastructure strategy targeting essential assets across energy, transportation, digital infrastructure, water, and waste in North America, Europe, Australia, and selectively Asia-Pacific. Targets gross returns of 15–20% and a 5–7% cash yield through equity investments of $1–3B per transaction, with a disciplined focus on proprietary origination and the global energy transition.",
     sourceUrls: ["https://inforcapital.com/funds/global-infrastructure-partners-v-gip-fund-v/"],
     sectors: ["Transportation", "Utilities", "Power Generation", "Digital Infrastructure", "Midstream / Energy"],
     regions: ["Global", "North America", "Europe", "Asia-Pacific"],
@@ -1199,7 +1199,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-077", "Global Infrastructure Partners (BlackRock)", "GIP Mid-Market Fund V", "2025", "$7.0B", 7000, "Value-Add", "Raising", {
     description: "Active North America/Global focused equity fund under BlackRock/GIP targeting mid-market scale assets. Rebranded following BlackRock's acquisition of GIP in October 2024.",
-    investmentStrategy: "Qualifies as an active North America/Global focused equity fund under BlackRock/GIP targeting mid-market scale assets.",
+    investmentStrategy: "Core-plus, global mid-market infrastructure fund succeeding BlackRock's Global Infrastructure Fund IV series, focusing on high-quality essential businesses with long-term contracted cash flows across energy, transport, digital infrastructure, water, and waste. Capitalizes on mid-market opportunities where GIP's sector expertise and active ownership drive substantial value creation, with a strong orientation toward energy transition and decarbonization themes.",
     sourceUrls: ["https://www.infrastructureinvestor.com/gip-to-seek-7bn-for-rebranded-mid-market-fund-exclusive", "https://pitchbook.com/profiles/fund/28343-44F"],
     sectors: ["Transportation", "Utilities", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["North America", "Global"],
@@ -1207,7 +1207,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-078", "Global Infrastructure Partners (BlackRock)", "Global Infrastructure Partners Core Fund", "2022", "$5.0B", 5000, "Core", "Raising", {
     description: "Active core-focused infrastructure equity fund with geographic coverage of North America. Targets long-duration, contracted assets with stable cash yields.",
-    investmentStrategy: "Qualifies as an active core-focused infrastructure equity fund with geographic coverage of North America.",
+    investmentStrategy: "Dedicated core infrastructure vehicle targeting essential-service assets globally across GIP's primary sectors — energy, transportation, digital, water, and waste — with a focus on stable, long-duration cash flows, low-to-moderate risk, and inflation protection. Leverages GIP's proprietary deal origination, deep sector relationships, and operational capabilities within the broader BlackRock infrastructure platform.",
     sourceUrls: ["https://www.sib.wa.gov/docs/meetings/board/22_1215final.pdf", "https://pitchbook.com/profiles/fund/23624-02F"],
     sectors: ["Utilities", "Transportation", "Power Generation"],
     regions: ["North America", "Global"],
@@ -1217,7 +1217,7 @@ export const funds: Fund[] = [
   // ── Goldman Sachs Alternatives ────────────────────────────
   f("FUND-079", "Goldman Sachs Alternatives", "West Street Infrastructure Partners V (WSIP V)", "2024", "$4.0B", 4000, "Value-Add", "Raising", {
     description: "Active, flagship closed-end infrastructure equity fund with an explicit mandate to invest across North America. Goldman Sachs targets mid-market infrastructure platforms across digital, energy, and transport sectors.",
-    investmentStrategy: "Active, flagship closed-end infrastructure equity fund with an explicit mandate to invest across North America.",
+    investmentStrategy: "Fifth flagship closed-end infrastructure fund targeting core-plus and value-add opportunities across energy transition, digital infrastructure, transport and logistics, and social infrastructure primarily in Europe and North America. Applies Goldman Sachs's industrial value creation playbook — including the Value Accelerator — to mid-market operating businesses with long-term, defensive cash flows, targeting net IRRs of approximately 13%.",
     sourceUrls: ["https://ionanalytics.com/insights/infralogic/goldman-sachs-west-street-v-fundraise-gains-traction/"],
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation"],
     regions: ["North America", "Global"],
@@ -1226,7 +1226,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-080", "Goldman Sachs Alternatives", "West Street Infrastructure Partners IV (WSIP IV)", "2021", "$4.0B", 4000, "Value-Add", "Deploying", {
     description: "A 2023-vintage global closed-end infrastructure fund actively acquiring value-add infrastructure platforms across North America. Raised $4 billion for direct equity investments in infrastructure assets.",
-    investmentStrategy: "A 2023-vintage global closed-end infrastructure fund actively acquiring value-add infrastructure platforms across North America.",
+    investmentStrategy: "Global value-add, mid-market fund investing across energy transition (biomethane, battery storage), digital infrastructure (fiber broadband), transport and logistics, and social infrastructure in Europe and North America. Invests primarily in operating businesses with defensive long-term cash flows, deploying active ownership and the Goldman Sachs Value Accelerator platform to drive operational improvements and ESG progress.",
     sourceUrls: ["https://am.gs.com/en-gb/advisors/news/press-release/2023/goldman-sachs-asset-management-raises-4-billion-for-west-street-infrastructure-partners-iv"],
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation"],
     regions: ["North America", "Global"],
@@ -1234,7 +1234,7 @@ export const funds: Fund[] = [
   }),
   f("FUND-081", "Goldman Sachs Alternatives", "West Street Private Infrastructure Fund (G-INFRA)", "2025", "$300M", 300, "Value-Add", "Evergreen", {
     description: "A recently launched evergreen fund vehicle actively acquiring mid-market infrastructure equity globally, including the US, aimed at private wealth clients. Part of Goldman Sachs' expanding alternatives distribution to wealth channels.",
-    investmentStrategy: "A recently launched evergreen fund vehicle actively acquiring mid-market infrastructure equity globally, including the US, aimed at private wealth clients.",
+    investmentStrategy: "Open-ended, evergreen infrastructure vehicle offering private wealth investors access to directly originated core-plus and value-add mid-market infrastructure alongside Goldman Sachs's institutional flagship strategies, with additional exposure to infrastructure secondaries and liquid assets. Targets the same four thematic pillars — energy transition, digital infrastructure, transport and logistics, and the circular economy — with monthly subscriptions and quarterly distributions.",
     sourceUrls: ["https://am.gs.com/en-be/advisors/news/press-release/2025/g-infra-launch", "https://cdn.prod.website-files.com/665f05e4b0db845a831c93c0/68a7ce1cc0f71718b31114d6_West%20Street%20Private%20Infrastructure%20Fund%20(AUD)%20Class%20A%20-%20June%202025.pdf", "https://cdn.prod.website-files.com/665f05e4b0db845a831c93c0/694b643224eb1c73eade638e_West%20Street%20Private%20Infrastructure%20Fund%20(AUD)%20Class%20A%20-%20October%202025.pdf"],
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation"],
     regions: ["Global", "North America"],
