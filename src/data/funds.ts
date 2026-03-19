@@ -1498,15 +1498,13 @@ export const funds: Fund[] = [
 
   // ── Northleaf Capital Partners ────────────────────────────
   f("FUND-121", "Northleaf Capital Partners", "Northleaf Infrastructure Capital Partners IV (NICP IV)", "2023", "$2.6B", 2600, "Core-Plus", "Financial Close", {
-    description: "Active, recently closed middle-market fund focused explicitly on North American infrastructure equity. Hit hard cap at $2.6 billion final close. Recognized in Infrastructure Investor's 2025 annual review.",
-    investmentStrategy: "Core-plus, closed-end fund targeting control investments in contracted, mid-market infrastructure assets primarily in North America, with selective exposure to Western Europe and Australia. Focuses on renewable energy, digital infrastructure (fibre, towers, data centres), transportation (including rail), and outsourced services, deploying average equity tickets of approximately $250M per deal.",
+    investmentStrategy: "Core-plus, closed-end fund targeting control investments in contracted, mid-market infrastructure assets primarily in North America, with selective exposure to Western Europe and Australia. Focuses on renewable energy, digital infrastructure (fibre, towers, data centres), transportation (including rail), and outsourced services, deploying average equity tickets of approximately $250M per deal. Hit hard cap at $2.6 billion final close and was recognized in Infrastructure Investor's 2025 annual review.",
     sourceUrls: ["https://www.businesswire.com/news/home/20250508377063/en/Northleaf-Hits-Hard-Cap-with-Final-Close-of-its-US%242.6-Billion-Infrastructure-Fund", "https://pitchbook.com/profiles/fund/23058-19F", "https://www.northleafcapital.com/news/northleaf-recognized-infrastructure-investors-2025-annual-review"],
     sectors: ["Utilities", "Digital Infrastructure", "Renewables / Energy Transition"],
     regions: ["North America"],
     strategyUrl: "https://www.businesswire.com/news/home/20250508377063/en/Northleaf-Hits-Hard-Cap-with-Final-Close-of-its-US%242.6-Billion-Infrastructure-Fund",
   }),
   f("FUND-122", "Northleaf Capital Partners", "Northleaf Essential Infrastructure Fund (NEIF)", "2021", "$800M", 800, "Core", "Evergreen", {
-    description: "Functions as Northleaf's active core open-ended vehicle structured to acquire stable infrastructure equity across its mandate. Targets essential services with contracted or regulated revenues.",
     investmentStrategy: "Open-ended, core infrastructure vehicle targeting mature, mid-market infrastructure assets with contracted and regulated revenue frameworks, emphasizing stable long-term cash flows and lower risk profiles. Provides diversification across geography and subsector, primarily in North America, with a focus on renewable energy and digital infrastructure, while offering enhanced liquidity options relative to traditional closed-end structures.",
     sourceUrls: ["https://www.torys.com/work/2021/11/bf8cb41e-38a3-4b2c-947d-2792fc424d7b"],
     sectors: ["Utilities", "Transportation"],
@@ -1517,8 +1515,7 @@ export const funds: Fund[] = [
 
   // ── NOVA Infrastructure ───────────────────────────────────
   f("FUND-123", "NOVA Infrastructure", "NOVA Infrastructure Fund II", "2024", "$991M", 991, "Value-Add", "Financial Close", {
-    description: "Active, dedicated North American middle-market value-add infrastructure equity fund. Investments include taking UGE International private and other clean energy infrastructure platforms.",
-    investmentStrategy: "Value-add, middle market infrastructure fund focused exclusively on North America, targeting the environmental services, transportation, energy/energy transition, and communications sectors. Pairs downside protection typical of infrastructure assets with operationally focused value creation — sourcing bespoke opportunities, driving operational improvements, and executing build-and-scale strategies across lower mid-market platform companies.",
+    investmentStrategy: "Value-add, middle market infrastructure fund focused exclusively on North America, targeting the environmental services, transportation, energy/energy transition, and communications sectors. Pairs downside protection typical of infrastructure assets with operationally focused value creation — sourcing bespoke opportunities, driving operational improvements, and executing build-and-scale strategies across lower mid-market platform companies. Investments include taking UGE International private and other clean energy infrastructure platforms.",
     sourceUrls: ["https://pitchbook.com/profiles/fund/24080-95F", "https://ugei.com/nova-completes-purchase-of-uge-international/", "https://www.pehub.com/nova-infrastructure-to-take-uge-international-private/"],
     sectors: ["Renewables / Energy Transition", "Utilities"],
     regions: ["North America"],
@@ -1527,8 +1524,7 @@ export const funds: Fund[] = [
 
   // ── Nuveen (Glennmont Partners) ───────────────────────────
   f("FUND-124", "Nuveen", "Nuveen Clean Energy Strategy IV", "2021", "€1.9B", 2090, "Value-Add", "Financial Close", {
-    description: "Managed by Nuveen/Glennmont, this active global renewables vehicle explicitly acquires operational and developmental clean energy assets inside the United States. Doubled in size from previous vintage at final close.",
-    investmentStrategy: "Core-plus, global clean energy equity strategy investing across onshore wind, offshore wind, solar PV, bioenergy, hydropower, and battery energy storage systems, with assets spanning Europe, North America, and Asia Pacific. Targets operational and ready-to-build assets as well as development-stage platforms, pursuing inflation-linked income streams under an SFDR Article 9 classification.",
+    investmentStrategy: "Core-plus, global clean energy equity strategy investing across onshore wind, offshore wind, solar PV, bioenergy, hydropower, and battery energy storage systems, with assets spanning Europe, North America, and Asia Pacific. Targets operational and ready-to-build assets as well as development-stage platforms, pursuing inflation-linked income streams under an SFDR Article 9 classification. Managed by Nuveen/Glennmont and doubled in size from previous vintage at final close.",
     sourceUrls: ["https://www.infrastructureinvestor.com/the-pipeline-macquaries-fundraising-hopes-usss-thames-regret-stonepeaks-1-2bn-care-entry/", "https://www.nuveen.com/global/insights/news/2024/nuveen-infrastructure-clean-energy-strategy-iv-doubles-in-size-by-final-close-from-previous-vintage"],
     sectors: ["Renewables / Energy Transition"],
     regions: ["Europe", "North America"],
@@ -1537,8 +1533,7 @@ export const funds: Fund[] = [
 
   // ── OMERS ─────────────────────────────────────────────────
   f("FUND-125", "OMERS", "OMERS Infrastructure Fund", "1999", "C$40.9B", 29857, "Core", "Evergreen", {
-    description: "OMERS qualifies as a massive evergreen pension-captive direct investment arm targeting core infrastructure equity assets across North America. One of Canada's largest pension plans with extensive direct infrastructure holdings.",
-    investmentStrategy: "Direct infrastructure investment program managing approximately C$38.8B across large-scale, core assets in energy, digital, transportation, and government-regulated services in North America, Europe, and Asia Pacific. Favors long-term, active stewardship of majority-controlled assets with stable, defensive cash flows — increasingly oriented around five thematic pillars: energy transition, mobility, connections, community, and natural systems.",
+    investmentStrategy: "Direct infrastructure investment program managing approximately C$38.8B across large-scale, core assets in energy, digital, transportation, and government-regulated services in North America, Europe, and Asia Pacific. Favors long-term, active stewardship of majority-controlled assets with stable, defensive cash flows — increasingly oriented around five thematic pillars: energy transition, mobility, connections, community, and natural systems. One of Canada's largest pension plans with extensive direct infrastructure holdings.",
     sourceUrls: ["https://www.omersinfrastructure.com/", "https://www.omersinfrastructure.com/history", "https://www.privateequityinternational.com/institution-profiles/omers-infrastructure.html"],
     sectors: ["Transportation", "Utilities", "Renewables / Energy Transition", "Digital Infrastructure"],
     regions: ["North America", "Europe", "Global"],
@@ -1548,7 +1543,6 @@ export const funds: Fund[] = [
 
   // ── Ontario Teachers' Pension Plan (OTPP) ─────────────────
   f("FUND-126", "Ontario Teachers' Pension Plan (OTPP)", "OTPP Infrastructure & Natural Resources", "2001", "C$47.0B", 34310, "Core", "Evergreen", {
-    description: "Perpetual, captive direct investment arm for the Ontario Teachers' Pension Plan actively owning and acquiring North American core infrastructure. C$47 billion allocation spanning ports, utilities, and essential services globally.",
     investmentStrategy: "Targets high-quality, core and core-plus assets that provide critical services to society — spanning airports, container terminals, power generation, electricity and gas transmission and distribution, water and wastewater systems — across Europe, Latin America, North America, and Asia Pacific. Seeks majority or co-controlling stakes with active governance, emphasizes inflation-protected cash flows, and includes a dedicated focus on green assets enabling the low-carbon transition.",
     sourceUrls: ["https://www.otpp.com/en-ca/investments/our-investments/infrastructure-and-natural-resources/", "https://www.infrastructureinvestor.com/otpp-stepping-back-but-not-retreating-from-infra/"],
     sectors: ["Transportation", "Utilities", "Digital Infrastructure", "Renewables / Energy Transition"],
@@ -1559,7 +1553,6 @@ export const funds: Fund[] = [
 
   // ── Partners Group ────────────────────────────────────────
   f("FUND-127", "Partners Group", "Partners Group Direct Infrastructure IV", "2023", "$8.0B", 8000, "Value-Add", "Financial Close", {
-    description: "Active, closed-end direct infrastructure equity fund with a global mandate inclusive of North American investments. Targeting $8 billion for direct equity acquisitions in infrastructure platforms.",
     investmentStrategy: "Value-add, global direct infrastructure fund pursuing Partners Group's transformational investing approach across three thematic 'giga themes': Decarbonization & Sustainability (clean power, low-carbon fuels, water, circular economy), New Living (new mobility, social infrastructure, critical supply chain), and Digitization & Automation (data transmission and storage). Emphasizes platform-building and hands-on operational engagement.",
     sourceUrls: ["https://inforcapital.com/funds/partners-group-direct-infrastructure-iv/", "https://www.infrastructureinvestor.com/the-pipeline-gip-reaches-12-5bn-on-ai-fund-stonepeaks-ir-lead-down-under-kkr-forms-15bn-offshore-jv/"],
     sectors: ["Utilities", "Digital Infrastructure", "Renewables / Energy Transition", "Transportation"],
@@ -1567,7 +1560,6 @@ export const funds: Fund[] = [
     strategyUrl: "https://inforcapital.com/funds/partners-group-direct-infrastructure-iv/",
   }),
   f("FUND-128", "Partners Group", "Partners Group Next Generation Infrastructure Programs", "2024", "$1.0B", 1000, "Value-Add", "Evergreen", {
-    description: "Active evergreen platform making direct value-add infrastructure equity investments with a dedicated North American footprint. Targets next-generation digital, energy, and mobility infrastructure.",
     investmentStrategy: "Open-ended, evergreen infrastructure vehicle targeting private wealth and institutional investors, investing 60% in direct infrastructure assets and 30% in infrastructure secondaries alongside Partners Group's flagship closed-end programs. Deploys capital across the same next-generation thematic framework — Decarbonization & Sustainability, New Living, and Digitization & Automation — with monthly subscriptions and quarterly liquidity features.",
     sourceUrls: ["https://www.partnersgroup.com/en/news-and-views/press-releases/corporate-news/detail?news_id=35550643-444b-49c8-9f72-1502c2e822a6"],
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation"],
@@ -1577,8 +1569,7 @@ export const funds: Fund[] = [
 
   // ── Patria Investments ────────────────────────────────────
   f("FUND-129", "Patria Investments", "Patria Infrastructure Fund V", "2023", "$2.9B", 2900, "Value-Add", "Financial Close", {
-    description: "Pan-Latin American mandate that explicitly includes Mexico (a North American country), qualifying as an active direct equity acquirer in North America. IFC Ontario LP among committed investors.",
-    investmentStrategy: "The largest infrastructure fund dedicated to Latin America, targeting equity investments across power and energy, logistics and transportation, digital infrastructure, and environmental services — with Brazil as the primary market and meaningful exposure to Colombia and Chile. Builds platform companies and pursues growth-oriented acquisitions addressing structural bottlenecks in the region, with thematic focus on renewable energy, toll roads, data centers, water desalination, and privatized sanitation.",
+    investmentStrategy: "The largest infrastructure fund dedicated to Latin America, targeting equity investments across power and energy, logistics and transportation, digital infrastructure, and environmental services — with Brazil as the primary market and meaningful exposure to Colombia and Chile. Builds platform companies and pursues growth-oriented acquisitions addressing structural bottlenecks in the region, with thematic focus on renewable energy, toll roads, data centers, water desalination, and privatized sanitation. IFC Ontario LP among committed investors.",
     sourceUrls: ["https://www.tipranks.com/news/company-announcements/patria-investments-earnings-call-strong-growth-and-optimism", "https://disclosures.ifc.org/project-detail/SII/49578/pi-fund-v-ontario-l-p", "https://inforcapital.com/funds/patria-infrastructure-fund-v/"],
     sectors: ["Transportation", "Utilities", "Renewables / Energy Transition"],
     regions: ["Latin America", "North America"],
@@ -1586,7 +1577,6 @@ export const funds: Fund[] = [
   }),
   // ── QIC ────────────────────────────────────────────────────
   f("FUND-130", "QIC", "QIC Global Infrastructure Fund II (QGIF II)", "2023", "$2.0B", 2000, "Core-Plus", "Raising", {
-    description: "Recently launched active infrastructure equity fund with an explicit geographic allocation allowing deployment into the US. Nearing first close as QIC builds its global infrastructure platform.",
     investmentStrategy: "Core-plus infrastructure fund with approximately 70% allocated to Australia's energy transition value chain — encompassing renewables, grid infrastructure, smart metering, and transport decarbonization — and the remainder deployed across OECD markets including the US and Europe. Thematically driven and sector-centric, targeting energy and transport assets in the $50–200M equity check range with binding science-based emissions reduction targets.",
     sourceUrls: ["https://ionanalytics.com/insights/infralogic/qic-cuts-target-for-latest-flagship-infra-fund/", "https://pitchbook.com/profiles/fund/24768-10F", "https://ionanalytics.com/insights/infralogic/qic-nears-first-close-of-usd-3bn-infra-fund/"],
     sectors: ["Utilities", "Transportation", "Renewables / Energy Transition"],
@@ -1594,7 +1584,6 @@ export const funds: Fund[] = [
     strategyUrl: "https://ionanalytics.com/insights/infralogic/qic-cuts-target-for-latest-flagship-infra-fund/",
   }),
   f("FUND-131", "QIC", "QIC Infrastructure Portfolio (QIP)", "N/A", "A$2.0B", 1320, "Core", "Evergreen", {
-    description: "Open-ended/evergreen core infrastructure fund managed by QIC that actively holds and manages direct equity assets in the US market. CenTrio platform accelerates US energy transition with cost-effective sustainable solutions.",
     investmentStrategy: "Flagship balance-sheet infrastructure portfolio managing over A$41B across approximately 21 direct assets in five OECD countries — spanning transport, energy and utilities, and social/PPP sectors — including Brussels Airport, Port of Melbourne, district energy platform CenTrio, and Tilt Renewables. Pursues a thematic, sector-centric approach emphasizing energy transition, decarbonization, and distributed infrastructure.",
     sourceUrls: ["https://live.peievents.com/infrastructure-investor-australia-forum/speakers/peter-https-wwwaberdeeninvestmentscom-en-kr-investor", "https://www.qic.com/News-and-Insights/CenTrio-Accelerating-the-US-energy-transition-with-costeffective-and-sustainable-solutions"],
     sectors: ["Utilities", "Renewables / Energy Transition"],
