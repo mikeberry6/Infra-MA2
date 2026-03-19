@@ -51,7 +51,22 @@ export type FundSizeRange =
   | "$5B – $10B"
   | "$10B+";
 
-// ─── Portfolio Company Interface ─────────────────────────────
+// ─── Portfolio Company Interfaces ────────────────────────────
+
+export interface PortfolioFinancials {
+  enterpriseValue?: string;
+  enterpriseValueUsdMm?: number;
+  equityValue?: string;
+  equityValueUsdMm?: number;
+  revenue?: string;
+  revenueUsdMm?: number;
+  ebitda?: string;
+  ebitdaUsdMm?: number;
+  acquisitionYear?: number;
+  acquisitionMultiple?: string;
+  ownershipStake?: string;
+  asOfDate?: string;
+}
 
 export interface PortfolioCompany {
   name: string;
@@ -61,6 +76,8 @@ export interface PortfolioCompany {
   country: string;
   description?: string;
   coInvestors?: string[];
+  sourceUrls?: string[];
+  financials?: PortfolioFinancials;
 }
 
 // ─── Fund Interface ──────────────────────────────────────────
