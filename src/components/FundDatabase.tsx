@@ -929,15 +929,6 @@ function FundDrawer({
             </div>
           </div>
 
-          {/* Description */}
-          {fund.description && (
-            <div>
-              <p className="text-sm-dense text-[#A1A1AA] leading-relaxed whitespace-pre-line">
-                {fund.description}
-              </p>
-            </div>
-          )}
-
           {/* Investment Strategy */}
           {fund.investmentStrategy && (
             <div className="border-t border-[#27272A] pt-4">
