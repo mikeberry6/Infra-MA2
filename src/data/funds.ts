@@ -1158,7 +1158,6 @@ export const funds: Fund[] = [
     strategyUrl: "https://am.gs.com/en-gb/advisors/news/press-release/2023/goldman-sachs-asset-management-raises-4-billion-for-west-street-infrastructure-partners-iv",
   }),
   f("FUND-081", "Goldman Sachs Alternatives", "West Street Private Infrastructure Fund (G-INFRA)", "2025", "$300M", 300, "Value-Add", "Evergreen", {
-    description: "A recently launched evergreen fund vehicle actively acquiring mid-market infrastructure equity globally, including the US, aimed at private wealth clients. Part of Goldman Sachs' expanding alternatives distribution to wealth channels.",
     investmentStrategy: "Open-ended, evergreen infrastructure vehicle offering private wealth investors access to directly originated core-plus and value-add mid-market infrastructure alongside Goldman Sachs's institutional flagship strategies, with additional exposure to infrastructure secondaries and liquid assets. Targets the same four thematic pillars — energy transition, digital infrastructure, transport and logistics, and the circular economy — with monthly subscriptions and quarterly distributions.",
     sourceUrls: ["https://am.gs.com/en-be/advisors/news/press-release/2025/g-infra-launch", "https://cdn.prod.website-files.com/665f05e4b0db845a831c93c0/68a7ce1cc0f71718b31114d6_West%20Street%20Private%20Infrastructure%20Fund%20(AUD)%20Class%20A%20-%20June%202025.pdf", "https://cdn.prod.website-files.com/665f05e4b0db845a831c93c0/694b643224eb1c73eade638e_West%20Street%20Private%20Infrastructure%20Fund%20(AUD)%20Class%20A%20-%20October%202025.pdf"],
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation"],
@@ -1370,8 +1369,7 @@ export const funds: Fund[] = [
     strategyUrl: "https://www.artrs.gov/board/documents/CY2024/2024-06-12/BOT_Packet.pdf",
   }),
   f("FUND-106", "KKR", "Diversified Core Infra Fund (DCIF)", "2020", "$11.8B", 11800, "Core", "Evergreen", {
-    description: "An active perpetual vehicle by KKR structured specifically to hold long-term core/yield-bearing infrastructure equity assets globally including North America. MainePERS committed $125M.",
-    investmentStrategy: "Open-ended core infrastructure fund targeting mature, brownfield assets with stable contracted or regulated revenue streams across energy, transportation, telecommunications, water, and utilities in OECD developed markets. Pursues long-term buy-and-hold positions with investment tickets of $250–750M, targeting net IRRs of 7–9%, and sources the majority of deals on a proprietary, non-auction basis.",
+    investmentStrategy: "Open-ended core infrastructure fund targeting mature, brownfield assets with stable contracted or regulated revenue streams across energy, transportation, telecommunications, water, and utilities in OECD developed markets. Pursues long-term buy-and-hold positions with investment tickets of $250–750M, targeting net IRRs of 7–9%, and sources the majority of deals on a proprietary, non-auction basis. Notable LP commitments include MainePERS ($125M).",
     sourceUrls: ["https://www.infrastructureinvestor.com/mainepers-commits-125m-to-infrastructure/", "https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FAssembly%2FMeeting+Attachments%2F000%2F27500%2FExhibit+H.06.a+-+ATRS+-+ATRS+Submission+of+1211+Items.pdf"],
     sectors: ["Utilities", "Transportation", "Renewables / Energy Transition"],
     regions: ["Global", "North America"],
@@ -1461,7 +1459,6 @@ export const funds: Fund[] = [
 
   // ── Mirova ────────────────────────────────────────────────
   f("FUND-117", "Mirova", "Mirova Energy Transition 6 (MET6)", "2023", "€2.0B", 2200, "Core-Plus", "Raising", {
-    description: "Active 2023-vintage energy transition infrastructure equity fund making direct acquisitions across OECD markets, inclusive of North America. Reached €1.2 billion at second close and targeting €2 billion final close.",
     investmentStrategy: "Infrastructure fund investing in greenfield, brownfield, and corporate energy transition assets with a primary focus on Europe and selective exposure to other OECD markets. Target subsectors span onshore and offshore wind, solar PV, hydropower, energy storage, energy efficiency, low-carbon electric mobility, and hydrogen, financing projects through their full lifecycle to generate stable, inflation-linked cash flows.",
     sourceUrls: ["https://www.im.natixis.com/en-gb/about/investment-manager-news/2025/mirova-energy-transition-6-fund-reaches-1-2-Billion-euro-at-second-close", "https://www.esgtoday.com/mirova-raises-1-4-billion-for-flagship-energy-transition-fund/", "https://pitchbook.com/profiles/fund/24431-95F", "https://www.mirova.com/sites/default/files/2023-10/Press%20release_Mirova%20Energy%20Transition%206_EN.pdf"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
