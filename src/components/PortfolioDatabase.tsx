@@ -27,6 +27,8 @@ import {
   Globe,
   Briefcase,
   Users,
+  ExternalLink,
+  DollarSign,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
 
@@ -536,6 +538,97 @@ function PortfolioCompanyDrawer({
                     {ci}
                   </span>
                 ))}
+              </div>
+            </div>
+          )}
+
+          {/* Financial Information */}
+          {company.financials && Object.values(company.financials).some((v) => v !== undefined) && (
+            <div className="border-t border-[#27272A] pt-4">
+              <div className="flex items-center gap-2 mb-3">
+                <DollarSign className="h-3.5 w-3.5 text-emerald-400" />
+                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                  Financial Information
+                </span>
+              </div>
+              <div className="glass-card rounded-[4px] p-3">
+                <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+                  {company.financials.enterpriseValue && (
+                    <>
+                      <span className="text-micro text-[#52525B]">Enterprise Value</span>
+                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.enterpriseValue}</span>
+                    </>
+                  )}
+                  {company.financials.equityValue && (
+                    <>
+                      <span className="text-micro text-[#52525B]">Equity Value</span>
+                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.equityValue}</span>
+                    </>
+                  )}
+                  {company.financials.revenue && (
+                    <>
+                      <span className="text-micro text-[#52525B]">Revenue</span>
+                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.revenue}</span>
+                    </>
+                  )}
+                  {company.financials.ebitda && (
+                    <>
+                      <span className="text-micro text-[#52525B]">EBITDA</span>
+                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.ebitda}</span>
+                    </>
+                  )}
+                  {company.financials.acquisitionYear && (
+                    <>
+                      <span className="text-micro text-[#52525B]">Acquisition Year</span>
+                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.acquisitionYear}</span>
+                    </>
+                  )}
+                  {company.financials.acquisitionMultiple && (
+                    <>
+                      <span className="text-micro text-[#52525B]">Entry Multiple</span>
+                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.acquisitionMultiple}</span>
+                    </>
+                  )}
+                  {company.financials.ownershipStake && (
+                    <>
+                      <span className="text-micro text-[#52525B]">Ownership</span>
+                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.ownershipStake}</span>
+                    </>
+                  )}
+                  {company.financials.asOfDate && (
+                    <>
+                      <span className="text-micro text-[#52525B]">As Of</span>
+                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.asOfDate}</span>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Source URLs */}
+          {company.sourceUrls && company.sourceUrls.length > 0 && (
+            <div className="border-t border-[#27272A] pt-4">
+              <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider block mb-2">
+                Sources
+              </span>
+              <div className="space-y-1.5">
+                {company.sourceUrls.map((url, i) => {
+                  let hostname = url;
+                  try { hostname = new URL(url).hostname.replace(/^www\./, ""); } catch {}
+                  return (
+                    <a
+                      key={i}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-micro text-[#52525B] hover:text-[#EDEDED] transition-colors group"
+                    >
+                      <ExternalLink className="h-3 w-3 shrink-0 text-[#3f3f46] group-hover:text-[#A1A1AA]" />
+                      <span className="truncate">{hostname}</span>
+                    </a>
+                  );
+                })}
               </div>
             </div>
           )}
