@@ -70,7 +70,6 @@ export interface Fund {
   managerName: string;
   fundName: string;
   ticker: string | null;
-  description: string;
   investmentStrategy: string;
   sourceUrls: string[];
   size: string;
@@ -312,14 +311,13 @@ function f(
   sizeUsdMm: number | null,
   strategy: FundStrategy,
   status: FundStatus,
-  overrides?: Partial<Pick<Fund, "description" | "investmentStrategy" | "sourceUrls" | "sectors" | "regions" | "strategies" | "structure" | "ticker" | "strategyUrl">>,
+  overrides?: Partial<Pick<Fund, "investmentStrategy" | "sourceUrls" | "sectors" | "regions" | "strategies" | "structure" | "ticker" | "strategyUrl">>,
 ): Fund {
   return {
     id,
     managerName,
     fundName,
     ticker: overrides?.ticker ?? null,
-    description: overrides?.description ?? "",
     investmentStrategy: overrides?.investmentStrategy ?? "",
     sourceUrls: overrides?.sourceUrls ?? [],
     size,
@@ -1594,8 +1592,7 @@ export const funds: Fund[] = [
 
   // ── Quinbrook Infrastructure Partners ─────────────────────
   f("FUND-132", "Quinbrook Infrastructure Partners", "Quinbrook Net Zero Power Fund", "2021", "$3.0B", 3000, "Value-Add", "Financial Close", {
-    description: "Active 2021-vintage closed-end fund making high-growth value-add direct equity development investments into US and global renewables/energy transition projects. Exceeded $3 billion target. REST committed A$1 billion.",
-    investmentStrategy: "Value-add energy transition fund pursuing a multi-thematic strategy spanning large-scale solar and battery storage, sustainable infrastructure for hyperscale data center customers, renewable fuels production, synchronous condensers for grid stability, and contracted battery storage — deployed across the US, UK, and Australia. Combines new asset creation with platform-building, targeting higher returns than traditional core renewables by moving early into prospective sub-sectors.",
+    investmentStrategy: "Value-add energy transition fund pursuing a multi-thematic strategy spanning large-scale solar and battery storage, sustainable infrastructure for hyperscale data center customers, renewable fuels production, synchronous condensers for grid stability, and contracted battery storage — deployed across the US, UK, and Australia. Combines new asset creation with platform-building, targeting higher returns than traditional core renewables by moving early into prospective sub-sectors. Exceeded its $3 billion target, with REST committing A$1 billion.",
     sourceUrls: ["https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/", "https://democracy.islington.gov.uk/documents/s42931/Appendix%201-%20Apex%20-%20Islington%20Q2%202025.pdf", "https://www.infrastructureinvestor.com/rest-commits-a1bn-to-quinbrook-infrastructure-partners/"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["North America", "Asia-Pacific"],
@@ -1604,8 +1601,7 @@ export const funds: Fund[] = [
 
   // ── Ridgewood Infrastructure ──────────────────────────────
   f("FUND-133", "Ridgewood Infrastructure", "Ridgewood Water & Strategic Infrastructure Fund II", "2022", "$1.2B", 1200, "Value-Add", "Financial Close", {
-    description: "Recently closed (Jan 2025) pure-play infrastructure equity fund operating squarely in the North American lower middle market. Significantly surpassed its target, focusing on water, wastewater, and essential environmental infrastructure.",
-    investmentStrategy: "Lower middle market, US-focused infrastructure fund concentrating on essential infrastructure businesses in water, utilities, energy/renewables, transportation, and communications. Emphasizes operational value creation — scaling, professionalizing, and enhancing the strategic positioning of portfolio companies — with a particular strength in water public-private partnerships and large-scale concession agreements through a buy-and-build approach.",
+    investmentStrategy: "Lower middle market, US-focused infrastructure fund concentrating on essential infrastructure businesses in water, utilities, energy/renewables, transportation, and communications. Emphasizes operational value creation — scaling, professionalizing, and enhancing the strategic positioning of portfolio companies — with a particular strength in water public-private partnerships and large-scale concession agreements through a buy-and-build approach. Closed in January 2025, significantly surpassing its target.",
     sourceUrls: ["https://ridgewoodinfrastructure.com/ridgewood-infrastructure-announced-1-2-billion-final-close-for-fund-ii-significantly-surpassing-its-target/", "https://ionanalytics.com/insights/infralogic/ridgewood-infrastructure-fund-ii-surpassed-target/"],
     sectors: ["Water", "Utilities", "Waste / Environmental Services"],
     regions: ["North America"],
@@ -1614,7 +1610,6 @@ export const funds: Fund[] = [
 
   // ── Schroders Capital ─────────────────────────────────────
   f("FUND-134", "Schroders Capital", "Schroders Capital Semi-Liquid Global Energy Infrastructure", "2023", "$281.3M", 281, "Value-Add", "Evergreen", {
-    description: "Active, global (including North America) open-ended infrastructure equity fund making direct investments in energy transition assets. Semi-liquid structure for wealth investors.",
     investmentStrategy: "SFDR Article 9, impact-driven open-ended fund targeting net returns above 10% per annum by investing in a globally diversified portfolio of renewable and energy transition-aligned infrastructure assets across wind, solar, battery storage, clean hydrogen, district heating, power grids, and charging infrastructure. Managed by Schroders Greencoat with a semi-liquid structure offering monthly subscriptions and quarterly redemptions.",
     sourceUrls: ["https://www.schroders.com/en-ch/ch/professional/fund-centre/?language=en&location=ch&channel=professional&clientId=schdr&clientVersion=v1&externalId=SCHDR_F00001I3F2&r=%2Ffund%2FSCHDR_F00001I3F2%2F&fundName=Schroders-Capital-Semi-Liquid-Global-Energy-Infrastructure-E-Accumulation-USD", "https://www.schroders.com/en-gb/uk/intermediary/funds-and-strategies/schroders-capital-semi-liquid-global-energy-infrastructure/"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
@@ -1625,8 +1620,7 @@ export const funds: Fund[] = [
 
   // ── Schroders Greencoat ───────────────────────────────────
   f("FUND-135", "Schroders Greencoat", "Schroders Greencoat Global Renewables+ LTAF", "2024", "£450M", 585, "Core-Plus", "Evergreen", {
-    description: "Active, open-ended LTAF actively purchasing direct energy infrastructure equity globally, explicitly including the US. WTW Lifesight among strategic investors. Targets operational renewable energy assets.",
-    investmentStrategy: "UK's first Long-Term Asset Fund (LTAF) dedicated exclusively to renewable energy and energy transition infrastructure, investing in wind, solar, green hydrogen, district heating, and energy storage assets across the UK, US, continental Europe, and other OECD countries. Managed by Schroders Greencoat, spanning operational assets through development-stage platforms, structured for UK DC pension funds seeking inflation-linked, long-dated income.",
+    investmentStrategy: "UK's first Long-Term Asset Fund (LTAF) dedicated exclusively to renewable energy and energy transition infrastructure, investing in wind, solar, green hydrogen, district heating, and energy storage assets across the UK, US, continental Europe, and other OECD countries. Managed by Schroders Greencoat, spanning operational assets through development-stage platforms, structured for UK DC pension funds seeking inflation-linked, long-dated income. WTW Lifesight is among strategic investors.",
     sourceUrls: ["https://www.schroders.com/en-gb/uk/institutional/funds-and-strategies/renewables-plus/", "https://www.wtwco.com/en-gb/news/2025/08/lifesight-announces-strategic-investment-in-schroders-greencoats-renewables-ltaf", "https://www.schroders.com/en-gb/uk/institutional/funds-and-strategies/investing-in-ltafs/"],
     sectors: ["Renewables / Energy Transition"],
     regions: ["Global", "North America", "Europe"],
@@ -1636,23 +1630,20 @@ export const funds: Fund[] = [
 
   // ── Stonepeak ─────────────────────────────────────────────
   f("FUND-136", "Stonepeak", "Stonepeak Infrastructure Fund V", "2023", "$15.0B", 15000, "Core-Plus", "Raising", {
-    description: "North American dedicated, closed-end flagship direct infrastructure equity fund. Raised $7.29 billion from 98 investors as of latest reporting, with notable $350M from Oregon State Treasury and $300M from NY State Common. Investments include Ørsted US wind portfolio (957 MW), Repsol solar/storage (777 MW in TX/NM), Louisiana LNG (40% stake), Castrol (65% stake at $10.1B EV), and Cologix (leading NA interconnection platform).",
-    investmentStrategy: "Large-scale, core-plus infrastructure fund investing thematically across digital infrastructure (data centers, fiber, towers, broadband), energy and energy transition (renewables, battery storage, bridge fuels), transport and logistics (cold storage, intermodal, aviation), and social infrastructure — primarily in North America. Emphasizes durable essential-service assets with long-term tailwinds and active operational engagement.",
+    investmentStrategy: "Large-scale, core-plus infrastructure fund investing thematically across digital infrastructure (data centers, fiber, towers, broadband), energy and energy transition (renewables, battery storage, bridge fuels), transport and logistics (cold storage, intermodal, aviation), and social infrastructure — primarily in North America. Emphasizes durable essential-service assets with long-term tailwinds and active operational engagement. Raised $7.29 billion from 98 investors, with notable commitments including $350M from Oregon State Treasury and $300M from NY State Common. Investments include the Ørsted US wind portfolio (957 MW), Repsol solar/storage (777 MW in TX/NM), Louisiana LNG (40% stake), Castrol (65% stake at $10.1B EV), and Cologix.",
     sourceUrls: ["https://www.infrastructureinvestor.com/wsib-commits-300m-to-infrastructure/"],
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Midstream / Energy", "Transportation"],
     regions: ["North America"],
     strategyUrl: "https://www.infrastructureinvestor.com/wsib-commits-300m-to-infrastructure/",
   }),
   f("FUND-137", "Stonepeak", "Stonepeak Global Renewables Fund II", "2024", "$5.0B", 5000, "Value-Add", "Raising", {
-    description: "Active, closed-end renewables infrastructure equity fund making direct investments in the US and Asia. CalSTRS anchored the transition pool with $450M commitment. Doubling maiden effort target.",
-    investmentStrategy: "Value-add/opportunistic renewables fund targeting development-stage and newbuild solar and wind assets in developed OECD markets, particularly North America and Asia. Also pursues opportunistic energy transition opportunities across renewable generation, low-carbon fuels, emerging technologies, and hard-to-abate sector transformation, leveraging Stonepeak's approximately 13 GW of renewables capacity.",
+    investmentStrategy: "Value-add/opportunistic renewables fund targeting development-stage and newbuild solar and wind assets in developed OECD markets, particularly North America and Asia. Also pursues opportunistic energy transition opportunities across renewable generation, low-carbon fuels, emerging technologies, and hard-to-abate sector transformation, leveraging Stonepeak's approximately 13 GW of renewables capacity. CalSTRS anchored the transition pool with a $450M commitment, and the fund is doubling its maiden effort target.",
     sourceUrls: ["https://www.privateequity.fund/post/stonepeak-aims-for-5-billion-in-second-renewable-fund-doubling-maiden-effort", "https://www.infrastructureinvestor.com/calstrs-anchors-stonepeak-transition-pool-with-450m-exclusive/"],
     sectors: ["Renewables / Energy Transition", "Power Generation"],
     regions: ["North America", "Asia-Pacific"],
     strategyUrl: "https://www.privateequity.fund/post/stonepeak-aims-for-5-billion-in-second-renewable-fund-doubling-maiden-effort",
   }),
   f("FUND-138", "Stonepeak", "Stonepeak Opportunities Fund", "2022", "$3.15B", 3150, "Value-Add", "Financial Close", {
-    description: "Recently closed mid-market infrastructure equity fund with a direct mandate for North America. Closed at $3.15 billion of commitments targeting high-growth infrastructure opportunities.",
     investmentStrategy: "Middle market, core-plus to value-add infrastructure fund targeting control investments and structured capital solutions across communications, transport and logistics, and energy transition in North America and Europe. Differentiates through off-the-run deal sourcing, bespoke structuring in complex situations, and operational expertise.",
     sourceUrls: ["https://stonepeak.com/news/stonepeak-closes-opportunities-fund-with-3-15-billion-of-commitments"],
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation"],
@@ -1661,15 +1652,13 @@ export const funds: Fund[] = [
     strategyUrl: "https://stonepeak.com/news/stonepeak-closes-opportunities-fund-with-3-15-billion-of-commitments",
   }),
   f("FUND-139", "Stonepeak", "Stonepeak Opportunities Fund II", "2024", "$4.0B", 4000, "Value-Add", "Raising", {
-    description: "Active successor vehicle in Stonepeak's mid-market strategy, raising capital for North American and European equity investments. Louisiana Teachers committed $50M; Seattle City Pension committed.",
-    investmentStrategy: "Successor to Stonepeak's middle market opportunities vehicle, continuing the value-add strategy of targeting mid-market infrastructure across digital infrastructure, transport and logistics, and energy transition in North America and Europe. Applies Stonepeak's thematic sourcing and complex structuring capabilities to control and structured capital deals where operational improvement drives returns above the core spectrum.",
+    investmentStrategy: "Successor to Stonepeak's middle market opportunities vehicle, continuing the value-add strategy of targeting mid-market infrastructure across digital infrastructure, transport and logistics, and energy transition in North America and Europe. Applies Stonepeak's thematic sourcing and complex structuring capabilities to control and structured capital deals where operational improvement drives returns above the core spectrum. Louisiana Teachers committed $50M and Seattle City Pension also committed.",
     sourceUrls: ["https://irei.com/news/louisiana-teachers-invests-50m-in-stonepeak-opportunities-fund-ii/", "https://www.infrastructureinvestor.com/seattle-city-pension-wants-more-outperforming-infra-commits-to-stonepeak-fund/", "https://www.seattle.gov/documents/Departments/Retirement/Board/Minutes%2C%20Investment%20Committee/IC_Minutes_2026_01.pdf"],
     sectors: ["Digital Infrastructure", "Renewables / Energy Transition", "Transportation"],
     regions: ["North America", "Europe"],
     strategyUrl: "https://irei.com/news/louisiana-teachers-invests-50m-in-stonepeak-opportunities-fund-ii/",
   }),
   f("FUND-140", "Stonepeak", "Stonepeak Core Fund", "2022", "$5.0B", 5000, "Core", "Evergreen", {
-    description: "Permanent-capital/open-ended vehicle buying core infrastructure assets in North America and other developed OECD markets. Targets stable, essential infrastructure with long-duration cash yields.",
     investmentStrategy: "Open-ended, perpetual infrastructure vehicle targeting core assets across developed markets globally — including North America, Europe, Australia, and New Zealand — with a focus on cash yield and long-term, inflation-linked revenues. Invests across digital infrastructure (data centers, fiber, towers), energy and energy transition, and transport and logistics through both brownfield and select greenfield opportunities.",
     sourceUrls: ["https://inforcapital.com/funds/stonepeak-core-fund/"],
     sectors: ["Utilities", "Transportation", "Digital Infrastructure"],
@@ -1680,7 +1669,6 @@ export const funds: Fund[] = [
 
   // ── Swiss Life Asset Managers ─────────────────────────────
   f("FUND-141", "Swiss Life Asset Managers", "Swiss Life Funds (LUX) Global Infrastructure Opportunities IV", "2024", "€2.5B", 2750, "Core", "Raising", {
-    description: "Actively fundraising to deploy core/core-plus capital into direct mid-market infrastructure in Europe and North America. Targets essential, contracted infrastructure assets.",
     investmentStrategy: "Core/core-plus, closed-end fund targeting long-term direct control investments in mid-market infrastructure companies across OECD countries, primarily Europe and North America, in transportation, renewable energy, utilities, and digital infrastructure. Selects assets for mature, low-volatility cash flows with growth potential, favoring regulated assets, concession contracts, PPPs, and index-linked revenues under an SFDR Article 8 classification.",
     sourceUrls: ["https://uk.swisslife-am.com/content/dam/slamuk/news/media-release-gio-iv"],
     sectors: ["Utilities", "Transportation", "Renewables / Energy Transition"],
@@ -1689,7 +1677,6 @@ export const funds: Fund[] = [
     strategyUrl: "https://uk.swisslife-am.com/content/dam/slamuk/news/media-release-gio-iv",
   }),
   f("FUND-142", "Swiss Life Asset Managers", "Swiss Life Funds (LUX) ESG Global Infrastructure Opportunities Growth II", "2023", "€750M", 825, "Value-Add", "Financial Close", {
-    description: "Active value-add infrastructure fund purchasing direct assets in North America and Europe. Nearing final close for value-add and renewables strategies.",
     investmentStrategy: "Value-add infrastructure fund targeting control and co-control investments in small-to-mid-market European and North American assets across digitalization, decarbonization, and urban mobility themes. Exploits secular mega-trends including the circular economy, aging populations, and new logistics chains — with active investments in telecom infrastructure, diagnostic imaging platforms, and green energy — under an SFDR Article 8 framework.",
     sourceUrls: ["https://www.infrastructureinvestor.com/swiss-life-am-nears-final-close-for-value-add-and-renewables-funds-exclusive/", "https://www.swisslife-am.com/en/home/media/news/switzerland/institutional/2023/0502-infrastructure-fund.html"],
     sectors: ["Renewables / Energy Transition", "Utilities"],
@@ -1697,7 +1684,6 @@ export const funds: Fund[] = [
     strategyUrl: "https://www.infrastructureinvestor.com/swiss-life-am-nears-final-close-for-value-add-and-renewables-funds-exclusive/",
   }),
   f("FUND-143", "Swiss Life Asset Managers", "Fontavis ESG Renewable Infrastructure Fund II", "2022", "€750M", 825, "Core-Plus", "Financial Close", {
-    description: "Active global renewables fund mandated to deploy direct equity into OECD geographies, including North America. Part of Swiss Life's Fontavis renewable infrastructure platform.",
     investmentStrategy: "Global renewable energy infrastructure fund targeting investments in unlisted wind, solar, hydro, biomass, storage, and renewable fuels assets concentrated in OECD countries across Europe, North America, Asia Pacific, and beyond. Managed by Swiss Life Asset Managers' dedicated Fontavis renewables team, building diversified clean energy portfolios through long-standing relationships with project developers, classified as SFDR Article 8.",
     sourceUrls: ["https://pe-insights.com/swiss-life-asset-managers-launches-second-renewable-energy-fund-with-e750m-target/"],
     sectors: ["Renewables / Energy Transition"],
@@ -1706,7 +1692,6 @@ export const funds: Fund[] = [
   }),
   // ── Tallvine Partners ──────────────────────────────────────
   f("FUND-144", "Tallvine Partners", "Tallvine Middle Market Infrastructure Fund I", "2024", "$1.5B", 1500, "Value-Add", "Raising", {
-    description: "Active, recently launched fund targeting direct control/value-add infrastructure investments exclusively in North America. Debut fund from a new infrastructure-focused GP.",
     investmentStrategy: "Value-add debut fund targeting operationally geared, middle market infrastructure in North America across energy and utilities, transportation and logistics, and communications. Founded by former I Squared Capital executives, Tallvine targets smaller, less competitive transactions with attractive entry multiples, building platforms in small-craft aviation (Velocity FBO), marine services (Donjon Marine), and data centers (TRG Datacenters).",
     sourceUrls: ["https://www.themiddlemarket.com/news-analysis/tallvine-raising-1-5b-for-debut-fund-as-infra-spinouts-gather-pace", "https://pitchbook.com/profiles/fund/25865-92F", "https://www.formds.com/issuers/tallvine-middle-market-infrastructure-fund-i-lp"],
     sectors: ["Utilities", "Digital Infrastructure", "Transportation"],
@@ -1716,7 +1701,6 @@ export const funds: Fund[] = [
 
   // ── Tiger Infrastructure Partners ─────────────────────────
   f("FUND-145", "Tiger Infrastructure Partners", "Tiger Infrastructure Partners Fund IV", "2023", "$781.6M", 782, "Value-Add", "Financial Close", {
-    description: "Active 2023-vintage mid-market value-add infrastructure fund explicitly targeting direct equity investments in North America and Europe. Focuses on transport, environmental, and digital infrastructure.",
     investmentStrategy: "Value-add, middle market infrastructure fund writing $75–200M equity checks in digital infrastructure, energy transition, and transportation assets primarily in North America and Europe, seeking both majority control and minority stakes with aligned partners. Applies a private equity operational skill-set to develop, scale, and professionalize infrastructure businesses in a segment increasingly underserved by larger managers.",
     sourceUrls: ["https://pitchbook.com/profiles/fund/24513-04F", "https://radientanalytics.com/firm/adv/tiger-infrastructure-partners-lp-161551"],
     sectors: ["Transportation", "Waste / Environmental Services", "Digital Infrastructure"],
@@ -1726,15 +1710,13 @@ export const funds: Fund[] = [
 
   // ── TPG ───────────────────────────────────────────────────
   f("FUND-146", "TPG", "TPG Rise Climate II", "2023", "$8.0B", 8000, "Value-Add", "Raising", {
-    description: "A multi-billion dollar active private and infrastructure equity vehicle targeting climate transition assets globally, including North America. Passed $6 billion in commitments. Alterra committed US$1.5 billion including for Global South Initiative.",
-    investmentStrategy: "Global climate-focused private equity fund investing across growth equity and value-add deal archetypes in clean energy, decarbonized transport, greening industrials, sustainable fuels, and carbon management — concentrated approximately 70% in OECD markets with opportunistic non-OECD exposure. Pursues majority control deals, carve-outs, and growth equity to scale commercially viable businesses that generate measurable greenhouse gas reductions.",
+    investmentStrategy: "Global climate-focused private equity fund investing across growth equity and value-add deal archetypes in clean energy, decarbonized transport, greening industrials, sustainable fuels, and carbon management — concentrated approximately 70% in OECD markets with opportunistic non-OECD exposure. Pursues majority control deals, carve-outs, and growth equity to scale commercially viable businesses that generate measurable greenhouse gas reductions. Passed $6 billion in commitments, with Alterra committing US$1.5 billion including for the Global South Initiative.",
     sourceUrls: ["https://www.newprivatemarkets.com/in-brief-tpg-passes-6bn-for-rise-climate-ii/", "https://www.tpg.com/news-and-insights/alterra-commits-us1-5-billion-to-tpg-rise-climates-us10-billion-next-generation-private-equity-funds-including-new-global-south-initiative-and-tpg-rise-climate-ii", "https://www.buyoutsinsider.com/tpg-sets-8bn-target-10bn-cap-for-sophomore-climate-fund/"],
     sectors: ["Renewables / Energy Transition", "Power Generation", "Transportation"],
     regions: ["Global", "North America"],
     strategyUrl: "https://www.newprivatemarkets.com/in-brief-tpg-passes-6bn-for-rise-climate-ii/",
   }),
   f("FUND-147", "TPG", "TPG Rise Climate Transition Infrastructure (TRC TI)", "2023", "$2.0B+", 2000, "Value-Add", "Financial Close", {
-    description: "TPG's dedicated active transition infrastructure equity fund deploying capital into heavy assets globally, including a strong presence in the US. Appointed dedicated partner as Head of Infrastructure.",
     investmentStrategy: "Infrastructure value-add fund focused on energy transition assets — including renewable energy platforms requiring additional growth capital, green mobility fleets (buses, rail, trucks), and waste/environmental services — across developed markets globally. Sits within TPG Rise Climate's multi-capital-stack approach, scaling platforms that reduce emissions in hard-to-decarbonize sectors.",
     sourceUrls: ["https://dallasinnovates.com/tpg-appoints-partner-head-of-infrastructure-for-tpg-rise-climate/", "https://www.buyoutsinsider.com/tpg-sets-8bn-target-10bn-cap-for-sophomore-climate-fund/", "https://www.sec.gov/Archives/edgar/data/1880661/000188066125000014/tpg-20241231.htm", "https://www.paulhastings.com/news/paul-hastings-acts-as-counsel-on-esg-advisory-work-for-tpg-rise-climate-transition-infrastructure"],
     sectors: ["Renewables / Energy Transition", "Power Generation", "Utilities"],
@@ -1742,8 +1724,7 @@ export const funds: Fund[] = [
     strategyUrl: "https://dallasinnovates.com/tpg-appoints-partner-head-of-infrastructure-for-tpg-rise-climate/",
   }),
   f("FUND-148", "TPG", "TPG Peppertree Capital Fund X", "2023", "$1.5B", 1500, "Value-Add", "Raising", {
-    description: "Fund actively raises and acquires direct hard assets in U.S. digital infrastructure. TPG acquired Peppertree Capital, a digital infrastructure investment firm, to expand its capabilities.",
-    investmentStrategy: "Growth equity fund investing in wireless communication towers, spectrum licenses, fiber networks, distributed antenna systems, small cells, and adjacent digital assets across North America and key international markets. Founded on the conviction that surging global data demand will persistently outstrip wireless network capacity, with flexible check sizes targeting tower developers and communication infrastructure operators.",
+    investmentStrategy: "Growth equity fund investing in wireless communication towers, spectrum licenses, fiber networks, distributed antenna systems, small cells, and adjacent digital assets across North America and key international markets. Founded on the conviction that surging global data demand will persistently outstrip wireless network capacity, with flexible check sizes targeting tower developers and communication infrastructure operators. TPG acquired Peppertree Capital to expand its digital infrastructure capabilities.",
     sourceUrls: ["https://www.alternativeswatch.com/2025/05/06/tpg-acquisition-digital-infrastructure-investment-firm-peppertree/"],
     sectors: ["Digital Infrastructure", "Communications"],
     regions: ["North America"],
@@ -1752,16 +1733,14 @@ export const funds: Fund[] = [
 
   // ── True Green Capital Management ─────────────────────────
   f("FUND-149", "True Green Capital Management", "True Green Capital Fund IV", "2022", "$660.9M", 661, "Core-Plus", "Financial Close", {
-    description: "Active closed-end clean energy infrastructure fund dedicated to North American and European solar assets. Exceeded its $500 million target to close at over $650 million.",
-    investmentStrategy: "Renewable energy infrastructure fund focused on sub-utility scale, distributed commercial and industrial solar, battery storage, and microgrids in the US, UK, and EU. Combines direct operational capabilities in construction and asset management with long-term, fixed-price PPAs with creditworthy counterparties, targeting approximately 18 US states and select European markets.",
+    investmentStrategy: "Renewable energy infrastructure fund focused on sub-utility scale, distributed commercial and industrial solar, battery storage, and microgrids in the US, UK, and EU. Combines direct operational capabilities in construction and asset management with long-term, fixed-price PPAs with creditworthy counterparties, targeting approximately 18 US states and select European markets. Exceeded its $500 million target to close at over $650 million.",
     sourceUrls: ["https://www.prnewswire.com/news-releases/true-green-capital-management-closes-fourth-fund-at-over-650-million-exceeding-its-500-million-target-301561227.html"],
     sectors: ["Renewables / Energy Transition"],
     regions: ["North America", "Europe"],
     strategyUrl: "https://www.prnewswire.com/news-releases/true-green-capital-management-closes-fourth-fund-at-over-650-million-exceeding-its-500-million-target-301561227.html",
   }),
   f("FUND-150", "True Green Capital Management", "True Green Capital Fund V", "2025", "$1.0B", 1000, "Core-Plus", "Raising", {
-    description: "Active, currently raising NA-focused core-plus renewable infrastructure equity fund. VRS committed $100M. Builds on Fund IV's track record in distributed solar and clean energy.",
-    investmentStrategy: "Continuation of True Green Capital's distributed solar and clean energy strategy — targeting commercial and industrial solar, battery storage, and community solar across the US, UK, and Europe — with expanded platform ambitions including clean energy retail (gen-tailer) and strategic equipment partnerships. Extends the firm's presence as a specialized operator-investor in the sub-utility scale renewable power segment.",
+    investmentStrategy: "Continuation of True Green Capital's distributed solar and clean energy strategy — targeting commercial and industrial solar, battery storage, and community solar across the US, UK, and Europe — with expanded platform ambitions including clean energy retail (gen-tailer) and strategic equipment partnerships. Extends the firm's presence as a specialized operator-investor in the sub-utility scale renewable power segment. VRS committed $100M.",
     sourceUrls: ["https://realassets.ipe.com/jon-peterson/3272.contributor?page=12", "https://www.infrastructureinvestor.com/vrs-commits-100m-to-true-green-capital/"],
     sectors: ["Renewables / Energy Transition"],
     regions: ["North America"],
@@ -1770,16 +1749,14 @@ export const funds: Fund[] = [
 
   // ── Vauban Infrastructure Partners ────────────────────────
   f("FUND-151", "Vauban Infrastructure Partners", "Core Infrastructure Fund IV (CIF IV)", "2021", "€2.2B", 2420, "Core", "Financial Close", {
-    description: "Massive active core infrastructure fund making direct equity investments, which has explicitly expanded its geographic target footprint to acquire operating platforms in North America. Acquired a leading US district energy platform.",
-    investmentStrategy: "Core infrastructure fund targeting predominantly brownfield, mid-market assets in Europe across mobility, energy transition, social infrastructure, and digital infrastructure. Pursues long-term, yield-driven control investments in essential infrastructure that delivers critical services — from biomethane production and district energy to energy services and transport concessions — with emphasis on sustainable value creation.",
+    investmentStrategy: "Core infrastructure fund targeting predominantly brownfield, mid-market assets in Europe across mobility, energy transition, social infrastructure, and digital infrastructure, with an expanded geographic footprint into North America. Pursues long-term, yield-driven control investments in essential infrastructure that delivers critical services — from biomethane production and district energy to energy services and transport concessions — with emphasis on sustainable value creation. Acquired a leading US district energy platform.",
     sourceUrls: ["https://vauban-ip.com/en/about-us", "https://www.prnewswire.com/news-releases/vauban-infrastructure-partners-announces-the-closing-of-the-acquisition-of-a-leading-district-energy-platform-located-in-the-united-states-301552231.html"],
     sectors: ["Utilities", "Transportation", "Social Infrastructure"],
     regions: ["Europe", "North America"],
     strategyUrl: "https://www.prnewswire.com/news-releases/vauban-infrastructure-partners-announces-the-closing-of-the-acquisition-of-a-leading-district-energy-platform-located-in-the-united-states-301552231.html",
   }),
   f("FUND-152", "Vauban Infrastructure Partners", "Core Infrastructure Fund V (CIF V)", "2025", "€2.75B", 3025, "Core", "Raising", {
-    description: "The next active generation of Vauban's flagship CIF strategy, operating under an updated mandate that specifically pursues strategic asset expansion into North America. Investcorp SCG recently acquired a stake in the platform.",
-    investmentStrategy: "Successor to Vauban's fourth core fund, continuing the firm's brownfield, mid-market European core infrastructure strategy across mobility, energy transition, digital infrastructure, and social sectors. Maintains Vauban's long-term, yield-oriented, control-focused approach to essential infrastructure assets, managed by the same team that has collectively raised over €9B across eight funds.",
+    investmentStrategy: "Successor to Vauban's fourth core fund, continuing the firm's brownfield, mid-market European core infrastructure strategy across mobility, energy transition, digital infrastructure, and social sectors, with an updated mandate pursuing strategic expansion into North America. Maintains Vauban's long-term, yield-oriented, control-focused approach to essential infrastructure assets, managed by the same team that has collectively raised over €9B across eight funds. Investcorp SCG recently acquired a stake in the platform.",
     sourceUrls: ["https://www.infrastructureinvestor.com/us-bank-regs-prompt-vauban-to-sell-stake-to-investcorps-scg/"],
     sectors: ["Utilities", "Transportation", "Social Infrastructure"],
     regions: ["Europe", "North America"],
@@ -1788,7 +1765,6 @@ export const funds: Fund[] = [
 
   // ── Vision Ridge Partners ─────────────────────────────────
   f("FUND-153", "Vision Ridge Partners", "Sustainable Asset Fund IV (SAF IV)", "2023", "$2.4B", 2400, "Value-Add", "Financial Close", {
-    description: "SAF IV is a verified, closed-end direct infrastructure equity vehicle focused on value-add energy and sustainability acquisitions primarily within the North American market. The CEO noted the 'opportunity set remains quite compelling.'",
     investmentStrategy: "Value-add sustainable real assets fund targeting 10–14 direct equity investments in energy infrastructure and renewables, transportation, and agriculture/agribusiness — sectors representing over 80% of global greenhouse gas emissions. Seeks a target net IRR of 15–20% by acquiring, actively managing, and building complex sustainable assets (including renewable power, energy storage, water infrastructure, clean mobility platforms, and aquaculture) and positioning them for eventual sale to larger infrastructure buyers.",
     sourceUrls: ["https://www.infrastructureinvestor.com/the-opportunity-set-remains-quite-compelling-says-vision-ridge-ceo-as-saf-iv-closes-on-2-4bn/", "https://inforcapital.com/funds/vision-ridge-partners-sustainable-asset-fund-iv/"],
     sectors: ["Renewables / Energy Transition", "Transportation", "Water"],
@@ -1798,15 +1774,13 @@ export const funds: Fund[] = [
 
   // ── Wafra Inc. ────────────────────────────────────────────
   f("FUND-154", "Wafra Inc.", "Wafra Real Assets & Infrastructure Fund II", "2021", "Undisclosed", null, "Value-Add", "Financial Close", {
-    description: "Active closed-end investment vehicle used by Wafra to execute direct, value-add North American infrastructure buyouts, such as telecom and long-haul fiber networks. Part of Wafra's $28 billion platform. Recently completed minority investment in Ardian.",
-    investmentStrategy: "Multi-strategy real assets fund investing across aviation, digital infrastructure, shipping, and renewable energy through both equity and debt instruments in North America and globally. Embraces deal complexity and uses bespoke structuring — often alongside sovereign and pension co-investors — to enhance risk-adjusted returns across utility-scale solar and storage, general aviation FBOs, and intermodal logistics.",
+    investmentStrategy: "Multi-strategy real assets fund investing across aviation, digital infrastructure, shipping, and renewable energy through both equity and debt instruments in North America and globally. Embraces deal complexity and uses bespoke structuring — often alongside sovereign and pension co-investors — to enhance risk-adjusted returns across utility-scale solar and storage, general aviation FBOs, and intermodal logistics. Part of Wafra's $28 billion platform, with investments including telecom and long-haul fiber networks.",
     sourceUrls: ["https://docs.fcc.gov/public/attachments/DA-23-949A1.pdf", "https://www.prnewswire.com/news-releases/wafra-completes-minority-investment-in-ardian-302619350.html", "https://www.wafra.com/our-strategies/real-assets/"],
     sectors: ["Digital Infrastructure", "Communications"],
     regions: ["North America"],
     strategyUrl: "https://www.wafra.com/our-strategies/real-assets/",
   }),
   f("FUND-155", "Wafra Inc.", "Wafra Real Assets & Infrastructure Platform (SMA)", "2014", "$3.0B", 3000, "Value-Add", "Evergreen", {
-    description: "Wafra's Real Assets & Infrastructure initiative leverages an active captive platform format — executing through flexible SMAs — to continuously deploy capital into North American infrastructure. $3 billion in commitments across the real assets platform.",
     investmentStrategy: "Separately managed account accessing Wafra's multi-sector opportunity set — spanning aviation, digital infrastructure, shipping, and renewable energy — on a customized basis for institutional LPs. Draws on Wafra's network of strategic partnerships with leading alternative managers (including stakes in Ardian) and its ability to execute at speed and scale as both lead investor and co-investor alongside sovereign and pension fund partners.",
     sourceUrls: ["https://www.westportalpha.com/", "https://www.wafra.com/our-strategies/real-assets/"],
     sectors: ["Digital Infrastructure", "Communications", "Utilities"],
@@ -1817,8 +1791,7 @@ export const funds: Fund[] = [
 
   // ── Axium Infrastructure ────────────────────────────────
   f("FUND-157", "Axium Infrastructure", "Axium Infrastructure Canada II L.P.", "2012", "C$891M", 660, "Core", "Evergreen", {
-    description: "Open-ended core infrastructure fund (formerly Fiera Axium Infrastructure Canada II L.P.) focused exclusively on Canadian assets. Part of the broader AxInfra NA II platform alongside AxInfra US II, investing in high-quality operational and greenfield infrastructure with stable, long-term contracted cash flows across energy, transportation, and social sectors.",
-    investmentStrategy: "Targets core Canadian infrastructure under long-term contract, regulated frameworks, or concession-based structures, targeting a net IRR of 7–9% with 3–5% cash yield. Sectors include renewable power (wind and solar), social PPP assets (correctional facilities, long-term care homes), and regulated transportation, with strict single-asset concentration limits.",
+    investmentStrategy: "Targets core Canadian infrastructure under long-term contract, regulated frameworks, or concession-based structures, targeting a net IRR of 7–9% with 3–5% cash yield. Formerly Fiera Axium Infrastructure Canada II L.P., this fund is part of the broader AxInfra NA II platform alongside AxInfra US II. Sectors include renewable power (wind and solar), social PPP assets (correctional facilities, long-term care homes), and regulated transportation, with strict single-asset concentration limits.",
     sourceUrls: ["https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_Recurrent-Fiera-Axium-news-release-EN.pdf", "https://www.axiuminfra.com/wp-content/uploads/2024/12/Axium_News-Release_Quality-and-PDN-Wind-Projects-closing_Vf.pdf"],
     sectors: ["Renewables / Energy Transition", "Social Infrastructure", "Transportation", "Utilities"],
     regions: ["North America"],
@@ -1826,8 +1799,7 @@ export const funds: Fund[] = [
     strategyUrl: "https://www.axiuminfra.com/wp-content/uploads/2024/12/Axium_News-Release_Quality-and-PDN-Wind-Projects-closing_Vf.pdf",
   }),
   f("FUND-158", "Axium Infrastructure", "AxInfra US L.P.", "2013", "Undisclosed", null, "Core", "Evergreen", {
-    description: "Axium's original open-ended US infrastructure fund (formerly Fiera Axium Infrastructure US L.P.), launched in 2013 as the firm expanded its investment mandate into the United States. Invests exclusively in operational US infrastructure assets under long-term offtake agreements or regulated frameworks.",
-    investmentStrategy: "Targets mid-market core US infrastructure assets across renewable energy (wind, solar), network utilities, electric transmission, and essential transportation. Operates as an open-ended evergreen vehicle with no fixed term, co-investing alongside operating partners and targeting net returns of 7–9% with 3–5% current cash yield.",
+    investmentStrategy: "Axium's original US infrastructure fund (formerly Fiera Axium Infrastructure US L.P.), targeting mid-market core US infrastructure assets across renewable energy (wind, solar), network utilities, electric transmission, and essential transportation. Operates as an open-ended evergreen vehicle with no fixed term, co-investing alongside operating partners and targeting net returns of 7–9% with 3–5% current cash yield.",
     sourceUrls: ["https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_FAI-EDPR-Wheat-Field-News-Release-2013-09-10-EN.pdf", "https://www.axiuminfra.com/wp-content/uploads/2024/12/Axium_News-Release_Quality-and-PDN-Wind-Projects-closing_Vf.pdf"],
     sectors: ["Renewables / Energy Transition", "Transportation", "Utilities"],
     regions: ["North America"],
@@ -1835,8 +1807,7 @@ export const funds: Fund[] = [
     strategyUrl: "https://www.axiuminfra.com/wp-content/uploads/2016/12/EN_FAI-EDPR-Wheat-Field-News-Release-2013-09-10-EN.pdf",
   }),
   f("FUND-161", "Axium Infrastructure", "AxInfra US II L.P.", "2017", "$7.1B", 7100, "Core", "Evergreen", {
-    description: "Second-generation US open-ended core infrastructure fund forming the primary US-denominated vehicle within the $7.1B AxInfra NA II platform alongside Axium Infrastructure Canada II L.P. Attracted significant institutional commitments from pension plans including Kansas PERS ($100M) and Connecticut CRPTF ($150M).",
-    investmentStrategy: "Invests in core North American infrastructure assets (96% US, 4% Canada) with a diversified portfolio of 250+ individual assets across renewable power (39%), network utilities (34%), transportation (13%), conventional power (9%), and social infrastructure (5%). Targets net IRR of 7–9% with 3–5% cash yield, with concentration limits of no more than 20% of commitments or $75M per single asset.",
+    investmentStrategy: "Primary US-denominated vehicle within the $7.1B AxInfra NA II platform alongside Axium Infrastructure Canada II L.P., investing in core North American infrastructure assets (96% US, 4% Canada) with a diversified portfolio of 250+ individual assets across renewable power (39%), network utilities (34%), transportation (13%), conventional power (9%), and social infrastructure (5%). Targets net IRR of 7–9% with 3–5% cash yield, with concentration limits of no more than 20% of commitments or $75M per single asset. Notable LP commitments include Kansas PERS ($100M) and Connecticut CRPTF ($150M).",
     sourceUrls: ["https://www.infrastructureinvestor.com/axium-infrastructure-outlines-plan-for-first-co-investment-fund/", "https://www.sec.gov/Archives/edgar/data/1716753/000171675320000001/xslFormDX01/primary_doc.xml"],
     sectors: ["Renewables / Energy Transition", "Utilities", "Transportation", "Social Infrastructure", "Power Generation"],
     regions: ["North America"],
@@ -1844,8 +1815,7 @@ export const funds: Fund[] = [
     strategyUrl: "https://www.infrastructureinvestor.com/axium-infrastructure-outlines-plan-for-first-co-investment-fund/",
   }),
   f("FUND-164", "Axium Infrastructure", "AxInfra US III L.P.", "2021", "$114M", 114, "Core", "Financial Close", {
-    description: "Third-generation US open-ended core infrastructure fund registered with the SEC in 2021. Channels LP capital into the master US infrastructure portfolio (AIUS LP), providing exposure to a diversified set of 250+ operational North American infrastructure assets.",
-    investmentStrategy: "Targets core US infrastructure assets across renewable energy, network utilities, transportation, and social infrastructure, with 100% of capital deployed into the US country-level fund. Investments are made in operational assets under long-term contracts with creditworthy counterparties, targeting net IRR of 7–9% with a 3–5% cash yield component. Article 8 SFDR-compliant.",
+    investmentStrategy: "Third-generation US open-ended core infrastructure fund registered with the SEC in 2021, channeling LP capital into the master US infrastructure portfolio (AIUS LP) for exposure to 250+ operational North American infrastructure assets. Targets core US infrastructure across renewable energy, network utilities, transportation, and social infrastructure, with 100% of capital deployed into the US country-level fund. Investments are made in operational assets under long-term contracts with creditworthy counterparties, targeting net IRR of 7–9% with a 3–5% cash yield component. Article 8 SFDR-compliant.",
     sourceUrls: ["https://www.sec.gov/Archives/edgar/data/1884031/000188403121000001/0001884031-21-000001-index.html", "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BDEBFA23A-6D6A-4C97-B954-059077F511D1%7D"],
     sectors: ["Renewables / Energy Transition", "Utilities", "Transportation", "Social Infrastructure"],
     regions: ["North America"],
@@ -1853,8 +1823,7 @@ export const funds: Fund[] = [
     strategyUrl: "https://www.sec.gov/Archives/edgar/data/1884031/000188403121000001/0001884031-21-000001-index.html",
   }),
   f("FUND-166", "Axium Infrastructure", "Axium Infrastructure NA IV L.P.", "2016", "$1.35B", 1350, "Core", "Evergreen", {
-    description: "Open-ended North American core infrastructure fund with its date of first sale on March 18, 2016, and subsequent capital raises reaching approximately $1.35B. A multi-LP pooled vehicle providing pan-North American core infrastructure exposure, managed by Axium Infrastructure Inc. from Montreal.",
-    investmentStrategy: "Invests in core North American energy, transportation, and social infrastructure assets, emphasizing operational brownfield assets under long-term contract, regulated frameworks, or concession structures. Open-ended evergreen vehicle with no fixed term, Article 8 SFDR-compliant, with investments in energy generation, transmission, and essential services across the US and Canada.",
+    investmentStrategy: "Multi-LP pooled vehicle managed by Axium Infrastructure Inc. from Montreal, investing in core North American energy, transportation, and social infrastructure assets, emphasizing operational brownfield assets under long-term contract, regulated frameworks, or concession structures. Open-ended evergreen vehicle with no fixed term, Article 8 SFDR-compliant, with investments in energy generation, transmission, and essential services across the US and Canada.",
     sourceUrls: ["https://www.sec.gov/Archives/edgar/data/1671710/000167171019000001/xslFormDX01/primary_doc.xml", "https://www.axiuminfra.com/wp-content/uploads/2023/06/Principal-Adverse-Impact-Statement-EN.pdf"],
     sectors: ["Renewables / Energy Transition", "Utilities", "Transportation", "Social Infrastructure"],
     regions: ["North America"],
