@@ -847,10 +847,10 @@ function FundDrawer({
       />
       <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#27272A] bg-[#09090B] overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-[#27272A] bg-[#09090B]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
+        <div className="sticky top-0 z-10 border-b border-[#27272A] bg-[#09090B]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
-              <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+              <div className="flex items-center gap-2 mb-1 flex-wrap">
                 <span className="text-xs-dense text-[#52525B]">{fund.managerName}</span>
                 {fund.ticker && (
                   <span className="mono text-micro text-[#52525B] bg-[#1f1f23] px-1.5 py-0.5 rounded-[4px]">
@@ -858,7 +858,7 @@ function FundDrawer({
                   </span>
                 )}
               </div>
-              <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-[#EDEDED] leading-tight tracking-tight">
+              <h2 className="text-base sm:text-lg font-semibold text-[#EDEDED] leading-tight tracking-tight">
                 {fund.fundName}
               </h2>
             </div>
@@ -869,61 +869,64 @@ function FundDrawer({
               <X className="h-5 w-5" />
             </button>
           </div>
-
-          <div className="flex items-center gap-2 mt-3 flex-wrap">
-            {fund.strategies.map((s) => (
-              <span
-                key={s}
-                className="text-micro font-medium px-2 py-0.5 rounded-[4px]"
-                style={{
-                  color: getStrategyColor(s),
-                  backgroundColor: `${getStrategyColor(s)}1a`,
-                  border: `1px solid ${getStrategyColor(s)}33`,
-                }}
-              >
-                {s}
-              </span>
-            ))}
-            <div className="h-3.5 w-px bg-[#27272A]" />
-            <span
-              className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
-              style={{
-                color: getStatusColor(fund.status),
-                backgroundColor: `${getStatusColor(fund.status)}1a`,
-                border: `1px solid ${getStatusColor(fund.status)}33`,
-              }}
-            >
-              {fund.status}
-            </span>
-          </div>
         </div>
 
         {/* Content */}
         <div className="p-4 sm:p-6 lg:p-8 space-y-5 lg:space-y-6">
           {/* Fund overview card */}
-          <div className="glass-card rounded-[4px] p-4 space-y-3">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              <div>
-                <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Fund Size</span>
-                <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{fund.size}</div>
-              </div>
-              <div>
-                <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Vintage</span>
-                <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{fund.vintage}</div>
-              </div>
-              <div>
-                <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Structure</span>
-                <div className="mt-0.5">
+          <div className="glass-card rounded-[4px] overflow-hidden">
+            {/* Classification tags */}
+            <div className="px-4 py-3">
+              <div className="flex items-center gap-2 flex-wrap">
+                {fund.strategies.map((s) => (
                   <span
-                    className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
+                    key={s}
+                    className="text-micro font-medium px-2 py-0.5 rounded-[4px]"
                     style={{
-                      color: getStructureColor(fund.structure),
-                      backgroundColor: `${getStructureColor(fund.structure)}1a`,
-                      border: `1px solid ${getStructureColor(fund.structure)}33`,
+                      color: getStrategyColor(s),
+                      backgroundColor: `${getStrategyColor(s)}1a`,
+                      border: `1px solid ${getStrategyColor(s)}33`,
                     }}
                   >
-                    {fund.structure}
+                    {s}
                   </span>
+                ))}
+                <div className="h-3.5 w-px bg-[#27272A]" />
+                <span
+                  className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
+                  style={{
+                    color: getStatusColor(fund.status),
+                    backgroundColor: `${getStatusColor(fund.status)}1a`,
+                    border: `1px solid ${getStatusColor(fund.status)}33`,
+                  }}
+                >
+                  {fund.status}
+                </span>
+                <div className="h-3.5 w-px bg-[#27272A]" />
+                <span
+                  className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
+                  style={{
+                    color: getStructureColor(fund.structure),
+                    backgroundColor: `${getStructureColor(fund.structure)}1a`,
+                    border: `1px solid ${getStructureColor(fund.structure)}33`,
+                  }}
+                >
+                  {fund.structure}
+                </span>
+              </div>
+            </div>
+            {/* Divider */}
+            <div className="border-t border-[#27272A]" />
+            {/* Metrics */}
+            <div className="px-4 py-3">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                <div>
+                  <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Fund Size</span>
+                  <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{fund.size}</div>
+                </div>
+                <div>
+                  <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Vintage</span>
+                  <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{fund.vintage}</div>
                 </div>
               </div>
             </div>
