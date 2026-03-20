@@ -234,9 +234,9 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCompany[]> = {
     { name: "Tosca Holdco", sector: "Social Infrastructure", subsector: "Essential Services", region: "North America", country: "United States", description: "Platform holding essential infrastructure service businesses." , sourceUrls: ["https://www.arapartners.com/portfolio/"] },
   ],
   "FUND-022": [
-    { name: "Purmo Group", sector: "Renewables / Energy Transition", subsector: "Heating & Cooling", region: "Europe", country: "Finland", description: "European sustainable indoor climate solutions and heating technology company." , sourceUrls: ["https://www.arclightcapital.com/portfolio/"] },
-    { name: "TotalEnergies Texas Solar & BESS Portfolio", sector: "Renewables / Energy Transition", subsector: "Solar & Storage", region: "North America", country: "United States", description: "Large-scale solar and battery energy storage portfolio in Texas." , sourceUrls: ["https://www.arclightcapital.com/portfolio/"] },
-    { name: "Ionic Blue (Johnson Controls JV)", sector: "Renewables / Energy Transition", subsector: "Building Automation", region: "North America", country: "United States", description: "JV focused on building decarbonization and smart building solutions." , sourceUrls: ["https://www.arclightcapital.com/portfolio/"] },
+    { name: "Purmo Group", sector: "Renewables / Energy Transition", subsector: "Heating & Cooling", region: "Europe", country: "Finland", description: "European sustainable indoor climate solutions and heating technology company." , sourceUrls: ["https://arclight.com/investments/"] },
+    { name: "TotalEnergies Texas Solar & BESS Portfolio", sector: "Renewables / Energy Transition", subsector: "Solar & Storage", region: "North America", country: "United States", description: "Large-scale solar and battery energy storage portfolio in Texas." , sourceUrls: ["https://arclight.com/investments/"] },
+    { name: "Ionic Blue (Johnson Controls JV)", sector: "Renewables / Energy Transition", subsector: "Building Automation", region: "North America", country: "United States", description: "JV focused on building decarbonization and smart building solutions." , sourceUrls: ["https://arclight.com/investments/"] },
   ],
   "FUND-024": [
     { name: "Anesco", sector: "Renewables / Energy Transition", subsector: "Solar & Storage", region: "Europe", country: "United Kingdom", description: "UK solar, battery storage, and energy optimization company." , sourceUrls: ["https://www.ardian.com/expertise/real-assets/infrastructure/investments"] },
