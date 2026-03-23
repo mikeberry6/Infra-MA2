@@ -10893,12 +10893,17 @@ export const companies: PortCo[] = [
     name: "Commonwealth LNG",
     investmentFirm: "Kimmeridge",
     sector: "Transportation",
-    subsector: "Midstream Energy (LNG Export",
+    subsector: "Midstream Energy (LNG Export)",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Kimmeridge Flagship Funds / Caturus",
-    description: "",
+    description: "LNG export terminal project in Cameron Parish, Louisiana, designed to produce approximately 9.3 million tonnes per annum of LNG using mid-scale modular liquefaction technology.",
     status: "Active",
+    website: "https://commonwealthlng.com",
+    headquarters: "Houston, Texas, United States",
+    sources: [
+      { label: "Commonwealth LNG — Website", url: "https://commonwealthlng.com/" },
+    ],
   },
   {
     name: "LandGate",
@@ -10977,8 +10982,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "MIP IV",
-    description: "",
+    description: "Midwest fiber network operator with over 5,200 route miles and 127+ POP sites spanning Missouri, Kansas, Oklahoma, and Illinois, serving major cities including St. Louis, Kansas City, Springfield, and Tulsa.",
     status: "Active",
+    website: "https://bluebirdfiber.com",
+    headquarters: "Columbia, Missouri, United States",
+    investmentYear: 2019,
+    management: [
+      { name: "Michael Morey", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Bluebird Fiber — About", url: "https://bluebirdfiber.com/about/" },
+    ],
   },
   {
     name: "Calibrant Energy",
