@@ -4348,8 +4348,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "",
+    description: "Fast-growing power generation platform acquiring, developing, and optimizing assets across North America with approximately 11 GW of capacity across several states.",
     status: "Active",
+    website: "https://www.kindle-energy.com",
+    headquarters: "Princeton, New Jersey, United States",
+    management: [
+      { name: "Lee Davis", title: "Founder & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Kindle Energy — Team", url: "https://www.kindle-energy.com/about-us/meet-the-kindle-energy-team/" },
+    ],
   },
   {
     name: "Kinetik Holdings Inc.",
@@ -4392,8 +4400,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "",
+    description: "Leading integrated provider of energy efficiency and sustainability solutions for mission-critical facilities including healthcare, data centers, biopharma, and government buildings. Operates across 70 offices in 20 US states.",
     status: "Active",
+    website: "https://www.wearelegence.com",
+    yearFounded: 1914,
+    investmentYear: 2020,
+    headquarters: "San Jose, California, United States",
+    milestones: [
+      { date: "2020", event: "Therma joined the Blackstone portfolio", category: "Financing" },
+      { date: "2022", event: "Rebranded from Therma to Legence", category: "Other" },
+    ],
+    management: [
+      { name: "Jeff Sprau", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Legence — About Us", url: "https://www.wearelegence.com/about" },
+    ],
   },
   {
     name: "MacLean Power Systems",
@@ -10119,8 +10141,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Infrastructure Investments Fund (IIF)",
-    description: "",
+    description: "Leading regulated water and wastewater utility serving more than 1.3 million people across 20 US states and 2 Canadian provinces. Formed through the merger of SouthWest Water Company and Corix's water systems.",
     status: "Active",
+    website: "https://nexuswatergroup.com",
+    headquarters: "Sugar Land, Texas, United States",
+    milestones: [
+      { date: "2024", event: "Formed through merger of SouthWest Water Company and Corix water/wastewater businesses", category: "Other" },
+    ],
+    management: [
+      { name: "Rob MacLean", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Nexus Water Group — Board", url: "https://nexuswatergroup.com/our-company/board-of-directors/" },
+    ],
   },
   {
     name: "Nieuport Aviation",
@@ -10141,8 +10174,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Infrastructure Investments Fund (IIF)",
-    description: "",
+    description: "Independent power producer owning 43 wind, solar, and natural gas generating projects across 16 states. Formed through the 2021 merger of Novatus Energy and Southwest Generation.",
     status: "Active",
+    website: "https://www.onwardenergy.com",
+    headquarters: "Charlotte, North Carolina, United States",
+    milestones: [
+      { date: "2021", event: "Formed through merger of Novatus Energy and Southwest Generation", category: "Other" },
+      { date: "2024", event: "Steve Berberich appointed President and CEO", category: "Management" },
+    ],
+    management: [
+      { name: "Steve Berberich", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Onward Energy — Leadership", url: "https://www.onwardenergy.com/leadership-and-careers" },
+    ],
   },
   {
     name: "South Jersey Industries (SJI)",
@@ -10171,7 +10216,15 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Infrastructure Investments Fund (IIF)",
-    description: "",
+    description: "Natural gas distribution and transmission company operating across Arkansas, Colorado, Maine, Missouri, Oklahoma, and Texas through several subsidiary companies.",
+    website: "https://summitutilitiesinc.com",
+    headquarters: "Centennial, Colorado, United States",
+    management: [
+      { name: "Kurt Adams", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Summit Utilities — Who We Are", url: "https://summitutilitiesinc.com/who-we-are/" },
+    ],
     status: "Active",
   },
   {
