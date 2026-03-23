@@ -4,6 +4,8 @@ export type {
   PortCoRegion,
   PortCoStatus,
   PortCoMilestone,
+  PortCoExecutive,
+  PortCoSource,
   MilestoneCategory,
 } from "./types";
 
