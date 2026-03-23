@@ -1,5 +1,21 @@
 // ─── PortCo Types ───────────────────────────────────────────
 
+export type MilestoneCategory =
+  | "Founding"
+  | "Acquisition"
+  | "Financing"
+  | "Expansion"
+  | "Management"
+  | "Divestiture"
+  | "IPO"
+  | "Other";
+
+export interface PortCoMilestone {
+  date: string;
+  event: string;
+  category: MilestoneCategory;
+}
+
 export type PortCoSector =
   | "Transportation"
   | "Digital Infrastructure"
@@ -32,6 +48,10 @@ export interface PortCo {
   ownershipVehicle: string;
   description: string;
   status: PortCoStatus;
+  website?: string;
+  yearFounded?: number;
+  headquarters?: string;
+  milestones?: PortCoMilestone[];
 }
 
 // ─── Constants ──────────────────────────────────────────────
@@ -117,4 +137,21 @@ export function getUniqueSubsectors(companies: PortCo[]): string[] {
 
 export function getUniqueVehicles(companies: PortCo[]): string[] {
   return Array.from(new Set(companies.map((c) => c.ownershipVehicle))).sort();
+}
+
+// ─── Milestone Colors ──────────────────────────────────────
+
+const MILESTONE_CATEGORY_COLORS: Record<MilestoneCategory, string> = {
+  Founding: "#10b981",
+  Acquisition: "#3b82f6",
+  Financing: "#8b5cf6",
+  Expansion: "#06b6d4",
+  Management: "#f59e0b",
+  Divestiture: "#ef4444",
+  IPO: "#059669",
+  Other: "#71717a",
+};
+
+export function getMilestoneCategoryColor(category: MilestoneCategory): string {
+  return MILESTONE_CATEGORY_COLORS[category] ?? "#71717a";
 }
