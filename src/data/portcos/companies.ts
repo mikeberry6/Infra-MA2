@@ -1221,8 +1221,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Actis Energy 5",
-    description: "",
+    description: "Develops, owns, and operates distributed solar and battery storage infrastructure for commercial and industrial properties across 30 US states. Backed by Actis and EnCap Investments.",
     status: "Active",
+    website: "https://catalyze.com",
+    yearFounded: 2017,
+    headquarters: "Houston, Texas, United States",
+    management: [
+      { name: "Jared Haines", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Catalyze — About Us", url: "https://catalyze.com/company/about-us/" },
+    ],
   },
   {
     name: "NextStream",
@@ -7444,8 +7453,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ember Infrastructure",
-    description: "",
+    description: "Designs, installs, owns, and operates distributed systems co-located with waste stream assets to recover and monetize high-value metals from auto shredder residues and waste-to-energy ash. Operates three metals recovery assets across the Mid-Atlantic, Michigan, and Massachusetts.",
     status: "Active",
+    management: [
+      { name: "Steve Bossotti", title: "Co-Founder & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "ART — Ember Investment", url: "https://www.prnewswire.com/news-releases/advanced-recycling-technologies-announces-growth-investment-from-ember-infrastructure-302315469.html" },
+    ],
   },
   {
     name: "Caban Systems",
@@ -10600,8 +10615,18 @@ export const companies: PortCo[] = [
     subsector: "",
     region: "North America",
     country: "Canada",
+    description: "670-km natural gas pipeline from Dawson Creek across the Canadian Rockies to Kitimat, BC, supplying LNG Canada export facility. KKR and AIMCo hold 65% equity; TC Energy operates. Entered service November 2024.",
+    website: "https://www.coastalgaslink.com",
+    headquarters: "Calgary, Alberta, Canada",
+    investmentYear: 2019,
+    milestones: [
+      { date: "2019", event: "KKR and AIMCo acquired 65% equity interest for ~C$600 million", category: "Financing" },
+      { date: "2024", event: "Pipeline entered commercial in-service", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Coastal GasLink — Wikipedia", url: "https://en.wikipedia.org/wiki/Coastal_GasLink_pipeline" },
+    ],
     ownershipVehicle: "KKR Global Infrastructure (SMA)",
-    description: "",
     status: "Active",
   },
   {
@@ -10612,8 +10637,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Core Infrastructure",
-    description: "",
+    description: "Formerly Clearway Community Energy, providing district energy, combined heat and power, and microgrid solutions. Finances, designs, develops, builds, owns, operates, and maintains energy systems for commercial and institutional customers.",
     status: "Active",
+    website: "https://cordiaenergy.com",
+    yearFounded: 2022,
+    headquarters: "Phoenix, Arizona, United States",
+    management: [
+      { name: "Earl Collins", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Cordia Energy — About Us", url: "https://cordiaenergy.com/about-us/" },
+    ],
   },
   {
     name: "CyrusOne",
