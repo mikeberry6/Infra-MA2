@@ -3247,8 +3247,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Axium Managed Funds",
-    description: "",
+    description: "PPP operating PR-5, PR-20, PR-22, PR-52, PR-53, PR-66, and Teodoro Moscoso Bridge in Puerto Rico. Consortium of Abertis (majority) and institutional investors.",
     status: "Active",
+    website: "https://metropistas.com",
+    headquarters: "San Juan, Puerto Rico",
+    management: [
+      { name: "Julián Rodes", title: "Chief Executive Officer" },
+    ],
   },
   {
     name: "Axium BlueWave",
@@ -9695,8 +9700,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "IFM Global Infrastructure Fund (GIF)",
-    description: "",
+    description: "157-mile East-West toll road across northern Indiana operated under a long-term concession. IFM acquired the concession for $5.725 billion in 2015 after the previous concessionaire went bankrupt.",
     status: "Active",
+    headquarters: "Elkhart, Indiana, United States",
+    investmentYear: 2015,
+    milestones: [
+      { date: "2015", event: "IFM Investors acquired ITRCC for $5.725 billion", category: "Financing" },
+    ],
+    sources: [
+      { label: "IFM Investors — Indiana Toll Road", url: "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/indiana-toll-road/" },
+    ],
   },
   {
     name: "Mobius Renewables (Includes GreenGasUSA)",
