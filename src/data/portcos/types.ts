@@ -60,6 +60,7 @@ export interface PortCo {
   status: PortCoStatus;
   website?: string;
   yearFounded?: number;
+  investmentYear?: number;
   headquarters?: string;
   milestones?: PortCoMilestone[];
   management?: PortCoExecutive[];
