@@ -513,10 +513,10 @@ function PortCoDrawer({
                 <div className="absolute left-[5px] top-1 bottom-1 w-px bg-[#27272A]" />
                 <div className="space-y-3">
                   {visibleMilestones.map((m, i) => {
+                    const mentionsFirm = m.event.toLowerCase().includes(company.investmentFirm.toLowerCase().split(" ")[0]);
                     const isInvestmentMilestone = company.investmentYear
                       ? m.date.includes(String(company.investmentYear)) &&
-                        (m.category === "Acquisition" || m.category === "Financing" ||
-                         m.event.toLowerCase().includes(company.investmentFirm.toLowerCase().split(" ")[0]))
+                        (m.category === "Financing" || mentionsFirm)
                       : false;
                     return (
                     <div
