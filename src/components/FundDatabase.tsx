@@ -27,8 +27,6 @@ import {
   Search,
   X,
   ChevronRight,
-  ChevronDown,
-  Check,
   Building2,
   Briefcase,
   LayoutList,
@@ -36,128 +34,10 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
+import { useFilterToggle } from "@/hooks/useFilterToggle";
+import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
+import { FilterChip } from "@/components/shared/FilterChip";
 
-// ─── Multi-Select Dropdown ──────────────────────────────────
-
-function MultiSelectDropdown({
-  label,
-  options,
-  selected,
-  onToggle,
-  getColor,
-}: {
-  label: string;
-  options: string[];
-  selected: Set<string>;
-  onToggle: (value: string) => void;
-  getColor: (value: string) => string;
-}) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    if (!isOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsOpen(false);
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen]);
-
-  return (
-    <div className="relative inline-block">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
-        aria-haspopup="listbox"
-        aria-label={`Filter by ${label}`}
-        className={`flex items-center gap-2 px-2.5 py-1.5 rounded-[4px] border text-xs-dense font-medium transition-colors whitespace-nowrap ${
-          selected.size > 0
-            ? "border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.1)] text-[#818CF8]"
-            : "border-[#27272A] bg-[#18181B] text-[#A1A1AA] hover:border-[#3f3f46] hover:text-[#EDEDED] hover:bg-[rgba(255,255,255,0.03)]"
-        }`}
-      >
-        <span>{label}</span>
-        {selected.size > 0 && (
-          <span className="font-mono text-micro">{selected.size}</span>
-        )}
-        <ChevronDown className={`h-3.5 w-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`} />
-      </button>
-
-      {isOpen && (
-        <>
-          <div
-            className="fixed inset-0"
-            style={{ zIndex: 9998 }}
-            onClick={() => setIsOpen(false)}
-          />
-          <div
-            role="listbox"
-            aria-label={`${label} options`}
-            className="absolute top-full left-0 mt-1 w-64 max-h-64 overflow-y-auto rounded-[4px] border border-[#27272A] bg-[#18181B] shadow-xl"
-            style={{ zIndex: 9999 }}
-          >
-            {options.map((option) => {
-              const color = getColor(option);
-              const isSelected = selected.has(option);
-              return (
-                <button
-                  key={option}
-                  role="option"
-                  aria-selected={isSelected}
-                  onClick={() => onToggle(option)}
-                  className={`w-full flex items-center gap-3 px-3 py-2 text-sm-dense text-left transition-colors ${
-                    isSelected ? "bg-[rgba(255,255,255,0.03)]" : "hover:bg-[rgba(255,255,255,0.03)]"
-                  }`}
-                >
-                  <div
-                    className={`w-4 h-4 rounded-[3px] border flex items-center justify-center shrink-0 ${
-                      isSelected ? "border-[#818CF8] bg-[#818CF8]" : "border-[#3f3f46]"
-                    }`}
-                  >
-                    {isSelected && <Check className="h-3 w-3 text-white" />}
-                  </div>
-                  <span
-                    className="truncate"
-                    style={{ color: isSelected ? color : "#A1A1AA" }}
-                  >
-                    {option}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </>
-      )}
-    </div>
-  );
-}
-
-// ─── Active Filter Chips ────────────────────────────────────
-
-function FilterChip({
-  label,
-  color,
-  onRemove,
-}: {
-  label: string;
-  color: string;
-  onRemove: () => void;
-}) {
-  return (
-    <button
-      onClick={onRemove}
-      className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-[4px] text-micro font-medium transition-colors hover:opacity-80"
-      style={{
-        color,
-        backgroundColor: `${color}1a`,
-        border: `1px solid ${color}33`,
-      }}
-    >
-      {label}
-      <X className="h-3 w-3" />
-    </button>
-  );
-}
 
 // ─── Fund Filter Bar ────────────────────────────────────────
 
@@ -1084,22 +964,9 @@ export function FundDatabase() {
 
   const debouncedFundSearch = useDebounce(fundSearch, 300);
 
-  const toggleSet = useCallback(
-    <T,>(setter: React.Dispatch<React.SetStateAction<Set<T>>>) =>
-      (value: T) => {
-        setter((prev) => {
-          const next = new Set(prev);
-          if (next.has(value)) next.delete(value);
-          else next.add(value);
-          return next;
-        });
-      },
-    []
-  );
-
-  const toggleStrategy = useMemo(() => toggleSet(setActiveStrategies), [toggleSet]);
-  const toggleStatus = useMemo(() => toggleSet(setActiveStatuses), [toggleSet]);
-  const toggleSizeRange = useMemo(() => toggleSet(setActiveSizeRanges), [toggleSet]);
+  const toggleStrategy = useFilterToggle(setActiveStrategies);
+  const toggleStatus = useFilterToggle(setActiveStatuses);
+  const toggleSizeRange = useFilterToggle(setActiveSizeRanges);
 
   const clearFundFilters = useCallback(() => {
     setActiveStrategies(new Set());
