@@ -2572,8 +2572,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Utility-scale renewable energy developer expanding the renewable frontier across North America through origination, construction, and operation of wind, solar, storage facilities, distributed energy resources, and green fuel technologies.",
     status: "Active",
+    website: "https://www.apexcleanenergy.com",
+    investmentYear: 2021,
+    headquarters: "Charlottesville, Virginia, United States",
+    milestones: [
+      { date: "2021", event: "Ares Management acquired majority stake alongside EGCO", category: "Financing" },
+    ],
+    management: [
+      { name: "Ken Young", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Apex Clean Energy — Company", url: "https://www.apexcleanenergy.com/company/" },
+    ],
   },
   {
     name: "Atlas Crane Service",
@@ -4816,8 +4828,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Renewable Partners",
-    description: "",
+    description: "Formerly Duke Energy Renewables, operating 91 wind, solar, and storage projects totaling over 6 GW across the US with a development pipeline of nearly 12.5 GW. Rebranded under Brookfield ownership in October 2023.",
     status: "Active",
+    website: "https://derivaenergy.com",
+    investmentYear: 2023,
+    headquarters: "Charlotte, North Carolina, United States",
+    milestones: [
+      { date: "2023", event: "Brookfield completed acquisition of Duke Energy's unregulated commercial renewables; rebranded as Deriva Energy", category: "Financing" },
+    ],
+    management: [
+      { name: "John Clapp", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Deriva Energy — About", url: "https://derivaenergy.com/about/" },
+    ],
   },
   {
     name: "Duke Energy Florida",
@@ -4872,8 +4896,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Brookfield Renewable Partners",
-    description: "",
+    description: "Brookfield Renewable's Canadian operating platform, owning and operating 61 renewable energy facilities including 33 hydroelectric stations, 4 wind farms, and 24 solar sites with 1,912 MW of total installed capacity.",
     status: "Active",
+    website: "https://evolugen.com",
+    headquarters: "Gatineau, Quebec, Canada",
+    management: [
+      { name: "Josée Guibord", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Evolugen — History", url: "https://evolugen.com/history/" },
+    ],
   },
   {
     name: "FirstEnergy Transmission, LLC",
@@ -4883,8 +4915,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Super-Core Infra",
-    description: "",
+    description: "Owns and operates three major electricity transmission subsidiaries (ATSI, MAIT, TrAILCo) serving the mid-Atlantic and Midwest. Brookfield acquired 19.9% for $2.4 billion in 2022.",
     status: "Active",
+    website: "https://www.firstenergycorp.com",
+    headquarters: "Akron, Ohio, United States",
+    investmentYear: 2022,
+    sources: [
+      { label: "FirstEnergy — FET Sale", url: "https://www.firstenergycorp.com/newsroom/news_articles/fe-closes-on-fe-transmission-interest-sale.html" },
+    ],
   },
   {
     name: "GATX / Wells Fargo Rail Joint Venture",
@@ -6801,8 +6839,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge / Co-Investors",
-    description: "",
+    description: "Enterprise colocation and managed services data center platform across the US, providing mission-critical infrastructure for enterprise, government, and cloud customers.",
     status: "Active",
+    website: "https://www.databank.com",
+    yearFounded: 2005,
+    investmentYear: 2016,
+    headquarters: "Dallas, Texas, United States",
+    milestones: [
+      { date: "2005", event: "Founded in Dallas, Texas", category: "Founding" },
+      { date: "2016", event: "Acquired by DigitalBridge-led investor group", category: "Financing" },
+    ],
+    management: [
+      { name: "Raul Martynek", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "DataBank — History", url: "https://www.databank.com/about-databank/databanks-history/" },
+    ],
   },
   {
     name: "Expedient",
@@ -6889,8 +6941,21 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge Partners II / IFM",
-    description: "",
+    description: "Develops and operates SUPERNAP data center facilities and provides colocation, telecommunications, cloud, and content ecosystem services. Operates one of the largest cloud campuses in the world at its Las Vegas CORE Campus.",
     status: "Active",
+    website: "https://www.switch.com",
+    yearFounded: 2000,
+    headquarters: "Las Vegas, Nevada, United States",
+    milestones: [
+      { date: "2000", event: "Founded by Rob Roy in Las Vegas", category: "Founding" },
+      { date: "2022", event: "DigitalBridge and IFM Investors completed $11 billion take-private acquisition", category: "Financing" },
+    ],
+    management: [
+      { name: "Rob Roy", title: "Founder & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Switch — Wikipedia", url: "https://en.wikipedia.org/wiki/Switch_(company)" },
+    ],
   },
   {
     name: "Vantage Data Centers (North America)",
@@ -6922,8 +6987,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge Equity",
-    description: "",
+    description: "The largest private owner and operator of communications infrastructure in the United States, with a portfolio of more than 500,000 sites including over 11,000 owned and master-leased towers.",
     status: "Active",
+    website: "https://www.verticalbridge.com",
+    yearFounded: 2014,
+    headquarters: "Boca Raton, Florida, United States",
+    sources: [
+      { label: "Vertical Bridge — About", url: "https://www.verticalbridge.com/about" },
+    ],
   },
   {
     name: "WideOpenWest (WOW!)",
@@ -6944,8 +7015,18 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "DigitalBridge / EQT",
-    description: "",
+    description: "Global fiber network operator spanning more than 130,000 route miles in North America and Europe, providing dark fiber, private data networks, wavelengths, Ethernet, dedicated internet, and colocation services.",
     status: "Active",
+    website: "https://www.zayo.com",
+    headquarters: "Boulder, Colorado, United States",
+    investmentYear: 2020,
+    milestones: [
+      { date: "2020", event: "Acquired by DigitalBridge and EQT", category: "Financing" },
+      { date: "2025", event: "Agreed to acquire Crown Castle's Fiber Solutions business for $4.25 billion", category: "Acquisition" },
+    ],
+    sources: [
+      { label: "Zayo Group — Wikipedia", url: "https://en.wikipedia.org/wiki/Zayo_Group" },
+    ],
   },
   // ─── EIG Global Energy Partners ─────────────────────────────
   {
