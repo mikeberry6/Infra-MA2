@@ -32,8 +32,51 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "3i North American Infrastructure Fund",
-    description: "",
+    description:
+      "Amwaste LLC is a privately-owned solid waste services provider headquartered in West Point, Georgia, offering full-service waste collection, recycling, and disposal solutions across the Southeastern United States. The company operates 8 landfills, 10 transfer stations, and a recyclable materials recovery facility, serving residential, commercial, and industrial clients in Alabama, Georgia, and Louisiana. Its parent entity, Matter Management, received growth capital from 3i North American Infrastructure Fund to support expansion through strategic acquisitions.",
     status: "Active",
+    website: "https://amwasteusa.com",
+    yearFounded: 2010,
+    headquarters: "West Point, GA",
+    management: [
+      { name: "Chip Russell", title: "Founder & Chief Executive Officer" },
+      { name: "Tom Vaughn", title: "President" },
+    ],
+    milestones: [
+      {
+        date: "2010",
+        event: "Founded by engineer Chip Russell in West Point, Georgia, initially serving the Birmingham market with roll-off and landfill operations.",
+        category: "Founding",
+      },
+      {
+        date: "2020",
+        event: "Acquired Sylvan Springs Waste Complex from Meredith Environmental, expanding Birmingham-area landfill capacity.",
+        category: "Acquisition",
+      },
+      {
+        date: "2023",
+        event: "Tom Vaughn hired as President to lead next phase of growth.",
+        category: "Management",
+      },
+      {
+        date: "2023",
+        event: "Parent company Matter Management received growth capital infusion from 3i North American Infrastructure Fund.",
+        category: "Financing",
+      },
+      {
+        date: "2023",
+        event: "Acquired a landfill and four transfer stations from Cash Environmental Resources of Atlanta.",
+        category: "Acquisition",
+      },
+    ],
+    sources: [
+      { label: "Amwaste — Company Website", url: "https://amwasteusa.com" },
+      { label: "Amwaste — About Us", url: "https://amwasteusa.com/about/" },
+      {
+        label: "Amwaste — Bhamwiki Profile",
+        url: "https://www.bhamwiki.com/w/Amwaste",
+      },
+    ],
   },
   {
     name: "Attero",
