@@ -5330,8 +5330,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "CDPQ Infrastructure (~30% Stake)",
-    description: "",
+    description: "Regulated electric utility serving approximately 500,000 customers in the Indianapolis metropolitan area. CDPQ holds ~30% minority stake via IPALCO Enterprises.",
     status: "Active",
+    website: "https://www.aesindiana.com",
+    headquarters: "Indianapolis, Indiana, United States",
+    sources: [
+      { label: "AES Indiana — Our Company", url: "https://www.aesindiana.com/our-company" },
+    ],
   },
   {
     name: "AES Ohio (DPL Inc.)",
@@ -5341,8 +5346,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "CDPQ Infrastructure (30% Stake)",
-    description: "",
+    description: "Regulated electric utility serving over 527,000 customers in West Central Ohio. CDPQ holds a 30% minority stake via DPL Inc.",
     status: "Active",
+    website: "https://www.aes-ohio.com",
+    headquarters: "Dayton, Ohio, United States",
+    management: [
+      { name: "Kristina Lund", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "AES Ohio — Corporate Information", url: "https://www.aes-ohio.com/corporate-information" },
+    ],
   },
   {
     name: "Alto (Cadence Group)",
@@ -5684,8 +5697,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Real Assets (Infrastructure)",
-    description: "",
+    description: "108-kilometre all-electronic open-access toll highway in the Greater Toronto Area, spanning from Burlington in the west to Pickering in the east. Owned by Ferrovial (48.29%), CPP Investments (44.20%), and PSP Investments (7.51%).",
     status: "Active",
+    website: "https://www.407etr.com",
+    headquarters: "Woodbridge, Ontario, Canada",
+    management: [
+      { name: "Jose Espinosa", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "407 ETR — Leadership", url: "https://www.407etr.com/en/leadership" },
+    ],
   },
   {
     name: "ALLETE, Inc.",
@@ -8340,8 +8361,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIC Infrastructure (Equity Syndication Consortium)",
-    description: "",
+    description: "Joint venture between Chevron and Mitsubishi Power Americas developing the Advanced Clean Energy Storage hub in Delta, Utah — a large-scale green hydrogen production and salt cavern storage facility designed to convert and store up to 100 metric tons per day of hydrogen.",
     status: "Active",
+    website: "https://aces-delta.com",
+    headquarters: "Delta, Utah, United States",
+    management: [
+      { name: "Jonathan Perry", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "ACES Delta — About Us", url: "https://aces-delta.com/about-us/" },
+    ],
   },
   {
     name: "Direct ChassisLink Inc. (DCLI)",
@@ -9980,7 +10009,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Dedicated North American Strategy (NADIF)",
-    description: "",
+    description: "Portfolio of seven colocation and enterprise data centers totaling 75 MW across high-growth US markets including Phoenix, Dallas, Santa Clara, Charlotte, Clarksville VA, St. Louis, and Indianapolis. Acquired from CVC DIF, Northleaf, and Landmark Dividend.",
     status: "Active",
   },
   {
