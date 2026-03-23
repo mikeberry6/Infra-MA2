@@ -18,7 +18,6 @@ import {
   Search,
   X,
   ChevronRight,
-  Globe,
   Briefcase,
   ExternalLink,
   Clock,
@@ -304,13 +303,15 @@ function PortCoDrawer({
   const sources = company.sources || [];
   const visibleMilestones = showAllMilestones ? milestones : milestones.slice(0, 6);
 
-  const investmentRows = [
-    { label: "Investment Firm", value: company.investmentFirm },
+  const sectorColor = getPortCoSectorColor(company.sector);
+
+  const detailRows = [
+    { label: "Firm", value: company.investmentFirm },
     { label: "Fund", value: company.ownershipVehicle },
     {
       label: "Sector",
       value: company.sector,
-      dot: getPortCoSectorColor(company.sector),
+      dot: sectorColor,
     },
     ...(company.subsector
       ? [{ label: "Subsector", value: company.subsector }]
@@ -326,68 +327,114 @@ function PortCoDrawer({
       />
       <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#27272A] bg-[#09090B] overflow-y-auto animate-slide-in-right">
         {/* ── Header ── */}
-        <div className="sticky top-0 z-10 border-b border-[#27272A] bg-[#09090B]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0">
-              <div className="flex items-center gap-2.5">
-                <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-[#EDEDED] leading-tight tracking-tight">
-                  {company.name}
-                </h2>
+        <div className="sticky top-0 z-10 border-b border-[#27272A] bg-[#09090B]/95 backdrop-blur-md relative overflow-hidden">
+          {/* Sector accent bar */}
+          <div
+            className="absolute top-0 left-0 right-0 h-px"
+            style={{
+              background: `linear-gradient(90deg, ${sectorColor} 0%, transparent 100%)`,
+            }}
+          />
+          {/* Ambient glow */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `radial-gradient(ellipse at 0% 0%, ${sectorColor}14 0%, transparent 70%)`,
+            }}
+          />
+
+          <div className="relative px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
+            {/* Eyebrow + close */}
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-2">
+                <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">
+                  Portfolio Company
+                </span>
                 {company.website && (
                   <a
                     href={company.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#52525B] hover:text-[#818CF8] transition-colors shrink-0"
+                    className="text-[#3f3f46] hover:text-[#818CF8] transition-colors shrink-0"
                     title="Company website"
                   >
-                    <ExternalLink className="h-3.5 w-3.5" />
+                    <ExternalLink className="h-3 w-3" />
                   </a>
                 )}
               </div>
-              <div className="flex items-center gap-1.5 mt-1.5">
-                <span
-                  className="inline-block h-1.5 w-1.5 rounded-full"
-                  style={{ backgroundColor: getPortCoStatusColor(company.status) }}
-                />
-                <span
-                  className="text-xs-dense font-medium"
-                  style={{ color: getPortCoStatusColor(company.status) }}
-                >
-                  {company.status}
-                </span>
-                {company.yearFounded && (
-                  <>
-                    <span className="text-[#3f3f46] text-xs-dense mx-1">·</span>
-                    <span className="text-xs-dense text-[#52525B]">
-                      Est. {company.yearFounded}
-                    </span>
-                  </>
-                )}
-              </div>
+              <button
+                onClick={onClose}
+                className="rounded-[4px] p-2 -mr-2 text-[#52525B] hover:text-[#EDEDED] hover:bg-[rgba(255,255,255,0.05)] transition-colors shrink-0"
+              >
+                <X className="h-5 w-5" />
+              </button>
             </div>
-            <button
-              onClick={onClose}
-              className="rounded-[4px] p-2 text-[#52525B] hover:text-[#EDEDED] hover:bg-[rgba(255,255,255,0.05)] transition-colors shrink-0"
-            >
-              <X className="h-5 w-5" />
-            </button>
+
+            {/* Company name */}
+            <h2 className="text-xl lg:text-2xl font-semibold text-[#EDEDED] leading-tight tracking-tight">
+              {company.name}
+            </h2>
+
+            {/* Metadata ribbon */}
+            <div className="flex items-center gap-1.5 mt-2 flex-wrap">
+              <span
+                className="inline-block h-1.5 w-1.5 rounded-full"
+                style={{ backgroundColor: getPortCoStatusColor(company.status) }}
+              />
+              <span
+                className="text-xs-dense font-medium"
+                style={{ color: getPortCoStatusColor(company.status) }}
+              >
+                {company.status}
+              </span>
+              {company.yearFounded && (
+                <>
+                  <span className="text-[#3f3f46] text-xs-dense">·</span>
+                  <span className="text-xs-dense text-[#52525B]">
+                    Est. {company.yearFounded}
+                  </span>
+                </>
+              )}
+              <span className="text-[#3f3f46] text-xs-dense">·</span>
+              <span className="text-xs-dense text-[#52525B]">
+                {locationDisplay}
+              </span>
+            </div>
+
+            {/* Classification badges */}
+            <div className="flex items-center gap-2 mt-3 flex-wrap">
+              <span
+                className="text-micro font-medium px-2 py-0.5 rounded-[4px]"
+                style={{
+                  color: sectorColor,
+                  backgroundColor: `${sectorColor}1a`,
+                  border: `1px solid ${sectorColor}33`,
+                }}
+              >
+                {company.sector}
+              </span>
+              {company.subsector && (
+                <span className="text-micro font-medium px-2 py-0.5 rounded-[4px] text-amber-400 bg-amber-400/10 border border-amber-400/20">
+                  {company.subsector}
+                </span>
+              )}
+            </div>
           </div>
         </div>
 
         {/* ── Content ── */}
         <div className="p-4 sm:p-6 lg:p-8 space-y-6 lg:space-y-8">
 
-          {/* §1 — Investment Details */}
+          {/* §1 — Company Details */}
           <section>
             <div className="flex items-center gap-2 mb-3">
               <Briefcase className="h-3.5 w-3.5 text-[#818CF8]" />
               <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
-                Investment Details
+                Company Details
               </span>
             </div>
             <div className="glass-card rounded-[4px] divide-y divide-[#27272A]">
-              {investmentRows.map((row) => (
+              {detailRows.map((row) => (
                 <div
                   key={row.label}
                   className="flex justify-between items-center px-4 py-2.5"

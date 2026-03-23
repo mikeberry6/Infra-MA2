@@ -33,7 +33,7 @@ export const companies: PortCo[] = [
     country: "United States",
     ownershipVehicle: "3i North American Infrastructure Fund",
     description:
-      "Amwaste LLC is a privately-owned solid waste services provider headquartered in West Point, Georgia, offering full-service waste collection, recycling, and disposal solutions across the Southeastern United States. The company operates 8 landfills, 10 transfer stations, and a recyclable materials recovery facility, serving residential, commercial, and industrial clients in Alabama, Georgia, and Louisiana. Its parent entity, Matter Management, received growth capital from 3i North American Infrastructure Fund to support expansion through strategic acquisitions.",
+      "Amwaste LLC is a vertically integrated, regional provider of non-hazardous solid waste and recycling services serving over 300,000 residential, commercial, and industrial customers across Alabama, Georgia, and Louisiana. Operating under parent entity Matter Management Enterprises, the company owns 8 landfills, 10 transfer stations, and a materials recovery facility, with approximately $300 million in annual revenue and over 500 employees. 3i North American Infrastructure Fund invested growth capital in July 2023 to accelerate the company's buy-and-build strategy across the Southeastern United States.",
     status: "Active",
     website: "https://amwasteusa.com",
     yearFounded: 2010,
@@ -41,40 +41,65 @@ export const companies: PortCo[] = [
     management: [
       { name: "Chip Russell", title: "Founder & Chief Executive Officer" },
       { name: "Tom Vaughn", title: "President" },
+      { name: "Dustin Fortenberry", title: "Vice President" },
+      { name: "Collier McKenzie", title: "General Counsel" },
+      { name: "Dale Logan", title: "Corporate Controller" },
     ],
     milestones: [
       {
         date: "2010",
-        event: "Founded by engineer Chip Russell in West Point, Georgia, initially serving the Birmingham market with roll-off and landfill operations.",
+        event: "Founded by environmental engineer Chip Russell as Matter Management Enterprises in the Birmingham, AL market, initially operating roll-off and landfill services.",
         category: "Founding",
       },
       {
         date: "2020",
-        event: "Acquired Sylvan Springs Waste Complex from Meredith Environmental, expanding Birmingham-area landfill capacity.",
+        event: "Expanded into Louisiana, establishing operations from Baton Rouge eastward. Won City of West Point, GA residential collection contract.",
+        category: "Expansion",
+      },
+      {
+        date: "2020",
+        event: "Acquired Sylvan Springs Waste Complex from Meredith Environmental, establishing a key Birmingham-area landfill asset.",
         category: "Acquisition",
       },
       {
-        date: "2023",
-        event: "Tom Vaughn hired as President to lead next phase of growth.",
-        category: "Management",
-      },
-      {
-        date: "2023",
-        event: "Parent company Matter Management received growth capital infusion from 3i North American Infrastructure Fund.",
+        date: "Jul 2023",
+        event: "3i North American Infrastructure Fund closed GBP 32 million growth capital investment. Houlihan Lokey advised on the transaction.",
         category: "Financing",
       },
       {
         date: "2023",
-        event: "Acquired a landfill and four transfer stations from Cash Environmental Resources of Atlanta.",
+        event: "Acquired Whitestone Valley C&D Landfill in Georgia and four transfer stations from Cash Environmental Resources of Atlanta.",
+        category: "Acquisition",
+      },
+      {
+        date: "Feb 2024",
+        event: "Tom Vaughn joined as President, formerly CEO of DTG Recycle.",
+        category: "Management",
+      },
+      {
+        date: "May 2024",
+        event: "Collier McKenzie joined as General Counsel from Butler Snow LLP.",
+        category: "Management",
+      },
+      {
+        date: "Nov 2024",
+        event: "Acquired Waste Away Environmental of Milledgeville, GA — the fifth bolt-on acquisition since the 3i investment — adding two MSW transfer stations and an automated MRF.",
         category: "Acquisition",
       },
     ],
     sources: [
       { label: "Amwaste — Company Website", url: "https://amwasteusa.com" },
-      { label: "Amwaste — About Us", url: "https://amwasteusa.com/about/" },
       {
-        label: "Amwaste — Bhamwiki Profile",
-        url: "https://www.bhamwiki.com/w/Amwaste",
+        label: "3i Infrastructure — Amwaste Portfolio",
+        url: "https://www.3i.com/infrastructure/our-portfolio/amwaste/",
+      },
+      {
+        label: "Waste Dive — AmWaste Scales with 3i Investment",
+        url: "https://www.wastedive.com/news/amwaste-chip-russell-3i-north-american-infrastructure-investment/690067/",
+      },
+      {
+        label: "Waste Today — Amwaste Acquires Waste Away Environmental",
+        url: "https://www.wastetodaymagazine.com/news/amwaste-acquires-waste-away-environmental/",
       },
     ],
   },
