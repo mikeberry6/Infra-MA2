@@ -38,6 +38,16 @@ export type PortCoRegion =
 
 export type PortCoStatus = "Active" | "Realized";
 
+export interface PortCoExecutive {
+  name: string;
+  title: string;
+}
+
+export interface PortCoSource {
+  label: string;
+  url: string;
+}
+
 export interface PortCo {
   name: string;
   investmentFirm: string;
@@ -52,6 +62,8 @@ export interface PortCo {
   yearFounded?: number;
   headquarters?: string;
   milestones?: PortCoMilestone[];
+  management?: PortCoExecutive[];
+  sources?: PortCoSource[];
 }
 
 // ─── Constants ──────────────────────────────────────────────

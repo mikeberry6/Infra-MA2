@@ -14,20 +14,16 @@ import {
   getUniqueFirms,
 } from "@/data/portcos";
 import type { PortCo, PortCoSector, PortCoRegion, PortCoStatus } from "@/data/portcos";
-import { deals } from "@/data/deals";
-import type { Deal } from "@/data/deals";
 import {
   Search,
   X,
   ChevronRight,
   Globe,
   Briefcase,
-  Building2,
   ExternalLink,
-  Calendar,
   Clock,
   FileText,
-  ArrowRight,
+  Users,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useFilterToggle } from "@/hooks/useFilterToggle";
@@ -283,37 +279,13 @@ function PortCoInsightsHero({ companies }: { companies: PortCo[] }) {
   );
 }
 
-// ─── Deal Cross-Reference ────────────────────────────────────
-
-function getRelatedDeals(companyName: string, allDeals: Deal[]): Deal[] {
-  const nameLower = companyName.toLowerCase();
-  // Strip parenthetical suffixes for matching, e.g. "AWG (Anglian Water Group)" → also match "AWG" and "Anglian Water Group"
-  const nameVariants = [nameLower];
-  const parenMatch = companyName.match(/^(.+?)\s*\((.+)\)$/);
-  if (parenMatch) {
-    nameVariants.push(parenMatch[1].trim().toLowerCase());
-    nameVariants.push(parenMatch[2].trim().toLowerCase());
-  }
-
-  return allDeals.filter((d) => {
-    const fields = [d.title, d.buyer, d.seller, d.description].map((f) =>
-      f.toLowerCase()
-    );
-    return nameVariants.some((variant) =>
-      fields.some((field) => field.includes(variant))
-    );
-  });
-}
-
 // ─── PortCo Drawer ──────────────────────────────────────────
 
 function PortCoDrawer({
   company,
-  allCompanies,
   onClose,
 }: {
   company: PortCo;
-  allCompanies: PortCo[];
   onClose: () => void;
 }) {
   const [showAllMilestones, setShowAllMilestones] = useState(false);
@@ -326,18 +298,25 @@ function PortCoDrawer({
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
-  const siblings = allCompanies.filter(
-    (c) => c.investmentFirm === company.investmentFirm && c.name !== company.name
-  );
-
-  const relatedDeals = useMemo(
-    () => getRelatedDeals(company.name, deals),
-    [company.name]
-  );
-
   const locationDisplay = company.headquarters || company.country;
   const milestones = company.milestones || [];
-  const visibleMilestones = showAllMilestones ? milestones : milestones.slice(0, 10);
+  const management = company.management || [];
+  const sources = company.sources || [];
+  const visibleMilestones = showAllMilestones ? milestones : milestones.slice(0, 6);
+
+  const investmentRows = [
+    { label: "Investment Firm", value: company.investmentFirm },
+    { label: "Fund", value: company.ownershipVehicle },
+    {
+      label: "Sector",
+      value: company.sector,
+      dot: getPortCoSectorColor(company.sector),
+    },
+    ...(company.subsector
+      ? [{ label: "Subsector", value: company.subsector }]
+      : []),
+    { label: "Location", value: locationDisplay },
+  ];
 
   return (
     <>
@@ -346,11 +325,11 @@ function PortCoDrawer({
         onClick={onClose}
       />
       <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#27272A] bg-[#09090B] overflow-y-auto animate-slide-in-right">
-        {/* Header */}
+        {/* ── Header ── */}
         <div className="sticky top-0 z-10 border-b border-[#27272A] bg-[#09090B]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5">
                 <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-[#EDEDED] leading-tight tracking-tight">
                   {company.name}
                 </h2>
@@ -366,14 +345,24 @@ function PortCoDrawer({
                   </a>
                 )}
               </div>
-              <div className="flex items-center gap-2 mt-1.5 text-xs-dense text-[#52525B]">
-                <Globe className="h-3 w-3" />
-                <span>{locationDisplay}</span>
-                {company.region !== "North America" && (
-                  <span className="text-[#3f3f46]">· {company.region}</span>
-                )}
+              <div className="flex items-center gap-1.5 mt-1.5">
+                <span
+                  className="inline-block h-1.5 w-1.5 rounded-full"
+                  style={{ backgroundColor: getPortCoStatusColor(company.status) }}
+                />
+                <span
+                  className="text-xs-dense font-medium"
+                  style={{ color: getPortCoStatusColor(company.status) }}
+                >
+                  {company.status}
+                </span>
                 {company.yearFounded && (
-                  <span className="text-[#3f3f46]">· Est. {company.yearFounded}</span>
+                  <>
+                    <span className="text-[#3f3f46] text-xs-dense mx-1">·</span>
+                    <span className="text-xs-dense text-[#52525B]">
+                      Est. {company.yearFounded}
+                    </span>
+                  </>
                 )}
               </div>
             </div>
@@ -384,96 +373,94 @@ function PortCoDrawer({
               <X className="h-5 w-5" />
             </button>
           </div>
-
-          <div className="flex items-center gap-2 mt-3 flex-wrap">
-            <span
-              className="text-micro font-medium px-2 py-0.5 rounded-[4px]"
-              style={{
-                color: getPortCoSectorColor(company.sector),
-                backgroundColor: `${getPortCoSectorColor(company.sector)}1a`,
-                border: `1px solid ${getPortCoSectorColor(company.sector)}33`,
-              }}
-            >
-              {company.sector}
-            </span>
-            {company.subsector && (
-              <span className="text-micro font-medium px-2 py-0.5 rounded-[4px] text-amber-400 bg-amber-400/10 border border-amber-400/30">
-                {company.subsector}
-              </span>
-            )}
-            <span
-              className="text-micro font-medium px-2 py-0.5 rounded-[4px]"
-              style={{
-                color: getPortCoStatusColor(company.status),
-                backgroundColor: `${getPortCoStatusColor(company.status)}1a`,
-                border: `1px solid ${getPortCoStatusColor(company.status)}33`,
-              }}
-            >
-              {company.status}
-            </span>
-          </div>
         </div>
 
-        {/* Content */}
-        <div className="p-4 sm:p-6 lg:p-8 space-y-5 lg:space-y-6">
-          {/* About / Description */}
-          {company.description && (
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <FileText className="h-3.5 w-3.5 text-[#818CF8]" />
-                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
-                  About
-                </span>
-              </div>
-              <p className="text-sm-dense text-[#A1A1AA] leading-relaxed">{company.description}</p>
-            </div>
-          )}
+        {/* ── Content ── */}
+        <div className="p-4 sm:p-6 lg:p-8 space-y-6 lg:space-y-8">
 
-          {/* Investment Firm & Vehicle */}
-          <div>
+          {/* §1 — Investment Details */}
+          <section>
             <div className="flex items-center gap-2 mb-3">
               <Briefcase className="h-3.5 w-3.5 text-[#818CF8]" />
               <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
                 Investment Details
               </span>
             </div>
-            <div className="glass-card rounded-[4px] p-3 space-y-2">
-              <div className="flex justify-between items-start">
-                <span className="text-micro text-[#52525B]">Investment Firm</span>
-                <span className="text-micro text-[#EDEDED] text-right font-medium">{company.investmentFirm}</span>
-              </div>
-              <div className="flex justify-between items-start">
-                <span className="text-micro text-[#52525B]">Ownership Vehicle</span>
-                <span className="text-micro text-[#EDEDED] text-right">{company.ownershipVehicle}</span>
-              </div>
-              <div className="flex justify-between items-start">
-                <span className="text-micro text-[#52525B]">Status</span>
-                <span
-                  className="text-micro font-medium"
-                  style={{ color: getPortCoStatusColor(company.status) }}
+            <div className="glass-card rounded-[4px] divide-y divide-[#27272A]">
+              {investmentRows.map((row) => (
+                <div
+                  key={row.label}
+                  className="flex justify-between items-center px-4 py-2.5"
                 >
-                  {company.status}
+                  <span className="text-micro text-[#52525B]">{row.label}</span>
+                  <span className="text-micro text-[#EDEDED] text-right font-medium flex items-center gap-1.5">
+                    {row.dot && (
+                      <span
+                        className="inline-block h-2 w-2 rounded-full shrink-0"
+                        style={{ backgroundColor: row.dot }}
+                      />
+                    )}
+                    {row.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* §2 — Company Overview / Description */}
+          {company.description && (
+            <section className="border-t border-[#27272A] pt-6">
+              <div className="flex items-center gap-2 mb-3">
+                <FileText className="h-3.5 w-3.5 text-[#818CF8]" />
+                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                  Company Overview
                 </span>
               </div>
-            </div>
-          </div>
+              <p className="text-sm-dense text-[#A1A1AA] leading-relaxed">
+                {company.description}
+              </p>
 
-          {/* Key Milestones Timeline */}
+              {/* Sources */}
+              {sources.length > 0 && (
+                <div className="mt-4 rounded-[4px] bg-[#111113] border border-[#1f1f23] px-4 py-3">
+                  <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider block mb-2">
+                    Sources
+                  </span>
+                  <div className="space-y-1.5">
+                    {sources.map((s, i) => (
+                      <a
+                        key={i}
+                        href={s.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 group"
+                      >
+                        <ExternalLink className="h-3 w-3 text-[#3f3f46] group-hover:text-[#818CF8] transition-colors shrink-0" />
+                        <span className="text-micro text-[#52525B] group-hover:text-[#818CF8] transition-colors truncate">
+                          {s.label}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </section>
+          )}
+
+          {/* §3 — Historical Milestones */}
           {milestones.length > 0 && (
-            <div className="border-t border-[#27272A] pt-4">
+            <section className="border-t border-[#27272A] pt-6">
               <div className="flex items-center gap-2 mb-3">
                 <Clock className="h-3.5 w-3.5 text-[#818CF8]" />
                 <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
-                  Key Milestones
+                  Historical Milestones
                 </span>
               </div>
               <div className="relative ml-2">
-                {/* Vertical line */}
                 <div className="absolute left-[5px] top-1 bottom-1 w-px bg-[#27272A]" />
                 <div className="space-y-3">
                   {visibleMilestones.map((m, i) => (
                     <div key={i} className="flex items-start gap-3 relative">
-                      {/* Dot */}
                       <div
                         className="relative z-10 mt-1.5 h-[11px] w-[11px] rounded-full shrink-0 border-2"
                         style={{
@@ -482,7 +469,7 @@ function PortCoDrawer({
                         }}
                       />
                       <div className="min-w-0 flex-1">
-                        <div className="flex items-baseline gap-2">
+                        <div className="flex items-baseline gap-2 flex-wrap">
                           <span className="text-micro font-medium text-[#52525B] shrink-0 tabular-nums">
                             {m.date}
                           </span>
@@ -504,7 +491,7 @@ function PortCoDrawer({
                   ))}
                 </div>
               </div>
-              {milestones.length > 10 && (
+              {milestones.length > 6 && (
                 <button
                   onClick={() => setShowAllMilestones(!showAllMilestones)}
                   className="mt-3 ml-2 text-micro text-[#818CF8] hover:text-[#a5b4fc] transition-colors"
@@ -514,86 +501,35 @@ function PortCoDrawer({
                     : `Show all ${milestones.length} milestones`}
                 </button>
               )}
-            </div>
+            </section>
           )}
 
-          {/* Related Deals */}
-          {relatedDeals.length > 0 && (
-            <div className="border-t border-[#27272A] pt-4">
+          {/* §4 — Key Management */}
+          {management.length > 0 && (
+            <section className="border-t border-[#27272A] pt-6">
               <div className="flex items-center gap-2 mb-3">
-                <Calendar className="h-3.5 w-3.5 text-[#818CF8]" />
+                <Users className="h-3.5 w-3.5 text-[#818CF8]" />
                 <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
-                  Related Deals ({relatedDeals.length})
+                  Key Management
                 </span>
               </div>
-              <div className="space-y-2">
-                {relatedDeals.slice(0, 10).map((d) => (
-                  <a
-                    key={d.id}
-                    href={`/tracker?search=${encodeURIComponent(company.name)}`}
-                    className="glass-card rounded-[4px] p-3 flex items-center justify-between gap-3 group hover:border-[#3f3f46] transition-colors block"
-                  >
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm-dense text-[#EDEDED] truncate">
-                        {d.title}
-                      </p>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="text-micro text-[#52525B]">{d.date}</span>
-                        <span
-                          className="text-micro font-medium"
-                          style={{
-                            color:
-                              d.status === "Closed"
-                                ? "#10b981"
-                                : d.status === "Announced"
-                                ? "#3b82f6"
-                                : "#f59e0b",
-                          }}
-                        >
-                          {d.status}
-                        </span>
-                      </div>
-                    </div>
-                    <ArrowRight className="h-3.5 w-3.5 text-[#3f3f46] group-hover:text-[#818CF8] transition-colors shrink-0" />
-                  </a>
+              <div
+                className={`grid gap-2 ${
+                  management.length === 1 ? "grid-cols-1" : "grid-cols-2"
+                }`}
+              >
+                {management.map((exec, i) => (
+                  <div key={i} className="glass-card rounded-[4px] px-4 py-3">
+                    <span className="text-sm-dense text-[#EDEDED] font-medium block leading-snug">
+                      {exec.name}
+                    </span>
+                    <span className="text-micro text-[#52525B] block mt-0.5">
+                      {exec.title}
+                    </span>
+                  </div>
                 ))}
-                {relatedDeals.length > 10 && (
-                  <a
-                    href={`/tracker?search=${encodeURIComponent(company.name)}`}
-                    className="text-micro text-[#818CF8] hover:text-[#a5b4fc] transition-colors ml-1"
-                  >
-                    View all {relatedDeals.length} deals in tracker →
-                  </a>
-                )}
               </div>
-            </div>
-          )}
-
-          {/* Other companies from same firm */}
-          {siblings.length > 0 && (
-            <div className="border-t border-[#27272A] pt-4">
-              <div className="flex items-center gap-2 mb-3">
-                <Building2 className="h-3.5 w-3.5 text-sky-400" />
-                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
-                  Other {company.investmentFirm} PortCos ({siblings.length})
-                </span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {siblings.slice(0, 20).map((s) => (
-                  <span
-                    key={s.name}
-                    className="text-xs text-[#EDEDED] bg-[#1f1f23]/50 border border-[#3f3f46]/50 px-2.5 py-1 rounded-[4px]"
-                  >
-                    {s.name}
-                  </span>
-                ))}
-                {siblings.length > 20 && (
-                  <span className="text-xs text-[#52525B] px-2.5 py-1">
-                    +{siblings.length - 20} more
-                  </span>
-                )}
-              </div>
-            </div>
+            </section>
           )}
         </div>
       </div>
@@ -929,7 +865,6 @@ export function PortfolioDatabase() {
       {selectedCompany && (
         <PortCoDrawer
           company={selectedCompany}
-          allCompanies={portcos}
           onClose={() => setSelectedCompany(null)}
         />
       )}
