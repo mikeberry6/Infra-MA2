@@ -56,37 +56,91 @@ Fund names sometimes appear in variant forms across deals (e.g. `"CVC (CVC DIF)"
 - `PortCoExecutive` interface: `{ name: string; title: string }`
 - Color helpers: `getPortCoSectorColor()`, `getPortCoRegionColor()`, `getPortCoStatusColor()`, `getMilestoneCategoryColor()` in `src/data/portcos/types.ts`
 
-### PortCo Drawer — Header Design ("Ambient Canvas")
+### PortCo Drawer (aka "Company Scorecard")
+
+The **PortCo Drawer** is the slide-in detail panel that appears when a user clicks on a portfolio company row. It is also referred to as a **"company scorecard"**. The component is `PortCoDrawer` inside `src/components/PortfolioDatabase.tsx` (not a separate file). It renders as a right-anchored full-height panel with `max-w-lg lg:max-w-xl xl:max-w-2xl`.
+
+**Terminology note:** If the user says "scorecard" in the context of portfolio companies, they mean this PortCoDrawer component — NOT the `ScorecardEntry` type in `earnings.ts` (which is for public asset manager earnings tracking).
+
+The drawer has **4 sections** rendered in this exact order:
+
+#### Section 1: Header ("Ambient Canvas")
 
 - NO monogram, NO noise texture — the header uses ONE strong design element: dual ambient orbs creating a smooth gradient wash
-- Accent bar: `h-[2px]` sector gradient (left → transparent)
+- Sticky header with `bg-[#09090B]/95 backdrop-blur-md`, bottom border
+- Accent bar: `h-[2px]` sector gradient (left → transparent) at top of header
 - Orb 1: `w-64 h-64`, sector-colored, `opacity-[0.10]`, `blur(80px)`, `animate-pulse-slow`, top-left
 - Orb 2: `w-48 h-48`, indigo `#818CF8`, `opacity-[0.07]`, `blur(80px)`, `animate-pulse-slower`, top-right
 - Company name: `text-2xl lg:text-3xl font-bold tracking-tight` — this is the hero element
+- Optional external link icon (if `company.website` exists) next to name
 - Subtitle: `{investmentFirm} · ● {status}` in `text-sm-dense`
+- Close button (X icon) top-right, triggers `onClose` (also bound to Escape key)
 - **Design principle: awe comes from restraint, bold typography, and generous spacing — NOT from stacking decorations**
 
-### PortCo Drawer — "Investment Details" Section
+#### Section 2: Investment Details
 
-- Section is titled **"Investment Details"** (NOT "Company Details")
-- Row order: Firm → Fund → Fund Strategy (conditional) → Investment Date (conditional, year only) → Sector (with colored dot) → Subsector (conditional) → Location
-- **Fund Strategy** is pulled from the fund database by matching `company.ownershipVehicle` to `fund.fundName` in `src/data/funds.ts`. Rendered as colored badge pills using `getStrategyColor()`.
-- **Investment Date** shows only the year (e.g. "2022"), NOT a combined "Fund [Year]" format
+- Section icon: `Briefcase` (lucide-react), indigo colored
+- Section label: **"Investment Details"** (NOT "Company Details") — `text-micro font-medium uppercase tracking-wider`
+- Rendered as a `glass-card` with `divide-y divide-[#27272A]` between rows
+- Row order (each row is label on left, value on right):
+  1. **Firm** — `company.investmentFirm`
+  2. **Fund** — `company.ownershipVehicle`
+  3. **Fund Strategy** (conditional) — only if `matchedFund?.strategies?.length`. Rendered as colored badge pills using `getStrategyColor()`. Fund is matched via `funds.find(f => f.fundName === company.ownershipVehicle)`
+  4. **Investment Date** (conditional) — only if `company.investmentYear`. Shows year only (e.g. "2023"), NOT a combined "Fund [Year]" format
+  5. **Sector** — `company.sector` with a colored dot (`getPortCoSectorColor()`)
+  6. **Subsector** (conditional) — only if `company.subsector`
+  7. **Location** — `company.headquarters || company.country`
 
-### PortCo Drawer — Management Section
+#### Section 3: Company Overview
 
+- Section icon: `FileText` (lucide-react), indigo colored
+- Section label: **"Company Overview"** — `text-micro font-medium uppercase tracking-wider`
+- Shows `company.description` as `text-sm-dense text-[#A1A1AA] leading-relaxed`
+- **Sources sub-panel** (conditional, if `sources.length > 0`): nested dark card (`bg-[#111113] border border-[#1f1f23]`) with "Sources" micro label and list of external links. Each link has `ExternalLink` icon + label, hover state transitions to indigo.
+
+#### Section 4: Historical Milestones
+
+- Section icon: `Clock` (lucide-react), indigo colored
+- Section label: **"Historical Milestones"** — `text-micro font-medium uppercase tracking-wider`
+- Vertical timeline with a thin line (`w-px bg-[#27272A]`) on the left
+- Milestones are displayed in **reverse chronological order** (newest first)
+- Initially shows max 6 milestones; "Show all N milestones" / "Show less" toggle if more than 6
+- Each milestone shows: colored dot → date (tabular-nums) → category badge → event text
+
+##### Investment Callout Highlighting
+
+- The timeline auto-highlights the milestone representing the **investment firm's initial investment** with a special indigo callout
+- Highlighted milestone gets: `bg-[#818CF8]/[0.06]`, `border border-[#818CF8]/20`, `rounded-[6px]`, larger dot (13px vs 11px), indigo colors, "Investment" badge replacing category, brighter `text-[#EDEDED]` event text
+- **Detection logic** (line ~516 in PortfolioDatabase.tsx):
+  ```
+  mentionsFirm = event text includes first word of company.investmentFirm
+  isInvestmentMilestone = date includes investmentYear AND (category === "Financing" OR mentionsFirm)
+  ```
+- This means: "Financing" category milestones in the investment year always match. "Acquisition" or other categories only match if they also mention the firm name. This prevents bolt-on acquisitions in the same year from being incorrectly highlighted.
+- The highlighted milestone's year **must align** with the `investmentYear` field in Investment Details — if they don't match, fix the data
+- `investmentYear` represents the year the investment firm first invested in the business
+- When adding milestones for a new PortCo, always include one for the initial investment/acquisition by the firm, using category "Financing" (preferred) or "Acquisition" with the firm name mentioned in the event text
+
+#### Section 5: Key Management
+
+- Section icon: `Users` (lucide-react), indigo colored
+- Section label: **"Key Management"** — `text-micro font-medium uppercase tracking-wider`
 - Only **C-suite and President-level** executives are shown
 - Filter regex: title contains `\bChief\b` OR (`\bPresident\b` AND NOT `\bVice\s*President\b`)
 - Excludes: Vice President, General Counsel, Controller, Director, VP, etc.
+- Layout: 2-column grid (1-column if only 1 executive), each card is `glass-card rounded-[4px] px-4 py-3`
+- Each card shows: name (`text-sm-dense text-[#EDEDED] font-medium`) and title (`text-micro text-[#52525B]`)
 - When adding `management[]` data to a PortCo, only include C-suite (CEO, CFO, COO, CTO, etc.) and President — the drawer filters out everything else
 
-### PortCo Drawer — Historical Milestones & Investment Callout
+#### Replicating a Scorecard for a New PortCo
 
-- The milestones timeline auto-highlights the milestone representing the **investment firm's initial investment** with a special indigo callout (border, background wash, "Investment" badge, brighter text)
-- Detection logic: milestone date contains `investmentYear` AND (category is "Acquisition" or "Financing" OR event text mentions the firm name)
-- The highlighted milestone's year **must align** with the `investmentYear` field in Investment Details — if they don't match, fix the data
-- `investmentYear` represents the year the investment firm first invested in the business
-- When adding milestones for a new PortCo, always include one for the initial investment/acquisition by the firm, using category "Acquisition" or "Financing" as appropriate
+To create a scorecard for a new portfolio company, you do NOT need to build any new component. Simply add the company data to `src/data/portcos/companies.ts` following the `PortCo` interface, and the existing `PortCoDrawer` renders it automatically. The scorecard quality depends entirely on the richness of the data:
+- `description` — detailed company overview paragraph
+- `milestones[]` — chronological history including founding, key acquisitions, financing events, management changes, expansions
+- `management[]` — C-suite and President-level executives (the drawer filters the rest)
+- `sources[]` — external reference URLs
+- `ownershipVehicle` — must match a `fundName` in `src/data/funds.ts` for strategy badges to appear
+- `investmentYear` — required for the investment callout highlighting to work
 
 ### Cross-Database Linking: PortCo ↔ Fund
 
