@@ -819,8 +819,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (Direct Co-Investment with APG & CalSTRS)",
-    description: "",
+    description: "One of America's leading utility-scale solar and energy storage companies, 100% owned by APG, CalSTRS, and ADIA. Formed through the combination of Capital Dynamics' US Clean Energy Infrastructure team and Arevon Asset Management.",
     status: "Active",
+    website: "https://arevonenergy.com",
+    yearFounded: 2017,
+    headquarters: "Scottsdale, Arizona, United States",
+    milestones: [
+      { date: "2017", event: "Founded as part of Capital Dynamics' clean energy platform", category: "Founding" },
+      { date: "2021", event: "Arevon Energy formed through combination of CEI US team and Arevon Asset Management", category: "Other" },
+      { date: "2026", event: "Justin Johnson appointed CEO", category: "Management" },
+    ],
+    management: [
+      { name: "Justin Johnson", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Arevon Energy — Website", url: "https://arevonenergy.com/" },
+    ],
   },
   {
     name: "Chicago Parking Meters, LLC",
@@ -830,8 +844,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (24.9% Direct Stake via Consortium)",
-    description: "",
+    description: "Operator of the 75-year concession for Chicago's metered parking system, encompassing approximately 36,000 parking meter spots citywide. Acquired for $1.15 billion in 2008 by a Morgan Stanley-led consortium.",
     status: "Active",
+    yearFounded: 2008,
+    headquarters: "Chicago, Illinois, United States",
+    milestones: [
+      { date: "2008", event: "Morgan Stanley-led consortium won 75-year concession for $1.15 billion", category: "Financing" },
+    ],
+    sources: [
+      { label: "Chicago Parking Meters — Wikipedia", url: "https://en.wikipedia.org/wiki/Chicago_Parking_Meters" },
+    ],
   },
   {
     name: "FirstEnergy Transmission, LLC (FET)",
@@ -841,8 +863,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "NATFinCo / NATCo II (10% Indirect Passive Economic Interest via Brookfield)",
-    description: "",
+    description: "Owns and operates three major transmission subsidiaries: ATSI, MAIT, and TrAILCo. Jointly owned by FirstEnergy Corp. and Brookfield Super-Core Infrastructure Partners.",
     status: "Active",
+    website: "https://www.firstenergycorp.com",
+    headquarters: "Akron, Ohio, United States",
+    milestones: [
+      { date: "2022", event: "Brookfield purchased 19.9% ownership interest for $2.4 billion", category: "Financing" },
+    ],
+    sources: [
+      { label: "FirstEnergy — FET Sale", url: "https://www.firstenergycorp.com/newsroom/news_articles/fe-closes-on-fe-transmission-interest-sale.html" },
+    ],
   },
   {
     name: "Landmark Dividend LLC",
@@ -852,8 +882,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (40% Direct Stake)",
-    description: "",
+    description: "Acquires and manages real property interests and infrastructure for wireless communications, digital infrastructure, outdoor advertising, and renewable power generation. Pioneered the ground lease acquisition business.",
     status: "Active",
+    website: "https://www.landmarkdividend.com",
+    yearFounded: 2002,
+    headquarters: "El Segundo, California, United States",
+    management: [
+      { name: "Tim Brazy", title: "Founder & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Landmark Dividend — Website", url: "https://www.landmarkdividend.com/" },
+    ],
   },
   {
     name: "Sempra Infrastructure Partners",
@@ -863,8 +902,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (10% Direct Stake)",
-    description: "",
+    description: "Major North American infrastructure platform focused on LNG export, clean power, and energy networks. ADIA holds a 10% direct stake alongside KKR (majority) and Sempra (25%).",
     status: "Active",
+    website: "https://semprainfrastructure.com",
+    yearFounded: 2021,
+    headquarters: "San Diego, California, United States",
+    management: [
+      { name: "Justin Bird", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Sempra Infrastructure — Website", url: "https://semprainfrastructure.com/" },
+    ],
   },
   {
     name: "Vantage Data Centers",
@@ -874,8 +922,22 @@ export const companies: PortCo[] = [
     region: "Global",
     country: "United States (Global HQ)",
     ownershipVehicle: "ADIA Infrastructure Department (Direct Co-Investment alongside DigitalBridge & GIC)",
-    description: "",
+    description: "One of the world's fastest-growing global data center providers, developing and operating hyperscale campuses for cloud providers and large enterprises across North America, EMEA, and Asia-Pacific.",
     status: "Active",
+    website: "https://vantage-dc.com",
+    yearFounded: 2010,
+    investmentYear: 2017,
+    headquarters: "Denver, Colorado, United States",
+    milestones: [
+      { date: "2010", event: "Founded in Silicon Valley", category: "Founding" },
+      { date: "2017", event: "Acquired by consortium of DigitalBridge, PSP Investments, and TIAA", category: "Financing" },
+    ],
+    management: [
+      { name: "Sureel Choksi", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Vantage Data Centers — Company", url: "https://vantage-dc.com/company/" },
+    ],
   },
   // ─── APG Infrastructure ─────────────────────────────────────
   {
@@ -886,8 +948,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Pool (Consortium with Cintra & Meridiam)",
-    description: "",
+    description: "Special purpose entity operating the $2.6 billion I-635/LBJ Freeway managed lanes in the Dallas-Fort Worth area under a 52-year DBFOM concession. The 13.3-mile toll road opened in September 2015.",
     status: "Active",
+    headquarters: "Dallas, Texas, United States",
+    milestones: [
+      { date: "2009", event: "Concession awarded to Cintra-Meridiam consortium", category: "Financing" },
+      { date: "2015", event: "LBJ Express opened ahead of schedule", category: "Expansion" },
+    ],
+    sources: [
+      { label: "LBJ TEXpress Lanes — Overview", url: "https://www.texpresslanes.com/about/overview/" },
+    ],
   },
   {
     name: "Arevon Energy",
@@ -919,8 +989,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "APG Infrastructure Pool (Co-owned with Fiera)",
-    description: "",
+    description: "Provider of fiber-based connectivity solutions and network management services, operating an 11,000+ mile owned and operated fiber network across multiple US states.",
     status: "Active",
+    website: "https://conterra.com",
+    yearFounded: 2001,
+    headquarters: "Charlotte, North Carolina, United States",
+    management: [
+      { name: "Craig Gunderson", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Conterra Networks — Website", url: "https://conterra.com/" },
+    ],
   },
   {
     name: "Cross-Sound Cable",
@@ -952,8 +1031,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "AIA Montana LLC (Managed by Argo Infrastructure)",
-    description: "",
+    description: "Regulated electric utility serving over 588,000 homes and businesses in southwestern Pennsylvania, one of the oldest electric utilities in the United States.",
     status: "Active",
+    website: "https://www.duquesnelight.com",
+    yearFounded: 1880,
+    headquarters: "Pittsburgh, Pennsylvania, United States",
+    management: [
+      { name: "Kevin Walker", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Duquesne Light — Wikipedia", url: "https://en.wikipedia.org/wiki/Duquesne_Light_Company" },
+    ],
   },
   {
     name: "Gemini Solar + Storage",
@@ -974,8 +1062,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "AIA Montana LLC (Managed by Argo Infrastructure)",
-    description: "",
+    description: "Hawaii's only regulated gas utility, providing gas services across the Hawaiian islands. Founded in 1904, transferred to Argo Infrastructure Partners in 2022.",
     status: "Active",
+    website: "https://www.hawaiigas.com",
+    yearFounded: 1904,
+    headquarters: "Honolulu, Hawaii, United States",
+    milestones: [
+      { date: "1904", event: "Founded", category: "Founding" },
+      { date: "2006", event: "Acquired by Macquarie Infrastructure Corporation", category: "Financing" },
+      { date: "2022", event: "Ownership transferred to Argo Infrastructure Partners", category: "Financing" },
+    ],
+    management: [
+      { name: "Alicia Moy", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Hawaii Gas — Website", url: "https://www.hawaiigas.com" },
+    ],
   },
   {
     name: "Hudson Transmission Project",
@@ -4129,8 +4231,18 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Infrastructure",
-    description: "",
+    description: "Parent company of SSA Marine, one of the world's largest marine terminal operators with combined operations at over 250 port and rail locations worldwide, including 16 container terminals across the Americas and Vietnam.",
     status: "Active",
+    website: "https://www.carrix.com",
+    yearFounded: 1949,
+    headquarters: "Seattle, Washington, United States",
+    milestones: [
+      { date: "1949", event: "Founded", category: "Founding" },
+      { date: "2019", event: "Blackstone Infrastructure Partners made growth-oriented investment", category: "Financing" },
+    ],
+    sources: [
+      { label: "Carrix — About", url: "https://www.carrix.com/about" },
+    ],
   },
   {
     name: "Cheniere Energy Partners, L.P.",
@@ -4140,8 +4252,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Infrastructure Partners",
-    description: "",
+    description: "Operator of the Sabine Pass LNG terminal in Louisiana with six liquefaction trains and ~30 mtpa of capacity, one of the largest LNG export facilities in the world.",
     status: "Active",
+    website: "https://www.cheniere.com",
+    headquarters: "Houston, Texas, United States",
+    management: [
+      { name: "Jack Fusco", title: "Chairman, President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Cheniere Energy — Wikipedia", url: "https://en.wikipedia.org/wiki/Cheniere_Energy" },
+    ],
   },
   {
     name: "Enverus",
@@ -4184,8 +4304,21 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Infrastructure Partners",
-    description: "",
+    description: "100% fiber internet and telecommunications provider serving high-rise MDUs, gated communities, and HOAs across the Southeastern US.",
     status: "Active",
+    website: "https://hotwirecommunications.com",
+    yearFounded: 2000,
+    headquarters: "Fort Lauderdale, Florida, United States",
+    milestones: [
+      { date: "2000", event: "Co-founded by Michael Karp and Kristin Johnson", category: "Founding" },
+      { date: "2021", event: "Blackstone Infrastructure Partners invested", category: "Financing" },
+    ],
+    management: [
+      { name: "Kristin Johnson", title: "Founder & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Hotwire Communications — Who We Are", url: "https://hotwirecommunications.com/who-we-are/" },
+    ],
   },
   {
     name: "Invenergy Renewables",
@@ -4195,8 +4328,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Infrastructure Partners",
-    description: "",
+    description: "The largest privately-held renewable energy company in North America, developing, constructing, owning, and operating large-scale wind, solar, natural gas, and energy storage facilities.",
     status: "Active",
+    website: "https://invenergy.com",
+    yearFounded: 2001,
+    headquarters: "Chicago, Illinois, United States",
+    management: [
+      { name: "Michael Polsky", title: "Founder & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Invenergy — Wikipedia", url: "https://en.wikipedia.org/wiki/Invenergy" },
+    ],
   },
   {
     name: "Kindle Energy",
@@ -4526,8 +4668,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Infrastructure Partners",
-    description: "",
+    description: "Operator of the largest refined petroleum products pipeline system in the US, transporting gasoline, diesel, jet fuel from Gulf Coast refineries to the Eastern Seaboard.",
     status: "Active",
+    website: "https://www.colpipe.com",
+    headquarters: "Alpharetta, Georgia, United States",
+    investmentYear: 2025,
+    milestones: [
+      { date: "2025", event: "Brookfield Infrastructure completed acquisition from Shell-led consortium for ~$9 billion", category: "Financing" },
+    ],
+    management: [
+      { name: "Melanie Little", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Colonial Pipeline — About Us", url: "https://www.colpipe.com/about-us/" },
+    ],
   },
   {
     name: "Compass Datacenters",
@@ -4537,8 +4691,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Brookfield Infrastructure Partners",
-    description: "",
+    description: "Major hyperscale data center developer and operator, building purpose-built campuses for the world's largest cloud and technology companies. Jointly owned by Brookfield and Ontario Teachers'.",
     status: "Active",
+    website: "https://www.compassdatacenters.com",
+    yearFounded: 2011,
+    investmentYear: 2023,
+    headquarters: "Dallas, Texas, United States",
+    milestones: [
+      { date: "2011", event: "Founded by Chris Crosby", category: "Founding" },
+      { date: "2023", event: "Acquired by Brookfield Infrastructure and Ontario Teachers'", category: "Financing" },
+    ],
+    management: [
+      { name: "Chris Crosby", title: "Founder & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Compass Datacenters — Wikipedia", url: "https://en.wikipedia.org/wiki/Compass_Datacenters" },
+    ],
   },
   {
     name: "Cove Point LNG",
@@ -4581,8 +4749,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Brookfield Infrastructure Partners",
-    description: "",
+    description: "One of North America's largest home and commercial services companies, providing water heaters, HVAC rentals, and essential home services to approximately 1.6 million customers annually.",
     status: "Active",
+    website: "https://www.enercare.ca",
+    investmentYear: 2018,
+    headquarters: "Markham, Ontario, Canada",
+    milestones: [
+      { date: "2018", event: "Acquired by Brookfield Infrastructure for C$4.3 billion", category: "Financing" },
+    ],
+    management: [
+      { name: "Nick Perreten", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Enercare — Brookfield Acquisition", url: "https://bip.brookfield.com/press-releases/bip/brookfield-infrastructure-completes-c43-billion-acquisition-enercare-inc" },
+    ],
   },
   {
     name: "Entropy Inc.",
@@ -4636,8 +4816,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Brookfield Infrastructure Partners",
-    description: "",
+    description: "One of the world's largest short-line and regional freight railroad operators, owning or leasing 116 railroads with 7,300 employees serving 3,000 customers. Jointly owned by Brookfield and GIC.",
     status: "Active",
+    website: "https://www.gwrr.com",
+    yearFounded: 1899,
+    headquarters: "Darien, Connecticut, United States",
+    sources: [
+      { label: "Genesee & Wyoming — Wikipedia", url: "https://en.wikipedia.org/wiki/Genesee_%26_Wyoming" },
+    ],
   },
   {
     name: "Geronimo Power (fka National Grid Renewables)",
@@ -9869,8 +10055,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Infrastructure Investments Fund (IIF)",
-    description: "",
+    description: "Regulated electric utility serving West Texas and Southern New Mexico, acquired by J.P. Morgan's IIF in a $4.3 billion transaction in 2020.",
     status: "Active",
+    website: "https://www.epelectric.com",
+    headquarters: "El Paso, Texas, United States",
+    investmentYear: 2020,
+    management: [
+      { name: "Kelly Tomblin", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "El Paso Electric — Acquisition Announcement", url: "https://www.epelectric.com/news/el-paso-electric-sale-to-jp-morgan-fund-completed-new-ceo-named" },
+    ],
   },
   {
     name: "Enstor Gas",
@@ -9924,8 +10119,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Infrastructure Investments Fund (IIF)",
-    description: "",
+    description: "Energy services holding company serving over 700,000 customers via South Jersey Gas and Elizabethtown Gas. Taken private by J.P. Morgan's IIF in an $8.1 billion deal.",
     status: "Active",
+    website: "https://www.sjindustries.com",
+    headquarters: "Folsom, New Jersey, United States",
+    management: [
+      { name: "Mike Renna", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "South Jersey Industries — Wikipedia", url: "https://en.wikipedia.org/wiki/South_Jersey_Industries" },
+    ],
   },
   {
     name: "Summit Utilities, Inc.",
@@ -10246,8 +10449,23 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "MIP IV, MIP V",
-    description: "",
+    description: "One of the largest hyperscale data center platforms in the Americas, growing from 2 to 50 locations under Macquarie ownership. Sold in 2025 to BlackRock/GIP, MGX, and AIP consortium at ~$40 billion enterprise value.",
     status: "Active",
+    website: "https://aligneddc.com",
+    yearFounded: 2013,
+    investmentYear: 2018,
+    headquarters: "Dallas, Texas, United States",
+    milestones: [
+      { date: "2013", event: "Founded by Jakob Carnemark and Thomas Doherty", category: "Founding" },
+      { date: "2018", event: "Macquarie Asset Management made initial investment", category: "Financing" },
+      { date: "2025", event: "Sold to BlackRock/GIP, MGX, and AIP at ~$40 billion enterprise value", category: "Divestiture" },
+    ],
+    management: [
+      { name: "Andrew Schaap", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Macquarie — Aligned Data Centers Sale", url: "https://www.macquarie.com/us/en/about/news/2025/macquarie-asset-management-to-lead-sale-of-aligned-data-centers-at-an-enterprise-value-of-us-40-billion.html" },
+    ],
   },
   {
     name: "Applied Digital (HPC JV)",
