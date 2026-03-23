@@ -2,22 +2,17 @@
 
 import { useState, useMemo, useEffect, useCallback } from "react";
 import {
-  funds,
-  FUND_SECTORS,
-  FUND_REGIONS,
-  getFundSectorColor,
-  getFundRegionColor,
-  getAllPortfolioCompanies,
+  portcos,
+  PORTCO_SECTORS,
+  PORTCO_REGIONS,
+  PORTCO_STATUSES,
+  getPortCoSectorColor,
+  getPortCoRegionColor,
+  getPortCoStatusColor,
   getUniqueCountries,
-  getUniqueSubsectors,
-  getUniqueManagers,
-} from "@/data/funds";
-import type {
-  Fund,
-  FundSector,
-  FundRegion,
-  PortfolioCompanyWithContext,
-} from "@/data/funds";
+  getUniqueFirms,
+} from "@/data/portcos";
+import type { PortCo, PortCoSector, PortCoRegion, PortCoStatus } from "@/data/portcos";
 import {
   Search,
   X,
@@ -26,9 +21,7 @@ import {
   Check,
   Globe,
   Briefcase,
-  Users,
-  ExternalLink,
-  DollarSign,
+  Building2,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
 
@@ -154,9 +147,9 @@ function FilterChip({
   );
 }
 
-// ─── Portfolio Filter Bar ───────────────────────────────────
+// ─── Filter Bar ─────────────────────────────────────────────
 
-function PortfolioFilterBar({
+function PortCoFilterBar({
   search,
   onSearchChange,
   activeSectors,
@@ -165,13 +158,12 @@ function PortfolioFilterBar({
   onToggleRegion,
   activeCountries,
   onToggleCountry,
-  activeManagers,
-  onToggleManager,
-  activeSubsectors,
-  onToggleSubsector,
+  activeFirms,
+  onToggleFirm,
+  activeStatuses,
+  onToggleStatus,
   countryOptions,
-  managerOptions,
-  subsectorOptions,
+  firmOptions,
   onClearAll,
 }: {
   search: string;
@@ -182,21 +174,20 @@ function PortfolioFilterBar({
   onToggleRegion: (r: string) => void;
   activeCountries: Set<string>;
   onToggleCountry: (c: string) => void;
-  activeManagers: Set<string>;
-  onToggleManager: (m: string) => void;
-  activeSubsectors: Set<string>;
-  onToggleSubsector: (s: string) => void;
+  activeFirms: Set<string>;
+  onToggleFirm: (f: string) => void;
+  activeStatuses: Set<string>;
+  onToggleStatus: (s: string) => void;
   countryOptions: string[];
-  managerOptions: string[];
-  subsectorOptions: string[];
+  firmOptions: string[];
   onClearAll: () => void;
 }) {
   const total =
     activeSectors.size +
     activeRegions.size +
     activeCountries.size +
-    activeManagers.size +
-    activeSubsectors.size;
+    activeFirms.size +
+    activeStatuses.size;
 
   return (
     <div className="mb-4 lg:mb-6 space-y-3">
@@ -215,17 +206,17 @@ function PortfolioFilterBar({
         <div className="w-px h-5 bg-[#27272A]" />
         <MultiSelectDropdown
           label="Sector"
-          options={FUND_SECTORS}
+          options={PORTCO_SECTORS}
           selected={activeSectors}
           onToggle={onToggleSector}
-          getColor={(v) => getFundSectorColor(v as FundSector)}
+          getColor={(v) => getPortCoSectorColor(v as PortCoSector)}
         />
         <MultiSelectDropdown
           label="Region"
-          options={FUND_REGIONS}
+          options={PORTCO_REGIONS}
           selected={activeRegions}
           onToggle={onToggleRegion}
-          getColor={(v) => getFundRegionColor(v as FundRegion)}
+          getColor={(v) => getPortCoRegionColor(v as PortCoRegion)}
         />
         <MultiSelectDropdown
           label="Country"
@@ -235,21 +226,19 @@ function PortfolioFilterBar({
           getColor={() => "#06b6d4"}
         />
         <MultiSelectDropdown
-          label="Fund Manager"
-          options={managerOptions}
-          selected={activeManagers}
-          onToggle={onToggleManager}
+          label="Investment Firm"
+          options={firmOptions}
+          selected={activeFirms}
+          onToggle={onToggleFirm}
           getColor={() => "#a78bfa"}
         />
-        {subsectorOptions.length > 0 && (
-          <MultiSelectDropdown
-            label="Subsector"
-            options={subsectorOptions}
-            selected={activeSubsectors}
-            onToggle={onToggleSubsector}
-            getColor={() => "#f59e0b"}
-          />
-        )}
+        <MultiSelectDropdown
+          label="Status"
+          options={PORTCO_STATUSES}
+          selected={activeStatuses}
+          onToggle={onToggleStatus}
+          getColor={(v) => getPortCoStatusColor(v as PortCoStatus)}
+        />
       </div>
 
       {total > 0 && (
@@ -258,19 +247,19 @@ function PortfolioFilterBar({
             Active:
           </span>
           {Array.from(activeSectors).map((s) => (
-            <FilterChip key={`sec-${s}`} label={s} color={getFundSectorColor(s as FundSector)} onRemove={() => onToggleSector(s)} />
+            <FilterChip key={`sec-${s}`} label={s} color={getPortCoSectorColor(s as PortCoSector)} onRemove={() => onToggleSector(s)} />
           ))}
           {Array.from(activeRegions).map((r) => (
-            <FilterChip key={`reg-${r}`} label={r} color={getFundRegionColor(r as FundRegion)} onRemove={() => onToggleRegion(r)} />
+            <FilterChip key={`reg-${r}`} label={r} color={getPortCoRegionColor(r as PortCoRegion)} onRemove={() => onToggleRegion(r)} />
           ))}
           {Array.from(activeCountries).map((c) => (
             <FilterChip key={`ctr-${c}`} label={c} color="#06b6d4" onRemove={() => onToggleCountry(c)} />
           ))}
-          {Array.from(activeManagers).map((m) => (
-            <FilterChip key={`mgr-${m}`} label={m} color="#a78bfa" onRemove={() => onToggleManager(m)} />
+          {Array.from(activeFirms).map((f) => (
+            <FilterChip key={`firm-${f}`} label={f} color="#a78bfa" onRemove={() => onToggleFirm(f)} />
           ))}
-          {Array.from(activeSubsectors).map((s) => (
-            <FilterChip key={`sub-${s}`} label={s} color="#f59e0b" onRemove={() => onToggleSubsector(s)} />
+          {Array.from(activeStatuses).map((s) => (
+            <FilterChip key={`sts-${s}`} label={s} color={getPortCoStatusColor(s as PortCoStatus)} onRemove={() => onToggleStatus(s)} />
           ))}
           {total > 1 && (
             <button
@@ -350,19 +339,19 @@ function RankingColumn({ title, rows }: { title: string; rows: SimpleRow[] }) {
   );
 }
 
-function PortfolioInsightsHero({ companies }: { companies: PortfolioCompanyWithContext[] }) {
+function PortCoInsightsHero({ companies }: { companies: PortCo[] }) {
   const sectorRanking = useMemo(
-    () => deriveRanking(companies.map((c) => c.sector), getFundSectorColor),
+    () => deriveRanking(companies.map((c) => c.sector), getPortCoSectorColor),
     [companies]
   );
   const regionRanking = useMemo(
-    () => deriveRanking(companies.map((c) => c.region), getFundRegionColor),
+    () => deriveRanking(companies.map((c) => c.region), getPortCoRegionColor),
     [companies]
   );
-  const managerRanking = useMemo(() => {
+  const firmRanking = useMemo(() => {
     const counts: Record<string, number> = {};
     for (const c of companies) {
-      counts[c.managerName] = (counts[c.managerName] ?? 0) + 1;
+      counts[c.investmentFirm] = (counts[c.investmentFirm] ?? 0) + 1;
     }
     return Object.entries(counts)
       .map(([name, count]) => ({ name, count, color: "#a78bfa" }))
@@ -387,8 +376,8 @@ function PortfolioInsightsHero({ companies }: { companies: PortfolioCompanyWithC
           <span className="mono text-[#EDEDED] font-medium">{companies.length}</span> portfolio companies
           {" · "}
           <span className="mono text-[#EDEDED] font-medium">
-            {new Set(companies.map((c) => c.managerName)).size}
-          </span> managers
+            {new Set(companies.map((c) => c.investmentFirm)).size}
+          </span> investment firms
           {" · "}
           <span className="mono text-[#EDEDED] font-medium">
             {new Set(companies.map((c) => c.country)).size}
@@ -399,22 +388,22 @@ function PortfolioInsightsHero({ companies }: { companies: PortfolioCompanyWithC
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           <RankingColumn title="Top Sectors" rows={sectorRanking} />
           <RankingColumn title="Top Regions" rows={regionRanking} />
-          <RankingColumn title="Top Fund Managers" rows={managerRanking} />
+          <RankingColumn title="Top Investment Firms" rows={firmRanking} />
         </div>
       </div>
     </div>
   );
 }
 
-// ─── Portfolio Company Drawer ───────────────────────────────
+// ─── PortCo Drawer ──────────────────────────────────────────
 
-function PortfolioCompanyDrawer({
+function PortCoDrawer({
   company,
   allCompanies,
   onClose,
 }: {
-  company: PortfolioCompanyWithContext;
-  allCompanies: PortfolioCompanyWithContext[];
+  company: PortCo;
+  allCompanies: PortCo[];
   onClose: () => void;
 }) {
   useEffect(() => {
@@ -425,8 +414,9 @@ function PortfolioCompanyDrawer({
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
-  const relatedEntries = allCompanies.filter((c) => c.name === company.name);
-  const parentFund = funds.find((f) => f.id === company.fundId);
+  const siblings = allCompanies.filter(
+    (c) => c.investmentFirm === company.investmentFirm && c.name !== company.name
+  );
 
   return (
     <>
@@ -445,6 +435,9 @@ function PortfolioCompanyDrawer({
               <div className="flex items-center gap-2 mt-1.5 text-xs-dense text-[#52525B]">
                 <Globe className="h-3 w-3" />
                 <span>{company.country}</span>
+                {company.region !== "North America" && (
+                  <span className="text-[#3f3f46]">· {company.region}</span>
+                )}
               </div>
             </div>
             <button
@@ -459,9 +452,9 @@ function PortfolioCompanyDrawer({
             <span
               className="text-micro font-medium px-2 py-0.5 rounded-[4px]"
               style={{
-                color: getFundSectorColor(company.sector),
-                backgroundColor: `${getFundSectorColor(company.sector)}1a`,
-                border: `1px solid ${getFundSectorColor(company.sector)}33`,
+                color: getPortCoSectorColor(company.sector),
+                backgroundColor: `${getPortCoSectorColor(company.sector)}1a`,
+                border: `1px solid ${getPortCoSectorColor(company.sector)}33`,
               }}
             >
               {company.sector}
@@ -474,12 +467,12 @@ function PortfolioCompanyDrawer({
             <span
               className="text-micro font-medium px-2 py-0.5 rounded-[4px]"
               style={{
-                color: getFundRegionColor(company.region),
-                backgroundColor: `${getFundRegionColor(company.region)}1a`,
-                border: `1px solid ${getFundRegionColor(company.region)}33`,
+                color: getPortCoStatusColor(company.status),
+                backgroundColor: `${getPortCoStatusColor(company.status)}1a`,
+                border: `1px solid ${getPortCoStatusColor(company.status)}33`,
               }}
             >
-              {company.region}
+              {company.status}
             </span>
           </div>
         </div>
@@ -492,164 +485,58 @@ function PortfolioCompanyDrawer({
             </div>
           )}
 
-          {/* Parent Fund(s) */}
+          {/* Investment Firm & Vehicle */}
           <div>
             <div className="flex items-center gap-2 mb-3">
               <Briefcase className="h-3.5 w-3.5 text-[#818CF8]" />
               <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
-                Fund Vehicle{relatedEntries.length > 1 ? "s" : ""}
+                Investment Details
               </span>
             </div>
-            <div className="space-y-2">
-              {relatedEntries.map((entry) => {
-                const fund = funds.find((f) => f.id === entry.fundId);
-                if (!fund) return null;
-                return (
-                  <div
-                    key={entry.fundId}
-                    className="glass-card rounded-[4px] p-3"
-                  >
-                    <div className="min-w-0 mb-1.5">
-                      <div className="text-sm-dense font-medium text-[#EDEDED] truncate">{fund.fundName}</div>
-                      <div className="text-xs-dense text-[#52525B]">{fund.managerName}</div>
-                    </div>
-                    <div className="text-xs-dense text-[#52525B]">{fund.size}</div>
-                  </div>
-                );
-              })}
+            <div className="glass-card rounded-[4px] p-3 space-y-2">
+              <div className="flex justify-between items-start">
+                <span className="text-micro text-[#52525B]">Investment Firm</span>
+                <span className="text-micro text-[#EDEDED] text-right font-medium">{company.investmentFirm}</span>
+              </div>
+              <div className="flex justify-between items-start">
+                <span className="text-micro text-[#52525B]">Ownership Vehicle</span>
+                <span className="text-micro text-[#EDEDED] text-right">{company.ownershipVehicle}</span>
+              </div>
+              <div className="flex justify-between items-start">
+                <span className="text-micro text-[#52525B]">Status</span>
+                <span
+                  className="text-micro font-medium"
+                  style={{ color: getPortCoStatusColor(company.status) }}
+                >
+                  {company.status}
+                </span>
+              </div>
             </div>
           </div>
 
-          {/* Co-Investors */}
-          {company.coInvestors && company.coInvestors.length > 0 && (
+          {/* Other companies from same firm */}
+          {siblings.length > 0 && (
             <div className="border-t border-[#27272A] pt-4">
               <div className="flex items-center gap-2 mb-3">
-                <Users className="h-3.5 w-3.5 text-sky-400" />
+                <Building2 className="h-3.5 w-3.5 text-sky-400" />
                 <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
-                  Co-Investor{company.coInvestors.length > 1 ? "s" : ""}
+                  Other {company.investmentFirm} PortCos ({siblings.length})
                 </span>
               </div>
               <div className="flex flex-wrap gap-2">
-                {company.coInvestors.map((ci) => (
+                {siblings.slice(0, 20).map((s) => (
                   <span
-                    key={ci}
-                    className="text-xs text-sky-300 bg-sky-400/10 border border-sky-400/20 px-2.5 py-1 rounded-[4px]"
+                    key={s.name}
+                    className="text-xs text-[#EDEDED] bg-[#1f1f23]/50 border border-[#3f3f46]/50 px-2.5 py-1 rounded-[4px]"
                   >
-                    {ci}
+                    {s.name}
                   </span>
                 ))}
-              </div>
-            </div>
-          )}
-
-          {/* Financial Information */}
-          {company.financials && Object.values(company.financials).some((v) => v !== undefined) && (
-            <div className="border-t border-[#27272A] pt-4">
-              <div className="flex items-center gap-2 mb-3">
-                <DollarSign className="h-3.5 w-3.5 text-emerald-400" />
-                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
-                  Financial Information
-                </span>
-              </div>
-              <div className="glass-card rounded-[4px] p-3">
-                <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                  {company.financials.enterpriseValue && (
-                    <>
-                      <span className="text-micro text-[#52525B]">Enterprise Value</span>
-                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.enterpriseValue}</span>
-                    </>
-                  )}
-                  {company.financials.equityValue && (
-                    <>
-                      <span className="text-micro text-[#52525B]">Equity Value</span>
-                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.equityValue}</span>
-                    </>
-                  )}
-                  {company.financials.revenue && (
-                    <>
-                      <span className="text-micro text-[#52525B]">Revenue</span>
-                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.revenue}</span>
-                    </>
-                  )}
-                  {company.financials.ebitda && (
-                    <>
-                      <span className="text-micro text-[#52525B]">EBITDA</span>
-                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.ebitda}</span>
-                    </>
-                  )}
-                  {company.financials.acquisitionYear && (
-                    <>
-                      <span className="text-micro text-[#52525B]">Acquisition Year</span>
-                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.acquisitionYear}</span>
-                    </>
-                  )}
-                  {company.financials.acquisitionMultiple && (
-                    <>
-                      <span className="text-micro text-[#52525B]">Entry Multiple</span>
-                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.acquisitionMultiple}</span>
-                    </>
-                  )}
-                  {company.financials.ownershipStake && (
-                    <>
-                      <span className="text-micro text-[#52525B]">Ownership</span>
-                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.ownershipStake}</span>
-                    </>
-                  )}
-                  {company.financials.asOfDate && (
-                    <>
-                      <span className="text-micro text-[#52525B]">As Of</span>
-                      <span className="text-micro text-[#EDEDED] text-right">{company.financials.asOfDate}</span>
-                    </>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Source URLs */}
-          {company.sourceUrls && company.sourceUrls.length > 0 && (
-            <div className="border-t border-[#27272A] pt-4">
-              <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider block mb-2">
-                Sources
-              </span>
-              <div className="space-y-1.5">
-                {company.sourceUrls.map((url, i) => {
-                  let hostname = url;
-                  try { hostname = new URL(url).hostname.replace(/^www\./, ""); } catch {}
-                  return (
-                    <a
-                      key={i}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-micro text-[#52525B] hover:text-[#EDEDED] transition-colors group"
-                    >
-                      <ExternalLink className="h-3 w-3 shrink-0 text-[#3f3f46] group-hover:text-[#A1A1AA]" />
-                      <span className="truncate">{hostname}</span>
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* Other portcos in the same fund */}
-          {parentFund && parentFund.portfolioCompanies.length > 1 && (
-            <div className="border-t border-[#27272A] pt-4">
-              <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider block mb-3">
-                Other Companies in {parentFund.fundName}
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {parentFund.portfolioCompanies
-                  .filter((pc) => pc.name !== company.name)
-                  .map((pc) => (
-                    <span
-                      key={pc.name}
-                      className="text-xs text-[#EDEDED] bg-[#1f1f23]/50 border border-[#3f3f46]/50 px-2.5 py-1 rounded-[4px]"
-                    >
-                      {pc.name}
-                    </span>
-                  ))}
+                {siblings.length > 20 && (
+                  <span className="text-xs text-[#52525B] px-2.5 py-1">
+                    +{siblings.length - 20} more
+                  </span>
+                )}
               </div>
             </div>
           )}
@@ -659,14 +546,14 @@ function PortfolioCompanyDrawer({
   );
 }
 
-// ─── Portfolio Company Card (mobile) ────────────────────────
+// ─── PortCo Card (mobile) ───────────────────────────────────
 
-function PortfolioCompanyCard({
+function PortCoCard({
   company,
   onSelect,
 }: {
-  company: PortfolioCompanyWithContext;
-  onSelect: (company: PortfolioCompanyWithContext) => void;
+  company: PortCo;
+  onSelect: (company: PortCo) => void;
 }) {
   return (
     <button
@@ -683,8 +570,8 @@ function PortfolioCompanyCard({
         <span
           className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
           style={{
-            color: getFundSectorColor(company.sector),
-            backgroundColor: `${getFundSectorColor(company.sector)}1a`,
+            color: getPortCoSectorColor(company.sector),
+            backgroundColor: `${getPortCoSectorColor(company.sector)}1a`,
           }}
         >
           {company.sector}
@@ -694,6 +581,15 @@ function PortfolioCompanyCard({
             {company.subsector}
           </span>
         )}
+        <span
+          className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
+          style={{
+            color: getPortCoStatusColor(company.status),
+            backgroundColor: `${getPortCoStatusColor(company.status)}1a`,
+          }}
+        >
+          {company.status}
+        </span>
       </div>
       <div className="grid grid-cols-2 gap-2 text-micro">
         <div>
@@ -701,24 +597,24 @@ function PortfolioCompanyCard({
           <div className="text-xs-dense text-[#A1A1AA] font-medium">{company.country}</div>
         </div>
         <div>
-          <span className="font-medium text-[#52525B] uppercase tracking-wider">Manager</span>
-          <div className="text-xs-dense text-[#A1A1AA] font-medium truncate">{company.managerName}</div>
+          <span className="font-medium text-[#52525B] uppercase tracking-wider">Firm</span>
+          <div className="text-xs-dense text-[#A1A1AA] font-medium truncate">{company.investmentFirm}</div>
         </div>
       </div>
     </button>
   );
 }
 
-// ─── Portfolio Company Table ────────────────────────────────
+// ─── PortCo Table ───────────────────────────────────────────
 
-function PortfolioCompanyTable({
+function PortCoTable({
   companies,
   onSelect,
 }: {
-  companies: PortfolioCompanyWithContext[];
-  onSelect: (company: PortfolioCompanyWithContext) => void;
+  companies: PortCo[];
+  onSelect: (company: PortCo) => void;
 }) {
-  const [sortField, setSortField] = useState<"name" | "sector" | "country" | "manager">("name");
+  const [sortField, setSortField] = useState<"name" | "sector" | "country" | "firm" | "status">("name");
   const [sortAsc, setSortAsc] = useState(true);
 
   const sorted = useMemo(() => {
@@ -729,7 +625,8 @@ function PortfolioCompanyTable({
         case "name": cmp = a.name.localeCompare(b.name); break;
         case "sector": cmp = a.sector.localeCompare(b.sector); break;
         case "country": cmp = a.country.localeCompare(b.country); break;
-        case "manager": cmp = a.managerName.localeCompare(b.managerName); break;
+        case "firm": cmp = a.investmentFirm.localeCompare(b.investmentFirm); break;
+        case "status": cmp = a.status.localeCompare(b.status); break;
       }
       return sortAsc ? cmp : -cmp;
     });
@@ -779,16 +676,14 @@ function PortfolioCompanyTable({
                   Subsector
                 </th>
                 <SortHeader field="country" label="Country" />
-                <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
-                  Region
-                </th>
-                <SortHeader field="manager" label="Fund Manager" />
+                <SortHeader field="firm" label="Investment Firm" />
+                <SortHeader field="status" label="Status" />
               </tr>
             </thead>
             <tbody>
               {sorted.map((company, i) => (
                 <tr
-                  key={`${company.name}-${company.fundId}-${i}`}
+                  key={`${company.name}-${company.investmentFirm}-${i}`}
                   onClick={() => onSelect(company)}
                   className="border-b border-[rgba(255,255,255,0.08)] hover:bg-[rgba(255,255,255,0.03)] cursor-pointer transition-colors group"
                 >
@@ -804,8 +699,8 @@ function PortfolioCompanyTable({
                     <span
                       className="text-micro font-medium px-2 py-0.5 rounded-[4px] whitespace-nowrap"
                       style={{
-                        color: getFundSectorColor(company.sector),
-                        backgroundColor: `${getFundSectorColor(company.sector)}1a`,
+                        color: getPortCoSectorColor(company.sector),
+                        backgroundColor: `${getPortCoSectorColor(company.sector)}1a`,
                       }}
                     >
                       {company.sector}
@@ -821,13 +716,19 @@ function PortfolioCompanyTable({
                   <td className="px-4 py-3">
                     <span className="text-xs text-[#EDEDED] whitespace-nowrap">{company.country}</span>
                   </td>
-                  <td className="px-4 py-3">
-                    <span className="text-micro text-[#A1A1AA]">
-                      {company.region}
-                    </span>
-                  </td>
                   <td className="px-4 py-3 max-w-[200px]">
-                    <span className="text-xs text-[#A1A1AA] truncate block">{company.managerName}</span>
+                    <span className="text-xs text-[#A1A1AA] truncate block">{company.investmentFirm}</span>
+                  </td>
+                  <td className="px-4 py-3">
+                    <span
+                      className="text-micro font-medium px-2 py-0.5 rounded-[4px] whitespace-nowrap"
+                      style={{
+                        color: getPortCoStatusColor(company.status),
+                        backgroundColor: `${getPortCoStatusColor(company.status)}1a`,
+                      }}
+                    >
+                      {company.status}
+                    </span>
                   </td>
                 </tr>
               ))}
@@ -839,8 +740,8 @@ function PortfolioCompanyTable({
       {/* Mobile cards */}
       <div className="md:hidden space-y-2">
         {sorted.map((company, i) => (
-          <PortfolioCompanyCard
-            key={`${company.name}-${company.fundId}-${i}`}
+          <PortCoCard
+            key={`${company.name}-${company.investmentFirm}-${i}`}
             company={company}
             onSelect={onSelect}
           />
@@ -857,9 +758,9 @@ export function PortfolioDatabase() {
   const [activeSectors, setActiveSectors] = useState<Set<string>>(new Set());
   const [activeRegions, setActiveRegions] = useState<Set<string>>(new Set());
   const [activeCountries, setActiveCountries] = useState<Set<string>>(new Set());
-  const [activeManagers, setActiveManagers] = useState<Set<string>>(new Set());
-  const [activeSubsectors, setActiveSubsectors] = useState<Set<string>>(new Set());
-  const [selectedCompany, setSelectedCompany] = useState<PortfolioCompanyWithContext | null>(null);
+  const [activeFirms, setActiveFirms] = useState<Set<string>>(new Set());
+  const [activeStatuses, setActiveStatuses] = useState<Set<string>>(new Set());
+  const [selectedCompany, setSelectedCompany] = useState<PortCo | null>(null);
 
   const debouncedSearch = useDebounce(search, 300);
 
@@ -879,68 +780,50 @@ export function PortfolioDatabase() {
   const toggleSector = useMemo(() => toggleSet(setActiveSectors), [toggleSet]);
   const toggleRegion = useMemo(() => toggleSet(setActiveRegions), [toggleSet]);
   const toggleCountry = useMemo(() => toggleSet(setActiveCountries), [toggleSet]);
-  const toggleManager = useMemo(() => toggleSet(setActiveManagers), [toggleSet]);
-  const toggleSubsector = useMemo(() => toggleSet(setActiveSubsectors), [toggleSet]);
+  const toggleFirm = useMemo(() => toggleSet(setActiveFirms), [toggleSet]);
+  const toggleStatus = useMemo(() => toggleSet(setActiveStatuses), [toggleSet]);
 
   const clearFilters = useCallback(() => {
     setActiveSectors(new Set());
     setActiveRegions(new Set());
     setActiveCountries(new Set());
-    setActiveManagers(new Set());
-    setActiveSubsectors(new Set());
+    setActiveFirms(new Set());
+    setActiveStatuses(new Set());
     setSearch("");
   }, []);
 
-  const allPortfolioCompanies = useMemo(() => getAllPortfolioCompanies(funds), []);
-  const countryOptions = useMemo(() => getUniqueCountries(allPortfolioCompanies), [allPortfolioCompanies]);
-  const subsectorOptions = useMemo(() => getUniqueSubsectors(allPortfolioCompanies), [allPortfolioCompanies]);
-  const managerOptions = useMemo(() => getUniqueManagers(allPortfolioCompanies), [allPortfolioCompanies]);
+  const countryOptions = useMemo(() => getUniqueCountries(portcos), []);
+  const firmOptions = useMemo(() => getUniqueFirms(portcos), []);
 
   const filteredCompanies = useMemo(() => {
-    const seen = new Map<string, PortfolioCompanyWithContext>();
-    for (const pc of allPortfolioCompanies) {
-      if (!seen.has(pc.name)) {
-        seen.set(pc.name, pc);
-      }
-    }
-    let companies = Array.from(seen.values());
-
-    return companies.filter((c) => {
+    return portcos.filter((c) => {
       if (debouncedSearch) {
         const q = debouncedSearch.toLowerCase();
         const match =
           c.name.toLowerCase().includes(q) ||
-          (c.description?.toLowerCase().includes(q) ?? false) ||
-          (c.subsector?.toLowerCase().includes(q) ?? false) ||
-          c.country.toLowerCase().includes(q) ||
-          c.managerName.toLowerCase().includes(q) ||
-          c.fundName.toLowerCase().includes(q) ||
+          c.description.toLowerCase().includes(q) ||
           c.sector.toLowerCase().includes(q) ||
+          c.subsector.toLowerCase().includes(q) ||
+          c.country.toLowerCase().includes(q) ||
           c.region.toLowerCase().includes(q) ||
-          (c.coInvestors?.some((ci) => ci.toLowerCase().includes(q)) ?? false);
+          c.investmentFirm.toLowerCase().includes(q) ||
+          c.ownershipVehicle.toLowerCase().includes(q);
         if (!match) return false;
       }
       if (activeSectors.size > 0 && !activeSectors.has(c.sector)) return false;
       if (activeRegions.size > 0 && !activeRegions.has(c.region)) return false;
       if (activeCountries.size > 0 && !activeCountries.has(c.country)) return false;
-      if (activeManagers.size > 0) {
-        const companyManagers = allPortfolioCompanies
-          .filter((pc) => pc.name === c.name)
-          .map((pc) => pc.managerName);
-        const coInvestorMatch = c.coInvestors?.some((ci) => activeManagers.has(ci)) ?? false;
-        if (!companyManagers.some((m) => activeManagers.has(m)) && !coInvestorMatch) return false;
-      }
-      if (activeSubsectors.size > 0 && (!c.subsector || !activeSubsectors.has(c.subsector))) return false;
+      if (activeFirms.size > 0 && !activeFirms.has(c.investmentFirm)) return false;
+      if (activeStatuses.size > 0 && !activeStatuses.has(c.status)) return false;
       return true;
     });
   }, [
-    allPortfolioCompanies,
     debouncedSearch,
     activeSectors,
     activeRegions,
     activeCountries,
-    activeManagers,
-    activeSubsectors,
+    activeFirms,
+    activeStatuses,
   ]);
 
   return (
@@ -948,31 +831,29 @@ export function PortfolioDatabase() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-base font-medium tracking-tight text-[#EDEDED] mb-1">
-            Portfolio Database
+            PortCo Database
           </h1>
           <p className="text-xs-dense text-[#52525B]">
-            Infrastructure fund portfolio companies. Filter by sector, region, country, and fund manager.
+            Infrastructure fund portfolio companies tracked by investment firm, sector, and region.
           </p>
         </div>
         <div className="hidden sm:flex items-center gap-6 text-xs-dense">
           <div className="flex items-baseline gap-2">
-            <span className="text-[#A1A1AA]">Companies</span>
+            <span className="text-[#A1A1AA]">Showing</span>
             <span className="font-mono text-[#EDEDED] tabular-nums">{filteredCompanies.length}</span>
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-[#A1A1AA]">Total</span>
-            <span className="font-mono text-[#EDEDED] tabular-nums">
-              {new Set(allPortfolioCompanies.map((c) => c.name)).size}
-            </span>
+            <span className="font-mono text-[#EDEDED] tabular-nums">{portcos.length}</span>
           </div>
         </div>
       </div>
 
       <div className="mb-6 lg:mb-8">
-        <PortfolioInsightsHero companies={filteredCompanies} />
+        <PortCoInsightsHero companies={filteredCompanies} />
       </div>
 
-      <PortfolioFilterBar
+      <PortCoFilterBar
         search={search}
         onSearchChange={setSearch}
         activeSectors={activeSectors}
@@ -981,17 +862,16 @@ export function PortfolioDatabase() {
         onToggleRegion={toggleRegion}
         activeCountries={activeCountries}
         onToggleCountry={toggleCountry}
-        activeManagers={activeManagers}
-        onToggleManager={toggleManager}
-        activeSubsectors={activeSubsectors}
-        onToggleSubsector={toggleSubsector}
+        activeFirms={activeFirms}
+        onToggleFirm={toggleFirm}
+        activeStatuses={activeStatuses}
+        onToggleStatus={toggleStatus}
         countryOptions={countryOptions}
-        managerOptions={managerOptions}
-        subsectorOptions={subsectorOptions}
+        firmOptions={firmOptions}
         onClearAll={clearFilters}
       />
 
-      <PortfolioCompanyTable
+      <PortCoTable
         companies={filteredCompanies}
         onSelect={setSelectedCompany}
       />
@@ -1000,16 +880,14 @@ export function PortfolioDatabase() {
         <span className="text-micro text-[#52525B]">
           Showing{" "}
           <span className="font-mono text-[#A1A1AA] tabular-nums">{filteredCompanies.length}</span> companies of{" "}
-          <span className="font-mono text-[#A1A1AA] tabular-nums">
-            {new Set(allPortfolioCompanies.map((c) => c.name)).size}
-          </span> total
+          <span className="font-mono text-[#A1A1AA] tabular-nums">{portcos.length}</span> total
         </span>
       </div>
 
       {selectedCompany && (
-        <PortfolioCompanyDrawer
+        <PortCoDrawer
           company={selectedCompany}
-          allCompanies={allPortfolioCompanies}
+          allCompanies={portcos}
           onClose={() => setSelectedCompany(null)}
         />
       )}
