@@ -6817,8 +6817,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge Partners II",
-    description: "",
+    description: "Operates wireless networks for airports, transit stations, stadiums, military bases, hospitals, and commercial properties using DAS, small cells, macro towers, and over one million Wi-Fi hotspots worldwide.",
     status: "Active",
+    website: "https://www.boingo.com",
+    yearFounded: 2001,
+    investmentYear: 2021,
+    headquarters: "Frisco, Texas, United States",
+    milestones: [
+      { date: "2001", event: "Founded by Sky Dayton (Earthlink co-founder)", category: "Founding" },
+      { date: "2021", event: "Acquired by DigitalBridge for ~$854 million", category: "Financing" },
+    ],
+    management: [
+      { name: "Mike Finley", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Boingo Wireless — Wikipedia", url: "https://en.wikipedia.org/wiki/Boingo_Wireless" },
+    ],
   },
   {
     name: "ConGlobal",
@@ -6875,8 +6889,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge Equity",
-    description: "",
+    description: "Builds and operates distributed network systems in North America utilizing DAS, small cell networks, remote radio solutions, and Wi-Fi to enhance wireless coverage and capacity.",
     status: "Active",
+    website: "https://extenet.com",
+    headquarters: "Lisle, Illinois, United States",
+    management: [
+      { name: "Richard Coyle", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "DigitalBridge — ExteNet Portfolio", url: "https://www.digitalbridge.com/portfolio/extenet-systems" },
+    ],
   },
   {
     name: "Fibernow",
@@ -6965,8 +6987,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "DigitalBridge Partners / Silver Lake",
-    description: "",
+    description: "One of the world's fastest-growing global data center providers, developing hyperscale campuses for cloud providers and large enterprises across North America, EMEA, and Asia-Pacific.",
     status: "Active",
+    website: "https://vantage-dc.com",
+    yearFounded: 2010,
+    headquarters: "Denver, Colorado, United States",
+    management: [
+      { name: "Sureel Choksi", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Vantage Data Centers — Company", url: "https://vantage-dc.com/company/" },
+    ],
   },
   {
     name: "Vantage SDC",
@@ -8354,8 +8385,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "GIC Infrastructure (25% minority stake)",
-    description: "",
+    description: "Formerly Covanta, one of the world's largest waste-to-energy operators converting ~21 million tons of waste annually into ~10 TWh of electricity and recycling ~600,000 tons of metals. GIC holds a 25% minority stake.",
     status: "Active",
+    website: "https://www.reworldwaste.com",
+    headquarters: "Florham Park, New Jersey, United States",
+    management: [
+      { name: "Azeez Mohammed", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Reworld — Wikipedia", url: "https://en.wikipedia.org/wiki/Reworld" },
+    ],
   },
   {
     name: "Rio Grande LNG (NextDecade)",
