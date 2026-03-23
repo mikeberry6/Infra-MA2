@@ -80,6 +80,14 @@ Fund names sometimes appear in variant forms across deals (e.g. `"CVC (CVC DIF)"
 - Excludes: Vice President, General Counsel, Controller, Director, VP, etc.
 - When adding `management[]` data to a PortCo, only include C-suite (CEO, CFO, COO, CTO, etc.) and President — the drawer filters out everything else
 
+### PortCo Drawer — Historical Milestones & Investment Callout
+
+- The milestones timeline auto-highlights the milestone representing the **investment firm's initial investment** with a special indigo callout (border, background wash, "Investment" badge, brighter text)
+- Detection logic: milestone date contains `investmentYear` AND (category is "Acquisition" or "Financing" OR event text mentions the firm name)
+- The highlighted milestone's year **must align** with the `investmentYear` field in Investment Details — if they don't match, fix the data
+- `investmentYear` represents the year the investment firm first invested in the business
+- When adding milestones for a new PortCo, always include one for the initial investment/acquisition by the firm, using category "Acquisition" or "Financing" as appropriate
+
 ### Cross-Database Linking: PortCo ↔ Fund
 
 - `PortCo.ownershipVehicle` maps to `Fund.fundName` (exact string match)
