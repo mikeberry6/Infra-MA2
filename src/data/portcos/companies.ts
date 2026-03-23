@@ -37,6 +37,7 @@ export const companies: PortCo[] = [
     status: "Active",
     website: "https://amwasteusa.com",
     yearFounded: 2010,
+    investmentYear: 2023,
     headquarters: "West Point, GA",
     management: [
       { name: "Chip Russell", title: "Founder & Chief Executive Officer" },
