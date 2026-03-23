@@ -10431,8 +10431,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Infrastructure Investments Fund (IIF)",
-    description: "",
+    description: "Owns and operates six active underground natural gas storage facilities in four US states with more than 110 Bcf in working gas capacity. Largest privately-owned gas storage company in the nation.",
     status: "Active",
+    website: "https://www.enstorinc.com",
+    headquarters: "Houston, Texas, United States",
+    investmentYear: 2022,
+    milestones: [
+      { date: "2022", event: "IIF acquired Enstor Gas from ArcLight Capital Partners", category: "Financing" },
+    ],
+    management: [
+      { name: "Paul Bieniawski", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "IIF Acquires Enstor Gas", url: "https://www.enstorinc.com/news/iif-acquires-enstor-gas-arclight" },
+    ],
   },
   {
     name: "Nexus Water Group",
@@ -10548,8 +10560,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Core Infrastructure",
-    description: "",
+    description: "Ohio Transmission Company (OHTCo) and Indiana Michigan Transmission Company (IMTCo) — FERC-regulated utilities that build, own, and operate transmission infrastructure. KKR and PSP Investments acquired 19.9% equity for $2.82 billion in 2025.",
     status: "Active",
+    website: "https://www.aep.com",
+    headquarters: "Columbus, Ohio, United States",
+    investmentYear: 2025,
+    sources: [
+      { label: "AEP — KKR/PSP Partnership", url: "https://www.aep.com/news/stories/view/10263/" },
+    ],
   },
   {
     name: "Altavair / Altitude Aircraft Leasing",
@@ -10559,8 +10577,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Infrastructure",
-    description: "",
+    description: "Commercial aircraft asset manager and lessor with over $12 billion in lease transactions across 94 customers in 40 countries and 300+ Boeing and Airbus aircraft. KKR committed $2.15 billion through the Altitude aircraft leasing funds.",
     status: "Active",
+    website: "https://www.altavair.com",
+    yearFounded: 2003,
+    headquarters: "Seattle, Washington, United States",
+    management: [
+      { name: "Steve Rimmer", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Altavair — About", url: "https://www.altavair.com/about/" },
+    ],
   },
   {
     name: "Atlantic Aviation",
@@ -10682,8 +10709,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Infrastructure Investors IV",
-    description: "",
+    description: "Intermodal service company offering tank container cleaning, heating, testing, maintenance, and transportation services at over 190 locations across the US, Canada, UK, Netherlands, Germany, and Spain. Formed from the combination of Quala, PSC, and Boasso Global.",
     status: "Active",
+    website: "https://depotconnect.com",
+    headquarters: "Tampa, Florida, United States",
+    management: [
+      { name: "Christopher Synek", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "DCI — About", url: "https://depotconnect.com/about/" },
+    ],
   },
   {
     name: "Metronet",
@@ -10922,8 +10957,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Macquarie Asset Management",
-    description: "",
+    description: "HPC/AI data center developer partnered with Macquarie in a $5 billion investment for up to 2 GW of HPC data center development, including the Ellendale Campus in North Dakota. Macquarie holds 15% common equity in the HPC business.",
     status: "Active",
+    website: "https://www.applieddigital.com",
+    yearFounded: 2021,
+    headquarters: "Dallas, Texas, United States",
+    management: [
+      { name: "Wes Cummins", title: "Chairman & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Macquarie — Applied Digital Partnership", url: "https://www.macquarie.com/us/en/about/news/2025/macquarie-asset-management-agrees-to-form-a-partnership-with-applied-digital.html" },
+    ],
   },
   {
     name: "Bluebird Network",
