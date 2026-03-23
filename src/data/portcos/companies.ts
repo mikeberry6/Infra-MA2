@@ -4851,8 +4851,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Super-Core Infra",
-    description: "",
+    description: "Regulated electric utility serving approximately 1.9 million customers across a 13,000-square-mile service territory in central and north Florida. Brookfield Super-Core acquired a minority stake as part of Duke Energy's strategic asset rotation.",
     status: "Active",
+    website: "https://www.duke-energy.com/our-company/about-us/our-utilities/duke-energy-florida",
+    headquarters: "St. Petersburg, Florida, United States",
+    sources: [
+      { label: "Duke Energy Florida — About", url: "https://www.duke-energy.com/our-company/about-us/our-utilities/duke-energy-florida" },
+    ],
   },
   {
     name: "Enercare",
@@ -6184,8 +6189,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund",
-    description: "",
+    description: "Consortium developing the New Terminal One at John F. Kennedy International Airport, a 2.4 million sq ft international terminal replacing the current Terminal 1. One of the largest public-private partnerships in US aviation history.",
     status: "Active",
+    headquarters: "New York, New York, United States",
+    sources: [
+      { label: "JFK New Terminal One — Website", url: "https://www.anewjfk.com/new-terminal-one/" },
+    ],
   },
   {
     name: "Cardinal Renewables",
@@ -6250,8 +6259,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund",
-    description: "",
+    description: "Privately-held independent cell tower company operating over 1,700 macro towers and 600 rooftop sites, developing build-to-suit towers for major US wireless carriers. Carlyle committed up to $1 billion.",
     status: "Active",
+    website: "https://www.tillmaninfrastructure.com",
+    yearFounded: 2016,
+    headquarters: "New York City, New York, United States",
+    management: [
+      { name: "Suruchi Ahuja", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Carlyle — Tillman Partnership", url: "https://www.carlyle.com/media-room/news-release-archive/carlyle-partners-with-tillman-global-holdings-commits-up-to-1-billion-to-accelerate-investments-in-us-towers" },
+    ],
   },
   {
     name: "Wyyerd Fiber",
@@ -10581,8 +10599,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Infrastructure",
-    description: "",
+    description: "Fiber broadband provider serving more than 3 million homes and businesses in over 300 communities across 19 US states, building and operating fiber-to-the-home networks since 2005.",
     status: "Active",
+    website: "https://www.metronet.com",
+    yearFounded: 2005,
+    investmentYear: 2025,
+    headquarters: "Evansville, Indiana, United States",
+    milestones: [
+      { date: "2005", event: "Founded; began building and operating fiber networks", category: "Founding" },
+      { date: "2025", event: "KKR and T-Mobile completed joint venture acquisition", category: "Financing" },
+    ],
+    management: [
+      { name: "Dave Heimbach", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Metronet — About Us", url: "https://www.metronet.com/about-us" },
+    ],
   },
   {
     name: "Monterra Energy",
