@@ -5690,8 +5690,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Real Assets (Infrastructure)",
-    description: "",
+    description: "Duluth-based energy company whose Minnesota Power subsidiary serves 150,000 customers and some of the nation's largest industrial customers across a 26,000-square-mile service territory in northern Minnesota. Also owns ALLETE Clean Energy.",
     status: "Active",
+    website: "https://www.allete.com",
+    headquarters: "Duluth, Minnesota, United States",
+    management: [
+      { name: "Bethany M. Owen", title: "Chair, President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "ALLETE — Website", url: "https://www.allete.com/" },
+    ],
   },
   {
     name: "AlphaGen",
@@ -6551,8 +6559,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "CI II / CI III",
-    description: "",
+    description: "America's first utility-scale offshore wind farm, located 15 miles south of Martha's Vineyard, Massachusetts. A 50/50 joint venture between CIP and Avangrid Renewables with 800 MW of capacity.",
     status: "Active",
+    website: "https://www.vineyardwind.com",
+    headquarters: "New Bedford, Massachusetts, United States",
+    management: [
+      { name: "Klaus Skoust Møller", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Vineyard Wind — Partners", url: "https://www.vineyardwind.com/partners" },
+    ],
   },
   // ─── DIF ────────────────────────────────────────────────────
   {
@@ -8670,8 +8686,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "CPP Investments & GIP Consortium",
-    description: "",
+    description: "Duluth-based energy company with Minnesota Power serving 150,000 customers across northern Minnesota and ALLETE Clean Energy providing renewable generation. Taken private by CPP/GIP consortium for ~$6.2 billion.",
     status: "Active",
+    website: "https://www.allete.com",
+    headquarters: "Duluth, Minnesota, United States",
+    management: [
+      { name: "Bethany M. Owen", title: "Chair, President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "ALLETE — Website", url: "https://www.allete.com/" },
+    ],
   },
   {
     name: "Aligned Data Centers",
@@ -10453,8 +10477,21 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Infrastructure Investors IV",
-    description: "",
+    description: "One of the largest portfolios of fixed-base operators (FBOs) in the world, providing fuel, hangarage, and related services to owners and operators of private jet aircraft at airports across the United States.",
     status: "Active",
+    website: "https://www.atlanticaviation.com",
+    headquarters: "Plano, Texas, United States",
+    investmentYear: 2021,
+    milestones: [
+      { date: "2004", event: "Macquarie Infrastructure Holdings acquired Atlantic Aviation and its 10 FBOs", category: "Financing" },
+      { date: "2021", event: "KKR acquired Atlantic Aviation from Macquarie Infrastructure Holdings", category: "Financing" },
+    ],
+    management: [
+      { name: "Jeff Foland", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Atlantic Aviation — About Us", url: "https://www.atlanticaviation.com/about-us/" },
+    ],
   },
   {
     name: "Avantus",
@@ -10508,8 +10545,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Infrastructure Investors",
-    description: "",
+    description: "Owns and operates over 40 carrier-neutral data centers in North America, Europe, and Asia, providing colocation and peering services. Taken private by KKR and GIP for ~$15 billion in 2022.",
     status: "Active",
+    website: "https://www.cyrusone.com",
+    yearFounded: 2000,
+    investmentYear: 2022,
+    headquarters: "Dallas, Texas, United States",
+    milestones: [
+      { date: "2000", event: "Founded by David Ferdman and Larry Bursten", category: "Founding" },
+      { date: "2022", event: "Taken private by KKR and GIP for ~$15 billion", category: "Financing" },
+    ],
+    management: [
+      { name: "Eric Schwartz", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "CyrusOne — Wikipedia", url: "https://en.wikipedia.org/wiki/CyrusOne" },
+    ],
   },
   {
     name: "Depot Connect International (DCI)",
