@@ -14,6 +14,8 @@ import {
   getUniqueFirms,
 } from "@/data/portcos";
 import type { PortCo, PortCoSector, PortCoRegion, PortCoStatus } from "@/data/portcos";
+import { funds, getStrategyColor } from "@/data/funds";
+import type { FundStrategy } from "@/data/funds";
 import {
   Search,
   X,
@@ -305,15 +307,25 @@ function PortCoDrawer({
   const visibleMilestones = showAllMilestones ? reversedMilestones : reversedMilestones.slice(0, 6);
 
   const sectorColor = getPortCoSectorColor(company.sector);
+  const matchedFund = funds.find(f => f.fundName === company.ownershipVehicle);
+  const cSuiteManagement = (company.management || []).filter(exec =>
+    /\bChief\b/i.test(exec.title) ||
+    (/\bPresident\b/i.test(exec.title) && !/\bVice\s*President\b/i.test(exec.title))
+  );
 
-  const detailRows = [
+  const detailRows: { label: string; value: string; dot?: string; badges?: FundStrategy[] }[] = [
     { label: "Firm", value: company.investmentFirm },
-    {
-      label: "Fund (Investment Date)",
-      value: company.investmentYear
-        ? `${company.ownershipVehicle} [${company.investmentYear}]`
-        : company.ownershipVehicle,
-    },
+    { label: "Fund", value: company.ownershipVehicle },
+    ...(matchedFund?.strategies?.length
+      ? [{
+          label: "Fund Strategy",
+          value: matchedFund.strategies.join(", "),
+          badges: matchedFund.strategies,
+        }]
+      : []),
+    ...(company.investmentYear
+      ? [{ label: "Investment Date", value: String(company.investmentYear) }]
+      : []),
     {
       label: "Sector",
       value: company.sector,
@@ -334,85 +346,65 @@ function PortCoDrawer({
       <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#27272A] bg-[#09090B] overflow-y-auto animate-slide-in-right">
         {/* ── Header ── */}
         <div className="sticky top-0 z-10 border-b border-[#27272A] bg-[#09090B]/95 backdrop-blur-md relative overflow-hidden">
-          {/* L1 — Sector accent bar */}
+          {/* Accent bar */}
           <div
-            className="absolute top-0 left-0 right-0 h-px"
+            className="absolute top-0 left-0 right-0 h-[2px]"
             style={{
               background: `linear-gradient(90deg, ${sectorColor} 0%, transparent 100%)`,
             }}
           />
-          {/* L2 — Noise texture */}
-          <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none" />
-          {/* L3 — Animated ambient orbs */}
+          {/* Ambient orbs */}
           <div
-            className="absolute w-32 h-32 -top-10 -left-10 rounded-full blur-3xl animate-pulse-slow pointer-events-none"
-            style={{ backgroundColor: sectorColor, opacity: 0.07 }}
+            className="absolute w-64 h-64 -top-20 -left-16 rounded-full animate-pulse-slow pointer-events-none"
+            style={{ backgroundColor: sectorColor, opacity: 0.10, filter: "blur(80px)" }}
           />
           <div
-            className="absolute w-24 h-24 -top-4 right-10 rounded-full blur-3xl animate-pulse-slower pointer-events-none"
-            style={{ backgroundColor: sectorColor, opacity: 0.05 }}
+            className="absolute w-48 h-48 -top-8 right-0 rounded-full animate-pulse-slower pointer-events-none"
+            style={{ backgroundColor: "#818CF8", opacity: 0.07, filter: "blur(80px)" }}
           />
 
-          {/* L4 — Content */}
-          <div className="relative px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
-            {/* Close button */}
+          {/* Content */}
+          <div className="relative px-4 sm:px-6 lg:px-8 py-5 lg:py-6">
             <button
               onClick={onClose}
-              className="absolute top-3 right-3 sm:right-5 rounded-[4px] p-2 text-[#52525B] hover:text-[#EDEDED] hover:bg-[rgba(255,255,255,0.05)] transition-colors"
+              className="absolute top-4 right-3 sm:right-5 rounded-[4px] p-2 text-[#52525B] hover:text-[#EDEDED] hover:bg-[rgba(255,255,255,0.05)] transition-colors"
             >
               <X className="h-5 w-5" />
             </button>
 
-            {/* Identity row: Monogram + Name + Meta */}
-            <div className="flex items-start gap-3.5 pr-10">
-              {/* Monogram */}
-              <div
-                className="shrink-0 w-11 h-11 rounded-lg flex items-center justify-center text-lg font-bold"
-                style={{
-                  color: sectorColor,
-                  backgroundColor: `${sectorColor}1f`,
-                  border: `1px solid ${sectorColor}40`,
-                }}
-              >
-                {company.name.charAt(0)}
+            <div className="pr-10">
+              <div className="flex items-center gap-2.5">
+                <h2 className="text-2xl lg:text-3xl font-bold text-[#EDEDED] leading-tight tracking-tight">
+                  {company.name}
+                </h2>
+                {company.website && (
+                  <a
+                    href={company.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#3f3f46] hover:text-[#818CF8] transition-colors shrink-0"
+                    title="Company website"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                )}
               </div>
 
-              <div className="min-w-0 flex-1">
-                {/* Company name + website */}
-                <div className="flex items-center gap-2">
-                  <h2 className="text-xl lg:text-2xl font-semibold text-[#EDEDED] leading-tight tracking-tight truncate">
-                    {company.name}
-                  </h2>
-                  {company.website && (
-                    <a
-                      href={company.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#3f3f46] hover:text-[#818CF8] transition-colors shrink-0"
-                      title="Company website"
-                    >
-                      <ExternalLink className="h-3.5 w-3.5" />
-                    </a>
-                  )}
-                </div>
-
-                {/* Firm + Status */}
-                <div className="flex items-center gap-1.5 mt-1">
-                  <span className="text-xs-dense text-[#52525B] truncate">
-                    {company.investmentFirm}
-                  </span>
-                  <span className="text-[#3f3f46] text-xs-dense shrink-0">·</span>
-                  <span
-                    className="inline-block h-1.5 w-1.5 rounded-full shrink-0"
-                    style={{ backgroundColor: getPortCoStatusColor(company.status) }}
-                  />
-                  <span
-                    className="text-xs-dense font-medium shrink-0"
-                    style={{ color: getPortCoStatusColor(company.status) }}
-                  >
-                    {company.status}
-                  </span>
-                </div>
+              <div className="flex items-center gap-1.5 mt-2">
+                <span className="text-sm-dense text-[#A1A1AA]">
+                  {company.investmentFirm}
+                </span>
+                <span className="text-[#3f3f46] text-sm-dense">·</span>
+                <span
+                  className="inline-block h-1.5 w-1.5 rounded-full shrink-0"
+                  style={{ backgroundColor: getPortCoStatusColor(company.status) }}
+                />
+                <span
+                  className="text-sm-dense font-medium shrink-0"
+                  style={{ color: getPortCoStatusColor(company.status) }}
+                >
+                  {company.status}
+                </span>
               </div>
             </div>
           </div>
@@ -426,7 +418,7 @@ function PortCoDrawer({
             <div className="flex items-center gap-2 mb-3">
               <Briefcase className="h-3.5 w-3.5 text-[#818CF8]" />
               <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
-                Company Details
+                Investment Details
               </span>
             </div>
             <div className="glass-card rounded-[4px] divide-y divide-[#27272A]">
@@ -436,15 +428,33 @@ function PortCoDrawer({
                   className="flex justify-between items-center px-4 py-2.5"
                 >
                   <span className="text-micro text-[#52525B]">{row.label}</span>
-                  <span className="text-micro text-[#EDEDED] text-right font-medium flex items-center gap-1.5">
-                    {row.dot && (
-                      <span
-                        className="inline-block h-2 w-2 rounded-full shrink-0"
-                        style={{ backgroundColor: row.dot }}
-                      />
-                    )}
-                    {row.value}
-                  </span>
+                  {row.badges ? (
+                    <div className="flex items-center gap-1.5 flex-wrap justify-end">
+                      {row.badges.map((s) => (
+                        <span
+                          key={s}
+                          className="text-micro font-medium px-2 py-0.5 rounded-[4px]"
+                          style={{
+                            color: getStrategyColor(s),
+                            backgroundColor: `${getStrategyColor(s)}1a`,
+                            border: `1px solid ${getStrategyColor(s)}33`,
+                          }}
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  ) : (
+                    <span className="text-micro text-[#EDEDED] text-right font-medium flex items-center gap-1.5">
+                      {row.dot && (
+                        <span
+                          className="inline-block h-2 w-2 rounded-full shrink-0"
+                          style={{ backgroundColor: row.dot }}
+                        />
+                      )}
+                      {row.value}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
@@ -547,8 +557,8 @@ function PortCoDrawer({
             </section>
           )}
 
-          {/* §4 — Key Management */}
-          {management.length > 0 && (
+          {/* §4 — Key Management (C-Suite + President only) */}
+          {cSuiteManagement.length > 0 && (
             <section className="border-t border-[#27272A] pt-6">
               <div className="flex items-center gap-2 mb-3">
                 <Users className="h-3.5 w-3.5 text-[#818CF8]" />
@@ -558,10 +568,10 @@ function PortCoDrawer({
               </div>
               <div
                 className={`grid gap-2 ${
-                  management.length === 1 ? "grid-cols-1" : "grid-cols-2"
+                  cSuiteManagement.length === 1 ? "grid-cols-1" : "grid-cols-2"
                 }`}
               >
-                {management.map((exec, i) => (
+                {cSuiteManagement.map((exec, i) => (
                   <div key={i} className="glass-card rounded-[4px] px-4 py-3">
                     <span className="text-sm-dense text-[#EDEDED] font-medium block leading-snug">
                       {exec.name}
