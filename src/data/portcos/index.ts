@@ -3,6 +3,8 @@ export type {
   PortCoSector,
   PortCoRegion,
   PortCoStatus,
+  PortCoMilestone,
+  MilestoneCategory,
 } from "./types";
 
 export {
@@ -12,6 +14,7 @@ export {
   getPortCoSectorColor,
   getPortCoRegionColor,
   getPortCoStatusColor,
+  getMilestoneCategoryColor,
   getUniqueCountries,
   getUniqueFirms,
   getUniqueSubsectors,

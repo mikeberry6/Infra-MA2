@@ -9,10 +9,13 @@ import {
   getPortCoSectorColor,
   getPortCoRegionColor,
   getPortCoStatusColor,
+  getMilestoneCategoryColor,
   getUniqueCountries,
   getUniqueFirms,
 } from "@/data/portcos";
 import type { PortCo, PortCoSector, PortCoRegion, PortCoStatus } from "@/data/portcos";
+import { deals } from "@/data/deals";
+import type { Deal } from "@/data/deals";
 import {
   Search,
   X,
@@ -20,6 +23,11 @@ import {
   Globe,
   Briefcase,
   Building2,
+  ExternalLink,
+  Calendar,
+  Clock,
+  FileText,
+  ArrowRight,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useFilterToggle } from "@/hooks/useFilterToggle";
@@ -275,6 +283,28 @@ function PortCoInsightsHero({ companies }: { companies: PortCo[] }) {
   );
 }
 
+// ─── Deal Cross-Reference ────────────────────────────────────
+
+function getRelatedDeals(companyName: string, allDeals: Deal[]): Deal[] {
+  const nameLower = companyName.toLowerCase();
+  // Strip parenthetical suffixes for matching, e.g. "AWG (Anglian Water Group)" → also match "AWG" and "Anglian Water Group"
+  const nameVariants = [nameLower];
+  const parenMatch = companyName.match(/^(.+?)\s*\((.+)\)$/);
+  if (parenMatch) {
+    nameVariants.push(parenMatch[1].trim().toLowerCase());
+    nameVariants.push(parenMatch[2].trim().toLowerCase());
+  }
+
+  return allDeals.filter((d) => {
+    const fields = [d.title, d.buyer, d.seller, d.description].map((f) =>
+      f.toLowerCase()
+    );
+    return nameVariants.some((variant) =>
+      fields.some((field) => field.includes(variant))
+    );
+  });
+}
+
 // ─── PortCo Drawer ──────────────────────────────────────────
 
 function PortCoDrawer({
@@ -286,6 +316,8 @@ function PortCoDrawer({
   allCompanies: PortCo[];
   onClose: () => void;
 }) {
+  const [showAllMilestones, setShowAllMilestones] = useState(false);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -298,6 +330,15 @@ function PortCoDrawer({
     (c) => c.investmentFirm === company.investmentFirm && c.name !== company.name
   );
 
+  const relatedDeals = useMemo(
+    () => getRelatedDeals(company.name, deals),
+    [company.name]
+  );
+
+  const locationDisplay = company.headquarters || company.country;
+  const milestones = company.milestones || [];
+  const visibleMilestones = showAllMilestones ? milestones : milestones.slice(0, 10);
+
   return (
     <>
       <div
@@ -309,14 +350,30 @@ function PortCoDrawer({
         <div className="sticky top-0 z-10 border-b border-[#27272A] bg-[#09090B]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
-              <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-[#EDEDED] leading-tight tracking-tight">
-                {company.name}
-              </h2>
+              <div className="flex items-center gap-2">
+                <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-[#EDEDED] leading-tight tracking-tight">
+                  {company.name}
+                </h2>
+                {company.website && (
+                  <a
+                    href={company.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#52525B] hover:text-[#818CF8] transition-colors shrink-0"
+                    title="Company website"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                )}
+              </div>
               <div className="flex items-center gap-2 mt-1.5 text-xs-dense text-[#52525B]">
                 <Globe className="h-3 w-3" />
-                <span>{company.country}</span>
+                <span>{locationDisplay}</span>
                 {company.region !== "North America" && (
                   <span className="text-[#3f3f46]">· {company.region}</span>
+                )}
+                {company.yearFounded && (
+                  <span className="text-[#3f3f46]">· Est. {company.yearFounded}</span>
                 )}
               </div>
             </div>
@@ -359,8 +416,15 @@ function PortCoDrawer({
 
         {/* Content */}
         <div className="p-4 sm:p-6 lg:p-8 space-y-5 lg:space-y-6">
+          {/* About / Description */}
           {company.description && (
             <div>
+              <div className="flex items-center gap-2 mb-3">
+                <FileText className="h-3.5 w-3.5 text-[#818CF8]" />
+                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                  About
+                </span>
+              </div>
               <p className="text-sm-dense text-[#A1A1AA] leading-relaxed">{company.description}</p>
             </div>
           )}
@@ -393,6 +457,117 @@ function PortCoDrawer({
               </div>
             </div>
           </div>
+
+          {/* Key Milestones Timeline */}
+          {milestones.length > 0 && (
+            <div className="border-t border-[#27272A] pt-4">
+              <div className="flex items-center gap-2 mb-3">
+                <Clock className="h-3.5 w-3.5 text-[#818CF8]" />
+                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                  Key Milestones
+                </span>
+              </div>
+              <div className="relative ml-2">
+                {/* Vertical line */}
+                <div className="absolute left-[5px] top-1 bottom-1 w-px bg-[#27272A]" />
+                <div className="space-y-3">
+                  {visibleMilestones.map((m, i) => (
+                    <div key={i} className="flex items-start gap-3 relative">
+                      {/* Dot */}
+                      <div
+                        className="relative z-10 mt-1.5 h-[11px] w-[11px] rounded-full shrink-0 border-2"
+                        style={{
+                          borderColor: getMilestoneCategoryColor(m.category),
+                          backgroundColor: `${getMilestoneCategoryColor(m.category)}33`,
+                        }}
+                      />
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-micro font-medium text-[#52525B] shrink-0 tabular-nums">
+                            {m.date}
+                          </span>
+                          <span
+                            className="text-micro px-1.5 py-0.5 rounded-[3px] shrink-0"
+                            style={{
+                              color: getMilestoneCategoryColor(m.category),
+                              backgroundColor: `${getMilestoneCategoryColor(m.category)}1a`,
+                            }}
+                          >
+                            {m.category}
+                          </span>
+                        </div>
+                        <p className="text-sm-dense text-[#A1A1AA] mt-0.5 leading-relaxed">
+                          {m.event}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {milestones.length > 10 && (
+                <button
+                  onClick={() => setShowAllMilestones(!showAllMilestones)}
+                  className="mt-3 ml-2 text-micro text-[#818CF8] hover:text-[#a5b4fc] transition-colors"
+                >
+                  {showAllMilestones
+                    ? "Show less"
+                    : `Show all ${milestones.length} milestones`}
+                </button>
+              )}
+            </div>
+          )}
+
+          {/* Related Deals */}
+          {relatedDeals.length > 0 && (
+            <div className="border-t border-[#27272A] pt-4">
+              <div className="flex items-center gap-2 mb-3">
+                <Calendar className="h-3.5 w-3.5 text-[#818CF8]" />
+                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                  Related Deals ({relatedDeals.length})
+                </span>
+              </div>
+              <div className="space-y-2">
+                {relatedDeals.slice(0, 10).map((d) => (
+                  <a
+                    key={d.id}
+                    href={`/tracker?search=${encodeURIComponent(company.name)}`}
+                    className="glass-card rounded-[4px] p-3 flex items-center justify-between gap-3 group hover:border-[#3f3f46] transition-colors block"
+                  >
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm-dense text-[#EDEDED] truncate">
+                        {d.title}
+                      </p>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-micro text-[#52525B]">{d.date}</span>
+                        <span
+                          className="text-micro font-medium"
+                          style={{
+                            color:
+                              d.status === "Closed"
+                                ? "#10b981"
+                                : d.status === "Announced"
+                                ? "#3b82f6"
+                                : "#f59e0b",
+                          }}
+                        >
+                          {d.status}
+                        </span>
+                      </div>
+                    </div>
+                    <ArrowRight className="h-3.5 w-3.5 text-[#3f3f46] group-hover:text-[#818CF8] transition-colors shrink-0" />
+                  </a>
+                ))}
+                {relatedDeals.length > 10 && (
+                  <a
+                    href={`/tracker?search=${encodeURIComponent(company.name)}`}
+                    className="text-micro text-[#818CF8] hover:text-[#a5b4fc] transition-colors ml-1"
+                  >
+                    View all {relatedDeals.length} deals in tracker →
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
 
           {/* Other companies from same firm */}
           {siblings.length > 0 && (
