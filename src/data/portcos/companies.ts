@@ -4359,8 +4359,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "",
+    description: "One of the largest midstream services companies in the Delaware Basin (Permian), serving ~90 producer customers with gathering, processing, transportation, and water handling services. Trades on NASDAQ under KNTK.",
     status: "Active",
+    website: "https://www.kinetik.com",
+    headquarters: "Midland, Texas, United States",
+    milestones: [
+      { date: "2022", event: "Formed through combination of Altus Midstream and BCP Raptor Holdco; began trading on NASDAQ as KNTK", category: "Other" },
+    ],
+    management: [
+      { name: "Jamie Welch", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Kinetik — Website", url: "https://www.kinetik.com/" },
+    ],
   },
   {
     name: "Lancium",
@@ -7088,8 +7099,21 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "EQT Infrastructure V",
-    description: "",
+    description: "Formerly Covanta, one of the world's largest waste-to-energy operators, safely converting ~21 million tons of waste into sustainable electricity (~10 TWh/year) and recycling ~600,000 tons of metals annually. Employs nearly 4,000 people.",
     status: "Active",
+    website: "https://www.reworldwaste.com",
+    headquarters: "Florham Park, New Jersey, United States",
+    investmentYear: 2021,
+    milestones: [
+      { date: "2021", event: "EQT Infrastructure completed $5.3 billion acquisition of Covanta", category: "Financing" },
+      { date: "2024", event: "Renamed from Covanta to Reworld", category: "Other" },
+    ],
+    management: [
+      { name: "Azeez Mohammed", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Reworld — Wikipedia", url: "https://en.wikipedia.org/wiki/Reworld" },
+    ],
   },
   {
     name: "Scale Microgrids",
@@ -10021,8 +10045,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Infratil Limited (37.3% Co-investment alongside NZ Super Fund, MEAG, and Management)",
-    description: "",
+    description: "Renewable energy developer and operator focused on utility-scale solar and wind projects across the United States. Owned by Infratil (37.3%), NZ Super Fund (37.3%), MEAG (11.4%), and management (14%).",
     status: "Active",
+    website: "https://www.longroadenergy.com",
+    yearFounded: 2016,
+    headquarters: "Boston, Massachusetts, United States",
+    management: [
+      { name: "Paul Gaynor", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Longroad Energy — Team", url: "https://www.longroadenergy.com/about-us/team/" },
+    ],
   },
   // ─── J.P. Morgan Asset Management ───────────────────────────
   {
