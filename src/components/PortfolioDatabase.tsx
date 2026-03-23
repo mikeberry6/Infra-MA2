@@ -512,36 +512,58 @@ function PortCoDrawer({
               <div className="relative ml-2">
                 <div className="absolute left-[5px] top-1 bottom-1 w-px bg-[#27272A]" />
                 <div className="space-y-3">
-                  {visibleMilestones.map((m, i) => (
-                    <div key={i} className="flex items-start gap-3 relative">
+                  {visibleMilestones.map((m, i) => {
+                    const isInvestmentMilestone = company.investmentYear
+                      ? m.date.includes(String(company.investmentYear)) &&
+                        (m.category === "Acquisition" || m.category === "Financing" ||
+                         m.event.toLowerCase().includes(company.investmentFirm.toLowerCase().split(" ")[0]))
+                      : false;
+                    return (
+                    <div
+                      key={i}
+                      className={`flex items-start gap-3 relative ${
+                        isInvestmentMilestone
+                          ? "bg-[#818CF8]/[0.06] -mx-2 px-2 py-2 rounded-[6px] border border-[#818CF8]/20"
+                          : ""
+                      }`}
+                    >
                       <div
-                        className="relative z-10 mt-1.5 h-[11px] w-[11px] rounded-full shrink-0 border-2"
+                        className={`relative z-10 mt-1.5 shrink-0 border-2 ${
+                          isInvestmentMilestone
+                            ? "h-[13px] w-[13px] rounded-full"
+                            : "h-[11px] w-[11px] rounded-full"
+                        }`}
                         style={{
-                          borderColor: getMilestoneCategoryColor(m.category),
-                          backgroundColor: `${getMilestoneCategoryColor(m.category)}33`,
+                          borderColor: isInvestmentMilestone ? "#818CF8" : getMilestoneCategoryColor(m.category),
+                          backgroundColor: isInvestmentMilestone ? "#818CF833" : `${getMilestoneCategoryColor(m.category)}33`,
                         }}
                       />
                       <div className="min-w-0 flex-1">
                         <div className="flex items-baseline gap-2 flex-wrap">
-                          <span className="text-micro font-medium text-[#52525B] shrink-0 tabular-nums">
+                          <span className={`text-micro font-medium shrink-0 tabular-nums ${
+                            isInvestmentMilestone ? "text-[#818CF8]" : "text-[#52525B]"
+                          }`}>
                             {m.date}
                           </span>
                           <span
                             className="text-micro px-1.5 py-0.5 rounded-[3px] shrink-0"
                             style={{
-                              color: getMilestoneCategoryColor(m.category),
-                              backgroundColor: `${getMilestoneCategoryColor(m.category)}1a`,
+                              color: isInvestmentMilestone ? "#818CF8" : getMilestoneCategoryColor(m.category),
+                              backgroundColor: isInvestmentMilestone ? "#818CF81a" : `${getMilestoneCategoryColor(m.category)}1a`,
                             }}
                           >
-                            {m.category}
+                            {isInvestmentMilestone ? "Investment" : m.category}
                           </span>
                         </div>
-                        <p className="text-sm-dense text-[#A1A1AA] mt-0.5 leading-relaxed">
+                        <p className={`text-sm-dense mt-0.5 leading-relaxed ${
+                          isInvestmentMilestone ? "text-[#EDEDED]" : "text-[#A1A1AA]"
+                        }`}>
                           {m.event}
                         </p>
                       </div>
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
               {milestones.length > 6 && (
