@@ -317,7 +317,7 @@ export function getUniqueManagers(companies: PortfolioCompanyWithContext[]): str
 
 // ─── Helper to create fund entries ──────────────────────────
 
-import { PORTFOLIO_DATA } from "./portfolios";
+// Portfolio data now lives in src/data/portcos/ (PortCo Database)
 
 function f(
   id: string,
@@ -345,7 +345,7 @@ function f(
     status,
     sectors: overrides?.sectors ?? [],
     regions: overrides?.regions ?? [],
-    portfolioCompanies: PORTFOLIO_DATA[id] ?? [],
+    portfolioCompanies: [],
     strategyUrl: overrides?.strategyUrl ?? "",
   };
 }
