@@ -10,8 +10,22 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "One of the largest water and water recycling companies in England and Wales, serving approximately six million customers across the east of England. Privatised in 1989, AWG operates and maintains a vast network of water and sewage infrastructure across its region.",
     status: "Active",
+    website: "https://www.anglianwatergroup.co.uk",
+    yearFounded: 1973,
+    investmentYear: 2006,
+    headquarters: "Huntingdon, Cambridgeshire, United Kingdom",
+    milestones: [
+      { date: "1973", event: "Anglian Water Authority established", category: "Founding" },
+      { date: "1989", event: "Privatised as part of UK water industry privatisation", category: "Other" },
+      { date: "2006", event: "Acquired by Osprey Consortium (3i, CPP Investments, IFM, Colonial First State) for £2.25bn", category: "Financing" },
+      { date: "2017", event: "3i Infrastructure sold its stake to Dalmore Capital and GLIL Infrastructure for ~£395m", category: "Divestiture" },
+    ],
+    sources: [
+      { label: "Anglian Water Group — Wikipedia", url: "https://en.wikipedia.org/wiki/Anglian_Water_Group" },
+      { label: "3i Infrastructure — AWG Portfolio", url: "https://www.3i.com/infrastructure/our-portfolio/awg/" },
+    ],
   },
   {
     name: "Adani Power",
@@ -112,8 +126,24 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Netherlands/Belgium",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "One of the largest waste treatment and disposal companies in the Netherlands, operating two energy-from-waste plants, two sorting and pre-treatment facilities, six anaerobic digestion facilities, seven composting facilities, and ten landfills.",
     status: "Active",
+    website: "https://www.attero.nl",
+    yearFounded: 1929,
+    investmentYear: 2018,
+    headquarters: "Wilp, Netherlands",
+    milestones: [
+      { date: "1929", event: "Founded as a regional waste management company in the Netherlands", category: "Founding" },
+      { date: "2018", event: "3i Infrastructure acquired 50% stake for €201m alongside co-investor DWS", category: "Financing" },
+      { date: "2023", event: "Ardian Infrastructure acquired 100% of Attero from 3i Infrastructure and co-investors", category: "Divestiture" },
+    ],
+    management: [
+      { name: "Javier Murillo", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Attero — Company Website", url: "https://www.attero.nl/en/" },
+      { label: "3i Infrastructure — Attero Investment", url: "https://www.3i-infrastructure.com/newsroom/press-releases/2018/3i-infrastructure-plc-announces-investment-in-attero/" },
+    ],
   },
   {
     name: "Autovias de Peaje en Sombra",
@@ -134,8 +164,16 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Managed Infrastructure",
-    description: "",
+    description: "George Best Belfast City Airport, a major city airport in Northern Ireland serving domestic and European routes. Acquired by 3i as part of a portfolio deal from the EISER Global Infrastructure Fund.",
     status: "Active",
+    website: "https://www.belfastcityairport.com",
+    headquarters: "Belfast, Northern Ireland, United Kingdom",
+    management: [
+      { name: "Matthew Hall", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Belfast City Airport — Wikipedia", url: "https://en.wikipedia.org/wiki/George_Best_Belfast_City_Airport" },
+    ],
   },
   {
     name: "Cascais Hospital (TDHOSP)",
@@ -200,8 +238,23 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Germany",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "One of the largest independent fibre-to-the-cabinet network operators in the Berlin/Brandenburg area, also operating three data centres. Provides the full spectrum of IP-based services including telephony, internet, and TV for consumers.",
     status: "Active",
+    website: "https://www.dns-net.de",
+    yearFounded: 1998,
+    investmentYear: 2021,
+    headquarters: "Berlin, Germany",
+    milestones: [
+      { date: "1998", event: "Founded by Alexander Lucke in Berlin", category: "Founding" },
+      { date: "2021", event: "3i Infrastructure acquired 60% stake for ~€182m; founder Lucke retained 40%", category: "Financing" },
+    ],
+    management: [
+      { name: "Alexander Lucke", title: "Co-CEO & Founder" },
+      { name: "Ralph Steffens", title: "Co-CEO" },
+    ],
+    sources: [
+      { label: "3i Infrastructure — DNS:NET Acquisition", url: "https://www.3i-infrastructure.com/newsroom/press-releases/2021/3i-infrastructure-plc-agrees-to-acquire-dnsnet/" },
+    ],
   },
   {
     name: "EC Waste",
@@ -222,19 +275,42 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Managed Infrastructure Acquisitions (MIA)",
-    description: "",
+    description: "One of the UK's largest independent multi-utility companies, providing the 'last mile' connection between properties and the gas and electricity distribution networks, serving over one million homes and businesses.",
     status: "Active",
+    website: "https://espug.com",
+    headquarters: "Blaydon-on-Tyne, United Kingdom",
+    management: [
+      { name: "Kevin O'Connor", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "ESP Utilities Group — Website", url: "https://espug.com/" },
+    ],
   },
   {
     name: "ESVAGT",
     investmentFirm: "3i Infrastructure",
     sector: "Transportation",
-    subsector: "Energy Transition (Maritime",
+    subsector: "Energy Transition (Maritime)",
     region: "Europe",
     country: "Denmark",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "Leading provider of safety and support at sea, operating a fleet of purpose-built vessels serving the offshore energy and wind industries in the North Sea. Wholly owned by 3i Infrastructure.",
     status: "Active",
+    website: "https://esvagt.com",
+    yearFounded: 1981,
+    headquarters: "Esbjerg, Denmark",
+    milestones: [
+      { date: "1981", event: "Founded in Esbjerg, Denmark", category: "Founding" },
+      { date: "2015", event: "3i Infrastructure and AMP Capital acquired ESVAGT from Maersk Group", category: "Financing" },
+      { date: "2021", event: "Partnered with Crowley for US offshore wind capacity", category: "Expansion" },
+    ],
+    management: [
+      { name: "Kristian Ole Jakobsen", title: "Co-CEO" },
+      { name: "Søren Karas", title: "Co-CEO" },
+    ],
+    sources: [
+      { label: "ESVAGT — About", url: "https://esvagt.com/about/" },
+    ],
   },
   {
     name: "Elenia",
@@ -244,8 +320,22 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Finland",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "The second largest electricity distribution business in Finland, serving approximately 417,000 customers with a ~12% market share. Also operates a complementary district heating business.",
     status: "Active",
+    website: "https://www.elenia.fi",
+    yearFounded: 2012,
+    investmentYear: 2012,
+    headquarters: "Tampere, Finland",
+    milestones: [
+      { date: "2012", event: "Formed to consolidate Vattenfall's Finnish power grids; acquired by consortium including 3i", category: "Financing" },
+      { date: "2017", event: "3i Infrastructure sold its stake to Allianz, Macquarie, and State Pension Fund of Finland for ~£725m", category: "Divestiture" },
+    ],
+    management: [
+      { name: "Tapani Liuhala", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Elenia — Wikipedia", url: "https://en.wikipedia.org/wiki/Elenia" },
+    ],
   },
   {
     name: "Eversholt Rail",
@@ -255,8 +345,23 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "One of three major UK rolling stock companies created from the privatisation of British Rail, leasing trains to train operating companies across the UK rail network.",
     status: "Active",
+    website: "https://eversholtrail.co.uk",
+    yearFounded: 1994,
+    investmentYear: 2010,
+    headquarters: "London, United Kingdom",
+    milestones: [
+      { date: "1994", event: "Established as subsidiary of British Rail during privatisation", category: "Founding" },
+      { date: "2010", event: "3i Infrastructure acquired 33% interest with Morgan Stanley and STAR Capital", category: "Financing" },
+      { date: "2015", event: "3i Infrastructure sold stake to CK Investments for £365m", category: "Divestiture" },
+    ],
+    management: [
+      { name: "Mary Kenny", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Eversholt Rail — Wikipedia", url: "https://en.wikipedia.org/wiki/Eversholt_Rail_Group" },
+    ],
   },
   {
     name: "FLAG (Global Cloud Xchange)",
@@ -288,8 +393,23 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "The UK's largest biomethane producer, operating 12 anaerobic digestion plants primarily across the East of England that produce renewable biomethane gas from agricultural crops.",
     status: "Active",
+    website: "https://www.futurebiogas.com",
+    yearFounded: 2010,
+    investmentYear: 2023,
+    headquarters: "Guildford, United Kingdom",
+    milestones: [
+      { date: "2010", event: "Founded by Philipp Lukas", category: "Founding" },
+      { date: "2023", event: "Acquired by 3i Infrastructure", category: "Financing" },
+      { date: "2024", event: "Acquired portfolio of six additional anaerobic digestion facilities", category: "Acquisition" },
+    ],
+    management: [
+      { name: "Philipp Lukas", title: "Founder & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Future Biogas — About Us", url: "https://www.futurebiogas.com/about-us/" },
+    ],
   },
   {
     name: "Gerediaga-Elo rrio Motorway (AGESA)",
@@ -321,8 +441,22 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "The largest generator of electricity from landfill gas in the UK, operating 121 landfill sites with total installed capacity exceeding 300 MW. Expanding into solar power and battery energy storage.",
     status: "Active",
+    website: "https://infinis.com",
+    yearFounded: 2006,
+    investmentYear: 2016,
+    headquarters: "Northampton, United Kingdom",
+    milestones: [
+      { date: "2006", event: "Created as subsidiary of Waste Recycling Group; retained by Terra Firma when WRG was sold", category: "Founding" },
+      { date: "2016", event: "Acquired by 3i Infrastructure", category: "Financing" },
+    ],
+    management: [
+      { name: "Bruce Heppenstall", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Infinis — About Us", url: "https://infinis.com/about-us" },
+    ],
   },
   {
     name: "Ionisos",
@@ -332,8 +466,22 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "France",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "European leader in cold sterilization and crosslinking services for medical devices, pharmaceuticals, cosmetics, and food products using ionizing radiation technologies.",
     status: "Active",
+    website: "https://www.ionisos.com",
+    yearFounded: 1993,
+    investmentYear: 2019,
+    headquarters: "Dagneux, France",
+    milestones: [
+      { date: "1993", event: "Merged with Amphytrion to form IONISOS", category: "Founding" },
+      { date: "2019", event: "3i Infrastructure acquired up to 100% from Ardian Expansion for ~€220m", category: "Financing" },
+    ],
+    management: [
+      { name: "Christoph Herkens", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "IONISOS — Website", url: "https://www.ionisos.com/en/" },
+    ],
   },
   {
     name: "Joulz",
@@ -343,8 +491,22 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Netherlands/Belgium",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "Leading owner and provider of essential energy infrastructure equipment and services in the Netherlands, serving approximately 21,000 industrial, commercial, and public sector clients.",
     status: "Active",
+    yearFounded: 2009,
+    investmentYear: 2019,
+    headquarters: "Rotterdam, Netherlands",
+    milestones: [
+      { date: "2009", event: "Established as part of Stedin Holding NV", category: "Founding" },
+      { date: "2019", event: "3i Infrastructure acquired 100% from Stedin for ~€220m", category: "Financing" },
+      { date: "2021", event: "Expanded into solar energy through acquisition of Zonel Energy", category: "Acquisition" },
+    ],
+    management: [
+      { name: "Sytse Zuidema", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "3i Infrastructure — Joulz Portfolio", url: "https://www.3i.com/infrastructure/our-portfolio/joulz/" },
+    ],
   },
   {
     name: "KMC Infratech",
@@ -453,8 +615,20 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "The UK's market-leading temporary traffic management equipment rental company, with a nationwide network of over 25 depots and 250 employees.",
     status: "Active",
+    website: "https://srl.co.uk",
+    investmentYear: 2021,
+    headquarters: "Cheshire, United Kingdom",
+    milestones: [
+      { date: "2021", event: "3i Infrastructure acquired 92% stake for ~£191m from LDC", category: "Financing" },
+    ],
+    management: [
+      { name: "Mark Eburne", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "SRL Traffic Systems — About", url: "https://srl.co.uk/about/" },
+    ],
   },
   {
     name: "Shared Tower",
@@ -475,8 +649,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "3i Proprietary Capital / US Platform",
-    description: "",
+    description: "Global leader in self-service vended products, providing luggage carts, electronic lockers, commercial strollers, and massage chairs at over 3,400 locations worldwide, including 98 of the top 100 US airports.",
     status: "Active",
+    website: "https://smartecarte.com",
+    yearFounded: 1967,
+    investmentYear: 2017,
+    headquarters: "White Bear Lake, Minnesota, United States",
+    milestones: [
+      { date: "1967", event: "Founded", category: "Founding" },
+      { date: "2017", event: "3i Group invested approximately $353m, its first North American infrastructure transaction", category: "Financing" },
+    ],
+    management: [
+      { name: "Drew Niemeyer", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Smarte Carte — Our Story", url: "https://smartecarte.com/about-us/our-story/" },
+    ],
   },
   {
     name: "Soma Enterprise",
@@ -508,8 +696,22 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Netherlands/Belgium",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "The largest independent lessor of airport ground support equipment (GSE), operating at more than 230 airports across more than 20 countries worldwide.",
     status: "Active",
+    website: "https://www.tcr-group.com",
+    yearFounded: 1999,
+    investmentYear: 2022,
+    headquarters: "Brussels, Belgium",
+    milestones: [
+      { date: "1999", event: "Founded in Belgium", category: "Founding" },
+      { date: "2022", event: "Acquired by 3i Infrastructure", category: "Financing" },
+    ],
+    management: [
+      { name: "Jason Watson", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "TCR Group — About Us", url: "https://www.tcr-group.com/about-us" },
+    ],
   },
   {
     name: "Tampnet",
@@ -519,8 +721,21 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Norway",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "The world's largest offshore telecommunications network operator, providing high-capacity, low-latency communications for the offshore energy, wind, maritime, and carrier sectors across the North Sea and Gulf of Mexico.",
     status: "Active",
+    website: "https://www.tampnet.com",
+    yearFounded: 2001,
+    headquarters: "Stavanger, Norway",
+    milestones: [
+      { date: "2001", event: "Founded in Stavanger, Norway", category: "Founding" },
+      { date: "2023", event: "Acquired German dasNetz to expand offshore wind connectivity", category: "Acquisition" },
+    ],
+    management: [
+      { name: "Elie Hanna", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "3i Infrastructure — Tampnet Portfolio", url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/tampnet/" },
+    ],
   },
   {
     name: "UK Projects Portfolio",
@@ -541,8 +756,23 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "France",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "Vertically integrated independent renewable energy group active in wind, photovoltaic solar, hydroelectricity, offshore wind, green hydrogen, and battery storage across Europe.",
     status: "Active",
+    website: "https://www.valorem-energie.com",
+    yearFounded: 1994,
+    investmentYear: 2016,
+    headquarters: "Bègles, France",
+    milestones: [
+      { date: "1994", event: "Founded by Jean-Yves Grandidier", category: "Founding" },
+      { date: "2016", event: "3i Infrastructure acquired 33% minority interest for €75m", category: "Financing" },
+      { date: "2024", event: "3i Infrastructure sold stake to AIP Management for €309m (21% IRR, 3.6x multiple)", category: "Divestiture" },
+    ],
+    management: [
+      { name: "Jean-Yves Grandidier", title: "Founder & CEO" },
+    ],
+    sources: [
+      { label: "Valorem — Pioneers at Heart", url: "https://www.valorem-energie.com/en/pioneers-at-heart/" },
+    ],
   },
   {
     name: "Wireless Infrastructure Group (WIG)",
@@ -552,8 +782,22 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description: "The UK's second largest independent tower company, operating over 2,000 towers and wireless infrastructure assets representing approximately 7% of the UK market.",
     status: "Active",
+    website: "https://www.wirelessinfrastructure.com",
+    investmentYear: 2016,
+    headquarters: "Bellshill, Scotland, United Kingdom",
+    milestones: [
+      { date: "2016", event: "3i Infrastructure invested £75m for minority interest", category: "Financing" },
+      { date: "2018", event: "3i Infrastructure increased ownership to 93% with additional £187m", category: "Expansion" },
+      { date: "2019", event: "3i sold 93% stake to Brookfield Infrastructure for £387m (27% IRR, 1.7x multiple)", category: "Divestiture" },
+    ],
+    management: [
+      { name: "Scott Coates", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "WIG — Website", url: "https://www.wirelessinfrastructure.com/" },
+    ],
   },
   // ─── ADIA Infrastructure ────────────────────────────────────
   {
