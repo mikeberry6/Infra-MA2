@@ -216,7 +216,7 @@ export const batch3: PortCo[] = [
   // ─── Apollo Global Management ─────────────────────────────
   {
     name: "Argo C&I Solar (Pearl/Ruby)",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Energy Transition",
     subsector: "Distributed Solar",
     region: "North America",
@@ -293,7 +293,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "Carville Energy Center",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Power Generation",
     subsector: "Cogeneration",
     region: "North America",
@@ -304,7 +304,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "Corning Natural Gas",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Regulated Utilities",
     subsector: "Gas Distribution",
     region: "North America",
@@ -315,7 +315,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "Cross-Sound Cable Company",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Regulated Utilities",
     subsector: "Transmission",
     region: "North America",
@@ -326,7 +326,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "Duquesne Light Company (DQE)",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Regulated Utilities",
     subsector: "Electric Distribution",
     region: "North America",
@@ -370,7 +370,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "FleetLogix",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Transportation",
     subsector: "Fleet Management",
     region: "North America",
@@ -381,7 +381,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "Freight Ninja",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Transportation",
     subsector: "Logistics",
     region: "North America",
@@ -414,7 +414,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "Hawai\u02BBi Gas",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Regulated Utilities",
     subsector: "Gas Distribution",
     region: "North America",
@@ -425,7 +425,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "Hudson Transmission Partners",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Regulated Utilities",
     subsector: "Transmission",
     region: "North America",
@@ -436,7 +436,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "Indigo Park Canada",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Transportation",
     subsector: "Parking",
     region: "North America",
@@ -458,7 +458,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "LAZ Parking",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Transportation",
     subsector: "Parking & Mobility",
     region: "North America",
@@ -469,7 +469,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "Leatherstocking Gas Company",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Regulated Utilities",
     subsector: "Gas Distribution",
     region: "North America",
@@ -513,7 +513,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "Oneta Energy Center",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Power Generation",
     subsector: "Natural Gas",
     region: "North America",
@@ -524,7 +524,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "Pike County Light & Power",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Regulated Utilities",
     subsector: "Electric & Gas",
     region: "North America",
@@ -546,7 +546,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "Pueblo Airport Generating Station",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Power Generation",
     subsector: "Natural Gas",
     region: "North America",
@@ -557,7 +557,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "Smoky Mountain Hydro",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Energy Transition",
     subsector: "Hydroelectric",
     region: "North America",
@@ -601,7 +601,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "TierPoint",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Digital Infrastructure",
     subsector: "Data Centers",
     region: "North America",
@@ -623,7 +623,7 @@ export const batch3: PortCo[] = [
   },
   {
     name: "US Water Systems",
-    investmentFirm: "Apollo Global Management",
+    investmentFirm: "Argo Infrastructure Partners",
     sector: "Regulated Utilities",
     subsector: "Water",
     region: "North America",
