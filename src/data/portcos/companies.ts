@@ -6167,8 +6167,23 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund",
-    description: "",
+    description: "Edge data center and cloud infrastructure provider, rebranded from Involta in 2024 amid surging demand for edge data centers and AI infrastructure. Founded in 2007 in Cedar Rapids, Iowa.",
     status: "Active",
+    website: "https://www.arkdna.com",
+    yearFounded: 2007,
+    investmentYear: 2021,
+    headquarters: "Cedar Rapids, Iowa, United States",
+    milestones: [
+      { date: "2007", event: "Founded as Involta by Bruce Lehrman", category: "Founding" },
+      { date: "2021", event: "Acquired by Carlyle Group", category: "Financing" },
+      { date: "2024", event: "Rebranded from Involta to Ark Data Centers", category: "Other" },
+    ],
+    management: [
+      { name: "Brett Lindsey", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Ark Data Centers — Leadership", url: "https://www.arkdna.com/about/leadership-and-board/" },
+    ],
   },
   {
     name: "Aspen Power",
@@ -6279,8 +6294,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund",
-    description: "",
+    description: "Fiber-to-the-home internet service provider offering wireless, fiber, dark fiber, VoIP, and unified communications services across four US states.",
     status: "Active",
+    website: "https://www.wyyerd.com",
+    headquarters: "Boulder, Colorado, United States",
+    management: [
+      { name: "Justin Freesmeier", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Wyyerd Fiber — About", url: "https://www.wyyerd.com/about" },
+    ],
   },
   // ─── Copenhagen Infrastructure Partners ─────────────────────
   {
@@ -7347,8 +7370,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "EQT Transition Infrastructure",
-    description: "",
+    description: "Vertically integrated developer, acquirer, owner, and operator of microgrids and distributed energy resources serving C&I, EV fleet, data center, municipal, university, hospital, and agricultural customers. Portfolio of ~250 MW operating/in-construction with 2.5 GW pipeline.",
     status: "Active",
+    website: "https://www.scalemicrogrids.com",
+    headquarters: "Ridgewood, New Jersey, United States",
+    management: [
+      { name: "Ryan Goodman", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Scale Microgrids — About Us", url: "https://www.scalemicrogrids.com/about-us" },
+    ],
   },
   {
     name: "Seven Seas Water Group",
