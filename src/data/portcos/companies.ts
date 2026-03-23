@@ -4220,8 +4220,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "",
+    description: "Develops, owns, and operates utility-scale energy storage and hybrid renewable energy projects with over 22 GW in development and 33 projects in operation or construction across North America.",
     status: "Active",
+    website: "https://www.aypa.com",
+    investmentYear: 2020,
+    headquarters: "Austin, Texas, United States",
+    milestones: [
+      { date: "2020", event: "Acquired by Blackstone Energy Partners (formerly NRStor C&I); rebranded as Aypa Power", category: "Financing" },
+    ],
+    management: [
+      { name: "Moe Hajabed", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Aypa Power — About", url: "https://www.aypa.com/about/" },
+    ],
   },
   {
     name: "Carrix (SSA Marine)",
@@ -4271,8 +4283,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "",
+    description: "The largest and fastest-growing SaaS company and analytics provider dedicated to the energy market, serving 8,000 customers across 50 countries with real-time analytics, AI-driven insights, and benchmark data.",
     status: "Active",
+    website: "https://www.enverus.com",
+    yearFounded: 1999,
+    investmentYear: 2025,
+    headquarters: "Austin, Texas, United States",
+    milestones: [
+      { date: "1999", event: "Founded", category: "Founding" },
+      { date: "2025", event: "Blackstone acquired Enverus from Hellman & Friedman and Genstar Capital", category: "Financing" },
+    ],
+    management: [
+      { name: "Manuj Nikhanj", title: "Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Blackstone — Enverus Acquisition", url: "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-enverus/" },
+    ],
   },
   {
     name: "Geosyntec Consultants",
@@ -4282,8 +4308,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "",
+    description: "Leading global environmental engineering, design, and consulting firm operating from over 90 offices across the US, Canada, Europe, Australia, and Middle East with 1,700+ engineers, scientists, and specialists.",
     status: "Active",
+    website: "https://geosyntec.com",
+    headquarters: "Boca Raton, Florida, United States",
+    management: [
+      { name: "Peter Zeeb", title: "President & Chief Executive Officer" },
+    ],
+    sources: [
+      { label: "Blackstone — Geosyntec Investment", url: "https://www.blackstone.com/news/press/blackstone-energy-partners-announces-majority-investment-in-geosyntec-leading-global-provider-of-environmental-engineering-design-and-consulting-services/" },
+    ],
   },
   {
     name: "Hill Top Energy Center",
@@ -4645,8 +4679,16 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "",
+    description: "Premier global market-infrastructure platform for carbon and environmental commodities, operating the world's largest integrated marketplace connecting diverse markets and participants for the energy transition.",
     status: "Active",
+    website: "https://www.xpansiv.com",
+    headquarters: "San Francisco, California, United States",
+    milestones: [
+      { date: "2022", event: "Blackstone Energy Partners committed $400m to lead strategic investment", category: "Financing" },
+    ],
+    sources: [
+      { label: "Xpansiv — About", url: "https://www.xpansiv.com/about" },
+    ],
   },
   // ─── Brookfield Asset Management ────────────────────────────
   {
@@ -4749,8 +4791,17 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Super-Core Infra",
-    description: "",
+    description: "LNG export terminal and natural gas storage facility located near Lusby, Maryland on the Chesapeake Bay. Brookfield Super-Core holds a 25% non-controlling equity stake alongside Berkshire Hathaway Energy (75%).",
     status: "Active",
+    investmentYear: 2019,
+    headquarters: "Lusby, Maryland, United States",
+    milestones: [
+      { date: "2019", event: "Brookfield Super-Core acquired 25% non-controlling stake from Dominion Energy for ~$2 billion", category: "Financing" },
+      { date: "2023", event: "Berkshire Hathaway Energy acquired Dominion's remaining 50% partnership stake", category: "Other" },
+    ],
+    sources: [
+      { label: "Cove Point LNG — Wikipedia", url: "https://en.wikipedia.org/wiki/Dominion_Cove_Point_LNG" },
+    ],
   },
   {
     name: "Deriva Energy (fka Duke Energy Renewables)",
