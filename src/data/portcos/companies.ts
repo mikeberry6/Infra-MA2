@@ -307,8 +307,66 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Managed Infrastructure",
-    description: "",
+    description:
+      "George Best Belfast City Airport (BHD) is Northern Ireland's city-centre airport, located just five minutes from Belfast city centre, serving over 2.3 million passengers annually across domestic UK and European routes. The airport's Master Plan 2040 targets growth to 7 million passengers through terminal expansion, a new pier, and a potential direct rail connection.",
     status: "Active",
+    website: "https://www.belfastcityairport.com",
+    yearFounded: 1983,
+    investmentYear: 2017,
+    headquarters: "Belfast, Northern Ireland",
+    management: [
+      { name: "Matthew Hall", title: "Chief Executive Officer" },
+      { name: "Mark Beattie", title: "Chief Operating Officer" },
+      { name: "Katy Best", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      {
+        date: "March 2026",
+        category: "Expansion",
+        event:
+          "Belfast City Airport publishes Master Plan 2040, outlining £200 million investment to grow capacity to 7 million passengers by 2040",
+      },
+      {
+        date: "August 2021",
+        category: "Management",
+        event:
+          "Matthew Hall appointed Chief Executive Officer, succeeding Brian Ambrose who led the airport for 16 years",
+      },
+      {
+        date: "June 2017",
+        category: "Financing",
+        event:
+          "3i Managed Infrastructure Acquisitions completes acquisition of Belfast City Airport from EISER Global Infrastructure Fund following European Commission approval",
+      },
+      {
+        date: "September 2008",
+        category: "Acquisition",
+        event:
+          "EISER Global Infrastructure Fund acquires Belfast City Airport from Ferrovial for £132.5 million",
+      },
+      {
+        date: "May 2006",
+        category: "Other",
+        event:
+          "Airport renamed George Best Belfast City Airport in honour of Northern Irish footballer George Best",
+      },
+      {
+        date: "January 1983",
+        category: "Founding",
+        event:
+          "Airport opens for commercial passenger flights as Belfast Harbour Airport",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — Belfast City Airport Portfolio Page",
+        url: "https://www.3i.com/infrastructure/our-portfolio/belfast-city-airport/",
+      },
+      {
+        label: "Belfast City Airport — Official Website",
+        url: "https://www.belfastcityairport.com",
+      },
+    ],
   },
   {
     name: "Cascais Hospital (TDHOSP)",
