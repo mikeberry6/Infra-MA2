@@ -158,6 +158,42 @@ When adding portfolio companies to `src/data/portcos/companies.ts`:
 - Use existing `PortCoSector`, `PortCoRegion`, `PortCoStatus` union types
 - **Do NOT batch-add portcos without user review** — always confirm individual companies with the user before adding them
 
+### Scorecard Research & Enrichment Methodology
+
+The full methodology is documented in `SCORECARD_METHODOLOGY.md`. Key principles:
+
+**Source-First Approach:** Never write scorecard data without first collecting and cross-referencing sources. Minimum 3 sources per company (1 from fund manager, 1 from company itself, 1 independent third-party).
+
+**Description Standard (80-120 words, 2-3 sentences):**
+1. What the company does, its market position, and geography
+2. Quantifiable scale (customers, capacity, employees, revenue)
+3. Investment context (who invested, when, why)
+
+**Milestone Requirements (5-8 minimum):**
+- Must include: Founding event, Investment event (category "Financing", date matching `investmentYear`), at least 1 operational milestone
+- Investment milestone must mention fund name in event text for drawer highlighting to work
+- Exit milestone required if `status: "Realized"`
+- Every date/event must be traceable to a source URL — no AI-hallucinated milestones
+
+**Management (C-Suite Only):** CEO, CFO, COO, CTO, President. Verify against company website + LinkedIn. Exclude VP, General Counsel, Controller, Director.
+
+**Audit Checklist (for reviewing existing scorecards):**
+- Description matches what company actually does (web-verify)
+- Quantitative claims are source-backed
+- investmentYear matches milestone date
+- ownershipVehicle exists in funds.ts
+- Status matches fund's portfolio classification (active vs realized)
+- Management is current (no departed executives)
+- Source URLs are live and support the claims
+- No parent/subsidiary confusion
+
+**Known Pitfalls:**
+- AI hallucination of specific milestone dates/events — always verify
+- Parent vs subsidiary confusion (e.g., GFL Environmental Inc. ≠ GFL Environmental Services carve-out)
+- Fund name variants (CVC vs DIF Capital Partners) — use canonical name from funds.ts
+- Mixing up investment date with company founding date
+- Stale management data — executives change frequently
+
 ## Fund Database Page (`/funds`)
 
 ### Data & Types
