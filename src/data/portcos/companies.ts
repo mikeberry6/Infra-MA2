@@ -82,8 +82,59 @@ export const companies: PortCo[] = [
     region: "Asia-Pacific",
     country: "India",
     ownershipVehicle: "3i India Infrastructure Fund",
-    description: "",
-    status: "Active",
+    description:
+      "Adani Power Limited is India's largest private thermal power producer, operating approximately 17,550 MW of installed coal-based generation capacity across 11 power plants in Gujarat, Maharashtra, Karnataka, Rajasthan, Chhattisgarh, Madhya Pradesh, Jharkhand, and Tamil Nadu. A subsidiary of the Adani Group, the company was a pioneer in deploying supercritical and ultra-supercritical coal technology in India, including the 4,620 MW Mundra plant — the largest single-location coal-fired power project in the country.",
+    status: "Realized",
+    website: "https://www.adanipower.com",
+    yearFounded: 1996,
+    investmentYear: 2007,
+    headquarters: "Ahmedabad, Gujarat",
+    management: [
+      { name: "Shersingh B. Khyalia", title: "Chief Executive Officer" },
+      { name: "Dilip Kumar Jha", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "May 2014",
+        category: "Divestiture",
+        event:
+          "3i Group partially exits its Adani Power stake as part of broader withdrawal from Indian private equity",
+      },
+      {
+        date: "August 2009",
+        category: "IPO",
+        event:
+          "Adani Power lists on BSE and NSE via IPO raising approximately ₹3,017 crore (~$625 million), oversubscribed 21 times",
+      },
+      {
+        date: "July 2009",
+        category: "Expansion",
+        event:
+          "First 330 MW unit at Mundra Thermal Power Plant commissioned, marking the start of commercial power generation",
+      },
+      {
+        date: "January 2007",
+        category: "Financing",
+        event:
+          "3i India Infrastructure Fund invests $227 million in Adani Power to fund power generation development",
+      },
+      {
+        date: "August 1996",
+        category: "Founding",
+        event:
+          "Adani Power Limited incorporated in Ahmedabad, Gujarat, initially focused on power trading",
+      },
+    ],
+    sources: [
+      {
+        label: "Adani Power — About Us",
+        url: "https://www.adanipower.com/about-us",
+      },
+      {
+        label: "Adani Power — Wikipedia",
+        url: "https://en.wikipedia.org/wiki/Adani_Power",
+      },
+    ],
   },
   {
     name: "Amwaste",
