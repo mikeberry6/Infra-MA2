@@ -310,7 +310,15 @@ export const companies: PortCo[] = [
     yearFounded: 2010,
     investmentYear: 2017,
     headquarters: "Madrid, Spain",
+    // SPV concession managed by Sacyr Concesiones; no dedicated C-suite management team
+    management: [],
     milestones: [
+      {
+        date: "January 2021",
+        category: "Other",
+        event:
+          "Royal Decree transfers the first 2.4 km of the RM-15 to the Spanish State as part of the Arco Noroeste de Murcia project",
+      },
       {
         date: "April 2017",
         category: "Financing",
@@ -318,16 +326,22 @@ export const companies: PortCo[] = [
           "European Commission approves the joint acquisition by 3i, ATP, and APG of five EISER infrastructure assets including the 49% stake in Autovias de Peaje en Sombra",
       },
       {
-        date: "2008",
+        date: "December 2016",
+        category: "Acquisition",
+        event:
+          "EISER Global Infrastructure Fund agrees to sell its portfolio, including the 49% stake in Autovias, to a new 3i-managed fund vehicle backed by approximately GBP 700 million in committed capital",
+      },
+      {
+        date: "August 2008",
         category: "Expansion",
         event:
-          "Autovia del Turia (CV-35) enters operation as a 53 km shadow toll motorway in the Valencian Community, with a concession running to 2041",
+          "Autovia del Turia (CV-35) enters operation as a 49.4 km shadow toll motorway connecting Valencia to Losa del Obispo, with a concession running to 2041",
       },
       {
         date: "October 2001",
         category: "Expansion",
         event:
-          "Autovia del Noroeste (RM-15) enters operation in Murcia as the first shadow toll concession in modern Spain",
+          "Autovia del Noroeste (RM-15) enters operation in Murcia as the first shadow toll concession in modern Spain, connecting Murcia to Caravaca de la Cruz",
       },
     ],
     sources: [
@@ -338,6 +352,10 @@ export const companies: PortCo[] = [
       {
         label: "Sacyr Concesiones — Autovia del Turia (CV-35)",
         url: "https://sacyrconcesiones.com/-/turia-highway",
+      },
+      {
+        label: "IJGlobal — 3i Acquisition of EISER Portfolio",
+        url: "https://www.ijglobal.com/articles/104362/3is-acquisition-of-eiser-global-infrastructure-fund-portfolio",
       },
     ],
   },
@@ -423,30 +441,44 @@ export const companies: PortCo[] = [
     country: "Portugal",
     ownershipVehicle: "3i European Operational Projects Fund",
     description:
-      "TDHOSP is the concessionaire responsible for the design, construction, financing, conservation, and maintenance of the Hospital de Cascais Dr. Jose de Almeida, a 277-bed public hospital near Lisbon serving approximately 300,000 people in the municipalities of Cascais and Sintra. Inaugurated in February 2010 as Portugal's first PPP hospital, it operates under a 30-year concession granted by the Portuguese State.",
+      "TDHOSP \u2014 Gestao de Edificio Hospitalar, S.A. is the concessionaire responsible for the design, construction, financing, conservation, and maintenance of the Hospital de Cascais Dr. Jose de Almeida, a 277-bed public hospital near Lisbon serving approximately 300,000 people in the municipalities of Cascais and Sintra. Inaugurated in February 2010 as Portugal's first PPP hospital, the facility completes around 10,000 surgeries and over 140,000 outpatient consultations annually. The building was constructed at a cost of approximately EUR 387 million under a 30-year concession from the Portuguese State, with clinical services managed separately by Ribera Salud since 2023.",
     status: "Active",
     website: "https://www.hospitaldecascais.pt",
     yearFounded: 2008,
     investmentYear: 2019,
     headquarters: "Cascais, Portugal",
+    // TDHOSP is a building concession SPV; clinical management is by Ribera Salud (separate entity)
+    management: [],
     milestones: [
+      {
+        date: "2023",
+        category: "Management",
+        event:
+          "Ribera Salud assumes clinical management of Hospital de Cascais, replacing Lusiadas Saude which withdrew after 14 years citing lack of economic sustainability",
+      },
       {
         date: "April 2019",
         category: "Financing",
         event:
-          "3i European Operational Projects Fund completes acquisition of 90% of TDHOSP from Teixeira Duarte Group",
+          "3i European Operational Projects Fund completes acquisition of 90% of TDHOSP from Teixeira Duarte Group, which retains 10%",
       },
       {
         date: "February 2010",
         category: "Expansion",
         event:
-          "Hospital de Cascais inaugurated as Portugal's first PPP hospital, with 277 beds, six operating rooms, and ten delivery rooms",
+          "Hospital de Cascais inaugurated as Portugal's first PPP hospital, with 277 beds, six operating rooms, and ten delivery rooms serving Cascais and Sintra",
       },
       {
         date: "February 2008",
         category: "Founding",
         event:
-          "Construction begins on the new Cascais Hospital under the HPP/Teixeira Duarte consortium",
+          "Construction begins on the new Cascais Hospital under the HPP/Teixeira Duarte consortium with a budget of approximately EUR 387 million",
+      },
+      {
+        date: "2006",
+        category: "Other",
+        event:
+          "Portuguese State awards the 30-year PPP concession for the Hospital de Cascais to the HPP Saude/Teixeira Duarte consortium",
       },
     ],
     sources: [
@@ -457,6 +489,10 @@ export const companies: PortCo[] = [
       {
         label: "Hospital de Cascais — Official Website",
         url: "https://www.hospitaldecascais.pt",
+      },
+      {
+        label: "IJGlobal — Centro Hospitalar de Cascais PPP",
+        url: "https://www.ijglobal.com/articles/46490/centro-hospitalar-de-cascais-ppp-portugal",
       },
     ],
   },
@@ -739,7 +775,9 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Humacao, Puerto Rico",
     management: [
-      { name: "Mark Johnson", title: "Chief Executive Officer" },
+      { name: "Randy Jensen", title: "President & Chief Executive Officer" },
+      { name: "Vanessa Cruz-Vargas", title: "Chief Financial Officer" },
+      { name: "Mark Johnson", title: "Chief Operating Officer" },
     ],
     milestones: [
       {
@@ -781,6 +819,10 @@ export const companies: PortCo[] = [
       {
         label: "3i — EC Waste Acquires ARB (July 2025)",
         url: "https://www.3i.com/media/news/2025/3i-backed-ec-waste-acquires-arb-waste-services-in-puerto-rico/",
+      },
+      {
+        label: "Post Capital Partners — EC Waste Acquisition (2014)",
+        url: "https://www.postcp.com/article?ID=528966",
       },
     ],
   },
