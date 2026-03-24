@@ -380,15 +380,49 @@ export const companies: PortCo[] = [
     status: "Active",
   },
   {
-    name: "Concesiones de Intercambiado res de Transporte",
+    name: "Concesiones de Intercambiadores de Transporte (CIT)",
     investmentFirm: "3i Infrastructure",
     sector: "Transportation",
     subsector: "Transit",
     region: "Europe",
     country: "Spain",
     ownershipVehicle: "3i Managed Infrastructure Acquisitions (MIA)",
-    description: "",
+    description:
+      "Concesiones de Intercambiadores de Transporte (CIT) holds long-term concessions for two intermodal transport interchanges in Madrid — the Moncloa and Plaza Eliptica bus terminals. These underground hubs connect intercity and long-distance bus lines with the Metro network and municipal buses, collectively serving over 90 million passengers annually.",
     status: "Active",
+    yearFounded: 2007,
+    investmentYear: 2017,
+    headquarters: "Madrid, Spain",
+    milestones: [
+      {
+        date: "June 2017",
+        category: "Financing",
+        event:
+          "3i Managed Infrastructure Acquisitions completes acquisition of CIT as part of the EISER Global Infrastructure Fund portfolio",
+      },
+      {
+        date: "2008",
+        category: "Expansion",
+        event:
+          "Moncloa Transport Hub new bus terminal opens with expanded intercity bus capacity",
+      },
+      {
+        date: "2007",
+        category: "Founding",
+        event:
+          "Plaza Eliptica Transport Hub inaugurated as part of Madrid's Plan de Intercambiadores, featuring three underground levels with 20 bus platforms",
+      },
+    ],
+    sources: [
+      {
+        label: "Sacyr Concesiones — Moncloa Transport Hub",
+        url: "https://sacyrconcesiones.com/en/-/intercambiador-moncloa",
+      },
+      {
+        label: "Sacyr Concesiones — Plaza Eliptica Transport Hub",
+        url: "https://sacyrconcesiones.com/en/-/intercambiador-plaza-eliptica",
+      },
+    ],
   },
   {
     name: "Cross London Trains (XLT)",
@@ -458,8 +492,25 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "France",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "The DIF III French PPP Portfolio is a collection of eight operational public-private partnership projects in France acquired from DIF Infrastructure III. The portfolio comprises three educational facility projects, two prison portfolios (six prisons total), a multimodal train station, a batch of 12 fire stations, and a wastewater collection concession, all under long-term availability-based contracts backed by French public counterparties.",
     status: "Active",
+    investmentYear: 2020,
+    headquarters: "Paris, France",
+    milestones: [
+      {
+        date: "January 2020",
+        category: "Acquisition",
+        event:
+          "3i European Operational Projects Fund agrees to acquire a portfolio of eight operational PPP projects in France from DIF Infrastructure III",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — 3i EOPF Acquires French PPP Portfolio",
+        url: "https://www.3i.com/media-centre/corporate-and-portfolio-news/2020/3i-european-operational-projects-fund-agrees-to-acquire-a-portfolio-of-eight-projects-in-france-and-completes-investment-in-agesa/",
+      },
+    ],
   },
   {
     name: "DISA Assets Limited",
@@ -469,8 +520,42 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Germany",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "DISA Assets Limited is a rolling stock leasing company that owns a fleet of 54 new Alstom Coradia Lint 41 diesel multiple-unit passenger trains leased to Abellio Rail Mitteldeutschland for regional rail services in Saxony-Anhalt, Germany. The trains connect Magdeburg to Wolfsburg, Stendal, Erfurt, Halle, and Goslar under a 14-year transport concession.",
     status: "Active",
+    yearFounded: 2016,
+    investmentYear: 2019,
+    headquarters: "Dublin, Ireland",
+    milestones: [
+      {
+        date: "April 2019",
+        category: "Financing",
+        event:
+          "3i European Operational Projects Fund completes acquisition of DISA Assets Limited from NS Financial Services",
+      },
+      {
+        date: "December 2018",
+        category: "Expansion",
+        event:
+          "Fleet of 54 Coradia Lint 41 trains enters commercial service on the Saxony-Anhalt diesel network, operated by Abellio Rail Mitteldeutschland",
+      },
+      {
+        date: "January 2016",
+        category: "Founding",
+        event:
+          "DISA Assets Limited incorporated in Dublin by NS Financial Services to hold rolling stock for the Abellio Rail Mitteldeutschland concession",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — 3i EOPF Deploys Capital",
+        url: "https://www.3i.com/media-centre/corporate-and-portfolio-news/2019/3i-european-operational-projects-fund-deploys-capital-in-portugal-italy-ireland-and-germany/",
+      },
+      {
+        label: "Global Legal Chronicle — DISA Assets Acquisition",
+        url: "https://globallegalchronicle.com/3i-european-operational-projects-funds-acquisition-of-disa-assets-limited/",
+      },
+    ],
   },
   {
     name: "DNS:NET",
@@ -953,8 +1038,47 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Ireland",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "Fermoy and Limerick Motorways comprises two Irish toll road PPP concessions: DirectRoute (Fermoy), a 17.5km section of the M8 motorway between Dublin and Cork; and DirectRoute (Limerick), a 10km section of the M7 ring road around Limerick including a 675-metre tunnel under the River Shannon. The concessions run until 2034 and 2041 respectively.",
     status: "Active",
+    investmentYear: 2019,
+    headquarters: "Limerick, Ireland",
+    milestones: [
+      {
+        date: "April 2019",
+        category: "Financing",
+        event:
+          "3i European Operational Projects Fund invests in the Fermoy and Limerick motorway projects",
+      },
+      {
+        date: "July 2010",
+        category: "Expansion",
+        event:
+          "Limerick Tunnel route opens to traffic, linking national routes via a 675-metre tunnel under the River Shannon",
+      },
+      {
+        date: "2006",
+        category: "Expansion",
+        event:
+          "Rathcormac-Fermoy Bypass (M8) opens to traffic, providing a 17.3km tolled section in County Cork",
+      },
+      {
+        date: "June 2004",
+        category: "Founding",
+        event:
+          "DirectRoute (Fermoy) Ltd signs PPP contract with the National Roads Authority for the M8 Rathcormac-Fermoy Bypass",
+      },
+    ],
+    sources: [
+      {
+        label: "DirectRoute — Fermoy",
+        url: "https://www.directroute.ie/directroutefermoy.aspx",
+      },
+      {
+        label: "DirectRoute — Limerick",
+        url: "https://www.directroute.ie/directroutelimerick.aspx",
+      },
+    ],
   },
   {
     name: "Future Biogas",
