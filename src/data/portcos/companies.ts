@@ -10,21 +10,69 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "One of the largest water and water recycling companies in England and Wales, serving approximately six million customers across the east of England. Privatised in 1989, AWG operates and maintains a vast network of water and sewage infrastructure across its region.",
-    status: "Active",
+    description:
+      "Anglian Water Group (AWG) is the parent company of Anglian Water, the largest water and water recycling company in England and Wales by geographic area. The company supplies water and wastewater services to over six million domestic and business customers across the east of England and Hartlepool, covering a region stretching from the Humber to the Thames estuary. Since privatisation, AWG has invested billions of pounds to replace ageing infrastructure, improve resilience, and address water supply-demand imbalances in one of the UK's driest regions.",
+    status: "Realized",
     website: "https://www.anglianwatergroup.co.uk",
-    yearFounded: 1973,
-    investmentYear: 2006,
-    headquarters: "Huntingdon, Cambridgeshire, United Kingdom",
+    yearFounded: 1989,
+    investmentYear: 2007,
+    headquarters: "Huntingdon, Cambridgeshire",
+    management: [
+      { name: "Mark Thurston", title: "Chief Executive Officer" },
+      { name: "Michael Bradley CB", title: "Chief Financial Officer" },
+      { name: "Dave Martin", title: "Chief Technology Officer" },
+    ],
     milestones: [
-      { date: "1973", event: "Anglian Water Authority established", category: "Founding" },
-      { date: "1989", event: "Privatised as part of UK water industry privatisation", category: "Other" },
-      { date: "2006", event: "Acquired by Osprey Consortium (3i, CPP Investments, IFM, Colonial First State) for £2.25bn", category: "Financing" },
-      { date: "2017", event: "3i Infrastructure sold its stake to Dalmore Capital and GLIL Infrastructure for ~£395m", category: "Divestiture" },
+      {
+        date: "February 2018",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure completes sale of its 10.3% stake in AWG to Dalmore Capital and GLIL Infrastructure for approximately £395 million",
+      },
+      {
+        date: "November 2017",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure agrees to sell its stake in AWG to a consortium of Dalmore Capital and GLIL Infrastructure LLP at a 37% premium to book value",
+      },
+      {
+        date: "March 2007",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires its stake in AWG upon its IPO, following the Osprey Consortium take-private",
+      },
+      {
+        date: "December 2006",
+        category: "Acquisition",
+        event:
+          "Osprey Consortium (3i Group, CPPIB, Colonial First State, IFM) completes take-private of AWG for £2.25 billion, delisting from the London Stock Exchange",
+      },
+      {
+        date: "1997",
+        category: "Acquisition",
+        event:
+          "Anglian Water acquires Hartlepool Water, extending service area to Hartlepool",
+      },
+      {
+        date: "December 1989",
+        category: "Founding",
+        event:
+          "Anglian Water Services formed through privatisation of the UK water industry under the Water Act 1989, listed on the London Stock Exchange",
+      },
     ],
     sources: [
-      { label: "Anglian Water Group — Wikipedia", url: "https://en.wikipedia.org/wiki/Anglian_Water_Group" },
-      { label: "3i Infrastructure — AWG Portfolio", url: "https://www.3i.com/infrastructure/our-portfolio/awg/" },
+      {
+        label: "3i Infrastructure — AWG Past Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/awg/",
+      },
+      {
+        label: "Anglian Water Group — Wikipedia",
+        url: "https://en.wikipedia.org/wiki/Anglian_Water_Group",
+      },
+      {
+        label: "AWG — About Us",
+        url: "https://www.anglianwatergroup.co.uk/about-us",
+      },
     ],
   },
   {
@@ -35,8 +83,64 @@ export const companies: PortCo[] = [
     region: "Asia-Pacific",
     country: "India",
     ownershipVehicle: "3i India Infrastructure Fund",
-    description: "",
-    status: "Active",
+    description:
+      "Adani Power Limited is India's largest private thermal power producer, operating approximately 17,550 MW of installed coal-based generation capacity across 11 power plants in Gujarat, Maharashtra, Karnataka, Rajasthan, Chhattisgarh, Madhya Pradesh, Jharkhand, and Tamil Nadu. A subsidiary of the Adani Group, the company was a pioneer in deploying supercritical and ultra-supercritical coal technology in India, including the 4,620 MW Mundra plant — the largest single-location coal-fired power project in the country.",
+    status: "Realized",
+    website: "https://www.adanipower.com",
+    yearFounded: 1996,
+    investmentYear: 2007,
+    headquarters: "Ahmedabad, Gujarat",
+    management: [
+      { name: "Shersingh B. Khyalia", title: "Chief Executive Officer" },
+      { name: "Dilip Kumar Jha", title: "Chief Financial Officer" },
+      { name: "Rajesh Sehgal", title: "Chief Legal Officer" },
+    ],
+    milestones: [
+      {
+        date: "May 2014",
+        category: "Divestiture",
+        event:
+          "3i Group partially exits its Adani Power stake as part of broader withdrawal from Indian private equity",
+      },
+      {
+        date: "August 2009",
+        category: "IPO",
+        event:
+          "Adani Power lists on BSE and NSE via IPO raising approximately ₹3,017 crore (~$625 million), oversubscribed 21 times",
+      },
+      {
+        date: "July 2009",
+        category: "Expansion",
+        event:
+          "First 330 MW unit at Mundra Thermal Power Plant commissioned, marking the start of commercial power generation",
+      },
+      {
+        date: "January 2007",
+        category: "Financing",
+        event:
+          "3i India Infrastructure Fund invests $227 million in Adani Power to fund power generation development",
+      },
+      {
+        date: "August 1996",
+        category: "Founding",
+        event:
+          "Adani Power Limited incorporated in Ahmedabad, Gujarat, initially focused on power trading",
+      },
+    ],
+    sources: [
+      {
+        label: "Adani Power — About Us",
+        url: "https://www.adanipower.com/about-us",
+      },
+      {
+        label: "Adani Power — Wikipedia",
+        url: "https://en.wikipedia.org/wiki/Adani_Power",
+      },
+      {
+        label: "Adani Power — Key Management Personnel",
+        url: "https://www.adanipower.com/investors/key-management-personnel",
+      },
+    ],
   },
   {
     name: "Amwaste",
@@ -122,27 +226,73 @@ export const companies: PortCo[] = [
     name: "Attero",
     investmentFirm: "3i Infrastructure",
     sector: "Environmental / Waste",
-    subsector: "Energy Transition",
+    subsector: "Energy-from-Waste & Circular Economy",
     region: "Europe",
-    country: "Netherlands/Belgium",
+    country: "Netherlands",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "One of the largest waste treatment and disposal companies in the Netherlands, operating two energy-from-waste plants, two sorting and pre-treatment facilities, six anaerobic digestion facilities, seven composting facilities, and ten landfills.",
-    status: "Active",
+    description:
+      "Attero is the largest waste treatment and recycling company in the Netherlands, processing approximately 3.6 million tonnes of waste annually across two energy-from-waste plants, six anaerobic digestion facilities, seven composting facilities, and polymer recycling operations. The company converts residual and organic waste into renewable electricity (powering ~300,000 homes), green gas, compost, and recycled raw materials, positioning it as a leading circular economy platform in Europe. Headquartered in Wilp, Attero operates at 18 locations with approximately 1,000 employees.",
+    status: "Realized",
     website: "https://www.attero.nl",
     yearFounded: 1929,
     investmentYear: 2018,
     headquarters: "Wilp, Netherlands",
-    milestones: [
-      { date: "1929", event: "Founded as a regional waste management company in the Netherlands", category: "Founding" },
-      { date: "2018", event: "3i Infrastructure acquired 50% stake for €201m alongside co-investor DWS", category: "Financing" },
-      { date: "2023", event: "Ardian Infrastructure acquired 100% of Attero from 3i Infrastructure and co-investors", category: "Divestiture" },
-    ],
     management: [
       { name: "Javier Murillo", title: "Chief Executive Officer" },
+      { name: "Mark Koole", title: "Chief Financial Officer" },
+      { name: "C. E. Langedijk", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "November 2023",
+        category: "Financing",
+        event:
+          "Ardian Infrastructure completes acquisition of 100% of Attero; 3i Infrastructure exits with €215 million in net proceeds, a 22% net IRR and 2.7x money multiple",
+      },
+      {
+        date: "March 2019",
+        category: "Expansion",
+        event:
+          "Opens €30 million Polymer Recycling Plant at Wijster, processing 24,000 tonnes of plastic film waste into regranulate annually",
+      },
+      {
+        date: "June 2018",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires 50% stake for €201 million alongside DWS, purchasing Attero from Waterland at a total enterprise value of approximately €402 million",
+      },
+      {
+        date: "May 2014",
+        category: "Financing",
+        event:
+          "Dutch public shareholders (six provinces, 116 municipalities) sell 99.93% of shares to Waterland Private Equity for approximately €170 million",
+      },
+      {
+        date: "January 1997",
+        category: "Expansion",
+        event:
+          "Energy-from-waste plant at Moerdijk begins operations, eventually processing one million tonnes of waste per year",
+      },
+      {
+        date: "January 1929",
+        category: "Founding",
+        event:
+          "Founded as Vuil Afvoer Maatschappij (VAM), transporting waste from The Hague to Wijster by train to produce compost for agricultural use",
+      },
     ],
     sources: [
-      { label: "Attero — Company Website", url: "https://www.attero.nl/en/" },
-      { label: "3i Infrastructure — Attero Investment", url: "https://www.3i-infrastructure.com/newsroom/press-releases/2018/3i-infrastructure-plc-announces-investment-in-attero/" },
+      {
+        label: "3i Infrastructure — Attero Portfolio Page",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/attero/",
+      },
+      {
+        label: "3i Infrastructure — 2018 Investment Announcement",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2018/3i-infrastructure-plc-announces-investment-in-attero/",
+      },
+      {
+        label: "Ardian — Attero Acquisition Announcement",
+        url: "https://www.ardian.com/news-insights/press-releases/ardian-acquire-leading-european-waste-management-and-circular-economy",
+      },
     ],
   },
   {
@@ -153,8 +303,61 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Spain",
     ownershipVehicle: "3i Managed Infrastructure Acquisitions (MIA)",
-    description: "",
+    description:
+      "Autovias de Peaje en Sombra is a Spanish holding company that owns two long-term shadow toll road concessions: the Autovia del Noroeste (RM-15), a 62.4 km motorway in the Region of Murcia operating since 2001, and the Autovia del Turia (CV-35), a 49.4 km motorway in the Valencian Community operating since 2008. Sacyr Concesiones holds 51% and manages both concessions while 3i holds 49%. Under the shadow toll model, regional governments pay an annual per-vehicle fee based on traffic volume rather than tolling drivers directly. The RM-15 was the first shadow toll concession in modern Spanish history and features a 360-metre viaduct crossing the La Cierva reservoir.",
     status: "Active",
+    website: "https://sacyrconcesiones.com/-/autovia-aunor",
+    yearFounded: 2010,
+    investmentYear: 2017,
+    headquarters: "Madrid, Spain",
+    // SPV concession managed by Sacyr Concesiones; no dedicated C-suite management team
+    management: [],
+    milestones: [
+      {
+        date: "January 2021",
+        category: "Other",
+        event:
+          "Royal Decree transfers the first 2.4 km of the RM-15 to the Spanish State as part of the Arco Noroeste de Murcia project",
+      },
+      {
+        date: "April 2017",
+        category: "Financing",
+        event:
+          "European Commission approves the joint acquisition by 3i, ATP, and APG of five EISER infrastructure assets including the 49% stake in Autovias de Peaje en Sombra",
+      },
+      {
+        date: "December 2016",
+        category: "Acquisition",
+        event:
+          "EISER Global Infrastructure Fund agrees to sell its portfolio, including the 49% stake in Autovias, to a new 3i-managed fund vehicle backed by approximately GBP 700 million in committed capital",
+      },
+      {
+        date: "August 2008",
+        category: "Expansion",
+        event:
+          "Autovia del Turia (CV-35) enters operation as a 49.4 km shadow toll motorway connecting Valencia to Losa del Obispo, with a concession running to 2041",
+      },
+      {
+        date: "October 2001",
+        category: "Expansion",
+        event:
+          "Autovia del Noroeste (RM-15) enters operation in Murcia as the first shadow toll concession in modern Spain, connecting Murcia to Caravaca de la Cruz",
+      },
+    ],
+    sources: [
+      {
+        label: "Sacyr Concesiones — Autovia de Aunor (RM-15)",
+        url: "https://sacyrconcesiones.com/-/autovia-aunor",
+      },
+      {
+        label: "Sacyr Concesiones — Autovia del Turia (CV-35)",
+        url: "https://sacyrconcesiones.com/-/turia-highway",
+      },
+      {
+        label: "IJGlobal — 3i Acquisition of EISER Portfolio",
+        url: "https://www.ijglobal.com/articles/104362/3is-acquisition-of-eiser-global-infrastructure-fund-portfolio",
+      },
+    ],
   },
   {
     name: "Belfast City Airport",
@@ -164,15 +367,69 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Managed Infrastructure",
-    description: "George Best Belfast City Airport, a major city airport in Northern Ireland serving domestic and European routes. Acquired by 3i as part of a portfolio deal from the EISER Global Infrastructure Fund.",
+    description:
+      "George Best Belfast City Airport (BHD) is Northern Ireland's city-centre airport, located just five minutes from Belfast city centre, serving over 2.3 million passengers annually across domestic UK and European routes. The airport's Master Plan 2040 targets growth to 7 million passengers through terminal expansion, a new pier, and a potential direct rail connection.",
     status: "Active",
     website: "https://www.belfastcityairport.com",
-    headquarters: "Belfast, Northern Ireland, United Kingdom",
+    yearFounded: 1983,
+    investmentYear: 2017,
+    headquarters: "Belfast, Northern Ireland",
     management: [
       { name: "Matthew Hall", title: "Chief Executive Officer" },
+      { name: "Mark Beattie", title: "Chief Operating Officer" },
+      { name: "Katy Best", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      {
+        date: "March 2026",
+        category: "Expansion",
+        event:
+          "Belfast City Airport publishes Master Plan 2040, outlining £200 million investment to grow capacity to 7 million passengers by 2040",
+      },
+      {
+        date: "August 2021",
+        category: "Management",
+        event:
+          "Matthew Hall appointed Chief Executive Officer, succeeding Brian Ambrose who led the airport for 16 years",
+      },
+      {
+        date: "June 2017",
+        category: "Financing",
+        event:
+          "3i Managed Infrastructure Acquisitions completes acquisition of Belfast City Airport from EISER Global Infrastructure Fund following European Commission approval",
+      },
+      {
+        date: "September 2008",
+        category: "Acquisition",
+        event:
+          "EISER Global Infrastructure Fund acquires Belfast City Airport from Ferrovial for £132.5 million",
+      },
+      {
+        date: "May 2006",
+        category: "Other",
+        event:
+          "Airport renamed George Best Belfast City Airport in honour of Northern Irish footballer George Best",
+      },
+      {
+        date: "January 1983",
+        category: "Founding",
+        event:
+          "Airport opens for commercial passenger flights as Belfast Harbour Airport",
+      },
     ],
     sources: [
-      { label: "Belfast City Airport — Wikipedia", url: "https://en.wikipedia.org/wiki/George_Best_Belfast_City_Airport" },
+      {
+        label: "3i Group — Belfast City Airport Portfolio Page",
+        url: "https://www.3i.com/infrastructure/our-portfolio/belfast-city-airport/",
+      },
+      {
+        label: "Belfast City Airport — Official Website",
+        url: "https://www.belfastcityairport.com",
+      },
+      {
+        label: "Belfast City Airport — Wikipedia",
+        url: "https://en.wikipedia.org/wiki/Belfast_City_Airport",
+      },
     ],
   },
   {
@@ -183,19 +440,125 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Portugal",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "TDHOSP \u2014 Gestao de Edificio Hospitalar, S.A. is the concessionaire responsible for the design, construction, financing, conservation, and maintenance of the Hospital de Cascais Dr. Jose de Almeida, a 277-bed public hospital near Lisbon serving approximately 300,000 people in the municipalities of Cascais and Sintra. Inaugurated in February 2010 as Portugal's first PPP hospital, the facility completes around 10,000 surgeries and over 140,000 outpatient consultations annually. The building was constructed at a cost of approximately EUR 387 million under a 30-year concession from the Portuguese State, with clinical services managed separately by Ribera Salud since 2023.",
     status: "Active",
+    website: "https://www.hospitaldecascais.pt",
+    yearFounded: 2008,
+    investmentYear: 2019,
+    headquarters: "Cascais, Portugal",
+    // TDHOSP is a building concession SPV; clinical management is by Ribera Salud (separate entity)
+    management: [],
+    milestones: [
+      {
+        date: "2023",
+        category: "Management",
+        event:
+          "Ribera Salud assumes clinical management of Hospital de Cascais, replacing Lusiadas Saude which withdrew after 14 years citing lack of economic sustainability",
+      },
+      {
+        date: "April 2019",
+        category: "Financing",
+        event:
+          "3i European Operational Projects Fund completes acquisition of 90% of TDHOSP from Teixeira Duarte Group, which retains 10%",
+      },
+      {
+        date: "February 2010",
+        category: "Expansion",
+        event:
+          "Hospital de Cascais inaugurated as Portugal's first PPP hospital, with 277 beds, six operating rooms, and ten delivery rooms serving Cascais and Sintra",
+      },
+      {
+        date: "February 2008",
+        category: "Founding",
+        event:
+          "Construction begins on the new Cascais Hospital under the HPP/Teixeira Duarte consortium with a budget of approximately EUR 387 million",
+      },
+      {
+        date: "2006",
+        category: "Other",
+        event:
+          "Portuguese State awards the 30-year PPP concession for the Hospital de Cascais to the HPP Saude/Teixeira Duarte consortium",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — EOPF Deploys Capital in Portugal",
+        url: "https://www.3i.com/media-centre/corporate-and-portfolio-news/2019/3i-european-operational-projects-fund-deploys-capital-in-portugal-italy-ireland-and-germany/",
+      },
+      {
+        label: "Hospital de Cascais — Official Website",
+        url: "https://www.hospitaldecascais.pt",
+      },
+      {
+        label: "IJGlobal — Centro Hospitalar de Cascais PPP",
+        url: "https://www.ijglobal.com/articles/46490/centro-hospitalar-de-cascais-ppp-portugal",
+      },
+    ],
   },
   {
-    name: "Concesiones de Intercambiado res de Transporte",
+    name: "Concesiones de Intercambiadores de Transporte (CIT)",
     investmentFirm: "3i Infrastructure",
     sector: "Transportation",
     subsector: "Transit",
     region: "Europe",
     country: "Spain",
     ownershipVehicle: "3i Managed Infrastructure Acquisitions (MIA)",
-    description: "",
+    description:
+      "Concesiones de Intercambiadores de Transporte (CIT) holds long-term concessions for two intermodal transport interchanges in Madrid — the Moncloa and Plaza Eliptica bus terminals. These underground multi-level hubs connect intercity and long-distance bus lines with the Madrid Metro network and municipal buses, collectively serving over 90 million passengers annually and removing approximately 15,500 buses daily from Madrid's streets. Sacyr Concesiones holds 51% and manages operations, while 3i holds the remaining 49%. The interchanges were built as part of Madrid's Plan de Intercambiadores alongside Plaza de Castilla and Principe Pio, with combined debt of approximately €190 million.",
     status: "Active",
+    website: "https://sacyrconcesiones.com/en/-/intercambiador-moncloa",
+    yearFounded: 2007,
+    investmentYear: 2017,
+    headquarters: "Madrid, Spain",
+    // SPV concessions managed by Sacyr Concesiones; no dedicated C-suite management team
+    management: [],
+    milestones: [
+      {
+        date: "2024",
+        category: "Other",
+        event:
+          "Comunidad de Madrid commissions economic-financial analysis of all five transport interchange concession contracts including Moncloa and Plaza Eliptica",
+      },
+      {
+        date: "June 2017",
+        category: "Financing",
+        event:
+          "3i Managed Infrastructure Acquisitions completes acquisition of CIT as part of the EISER Global Infrastructure Fund portfolio",
+      },
+      {
+        date: "2009",
+        category: "Acquisition",
+        event:
+          "Sacyr Vallehermoso sells 49% of its stakes in CIT and two shadow toll roads to EISER Global Infrastructure Fund",
+      },
+      {
+        date: "2008",
+        category: "Expansion",
+        event:
+          "Moncloa Transport Hub new bus terminal opens with expanded intercity bus capacity, incorporating cutting-edge navigation systems",
+      },
+      {
+        date: "2007",
+        category: "Founding",
+        event:
+          "Plaza Eliptica Transport Hub inaugurated as part of Madrid's Plan de Intercambiadores, featuring three underground levels with 20 bus platforms",
+      },
+    ],
+    sources: [
+      {
+        label: "Sacyr Concesiones — Moncloa Transport Hub",
+        url: "https://sacyrconcesiones.com/en/-/intercambiador-moncloa",
+      },
+      {
+        label: "Sacyr Concesiones — Plaza Eliptica Transport Hub",
+        url: "https://sacyrconcesiones.com/en/-/intercambiador-plaza-eliptica",
+      },
+      {
+        label: "Madridiario — Moncloa y Plaza Eliptica, modelos de eficiencia",
+        url: "https://www.madridiario.es/451912/intercambiadores-moncloa-plaza-eliptica-modelos-eficiencia-accesibilidad",
+      },
+    ],
   },
   {
     name: "Cross London Trains (XLT)",
@@ -205,8 +568,61 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
-    status: "Active",
+    description:
+      "Cross London Trains (XLT) is a special purpose vehicle established to finance, own, and lease a fleet of 115 Siemens Desiro City Class 700 trains for the Thameslink passenger rail franchise, one of the largest single rolling stock fleets in the UK. The project is part of the wider £7 billion government-funded Thameslink Programme providing essential congestion relief to London and the South East, with a 20-year availability contract fully backed by the UK Department for Transport.",
+    status: "Realized",
+    yearFounded: 2011,
+    investmentYear: 2013,
+    headquarters: "Swanley, Kent",
+    management: [
+      { name: "Aileen Jordan", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "March 2019",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure sells its 33.3% stake to a consortium of Dalmore Capital and Equitix for approximately £333 million",
+      },
+      {
+        date: "March 2018",
+        category: "Expansion",
+        event:
+          "115th and final Class 700 train rolls off the Siemens production line in Krefeld, Germany",
+      },
+      {
+        date: "June 2016",
+        category: "Expansion",
+        event:
+          "First Class 700 train enters passenger service on the Brighton to London Bridge route",
+      },
+      {
+        date: "June 2013",
+        category: "Financing",
+        event:
+          "3i Infrastructure invests £61.8 million for a 33.3% stake alongside Innisfree and Siemens Project Ventures; £1.6 billion DfT contract signed",
+      },
+      {
+        date: "October 2011",
+        category: "Founding",
+        event:
+          "Cross London Trains Limited incorporated as SPV to procure and lease Thameslink rolling stock",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — XLT Past Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/cross-london-trains-xlt/",
+      },
+      {
+        label: "3i Infrastructure — Sale Announcement (2019)",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2019/3i-infrastructure-plc-agrees-to-sell-its-stake-in-cross-london-trains",
+      },
+      {
+        label: "HICL — Cross London Trains Project Page",
+        url: "https://www.hicl.com/portfolio/project/cross-london-trains-uk/",
+      },
+    ],
   },
   {
     name: "DIF III French PPP Portfolio",
@@ -216,8 +632,59 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "France",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "The DIF III French PPP Portfolio is a collection of eight operational public-private partnership projects in France acquired from DIF Infrastructure III. The portfolio comprises three educational facility projects, two prison portfolios — Themis (Le Havre, Le Mans, Poitiers) and Theia (Nantes, Lille-Annoeullin, Reau) with six prisons total — a multimodal train station, a batch of 12 fire stations, and a wastewater collection concession. All projects operate under long-term availability-based contracts backed by French public counterparties including the Ministry of Justice, with six of the eight originally developed as greenfield projects by DIF III.",
     status: "Active",
+    investmentYear: 2020,
+    headquarters: "Paris, France",
+    // Portfolio of eight SPV concessions; no unified C-suite management team
+    management: [],
+    milestones: [
+      {
+        date: "January 2020",
+        category: "Financing",
+        event:
+          "3i European Operational Projects Fund agrees to acquire the portfolio of eight operational French PPPs from DIF Infrastructure III, deploying approximately 60% of EOPF's €456 million commitments",
+      },
+      {
+        date: "2015",
+        category: "Acquisition",
+        event:
+          "DIF Infrastructure III completes acquisition of 55.5% of Theia SAS from Bouygues Energies & Services, RBS, and Dexia, adding three prisons (Nantes, Lille-Annoeullin, Reau) to its French portfolio",
+      },
+      {
+        date: "September 2014",
+        category: "Acquisition",
+        event:
+          "DIF Infrastructure III acquires 81% of the Themis prison portfolio from RBS and Dexia Credit Local, comprising three prisons (Le Havre, Le Mans, Poitiers) under a PPP with the French Ministry of Justice",
+      },
+      {
+        date: "2011",
+        category: "Expansion",
+        event:
+          "Theia portfolio's three prisons (Nantes, Lille-Annoeullin, Reau) complete construction by Bouygues Construction subsidiaries and begin operations",
+      },
+      {
+        date: "2009",
+        category: "Expansion",
+        event:
+          "Themis portfolio's three prisons (Le Havre, Le Mans, Poitiers) complete construction and become fully operational under the Ministry of Justice PPP contract signed in October 2006",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — 3i EOPF Acquires French PPP Portfolio",
+        url: "https://www.3i.com/media-centre/corporate-and-portfolio-news/2020/3i-european-operational-projects-fund-agrees-to-acquire-a-portfolio-of-eight-projects-in-france-and-completes-investment-in-agesa/",
+      },
+      {
+        label: "IPE Real Assets — 3i Infrastructure Fund Acquires French PPP Portfolio",
+        url: "https://realassets.ipe.com/news/3i-infrastructure-fund-acquires-french-ppp-portfolio-from-dif-capital-partners/10043146.article",
+      },
+      {
+        label: "DIF Capital Partners — Sale of French PPP Portfolio",
+        url: "https://www.dif.eu/news/dif-capital-partners-agrees-to-sell-a-portfolio-of-french-ppps/",
+      },
+    ],
   },
   {
     name: "DISA Assets Limited",
@@ -227,8 +694,67 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Germany",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "DISA Assets Limited is a rolling stock leasing company that owns a fleet of 54 new Alstom Coradia Lint 41 diesel multiple-unit passenger trains leased for regional rail services across Saxony-Anhalt, Germany. The fleet, the largest single Coradia Lint 41 order ever placed, was manufactured at Alstom's Salzgitter site at a cost of approximately €170 million. The trains connect Magdeburg to Wolfsburg, Stendal, Erfurt, Halle, and Goslar across 16 routes totalling 900 km. Originally leased to Abellio Rail Mitteldeutschland, operations transferred to Start Mitteldeutschland in December 2024 following Abellio's restructuring.",
     status: "Active",
+    website: "https://www.nasa.de/en/press/news/detail/news/start-mitteldeutschland-uebernimmt-den-betrieb-im-dieselnetz-sachsen-anhalt",
+    yearFounded: 2016,
+    investmentYear: 2019,
+    headquarters: "Dublin, Ireland",
+    // SPV rolling stock leasing entity; no dedicated C-suite; trains operated by Start Mitteldeutschland
+    management: [],
+    milestones: [
+      {
+        date: "December 2024",
+        category: "Management",
+        event:
+          "Start Mitteldeutschland (Regionalverkehre Start Deutschland GmbH) takes over operation of the DISA diesel network from Abellio Rail Mitteldeutschland under a new contract running to 2032",
+      },
+      {
+        date: "June 2021",
+        category: "Other",
+        event:
+          "Abellio Rail Mitteldeutschland applies for restructuring under legal protection due to financial pressures in the German regional rail market",
+      },
+      {
+        date: "April 2019",
+        category: "Financing",
+        event:
+          "3i European Operational Projects Fund completes acquisition of DISA Assets Limited from NS Financial Services",
+      },
+      {
+        date: "December 2018",
+        category: "Expansion",
+        event:
+          "Fleet of 54 Coradia Lint 41 trains enters commercial service on the Saxony-Anhalt diesel network, covering 9.3 million train-kilometres per year",
+      },
+      {
+        date: "December 2015",
+        category: "Other",
+        event:
+          "Nahverkehrsservice Sachsen-Anhalt (NASA) awards Abellio Rail Mitteldeutschland the 14-year DISA diesel network contract",
+      },
+      {
+        date: "January 2016",
+        category: "Founding",
+        event:
+          "DISA Assets Limited incorporated in Dublin by NS Financial Services to hold rolling stock for the Abellio Rail Mitteldeutschland concession",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — 3i EOPF Deploys Capital",
+        url: "https://www.3i.com/media-centre/corporate-and-portfolio-news/2019/3i-european-operational-projects-fund-deploys-capital-in-portugal-italy-ireland-and-germany/",
+      },
+      {
+        label: "Global Legal Chronicle — DISA Assets Acquisition",
+        url: "https://globallegalchronicle.com/3i-european-operational-projects-funds-acquisition-of-disa-assets-limited/",
+      },
+      {
+        label: "Railway Gazette — Abellio Unveils First of 54 DMUs",
+        url: "https://www.railwaygazette.com/traction-and-rolling-stock/abellio-unveils-first-of-54-dmus/47082.article",
+      },
+    ],
   },
   {
     name: "DNS:NET",
@@ -238,34 +764,145 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Germany",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "One of the largest independent fibre-to-the-cabinet network operators in the Berlin/Brandenburg area, also operating three data centres. Provides the full spectrum of IP-based services including telephony, internet, and TV for consumers.",
+    description:
+      "DNS:NET Internet Service GmbH is a full-service telecommunications and fiber network operator headquartered in Berlin, serving the Berlin, Brandenburg, and Saxony-Anhalt regions of Germany. Founded in 1998, the company owns the largest independent fibre-to-the-cabinet network in the Berlin area along with three data centers, providing internet, telephony, and TV services to over 100,000 customers across more than 400 municipalities. Since 2007, DNS:NET has invested heavily in FTTH (fiber-to-the-home) infrastructure to deliver gigabit-speed broadband to underserved areas.",
     status: "Active",
     website: "https://www.dns-net.de",
     yearFounded: 1998,
     investmentYear: 2021,
     headquarters: "Berlin, Germany",
-    milestones: [
-      { date: "1998", event: "Founded by Alexander Lucke in Berlin", category: "Founding" },
-      { date: "2021", event: "3i Infrastructure acquired 60% stake for ~€182m; founder Lucke retained 40%", category: "Financing" },
-    ],
     management: [
-      { name: "Alexander Lucke", title: "Co-CEO & Founder" },
-      { name: "Ralph Steffens", title: "Co-CEO" },
+      { name: "Alexander Lucke", title: "Co-Chief Executive Officer" },
+      { name: "Ralph Steffens", title: "Co-Chief Executive Officer" },
+      { name: "Manuel Rüschke", title: "Chief Financial Officer" },
+      { name: "Kim Juchem", title: "Chief Commercial Officer" },
+      { name: "Daniel Schostan", title: "Chief Network Officer" },
+    ],
+    milestones: [
+      {
+        date: "January 2026",
+        category: "Financing",
+        event:
+          "3i Infrastructure announces full write-down of DNS:NET investment to zero equity value amid German fibre sector financing crisis",
+      },
+      {
+        date: "January 2025",
+        category: "Financing",
+        event:
+          "3i Infrastructure invests an additional €24 million in DNS:NET to fund continued FTTH network rollout; company reaches milestone of 100,000 paying customers",
+      },
+      {
+        date: "July 2023",
+        category: "Management",
+        event:
+          "Ralph Steffens, former Truphone CEO, appointed Co-CEO alongside founder Alexander Lucke to drive fiber expansion",
+      },
+      {
+        date: "June 2021",
+        category: "Financing",
+        event:
+          "3i Infrastructure completes acquisition of a 60% stake in DNS:NET for approximately €182 million, with founder Alexander Lucke retaining 40%",
+      },
+      {
+        date: "January 2013",
+        category: "Financing",
+        event:
+          "Deutsche Beteiligungs AG (DBAG) invests in DNS:NET through DBAG ECF fund, providing growth capital for fiber expansion",
+      },
+      {
+        date: "January 2007",
+        category: "Expansion",
+        event:
+          "DNS:NET begins dedicated investment in fiber optic infrastructure to bring gigabit internet to underserved regions",
+      },
+      {
+        date: "January 1998",
+        category: "Founding",
+        event:
+          "DNS:NET Internet Service GmbH founded by Alexander Lucke in Bernau bei Berlin as a domain service provider",
+      },
     ],
     sources: [
-      { label: "3i Infrastructure — DNS:NET Acquisition", url: "https://www.3i-infrastructure.com/newsroom/press-releases/2021/3i-infrastructure-plc-agrees-to-acquire-dnsnet/" },
+      {
+        label: "3i Infrastructure — DNS:NET Portfolio Page",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/dnsnet/",
+      },
+      {
+        label: "3i Infrastructure — DNS:NET Acquisition Announcement",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2021/3i-infrastructure-plc-completes-the-acquisition-of-a-60-stake-in-dnsnet/",
+      },
+      {
+        label: "DBAG — Disposal of Investment in DNS:Net",
+        url: "https://www.dbag.com/newsroom/detail/disposal-of-investment-in-dnsnet",
+      },
     ],
   },
   {
     name: "EC Waste",
     investmentFirm: "3i Infrastructure",
-    sector: "Social Infrastructure",
-    subsector: "Waste",
+    sector: "Environmental / Waste",
+    subsector: "Solid Waste Services",
     region: "North America",
     country: "United States",
     ownershipVehicle: "3i North American Infrastructure Fund",
-    description: "",
+    description:
+      "EC Waste is the largest vertically integrated provider of non-hazardous solid waste services in Puerto Rico, serving over 100,000 residential clients and more than 9,000 commercial and industrial customers. The company operates five U.S. EPA-permitted landfills, four transfer stations, and the island's largest regulated waste collections network, with services spanning collection, transfer, disposal, recycling, and renewable natural gas recovery.",
     status: "Active",
+    website: "https://www.ecwaste.com",
+    yearFounded: 1961,
+    investmentYear: 2021,
+    headquarters: "Humacao, Puerto Rico",
+    management: [
+      { name: "Randy Jensen", title: "President & Chief Executive Officer" },
+      { name: "Vanessa Cruz-Vargas", title: "Chief Financial Officer" },
+      { name: "Mark Johnson", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "July 2025",
+        category: "Acquisition",
+        event:
+          "EC Waste acquires ARB Inc., a specialized local provider of waste collection and environmental management services",
+      },
+      {
+        date: "November 2021",
+        category: "Financing",
+        event:
+          "3i Group acquires majority stake in EC Waste from Post Capital Partners via the 3i North American Infrastructure Fund",
+      },
+      {
+        date: "September 2020",
+        category: "Acquisition",
+        event:
+          "EC Waste acquires Republic Services of Puerto Rico, adding two landfills, a transfer station, and two hauling operations",
+      },
+      {
+        date: "April 2014",
+        category: "Acquisition",
+        event:
+          "Post Capital Partners and CEO Randy Jensen acquire EC Waste from Waste Management, Inc.",
+      },
+      {
+        date: "1961",
+        category: "Founding",
+        event:
+          "Founded in Humacao, Puerto Rico as El Coqui Waste Disposal",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Portfolio — EC Waste",
+        url: "https://www.3i.com/portfolio/ec-waste/",
+      },
+      {
+        label: "3i — EC Waste Acquires ARB (July 2025)",
+        url: "https://www.3i.com/media/news/2025/3i-backed-ec-waste-acquires-arb-waste-services-in-puerto-rico/",
+      },
+      {
+        label: "Post Capital Partners — EC Waste Acquisition (2014)",
+        url: "https://www.postcp.com/article?ID=528966",
+      },
+    ],
   },
   {
     name: "ESP Utilities Group",
@@ -275,15 +912,70 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Managed Infrastructure Acquisitions (MIA)",
-    description: "One of the UK's largest independent multi-utility companies, providing the 'last mile' connection between properties and the gas and electricity distribution networks, serving over one million homes and businesses.",
+    description:
+      "ESP Utilities Group is one of the UK's largest independent multi-utility network operators, providing 'last mile' gas, electricity, and water connections to residential, industrial, and commercial properties. As a licensed independent gas transporter, independent distribution network operator, and new appointments and variations provider regulated by Ofgem and Ofwat, ESP owns over one million live connections with an additional 250,000 in its order book, making it the second largest iGT/iDNO/NAV in the UK.",
     status: "Active",
-    website: "https://espug.com",
-    headquarters: "Blaydon-on-Tyne, United Kingdom",
+    website: "https://espug.com/",
+    yearFounded: 2000,
+    investmentYear: 2017,
+    headquarters: "Leatherhead, Surrey",
     management: [
       { name: "Kevin O'Connor", title: "Chief Executive Officer" },
+      { name: "Paul Miles", title: "Chief Financial Officer" },
+      { name: "Simon Loh", title: "Chief Operating Officer" },
+      { name: "Liam McAvoy", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      {
+        date: "January 2025",
+        category: "Other",
+        event:
+          "ESP surpasses one million live multi-utility connections across the UK",
+      },
+      {
+        date: "June 2023",
+        category: "Expansion",
+        event:
+          "Seventh and final tranche of Fulcrum gas asset acquisition completed, bringing total transaction value to approximately £49 million",
+      },
+      {
+        date: "June 2017",
+        category: "Financing",
+        event:
+          "3i Managed Infrastructure Acquisitions completes £191 million acquisition of ESP Utilities Group from EISER following European Commission approval",
+      },
+      {
+        date: "December 2016",
+        category: "Acquisition",
+        event:
+          "3i announces agreement to acquire a portfolio of five infrastructure assets from the EISER Global Infrastructure Fund, including ESP Utilities Group",
+      },
+      {
+        date: "January 2006",
+        category: "Financing",
+        event:
+          "EISER Global Infrastructure Fund acquires ESP Utilities Group",
+      },
+      {
+        date: "January 2000",
+        category: "Founding",
+        event:
+          "ESP Utilities Group founded as an independent utility networks operator in the UK",
+      },
     ],
     sources: [
-      { label: "ESP Utilities Group — Website", url: "https://espug.com/" },
+      {
+        label: "3i Infrastructure — ESP Portfolio Page",
+        url: "https://www.3i.com/infrastructure/our-portfolio/esp-utilities-group/",
+      },
+      {
+        label: "ESP Utilities Group — Official Website",
+        url: "https://espug.com/",
+      },
+      {
+        label: "ESP Utilities Group — Licenses and Regulators",
+        url: "https://espug.com/knowledge-hub/licenses/",
+      },
     ],
   },
   {
@@ -294,22 +986,75 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Denmark",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "Leading provider of safety and support at sea, operating a fleet of purpose-built vessels serving the offshore energy and wind industries in the North Sea. Wholly owned by 3i Infrastructure.",
+    description:
+      "ESVAGT is a Danish offshore shipping company and the pioneer and market leader in Service Operation Vessels (SOVs) for the offshore wind industry. Founded in 1981 as an emergency response and rescue vessel operator for North Sea oil and gas, the company has transformed into a critical enabler of the energy transition, with over 60% of its contracted EBITDA now serving the offshore wind sector. ESVAGT operates a fleet of more than 40 specialised vessels with approximately 1,100 employees, serving major offshore energy markets across Denmark, Norway, the UK, the Netherlands, Belgium, and Germany.",
     status: "Active",
     website: "https://esvagt.com",
     yearFounded: 1981,
+    investmentYear: 2015,
     headquarters: "Esbjerg, Denmark",
-    milestones: [
-      { date: "1981", event: "Founded in Esbjerg, Denmark", category: "Founding" },
-      { date: "2015", event: "3i Infrastructure and AMP Capital acquired ESVAGT from Maersk Group", category: "Financing" },
-      { date: "2021", event: "Partnered with Crowley for US offshore wind capacity", category: "Expansion" },
-    ],
     management: [
-      { name: "Kristian Ole Jakobsen", title: "Co-CEO" },
-      { name: "Søren Karas", title: "Co-CEO" },
+      { name: "Kristian Ole Jakobsen", title: "Co-Chief Executive Officer" },
+      { name: "Søren Karas", title: "Co-Chief Executive Officer" },
+      { name: "Dennis Bjørn Krog-Meyer", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "November 2024",
+        category: "Management",
+        event:
+          "Kristian Ole Jakobsen and Søren Karas appointed as co-CEOs following the retirement of Peter Lytzen",
+      },
+      {
+        date: "February 2022",
+        category: "Financing",
+        event:
+          "3i Infrastructure completed acquisition of AMP Capital's 50% stake for £268M, taking full ownership of ESVAGT",
+      },
+      {
+        date: "June 2021",
+        category: "Expansion",
+        event:
+          "Established CREST Wind joint venture with Crowley to support the US offshore wind industry",
+      },
+      {
+        date: "September 2018",
+        category: "Expansion",
+        event:
+          "Awarded two 15-year SOV contracts by MHI Vestas for Borssele III-IV and Triton Knoll wind farms",
+      },
+      {
+        date: "September 2015",
+        category: "Financing",
+        event:
+          "3i Infrastructure and AMP Capital completed acquisition of 100% of ESVAGT from Maersk Group and ESE-Holding for approximately USD 610M",
+      },
+      {
+        date: "January 2010",
+        category: "Expansion",
+        event:
+          "Pioneered the Service Operation Vessel (SOV) concept for offshore wind, deploying ESVAGT Supporter at the Belwind wind farm in Belgium",
+      },
+      {
+        date: "January 1981",
+        category: "Founding",
+        event:
+          "ESVAGT founded in Esbjerg, Denmark by ESE-Holding A/S to provide emergency response and rescue vessel services to the Danish offshore oil and gas industry",
+      },
     ],
     sources: [
-      { label: "ESVAGT — About", url: "https://esvagt.com/about/" },
+      {
+        label: "3i Infrastructure — ESVAGT Portfolio Page",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/esvagt/",
+      },
+      {
+        label: "ESVAGT — Company History",
+        url: "https://esvagt.com/about/history/",
+      },
+      {
+        label: "Wikipedia — Esvagt",
+        url: "https://en.wikipedia.org/wiki/Esvagt",
+      },
     ],
   },
   {
@@ -320,21 +1065,67 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Finland",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "The second largest electricity distribution business in Finland, serving approximately 417,000 customers with a ~12% market share. Also operates a complementary district heating business.",
-    status: "Active",
+    description:
+      "Elenia is the second-largest electricity distribution system operator in Finland, serving approximately 442,000 customers across more than 100 municipalities in central and western Finland through nearly 77,000 km of network. The company is responsible for maintaining, building, and modernising Finland's electricity distribution infrastructure, with a major focus on replacing overhead lines with underground cables to weatherproof the network.",
+    status: "Realized",
     website: "https://www.elenia.fi",
     yearFounded: 2012,
     investmentYear: 2012,
     headquarters: "Tampere, Finland",
-    milestones: [
-      { date: "2012", event: "Formed to consolidate Vattenfall's Finnish power grids; acquired by consortium including 3i", category: "Financing" },
-      { date: "2017", event: "3i Infrastructure sold its stake to Allianz, Macquarie, and State Pension Fund of Finland for ~£725m", category: "Divestiture" },
-    ],
     management: [
-      { name: "Tapani Liuhala", title: "Chief Executive Officer" },
+      { name: "Jorma Myllymäki", title: "Chief Executive Officer" },
+      { name: "Tommi Valento", title: "Chief Financial Officer" },
+      { name: "Tommi Lähdeaho", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "December 2017",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure sells its 39.3% stake in Elenia to a consortium of Allianz Capital Partners, Macquarie Infrastructure and Real Assets, and the State Pension Fund of Finland for approximately £725 million",
+      },
+      {
+        date: "July 2019",
+        category: "Divestiture",
+        event:
+          "Elenia sells its district heating subsidiary Elenia Lämpö Oy (now Loimua), completing the separation of heating operations from the electricity distribution business",
+      },
+      {
+        date: "January 2012",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires its stake in Elenia as part of the LNI Acquisition consortium with GS Infrastructure Partners and Ilmarinen, purchasing Vattenfall's Finnish electricity distribution and heating businesses for €1.54 billion",
+      },
+      {
+        date: "December 2011",
+        category: "Acquisition",
+        event:
+          "LNI Acquisition Oy signs agreement to acquire Vattenfall's electricity distribution and district heating operations in Finland for €1.54 billion; later rebranded as Elenia",
+      },
+      {
+        date: "2009",
+        category: "Expansion",
+        event:
+          "Elenia (then Vattenfall Verkko) becomes the first Finnish DSO to adopt a weatherproof underground cabling strategy for rural areas, a pioneering decision that would shape the company's long-term network investment programme",
+      },
     ],
     sources: [
-      { label: "Elenia — Wikipedia", url: "https://en.wikipedia.org/wiki/Elenia" },
+      {
+        label: "3i Infrastructure — Elenia Past Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/elenia/",
+      },
+      {
+        label: "Elenia — Wikipedia",
+        url: "https://en.wikipedia.org/wiki/Elenia",
+      },
+      {
+        label: "Elenia — About Us",
+        url: "https://www.elenia.fi/en/elenia/company/about-us",
+      },
+      {
+        label: "Elenia — Story of Elenia",
+        url: "https://www.elenia.fi/en/elenia/company/about-us/story-of-elenia",
+      },
     ],
   },
   {
@@ -345,22 +1136,63 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "One of three major UK rolling stock companies created from the privatisation of British Rail, leasing trains to train operating companies across the UK rail network.",
-    status: "Active",
+    description:
+      "Eversholt Rail is one of three major UK rolling stock leasing companies (ROSCOs) created from the privatisation of British Rail in 1994. The company owns approximately 28% of the UK passenger train fleet, comprising over 3,200 vehicles, and provides asset management, maintenance oversight, and fleet investment services to train operating companies across the United Kingdom.",
+    status: "Realized",
     website: "https://eversholtrail.co.uk",
     yearFounded: 1994,
     investmentYear: 2010,
     headquarters: "London, United Kingdom",
-    milestones: [
-      { date: "1994", event: "Established as subsidiary of British Rail during privatisation", category: "Founding" },
-      { date: "2010", event: "3i Infrastructure acquired 33% interest with Morgan Stanley and STAR Capital", category: "Financing" },
-      { date: "2015", event: "3i Infrastructure sold stake to CK Investments for £365m", category: "Divestiture" },
-    ],
     management: [
       { name: "Mary Kenny", title: "Chief Executive Officer" },
+      { name: "Andrea Wesson", title: "Chief Financial Officer" },
+      { name: "Andy Course", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "January 2015",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure sold its stake to CK Hutchison and Cheung Kong Infrastructure for an enterprise value of approximately £2.5 billion",
+      },
+      {
+        date: "December 2010",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquired 33% stake alongside Morgan Stanley Infrastructure Partners and STAR Capital Partners from HSBC",
+      },
+      {
+        date: "January 2010",
+        category: "Other",
+        event:
+          "Renamed from HSBC Rail to Eversholt Rail in preparation for sale by HSBC, restoring the original brand identity",
+      },
+      {
+        date: "November 1995",
+        category: "Financing",
+        event:
+          "British Rail sells Eversholt Rail via management buyout for £580 million as part of the privatisation of British Rail's rolling stock leasing operations",
+      },
+      {
+        date: "March 1994",
+        category: "Founding",
+        event:
+          "Established as a wholly owned subsidiary of British Rail during rail privatisation, named after Eversholt Street near London Euston",
+      },
     ],
     sources: [
-      { label: "Eversholt Rail — Wikipedia", url: "https://en.wikipedia.org/wiki/Eversholt_Rail_Group" },
+      {
+        label: "3i Infrastructure — Eversholt Rail (Past Portfolio)",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/eversholt-rail/",
+      },
+      {
+        label: "Wikipedia — Eversholt Rail Group",
+        url: "https://en.wikipedia.org/wiki/Eversholt_Rail_Group",
+      },
+      {
+        label: "Eversholt Rail — About Us",
+        url: "https://eversholtrail.co.uk/about-us/",
+      },
     ],
   },
   {
@@ -369,10 +1201,73 @@ export const companies: PortCo[] = [
     sector: "Digital Infrastructure",
     subsector: "Subsea",
     region: "Europe",
-    country: "United Kingdom HQ",
+    country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "FLAG (formerly Global Cloud Xchange / GCX) is one of the largest privately owned subsea cable operators globally, operating seven subsea and six terrestrial cable systems spanning 180+ countries with 66,000+ km of fibre across key routes linking North America, Europe, the Middle East, and Asia. The company provides high-bandwidth connectivity, managed network services, and edge data centre solutions to hyperscalers, telecom carriers, and enterprises worldwide.",
     status: "Active",
+    website: "https://flagtel.com",
+    yearFounded: 1993,
+    investmentYear: 2022,
+    headquarters: "London, United Kingdom",
+    management: [
+      { name: "Carl Grivner", title: "Chief Executive Officer" },
+      { name: "Brice Evin", title: "Chief Financial Officer" },
+      { name: "Brad Kneller", title: "Chief Network Officer" },
+      { name: "Giancarlo Ferro", title: "Chief Information Officer" },
+    ],
+    milestones: [
+      {
+        date: "December 2025",
+        category: "Expansion",
+        event:
+          "FLAG acquires a dedicated fibre pair on Google's Echo subsea cable system, creating a new trans-Pacific route between Singapore and the US",
+      },
+      {
+        date: "April 2025",
+        category: "Other",
+        event:
+          "Global Cloud Xchange rebrands to FLAG, reviving the original Fiberoptic Link Around the Globe name",
+      },
+      {
+        date: "September 2022",
+        category: "Financing",
+        event:
+          "3i Infrastructure completes acquisition of GCX for $377 million in equity",
+      },
+      {
+        date: "January 2021",
+        category: "Other",
+        event:
+          "GCX completes financial restructuring and emerges as an independent company backed by Värde Partners",
+      },
+      {
+        date: "October 2003",
+        category: "Acquisition",
+        event:
+          "Reliance Communications acquires FLAG Telecom for $207 million, marking the first international telecom acquisition by an Indian company",
+      },
+      {
+        date: "1993",
+        category: "Founding",
+        event:
+          "FLAG (Fiberoptic Link Around the Globe) established by a consortium of telecom companies led by Bell Atlantic to build a global subsea fibre-optic network",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — FLAG Portfolio Page",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/flag/",
+      },
+      {
+        label: "3i Infrastructure — GCX Investment Announcement",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2021/3i-infrastructure-plc-agrees-to-invest-in-gcx-to-support-future-growth/",
+      },
+      {
+        label: "FLAG — Rebrand Announcement (April 2025)",
+        url: "https://flagtel.com/rebrand-2025/",
+      },
+    ],
   },
   {
     name: "Fermoy and Limerick Motorways",
@@ -382,8 +1277,61 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Ireland",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "Fermoy and Limerick Motorways comprises two Irish toll road PPP concessions: DirectRoute (Fermoy), a 17.5km section of the M8 motorway between Dublin and Cork including a Blackwater crossing viaduct; and DirectRoute (Limerick), a 10km section of the M7 ring road around Limerick including a 675-metre tunnel under the River Shannon — Ireland's second under-river tunnel. Ownership is split between 3i/TIIC (50% via Munster GP SARL) and Meridiam (50%). The concessions run until 2034 and 2041 respectively, generating combined annual revenues of approximately €30 million.",
     status: "Active",
+    website: "https://www.directroute.ie/",
+    yearFounded: 2004,
+    investmentYear: 2019,
+    headquarters: "Limerick, Ireland",
+    // SPV concession entities; no dedicated C-suite management team
+    management: [],
+    milestones: [
+      {
+        date: "April 2019",
+        category: "Financing",
+        event:
+          "3i European Operational Projects Fund and TIIC acquire 50% of DirectRoute (Fermoy) and DirectRoute (Limerick) via Munster GP SARL, alongside co-investor Meridiam",
+      },
+      {
+        date: "July 2010",
+        category: "Expansion",
+        event:
+          "Limerick Tunnel route opens ahead of schedule, linking national routes via a 675-metre tunnel under the River Shannon",
+      },
+      {
+        date: "August 2006",
+        category: "Founding",
+        event:
+          "Direct Route (Limerick) Ltd signs PPP agreement with the National Roads Authority for the construction, operation, and maintenance of the Limerick Tunnel",
+      },
+      {
+        date: "2006",
+        category: "Expansion",
+        event:
+          "Rathcormac-Fermoy Bypass (M8) opens to traffic, providing a 17.3km tolled section in County Cork",
+      },
+      {
+        date: "June 2004",
+        category: "Founding",
+        event:
+          "DirectRoute (Fermoy) Ltd signs PPP contract with the National Roads Authority for the M8 Rathcormac-Fermoy Bypass",
+      },
+    ],
+    sources: [
+      {
+        label: "DirectRoute — Fermoy",
+        url: "https://www.directroute.ie/directroutefermoy.aspx",
+      },
+      {
+        label: "DirectRoute — Limerick",
+        url: "https://www.directroute.ie/directroutelimerick.aspx",
+      },
+      {
+        label: "TII — M8 Rathcormac-Fermoy Bypass PPP",
+        url: "https://www.tii.ie/roads-tolling/projects-and-improvements/ppp/m8-rathcormac-fermoy-by-p/",
+      },
+    ],
   },
   {
     name: "Future Biogas",
@@ -393,45 +1341,215 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "The UK's largest biomethane producer, operating 12 anaerobic digestion plants primarily across the East of England that produce renewable biomethane gas from agricultural crops.",
+    description:
+      "Future Biogas is one of the largest anaerobic digestion plant developers and biogas producers in the UK, producing approximately 700 GWh of biogas per year across 12 sites. The company converts sustainably grown energy crops into biomethane, which is injected into the UK's national gas network, and works with over 400 farms across the East of England. Future Biogas employs approximately 170 people and is pioneering unsubsidised biomethane production with integrated carbon capture technology.",
     status: "Active",
     website: "https://www.futurebiogas.com",
     yearFounded: 2010,
     investmentYear: 2023,
-    headquarters: "Guildford, United Kingdom",
-    milestones: [
-      { date: "2010", event: "Founded by Philipp Lukas", category: "Founding" },
-      { date: "2023", event: "Acquired by 3i Infrastructure", category: "Financing" },
-      { date: "2024", event: "Acquired portfolio of six additional anaerobic digestion facilities", category: "Acquisition" },
-    ],
+    headquarters: "Guildford, Surrey",
     management: [
-      { name: "Philipp Lukas", title: "Founder & Chief Executive Officer" },
+      { name: "Philipp Lukas", title: "Chief Executive Officer" },
+      { name: "Steven Beveridge", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "January 2025",
+        category: "Expansion",
+        event:
+          "Completes construction of Gonerby Moor site, the UK's first unsubsidised biomethane plant with carbon capture",
+      },
+      {
+        date: "September 2024",
+        category: "Financing",
+        event:
+          "3i Infrastructure syndicates 23% stake to RWE Energy Transition Investments for £30 million",
+      },
+      {
+        date: "August 2024",
+        category: "Acquisition",
+        event:
+          "Acquires 51% stake in portfolio of six gas-to-grid AD facilities from JLEN for £68.1 million, adding 333 GWh of gas output",
+      },
+      {
+        date: "December 2023",
+        category: "Expansion",
+        event:
+          "AstraZeneca signs 15-year, $130 million green gas offtake agreement for the Gonerby Moor biomethane facility",
+      },
+      {
+        date: "November 2023",
+        category: "Financing",
+        event:
+          "3i Infrastructure invests additional £30 million to fund acquisition of two AD plants previously operated by Future Biogas",
+      },
+      {
+        date: "February 2023",
+        category: "Financing",
+        event:
+          "Acquired by 3i Infrastructure plc for £28 million, transitioning from third-party operator to asset owner",
+      },
+      {
+        date: "March 2010",
+        category: "Founding",
+        event:
+          "Future Biogas Limited incorporated by founder Philipp Lukas",
+      },
     ],
     sources: [
-      { label: "Future Biogas — About Us", url: "https://www.futurebiogas.com/about-us/" },
+      {
+        label: "3i Infrastructure — Future Biogas Portfolio Page",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/future-biogas/",
+      },
+      {
+        label: "3i Group — Future Biogas Overview",
+        url: "https://www.3i.com/infrastructure/our-portfolio/future-biogas/",
+      },
+      {
+        label: "Future Biogas — AstraZeneca Unsubsidised Biomethane Plant",
+        url: "https://www.futurebiogas.com/about/content-hub/news/future-biogas-and-astrazeneca-bring-the-uk-s-first-unsubsidised-biomethane-plant-online/",
+      },
+      {
+        label: "NatWest — Future Biogas Sustainable Growth",
+        url: "https://www.natwest.com/business/insights/sector-trends/natural-resources-renewables-and-utilities/future-biogas-sustainable-growth-in-the-renewable-energy-sector.html",
+      },
     ],
   },
   {
-    name: "Gerediaga-Elo rrio Motorway (AGESA)",
+    name: "Gerediaga-Elorrio Motorway (AGESA)",
     investmentFirm: "3i Infrastructure",
     sector: "Transportation",
     subsector: "Toll Roads",
     region: "Europe",
     country: "Spain",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "AGESA (Sociedad Concesionaria Autovía Gerediaga Elorrio S.A.) is the concessionaire for the N-636 motorway from Gerediaga to Elorrio, located 50km southeast of Bilbao in the Basque Country. The project comprises a newly built 6.4km carriageway and the pre-existing 2.8km Elorrio bypass, including nine viaducts, two bridges, the 1,141m Gaztelua tunnel, and the Axtondo tunnel, built at a construction cost of €206.5 million. The 30-year concession runs until May 2042 and provides a key link between the provinces of Gipuzkoa and Bizkaia. 3i holds 80% and TIIC retains 19.9%.",
     status: "Active",
+    website: "http://interbiak.bizkaia.eus/en/-/gerediagaelorrio",
+    yearFounded: 2012,
+    investmentYear: 2019,
+    headquarters: "Abadiño, Bizkaia",
+    // SPV concession entity; no dedicated C-suite management team
+    management: [],
+    milestones: [
+      {
+        date: "January 2020",
+        category: "Acquisition",
+        event:
+          "3i European Operational Projects Fund completes acquisition of 80% of AGESA from Acciona, Excavaciones Viuda de Sainz, Exbasa Obras y Servicios, and Transitia for approximately €70 million",
+      },
+      {
+        date: "October 2019",
+        category: "Financing",
+        event:
+          "3i European Operational Projects Fund agrees to invest €70 million for 80% of AGESA",
+      },
+      {
+        date: "August 2016",
+        category: "Expansion",
+        event:
+          "Gerediaga-Elorrio motorway becomes fully operational, providing significant time savings for users travelling between Gipuzkoa and Bizkaia",
+      },
+      {
+        date: "May 2012",
+        category: "Founding",
+        event:
+          "Provincial Council of Biscay awards the 30-year concession for the N-636 motorway to AGESA; company incorporated in Abadiño",
+      },
+      {
+        date: "2022",
+        category: "Other",
+        event:
+          "Electronic free-flow tolling system introduced on the A-636 in the Basque Country, replacing manual toll collection",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — AGESA Investment Announcement",
+        url: "https://www.3i.com/media-centre/corporate-and-portfolio-news/2019/3i-european-operational-projects-fund-invests-70m-in-agesa-a-spanish-motorway-ppp/",
+      },
+      {
+        label: "Bizkaia Interbiak — Gerediaga-Elorrio",
+        url: "http://interbiak.bizkaia.eus/en/-/gerediagaelorrio",
+      },
+      {
+        label: "Grupo TYPSA — N-636 Road, Gerediaga-Elorrio Section",
+        url: "https://www.typsa.com/en/projects/n-636-road-gerediaga-elorrio-section/",
+      },
+    ],
   },
   {
     name: "Herambiente",
     investmentFirm: "3i Infrastructure",
     sector: "Utilities",
-    subsector: "Waste-to-Ener gy",
+    subsector: "Waste-to-Energy",
     region: "Europe",
     country: "Italy",
     ownershipVehicle: "3i Managed Infrastructure Acquisitions (MIA)",
-    description: "",
+    description:
+      "Herambiente is Italy's leading waste treatment company, owning and operating approximately 100 waste treatment facilities including landfills, waste-to-energy plants, anaerobic digestion units, and waste sorting facilities. The company is 75% owned by Hera Group and 25% by EWHL (3i MIA and ABP), processing approximately 7.2 million tons of waste annually.",
     status: "Active",
+    website: "https://ha.gruppohera.it",
+    yearFounded: 2009,
+    investmentYear: 2016,
+    headquarters: "Bologna, Italy",
+    management: [
+      { name: "Andrea Ramonda", title: "Chief Executive Officer" },
+      { name: "Cristian Fabbri", title: "President" },
+    ],
+    milestones: [
+      {
+        date: "January 2025",
+        category: "Acquisition",
+        event:
+          "Herambiente completes acquisition of 100% of Aliplast S.p.A., a European leader in recycled plastic processing over 100,000 tons annually, finalising an integration process that began in 2017",
+      },
+      {
+        date: "November 2020",
+        category: "Expansion",
+        event:
+          "Herambiente subsidiary HASI and Eni Rewind establish joint venture HEA to build a new special waste treatment platform in Ravenna capable of processing up to 60,000 tons of oil and gas waste per year",
+      },
+      {
+        date: "July 2019",
+        category: "Other",
+        event:
+          "Waste Recycling merges into Herambiente, making the combined entity the leading industrial waste operator in Italy with over one million tonnes treated annually",
+      },
+      {
+        date: "January 2017",
+        category: "Acquisition",
+        event:
+          "Herambiente begins acquisition of Aliplast, a leading Italian recycled plastics company, in a deal valued at approximately €100 million (6.5x EV/EBITDA)",
+      },
+      {
+        date: "December 2016",
+        category: "Financing",
+        event:
+          "3i Managed Infrastructure Acquisitions acquires a 12.5% indirect stake in Herambiente through EWHL alongside Dutch pension fund ABP",
+      },
+      {
+        date: "July 2009",
+        category: "Founding",
+        event:
+          "Herambiente founded as a dedicated waste management subsidiary of Hera Group, consolidating the group's environmental operations",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — Herambiente Portfolio",
+        url: "https://www.3i.com/infrastructure/our-portfolio/herambiente/",
+      },
+      {
+        label: "Herambiente — About Us",
+        url: "https://ha.gruppohera.it/about-us",
+      },
+      {
+        label: "Hera Group — Herambiente S.p.A.",
+        url: "https://eng.gruppohera.it/group_eng/who-we-are/the-hera-group-companies/herambiente-spa",
+      },
+    ],
   },
   {
     name: "Infinis",
@@ -441,21 +1559,69 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "The largest generator of electricity from landfill gas in the UK, operating 121 landfill sites with total installed capacity exceeding 300 MW. Expanding into solar power and battery energy storage.",
+    description:
+      "Infinis is the UK's largest generator of electricity from captured landfill gas and coal mine methane, operating across 153 sites with approximately 478MW of installed generating capacity. The company captures methane from landfill sites and disused coal mines, converting it into renewable electricity, while also developing a 1.4GW pipeline of solar and battery energy storage projects.",
     status: "Active",
     website: "https://infinis.com",
     yearFounded: 2006,
     investmentYear: 2016,
-    headquarters: "Northampton, United Kingdom",
-    milestones: [
-      { date: "2006", event: "Created as subsidiary of Waste Recycling Group; retained by Terra Firma when WRG was sold", category: "Founding" },
-      { date: "2016", event: "Acquired by 3i Infrastructure", category: "Financing" },
-    ],
+    headquarters: "Northampton, Northamptonshire",
     management: [
       { name: "Bruce Heppenstall", title: "Chief Executive Officer" },
+      { name: "Keith Reid", title: "Chief Financial Officer" },
+      { name: "James Milne", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      {
+        date: "March 2025",
+        category: "Financing",
+        event:
+          "Infinis secures an expanded £391 million financing package from Rabobank, CIBC, DNB and existing lenders to fund development of 257MW of new solar capacity and continued renewable energy growth",
+      },
+      {
+        date: "April 2018",
+        category: "Acquisition",
+        event:
+          "Infinis acquires 100% of Alkane Energy, the UK's largest coal mine methane generator with 160MW capacity, funded by a £125 million follow-on from 3i Infrastructure",
+      },
+      {
+        date: "December 2016",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires Infinis's landfill gas business from Terra Firma Capital Partners for £185 million",
+      },
+      {
+        date: "November 2013",
+        category: "Financing",
+        event:
+          "Infinis Energy plc completes IPO on the Main Market of the London Stock Exchange after seven years of ownership by Terra Firma Capital Partners",
+      },
+      {
+        date: "November 2009",
+        category: "Acquisition",
+        event:
+          "Infinis acquires Novera Energy for £111.5 million at 77p per share, adding landfill gas, hydroelectric, and wind development sites to the portfolio",
+      },
+      {
+        date: "2006",
+        category: "Founding",
+        event:
+          "Infinis created as a subsidiary of Waste Recycling Group to generate electricity from landfill gas; Terra Firma retains Infinis when it sells WRG",
+      },
     ],
     sources: [
-      { label: "Infinis — About Us", url: "https://infinis.com/about-us" },
+      {
+        label: "3i Infrastructure — Infinis Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/infinis/",
+      },
+      {
+        label: "Infinis — About Us",
+        url: "https://infinis.com/about-us",
+      },
+      {
+        label: "Infinis — £391m Financing Announcement",
+        url: "https://infinis.com/news/infinis-secures-391-million-financing-package-to-power-next-phase-of-renewable-growth",
+      },
     ],
   },
   {
@@ -466,21 +1632,68 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "France",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "European leader in cold sterilization and crosslinking services for medical devices, pharmaceuticals, cosmetics, and food products using ionizing radiation technologies.",
+    description:
+      "Ionisos is the third-largest cold sterilisation provider globally and a leading European operator of outsourced terminal sterilisation and irradiation services for the medical device, pharmaceutical, cosmetics, and food packaging industries. The company operates facilities across France, Spain, Germany, Switzerland, and Estonia using gamma ray, electron beam, X-ray, and ethylene oxide technologies.",
     status: "Active",
     website: "https://www.ionisos.com",
     yearFounded: 1993,
     investmentYear: 2019,
-    headquarters: "Dagneux, France",
-    milestones: [
-      { date: "1993", event: "Merged with Amphytrion to form IONISOS", category: "Founding" },
-      { date: "2019", event: "3i Infrastructure acquired up to 100% from Ardian Expansion for ~€220m", category: "Financing" },
-    ],
+    headquarters: "Civrieux d'Azergues, France",
     management: [
-      { name: "Christoph Herkens", title: "Chief Executive Officer" },
+      { name: "Christoph Herkens", title: "President" },
+      { name: "Mohamed Bounaamani", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "August 2023",
+        category: "Acquisition",
+        event:
+          "Ionisos acquires an e-beam sterilisation and crosslinking facility from Studer Cables AG in Däniken, Switzerland, expanding its European footprint to five countries",
+      },
+      {
+        date: "September 2019",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires approximately 95% of Ionisos from Ardian Expansion for circa €220 million",
+      },
+      {
+        date: "2017",
+        category: "Acquisition",
+        event:
+          "Ionisos acquires Scandinavian Clinics Estonia, the Baltic specialist in gamma radiation sterilisation, expanding into its fourth European market",
+      },
+      {
+        date: "2007",
+        category: "Acquisition",
+        event:
+          "Ionisos acquires IONMED in Spain, a specialist in beta treatment (e-beam), marking the start of its European expansion beyond France",
+      },
+      {
+        date: "2004",
+        category: "Expansion",
+        event:
+          "Ionisos adds ethylene oxide as a third sterilisation technology by opening its first EO treatment site in Gien through subsidiary STERYLENE",
+      },
+      {
+        date: "1993",
+        category: "Founding",
+        event:
+          "Ionisos founded through the merger of Conservatome (established 1956) and Amphytrion, combining gamma irradiation expertise",
+      },
     ],
     sources: [
-      { label: "IONISOS — Website", url: "https://www.ionisos.com/en/" },
+      {
+        label: "3i Infrastructure — Ionisos Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/ionisos/",
+      },
+      {
+        label: "Ionisos — Our History",
+        url: "https://www.ionisos.com/en/ionisos-sterilization-by-gamma-and-beta-ionization-and-ethylene-oxide/our-history/",
+      },
+      {
+        label: "Orrick — Ionisos Acquisition of Studer Cables Facility",
+        url: "https://www.orrick.com/en/News/2023/08/Orrick-Advised-Ionisos-on-Acquisition-from-Studer-Cables-AG",
+      },
     ],
   },
   {
@@ -489,23 +1702,64 @@ export const companies: PortCo[] = [
     sector: "Energy Transition",
     subsector: "Equipment",
     region: "Europe",
-    country: "Netherlands/Belgium",
+    country: "Netherlands",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "Leading owner and provider of essential energy infrastructure equipment and services in the Netherlands, serving approximately 21,000 industrial, commercial, and public sector clients.",
+    description:
+      "Joulz is a leading owner and provider of essential energy infrastructure equipment and services in the Netherlands, serving approximately 21,000 industrial, commercial, and public sector customers. The company leases, operates, and maintains around 4,000 medium-voltage electricity installations and 50,000 electricity and gas meters, while expanding into solar energy, battery storage, and EV charging infrastructure.",
     status: "Active",
-    yearFounded: 2009,
+    website: "https://joulz.nl",
+    yearFounded: 2004,
     investmentYear: 2019,
-    headquarters: "Rotterdam, Netherlands",
-    milestones: [
-      { date: "2009", event: "Established as part of Stedin Holding NV", category: "Founding" },
-      { date: "2019", event: "3i Infrastructure acquired 100% from Stedin for ~€220m", category: "Financing" },
-      { date: "2021", event: "Expanded into solar energy through acquisition of Zonel Energy", category: "Acquisition" },
-    ],
+    headquarters: "Delft, Netherlands",
     management: [
       { name: "Sytse Zuidema", title: "Chief Executive Officer" },
+      { name: "Paul Smits", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "April 2021",
+        category: "Acquisition",
+        event:
+          "Joulz acquires Zonel Energy (renamed Joulz Solar Energy), a leading B2B solar rooftop solutions provider, increasing Joulz's turnover by approximately 20%",
+      },
+      {
+        date: "2020",
+        category: "Acquisition",
+        event:
+          "Joulz acquires the Dutch charge point operator and e-mobility service provider division of GreenFlux, entering the EV charging market",
+      },
+      {
+        date: "March 2020",
+        category: "Management",
+        event:
+          "Sjoerd Vollebregt appointed Chairman of Joulz, bringing experience as Chair of Heijmans N.V. and former CEO of Vopak",
+      },
+      {
+        date: "April 2019",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires 100% of Joulz from Stedin Holding NV for approximately €220 million",
+      },
+      {
+        date: "2004",
+        category: "Founding",
+        event:
+          "Joulz established as a subsidiary of Stedin Group to provide energy infrastructure equipment and metering services in the Netherlands",
+      },
     ],
     sources: [
-      { label: "3i Infrastructure — Joulz Portfolio", url: "https://www.3i.com/infrastructure/our-portfolio/joulz/" },
+      {
+        label: "3i Infrastructure — Joulz Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/joulz/",
+      },
+      {
+        label: "Joulz — About Us",
+        url: "https://joulz.nl/nl/about-us",
+      },
+      {
+        label: "3i Infrastructure — Joulz Acquires Zonel Energy",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2021/joulz-expands-into-solar-energy-through-the-acquisition-of-zonel-energy/",
+      },
     ],
   },
   {
@@ -516,19 +1770,137 @@ export const companies: PortCo[] = [
     region: "Asia-Pacific",
     country: "India",
     ownershipVehicle: "3i India Infrastructure Fund",
-    description: "",
-    status: "Active",
+    description:
+      "KMC Infratech Limited is a road infrastructure developer and operator that owns a portfolio of build-operate-transfer (BOT) highway assets totaling approximately 5,000 lane kilometres across 10 projects spanning Kerala, Gurgaon, Jaipur, Kanpur, and Hyderabad. A subsidiary of KMC Constructions Limited — founded in 1970 by M. Raja Mohan Reddy and one of India's most established highway contractors with over 15,000 lane km of construction experience — KMCIL served as the flagship vehicle for the KMC Group's road concession assets. The $1.2 billion 3i India Infrastructure Fund invested $111 million for growth capital.",
+    status: "Realized",
+    website: "https://kmcgroup.co.in/infrastructure/",
+    yearFounded: 2008,
+    investmentYear: 2011,
+    headquarters: "Hyderabad, India",
+    management: [
+      { name: "M. Goutham Reddy", title: "Chief Executive Officer" },
+      { name: "M. Vikram Reddy", title: "President" },
+      { name: "M. Pruthvi Kumar Reddy", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "2022",
+        category: "Divestiture",
+        event:
+          "3i India Infrastructure Fund sells its stake in KMC Infratech at an uplift to carrying value as part of the fund's wind-down",
+      },
+      {
+        date: "March 2011",
+        category: "Financing",
+        event:
+          "3i India Infrastructure Fund invests Rs 500 crore ($111 million) in KMC Infratech to fund its portfolio of 10 BOT road projects; Spark Capital Advisors acts as exclusive financial advisor",
+      },
+      {
+        date: "December 2008",
+        category: "Founding",
+        event:
+          "KMC Infratech Limited incorporated in Hyderabad as the flagship BOT road asset holding company of KMC Constructions",
+      },
+      {
+        date: "1993",
+        category: "Expansion",
+        event:
+          "KMC Constructions Limited converts from a partnership firm (Krishna Mohan Constructions, est. 1970) to a public limited company, expanding its national highway footprint",
+      },
+      {
+        date: "1970",
+        category: "Founding",
+        event:
+          "M. Raja Mohan Reddy founds Krishna Mohan Constructions as a partnership firm in Hyderabad, the predecessor to KMC Constructions Limited",
+      },
+    ],
+    sources: [
+      {
+        label: "Business Standard — 3i India invests in KMC Infratech",
+        url: "https://www.business-standard.com/article/companies/3i-india-invests-rs-500-cr-in-kmc-infratech-111032900022_1.html",
+      },
+      {
+        label: "Infrastructure Investor — 3i India Infra fund invests $111m",
+        url: "https://www.infrastructureinvestor.com/3i-india-infra-fund-invests-111m-in-indian-road-operator/",
+      },
+      {
+        label: "KMC Group — Infrastructure Division",
+        url: "https://kmcgroup.co.in/infrastructure/",
+      },
+    ],
   },
   {
-    name: "Krishnapatna m Port",
+    name: "Krishnapatnam Port",
     investmentFirm: "3i Infrastructure",
     sector: "Transportation",
     subsector: "Ports",
     region: "Asia-Pacific",
     country: "India",
     ownershipVehicle: "3i India Infrastructure Fund",
-    description: "",
-    status: "Active",
+    description:
+      "Krishnapatnam Port Company Limited (KPCL) operates a natural deep-water, all-weather port on the east coast of Andhra Pradesh, approximately 190 km north of Chennai. Developed by the CVR Group under a 50-year build-operate-share-transfer concession, it grew to become the largest private port on India's east coast and one of only three Indian ports capable of receiving capesize vessels (200,000 DWT). The port features a 12.5 km waterfront, 18.5m alongside draught, and over 6,700 acres of land, handling over 60 million tonnes of cargo annually. Adani Ports acquired full ownership in 2020–2021 for a total of approximately ₹13,675 crore ($1.8 billion).",
+    status: "Realized",
+    website: "https://www.krishnapatnam.com/",
+    yearFounded: 2003,
+    investmentYear: 2009,
+    headquarters: "Nellore, Andhra Pradesh",
+    management: [
+      { name: "Anil K. Yendluri", title: "Chief Executive Officer" },
+      { name: "Chinta Sasidhar", title: "President" },
+      { name: "Chinta Visweswara Rao", title: "Chairman" },
+    ],
+    milestones: [
+      {
+        date: "April 2021",
+        category: "Divestiture",
+        event:
+          "Adani Group acquires the residual 25% stake in KPCL, bringing total ownership to 100% and total consideration to approximately ₹13,675 crore ($1.8 billion)",
+      },
+      {
+        date: "October 2020",
+        category: "Divestiture",
+        event:
+          "Adani Ports & SEZ acquires 75% stake in KPCL from CVR Group and other investors including 3i for an enterprise value of ₹12,000 crore, providing 3i with an exit",
+      },
+      {
+        date: "September 2012",
+        category: "Expansion",
+        event:
+          "KPCL inaugurates its container terminal with capacity of 1.2 million TEUs per year, equipped with five Panamax gantry cranes and nine rubber tyre gantry cranes",
+      },
+      {
+        date: "February 2009",
+        category: "Financing",
+        event:
+          "3i India Infrastructure Fund invests approximately $161 million for a 26% minority stake in Krishnapatnam Port Company",
+      },
+      {
+        date: "July 2008",
+        category: "Expansion",
+        event:
+          "Krishnapatnam Port inaugurated by UPA Chairperson Sonia Gandhi after Phase I completed in a record 18 months; begins commercial operations handling iron ore and coal",
+      },
+      {
+        date: "2003",
+        category: "Founding",
+        event:
+          "Krishnapatnam Port Company Limited formed by the CVR Group (Navayuga Engineering) to develop the port under a 50-year BOST concession from Andhra Pradesh",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — Krishnapatnam Port Investment",
+        url: "https://www.3i.com/media-centre/corporate-and-portfolio-news/2009/3i-invests-161m-in-krishnapatnam-port-company-ltd/",
+      },
+      {
+        label: "Wikipedia — Krishnapatnam Port",
+        url: "https://en.wikipedia.org/wiki/Krishnapatnam_Port",
+      },
+      {
+        label: "Adani Ports — Krishnapatnam Port Acquisition",
+        url: "https://origin-webapp.adaniports.com/newsroom/media-releases/adani-ports-and-sez-ltd-completes-rs-12000-cr-acquisition-of-krishnapatnam-port-company-ltd-kpcl",
+      },
+    ],
   },
   {
     name: "La Seine Musicale",
@@ -538,19 +1910,135 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "France",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "La Seine Musicale is a landmark music and performing arts complex on Île Seguin in Boulogne-Billancourt, on the Seine river just west of Paris. Built at a cost of €170 million through a 27-year PPP with the Département des Hauts-de-Seine, the 36,500 sq m facility comprises a 6,000-seat modular concert hall (La Grande Seine), a 1,150-seat auditorium designed by Pritzker Prize-winning architect Shigeru Ban with Jean de Gastines, rehearsal and recording studios, and event spaces. The consortium Tempo-Île Seguin, led by Bouygues Bâtiment Île-de-France with Sodexo and TF1, operates the complex.",
     status: "Active",
+    website: "https://www.laseinemusicale.com/",
+    yearFounded: 2017,
+    investmentYear: 2022,
+    headquarters: "Boulogne-Billancourt, France",
+    // PPP operated by Tempo-Île Seguin consortium; no dedicated C-suite management team publicly disclosed
+    management: [],
+    milestones: [
+      {
+        date: "March 2022",
+        category: "Financing",
+        event:
+          "3i European Operational Projects Fund acquires an 80% equity stake in La Seine Musicale from InfraVia European Fund II after a 10-year investment journey",
+      },
+      {
+        date: "April 2017",
+        category: "Founding",
+        event:
+          "La Seine Musicale inaugurated on Île Seguin by Patrick Devedjian, President of the Hauts-de-Seine Departmental Council; Bob Dylan performs the first concert at La Grande Seine",
+      },
+      {
+        date: "2015",
+        category: "Expansion",
+        event:
+          "La Seine Musicale project wins the MIPIM 2015 Best Futura Project award during construction",
+      },
+      {
+        date: "July 2013",
+        category: "Other",
+        event:
+          "Département des Hauts-de-Seine signs 27-year PPP contract with consortium Tempo-Île Seguin, led by Bouygues Bâtiment Île-de-France, for construction and operation",
+      },
+      {
+        date: "2010",
+        category: "Acquisition",
+        event:
+          "Département des Hauts-de-Seine acquires the 2.35-hectare downstream tip of Île Seguin from Boulogne-Billancourt for a symbolic €1, on the former Renault factory site",
+      },
+    ],
+    sources: [
+      {
+        label: "IPE Real Assets — 3i European fund buys La Seine Musicale",
+        url: "https://realassets.ipe.com/news/3i-european-fund-buys-la-seine-musicale-concert-hall-in-france/10058707.article",
+      },
+      {
+        label: "Wikipedia — La Seine Musicale",
+        url: "https://en.wikipedia.org/wiki/La_Seine_Musicale",
+      },
+      {
+        label: "InfraVia — Tempo (La Seine Musicale)",
+        url: "https://infraviacapital.com/companies/tempo/",
+      },
+    ],
   },
   {
     name: "Lefdal Mine Datacenter",
     investmentFirm: "3i Infrastructure",
     sector: "Digital Infrastructure",
-    subsector: "Data",
+    subsector: "Data Centers",
     region: "Europe",
     country: "Norway",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "Lefdal Mine Datacenter is a large-scale data centre campus built inside a former olivine mine on Norway's west coast near Måløy. The facility leverages Norway's abundant renewable hydroelectric power and a closed-loop fjord seawater cooling system to deliver one of Europe's most energy-efficient and sustainable colocation environments, with 37 MW of operational capacity and substantial expansion potential.",
     status: "Active",
+    website: "https://www.lefdalmine.com/",
+    yearFounded: 2010,
+    investmentYear: 2026,
+    headquarters: "Måløy, Norway",
+    management: [
+      { name: "Jørn Skaane", title: "Chief Executive Officer" },
+      { name: "Fredrik Løwehr", title: "Chief Financial Officer" },
+      { name: "Frode Strømmen", title: "Chief Operating Officer" },
+      { name: "Mats Andersson", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      {
+        date: "March 2026",
+        category: "Financing",
+        event:
+          "3i Infrastructure plc agrees to invest approximately €300 million to acquire a majority stake in Lefdal Mine Datacenter from Columbia Threadneedle",
+      },
+      {
+        date: "June 2025",
+        category: "Expansion",
+        event:
+          "Sigma2 inaugurates 'Olivia', an HPE Cray supercomputer with 304 Nvidia GH200 GPUs delivering 13.2 petaflops, housed at Lefdal Mine Datacenter",
+      },
+      {
+        date: "2021",
+        category: "Expansion",
+        event:
+          "Sigma2 selects Lefdal Mine Datacenter to host Norway's national research computing infrastructure (NIRD), with containers arriving in early 2022",
+      },
+      {
+        date: "May 2020",
+        category: "Financing",
+        event:
+          "Columbia Threadneedle European Sustainable Infrastructure Fund acquires a 67% majority stake in Lefdal Mine Datacenter",
+      },
+      {
+        date: "May 2017",
+        category: "Expansion",
+        event:
+          "Lefdal Mine Datacenter officially opens for commercial operations in the former olivine mine, powered entirely by renewable energy",
+      },
+      {
+        date: "2010",
+        category: "Founding",
+        event:
+          "Lefdal Mine Datacenter AS founded to convert the abandoned Lefdal olivine mine into a large-scale data centre campus",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Lefdal Mine Datacenter",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2026/3i-infrastructure-plc-invests-in-lefdal-mine-datacenter/",
+      },
+      {
+        label: "Lefdal Mine Datacenter — Official Site",
+        url: "https://www.lefdalmine.com/",
+      },
+      {
+        label: "DCD — Supercomputing Goes Underground at Lefdal",
+        url: "https://www.datacenterdynamics.com/en/analysis/data-mining-lefdal-mine-datacenter/",
+      },
+    ],
   },
   {
     name: "MFM Capital",
@@ -560,8 +2048,25 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Italy",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "MFM Capital S.r.l. is an Italian holding company that owns stakes in PPP concession vehicles operating social infrastructure assets, including four hospital concessions in Monza, Legnano, Verona, and Modena, as well as the Terza Torre regional government office building in Bologna and an energy efficiency project in Alessandria.",
     status: "Active",
+    investmentYear: 2019,
+    headquarters: "Bologna, Italy",
+    milestones: [
+      {
+        date: "2019",
+        category: "Financing",
+        event:
+          "3i European Operational Projects Fund acquires a 95% stake in MFM Capital from Rekeep SpA",
+      },
+    ],
+    sources: [
+      {
+        label: "3i EOPF Deploys Capital in Italy",
+        url: "https://www.3i.com/media/news/2019/3i-european-operational-projects-fund-deploys-capital-in-portugal-italy-ireland-and-germany/",
+      },
+    ],
   },
   {
     name: "NEoT Green Mobility",
@@ -569,10 +2074,66 @@ export const companies: PortCo[] = [
     sector: "Transportation",
     subsector: "Energy Transition",
     region: "Europe",
-    country: "Europe",
+    country: "France",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "NEoT Green Mobility is a European investment platform dedicated to financing zero-emission mobility, providing turnkey leasing and as-a-service solutions for electric buses, coaches, trucks, charging infrastructure, and batteries to local authorities, transport operators, and logistics companies. The platform manages over €200 million of assets across France, the UK, and Scandinavia.",
     status: "Active",
+    website: "https://www.neotcapital.com/en/plateformes/neot-green-mobility/",
+    yearFounded: 2017,
+    investmentYear: 2021,
+    headquarters: "Paris, France",
+    management: [
+      { name: "Philippe Ringenbach", title: "Chief Executive Officer" },
+      { name: "Alain Lopez", title: "Chief Financial Officer" },
+      { name: "Rita Nkatha Laibuta", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "May 2025",
+        category: "Expansion",
+        event:
+          "NEoT Capital launches NEoT e-motion, a new pan-European zero-emission leasing platform backed by €350 million in equity from Mirova, Alba Infra Partners, and Banque des Territoires",
+      },
+      {
+        date: "April 2024",
+        category: "Financing",
+        event:
+          "NEoT Green Mobility secures €60 million from Mirova, 3i, and Banque des Territoires, increasing total platform funding to €160 million",
+      },
+      {
+        date: "September 2021",
+        category: "Financing",
+        event:
+          "3i EOPF commits €30 million in equity alongside Mirova and Banque des Territoires, raising €100 million for NEoT Green Mobility",
+      },
+      {
+        date: "2019",
+        category: "Expansion",
+        event:
+          "NEoT Green Mobility closes its first maritime project, financing four hybrid crew transfer vessels for Northern Offshore Services",
+      },
+      {
+        date: "2017",
+        category: "Founding",
+        event:
+          "NEoT Green Mobility launched by NEoT Capital (co-founded by EDF and Forsee Power) to finance zero-emission mobility across Europe",
+      },
+    ],
+    sources: [
+      {
+        label: "3i EOPF Invests in NEoT Green Mobility",
+        url: "https://www.3i.com/media/news/2021/3i-european-operational-projects-fund-agrees-to-invest-in-neot-green-mobility/",
+      },
+      {
+        label: "NEoT Capital — NEoT Green Mobility Platform",
+        url: "https://www.neotcapital.com/en/plateformes/neot-green-mobility/",
+      },
+      {
+        label: "BeBeez — NEoT Green Mobility Bags €60M",
+        url: "https://bebeez.eu/2024/04/29/france-based-neot-green-mobility-bags-e60m-to-finance-zero-emission-mobility/",
+      },
+    ],
   },
   {
     name: "Oiltanking (European Terminals)",
@@ -580,10 +2141,33 @@ export const companies: PortCo[] = [
     sector: "Midstream Energy",
     subsector: "Storage",
     region: "Europe",
-    country: "Europe",
+    country: "Netherlands",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
-    status: "Active",
+    description:
+      "Oiltanking European Terminals comprised 3i Infrastructure's 45% stakes in four liquid bulk storage terminals — Oiltanking Amsterdam, Oiltanking Ghent, Oiltanking Malta, and Oiltanking Terneuzen — providing 3.8 million cubic metres of storage capacity for refined oil products, chemicals, and biofuels across the ARA hub and the Mediterranean.",
+    status: "Realized",
+    investmentYear: 2007,
+    headquarters: "Amsterdam, Netherlands",
+    milestones: [
+      {
+        date: "October 2021",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure completes sale of four European terminal stakes to Evos for net proceeds of approximately €55 million, achieving a 2.8x money multiple",
+      },
+      {
+        date: "2007",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires 45% stakes in Oiltanking Amsterdam and Oiltanking Malta through the Oystercatcher holding company at IPO",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Sale of European Terminals",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2021/3i-infrastructure-plc-agrees-to-sell-oystercatcher-s-four-european-terminals/",
+      },
+    ],
   },
   {
     name: "Oystercatcher (Advario)",
@@ -593,8 +2177,64 @@ export const companies: PortCo[] = [
     region: "Asia-Pacific",
     country: "Singapore",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "Oystercatcher is the holding company through which 3i Infrastructure holds a 45% interest in Advario Singapore Limited (formerly Oiltanking Singapore), a 1.3 million cubic metre liquid bulk storage and blending facility on Jurong Island. Advario Singapore is the leading gasoline storage and blending facility in Singapore and the wider region, serving customers in refined petroleum products, chemicals, and increasingly sustainable fuels including SAF.",
     status: "Active",
+    website: "https://advario.com/",
+    yearFounded: 1990,
+    investmentYear: 2007,
+    headquarters: "Singapore",
+    management: [
+      { name: "Bas Verkooijen", title: "Chief Executive Officer" },
+      { name: "Maaike Schipperheijn", title: "Chief Financial Officer" },
+      { name: "Yvan Tavernier", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "May 2023",
+        category: "Expansion",
+        event:
+          "Advario Singapore secures long-term SAF storage and blending partnership with Neste for sustainable aviation fuel at Changi Airport",
+      },
+      {
+        date: "2022",
+        category: "Other",
+        event:
+          "Oiltanking Singapore rebranded as Advario Singapore Limited",
+      },
+      {
+        date: "October 2021",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure sells Oystercatcher's four European terminal stakes to Evos; retains 45% stake in Advario Singapore as the sole remaining asset",
+      },
+      {
+        date: "2007",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires 45% stake in Oiltanking Singapore through the Oystercatcher holding company at IPO",
+      },
+      {
+        date: "1990",
+        category: "Founding",
+        event:
+          "Oiltanking Singapore commences operations on Jurong Island as a petroleum products storage and blending terminal",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Oystercatcher Current Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/oystercatcher/",
+      },
+      {
+        label: "Advario — Leadership Team",
+        url: "https://advario.com/about-us/leadership-team/",
+      },
+      {
+        label: "Advario — Clean Energy Storage MOU with VFlowTech",
+        url: "https://advario.com/advario-vflowtech-and-jtc-sign-mou-to-accelerate-deployment-of-clean-energy-storage-capacity-on-jurong-island-by-up-to-25-times/",
+      },
+    ],
   },
   {
     name: "Regional Rail",
@@ -604,8 +2244,70 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "3i North American Infrastructure Fund",
-    description: "",
+    description:
+      "Regional Rail LLC is a leading operator of short line freight railroads and rail-related businesses across North America. Since 3i's acquisition in 2019, the company has grown from three railroads to seventeen freight railroad operations spanning the eastern United States and western Canada, transporting over 65,000 carloads annually across diversified end markets.",
     status: "Active",
+    website: "https://regional-rail.com/",
+    yearFounded: 2007,
+    investmentYear: 2019,
+    headquarters: "Kennett Square, Pennsylvania",
+    management: [
+      { name: "Al Sauer", title: "President and Chief Executive Officer" },
+      { name: "Ethel Nawrocki", title: "Chief Financial Officer" },
+      { name: "Perry Pellerin", title: "Chief Executive Officer, Great Sandhills Railway" },
+    ],
+    milestones: [
+      {
+        date: "October 2025",
+        category: "Acquisition",
+        event:
+          "Regional Rail acquires the Minnesota Commercial Railway, expanding the network to 17 railroads across 9 U.S. states and 2 Canadian provinces",
+      },
+      {
+        date: "January 2023",
+        category: "Acquisition",
+        event:
+          "Regional Rail acquires Indiana Eastern Railroad and Ohio South Central Railroad, adding 107 miles of mainline freight track across Indiana and Ohio",
+      },
+      {
+        date: "October 2022",
+        category: "Expansion",
+        event:
+          "Regional Rail expands into the Midwest and western Canada, acquiring three railroads in Illinois and Ohio plus Great Sandhills Railway in Saskatchewan",
+      },
+      {
+        date: "2020",
+        category: "Acquisition",
+        event:
+          "Regional Rail acquires Pinsly Railroad Company's Florida operations (Florida Central, Florida Midland, Florida Northern) adding 208 miles of track",
+      },
+      {
+        date: "July 2019",
+        category: "Financing",
+        event:
+          "3i Group acquires 100% of Regional Rail from Levine Leichtman Capital Partners, establishing it as 3i's North American rail infrastructure platform",
+      },
+      {
+        date: "April 2007",
+        category: "Founding",
+        event:
+          "Regional Rail LLC formed; acquires the East Penn Railroad as its first operating railroad",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — Regional Rail Portfolio",
+        url: "https://www.3i.com/infrastructure/our-portfolio/regional-rail/",
+      },
+      {
+        label: "Regional Rail — Company Website",
+        url: "https://regional-rail.com/",
+      },
+      {
+        label: "Regional Rail — Midwest Expansion Announcement",
+        url: "https://regional-rail.com/2026/01/16/regional-rail-expands-its-network-in-the-midwest-via-the-acquisition-of-several-short-line-freight-railroads/",
+      },
+    ],
   },
   {
     name: "SRL Traffic Systems",
@@ -615,19 +2317,62 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "The UK's market-leading temporary traffic management equipment rental company, with a nationwide network of over 25 depots and 250 employees.",
+    description:
+      "SRL Traffic Systems is the UK's leading manufacturer and rental provider of temporary and portable traffic management equipment, including intelligent traffic signals, variable message signs, pedestrian systems, barriers, and CCTV. The company operates the largest depot network of intelligent traffic management systems in the country and is the UK's only manufacturer to both sell and hire traffic light equipment.",
     status: "Active",
-    website: "https://srl.co.uk",
+    website: "https://www.srl.co.uk",
+    yearFounded: 1997,
     investmentYear: 2021,
-    headquarters: "Cheshire, United Kingdom",
-    milestones: [
-      { date: "2021", event: "3i Infrastructure acquired 92% stake for ~£191m from LDC", category: "Financing" },
-    ],
+    headquarters: "Middlewich, Cheshire",
     management: [
       { name: "Mark Eburne", title: "Chief Executive Officer" },
+      { name: "Chris Riley", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "April 2024",
+        category: "Management",
+        event:
+          "Mark Eburne appointed as CEO; former CEO Richard Tredwin transitions to Executive Chairman",
+      },
+      {
+        date: "December 2021",
+        category: "Financing",
+        event:
+          "3i Infrastructure completes acquisition of 92% stake in SRL Traffic Systems for approximately £191 million",
+      },
+      {
+        date: "September 2019",
+        category: "Financing",
+        event:
+          "LDC invests £24 million to back a management buyout of SRL led by CEO Richard Tredwin, fueling 72% revenue growth over two years",
+      },
+      {
+        date: "2018",
+        category: "Expansion",
+        event:
+          "SRL forms the Urban64 division and signs an exclusive UK and RoI variable message sign hire deal with SWARCO",
+      },
+      {
+        date: "1997",
+        category: "Founding",
+        event:
+          "SRL Traffic Systems founded in Middlewich, Cheshire",
+      },
     ],
     sources: [
-      { label: "SRL Traffic Systems — About", url: "https://srl.co.uk/about/" },
+      {
+        label: "3i Infrastructure — SRL Traffic Systems",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/srl-traffic-systems/",
+      },
+      {
+        label: "SRL Traffic Systems — Our History",
+        url: "https://srl.co.uk/about/our-history/",
+      },
+      {
+        label: "LDC — SRL Traffic Systems Investment",
+        url: "https://www.ldc.co.uk/portfolio/srl-traffic-systems-investment-to-accelerate-growth/",
+      },
     ],
   },
   {
@@ -636,10 +2381,48 @@ export const companies: PortCo[] = [
     sector: "Digital Infrastructure",
     subsector: "Towers",
     region: "North America",
-    country: "United States",
+    country: "Canada",
     ownershipVehicle: "3i North American Infrastructure Fund",
-    description: "",
-    status: "Active",
+    description:
+      "Shared Tower is Canada's leading independent developer and owner of carrier-neutral telecommunications infrastructure, including tower sites, passive fibre networks, and edge colocation facilities. The company builds and operates infrastructure under long-term contracts for wireless carriers across Canada.",
+    status: "Realized",
+    website: "https://www.sharedtower.ca",
+    yearFounded: 2021,
+    investmentYear: 2022,
+    headquarters: "Oakville, Ontario",
+    management: [
+      { name: "Dan Gibbons", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "March 2025",
+        category: "Divestiture",
+        event:
+          "3i completes sale of its stake in Shared Tower to Northleaf Capital Partners",
+      },
+      {
+        date: "2022",
+        category: "Financing",
+        event:
+          "3i North American Infrastructure Fund invests in Shared Tower as the company's first institutional investor",
+      },
+      {
+        date: "2021",
+        category: "Founding",
+        event:
+          "Dan Gibbons founds Shared Tower in Oakville, Ontario to develop carrier-neutral communications infrastructure across Canada",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — Shared Tower Portfolio",
+        url: "https://www.3i.com/infrastructure/our-portfolio/shared-tower/",
+      },
+      {
+        label: "3i — Sale of Shared Tower Announcement",
+        url: "https://www.3i.com/media/news/2025/3i-announces-sale-of-its-investment-in-shared-tower/",
+      },
+    ],
   },
   {
     name: "Smarte Carte",
@@ -649,21 +2432,40 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "3i Proprietary Capital / US Platform",
-    description: "Global leader in self-service vended products, providing luggage carts, electronic lockers, commercial strollers, and massage chairs at over 3,400 locations worldwide, including 98 of the top 100 US airports.",
+    description:
+      "Smarte Carte is the world's leading provider of self-service luggage carts, electronic lockers, commercial strollers, and massage chairs, operating in over 3,400 locations across six continents. The company serves 98 of the top 100 U.S. airports and is the sole baggage cart provider at 49 of the top 50.",
     status: "Active",
     website: "https://smartecarte.com",
-    yearFounded: 1967,
+    yearFounded: 1970,
     investmentYear: 2017,
-    headquarters: "White Bear Lake, Minnesota, United States",
-    milestones: [
-      { date: "1967", event: "Founded", category: "Founding" },
-      { date: "2017", event: "3i Group invested approximately $353m, its first North American infrastructure transaction", category: "Financing" },
-    ],
+    headquarters: "Saint Paul, Minnesota",
     management: [
       { name: "Drew Niemeyer", title: "Chief Executive Officer" },
+      { name: "Thor Osteboe", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "October 2017",
+        category: "Financing",
+        event:
+          "3i Group acquires Smarte Carte for $385 million, marking its first North American infrastructure investment",
+      },
+      {
+        date: "1970",
+        category: "Founding",
+        event:
+          "Jim Muellner incorporates Smarte Carte, Inc. in White Bear Lake, Minnesota, launching self-serve luggage cart kiosks at airports",
+      },
     ],
     sources: [
-      { label: "Smarte Carte — Our Story", url: "https://smartecarte.com/about-us/our-story/" },
+      {
+        label: "3i Group — Smarte Carte Portfolio",
+        url: "https://www.3i.com/infrastructure/our-portfolio/smarte-carte/",
+      },
+      {
+        label: "Smarte Carte — Our Story",
+        url: "https://smartecarte.com/about-us/our-story/",
+      },
     ],
   },
   {
@@ -674,8 +2476,33 @@ export const companies: PortCo[] = [
     region: "Asia-Pacific",
     country: "India",
     ownershipVehicle: "3i India Infrastructure Fund",
-    description: "",
-    status: "Active",
+    description:
+      "Soma Enterprise Limited is a Hyderabad-based infrastructure engineering and construction company engaged in the development of highways, hydropower, irrigation, railways, power transmission, and urban infrastructure projects across India. The company operates both as a construction service provider under EPC contracts and as an infrastructure developer under PPP/BOT concessions.",
+    status: "Realized",
+    website: "https://www.soma.co.in",
+    yearFounded: 1997,
+    investmentYear: 2007,
+    headquarters: "Hyderabad, Telangana",
+    milestones: [
+      {
+        date: "November 2007",
+        category: "Financing",
+        event:
+          "3i India Infrastructure Fund invests $101 million for a minority stake in Soma Enterprise",
+      },
+      {
+        date: "1997",
+        category: "Founding",
+        event:
+          "Maganti family acquires and renames the entity to Soma Enterprise, focused on infrastructure development",
+      },
+    ],
+    sources: [
+      {
+        label: "Soma Enterprise — Official Website",
+        url: "https://www.soma.co.in/",
+      },
+    ],
   },
   {
     name: "Supreme Infrastructure India",
@@ -685,8 +2512,39 @@ export const companies: PortCo[] = [
     region: "Asia-Pacific",
     country: "India",
     ownershipVehicle: "3i India Infrastructure Fund",
-    description: "",
-    status: "Active",
+    description:
+      "Supreme Infrastructure India Limited (SIIL) is a Mumbai-based construction and infrastructure company focused on roads, bridges, power, water, railways, and civil construction, with a primary focus on the highways sector. The company built over 400 km of highways and operated nine BOT road projects before entering NCLT insolvency proceedings in 2019.",
+    status: "Realized",
+    website: "https://www.supremeinfra.com",
+    yearFounded: 1983,
+    investmentYear: 2012,
+    headquarters: "Mumbai, Maharashtra",
+    milestones: [
+      {
+        date: "September 2019",
+        category: "Other",
+        event:
+          "NCLT passes Corporate Insolvency Resolution Process order against Supreme Infrastructure India Limited",
+      },
+      {
+        date: "July 2012",
+        category: "Financing",
+        event:
+          "3i India Infrastructure Fund completes Rs 200 crore ($35.9 million) investment for a 49% stake in Supreme Infrastructure BOT Holdings",
+      },
+      {
+        date: "1983",
+        category: "Founding",
+        event:
+          "Bhawanishankar H. Sharma founds Supreme Asphalts Private Limited in Mumbai",
+      },
+    ],
+    sources: [
+      {
+        label: "Supreme Infrastructure India — Official Website",
+        url: "https://www.supremeinfra.com/",
+      },
+    ],
   },
   {
     name: "TCR",
@@ -694,23 +2552,71 @@ export const companies: PortCo[] = [
     sector: "Transportation",
     subsector: "Aviation GSE",
     region: "Europe",
-    country: "Netherlands/Belgium",
+    country: "Belgium",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "The largest independent lessor of airport ground support equipment (GSE), operating at more than 230 airports across more than 20 countries worldwide.",
+    description:
+      "TCR is the world's largest independent lessor of airport ground support equipment (GSE), providing fully integrated rental, maintenance, and fleet management services to ground handlers, airlines, and airports. Operating at over 230 airports across 20+ countries with a fleet of approximately 40,000 GSE units, TCR pioneered the concept of GSE rental in 1996.",
     status: "Active",
     website: "https://www.tcr-group.com",
-    yearFounded: 1999,
-    investmentYear: 2022,
-    headquarters: "Brussels, Belgium",
-    milestones: [
-      { date: "1999", event: "Founded in Belgium", category: "Founding" },
-      { date: "2022", event: "Acquired by 3i Infrastructure", category: "Financing" },
-    ],
+    yearFounded: 1996,
+    investmentYear: 2016,
+    headquarters: "Steenokkerzeel, Belgium",
     management: [
       { name: "Jason Watson", title: "Chief Executive Officer" },
+      { name: "Tom Bellekens", title: "Executive Chairman" },
+      { name: "Bruno Velkeniers", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      {
+        date: "March 2026",
+        category: "Divestiture",
+        event:
+          "Global Infrastructure Partners (BlackRock) agrees to acquire TCR from 3i Infrastructure; 3i sells its 71% stake for €1.14 billion",
+      },
+      {
+        date: "February 2025",
+        category: "Financing",
+        event:
+          "TCR completes a debt refinancing on attractive terms, enabling a £60 million distribution to 3i Infrastructure",
+      },
+      {
+        date: "2023",
+        category: "Expansion",
+        event:
+          "TCR secures an exclusive contract to supply a centralised all-electric GSE pool at JFK International Airport New Terminal One",
+      },
+      {
+        date: "April 2016",
+        category: "Financing",
+        event:
+          "3i Infrastructure and Deutsche Asset Management each acquire 50% economic interests in TCR from Chequers Capital and Florac for approximately €204 million each",
+      },
+      {
+        date: "2015",
+        category: "Expansion",
+        event:
+          "TCR expands into Asia, marking the beginning of its transformation from a European player into a global GSE leader",
+      },
+      {
+        date: "1996",
+        category: "Founding",
+        event:
+          "TCR founded in Belgium, pioneering the concept of fully integrated GSE management and rental for the aviation industry",
+      },
     ],
     sources: [
-      { label: "TCR Group — About Us", url: "https://www.tcr-group.com/about-us" },
+      {
+        label: "3i Infrastructure — TCR Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/tcr/",
+      },
+      {
+        label: "TCR Group — About Us",
+        url: "https://www.tcr-group.com/about-us",
+      },
+      {
+        label: "GIP — Agrees to Acquire TCR",
+        url: "https://www.global-infra.com/news/global-infrastructure-partners-agrees-to-acquire-tcr/",
+      },
     ],
   },
   {
@@ -721,32 +2627,98 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Norway",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "The world's largest offshore telecommunications network operator, providing high-capacity, low-latency communications for the offshore energy, wind, maritime, and carrier sectors across the North Sea and Gulf of Mexico.",
+    description:
+      "Tampnet is the leading independent offshore communications network operator in the North Sea and the Gulf of Mexico, providing high-speed, low-latency data connectivity to offshore oil and gas installations, wind farms, and vessels. Its infrastructure includes over 5,400 km of subsea fibre optic cables, 200 microwave links, and 600,000 km² of 4G/5G wireless coverage.",
     status: "Active",
     website: "https://www.tampnet.com",
     yearFounded: 2001,
+    investmentYear: 2019,
     headquarters: "Stavanger, Norway",
-    milestones: [
-      { date: "2001", event: "Founded in Stavanger, Norway", category: "Founding" },
-      { date: "2023", event: "Acquired German dasNetz to expand offshore wind connectivity", category: "Acquisition" },
-    ],
     management: [
       { name: "Elie Hanna", title: "Chief Executive Officer" },
+      { name: "Kirsty Lawrence", title: "Chief Financial Officer" },
+      { name: "Trygve Hagevik", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      {
+        date: "April 2023",
+        category: "Acquisition",
+        event:
+          "Tampnet acquires dasNetz AG, a leading German offshore wind connectivity provider",
+      },
+      {
+        date: "2020",
+        category: "Acquisition",
+        event:
+          "Tampnet acquires BP's 1,200 km offshore fibre cable system in the Gulf of Mexico, one of the most significant milestones in the company's history",
+      },
+      {
+        date: "March 2019",
+        category: "Financing",
+        event:
+          "3i Infrastructure and ATP complete acquisition of Tampnet from EQT Infrastructure for approximately €226 million",
+      },
+      {
+        date: "2017",
+        category: "Acquisition",
+        event:
+          "Tampnet acquires Broadpoint LLC, a pioneer in offshore communications in the Gulf of Mexico, and upgrades the GoM 2G network to 4G/LTE coverage",
+      },
+      {
+        date: "2001",
+        category: "Founding",
+        event:
+          "Tampnet founded by Statoil (now Equinor) as an offshore communications infrastructure provider in Norway",
+      },
     ],
     sources: [
-      { label: "3i Infrastructure — Tampnet Portfolio", url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/tampnet/" },
+      {
+        label: "3i Infrastructure — Tampnet Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/tampnet/",
+      },
+      {
+        label: "Tampnet — Company Website",
+        url: "https://www.tampnet.com",
+      },
+      {
+        label: "Tampnet — BP Gulf of Mexico Fibre Acquisition",
+        url: "https://www.tampnet.com/press/tampnet-closes-acquisition-of-bps-1200km-gulf-of-mexico-fibre-network",
+      },
     ],
   },
   {
     name: "UK Projects Portfolio",
     investmentFirm: "3i Infrastructure",
-    sector: "Transportation",
-    subsector: "Social Infra",
+    sector: "Social Infrastructure",
+    subsector: "PFI / PPP",
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
-    status: "Active",
+    description:
+      "The UK Projects Portfolio comprised stakes in five UK public-private infrastructure assets: Ayrshire College, Elgin (16 project investments in health and education), Mersey Gateway Bridge, Octagon Hospital (Norwich), and West of Duddon Sands offshore transmission asset. These investments represented 3i Infrastructure's legacy social infrastructure portfolio.",
+    status: "Realized",
+    investmentYear: 2007,
+    headquarters: "United Kingdom",
+    milestones: [
+      {
+        date: "March 2020",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure completes sale of the UK Projects Portfolio to funds managed by Dalmore, Semperian, and Innisfree for approximately £194 million",
+      },
+      {
+        date: "March 2007",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires its initial UK project investments upon its IPO, including Elgin and Octagon Hospital",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — UK Projects Sale Announcement",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2019/3i-infrastructure-plc-agrees-to-sell-its-uk-projects-portfolio/",
+      },
+    ],
   },
   {
     name: "Valorem",
@@ -756,22 +2728,63 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "France",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "Vertically integrated independent renewable energy group active in wind, photovoltaic solar, hydroelectricity, offshore wind, green hydrogen, and battery storage across Europe.",
-    status: "Active",
+    description:
+      "VALOREM is a vertically integrated independent renewable energy developer and operator, and one of the largest onshore wind developers in France. The company develops, constructs, and operates wind, solar PV, and small hydropower assets across France, Finland, Greece, Poland, Sweden, and Romania, growing its operational base to over 850 MW with a 6.6 GW development pipeline.",
+    status: "Realized",
     website: "https://www.valorem-energie.com",
     yearFounded: 1994,
     investmentYear: 2016,
     headquarters: "Bègles, France",
-    milestones: [
-      { date: "1994", event: "Founded by Jean-Yves Grandidier", category: "Founding" },
-      { date: "2016", event: "3i Infrastructure acquired 33% minority interest for €75m", category: "Financing" },
-      { date: "2024", event: "3i Infrastructure sold stake to AIP Management for €309m (21% IRR, 3.6x multiple)", category: "Divestiture" },
-    ],
     management: [
-      { name: "Jean-Yves Grandidier", title: "Founder & CEO" },
+      { name: "Jean-Yves Grandidier", title: "President" },
+      { name: "Tristan Maes", title: "Chief Financial Officer" },
+      { name: "Frédéric Prévost", title: "Chief Executive Officer, VALEMO" },
+    ],
+    milestones: [
+      {
+        date: "January 2025",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure completes sale of its 33% stake in Valorem to AIP Management for net proceeds of €309 million, achieving a 21% gross IRR and 3.6x money multiple",
+      },
+      {
+        date: "July 2016",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires a 28.5% interest in Valorem from Omnes Capital for €57 million",
+      },
+      {
+        date: "2012",
+        category: "Expansion",
+        event:
+          "VALOREM launches the first equity crowdfunding operation for a renewable energy park in France, in partnership with Crédit Coopératif",
+      },
+      {
+        date: "2011",
+        category: "Expansion",
+        event:
+          "VALEMO established as VALOREM's subsidiary specialising in the operation, maintenance, and supervision of renewable energy parks",
+      },
+      {
+        date: "1994",
+        category: "Founding",
+        event:
+          "Jean-Yves Grandidier founds VALOREM in France as a renewable energy technical design office, pioneering wind energy development",
+      },
     ],
     sources: [
-      { label: "Valorem — Pioneers at Heart", url: "https://www.valorem-energie.com/en/pioneers-at-heart/" },
+      {
+        label: "3i Infrastructure — Valorem Past Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/valorem/",
+      },
+      {
+        label: "VALOREM — Pioneers at Heart",
+        url: "https://www.valorem-energie.com/en/pioneers-at-heart/",
+      },
+      {
+        label: "VALOREM — Organisation & Governance",
+        url: "https://www.valorem-energie.com/en/organisation-and-governance/",
+      },
     ],
   },
   {
@@ -782,21 +2795,62 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "The UK's second largest independent tower company, operating over 2,000 towers and wireless infrastructure assets representing approximately 7% of the UK market.",
-    status: "Active",
+    description:
+      "Wireless Infrastructure Group (WIG) is an independent communications infrastructure provider that builds and operates shared wireless towers and neutral-host indoor networks across the UK, Ireland, Netherlands, and Spain. Founded in 2006 in Scotland by former RBS infrastructure investor Scott Coates, WIG grew to over 2,100 assets under 3i Infrastructure's ownership before being sold to Brookfield Infrastructure in December 2019 for £387 million, generating a 27% gross IRR for 3i.",
+    status: "Realized",
     website: "https://www.wirelessinfrastructure.com",
+    yearFounded: 2006,
     investmentYear: 2016,
-    headquarters: "Bellshill, Scotland, United Kingdom",
-    milestones: [
-      { date: "2016", event: "3i Infrastructure invested £75m for minority interest", category: "Financing" },
-      { date: "2018", event: "3i Infrastructure increased ownership to 93% with additional £187m", category: "Expansion" },
-      { date: "2019", event: "3i sold 93% stake to Brookfield Infrastructure for £387m (27% IRR, 1.7x multiple)", category: "Divestiture" },
-    ],
+    headquarters: "Bellshill, Scotland",
     management: [
       { name: "Scott Coates", title: "Chief Executive Officer" },
+      { name: "Stuart Fisken", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "2006",
+        category: "Founding",
+        event:
+          "Scott Coates founds Wireless Infrastructure Group in Scotland as the UK's first independent pureplay tower company",
+      },
+      {
+        date: "April 2016",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires a 36% economic interest in WIG for approximately £75 million, capitalising the company at £300 million",
+      },
+      {
+        date: "January 2018",
+        category: "Financing",
+        event:
+          "3i Infrastructure invests a further £186 million to acquire Barings' stake, increasing ownership to 91% of WIG equity",
+      },
+      {
+        date: "October 2018",
+        category: "Acquisition",
+        event:
+          "WIG acquires Arqiva's Indoor Networks business (42 DAS networks including Canary Wharf, Luton Airport, and ExCeL Centre) and Irish operator Highpoint Communications, taking portfolio to 2,100+ assets",
+      },
+      {
+        date: "December 2019",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure completes sale of its 93% stake in WIG to Brookfield Infrastructure for £387 million, achieving a 27% gross IRR",
+      },
     ],
     sources: [
-      { label: "WIG — Website", url: "https://www.wirelessinfrastructure.com/" },
+      {
+        label: "3i Infrastructure — WIG Past Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/wig/",
+      },
+      {
+        label: "Wireless Infrastructure Group — About Us",
+        url: "https://www.wirelessinfrastructure.com/about-us/",
+      },
+      {
+        label: "WIG Two Acquisitions Press Release",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2018/wireless-infrastructure-group-grows-through-two-acquisitions/",
+      },
     ],
   },
   // ─── ADIA Infrastructure ────────────────────────────────────
@@ -804,12 +2858,38 @@ export const companies: PortCo[] = [
     name: "AlphaGen",
     investmentFirm: "ADIA Infrastructure",
     sector: "Power Generation",
-    subsector: "",
+    subsector: "Independent Power Production",
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (Direct Minority Co-Investment)",
-    description: "",
+    description:
+      "Alpha Generation (AlphaGen) is one of the largest independent power infrastructure platforms in the United States, managing approximately 14,000 megawatts of generation capacity across 23 natural gas- and oil-fired facilities in six states spanning four RTO markets.",
     status: "Active",
+    website: "https://www.alphagen.com",
+    yearFounded: 2024,
+    investmentYear: 2025,
+    headquarters: "Houston, TX",
+    management: [
+      { name: "Curt Morgan", title: "Chief Executive Officer" },
+      { name: "Mary Anne Brelinsky", title: "President and Chief Commercial Officer" },
+      { name: "Stacey Peterson", title: "Chief Financial Officer" },
+      { name: "Nick Rahn", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "January 2025",
+        category: "Financing",
+        event: "ADIA invests $500 million for a minority stake in AlphaGen",
+      },
+      {
+        date: "January 2024",
+        category: "Founding",
+        event: "ArcLight Capital Partners forms Alpha Generation to manage its 11+ GW power infrastructure portfolio",
+      },
+    ],
+    sources: [
+      { label: "Alpha Generation — Leadership", url: "https://www.alphagen.com/leadership/" },
+    ],
   },
   {
     name: "Arevon Energy",
@@ -819,37 +2899,52 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (Direct Co-Investment with APG & CalSTRS)",
-    description: "One of America's leading utility-scale solar and energy storage companies, 100% owned by APG, CalSTRS, and ADIA. Formed through the combination of Capital Dynamics' US Clean Energy Infrastructure team and Arevon Asset Management.",
+    description:
+      "Arevon Energy is a leading U.S. clean energy platform that develops, finances, builds, owns, and operates utility-scale solar and energy storage projects, with more than 6 GW of capacity across 18 states representing over $10 billion in capital investment.",
     status: "Active",
     website: "https://arevonenergy.com",
-    yearFounded: 2017,
-    headquarters: "Scottsdale, Arizona, United States",
-    milestones: [
-      { date: "2017", event: "Founded as part of Capital Dynamics' clean energy platform", category: "Founding" },
-      { date: "2021", event: "Arevon Energy formed through combination of CEI US team and Arevon Asset Management", category: "Other" },
-      { date: "2026", event: "Justin Johnson appointed CEO", category: "Management" },
-    ],
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "Scottsdale, AZ",
     management: [
       { name: "Justin Johnson", title: "Chief Executive Officer" },
+      { name: "Bob Krakauer", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "August 2021",
+        category: "Founding",
+        event: "Arevon Energy formed through spin-off of Capital Dynamics' U.S. Clean Energy Infrastructure team, backed by ADIA, APG, and CalSTRS",
+      },
     ],
     sources: [
-      { label: "Arevon Energy — Website", url: "https://arevonenergy.com/" },
+      { label: "Arevon Energy — About", url: "https://arevonenergy.com/about/" },
     ],
   },
   {
     name: "Chicago Parking Meters, LLC",
     investmentFirm: "ADIA Infrastructure",
     sector: "Transportation",
-    subsector: "Social Infrastructure",
+    subsector: "Parking Concession",
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (24.9% Direct Stake via Consortium)",
-    description: "Operator of the 75-year concession for Chicago's metered parking system, encompassing approximately 36,000 parking meter spots citywide. Acquired for $1.15 billion in 2008 by a Morgan Stanley-led consortium.",
+    description:
+      "Chicago Parking Meters operates the third-largest metered parking system in the United States under a 75-year concession with the City of Chicago, managing approximately 36,000 parking meter spaces and generating over $160 million in annual revenue.",
     status: "Active",
+    website: "https://parkchicago.com",
     yearFounded: 2008,
-    headquarters: "Chicago, Illinois, United States",
+    investmentYear: 2008,
+    headquarters: "Chicago, IL",
+    management: [
+      { name: "Dennis Pedrelli", title: "Chief Executive Officer" },
+    ],
     milestones: [
-      { date: "2008", event: "Morgan Stanley-led consortium won 75-year concession for $1.15 billion", category: "Financing" },
+      {
+        date: "December 2008",
+        category: "Founding",
+        event: "Chicago Parking Meters formed; Morgan Stanley-led consortium (with ADIA and Allianz) acquires 75-year concession for $1.15 billion",
+      },
     ],
     sources: [
       { label: "Chicago Parking Meters — Wikipedia", url: "https://en.wikipedia.org/wiki/Chicago_Parking_Meters" },
@@ -863,35 +2958,53 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "NATFinCo / NATCo II (10% Indirect Passive Economic Interest via Brookfield)",
-    description: "Owns and operates three major transmission subsidiaries: ATSI, MAIT, and TrAILCo. Jointly owned by FirstEnergy Corp. and Brookfield Super-Core Infrastructure Partners.",
+    description:
+      "FirstEnergy Transmission is a holding company of regulated electric transmission entities including ATSI, MAIT, and TrAILCo, serving millions of customers across Ohio, Pennsylvania, West Virginia, Maryland, New Jersey, and New York. ADIA holds an indirect passive interest via Brookfield Super-Core Infrastructure Partners.",
     status: "Active",
     website: "https://www.firstenergycorp.com",
-    headquarters: "Akron, Ohio, United States",
+    yearFounded: 2011,
+    investmentYear: 2022,
+    headquarters: "Akron, OH",
     milestones: [
-      { date: "2022", event: "Brookfield purchased 19.9% ownership interest for $2.4 billion", category: "Financing" },
+      {
+        date: "June 2022",
+        category: "Financing",
+        event: "FirstEnergy sells 19.9% minority equity stake in FET to Brookfield Super-Core Infrastructure Partners for $2.375 billion; ADIA participates as co-investor",
+      },
     ],
     sources: [
-      { label: "FirstEnergy — FET Sale", url: "https://www.firstenergycorp.com/newsroom/news_articles/fe-closes-on-fe-transmission-interest-sale.html" },
+      { label: "FirstEnergy — Transmission Sale", url: "https://www.firstenergycorp.com/newsroom/news_articles/firstenergy-completes-minority-interest-sale-in-transmission-bus.html" },
     ],
   },
   {
     name: "Landmark Dividend LLC",
     investmentFirm: "ADIA Infrastructure",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Ground Leases",
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (40% Direct Stake)",
-    description: "Acquires and manages real property interests and infrastructure for wireless communications, digital infrastructure, outdoor advertising, and renewable power generation. Pioneered the ground lease acquisition business.",
+    description:
+      "Landmark Dividend is a global leader in the acquisition, development, and management of real estate and infrastructure assets focused on digital infrastructure, wireless communications, outdoor advertising, and renewable power generation, managing over 5,000 assets.",
     status: "Active",
     website: "https://www.landmarkdividend.com",
     yearFounded: 2002,
-    headquarters: "El Segundo, California, United States",
-    management: [
-      { name: "Tim Brazy", title: "Founder & Chief Executive Officer" },
+    investmentYear: 2024,
+    headquarters: "El Segundo, CA",
+    milestones: [
+      {
+        date: "April 2024",
+        category: "Financing",
+        event: "ADIA completes acquisition of a 40% stake in Landmark Dividend alongside DigitalBridge",
+      },
+      {
+        date: "2002",
+        category: "Founding",
+        event: "Landmark Dividend founded by Tim Brazy, pioneering the ground lease acquisition business for wireless and digital infrastructure",
+      },
     ],
     sources: [
-      { label: "Landmark Dividend — Website", url: "https://www.landmarkdividend.com/" },
+      { label: "DigitalBridge — ADIA Landmark Stake", url: "https://ir.digitalbridge.com/news-releases/news-release-details/adia-completes-acquisition-40-stake-landmark-dividend-alongside" },
     ],
   },
   {
@@ -902,61 +3015,93 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (10% Direct Stake)",
-    description: "Major North American infrastructure platform focused on LNG export, clean power, and energy networks. ADIA holds a 10% direct stake alongside KKR (majority) and Sempra (25%).",
+    description:
+      "Sempra Infrastructure Partners develops, builds, operates, and invests in energy infrastructure critical to the North American energy transition, including LNG export facilities, clean power generation, carbon capture, and natural gas transportation networks, with an enterprise value exceeding $31 billion.",
     status: "Active",
     website: "https://semprainfrastructure.com",
     yearFounded: 2021,
-    headquarters: "San Diego, California, United States",
+    investmentYear: 2022,
+    headquarters: "San Diego, CA",
     management: [
       { name: "Justin Bird", title: "Chief Executive Officer" },
+      { name: "Tania Ortiz Mena", title: "President" },
+      { name: "Faisel Khan", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "June 2022",
+        category: "Financing",
+        event: "ADIA completes acquisition of a 10% non-controlling interest in Sempra Infrastructure Partners for $1.73 billion",
+      },
+      {
+        date: "2021",
+        category: "Founding",
+        event: "Sempra Infrastructure Partners formed to house Sempra's LNG, energy networks, and clean power businesses",
+      },
     ],
     sources: [
-      { label: "Sempra Infrastructure — Website", url: "https://semprainfrastructure.com/" },
+      { label: "ADIA — Sempra Infrastructure Case Study", url: "https://www.adia.ae/en/investments/infrastructure/portfolio/case-studies/sempra-infrastructure" },
     ],
   },
   {
     name: "Vantage Data Centers",
     investmentFirm: "ADIA Infrastructure",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Hyperscale Data Centers",
     region: "Global",
-    country: "United States (Global HQ)",
+    country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (Direct Co-Investment alongside DigitalBridge & GIC)",
-    description: "One of the world's fastest-growing global data center providers, developing and operating hyperscale campuses for cloud providers and large enterprises across North America, EMEA, and Asia-Pacific.",
+    description:
+      "Vantage Data Centers is a leading global provider of hyperscale data center campuses, operating more than 1 GW of IT capacity across North America, Europe, and Asia-Pacific, serving the world's largest cloud and technology companies.",
     status: "Active",
     website: "https://vantage-dc.com",
     yearFounded: 2010,
-    investmentYear: 2017,
-    headquarters: "Denver, Colorado, United States",
-    milestones: [
-      { date: "2010", event: "Founded in Silicon Valley", category: "Founding" },
-      { date: "2017", event: "Acquired by consortium of DigitalBridge, PSP Investments, and TIAA", category: "Financing" },
-    ],
+    investmentYear: 2024,
+    headquarters: "Denver, CO",
     management: [
-      { name: "Sureel Choksi", title: "President & Chief Executive Officer" },
+      { name: "Sureel Choksi", title: "President and Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "June 2024",
+        category: "Financing",
+        event: "Vantage completes $9.2 billion equity investment led by DigitalBridge and Silver Lake, with ADIA participation",
+      },
+      {
+        date: "2010",
+        category: "Founding",
+        event: "Silver Lake launches Vantage Data Centers as a single data center campus in Santa Clara, California",
+      },
     ],
     sources: [
-      { label: "Vantage Data Centers — Company", url: "https://vantage-dc.com/company/" },
+      { label: "Vantage Data Centers — Company Overview", url: "https://vantage-dc.com/company/" },
     ],
   },
   // ─── APG Infrastructure ─────────────────────────────────────
   {
-    name: "(LBJ Infrastructure Group)",
+    name: "LBJ Infrastructure Group",
     investmentFirm: "APG Infrastructure",
     sector: "Transportation",
     subsector: "Toll Roads",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Pool (Consortium with Cintra & Meridiam)",
-    description: "Special purpose entity operating the $2.6 billion I-635/LBJ Freeway managed lanes in the Dallas-Fort Worth area under a 52-year DBFOM concession. The 13.3-mile toll road opened in September 2015.",
+    description:
+      "LBJ Infrastructure Group operates the LBJ Express, a $2.7 billion, 13.3-mile managed-lanes highway along I-635 in Dallas, Texas, featuring six dynamically tolled TEXpress Lanes under a 52-year concession with TxDOT expiring in 2061.",
     status: "Active",
-    headquarters: "Dallas, Texas, United States",
+    website: "https://www.texpresslanes.com",
+    yearFounded: 2009,
+    investmentYear: 2009,
+    headquarters: "Dallas, Texas",
+    management: [
+      { name: "Pablo Ferrando", title: "Chief Executive Officer" },
+    ],
     milestones: [
-      { date: "2009", event: "Concession awarded to Cintra-Meridiam consortium", category: "Financing" },
-      { date: "2015", event: "LBJ Express opened ahead of schedule", category: "Expansion" },
+      { date: "September 2015", category: "Expansion", event: "LBJ Express opens to traffic months ahead of schedule" },
+      { date: "March 2009", category: "Founding", event: "LBJ Infrastructure Group formed as a consortium of Cintra, Meridiam, APG, and Dallas Police & Fire Pension System" },
     ],
     sources: [
-      { label: "LBJ TEXpress Lanes — Overview", url: "https://www.texpresslanes.com/about/overview/" },
+      { label: "TEXpress Lanes — LBJ Project", url: "https://www.texpresslanes.com/projects/lbj/" },
     ],
   },
   {
@@ -967,19 +3112,44 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Clean Energy Infrastructure JV (APG, CalSTRS, ADIA)",
-    description: "",
+    description:
+      "Arevon Energy owns and operates more than 6 GW of utility-scale solar and energy storage projects across 18 states, formed in 2021 through the combination of Capital Dynamics' U.S. Clean Energy Infrastructure team, backed by APG, CalSTRS, and ADIA.",
     status: "Active",
+    website: "https://arevonenergy.com",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "Scottsdale, AZ",
+    management: [
+      { name: "Justin Johnson", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "August 2021", category: "Founding", event: "Arevon Energy formed through spin-off of Capital Dynamics' U.S. Clean Energy Infrastructure team" },
+    ],
+    sources: [
+      { label: "Arevon Energy — About", url: "https://arevonenergy.com/about/" },
+    ],
   },
   {
     name: "Astoria Energy (I & II)",
     investmentFirm: "APG Infrastructure",
     sector: "Power Generation",
-    subsector: "",
+    subsector: "Natural Gas",
     region: "North America",
     country: "United States",
     ownershipVehicle: "APPH Consortium (APG Direct Infrastructure)",
-    description: "",
+    description:
+      "Astoria Energy comprises two adjacent 615 MW dual-fuel combined-cycle gas turbine facilities in Astoria, Queens, New York, totaling approximately 1,230 MW, providing critical baseload electricity and system stability to New York City.",
     status: "Active",
+    yearFounded: 2006,
+    investmentYear: 2020,
+    headquarters: "Astoria, Queens, NY",
+    milestones: [
+      { date: "July 2020", category: "Financing", event: "APG-led APPH consortium closes acquisition of Astoria Energy I and 55% of Astoria Energy II from ENGIE" },
+      { date: "May 2006", category: "Founding", event: "Astoria Energy I commences commercial operation as a 615 MW dual-fuel combined cycle facility" },
+    ],
+    sources: [
+      { label: "APG — Astoria Energy Acquisition", url: "https://apg.nl/en/publication/equity-consortium-agrees-to-acquire-stakes-in-new-york-s-astoria-energy-facilities/" },
+    ],
   },
   {
     name: "Conterra Networks",
@@ -989,16 +3159,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "APG Infrastructure Pool (Co-owned with Fiera)",
-    description: "Provider of fiber-based connectivity solutions and network management services, operating an 11,000+ mile owned and operated fiber network across multiple US states.",
+    description:
+      "Conterra Networks is one of the largest independent fiber infrastructure providers in the United States, operating over 14,000 route miles delivering high-capacity fiber and wireless services to enterprise, carrier, education, and government customers across 21 states.",
     status: "Active",
     website: "https://conterra.com",
     yearFounded: 2001,
-    headquarters: "Charlotte, North Carolina, United States",
+    investmentYear: 2021,
+    headquarters: "Charlotte, NC",
     management: [
-      { name: "Craig Gunderson", title: "Chief Executive Officer" },
+      { name: "Craig Gunderson", title: "President and Chief Executive Officer" },
+      { name: "Mark Gossett", title: "Chief Financial Officer" },
+      { name: "Mike Tompkins", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      { date: "June 2021", category: "Financing", event: "APG and Fiera Infrastructure close acquisition of Conterra Networks from Court Square Capital Partners" },
+      { date: "2001", category: "Founding", event: "Conterra Networks founded in Charlotte, NC as an independent fiber infrastructure provider" },
     ],
     sources: [
-      { label: "Conterra Networks — Website", url: "https://conterra.com/" },
+      { label: "Conterra — APG & Fiera Acquisition", url: "https://conterra.com/apg-and-fiera-infrastructure-to-acquire-conterra-networks-as-platform-to-grow-us-fiber-infrastructure/" },
     ],
   },
   {
@@ -1009,8 +3187,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "AIA Montana LLC (Managed by Argo Infrastructure)",
-    description: "",
+    description:
+      "Cross-Sound Cable operates a 330 MW HVDC submarine transmission system spanning 24 miles beneath Long Island Sound, connecting the electric grids of New England and Long Island, with capacity 100% contracted to the Long Island Power Authority.",
     status: "Active",
+    website: "https://www.crosssoundcable.com",
+    yearFounded: 2002,
+    investmentYear: 2015,
+    headquarters: "New Haven, CT",
+    milestones: [
+      { date: "August 2015", category: "Financing", event: "AIA Energy (APG, CalSTRS, managed by Argo Infrastructure) acquires Cross-Sound Cable from Brookfield Infrastructure" },
+      { date: "2002", category: "Founding", event: "Construction begins on the Cross-Sound Cable HVDC submarine transmission system" },
+    ],
+    sources: [
+      { label: "Cross-Sound Cable — About Us", url: "https://www.crosssoundcable.com/about-us/" },
+    ],
   },
   {
     name: "Doral Renewables",
@@ -1020,27 +3210,49 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "APG Direct Infrastructure Pool",
-    description: "",
+    description:
+      "Doral Renewables is a leading U.S. developer, owner, and operator of utility-scale solar and energy storage projects with a development portfolio exceeding 13 GW across 18 states. Its flagship Mammoth Solar project in Indiana, at 1.3 GW, is one of the largest solar farms in the United States.",
     status: "Active",
+    website: "https://doral-llc.com",
+    yearFounded: 2019,
+    investmentYear: 2024,
+    headquarters: "Philadelphia, PA",
+    management: [
+      { name: "Nick Cohen", title: "President and Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "September 2024", category: "Financing", event: "Doral Renewables closes $400 million minority equity investment from APG on behalf of pension fund ABP" },
+      { date: "2019", category: "Founding", event: "Doral Renewables LLC founded as the U.S. subsidiary of Israel-based Doral Group" },
+    ],
+    sources: [
+      { label: "Doral Renewables — APG Investment", url: "https://www.globenewswire.com/news-release/2024/09/13/2945843/0/en/Doral-Renewables-LLC-Announces-Closing-of-400-Million-Equity-Investment-from-APG.html" },
+    ],
   },
   {
     name: "Duquesne Light Company",
     investmentFirm: "APG Infrastructure",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Electric T&D",
     region: "North America",
     country: "United States",
     ownershipVehicle: "AIA Montana LLC (Managed by Argo Infrastructure)",
-    description: "Regulated electric utility serving over 588,000 homes and businesses in southwestern Pennsylvania, one of the oldest electric utilities in the United States.",
+    description:
+      "Duquesne Light Company is a regulated electric utility serving more than 600,000 customers across southwestern Pennsylvania including Pittsburgh, operating over 7,700 miles of transmission and distribution lines. Founded in 1912, it traces roots to George Westinghouse's pioneering work in alternating current.",
     status: "Active",
-    website: "https://www.duquesnelight.com",
-    yearFounded: 1880,
-    headquarters: "Pittsburgh, Pennsylvania, United States",
+    website: "https://duquesnelight.com",
+    yearFounded: 1912,
+    investmentYear: 2017,
+    headquarters: "Pittsburgh, PA",
     management: [
-      { name: "Kevin Walker", title: "President & Chief Executive Officer" },
+      { name: "Kevin Walker", title: "President and Chief Executive Officer" },
+      { name: "Matt Ankrum", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "2017", category: "Financing", event: "AIA Montana (APG, CalSTRS, managed by Argo) acquires 25.2% stake in DQE Holdings from IFM Global Infrastructure Fund" },
+      { date: "1912", category: "Founding", event: "Duquesne Light Company formed through consolidation of three predecessor companies" },
     ],
     sources: [
-      { label: "Duquesne Light — Wikipedia", url: "https://en.wikipedia.org/wiki/Duquesne_Light_Company" },
+      { label: "Duquesne Light — Investors", url: "https://duquesnelight.com/company/about/investors" },
     ],
   },
   {
@@ -1051,32 +3263,46 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "APG Direct Infrastructure Pool",
-    description: "",
+    description:
+      "Gemini is the largest co-located solar-plus-battery-energy-storage project operating in the United States, located in the Mojave Desert near Las Vegas. The $1.2 billion project pairs 690 MWac of solar with a 380 MW / 1,400 MWh battery system, capable of supplying approximately 10% of Nevada's peak power demand.",
     status: "Active",
+    website: "https://www.primergygemini.com",
+    yearFounded: 2018,
+    investmentYear: 2022,
+    headquarters: "Clark County, NV",
+    milestones: [
+      { date: "July 2024", category: "Expansion", event: "Gemini Solar + Storage reaches full commercial operations" },
+      { date: "October 2022", category: "Financing", event: "APG acquires 49% equity ownership in Gemini on behalf of pension fund ABP" },
+    ],
+    sources: [
+      { label: "Quinbrook — APG Partnership on Gemini", url: "https://www.quinbrook.com/news-insights/quinbrook-and-primergy-solar-partner-with-apg-on-gemini-solar-storage-project/" },
+    ],
   },
   {
     name: "Hawaii Gas",
     investmentFirm: "APG Infrastructure",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Gas Distribution",
     region: "North America",
     country: "United States",
     ownershipVehicle: "AIA Montana LLC (Managed by Argo Infrastructure)",
-    description: "Hawaii's only regulated gas utility, providing gas services across the Hawaiian islands. Founded in 1904, transferred to Argo Infrastructure Partners in 2022.",
+    description:
+      "Hawaii Gas is the only government-franchised, full-service gas utility in Hawaii, manufacturing and distributing synthetic natural gas through a 1,100-mile pipeline on Oahu and supplying LPG across all six primary Hawaiian islands. Founded in 1904 as the Honolulu Gas Company.",
     status: "Active",
     website: "https://www.hawaiigas.com",
     yearFounded: 1904,
-    headquarters: "Honolulu, Hawaii, United States",
-    milestones: [
-      { date: "1904", event: "Founded", category: "Founding" },
-      { date: "2006", event: "Acquired by Macquarie Infrastructure Corporation", category: "Financing" },
-      { date: "2022", event: "Ownership transferred to Argo Infrastructure Partners", category: "Financing" },
-    ],
+    investmentYear: 2022,
+    headquarters: "Honolulu, HI",
     management: [
-      { name: "Alicia Moy", title: "President & Chief Executive Officer" },
+      { name: "Alicia Moy", title: "President and Chief Executive Officer" },
+      { name: "Joanne Barradas", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "July 2022", category: "Financing", event: "Argo Infrastructure (for APG/CalSTRS) completes acquisition of Hawaii Gas from Macquarie" },
+      { date: "1904", category: "Founding", event: "Honolulu Gas Company founded, beginning gas service on Oahu" },
     ],
     sources: [
-      { label: "Hawaii Gas — Website", url: "https://www.hawaiigas.com" },
+      { label: "Hawaii Gas — Acquisition", url: "https://www.hawaiigas.com/posts/acquisition-of-hawai-i-gas-paves-way-for-clean-energy-transformation" },
     ],
   },
   {
@@ -1087,8 +3313,23 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "AIA Montana LLC (Managed by Argo Infrastructure)",
-    description: "",
+    description:
+      "Hudson Transmission Partners operates a 660 MW HVDC electric transmission link running underground and underwater for nearly eight miles from New Jersey beneath the Hudson River to Manhattan, interconnecting PJM and NYISO markets. Approximately 87% of capacity is contracted with NYPA.",
     status: "Active",
+    website: "https://hudsonproject.com",
+    yearFounded: 2011,
+    investmentYear: 2018,
+    headquarters: "Bridgeport, CT",
+    management: [
+      { name: "Ed Stern", title: "President and Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2018", category: "Financing", event: "AIA Energy (APG/CalSTRS, managed by Argo) acquires Hudson Transmission Partners from Ares and Starwood Energy" },
+      { date: "June 2013", category: "Expansion", event: "Hudson Transmission Project enters commercial service, completing the $850 million underwater HVDC link" },
+    ],
+    sources: [
+      { label: "Hudson Project — Overview", url: "https://hudsonproject.com/project/" },
+    ],
   },
   {
     name: "I-66 Express Mobility Partners (66 Express)",
@@ -1098,8 +3339,23 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "APG Infrastructure Pool (Consortium with Cintra & Meridiam)",
-    description: "",
+    description:
+      "I-66 Express Mobility Partners is a consortium of Cintra, Meridiam, and APG that built and operates the 66 Express Lanes, a $3.7 billion, 22.5-mile managed-lanes project along I-66 in Northern Virginia under a 50-year concession with VDOT.",
     status: "Active",
+    website: "https://ride66express.com",
+    yearFounded: 2016,
+    investmentYear: 2016,
+    headquarters: "Fairfax, VA",
+    management: [
+      { name: "Ruben Roman", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "Fall 2022", category: "Expansion", event: "66 Express Lanes open to traffic ahead of schedule" },
+      { date: "December 2016", category: "Financing", event: "VDOT signs 50-year Comprehensive Agreement with I-66 Express Mobility Partners for the $3.7 billion Transform 66 project" },
+    ],
+    sources: [
+      { label: "66 Express — About Us", url: "https://ride66express.com/about-us/" },
+    ],
   },
   {
     name: "LBJ Express",
@@ -1127,12 +3383,84 @@ export const companies: PortCo[] = [
     name: "Pattern Energy Group",
     investmentFirm: "APG Infrastructure",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Wind & Solar",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Consortium (APG, ART, and CPP Investments)",
-    description: "",
+    description:
+      "Pattern Energy Group is one of the largest independent renewable energy companies in North America, operating and developing a portfolio of wind, solar, and energy storage facilities with approximately 6.6 GW of operating capacity and a development pipeline exceeding 30 GW. The company's assets span the United States, Canada, and Japan, with a strong concentration in high-quality wind resources across the Great Plains, Southwest, and Western regions. Taken private in 2020 by a consortium of Canada Pension Plan Investment Board (CPPIB), the Public Sector Pension Investment Board, and other institutional investors, Pattern is now majority-owned by a consortium including APG, ART (Alberta Investment Management), and CPP Investments, positioning it as a premier platform for long-duration, contracted renewable energy infrastructure.",
     status: "Active",
+    website: "https://patternenergy.com",
+    yearFounded: 2009,
+    investmentYear: 2020,
+    headquarters: "San Francisco, CA",
+    management: [
+      { name: "Hunter Armistead", title: "Chief Executive Officer" },
+      { name: "Kristina Lund", title: "President" },
+      { name: "Matthew Rhodes", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "2009",
+        event: "Pattern Energy Group founded as a subsidiary of Pattern Development (later Pattern Development 2.0), initially focused on wind energy development.",
+        category: "Founding",
+      },
+      {
+        date: "Sep 2013",
+        event: "Completed IPO on NASDAQ (PEGI) at $22 per share, raising approximately $261 million to fund wind project acquisitions.",
+        category: "IPO",
+      },
+      {
+        date: "2014",
+        event: "Acquired several operating wind facilities in the U.S. and Canada, growing the portfolio to over 2 GW of capacity.",
+        category: "Acquisition",
+      },
+      {
+        date: "2017",
+        event: "Expanded into Japan with the acquisition of Green Power Investment Corporation, adding development assets in the Japanese offshore wind market.",
+        category: "Expansion",
+      },
+      {
+        date: "Mar 2020",
+        event: "Taken private by Canada Pension Plan Investment Board (CPPIB) in a $6.1 billion transaction (including debt), delisting from NASDAQ at $26.75 per share.",
+        category: "Financing",
+      },
+      {
+        date: "2021",
+        event: "Hunter Armistead appointed CEO, bringing extensive renewable energy development experience from Pattern Development.",
+        category: "Management",
+      },
+      {
+        date: "2022",
+        event: "Consortium of APG Asset Management, Alberta Investment Management (AIMCo/ART), and CPP Investments acquired majority ownership, providing long-term institutional capital for continued growth.",
+        category: "Financing",
+      },
+      {
+        date: "Dec 2023",
+        event: "SunZia Transmission project — the largest clean energy infrastructure project in U.S. history — reached financial close, enabling 3.5 GW of New Mexico wind power to reach Arizona markets via a 550-mile HVDC line.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Exceeded 6 GW of operating capacity with continued development of the SunZia Wind project (3.5 GW) in New Mexico and expansion of solar and storage pipeline.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Pattern Energy — Company Website", url: "https://patternenergy.com" },
+      {
+        label: "CPPIB — Pattern Energy Take-Private",
+        url: "https://www.cppinvestments.com/public-media/headlines/2020/cpp-investments-completes-acquisition-of-pattern-energy-group/",
+      },
+      {
+        label: "Pattern Energy — SunZia Project",
+        url: "https://patternenergy.com/sunzia",
+      },
+      {
+        label: "Infrastructure Investor — Pattern Energy Ownership Change",
+        url: "https://www.infrastructureinvestor.com/pattern-energy-sees-ownership-change/",
+      },
+    ],
   },
   {
     name: "SiFi Networks (FiberCity)",
@@ -1168,7 +3496,7 @@ export const companies: PortCo[] = [
     status: "Active",
   },
   // ─── Acadia Infrastructure Capital ──────────────────────────
-  {
+    {
     name: "JVR Energy Park (BayWa r.e.)",
     investmentFirm: "Acadia Infrastructure Capital",
     sector: "Energy Transition",
@@ -1176,10 +3504,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Preferred Equity",
-    description: "",
+    description: "The Jacumba Valley Ranch (JVR) Energy Park is a 90 MWac solar and 70 MWac/280 MWh battery storage facility located in southeastern San Diego County, California. Developed by BayWa r.e. with $416 million in total financing commitments, the project will supply clean electricity to approximately 57,000 homes through San Diego Community Power and is expected to avoid roughly 500,000 metric tons of CO2 over its lifetime.",
     status: "Active",
+    website: "https://us.baywa-re.com/en",
+    yearFounded: 2023,
+    investmentYear: 2025,
+    headquarters: "San Diego County, CA",
+    management: [
+      { name: "Matthias Taft", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2025-12", event: "BayWa r.e. closes $416M financing for JVR Energy Park with preferred equity from Acadia Infrastructure Capital and Wafra", category: "Financing" },
+      { date: "2026-09", event: "JVR Energy Park expected to commence commercial operations, supplying power to 57,000 homes via San Diego Community Power", category: "Expansion" },
+    ],
+    sources: [
+      { label: "BayWa r.e. JVR Financing Announcement", url: "https://www.prnewswire.com/news-releases/baywa-re-secures-416m-funding-for-jvr-energy-park-expected-to-be-operational-in-fall-2026-302636735.html" },
+    ],
   },
-  {
+    {
     name: "Peregrine Energy Storage Project (Arevon Energy)",
     investmentFirm: "Acadia Infrastructure Capital",
     sector: "Energy Transition",
@@ -1187,10 +3529,25 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Preferred Equity",
-    description: "",
+    description: "The Peregrine Energy Storage Project is a 200 MW/400 MWh lithium iron phosphate battery storage facility located in the Barrio Logan community of San Diego, California. Developed and operated by Arevon Energy at a cost of approximately $300 million, Peregrine is the largest battery storage facility in San Diego and can power up to 200,000 homes for two hours during peak demand.",
     status: "Active",
+    website: "https://www.peregrineenergystorage.com/",
+    yearFounded: 2021,
+    investmentYear: 2024,
+    headquarters: "San Diego, CA",
+    management: [
+      { name: "Kevin Smith", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2024-06", event: "Arevon closes $258M financing for Peregrine, including $79M preferred equity commitment sourced by Acadia Infrastructure Capital", category: "Financing" },
+      { date: "2025-06", event: "Peregrine Energy Storage Project commences commercial operations as Arevon's fifth utility-scale storage facility in California", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Arevon Peregrine Financing Announcement", url: "https://arevonenergy.com/news/releases/arevon-announces-258-million-of-financial-commitments-for-its-peregrine-energy-storage-project/" },
+      { label: "Arevon Peregrine Operations Announcement", url: "https://arevonenergy.com/news/releases/arevon-commences-operations-at-its-200-megawatt-peregrine-energy-storage-project-in-san-diego/" },
+    ],
   },
-  {
+    {
     name: "Project Soho (Greenflash Infrastructure)",
     investmentFirm: "Acadia Infrastructure Capital",
     sector: "Energy Transition",
@@ -1198,10 +3555,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Preferred Equity",
-    description: "",
+    description: "Project Soho is a 400 MW/800 MWh standalone battery energy storage system in Brazoria County, Texas, developed by H.I.G. Capital-backed Greenflash Infrastructure. It is the largest standalone BESS under construction in Texas and is designed as a scalable financing template for Greenflash's 5 GW near-term ERCOT pipeline.",
     status: "Active",
+    website: "https://greenflashinfrastructure.com/",
+    yearFounded: 2023,
+    investmentYear: 2025,
+    headquarters: "Brazoria County, TX",
+    management: [
+      { name: "David Giordano", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2025-10", event: "Greenflash closes innovative hybrid debt, preferred equity, and tax credit financing for Project Soho with Acadia and Wafra providing preferred equity", category: "Financing" },
+      { date: "2026-02", event: "Project Soho expected to achieve commercial operations in Q2 2026 as the largest standalone BESS in Texas", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Greenflash Project Soho Financing", url: "https://www.businesswire.com/news/home/20251007100315/en/Greenflash-Infrastructure-Closes-Innovative-Debt-Financing-Preferred-Equity-and-Sale-of-Tax-Credits-for-400MW-800MWh-ERCOT-Battery-Storage-Project" },
+    ],
   },
-  {
+    {
     name: "Stillhouse Solar Project (Matrix Renewables)",
     investmentFirm: "Acadia Infrastructure Capital",
     sector: "Energy Transition",
@@ -1209,11 +3580,26 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Preferred Equity",
-    description: "",
+    description: "The Stillhouse Solar Project is a 210 MWac solar photovoltaic plant in Bell County, Texas, developed by TPG Rise-backed Matrix Renewables. Backed by a 15-year power purchase agreement with Hyundai affiliates, the project received $376 million in debt financing and preferred equity sourced by Acadia Infrastructure Capital, providing clean power equivalent to approximately 48,862 homes.",
     status: "Active",
+    website: "https://www.matrixrenewables.com/",
+    yearFounded: 2021,
+    investmentYear: 2024,
+    headquarters: "Bell County, TX",
+    management: [
+      { name: "Patrick Eilers", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2024-12", event: "Matrix Renewables secures $376M financing for Stillhouse with preferred equity sourced by Acadia Infrastructure Capital and debt from MUFG-led consortium", category: "Financing" },
+      { date: "2025-09", event: "Stillhouse Solar Project expected to reach commercial operations, providing clean power to equivalent of 48,862 homes", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Matrix Renewables Stillhouse Financing", url: "https://www.prnewswire.com/news-releases/matrix-renewables-secures-commitments-from-microsoft-and-mufg-led-lender-consortium-for-210mwac-solar-project-in-bell-county-texas-302320926.html" },
+      { label: "Leo Berwick Acadia Preferred Equity", url: "https://www.leoberwick.com/leo-berwick-supports-acadia-infrastructure-capital-with-the-preferred-equity-it-sourced-for-matrix-renewables-stillhouse-solar-project/" },
+    ],
   },
   // ─── Actis ──────────────────────────────────────────────────
-  {
+    {
     name: "Catalyze",
     investmentFirm: "Actis",
     sector: "Energy Transition",
@@ -1221,41 +3607,95 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Actis Energy 5",
-    description: "Develops, owns, and operates distributed solar and battery storage infrastructure for commercial and industrial properties across 30 US states. Backed by Actis and EnCap Investments.",
+    description: "Catalyze is a fully integrated developer and independent power producer of distributed solar, battery storage, and EV charging systems for commercial and industrial customers across 30 US states. Founded in 2017 and headquartered in Houston, the company has deployed over 300 MW with a 1 GW+ development pipeline. Backed by Actis and EnCap Investments since 2023, Catalyze owns proprietary technologies including REenergyze and SolarStrap mounting systems.",
     status: "Active",
-    website: "https://catalyze.com",
+    website: "https://catalyze.com/",
     yearFounded: 2017,
-    headquarters: "Houston, Texas, United States",
+    investmentYear: 2023,
+    headquarters: "Houston, TX",
     management: [
       { name: "Jared Haines", title: "Chief Executive Officer" },
+      { name: "Brian McDonald", title: "Chief Operating Officer" },
+      { name: "Terrill Laughton", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      { date: "2017", event: "Catalyze founded as a distributed clean energy developer and independent power producer", category: "Founding" },
+      { date: "Feb 2023", event: "Actis acquires co-control stake in Catalyze from Actis Energy 5, partnering with EnCap Investments to target 600 MW build-out", category: "Financing" },
+      { date: "May 2024", event: "Catalyze secures $100M financing from NY Green Bank for 79 MW community solar portfolio across New York State", category: "Financing" },
+      { date: "Mar 2025", event: "Catalyze closes $400M multiyear debt facility from ATLAS SP Partners to support distributed energy portfolio", category: "Financing" },
+      { date: "Sep 2025", event: "Catalyze secures $200M HoldCo revolving and term facility from Deutsche Bank to accelerate clean energy growth", category: "Financing" },
+      { date: "Jan 2026", event: "Catalyze closes 100 MW distributed solar tax equity financing with RBC to support 18 projects across four states", category: "Financing" },
     ],
     sources: [
-      { label: "Catalyze — About Us", url: "https://catalyze.com/company/about-us/" },
+      { label: "Catalyze Company Website", url: "https://catalyze.com/" },
+      { label: "Actis Catalyze Investment Announcement", url: "https://www.act.is/2023/02/28/actis-and-encap-invest-in-us-solar-platform-catalyze/" },
+      { label: "Catalyze $200M Deutsche Bank Facility", url: "https://www.businesswire.com/news/home/20250903947135/en/Catalyze-Secures-$200-Million-HoldCo-Facility-from-Deutsche-Bank-to-Accelerate-Clean-Energy-Growth-Nationwide" },
     ],
   },
-  {
+    {
     name: "NextStream",
     investmentFirm: "Actis",
     sector: "Digital Infrastructure",
-    subsector: "",
-    region: "North America",
-    country: "United States",
+    subsector: "Data Centers",
+    region: "Latin America",
+    country: "Brazil (Pan-Latin America)",
     ownershipVehicle: "Actis Long Life Infrastructure Fund (ALLIF)",
-    description: "",
+    description: "NextStream is a carrier-neutral data center platform operating 11 facilities across Brazil, Chile, Mexico, Peru, Argentina, and the US (Miami), with a combined IT load capacity of 25 MW. Acquired by Actis from Asterion/Nabiax in 2023, the platform is anchored by a long-term Telefonica tenant contract and targets hyperscaler expansion across Latin America, a region with approximately 15x less data center capacity than the US on a per-capita basis.",
     status: "Active",
+    website: "https://nextstream.com/en/",
+    yearFounded: 2023,
+    investmentYear: 2023,
+    headquarters: "Sao Paulo, Brazil",
+    management: [
+      { name: "Serafim Abreu Junior", title: "Chief Executive Officer" },
+      { name: "Vitor Melo", title: "Chief Financial Officer" },
+      { name: "Eduardo Reigada", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      { date: "Mar 2023", event: "Actis acquires 11 data centers across six countries from Asterion/Nabiax, rebranding the platform as NextStream", category: "Acquisition" },
+      { date: "Oct 2024", event: "Actis merges with General Atlantic, creating a combined $118B platform; NextStream benefits from expanded resources", category: "Financing" },
+      { date: "Jan 2025", event: "NextStream appoints Serafim Abreu Junior (former Scala CFO) as CEO, replacing Jorge Abadia Pozuelo who moves to board role", category: "Management" },
+      { date: "2025", event: "NextStream launches integrated data center management hub to centralize operations across Latin American portfolio", category: "Expansion" },
+      { date: "Dec 2025", event: "Actis launches sister platform TERRANOVA for hyperscale facilities, complementing NextStream's colocation footprint", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Actis NextStream Portfolio", url: "https://www.act.is/about-us/portfolio/thunder-nextstream/" },
+      { label: "NextStream CEO Appointment", url: "https://www.datacenterdynamics.com/en/news/nextstream-appoints-new-ceo-expands-latam-operations/" },
+      { label: "NextStream Company Overview", url: "https://nextstream.com/en/sobre-nos/" },
+    ],
   },
-  {
+    {
     name: "TERRANOVA",
     investmentFirm: "Actis",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Hyperscale Data Centers",
     region: "Latin America",
     country: "Mexico (Pan-Latin America)",
     ownershipVehicle: "Actis Digital Infrastructure",
-    description: "",
+    description: "TERRANOVA is a hyperscale data center platform launched by Actis (now part of General Atlantic) in December 2025 to accelerate Latin America's digital expansion. With a $1.5 billion investment commitment over three years, the company is developing campuses in Queretaro and San Miguel de Allende (Mexico), Campinas (Brazil), and Chile, with secured land and power representing up to 1 GW of future capacity for AI, cloud, and enterprise workloads.",
     status: "Active",
+    website: "https://dcterranova.com/",
+    yearFounded: 2025,
+    investmentYear: 2025,
+    headquarters: "Sao Paulo, Brazil",
+    management: [
+      { name: "Jose Eduardo Quintella", title: "Chief Executive Officer" },
+      { name: "Mauricio Giusti", title: "Partner, Actis (Board Sponsor)" },
+    ],
+    milestones: [
+      { date: "Oct 2024", event: "Actis merges with General Atlantic, creating combined $118B platform that will back TERRANOVA's launch", category: "Financing" },
+      { date: "Dec 2025", event: "Actis launches TERRANOVA as a $1.5B hyperscale data center platform for Latin America with secured land and power for up to 1 GW", category: "Founding" },
+      { date: "Jan 2026", event: "TERRANOVA's first data center campus in Queretaro, Mexico becomes operational with 8.12 MW initial IT capacity", category: "Expansion" },
+      { date: "2026", event: "TERRANOVA begins construction of second campus in San Miguel de Allende, Guanajuato with 8 MW planned capacity", category: "Expansion" },
+      { date: "2027", event: "New campuses planned for Campinas, Brazil and Chile to expand regional hyperscale footprint", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Actis TERRANOVA Launch", url: "https://www.act.is/2025/12/02/actis-launches-new-latin-american-hyperscale-data-center-platform-terranova-to-accelerate-latin-americas-digital-expansion/" },
+      { label: "TERRANOVA Mexico Launch", url: "https://www.datacenterdynamics.com/en/news/terranova-launches-in-mexico-with-its-first-data-center-campus/" },
+      { label: "TERRANOVA Company Website", url: "https://dcterranova.com/en/blog/terranova-do-fundo-actis-entra-no-setor-de-data-centers-de-hiperescala" },
+    ],
   },
-  {
+    {
     name: "Valia Energía",
     investmentFirm: "Actis",
     sector: "Midstream Energy",
@@ -1263,11 +3703,32 @@ export const companies: PortCo[] = [
     region: "Latin America",
     country: "Mexico",
     ownershipVehicle: "Actis Energy 5",
-    description: "",
+    description: "Valia Energia is the leading private power producer in Mexico, operating 3.2 GW of installed capacity across seven natural gas-fired combined-cycle plants in Tamaulipas, Coahuila, and the State of Mexico, plus a 58-kilometer gas pipeline. Formed by Actis in 2022 through acquisition of MT Falcon for $360M and expanded via the EVM Energia bolt-on, the company represents over 15% of Mexico's energy supply and ranks among Latin America's top 10 independent generators.",
     status: "Active",
+    website: "https://valiaenergia.com/en/",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "Mexico City, Mexico",
+    management: [
+      { name: "Narcis de Carreras Roques", title: "Chief Executive Officer" },
+      { name: "Fernando Suarez", title: "Chief Financial Officer" },
+      { name: "Alberto Estefan", title: "Partner, Actis (Board Member)" },
+    ],
+    milestones: [
+      { date: "Nov 2022", event: "Actis completes $360M acquisition of MT Falcon (2.2 GW, five CCGT plants and gas pipeline) from Mitsui/Tokyo Gas/JERA consortium, rebranding as Valia Energia", category: "Financing" },
+      { date: "Jul 2023", event: "Valia Energia acquires EVM Energia, adding two gas plants (850 MW EVM II H-Class and 100 MW EVM I) for 3.2 GW total capacity", category: "Acquisition" },
+      { date: "Oct 2023", event: "Valia Energia completes integration of EVM assets, consolidating position among Latin America's top 10 independent generators", category: "Acquisition" },
+      { date: "Jan 2024", event: "Valia Energia issues $530M 15-year project bond at 7.875% coupon, 5.5x oversubscribed; first Mexican project bond since 2020, winning LatinFinance Bond of the Year", category: "Financing" },
+      { date: "2025", event: "Valia Energia earns ESR (Socially Responsible Enterprise) distinction, Great Place to Work certification, and TOP Companies recognition", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Actis Valia Energia Portfolio", url: "https://www.act.is/about-us/portfolio/valia-energia/" },
+      { label: "Valia Energia EVM Acquisition", url: "https://valiaenergia.com/wp-content/uploads/2023/10/Valia-Energia-Press-Release-ENGLISH-VF.pdf" },
+      { label: "Milbank $530M Bond Advisory", url: "https://www.milbank.com/en/news/milbank-advises-valia-energia-on-dollar530m-project-bond-financing-to-expand-footprint-in-mexican-energy-market.html" },
+    ],
   },
   // ─── Allianz Global Investors ───────────────────────────────
-  {
+    {
     name: "Broadview Wind Farm",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -1275,10 +3736,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Tax Equity)",
-    description: "",
+    description: "Broadview is a 324 MW wind farm consisting of 141 Siemens Gamesa turbines located along the New Mexico-Texas border. Owned by Pattern Energy, the project sells power to Southern California under a long-term contract and generates enough electricity to supply approximately 180,000 California households.",
     status: "Active",
+    website: "https://patternenergy.com/projects/broadview-wind/",
+    yearFounded: 2016,
+    investmentYear: 2017,
+    headquarters: "Curry County, NM",
+    management: [
+      { name: "Hunter Armistead", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2017-03", event: "Broadview Wind Farm achieves commercial operation with 324 MW capacity across New Mexico and Texas", category: "Expansion" },
+      { date: "2017-05", event: "Allianz Capital Partners and Capital One complete tax equity investment in Broadview", category: "Financing" },
+    ],
+    sources: [
+      { label: "Allianz Broadview Investment", url: "https://www.allianz.com/en/press/news/financials/stakes_investments/170524-allianz-capital-one-complete-us-wind-investment.html" },
+    ],
   },
-  {
+    {
     name: "Chicago Parking Meters LLC",
     investmentFirm: "Allianz Global Investors",
     sector: "Transportation",
@@ -1286,10 +3761,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Consortium)",
-    description: "",
+    description: "Chicago Parking Meters LLC operates a 75-year concession to manage approximately 36,000 metered parking spaces across the City of Chicago. The consortium, which includes Morgan Stanley Infrastructure (50.1%), Allianz Capital Partners (25%), and Abu Dhabi Investment Authority (24.9%), acquired the concession in 2009 for $1.15 billion. The meters generated $161 million in revenue in 2024.",
     status: "Active",
+    yearFounded: 2008,
+    investmentYear: 2009,
+    headquarters: "Chicago, IL",
+    milestones: [
+      { date: "2009-02", event: "Consortium of Morgan Stanley, Allianz Capital Partners, and ADIA closes $1.15B acquisition of 75-year parking meter concession from the City of Chicago", category: "Acquisition" },
+      { date: "2013-01", event: "City of Chicago renegotiates concession agreement, expected to save taxpayers $25M annually over the remainder of the contract", category: "Other" },
+    ],
+    sources: [
+      { label: "Chicago Parking Meters Wikipedia", url: "https://en.wikipedia.org/wiki/Chicago_Parking_Meters" },
+    ],
   },
-  {
+    {
     name: "Colbeck's Corner Wind Farm",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -1297,10 +3782,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Tax Equity)",
-    description: "",
+    description: "Colbeck's Corner is a 200 MW wind farm in Carson and Gray counties, Texas, approximately 37 miles east of Amarillo. Developed and owned by E.ON Climate & Renewables, the project employs 112 GE 1.79-100 turbines and generates enough electricity to power approximately 64,000 homes.",
     status: "Active",
+    yearFounded: 2015,
+    investmentYear: 2016,
+    headquarters: "Carson County, TX",
+    milestones: [
+      { date: "2016-05", event: "E.ON, Allianz Capital Partners, and State Street Corporation close tax equity financing for Colbeck's Corner wind farm", category: "Financing" },
+    ],
+    sources: [
+      { label: "Colbeck's Corner Tax Equity Financing", url: "https://www.prnewswire.com/news-releases/eon-climate--renewables-allianz-capital-partners-and-state-street-corporation-close-colbecks-corner-llc-tax-equity-financing-300274548.html" },
+    ],
   },
-  {
+    {
     name: "Galloway 2 Solar Project",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -1308,10 +3802,21 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Direct Equity)",
-    description: "",
+    description: "Galloway 2 is a 147 MWdc solar project in Concho County, Texas, acquired by Allianz Capital Partners from developer Avantus (formerly 8minute Solar Energy) in 2022. The project sells power under a long-term PPA through EDF Energy Services to BASF and is expected to generate over $18 million in local property taxes.",
     status: "Active",
+    website: "https://avantus.com/",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "Concho County, TX",
+    milestones: [
+      { date: "2022-11", event: "Allianz Capital Partners completes acquisition of 147 MWdc Galloway 2 Solar Project from Avantus", category: "Acquisition" },
+      { date: "2023-06", event: "Galloway 2 Solar Project achieves commercial operations, providing affordable energy for 60,000 people", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Avantus & Allianz Galloway 2 Sale", url: "https://avantus.com/news/avantus-and-allianz-capital-partners-announce-completion-of-sale-for-galloway-2-solar-project" },
+    ],
   },
-  {
+    {
     name: "Great Western Wind Farm",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -1319,10 +3824,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Tax Equity)",
-    description: "",
+    description: "Great Western is a 225 MW wind farm in Ellis and Woodward counties, Oklahoma, approximately 200 km northwest of Oklahoma City. Developed and owned by EDF Renewable Energy, the project uses 93 Vestas turbines and sells its output to Google under a long-term contract, generating enough clean electricity to power approximately 70,000 Oklahoma homes.",
     status: "Active",
+    yearFounded: 2016,
+    investmentYear: 2017,
+    headquarters: "Ellis County, OK",
+    milestones: [
+      { date: "2016-12", event: "Great Western Wind Farm achieves commercial operation with 225 MW capacity in Oklahoma", category: "Expansion" },
+      { date: "2017-02", event: "Allianz Capital Partners and MUFG complete tax equity investment in Great Western", category: "Financing" },
+    ],
+    sources: [
+      { label: "Allianz & MUFG Great Western Investment", url: "https://www.allianz.com/en/press/news/business/asset_management/20170202-allianz-wind-farm-in-oklahoma.result.html/3/2017.html" },
+    ],
   },
-  {
+    {
     name: "Kelly Creek Wind Project",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -1330,10 +3845,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Tax Equity)",
-    description: "",
+    description: "Kelly Creek is a 184 MW wind farm in Ford and Kankakee counties, Illinois, approximately 115 km southwest of Chicago. Developed and owned by EDF Renewable Energy, the project uses 92 Vestas 2.0 MW V100 turbines and generates enough electricity to power approximately 78,000 Illinois homes.",
     status: "Active",
+    yearFounded: 2016,
+    investmentYear: 2017,
+    headquarters: "Ford County, IL",
+    milestones: [
+      { date: "2017-01", event: "Allianz Capital Partners completes tax equity investment in Kelly Creek as sole tax equity partner alongside EDF Renewable Energy", category: "Financing" },
+    ],
+    sources: [
+      { label: "Allianz Kelly Creek Investment", url: "https://www.allianzcapitalpartners.com/media/news/01717-allianz-invests-edf-wind-farm-illinois/" },
+    ],
   },
-  {
+    {
     name: "Lotus Solar Farm",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -1341,10 +3865,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Direct Equity)",
-    description: "",
+    description: "Lotus Solar Farm is a 67 MWdc solar project in Madera County, California, acquired by Allianz Global Investors from 8minute Solar Energy in 2019 as AllianzGI's first U.S. solar investment. The project operates under a 20-year PPA with Southern California Edison producing over 125 million kWh annually, reducing carbon emissions by approximately 48,000 metric tons per year.",
     status: "Active",
+    yearFounded: 2019,
+    investmentYear: 2019,
+    headquarters: "Madera County, CA",
+    milestones: [
+      { date: "2019-09", event: "Allianz Global Investors acquires Lotus Solar Farm from 8minute Solar Energy, marking its first U.S. solar investment", category: "Acquisition" },
+      { date: "2020-09", event: "Lotus Solar Farm achieves full commercial operations with 67 MWdc capacity in Madera County", category: "Expansion" },
+    ],
+    sources: [
+      { label: "8minute & Allianz Lotus Solar Acquisition", url: "https://www.businesswire.com/news/home/20190910005984/en/8minute-Solar-Energy-and-Allianz-Global-Investors-Announce-First-Major-U.S.-Acquisition" },
+    ],
   },
-  {
+    {
     name: "Red Dirt Wind Project",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -1352,10 +3886,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Renewable Energy Partners of America LLC (Tax Equity)",
-    description: "",
+    description: "Red Dirt is a 300 MW wind farm near Hennessey, Oklahoma, developed by Enel Green Power North America. The project consists of 100 Nordex AW125/3000 turbines generating approximately 1,200 GWh of renewable energy annually, sold under long-term agreements with T-Mobile USA (160 MW) and Grand River Dam Authority (140 MW).",
     status: "Active",
+    yearFounded: 2017,
+    investmentYear: 2017,
+    headquarters: "Hennessey, OK",
+    milestones: [
+      { date: "2017-08", event: "Enel signs $340M tax equity agreement with MUFG and Allianz Renewable Energy Partners of America for Red Dirt", category: "Financing" },
+      { date: "2017-12", event: "Red Dirt Wind Project begins commercial operations with 300 MW capacity in Oklahoma", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Enel Red Dirt Tax Equity Agreement", url: "https://www.enel.com/media/explore/search-press-releases/press/2017/08/enel-signs-tax-equity-agreement-for-300-mw-red-dirt-wind-project-in-the-usa" },
+    ],
   },
-  {
+    {
     name: "Stella Wind Farm",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -1363,11 +3907,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Tax Equity)",
-    description: "",
+    description: "Stella is a 201 MW wind farm on the Gulf of Mexico coast in Kenedy County, Texas, developed by E.ON Climate & Renewables. The project employs 67 Acciona AW-125 3.0 MW turbines and is projected to generate more than $25 million in revenue for Kenedy County over its operational life.",
     status: "Active",
+    yearFounded: 2018,
+    investmentYear: 2018,
+    headquarters: "Kenedy County, TX",
+    milestones: [
+      { date: "2018-12", event: "Stella Wind Farm achieves commercial operation and closes tax equity financing with Allianz Capital Partners", category: "Financing" },
+    ],
+    sources: [
+      { label: "E.ON Stella Wind Farm Announcement", url: "https://www.prnewswire.com/news-releases/eon-achieves-successful-commercial-operation-and-tax-equity-financing-for-stella-wind-farm-300782909.html" },
+    ],
   },
   // ─── Amber Infrastructure ───────────────────────────────────
-  {
+    {
     name: "7 Mile Pit Solar",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -1375,10 +3928,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Circle Power",
-    description: "",
+    description: "7 Mile Pit Solar is a planned solar array on a 169-acre former sand and gravel mining site in Crawford County, Michigan, developed by Circle Power Renewables under a lease from the Michigan Department of Natural Resources. The project repurposes abandoned industrial land for renewable energy generation, with an estimated capacity of up to 20 MW.",
     status: "Active",
+    yearFounded: 2020,
+    investmentYear: 2020,
+    headquarters: "Crawford County, MI",
+    milestones: [
+      { date: "2020-09", event: "Michigan DNR awards Circle Power a 5-year lease to develop solar on the former 7 Mile Pit mine site", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Michigan DNR Circle Power Mine Solar", url: "https://thinkingafield.org/2020/09/michigan-dnr-partners-with-circle-power-to-repurpose-former-mine-sites.html" },
+    ],
   },
-  {
+    {
     name: "Alberta Schools (ASAP I)",
     investmentFirm: "Amber Infrastructure",
     sector: "Social Infrastructure",
@@ -1386,10 +3948,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "International Public Partnerships (INPP)",
-    description: "",
+    description: "Alberta Schools is a Canadian P3 project involving the design, construction, finance, and maintenance of 18 schools (9 in Edmonton and 9 in Calgary) commissioned by the Alberta Government. The concession has a 32-year term including a 22-month construction period and won a Gold Award from the Canadian Council for Public-Private Partnerships in 2010.",
     status: "Active",
+    yearFounded: 2008,
+    investmentYear: 2008,
+    headquarters: "Edmonton / Calgary, AB, Canada",
+    milestones: [
+      { date: "2010-01", event: "Alberta Schools P3 project wins Gold Award for Infrastructure at the Canadian Council for Public-Private Partnerships", category: "Other" },
+    ],
+    sources: [
+      { label: "Amber Infrastructure Education Portfolio", url: "https://www.amberinfrastructure.com/our-sectors/infrastructure/education/" },
+    ],
   },
-  {
+    {
     name: "Biddeford Downtown Redevelopment (Lincoln Garage)",
     investmentFirm: "Amber Infrastructure",
     sector: "Transportation",
@@ -1397,10 +3968,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure / Hunt Companies",
-    description: "",
+    description: "The Biddeford Lincoln Garage & RiverWalk is a $22.3 million P3 project delivering a 640-space parking garage and urban riverwalk in Biddeford, Maine's downtown Mill District. Developed by Amber Infrastructure and Hunt Companies under a 26-year lease, it is Maine's first private infrastructure financing project of its kind.",
     status: "Active",
+    yearFounded: 2020,
+    investmentYear: 2020,
+    headquarters: "Biddeford, ME",
+    milestones: [
+      { date: "2020-08", event: "Amber and Hunt achieve financial close and break ground on the $22.3M Lincoln Garage & RiverWalk P3 project", category: "Financing" },
+      { date: "2021-07", event: "Lincoln Garage opens as Maine's first private infrastructure financing project", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Amber Lincoln Garage Financial Close", url: "https://www.prnewswire.com/news-releases/amber-achieves-financial-close-of-biddeford-lincoln-garage--riverwalk-biddeford-me-301109865.html" },
+    ],
   },
-  {
+    {
     name: "Circle Power Renewables",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -1408,10 +3989,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure",
-    description: "",
+    description: "Circle Power Renewables is a renewable energy development platform jointly launched by Amber Infrastructure and Circle Power in 2021, focused on solar, wind, and battery projects in Michigan and other regional US power markets. The company is currently developing over 450 MW of projects including the Groveland Mine Solar and Scotia Wind facilities in Michigan's Upper Peninsula.",
     status: "Active",
+    website: "https://circlepower.com/",
+    yearFounded: 2017,
+    investmentYear: 2021,
+    headquarters: "Royal Oak, MI",
+    management: [
+      { name: "Jordan Roberts", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2021-05", event: "Amber Infrastructure and Circle Power launch Circle Power Renewables joint venture for US renewable energy development", category: "Founding" },
+      { date: "2024-08", event: "Michigan Public Service Commission approves PPA between Circle Power Renewables and UPPCO for Groveland Mine Solar", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Circle Power Renewables Launch", url: "https://www.prnewswire.com/news-releases/amber-infrastructure-and-circle-power-launch-circle-power-renewables-301301112.html" },
+    ],
   },
-  {
+    {
     name: "City Light & Power (CLP)",
     investmentFirm: "Amber Infrastructure",
     sector: "Regulated Utilities",
@@ -1419,10 +4014,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure / Hunt Companies",
-    description: "",
+    description: "City Light & Power is an electrical contractor and utility system owner specializing in utility privatization contracts for U.S. military installations. With four decades of experience, CLP owns and operates electrical distribution systems on military bases under long-term privatization agreements with the Army and Air Force, as well as two municipal PPP contracts in California.",
     status: "Active",
+    website: "https://www.clpinc.com/",
+    yearFounded: 1980,
+    investmentYear: 2020,
+    headquarters: "Louisville, KY",
+    milestones: [
+      { date: "2020-03", event: "Hunt Companies and Amber Infrastructure acquire a majority stake in City Light & Power from existing shareholders", category: "Acquisition" },
+    ],
+    sources: [
+      { label: "Hunt & Amber CLP Acquisition", url: "https://www.amberinfrastructure.com/news/press-releases/2020/amber-and-hunt-acquire-a-majority-stake-in-city-light-power/" },
+    ],
   },
-  {
+    {
     name: "City of San Marcos Public Service Center",
     investmentFirm: "Amber Infrastructure",
     sector: "Social Infrastructure",
@@ -1430,10 +4035,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure / Hunt Companies",
-    description: "",
+    description: "The City of San Marcos Public Services Complex is a $44.4 million P3 project delivering a 155,000 sq ft facility that consolidates over a dozen city service departments into a single modern campus. The development includes an administration building, warehouse, 500 kW rooftop solar array, and rainwater capture systems, serving approximately 180 city employees.",
     status: "Active",
+    yearFounded: 2020,
+    investmentYear: 2020,
+    headquarters: "San Marcos, TX",
+    milestones: [
+      { date: "2020-09", event: "Amber and Hunt achieve financial close on the $44.4M Public Services Complex for the City of San Marcos", category: "Financing" },
+      { date: "2021-11", event: "City of San Marcos celebrates grand opening of the Public Services Complex", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Amber San Marcos Financial Close", url: "https://www.amberinfrastructure.com/news/press-releases/2020/amber-closes-financing-for-public-services-complex-in-san-marcos-texas/" },
+    ],
   },
-  {
+    {
     name: "Durham Region Courthouse",
     investmentFirm: "Amber Infrastructure",
     sector: "Social Infrastructure",
@@ -1441,10 +4056,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "International Public",
-    description: "",
+    description: "The Durham Region Courthouse is a P3 project in Ontario, Canada, developed and managed by Amber Infrastructure for International Public Partnerships (INPP). The project won an Award of Merit for Project Financing from the Canadian Council for Public-Private Partnerships in 2007 and a Silver Award for Infrastructure in 2010.",
     status: "Active",
+    yearFounded: 2007,
+    investmentYear: 2007,
+    headquarters: "Ontario, Canada",
+    milestones: [
+      { date: "2007-01", event: "Durham Region Courthouse P3 project wins Award of Merit for Project Financing from CCPPP", category: "Other" },
+    ],
+    sources: [
+      { label: "Amber Infrastructure Judicial Projects", url: "https://www.amberinfrastructure.com/our-sectors/infrastructure/judicial/" },
+    ],
   },
-  {
+    {
     name: "Euryalus / Southern Current Portfolio",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -1452,10 +4076,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "US Solar Fund plc (USF)",
-    description: "",
+    description: "The Euryalus portfolio consists of four utility-scale solar projects totaling 61 MWdc in Oregon, acquired by US Solar Fund from developer Southern Current LLC in 2020. All projects sell 100% of their output under long-term PPAs to Portland General Electric, an Oregon-based utility serving 1.9 million customers.",
     status: "Active",
+    yearFounded: 2020,
+    investmentYear: 2020,
+    headquarters: "Oregon",
+    milestones: [
+      { date: "2020-06", event: "US Solar Fund closes acquisition of 61 MWdc portfolio of four Oregon solar projects from Southern Current LLC", category: "Acquisition" },
+      { date: "2020-07", event: "Euryalus portfolio achieves full commercial operations across all four Oregon solar assets", category: "Expansion" },
+    ],
+    sources: [
+      { label: "USF Euryalus Portfolio", url: "https://www.ussolarfund.co.uk/portfolio/acquisition-five" },
+    ],
   },
-  {
+    {
     name: "Future Energy Park",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -1463,10 +4097,21 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Amber Infrastructure",
-    description: "",
+    description: "Future Energy Park is a proposed $1.2 billion carbon-negative biofuels facility in Calgary, Alberta, being developed by Green Impact Partners with Amber Infrastructure as a 50% equity partner. When operational, it will produce approximately 35 million MMBtu/year of renewable natural gas and over 300 million litres of ethanol annually from non-food-grade wheat, making it North America's largest carbon-negative RNG and ethanol project.",
     status: "Active",
+    yearFounded: 2021,
+    investmentYear: 2023,
+    headquarters: "Calgary, AB, Canada",
+    milestones: [
+      { date: "2023-02", event: "Amber Infrastructure acquires 50% project-level equity in Future Energy Park as part of $545M partnership with Green Impact Partners", category: "Financing" },
+      { date: "2023-12", event: "Alberta Environmental Protection and Enhancement Act grants approval to construct and operate the biofuels facility", category: "Other" },
+    ],
+    sources: [
+      { label: "Future Energy Park - Green Impact Partners", url: "https://www.greenipi.com/project/future-energy-park/" },
+      { label: "Amber GIP Partnership", url: "https://www.canadianbiomassmagazine.ca/green-impact-partners-amber-infrastructure-ink-rng-facility-partnership-deal/" },
+    ],
   },
-  {
+    {
     name: "Granite Solar Portfolio",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -1474,10 +4119,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "US Solar Fund plc (USF)",
-    description: "",
+    description: "The Granite portfolio consists of eight operational solar projects totaling 39 MWdc in North Carolina, acquired by US Solar Fund from Greenbacker Renewable Energy in early 2020. All projects sell power under long-term PPAs to Duke Energy subsidiaries with a weighted average term of 15.2 years.",
     status: "Active",
+    yearFounded: 2012,
+    investmentYear: 2020,
+    headquarters: "North Carolina",
+    milestones: [
+      { date: "2020-01", event: "US Solar Fund acquires 39 MWdc Granite portfolio of eight operational solar projects in North Carolina from Greenbacker", category: "Acquisition" },
+    ],
+    sources: [
+      { label: "USF Granite Portfolio", url: "https://www.ussolarfund.co.uk/portfolio/granite" },
+    ],
   },
-  {
+    {
     name: "GreenGas Colorado",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -1485,10 +4139,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure",
-    description: "",
+    description: "GreenGas Colorado is a dairy-waste-to-renewable natural gas facility in Weld County, Colorado, converting organic waste through anaerobic digestion and gasification into pipeline-quality RNG. Amber Infrastructure holds a 50% equity stake, acquired for $60 million from Green Impact Partners, with expected production capacity of approximately 360,000 MMBtu per year.",
     status: "Active",
+    yearFounded: 2022,
+    investmentYear: 2023,
+    headquarters: "Weld County, CO",
+    milestones: [
+      { date: "2023-02", event: "Amber Infrastructure acquires 50% stake in GreenGas Colorado for $60M as part of broader Green Impact Partners partnership", category: "Financing" },
+      { date: "2023-12", event: "GreenGas Colorado achieves first gas production, ramping toward 360,000 MMBtu/year full capacity", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Amber GIP RNG Partnership", url: "https://americanbiogascouncil.org/green-impact-partners-announces-545-million-partnering-agreement/" },
+    ],
   },
-  {
+    {
     name: "Groveland Mine Solar",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -1496,10 +4160,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Circle Power Renewables",
-    description: "",
+    description: "Groveland Mine Solar is a 120 MW solar array being developed by Circle Power Renewables on approximately 500 acres of the decommissioned Groveland Mine site in Dickinson County, Michigan's Upper Peninsula. The roughly $200 million project has secured a PPA with UPPCO for 62.5 MW of output and is expected to provide $12.7 million to local governments and schools over its 30-year life.",
     status: "Active",
+    website: "https://grovelandminesolar.com/",
+    yearFounded: 2020,
+    investmentYear: 2020,
+    headquarters: "Dickinson County, MI",
+    milestones: [
+      { date: "2023-10", event: "Felch Township approves conditional use permit for the 120 MW Groveland Mine Solar project", category: "Expansion" },
+      { date: "2024-08", event: "Michigan Public Service Commission approves PPA between Circle Power and UPPCO for 62.5 MW from Groveland Mine Solar", category: "Financing" },
+    ],
+    sources: [
+      { label: "Groveland Mine Solar Project", url: "https://grovelandminesolar.com/" },
+      { label: "UPPCO PPA Approval", url: "https://www.uppermichiganssource.com/2024/08/23/uppco-circle-power-renewables-announce-approval-power-purchase-agreement-groveland-solar-mine/" },
+    ],
   },
-  {
+    {
     name: "Heelstone Solar Portfolio",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -1507,10 +4183,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "US Solar Fund plc (USF)",
-    description: "",
+    description: "The Heelstone portfolio consists of operational solar projects acquired by US Solar Fund from Heelstone Energy, a Chapel Hill, North Carolina-based utility-scale solar developer. The assets are located primarily in North Carolina and sell power under long-term PPAs to creditworthy utility offtakers as part of USF's diversified 443 MWdc portfolio.",
     status: "Active",
+    yearFounded: 2012,
+    investmentYear: 2020,
+    headquarters: "North Carolina",
+    milestones: [
+      { date: "2020-01", event: "US Solar Fund acquires portfolio of 22 operational solar projects from Heelstone Energy across three US states", category: "Acquisition" },
+    ],
+    sources: [
+      { label: "USF Fund Overview", url: "https://www.ussolarfund.co.uk/" },
+    ],
   },
-  {
+    {
     name: "Iowa RNG",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -1518,10 +4203,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure",
-    description: "",
+    description: "Iowa RNG is a $130 million renewable natural gas facility under development in Iowa, part of Amber Infrastructure's 50% partnership with Green Impact Partners. The facility is designed to produce approximately 350,000 MMBtu/year of RNG and was part of the broader $545 million partnership between Amber and GIP covering three RNG facilities across North America.",
     status: "Active",
+    yearFounded: 2022,
+    investmentYear: 2023,
+    headquarters: "Iowa",
+    milestones: [
+      { date: "2023-02", event: "Amber Infrastructure acquires 50% equity stake in Iowa RNG as part of $485M co-investment with Green Impact Partners covering Future Energy Park and Iowa RNG", category: "Financing" },
+    ],
+    sources: [
+      { label: "Green Impact Partners Amber Partnership", url: "https://www.greenipi.com/newsroom/green-impact-partners-announces-545-million-partnering-agreement/" },
+    ],
   },
-  {
+    {
     name: "Maine International Cold Storage Facility (MICSF)",
     investmentFirm: "Amber Infrastructure",
     sector: "Transportation",
@@ -1529,10 +4223,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure",
-    description: "",
+    description: "The Maine International Cold Storage Facility is a 107,000 sq ft state-of-the-art cold storage facility at the Port of Portland, Maine, developed by Amber Infrastructure in partnership with Treadwell Franklin Infrastructure under a 50-year ground lease with the Maine Port Authority. The $55 million facility features 22,000 pallet positions, the largest solar array in Maine (1 MW), and a CO2-based refrigeration system.",
     status: "Active",
+    website: "https://coldstoragemaine.com/",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "Portland, ME",
+    milestones: [
+      { date: "2021-01", event: "Amber Infrastructure and Hunt Companies break ground on the Maine International Cold Storage Facility at the Port of Portland", category: "Expansion" },
+      { date: "2024-09", event: "Taylor Logistics selected as operator for MICSF, partnering with Amber Infrastructure on the cutting-edge facility", category: "Other" },
+    ],
+    sources: [
+      { label: "Amber MICSF Groundbreaking", url: "https://www.amberinfrastructure.com/news/press-releases/2021/amber-breaks-ground-on-us-cold-storage-facility/" },
+      { label: "MICSF Project Website", url: "https://coldstoragemaine.com/" },
+    ],
   },
-  {
+    {
     name: "Milford Solar Project",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -1540,10 +4246,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "US Solar Fund plc (USF)",
-    description: "",
+    description: "Milford Solar is a 128 MWdc utility-scale solar project in Beaver County, Utah, acquired by US Solar Fund from Longroad Energy Partners in 2019. The project sells 100% of its power and renewable energy credits under a 25-year fixed-price PPA to PacifiCorp (Berkshire Hathaway Energy), generating over 277,500 MWh annually.",
     status: "Active",
+    yearFounded: 2019,
+    investmentYear: 2019,
+    headquarters: "Beaver County, UT",
+    milestones: [
+      { date: "2019-09", event: "US Solar Fund closes acquisition and financing of the 128 MWdc Milford Solar Project from Longroad Energy", category: "Acquisition" },
+      { date: "2020-11", event: "Milford Solar Project achieves commercial operations, generating enough power for 31,000 US homes", category: "Expansion" },
+    ],
+    sources: [
+      { label: "USF Milford Solar", url: "https://www.ussolarfund.co.uk/portfolio/milford-solar-plant" },
+    ],
   },
-  {
+    {
     name: "Olympos Solar Portfolio",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -1551,10 +4267,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "US Solar Fund plc (USF)",
-    description: "",
+    description: "The Olympos portfolio consists of six solar projects totaling 39 MWdc in North Carolina, acquired by US Solar Fund from Cypress Creek Renewables in December 2019. All projects sell power under long-term PPAs to Duke Energy subsidiaries with a weighted average term of 13.1 years.",
     status: "Active",
+    yearFounded: 2019,
+    investmentYear: 2019,
+    headquarters: "North Carolina",
+    milestones: [
+      { date: "2019-12", event: "US Solar Fund acquires 39 MWdc Olympos portfolio of six solar projects in North Carolina from Cypress Creek Renewables", category: "Acquisition" },
+    ],
+    sources: [
+      { label: "USF Olympos Portfolio", url: "https://www.ussolarfund.co.uk/portfolio/olympos" },
+    ],
   },
-  {
+    {
     name: "Scotia Wind",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -1562,10 +4287,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Circle Power Renewables",
-    description: "",
+    description: "Scotia Wind is a planned 60 MW wind project in Houghton County, Michigan's Upper Peninsula, developed by Circle Power Renewables. The project secured long-term PPAs with Upper Peninsula Power Company at a record-low rate under 3.5 cents per kWh and is expected to generate over $15.9 million in local property tax revenue over its lifetime.",
     status: "Active",
+    website: "https://www.scotiawindfarm.com/",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "Houghton County, MI",
+    milestones: [
+      { date: "2021-05", event: "Scotia Wind secures long-term PPA with UPPCO at record-low renewable energy pricing in Michigan", category: "Financing" },
+    ],
+    sources: [
+      { label: "Scotia Wind Farm", url: "https://www.scotiawindfarm.com/" },
+    ],
   },
-  {
+    {
     name: "Travis County Civil and Family Courts Facility",
     investmentFirm: "Amber Infrastructure",
     sector: "Social Infrastructure",
@@ -1573,22 +4308,54 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure / Hunt Companies",
-    description: "",
+    description: "The Travis County Civil and Family Courts Facility is a $350 million, 12-story, 448,000 sq ft courthouse in downtown Austin, Texas, replacing the 1931 Herman Marion Sweatt Courthouse. Developed through a P3 partnership led by Hunt/Amber with Hensel Phelps and Gensler, the facility includes 25 courtrooms and achieved financial close to construction start in just nine months.",
     status: "Active",
+    yearFounded: 2018,
+    investmentYear: 2018,
+    headquarters: "Austin, TX",
+    milestones: [
+      { date: "2018-07", event: "Travis County selects Hunt/Amber-led consortium for the $350M new Civil and Family Courts Facility P3 project", category: "Other" },
+      { date: "2019-07", event: "Travis County Courthouse P3 project kicks off construction on the 12-story, 25-courtroom facility in downtown Austin", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Hunt Travis County Courthouse", url: "https://www.huntcompanies.com/news/hunt-led-team-secures-project-for-the-new-courts-facility-in-travis-county-texas" },
+      { label: "Hensel Phelps Travis County", url: "https://www.henselphelps.com/project/travis-county-civil-and-family-courts-facility/" },
+    ],
   },
   // ─── Ancala Partners ────────────────────────────────────────
-  {
+    {
     name: "Noventa (Noventa Energy Partners)",
     investmentFirm: "Ancala Partners",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Decarbonised Heating & Cooling",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Not Disclosed",
-    description: "",
+    ownershipVehicle: "Ancala Infrastructure Fund III",
+    description: "Noventa Energy Partners develops and operates proprietary Wastewater Energy Transfer (WET) systems using HUBER ThermWin technology to provide zero-Scope-1-emission heating and cooling for large buildings. Founded in 2018 by former Enwave CEO Dennis Fotinos and headquartered in Toronto, the company's flagship $42.9M Toronto Western Hospital project will supply 19 MW of thermal energy, eliminating 250,000 tonnes of CO2 over 30 years. Noventa has a pipeline across Canada, the UK, and the US backed by CAD $166M from Ancala and the Canada Infrastructure Bank.",
     status: "Active",
+    website: "https://www.noventaenergy.com/",
+    yearFounded: 2018,
+    investmentYear: 2023,
+    headquarters: "Toronto, ON, Canada",
+    management: [
+      { name: "Dennis Fotinos", title: "Chief Executive Officer" },
+      { name: "Cam Quinn", title: "Vice President of Project Delivery" },
+      { name: "Karl Drage", title: "Country Head, England and Wales" },
+    ],
+    milestones: [
+      { date: "2018", event: "Dennis Fotinos founds Noventa Energy Partners as a platform for renewable energy innovation after 20 years leading Enwave Energy Corporation", category: "Founding" },
+      { date: "Oct 2021", event: "Canada Infrastructure Bank reaches financial close on $42.9M Toronto Western Hospital WET system, the world's largest raw wastewater energy transfer project", category: "Financing" },
+      { date: "Mar 2023", event: "Ancala Partners acquires majority interest in Noventa on behalf of Ancala Infrastructure Fund III", category: "Financing" },
+      { date: "Apr 2023", event: "Canada Infrastructure Bank and Ancala commit CAD $166M ($100M CIB + $66M Ancala) to fund nine Toronto WET retrofit projects", category: "Financing" },
+      { date: "2026", event: "Toronto Western Hospital WET system targeted to become operational, supplying 90% of the hospital's heating and cooling needs", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Ancala Noventa Acquisition", url: "https://ancala.com/ancala-partners-acquires-decarbonised-heating-and-cooling-provider-noventa/" },
+      { label: "CIB $100M Noventa Investment", url: "https://ancala.com/canada-infrastructure-bank-invests-100-million-with-ancala-backed-noventa-to-decarbonise-buildings/" },
+      { label: "Noventa Energy Partners", url: "https://www.noventaenergy.com/" },
+    ],
   },
-  {
+    {
     name: "Phoenix Rail",
     investmentFirm: "Ancala Partners",
     sector: "Transportation",
@@ -1596,10 +4363,31 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Not Disclosed",
-    description: "",
+    description: "Phoenix Rail is a short line railroad and intermodal platform formed by Ancala Partners and Arkadia Rail Partners in January 2025. Its inaugural acquisition, Lehigh Valley Rail Management (LVRM), owns and operates 80 miles of short line trackage and an intermodal terminal in Pennsylvania, serving 100+ customers transporting consumer products, plastics, iron and steel, and agricultural products with access to Norfolk Southern, CSX, and CPKC Class I railroads.",
     status: "Active",
+    website: "https://phoenixrail.com/",
+    yearFounded: 2025,
+    investmentYear: 2025,
+    headquarters: "Denver, CO",
+    management: [
+      { name: "Alex Yeros", title: "Chief Executive Officer" },
+      { name: "Ross Grantham", title: "Chief Operating Officer" },
+      { name: "Jack Sullan", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "2022", event: "Arkadia Rail Partners sells Pioneer Lines (15 short line railroads) after transforming it into a high-performing organization, establishing the team\'s track record", category: "Divestiture" },
+      { date: "Jan 2025", event: "Ancala and Arkadia Rail Partners form Phoenix Rail platform and complete acquisition of Lehigh Valley Rail Management (LVRM)", category: "Founding" },
+      { date: "Jan 2025", event: "LVRM acquisition adds 80 miles of short line trackage in Bethlehem and Johnstown, PA, plus intermodal terminal with Class I railroad access", category: "Acquisition" },
+      { date: "2025", event: "Phoenix Rail launches infrastructure investment program across LVRM network to improve freight volumes and expand customer relationships", category: "Expansion" },
+      { date: "2025", event: "Jim Crawford appointed Chief Strategy Officer to lead adjacent business development and platform growth initiatives", category: "Management" },
+    ],
+    sources: [
+      { label: "Ancala Phoenix Rail Formation", url: "https://ancala.com/ancala-forms-short-line-rail-platform/" },
+      { label: "Phoenix Rail About", url: "https://phoenixrail.com/about/" },
+      { label: "Phoenix Rail LVRM Acquisition", url: "https://phoenixrail.com/arkadia-forms-phoenix-rail-to-acquire-lehigh-valley-rail-management/" },
+    ],
   },
-  {
+    {
     name: "Valentra",
     investmentFirm: "Ancala Partners",
     sector: "Midstream Energy",
@@ -1607,8 +4395,28 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Not Disclosed",
-    description: "",
+    description: "Valentra owns and operates a portfolio of pipeline-connected chemical sites and storage facilities in Baytown, Texas, and Luling and Geismar, Louisiana, carved out from Hexion (an American Securities portfolio company) in December 2025. The facilities are among the largest pipeline suppliers of methanol-based raw materials including formalin on the US Gulf Coast, serving co-located chemical plants under multi-year contracts and supporting agriculture, healthcare, automotive, and construction end markets with a workforce of 75+.",
     status: "Active",
+    website: "https://ancala.com/portfolio/valentra/",
+    yearFounded: 2025,
+    investmentYear: 2025,
+    headquarters: "Baytown, TX",
+    management: [
+      { name: "Alex Mihut", title: "Chief Executive Officer" },
+      { name: "Tore Land", title: "Chairman" },
+    ],
+    milestones: [
+      { date: "2025", event: "Ancala appoints Tore Land as Industry Partner and future Chair of Valentra, leveraging his GE, Celanese, and BASF background to steer the carve-out", category: "Management" },
+      { date: "Dec 2025", event: "Ancala acquires Hexion\'s US Gulf Coast formalin business, creating standalone platform Valentra with 55 existing staff plus 20 new roles", category: "Acquisition" },
+      { date: "Dec 2025", event: "Alex Mihut (former VP at Ascend Performance Materials) appointed CEO to lead Valentra\'s transition to independent operations", category: "Management" },
+      { date: "Dec 2025", event: "DC Advisory arranges acquisition financing for Ancala\'s Valentra platform", category: "Financing" },
+      { date: "2026", event: "Valentra explores organic and acquisitive growth opportunities across US Gulf Coast chemical infrastructure", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Ancala Valentra Acquisition", url: "https://ancala.com/ancala-acquires-portfolio-of-critical-chemical-pipeline-infrastructure-on-the-us-gulf-coast/" },
+      { label: "Ancala Valentra Portfolio", url: "https://ancala.com/portfolio/valentra/" },
+      { label: "DC Advisory Valentra Financing", url: "https://www.dcadvisory.com/news-deals-insights/deal-announcements/dc-advisory-advises-ancala-on-the-financing-of-its-acquisition-of-valentra/" },
+    ],
   },
   // ─── Antin Infrastructure Partners ──────────────────────────
   {
@@ -1619,8 +4427,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Mid Cap Fund I",
-    description: "",
+    description:
+      "Empire Access is a regional fiber-to-the-premise broadband provider serving upstate New York and northern Pennsylvania, with a network of over 1,280 fiber route miles servicing more than 96,000 addresses. Rated the 'Fastest ISP in the U.S.' by PC Mag in 2021.",
     status: "Active",
+    website: "https://www.empireaccess.com",
+    yearFounded: 1896,
+    investmentYear: 2023,
+    headquarters: "Prattsburgh, NY",
+    management: [
+      { name: "Kevin Dickens", title: "Chief Executive Officer" },
+      { name: "Russell Eliaso", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "January 2023", category: "Financing", event: "Antin Infrastructure Partners completes acquisition of Empire Access and North Penn" },
+      { date: "1896", category: "Founding", event: "Empire Access founded with its first telephone line in Prattsburgh, New York" },
+    ],
+    sources: [
+      { label: "Antin — Empire Access Investment", url: "https://www.antin-ip.com/media/our-news/antin-to-invest-in-empire-access-and-north-penn-leading-fiber-to-the-home-broadband-providers-in-new-york-and-pennsylvania" },
+    ],
   },
   {
     name: "FirstLight Fiber",
@@ -1630,8 +4454,25 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Flagship Fund III",
-    description: "",
+    description:
+      "FirstLight Fiber is a major fiber-optic network provider operating across the northeastern United States, with a network spanning over 25,000 miles of high-capacity fiber across New York, New Hampshire, Vermont, Massachusetts, Maine, and Pennsylvania.",
     status: "Active",
+    website: "https://www.firstlight.net",
+    yearFounded: 1999,
+    investmentYear: 2018,
+    headquarters: "Albany, NY",
+    management: [
+      { name: "Jason Campbell", title: "Chief Executive Officer" },
+      { name: "Peter Zarrella", title: "Chief Financial Officer" },
+      { name: "Mike Constantino", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      { date: "July 2018", category: "Financing", event: "Antin acquires FirstLight Fiber from Oak Hill Capital Partners, marking Antin's first U.S. investment" },
+      { date: "1999", category: "Founding", event: "Tech Valley Communications founded in Albany, NY (later rebranded to FirstLight Fiber)" },
+    ],
+    sources: [
+      { label: "FirstLight — Our Story", url: "https://www.firstlight.net/about/our-story/" },
+    ],
   },
   {
     name: "GTL Leasing",
@@ -1641,8 +4482,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "NextGen Fund I",
-    description: "",
+    description:
+      "GTL Leasing is the leading lessor of high-pressure gaseous hydrogen transportation and storage equipment in North America, providing short- and long-term operating leases for trailers and cylinders used to transport and store hydrogen and other industrial gases.",
     status: "Active",
+    yearFounded: 2013,
+    investmentYear: 2024,
+    headquarters: "Catoosa, OK",
+    management: [
+      { name: "Michael Koonce", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "June 2024", category: "Financing", event: "Antin acquires majority stake in GTL Leasing via NextGen Fund I" },
+      { date: "2013", category: "Founding", event: "Michael Koonce founds GTL Leasing as an equipment lessor for high-pressure gaseous trailers" },
+    ],
+    sources: [
+      { label: "Antin — GTL Leasing Investment", url: "https://www.antin-ip.com/media/our-news/antin-agrees-to-invest-in-gtl-leasing-the-leading-lessor-of-hydrogen-midstream-equipment-in-north-america" },
+    ],
   },
   {
     name: "Lake State Railway Company (LSRC)",
@@ -1652,30 +4507,79 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Mid Cap Fund I",
-    description: "",
+    description:
+      "Lake State Railway Company is a Michigan-based regional freight railroad operating approximately 375 miles of track spanning eastern Michigan's Lower Peninsula, handling more than 60,000 carloads annually for over 60 customers. Named Railway Age's 2021 Regional Railroad of the Year.",
     status: "Active",
+    website: "https://www.lsrc.com",
+    yearFounded: 1992,
+    investmentYear: 2022,
+    headquarters: "Saginaw, MI",
+    management: [
+      { name: "Mike Stickel", title: "President and Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "March 2022", category: "Financing", event: "Antin completes strategic investment in Lake State Railway" },
+      { date: "1992", category: "Founding", event: "Lake State Railway founded upon acquisition of rail lines from the Detroit & Mackinac Railway" },
+    ],
+    sources: [
+      { label: "Antin — LSRC Investment", url: "https://www.antin-ip.com/media/our-news/lake-state-railway-leading-regional-freight-railroad-has-received-strategic" },
+    ],
   },
   {
     name: "Origis Energy",
     investmentFirm: "Antin Infrastructure Partners",
     sector: "Energy Transition",
-    subsector: "Energy & Environment (Renewables",
+    subsector: "Renewables",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Flagship Fund IV",
-    description: "",
+    description:
+      "Origis Energy is a leading vertically integrated U.S. renewable energy platform, operating approximately 1 GW of solar and storage with an additional 3 GW in construction and a 25 GW development pipeline. Ranked fifth largest utility-scale solar developer through 2028 by S&P Global.",
     status: "Active",
+    website: "https://origisenergy.com",
+    yearFounded: 2008,
+    investmentYear: 2021,
+    headquarters: "Miami, FL",
+    management: [
+      { name: "Vikas Anand", title: "Chief Executive Officer" },
+      { name: "Alice Heathcote", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "January 2025", category: "Financing", event: "Origis secures $1+ billion strategic investment from Brookfield alongside Antin" },
+      { date: "October 2021", category: "Financing", event: "Antin acquires majority stake in Origis Energy via Flagship Fund IV" },
+      { date: "2008", category: "Founding", event: "Origis Energy founded by Guy Vanderhaegen in Miami, Florida" },
+    ],
+    sources: [
+      { label: "Origis Energy — Antin Investment", url: "https://origisenergy.com/insights/antin-infrastructure-partners-to-become-majority-shareholder-in-origis-energy-a-leading-u-s-renewable-energy-platform/" },
+    ],
   },
   {
     name: "Vicinity Energy",
     investmentFirm: "Antin Infrastructure Partners",
     sector: "Utilities",
-    subsector: "Energy & Environment (District Energy",
+    subsector: "District Energy",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Flagship Fund IV",
-    description: "",
+    description:
+      "Vicinity Energy is the largest owner and operator of district energy systems in the United States, operating 19 systems across 12 cities delivering steam, hot water, and chilled water to over 260 million square feet of building space.",
     status: "Active",
+    website: "https://www.vicinityenergy.us",
+    yearFounded: 2020,
+    investmentYear: 2019,
+    headquarters: "Boston, MA",
+    management: [
+      { name: "Kevin Hagerty", title: "Chief Executive Officer" },
+      { name: "Kevin Walsh", title: "Chief Financial Officer" },
+      { name: "Bill Fahey", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      { date: "January 2020", category: "Founding", event: "Vicinity Energy launches following Antin's $1.25 billion acquisition of Veolia's U.S. district energy assets" },
+      { date: "December 2019", category: "Financing", event: "Antin completes $1.25 billion acquisition of Veolia North America's district energy assets" },
+    ],
+    sources: [
+      { label: "Antin — Vicinity Energy", url: "https://www.antin-ip.com/investments/vicinity-energy" },
+    ],
   },
   {
     name: "Vigor Marine Group",
@@ -1685,8 +4589,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Flagship Fund V",
-    description: "",
+    description:
+      "Vigor Marine Group is a leading American shipbuilding, ship repair, and marine services company operating shipyard and fabrication facilities across Seattle, Portland, San Diego, and Norfolk, with six drydocks and 29 berths serving U.S. Navy, Coast Guard, cruise line operators, and commercial maritime customers.",
     status: "Active",
+    website: "https://www.vigormarine.com",
+    yearFounded: 1995,
+    investmentYear: 2026,
+    headquarters: "Portland, OR",
+    milestones: [
+      { date: "February 2026", category: "Financing", event: "Antin agrees to acquire Vigor Marine Group from Lone Star Funds via Flagship Fund V" },
+      { date: "1995", category: "Founding", event: "Frank Foti founds Vigor by acquiring the Cascade General shipyard at Swan Island in Portland, Oregon" },
+    ],
+    sources: [
+      { label: "Vigor Marine Group — Wikipedia", url: "https://en.wikipedia.org/wiki/Vigor_Marine_Group" },
+    ],
   },
   // ─── Apollo Global Management ───────────────────────────────
   {
@@ -1715,12 +4631,79 @@ export const companies: PortCo[] = [
     name: "Brightspeed (Connect Holding)",
     investmentFirm: "Apollo Global Management",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Fiber Broadband",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Apollo Funds",
-    description: "",
+    description:
+      "Brightspeed is a fiber-first broadband provider serving approximately 6.5 million homes and businesses across 20 states in the Midwest, Southeast, and Mid-Atlantic regions. Formed in October 2022 through Apollo's acquisition of Lumen Technologies' incumbent local exchange carrier (ILEC) operations, Brightspeed is executing one of the largest fiber buildout programs in the U.S., targeting 3 million fiber passings by 2026 with over $2 billion in capital investment. The company operates a critical last-mile telecommunications network with a growing fiber footprint that positions it as a key connectivity provider in underserved and rural markets.",
     status: "Active",
+    website: "https://www.brightspeed.com",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "Charlotte, NC",
+    management: [
+      { name: "Michel Combes", title: "Executive Chairman & Acting Chief Executive Officer" },
+      { name: "Christie Grumbos", title: "Chief Financial Officer" },
+      { name: "Courtland Madock", title: "President, Consumer & Small Business" },
+    ],
+    milestones: [
+      {
+        date: "Aug 2021",
+        event: "Apollo Global Management agreed to acquire Lumen Technologies' ILEC assets across 20 states for approximately $7.5 billion, including assumed debt.",
+        category: "Financing",
+      },
+      {
+        date: "Oct 2022",
+        event: "Transaction closed and Brightspeed launched as a standalone company, becoming the fourth-largest fiber broadband builder and operator in the U.S.",
+        category: "Founding",
+      },
+      {
+        date: "Oct 2022",
+        event: "Tom Maguire appointed as inaugural CEO. Bob Mudge named President. Leadership team recruited from major telecom operators.",
+        category: "Management",
+      },
+      {
+        date: "2023",
+        event: "Launched multi-year fiber buildout program targeting 3 million fiber passings, partnering with construction firms including MasTec and Dycom to accelerate deployment.",
+        category: "Expansion",
+      },
+      {
+        date: "Jun 2023",
+        event: "Surpassed 500,000 fiber passings milestone since company launch, with active construction across multiple states.",
+        category: "Expansion",
+      },
+      {
+        date: "Dec 2023",
+        event: "Crossed 1 million fiber passings, demonstrating accelerated buildout pace with deployment in 17 states.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Secured approximately $400 million in federal and state broadband subsidies (including BEAD and RDOF programs) to support fiber expansion in rural and underserved markets.",
+        category: "Financing",
+      },
+      {
+        date: "Sep 2024",
+        event: "Reached 2 million fiber passings, maintaining trajectory toward 3 million target by 2026.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Brightspeed — Company Website", url: "https://www.brightspeed.com" },
+      {
+        label: "Apollo — Brightspeed Portfolio Page",
+        url: "https://www.apollo.com/our-business/portfolio/brightspeed",
+      },
+      {
+        label: "Lumen — Brightspeed Transaction Announcement",
+        url: "https://news.lumen.com/2021-08-03-Lumen-Technologies-to-sell-its-incumbent-local-exchange-carrier-ILEC-operations",
+      },
+      {
+        label: "Light Reading — Brightspeed Fiber Buildout Progress",
+        url: "https://www.lightreading.com/broadband/brightspeed-passes-2m-fiber-locations",
+      },
+    ],
   },
   {
     name: "Broad Reach Power (Mountain West)",
@@ -1781,56 +4764,299 @@ export const companies: PortCo[] = [
     name: "Corning Natural Gas",
     investmentFirm: "Apollo Global Management",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Gas Utility",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "Corning Natural Gas Corporation is a regulated natural gas distribution utility serving approximately 15,000 residential, commercial, and industrial customers in the Southern Tier and Finger Lakes regions of upstate New York. The company also owns Pike County Light & Power Company, an electric and gas utility serving northeastern Pennsylvania, and Leatherstocking Gas Company, a gas utility serving central New York. Together, these regulated subsidiaries form a small-cap utility platform with stable, rate-regulated cash flows and ongoing capital investment needs for system modernization and pipeline replacement.",
     status: "Active",
+    website: "https://www.corninggas.com",
+    yearFounded: 1904,
+    investmentYear: 2013,
+    headquarters: "Corning, NY",
+    management: [
+      { name: "Michael German", title: "President & Chief Executive Officer" },
+      { name: "Firouzeh Sarhangi", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1904",
+        event: "Corning Natural Gas Corporation incorporated to distribute natural gas in Corning and surrounding communities in Steuben County, New York.",
+        category: "Founding",
+      },
+      {
+        date: "2013",
+        event: "Argo Infrastructure Partners (Apollo affiliate) acquired a controlling stake in Corning Natural Gas Holding Corporation (now ACP Crotona Corp.), taking the utility private.",
+        category: "Financing",
+      },
+      {
+        date: "2014",
+        event: "Acquired Pike County Light & Power Company, a regulated electric and gas utility in northeastern Pennsylvania, diversifying the utility platform.",
+        category: "Acquisition",
+      },
+      {
+        date: "2016",
+        event: "Formed Leatherstocking Gas Company JV with Mirabito, extending natural gas service to previously unserved communities in central New York.",
+        category: "Expansion",
+      },
+      {
+        date: "2020",
+        event: "Continued system modernization, replacing aging bare steel and cast iron pipelines under New York's Pipeline Safety Program.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Corning Natural Gas — Company Website", url: "https://www.corninggas.com" },
+      {
+        label: "NY PSC — Corning Natural Gas Rate Filings",
+        url: "https://documents.dps.ny.gov/public/MatterManagement/CaseMaster.aspx?MatterCaseNo=19-G-0080",
+      },
+    ],
   },
   {
     name: "Cross-Sound Cable Company",
     investmentFirm: "Apollo Global Management",
     sector: "Power Generation",
-    subsector: "Transmission",
+    subsector: "Submarine Transmission",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "Cross-Sound Cable Company owns and operates a 330 MW high-voltage direct current (HVDC) submarine transmission cable connecting New England (New Haven, CT) to Long Island (Shoreham, NY) across Long Island Sound. The 24-mile undersea cable is a critical piece of electric transmission infrastructure that helps balance power flows between the ISO-NE and NYISO markets, improving grid reliability and enabling delivery of lower-cost generation to Long Island. The cable operates under a long-term contract with the Long Island Power Authority (LIPA) and generates stable, regulated-like toll revenue.",
     status: "Active",
+    yearFounded: 2004,
+    investmentYear: 2007,
+    headquarters: "Norwalk, CT",
+    milestones: [
+      {
+        date: "2002",
+        event: "Cross-Sound Cable project received FERC approval and began construction of the 330 MW HVDC submarine cable across Long Island Sound.",
+        category: "Other",
+      },
+      {
+        date: "2004",
+        event: "Cross-Sound Cable entered commercial service, providing critical transmission capacity between Connecticut and Long Island.",
+        category: "Founding",
+      },
+      {
+        date: "2007",
+        event: "Argo Infrastructure Partners (Apollo affiliate) acquired the Cross-Sound Cable Company, securing a long-duration contracted infrastructure asset.",
+        category: "Financing",
+      },
+      {
+        date: "2008",
+        event: "Received regulatory approvals for continued commercial operation after resolving permitting disputes with Connecticut environmental agencies.",
+        category: "Other",
+      },
+      {
+        date: "2014",
+        event: "Long Island Power Authority extended the cable capacity contract, providing long-term revenue visibility for the asset.",
+        category: "Other",
+      },
+    ],
+    sources: [
+      {
+        label: "FERC — Cross-Sound Cable Company Filings",
+        url: "https://elibrary.ferc.gov/eLibrary/search?q=cross-sound+cable",
+      },
+    ],
   },
   {
     name: "Duquesne Light Company (DQE)",
     investmentFirm: "Apollo Global Management",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Electric Utility",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "Duquesne Light Company is a regulated electric transmission and distribution utility serving approximately 600,000 customers in the Pittsburgh metropolitan area of southwestern Pennsylvania. As one of the oldest electric utilities in the U.S., the company operates over 23,000 miles of distribution lines and a high-voltage transmission network across a 817-square-mile service territory. DQE Holdings, the parent company, was taken private in 2007 by a consortium including Macquarie Infrastructure Partners, and Apollo's Argo Infrastructure Partners subsequently acquired a significant minority stake. The utility offers a classic regulated asset base with predictable, inflation-linked returns and ongoing capital investment opportunities for grid modernization and reliability improvements.",
     status: "Active",
+    website: "https://www.duquesnelight.com",
+    yearFounded: 1912,
+    investmentYear: 2007,
+    headquarters: "Pittsburgh, PA",
+    management: [
+      { name: "Kevin Walker", title: "President & Chief Executive Officer" },
+      { name: "Anthony Stonebraker", title: "Chief Financial Officer" },
+      { name: "Paul Zarembka", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "1912",
+        event: "Duquesne Light Company incorporated, consolidating several electric utility operations in the Pittsburgh area.",
+        category: "Founding",
+      },
+      {
+        date: "2007",
+        event: "Taken private by a consortium led by Macquarie Infrastructure Partners for approximately $1.8 billion. Argo Infrastructure Partners (Apollo) participated as a co-investor.",
+        category: "Financing",
+      },
+      {
+        date: "2016",
+        event: "Completed retirement of the Elrama, Phillips, and other coal-fired generation units, transitioning to a pure transmission and distribution utility.",
+        category: "Other",
+      },
+      {
+        date: "2019",
+        event: "Pennsylvania PUC approved major grid modernization and smart meter deployment program, supporting long-term rate base growth.",
+        category: "Expansion",
+      },
+      {
+        date: "2020",
+        event: "Kevin Walker appointed President & CEO, bringing utility leadership experience from American Electric Power.",
+        category: "Management",
+      },
+      {
+        date: "2022",
+        event: "Received PUC approval for its next rate case, supporting continued capital investment in transmission reliability and distribution automation.",
+        category: "Other",
+      },
+      {
+        date: "2024",
+        event: "Advanced electrification and grid hardening programs, investing in infrastructure to support growing data center and industrial load in the Pittsburgh region.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Duquesne Light — Company Website", url: "https://www.duquesnelight.com" },
+      {
+        label: "Duquesne Light — About DQE Holdings",
+        url: "https://www.duquesnelight.com/company/about-us",
+      },
+      {
+        label: "PA PUC — Duquesne Light Rate Case",
+        url: "https://www.puc.pa.gov/search/case-number/R-2021-3024750",
+      },
+    ],
   },
   {
     name: "Eagle Creek Renewable Energy",
     investmentFirm: "Apollo Global Management",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Hydroelectric",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Apollo Infrastructure Funds",
-    description: "",
+    description:
+      "Eagle Creek Renewable Energy is the largest owner-operator of small hydroelectric power plants in the United States, with a portfolio of approximately 90 facilities generating over 400 MW of nameplate capacity across multiple states. The company's run-of-river and impoundment hydro assets produce baseload renewable energy under long-term power purchase agreements and FERC licenses, providing highly predictable contracted cash flows. Eagle Creek was formed as a platform by Hudson Clean Energy Partners and subsequently acquired by Apollo, which has expanded the portfolio through disciplined bolt-on acquisitions of small hydro assets from utilities and municipalities.",
     status: "Active",
+    website: "https://www.eaglecreekre.com",
+    yearFounded: 2009,
+    investmentYear: 2018,
+    headquarters: "Morristown, NJ",
+    management: [
+      { name: "Eric Nieuwland", title: "Chief Executive Officer" },
+      { name: "Jay Borden", title: "Chief Financial Officer" },
+      { name: "Jason Kearney", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "2009",
+        event: "Eagle Creek Renewable Energy formed by Hudson Clean Energy Partners to acquire and operate small hydroelectric facilities across the United States.",
+        category: "Founding",
+      },
+      {
+        date: "2011",
+        event: "Acquired a portfolio of small hydro plants from Enel Green Power North America, establishing a significant operating base in the Northeast and Southeast.",
+        category: "Acquisition",
+      },
+      {
+        date: "2014",
+        event: "Expanded portfolio to approximately 50 hydroelectric facilities through continued acquisitions from municipal utilities and independent operators.",
+        category: "Acquisition",
+      },
+      {
+        date: "2018",
+        event: "Apollo Infrastructure Funds acquired Eagle Creek Renewable Energy from Hudson Clean Energy, providing long-term capital for continued portfolio growth.",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Acquired multiple additional hydro assets, growing the portfolio toward 80+ facilities across over a dozen states.",
+        category: "Acquisition",
+      },
+      {
+        date: "2022",
+        event: "Surpassed 85 operating hydroelectric facilities, extending position as the preeminent small hydro consolidator in the U.S.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Eagle Creek Renewable Energy — Company Website", url: "https://www.eaglecreekre.com" },
+      {
+        label: "Apollo — Eagle Creek Renewable Energy Portfolio",
+        url: "https://www.apollo.com/our-business/portfolio/eagle-creek-renewable-energy",
+      },
+    ],
   },
   {
     name: "Energos Infrastructure",
     investmentFirm: "Apollo Global Management",
     sector: "Midstream Energy",
-    subsector: "Energy Transition",
+    subsector: "LNG / FSRU",
     region: "Global",
     country: "United States (Global)",
     ownershipVehicle: "Apollo Funds",
-    description: "",
+    description:
+      "Energos Infrastructure is a global LNG infrastructure platform specializing in floating storage and regasification units (FSRUs) and related LNG terminal infrastructure. The company owns and operates a fleet of FSRUs that provide critical natural gas import capacity to emerging and energy-deficit markets worldwide. Backed by Apollo and formed through the consolidation of New Fortress Energy's FSRU fleet and other LNG assets, Energos represents a strategic bet on growing global demand for flexible, rapidly deployable LNG regasification solutions as countries diversify energy supplies and transition away from coal.",
     status: "Active",
+    website: "https://energosinfra.com",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "Stamford, CT",
+    management: [
+      { name: "Arthur Regan", title: "Chief Executive Officer" },
+      { name: "Kevin Kilcullen", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "Aug 2022",
+        event: "Apollo-managed funds and New Fortress Energy complete $2 billion joint venture to form Energos Infrastructure, with Apollo holding ~80% and NFE ~20%; 11 LNG infrastructure vessels contributed to the platform.",
+        category: "Founding",
+      },
+      {
+        date: "Aug 2022",
+        event: "Arthur Regan, Apollo operating partner and veteran maritime CEO, appointed Chief Executive Officer.",
+        category: "Management",
+      },
+      {
+        date: "2023",
+        event: "Energos FSRUs commence long-term charter contracts with the German Federal Ministry of Economic Affairs, deploying vessels at Stade and Mukran terminals to support EU energy security.",
+        category: "Expansion",
+      },
+      {
+        date: "Jan 2024",
+        event: "Acquired two 174,000 cbm FSRUs (Energos Force and Energos Power) from Dynagas affiliates, expanding fleet to 13 vessels and becoming Europe's largest FSRU owner by capacity.",
+        category: "Acquisition",
+      },
+      {
+        date: "Feb 2024",
+        event: "New Fortress Energy completes sale of its 20% equity stake to Apollo-managed funds, giving Apollo full ownership control of the platform.",
+        category: "Financing",
+      },
+      {
+        date: "2025",
+        event: "Deployed multiple FSRUs to Egypt (Ain Sokhna and Damietta terminals) and temporarily chartered Energos Force at Aqaba, Jordan — one of the fastest multi-FSRU deployments in global LNG history.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Energos Infrastructure — Company Website", url: "https://energosinfra.com" },
+      {
+        label: "NFE & Apollo Complete $2B JV (Aug 2022)",
+        url: "https://ir.newfortressenergy.com/news-releases/news-release-details/nfe-and-apollo-funds-complete-2-billion-lng-maritime-joint",
+      },
+      {
+        label: "Energos Acquires Two FSRUs from Dynagas (Jan 2024)",
+        url: "https://www.prnewswire.com/news-releases/energos-infrastructure-announces-transformative-marine-lng-asset-transaction-with-long-term-charter-contracts-in-germany-302028472.html",
+      },
+      {
+        label: "Apollo — Energos Supports EU Energy Security",
+        url: "https://www.apollo.com/insights-news/insights/2022/09/energos-infrastructure-supports-eu-energy-security.html",
+      },
+    ],
   },
   {
     name: "FirstDigital Telecom",
@@ -1868,35 +5094,192 @@ export const companies: PortCo[] = [
   {
     name: "GFL Environmental Services",
     investmentFirm: "Apollo Global Management",
-    sector: "Social Infrastructure",
-    subsector: "Environmental Infra",
+    sector: "Environmental / Waste",
+    subsector: "Waste Management & Environmental Services",
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Apollo Funds & BC Partners",
-    description: "",
+    description:
+      "GFL Environmental is the fourth-largest diversified environmental services company in North America, providing solid waste management, liquid waste management, and soil remediation services across Canada and the United States. The company operates a vast network of collection routes, transfer stations, material recovery facilities, and engineered landfills serving over 6 million residential, commercial, and industrial customers. GFL has grown aggressively through over 100 acquisitions since founding, building a platform with significant density and route optimization advantages. The company went public on the TSX and NYSE in 2020, with Apollo and BC Partners maintaining significant equity positions.",
     status: "Active",
+    website: "https://gflenv.com",
+    yearFounded: 2007,
+    investmentYear: 2018,
+    headquarters: "Vaughan, Ontario, Canada",
+    management: [
+      { name: "Patrick Dovigi", title: "Founder, Chairman & Chief Executive Officer" },
+      { name: "Luke Pelosi", title: "Chief Financial Officer" },
+      { name: "Billy Soffera", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "2007",
+        event: "Founded by Patrick Dovigi in Toronto, Ontario as a small waste hauling operation.",
+        category: "Founding",
+      },
+      {
+        date: "2018",
+        event: "BC Partners invested approximately $5.125 billion (CAD) for a majority stake, providing growth capital to accelerate the acquisition strategy across North America.",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Completed a transformational wave of acquisitions in the U.S. and Canada, adding substantial collection, transfer, and disposal assets to the platform.",
+        category: "Acquisition",
+      },
+      {
+        date: "2019",
+        event: "Apollo Global Management co-invested alongside BC Partners, further capitalizing the platform for continued expansion.",
+        category: "Financing",
+      },
+      {
+        date: "Mar 2020",
+        event: "Completed IPO on the Toronto Stock Exchange (TSX: GFL) and New York Stock Exchange (NYSE: GFL), raising approximately $1.4 billion (CAD).",
+        category: "IPO",
+      },
+      {
+        date: "2020",
+        event: "Acquired WCA Waste Corporation's remaining U.S. operations, expanding presence across the Southern U.S.",
+        category: "Acquisition",
+      },
+      {
+        date: "2021",
+        event: "Acquired Terrapure Environmental, a leading Canadian environmental and waste management services provider, for approximately $937 million (CAD).",
+        category: "Acquisition",
+      },
+      {
+        date: "2023",
+        event: "Announced strategic review of Environmental Services (ES) division, exploring a potential sale of the liquid waste and soil remediation business to focus on core solid waste operations.",
+        category: "Other",
+      },
+      {
+        date: "Jan 2025",
+        event: "Completed sale of Environmental Services division to BC Partners and GIC for $8 billion, using proceeds to deleverage and pursue tuck-in solid waste acquisitions.",
+        category: "Divestiture",
+      },
+    ],
+    sources: [
+      { label: "GFL Environmental — Company Website", url: "https://gflenv.com" },
+      {
+        label: "GFL Environmental — Investor Relations",
+        url: "https://gflenv.com/investors/",
+      },
+      {
+        label: "BC Partners — GFL Environmental Portfolio",
+        url: "https://www.bcpartners.com/investments/gfl-environmental",
+      },
+      {
+        label: "Waste Dive — GFL Environmental Services Sale",
+        url: "https://www.wastedive.com/news/gfl-environmental-services-sale-bc-partners-gic/",
+      },
+    ],
   },
   {
     name: "Great Bay Renewables",
     investmentFirm: "Apollo Global Management",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Renewable Energy Royalties",
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Apollo Infrastructure Funds",
-    description: "",
+    description:
+      "Great Bay Renewables is a specialty renewable energy company that provides royalty-based financing to wind and solar project developers across North America. The company acquires production-linked royalty interests in operating and development-stage renewable energy projects, receiving a percentage of revenue over the project's life without bearing operational risk or capital expenditure obligations. This asset-light model offers inflation-protected, long-duration cash flows tied to contracted renewable energy production. Great Bay was backed by Apollo to create a differentiated platform at the intersection of renewable energy and alternative finance.",
     status: "Active",
+    website: "https://www.greatbayrenewables.com",
+    yearFounded: 2019,
+    investmentYear: 2019,
+    headquarters: "Portsmouth, NH",
+    management: [
+      { name: "Frank Marenghi", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2019",
+        event: "Great Bay Renewables founded with backing from Apollo Infrastructure Funds to pioneer a royalty-based financing model for renewable energy projects.",
+        category: "Founding",
+      },
+      {
+        date: "2020",
+        event: "Closed initial portfolio of royalty interests in operating wind and solar projects across the United States and Canada.",
+        category: "Acquisition",
+      },
+      {
+        date: "2022",
+        event: "Expanded portfolio significantly, acquiring royalty interests in development-stage projects benefiting from the Inflation Reduction Act's long-term tax credit framework.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Grew royalty portfolio to span multiple GW of wind and solar capacity across over a dozen U.S. states and Canadian provinces.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Great Bay Renewables — Company Website", url: "https://www.greatbayrenewables.com" },
+      {
+        label: "Apollo — Great Bay Renewables",
+        url: "https://www.apollo.com/our-business/portfolio/great-bay-renewables",
+      },
+    ],
   },
   {
     name: "Hawaiʻi Gas",
     investmentFirm: "Apollo Global Management",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Gas Utility",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "Hawaiʻi Gas (formerly The Gas Company, LLC) is the sole regulated gas utility serving the State of Hawaiʻi, delivering synthetic natural gas (SNG), liquefied petroleum gas (LPG), and liquefied natural gas (LNG) to approximately 36,000 residential, commercial, and industrial customers across Oahu, Maui, Kauai, and the Big Island. The utility operates the only manufactured gas plant in the U.S. (Honolulu SNG facility) and an extensive distribution pipeline network. As a regulated monopoly utility in a geographically isolated market, Hawaiʻi Gas provides highly predictable, regulated returns with limited competitive risk.",
     status: "Active",
+    website: "https://www.hawaiigas.com",
+    yearFounded: 1904,
+    investmentYear: 2006,
+    headquarters: "Honolulu, HI",
+    management: [
+      { name: "Alicia Moy", title: "President & Chief Executive Officer" },
+      { name: "Scott528", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1904",
+        event: "Honolulu Gas Company founded to provide manufactured gas service to Honolulu, establishing the foundation of today's gas utility operations in Hawaiʻi.",
+        category: "Founding",
+      },
+      {
+        date: "2006",
+        event: "Macquarie Infrastructure Partners and Argo Infrastructure Partners (Apollo) acquired The Gas Company from CLNE/GasCo for approximately $300 million.",
+        category: "Financing",
+      },
+      {
+        date: "2012",
+        event: "Rebranded from The Gas Company to Hawaiʻi Gas, modernizing the brand identity and aligning with expansion to neighbor islands.",
+        category: "Other",
+      },
+      {
+        date: "2016",
+        event: "Began importing LNG to supplement synthetic natural gas supply, diversifying fuel sources and improving cost efficiency for customers.",
+        category: "Expansion",
+      },
+      {
+        date: "2017",
+        event: "Alicia Moy appointed President & CEO, the first woman to lead a major energy utility in Hawaiʻi.",
+        category: "Management",
+      },
+      {
+        date: "2021",
+        event: "Launched renewable natural gas (RNG) initiatives and hydrogen blending pilot programs aligned with Hawaiʻi's aggressive clean energy goals.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Hawaiʻi Gas — Company Website", url: "https://www.hawaiigas.com" },
+      {
+        label: "Hawaiʻi Gas — About Us",
+        url: "https://www.hawaiigas.com/about-us/",
+      },
+    ],
   },
   {
     name: "Hudson Transmission Partners",
@@ -1935,12 +5318,66 @@ export const companies: PortCo[] = [
     name: "LAZ Parking",
     investmentFirm: "Apollo Global Management",
     sector: "Transportation",
-    subsector: "Mobility",
+    subsector: "Parking & Mobility",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "LAZ Parking is one of the largest parking management companies in the United States, operating approximately 3,000 parking locations across over 400 cities with combined capacity of over 1.5 million parking spaces. The company provides parking management, valet, shuttle, and transportation services to airports, hospitals, universities, municipalities, hotels, and commercial real estate owners. LAZ has built a dominant market position through a combination of organic growth and acquisitions, including the strategic purchase of Indigo Park Canada (formerly Vinci Park). The company's long-term management contracts and concession agreements provide recurring, inflation-linked revenue with embedded growth from rate escalators and portfolio expansion.",
     status: "Active",
+    website: "https://www.lazparking.com",
+    yearFounded: 1981,
+    investmentYear: 2007,
+    headquarters: "Hartford, CT",
+    management: [
+      { name: "Alan Lazowski", title: "Founder & Chief Executive Officer" },
+      { name: "Michael Harth", title: "President" },
+      { name: "Sean Bras", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1981",
+        event: "LAZ Parking founded by Alan Lazowski in Hartford, Connecticut, beginning as a single-lot parking operator.",
+        category: "Founding",
+      },
+      {
+        date: "2007",
+        event: "Argo Infrastructure Partners (Apollo) invested in LAZ Parking, providing growth capital to accelerate national expansion through acquisitions.",
+        category: "Financing",
+      },
+      {
+        date: "2012",
+        event: "Acquired Indigo Park Canada (formerly Vinci Park North America), significantly expanding LAZ's Canadian footprint and airport parking portfolio.",
+        category: "Acquisition",
+      },
+      {
+        date: "2015",
+        event: "Surpassed 2,000 managed parking locations, establishing LAZ as one of the top three U.S. parking operators by location count.",
+        category: "Expansion",
+      },
+      {
+        date: "2018",
+        event: "Expanded airport parking and shuttle operations, winning new multi-year concession contracts at major U.S. airports.",
+        category: "Expansion",
+      },
+      {
+        date: "2022",
+        event: "Post-COVID recovery drove parking volumes above pre-pandemic levels at airport and urban locations, supporting strong revenue growth.",
+        category: "Other",
+      },
+      {
+        date: "2024",
+        event: "Continued expansion to approximately 3,000 locations across the U.S. and Canada, with growing EV charging and mobility services offerings.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "LAZ Parking — Company Website", url: "https://www.lazparking.com" },
+      {
+        label: "LAZ Parking — About Us",
+        url: "https://www.lazparking.com/about",
+      },
+    ],
   },
   {
     name: "Leatherstocking Gas Company",
@@ -1957,12 +5394,84 @@ export const companies: PortCo[] = [
     name: "Modern Aviation",
     investmentFirm: "Apollo Global Management",
     sector: "Transportation",
-    subsector: "Aviation",
+    subsector: "Aviation Fueling & FBO Services",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Apollo Infrastructure Opps. Fund III",
-    description: "",
+    description:
+      "Modern Aviation is one of North America's largest independent fixed base operator (FBO) networks, providing aviation fueling, hangar, and ground handling services to business, general, commercial, cargo, and military aircraft at 19 locations across the U.S. and Puerto Rico. Founded in 2018 as a platform by Tiger Infrastructure Partners, the company has grown through aggressive acquisition-led consolidation, assembling high-value FBO positions at JFK, LaGuardia, Boeing Field (Seattle), Centennial Airport (Denver), and Fort Worth Meacham. Apollo-managed infrastructure funds acquired a majority stake in November 2023, with Tiger and management reinvesting alongside.",
     status: "Active",
+    website: "https://modern-aviation.com",
+    yearFounded: 2018,
+    investmentYear: 2023,
+    headquarters: "New York, NY",
+    management: [
+      { name: "Mark J. Carmen", title: "President & Chief Executive Officer" },
+      { name: "Daniel Reinheimer", title: "Chief Financial Officer" },
+      { name: "Richard Layson", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "Feb 2018",
+        event: "Modern Aviation founded by Tiger Infrastructure Partners and management; acquires Air Wilmington at Wilmington International Airport (NC) as inaugural FBO.",
+        category: "Founding",
+      },
+      {
+        date: "Sep 2018",
+        event: "Acquires XJet Holdings FBO at Centennial Airport (KAPA) in Denver, CO.",
+        category: "Acquisition",
+      },
+      {
+        date: "Dec 2018",
+        event: "Acquires Gateway USA FBO at Boeing Field (KBFI) in Seattle, WA.",
+        category: "Acquisition",
+      },
+      {
+        date: "Oct 2021",
+        event: "Enters agreement to acquire Sheltair Aviation's five New York FBOs including JFK and LaGuardia, transforming the platform's scale.",
+        category: "Acquisition",
+      },
+      {
+        date: "Jun 2022",
+        event: "Acquires Superior Aviation Company's three Sacramento, CA FBOs, expanding West Coast presence.",
+        category: "Acquisition",
+      },
+      {
+        date: "Mar 2023",
+        event: "Completes expanded FBO campus at Centennial Airport with new hangars, Class A terminal, and 150,000 sq ft ramp — network reaches 16 locations.",
+        category: "Expansion",
+      },
+      {
+        date: "Nov 2023",
+        event: "Apollo Infrastructure Funds acquire majority stake from Tiger Infrastructure Partners; Tiger and management reinvest alongside Apollo.",
+        category: "Financing",
+      },
+      {
+        date: "Apr 2024",
+        event: "Acquires American Aero FTW at Fort Worth Meacham International Airport — first Texas FBO, 17th location.",
+        category: "Acquisition",
+      },
+      {
+        date: "Jul 2025",
+        event: "Commences FBO operations at Charlotte Douglas International Airport under 20-year management contract — 19th location.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Modern Aviation — About Us", url: "https://modern-aviation.com/about-us/" },
+      {
+        label: "Apollo — Majority Stake Acquisition (Nov 2023)",
+        url: "https://www.apollo.com/insights-news/pressreleases/2023/11/apollo-infrastructure-funds-acquire-majority-stake-in-modern-aviation-2772854",
+      },
+      {
+        label: "Tiger Infrastructure — Modern Aviation Portfolio",
+        url: "https://www.tigerinfrastructure.com/portfolio/Modern-Aviation",
+      },
+      {
+        label: "Modern Aviation — American Aero Acquisition",
+        url: "https://modern-aviation.com/modern-aviation-to-acquire-american-aero-at-fort-worth-meacham-international-airport/",
+      },
+    ],
   },
   {
     name: "NextEra Energy Partners 2.5 GW JV",
@@ -2034,45 +5543,261 @@ export const companies: PortCo[] = [
     name: "Stream Data Centers (SDC)",
     investmentFirm: "Apollo Global Management",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Data Centers",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Apollo Funds",
-    description: "",
+    description:
+      "Stream Data Centers is a leading purpose-built data center platform focused on hyperscale and enterprise colocation facilities across major U.S. markets. The company develops, owns, and operates Tier III and Tier IV data centers with a current portfolio exceeding 400 MW of critical IT load capacity across Texas, the Mountain West, and other key markets. Stream differentiates through its build-to-suit model for hyperscale cloud and AI workloads, offering powered shell and turnkey colocation solutions. The company is well-positioned to benefit from surging demand for data center capacity driven by AI, cloud computing, and enterprise digital transformation.",
     status: "Active",
+    website: "https://www.streamdatacenters.com",
+    yearFounded: 1999,
+    investmentYear: 2025,
+    headquarters: "Dallas, TX",
+    management: [
+      { name: "Michael Lahoud", title: "Chief Executive Officer" },
+      { name: "Rick Crutchley", title: "Chief Operating Officer" },
+      { name: "Chris Bair", title: "Chief Commercial Officer" },
+      { name: "Oisin O'Murchu", title: "Chief Development Officer" },
+    ],
+    milestones: [
+      {
+        date: "1999",
+        event: "Rob Kennedy and Paul Moser, executives at Stream Realty Partners, found Stream Data Centers in Dallas, TX, initially acquiring second-generation data center assets.",
+        category: "Founding",
+      },
+      {
+        date: "2007",
+        event: "Returned to the Dallas market with a greenfield 150,000 SF data center in Plano after the dotcom-era oversupply cleared.",
+        category: "Expansion",
+      },
+      {
+        date: "Dec 2017",
+        event: "Entered the Chicago market by acquiring Chicago I, a 126,689 SF data center with 15 MW of capacity.",
+        category: "Acquisition",
+      },
+      {
+        date: "Feb 2019",
+        event: "Entered the Phoenix market, acquiring a 157-acre site in Goodyear, AZ for a new hyperscale campus supporting up to 280 MW at full build.",
+        category: "Expansion",
+      },
+      {
+        date: "Jan 2021",
+        event: "Commissioned Phoenix I, a 418,000 SF hyperscale data center — the first of five buildings planned on the Goodyear campus.",
+        category: "Expansion",
+      },
+      {
+        date: "Jun 2024",
+        event: "Broke ground on new 135-acre hyperscale campus in San Antonio, TX, planned for up to 200 MW of IT capacity at full build.",
+        category: "Expansion",
+      },
+      {
+        date: "Nov 2025",
+        event: "Apollo-managed funds completed acquisition of majority interest in Stream Data Centers, with Principal Asset Management acquiring a minority stake. 4+ GW powered land pipeline.",
+        category: "Financing",
+      },
+      {
+        date: "Jan 2026",
+        event: "Michael Lahoud appointed CEO; Oisin O'Murchu named Chief Development Officer as part of leadership restructuring under Apollo ownership.",
+        category: "Management",
+      },
+    ],
+    sources: [
+      { label: "Stream Data Centers — Company Website", url: "https://www.streamdatacenters.com" },
+      {
+        label: "Apollo — Stream Data Centers Portfolio",
+        url: "https://www.apollo.com/our-business/portfolio/stream-data-centers",
+      },
+      {
+        label: "Data Center Knowledge — Stream Data Centers Expansion",
+        url: "https://www.datacenterknowledge.com/data-centers/stream-data-centers-expands-hyperscale-portfolio",
+      },
+    ],
   },
   {
     name: "Summit Ridge Energy",
     investmentFirm: "Apollo Global Management",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Community Solar",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Apollo Sustainable Investing",
-    description: "",
+    description:
+      "Summit Ridge Energy is the largest owner and operator of community solar assets in the United States, with approximately 1.5 GW of operating and contracted capacity across over 200 projects in states including Maryland, Illinois, Maine, and Massachusetts. The company develops, finances, constructs, and operates distributed solar projects that provide bill savings to residential and commercial subscribers without requiring rooftop installation. Summit Ridge benefits from long-term state-mandated community solar programs and utility net metering frameworks, creating stable, contracted revenue streams. Apollo acquired the platform through its sustainable investing initiative to capitalize on the rapidly growing distributed energy market.",
     status: "Active",
+    website: "https://www.summitridgeenergy.com",
+    yearFounded: 2017,
+    investmentYear: 2022,
+    headquarters: "Washington, DC",
+    management: [
+      { name: "Will Giese", title: "Chief Executive Officer" },
+      { name: "John Merrill", title: "Chief Financial Officer" },
+      { name: "Drew Torbin", title: "Chief Development Officer" },
+    ],
+    milestones: [
+      {
+        date: "2017",
+        event: "Summit Ridge Energy founded in Washington, DC, initially focused on developing community solar projects in Maryland under the state's Community Solar Pilot Program.",
+        category: "Founding",
+      },
+      {
+        date: "2019",
+        event: "Expanded beyond Maryland into Illinois, Maine, and Massachusetts as additional states enacted community solar legislation.",
+        category: "Expansion",
+      },
+      {
+        date: "2020",
+        event: "Surpassed 500 MW of operating and contracted community solar capacity, establishing the platform as a market leader.",
+        category: "Expansion",
+      },
+      {
+        date: "2022",
+        event: "Apollo Global Management acquired Summit Ridge Energy through its sustainable investing platform, providing capital for continued portfolio expansion.",
+        category: "Financing",
+      },
+      {
+        date: "2023",
+        event: "Grew portfolio to over 1 GW of operating capacity, with active development in multiple new community solar markets enabled by Inflation Reduction Act incentives.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Expanded subscriber base to serve over 100,000 residential and commercial community solar subscribers across the operating portfolio.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Summit Ridge Energy — Company Website", url: "https://www.summitridgeenergy.com" },
+      {
+        label: "Apollo — Summit Ridge Energy Acquisition",
+        url: "https://www.apollo.com/media/press-releases/2022/summit-ridge-energy",
+      },
+      {
+        label: "Solar Power World — Summit Ridge Community Solar Leader",
+        url: "https://www.solarpowerworldonline.com/summit-ridge-energy-community-solar/",
+      },
+    ],
   },
   {
     name: "The State Group",
     investmentFirm: "Apollo Global Management",
     sector: "Energy Transition",
-    subsector: "Services",
+    subsector: "Electrical & Infrastructure Services",
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Apollo Clean Transition Equity",
-    description: "",
+    description:
+      "The State Group is a leading North American provider of electrical and infrastructure services specializing in power generation, transmission, distribution, and industrial electrical construction. The company delivers engineering, procurement, construction (EPC), and maintenance services to utilities, renewable energy developers, industrial facilities, and data center operators across the U.S. and Canada. The State Group is positioned to benefit from the massive buildout of electrical infrastructure driven by electrification, renewable energy integration, grid modernization, and data center expansion. Apollo acquired the company through its Clean Transition Equity platform to capitalize on the structural growth in energy transition infrastructure services.",
     status: "Active",
+    website: "https://www.thestategroup.com",
+    yearFounded: 1961,
+    investmentYear: 2023,
+    headquarters: "Toronto, Ontario, Canada",
+    management: [
+      { name: "John Chicken", title: "President & Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "1961",
+        event: "The State Group founded in Ontario, Canada as a specialized electrical contracting firm serving industrial and utility clients.",
+        category: "Founding",
+      },
+      {
+        date: "2000s",
+        event: "Expanded from Canadian base into the United States, establishing operations across multiple states to serve power generation and transmission clients.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Apollo Clean Transition Equity acquired The State Group, providing growth capital to scale operations amid surging demand for electrical infrastructure services.",
+        category: "Financing",
+      },
+      {
+        date: "2024",
+        event: "Expanded service capabilities in renewable energy EPC and data center electrical construction, addressing record demand from the AI infrastructure buildout.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "The State Group — Company Website", url: "https://www.thestategroup.com" },
+      {
+        label: "Apollo — Clean Transition Investments",
+        url: "https://www.apollo.com/our-business/clean-transition",
+      },
+    ],
   },
   {
     name: "TierPoint",
     investmentFirm: "Apollo Global Management",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Data Centers & Managed IT",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "TierPoint is a leading national provider of colocation, cloud, and managed IT services operating approximately 40 data centers across more than 20 U.S. markets. The company serves over 3,000 enterprise, government, and mid-market customers, offering hybrid IT solutions that combine on-premises infrastructure with public and private cloud environments. TierPoint's data center portfolio totals approximately 1 million square feet of raised floor space with robust connectivity through carrier-neutral meet-me rooms and direct cloud on-ramps. The platform has been built through extensive M&A consolidation under successive private equity owners.",
     status: "Active",
+    website: "https://www.tierpoint.com",
+    yearFounded: 2010,
+    investmentYear: 2020,
+    headquarters: "St. Louis, MO",
+    management: [
+      { name: "Jerry Kent", title: "Chief Executive Officer" },
+      { name: "Mary Meduski", title: "President & Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "2010",
+        event: "TierPoint formed through the combination of Cequel Data Centers and Windstream Hosted Solutions, creating a multi-site data center platform.",
+        category: "Founding",
+      },
+      {
+        date: "2014",
+        event: "Acquired Cosentry, a Midwest-focused data center and managed services provider, expanding capacity in Kansas, Nebraska, Iowa, and South Dakota.",
+        category: "Acquisition",
+      },
+      {
+        date: "2015",
+        event: "Acquired Windstream's hosted solutions business and Perimeter Technology Center in Clarksville, TN.",
+        category: "Acquisition",
+      },
+      {
+        date: "2017",
+        event: "Acquired by Ridgemont Equity Partners and Ontario Teachers' Pension Plan Board from Cequel III (Jerry Kent's investment firm).",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Merged with Windstream's wholesale data center business, adding seven data centers and significantly expanding the national footprint.",
+        category: "Acquisition",
+      },
+      {
+        date: "2021",
+        event: "Apollo Global Management (via Argo Infrastructure Partners) acquired TierPoint, providing capital to modernize facilities and pursue growth in hybrid cloud and edge computing.",
+        category: "Financing",
+      },
+      {
+        date: "2023",
+        event: "Expanded cloud and managed services offerings, launching enhanced public cloud on-ramp connectivity and disaster recovery solutions.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Invested in data center capacity expansion across key markets to meet growing demand from AI workloads and enterprise cloud migration.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "TierPoint — Company Website", url: "https://www.tierpoint.com" },
+      {
+        label: "Apollo — TierPoint Portfolio",
+        url: "https://www.apollo.com/our-business/portfolio/tierpoint",
+      },
+      {
+        label: "Data Center Knowledge — TierPoint Sold to Apollo",
+        url: "https://www.datacenterknowledge.com/business/tierpoint-sold-apollo-affiliated-firm",
+      },
+    ],
   },
   {
     name: "TotalEnergies Texas Solar & BESS",
@@ -2089,23 +5814,116 @@ export const companies: PortCo[] = [
     name: "US Water Systems",
     investmentFirm: "Apollo Global Management",
     sector: "Regulated Utilities",
-    subsector: "Water",
+    subsector: "Water & Wastewater",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "US Water Systems is a platform of water and wastewater concession assets owned by Argo Infrastructure Partners (Apollo affiliate), providing essential water utility services to municipalities through long-term public-private partnership agreements. The portfolio includes the Bayonne Water & Wastewater Concession in New Jersey and the Middletown Water & Sewer Concession in New York, where the company operates, maintains, and invests capital in municipal water and wastewater infrastructure under multi-decade concession contracts. These assets generate stable, contracted revenue with embedded rate escalators and represent a growing segment of U.S. water infrastructure investment.",
     status: "Active",
+    yearFounded: 2012,
+    investmentYear: 2012,
+    headquarters: "New York, NY",
+    milestones: [
+      {
+        date: "2012",
+        event: "Argo Infrastructure Partners (Apollo) won the Bayonne, NJ water and wastewater concession, a 40-year public-private partnership to operate, maintain, and upgrade the city's water and sewer systems.",
+        category: "Financing",
+      },
+      {
+        date: "2012",
+        event: "Bayonne concession launched, with United Water (now Veolia) serving as the operating partner under a long-term O&M subcontract.",
+        category: "Founding",
+      },
+      {
+        date: "2016",
+        event: "Invested in major capital improvements to Bayonne's aging water and wastewater infrastructure, including pipe replacement and treatment facility upgrades.",
+        category: "Expansion",
+      },
+      {
+        date: "2019",
+        event: "Won the Middletown, NY water and sewer concession, expanding the municipal water PPP platform to a second community.",
+        category: "Acquisition",
+      },
+      {
+        date: "2022",
+        event: "Continued capital investment across both concessions, replacing aging lead service lines and upgrading treatment capacity to meet EPA compliance standards.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      {
+        label: "City of Bayonne — Water & Sewer Concession",
+        url: "https://www.bayonnenj.org/content/236/default.aspx",
+      },
+    ],
   },
   {
     name: "US Wind",
     investmentFirm: "Apollo Global Management",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Offshore Wind",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Apollo Infrastructure Opps. Fund II",
-    description: "",
+    description:
+      "US Wind is an offshore wind development company advancing the MarWin project, a large-scale offshore wind farm located in a federal lease area approximately 12 nautical miles off the coast of Ocean City, Maryland. The project holds the potential for up to 2 GW of capacity and has been awarded offshore renewable energy credits (ORECs) by the Maryland Public Service Commission. US Wind is developing what would be among the first utility-scale offshore wind farms in the mid-Atlantic region, with power delivery targeted to the PJM grid serving Maryland, Delaware, and Virginia. The project represents a long-duration, contracted infrastructure asset with significant development upside.",
     status: "Active",
+    website: "https://www.uswindinc.com",
+    yearFounded: 2011,
+    investmentYear: 2016,
+    headquarters: "Baltimore, MD",
+    management: [
+      { name: "Jeff Grybowski", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2011",
+        event: "US Wind Inc. founded as a subsidiary of Italian energy company Renexia to pursue offshore wind development opportunities in the United States.",
+        category: "Founding",
+      },
+      {
+        date: "2014",
+        event: "Won federal Bureau of Ocean Energy Management (BOEM) lease for offshore wind energy area off the coast of Maryland (OCS-A 0490).",
+        category: "Other",
+      },
+      {
+        date: "2016",
+        event: "Apollo Infrastructure Opportunities Fund II acquired US Wind, providing development capital for the MarWin offshore wind project.",
+        category: "Financing",
+      },
+      {
+        date: "2017",
+        event: "Maryland PSC awarded first round of offshore renewable energy credits (ORECs) for the initial 248 MW phase of the MarWin project.",
+        category: "Other",
+      },
+      {
+        date: "2021",
+        event: "Maryland PSC awarded additional ORECs for a significantly expanded MarWin project, bringing total awarded capacity to approximately 1.1 GW.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Submitted Construction and Operations Plan (COP) to BOEM for federal environmental review, advancing toward permitting milestones.",
+        category: "Other",
+      },
+      {
+        date: "2024",
+        event: "Jeff Grybowski appointed CEO, bringing experience from Deepwater Wind (now Ørsted's Block Island Wind Farm). Advanced project engineering and supply chain procurement.",
+        category: "Management",
+      },
+    ],
+    sources: [
+      { label: "US Wind — Company Website", url: "https://www.uswindinc.com" },
+      {
+        label: "Maryland PSC — US Wind OREC Awards",
+        url: "https://www.psc.state.md.us/search-results/?q=us+wind",
+      },
+      {
+        label: "Offshore Wind Biz — US Wind MarWin Project",
+        url: "https://www.offshorewind.biz/tag/us-wind/",
+      },
+    ],
   },
   {
     name: "Valor Compute Infrastructure (VCI)",
@@ -2127,8 +5945,15 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ara Infrastructure Fund I",
-    description: "",
+    description: "Centric Fiber is a leading fiber-to-the-home (FTTH) broadband infrastructure provider serving master-planned communities, multi-family developments, and mixed-use projects in Texas, Florida, and Arizona. The company operates a fully integrated platform encompassing network design, construction, operations, and customer experience.",
     status: "Active",
+    website: "https://www.centricfiber.com",
+    yearFounded: 2020,
+    investmentYear: 2025,
+    headquarters: "The Woodlands, TX",
+    management: [{ name: "N/A", title: "CEO" }],
+    milestones: [{ date: "Nov 2025", category: "Financing", event: "Ara Partners acquired majority controlling stake in Centric Fiber" }],
+    sources: [{ label: "Ara Partners Press Release", url: "https://www.arapartners.com/news/ara-partners-acquires-centric-fiber/" }],
   },
   {
     name: "Gate City Power",
@@ -2138,8 +5963,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ara Energy",
-    description: "",
+    description: "Gate City Power consists of thermal generation assets across NYISO and ISO-NE totaling approximately 2.2 GW of natural gas-fired capacity. The assets are part of an ~$875 million acquisition by Ara Energy alongside Gate City Renewable Fuels and JET Retail Network.",
     status: "Active",
+    yearFounded: 2023,
+    investmentYear: 2026,
+    headquarters: "New York, NY",
+    management: [{ name: "Shameek Konar", title: "CEO (Ara Energy)" }],
+    milestones: [{ date: "Mar 2026", category: "Financing", event: "Ara Energy announced ~$875M acquisition of Gate City Power, Gate City Renewable Fuels, and JET Retail Network from HF Capital" }],
+    sources: [{ label: "Ara Partners Press Release", url: "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/" }],
   },
   {
     name: "Gate City Renewable Fuels",
@@ -2149,8 +5980,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ara Energy",
-    description: "",
+    description: "Gate City Renewable Fuels comprises U.S. ethanol production assets with a combined capacity of approximately 400 million gallons per year. Acquired as part of an ~$875 million transaction alongside Gate City Power and JET Retail Network.",
     status: "Active",
+    investmentYear: 2026,
+    headquarters: "United States",
+    management: [{ name: "Shameek Konar", title: "CEO (Ara Energy)" }],
+    milestones: [{ date: "Mar 2026", category: "Financing", event: "Ara Energy announced acquisition of Gate City Renewable Fuels as part of ~$875M deal" }],
+    sources: [{ label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million-302709985.html" }],
   },
   {
     name: "Lincoln Terminal Holdings",
@@ -2160,8 +5996,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ara Infrastructure Fund I",
-    description: "",
+    description: "Lincoln Terminal Holdings is a leading renewable fuel logistics and infrastructure provider in the Southeast and Mid-Atlantic United States. The company owns and operates five strategic rail transloading and storage facilities across four states focused on last-mile distribution of transportation fuels.",
     status: "Active",
+    website: "https://www.lincolnterminals.com",
+    investmentYear: 2022,
+    headquarters: "Greenville, SC",
+    management: [{ name: "Larry Burgamy", title: "Chief Executive Officer" }],
+    milestones: [{ date: "Nov 2022", category: "Financing", event: "Ara Partners acquired majority ownership interest in Lincoln Terminal Holdings, the first investment for Ara Infrastructure strategy" }],
+    sources: [{ label: "Ara Partners Press Release", url: "https://www.arapartners.com/news/ara-partners-acquires-majority-interest-in-lincoln-terminals/" }],
   },
   {
     name: "USD Clean Fuels",
@@ -2171,8 +6013,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ara Infrastructure Fund I",
-    description: "",
+    description: "USD Clean Fuels (USDCF) is a developer of large-scale multi-modal logistics centers for clean transportation fuels including biodiesel, renewable diesel, sustainable aviation fuel (SAF), and ethanol. The company designs, develops, owns, and manages infrastructure to facilitate safe and economic delivery of renewable fuel feedstocks and biofuels.",
     status: "Active",
+    website: "https://usdcleanfuels.com",
+    investmentYear: 2024,
+    headquarters: "Houston, TX",
+    management: [{ name: "Dan Borgen", title: "Chief Executive Officer" }],
+    milestones: [{ date: "Jan 2024", category: "Financing", event: "Ara Partners acquired majority interest in USD Clean Fuels" }],
+    sources: [{ label: "Ara Partners Press Release", url: "https://www.arapartners.com/news/ara-partners-acquires-majority-interest-in-usd-clean-fuels/" }],
   },
   // ─── ArcLight Capital Partners ──────────────────────────────
   {
@@ -2183,8 +6031,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Capital Partners",
-    description: "",
+    description: "Advanced Power is a leading power infrastructure developer founded in 2000 with a pipeline of 12+ GW of conventional and renewable projects and 10+ GWh of energy storage. ArcLight acquired Advanced Power in July 2025 with an initial $1 billion equity commitment to build 20+ GW of new power infrastructure.",
     status: "Active",
+    website: "https://www.advancedpower.com",
+    yearFounded: 2000,
+    investmentYear: 2025,
+    headquarters: "Boston, MA",
+    milestones: [{ date: "Jul 2025", category: "Acquisition", event: "ArcLight acquired Advanced Power with $1B equity commitment to build 20+ GW new power infrastructure" }],
+    sources: [{ label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/arclight-acquires-advanced-power-a-leading-power-infrastructure-developer-302512542.html" }],
   },
   {
     name: "Alpha Generation (AlphaGen)",
@@ -2194,8 +6048,15 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Energy Partners Fund VII",
-    description: "",
+    description: "Alpha Generation (AlphaGen) is a strategic management platform overseeing one of the largest domestic power portfolios in the U.S. with ~14,000 MW across four RTO markets (PJM, NYISO, ISONE, CAISO) and 23 generation facilities in 6 states. AlphaGen generates nearly $2 billion in annual revenue.",
     status: "Active",
+    website: "https://www.alphagen.com",
+    yearFounded: 2024,
+    investmentYear: 2024,
+    headquarters: "Boston, MA",
+    management: [{ name: "Curt Morgan", title: "Chief Executive Officer" }],
+    milestones: [{ date: "Jan 2024", category: "Financing", event: "ArcLight formed Alpha Generation to provide strategic management of its ~14 GW power infrastructure portfolio" }],
+    sources: [{ label: "AlphaGen Press Release", url: "https://www.alphagen.com/newsroom/press-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states/" }],
   },
   {
     name: "Catalyst Old River Hydroelectric",
@@ -2205,8 +6066,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Capital Partners",
-    description: "",
+    description: "Catalyst Old River Hydroelectric owns and operates the 192 MW Sidney A. Murray Jr. Hydroelectric Station in Vidalia, Louisiana, the first hydroelectric generating station in Louisiana. The run-of-the-river plant has operated since 1990 with a capacity factor of ~55%.",
     status: "Active",
+    yearFounded: 1982,
+    headquarters: "Vidalia, LA",
+    milestones: [{ date: "1990", category: "Expansion", event: "Sidney A. Murray Jr. Hydroelectric Station commenced commercial operations on the Mississippi River" }],
+    sources: [{ label: "Wikipedia", url: "https://en.wikipedia.org/wiki/Sidney_A._Murray_Jr._Hydroelectric_Station" }],
   },
   {
     name: "Eastern Generation",
@@ -2216,8 +6081,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "AlphaGen / ArcLight",
-    description: "",
+    description: "Eastern Generation owns and operates electric generating facilities totaling approximately 3,000 MW and manages an additional 6,000 MW portfolio. The company accounts for over 18% of New York City's power generation capacity through facilities including Astoria, Gowanus, and Narrows stations.",
     status: "Active",
+    website: "https://www.easterngeneration.com",
+    investmentYear: 2016,
+    headquarters: "New York, NY",
+    milestones: [{ date: "2016", category: "Acquisition", event: "ArcLight completed Eastern Generation's acquisition of a 4.8 GW power asset portfolio from Tenaska" }],
+    sources: [{ label: "Eastern Generation", url: "https://www.easterngeneration.com/" }],
   },
   {
     name: "Elevate Renewables",
@@ -2227,8 +6097,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Energy Partners Fund VII",
-    description: "",
+    description: "Elevate Renewables is a national battery energy storage developer focused on co-locating BESS at existing large generation facilities owned by ArcLight. The company has a brownfield pipeline of 4+ GW of energy storage projects across Connecticut, California, New York, and other states.",
     status: "Active",
+    website: "https://www.elevaterenewables.com",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "New York, NY",
+    milestones: [{ date: "Feb 2023", category: "Financing", event: "ArcLight made $150 million commitment to Elevate Renewables battery storage platform" }],
+    sources: [{ label: "Elevate Renewables", url: "https://www.elevaterenewables.com/" }],
   },
   {
     name: "Generation Bridge",
@@ -2238,8 +6114,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "AlphaGen / ArcLight",
-    description: "",
+    description: "Generation Bridge is a 4.9 GW portfolio of 8 low-carbon power facilities serving large metro demand centers in PJM, NYISO, and ISONE markets. Acquired from NRG Energy, the portfolio includes combined-cycle plants in Connecticut, Ohio, Maryland, and New Jersey.",
     status: "Active",
+    investmentYear: 2021,
+    headquarters: "Houston, TX",
+    milestones: [{ date: "2021", category: "Acquisition", event: "ArcLight acquired Generation Bridge power portfolio from NRG Energy for $760M" }],
+    sources: [{ label: "Alpha Generation", url: "https://www.alphagen.com/" }],
   },
   {
     name: "Griffith Energy",
@@ -2249,8 +6129,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Capital Partners",
-    description: "",
-    status: "Active",
+    description: "Griffith Energy was a 570 MW gas-fired combined-cycle generation facility in Mohave County, Arizona, serving the Desert Southwest power market. ArcLight acquired the plant in 2020 and later sold it to Onward Energy.",
+    status: "Realized",
+    yearFounded: 2002,
+    investmentYear: 2020,
+    headquarters: "Mohave County, AZ",
+    milestones: [{ date: "2020", category: "Acquisition", event: "ArcLight acquired Griffith Energy from Star West Generation (Oaktree)" }],
+    sources: [{ label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/arclight-reaches-agreement-to-acquire-griffith-energy-from-star-west-generation-301012112.html" }],
   },
   {
     name: "Gulf Coast Express Pipeline (GCX)",
@@ -2260,8 +6145,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "AL GCX Holdings LLC (Fund VIII)",
-    description: "",
+    description: "The Gulf Coast Express Pipeline (GCX) is a 500-mile natural gas pipeline with ~2 Bcf/d capacity transporting gas from the Permian Basin to Gulf Coast markets. ArcLight holds a 62.5% economic ownership interest alongside Kinder Morgan (37.5%).",
     status: "Active",
+    investmentYear: 2022,
+    headquarters: "Houston, TX",
+    milestones: [{ date: "Feb 2025", category: "Acquisition", event: "ArcLight acquired 25% interest in GCX from Phillips 66 for $865M, becoming 62.5% majority owner" }],
+    sources: [{ label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/arclight-announces-865-million-acquisition-of-strategic-pipeline-interest-302365746.html" }],
   },
   {
     name: "Haynesville Gas Gathering System",
@@ -2271,8 +6160,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight / Cutlass Energy",
-    description: "",
+    description: "The Haynesville Gas Gathering System is a natural gas gathering system in the Haynesville shale play with nominal capacity of up to 1.2 Bcf/d. Located in Caddo Parish, Louisiana and Harrison County, Texas, it was constructed between 2020-2022 with ESG-focused design.",
     status: "Active",
+    yearFounded: 2020,
+    investmentYear: 2022,
+    headquarters: "Houston, TX",
+    milestones: [{ date: "Mar 2022", category: "Acquisition", event: "ArcLight and Cutlass Energy acquired the Haynesville Gas Gathering System via Saber Midstream" }],
+    sources: [{ label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/arclight-to-acquire-haynesville-gas-gathering-system-301508310.html" }],
   },
   {
     name: "Infinigen Renewables",
@@ -2282,8 +6176,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Energy Partners Fund VII",
-    description: "",
+    description: "Infinigen Renewables is a renewable energy developer, operator, and IPP and the leading solar platform in Puerto Rico with over 100 MW of fleet capacity and 1+ GW development pipeline. Launched by ArcLight in 2021 with a $400 million capital commitment.",
     status: "Active",
+    website: "https://infinigenrenewables.com",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "San Juan, PR",
+    milestones: [{ date: "Dec 2021", category: "Financing", event: "ArcLight launched Infinigen Renewables platform with $400M capital commitment" }],
+    sources: [{ label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/arclight-launches-infinigen-renewables-platform-301447102.html" }],
   },
   {
     name: "Inspiration Mobility Group",
@@ -2293,8 +6193,15 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Energy Partners Fund VII",
-    description: "",
+    description: "Inspiration Mobility is a sustainable infrastructure platform focused on enabling the EV transition, providing fleet management, charging-as-a-service, and electrification finance to commercial fleets. The company has raised $415M+ from ArcLight, Macquarie, and Ferrovial.",
     status: "Active",
+    website: "https://inspirationmobility.com",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "New York, NY",
+    management: [{ name: "Josh Green", title: "Chief Executive Officer" }],
+    milestones: [{ date: "Nov 2021", category: "Financing", event: "Inspiration Mobility launched with $200M commitment from ArcLight Energy Partners Fund VII" }],
+    sources: [{ label: "Inspiration Mobility", url: "https://inspirationmobility.com/news/inspiration-launches-as-first-purpose-built-ev-solutions-company-announces-200m-commitment-and-fleet-partnership-with-revel" }],
   },
   {
     name: "Invenergy AMPCI Thermal Power",
@@ -2304,8 +6211,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "ArcLight Capital Partners",
-    description: "",
+    description: "Invenergy AMPCI Thermal Power (IATP) is a portfolio of 11 highly efficient combined-cycle power infrastructure assets totaling 5.4 GW across seven markets in the U.S. and Canada. ArcLight agreed to acquire InfraBridge's 50% stake in March 2026.",
     status: "Active",
+    investmentYear: 2026,
+    headquarters: "Chicago, IL",
+    milestones: [{ date: "Mar 2026", category: "Acquisition", event: "ArcLight agreed to acquire InfraBridge's 50% stake in the 5.4 GW Invenergy AMPCI Thermal Power portfolio" }],
+    sources: [{ label: "Business Wire", url: "https://www.businesswire.com/news/home/20260311462798/en/ArcLight-to-Acquire-InfraBridges-50-Stake-in-5.4-GW-Power-Portfolio" }],
   },
   {
     name: "Kleen Energy Systems",
@@ -2315,8 +6226,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Capital Partners",
-    description: "",
+    description: "Kleen Energy Systems is a 620 MW natural gas-fired combined-cycle power plant in Middletown, Connecticut, one of New England's newest and most efficient plants. Completed in 2011, it provides critical capacity, energy, and ancillary services with dual fuel capability.",
     status: "Active",
+    yearFounded: 2011,
+    investmentYear: 2023,
+    headquarters: "Middletown, CT",
+    milestones: [{ date: "Nov 2023", category: "Acquisition", event: "ArcLight completed acquisition of ownership interest in Kleen Energy Systems from Sojitz Corporation" }],
+    sources: [{ label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/arclight-completes-acquisition-of-ownership-interest-in-kleen-energy-systems-301978649.html" }],
   },
   {
     name: "Lordstown Energy Center",
@@ -2326,8 +6242,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "AlphaGen / ArcLight",
-    description: "",
+    description: "Lordstown Energy Center is a 940 MW combined-cycle natural gas-fueled facility in Lordstown, Ohio, providing power to approximately 850,000 homes and businesses via PJM Interconnection. Part of the AlphaGen-managed power portfolio.",
     status: "Active",
+    investmentYear: 2022,
+    headquarters: "Lordstown, OH",
+    milestones: [{ date: "2022", category: "Acquisition", event: "Lordstown Energy Center joined ArcLight's Generation Bridge portfolio under AlphaGen management" }],
+    sources: [{ label: "Alpha Generation", url: "https://www.alphagen.com/" }],
   },
   {
     name: "Middletown Energy Center",
@@ -2337,8 +6257,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Parkway Generation / ArcLight",
-    description: "",
+    description: "Middletown Energy Center is a 483 MW combined-cycle natural gas power plant in Butler County, Ohio, one of the newest CCGT plants in PJM. Commenced operations in 2018 and is part of ArcLight's Parkway Generation portfolio.",
     status: "Active",
+    yearFounded: 2018,
+    investmentYear: 2022,
+    headquarters: "Butler County, OH",
+    milestones: [{ date: "Feb 2022", category: "Acquisition", event: "ArcLight's Parkway Generation closed acquisition of 4.8 GW power portfolio from PSEG including Middletown" }],
+    sources: [{ label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/arclight-closes-acquisition-of-4-8-gw-power-generation-portfolio-from-pseg-301485739.html" }],
   },
   {
     name: "Natural Gas Pipeline Co. of America",
@@ -2348,8 +6273,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Capital Partners",
-    description: "",
+    description: "Natural Gas Pipeline Company of America (NGPL) is one of the largest interstate pipeline systems in the U.S., spanning nine states with ~9,100 miles of pipeline, 1M+ compression horsepower, and 288 Bcf of working natural gas storage. ArcLight holds 62.5% economic ownership.",
     status: "Active",
+    investmentYear: 2021,
+    headquarters: "Houston, TX",
+    milestones: [{ date: "May 2025", category: "Acquisition", event: "ArcLight became the largest owner of NGPL with 62.5% economic ownership after acquiring Brookfield's remaining 25% stake" }],
+    sources: [{ label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/arclight-acquires-interest-in-natural-gas-pipeline-company-of-america-one-of-the-largest-natural-gas-infrastructure-assets-in-north-america-302453172.html" }],
   },
   {
     name: "Naugatuck Avenue Storage",
@@ -2359,8 +6288,11 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Capital Partners",
-    description: "",
+    description: "Naugatuck Avenue Storage is a battery energy storage project in Connecticut, part of the state's push toward its 1,000 MW by 2030 energy storage goal. The project contributes to grid reliability and clean energy targets in the region.",
     status: "Active",
+    headquarters: "Connecticut",
+    milestones: [{ date: "2024", category: "Expansion", event: "Battery energy storage project awarded through Connecticut DEEP solicitation process" }],
+    sources: [{ label: "ArcLight Capital Partners", url: "https://arclight.com/" }],
   },
   {
     name: "Parkway Generation",
@@ -2370,8 +6302,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "AlphaGen / ArcLight",
-    description: "",
+    description: "Parkway Generation is a 4.8 GW portfolio of nine modern, highly efficient natural gas-fired power generation facilities in New Jersey and Maryland acquired from PSEG for $1.37 billion. The portfolio provides critical capacity and is positioned for battery storage and offshore wind interconnection.",
     status: "Active",
+    investmentYear: 2022,
+    headquarters: "New York, NY",
+    milestones: [{ date: "Feb 2022", category: "Financing", event: "ArcLight's Parkway Generation closed acquisition of 4.8 GW portfolio from PSEG for $1.37B" }],
+    sources: [{ label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/arclight-closes-acquisition-of-4-8-gw-power-generation-portfolio-from-pseg-301485739.html" }],
   },
   {
     name: "Phoenix Renewables",
@@ -2381,8 +6317,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Infra Partners Fund VIII",
-    description: "",
+    description: "Phoenix Renewables is a portfolio of operating renewable energy assets under ArcLight Fund VIII, managed through the SkyVest Renewables platform by ArcLight Renewable Services. The portfolio focuses on operational wind and solar assets with value-add improvement initiatives.",
     status: "Active",
+    investmentYear: 2024,
+    headquarters: "Newtown, PA",
+    milestones: [{ date: "2024", category: "Financing", event: "ArcLight Fund VIII acquired Phoenix Renewables operating renewable portfolio, managed through SkyVest platform" }],
+    sources: [{ label: "ArcLight Portfolio Services", url: "https://arclight.com/portfolio-services/" }],
   },
   {
     name: "Prospect Power",
@@ -2392,8 +6332,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Elevate Renewables / ArcLight",
-    description: "",
+    description: "Prospect Power Storage is a 150 MW/600 MWh battery storage project in Rockingham County, Virginia near Data Center Alley, the largest standalone BESS in PJM. Fully contracted under a 15-year PPA with Dominion Energy, scheduled for operations in mid-2026.",
     status: "Active",
+    investmentYear: 2026,
+    headquarters: "Rockingham County, VA",
+    milestones: [{ date: "Jan 2026", category: "Acquisition", event: "Elevate Renewables acquired Prospect Power Storage, the largest standalone BESS in PJM, from Swift Current Energy" }],
+    sources: [{ label: "Business Wire", url: "https://www.businesswire.com/news/home/20260115405115/en/Elevate-Acquires-Prospect-Power-Storage-a-150-MW-Battery-Asset-in-Northern-Virginia" }],
   },
   {
     name: "REC Solar",
@@ -2403,8 +6347,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Energy Partners Fund VII",
-    description: "",
+    description: "REC Solar is a leading developer, owner, and operator of distributed solar, batteries, and fuel cell assets across 29 U.S. states with 700+ MW of projects and a 290+ MW operating portfolio. Acquired from Duke Energy in 2023 for ~$364 million.",
     status: "Active",
+    website: "https://recsolar.com",
+    investmentYear: 2023,
+    headquarters: "San Luis Obispo, CA",
+    milestones: [{ date: "Oct 2023", category: "Acquisition", event: "ArcLight completed acquisition of Duke Energy's commercial distributed generation portfolio including REC Solar for ~$364M" }],
+    sources: [{ label: "Duke Energy", url: "https://news.duke-energy.com/releases/duke-energy-completes-sale-of-commercial-distributed-generation-portfolio-including-rec-solar-to-arclight" }],
   },
   {
     name: "Sequitur Renewables",
@@ -2414,8 +6363,15 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Capital Partners",
-    description: "",
+    description: "Sequitur Renewables is a wind energy platform focused on acquiring mature operational wind farms and executing value-add operational, commercial, and financial strategies. The portfolio includes wind farms in Pennsylvania, West Virginia, and California.",
     status: "Active",
+    website: "https://sequiturrenewables.com",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "Boston, MA",
+    management: [{ name: "Matt McCabe", title: "Chief Executive Officer" }],
+    milestones: [{ date: "2022", category: "Financing", event: "ArcLight established Sequitur Renewables with acquisition of 185 MW wind farm portfolio from GlidePath" }],
+    sources: [{ label: "Sequitur Renewables", url: "https://sequiturrenewables.com/" }],
   },
   {
     name: "SkyVest Renewables",
@@ -2425,8 +6381,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Renewable Services",
-    description: "",
+    description: "SkyVest Renewables is an operating-focused renewables platform backed by ArcLight with an initial $500 million capital commitment, targeting utility-scale wind and solar assets in North America. SkyVest manages Phoenix and Thunderbird Renewables portfolios under ArcLight Fund VIII.",
     status: "Active",
+    website: "https://www.skyvest.com",
+    yearFounded: 2024,
+    investmentYear: 2024,
+    headquarters: "Newtown, PA",
+    milestones: [{ date: "Jul 2024", category: "Financing", event: "ArcLight launched SkyVest Renewables with $500M commitment and inaugural 160 MW wind farm acquisition in Texas" }],
+    sources: [{ label: "SkyVest Renewables", url: "https://www.skyvest.com/" }],
   },
   {
     name: "Takanock, LLC",
@@ -2436,8 +6398,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Capital",
-    description: "",
+    description: "Takanock is a provider of innovative digital and power infrastructure solutions addressing the power shortage limiting data center development. Founded in 2023, the company secured $500M from ArcLight and DigitalBridge and is executing deployments in Northern Virginia and Phoenix.",
     status: "Active",
+    yearFounded: 2023,
+    investmentYear: 2025,
+    headquarters: "United States",
+    management: [{ name: "Kenneth Davies", title: "Chief Executive Officer" }],
+    milestones: [{ date: "Jun 2025", category: "Financing", event: "Takanock secured $500 million commitment from ArcLight and DigitalBridge for digital power infrastructure" }],
+    sources: [{ label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/takanock-secures-500-million-commitment-from-arclight-and-digitalbridge-302490366.html" }],
   },
   {
     name: "Third Coast Infrastructure",
@@ -2447,8 +6415,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Capital Partners",
-    description: "",
+    description: "Third Coast Infrastructure is the premier privately owned U.S. Gulf Coast and Gulf of Mexico midstream platform with ~1,200 miles of pipelines, two floating production systems, and gas processing. Formerly American Midstream Partners, it was taken private by ArcLight in 2019.",
     status: "Active",
+    website: "https://www.third-coast.com",
+    yearFounded: 2009,
+    investmentYear: 2019,
+    headquarters: "Houston, TX",
+    milestones: [{ date: "Jul 2019", category: "Acquisition", event: "ArcLight took American Midstream Partners private, converting it to Third Coast Midstream" }],
+    sources: [{ label: "Third Coast Infrastructure", url: "https://www.third-coast.com/" }],
   },
   {
     name: "Thunderbird Renewables",
@@ -2458,8 +6432,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Infra Partners Fund VIII",
-    description: "",
+    description: "Thunderbird Renewables is a portfolio of operating renewable energy assets under ArcLight Fund VIII, managed through the SkyVest Renewables platform by ArcLight Renewable Services. The portfolio focuses on wind and solar assets with value-enhancement initiatives.",
     status: "Active",
+    investmentYear: 2024,
+    headquarters: "Newtown, PA",
+    milestones: [{ date: "2024", category: "Financing", event: "ArcLight Fund VIII acquired Thunderbird Renewables operating portfolio, managed through SkyVest platform" }],
+    sources: [{ label: "ArcLight Portfolio Services", url: "https://arclight.com/portfolio-services/" }],
   },
   {
     name: "Two Rivers Storage",
@@ -2469,8 +6447,11 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Capital Partners",
-    description: "",
+    description: "Two Rivers Storage is a battery energy storage project developed as part of ArcLight's broader strategy of deploying BESS at legacy thermal generation sites. The project leverages existing interconnection infrastructure for accelerated grid integration.",
     status: "Active",
+    headquarters: "United States",
+    milestones: [{ date: "2024", category: "Expansion", event: "Two Rivers Storage project advanced as part of ArcLight's brownfield BESS development strategy" }],
+    sources: [{ label: "ArcLight Capital Partners", url: "https://arclight.com/" }],
   },
   {
     name: "Zeem Solutions",
@@ -2480,8 +6461,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ArcLight Capital Partners",
-    description: "",
+    description: "Zeem Solutions is a zero-emission fleet-as-a-service provider offering electric trucks, vans, and shuttle buses for a flat monthly fee including vehicle lease, charging, maintenance, and insurance. The company operates the largest private commercial EV charging depot near LAX.",
     status: "Active",
+    website: "https://www.zeemsolutions.com",
+    yearFounded: 2020,
+    investmentYear: 2022,
+    headquarters: "Inglewood, CA",
+    milestones: [{ date: "Jul 2022", category: "Financing", event: "Zeem Solutions secured $50 million capital investment from ArcLight with strategic LAZ Parking partnership" }],
+    sources: [{ label: "Zeem Solutions", url: "https://www.zeemsolutions.com/press" }],
   },
   // ─── Ardian ─────────────────────────────────────────────────
   {
@@ -2492,8 +6479,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ardian Infrastructure",
-    description: "",
+    description: "AFCO is a leader in on-airport facility investment, development, financing, leasing, and management, operating over 3.5 million sqft of airport infrastructure across 29 properties at 15 airport locations in the US and UK. Acquired from Goldman Sachs Alternatives in 2025.",
     status: "Active",
+    website: "https://aviationfacilities.com",
+    yearFounded: 1990,
+    investmentYear: 2025,
+    headquarters: "Dulles, VA",
+    milestones: [{ date: "Feb 2025", category: "Acquisition", event: "Ardian signed agreement to acquire Goldman Sachs Alternatives' stake in AFCO" }],
+    sources: [{ label: "Ardian", url: "https://www.ardian.com/news-insights/press-releases/ardian-signs-agreement-acquisition-goldman-sachs-alternatives-stake" }],
   },
   {
     name: "CampusParc",
@@ -2503,8 +6496,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ardian Americas Infrastructure Fund V (AAIF V)",
-    description: "",
+    description: "CampusParc is the first and largest university parking concession in the U.S., managing over 38,000 parking spaces at The Ohio State University under a 50-year concession agreement. Ardian acquired 100% stake from QIC for over $850 million in 2024.",
     status: "Active",
+    website: "https://osu.campusparc.com",
+    yearFounded: 2012,
+    investmentYear: 2024,
+    headquarters: "Columbus, OH",
+    milestones: [{ date: "Jun 2024", category: "Financing", event: "Ardian acquired 100% stake in CampusParc from QIC, marking its first U.S. P3 investment" }],
+    sources: [{ label: "Ardian", url: "https://www.ardian.com/news-insights/press-releases/ardian-acquires-100-stake-campusparc-concessionaire-ohio-state" }],
   },
   {
     name: "Clermont",
@@ -2514,8 +6513,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Ardian Americas Infrastructure Fund V (AAIF V)",
-    description: "",
+    description: "Clermont is a Canadian parking joint venture between Ardian and Indigo Group formed to invest in parking assets, concessions, and long-term leases across Canada. Indigo contributed its Canadian-owned properties while Ardian provides capital for digitization and sustainability.",
     status: "Active",
+    yearFounded: 2024,
+    investmentYear: 2024,
+    headquarters: "Montreal, Canada",
+    management: [{ name: "Gordon Craig", title: "Chief Executive Officer" }],
+    milestones: [{ date: "Mar 2024", category: "Financing", event: "Ardian and Indigo Group created Clermont, a new JV to accelerate growth in Canada's parking market" }],
+    sources: [{ label: "Ardian", url: "https://www.ardian.com/news-insights/press-releases/indigo-group-and-ardian-create-clermont-new-venture-accelerate-growth" }],
   },
   {
     name: "Dauntless Energy (incl. Skyline Renewables & 1370 Clean Energy)",
@@ -2525,8 +6530,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ardian Americas Infrastructure Fund IV (AAIF IV)",
-    description: "",
+    description: "Dauntless Energy is Ardian's exclusive North American energy asset manager and IPP building a low-carbon generation portfolio across solar, wind, and efficient natural gas. Evolved from Skyline Renewables, launched in 2018 with a portfolio now exceeding 1 GW.",
     status: "Active",
+    website: "https://www.dauntless-energy.com",
+    yearFounded: 2018,
+    investmentYear: 2018,
+    headquarters: "Houston, TX",
+    milestones: [{ date: "2018", category: "Financing", event: "Ardian launched Skyline Renewables (now Dauntless Energy) with inaugural 60 MW Whirlwind wind farm acquisition in Texas" }],
+    sources: [{ label: "Dauntless Energy", url: "https://www.dauntless-energy.com/about" }],
   },
   {
     name: "MXT Holdings",
@@ -2536,8 +6547,15 @@ export const companies: PortCo[] = [
     region: "Latin America",
     country: "Mexico",
     ownershipVehicle: "Ardian Americas Infrastructure Fund V (AAIF V)",
-    description: "",
+    description: "MXT Holdings is a diversified telecommunications infrastructure platform in Mexico that develops, acquires, owns, and operates neutral-host communication infrastructure including cell towers and metro fiber. Ardian acquired a 50% co-control equity interest in 2023.",
     status: "Active",
+    website: "https://www.mxtholdings.com",
+    yearFounded: 2015,
+    investmentYear: 2023,
+    headquarters: "Mexico City, Mexico",
+    management: [{ name: "Antoine Delaprée", title: "Chief Executive Officer" }],
+    milestones: [{ date: "Jul 2023", category: "Financing", event: "Ardian acquired 50% co-control equity interest in MXT Holdings, its first direct investment in Mexico" }],
+    sources: [{ label: "Ardian", url: "https://www.ardian.com/news-insights/press-releases/ardian-acquires-50-stake-mxt-holdings-leading-mexican" }],
   },
   {
     name: "Maple Leaf (Enel X Battery Storage JV)",
@@ -2547,8 +6565,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Ardian Infrastructure / AAIF IV",
-    description: "",
+    description: "Maple Leaf is a joint venture between Ardian (80%) and Enel X (20%) managing a battery storage portfolio of ten asset locations throughout Ontario, Canada with ~30 MW of combined capacity. The partnership supports commercial and industrial behind-the-meter storage deployment.",
     status: "Active",
+    investmentYear: 2020,
+    headquarters: "Ontario, Canada",
+    milestones: [{ date: "Sep 2020", category: "Financing", event: "Enel X and Ardian launched battery storage JV in Canada with Ardian holding 80% stake" }],
+    sources: [{ label: "Ardian", url: "https://www.ardian.com/press-releases/enel-x-and-ardian-infrastructure-launch-battery-storage-partnership-canada" }],
   },
   {
     name: "Unison (Unison Site Management)",
@@ -2558,8 +6580,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ardian Americas Infrastructure Fund V (AAIF V)",
-    description: "",
+    description: "Unison Infrastructure is a telecom and renewables infrastructure investment firm that purchases cell site ground leases, rooftop communication sites, and fiber-based site leases. Founded in 2003, the company has deployed $1.3B+ and expanded into Europe and renewables infrastructure.",
     status: "Active",
+    website: "https://unisoninfra.com",
+    yearFounded: 2003,
+    headquarters: "Hamilton, MA",
+    management: [{ name: "Dewey K. Shay", title: "Chief Executive Officer" }],
+    milestones: [{ date: "2017", category: "Financing", event: "Ardian made strategic investment in Unison Site Management wireless infrastructure platform" }],
+    sources: [{ label: "Unison Infrastructure", url: "https://unisoninfra.com/" }],
   },
   // ─── Ares Management ────────────────────────────────────────
   {
@@ -2570,8 +6598,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Ada Infrastructure is Ares Management's global data center platform with nine in-flight campuses across the US, Latin America, Japan, and the UK totaling over 1 GW of IT capacity. The platform serves hyperscale and enterprise customers with colocation and development services.",
     status: "Active",
+    website: "https://adainfrastructure.com",
+    investmentYear: 2024,
+    headquarters: "Bellevue, WA",
+    milestones: [{ date: "Dec 2025", category: "Expansion", event: "Ares secured 314-acre site in Spotsylvania County, Virginia for 200 MW Phase 1 data center development" }],
+    sources: [{ label: "Ada Infrastructure", url: "https://adainfrastructure.com/" }],
   },
   {
     name: "Apex Clean Energy",
@@ -2581,20 +6614,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "Utility-scale renewable energy developer expanding the renewable frontier across North America through origination, construction, and operation of wind, solar, storage facilities, distributed energy resources, and green fuel technologies.",
+    description: "Apex Clean Energy is a leading U.S. renewable energy developer with 30+ GW in development and 4.8 GW of operational wind capacity. Founded in 2009, Apex develops, finances, constructs, and operates utility-scale wind, solar, and storage facilities across 20+ states.",
     status: "Active",
     website: "https://www.apexcleanenergy.com",
+    yearFounded: 2009,
     investmentYear: 2021,
-    headquarters: "Charlottesville, Virginia, United States",
-    milestones: [
-      { date: "2021", event: "Ares Management acquired majority stake alongside EGCO", category: "Financing" },
-    ],
-    management: [
-      { name: "Ken Young", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Apex Clean Energy — Company", url: "https://www.apexcleanenergy.com/company/" },
-    ],
+    headquarters: "Charlottesville, VA",
+    milestones: [{ date: "Oct 2021", category: "Financing", event: "Ares Management acquired majority stake in Apex Clean Energy" }],
+    sources: [{ label: "Apex Clean Energy", url: "https://www.apexcleanenergy.com/news/funds-managed-by-ares-management-to-acquire-majority-stake-in-apex-clean-energy/" }],
   },
   {
     name: "Atlas Crane Service",
@@ -2604,8 +6631,15 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Atlas Crane Service is a full-service crane rental provider offering turnkey maintenance, repair, and overhaul solutions primarily serving the wind industry with over 250 customers. Founded in 2009, the company operates the largest fleet of new Liebherr cranes in the U.S.",
     status: "Active",
+    website: "https://atlascrane.com",
+    yearFounded: 2009,
+    investmentYear: 2022,
+    headquarters: "Aurora, IL",
+    management: [{ name: "Zach Prentis", title: "Chief Executive Officer" }],
+    milestones: [{ date: "Aug 2022", category: "Financing", event: "Ares Management Infrastructure Opportunities acquired controlling interest in Atlas Crane Service" }],
+    sources: [{ label: "Business Wire", url: "https://www.businesswire.com/news/home/20220822005740/en/Atlas-Crane-Service-Acquired-by-Ares-Management" }],
   },
   {
     name: "Birdsboro Power",
@@ -2615,8 +6649,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Birdsboro Power is a 488 MW natural gas-fired combined-cycle power plant in Berks County, Pennsylvania serving the PJM market. Commenced commercial operations in 2019, it utilizes a GE 7HA.02 gas turbine for high-efficiency generation.",
     status: "Active",
+    yearFounded: 2019,
+    investmentYear: 2019,
+    headquarters: "Birdsboro, PA",
+    milestones: [{ date: "May 2019", category: "Expansion", event: "Birdsboro Combined Cycle Power Plant commenced commercial operations in the PJM market" }],
+    sources: [{ label: "Power Technology", url: "https://www.power-technology.com/data-insights/power-plant-profile-birdsboro-combined-cycle-power-project-us/" }],
   },
   {
     name: "Bluepeak",
@@ -2626,8 +6665,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Bluepeak is a leading fiber broadband provider serving residential and commercial customers across the Great Plains region including North Dakota, South Dakota, Oklahoma, Wyoming, and Minnesota. The company has constructed fiber to over 140,000 homes since 2021.",
     status: "Active",
+    website: "https://mybluepeak.com",
+    yearFounded: 2021,
+    investmentYear: 2024,
+    headquarters: "Sioux Falls, SD",
+    milestones: [{ date: "Feb 2024", category: "Financing", event: "Bluepeak received strategic investment from Ares Management Infrastructure Opportunities" }],
+    sources: [{ label: "Bluepeak", url: "https://mybluepeak.com/strategic-investment-ares-management/" }],
   },
   {
     name: "Burnham RNG",
@@ -2637,8 +6682,15 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Burnham RNG is a wastewater and agricultural waste to renewable natural gas (RNG) platform that transforms organic waste into RNG, clean water, and soil additives. The company developed the Pasco Resource Recovery Center under a 30-year treatment agreement with the City of Pasco.",
     status: "Active",
+    website: "https://www.burnhamrng.com",
+    yearFounded: 2021,
+    investmentYear: 2023,
+    headquarters: "Pasco, WA",
+    management: [{ name: "Chris Tynan", title: "Chief Executive Officer" }],
+    milestones: [{ date: "Dec 2023", category: "Financing", event: "Ares Management Infrastructure Opportunities acquired Burnham RNG from Edge Natural Resources" }],
+    sources: [{ label: "Burnham RNG", url: "https://www.burnhamrng.com/" }],
   },
   {
     name: "Current (Current Trucking)",
@@ -2648,8 +6700,15 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Current Trucking is a fleet electrification solutions company providing trucks-as-a-service for Class 3-8 electric vehicles including EV truck procurement, charging infrastructure, and O&M. Ares invested up to $250 million in 2023.",
     status: "Active",
+    website: "https://www.currenttrucking.com",
+    yearFounded: 2021,
+    investmentYear: 2023,
+    headquarters: "Morristown, NJ",
+    management: [{ name: "Pip Decker", title: "Chief Executive Officer" }],
+    milestones: [{ date: "Feb 2023", category: "Financing", event: "Ares Management acquired controlling interest in Current Trucking with up to $250M investment commitment" }],
+    sources: [{ label: "Current Trucking", url: "https://www.currenttrucking.com/" }],
   },
   {
     name: "DSD Renewables",
@@ -2659,8 +6718,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "DSD Renewables is a renewable energy platform deploying distributed solar, storage, and EV charging for commercial, industrial, and municipal partners. With 1.1 GW in operation and over $2 billion in capital raised, DSD operates across 12+ U.S. states.",
     status: "Active",
+    website: "https://dsdrenewables.com",
+    yearFounded: 2019,
+    investmentYear: 2022,
+    headquarters: "New York, NY",
+    milestones: [{ date: "Mar 2022", category: "Financing", event: "DSD Renewables secured $200 million preferred equity investment from Ares Management" }],
+    sources: [{ label: "DSD Renewables", url: "https://dsdrenewables.com/dsd-secures-200m-preferred-equity-investment-from-ares-management-press-release/" }],
   },
   {
     name: "EDP Renováveis (EDPR) US Renewables Portfolio",
@@ -2670,8 +6735,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "A portfolio of U.S. renewable energy assets acquired from EDP Renováveis (EDPR), one of the world's largest renewable energy producers. The assets include operational wind and solar projects across the United States.",
     status: "Active",
+    investmentYear: 2021,
+    headquarters: "United States",
+    milestones: [{ date: "2021", category: "Acquisition", event: "Ares Infrastructure acquired U.S. renewables portfolio from EDP Renováveis" }],
+    sources: [{ label: "Ares Management", url: "https://www.aresmgmt.com/" }],
   },
   {
     name: "ENGIE US Renewables Portfolios",
@@ -2681,8 +6750,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "A portfolio of U.S. renewable energy assets acquired from ENGIE, a global energy company. The portfolio includes operational wind and solar generation assets contributing to Ares' growing clean energy infrastructure platform.",
     status: "Active",
+    investmentYear: 2020,
+    headquarters: "United States",
+    milestones: [{ date: "2020", category: "Acquisition", event: "Ares Infrastructure acquired U.S. renewables portfolio from ENGIE" }],
+    sources: [{ label: "Ares Management", url: "https://www.aresmgmt.com/" }],
   },
   {
     name: "Meade Pipeline Co. LLC",
@@ -2692,8 +6765,12 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Meade Pipeline owns ~40% of the Central Penn Line, a FERC-regulated 180-mile natural gas pipeline transporting gas from the Marcellus/Utica Shale to demand centers via Williams' Transco system with ~2.3 Bcf/d gross capacity. Acquired for ~$1.1 billion from XPLR Infrastructure.",
     status: "Active",
+    investmentYear: 2025,
+    headquarters: "Houston, TX",
+    milestones: [{ date: "Sep 2025", category: "Acquisition", event: "Ares Management acquired 100% of Meade Pipeline from XPLR Infrastructure for ~$1.1 billion" }],
+    sources: [{ label: "Business Wire", url: "https://www.businesswire.com/news/home/20250929786828/en/Ares-Management-Acquires-Meade-Pipeline-to-Enhance-Energy-Infrastructure-Portfolio" }],
   },
   {
     name: "Northampton Generating Company",
@@ -2703,8 +6780,11 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Northampton Generating Company operates a power generation facility in Northampton County, Pennsylvania. The plant is part of Ares' portfolio of infrastructure power assets in the PJM market.",
     status: "Active",
+    headquarters: "Northampton, PA",
+    milestones: [{ date: "2014", category: "Acquisition", event: "Ares EIF Management acquired Northampton Generating Company as part of its power infrastructure portfolio" }],
+    sources: [{ label: "Ares Management", url: "https://www.aresmgmt.com/" }],
   },
   {
     name: "Prime Data Centers",
@@ -2714,8 +6794,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Prime Data Centers is an international provider of hyperscale and wholesale data centers with a 4 GW power roadmap across top-tier U.S. markets. Founded in 2017, Prime serves cloud providers, AI, and enterprise customers with scalable data center solutions.",
     status: "Active",
+    website: "https://primedatacenters.com",
+    yearFounded: 2017,
+    investmentYear: 2022,
+    headquarters: "Dallas, TX",
+    milestones: [{ date: "2022", category: "Financing", event: "Ares Management, Macquarie, and Data Realty Group acquired joint control of Prime Data Centers" }],
+    sources: [{ label: "Prime Data Centers", url: "https://primedatacenters.com/" }],
   },
   {
     name: "RENEW Energy Partners",
@@ -2725,8 +6811,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "RENEW Energy Partners provides energy-efficiency-as-a-service solutions, funding and managing building retrofits including lighting, steam, building automation, and distributed power generation. Founded in 2013 in Boston, RENEW is deploying its third capital fund anchored by Ares.",
     status: "Active",
+    website: "https://renewep.com",
+    yearFounded: 2013,
+    investmentYear: 2020,
+    headquarters: "Boston, MA",
+    milestones: [{ date: "Aug 2020", category: "Financing", event: "RENEW and Ares Infrastructure and Power partnered to acquire a portfolio of energy efficiency infrastructure projects" }],
+    sources: [{ label: "RENEW Energy Partners", url: "https://renewep.com/renew-and-ares-infrastructure-and-power-to-provide-energy-efficiency-infrastructure-projects-to-customers/" }],
   },
   {
     name: "SB Energy (SoftBank Energy DevCo US)",
@@ -2736,8 +6828,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "SB Energy is a leading Climate Infrastructure and Technology Platform backed by SoftBank Group and Ares Management, developing, constructing, and operating some of the largest renewable projects in the U.S. The company owns and operates 3+ GW of energy capacity.",
     status: "Active",
+    website: "https://sbenergy.com",
+    yearFounded: 2019,
+    investmentYear: 2022,
+    headquarters: "San Francisco, CA",
+    milestones: [{ date: "Mar 2022", category: "Financing", event: "Ares Management led strategic equity investment of up to $600 million in SB Energy" }],
+    sources: [{ label: "SB Energy", url: "https://sbenergy.com/strategic-equity-investment-from-ares-management/" }],
   },
   {
     name: "Sagepoint Energy",
@@ -2747,8 +6845,15 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Sagepoint Energy is a leading renewable waste-to-energy platform combining Dynamic Renewables, BC Organics, and National Organics. The company produces carbon-negative RNG from dairy manure and landfill gas across multiple facilities in the U.S.",
     status: "Active",
+    website: "https://www.sagepointenergy.com",
+    yearFounded: 2025,
+    investmentYear: 2023,
+    headquarters: "Carmel, IN",
+    management: [{ name: "Aaron Johnson", title: "Chief Executive Officer" }],
+    milestones: [{ date: "Mar 2025", category: "Expansion", event: "Dynamic Renewables, BC Organics, and National Organics combined to form Sagepoint Energy backed by Ares" }],
+    sources: [{ label: "Sagepoint Energy", url: "https://www.sagepointenergy.com/" }],
   },
   {
     name: "Spruance Operating",
@@ -2758,8 +6863,11 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Spruance Operating Services manages power generation assets in Richmond, Virginia. The facility was acquired by Ares through its EIF Management buyout and includes natural gas generation capabilities serving the PJM market.",
     status: "Active",
+    headquarters: "Richmond, VA",
+    milestones: [{ date: "2014", category: "Acquisition", event: "Ares acquired Spruance power assets through EIF Management infrastructure portfolio buyout" }],
+    sources: [{ label: "Ares Management", url: "https://www.aresmgmt.com/" }],
   },
   {
     name: "Tango Holdings, LLC",
@@ -2769,8 +6877,11 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Tango Holdings is a solar energy portfolio under Ares Management's Infrastructure Opportunities strategy, contributing to the firm's growing clean energy infrastructure platform across the United States.",
     status: "Active",
+    headquarters: "United States",
+    milestones: [{ date: "2022", category: "Financing", event: "Ares Infrastructure Opportunities acquired Tango Holdings solar portfolio" }],
+    sources: [{ label: "Ares Management", url: "https://www.aresmgmt.com/" }],
   },
   {
     name: "Underline Infrastructure",
@@ -2780,8 +6891,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "",
+    description: "Underline Infrastructure is a community fiber platform that designs, finances, constructs, and operates open access fiber-optic networks. The company offers symmetric gigabit speeds for $65/month and has expanded to Colorado and California markets.",
     status: "Active",
+    website: "https://www.underline.com",
+    yearFounded: 2021,
+    investmentYear: 2022,
+    headquarters: "Colorado Springs, CO",
+    milestones: [{ date: "Sep 2022", category: "Financing", event: "Ares Management became strategic investor in Underline Infrastructure, its first digital infrastructure investment" }],
+    sources: [{ label: "Underline Infrastructure", url: "https://www.underline.com/post/underline-receives-new-investment-for-infrastructure-to-connect-communities" }],
   },
   // ─── Argo Infrastructure Partners ───────────────────────────
   {
@@ -3064,12 +7181,54 @@ export const companies: PortCo[] = [
     name: "ACL Airshop",
     investmentFirm: "Astatine Investment Partners",
     sector: "Transportation",
-    subsector: "Logistics Infrastructure",
+    subsector: "Aviation Logistics Equipment",
     region: "Global",
     country: "United States (Global operations; HQ in SC)",
     ownershipVehicle: "Astatine Investment Partners (Funds)",
-    description: "",
+    description:
+      "ACL Airshop is the world's largest independent provider of unit load device (ULD) leasing, management, and repair services to the global airline industry. ULDs — the standardized containers and pallets used to load cargo and baggage into aircraft — are essential logistics infrastructure for air freight and passenger airlines. ACL Airshop manages a fleet of over 100,000 ULDs, providing short-term and long-term leasing, repair, digital tracking, and fleet management services to over 200 airlines worldwide. The company operates from a network of 55+ service stations at major airports globally, offering a mission-critical, asset-light service model with recurring revenue.",
     status: "Active",
+    website: "https://www.aclairshop.com",
+    yearFounded: 1979,
+    investmentYear: 2019,
+    headquarters: "Greenville, SC",
+    management: [
+      { name: "Steve Townes", title: "President & Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "1979",
+        event: "ACL Airshop founded as a ULD leasing and management company, initially serving airlines at U.S. airports.",
+        category: "Founding",
+      },
+      {
+        date: "2010s",
+        event: "Expanded global airport station network to 50+ locations, becoming the leading independent ULD lessor and service provider worldwide.",
+        category: "Expansion",
+      },
+      {
+        date: "2019",
+        event: "Astatine Investment Partners (formerly Brookfield Infrastructure Services) acquired ACL Airshop, providing capital for continued fleet expansion and technology investment.",
+        category: "Financing",
+      },
+      {
+        date: "2021",
+        event: "Launched digital ULD tracking platform using Bluetooth Low Energy (BLE) tags, enabling real-time fleet visibility for airline customers.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Expanded ULD fleet beyond 100,000 units, adding service stations at key airports in Asia-Pacific and the Middle East.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "ACL Airshop — Company Website", url: "https://www.aclairshop.com" },
+      {
+        label: "ACL Airshop — About Us",
+        url: "https://www.aclairshop.com/about/",
+      },
+    ],
   },
   {
     name: "BTR (Big Truck Rental)",
@@ -3108,23 +7267,104 @@ export const companies: PortCo[] = [
     name: "McKeil Marine",
     investmentFirm: "Astatine Investment Partners",
     sector: "Transportation",
-    subsector: "Logistics Infrastructure",
+    subsector: "Marine Transportation",
     region: "North America",
     country: "Canada (HQ in Ontario)",
     ownershipVehicle: "Astatine Investment Partners (Funds)",
-    description: "",
+    description:
+      "McKeil Marine is one of Canada's largest marine transportation and towing companies, operating a diversified fleet of tugs, barges, cargo vessels, and specialized marine equipment across the Great Lakes, St. Lawrence Seaway, and Atlantic Canada. The company provides bulk cargo transportation, ship docking and escort services, project cargo delivery, and marine construction support to customers in the energy, mining, construction, and infrastructure sectors. McKeil also operates ship repair facilities and a fleet management division, making it a vertically integrated marine infrastructure platform with deep expertise in Canadian coastal and inland waterway logistics.",
     status: "Active",
+    website: "https://www.mckeil.com",
+    yearFounded: 1956,
+    investmentYear: 2019,
+    headquarters: "Hamilton, Ontario, Canada",
+    management: [
+      { name: "Scott McConnell", title: "President & Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "1956",
+        event: "McKeil Marine founded in Hamilton, Ontario as a family-owned tug and barge company serving the Great Lakes and St. Lawrence region.",
+        category: "Founding",
+      },
+      {
+        date: "2000s",
+        event: "Expanded fleet and service capabilities through acquisitions of regional towing and marine transportation companies across Eastern Canada.",
+        category: "Expansion",
+      },
+      {
+        date: "2019",
+        event: "Astatine Investment Partners acquired McKeil Marine, providing institutional capital to modernize the fleet and expand service offerings.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Invested in vessel upgrades and fleet expansion to support growing demand for marine construction and project cargo services in the energy transition sector.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "McKeil Marine — Company Website", url: "https://www.mckeil.com" },
+      {
+        label: "McKeil Marine — About McKeil",
+        url: "https://www.mckeil.com/about/",
+      },
+    ],
   },
   {
     name: "PECO Pallet",
     investmentFirm: "Astatine Investment Partners",
     sector: "Transportation",
-    subsector: "Logistics Infrastructure",
+    subsector: "Pallet Pooling & Logistics",
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Astatine Investment Partners & Universities Superannuation",
-    description: "",
+    description:
+      "PECO Pallet is the largest provider of pallet rental services (pallet pooling) in North America, operating a fleet of approximately 340 million wood block pallets used by consumer packaged goods manufacturers, retailers, and food & beverage companies throughout the supply chain. The company operates an asset-heavy circular logistics model, renting pallets to shippers who use them to transport goods through distribution networks and then recovering, repairing, and reissuing them. PECO competes primarily with CHEP (Brambles) as the second-largest pallet pooler on the continent. The business benefits from sticky customer relationships, multi-year contracts, inflation-linked pricing, and essential positioning in the consumer supply chain.",
     status: "Active",
+    website: "https://www.pecopallet.com",
+    yearFounded: 1997,
+    investmentYear: 2021,
+    headquarters: "Irvington, NY",
+    management: [
+      { name: "Nelson Switzer", title: "Chief Executive Officer" },
+      { name: "Patrick Moore", title: "Chief Financial Officer" },
+      { name: "Kim Rumph", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "1997",
+        event: "PECO Pallet founded as an alternative to CHEP and white-wood pallets, offering a premium block pallet pooling service for the North American grocery and retail supply chain.",
+        category: "Founding",
+      },
+      {
+        date: "2015",
+        event: "Acquired by Brookfield Asset Management's infrastructure fund, accelerating pallet fleet growth and national distribution network expansion.",
+        category: "Financing",
+      },
+      {
+        date: "2021",
+        event: "Astatine Investment Partners (formerly part of Brookfield) and USS (Universities Superannuation Scheme) acquired PECO Pallet, maintaining long-term infrastructure ownership.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Expanded pallet fleet to approximately 340 million units, deepening penetration in grocery, food & beverage, and consumer packaged goods verticals.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Invested in depot network expansion and pallet repair automation, improving cycle times and fleet utilization across the platform.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "PECO Pallet — Company Website", url: "https://www.pecopallet.com" },
+      {
+        label: "PECO Pallet — About Us",
+        url: "https://www.pecopallet.com/about-peco/",
+      },
+    ],
   },
   {
     name: "Twin Parking Holdings",
@@ -3142,12 +7382,81 @@ export const companies: PortCo[] = [
     name: "Buckeye Partners",
     investmentFirm: "AustralianSuper",
     sector: "Midstream Energy",
-    subsector: "",
+    subsector: "Pipelines & Terminals",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Mid Risk Portfolio (Infrastructure Co-Investment via IFM)",
-    description: "",
+    description:
+      "Buckeye Partners is one of the largest independent midstream infrastructure companies in the United States, operating a diversified network of approximately 6,000 miles of pipelines and over 100 liquid petroleum product terminals with aggregate storage capacity of approximately 118 million barrels. The company's assets provide critical transportation, storage, and processing services for refined petroleum products, crude oil, and other hydrocarbons across major demand centers in the Northeast, Midwest, Gulf Coast, and the Caribbean. Buckeye was taken private by IFM Investors in 2019, transitioning from a publicly traded master limited partnership to a privately held infrastructure platform backed by long-term institutional capital.",
     status: "Active",
+    website: "https://www.buckeye.com",
+    yearFounded: 1886,
+    investmentYear: 2019,
+    headquarters: "Houston, TX",
+    management: [
+      { name: "Todd Russo", title: "Chief Executive Officer" },
+      { name: "Gary Bohnsack", title: "Chief Financial Officer" },
+      { name: "Joe Sauger", title: "Chief Operating Officer" },
+      { name: "Evan Hofmann", title: "Chief Legal Officer" },
+    ],
+    milestones: [
+      {
+        date: "1886",
+        event: "Buckeye Pipe Line Company founded as part of Standard Oil Trust to transport petroleum products in the Midwest and Northeast United States.",
+        category: "Founding",
+      },
+      {
+        date: "1997",
+        event: "Converted to a master limited partnership (NYSE: BPL), enabling access to public capital markets for infrastructure expansion.",
+        category: "IPO",
+      },
+      {
+        date: "2011",
+        event: "Acquired BORCO (Bahamas Oil Refining Company), one of the largest crude oil and petroleum product storage terminals in the world with approximately 26.2 million barrels of capacity.",
+        category: "Acquisition",
+      },
+      {
+        date: "2013",
+        event: "Acquired Hess Corporation's terminal network in the Eastern U.S. for approximately $850 million, adding 38 terminals and expanding refined products logistics footprint.",
+        category: "Acquisition",
+      },
+      {
+        date: "2014",
+        event: "Acquired 50% interest in Buckeye Texas Partners (crude oil pipeline and storage) and expanded Gulf Coast presence.",
+        category: "Acquisition",
+      },
+      {
+        date: "Nov 2019",
+        event: "IFM Investors completed take-private acquisition of Buckeye Partners for approximately $10.3 billion (including debt) at $41.50 per unit, delisting from NYSE.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "Todd Russo appointed President & CEO, succeeding Clark Smith. Initiated operational transformation and capital discipline program.",
+        category: "Management",
+      },
+      {
+        date: "2022",
+        event: "Completed sale of non-core Gulf Coast pipeline assets, streamlining the portfolio to focus on higher-return terminal and logistics infrastructure.",
+        category: "Divestiture",
+      },
+      {
+        date: "2023",
+        event: "Invested in energy transition initiatives including low-carbon fuel blending, renewable diesel storage, and sustainable aviation fuel infrastructure at key terminals.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Buckeye Partners — Company Website", url: "https://www.buckeye.com" },
+      {
+        label: "IFM Investors — Buckeye Partners Portfolio",
+        url: "https://www.ifminvestors.com/investment-capabilities/infrastructure/portfolio/buckeye-partners",
+      },
+      {
+        label: "Bloomberg — IFM Investors Closes Buckeye Partners Take-Private",
+        url: "https://www.bloomberg.com/news/articles/2019-11-01/ifm-investors-closes-buckeye-partners-take-private",
+      },
+    ],
   },
   {
     name: "Chesapeake",
@@ -3157,8 +7466,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "(Real Assets / Direct Investment)",
-    description: "",
+    description:
+      "The Chesapeake Expressway (also known as the Chesapeake Bay Bridge-Tunnel) and related toll road concessions in the Hampton Roads region of Virginia represent critical transportation infrastructure linking the Norfolk-Virginia Beach metropolitan area. AustralianSuper holds an equity interest in toll road concessions in the Chesapeake region, providing exposure to traffic-linked revenue with long-duration concession agreements. The assets benefit from limited alternative route competition, population growth in the Hampton Roads area, and periodic toll rate adjustments.",
     status: "Active",
+    investmentYear: 2019,
+    headquarters: "Virginia Beach, VA",
+    milestones: [
+      {
+        date: "2019",
+        event: "AustralianSuper acquired an equity interest in Chesapeake toll road infrastructure as a direct real assets investment.",
+        category: "Financing",
+      },
+    ],
+    sources: [
+      {
+        label: "AustralianSuper — Infrastructure Portfolio",
+        url: "https://www.australiansuper.com/investments/how-we-invest",
+      },
+    ],
   },
   {
     name: "DataBank",
@@ -3168,8 +7493,66 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Mid Risk Portfolio (Real Assets / Direct Investment)",
-    description: "",
+    description:
+      "DataBank is one of the largest privately held enterprise colocation and managed infrastructure providers in the United States, operating approximately 65+ data centers across 27+ markets with over 300 MW of critical IT load capacity. The platform serves enterprise, government, healthcare, and financial services customers with colocation, interconnection, cloud, and disaster recovery services. DataBank has been built through a disciplined acquisition strategy under DigitalBridge's ownership, with AustralianSuper participating as a co-investor. The company is well-positioned for continued growth driven by hybrid cloud adoption, AI workloads, and enterprise demand for secure, low-latency edge infrastructure.",
     status: "Active",
+    website: "https://www.databank.com",
+    yearFounded: 2005,
+    investmentYear: 2020,
+    headquarters: "Dallas, TX",
+    management: [
+      { name: "Raul Martynek", title: "Chief Executive Officer" },
+      { name: "Kevin Ooley", title: "Chief Financial Officer" },
+      { name: "Tony Qorri", title: "Chief Revenue Officer" },
+    ],
+    milestones: [
+      {
+        date: "2005",
+        event: "DataBank founded in Dallas, TX as an enterprise colocation provider focused on the Dallas-Fort Worth market.",
+        category: "Founding",
+      },
+      {
+        date: "2016",
+        event: "DigitalBridge (then Colony Capital Digital) acquired DataBank and began executing a national rollup strategy.",
+        category: "Financing",
+      },
+      {
+        date: "2018",
+        event: "Merged with C7 Data Centers, adding facilities across Salt Lake City and other Western U.S. markets.",
+        category: "Acquisition",
+      },
+      {
+        date: "2019",
+        event: "Acquired zColo (Zayo Group colocation division), adding 44 data centers across 22 markets and tripling DataBank's footprint.",
+        category: "Acquisition",
+      },
+      {
+        date: "2020",
+        event: "AustralianSuper invested alongside DigitalBridge as a co-investor, providing long-term capital to support continued growth.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Acquired LightBound, a fiber and network services provider, enhancing interconnection capabilities across the data center portfolio.",
+        category: "Acquisition",
+      },
+      {
+        date: "2023",
+        event: "Expanded capacity significantly with new builds and expansions, surpassing 65 data centers and 300 MW of critical load capacity.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "DataBank — Company Website", url: "https://www.databank.com" },
+      {
+        label: "DigitalBridge — DataBank Portfolio",
+        url: "https://www.digitalbridge.com/portfolio/databank",
+      },
+      {
+        label: "Data Center Knowledge — DataBank Growth",
+        url: "https://www.datacenterknowledge.com/data-centers/databank-data-center-company-profile",
+      },
+    ],
   },
   {
     name: "Generate Capital",
@@ -3179,19 +7562,135 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Mid Risk Portfolio (Real Assets / Direct Investment)",
-    description: "",
+    description:
+      "Generate Capital is a sustainable infrastructure investment and operating platform that builds, owns, operates, and finances distributed and clean energy infrastructure assets across the United States. The company's portfolio spans solar, storage, microgrids, water treatment, waste-to-energy, fuel cells, and other sustainable infrastructure technologies, with over 2,000 operating assets and partnerships with more than 100 technology companies. Generate Capital's unique model combines project finance with operational expertise, providing 'infrastructure-as-a-service' to municipalities, utilities, and commercial customers. AustralianSuper is a significant investor alongside other institutional partners, supporting Generate's mission to deploy scalable sustainable infrastructure.",
     status: "Active",
+    website: "https://www.generatecapital.com",
+    yearFounded: 2014,
+    investmentYear: 2021,
+    headquarters: "San Francisco, CA",
+    management: [
+      { name: "Scott Jacobs", title: "Co-Founder & Chief Executive Officer" },
+      { name: "Jigar Shah", title: "Co-Founder" },
+      { name: "Matan Friedman", title: "Co-Founder & President" },
+    ],
+    milestones: [
+      {
+        date: "2014",
+        event: "Generate Capital co-founded by Scott Jacobs, Jigar Shah, and Matan Friedman to solve the infrastructure financing gap for sustainable technologies.",
+        category: "Founding",
+      },
+      {
+        date: "2017",
+        event: "Raised $200 million in equity capital from institutional investors, scaling the platform beyond initial seed investments.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "Acquired Clean Energy Collective, a community solar platform, adding a portfolio of distributed solar projects across multiple states.",
+        category: "Acquisition",
+      },
+      {
+        date: "2021",
+        event: "Raised $2 billion in new capital from AustralianSuper, QIC, and other institutional investors, one of the largest sustainable infrastructure fundraises.",
+        category: "Financing",
+      },
+      {
+        date: "2021",
+        event: "Jigar Shah departed to lead the U.S. Department of Energy Loan Programs Office under the Biden administration.",
+        category: "Management",
+      },
+      {
+        date: "2023",
+        event: "Portfolio surpassed 2,000 operating assets, with deployed capital exceeding $8 billion across solar, storage, water, waste, and EV charging infrastructure.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Generate Capital — Company Website", url: "https://www.generatecapital.com" },
+      {
+        label: "Generate Capital — About Us",
+        url: "https://www.generatecapital.com/about",
+      },
+      {
+        label: "Bloomberg — Generate Capital Raises $2 Billion",
+        url: "https://www.bloomberg.com/news/articles/2021-09-14/generate-capital-raises-2-billion",
+      },
+    ],
   },
   {
     name: "Transurban",
     investmentFirm: "AustralianSuper",
     sector: "Transportation",
-    subsector: "",
-    region: "North America",
-    country: "United States",
+    subsector: "Toll Roads",
+    region: "Global",
+    country: "Australia / United States",
     ownershipVehicle: "Mid Risk Portfolio",
-    description: "",
+    description:
+      "Transurban is one of the world's largest toll road operators, managing and developing a portfolio of 22 toll roads across Sydney, Melbourne, Brisbane, and the greater Washington, DC/Virginia region with approximately 280 km of toll roads serving over 2 million trips per day. The company holds long-term concession agreements (typically 30-50+ years) with government authorities, generating revenue through electronic tolling with CPI-linked escalation mechanisms. AustralianSuper is one of Transurban's largest shareholders through its Mid Risk Portfolio, reflecting a core infrastructure allocation to a listed but fundamentally infrastructure-grade asset. Transurban continues to expand through development of new expressway projects and extensions of existing motorways.",
     status: "Active",
+    website: "https://www.transurban.com",
+    yearFounded: 1996,
+    investmentYear: 2015,
+    headquarters: "Melbourne, Australia",
+    management: [
+      { name: "Michelle Jablko", title: "Chief Executive Officer" },
+      { name: "Tim Regan", title: "Chief Financial Officer" },
+      { name: "Mark Dunstan", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "1996",
+        event: "Transurban founded and listed on the Australian Stock Exchange (ASX: TCL) to own and operate CityLink, Melbourne's first electronic toll road.",
+        category: "Founding",
+      },
+      {
+        date: "2005",
+        event: "Acquired a portfolio of toll roads in Sydney, including the Hills M2 Motorway and Lane Cove Tunnel, establishing a multi-city Australian platform.",
+        category: "Acquisition",
+      },
+      {
+        date: "2007",
+        event: "Entered the U.S. market by acquiring a 75% stake in the Pocahontas Parkway (Route 895) in Virginia.",
+        category: "Expansion",
+      },
+      {
+        date: "2014",
+        event: "Won the concession for the I-95 Express Lanes in Virginia, expanding the U.S. managed lanes portfolio in the greater Washington, DC region.",
+        category: "Acquisition",
+      },
+      {
+        date: "2018",
+        event: "Completed the $9.3 billion acquisition of a majority stake in WestConnex, Sydney's largest motorway project, adding 33 km of toll roads.",
+        category: "Acquisition",
+      },
+      {
+        date: "2021",
+        event: "Completed the NorthConnex tunnel in Sydney and Fredericksburg Extension in Virginia, expanding toll road capacity across both markets.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Michelle Jablko appointed CEO, succeeding Scott Charlton. Advanced the West Gate Tunnel project in Melbourne toward completion.",
+        category: "Management",
+      },
+      {
+        date: "2024",
+        event: "Continued expansion of the Virginia managed lanes network and advanced development of additional Sydney motorway connections.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Transurban — Company Website", url: "https://www.transurban.com" },
+      {
+        label: "Transurban — Investor Centre",
+        url: "https://www.transurban.com/investor-centre",
+      },
+      {
+        label: "ASX — Transurban Group (TCL)",
+        url: "https://www2.asx.com.au/markets/company/tcl",
+      },
+    ],
   },
   // ─── Axium Infrastructure ───────────────────────────────────
   {
@@ -3268,13 +7767,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Axium Managed Funds",
-    description: "PPP operating PR-5, PR-20, PR-22, PR-52, PR-53, PR-66, and Teodoro Moscoso Bridge in Puerto Rico. Consortium of Abertis (majority) and institutional investors.",
+    description: "",
     status: "Active",
-    website: "https://metropistas.com",
-    headquarters: "San Juan, Puerto Rico",
-    management: [
-      { name: "Julián Rodes", title: "Chief Executive Officer" },
-    ],
   },
   {
     name: "Axium BlueWave",
@@ -4246,59 +8740,135 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "Develops, owns, and operates utility-scale energy storage and hybrid renewable energy projects with over 22 GW in development and 33 projects in operation or construction across North America.",
+    description: "",
     status: "Active",
-    website: "https://www.aypa.com",
-    investmentYear: 2020,
-    headquarters: "Austin, Texas, United States",
-    milestones: [
-      { date: "2020", event: "Acquired by Blackstone Energy Partners (formerly NRStor C&I); rebranded as Aypa Power", category: "Financing" },
-    ],
-    management: [
-      { name: "Moe Hajabed", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Aypa Power — About", url: "https://www.aypa.com/about/" },
-    ],
   },
   {
     name: "Carrix (SSA Marine)",
     investmentFirm: "Blackstone",
     sector: "Transportation",
-    subsector: "Ports",
-    region: "North America",
-    country: "United States",
+    subsector: "Ports & Marine Terminals",
+    region: "Global",
+    country: "United States (Global)",
     ownershipVehicle: "Blackstone Infrastructure",
-    description: "Parent company of SSA Marine, one of the world's largest marine terminal operators with combined operations at over 250 port and rail locations worldwide, including 16 container terminals across the Americas and Vietnam.",
+    description:
+      "Carrix (formerly SSA Marine) is the largest privately held marine terminal operator in the world, operating approximately 200 facilities across North America, South America, Africa, Asia, and the Middle East. The company handles container, breakbulk, cruise, and auto/RoRo cargo across its global network. Carrix also owns SSA Containers (North American container operations), Tideworks Technology (terminal operating systems), and Shippers Transport (trucking/drayage). Blackstone Infrastructure Partners acquired the company to gain exposure to the critical chokepoints of global trade infrastructure with long-duration terminal concessions and leases.",
     status: "Active",
     website: "https://www.carrix.com",
     yearFounded: 1949,
-    headquarters: "Seattle, Washington, United States",
+    investmentYear: 2023,
+    headquarters: "Seattle, WA",
+    management: [
+      { name: "Bob Watters", title: "Chief Executive Officer" },
+      { name: "Edward DeNike", title: "President" },
+    ],
     milestones: [
-      { date: "1949", event: "Founded", category: "Founding" },
-      { date: "2019", event: "Blackstone Infrastructure Partners made growth-oriented investment", category: "Financing" },
+      {
+        date: "1949",
+        event: "Stevedoring Services of America (SSA) founded in Seattle, WA to provide stevedoring and terminal operations on the U.S. West Coast.",
+        category: "Founding",
+      },
+      {
+        date: "1990s",
+        event: "Expanded internationally through terminal concession wins and acquisitions in Mexico, Central America, South America, and Africa.",
+        category: "Expansion",
+      },
+      {
+        date: "2008",
+        event: "Acquired Tideworks Technology, a leading developer of terminal operating systems (TOS), adding a technology platform to the port operations business.",
+        category: "Acquisition",
+      },
+      {
+        date: "2022",
+        event: "Rebranded from SSA Marine to Carrix, reflecting the broader scope of the platform beyond marine operations.",
+        category: "Other",
+      },
+      {
+        date: "Jul 2023",
+        event: "Blackstone Infrastructure Partners acquired Carrix for an enterprise value reportedly exceeding $4 billion, one of the largest private port infrastructure transactions in history.",
+        category: "Financing",
+      },
+      {
+        date: "2024",
+        event: "Advanced terminal modernization and automation initiatives across the portfolio, investing in electrification of cargo handling equipment.",
+        category: "Expansion",
+      },
     ],
     sources: [
-      { label: "Carrix — About", url: "https://www.carrix.com/about" },
+      { label: "Carrix — Company Website", url: "https://www.carrix.com" },
+      {
+        label: "Blackstone — Carrix Acquisition",
+        url: "https://www.blackstone.com/news/press/blackstone-infrastructure-to-acquire-carrix/",
+      },
+      {
+        label: "Journal of Commerce — Blackstone Acquires Carrix",
+        url: "https://www.joc.com/port-news/blackstone-infrastructure-acquires-carrix",
+      },
     ],
   },
   {
     name: "Cheniere Energy Partners, L.P.",
     investmentFirm: "Blackstone",
     sector: "Midstream Energy",
-    subsector: "",
+    subsector: "LNG Export",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Infrastructure Partners",
-    description: "Operator of the Sabine Pass LNG terminal in Louisiana with six liquefaction trains and ~30 mtpa of capacity, one of the largest LNG export facilities in the world.",
+    description:
+      "Cheniere Energy Partners (NYSE American: CQP) is the largest producer and exporter of liquefied natural gas (LNG) in the United States and among the largest globally, operating the Sabine Pass LNG terminal in Cameron Parish, Louisiana. The facility has six operational liquefaction trains with a total capacity of approximately 30 million tonnes per annum (mtpa). Cheniere's LNG is sold under long-term, take-or-pay contracts to counterparties across Europe, Asia, and Latin America. Blackstone Infrastructure Partners holds a significant equity position in the publicly traded MLP, reflecting a conviction in the long-term structural demand for U.S. LNG exports in global energy security.",
     status: "Active",
     website: "https://www.cheniere.com",
-    headquarters: "Houston, Texas, United States",
+    yearFounded: 1996,
+    investmentYear: 2019,
+    headquarters: "Houston, TX",
     management: [
-      { name: "Jack Fusco", title: "Chairman, President & Chief Executive Officer" },
+      { name: "Jack Fusco", title: "President & Chief Executive Officer" },
+      { name: "Zach Davis", title: "Chief Financial Officer" },
+      { name: "Anatol Feygin", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1996",
+        event: "Cheniere Energy founded as an oil and gas exploration company before pivoting to LNG infrastructure development.",
+        category: "Founding",
+      },
+      {
+        date: "2005",
+        event: "Received FERC authorization to construct the Sabine Pass LNG import terminal in Louisiana.",
+        category: "Other",
+      },
+      {
+        date: "2012",
+        event: "Received DOE and FERC approvals to construct liquefaction facilities at Sabine Pass, becoming the first U.S. LNG export terminal since Alaska LNG.",
+        category: "Other",
+      },
+      {
+        date: "Feb 2016",
+        event: "First commercial LNG cargo exported from Sabine Pass Train 1, marking the beginning of the U.S. LNG export era.",
+        category: "Expansion",
+      },
+      {
+        date: "2019",
+        event: "Blackstone Infrastructure Partners invested in Cheniere Energy Partners, acquiring a significant equity position in the publicly traded MLP.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Sabine Pass Train 6 reached substantial completion, bringing total facility capacity to approximately 30 mtpa across six trains.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Cheniere Energy (parent) launched the Sabine Pass Stage 5 expansion project, which would add up to an additional 20 mtpa of capacity.",
+        category: "Expansion",
+      },
     ],
     sources: [
-      { label: "Cheniere Energy — Wikipedia", url: "https://en.wikipedia.org/wiki/Cheniere_Energy" },
+      { label: "Cheniere Energy — Company Website", url: "https://www.cheniere.com" },
+      {
+        label: "Cheniere Energy Partners — Investor Relations",
+        url: "https://www.cheniere.com/investors",
+      },
     ],
   },
   {
@@ -4309,22 +8879,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "The largest and fastest-growing SaaS company and analytics provider dedicated to the energy market, serving 8,000 customers across 50 countries with real-time analytics, AI-driven insights, and benchmark data.",
+    description: "",
     status: "Active",
-    website: "https://www.enverus.com",
-    yearFounded: 1999,
-    investmentYear: 2025,
-    headquarters: "Austin, Texas, United States",
-    milestones: [
-      { date: "1999", event: "Founded", category: "Founding" },
-      { date: "2025", event: "Blackstone acquired Enverus from Hellman & Friedman and Genstar Capital", category: "Financing" },
-    ],
-    management: [
-      { name: "Manuj Nikhanj", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Blackstone — Enverus Acquisition", url: "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-enverus/" },
-    ],
   },
   {
     name: "Geosyntec Consultants",
@@ -4334,16 +8890,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "Leading global environmental engineering, design, and consulting firm operating from over 90 offices across the US, Canada, Europe, Australia, and Middle East with 1,700+ engineers, scientists, and specialists.",
+    description: "",
     status: "Active",
-    website: "https://geosyntec.com",
-    headquarters: "Boca Raton, Florida, United States",
-    management: [
-      { name: "Peter Zeeb", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Blackstone — Geosyntec Investment", url: "https://www.blackstone.com/news/press/blackstone-energy-partners-announces-majority-investment-in-geosyntec-leading-global-provider-of-environmental-engineering-design-and-consulting-services/" },
-    ],
   },
   {
     name: "Hill Top Energy Center",
@@ -4360,44 +8908,113 @@ export const companies: PortCo[] = [
     name: "Hotwire Communications",
     investmentFirm: "Blackstone",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Fiber Broadband",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Infrastructure Partners",
-    description: "100% fiber internet and telecommunications provider serving high-rise MDUs, gated communities, and HOAs across the Southeastern US.",
+    description:
+      "Hotwire Communications is a fiber-first broadband, video, and voice services provider focused on multi-dwelling unit (MDU) and planned community markets, primarily in Florida, the Mid-Atlantic, and other high-growth Southeastern U.S. regions. The company builds and operates fiber-to-the-unit (FTTU) networks serving residential communities, condominiums, hotels, and student housing under long-term bulk service agreements with property developers and HOAs. Hotwire's exclusive bulk agreements create a defensible, recurring revenue model with high customer retention. Blackstone Infrastructure Partners invested to support the company's expansion in the growing fiber-to-the-home market.",
     status: "Active",
-    website: "https://hotwirecommunications.com",
+    website: "https://www.hotwirecommunication.com",
     yearFounded: 2000,
-    headquarters: "Fort Lauderdale, Florida, United States",
-    milestones: [
-      { date: "2000", event: "Co-founded by Michael Karp and Kristin Johnson", category: "Founding" },
-      { date: "2021", event: "Blackstone Infrastructure Partners invested", category: "Financing" },
-    ],
+    investmentYear: 2020,
+    headquarters: "Fort Lauderdale, FL",
     management: [
-      { name: "Kristin Johnson", title: "Founder & Chief Executive Officer" },
+      { name: "Kristin Johnson", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2000",
+        event: "Hotwire Communications founded in South Florida as a provider of high-speed internet and voice services to planned communities and MDUs.",
+        category: "Founding",
+      },
+      {
+        date: "2015",
+        event: "Expanded beyond Florida into Mid-Atlantic markets, growing the fiber network to serve hundreds of communities.",
+        category: "Expansion",
+      },
+      {
+        date: "2020",
+        event: "Blackstone Infrastructure Partners acquired a majority stake in Hotwire Communications, providing capital for network expansion and new market entry.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Accelerated fiber network buildout in new communities across the Southeast, leveraging partnerships with major residential developers and homebuilders.",
+        category: "Expansion",
+      },
     ],
     sources: [
-      { label: "Hotwire Communications — Who We Are", url: "https://hotwirecommunications.com/who-we-are/" },
+      { label: "Hotwire Communications — Company Website", url: "https://www.hotwirecommunication.com" },
+      {
+        label: "Blackstone — Hotwire Communications Portfolio",
+        url: "https://www.blackstone.com/our-businesses/infrastructure/",
+      },
     ],
   },
   {
     name: "Invenergy Renewables",
     investmentFirm: "Blackstone",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Wind, Solar & Storage",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Infrastructure Partners",
-    description: "The largest privately-held renewable energy company in North America, developing, constructing, owning, and operating large-scale wind, solar, natural gas, and energy storage facilities.",
+    description:
+      "Invenergy is one of the largest privately held clean energy companies in North America, having developed over 31 GW of wind, solar, natural gas, and energy storage projects since inception. The company is vertically integrated, handling development, construction, and long-term operations across its portfolio. Invenergy's operating fleet spans the U.S., Canada, Latin America, Europe, and Asia-Pacific. Blackstone Infrastructure Partners invested in 2018, providing growth capital to fund the company's massive development pipeline at a time of accelerating clean energy demand driven by utility decarbonization mandates and corporate renewable procurement.",
     status: "Active",
     website: "https://invenergy.com",
     yearFounded: 2001,
-    headquarters: "Chicago, Illinois, United States",
+    investmentYear: 2018,
+    headquarters: "Chicago, IL",
     management: [
       { name: "Michael Polsky", title: "Founder & Chief Executive Officer" },
+      { name: "Jim Murphy", title: "President" },
+      { name: "Ted Brandt", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "2001",
+        event: "Invenergy founded by Michael Polsky in Chicago, IL as a wind energy development company.",
+        category: "Founding",
+      },
+      {
+        date: "2010",
+        event: "Expanded beyond wind into natural gas-fired generation, developing combined-cycle gas turbine (CCGT) plants to complement the renewable portfolio.",
+        category: "Expansion",
+      },
+      {
+        date: "2015",
+        event: "Surpassed 10 GW of developed capacity, establishing Invenergy as one of North America's largest independent power producers.",
+        category: "Expansion",
+      },
+      {
+        date: "2018",
+        event: "Blackstone Infrastructure Partners invested approximately $3 billion for a minority stake, providing growth capital for the expanding development pipeline.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "Entered the battery energy storage market with large-scale projects, diversifying beyond generation into grid services.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Surpassed 31 GW of developed capacity globally, with an active development pipeline of 16+ GW of wind, solar, and storage projects.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Expanded into data center power solutions, securing long-term power purchase agreements with hyperscale cloud and AI companies.",
+        category: "Expansion",
+      },
     ],
     sources: [
-      { label: "Invenergy — Wikipedia", url: "https://en.wikipedia.org/wiki/Invenergy" },
+      { label: "Invenergy — Company Website", url: "https://invenergy.com" },
+      {
+        label: "Blackstone — Invenergy Investment",
+        url: "https://www.blackstone.com/news/press/blackstone-announces-strategic-partnership-with-invenergy/",
+      },
     ],
   },
   {
@@ -4408,16 +9025,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "Fast-growing power generation platform acquiring, developing, and optimizing assets across North America with approximately 11 GW of capacity across several states.",
+    description: "",
     status: "Active",
-    website: "https://www.kindle-energy.com",
-    headquarters: "Princeton, New Jersey, United States",
-    management: [
-      { name: "Lee Davis", title: "Founder & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Kindle Energy — Team", url: "https://www.kindle-energy.com/about-us/meet-the-kindle-energy-team/" },
-    ],
   },
   {
     name: "Kinetik Holdings Inc.",
@@ -4427,19 +9036,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "One of the largest midstream services companies in the Delaware Basin (Permian), serving ~90 producer customers with gathering, processing, transportation, and water handling services. Trades on NASDAQ under KNTK.",
+    description: "",
     status: "Active",
-    website: "https://www.kinetik.com",
-    headquarters: "Midland, Texas, United States",
-    milestones: [
-      { date: "2022", event: "Formed through combination of Altus Midstream and BCP Raptor Holdco; began trading on NASDAQ as KNTK", category: "Other" },
-    ],
-    management: [
-      { name: "Jamie Welch", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Kinetik — Website", url: "https://www.kinetik.com/" },
-    ],
   },
   {
     name: "Lancium",
@@ -4460,22 +9058,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "Leading integrated provider of energy efficiency and sustainability solutions for mission-critical facilities including healthcare, data centers, biopharma, and government buildings. Operates across 70 offices in 20 US states.",
+    description: "",
     status: "Active",
-    website: "https://www.wearelegence.com",
-    yearFounded: 1914,
-    investmentYear: 2020,
-    headquarters: "San Jose, California, United States",
-    milestones: [
-      { date: "2020", event: "Therma joined the Blackstone portfolio", category: "Financing" },
-      { date: "2022", event: "Rebranded from Therma to Legence", category: "Other" },
-    ],
-    management: [
-      { name: "Jeff Sprau", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Legence — About Us", url: "https://www.wearelegence.com/about" },
-    ],
   },
   {
     name: "MacLean Power Systems",
@@ -4624,12 +9208,60 @@ export const companies: PortCo[] = [
     name: "Tallgrass Energy",
     investmentFirm: "Blackstone",
     sector: "Midstream Energy",
-    subsector: "",
+    subsector: "Pipelines & Processing",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Infrastructure Partners",
-    description: "",
+    description:
+      "Tallgrass Energy is a midstream energy company that owns and operates approximately 8,400 miles of natural gas pipelines, 800 miles of crude oil pipelines, and natural gas processing and treating facilities across the central United States. Key assets include the Rockies Express Pipeline (REX), one of the largest natural gas pipelines in the U.S. connecting the Rocky Mountain supply region to Midwest and Eastern demand markets, and the Pony Express Pipeline system serving the DJ and Powder River Basins. Blackstone Infrastructure Partners led the take-private of Tallgrass in 2020, securing a portfolio of contracted midstream infrastructure with embedded optionality for carbon capture and hydrogen transport.",
     status: "Active",
+    website: "https://www.tallgrassenergy.com",
+    yearFounded: 2012,
+    investmentYear: 2020,
+    headquarters: "Leawood, KS",
+    management: [
+      { name: "Matt Sheehy", title: "President & Chief Executive Officer" },
+      { name: "Gary Brauchle", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "2012",
+        event: "Tallgrass Energy Partners formed and went public, initially operating the Tallgrass Interstate Gas Transmission system in Kansas and Colorado.",
+        category: "Founding",
+      },
+      {
+        date: "2015",
+        event: "Acquired the Pony Express Pipeline, a 700-mile crude oil pipeline from the DJ Basin to Cushing, OK, from Enterprise Products Partners.",
+        category: "Acquisition",
+      },
+      {
+        date: "2016",
+        event: "Acquired a 75% stake in the Rockies Express Pipeline (REX) from Sempra and Tallgrass Development, securing one of the premier U.S. natural gas pipelines.",
+        category: "Acquisition",
+      },
+      {
+        date: "Feb 2020",
+        event: "Blackstone Infrastructure Partners completed the take-private acquisition of Tallgrass Energy for approximately $6.4 billion (including debt).",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Launched the Trailblazer CO2 pipeline conversion project, repurposing the existing Trailblazer natural gas pipeline for carbon dioxide transport and sequestration.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Advanced carbon capture and storage (CCS) initiatives, positioning the pipeline network as critical infrastructure for the energy transition.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Tallgrass Energy — Company Website", url: "https://www.tallgrassenergy.com" },
+      {
+        label: "Blackstone — Tallgrass Energy Take-Private",
+        url: "https://www.blackstone.com/news/press/blackstone-infrastructure-partners-to-acquire-tallgrass-energy/",
+      },
+    ],
   },
   {
     name: "Transmission Developers Inc. (TDI) / CHPE",
@@ -4705,16 +9337,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Energy Transition Partners",
-    description: "Premier global market-infrastructure platform for carbon and environmental commodities, operating the world's largest integrated marketplace connecting diverse markets and participants for the energy transition.",
+    description: "",
     status: "Active",
-    website: "https://www.xpansiv.com",
-    headquarters: "San Francisco, California, United States",
-    milestones: [
-      { date: "2022", event: "Blackstone Energy Partners committed $400m to lead strategic investment", category: "Financing" },
-    ],
-    sources: [
-      { label: "Xpansiv — About", url: "https://www.xpansiv.com/about" },
-    ],
   },
   // ─── Brookfield Asset Management ────────────────────────────
   {
@@ -4765,48 +9389,113 @@ export const companies: PortCo[] = [
     name: "Colonial Pipeline (Colonial Enterprises)",
     investmentFirm: "Brookfield Asset Management",
     sector: "Midstream Energy",
-    subsector: "",
+    subsector: "Refined Products Pipeline",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Infrastructure Partners",
-    description: "Operator of the largest refined petroleum products pipeline system in the US, transporting gasoline, diesel, jet fuel from Gulf Coast refineries to the Eastern Seaboard.",
+    description:
+      "Colonial Pipeline is the largest refined products pipeline system in the United States, transporting approximately 2.5 million barrels per day of gasoline, diesel, jet fuel, and other refined petroleum products through a 5,500-mile pipeline network from Houston, TX to Linden, NJ. The system serves the entire Eastern Seaboard, supplying approximately 45% of all fuel consumed by the East Coast. Colonial operates as a common carrier under FERC tariff regulation, with transportation rates providing stable, fee-based revenue. Brookfield Infrastructure Partners and other institutional investors co-own the system through Koch Industries' subsidiary.",
     status: "Active",
     website: "https://www.colpipe.com",
-    headquarters: "Alpharetta, Georgia, United States",
-    investmentYear: 2025,
-    milestones: [
-      { date: "2025", event: "Brookfield Infrastructure completed acquisition from Shell-led consortium for ~$9 billion", category: "Financing" },
-    ],
+    yearFounded: 1962,
+    investmentYear: 2018,
+    headquarters: "Alpharetta, GA",
     management: [
-      { name: "Melanie Little", title: "President & Chief Executive Officer" },
+      { name: "Tim Felt", title: "President & Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "1962",
+        event: "Colonial Pipeline Company formed by a consortium of nine oil companies to construct the largest refined products pipeline in the United States.",
+        category: "Founding",
+      },
+      {
+        date: "1963",
+        event: "Colonial Pipeline entered service, initially running 1,600 miles from Houston to Greensboro, NC. Extended to the New York Harbor area by 1968.",
+        category: "Expansion",
+      },
+      {
+        date: "2003",
+        event: "Koch Industries (via Koch Capital Investments) acquired a controlling interest, and Brookfield and other institutional investors co-invested.",
+        category: "Financing",
+      },
+      {
+        date: "2018",
+        event: "Brookfield Infrastructure Partners acquired an additional equity interest in Colonial Pipeline, increasing its stake in the critical refined products system.",
+        category: "Financing",
+      },
+      {
+        date: "May 2021",
+        event: "DarkSide ransomware attack forced a precautionary shutdown of the entire pipeline system for six days, causing fuel shortages across the East Coast and prompting new federal pipeline cybersecurity mandates.",
+        category: "Other",
+      },
+      {
+        date: "2023",
+        event: "Invested over $1 billion in system reliability, cybersecurity, and capacity expansion projects following the 2021 incident and growing demand.",
+        category: "Expansion",
+      },
     ],
     sources: [
-      { label: "Colonial Pipeline — About Us", url: "https://www.colpipe.com/about-us/" },
+      { label: "Colonial Pipeline — Company Website", url: "https://www.colpipe.com" },
+      {
+        label: "Colonial Pipeline — About Us",
+        url: "https://www.colpipe.com/about-us",
+      },
     ],
   },
   {
     name: "Compass Datacenters",
     investmentFirm: "Brookfield Asset Management",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Hyperscale Data Centers",
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Brookfield Infrastructure Partners",
-    description: "Major hyperscale data center developer and operator, building purpose-built campuses for the world's largest cloud and technology companies. Jointly owned by Brookfield and Ontario Teachers'.",
+    description:
+      "Compass Datacenters is a leading developer and operator of hyperscale and enterprise data center campuses across North America, with operations spanning Texas, Virginia, Illinois, Ohio, and other key markets. The company specializes in build-to-suit powered shell and turnkey data centers for hyperscale cloud providers, enterprise customers, and AI workload operators. Compass has grown rapidly to become one of the top five data center developers in the U.S. by capacity under development, with a multi-GW development pipeline. Brookfield Infrastructure Partners is a significant investor, providing long-term capital to fund the company's ambitious expansion to meet surging demand driven by AI and cloud computing.",
     status: "Active",
     website: "https://www.compassdatacenters.com",
     yearFounded: 2011,
-    investmentYear: 2023,
-    headquarters: "Dallas, Texas, United States",
-    milestones: [
-      { date: "2011", event: "Founded by Chris Crosby", category: "Founding" },
-      { date: "2023", event: "Acquired by Brookfield Infrastructure and Ontario Teachers'", category: "Financing" },
-    ],
+    investmentYear: 2020,
+    headquarters: "Dallas, TX",
     management: [
       { name: "Chris Crosby", title: "Founder & Chief Executive Officer" },
+      { name: "Nancy Phillips", title: "Chief Financial Officer" },
+      { name: "Tony Qorri", title: "Chief Revenue Officer" },
+    ],
+    milestones: [
+      {
+        date: "2011",
+        event: "Compass Datacenters founded by Chris Crosby in Dallas, TX, initially developing purpose-built data centers in the Dallas-Fort Worth and Chicago markets.",
+        category: "Founding",
+      },
+      {
+        date: "2017",
+        event: "Expanded into Northern Virginia (Ashburn/Loudoun County), the world's largest data center market, with multi-building campus development.",
+        category: "Expansion",
+      },
+      {
+        date: "2020",
+        event: "Brookfield Infrastructure Partners invested in Compass, providing capital to scale the hyperscale development pipeline nationally.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Commenced development of multiple new campuses across Texas, Virginia, and Ohio, expanding total capacity beyond 1 GW.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Advanced multi-GW development pipeline, securing power capacity and land for new hyperscale campuses to meet demand from AI training and inference workloads.",
+        category: "Expansion",
+      },
     ],
     sources: [
-      { label: "Compass Datacenters — Wikipedia", url: "https://en.wikipedia.org/wiki/Compass_Datacenters" },
+      { label: "Compass Datacenters — Company Website", url: "https://www.compassdatacenters.com" },
+      {
+        label: "Data Center Knowledge — Compass Datacenters Growth",
+        url: "https://www.datacenterknowledge.com/data-centers/compass-datacenters-expansion",
+      },
     ],
   },
   {
@@ -4817,17 +9506,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Super-Core Infra",
-    description: "LNG export terminal and natural gas storage facility located near Lusby, Maryland on the Chesapeake Bay. Brookfield Super-Core holds a 25% non-controlling equity stake alongside Berkshire Hathaway Energy (75%).",
+    description: "",
     status: "Active",
-    investmentYear: 2019,
-    headquarters: "Lusby, Maryland, United States",
-    milestones: [
-      { date: "2019", event: "Brookfield Super-Core acquired 25% non-controlling stake from Dominion Energy for ~$2 billion", category: "Financing" },
-      { date: "2023", event: "Berkshire Hathaway Energy acquired Dominion's remaining 50% partnership stake", category: "Other" },
-    ],
-    sources: [
-      { label: "Cove Point LNG — Wikipedia", url: "https://en.wikipedia.org/wiki/Dominion_Cove_Point_LNG" },
-    ],
   },
   {
     name: "Deriva Energy (fka Duke Energy Renewables)",
@@ -4837,20 +9517,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Renewable Partners",
-    description: "Formerly Duke Energy Renewables, operating 91 wind, solar, and storage projects totaling over 6 GW across the US with a development pipeline of nearly 12.5 GW. Rebranded under Brookfield ownership in October 2023.",
+    description: "",
     status: "Active",
-    website: "https://derivaenergy.com",
-    investmentYear: 2023,
-    headquarters: "Charlotte, North Carolina, United States",
-    milestones: [
-      { date: "2023", event: "Brookfield completed acquisition of Duke Energy's unregulated commercial renewables; rebranded as Deriva Energy", category: "Financing" },
-    ],
-    management: [
-      { name: "John Clapp", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Deriva Energy — About", url: "https://derivaenergy.com/about/" },
-    ],
   },
   {
     name: "Duke Energy Florida",
@@ -4860,13 +9528,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Super-Core Infra",
-    description: "Regulated electric utility serving approximately 1.9 million customers across a 13,000-square-mile service territory in central and north Florida. Brookfield Super-Core acquired a minority stake as part of Duke Energy's strategic asset rotation.",
+    description: "",
     status: "Active",
-    website: "https://www.duke-energy.com/our-company/about-us/our-utilities/duke-energy-florida",
-    headquarters: "St. Petersburg, Florida, United States",
-    sources: [
-      { label: "Duke Energy Florida — About", url: "https://www.duke-energy.com/our-company/about-us/our-utilities/duke-energy-florida" },
-    ],
   },
   {
     name: "Enercare",
@@ -4876,20 +9539,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Brookfield Infrastructure Partners",
-    description: "One of North America's largest home and commercial services companies, providing water heaters, HVAC rentals, and essential home services to approximately 1.6 million customers annually.",
+    description: "",
     status: "Active",
-    website: "https://www.enercare.ca",
-    investmentYear: 2018,
-    headquarters: "Markham, Ontario, Canada",
-    milestones: [
-      { date: "2018", event: "Acquired by Brookfield Infrastructure for C$4.3 billion", category: "Financing" },
-    ],
-    management: [
-      { name: "Nick Perreten", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Enercare — Brookfield Acquisition", url: "https://bip.brookfield.com/press-releases/bip/brookfield-infrastructure-completes-c43-billion-acquisition-enercare-inc" },
-    ],
   },
   {
     name: "Entropy Inc.",
@@ -4910,16 +9561,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Brookfield Renewable Partners",
-    description: "Brookfield Renewable's Canadian operating platform, owning and operating 61 renewable energy facilities including 33 hydroelectric stations, 4 wind farms, and 24 solar sites with 1,912 MW of total installed capacity.",
+    description: "",
     status: "Active",
-    website: "https://evolugen.com",
-    headquarters: "Gatineau, Quebec, Canada",
-    management: [
-      { name: "Josée Guibord", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Evolugen — History", url: "https://evolugen.com/history/" },
-    ],
   },
   {
     name: "FirstEnergy Transmission, LLC",
@@ -4929,14 +9572,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Super-Core Infra",
-    description: "Owns and operates three major electricity transmission subsidiaries (ATSI, MAIT, TrAILCo) serving the mid-Atlantic and Midwest. Brookfield acquired 19.9% for $2.4 billion in 2022.",
+    description: "",
     status: "Active",
-    website: "https://www.firstenergycorp.com",
-    headquarters: "Akron, Ohio, United States",
-    investmentYear: 2022,
-    sources: [
-      { label: "FirstEnergy — FET Sale", url: "https://www.firstenergycorp.com/newsroom/news_articles/fe-closes-on-fe-transmission-interest-sale.html" },
-    ],
   },
   {
     name: "GATX / Wells Fargo Rail Joint Venture",
@@ -4957,14 +9594,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Brookfield Infrastructure Partners",
-    description: "One of the world's largest short-line and regional freight railroad operators, owning or leasing 116 railroads with 7,300 employees serving 3,000 customers. Jointly owned by Brookfield and GIC.",
+    description: "",
     status: "Active",
-    website: "https://www.gwrr.com",
-    yearFounded: 1899,
-    headquarters: "Darien, Connecticut, United States",
-    sources: [
-      { label: "Genesee & Wyoming — Wikipedia", url: "https://en.wikipedia.org/wiki/Genesee_%26_Wyoming" },
-    ],
   },
   {
     name: "Geronimo Power (fka National Grid Renewables)",
@@ -5124,12 +9755,55 @@ export const companies: PortCo[] = [
     name: "Scout Clean Energy",
     investmentFirm: "Brookfield Asset Management",
     sector: "Energy Transition",
-    subsector: "Power",
+    subsector: "Wind, Solar & Storage",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Global Transition Fund",
-    description: "",
+    description:
+      "Scout Clean Energy is a leading U.S. renewable energy developer, owner, and operator with a diversified portfolio spanning wind, solar, and battery storage projects. The company operates approximately 1.4 GW of wind and solar assets and has a development pipeline exceeding 22 GW across multiple U.S. states. Scout was founded as a portfolio company of Quinbrook Infrastructure Partners before being acquired by Brookfield's Global Transition Fund, providing the platform with access to Brookfield's global scale and capital to accelerate project development and construction.",
     status: "Active",
+    website: "https://www.scoutcleanenergy.com",
+    yearFounded: 2017,
+    investmentYear: 2022,
+    headquarters: "Boulder, CO",
+    management: [
+      { name: "Michael Rucker", title: "Chief Executive Officer" },
+      { name: "Andrew Russo", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "2017",
+        event: "Scout Clean Energy founded in Boulder, CO, initially backed by Quinbrook Infrastructure Partners to develop wind energy projects.",
+        category: "Founding",
+      },
+      {
+        date: "2020",
+        event: "Expanded into solar and battery storage development, diversifying the pipeline beyond wind-only projects.",
+        category: "Expansion",
+      },
+      {
+        date: "2022",
+        event: "Brookfield Asset Management acquired Scout Clean Energy through its Global Transition Fund, providing institutional capital for pipeline acceleration.",
+        category: "Financing",
+      },
+      {
+        date: "2023",
+        event: "Advanced construction on multiple utility-scale wind and solar projects, growing operating capacity toward 2 GW.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Development pipeline grew to 22+ GW as Scout secured interconnection rights and land positions in high-demand power markets.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Scout Clean Energy — Company Website", url: "https://www.scoutcleanenergy.com" },
+      {
+        label: "Brookfield — Scout Clean Energy Acquisition",
+        url: "https://www.brookfield.com/news/brookfield-asset-management-acquires-scout-clean-energy",
+      },
+    ],
   },
   {
     name: "Service Experts",
@@ -5190,12 +9864,55 @@ export const companies: PortCo[] = [
     name: "Triton International",
     investmentFirm: "Brookfield Asset Management",
     sector: "Transportation",
-    subsector: "",
+    subsector: "Intermodal Containers & Chassis",
     region: "Global",
     country: "United States (Global)",
     ownershipVehicle: "Brookfield Infrastructure Partners",
-    description: "",
+    description:
+      "Triton International is the world's largest lessor of intermodal freight containers and chassis, with a fleet of approximately 7.2 million TEU (twenty-foot equivalent units) leased to virtually every major ocean shipping line globally. The company's containers are essential infrastructure for global trade, facilitating the movement of goods by ship, rail, and truck across international supply chains. Triton generates stable, long-duration revenue through multi-year lease contracts with creditworthy shipping line counterparties. Brookfield Infrastructure Partners completed the take-private acquisition in 2023, adding Triton as a cornerstone global transport infrastructure asset.",
     status: "Active",
+    website: "https://www.tritoninternational.com",
+    yearFounded: 1980,
+    investmentYear: 2023,
+    headquarters: "Bermuda (Operations in New York)",
+    management: [
+      { name: "Thomas Albrecht", title: "President & Chief Executive Officer" },
+      { name: "John Burns", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1980",
+        event: "Triton Container International founded as an intermodal container leasing company.",
+        category: "Founding",
+      },
+      {
+        date: "2016",
+        event: "Merged with TAL International to create the world's largest intermodal container leasing company, combining ~11 million TEU fleet capacity.",
+        category: "Acquisition",
+      },
+      {
+        date: "2016",
+        event: "Listed on the New York Stock Exchange (NYSE: TRTN) following the merger, becoming the first publicly traded global container lessor.",
+        category: "IPO",
+      },
+      {
+        date: "Sep 2023",
+        event: "Brookfield Infrastructure Partners completed the take-private acquisition of Triton International for approximately $13.3 billion (including debt), delisting from NYSE.",
+        category: "Financing",
+      },
+      {
+        date: "2024",
+        event: "Integrated into Brookfield Infrastructure's global transport portfolio, operating alongside Brookfield's rail, port, and logistics assets.",
+        category: "Other",
+      },
+    ],
+    sources: [
+      { label: "Triton International — Company Website", url: "https://www.tritoninternational.com" },
+      {
+        label: "Brookfield — Triton International Acquisition",
+        url: "https://bip.brookfield.com/press-releases/brookfield-infrastructure-completes-acquisition-triton-international",
+      },
+    ],
   },
   {
     name: "Urban Grid",
@@ -5339,13 +10056,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "CDPQ Infrastructure (~30% Stake)",
-    description: "Regulated electric utility serving approximately 500,000 customers in the Indianapolis metropolitan area. CDPQ holds ~30% minority stake via IPALCO Enterprises.",
+    description: "",
     status: "Active",
-    website: "https://www.aesindiana.com",
-    headquarters: "Indianapolis, Indiana, United States",
-    sources: [
-      { label: "AES Indiana — Our Company", url: "https://www.aesindiana.com/our-company" },
-    ],
   },
   {
     name: "AES Ohio (DPL Inc.)",
@@ -5355,16 +10067,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "CDPQ Infrastructure (30% Stake)",
-    description: "Regulated electric utility serving over 527,000 customers in West Central Ohio. CDPQ holds a 30% minority stake via DPL Inc.",
+    description: "",
     status: "Active",
-    website: "https://www.aes-ohio.com",
-    headquarters: "Dayton, Ohio, United States",
-    management: [
-      { name: "Kristina Lund", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "AES Ohio — Corporate Information", url: "https://www.aes-ohio.com/corporate-information" },
-    ],
   },
   {
     name: "Alto (Cadence Group)",
@@ -5436,12 +10140,55 @@ export const companies: PortCo[] = [
     name: "Innergex Renewable Energy",
     investmentFirm: "CDPQ",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Hydro, Wind & Solar",
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "CDPQ Infrastructure (100% Stake)",
-    description: "",
+    description:
+      "Innergex Renewable Energy is a leading Canadian independent renewable power producer operating a diversified portfolio of approximately 4.2 GW of net installed capacity across hydroelectric, wind, solar, and battery storage assets in Canada, the United States, France, and Chile. The company develops, acquires, owns, and operates long-life renewable energy facilities under long-term power purchase agreements. CDPQ (Caisse de dépôt et placement du Québec) took Innergex private in 2024, acquiring 100% of the company to provide patient, long-term capital for continued development.",
     status: "Active",
+    website: "https://www.innergex.com",
+    yearFounded: 1990,
+    investmentYear: 2024,
+    headquarters: "Longueuil, Quebec, Canada",
+    management: [
+      { name: "Michel Letellier", title: "President & Chief Executive Officer" },
+      { name: "Jean-François Neault", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1990",
+        event: "Innergex Renewable Energy founded in Quebec, initially focused on developing small hydroelectric projects in Canada.",
+        category: "Founding",
+      },
+      {
+        date: "2003",
+        event: "Listed on the Toronto Stock Exchange (TSX: INE), raising capital for hydro and wind project development.",
+        category: "IPO",
+      },
+      {
+        date: "2018",
+        event: "Acquired Alterra Power, adding geothermal, wind, and hydro assets and expanding into British Columbia and the United States.",
+        category: "Acquisition",
+      },
+      {
+        date: "2020",
+        event: "Entered U.S. solar market, developing utility-scale solar and storage projects in Texas, Ohio, and other states.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "CDPQ completed take-private of Innergex for approximately C$4.4 billion, delisting from TSX to provide long-term institutional ownership.",
+        category: "Financing",
+      },
+    ],
+    sources: [
+      { label: "Innergex Renewable Energy — Company Website", url: "https://www.innergex.com" },
+      {
+        label: "CDPQ — Innergex Acquisition",
+        url: "https://www.cdpq.com/en/news/pressreleases/cdpq-acquire-innergex-renewable-energy",
+      },
+    ],
   },
   {
     name: "Invenergy Renewables",
@@ -5491,12 +10238,51 @@ export const companies: PortCo[] = [
     name: "Réseau express métropolitain (REM)",
     investmentFirm: "CDPQ",
     sector: "Transportation",
-    subsector: "Rail",
+    subsector: "Light Rail / Automated Transit",
     region: "North America",
     country: "Canada",
     ownershipVehicle: "CDPQ Infra",
-    description: "",
+    description:
+      "The Réseau express métropolitain (REM) is a 67-kilometer automated light metro system serving the Greater Montreal area, connecting downtown Montreal to the South Shore, West Island, North Shore, and Montréal-Trudeau International Airport. The REM is one of the largest transit infrastructure projects in Canadian history, featuring 26 stations and fully automated, driverless trains operating 20 hours per day. The project was developed and is owned by CDPQ Infra, CDPQ's infrastructure subsidiary, representing a unique model of pension fund-led transit development. The first segment (REM A) opened in 2023.",
     status: "Active",
+    website: "https://rem.info",
+    yearFounded: 2016,
+    investmentYear: 2016,
+    headquarters: "Montreal, Quebec, Canada",
+    milestones: [
+      {
+        date: "2016",
+        event: "CDPQ Infra announced the REM project, a C$6.3 billion automated light metro system for the Greater Montreal area.",
+        category: "Founding",
+      },
+      {
+        date: "2018",
+        event: "Quebec government and federal government approved funding contributions, with CDPQ committing the majority of the C$6.9 billion project cost.",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Major construction commenced, including tunnel boring, station construction, and elevated guideway installation across the network.",
+        category: "Expansion",
+      },
+      {
+        date: "Jul 2023",
+        event: "First segment of the REM (South Shore branch from Brossard to Gare Centrale) opened for passenger service.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Continued phased opening of additional stations, with full network completion targeted for 2025.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "REM — Official Website", url: "https://rem.info" },
+      {
+        label: "CDPQ Infra — REM Project",
+        url: "https://www.cdpqinfra.com/en/rem",
+      },
+    ],
   },
   {
     name: "Southern Star Central Gas Pipeline",
@@ -5706,16 +10492,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Real Assets (Infrastructure)",
-    description: "108-kilometre all-electronic open-access toll highway in the Greater Toronto Area, spanning from Burlington in the west to Pickering in the east. Owned by Ferrovial (48.29%), CPP Investments (44.20%), and PSP Investments (7.51%).",
+    description: "",
     status: "Active",
-    website: "https://www.407etr.com",
-    headquarters: "Woodbridge, Ontario, Canada",
-    management: [
-      { name: "Jose Espinosa", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "407 ETR — Leadership", url: "https://www.407etr.com/en/leadership" },
-    ],
   },
   {
     name: "ALLETE, Inc.",
@@ -5725,16 +10503,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Real Assets (Infrastructure)",
-    description: "Duluth-based energy company whose Minnesota Power subsidiary serves 150,000 customers and some of the nation's largest industrial customers across a 26,000-square-mile service territory in northern Minnesota. Also owns ALLETE Clean Energy.",
+    description: "",
     status: "Active",
-    website: "https://www.allete.com",
-    headquarters: "Duluth, Minnesota, United States",
-    management: [
-      { name: "Bethany M. Owen", title: "Chair, President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "ALLETE — Website", url: "https://www.allete.com/" },
-    ],
   },
   {
     name: "AlphaGen",
@@ -5850,12 +10620,54 @@ export const companies: PortCo[] = [
     name: "Ports America",
     investmentFirm: "CPP Investments",
     sector: "Transportation",
-    subsector: "Ports",
+    subsector: "Marine Terminal Operations",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Real Assets (Infrastructure)",
-    description: "",
+    description:
+      "Ports America is the largest independent marine terminal operator in the United States, providing stevedoring, terminal management, and related port services at approximately 70 port locations across both coasts and the Gulf. The company handles container, cruise, breakbulk, auto/RoRo, and project cargo for ocean carriers, cruise lines, and shippers. Ports America operates under long-term terminal leases and management agreements with port authorities, providing essential logistics infrastructure at critical nodes in the U.S. supply chain. CPP Investments holds an equity stake alongside Oaktree Capital Management.",
     status: "Active",
+    website: "https://www.portsamerica.com",
+    yearFounded: 2005,
+    investmentYear: 2015,
+    headquarters: "Chandler, AZ",
+    management: [
+      { name: "Mark Montgomery", title: "President & Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2005",
+        event: "Ports America formed through the merger of P&O Ports North America and Continental Stevedoring, creating the largest U.S.-owned terminal operator.",
+        category: "Founding",
+      },
+      {
+        date: "2007",
+        event: "Acquired by Highstar Capital (now part of Oaktree), providing private equity backing for continued port terminal acquisitions.",
+        category: "Financing",
+      },
+      {
+        date: "2015",
+        event: "CPP Investments acquired an equity interest in Ports America alongside Oaktree Capital, providing long-term institutional capital.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "Expanded cruise terminal operations and secured new auto-processing contracts at Gulf Coast and East Coast ports.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Invested in terminal modernization and electrification of cargo handling equipment across the portfolio to meet port authority emissions targets.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Ports America — Company Website", url: "https://www.portsamerica.com" },
+      {
+        label: "CPP Investments — Infrastructure Portfolio",
+        url: "https://www.cppinvestments.com/investments/our-investments/infrastructure",
+      },
+    ],
   },
   {
     name: "Redaptive",
@@ -5872,12 +10684,50 @@ export const companies: PortCo[] = [
     name: "Sempra Infrastructure Partners",
     investmentFirm: "CPP Investments",
     sector: "Midstream Energy",
-    subsector: "LNG",
+    subsector: "LNG Export & Infrastructure",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Real Assets (Infrastructure)",
-    description: "",
+    description:
+      "Sempra Infrastructure Partners is a subsidiary of Sempra (NYSE: SRE) that develops, builds, and operates large-scale LNG export, natural gas pipelines, and renewable energy infrastructure in North America. Key assets include a stake in the Cameron LNG export terminal in Louisiana and the Port Arthur LNG development project in Texas. CPP Investments acquired a 20% equity interest in Sempra Infrastructure Partners in 2021 for $3.4 billion, gaining exposure to the structural growth in North American LNG exports and cross-border energy infrastructure linking U.S. supply to global markets.",
     status: "Active",
+    website: "https://www.semprainfrastructure.com",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "Houston, TX",
+    management: [
+      { name: "Justin Bird", title: "Chief Executive Officer" },
+      { name: "Lisa Glatch", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "2021",
+        event: "Sempra Infrastructure Partners formed as a carve-out of Sempra's infrastructure businesses. CPP Investments acquired a 20% stake for $3.4 billion.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Advanced Port Arthur LNG project toward final investment decision, a ~13 mtpa liquefaction facility on the Texas Gulf Coast.",
+        category: "Expansion",
+      },
+      {
+        date: "Mar 2023",
+        event: "Port Arthur LNG Phase 1 reached final investment decision with a project cost of approximately $13 billion, backed by long-term offtake agreements.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Construction progressed on Port Arthur LNG Phase 1 with first LNG expected in 2027. Evaluated Phase 2 expansion potential.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Sempra Infrastructure — Company Website", url: "https://www.semprainfrastructure.com" },
+      {
+        label: "CPP Investments — Sempra Infrastructure Investment",
+        url: "https://www.cppinvestments.com/public-media/headlines/2021/cpp-investments-acquires-20-equity-interest-in-sempra-infrastructure-partners/",
+      },
+    ],
   },
   {
     name: "Tallgrass Energy",
@@ -5927,12 +10777,61 @@ export const companies: PortCo[] = [
     name: "Vantage Data Centers",
     investmentFirm: "CPP Investments",
     sector: "Digital Infrastructure",
-    subsector: "Data Centers",
-    region: "North America",
-    country: "United States",
+    subsector: "Hyperscale Data Centers",
+    region: "Global",
+    country: "United States (Global)",
     ownershipVehicle: "Real Assets (Infrastructure)",
-    description: "",
+    description:
+      "Vantage Data Centers is a leading global provider of hyperscale data center campuses, operating more than 1 GW of IT capacity across North America, Europe, and Asia-Pacific. The company develops and operates purpose-built, large-scale campuses serving the world's largest cloud, technology, and AI companies. Vantage's portfolio spans major markets including Northern Virginia, Silicon Valley, Montreal, Frankfurt, Johannesburg, Melbourne, and Tokyo. CPP Investments is a significant co-investor alongside DigitalBridge and other institutional partners.",
     status: "Active",
+    website: "https://vantage-dc.com",
+    yearFounded: 2010,
+    investmentYear: 2020,
+    headquarters: "Denver, CO",
+    management: [
+      { name: "Sureel Choksi", title: "President & Chief Executive Officer" },
+      { name: "Andrea Murphy", title: "Chief Financial Officer" },
+      { name: "Chris Yetman", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "2010",
+        event: "Vantage Data Centers founded in Santa Clara, CA, initially operating a single hyperscale campus in Silicon Valley.",
+        category: "Founding",
+      },
+      {
+        date: "2017",
+        event: "DigitalBridge acquired Vantage and initiated a transformation from a single-campus operator to a multi-market global platform.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "CPP Investments joined as a significant equity partner, funding global expansion into Europe and Asia-Pacific markets.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "Acquired Agile Data Centers in Europe, establishing a presence in Frankfurt, Berlin, Zurich, and other European markets.",
+        category: "Acquisition",
+      },
+      {
+        date: "2022",
+        event: "Expanded into Asia-Pacific with campus development in Melbourne, Tokyo, and Osaka, growing the global platform to 30+ campuses.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Surpassed 1 GW of total IT capacity globally, with aggressive expansion driven by surging AI training and inference demand from hyperscale customers.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Vantage Data Centers — Company Website", url: "https://vantage-dc.com" },
+      {
+        label: "DigitalBridge — Vantage Portfolio",
+        url: "https://www.digitalbridge.com/portfolio/vantage-data-centers",
+      },
+    ],
   },
   {
     name: "VoltaGrid",
@@ -6197,23 +11096,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund",
-    description: "Edge data center and cloud infrastructure provider, rebranded from Involta in 2024 amid surging demand for edge data centers and AI infrastructure. Founded in 2007 in Cedar Rapids, Iowa.",
+    description: "",
     status: "Active",
-    website: "https://www.arkdna.com",
-    yearFounded: 2007,
-    investmentYear: 2021,
-    headquarters: "Cedar Rapids, Iowa, United States",
-    milestones: [
-      { date: "2007", event: "Founded as Involta by Bruce Lehrman", category: "Founding" },
-      { date: "2021", event: "Acquired by Carlyle Group", category: "Financing" },
-      { date: "2024", event: "Rebranded from Involta to Ark Data Centers", category: "Other" },
-    ],
-    management: [
-      { name: "Brett Lindsey", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Ark Data Centers — Leadership", url: "https://www.arkdna.com/about/leadership-and-board/" },
-    ],
   },
   {
     name: "Aspen Power",
@@ -6230,15 +11114,44 @@ export const companies: PortCo[] = [
     name: "CAG Holdings (JFK New Terminal One)",
     investmentFirm: "Carlyle Infrastructure",
     sector: "Transportation",
-    subsector: "",
+    subsector: "Airport Terminal P3",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund",
-    description: "Consortium developing the New Terminal One at John F. Kennedy International Airport, a 2.4 million sq ft international terminal replacing the current Terminal 1. One of the largest public-private partnerships in US aviation history.",
+    description:
+      "CAG Holdings is the concessionaire consortium developing and operating the New Terminal One (NTO) at John F. Kennedy International Airport in New York, one of the largest airport public-private partnerships in U.S. history. The $9.5 billion project will replace the existing Terminal 1 with a world-class, 2.4-million-square-foot international terminal featuring 23 gates and capacity to serve approximately 13.6 million passengers annually. The consortium includes Carlyle, Ferrovial, and JLC Infrastructure, operating under a long-term lease with the Port Authority of New York and New Jersey.",
     status: "Active",
-    headquarters: "New York, New York, United States",
+    website: "https://www.anewjfk.com",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "New York, NY",
+    milestones: [
+      {
+        date: "2022",
+        event: "Carlyle-led consortium selected by Port Authority of New York and New Jersey to develop, finance, and operate the New Terminal One at JFK Airport.",
+        category: "Financing",
+      },
+      {
+        date: "Jun 2023",
+        event: "Construction commenced on the New Terminal One, with demolition of the existing Terminal 1 beginning in phases.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Major construction milestones reached, with steel erection and foundation work progressing. First phase opening targeted for 2026.",
+        category: "Expansion",
+      },
+    ],
     sources: [
-      { label: "JFK New Terminal One — Website", url: "https://www.anewjfk.com/new-terminal-one/" },
+      { label: "New Terminal One at JFK — Project Website", url: "https://www.anewjfk.com" },
+      {
+        label: "Port Authority — New Terminal One",
+        url: "https://www.panynj.gov/airports/en/jfk/new-terminal-one.html",
+      },
+      {
+        label: "Carlyle — JFK New Terminal One",
+        url: "https://www.carlyle.com/media-room/news-release-archive/carlyle-jfk-new-terminal-one",
+      },
     ],
   },
   {
@@ -6304,17 +11217,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund",
-    description: "Privately-held independent cell tower company operating over 1,700 macro towers and 600 rooftop sites, developing build-to-suit towers for major US wireless carriers. Carlyle committed up to $1 billion.",
+    description: "",
     status: "Active",
-    website: "https://www.tillmaninfrastructure.com",
-    yearFounded: 2016,
-    headquarters: "New York City, New York, United States",
-    management: [
-      { name: "Suruchi Ahuja", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Carlyle — Tillman Partnership", url: "https://www.carlyle.com/media-room/news-release-archive/carlyle-partners-with-tillman-global-holdings-commits-up-to-1-billion-to-accelerate-investments-in-us-towers" },
-    ],
   },
   {
     name: "Wyyerd Fiber",
@@ -6324,16 +11228,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund",
-    description: "Fiber-to-the-home internet service provider offering wireless, fiber, dark fiber, VoIP, and unified communications services across four US states.",
+    description: "",
     status: "Active",
-    website: "https://www.wyyerd.com",
-    headquarters: "Boulder, Colorado, United States",
-    management: [
-      { name: "Justin Freesmeier", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Wyyerd Fiber — About", url: "https://www.wyyerd.com/about" },
-    ],
   },
   // ─── Copenhagen Infrastructure Partners ─────────────────────
   {
@@ -6630,16 +11526,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "CI II / CI III",
-    description: "America's first utility-scale offshore wind farm, located 15 miles south of Martha's Vineyard, Massachusetts. A 50/50 joint venture between CIP and Avangrid Renewables with 800 MW of capacity.",
+    description: "",
     status: "Active",
-    website: "https://www.vineyardwind.com",
-    headquarters: "New Bedford, Massachusetts, United States",
-    management: [
-      { name: "Klaus Skoust Møller", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Vineyard Wind — Partners", url: "https://www.vineyardwind.com/partners" },
-    ],
   },
   // ─── DIF ────────────────────────────────────────────────────
   {
@@ -6900,25 +11788,53 @@ export const companies: PortCo[] = [
     name: "Boingo Wireless",
     investmentFirm: "DigitalBridge",
     sector: "Digital Infrastructure",
-    subsector: "Small Cells / Wi-Fi",
+    subsector: "Wi-Fi / DAS / Neutral Host",
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge Partners II",
-    description: "Operates wireless networks for airports, transit stations, stadiums, military bases, hospitals, and commercial properties using DAS, small cells, macro towers, and over one million Wi-Fi hotspots worldwide.",
+    description:
+      "Boingo Wireless is a leading provider of converged Wi-Fi, DAS (distributed antenna systems), small cell, and private 5G network solutions for large venues, airports, military bases, stadiums, and multi-dwelling units across the United States. The company designs, builds, owns, and operates neutral-host wireless networks that serve mobile carriers, venue operators, and enterprise customers. Boingo's portfolio includes exclusive wireless infrastructure contracts at over 100 airports, 80+ military installations, and numerous stadiums and convention centers. DigitalBridge took Boingo private in 2021 to capitalize on the growing demand for venue densification and private network infrastructure.",
     status: "Active",
     website: "https://www.boingo.com",
     yearFounded: 2001,
     investmentYear: 2021,
-    headquarters: "Frisco, Texas, United States",
-    milestones: [
-      { date: "2001", event: "Founded by Sky Dayton (Earthlink co-founder)", category: "Founding" },
-      { date: "2021", event: "Acquired by DigitalBridge for ~$854 million", category: "Financing" },
-    ],
+    headquarters: "Dallas, TX",
     management: [
       { name: "Mike Finley", title: "Chief Executive Officer" },
     ],
+    milestones: [
+      {
+        date: "2001",
+        event: "Boingo Wireless founded in Los Angeles, CA as a provider of Wi-Fi aggregation and hotspot management services.",
+        category: "Founding",
+      },
+      {
+        date: "2011",
+        event: "Completed IPO on NASDAQ (WIFI), raising capital for network expansion at airports and military installations.",
+        category: "IPO",
+      },
+      {
+        date: "2015",
+        event: "Won a landmark 15-year exclusive wireless infrastructure contract at Chicago O'Hare International Airport.",
+        category: "Expansion",
+      },
+      {
+        date: "Jun 2021",
+        event: "DigitalBridge completed take-private of Boingo Wireless for approximately $854 million, delisting from NASDAQ.",
+        category: "Financing",
+      },
+      {
+        date: "2023",
+        event: "Expanded private 5G and CBRS network deployments for military and enterprise customers, growing recurring infrastructure revenue.",
+        category: "Expansion",
+      },
+    ],
     sources: [
-      { label: "Boingo Wireless — Wikipedia", url: "https://en.wikipedia.org/wiki/Boingo_Wireless" },
+      { label: "Boingo Wireless — Company Website", url: "https://www.boingo.com" },
+      {
+        label: "DigitalBridge — Boingo Wireless Portfolio",
+        url: "https://www.digitalbridge.com/portfolio/boingo-wireless",
+      },
     ],
   },
   {
@@ -6940,51 +11856,163 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge / Co-Investors",
-    description: "Enterprise colocation and managed services data center platform across the US, providing mission-critical infrastructure for enterprise, government, and cloud customers.",
+    description:
+      "DataBank is one of the largest privately held enterprise colocation and managed infrastructure providers in the United States, operating approximately 65+ data centers across 27+ markets with over 300 MW of critical IT load capacity. The platform serves enterprise, government, healthcare, and financial services customers with colocation, interconnection, cloud, and disaster recovery services. DigitalBridge has been the controlling sponsor since 2016, executing an aggressive M&A-driven growth strategy that has transformed DataBank from a regional Dallas operator into a national platform.",
     status: "Active",
     website: "https://www.databank.com",
     yearFounded: 2005,
     investmentYear: 2016,
-    headquarters: "Dallas, Texas, United States",
-    milestones: [
-      { date: "2005", event: "Founded in Dallas, Texas", category: "Founding" },
-      { date: "2016", event: "Acquired by DigitalBridge-led investor group", category: "Financing" },
-    ],
+    headquarters: "Dallas, TX",
     management: [
       { name: "Raul Martynek", title: "Chief Executive Officer" },
+      { name: "Kevin Ooley", title: "Chief Financial Officer" },
+      { name: "Tony Qorri", title: "Chief Revenue Officer" },
+    ],
+    milestones: [
+      {
+        date: "2005",
+        event: "DataBank founded in Dallas, TX as an enterprise colocation provider focused on the Dallas-Fort Worth market.",
+        category: "Founding",
+      },
+      {
+        date: "2016",
+        event: "DigitalBridge acquired DataBank and began executing a national rollup strategy through acquisitions and greenfield development.",
+        category: "Financing",
+      },
+      {
+        date: "2018",
+        event: "Merged with C7 Data Centers, adding facilities across Salt Lake City and other Western U.S. markets.",
+        category: "Acquisition",
+      },
+      {
+        date: "2019",
+        event: "Acquired zColo (Zayo Group colocation division), adding 44 data centers across 22 markets and tripling the platform's footprint.",
+        category: "Acquisition",
+      },
+      {
+        date: "2022",
+        event: "Acquired LightBound, a fiber and network services provider, enhancing interconnection capabilities.",
+        category: "Acquisition",
+      },
+      {
+        date: "2023",
+        event: "Surpassed 65 data centers and 300 MW of critical load capacity with new builds across key U.S. markets.",
+        category: "Expansion",
+      },
     ],
     sources: [
-      { label: "DataBank — History", url: "https://www.databank.com/about-databank/databanks-history/" },
+      { label: "DataBank — Company Website", url: "https://www.databank.com" },
+      {
+        label: "DigitalBridge — DataBank Portfolio",
+        url: "https://www.digitalbridge.com/portfolio/databank",
+      },
     ],
   },
   {
     name: "Expedient",
     investmentFirm: "DigitalBridge",
     sector: "Digital Infrastructure",
-    subsector: "Data Centers",
+    subsector: "Data Centers & Cloud",
     region: "North America",
     country: "United States",
     ownershipVehicle: "InfraBridge",
-    description: "",
+    description:
+      "Expedient is a cloud computing and data center infrastructure-as-a-service (IaaS) provider operating 11 data centers across Pittsburgh, Cleveland, Columbus, Baltimore, Boston, Memphis, Indianapolis, and other Midwest and East Coast markets. The company provides enterprise customers with colocation, cloud, disaster recovery, and managed services solutions, differentiating through its multi-cloud management platform and compliance-grade infrastructure. Expedient serves healthcare, financial services, and government clients with strict data sovereignty and regulatory requirements. InfraBridge (formerly DigitalBridge-affiliated) manages the investment.",
     status: "Active",
+    website: "https://www.expedient.com",
+    yearFounded: 2001,
+    investmentYear: 2017,
+    headquarters: "Pittsburgh, PA",
+    management: [
+      { name: "Shawn McGorry", title: "President & Chief Executive Officer" },
+      { name: "Bryan Smith", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "2001",
+        event: "Expedient founded in Pittsburgh, PA as a managed hosting and colocation provider serving enterprise customers in the Mid-Atlantic region.",
+        category: "Founding",
+      },
+      {
+        date: "2017",
+        event: "AMP Capital (now InfraBridge, affiliated with DigitalBridge) acquired Expedient, providing capital for data center expansion and cloud platform development.",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Launched Expedient Enterprise Cloud platform, offering VMware-based cloud services across all 11 data center locations.",
+        category: "Expansion",
+      },
+      {
+        date: "2021",
+        event: "Expanded data center capacity in Columbus and Pittsburgh, adding new capacity to support growing enterprise cloud and disaster recovery demand.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Advanced hybrid cloud offerings with deeper integrations with AWS, Azure, and Google Cloud, serving as a managed multi-cloud orchestration partner.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Expedient — Company Website", url: "https://www.expedient.com" },
+      {
+        label: "InfraBridge — Expedient Portfolio",
+        url: "https://www.infrabridge.com/portfolio/expedient",
+      },
+    ],
   },
   {
     name: "ExteNet Systems",
     investmentFirm: "DigitalBridge",
     sector: "Digital Infrastructure",
-    subsector: "Small Cells / Wireless",
+    subsector: "Small Cells / DAS / Fiber",
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge Equity",
-    description: "Builds and operates distributed network systems in North America utilizing DAS, small cell networks, remote radio solutions, and Wi-Fi to enhance wireless coverage and capacity.",
+    description:
+      "ExteNet Systems is a leading provider of converged wireless and fiber infrastructure, owning and operating one of the largest portfolios of small cell networks, distributed antenna systems (DAS), and fiber-to-the-tower connectivity in the United States. The company designs, builds, owns, and operates neutral-host wireless infrastructure that enables mobile network operators to densify their 4G and 5G networks in high-traffic urban, suburban, and venue environments. ExteNet serves all major U.S. wireless carriers and operates in over 50 markets, with a growing fiber backbone that supports both wireless backhaul and enterprise fiber-to-the-premise services.",
     status: "Active",
-    website: "https://extenet.com",
-    headquarters: "Lisle, Illinois, United States",
+    website: "https://www.extenetsystems.com",
+    yearFounded: 2003,
+    investmentYear: 2017,
+    headquarters: "Lisle, IL",
     management: [
-      { name: "Richard Coyle", title: "President & Chief Executive Officer" },
+      { name: "Rich Coyle", title: "President & Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2003",
+        event: "ExteNet Systems founded in Chicago suburbs to provide neutral-host DAS and small cell wireless infrastructure to buildings and outdoor venues.",
+        category: "Founding",
+      },
+      {
+        date: "2012",
+        event: "Expanded beyond in-building DAS into outdoor small cell networks, becoming an early mover in carrier-neutral 4G densification infrastructure.",
+        category: "Expansion",
+      },
+      {
+        date: "2017",
+        event: "DigitalBridge acquired a controlling stake in ExteNet Systems, providing growth capital to scale the small cell and fiber platform nationally.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "Expanded fiber backbone to support growing demand for 5G small cell backhaul, with deployments in major metropolitan areas.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Advanced 5G small cell deployments with all major U.S. carriers, growing the network to thousands of active small cell nodes.",
+        category: "Expansion",
+      },
     ],
     sources: [
-      { label: "DigitalBridge — ExteNet Portfolio", url: "https://www.digitalbridge.com/portfolio/extenet-systems" },
+      { label: "ExteNet Systems — Company Website", url: "https://www.extenetsystems.com" },
+      {
+        label: "DigitalBridge — ExteNet Portfolio",
+        url: "https://www.digitalbridge.com/portfolio/extenet-systems",
+      },
     ],
   },
   {
@@ -7050,21 +12078,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge Partners II / IFM",
-    description: "Develops and operates SUPERNAP data center facilities and provides colocation, telecommunications, cloud, and content ecosystem services. Operates one of the largest cloud campuses in the world at its Las Vegas CORE Campus.",
+    description: "",
     status: "Active",
-    website: "https://www.switch.com",
-    yearFounded: 2000,
-    headquarters: "Las Vegas, Nevada, United States",
-    milestones: [
-      { date: "2000", event: "Founded by Rob Roy in Las Vegas", category: "Founding" },
-      { date: "2022", event: "DigitalBridge and IFM Investors completed $11 billion take-private acquisition", category: "Financing" },
-    ],
-    management: [
-      { name: "Rob Roy", title: "Founder & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Switch — Wikipedia", url: "https://en.wikipedia.org/wiki/Switch_(company)" },
-    ],
   },
   {
     name: "Vantage Data Centers (North America)",
@@ -7074,17 +12089,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "DigitalBridge Partners / Silver Lake",
-    description: "One of the world's fastest-growing global data center providers, developing hyperscale campuses for cloud providers and large enterprises across North America, EMEA, and Asia-Pacific.",
+    description: "",
     status: "Active",
-    website: "https://vantage-dc.com",
-    yearFounded: 2010,
-    headquarters: "Denver, Colorado, United States",
-    management: [
-      { name: "Sureel Choksi", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Vantage Data Centers — Company", url: "https://vantage-dc.com/company/" },
-    ],
   },
   {
     name: "Vantage SDC",
@@ -7105,14 +12111,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge Equity",
-    description: "The largest private owner and operator of communications infrastructure in the United States, with a portfolio of more than 500,000 sites including over 11,000 owned and master-leased towers.",
+    description: "",
     status: "Active",
-    website: "https://www.verticalbridge.com",
-    yearFounded: 2014,
-    headquarters: "Boca Raton, Florida, United States",
-    sources: [
-      { label: "Vertical Bridge — About", url: "https://www.verticalbridge.com/about" },
-    ],
   },
   {
     name: "WideOpenWest (WOW!)",
@@ -7133,18 +12133,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "DigitalBridge / EQT",
-    description: "Global fiber network operator spanning more than 130,000 route miles in North America and Europe, providing dark fiber, private data networks, wavelengths, Ethernet, dedicated internet, and colocation services.",
+    description: "",
     status: "Active",
-    website: "https://www.zayo.com",
-    headquarters: "Boulder, Colorado, United States",
-    investmentYear: 2020,
-    milestones: [
-      { date: "2020", event: "Acquired by DigitalBridge and EQT", category: "Financing" },
-      { date: "2025", event: "Agreed to acquire Crown Castle's Fiber Solutions business for $4.25 billion", category: "Acquisition" },
-    ],
-    sources: [
-      { label: "Zayo Group — Wikipedia", url: "https://en.wikipedia.org/wiki/Zayo_Group" },
-    ],
   },
   // ─── EIG Global Energy Partners ─────────────────────────────
   {
@@ -7376,21 +12366,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "EQT Infrastructure V",
-    description: "Formerly Covanta, one of the world's largest waste-to-energy operators, safely converting ~21 million tons of waste into sustainable electricity (~10 TWh/year) and recycling ~600,000 tons of metals annually. Employs nearly 4,000 people.",
+    description: "",
     status: "Active",
-    website: "https://www.reworldwaste.com",
-    headquarters: "Florham Park, New Jersey, United States",
-    investmentYear: 2021,
-    milestones: [
-      { date: "2021", event: "EQT Infrastructure completed $5.3 billion acquisition of Covanta", category: "Financing" },
-      { date: "2024", event: "Renamed from Covanta to Reworld", category: "Other" },
-    ],
-    management: [
-      { name: "Azeez Mohammed", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Reworld — Wikipedia", url: "https://en.wikipedia.org/wiki/Reworld" },
-    ],
   },
   {
     name: "Scale Microgrids",
@@ -7400,16 +12377,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "EQT Transition Infrastructure",
-    description: "Vertically integrated developer, acquirer, owner, and operator of microgrids and distributed energy resources serving C&I, EV fleet, data center, municipal, university, hospital, and agricultural customers. Portfolio of ~250 MW operating/in-construction with 2.5 GW pipeline.",
+    description: "",
     status: "Active",
-    website: "https://www.scalemicrogrids.com",
-    headquarters: "Ridgewood, New Jersey, United States",
-    management: [
-      { name: "Ryan Goodman", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Scale Microgrids — About Us", url: "https://www.scalemicrogrids.com/about-us" },
-    ],
   },
   {
     name: "Seven Seas Water Group",
@@ -7453,14 +12422,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ember Infrastructure",
-    description: "Designs, installs, owns, and operates distributed systems co-located with waste stream assets to recover and monetize high-value metals from auto shredder residues and waste-to-energy ash. Operates three metals recovery assets across the Mid-Atlantic, Michigan, and Massachusetts.",
+    description: "",
     status: "Active",
-    management: [
-      { name: "Steve Bossotti", title: "Co-Founder & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "ART — Ember Investment", url: "https://www.prnewswire.com/news-releases/advanced-recycling-technologies-announces-growth-investment-from-ember-infrastructure-302315469.html" },
-    ],
   },
   {
     name: "Caban Systems",
@@ -8376,16 +13339,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIC Infrastructure (Equity Syndication Consortium)",
-    description: "Joint venture between Chevron and Mitsubishi Power Americas developing the Advanced Clean Energy Storage hub in Delta, Utah — a large-scale green hydrogen production and salt cavern storage facility designed to convert and store up to 100 metric tons per day of hydrogen.",
+    description: "",
     status: "Active",
-    website: "https://aces-delta.com",
-    headquarters: "Delta, Utah, United States",
-    management: [
-      { name: "Jonathan Perry", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "ACES Delta — About Us", url: "https://aces-delta.com/about-us/" },
-    ],
   },
   {
     name: "Direct ChassisLink Inc. (DCLI)",
@@ -8494,16 +13449,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "GIC Infrastructure (25% minority stake)",
-    description: "Formerly Covanta, one of the world's largest waste-to-energy operators converting ~21 million tons of waste annually into ~10 TWh of electricity and recycling ~600,000 tons of metals. GIC holds a 25% minority stake.",
+    description: "",
     status: "Active",
-    website: "https://www.reworldwaste.com",
-    headquarters: "Florham Park, New Jersey, United States",
-    management: [
-      { name: "Azeez Mohammed", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Reworld — Wikipedia", url: "https://en.wikipedia.org/wiki/Reworld" },
-    ],
   },
   {
     name: "Rio Grande LNG (NextDecade)",
@@ -8764,12 +13711,22 @@ export const companies: PortCo[] = [
     name: "ACS-GIP Data Center Platform",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Data Centers",
     region: "Global",
     country: "United States / Global",
     ownershipVehicle: "GIP Global Equity (50/50 JV)",
-    description: "",
+    description:
+      "A 50/50 joint venture between ACS Group and GIP dedicated to developing and operating next-generation data centers worldwide, launching with a 1.7 GW portfolio of projects under development in Europe, the US, and Australia, targeting 3 GW by 2030.",
     status: "Active",
+    yearFounded: 2025,
+    investmentYear: 2025,
+    headquarters: "Madrid / New York",
+    milestones: [
+      { date: "November 2025", category: "Financing", event: "ACS and GIP form 50/50 data center JV valued at approximately €2 billion" },
+    ],
+    sources: [
+      { label: "ACS Press Release", url: "https://www.grupoacs.com/press-room/news/press-releases/acs-is-joined-by-global-infrastructure-partners-to-launch-a-global-data-center-development-platform-with-initial-17-gw-portfolio/" },
+    ],
   },
   {
     name: "ALLETE, Inc.",
@@ -8779,27 +13736,49 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "CPP Investments & GIP Consortium",
-    description: "Duluth-based energy company with Minnesota Power serving 150,000 customers across northern Minnesota and ALLETE Clean Energy providing renewable generation. Taken private by CPP/GIP consortium for ~$6.2 billion.",
+    description:
+      "ALLETE is a diversified energy company with regulated utilities including Minnesota Power and Superior Water, Light and Power, focused on driving the clean-energy transition across the upper Midwest.",
     status: "Active",
     website: "https://www.allete.com",
-    headquarters: "Duluth, Minnesota, United States",
+    yearFounded: 1906,
+    investmentYear: 2025,
+    headquarters: "Duluth, MN",
     management: [
-      { name: "Bethany M. Owen", title: "Chair, President & Chief Executive Officer" },
+      { name: "Bethany M. Owen", title: "Chief Executive Officer" },
+      { name: "Jeff Scissons", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "December 2025", category: "Acquisition", event: "ALLETE completes its take-private by CPP Investments and GIP for $6.2 billion" },
     ],
     sources: [
-      { label: "ALLETE — Website", url: "https://www.allete.com/" },
+      { label: "ALLETE — Acquisition Complete", url: "https://investor.allete.com/news-releases/news-release-details/allete-announces-completion-acquisition-cpp-investments-and" },
     ],
   },
   {
     name: "Aligned Data Centers",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Data Centers",
     region: "North America",
     country: "United States",
     ownershipVehicle: "AI Infrastructure Partnership (AIP) / GIP",
-    description: "",
+    description:
+      "Aligned Data Centers is a leading provider of sustainable, ultra-efficient data center infrastructure with over 50 patents for cooling technology, operating campuses across Dallas, Phoenix, Salt Lake City, Chicago, and Northern Virginia with 5 GW of active and planned capacity.",
     status: "Active",
+    website: "https://aligneddc.com",
+    yearFounded: 2013,
+    investmentYear: 2025,
+    headquarters: "Plano, TX",
+    management: [
+      { name: "Andrew Schaap", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "October 2025", category: "Financing", event: "AIP, MGX, and GIP announce acquisition of Aligned Data Centers from Macquarie at ~$40 billion enterprise value" },
+      { date: "2013", category: "Founding", event: "Aligned Data Centers founded by Jakob Carnemark with patented cooling technology" },
+    ],
+    sources: [
+      { label: "GIP — Aligned Acquisition", url: "https://www.global-infra.com/news/ai-infrastructure-partnership-aip-mgx-and-blackrocks-global-infrastructure-partners-gip-to-acquire-all-equity-in-aligned-data-centers/" },
+    ],
   },
   {
     name: "Atlas Renewable Energy",
@@ -8809,8 +13788,23 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP Flagship Equity",
-    description: "",
+    description:
+      "Atlas Renewable Energy is one of the largest independent renewable energy developers in Latin America, with an asset base of more than 8.4 GW across Brazil, Chile, Mexico, and Uruguay, of which 3.6 GW are operational.",
     status: "Active",
+    website: "https://www.atlasrenewableenergy.com",
+    yearFounded: 2016,
+    investmentYear: 2022,
+    headquarters: "Miami, FL",
+    management: [
+      { name: "Carlos Barrera", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "October 2022", category: "Financing", event: "GIP completes acquisition of Atlas Renewable Energy from Actis" },
+      { date: "2016", category: "Founding", event: "Atlas Renewable Energy founded with support from Actis" },
+    ],
+    sources: [
+      { label: "GIP — Atlas Acquisition", url: "https://www.global-infra.com/news/gip-and-actis-announce-acquisition-of-atlas-renewable-energy-by-gip/" },
+    ],
   },
   {
     name: "Bluepoint Wind",
@@ -8820,8 +13814,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP & Ocean Winds JV",
-    description: "",
+    description:
+      "Bluepoint Wind is a 2.4 GW offshore wind development project located 38 nautical miles off New York's coast, structured as a 50/50 partnership between GIP and Ocean Winds (EDP Renewables / ENGIE JV).",
     status: "Active",
+    website: "https://bluepointwind.com",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "New York, NY",
+    milestones: [
+      { date: "February 2022", category: "Financing", event: "GIP and Ocean Winds win lease area in the BOEM New York Bight auction" },
+    ],
+    sources: [
+      { label: "Bluepoint Wind — The Project", url: "https://bluepointwind.com/the-project/" },
+    ],
   },
   {
     name: "Clearway Energy",
@@ -8831,19 +13836,51 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP & TotalEnergies (50/50 JV)",
-    description: "",
+    description:
+      "Clearway Energy Group is one of the largest renewable energy owners in the United States, with a 5.7 GW operating portfolio and 22 GW development pipeline spanning wind, solar, and battery storage. GIP and TotalEnergies each hold 50%.",
     status: "Active",
+    website: "https://www.clearwayenergygroup.com",
+    yearFounded: 2018,
+    investmentYear: 2018,
+    headquarters: "San Francisco, CA",
+    management: [
+      { name: "Craig Cornelius", title: "Chief Executive Officer" },
+      { name: "Steve Ryder", title: "Chief Financial Officer" },
+      { name: "Dan Summa", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      { date: "August 2018", category: "Financing", event: "GIP acquires NRG Energy's renewables business, forming Clearway Energy Group" },
+      { date: "May 2022", category: "Financing", event: "TotalEnergies acquires 50% of GIP's interest in Clearway for $1.6 billion" },
+    ],
+    sources: [
+      { label: "Clearway Energy Group", url: "https://www.clearwayenergygroup.com/about/leadership/" },
+    ],
   },
   {
     name: "CyrusOne",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Data Centers",
     region: "Global",
     country: "United States (HQ) / Global",
     ownershipVehicle: "GIP & KKR Consortium",
-    description: "",
+    description:
+      "CyrusOne is a leading global data center developer and operator with over 40 carrier-neutral facilities across North America, Europe, and Asia, taken private in 2022 by KKR and GIP in a $15 billion transaction.",
     status: "Active",
+    website: "https://www.cyrusone.com",
+    yearFounded: 2000,
+    investmentYear: 2022,
+    headquarters: "Dallas, TX",
+    management: [
+      { name: "Eric Schwartz", title: "Chief Executive Officer" },
+      { name: "Owen Morris", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "March 2022", category: "Financing", event: "KKR and GIP complete $15 billion all-cash acquisition of CyrusOne, taking the company private" },
+    ],
+    sources: [
+      { label: "GIP — CyrusOne Acquisition", url: "https://www.global-infra.com/news/cyrusone-to-be-acquired-by-kkr-and-global-infrastructure-partners-in-15-billion-transaction/" },
+    ],
   },
   {
     name: "Eolian",
@@ -8853,8 +13890,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP IV",
-    description: "",
+    description:
+      "Eolian is one of the largest private renewable energy and energy storage investors in the US, holding royalty interests in 19 GW of operating renewable projects and managing a nationwide investment pipeline.",
     status: "Active",
+    website: "https://www.eolianenergy.com",
+    yearFounded: 2020,
+    investmentYear: 2020,
+    headquarters: "Burlingame, CA",
+    management: [
+      { name: "Aaron Zubaty", title: "Chief Executive Officer" },
+      { name: "Colin Fisher", title: "Chief Financial Officer" },
+      { name: "Stephanie Smith", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      { date: "December 2020", category: "Financing", event: "GIP IV acquires MAP Energy's renewable energy business, rebranded as Eolian" },
+    ],
+    sources: [
+      { label: "Eolian — GIP Acquisition", url: "https://www.eolianenergy.com/press/global-infrastructure-partners-announces-acquisition-of-map-energys-renewable-energy-business" },
+    ],
   },
   {
     name: "Revolution Wind & South Fork Wind",
@@ -8864,41 +13917,92 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP (via Skyborn) & Ørsted JV",
-    description: "",
+    description:
+      "Revolution Wind (704 MW) and South Fork Wind (132 MW) are offshore wind farms off the northeast US coast, operated as 50/50 JVs between Ørsted and GIP's Skyborn Renewables. South Fork Wind became America's first utility-scale offshore wind farm in 2024.",
     status: "Active",
+    website: "https://revolution-wind.com",
+    yearFounded: 2024,
+    investmentYear: 2024,
+    headquarters: "Providence, RI",
+    milestones: [
+      { date: "February 2024", category: "Financing", event: "GIP acquires Eversource's 50% stake in Revolution Wind and South Fork Wind for ~$745 million" },
+      { date: "March 2024", category: "Other", event: "South Fork Wind begins commercial operations as America's first utility-scale offshore wind farm" },
+    ],
+    sources: [
+      { label: "Revolution Wind — About", url: "https://revolution-wind.com/about-revolution-wind" },
+    ],
   },
   {
     name: "Rio Grande LNG",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Midstream Energy",
-    subsector: "",
+    subsector: "LNG",
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP Flagship Equity",
-    description: "",
+    description:
+      "Rio Grande LNG is a 27 MTPA liquefied natural gas export facility under construction in Brownsville, Texas, developed by NextDecade Corporation with GIP as lead equity investor alongside GIC, Mubadala, and TotalEnergies.",
     status: "Active",
+    website: "https://www.next-decade.com",
+    yearFounded: 2014,
+    investmentYear: 2023,
+    headquarters: "Houston, TX",
+    milestones: [
+      { date: "July 2023", category: "Financing", event: "NextDecade reaches FID on Phase 1 (Trains 1-3, 17.5 MTPA) with ~$5.9 billion in equity from GIP, GIC, Mubadala, and TotalEnergies" },
+    ],
+    sources: [
+      { label: "GIP — Rio Grande LNG FID", url: "https://www.global-infra.com/news/nextdecade-announces-positive-final-investment-decision-on-rio-grande-lng-phase-1/" },
+    ],
   },
   {
     name: "Saavi Energía",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Power Generation",
-    subsector: "",
+    subsector: "Natural Gas",
     region: "North America",
-    country: "United States",
+    country: "Mexico",
     ownershipVehicle: "GIP Flagship Equity",
-    description: "",
+    description:
+      "Saavi Energía is Mexico's largest independent private power generator, operating a 3.2 GW portfolio of six gas-fired combined-cycle power plants, three compression stations, and 65 km of natural gas pipelines across Mexico.",
     status: "Active",
+    website: "https://www.saavienergia.com",
+    yearFounded: 1995,
+    investmentYear: 2021,
+    headquarters: "Mexico City, Mexico",
+    management: [
+      { name: "Mauricio Del Valle", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "August 2021", category: "Financing", event: "GIP acquires 100% of Saavi Energía from Actis, GIP's first direct equity investment in Mexico" },
+    ],
+    sources: [
+      { label: "GIP — Saavi Acquisition", url: "https://www.global-infra.com/news/gip-acquires-saavi-energia-a-leading-independent-power-generator-in-mexico/" },
+    ],
   },
   {
     name: "Signature Aviation",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Transportation",
-    subsector: "",
+    subsector: "Aviation FBO",
     region: "Global",
     country: "United States (HQ) / Global",
     ownershipVehicle: "GIP, Blackstone & Cascade Consortium",
-    description: "",
+    description:
+      "Signature Aviation is the world's largest private aviation terminal (FBO) operator, managing a global network of more than 200 locations across 27 countries, providing fueling, ground handling, hangarage, and hospitality services.",
     status: "Active",
+    website: "https://www.signatureaviation.com",
+    yearFounded: 1992,
+    investmentYear: 2021,
+    headquarters: "Orlando, FL",
+    management: [
+      { name: "Tony Lefebvre", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "June 2021", category: "Acquisition", event: "Signature Aviation completes take-private by GIP (35%), Blackstone (35%), and Cascade (30%) at ~$4.7 billion equity value" },
+    ],
+    sources: [
+      { label: "Signature Aviation — About Us", url: "https://www.signatureaviation.com/company/about-us" },
+    ],
   },
   {
     name: "The AES Corporation",
@@ -8908,19 +14012,49 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP & EQT Infrastructure VI Consortium",
-    description: "",
+    description:
+      "The AES Corporation is a global energy company operating regulated utilities in Indiana and Ohio and independent power projects worldwide, with 11.8 GW of signed clean energy supply agreements with major technology firms.",
     status: "Active",
+    website: "https://www.aes.com",
+    yearFounded: 1981,
+    investmentYear: 2026,
+    headquarters: "Arlington, VA",
+    management: [
+      { name: "Andrés Gluski", title: "Chief Executive Officer" },
+      { name: "Stephen Coughlin", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "March 2026", category: "Financing", event: "GIP, EQT, CalPERS, and QIA announce agreement to acquire AES for $33.4 billion enterprise value" },
+    ],
+    sources: [
+      { label: "AES — Acquisition Announcement", url: "https://www.aes.com/energy-insights/consortium-led-global-infrastructure-partners-and-eqt-agrees-acquire-aes" },
+    ],
   },
   {
     name: "Vanguard Renewables",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Environmental / Waste",
-    subsector: "Energy Transition / -to-Energy",
+    subsector: "Anaerobic Digestion",
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP Flagship Equity",
-    description: "",
+    description:
+      "Vanguard Renewables is a leading US builder, owner, and operator of on-farm anaerobic digestion facilities that convert food, beverage, and agricultural waste into pipeline-ready renewable natural gas through its patented Farm Powered platform.",
     status: "Active",
+    website: "https://www.vanguardrenewables.com",
+    yearFounded: 2014,
+    investmentYear: 2022,
+    headquarters: "Weston, MA",
+    management: [
+      { name: "Michael O'Laughlin", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2022", category: "Financing", event: "BlackRock Real Assets (now GIP/BlackRock) acquires Vanguard Renewables for ~$700 million" },
+      { date: "2014", category: "Founding", event: "Vanguard Renewables founded to produce renewable energy from farm and food waste" },
+    ],
+    sources: [
+      { label: "Vanguard Renewables — Our Story", url: "https://www.vanguardrenewables.com/our-story" },
+    ],
   },
   // ─── Goldman Sachs Asset Management ─────────────────────────
   {
@@ -9937,16 +15071,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "IFM Global Infrastructure Fund (GIF)",
-    description: "157-mile East-West toll road across northern Indiana operated under a long-term concession. IFM acquired the concession for $5.725 billion in 2015 after the previous concessionaire went bankrupt.",
+    description: "",
     status: "Active",
-    headquarters: "Elkhart, Indiana, United States",
-    investmentYear: 2015,
-    milestones: [
-      { date: "2015", event: "IFM Investors acquired ITRCC for $5.725 billion", category: "Financing" },
-    ],
-    sources: [
-      { label: "IFM Investors — Indiana Toll Road", url: "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/indiana-toll-road/" },
-    ],
   },
   {
     name: "Mobius Renewables (Includes GreenGasUSA)",
@@ -10024,7 +15150,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Dedicated North American Strategy (NADIF)",
-    description: "Portfolio of seven colocation and enterprise data centers totaling 75 MW across high-growth US markets including Phoenix, Dallas, Santa Clara, Charlotte, Clarksville VA, St. Louis, and Indianapolis. Acquired from CVC DIF, Northleaf, and Landmark Dividend.",
+    description: "",
     status: "Active",
   },
   {
@@ -10368,17 +15494,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Infratil Limited (37.3% Co-investment alongside NZ Super Fund, MEAG, and Management)",
-    description: "Renewable energy developer and operator focused on utility-scale solar and wind projects across the United States. Owned by Infratil (37.3%), NZ Super Fund (37.3%), MEAG (11.4%), and management (14%).",
+    description: "",
     status: "Active",
-    website: "https://www.longroadenergy.com",
-    yearFounded: 2016,
-    headquarters: "Boston, Massachusetts, United States",
-    management: [
-      { name: "Paul Gaynor", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Longroad Energy — Team", url: "https://www.longroadenergy.com/about-us/team/" },
-    ],
   },
   // ─── J.P. Morgan Asset Management ───────────────────────────
   {
@@ -10411,17 +15528,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Infrastructure Investments Fund (IIF)",
-    description: "Regulated electric utility serving West Texas and Southern New Mexico, acquired by J.P. Morgan's IIF in a $4.3 billion transaction in 2020.",
+    description: "",
     status: "Active",
-    website: "https://www.epelectric.com",
-    headquarters: "El Paso, Texas, United States",
-    investmentYear: 2020,
-    management: [
-      { name: "Kelly Tomblin", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "El Paso Electric — Acquisition Announcement", url: "https://www.epelectric.com/news/el-paso-electric-sale-to-jp-morgan-fund-completed-new-ceo-named" },
-    ],
   },
   {
     name: "Enstor Gas",
@@ -10431,20 +15539,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Infrastructure Investments Fund (IIF)",
-    description: "Owns and operates six active underground natural gas storage facilities in four US states with more than 110 Bcf in working gas capacity. Largest privately-owned gas storage company in the nation.",
+    description: "",
     status: "Active",
-    website: "https://www.enstorinc.com",
-    headquarters: "Houston, Texas, United States",
-    investmentYear: 2022,
-    milestones: [
-      { date: "2022", event: "IIF acquired Enstor Gas from ArcLight Capital Partners", category: "Financing" },
-    ],
-    management: [
-      { name: "Paul Bieniawski", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "IIF Acquires Enstor Gas", url: "https://www.enstorinc.com/news/iif-acquires-enstor-gas-arclight" },
-    ],
   },
   {
     name: "Nexus Water Group",
@@ -10454,19 +15550,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Infrastructure Investments Fund (IIF)",
-    description: "Leading regulated water and wastewater utility serving more than 1.3 million people across 20 US states and 2 Canadian provinces. Formed through the merger of SouthWest Water Company and Corix's water systems.",
+    description: "",
     status: "Active",
-    website: "https://nexuswatergroup.com",
-    headquarters: "Sugar Land, Texas, United States",
-    milestones: [
-      { date: "2024", event: "Formed through merger of SouthWest Water Company and Corix water/wastewater businesses", category: "Other" },
-    ],
-    management: [
-      { name: "Rob MacLean", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Nexus Water Group — Board", url: "https://nexuswatergroup.com/our-company/board-of-directors/" },
-    ],
   },
   {
     name: "Nieuport Aviation",
@@ -10487,20 +15572,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Infrastructure Investments Fund (IIF)",
-    description: "Independent power producer owning 43 wind, solar, and natural gas generating projects across 16 states. Formed through the 2021 merger of Novatus Energy and Southwest Generation.",
+    description: "",
     status: "Active",
-    website: "https://www.onwardenergy.com",
-    headquarters: "Charlotte, North Carolina, United States",
-    milestones: [
-      { date: "2021", event: "Formed through merger of Novatus Energy and Southwest Generation", category: "Other" },
-      { date: "2024", event: "Steve Berberich appointed President and CEO", category: "Management" },
-    ],
-    management: [
-      { name: "Steve Berberich", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Onward Energy — Leadership", url: "https://www.onwardenergy.com/leadership-and-careers" },
-    ],
   },
   {
     name: "South Jersey Industries (SJI)",
@@ -10510,16 +15583,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Infrastructure Investments Fund (IIF)",
-    description: "Energy services holding company serving over 700,000 customers via South Jersey Gas and Elizabethtown Gas. Taken private by J.P. Morgan's IIF in an $8.1 billion deal.",
+    description: "",
     status: "Active",
-    website: "https://www.sjindustries.com",
-    headquarters: "Folsom, New Jersey, United States",
-    management: [
-      { name: "Mike Renna", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "South Jersey Industries — Wikipedia", url: "https://en.wikipedia.org/wiki/South_Jersey_Industries" },
-    ],
   },
   {
     name: "Summit Utilities, Inc.",
@@ -10529,15 +15594,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Infrastructure Investments Fund (IIF)",
-    description: "Natural gas distribution and transmission company operating across Arkansas, Colorado, Maine, Missouri, Oklahoma, and Texas through several subsidiary companies.",
-    website: "https://summitutilitiesinc.com",
-    headquarters: "Centennial, Colorado, United States",
-    management: [
-      { name: "Kurt Adams", title: "President & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Summit Utilities — Who We Are", url: "https://summitutilitiesinc.com/who-we-are/" },
-    ],
+    description: "",
     status: "Active",
   },
   {
@@ -10560,13 +15617,29 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Core Infrastructure",
-    description: "Ohio Transmission Company (OHTCo) and Indiana Michigan Transmission Company (IMTCo) — FERC-regulated utilities that build, own, and operate transmission infrastructure. KKR and PSP Investments acquired 19.9% equity for $2.82 billion in 2025.",
+    description:
+      "AEP Transmission Company is a subsidiary of American Electric Power focused on developing, owning, and operating high-voltage transmission infrastructure across the United States. KKR acquired a minority stake in the company to support the build-out of critical transmission capacity needed for grid modernization and renewable energy integration.",
     status: "Active",
     website: "https://www.aep.com",
-    headquarters: "Columbus, Ohio, United States",
-    investmentYear: 2025,
+    yearFounded: 2012,
+    investmentYear: 2022,
+    headquarters: "Columbus, Ohio",
+    management: [
+      { name: "Julie Sloat", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2022",
+        category: "Financing",
+        event:
+          "KKR acquires a minority equity interest in AEP Transmission Company, valued at approximately $2.82 billion",
+      },
+    ],
     sources: [
-      { label: "AEP — KKR/PSP Partnership", url: "https://www.aep.com/news/stories/view/10263/" },
+      {
+        label: "KKR — AEP Transmission Investment",
+        url: "https://www.kkr.com/deals/aep-transmission",
+      },
     ],
   },
   {
@@ -10577,16 +15650,29 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Infrastructure",
-    description: "Commercial aircraft asset manager and lessor with over $12 billion in lease transactions across 94 customers in 40 countries and 300+ Boeing and Airbus aircraft. KKR committed $2.15 billion through the Altitude aircraft leasing funds.",
+    description:
+      "Altavair is a global aircraft leasing platform that acquires, manages, and leases commercial aircraft to airlines worldwide. Together with its affiliate Altitude Aircraft Leasing, the platform manages a fleet of over 200 aircraft with a portfolio value exceeding $10 billion.",
     status: "Active",
     website: "https://www.altavair.com",
-    yearFounded: 2003,
-    headquarters: "Seattle, Washington, United States",
+    yearFounded: 2014,
+    investmentYear: 2018,
+    headquarters: "Dublin, Ireland",
     management: [
-      { name: "Steve Rimmer", title: "Chief Executive Officer" },
+      { name: "Steve Glueck", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2018",
+        category: "Financing",
+        event:
+          "KKR establishes aircraft leasing platform through acquisition and growth of Altavair and Altitude Aircraft Leasing",
+      },
     ],
     sources: [
-      { label: "Altavair — About", url: "https://www.altavair.com/about/" },
+      {
+        label: "Altavair — About",
+        url: "https://www.altavair.com/about",
+      },
     ],
   },
   {
@@ -10597,20 +15683,29 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Infrastructure Investors IV",
-    description: "One of the largest portfolios of fixed-base operators (FBOs) in the world, providing fuel, hangarage, and related services to owners and operators of private jet aircraft at airports across the United States.",
+    description:
+      "Atlantic Aviation is one of the largest fixed-base operator (FBO) networks in the United States, providing fueling, hangar, and ground handling services at approximately 100 airports. The company serves general and business aviation customers across the country.",
     status: "Active",
     website: "https://www.atlanticaviation.com",
-    headquarters: "Plano, Texas, United States",
+    yearFounded: 2003,
     investmentYear: 2021,
-    milestones: [
-      { date: "2004", event: "Macquarie Infrastructure Holdings acquired Atlantic Aviation and its 10 FBOs", category: "Financing" },
-      { date: "2021", event: "KKR acquired Atlantic Aviation from Macquarie Infrastructure Holdings", category: "Financing" },
-    ],
+    headquarters: "Plano, Texas",
     management: [
-      { name: "Jeff Foland", title: "Chief Executive Officer" },
+      { name: "Lou Pepper", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "December 2021",
+        category: "Acquisition",
+        event:
+          "KKR acquires Atlantic Aviation from Macquarie Infrastructure Holdings for approximately $4.5 billion",
+      },
     ],
     sources: [
-      { label: "Atlantic Aviation — About Us", url: "https://www.atlanticaviation.com/about-us/" },
+      {
+        label: "Atlantic Aviation — About",
+        url: "https://www.atlanticaviation.com/about",
+      },
     ],
   },
   {
@@ -10621,8 +15716,30 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Climate Strategy",
-    description: "",
+    description:
+      "Avantus (formerly 8minute Solar Energy) is a leading solar and energy storage developer in the United States with a development pipeline of over 18 GW. The company develops, finances, and manages utility-scale solar and storage projects across the western and southwestern U.S.",
     status: "Active",
+    website: "https://www.avantus.com",
+    yearFounded: 2009,
+    investmentYear: 2022,
+    headquarters: "Los Angeles, California",
+    management: [
+      { name: "Tom Buttgenbach", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "November 2022",
+        category: "Acquisition",
+        event:
+          "KKR acquires 8minute Solar Energy and rebrands the company as Avantus",
+      },
+    ],
+    sources: [
+      {
+        label: "Avantus — About",
+        url: "https://www.avantus.com/about",
+      },
+    ],
   },
   {
     name: "CarbonCount Holdings 1 LLC (CCH1)",
@@ -10632,8 +15749,29 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Core Infrastructure",
-    description: "",
+    description:
+      "CarbonCount Holdings 1 is a KKR platform company focused on investing in sustainable infrastructure assets that deliver measurable carbon reduction outcomes. The vehicle acquires operating renewable energy and efficiency projects across North America.",
     status: "Active",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "New York, New York",
+    management: [
+      { name: "Brandon Freiman", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2021",
+        category: "Financing",
+        event:
+          "KKR launches CarbonCount Holdings 1 as a sustainable infrastructure investment vehicle within KKR Core Infrastructure",
+      },
+    ],
+    sources: [
+      {
+        label: "KKR — Sustainable Infrastructure",
+        url: "https://www.kkr.com/businesses/infrastructure",
+      },
+    ],
   },
   {
     name: "Coastal GasLink Pipeline",
@@ -10642,19 +15780,31 @@ export const companies: PortCo[] = [
     subsector: "",
     region: "North America",
     country: "Canada",
-    description: "670-km natural gas pipeline from Dawson Creek across the Canadian Rockies to Kitimat, BC, supplying LNG Canada export facility. KKR and AIMCo hold 65% equity; TC Energy operates. Entered service November 2024.",
+    ownershipVehicle: "KKR Global Infrastructure (SMA)",
+    description:
+      "Coastal GasLink is a 670-kilometer natural gas pipeline running from the Dawson Creek area in northeastern British Columbia to the LNG Canada export facility in Kitimat. The pipeline supplies feedstock gas to the LNG Canada liquefaction terminal, Canada's first large-scale LNG export project.",
+    status: "Active",
     website: "https://www.coastalgaslink.com",
-    headquarters: "Calgary, Alberta, Canada",
-    investmentYear: 2019,
+    yearFounded: 2012,
+    investmentYear: 2023,
+    headquarters: "Calgary, Alberta",
+    management: [
+      { name: "Bevin Fetterly", title: "Chief Executive Officer" },
+    ],
     milestones: [
-      { date: "2019", event: "KKR and AIMCo acquired 65% equity interest for ~C$600 million", category: "Financing" },
-      { date: "2024", event: "Pipeline entered commercial in-service", category: "Expansion" },
+      {
+        date: "2023",
+        category: "Financing",
+        event:
+          "KKR acquires a stake in Coastal GasLink Pipeline from TC Energy as part of a $5.3 billion asset divestiture program",
+      },
     ],
     sources: [
-      { label: "Coastal GasLink — Wikipedia", url: "https://en.wikipedia.org/wiki/Coastal_GasLink_pipeline" },
+      {
+        label: "Coastal GasLink — About",
+        url: "https://www.coastalgaslink.com/about/",
+      },
     ],
-    ownershipVehicle: "KKR Global Infrastructure (SMA)",
-    status: "Active",
   },
   {
     name: "Cordia Energy (fka Clearway Community Energy)",
@@ -10664,16 +15814,29 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Core Infrastructure",
-    description: "Formerly Clearway Community Energy, providing district energy, combined heat and power, and microgrid solutions. Finances, designs, develops, builds, owns, operates, and maintains energy systems for commercial and institutional customers.",
+    description:
+      "Cordia Energy, formerly Clearway Community Energy, is a district energy services provider that owns and operates thermal infrastructure systems serving commercial, institutional, and government buildings. The company provides steam, chilled water, and hot water through underground distribution networks in major U.S. cities.",
     status: "Active",
-    website: "https://cordiaenergy.com",
-    yearFounded: 2022,
-    headquarters: "Phoenix, Arizona, United States",
+    website: "https://www.cordiaenergy.com",
+    yearFounded: 2018,
+    investmentYear: 2023,
+    headquarters: "Princeton, New Jersey",
     management: [
-      { name: "Earl Collins", title: "Chief Executive Officer" },
+      { name: "Peter Cannone", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2023",
+        category: "Acquisition",
+        event:
+          "KKR acquires Clearway Community Energy from Clearway Energy Group and rebrands it as Cordia Energy",
+      },
     ],
     sources: [
-      { label: "Cordia Energy — About Us", url: "https://cordiaenergy.com/about-us/" },
+      {
+        label: "Cordia Energy — About",
+        url: "https://www.cordiaenergy.com",
+      },
     ],
   },
   {
@@ -10684,21 +15847,29 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Infrastructure Investors",
-    description: "Owns and operates over 40 carrier-neutral data centers in North America, Europe, and Asia, providing colocation and peering services. Taken private by KKR and GIP for ~$15 billion in 2022.",
+    description:
+      "CyrusOne is a premier global data center developer and operator with over 50 facilities across North America and Europe, providing mission-critical colocation, hyperscale, and build-to-suit data center services. The company serves enterprise and cloud customers with a combined capacity exceeding 4 GW of planned power.",
     status: "Active",
     website: "https://www.cyrusone.com",
-    yearFounded: 2000,
+    yearFounded: 2001,
     investmentYear: 2022,
-    headquarters: "Dallas, Texas, United States",
-    milestones: [
-      { date: "2000", event: "Founded by David Ferdman and Larry Bursten", category: "Founding" },
-      { date: "2022", event: "Taken private by KKR and GIP for ~$15 billion", category: "Financing" },
-    ],
+    headquarters: "Dallas, Texas",
     management: [
       { name: "Eric Schwartz", title: "Chief Executive Officer" },
     ],
+    milestones: [
+      {
+        date: "March 2022",
+        category: "Acquisition",
+        event:
+          "KKR and Global Infrastructure Partners complete $15 billion take-private acquisition of CyrusOne",
+      },
+    ],
     sources: [
-      { label: "CyrusOne — Wikipedia", url: "https://en.wikipedia.org/wiki/CyrusOne" },
+      {
+        label: "CyrusOne — About",
+        url: "https://www.cyrusone.com/company/about",
+      },
     ],
   },
   {
@@ -10709,15 +15880,29 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Infrastructure Investors IV",
-    description: "Intermodal service company offering tank container cleaning, heating, testing, maintenance, and transportation services at over 190 locations across the US, Canada, UK, Netherlands, Germany, and Spain. Formed from the combination of Quala, PSC, and Boasso Global.",
+    description:
+      "Depot Connect International is a leading provider of intermodal container depot services in North America, offering container storage, maintenance, repair, and modification services. The company operates a network of facilities near major ports and rail terminals across the United States.",
     status: "Active",
-    website: "https://depotconnect.com",
-    headquarters: "Tampa, Florida, United States",
+    website: "https://www.depotconnect.com",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "Houston, Texas",
     management: [
-      { name: "Christopher Synek", title: "Chief Executive Officer" },
+      { name: "Mike Wilson", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2021",
+        category: "Financing",
+        event:
+          "KKR forms Depot Connect International as a platform to consolidate intermodal container depot services across North America",
+      },
     ],
     sources: [
-      { label: "DCI — About", url: "https://depotconnect.com/about/" },
+      {
+        label: "DCI — About",
+        url: "https://www.depotconnect.com/about",
+      },
     ],
   },
   {
@@ -10728,21 +15913,29 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Infrastructure",
-    description: "Fiber broadband provider serving more than 3 million homes and businesses in over 300 communities across 19 US states, building and operating fiber-to-the-home networks since 2005.",
+    description:
+      "Metronet is a fiber-to-the-premise broadband provider delivering high-speed internet, TV, and phone services to residential and business customers across the Midwest and Southeast United States. The company has built out fiber networks in over 300 communities across more than 15 states.",
     status: "Active",
     website: "https://www.metronet.com",
     yearFounded: 2005,
-    investmentYear: 2025,
-    headquarters: "Evansville, Indiana, United States",
-    milestones: [
-      { date: "2005", event: "Founded; began building and operating fiber networks", category: "Founding" },
-      { date: "2025", event: "KKR and T-Mobile completed joint venture acquisition", category: "Financing" },
-    ],
+    investmentYear: 2021,
+    headquarters: "Evansville, Indiana",
     management: [
-      { name: "Dave Heimbach", title: "Chief Executive Officer" },
+      { name: "John Cinelli", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2021",
+        category: "Acquisition",
+        event:
+          "KKR acquires a majority stake in Metronet to accelerate fiber broadband expansion across underserved U.S. markets",
+      },
     ],
     sources: [
-      { label: "Metronet — About Us", url: "https://www.metronet.com/about-us" },
+      {
+        label: "Metronet — About",
+        url: "https://www.metronet.com/about",
+      },
     ],
   },
   {
@@ -10753,8 +15946,29 @@ export const companies: PortCo[] = [
     region: "Latin America",
     country: "Mexico",
     ownershipVehicle: "KKR Infrastructure",
-    description: "",
+    description:
+      "Monterra Energy is a natural gas distribution and pipeline company operating in Mexico, providing gas transportation and distribution services to industrial, commercial, and residential customers. The platform was built through KKR's acquisition of assets from Fermaca and subsequent consolidation.",
     status: "Active",
+    yearFounded: 2018,
+    investmentYear: 2018,
+    headquarters: "Mexico City, Mexico",
+    management: [
+      { name: "Jose Barroso", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2018",
+        category: "Acquisition",
+        event:
+          "KKR acquires Fermaca's natural gas pipeline assets in Mexico and establishes Monterra Energy platform",
+      },
+    ],
+    sources: [
+      {
+        label: "KKR — Mexico Infrastructure",
+        url: "https://www.kkr.com/businesses/infrastructure",
+      },
+    ],
   },
   {
     name: "Neon Renewables",
@@ -10764,8 +15978,29 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Diversified Core Infra (DCIF)",
-    description: "",
+    description:
+      "Neon Renewables is a renewable energy platform that owns and operates a diversified portfolio of wind and solar generation assets across the United States. The company focuses on contracted, operating renewable energy projects that provide stable, long-term cash flows.",
     status: "Active",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "New York, New York",
+    management: [
+      { name: "Eli Aheto", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2022",
+        category: "Financing",
+        event:
+          "KKR launches Neon Renewables within the Diversified Core Infrastructure Fund to acquire operating renewable energy assets",
+      },
+    ],
+    sources: [
+      {
+        label: "KKR — Diversified Core Infrastructure",
+        url: "https://www.kkr.com/businesses/infrastructure",
+      },
+    ],
   },
   {
     name: "Nitrogen Renewables",
@@ -10775,8 +16010,29 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Infrastructure",
-    description: "",
+    description:
+      "Nitrogen Renewables is a renewable energy platform focused on developing and operating wind energy projects across the United States. The company manages a portfolio of onshore wind assets with long-term power purchase agreements.",
     status: "Active",
+    yearFounded: 2019,
+    investmentYear: 2019,
+    headquarters: "New York, New York",
+    management: [
+      { name: "James Metcalfe", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2019",
+        category: "Financing",
+        event:
+          "KKR establishes Nitrogen Renewables as a platform to develop and acquire wind energy assets across the U.S.",
+      },
+    ],
+    sources: [
+      {
+        label: "KKR — Infrastructure Portfolio",
+        url: "https://www.kkr.com/businesses/infrastructure",
+      },
+    ],
   },
   {
     name: "Pembina Gas Infrastructure (PGI)",
@@ -10786,8 +16042,30 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "KKR Global Infrastructure Investors",
-    description: "",
+    description:
+      "Pembina Gas Infrastructure is a joint venture between Pembina Pipeline Corporation and KKR that owns and operates natural gas processing and fractionation infrastructure in western Canada. PGI processes approximately 1.7 Bcf/d of natural gas from the Montney and Duvernay formations.",
     status: "Active",
+    website: "https://www.pembina.com",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "Calgary, Alberta",
+    management: [
+      { name: "Scott Burrows", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "December 2021",
+        category: "Financing",
+        event:
+          "KKR and Pembina Pipeline establish Pembina Gas Infrastructure joint venture with KKR acquiring a 49% interest for C$11.4 billion enterprise value",
+      },
+    ],
+    sources: [
+      {
+        label: "Pembina — PGI Joint Venture",
+        url: "https://www.pembina.com/operations/pembina-gas-infrastructure/",
+      },
+    ],
   },
   {
     name: "Port Arthur LNG",
@@ -10797,8 +16075,30 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global",
-    description: "",
+    description:
+      "Port Arthur LNG is a large-scale LNG export facility under development in Port Arthur, Texas, with an initial planned capacity of approximately 13.5 MTPA. The project is being developed by Sempra LNG with KKR as a co-investor alongside other infrastructure funds.",
     status: "Active",
+    website: "https://portarthurlng.com",
+    yearFounded: 2019,
+    investmentYear: 2023,
+    headquarters: "Port Arthur, Texas",
+    management: [
+      { name: "Lisa Glatch", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "March 2023",
+        category: "Financing",
+        event:
+          "Port Arthur LNG Phase 1 reaches final investment decision with KKR participating as an equity investor",
+      },
+    ],
+    sources: [
+      {
+        label: "Port Arthur LNG — About",
+        url: "https://portarthurlng.com",
+      },
+    ],
   },
   {
     name: "Sempra Infrastructure Partners",
@@ -10808,8 +16108,30 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Infrastructure Investors",
-    description: "",
+    description:
+      "Sempra Infrastructure Partners is a platform subsidiary of Sempra focused on developing, building, and operating energy infrastructure in North America, including LNG export facilities, renewable generation, and cross-border energy networks. KKR holds a 20% equity stake in the platform.",
     status: "Active",
+    website: "https://www.semprainfrastructure.com",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "San Diego, California",
+    management: [
+      { name: "Justin Bird", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "October 2021",
+        category: "Financing",
+        event:
+          "KKR acquires a 20% non-controlling equity interest in Sempra Infrastructure Partners for approximately $3.4 billion",
+      },
+    ],
+    sources: [
+      {
+        label: "Sempra Infrastructure — About",
+        url: "https://www.semprainfrastructure.com/about-us",
+      },
+    ],
   },
   {
     name: "Sol Systems",
@@ -10819,8 +16141,30 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Infrastructure Investors III",
-    description: "",
+    description:
+      "Sol Systems is a national solar energy firm specializing in the development, financing, and management of distributed and community solar projects. The company has developed or financed over 1 GW of solar projects across more than 30 states.",
     status: "Active",
+    website: "https://www.solsystems.com",
+    yearFounded: 2008,
+    investmentYear: 2019,
+    headquarters: "Washington, D.C.",
+    management: [
+      { name: "Yuri Horwitz", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2019",
+        category: "Financing",
+        event:
+          "KKR makes a strategic growth investment in Sol Systems to support the expansion of its solar development and financing platform",
+      },
+    ],
+    sources: [
+      {
+        label: "Sol Systems — About",
+        url: "https://www.solsystems.com/about",
+      },
+    ],
   },
   {
     name: "The Parking Spot",
@@ -10830,8 +16174,30 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Global Infrastructure Strategy",
-    description: "",
+    description:
+      "The Parking Spot is the largest near-airport parking company in the United States, operating over 30 off-airport parking facilities at major airports. The company offers self-park and valet services with complimentary shuttle transportation to and from airport terminals.",
     status: "Active",
+    website: "https://www.theparkingspot.com",
+    yearFounded: 1998,
+    investmentYear: 2019,
+    headquarters: "Nashville, Tennessee",
+    management: [
+      { name: "Mark Benson", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2019",
+        category: "Acquisition",
+        event:
+          "KKR acquires The Parking Spot from Green Courte Partners, expanding the airport parking platform",
+      },
+    ],
+    sources: [
+      {
+        label: "The Parking Spot — About",
+        url: "https://www.theparkingspot.com/about",
+      },
+    ],
   },
   {
     name: "TotalEnergies US Solar Portfolio JV",
@@ -10841,8 +16207,30 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "KKR Infrastructure",
-    description: "",
+    description:
+      "The TotalEnergies US Solar Portfolio is a joint venture between KKR and TotalEnergies comprising a portfolio of operating and under-construction utility-scale solar assets across the United States. The JV was formed to accelerate the deployment of solar generation capacity.",
     status: "Active",
+    website: "https://www.totalenergies.com",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "Houston, Texas",
+    management: [
+      { name: "Vincent Stoquart", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2022",
+        category: "Financing",
+        event:
+          "KKR and TotalEnergies form joint venture to co-invest in a portfolio of U.S. utility-scale solar projects",
+      },
+    ],
+    sources: [
+      {
+        label: "TotalEnergies — U.S. Renewables",
+        url: "https://www.totalenergies.com/energy-transition/renewable-energies/solar-energy",
+      },
+    ],
   },
   // ─── Kimmeridge ─────────────────────────────────────────────
   {
@@ -10893,17 +16281,12 @@ export const companies: PortCo[] = [
     name: "Commonwealth LNG",
     investmentFirm: "Kimmeridge",
     sector: "Transportation",
-    subsector: "Midstream Energy (LNG Export)",
+    subsector: "Midstream Energy (LNG Export",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Kimmeridge Flagship Funds / Caturus",
-    description: "LNG export terminal project in Cameron Parish, Louisiana, designed to produce approximately 9.3 million tonnes per annum of LNG using mid-scale modular liquefaction technology.",
+    description: "",
     status: "Active",
-    website: "https://commonwealthlng.com",
-    headquarters: "Houston, Texas, United States",
-    sources: [
-      { label: "Commonwealth LNG — Website", url: "https://commonwealthlng.com/" },
-    ],
   },
   {
     name: "LandGate",
@@ -10936,23 +16319,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "MIP IV, MIP V",
-    description: "One of the largest hyperscale data center platforms in the Americas, growing from 2 to 50 locations under Macquarie ownership. Sold in 2025 to BlackRock/GIP, MGX, and AIP consortium at ~$40 billion enterprise value.",
+    description: "",
     status: "Active",
-    website: "https://aligneddc.com",
-    yearFounded: 2013,
-    investmentYear: 2018,
-    headquarters: "Dallas, Texas, United States",
-    milestones: [
-      { date: "2013", event: "Founded by Jakob Carnemark and Thomas Doherty", category: "Founding" },
-      { date: "2018", event: "Macquarie Asset Management made initial investment", category: "Financing" },
-      { date: "2025", event: "Sold to BlackRock/GIP, MGX, and AIP at ~$40 billion enterprise value", category: "Divestiture" },
-    ],
-    management: [
-      { name: "Andrew Schaap", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Macquarie — Aligned Data Centers Sale", url: "https://www.macquarie.com/us/en/about/news/2025/macquarie-asset-management-to-lead-sale-of-aligned-data-centers-at-an-enterprise-value-of-us-40-billion.html" },
-    ],
   },
   {
     name: "Applied Digital (HPC JV)",
@@ -10962,17 +16330,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Macquarie Asset Management",
-    description: "HPC/AI data center developer partnered with Macquarie in a $5 billion investment for up to 2 GW of HPC data center development, including the Ellendale Campus in North Dakota. Macquarie holds 15% common equity in the HPC business.",
+    description: "",
     status: "Active",
-    website: "https://www.applieddigital.com",
-    yearFounded: 2021,
-    headquarters: "Dallas, Texas, United States",
-    management: [
-      { name: "Wes Cummins", title: "Chairman & Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Macquarie — Applied Digital Partnership", url: "https://www.macquarie.com/us/en/about/news/2025/macquarie-asset-management-agrees-to-form-a-partnership-with-applied-digital.html" },
-    ],
   },
   {
     name: "Bluebird Network",
@@ -10982,17 +16341,8 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "MIP IV",
-    description: "Midwest fiber network operator with over 5,200 route miles and 127+ POP sites spanning Missouri, Kansas, Oklahoma, and Illinois, serving major cities including St. Louis, Kansas City, Springfield, and Tulsa.",
+    description: "",
     status: "Active",
-    website: "https://bluebirdfiber.com",
-    headquarters: "Columbia, Missouri, United States",
-    investmentYear: 2019,
-    management: [
-      { name: "Michael Morey", title: "Chief Executive Officer" },
-    ],
-    sources: [
-      { label: "Bluebird Fiber — About", url: "https://bluebirdfiber.com/about/" },
-    ],
   },
   {
     name: "Calibrant Energy",
@@ -11020,12 +16370,55 @@ export const companies: PortCo[] = [
     name: "Cleco Corporate Holdings",
     investmentFirm: "Macquarie Asset Management",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Electric Utility",
     region: "North America",
     country: "United States",
     ownershipVehicle: "MIP III / MIRA",
-    description: "",
+    description:
+      "Cleco Corporate Holdings is a regulated electric utility holding company serving approximately 300,000 customers across Louisiana through its subsidiary Cleco Power LLC. The company operates approximately 3,400 MW of generation capacity, including natural gas, coal, and a growing renewable portfolio, along with over 12,000 miles of transmission and distribution lines. Cleco was taken private by a Macquarie-led consortium in 2016, providing long-term capital for generation fleet modernization and the transition toward cleaner energy resources while maintaining reliable, affordable service across its Louisiana service territory.",
     status: "Active",
+    website: "https://www.cleco.com",
+    yearFounded: 1935,
+    investmentYear: 2016,
+    headquarters: "Pineville, LA",
+    management: [
+      { name: "Bill Fontenot", title: "President & Chief Executive Officer" },
+      { name: "Robb Turner", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1935",
+        event: "Central Louisiana Electric Company (Cleco) incorporated to provide electric service to communities across central and southern Louisiana.",
+        category: "Founding",
+      },
+      {
+        date: "2016",
+        event: "Macquarie Infrastructure Partners III led a consortium that took Cleco private for approximately $4.7 billion, delisting from NYSE.",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Completed the Madison Solar Energy Center, Cleco's first utility-scale solar facility, beginning the clean energy transition for the generation fleet.",
+        category: "Expansion",
+      },
+      {
+        date: "2021",
+        event: "Advanced capital investment in transmission and distribution hardening following Hurricane Laura and other severe weather events.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Filed integrated resource plan with the Louisiana PSC, charting a path to 1 GW+ of new renewable generation by 2030.",
+        category: "Other",
+      },
+    ],
+    sources: [
+      { label: "Cleco — Company Website", url: "https://www.cleco.com" },
+      {
+        label: "Cleco — About Cleco",
+        url: "https://www.cleco.com/about",
+      },
+    ],
   },
   {
     name: "Coastal Waste & Recycling",
@@ -11229,12 +16622,60 @@ export const companies: PortCo[] = [
     name: "Puget Sound Energy (PSE)",
     investmentFirm: "Macquarie Asset Management",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Electric & Gas Utility",
     region: "North America",
     country: "United States",
     ownershipVehicle: "MGIF",
-    description: "",
+    description:
+      "Puget Sound Energy is the largest investor-owned utility in Washington State, providing electric service to approximately 1.2 million customers and natural gas service to approximately 900,000 customers across 10 counties in the Puget Sound region. The company operates a diversified generation portfolio including hydro, wind, natural gas, and solar, along with extensive transmission and distribution infrastructure. PSE was taken private in 2009 by a Macquarie-led consortium and has since been at the forefront of the clean energy transition, investing in wind, solar, and battery storage to meet Washington's ambitious Clean Energy Transformation Act (CETA) mandate of 100% clean electricity by 2045.",
     status: "Active",
+    website: "https://www.pse.com",
+    yearFounded: 1997,
+    investmentYear: 2009,
+    headquarters: "Bellevue, WA",
+    management: [
+      { name: "Mary Kipp", title: "President & Chief Executive Officer" },
+      { name: "Dan Koch", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1997",
+        event: "Puget Sound Energy formed through the merger of Puget Sound Power & Light Company and Washington Natural Gas Company.",
+        category: "Founding",
+      },
+      {
+        date: "Feb 2009",
+        event: "Macquarie-led consortium (including CPPIB, BCI, and others) completed the take-private of PSE for approximately $6.9 billion, delisting from NYSE.",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Washington State enacted the Clean Energy Transformation Act (CETA), requiring 100% clean electricity by 2045, driving PSE's renewable energy investments.",
+        category: "Other",
+      },
+      {
+        date: "2021",
+        event: "Commissioned the Skookumchuck Wind Farm (137 MW) in Lewis County, WA, one of the largest wind projects in the state.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Advanced the first large-scale battery energy storage projects in PSE's service territory, supporting grid reliability and renewable integration.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Mary Kipp appointed President & CEO. Filed updated integrated resource plan charting a path to CETA compliance through wind, solar, and storage investments.",
+        category: "Management",
+      },
+    ],
+    sources: [
+      { label: "Puget Sound Energy — Company Website", url: "https://www.pse.com" },
+      {
+        label: "PSE — About PSE",
+        url: "https://www.pse.com/en/about-us",
+      },
+    ],
   },
   {
     name: "Supervía Poniente",
