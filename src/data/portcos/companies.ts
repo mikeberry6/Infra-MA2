@@ -504,8 +504,52 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Finland",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
-    status: "Active",
+    description:
+      "Elenia is the second-largest electricity distribution system operator in Finland, serving approximately 442,000 customers across more than 100 municipalities in central and western Finland through nearly 77,000 km of network. The company is responsible for maintaining, building, and modernising Finland's electricity distribution infrastructure, with a major focus on replacing overhead lines with underground cables to weatherproof the network.",
+    status: "Realized",
+    website: "https://www.elenia.fi",
+    yearFounded: 2012,
+    investmentYear: 2012,
+    headquarters: "Tampere, Finland",
+    management: [
+      { name: "Jorma Myllymäki", title: "Chief Executive Officer" },
+      { name: "Tommi Valento", title: "Chief Financial Officer" },
+      { name: "Tommi Lähdeaho", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "December 2017",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure sells its 39.3% stake in Elenia to a consortium of Allianz Capital Partners, Macquarie Infrastructure and Real Assets, and the State Pension Fund of Finland for approximately £725 million",
+      },
+      {
+        date: "January 2012",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires its stake in Elenia as part of the LNI Acquisition consortium with GS Infrastructure Partners and Ilmarinen, purchasing Vattenfall's Finnish electricity distribution and heating businesses for €1.54 billion",
+      },
+      {
+        date: "December 2011",
+        category: "Acquisition",
+        event:
+          "LNI Acquisition Oy signs agreement to acquire Vattenfall's electricity distribution and district heating operations in Finland for €1.54 billion; later rebranded as Elenia",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Elenia Past Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/elenia/",
+      },
+      {
+        label: "Elenia — Wikipedia",
+        url: "https://en.wikipedia.org/wiki/Elenia",
+      },
+      {
+        label: "Elenia — About Us",
+        url: "https://www.elenia.fi/en/elenia/company/about-us",
+      },
+    ],
   },
   {
     name: "Eversholt Rail",
