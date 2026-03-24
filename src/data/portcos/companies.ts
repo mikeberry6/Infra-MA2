@@ -643,8 +643,75 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "Future Biogas is one of the largest anaerobic digestion plant developers and biogas producers in the UK, producing approximately 700 GWh of biogas per year across 12 sites. The company converts sustainably grown energy crops into biomethane, which is injected into the UK's national gas network, and works with over 400 farms across the East of England. Future Biogas employs approximately 170 people and is pioneering unsubsidised biomethane production with integrated carbon capture technology.",
     status: "Active",
+    website: "https://www.futurebiogas.com",
+    yearFounded: 2010,
+    investmentYear: 2023,
+    headquarters: "Guildford, Surrey",
+    management: [
+      { name: "Philipp Lukas", title: "Chief Executive Officer" },
+      { name: "Steven Beveridge", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "January 2025",
+        category: "Expansion",
+        event:
+          "Completes construction of Gonerby Moor site, the UK's first unsubsidised biomethane plant with carbon capture",
+      },
+      {
+        date: "September 2024",
+        category: "Financing",
+        event:
+          "3i Infrastructure syndicates 23% stake to RWE Energy Transition Investments for £30 million",
+      },
+      {
+        date: "August 2024",
+        category: "Acquisition",
+        event:
+          "Acquires 51% stake in portfolio of six gas-to-grid AD facilities from JLEN for £68.1 million, adding 333 GWh of gas output",
+      },
+      {
+        date: "December 2023",
+        category: "Expansion",
+        event:
+          "AstraZeneca signs 15-year, $130 million green gas offtake agreement for the Gonerby Moor biomethane facility",
+      },
+      {
+        date: "November 2023",
+        category: "Financing",
+        event:
+          "3i Infrastructure invests additional £30 million to fund acquisition of two AD plants previously operated by Future Biogas",
+      },
+      {
+        date: "February 2023",
+        category: "Financing",
+        event:
+          "Acquired by 3i Infrastructure plc for £28 million, transitioning from third-party operator to asset owner",
+      },
+      {
+        date: "March 2010",
+        category: "Founding",
+        event:
+          "Future Biogas Limited incorporated by founder Philipp Lukas",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Future Biogas Portfolio Page",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/future-biogas/",
+      },
+      {
+        label: "3i Group — Future Biogas Overview",
+        url: "https://www.3i.com/infrastructure/our-portfolio/future-biogas/",
+      },
+      {
+        label: "Future Biogas — AstraZeneca Unsubsidised Biomethane Plant",
+        url: "https://www.futurebiogas.com/about/content-hub/news/future-biogas-and-astrazeneca-bring-the-uk-s-first-unsubsidised-biomethane-plant-online/",
+      },
+    ],
   },
   {
     name: "Gerediaga-Elo rrio Motorway (AGESA)",
