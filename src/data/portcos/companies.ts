@@ -449,13 +449,63 @@ export const companies: PortCo[] = [
   {
     name: "EC Waste",
     investmentFirm: "3i Infrastructure",
-    sector: "Social Infrastructure",
-    subsector: "Waste",
+    sector: "Environmental / Waste",
+    subsector: "Solid Waste Services",
     region: "North America",
     country: "United States",
     ownershipVehicle: "3i North American Infrastructure Fund",
-    description: "",
+    description:
+      "EC Waste is the largest vertically integrated provider of non-hazardous solid waste services in Puerto Rico, serving over 100,000 residential clients and more than 9,000 commercial and industrial customers. The company operates five U.S. EPA-permitted landfills, four transfer stations, and the island's largest regulated waste collections network, with services spanning collection, transfer, disposal, recycling, and renewable natural gas recovery.",
     status: "Active",
+    website: "https://www.ecwaste.com",
+    yearFounded: 1961,
+    investmentYear: 2021,
+    headquarters: "Humacao, Puerto Rico",
+    management: [
+      { name: "Mark Johnson", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "July 2025",
+        category: "Acquisition",
+        event:
+          "EC Waste acquires ARB Inc., a specialized local provider of waste collection and environmental management services",
+      },
+      {
+        date: "November 2021",
+        category: "Financing",
+        event:
+          "3i Group acquires majority stake in EC Waste from Post Capital Partners via the 3i North American Infrastructure Fund",
+      },
+      {
+        date: "September 2020",
+        category: "Acquisition",
+        event:
+          "EC Waste acquires Republic Services of Puerto Rico, adding two landfills, a transfer station, and two hauling operations",
+      },
+      {
+        date: "April 2014",
+        category: "Acquisition",
+        event:
+          "Post Capital Partners and CEO Randy Jensen acquire EC Waste from Waste Management, Inc.",
+      },
+      {
+        date: "1961",
+        category: "Founding",
+        event:
+          "Founded in Humacao, Puerto Rico as El Coqui Waste Disposal",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Portfolio — EC Waste",
+        url: "https://www.3i.com/portfolio/ec-waste/",
+      },
+      {
+        label: "3i — EC Waste Acquires ARB (July 2025)",
+        url: "https://www.3i.com/media/news/2025/3i-backed-ec-waste-acquires-arb-waste-services-in-puerto-rico/",
+      },
+    ],
   },
   {
     name: "ESP Utilities Group",
