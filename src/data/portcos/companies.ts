@@ -340,8 +340,57 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
-    status: "Active",
+    description:
+      "Cross London Trains (XLT) is a special purpose vehicle established to finance, own, and lease a fleet of 115 Siemens Desiro City Class 700 trains for the Thameslink passenger rail franchise, one of the largest single rolling stock fleets in the UK. The project is part of the wider £7 billion government-funded Thameslink Programme providing essential congestion relief to London and the South East, with a 20-year availability contract fully backed by the UK Department for Transport.",
+    status: "Realized",
+    yearFounded: 2011,
+    investmentYear: 2013,
+    headquarters: "Swanley, Kent",
+    management: [
+      { name: "Aileen Jordan", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "March 2019",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure sells its 33.3% stake to a consortium of Dalmore Capital and Equitix for approximately £333 million",
+      },
+      {
+        date: "March 2018",
+        category: "Expansion",
+        event:
+          "115th and final Class 700 train rolls off the Siemens production line in Krefeld, Germany",
+      },
+      {
+        date: "June 2016",
+        category: "Expansion",
+        event:
+          "First Class 700 train enters passenger service on the Brighton to London Bridge route",
+      },
+      {
+        date: "June 2013",
+        category: "Financing",
+        event:
+          "3i Infrastructure invests £61.8 million for a 33.3% stake alongside Innisfree and Siemens Project Ventures; £1.6 billion DfT contract signed",
+      },
+      {
+        date: "October 2011",
+        category: "Founding",
+        event:
+          "Cross London Trains Limited incorporated as SPV to procure and lease Thameslink rolling stock",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — XLT Past Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/cross-london-trains-xlt/",
+      },
+      {
+        label: "3i Infrastructure — Sale Announcement (2019)",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2019/3i-infrastructure-plc-agrees-to-sell-its-stake-in-cross-london-trains",
+      },
+    ],
   },
   {
     name: "DIF III French PPP Portfolio",
