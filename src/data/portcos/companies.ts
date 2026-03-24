@@ -1475,8 +1475,25 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Italy",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "MFM Capital S.r.l. is an Italian holding company that owns stakes in PPP concession vehicles operating social infrastructure assets, including four hospital concessions in Monza, Legnano, Verona, and Modena, as well as the Terza Torre regional government office building in Bologna and an energy efficiency project in Alessandria.",
     status: "Active",
+    investmentYear: 2019,
+    headquarters: "Bologna, Italy",
+    milestones: [
+      {
+        date: "2019",
+        category: "Financing",
+        event:
+          "3i European Operational Projects Fund acquires a 95% stake in MFM Capital from Rekeep SpA",
+      },
+    ],
+    sources: [
+      {
+        label: "3i EOPF Deploys Capital in Italy",
+        url: "https://www.3i.com/media/news/2019/3i-european-operational-projects-fund-deploys-capital-in-portugal-italy-ireland-and-germany/",
+      },
+    ],
   },
   {
     name: "NEoT Green Mobility",
@@ -1484,10 +1501,42 @@ export const companies: PortCo[] = [
     sector: "Transportation",
     subsector: "Energy Transition",
     region: "Europe",
-    country: "Europe",
+    country: "France",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "NEoT Green Mobility is a European investment platform dedicated to financing zero-emission mobility, providing turnkey leasing and as-a-service solutions for electric buses, coaches, trucks, charging infrastructure, and batteries to local authorities, transport operators, and logistics companies. The platform manages over €200 million of assets across France, the UK, and Scandinavia.",
     status: "Active",
+    website: "https://www.neotcapital.com/en/plateformes/neot-green-mobility/",
+    yearFounded: 2017,
+    investmentYear: 2021,
+    headquarters: "Paris, France",
+    management: [
+      { name: "Philippe Ringenbach", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "September 2021",
+        category: "Financing",
+        event:
+          "3i EOPF commits €30 million in equity alongside Mirova and Banque des Territoires, raising €100 million for NEoT Green Mobility",
+      },
+      {
+        date: "2017",
+        category: "Founding",
+        event:
+          "NEoT Green Mobility launched by NEoT Capital (co-founded by EDF and Forsee Power) to finance zero-emission mobility across Europe",
+      },
+    ],
+    sources: [
+      {
+        label: "3i EOPF Invests in NEoT Green Mobility",
+        url: "https://www.3i.com/media/news/2021/3i-european-operational-projects-fund-agrees-to-invest-in-neot-green-mobility/",
+      },
+      {
+        label: "NEoT Capital — NEoT Green Mobility Platform",
+        url: "https://www.neotcapital.com/en/plateformes/neot-green-mobility/",
+      },
+    ],
   },
   {
     name: "Oiltanking (European Terminals)",
@@ -1495,10 +1544,33 @@ export const companies: PortCo[] = [
     sector: "Midstream Energy",
     subsector: "Storage",
     region: "Europe",
-    country: "Europe",
+    country: "Netherlands",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
-    status: "Active",
+    description:
+      "Oiltanking European Terminals comprised 3i Infrastructure's 45% stakes in four liquid bulk storage terminals — Oiltanking Amsterdam, Oiltanking Ghent, Oiltanking Malta, and Oiltanking Terneuzen — providing 3.8 million cubic metres of storage capacity for refined oil products, chemicals, and biofuels across the ARA hub and the Mediterranean.",
+    status: "Realized",
+    investmentYear: 2007,
+    headquarters: "Amsterdam, Netherlands",
+    milestones: [
+      {
+        date: "October 2021",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure completes sale of four European terminal stakes to Evos for net proceeds of approximately €55 million, achieving a 2.8x money multiple",
+      },
+      {
+        date: "2007",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires 45% stakes in Oiltanking Amsterdam and Oiltanking Malta through the Oystercatcher holding company at IPO",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Sale of European Terminals",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2021/3i-infrastructure-plc-agrees-to-sell-oystercatcher-s-four-european-terminals/",
+      },
+    ],
   },
   {
     name: "Oystercatcher (Advario)",
@@ -1508,8 +1580,60 @@ export const companies: PortCo[] = [
     region: "Asia-Pacific",
     country: "Singapore",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "Oystercatcher is the holding company through which 3i Infrastructure holds a 45% interest in Advario Singapore Limited (formerly Oiltanking Singapore), a 1.3 million cubic metre liquid bulk storage and blending facility on Jurong Island. Advario Singapore is the leading gasoline storage and blending facility in Singapore and the wider region, serving customers in refined petroleum products, chemicals, and increasingly sustainable fuels including SAF.",
     status: "Active",
+    website: "https://advario.com/",
+    yearFounded: 1990,
+    investmentYear: 2007,
+    headquarters: "Singapore",
+    management: [
+      { name: "Bas Verkooijen", title: "Chief Executive Officer" },
+      { name: "Maaike Schipperheijn", title: "Chief Financial Officer" },
+      { name: "Yvan Tavernier", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "May 2023",
+        category: "Expansion",
+        event:
+          "Advario Singapore secures long-term SAF storage and blending partnership with Neste for sustainable aviation fuel at Changi Airport",
+      },
+      {
+        date: "2022",
+        category: "Other",
+        event:
+          "Oiltanking Singapore rebranded as Advario Singapore Limited",
+      },
+      {
+        date: "October 2021",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure sells Oystercatcher's four European terminal stakes to Evos; retains 45% stake in Advario Singapore as the sole remaining asset",
+      },
+      {
+        date: "2007",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires 45% stake in Oiltanking Singapore through the Oystercatcher holding company at IPO",
+      },
+      {
+        date: "1990",
+        category: "Founding",
+        event:
+          "Oiltanking Singapore commences operations on Jurong Island as a petroleum products storage and blending terminal",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Oystercatcher Current Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/oystercatcher/",
+      },
+      {
+        label: "Advario — Leadership Team",
+        url: "https://advario.com/about-us/leadership-team/",
+      },
+    ],
   },
   {
     name: "Regional Rail",
@@ -1519,8 +1643,41 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "3i North American Infrastructure Fund",
-    description: "",
+    description:
+      "Regional Rail LLC is a leading operator of short line freight railroads and rail-related businesses across North America. Since 3i's acquisition in 2019, the company has grown from three railroads to seventeen freight railroad operations spanning the eastern United States and western Canada, transporting over 65,000 carloads annually across diversified end markets.",
     status: "Active",
+    website: "https://regional-rail.com/",
+    yearFounded: 2007,
+    investmentYear: 2019,
+    headquarters: "Kennett Square, Pennsylvania",
+    management: [
+      { name: "Al Sauer", title: "President and Chief Executive Officer" },
+      { name: "Ethel Nawrocki", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "July 2019",
+        category: "Financing",
+        event:
+          "3i Group acquires 100% of Regional Rail from Levine Leichtman Capital Partners, establishing it as 3i's North American rail infrastructure platform",
+      },
+      {
+        date: "April 2007",
+        category: "Founding",
+        event:
+          "Regional Rail LLC formed; acquires the East Penn Railroad as its first operating railroad",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — Regional Rail Portfolio",
+        url: "https://www.3i.com/infrastructure/our-portfolio/regional-rail/",
+      },
+      {
+        label: "Regional Rail — Company Website",
+        url: "https://regional-rail.com/",
+      },
+    ],
   },
   {
     name: "SRL Traffic Systems",
