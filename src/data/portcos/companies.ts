@@ -8718,23 +8718,129 @@ export const companies: PortCo[] = [
     name: "Carrix (SSA Marine)",
     investmentFirm: "Blackstone",
     sector: "Transportation",
-    subsector: "Ports",
-    region: "North America",
-    country: "United States",
+    subsector: "Ports & Marine Terminals",
+    region: "Global",
+    country: "United States (Global)",
     ownershipVehicle: "Blackstone Infrastructure",
-    description: "",
+    description:
+      "Carrix (formerly SSA Marine) is the largest privately held marine terminal operator in the world, operating approximately 200 facilities across North America, South America, Africa, Asia, and the Middle East. The company handles container, breakbulk, cruise, and auto/RoRo cargo across its global network. Carrix also owns SSA Containers (North American container operations), Tideworks Technology (terminal operating systems), and Shippers Transport (trucking/drayage). Blackstone Infrastructure Partners acquired the company to gain exposure to the critical chokepoints of global trade infrastructure with long-duration terminal concessions and leases.",
     status: "Active",
+    website: "https://www.carrix.com",
+    yearFounded: 1949,
+    investmentYear: 2023,
+    headquarters: "Seattle, WA",
+    management: [
+      { name: "Bob Watters", title: "Chief Executive Officer" },
+      { name: "Edward DeNike", title: "President" },
+    ],
+    milestones: [
+      {
+        date: "1949",
+        event: "Stevedoring Services of America (SSA) founded in Seattle, WA to provide stevedoring and terminal operations on the U.S. West Coast.",
+        category: "Founding",
+      },
+      {
+        date: "1990s",
+        event: "Expanded internationally through terminal concession wins and acquisitions in Mexico, Central America, South America, and Africa.",
+        category: "Expansion",
+      },
+      {
+        date: "2008",
+        event: "Acquired Tideworks Technology, a leading developer of terminal operating systems (TOS), adding a technology platform to the port operations business.",
+        category: "Acquisition",
+      },
+      {
+        date: "2022",
+        event: "Rebranded from SSA Marine to Carrix, reflecting the broader scope of the platform beyond marine operations.",
+        category: "Other",
+      },
+      {
+        date: "Jul 2023",
+        event: "Blackstone Infrastructure Partners acquired Carrix for an enterprise value reportedly exceeding $4 billion, one of the largest private port infrastructure transactions in history.",
+        category: "Financing",
+      },
+      {
+        date: "2024",
+        event: "Advanced terminal modernization and automation initiatives across the portfolio, investing in electrification of cargo handling equipment.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Carrix — Company Website", url: "https://www.carrix.com" },
+      {
+        label: "Blackstone — Carrix Acquisition",
+        url: "https://www.blackstone.com/news/press/blackstone-infrastructure-to-acquire-carrix/",
+      },
+      {
+        label: "Journal of Commerce — Blackstone Acquires Carrix",
+        url: "https://www.joc.com/port-news/blackstone-infrastructure-acquires-carrix",
+      },
+    ],
   },
   {
     name: "Cheniere Energy Partners, L.P.",
     investmentFirm: "Blackstone",
     sector: "Midstream Energy",
-    subsector: "",
+    subsector: "LNG Export",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Infrastructure Partners",
-    description: "",
+    description:
+      "Cheniere Energy Partners (NYSE American: CQP) is the largest producer and exporter of liquefied natural gas (LNG) in the United States and among the largest globally, operating the Sabine Pass LNG terminal in Cameron Parish, Louisiana. The facility has six operational liquefaction trains with a total capacity of approximately 30 million tonnes per annum (mtpa). Cheniere's LNG is sold under long-term, take-or-pay contracts to counterparties across Europe, Asia, and Latin America. Blackstone Infrastructure Partners holds a significant equity position in the publicly traded MLP, reflecting a conviction in the long-term structural demand for U.S. LNG exports in global energy security.",
     status: "Active",
+    website: "https://www.cheniere.com",
+    yearFounded: 1996,
+    investmentYear: 2019,
+    headquarters: "Houston, TX",
+    management: [
+      { name: "Jack Fusco", title: "President & Chief Executive Officer" },
+      { name: "Zach Davis", title: "Chief Financial Officer" },
+      { name: "Anatol Feygin", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1996",
+        event: "Cheniere Energy founded as an oil and gas exploration company before pivoting to LNG infrastructure development.",
+        category: "Founding",
+      },
+      {
+        date: "2005",
+        event: "Received FERC authorization to construct the Sabine Pass LNG import terminal in Louisiana.",
+        category: "Other",
+      },
+      {
+        date: "2012",
+        event: "Received DOE and FERC approvals to construct liquefaction facilities at Sabine Pass, becoming the first U.S. LNG export terminal since Alaska LNG.",
+        category: "Other",
+      },
+      {
+        date: "Feb 2016",
+        event: "First commercial LNG cargo exported from Sabine Pass Train 1, marking the beginning of the U.S. LNG export era.",
+        category: "Expansion",
+      },
+      {
+        date: "2019",
+        event: "Blackstone Infrastructure Partners invested in Cheniere Energy Partners, acquiring a significant equity position in the publicly traded MLP.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Sabine Pass Train 6 reached substantial completion, bringing total facility capacity to approximately 30 mtpa across six trains.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Cheniere Energy (parent) launched the Sabine Pass Stage 5 expansion project, which would add up to an additional 20 mtpa of capacity.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Cheniere Energy — Company Website", url: "https://www.cheniere.com" },
+      {
+        label: "Cheniere Energy Partners — Investor Relations",
+        url: "https://www.cheniere.com/investors",
+      },
+    ],
   },
   {
     name: "Enverus",
@@ -8773,23 +8879,114 @@ export const companies: PortCo[] = [
     name: "Hotwire Communications",
     investmentFirm: "Blackstone",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Fiber Broadband",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Infrastructure Partners",
-    description: "",
+    description:
+      "Hotwire Communications is a fiber-first broadband, video, and voice services provider focused on multi-dwelling unit (MDU) and planned community markets, primarily in Florida, the Mid-Atlantic, and other high-growth Southeastern U.S. regions. The company builds and operates fiber-to-the-unit (FTTU) networks serving residential communities, condominiums, hotels, and student housing under long-term bulk service agreements with property developers and HOAs. Hotwire's exclusive bulk agreements create a defensible, recurring revenue model with high customer retention. Blackstone Infrastructure Partners invested to support the company's expansion in the growing fiber-to-the-home market.",
     status: "Active",
+    website: "https://www.hotwirecommunication.com",
+    yearFounded: 2000,
+    investmentYear: 2020,
+    headquarters: "Fort Lauderdale, FL",
+    management: [
+      { name: "Kristin Johnson", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2000",
+        event: "Hotwire Communications founded in South Florida as a provider of high-speed internet and voice services to planned communities and MDUs.",
+        category: "Founding",
+      },
+      {
+        date: "2015",
+        event: "Expanded beyond Florida into Mid-Atlantic markets, growing the fiber network to serve hundreds of communities.",
+        category: "Expansion",
+      },
+      {
+        date: "2020",
+        event: "Blackstone Infrastructure Partners acquired a majority stake in Hotwire Communications, providing capital for network expansion and new market entry.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Accelerated fiber network buildout in new communities across the Southeast, leveraging partnerships with major residential developers and homebuilders.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Hotwire Communications — Company Website", url: "https://www.hotwirecommunication.com" },
+      {
+        label: "Blackstone — Hotwire Communications Portfolio",
+        url: "https://www.blackstone.com/our-businesses/infrastructure/",
+      },
+    ],
   },
   {
     name: "Invenergy Renewables",
     investmentFirm: "Blackstone",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Wind, Solar & Storage",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Infrastructure Partners",
-    description: "",
+    description:
+      "Invenergy is one of the largest privately held clean energy companies in North America, having developed over 31 GW of wind, solar, natural gas, and energy storage projects since inception. The company is vertically integrated, handling development, construction, and long-term operations across its portfolio. Invenergy's operating fleet spans the U.S., Canada, Latin America, Europe, and Asia-Pacific. Blackstone Infrastructure Partners invested in 2018, providing growth capital to fund the company's massive development pipeline at a time of accelerating clean energy demand driven by utility decarbonization mandates and corporate renewable procurement.",
     status: "Active",
+    website: "https://invenergy.com",
+    yearFounded: 2001,
+    investmentYear: 2018,
+    headquarters: "Chicago, IL",
+    management: [
+      { name: "Michael Polsky", title: "Founder & Chief Executive Officer" },
+      { name: "Jim Murphy", title: "President" },
+      { name: "Ted Brandt", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "2001",
+        event: "Invenergy founded by Michael Polsky in Chicago, IL as a wind energy development company.",
+        category: "Founding",
+      },
+      {
+        date: "2010",
+        event: "Expanded beyond wind into natural gas-fired generation, developing combined-cycle gas turbine (CCGT) plants to complement the renewable portfolio.",
+        category: "Expansion",
+      },
+      {
+        date: "2015",
+        event: "Surpassed 10 GW of developed capacity, establishing Invenergy as one of North America's largest independent power producers.",
+        category: "Expansion",
+      },
+      {
+        date: "2018",
+        event: "Blackstone Infrastructure Partners invested approximately $3 billion for a minority stake, providing growth capital for the expanding development pipeline.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "Entered the battery energy storage market with large-scale projects, diversifying beyond generation into grid services.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Surpassed 31 GW of developed capacity globally, with an active development pipeline of 16+ GW of wind, solar, and storage projects.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Expanded into data center power solutions, securing long-term power purchase agreements with hyperscale cloud and AI companies.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Invenergy — Company Website", url: "https://invenergy.com" },
+      {
+        label: "Blackstone — Invenergy Investment",
+        url: "https://www.blackstone.com/news/press/blackstone-announces-strategic-partnership-with-invenergy/",
+      },
+    ],
   },
   {
     name: "Kindle Energy",
@@ -8982,12 +9179,60 @@ export const companies: PortCo[] = [
     name: "Tallgrass Energy",
     investmentFirm: "Blackstone",
     sector: "Midstream Energy",
-    subsector: "",
+    subsector: "Pipelines & Processing",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Blackstone Infrastructure Partners",
-    description: "",
+    description:
+      "Tallgrass Energy is a midstream energy company that owns and operates approximately 8,400 miles of natural gas pipelines, 800 miles of crude oil pipelines, and natural gas processing and treating facilities across the central United States. Key assets include the Rockies Express Pipeline (REX), one of the largest natural gas pipelines in the U.S. connecting the Rocky Mountain supply region to Midwest and Eastern demand markets, and the Pony Express Pipeline system serving the DJ and Powder River Basins. Blackstone Infrastructure Partners led the take-private of Tallgrass in 2020, securing a portfolio of contracted midstream infrastructure with embedded optionality for carbon capture and hydrogen transport.",
     status: "Active",
+    website: "https://www.tallgrassenergy.com",
+    yearFounded: 2012,
+    investmentYear: 2020,
+    headquarters: "Leawood, KS",
+    management: [
+      { name: "Matt Sheehy", title: "President & Chief Executive Officer" },
+      { name: "Gary Brauchle", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "2012",
+        event: "Tallgrass Energy Partners formed and went public, initially operating the Tallgrass Interstate Gas Transmission system in Kansas and Colorado.",
+        category: "Founding",
+      },
+      {
+        date: "2015",
+        event: "Acquired the Pony Express Pipeline, a 700-mile crude oil pipeline from the DJ Basin to Cushing, OK, from Enterprise Products Partners.",
+        category: "Acquisition",
+      },
+      {
+        date: "2016",
+        event: "Acquired a 75% stake in the Rockies Express Pipeline (REX) from Sempra and Tallgrass Development, securing one of the premier U.S. natural gas pipelines.",
+        category: "Acquisition",
+      },
+      {
+        date: "Feb 2020",
+        event: "Blackstone Infrastructure Partners completed the take-private acquisition of Tallgrass Energy for approximately $6.4 billion (including debt).",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Launched the Trailblazer CO2 pipeline conversion project, repurposing the existing Trailblazer natural gas pipeline for carbon dioxide transport and sequestration.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Advanced carbon capture and storage (CCS) initiatives, positioning the pipeline network as critical infrastructure for the energy transition.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Tallgrass Energy — Company Website", url: "https://www.tallgrassenergy.com" },
+      {
+        label: "Blackstone — Tallgrass Energy Take-Private",
+        url: "https://www.blackstone.com/news/press/blackstone-infrastructure-partners-to-acquire-tallgrass-energy/",
+      },
+    ],
   },
   {
     name: "Transmission Developers Inc. (TDI) / CHPE",
@@ -9115,23 +9360,114 @@ export const companies: PortCo[] = [
     name: "Colonial Pipeline (Colonial Enterprises)",
     investmentFirm: "Brookfield Asset Management",
     sector: "Midstream Energy",
-    subsector: "",
+    subsector: "Refined Products Pipeline",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Infrastructure Partners",
-    description: "",
+    description:
+      "Colonial Pipeline is the largest refined products pipeline system in the United States, transporting approximately 2.5 million barrels per day of gasoline, diesel, jet fuel, and other refined petroleum products through a 5,500-mile pipeline network from Houston, TX to Linden, NJ. The system serves the entire Eastern Seaboard, supplying approximately 45% of all fuel consumed by the East Coast. Colonial operates as a common carrier under FERC tariff regulation, with transportation rates providing stable, fee-based revenue. Brookfield Infrastructure Partners and other institutional investors co-own the system through Koch Industries' subsidiary.",
     status: "Active",
+    website: "https://www.colpipe.com",
+    yearFounded: 1962,
+    investmentYear: 2018,
+    headquarters: "Alpharetta, GA",
+    management: [
+      { name: "Tim Felt", title: "President & Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "1962",
+        event: "Colonial Pipeline Company formed by a consortium of nine oil companies to construct the largest refined products pipeline in the United States.",
+        category: "Founding",
+      },
+      {
+        date: "1963",
+        event: "Colonial Pipeline entered service, initially running 1,600 miles from Houston to Greensboro, NC. Extended to the New York Harbor area by 1968.",
+        category: "Expansion",
+      },
+      {
+        date: "2003",
+        event: "Koch Industries (via Koch Capital Investments) acquired a controlling interest, and Brookfield and other institutional investors co-invested.",
+        category: "Financing",
+      },
+      {
+        date: "2018",
+        event: "Brookfield Infrastructure Partners acquired an additional equity interest in Colonial Pipeline, increasing its stake in the critical refined products system.",
+        category: "Financing",
+      },
+      {
+        date: "May 2021",
+        event: "DarkSide ransomware attack forced a precautionary shutdown of the entire pipeline system for six days, causing fuel shortages across the East Coast and prompting new federal pipeline cybersecurity mandates.",
+        category: "Other",
+      },
+      {
+        date: "2023",
+        event: "Invested over $1 billion in system reliability, cybersecurity, and capacity expansion projects following the 2021 incident and growing demand.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Colonial Pipeline — Company Website", url: "https://www.colpipe.com" },
+      {
+        label: "Colonial Pipeline — About Us",
+        url: "https://www.colpipe.com/about-us",
+      },
+    ],
   },
   {
     name: "Compass Datacenters",
     investmentFirm: "Brookfield Asset Management",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Hyperscale Data Centers",
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Brookfield Infrastructure Partners",
-    description: "",
+    description:
+      "Compass Datacenters is a leading developer and operator of hyperscale and enterprise data center campuses across North America, with operations spanning Texas, Virginia, Illinois, Ohio, and other key markets. The company specializes in build-to-suit powered shell and turnkey data centers for hyperscale cloud providers, enterprise customers, and AI workload operators. Compass has grown rapidly to become one of the top five data center developers in the U.S. by capacity under development, with a multi-GW development pipeline. Brookfield Infrastructure Partners is a significant investor, providing long-term capital to fund the company's ambitious expansion to meet surging demand driven by AI and cloud computing.",
     status: "Active",
+    website: "https://www.compassdatacenters.com",
+    yearFounded: 2011,
+    investmentYear: 2020,
+    headquarters: "Dallas, TX",
+    management: [
+      { name: "Chris Crosby", title: "Founder & Chief Executive Officer" },
+      { name: "Nancy Phillips", title: "Chief Financial Officer" },
+      { name: "Tony Qorri", title: "Chief Revenue Officer" },
+    ],
+    milestones: [
+      {
+        date: "2011",
+        event: "Compass Datacenters founded by Chris Crosby in Dallas, TX, initially developing purpose-built data centers in the Dallas-Fort Worth and Chicago markets.",
+        category: "Founding",
+      },
+      {
+        date: "2017",
+        event: "Expanded into Northern Virginia (Ashburn/Loudoun County), the world's largest data center market, with multi-building campus development.",
+        category: "Expansion",
+      },
+      {
+        date: "2020",
+        event: "Brookfield Infrastructure Partners invested in Compass, providing capital to scale the hyperscale development pipeline nationally.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Commenced development of multiple new campuses across Texas, Virginia, and Ohio, expanding total capacity beyond 1 GW.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Advanced multi-GW development pipeline, securing power capacity and land for new hyperscale campuses to meet demand from AI training and inference workloads.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Compass Datacenters — Company Website", url: "https://www.compassdatacenters.com" },
+      {
+        label: "Data Center Knowledge — Compass Datacenters Growth",
+        url: "https://www.datacenterknowledge.com/data-centers/compass-datacenters-expansion",
+      },
+    ],
   },
   {
     name: "Cove Point LNG",
