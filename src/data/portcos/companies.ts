@@ -2873,7 +2873,7 @@ export const companies: PortCo[] = [
     status: "Active",
   },
   // ─── Acadia Infrastructure Capital ──────────────────────────
-  {
+    {
     name: "JVR Energy Park (BayWa r.e.)",
     investmentFirm: "Acadia Infrastructure Capital",
     sector: "Energy Transition",
@@ -2881,10 +2881,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Preferred Equity",
-    description: "",
+    description: "The Jacumba Valley Ranch (JVR) Energy Park is a 90 MWac solar and 70 MWac/280 MWh battery storage facility located in southeastern San Diego County, California. Developed by BayWa r.e. with $416 million in total financing commitments, the project will supply clean electricity to approximately 57,000 homes through San Diego Community Power and is expected to avoid roughly 500,000 metric tons of CO2 over its lifetime.",
     status: "Active",
+    website: "https://us.baywa-re.com/en",
+    yearFounded: 2023,
+    investmentYear: 2025,
+    headquarters: "San Diego County, CA",
+    management: [
+      { name: "Matthias Taft", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2025-12", event: "BayWa r.e. closes $416M financing for JVR Energy Park with preferred equity from Acadia Infrastructure Capital and Wafra", category: "Financing" },
+      { date: "2026-09", event: "JVR Energy Park expected to commence commercial operations, supplying power to 57,000 homes via San Diego Community Power", category: "Expansion" },
+    ],
+    sources: [
+      { label: "BayWa r.e. JVR Financing Announcement", url: "https://www.prnewswire.com/news-releases/baywa-re-secures-416m-funding-for-jvr-energy-park-expected-to-be-operational-in-fall-2026-302636735.html" },
+    ],
   },
-  {
+    {
     name: "Peregrine Energy Storage Project (Arevon Energy)",
     investmentFirm: "Acadia Infrastructure Capital",
     sector: "Energy Transition",
@@ -2892,10 +2906,25 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Preferred Equity",
-    description: "",
+    description: "The Peregrine Energy Storage Project is a 200 MW/400 MWh lithium iron phosphate battery storage facility located in the Barrio Logan community of San Diego, California. Developed and operated by Arevon Energy at a cost of approximately $300 million, Peregrine is the largest battery storage facility in San Diego and can power up to 200,000 homes for two hours during peak demand.",
     status: "Active",
+    website: "https://www.peregrineenergystorage.com/",
+    yearFounded: 2021,
+    investmentYear: 2024,
+    headquarters: "San Diego, CA",
+    management: [
+      { name: "Kevin Smith", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2024-06", event: "Arevon closes $258M financing for Peregrine, including $79M preferred equity commitment sourced by Acadia Infrastructure Capital", category: "Financing" },
+      { date: "2025-06", event: "Peregrine Energy Storage Project commences commercial operations as Arevon's fifth utility-scale storage facility in California", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Arevon Peregrine Financing Announcement", url: "https://arevonenergy.com/news/releases/arevon-announces-258-million-of-financial-commitments-for-its-peregrine-energy-storage-project/" },
+      { label: "Arevon Peregrine Operations Announcement", url: "https://arevonenergy.com/news/releases/arevon-commences-operations-at-its-200-megawatt-peregrine-energy-storage-project-in-san-diego/" },
+    ],
   },
-  {
+    {
     name: "Project Soho (Greenflash Infrastructure)",
     investmentFirm: "Acadia Infrastructure Capital",
     sector: "Energy Transition",
@@ -2903,10 +2932,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Preferred Equity",
-    description: "",
+    description: "Project Soho is a 400 MW/800 MWh standalone battery energy storage system in Brazoria County, Texas, developed by H.I.G. Capital-backed Greenflash Infrastructure. It is the largest standalone BESS under construction in Texas and is designed as a scalable financing template for Greenflash's 5 GW near-term ERCOT pipeline.",
     status: "Active",
+    website: "https://greenflashinfrastructure.com/",
+    yearFounded: 2023,
+    investmentYear: 2025,
+    headquarters: "Brazoria County, TX",
+    management: [
+      { name: "David Giordano", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2025-10", event: "Greenflash closes innovative hybrid debt, preferred equity, and tax credit financing for Project Soho with Acadia and Wafra providing preferred equity", category: "Financing" },
+      { date: "2026-02", event: "Project Soho expected to achieve commercial operations in Q2 2026 as the largest standalone BESS in Texas", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Greenflash Project Soho Financing", url: "https://www.businesswire.com/news/home/20251007100315/en/Greenflash-Infrastructure-Closes-Innovative-Debt-Financing-Preferred-Equity-and-Sale-of-Tax-Credits-for-400MW-800MWh-ERCOT-Battery-Storage-Project" },
+    ],
   },
-  {
+    {
     name: "Stillhouse Solar Project (Matrix Renewables)",
     investmentFirm: "Acadia Infrastructure Capital",
     sector: "Energy Transition",
@@ -2914,11 +2957,26 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Preferred Equity",
-    description: "",
+    description: "The Stillhouse Solar Project is a 210 MWac solar photovoltaic plant in Bell County, Texas, developed by TPG Rise-backed Matrix Renewables. Backed by a 15-year power purchase agreement with Hyundai affiliates, the project received $376 million in debt financing and preferred equity sourced by Acadia Infrastructure Capital, providing clean power equivalent to approximately 48,862 homes.",
     status: "Active",
+    website: "https://www.matrixrenewables.com/",
+    yearFounded: 2021,
+    investmentYear: 2024,
+    headquarters: "Bell County, TX",
+    management: [
+      { name: "Patrick Eilers", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2024-12", event: "Matrix Renewables secures $376M financing for Stillhouse with preferred equity sourced by Acadia Infrastructure Capital and debt from MUFG-led consortium", category: "Financing" },
+      { date: "2025-09", event: "Stillhouse Solar Project expected to reach commercial operations, providing clean power to equivalent of 48,862 homes", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Matrix Renewables Stillhouse Financing", url: "https://www.prnewswire.com/news-releases/matrix-renewables-secures-commitments-from-microsoft-and-mufg-led-lender-consortium-for-210mwac-solar-project-in-bell-county-texas-302320926.html" },
+      { label: "Leo Berwick Acadia Preferred Equity", url: "https://www.leoberwick.com/leo-berwick-supports-acadia-infrastructure-capital-with-the-preferred-equity-it-sourced-for-matrix-renewables-stillhouse-solar-project/" },
+    ],
   },
   // ─── Actis ──────────────────────────────────────────────────
-  {
+    {
     name: "Catalyze",
     investmentFirm: "Actis",
     sector: "Energy Transition",
@@ -2926,10 +2984,26 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Actis Energy 5",
-    description: "",
+    description: "Catalyze is a fully integrated developer and independent power producer of distributed renewable energy assets including solar, battery storage, and EV charging systems for commercial and industrial customers. Founded in 2017 and headquartered in Houston, the company operates a multi-gigawatt platform backed by Actis and EnCap Investments.",
     status: "Active",
+    website: "https://catalyze.com/",
+    yearFounded: 2017,
+    investmentYear: 2021,
+    headquarters: "Houston, TX",
+    management: [
+      { name: "Jared Haines", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2017-01", event: "Catalyze founded as a distributed clean energy developer and independent power producer", category: "Founding" },
+      { date: "2025-09", event: "Catalyze secures $200M HoldCo revolving and term facility from Deutsche Bank to accelerate clean energy growth", category: "Financing" },
+      { date: "2026-01", event: "Catalyze closes 100 MW distributed solar tax equity financing with RBC to support 18 projects across four states", category: "Financing" },
+    ],
+    sources: [
+      { label: "Catalyze Company Website", url: "https://catalyze.com/" },
+      { label: "Catalyze $200M Deutsche Bank Facility", url: "https://www.businesswire.com/news/home/20250903947135/en/Catalyze-Secures-$200-Million-HoldCo-Facility-from-Deutsche-Bank-to-Accelerate-Clean-Energy-Growth-Nationwide" },
+    ],
   },
-  {
+    {
     name: "NextStream",
     investmentFirm: "Actis",
     sector: "Digital Infrastructure",
@@ -2937,10 +3011,26 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Actis Long Life Infrastructure Fund (ALLIF)",
-    description: "",
+    description: "NextStream is a data center platform operating 11 carrier-neutral facilities across six markets in Latin America and the United States. Acquired by Actis from Asterion/Nabiax in 2023, the portfolio has a combined IT load capacity of 25 MW with significant expansion potential, anchored by a long-term tenant contract with Telefonica.",
     status: "Active",
+    website: "https://nextstream.com/en/",
+    yearFounded: 2023,
+    investmentYear: 2023,
+    headquarters: "London, United Kingdom",
+    management: [
+      { name: "Serafim Abreu Junior", title: "Chief Executive Officer" },
+      { name: "Eduardo Reigada", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      { date: "2023-03", event: "Actis acquires 11 data centers across six countries from Asterion/Nabiax, rebranding the platform as NextStream", category: "Acquisition" },
+      { date: "2025-01", event: "NextStream appoints Serafim Abreu Junior as CEO to lead Latin American expansion strategy", category: "Management" },
+    ],
+    sources: [
+      { label: "Actis NextStream Portfolio", url: "https://www.act.is/about-us/portfolio/thunder-nextstream/" },
+      { label: "NextStream CEO Appointment", url: "https://www.datacenterdynamics.com/en/news/nextstream-appoints-new-ceo-expands-latam-operations/" },
+    ],
   },
-  {
+    {
     name: "TERRANOVA",
     investmentFirm: "Actis",
     sector: "Digital Infrastructure",
@@ -2948,10 +3038,25 @@ export const companies: PortCo[] = [
     region: "Latin America",
     country: "Mexico (Pan-Latin America)",
     ownershipVehicle: "Actis Digital Infrastructure",
-    description: "",
+    description: "TERRANOVA is a hyperscale data center platform launched by Actis in December 2025 to accelerate Latin America's digital expansion. The company plans to invest $1.5 billion over three years to develop modern campuses in Brazil, Mexico, and Chile, with secured land and power representing up to 1 GW of future capacity for AI and cloud infrastructure.",
     status: "Active",
+    website: "https://www.act.is/about-us/portfolio/",
+    yearFounded: 2025,
+    investmentYear: 2025,
+    headquarters: "Sao Paulo, Brazil",
+    management: [
+      { name: "Jose Eduardo Quintella", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2025-12", event: "Actis launches TERRANOVA as a $1.5B hyperscale data center platform for Latin America", category: "Founding" },
+      { date: "2026-01", event: "TERRANOVA's first data center campus in Queretaro, Mexico achieves operational readiness", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Actis TERRANOVA Launch", url: "https://www.act.is/2025/12/02/actis-launches-new-latin-american-hyperscale-data-center-platform-terranova-to-accelerate-latin-americas-digital-expansion/" },
+      { label: "TERRANOVA Mexico Launch", url: "https://www.datacenterdynamics.com/en/news/terranova-launches-in-mexico-with-its-first-data-center-campus/" },
+    ],
   },
-  {
+    {
     name: "Valia Energía",
     investmentFirm: "Actis",
     sector: "Midstream Energy",
@@ -2959,11 +3064,28 @@ export const companies: PortCo[] = [
     region: "Latin America",
     country: "Mexico",
     ownershipVehicle: "Actis Energy 5",
-    description: "",
+    description: "Valia Energia is the leading private power producer in Mexico, operating 3.2 GW of installed capacity across seven natural gas-fired combined-cycle power plants and an adjacent 58-kilometer gas pipeline. Formed by Actis in 2022 through the acquisition of MT Falcon, the company sells power to Mexico's Federal Electricity Commission under long-term contracts and is positioned to benefit from rising demand driven by nearshoring.",
     status: "Active",
+    website: "https://valiaenergia.com/en/",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "Mexico City, Mexico",
+    management: [
+      { name: "Narcis de Carreras Roques", title: "Chief Executive Officer" },
+      { name: "Fernando Suarez", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "2022-11", event: "Actis completes acquisition of MT Falcon's five combined-cycle gas plants (2.2 GW) and gas pipeline, rebranding as Valia Energia", category: "Acquisition" },
+      { date: "2023-10", event: "Valia Energia completes acquisition of EVM Energia, adding 950 MW to reach 3.2 GW total installed capacity", category: "Acquisition" },
+      { date: "2024-01", event: "Valia Energia issues $530M 15-year international bond, winning LatinFinance Bond of the Year", category: "Financing" },
+    ],
+    sources: [
+      { label: "Actis Valia Energia Portfolio", url: "https://www.act.is/about-us/portfolio/valia-energia/" },
+      { label: "Valia Energia EVM Acquisition", url: "https://valiaenergia.com/wp-content/uploads/2023/10/Valia-Energia-Press-Release-ENGLISH-VF.pdf" },
+    ],
   },
   // ─── Allianz Global Investors ───────────────────────────────
-  {
+    {
     name: "Broadview Wind Farm",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -2971,10 +3093,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Tax Equity)",
-    description: "",
+    description: "Broadview is a 324 MW wind farm consisting of 141 Siemens Gamesa turbines located along the New Mexico-Texas border. Owned by Pattern Energy, the project sells power to Southern California under a long-term contract and generates enough electricity to supply approximately 180,000 California households.",
     status: "Active",
+    website: "https://patternenergy.com/projects/broadview-wind/",
+    yearFounded: 2016,
+    investmentYear: 2017,
+    headquarters: "Curry County, NM",
+    management: [
+      { name: "Hunter Armistead", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2017-03", event: "Broadview Wind Farm achieves commercial operation with 324 MW capacity across New Mexico and Texas", category: "Expansion" },
+      { date: "2017-05", event: "Allianz Capital Partners and Capital One complete tax equity investment in Broadview", category: "Financing" },
+    ],
+    sources: [
+      { label: "Allianz Broadview Investment", url: "https://www.allianz.com/en/press/news/financials/stakes_investments/170524-allianz-capital-one-complete-us-wind-investment.html" },
+    ],
   },
-  {
+    {
     name: "Chicago Parking Meters LLC",
     investmentFirm: "Allianz Global Investors",
     sector: "Transportation",
@@ -2982,10 +3118,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Consortium)",
-    description: "",
+    description: "Chicago Parking Meters LLC operates a 75-year concession to manage approximately 36,000 metered parking spaces across the City of Chicago. The consortium, which includes Morgan Stanley Infrastructure (50.1%), Allianz Capital Partners (25%), and Abu Dhabi Investment Authority (24.9%), acquired the concession in 2009 for $1.15 billion. The meters generated $161 million in revenue in 2024.",
     status: "Active",
+    yearFounded: 2008,
+    investmentYear: 2009,
+    headquarters: "Chicago, IL",
+    milestones: [
+      { date: "2009-02", event: "Consortium of Morgan Stanley, Allianz Capital Partners, and ADIA closes $1.15B acquisition of 75-year parking meter concession from the City of Chicago", category: "Acquisition" },
+      { date: "2013-01", event: "City of Chicago renegotiates concession agreement, expected to save taxpayers $25M annually over the remainder of the contract", category: "Other" },
+    ],
+    sources: [
+      { label: "Chicago Parking Meters Wikipedia", url: "https://en.wikipedia.org/wiki/Chicago_Parking_Meters" },
+    ],
   },
-  {
+    {
     name: "Colbeck's Corner Wind Farm",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -2993,10 +3139,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Tax Equity)",
-    description: "",
+    description: "Colbeck's Corner is a 200 MW wind farm in Carson and Gray counties, Texas, approximately 37 miles east of Amarillo. Developed and owned by E.ON Climate & Renewables, the project employs 112 GE 1.79-100 turbines and generates enough electricity to power approximately 64,000 homes.",
     status: "Active",
+    yearFounded: 2015,
+    investmentYear: 2016,
+    headquarters: "Carson County, TX",
+    milestones: [
+      { date: "2016-05", event: "E.ON, Allianz Capital Partners, and State Street Corporation close tax equity financing for Colbeck's Corner wind farm", category: "Financing" },
+    ],
+    sources: [
+      { label: "Colbeck's Corner Tax Equity Financing", url: "https://www.prnewswire.com/news-releases/eon-climate--renewables-allianz-capital-partners-and-state-street-corporation-close-colbecks-corner-llc-tax-equity-financing-300274548.html" },
+    ],
   },
-  {
+    {
     name: "Galloway 2 Solar Project",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -3004,10 +3159,21 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Direct Equity)",
-    description: "",
+    description: "Galloway 2 is a 147 MWdc solar project in Concho County, Texas, acquired by Allianz Capital Partners from developer Avantus (formerly 8minute Solar Energy) in 2022. The project sells power under a long-term PPA through EDF Energy Services to BASF and is expected to generate over $18 million in local property taxes.",
     status: "Active",
+    website: "https://avantus.com/",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "Concho County, TX",
+    milestones: [
+      { date: "2022-11", event: "Allianz Capital Partners completes acquisition of 147 MWdc Galloway 2 Solar Project from Avantus", category: "Acquisition" },
+      { date: "2023-06", event: "Galloway 2 Solar Project achieves commercial operations, providing affordable energy for 60,000 people", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Avantus & Allianz Galloway 2 Sale", url: "https://avantus.com/news/avantus-and-allianz-capital-partners-announce-completion-of-sale-for-galloway-2-solar-project" },
+    ],
   },
-  {
+    {
     name: "Great Western Wind Farm",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -3015,10 +3181,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Tax Equity)",
-    description: "",
+    description: "Great Western is a 225 MW wind farm in Ellis and Woodward counties, Oklahoma, approximately 200 km northwest of Oklahoma City. Developed and owned by EDF Renewable Energy, the project uses 93 Vestas turbines and sells its output to Google under a long-term contract, generating enough clean electricity to power approximately 70,000 Oklahoma homes.",
     status: "Active",
+    yearFounded: 2016,
+    investmentYear: 2017,
+    headquarters: "Ellis County, OK",
+    milestones: [
+      { date: "2016-12", event: "Great Western Wind Farm achieves commercial operation with 225 MW capacity in Oklahoma", category: "Expansion" },
+      { date: "2017-02", event: "Allianz Capital Partners and MUFG complete tax equity investment in Great Western", category: "Financing" },
+    ],
+    sources: [
+      { label: "Allianz & MUFG Great Western Investment", url: "https://www.allianz.com/en/press/news/business/asset_management/20170202-allianz-wind-farm-in-oklahoma.result.html/3/2017.html" },
+    ],
   },
-  {
+    {
     name: "Kelly Creek Wind Project",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -3026,10 +3202,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Tax Equity)",
-    description: "",
+    description: "Kelly Creek is a 184 MW wind farm in Ford and Kankakee counties, Illinois, approximately 115 km southwest of Chicago. Developed and owned by EDF Renewable Energy, the project uses 92 Vestas 2.0 MW V100 turbines and generates enough electricity to power approximately 78,000 Illinois homes.",
     status: "Active",
+    yearFounded: 2016,
+    investmentYear: 2017,
+    headquarters: "Ford County, IL",
+    milestones: [
+      { date: "2017-01", event: "Allianz Capital Partners completes tax equity investment in Kelly Creek as sole tax equity partner alongside EDF Renewable Energy", category: "Financing" },
+    ],
+    sources: [
+      { label: "Allianz Kelly Creek Investment", url: "https://www.allianzcapitalpartners.com/media/news/01717-allianz-invests-edf-wind-farm-illinois/" },
+    ],
   },
-  {
+    {
     name: "Lotus Solar Farm",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -3037,10 +3222,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Direct Equity)",
-    description: "",
+    description: "Lotus Solar Farm is a 67 MWdc solar project in Madera County, California, acquired by Allianz Global Investors from 8minute Solar Energy in 2019 as AllianzGI's first U.S. solar investment. The project operates under a 20-year PPA with Southern California Edison producing over 125 million kWh annually, reducing carbon emissions by approximately 48,000 metric tons per year.",
     status: "Active",
+    yearFounded: 2019,
+    investmentYear: 2019,
+    headquarters: "Madera County, CA",
+    milestones: [
+      { date: "2019-09", event: "Allianz Global Investors acquires Lotus Solar Farm from 8minute Solar Energy, marking its first U.S. solar investment", category: "Acquisition" },
+      { date: "2020-09", event: "Lotus Solar Farm achieves full commercial operations with 67 MWdc capacity in Madera County", category: "Expansion" },
+    ],
+    sources: [
+      { label: "8minute & Allianz Lotus Solar Acquisition", url: "https://www.businesswire.com/news/home/20190910005984/en/8minute-Solar-Energy-and-Allianz-Global-Investors-Announce-First-Major-U.S.-Acquisition" },
+    ],
   },
-  {
+    {
     name: "Red Dirt Wind Project",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -3048,10 +3243,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Renewable Energy Partners of America LLC (Tax Equity)",
-    description: "",
+    description: "Red Dirt is a 300 MW wind farm near Hennessey, Oklahoma, developed by Enel Green Power North America. The project consists of 100 Nordex AW125/3000 turbines generating approximately 1,200 GWh of renewable energy annually, sold under long-term agreements with T-Mobile USA (160 MW) and Grand River Dam Authority (140 MW).",
     status: "Active",
+    yearFounded: 2017,
+    investmentYear: 2017,
+    headquarters: "Hennessey, OK",
+    milestones: [
+      { date: "2017-08", event: "Enel signs $340M tax equity agreement with MUFG and Allianz Renewable Energy Partners of America for Red Dirt", category: "Financing" },
+      { date: "2017-12", event: "Red Dirt Wind Project begins commercial operations with 300 MW capacity in Oklahoma", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Enel Red Dirt Tax Equity Agreement", url: "https://www.enel.com/media/explore/search-press-releases/press/2017/08/enel-signs-tax-equity-agreement-for-300-mw-red-dirt-wind-project-in-the-usa" },
+    ],
   },
-  {
+    {
     name: "Stella Wind Farm",
     investmentFirm: "Allianz Global Investors",
     sector: "Energy Transition",
@@ -3059,11 +3264,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Allianz Capital Partners (Tax Equity)",
-    description: "",
+    description: "Stella is a 201 MW wind farm on the Gulf of Mexico coast in Kenedy County, Texas, developed by E.ON Climate & Renewables. The project employs 67 Acciona AW-125 3.0 MW turbines and is projected to generate more than $25 million in revenue for Kenedy County over its operational life.",
     status: "Active",
+    yearFounded: 2018,
+    investmentYear: 2018,
+    headquarters: "Kenedy County, TX",
+    milestones: [
+      { date: "2018-12", event: "Stella Wind Farm achieves commercial operation and closes tax equity financing with Allianz Capital Partners", category: "Financing" },
+    ],
+    sources: [
+      { label: "E.ON Stella Wind Farm Announcement", url: "https://www.prnewswire.com/news-releases/eon-achieves-successful-commercial-operation-and-tax-equity-financing-for-stella-wind-farm-300782909.html" },
+    ],
   },
   // ─── Amber Infrastructure ───────────────────────────────────
-  {
+    {
     name: "7 Mile Pit Solar",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -3071,10 +3285,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Circle Power",
-    description: "",
+    description: "7 Mile Pit Solar is a planned solar array on a 169-acre former sand and gravel mining site in Crawford County, Michigan, developed by Circle Power Renewables under a lease from the Michigan Department of Natural Resources. The project repurposes abandoned industrial land for renewable energy generation, with an estimated capacity of up to 20 MW.",
     status: "Active",
+    yearFounded: 2020,
+    investmentYear: 2020,
+    headquarters: "Crawford County, MI",
+    milestones: [
+      { date: "2020-09", event: "Michigan DNR awards Circle Power a 5-year lease to develop solar on the former 7 Mile Pit mine site", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Michigan DNR Circle Power Mine Solar", url: "https://thinkingafield.org/2020/09/michigan-dnr-partners-with-circle-power-to-repurpose-former-mine-sites.html" },
+    ],
   },
-  {
+    {
     name: "Alberta Schools (ASAP I)",
     investmentFirm: "Amber Infrastructure",
     sector: "Social Infrastructure",
@@ -3082,10 +3305,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "International Public Partnerships (INPP)",
-    description: "",
+    description: "Alberta Schools is a Canadian P3 project involving the design, construction, finance, and maintenance of 18 schools (9 in Edmonton and 9 in Calgary) commissioned by the Alberta Government. The concession has a 32-year term including a 22-month construction period and won a Gold Award from the Canadian Council for Public-Private Partnerships in 2010.",
     status: "Active",
+    yearFounded: 2008,
+    investmentYear: 2008,
+    headquarters: "Edmonton / Calgary, AB, Canada",
+    milestones: [
+      { date: "2010-01", event: "Alberta Schools P3 project wins Gold Award for Infrastructure at the Canadian Council for Public-Private Partnerships", category: "Other" },
+    ],
+    sources: [
+      { label: "Amber Infrastructure Education Portfolio", url: "https://www.amberinfrastructure.com/our-sectors/infrastructure/education/" },
+    ],
   },
-  {
+    {
     name: "Biddeford Downtown Redevelopment (Lincoln Garage)",
     investmentFirm: "Amber Infrastructure",
     sector: "Transportation",
@@ -3093,10 +3325,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure / Hunt Companies",
-    description: "",
+    description: "The Biddeford Lincoln Garage & RiverWalk is a $22.3 million P3 project delivering a 640-space parking garage and urban riverwalk in Biddeford, Maine's downtown Mill District. Developed by Amber Infrastructure and Hunt Companies under a 26-year lease, it is Maine's first private infrastructure financing project of its kind.",
     status: "Active",
+    yearFounded: 2020,
+    investmentYear: 2020,
+    headquarters: "Biddeford, ME",
+    milestones: [
+      { date: "2020-08", event: "Amber and Hunt achieve financial close and break ground on the $22.3M Lincoln Garage & RiverWalk P3 project", category: "Financing" },
+      { date: "2021-07", event: "Lincoln Garage opens as Maine's first private infrastructure financing project", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Amber Lincoln Garage Financial Close", url: "https://www.prnewswire.com/news-releases/amber-achieves-financial-close-of-biddeford-lincoln-garage--riverwalk-biddeford-me-301109865.html" },
+    ],
   },
-  {
+    {
     name: "Circle Power Renewables",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -3104,10 +3346,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure",
-    description: "",
+    description: "Circle Power Renewables is a renewable energy development platform jointly launched by Amber Infrastructure and Circle Power in 2021, focused on solar, wind, and battery projects in Michigan and other regional US power markets. The company is currently developing over 450 MW of projects including the Groveland Mine Solar and Scotia Wind facilities in Michigan's Upper Peninsula.",
     status: "Active",
+    website: "https://circlepower.com/",
+    yearFounded: 2017,
+    investmentYear: 2021,
+    headquarters: "Royal Oak, MI",
+    management: [
+      { name: "Jordan Roberts", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2021-05", event: "Amber Infrastructure and Circle Power launch Circle Power Renewables joint venture for US renewable energy development", category: "Founding" },
+      { date: "2024-08", event: "Michigan Public Service Commission approves PPA between Circle Power Renewables and UPPCO for Groveland Mine Solar", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Circle Power Renewables Launch", url: "https://www.prnewswire.com/news-releases/amber-infrastructure-and-circle-power-launch-circle-power-renewables-301301112.html" },
+    ],
   },
-  {
+    {
     name: "City Light & Power (CLP)",
     investmentFirm: "Amber Infrastructure",
     sector: "Regulated Utilities",
@@ -3115,10 +3371,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure / Hunt Companies",
-    description: "",
+    description: "City Light & Power is an electrical contractor and utility system owner specializing in utility privatization contracts for U.S. military installations. With four decades of experience, CLP owns and operates electrical distribution systems on military bases under long-term privatization agreements with the Army and Air Force, as well as two municipal PPP contracts in California.",
     status: "Active",
+    website: "https://www.clpinc.com/",
+    yearFounded: 1980,
+    investmentYear: 2020,
+    headquarters: "Louisville, KY",
+    milestones: [
+      { date: "2020-03", event: "Hunt Companies and Amber Infrastructure acquire a majority stake in City Light & Power from existing shareholders", category: "Acquisition" },
+    ],
+    sources: [
+      { label: "Hunt & Amber CLP Acquisition", url: "https://www.amberinfrastructure.com/news/press-releases/2020/amber-and-hunt-acquire-a-majority-stake-in-city-light-power/" },
+    ],
   },
-  {
+    {
     name: "City of San Marcos Public Service Center",
     investmentFirm: "Amber Infrastructure",
     sector: "Social Infrastructure",
@@ -3126,10 +3392,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure / Hunt Companies",
-    description: "",
+    description: "The City of San Marcos Public Services Complex is a $44.4 million P3 project delivering a 155,000 sq ft facility that consolidates over a dozen city service departments into a single modern campus. The development includes an administration building, warehouse, 500 kW rooftop solar array, and rainwater capture systems, serving approximately 180 city employees.",
     status: "Active",
+    yearFounded: 2020,
+    investmentYear: 2020,
+    headquarters: "San Marcos, TX",
+    milestones: [
+      { date: "2020-09", event: "Amber and Hunt achieve financial close on the $44.4M Public Services Complex for the City of San Marcos", category: "Financing" },
+      { date: "2021-11", event: "City of San Marcos celebrates grand opening of the Public Services Complex", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Amber San Marcos Financial Close", url: "https://www.amberinfrastructure.com/news/press-releases/2020/amber-closes-financing-for-public-services-complex-in-san-marcos-texas/" },
+    ],
   },
-  {
+    {
     name: "Durham Region Courthouse",
     investmentFirm: "Amber Infrastructure",
     sector: "Social Infrastructure",
@@ -3137,10 +3413,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "International Public",
-    description: "",
+    description: "The Durham Region Courthouse is a P3 project in Ontario, Canada, developed and managed by Amber Infrastructure for International Public Partnerships (INPP). The project won an Award of Merit for Project Financing from the Canadian Council for Public-Private Partnerships in 2007 and a Silver Award for Infrastructure in 2010.",
     status: "Active",
+    yearFounded: 2007,
+    investmentYear: 2007,
+    headquarters: "Ontario, Canada",
+    milestones: [
+      { date: "2007-01", event: "Durham Region Courthouse P3 project wins Award of Merit for Project Financing from CCPPP", category: "Other" },
+    ],
+    sources: [
+      { label: "Amber Infrastructure Judicial Projects", url: "https://www.amberinfrastructure.com/our-sectors/infrastructure/judicial/" },
+    ],
   },
-  {
+    {
     name: "Euryalus / Southern Current Portfolio",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -3148,10 +3433,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "US Solar Fund plc (USF)",
-    description: "",
+    description: "The Euryalus portfolio consists of four utility-scale solar projects totaling 61 MWdc in Oregon, acquired by US Solar Fund from developer Southern Current LLC in 2020. All projects sell 100% of their output under long-term PPAs to Portland General Electric, an Oregon-based utility serving 1.9 million customers.",
     status: "Active",
+    yearFounded: 2020,
+    investmentYear: 2020,
+    headquarters: "Oregon",
+    milestones: [
+      { date: "2020-06", event: "US Solar Fund closes acquisition of 61 MWdc portfolio of four Oregon solar projects from Southern Current LLC", category: "Acquisition" },
+      { date: "2020-07", event: "Euryalus portfolio achieves full commercial operations across all four Oregon solar assets", category: "Expansion" },
+    ],
+    sources: [
+      { label: "USF Euryalus Portfolio", url: "https://www.ussolarfund.co.uk/portfolio/acquisition-five" },
+    ],
   },
-  {
+    {
     name: "Future Energy Park",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -3159,10 +3454,21 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Amber Infrastructure",
-    description: "",
+    description: "Future Energy Park is a proposed $1.2 billion carbon-negative biofuels facility in Calgary, Alberta, being developed by Green Impact Partners with Amber Infrastructure as a 50% equity partner. When operational, it will produce approximately 35 million MMBtu/year of renewable natural gas and over 300 million litres of ethanol annually from non-food-grade wheat, making it North America's largest carbon-negative RNG and ethanol project.",
     status: "Active",
+    yearFounded: 2021,
+    investmentYear: 2023,
+    headquarters: "Calgary, AB, Canada",
+    milestones: [
+      { date: "2023-02", event: "Amber Infrastructure acquires 50% project-level equity in Future Energy Park as part of $545M partnership with Green Impact Partners", category: "Financing" },
+      { date: "2023-12", event: "Alberta Environmental Protection and Enhancement Act grants approval to construct and operate the biofuels facility", category: "Other" },
+    ],
+    sources: [
+      { label: "Future Energy Park - Green Impact Partners", url: "https://www.greenipi.com/project/future-energy-park/" },
+      { label: "Amber GIP Partnership", url: "https://www.canadianbiomassmagazine.ca/green-impact-partners-amber-infrastructure-ink-rng-facility-partnership-deal/" },
+    ],
   },
-  {
+    {
     name: "Granite Solar Portfolio",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -3170,10 +3476,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "US Solar Fund plc (USF)",
-    description: "",
+    description: "The Granite portfolio consists of eight operational solar projects totaling 39 MWdc in North Carolina, acquired by US Solar Fund from Greenbacker Renewable Energy in early 2020. All projects sell power under long-term PPAs to Duke Energy subsidiaries with a weighted average term of 15.2 years.",
     status: "Active",
+    yearFounded: 2012,
+    investmentYear: 2020,
+    headquarters: "North Carolina",
+    milestones: [
+      { date: "2020-01", event: "US Solar Fund acquires 39 MWdc Granite portfolio of eight operational solar projects in North Carolina from Greenbacker", category: "Acquisition" },
+    ],
+    sources: [
+      { label: "USF Granite Portfolio", url: "https://www.ussolarfund.co.uk/portfolio/granite" },
+    ],
   },
-  {
+    {
     name: "GreenGas Colorado",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -3181,10 +3496,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure",
-    description: "",
+    description: "GreenGas Colorado is a dairy-waste-to-renewable natural gas facility in Weld County, Colorado, converting organic waste through anaerobic digestion and gasification into pipeline-quality RNG. Amber Infrastructure holds a 50% equity stake, acquired for $60 million from Green Impact Partners, with expected production capacity of approximately 360,000 MMBtu per year.",
     status: "Active",
+    yearFounded: 2022,
+    investmentYear: 2023,
+    headquarters: "Weld County, CO",
+    milestones: [
+      { date: "2023-02", event: "Amber Infrastructure acquires 50% stake in GreenGas Colorado for $60M as part of broader Green Impact Partners partnership", category: "Financing" },
+      { date: "2023-12", event: "GreenGas Colorado achieves first gas production, ramping toward 360,000 MMBtu/year full capacity", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Amber GIP RNG Partnership", url: "https://americanbiogascouncil.org/green-impact-partners-announces-545-million-partnering-agreement/" },
+    ],
   },
-  {
+    {
     name: "Groveland Mine Solar",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -3192,10 +3517,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Circle Power Renewables",
-    description: "",
+    description: "Groveland Mine Solar is a 120 MW solar array being developed by Circle Power Renewables on approximately 500 acres of the decommissioned Groveland Mine site in Dickinson County, Michigan's Upper Peninsula. The roughly $200 million project has secured a PPA with UPPCO for 62.5 MW of output and is expected to provide $12.7 million to local governments and schools over its 30-year life.",
     status: "Active",
+    website: "https://grovelandminesolar.com/",
+    yearFounded: 2020,
+    investmentYear: 2020,
+    headquarters: "Dickinson County, MI",
+    milestones: [
+      { date: "2023-10", event: "Felch Township approves conditional use permit for the 120 MW Groveland Mine Solar project", category: "Expansion" },
+      { date: "2024-08", event: "Michigan Public Service Commission approves PPA between Circle Power and UPPCO for 62.5 MW from Groveland Mine Solar", category: "Financing" },
+    ],
+    sources: [
+      { label: "Groveland Mine Solar Project", url: "https://grovelandminesolar.com/" },
+      { label: "UPPCO PPA Approval", url: "https://www.uppermichiganssource.com/2024/08/23/uppco-circle-power-renewables-announce-approval-power-purchase-agreement-groveland-solar-mine/" },
+    ],
   },
-  {
+    {
     name: "Heelstone Solar Portfolio",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -3203,10 +3540,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "US Solar Fund plc (USF)",
-    description: "",
+    description: "The Heelstone portfolio consists of operational solar projects acquired by US Solar Fund from Heelstone Energy, a Chapel Hill, North Carolina-based utility-scale solar developer. The assets are located primarily in North Carolina and sell power under long-term PPAs to creditworthy utility offtakers as part of USF's diversified 443 MWdc portfolio.",
     status: "Active",
+    yearFounded: 2012,
+    investmentYear: 2020,
+    headquarters: "North Carolina",
+    milestones: [
+      { date: "2020-01", event: "US Solar Fund acquires portfolio of 22 operational solar projects from Heelstone Energy across three US states", category: "Acquisition" },
+    ],
+    sources: [
+      { label: "USF Fund Overview", url: "https://www.ussolarfund.co.uk/" },
+    ],
   },
-  {
+    {
     name: "Iowa RNG",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -3214,10 +3560,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure",
-    description: "",
+    description: "Iowa RNG is a $130 million renewable natural gas facility under development in Iowa, part of Amber Infrastructure's 50% partnership with Green Impact Partners. The facility is designed to produce approximately 350,000 MMBtu/year of RNG and was part of the broader $545 million partnership between Amber and GIP covering three RNG facilities across North America.",
     status: "Active",
+    yearFounded: 2022,
+    investmentYear: 2023,
+    headquarters: "Iowa",
+    milestones: [
+      { date: "2023-02", event: "Amber Infrastructure acquires 50% equity stake in Iowa RNG as part of $485M co-investment with Green Impact Partners covering Future Energy Park and Iowa RNG", category: "Financing" },
+    ],
+    sources: [
+      { label: "Green Impact Partners Amber Partnership", url: "https://www.greenipi.com/newsroom/green-impact-partners-announces-545-million-partnering-agreement/" },
+    ],
   },
-  {
+    {
     name: "Maine International Cold Storage Facility (MICSF)",
     investmentFirm: "Amber Infrastructure",
     sector: "Transportation",
@@ -3225,10 +3580,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure",
-    description: "",
+    description: "The Maine International Cold Storage Facility is a 107,000 sq ft state-of-the-art cold storage facility at the Port of Portland, Maine, developed by Amber Infrastructure in partnership with Treadwell Franklin Infrastructure under a 50-year ground lease with the Maine Port Authority. The $55 million facility features 22,000 pallet positions, the largest solar array in Maine (1 MW), and a CO2-based refrigeration system.",
     status: "Active",
+    website: "https://coldstoragemaine.com/",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "Portland, ME",
+    milestones: [
+      { date: "2021-01", event: "Amber Infrastructure and Hunt Companies break ground on the Maine International Cold Storage Facility at the Port of Portland", category: "Expansion" },
+      { date: "2024-09", event: "Taylor Logistics selected as operator for MICSF, partnering with Amber Infrastructure on the cutting-edge facility", category: "Other" },
+    ],
+    sources: [
+      { label: "Amber MICSF Groundbreaking", url: "https://www.amberinfrastructure.com/news/press-releases/2021/amber-breaks-ground-on-us-cold-storage-facility/" },
+      { label: "MICSF Project Website", url: "https://coldstoragemaine.com/" },
+    ],
   },
-  {
+    {
     name: "Milford Solar Project",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -3236,10 +3603,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "US Solar Fund plc (USF)",
-    description: "",
+    description: "Milford Solar is a 128 MWdc utility-scale solar project in Beaver County, Utah, acquired by US Solar Fund from Longroad Energy Partners in 2019. The project sells 100% of its power and renewable energy credits under a 25-year fixed-price PPA to PacifiCorp (Berkshire Hathaway Energy), generating over 277,500 MWh annually.",
     status: "Active",
+    yearFounded: 2019,
+    investmentYear: 2019,
+    headquarters: "Beaver County, UT",
+    milestones: [
+      { date: "2019-09", event: "US Solar Fund closes acquisition and financing of the 128 MWdc Milford Solar Project from Longroad Energy", category: "Acquisition" },
+      { date: "2020-11", event: "Milford Solar Project achieves commercial operations, generating enough power for 31,000 US homes", category: "Expansion" },
+    ],
+    sources: [
+      { label: "USF Milford Solar", url: "https://www.ussolarfund.co.uk/portfolio/milford-solar-plant" },
+    ],
   },
-  {
+    {
     name: "Olympos Solar Portfolio",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -3247,10 +3624,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "US Solar Fund plc (USF)",
-    description: "",
+    description: "The Olympos portfolio consists of six solar projects totaling 39 MWdc in North Carolina, acquired by US Solar Fund from Cypress Creek Renewables in December 2019. All projects sell power under long-term PPAs to Duke Energy subsidiaries with a weighted average term of 13.1 years.",
     status: "Active",
+    yearFounded: 2019,
+    investmentYear: 2019,
+    headquarters: "North Carolina",
+    milestones: [
+      { date: "2019-12", event: "US Solar Fund acquires 39 MWdc Olympos portfolio of six solar projects in North Carolina from Cypress Creek Renewables", category: "Acquisition" },
+    ],
+    sources: [
+      { label: "USF Olympos Portfolio", url: "https://www.ussolarfund.co.uk/portfolio/olympos" },
+    ],
   },
-  {
+    {
     name: "Scotia Wind",
     investmentFirm: "Amber Infrastructure",
     sector: "Energy Transition",
@@ -3258,10 +3644,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Circle Power Renewables",
-    description: "",
+    description: "Scotia Wind is a planned 60 MW wind project in Houghton County, Michigan's Upper Peninsula, developed by Circle Power Renewables. The project secured long-term PPAs with Upper Peninsula Power Company at a record-low rate under 3.5 cents per kWh and is expected to generate over $15.9 million in local property tax revenue over its lifetime.",
     status: "Active",
+    website: "https://www.scotiawindfarm.com/",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "Houghton County, MI",
+    milestones: [
+      { date: "2021-05", event: "Scotia Wind secures long-term PPA with UPPCO at record-low renewable energy pricing in Michigan", category: "Financing" },
+    ],
+    sources: [
+      { label: "Scotia Wind Farm", url: "https://www.scotiawindfarm.com/" },
+    ],
   },
-  {
+    {
     name: "Travis County Civil and Family Courts Facility",
     investmentFirm: "Amber Infrastructure",
     sector: "Social Infrastructure",
@@ -3269,11 +3665,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Amber Infrastructure / Hunt Companies",
-    description: "",
+    description: "The Travis County Civil and Family Courts Facility is a $350 million, 12-story, 448,000 sq ft courthouse in downtown Austin, Texas, replacing the 1931 Herman Marion Sweatt Courthouse. Developed through a P3 partnership led by Hunt/Amber with Hensel Phelps and Gensler, the facility includes 25 courtrooms and achieved financial close to construction start in just nine months.",
     status: "Active",
+    yearFounded: 2018,
+    investmentYear: 2018,
+    headquarters: "Austin, TX",
+    milestones: [
+      { date: "2018-07", event: "Travis County selects Hunt/Amber-led consortium for the $350M new Civil and Family Courts Facility P3 project", category: "Other" },
+      { date: "2019-07", event: "Travis County Courthouse P3 project kicks off construction on the 12-story, 25-courtroom facility in downtown Austin", category: "Expansion" },
+    ],
+    sources: [
+      { label: "Hunt Travis County Courthouse", url: "https://www.huntcompanies.com/news/hunt-led-team-secures-project-for-the-new-courts-facility-in-travis-county-texas" },
+      { label: "Hensel Phelps Travis County", url: "https://www.henselphelps.com/project/travis-county-civil-and-family-courts-facility/" },
+    ],
   },
   // ─── Ancala Partners ────────────────────────────────────────
-  {
+    {
     name: "Noventa (Noventa Energy Partners)",
     investmentFirm: "Ancala Partners",
     sector: "Energy Transition",
@@ -3281,10 +3688,25 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Not Disclosed",
-    description: "",
+    description: "Noventa Energy Partners is a global renewable energy company providing decarbonised heating and cooling solutions using proprietary Wastewater Energy Transfer (WET) technology. Founded in 2018 and headquartered in Toronto, Noventa develops customized systems that harness thermal energy from wastewater to provide heating and cooling without Scope 1 greenhouse gas emissions, with projects across Canada, the UK, and the US.",
     status: "Active",
+    website: "https://www.noventaenergy.com/",
+    yearFounded: 2018,
+    investmentYear: 2023,
+    headquarters: "Toronto, ON, Canada",
+    management: [
+      { name: "Dennis Fotinos", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2018-02", event: "Dennis Fotinos founds Noventa Energy Partners with a mission to decarbonize heating and cooling through wastewater energy transfer", category: "Founding" },
+      { date: "2023-03", event: "Ancala Partners acquires majority interest in Noventa Energy on behalf of Ancala Infrastructure Fund III, with CAD 100M Canada Infrastructure Bank facility", category: "Financing" },
+    ],
+    sources: [
+      { label: "Ancala Noventa Acquisition", url: "https://ancala.com/ancala-partners-acquires-decarbonised-heating-and-cooling-provider-noventa/" },
+      { label: "Noventa Energy Partners", url: "https://www.noventaenergy.com/" },
+    ],
   },
-  {
+    {
     name: "Phoenix Rail",
     investmentFirm: "Ancala Partners",
     sector: "Transportation",
@@ -3292,10 +3714,26 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Not Disclosed",
-    description: "",
+    description: "Phoenix Rail is a short line railroad platform formed by Ancala Partners and Arkadia Rail Partners in January 2025, with its inaugural acquisition of Lehigh Valley Rail Management. LVRM owns and operates a 61-mile freight rail network and intermodal terminal in Pennsylvania, providing competitive access to three Class I railroads: Norfolk Southern, CSX, and CPKC.",
     status: "Active",
+    website: "https://phoenixrail.com/",
+    yearFounded: 2025,
+    investmentYear: 2025,
+    headquarters: "Pennsylvania",
+    management: [
+      { name: "Alex Yeros", title: "Chief Executive Officer" },
+      { name: "Ross Grantham", title: "Chief Operating Officer" },
+      { name: "Jack Sullan", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "2025-01", event: "Ancala and Arkadia Rail Partners form Phoenix Rail platform and complete acquisition of Lehigh Valley Rail Management", category: "Founding" },
+    ],
+    sources: [
+      { label: "Ancala Phoenix Rail Formation", url: "https://ancala.com/ancala-forms-short-line-rail-platform/" },
+      { label: "Phoenix Rail About", url: "https://phoenixrail.com/about/" },
+    ],
   },
-  {
+    {
     name: "Valentra",
     investmentFirm: "Ancala Partners",
     sector: "Midstream Energy",
@@ -3303,8 +3741,21 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Not Disclosed",
-    description: "",
+    description: "Valentra owns and operates a portfolio of critical chemical pipeline infrastructure carved out from Hexion (an American Securities portfolio company), with pipeline-connected sites and storage facilities in Baytown, Texas and Luling and Geismar, Louisiana. The facilities are among the largest pipeline suppliers for methanol-based raw materials on the US Gulf Coast, serving agriculture, healthcare, automotive, and construction end markets.",
     status: "Active",
+    yearFounded: 2025,
+    investmentYear: 2025,
+    headquarters: "Baytown, TX",
+    management: [
+      { name: "Alex Mihut", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2025-12", event: "Ancala acquires portfolio of critical chemical pipeline infrastructure on the US Gulf Coast from Hexion, forming standalone platform Valentra", category: "Acquisition" },
+    ],
+    sources: [
+      { label: "Ancala Valentra Acquisition", url: "https://ancala.com/ancala-acquires-portfolio-of-critical-chemical-pipeline-infrastructure-on-the-us-gulf-coast/" },
+      { label: "Ancala Valentra Portfolio", url: "https://ancala.com/portfolio/valentra/" },
+    ],
   },
   // ─── Antin Infrastructure Partners ──────────────────────────
   {
