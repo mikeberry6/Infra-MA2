@@ -296,8 +296,42 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Spain",
     ownershipVehicle: "3i Managed Infrastructure Acquisitions (MIA)",
-    description: "",
+    description:
+      "Autovias de Peaje en Sombra is a Spanish holding company that owns two long-term shadow toll road concessions: the Autovia del Noroeste (RM-15), a 62.4 km motorway in the Region of Murcia operating since 2001, and the Autovia del Turia (CV-35), a 53 km motorway in the Valencian Community operating since 2008. Under the shadow toll model, regional governments pay an annual per-vehicle fee based on traffic volume rather than tolling drivers directly.",
     status: "Active",
+    yearFounded: 2010,
+    investmentYear: 2017,
+    headquarters: "Madrid, Spain",
+    milestones: [
+      {
+        date: "April 2017",
+        category: "Financing",
+        event:
+          "European Commission approves the joint acquisition by 3i, ATP, and APG of five EISER infrastructure assets including the 49% stake in Autovias de Peaje en Sombra",
+      },
+      {
+        date: "2008",
+        category: "Expansion",
+        event:
+          "Autovia del Turia (CV-35) enters operation as a 53 km shadow toll motorway in the Valencian Community, with a concession running to 2041",
+      },
+      {
+        date: "October 2001",
+        category: "Expansion",
+        event:
+          "Autovia del Noroeste (RM-15) enters operation in Murcia as the first shadow toll concession in modern Spain",
+      },
+    ],
+    sources: [
+      {
+        label: "Sacyr Concesiones — Autovia de Aunor (RM-15)",
+        url: "https://sacyrconcesiones.com/-/autovia-aunor",
+      },
+      {
+        label: "Sacyr Concesiones — Autovia del Turia (CV-35)",
+        url: "https://sacyrconcesiones.com/-/turia-highway",
+      },
+    ],
   },
   {
     name: "Belfast City Airport",
@@ -376,8 +410,43 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Portugal",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "TDHOSP is the concessionaire responsible for the design, construction, financing, conservation, and maintenance of the Hospital de Cascais Dr. Jose de Almeida, a 277-bed public hospital near Lisbon serving approximately 300,000 people in the municipalities of Cascais and Sintra. Inaugurated in February 2010 as Portugal's first PPP hospital, it operates under a 30-year concession granted by the Portuguese State.",
     status: "Active",
+    website: "https://www.hospitaldecascais.pt",
+    yearFounded: 2008,
+    investmentYear: 2019,
+    headquarters: "Cascais, Portugal",
+    milestones: [
+      {
+        date: "April 2019",
+        category: "Financing",
+        event:
+          "3i European Operational Projects Fund completes acquisition of 90% of TDHOSP from Teixeira Duarte Group",
+      },
+      {
+        date: "February 2010",
+        category: "Expansion",
+        event:
+          "Hospital de Cascais inaugurated as Portugal's first PPP hospital, with 277 beds, six operating rooms, and ten delivery rooms",
+      },
+      {
+        date: "February 2008",
+        category: "Founding",
+        event:
+          "Construction begins on the new Cascais Hospital under the HPP/Teixeira Duarte consortium",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — EOPF Deploys Capital in Portugal",
+        url: "https://www.3i.com/media-centre/corporate-and-portfolio-news/2019/3i-european-operational-projects-fund-deploys-capital-in-portugal-italy-ireland-and-germany/",
+      },
+      {
+        label: "Hospital de Cascais — Official Website",
+        url: "https://www.hospitaldecascais.pt",
+      },
+    ],
   },
   {
     name: "Concesiones de Intercambiadores de Transporte (CIT)",
