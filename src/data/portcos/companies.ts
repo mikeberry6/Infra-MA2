@@ -169,12 +169,73 @@ export const companies: PortCo[] = [
     name: "Attero",
     investmentFirm: "3i Infrastructure",
     sector: "Environmental / Waste",
-    subsector: "Energy Transition",
+    subsector: "Energy-from-Waste & Circular Economy",
     region: "Europe",
-    country: "Netherlands/Belgium",
+    country: "Netherlands",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
-    status: "Active",
+    description:
+      "Attero is the largest waste treatment and recycling company in the Netherlands, processing approximately 3.6 million tonnes of waste annually across two energy-from-waste plants, six anaerobic digestion facilities, seven composting facilities, and polymer recycling operations. The company converts residual and organic waste into renewable electricity (powering ~300,000 homes), green gas, compost, and recycled raw materials, positioning it as a leading circular economy platform in Europe. Headquartered in Wilp, Attero operates at 18 locations with approximately 1,000 employees.",
+    status: "Realized",
+    website: "https://www.attero.nl",
+    yearFounded: 1929,
+    investmentYear: 2018,
+    headquarters: "Wilp, Netherlands",
+    management: [
+      { name: "Paul Ganzeboom", title: "Chief Executive Officer" },
+      { name: "Mark Koole", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "November 2023",
+        category: "Financing",
+        event:
+          "Ardian Infrastructure completes acquisition of 100% of Attero; 3i Infrastructure exits with €215 million in net proceeds, a 22% net IRR and 2.7x money multiple",
+      },
+      {
+        date: "March 2019",
+        category: "Expansion",
+        event:
+          "Opens €30 million Polymer Recycling Plant at Wijster, processing 24,000 tonnes of plastic film waste into regranulate annually",
+      },
+      {
+        date: "June 2018",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires 50% stake for €201 million alongside DWS, purchasing Attero from Waterland at a total enterprise value of approximately €402 million",
+      },
+      {
+        date: "May 2014",
+        category: "Financing",
+        event:
+          "Dutch public shareholders (six provinces, 116 municipalities) sell 99.93% of shares to Waterland Private Equity for approximately €170 million",
+      },
+      {
+        date: "January 1997",
+        category: "Expansion",
+        event:
+          "Energy-from-waste plant at Moerdijk begins operations, eventually processing one million tonnes of waste per year",
+      },
+      {
+        date: "January 1929",
+        category: "Founding",
+        event:
+          "Founded as Vuil Afvoer Maatschappij (VAM), transporting waste from The Hague to Wijster by train to produce compost for agricultural use",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Attero Portfolio Page",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/attero/",
+      },
+      {
+        label: "3i Infrastructure — 2018 Investment Announcement",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2018/3i-infrastructure-plc-announces-investment-in-attero/",
+      },
+      {
+        label: "Ardian — Attero Acquisition Announcement",
+        url: "https://www.ardian.com/news-insights/press-releases/ardian-acquire-leading-european-waste-management-and-circular-economy",
+      },
+    ],
   },
   {
     name: "Autovias de Peaje en Sombra",
