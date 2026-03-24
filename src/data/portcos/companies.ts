@@ -2307,12 +2307,38 @@ export const companies: PortCo[] = [
     name: "AlphaGen",
     investmentFirm: "ADIA Infrastructure",
     sector: "Power Generation",
-    subsector: "",
+    subsector: "Independent Power Production",
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (Direct Minority Co-Investment)",
-    description: "",
+    description:
+      "Alpha Generation (AlphaGen) is one of the largest independent power infrastructure platforms in the United States, managing approximately 14,000 megawatts of generation capacity across 23 natural gas- and oil-fired facilities in six states spanning four RTO markets.",
     status: "Active",
+    website: "https://www.alphagen.com",
+    yearFounded: 2024,
+    investmentYear: 2025,
+    headquarters: "Houston, TX",
+    management: [
+      { name: "Curt Morgan", title: "Chief Executive Officer" },
+      { name: "Mary Anne Brelinsky", title: "President and Chief Commercial Officer" },
+      { name: "Stacey Peterson", title: "Chief Financial Officer" },
+      { name: "Nick Rahn", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "January 2025",
+        category: "Financing",
+        event: "ADIA invests $500 million for a minority stake in AlphaGen",
+      },
+      {
+        date: "January 2024",
+        category: "Founding",
+        event: "ArcLight Capital Partners forms Alpha Generation to manage its 11+ GW power infrastructure portfolio",
+      },
+    ],
+    sources: [
+      { label: "Alpha Generation — Leadership", url: "https://www.alphagen.com/leadership/" },
+    ],
   },
   {
     name: "Arevon Energy",
@@ -2322,19 +2348,56 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (Direct Co-Investment with APG & CalSTRS)",
-    description: "",
+    description:
+      "Arevon Energy is a leading U.S. clean energy platform that develops, finances, builds, owns, and operates utility-scale solar and energy storage projects, with more than 6 GW of capacity across 18 states representing over $10 billion in capital investment.",
     status: "Active",
+    website: "https://arevonenergy.com",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "Scottsdale, AZ",
+    management: [
+      { name: "Justin Johnson", title: "Chief Executive Officer" },
+      { name: "Bob Krakauer", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "August 2021",
+        category: "Founding",
+        event: "Arevon Energy formed through spin-off of Capital Dynamics' U.S. Clean Energy Infrastructure team, backed by ADIA, APG, and CalSTRS",
+      },
+    ],
+    sources: [
+      { label: "Arevon Energy — About", url: "https://arevonenergy.com/about/" },
+    ],
   },
   {
     name: "Chicago Parking Meters, LLC",
     investmentFirm: "ADIA Infrastructure",
     sector: "Transportation",
-    subsector: "Social Infrastructure",
+    subsector: "Parking Concession",
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (24.9% Direct Stake via Consortium)",
-    description: "",
+    description:
+      "Chicago Parking Meters operates the third-largest metered parking system in the United States under a 75-year concession with the City of Chicago, managing approximately 36,000 parking meter spaces and generating over $160 million in annual revenue.",
     status: "Active",
+    website: "https://parkchicago.com",
+    yearFounded: 2008,
+    investmentYear: 2008,
+    headquarters: "Chicago, IL",
+    management: [
+      { name: "Dennis Pedrelli", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "December 2008",
+        category: "Founding",
+        event: "Chicago Parking Meters formed; Morgan Stanley-led consortium (with ADIA and Allianz) acquires 75-year concession for $1.15 billion",
+      },
+    ],
+    sources: [
+      { label: "Chicago Parking Meters — Wikipedia", url: "https://en.wikipedia.org/wiki/Chicago_Parking_Meters" },
+    ],
   },
   {
     name: "FirstEnergy Transmission, LLC (FET)",
@@ -2344,19 +2407,54 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "NATFinCo / NATCo II (10% Indirect Passive Economic Interest via Brookfield)",
-    description: "",
+    description:
+      "FirstEnergy Transmission is a holding company of regulated electric transmission entities including ATSI, MAIT, and TrAILCo, serving millions of customers across Ohio, Pennsylvania, West Virginia, Maryland, New Jersey, and New York. ADIA holds an indirect passive interest via Brookfield Super-Core Infrastructure Partners.",
     status: "Active",
+    website: "https://www.firstenergycorp.com",
+    yearFounded: 2011,
+    investmentYear: 2022,
+    headquarters: "Akron, OH",
+    milestones: [
+      {
+        date: "June 2022",
+        category: "Financing",
+        event: "FirstEnergy sells 19.9% minority equity stake in FET to Brookfield Super-Core Infrastructure Partners for $2.375 billion; ADIA participates as co-investor",
+      },
+    ],
+    sources: [
+      { label: "FirstEnergy — Transmission Sale", url: "https://www.firstenergycorp.com/newsroom/news_articles/firstenergy-completes-minority-interest-sale-in-transmission-bus.html" },
+    ],
   },
   {
     name: "Landmark Dividend LLC",
     investmentFirm: "ADIA Infrastructure",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Ground Leases",
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (40% Direct Stake)",
-    description: "",
+    description:
+      "Landmark Dividend is a global leader in the acquisition, development, and management of real estate and infrastructure assets focused on digital infrastructure, wireless communications, outdoor advertising, and renewable power generation, managing over 5,000 assets.",
     status: "Active",
+    website: "https://www.landmarkdividend.com",
+    yearFounded: 2002,
+    investmentYear: 2024,
+    headquarters: "El Segundo, CA",
+    milestones: [
+      {
+        date: "April 2024",
+        category: "Financing",
+        event: "ADIA completes acquisition of a 40% stake in Landmark Dividend alongside DigitalBridge",
+      },
+      {
+        date: "2002",
+        category: "Founding",
+        event: "Landmark Dividend founded by Tim Brazy, pioneering the ground lease acquisition business for wireless and digital infrastructure",
+      },
+    ],
+    sources: [
+      { label: "DigitalBridge — ADIA Landmark Stake", url: "https://ir.digitalbridge.com/news-releases/news-release-details/adia-completes-acquisition-40-stake-landmark-dividend-alongside" },
+    ],
   },
   {
     name: "Sempra Infrastructure Partners",
@@ -2366,19 +2464,67 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (10% Direct Stake)",
-    description: "",
+    description:
+      "Sempra Infrastructure Partners develops, builds, operates, and invests in energy infrastructure critical to the North American energy transition, including LNG export facilities, clean power generation, carbon capture, and natural gas transportation networks, with an enterprise value exceeding $31 billion.",
     status: "Active",
+    website: "https://semprainfrastructure.com",
+    yearFounded: 2021,
+    investmentYear: 2022,
+    headquarters: "San Diego, CA",
+    management: [
+      { name: "Justin Bird", title: "Chief Executive Officer" },
+      { name: "Tania Ortiz Mena", title: "President" },
+      { name: "Faisel Khan", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "June 2022",
+        category: "Financing",
+        event: "ADIA completes acquisition of a 10% non-controlling interest in Sempra Infrastructure Partners for $1.73 billion",
+      },
+      {
+        date: "2021",
+        category: "Founding",
+        event: "Sempra Infrastructure Partners formed to house Sempra's LNG, energy networks, and clean power businesses",
+      },
+    ],
+    sources: [
+      { label: "ADIA — Sempra Infrastructure Case Study", url: "https://www.adia.ae/en/investments/infrastructure/portfolio/case-studies/sempra-infrastructure" },
+    ],
   },
   {
     name: "Vantage Data Centers",
     investmentFirm: "ADIA Infrastructure",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Hyperscale Data Centers",
     region: "Global",
-    country: "United States (Global HQ)",
+    country: "United States",
     ownershipVehicle: "ADIA Infrastructure Department (Direct Co-Investment alongside DigitalBridge & GIC)",
-    description: "",
+    description:
+      "Vantage Data Centers is a leading global provider of hyperscale data center campuses, operating more than 1 GW of IT capacity across North America, Europe, and Asia-Pacific, serving the world's largest cloud and technology companies.",
     status: "Active",
+    website: "https://vantage-dc.com",
+    yearFounded: 2010,
+    investmentYear: 2024,
+    headquarters: "Denver, CO",
+    management: [
+      { name: "Sureel Choksi", title: "President and Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "June 2024",
+        category: "Financing",
+        event: "Vantage completes $9.2 billion equity investment led by DigitalBridge and Silver Lake, with ADIA participation",
+      },
+      {
+        date: "2010",
+        category: "Founding",
+        event: "Silver Lake launches Vantage Data Centers as a single data center campus in Santa Clara, California",
+      },
+    ],
+    sources: [
+      { label: "Vantage Data Centers — Company Overview", url: "https://vantage-dc.com/company/" },
+    ],
   },
   // ─── APG Infrastructure ─────────────────────────────────────
   {
