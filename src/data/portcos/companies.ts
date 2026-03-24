@@ -360,12 +360,80 @@ export const companies: PortCo[] = [
     name: "ESVAGT",
     investmentFirm: "3i Infrastructure",
     sector: "Transportation",
-    subsector: "Energy Transition (Maritime",
+    subsector: "Energy Transition (Maritime)",
     region: "Europe",
     country: "Denmark",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "ESVAGT is a Danish offshore shipping company and the pioneer and market leader in Service Operation Vessels (SOVs) for the offshore wind industry. Founded in 1981 as an emergency response and rescue vessel operator for North Sea oil and gas, the company has transformed into a critical enabler of the energy transition, with over 60% of its contracted EBITDA now serving the offshore wind sector. ESVAGT operates a fleet of more than 40 specialised vessels with approximately 1,100 employees, serving major offshore energy markets across Denmark, Norway, the UK, the Netherlands, Belgium, and Germany.",
     status: "Active",
+    website: "https://esvagt.com",
+    yearFounded: 1981,
+    investmentYear: 2015,
+    headquarters: "Esbjerg, Denmark",
+    management: [
+      { name: "Kristian Ole Jakobsen", title: "Co-Chief Executive Officer" },
+      { name: "Søren Karas", title: "Co-Chief Executive Officer" },
+      { name: "Dennis Bjørn Krog-Meyer", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "November 2024",
+        category: "Management",
+        event:
+          "Kristian Ole Jakobsen and Søren Karas appointed as co-CEOs following the retirement of Peter Lytzen",
+      },
+      {
+        date: "February 2022",
+        category: "Financing",
+        event:
+          "3i Infrastructure completed acquisition of AMP Capital's 50% stake for £268M, taking full ownership of ESVAGT",
+      },
+      {
+        date: "June 2021",
+        category: "Expansion",
+        event:
+          "Established CREST Wind joint venture with Crowley to support the US offshore wind industry",
+      },
+      {
+        date: "September 2018",
+        category: "Expansion",
+        event:
+          "Awarded two 15-year SOV contracts by MHI Vestas for Borssele III-IV and Triton Knoll wind farms",
+      },
+      {
+        date: "September 2015",
+        category: "Financing",
+        event:
+          "3i Infrastructure and AMP Capital completed acquisition of 100% of ESVAGT from Maersk Group and ESE-Holding for approximately USD 610M",
+      },
+      {
+        date: "January 2010",
+        category: "Expansion",
+        event:
+          "Pioneered the Service Operation Vessel (SOV) concept for offshore wind, deploying ESVAGT Supporter at the Belwind wind farm in Belgium",
+      },
+      {
+        date: "January 1981",
+        category: "Founding",
+        event:
+          "ESVAGT founded in Esbjerg, Denmark by ESE-Holding A/S to provide emergency response and rescue vessel services to the Danish offshore oil and gas industry",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — ESVAGT Portfolio Page",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/esvagt/",
+      },
+      {
+        label: "ESVAGT — Company History",
+        url: "https://esvagt.com/about/history/",
+      },
+      {
+        label: "Wikipedia — Esvagt",
+        url: "https://en.wikipedia.org/wiki/Esvagt",
+      },
+    ],
   },
   {
     name: "Elenia",
