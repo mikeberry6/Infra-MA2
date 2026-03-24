@@ -9726,12 +9726,55 @@ export const companies: PortCo[] = [
     name: "Scout Clean Energy",
     investmentFirm: "Brookfield Asset Management",
     sector: "Energy Transition",
-    subsector: "Power",
+    subsector: "Wind, Solar & Storage",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Global Transition Fund",
-    description: "",
+    description:
+      "Scout Clean Energy is a leading U.S. renewable energy developer, owner, and operator with a diversified portfolio spanning wind, solar, and battery storage projects. The company operates approximately 1.4 GW of wind and solar assets and has a development pipeline exceeding 22 GW across multiple U.S. states. Scout was founded as a portfolio company of Quinbrook Infrastructure Partners before being acquired by Brookfield's Global Transition Fund, providing the platform with access to Brookfield's global scale and capital to accelerate project development and construction.",
     status: "Active",
+    website: "https://www.scoutcleanenergy.com",
+    yearFounded: 2017,
+    investmentYear: 2022,
+    headquarters: "Boulder, CO",
+    management: [
+      { name: "Michael Rucker", title: "Chief Executive Officer" },
+      { name: "Andrew Russo", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "2017",
+        event: "Scout Clean Energy founded in Boulder, CO, initially backed by Quinbrook Infrastructure Partners to develop wind energy projects.",
+        category: "Founding",
+      },
+      {
+        date: "2020",
+        event: "Expanded into solar and battery storage development, diversifying the pipeline beyond wind-only projects.",
+        category: "Expansion",
+      },
+      {
+        date: "2022",
+        event: "Brookfield Asset Management acquired Scout Clean Energy through its Global Transition Fund, providing institutional capital for pipeline acceleration.",
+        category: "Financing",
+      },
+      {
+        date: "2023",
+        event: "Advanced construction on multiple utility-scale wind and solar projects, growing operating capacity toward 2 GW.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Development pipeline grew to 22+ GW as Scout secured interconnection rights and land positions in high-demand power markets.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Scout Clean Energy — Company Website", url: "https://www.scoutcleanenergy.com" },
+      {
+        label: "Brookfield — Scout Clean Energy Acquisition",
+        url: "https://www.brookfield.com/news/brookfield-asset-management-acquires-scout-clean-energy",
+      },
+    ],
   },
   {
     name: "Service Experts",
@@ -9792,12 +9835,55 @@ export const companies: PortCo[] = [
     name: "Triton International",
     investmentFirm: "Brookfield Asset Management",
     sector: "Transportation",
-    subsector: "",
+    subsector: "Intermodal Containers & Chassis",
     region: "Global",
     country: "United States (Global)",
     ownershipVehicle: "Brookfield Infrastructure Partners",
-    description: "",
+    description:
+      "Triton International is the world's largest lessor of intermodal freight containers and chassis, with a fleet of approximately 7.2 million TEU (twenty-foot equivalent units) leased to virtually every major ocean shipping line globally. The company's containers are essential infrastructure for global trade, facilitating the movement of goods by ship, rail, and truck across international supply chains. Triton generates stable, long-duration revenue through multi-year lease contracts with creditworthy shipping line counterparties. Brookfield Infrastructure Partners completed the take-private acquisition in 2023, adding Triton as a cornerstone global transport infrastructure asset.",
     status: "Active",
+    website: "https://www.tritoninternational.com",
+    yearFounded: 1980,
+    investmentYear: 2023,
+    headquarters: "Bermuda (Operations in New York)",
+    management: [
+      { name: "Thomas Albrecht", title: "President & Chief Executive Officer" },
+      { name: "John Burns", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1980",
+        event: "Triton Container International founded as an intermodal container leasing company.",
+        category: "Founding",
+      },
+      {
+        date: "2016",
+        event: "Merged with TAL International to create the world's largest intermodal container leasing company, combining ~11 million TEU fleet capacity.",
+        category: "Acquisition",
+      },
+      {
+        date: "2016",
+        event: "Listed on the New York Stock Exchange (NYSE: TRTN) following the merger, becoming the first publicly traded global container lessor.",
+        category: "IPO",
+      },
+      {
+        date: "Sep 2023",
+        event: "Brookfield Infrastructure Partners completed the take-private acquisition of Triton International for approximately $13.3 billion (including debt), delisting from NYSE.",
+        category: "Financing",
+      },
+      {
+        date: "2024",
+        event: "Integrated into Brookfield Infrastructure's global transport portfolio, operating alongside Brookfield's rail, port, and logistics assets.",
+        category: "Other",
+      },
+    ],
+    sources: [
+      { label: "Triton International — Company Website", url: "https://www.tritoninternational.com" },
+      {
+        label: "Brookfield — Triton International Acquisition",
+        url: "https://bip.brookfield.com/press-releases/brookfield-infrastructure-completes-acquisition-triton-international",
+      },
+    ],
   },
   {
     name: "Urban Grid",
@@ -10025,12 +10111,55 @@ export const companies: PortCo[] = [
     name: "Innergex Renewable Energy",
     investmentFirm: "CDPQ",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Hydro, Wind & Solar",
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "CDPQ Infrastructure (100% Stake)",
-    description: "",
+    description:
+      "Innergex Renewable Energy is a leading Canadian independent renewable power producer operating a diversified portfolio of approximately 4.2 GW of net installed capacity across hydroelectric, wind, solar, and battery storage assets in Canada, the United States, France, and Chile. The company develops, acquires, owns, and operates long-life renewable energy facilities under long-term power purchase agreements. CDPQ (Caisse de dépôt et placement du Québec) took Innergex private in 2024, acquiring 100% of the company to provide patient, long-term capital for continued development.",
     status: "Active",
+    website: "https://www.innergex.com",
+    yearFounded: 1990,
+    investmentYear: 2024,
+    headquarters: "Longueuil, Quebec, Canada",
+    management: [
+      { name: "Michel Letellier", title: "President & Chief Executive Officer" },
+      { name: "Jean-François Neault", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1990",
+        event: "Innergex Renewable Energy founded in Quebec, initially focused on developing small hydroelectric projects in Canada.",
+        category: "Founding",
+      },
+      {
+        date: "2003",
+        event: "Listed on the Toronto Stock Exchange (TSX: INE), raising capital for hydro and wind project development.",
+        category: "IPO",
+      },
+      {
+        date: "2018",
+        event: "Acquired Alterra Power, adding geothermal, wind, and hydro assets and expanding into British Columbia and the United States.",
+        category: "Acquisition",
+      },
+      {
+        date: "2020",
+        event: "Entered U.S. solar market, developing utility-scale solar and storage projects in Texas, Ohio, and other states.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "CDPQ completed take-private of Innergex for approximately C$4.4 billion, delisting from TSX to provide long-term institutional ownership.",
+        category: "Financing",
+      },
+    ],
+    sources: [
+      { label: "Innergex Renewable Energy — Company Website", url: "https://www.innergex.com" },
+      {
+        label: "CDPQ — Innergex Acquisition",
+        url: "https://www.cdpq.com/en/news/pressreleases/cdpq-acquire-innergex-renewable-energy",
+      },
+    ],
   },
   {
     name: "Invenergy Renewables",
@@ -10080,12 +10209,51 @@ export const companies: PortCo[] = [
     name: "Réseau express métropolitain (REM)",
     investmentFirm: "CDPQ",
     sector: "Transportation",
-    subsector: "Rail",
+    subsector: "Light Rail / Automated Transit",
     region: "North America",
     country: "Canada",
     ownershipVehicle: "CDPQ Infra",
-    description: "",
+    description:
+      "The Réseau express métropolitain (REM) is a 67-kilometer automated light metro system serving the Greater Montreal area, connecting downtown Montreal to the South Shore, West Island, North Shore, and Montréal-Trudeau International Airport. The REM is one of the largest transit infrastructure projects in Canadian history, featuring 26 stations and fully automated, driverless trains operating 20 hours per day. The project was developed and is owned by CDPQ Infra, CDPQ's infrastructure subsidiary, representing a unique model of pension fund-led transit development. The first segment (REM A) opened in 2023.",
     status: "Active",
+    website: "https://rem.info",
+    yearFounded: 2016,
+    investmentYear: 2016,
+    headquarters: "Montreal, Quebec, Canada",
+    milestones: [
+      {
+        date: "2016",
+        event: "CDPQ Infra announced the REM project, a C$6.3 billion automated light metro system for the Greater Montreal area.",
+        category: "Founding",
+      },
+      {
+        date: "2018",
+        event: "Quebec government and federal government approved funding contributions, with CDPQ committing the majority of the C$6.9 billion project cost.",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Major construction commenced, including tunnel boring, station construction, and elevated guideway installation across the network.",
+        category: "Expansion",
+      },
+      {
+        date: "Jul 2023",
+        event: "First segment of the REM (South Shore branch from Brossard to Gare Centrale) opened for passenger service.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Continued phased opening of additional stations, with full network completion targeted for 2025.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "REM — Official Website", url: "https://rem.info" },
+      {
+        label: "CDPQ Infra — REM Project",
+        url: "https://www.cdpqinfra.com/en/rem",
+      },
+    ],
   },
   {
     name: "Southern Star Central Gas Pipeline",
@@ -10423,12 +10591,54 @@ export const companies: PortCo[] = [
     name: "Ports America",
     investmentFirm: "CPP Investments",
     sector: "Transportation",
-    subsector: "Ports",
+    subsector: "Marine Terminal Operations",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Real Assets (Infrastructure)",
-    description: "",
+    description:
+      "Ports America is the largest independent marine terminal operator in the United States, providing stevedoring, terminal management, and related port services at approximately 70 port locations across both coasts and the Gulf. The company handles container, cruise, breakbulk, auto/RoRo, and project cargo for ocean carriers, cruise lines, and shippers. Ports America operates under long-term terminal leases and management agreements with port authorities, providing essential logistics infrastructure at critical nodes in the U.S. supply chain. CPP Investments holds an equity stake alongside Oaktree Capital Management.",
     status: "Active",
+    website: "https://www.portsamerica.com",
+    yearFounded: 2005,
+    investmentYear: 2015,
+    headquarters: "Chandler, AZ",
+    management: [
+      { name: "Mark Montgomery", title: "President & Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2005",
+        event: "Ports America formed through the merger of P&O Ports North America and Continental Stevedoring, creating the largest U.S.-owned terminal operator.",
+        category: "Founding",
+      },
+      {
+        date: "2007",
+        event: "Acquired by Highstar Capital (now part of Oaktree), providing private equity backing for continued port terminal acquisitions.",
+        category: "Financing",
+      },
+      {
+        date: "2015",
+        event: "CPP Investments acquired an equity interest in Ports America alongside Oaktree Capital, providing long-term institutional capital.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "Expanded cruise terminal operations and secured new auto-processing contracts at Gulf Coast and East Coast ports.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Invested in terminal modernization and electrification of cargo handling equipment across the portfolio to meet port authority emissions targets.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Ports America — Company Website", url: "https://www.portsamerica.com" },
+      {
+        label: "CPP Investments — Infrastructure Portfolio",
+        url: "https://www.cppinvestments.com/investments/our-investments/infrastructure",
+      },
+    ],
   },
   {
     name: "Redaptive",
@@ -10445,12 +10655,50 @@ export const companies: PortCo[] = [
     name: "Sempra Infrastructure Partners",
     investmentFirm: "CPP Investments",
     sector: "Midstream Energy",
-    subsector: "LNG",
+    subsector: "LNG Export & Infrastructure",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Real Assets (Infrastructure)",
-    description: "",
+    description:
+      "Sempra Infrastructure Partners is a subsidiary of Sempra (NYSE: SRE) that develops, builds, and operates large-scale LNG export, natural gas pipelines, and renewable energy infrastructure in North America. Key assets include a stake in the Cameron LNG export terminal in Louisiana and the Port Arthur LNG development project in Texas. CPP Investments acquired a 20% equity interest in Sempra Infrastructure Partners in 2021 for $3.4 billion, gaining exposure to the structural growth in North American LNG exports and cross-border energy infrastructure linking U.S. supply to global markets.",
     status: "Active",
+    website: "https://www.semprainfrastructure.com",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "Houston, TX",
+    management: [
+      { name: "Justin Bird", title: "Chief Executive Officer" },
+      { name: "Lisa Glatch", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "2021",
+        event: "Sempra Infrastructure Partners formed as a carve-out of Sempra's infrastructure businesses. CPP Investments acquired a 20% stake for $3.4 billion.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Advanced Port Arthur LNG project toward final investment decision, a ~13 mtpa liquefaction facility on the Texas Gulf Coast.",
+        category: "Expansion",
+      },
+      {
+        date: "Mar 2023",
+        event: "Port Arthur LNG Phase 1 reached final investment decision with a project cost of approximately $13 billion, backed by long-term offtake agreements.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Construction progressed on Port Arthur LNG Phase 1 with first LNG expected in 2027. Evaluated Phase 2 expansion potential.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Sempra Infrastructure — Company Website", url: "https://www.semprainfrastructure.com" },
+      {
+        label: "CPP Investments — Sempra Infrastructure Investment",
+        url: "https://www.cppinvestments.com/public-media/headlines/2021/cpp-investments-acquires-20-equity-interest-in-sempra-infrastructure-partners/",
+      },
+    ],
   },
   {
     name: "Tallgrass Energy",
@@ -10837,12 +11085,45 @@ export const companies: PortCo[] = [
     name: "CAG Holdings (JFK New Terminal One)",
     investmentFirm: "Carlyle Infrastructure",
     sector: "Transportation",
-    subsector: "",
+    subsector: "Airport Terminal P3",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund",
-    description: "",
+    description:
+      "CAG Holdings is the concessionaire consortium developing and operating the New Terminal One (NTO) at John F. Kennedy International Airport in New York, one of the largest airport public-private partnerships in U.S. history. The $9.5 billion project will replace the existing Terminal 1 with a world-class, 2.4-million-square-foot international terminal featuring 23 gates and capacity to serve approximately 13.6 million passengers annually. The consortium includes Carlyle, Ferrovial, and JLC Infrastructure, operating under a long-term lease with the Port Authority of New York and New Jersey.",
     status: "Active",
+    website: "https://www.anewjfk.com",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "New York, NY",
+    milestones: [
+      {
+        date: "2022",
+        event: "Carlyle-led consortium selected by Port Authority of New York and New Jersey to develop, finance, and operate the New Terminal One at JFK Airport.",
+        category: "Financing",
+      },
+      {
+        date: "Jun 2023",
+        event: "Construction commenced on the New Terminal One, with demolition of the existing Terminal 1 beginning in phases.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Major construction milestones reached, with steel erection and foundation work progressing. First phase opening targeted for 2026.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "New Terminal One at JFK — Project Website", url: "https://www.anewjfk.com" },
+      {
+        label: "Port Authority — New Terminal One",
+        url: "https://www.panynj.gov/airports/en/jfk/new-terminal-one.html",
+      },
+      {
+        label: "Carlyle — JFK New Terminal One",
+        url: "https://www.carlyle.com/media-room/news-release-archive/carlyle-jfk-new-terminal-one",
+      },
+    ],
   },
   {
     name: "Cardinal Renewables",
@@ -11478,12 +11759,54 @@ export const companies: PortCo[] = [
     name: "Boingo Wireless",
     investmentFirm: "DigitalBridge",
     sector: "Digital Infrastructure",
-    subsector: "Small Cells / Wi-Fi",
+    subsector: "Wi-Fi / DAS / Neutral Host",
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge Partners II",
-    description: "",
+    description:
+      "Boingo Wireless is a leading provider of converged Wi-Fi, DAS (distributed antenna systems), small cell, and private 5G network solutions for large venues, airports, military bases, stadiums, and multi-dwelling units across the United States. The company designs, builds, owns, and operates neutral-host wireless networks that serve mobile carriers, venue operators, and enterprise customers. Boingo's portfolio includes exclusive wireless infrastructure contracts at over 100 airports, 80+ military installations, and numerous stadiums and convention centers. DigitalBridge took Boingo private in 2021 to capitalize on the growing demand for venue densification and private network infrastructure.",
     status: "Active",
+    website: "https://www.boingo.com",
+    yearFounded: 2001,
+    investmentYear: 2021,
+    headquarters: "Dallas, TX",
+    management: [
+      { name: "Mike Finley", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2001",
+        event: "Boingo Wireless founded in Los Angeles, CA as a provider of Wi-Fi aggregation and hotspot management services.",
+        category: "Founding",
+      },
+      {
+        date: "2011",
+        event: "Completed IPO on NASDAQ (WIFI), raising capital for network expansion at airports and military installations.",
+        category: "IPO",
+      },
+      {
+        date: "2015",
+        event: "Won a landmark 15-year exclusive wireless infrastructure contract at Chicago O'Hare International Airport.",
+        category: "Expansion",
+      },
+      {
+        date: "Jun 2021",
+        event: "DigitalBridge completed take-private of Boingo Wireless for approximately $854 million, delisting from NASDAQ.",
+        category: "Financing",
+      },
+      {
+        date: "2023",
+        event: "Expanded private 5G and CBRS network deployments for military and enterprise customers, growing recurring infrastructure revenue.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Boingo Wireless — Company Website", url: "https://www.boingo.com" },
+      {
+        label: "DigitalBridge — Boingo Wireless Portfolio",
+        url: "https://www.digitalbridge.com/portfolio/boingo-wireless",
+      },
+    ],
   },
   {
     name: "ConGlobal",
