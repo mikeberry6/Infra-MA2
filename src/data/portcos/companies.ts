@@ -610,8 +610,54 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
-    status: "Active",
+    description:
+      "Eversholt Rail is one of three major UK rolling stock leasing companies (ROSCOs) created from the privatisation of British Rail in 1994. The company owns approximately 28% of the UK passenger train fleet, comprising over 3,200 vehicles, and provides asset management, maintenance oversight, and fleet investment services to train operating companies across the United Kingdom.",
+    status: "Realized",
+    website: "https://eversholtrail.co.uk",
+    yearFounded: 1994,
+    investmentYear: 2010,
+    headquarters: "London, United Kingdom",
+    management: [
+      { name: "Mary Kenny", title: "Chief Executive Officer" },
+      { name: "Andrea Wesson", title: "Chief Financial Officer" },
+      { name: "Andy Course", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "January 2015",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure sold its stake to CK Hutchison and Cheung Kong Infrastructure for an enterprise value of approximately £2.5 billion",
+      },
+      {
+        date: "December 2010",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquired 33% stake alongside Morgan Stanley Infrastructure Partners and STAR Capital Partners from HSBC",
+      },
+      {
+        date: "January 2010",
+        category: "Other",
+        event:
+          "Renamed from HSBC Rail to Eversholt Rail in preparation for sale",
+      },
+      {
+        date: "March 1994",
+        category: "Founding",
+        event:
+          "Established as a wholly owned subsidiary of British Rail during rail privatisation, named after Eversholt Street near London Euston",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Eversholt Rail (Past Portfolio)",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/eversholt-rail/",
+      },
+      {
+        label: "Wikipedia — Eversholt Rail Group",
+        url: "https://en.wikipedia.org/wiki/Eversholt_Rail_Group",
+      },
+    ],
   },
   {
     name: "FLAG (Global Cloud Xchange)",
