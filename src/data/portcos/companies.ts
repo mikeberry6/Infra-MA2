@@ -2528,15 +2528,30 @@ export const companies: PortCo[] = [
   },
   // ─── APG Infrastructure ─────────────────────────────────────
   {
-    name: "(LBJ Infrastructure Group)",
+    name: "LBJ Infrastructure Group",
     investmentFirm: "APG Infrastructure",
     sector: "Transportation",
     subsector: "Toll Roads",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Pool (Consortium with Cintra & Meridiam)",
-    description: "",
+    description:
+      "LBJ Infrastructure Group operates the LBJ Express, a $2.7 billion, 13.3-mile managed-lanes highway along I-635 in Dallas, Texas, featuring six dynamically tolled TEXpress Lanes under a 52-year concession with TxDOT expiring in 2061.",
     status: "Active",
+    website: "https://www.texpresslanes.com",
+    yearFounded: 2009,
+    investmentYear: 2009,
+    headquarters: "Dallas, Texas",
+    management: [
+      { name: "Pablo Ferrando", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "September 2015", category: "Expansion", event: "LBJ Express opens to traffic months ahead of schedule" },
+      { date: "March 2009", category: "Founding", event: "LBJ Infrastructure Group formed as a consortium of Cintra, Meridiam, APG, and Dallas Police & Fire Pension System" },
+    ],
+    sources: [
+      { label: "TEXpress Lanes — LBJ Project", url: "https://www.texpresslanes.com/projects/lbj/" },
+    ],
   },
   {
     name: "Arevon Energy",
@@ -2546,19 +2561,44 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Clean Energy Infrastructure JV (APG, CalSTRS, ADIA)",
-    description: "",
+    description:
+      "Arevon Energy owns and operates more than 6 GW of utility-scale solar and energy storage projects across 18 states, formed in 2021 through the combination of Capital Dynamics' U.S. Clean Energy Infrastructure team, backed by APG, CalSTRS, and ADIA.",
     status: "Active",
+    website: "https://arevonenergy.com",
+    yearFounded: 2021,
+    investmentYear: 2021,
+    headquarters: "Scottsdale, AZ",
+    management: [
+      { name: "Justin Johnson", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "August 2021", category: "Founding", event: "Arevon Energy formed through spin-off of Capital Dynamics' U.S. Clean Energy Infrastructure team" },
+    ],
+    sources: [
+      { label: "Arevon Energy — About", url: "https://arevonenergy.com/about/" },
+    ],
   },
   {
     name: "Astoria Energy (I & II)",
     investmentFirm: "APG Infrastructure",
     sector: "Power Generation",
-    subsector: "",
+    subsector: "Natural Gas",
     region: "North America",
     country: "United States",
     ownershipVehicle: "APPH Consortium (APG Direct Infrastructure)",
-    description: "",
+    description:
+      "Astoria Energy comprises two adjacent 615 MW dual-fuel combined-cycle gas turbine facilities in Astoria, Queens, New York, totaling approximately 1,230 MW, providing critical baseload electricity and system stability to New York City.",
     status: "Active",
+    yearFounded: 2006,
+    investmentYear: 2020,
+    headquarters: "Astoria, Queens, NY",
+    milestones: [
+      { date: "July 2020", category: "Financing", event: "APG-led APPH consortium closes acquisition of Astoria Energy I and 55% of Astoria Energy II from ENGIE" },
+      { date: "May 2006", category: "Founding", event: "Astoria Energy I commences commercial operation as a 615 MW dual-fuel combined cycle facility" },
+    ],
+    sources: [
+      { label: "APG — Astoria Energy Acquisition", url: "https://apg.nl/en/publication/equity-consortium-agrees-to-acquire-stakes-in-new-york-s-astoria-energy-facilities/" },
+    ],
   },
   {
     name: "Conterra Networks",
@@ -2568,8 +2608,25 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "APG Infrastructure Pool (Co-owned with Fiera)",
-    description: "",
+    description:
+      "Conterra Networks is one of the largest independent fiber infrastructure providers in the United States, operating over 14,000 route miles delivering high-capacity fiber and wireless services to enterprise, carrier, education, and government customers across 21 states.",
     status: "Active",
+    website: "https://conterra.com",
+    yearFounded: 2001,
+    investmentYear: 2021,
+    headquarters: "Charlotte, NC",
+    management: [
+      { name: "Craig Gunderson", title: "President and Chief Executive Officer" },
+      { name: "Mark Gossett", title: "Chief Financial Officer" },
+      { name: "Mike Tompkins", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      { date: "June 2021", category: "Financing", event: "APG and Fiera Infrastructure close acquisition of Conterra Networks from Court Square Capital Partners" },
+      { date: "2001", category: "Founding", event: "Conterra Networks founded in Charlotte, NC as an independent fiber infrastructure provider" },
+    ],
+    sources: [
+      { label: "Conterra — APG & Fiera Acquisition", url: "https://conterra.com/apg-and-fiera-infrastructure-to-acquire-conterra-networks-as-platform-to-grow-us-fiber-infrastructure/" },
+    ],
   },
   {
     name: "Cross-Sound Cable",
@@ -2579,8 +2636,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "AIA Montana LLC (Managed by Argo Infrastructure)",
-    description: "",
+    description:
+      "Cross-Sound Cable operates a 330 MW HVDC submarine transmission system spanning 24 miles beneath Long Island Sound, connecting the electric grids of New England and Long Island, with capacity 100% contracted to the Long Island Power Authority.",
     status: "Active",
+    website: "https://www.crosssoundcable.com",
+    yearFounded: 2002,
+    investmentYear: 2015,
+    headquarters: "New Haven, CT",
+    milestones: [
+      { date: "August 2015", category: "Financing", event: "AIA Energy (APG, CalSTRS, managed by Argo Infrastructure) acquires Cross-Sound Cable from Brookfield Infrastructure" },
+      { date: "2002", category: "Founding", event: "Construction begins on the Cross-Sound Cable HVDC submarine transmission system" },
+    ],
+    sources: [
+      { label: "Cross-Sound Cable — About Us", url: "https://www.crosssoundcable.com/about-us/" },
+    ],
   },
   {
     name: "Doral Renewables",
@@ -2590,19 +2659,50 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "APG Direct Infrastructure Pool",
-    description: "",
+    description:
+      "Doral Renewables is a leading U.S. developer, owner, and operator of utility-scale solar and energy storage projects with a development portfolio exceeding 13 GW across 18 states. Its flagship Mammoth Solar project in Indiana, at 1.3 GW, is one of the largest solar farms in the United States.",
     status: "Active",
+    website: "https://doral-llc.com",
+    yearFounded: 2019,
+    investmentYear: 2024,
+    headquarters: "Philadelphia, PA",
+    management: [
+      { name: "Nick Cohen", title: "President and Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "September 2024", category: "Financing", event: "Doral Renewables closes $400 million minority equity investment from APG on behalf of pension fund ABP" },
+      { date: "2019", category: "Founding", event: "Doral Renewables LLC founded as the U.S. subsidiary of Israel-based Doral Group" },
+    ],
+    sources: [
+      { label: "Doral Renewables — APG Investment", url: "https://www.globenewswire.com/news-release/2024/09/13/2945843/0/en/Doral-Renewables-LLC-Announces-Closing-of-400-Million-Equity-Investment-from-APG.html" },
+    ],
   },
   {
     name: "Duquesne Light Company",
     investmentFirm: "APG Infrastructure",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Electric T&D",
     region: "North America",
     country: "United States",
     ownershipVehicle: "AIA Montana LLC (Managed by Argo Infrastructure)",
-    description: "",
+    description:
+      "Duquesne Light Company is a regulated electric utility serving more than 600,000 customers across southwestern Pennsylvania including Pittsburgh, operating over 7,700 miles of transmission and distribution lines. Founded in 1912, it traces roots to George Westinghouse's pioneering work in alternating current.",
     status: "Active",
+    website: "https://duquesnelight.com",
+    yearFounded: 1912,
+    investmentYear: 2017,
+    headquarters: "Pittsburgh, PA",
+    management: [
+      { name: "Kevin Walker", title: "President and Chief Executive Officer" },
+      { name: "Matt Ankrum", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "2017", category: "Financing", event: "AIA Montana (APG, CalSTRS, managed by Argo) acquires 25.2% stake in DQE Holdings from IFM Global Infrastructure Fund" },
+      { date: "1912", category: "Founding", event: "Duquesne Light Company formed through consolidation of three predecessor companies" },
+    ],
+    sources: [
+      { label: "Duquesne Light — Investors", url: "https://duquesnelight.com/company/about/investors" },
+    ],
   },
   {
     name: "Gemini Solar + Storage",
@@ -2612,19 +2712,47 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "APG Direct Infrastructure Pool",
-    description: "",
+    description:
+      "Gemini is the largest co-located solar-plus-battery-energy-storage project operating in the United States, located in the Mojave Desert near Las Vegas. The $1.2 billion project pairs 690 MWac of solar with a 380 MW / 1,400 MWh battery system, capable of supplying approximately 10% of Nevada's peak power demand.",
     status: "Active",
+    website: "https://www.primergygemini.com",
+    yearFounded: 2018,
+    investmentYear: 2022,
+    headquarters: "Clark County, NV",
+    milestones: [
+      { date: "July 2024", category: "Expansion", event: "Gemini Solar + Storage reaches full commercial operations" },
+      { date: "October 2022", category: "Financing", event: "APG acquires 49% equity ownership in Gemini on behalf of pension fund ABP" },
+    ],
+    sources: [
+      { label: "Quinbrook — APG Partnership on Gemini", url: "https://www.quinbrook.com/news-insights/quinbrook-and-primergy-solar-partner-with-apg-on-gemini-solar-storage-project/" },
+    ],
   },
   {
     name: "Hawaii Gas",
     investmentFirm: "APG Infrastructure",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Gas Distribution",
     region: "North America",
     country: "United States",
     ownershipVehicle: "AIA Montana LLC (Managed by Argo Infrastructure)",
-    description: "",
+    description:
+      "Hawaii Gas is the only government-franchised, full-service gas utility in Hawaii, manufacturing and distributing synthetic natural gas through a 1,100-mile pipeline on Oahu and supplying LPG across all six primary Hawaiian islands. Founded in 1904 as the Honolulu Gas Company.",
     status: "Active",
+    website: "https://www.hawaiigas.com",
+    yearFounded: 1904,
+    investmentYear: 2022,
+    headquarters: "Honolulu, HI",
+    management: [
+      { name: "Alicia Moy", title: "President and Chief Executive Officer" },
+      { name: "Joanne Barradas", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "July 2022", category: "Financing", event: "Argo Infrastructure (for APG/CalSTRS) completes acquisition of Hawaii Gas from Macquarie" },
+      { date: "1904", category: "Founding", event: "Honolulu Gas Company founded, beginning gas service on Oahu" },
+    ],
+    sources: [
+      { label: "Hawaii Gas — Acquisition", url: "https://www.hawaiigas.com/posts/acquisition-of-hawai-i-gas-paves-way-for-clean-energy-transformation" },
+    ],
   },
   {
     name: "Hudson Transmission Project",
@@ -2634,8 +2762,23 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "AIA Montana LLC (Managed by Argo Infrastructure)",
-    description: "",
+    description:
+      "Hudson Transmission Partners operates a 660 MW HVDC electric transmission link running underground and underwater for nearly eight miles from New Jersey beneath the Hudson River to Manhattan, interconnecting PJM and NYISO markets. Approximately 87% of capacity is contracted with NYPA.",
     status: "Active",
+    website: "https://hudsonproject.com",
+    yearFounded: 2011,
+    investmentYear: 2018,
+    headquarters: "Bridgeport, CT",
+    management: [
+      { name: "Ed Stern", title: "President and Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2018", category: "Financing", event: "AIA Energy (APG/CalSTRS, managed by Argo) acquires Hudson Transmission Partners from Ares and Starwood Energy" },
+      { date: "June 2013", category: "Expansion", event: "Hudson Transmission Project enters commercial service, completing the $850 million underwater HVDC link" },
+    ],
+    sources: [
+      { label: "Hudson Project — Overview", url: "https://hudsonproject.com/project/" },
+    ],
   },
   {
     name: "I-66 Express Mobility Partners (66 Express)",
@@ -2645,8 +2788,23 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "APG Infrastructure Pool (Consortium with Cintra & Meridiam)",
-    description: "",
+    description:
+      "I-66 Express Mobility Partners is a consortium of Cintra, Meridiam, and APG that built and operates the 66 Express Lanes, a $3.7 billion, 22.5-mile managed-lanes project along I-66 in Northern Virginia under a 50-year concession with VDOT.",
     status: "Active",
+    website: "https://ride66express.com",
+    yearFounded: 2016,
+    investmentYear: 2016,
+    headquarters: "Fairfax, VA",
+    management: [
+      { name: "Ruben Roman", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "Fall 2022", category: "Expansion", event: "66 Express Lanes open to traffic ahead of schedule" },
+      { date: "December 2016", category: "Financing", event: "VDOT signs 50-year Comprehensive Agreement with I-66 Express Mobility Partners for the $3.7 billion Transform 66 project" },
+    ],
+    sources: [
+      { label: "66 Express — About Us", url: "https://ride66express.com/about-us/" },
+    ],
   },
   {
     name: "LBJ Express",
