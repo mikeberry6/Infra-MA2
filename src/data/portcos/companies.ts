@@ -3315,8 +3315,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Mid Cap Fund I",
-    description: "",
+    description:
+      "Empire Access is a regional fiber-to-the-premise broadband provider serving upstate New York and northern Pennsylvania, with a network of over 1,280 fiber route miles servicing more than 96,000 addresses. Rated the 'Fastest ISP in the U.S.' by PC Mag in 2021.",
     status: "Active",
+    website: "https://www.empireaccess.com",
+    yearFounded: 1896,
+    investmentYear: 2023,
+    headquarters: "Prattsburgh, NY",
+    management: [
+      { name: "Kevin Dickens", title: "Chief Executive Officer" },
+      { name: "Russell Eliaso", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "January 2023", category: "Financing", event: "Antin Infrastructure Partners completes acquisition of Empire Access and North Penn" },
+      { date: "1896", category: "Founding", event: "Empire Access founded with its first telephone line in Prattsburgh, New York" },
+    ],
+    sources: [
+      { label: "Antin — Empire Access Investment", url: "https://www.antin-ip.com/media/our-news/antin-to-invest-in-empire-access-and-north-penn-leading-fiber-to-the-home-broadband-providers-in-new-york-and-pennsylvania" },
+    ],
   },
   {
     name: "FirstLight Fiber",
@@ -3326,8 +3342,25 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Flagship Fund III",
-    description: "",
+    description:
+      "FirstLight Fiber is a major fiber-optic network provider operating across the northeastern United States, with a network spanning over 25,000 miles of high-capacity fiber across New York, New Hampshire, Vermont, Massachusetts, Maine, and Pennsylvania.",
     status: "Active",
+    website: "https://www.firstlight.net",
+    yearFounded: 1999,
+    investmentYear: 2018,
+    headquarters: "Albany, NY",
+    management: [
+      { name: "Jason Campbell", title: "Chief Executive Officer" },
+      { name: "Peter Zarrella", title: "Chief Financial Officer" },
+      { name: "Mike Constantino", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      { date: "July 2018", category: "Financing", event: "Antin acquires FirstLight Fiber from Oak Hill Capital Partners, marking Antin's first U.S. investment" },
+      { date: "1999", category: "Founding", event: "Tech Valley Communications founded in Albany, NY (later rebranded to FirstLight Fiber)" },
+    ],
+    sources: [
+      { label: "FirstLight — Our Story", url: "https://www.firstlight.net/about/our-story/" },
+    ],
   },
   {
     name: "GTL Leasing",
@@ -3337,8 +3370,22 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "NextGen Fund I",
-    description: "",
+    description:
+      "GTL Leasing is the leading lessor of high-pressure gaseous hydrogen transportation and storage equipment in North America, providing short- and long-term operating leases for trailers and cylinders used to transport and store hydrogen and other industrial gases.",
     status: "Active",
+    yearFounded: 2013,
+    investmentYear: 2024,
+    headquarters: "Catoosa, OK",
+    management: [
+      { name: "Michael Koonce", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "June 2024", category: "Financing", event: "Antin acquires majority stake in GTL Leasing via NextGen Fund I" },
+      { date: "2013", category: "Founding", event: "Michael Koonce founds GTL Leasing as an equipment lessor for high-pressure gaseous trailers" },
+    ],
+    sources: [
+      { label: "Antin — GTL Leasing Investment", url: "https://www.antin-ip.com/media/our-news/antin-agrees-to-invest-in-gtl-leasing-the-leading-lessor-of-hydrogen-midstream-equipment-in-north-america" },
+    ],
   },
   {
     name: "Lake State Railway Company (LSRC)",
@@ -3348,30 +3395,79 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Mid Cap Fund I",
-    description: "",
+    description:
+      "Lake State Railway Company is a Michigan-based regional freight railroad operating approximately 375 miles of track spanning eastern Michigan's Lower Peninsula, handling more than 60,000 carloads annually for over 60 customers. Named Railway Age's 2021 Regional Railroad of the Year.",
     status: "Active",
+    website: "https://www.lsrc.com",
+    yearFounded: 1992,
+    investmentYear: 2022,
+    headquarters: "Saginaw, MI",
+    management: [
+      { name: "Mike Stickel", title: "President and Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "March 2022", category: "Financing", event: "Antin completes strategic investment in Lake State Railway" },
+      { date: "1992", category: "Founding", event: "Lake State Railway founded upon acquisition of rail lines from the Detroit & Mackinac Railway" },
+    ],
+    sources: [
+      { label: "Antin — LSRC Investment", url: "https://www.antin-ip.com/media/our-news/lake-state-railway-leading-regional-freight-railroad-has-received-strategic" },
+    ],
   },
   {
     name: "Origis Energy",
     investmentFirm: "Antin Infrastructure Partners",
     sector: "Energy Transition",
-    subsector: "Energy & Environment (Renewables",
+    subsector: "Renewables",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Flagship Fund IV",
-    description: "",
+    description:
+      "Origis Energy is a leading vertically integrated U.S. renewable energy platform, operating approximately 1 GW of solar and storage with an additional 3 GW in construction and a 25 GW development pipeline. Ranked fifth largest utility-scale solar developer through 2028 by S&P Global.",
     status: "Active",
+    website: "https://origisenergy.com",
+    yearFounded: 2008,
+    investmentYear: 2021,
+    headquarters: "Miami, FL",
+    management: [
+      { name: "Vikas Anand", title: "Chief Executive Officer" },
+      { name: "Alice Heathcote", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "January 2025", category: "Financing", event: "Origis secures $1+ billion strategic investment from Brookfield alongside Antin" },
+      { date: "October 2021", category: "Financing", event: "Antin acquires majority stake in Origis Energy via Flagship Fund IV" },
+      { date: "2008", category: "Founding", event: "Origis Energy founded by Guy Vanderhaegen in Miami, Florida" },
+    ],
+    sources: [
+      { label: "Origis Energy — Antin Investment", url: "https://origisenergy.com/insights/antin-infrastructure-partners-to-become-majority-shareholder-in-origis-energy-a-leading-u-s-renewable-energy-platform/" },
+    ],
   },
   {
     name: "Vicinity Energy",
     investmentFirm: "Antin Infrastructure Partners",
     sector: "Utilities",
-    subsector: "Energy & Environment (District Energy",
+    subsector: "District Energy",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Flagship Fund IV",
-    description: "",
+    description:
+      "Vicinity Energy is the largest owner and operator of district energy systems in the United States, operating 19 systems across 12 cities delivering steam, hot water, and chilled water to over 260 million square feet of building space.",
     status: "Active",
+    website: "https://www.vicinityenergy.us",
+    yearFounded: 2020,
+    investmentYear: 2019,
+    headquarters: "Boston, MA",
+    management: [
+      { name: "Kevin Hagerty", title: "Chief Executive Officer" },
+      { name: "Kevin Walsh", title: "Chief Financial Officer" },
+      { name: "Bill Fahey", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      { date: "January 2020", category: "Founding", event: "Vicinity Energy launches following Antin's $1.25 billion acquisition of Veolia's U.S. district energy assets" },
+      { date: "December 2019", category: "Financing", event: "Antin completes $1.25 billion acquisition of Veolia North America's district energy assets" },
+    ],
+    sources: [
+      { label: "Antin — Vicinity Energy", url: "https://www.antin-ip.com/investments/vicinity-energy" },
+    ],
   },
   {
     name: "Vigor Marine Group",
@@ -3381,8 +3477,20 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Flagship Fund V",
-    description: "",
+    description:
+      "Vigor Marine Group is a leading American shipbuilding, ship repair, and marine services company operating shipyard and fabrication facilities across Seattle, Portland, San Diego, and Norfolk, with six drydocks and 29 berths serving U.S. Navy, Coast Guard, cruise line operators, and commercial maritime customers.",
     status: "Active",
+    website: "https://www.vigormarine.com",
+    yearFounded: 1995,
+    investmentYear: 2026,
+    headquarters: "Portland, OR",
+    milestones: [
+      { date: "February 2026", category: "Financing", event: "Antin agrees to acquire Vigor Marine Group from Lone Star Funds via Flagship Fund V" },
+      { date: "1995", category: "Founding", event: "Frank Foti founds Vigor by acquiring the Cascade General shipyard at Swan Island in Portland, Oregon" },
+    ],
+    sources: [
+      { label: "Vigor Marine Group — Wikipedia", url: "https://en.wikipedia.org/wiki/Vigor_Marine_Group" },
+    ],
   },
   // ─── Apollo Global Management ───────────────────────────────
   {
