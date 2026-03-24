@@ -16341,12 +16341,55 @@ export const companies: PortCo[] = [
     name: "Cleco Corporate Holdings",
     investmentFirm: "Macquarie Asset Management",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Electric Utility",
     region: "North America",
     country: "United States",
     ownershipVehicle: "MIP III / MIRA",
-    description: "",
+    description:
+      "Cleco Corporate Holdings is a regulated electric utility holding company serving approximately 300,000 customers across Louisiana through its subsidiary Cleco Power LLC. The company operates approximately 3,400 MW of generation capacity, including natural gas, coal, and a growing renewable portfolio, along with over 12,000 miles of transmission and distribution lines. Cleco was taken private by a Macquarie-led consortium in 2016, providing long-term capital for generation fleet modernization and the transition toward cleaner energy resources while maintaining reliable, affordable service across its Louisiana service territory.",
     status: "Active",
+    website: "https://www.cleco.com",
+    yearFounded: 1935,
+    investmentYear: 2016,
+    headquarters: "Pineville, LA",
+    management: [
+      { name: "Bill Fontenot", title: "President & Chief Executive Officer" },
+      { name: "Robb Turner", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1935",
+        event: "Central Louisiana Electric Company (Cleco) incorporated to provide electric service to communities across central and southern Louisiana.",
+        category: "Founding",
+      },
+      {
+        date: "2016",
+        event: "Macquarie Infrastructure Partners III led a consortium that took Cleco private for approximately $4.7 billion, delisting from NYSE.",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Completed the Madison Solar Energy Center, Cleco's first utility-scale solar facility, beginning the clean energy transition for the generation fleet.",
+        category: "Expansion",
+      },
+      {
+        date: "2021",
+        event: "Advanced capital investment in transmission and distribution hardening following Hurricane Laura and other severe weather events.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Filed integrated resource plan with the Louisiana PSC, charting a path to 1 GW+ of new renewable generation by 2030.",
+        category: "Other",
+      },
+    ],
+    sources: [
+      { label: "Cleco — Company Website", url: "https://www.cleco.com" },
+      {
+        label: "Cleco — About Cleco",
+        url: "https://www.cleco.com/about",
+      },
+    ],
   },
   {
     name: "Coastal Waste & Recycling",
@@ -16550,12 +16593,60 @@ export const companies: PortCo[] = [
     name: "Puget Sound Energy (PSE)",
     investmentFirm: "Macquarie Asset Management",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Electric & Gas Utility",
     region: "North America",
     country: "United States",
     ownershipVehicle: "MGIF",
-    description: "",
+    description:
+      "Puget Sound Energy is the largest investor-owned utility in Washington State, providing electric service to approximately 1.2 million customers and natural gas service to approximately 900,000 customers across 10 counties in the Puget Sound region. The company operates a diversified generation portfolio including hydro, wind, natural gas, and solar, along with extensive transmission and distribution infrastructure. PSE was taken private in 2009 by a Macquarie-led consortium and has since been at the forefront of the clean energy transition, investing in wind, solar, and battery storage to meet Washington's ambitious Clean Energy Transformation Act (CETA) mandate of 100% clean electricity by 2045.",
     status: "Active",
+    website: "https://www.pse.com",
+    yearFounded: 1997,
+    investmentYear: 2009,
+    headquarters: "Bellevue, WA",
+    management: [
+      { name: "Mary Kipp", title: "President & Chief Executive Officer" },
+      { name: "Dan Koch", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1997",
+        event: "Puget Sound Energy formed through the merger of Puget Sound Power & Light Company and Washington Natural Gas Company.",
+        category: "Founding",
+      },
+      {
+        date: "Feb 2009",
+        event: "Macquarie-led consortium (including CPPIB, BCI, and others) completed the take-private of PSE for approximately $6.9 billion, delisting from NYSE.",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Washington State enacted the Clean Energy Transformation Act (CETA), requiring 100% clean electricity by 2045, driving PSE's renewable energy investments.",
+        category: "Other",
+      },
+      {
+        date: "2021",
+        event: "Commissioned the Skookumchuck Wind Farm (137 MW) in Lewis County, WA, one of the largest wind projects in the state.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Advanced the first large-scale battery energy storage projects in PSE's service territory, supporting grid reliability and renewable integration.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Mary Kipp appointed President & CEO. Filed updated integrated resource plan charting a path to CETA compliance through wind, solar, and storage investments.",
+        category: "Management",
+      },
+    ],
+    sources: [
+      { label: "Puget Sound Energy — Company Website", url: "https://www.pse.com" },
+      {
+        label: "PSE — About PSE",
+        url: "https://www.pse.com/en/about-us",
+      },
+    ],
   },
   {
     name: "Supervía Poniente",
