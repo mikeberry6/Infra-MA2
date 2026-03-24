@@ -7153,12 +7153,54 @@ export const companies: PortCo[] = [
     name: "ACL Airshop",
     investmentFirm: "Astatine Investment Partners",
     sector: "Transportation",
-    subsector: "Logistics Infrastructure",
+    subsector: "Aviation Logistics Equipment",
     region: "Global",
     country: "United States (Global operations; HQ in SC)",
     ownershipVehicle: "Astatine Investment Partners (Funds)",
-    description: "",
+    description:
+      "ACL Airshop is the world's largest independent provider of unit load device (ULD) leasing, management, and repair services to the global airline industry. ULDs — the standardized containers and pallets used to load cargo and baggage into aircraft — are essential logistics infrastructure for air freight and passenger airlines. ACL Airshop manages a fleet of over 100,000 ULDs, providing short-term and long-term leasing, repair, digital tracking, and fleet management services to over 200 airlines worldwide. The company operates from a network of 55+ service stations at major airports globally, offering a mission-critical, asset-light service model with recurring revenue.",
     status: "Active",
+    website: "https://www.aclairshop.com",
+    yearFounded: 1979,
+    investmentYear: 2019,
+    headquarters: "Greenville, SC",
+    management: [
+      { name: "Steve Townes", title: "President & Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "1979",
+        event: "ACL Airshop founded as a ULD leasing and management company, initially serving airlines at U.S. airports.",
+        category: "Founding",
+      },
+      {
+        date: "2010s",
+        event: "Expanded global airport station network to 50+ locations, becoming the leading independent ULD lessor and service provider worldwide.",
+        category: "Expansion",
+      },
+      {
+        date: "2019",
+        event: "Astatine Investment Partners (formerly Brookfield Infrastructure Services) acquired ACL Airshop, providing capital for continued fleet expansion and technology investment.",
+        category: "Financing",
+      },
+      {
+        date: "2021",
+        event: "Launched digital ULD tracking platform using Bluetooth Low Energy (BLE) tags, enabling real-time fleet visibility for airline customers.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Expanded ULD fleet beyond 100,000 units, adding service stations at key airports in Asia-Pacific and the Middle East.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "ACL Airshop — Company Website", url: "https://www.aclairshop.com" },
+      {
+        label: "ACL Airshop — About Us",
+        url: "https://www.aclairshop.com/about/",
+      },
+    ],
   },
   {
     name: "BTR (Big Truck Rental)",
@@ -7197,23 +7239,104 @@ export const companies: PortCo[] = [
     name: "McKeil Marine",
     investmentFirm: "Astatine Investment Partners",
     sector: "Transportation",
-    subsector: "Logistics Infrastructure",
+    subsector: "Marine Transportation",
     region: "North America",
     country: "Canada (HQ in Ontario)",
     ownershipVehicle: "Astatine Investment Partners (Funds)",
-    description: "",
+    description:
+      "McKeil Marine is one of Canada's largest marine transportation and towing companies, operating a diversified fleet of tugs, barges, cargo vessels, and specialized marine equipment across the Great Lakes, St. Lawrence Seaway, and Atlantic Canada. The company provides bulk cargo transportation, ship docking and escort services, project cargo delivery, and marine construction support to customers in the energy, mining, construction, and infrastructure sectors. McKeil also operates ship repair facilities and a fleet management division, making it a vertically integrated marine infrastructure platform with deep expertise in Canadian coastal and inland waterway logistics.",
     status: "Active",
+    website: "https://www.mckeil.com",
+    yearFounded: 1956,
+    investmentYear: 2019,
+    headquarters: "Hamilton, Ontario, Canada",
+    management: [
+      { name: "Scott McConnell", title: "President & Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "1956",
+        event: "McKeil Marine founded in Hamilton, Ontario as a family-owned tug and barge company serving the Great Lakes and St. Lawrence region.",
+        category: "Founding",
+      },
+      {
+        date: "2000s",
+        event: "Expanded fleet and service capabilities through acquisitions of regional towing and marine transportation companies across Eastern Canada.",
+        category: "Expansion",
+      },
+      {
+        date: "2019",
+        event: "Astatine Investment Partners acquired McKeil Marine, providing institutional capital to modernize the fleet and expand service offerings.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Invested in vessel upgrades and fleet expansion to support growing demand for marine construction and project cargo services in the energy transition sector.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "McKeil Marine — Company Website", url: "https://www.mckeil.com" },
+      {
+        label: "McKeil Marine — About McKeil",
+        url: "https://www.mckeil.com/about/",
+      },
+    ],
   },
   {
     name: "PECO Pallet",
     investmentFirm: "Astatine Investment Partners",
     sector: "Transportation",
-    subsector: "Logistics Infrastructure",
+    subsector: "Pallet Pooling & Logistics",
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Astatine Investment Partners & Universities Superannuation",
-    description: "",
+    description:
+      "PECO Pallet is the largest provider of pallet rental services (pallet pooling) in North America, operating a fleet of approximately 340 million wood block pallets used by consumer packaged goods manufacturers, retailers, and food & beverage companies throughout the supply chain. The company operates an asset-heavy circular logistics model, renting pallets to shippers who use them to transport goods through distribution networks and then recovering, repairing, and reissuing them. PECO competes primarily with CHEP (Brambles) as the second-largest pallet pooler on the continent. The business benefits from sticky customer relationships, multi-year contracts, inflation-linked pricing, and essential positioning in the consumer supply chain.",
     status: "Active",
+    website: "https://www.pecopallet.com",
+    yearFounded: 1997,
+    investmentYear: 2021,
+    headquarters: "Irvington, NY",
+    management: [
+      { name: "Nelson Switzer", title: "Chief Executive Officer" },
+      { name: "Patrick Moore", title: "Chief Financial Officer" },
+      { name: "Kim Rumph", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "1997",
+        event: "PECO Pallet founded as an alternative to CHEP and white-wood pallets, offering a premium block pallet pooling service for the North American grocery and retail supply chain.",
+        category: "Founding",
+      },
+      {
+        date: "2015",
+        event: "Acquired by Brookfield Asset Management's infrastructure fund, accelerating pallet fleet growth and national distribution network expansion.",
+        category: "Financing",
+      },
+      {
+        date: "2021",
+        event: "Astatine Investment Partners (formerly part of Brookfield) and USS (Universities Superannuation Scheme) acquired PECO Pallet, maintaining long-term infrastructure ownership.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Expanded pallet fleet to approximately 340 million units, deepening penetration in grocery, food & beverage, and consumer packaged goods verticals.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Invested in depot network expansion and pallet repair automation, improving cycle times and fleet utilization across the platform.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "PECO Pallet — Company Website", url: "https://www.pecopallet.com" },
+      {
+        label: "PECO Pallet — About Us",
+        url: "https://www.pecopallet.com/about-peco/",
+      },
+    ],
   },
   {
     name: "Twin Parking Holdings",
@@ -7314,8 +7437,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "(Real Assets / Direct Investment)",
-    description: "",
+    description:
+      "The Chesapeake Expressway (also known as the Chesapeake Bay Bridge-Tunnel) and related toll road concessions in the Hampton Roads region of Virginia represent critical transportation infrastructure linking the Norfolk-Virginia Beach metropolitan area. AustralianSuper holds an equity interest in toll road concessions in the Chesapeake region, providing exposure to traffic-linked revenue with long-duration concession agreements. The assets benefit from limited alternative route competition, population growth in the Hampton Roads area, and periodic toll rate adjustments.",
     status: "Active",
+    investmentYear: 2019,
+    headquarters: "Virginia Beach, VA",
+    milestones: [
+      {
+        date: "2019",
+        event: "AustralianSuper acquired an equity interest in Chesapeake toll road infrastructure as a direct real assets investment.",
+        category: "Financing",
+      },
+    ],
+    sources: [
+      {
+        label: "AustralianSuper — Infrastructure Portfolio",
+        url: "https://www.australiansuper.com/investments/how-we-invest",
+      },
+    ],
   },
   {
     name: "DataBank",
@@ -7394,8 +7533,61 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Mid Risk Portfolio (Real Assets / Direct Investment)",
-    description: "",
+    description:
+      "Generate Capital is a sustainable infrastructure investment and operating platform that builds, owns, operates, and finances distributed and clean energy infrastructure assets across the United States. The company's portfolio spans solar, storage, microgrids, water treatment, waste-to-energy, fuel cells, and other sustainable infrastructure technologies, with over 2,000 operating assets and partnerships with more than 100 technology companies. Generate Capital's unique model combines project finance with operational expertise, providing 'infrastructure-as-a-service' to municipalities, utilities, and commercial customers. AustralianSuper is a significant investor alongside other institutional partners, supporting Generate's mission to deploy scalable sustainable infrastructure.",
     status: "Active",
+    website: "https://www.generatecapital.com",
+    yearFounded: 2014,
+    investmentYear: 2021,
+    headquarters: "San Francisco, CA",
+    management: [
+      { name: "Scott Jacobs", title: "Co-Founder & Chief Executive Officer" },
+      { name: "Jigar Shah", title: "Co-Founder" },
+      { name: "Matan Friedman", title: "Co-Founder & President" },
+    ],
+    milestones: [
+      {
+        date: "2014",
+        event: "Generate Capital co-founded by Scott Jacobs, Jigar Shah, and Matan Friedman to solve the infrastructure financing gap for sustainable technologies.",
+        category: "Founding",
+      },
+      {
+        date: "2017",
+        event: "Raised $200 million in equity capital from institutional investors, scaling the platform beyond initial seed investments.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "Acquired Clean Energy Collective, a community solar platform, adding a portfolio of distributed solar projects across multiple states.",
+        category: "Acquisition",
+      },
+      {
+        date: "2021",
+        event: "Raised $2 billion in new capital from AustralianSuper, QIC, and other institutional investors, one of the largest sustainable infrastructure fundraises.",
+        category: "Financing",
+      },
+      {
+        date: "2021",
+        event: "Jigar Shah departed to lead the U.S. Department of Energy Loan Programs Office under the Biden administration.",
+        category: "Management",
+      },
+      {
+        date: "2023",
+        event: "Portfolio surpassed 2,000 operating assets, with deployed capital exceeding $8 billion across solar, storage, water, waste, and EV charging infrastructure.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Generate Capital — Company Website", url: "https://www.generatecapital.com" },
+      {
+        label: "Generate Capital — About Us",
+        url: "https://www.generatecapital.com/about",
+      },
+      {
+        label: "Bloomberg — Generate Capital Raises $2 Billion",
+        url: "https://www.bloomberg.com/news/articles/2021-09-14/generate-capital-raises-2-billion",
+      },
+    ],
   },
   {
     name: "Transurban",
@@ -9972,12 +10164,61 @@ export const companies: PortCo[] = [
     name: "Vantage Data Centers",
     investmentFirm: "CPP Investments",
     sector: "Digital Infrastructure",
-    subsector: "Data Centers",
-    region: "North America",
-    country: "United States",
+    subsector: "Hyperscale Data Centers",
+    region: "Global",
+    country: "United States (Global)",
     ownershipVehicle: "Real Assets (Infrastructure)",
-    description: "",
+    description:
+      "Vantage Data Centers is a leading global provider of hyperscale data center campuses, operating more than 1 GW of IT capacity across North America, Europe, and Asia-Pacific. The company develops and operates purpose-built, large-scale campuses serving the world's largest cloud, technology, and AI companies. Vantage's portfolio spans major markets including Northern Virginia, Silicon Valley, Montreal, Frankfurt, Johannesburg, Melbourne, and Tokyo. CPP Investments is a significant co-investor alongside DigitalBridge and other institutional partners.",
     status: "Active",
+    website: "https://vantage-dc.com",
+    yearFounded: 2010,
+    investmentYear: 2020,
+    headquarters: "Denver, CO",
+    management: [
+      { name: "Sureel Choksi", title: "President & Chief Executive Officer" },
+      { name: "Andrea Murphy", title: "Chief Financial Officer" },
+      { name: "Chris Yetman", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "2010",
+        event: "Vantage Data Centers founded in Santa Clara, CA, initially operating a single hyperscale campus in Silicon Valley.",
+        category: "Founding",
+      },
+      {
+        date: "2017",
+        event: "DigitalBridge acquired Vantage and initiated a transformation from a single-campus operator to a multi-market global platform.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "CPP Investments joined as a significant equity partner, funding global expansion into Europe and Asia-Pacific markets.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "Acquired Agile Data Centers in Europe, establishing a presence in Frankfurt, Berlin, Zurich, and other European markets.",
+        category: "Acquisition",
+      },
+      {
+        date: "2022",
+        event: "Expanded into Asia-Pacific with campus development in Melbourne, Tokyo, and Osaka, growing the global platform to 30+ campuses.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Surpassed 1 GW of total IT capacity globally, with aggressive expansion driven by surging AI training and inference demand from hyperscale customers.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Vantage Data Centers — Company Website", url: "https://vantage-dc.com" },
+      {
+        label: "DigitalBridge — Vantage Portfolio",
+        url: "https://www.digitalbridge.com/portfolio/vantage-data-centers",
+      },
+    ],
   },
   {
     name: "VoltaGrid",
@@ -10927,30 +11168,164 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge / Co-Investors",
-    description: "",
+    description:
+      "DataBank is one of the largest privately held enterprise colocation and managed infrastructure providers in the United States, operating approximately 65+ data centers across 27+ markets with over 300 MW of critical IT load capacity. The platform serves enterprise, government, healthcare, and financial services customers with colocation, interconnection, cloud, and disaster recovery services. DigitalBridge has been the controlling sponsor since 2016, executing an aggressive M&A-driven growth strategy that has transformed DataBank from a regional Dallas operator into a national platform.",
     status: "Active",
+    website: "https://www.databank.com",
+    yearFounded: 2005,
+    investmentYear: 2016,
+    headquarters: "Dallas, TX",
+    management: [
+      { name: "Raul Martynek", title: "Chief Executive Officer" },
+      { name: "Kevin Ooley", title: "Chief Financial Officer" },
+      { name: "Tony Qorri", title: "Chief Revenue Officer" },
+    ],
+    milestones: [
+      {
+        date: "2005",
+        event: "DataBank founded in Dallas, TX as an enterprise colocation provider focused on the Dallas-Fort Worth market.",
+        category: "Founding",
+      },
+      {
+        date: "2016",
+        event: "DigitalBridge acquired DataBank and began executing a national rollup strategy through acquisitions and greenfield development.",
+        category: "Financing",
+      },
+      {
+        date: "2018",
+        event: "Merged with C7 Data Centers, adding facilities across Salt Lake City and other Western U.S. markets.",
+        category: "Acquisition",
+      },
+      {
+        date: "2019",
+        event: "Acquired zColo (Zayo Group colocation division), adding 44 data centers across 22 markets and tripling the platform's footprint.",
+        category: "Acquisition",
+      },
+      {
+        date: "2022",
+        event: "Acquired LightBound, a fiber and network services provider, enhancing interconnection capabilities.",
+        category: "Acquisition",
+      },
+      {
+        date: "2023",
+        event: "Surpassed 65 data centers and 300 MW of critical load capacity with new builds across key U.S. markets.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "DataBank — Company Website", url: "https://www.databank.com" },
+      {
+        label: "DigitalBridge — DataBank Portfolio",
+        url: "https://www.digitalbridge.com/portfolio/databank",
+      },
+    ],
   },
   {
     name: "Expedient",
     investmentFirm: "DigitalBridge",
     sector: "Digital Infrastructure",
-    subsector: "Data Centers",
+    subsector: "Data Centers & Cloud",
     region: "North America",
     country: "United States",
     ownershipVehicle: "InfraBridge",
-    description: "",
+    description:
+      "Expedient is a cloud computing and data center infrastructure-as-a-service (IaaS) provider operating 11 data centers across Pittsburgh, Cleveland, Columbus, Baltimore, Boston, Memphis, Indianapolis, and other Midwest and East Coast markets. The company provides enterprise customers with colocation, cloud, disaster recovery, and managed services solutions, differentiating through its multi-cloud management platform and compliance-grade infrastructure. Expedient serves healthcare, financial services, and government clients with strict data sovereignty and regulatory requirements. InfraBridge (formerly DigitalBridge-affiliated) manages the investment.",
     status: "Active",
+    website: "https://www.expedient.com",
+    yearFounded: 2001,
+    investmentYear: 2017,
+    headquarters: "Pittsburgh, PA",
+    management: [
+      { name: "Shawn McGorry", title: "President & Chief Executive Officer" },
+      { name: "Bryan Smith", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "2001",
+        event: "Expedient founded in Pittsburgh, PA as a managed hosting and colocation provider serving enterprise customers in the Mid-Atlantic region.",
+        category: "Founding",
+      },
+      {
+        date: "2017",
+        event: "AMP Capital (now InfraBridge, affiliated with DigitalBridge) acquired Expedient, providing capital for data center expansion and cloud platform development.",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Launched Expedient Enterprise Cloud platform, offering VMware-based cloud services across all 11 data center locations.",
+        category: "Expansion",
+      },
+      {
+        date: "2021",
+        event: "Expanded data center capacity in Columbus and Pittsburgh, adding new capacity to support growing enterprise cloud and disaster recovery demand.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Advanced hybrid cloud offerings with deeper integrations with AWS, Azure, and Google Cloud, serving as a managed multi-cloud orchestration partner.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Expedient — Company Website", url: "https://www.expedient.com" },
+      {
+        label: "InfraBridge — Expedient Portfolio",
+        url: "https://www.infrabridge.com/portfolio/expedient",
+      },
+    ],
   },
   {
     name: "ExteNet Systems",
     investmentFirm: "DigitalBridge",
     sector: "Digital Infrastructure",
-    subsector: "Small Cells / Wireless",
+    subsector: "Small Cells / DAS / Fiber",
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge Equity",
-    description: "",
+    description:
+      "ExteNet Systems is a leading provider of converged wireless and fiber infrastructure, owning and operating one of the largest portfolios of small cell networks, distributed antenna systems (DAS), and fiber-to-the-tower connectivity in the United States. The company designs, builds, owns, and operates neutral-host wireless infrastructure that enables mobile network operators to densify their 4G and 5G networks in high-traffic urban, suburban, and venue environments. ExteNet serves all major U.S. wireless carriers and operates in over 50 markets, with a growing fiber backbone that supports both wireless backhaul and enterprise fiber-to-the-premise services.",
     status: "Active",
+    website: "https://www.extenetsystems.com",
+    yearFounded: 2003,
+    investmentYear: 2017,
+    headquarters: "Lisle, IL",
+    management: [
+      { name: "Rich Coyle", title: "President & Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2003",
+        event: "ExteNet Systems founded in Chicago suburbs to provide neutral-host DAS and small cell wireless infrastructure to buildings and outdoor venues.",
+        category: "Founding",
+      },
+      {
+        date: "2012",
+        event: "Expanded beyond in-building DAS into outdoor small cell networks, becoming an early mover in carrier-neutral 4G densification infrastructure.",
+        category: "Expansion",
+      },
+      {
+        date: "2017",
+        event: "DigitalBridge acquired a controlling stake in ExteNet Systems, providing growth capital to scale the small cell and fiber platform nationally.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "Expanded fiber backbone to support growing demand for 5G small cell backhaul, with deployments in major metropolitan areas.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Advanced 5G small cell deployments with all major U.S. carriers, growing the network to thousands of active small cell nodes.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "ExteNet Systems — Company Website", url: "https://www.extenetsystems.com" },
+      {
+        label: "DigitalBridge — ExteNet Portfolio",
+        url: "https://www.digitalbridge.com/portfolio/extenet-systems",
+      },
+    ],
   },
   {
     name: "Fibernow",
