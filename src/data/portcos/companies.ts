@@ -10162,12 +10162,22 @@ export const companies: PortCo[] = [
     name: "ACS-GIP Data Center Platform",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Data Centers",
     region: "Global",
     country: "United States / Global",
     ownershipVehicle: "GIP Global Equity (50/50 JV)",
-    description: "",
+    description:
+      "A 50/50 joint venture between ACS Group and GIP dedicated to developing and operating next-generation data centers worldwide, launching with a 1.7 GW portfolio of projects under development in Europe, the US, and Australia, targeting 3 GW by 2030.",
     status: "Active",
+    yearFounded: 2025,
+    investmentYear: 2025,
+    headquarters: "Madrid / New York",
+    milestones: [
+      { date: "November 2025", category: "Financing", event: "ACS and GIP form 50/50 data center JV valued at approximately €2 billion" },
+    ],
+    sources: [
+      { label: "ACS Press Release", url: "https://www.grupoacs.com/press-room/news/press-releases/acs-is-joined-by-global-infrastructure-partners-to-launch-a-global-data-center-development-platform-with-initial-17-gw-portfolio/" },
+    ],
   },
   {
     name: "ALLETE, Inc.",
@@ -10177,19 +10187,49 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "CPP Investments & GIP Consortium",
-    description: "",
+    description:
+      "ALLETE is a diversified energy company with regulated utilities including Minnesota Power and Superior Water, Light and Power, focused on driving the clean-energy transition across the upper Midwest.",
     status: "Active",
+    website: "https://www.allete.com",
+    yearFounded: 1906,
+    investmentYear: 2025,
+    headquarters: "Duluth, MN",
+    management: [
+      { name: "Bethany M. Owen", title: "Chief Executive Officer" },
+      { name: "Jeff Scissons", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "December 2025", category: "Acquisition", event: "ALLETE completes its take-private by CPP Investments and GIP for $6.2 billion" },
+    ],
+    sources: [
+      { label: "ALLETE — Acquisition Complete", url: "https://investor.allete.com/news-releases/news-release-details/allete-announces-completion-acquisition-cpp-investments-and" },
+    ],
   },
   {
     name: "Aligned Data Centers",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Data Centers",
     region: "North America",
     country: "United States",
     ownershipVehicle: "AI Infrastructure Partnership (AIP) / GIP",
-    description: "",
+    description:
+      "Aligned Data Centers is a leading provider of sustainable, ultra-efficient data center infrastructure with over 50 patents for cooling technology, operating campuses across Dallas, Phoenix, Salt Lake City, Chicago, and Northern Virginia with 5 GW of active and planned capacity.",
     status: "Active",
+    website: "https://aligneddc.com",
+    yearFounded: 2013,
+    investmentYear: 2025,
+    headquarters: "Plano, TX",
+    management: [
+      { name: "Andrew Schaap", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "October 2025", category: "Financing", event: "AIP, MGX, and GIP announce acquisition of Aligned Data Centers from Macquarie at ~$40 billion enterprise value" },
+      { date: "2013", category: "Founding", event: "Aligned Data Centers founded by Jakob Carnemark with patented cooling technology" },
+    ],
+    sources: [
+      { label: "GIP — Aligned Acquisition", url: "https://www.global-infra.com/news/ai-infrastructure-partnership-aip-mgx-and-blackrocks-global-infrastructure-partners-gip-to-acquire-all-equity-in-aligned-data-centers/" },
+    ],
   },
   {
     name: "Atlas Renewable Energy",
@@ -10199,8 +10239,23 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP Flagship Equity",
-    description: "",
+    description:
+      "Atlas Renewable Energy is one of the largest independent renewable energy developers in Latin America, with an asset base of more than 8.4 GW across Brazil, Chile, Mexico, and Uruguay, of which 3.6 GW are operational.",
     status: "Active",
+    website: "https://www.atlasrenewableenergy.com",
+    yearFounded: 2016,
+    investmentYear: 2022,
+    headquarters: "Miami, FL",
+    management: [
+      { name: "Carlos Barrera", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "October 2022", category: "Financing", event: "GIP completes acquisition of Atlas Renewable Energy from Actis" },
+      { date: "2016", category: "Founding", event: "Atlas Renewable Energy founded with support from Actis" },
+    ],
+    sources: [
+      { label: "GIP — Atlas Acquisition", url: "https://www.global-infra.com/news/gip-and-actis-announce-acquisition-of-atlas-renewable-energy-by-gip/" },
+    ],
   },
   {
     name: "Bluepoint Wind",
@@ -10210,8 +10265,19 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP & Ocean Winds JV",
-    description: "",
+    description:
+      "Bluepoint Wind is a 2.4 GW offshore wind development project located 38 nautical miles off New York's coast, structured as a 50/50 partnership between GIP and Ocean Winds (EDP Renewables / ENGIE JV).",
     status: "Active",
+    website: "https://bluepointwind.com",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "New York, NY",
+    milestones: [
+      { date: "February 2022", category: "Financing", event: "GIP and Ocean Winds win lease area in the BOEM New York Bight auction" },
+    ],
+    sources: [
+      { label: "Bluepoint Wind — The Project", url: "https://bluepointwind.com/the-project/" },
+    ],
   },
   {
     name: "Clearway Energy",
@@ -10221,19 +10287,51 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP & TotalEnergies (50/50 JV)",
-    description: "",
+    description:
+      "Clearway Energy Group is one of the largest renewable energy owners in the United States, with a 5.7 GW operating portfolio and 22 GW development pipeline spanning wind, solar, and battery storage. GIP and TotalEnergies each hold 50%.",
     status: "Active",
+    website: "https://www.clearwayenergygroup.com",
+    yearFounded: 2018,
+    investmentYear: 2018,
+    headquarters: "San Francisco, CA",
+    management: [
+      { name: "Craig Cornelius", title: "Chief Executive Officer" },
+      { name: "Steve Ryder", title: "Chief Financial Officer" },
+      { name: "Dan Summa", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      { date: "August 2018", category: "Financing", event: "GIP acquires NRG Energy's renewables business, forming Clearway Energy Group" },
+      { date: "May 2022", category: "Financing", event: "TotalEnergies acquires 50% of GIP's interest in Clearway for $1.6 billion" },
+    ],
+    sources: [
+      { label: "Clearway Energy Group", url: "https://www.clearwayenergygroup.com/about/leadership/" },
+    ],
   },
   {
     name: "CyrusOne",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Data Centers",
     region: "Global",
     country: "United States (HQ) / Global",
     ownershipVehicle: "GIP & KKR Consortium",
-    description: "",
+    description:
+      "CyrusOne is a leading global data center developer and operator with over 40 carrier-neutral facilities across North America, Europe, and Asia, taken private in 2022 by KKR and GIP in a $15 billion transaction.",
     status: "Active",
+    website: "https://www.cyrusone.com",
+    yearFounded: 2000,
+    investmentYear: 2022,
+    headquarters: "Dallas, TX",
+    management: [
+      { name: "Eric Schwartz", title: "Chief Executive Officer" },
+      { name: "Owen Morris", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "March 2022", category: "Financing", event: "KKR and GIP complete $15 billion all-cash acquisition of CyrusOne, taking the company private" },
+    ],
+    sources: [
+      { label: "GIP — CyrusOne Acquisition", url: "https://www.global-infra.com/news/cyrusone-to-be-acquired-by-kkr-and-global-infrastructure-partners-in-15-billion-transaction/" },
+    ],
   },
   {
     name: "Eolian",
@@ -10243,8 +10341,24 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP IV",
-    description: "",
+    description:
+      "Eolian is one of the largest private renewable energy and energy storage investors in the US, holding royalty interests in 19 GW of operating renewable projects and managing a nationwide investment pipeline.",
     status: "Active",
+    website: "https://www.eolianenergy.com",
+    yearFounded: 2020,
+    investmentYear: 2020,
+    headquarters: "Burlingame, CA",
+    management: [
+      { name: "Aaron Zubaty", title: "Chief Executive Officer" },
+      { name: "Colin Fisher", title: "Chief Financial Officer" },
+      { name: "Stephanie Smith", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      { date: "December 2020", category: "Financing", event: "GIP IV acquires MAP Energy's renewable energy business, rebranded as Eolian" },
+    ],
+    sources: [
+      { label: "Eolian — GIP Acquisition", url: "https://www.eolianenergy.com/press/global-infrastructure-partners-announces-acquisition-of-map-energys-renewable-energy-business" },
+    ],
   },
   {
     name: "Revolution Wind & South Fork Wind",
@@ -10254,41 +10368,92 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP (via Skyborn) & Ørsted JV",
-    description: "",
+    description:
+      "Revolution Wind (704 MW) and South Fork Wind (132 MW) are offshore wind farms off the northeast US coast, operated as 50/50 JVs between Ørsted and GIP's Skyborn Renewables. South Fork Wind became America's first utility-scale offshore wind farm in 2024.",
     status: "Active",
+    website: "https://revolution-wind.com",
+    yearFounded: 2024,
+    investmentYear: 2024,
+    headquarters: "Providence, RI",
+    milestones: [
+      { date: "February 2024", category: "Financing", event: "GIP acquires Eversource's 50% stake in Revolution Wind and South Fork Wind for ~$745 million" },
+      { date: "March 2024", category: "Other", event: "South Fork Wind begins commercial operations as America's first utility-scale offshore wind farm" },
+    ],
+    sources: [
+      { label: "Revolution Wind — About", url: "https://revolution-wind.com/about-revolution-wind" },
+    ],
   },
   {
     name: "Rio Grande LNG",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Midstream Energy",
-    subsector: "",
+    subsector: "LNG",
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP Flagship Equity",
-    description: "",
+    description:
+      "Rio Grande LNG is a 27 MTPA liquefied natural gas export facility under construction in Brownsville, Texas, developed by NextDecade Corporation with GIP as lead equity investor alongside GIC, Mubadala, and TotalEnergies.",
     status: "Active",
+    website: "https://www.next-decade.com",
+    yearFounded: 2014,
+    investmentYear: 2023,
+    headquarters: "Houston, TX",
+    milestones: [
+      { date: "July 2023", category: "Financing", event: "NextDecade reaches FID on Phase 1 (Trains 1-3, 17.5 MTPA) with ~$5.9 billion in equity from GIP, GIC, Mubadala, and TotalEnergies" },
+    ],
+    sources: [
+      { label: "GIP — Rio Grande LNG FID", url: "https://www.global-infra.com/news/nextdecade-announces-positive-final-investment-decision-on-rio-grande-lng-phase-1/" },
+    ],
   },
   {
     name: "Saavi Energía",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Power Generation",
-    subsector: "",
+    subsector: "Natural Gas",
     region: "North America",
-    country: "United States",
+    country: "Mexico",
     ownershipVehicle: "GIP Flagship Equity",
-    description: "",
+    description:
+      "Saavi Energía is Mexico's largest independent private power generator, operating a 3.2 GW portfolio of six gas-fired combined-cycle power plants, three compression stations, and 65 km of natural gas pipelines across Mexico.",
     status: "Active",
+    website: "https://www.saavienergia.com",
+    yearFounded: 1995,
+    investmentYear: 2021,
+    headquarters: "Mexico City, Mexico",
+    management: [
+      { name: "Mauricio Del Valle", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "August 2021", category: "Financing", event: "GIP acquires 100% of Saavi Energía from Actis, GIP's first direct equity investment in Mexico" },
+    ],
+    sources: [
+      { label: "GIP — Saavi Acquisition", url: "https://www.global-infra.com/news/gip-acquires-saavi-energia-a-leading-independent-power-generator-in-mexico/" },
+    ],
   },
   {
     name: "Signature Aviation",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Transportation",
-    subsector: "",
+    subsector: "Aviation FBO",
     region: "Global",
     country: "United States (HQ) / Global",
     ownershipVehicle: "GIP, Blackstone & Cascade Consortium",
-    description: "",
+    description:
+      "Signature Aviation is the world's largest private aviation terminal (FBO) operator, managing a global network of more than 200 locations across 27 countries, providing fueling, ground handling, hangarage, and hospitality services.",
     status: "Active",
+    website: "https://www.signatureaviation.com",
+    yearFounded: 1992,
+    investmentYear: 2021,
+    headquarters: "Orlando, FL",
+    management: [
+      { name: "Tony Lefebvre", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "June 2021", category: "Acquisition", event: "Signature Aviation completes take-private by GIP (35%), Blackstone (35%), and Cascade (30%) at ~$4.7 billion equity value" },
+    ],
+    sources: [
+      { label: "Signature Aviation — About Us", url: "https://www.signatureaviation.com/company/about-us" },
+    ],
   },
   {
     name: "The AES Corporation",
@@ -10298,19 +10463,49 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP & EQT Infrastructure VI Consortium",
-    description: "",
+    description:
+      "The AES Corporation is a global energy company operating regulated utilities in Indiana and Ohio and independent power projects worldwide, with 11.8 GW of signed clean energy supply agreements with major technology firms.",
     status: "Active",
+    website: "https://www.aes.com",
+    yearFounded: 1981,
+    investmentYear: 2026,
+    headquarters: "Arlington, VA",
+    management: [
+      { name: "Andrés Gluski", title: "Chief Executive Officer" },
+      { name: "Stephen Coughlin", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      { date: "March 2026", category: "Financing", event: "GIP, EQT, CalPERS, and QIA announce agreement to acquire AES for $33.4 billion enterprise value" },
+    ],
+    sources: [
+      { label: "AES — Acquisition Announcement", url: "https://www.aes.com/energy-insights/consortium-led-global-infrastructure-partners-and-eqt-agrees-acquire-aes" },
+    ],
   },
   {
     name: "Vanguard Renewables",
     investmentFirm: "Global Infrastructure Partners",
     sector: "Environmental / Waste",
-    subsector: "Energy Transition / -to-Energy",
+    subsector: "Anaerobic Digestion",
     region: "North America",
     country: "United States",
     ownershipVehicle: "GIP Flagship Equity",
-    description: "",
+    description:
+      "Vanguard Renewables is a leading US builder, owner, and operator of on-farm anaerobic digestion facilities that convert food, beverage, and agricultural waste into pipeline-ready renewable natural gas through its patented Farm Powered platform.",
     status: "Active",
+    website: "https://www.vanguardrenewables.com",
+    yearFounded: 2014,
+    investmentYear: 2022,
+    headquarters: "Weston, MA",
+    management: [
+      { name: "Michael O'Laughlin", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      { date: "2022", category: "Financing", event: "BlackRock Real Assets (now GIP/BlackRock) acquires Vanguard Renewables for ~$700 million" },
+      { date: "2014", category: "Founding", event: "Vanguard Renewables founded to produce renewable energy from farm and food waste" },
+    ],
+    sources: [
+      { label: "Vanguard Renewables — Our Story", url: "https://www.vanguardrenewables.com/our-story" },
+    ],
   },
   // ─── Goldman Sachs Asset Management ─────────────────────────
   {
