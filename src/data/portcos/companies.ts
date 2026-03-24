@@ -1228,26 +1228,88 @@ export const companies: PortCo[] = [
     ],
   },
   {
-    name: "Gerediaga-Elo rrio Motorway (AGESA)",
+    name: "Gerediaga-Elorrio Motorway (AGESA)",
     investmentFirm: "3i Infrastructure",
     sector: "Transportation",
     subsector: "Toll Roads",
     region: "Europe",
     country: "Spain",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "AGESA is the concessionaire for the N-636 motorway from Gerediaga to Elorrio, located 50km southeast of Bilbao in the Basque Country. The project comprises a newly built 6.4km carriageway and the pre-existing 2.8km Elorrio bypass, including nine viaducts, two bridges, and two tunnels, operating under a shadow toll arrangement with the Regional Council of Bizkaia.",
     status: "Active",
+    yearFounded: 2012,
+    investmentYear: 2019,
+    headquarters: "Abadiño, Bizkaia",
+    milestones: [
+      {
+        date: "October 2019",
+        category: "Financing",
+        event:
+          "3i European Operational Projects Fund agrees to invest €70 million for 80% of AGESA",
+      },
+      {
+        date: "2015",
+        category: "Expansion",
+        event:
+          "Gerediaga-Elorrio motorway opens to traffic",
+      },
+      {
+        date: "April 2012",
+        category: "Founding",
+        event:
+          "AGESA incorporated in Abadiño as the concession company for the N-636 motorway PPP",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — AGESA Investment Announcement",
+        url: "https://www.3i.com/media-centre/corporate-and-portfolio-news/2019/3i-european-operational-projects-fund-invests-70m-in-agesa-a-spanish-motorway-ppp/",
+      },
+    ],
   },
   {
     name: "Herambiente",
     investmentFirm: "3i Infrastructure",
     sector: "Utilities",
-    subsector: "Waste-to-Ener gy",
+    subsector: "Waste-to-Energy",
     region: "Europe",
     country: "Italy",
     ownershipVehicle: "3i Managed Infrastructure Acquisitions (MIA)",
-    description: "",
+    description:
+      "Herambiente is Italy's leading waste treatment company, owning and operating approximately 100 waste treatment facilities including landfills, waste-to-energy plants, anaerobic digestion units, and waste sorting facilities. The company is 75% owned by Hera Group and 25% by EWHL (3i MIA and ABP), processing approximately 7.2 million tons of waste annually.",
     status: "Active",
+    website: "https://ha.gruppohera.it",
+    yearFounded: 2009,
+    investmentYear: 2016,
+    headquarters: "Bologna, Italy",
+    management: [
+      { name: "Andrea Ramonda", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "December 2016",
+        category: "Financing",
+        event:
+          "3i Managed Infrastructure Acquisitions acquires a 12.5% indirect stake in Herambiente through EWHL alongside Dutch pension fund ABP",
+      },
+      {
+        date: "July 2009",
+        category: "Founding",
+        event:
+          "Herambiente founded as a dedicated waste management subsidiary of Hera Group",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — Herambiente Portfolio",
+        url: "https://www.3i.com/infrastructure/our-portfolio/herambiente/",
+      },
+      {
+        label: "Herambiente — About Us",
+        url: "https://ha.gruppohera.it/about-us",
+      },
+    ],
   },
   {
     name: "Infinis",
@@ -1257,8 +1319,47 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "Infinis is the UK's largest generator of electricity from captured landfill gas and coal mine methane, operating across 153 sites with approximately 478MW of installed generating capacity. The company captures methane from landfill sites and disused coal mines, converting it into renewable electricity, while also developing a 1.4GW pipeline of solar and battery energy storage projects.",
     status: "Active",
+    website: "https://infinis.com",
+    yearFounded: 2006,
+    investmentYear: 2016,
+    headquarters: "Northampton, Northamptonshire",
+    management: [
+      { name: "Bruce Heppenstall", title: "Chief Executive Officer" },
+      { name: "Keith Reid", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "April 2018",
+        category: "Acquisition",
+        event:
+          "Infinis acquires 100% of Alkane Energy, the UK's largest coal mine methane generator with 160MW capacity, funded by a £125 million follow-on from 3i Infrastructure",
+      },
+      {
+        date: "December 2016",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires Infinis's landfill gas business from Terra Firma Capital Partners for £185 million",
+      },
+      {
+        date: "2006",
+        category: "Founding",
+        event:
+          "Infinis created as a subsidiary of Waste Recycling Group to generate electricity from landfill gas",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Infinis Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/infinis/",
+      },
+      {
+        label: "Infinis — About Us",
+        url: "https://infinis.com/about-us",
+      },
+    ],
   },
   {
     name: "Ionisos",
@@ -1268,8 +1369,40 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "France",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "Ionisos is the third-largest cold sterilisation provider globally and a leading European operator of outsourced terminal sterilisation and irradiation services for the medical device, pharmaceutical, cosmetics, and food packaging industries. The company operates facilities across France, Spain, Germany, Switzerland, and Estonia using gamma ray, electron beam, X-ray, and ethylene oxide technologies.",
     status: "Active",
+    website: "https://www.ionisos.com",
+    yearFounded: 1993,
+    investmentYear: 2019,
+    headquarters: "Civrieux d'Azergues, France",
+    management: [
+      { name: "Christoph Herkens", title: "President" },
+    ],
+    milestones: [
+      {
+        date: "September 2019",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires approximately 95% of Ionisos from Ardian Expansion for circa €220 million",
+      },
+      {
+        date: "1993",
+        category: "Founding",
+        event:
+          "Ionisos founded through the merger of Conservatome (established 1956) and Amphytrion",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Ionisos Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/ionisos/",
+      },
+      {
+        label: "Ionisos — Our History",
+        url: "https://www.ionisos.com/en/ionisos-sterilization-by-gamma-and-beta-ionization-and-ethylene-oxide/our-history/",
+      },
+    ],
   },
   {
     name: "Joulz",
@@ -1277,10 +1410,48 @@ export const companies: PortCo[] = [
     sector: "Energy Transition",
     subsector: "Equipment",
     region: "Europe",
-    country: "Netherlands/Belgium",
+    country: "Netherlands",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "Joulz is a leading owner and provider of essential energy infrastructure equipment and services in the Netherlands, serving approximately 21,000 industrial, commercial, and public sector customers. The company leases, operates, and maintains around 4,000 medium-voltage electricity installations and 50,000 electricity and gas meters, while expanding into solar energy, battery storage, and EV charging infrastructure.",
     status: "Active",
+    website: "https://joulz.nl",
+    yearFounded: 2004,
+    investmentYear: 2019,
+    headquarters: "Delft, Netherlands",
+    management: [
+      { name: "Sytse Zuidema", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "April 2021",
+        category: "Acquisition",
+        event:
+          "Joulz acquires Zonel Energy, a leading B2B solar rooftop solutions provider in the Netherlands",
+      },
+      {
+        date: "April 2019",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires 100% of Joulz from Stedin Holding NV for approximately €220 million",
+      },
+      {
+        date: "2004",
+        category: "Founding",
+        event:
+          "Joulz established as a subsidiary of Stedin Group to provide energy infrastructure equipment and metering services",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Joulz Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/joulz/",
+      },
+      {
+        label: "Joulz — About Us",
+        url: "https://joulz.nl/nl/about-us",
+      },
+    ],
   },
   {
     name: "KMC Infratech",
