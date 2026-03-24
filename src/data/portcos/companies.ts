@@ -261,8 +261,78 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Germany",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "DNS:NET Internet Service GmbH is a full-service telecommunications and fiber network operator headquartered in Berlin, serving the Berlin, Brandenburg, and Saxony-Anhalt regions of Germany. Founded in 1998, the company owns the largest independent fibre-to-the-cabinet network in the Berlin area along with three data centers, providing internet, telephony, and TV services to over 100,000 customers across more than 400 municipalities. Since 2007, DNS:NET has invested heavily in FTTH (fiber-to-the-home) infrastructure to deliver gigabit-speed broadband to underserved areas.",
     status: "Active",
+    website: "https://www.dns-net.de",
+    yearFounded: 1998,
+    investmentYear: 2021,
+    headquarters: "Berlin, Germany",
+    management: [
+      { name: "Alexander Lucke", title: "Co-Chief Executive Officer" },
+      { name: "Ralph Steffens", title: "Co-Chief Executive Officer" },
+      { name: "Manuel Rüschke", title: "Chief Financial Officer" },
+      { name: "Kim Juchem", title: "Chief Commercial Officer" },
+      { name: "Daniel Schostan", title: "Chief Network Officer" },
+    ],
+    milestones: [
+      {
+        date: "January 2026",
+        category: "Financing",
+        event:
+          "3i Infrastructure announces full write-down of DNS:NET investment to zero equity value amid German fibre sector financing crisis",
+      },
+      {
+        date: "January 2025",
+        category: "Financing",
+        event:
+          "3i Infrastructure invests an additional €24 million in DNS:NET to fund continued FTTH network rollout; company reaches milestone of 100,000 paying customers",
+      },
+      {
+        date: "July 2023",
+        category: "Management",
+        event:
+          "Ralph Steffens, former Truphone CEO, appointed Co-CEO alongside founder Alexander Lucke to drive fiber expansion",
+      },
+      {
+        date: "June 2021",
+        category: "Financing",
+        event:
+          "3i Infrastructure completes acquisition of a 60% stake in DNS:NET for approximately €182 million, with founder Alexander Lucke retaining 40%",
+      },
+      {
+        date: "January 2013",
+        category: "Financing",
+        event:
+          "Deutsche Beteiligungs AG (DBAG) invests in DNS:NET through DBAG ECF fund, providing growth capital for fiber expansion",
+      },
+      {
+        date: "January 2007",
+        category: "Expansion",
+        event:
+          "DNS:NET begins dedicated investment in fiber optic infrastructure to bring gigabit internet to underserved regions",
+      },
+      {
+        date: "January 1998",
+        category: "Founding",
+        event:
+          "DNS:NET Internet Service GmbH founded by Alexander Lucke in Bernau bei Berlin as a domain service provider",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — DNS:NET Portfolio Page",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/dnsnet/",
+      },
+      {
+        label: "3i Infrastructure — DNS:NET Acquisition Announcement",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2021/3i-infrastructure-plc-completes-the-acquisition-of-a-60-stake-in-dnsnet/",
+      },
+      {
+        label: "DBAG — Disposal of Investment in DNS:Net",
+        url: "https://www.dbag.com/newsroom/detail/disposal-of-investment-in-dnsnet",
+      },
+    ],
   },
   {
     name: "EC Waste",
