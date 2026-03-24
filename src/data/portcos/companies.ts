@@ -1905,10 +1905,48 @@ export const companies: PortCo[] = [
     sector: "Transportation",
     subsector: "Aviation GSE",
     region: "Europe",
-    country: "Netherlands/Belgium",
+    country: "Belgium",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "TCR is the world's largest independent lessor of airport ground support equipment (GSE), providing fully integrated rental, maintenance, and fleet management services to ground handlers, airlines, and airports. Operating at over 230 airports across 20+ countries with a fleet of approximately 40,000 GSE units, TCR pioneered the concept of GSE rental in 1996.",
     status: "Active",
+    website: "https://www.tcr-group.com",
+    yearFounded: 1996,
+    investmentYear: 2016,
+    headquarters: "Steenokkerzeel, Belgium",
+    management: [
+      { name: "Jason Watson", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "March 2026",
+        category: "Divestiture",
+        event:
+          "Global Infrastructure Partners (BlackRock) agrees to acquire TCR from 3i Infrastructure; 3i sells its 71% stake for €1.14 billion",
+      },
+      {
+        date: "April 2016",
+        category: "Financing",
+        event:
+          "3i Infrastructure and Deutsche Asset Management each acquire 50% economic interests in TCR from Chequers Capital and Florac for approximately €204 million each",
+      },
+      {
+        date: "1996",
+        category: "Founding",
+        event:
+          "TCR founded in Belgium, pioneering the concept of fully integrated GSE management and rental for the aviation industry",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — TCR Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/tcr/",
+      },
+      {
+        label: "TCR Group — About Us",
+        url: "https://www.tcr-group.com/about-us",
+      },
+    ],
   },
   {
     name: "Tampnet",
@@ -1918,19 +1956,81 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "Norway",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "Tampnet is the leading independent offshore communications network operator in the North Sea and the Gulf of Mexico, providing high-speed, low-latency data connectivity to offshore oil and gas installations, wind farms, and vessels. Its infrastructure includes over 5,400 km of subsea fibre optic cables, 200 microwave links, and 600,000 km² of 4G/5G wireless coverage.",
     status: "Active",
+    website: "https://www.tampnet.com",
+    yearFounded: 2001,
+    investmentYear: 2019,
+    headquarters: "Stavanger, Norway",
+    management: [
+      { name: "Elie Hanna", title: "Chief Executive Officer" },
+      { name: "Kirsty Lawrence", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "April 2023",
+        category: "Acquisition",
+        event:
+          "Tampnet acquires dasNetz AG, a leading German offshore wind connectivity provider",
+      },
+      {
+        date: "March 2019",
+        category: "Financing",
+        event:
+          "3i Infrastructure and ATP complete acquisition of Tampnet from EQT Infrastructure for approximately €226 million",
+      },
+      {
+        date: "2001",
+        category: "Founding",
+        event:
+          "Tampnet founded by Statoil (now Equinor) as an offshore communications infrastructure provider in Norway",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Tampnet Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/tampnet/",
+      },
+      {
+        label: "Tampnet — Company Website",
+        url: "https://www.tampnet.com",
+      },
+    ],
   },
   {
     name: "UK Projects Portfolio",
     investmentFirm: "3i Infrastructure",
-    sector: "Transportation",
-    subsector: "Social Infra",
+    sector: "Social Infrastructure",
+    subsector: "PFI / PPP",
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
-    status: "Active",
+    description:
+      "The UK Projects Portfolio comprised stakes in five UK public-private infrastructure assets: Ayrshire College, Elgin (16 project investments in health and education), Mersey Gateway Bridge, Octagon Hospital (Norwich), and West of Duddon Sands offshore transmission asset. These investments represented 3i Infrastructure's legacy social infrastructure portfolio.",
+    status: "Realized",
+    investmentYear: 2007,
+    headquarters: "United Kingdom",
+    milestones: [
+      {
+        date: "March 2020",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure completes sale of the UK Projects Portfolio to funds managed by Dalmore, Semperian, and Innisfree for approximately £194 million",
+      },
+      {
+        date: "March 2007",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires its initial UK project investments upon its IPO, including Elgin and Octagon Hospital",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — UK Projects Sale Announcement",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2019/3i-infrastructure-plc-agrees-to-sell-its-uk-projects-portfolio/",
+      },
+    ],
   },
   {
     name: "Valorem",
@@ -1940,8 +2040,46 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "France",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
-    status: "Active",
+    description:
+      "VALOREM is a vertically integrated independent renewable energy developer and operator, and one of the largest onshore wind developers in France. The company develops, constructs, and operates wind, solar PV, and small hydropower assets across France, Finland, Greece, Poland, Sweden, and Romania, growing its operational base to over 850 MW with a 6.6 GW development pipeline.",
+    status: "Realized",
+    website: "https://www.valorem-energie.com",
+    yearFounded: 1994,
+    investmentYear: 2016,
+    headquarters: "Bègles, France",
+    management: [
+      { name: "Jean-Yves Grandidier", title: "President" },
+    ],
+    milestones: [
+      {
+        date: "January 2025",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure completes sale of its 33% stake in Valorem to AIP Management for net proceeds of €309 million, achieving a 21% gross IRR and 3.6x money multiple",
+      },
+      {
+        date: "July 2016",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires a 28.5% interest in Valorem from Omnes Capital for €57 million",
+      },
+      {
+        date: "1994",
+        category: "Founding",
+        event:
+          "Jean-Yves Grandidier founds VALOREM in France as a renewable energy technical design office, pioneering wind energy development",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Valorem Past Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/valorem/",
+      },
+      {
+        label: "VALOREM — Pioneers at Heart",
+        url: "https://www.valorem-energie.com/en/pioneers-at-heart/",
+      },
+    ],
   },
   {
     name: "Wireless Infrastructure Group (WIG)",
@@ -1951,8 +2089,47 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
-    status: "Active",
+    description:
+      "Wireless Infrastructure Group (WIG) is an independent communications infrastructure provider that builds and operates shared wireless towers and neutral-host indoor networks. Founded in 2006 in Scotland, WIG grew to become the UK's largest private independent tower operator with over 2,000 tower assets.",
+    status: "Realized",
+    website: "https://www.wirelessinfrastructure.com",
+    yearFounded: 2006,
+    investmentYear: 2016,
+    headquarters: "Bellshill, Scotland",
+    management: [
+      { name: "Scott Coates", title: "Chief Executive Officer" },
+      { name: "Stuart Fisken", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "December 2019",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure completes sale of its 93% stake in WIG to Brookfield Infrastructure for £387 million, achieving a 27% gross IRR",
+      },
+      {
+        date: "April 2016",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires a 36% economic interest in WIG for approximately £75 million",
+      },
+      {
+        date: "2006",
+        category: "Founding",
+        event:
+          "Scott Coates founds Wireless Infrastructure Group in Scotland as the UK's first independent pureplay tower company",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — WIG Past Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/wig/",
+      },
+      {
+        label: "Wireless Infrastructure Group — About Us",
+        url: "https://www.wirelessinfrastructure.com/about-us/",
+      },
+    ],
   },
   // ─── ADIA Infrastructure ────────────────────────────────────
   {
