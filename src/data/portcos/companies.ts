@@ -1771,12 +1771,17 @@ export const companies: PortCo[] = [
     country: "India",
     ownershipVehicle: "3i India Infrastructure Fund",
     description:
-      "KMC Infratech Limited is a road infrastructure developer and operator that owns a portfolio of build-operate-transfer (BOT) highway assets totaling approximately 5,000 lane kilometres across India. A subsidiary of KMC Constructions Limited, the company was the flagship vehicle for the KMC Group's road concession assets.",
+      "KMC Infratech Limited is a road infrastructure developer and operator that owns a portfolio of build-operate-transfer (BOT) highway assets totaling approximately 5,000 lane kilometres across 10 projects spanning Kerala, Gurgaon, Jaipur, Kanpur, and Hyderabad. A subsidiary of KMC Constructions Limited — founded in 1970 by M. Raja Mohan Reddy and one of India's most established highway contractors with over 15,000 lane km of construction experience — KMCIL served as the flagship vehicle for the KMC Group's road concession assets. The $1.2 billion 3i India Infrastructure Fund invested $111 million for growth capital.",
     status: "Realized",
     website: "https://kmcgroup.co.in/infrastructure/",
     yearFounded: 2008,
     investmentYear: 2011,
     headquarters: "Hyderabad, India",
+    management: [
+      { name: "M. Goutham Reddy", title: "Chief Executive Officer" },
+      { name: "M. Vikram Reddy", title: "President" },
+      { name: "M. Pruthvi Kumar Reddy", title: "Chief Operating Officer" },
+    ],
     milestones: [
       {
         date: "2022",
@@ -1788,7 +1793,7 @@ export const companies: PortCo[] = [
         date: "March 2011",
         category: "Financing",
         event:
-          "3i India Infrastructure Fund invests Rs 500 crore ($111 million) in KMC Infratech to fund its portfolio of 10 BOT road projects",
+          "3i India Infrastructure Fund invests Rs 500 crore ($111 million) in KMC Infratech to fund its portfolio of 10 BOT road projects; Spark Capital Advisors acts as exclusive financial advisor",
       },
       {
         date: "December 2008",
@@ -1796,11 +1801,31 @@ export const companies: PortCo[] = [
         event:
           "KMC Infratech Limited incorporated in Hyderabad as the flagship BOT road asset holding company of KMC Constructions",
       },
+      {
+        date: "1993",
+        category: "Expansion",
+        event:
+          "KMC Constructions Limited converts from a partnership firm (Krishna Mohan Constructions, est. 1970) to a public limited company, expanding its national highway footprint",
+      },
+      {
+        date: "1970",
+        category: "Founding",
+        event:
+          "M. Raja Mohan Reddy founds Krishna Mohan Constructions as a partnership firm in Hyderabad, the predecessor to KMC Constructions Limited",
+      },
     ],
     sources: [
       {
         label: "Business Standard — 3i India invests in KMC Infratech",
         url: "https://www.business-standard.com/article/companies/3i-india-invests-rs-500-cr-in-kmc-infratech-111032900022_1.html",
+      },
+      {
+        label: "Infrastructure Investor — 3i India Infra fund invests $111m",
+        url: "https://www.infrastructureinvestor.com/3i-india-infra-fund-invests-111m-in-indian-road-operator/",
+      },
+      {
+        label: "KMC Group — Infrastructure Division",
+        url: "https://kmcgroup.co.in/infrastructure/",
       },
     ],
   },
@@ -2211,6 +2236,30 @@ export const companies: PortCo[] = [
       { name: "Perry Pellerin", title: "Chief Executive Officer, Great Sandhills Railway" },
     ],
     milestones: [
+      {
+        date: "October 2025",
+        category: "Acquisition",
+        event:
+          "Regional Rail acquires the Minnesota Commercial Railway, expanding the network to 17 railroads across 9 U.S. states and 2 Canadian provinces",
+      },
+      {
+        date: "January 2023",
+        category: "Acquisition",
+        event:
+          "Regional Rail acquires Indiana Eastern Railroad and Ohio South Central Railroad, adding 107 miles of mainline freight track across Indiana and Ohio",
+      },
+      {
+        date: "October 2022",
+        category: "Expansion",
+        event:
+          "Regional Rail expands into the Midwest and western Canada, acquiring three railroads in Illinois and Ohio plus Great Sandhills Railway in Saskatchewan",
+      },
+      {
+        date: "2020",
+        category: "Acquisition",
+        event:
+          "Regional Rail acquires Pinsly Railroad Company's Florida operations (Florida Central, Florida Midland, Florida Northern) adding 208 miles of track",
+      },
       {
         date: "July 2019",
         category: "Financing",
