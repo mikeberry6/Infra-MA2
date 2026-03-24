@@ -1290,19 +1290,91 @@ export const companies: PortCo[] = [
     region: "Asia-Pacific",
     country: "India",
     ownershipVehicle: "3i India Infrastructure Fund",
-    description: "",
-    status: "Active",
+    description:
+      "KMC Infratech Limited is a road infrastructure developer and operator that owns a portfolio of build-operate-transfer (BOT) highway assets totaling approximately 5,000 lane kilometres across India. A subsidiary of KMC Constructions Limited, the company was the flagship vehicle for the KMC Group's road concession assets.",
+    status: "Realized",
+    website: "https://kmcgroup.co.in/infrastructure/",
+    yearFounded: 2008,
+    investmentYear: 2011,
+    headquarters: "Hyderabad, India",
+    milestones: [
+      {
+        date: "2022",
+        category: "Divestiture",
+        event:
+          "3i India Infrastructure Fund sells its stake in KMC Infratech at an uplift to carrying value as part of the fund's wind-down",
+      },
+      {
+        date: "March 2011",
+        category: "Financing",
+        event:
+          "3i India Infrastructure Fund invests Rs 500 crore ($111 million) in KMC Infratech to fund its portfolio of 10 BOT road projects",
+      },
+      {
+        date: "December 2008",
+        category: "Founding",
+        event:
+          "KMC Infratech Limited incorporated in Hyderabad as the flagship BOT road asset holding company of KMC Constructions",
+      },
+    ],
+    sources: [
+      {
+        label: "Business Standard — 3i India invests in KMC Infratech",
+        url: "https://www.business-standard.com/article/companies/3i-india-invests-rs-500-cr-in-kmc-infratech-111032900022_1.html",
+      },
+    ],
   },
   {
-    name: "Krishnapatna m Port",
+    name: "Krishnapatnam Port",
     investmentFirm: "3i Infrastructure",
     sector: "Transportation",
     subsector: "Ports",
     region: "Asia-Pacific",
     country: "India",
     ownershipVehicle: "3i India Infrastructure Fund",
-    description: "",
-    status: "Active",
+    description:
+      "Krishnapatnam Port Company Limited operates a natural deep-water, all-weather port on the east coast of Andhra Pradesh. Developed under a 50-year build-operate-share-transfer concession, it grew to become the largest private port on India's east coast, handling over 60 million tonnes of cargo annually across bulk, container, and liquid terminals.",
+    status: "Realized",
+    website: "https://www.krishnapatnam.com/",
+    yearFounded: 2003,
+    investmentYear: 2009,
+    headquarters: "Nellore, Andhra Pradesh",
+    milestones: [
+      {
+        date: "October 2020",
+        category: "Divestiture",
+        event:
+          "Adani Ports & SEZ acquires 75% stake in KPCL from CVR Group and other investors including 3i, providing 3i with an exit",
+      },
+      {
+        date: "February 2009",
+        category: "Financing",
+        event:
+          "3i India Infrastructure Fund invests approximately $161 million for a 26% minority stake in Krishnapatnam Port Company",
+      },
+      {
+        date: "July 2008",
+        category: "Expansion",
+        event:
+          "Krishnapatnam Port inaugurated after Phase I completed in a record 18 months; begins commercial operations handling iron ore and coal",
+      },
+      {
+        date: "2003",
+        category: "Founding",
+        event:
+          "Krishnapatnam Port Company Limited formed by the CVR Group to develop the port under a 50-year BOST concession from Andhra Pradesh",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — Krishnapatnam Port Investment",
+        url: "https://www.3i.com/media-centre/corporate-and-portfolio-news/2009/3i-invests-161m-in-krishnapatnam-port-company-ltd/",
+      },
+      {
+        label: "Wikipedia — Krishnapatnam Port",
+        url: "https://en.wikipedia.org/wiki/Krishnapatnam_Port",
+      },
+    ],
   },
   {
     name: "La Seine Musicale",
@@ -1312,19 +1384,88 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "France",
     ownershipVehicle: "3i European Operational Projects Fund",
-    description: "",
+    description:
+      "La Seine Musicale is a landmark music and performing arts complex on Île Seguin in Boulogne-Billancourt, on the Seine river just west of Paris. Operated under a 30-year PPP with the Département des Hauts-de-Seine, the facility comprises a 6,000-seat modular concert hall, a 1,150-seat auditorium designed by Shigeru Ban, rehearsal and recording studios, and event spaces.",
     status: "Active",
+    yearFounded: 2017,
+    investmentYear: 2022,
+    headquarters: "Boulogne-Billancourt, France",
+    milestones: [
+      {
+        date: "March 2022",
+        category: "Acquisition",
+        event:
+          "3i European Operational Projects Fund acquires an 80% equity stake in La Seine Musicale from InfraVia European Fund II",
+      },
+      {
+        date: "April 2017",
+        category: "Founding",
+        event:
+          "La Seine Musicale inaugurated on Île Seguin; Bob Dylan performs the first concert at the 6,000-seat Grande Seine",
+      },
+    ],
+    sources: [
+      {
+        label: "IPE Real Assets — 3i European fund buys La Seine Musicale",
+        url: "https://realassets.ipe.com/news/3i-european-fund-buys-la-seine-musicale-concert-hall-in-france/10058707.article",
+      },
+      {
+        label: "Wikipedia — La Seine Musicale",
+        url: "https://en.wikipedia.org/wiki/La_Seine_Musicale",
+      },
+    ],
   },
   {
     name: "Lefdal Mine Datacenter",
     investmentFirm: "3i Infrastructure",
     sector: "Digital Infrastructure",
-    subsector: "Data",
+    subsector: "Data Centers",
     region: "Europe",
     country: "Norway",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "Lefdal Mine Datacenter is a large-scale data centre campus built inside a former olivine mine on Norway's west coast near Måløy. The facility leverages Norway's abundant renewable hydroelectric power and a closed-loop fjord seawater cooling system to deliver one of Europe's most energy-efficient and sustainable colocation environments, with 37 MW of operational capacity and substantial expansion potential.",
     status: "Active",
+    website: "https://www.lefdalmine.com/",
+    yearFounded: 2010,
+    investmentYear: 2026,
+    headquarters: "Måløy, Norway",
+    management: [
+      { name: "Jørn Skaane", title: "Chief Executive Officer" },
+      { name: "Fredrik Løwehr", title: "Chief Financial Officer" },
+      { name: "Frode Strømmen", title: "Chief Operating Officer" },
+      { name: "Mats Andersson", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      {
+        date: "March 2026",
+        category: "Financing",
+        event:
+          "3i Infrastructure plc agrees to invest approximately €300 million to acquire a majority stake in Lefdal Mine Datacenter from Columbia Threadneedle",
+      },
+      {
+        date: "May 2017",
+        category: "Expansion",
+        event:
+          "Lefdal Mine Datacenter officially opens for commercial operations in the former olivine mine, powered entirely by renewable energy",
+      },
+      {
+        date: "2010",
+        category: "Founding",
+        event:
+          "Lefdal Mine Datacenter AS founded to convert the abandoned Lefdal olivine mine into a large-scale data centre campus",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — Lefdal Mine Datacenter",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2026/3i-infrastructure-plc-invests-in-lefdal-mine-datacenter/",
+      },
+      {
+        label: "Lefdal Mine Datacenter — Official Site",
+        url: "https://www.lefdalmine.com/",
+      },
+    ],
   },
   {
     name: "MFM Capital",
