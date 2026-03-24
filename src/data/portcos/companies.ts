@@ -1389,8 +1389,46 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "SRL Traffic Systems is the UK's leading manufacturer and rental provider of temporary and portable traffic management equipment, including intelligent traffic signals, variable message signs, pedestrian systems, barriers, and CCTV. The company operates the largest depot network of intelligent traffic management systems in the country and is the UK's only manufacturer to both sell and hire traffic light equipment.",
     status: "Active",
+    website: "https://www.srl.co.uk",
+    yearFounded: 1997,
+    investmentYear: 2021,
+    headquarters: "Middlewich, Cheshire",
+    management: [
+      { name: "Mark Eburne", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "April 2024",
+        category: "Management",
+        event:
+          "Mark Eburne appointed as CEO; former CEO Richard Tredwin transitions to Executive Chairman",
+      },
+      {
+        date: "December 2021",
+        category: "Financing",
+        event:
+          "3i Infrastructure completes acquisition of 92% stake in SRL Traffic Systems for approximately £191 million",
+      },
+      {
+        date: "1997",
+        category: "Founding",
+        event:
+          "SRL Traffic Systems founded in Middlewich, Cheshire",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — SRL Traffic Systems",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/srl-traffic-systems/",
+      },
+      {
+        label: "SRL Traffic Systems — Our History",
+        url: "https://srl.co.uk/about/our-history/",
+      },
+    ],
   },
   {
     name: "Shared Tower",
@@ -1398,10 +1436,48 @@ export const companies: PortCo[] = [
     sector: "Digital Infrastructure",
     subsector: "Towers",
     region: "North America",
-    country: "United States",
+    country: "Canada",
     ownershipVehicle: "3i North American Infrastructure Fund",
-    description: "",
-    status: "Active",
+    description:
+      "Shared Tower is Canada's leading independent developer and owner of carrier-neutral telecommunications infrastructure, including tower sites, passive fibre networks, and edge colocation facilities. The company builds and operates infrastructure under long-term contracts for wireless carriers across Canada.",
+    status: "Realized",
+    website: "https://www.sharedtower.ca",
+    yearFounded: 2021,
+    investmentYear: 2022,
+    headquarters: "Oakville, Ontario",
+    management: [
+      { name: "Dan Gibbons", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "March 2025",
+        category: "Divestiture",
+        event:
+          "3i completes sale of its stake in Shared Tower to Northleaf Capital Partners",
+      },
+      {
+        date: "2022",
+        category: "Financing",
+        event:
+          "3i North American Infrastructure Fund invests in Shared Tower as the company's first institutional investor",
+      },
+      {
+        date: "2021",
+        category: "Founding",
+        event:
+          "Dan Gibbons founds Shared Tower in Oakville, Ontario to develop carrier-neutral communications infrastructure across Canada",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — Shared Tower Portfolio",
+        url: "https://www.3i.com/infrastructure/our-portfolio/shared-tower/",
+      },
+      {
+        label: "3i — Sale of Shared Tower Announcement",
+        url: "https://www.3i.com/media/news/2025/3i-announces-sale-of-its-investment-in-shared-tower/",
+      },
+    ],
   },
   {
     name: "Smarte Carte",
@@ -1411,8 +1487,41 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "3i Proprietary Capital / US Platform",
-    description: "",
+    description:
+      "Smarte Carte is the world's leading provider of self-service luggage carts, electronic lockers, commercial strollers, and massage chairs, operating in over 3,400 locations across six continents. The company serves 98 of the top 100 U.S. airports and is the sole baggage cart provider at 49 of the top 50.",
     status: "Active",
+    website: "https://smartecarte.com",
+    yearFounded: 1970,
+    investmentYear: 2017,
+    headquarters: "Saint Paul, Minnesota",
+    management: [
+      { name: "Drew Niemeyer", title: "Chief Executive Officer" },
+      { name: "Thor Osteboe", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "October 2017",
+        category: "Financing",
+        event:
+          "3i Group acquires Smarte Carte for $385 million, marking its first North American infrastructure investment",
+      },
+      {
+        date: "1970",
+        category: "Founding",
+        event:
+          "Jim Muellner incorporates Smarte Carte, Inc. in White Bear Lake, Minnesota, launching self-serve luggage cart kiosks at airports",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Group — Smarte Carte Portfolio",
+        url: "https://www.3i.com/infrastructure/our-portfolio/smarte-carte/",
+      },
+      {
+        label: "Smarte Carte — Our Story",
+        url: "https://smartecarte.com/about-us/our-story/",
+      },
+    ],
   },
   {
     name: "Soma Enterprise",
@@ -1422,8 +1531,33 @@ export const companies: PortCo[] = [
     region: "Asia-Pacific",
     country: "India",
     ownershipVehicle: "3i India Infrastructure Fund",
-    description: "",
-    status: "Active",
+    description:
+      "Soma Enterprise Limited is a Hyderabad-based infrastructure engineering and construction company engaged in the development of highways, hydropower, irrigation, railways, power transmission, and urban infrastructure projects across India. The company operates both as a construction service provider under EPC contracts and as an infrastructure developer under PPP/BOT concessions.",
+    status: "Realized",
+    website: "https://www.soma.co.in",
+    yearFounded: 1997,
+    investmentYear: 2007,
+    headquarters: "Hyderabad, Telangana",
+    milestones: [
+      {
+        date: "November 2007",
+        category: "Financing",
+        event:
+          "3i India Infrastructure Fund invests $101 million for a minority stake in Soma Enterprise",
+      },
+      {
+        date: "1997",
+        category: "Founding",
+        event:
+          "Maganti family acquires and renames the entity to Soma Enterprise, focused on infrastructure development",
+      },
+    ],
+    sources: [
+      {
+        label: "Soma Enterprise — Official Website",
+        url: "https://www.soma.co.in/",
+      },
+    ],
   },
   {
     name: "Supreme Infrastructure India",
@@ -1433,8 +1567,39 @@ export const companies: PortCo[] = [
     region: "Asia-Pacific",
     country: "India",
     ownershipVehicle: "3i India Infrastructure Fund",
-    description: "",
-    status: "Active",
+    description:
+      "Supreme Infrastructure India Limited (SIIL) is a Mumbai-based construction and infrastructure company focused on roads, bridges, power, water, railways, and civil construction, with a primary focus on the highways sector. The company built over 400 km of highways and operated nine BOT road projects before entering NCLT insolvency proceedings in 2019.",
+    status: "Realized",
+    website: "https://www.supremeinfra.com",
+    yearFounded: 1983,
+    investmentYear: 2012,
+    headquarters: "Mumbai, Maharashtra",
+    milestones: [
+      {
+        date: "September 2019",
+        category: "Other",
+        event:
+          "NCLT passes Corporate Insolvency Resolution Process order against Supreme Infrastructure India Limited",
+      },
+      {
+        date: "July 2012",
+        category: "Financing",
+        event:
+          "3i India Infrastructure Fund completes Rs 200 crore ($35.9 million) investment for a 49% stake in Supreme Infrastructure BOT Holdings",
+      },
+      {
+        date: "1983",
+        category: "Founding",
+        event:
+          "Bhawanishankar H. Sharma founds Supreme Asphalts Private Limited in Mumbai",
+      },
+    ],
+    sources: [
+      {
+        label: "Supreme Infrastructure India — Official Website",
+        url: "https://www.supremeinfra.com/",
+      },
+    ],
   },
   {
     name: "TCR",
