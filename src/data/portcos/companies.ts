@@ -10,8 +10,69 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
-    status: "Active",
+    description:
+      "Anglian Water Group (AWG) is the parent company of Anglian Water, the largest water and water recycling company in England and Wales by geographic area. The company supplies water and wastewater services to over six million domestic and business customers across the east of England and Hartlepool, covering a region stretching from the Humber to the Thames estuary. Since privatisation, AWG has invested billions of pounds to replace ageing infrastructure, improve resilience, and address water supply-demand imbalances in one of the UK's driest regions.",
+    status: "Realized",
+    website: "https://www.anglianwatergroup.co.uk",
+    yearFounded: 1989,
+    investmentYear: 2007,
+    headquarters: "Huntingdon, Cambridgeshire",
+    management: [
+      { name: "Mark Thurston", title: "Chief Executive Officer" },
+      { name: "Michael Bradley CB", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "February 2018",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure completes sale of its 10.3% stake in AWG to Dalmore Capital and GLIL Infrastructure for approximately £395 million",
+      },
+      {
+        date: "November 2017",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure agrees to sell its stake in AWG to a consortium of Dalmore Capital and GLIL Infrastructure LLP at a 37% premium to book value",
+      },
+      {
+        date: "March 2007",
+        category: "Financing",
+        event:
+          "3i Infrastructure acquires its stake in AWG upon its IPO, following the Osprey Consortium take-private",
+      },
+      {
+        date: "December 2006",
+        category: "Acquisition",
+        event:
+          "Osprey Consortium (3i Group, CPPIB, Colonial First State, IFM) completes take-private of AWG for £2.25 billion, delisting from the London Stock Exchange",
+      },
+      {
+        date: "1997",
+        category: "Acquisition",
+        event:
+          "Anglian Water acquires Hartlepool Water, extending service area to Hartlepool",
+      },
+      {
+        date: "December 1989",
+        category: "Founding",
+        event:
+          "Anglian Water Services formed through privatisation of the UK water industry under the Water Act 1989, listed on the London Stock Exchange",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — AWG Past Portfolio",
+        url: "https://www.3i-infrastructure.com/portfolio/past-portfolio/awg/",
+      },
+      {
+        label: "Anglian Water Group — Wikipedia",
+        url: "https://en.wikipedia.org/wiki/Anglian_Water_Group",
+      },
+      {
+        label: "AWG — About Us",
+        url: "https://www.anglianwatergroup.co.uk/about-us",
+      },
+    ],
   },
   {
     name: "Adani Power",
