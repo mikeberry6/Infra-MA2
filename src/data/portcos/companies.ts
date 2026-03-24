@@ -465,8 +465,67 @@ export const companies: PortCo[] = [
     region: "Europe",
     country: "United Kingdom",
     ownershipVehicle: "3i Managed Infrastructure Acquisitions (MIA)",
-    description: "",
+    description:
+      "ESP Utilities Group is one of the UK's largest independent multi-utility network operators, providing 'last mile' gas, electricity, and water connections to residential, industrial, and commercial properties. As a licensed independent gas transporter, independent distribution network operator, and new appointments and variations provider regulated by Ofgem and Ofwat, ESP owns over one million live connections with an additional 250,000 in its order book, making it the second largest iGT/iDNO/NAV in the UK.",
     status: "Active",
+    website: "https://espug.com/",
+    yearFounded: 2000,
+    investmentYear: 2017,
+    headquarters: "Leatherhead, Surrey",
+    management: [
+      { name: "Kevin O'Connor", title: "Chief Executive Officer" },
+      { name: "Paul Miles", title: "Chief Financial Officer" },
+      { name: "Simon Loh", title: "Chief Operating Officer" },
+      { name: "Liam McAvoy", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      {
+        date: "January 2025",
+        category: "Other",
+        event:
+          "ESP surpasses one million live multi-utility connections across the UK",
+      },
+      {
+        date: "June 2023",
+        category: "Expansion",
+        event:
+          "Seventh and final tranche of Fulcrum gas asset acquisition completed, bringing total transaction value to approximately £49 million",
+      },
+      {
+        date: "June 2017",
+        category: "Financing",
+        event:
+          "3i Managed Infrastructure Acquisitions completes £191 million acquisition of ESP Utilities Group from EISER following European Commission approval",
+      },
+      {
+        date: "December 2016",
+        category: "Acquisition",
+        event:
+          "3i announces agreement to acquire a portfolio of five infrastructure assets from the EISER Global Infrastructure Fund, including ESP Utilities Group",
+      },
+      {
+        date: "January 2006",
+        category: "Financing",
+        event:
+          "EISER Global Infrastructure Fund acquires ESP Utilities Group",
+      },
+      {
+        date: "January 2000",
+        category: "Founding",
+        event:
+          "ESP Utilities Group founded as an independent utility networks operator in the UK",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — ESP Portfolio Page",
+        url: "https://www.3i.com/infrastructure/our-portfolio/esp-utilities-group/",
+      },
+      {
+        label: "ESP Utilities Group — Official Website",
+        url: "https://espug.com/",
+      },
+    ],
   },
   {
     name: "ESVAGT",
