@@ -881,10 +881,69 @@ export const companies: PortCo[] = [
     sector: "Digital Infrastructure",
     subsector: "Subsea",
     region: "Europe",
-    country: "United Kingdom HQ",
+    country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
-    description: "",
+    description:
+      "FLAG (formerly Global Cloud Xchange / GCX) is one of the largest privately owned subsea cable operators globally, operating seven subsea and six terrestrial cable systems spanning 180+ countries with 66,000+ km of fibre across key routes linking North America, Europe, the Middle East, and Asia. The company provides high-bandwidth connectivity, managed network services, and edge data centre solutions to hyperscalers, telecom carriers, and enterprises worldwide.",
     status: "Active",
+    website: "https://flagtel.com",
+    yearFounded: 1993,
+    investmentYear: 2022,
+    headquarters: "London, United Kingdom",
+    management: [
+      { name: "Carl Grivner", title: "Chief Executive Officer" },
+      { name: "Brice Evin", title: "Chief Financial Officer" },
+      { name: "Brad Kneller", title: "Chief Network Officer" },
+      { name: "Giancarlo Ferro", title: "Chief Information Officer" },
+    ],
+    milestones: [
+      {
+        date: "December 2025",
+        category: "Expansion",
+        event:
+          "FLAG acquires a dedicated fibre pair on Google's Echo subsea cable system, creating a new trans-Pacific route between Singapore and the US",
+      },
+      {
+        date: "April 2025",
+        category: "Other",
+        event:
+          "Global Cloud Xchange rebrands to FLAG, reviving the original Fiberoptic Link Around the Globe name",
+      },
+      {
+        date: "September 2022",
+        category: "Financing",
+        event:
+          "3i Infrastructure completes acquisition of GCX for $377 million in equity",
+      },
+      {
+        date: "January 2021",
+        category: "Other",
+        event:
+          "GCX completes financial restructuring and emerges as an independent company backed by Värde Partners",
+      },
+      {
+        date: "October 2003",
+        category: "Acquisition",
+        event:
+          "Reliance Communications acquires FLAG Telecom for $207 million, marking the first international telecom acquisition by an Indian company",
+      },
+      {
+        date: "1993",
+        category: "Founding",
+        event:
+          "FLAG (Fiberoptic Link Around the Globe) established by a consortium of telecom companies led by Bell Atlantic to build a global subsea fibre-optic network",
+      },
+    ],
+    sources: [
+      {
+        label: "3i Infrastructure — FLAG Portfolio Page",
+        url: "https://www.3i-infrastructure.com/portfolio/current-portfolio/flag/",
+      },
+      {
+        label: "3i Infrastructure — GCX Investment Announcement",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2021/3i-infrastructure-plc-agrees-to-invest-in-gcx-to-support-future-growth/",
+      },
+    ],
   },
   {
     name: "Fermoy and Limerick Motorways",
