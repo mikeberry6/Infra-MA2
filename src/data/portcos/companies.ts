@@ -1278,22 +1278,32 @@ export const companies: PortCo[] = [
     country: "Ireland",
     ownershipVehicle: "3i European Operational Projects Fund",
     description:
-      "Fermoy and Limerick Motorways comprises two Irish toll road PPP concessions: DirectRoute (Fermoy), a 17.5km section of the M8 motorway between Dublin and Cork; and DirectRoute (Limerick), a 10km section of the M7 ring road around Limerick including a 675-metre tunnel under the River Shannon. The concessions run until 2034 and 2041 respectively.",
+      "Fermoy and Limerick Motorways comprises two Irish toll road PPP concessions: DirectRoute (Fermoy), a 17.5km section of the M8 motorway between Dublin and Cork including a Blackwater crossing viaduct; and DirectRoute (Limerick), a 10km section of the M7 ring road around Limerick including a 675-metre tunnel under the River Shannon — Ireland's second under-river tunnel. Ownership is split between 3i/TIIC (50% via Munster GP SARL) and Meridiam (50%). The concessions run until 2034 and 2041 respectively, generating combined annual revenues of approximately €30 million.",
     status: "Active",
+    website: "https://www.directroute.ie/",
+    yearFounded: 2004,
     investmentYear: 2019,
     headquarters: "Limerick, Ireland",
+    // SPV concession entities; no dedicated C-suite management team
+    management: [],
     milestones: [
       {
         date: "April 2019",
         category: "Financing",
         event:
-          "3i European Operational Projects Fund invests in the Fermoy and Limerick motorway projects",
+          "3i European Operational Projects Fund and TIIC acquire 50% of DirectRoute (Fermoy) and DirectRoute (Limerick) via Munster GP SARL, alongside co-investor Meridiam",
       },
       {
         date: "July 2010",
         category: "Expansion",
         event:
-          "Limerick Tunnel route opens to traffic, linking national routes via a 675-metre tunnel under the River Shannon",
+          "Limerick Tunnel route opens ahead of schedule, linking national routes via a 675-metre tunnel under the River Shannon",
+      },
+      {
+        date: "August 2006",
+        category: "Founding",
+        event:
+          "Direct Route (Limerick) Ltd signs PPP agreement with the National Roads Authority for the construction, operation, and maintenance of the Limerick Tunnel",
       },
       {
         date: "2006",
@@ -1316,6 +1326,10 @@ export const companies: PortCo[] = [
       {
         label: "DirectRoute — Limerick",
         url: "https://www.directroute.ie/directroutelimerick.aspx",
+      },
+      {
+        label: "TII — M8 Rathcormac-Fermoy Bypass PPP",
+        url: "https://www.tii.ie/roads-tolling/projects-and-improvements/ppp/m8-rathcormac-fermoy-by-p/",
       },
     ],
   },
@@ -1410,12 +1424,21 @@ export const companies: PortCo[] = [
     country: "Spain",
     ownershipVehicle: "3i European Operational Projects Fund",
     description:
-      "AGESA is the concessionaire for the N-636 motorway from Gerediaga to Elorrio, located 50km southeast of Bilbao in the Basque Country. The project comprises a newly built 6.4km carriageway and the pre-existing 2.8km Elorrio bypass, including nine viaducts, two bridges, and two tunnels, operating under a shadow toll arrangement with the Regional Council of Bizkaia.",
+      "AGESA (Sociedad Concesionaria Autovía Gerediaga Elorrio S.A.) is the concessionaire for the N-636 motorway from Gerediaga to Elorrio, located 50km southeast of Bilbao in the Basque Country. The project comprises a newly built 6.4km carriageway and the pre-existing 2.8km Elorrio bypass, including nine viaducts, two bridges, the 1,141m Gaztelua tunnel, and the Axtondo tunnel, built at a construction cost of €206.5 million. The 30-year concession runs until May 2042 and provides a key link between the provinces of Gipuzkoa and Bizkaia. 3i holds 80% and TIIC retains 19.9%.",
     status: "Active",
+    website: "http://interbiak.bizkaia.eus/en/-/gerediagaelorrio",
     yearFounded: 2012,
     investmentYear: 2019,
     headquarters: "Abadiño, Bizkaia",
+    // SPV concession entity; no dedicated C-suite management team
+    management: [],
     milestones: [
+      {
+        date: "January 2020",
+        category: "Acquisition",
+        event:
+          "3i European Operational Projects Fund completes acquisition of 80% of AGESA from Acciona, Excavaciones Viuda de Sainz, Exbasa Obras y Servicios, and Transitia for approximately €70 million",
+      },
       {
         date: "October 2019",
         category: "Financing",
@@ -1423,22 +1446,36 @@ export const companies: PortCo[] = [
           "3i European Operational Projects Fund agrees to invest €70 million for 80% of AGESA",
       },
       {
-        date: "2015",
+        date: "August 2016",
         category: "Expansion",
         event:
-          "Gerediaga-Elorrio motorway opens to traffic",
+          "Gerediaga-Elorrio motorway becomes fully operational, providing significant time savings for users travelling between Gipuzkoa and Bizkaia",
       },
       {
-        date: "April 2012",
+        date: "May 2012",
         category: "Founding",
         event:
-          "AGESA incorporated in Abadiño as the concession company for the N-636 motorway PPP",
+          "Provincial Council of Biscay awards the 30-year concession for the N-636 motorway to AGESA; company incorporated in Abadiño",
+      },
+      {
+        date: "2022",
+        category: "Other",
+        event:
+          "Electronic free-flow tolling system introduced on the A-636 in the Basque Country, replacing manual toll collection",
       },
     ],
     sources: [
       {
         label: "3i Group — AGESA Investment Announcement",
         url: "https://www.3i.com/media-centre/corporate-and-portfolio-news/2019/3i-european-operational-projects-fund-invests-70m-in-agesa-a-spanish-motorway-ppp/",
+      },
+      {
+        label: "Bizkaia Interbiak — Gerediaga-Elorrio",
+        url: "http://interbiak.bizkaia.eus/en/-/gerediagaelorrio",
+      },
+      {
+        label: "Grupo TYPSA — N-636 Road, Gerediaga-Elorrio Section",
+        url: "https://www.typsa.com/en/projects/n-636-road-gerediaga-elorrio-section/",
       },
     ],
   },
@@ -1828,23 +1865,44 @@ export const companies: PortCo[] = [
     country: "France",
     ownershipVehicle: "3i European Operational Projects Fund",
     description:
-      "La Seine Musicale is a landmark music and performing arts complex on Île Seguin in Boulogne-Billancourt, on the Seine river just west of Paris. Operated under a 30-year PPP with the Département des Hauts-de-Seine, the facility comprises a 6,000-seat modular concert hall, a 1,150-seat auditorium designed by Shigeru Ban, rehearsal and recording studios, and event spaces.",
+      "La Seine Musicale is a landmark music and performing arts complex on Île Seguin in Boulogne-Billancourt, on the Seine river just west of Paris. Built at a cost of €170 million through a 27-year PPP with the Département des Hauts-de-Seine, the 36,500 sq m facility comprises a 6,000-seat modular concert hall (La Grande Seine), a 1,150-seat auditorium designed by Pritzker Prize-winning architect Shigeru Ban with Jean de Gastines, rehearsal and recording studios, and event spaces. The consortium Tempo-Île Seguin, led by Bouygues Bâtiment Île-de-France with Sodexo and TF1, operates the complex.",
     status: "Active",
+    website: "https://www.laseinemusicale.com/",
     yearFounded: 2017,
     investmentYear: 2022,
     headquarters: "Boulogne-Billancourt, France",
+    // PPP operated by Tempo-Île Seguin consortium; no dedicated C-suite management team publicly disclosed
+    management: [],
     milestones: [
       {
         date: "March 2022",
-        category: "Acquisition",
+        category: "Financing",
         event:
-          "3i European Operational Projects Fund acquires an 80% equity stake in La Seine Musicale from InfraVia European Fund II",
+          "3i European Operational Projects Fund acquires an 80% equity stake in La Seine Musicale from InfraVia European Fund II after a 10-year investment journey",
       },
       {
         date: "April 2017",
         category: "Founding",
         event:
-          "La Seine Musicale inaugurated on Île Seguin; Bob Dylan performs the first concert at the 6,000-seat Grande Seine",
+          "La Seine Musicale inaugurated on Île Seguin by Patrick Devedjian, President of the Hauts-de-Seine Departmental Council; Bob Dylan performs the first concert at La Grande Seine",
+      },
+      {
+        date: "2015",
+        category: "Expansion",
+        event:
+          "La Seine Musicale project wins the MIPIM 2015 Best Futura Project award during construction",
+      },
+      {
+        date: "July 2013",
+        category: "Other",
+        event:
+          "Département des Hauts-de-Seine signs 27-year PPP contract with consortium Tempo-Île Seguin, led by Bouygues Bâtiment Île-de-France, for construction and operation",
+      },
+      {
+        date: "2010",
+        category: "Acquisition",
+        event:
+          "Département des Hauts-de-Seine acquires the 2.35-hectare downstream tip of Île Seguin from Boulogne-Billancourt for a symbolic €1, on the former Renault factory site",
       },
     ],
     sources: [
@@ -1855,6 +1913,10 @@ export const companies: PortCo[] = [
       {
         label: "Wikipedia — La Seine Musicale",
         url: "https://en.wikipedia.org/wiki/La_Seine_Musicale",
+      },
+      {
+        label: "InfraVia — Tempo (La Seine Musicale)",
+        url: "https://infraviacapital.com/companies/tempo/",
       },
     ],
   },
@@ -1887,6 +1949,24 @@ export const companies: PortCo[] = [
           "3i Infrastructure plc agrees to invest approximately €300 million to acquire a majority stake in Lefdal Mine Datacenter from Columbia Threadneedle",
       },
       {
+        date: "June 2025",
+        category: "Expansion",
+        event:
+          "Sigma2 inaugurates 'Olivia', an HPE Cray supercomputer with 304 Nvidia GH200 GPUs delivering 13.2 petaflops, housed at Lefdal Mine Datacenter",
+      },
+      {
+        date: "2021",
+        category: "Expansion",
+        event:
+          "Sigma2 selects Lefdal Mine Datacenter to host Norway's national research computing infrastructure (NIRD), with containers arriving in early 2022",
+      },
+      {
+        date: "May 2020",
+        category: "Financing",
+        event:
+          "Columbia Threadneedle European Sustainable Infrastructure Fund acquires a 67% majority stake in Lefdal Mine Datacenter",
+      },
+      {
         date: "May 2017",
         category: "Expansion",
         event:
@@ -1907,6 +1987,10 @@ export const companies: PortCo[] = [
       {
         label: "Lefdal Mine Datacenter — Official Site",
         url: "https://www.lefdalmine.com/",
+      },
+      {
+        label: "DCD — Supercomputing Goes Underground at Lefdal",
+        url: "https://www.datacenterdynamics.com/en/analysis/data-mining-lefdal-mine-datacenter/",
       },
     ],
   },
@@ -1955,13 +2039,33 @@ export const companies: PortCo[] = [
     headquarters: "Paris, France",
     management: [
       { name: "Philippe Ringenbach", title: "Chief Executive Officer" },
+      { name: "Alain Lopez", title: "Chief Financial Officer" },
+      { name: "Rita Nkatha Laibuta", title: "Chief Operating Officer" },
     ],
     milestones: [
+      {
+        date: "May 2025",
+        category: "Expansion",
+        event:
+          "NEoT Capital launches NEoT e-motion, a new pan-European zero-emission leasing platform backed by €350 million in equity from Mirova, Alba Infra Partners, and Banque des Territoires",
+      },
+      {
+        date: "April 2024",
+        category: "Financing",
+        event:
+          "NEoT Green Mobility secures €60 million from Mirova, 3i, and Banque des Territoires, increasing total platform funding to €160 million",
+      },
       {
         date: "September 2021",
         category: "Financing",
         event:
           "3i EOPF commits €30 million in equity alongside Mirova and Banque des Territoires, raising €100 million for NEoT Green Mobility",
+      },
+      {
+        date: "2019",
+        category: "Expansion",
+        event:
+          "NEoT Green Mobility closes its first maritime project, financing four hybrid crew transfer vessels for Northern Offshore Services",
       },
       {
         date: "2017",
@@ -1978,6 +2082,10 @@ export const companies: PortCo[] = [
       {
         label: "NEoT Capital — NEoT Green Mobility Platform",
         url: "https://www.neotcapital.com/en/plateformes/neot-green-mobility/",
+      },
+      {
+        label: "BeBeez — NEoT Green Mobility Bags €60M",
+        url: "https://bebeez.eu/2024/04/29/france-based-neot-green-mobility-bags-e60m-to-finance-zero-emission-mobility/",
       },
     ],
   },
@@ -2076,6 +2184,10 @@ export const companies: PortCo[] = [
         label: "Advario — Leadership Team",
         url: "https://advario.com/about-us/leadership-team/",
       },
+      {
+        label: "Advario — Clean Energy Storage MOU with VFlowTech",
+        url: "https://advario.com/advario-vflowtech-and-jtc-sign-mou-to-accelerate-deployment-of-clean-energy-storage-capacity-on-jurong-island-by-up-to-25-times/",
+      },
     ],
   },
   {
@@ -2096,6 +2208,7 @@ export const companies: PortCo[] = [
     management: [
       { name: "Al Sauer", title: "President and Chief Executive Officer" },
       { name: "Ethel Nawrocki", title: "Chief Financial Officer" },
+      { name: "Perry Pellerin", title: "Chief Executive Officer, Great Sandhills Railway" },
     ],
     milestones: [
       {
@@ -2119,6 +2232,10 @@ export const companies: PortCo[] = [
       {
         label: "Regional Rail — Company Website",
         url: "https://regional-rail.com/",
+      },
+      {
+        label: "Regional Rail — Midwest Expansion Announcement",
+        url: "https://regional-rail.com/2026/01/16/regional-rail-expands-its-network-in-the-midwest-via-the-acquisition-of-several-short-line-freight-railroads/",
       },
     ],
   },
