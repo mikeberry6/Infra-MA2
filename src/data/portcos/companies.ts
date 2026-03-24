@@ -20,6 +20,7 @@ export const companies: PortCo[] = [
     management: [
       { name: "Mark Thurston", title: "Chief Executive Officer" },
       { name: "Michael Bradley CB", title: "Chief Financial Officer" },
+      { name: "Dave Martin", title: "Chief Technology Officer" },
     ],
     milestones: [
       {
@@ -92,6 +93,7 @@ export const companies: PortCo[] = [
     management: [
       { name: "Shersingh B. Khyalia", title: "Chief Executive Officer" },
       { name: "Dilip Kumar Jha", title: "Chief Financial Officer" },
+      { name: "Rajesh Sehgal", title: "Chief Legal Officer" },
     ],
     milestones: [
       {
@@ -133,6 +135,10 @@ export const companies: PortCo[] = [
       {
         label: "Adani Power — Wikipedia",
         url: "https://en.wikipedia.org/wiki/Adani_Power",
+      },
+      {
+        label: "Adani Power — Key Management Personnel",
+        url: "https://www.adanipower.com/investors/key-management-personnel",
       },
     ],
   },
@@ -232,8 +238,9 @@ export const companies: PortCo[] = [
     investmentYear: 2018,
     headquarters: "Wilp, Netherlands",
     management: [
-      { name: "Paul Ganzeboom", title: "Chief Executive Officer" },
+      { name: "Javier Murillo", title: "Chief Executive Officer" },
       { name: "Mark Koole", title: "Chief Financial Officer" },
+      { name: "C. E. Langedijk", title: "Chief Operating Officer" },
     ],
     milestones: [
       {
@@ -297,8 +304,9 @@ export const companies: PortCo[] = [
     country: "Spain",
     ownershipVehicle: "3i Managed Infrastructure Acquisitions (MIA)",
     description:
-      "Autovias de Peaje en Sombra is a Spanish holding company that owns two long-term shadow toll road concessions: the Autovia del Noroeste (RM-15), a 62.4 km motorway in the Region of Murcia operating since 2001, and the Autovia del Turia (CV-35), a 53 km motorway in the Valencian Community operating since 2008. Under the shadow toll model, regional governments pay an annual per-vehicle fee based on traffic volume rather than tolling drivers directly.",
+      "Autovias de Peaje en Sombra is a Spanish holding company that owns two long-term shadow toll road concessions: the Autovia del Noroeste (RM-15), a 62.4 km motorway in the Region of Murcia operating since 2001, and the Autovia del Turia (CV-35), a 49.4 km motorway in the Valencian Community operating since 2008. Sacyr Concesiones holds 51% and manages both concessions while 3i holds 49%. Under the shadow toll model, regional governments pay an annual per-vehicle fee based on traffic volume rather than tolling drivers directly. The RM-15 was the first shadow toll concession in modern Spanish history and features a 360-metre viaduct crossing the La Cierva reservoir.",
     status: "Active",
+    website: "https://sacyrconcesiones.com/-/autovia-aunor",
     yearFounded: 2010,
     investmentYear: 2017,
     headquarters: "Madrid, Spain",
@@ -399,6 +407,10 @@ export const companies: PortCo[] = [
       {
         label: "Belfast City Airport — Official Website",
         url: "https://www.belfastcityairport.com",
+      },
+      {
+        label: "Belfast City Airport — Wikipedia",
+        url: "https://en.wikipedia.org/wiki/Belfast_City_Airport",
       },
     ],
   },
@@ -550,6 +562,10 @@ export const companies: PortCo[] = [
       {
         label: "3i Infrastructure — Sale Announcement (2019)",
         url: "https://www.3i-infrastructure.com/newsroom/press-releases/2019/3i-infrastructure-plc-agrees-to-sell-its-stake-in-cross-london-trains",
+      },
+      {
+        label: "HICL — Cross London Trains Project Page",
+        url: "https://www.hicl.com/portfolio/project/cross-london-trains-uk/",
       },
     ],
   },
@@ -945,6 +961,12 @@ export const companies: PortCo[] = [
           "3i Infrastructure sells its 39.3% stake in Elenia to a consortium of Allianz Capital Partners, Macquarie Infrastructure and Real Assets, and the State Pension Fund of Finland for approximately £725 million",
       },
       {
+        date: "July 2019",
+        category: "Divestiture",
+        event:
+          "Elenia sells its district heating subsidiary Elenia Lämpö Oy (now Loimua), completing the separation of heating operations from the electricity distribution business",
+      },
+      {
         date: "January 2012",
         category: "Financing",
         event:
@@ -955,6 +977,12 @@ export const companies: PortCo[] = [
         category: "Acquisition",
         event:
           "LNI Acquisition Oy signs agreement to acquire Vattenfall's electricity distribution and district heating operations in Finland for €1.54 billion; later rebranded as Elenia",
+      },
+      {
+        date: "2009",
+        category: "Expansion",
+        event:
+          "Elenia (then Vattenfall Verkko) becomes the first Finnish DSO to adopt a weatherproof underground cabling strategy for rural areas, a pioneering decision that would shape the company's long-term network investment programme",
       },
     ],
     sources: [
@@ -969,6 +997,10 @@ export const companies: PortCo[] = [
       {
         label: "Elenia — About Us",
         url: "https://www.elenia.fi/en/elenia/company/about-us",
+      },
+      {
+        label: "Elenia — Story of Elenia",
+        url: "https://www.elenia.fi/en/elenia/company/about-us/story-of-elenia",
       },
     ],
   },
@@ -1009,7 +1041,13 @@ export const companies: PortCo[] = [
         date: "January 2010",
         category: "Other",
         event:
-          "Renamed from HSBC Rail to Eversholt Rail in preparation for sale",
+          "Renamed from HSBC Rail to Eversholt Rail in preparation for sale by HSBC, restoring the original brand identity",
+      },
+      {
+        date: "November 1995",
+        category: "Financing",
+        event:
+          "British Rail sells Eversholt Rail via management buyout for £580 million as part of the privatisation of British Rail's rolling stock leasing operations",
       },
       {
         date: "March 1994",
@@ -1026,6 +1064,10 @@ export const companies: PortCo[] = [
       {
         label: "Wikipedia — Eversholt Rail Group",
         url: "https://en.wikipedia.org/wiki/Eversholt_Rail_Group",
+      },
+      {
+        label: "Eversholt Rail — About Us",
+        url: "https://eversholtrail.co.uk/about-us/",
       },
     ],
   },
@@ -1225,6 +1267,10 @@ export const companies: PortCo[] = [
         label: "Future Biogas — AstraZeneca Unsubsidised Biomethane Plant",
         url: "https://www.futurebiogas.com/about/content-hub/news/future-biogas-and-astrazeneca-bring-the-uk-s-first-unsubsidised-biomethane-plant-online/",
       },
+      {
+        label: "NatWest — Future Biogas Sustainable Growth",
+        url: "https://www.natwest.com/business/insights/sector-trends/natural-resources-renewables-and-utilities/future-biogas-sustainable-growth-in-the-renewable-energy-sector.html",
+      },
     ],
   },
   {
@@ -1285,8 +1331,33 @@ export const companies: PortCo[] = [
     headquarters: "Bologna, Italy",
     management: [
       { name: "Andrea Ramonda", title: "Chief Executive Officer" },
+      { name: "Cristian Fabbri", title: "President" },
     ],
     milestones: [
+      {
+        date: "January 2025",
+        category: "Acquisition",
+        event:
+          "Herambiente completes acquisition of 100% of Aliplast S.p.A., a European leader in recycled plastic processing over 100,000 tons annually, finalising an integration process that began in 2017",
+      },
+      {
+        date: "November 2020",
+        category: "Expansion",
+        event:
+          "Herambiente subsidiary HASI and Eni Rewind establish joint venture HEA to build a new special waste treatment platform in Ravenna capable of processing up to 60,000 tons of oil and gas waste per year",
+      },
+      {
+        date: "July 2019",
+        category: "Other",
+        event:
+          "Waste Recycling merges into Herambiente, making the combined entity the leading industrial waste operator in Italy with over one million tonnes treated annually",
+      },
+      {
+        date: "January 2017",
+        category: "Acquisition",
+        event:
+          "Herambiente begins acquisition of Aliplast, a leading Italian recycled plastics company, in a deal valued at approximately €100 million (6.5x EV/EBITDA)",
+      },
       {
         date: "December 2016",
         category: "Financing",
@@ -1297,7 +1368,7 @@ export const companies: PortCo[] = [
         date: "July 2009",
         category: "Founding",
         event:
-          "Herambiente founded as a dedicated waste management subsidiary of Hera Group",
+          "Herambiente founded as a dedicated waste management subsidiary of Hera Group, consolidating the group's environmental operations",
       },
     ],
     sources: [
@@ -1308,6 +1379,10 @@ export const companies: PortCo[] = [
       {
         label: "Herambiente — About Us",
         url: "https://ha.gruppohera.it/about-us",
+      },
+      {
+        label: "Hera Group — Herambiente S.p.A.",
+        url: "https://eng.gruppohera.it/group_eng/who-we-are/the-hera-group-companies/herambiente-spa",
       },
     ],
   },
@@ -1329,8 +1404,15 @@ export const companies: PortCo[] = [
     management: [
       { name: "Bruce Heppenstall", title: "Chief Executive Officer" },
       { name: "Keith Reid", title: "Chief Financial Officer" },
+      { name: "James Milne", title: "Chief Commercial Officer" },
     ],
     milestones: [
+      {
+        date: "March 2025",
+        category: "Financing",
+        event:
+          "Infinis secures an expanded £391 million financing package from Rabobank, CIBC, DNB and existing lenders to fund development of 257MW of new solar capacity and continued renewable energy growth",
+      },
       {
         date: "April 2018",
         category: "Acquisition",
@@ -1344,10 +1426,22 @@ export const companies: PortCo[] = [
           "3i Infrastructure acquires Infinis's landfill gas business from Terra Firma Capital Partners for £185 million",
       },
       {
+        date: "November 2013",
+        category: "Financing",
+        event:
+          "Infinis Energy plc completes IPO on the Main Market of the London Stock Exchange after seven years of ownership by Terra Firma Capital Partners",
+      },
+      {
+        date: "November 2009",
+        category: "Acquisition",
+        event:
+          "Infinis acquires Novera Energy for £111.5 million at 77p per share, adding landfill gas, hydroelectric, and wind development sites to the portfolio",
+      },
+      {
         date: "2006",
         category: "Founding",
         event:
-          "Infinis created as a subsidiary of Waste Recycling Group to generate electricity from landfill gas",
+          "Infinis created as a subsidiary of Waste Recycling Group to generate electricity from landfill gas; Terra Firma retains Infinis when it sells WRG",
       },
     ],
     sources: [
@@ -1358,6 +1452,10 @@ export const companies: PortCo[] = [
       {
         label: "Infinis — About Us",
         url: "https://infinis.com/about-us",
+      },
+      {
+        label: "Infinis — £391m Financing Announcement",
+        url: "https://infinis.com/news/infinis-secures-391-million-financing-package-to-power-next-phase-of-renewable-growth",
       },
     ],
   },
@@ -1378,8 +1476,15 @@ export const companies: PortCo[] = [
     headquarters: "Civrieux d'Azergues, France",
     management: [
       { name: "Christoph Herkens", title: "President" },
+      { name: "Mohamed Bounaamani", title: "Chief Financial Officer" },
     ],
     milestones: [
+      {
+        date: "August 2023",
+        category: "Acquisition",
+        event:
+          "Ionisos acquires an e-beam sterilisation and crosslinking facility from Studer Cables AG in Däniken, Switzerland, expanding its European footprint to five countries",
+      },
       {
         date: "September 2019",
         category: "Financing",
@@ -1387,10 +1492,28 @@ export const companies: PortCo[] = [
           "3i Infrastructure acquires approximately 95% of Ionisos from Ardian Expansion for circa €220 million",
       },
       {
+        date: "2017",
+        category: "Acquisition",
+        event:
+          "Ionisos acquires Scandinavian Clinics Estonia, the Baltic specialist in gamma radiation sterilisation, expanding into its fourth European market",
+      },
+      {
+        date: "2007",
+        category: "Acquisition",
+        event:
+          "Ionisos acquires IONMED in Spain, a specialist in beta treatment (e-beam), marking the start of its European expansion beyond France",
+      },
+      {
+        date: "2004",
+        category: "Expansion",
+        event:
+          "Ionisos adds ethylene oxide as a third sterilisation technology by opening its first EO treatment site in Gien through subsidiary STERYLENE",
+      },
+      {
         date: "1993",
         category: "Founding",
         event:
-          "Ionisos founded through the merger of Conservatome (established 1956) and Amphytrion",
+          "Ionisos founded through the merger of Conservatome (established 1956) and Amphytrion, combining gamma irradiation expertise",
       },
     ],
     sources: [
@@ -1401,6 +1524,10 @@ export const companies: PortCo[] = [
       {
         label: "Ionisos — Our History",
         url: "https://www.ionisos.com/en/ionisos-sterilization-by-gamma-and-beta-ionization-and-ethylene-oxide/our-history/",
+      },
+      {
+        label: "Orrick — Ionisos Acquisition of Studer Cables Facility",
+        url: "https://www.orrick.com/en/News/2023/08/Orrick-Advised-Ionisos-on-Acquisition-from-Studer-Cables-AG",
       },
     ],
   },
@@ -1421,13 +1548,26 @@ export const companies: PortCo[] = [
     headquarters: "Delft, Netherlands",
     management: [
       { name: "Sytse Zuidema", title: "Chief Executive Officer" },
+      { name: "Paul Smits", title: "Chief Financial Officer" },
     ],
     milestones: [
       {
         date: "April 2021",
         category: "Acquisition",
         event:
-          "Joulz acquires Zonel Energy, a leading B2B solar rooftop solutions provider in the Netherlands",
+          "Joulz acquires Zonel Energy (renamed Joulz Solar Energy), a leading B2B solar rooftop solutions provider, increasing Joulz's turnover by approximately 20%",
+      },
+      {
+        date: "2020",
+        category: "Acquisition",
+        event:
+          "Joulz acquires the Dutch charge point operator and e-mobility service provider division of GreenFlux, entering the EV charging market",
+      },
+      {
+        date: "March 2020",
+        category: "Management",
+        event:
+          "Sjoerd Vollebregt appointed Chairman of Joulz, bringing experience as Chair of Heijmans N.V. and former CEO of Vopak",
       },
       {
         date: "April 2019",
@@ -1439,7 +1579,7 @@ export const companies: PortCo[] = [
         date: "2004",
         category: "Founding",
         event:
-          "Joulz established as a subsidiary of Stedin Group to provide energy infrastructure equipment and metering services",
+          "Joulz established as a subsidiary of Stedin Group to provide energy infrastructure equipment and metering services in the Netherlands",
       },
     ],
     sources: [
@@ -1450,6 +1590,10 @@ export const companies: PortCo[] = [
       {
         label: "Joulz — About Us",
         url: "https://joulz.nl/nl/about-us",
+      },
+      {
+        label: "3i Infrastructure — Joulz Acquires Zonel Energy",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2021/joulz-expands-into-solar-energy-through-the-acquisition-of-zonel-energy/",
       },
     ],
   },
@@ -2984,22 +3128,28 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Actis Energy 5",
-    description: "Catalyze is a fully integrated developer and independent power producer of distributed renewable energy assets including solar, battery storage, and EV charging systems for commercial and industrial customers. Founded in 2017 and headquartered in Houston, the company operates a multi-gigawatt platform backed by Actis and EnCap Investments.",
+    description: "Catalyze is a fully integrated developer and independent power producer of distributed solar, battery storage, and EV charging systems for commercial and industrial customers across 30 US states. Founded in 2017 and headquartered in Houston, the company has deployed over 300 MW with a 1 GW+ development pipeline. Backed by Actis and EnCap Investments since 2023, Catalyze owns proprietary technologies including REenergyze and SolarStrap mounting systems.",
     status: "Active",
     website: "https://catalyze.com/",
     yearFounded: 2017,
-    investmentYear: 2021,
+    investmentYear: 2023,
     headquarters: "Houston, TX",
     management: [
       { name: "Jared Haines", title: "Chief Executive Officer" },
+      { name: "Brian McDonald", title: "Chief Operating Officer" },
+      { name: "Terrill Laughton", title: "Chief Commercial Officer" },
     ],
     milestones: [
-      { date: "2017-01", event: "Catalyze founded as a distributed clean energy developer and independent power producer", category: "Founding" },
-      { date: "2025-09", event: "Catalyze secures $200M HoldCo revolving and term facility from Deutsche Bank to accelerate clean energy growth", category: "Financing" },
-      { date: "2026-01", event: "Catalyze closes 100 MW distributed solar tax equity financing with RBC to support 18 projects across four states", category: "Financing" },
+      { date: "2017", event: "Catalyze founded as a distributed clean energy developer and independent power producer", category: "Founding" },
+      { date: "Feb 2023", event: "Actis acquires co-control stake in Catalyze from Actis Energy 5, partnering with EnCap Investments to target 600 MW build-out", category: "Financing" },
+      { date: "May 2024", event: "Catalyze secures $100M financing from NY Green Bank for 79 MW community solar portfolio across New York State", category: "Financing" },
+      { date: "Mar 2025", event: "Catalyze closes $400M multiyear debt facility from ATLAS SP Partners to support distributed energy portfolio", category: "Financing" },
+      { date: "Sep 2025", event: "Catalyze secures $200M HoldCo revolving and term facility from Deutsche Bank to accelerate clean energy growth", category: "Financing" },
+      { date: "Jan 2026", event: "Catalyze closes 100 MW distributed solar tax equity financing with RBC to support 18 projects across four states", category: "Financing" },
     ],
     sources: [
       { label: "Catalyze Company Website", url: "https://catalyze.com/" },
+      { label: "Actis Catalyze Investment Announcement", url: "https://www.act.is/2023/02/28/actis-and-encap-invest-in-us-solar-platform-catalyze/" },
       { label: "Catalyze $200M Deutsche Bank Facility", url: "https://www.businesswire.com/news/home/20250903947135/en/Catalyze-Secures-$200-Million-HoldCo-Facility-from-Deutsche-Bank-to-Accelerate-Clean-Energy-Growth-Nationwide" },
     ],
   },
@@ -3007,53 +3157,63 @@ export const companies: PortCo[] = [
     name: "NextStream",
     investmentFirm: "Actis",
     sector: "Digital Infrastructure",
-    subsector: "",
-    region: "North America",
-    country: "United States",
+    subsector: "Data Centers",
+    region: "Latin America",
+    country: "Brazil (Pan-Latin America)",
     ownershipVehicle: "Actis Long Life Infrastructure Fund (ALLIF)",
-    description: "NextStream is a data center platform operating 11 carrier-neutral facilities across six markets in Latin America and the United States. Acquired by Actis from Asterion/Nabiax in 2023, the portfolio has a combined IT load capacity of 25 MW with significant expansion potential, anchored by a long-term tenant contract with Telefonica.",
+    description: "NextStream is a carrier-neutral data center platform operating 11 facilities across Brazil, Chile, Mexico, Peru, Argentina, and the US (Miami), with a combined IT load capacity of 25 MW. Acquired by Actis from Asterion/Nabiax in 2023, the platform is anchored by a long-term Telefonica tenant contract and targets hyperscaler expansion across Latin America, a region with approximately 15x less data center capacity than the US on a per-capita basis.",
     status: "Active",
     website: "https://nextstream.com/en/",
     yearFounded: 2023,
     investmentYear: 2023,
-    headquarters: "London, United Kingdom",
+    headquarters: "Sao Paulo, Brazil",
     management: [
       { name: "Serafim Abreu Junior", title: "Chief Executive Officer" },
+      { name: "Vitor Melo", title: "Chief Financial Officer" },
       { name: "Eduardo Reigada", title: "Chief Operating Officer" },
     ],
     milestones: [
-      { date: "2023-03", event: "Actis acquires 11 data centers across six countries from Asterion/Nabiax, rebranding the platform as NextStream", category: "Acquisition" },
-      { date: "2025-01", event: "NextStream appoints Serafim Abreu Junior as CEO to lead Latin American expansion strategy", category: "Management" },
+      { date: "Mar 2023", event: "Actis acquires 11 data centers across six countries from Asterion/Nabiax, rebranding the platform as NextStream", category: "Acquisition" },
+      { date: "Oct 2024", event: "Actis merges with General Atlantic, creating a combined $118B platform; NextStream benefits from expanded resources", category: "Financing" },
+      { date: "Jan 2025", event: "NextStream appoints Serafim Abreu Junior (former Scala CFO) as CEO, replacing Jorge Abadia Pozuelo who moves to board role", category: "Management" },
+      { date: "2025", event: "NextStream launches integrated data center management hub to centralize operations across Latin American portfolio", category: "Expansion" },
+      { date: "Dec 2025", event: "Actis launches sister platform TERRANOVA for hyperscale facilities, complementing NextStream's colocation footprint", category: "Expansion" },
     ],
     sources: [
       { label: "Actis NextStream Portfolio", url: "https://www.act.is/about-us/portfolio/thunder-nextstream/" },
       { label: "NextStream CEO Appointment", url: "https://www.datacenterdynamics.com/en/news/nextstream-appoints-new-ceo-expands-latam-operations/" },
+      { label: "NextStream Company Overview", url: "https://nextstream.com/en/sobre-nos/" },
     ],
   },
     {
     name: "TERRANOVA",
     investmentFirm: "Actis",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Hyperscale Data Centers",
     region: "Latin America",
     country: "Mexico (Pan-Latin America)",
     ownershipVehicle: "Actis Digital Infrastructure",
-    description: "TERRANOVA is a hyperscale data center platform launched by Actis in December 2025 to accelerate Latin America's digital expansion. The company plans to invest $1.5 billion over three years to develop modern campuses in Brazil, Mexico, and Chile, with secured land and power representing up to 1 GW of future capacity for AI and cloud infrastructure.",
+    description: "TERRANOVA is a hyperscale data center platform launched by Actis (now part of General Atlantic) in December 2025 to accelerate Latin America's digital expansion. With a $1.5 billion investment commitment over three years, the company is developing campuses in Queretaro and San Miguel de Allende (Mexico), Campinas (Brazil), and Chile, with secured land and power representing up to 1 GW of future capacity for AI, cloud, and enterprise workloads.",
     status: "Active",
-    website: "https://www.act.is/about-us/portfolio/",
+    website: "https://dcterranova.com/",
     yearFounded: 2025,
     investmentYear: 2025,
     headquarters: "Sao Paulo, Brazil",
     management: [
       { name: "Jose Eduardo Quintella", title: "Chief Executive Officer" },
+      { name: "Mauricio Giusti", title: "Partner, Actis (Board Sponsor)" },
     ],
     milestones: [
-      { date: "2025-12", event: "Actis launches TERRANOVA as a $1.5B hyperscale data center platform for Latin America", category: "Founding" },
-      { date: "2026-01", event: "TERRANOVA's first data center campus in Queretaro, Mexico achieves operational readiness", category: "Expansion" },
+      { date: "Oct 2024", event: "Actis merges with General Atlantic, creating combined $118B platform that will back TERRANOVA's launch", category: "Financing" },
+      { date: "Dec 2025", event: "Actis launches TERRANOVA as a $1.5B hyperscale data center platform for Latin America with secured land and power for up to 1 GW", category: "Founding" },
+      { date: "Jan 2026", event: "TERRANOVA's first data center campus in Queretaro, Mexico becomes operational with 8.12 MW initial IT capacity", category: "Expansion" },
+      { date: "2026", event: "TERRANOVA begins construction of second campus in San Miguel de Allende, Guanajuato with 8 MW planned capacity", category: "Expansion" },
+      { date: "2027", event: "New campuses planned for Campinas, Brazil and Chile to expand regional hyperscale footprint", category: "Expansion" },
     ],
     sources: [
       { label: "Actis TERRANOVA Launch", url: "https://www.act.is/2025/12/02/actis-launches-new-latin-american-hyperscale-data-center-platform-terranova-to-accelerate-latin-americas-digital-expansion/" },
       { label: "TERRANOVA Mexico Launch", url: "https://www.datacenterdynamics.com/en/news/terranova-launches-in-mexico-with-its-first-data-center-campus/" },
+      { label: "TERRANOVA Company Website", url: "https://dcterranova.com/en/blog/terranova-do-fundo-actis-entra-no-setor-de-data-centers-de-hiperescala" },
     ],
   },
     {
@@ -3064,7 +3224,7 @@ export const companies: PortCo[] = [
     region: "Latin America",
     country: "Mexico",
     ownershipVehicle: "Actis Energy 5",
-    description: "Valia Energia is the leading private power producer in Mexico, operating 3.2 GW of installed capacity across seven natural gas-fired combined-cycle power plants and an adjacent 58-kilometer gas pipeline. Formed by Actis in 2022 through the acquisition of MT Falcon, the company sells power to Mexico's Federal Electricity Commission under long-term contracts and is positioned to benefit from rising demand driven by nearshoring.",
+    description: "Valia Energia is the leading private power producer in Mexico, operating 3.2 GW of installed capacity across seven natural gas-fired combined-cycle plants in Tamaulipas, Coahuila, and the State of Mexico, plus a 58-kilometer gas pipeline. Formed by Actis in 2022 through acquisition of MT Falcon for $360M and expanded via the EVM Energia bolt-on, the company represents over 15% of Mexico's energy supply and ranks among Latin America's top 10 independent generators.",
     status: "Active",
     website: "https://valiaenergia.com/en/",
     yearFounded: 2022,
@@ -3073,15 +3233,19 @@ export const companies: PortCo[] = [
     management: [
       { name: "Narcis de Carreras Roques", title: "Chief Executive Officer" },
       { name: "Fernando Suarez", title: "Chief Financial Officer" },
+      { name: "Alberto Estefan", title: "Partner, Actis (Board Member)" },
     ],
     milestones: [
-      { date: "2022-11", event: "Actis completes acquisition of MT Falcon's five combined-cycle gas plants (2.2 GW) and gas pipeline, rebranding as Valia Energia", category: "Acquisition" },
-      { date: "2023-10", event: "Valia Energia completes acquisition of EVM Energia, adding 950 MW to reach 3.2 GW total installed capacity", category: "Acquisition" },
-      { date: "2024-01", event: "Valia Energia issues $530M 15-year international bond, winning LatinFinance Bond of the Year", category: "Financing" },
+      { date: "Nov 2022", event: "Actis completes $360M acquisition of MT Falcon (2.2 GW, five CCGT plants and gas pipeline) from Mitsui/Tokyo Gas/JERA consortium, rebranding as Valia Energia", category: "Financing" },
+      { date: "Jul 2023", event: "Valia Energia acquires EVM Energia, adding two gas plants (850 MW EVM II H-Class and 100 MW EVM I) for 3.2 GW total capacity", category: "Acquisition" },
+      { date: "Oct 2023", event: "Valia Energia completes integration of EVM assets, consolidating position among Latin America's top 10 independent generators", category: "Acquisition" },
+      { date: "Jan 2024", event: "Valia Energia issues $530M 15-year project bond at 7.875% coupon, 5.5x oversubscribed; first Mexican project bond since 2020, winning LatinFinance Bond of the Year", category: "Financing" },
+      { date: "2025", event: "Valia Energia earns ESR (Socially Responsible Enterprise) distinction, Great Place to Work certification, and TOP Companies recognition", category: "Expansion" },
     ],
     sources: [
       { label: "Actis Valia Energia Portfolio", url: "https://www.act.is/about-us/portfolio/valia-energia/" },
       { label: "Valia Energia EVM Acquisition", url: "https://valiaenergia.com/wp-content/uploads/2023/10/Valia-Energia-Press-Release-ENGLISH-VF.pdf" },
+      { label: "Milbank $530M Bond Advisory", url: "https://www.milbank.com/en/news/milbank-advises-valia-energia-on-dollar530m-project-bond-financing-to-expand-footprint-in-mexican-energy-market.html" },
     ],
   },
   // ─── Allianz Global Investors ───────────────────────────────
@@ -3687,8 +3851,8 @@ export const companies: PortCo[] = [
     subsector: "Renewables",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Not Disclosed",
-    description: "Noventa Energy Partners is a global renewable energy company providing decarbonised heating and cooling solutions using proprietary Wastewater Energy Transfer (WET) technology. Founded in 2018 and headquartered in Toronto, Noventa develops customized systems that harness thermal energy from wastewater to provide heating and cooling without Scope 1 greenhouse gas emissions, with projects across Canada, the UK, and the US.",
+    ownershipVehicle: "Ancala Infrastructure Fund III",
+    description: "Noventa Energy Partners develops and operates proprietary Wastewater Energy Transfer (WET) systems using HUBER ThermWin technology to provide zero-Scope-1-emission heating and cooling for large buildings. Founded in 2018 by former Enwave CEO Dennis Fotinos and headquartered in Toronto, the company's flagship $42.9M Toronto Western Hospital project will supply 19 MW of thermal energy, eliminating 250,000 tonnes of CO2 over 30 years. Noventa has a pipeline across Canada, the UK, and the US backed by CAD $166M from Ancala and the Canada Infrastructure Bank.",
     status: "Active",
     website: "https://www.noventaenergy.com/",
     yearFounded: 2018,
@@ -3696,13 +3860,19 @@ export const companies: PortCo[] = [
     headquarters: "Toronto, ON, Canada",
     management: [
       { name: "Dennis Fotinos", title: "Chief Executive Officer" },
+      { name: "Cam Quinn", title: "Vice President of Project Delivery" },
+      { name: "Karl Drage", title: "Country Head, England and Wales" },
     ],
     milestones: [
-      { date: "2018-02", event: "Dennis Fotinos founds Noventa Energy Partners with a mission to decarbonize heating and cooling through wastewater energy transfer", category: "Founding" },
-      { date: "2023-03", event: "Ancala Partners acquires majority interest in Noventa Energy on behalf of Ancala Infrastructure Fund III, with CAD 100M Canada Infrastructure Bank facility", category: "Financing" },
+      { date: "2018", event: "Dennis Fotinos founds Noventa Energy Partners as a platform for renewable energy innovation after 20 years leading Enwave Energy Corporation", category: "Founding" },
+      { date: "Oct 2021", event: "Canada Infrastructure Bank reaches financial close on $42.9M Toronto Western Hospital WET system, the world's largest raw wastewater energy transfer project", category: "Financing" },
+      { date: "Mar 2023", event: "Ancala Partners acquires majority interest in Noventa on behalf of Ancala Infrastructure Fund III", category: "Financing" },
+      { date: "Apr 2023", event: "Canada Infrastructure Bank and Ancala commit CAD $166M ($100M CIB + $66M Ancala) to fund nine Toronto WET retrofit projects", category: "Financing" },
+      { date: "2026", event: "Toronto Western Hospital WET system targeted to become operational, supplying 90% of the hospital's heating and cooling needs", category: "Expansion" },
     ],
     sources: [
       { label: "Ancala Noventa Acquisition", url: "https://ancala.com/ancala-partners-acquires-decarbonised-heating-and-cooling-provider-noventa/" },
+      { label: "CIB $100M Noventa Investment", url: "https://ancala.com/canada-infrastructure-bank-invests-100-million-with-ancala-backed-noventa-to-decarbonise-buildings/" },
       { label: "Noventa Energy Partners", url: "https://www.noventaenergy.com/" },
     ],
   },
