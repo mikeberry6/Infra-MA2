@@ -505,7 +505,7 @@ export const companies: PortCo[] = [
     country: "Spain",
     ownershipVehicle: "3i Managed Infrastructure Acquisitions (MIA)",
     description:
-      "Concesiones de Intercambiadores de Transporte (CIT) holds long-term concessions for two intermodal transport interchanges in Madrid — the Moncloa and Plaza Eliptica bus terminals. These underground hubs connect intercity and long-distance bus lines with the Metro network and municipal buses, collectively serving over 90 million passengers annually.",
+      "Concesiones de Intercambiadores de Transporte (CIT) holds long-term concessions for two intermodal transport interchanges in Madrid — the Moncloa and Plaza Eliptica bus terminals. These underground multi-level hubs connect intercity and long-distance bus lines with the Madrid Metro network and municipal buses, collectively serving over 90 million passengers annually and removing approximately 15,500 buses daily from Madrid's streets. Sacyr Concesiones holds 51% and manages operations, while 3i holds the remaining 49%. The interchanges were built as part of Madrid's Plan de Intercambiadores alongside Plaza de Castilla and Principe Pio, with combined debt of approximately €190 million.",
     status: "Active",
     website: "https://sacyrconcesiones.com/en/-/intercambiador-moncloa",
     yearFounded: 2007,
@@ -1838,18 +1838,35 @@ export const companies: PortCo[] = [
     country: "India",
     ownershipVehicle: "3i India Infrastructure Fund",
     description:
-      "Krishnapatnam Port Company Limited operates a natural deep-water, all-weather port on the east coast of Andhra Pradesh. Developed under a 50-year build-operate-share-transfer concession, it grew to become the largest private port on India's east coast, handling over 60 million tonnes of cargo annually across bulk, container, and liquid terminals.",
+      "Krishnapatnam Port Company Limited (KPCL) operates a natural deep-water, all-weather port on the east coast of Andhra Pradesh, approximately 190 km north of Chennai. Developed by the CVR Group under a 50-year build-operate-share-transfer concession, it grew to become the largest private port on India's east coast and one of only three Indian ports capable of receiving capesize vessels (200,000 DWT). The port features a 12.5 km waterfront, 18.5m alongside draught, and over 6,700 acres of land, handling over 60 million tonnes of cargo annually. Adani Ports acquired full ownership in 2020–2021 for a total of approximately ₹13,675 crore ($1.8 billion).",
     status: "Realized",
     website: "https://www.krishnapatnam.com/",
     yearFounded: 2003,
     investmentYear: 2009,
     headquarters: "Nellore, Andhra Pradesh",
+    management: [
+      { name: "Anil K. Yendluri", title: "Chief Executive Officer" },
+      { name: "Chinta Sasidhar", title: "President" },
+      { name: "Chinta Visweswara Rao", title: "Chairman" },
+    ],
     milestones: [
+      {
+        date: "April 2021",
+        category: "Divestiture",
+        event:
+          "Adani Group acquires the residual 25% stake in KPCL, bringing total ownership to 100% and total consideration to approximately ₹13,675 crore ($1.8 billion)",
+      },
       {
         date: "October 2020",
         category: "Divestiture",
         event:
-          "Adani Ports & SEZ acquires 75% stake in KPCL from CVR Group and other investors including 3i, providing 3i with an exit",
+          "Adani Ports & SEZ acquires 75% stake in KPCL from CVR Group and other investors including 3i for an enterprise value of ₹12,000 crore, providing 3i with an exit",
+      },
+      {
+        date: "September 2012",
+        category: "Expansion",
+        event:
+          "KPCL inaugurates its container terminal with capacity of 1.2 million TEUs per year, equipped with five Panamax gantry cranes and nine rubber tyre gantry cranes",
       },
       {
         date: "February 2009",
@@ -1861,13 +1878,13 @@ export const companies: PortCo[] = [
         date: "July 2008",
         category: "Expansion",
         event:
-          "Krishnapatnam Port inaugurated after Phase I completed in a record 18 months; begins commercial operations handling iron ore and coal",
+          "Krishnapatnam Port inaugurated by UPA Chairperson Sonia Gandhi after Phase I completed in a record 18 months; begins commercial operations handling iron ore and coal",
       },
       {
         date: "2003",
         category: "Founding",
         event:
-          "Krishnapatnam Port Company Limited formed by the CVR Group to develop the port under a 50-year BOST concession from Andhra Pradesh",
+          "Krishnapatnam Port Company Limited formed by the CVR Group (Navayuga Engineering) to develop the port under a 50-year BOST concession from Andhra Pradesh",
       },
     ],
     sources: [
@@ -1878,6 +1895,10 @@ export const companies: PortCo[] = [
       {
         label: "Wikipedia — Krishnapatnam Port",
         url: "https://en.wikipedia.org/wiki/Krishnapatnam_Port",
+      },
+      {
+        label: "Adani Ports — Krishnapatnam Port Acquisition",
+        url: "https://origin-webapp.adaniports.com/newsroom/media-releases/adani-ports-and-sez-ltd-completes-rs-12000-cr-acquisition-of-krishnapatnam-port-company-ltd-kpcl",
       },
     ],
   },
@@ -2305,6 +2326,7 @@ export const companies: PortCo[] = [
     headquarters: "Middlewich, Cheshire",
     management: [
       { name: "Mark Eburne", title: "Chief Executive Officer" },
+      { name: "Chris Riley", title: "Chief Operating Officer" },
     ],
     milestones: [
       {
@@ -2318,6 +2340,18 @@ export const companies: PortCo[] = [
         category: "Financing",
         event:
           "3i Infrastructure completes acquisition of 92% stake in SRL Traffic Systems for approximately £191 million",
+      },
+      {
+        date: "September 2019",
+        category: "Financing",
+        event:
+          "LDC invests £24 million to back a management buyout of SRL led by CEO Richard Tredwin, fueling 72% revenue growth over two years",
+      },
+      {
+        date: "2018",
+        category: "Expansion",
+        event:
+          "SRL forms the Urban64 division and signs an exclusive UK and RoI variable message sign hire deal with SWARCO",
       },
       {
         date: "1997",
@@ -2334,6 +2368,10 @@ export const companies: PortCo[] = [
       {
         label: "SRL Traffic Systems — Our History",
         url: "https://srl.co.uk/about/our-history/",
+      },
+      {
+        label: "LDC — SRL Traffic Systems Investment",
+        url: "https://www.ldc.co.uk/portfolio/srl-traffic-systems-investment-to-accelerate-growth/",
       },
     ],
   },
@@ -2525,6 +2563,8 @@ export const companies: PortCo[] = [
     headquarters: "Steenokkerzeel, Belgium",
     management: [
       { name: "Jason Watson", title: "Chief Executive Officer" },
+      { name: "Tom Bellekens", title: "Executive Chairman" },
+      { name: "Bruno Velkeniers", title: "Chief Commercial Officer" },
     ],
     milestones: [
       {
@@ -2534,10 +2574,28 @@ export const companies: PortCo[] = [
           "Global Infrastructure Partners (BlackRock) agrees to acquire TCR from 3i Infrastructure; 3i sells its 71% stake for €1.14 billion",
       },
       {
+        date: "February 2025",
+        category: "Financing",
+        event:
+          "TCR completes a debt refinancing on attractive terms, enabling a £60 million distribution to 3i Infrastructure",
+      },
+      {
+        date: "2023",
+        category: "Expansion",
+        event:
+          "TCR secures an exclusive contract to supply a centralised all-electric GSE pool at JFK International Airport New Terminal One",
+      },
+      {
         date: "April 2016",
         category: "Financing",
         event:
           "3i Infrastructure and Deutsche Asset Management each acquire 50% economic interests in TCR from Chequers Capital and Florac for approximately €204 million each",
+      },
+      {
+        date: "2015",
+        category: "Expansion",
+        event:
+          "TCR expands into Asia, marking the beginning of its transformation from a European player into a global GSE leader",
       },
       {
         date: "1996",
@@ -2554,6 +2612,10 @@ export const companies: PortCo[] = [
       {
         label: "TCR Group — About Us",
         url: "https://www.tcr-group.com/about-us",
+      },
+      {
+        label: "GIP — Agrees to Acquire TCR",
+        url: "https://www.global-infra.com/news/global-infrastructure-partners-agrees-to-acquire-tcr/",
       },
     ],
   },
@@ -2575,6 +2637,7 @@ export const companies: PortCo[] = [
     management: [
       { name: "Elie Hanna", title: "Chief Executive Officer" },
       { name: "Kirsty Lawrence", title: "Chief Financial Officer" },
+      { name: "Trygve Hagevik", title: "Chief Commercial Officer" },
     ],
     milestones: [
       {
@@ -2584,10 +2647,22 @@ export const companies: PortCo[] = [
           "Tampnet acquires dasNetz AG, a leading German offshore wind connectivity provider",
       },
       {
+        date: "2020",
+        category: "Acquisition",
+        event:
+          "Tampnet acquires BP's 1,200 km offshore fibre cable system in the Gulf of Mexico, one of the most significant milestones in the company's history",
+      },
+      {
         date: "March 2019",
         category: "Financing",
         event:
           "3i Infrastructure and ATP complete acquisition of Tampnet from EQT Infrastructure for approximately €226 million",
+      },
+      {
+        date: "2017",
+        category: "Acquisition",
+        event:
+          "Tampnet acquires Broadpoint LLC, a pioneer in offshore communications in the Gulf of Mexico, and upgrades the GoM 2G network to 4G/LTE coverage",
       },
       {
         date: "2001",
@@ -2604,6 +2679,10 @@ export const companies: PortCo[] = [
       {
         label: "Tampnet — Company Website",
         url: "https://www.tampnet.com",
+      },
+      {
+        label: "Tampnet — BP Gulf of Mexico Fibre Acquisition",
+        url: "https://www.tampnet.com/press/tampnet-closes-acquisition-of-bps-1200km-gulf-of-mexico-fibre-network",
       },
     ],
   },
@@ -2658,6 +2737,8 @@ export const companies: PortCo[] = [
     headquarters: "Bègles, France",
     management: [
       { name: "Jean-Yves Grandidier", title: "President" },
+      { name: "Tristan Maes", title: "Chief Financial Officer" },
+      { name: "Frédéric Prévost", title: "Chief Executive Officer, VALEMO" },
     ],
     milestones: [
       {
@@ -2671,6 +2752,18 @@ export const companies: PortCo[] = [
         category: "Financing",
         event:
           "3i Infrastructure acquires a 28.5% interest in Valorem from Omnes Capital for €57 million",
+      },
+      {
+        date: "2012",
+        category: "Expansion",
+        event:
+          "VALOREM launches the first equity crowdfunding operation for a renewable energy park in France, in partnership with Crédit Coopératif",
+      },
+      {
+        date: "2011",
+        category: "Expansion",
+        event:
+          "VALEMO established as VALOREM's subsidiary specialising in the operation, maintenance, and supervision of renewable energy parks",
       },
       {
         date: "1994",
@@ -2687,6 +2780,10 @@ export const companies: PortCo[] = [
       {
         label: "VALOREM — Pioneers at Heart",
         url: "https://www.valorem-energie.com/en/pioneers-at-heart/",
+      },
+      {
+        label: "VALOREM — Organisation & Governance",
+        url: "https://www.valorem-energie.com/en/organisation-and-governance/",
       },
     ],
   },
