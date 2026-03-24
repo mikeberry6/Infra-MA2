@@ -507,10 +507,19 @@ export const companies: PortCo[] = [
     description:
       "Concesiones de Intercambiadores de Transporte (CIT) holds long-term concessions for two intermodal transport interchanges in Madrid — the Moncloa and Plaza Eliptica bus terminals. These underground hubs connect intercity and long-distance bus lines with the Metro network and municipal buses, collectively serving over 90 million passengers annually.",
     status: "Active",
+    website: "https://sacyrconcesiones.com/en/-/intercambiador-moncloa",
     yearFounded: 2007,
     investmentYear: 2017,
     headquarters: "Madrid, Spain",
+    // SPV concessions managed by Sacyr Concesiones; no dedicated C-suite management team
+    management: [],
     milestones: [
+      {
+        date: "2024",
+        category: "Other",
+        event:
+          "Comunidad de Madrid commissions economic-financial analysis of all five transport interchange concession contracts including Moncloa and Plaza Eliptica",
+      },
       {
         date: "June 2017",
         category: "Financing",
@@ -518,10 +527,16 @@ export const companies: PortCo[] = [
           "3i Managed Infrastructure Acquisitions completes acquisition of CIT as part of the EISER Global Infrastructure Fund portfolio",
       },
       {
+        date: "2009",
+        category: "Acquisition",
+        event:
+          "Sacyr Vallehermoso sells 49% of its stakes in CIT and two shadow toll roads to EISER Global Infrastructure Fund",
+      },
+      {
         date: "2008",
         category: "Expansion",
         event:
-          "Moncloa Transport Hub new bus terminal opens with expanded intercity bus capacity",
+          "Moncloa Transport Hub new bus terminal opens with expanded intercity bus capacity, incorporating cutting-edge navigation systems",
       },
       {
         date: "2007",
@@ -538,6 +553,10 @@ export const companies: PortCo[] = [
       {
         label: "Sacyr Concesiones — Plaza Eliptica Transport Hub",
         url: "https://sacyrconcesiones.com/en/-/intercambiador-plaza-eliptica",
+      },
+      {
+        label: "Madridiario — Moncloa y Plaza Eliptica, modelos de eficiencia",
+        url: "https://www.madridiario.es/451912/intercambiadores-moncloa-plaza-eliptica-modelos-eficiencia-accesibilidad",
       },
     ],
   },
@@ -614,22 +633,56 @@ export const companies: PortCo[] = [
     country: "France",
     ownershipVehicle: "3i European Operational Projects Fund",
     description:
-      "The DIF III French PPP Portfolio is a collection of eight operational public-private partnership projects in France acquired from DIF Infrastructure III. The portfolio comprises three educational facility projects, two prison portfolios (six prisons total), a multimodal train station, a batch of 12 fire stations, and a wastewater collection concession, all under long-term availability-based contracts backed by French public counterparties.",
+      "The DIF III French PPP Portfolio is a collection of eight operational public-private partnership projects in France acquired from DIF Infrastructure III. The portfolio comprises three educational facility projects, two prison portfolios — Themis (Le Havre, Le Mans, Poitiers) and Theia (Nantes, Lille-Annoeullin, Reau) with six prisons total — a multimodal train station, a batch of 12 fire stations, and a wastewater collection concession. All projects operate under long-term availability-based contracts backed by French public counterparties including the Ministry of Justice, with six of the eight originally developed as greenfield projects by DIF III.",
     status: "Active",
     investmentYear: 2020,
     headquarters: "Paris, France",
+    // Portfolio of eight SPV concessions; no unified C-suite management team
+    management: [],
     milestones: [
       {
         date: "January 2020",
+        category: "Financing",
+        event:
+          "3i European Operational Projects Fund agrees to acquire the portfolio of eight operational French PPPs from DIF Infrastructure III, deploying approximately 60% of EOPF's €456 million commitments",
+      },
+      {
+        date: "2015",
         category: "Acquisition",
         event:
-          "3i European Operational Projects Fund agrees to acquire a portfolio of eight operational PPP projects in France from DIF Infrastructure III",
+          "DIF Infrastructure III completes acquisition of 55.5% of Theia SAS from Bouygues Energies & Services, RBS, and Dexia, adding three prisons (Nantes, Lille-Annoeullin, Reau) to its French portfolio",
+      },
+      {
+        date: "September 2014",
+        category: "Acquisition",
+        event:
+          "DIF Infrastructure III acquires 81% of the Themis prison portfolio from RBS and Dexia Credit Local, comprising three prisons (Le Havre, Le Mans, Poitiers) under a PPP with the French Ministry of Justice",
+      },
+      {
+        date: "2011",
+        category: "Expansion",
+        event:
+          "Theia portfolio's three prisons (Nantes, Lille-Annoeullin, Reau) complete construction by Bouygues Construction subsidiaries and begin operations",
+      },
+      {
+        date: "2009",
+        category: "Expansion",
+        event:
+          "Themis portfolio's three prisons (Le Havre, Le Mans, Poitiers) complete construction and become fully operational under the Ministry of Justice PPP contract signed in October 2006",
       },
     ],
     sources: [
       {
         label: "3i Group — 3i EOPF Acquires French PPP Portfolio",
         url: "https://www.3i.com/media-centre/corporate-and-portfolio-news/2020/3i-european-operational-projects-fund-agrees-to-acquire-a-portfolio-of-eight-projects-in-france-and-completes-investment-in-agesa/",
+      },
+      {
+        label: "IPE Real Assets — 3i Infrastructure Fund Acquires French PPP Portfolio",
+        url: "https://realassets.ipe.com/news/3i-infrastructure-fund-acquires-french-ppp-portfolio-from-dif-capital-partners/10043146.article",
+      },
+      {
+        label: "DIF Capital Partners — Sale of French PPP Portfolio",
+        url: "https://www.dif.eu/news/dif-capital-partners-agrees-to-sell-a-portfolio-of-french-ppps/",
       },
     ],
   },
@@ -642,12 +695,27 @@ export const companies: PortCo[] = [
     country: "Germany",
     ownershipVehicle: "3i European Operational Projects Fund",
     description:
-      "DISA Assets Limited is a rolling stock leasing company that owns a fleet of 54 new Alstom Coradia Lint 41 diesel multiple-unit passenger trains leased to Abellio Rail Mitteldeutschland for regional rail services in Saxony-Anhalt, Germany. The trains connect Magdeburg to Wolfsburg, Stendal, Erfurt, Halle, and Goslar under a 14-year transport concession.",
+      "DISA Assets Limited is a rolling stock leasing company that owns a fleet of 54 new Alstom Coradia Lint 41 diesel multiple-unit passenger trains leased for regional rail services across Saxony-Anhalt, Germany. The fleet, the largest single Coradia Lint 41 order ever placed, was manufactured at Alstom's Salzgitter site at a cost of approximately €170 million. The trains connect Magdeburg to Wolfsburg, Stendal, Erfurt, Halle, and Goslar across 16 routes totalling 900 km. Originally leased to Abellio Rail Mitteldeutschland, operations transferred to Start Mitteldeutschland in December 2024 following Abellio's restructuring.",
     status: "Active",
+    website: "https://www.nasa.de/en/press/news/detail/news/start-mitteldeutschland-uebernimmt-den-betrieb-im-dieselnetz-sachsen-anhalt",
     yearFounded: 2016,
     investmentYear: 2019,
     headquarters: "Dublin, Ireland",
+    // SPV rolling stock leasing entity; no dedicated C-suite; trains operated by Start Mitteldeutschland
+    management: [],
     milestones: [
+      {
+        date: "December 2024",
+        category: "Management",
+        event:
+          "Start Mitteldeutschland (Regionalverkehre Start Deutschland GmbH) takes over operation of the DISA diesel network from Abellio Rail Mitteldeutschland under a new contract running to 2032",
+      },
+      {
+        date: "June 2021",
+        category: "Other",
+        event:
+          "Abellio Rail Mitteldeutschland applies for restructuring under legal protection due to financial pressures in the German regional rail market",
+      },
       {
         date: "April 2019",
         category: "Financing",
@@ -658,7 +726,13 @@ export const companies: PortCo[] = [
         date: "December 2018",
         category: "Expansion",
         event:
-          "Fleet of 54 Coradia Lint 41 trains enters commercial service on the Saxony-Anhalt diesel network, operated by Abellio Rail Mitteldeutschland",
+          "Fleet of 54 Coradia Lint 41 trains enters commercial service on the Saxony-Anhalt diesel network, covering 9.3 million train-kilometres per year",
+      },
+      {
+        date: "December 2015",
+        category: "Other",
+        event:
+          "Nahverkehrsservice Sachsen-Anhalt (NASA) awards Abellio Rail Mitteldeutschland the 14-year DISA diesel network contract",
       },
       {
         date: "January 2016",
@@ -675,6 +749,10 @@ export const companies: PortCo[] = [
       {
         label: "Global Legal Chronicle — DISA Assets Acquisition",
         url: "https://globallegalchronicle.com/3i-european-operational-projects-funds-acquisition-of-disa-assets-limited/",
+      },
+      {
+        label: "Railway Gazette — Abellio Unveils First of 54 DMUs",
+        url: "https://www.railwaygazette.com/traction-and-rolling-stock/abellio-unveils-first-of-54-dmus/47082.article",
       },
     ],
   },
@@ -893,6 +971,10 @@ export const companies: PortCo[] = [
       {
         label: "ESP Utilities Group — Official Website",
         url: "https://espug.com/",
+      },
+      {
+        label: "ESP Utilities Group — Licenses and Regulators",
+        url: "https://espug.com/knowledge-hub/licenses/",
       },
     ],
   },
@@ -1180,6 +1262,10 @@ export const companies: PortCo[] = [
       {
         label: "3i Infrastructure — GCX Investment Announcement",
         url: "https://www.3i-infrastructure.com/newsroom/press-releases/2021/3i-infrastructure-plc-agrees-to-invest-in-gcx-to-support-future-growth/",
+      },
+      {
+        label: "FLAG — Rebrand Announcement (April 2025)",
+        url: "https://flagtel.com/rebrand-2025/",
       },
     ],
   },
@@ -2447,7 +2533,7 @@ export const companies: PortCo[] = [
     country: "United Kingdom",
     ownershipVehicle: "3i Infrastructure plc",
     description:
-      "Wireless Infrastructure Group (WIG) is an independent communications infrastructure provider that builds and operates shared wireless towers and neutral-host indoor networks. Founded in 2006 in Scotland, WIG grew to become the UK's largest private independent tower operator with over 2,000 tower assets.",
+      "Wireless Infrastructure Group (WIG) is an independent communications infrastructure provider that builds and operates shared wireless towers and neutral-host indoor networks across the UK, Ireland, Netherlands, and Spain. Founded in 2006 in Scotland by former RBS infrastructure investor Scott Coates, WIG grew to over 2,100 assets under 3i Infrastructure's ownership before being sold to Brookfield Infrastructure in December 2019 for £387 million, generating a 27% gross IRR for 3i.",
     status: "Realized",
     website: "https://www.wirelessinfrastructure.com",
     yearFounded: 2006,
@@ -2459,22 +2545,34 @@ export const companies: PortCo[] = [
     ],
     milestones: [
       {
-        date: "December 2019",
-        category: "Divestiture",
+        date: "2006",
+        category: "Founding",
         event:
-          "3i Infrastructure completes sale of its 93% stake in WIG to Brookfield Infrastructure for £387 million, achieving a 27% gross IRR",
+          "Scott Coates founds Wireless Infrastructure Group in Scotland as the UK's first independent pureplay tower company",
       },
       {
         date: "April 2016",
         category: "Financing",
         event:
-          "3i Infrastructure acquires a 36% economic interest in WIG for approximately £75 million",
+          "3i Infrastructure acquires a 36% economic interest in WIG for approximately £75 million, capitalising the company at £300 million",
       },
       {
-        date: "2006",
-        category: "Founding",
+        date: "January 2018",
+        category: "Financing",
         event:
-          "Scott Coates founds Wireless Infrastructure Group in Scotland as the UK's first independent pureplay tower company",
+          "3i Infrastructure invests a further £186 million to acquire Barings' stake, increasing ownership to 91% of WIG equity",
+      },
+      {
+        date: "October 2018",
+        category: "Acquisition",
+        event:
+          "WIG acquires Arqiva's Indoor Networks business (42 DAS networks including Canary Wharf, Luton Airport, and ExCeL Centre) and Irish operator Highpoint Communications, taking portfolio to 2,100+ assets",
+      },
+      {
+        date: "December 2019",
+        category: "Divestiture",
+        event:
+          "3i Infrastructure completes sale of its 93% stake in WIG to Brookfield Infrastructure for £387 million, achieving a 27% gross IRR",
       },
     ],
     sources: [
@@ -2485,6 +2583,10 @@ export const companies: PortCo[] = [
       {
         label: "Wireless Infrastructure Group — About Us",
         url: "https://www.wirelessinfrastructure.com/about-us/",
+      },
+      {
+        label: "WIG Two Acquisitions Press Release",
+        url: "https://www.3i-infrastructure.com/newsroom/press-releases/2018/wireless-infrastructure-group-grows-through-two-acquisitions/",
       },
     ],
   },
@@ -3890,7 +3992,7 @@ export const companies: PortCo[] = [
     name: "Noventa (Noventa Energy Partners)",
     investmentFirm: "Ancala Partners",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Decarbonised Heating & Cooling",
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Ancala Infrastructure Fund III",
@@ -3926,23 +4028,28 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Not Disclosed",
-    description: "Phoenix Rail is a short line railroad platform formed by Ancala Partners and Arkadia Rail Partners in January 2025, with its inaugural acquisition of Lehigh Valley Rail Management. LVRM owns and operates a 61-mile freight rail network and intermodal terminal in Pennsylvania, providing competitive access to three Class I railroads: Norfolk Southern, CSX, and CPKC.",
+    description: "Phoenix Rail is a short line railroad and intermodal platform formed by Ancala Partners and Arkadia Rail Partners in January 2025. Its inaugural acquisition, Lehigh Valley Rail Management (LVRM), owns and operates 80 miles of short line trackage and an intermodal terminal in Pennsylvania, serving 100+ customers transporting consumer products, plastics, iron and steel, and agricultural products with access to Norfolk Southern, CSX, and CPKC Class I railroads.",
     status: "Active",
     website: "https://phoenixrail.com/",
     yearFounded: 2025,
     investmentYear: 2025,
-    headquarters: "Pennsylvania",
+    headquarters: "Denver, CO",
     management: [
       { name: "Alex Yeros", title: "Chief Executive Officer" },
       { name: "Ross Grantham", title: "Chief Operating Officer" },
       { name: "Jack Sullan", title: "Chief Financial Officer" },
     ],
     milestones: [
-      { date: "2025-01", event: "Ancala and Arkadia Rail Partners form Phoenix Rail platform and complete acquisition of Lehigh Valley Rail Management", category: "Founding" },
+      { date: "2022", event: "Arkadia Rail Partners sells Pioneer Lines (15 short line railroads) after transforming it into a high-performing organization, establishing the team\'s track record", category: "Divestiture" },
+      { date: "Jan 2025", event: "Ancala and Arkadia Rail Partners form Phoenix Rail platform and complete acquisition of Lehigh Valley Rail Management (LVRM)", category: "Founding" },
+      { date: "Jan 2025", event: "LVRM acquisition adds 80 miles of short line trackage in Bethlehem and Johnstown, PA, plus intermodal terminal with Class I railroad access", category: "Acquisition" },
+      { date: "2025", event: "Phoenix Rail launches infrastructure investment program across LVRM network to improve freight volumes and expand customer relationships", category: "Expansion" },
+      { date: "2025", event: "Jim Crawford appointed Chief Strategy Officer to lead adjacent business development and platform growth initiatives", category: "Management" },
     ],
     sources: [
       { label: "Ancala Phoenix Rail Formation", url: "https://ancala.com/ancala-forms-short-line-rail-platform/" },
       { label: "Phoenix Rail About", url: "https://phoenixrail.com/about/" },
+      { label: "Phoenix Rail LVRM Acquisition", url: "https://phoenixrail.com/arkadia-forms-phoenix-rail-to-acquire-lehigh-valley-rail-management/" },
     ],
   },
     {
@@ -3953,20 +4060,27 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Not Disclosed",
-    description: "Valentra owns and operates a portfolio of critical chemical pipeline infrastructure carved out from Hexion (an American Securities portfolio company), with pipeline-connected sites and storage facilities in Baytown, Texas and Luling and Geismar, Louisiana. The facilities are among the largest pipeline suppliers for methanol-based raw materials on the US Gulf Coast, serving agriculture, healthcare, automotive, and construction end markets.",
+    description: "Valentra owns and operates a portfolio of pipeline-connected chemical sites and storage facilities in Baytown, Texas, and Luling and Geismar, Louisiana, carved out from Hexion (an American Securities portfolio company) in December 2025. The facilities are among the largest pipeline suppliers of methanol-based raw materials including formalin on the US Gulf Coast, serving co-located chemical plants under multi-year contracts and supporting agriculture, healthcare, automotive, and construction end markets with a workforce of 75+.",
     status: "Active",
+    website: "https://ancala.com/portfolio/valentra/",
     yearFounded: 2025,
     investmentYear: 2025,
     headquarters: "Baytown, TX",
     management: [
       { name: "Alex Mihut", title: "Chief Executive Officer" },
+      { name: "Tore Land", title: "Chairman" },
     ],
     milestones: [
-      { date: "2025-12", event: "Ancala acquires portfolio of critical chemical pipeline infrastructure on the US Gulf Coast from Hexion, forming standalone platform Valentra", category: "Acquisition" },
+      { date: "2025", event: "Ancala appoints Tore Land as Industry Partner and future Chair of Valentra, leveraging his GE, Celanese, and BASF background to steer the carve-out", category: "Management" },
+      { date: "Dec 2025", event: "Ancala acquires Hexion\'s US Gulf Coast formalin business, creating standalone platform Valentra with 55 existing staff plus 20 new roles", category: "Acquisition" },
+      { date: "Dec 2025", event: "Alex Mihut (former VP at Ascend Performance Materials) appointed CEO to lead Valentra\'s transition to independent operations", category: "Management" },
+      { date: "Dec 2025", event: "DC Advisory arranges acquisition financing for Ancala\'s Valentra platform", category: "Financing" },
+      { date: "2026", event: "Valentra explores organic and acquisitive growth opportunities across US Gulf Coast chemical infrastructure", category: "Expansion" },
     ],
     sources: [
       { label: "Ancala Valentra Acquisition", url: "https://ancala.com/ancala-acquires-portfolio-of-critical-chemical-pipeline-infrastructure-on-the-us-gulf-coast/" },
       { label: "Ancala Valentra Portfolio", url: "https://ancala.com/portfolio/valentra/" },
+      { label: "DC Advisory Valentra Financing", url: "https://www.dcadvisory.com/news-deals-insights/deal-announcements/dc-advisory-advises-ancala-on-the-financing-of-its-acquisition-of-valentra/" },
     ],
   },
   // ─── Antin Infrastructure Partners ──────────────────────────
