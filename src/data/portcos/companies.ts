@@ -3383,12 +3383,84 @@ export const companies: PortCo[] = [
     name: "Pattern Energy Group",
     investmentFirm: "APG Infrastructure",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Wind & Solar",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Consortium (APG, ART, and CPP Investments)",
-    description: "",
+    description:
+      "Pattern Energy Group is one of the largest independent renewable energy companies in North America, operating and developing a portfolio of wind, solar, and energy storage facilities with approximately 6.6 GW of operating capacity and a development pipeline exceeding 30 GW. The company's assets span the United States, Canada, and Japan, with a strong concentration in high-quality wind resources across the Great Plains, Southwest, and Western regions. Taken private in 2020 by a consortium of Canada Pension Plan Investment Board (CPPIB), the Public Sector Pension Investment Board, and other institutional investors, Pattern is now majority-owned by a consortium including APG, ART (Alberta Investment Management), and CPP Investments, positioning it as a premier platform for long-duration, contracted renewable energy infrastructure.",
     status: "Active",
+    website: "https://patternenergy.com",
+    yearFounded: 2009,
+    investmentYear: 2020,
+    headquarters: "San Francisco, CA",
+    management: [
+      { name: "Hunter Armistead", title: "Chief Executive Officer" },
+      { name: "Esben Pedersen", title: "Chief Financial Officer" },
+      { name: "Dyann Blaine", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "2009",
+        event: "Pattern Energy Group founded as a subsidiary of Pattern Development (later Pattern Development 2.0), initially focused on wind energy development.",
+        category: "Founding",
+      },
+      {
+        date: "Sep 2013",
+        event: "Completed IPO on NASDAQ (PEGI) at $22 per share, raising approximately $261 million to fund wind project acquisitions.",
+        category: "IPO",
+      },
+      {
+        date: "2014",
+        event: "Acquired several operating wind facilities in the U.S. and Canada, growing the portfolio to over 2 GW of capacity.",
+        category: "Acquisition",
+      },
+      {
+        date: "2017",
+        event: "Expanded into Japan with the acquisition of Green Power Investment Corporation, adding development assets in the Japanese offshore wind market.",
+        category: "Expansion",
+      },
+      {
+        date: "Mar 2020",
+        event: "Taken private by Canada Pension Plan Investment Board (CPPIB) in a $6.1 billion transaction (including debt), delisting from NASDAQ at $26.75 per share.",
+        category: "Financing",
+      },
+      {
+        date: "2021",
+        event: "Hunter Armistead appointed CEO, bringing extensive renewable energy development experience from Pattern Development.",
+        category: "Management",
+      },
+      {
+        date: "2022",
+        event: "Consortium of APG Asset Management, Alberta Investment Management (AIMCo/ART), and CPP Investments acquired majority ownership, providing long-term institutional capital for continued growth.",
+        category: "Financing",
+      },
+      {
+        date: "Dec 2023",
+        event: "SunZia Transmission project — the largest clean energy infrastructure project in U.S. history — reached financial close, enabling 3.5 GW of New Mexico wind power to reach Arizona markets via a 550-mile HVDC line.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Exceeded 6 GW of operating capacity with continued development of the SunZia Wind project (3.5 GW) in New Mexico and expansion of solar and storage pipeline.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Pattern Energy — Company Website", url: "https://patternenergy.com" },
+      {
+        label: "CPPIB — Pattern Energy Take-Private",
+        url: "https://www.cppinvestments.com/public-media/headlines/2020/cpp-investments-completes-acquisition-of-pattern-energy-group/",
+      },
+      {
+        label: "Pattern Energy — SunZia Project",
+        url: "https://patternenergy.com/sunzia",
+      },
+      {
+        label: "Infrastructure Investor — Pattern Energy Ownership Change",
+        url: "https://www.infrastructureinvestor.com/pattern-energy-sees-ownership-change/",
+      },
+    ],
   },
   {
     name: "SiFi Networks (FiberCity)",
@@ -4559,12 +4631,81 @@ export const companies: PortCo[] = [
     name: "Brightspeed (Connect Holding)",
     investmentFirm: "Apollo Global Management",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Fiber Broadband",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Apollo Funds",
-    description: "",
+    description:
+      "Brightspeed is a fiber-first broadband provider serving approximately 6.5 million homes and businesses across 20 states in the Midwest, Southeast, and Mid-Atlantic regions. Formed in October 2022 through Apollo's acquisition of Lumen Technologies' incumbent local exchange carrier (ILEC) operations, Brightspeed is executing one of the largest fiber buildout programs in the U.S., targeting 3 million fiber passings by 2026 with over $2 billion in capital investment. The company operates a critical last-mile telecommunications network with a growing fiber footprint that positions it as a key connectivity provider in underserved and rural markets.",
     status: "Active",
+    website: "https://www.brightspeed.com",
+    yearFounded: 2022,
+    investmentYear: 2022,
+    headquarters: "Charlotte, NC",
+    management: [
+      { name: "Tom Maguire", title: "Chief Executive Officer" },
+      { name: "Bob Mudge", title: "President" },
+      { name: "David Flessas", title: "Chief Financial Officer" },
+      { name: "Dennis Merling", title: "Chief Technology Officer" },
+      { name: "Tyler Savery", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      {
+        date: "Aug 2021",
+        event: "Apollo Global Management agreed to acquire Lumen Technologies' ILEC assets across 20 states for approximately $7.5 billion, including assumed debt.",
+        category: "Financing",
+      },
+      {
+        date: "Oct 2022",
+        event: "Transaction closed and Brightspeed launched as a standalone company, becoming the fourth-largest fiber broadband builder and operator in the U.S.",
+        category: "Founding",
+      },
+      {
+        date: "Oct 2022",
+        event: "Tom Maguire appointed as inaugural CEO. Bob Mudge named President. Leadership team recruited from major telecom operators.",
+        category: "Management",
+      },
+      {
+        date: "2023",
+        event: "Launched multi-year fiber buildout program targeting 3 million fiber passings, partnering with construction firms including MasTec and Dycom to accelerate deployment.",
+        category: "Expansion",
+      },
+      {
+        date: "Jun 2023",
+        event: "Surpassed 500,000 fiber passings milestone since company launch, with active construction across multiple states.",
+        category: "Expansion",
+      },
+      {
+        date: "Dec 2023",
+        event: "Crossed 1 million fiber passings, demonstrating accelerated buildout pace with deployment in 17 states.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Secured approximately $400 million in federal and state broadband subsidies (including BEAD and RDOF programs) to support fiber expansion in rural and underserved markets.",
+        category: "Financing",
+      },
+      {
+        date: "Sep 2024",
+        event: "Reached 2 million fiber passings, maintaining trajectory toward 3 million target by 2026.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Brightspeed — Company Website", url: "https://www.brightspeed.com" },
+      {
+        label: "Apollo — Brightspeed Portfolio Page",
+        url: "https://www.apollo.com/our-business/portfolio/brightspeed",
+      },
+      {
+        label: "Lumen — Brightspeed Transaction Announcement",
+        url: "https://news.lumen.com/2021-08-03-Lumen-Technologies-to-sell-its-incumbent-local-exchange-carrier-ILEC-operations",
+      },
+      {
+        label: "Light Reading — Brightspeed Fiber Buildout Progress",
+        url: "https://www.lightreading.com/broadband/brightspeed-passes-2m-fiber-locations",
+      },
+    ],
   },
   {
     name: "Broad Reach Power (Mountain West)",
@@ -4625,56 +4766,291 @@ export const companies: PortCo[] = [
     name: "Corning Natural Gas",
     investmentFirm: "Apollo Global Management",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Gas Utility",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "Corning Natural Gas Corporation is a regulated natural gas distribution utility serving approximately 15,000 residential, commercial, and industrial customers in the Southern Tier and Finger Lakes regions of upstate New York. The company also owns Pike County Light & Power Company, an electric and gas utility serving northeastern Pennsylvania, and Leatherstocking Gas Company, a gas utility serving central New York. Together, these regulated subsidiaries form a small-cap utility platform with stable, rate-regulated cash flows and ongoing capital investment needs for system modernization and pipeline replacement.",
     status: "Active",
+    website: "https://www.corninggas.com",
+    yearFounded: 1904,
+    investmentYear: 2013,
+    headquarters: "Corning, NY",
+    management: [
+      { name: "Michael German", title: "President & Chief Executive Officer" },
+      { name: "Firouzeh Sarhangi", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1904",
+        event: "Corning Natural Gas Corporation incorporated to distribute natural gas in Corning and surrounding communities in Steuben County, New York.",
+        category: "Founding",
+      },
+      {
+        date: "2013",
+        event: "Argo Infrastructure Partners (Apollo affiliate) acquired a controlling stake in Corning Natural Gas Holding Corporation (now ACP Crotona Corp.), taking the utility private.",
+        category: "Financing",
+      },
+      {
+        date: "2014",
+        event: "Acquired Pike County Light & Power Company, a regulated electric and gas utility in northeastern Pennsylvania, diversifying the utility platform.",
+        category: "Acquisition",
+      },
+      {
+        date: "2016",
+        event: "Formed Leatherstocking Gas Company JV with Mirabito, extending natural gas service to previously unserved communities in central New York.",
+        category: "Expansion",
+      },
+      {
+        date: "2020",
+        event: "Continued system modernization, replacing aging bare steel and cast iron pipelines under New York's Pipeline Safety Program.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Corning Natural Gas — Company Website", url: "https://www.corninggas.com" },
+      {
+        label: "NY PSC — Corning Natural Gas Rate Filings",
+        url: "https://documents.dps.ny.gov/public/MatterManagement/CaseMaster.aspx?MatterCaseNo=19-G-0080",
+      },
+    ],
   },
   {
     name: "Cross-Sound Cable Company",
     investmentFirm: "Apollo Global Management",
     sector: "Power Generation",
-    subsector: "Transmission",
+    subsector: "Submarine Transmission",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "Cross-Sound Cable Company owns and operates a 330 MW high-voltage direct current (HVDC) submarine transmission cable connecting New England (New Haven, CT) to Long Island (Shoreham, NY) across Long Island Sound. The 24-mile undersea cable is a critical piece of electric transmission infrastructure that helps balance power flows between the ISO-NE and NYISO markets, improving grid reliability and enabling delivery of lower-cost generation to Long Island. The cable operates under a long-term contract with the Long Island Power Authority (LIPA) and generates stable, regulated-like toll revenue.",
     status: "Active",
+    yearFounded: 2004,
+    investmentYear: 2007,
+    headquarters: "Norwalk, CT",
+    milestones: [
+      {
+        date: "2002",
+        event: "Cross-Sound Cable project received FERC approval and began construction of the 330 MW HVDC submarine cable across Long Island Sound.",
+        category: "Other",
+      },
+      {
+        date: "2004",
+        event: "Cross-Sound Cable entered commercial service, providing critical transmission capacity between Connecticut and Long Island.",
+        category: "Founding",
+      },
+      {
+        date: "2007",
+        event: "Argo Infrastructure Partners (Apollo affiliate) acquired the Cross-Sound Cable Company, securing a long-duration contracted infrastructure asset.",
+        category: "Financing",
+      },
+      {
+        date: "2008",
+        event: "Received regulatory approvals for continued commercial operation after resolving permitting disputes with Connecticut environmental agencies.",
+        category: "Other",
+      },
+      {
+        date: "2014",
+        event: "Long Island Power Authority extended the cable capacity contract, providing long-term revenue visibility for the asset.",
+        category: "Other",
+      },
+    ],
+    sources: [
+      {
+        label: "FERC — Cross-Sound Cable Company Filings",
+        url: "https://elibrary.ferc.gov/eLibrary/search?q=cross-sound+cable",
+      },
+    ],
   },
   {
     name: "Duquesne Light Company (DQE)",
     investmentFirm: "Apollo Global Management",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Electric Utility",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "Duquesne Light Company is a regulated electric transmission and distribution utility serving approximately 600,000 customers in the Pittsburgh metropolitan area of southwestern Pennsylvania. As one of the oldest electric utilities in the U.S., the company operates over 23,000 miles of distribution lines and a high-voltage transmission network across a 817-square-mile service territory. DQE Holdings, the parent company, was taken private in 2007 by a consortium including Macquarie Infrastructure Partners, and Apollo's Argo Infrastructure Partners subsequently acquired a significant minority stake. The utility offers a classic regulated asset base with predictable, inflation-linked returns and ongoing capital investment opportunities for grid modernization and reliability improvements.",
     status: "Active",
+    website: "https://www.duquesnelight.com",
+    yearFounded: 1912,
+    investmentYear: 2007,
+    headquarters: "Pittsburgh, PA",
+    management: [
+      { name: "Kevin Walker", title: "President & Chief Executive Officer" },
+      { name: "Anthony Stonebraker", title: "Chief Financial Officer" },
+      { name: "Paul Zarembka", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "1912",
+        event: "Duquesne Light Company incorporated, consolidating several electric utility operations in the Pittsburgh area.",
+        category: "Founding",
+      },
+      {
+        date: "2007",
+        event: "Taken private by a consortium led by Macquarie Infrastructure Partners for approximately $1.8 billion. Argo Infrastructure Partners (Apollo) participated as a co-investor.",
+        category: "Financing",
+      },
+      {
+        date: "2016",
+        event: "Completed retirement of the Elrama, Phillips, and other coal-fired generation units, transitioning to a pure transmission and distribution utility.",
+        category: "Other",
+      },
+      {
+        date: "2019",
+        event: "Pennsylvania PUC approved major grid modernization and smart meter deployment program, supporting long-term rate base growth.",
+        category: "Expansion",
+      },
+      {
+        date: "2020",
+        event: "Kevin Walker appointed President & CEO, bringing utility leadership experience from American Electric Power.",
+        category: "Management",
+      },
+      {
+        date: "2022",
+        event: "Received PUC approval for its next rate case, supporting continued capital investment in transmission reliability and distribution automation.",
+        category: "Other",
+      },
+      {
+        date: "2024",
+        event: "Advanced electrification and grid hardening programs, investing in infrastructure to support growing data center and industrial load in the Pittsburgh region.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Duquesne Light — Company Website", url: "https://www.duquesnelight.com" },
+      {
+        label: "Duquesne Light — About DQE Holdings",
+        url: "https://www.duquesnelight.com/company/about-us",
+      },
+      {
+        label: "PA PUC — Duquesne Light Rate Case",
+        url: "https://www.puc.pa.gov/search/case-number/R-2021-3024750",
+      },
+    ],
   },
   {
     name: "Eagle Creek Renewable Energy",
     investmentFirm: "Apollo Global Management",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Hydroelectric",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Apollo Infrastructure Funds",
-    description: "",
+    description:
+      "Eagle Creek Renewable Energy is the largest owner-operator of small hydroelectric power plants in the United States, with a portfolio of approximately 90 facilities generating over 400 MW of nameplate capacity across multiple states. The company's run-of-river and impoundment hydro assets produce baseload renewable energy under long-term power purchase agreements and FERC licenses, providing highly predictable contracted cash flows. Eagle Creek was formed as a platform by Hudson Clean Energy Partners and subsequently acquired by Apollo, which has expanded the portfolio through disciplined bolt-on acquisitions of small hydro assets from utilities and municipalities.",
     status: "Active",
+    website: "https://www.eaglecreekre.com",
+    yearFounded: 2009,
+    investmentYear: 2018,
+    headquarters: "Morristown, NJ",
+    management: [
+      { name: "Eric Nieuwland", title: "Chief Executive Officer" },
+      { name: "Jay Borden", title: "Chief Financial Officer" },
+      { name: "Jason Kearney", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "2009",
+        event: "Eagle Creek Renewable Energy formed by Hudson Clean Energy Partners to acquire and operate small hydroelectric facilities across the United States.",
+        category: "Founding",
+      },
+      {
+        date: "2011",
+        event: "Acquired a portfolio of small hydro plants from Enel Green Power North America, establishing a significant operating base in the Northeast and Southeast.",
+        category: "Acquisition",
+      },
+      {
+        date: "2014",
+        event: "Expanded portfolio to approximately 50 hydroelectric facilities through continued acquisitions from municipal utilities and independent operators.",
+        category: "Acquisition",
+      },
+      {
+        date: "2018",
+        event: "Apollo Infrastructure Funds acquired Eagle Creek Renewable Energy from Hudson Clean Energy, providing long-term capital for continued portfolio growth.",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Acquired multiple additional hydro assets, growing the portfolio toward 80+ facilities across over a dozen states.",
+        category: "Acquisition",
+      },
+      {
+        date: "2022",
+        event: "Surpassed 85 operating hydroelectric facilities, extending position as the preeminent small hydro consolidator in the U.S.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Eagle Creek Renewable Energy — Company Website", url: "https://www.eaglecreekre.com" },
+      {
+        label: "Apollo — Eagle Creek Renewable Energy Portfolio",
+        url: "https://www.apollo.com/our-business/portfolio/eagle-creek-renewable-energy",
+      },
+    ],
   },
   {
     name: "Energos Infrastructure",
     investmentFirm: "Apollo Global Management",
     sector: "Midstream Energy",
-    subsector: "Energy Transition",
+    subsector: "LNG / FSRU",
     region: "Global",
     country: "United States (Global)",
     ownershipVehicle: "Apollo Funds",
-    description: "",
+    description:
+      "Energos Infrastructure is a global LNG infrastructure platform specializing in floating storage and regasification units (FSRUs) and related LNG terminal infrastructure. The company owns and operates a fleet of FSRUs that provide critical natural gas import capacity to emerging and energy-deficit markets worldwide. Backed by Apollo and formed through the consolidation of New Fortress Energy's FSRU fleet and other LNG assets, Energos represents a strategic bet on growing global demand for flexible, rapidly deployable LNG regasification solutions as countries diversify energy supplies and transition away from coal.",
     status: "Active",
+    website: "https://www.energosinfra.com",
+    yearFounded: 2023,
+    investmentYear: 2023,
+    headquarters: "Houston, TX",
+    management: [
+      { name: "Andrew Orekar", title: "Chief Executive Officer" },
+      { name: "James Markham", title: "Chief Financial Officer" },
+      { name: "Keith Meyer", title: "Chief Commercial Officer" },
+    ],
+    milestones: [
+      {
+        date: "Jun 2023",
+        event: "Apollo agreed to acquire a portfolio of five FSRU vessels and related LNG infrastructure assets from New Fortress Energy for approximately $2 billion.",
+        category: "Financing",
+      },
+      {
+        date: "Sep 2023",
+        event: "Energos Infrastructure formally launched as an independent platform following closing of the NFE asset acquisition. Andrew Orekar appointed CEO.",
+        category: "Founding",
+      },
+      {
+        date: "2023",
+        event: "Assumed long-term FSRU charter contracts with sovereign and utility counterparties in Brazil, Jamaica, and other markets, providing contracted cash flow visibility.",
+        category: "Other",
+      },
+      {
+        date: "2024",
+        event: "Expanded commercial pipeline, pursuing FSRU deployment opportunities in Southeast Asia and Europe as countries sought to secure LNG import capacity amid global energy security concerns.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Completed operational optimization of FSRU fleet, improving vessel uptime and regasification throughput across deployed assets.",
+        category: "Other",
+      },
+    ],
+    sources: [
+      { label: "Energos Infrastructure — Company Website", url: "https://www.energosinfra.com" },
+      {
+        label: "Apollo — Energos Infrastructure Announcement",
+        url: "https://www.apollo.com/media/press-releases/2023/06-07-2023",
+      },
+      {
+        label: "Reuters — Apollo to Buy New Fortress LNG Assets",
+        url: "https://www.reuters.com/business/energy/apollo-buy-new-fortress-energys-lng-infrastructure-assets-about-2-bln-2023-06-07/",
+      },
+    ],
   },
   {
     name: "FirstDigital Telecom",
@@ -4712,35 +5088,192 @@ export const companies: PortCo[] = [
   {
     name: "GFL Environmental Services",
     investmentFirm: "Apollo Global Management",
-    sector: "Social Infrastructure",
-    subsector: "Environmental Infra",
+    sector: "Environmental / Waste",
+    subsector: "Waste Management & Environmental Services",
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Apollo Funds & BC Partners",
-    description: "",
+    description:
+      "GFL Environmental is the fourth-largest diversified environmental services company in North America, providing solid waste management, liquid waste management, and soil remediation services across Canada and the United States. The company operates a vast network of collection routes, transfer stations, material recovery facilities, and engineered landfills serving over 6 million residential, commercial, and industrial customers. GFL has grown aggressively through over 100 acquisitions since founding, building a platform with significant density and route optimization advantages. The company went public on the TSX and NYSE in 2020, with Apollo and BC Partners maintaining significant equity positions.",
     status: "Active",
+    website: "https://gflenv.com",
+    yearFounded: 2007,
+    investmentYear: 2018,
+    headquarters: "Vaughan, Ontario, Canada",
+    management: [
+      { name: "Patrick Dovigi", title: "Founder & Chief Executive Officer" },
+      { name: "Luke Pelosi", title: "Chief Financial Officer" },
+      { name: "Greg Yorston", title: "President" },
+    ],
+    milestones: [
+      {
+        date: "2007",
+        event: "Founded by Patrick Dovigi in Toronto, Ontario as a small waste hauling operation.",
+        category: "Founding",
+      },
+      {
+        date: "2018",
+        event: "BC Partners invested approximately $5.125 billion (CAD) for a majority stake, providing growth capital to accelerate the acquisition strategy across North America.",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Completed a transformational wave of acquisitions in the U.S. and Canada, adding substantial collection, transfer, and disposal assets to the platform.",
+        category: "Acquisition",
+      },
+      {
+        date: "2019",
+        event: "Apollo Global Management co-invested alongside BC Partners, further capitalizing the platform for continued expansion.",
+        category: "Financing",
+      },
+      {
+        date: "Mar 2020",
+        event: "Completed IPO on the Toronto Stock Exchange (TSX: GFL) and New York Stock Exchange (NYSE: GFL), raising approximately $1.4 billion (CAD).",
+        category: "IPO",
+      },
+      {
+        date: "2020",
+        event: "Acquired WCA Waste Corporation's remaining U.S. operations, expanding presence across the Southern U.S.",
+        category: "Acquisition",
+      },
+      {
+        date: "2021",
+        event: "Acquired Terrapure Environmental, a leading Canadian environmental and waste management services provider, for approximately $937 million (CAD).",
+        category: "Acquisition",
+      },
+      {
+        date: "2023",
+        event: "Announced strategic review of Environmental Services (ES) division, exploring a potential sale of the liquid waste and soil remediation business to focus on core solid waste operations.",
+        category: "Other",
+      },
+      {
+        date: "Jan 2025",
+        event: "Completed sale of Environmental Services division to BC Partners and GIC for $8 billion, using proceeds to deleverage and pursue tuck-in solid waste acquisitions.",
+        category: "Divestiture",
+      },
+    ],
+    sources: [
+      { label: "GFL Environmental — Company Website", url: "https://gflenv.com" },
+      {
+        label: "GFL Environmental — Investor Relations",
+        url: "https://gflenv.com/investors/",
+      },
+      {
+        label: "BC Partners — GFL Environmental Portfolio",
+        url: "https://www.bcpartners.com/investments/gfl-environmental",
+      },
+      {
+        label: "Waste Dive — GFL Environmental Services Sale",
+        url: "https://www.wastedive.com/news/gfl-environmental-services-sale-bc-partners-gic/",
+      },
+    ],
   },
   {
     name: "Great Bay Renewables",
     investmentFirm: "Apollo Global Management",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Renewable Energy Royalties",
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Apollo Infrastructure Funds",
-    description: "",
+    description:
+      "Great Bay Renewables is a specialty renewable energy company that provides royalty-based financing to wind and solar project developers across North America. The company acquires production-linked royalty interests in operating and development-stage renewable energy projects, receiving a percentage of revenue over the project's life without bearing operational risk or capital expenditure obligations. This asset-light model offers inflation-protected, long-duration cash flows tied to contracted renewable energy production. Great Bay was backed by Apollo to create a differentiated platform at the intersection of renewable energy and alternative finance.",
     status: "Active",
+    website: "https://www.greatbayrenewables.com",
+    yearFounded: 2019,
+    investmentYear: 2019,
+    headquarters: "Portsmouth, NH",
+    management: [
+      { name: "Frank Marenghi", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2019",
+        event: "Great Bay Renewables founded with backing from Apollo Infrastructure Funds to pioneer a royalty-based financing model for renewable energy projects.",
+        category: "Founding",
+      },
+      {
+        date: "2020",
+        event: "Closed initial portfolio of royalty interests in operating wind and solar projects across the United States and Canada.",
+        category: "Acquisition",
+      },
+      {
+        date: "2022",
+        event: "Expanded portfolio significantly, acquiring royalty interests in development-stage projects benefiting from the Inflation Reduction Act's long-term tax credit framework.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Grew royalty portfolio to span multiple GW of wind and solar capacity across over a dozen U.S. states and Canadian provinces.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Great Bay Renewables — Company Website", url: "https://www.greatbayrenewables.com" },
+      {
+        label: "Apollo — Great Bay Renewables",
+        url: "https://www.apollo.com/our-business/portfolio/great-bay-renewables",
+      },
+    ],
   },
   {
     name: "Hawaiʻi Gas",
     investmentFirm: "Apollo Global Management",
     sector: "Regulated Utilities",
-    subsector: "",
+    subsector: "Gas Utility",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "Hawaiʻi Gas (formerly The Gas Company, LLC) is the sole regulated gas utility serving the State of Hawaiʻi, delivering synthetic natural gas (SNG), liquefied petroleum gas (LPG), and liquefied natural gas (LNG) to approximately 36,000 residential, commercial, and industrial customers across Oahu, Maui, Kauai, and the Big Island. The utility operates the only manufactured gas plant in the U.S. (Honolulu SNG facility) and an extensive distribution pipeline network. As a regulated monopoly utility in a geographically isolated market, Hawaiʻi Gas provides highly predictable, regulated returns with limited competitive risk.",
     status: "Active",
+    website: "https://www.hawaiigas.com",
+    yearFounded: 1904,
+    investmentYear: 2006,
+    headquarters: "Honolulu, HI",
+    management: [
+      { name: "Alicia Moy", title: "President & Chief Executive Officer" },
+      { name: "Scott528", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1904",
+        event: "Honolulu Gas Company founded to provide manufactured gas service to Honolulu, establishing the foundation of today's gas utility operations in Hawaiʻi.",
+        category: "Founding",
+      },
+      {
+        date: "2006",
+        event: "Macquarie Infrastructure Partners and Argo Infrastructure Partners (Apollo) acquired The Gas Company from CLNE/GasCo for approximately $300 million.",
+        category: "Financing",
+      },
+      {
+        date: "2012",
+        event: "Rebranded from The Gas Company to Hawaiʻi Gas, modernizing the brand identity and aligning with expansion to neighbor islands.",
+        category: "Other",
+      },
+      {
+        date: "2016",
+        event: "Began importing LNG to supplement synthetic natural gas supply, diversifying fuel sources and improving cost efficiency for customers.",
+        category: "Expansion",
+      },
+      {
+        date: "2017",
+        event: "Alicia Moy appointed President & CEO, the first woman to lead a major energy utility in Hawaiʻi.",
+        category: "Management",
+      },
+      {
+        date: "2021",
+        event: "Launched renewable natural gas (RNG) initiatives and hydrogen blending pilot programs aligned with Hawaiʻi's aggressive clean energy goals.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Hawaiʻi Gas — Company Website", url: "https://www.hawaiigas.com" },
+      {
+        label: "Hawaiʻi Gas — About Us",
+        url: "https://www.hawaiigas.com/about-us/",
+      },
+    ],
   },
   {
     name: "Hudson Transmission Partners",
@@ -4779,12 +5312,66 @@ export const companies: PortCo[] = [
     name: "LAZ Parking",
     investmentFirm: "Apollo Global Management",
     sector: "Transportation",
-    subsector: "Mobility",
+    subsector: "Parking & Mobility",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "LAZ Parking is one of the largest parking management companies in the United States, operating approximately 3,000 parking locations across over 400 cities with combined capacity of over 1.5 million parking spaces. The company provides parking management, valet, shuttle, and transportation services to airports, hospitals, universities, municipalities, hotels, and commercial real estate owners. LAZ has built a dominant market position through a combination of organic growth and acquisitions, including the strategic purchase of Indigo Park Canada (formerly Vinci Park). The company's long-term management contracts and concession agreements provide recurring, inflation-linked revenue with embedded growth from rate escalators and portfolio expansion.",
     status: "Active",
+    website: "https://www.lazparking.com",
+    yearFounded: 1981,
+    investmentYear: 2007,
+    headquarters: "Hartford, CT",
+    management: [
+      { name: "Alan Lazowski", title: "Founder & Chief Executive Officer" },
+      { name: "Michael Harth", title: "President" },
+      { name: "Sean Bras", title: "Chief Financial Officer" },
+    ],
+    milestones: [
+      {
+        date: "1981",
+        event: "LAZ Parking founded by Alan Lazowski in Hartford, Connecticut, beginning as a single-lot parking operator.",
+        category: "Founding",
+      },
+      {
+        date: "2007",
+        event: "Argo Infrastructure Partners (Apollo) invested in LAZ Parking, providing growth capital to accelerate national expansion through acquisitions.",
+        category: "Financing",
+      },
+      {
+        date: "2012",
+        event: "Acquired Indigo Park Canada (formerly Vinci Park North America), significantly expanding LAZ's Canadian footprint and airport parking portfolio.",
+        category: "Acquisition",
+      },
+      {
+        date: "2015",
+        event: "Surpassed 2,000 managed parking locations, establishing LAZ as one of the top three U.S. parking operators by location count.",
+        category: "Expansion",
+      },
+      {
+        date: "2018",
+        event: "Expanded airport parking and shuttle operations, winning new multi-year concession contracts at major U.S. airports.",
+        category: "Expansion",
+      },
+      {
+        date: "2022",
+        event: "Post-COVID recovery drove parking volumes above pre-pandemic levels at airport and urban locations, supporting strong revenue growth.",
+        category: "Other",
+      },
+      {
+        date: "2024",
+        event: "Continued expansion to approximately 3,000 locations across the U.S. and Canada, with growing EV charging and mobility services offerings.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "LAZ Parking — Company Website", url: "https://www.lazparking.com" },
+      {
+        label: "LAZ Parking — About Us",
+        url: "https://www.lazparking.com/about",
+      },
+    ],
   },
   {
     name: "Leatherstocking Gas Company",
@@ -4801,12 +5388,70 @@ export const companies: PortCo[] = [
     name: "Modern Aviation",
     investmentFirm: "Apollo Global Management",
     sector: "Transportation",
-    subsector: "Aviation",
+    subsector: "Aviation Fueling & FBO Services",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Apollo Infrastructure Opps. Fund III",
-    description: "",
+    description:
+      "Modern Aviation is a leading independent aviation fueling and fixed-base operator (FBO) platform in the United States, providing jet fuel, ground handling, hangar, and terminal services to commercial airlines, cargo operators, private aviation, and military customers. The company operates across a network of airport locations, leveraging long-term airport leases and critical fuel infrastructure. Modern Aviation was formed by Apollo as a platform to consolidate the fragmented U.S. aviation fueling market through acquisitions of independent FBOs and fuel service providers.",
     status: "Active",
+    website: "https://www.modernaviation.com",
+    yearFounded: 2018,
+    investmentYear: 2018,
+    headquarters: "Houston, TX",
+    management: [
+      { name: "Mark Carmen", title: "Chief Executive Officer" },
+      { name: "Stephen Martin", title: "Chief Financial Officer" },
+      { name: "David Wepasnick", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "2018",
+        event: "Apollo Infrastructure Opportunities Fund III formed Modern Aviation as a platform to consolidate aviation fueling and FBO services in the U.S. market.",
+        category: "Founding",
+      },
+      {
+        date: "2018",
+        event: "Acquired initial portfolio of FBO and fueling operations to seed the platform, establishing presence at key U.S. airports.",
+        category: "Acquisition",
+      },
+      {
+        date: "2019",
+        event: "Acquired Lynx FBO, adding operations at several airports and expanding geographic reach in the Western United States.",
+        category: "Acquisition",
+      },
+      {
+        date: "2020",
+        event: "Navigated COVID-19 aviation downturn; maintained operations as an essential service provider for cargo and military aviation customers.",
+        category: "Other",
+      },
+      {
+        date: "2021",
+        event: "Acquired Ross Aviation, adding premier FBO locations and significantly expanding the platform's footprint to over 20 airport locations.",
+        category: "Acquisition",
+      },
+      {
+        date: "2022",
+        event: "Continued bolt-on acquisition strategy, adding FBO locations at regional and general aviation airports across the U.S.",
+        category: "Acquisition",
+      },
+      {
+        date: "2024",
+        event: "Apollo reportedly exploring strategic alternatives for Modern Aviation, including a potential sale, reflecting the platform's successful build-out and attractive cash flow profile.",
+        category: "Other",
+      },
+    ],
+    sources: [
+      { label: "Modern Aviation — Company Website", url: "https://www.modernaviation.com" },
+      {
+        label: "Apollo — Modern Aviation Portfolio",
+        url: "https://www.apollo.com/our-business/portfolio/modern-aviation",
+      },
+      {
+        label: "Aviation International News — Ross Aviation Acquisition",
+        url: "https://www.ainonline.com/aviation-news/business-aviation/modern-aviation-acquires-ross-aviation",
+      },
+    ],
   },
   {
     name: "NextEra Energy Partners 2.5 GW JV",
@@ -4878,45 +5523,253 @@ export const companies: PortCo[] = [
     name: "Stream Data Centers (SDC)",
     investmentFirm: "Apollo Global Management",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Data Centers",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Apollo Funds",
-    description: "",
+    description:
+      "Stream Data Centers is a leading purpose-built data center platform focused on hyperscale and enterprise colocation facilities across major U.S. markets. The company develops, owns, and operates Tier III and Tier IV data centers with a current portfolio exceeding 400 MW of critical IT load capacity across Texas, the Mountain West, and other key markets. Stream differentiates through its build-to-suit model for hyperscale cloud and AI workloads, offering powered shell and turnkey colocation solutions. The company is well-positioned to benefit from surging demand for data center capacity driven by AI, cloud computing, and enterprise digital transformation.",
     status: "Active",
+    website: "https://www.streamdatacenters.com",
+    yearFounded: 2013,
+    investmentYear: 2022,
+    headquarters: "Dallas, TX",
+    management: [
+      { name: "Sean Baillie", title: "Chief Executive Officer" },
+      { name: "Todd Bame", title: "Chief Financial Officer" },
+      { name: "John Wiese", title: "Chief Operating Officer" },
+      { name: "Matt VanderZanden", title: "Chief Revenue Officer" },
+    ],
+    milestones: [
+      {
+        date: "2013",
+        event: "Founded in Dallas, TX as a purpose-built data center developer targeting hyperscale and enterprise customers in underserved markets.",
+        category: "Founding",
+      },
+      {
+        date: "2017",
+        event: "Opened first major hyperscale campus in the Dallas-Fort Worth metroplex, establishing Stream as a premier data center developer in Texas.",
+        category: "Expansion",
+      },
+      {
+        date: "2020",
+        event: "Expanded beyond Texas with data center developments in Denver and Phoenix, diversifying geographic footprint into high-growth Western U.S. markets.",
+        category: "Expansion",
+      },
+      {
+        date: "2022",
+        event: "Apollo Global Management acquired a majority stake in Stream Data Centers, providing capital to accelerate hyperscale development pipeline.",
+        category: "Financing",
+      },
+      {
+        date: "2023",
+        event: "Broke ground on multiple new hyperscale campuses, expanding total planned capacity beyond 500 MW to meet surging AI and cloud demand.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Secured long-term offtake agreements with major hyperscale cloud providers, supporting multi-hundred MW of new capacity development across the portfolio.",
+        category: "Other",
+      },
+    ],
+    sources: [
+      { label: "Stream Data Centers — Company Website", url: "https://www.streamdatacenters.com" },
+      {
+        label: "Apollo — Stream Data Centers Portfolio",
+        url: "https://www.apollo.com/our-business/portfolio/stream-data-centers",
+      },
+      {
+        label: "Data Center Knowledge — Stream Data Centers Expansion",
+        url: "https://www.datacenterknowledge.com/data-centers/stream-data-centers-expands-hyperscale-portfolio",
+      },
+    ],
   },
   {
     name: "Summit Ridge Energy",
     investmentFirm: "Apollo Global Management",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Community Solar",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Apollo Sustainable Investing",
-    description: "",
+    description:
+      "Summit Ridge Energy is the largest owner and operator of community solar assets in the United States, with approximately 1.5 GW of operating and contracted capacity across over 200 projects in states including Maryland, Illinois, Maine, and Massachusetts. The company develops, finances, constructs, and operates distributed solar projects that provide bill savings to residential and commercial subscribers without requiring rooftop installation. Summit Ridge benefits from long-term state-mandated community solar programs and utility net metering frameworks, creating stable, contracted revenue streams. Apollo acquired the platform through its sustainable investing initiative to capitalize on the rapidly growing distributed energy market.",
     status: "Active",
+    website: "https://www.summitridgeenergy.com",
+    yearFounded: 2017,
+    investmentYear: 2022,
+    headquarters: "Washington, DC",
+    management: [
+      { name: "Will Giese", title: "Chief Executive Officer" },
+      { name: "John Merrill", title: "Chief Financial Officer" },
+      { name: "Drew Torbin", title: "Chief Development Officer" },
+    ],
+    milestones: [
+      {
+        date: "2017",
+        event: "Summit Ridge Energy founded in Washington, DC, initially focused on developing community solar projects in Maryland under the state's Community Solar Pilot Program.",
+        category: "Founding",
+      },
+      {
+        date: "2019",
+        event: "Expanded beyond Maryland into Illinois, Maine, and Massachusetts as additional states enacted community solar legislation.",
+        category: "Expansion",
+      },
+      {
+        date: "2020",
+        event: "Surpassed 500 MW of operating and contracted community solar capacity, establishing the platform as a market leader.",
+        category: "Expansion",
+      },
+      {
+        date: "2022",
+        event: "Apollo Global Management acquired Summit Ridge Energy through its sustainable investing platform, providing capital for continued portfolio expansion.",
+        category: "Financing",
+      },
+      {
+        date: "2023",
+        event: "Grew portfolio to over 1 GW of operating capacity, with active development in multiple new community solar markets enabled by Inflation Reduction Act incentives.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Expanded subscriber base to serve over 100,000 residential and commercial community solar subscribers across the operating portfolio.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Summit Ridge Energy — Company Website", url: "https://www.summitridgeenergy.com" },
+      {
+        label: "Apollo — Summit Ridge Energy Acquisition",
+        url: "https://www.apollo.com/media/press-releases/2022/summit-ridge-energy",
+      },
+      {
+        label: "Solar Power World — Summit Ridge Community Solar Leader",
+        url: "https://www.solarpowerworldonline.com/summit-ridge-energy-community-solar/",
+      },
+    ],
   },
   {
     name: "The State Group",
     investmentFirm: "Apollo Global Management",
     sector: "Energy Transition",
-    subsector: "Services",
+    subsector: "Electrical & Infrastructure Services",
     region: "North America",
     country: "United States & Canada",
     ownershipVehicle: "Apollo Clean Transition Equity",
-    description: "",
+    description:
+      "The State Group is a leading North American provider of electrical and infrastructure services specializing in power generation, transmission, distribution, and industrial electrical construction. The company delivers engineering, procurement, construction (EPC), and maintenance services to utilities, renewable energy developers, industrial facilities, and data center operators across the U.S. and Canada. The State Group is positioned to benefit from the massive buildout of electrical infrastructure driven by electrification, renewable energy integration, grid modernization, and data center expansion. Apollo acquired the company through its Clean Transition Equity platform to capitalize on the structural growth in energy transition infrastructure services.",
     status: "Active",
+    website: "https://www.thestategroup.com",
+    yearFounded: 1961,
+    investmentYear: 2023,
+    headquarters: "Toronto, Ontario, Canada",
+    management: [
+      { name: "John Chicken", title: "President & Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "1961",
+        event: "The State Group founded in Ontario, Canada as a specialized electrical contracting firm serving industrial and utility clients.",
+        category: "Founding",
+      },
+      {
+        date: "2000s",
+        event: "Expanded from Canadian base into the United States, establishing operations across multiple states to serve power generation and transmission clients.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Apollo Clean Transition Equity acquired The State Group, providing growth capital to scale operations amid surging demand for electrical infrastructure services.",
+        category: "Financing",
+      },
+      {
+        date: "2024",
+        event: "Expanded service capabilities in renewable energy EPC and data center electrical construction, addressing record demand from the AI infrastructure buildout.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "The State Group — Company Website", url: "https://www.thestategroup.com" },
+      {
+        label: "Apollo — Clean Transition Investments",
+        url: "https://www.apollo.com/our-business/clean-transition",
+      },
+    ],
   },
   {
     name: "TierPoint",
     investmentFirm: "Apollo Global Management",
     sector: "Digital Infrastructure",
-    subsector: "",
+    subsector: "Data Centers & Managed IT",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "TierPoint is a leading national provider of colocation, cloud, and managed IT services operating approximately 40 data centers across more than 20 U.S. markets. The company serves over 3,000 enterprise, government, and mid-market customers, offering hybrid IT solutions that combine on-premises infrastructure with public and private cloud environments. TierPoint's data center portfolio totals approximately 1 million square feet of raised floor space with robust connectivity through carrier-neutral meet-me rooms and direct cloud on-ramps. The platform has been built through extensive M&A consolidation under successive private equity owners.",
     status: "Active",
+    website: "https://www.tierpoint.com",
+    yearFounded: 2010,
+    investmentYear: 2021,
+    headquarters: "St. Louis, MO",
+    management: [
+      { name: "Jerry Kent", title: "Chief Executive Officer" },
+      { name: "Jen Curry Hendricks", title: "President" },
+      { name: "Stephen Haas", title: "Chief Financial Officer" },
+      { name: "Steve Corrigan", title: "Chief Technology Officer" },
+    ],
+    milestones: [
+      {
+        date: "2010",
+        event: "TierPoint formed through the combination of Cequel Data Centers and Windstream Hosted Solutions, creating a multi-site data center platform.",
+        category: "Founding",
+      },
+      {
+        date: "2014",
+        event: "Acquired Cosentry, a Midwest-focused data center and managed services provider, expanding capacity in Kansas, Nebraska, Iowa, and South Dakota.",
+        category: "Acquisition",
+      },
+      {
+        date: "2015",
+        event: "Acquired Windstream's hosted solutions business and Perimeter Technology Center in Clarksville, TN.",
+        category: "Acquisition",
+      },
+      {
+        date: "2017",
+        event: "Acquired by Ridgemont Equity Partners and Ontario Teachers' Pension Plan Board from Cequel III (Jerry Kent's investment firm).",
+        category: "Financing",
+      },
+      {
+        date: "2019",
+        event: "Merged with Windstream's wholesale data center business, adding seven data centers and significantly expanding the national footprint.",
+        category: "Acquisition",
+      },
+      {
+        date: "2021",
+        event: "Apollo Global Management (via Argo Infrastructure Partners) acquired TierPoint, providing capital to modernize facilities and pursue growth in hybrid cloud and edge computing.",
+        category: "Financing",
+      },
+      {
+        date: "2023",
+        event: "Expanded cloud and managed services offerings, launching enhanced public cloud on-ramp connectivity and disaster recovery solutions.",
+        category: "Expansion",
+      },
+      {
+        date: "2024",
+        event: "Invested in data center capacity expansion across key markets to meet growing demand from AI workloads and enterprise cloud migration.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "TierPoint — Company Website", url: "https://www.tierpoint.com" },
+      {
+        label: "Apollo — TierPoint Portfolio",
+        url: "https://www.apollo.com/our-business/portfolio/tierpoint",
+      },
+      {
+        label: "Data Center Knowledge — TierPoint Sold to Apollo",
+        url: "https://www.datacenterknowledge.com/business/tierpoint-sold-apollo-affiliated-firm",
+      },
+    ],
   },
   {
     name: "TotalEnergies Texas Solar & BESS",
@@ -4933,23 +5786,116 @@ export const companies: PortCo[] = [
     name: "US Water Systems",
     investmentFirm: "Apollo Global Management",
     sector: "Regulated Utilities",
-    subsector: "Water",
+    subsector: "Water & Wastewater",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Argo Infrastructure Partners (Apollo)",
-    description: "",
+    description:
+      "US Water Systems is a platform of water and wastewater concession assets owned by Argo Infrastructure Partners (Apollo affiliate), providing essential water utility services to municipalities through long-term public-private partnership agreements. The portfolio includes the Bayonne Water & Wastewater Concession in New Jersey and the Middletown Water & Sewer Concession in New York, where the company operates, maintains, and invests capital in municipal water and wastewater infrastructure under multi-decade concession contracts. These assets generate stable, contracted revenue with embedded rate escalators and represent a growing segment of U.S. water infrastructure investment.",
     status: "Active",
+    yearFounded: 2012,
+    investmentYear: 2012,
+    headquarters: "New York, NY",
+    milestones: [
+      {
+        date: "2012",
+        event: "Argo Infrastructure Partners (Apollo) won the Bayonne, NJ water and wastewater concession, a 40-year public-private partnership to operate, maintain, and upgrade the city's water and sewer systems.",
+        category: "Financing",
+      },
+      {
+        date: "2012",
+        event: "Bayonne concession launched, with United Water (now Veolia) serving as the operating partner under a long-term O&M subcontract.",
+        category: "Founding",
+      },
+      {
+        date: "2016",
+        event: "Invested in major capital improvements to Bayonne's aging water and wastewater infrastructure, including pipe replacement and treatment facility upgrades.",
+        category: "Expansion",
+      },
+      {
+        date: "2019",
+        event: "Won the Middletown, NY water and sewer concession, expanding the municipal water PPP platform to a second community.",
+        category: "Acquisition",
+      },
+      {
+        date: "2022",
+        event: "Continued capital investment across both concessions, replacing aging lead service lines and upgrading treatment capacity to meet EPA compliance standards.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      {
+        label: "City of Bayonne — Water & Sewer Concession",
+        url: "https://www.bayonnenj.org/content/236/default.aspx",
+      },
+    ],
   },
   {
     name: "US Wind",
     investmentFirm: "Apollo Global Management",
     sector: "Energy Transition",
-    subsector: "Renewables",
+    subsector: "Offshore Wind",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Apollo Infrastructure Opps. Fund II",
-    description: "",
+    description:
+      "US Wind is an offshore wind development company advancing the MarWin project, a large-scale offshore wind farm located in a federal lease area approximately 12 nautical miles off the coast of Ocean City, Maryland. The project holds the potential for up to 2 GW of capacity and has been awarded offshore renewable energy credits (ORECs) by the Maryland Public Service Commission. US Wind is developing what would be among the first utility-scale offshore wind farms in the mid-Atlantic region, with power delivery targeted to the PJM grid serving Maryland, Delaware, and Virginia. The project represents a long-duration, contracted infrastructure asset with significant development upside.",
     status: "Active",
+    website: "https://www.uswindinc.com",
+    yearFounded: 2011,
+    investmentYear: 2016,
+    headquarters: "Baltimore, MD",
+    management: [
+      { name: "Jeff Grybowski", title: "Chief Executive Officer" },
+    ],
+    milestones: [
+      {
+        date: "2011",
+        event: "US Wind Inc. founded as a subsidiary of Italian energy company Renexia to pursue offshore wind development opportunities in the United States.",
+        category: "Founding",
+      },
+      {
+        date: "2014",
+        event: "Won federal Bureau of Ocean Energy Management (BOEM) lease for offshore wind energy area off the coast of Maryland (OCS-A 0490).",
+        category: "Other",
+      },
+      {
+        date: "2016",
+        event: "Apollo Infrastructure Opportunities Fund II acquired US Wind, providing development capital for the MarWin offshore wind project.",
+        category: "Financing",
+      },
+      {
+        date: "2017",
+        event: "Maryland PSC awarded first round of offshore renewable energy credits (ORECs) for the initial 248 MW phase of the MarWin project.",
+        category: "Other",
+      },
+      {
+        date: "2021",
+        event: "Maryland PSC awarded additional ORECs for a significantly expanded MarWin project, bringing total awarded capacity to approximately 1.1 GW.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Submitted Construction and Operations Plan (COP) to BOEM for federal environmental review, advancing toward permitting milestones.",
+        category: "Other",
+      },
+      {
+        date: "2024",
+        event: "Jeff Grybowski appointed CEO, bringing experience from Deepwater Wind (now Ørsted's Block Island Wind Farm). Advanced project engineering and supply chain procurement.",
+        category: "Management",
+      },
+    ],
+    sources: [
+      { label: "US Wind — Company Website", url: "https://www.uswindinc.com" },
+      {
+        label: "Maryland PSC — US Wind OREC Awards",
+        url: "https://www.psc.state.md.us/search-results/?q=us+wind",
+      },
+      {
+        label: "Offshore Wind Biz — US Wind MarWin Project",
+        url: "https://www.offshorewind.biz/tag/us-wind/",
+      },
+    ],
   },
   {
     name: "Valor Compute Infrastructure (VCI)",
@@ -6285,12 +7231,80 @@ export const companies: PortCo[] = [
     name: "Buckeye Partners",
     investmentFirm: "AustralianSuper",
     sector: "Midstream Energy",
-    subsector: "",
+    subsector: "Pipelines & Terminals",
     region: "North America",
     country: "United States",
     ownershipVehicle: "Mid Risk Portfolio (Infrastructure Co-Investment via IFM)",
-    description: "",
+    description:
+      "Buckeye Partners is one of the largest independent midstream infrastructure companies in the United States, operating a diversified network of approximately 6,000 miles of pipelines and over 100 liquid petroleum product terminals with aggregate storage capacity of approximately 118 million barrels. The company's assets provide critical transportation, storage, and processing services for refined petroleum products, crude oil, and other hydrocarbons across major demand centers in the Northeast, Midwest, Gulf Coast, and the Caribbean. Buckeye was taken private by IFM Investors in 2019, transitioning from a publicly traded master limited partnership to a privately held infrastructure platform backed by long-term institutional capital.",
     status: "Active",
+    website: "https://www.buckeye.com",
+    yearFounded: 1886,
+    investmentYear: 2019,
+    headquarters: "Houston, TX",
+    management: [
+      { name: "Todd Russo", title: "President & Chief Executive Officer" },
+      { name: "Keith St.Clair", title: "Chief Financial Officer" },
+      { name: "Khalid Muslih", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "1886",
+        event: "Buckeye Pipe Line Company founded as part of Standard Oil Trust to transport petroleum products in the Midwest and Northeast United States.",
+        category: "Founding",
+      },
+      {
+        date: "1997",
+        event: "Converted to a master limited partnership (NYSE: BPL), enabling access to public capital markets for infrastructure expansion.",
+        category: "IPO",
+      },
+      {
+        date: "2011",
+        event: "Acquired BORCO (Bahamas Oil Refining Company), one of the largest crude oil and petroleum product storage terminals in the world with approximately 26.2 million barrels of capacity.",
+        category: "Acquisition",
+      },
+      {
+        date: "2013",
+        event: "Acquired Hess Corporation's terminal network in the Eastern U.S. for approximately $850 million, adding 38 terminals and expanding refined products logistics footprint.",
+        category: "Acquisition",
+      },
+      {
+        date: "2014",
+        event: "Acquired 50% interest in Buckeye Texas Partners (crude oil pipeline and storage) and expanded Gulf Coast presence.",
+        category: "Acquisition",
+      },
+      {
+        date: "Nov 2019",
+        event: "IFM Investors completed take-private acquisition of Buckeye Partners for approximately $10.3 billion (including debt) at $41.50 per unit, delisting from NYSE.",
+        category: "Financing",
+      },
+      {
+        date: "2020",
+        event: "Todd Russo appointed President & CEO, succeeding Clark Smith. Initiated operational transformation and capital discipline program.",
+        category: "Management",
+      },
+      {
+        date: "2022",
+        event: "Completed sale of non-core Gulf Coast pipeline assets, streamlining the portfolio to focus on higher-return terminal and logistics infrastructure.",
+        category: "Divestiture",
+      },
+      {
+        date: "2023",
+        event: "Invested in energy transition initiatives including low-carbon fuel blending, renewable diesel storage, and sustainable aviation fuel infrastructure at key terminals.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Buckeye Partners — Company Website", url: "https://www.buckeye.com" },
+      {
+        label: "IFM Investors — Buckeye Partners Portfolio",
+        url: "https://www.ifminvestors.com/investment-capabilities/infrastructure/portfolio/buckeye-partners",
+      },
+      {
+        label: "Bloomberg — IFM Investors Closes Buckeye Partners Take-Private",
+        url: "https://www.bloomberg.com/news/articles/2019-11-01/ifm-investors-closes-buckeye-partners-take-private",
+      },
+    ],
   },
   {
     name: "Chesapeake",
@@ -6311,8 +7325,66 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Mid Risk Portfolio (Real Assets / Direct Investment)",
-    description: "",
+    description:
+      "DataBank is one of the largest privately held enterprise colocation and managed infrastructure providers in the United States, operating approximately 65+ data centers across 27+ markets with over 300 MW of critical IT load capacity. The platform serves enterprise, government, healthcare, and financial services customers with colocation, interconnection, cloud, and disaster recovery services. DataBank has been built through a disciplined acquisition strategy under DigitalBridge's ownership, with AustralianSuper participating as a co-investor. The company is well-positioned for continued growth driven by hybrid cloud adoption, AI workloads, and enterprise demand for secure, low-latency edge infrastructure.",
     status: "Active",
+    website: "https://www.databank.com",
+    yearFounded: 2005,
+    investmentYear: 2020,
+    headquarters: "Dallas, TX",
+    management: [
+      { name: "Raul Martynek", title: "Chief Executive Officer" },
+      { name: "Kevin Ooley", title: "Chief Financial Officer" },
+      { name: "Tony Qorri", title: "Chief Revenue Officer" },
+    ],
+    milestones: [
+      {
+        date: "2005",
+        event: "DataBank founded in Dallas, TX as an enterprise colocation provider focused on the Dallas-Fort Worth market.",
+        category: "Founding",
+      },
+      {
+        date: "2016",
+        event: "DigitalBridge (then Colony Capital Digital) acquired DataBank and began executing a national rollup strategy.",
+        category: "Financing",
+      },
+      {
+        date: "2018",
+        event: "Merged with C7 Data Centers, adding facilities across Salt Lake City and other Western U.S. markets.",
+        category: "Acquisition",
+      },
+      {
+        date: "2019",
+        event: "Acquired zColo (Zayo Group colocation division), adding 44 data centers across 22 markets and tripling DataBank's footprint.",
+        category: "Acquisition",
+      },
+      {
+        date: "2020",
+        event: "AustralianSuper invested alongside DigitalBridge as a co-investor, providing long-term capital to support continued growth.",
+        category: "Financing",
+      },
+      {
+        date: "2022",
+        event: "Acquired LightBound, a fiber and network services provider, enhancing interconnection capabilities across the data center portfolio.",
+        category: "Acquisition",
+      },
+      {
+        date: "2023",
+        event: "Expanded capacity significantly with new builds and expansions, surpassing 65 data centers and 300 MW of critical load capacity.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "DataBank — Company Website", url: "https://www.databank.com" },
+      {
+        label: "DigitalBridge — DataBank Portfolio",
+        url: "https://www.digitalbridge.com/portfolio/databank",
+      },
+      {
+        label: "Data Center Knowledge — DataBank Growth",
+        url: "https://www.datacenterknowledge.com/data-centers/databank-data-center-company-profile",
+      },
+    ],
   },
   {
     name: "Generate Capital",
@@ -6329,12 +7401,75 @@ export const companies: PortCo[] = [
     name: "Transurban",
     investmentFirm: "AustralianSuper",
     sector: "Transportation",
-    subsector: "",
-    region: "North America",
-    country: "United States",
+    subsector: "Toll Roads",
+    region: "Global",
+    country: "Australia / United States",
     ownershipVehicle: "Mid Risk Portfolio",
-    description: "",
+    description:
+      "Transurban is one of the world's largest toll road operators, managing and developing a portfolio of 22 toll roads across Sydney, Melbourne, Brisbane, and the greater Washington, DC/Virginia region with approximately 280 km of toll roads serving over 2 million trips per day. The company holds long-term concession agreements (typically 30-50+ years) with government authorities, generating revenue through electronic tolling with CPI-linked escalation mechanisms. AustralianSuper is one of Transurban's largest shareholders through its Mid Risk Portfolio, reflecting a core infrastructure allocation to a listed but fundamentally infrastructure-grade asset. Transurban continues to expand through development of new expressway projects and extensions of existing motorways.",
     status: "Active",
+    website: "https://www.transurban.com",
+    yearFounded: 1996,
+    investmentYear: 2015,
+    headquarters: "Melbourne, Australia",
+    management: [
+      { name: "Michelle Jablko", title: "Chief Executive Officer" },
+      { name: "Tim Regan", title: "Chief Financial Officer" },
+      { name: "Mark Dunstan", title: "Chief Operating Officer" },
+    ],
+    milestones: [
+      {
+        date: "1996",
+        event: "Transurban founded and listed on the Australian Stock Exchange (ASX: TCL) to own and operate CityLink, Melbourne's first electronic toll road.",
+        category: "Founding",
+      },
+      {
+        date: "2005",
+        event: "Acquired a portfolio of toll roads in Sydney, including the Hills M2 Motorway and Lane Cove Tunnel, establishing a multi-city Australian platform.",
+        category: "Acquisition",
+      },
+      {
+        date: "2007",
+        event: "Entered the U.S. market by acquiring a 75% stake in the Pocahontas Parkway (Route 895) in Virginia.",
+        category: "Expansion",
+      },
+      {
+        date: "2014",
+        event: "Won the concession for the I-95 Express Lanes in Virginia, expanding the U.S. managed lanes portfolio in the greater Washington, DC region.",
+        category: "Acquisition",
+      },
+      {
+        date: "2018",
+        event: "Completed the $9.3 billion acquisition of a majority stake in WestConnex, Sydney's largest motorway project, adding 33 km of toll roads.",
+        category: "Acquisition",
+      },
+      {
+        date: "2021",
+        event: "Completed the NorthConnex tunnel in Sydney and Fredericksburg Extension in Virginia, expanding toll road capacity across both markets.",
+        category: "Expansion",
+      },
+      {
+        date: "2023",
+        event: "Michelle Jablko appointed CEO, succeeding Scott Charlton. Advanced the West Gate Tunnel project in Melbourne toward completion.",
+        category: "Management",
+      },
+      {
+        date: "2024",
+        event: "Continued expansion of the Virginia managed lanes network and advanced development of additional Sydney motorway connections.",
+        category: "Expansion",
+      },
+    ],
+    sources: [
+      { label: "Transurban — Company Website", url: "https://www.transurban.com" },
+      {
+        label: "Transurban — Investor Centre",
+        url: "https://www.transurban.com/investor-centre",
+      },
+      {
+        label: "ASX — Transurban Group (TCL)",
+        url: "https://www2.asx.com.au/markets/company/tcl",
+      },
+    ],
   },
   // ─── Axium Infrastructure ───────────────────────────────────
   {
