@@ -38,13 +38,13 @@ export default function LoginPage() {
   return (
     <>
       <style>{`nav { display: none !important; } main { padding-top: 0 !important; }`}</style>
-      <div className="min-h-screen bg-[#09090B] flex items-center justify-center px-4">
+      <div className="min-h-screen bg-[#f5f5f3] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-[#EDEDED] tracking-tight">
+          <h1 className="font-heading text-2xl font-bold text-[#111111] tracking-tight">
             InfraTracker
           </h1>
-          <p className="text-sm text-[#A1A1AA] mt-2">
+          <p className="text-sm text-[#6b6b6b] mt-2">
             Enter password to continue
           </p>
         </div>
@@ -57,18 +57,18 @@ export default function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
               autoFocus
-              className="w-full px-4 py-3 bg-[#18181B] border border-[#27272A] rounded-lg text-[#EDEDED] placeholder-[#52525B] focus:outline-none focus:border-[#818CF8] focus:ring-1 focus:ring-[#818CF8] transition-colors"
+              className="w-full px-4 py-3 bg-white border border-[#d7d7d7] rounded-lg text-[#111111] placeholder-[#999999] focus:outline-none focus:border-[#007a4d] focus:ring-1 focus:ring-[#007a4d] transition-colors"
             />
           </div>
 
           {error && (
-            <p className="text-sm text-red-400">{error}</p>
+            <p className="text-sm text-red-600">{error}</p>
           )}
 
           <button
             type="submit"
             disabled={loading || !password}
-            className="w-full py-3 bg-[#818CF8] hover:bg-[#6366F1] disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors"
+            className="w-full py-3 bg-[#007a4d] hover:bg-[#006640] disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors"
           >
             {loading ? "Verifying..." : "Enter"}
           </button>

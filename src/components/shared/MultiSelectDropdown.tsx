@@ -36,8 +36,8 @@ export function MultiSelectDropdown({
         aria-label={`Filter by ${label}`}
         className={`flex items-center gap-2 px-2.5 py-1.5 rounded-[4px] border text-xs-dense font-medium transition-colors whitespace-nowrap ${
           selected.size > 0
-            ? "border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.1)] text-[#818CF8]"
-            : "border-[#27272A] bg-[#18181B] text-[#A1A1AA] hover:border-[#3f3f46] hover:text-[#EDEDED] hover:bg-[rgba(255,255,255,0.03)]"
+            ? "border-[rgba(0,122,77,0.3)] bg-[rgba(0,122,77,0.06)] text-[#007a4d]"
+            : "border-[#d7d7d7] bg-white text-[#6b6b6b] hover:border-[#999999] hover:text-[#111111] hover:bg-[#fafaf9]"
         }`}
       >
         <span>{label}</span>
@@ -57,7 +57,7 @@ export function MultiSelectDropdown({
           <div
             role="listbox"
             aria-label={`${label} options`}
-            className="absolute top-full left-0 mt-1 w-64 max-h-64 overflow-y-auto rounded-[4px] border border-[#27272A] bg-[#18181B] shadow-xl"
+            className="absolute top-full left-0 mt-1 w-64 max-h-64 overflow-y-auto rounded-[4px] border border-[#d7d7d7] bg-white shadow-lg"
             style={{ zIndex: 9999 }}
           >
             {options.map((option) => {
@@ -70,19 +70,19 @@ export function MultiSelectDropdown({
                   aria-selected={isSelected}
                   onClick={() => onToggle(option)}
                   className={`w-full flex items-center gap-3 px-3 py-2 text-sm-dense text-left transition-colors ${
-                    isSelected ? "bg-[rgba(255,255,255,0.03)]" : "hover:bg-[rgba(255,255,255,0.03)]"
+                    isSelected ? "bg-[#f5f5f3]" : "hover:bg-[#f5f5f3]"
                   }`}
                 >
                   <div
                     className={`w-4 h-4 rounded-[3px] border flex items-center justify-center shrink-0 ${
-                      isSelected ? "border-[#818CF8] bg-[#818CF8]" : "border-[#3f3f46]"
+                      isSelected ? "border-[#007a4d] bg-[#007a4d]" : "border-[#c4c4c4]"
                     }`}
                   >
                     {isSelected && <Check className="h-3 w-3 text-white" />}
                   </div>
                   <span
                     className="truncate"
-                    style={{ color: isSelected ? color : "#A1A1AA" }}
+                    style={{ color: isSelected ? color : "#6b6b6b" }}
                   >
                     {option}
                   </span>

@@ -6,12 +6,12 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Geist", "Inter", "system-ui", "sans-serif"],
-        mono: ["Geist Mono", "JetBrains Mono", "monospace"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        heading: ["Inter Tight", "Inter", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
       },
       fontSize: {
         micro: ["11px", "14px"],
@@ -19,25 +19,26 @@ const config: Config = {
         "sm-dense": ["13px", "20px"],
       },
       colors: {
-        canvas: "#09090B",
+        canvas: "#f5f5f3",
         surface: {
-          DEFAULT: "#18181B",
-          light: "#1f1f23",
-          lighter: "#27272A",
+          DEFAULT: "#ffffff",
+          light: "#fafaf9",
+          lighter: "#f0f0ee",
         },
         "border-subtle": {
-          DEFAULT: "#27272A",
-          light: "#3f3f46",
+          DEFAULT: "#d7d7d7",
+          light: "#e5e5e5",
         },
         glass: {
-          50: "rgba(255, 255, 255, 0.03)",
-          100: "rgba(255, 255, 255, 0.05)",
-          200: "rgba(255, 255, 255, 0.08)",
+          50: "rgba(0, 0, 0, 0.02)",
+          100: "rgba(0, 0, 0, 0.04)",
+          200: "rgba(0, 0, 0, 0.06)",
         },
-        primary: "#EDEDED",
-        muted: "#A1A1AA",
-        tertiary: "#52525B",
-        hover: "rgba(255, 255, 255, 0.03)",
+        primary: "#111111",
+        muted: "#6b6b6b",
+        tertiary: "#999999",
+        hover: "rgba(0, 0, 0, 0.03)",
+        accent: "#007a4d",
       },
       animation: {
         "fade-in": "fade-in 0.5s ease-out forwards",

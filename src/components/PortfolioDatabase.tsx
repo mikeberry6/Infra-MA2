@@ -78,17 +78,17 @@ function PortCoFilterBar({
     <div className="mb-4 lg:mb-6 space-y-3">
       <div className="flex items-center gap-3 flex-wrap">
         <div className="relative flex-1 min-w-[200px] max-w-sm">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#52525B]" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#999999]" />
           <input
             type="text"
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search portfolio companies..."
             aria-label="Search portfolio companies"
-            className="w-full rounded-[4px] border border-[#27272A] bg-[#18181B] pl-10 pr-4 py-1.5 text-sm-dense text-[#EDEDED] placeholder:text-[#52525B] focus:outline-none focus:border-[#A1A1AA] transition-colors"
+            className="w-full rounded-[4px] border border-[#d7d7d7] bg-white pl-10 pr-4 py-1.5 text-sm-dense text-[#111111] placeholder:text-[#999999] focus:outline-none focus:border-[#007a4d] transition-colors"
           />
         </div>
-        <div className="w-px h-5 bg-[#27272A]" />
+        <div className="w-px h-5 bg-[#d7d7d7]" />
         <MultiSelectDropdown
           label="Sector"
           options={PORTCO_SECTORS}
@@ -128,7 +128,7 @@ function PortCoFilterBar({
 
       {total > 0 && (
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">
+          <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">
             Active:
           </span>
           {Array.from(activeSectors).map((s) => (
@@ -149,7 +149,7 @@ function PortCoFilterBar({
           {total > 1 && (
             <button
               onClick={onClearAll}
-              className="text-micro text-[#52525B] hover:text-[#A1A1AA] transition-colors ml-1"
+              className="text-micro text-[#999999] hover:text-[#6b6b6b] transition-colors ml-1"
             >
               Clear all
             </button>
@@ -172,7 +172,7 @@ function SimpleBarRow({ row, maxCount }: { row: SimpleRow; maxCount: number }) {
   const barPct = maxCount > 0 ? (row.count / maxCount) * 100 : 0;
   return (
     <div className="flex items-center gap-3 min-w-0">
-      <span className="text-micro sm:text-xs-dense text-[#EDEDED] truncate w-28 sm:w-36 flex-shrink-0 text-right tracking-tight">
+      <span className="text-micro sm:text-xs-dense text-[#111111] truncate w-28 sm:w-36 flex-shrink-0 text-right tracking-tight">
         {row.name}
       </span>
       <div className="flex-1 flex items-center gap-2 min-w-0">
@@ -181,11 +181,11 @@ function SimpleBarRow({ row, maxCount }: { row: SimpleRow; maxCount: number }) {
           style={{
             width: `${Math.max(barPct, 3)}%`,
             backgroundColor: row.color,
-            opacity: 0.8,
+            opacity: 0.7,
           }}
           aria-label={`${row.name}: ${row.count}`}
         />
-        <span className="text-micro font-mono text-[#A1A1AA] tabular-nums flex-shrink-0">
+        <span className="text-micro font-mono text-[#6b6b6b] tabular-nums flex-shrink-0">
           {row.count}
         </span>
       </div>
@@ -212,7 +212,7 @@ function RankingColumn({ title, rows }: { title: string; rows: SimpleRow[] }) {
   const maxCount = rows[0]?.count ?? 0;
   return (
     <div className="min-w-0">
-      <h3 className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider mb-2.5">
+      <h3 className="text-micro font-medium text-[#6b6b6b] uppercase tracking-wider mb-2.5">
         {title}
       </h3>
       <div className="space-y-2">
@@ -246,8 +246,8 @@ function PortCoInsightsHero({ companies }: { companies: PortCo[] }) {
 
   if (companies.length === 0) {
     return (
-      <div className="rounded-[4px] border border-[#27272A] bg-[#18181B] p-6 text-center">
-        <p className="text-sm-dense text-[#52525B]">
+      <div className="rounded-[4px] border border-[#d7d7d7] bg-white p-6 text-center">
+        <p className="text-sm-dense text-[#999999]">
           No portfolio companies match your current filters. Try broadening your search.
         </p>
       </div>
@@ -255,16 +255,16 @@ function PortCoInsightsHero({ companies }: { companies: PortCo[] }) {
   }
 
   return (
-    <div className="rounded-[4px] border border-[#27272A] bg-[#18181B] overflow-hidden">
+    <div className="rounded-[4px] border border-[#d7d7d7] bg-white overflow-hidden">
       <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-2">
-        <p className="text-xs-dense text-[#52525B]">
-          <span className="mono text-[#EDEDED] font-medium">{companies.length}</span> portfolio companies
+        <p className="text-xs-dense text-[#999999]">
+          <span className="mono text-[#111111] font-medium">{companies.length}</span> portfolio companies
           {" · "}
-          <span className="mono text-[#EDEDED] font-medium">
+          <span className="mono text-[#111111] font-medium">
             {new Set(companies.map((c) => c.investmentFirm)).size}
           </span> investment firms
           {" · "}
-          <span className="mono text-[#EDEDED] font-medium">
+          <span className="mono text-[#111111] font-medium">
             {new Set(companies.map((c) => c.country)).size}
           </span> countries
         </p>
@@ -340,12 +340,12 @@ function PortCoDrawer({
   return (
     <>
       <div
-        className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+        className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#27272A] bg-[#09090B] overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#d7d7d7] bg-[#f5f5f3] overflow-y-auto animate-slide-in-right">
         {/* ── Header ── */}
-        <div className="sticky top-0 z-10 border-b border-[#27272A] bg-[#09090B]/95 backdrop-blur-md relative overflow-hidden">
+        <div className="sticky top-0 z-10 border-b border-[#d7d7d7] bg-white/95 backdrop-blur-md relative overflow-hidden">
           {/* Accent bar */}
           <div
             className="absolute top-0 left-0 right-0 h-[2px]"
@@ -353,28 +353,19 @@ function PortCoDrawer({
               background: `linear-gradient(90deg, ${sectorColor} 0%, transparent 100%)`,
             }}
           />
-          {/* Ambient orbs */}
-          <div
-            className="absolute w-64 h-64 -top-20 -left-16 rounded-full animate-pulse-slow pointer-events-none"
-            style={{ backgroundColor: sectorColor, opacity: 0.10, filter: "blur(80px)" }}
-          />
-          <div
-            className="absolute w-48 h-48 -top-8 right-0 rounded-full animate-pulse-slower pointer-events-none"
-            style={{ backgroundColor: "#818CF8", opacity: 0.07, filter: "blur(80px)" }}
-          />
 
           {/* Content */}
           <div className="relative px-4 sm:px-6 lg:px-8 py-5 lg:py-6">
             <button
               onClick={onClose}
-              className="absolute top-4 right-3 sm:right-5 rounded-[4px] p-2 text-[#52525B] hover:text-[#EDEDED] hover:bg-[rgba(255,255,255,0.05)] transition-colors"
+              className="absolute top-4 right-3 sm:right-5 rounded-[4px] p-2 text-[#999999] hover:text-[#111111] hover:bg-[#f0f0ee] transition-colors"
             >
               <X className="h-5 w-5" />
             </button>
 
             <div className="pr-10">
               <div className="flex items-center gap-2.5">
-                <h2 className="text-2xl lg:text-3xl font-bold text-[#EDEDED] leading-tight tracking-tight">
+                <h2 className="font-heading text-2xl lg:text-3xl font-bold text-[#111111] leading-tight tracking-tight">
                   {company.name}
                 </h2>
                 {company.website && (
@@ -382,7 +373,7 @@ function PortCoDrawer({
                     href={company.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#3f3f46] hover:text-[#818CF8] transition-colors shrink-0"
+                    className="text-[#c4c4c4] hover:text-[#007a4d] transition-colors shrink-0"
                     title="Company website"
                   >
                     <ExternalLink className="h-4 w-4" />
@@ -391,10 +382,10 @@ function PortCoDrawer({
               </div>
 
               <div className="flex items-center gap-1.5 mt-2">
-                <span className="text-sm-dense text-[#A1A1AA]">
+                <span className="text-sm-dense text-[#6b6b6b]">
                   {company.investmentFirm}
                 </span>
-                <span className="text-[#3f3f46] text-sm-dense">·</span>
+                <span className="text-[#c4c4c4] text-sm-dense">·</span>
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full shrink-0"
                   style={{ backgroundColor: getPortCoStatusColor(company.status) }}
@@ -416,18 +407,18 @@ function PortCoDrawer({
           {/* §1 — Company Details */}
           <section>
             <div className="flex items-center gap-2 mb-3">
-              <Briefcase className="h-3.5 w-3.5 text-[#818CF8]" />
-              <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+              <Briefcase className="h-3.5 w-3.5 text-[#007a4d]" />
+              <span className="text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                 Investment Details
               </span>
             </div>
-            <div className="glass-card rounded-[4px] divide-y divide-[#27272A]">
+            <div className="glass-card rounded-[4px] divide-y divide-[#d7d7d7]">
               {detailRows.map((row) => (
                 <div
                   key={row.label}
                   className="flex justify-between items-center px-4 py-2.5"
                 >
-                  <span className="text-micro text-[#52525B]">{row.label}</span>
+                  <span className="text-micro text-[#999999]">{row.label}</span>
                   {row.badges ? (
                     <div className="flex items-center gap-1.5 flex-wrap justify-end">
                       {row.badges.map((s) => (
@@ -445,7 +436,7 @@ function PortCoDrawer({
                       ))}
                     </div>
                   ) : (
-                    <span className="text-micro text-[#EDEDED] text-right font-medium flex items-center gap-1.5">
+                    <span className="text-micro text-[#111111] text-right font-medium flex items-center gap-1.5">
                       {row.dot && (
                         <span
                           className="inline-block h-2 w-2 rounded-full shrink-0"
@@ -462,21 +453,21 @@ function PortCoDrawer({
 
           {/* §2 — Company Overview / Description */}
           {company.description && (
-            <section className="border-t border-[#27272A] pt-6">
+            <section className="border-t border-[#d7d7d7] pt-6">
               <div className="flex items-center gap-2 mb-3">
-                <FileText className="h-3.5 w-3.5 text-[#818CF8]" />
-                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                <FileText className="h-3.5 w-3.5 text-[#007a4d]" />
+                <span className="text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                   Company Overview
                 </span>
               </div>
-              <p className="text-sm-dense text-[#A1A1AA] leading-relaxed">
+              <p className="text-sm-dense text-[#6b6b6b] leading-relaxed">
                 {company.description}
               </p>
 
               {/* Sources */}
               {sources.length > 0 && (
-                <div className="mt-4 rounded-[4px] bg-[#111113] border border-[#1f1f23] px-4 py-3">
-                  <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider block mb-2">
+                <div className="mt-4 rounded-[4px] bg-[#f5f5f3] border border-[#e5e5e5] px-4 py-3">
+                  <span className="text-micro font-medium text-[#999999] uppercase tracking-wider block mb-2">
                     Sources
                   </span>
                   <div className="space-y-1.5">
@@ -488,8 +479,8 @@ function PortCoDrawer({
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 group"
                       >
-                        <ExternalLink className="h-3 w-3 text-[#3f3f46] group-hover:text-[#818CF8] transition-colors shrink-0" />
-                        <span className="text-micro text-[#52525B] group-hover:text-[#818CF8] transition-colors truncate">
+                        <ExternalLink className="h-3 w-3 text-[#c4c4c4] group-hover:text-[#007a4d] transition-colors shrink-0" />
+                        <span className="text-micro text-[#999999] group-hover:text-[#007a4d] transition-colors truncate">
                           {s.label}
                         </span>
                       </a>
@@ -502,15 +493,15 @@ function PortCoDrawer({
 
           {/* §3 — Historical Milestones */}
           {milestones.length > 0 && (
-            <section className="border-t border-[#27272A] pt-6">
+            <section className="border-t border-[#d7d7d7] pt-6">
               <div className="flex items-center gap-2 mb-3">
-                <Clock className="h-3.5 w-3.5 text-[#818CF8]" />
-                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                <Clock className="h-3.5 w-3.5 text-[#007a4d]" />
+                <span className="text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                   Historical Milestones
                 </span>
               </div>
               <div className="relative ml-2">
-                <div className="absolute left-[5px] top-1 bottom-1 w-px bg-[#27272A]" />
+                <div className="absolute left-[5px] top-1 bottom-1 w-px bg-[#d7d7d7]" />
                 <div className="space-y-3">
                   {visibleMilestones.map((m, i) => {
                     const mentionsFirm = m.event.toLowerCase().includes(company.investmentFirm.toLowerCase().split(" ")[0]);
@@ -523,7 +514,7 @@ function PortCoDrawer({
                       key={i}
                       className={`flex items-start gap-3 relative ${
                         isInvestmentMilestone
-                          ? "bg-[#818CF8]/[0.06] -mx-2 px-2 py-2 rounded-[6px] border border-[#818CF8]/20"
+                          ? "bg-[#007a4d]/[0.06] -mx-2 px-2 py-2 rounded-[6px] border border-[#007a4d]/20"
                           : ""
                       }`}
                     >
@@ -534,29 +525,29 @@ function PortCoDrawer({
                             : "h-[11px] w-[11px] rounded-full"
                         }`}
                         style={{
-                          borderColor: isInvestmentMilestone ? "#818CF8" : getMilestoneCategoryColor(m.category),
-                          backgroundColor: isInvestmentMilestone ? "#818CF833" : `${getMilestoneCategoryColor(m.category)}33`,
+                          borderColor: isInvestmentMilestone ? "#007a4d" : getMilestoneCategoryColor(m.category),
+                          backgroundColor: isInvestmentMilestone ? "#007a4d33" : `${getMilestoneCategoryColor(m.category)}33`,
                         }}
                       />
                       <div className="min-w-0 flex-1">
                         <div className="flex items-baseline gap-2 flex-wrap">
                           <span className={`text-micro font-medium shrink-0 tabular-nums ${
-                            isInvestmentMilestone ? "text-[#818CF8]" : "text-[#52525B]"
+                            isInvestmentMilestone ? "text-[#007a4d]" : "text-[#999999]"
                           }`}>
                             {m.date}
                           </span>
                           <span
                             className="text-micro px-1.5 py-0.5 rounded-[3px] shrink-0"
                             style={{
-                              color: isInvestmentMilestone ? "#818CF8" : getMilestoneCategoryColor(m.category),
-                              backgroundColor: isInvestmentMilestone ? "#818CF81a" : `${getMilestoneCategoryColor(m.category)}1a`,
+                              color: isInvestmentMilestone ? "#007a4d" : getMilestoneCategoryColor(m.category),
+                              backgroundColor: isInvestmentMilestone ? "#007a4d1a" : `${getMilestoneCategoryColor(m.category)}1a`,
                             }}
                           >
                             {isInvestmentMilestone ? "Investment" : m.category}
                           </span>
                         </div>
                         <p className={`text-sm-dense mt-0.5 leading-relaxed ${
-                          isInvestmentMilestone ? "text-[#EDEDED]" : "text-[#A1A1AA]"
+                          isInvestmentMilestone ? "text-[#111111]" : "text-[#6b6b6b]"
                         }`}>
                           {m.event}
                         </p>
@@ -569,7 +560,7 @@ function PortCoDrawer({
               {milestones.length > 6 && (
                 <button
                   onClick={() => setShowAllMilestones(!showAllMilestones)}
-                  className="mt-3 ml-2 text-micro text-[#818CF8] hover:text-[#a5b4fc] transition-colors"
+                  className="mt-3 ml-2 text-micro text-[#007a4d] hover:text-[#a5b4fc] transition-colors"
                 >
                   {showAllMilestones
                     ? "Show less"
@@ -581,10 +572,10 @@ function PortCoDrawer({
 
           {/* §4 — Key Management (C-Suite + President only) */}
           {cSuiteManagement.length > 0 && (
-            <section className="border-t border-[#27272A] pt-6">
+            <section className="border-t border-[#d7d7d7] pt-6">
               <div className="flex items-center gap-2 mb-3">
-                <Users className="h-3.5 w-3.5 text-[#818CF8]" />
-                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                <Users className="h-3.5 w-3.5 text-[#007a4d]" />
+                <span className="text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                   Key Management
                 </span>
               </div>
@@ -595,10 +586,10 @@ function PortCoDrawer({
               >
                 {cSuiteManagement.map((exec, i) => (
                   <div key={i} className="glass-card rounded-[4px] px-4 py-3">
-                    <span className="text-sm-dense text-[#EDEDED] font-medium block leading-snug">
+                    <span className="text-sm-dense text-[#111111] font-medium block leading-snug">
                       {exec.name}
                     </span>
-                    <span className="text-micro text-[#52525B] block mt-0.5">
+                    <span className="text-micro text-[#999999] block mt-0.5">
                       {exec.title}
                     </span>
                   </div>
@@ -624,13 +615,13 @@ function PortCoCard({
   return (
     <button
       onClick={() => onSelect(company)}
-      className="w-full text-left glass-card rounded-[4px] p-4 transition-colors hover:bg-[rgba(255,255,255,0.03)] active:bg-[rgba(255,255,255,0.05)]"
+      className="w-full text-left glass-card rounded-[4px] p-4 transition-colors hover:bg-[#f5f5f3] active:bg-[#f0f0ee]"
     >
       <div className="flex items-center justify-between mb-1.5">
-        <h4 className="text-sm-dense font-medium text-[#EDEDED] leading-snug tracking-tight truncate pr-2">
+        <h4 className="text-sm-dense font-medium text-[#111111] leading-snug tracking-tight truncate pr-2">
           {company.name}
         </h4>
-        <ChevronRight className="h-4 w-4 text-[#52525B] shrink-0" />
+        <ChevronRight className="h-4 w-4 text-[#999999] shrink-0" />
       </div>
       <div className="flex flex-wrap gap-1.5 mb-1.5">
         <span
@@ -659,12 +650,12 @@ function PortCoCard({
       </div>
       <div className="grid grid-cols-2 gap-2 text-micro">
         <div>
-          <span className="font-medium text-[#52525B] uppercase tracking-wider">Country</span>
-          <div className="text-xs-dense text-[#A1A1AA] font-medium">{company.country}</div>
+          <span className="font-medium text-[#999999] uppercase tracking-wider">Country</span>
+          <div className="text-xs-dense text-[#6b6b6b] font-medium">{company.country}</div>
         </div>
         <div>
-          <span className="font-medium text-[#52525B] uppercase tracking-wider">Firm</span>
-          <div className="text-xs-dense text-[#A1A1AA] font-medium truncate">{company.investmentFirm}</div>
+          <span className="font-medium text-[#999999] uppercase tracking-wider">Firm</span>
+          <div className="text-xs-dense text-[#6b6b6b] font-medium truncate">{company.investmentFirm}</div>
         </div>
       </div>
     </button>
@@ -710,7 +701,7 @@ function PortCoTable({
 
   const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
     <th
-      className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider cursor-pointer hover:text-[#EDEDED] transition-colors select-none"
+      className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider cursor-pointer hover:text-[#111111] transition-colors select-none"
       onClick={() => toggleSort(field)}
     >
       {label}
@@ -722,7 +713,7 @@ function PortCoTable({
 
   if (companies.length === 0) {
     return (
-      <div className="flex items-center justify-center py-16 text-sm-dense text-[#52525B]">
+      <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999]">
         No portfolio companies match your current filters.
       </div>
     );
@@ -731,14 +722,14 @@ function PortCoTable({
   return (
     <>
       {/* Desktop table */}
-      <div className="hidden md:block overflow-hidden">
+      <div className="hidden md:block overflow-hidden rounded-[4px] border border-[#d7d7d7] bg-white">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm-dense border-collapse whitespace-nowrap">
             <thead>
-              <tr className="border-b border-[#27272A]">
+              <tr className="border-b-2 border-[#111111]">
                 <SortHeader field="name" label="Company" />
                 <SortHeader field="sector" label="Sector" />
-                <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                   Subsector
                 </th>
                 <SortHeader field="country" label="Country" />
@@ -751,14 +742,14 @@ function PortCoTable({
                 <tr
                   key={`${company.name}-${company.investmentFirm}-${i}`}
                   onClick={() => onSelect(company)}
-                  className="border-b border-[rgba(255,255,255,0.08)] hover:bg-[rgba(255,255,255,0.03)] cursor-pointer transition-colors group"
+                  className="border-b border-[#e5e5e5] hover:bg-[#f5f5f3] cursor-pointer transition-colors group"
                 >
                   <td className="px-4 py-3 max-w-[260px]">
                     <div className="flex items-center gap-2">
-                      <span className="font-medium text-[#EDEDED] group-hover:text-[#EDEDED] transition-colors truncate">
+                      <span className="font-medium text-[#111111] group-hover:text-[#111111] transition-colors truncate">
                         {company.name}
                       </span>
-                      <ChevronRight className="h-3 w-3 text-[#52525B] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                      <ChevronRight className="h-3 w-3 text-[#999999] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                     </div>
                   </td>
                   <td className="px-4 py-3">
@@ -780,10 +771,10 @@ function PortCoTable({
                     )}
                   </td>
                   <td className="px-4 py-3">
-                    <span className="text-xs text-[#EDEDED] whitespace-nowrap">{company.country}</span>
+                    <span className="text-xs text-[#111111] whitespace-nowrap">{company.country}</span>
                   </td>
                   <td className="px-4 py-3 max-w-[200px]">
-                    <span className="text-xs text-[#A1A1AA] truncate block">{company.investmentFirm}</span>
+                    <span className="text-xs text-[#6b6b6b] truncate block">{company.investmentFirm}</span>
                   </td>
                   <td className="px-4 py-3">
                     <span
@@ -883,21 +874,21 @@ export function PortfolioDatabase() {
     <div className="mx-auto max-w-[1400px] xl:max-w-[1600px] 2xl:max-w-[1800px] px-4 sm:px-6 lg:px-8 xl:px-12 py-8 lg:py-12">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-base font-medium tracking-tight text-[#EDEDED] mb-1">
+          <h1 className="font-heading text-lg font-bold tracking-tight text-[#111111] mb-1">
             PortCo Database
           </h1>
-          <p className="text-xs-dense text-[#52525B]">
+          <p className="text-xs-dense text-[#999999]">
             Infrastructure fund portfolio companies tracked by investment firm, sector, and region.
           </p>
         </div>
         <div className="hidden sm:flex items-center gap-6 text-xs-dense">
           <div className="flex items-baseline gap-2">
-            <span className="text-[#A1A1AA]">Showing</span>
-            <span className="font-mono text-[#EDEDED] tabular-nums">{filteredCompanies.length}</span>
+            <span className="text-[#6b6b6b]">Showing</span>
+            <span className="font-mono text-[#111111] tabular-nums">{filteredCompanies.length}</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="text-[#A1A1AA]">Total</span>
-            <span className="font-mono text-[#EDEDED] tabular-nums">{portcos.length}</span>
+            <span className="text-[#6b6b6b]">Total</span>
+            <span className="font-mono text-[#111111] tabular-nums">{portcos.length}</span>
           </div>
         </div>
       </div>
@@ -930,10 +921,10 @@ export function PortfolioDatabase() {
       />
 
       <div className="px-1 py-2.5">
-        <span className="text-micro text-[#52525B]">
+        <span className="text-micro text-[#999999]">
           Showing{" "}
-          <span className="font-mono text-[#A1A1AA] tabular-nums">{filteredCompanies.length}</span> companies of{" "}
-          <span className="font-mono text-[#A1A1AA] tabular-nums">{portcos.length}</span> total
+          <span className="font-mono text-[#6b6b6b] tabular-nums">{filteredCompanies.length}</span> companies of{" "}
+          <span className="font-mono text-[#6b6b6b] tabular-nums">{portcos.length}</span> total
         </span>
       </div>
 
