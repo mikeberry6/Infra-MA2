@@ -77,17 +77,17 @@ function FundFilterBar({
     <div className="mb-4 lg:mb-6 space-y-3">
       <div className="flex items-center gap-3">
         <div className="relative flex-1 max-w-sm">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#52525B]" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#999999]" />
           <input
             type="text"
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search funds..."
             aria-label="Search funds"
-            className="w-full rounded-[4px] border border-[#27272A] bg-[#18181B] pl-10 pr-4 py-1.5 text-sm-dense text-[#EDEDED] placeholder:text-[#52525B] focus:outline-none focus:border-[#A1A1AA] transition-colors"
+            className="w-full rounded-[4px] border border-[#d7d7d7] bg-white pl-10 pr-4 py-1.5 text-sm-dense text-[#111111] placeholder:text-[#999999] focus:outline-none focus:border-[#007a4d] transition-colors"
           />
         </div>
-        <div className="w-px h-5 bg-[#27272A]" />
+        <div className="w-px h-5 bg-[#d7d7d7]" />
         <MultiSelectDropdown
           label="Strategy"
           options={FUND_STRATEGIES}
@@ -120,7 +120,7 @@ function FundFilterBar({
 
       {total > 0 && (
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">
+          <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">
             Active:
           </span>
           {Array.from(activeStrategies).map((s) => (
@@ -138,7 +138,7 @@ function FundFilterBar({
           {total > 1 && (
             <button
               onClick={onClearAll}
-              className="text-micro text-[#52525B] hover:text-[#A1A1AA] transition-colors ml-1"
+              className="text-micro text-[#999999] hover:text-[#6b6b6b] transition-colors ml-1"
             >
               Clear all
             </button>
@@ -162,7 +162,7 @@ function SimpleBarRow({ row, maxCount }: { row: SimpleRow; maxCount: number }) {
   const barPct = maxCount > 0 ? (row.count / maxCount) * 100 : 0;
   return (
     <div className="flex items-center gap-3 min-w-0">
-      <span className="text-micro sm:text-xs-dense text-[#EDEDED] truncate w-28 sm:w-36 flex-shrink-0 text-right tracking-tight">
+      <span className="text-micro sm:text-xs-dense text-[#111111] truncate w-28 sm:w-36 flex-shrink-0 text-right tracking-tight">
         {row.name}
       </span>
       <div className="flex-1 flex items-center gap-2 min-w-0">
@@ -171,11 +171,11 @@ function SimpleBarRow({ row, maxCount }: { row: SimpleRow; maxCount: number }) {
           style={{
             width: `${Math.max(barPct, 3)}%`,
             backgroundColor: row.color,
-            opacity: 0.8,
+            opacity: 0.7,
           }}
           aria-label={`${row.name}: ${row.count}`}
         />
-        <span className="text-micro font-mono text-[#A1A1AA] tabular-nums flex-shrink-0">
+        <span className="text-micro font-mono text-[#6b6b6b] tabular-nums flex-shrink-0">
           {row.count}
         </span>
       </div>
@@ -185,7 +185,7 @@ function SimpleBarRow({ row, maxCount }: { row: SimpleRow; maxCount: number }) {
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider mb-2.5">
+    <h3 className="text-micro font-medium text-[#6b6b6b] uppercase tracking-wider mb-2.5">
       {children}
     </h3>
   );
@@ -246,8 +246,8 @@ function FundsInsightsHero({ filteredFunds }: { filteredFunds: Fund[] }) {
 
   if (filteredFunds.length === 0) {
     return (
-      <div className="rounded-[4px] border border-[#27272A] bg-[#18181B] p-6 text-center">
-        <p className="text-sm-dense text-[#52525B]">
+      <div className="rounded-[4px] border border-[#d7d7d7] bg-white p-6 text-center">
+        <p className="text-sm-dense text-[#999999]">
           No funds match your current filters. Try broadening your search.
         </p>
       </div>
@@ -255,16 +255,16 @@ function FundsInsightsHero({ filteredFunds }: { filteredFunds: Fund[] }) {
   }
 
   return (
-    <div className="rounded-[4px] border border-[#27272A] bg-[#18181B] overflow-hidden">
+    <div className="rounded-[4px] border border-[#d7d7d7] bg-white overflow-hidden">
       <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-2">
-        <p className="text-xs-dense text-[#52525B]">
-          <span className="mono text-[#EDEDED] font-medium">{stats.managers}</span> managers
+        <p className="text-xs-dense text-[#999999]">
+          <span className="mono text-[#111111] font-medium">{stats.managers}</span> managers
           {" · "}
-          <span className="mono text-[#EDEDED] font-medium">{stats.funds}</span> fund vehicles
+          <span className="mono text-[#111111] font-medium">{stats.funds}</span> fund vehicles
           {stats.totalAumBn > 0 && (
             <>
               {" · "}
-              <span className="mono text-[#EDEDED] font-medium">${stats.totalAumBn}B</span> total AUM tracked
+              <span className="mono text-[#111111] font-medium">${stats.totalAumBn}B</span> total AUM tracked
             </>
           )}
         </p>
@@ -292,13 +292,13 @@ function FundVehicleCard({
   return (
     <button
       onClick={() => onSelect(fund)}
-      className="w-full text-left glass-card rounded-[4px] p-4 transition-colors hover:bg-[rgba(255,255,255,0.03)] active:bg-[rgba(255,255,255,0.05)]"
+      className="w-full text-left glass-card rounded-[4px] p-4 transition-colors hover:bg-[#f5f5f3] active:bg-[#f0f0ee]"
     >
       <div className="flex items-center justify-between mb-1.5">
-        <h4 className="text-sm-dense font-medium text-[#EDEDED] leading-snug tracking-tight truncate pr-2">
+        <h4 className="text-sm-dense font-medium text-[#111111] leading-snug tracking-tight truncate pr-2">
           {fund.fundName}
         </h4>
-        <ChevronRight className="h-4 w-4 text-[#52525B] shrink-0" />
+        <ChevronRight className="h-4 w-4 text-[#999999] shrink-0" />
       </div>
 
       <div className="flex flex-wrap gap-1.5 mb-2">
@@ -329,12 +329,12 @@ function FundVehicleCard({
 
       <div className="grid grid-cols-2 gap-2">
         <div>
-          <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Size</span>
-          <div className="text-xs-dense text-[#A1A1AA] font-medium truncate">{fund.size}</div>
+          <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Size</span>
+          <div className="text-xs-dense text-[#6b6b6b] font-medium truncate">{fund.size}</div>
         </div>
         <div>
-          <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Vintage</span>
-          <div className="text-xs-dense text-[#A1A1AA] font-medium">{fund.vintage}</div>
+          <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Vintage</span>
+          <div className="text-xs-dense text-[#6b6b6b] font-medium">{fund.vintage}</div>
         </div>
       </div>
     </button>
@@ -369,20 +369,20 @@ function FundManagerAccordion({
   }, [managerFunds]);
 
   return (
-    <div className="border border-[#27272A] rounded-[4px] overflow-hidden">
+    <div className="border border-[#d7d7d7] rounded-[4px] overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-start gap-3 p-4 text-left hover:bg-[rgba(255,255,255,0.03)] transition-colors group"
+        className="w-full flex items-start gap-3 p-4 text-left hover:bg-[#f5f5f3] transition-colors group"
       >
         <ChevronRight
-          className={`h-4 w-4 text-[#52525B] mt-0.5 shrink-0 transition-transform ${isOpen ? "rotate-90" : ""}`}
+          className={`h-4 w-4 text-[#999999] mt-0.5 shrink-0 transition-transform ${isOpen ? "rotate-90" : ""}`}
         />
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3 flex-wrap">
-            <h3 className="text-sm sm:text-base font-semibold text-[#EDEDED] group-hover:text-[#EDEDED] transition-colors">
+            <h3 className="text-sm sm:text-base font-semibold text-[#111111] group-hover:text-[#111111] transition-colors">
               {managerName}
             </h3>
-            <span className="text-micro font-medium text-[#52525B] bg-[#1f1f23] px-2 py-0.5 rounded-[4px]">
+            <span className="text-micro font-medium text-[#999999] bg-[#fafaf9] px-2 py-0.5 rounded-[4px]">
               {managerFunds.length} {managerFunds.length === 1 ? "vehicle" : "vehicles"}
             </span>
           </div>
@@ -403,9 +403,9 @@ function FundManagerAccordion({
                 </span>
               ))}
               {aggregateStrategies.length > 3 && (
-                <span className="text-micro text-[#52525B]">+{aggregateStrategies.length - 3}</span>
+                <span className="text-micro text-[#999999]">+{aggregateStrategies.length - 3}</span>
               )}
-              <span className="text-[#27272A] mx-0.5">|</span>
+              <span className="text-[#c4c4c4] mx-0.5">|</span>
               {aggregateStatuses.map((s) => (
                 <span
                   key={s}
@@ -425,7 +425,7 @@ function FundManagerAccordion({
       </button>
 
       {isOpen && (
-        <div className="border-t border-[#27272A]">
+        <div className="border-t border-[#d7d7d7]">
           {/* Desktop table */}
           <div className="hidden md:block">
             <table className="w-full text-sm-dense table-fixed">
@@ -437,20 +437,20 @@ function FundManagerAccordion({
                 <col className="w-[12%]" />
               </colgroup>
               <thead>
-                <tr className="border-b border-[#27272A]">
-                  <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                <tr className="border-b border-[#d7d7d7]">
+                  <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                     Fund Vehicle
                   </th>
-                  <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                  <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                     Strategy
                   </th>
-                  <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                  <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                     Size
                   </th>
-                  <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                  <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                     Vintage
                   </th>
-                  <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                  <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                     Status
                   </th>
                 </tr>
@@ -460,14 +460,14 @@ function FundManagerAccordion({
                   <tr
                     key={fund.id}
                     onClick={() => onSelectFund(fund)}
-                    className="border-b border-[rgba(255,255,255,0.08)] hover:bg-[rgba(255,255,255,0.03)] cursor-pointer transition-colors group"
+                    className="border-b border-[#e5e5e5] hover:bg-[#f5f5f3] cursor-pointer transition-colors group"
                   >
                     <td className="px-4 py-2.5 overflow-hidden">
                       <div className="flex items-center gap-2">
-                        <span className="font-medium text-[#EDEDED] group-hover:text-[#EDEDED] transition-colors truncate">
+                        <span className="font-medium text-[#111111] group-hover:text-[#111111] transition-colors truncate">
                           {fund.fundName}
                         </span>
-                        <ChevronRight className="h-3 w-3 text-[#52525B] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                        <ChevronRight className="h-3 w-3 text-[#999999] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                       </div>
                     </td>
                     <td className="px-4 py-2.5">
@@ -488,12 +488,12 @@ function FundManagerAccordion({
                       </div>
                     </td>
                     <td className="px-4 py-2.5">
-                      <span className="text-xs text-[#EDEDED] whitespace-nowrap">
+                      <span className="text-xs text-[#111111] whitespace-nowrap">
                         {fund.size}
                       </span>
                     </td>
                     <td className="px-4 py-2.5">
-                      <span className="mono text-xs-dense text-[#52525B]">{fund.vintage}</span>
+                      <span className="mono text-xs-dense text-[#999999]">{fund.vintage}</span>
                     </td>
                     <td className="px-4 py-2.5">
                       <span
@@ -564,7 +564,7 @@ function AllFundsTable({
 
   const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
     <th
-      className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider cursor-pointer hover:text-[#EDEDED] transition-colors select-none"
+      className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider cursor-pointer hover:text-[#111111] transition-colors select-none"
       onClick={() => toggleSort(field)}
     >
       {label}
@@ -576,7 +576,7 @@ function AllFundsTable({
 
   if (displayFunds.length === 0) {
     return (
-      <div className="flex items-center justify-center py-16 text-sm-dense text-[#52525B]">
+      <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999]">
         No funds match your current filters.
       </div>
     );
@@ -585,7 +585,7 @@ function AllFundsTable({
   return (
     <>
       {/* Desktop table */}
-      <div className="hidden md:block overflow-hidden">
+      <div className="hidden md:block rounded-[4px] border border-[#d7d7d7] bg-white overflow-hidden">
         <div className="overflow-x-auto">
         <table className="w-full text-left text-sm-dense border-collapse table-fixed">
           <colgroup>
@@ -597,13 +597,13 @@ function AllFundsTable({
             <col className="w-[10%]" />
           </colgroup>
           <thead>
-            <tr className="border-b border-[#27272A]">
+            <tr className="border-b-2 border-[#111111]">
               <SortHeader field="name" label="Fund Vehicle" />
               <SortHeader field="manager" label="Manager" />
               <SortHeader field="strategy" label="Strategy" />
               <SortHeader field="size" label="Size" />
               <SortHeader field="vintage" label="Vintage" />
-              <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+              <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                 Status
               </th>
             </tr>
@@ -613,18 +613,18 @@ function AllFundsTable({
               <tr
                 key={fund.id}
                 onClick={() => onSelectFund(fund)}
-                className="border-b border-[rgba(255,255,255,0.08)] hover:bg-[rgba(255,255,255,0.03)] cursor-pointer transition-colors group"
+                className="border-b border-[#e5e5e5] hover:bg-[#f5f5f3] cursor-pointer transition-colors group"
               >
                 <td className="px-4 py-3 overflow-hidden">
                   <div className="flex items-center gap-2">
-                    <span className="font-medium text-[#EDEDED] group-hover:text-[#EDEDED] transition-colors truncate">
+                    <span className="font-medium text-[#111111] group-hover:text-[#111111] transition-colors truncate">
                       {fund.fundName}
                     </span>
-                    <ChevronRight className="h-3 w-3 text-[#52525B] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                    <ChevronRight className="h-3 w-3 text-[#999999] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                   </div>
                 </td>
                 <td className="px-4 py-3 overflow-hidden">
-                  <span className="text-xs text-[#A1A1AA] truncate block">{fund.managerName}</span>
+                  <span className="text-xs text-[#6b6b6b] truncate block">{fund.managerName}</span>
                 </td>
                 <td className="px-4 py-3">
                   <div className="flex flex-wrap gap-1">
@@ -644,10 +644,10 @@ function AllFundsTable({
                   </div>
                 </td>
                 <td className="px-4 py-3">
-                  <span className="text-xs text-[#EDEDED] whitespace-nowrap">{fund.size}</span>
+                  <span className="text-xs text-[#111111] whitespace-nowrap">{fund.size}</span>
                 </td>
                 <td className="px-4 py-3">
-                  <span className="mono text-xs-dense text-[#52525B]">{fund.vintage}</span>
+                  <span className="mono text-xs-dense text-[#999999]">{fund.vintage}</span>
                 </td>
                 <td className="px-4 py-3">
                   <span
@@ -738,29 +738,29 @@ function FundDrawer({
   return (
     <>
       <div
-        className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+        className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#27272A] bg-[#09090B] overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#d7d7d7] bg-[#f5f5f3] overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-[#27272A] bg-[#09090B]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
+        <div className="sticky top-0 z-10 border-b border-[#d7d7d7] bg-white/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-1 flex-wrap">
-                <span className="text-xs-dense text-[#52525B]">{fund.managerName}</span>
+                <span className="text-xs-dense text-[#999999]">{fund.managerName}</span>
                 {fund.ticker && (
-                  <span className="mono text-micro text-[#52525B] bg-[#1f1f23] px-1.5 py-0.5 rounded-[4px]">
+                  <span className="mono text-micro text-[#999999] bg-[#fafaf9] px-1.5 py-0.5 rounded-[4px]">
                     {fund.ticker}
                   </span>
                 )}
               </div>
-              <h2 className="text-base sm:text-lg font-semibold text-[#EDEDED] leading-tight tracking-tight">
+              <h2 className="font-heading text-base sm:text-lg font-semibold text-[#111111] leading-tight tracking-tight">
                 {fund.fundName}
               </h2>
             </div>
             <button
               onClick={onClose}
-              className="rounded-[4px] p-2 text-[#52525B] hover:text-[#EDEDED] hover:bg-[rgba(255,255,255,0.05)] transition-colors shrink-0"
+              className="rounded-[4px] p-2 text-[#999999] hover:text-[#111111] hover:bg-[#f0f0ee] transition-colors shrink-0"
             >
               <X className="h-5 w-5" />
             </button>
@@ -787,7 +787,7 @@ function FundDrawer({
                     {s}
                   </span>
                 ))}
-                <div className="h-3.5 w-px bg-[#27272A]" />
+                <div className="h-3.5 w-px bg-[#d7d7d7]" />
                 <span
                   className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
                   style={{
@@ -798,7 +798,7 @@ function FundDrawer({
                 >
                   {fund.status}
                 </span>
-                <div className="h-3.5 w-px bg-[#27272A]" />
+                <div className="h-3.5 w-px bg-[#d7d7d7]" />
                 <span
                   className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
                   style={{
@@ -812,17 +812,17 @@ function FundDrawer({
               </div>
             </div>
             {/* Divider */}
-            <div className="border-t border-[#27272A]" />
+            <div className="border-t border-[#d7d7d7]" />
             {/* Metrics */}
             <div className="px-4 py-3">
               <div className="grid grid-cols-2 gap-x-6 gap-y-2">
                 <div>
-                  <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Fund Size</span>
-                  <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{fund.size}</div>
+                  <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Fund Size</span>
+                  <div className="text-sm-dense font-medium text-[#111111] mt-0.5">{fund.size}</div>
                 </div>
                 <div>
-                  <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Vintage</span>
-                  <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{fund.vintage}</div>
+                  <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Vintage</span>
+                  <div className="text-sm-dense font-medium text-[#111111] mt-0.5">{fund.vintage}</div>
                 </div>
               </div>
             </div>
@@ -830,12 +830,12 @@ function FundDrawer({
 
           {/* Investment Strategy */}
           {fund.investmentStrategy && (
-            <div className="border-t border-[#27272A] pt-4">
-              <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider block mb-2">
+            <div className="border-t border-[#d7d7d7] pt-4">
+              <span className="text-micro font-medium text-[#6b6b6b] uppercase tracking-wider block mb-2">
                 Investment Strategy
               </span>
               <div className="glass-card rounded-[4px] p-3">
-                <p className="text-sm-dense text-[#A1A1AA] leading-relaxed italic">
+                <p className="text-sm-dense text-[#6b6b6b] leading-relaxed italic">
                   {fund.investmentStrategy}
                 </p>
               </div>
@@ -844,8 +844,8 @@ function FundDrawer({
 
           {/* Target Sectors */}
           {fund.sectors.length > 0 && (
-            <div className="border-t border-[#27272A] pt-4">
-              <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider block mb-2">
+            <div className="border-t border-[#d7d7d7] pt-4">
+              <span className="text-micro font-medium text-[#6b6b6b] uppercase tracking-wider block mb-2">
                 Target Sectors
               </span>
               <div className="flex flex-wrap gap-1.5">
@@ -868,8 +868,8 @@ function FundDrawer({
 
           {/* Source URLs */}
           {fund.sourceUrls.length > 0 && (
-            <div className="border-t border-[#27272A] pt-4">
-              <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider block mb-2">
+            <div className="border-t border-[#d7d7d7] pt-4">
+              <span className="text-micro font-medium text-[#6b6b6b] uppercase tracking-wider block mb-2">
                 Sources
               </span>
               <div className="space-y-1.5">
@@ -882,9 +882,9 @@ function FundDrawer({
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-micro text-[#52525B] hover:text-[#EDEDED] transition-colors group"
+                      className="flex items-center gap-1.5 text-micro text-[#999999] hover:text-[#111111] transition-colors group"
                     >
-                      <ExternalLink className="h-3 w-3 shrink-0 text-[#3f3f46] group-hover:text-[#A1A1AA]" />
+                      <ExternalLink className="h-3 w-3 shrink-0 text-[#c4c4c4] group-hover:text-[#6b6b6b]" />
                       <span className="truncate">{hostname}</span>
                     </a>
                   );
@@ -895,12 +895,12 @@ function FundDrawer({
 
           {/* Portfolio Companies */}
           {firmPortfolio.total > 0 && (
-            <div className="border-t border-[#27272A] pt-4">
+            <div className="border-t border-[#d7d7d7] pt-4">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                <span className="text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                   Portfolio Companies
                 </span>
-                <span className="text-micro text-[#52525B]">
+                <span className="text-micro text-[#999999]">
                   {firmPortfolio.total} {firmPortfolio.total === 1 ? "company" : "companies"}
                 </span>
               </div>
@@ -918,12 +918,12 @@ function FundDrawer({
                       >
                         {sector}
                       </span>
-                      <span className="text-micro text-[#52525B]">{count}</span>
+                      <span className="text-micro text-[#999999]">{count}</span>
                     </div>
                     <div className="space-y-2 ml-1">
                       {subsectors.map(({ subsector, entries }) => (
                         <div key={subsector}>
-                          <span className="text-micro text-[#52525B] uppercase tracking-wider">{subsector}</span>
+                          <span className="text-micro text-[#999999] uppercase tracking-wider">{subsector}</span>
                           <div className="mt-1 space-y-1">
                             {entries.map(({ company, fundName, strategies }) => (
                               <div
@@ -931,8 +931,8 @@ function FundDrawer({
                                 className="glass-card rounded-[4px] px-3 py-2 flex items-start justify-between gap-2"
                               >
                                 <div className="min-w-0">
-                                  <div className="text-sm-dense text-[#EDEDED]">{company.name}</div>
-                                  <div className="text-micro text-[#52525B] mt-0.5">
+                                  <div className="text-sm-dense text-[#111111]">{company.name}</div>
+                                  <div className="text-micro text-[#999999] mt-0.5">
                                     {company.country}{firmFunds.length > 1 ? ` · ${fundName}` : ""}
                                   </div>
                                 </div>
@@ -964,8 +964,8 @@ function FundDrawer({
 
           {/* Sibling funds */}
           {siblingFunds.length > 0 && (
-            <div className="border-t border-[#27272A] pt-4">
-              <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider block mb-3">
+            <div className="border-t border-[#d7d7d7] pt-4">
+              <span className="text-micro font-medium text-[#6b6b6b] uppercase tracking-wider block mb-3">
                 Other {fund.managerName} Vehicles
               </span>
               <div className="space-y-2">
@@ -973,13 +973,13 @@ function FundDrawer({
                   <button
                     key={sib.id}
                     onClick={() => onSelectFund(sib)}
-                    className="w-full text-left glass-card rounded-[4px] p-3 hover:border-[#3f3f46] transition-colors flex items-center justify-between gap-2"
+                    className="w-full text-left glass-card rounded-[4px] p-3 hover:border-[#c4c4c4] transition-colors flex items-center justify-between gap-2"
                   >
                     <div className="min-w-0">
-                      <div className="text-sm-dense font-medium text-[#EDEDED] truncate">{sib.fundName}</div>
-                      <div className="text-xs-dense text-[#52525B]">{sib.size}</div>
+                      <div className="text-sm-dense font-medium text-[#111111] truncate">{sib.fundName}</div>
+                      <div className="text-xs-dense text-[#999999]">{sib.size}</div>
                     </div>
-                    <ChevronRight className="h-4 w-4 text-[#52525B] shrink-0" />
+                    <ChevronRight className="h-4 w-4 text-[#999999] shrink-0" />
                   </button>
                 ))}
               </div>
@@ -1058,21 +1058,21 @@ export function FundDatabase() {
     <div className="mx-auto max-w-[1400px] xl:max-w-[1600px] 2xl:max-w-[1800px] px-4 sm:px-6 lg:px-8 xl:px-12 py-8 lg:py-12">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-base font-medium tracking-tight text-[#EDEDED] mb-1">
+          <h1 className="font-heading text-lg font-bold tracking-tight text-[#111111] mb-1">
             Fund Database
           </h1>
-          <p className="text-xs-dense text-[#52525B]">
+          <p className="text-xs-dense text-[#999999]">
             Infrastructure fund manager profiles. Filter by strategy, status, and fund size.
           </p>
         </div>
         <div className="hidden sm:flex items-center gap-6 text-xs-dense">
           <div className="flex items-baseline gap-2">
-            <span className="text-[#A1A1AA]">Managers</span>
-            <span className="font-mono text-[#EDEDED] tabular-nums">{sortedManagers.length}</span>
+            <span className="text-[#6b6b6b]">Managers</span>
+            <span className="font-mono text-[#111111] tabular-nums">{sortedManagers.length}</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="text-[#A1A1AA]">Vehicles</span>
-            <span className="font-mono text-[#EDEDED] tabular-nums">{filteredFunds.length}</span>
+            <span className="text-[#6b6b6b]">Vehicles</span>
+            <span className="font-mono text-[#111111] tabular-nums">{filteredFunds.length}</span>
           </div>
         </div>
       </div>
@@ -1096,13 +1096,13 @@ export function FundDatabase() {
       />
 
           <div className="flex items-center justify-between mb-4">
-            <div className="flex gap-1 p-0.5 rounded-[4px] bg-[#18181B] border border-[#27272A]">
+            <div className="flex gap-1 p-0.5 rounded-[4px] bg-[#f5f5f3] border border-[#d7d7d7]">
               <button
                 onClick={() => setFundView("managers")}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
                   fundView === "managers"
-                    ? "bg-[#1f1f23] text-[#EDEDED]"
-                    : "text-[#A1A1AA] hover:text-[#EDEDED]"
+                    ? "bg-white text-[#111111] shadow-sm"
+                    : "text-[#6b6b6b] hover:text-[#111111]"
                 }`}
               >
                 <Users className="h-3.5 w-3.5" />
@@ -1112,8 +1112,8 @@ export function FundDatabase() {
                 onClick={() => setFundView("all")}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
                   fundView === "all"
-                    ? "bg-[#1f1f23] text-[#EDEDED]"
-                    : "text-[#A1A1AA] hover:text-[#EDEDED]"
+                    ? "bg-white text-[#111111] shadow-sm"
+                    : "text-[#6b6b6b] hover:text-[#111111]"
                 }`}
               >
                 <LayoutList className="h-3.5 w-3.5" />
@@ -1135,7 +1135,7 @@ export function FundDatabase() {
               ))}
 
               {sortedManagers.length === 0 && (
-                <div className="flex items-center justify-center py-16 text-sm-dense text-[#52525B]">
+                <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999]">
                   No funds match your current filters.
                 </div>
               )}
@@ -1148,11 +1148,11 @@ export function FundDatabase() {
           )}
 
           <div className="px-1 py-2.5">
-            <span className="text-micro text-[#52525B]">
+            <span className="text-micro text-[#999999]">
               Showing{" "}
-              <span className="font-mono text-[#A1A1AA] tabular-nums">{sortedManagers.length}</span> managers /{" "}
-              <span className="font-mono text-[#A1A1AA] tabular-nums">{filteredFunds.length}</span> vehicles of{" "}
-              <span className="font-mono text-[#A1A1AA] tabular-nums">{funds.length}</span> total
+              <span className="font-mono text-[#6b6b6b] tabular-nums">{sortedManagers.length}</span> managers /{" "}
+              <span className="font-mono text-[#6b6b6b] tabular-nums">{filteredFunds.length}</span> vehicles of{" "}
+              <span className="font-mono text-[#6b6b6b] tabular-nums">{funds.length}</span> total
             </span>
           </div>
 
