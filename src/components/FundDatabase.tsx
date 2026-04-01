@@ -6,6 +6,7 @@ import {
   FUND_STRATEGIES,
   FUND_STATUSES,
   FUND_SIZE_RANGES,
+  FUND_SECTORS,
   getStrategyColor,
   getStatusColor,
   getSizeRangeColor,
@@ -50,6 +51,8 @@ function FundFilterBar({
   onToggleStatus,
   activeSizeRanges,
   onToggleSizeRange,
+  activeSectors,
+  onToggleSector,
   onClearAll,
 }: {
   search: string;
@@ -60,12 +63,15 @@ function FundFilterBar({
   onToggleStatus: (s: FundStatus) => void;
   activeSizeRanges: Set<FundSizeRange>;
   onToggleSizeRange: (r: FundSizeRange) => void;
+  activeSectors: Set<FundSector>;
+  onToggleSector: (s: FundSector) => void;
   onClearAll: () => void;
 }) {
   const total =
     activeStrategies.size +
     activeStatuses.size +
-    activeSizeRanges.size;
+    activeSizeRanges.size +
+    activeSectors.size;
 
   return (
     <div className="mb-4 lg:mb-6 space-y-3">
@@ -103,6 +109,13 @@ function FundFilterBar({
           onToggle={(v) => onToggleSizeRange(v as FundSizeRange)}
           getColor={() => getSizeRangeColor()}
         />
+        <MultiSelectDropdown
+          label="Sector"
+          options={FUND_SECTORS}
+          selected={activeSectors as Set<string>}
+          onToggle={(v) => onToggleSector(v as FundSector)}
+          getColor={(v) => getFundSectorColor(v as FundSector)}
+        />
       </div>
 
       {total > 0 && (
@@ -118,6 +131,9 @@ function FundFilterBar({
           ))}
           {Array.from(activeSizeRanges).map((r) => (
             <FilterChip key={`size-${r}`} label={r} color={getSizeRangeColor()} onRemove={() => onToggleSizeRange(r)} />
+          ))}
+          {Array.from(activeSectors).map((s) => (
+            <FilterChip key={`sect-${s}`} label={s} color={getFundSectorColor(s)} onRemove={() => onToggleSector(s)} />
           ))}
           {total > 1 && (
             <button
@@ -983,6 +999,7 @@ export function FundDatabase() {
   const [activeStrategies, setActiveStrategies] = useState<Set<FundStrategy>>(new Set());
   const [activeStatuses, setActiveStatuses] = useState<Set<FundStatus>>(new Set());
   const [activeSizeRanges, setActiveSizeRanges] = useState<Set<FundSizeRange>>(new Set());
+  const [activeSectors, setActiveSectors] = useState<Set<FundSector>>(new Set());
   const [selectedFund, setSelectedFund] = useState<Fund | null>(null);
   const [fundView, setFundView] = useState<"managers" | "all">("managers");
 
@@ -991,11 +1008,13 @@ export function FundDatabase() {
   const toggleStrategy = useFilterToggle(setActiveStrategies);
   const toggleStatus = useFilterToggle(setActiveStatuses);
   const toggleSizeRange = useFilterToggle(setActiveSizeRanges);
+  const toggleSector = useFilterToggle(setActiveSectors);
 
   const clearFundFilters = useCallback(() => {
     setActiveStrategies(new Set());
     setActiveStatuses(new Set());
     setActiveSizeRanges(new Set());
+    setActiveSectors(new Set());
     setFundSearch("");
   }, []);
 
@@ -1017,9 +1036,10 @@ export function FundDatabase() {
         );
         if (!matchesAny) return false;
       }
+      if (activeSectors.size > 0 && !fund.sectors.some((s) => activeSectors.has(s))) return false;
       return true;
     });
-  }, [debouncedFundSearch, activeStrategies, activeStatuses, activeSizeRanges]);
+  }, [debouncedFundSearch, activeStrategies, activeStatuses, activeSizeRanges, activeSectors]);
 
   const groupedFunds = useMemo(() => groupFundsByManager(filteredFunds), [filteredFunds]);
   const sortedManagers = useMemo(
@@ -1070,6 +1090,8 @@ export function FundDatabase() {
         onToggleStatus={toggleStatus}
         activeSizeRanges={activeSizeRanges}
         onToggleSizeRange={toggleSizeRange}
+        activeSectors={activeSectors}
+        onToggleSector={toggleSector}
         onClearAll={clearFundFilters}
       />
 
