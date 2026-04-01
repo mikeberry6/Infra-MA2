@@ -381,34 +381,79 @@ function FundManagerAccordion({
     return Array.from(set);
   }, [managerFunds]);
 
+  // Aggregate total AUM for the manager
+  const totalAum = useMemo(() => {
+    let total = 0;
+    for (const f of managerFunds) {
+      if (f.sizeUsdMm) total += f.sizeUsdMm;
+    }
+    return total;
+  }, [managerFunds]);
+
+  const formatAum = (mm: number) => {
+    if (mm >= 1000) return `$${(mm / 1000).toFixed(1)}B`;
+    return `$${mm.toLocaleString()}M`;
+  };
+
   return (
-    <div className="border-b border-[#e8e8e8]">
+    <div className="border border-[#d6d6d6] bg-white">
+      {/* Manager header — scorecard-style */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center gap-2 px-3 py-[6px] text-left hover:bg-[#fafafa] transition-colors group"
+        className="w-full text-left hover:bg-[#fafaf9] transition-colors group"
       >
-        <ChevronRight
-          className={`h-3 w-3 text-[#999] shrink-0 transition-transform ${isOpen ? "rotate-90" : ""}`}
-        />
-        <h3 className="text-[12px] font-heading font-bold text-[#1a1a1a] group-hover:text-[#008253] transition-colors">
-          {managerName}
-        </h3>
-        <span className="text-[10px] text-[#999] font-mono tabular-nums">
-          ({managerFunds.length})
-        </span>
-        {!isOpen && (
-          <div className="flex gap-1 ml-2">
-            {aggregateStrategies.slice(0, 3).map((s) => (
-              <span key={s} className="text-[9px] text-[#888] px-1 border border-[#e0e0e0] bg-[#fafafa]">
-                {s}
+        <div className="px-4 py-3 flex items-start justify-between gap-4">
+          <div className="min-w-0">
+            <div className="flex items-center gap-2">
+              <div className="w-[3px] h-5 bg-[#008253] flex-shrink-0" />
+              <h3 className="text-[14px] font-heading font-bold text-[#1a1a1a] group-hover:text-[#008253] transition-colors tracking-tight">
+                {managerName}
+              </h3>
+            </div>
+            <div className="flex items-center gap-3 mt-1.5 ml-[11px]">
+              <span className="text-[10px] text-[#888] uppercase tracking-[0.06em] font-medium">
+                {managerFunds.length} {managerFunds.length === 1 ? "vehicle" : "vehicles"}
               </span>
-            ))}
+              {totalAum > 0 && (
+                <>
+                  <span className="text-[#d6d6d6]">·</span>
+                  <span className="text-[10px] text-[#888] font-mono tabular-nums">
+                    {formatAum(totalAum)} tracked AUM
+                  </span>
+                </>
+              )}
+              <span className="text-[#d6d6d6]">·</span>
+              <div className="flex gap-1">
+                {aggregateStrategies.slice(0, 4).map((s) => {
+                  const color = getStrategyColor(s);
+                  return (
+                    <span
+                      key={s}
+                      className="text-[9px] font-medium px-1.5 py-0"
+                      style={{
+                        color: color,
+                        backgroundColor: `${color}10`,
+                        border: `1px solid ${color}20`,
+                      }}
+                    >
+                      {s}
+                    </span>
+                  );
+                })}
+                {aggregateStrategies.length > 4 && (
+                  <span className="text-[9px] text-[#999]">+{aggregateStrategies.length - 4}</span>
+                )}
+              </div>
+            </div>
           </div>
-        )}
+          <ChevronRight
+            className={`h-4 w-4 text-[#999] shrink-0 mt-1 transition-transform ${isOpen ? "rotate-90" : ""}`}
+          />
+        </div>
       </button>
 
       {isOpen && (
-        <div>
+        <div className="border-t border-[#e8e8e8]">
           {/* Desktop table */}
           <div className="hidden md:block">
             <table className="w-full text-sm-dense table-fixed">
@@ -420,8 +465,8 @@ function FundManagerAccordion({
                 <col className="w-[12%]" />
               </colgroup>
               <thead>
-                <tr className="bg-[#f5f5f3] border-b border-[#e0e0e0] border-t border-t-[#e8e8e8]">
-                  <th className="text-left px-2.5 py-[4px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
+                <tr className="bg-[#f5f5f3] border-b border-[#e0e0e0]">
+                  <th className="text-left px-4 py-[4px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                     Fund Vehicle
                   </th>
                   <th className="text-left px-2.5 py-[4px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
@@ -439,31 +484,52 @@ function FundManagerAccordion({
                 </tr>
               </thead>
               <tbody>
-                {managerFunds.map((fund) => (
-                  <tr
-                    key={fund.id}
-                    onClick={() => onSelectFund(fund)}
-                    className="border-b border-[#f0f0f0] hover:bg-[#fafafa] cursor-pointer transition-colors group"
-                  >
-                    <td className="px-2.5 py-[4px] overflow-hidden">
-                      <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate">
-                        {fund.fundName}
-                      </span>
-                    </td>
-                    <td className="px-2.5 py-[4px]">
-                      <span className="text-[11px] text-[#555]">{fund.strategies.join(", ")}</span>
-                    </td>
-                    <td className="px-2.5 py-[4px]">
-                      <span className="text-[11px] text-[#555]">{fund.size}</span>
-                    </td>
-                    <td className="px-2.5 py-[4px]">
-                      <span className="font-mono text-[11px] text-[#555]">{fund.vintage}</span>
-                    </td>
-                    <td className="px-2.5 py-[4px]">
-                      <span className="text-[11px] text-[#555]">{fund.status}</span>
-                    </td>
-                  </tr>
-                ))}
+                {managerFunds.map((fund) => {
+                  const statusColor = getStatusColor(fund.status);
+                  return (
+                    <tr
+                      key={fund.id}
+                      onClick={() => onSelectFund(fund)}
+                      className="border-b border-[#f0f0f0] last:border-b-0 hover:bg-[#fafaf9] cursor-pointer transition-colors group"
+                    >
+                      <td className="px-4 py-[5px] overflow-hidden">
+                        <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate">
+                          {fund.fundName}
+                        </span>
+                      </td>
+                      <td className="px-2.5 py-[5px]">
+                        <div className="flex flex-wrap gap-1">
+                          {fund.strategies.map((s) => {
+                            const c = getStrategyColor(s);
+                            return (
+                              <span
+                                key={s}
+                                className="text-[9px] font-medium px-1.5 py-0"
+                                style={{ color: c, backgroundColor: `${c}10`, border: `1px solid ${c}20` }}
+                              >
+                                {s}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      </td>
+                      <td className="px-2.5 py-[5px]">
+                        <span className="text-[11px] text-[#1a1a1a]">{fund.size}</span>
+                      </td>
+                      <td className="px-2.5 py-[5px]">
+                        <span className="font-mono text-[11px] text-[#888] tabular-nums">{fund.vintage}</span>
+                      </td>
+                      <td className="px-2.5 py-[5px]">
+                        <span
+                          className="text-[9px] font-medium px-1.5 py-0"
+                          style={{ color: statusColor, backgroundColor: `${statusColor}10`, border: `1px solid ${statusColor}20` }}
+                        >
+                          {fund.status}
+                        </span>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -1008,73 +1074,72 @@ export function FundDatabase() {
         onClearAll={clearFundFilters}
       />
 
-      {/* White content panel */}
-      <div className="bg-white border border-[#d6d6d6]">
-        {/* Results count + actions + view toggle */}
-        <div className="flex items-center justify-between px-3 py-[6px] border-b border-[#e8e8e8]">
-          <div className="flex items-center gap-4">
-            <span className="text-[11px] text-[#6e6e6e]">
-              Showing <span className="font-mono text-[#1a1a1a] tabular-nums">{filteredFunds.length}</span> of <span className="font-mono text-[#1a1a1a] tabular-nums">{funds.length}</span> funds
-            </span>
-            <div className="hidden sm:flex items-center">
-              <button
-                onClick={() => setFundView("managers")}
-                className={`text-[10px] font-heading px-2 py-[3px] transition-colors border-b-2 ${
-                  fundView === "managers"
-                    ? "font-bold text-[#1a1a1a] border-[#008253]"
-                    : "font-semibold text-[#888] hover:text-[#1a1a1a] border-transparent"
-                }`}
-              >
-                By Manager
-              </button>
-              <button
-                onClick={() => setFundView("all")}
-                className={`text-[10px] font-heading px-2 py-[3px] transition-colors border-b-2 ${
-                  fundView === "all"
-                    ? "font-bold text-[#1a1a1a] border-[#008253]"
-                    : "font-semibold text-[#888] hover:text-[#1a1a1a] border-transparent"
-                }`}
-              >
-                All Funds
-              </button>
-            </div>
-          </div>
-          <div className="hidden sm:flex items-center gap-3">
-            <button className="text-[10px] text-[#888] hover:text-[#1a1a1a] transition-colors flex items-center gap-1 uppercase tracking-wide font-medium">
-              <Download className="h-3 w-3" /> Export
+      {/* Results count + actions + view toggle bar */}
+      <div className="bg-white border border-[#d6d6d6] flex items-center justify-between px-3 py-[6px]">
+        <div className="flex items-center gap-4">
+          <span className="text-[11px] text-[#6e6e6e]">
+            Showing <span className="font-mono text-[#1a1a1a] tabular-nums">{filteredFunds.length}</span> of <span className="font-mono text-[#1a1a1a] tabular-nums">{funds.length}</span> funds
+          </span>
+          <div className="hidden sm:flex items-center border-l border-[#e0e0e0] ml-2 pl-3">
+            <button
+              onClick={() => setFundView("managers")}
+              className={`text-[10px] font-heading px-2 py-[3px] transition-colors border-b-2 ${
+                fundView === "managers"
+                  ? "font-bold text-[#1a1a1a] border-[#008253]"
+                  : "font-semibold text-[#888] hover:text-[#1a1a1a] border-transparent"
+              }`}
+            >
+              By Manager
             </button>
-            <span className="text-[#d6d6d6]">|</span>
-            <button className="text-[10px] text-[#888] hover:text-[#1a1a1a] transition-colors flex items-center gap-1 uppercase tracking-wide font-medium">
-              <Mail className="h-3 w-3" /> Contact research team
+            <button
+              onClick={() => setFundView("all")}
+              className={`text-[10px] font-heading px-2 py-[3px] transition-colors border-b-2 ${
+                fundView === "all"
+                  ? "font-bold text-[#1a1a1a] border-[#008253]"
+                  : "font-semibold text-[#888] hover:text-[#1a1a1a] border-transparent"
+              }`}
+            >
+              All Funds
             </button>
           </div>
         </div>
+        <div className="hidden sm:flex items-center gap-3">
+          <button className="text-[10px] text-[#888] hover:text-[#1a1a1a] transition-colors flex items-center gap-1 uppercase tracking-wide font-medium">
+            <Download className="h-3 w-3" /> Export
+          </button>
+          <span className="text-[#d6d6d6]">|</span>
+          <button className="text-[10px] text-[#888] hover:text-[#1a1a1a] transition-colors flex items-center gap-1 uppercase tracking-wide font-medium">
+            <Mail className="h-3 w-3" /> Contact research team
+          </button>
+        </div>
+      </div>
 
-        {fundView === "managers" ? (
-          <div>
-            {sortedManagers.map(([manager, managerFunds]) => (
-              <FundManagerAccordion
-                key={manager}
-                managerName={manager}
-                managerFunds={managerFunds}
-                onSelectFund={setSelectedFund}
-                defaultOpen={true}
-              />
-            ))}
+      {fundView === "managers" ? (
+        <div className="space-y-2 mt-2">
+          {sortedManagers.map(([manager, managerFunds]) => (
+            <FundManagerAccordion
+              key={manager}
+              managerName={manager}
+              managerFunds={managerFunds}
+              onSelectFund={setSelectedFund}
+              defaultOpen={true}
+            />
+          ))}
 
-            {sortedManagers.length === 0 && (
-              <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999]">
-                No funds match your current filters.
-              </div>
-            )}
-          </div>
-        ) : (
+          {sortedManagers.length === 0 && (
+            <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999] bg-white border border-[#d6d6d6]">
+              No funds match your current filters.
+            </div>
+          )}
+        </div>
+      ) : (
+        <div className="bg-white border border-[#d6d6d6] border-t-0">
           <AllFundsTable
             funds={filteredFunds}
             onSelectFund={setSelectedFund}
           />
-        )}
-      </div>
+        </div>
+      )}
 
       <CTABlock />
 
