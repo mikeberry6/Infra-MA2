@@ -42,7 +42,7 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <h1 className="font-heading text-2xl font-bold text-[#111111] tracking-tight">
-            InfraTracker
+            Infrastructure Investor
           </h1>
           <p className="text-sm text-[#6b6b6b] mt-2">
             Enter password to continue
@@ -57,7 +57,7 @@ export default function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
               autoFocus
-              className="w-full px-4 py-3 bg-white border border-[#d7d7d7] rounded-lg text-[#111111] placeholder-[#999999] focus:outline-none focus:border-[#007a4d] focus:ring-1 focus:ring-[#007a4d] transition-colors"
+              className="w-full px-4 py-3 bg-white border border-[#d7d7d7] rounded-[2px] text-[#111111] placeholder-[#999999] focus:outline-none focus:border-[#008253] focus:ring-1 focus:ring-[#008253] transition-colors"
             />
           </div>
 
@@ -68,7 +68,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading || !password}
-            className="w-full py-3 bg-[#007a4d] hover:bg-[#006640] disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors"
+            className="w-full py-3 bg-[#008253] hover:bg-[#006d45] disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium rounded-[2px] transition-colors"
           >
             {loading ? "Verifying..." : "Enter"}
           </button>
