@@ -25,21 +25,7 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      {/* Tier A: Advertisement Band */}
-      <div className="hidden sm:block bg-[#e9e9e7]">
-        <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
-          <div className="flex flex-col items-center py-[6px] gap-[2px]">
-            <span className="text-[9px] font-medium text-[#9a9a9a] tracking-[0.18em] uppercase select-none">
-              Advertisement
-            </span>
-            <div className="w-[728px] max-w-full h-[90px] border border-[#d0d0ce] bg-[#f2f2f0] flex items-center justify-center">
-              <span className="text-[11px] text-[#b5b5b3] tracking-wide">728 × 90</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Tier B: Black Utility Bar */}
+      {/* Tier A: Black Utility Bar */}
       <div className="hidden sm:block bg-[#1a1a1a] h-[28px]">
         <div className="mx-auto flex h-full max-w-[1240px] items-center justify-between px-4 sm:px-6">
           <div className="flex items-center text-[10.5px] leading-none text-[#b0b0b0]">
@@ -62,16 +48,25 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Tier C: White Masthead */}
+      {/* Tier B: White Masthead */}
       <div className="bg-white border-b border-[#d6d6d6]">
         <div className="mx-auto flex h-[60px] max-w-[1240px] items-center justify-between px-4 sm:px-6">
           <Link href="/" className="flex items-center gap-[10px] group">
-            <div className="w-[5px] h-[44px] bg-[#008253] flex-shrink-0" />
-            <div className="flex flex-col leading-[0.92]">
-              <span className="font-heading text-[30px] font-bold tracking-[-0.03em] text-[#1a1a1a]">
+            {/* Green vertical rule — matches II reference */}
+            <div className="w-[4px] h-[42px] bg-[#008253] flex-shrink-0" />
+            {/* Stacked wordmark — the real II logo uses a heavy condensed sans
+                with "Infrastructure" slightly lighter than "Investor" */}
+            <div className="flex flex-col" style={{ lineHeight: '0.88' }}>
+              <span
+                className="font-heading text-[#1a1a1a] tracking-[-0.04em]"
+                style={{ fontSize: '24px', fontWeight: 600, fontStretch: 'condensed' }}
+              >
                 Infrastructure
               </span>
-              <span className="font-heading text-[30px] font-bold tracking-[-0.03em] text-[#1a1a1a]">
+              <span
+                className="font-heading text-[#1a1a1a] tracking-[-0.04em]"
+                style={{ fontSize: '24px', fontWeight: 700, fontStretch: 'condensed' }}
+              >
                 Investor
               </span>
             </div>
@@ -104,7 +99,7 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Tier D: Primary Navigation */}
+      {/* Tier C: Primary Navigation */}
       <div className="hidden sm:block bg-white border-b border-[#d6d6d6]">
         <div className="mx-auto flex h-[36px] max-w-[1240px] items-center px-4 sm:px-6">
           {primaryNav.map((item) => (
