@@ -21,19 +21,25 @@ export function DatabaseTiles({ counts }: DatabaseTilesProps) {
   const pathname = usePathname();
 
   return (
-    <div className="flex border border-[#d6d6d6] bg-[#f3f3f3]">
+    <div className="flex border border-[#d6d6d6] bg-white">
       {tiles.map((tile) => {
         const isActive = pathname === tile.href;
         return (
           <Link
             key={tile.key}
             href={tile.href}
-            className={isActive ? "ii-tile-active" : "ii-tile"}
+            className={`flex-1 px-3 py-[6px] border-r border-[#d6d6d6] last:border-r-0 transition-colors ${
+              isActive
+                ? "bg-white border-b-[3px] border-b-[#008253]"
+                : "bg-[#f3f3f3] hover:bg-[#efefef]"
+            }`}
           >
-            <div className={`text-[12px] font-heading font-semibold ${isActive ? "text-[#1a1a1a]" : ""}`}>
+            <div className={`text-[12px] font-heading font-bold tracking-[-0.01em] ${
+              isActive ? "text-[#1a1a1a]" : "text-[#555555]"
+            }`}>
               {tile.label}
             </div>
-            <div className="text-[10px] font-mono text-[#999]">
+            <div className="text-[10px] font-mono text-[#999] tabular-nums">
               {counts[tile.key].toLocaleString()} {tile.unit}
             </div>
           </Link>

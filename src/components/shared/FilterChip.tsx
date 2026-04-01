@@ -14,15 +14,15 @@ export function FilterChip({
   return (
     <button
       onClick={onRemove}
-      className="inline-flex items-center gap-1 px-1 py-0 text-[10px] font-medium transition-colors hover:opacity-80"
+      className="inline-flex items-center gap-0.5 px-1.5 py-0 text-[10px] font-medium transition-colors hover:opacity-70 border"
       style={{
-        color: "#444444",
-        backgroundColor: `${color}08`,
-        border: `1px solid ${color}15`,
+        color: "#555",
+        backgroundColor: `${color}06`,
+        borderColor: `${color}20`,
       }}
     >
       {label}
-      <X className="h-2.5 w-2.5" />
+      <X className="h-2 w-2 opacity-60" />
     </button>
   );
 }
