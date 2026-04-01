@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600;700&family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @layer base {
   :root {
-    --bg-primary: #f5f5f3;
+    --bg-primary: #f3f3f3;
     --bg-secondary: #ffffff;
-    --bg-tertiary: #f0f0ee;
-    --border-primary: #d7d7d7;
+    --bg-tertiary: #ebebeb;
+    --border-primary: #d6d6d6;
     --border-secondary: rgba(0, 0, 0, 0.06);
-    --text-primary: #111111;
-    --text-secondary: #6b6b6b;
+    --text-primary: #1a1a1a;
+    --text-secondary: #6e6e6e;
     --text-muted: #999999;
     --accent-green: #008253;
     --accent-indigo: #4f46e5;
@@ -69,24 +69,22 @@
 @layer components {
   .glass-card {
     background: #ffffff;
-    border: 1px solid #d7d7d7;
+    border: 1px solid #d6d6d6;
   }
 
   .glass-card-elevated {
     background: #ffffff;
     border: 1px solid #c4c4c4;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
 
   .surface-card {
     background: #ffffff;
-    border: 1px solid #d7d7d7;
+    border: 1px solid #d6d6d6;
   }
 
   .surface-card-elevated {
     background: #ffffff;
     border: 1px solid #c4c4c4;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
 
   .mono {
@@ -113,20 +111,20 @@
   }
 
   .filter-pill {
-    @apply px-2.5 py-1 rounded-[1px] text-xs-dense font-medium transition-all duration-200 cursor-pointer select-none;
-    border: 1px solid #d7d7d7;
-    color: #6b6b6b;
+    @apply px-2 py-0.5 text-[11px] font-medium transition-all duration-200 cursor-pointer select-none;
+    border: 1px solid #d6d6d6;
+    color: #6e6e6e;
     background: #ffffff;
   }
 
   .filter-pill:hover {
     border-color: #999999;
-    color: #111111;
-    background: #fafaf9;
+    color: #1a1a1a;
+    background: #f7f7f5;
   }
 
   .filter-pill-active {
-    @apply px-2.5 py-1 rounded-[1px] text-xs-dense font-medium cursor-pointer select-none;
+    @apply px-2 py-0.5 text-[11px] font-medium cursor-pointer select-none;
     border: 1px solid rgba(0, 130, 83, 0.3);
     color: #008253;
     background: rgba(0, 130, 83, 0.06);
@@ -138,10 +136,10 @@
   }
 
   .ii-tile {
-    @apply flex-1 px-4 py-2.5 transition-colors;
-    border-right: 1px solid #d8d8d8;
-    background: #f5f5f5;
-    color: #6f6f6f;
+    @apply flex-1 px-3 py-[7px] transition-colors;
+    border-right: 1px solid #d6d6d6;
+    background: #f3f3f3;
+    color: #6e6e6e;
   }
 
   .ii-tile:last-child {
@@ -149,14 +147,14 @@
   }
 
   .ii-tile:hover {
-    background: #fafafa;
+    background: #f7f7f5;
   }
 
   .ii-tile-active {
-    @apply flex-1 px-4 py-2.5;
+    @apply flex-1 px-3 py-[7px];
     background: #ffffff;
-    border-bottom: 2px solid #008253;
-    border-right: 1px solid #d8d8d8;
+    border-bottom: 3px solid #008253;
+    border-right: 1px solid #d6d6d6;
   }
 
   .ii-tile-active:last-child {

@@ -38,10 +38,10 @@ export default function LoginPage() {
   return (
     <>
       <style>{`nav { display: none !important; } main { padding-top: 0 !important; }`}</style>
-      <div className="min-h-screen bg-[#f5f5f3] flex items-center justify-center px-4">
+      <div className="min-h-screen bg-[#f3f3f3] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <h1 className="font-heading text-2xl font-bold text-[#111111] tracking-tight">
+          <h1 className="font-heading text-2xl font-bold text-[#1a1a1a] tracking-tight">
             Infrastructure Investor
           </h1>
           <p className="text-sm text-[#6b6b6b] mt-2">
@@ -57,7 +57,7 @@ export default function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
               autoFocus
-              className="w-full px-4 py-3 bg-white border border-[#d7d7d7] rounded-[2px] text-[#111111] placeholder-[#999999] focus:outline-none focus:border-[#008253] focus:ring-1 focus:ring-[#008253] transition-colors"
+              className="w-full px-4 py-3 bg-white border border-[#d6d6d6] rounded-[2px] text-[#1a1a1a] placeholder-[#999999] focus:outline-none focus:border-[#008253] focus:ring-1 focus:ring-[#008253] transition-colors"
             />
           </div>
 
