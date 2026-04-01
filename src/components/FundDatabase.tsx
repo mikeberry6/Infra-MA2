@@ -826,6 +826,30 @@ function FundDrawer({
             </div>
           )}
 
+          {/* Target Sectors */}
+          {fund.sectors.length > 0 && (
+            <div className="border-t border-[#27272A] pt-4">
+              <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider block mb-2">
+                Target Sectors
+              </span>
+              <div className="flex flex-wrap gap-1.5">
+                {fund.sectors.map((sector) => (
+                  <span
+                    key={sector}
+                    className="text-xs-dense font-medium px-2 py-0.5 rounded-[4px]"
+                    style={{
+                      color: getFundSectorColor(sector),
+                      backgroundColor: `${getFundSectorColor(sector)}1a`,
+                      border: `1px solid ${getFundSectorColor(sector)}33`,
+                    }}
+                  >
+                    {sector}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Source URLs */}
           {fund.sourceUrls.length > 0 && (
             <div className="border-t border-[#27272A] pt-4">
