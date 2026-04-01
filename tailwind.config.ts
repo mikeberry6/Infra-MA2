@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
-        heading: ["Inter Tight", "Inter", "sans-serif"],
+        heading: ["Roboto Condensed", "Inter Tight", "Inter", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
       fontSize: {
@@ -38,7 +38,7 @@ const config: Config = {
         muted: "#6b6b6b",
         tertiary: "#999999",
         hover: "rgba(0, 0, 0, 0.03)",
-        accent: "#007a4d",
+        accent: "#008253",
       },
       animation: {
         "fade-in": "fade-in 0.5s ease-out forwards",

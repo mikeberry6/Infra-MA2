@@ -635,7 +635,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     },
     keyQuote: {
       speaker: "Analyst Insight",
-      role: "InfraTracker",
+      role: "Infrastructure Investor",
       text: "The \"AI Arms Race\" is visible in Blackstone's returns \u2014 Infrastructure appreciated 8.4% in Q4 alone, driven by data center valuations, while traditional private equity appreciated just 5%.",
     },
   },
@@ -1007,7 +1007,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     },
     keyQuote: {
       speaker: "Analyst Insight",
-      role: "InfraTracker",
+      role: "Infrastructure Investor",
       text: "Macquarie remains the \"deployment king,\" investing A$7.7B in a single quarter. The sale of the Green Investment Group (GIG) public assets drove a significant profit spike this quarter.",
     },
   },
@@ -1534,7 +1534,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     },
     keyQuote: {
       speaker: "Analyst Insight",
-      role: "InfraTracker",
+      role: "Infrastructure Investor",
       text: "While the GCP deal dominated headlines for Real Estate, the organic Infrastructure Debt platform is growing steadily (+15% FPAUM), offering investors stable yields.",
     },
   },
@@ -1688,7 +1688,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     },
     keyQuote: {
       speaker: "Key Stat",
-      role: "InfraTracker",
+      role: "Infrastructure Investor",
       text: "Impact (+6.5%) significantly outperformed Private Equity (+2.7%) in Q4, validating the \"Green Alpha\" thesis. Record FRE of $326M (+72%) driven by Angel Oak/AG integration.",
     },
   },
@@ -1844,7 +1844,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     },
     keyQuote: {
       speaker: "Analyst Insight",
-      role: "InfraTracker",
+      role: "Infrastructure Investor",
       text: "EQT's fundraising rebound (+117%) signals strong LP conviction in European infrastructure. The deployment pullback (-40%) reflects discipline — refusing to overpay in a competitive market.",
     },
   },
@@ -2003,7 +2003,7 @@ export const earningsReports: CompanyEarningsReport[] = [
     },
     keyQuote: {
       speaker: "Differentiation",
-      role: "InfraTracker",
+      role: "Infrastructure Investor",
       text: "Apollo's infrastructure play is heavily weighted toward Debt and Credit, leveraging its massive insurance balance sheet (Athene) to originate deals. $97B origination is a firm record.",
     },
   },

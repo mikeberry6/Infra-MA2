@@ -38,6 +38,11 @@ import { useDebounce } from "@/hooks/useDebounce";
 import { useFilterToggle } from "@/hooks/useFilterToggle";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { FilterChip } from "@/components/shared/FilterChip";
+import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
+import { CTABlock } from "@/components/shared/CTABlock";
+import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
+import { deals as dealsData } from "@/data/deals";
+import { companies as portcosData } from "@/data/portcos/companies";
 
 
 // ─── Fund Filter Bar ────────────────────────────────────────
@@ -75,47 +80,54 @@ function FundFilterBar({
 
   return (
     <div className="mb-4 lg:mb-6 space-y-3">
-      <div className="flex items-center gap-3">
-        <div className="relative flex-1 max-w-sm">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#999999]" />
+      <div className="bg-[#f5f5f5] border border-[#d8d8d8] flex items-stretch sticky top-[148px] z-30">
+        <div className="border-r border-[#d8d8d8] px-3 py-2 flex items-center gap-2 flex-1 max-w-xs">
+          <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
             type="text"
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search funds..."
             aria-label="Search funds"
-            className="w-full rounded-[4px] border border-[#d7d7d7] bg-white pl-10 pr-4 py-1.5 text-sm-dense text-[#111111] placeholder:text-[#999999] focus:outline-none focus:border-[#007a4d] transition-colors"
+            className="w-full bg-transparent text-sm-dense text-[#111111] placeholder:text-[#999999] focus:outline-none"
           />
         </div>
-        <div className="w-px h-5 bg-[#d7d7d7]" />
-        <MultiSelectDropdown
-          label="Strategy"
-          options={FUND_STRATEGIES}
-          selected={activeStrategies as Set<string>}
-          onToggle={(v) => onToggleStrategy(v as FundStrategy)}
-          getColor={(v) => getStrategyColor(v as FundStrategy)}
-        />
-        <MultiSelectDropdown
-          label="Status"
-          options={FUND_STATUSES}
-          selected={activeStatuses as Set<string>}
-          onToggle={(v) => onToggleStatus(v as FundStatus)}
-          getColor={(v) => getStatusColor(v as FundStatus)}
-        />
-        <MultiSelectDropdown
-          label="Fund Size"
-          options={FUND_SIZE_RANGES}
-          selected={activeSizeRanges as Set<string>}
-          onToggle={(v) => onToggleSizeRange(v as FundSizeRange)}
-          getColor={() => getSizeRangeColor()}
-        />
-        <MultiSelectDropdown
-          label="Sector"
-          options={FUND_SECTORS}
-          selected={activeSectors as Set<string>}
-          onToggle={(v) => onToggleSector(v as FundSector)}
-          getColor={(v) => getFundSectorColor(v as FundSector)}
-        />
+        <div className="border-r border-[#d8d8d8] px-3 py-2 flex items-center">
+          <MultiSelectDropdown
+            label="Strategy"
+            options={FUND_STRATEGIES}
+            selected={activeStrategies as Set<string>}
+            onToggle={(v) => onToggleStrategy(v as FundStrategy)}
+            getColor={(v) => getStrategyColor(v as FundStrategy)}
+          />
+        </div>
+        <div className="border-r border-[#d8d8d8] px-3 py-2 flex items-center">
+          <MultiSelectDropdown
+            label="Status"
+            options={FUND_STATUSES}
+            selected={activeStatuses as Set<string>}
+            onToggle={(v) => onToggleStatus(v as FundStatus)}
+            getColor={(v) => getStatusColor(v as FundStatus)}
+          />
+        </div>
+        <div className="border-r border-[#d8d8d8] px-3 py-2 flex items-center">
+          <MultiSelectDropdown
+            label="Fund Size"
+            options={FUND_SIZE_RANGES}
+            selected={activeSizeRanges as Set<string>}
+            onToggle={(v) => onToggleSizeRange(v as FundSizeRange)}
+            getColor={() => getSizeRangeColor()}
+          />
+        </div>
+        <div className="px-3 py-2 flex items-center">
+          <MultiSelectDropdown
+            label="Sector"
+            options={FUND_SECTORS}
+            selected={activeSectors as Set<string>}
+            onToggle={(v) => onToggleSector(v as FundSector)}
+            getColor={(v) => getFundSectorColor(v as FundSector)}
+          />
+        </div>
       </div>
 
       {total > 0 && (
@@ -167,7 +179,7 @@ function SimpleBarRow({ row, maxCount }: { row: SimpleRow; maxCount: number }) {
       </span>
       <div className="flex-1 flex items-center gap-2 min-w-0">
         <div
-          className="h-4 rounded-[3px] transition-all duration-500 ease-out"
+          className="h-4 rounded-[1px] transition-all duration-500 ease-out"
           style={{
             width: `${Math.max(barPct, 3)}%`,
             backgroundColor: row.color,
@@ -246,7 +258,7 @@ function FundsInsightsHero({ filteredFunds }: { filteredFunds: Fund[] }) {
 
   if (filteredFunds.length === 0) {
     return (
-      <div className="rounded-[4px] border border-[#d7d7d7] bg-white p-6 text-center">
+      <div className="rounded-[1px] border border-[#d7d7d7] bg-white p-6 text-center">
         <p className="text-sm-dense text-[#999999]">
           No funds match your current filters. Try broadening your search.
         </p>
@@ -255,7 +267,7 @@ function FundsInsightsHero({ filteredFunds }: { filteredFunds: Fund[] }) {
   }
 
   return (
-    <div className="rounded-[4px] border border-[#d7d7d7] bg-white overflow-hidden">
+    <div className="rounded-[1px] border border-[#d7d7d7] bg-white overflow-hidden">
       <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-2">
         <p className="text-xs-dense text-[#999999]">
           <span className="mono text-[#111111] font-medium">{stats.managers}</span> managers
@@ -292,35 +304,34 @@ function FundVehicleCard({
   return (
     <button
       onClick={() => onSelect(fund)}
-      className="w-full text-left glass-card rounded-[4px] p-4 transition-colors hover:bg-[#f5f5f3] active:bg-[#f0f0ee]"
+      className="w-full text-left glass-card rounded-[1px] p-4 transition-colors hover:bg-[#fafafa] active:bg-[#f0f0ee]"
     >
       <div className="flex items-center justify-between mb-1.5">
         <h4 className="text-sm-dense font-medium text-[#111111] leading-snug tracking-tight truncate pr-2">
           {fund.fundName}
         </h4>
-        <ChevronRight className="h-4 w-4 text-[#999999] shrink-0" />
       </div>
 
       <div className="flex flex-wrap gap-1.5 mb-2">
         {fund.strategies.map((s) => (
           <span
             key={s}
-            className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
+            className="text-micro font-medium px-1.5 py-0.5 rounded-[1px]"
             style={{
-              color: getStrategyColor(s),
-              backgroundColor: `${getStrategyColor(s)}1a`,
-              border: `1px solid ${getStrategyColor(s)}33`,
+              color: "#333333",
+              backgroundColor: `${getStrategyColor(s)}10`,
+              border: `1px solid ${getStrategyColor(s)}20`,
             }}
           >
             {s}
           </span>
         ))}
         <span
-          className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
+          className="text-micro font-medium px-1.5 py-0.5 rounded-[1px]"
           style={{
-            color: getStatusColor(fund.status),
-            backgroundColor: `${getStatusColor(fund.status)}1a`,
-            border: `1px solid ${getStatusColor(fund.status)}33`,
+            color: "#333333",
+            backgroundColor: `${getStatusColor(fund.status)}10`,
+            border: `1px solid ${getStatusColor(fund.status)}20`,
           }}
         >
           {fund.status}
@@ -369,20 +380,20 @@ function FundManagerAccordion({
   }, [managerFunds]);
 
   return (
-    <div className="border border-[#d7d7d7] rounded-[4px] overflow-hidden">
+    <div className="border border-[#d7d7d7] rounded-[1px] overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-start gap-3 p-4 text-left hover:bg-[#f5f5f3] transition-colors group"
+        className="w-full flex items-start gap-3 p-4 text-left hover:bg-[#fafafa] transition-colors group"
       >
         <ChevronRight
           className={`h-4 w-4 text-[#999999] mt-0.5 shrink-0 transition-transform ${isOpen ? "rotate-90" : ""}`}
         />
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3 flex-wrap">
-            <h3 className="text-sm sm:text-base font-semibold text-[#111111] group-hover:text-[#111111] transition-colors">
+            <h3 className="text-sm sm:text-base font-semibold text-[#111111] group-hover:text-[#008253] transition-colors">
               {managerName}
             </h3>
-            <span className="text-micro font-medium text-[#999999] bg-[#fafaf9] px-2 py-0.5 rounded-[4px]">
+            <span className="text-micro font-medium text-[#999999] bg-[#fafaf9] px-2 py-0.5 rounded-[1px]">
               {managerFunds.length} {managerFunds.length === 1 ? "vehicle" : "vehicles"}
             </span>
           </div>
@@ -392,11 +403,11 @@ function FundManagerAccordion({
               {aggregateStrategies.slice(0, 3).map((s) => (
                 <span
                   key={s}
-                  className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
+                  className="text-micro font-medium px-1.5 py-0.5 rounded-[1px]"
                   style={{
-                    color: getStrategyColor(s),
-                    backgroundColor: `${getStrategyColor(s)}1a`,
-                    border: `1px solid ${getStrategyColor(s)}33`,
+                    color: "#333333",
+                    backgroundColor: `${getStrategyColor(s)}10`,
+                    border: `1px solid ${getStrategyColor(s)}20`,
                   }}
                 >
                   {s}
@@ -409,11 +420,11 @@ function FundManagerAccordion({
               {aggregateStatuses.map((s) => (
                 <span
                   key={s}
-                  className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
+                  className="text-micro font-medium px-1.5 py-0.5 rounded-[1px]"
                   style={{
-                    color: getStatusColor(s),
-                    backgroundColor: `${getStatusColor(s)}1a`,
-                    border: `1px solid ${getStatusColor(s)}33`,
+                    color: "#333333",
+                    backgroundColor: `${getStatusColor(s)}10`,
+                    border: `1px solid ${getStatusColor(s)}20`,
                   }}
                 >
                   {s}
@@ -437,20 +448,20 @@ function FundManagerAccordion({
                 <col className="w-[12%]" />
               </colgroup>
               <thead>
-                <tr className="border-b border-[#d7d7d7]">
-                  <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
+                <tr className="bg-[#f5f5f5] border-b border-[#d8d8d8]">
+                  <th className="text-left px-3 py-1.5 text-[11px] font-semibold text-[#6f6f6f] uppercase tracking-wider">
                     Fund Vehicle
                   </th>
-                  <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
+                  <th className="text-left px-3 py-1.5 text-[11px] font-semibold text-[#6f6f6f] uppercase tracking-wider">
                     Strategy
                   </th>
-                  <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
+                  <th className="text-left px-3 py-1.5 text-[11px] font-semibold text-[#6f6f6f] uppercase tracking-wider">
                     Size
                   </th>
-                  <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
+                  <th className="text-left px-3 py-1.5 text-[11px] font-semibold text-[#6f6f6f] uppercase tracking-wider">
                     Vintage
                   </th>
-                  <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
+                  <th className="text-left px-3 py-1.5 text-[11px] font-semibold text-[#6f6f6f] uppercase tracking-wider">
                     Status
                   </th>
                 </tr>
@@ -460,26 +471,23 @@ function FundManagerAccordion({
                   <tr
                     key={fund.id}
                     onClick={() => onSelectFund(fund)}
-                    className="border-b border-[#e5e5e5] hover:bg-[#f5f5f3] cursor-pointer transition-colors group"
+                    className="border-b border-[#ececec] hover:bg-[#fafafa] cursor-pointer transition-colors group"
                   >
-                    <td className="px-4 py-2.5 overflow-hidden">
-                      <div className="flex items-center gap-2">
-                        <span className="font-medium text-[#111111] group-hover:text-[#111111] transition-colors truncate">
-                          {fund.fundName}
-                        </span>
-                        <ChevronRight className="h-3 w-3 text-[#999999] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
-                      </div>
+                    <td className="px-3 py-1.5 overflow-hidden">
+                      <span className="font-medium text-[#111111] group-hover:text-[#008253] transition-colors truncate">
+                        {fund.fundName}
+                      </span>
                     </td>
-                    <td className="px-4 py-2.5">
+                    <td className="px-3 py-1.5">
                       <div className="flex flex-wrap gap-1">
                         {fund.strategies.map((s) => (
                           <span
                             key={s}
-                            className="text-micro font-medium px-2 py-0.5 rounded-[4px] whitespace-nowrap"
+                            className="text-micro font-medium px-2 py-0.5 rounded-[1px] whitespace-nowrap"
                             style={{
-                              color: getStrategyColor(s),
-                              backgroundColor: `${getStrategyColor(s)}1a`,
-                              border: `1px solid ${getStrategyColor(s)}33`,
+                              color: "#333333",
+                              backgroundColor: `${getStrategyColor(s)}10`,
+                              border: `1px solid ${getStrategyColor(s)}20`,
                             }}
                           >
                             {s}
@@ -487,21 +495,21 @@ function FundManagerAccordion({
                         ))}
                       </div>
                     </td>
-                    <td className="px-4 py-2.5">
+                    <td className="px-3 py-1.5">
                       <span className="text-xs text-[#111111] whitespace-nowrap">
                         {fund.size}
                       </span>
                     </td>
-                    <td className="px-4 py-2.5">
+                    <td className="px-3 py-1.5">
                       <span className="mono text-xs-dense text-[#999999]">{fund.vintage}</span>
                     </td>
-                    <td className="px-4 py-2.5">
+                    <td className="px-3 py-1.5">
                       <span
-                        className="text-micro font-medium px-2 py-0.5 rounded-[4px] whitespace-nowrap"
+                        className="text-micro font-medium px-2 py-0.5 rounded-[1px] whitespace-nowrap"
                         style={{
-                          color: getStatusColor(fund.status),
-                          backgroundColor: `${getStatusColor(fund.status)}1a`,
-                          border: `1px solid ${getStatusColor(fund.status)}33`,
+                          color: "#333333",
+                          backgroundColor: `${getStatusColor(fund.status)}10`,
+                          border: `1px solid ${getStatusColor(fund.status)}20`,
                         }}
                       >
                         {fund.status}
@@ -564,7 +572,7 @@ function AllFundsTable({
 
   const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
     <th
-      className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider cursor-pointer hover:text-[#111111] transition-colors select-none"
+      className="text-left px-3 py-1.5 text-[11px] font-semibold text-[#6f6f6f] uppercase tracking-wider cursor-pointer hover:text-[#111111] transition-colors select-none"
       onClick={() => toggleSort(field)}
     >
       {label}
@@ -585,7 +593,7 @@ function AllFundsTable({
   return (
     <>
       {/* Desktop table */}
-      <div className="hidden md:block rounded-[4px] border border-[#d7d7d7] bg-white overflow-hidden">
+      <div className="hidden md:block overflow-hidden">
         <div className="overflow-x-auto">
         <table className="w-full text-left text-sm-dense border-collapse table-fixed">
           <colgroup>
@@ -597,13 +605,13 @@ function AllFundsTable({
             <col className="w-[10%]" />
           </colgroup>
           <thead>
-            <tr className="border-b-2 border-[#111111]">
+            <tr className="bg-[#f5f5f5] border-b border-[#d8d8d8]">
               <SortHeader field="name" label="Fund Vehicle" />
               <SortHeader field="manager" label="Manager" />
               <SortHeader field="strategy" label="Strategy" />
               <SortHeader field="size" label="Size" />
               <SortHeader field="vintage" label="Vintage" />
-              <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
+              <th className="text-left px-3 py-1.5 text-[11px] font-semibold text-[#6f6f6f] uppercase tracking-wider">
                 Status
               </th>
             </tr>
@@ -613,29 +621,26 @@ function AllFundsTable({
               <tr
                 key={fund.id}
                 onClick={() => onSelectFund(fund)}
-                className="border-b border-[#e5e5e5] hover:bg-[#f5f5f3] cursor-pointer transition-colors group"
+                className="border-b border-[#ececec] hover:bg-[#fafafa] cursor-pointer transition-colors group"
               >
-                <td className="px-4 py-3 overflow-hidden">
-                  <div className="flex items-center gap-2">
-                    <span className="font-medium text-[#111111] group-hover:text-[#111111] transition-colors truncate">
-                      {fund.fundName}
-                    </span>
-                    <ChevronRight className="h-3 w-3 text-[#999999] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
-                  </div>
+                <td className="px-3 py-1.5 overflow-hidden">
+                  <span className="font-medium text-[#111111] group-hover:text-[#008253] transition-colors truncate">
+                    {fund.fundName}
+                  </span>
                 </td>
-                <td className="px-4 py-3 overflow-hidden">
+                <td className="px-3 py-1.5 overflow-hidden">
                   <span className="text-xs text-[#6b6b6b] truncate block">{fund.managerName}</span>
                 </td>
-                <td className="px-4 py-3">
+                <td className="px-3 py-1.5">
                   <div className="flex flex-wrap gap-1">
                     {fund.strategies.map((s) => (
                       <span
                         key={s}
-                        className="text-micro font-medium px-2 py-0.5 rounded-[4px] whitespace-nowrap"
+                        className="text-micro font-medium px-2 py-0.5 rounded-[1px] whitespace-nowrap"
                         style={{
-                          color: getStrategyColor(s),
-                          backgroundColor: `${getStrategyColor(s)}1a`,
-                          border: `1px solid ${getStrategyColor(s)}33`,
+                          color: "#333333",
+                          backgroundColor: `${getStrategyColor(s)}10`,
+                          border: `1px solid ${getStrategyColor(s)}20`,
                         }}
                       >
                         {s}
@@ -643,19 +648,19 @@ function AllFundsTable({
                     ))}
                   </div>
                 </td>
-                <td className="px-4 py-3">
+                <td className="px-3 py-1.5">
                   <span className="text-xs text-[#111111] whitespace-nowrap">{fund.size}</span>
                 </td>
-                <td className="px-4 py-3">
+                <td className="px-3 py-1.5">
                   <span className="mono text-xs-dense text-[#999999]">{fund.vintage}</span>
                 </td>
-                <td className="px-4 py-3">
+                <td className="px-3 py-1.5">
                   <span
-                    className="text-micro font-medium px-2 py-0.5 rounded-[4px] whitespace-nowrap"
+                    className="text-micro font-medium px-2 py-0.5 rounded-[1px] whitespace-nowrap"
                     style={{
-                      color: getStatusColor(fund.status),
-                      backgroundColor: `${getStatusColor(fund.status)}1a`,
-                      border: `1px solid ${getStatusColor(fund.status)}33`,
+                      color: "#333333",
+                      backgroundColor: `${getStatusColor(fund.status)}10`,
+                      border: `1px solid ${getStatusColor(fund.status)}20`,
                     }}
                   >
                     {fund.status}
@@ -749,7 +754,7 @@ function FundDrawer({
               <div className="flex items-center gap-2 mb-1 flex-wrap">
                 <span className="text-xs-dense text-[#999999]">{fund.managerName}</span>
                 {fund.ticker && (
-                  <span className="mono text-micro text-[#999999] bg-[#fafaf9] px-1.5 py-0.5 rounded-[4px]">
+                  <span className="mono text-micro text-[#999999] bg-[#fafaf9] px-1.5 py-0.5 rounded-[1px]">
                     {fund.ticker}
                   </span>
                 )}
@@ -760,7 +765,7 @@ function FundDrawer({
             </div>
             <button
               onClick={onClose}
-              className="rounded-[4px] p-2 text-[#999999] hover:text-[#111111] hover:bg-[#f0f0ee] transition-colors shrink-0"
+              className="rounded-[1px] p-2 text-[#999999] hover:text-[#111111] hover:bg-[#f0f0ee] transition-colors shrink-0"
             >
               <X className="h-5 w-5" />
             </button>
@@ -770,18 +775,18 @@ function FundDrawer({
         {/* Content */}
         <div className="p-4 sm:p-6 lg:p-8 space-y-5 lg:space-y-6">
           {/* Fund overview card */}
-          <div className="glass-card rounded-[4px] overflow-hidden">
+          <div className="glass-card rounded-[1px] overflow-hidden">
             {/* Classification tags */}
             <div className="px-4 py-3">
               <div className="flex items-center gap-2 flex-wrap">
                 {fund.strategies.map((s) => (
                   <span
                     key={s}
-                    className="text-micro font-medium px-2 py-0.5 rounded-[4px]"
+                    className="text-micro font-medium px-2 py-0.5 rounded-[1px]"
                     style={{
-                      color: getStrategyColor(s),
-                      backgroundColor: `${getStrategyColor(s)}1a`,
-                      border: `1px solid ${getStrategyColor(s)}33`,
+                      color: "#333333",
+                      backgroundColor: `${getStrategyColor(s)}10`,
+                      border: `1px solid ${getStrategyColor(s)}20`,
                     }}
                   >
                     {s}
@@ -789,22 +794,22 @@ function FundDrawer({
                 ))}
                 <div className="h-3.5 w-px bg-[#d7d7d7]" />
                 <span
-                  className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
+                  className="text-micro font-medium px-1.5 py-0.5 rounded-[1px]"
                   style={{
-                    color: getStatusColor(fund.status),
-                    backgroundColor: `${getStatusColor(fund.status)}1a`,
-                    border: `1px solid ${getStatusColor(fund.status)}33`,
+                    color: "#333333",
+                    backgroundColor: `${getStatusColor(fund.status)}10`,
+                    border: `1px solid ${getStatusColor(fund.status)}20`,
                   }}
                 >
                   {fund.status}
                 </span>
                 <div className="h-3.5 w-px bg-[#d7d7d7]" />
                 <span
-                  className="text-micro font-medium px-1.5 py-0.5 rounded-[4px]"
+                  className="text-micro font-medium px-1.5 py-0.5 rounded-[1px]"
                   style={{
-                    color: getStructureColor(fund.structure),
-                    backgroundColor: `${getStructureColor(fund.structure)}1a`,
-                    border: `1px solid ${getStructureColor(fund.structure)}33`,
+                    color: "#333333",
+                    backgroundColor: `${getStructureColor(fund.structure)}10`,
+                    border: `1px solid ${getStructureColor(fund.structure)}20`,
                   }}
                 >
                   {fund.structure}
@@ -834,7 +839,7 @@ function FundDrawer({
               <span className="text-micro font-medium text-[#6b6b6b] uppercase tracking-wider block mb-2">
                 Investment Strategy
               </span>
-              <div className="glass-card rounded-[4px] p-3">
+              <div className="glass-card rounded-[1px] p-3">
                 <p className="text-sm-dense text-[#6b6b6b] leading-relaxed italic">
                   {fund.investmentStrategy}
                 </p>
@@ -852,11 +857,11 @@ function FundDrawer({
                 {fund.sectors.map((sector) => (
                   <span
                     key={sector}
-                    className="text-xs-dense font-medium px-2 py-0.5 rounded-[4px]"
+                    className="text-xs-dense font-medium px-2 py-0.5 rounded-[1px]"
                     style={{
-                      color: getFundSectorColor(sector),
-                      backgroundColor: `${getFundSectorColor(sector)}1a`,
-                      border: `1px solid ${getFundSectorColor(sector)}33`,
+                      color: "#333333",
+                      backgroundColor: `${getFundSectorColor(sector)}10`,
+                      border: `1px solid ${getFundSectorColor(sector)}20`,
                     }}
                   >
                     {sector}
@@ -909,11 +914,11 @@ function FundDrawer({
                   <div key={sector}>
                     <div className="flex items-center gap-2 mb-2">
                       <span
-                        className="text-xs-dense font-medium px-2 py-0.5 rounded-[4px]"
+                        className="text-xs-dense font-medium px-2 py-0.5 rounded-[1px]"
                         style={{
-                          color: getFundSectorColor(sector),
-                          backgroundColor: `${getFundSectorColor(sector)}1a`,
-                          border: `1px solid ${getFundSectorColor(sector)}33`,
+                          color: "#333333",
+                          backgroundColor: `${getFundSectorColor(sector)}10`,
+                          border: `1px solid ${getFundSectorColor(sector)}20`,
                         }}
                       >
                         {sector}
@@ -928,7 +933,7 @@ function FundDrawer({
                             {entries.map(({ company, fundName, strategies }) => (
                               <div
                                 key={`${company.name}-${fundName}`}
-                                className="glass-card rounded-[4px] px-3 py-2 flex items-start justify-between gap-2"
+                                className="glass-card rounded-[1px] px-3 py-2 flex items-start justify-between gap-2"
                               >
                                 <div className="min-w-0">
                                   <div className="text-sm-dense text-[#111111]">{company.name}</div>
@@ -940,10 +945,10 @@ function FundDrawer({
                                   {strategies.slice(0, 1).map((s) => (
                                     <span
                                       key={s}
-                                      className="text-micro px-1.5 py-0.5 rounded-[4px]"
+                                      className="text-micro px-1.5 py-0.5 rounded-[1px]"
                                       style={{
-                                        color: getStrategyColor(s),
-                                        backgroundColor: `${getStrategyColor(s)}1a`,
+                                        color: "#333333",
+                                        backgroundColor: `${getStrategyColor(s)}10`,
                                       }}
                                     >
                                       {s}
@@ -973,7 +978,7 @@ function FundDrawer({
                   <button
                     key={sib.id}
                     onClick={() => onSelectFund(sib)}
-                    className="w-full text-left glass-card rounded-[4px] p-3 hover:border-[#c4c4c4] transition-colors flex items-center justify-between gap-2"
+                    className="w-full text-left glass-card rounded-[1px] p-3 hover:border-[#c4c4c4] transition-colors flex items-center justify-between gap-2"
                   >
                     <div className="min-w-0">
                       <div className="text-sm-dense font-medium text-[#111111] truncate">{sib.fundName}</div>
@@ -1055,30 +1060,14 @@ export function FundDatabase() {
   }, [filteredFunds, selectedFund]);
 
   return (
-    <div className="mx-auto max-w-[1400px] xl:max-w-[1600px] 2xl:max-w-[1800px] px-4 sm:px-6 lg:px-8 xl:px-12 py-8 lg:py-12">
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="font-heading text-lg font-bold tracking-tight text-[#111111] mb-1">
-            Fund Database
-          </h1>
-          <p className="text-xs-dense text-[#999999]">
-            Infrastructure fund manager profiles. Filter by strategy, status, and fund size.
-          </p>
-        </div>
-        <div className="hidden sm:flex items-center gap-6 text-xs-dense">
-          <div className="flex items-baseline gap-2">
-            <span className="text-[#6b6b6b]">Managers</span>
-            <span className="font-mono text-[#111111] tabular-nums">{sortedManagers.length}</span>
-          </div>
-          <div className="flex items-baseline gap-2">
-            <span className="text-[#6b6b6b]">Vehicles</span>
-            <span className="font-mono text-[#111111] tabular-nums">{filteredFunds.length}</span>
-          </div>
-        </div>
-      </div>
+    <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-6 lg:py-8">
+      <DatabaseTiles counts={{ deals: dealsData.length, funds: funds.length, portfolio: portcosData.length }} />
 
-      <div className="mb-6 lg:mb-8">
-        <FundsInsightsHero filteredFunds={filteredFunds} />
+      {/* Breadcrumb */}
+      <div className="flex items-center gap-2 mt-4 mb-3">
+        <span className="text-[11px] text-[#999] uppercase tracking-wider">Data</span>
+        <span className="text-[11px] text-[#ccc]">/</span>
+        <span className="text-[11px] text-[#111] font-semibold uppercase tracking-wider">Funds</span>
       </div>
 
       <FundFilterBar
@@ -1095,66 +1084,71 @@ export function FundDatabase() {
         onClearAll={clearFundFilters}
       />
 
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex gap-1 p-0.5 rounded-[4px] bg-[#f5f5f3] border border-[#d7d7d7]">
-              <button
-                onClick={() => setFundView("managers")}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
-                  fundView === "managers"
-                    ? "bg-white text-[#111111] shadow-sm"
-                    : "text-[#6b6b6b] hover:text-[#111111]"
-                }`}
-              >
-                <Users className="h-3.5 w-3.5" />
-                By Manager
-              </button>
-              <button
-                onClick={() => setFundView("all")}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
-                  fundView === "all"
-                    ? "bg-white text-[#111111] shadow-sm"
-                    : "text-[#6b6b6b] hover:text-[#111111]"
-                }`}
-              >
-                <LayoutList className="h-3.5 w-3.5" />
-                All Funds
-              </button>
-            </div>
-          </div>
+      {/* Results count */}
+      <div className="mb-2 mt-1">
+        <span className="text-micro text-[#6f6f6f]">
+          Showing <span className="font-mono text-[#111] tabular-nums">{filteredFunds.length}</span> of <span className="font-mono text-[#111] tabular-nums">{funds.length}</span> funds
+        </span>
+      </div>
 
-          {fundView === "managers" ? (
-            <div className="space-y-3">
-              {sortedManagers.map(([manager, managerFunds]) => (
-                <FundManagerAccordion
-                  key={manager}
-                  managerName={manager}
-                  managerFunds={managerFunds}
-                  onSelectFund={setSelectedFund}
-                  defaultOpen={true}
-                />
-              ))}
+      {/* View toggle */}
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex gap-1 p-0.5 rounded-[1px] bg-[#f5f5f3] border border-[#d7d7d7]">
+          <button
+            onClick={() => setFundView("managers")}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-[1px] text-xs font-medium transition-colors ${
+              fundView === "managers"
+                ? "bg-white text-[#111111] shadow-sm"
+                : "text-[#6b6b6b] hover:text-[#111111]"
+            }`}
+          >
+            <Users className="h-3.5 w-3.5" />
+            By Manager
+          </button>
+          <button
+            onClick={() => setFundView("all")}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-[1px] text-xs font-medium transition-colors ${
+              fundView === "all"
+                ? "bg-white text-[#111111] shadow-sm"
+                : "text-[#6b6b6b] hover:text-[#111111]"
+            }`}
+          >
+            <LayoutList className="h-3.5 w-3.5" />
+            All Funds
+          </button>
+        </div>
+      </div>
 
-              {sortedManagers.length === 0 && (
-                <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999]">
-                  No funds match your current filters.
-                </div>
-              )}
-            </div>
-          ) : (
-            <AllFundsTable
-              funds={filteredFunds}
+      {fundView === "managers" ? (
+        <div className="space-y-3">
+          {sortedManagers.map(([manager, managerFunds]) => (
+            <FundManagerAccordion
+              key={manager}
+              managerName={manager}
+              managerFunds={managerFunds}
               onSelectFund={setSelectedFund}
+              defaultOpen={true}
             />
-          )}
+          ))}
 
-          <div className="px-1 py-2.5">
-            <span className="text-micro text-[#999999]">
-              Showing{" "}
-              <span className="font-mono text-[#6b6b6b] tabular-nums">{sortedManagers.length}</span> managers /{" "}
-              <span className="font-mono text-[#6b6b6b] tabular-nums">{filteredFunds.length}</span> vehicles of{" "}
-              <span className="font-mono text-[#6b6b6b] tabular-nums">{funds.length}</span> total
-            </span>
-          </div>
+          {sortedManagers.length === 0 && (
+            <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999]">
+              No funds match your current filters.
+            </div>
+          )}
+        </div>
+      ) : (
+        <AllFundsTable
+          funds={filteredFunds}
+          onSelectFund={setSelectedFund}
+        />
+      )}
+
+      <CTABlock />
+
+      <MarketSnapshotSection>
+        <FundsInsightsHero filteredFunds={filteredFunds} />
+      </MarketSnapshotSection>
 
       {selectedFund && (
         <FundDrawer

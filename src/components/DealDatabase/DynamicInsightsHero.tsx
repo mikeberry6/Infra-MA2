@@ -185,7 +185,7 @@ function FundStackedBar({
       </span>
       <div className="flex-1 flex items-center gap-2 min-w-0">
         <div
-          className="flex h-4 rounded-[3px] overflow-hidden transition-all duration-500 ease-out"
+          className="flex h-4 rounded-[1px] overflow-hidden transition-all duration-500 ease-out"
           style={{ width: `${Math.max(barPct, 3)}%` }}
         >
           {row.breakdown.map((seg) => {
@@ -229,7 +229,7 @@ function SimpleBarRow({
       </span>
       <div className="flex-1 flex items-center gap-2 min-w-0">
         <div
-          className="h-4 rounded-[3px] transition-all duration-500 ease-out"
+          className="h-4 rounded-[1px] transition-all duration-500 ease-out"
           style={{
             width: `${Math.max(barPct, 3)}%`,
             backgroundColor: row.color,
@@ -261,7 +261,7 @@ function ActivityLegend({ activities }: { activities: string[] }) {
       {activities.map((act) => (
         <div key={act} className="flex items-center gap-1.5">
           <div
-            className="w-2 h-2 rounded-[2px] flex-shrink-0"
+            className="w-2 h-2 rounded-[1px] flex-shrink-0"
             style={{ backgroundColor: getActivityColor(act), opacity: 0.7 }}
           />
           <span className="text-micro text-[#999999]">{act}</span>
@@ -298,7 +298,7 @@ export function DynamicInsightsHero({
 
   if (filteredDeals.length === 0) {
     return (
-      <div className="rounded-[4px] border border-[#d7d7d7] bg-white p-6 text-center">
+      <div className="p-6 text-center">
         <p className="text-sm-dense text-[#999999]">
           No deals match your current filters. Try broadening your search.
         </p>
@@ -307,8 +307,8 @@ export function DynamicInsightsHero({
   }
 
   return (
-    <div className="rounded-[4px] border border-[#d7d7d7] bg-white overflow-hidden">
-      <div className="p-4 sm:p-5">
+    <div>
+      <div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* ── Fund Activity ─────────────────────────────── */}
           <div className="min-w-0">
