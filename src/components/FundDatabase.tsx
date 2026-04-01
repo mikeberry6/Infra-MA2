@@ -81,8 +81,8 @@ function FundFilterBar({
     activeSectors.size;
 
   return (
-    <div className="mb-4 lg:mb-6 space-y-3">
-      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[124px] z-30">
+    <div className="mb-2 space-y-3">
+      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[240px] z-30">
         <div className="border-r border-[#d6d6d6] px-2.5 py-1.5 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
@@ -369,91 +369,26 @@ function FundManagerAccordion({
 }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
-  const aggregateStrategies = useMemo(() => {
-    const set = new Set<FundStrategy>();
-    for (const f of managerFunds) for (const s of f.strategies) set.add(s);
-    return Array.from(set);
-  }, [managerFunds]);
-
-  const aggregateStatuses = useMemo(() => {
-    const set = new Set<FundStatus>();
-    for (const f of managerFunds) set.add(f.status);
-    return Array.from(set);
-  }, [managerFunds]);
-
-  // Aggregate total AUM for the manager
-  const totalAum = useMemo(() => {
-    let total = 0;
-    for (const f of managerFunds) {
-      if (f.sizeUsdMm) total += f.sizeUsdMm;
-    }
-    return total;
-  }, [managerFunds]);
-
-  const formatAum = (mm: number) => {
-    if (mm >= 1000) return `$${(mm / 1000).toFixed(1)}B`;
-    return `$${mm.toLocaleString()}M`;
-  };
-
   return (
-    <div className="border border-[#d6d6d6] bg-white">
-      {/* Manager header — scorecard-style */}
+    <div className="border-b border-[#d6d6d6] bg-white">
+      {/* Manager heading row */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left hover:bg-[#fafaf9] transition-colors group"
+        className="w-full flex items-center gap-2 px-3 py-[6px] text-left hover:bg-[#fafaf9] transition-colors group"
       >
-        <div className="px-4 py-3 flex items-start justify-between gap-4">
-          <div className="min-w-0">
-            <div className="flex items-center gap-2">
-              <div className="w-[3px] h-5 bg-[#008253] flex-shrink-0" />
-              <h3 className="text-[14px] font-heading font-bold text-[#1a1a1a] group-hover:text-[#008253] transition-colors tracking-tight">
-                {managerName}
-              </h3>
-            </div>
-            <div className="flex items-center gap-3 mt-1.5 ml-[11px]">
-              <span className="text-[10px] text-[#888] uppercase tracking-[0.06em] font-medium">
-                {managerFunds.length} {managerFunds.length === 1 ? "vehicle" : "vehicles"}
-              </span>
-              {totalAum > 0 && (
-                <>
-                  <span className="text-[#d6d6d6]">·</span>
-                  <span className="text-[10px] text-[#888] font-mono tabular-nums">
-                    {formatAum(totalAum)} tracked AUM
-                  </span>
-                </>
-              )}
-              <span className="text-[#d6d6d6]">·</span>
-              <div className="flex gap-1">
-                {aggregateStrategies.slice(0, 4).map((s) => {
-                  const color = getStrategyColor(s);
-                  return (
-                    <span
-                      key={s}
-                      className="text-[9px] font-medium px-1.5 py-0"
-                      style={{
-                        color: color,
-                        backgroundColor: `${color}10`,
-                        border: `1px solid ${color}20`,
-                      }}
-                    >
-                      {s}
-                    </span>
-                  );
-                })}
-                {aggregateStrategies.length > 4 && (
-                  <span className="text-[9px] text-[#999]">+{aggregateStrategies.length - 4}</span>
-                )}
-              </div>
-            </div>
-          </div>
-          <ChevronRight
-            className={`h-4 w-4 text-[#999] shrink-0 mt-1 transition-transform ${isOpen ? "rotate-90" : ""}`}
-          />
-        </div>
+        <ChevronRight
+          className={`h-3 w-3 text-[#999] shrink-0 transition-transform ${isOpen ? "rotate-90" : ""}`}
+        />
+        <h3 className="text-[12px] font-heading font-bold text-[#1a1a1a] group-hover:text-[#008253] transition-colors">
+          {managerName}
+        </h3>
+        <span className="text-[10px] text-[#999] font-mono tabular-nums">
+          ({managerFunds.length})
+        </span>
       </button>
 
       {isOpen && (
-        <div className="border-t border-[#e8e8e8]">
+        <>
           {/* Desktop table */}
           <div className="hidden md:block">
             <table className="w-full text-sm-dense table-fixed">
@@ -484,52 +419,31 @@ function FundManagerAccordion({
                 </tr>
               </thead>
               <tbody>
-                {managerFunds.map((fund) => {
-                  const statusColor = getStatusColor(fund.status);
-                  return (
+                {managerFunds.map((fund) => (
                     <tr
                       key={fund.id}
                       onClick={() => onSelectFund(fund)}
-                      className="border-b border-[#f0f0f0] last:border-b-0 hover:bg-[#fafaf9] cursor-pointer transition-colors group"
+                      className="border-b border-[#e8e8e8] last:border-b-0 hover:bg-[#fafaf9] cursor-pointer transition-colors group"
                     >
-                      <td className="px-4 py-[5px] overflow-hidden">
+                      <td className="px-3 py-[4px] overflow-hidden">
                         <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate">
                           {fund.fundName}
                         </span>
                       </td>
-                      <td className="px-2.5 py-[5px]">
-                        <div className="flex flex-wrap gap-1">
-                          {fund.strategies.map((s) => {
-                            const c = getStrategyColor(s);
-                            return (
-                              <span
-                                key={s}
-                                className="text-[9px] font-medium px-1.5 py-0"
-                                style={{ color: c, backgroundColor: `${c}10`, border: `1px solid ${c}20` }}
-                              >
-                                {s}
-                              </span>
-                            );
-                          })}
-                        </div>
+                      <td className="px-2.5 py-[4px]">
+                        <span className="text-[11px] text-[#555]">{fund.strategies.join(", ")}</span>
                       </td>
-                      <td className="px-2.5 py-[5px]">
+                      <td className="px-2.5 py-[4px]">
                         <span className="text-[11px] text-[#1a1a1a]">{fund.size}</span>
                       </td>
-                      <td className="px-2.5 py-[5px]">
+                      <td className="px-2.5 py-[4px]">
                         <span className="font-mono text-[11px] text-[#888] tabular-nums">{fund.vintage}</span>
                       </td>
-                      <td className="px-2.5 py-[5px]">
-                        <span
-                          className="text-[9px] font-medium px-1.5 py-0"
-                          style={{ color: statusColor, backgroundColor: `${statusColor}10`, border: `1px solid ${statusColor}20` }}
-                        >
-                          {fund.status}
-                        </span>
+                      <td className="px-2.5 py-[4px]">
+                        <span className="text-[11px] text-[#555]">{fund.status}</span>
                       </td>
                     </tr>
-                  );
-                })}
+                  ))}
               </tbody>
             </table>
           </div>
@@ -540,7 +454,7 @@ function FundManagerAccordion({
               <FundVehicleCard key={fund.id} fund={fund} onSelect={onSelectFund} />
             ))}
           </div>
-        </div>
+        </>
       )}
     </div>
   );
@@ -1054,7 +968,7 @@ export function FundDatabase() {
       <DatabaseTiles counts={{ deals: dealsData.length, funds: funds.length, portfolio: portcosData.length }} />
 
       {/* Breadcrumb */}
-      <div className="flex items-center gap-1.5 mt-3 mb-2">
+      <div className="flex items-center gap-1.5 mt-2 mb-1">
         <span className="text-[10px] text-[#999] uppercase tracking-[0.06em]">Data</span>
         <span className="text-[10px] text-[#ccc]">/</span>
         <span className="text-[10px] text-[#1a1a1a] font-semibold uppercase tracking-[0.06em]">Funds</span>
@@ -1080,23 +994,23 @@ export function FundDatabase() {
           <span className="text-[11px] text-[#6e6e6e]">
             Showing <span className="font-mono text-[#1a1a1a] tabular-nums">{filteredFunds.length}</span> of <span className="font-mono text-[#1a1a1a] tabular-nums">{funds.length}</span> funds
           </span>
-          <div className="hidden sm:flex items-center border-l border-[#e0e0e0] ml-2 pl-3">
+          <div className="hidden sm:flex items-center border-l border-[#d6d6d6] ml-3 pl-3">
             <button
               onClick={() => setFundView("managers")}
-              className={`text-[10px] font-heading px-2 py-[3px] transition-colors border-b-2 ${
+              className={`text-[11px] font-heading px-3 py-[4px] transition-colors border-b-2 ${
                 fundView === "managers"
                   ? "font-bold text-[#1a1a1a] border-[#008253]"
-                  : "font-semibold text-[#888] hover:text-[#1a1a1a] border-transparent"
+                  : "font-medium text-[#888] hover:text-[#1a1a1a] border-transparent"
               }`}
             >
               By Manager
             </button>
             <button
               onClick={() => setFundView("all")}
-              className={`text-[10px] font-heading px-2 py-[3px] transition-colors border-b-2 ${
+              className={`text-[11px] font-heading px-3 py-[4px] transition-colors border-b-2 ${
                 fundView === "all"
                   ? "font-bold text-[#1a1a1a] border-[#008253]"
-                  : "font-semibold text-[#888] hover:text-[#1a1a1a] border-transparent"
+                  : "font-medium text-[#888] hover:text-[#1a1a1a] border-transparent"
               }`}
             >
               All Funds
@@ -1115,7 +1029,7 @@ export function FundDatabase() {
       </div>
 
       {fundView === "managers" ? (
-        <div className="space-y-2 mt-2">
+        <div className="bg-white border border-[#d6d6d6] border-t-0">
           {sortedManagers.map(([manager, managerFunds]) => (
             <FundManagerAccordion
               key={manager}
@@ -1127,7 +1041,7 @@ export function FundDatabase() {
           ))}
 
           {sortedManagers.length === 0 && (
-            <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999] bg-white border border-[#d6d6d6]">
+            <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999]">
               No funds match your current filters.
             </div>
           )}

@@ -154,9 +154,9 @@ function FilterBar({
   onClearAll: () => void;
 }) {
   return (
-    <div className="mb-4 lg:mb-6 space-y-3">
+    <div className="mb-2 space-y-3">
       {/* Segmented filter bar */}
-      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[124px] z-30">
+      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[240px] z-30">
         <div className="border-r border-[#d6d6d6] px-2.5 py-1.5 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
@@ -329,14 +329,23 @@ function DealTable({
           <table className="w-full text-left text-sm-dense border-collapse whitespace-nowrap">
             <thead>
               <tr className="bg-[#e8e8e6] border-b border-[#d0d0d0]">
-                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em] w-[70px]">
-                  ID
+                <th
+                  onClick={toggleSort}
+                  className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em] cursor-pointer hover:text-[#1a1a1a] transition-colors w-[100px]"
+                >
+                  <span className="inline-flex items-center gap-1">
+                    Date
+                    <ArrowUpDown className="h-2.5 w-2.5" />
+                  </span>
                 </th>
                 <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
-                  Deal
+                  Target
                 </th>
                 <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
-                  Parties
+                  Seller
+                </th>
+                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
+                  Buyer
                 </th>
                 <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Sector
@@ -347,23 +356,13 @@ function DealTable({
                 <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Category
                 </th>
-                <th
-                  onClick={toggleSort}
-                  className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em] cursor-pointer hover:text-[#1a1a1a] transition-colors"
-                >
-                  <span className="inline-flex items-center gap-1">
-                    Date
-                    <ArrowUpDown className="h-2.5 w-2.5" />
-                  </span>
-                </th>
-                <th className="text-center px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
+                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Source
                 </th>
               </tr>
             </thead>
             <tbody>
               {sorted.map((deal) => {
-                const sectorColor = getSectorColor(deal.sector);
                 return (
                   <tr
                     key={deal.id}
@@ -371,18 +370,20 @@ function DealTable({
                     className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-colors group"
                   >
                     <td className="px-2.5 py-[4px]">
-                      <span className="font-mono text-[10px] text-[#bbb] tabular-nums">
-                        {deal.id}
+                      <span className="font-mono text-[11px] text-[#555] tabular-nums">
+                        {formatDate(deal.date)}
                       </span>
                     </td>
                     <td className="px-2.5 py-[4px]">
-                      <span className="text-[12px] font-medium text-[#1a1a1a] tracking-tight group-hover:text-[#008253] transition-colors">
+                      <span className="text-[12px] font-bold text-[#1a1a1a] tracking-tight group-hover:text-[#008253] transition-colors truncate block max-w-[260px]">
                         {deal.title}
                       </span>
                     </td>
-                    <td className="px-2.5 py-[4px] max-w-[200px]">
-                      <span className="text-[12px] text-[#1a1a1a] font-medium truncate block">{deal.buyer}</span>
-                      <span className="text-[11px] text-[#999] truncate block">{deal.seller}</span>
+                    <td className="px-2.5 py-[4px] max-w-[160px]">
+                      <span className="text-[11px] text-[#555] truncate block">{deal.seller}</span>
+                    </td>
+                    <td className="px-2.5 py-[4px] max-w-[160px]">
+                      <span className="text-[11px] text-[#555] truncate block">{deal.buyer}</span>
                     </td>
                     <td className="px-2.5 py-[4px]">
                       <span className="text-[11px] text-[#555]">{deal.sector}</span>
@@ -394,20 +395,16 @@ function DealTable({
                       <span className="text-[11px] text-[#555]">{deal.category[0]}</span>
                     </td>
                     <td className="px-2.5 py-[4px]">
-                      <span className="font-mono text-[11px] text-[#555] tabular-nums">
-                        {formatDate(deal.date)}
-                      </span>
-                    </td>
-                    <td className="px-2.5 py-[4px] text-center">
                       <a
                         href={deal.sourceUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-0.5 text-[10px] text-[#999] hover:text-[#555] transition-colors"
-                        title={`Source: ${deal.sourceName}`}
+                        className="inline-flex items-center gap-1 text-[10px] text-[#999] hover:text-[#555] transition-colors"
+                        title={deal.sourceName}
                       >
-                        <ExternalLink className="h-2.5 w-2.5" />
+                        <span className="truncate max-w-[80px]">{deal.sourceName}</span>
+                        <ExternalLink className="h-2.5 w-2.5 flex-shrink-0" />
                       </a>
                     </td>
                   </tr>
@@ -821,7 +818,7 @@ export function DealDatabase() {
       <DatabaseTiles counts={{ deals: deals.length, funds: fundsData.length, portfolio: portcosData.length }} />
 
       {/* Breadcrumb */}
-      <div className="flex items-center gap-1.5 mt-3 mb-2">
+      <div className="flex items-center gap-1.5 mt-2 mb-1">
         <span className="text-[10px] text-[#999] uppercase tracking-[0.06em]">Data</span>
         <span className="text-[10px] text-[#ccc]">/</span>
         <span className="text-[10px] text-[#1a1a1a] font-semibold uppercase tracking-[0.06em]">Deals</span>
