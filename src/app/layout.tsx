@@ -17,10 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className="min-h-screen bg-[#09090B] text-[#EDEDED] antialiased">
+    <html lang="en">
+      <body className="min-h-screen bg-[#f5f5f3] text-[#111111] antialiased">
         <Navbar />
-        <main className="pt-14">{children}</main>
+        <main className="pt-[104px]">{children}</main>
       </body>
     </html>
   );

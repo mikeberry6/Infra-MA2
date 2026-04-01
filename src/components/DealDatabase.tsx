@@ -86,7 +86,7 @@ function ActiveFiltersChips({
 
   return (
     <div className="flex items-center gap-2 flex-wrap">
-      <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">
+      <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">
         Active:
       </span>
       {Array.from(activeSectors).map((sector) => (
@@ -116,7 +116,7 @@ function ActiveFiltersChips({
       {totalFilters > 1 && (
         <button
           onClick={onClearAll}
-          className="text-micro text-[#52525B] hover:text-[#A1A1AA] transition-colors ml-1"
+          className="text-micro text-[#999999] hover:text-[#6b6b6b] transition-colors ml-1"
         >
           Clear all
         </button>
@@ -152,17 +152,17 @@ function FilterBar({
       {/* Search + Filter row */}
       <div className="flex items-center gap-3">
         <div className="relative flex-1 max-w-sm">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#52525B]" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#999999]" />
           <input
             type="text"
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search deals..."
             aria-label="Search deals"
-            className="w-full rounded-[4px] border border-[#27272A] bg-[#18181B] pl-10 pr-4 py-1.5 text-sm-dense text-[#EDEDED] placeholder:text-[#52525B] focus:outline-none focus:border-[#A1A1AA] transition-colors"
+            className="w-full rounded-[4px] border border-[#d7d7d7] bg-white pl-10 pr-4 py-1.5 text-sm-dense text-[#111111] placeholder:text-[#999999] focus:outline-none focus:border-[#007a4d] transition-colors"
           />
         </div>
-        <div className="w-px h-5 bg-[#27272A]" />
+        <div className="w-px h-5 bg-[#d7d7d7]" />
         <MultiSelectDropdown
           label="Sector"
           options={SECTORS}
@@ -212,7 +212,7 @@ function DealCard({
   return (
     <button
       onClick={() => onSelect(deal)}
-      className="w-full text-left glass-card rounded-[4px] p-4 transition-colors hover:bg-[rgba(255,255,255,0.03)] active:bg-[rgba(255,255,255,0.05)]"
+      className="w-full text-left glass-card rounded-[4px] p-4 transition-colors hover:bg-[#f5f5f3] active:bg-[#f0f0ee]"
     >
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-1.5 flex-wrap">
@@ -243,27 +243,27 @@ function DealCard({
             );
           })}
           {deal.category.length > 2 && (
-            <span className="text-micro font-mono px-1.5 py-0.5 rounded-[4px] text-[#52525B] border border-dashed border-[#27272A]">
+            <span className="text-micro font-mono px-1.5 py-0.5 rounded-[4px] text-[#999999] border border-dashed border-[#d7d7d7]">
               +{deal.category.length - 2}
             </span>
           )}
         </div>
-        <ChevronRight className="h-4 w-4 text-[#52525B] shrink-0" />
+        <ChevronRight className="h-4 w-4 text-[#999999] shrink-0" />
       </div>
-      <h3 className="text-sm-dense font-medium text-[#EDEDED] mb-1.5 leading-snug tracking-tight">
+      <h3 className="text-sm-dense font-medium text-[#111111] mb-1.5 leading-snug tracking-tight">
         {deal.title}
       </h3>
       <div className="grid grid-cols-2 gap-2 mt-2 mb-1">
         <div>
-          <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Buyer</span>
-          <div className="text-xs-dense text-[#A1A1AA] font-medium truncate">{deal.buyer}</div>
+          <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Buyer</span>
+          <div className="text-xs-dense text-[#6b6b6b] font-medium truncate">{deal.buyer}</div>
         </div>
         <div>
-          <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Seller</span>
-          <div className="text-xs-dense text-[#A1A1AA] font-medium truncate">{deal.seller}</div>
+          <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Seller</span>
+          <div className="text-xs-dense text-[#6b6b6b] font-medium truncate">{deal.seller}</div>
         </div>
       </div>
-      <div className="flex items-center text-micro text-[#52525B] mt-1">
+      <div className="flex items-center text-micro text-[#999999] mt-1">
         <span className="font-mono tabular-nums">{formatDate(deal.date)}</span>
       </div>
     </button>
@@ -299,50 +299,50 @@ function DealTable({
           <DealCard key={deal.id} deal={deal} onSelect={onSelectDeal} />
         ))}
         {sorted.length === 0 && (
-          <div className="flex items-center justify-center py-16 text-sm-dense text-[#52525B]">
+          <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999]">
             No deals match your current filters.
           </div>
         )}
         <div className="px-1 py-2.5">
-          <span className="text-micro text-[#52525B]">
+          <span className="text-micro text-[#999999]">
             Showing{" "}
-            <span className="font-mono text-[#A1A1AA] tabular-nums">{sorted.length}</span> of{" "}
-            <span className="font-mono text-[#A1A1AA] tabular-nums">{deals.length}</span> deals
+            <span className="font-mono text-[#6b6b6b] tabular-nums">{sorted.length}</span> of{" "}
+            <span className="font-mono text-[#6b6b6b] tabular-nums">{deals.length}</span> deals
           </span>
         </div>
       </div>
 
       {/* Desktop table */}
-      <div className="hidden md:block overflow-hidden">
+      <div className="hidden md:block overflow-hidden rounded-[4px] border border-[#d7d7d7] bg-white">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm-dense border-collapse whitespace-nowrap">
             <thead>
-              <tr className="border-b border-[#27272A]">
-                <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider w-[80px]">
+              <tr className="border-b-2 border-[#111111]">
+                <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider w-[80px]">
                   ID
                 </th>
-                <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                   Deal
                 </th>
-                <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                   Parties
                 </th>
-                <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                   Sector
                 </th>
-                <th className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                <th className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                   Category
                 </th>
                 <th
                   onClick={toggleSort}
-                  className="text-left px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider cursor-pointer hover:text-[#EDEDED] transition-colors"
+                  className="text-left px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider cursor-pointer hover:text-[#111111] transition-colors"
                 >
                   <span className="inline-flex items-center gap-1">
                     Date
                     <ArrowUpDown className="h-3 w-3" />
                   </span>
                 </th>
-                <th className="text-center px-4 py-3 text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                <th className="text-center px-4 py-3 text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                   Source
                 </th>
               </tr>
@@ -354,26 +354,26 @@ function DealTable({
                   <tr
                     key={deal.id}
                     onClick={() => onSelectDeal(deal)}
-                    className="border-b border-[rgba(255,255,255,0.08)] hover:bg-[rgba(255,255,255,0.03)] cursor-pointer transition-colors group"
+                    className="border-b border-[#e5e5e5] hover:bg-[#f5f5f3] cursor-pointer transition-colors group"
                   >
                     <td className="px-4 py-2.5">
-                      <span className="font-mono text-micro text-[#52525B] tabular-nums">
+                      <span className="font-mono text-micro text-[#999999] tabular-nums">
                         {deal.id}
                       </span>
                     </td>
                     <td className="px-4 py-2.5">
                       <div className="flex items-center gap-2">
-                        <span className="font-medium text-[#EDEDED] tracking-tight group-hover:text-white transition-colors truncate max-w-[280px] xl:max-w-[400px] 2xl:max-w-none">
+                        <span className="font-medium text-[#111111] tracking-tight group-hover:text-[#007a4d] transition-colors truncate max-w-[280px] xl:max-w-[400px] 2xl:max-w-none">
                           {deal.title}
                         </span>
-                        <ChevronRight className="h-3 w-3 text-[#52525B] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                        <ChevronRight className="h-3 w-3 text-[#999999] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                       </div>
                     </td>
                     <td className="px-4 py-2.5 max-w-[220px] xl:max-w-[300px] 2xl:max-w-none">
                       <div className="flex flex-col">
-                        <span className="text-sm-dense text-[#EDEDED] font-medium truncate">{deal.buyer}</span>
+                        <span className="text-sm-dense text-[#111111] font-medium truncate">{deal.buyer}</span>
                         <div className="flex items-center gap-1.5 mt-0.5">
-                          <span className="text-xs-dense text-[#52525B] group-hover:text-[#A1A1AA] transition-colors truncate">{deal.seller}</span>
+                          <span className="text-xs-dense text-[#999999] group-hover:text-[#6b6b6b] transition-colors truncate">{deal.seller}</span>
                         </div>
                       </div>
                     </td>
@@ -408,14 +408,14 @@ function DealTable({
                           );
                         })}
                         {deal.category.length > 2 && (
-                          <span className="inline-flex items-center px-1.5 py-0.5 rounded-[4px] text-micro font-mono bg-transparent text-[#52525B] border border-dashed border-[#27272A]">
+                          <span className="inline-flex items-center px-1.5 py-0.5 rounded-[4px] text-micro font-mono bg-transparent text-[#999999] border border-dashed border-[#d7d7d7]">
                             +{deal.category.length - 2}
                           </span>
                         )}
                       </div>
                     </td>
                     <td className="px-4 py-2.5">
-                      <span className="font-mono text-[#A1A1AA] group-hover:text-[#EDEDED] transition-colors tabular-nums tracking-tight text-xs-dense">
+                      <span className="font-mono text-[#6b6b6b] group-hover:text-[#111111] transition-colors tabular-nums tracking-tight text-xs-dense">
                         {formatDate(deal.date)}
                       </span>
                     </td>
@@ -425,7 +425,7 @@ function DealTable({
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1 text-micro text-[#52525B] hover:text-[#A1A1AA] transition-colors"
+                        className="inline-flex items-center gap-1 text-micro text-[#999999] hover:text-[#6b6b6b] transition-colors"
                         title={`Source: ${deal.sourceName}`}
                       >
                         <span className="font-medium">{deal.sourceName}</span>
@@ -440,16 +440,16 @@ function DealTable({
         </div>
 
         {sorted.length === 0 && (
-          <div className="flex items-center justify-center py-16 text-sm-dense text-[#52525B]">
+          <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999]">
             No deals match your current filters.
           </div>
         )}
 
-        <div className="border-t border-[#27272A] px-4 py-2.5">
-          <span className="text-micro text-[#52525B]">
+        <div className="border-t border-[#d7d7d7] px-4 py-2.5">
+          <span className="text-micro text-[#999999]">
             Showing{" "}
-            <span className="font-mono text-[#A1A1AA] tabular-nums">{sorted.length}</span> of{" "}
-            <span className="font-mono text-[#A1A1AA] tabular-nums">{deals.length}</span> deals
+            <span className="font-mono text-[#6b6b6b] tabular-nums">{sorted.length}</span> of{" "}
+            <span className="font-mono text-[#6b6b6b] tabular-nums">{deals.length}</span> deals
           </span>
         </div>
       </div>
@@ -500,8 +500,8 @@ function DetailRow({
     <div className="glass-card rounded-[4px] px-4 py-3 flex items-start gap-3">
       <Icon className={`h-4 w-4 mt-0.5 shrink-0 ${iconColor}`} />
       <div className="min-w-0">
-        <span className="text-micro text-[#52525B] block">{label}</span>
-        <div className="text-sm-dense text-[#A1A1AA]">{children}</div>
+        <span className="text-micro text-[#999999] block">{label}</span>
+        <div className="text-sm-dense text-[#6b6b6b]">{children}</div>
       </div>
     </div>
   );
@@ -524,7 +524,7 @@ function AdvisorCard({
       </span>
       <div className="space-y-1">
         {firms.map((firm) => (
-          <div key={firm} className="text-sm-dense text-[#EDEDED] font-medium">
+          <div key={firm} className="text-sm-dense text-[#111111] font-medium">
             {firm}
           </div>
         ))}
@@ -569,28 +569,28 @@ function DealDrawer({
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+        className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
         onClick={onClose}
       />
 
       {/* Drawer */}
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#27272A] bg-[#09090B] overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#d7d7d7] bg-white overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-[#27272A] bg-[#09090B]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
+        <div className="sticky top-0 z-10 border-b border-[#d7d7d7] bg-white/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                <span className="font-mono text-micro text-[#52525B] tabular-nums">{deal.id}</span>
+                <span className="font-mono text-micro text-[#999999] tabular-nums">{deal.id}</span>
                 <StatusBadge status={deal.status} />
-                <span className="font-mono text-micro text-[#52525B] tabular-nums">{formatDate(deal.date)}</span>
+                <span className="font-mono text-micro text-[#999999] tabular-nums">{formatDate(deal.date)}</span>
               </div>
-              <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-[#EDEDED] leading-tight tracking-tight">
+              <h2 className="font-heading text-base sm:text-lg lg:text-xl font-semibold text-[#111111] leading-tight tracking-tight">
                 {deal.title}
               </h2>
             </div>
             <button
               onClick={onClose}
-              className="rounded-[4px] p-2 text-[#52525B] hover:text-[#EDEDED] hover:bg-[rgba(255,255,255,0.05)] transition-colors shrink-0"
+              className="rounded-[4px] p-2 text-[#999999] hover:text-[#111111] hover:bg-[#f5f5f3] transition-colors shrink-0"
             >
               <X className="h-5 w-5" />
             </button>
@@ -613,8 +613,8 @@ function DealDrawer({
                 </span>
               );
             })()}
-            <span className="text-xs-dense text-[#52525B]">{deal.subsector}</span>
-            <div className="h-3.5 w-px bg-[#27272A]" />
+            <span className="text-xs-dense text-[#999999]">{deal.subsector}</span>
+            <div className="h-3.5 w-px bg-[#d7d7d7]" />
             {deal.category.map((cat) => {
               const catColor = getCategoryColor(cat);
               return (
@@ -631,8 +631,8 @@ function DealDrawer({
                 </span>
               );
             })}
-            <div className="h-3.5 w-px bg-[#27272A]" />
-            <span className="text-xs-dense text-[#52525B]">{deal.country}</span>
+            <div className="h-3.5 w-px bg-[#d7d7d7]" />
+            <span className="text-xs-dense text-[#999999]">{deal.country}</span>
           </div>
         </div>
 
@@ -642,23 +642,23 @@ function DealDrawer({
           <div className="glass-card rounded-[4px] p-4 space-y-3">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Buyer</span>
-                <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{deal.buyer}</div>
+                <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Buyer</span>
+                <div className="text-sm-dense font-medium text-[#111111] mt-0.5">{deal.buyer}</div>
               </div>
               <div>
-                <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Seller</span>
-                <div className="text-sm-dense font-medium text-[#EDEDED] mt-0.5">{deal.seller}</div>
+                <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Seller</span>
+                <div className="text-sm-dense font-medium text-[#111111] mt-0.5">{deal.seller}</div>
               </div>
             </div>
 
             {econItems.length > 0 && (
               <>
-                <div className="border-t border-[rgba(255,255,255,0.08)]" />
+                <div className="border-t border-[#e5e5e5]" />
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
                   {econItems.map((item) => (
                     <div key={item.label}>
-                      <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">{item.label}</span>
-                      <div className="text-sm-dense font-semibold text-[#EDEDED] font-mono tabular-nums mt-0.5">{item.value}</div>
+                      <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">{item.label}</span>
+                      <div className="text-sm-dense font-semibold text-[#111111] font-mono tabular-nums mt-0.5">{item.value}</div>
                     </div>
                   ))}
                 </div>
@@ -666,28 +666,28 @@ function DealDrawer({
             )}
 
             {/* Timeline row */}
-            <div className="border-t border-[rgba(255,255,255,0.08)]" />
+            <div className="border-t border-[#e5e5e5]" />
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               <div>
-                <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Announced</span>
-                <div className="font-mono text-sm-dense text-[#A1A1AA] tabular-nums mt-0.5">{formatDate(deal.date)}</div>
+                <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Announced</span>
+                <div className="font-mono text-sm-dense text-[#6b6b6b] tabular-nums mt-0.5">{formatDate(deal.date)}</div>
               </div>
               {deal.closingDate && (
                 <div>
-                  <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Expected Close</span>
-                  <div className="text-sm-dense text-[#A1A1AA] mt-0.5">{deal.closingDate}</div>
+                  <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Expected Close</span>
+                  <div className="text-sm-dense text-[#6b6b6b] mt-0.5">{deal.closingDate}</div>
                 </div>
               )}
               {deal.assetScale && (
                 <div>
-                  <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Scale</span>
-                  <div className="text-sm-dense text-[#A1A1AA] mt-0.5">{deal.assetScale}</div>
+                  <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Scale</span>
+                  <div className="text-sm-dense text-[#6b6b6b] mt-0.5">{deal.assetScale}</div>
                 </div>
               )}
               {deal.fundVehicle && (
                 <div>
-                  <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider">Fund</span>
-                  <div className="text-sm-dense text-[#A1A1AA] mt-0.5">{deal.fundVehicle}</div>
+                  <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Fund</span>
+                  <div className="text-sm-dense text-[#6b6b6b] mt-0.5">{deal.fundVehicle}</div>
                 </div>
               )}
             </div>
@@ -695,7 +695,7 @@ function DealDrawer({
 
           {/* Target overview */}
           <div>
-            <p className="text-sm-dense text-[#A1A1AA] leading-relaxed">
+            <p className="text-sm-dense text-[#6b6b6b] leading-relaxed">
               {deal.targetDescription}
             </p>
           </div>
@@ -704,18 +704,18 @@ function DealDrawer({
           {deal.keyHighlights && deal.keyHighlights.length > 0 && (
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <FileText className="h-3.5 w-3.5 text-[#818CF8]" />
-                <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
+                <FileText className="h-3.5 w-3.5 text-[#007a4d]" />
+                <span className="text-micro font-medium text-[#6b6b6b] uppercase tracking-wider">
                   Key Highlights
                 </span>
               </div>
               <ul className="space-y-2">
                 {deal.keyHighlights.map((highlight, i) => (
                   <li key={i} className="flex gap-3 text-sm-dense">
-                    <span className="text-[#818CF8] mt-1 shrink-0">
+                    <span className="text-[#007a4d] mt-1 shrink-0">
                       <ChevronRight className="h-3 w-3" />
                     </span>
-                    <span className="text-[#A1A1AA] leading-relaxed">{highlight}</span>
+                    <span className="text-[#6b6b6b] leading-relaxed">{highlight}</span>
                   </li>
                 ))}
               </ul>
@@ -725,7 +725,7 @@ function DealDrawer({
           {/* Advisors */}
           {hasAdvisors && (
             <div>
-              <span className="text-micro font-medium text-[#52525B] uppercase tracking-wider block mb-3">
+              <span className="text-micro font-medium text-[#999999] uppercase tracking-wider block mb-3">
                 Advisors
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -733,21 +733,21 @@ function DealDrawer({
                   <AdvisorCard
                     label="Financial Advisor (Buyer)"
                     firms={deal.financialAdvisorBuyer}
-                    iconColor="text-[#818CF8]"
+                    iconColor="text-[#007a4d]"
                   />
                 )}
                 {deal.financialAdvisorSeller && (
                   <AdvisorCard
                     label="Financial Advisor (Seller)"
                     firms={deal.financialAdvisorSeller}
-                    iconColor="text-[#FBBF24]"
+                    iconColor="text-[#d97706]"
                   />
                 )}
                 {deal.legalAdvisorBuyer && (
                   <AdvisorCard
                     label="Legal Counsel (Buyer)"
                     firms={deal.legalAdvisorBuyer}
-                    iconColor="text-[#8b5cf6]"
+                    iconColor="text-[#7c3aed]"
                   />
                 )}
                 {deal.legalAdvisorSeller && (
@@ -762,12 +762,12 @@ function DealDrawer({
           )}
 
           {/* Source link */}
-          <div className="border-t border-[#27272A] pt-4">
+          <div className="border-t border-[#d7d7d7] pt-4">
             <a
               href={deal.sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-micro font-medium text-[#A1A1AA] hover:text-[#EDEDED] transition-colors"
+              className="inline-flex items-center gap-1.5 text-micro font-medium text-[#6b6b6b] hover:text-[#007a4d] transition-colors"
             >
               View source on {deal.sourceName}
               <ExternalLink className="h-3 w-3" />
@@ -858,25 +858,25 @@ export function DealDatabase() {
       {/* Header with stats ribbon */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-base font-medium tracking-tight text-[#EDEDED] mb-1">
+          <h1 className="font-heading text-lg font-bold tracking-tight text-[#111111] mb-1">
             Deal Database
           </h1>
-          <p className="text-xs-dense text-[#52525B]">
+          <p className="text-xs-dense text-[#999999]">
             2026 year-to-date as of {latestDealDate}
           </p>
         </div>
         <div className="hidden sm:flex items-center gap-6 text-xs-dense">
           <div className="flex items-baseline gap-2">
-            <span className="text-[#A1A1AA]">Deals</span>
-            <span className="font-mono text-[#EDEDED] tabular-nums">{filteredDeals.length}</span>
+            <span className="text-[#6b6b6b]">Deals</span>
+            <span className="font-mono text-[#111111] tabular-nums">{filteredDeals.length}</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="text-[#A1A1AA]">Sectors</span>
-            <span className="font-mono text-[#EDEDED] tabular-nums">{uniqueSectors}</span>
+            <span className="text-[#6b6b6b]">Sectors</span>
+            <span className="font-mono text-[#111111] tabular-nums">{uniqueSectors}</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="text-[#A1A1AA]">Regions</span>
-            <span className="font-mono text-[#EDEDED] tabular-nums">{uniqueRegions}</span>
+            <span className="text-[#6b6b6b]">Regions</span>
+            <span className="font-mono text-[#111111] tabular-nums">{uniqueRegions}</span>
           </div>
         </div>
       </div>
