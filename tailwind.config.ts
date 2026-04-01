@@ -19,14 +19,14 @@ const config: Config = {
         "sm-dense": ["13px", "20px"],
       },
       colors: {
-        canvas: "#f5f5f3",
+        canvas: "#f3f3f3",
         surface: {
           DEFAULT: "#ffffff",
           light: "#fafaf9",
           lighter: "#f0f0ee",
         },
         "border-subtle": {
-          DEFAULT: "#d7d7d7",
+          DEFAULT: "#d6d6d6",
           light: "#e5e5e5",
         },
         glass: {
@@ -34,8 +34,8 @@ const config: Config = {
           100: "rgba(0, 0, 0, 0.04)",
           200: "rgba(0, 0, 0, 0.06)",
         },
-        primary: "#111111",
-        muted: "#6b6b6b",
+        primary: "#1a1a1a",
+        muted: "#6e6e6e",
         tertiary: "#999999",
         hover: "rgba(0, 0, 0, 0.03)",
         accent: "#008253",

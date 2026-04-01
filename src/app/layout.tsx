@@ -18,17 +18,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-[#f5f5f3] text-[#111111] antialiased">
+      <body className="min-h-screen bg-[#f3f3f3] text-[#1a1a1a] antialiased">
         <Navbar />
-        <main className="pt-[148px]">{children}</main>
-        <footer className="border-t border-[#d8d8d8] bg-[#f5f5f5] mt-12">
-          <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-6">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#6f6f6f]">
-              <span>&copy; 2026 PEI Media Ltd &mdash; Infrastructure Investor</span>
+        <main className="pt-[164px]">{children}</main>
+        <footer className="border-t border-[#d6d6d6] bg-white mt-12">
+          <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-5">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#6e6e6e]">
+              <span>&copy; 2026 PEI Media</span>
               <div className="flex gap-4">
-                <span>Terms &amp; Conditions</span>
-                <span>Privacy Policy</span>
-                <span>Contact</span>
+                <span className="hover:text-[#1a1a1a] cursor-pointer transition-colors">Terms &amp; Conditions</span>
+                <span className="hover:text-[#1a1a1a] cursor-pointer transition-colors">Privacy Policy</span>
+                <span className="hover:text-[#1a1a1a] cursor-pointer transition-colors">Contact</span>
               </div>
             </div>
           </div>
