@@ -20,15 +20,16 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen bg-[#f3f3f3] text-[#1a1a1a] antialiased">
         <Navbar />
-        <main className="pt-[164px]">{children}</main>
-        <footer className="border-t border-[#d6d6d6] bg-white mt-12">
-          <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-5">
+        {/* pt-[60px] on mobile (masthead only), sm:pt-[240px] on desktop (ad+utility+masthead+nav) */}
+        <main className="pt-[60px] sm:pt-[240px]">{children}</main>
+        <footer className="border-t border-[#d6d6d6] bg-white mt-10">
+          <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-4">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#6e6e6e]">
               <span>&copy; 2026 PEI Media</span>
               <div className="flex gap-4">
-                <span className="hover:text-[#1a1a1a] cursor-pointer transition-colors">Terms &amp; Conditions</span>
-                <span className="hover:text-[#1a1a1a] cursor-pointer transition-colors">Privacy Policy</span>
-                <span className="hover:text-[#1a1a1a] cursor-pointer transition-colors">Contact</span>
+                <a href="#" className="hover:text-[#1a1a1a] transition-colors">Terms &amp; Conditions</a>
+                <a href="#" className="hover:text-[#1a1a1a] transition-colors">Privacy Policy</a>
+                <a href="#" className="hover:text-[#1a1a1a] transition-colors">Contact</a>
               </div>
             </div>
           </div>

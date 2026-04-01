@@ -81,7 +81,7 @@ function PortCoFilterBar({
 
   return (
     <div className="mb-4 lg:mb-6 space-y-3">
-      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[164px] z-30 flex-wrap">
+      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[240px] z-30 flex-wrap">
         <div className="border-r border-[#d6d6d6] px-2.5 py-1.5 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
@@ -717,12 +717,12 @@ function PortCoTable({
 
   const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
     <th
-      className="text-left px-2.5 py-[6px] text-[10px] font-heading font-semibold text-[#555555] uppercase tracking-[0.08em] cursor-pointer hover:text-[#1a1a1a] transition-colors select-none"
+      className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em] cursor-pointer hover:text-[#1a1a1a] transition-colors select-none"
       onClick={() => toggleSort(field)}
     >
       {label}
       {sortField === field && (
-        <span className="ml-1">{sortAsc ? "↑" : "↓"}</span>
+        <span className="ml-1 text-[#008253]">{sortAsc ? "↑" : "↓"}</span>
       )}
     </th>
   );
@@ -738,18 +738,18 @@ function PortCoTable({
   return (
     <>
       {/* Desktop table */}
-      <div className="hidden md:block overflow-hidden">
+      <div className="hidden md:block">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm-dense border-collapse whitespace-nowrap">
             <thead>
-              <tr className="bg-[#ebebeb] border-b border-[#d6d6d6]">
+              <tr className="bg-[#e8e8e6] border-b border-[#d0d0d0]">
                 <SortHeader field="name" label="Company" />
                 <SortHeader field="sector" label="Sector" />
-                <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-semibold text-[#555555] uppercase tracking-[0.08em]">
+                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Subsector
                 </th>
                 <SortHeader field="country" label="Country" />
-                <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-semibold text-[#555555] uppercase tracking-[0.08em]">
+                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Region
                 </th>
                 <SortHeader field="firm" label="Investment Firm" />
@@ -761,52 +761,30 @@ function PortCoTable({
                 <tr
                   key={`${company.name}-${company.investmentFirm}-${i}`}
                   onClick={() => onSelect(company)}
-                  className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-colors group"
+                  className="border-b border-[#f0f0f0] hover:bg-[#fafafa] cursor-pointer transition-colors group"
                 >
-                  <td className="px-2.5 py-[5px] max-w-[260px]">
-                    <span className="font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate">
+                  <td className="px-2.5 py-[4px] max-w-[260px]">
+                    <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate">
                       {company.name}
                     </span>
                   </td>
-                  <td className="px-2.5 py-[5px]">
-                    <span
-                      className="text-[10px] font-medium px-1.5 py-0 rounded-none whitespace-nowrap"
-                      style={{
-                        color: "#444444",
-                        backgroundColor: `${getPortCoSectorColor(company.sector)}08`,
-                        border: `1px solid ${getPortCoSectorColor(company.sector)}12`,
-                      }}
-                    >
-                      {company.sector}
-                    </span>
+                  <td className="px-2.5 py-[4px]">
+                    <span className="text-[11px] text-[#555]">{company.sector}</span>
                   </td>
-                  <td className="px-2.5 py-[5px]">
-                    {company.subsector && (
-                      <span className="text-[10px] font-medium px-1.5 py-0 rounded-none whitespace-nowrap" style={{ color: "#444444", backgroundColor: "rgba(251,191,36,0.03)", border: "1px solid rgba(251,191,36,0.07)" }}>
-                        {company.subsector}
-                      </span>
-                    )}
+                  <td className="px-2.5 py-[4px]">
+                    <span className="text-[11px] text-[#777]">{company.subsector || "—"}</span>
                   </td>
-                  <td className="px-2.5 py-[5px]">
-                    <span className="text-xs text-[#1a1a1a] whitespace-nowrap">{company.country}</span>
+                  <td className="px-2.5 py-[4px]">
+                    <span className="text-[11px] text-[#555]">{company.country}</span>
                   </td>
-                  <td className="px-2.5 py-[5px]">
-                    <span className="text-[12px] text-[#6e6e6e]">{company.region}</span>
+                  <td className="px-2.5 py-[4px]">
+                    <span className="text-[11px] text-[#555]">{company.region}</span>
                   </td>
-                  <td className="px-2.5 py-[5px] max-w-[200px]">
-                    <span className="text-xs text-[#6e6e6e] truncate block">{company.investmentFirm}</span>
+                  <td className="px-2.5 py-[4px] max-w-[200px]">
+                    <span className="text-[11px] text-[#555] truncate block">{company.investmentFirm}</span>
                   </td>
-                  <td className="px-2.5 py-[5px]">
-                    <span
-                      className="text-[10px] font-medium px-1.5 py-0 rounded-none whitespace-nowrap"
-                      style={{
-                        color: "#444444",
-                        backgroundColor: `${getPortCoStatusColor(company.status)}08`,
-                        border: `1px solid ${getPortCoStatusColor(company.status)}12`,
-                      }}
-                    >
-                      {company.status}
-                    </span>
+                  <td className="px-2.5 py-[4px]">
+                    <span className="text-[11px] text-[#555]">{company.status}</span>
                   </td>
                 </tr>
               ))}
@@ -892,14 +870,14 @@ export function PortfolioDatabase() {
   ]);
 
   return (
-    <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-6 lg:py-8">
+    <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-4 sm:py-6">
       <DatabaseTiles counts={{ deals: dealsData.length, funds: funds.length, portfolio: portcos.length }} />
 
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 mt-4 mb-3">
-        <span className="text-[11px] text-[#999] uppercase tracking-wider">Data</span>
-        <span className="text-[11px] text-[#ccc]">/</span>
-        <span className="text-[11px] text-[#1a1a1a] font-semibold uppercase tracking-wider">Portfolio companies</span>
+      <div className="flex items-center gap-1.5 mt-3 mb-2">
+        <span className="text-[10px] text-[#999] uppercase tracking-[0.06em]">Data</span>
+        <span className="text-[10px] text-[#ccc]">/</span>
+        <span className="text-[10px] text-[#1a1a1a] font-semibold uppercase tracking-[0.06em]">Portfolio companies</span>
       </div>
 
       <PortCoFilterBar
@@ -920,26 +898,29 @@ export function PortfolioDatabase() {
         onClearAll={clearFilters}
       />
 
-      {/* Results / Action Row */}
-      <div className="flex items-center justify-between mb-1 mt-2">
-        <span className="text-[11px] text-[#6e6e6e]">
-          Showing <span className="font-mono text-[#1a1a1a] tabular-nums">{filteredCompanies.length}</span> of <span className="font-mono text-[#1a1a1a] tabular-nums">{portcos.length}</span> companies
-        </span>
-        <div className="hidden sm:flex items-center gap-3">
-          <button className="text-[11px] text-[#6e6e6e] hover:text-[#1a1a1a] transition-colors flex items-center gap-1">
-            <Download className="h-3 w-3" /> Export
-          </button>
-          <span className="text-[#d6d6d6]">|</span>
-          <button className="text-[11px] text-[#6e6e6e] hover:text-[#1a1a1a] transition-colors flex items-center gap-1">
-            <Mail className="h-3 w-3" /> Contact research team
-          </button>
+      {/* White content panel */}
+      <div className="bg-white border border-[#d6d6d6]">
+        {/* Results / Action Row */}
+        <div className="flex items-center justify-between px-3 py-[6px] border-b border-[#e8e8e8]">
+          <span className="text-[11px] text-[#6e6e6e]">
+            Showing <span className="font-mono text-[#1a1a1a] tabular-nums">{filteredCompanies.length}</span> of <span className="font-mono text-[#1a1a1a] tabular-nums">{portcos.length}</span> companies
+          </span>
+          <div className="hidden sm:flex items-center gap-3">
+            <button className="text-[10px] text-[#888] hover:text-[#1a1a1a] transition-colors flex items-center gap-1 uppercase tracking-wide font-medium">
+              <Download className="h-3 w-3" /> Export
+            </button>
+            <span className="text-[#d6d6d6]">|</span>
+            <button className="text-[10px] text-[#888] hover:text-[#1a1a1a] transition-colors flex items-center gap-1 uppercase tracking-wide font-medium">
+              <Mail className="h-3 w-3" /> Contact research team
+            </button>
+          </div>
         </div>
-      </div>
 
-      <PortCoTable
-        companies={filteredCompanies}
-        onSelect={setSelectedCompany}
-      />
+        <PortCoTable
+          companies={filteredCompanies}
+          onSelect={setSelectedCompany}
+        />
+      </div>
 
       <CTABlock />
 

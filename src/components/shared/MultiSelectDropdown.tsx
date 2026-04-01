@@ -34,17 +34,19 @@ export function MultiSelectDropdown({
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         aria-label={`Filter by ${label}`}
-        className={`flex items-center gap-1.5 px-1.5 py-1 text-[11px] font-medium transition-colors whitespace-nowrap ${
+        className={`flex items-center gap-1 h-full px-2 text-[11px] font-medium transition-colors whitespace-nowrap ${
           selected.size > 0
             ? "text-[#008253] font-semibold"
-            : "text-[#6e6e6e] hover:text-[#1a1a1a]"
+            : "text-[#555] hover:text-[#1a1a1a]"
         }`}
       >
         <span>{label}</span>
         {selected.size > 0 && (
-          <span className="font-mono text-[10px]">{selected.size}</span>
+          <span className="font-mono text-[10px] bg-[#008253] text-white w-[16px] h-[16px] flex items-center justify-center text-[9px] font-bold">
+            {selected.size}
+          </span>
         )}
-        <ChevronDown className={`h-3 w-3 opacity-60 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown className={`h-[10px] w-[10px] opacity-50 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
       {isOpen && (
@@ -57,7 +59,7 @@ export function MultiSelectDropdown({
           <div
             role="listbox"
             aria-label={`${label} options`}
-            className="absolute top-full left-0 mt-1 w-60 max-h-60 overflow-y-auto border border-[#d6d6d6] bg-white shadow-lg"
+            className="absolute top-full left-0 mt-0 w-56 max-h-56 overflow-y-auto border border-[#d6d6d6] bg-white shadow-md"
             style={{ zIndex: 9999 }}
           >
             {options.map((option) => {
@@ -69,20 +71,20 @@ export function MultiSelectDropdown({
                   role="option"
                   aria-selected={isSelected}
                   onClick={() => onToggle(option)}
-                  className={`w-full flex items-center gap-2.5 px-2.5 py-1.5 text-[12px] text-left transition-colors ${
-                    isSelected ? "bg-[#f3f3f3]" : "hover:bg-[#f3f3f3]"
+                  className={`w-full flex items-center gap-2 px-2 py-[5px] text-[11px] text-left transition-colors border-b border-[#f0f0f0] last:border-b-0 ${
+                    isSelected ? "bg-[#f5f5f5]" : "hover:bg-[#fafafa]"
                   }`}
                 >
                   <div
-                    className={`w-3.5 h-3.5 border flex items-center justify-center shrink-0 ${
+                    className={`w-3 h-3 border flex items-center justify-center shrink-0 ${
                       isSelected ? "border-[#008253] bg-[#008253]" : "border-[#c4c4c4]"
                     }`}
                   >
-                    {isSelected && <Check className="h-2.5 w-2.5 text-white" />}
+                    {isSelected && <Check className="h-2 w-2 text-white" />}
                   </div>
                   <span
                     className="truncate"
-                    style={{ color: isSelected ? color : "#6e6e6e" }}
+                    style={{ color: isSelected ? color : "#555" }}
                   >
                     {option}
                   </span>

@@ -156,7 +156,7 @@ function FilterBar({
   return (
     <div className="mb-4 lg:mb-6 space-y-3">
       {/* Segmented filter bar */}
-      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[164px] z-30">
+      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[240px] z-30">
         <div className="border-r border-[#d6d6d6] px-2.5 py-1.5 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
@@ -324,39 +324,39 @@ function DealTable({
       </div>
 
       {/* Desktop table */}
-      <div className="hidden md:block overflow-hidden">
+      <div className="hidden md:block">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm-dense border-collapse whitespace-nowrap">
             <thead>
-              <tr className="bg-[#ebebeb] border-b border-[#d6d6d6]">
-                <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-semibold text-[#555555] uppercase tracking-[0.08em] w-[80px]">
+              <tr className="bg-[#e8e8e6] border-b border-[#d0d0d0]">
+                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em] w-[70px]">
                   ID
                 </th>
-                <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-semibold text-[#555555] uppercase tracking-[0.08em]">
+                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Deal
                 </th>
-                <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-semibold text-[#555555] uppercase tracking-[0.08em]">
+                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Parties
                 </th>
-                <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-semibold text-[#555555] uppercase tracking-[0.08em]">
+                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Sector
                 </th>
-                <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-semibold text-[#555555] uppercase tracking-[0.08em]">
+                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Region
                 </th>
-                <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-semibold text-[#555555] uppercase tracking-[0.08em]">
+                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Category
                 </th>
                 <th
                   onClick={toggleSort}
-                  className="text-left px-2.5 py-[6px] text-[10px] font-heading font-semibold text-[#555555] uppercase tracking-[0.08em] cursor-pointer hover:text-[#1a1a1a] transition-colors"
+                  className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em] cursor-pointer hover:text-[#1a1a1a] transition-colors"
                 >
                   <span className="inline-flex items-center gap-1">
                     Date
-                    <ArrowUpDown className="h-3 w-3" />
+                    <ArrowUpDown className="h-2.5 w-2.5" />
                   </span>
                 </th>
-                <th className="text-center px-2.5 py-[6px] text-[10px] font-heading font-semibold text-[#555555] uppercase tracking-[0.08em]">
+                <th className="text-center px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Source
                 </th>
               </tr>
@@ -370,80 +370,44 @@ function DealTable({
                     onClick={() => onSelectDeal(deal)}
                     className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-colors group"
                   >
-                    <td className="px-2.5 py-[5px]">
-                      <span className="font-mono text-micro text-[#c0c0c0] tabular-nums">
+                    <td className="px-2.5 py-[4px]">
+                      <span className="font-mono text-[10px] text-[#bbb] tabular-nums">
                         {deal.id}
                       </span>
                     </td>
-                    <td className="px-2.5 py-[5px]">
-                      <span className="font-medium text-[#1a1a1a] tracking-tight group-hover:text-[#008253] transition-colors truncate max-w-[280px] xl:max-w-[400px] 2xl:max-w-none">
+                    <td className="px-2.5 py-[4px]">
+                      <span className="text-[12px] font-medium text-[#1a1a1a] tracking-tight group-hover:text-[#008253] transition-colors">
                         {deal.title}
                       </span>
                     </td>
-                    <td className="px-2.5 py-[5px] max-w-[220px] xl:max-w-[300px] 2xl:max-w-none">
-                      <div className="flex flex-col">
-                        <span className="text-sm-dense text-[#1a1a1a] font-medium truncate">{deal.buyer}</span>
-                        <div className="flex items-center gap-1.5 mt-0.5">
-                          <span className="text-xs-dense text-[#999999] group-hover:text-[#6e6e6e] transition-colors truncate">{deal.seller}</span>
-                        </div>
-                      </div>
+                    <td className="px-2.5 py-[4px] max-w-[200px]">
+                      <span className="text-[12px] text-[#1a1a1a] font-medium truncate block">{deal.buyer}</span>
+                      <span className="text-[11px] text-[#999] truncate block">{deal.seller}</span>
                     </td>
-                    <td className="px-2.5 py-[5px]">
-                      <span
-                        className="inline-flex items-center text-[10px] font-medium px-1.5 py-0"
-                        style={{
-                          color: "#444444",
-                          backgroundColor: `${sectorColor}08`,
-                          border: `1px solid ${sectorColor}12`,
-                        }}
-                      >
-                        {deal.sector}
-                      </span>
+                    <td className="px-2.5 py-[4px]">
+                      <span className="text-[11px] text-[#555]">{deal.sector}</span>
                     </td>
-                    <td className="px-2.5 py-[5px]">
-                      <span className="text-[12px] text-[#6e6e6e]">{deal.region}</span>
+                    <td className="px-2.5 py-[4px]">
+                      <span className="text-[11px] text-[#555]">{deal.region}</span>
                     </td>
-                    <td className="px-2.5 py-[5px]">
-                      <div className="flex items-center gap-1.5">
-                        {deal.category.slice(0, 2).map((cat) => {
-                          const catColor = getCategoryColor(cat);
-                          return (
-                            <span
-                              key={cat}
-                              className="text-[10px] font-medium px-1.5 py-0"
-                              style={{
-                                color: "#444444",
-                                backgroundColor: `${catColor}08`,
-                                border: `1px solid ${catColor}12`,
-                              }}
-                            >
-                              {cat}
-                            </span>
-                          );
-                        })}
-                        {deal.category.length > 2 && (
-                          <span className="inline-flex items-center px-1.5 py-0 text-[10px] font-medium bg-transparent text-[#999999] border border-dashed border-[#d6d6d6]">
-                            +{deal.category.length - 2}
-                          </span>
-                        )}
-                      </div>
+                    <td className="px-2.5 py-[4px]">
+                      <span className="text-[11px] text-[#555]">{deal.category[0]}</span>
                     </td>
-                    <td className="px-2.5 py-[5px]">
-                      <span className="font-mono text-[#6e6e6e] group-hover:text-[#1a1a1a] transition-colors tabular-nums tracking-tight text-xs-dense">
+                    <td className="px-2.5 py-[4px]">
+                      <span className="font-mono text-[11px] text-[#555] tabular-nums">
                         {formatDate(deal.date)}
                       </span>
                     </td>
-                    <td className="px-2.5 py-[5px] text-center">
+                    <td className="px-2.5 py-[4px] text-center">
                       <a
                         href={deal.sourceUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1 text-micro text-[#999999] hover:text-[#6e6e6e] transition-colors"
+                        className="inline-flex items-center gap-0.5 text-[10px] text-[#999] hover:text-[#555] transition-colors"
                         title={`Source: ${deal.sourceName}`}
                       >
-                        <span className="font-medium">{deal.sourceName}</span>
-                        <ExternalLink className="h-3 w-3" />
+                        <ExternalLink className="h-2.5 w-2.5" />
                       </a>
                     </td>
                   </tr>
@@ -459,13 +423,7 @@ function DealTable({
           </div>
         )}
 
-        <div className="border-t border-[#e8e8e8] px-2.5 py-[5px]">
-          <span className="text-micro text-[#999999]">
-            Showing{" "}
-            <span className="font-mono text-[#6e6e6e] tabular-nums">{sorted.length}</span> of{" "}
-            <span className="font-mono text-[#6e6e6e] tabular-nums">{deals.length}</span> deals
-          </span>
-        </div>
+        {/* Footer row handled by parent panel */}
       </div>
     </>
   );
@@ -859,14 +817,14 @@ export function DealDatabase() {
   }, [filteredDeals, selectedDeal]);
 
   return (
-    <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-6 lg:py-8">
+    <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-4 sm:py-6">
       <DatabaseTiles counts={{ deals: deals.length, funds: fundsData.length, portfolio: portcosData.length }} />
 
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 mt-4 mb-3">
-        <span className="text-[11px] text-[#999] uppercase tracking-wider">Data</span>
-        <span className="text-[11px] text-[#ccc]">/</span>
-        <span className="text-[11px] text-[#1a1a1a] font-semibold uppercase tracking-wider">Deals</span>
+      <div className="flex items-center gap-1.5 mt-3 mb-2">
+        <span className="text-[10px] text-[#999] uppercase tracking-[0.06em]">Data</span>
+        <span className="text-[10px] text-[#ccc]">/</span>
+        <span className="text-[10px] text-[#1a1a1a] font-semibold uppercase tracking-[0.06em]">Deals</span>
       </div>
 
       <FilterBar
@@ -881,23 +839,26 @@ export function DealDatabase() {
         onClearAll={clearAllFilters}
       />
 
-      {/* Results count */}
-      <div className="flex items-center justify-between mb-1 mt-2">
-        <span className="text-[11px] text-[#6e6e6e]">
-          Showing <span className="font-mono text-[#1a1a1a] tabular-nums">{filteredDeals.length}</span> of <span className="font-mono text-[#1a1a1a] tabular-nums">{deals.length}</span> deals
-        </span>
-        <div className="hidden sm:flex items-center gap-3">
-          <button className="text-[11px] text-[#6e6e6e] hover:text-[#1a1a1a] transition-colors flex items-center gap-1">
-            <Download className="h-3 w-3" /> Export
-          </button>
-          <span className="text-[#d6d6d6]">|</span>
-          <button className="text-[11px] text-[#6e6e6e] hover:text-[#1a1a1a] transition-colors flex items-center gap-1">
-            <Mail className="h-3 w-3" /> Contact research team
-          </button>
+      {/* White content panel */}
+      <div className="bg-white border border-[#d6d6d6]">
+        {/* Results/action bar */}
+        <div className="flex items-center justify-between px-3 py-[6px] border-b border-[#e8e8e8]">
+          <span className="text-[11px] text-[#6e6e6e]">
+            Showing <span className="font-mono text-[#1a1a1a] tabular-nums">{filteredDeals.length}</span> of <span className="font-mono text-[#1a1a1a] tabular-nums">{deals.length}</span> deals
+          </span>
+          <div className="hidden sm:flex items-center gap-3">
+            <button className="text-[10px] text-[#888] hover:text-[#1a1a1a] transition-colors flex items-center gap-1 uppercase tracking-wide font-medium">
+              <Download className="h-3 w-3" /> Export
+            </button>
+            <span className="text-[#d6d6d6]">|</span>
+            <button className="text-[10px] text-[#888] hover:text-[#1a1a1a] transition-colors flex items-center gap-1 uppercase tracking-wide font-medium">
+              <Mail className="h-3 w-3" /> Contact research team
+            </button>
+          </div>
         </div>
-      </div>
 
-      <DealTable filteredDeals={filteredDeals} onSelectDeal={setSelectedDeal} />
+        <DealTable filteredDeals={filteredDeals} onSelectDeal={setSelectedDeal} />
+      </div>
 
       <CTABlock />
 
