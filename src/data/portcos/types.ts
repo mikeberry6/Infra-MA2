@@ -36,6 +36,10 @@ export type PortCoRegion =
   | "Latin America"
   | "Global";
 
+export type PortCoCountryTag = "US" | "Canada" | "Mexico";
+
+export const PORTCO_COUNTRY_TAGS: PortCoCountryTag[] = ["US", "Canada", "Mexico"];
+
 export type PortCoStatus = "Active" | "Realized";
 
 export interface PortCoExecutive {
@@ -58,6 +62,7 @@ export interface PortCo {
   ownershipVehicle: string;
   description: string;
   status: PortCoStatus;
+  countryTags: PortCoCountryTag[];
   website?: string;
   yearFounded?: number;
   investmentYear?: number;
@@ -132,6 +137,16 @@ export function getPortCoRegionColor(region: PortCoRegion): string {
 
 export function getPortCoStatusColor(status: PortCoStatus): string {
   return STATUS_COLORS[status] ?? "#a1a1aa";
+}
+
+const COUNTRY_TAG_COLORS: Record<PortCoCountryTag, string> = {
+  "US": "#3b82f6",
+  "Canada": "#ef4444",
+  "Mexico": "#22c55e",
+};
+
+export function getPortCoCountryTagColor(tag: PortCoCountryTag): string {
+  return COUNTRY_TAG_COLORS[tag] ?? "#a1a1aa";
 }
 
 // ─── Utility Functions ──────────────────────────────────────
