@@ -9,6 +9,42 @@ import {
   getRegionColor,
 } from "@/data/deals";
 import type { Deal, DealSector, DealCategory, DealRegion } from "@/data/deals";
+
+// ─── Non-infrastructure-fund entities to exclude from fund tags ──
+const NON_INFRA_FUND_ENTITIES = new Set([
+  "Undisclosed Buyer",
+  "Undisclosed Seller",
+  "Public Market",
+  "Bain Capital",
+  "Mitsui O.S.K. Lines",
+  "Talen Energy",
+  "Drax Group",
+  "Pilot Fiber",
+  "Siris",
+  "Polus Capital Management",
+  "Corsair Capital",
+  "Equinix",
+  "Exus Renewables",
+  "IHS Towers",
+  "TPI Composites",
+]);
+
+function isInfraFund(name: string): boolean {
+  if (!name || name === "—" || name === "N/A") return false;
+  return !NON_INFRA_FUND_ENTITIES.has(name);
+}
+
+function getFundRoleTags(deal: Deal): { name: string; role: "Buyer" | "Seller" }[] {
+  const tags: { name: string; role: "Buyer" | "Seller" }[] = [];
+  if (isInfraFund(deal.buyer)) tags.push({ name: deal.buyer, role: "Buyer" });
+  if (isInfraFund(deal.seller)) tags.push({ name: deal.seller, role: "Seller" });
+  return tags;
+}
+
+const ROLE_COLORS = {
+  Buyer: "#3b82f6",
+  Seller: "#f59e0b",
+} as const;
 import {
   Search,
   ExternalLink,
@@ -274,6 +310,26 @@ function DealCard({
           <div className="text-xs-dense text-[#6e6e6e] font-medium truncate">{deal.seller}</div>
         </div>
       </div>
+      {getFundRoleTags(deal).length > 0 && (
+        <div className="flex items-center gap-1 flex-wrap mt-1.5">
+          {getFundRoleTags(deal).map(({ name, role }) => {
+            const color = ROLE_COLORS[role];
+            return (
+              <span
+                key={`${name}-${role}`}
+                className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px] truncate max-w-[160px]"
+                style={{
+                  color,
+                  backgroundColor: `${color}1a`,
+                  border: `1px solid ${color}33`,
+                }}
+              >
+                {name} ({role})
+              </span>
+            );
+          })}
+        </div>
+      )}
       <div className="flex items-center text-micro text-[#999999] mt-1">
         <span className="font-mono tabular-nums">{formatDate(deal.date)}</span>
       </div>
@@ -357,6 +413,9 @@ function DealTable({
                   Category
                 </th>
                 <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
+                  Fund Activity
+                </th>
+                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Source
                 </th>
               </tr>
@@ -421,6 +480,27 @@ function DealTable({
                           </span>
                         );
                       })()}
+                    </td>
+                    <td className="px-2.5 py-[4px]">
+                      <div className="flex items-center gap-1 flex-wrap">
+                        {getFundRoleTags(deal).map(({ name, role }) => {
+                          const color = ROLE_COLORS[role];
+                          return (
+                            <span
+                              key={`${name}-${role}`}
+                              className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px] truncate max-w-[120px]"
+                              style={{
+                                color,
+                                backgroundColor: `${color}1a`,
+                                border: `1px solid ${color}33`,
+                              }}
+                              title={`${name} (${role})`}
+                            >
+                              {name} ({role})
+                            </span>
+                          );
+                        })}
+                      </div>
                     </td>
                     <td className="px-2.5 py-[4px]">
                       <a
@@ -647,6 +727,30 @@ function DealDrawer({
                 <div className="text-sm-dense font-medium text-[#1a1a1a] mt-0.5">{deal.seller}</div>
               </div>
             </div>
+            {getFundRoleTags(deal).length > 0 && (
+              <>
+                <div className="border-t border-[#e5e5e5]" />
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className="text-micro font-medium text-[#999999] uppercase tracking-wider mr-1">Fund Activity</span>
+                  {getFundRoleTags(deal).map(({ name, role }) => {
+                    const color = ROLE_COLORS[role];
+                    return (
+                      <span
+                        key={`${name}-${role}`}
+                        className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                        style={{
+                          color,
+                          backgroundColor: `${color}1a`,
+                          border: `1px solid ${color}33`,
+                        }}
+                      >
+                        {name} ({role})
+                      </span>
+                    );
+                  })}
+                </div>
+              </>
+            )}
 
             {econItems.length > 0 && (
               <>

@@ -36,9 +36,9 @@ export type PortCoRegion =
   | "Latin America"
   | "Global";
 
-export type PortCoCountryTag = "US" | "Canada" | "Mexico";
+export type PortCoCountryTag = "United States" | "Canada" | "Mexico";
 
-export const PORTCO_COUNTRY_TAGS: PortCoCountryTag[] = ["US", "Canada", "Mexico"];
+export const PORTCO_COUNTRY_TAGS: PortCoCountryTag[] = ["United States", "Canada", "Mexico"];
 
 export type PortCoStatus = "Active" | "Realized";
 
@@ -140,7 +140,7 @@ export function getPortCoStatusColor(status: PortCoStatus): string {
 }
 
 const COUNTRY_TAG_COLORS: Record<PortCoCountryTag, string> = {
-  "US": "#3b82f6",
+  "United States": "#3b82f6",
   "Canada": "#ef4444",
   "Mexico": "#22c55e",
 };

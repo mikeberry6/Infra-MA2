@@ -658,8 +658,8 @@ function PortCoCard({
                   className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
                   style={{
                     color,
-                    backgroundColor: `${color}1a`,
-                    border: `1px solid ${color}33`,
+                    backgroundColor: `${color}15`,
+                    border: `1px solid ${color}25`,
                   }}
                 >
                   {tag}
@@ -742,7 +742,8 @@ function PortCoTable({
           <table className="w-full text-left text-sm-dense border-collapse whitespace-nowrap">
             <thead>
               <tr className="bg-[#e8e8e6] border-b border-[#d0d0d0]">
-                <SortHeader field="name" label="Company" />
+                <SortHeader field="name" label="Portfolio Company" />
+                <SortHeader field="firm" label="Firm" />
                 <SortHeader field="sector" label="Sector" />
                 <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Subsector
@@ -750,7 +751,6 @@ function PortCoTable({
                 <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Country
                 </th>
-                <SortHeader field="firm" label="Investment Firm" />
                 <SortHeader field="status" label="Status" />
               </tr>
             </thead>
@@ -765,6 +765,9 @@ function PortCoTable({
                     <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate">
                       {company.name}
                     </span>
+                  </td>
+                  <td className="px-2.5 py-[4px] max-w-[200px]">
+                    <span className="text-[11px] text-[#555] truncate block">{company.investmentFirm}</span>
                   </td>
                   <td className="px-2.5 py-[4px]">
                     <span className="text-[11px] text-[#555]">{company.sector}</span>
@@ -782,8 +785,8 @@ function PortCoTable({
                             className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
                             style={{
                               color,
-                              backgroundColor: `${color}1a`,
-                              border: `1px solid ${color}33`,
+                              backgroundColor: `${color}15`,
+                              border: `1px solid ${color}25`,
                             }}
                           >
                             {tag}
@@ -791,9 +794,6 @@ function PortCoTable({
                         );
                       })}
                     </div>
-                  </td>
-                  <td className="px-2.5 py-[4px] max-w-[200px]">
-                    <span className="text-[11px] text-[#555] truncate block">{company.investmentFirm}</span>
                   </td>
                   <td className="px-2.5 py-[4px]">
                     <span className="text-[11px] text-[#555]">{company.status}</span>

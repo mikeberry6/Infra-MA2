@@ -315,29 +315,37 @@ function FundVehicleCard({
       </div>
 
       <div className="flex flex-wrap gap-1.5 mb-2">
-        {fund.strategies.map((s) => (
-          <span
-            key={s}
-            className="text-[10px] font-medium px-1.5 py-0"
-            style={{
-              color: "#444444",
-              backgroundColor: `${getStrategyColor(s)}08`,
-              border: `1px solid ${getStrategyColor(s)}12`,
-            }}
-          >
-            {s}
-          </span>
-        ))}
-        <span
-          className="text-[10px] font-medium px-1.5 py-0"
-          style={{
-            color: "#444444",
-            backgroundColor: `${getStatusColor(fund.status)}08`,
-            border: `1px solid ${getStatusColor(fund.status)}12`,
-          }}
-        >
-          {fund.status}
-        </span>
+        {fund.strategies.map((s) => {
+          const color = getStrategyColor(s);
+          return (
+            <span
+              key={s}
+              className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+              style={{
+                color,
+                backgroundColor: `${color}1a`,
+                border: `1px solid ${color}33`,
+              }}
+            >
+              {s}
+            </span>
+          );
+        })}
+        {(() => {
+          const color = getStatusColor(fund.status);
+          return (
+            <span
+              className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+              style={{
+                color,
+                backgroundColor: `${color}1a`,
+                border: `1px solid ${color}33`,
+              }}
+            >
+              {fund.status}
+            </span>
+          );
+        })()}
       </div>
 
       <div className="grid grid-cols-2 gap-2">
@@ -431,7 +439,24 @@ function FundManagerAccordion({
                         </span>
                       </td>
                       <td className="px-2.5 py-[4px]">
-                        <span className="text-[11px] text-[#6d6d6d]">{fund.strategies.join(", ")}</span>
+                        <div className="flex items-center gap-1 flex-wrap">
+                          {fund.strategies.map((s) => {
+                            const color = getStrategyColor(s);
+                            return (
+                              <span
+                                key={s}
+                                className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                                style={{
+                                  color,
+                                  backgroundColor: `${color}1a`,
+                                  border: `1px solid ${color}33`,
+                                }}
+                              >
+                                {s}
+                              </span>
+                            );
+                          })}
+                        </div>
                       </td>
                       <td className="px-2.5 py-[4px] text-right">
                         <span className="font-mono text-[11px] text-[#1a1a1a] tabular-nums">{fund.size}</span>
@@ -559,7 +584,24 @@ function AllFundsTable({
                   <span className="text-[11px] text-[#555] truncate block">{fund.managerName}</span>
                 </td>
                 <td className="px-2.5 py-[4px]">
-                  <span className="text-[11px] text-[#555]">{fund.strategies.join(", ")}</span>
+                  <div className="flex items-center gap-1 flex-wrap">
+                    {fund.strategies.map((s) => {
+                      const color = getStrategyColor(s);
+                      return (
+                        <span
+                          key={s}
+                          className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                          style={{
+                            color,
+                            backgroundColor: `${color}1a`,
+                            border: `1px solid ${color}33`,
+                          }}
+                        >
+                          {s}
+                        </span>
+                      );
+                    })}
+                  </div>
                 </td>
                 <td className="px-2.5 py-[4px]">
                   <span className="text-[11px] text-[#555]">{fund.size}</span>
@@ -683,19 +725,22 @@ function FundDrawer({
             {/* Classification tags */}
             <div className="px-3 py-2.5">
               <div className="flex items-center gap-1.5 flex-wrap">
-                {fund.strategies.map((s) => (
-                  <span
-                    key={s}
-                    className="text-[10px] font-medium px-1.5 py-0"
-                    style={{
-                      color: "#444444",
-                      backgroundColor: `${getStrategyColor(s)}08`,
-                      border: `1px solid ${getStrategyColor(s)}12`,
-                    }}
-                  >
-                    {s}
-                  </span>
-                ))}
+                {fund.strategies.map((s) => {
+                  const color = getStrategyColor(s);
+                  return (
+                    <span
+                      key={s}
+                      className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                      style={{
+                        color,
+                        backgroundColor: `${color}1a`,
+                        border: `1px solid ${color}33`,
+                      }}
+                    >
+                      {s}
+                    </span>
+                  );
+                })}
                 <div className="h-3.5 w-px bg-[#d6d6d6]" />
                 <span
                   className="text-[10px] font-medium px-1.5 py-0"
@@ -846,18 +891,22 @@ function FundDrawer({
                                   </div>
                                 </div>
                                 <div className="flex gap-1 shrink-0 flex-wrap justify-end">
-                                  {strategies.slice(0, 1).map((s) => (
-                                    <span
-                                      key={s}
-                                      className="text-[10px] px-1.5 py-0"
-                                      style={{
-                                        color: "#444444",
-                                        backgroundColor: `${getStrategyColor(s)}08`,
-                                      }}
-                                    >
-                                      {s}
-                                    </span>
-                                  ))}
+                                  {strategies.slice(0, 1).map((s) => {
+                                    const color = getStrategyColor(s);
+                                    return (
+                                      <span
+                                        key={s}
+                                        className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                                        style={{
+                                          color,
+                                          backgroundColor: `${color}1a`,
+                                          border: `1px solid ${color}33`,
+                                        }}
+                                      >
+                                        {s}
+                                      </span>
+                                    );
+                                  })}
                                 </div>
                               </div>
                             ))}
