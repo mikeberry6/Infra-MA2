@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useMemo, useEffect, useCallback, Fragment } from "react";
 import {
   funds,
   FUND_STRATEGIES,
@@ -81,8 +81,8 @@ function FundFilterBar({
     activeSectors.size;
 
   return (
-    <div className="mb-2 space-y-3">
-      <div className="bg-[#f3f3f3] border border-black/[0.08] shadow-sm flex items-stretch sticky top-[60px] sm:top-[124px] z-30">
+    <div className="mb-0 space-y-2">
+      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[124px] z-30">
         <div className="border-r border-black/[0.06] px-2.5 py-2 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
@@ -260,7 +260,7 @@ function FundsInsightsHero({ filteredFunds }: { filteredFunds: Fund[] }) {
 
   if (filteredFunds.length === 0) {
     return (
-      <div className="border border-black/[0.08] shadow-card bg-white p-6 text-center">
+      <div className="border border-[#d6d6d6] bg-white p-6 text-center">
         <p className="text-sm-dense text-[#999999]">
           No funds match your current filters. Try broadening your search.
         </p>
@@ -269,7 +269,7 @@ function FundsInsightsHero({ filteredFunds }: { filteredFunds: Fund[] }) {
   }
 
   return (
-    <div className="border border-black/[0.08] shadow-card bg-white overflow-hidden">
+    <div className="border border-[#d6d6d6] bg-white overflow-hidden">
       <div className="px-3 sm:px-4 pt-3 pb-1.5 border-b border-[#e8e8e8]">
         <p className="text-[11px] text-[#999999]">
           <span className="font-mono text-[#1a1a1a] font-medium tabular-nums">{stats.managers}</span> managers
@@ -320,11 +320,11 @@ function FundVehicleCard({
           return (
             <span
               key={s}
-              className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+              className="text-[10px] font-medium px-1.5 py-0.5 rounded-[3px]"
               style={{
                 color,
-                backgroundColor: `${color}1a`,
-                border: `1px solid ${color}33`,
+                backgroundColor: `${color}12`,
+                border: `1px solid ${color}20`,
               }}
             >
               {s}
@@ -335,11 +335,11 @@ function FundVehicleCard({
           const color = getStatusColor(fund.status);
           return (
             <span
-              className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+              className="text-[10px] font-medium px-1.5 py-0.5 rounded-[3px]"
               style={{
                 color,
-                backgroundColor: `${color}1a`,
-                border: `1px solid ${color}33`,
+                backgroundColor: `${color}12`,
+                border: `1px solid ${color}20`,
               }}
             >
               {fund.status}
@@ -362,126 +362,184 @@ function FundVehicleCard({
   );
 }
 
-// ─── Fund Manager Accordion ─────────────────────────────────
+// ─── Manager Grouped Table ─────────────────────────────────
 
-function FundManagerAccordion({
-  managerName,
-  managerFunds,
+function ManagerGroupedTable({
+  sortedManagers,
   onSelectFund,
-  defaultOpen,
 }: {
-  managerName: string;
-  managerFunds: Fund[];
+  sortedManagers: [string, Fund[]][];
   onSelectFund: (fund: Fund) => void;
-  defaultOpen: boolean;
 }) {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
+  const toggle = (name: string) =>
+    setCollapsed((prev) => {
+      const next = new Set(prev);
+      next.has(name) ? next.delete(name) : next.add(name);
+      return next;
+    });
+
+  if (sortedManagers.length === 0) {
+    return (
+      <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999]">
+        No funds match your current filters.
+      </div>
+    );
+  }
 
   return (
-    <div className="border-b border-[#e8e8e8]">
-      {/* Manager heading row */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center gap-1.5 px-2.5 py-[5px] text-left hover:bg-[#fafaf8] transition-colors group bg-[#fafaf9]"
-      >
-        <ChevronRight
-          className={`h-2.5 w-2.5 text-[#aaa] shrink-0 transition-transform ${isOpen ? "rotate-90" : ""}`}
-        />
-        <h3 className="text-[11px] font-heading font-bold text-[#1a1a1a] uppercase tracking-[0.02em] group-hover:text-[#008253] transition-colors">
-          {managerName}
-        </h3>
-        <span className="text-[10px] text-[#aaa] font-mono tabular-nums">
-          {managerFunds.length}
-        </span>
-      </button>
-
-      {isOpen && (
-        <>
-          {/* Desktop table */}
-          <div className="hidden md:block">
-            <table className="w-full text-sm-dense table-fixed">
-              <colgroup>
-                <col className="w-[34%]" />
-                <col className="w-[22%]" />
-                <col className="w-[18%]" />
-                <col className="w-[12%]" />
-                <col className="w-[14%]" />
-              </colgroup>
-              <thead>
-                <tr className="bg-[#e8e8e6] border-b border-[#d0d0d0]">
-                  <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
-                    Fund Vehicle
-                  </th>
-                  <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
-                    Strategy
-                  </th>
-                  <th className="text-right px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
-                    Size
-                  </th>
-                  <th className="text-right px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
-                    Vintage
-                  </th>
-                  <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
-                    Status
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {managerFunds.map((fund) => (
-                    <tr
-                      key={fund.id}
-                      onClick={() => onSelectFund(fund)}
-                      className="border-b border-[#e8e8e8] last:border-b-0 hover:bg-[#f7f7f5] cursor-pointer transition-all group"
-                    >
-                      <td className="px-2.5 py-[4px] overflow-hidden">
-                        <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate block">
-                          {fund.fundName}
-                        </span>
-                      </td>
-                      <td className="px-2.5 py-[4px]">
-                        <div className="flex items-center gap-1 flex-wrap">
-                          {fund.strategies.map((s) => {
-                            const color = getStrategyColor(s);
-                            return (
-                              <span
-                                key={s}
-                                className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
-                                style={{
-                                  color,
-                                  backgroundColor: `${color}1a`,
-                                  border: `1px solid ${color}33`,
-                                }}
-                              >
-                                {s}
-                              </span>
-                            );
-                          })}
-                        </div>
-                      </td>
-                      <td className="px-2.5 py-[4px] text-right">
-                        <span className="font-mono text-[11px] text-[#1a1a1a] tabular-nums">{fund.size}</span>
-                      </td>
-                      <td className="px-2.5 py-[4px] text-right">
-                        <span className="font-mono text-[11px] text-[#6d6d6d] tabular-nums">{fund.vintage}</span>
-                      </td>
-                      <td className="px-2.5 py-[4px]">
-                        <span className="text-[11px] text-[#6d6d6d]">{fund.status}</span>
-                      </td>
+    <>
+      {/* Desktop: one continuous grouped table */}
+      <div className="hidden md:block">
+        <table className="w-full text-sm-dense table-fixed">
+          <colgroup>
+            <col className="w-[34%]" />
+            <col className="w-[22%]" />
+            <col className="w-[16%]" />
+            <col className="w-[12%]" />
+            <col className="w-[16%]" />
+          </colgroup>
+          <thead className="sticky top-[94px] sm:top-[158px] z-20 bg-[#e8e8e6]">
+            <tr className="border-b border-[#d0d0d0]">
+              <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.05em]">
+                Fund Vehicle
+              </th>
+              <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.05em]">
+                Strategy
+              </th>
+              <th className="text-right px-2.5 py-[6px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.05em]">
+                Size
+              </th>
+              <th className="text-right px-2.5 py-[6px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.05em]">
+                Vintage
+              </th>
+              <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.05em]">
+                Status
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {sortedManagers.map(([managerName, managerFunds], groupIdx) => {
+              const isCollapsed = collapsed.has(managerName);
+              return (
+                <Fragment key={managerName}>
+                  {/* Spacer between groups (skip first) */}
+                  {groupIdx > 0 && (
+                    <tr aria-hidden="true">
+                      <td colSpan={5} className="h-3 p-0 border-0 bg-[#f3f3f3]" />
                     </tr>
-                  ))}
-              </tbody>
-            </table>
-          </div>
+                  )}
+                  {/* Firm divider row */}
+                  <tr
+                    onClick={() => toggle(managerName)}
+                    className="bg-[#efefef] border-t border-b border-[#d6d6d6] cursor-pointer hover:bg-[#e8e8e6] transition-colors"
+                    style={{ height: "46px" }}
+                  >
+                    <td colSpan={5} className="px-2.5">
+                      <div className="flex items-center gap-2">
+                        <ChevronRight
+                          className={`h-3 w-3 text-[#888] shrink-0 transition-transform ${
+                            !isCollapsed ? "rotate-90" : ""
+                          }`}
+                        />
+                        <span className="text-[12px] font-heading font-bold text-[#1a1a1a] tracking-[0.01em]">
+                          {managerName}
+                        </span>
+                        <span className="text-[10px] text-[#999] font-normal">
+                          {managerFunds.length} vehicle{managerFunds.length !== 1 ? "s" : ""}
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  {/* Fund rows */}
+                  {!isCollapsed &&
+                    managerFunds.map((fund) => (
+                      <tr
+                        key={fund.id}
+                        onClick={() => onSelectFund(fund)}
+                        className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-all group"
+                      >
+                        <td className="px-2.5 py-[4px] overflow-hidden">
+                          <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate block">
+                            {fund.fundName}
+                          </span>
+                        </td>
+                        <td className="px-2.5 py-[4px]">
+                          <div className="flex items-center gap-1 flex-wrap">
+                            {fund.strategies.map((s) => {
+                              const color = getStrategyColor(s);
+                              return (
+                                <span
+                                  key={s}
+                                  className="text-[10px] font-medium px-1.5 py-0.5 rounded-[3px]"
+                                  style={{
+                                    color,
+                                    backgroundColor: `${color}12`,
+                                    border: `1px solid ${color}20`,
+                                  }}
+                                >
+                                  {s}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </td>
+                        <td className="px-2.5 py-[4px] text-right">
+                          <span className="font-mono text-[11px] text-[#1a1a1a] tabular-nums">
+                            {fund.size}
+                          </span>
+                        </td>
+                        <td className="px-2.5 py-[4px] text-right">
+                          <span className="font-mono text-[11px] text-[#6d6d6d] tabular-nums">
+                            {fund.vintage}
+                          </span>
+                        </td>
+                        <td className="px-2.5 py-[4px]">
+                          <span className="text-[11px] text-[#6d6d6d]">{fund.status}</span>
+                        </td>
+                      </tr>
+                    ))}
+                </Fragment>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
 
-          {/* Mobile card list */}
-          <div className="md:hidden p-2.5 space-y-1 border-t border-[#e8e8e8]">
-            {managerFunds.map((fund) => (
-              <FundVehicleCard key={fund.id} fund={fund} onSelect={onSelectFund} />
-            ))}
-          </div>
-        </>
-      )}
-    </div>
+      {/* Mobile: card-based layout per manager */}
+      <div className="md:hidden">
+        {sortedManagers.map(([managerName, managerFunds]) => {
+          const isCollapsed = collapsed.has(managerName);
+          return (
+            <div key={managerName} className="border-b border-[#e8e8e8]">
+              <button
+                onClick={() => toggle(managerName)}
+                className="w-full flex items-center gap-2 px-3 py-3 text-left bg-[#efefef] border-t border-[#d6d6d6] hover:bg-[#e8e8e6] transition-colors"
+              >
+                <ChevronRight
+                  className={`h-3 w-3 text-[#888] shrink-0 transition-transform ${
+                    !isCollapsed ? "rotate-90" : ""
+                  }`}
+                />
+                <span className="text-[12px] font-heading font-bold text-[#1a1a1a] tracking-[0.01em]">
+                  {managerName}
+                </span>
+                <span className="text-[10px] text-[#999] font-normal">
+                  {managerFunds.length}
+                </span>
+              </button>
+              {!isCollapsed && (
+                <div className="p-2.5 space-y-1">
+                  {managerFunds.map((fund) => (
+                    <FundVehicleCard key={fund.id} fund={fund} onSelect={onSelectFund} />
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
 
@@ -524,7 +582,7 @@ function AllFundsTable({
 
   const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
     <th
-      className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em] cursor-pointer hover:text-[#1a1a1a] transition-colors select-none"
+      className="text-left px-2.5 py-[6px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.05em] cursor-pointer hover:text-[#1a1a1a] transition-colors select-none"
       onClick={() => toggleSort(field)}
     >
       {label}
@@ -549,12 +607,12 @@ function AllFundsTable({
         <div className="overflow-x-auto">
         <table className="w-full text-left text-sm-dense border-collapse table-fixed">
           <colgroup>
-            <col className="w-[28%]" />
-            <col className="w-[18%]" />
-            <col className="w-[22%]" />
-            <col className="w-[14%]" />
+            <col className="w-[26%]" />
+            <col className="w-[17%]" />
+            <col className="w-[20%]" />
+            <col className="w-[13%]" />
             <col className="w-[8%]" />
-            <col className="w-[10%]" />
+            <col className="w-[16%]" />
           </colgroup>
           <thead>
             <tr className="bg-[#e8e8e6] border-b border-[#d0d0d0]">
@@ -590,11 +648,11 @@ function AllFundsTable({
                       return (
                         <span
                           key={s}
-                          className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                          className="text-[10px] font-medium px-1.5 py-0.5 rounded-[3px]"
                           style={{
                             color,
-                            backgroundColor: `${color}1a`,
-                            border: `1px solid ${color}33`,
+                            backgroundColor: `${color}12`,
+                            border: `1px solid ${color}20`,
                           }}
                         >
                           {s}
@@ -692,9 +750,9 @@ function FundDrawer({
         className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-black/[0.08] shadow-2xl bg-[#f3f3f3] overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#d6d6d6] bg-[#f3f3f3] overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-black/[0.08] bg-white px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
+        <div className="sticky top-0 z-10 border-b border-[#d6d6d6] bg-white px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-1 flex-wrap">
@@ -721,7 +779,7 @@ function FundDrawer({
         {/* Content */}
         <div className="p-4 sm:p-5 lg:p-6 space-y-4 lg:space-y-5">
           {/* Fund overview */}
-          <div className="bg-white border border-black/[0.08] overflow-hidden">
+          <div className="bg-white border border-[#d6d6d6] overflow-hidden">
             {/* Classification tags */}
             <div className="px-3 py-2.5">
               <div className="flex items-center gap-1.5 flex-wrap">
@@ -730,11 +788,11 @@ function FundDrawer({
                   return (
                     <span
                       key={s}
-                      className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                      className="text-[10px] font-medium px-1.5 py-0.5 rounded-[3px]"
                       style={{
                         color,
-                        backgroundColor: `${color}1a`,
-                        border: `1px solid ${color}33`,
+                        backgroundColor: `${color}12`,
+                        border: `1px solid ${color}20`,
                       }}
                     >
                       {s}
@@ -766,7 +824,7 @@ function FundDrawer({
               </div>
             </div>
             {/* Divider */}
-            <div className="border-t border-black/[0.08]" />
+            <div className="border-t border-[#d6d6d6]" />
             {/* Metrics */}
             <div className="px-3 py-2.5">
               <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
@@ -784,11 +842,11 @@ function FundDrawer({
 
           {/* Investment Strategy */}
           {fund.investmentStrategy && (
-            <div className="border-t border-black/[0.08] pt-4">
+            <div className="border-t border-[#d6d6d6] pt-4">
               <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider block mb-2">
                 Investment Strategy
               </span>
-              <div className="bg-white border border-black/[0.08] p-3">
+              <div className="bg-white border border-[#d6d6d6] p-3">
                 <p className="text-sm-dense text-[#6e6e6e] leading-relaxed italic">
                   {fund.investmentStrategy}
                 </p>
@@ -798,7 +856,7 @@ function FundDrawer({
 
           {/* Target Sectors */}
           {fund.sectors.length > 0 && (
-            <div className="border-t border-black/[0.08] pt-4">
+            <div className="border-t border-[#d6d6d6] pt-4">
               <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider block mb-2">
                 Target Sectors
               </span>
@@ -822,7 +880,7 @@ function FundDrawer({
 
           {/* Source URLs */}
           {fund.sourceUrls.length > 0 && (
-            <div className="border-t border-black/[0.08] pt-4">
+            <div className="border-t border-[#d6d6d6] pt-4">
               <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider block mb-2">
                 Sources
               </span>
@@ -849,7 +907,7 @@ function FundDrawer({
 
           {/* Portfolio Companies */}
           {firmPortfolio.total > 0 && (
-            <div className="border-t border-black/[0.08] pt-4">
+            <div className="border-t border-[#d6d6d6] pt-4">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider">
                   Portfolio Companies
@@ -896,11 +954,11 @@ function FundDrawer({
                                     return (
                                       <span
                                         key={s}
-                                        className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                                        className="text-[10px] font-medium px-1.5 py-0.5 rounded-[3px]"
                                         style={{
                                           color,
-                                          backgroundColor: `${color}1a`,
-                                          border: `1px solid ${color}33`,
+                                          backgroundColor: `${color}12`,
+                                          border: `1px solid ${color}20`,
                                         }}
                                       >
                                         {s}
@@ -922,7 +980,7 @@ function FundDrawer({
 
           {/* Sibling funds */}
           {siblingFunds.length > 0 && (
-            <div className="border-t border-black/[0.08] pt-4">
+            <div className="border-t border-[#d6d6d6] pt-4">
               <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider block mb-3">
                 Other {fund.managerName} Vehicles
               </span>
@@ -1038,7 +1096,7 @@ export function FundDatabase() {
       />
 
       {/* Results count + actions + view toggle bar */}
-      <div className="bg-white border border-black/[0.08] shadow-card flex items-center justify-between px-3 py-[6px]">
+      <div className="bg-white border border-[#d6d6d6] flex items-center justify-between px-3 py-[6px]">
         <div className="flex items-center gap-4">
           <span className="text-[11px] text-[#6e6e6e]">
             Showing <span className="font-mono text-[#1a1a1a] tabular-nums">{filteredFunds.length}</span> of <span className="font-mono text-[#1a1a1a] tabular-nums">{funds.length}</span> funds
@@ -1078,25 +1136,14 @@ export function FundDatabase() {
       </div>
 
       {fundView === "managers" ? (
-        <div className="bg-white border border-black/[0.08] shadow-card border-t-0">
-          {sortedManagers.map(([manager, managerFunds]) => (
-            <FundManagerAccordion
-              key={manager}
-              managerName={manager}
-              managerFunds={managerFunds}
-              onSelectFund={setSelectedFund}
-              defaultOpen={true}
-            />
-          ))}
-
-          {sortedManagers.length === 0 && (
-            <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999]">
-              No funds match your current filters.
-            </div>
-          )}
+        <div className="bg-white border border-[#d6d6d6] border-t-0">
+          <ManagerGroupedTable
+            sortedManagers={sortedManagers}
+            onSelectFund={setSelectedFund}
+          />
         </div>
       ) : (
-        <div className="bg-white border border-black/[0.08] shadow-card border-t-0">
+        <div className="bg-white border border-[#d6d6d6] border-t-0">
           <AllFundsTable
             funds={filteredFunds}
             onSelectFund={setSelectedFund}
