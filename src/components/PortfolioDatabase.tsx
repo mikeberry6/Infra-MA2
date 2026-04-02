@@ -6,14 +6,15 @@ import {
   PORTCO_SECTORS,
   PORTCO_REGIONS,
   PORTCO_STATUSES,
+  PORTCO_COUNTRY_TAGS,
   getPortCoSectorColor,
   getPortCoRegionColor,
   getPortCoStatusColor,
+  getPortCoCountryTagColor,
   getMilestoneCategoryColor,
-  getUniqueCountries,
   getUniqueFirms,
 } from "@/data/portcos";
-import type { PortCo, PortCoSector, PortCoRegion, PortCoStatus } from "@/data/portcos";
+import type { PortCo, PortCoSector, PortCoRegion, PortCoStatus, PortCoCountryTag } from "@/data/portcos";
 import { funds, getStrategyColor } from "@/data/funds";
 import type { FundStrategy } from "@/data/funds";
 import { deals as dealsData } from "@/data/deals";
@@ -44,15 +45,12 @@ function PortCoFilterBar({
   onSearchChange,
   activeSectors,
   onToggleSector,
-  activeRegions,
-  onToggleRegion,
-  activeCountries,
-  onToggleCountry,
+  activeCountryTags,
+  onToggleCountryTag,
   activeFirms,
   onToggleFirm,
   activeStatuses,
   onToggleStatus,
-  countryOptions,
   firmOptions,
   onClearAll,
 }: {
@@ -60,22 +58,18 @@ function PortCoFilterBar({
   onSearchChange: (v: string) => void;
   activeSectors: Set<string>;
   onToggleSector: (s: string) => void;
-  activeRegions: Set<string>;
-  onToggleRegion: (r: string) => void;
-  activeCountries: Set<string>;
-  onToggleCountry: (c: string) => void;
+  activeCountryTags: Set<string>;
+  onToggleCountryTag: (c: string) => void;
   activeFirms: Set<string>;
   onToggleFirm: (f: string) => void;
   activeStatuses: Set<string>;
   onToggleStatus: (s: string) => void;
-  countryOptions: string[];
   firmOptions: string[];
   onClearAll: () => void;
 }) {
   const total =
     activeSectors.size +
-    activeRegions.size +
-    activeCountries.size +
+    activeCountryTags.size +
     activeFirms.size +
     activeStatuses.size;
 
@@ -104,20 +98,11 @@ function PortCoFilterBar({
         </div>
         <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
           <MultiSelectDropdown
-            label="Region"
-            options={PORTCO_REGIONS}
-            selected={activeRegions}
-            onToggle={onToggleRegion}
-            getColor={(v) => getPortCoRegionColor(v as PortCoRegion)}
-          />
-        </div>
-        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
-          <MultiSelectDropdown
             label="Country"
-            options={countryOptions}
-            selected={activeCountries}
-            onToggle={onToggleCountry}
-            getColor={() => "#06b6d4"}
+            options={PORTCO_COUNTRY_TAGS as unknown as string[]}
+            selected={activeCountryTags}
+            onToggle={onToggleCountryTag}
+            getColor={(v) => getPortCoCountryTagColor(v as PortCoCountryTag)}
           />
         </div>
         <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
@@ -148,11 +133,8 @@ function PortCoFilterBar({
           {Array.from(activeSectors).map((s) => (
             <FilterChip key={`sec-${s}`} label={s} color={getPortCoSectorColor(s as PortCoSector)} onRemove={() => onToggleSector(s)} />
           ))}
-          {Array.from(activeRegions).map((r) => (
-            <FilterChip key={`reg-${r}`} label={r} color={getPortCoRegionColor(r as PortCoRegion)} onRemove={() => onToggleRegion(r)} />
-          ))}
-          {Array.from(activeCountries).map((c) => (
-            <FilterChip key={`ctr-${c}`} label={c} color="#06b6d4" onRemove={() => onToggleCountry(c)} />
+          {Array.from(activeCountryTags).map((c) => (
+            <FilterChip key={`ctr-${c}`} label={c} color={getPortCoCountryTagColor(c as PortCoCountryTag)} onRemove={() => onToggleCountryTag(c)} />
           ))}
           {Array.from(activeFirms).map((f) => (
             <FilterChip key={`firm-${f}`} label={f} color="#a78bfa" onRemove={() => onToggleFirm(f)} />
@@ -243,8 +225,8 @@ function PortCoInsightsHero({ companies }: { companies: PortCo[] }) {
     () => deriveRanking(companies.map((c) => c.sector), getPortCoSectorColor),
     [companies]
   );
-  const regionRanking = useMemo(
-    () => deriveRanking(companies.map((c) => c.region), getPortCoRegionColor),
+  const countryTagRanking = useMemo(
+    () => deriveRanking(companies.flatMap((c) => c.countryTags), getPortCoCountryTagColor),
     [companies]
   );
   const firmRanking = useMemo(() => {
@@ -286,7 +268,7 @@ function PortCoInsightsHero({ companies }: { companies: PortCo[] }) {
       <div className="p-3 sm:p-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
           <RankingColumn title="Top Sectors" rows={sectorRanking} />
-          <RankingColumn title="Top Regions" rows={regionRanking} />
+          <RankingColumn title="Top Countries" rows={countryTagRanking} />
           <RankingColumn title="Top Investment Firms" rows={firmRanking} />
         </div>
       </div>
@@ -667,7 +649,24 @@ function PortCoCard({
       <div className="grid grid-cols-2 gap-2 text-micro">
         <div>
           <span className="font-medium text-[#999999] uppercase tracking-wider">Country</span>
-          <div className="text-xs-dense text-[#6e6e6e] font-medium">{company.country}</div>
+          <div className="flex items-center gap-1 mt-0.5">
+            {company.countryTags.map((tag: string) => {
+              const color = getPortCoCountryTagColor(tag as PortCoCountryTag);
+              return (
+                <span
+                  key={tag}
+                  className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                  style={{
+                    color,
+                    backgroundColor: `${color}1a`,
+                    border: `1px solid ${color}33`,
+                  }}
+                >
+                  {tag}
+                </span>
+              );
+            })}
+          </div>
         </div>
         <div>
           <span className="font-medium text-[#999999] uppercase tracking-wider">Firm</span>
@@ -748,9 +747,8 @@ function PortCoTable({
                 <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Subsector
                 </th>
-                <SortHeader field="country" label="Country" />
                 <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
-                  Region
+                  Country
                 </th>
                 <SortHeader field="firm" label="Investment Firm" />
                 <SortHeader field="status" label="Status" />
@@ -775,10 +773,24 @@ function PortCoTable({
                     <span className="text-[11px] text-[#777]">{company.subsector || "—"}</span>
                   </td>
                   <td className="px-2.5 py-[4px]">
-                    <span className="text-[11px] text-[#555]">{company.country}</span>
-                  </td>
-                  <td className="px-2.5 py-[4px]">
-                    <span className="text-[11px] text-[#555]">{company.region}</span>
+                    <div className="flex items-center gap-1">
+                      {company.countryTags.map((tag: string) => {
+                        const color = getPortCoCountryTagColor(tag as PortCoCountryTag);
+                        return (
+                          <span
+                            key={tag}
+                            className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                            style={{
+                              color,
+                              backgroundColor: `${color}1a`,
+                              border: `1px solid ${color}33`,
+                            }}
+                          >
+                            {tag}
+                          </span>
+                        );
+                      })}
+                    </div>
                   </td>
                   <td className="px-2.5 py-[4px] max-w-[200px]">
                     <span className="text-[11px] text-[#555] truncate block">{company.investmentFirm}</span>
@@ -812,8 +824,7 @@ function PortCoTable({
 export function PortfolioDatabase() {
   const [search, setSearch] = useState("");
   const [activeSectors, setActiveSectors] = useState<Set<string>>(new Set());
-  const [activeRegions, setActiveRegions] = useState<Set<string>>(new Set());
-  const [activeCountries, setActiveCountries] = useState<Set<string>>(new Set());
+  const [activeCountryTags, setActiveCountryTags] = useState<Set<string>>(new Set());
   const [activeFirms, setActiveFirms] = useState<Set<string>>(new Set());
   const [activeStatuses, setActiveStatuses] = useState<Set<string>>(new Set());
   const [selectedCompany, setSelectedCompany] = useState<PortCo | null>(null);
@@ -821,21 +832,18 @@ export function PortfolioDatabase() {
   const debouncedSearch = useDebounce(search, 300);
 
   const toggleSector = useFilterToggle(setActiveSectors);
-  const toggleRegion = useFilterToggle(setActiveRegions);
-  const toggleCountry = useFilterToggle(setActiveCountries);
+  const toggleCountryTag = useFilterToggle(setActiveCountryTags);
   const toggleFirm = useFilterToggle(setActiveFirms);
   const toggleStatus = useFilterToggle(setActiveStatuses);
 
   const clearFilters = useCallback(() => {
     setActiveSectors(new Set());
-    setActiveRegions(new Set());
-    setActiveCountries(new Set());
+    setActiveCountryTags(new Set());
     setActiveFirms(new Set());
     setActiveStatuses(new Set());
     setSearch("");
   }, []);
 
-  const countryOptions = useMemo(() => getUniqueCountries(portcos), []);
   const firmOptions = useMemo(() => getUniqueFirms(portcos), []);
 
   const filteredCompanies = useMemo(() => {
@@ -854,8 +862,7 @@ export function PortfolioDatabase() {
         if (!match) return false;
       }
       if (activeSectors.size > 0 && !activeSectors.has(c.sector)) return false;
-      if (activeRegions.size > 0 && !activeRegions.has(c.region)) return false;
-      if (activeCountries.size > 0 && !activeCountries.has(c.country)) return false;
+      if (activeCountryTags.size > 0 && !c.countryTags.some((t: string) => activeCountryTags.has(t))) return false;
       if (activeFirms.size > 0 && !activeFirms.has(c.investmentFirm)) return false;
       if (activeStatuses.size > 0 && !activeStatuses.has(c.status)) return false;
       return true;
@@ -863,8 +870,7 @@ export function PortfolioDatabase() {
   }, [
     debouncedSearch,
     activeSectors,
-    activeRegions,
-    activeCountries,
+    activeCountryTags,
     activeFirms,
     activeStatuses,
   ]);
@@ -885,15 +891,12 @@ export function PortfolioDatabase() {
         onSearchChange={setSearch}
         activeSectors={activeSectors}
         onToggleSector={toggleSector}
-        activeRegions={activeRegions}
-        onToggleRegion={toggleRegion}
-        activeCountries={activeCountries}
-        onToggleCountry={toggleCountry}
+        activeCountryTags={activeCountryTags}
+        onToggleCountryTag={toggleCountryTag}
         activeFirms={activeFirms}
         onToggleFirm={toggleFirm}
         activeStatuses={activeStatuses}
         onToggleStatus={toggleStatus}
-        countryOptions={countryOptions}
         firmOptions={firmOptions}
         onClearAll={clearFilters}
       />
