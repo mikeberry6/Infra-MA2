@@ -36,7 +36,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
       </div>
 
       {/* Card */}
-      <div className="surface-card rounded-[4px] p-4 sm:p-5 lg:p-6 transition-colors hover:border-[#3f3f46]">
+      <div className="surface-card glass-card-interactive rounded-[4px] p-4 sm:p-5 lg:p-6">
         {/* Meta row */}
         <div className="flex items-center gap-3 mb-3 flex-wrap">
           <div className="flex items-center gap-1.5">
