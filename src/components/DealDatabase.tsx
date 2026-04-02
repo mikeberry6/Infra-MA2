@@ -294,22 +294,6 @@ function DealCard({
               +{deal.category.length - 2}
             </span>
           )}
-          {getFundRoleTags(deal).map(({ name, role }) => {
-            const color = ROLE_COLORS[role];
-            return (
-              <span
-                key={`${name}-${role}`}
-                className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px] truncate max-w-[160px]"
-                style={{
-                  color,
-                  backgroundColor: `${color}1a`,
-                  border: `1px solid ${color}33`,
-                }}
-              >
-                {name} ({role})
-              </span>
-            );
-          })}
         </div>
         <ChevronRight className="h-4 w-4 text-[#999999] shrink-0" />
       </div>
@@ -472,23 +456,6 @@ function DealTable({
                               }}
                             >
                               {cat}
-                            </span>
-                          );
-                        })}
-                        {getFundRoleTags(deal).map(({ name, role }) => {
-                          const color = ROLE_COLORS[role];
-                          return (
-                            <span
-                              key={`${name}-${role}`}
-                              className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px] truncate max-w-[120px]"
-                              style={{
-                                color,
-                                backgroundColor: `${color}1a`,
-                                border: `1px solid ${color}33`,
-                              }}
-                              title={`${name} (${role})`}
-                            >
-                              {name} ({role})
                             </span>
                           );
                         })}
@@ -712,59 +679,41 @@ function DealDrawer({
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Buyer</span>
-                <div className="text-sm-dense font-medium text-[#1a1a1a] mt-0.5">{deal.buyer}</div>
+                <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
+                  <span className="text-sm-dense font-medium text-[#1a1a1a]">{deal.buyer}</span>
+                  {isInfraFund(deal.buyer) && (
+                    <span
+                      className="text-[9px] font-semibold px-1.5 py-0.5 rounded-[3px] uppercase tracking-wider"
+                      style={{
+                        color: "#3b82f6",
+                        backgroundColor: "#3b82f61a",
+                        border: "1px solid #3b82f633",
+                      }}
+                    >
+                      Infra Fund
+                    </span>
+                  )}
+                </div>
               </div>
               <div>
                 <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Seller</span>
-                <div className="text-sm-dense font-medium text-[#1a1a1a] mt-0.5">{deal.seller}</div>
+                <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
+                  <span className="text-sm-dense font-medium text-[#1a1a1a]">{deal.seller}</span>
+                  {isInfraFund(deal.seller) && (
+                    <span
+                      className="text-[9px] font-semibold px-1.5 py-0.5 rounded-[3px] uppercase tracking-wider"
+                      style={{
+                        color: "#f59e0b",
+                        backgroundColor: "#f59e0b1a",
+                        border: "1px solid #f59e0b33",
+                      }}
+                    >
+                      Infra Fund
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
-            {getFundRoleTags(deal).length > 0 && (
-              <>
-                <div className="border-t border-[#e5e5e5]" />
-                <div className="space-y-1.5">
-                  <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Fund Activity</span>
-                  {getFundRoleTags(deal).map(({ name, role }) => {
-                    const roleColor = ROLE_COLORS[role];
-                    const matchedCats = deal.category.filter((cat) =>
-                      role === "Buyer"
-                        ? cat.startsWith("Acquisition") || cat === "Platform Launch" || cat === "Joint Venture"
-                        : cat.startsWith("Sale") || cat === "IPO"
-                    );
-                    return (
-                      <div key={`${name}-${role}`} className="flex items-center gap-1.5 flex-wrap">
-                        <span
-                          className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
-                          style={{
-                            color: roleColor,
-                            backgroundColor: `${roleColor}1a`,
-                            border: `1px solid ${roleColor}33`,
-                          }}
-                        >
-                          {name} ({role})
-                        </span>
-                        {matchedCats.map((cat) => {
-                          const catColor = getCategoryColor(cat);
-                          return (
-                            <span
-                              key={cat}
-                              className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
-                              style={{
-                                color: catColor,
-                                backgroundColor: `${catColor}1a`,
-                                border: `1px solid ${catColor}33`,
-                              }}
-                            >
-                              {cat}
-                            </span>
-                          );
-                        })}
-                      </div>
-                    );
-                  })}
-                </div>
-              </>
-            )}
 
             {econItems.length > 0 && (
               <>
