@@ -25,16 +25,6 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      {/* Tier 0: Ad Banner */}
-      <div className="hidden sm:block bg-[#e9e9e7] border-b border-[#d6d6d6]">
-        <div className="mx-auto max-w-[1240px] px-4 sm:px-6 flex flex-col items-center py-[6px]">
-          <span className="text-[9px] font-medium text-[#9a9a9a] uppercase tracking-[0.18em] select-none mb-[2px]">Advertisement</span>
-          <div className="w-[728px] max-w-full h-[90px] border border-[#d0d0ce] bg-[#f2f2f0] flex items-center justify-center">
-            <span className="text-[11px] text-[#b5b5b3] tracking-wide">728 &times; 90</span>
-          </div>
-        </div>
-      </div>
-
       {/* Tier A: Black Utility Bar */}
       <div className="hidden sm:block bg-[#1a1a1a] h-[28px]">
         <div className="mx-auto flex h-full max-w-[1240px] items-center justify-between px-4 sm:px-6">
