@@ -5,7 +5,6 @@ import {
   portcos,
   PORTCO_SECTORS,
   PORTCO_REGIONS,
-  PORTCO_STATUSES,
   PORTCO_COUNTRY_TAGS,
   getPortCoSectorColor,
   getPortCoRegionColor,
@@ -14,7 +13,7 @@ import {
   getMilestoneCategoryColor,
   getUniqueFirms,
 } from "@/data/portcos";
-import type { PortCo, PortCoSector, PortCoRegion, PortCoStatus, PortCoCountryTag } from "@/data/portcos";
+import type { PortCo, PortCoSector, PortCoRegion, PortCoCountryTag } from "@/data/portcos";
 import { funds, getStrategyColor } from "@/data/funds";
 import type { FundStrategy } from "@/data/funds";
 import { deals as dealsData } from "@/data/deals";
@@ -49,8 +48,6 @@ function PortCoFilterBar({
   onToggleCountryTag,
   activeFirms,
   onToggleFirm,
-  activeStatuses,
-  onToggleStatus,
   firmOptions,
   onClearAll,
 }: {
@@ -62,16 +59,13 @@ function PortCoFilterBar({
   onToggleCountryTag: (c: string) => void;
   activeFirms: Set<string>;
   onToggleFirm: (f: string) => void;
-  activeStatuses: Set<string>;
-  onToggleStatus: (s: string) => void;
   firmOptions: string[];
   onClearAll: () => void;
 }) {
   const total =
     activeSectors.size +
     activeCountryTags.size +
-    activeFirms.size +
-    activeStatuses.size;
+    activeFirms.size;
 
   return (
     <div className="mb-2 space-y-3">
@@ -114,15 +108,6 @@ function PortCoFilterBar({
             getColor={() => "#a78bfa"}
           />
         </div>
-        <div className="px-2 py-2 flex items-center">
-          <MultiSelectDropdown
-            label="Status"
-            options={PORTCO_STATUSES}
-            selected={activeStatuses}
-            onToggle={onToggleStatus}
-            getColor={(v) => getPortCoStatusColor(v as PortCoStatus)}
-          />
-        </div>
       </div>
 
       {total > 0 && (
@@ -138,9 +123,6 @@ function PortCoFilterBar({
           ))}
           {Array.from(activeFirms).map((f) => (
             <FilterChip key={`firm-${f}`} label={f} color="#a78bfa" onRemove={() => onToggleFirm(f)} />
-          ))}
-          {Array.from(activeStatuses).map((s) => (
-            <FilterChip key={`sts-${s}`} label={s} color={getPortCoStatusColor(s as PortCoStatus)} onRemove={() => onToggleStatus(s)} />
           ))}
           {total > 1 && (
             <button
@@ -635,16 +617,6 @@ function PortCoCard({
             {company.subsector}
           </span>
         )}
-        <span
-          className="text-[10px] font-medium px-1.5 py-0"
-          style={{
-            color: "#444444",
-            backgroundColor: `${getPortCoStatusColor(company.status)}08`,
-            border: `1px solid ${getPortCoStatusColor(company.status)}12`,
-          }}
-        >
-          {company.status}
-        </span>
       </div>
       <div className="grid grid-cols-2 gap-2 text-micro">
         <div>
@@ -686,7 +658,7 @@ function PortCoTable({
   companies: PortCo[];
   onSelect: (company: PortCo) => void;
 }) {
-  const [sortField, setSortField] = useState<"name" | "sector" | "country" | "firm" | "status">("name");
+  const [sortField, setSortField] = useState<"name" | "sector" | "country" | "firm">("name");
   const [sortAsc, setSortAsc] = useState(true);
 
   const sorted = useMemo(() => {
@@ -698,7 +670,6 @@ function PortCoTable({
         case "sector": cmp = a.sector.localeCompare(b.sector); break;
         case "country": cmp = a.country.localeCompare(b.country); break;
         case "firm": cmp = a.investmentFirm.localeCompare(b.investmentFirm); break;
-        case "status": cmp = a.status.localeCompare(b.status); break;
       }
       return sortAsc ? cmp : -cmp;
     });
@@ -751,7 +722,6 @@ function PortCoTable({
                 <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Country
                 </th>
-                <SortHeader field="status" label="Status" />
               </tr>
             </thead>
             <tbody>
@@ -795,9 +765,6 @@ function PortCoTable({
                       })}
                     </div>
                   </td>
-                  <td className="px-2.5 py-[4px]">
-                    <span className="text-[11px] text-[#555]">{company.status}</span>
-                  </td>
                 </tr>
               ))}
             </tbody>
@@ -826,7 +793,6 @@ export function PortfolioDatabase() {
   const [activeSectors, setActiveSectors] = useState<Set<string>>(new Set());
   const [activeCountryTags, setActiveCountryTags] = useState<Set<string>>(new Set());
   const [activeFirms, setActiveFirms] = useState<Set<string>>(new Set());
-  const [activeStatuses, setActiveStatuses] = useState<Set<string>>(new Set());
   const [selectedCompany, setSelectedCompany] = useState<PortCo | null>(null);
 
   const debouncedSearch = useDebounce(search, 300);
@@ -834,13 +800,10 @@ export function PortfolioDatabase() {
   const toggleSector = useFilterToggle(setActiveSectors);
   const toggleCountryTag = useFilterToggle(setActiveCountryTags);
   const toggleFirm = useFilterToggle(setActiveFirms);
-  const toggleStatus = useFilterToggle(setActiveStatuses);
-
   const clearFilters = useCallback(() => {
     setActiveSectors(new Set());
     setActiveCountryTags(new Set());
     setActiveFirms(new Set());
-    setActiveStatuses(new Set());
     setSearch("");
   }, []);
 
@@ -864,7 +827,6 @@ export function PortfolioDatabase() {
       if (activeSectors.size > 0 && !activeSectors.has(c.sector)) return false;
       if (activeCountryTags.size > 0 && !c.countryTags.some((t: string) => activeCountryTags.has(t))) return false;
       if (activeFirms.size > 0 && !activeFirms.has(c.investmentFirm)) return false;
-      if (activeStatuses.size > 0 && !activeStatuses.has(c.status)) return false;
       return true;
     });
   }, [
@@ -872,7 +834,6 @@ export function PortfolioDatabase() {
     activeSectors,
     activeCountryTags,
     activeFirms,
-    activeStatuses,
   ]);
 
   return (
@@ -895,8 +856,6 @@ export function PortfolioDatabase() {
         onToggleCountryTag={toggleCountryTag}
         activeFirms={activeFirms}
         onToggleFirm={toggleFirm}
-        activeStatuses={activeStatuses}
-        onToggleStatus={toggleStatus}
         firmOptions={firmOptions}
         onClearAll={clearFilters}
       />

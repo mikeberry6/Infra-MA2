@@ -294,24 +294,6 @@ function DealCard({
               +{deal.category.length - 2}
             </span>
           )}
-        </div>
-        <ChevronRight className="h-4 w-4 text-[#999999] shrink-0" />
-      </div>
-      <h3 className="text-sm-dense font-medium text-[#1a1a1a] mb-1.5 leading-snug tracking-tight">
-        {deal.title}
-      </h3>
-      <div className="grid grid-cols-2 gap-2 mt-2 mb-1">
-        <div>
-          <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Buyer</span>
-          <div className="text-xs-dense text-[#6e6e6e] font-medium truncate">{deal.buyer}</div>
-        </div>
-        <div>
-          <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Seller</span>
-          <div className="text-xs-dense text-[#6e6e6e] font-medium truncate">{deal.seller}</div>
-        </div>
-      </div>
-      {getFundRoleTags(deal).length > 0 && (
-        <div className="flex items-center gap-1 flex-wrap mt-1.5">
           {getFundRoleTags(deal).map(({ name, role }) => {
             const color = ROLE_COLORS[role];
             return (
@@ -329,7 +311,21 @@ function DealCard({
             );
           })}
         </div>
-      )}
+        <ChevronRight className="h-4 w-4 text-[#999999] shrink-0" />
+      </div>
+      <h3 className="text-sm-dense font-medium text-[#1a1a1a] mb-1.5 leading-snug tracking-tight">
+        {deal.title}
+      </h3>
+      <div className="grid grid-cols-2 gap-2 mt-2 mb-1">
+        <div>
+          <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Buyer</span>
+          <div className="text-xs-dense text-[#6e6e6e] font-medium truncate">{deal.buyer}</div>
+        </div>
+        <div>
+          <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Seller</span>
+          <div className="text-xs-dense text-[#6e6e6e] font-medium truncate">{deal.seller}</div>
+        </div>
+      </div>
       <div className="flex items-center text-micro text-[#999999] mt-1">
         <span className="font-mono tabular-nums">{formatDate(deal.date)}</span>
       </div>
@@ -413,9 +409,6 @@ function DealTable({
                   Category
                 </th>
                 <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
-                  Fund Activity
-                </th>
-                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Source
                 </th>
               </tr>
@@ -465,24 +458,23 @@ function DealTable({
                       <span className="text-[11px] text-[#555]">{deal.region}</span>
                     </td>
                     <td className="px-2.5 py-[4px]">
-                      {(() => {
-                        const color = getCategoryColor(deal.category[0]);
-                        return (
-                          <span
-                            className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
-                            style={{
-                              color,
-                              backgroundColor: `${color}1a`,
-                              border: `1px solid ${color}33`,
-                            }}
-                          >
-                            {deal.category[0]}
-                          </span>
-                        );
-                      })()}
-                    </td>
-                    <td className="px-2.5 py-[4px]">
                       <div className="flex items-center gap-1 flex-wrap">
+                        {deal.category.map((cat) => {
+                          const catColor = getCategoryColor(cat);
+                          return (
+                            <span
+                              key={cat}
+                              className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                              style={{
+                                color: catColor,
+                                backgroundColor: `${catColor}1a`,
+                                border: `1px solid ${catColor}33`,
+                              }}
+                            >
+                              {cat}
+                            </span>
+                          );
+                        })}
                         {getFundRoleTags(deal).map(({ name, role }) => {
                           const color = ROLE_COLORS[role];
                           return (
@@ -730,22 +722,44 @@ function DealDrawer({
             {getFundRoleTags(deal).length > 0 && (
               <>
                 <div className="border-t border-[#e5e5e5]" />
-                <div className="flex items-center gap-1.5 flex-wrap">
-                  <span className="text-micro font-medium text-[#999999] uppercase tracking-wider mr-1">Fund Activity</span>
+                <div className="space-y-1.5">
+                  <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Fund Activity</span>
                   {getFundRoleTags(deal).map(({ name, role }) => {
-                    const color = ROLE_COLORS[role];
+                    const roleColor = ROLE_COLORS[role];
+                    const matchedCats = deal.category.filter((cat) =>
+                      role === "Buyer"
+                        ? cat.startsWith("Acquisition") || cat === "Platform Launch" || cat === "Joint Venture"
+                        : cat.startsWith("Sale") || cat === "IPO"
+                    );
                     return (
-                      <span
-                        key={`${name}-${role}`}
-                        className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
-                        style={{
-                          color,
-                          backgroundColor: `${color}1a`,
-                          border: `1px solid ${color}33`,
-                        }}
-                      >
-                        {name} ({role})
-                      </span>
+                      <div key={`${name}-${role}`} className="flex items-center gap-1.5 flex-wrap">
+                        <span
+                          className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                          style={{
+                            color: roleColor,
+                            backgroundColor: `${roleColor}1a`,
+                            border: `1px solid ${roleColor}33`,
+                          }}
+                        >
+                          {name} ({role})
+                        </span>
+                        {matchedCats.map((cat) => {
+                          const catColor = getCategoryColor(cat);
+                          return (
+                            <span
+                              key={cat}
+                              className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                              style={{
+                                color: catColor,
+                                backgroundColor: `${catColor}1a`,
+                                border: `1px solid ${catColor}33`,
+                              }}
+                            >
+                              {cat}
+                            </span>
+                          );
+                        })}
+                      </div>
                     );
                   })}
                 </div>

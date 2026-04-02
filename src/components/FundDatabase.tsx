@@ -399,7 +399,7 @@ function ManagerGroupedTable({
             <col className="w-[12%]" />
             <col className="w-[16%]" />
           </colgroup>
-          <thead className="sticky top-[94px] sm:top-[158px] z-20 bg-[#e8e8e6]">
+          <thead className="bg-[#e8e8e6]">
             <tr className="border-b border-[#d0d0d0]">
               <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.05em]">
                 Fund Vehicle
