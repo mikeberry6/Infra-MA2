@@ -228,11 +228,11 @@ function DealCard({
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-1.5 flex-wrap">
           <span
-            className="text-[10px] font-medium px-1.5 py-0"
+            className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
             style={{
-              color: "#444444",
-              backgroundColor: `${sectorColor}08`,
-              border: `1px solid ${sectorColor}12`,
+              color: sectorColor,
+              backgroundColor: `${sectorColor}1a`,
+              border: `1px solid ${sectorColor}33`,
             }}
           >
             {deal.sector}
@@ -242,11 +242,11 @@ function DealCard({
             return (
               <span
                 key={cat}
-                className="text-[10px] font-medium px-1.5 py-0"
+                className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
                 style={{
-                  color: "#444444",
-                  backgroundColor: `${catColor}08`,
-                  border: `1px solid ${catColor}12`,
+                  color: catColor,
+                  backgroundColor: `${catColor}1a`,
+                  border: `1px solid ${catColor}33`,
                 }}
               >
                 {cat}
@@ -386,13 +386,41 @@ function DealTable({
                       <span className="text-[11px] text-[#555] truncate block">{deal.buyer}</span>
                     </td>
                     <td className="px-2.5 py-[4px]">
-                      <span className="text-[11px] text-[#555]">{deal.sector}</span>
+                      {(() => {
+                        const color = getSectorColor(deal.sector);
+                        return (
+                          <span
+                            className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                            style={{
+                              color,
+                              backgroundColor: `${color}1a`,
+                              border: `1px solid ${color}33`,
+                            }}
+                          >
+                            {deal.sector}
+                          </span>
+                        );
+                      })()}
                     </td>
                     <td className="px-2.5 py-[4px]">
                       <span className="text-[11px] text-[#555]">{deal.region}</span>
                     </td>
                     <td className="px-2.5 py-[4px]">
-                      <span className="text-[11px] text-[#555]">{deal.category[0]}</span>
+                      {(() => {
+                        const color = getCategoryColor(deal.category[0]);
+                        return (
+                          <span
+                            className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                            style={{
+                              color,
+                              backgroundColor: `${color}1a`,
+                              border: `1px solid ${color}33`,
+                            }}
+                          >
+                            {deal.category[0]}
+                          </span>
+                        );
+                      })()}
                     </td>
                     <td className="px-2.5 py-[4px]">
                       <a
@@ -571,11 +599,11 @@ function DealDrawer({
               const sectorColor = getSectorColor(deal.sector);
               return (
                 <span
-                  className="text-[10px] font-medium px-1.5 py-0"
+                  className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
                   style={{
-                    color: "#444444",
-                    backgroundColor: `${sectorColor}08`,
-                    border: `1px solid ${sectorColor}12`,
+                    color: sectorColor,
+                    backgroundColor: `${sectorColor}1a`,
+                    border: `1px solid ${sectorColor}33`,
                   }}
                 >
                   {deal.sector}
@@ -583,24 +611,24 @@ function DealDrawer({
               );
             })()}
             <span className="text-xs-dense text-[#999999]">{deal.subsector}</span>
-            <div className="h-3.5 w-px bg-[#d6d6d6]" />
+            <div className="h-3.5 w-px bg-black/[0.08]" />
             {deal.category.map((cat) => {
               const catColor = getCategoryColor(cat);
               return (
                 <span
                   key={cat}
-                  className="text-[10px] font-medium px-1.5 py-0"
+                  className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
                   style={{
-                    color: "#444444",
-                    backgroundColor: `${catColor}08`,
-                    border: `1px solid ${catColor}12`,
+                    color: catColor,
+                    backgroundColor: `${catColor}1a`,
+                    border: `1px solid ${catColor}33`,
                   }}
                 >
                   {cat}
                 </span>
               );
             })}
-            <div className="h-3.5 w-px bg-[#d6d6d6]" />
+            <div className="h-3.5 w-px bg-black/[0.08]" />
             <span className="text-xs-dense text-[#999999]">{deal.country}</span>
           </div>
         </div>
