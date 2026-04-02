@@ -49,7 +49,7 @@ export function Navbar() {
       </div>
 
       {/* Tier B: White Masthead */}
-      <div className="bg-white border-b border-[#d6d6d6]">
+      <div className="bg-white border-b border-black/[0.08]">
         <div className="mx-auto flex h-[60px] max-w-[1240px] items-center justify-between px-4 sm:px-6">
           <Link href="/" className="flex items-center gap-[10px] group">
             {/* Green vertical rule — matches II reference */}
@@ -74,13 +74,13 @@ export function Navbar() {
 
           {/* Desktop: search field */}
           <div className="hidden sm:flex items-center">
-            <div className="flex items-center border border-[#d6d6d6] bg-[#f7f7f7] h-[32px] w-[260px]">
+            <div className="flex items-center border border-black/[0.08] bg-[#f7f7f7] h-[32px] w-[260px]">
               <input
                 type="text"
                 placeholder="Search Infrastructure Investor"
                 className="bg-transparent text-[12px] text-[#1a1a1a] placeholder-[#999] outline-none flex-1 px-3"
               />
-              <button className="h-full px-2.5 border-l border-[#d6d6d6] bg-[#eeeeee] hover:bg-[#e4e4e4] transition-colors flex items-center justify-center">
+              <button className="h-full px-2.5 border-l border-black/[0.08] bg-[#eeeeee] hover:bg-[#e4e4e4] transition-colors flex items-center justify-center">
                 <Search className="h-3.5 w-3.5 text-[#666]" />
               </button>
             </div>
@@ -100,7 +100,7 @@ export function Navbar() {
       </div>
 
       {/* Tier C: Primary Navigation */}
-      <div className="hidden sm:block bg-white border-b border-[#d6d6d6]">
+      <div className="hidden sm:block bg-white border-b border-black/[0.08] shadow-sm">
         <div className="mx-auto flex h-[36px] max-w-[1240px] items-center px-4 sm:px-6">
           {primaryNav.map((item) => (
             <div
@@ -129,7 +129,7 @@ export function Navbar() {
 
       {/* Mobile dropdown menu */}
       {menuOpen && (
-        <div className="sm:hidden border-b border-[#d6d6d6] bg-white">
+        <div className="sm:hidden border-b border-black/[0.08] bg-white shadow-sm">
           <div className="px-4 py-3 space-y-1">
             <div className="text-[10px] font-bold text-[#008253] uppercase tracking-wider mb-2 px-3">
               Data
@@ -162,13 +162,13 @@ export function Navbar() {
               ))}
             </div>
             <div className="border-t border-[#e5e5e5] mt-2 pt-3 px-3">
-              <div className="flex items-center border border-[#d6d6d6] bg-[#f7f7f7] h-[36px]">
+              <div className="flex items-center border border-black/[0.08] bg-[#f7f7f7] h-[36px]">
                 <input
                   type="text"
                   placeholder="Search..."
                   className="bg-transparent text-sm text-[#1a1a1a] placeholder-[#999] outline-none flex-1 px-3"
                 />
-                <button className="h-full px-3 border-l border-[#d6d6d6] bg-[#eeeeee]">
+                <button className="h-full px-3 border-l border-black/[0.08] bg-[#eeeeee]">
                   <Search className="h-3.5 w-3.5 text-[#666]" />
                 </button>
               </div>

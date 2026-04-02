@@ -22,7 +22,7 @@ export default function RootLayout({
         <Navbar />
         {/* pt-[60px] on mobile (masthead only), sm:pt-[124px] on desktop (utility+masthead+nav) */}
         <main className="pt-[60px] sm:pt-[124px]">{children}</main>
-        <footer className="border-t border-[#d6d6d6] bg-white mt-10">
+        <footer className="border-t border-black/[0.08] bg-white mt-10">
           <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-4">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#6e6e6e]">
               <span>&copy; 2026 PEI Media</span>

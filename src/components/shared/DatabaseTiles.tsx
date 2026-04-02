@@ -21,14 +21,14 @@ export function DatabaseTiles({ counts }: DatabaseTilesProps) {
   const pathname = usePathname();
 
   return (
-    <div className="flex border border-[#d6d6d6] bg-white">
+    <div className="flex border border-black/[0.08] bg-white">
       {tiles.map((tile) => {
         const isActive = pathname === tile.href;
         return (
           <Link
             key={tile.key}
             href={tile.href}
-            className={`flex-1 px-3 py-[5px] border-r border-[#d6d6d6] last:border-r-0 transition-colors ${
+            className={`flex-1 px-3 py-[5px] border-r border-black/[0.08] last:border-r-0 transition-colors ${
               isActive
                 ? "bg-white border-b-2 border-b-[#008253]"
                 : "bg-[#f3f3f3] hover:bg-[#eaeaea]"

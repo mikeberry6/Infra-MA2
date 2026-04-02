@@ -81,8 +81,8 @@ function PortCoFilterBar({
 
   return (
     <div className="mb-2 space-y-3">
-      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[124px] z-30 flex-wrap">
-        <div className="border-r border-[#d6d6d6] px-2.5 py-2 flex items-center gap-2 flex-1 max-w-xs">
+      <div className="bg-[#f3f3f3] border border-black/[0.08] shadow-sm flex items-stretch sticky top-[60px] sm:top-[124px] z-30 flex-wrap">
+        <div className="border-r border-black/[0.06] px-2.5 py-2 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
             type="text"
@@ -93,7 +93,7 @@ function PortCoFilterBar({
             className="w-full bg-transparent text-xs text-[#1a1a1a] placeholder:text-[#999999] focus:outline-none"
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
+        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Sector"
             options={PORTCO_SECTORS}
@@ -102,7 +102,7 @@ function PortCoFilterBar({
             getColor={(v) => getPortCoSectorColor(v as PortCoSector)}
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
+        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Region"
             options={PORTCO_REGIONS}
@@ -111,7 +111,7 @@ function PortCoFilterBar({
             getColor={(v) => getPortCoRegionColor(v as PortCoRegion)}
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
+        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Country"
             options={countryOptions}
@@ -120,7 +120,7 @@ function PortCoFilterBar({
             getColor={() => "#06b6d4"}
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
+        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Investment Firm"
             options={firmOptions}
@@ -260,7 +260,7 @@ function PortCoInsightsHero({ companies }: { companies: PortCo[] }) {
 
   if (companies.length === 0) {
     return (
-      <div className="border border-[#d6d6d6] bg-white p-6 text-center">
+      <div className="border border-black/[0.08] shadow-card bg-white p-6 text-center">
         <p className="text-sm-dense text-[#999999]">
           No portfolio companies match your current filters. Try broadening your search.
         </p>
@@ -269,7 +269,7 @@ function PortCoInsightsHero({ companies }: { companies: PortCo[] }) {
   }
 
   return (
-    <div className="border border-[#d6d6d6] bg-white overflow-hidden">
+    <div className="border border-black/[0.08] shadow-card bg-white overflow-hidden">
       <div className="px-3 sm:px-4 pt-3 pb-1.5 border-b border-[#e8e8e8]">
         <p className="text-[11px] text-[#999999]">
           <span className="font-mono text-[#1a1a1a] font-medium tabular-nums">{companies.length}</span> portfolio companies
@@ -357,9 +357,9 @@ function PortCoDrawer({
         className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#d6d6d6] bg-[#f3f3f3] overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-black/[0.08] shadow-2xl bg-[#f3f3f3] overflow-y-auto animate-slide-in-right">
         {/* ── Header ── */}
-        <div className="sticky top-0 z-10 border-b border-[#d6d6d6] bg-white relative overflow-hidden">
+        <div className="sticky top-0 z-10 border-b border-black/[0.08] bg-white relative overflow-hidden">
           {/* Accent bar */}
           <div
             className="absolute top-0 left-0 right-0 h-[2px]"
@@ -426,7 +426,7 @@ function PortCoDrawer({
                 Investment Details
               </span>
             </div>
-            <div className="bg-white border border-[#d6d6d6] divide-y divide-[#e8e8e8]">
+            <div className="bg-white border border-black/[0.08] divide-y divide-[#e8e8e8]">
               {detailRows.map((row) => (
                 <div
                   key={row.label}
@@ -467,7 +467,7 @@ function PortCoDrawer({
 
           {/* §2 — Company Overview / Description */}
           {company.description && (
-            <section className="border-t border-[#d6d6d6] pt-6">
+            <section className="border-t border-black/[0.08] pt-6">
               <div className="flex items-center gap-2 mb-3">
                 <FileText className="h-3.5 w-3.5 text-[#008253]" />
                 <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider">
@@ -507,7 +507,7 @@ function PortCoDrawer({
 
           {/* §3 — Historical Milestones */}
           {milestones.length > 0 && (
-            <section className="border-t border-[#d6d6d6] pt-6">
+            <section className="border-t border-black/[0.08] pt-6">
               <div className="flex items-center gap-2 mb-3">
                 <Clock className="h-3.5 w-3.5 text-[#008253]" />
                 <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider">
@@ -587,7 +587,7 @@ function PortCoDrawer({
 
           {/* §4 — Key Management (C-Suite + President only) */}
           {cSuiteManagement.length > 0 && (
-            <section className="border-t border-[#d6d6d6] pt-6">
+            <section className="border-t border-black/[0.08] pt-6">
               <div className="flex items-center gap-2 mb-3">
                 <Users className="h-3.5 w-3.5 text-[#008253]" />
                 <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider">
@@ -899,7 +899,7 @@ export function PortfolioDatabase() {
       />
 
       {/* White content panel */}
-      <div className="bg-white border border-[#d6d6d6]">
+      <div className="bg-white border border-black/[0.08] shadow-card">
         {/* Results / Action Row */}
         <div className="flex items-center justify-between px-3 py-[6px] border-b border-[#e8e8e8]">
           <span className="text-[11px] text-[#6e6e6e]">

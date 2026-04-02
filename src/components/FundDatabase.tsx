@@ -82,8 +82,8 @@ function FundFilterBar({
 
   return (
     <div className="mb-2 space-y-3">
-      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[124px] z-30">
-        <div className="border-r border-[#d6d6d6] px-2.5 py-2 flex items-center gap-2 flex-1 max-w-xs">
+      <div className="bg-[#f3f3f3] border border-black/[0.08] shadow-sm flex items-stretch sticky top-[60px] sm:top-[124px] z-30">
+        <div className="border-r border-black/[0.06] px-2.5 py-2 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
             type="text"
@@ -94,7 +94,7 @@ function FundFilterBar({
             className="w-full bg-transparent text-xs text-[#1a1a1a] placeholder:text-[#999999] focus:outline-none"
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
+        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Strategy"
             options={FUND_STRATEGIES}
@@ -103,7 +103,7 @@ function FundFilterBar({
             getColor={(v) => getStrategyColor(v as FundStrategy)}
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
+        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Status"
             options={FUND_STATUSES}
@@ -112,7 +112,7 @@ function FundFilterBar({
             getColor={(v) => getStatusColor(v as FundStatus)}
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
+        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Fund Size"
             options={FUND_SIZE_RANGES}
@@ -260,7 +260,7 @@ function FundsInsightsHero({ filteredFunds }: { filteredFunds: Fund[] }) {
 
   if (filteredFunds.length === 0) {
     return (
-      <div className="border border-[#d6d6d6] bg-white p-6 text-center">
+      <div className="border border-black/[0.08] shadow-card bg-white p-6 text-center">
         <p className="text-sm-dense text-[#999999]">
           No funds match your current filters. Try broadening your search.
         </p>
@@ -269,7 +269,7 @@ function FundsInsightsHero({ filteredFunds }: { filteredFunds: Fund[] }) {
   }
 
   return (
-    <div className="border border-[#d6d6d6] bg-white overflow-hidden">
+    <div className="border border-black/[0.08] shadow-card bg-white overflow-hidden">
       <div className="px-3 sm:px-4 pt-3 pb-1.5 border-b border-[#e8e8e8]">
         <p className="text-[11px] text-[#999999]">
           <span className="font-mono text-[#1a1a1a] font-medium tabular-nums">{stats.managers}</span> managers
@@ -306,7 +306,7 @@ function FundVehicleCard({
   return (
     <button
       onClick={() => onSelect(fund)}
-      className="w-full text-left bg-white border border-[#e8e8e8] p-3 transition-colors hover:bg-[#f7f7f5] active:bg-[#f0f0ee]"
+      className="w-full text-left bg-white border border-black/[0.06] p-3 transition-all hover:bg-[#f7f7f5] active:bg-[#f0f0ee]"
     >
       <div className="flex items-center justify-between mb-1.5">
         <h4 className="text-sm-dense font-medium text-[#1a1a1a] leading-snug tracking-tight truncate pr-2">
@@ -423,7 +423,7 @@ function FundManagerAccordion({
                     <tr
                       key={fund.id}
                       onClick={() => onSelectFund(fund)}
-                      className="border-b border-[#e8e8e8] last:border-b-0 hover:bg-[#f7f7f5] cursor-pointer transition-colors group"
+                      className="border-b border-[#e8e8e8] last:border-b-0 hover:bg-[#f7f7f5] cursor-pointer transition-all group"
                     >
                       <td className="px-2.5 py-[4px] overflow-hidden">
                         <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate block">
@@ -548,7 +548,7 @@ function AllFundsTable({
               <tr
                 key={fund.id}
                 onClick={() => onSelectFund(fund)}
-                className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-colors group"
+                className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-all group"
               >
                 <td className="px-2.5 py-[4px] overflow-hidden">
                   <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate">
@@ -650,9 +650,9 @@ function FundDrawer({
         className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#d6d6d6] bg-[#f3f3f3] overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-black/[0.08] shadow-2xl bg-[#f3f3f3] overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-[#d6d6d6] bg-white px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
+        <div className="sticky top-0 z-10 border-b border-black/[0.08] bg-white px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-1 flex-wrap">
@@ -679,7 +679,7 @@ function FundDrawer({
         {/* Content */}
         <div className="p-4 sm:p-5 lg:p-6 space-y-4 lg:space-y-5">
           {/* Fund overview */}
-          <div className="bg-white border border-[#d6d6d6] overflow-hidden">
+          <div className="bg-white border border-black/[0.08] overflow-hidden">
             {/* Classification tags */}
             <div className="px-3 py-2.5">
               <div className="flex items-center gap-1.5 flex-wrap">
@@ -721,7 +721,7 @@ function FundDrawer({
               </div>
             </div>
             {/* Divider */}
-            <div className="border-t border-[#d6d6d6]" />
+            <div className="border-t border-black/[0.08]" />
             {/* Metrics */}
             <div className="px-3 py-2.5">
               <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
@@ -739,11 +739,11 @@ function FundDrawer({
 
           {/* Investment Strategy */}
           {fund.investmentStrategy && (
-            <div className="border-t border-[#d6d6d6] pt-4">
+            <div className="border-t border-black/[0.08] pt-4">
               <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider block mb-2">
                 Investment Strategy
               </span>
-              <div className="bg-white border border-[#d6d6d6] p-3">
+              <div className="bg-white border border-black/[0.08] p-3">
                 <p className="text-sm-dense text-[#6e6e6e] leading-relaxed italic">
                   {fund.investmentStrategy}
                 </p>
@@ -753,7 +753,7 @@ function FundDrawer({
 
           {/* Target Sectors */}
           {fund.sectors.length > 0 && (
-            <div className="border-t border-[#d6d6d6] pt-4">
+            <div className="border-t border-black/[0.08] pt-4">
               <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider block mb-2">
                 Target Sectors
               </span>
@@ -777,7 +777,7 @@ function FundDrawer({
 
           {/* Source URLs */}
           {fund.sourceUrls.length > 0 && (
-            <div className="border-t border-[#d6d6d6] pt-4">
+            <div className="border-t border-black/[0.08] pt-4">
               <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider block mb-2">
                 Sources
               </span>
@@ -804,7 +804,7 @@ function FundDrawer({
 
           {/* Portfolio Companies */}
           {firmPortfolio.total > 0 && (
-            <div className="border-t border-[#d6d6d6] pt-4">
+            <div className="border-t border-black/[0.08] pt-4">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider">
                   Portfolio Companies
@@ -873,7 +873,7 @@ function FundDrawer({
 
           {/* Sibling funds */}
           {siblingFunds.length > 0 && (
-            <div className="border-t border-[#d6d6d6] pt-4">
+            <div className="border-t border-black/[0.08] pt-4">
               <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider block mb-3">
                 Other {fund.managerName} Vehicles
               </span>
@@ -989,12 +989,12 @@ export function FundDatabase() {
       />
 
       {/* Results count + actions + view toggle bar */}
-      <div className="bg-white border border-[#d6d6d6] flex items-center justify-between px-3 py-[6px]">
+      <div className="bg-white border border-black/[0.08] shadow-card flex items-center justify-between px-3 py-[6px]">
         <div className="flex items-center gap-4">
           <span className="text-[11px] text-[#6e6e6e]">
             Showing <span className="font-mono text-[#1a1a1a] tabular-nums">{filteredFunds.length}</span> of <span className="font-mono text-[#1a1a1a] tabular-nums">{funds.length}</span> funds
           </span>
-          <div className="hidden sm:flex items-center border-l border-[#d6d6d6] ml-3 pl-3">
+          <div className="hidden sm:flex items-center border-l border-black/[0.06] ml-3 pl-3">
             <button
               onClick={() => setFundView("managers")}
               className={`text-[11px] font-heading px-3 py-[4px] transition-colors border-b-2 ${
@@ -1029,7 +1029,7 @@ export function FundDatabase() {
       </div>
 
       {fundView === "managers" ? (
-        <div className="bg-white border border-[#d6d6d6] border-t-0">
+        <div className="bg-white border border-black/[0.08] shadow-card border-t-0">
           {sortedManagers.map(([manager, managerFunds]) => (
             <FundManagerAccordion
               key={manager}
@@ -1047,7 +1047,7 @@ export function FundDatabase() {
           )}
         </div>
       ) : (
-        <div className="bg-white border border-[#d6d6d6] border-t-0">
+        <div className="bg-white border border-black/[0.08] shadow-card border-t-0">
           <AllFundsTable
             funds={filteredFunds}
             onSelectFund={setSelectedFund}

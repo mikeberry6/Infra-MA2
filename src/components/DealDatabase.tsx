@@ -156,8 +156,8 @@ function FilterBar({
   return (
     <div className="mb-2 space-y-3">
       {/* Segmented filter bar */}
-      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[124px] z-30">
-        <div className="border-r border-[#d6d6d6] px-2.5 py-2 flex items-center gap-2 flex-1 max-w-xs">
+      <div className="bg-[#f3f3f3] border border-black/[0.08] shadow-sm flex items-stretch sticky top-[60px] sm:top-[124px] z-30">
+        <div className="border-r border-black/[0.06] px-2.5 py-2 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
             type="text"
@@ -168,7 +168,7 @@ function FilterBar({
             className="w-full bg-transparent text-xs text-[#1a1a1a] placeholder:text-[#999999] focus:outline-none"
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
+        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Sector"
             options={SECTORS}
@@ -177,7 +177,7 @@ function FilterBar({
             getColor={(v) => getSectorColor(v as DealSector)}
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
+        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Region"
             options={REGIONS}
@@ -223,7 +223,7 @@ function DealCard({
   return (
     <button
       onClick={() => onSelect(deal)}
-      className="w-full text-left bg-white border border-[#e8e8e8] p-3 transition-colors hover:bg-[#f7f7f5] active:bg-[#f0f0ee]"
+      className="w-full text-left bg-white border border-black/[0.06] shadow-card p-3 transition-all hover:bg-[#f7f7f5] active:bg-[#f0f0ee]"
     >
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-1.5 flex-wrap">
@@ -254,7 +254,7 @@ function DealCard({
             );
           })}
           {deal.category.length > 2 && (
-            <span className="text-[10px] font-medium px-1.5 py-0 text-[#999999] border border-dashed border-[#d6d6d6]">
+            <span className="text-[10px] font-medium px-1.5 py-0 text-[#999999] border border-dashed border-black/[0.08]">
               +{deal.category.length - 2}
             </span>
           )}
@@ -367,7 +367,7 @@ function DealTable({
                   <tr
                     key={deal.id}
                     onClick={() => onSelectDeal(deal)}
-                    className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-colors group"
+                    className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-all group"
                   >
                     <td className="px-2.5 py-[4px]">
                       <span className="font-mono text-[11px] text-[#555] tabular-nums">
@@ -543,9 +543,9 @@ function DealDrawer({
       />
 
       {/* Drawer */}
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#d6d6d6] bg-white overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-black/[0.08] shadow-2xl bg-white overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-[#d6d6d6] bg-white px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
+        <div className="sticky top-0 z-10 border-b border-black/[0.08] bg-white px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -608,7 +608,7 @@ function DealDrawer({
         {/* Content */}
         <div className="p-4 sm:p-5 lg:p-6 space-y-4 lg:space-y-5">
           {/* Compact parties + economics bar */}
-          <div className="bg-white border border-[#d6d6d6] p-3 space-y-2.5">
+          <div className="bg-white border border-black/[0.08] shadow-card p-3 space-y-2.5">
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Buyer</span>
@@ -731,7 +731,7 @@ function DealDrawer({
           )}
 
           {/* Source link */}
-          <div className="border-t border-[#d6d6d6] pt-4">
+          <div className="border-t border-black/[0.08] pt-4">
             <a
               href={deal.sourceUrl}
               target="_blank"
@@ -837,7 +837,7 @@ export function DealDatabase() {
       />
 
       {/* White content panel */}
-      <div className="bg-white border border-[#d6d6d6]">
+      <div className="bg-white border border-black/[0.08] shadow-card">
         {/* Results/action bar */}
         <div className="flex items-center justify-between px-3 py-[6px] border-b border-[#e8e8e8]">
           <span className="text-[11px] text-[#6e6e6e]">
