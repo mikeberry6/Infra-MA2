@@ -389,83 +389,46 @@ function ManagerGroupedTable({
 
   return (
     <>
-      {/* Desktop: one continuous grouped table */}
-      <div className="hidden md:block">
-        <table className="w-full text-sm-dense table-fixed">
-          <colgroup>
-            <col className="w-[34%]" />
-            <col className="w-[22%]" />
-            <col className="w-[16%]" />
-            <col className="w-[12%]" />
-            <col className="w-[16%]" />
-          </colgroup>
-          <thead className="bg-[#e8e8e6]">
-            <tr className="border-b border-[#d0d0d0]">
-              <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.05em]">
-                Fund Vehicle
-              </th>
-              <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.05em]">
-                Strategy
-              </th>
-              <th className="text-right px-2.5 py-[6px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.05em]">
-                Size
-              </th>
-              <th className="text-right px-2.5 py-[6px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.05em]">
-                Vintage
-              </th>
-              <th className="text-left px-2.5 py-[6px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.05em]">
-                Status
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {sortedManagers.map(([managerName, managerFunds], groupIdx) => {
-              const isCollapsed = collapsed.has(managerName);
-              return (
-                <Fragment key={managerName}>
-                  {/* Spacer between groups (skip first) */}
-                  {groupIdx > 0 && (
-                    <tr aria-hidden="true">
-                      <td colSpan={5} className="h-3 p-0 border-0 bg-[#f3f3f3]" />
-                    </tr>
-                  )}
-                  {/* Firm divider row */}
-                  <tr
-                    onClick={() => toggle(managerName)}
-                    className="bg-[#efefef] border-t border-b border-[#d6d6d6] cursor-pointer hover:bg-[#e8e8e6] transition-colors"
-                    style={{ height: "46px" }}
-                  >
-                    <td colSpan={5} className="px-2.5">
-                      <div className="flex items-center gap-2">
-                        <ChevronRight
-                          className={`h-3 w-3 text-[#888] shrink-0 transition-transform ${
-                            !isCollapsed ? "rotate-90" : ""
-                          }`}
-                        />
-                        <span className="text-[12px] font-heading font-bold text-[#1a1a1a] tracking-[0.01em]">
-                          {managerName}
-                        </span>
-                        <span className="text-[10px] text-[#999] font-normal">
-                          {managerFunds.length} vehicle{managerFunds.length !== 1 ? "s" : ""}
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  {/* Fund rows */}
-                  {!isCollapsed &&
-                    managerFunds.map((fund) => (
-                      <tr
-                        key={fund.id}
-                        onClick={() => onSelectFund(fund)}
-                        className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-all group"
-                      >
-                        <td className="px-2.5 py-[4px] overflow-hidden">
+      {/* Desktop: card-based layout */}
+      <div className="hidden md:block space-y-3">
+        {sortedManagers.map(([managerName, managerFunds]) => {
+          const isCollapsed = collapsed.has(managerName);
+          return (
+            <div key={managerName} className="bg-white border border-black/[0.08] shadow-card">
+              {/* Firm header */}
+              <button
+                onClick={() => toggle(managerName)}
+                className="w-full flex items-center gap-2 px-4 py-3 text-left hover:bg-[#fafafa] transition-colors border-b border-[#e8e8e8]"
+              >
+                <ChevronRight
+                  className={`h-3.5 w-3.5 text-[#888] shrink-0 transition-transform ${
+                    !isCollapsed ? "rotate-90" : ""
+                  }`}
+                />
+                <span className="text-[13px] font-heading font-bold text-[#1a1a1a] tracking-[0.01em]">
+                  {managerName}
+                </span>
+                <span className="text-[10px] text-[#999] font-normal">
+                  {managerFunds.length} vehicle{managerFunds.length !== 1 ? "s" : ""}
+                </span>
+              </button>
+              {/* Fund sub-cards */}
+              {!isCollapsed && (
+                <div className="p-3 space-y-2">
+                  {managerFunds.map((fund) => (
+                    <button
+                      key={fund.id}
+                      onClick={() => onSelectFund(fund)}
+                      className="w-full text-left bg-[#fafafa] border border-black/[0.06] rounded-[4px] px-4 py-3 hover:bg-[#f3f3f3] hover:border-black/[0.10] transition-all group"
+                    >
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="flex-1 min-w-0">
                           <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate block">
                             {fund.fundName}
                           </span>
-                        </td>
-                        <td className="px-2.5 py-[4px]">
-                          <div className="flex items-center gap-1 flex-wrap">
+                        </div>
+                        <div className="flex items-center gap-3 shrink-0">
+                          <div className="flex items-center gap-1">
                             {fund.strategies.map((s) => {
                               const color = getStrategyColor(s);
                               return (
@@ -483,27 +446,24 @@ function ManagerGroupedTable({
                               );
                             })}
                           </div>
-                        </td>
-                        <td className="px-2.5 py-[4px] text-right">
-                          <span className="font-mono text-[11px] text-[#1a1a1a] tabular-nums">
+                          <span className="font-mono text-[11px] text-[#1a1a1a] tabular-nums w-[70px] text-right">
                             {fund.size}
                           </span>
-                        </td>
-                        <td className="px-2.5 py-[4px] text-right">
-                          <span className="font-mono text-[11px] text-[#6d6d6d] tabular-nums">
+                          <span className="font-mono text-[11px] text-[#6d6d6d] tabular-nums w-[40px] text-right">
                             {fund.vintage}
                           </span>
-                        </td>
-                        <td className="px-2.5 py-[4px]">
-                          <span className="text-[11px] text-[#6d6d6d]">{fund.status}</span>
-                        </td>
-                      </tr>
-                    ))}
-                </Fragment>
-              );
-            })}
-          </tbody>
-        </table>
+                          <span className="text-[11px] text-[#6d6d6d] w-[80px]">
+                            {fund.status}
+                          </span>
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
 
       {/* Mobile: card-based layout per manager */}

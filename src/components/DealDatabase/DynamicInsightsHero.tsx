@@ -40,6 +40,16 @@ const NON_INFRA_FUND_BUYERS = new Set([
   "Exus Renewables",
   "IHS Towers",
   "TPI Composites",
+  "Claro",
+  "Taylor Farms",
+  "Abertis",
+  "VINCI Highways",
+  "Technique Solaire",
+  "Algoma Central Corporation",
+  "Dubai Aerospace Enterprise",
+  "Power2X",
+  "Nobian",
+  "Jupiter Energy Investor",
 ]);
 
 // ─── Fund name aliases for matching variants to canonical names ──
@@ -67,6 +77,10 @@ const FUND_NAME_ALIASES: Record<string, string> = {
   "Basalt Infrastructure": "Basalt Infrastructure Partners",
   "EIG": "EIG Global Energy Partners",
   "InfraVia": "InfraVia Capital Partners",
+  "Brookfield Infrastructure Structured Solutions": "Brookfield Asset Management",
+  "Standard Solar / Brookfield": "Brookfield Asset Management",
+  "Mainstay Maritime": "Oaktree Capital",
+  "Brookfield / La Caisse": "Brookfield Asset Management",
 };
 
 /** Normalize a fund name to its canonical form using known aliases */
