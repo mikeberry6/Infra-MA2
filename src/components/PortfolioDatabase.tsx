@@ -80,8 +80,8 @@ function PortCoFilterBar({
     activeStatuses.size;
 
   return (
-    <div className="mb-4 lg:mb-6 space-y-3">
-      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[124px] z-30 flex-wrap">
+    <div className="mb-2 space-y-3">
+      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[240px] z-30 flex-wrap">
         <div className="border-r border-[#d6d6d6] px-2.5 py-1.5 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
@@ -874,7 +874,7 @@ export function PortfolioDatabase() {
       <DatabaseTiles counts={{ deals: dealsData.length, funds: funds.length, portfolio: portcos.length }} />
 
       {/* Breadcrumb */}
-      <div className="flex items-center gap-1.5 mt-3 mb-2">
+      <div className="flex items-center gap-1.5 mt-2 mb-1">
         <span className="text-[10px] text-[#999] uppercase tracking-[0.06em]">Data</span>
         <span className="text-[10px] text-[#ccc]">/</span>
         <span className="text-[10px] text-[#1a1a1a] font-semibold uppercase tracking-[0.06em]">Portfolio companies</span>

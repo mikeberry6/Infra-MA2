@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function CTABlock() {
   return (
-    <div className="my-8">
+    <div className="my-6">
       <div className="border-t-[3px] border-[#008253]" />
       <div className="bg-white border-x border-[#d6d6d6] px-6 sm:px-10 py-8 sm:py-10">
         <div className="max-w-xl mx-auto text-center">
