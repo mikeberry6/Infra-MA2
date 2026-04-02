@@ -157,7 +157,7 @@ function FilterBar({
     <div className="mb-2 space-y-3">
       {/* Segmented filter bar */}
       <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[240px] z-30">
-        <div className="border-r border-[#d6d6d6] px-2.5 py-1.5 flex items-center gap-2 flex-1 max-w-xs">
+        <div className="border-r border-[#d6d6d6] px-2.5 py-2 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
             type="text"
@@ -168,7 +168,7 @@ function FilterBar({
             className="w-full bg-transparent text-xs text-[#1a1a1a] placeholder:text-[#999999] focus:outline-none"
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-1.5 flex items-center">
+        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Sector"
             options={SECTORS}
@@ -177,7 +177,7 @@ function FilterBar({
             getColor={(v) => getSectorColor(v as DealSector)}
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-1.5 flex items-center">
+        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Region"
             options={REGIONS}
@@ -186,7 +186,7 @@ function FilterBar({
             getColor={(v) => getRegionColor(v as DealRegion)}
           />
         </div>
-        <div className="px-2 py-1.5 flex items-center">
+        <div className="px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Type"
             options={CATEGORIES}
@@ -223,7 +223,7 @@ function DealCard({
   return (
     <button
       onClick={() => onSelect(deal)}
-      className="w-full text-left glass-card p-4 transition-colors hover:bg-[#f7f7f5] active:bg-[#f0f0ee]"
+      className="w-full text-left bg-white border border-[#e8e8e8] p-3 transition-colors hover:bg-[#f7f7f5] active:bg-[#f0f0ee]"
     >
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-1.5 flex-wrap">
@@ -466,7 +466,7 @@ function DetailRow({
   children: React.ReactNode;
 }) {
   return (
-    <div className="glass-card px-4 py-3 flex items-start gap-3">
+    <div className="border-b border-[#e8e8e8] px-3 py-2.5 flex items-start gap-3 last:border-b-0">
       <Icon className={`h-4 w-4 mt-0.5 shrink-0 ${iconColor}`} />
       <div className="min-w-0">
         <span className="text-micro text-[#999999] block">{label}</span>
@@ -487,8 +487,8 @@ function AdvisorCard({
   iconColor: string;
 }) {
   return (
-    <div className="glass-card p-4">
-      <span className={`text-micro font-medium uppercase tracking-wider block mb-2 ${iconColor}`}>
+    <div className="bg-white border border-[#e8e8e8] p-3">
+      <span className={`text-micro font-medium uppercase tracking-wider block mb-1.5 ${iconColor}`}>
         {label}
       </span>
       <div className="space-y-1">
@@ -545,7 +545,7 @@ function DealDrawer({
       {/* Drawer */}
       <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#d6d6d6] bg-white overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-[#d6d6d6] bg-white/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
+        <div className="sticky top-0 z-10 border-b border-[#d6d6d6] bg-white px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -606,9 +606,9 @@ function DealDrawer({
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-6 lg:p-8 space-y-5 lg:space-y-6">
+        <div className="p-4 sm:p-5 lg:p-6 space-y-4 lg:space-y-5">
           {/* Compact parties + economics bar */}
-          <div className="glass-card p-4 space-y-3">
+          <div className="bg-white border border-[#d6d6d6] p-3 space-y-2.5">
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Buyer</span>
@@ -814,11 +814,11 @@ export function DealDatabase() {
   }, [filteredDeals, selectedDeal]);
 
   return (
-    <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-4 sm:py-6">
+    <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-3 sm:py-4">
       <DatabaseTiles counts={{ deals: deals.length, funds: fundsData.length, portfolio: portcosData.length }} />
 
       {/* Breadcrumb */}
-      <div className="flex items-center gap-1.5 mt-2 mb-1">
+      <div className="flex items-center gap-1.5 mt-1.5 mb-1">
         <span className="text-[10px] text-[#999] uppercase tracking-[0.06em]">Data</span>
         <span className="text-[10px] text-[#ccc]">/</span>
         <span className="text-[10px] text-[#1a1a1a] font-semibold uppercase tracking-[0.06em]">Deals</span>

@@ -59,7 +59,7 @@ export function MultiSelectDropdown({
           <div
             role="listbox"
             aria-label={`${label} options`}
-            className="absolute top-full left-0 mt-0 w-56 max-h-56 overflow-y-auto border border-[#d6d6d6] bg-white shadow-md"
+            className="absolute top-full left-0 mt-0 w-56 max-h-56 overflow-y-auto border border-[#d6d6d6] bg-white"
             style={{ zIndex: 9999 }}
           >
             {options.map((option) => {

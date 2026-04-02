@@ -82,7 +82,7 @@ function PortCoFilterBar({
   return (
     <div className="mb-2 space-y-3">
       <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[240px] z-30 flex-wrap">
-        <div className="border-r border-[#d6d6d6] px-2.5 py-1.5 flex items-center gap-2 flex-1 max-w-xs">
+        <div className="border-r border-[#d6d6d6] px-2.5 py-2 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
             type="text"
@@ -93,7 +93,7 @@ function PortCoFilterBar({
             className="w-full bg-transparent text-xs text-[#1a1a1a] placeholder:text-[#999999] focus:outline-none"
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-1.5 flex items-center">
+        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Sector"
             options={PORTCO_SECTORS}
@@ -102,7 +102,7 @@ function PortCoFilterBar({
             getColor={(v) => getPortCoSectorColor(v as PortCoSector)}
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-1.5 flex items-center">
+        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Region"
             options={PORTCO_REGIONS}
@@ -111,7 +111,7 @@ function PortCoFilterBar({
             getColor={(v) => getPortCoRegionColor(v as PortCoRegion)}
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-1.5 flex items-center">
+        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Country"
             options={countryOptions}
@@ -120,7 +120,7 @@ function PortCoFilterBar({
             getColor={() => "#06b6d4"}
           />
         </div>
-        <div className="border-r border-[#d6d6d6] px-2 py-1.5 flex items-center">
+        <div className="border-r border-[#d6d6d6] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Investment Firm"
             options={firmOptions}
@@ -129,7 +129,7 @@ function PortCoFilterBar({
             getColor={() => "#a78bfa"}
           />
         </div>
-        <div className="px-2 py-1.5 flex items-center">
+        <div className="px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Status"
             options={PORTCO_STATUSES}
@@ -260,7 +260,7 @@ function PortCoInsightsHero({ companies }: { companies: PortCo[] }) {
 
   if (companies.length === 0) {
     return (
-      <div className="rounded-none border border-[#d6d6d6] bg-white p-6 text-center">
+      <div className="border border-[#d6d6d6] bg-white p-6 text-center">
         <p className="text-sm-dense text-[#999999]">
           No portfolio companies match your current filters. Try broadening your search.
         </p>
@@ -269,22 +269,22 @@ function PortCoInsightsHero({ companies }: { companies: PortCo[] }) {
   }
 
   return (
-    <div className="rounded-none border border-[#d6d6d6] bg-white overflow-hidden">
-      <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-2">
-        <p className="text-xs-dense text-[#999999]">
-          <span className="mono text-[#1a1a1a] font-medium">{companies.length}</span> portfolio companies
+    <div className="border border-[#d6d6d6] bg-white overflow-hidden">
+      <div className="px-3 sm:px-4 pt-3 pb-1.5 border-b border-[#e8e8e8]">
+        <p className="text-[11px] text-[#999999]">
+          <span className="font-mono text-[#1a1a1a] font-medium tabular-nums">{companies.length}</span> portfolio companies
           {" · "}
-          <span className="mono text-[#1a1a1a] font-medium">
+          <span className="font-mono text-[#1a1a1a] font-medium tabular-nums">
             {new Set(companies.map((c) => c.investmentFirm)).size}
           </span> investment firms
           {" · "}
-          <span className="mono text-[#1a1a1a] font-medium">
+          <span className="font-mono text-[#1a1a1a] font-medium tabular-nums">
             {new Set(companies.map((c) => c.country)).size}
           </span> countries
         </p>
       </div>
-      <div className="p-4 sm:p-5">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+      <div className="p-3 sm:p-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
           <RankingColumn title="Top Sectors" rows={sectorRanking} />
           <RankingColumn title="Top Regions" rows={regionRanking} />
           <RankingColumn title="Top Investment Firms" rows={firmRanking} />
@@ -359,7 +359,7 @@ function PortCoDrawer({
       />
       <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#d6d6d6] bg-[#f3f3f3] overflow-y-auto animate-slide-in-right">
         {/* ── Header ── */}
-        <div className="sticky top-0 z-10 border-b border-[#d6d6d6] bg-white/95 backdrop-blur-md relative overflow-hidden">
+        <div className="sticky top-0 z-10 border-b border-[#d6d6d6] bg-white relative overflow-hidden">
           {/* Accent bar */}
           <div
             className="absolute top-0 left-0 right-0 h-[2px]"
@@ -416,7 +416,7 @@ function PortCoDrawer({
         </div>
 
         {/* ── Content ── */}
-        <div className="p-4 sm:p-6 lg:p-8 space-y-6 lg:space-y-8">
+        <div className="p-4 sm:p-5 lg:p-6 space-y-4 lg:space-y-5">
 
           {/* §1 — Company Details */}
           <section>
@@ -426,7 +426,7 @@ function PortCoDrawer({
                 Investment Details
               </span>
             </div>
-            <div className="glass-card divide-y divide-[#d6d6d6]">
+            <div className="bg-white border border-[#d6d6d6] divide-y divide-[#e8e8e8]">
               {detailRows.map((row) => (
                 <div
                   key={row.label}
@@ -438,7 +438,7 @@ function PortCoDrawer({
                       {row.badges.map((s) => (
                         <span
                           key={s}
-                          className="text-[10px] font-medium px-1.5 py-0 rounded-none"
+                          className="text-[10px] font-medium px-1.5 py-0"
                           style={{
                             color: "#444444",
                             backgroundColor: `${getStrategyColor(s)}08`,
@@ -551,7 +551,7 @@ function PortCoDrawer({
                             {m.date}
                           </span>
                           <span
-                            className="text-[10px] font-medium px-1.5 py-0 rounded-none shrink-0"
+                            className="text-[10px] font-medium px-1.5 py-0 shrink-0"
                             style={{
                               color: isInvestmentMilestone ? "#008253" : "#444444",
                               backgroundColor: isInvestmentMilestone ? "#00825308" : `${getMilestoneCategoryColor(m.category)}08`,
@@ -600,7 +600,7 @@ function PortCoDrawer({
                 }`}
               >
                 {cSuiteManagement.map((exec, i) => (
-                  <div key={i} className="glass-card px-4 py-3">
+                  <div key={i} className="bg-white border border-[#e8e8e8] px-3 py-2.5">
                     <span className="text-sm-dense text-[#1a1a1a] font-medium block leading-snug">
                       {exec.name}
                     </span>
@@ -630,7 +630,7 @@ function PortCoCard({
   return (
     <button
       onClick={() => onSelect(company)}
-      className="w-full text-left glass-card p-4 transition-colors hover:bg-[#f7f7f5] active:bg-[#f0f0ee]"
+      className="w-full text-left bg-white border border-[#e8e8e8] p-3 transition-colors hover:bg-[#f7f7f5] active:bg-[#f0f0ee]"
     >
       <div className="flex items-center justify-between mb-1.5">
         <h4 className="text-sm-dense font-medium text-[#1a1a1a] leading-snug tracking-tight truncate pr-2">
@@ -639,7 +639,7 @@ function PortCoCard({
       </div>
       <div className="flex flex-wrap gap-1.5 mb-1.5">
         <span
-          className="text-[10px] font-medium px-1.5 py-0 rounded-none"
+          className="text-[10px] font-medium px-1.5 py-0"
           style={{
             color: "#444444",
             backgroundColor: `${getPortCoSectorColor(company.sector)}08`,
@@ -649,12 +649,12 @@ function PortCoCard({
           {company.sector}
         </span>
         {company.subsector && (
-          <span className="text-[10px] font-medium px-1.5 py-0 rounded-none" style={{ color: "#444444", backgroundColor: "rgba(251,191,36,0.03)", border: "1px solid rgba(251,191,36,0.07)" }}>
+          <span className="text-[10px] font-medium px-1.5 py-0" style={{ color: "#444444", backgroundColor: "rgba(251,191,36,0.03)", border: "1px solid rgba(251,191,36,0.07)" }}>
             {company.subsector}
           </span>
         )}
         <span
-          className="text-[10px] font-medium px-1.5 py-0 rounded-none"
+          className="text-[10px] font-medium px-1.5 py-0"
           style={{
             color: "#444444",
             backgroundColor: `${getPortCoStatusColor(company.status)}08`,
@@ -761,7 +761,7 @@ function PortCoTable({
                 <tr
                   key={`${company.name}-${company.investmentFirm}-${i}`}
                   onClick={() => onSelect(company)}
-                  className="border-b border-[#f0f0f0] hover:bg-[#fafafa] cursor-pointer transition-colors group"
+                  className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-colors group"
                 >
                   <td className="px-2.5 py-[4px] max-w-[260px]">
                     <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate">
@@ -870,11 +870,11 @@ export function PortfolioDatabase() {
   ]);
 
   return (
-    <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-4 sm:py-6">
+    <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-3 sm:py-4">
       <DatabaseTiles counts={{ deals: dealsData.length, funds: funds.length, portfolio: portcos.length }} />
 
       {/* Breadcrumb */}
-      <div className="flex items-center gap-1.5 mt-2 mb-1">
+      <div className="flex items-center gap-1.5 mt-1.5 mb-1">
         <span className="text-[10px] text-[#999] uppercase tracking-[0.06em]">Data</span>
         <span className="text-[10px] text-[#ccc]">/</span>
         <span className="text-[10px] text-[#1a1a1a] font-semibold uppercase tracking-[0.06em]">Portfolio companies</span>
