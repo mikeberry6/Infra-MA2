@@ -318,13 +318,13 @@ function FundVehicleCard({
         </h4>
       </div>
 
-      <div className="flex flex-wrap gap-1.5 mb-2">
+      <div className="flex flex-wrap items-center gap-1.5 mb-2">
         {fund.strategies.map((s) => {
           const color = getStrategyColor(s);
           return (
             <span
               key={s}
-              className="text-[10px] font-medium px-1.5 py-0"
+              className="text-[10px] font-medium px-1.5 py-0 rounded-[2px]"
               style={{
                 color: "#444444",
                 backgroundColor: `${color}08`,
@@ -335,21 +335,7 @@ function FundVehicleCard({
             </span>
           );
         })}
-        {(() => {
-          const color = getStatusColor(fund.status);
-          return (
-            <span
-              className="text-[10px] font-medium px-1.5 py-0"
-              style={{
-                color: "#444444",
-                backgroundColor: `${color}08`,
-                border: `1px solid ${color}12`,
-              }}
-            >
-              {fund.status}
-            </span>
-          );
-        })()}
+        <span className="text-[10px] text-[#555]">{fund.status}</span>
       </div>
 
       <div className="grid grid-cols-2 gap-2">
@@ -363,6 +349,94 @@ function FundVehicleCard({
         </div>
       </div>
     </button>
+  );
+}
+
+// ─── Shared column config ──────────────────────────────────
+
+const TABLE_COL_WIDTHS = ["36%", "22%", "16%", "12%", "14%"] as const;
+const TABLE_HEADERS = ["Fund Vehicle", "Strategy", "Size", "Vintage", "Status"] as const;
+
+function FundTableColGroup() {
+  return (
+    <colgroup>
+      {TABLE_COL_WIDTHS.map((w, i) => (
+        <col key={i} style={{ width: w }} />
+      ))}
+    </colgroup>
+  );
+}
+
+function FundTableHead({ sticky = false }: { sticky?: boolean }) {
+  return (
+    <thead className={sticky ? "sticky top-[60px] sm:top-[124px] z-20" : ""}>
+      <tr className="bg-[#e8e8e6] border-b border-[#c8c8c8]">
+        {TABLE_HEADERS.map((label, i) => (
+          <th
+            key={label}
+            className={`px-3 py-[7px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.06em] select-none ${
+              i >= 2 ? "text-right" : "text-left"
+            }`}
+          >
+            {label}
+          </th>
+        ))}
+      </tr>
+    </thead>
+  );
+}
+
+function FundRow({
+  fund,
+  onSelect,
+  isLast,
+}: {
+  fund: Fund;
+  onSelect: (fund: Fund) => void;
+  isLast?: boolean;
+}) {
+  return (
+    <tr
+      onClick={() => onSelect(fund)}
+      className={`bg-white hover:bg-[#f7f7f5] cursor-pointer transition-colors group ${
+        isLast ? "border-b-[1.5px] border-[#c8c8c8]" : "border-b border-[#e8e8e8]"
+      }`}
+    >
+      <td className="px-3 py-[8px]">
+        <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate block">
+          {fund.fundName}
+        </span>
+      </td>
+      <td className="px-3 py-[8px]">
+        <div className="flex items-center gap-1 flex-wrap">
+          {fund.strategies.map((s) => {
+            const color = getStrategyColor(s);
+            return (
+              <span
+                key={s}
+                className="text-[10px] font-medium px-1.5 py-0 rounded-[2px]"
+                style={{
+                  color: "#444444",
+                  backgroundColor: `${color}08`,
+                  border: `1px solid ${color}12`,
+                }}
+              >
+                {s}
+              </span>
+            );
+          })}
+        </div>
+      </td>
+      <td className="px-3 py-[8px] text-right">
+        <span className="font-mono text-[11px] text-[#1a1a1a] tabular-nums">{fund.size}</span>
+      </td>
+      <td className="px-3 py-[8px] text-right">
+        <span className="font-mono text-[11px] text-[#6d6d6d] tabular-nums">{fund.vintage}</span>
+      </td>
+      <td className="px-3 py-[8px] text-right">
+        <span className="text-[11px] text-[#555]">{fund.status}</span>
+      </td>
+    </tr>
   );
 }
 
@@ -393,81 +467,58 @@ function ManagerGroupedTable({
 
   return (
     <>
-      {/* Desktop: card-based layout */}
-      <div className="hidden md:block space-y-3">
-        {sortedManagers.map(([managerName, managerFunds]) => {
-          const isCollapsed = collapsed.has(managerName);
-          return (
-            <div key={managerName} className="bg-white border border-black/[0.08] shadow-card">
-              {/* Firm header */}
-              <button
-                onClick={() => toggle(managerName)}
-                className="w-full flex items-center gap-2 px-4 py-3 text-left hover:bg-[#fafafa] transition-colors border-b border-[#e8e8e8]"
-              >
-                <ChevronRight
-                  className={`h-3.5 w-3.5 text-[#888] shrink-0 transition-transform ${
-                    !isCollapsed ? "rotate-90" : ""
-                  }`}
-                />
-                <span className="text-[13px] font-heading font-bold text-[#1a1a1a] tracking-[0.01em]">
-                  {managerName}
-                </span>
-                <span className="text-[10px] text-[#999] font-normal">
-                  {managerFunds.length} vehicle{managerFunds.length !== 1 ? "s" : ""}
-                </span>
-              </button>
-              {/* Fund sub-cards */}
-              {!isCollapsed && (
-                <div className="p-3 space-y-2">
-                  {managerFunds.map((fund) => (
-                    <button
-                      key={fund.id}
-                      onClick={() => onSelectFund(fund)}
-                      className="w-full text-left bg-[#fafafa] border border-black/[0.06] rounded-[4px] px-4 py-3 hover:bg-[#f3f3f3] hover:border-black/[0.10] transition-all group"
-                    >
-                      <div className="flex items-center justify-between gap-4">
-                        <div className="flex-1 min-w-0">
-                          <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate block">
-                            {fund.fundName}
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-3 shrink-0">
-                          <div className="flex items-center gap-1">
-                            {fund.strategies.map((s) => {
-                              const color = getStrategyColor(s);
-                              return (
-                                <span
-                                  key={s}
-                                  className="text-[10px] font-medium px-1.5 py-0.5 rounded-[3px]"
-                                  style={{
-                                    color,
-                                    backgroundColor: `${color}12`,
-                                    border: `1px solid ${color}20`,
-                                  }}
-                                >
-                                  {s}
-                                </span>
-                              );
-                            })}
-                          </div>
-                          <span className="font-mono text-[11px] text-[#1a1a1a] tabular-nums w-[70px] text-right">
-                            {fund.size}
-                          </span>
-                          <span className="font-mono text-[11px] text-[#6d6d6d] tabular-nums w-[40px] text-right">
-                            {fund.vintage}
-                          </span>
-                          <span className="text-[11px] text-[#6d6d6d] w-[80px]">
-                            {fund.status}
-                          </span>
-                        </div>
+      {/* Desktop: grouped table */}
+      <div className="hidden md:block overflow-x-auto">
+        <table className="w-full text-left text-sm-dense border-collapse table-fixed">
+          <FundTableColGroup />
+          <FundTableHead />
+          <tbody>
+            {sortedManagers.map(([managerName, managerFunds], groupIdx) => {
+              const isCollapsed = collapsed.has(managerName);
+              return (
+                <Fragment key={managerName}>
+                  {/* Group spacer */}
+                  {groupIdx > 0 && (
+                    <tr>
+                      <td colSpan={5} className="h-[10px] bg-[#f3f3f3] border-0 p-0" />
+                    </tr>
+                  )}
+                  {/* Firm divider row */}
+                  <tr
+                    onClick={() => toggle(managerName)}
+                    className="bg-[#efefef] border-t-[1.5px] border-t-[#c8c8c8] border-b border-b-[#d6d6d6] cursor-pointer hover:bg-[#e8e8e6] transition-colors select-none"
+                  >
+                    <td colSpan={5} className="px-3 py-0">
+                      <div className="flex items-center gap-2 h-[46px]">
+                        <ChevronRight
+                          className={`h-3.5 w-3.5 text-[#888] shrink-0 transition-transform ${
+                            !isCollapsed ? "rotate-90" : ""
+                          }`}
+                        />
+                        <span className="text-[13px] font-heading font-bold text-[#1a1a1a] tracking-[0.01em]">
+                          {managerName}
+                        </span>
+                        <span className="text-[10px] text-[#999] font-normal">
+                          {managerFunds.length} vehicle{managerFunds.length !== 1 ? "s" : ""}
+                        </span>
                       </div>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          );
-        })}
+                    </td>
+                  </tr>
+                  {/* Fund rows */}
+                  {!isCollapsed &&
+                    managerFunds.map((fund, i) => (
+                      <FundRow
+                        key={fund.id}
+                        fund={fund}
+                        onSelect={onSelectFund}
+                        isLast={i === managerFunds.length - 1}
+                      />
+                    ))}
+                </Fragment>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
 
       {/* Mobile: card-based layout per manager */}
@@ -516,7 +567,7 @@ function AllFundsTable({
   funds: Fund[];
   onSelectFund: (fund: Fund) => void;
 }) {
-  const [sortField, setSortField] = useState<"name" | "manager" | "strategy" | "size" | "vintage">("manager");
+  const [sortField, setSortField] = useState<"name" | "strategy" | "size" | "vintage">("name");
   const [sortAsc, setSortAsc] = useState(true);
 
   const sorted = useMemo(() => {
@@ -525,7 +576,6 @@ function AllFundsTable({
       let cmp = 0;
       switch (sortField) {
         case "name": cmp = a.fundName.localeCompare(b.fundName); break;
-        case "manager": cmp = a.managerName.localeCompare(b.managerName) || a.fundName.localeCompare(b.fundName); break;
         case "strategy": cmp = (a.strategies[0] ?? "").localeCompare(b.strategies[0] ?? ""); break;
         case "size": cmp = (a.sizeUsdMm ?? 0) - (b.sizeUsdMm ?? 0); break;
         case "vintage": cmp = a.vintage.localeCompare(b.vintage); break;
@@ -544,18 +594,6 @@ function AllFundsTable({
     }
   };
 
-  const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
-    <th
-      className="text-left px-2.5 py-[6px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.05em] cursor-pointer hover:text-[#1a1a1a] transition-colors select-none"
-      onClick={() => toggleSort(field)}
-    >
-      {label}
-      {sortField === field && (
-        <span className="ml-1 text-[#008253]">{sortAsc ? "↑" : "↓"}</span>
-      )}
-    </th>
-  );
-
   if (displayFunds.length === 0) {
     return (
       <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999]">
@@ -564,81 +602,46 @@ function AllFundsTable({
     );
   }
 
+  const sortableFields: { field: typeof sortField; label: string; idx: number }[] = [
+    { field: "name", label: "Fund Vehicle", idx: 0 },
+    { field: "strategy", label: "Strategy", idx: 1 },
+    { field: "size", label: "Size", idx: 2 },
+    { field: "vintage", label: "Vintage", idx: 3 },
+  ];
+
   return (
     <>
       {/* Desktop table */}
-      <div className="hidden md:block">
-        <div className="overflow-x-auto">
+      <div className="hidden md:block overflow-x-auto">
         <table className="w-full text-left text-sm-dense border-collapse table-fixed">
-          <colgroup>
-            <col className="w-[26%]" />
-            <col className="w-[17%]" />
-            <col className="w-[20%]" />
-            <col className="w-[13%]" />
-            <col className="w-[8%]" />
-            <col className="w-[16%]" />
-          </colgroup>
+          <FundTableColGroup />
           <thead>
-            <tr className="bg-[#e8e8e6] border-b border-[#d0d0d0]">
-              <SortHeader field="name" label="Fund Vehicle" />
-              <SortHeader field="manager" label="Manager" />
-              <SortHeader field="strategy" label="Strategy" />
-              <SortHeader field="size" label="Size" />
-              <SortHeader field="vintage" label="Vintage" />
-              <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
+            <tr className="bg-[#e8e8e6] border-b border-[#c8c8c8]">
+              {sortableFields.map(({ field, label, idx }) => (
+                <th
+                  key={field}
+                  className={`px-3 py-[7px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.06em] cursor-pointer hover:text-[#1a1a1a] transition-colors select-none ${
+                    idx >= 2 ? "text-right" : "text-left"
+                  }`}
+                  onClick={() => toggleSort(field)}
+                >
+                  {label}
+                  {sortField === field && (
+                    <span className="ml-1 text-[#008253]">{sortAsc ? "↑" : "↓"}</span>
+                  )}
+                </th>
+              ))}
+              <th className="px-3 py-[7px] text-[10px] font-heading font-bold text-[#333] uppercase tracking-[0.06em] text-right select-none">
                 Status
               </th>
             </tr>
           </thead>
           <tbody>
             {sorted.map((fund) => (
-              <tr
-                key={fund.id}
-                onClick={() => onSelectFund(fund)}
-                className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-all group"
-              >
-                <td className="px-2.5 py-[4px] overflow-hidden">
-                  <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate">
-                    {fund.fundName}
-                  </span>
-                </td>
-                <td className="px-2.5 py-[4px] overflow-hidden">
-                  <span className="text-[11px] text-[#555] truncate block">{fund.managerName}</span>
-                </td>
-                <td className="px-2.5 py-[4px]">
-                  <div className="flex items-center gap-1 flex-wrap">
-                    {fund.strategies.map((s) => {
-                      const color = getStrategyColor(s);
-                      return (
-                        <span
-                          key={s}
-                          className="text-[10px] font-medium px-1.5 py-0.5 rounded-[3px]"
-                          style={{
-                            color,
-                            backgroundColor: `${color}12`,
-                            border: `1px solid ${color}20`,
-                          }}
-                        >
-                          {s}
-                        </span>
-                      );
-                    })}
-                  </div>
-                </td>
-                <td className="px-2.5 py-[4px]">
-                  <span className="text-[11px] text-[#555]">{fund.size}</span>
-                </td>
-                <td className="px-2.5 py-[4px]">
-                  <span className="font-mono text-[11px] text-[#555]">{fund.vintage}</span>
-                </td>
-                <td className="px-2.5 py-[4px]">
-                  <span className="text-[11px] text-[#555]">{fund.status}</span>
-                </td>
-              </tr>
+              <FundRow key={fund.id} fund={fund} onSelect={onSelectFund} />
             ))}
           </tbody>
         </table>
-        </div>
       </div>
 
       {/* Mobile cards */}
