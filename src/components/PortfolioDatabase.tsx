@@ -380,17 +380,17 @@ function PortCoDrawer({
         </div>
 
         {/* ── Content ── */}
-        <div className="p-4 sm:p-5 lg:p-6 space-y-4 lg:space-y-5">
+        <div className="p-4 sm:p-5 lg:p-6 space-y-3 lg:space-y-4">
 
-          {/* §1 — Company Details */}
-          <section>
-            <div className="flex items-center gap-2 mb-3">
+          {/* §1 — Investment Details */}
+          <section className="glass-card rounded-[4px] overflow-hidden">
+            <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
               <Briefcase className="h-3.5 w-3.5 text-[#008253]" />
-              <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider">
+              <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
                 Investment Details
               </span>
             </div>
-            <div className="bg-white border border-black/[0.08] divide-y divide-[#e8e8e8]">
+            <div className="divide-y divide-[#e8e8e8]">
               {detailRows.map((row) => (
                 <div
                   key={row.label}
@@ -431,148 +431,167 @@ function PortCoDrawer({
 
           {/* §2 — Company Overview / Description */}
           {company.description && (
-            <section className="border-t border-black/[0.08] pt-6">
-              <div className="flex items-center gap-2 mb-3">
+            <section className="glass-card rounded-[4px] overflow-hidden">
+              <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
                 <FileText className="h-3.5 w-3.5 text-[#008253]" />
-                <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider">
+                <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
                   Company Overview
                 </span>
               </div>
-              <p className="text-sm-dense text-[#6e6e6e] leading-relaxed">
-                {company.description}
-              </p>
+              <div className="px-4 py-4">
+                <p className="text-sm-dense text-[#6e6e6e] leading-relaxed">
+                  {company.description}
+                </p>
 
-              {/* Sources */}
-              {sources.length > 0 && (
-                <div className="mt-4 bg-[#f3f3f3] border border-[#e5e5e5] px-4 py-3">
-                  <span className="text-micro font-medium text-[#999999] uppercase tracking-wider block mb-2">
-                    Sources
-                  </span>
-                  <div className="space-y-1.5">
-                    {sources.map((s, i) => (
-                      <a
-                        key={i}
-                        href={s.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 group"
-                      >
-                        <ExternalLink className="h-3 w-3 text-[#c4c4c4] group-hover:text-[#008253] transition-colors shrink-0" />
-                        <span className="text-micro text-[#999999] group-hover:text-[#008253] transition-colors truncate">
-                          {s.label}
-                        </span>
-                      </a>
-                    ))}
+                {/* Sources */}
+                {sources.length > 0 && (
+                  <div className="mt-4 bg-[#fafaf9] border border-[#e5e5e5] rounded-[3px] px-4 py-3">
+                    <span className="text-micro font-medium text-[#999999] uppercase tracking-wider block mb-2">
+                      Sources
+                    </span>
+                    <div className="space-y-1.5">
+                      {sources.map((s, i) => (
+                        <a
+                          key={i}
+                          href={s.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 group"
+                        >
+                          <ExternalLink className="h-3 w-3 text-[#c4c4c4] group-hover:text-[#008253] transition-colors shrink-0" />
+                          <span className="text-micro text-[#999999] group-hover:text-[#008253] transition-colors truncate">
+                            {s.label}
+                          </span>
+                        </a>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </section>
           )}
 
           {/* §3 — Historical Milestones */}
           {milestones.length > 0 && (
-            <section className="border-t border-black/[0.08] pt-6">
-              <div className="flex items-center gap-2 mb-3">
+            <section className="glass-card rounded-[4px] overflow-hidden">
+              <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
                 <Clock className="h-3.5 w-3.5 text-[#008253]" />
-                <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider">
+                <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
                   Historical Milestones
                 </span>
+                <span className="text-micro text-[#999999] ml-auto">{milestones.length}</span>
               </div>
-              <div className="relative ml-2">
-                <div className="absolute left-[5px] top-1 bottom-1 w-px bg-[#d6d6d6]" />
-                <div className="space-y-3">
-                  {visibleMilestones.map((m, i) => {
-                    const mentionsFirm = m.event.toLowerCase().includes(company.investmentFirm.toLowerCase().split(" ")[0]);
-                    const isInvestmentMilestone = company.investmentYear
-                      ? m.date.includes(String(company.investmentYear)) &&
-                        (m.category === "Financing" || mentionsFirm)
-                      : false;
-                    return (
-                    <div
-                      key={i}
-                      className={`flex items-start gap-3 relative ${
-                        isInvestmentMilestone
-                          ? "bg-[#008253]/[0.06] -mx-2 px-2 py-2 border border-[#008253]/20"
-                          : ""
-                      }`}
-                    >
+              <div className="px-4 py-4">
+                <div className="relative ml-2">
+                  <div className="absolute left-[5px] top-1 bottom-1 w-px bg-[#d6d6d6]" />
+                  <div className="space-y-3">
+                    {visibleMilestones.map((m, i) => {
+                      const mentionsFirm = m.event.toLowerCase().includes(company.investmentFirm.toLowerCase().split(" ")[0]);
+                      const isInvestmentMilestone = company.investmentYear
+                        ? m.date.includes(String(company.investmentYear)) &&
+                          (m.category === "Financing" || mentionsFirm)
+                        : false;
+                      return (
                       <div
-                        className={`relative z-10 mt-1.5 shrink-0 border-2 ${
+                        key={i}
+                        className={`flex items-start gap-3 relative ${
                           isInvestmentMilestone
-                            ? "h-[13px] w-[13px] rounded-full"
-                            : "h-[11px] w-[11px] rounded-full"
+                            ? "bg-[#008253]/[0.06] -mx-4 px-4 py-2 border border-[#008253]/20 rounded-[3px]"
+                            : ""
                         }`}
-                        style={{
-                          borderColor: isInvestmentMilestone ? "#008253" : getMilestoneCategoryColor(m.category),
-                          backgroundColor: isInvestmentMilestone ? "#00825333" : `${getMilestoneCategoryColor(m.category)}33`,
-                        }}
-                      />
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-baseline gap-2 flex-wrap">
-                          <span className={`text-micro font-medium shrink-0 tabular-nums ${
-                            isInvestmentMilestone ? "text-[#008253]" : "text-[#999999]"
+                      >
+                        <div
+                          className={`relative z-10 mt-1.5 shrink-0 border-2 ${
+                            isInvestmentMilestone
+                              ? "h-[13px] w-[13px] rounded-full"
+                              : "h-[11px] w-[11px] rounded-full"
+                          }`}
+                          style={{
+                            borderColor: isInvestmentMilestone ? "#008253" : getMilestoneCategoryColor(m.category),
+                            backgroundColor: isInvestmentMilestone ? "#00825333" : `${getMilestoneCategoryColor(m.category)}33`,
+                          }}
+                        />
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-baseline gap-2 flex-wrap">
+                            <span className={`text-micro font-medium shrink-0 tabular-nums ${
+                              isInvestmentMilestone ? "text-[#008253]" : "text-[#999999]"
+                            }`}>
+                              {m.date}
+                            </span>
+                            <span
+                              className="text-[10px] font-medium px-1.5 py-0 shrink-0"
+                              style={{
+                                color: isInvestmentMilestone ? "#008253" : "#444444",
+                                backgroundColor: isInvestmentMilestone ? "#00825308" : `${getMilestoneCategoryColor(m.category)}08`,
+                                border: isInvestmentMilestone ? "1px solid #00825312" : `1px solid ${getMilestoneCategoryColor(m.category)}12`,
+                              }}
+                            >
+                              {isInvestmentMilestone ? "Investment" : m.category}
+                            </span>
+                          </div>
+                          <p className={`text-sm-dense mt-0.5 leading-relaxed ${
+                            isInvestmentMilestone ? "text-[#1a1a1a]" : "text-[#6e6e6e]"
                           }`}>
-                            {m.date}
-                          </span>
-                          <span
-                            className="text-[10px] font-medium px-1.5 py-0 shrink-0"
-                            style={{
-                              color: isInvestmentMilestone ? "#008253" : "#444444",
-                              backgroundColor: isInvestmentMilestone ? "#00825308" : `${getMilestoneCategoryColor(m.category)}08`,
-                              border: isInvestmentMilestone ? "1px solid #00825312" : `1px solid ${getMilestoneCategoryColor(m.category)}12`,
-                            }}
-                          >
-                            {isInvestmentMilestone ? "Investment" : m.category}
-                          </span>
+                            {m.event}
+                          </p>
                         </div>
-                        <p className={`text-sm-dense mt-0.5 leading-relaxed ${
-                          isInvestmentMilestone ? "text-[#1a1a1a]" : "text-[#6e6e6e]"
-                        }`}>
-                          {m.event}
-                        </p>
                       </div>
-                    </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
+                {milestones.length > 6 && (
+                  <button
+                    onClick={() => setShowAllMilestones(!showAllMilestones)}
+                    className="mt-3 ml-2 text-micro text-[#008253] hover:text-[#a5b4fc] transition-colors"
+                  >
+                    {showAllMilestones
+                      ? "Show less"
+                      : `Show all ${milestones.length} milestones`}
+                  </button>
+                )}
               </div>
-              {milestones.length > 6 && (
-                <button
-                  onClick={() => setShowAllMilestones(!showAllMilestones)}
-                  className="mt-3 ml-2 text-micro text-[#008253] hover:text-[#a5b4fc] transition-colors"
-                >
-                  {showAllMilestones
-                    ? "Show less"
-                    : `Show all ${milestones.length} milestones`}
-                </button>
-              )}
             </section>
           )}
 
           {/* §4 — Key Management (C-Suite + President only) */}
           {cSuiteManagement.length > 0 && (
-            <section className="border-t border-black/[0.08] pt-6">
-              <div className="flex items-center gap-2 mb-3">
+            <section className="glass-card rounded-[4px] overflow-hidden">
+              <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
                 <Users className="h-3.5 w-3.5 text-[#008253]" />
-                <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider">
+                <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
                   Key Management
                 </span>
               </div>
-              <div
-                className={`grid gap-2 ${
-                  cSuiteManagement.length === 1 ? "grid-cols-1" : "grid-cols-2"
-                }`}
-              >
-                {cSuiteManagement.map((exec, i) => (
-                  <div key={i} className="bg-white border border-[#e8e8e8] px-3 py-2.5">
-                    <span className="text-sm-dense text-[#1a1a1a] font-medium block leading-snug">
-                      {exec.name}
-                    </span>
-                    <span className="text-micro text-[#999999] block mt-0.5">
-                      {exec.title}
-                    </span>
-                  </div>
-                ))}
+              <div className="px-4 py-4">
+                <div
+                  className={`grid gap-2.5 ${
+                    cSuiteManagement.length === 1 ? "grid-cols-1" : "grid-cols-2"
+                  }`}
+                >
+                  {cSuiteManagement.map((exec, i) => (
+                    <div key={i} className="flex items-start gap-3 bg-[#fafaf9] border border-[#e8e8e8] rounded-[3px] px-3 py-2.5">
+                      <div
+                        className="shrink-0 h-8 w-8 rounded-full flex items-center justify-center text-[11px] font-semibold"
+                        style={{
+                          backgroundColor: `${sectorColor}10`,
+                          color: sectorColor,
+                          border: `1px solid ${sectorColor}20`,
+                        }}
+                      >
+                        {exec.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                      </div>
+                      <div className="min-w-0">
+                        <span className="text-sm-dense text-[#1a1a1a] font-medium block leading-snug">
+                          {exec.name}
+                        </span>
+                        <span className="text-micro text-[#999999] block mt-0.5">
+                          {exec.title}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </section>
           )}
