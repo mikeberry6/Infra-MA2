@@ -35,6 +35,9 @@ import {
   ExternalLink,
   Download,
   Mail,
+  FileText,
+  Layers,
+  Link2,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useFilterToggle } from "@/hooks/useFilterToggle";
@@ -710,11 +713,26 @@ function FundDrawer({
         className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[#d6d6d6] bg-[#f3f3f3] overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-black/[0.08] shadow-2xl bg-[#f3f3f3] overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-[#d6d6d6] bg-white px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0">
+        <div className="sticky top-0 z-10 border-b border-black/[0.08] bg-white relative overflow-hidden">
+          {/* Accent bar */}
+          <div
+            className="absolute top-0 left-0 right-0 h-[2px]"
+            style={{
+              background: `linear-gradient(90deg, ${fund.strategies.length > 0 ? getStrategyColor(fund.strategies[0]) : '#008253'} 0%, transparent 100%)`,
+            }}
+          />
+
+          <div className="relative px-4 sm:px-6 lg:px-8 py-5 lg:py-6">
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-3 sm:right-5 p-2 text-[#999999] hover:text-[#1a1a1a] hover:bg-[#f0f0ee] transition-colors"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <div className="pr-10">
               <div className="flex items-center gap-2 mb-1 flex-wrap">
                 <span className="text-xs-dense text-[#999999]">{fund.managerName}</span>
                 {fund.ticker && (
@@ -723,25 +741,25 @@ function FundDrawer({
                   </span>
                 )}
               </div>
-              <h2 className="font-heading text-base sm:text-lg font-semibold text-[#1a1a1a] leading-tight tracking-tight">
+              <h2 className="font-heading text-xl lg:text-2xl font-bold text-[#1a1a1a] leading-tight tracking-tight">
                 {fund.fundName}
               </h2>
             </div>
-            <button
-              onClick={onClose}
-              className="p-2 text-[#999999] hover:text-[#1a1a1a] hover:bg-[#f0f0ee] transition-colors shrink-0"
-            >
-              <X className="h-5 w-5" />
-            </button>
           </div>
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-5 lg:p-6 space-y-4 lg:space-y-5">
+        <div className="p-4 sm:p-5 lg:p-6 space-y-3 lg:space-y-4">
           {/* Fund overview */}
-          <div className="bg-white border border-[#d6d6d6] overflow-hidden">
+          <section className="glass-card rounded-[4px] overflow-hidden">
+            <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
+              <Briefcase className="h-3.5 w-3.5 text-[#008253]" />
+              <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
+                Fund Overview
+              </span>
+            </div>
             {/* Classification tags */}
-            <div className="px-3 py-2.5">
+            <div className="px-4 py-3">
               <div className="flex items-center gap-1.5 flex-wrap">
                 {fund.strategies.map((s) => {
                   const color = getStrategyColor(s);
@@ -759,7 +777,7 @@ function FundDrawer({
                     </span>
                   );
                 })}
-                <div className="h-3.5 w-px bg-[#d6d6d6]" />
+                <div className="h-3.5 w-px bg-[#e8e8e8]" />
                 <span
                   className="text-[10px] font-medium px-1.5 py-0"
                   style={{
@@ -770,7 +788,7 @@ function FundDrawer({
                 >
                   {fund.status}
                 </span>
-                <div className="h-3.5 w-px bg-[#d6d6d6]" />
+                <div className="h-3.5 w-px bg-[#e8e8e8]" />
                 <span
                   className="text-[10px] font-medium px-1.5 py-0"
                   style={{
@@ -784,9 +802,9 @@ function FundDrawer({
               </div>
             </div>
             {/* Divider */}
-            <div className="border-t border-[#d6d6d6]" />
+            <div className="border-t border-black/[0.06]" />
             {/* Metrics */}
-            <div className="px-3 py-2.5">
+            <div className="px-4 py-3">
               <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
                 <div>
                   <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Fund Size</span>
@@ -798,168 +816,189 @@ function FundDrawer({
                 </div>
               </div>
             </div>
-          </div>
+          </section>
 
           {/* Investment Strategy */}
           {fund.investmentStrategy && (
-            <div className="border-t border-[#d6d6d6] pt-4">
-              <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider block mb-2">
-                Investment Strategy
-              </span>
-              <div className="bg-white border border-[#d6d6d6] p-3">
+            <section className="glass-card rounded-[4px] overflow-hidden">
+              <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
+                <FileText className="h-3.5 w-3.5 text-[#008253]" />
+                <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
+                  Investment Strategy
+                </span>
+              </div>
+              <div className="px-4 py-4">
                 <p className="text-sm-dense text-[#6e6e6e] leading-relaxed italic">
                   {fund.investmentStrategy}
                 </p>
               </div>
-            </div>
+            </section>
           )}
 
           {/* Target Sectors */}
           {fund.sectors.length > 0 && (
-            <div className="border-t border-[#d6d6d6] pt-4">
-              <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider block mb-2">
-                Target Sectors
-              </span>
-              <div className="flex flex-wrap gap-1.5">
-                {fund.sectors.map((sector) => (
-                  <span
-                    key={sector}
-                    className="text-[10px] font-medium px-1.5 py-0"
-                    style={{
-                      color: "#444444",
-                      backgroundColor: `${getFundSectorColor(sector)}08`,
-                      border: `1px solid ${getFundSectorColor(sector)}12`,
-                    }}
-                  >
-                    {sector}
-                  </span>
-                ))}
+            <section className="glass-card rounded-[4px] overflow-hidden">
+              <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
+                <Layers className="h-3.5 w-3.5 text-[#008253]" />
+                <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
+                  Target Sectors
+                </span>
               </div>
-            </div>
+              <div className="px-4 py-4">
+                <div className="flex flex-wrap gap-1.5">
+                  {fund.sectors.map((sector) => (
+                    <span
+                      key={sector}
+                      className="text-[10px] font-medium px-1.5 py-0"
+                      style={{
+                        color: "#444444",
+                        backgroundColor: `${getFundSectorColor(sector)}08`,
+                        border: `1px solid ${getFundSectorColor(sector)}12`,
+                      }}
+                    >
+                      {sector}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </section>
           )}
 
           {/* Source URLs */}
           {fund.sourceUrls.length > 0 && (
-            <div className="border-t border-[#d6d6d6] pt-4">
-              <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider block mb-2">
-                Sources
-              </span>
-              <div className="space-y-1.5">
-                {fund.sourceUrls.map((url, i) => {
-                  let hostname = url;
-                  try { hostname = new URL(url).hostname.replace(/^www\./, ""); } catch {}
-                  return (
-                    <a
-                      key={i}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-micro text-[#999999] hover:text-[#1a1a1a] transition-colors group"
-                    >
-                      <ExternalLink className="h-3 w-3 shrink-0 text-[#c4c4c4] group-hover:text-[#6e6e6e]" />
-                      <span className="truncate">{hostname}</span>
-                    </a>
-                  );
-                })}
+            <section className="glass-card rounded-[4px] overflow-hidden">
+              <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
+                <Link2 className="h-3.5 w-3.5 text-[#008253]" />
+                <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
+                  Sources
+                </span>
               </div>
-            </div>
+              <div className="px-4 py-4">
+                <div className="space-y-1.5">
+                  {fund.sourceUrls.map((url, i) => {
+                    let hostname = url;
+                    try { hostname = new URL(url).hostname.replace(/^www\./, ""); } catch {}
+                    return (
+                      <a
+                        key={i}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-micro text-[#999999] hover:text-[#008253] transition-colors group"
+                      >
+                        <ExternalLink className="h-3 w-3 shrink-0 text-[#c4c4c4] group-hover:text-[#008253]" />
+                        <span className="truncate">{hostname}</span>
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            </section>
           )}
 
           {/* Portfolio Companies */}
           {firmPortfolio.total > 0 && (
-            <div className="border-t border-[#d6d6d6] pt-4">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider">
+            <section className="glass-card rounded-[4px] overflow-hidden">
+              <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
+                <Building2 className="h-3.5 w-3.5 text-[#008253]" />
+                <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
                   Portfolio Companies
                 </span>
-                <span className="text-micro text-[#999999]">
+                <span className="text-micro text-[#999999] ml-auto">
                   {firmPortfolio.total} {firmPortfolio.total === 1 ? "company" : "companies"}
                 </span>
               </div>
-              <div className="space-y-4">
-                {firmPortfolio.sectors.map(({ sector, subsectors, count }) => (
-                  <div key={sector}>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span
-                        className="text-[10px] font-medium px-1.5 py-0"
-                        style={{
-                          color: "#444444",
-                          backgroundColor: `${getFundSectorColor(sector)}08`,
-                          border: `1px solid ${getFundSectorColor(sector)}12`,
-                        }}
-                      >
-                        {sector}
-                      </span>
-                      <span className="text-micro text-[#999999]">{count}</span>
-                    </div>
-                    <div className="space-y-2 ml-1">
-                      {subsectors.map(({ subsector, entries }) => (
-                        <div key={subsector}>
-                          <span className="text-micro text-[#999999] uppercase tracking-wider">{subsector}</span>
-                          <div className="mt-1 space-y-1">
-                            {entries.map(({ company, fundName, strategies }) => (
-                              <div
-                                key={`${company.name}-${fundName}`}
-                                className="bg-white border border-[#e8e8e8] px-2.5 py-1.5 flex items-start justify-between gap-2"
-                              >
-                                <div className="min-w-0">
-                                  <div className="text-sm-dense text-[#1a1a1a]">{company.name}</div>
-                                  <div className="text-micro text-[#999999] mt-0.5">
-                                    {company.country}{firmFunds.length > 1 ? ` · ${fundName}` : ""}
+              <div className="px-4 py-4">
+                <div className="space-y-4">
+                  {firmPortfolio.sectors.map(({ sector, subsectors, count }) => (
+                    <div key={sector}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span
+                          className="text-[10px] font-medium px-1.5 py-0"
+                          style={{
+                            color: "#444444",
+                            backgroundColor: `${getFundSectorColor(sector)}08`,
+                            border: `1px solid ${getFundSectorColor(sector)}12`,
+                          }}
+                        >
+                          {sector}
+                        </span>
+                        <span className="text-micro text-[#999999]">{count}</span>
+                      </div>
+                      <div className="space-y-2 ml-1">
+                        {subsectors.map(({ subsector, entries }) => (
+                          <div key={subsector}>
+                            <span className="text-micro text-[#999999] uppercase tracking-wider">{subsector}</span>
+                            <div className="mt-1 space-y-1">
+                              {entries.map(({ company, fundName, strategies }) => (
+                                <div
+                                  key={`${company.name}-${fundName}`}
+                                  className="bg-[#fafaf9] border border-[#e8e8e8] rounded-[3px] px-2.5 py-1.5 flex items-start justify-between gap-2"
+                                >
+                                  <div className="min-w-0">
+                                    <div className="text-sm-dense text-[#1a1a1a]">{company.name}</div>
+                                    <div className="text-micro text-[#999999] mt-0.5">
+                                      {company.country}{firmFunds.length > 1 ? ` · ${fundName}` : ""}
+                                    </div>
+                                  </div>
+                                  <div className="flex gap-1 shrink-0 flex-wrap justify-end">
+                                    {strategies.slice(0, 1).map((s) => {
+                                      const color = getStrategyColor(s);
+                                      return (
+                                        <span
+                                          key={s}
+                                          className="text-[10px] font-medium px-1.5 py-0.5 rounded-[3px]"
+                                          style={{
+                                            color,
+                                            backgroundColor: `${color}12`,
+                                            border: `1px solid ${color}20`,
+                                          }}
+                                        >
+                                          {s}
+                                        </span>
+                                      );
+                                    })}
                                   </div>
                                 </div>
-                                <div className="flex gap-1 shrink-0 flex-wrap justify-end">
-                                  {strategies.slice(0, 1).map((s) => {
-                                    const color = getStrategyColor(s);
-                                    return (
-                                      <span
-                                        key={s}
-                                        className="text-[10px] font-medium px-1.5 py-0.5 rounded-[3px]"
-                                        style={{
-                                          color,
-                                          backgroundColor: `${color}12`,
-                                          border: `1px solid ${color}20`,
-                                        }}
-                                      >
-                                        {s}
-                                      </span>
-                                    );
-                                  })}
-                                </div>
-                              </div>
-                            ))}
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            </section>
           )}
 
           {/* Sibling funds */}
           {siblingFunds.length > 0 && (
-            <div className="border-t border-[#d6d6d6] pt-4">
-              <span className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider block mb-3">
-                Other {fund.managerName} Vehicles
-              </span>
-              <div className="space-y-2">
-                {siblingFunds.map((sib) => (
-                  <button
-                    key={sib.id}
-                    onClick={() => onSelectFund(sib)}
-                    className="w-full text-left bg-white border border-[#e8e8e8] p-2.5 hover:border-[#c4c4c4] transition-colors flex items-center justify-between gap-2"
-                  >
-                    <div className="min-w-0">
-                      <div className="text-sm-dense font-medium text-[#1a1a1a] truncate">{sib.fundName}</div>
-                      <div className="text-xs-dense text-[#999999]">{sib.size}</div>
-                    </div>
-                    <ChevronRight className="h-4 w-4 text-[#999999] shrink-0" />
-                  </button>
-                ))}
+            <section className="glass-card rounded-[4px] overflow-hidden">
+              <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
+                <ChevronRight className="h-3.5 w-3.5 text-[#008253]" />
+                <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
+                  Other {fund.managerName} Vehicles
+                </span>
               </div>
-            </div>
+              <div className="px-4 py-4">
+                <div className="space-y-2">
+                  {siblingFunds.map((sib) => (
+                    <button
+                      key={sib.id}
+                      onClick={() => onSelectFund(sib)}
+                      className="w-full text-left bg-[#fafaf9] border border-[#e8e8e8] rounded-[3px] p-2.5 hover:border-[#c4c4c4] transition-colors flex items-center justify-between gap-2"
+                    >
+                      <div className="min-w-0">
+                        <div className="text-sm-dense font-medium text-[#1a1a1a] truncate">{sib.fundName}</div>
+                        <div className="text-xs-dense text-[#999999]">{sib.size}</div>
+                      </div>
+                      <ChevronRight className="h-4 w-4 text-[#999999] shrink-0" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </section>
           )}
         </div>
       </div>
