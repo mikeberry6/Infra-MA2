@@ -27,6 +27,16 @@ const NON_INFRA_FUND_ENTITIES = new Set([
   "Exus Renewables",
   "IHS Towers",
   "TPI Composites",
+  "Claro",
+  "Taylor Farms",
+  "Abertis",
+  "VINCI Highways",
+  "Technique Solaire",
+  "Algoma Central Corporation",
+  "Dubai Aerospace Enterprise",
+  "Power2X",
+  "Nobian",
+  "Jupiter Energy Investor",
 ]);
 
 function isInfraFund(name: string): boolean {
@@ -442,7 +452,7 @@ function DealTable({
                       <span className="text-[11px] text-[#555]">{deal.region}</span>
                     </td>
                     <td className="px-2.5 py-[4px]">
-                      <div className="flex items-center gap-1 flex-wrap">
+                      <div className="flex items-center gap-1">
                         {deal.category.map((cat) => {
                           const catColor = getCategoryColor(cat);
                           return (
