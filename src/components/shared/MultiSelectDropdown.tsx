@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronDown, Check } from "lucide-react";
 
 export function MultiSelectDropdown({
@@ -19,19 +19,40 @@ export function MultiSelectDropdown({
   align?: "left" | "right";
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [pos, setPos] = useState<{ top: number; left?: number; right?: number }>({ top: 0 });
+
+  const calcPos = useCallback(() => {
+    if (!buttonRef.current) return;
+    const rect = buttonRef.current.getBoundingClientRect();
+    const panelW = 224; // w-56 = 14rem = 224px
+    if (align === "right") {
+      setPos({ top: rect.bottom, right: Math.max(0, window.innerWidth - rect.right) });
+    } else {
+      const left = Math.min(rect.left, window.innerWidth - panelW - 8);
+      setPos({ top: rect.bottom, left: Math.max(0, left) });
+    }
+  }, [align]);
 
   useEffect(() => {
     if (!isOpen) return;
+    calcPos();
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsOpen(false);
     };
+    const handleScroll = () => setIsOpen(false);
     document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen]);
+    window.addEventListener("scroll", handleScroll, true);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("scroll", handleScroll, true);
+    };
+  }, [isOpen, calcPos]);
 
   return (
     <div className="relative inline-block">
       <button
+        ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
@@ -61,8 +82,13 @@ export function MultiSelectDropdown({
           <div
             role="listbox"
             aria-label={`${label} options`}
-            className={`absolute top-full ${align === "right" ? "right-0" : "left-0"} mt-0 w-56 max-h-56 overflow-y-auto border border-black/[0.08] bg-white`}
-            style={{ zIndex: 9999 }}
+            className="fixed w-56 max-h-56 overflow-y-auto border border-black/[0.08] bg-white"
+            style={{
+              zIndex: 9999,
+              top: pos.top,
+              ...(pos.left != null ? { left: pos.left } : {}),
+              ...(pos.right != null ? { right: pos.right } : {}),
+            }}
           >
             {options.map((option) => {
               const color = getColor(option);
