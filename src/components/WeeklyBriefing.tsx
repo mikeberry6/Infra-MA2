@@ -74,11 +74,11 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
             return (
               <span
                 key={cat}
-                className="text-[11px] font-medium px-2 py-0.5 rounded-[4px]"
+                className="text-[10px] font-medium px-1.5 py-0"
                 style={{
-                  color: color,
-                  backgroundColor: `${color}1a`,
-                  border: `1px solid ${color}33`,
+                  color: "#444444",
+                  backgroundColor: `${color}08`,
+                  border: `1px solid ${color}12`,
                 }}
               >
                 {cat}

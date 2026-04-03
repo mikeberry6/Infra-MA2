@@ -127,10 +127,11 @@ function AssetManagerCardComponent({ card }: { card: AssetManagerCard }) {
 
           {/* Sector badge */}
           <span
-            className="text-micro font-medium px-1.5 py-0.5 rounded-[4px] shrink-0"
+            className="text-[10px] font-medium px-1.5 py-0 shrink-0"
             style={{
-              color: sectorColor,
-              backgroundColor: `${sectorColor}1a`,
+              color: "#444444",
+              backgroundColor: `${sectorColor}08`,
+              border: `1px solid ${sectorColor}12`,
             }}
           >
             {company.sector}

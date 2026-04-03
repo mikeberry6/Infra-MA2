@@ -8167,10 +8167,10 @@ export const companies: PortCo[] = [
     description: "",
     status: "Active",
   },
-  // ─── CVC ────────────────────────────────────────────────────
+  // ─── CVC DIF ─────────────────────────────────────────────────
   {
     name: "ASTP (American Student Transportation Partners)",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Transportation",
     subsector: "Social Infra",
     region: "North America",
@@ -8182,7 +8182,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Airtower Networks",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Digital Infrastructure",
     subsector: "",
     region: "North America",
@@ -8194,7 +8194,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Bernhard, LLC",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Utilities",
     region: "North America",
@@ -8206,7 +8206,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "BluEarth Renewables",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Renewables",
     region: "North America",
@@ -8218,7 +8218,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Brahms Wind",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Renewables",
     region: "North America",
@@ -8230,7 +8230,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "CARMA Corp.",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Utilities",
     subsector: "Smart Metering",
     region: "North America",
@@ -8242,7 +8242,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Cascade Power Project",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Power Generation",
     subsector: "",
     region: "North America",
@@ -8254,7 +8254,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Diverso Energy Inc.",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Renewables",
     region: "North America",
@@ -8266,7 +8266,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Etobicoke General Hospital (Phase 1 Patient Tower)",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Social Infrastructure",
     subsector: "PPP",
     region: "North America",
@@ -8278,7 +8278,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Green Street Power Partners",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Renewables",
     region: "North America",
@@ -8290,7 +8290,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Idaho Wind Partners",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Renewables",
     region: "North America",
@@ -8302,7 +8302,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "JW Water Holdings (incl. Robson Utilities)",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Regulated Utilities",
     subsector: "",
     region: "North America",
@@ -8314,7 +8314,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Joink, LLC",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Digital Infrastructure",
     subsector: "",
     region: "North America",
@@ -8326,7 +8326,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "RFNOW Inc.",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Digital Infrastructure",
     subsector: "",
     region: "North America",
@@ -8338,7 +8338,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "SBA Canada",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Digital Infrastructure",
     subsector: "",
     region: "North America",
@@ -8350,7 +8350,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Tonaquint Data Centers",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Digital Infrastructure",
     subsector: "",
     region: "North America",
@@ -8362,7 +8362,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Valley Fiber Ltd.",
-    investmentFirm: "CVC",
+    investmentFirm: "CVC DIF",
     sector: "Digital Infrastructure",
     subsector: "",
     region: "North America",
@@ -8863,10 +8863,10 @@ export const companies: PortCo[] = [
     description: "",
     status: "Active",
   },
-  // ─── DIF ────────────────────────────────────────────────────
+  // ─── CVC DIF (continued) ─────────────────────────────────────
   {
     name: "Airtower Networks",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Digital Infrastructure",
     subsector: "",
     region: "North America",
@@ -8878,7 +8878,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "American Student Transportation Partners (ASTP)",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Transportation",
     subsector: "",
     region: "North America",
@@ -8890,7 +8890,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "BluEarth Renewables",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Renewables",
     region: "North America",
@@ -8902,7 +8902,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Brahms Wind",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Renewables",
     region: "North America",
@@ -8914,7 +8914,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "CARMA Corp.",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Utilities",
     subsector: "Energy Efficiency",
     region: "North America",
@@ -8926,7 +8926,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Canadian Hills Wind",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Renewables",
     region: "North America",
@@ -8938,7 +8938,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Cascade Power Project",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Power Generation",
     subsector: "",
     region: "North America",
@@ -8950,7 +8950,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Diverso Energy",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Utilities",
     region: "North America",
@@ -8962,7 +8962,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "ENFRA (formerly Bernhard, LLC)",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Utilities",
     region: "North America",
@@ -8974,7 +8974,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Etobicoke Healthcare Partnership",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Social Infrastructure",
     subsector: "",
     region: "North America",
@@ -8986,7 +8986,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Green Street Power Partners (GS Power Partners)",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Renewables",
     region: "North America",
@@ -8998,7 +8998,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Idaho Wind Partners",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Renewables",
     region: "North America",
@@ -9010,7 +9010,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "JW Water Holdings",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Regulated Utilities",
     subsector: "",
     region: "North America",
@@ -9022,7 +9022,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Joink",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Digital Infrastructure",
     subsector: "",
     region: "North America",
@@ -9034,7 +9034,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Kingfisher Wind",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Energy Transition",
     subsector: "Renewables",
     region: "North America",
@@ -9046,7 +9046,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "PERENfra Water JV",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Regulated Utilities",
     subsector: "",
     region: "North America",
@@ -9058,7 +9058,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "RFNOW Inc.",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Digital Infrastructure",
     subsector: "",
     region: "North America",
@@ -9070,7 +9070,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Robson Communities Utilities (Pima Utility)",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Regulated Utilities",
     subsector: "",
     region: "North America",
@@ -9082,7 +9082,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "SBA Canada",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Digital Infrastructure",
     subsector: "",
     region: "North America",
@@ -9094,7 +9094,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Valley Fiber",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Digital Infrastructure",
     subsector: "",
     region: "North America",
@@ -9106,7 +9106,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "ValorC3 (formerly Tonaquint Data Centers)",
-    investmentFirm: "DIF",
+    investmentFirm: "CVC DIF",
     sector: "Digital Infrastructure",
     subsector: "",
     region: "North America",

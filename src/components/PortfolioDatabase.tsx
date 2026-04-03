@@ -633,7 +633,7 @@ function PortCoCard({
           {company.sector}
         </span>
         {company.subsector && (
-          <span className="text-[10px] font-medium px-1.5 py-0" style={{ color: "#444444", backgroundColor: "rgba(251,191,36,0.03)", border: "1px solid rgba(251,191,36,0.07)" }}>
+          <span className="text-[10px] font-medium px-1.5 py-0" style={{ color: "#444444", backgroundColor: "#f59e0b08", border: "1px solid #f59e0b12" }}>
             {company.subsector}
           </span>
         )}
@@ -647,11 +647,11 @@ function PortCoCard({
               return (
                 <span
                   key={tag}
-                  className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                  className="text-[10px] font-medium px-1.5 py-0"
                   style={{
-                    color,
-                    backgroundColor: `${color}15`,
-                    border: `1px solid ${color}25`,
+                    color: "#444444",
+                    backgroundColor: `${color}08`,
+                    border: `1px solid ${color}12`,
                   }}
                 >
                   {tag}

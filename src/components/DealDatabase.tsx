@@ -275,11 +275,11 @@ function DealCard({
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-1.5 flex-wrap">
           <span
-            className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+            className="text-[10px] font-medium px-1.5 py-0"
             style={{
-              color: sectorColor,
-              backgroundColor: `${sectorColor}1a`,
-              border: `1px solid ${sectorColor}33`,
+              color: "#444444",
+              backgroundColor: `${sectorColor}08`,
+              border: `1px solid ${sectorColor}12`,
             }}
           >
             {deal.sector}
@@ -289,11 +289,11 @@ function DealCard({
             return (
               <span
                 key={cat}
-                className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                className="text-[10px] font-medium px-1.5 py-0"
                 style={{
-                  color: catColor,
-                  backgroundColor: `${catColor}1a`,
-                  border: `1px solid ${catColor}33`,
+                  color: "#444444",
+                  backgroundColor: `${catColor}08`,
+                  border: `1px solid ${catColor}12`,
                 }}
               >
                 {cat}
@@ -694,11 +694,11 @@ function DealDrawer({
                   <span className="text-sm-dense font-medium text-[#1a1a1a]">{deal.buyer}</span>
                   {isInfraFund(deal.buyer) && (
                     <span
-                      className="text-[9px] font-semibold px-1.5 py-0.5 rounded-[3px] uppercase tracking-wider"
+                      className="text-[10px] font-medium px-1.5 py-0 uppercase tracking-wider"
                       style={{
-                        color: "#3b82f6",
-                        backgroundColor: "#3b82f61a",
-                        border: "1px solid #3b82f633",
+                        color: "#444444",
+                        backgroundColor: "#3b82f608",
+                        border: "1px solid #3b82f612",
                       }}
                     >
                       Infra Fund
@@ -712,11 +712,11 @@ function DealDrawer({
                   <span className="text-sm-dense font-medium text-[#1a1a1a]">{deal.seller}</span>
                   {isInfraFund(deal.seller) && (
                     <span
-                      className="text-[9px] font-semibold px-1.5 py-0.5 rounded-[3px] uppercase tracking-wider"
+                      className="text-[10px] font-medium px-1.5 py-0 uppercase tracking-wider"
                       style={{
-                        color: "#f59e0b",
-                        backgroundColor: "#f59e0b1a",
-                        border: "1px solid #f59e0b33",
+                        color: "#444444",
+                        backgroundColor: "#f59e0b08",
+                        border: "1px solid #f59e0b12",
                       }}
                     >
                       Infra Fund
