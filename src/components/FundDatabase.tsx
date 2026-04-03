@@ -85,7 +85,7 @@ function FundFilterBar({
 
   return (
     <div className="mb-0 space-y-2">
-      <div className="bg-[#f3f3f3] border border-[#d6d6d6] flex items-stretch sticky top-[60px] sm:top-[124px] z-30">
+      <div className="bg-[#f3f3f3] border border-black/[0.08] shadow-sm flex items-stretch sticky top-[60px] sm:top-[124px] z-30 overflow-x-auto">
         <div className="border-r border-black/[0.06] px-2.5 py-2 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
@@ -131,6 +131,7 @@ function FundFilterBar({
             selected={activeSectors as Set<string>}
             onToggle={(v) => onToggleSector(v as FundSector)}
             getColor={(v) => getFundSectorColor(v as FundSector)}
+            align="right"
           />
         </div>
       </div>
