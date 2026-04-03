@@ -69,7 +69,7 @@ function PortCoFilterBar({
 
   return (
     <div className="mb-2 space-y-3">
-      <div className="bg-[#f3f3f3] border border-black/[0.08] shadow-sm flex items-stretch sticky top-[60px] sm:top-[124px] z-30 flex-wrap">
+      <div className="bg-[#f3f3f3] border border-black/[0.08] shadow-sm flex items-stretch sticky top-[60px] sm:top-[124px] z-30 overflow-x-auto">
         <div className="border-r border-black/[0.06] px-2.5 py-2 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
@@ -99,13 +99,14 @@ function PortCoFilterBar({
             getColor={(v) => getPortCoCountryTagColor(v as PortCoCountryTag)}
           />
         </div>
-        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
+        <div className="px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Investment Firm"
             options={firmOptions}
             selected={activeFirms}
             onToggle={onToggleFirm}
             getColor={() => "#a78bfa"}
+            align="right"
           />
         </div>
       </div>
@@ -632,7 +633,7 @@ function PortCoCard({
           {company.sector}
         </span>
         {company.subsector && (
-          <span className="text-[10px] font-medium px-1.5 py-0" style={{ color: "#444444", backgroundColor: "rgba(251,191,36,0.03)", border: "1px solid rgba(251,191,36,0.07)" }}>
+          <span className="text-[10px] font-medium px-1.5 py-0" style={{ color: "#444444", backgroundColor: "#f59e0b08", border: "1px solid #f59e0b12" }}>
             {company.subsector}
           </span>
         )}
@@ -646,11 +647,11 @@ function PortCoCard({
               return (
                 <span
                   key={tag}
-                  className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                  className="text-[10px] font-medium px-1.5 py-0"
                   style={{
-                    color,
-                    backgroundColor: `${color}15`,
-                    border: `1px solid ${color}25`,
+                    color: "#444444",
+                    backgroundColor: `${color}08`,
+                    border: `1px solid ${color}12`,
                   }}
                 >
                   {tag}

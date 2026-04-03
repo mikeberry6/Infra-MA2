@@ -202,7 +202,7 @@ function FilterBar({
   return (
     <div className="mb-2 space-y-3">
       {/* Segmented filter bar */}
-      <div className="bg-[#f3f3f3] border border-black/[0.08] shadow-sm flex items-stretch sticky top-[60px] sm:top-[124px] z-30">
+      <div className="bg-[#f3f3f3] border border-black/[0.08] shadow-sm flex items-stretch sticky top-[60px] sm:top-[124px] z-30 overflow-x-auto">
         <div className="border-r border-black/[0.06] px-2.5 py-2 flex items-center gap-2 flex-1 max-w-xs">
           <Search className="h-4 w-4 text-[#999999] shrink-0" />
           <input
@@ -239,6 +239,7 @@ function FilterBar({
             selected={activeCategories as Set<string>}
             onToggle={(v) => onToggleCategory(v as DealCategory)}
             getColor={(v) => getCategoryColor(v as DealCategory)}
+            align="right"
           />
         </div>
       </div>
@@ -274,11 +275,11 @@ function DealCard({
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-1.5 flex-wrap">
           <span
-            className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+            className="text-[10px] font-medium px-1.5 py-0"
             style={{
-              color: sectorColor,
-              backgroundColor: `${sectorColor}1a`,
-              border: `1px solid ${sectorColor}33`,
+              color: "#444444",
+              backgroundColor: `${sectorColor}08`,
+              border: `1px solid ${sectorColor}12`,
             }}
           >
             {deal.sector}
@@ -288,11 +289,11 @@ function DealCard({
             return (
               <span
                 key={cat}
-                className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                className="text-[10px] font-medium px-1.5 py-0"
                 style={{
-                  color: catColor,
-                  backgroundColor: `${catColor}1a`,
-                  border: `1px solid ${catColor}33`,
+                  color: "#444444",
+                  backgroundColor: `${catColor}08`,
+                  border: `1px solid ${catColor}12`,
                 }}
               >
                 {cat}
@@ -693,11 +694,11 @@ function DealDrawer({
                   <span className="text-sm-dense font-medium text-[#1a1a1a]">{deal.buyer}</span>
                   {isInfraFund(deal.buyer) && (
                     <span
-                      className="text-[9px] font-semibold px-1.5 py-0.5 rounded-[3px] uppercase tracking-wider"
+                      className="text-[10px] font-medium px-1.5 py-0 uppercase tracking-wider"
                       style={{
-                        color: "#3b82f6",
-                        backgroundColor: "#3b82f61a",
-                        border: "1px solid #3b82f633",
+                        color: "#444444",
+                        backgroundColor: "#3b82f608",
+                        border: "1px solid #3b82f612",
                       }}
                     >
                       Infra Fund
@@ -711,11 +712,11 @@ function DealDrawer({
                   <span className="text-sm-dense font-medium text-[#1a1a1a]">{deal.seller}</span>
                   {isInfraFund(deal.seller) && (
                     <span
-                      className="text-[9px] font-semibold px-1.5 py-0.5 rounded-[3px] uppercase tracking-wider"
+                      className="text-[10px] font-medium px-1.5 py-0 uppercase tracking-wider"
                       style={{
-                        color: "#f59e0b",
-                        backgroundColor: "#f59e0b1a",
-                        border: "1px solid #f59e0b33",
+                        color: "#444444",
+                        backgroundColor: "#f59e0b08",
+                        border: "1px solid #f59e0b12",
                       }}
                     >
                       Infra Fund

@@ -9,12 +9,14 @@ export function MultiSelectDropdown({
   selected,
   onToggle,
   getColor,
+  align = "left",
 }: {
   label: string;
   options: string[];
   selected: Set<string>;
   onToggle: (value: string) => void;
   getColor: (value: string) => string;
+  align?: "left" | "right";
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -59,7 +61,7 @@ export function MultiSelectDropdown({
           <div
             role="listbox"
             aria-label={`${label} options`}
-            className="absolute top-full left-0 mt-0 w-56 max-h-56 overflow-y-auto border border-black/[0.08] bg-white"
+            className={`absolute top-full ${align === "right" ? "right-0" : "left-0"} mt-0 w-56 max-h-56 overflow-y-auto border border-black/[0.08] bg-white`}
             style={{ zIndex: 9999 }}
           >
             {options.map((option) => {
