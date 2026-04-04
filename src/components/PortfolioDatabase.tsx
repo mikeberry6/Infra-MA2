@@ -13,6 +13,7 @@ import {
   getMilestoneCategoryColor,
   getUniqueFirms,
 } from "@/data/portcos";
+import { exportPortfolioToExcel } from "@/utils/exportPortfolio";
 import type { PortCo, PortCoSector, PortCoRegion, PortCoCountryTag } from "@/data/portcos";
 import { funds, getStrategyColor } from "@/data/funds";
 import type { FundStrategy } from "@/data/funds";
@@ -888,7 +889,7 @@ export function PortfolioDatabase() {
             Showing <span className="font-mono text-[#1a1a1a] tabular-nums">{filteredCompanies.length}</span> of <span className="font-mono text-[#1a1a1a] tabular-nums">{portcos.length}</span> companies
           </span>
           <div className="hidden sm:flex items-center gap-3">
-            <button className="text-[10px] text-[#888] hover:text-[#1a1a1a] transition-colors flex items-center gap-1 uppercase tracking-wide font-medium">
+            <button onClick={() => exportPortfolioToExcel(filteredCompanies)} className="text-[10px] text-[#888] hover:text-[#1a1a1a] transition-colors flex items-center gap-1 uppercase tracking-wide font-medium">
               <Download className="h-3 w-3" /> Export
             </button>
             <span className="text-[#d6d6d6]">|</span>
