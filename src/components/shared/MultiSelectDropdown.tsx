@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { ChevronDown, Check } from "lucide-react";
 
 export function MultiSelectDropdown({
@@ -40,7 +41,13 @@ export function MultiSelectDropdown({
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsOpen(false);
     };
-    const handleScroll = () => setIsOpen(false);
+    const handleScroll = (e: Event) => {
+      // Only close on page-level scrolls, not horizontal filter bar scrolls
+      const t = e.target;
+      if (t === document || t === document.documentElement || t === window) {
+        setIsOpen(false);
+      }
+    };
     document.addEventListener("keydown", handleKeyDown);
     window.addEventListener("scroll", handleScroll, true);
     return () => {
@@ -72,7 +79,7 @@ export function MultiSelectDropdown({
         <ChevronDown className={`h-[10px] w-[10px] opacity-50 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
-      {isOpen && (
+      {isOpen && createPortal(
         <>
           <div
             className="fixed inset-0"
@@ -120,7 +127,8 @@ export function MultiSelectDropdown({
               );
             })}
           </div>
-        </>
+        </>,
+        document.body
       )}
     </div>
   );
