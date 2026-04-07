@@ -477,10 +477,10 @@ export const companies: PortCo[] = [
       },
     ],
   },
-  // ─── UIF ────────────────────────────────────────────────────
+  // ─── Ullico ─────────────────────────────────────────────────
   {
     name: "Hope Utilities",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Utilities",
     subsector: "Natural gas distribution and water utilities",
     region: "North America",
@@ -544,7 +544,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Metropistas",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Transportation",
     subsector: "Toll roads",
     region: "North America",
@@ -598,7 +598,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "JFK New Terminal One",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Transportation",
     subsector: "Airport terminal public-private partnership",
     region: "North America",
@@ -653,7 +653,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Tidewater Transportation and Terminals",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Transportation",
     subsector: "Marine transportation and terminals",
     region: "North America",
@@ -722,7 +722,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Student Transportation Inc.",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Transportation",
     subsector: "School transportation",
     region: "North America",
@@ -777,7 +777,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "TowerPoint Infrastructure Partners",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Digital Infrastructure",
     subsector: "Wireless towers and telecom sites",
     region: "North America",
@@ -828,7 +828,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Southland Energy",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Utilities",
     subsector: "Contracted gas-fired generation and battery storage",
     region: "North America",
@@ -873,7 +873,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "West Deptford Energy Center",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Utilities",
     subsector: "Gas-fired generation",
     region: "North America",
@@ -918,7 +918,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Towantic Energy Center",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Utilities",
     subsector: "Gas-fired generation",
     region: "North America",
@@ -968,7 +968,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Carroll County Energy",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Utilities",
     subsector: "Gas-fired generation",
     region: "North America",
@@ -1018,7 +1018,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "CenTrio",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Utilities",
     subsector: "District energy",
     region: "North America",
@@ -1073,7 +1073,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Vista Ridge",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Utilities",
     subsector: "Water transmission",
     region: "North America",
@@ -1123,7 +1123,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Rialto Water Services",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Utilities",
     subsector: "Water and wastewater public-private partnership",
     region: "North America",
@@ -1172,7 +1172,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Upstate Transmission",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Utilities",
     subsector: "Electric transmission",
     region: "North America",
@@ -1217,7 +1217,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Cascade Renewable Transmission Project",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Utilities",
     subsector: "HVDC transmission development",
     region: "North America",
@@ -1267,7 +1267,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Neptune Regional Transmission System",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Utilities",
     subsector: "Submarine HVDC transmission",
     region: "North America",
@@ -1322,7 +1322,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Southern Star",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Midstream Energy",
     subsector: "Natural gas transmission and storage",
     region: "North America",
@@ -1382,7 +1382,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Ontario Solar 1",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Energy Transition",
     subsector: "Utility-scale solar",
     region: "North America",
@@ -1427,7 +1427,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Ontario Solar 2",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Energy Transition",
     subsector: "Utility-scale solar",
     region: "North America",
@@ -1472,7 +1472,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "AES Clean Energy OpCo A",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Energy Transition",
     subsector: "Utility-scale solar and wind portfolio",
     region: "North America",
@@ -1526,7 +1526,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Renewable Energy AssetCo 1",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Energy Transition",
     subsector: "Contracted utility-scale solar and wind portfolio",
     region: "North America",
@@ -1580,7 +1580,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Renewable Energy AssetCo 2",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Energy Transition",
     subsector: "Contracted utility-scale solar and wind portfolio",
     region: "North America",
@@ -1634,7 +1634,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Estuary Power",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Energy Transition",
     subsector: "Utility-scale solar and battery storage development",
     region: "North America",
@@ -1688,7 +1688,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Eagle Creek Renewable Energy Hydro",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Energy Transition",
     subsector: "Hydroelectric generation",
     region: "North America",
@@ -1747,7 +1747,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Leading Light Wind",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Energy Transition",
     subsector: "Offshore wind development",
     region: "North America",
@@ -1801,7 +1801,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Kawailoa Wind",
-    investmentFirm: "UIF",
+    investmentFirm: "Ullico",
     sector: "Energy Transition",
     subsector: "Onshore wind",
     region: "North America",
