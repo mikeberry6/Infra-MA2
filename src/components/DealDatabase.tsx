@@ -437,11 +437,11 @@ function DealTable({
                         const color = getSectorColor(deal.sector);
                         return (
                           <span
-                            className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                            className="text-[10px] font-medium px-1.5 py-0"
                             style={{
-                              color,
-                              backgroundColor: `${color}1a`,
-                              border: `1px solid ${color}33`,
+                              color: "#444444",
+                              backgroundColor: `${color}08`,
+                              border: `1px solid ${color}12`,
                             }}
                           >
                             {deal.sector}
@@ -459,11 +459,11 @@ function DealTable({
                           return (
                             <span
                               key={cat}
-                              className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                              className="text-[10px] font-medium px-1.5 py-0"
                               style={{
-                                color: catColor,
-                                backgroundColor: `${catColor}1a`,
-                                border: `1px solid ${catColor}33`,
+                                color: "#444444",
+                                backgroundColor: `${catColor}08`,
+                                border: `1px solid ${catColor}12`,
                               }}
                             >
                               {cat}
@@ -515,17 +515,13 @@ function StatusBadge({ status }: { status: string }) {
   const s = config[status] || config.Announced;
   return (
     <span
-      className="text-[10px] font-semibold px-1.5 py-0 inline-flex items-center gap-1.5 font-mono"
+      className="text-[10px] font-medium px-1.5 py-0"
       style={{
         color: "#444444",
         backgroundColor: `${s.color}08`,
         border: `1px solid ${s.color}12`,
       }}
     >
-      <span
-        className="w-1.5 h-1.5 rounded-full"
-        style={{ backgroundColor: s.color }}
-      />
       {status}
     </span>
   );
@@ -649,11 +645,11 @@ function DealDrawer({
               const sectorColor = getSectorColor(deal.sector);
               return (
                 <span
-                  className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                  className="text-[10px] font-medium px-1.5 py-0"
                   style={{
-                    color: sectorColor,
-                    backgroundColor: `${sectorColor}1a`,
-                    border: `1px solid ${sectorColor}33`,
+                    color: "#444444",
+                    backgroundColor: `${sectorColor}08`,
+                    border: `1px solid ${sectorColor}12`,
                   }}
                 >
                   {deal.sector}
@@ -667,11 +663,11 @@ function DealDrawer({
               return (
                 <span
                   key={cat}
-                  className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                  className="text-[10px] font-medium px-1.5 py-0"
                   style={{
-                    color: catColor,
-                    backgroundColor: `${catColor}1a`,
-                    border: `1px solid ${catColor}33`,
+                    color: "#444444",
+                    backgroundColor: `${catColor}08`,
+                    border: `1px solid ${catColor}12`,
                   }}
                 >
                   {cat}

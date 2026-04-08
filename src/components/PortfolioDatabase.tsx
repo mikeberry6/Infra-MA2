@@ -792,11 +792,11 @@ function PortCoTable({
                         return (
                           <span
                             key={tag}
-                            className="text-[10px] font-medium px-1.5 py-0.5 rounded-[4px]"
+                            className="text-[10px] font-medium px-1.5 py-0"
                             style={{
-                              color,
-                              backgroundColor: `${color}15`,
-                              border: `1px solid ${color}25`,
+                              color: "#444444",
+                              backgroundColor: `${color}08`,
+                              border: `1px solid ${color}12`,
                             }}
                           >
                             {tag}
