@@ -50,6 +50,9 @@ function PortCoFilterBar({
   activeFirms,
   onToggleFirm,
   firmOptions,
+  activeInvestmentYears,
+  onToggleInvestmentYear,
+  investmentYearOptions,
   onClearAll,
 }: {
   search: string;
@@ -61,12 +64,16 @@ function PortCoFilterBar({
   activeFirms: Set<string>;
   onToggleFirm: (f: string) => void;
   firmOptions: string[];
+  activeInvestmentYears: Set<string>;
+  onToggleInvestmentYear: (y: string) => void;
+  investmentYearOptions: string[];
   onClearAll: () => void;
 }) {
   const total =
     activeSectors.size +
     activeCountryTags.size +
-    activeFirms.size;
+    activeFirms.size +
+    activeInvestmentYears.size;
 
   return (
     <div className="mb-2 space-y-3">
@@ -100,13 +107,22 @@ function PortCoFilterBar({
             getColor={(v) => getPortCoCountryTagColor(v as PortCoCountryTag)}
           />
         </div>
-        <div className="px-2 py-2 flex items-center">
+        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Investment Firm"
             options={firmOptions}
             selected={activeFirms}
             onToggle={onToggleFirm}
             getColor={() => "#a78bfa"}
+          />
+        </div>
+        <div className="px-2 py-2 flex items-center">
+          <MultiSelectDropdown
+            label="Investment Year"
+            options={investmentYearOptions}
+            selected={activeInvestmentYears}
+            onToggle={onToggleInvestmentYear}
+            getColor={() => "#f59e0b"}
             align="right"
           />
         </div>
@@ -125,6 +141,9 @@ function PortCoFilterBar({
           ))}
           {Array.from(activeFirms).map((f) => (
             <FilterChip key={`firm-${f}`} label={f} color="#a78bfa" onRemove={() => onToggleFirm(f)} />
+          ))}
+          {Array.from(activeInvestmentYears).map((y) => (
+            <FilterChip key={`yr-${y}`} label={y} color="#f59e0b" onRemove={() => onToggleInvestmentYear(y)} />
           ))}
           {total > 1 && (
             <button
@@ -814,6 +833,7 @@ export function PortfolioDatabase() {
   const [activeSectors, setActiveSectors] = useState<Set<string>>(new Set());
   const [activeCountryTags, setActiveCountryTags] = useState<Set<string>>(new Set());
   const [activeFirms, setActiveFirms] = useState<Set<string>>(new Set());
+  const [activeInvestmentYears, setActiveInvestmentYears] = useState<Set<string>>(new Set());
   const [selectedCompany, setSelectedCompany] = useState<PortCo | null>(null);
 
   const debouncedSearch = useDebounce(search, 300);
@@ -821,14 +841,21 @@ export function PortfolioDatabase() {
   const toggleSector = useFilterToggle(setActiveSectors);
   const toggleCountryTag = useFilterToggle(setActiveCountryTags);
   const toggleFirm = useFilterToggle(setActiveFirms);
+  const toggleInvestmentYear = useFilterToggle(setActiveInvestmentYears);
   const clearFilters = useCallback(() => {
     setActiveSectors(new Set());
     setActiveCountryTags(new Set());
     setActiveFirms(new Set());
+    setActiveInvestmentYears(new Set());
     setSearch("");
   }, []);
 
   const firmOptions = useMemo(() => getUniqueFirms(portcos), []);
+  const investmentYearOptions = useMemo(() => {
+    return Array.from(
+      new Set(portcos.map((c) => c.investmentYear).filter((y): y is number => y != null).map(String))
+    ).sort((a, b) => parseInt(b) - parseInt(a));
+  }, []);
 
   const filteredCompanies = useMemo(() => {
     return portcos.filter((c) => {
@@ -848,6 +875,7 @@ export function PortfolioDatabase() {
       if (activeSectors.size > 0 && !activeSectors.has(c.sector)) return false;
       if (activeCountryTags.size > 0 && !c.countryTags.some((t: string) => activeCountryTags.has(t))) return false;
       if (activeFirms.size > 0 && !activeFirms.has(c.investmentFirm)) return false;
+      if (activeInvestmentYears.size > 0 && (!c.investmentYear || !activeInvestmentYears.has(String(c.investmentYear)))) return false;
       return true;
     });
   }, [
@@ -855,6 +883,7 @@ export function PortfolioDatabase() {
     activeSectors,
     activeCountryTags,
     activeFirms,
+    activeInvestmentYears,
   ]);
 
   return (
@@ -878,6 +907,9 @@ export function PortfolioDatabase() {
         activeFirms={activeFirms}
         onToggleFirm={toggleFirm}
         firmOptions={firmOptions}
+        activeInvestmentYears={activeInvestmentYears}
+        onToggleInvestmentYear={toggleInvestmentYear}
+        investmentYearOptions={investmentYearOptions}
         onClearAll={clearFilters}
       />
 
