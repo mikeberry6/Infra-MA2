@@ -324,7 +324,7 @@ function FundVehicleCard({
           return (
             <span
               key={s}
-              className="text-[10px] font-medium px-1.5 py-0 rounded-[2px]"
+              className="text-[10px] font-medium px-1.5 py-0"
               style={{
                 color: "#444444",
                 backgroundColor: `${color}08`,
@@ -414,7 +414,7 @@ function FundRow({
             return (
               <span
                 key={s}
-                className="text-[10px] font-medium px-1.5 py-0 rounded-[2px]"
+                className="text-[10px] font-medium px-1.5 py-0"
                 style={{
                   color: "#444444",
                   backgroundColor: `${color}08`,
@@ -770,11 +770,11 @@ function FundDrawer({
                   return (
                     <span
                       key={s}
-                      className="text-[10px] font-medium px-1.5 py-0.5 rounded-[3px]"
+                      className="text-[10px] font-medium px-1.5 py-0"
                       style={{
-                        color,
-                        backgroundColor: `${color}12`,
-                        border: `1px solid ${color}20`,
+                        color: "#444444",
+                        backgroundColor: `${color}08`,
+                        border: `1px solid ${color}12`,
                       }}
                     >
                       {s}
@@ -951,11 +951,11 @@ function FundDrawer({
                                       return (
                                         <span
                                           key={s}
-                                          className="text-[10px] font-medium px-1.5 py-0.5 rounded-[3px]"
+                                          className="text-[10px] font-medium px-1.5 py-0"
                                           style={{
-                                            color,
-                                            backgroundColor: `${color}12`,
-                                            border: `1px solid ${color}20`,
+                                            color: "#444444",
+                                            backgroundColor: `${color}08`,
+                                            border: `1px solid ${color}12`,
                                           }}
                                         >
                                           {s}

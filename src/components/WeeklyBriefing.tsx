@@ -49,10 +49,11 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
           <span className="mono text-[11px] text-[#52525B]">{deal.id}</span>
           <div className="h-3 w-px bg-[#27272A]" />
           <span
-            className="text-xs font-medium px-2 py-0.5 rounded"
+            className="text-[10px] font-medium px-1.5 py-0"
             style={{
-              color: getSectorColor(deal.sector),
-              backgroundColor: `${getSectorColor(deal.sector)}1a`,
+              color: "#444444",
+              backgroundColor: `${getSectorColor(deal.sector)}08`,
+              border: `1px solid ${getSectorColor(deal.sector)}12`,
             }}
           >
             {deal.sector}
