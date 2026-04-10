@@ -39,6 +39,69 @@ const NON_INFRA_FUND_ENTITIES = new Set([
   "Jupiter Energy Investor",
 ]);
 
+// ─── Buyer display shortening ──────────────────────────────
+const BUYER_SHORT_NAMES: Record<string, string> = {
+  "Antin Infrastructure Partners": "Antin",
+  "Igneo Infrastructure Partners": "Igneo",
+  "Tiger Infrastructure Partners": "Tiger",
+  "Macquarie Asset Management": "Macquarie AM",
+  "Copenhagen Infrastructure Partners": "CIP",
+  "Ridgewood Infrastructure": "Ridgewood",
+  "Vauban Infrastructure": "Vauban",
+  "Basalt Infrastructure": "Basalt",
+  "Axium Infrastructure Europe": "Axium",
+  "Morgan Stanley Infrastructure": "Morgan Stanley Infra",
+  "Morgan Stanley Infrastructure Partners": "Morgan Stanley Infra",
+  "Goldman Sachs Alternatives": "Goldman Sachs",
+  "Blackstone Energy Transition Partners": "Blackstone ETP",
+  "Allianz Global Investors": "Allianz GI",
+  "Brookfield Infrastructure Structured Solutions": "Brookfield Infra",
+  "DWS Infrastructure": "DWS",
+  "EQT Infrastructure": "EQT",
+  "I Squared Capital": "I Squared",
+  "ArcLight Capital": "ArcLight",
+  "Brookfield Asset Management": "Brookfield AM",
+  "APG Asset Management": "APG",
+  "CBRE Investment Management": "CBRE IM",
+  "Macquarie Infrastructure Partners": "Macquarie Infra",
+  "Quinbrook Infrastructure Partners": "Quinbrook",
+  "Cube Infrastructure Managers": "Cube Infra",
+  "Energy Capital Partners": "ECP",
+  "Fengate Asset Management": "Fengate",
+  "Tallvine Partners": "Tallvine",
+  "Ancala Partners": "Ancala",
+  "J.P. Morgan Asset Management": "J.P. Morgan AM",
+  "HarbourVest Partners": "HarbourVest",
+  "Nuveen Infrastructure": "Nuveen",
+  "Blackstone Infrastructure": "Blackstone Infra",
+  "Ara Partners": "Ara",
+  "EnCap Investments": "EnCap",
+  "Asterion Industrial Partners": "Asterion",
+  "Brookfield Renewable": "Brookfield RE",
+  "EOS Investment Management": "EOS IM",
+  "APG Infrastructure": "APG",
+  "Australian Retirement Trust": "ART",
+  "PGGM Infrastructure Fund": "PGGM",
+  "Greencoat Renewables": "Greencoat",
+  "Schroders Greencoat": "Schroders Greencoat",
+  "Standard Solar": "Standard Solar",
+  "ADIA Infrastructure": "ADIA",
+  "Technique Solaire": "Technique Solaire",
+  "Northleaf Capital": "Northleaf",
+  "Dandelion Energy": "Dandelion",
+  "Diverso Energy": "Diverso",
+  "Thames Clippers": "Thames Clippers",
+};
+
+function shortenBuyer(raw: string): string[] {
+  // Strip "(via ...)" suffix
+  const stripped = raw.replace(/\s*\(via [^)]+\)/g, "");
+  // Split on " / "
+  const parts = stripped.split(" / ");
+  // Shorten each part
+  return parts.map((p) => BUYER_SHORT_NAMES[p.trim()] || p.trim());
+}
+
 function isInfraFund(name: string): boolean {
   if (!name || name === "—" || name === "N/A") return false;
   return !NON_INFRA_FUND_ENTITIES.has(name);
@@ -413,13 +476,13 @@ function DealTable({
                     onClick={() => onSelectDeal(deal)}
                     className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-all group"
                   >
-                    <td className="px-2.5 py-[7px]">
+                    <td className="px-2.5 py-[7px] align-top">
                       <span className="font-mono text-[11px] text-[#555] tabular-nums">
                         {formatDate(deal.date)}
                       </span>
                     </td>
-                    <td className="px-2.5 py-[7px]">
-                      <div>
+                    <td className="px-2.5 py-[7px] align-top">
+                      <div className="min-h-[28px]">
                         <span className="text-[12px] font-bold text-[#1a1a1a] tracking-tight group-hover:text-[#008253] transition-colors block truncate max-w-[280px]">
                           {deal.target}
                         </span>
@@ -430,10 +493,16 @@ function DealTable({
                         )}
                       </div>
                     </td>
-                    <td className="px-2.5 py-[7px] max-w-[160px]">
-                      <span className="text-[11px] text-[#555] truncate block">{deal.buyer}</span>
+                    <td className="px-2.5 py-[7px] align-top max-w-[140px]">
+                      <div className="flex flex-col">
+                        {shortenBuyer(deal.buyer).map((name, i) => (
+                          <span key={i} className="text-[11px] text-[#555] truncate block leading-tight">
+                            {name}
+                          </span>
+                        ))}
+                      </div>
                     </td>
-                    <td className="px-2.5 py-[7px]">
+                    <td className="px-2.5 py-[7px] align-top">
                       {(() => {
                         const color = getSectorColor(deal.sector);
                         return (
@@ -450,10 +519,10 @@ function DealTable({
                         );
                       })()}
                     </td>
-                    <td className="px-2.5 py-[7px]">
+                    <td className="px-2.5 py-[7px] align-top">
                       <span className="text-[11px] text-[#555]">{deal.region}</span>
                     </td>
-                    <td className="px-2.5 py-[7px]">
+                    <td className="px-2.5 py-[7px] align-top">
                       <div className="flex items-center gap-1">
                         {deal.category.map((cat) => {
                           const catColor = getCategoryColor(cat);
@@ -473,7 +542,7 @@ function DealTable({
                         })}
                       </div>
                     </td>
-                    <td className="px-2.5 py-[7px]">
+                    <td className="px-2.5 py-[7px] align-top">
                       <a
                         href={deal.sourceUrl}
                         target="_blank"

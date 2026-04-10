@@ -174,7 +174,17 @@ When adding portfolio companies to `src/data/portcos/companies.ts`:
 - Keep insights clean and minimal — horizontal bar charts with labels, not complex SVG visualizations
 - Use the existing color helpers: `getSectorColor()`, `getRegionColor()`, `getCategoryColor()` from `src/data/deals.ts`
 - Activity type colors: Acquisition = blue (#3b82f6), Sale = amber (#f59e0b), Platform Launch = cyan (#06b6d4), IPO = green (#10b981), Joint Venture = purple (#8b5cf6)
-- **Colored badge pattern** (reusable across all drawers): `text-micro font-medium px-2 py-0.5 rounded-[4px]` with `color: getXxxColor(value)`, `backgroundColor: ${color}1a` (10% opacity), `border: 1px solid ${color}33` (20% opacity). Used for: strategy badges, sector badges, category badges, status badges.
+- **Colored tag/badge pattern** (canonical, used site-wide in tables, cards, and drawers): `text-[10px] font-medium px-1.5 py-0` with `color: "#444444"`, `backgroundColor: "${color}08"`, `border: "1px solid ${color}12"`. Color comes from the relevant helper function (e.g. `getSectorColor()`, `getCategoryColor()`, `getStrategyColor()`).
+  - **Use tags for:** Sector, Category, Strategy, Status, Structure, Subsector (card view only)
+  - **Do NOT use tags for:** Country (plain text), Region (plain text in tables)
+  - All tag instances across all pages must use this exact pattern — do not introduce alternative sizing, padding, or opacity values
+
+### Deal Database Table Layout
+
+- The `Deal` interface has a `target` field (clean company/asset name, e.g. "Contact Energy") separate from `title` (long headline). The table's "Target / Seller" column shows `deal.target` in bold with `deal.seller` underneath in grey `text-[10px] text-[#999]`. When seller is "N/A" or "—", only the target is shown.
+- All rows use `min-h-[28px]` on the target/seller cell to ensure uniform row height regardless of whether a seller is present. All `<td>` elements use `align-top`.
+- **Buyer name shortening**: The `BUYER_SHORT_NAMES` map in `DealDatabase.tsx` abbreviates long fund names for table display (e.g. "Igneo Infrastructure Partners" → "Igneo", "Macquarie Asset Management" → "Macquarie AM"). The `shortenBuyer()` function also strips "(via XYZ)" suffixes and splits multi-buyer names on " / " to stack them vertically. When adding new deals with long buyer names, add an entry to `BUYER_SHORT_NAMES` if the name would truncate in the table.
+- The full unabbreviated buyer name is still stored in `deal.buyer` and shown in the deal drawer and mobile card — `BUYER_SHORT_NAMES` only affects the desktop table column.
 
 ## Adding New Deals
 

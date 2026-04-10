@@ -661,24 +661,7 @@ function PortCoCard({
       <div className="grid grid-cols-2 gap-2 text-micro">
         <div>
           <span className="font-medium text-[#999999] uppercase tracking-wider">Country</span>
-          <div className="flex items-center gap-1 mt-0.5">
-            {company.countryTags.map((tag: string) => {
-              const color = getPortCoCountryTagColor(tag as PortCoCountryTag);
-              return (
-                <span
-                  key={tag}
-                  className="text-[10px] font-medium px-1.5 py-0"
-                  style={{
-                    color: "#444444",
-                    backgroundColor: `${color}08`,
-                    border: `1px solid ${color}12`,
-                  }}
-                >
-                  {tag}
-                </span>
-              );
-            })}
-          </div>
+          <div className="text-xs-dense text-[#6e6e6e] mt-0.5">{company.countryTags.join(", ")}</div>
         </div>
         <div>
           <span className="font-medium text-[#999999] uppercase tracking-wider">Firm</span>
@@ -780,30 +763,27 @@ function PortCoTable({
                     <span className="text-[11px] text-[#555] truncate block">{company.investmentFirm}</span>
                   </td>
                   <td className="px-2.5 py-[4px]">
-                    <span className="text-[11px] text-[#555]">{company.sector}</span>
+                    {(() => {
+                      const color = getPortCoSectorColor(company.sector);
+                      return (
+                        <span
+                          className="text-[10px] font-medium px-1.5 py-0"
+                          style={{
+                            color: "#444444",
+                            backgroundColor: `${color}08`,
+                            border: `1px solid ${color}12`,
+                          }}
+                        >
+                          {company.sector}
+                        </span>
+                      );
+                    })()}
                   </td>
                   <td className="px-2.5 py-[4px]">
                     <span className="text-[11px] text-[#777]">{company.subsector || "—"}</span>
                   </td>
                   <td className="px-2.5 py-[4px]">
-                    <div className="flex items-center gap-1">
-                      {company.countryTags.map((tag: string) => {
-                        const color = getPortCoCountryTagColor(tag as PortCoCountryTag);
-                        return (
-                          <span
-                            key={tag}
-                            className="text-[10px] font-medium px-1.5 py-0"
-                            style={{
-                              color: "#444444",
-                              backgroundColor: `${color}08`,
-                              border: `1px solid ${color}12`,
-                            }}
-                          >
-                            {tag}
-                          </span>
-                        );
-                      })}
-                    </div>
+                    <span className="text-[11px] text-[#555]">{company.countryTags.join(", ")}</span>
                   </td>
                 </tr>
               ))}
