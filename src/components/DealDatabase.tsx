@@ -413,26 +413,27 @@ function DealTable({
                     onClick={() => onSelectDeal(deal)}
                     className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-all group"
                   >
-                    <td className="px-2.5 py-[5px]">
+                    <td className="px-2.5 py-[7px]">
                       <span className="font-mono text-[11px] text-[#555] tabular-nums">
                         {formatDate(deal.date)}
                       </span>
                     </td>
-                    <td className="px-2.5 py-[5px]">
-                      <span className="text-[12px] font-bold text-[#1a1a1a] tracking-tight group-hover:text-[#008253] transition-colors">
-                        {deal.target}
-                      </span>
-                      {showSeller && (
-                        <span className="text-[10px] text-[#aaa] ml-1.5">
-                          <span className="text-[#ccc]">/</span>{" "}
-                          <span className="text-[#999]">{deal.seller}</span>
+                    <td className="px-2.5 py-[7px]">
+                      <div>
+                        <span className="text-[12px] font-bold text-[#1a1a1a] tracking-tight group-hover:text-[#008253] transition-colors block truncate max-w-[280px]">
+                          {deal.target}
                         </span>
-                      )}
+                        {showSeller && (
+                          <span className="text-[10px] text-[#999] block truncate max-w-[280px] leading-tight">
+                            {deal.seller}
+                          </span>
+                        )}
+                      </div>
                     </td>
-                    <td className="px-2.5 py-[5px] max-w-[160px]">
+                    <td className="px-2.5 py-[7px] max-w-[160px]">
                       <span className="text-[11px] text-[#555] truncate block">{deal.buyer}</span>
                     </td>
-                    <td className="px-2.5 py-[5px]">
+                    <td className="px-2.5 py-[7px]">
                       {(() => {
                         const color = getSectorColor(deal.sector);
                         return (
@@ -449,10 +450,10 @@ function DealTable({
                         );
                       })()}
                     </td>
-                    <td className="px-2.5 py-[5px]">
+                    <td className="px-2.5 py-[7px]">
                       <span className="text-[11px] text-[#555]">{deal.region}</span>
                     </td>
-                    <td className="px-2.5 py-[5px]">
+                    <td className="px-2.5 py-[7px]">
                       <div className="flex items-center gap-1">
                         {deal.category.map((cat) => {
                           const catColor = getCategoryColor(cat);
@@ -472,7 +473,7 @@ function DealTable({
                         })}
                       </div>
                     </td>
-                    <td className="px-2.5 py-[5px]">
+                    <td className="px-2.5 py-[7px]">
                       <a
                         href={deal.sourceUrl}
                         target="_blank"
