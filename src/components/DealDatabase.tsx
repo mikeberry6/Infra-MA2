@@ -99,7 +99,12 @@ function shortenBuyer(raw: string): string[] {
   // Split on " / "
   const parts = stripped.split(" / ");
   // Shorten each part
-  return parts.map((p) => BUYER_SHORT_NAMES[p.trim()] || p.trim());
+  const shortened = parts.map((p) => BUYER_SHORT_NAMES[p.trim()] || p.trim());
+  // If 3+ buyers, join with " / " into a single line
+  if (shortened.length >= 3) {
+    return [shortened.join(" / ")];
+  }
+  return shortened;
 }
 
 function isInfraFund(name: string): boolean {
@@ -476,13 +481,13 @@ function DealTable({
                     onClick={() => onSelectDeal(deal)}
                     className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-all group"
                   >
-                    <td className="px-2.5 py-[7px] align-top">
+                    <td className="px-2.5 py-[7px] align-middle">
                       <span className="font-mono text-[11px] text-[#555] tabular-nums">
                         {formatDate(deal.date)}
                       </span>
                     </td>
-                    <td className="px-2.5 py-[7px] align-top">
-                      <div className="min-h-[28px]">
+                    <td className="px-2.5 py-[7px] align-middle">
+                      <div className="min-h-[28px] flex flex-col justify-center">
                         <span className="text-[12px] font-bold text-[#1a1a1a] tracking-tight group-hover:text-[#008253] transition-colors block truncate max-w-[280px]">
                           {deal.target}
                         </span>
@@ -493,8 +498,8 @@ function DealTable({
                         )}
                       </div>
                     </td>
-                    <td className="px-2.5 py-[7px] align-top max-w-[140px]">
-                      <div className="flex flex-col">
+                    <td className="px-2.5 py-[7px] align-middle max-w-[140px]">
+                      <div className="flex flex-col justify-center min-h-[28px]">
                         {shortenBuyer(deal.buyer).map((name, i) => (
                           <span key={i} className="text-[11px] text-[#555] truncate block leading-tight">
                             {name}
@@ -502,7 +507,7 @@ function DealTable({
                         ))}
                       </div>
                     </td>
-                    <td className="px-2.5 py-[7px] align-top">
+                    <td className="px-2.5 py-[7px] align-middle">
                       {(() => {
                         const color = getSectorColor(deal.sector);
                         return (
@@ -519,10 +524,10 @@ function DealTable({
                         );
                       })()}
                     </td>
-                    <td className="px-2.5 py-[7px] align-top">
+                    <td className="px-2.5 py-[7px] align-middle">
                       <span className="text-[11px] text-[#555]">{deal.region}</span>
                     </td>
-                    <td className="px-2.5 py-[7px] align-top">
+                    <td className="px-2.5 py-[7px] align-middle">
                       <div className="flex items-center gap-1">
                         {deal.category.map((cat) => {
                           const catColor = getCategoryColor(cat);
@@ -542,18 +547,22 @@ function DealTable({
                         })}
                       </div>
                     </td>
-                    <td className="px-2.5 py-[7px] align-top">
-                      <a
-                        href={deal.sourceUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1 text-[10px] text-[#999] hover:text-[#555] transition-colors"
-                        title={deal.sourceName}
-                      >
-                        <span className="truncate max-w-[80px]">{deal.sourceName}</span>
-                        <ExternalLink className="h-2.5 w-2.5 flex-shrink-0" />
-                      </a>
+                    <td className="px-2.5 py-[7px] align-middle">
+                      {deal.sourceUrl ? (
+                        <a
+                          href={deal.sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-1 text-[10px] text-[#999] hover:text-[#555] transition-colors"
+                          title={deal.sourceName || deal.sourceUrl}
+                        >
+                          <span className="truncate max-w-[80px]">{deal.sourceName || "Source"}</span>
+                          <ExternalLink className="h-2.5 w-2.5 flex-shrink-0" />
+                        </a>
+                      ) : (
+                        <span className="text-[10px] text-[#ccc]">—</span>
+                      )}
                     </td>
                   </tr>
                 );
