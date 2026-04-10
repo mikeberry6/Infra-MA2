@@ -406,33 +406,33 @@ function DealTable({
             </thead>
             <tbody>
               {sorted.map((deal) => {
+                const showSeller = deal.seller && deal.seller !== "N/A" && deal.seller !== "—";
                 return (
                   <tr
                     key={deal.id}
                     onClick={() => onSelectDeal(deal)}
                     className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-all group"
                   >
-                    <td className="px-2.5 py-2">
+                    <td className="px-2.5 py-[5px]">
                       <span className="font-mono text-[11px] text-[#555] tabular-nums">
                         {formatDate(deal.date)}
                       </span>
                     </td>
-                    <td className="px-2.5 py-2">
-                      <div>
-                        <span className="text-[12px] font-bold text-[#1a1a1a] tracking-tight group-hover:text-[#008253] transition-colors truncate block max-w-[260px]">
-                          {deal.target}
+                    <td className="px-2.5 py-[5px]">
+                      <span className="text-[12px] font-bold text-[#1a1a1a] tracking-tight group-hover:text-[#008253] transition-colors">
+                        {deal.target}
+                      </span>
+                      {showSeller && (
+                        <span className="text-[10px] text-[#aaa] ml-1.5">
+                          <span className="text-[#ccc]">/</span>{" "}
+                          <span className="text-[#999]">{deal.seller}</span>
                         </span>
-                        {deal.seller && deal.seller !== "N/A" && deal.seller !== "—" && (
-                          <span className="text-[10px] text-[#999] truncate block max-w-[260px] mt-0.5">
-                            {deal.seller}
-                          </span>
-                        )}
-                      </div>
+                      )}
                     </td>
-                    <td className="px-2.5 py-2 max-w-[160px]">
+                    <td className="px-2.5 py-[5px] max-w-[160px]">
                       <span className="text-[11px] text-[#555] truncate block">{deal.buyer}</span>
                     </td>
-                    <td className="px-2.5 py-2">
+                    <td className="px-2.5 py-[5px]">
                       {(() => {
                         const color = getSectorColor(deal.sector);
                         return (
@@ -449,10 +449,10 @@ function DealTable({
                         );
                       })()}
                     </td>
-                    <td className="px-2.5 py-2">
+                    <td className="px-2.5 py-[5px]">
                       <span className="text-[11px] text-[#555]">{deal.region}</span>
                     </td>
-                    <td className="px-2.5 py-2">
+                    <td className="px-2.5 py-[5px]">
                       <div className="flex items-center gap-1">
                         {deal.category.map((cat) => {
                           const catColor = getCategoryColor(cat);
@@ -472,7 +472,7 @@ function DealTable({
                         })}
                       </div>
                     </td>
-                    <td className="px-2.5 py-2">
+                    <td className="px-2.5 py-[5px]">
                       <a
                         href={deal.sourceUrl}
                         target="_blank"
