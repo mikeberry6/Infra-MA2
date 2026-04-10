@@ -20,6 +20,7 @@ export type DealStatus = "Announced" | "Closed" | "Pending Regulatory Approval" 
 export interface Deal {
   id: string;
   title: string;
+  target: string;
   buyer: string;
   seller: string;
   sector: DealSector;
@@ -62,8 +63,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-001",
     title: "TPG Rise Climate acquires 12 MW solar operating portfolio via Altus Power",
+    target: "12 MW Solar Operating Portfolio",
     buyer: "TPG Rise Climate (via Altus Power)",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Solar",
     region: "North America",
@@ -94,8 +96,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-002",
     title: "Actis acquires 93 MWp solar portfolio in Thailand via Levanta Renewables",
+    target: "93 MWp Solar Portfolio (Thailand)",
     buyer: "Actis (via Levanta Renewables)",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Solar",
     region: "Asia-Pacific",
@@ -126,8 +129,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-003",
     title: "EnCap Investments provides preferred growth equity to Catalyze (100 MW distributed solar)",
+    target: "Catalyze",
     buyer: "EnCap Investments (via Catalyze)",
-    seller: "Catalyze",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Distributed Solar",
     region: "North America",
@@ -158,8 +162,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-004",
     title: "TPG Rise Climate acquires 105 MW in-construction solar project via Altus Power",
+    target: "105 MW In-Construction Solar Project",
     buyer: "TPG Rise Climate (via Altus Power)",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Solar",
     region: "North America",
@@ -190,8 +195,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-005",
     title: "Schroders Greencoat acquires 283 MW UK solar PV portfolio",
+    target: "283 MW UK Solar PV Portfolio",
     buyer: "Schroders Greencoat",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Solar",
     region: "Europe",
@@ -222,8 +228,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-006",
     title: "Antin acquires 381 MW onshore wind portfolio via BEE",
+    target: "381 MW Onshore Wind Portfolio",
     buyer: "Antin Infrastructure Partners (via BEE)",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Wind",
     region: "Europe",
@@ -254,8 +261,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-007",
     title: "Ares acquires minority stake in 730 MW US solar and wind portfolio",
+    target: "730 MW US Solar & Wind Portfolio",
     buyer: "Ares Management",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Wind & Solar",
     region: "North America",
@@ -286,8 +294,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-008",
     title: "Asterion commits growth equity to scale ABIO biomethane platform",
+    target: "ABIO",
     buyer: "Asterion Industrial Partners",
-    seller: "ABIO (Asterion Bioenergy)",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Biomethane / Bioenergy",
     region: "Europe",
@@ -318,6 +327,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-009",
     title: "Equitix increases stake in ACEA Solar joint venture",
+    target: "ACEA Solar JV",
     buyer: "Equitix",
     seller: "ACEA",
     sector: "Power & ET",
@@ -350,8 +360,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-010",
     title: "I Squared Capital launches ANZA Power platform",
+    target: "ANZA Power",
     buyer: "I Squared Capital",
-    seller: "N/A (Platform Launch)",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Power Generation",
     region: "North America",
@@ -382,8 +393,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-011",
     title: "Blackstone acquires Arlington Industries platform",
+    target: "Arlington Industries",
     buyer: "Blackstone",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Energy Services / Industrial",
     region: "Europe",
@@ -414,8 +426,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-012",
     title: "Infratil makes follow-on equity investment in Contact Energy",
+    target: "Contact Energy",
     buyer: "Infratil",
-    seller: "Contact Energy",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Integrated Energy",
     region: "Asia-Pacific",
@@ -446,8 +459,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-013",
     title: "CPP Investments acquires Cordelio Power via Pattern Energy (platform merger)",
+    target: "Cordelio Power",
     buyer: "CPP Investments (via Pattern Energy)",
-    seller: "Cordelio Power",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Renewable Energy",
     region: "North America",
@@ -478,6 +492,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-014",
     title: "Energy Capital Partners divests Cornerstone Generation portfolio",
+    target: "Cornerstone Generation",
     buyer: "Undisclosed Buyer",
     seller: "Energy Capital Partners",
     sector: "Power & ET",
@@ -510,8 +525,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-015",
     title: "DESRI provides preferred equity for Duffy BESS Project via Linea Energy",
+    target: "Duffy BESS Project",
     buyer: "DESRI",
-    seller: "Linea Energy",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "BESS",
     region: "North America",
@@ -542,6 +558,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-016",
     title: "DigitalBridge acquires JV stake in EQUANS Infra & Mobility B.V.",
+    target: "EQUANS Infra & Mobility",
     buyer: "DigitalBridge",
     seller: "EQUANS",
     sector: "Power & ET",
@@ -574,8 +591,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-017",
     title: "I Squared Capital acquires FAS Renewables and Zahra Energy platforms",
+    target: "FAS Renewables / Zahra Energy",
     buyer: "I Squared Capital",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Renewable Energy",
     region: "Middle East & Africa",
@@ -606,6 +624,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-018",
     title: "Quinbrook Infrastructure Partners divests Flexitricity Limited",
+    target: "Flexitricity",
     buyer: "Undisclosed Buyer",
     seller: "Quinbrook Infrastructure Partners",
     sector: "Power & ET",
@@ -638,6 +657,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-019",
     title: "Ardian acquires Furukraft Wind Farm in Sweden",
+    target: "Furukraft Wind Farm",
     buyer: "Ardian",
     seller: "ERG",
     sector: "Power & ET",
@@ -670,8 +690,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-020",
     title: "KKR provides preferred growth equity to HMC Capital Energy Transition",
+    target: "HMC Capital Energy Transition",
     buyer: "KKR",
-    seller: "HMC Capital",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Energy Transition",
     region: "Asia-Pacific",
@@ -702,8 +723,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-021",
     title: "I Squared Capital and CPP Investments JV recap/buyout of Inkia Energy",
+    target: "Inkia Energy",
     buyer: "I Squared Capital / CPP Investments",
-    seller: "Inkia Energy",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Power Generation",
     region: "Latin America",
@@ -734,8 +756,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-022",
     title: "QIC / Wollemi Capital co-invest in Kalfresh Bioenergy Facility",
+    target: "Kalfresh Bioenergy Facility",
     buyer: "QIC / Wollemi Capital",
-    seller: "Kalfresh (project / issuer)",
+    seller: "N/A",
     sector: "Waste & ES",
     subsector: "Waste-to-Energy",
     region: "Asia-Pacific",
@@ -766,6 +789,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-023",
     title: "KKR acquires 50% stake in Norfolk Vanguard East & West offshore wind projects",
+    target: "Norfolk Vanguard East & West",
     buyer: "KKR",
     seller: "RWE",
     sector: "Power & ET",
@@ -798,8 +822,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-024",
     title: "Basalt Infrastructure acquires One Power Company via OnSite Partners (add-on)",
+    target: "One Power Company",
     buyer: "Basalt Infrastructure (via OnSite Partners)",
-    seller: "One Power Company",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Distributed Energy",
     region: "North America",
@@ -830,8 +855,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-025",
     title: "TPG Rise Climate acquires operational community solar in Minnesota via Altus Power",
+    target: "Minnesota Community Solar Portfolio",
     buyer: "TPG Rise Climate (via Altus Power)",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Community Solar",
     region: "North America",
@@ -862,6 +888,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-026",
     title: "Copenhagen Infrastructure Partners acquires Ørsted's European onshore business (100% buyout)",
+    target: "Ørsted European Onshore Business",
     buyer: "Copenhagen Infrastructure Partners",
     seller: "Ørsted",
     sector: "Power & ET",
@@ -894,6 +921,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-027",
     title: "ArcLight Capital acquires Prospect Power (150 MW BESS) from IFM",
+    target: "Prospect Power",
     buyer: "ArcLight Capital",
     seller: "IFM",
     sector: "Power & ET",
@@ -926,6 +954,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-028",
     title: "Brookfield Renewable acquires Steward Creek Solar Project via TerraForm",
+    target: "Steward Creek Solar Project",
     buyer: "Brookfield Renewable (via TerraForm)",
     seller: "Hexagon Energy",
     sector: "Power & ET",
@@ -958,6 +987,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-029",
     title: "Brookfield Renewable divests majority stake in US operating wind & solar portfolio",
+    target: "US Wind & Solar Portfolio",
     buyer: "Undisclosed Buyer",
     seller: "Brookfield Renewable",
     sector: "Power & ET",
@@ -990,8 +1020,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-030",
     title: "Ara Partners / APG Asset Management co-lead Series D growth equity in Utility Global",
+    target: "Utility Global",
     buyer: "Ara Partners / APG Asset Management",
-    seller: "Utility Global (issuer / Series D financing)",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Energy Transition",
     region: "North America",
@@ -1022,6 +1053,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-031",
     title: "Macquarie Asset Management divests Vibrant Energy platform",
+    target: "Vibrant Energy",
     buyer: "Undisclosed Buyer",
     seller: "Macquarie Asset Management",
     sector: "Power & ET",
@@ -1057,6 +1089,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-032",
     title: "Equitix acquires Balfour Beatty Infrastructure Assets (diversified portfolio)",
+    target: "Balfour Beatty Infrastructure Assets",
     buyer: "Equitix",
     seller: "Balfour Beatty",
     sector: "Utilities",
@@ -1089,6 +1122,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-033",
     title: "Brookfield Infrastructure divests Brazilian electricity transmission concession",
+    target: "Brazilian Electricity Transmission Concession",
     buyer: "Undisclosed Buyer",
     seller: "Brookfield Infrastructure",
     sector: "Utilities",
@@ -1121,6 +1155,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-034",
     title: "3i Infrastructure acquires Centrica's Energy Solutions (IT/NL) via Joulz (bolt-on)",
+    target: "Centrica Energy Solutions (IT/NL)",
     buyer: "3i Infrastructure (via Joulz)",
     seller: "Centrica",
     sector: "Utilities",
@@ -1153,6 +1188,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-035",
     title: "Macquarie Asset Management acquires Energy Assets Group from Asterion & Swiss Life (100% buyout)",
+    target: "Energy Assets Group",
     buyer: "Macquarie Asset Management",
     seller: "Asterion Industrial Partners / Swiss Life Asset Managers",
     sector: "Utilities",
@@ -1185,6 +1221,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-036",
     title: "Macquarie Asset Management acquires 50% stake in Last Mile Infrastructure",
+    target: "Last Mile Infrastructure",
     buyer: "Macquarie Asset Management",
     seller: "Infracapital (M&G)",
     sector: "Utilities",
@@ -1217,8 +1254,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-037",
     title: "EQT Infrastructure acquires Mainswest & Centillion Solutions via Osmose Utilities (add-on)",
+    target: "Mainswest & Centillion Solutions",
     buyer: "EQT Infrastructure (via Osmose Utilities)",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Utilities",
     subsector: "Utility Services",
     region: "Asia-Pacific",
@@ -1249,6 +1287,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-038",
     title: "TPG Rise Climate acquires majority stake in Sabre Industries from Blackstone",
+    target: "Sabre Industries",
     buyer: "TPG Rise Climate",
     seller: "Blackstone",
     sector: "Utilities",
@@ -1284,6 +1323,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-039",
     title: "APG Infrastructure divests 10% stake in Exolum",
+    target: "Exolum",
     buyer: "Undisclosed Buyer",
     seller: "APG Infrastructure",
     sector: "Midstream",
@@ -1316,6 +1356,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-040",
     title: "GIP (BlackRock) divests 7.6% stake in Rio Grande LNG Trains 4 & 5",
+    target: "Rio Grande LNG Trains 4 & 5",
     buyer: "Undisclosed Buyer",
     seller: "GIP (BlackRock)",
     sector: "Midstream",
@@ -1351,8 +1392,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-041",
     title: "Blackstone acquires Alliance Technical Group platform",
+    target: "Alliance Technical Group",
     buyer: "Blackstone",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Waste & ES",
     subsector: "Environmental Services",
     region: "North America",
@@ -1383,8 +1425,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-042",
     title: "Blackstone and EQT Infrastructure co-acquire Urbaser (50/50 platform buyout)",
+    target: "Urbaser",
     buyer: "Blackstone / EQT Infrastructure",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Waste & ES",
     subsector: "Waste Management",
     region: "Europe",
@@ -1418,8 +1461,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-043",
     title: "KKR increases stake in Altavair L.P.",
+    target: "Altavair",
     buyer: "KKR",
-    seller: "Altavair L.P.",
+    seller: "N/A",
     sector: "Transportation",
     subsector: "Aviation Leasing",
     region: "North America",
@@ -1450,6 +1494,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-044",
     title: "CVC DIF divests American Roads platform",
+    target: "American Roads",
     buyer: "Undisclosed Buyer",
     seller: "CVC DIF",
     sector: "Transportation",
@@ -1482,6 +1527,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-045",
     title: "Ridgewood Infrastructure divests APP Jet Center platform",
+    target: "APP Jet Center",
     buyer: "Undisclosed Buyer",
     seller: "Ridgewood Infrastructure",
     sector: "Transportation",
@@ -1514,8 +1560,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-046",
     title: "Tallvine Partners acquires BTR Jet Center via Velocity FBO Network (add-on)",
+    target: "BTR Jet Center",
     buyer: "Tallvine Partners (via Velocity FBO Network)",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Transportation",
     subsector: "Aviation / FBO",
     region: "North America",
@@ -1546,8 +1593,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-047",
     title: "Vauban Infrastructure acquires Central Parking System Colombia via INDIGO Group",
+    target: "Central Parking System Colombia",
     buyer: "Vauban Infrastructure (via INDIGO Group)",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Transportation",
     subsector: "Parking",
     region: "Latin America",
@@ -1578,6 +1626,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-048",
     title: "DWS Infrastructure divests Corelink Rail Infrastructure Limited",
+    target: "Corelink Rail Infrastructure",
     buyer: "Undisclosed Buyer",
     seller: "DWS Infrastructure & Infracapital",
     sector: "Transportation",
@@ -1610,6 +1659,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-049",
     title: "Blackstone Infrastructure acquires 10% stake in Fraport Greece",
+    target: "Fraport Greece",
     buyer: "Blackstone Infrastructure",
     seller: "Marguerite Fund",
     sector: "Transportation",
@@ -1642,8 +1692,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-050",
     title: "CVC DIF acquires iPark platform",
+    target: "iPark",
     buyer: "CVC DIF",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Transportation",
     subsector: "Parking",
     region: "Europe",
@@ -1674,8 +1725,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-051",
     title: "DWS Infrastructure acquires Norwegian travel assets (gondola & rail carve-out)",
+    target: "Norwegian Travel Assets",
     buyer: "DWS Infrastructure",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Transportation",
     subsector: "Tourism Transport / Gondola & Rail",
     region: "Europe",
@@ -1706,8 +1758,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-052",
     title: "Macquarie Asset Management / UniSuper / Pontegadea to take Qube Holdings private",
+    target: "Qube Holdings",
     buyer: "Macquarie Asset Management / UniSuper / Pontegadea",
-    seller: "Public shareholders",
+    seller: "N/A",
     sector: "Transportation",
     subsector: "Ports & Logistics",
     region: "Asia-Pacific",
@@ -1738,8 +1791,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-053",
     title: "I Squared Capital acquires Ramudden Global platform",
+    target: "Ramudden Global",
     buyer: "I Squared Capital",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Transportation",
     subsector: "Road Safety / Traffic Management",
     region: "Europe",
@@ -1770,8 +1824,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-054",
     title: "Stonepeak acquires 25% JV stake in United Ports LLC",
+    target: "United Ports",
     buyer: "Stonepeak",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Transportation",
     subsector: "Ports",
     region: "Middle East & Africa",
@@ -1802,8 +1857,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-055",
     title: "Antin Infrastructure Partners acquires Vigor Marine Group platform",
+    target: "Vigor Marine Group",
     buyer: "Antin Infrastructure Partners",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Transportation",
     subsector: "Maritime / Shipyard Services",
     region: "North America",
@@ -1837,8 +1893,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-056",
     title: "Patrizia acquires 49 Nordic social infrastructure assets via Kinland",
+    target: "49 Nordic Social Infrastructure Assets",
     buyer: "Patrizia (via Kinland)",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Social",
     subsector: "Social Infrastructure",
     region: "Europe",
@@ -1869,8 +1926,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-057",
     title: "Ancala Partners acquires Awelon Healthcare via Iris Care Group (bolt-on)",
+    target: "Awelon Healthcare",
     buyer: "Ancala Partners (via Iris Care Group)",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Social",
     subsector: "Healthcare",
     region: "Europe",
@@ -1901,8 +1959,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-058",
     title: "Antin Infrastructure Partners acquires majority stake in Belambra",
+    target: "Belambra",
     buyer: "Antin Infrastructure Partners",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Social",
     subsector: "Tourism / Leisure Infrastructure",
     region: "Europe",
@@ -1933,6 +1992,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-059",
     title: "MEAG acquires 50% JV stake in Culmia Affordable Housing Portfolio",
+    target: "Culmia Affordable Housing Portfolio",
     buyer: "MEAG",
     seller: "Culmia",
     sector: "Social",
@@ -1965,8 +2025,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-060",
     title: "Antin Infrastructure Partners acquires Emsere platform",
+    target: "Emsere",
     buyer: "Antin Infrastructure Partners",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Social",
     subsector: "Healthcare Logistics",
     region: "Europe",
@@ -1997,6 +2058,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-061",
     title: "Fengate Asset Management divests Prince George's County Schools P3",
+    target: "Prince George's County Schools P3",
     buyer: "Undisclosed Buyer",
     seller: "Fengate Asset Management",
     sector: "Social",
@@ -2032,6 +2094,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-062",
     title: "Commerz Real / Allianz Global Investors acquire minority stake in ATC Europe from Allianz insurance companies",
+    target: "ATC Europe",
     buyer: "Commerz Real / Allianz Global Investors",
     seller: "Allianz insurance companies",
     sector: "Digital",
@@ -2064,8 +2127,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-063",
     title: "Igneo Infrastructure Partners acquires Aurora, IL data center via US Signal (bolt-on)",
+    target: "Aurora IL Data Center",
     buyer: "Igneo Infrastructure Partners (via US Signal)",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Digital",
     subsector: "Data Centers",
     region: "North America",
@@ -2096,6 +2160,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-064",
     title: "CVC DIF acquires 88% stake in Celeste from InfraVia",
+    target: "Celeste",
     buyer: "CVC DIF",
     seller: "InfraVia",
     sector: "Digital",
@@ -2128,6 +2193,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-065",
     title: "CDPQ divests 11% stake in Cogeco Communications",
+    target: "Cogeco Communications",
     buyer: "Undisclosed Buyer",
     seller: "CDPQ",
     sector: "Digital",
@@ -2160,6 +2226,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-066",
     title: "DigitalBridge divests enterprise fiber business of Extenet Systems (carve-out)",
+    target: "Extenet Systems (Enterprise Fiber)",
     buyer: "Undisclosed Buyer",
     seller: "DigitalBridge (via Extenet Systems)",
     sector: "Digital",
@@ -2192,6 +2259,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-067",
     title: "Cube Infrastructure Managers divests stake in G.Network",
+    target: "G.Network",
     buyer: "Undisclosed Buyer",
     seller: "Cube Infrastructure Managers",
     sector: "Digital",
@@ -2224,8 +2292,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-068",
     title: "KKR provides follow-on growth equity to Global Technical Realty (GTR)",
+    target: "Global Technical Realty (GTR)",
     buyer: "KKR",
-    seller: "Global Technical Realty (GTR)",
+    seller: "N/A",
     sector: "Digital",
     subsector: "Data Centers",
     region: "Asia-Pacific",
@@ -2256,8 +2325,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-069",
     title: "Morgan Stanley Infrastructure cornerstone invests in Han's CNC Technology IPO",
+    target: "Han's CNC Technology",
     buyer: "Morgan Stanley Infrastructure",
-    seller: "Han's CNC Technology",
+    seller: "N/A",
     sector: "Digital",
     subsector: "Data Center Equipment / Technology",
     region: "Asia-Pacific",
@@ -2288,6 +2358,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-070",
     title: "Macquarie Asset Management acquires IHS Towers South American operations (carve-out)",
+    target: "IHS Towers (South America)",
     buyer: "Macquarie Asset Management",
     seller: "IHS Towers",
     sector: "Digital",
@@ -2320,8 +2391,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-071",
     title: "Antin acquires LuxNetwork via Eurofiber (bolt-on)",
+    target: "LuxNetwork",
     buyer: "Antin Infrastructure Partners (via Eurofiber)",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Digital",
     subsector: "Fiber / Broadband",
     region: "Europe",
@@ -2352,6 +2424,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-072",
     title: "Brookfield Infrastructure divests stake in North American data center portfolio",
+    target: "North American Data Center Portfolio",
     buyer: "Undisclosed Buyer",
     seller: "Brookfield Infrastructure",
     sector: "Digital",
@@ -2384,8 +2457,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-073",
     title: "Tiger Infrastructure Partners acquires Ntirety via 11:11 Systems (bolt-on)",
+    target: "Ntirety",
     buyer: "Tiger Infrastructure Partners (via 11:11 Systems)",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Digital",
     subsector: "Managed IT Services",
     region: "North America",
@@ -2416,6 +2490,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-075",
     title: "DigitalBridge sells minority stake in Skyline JV (Vantage Data Centers)",
+    target: "Skyline JV (Vantage Data Centers)",
     buyer: "Aware Super",
     seller: "DigitalBridge",
     sector: "Digital",
@@ -2448,6 +2523,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-076",
     title: "KKR-led consortium acquires 82% stake in ST Telemedia Global Data Centres",
+    target: "ST Telemedia Global Data Centres",
     buyer: "KKR",
     seller: "ST Telemedia",
     sector: "Digital",
@@ -2480,6 +2556,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-077",
     title: "nexfibre acquires Substantial Group (Netomnia) from DigitalBridge / Advencap / Soho Square Capital",
+    target: "Substantial Group (Netomnia)",
     buyer: "nexfibre / InfraVia / Liberty Global / Telefónica",
     seller: "DigitalBridge / Advencap / Soho Square Capital",
     sector: "Digital",
@@ -2512,8 +2589,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-078",
     title: "InfraBridge and Equitix merge Truespeed & Freedom Fibre platforms",
+    target: "Truespeed & Freedom Fibre",
     buyer: "InfraBridge / Equitix",
-    seller: "N/A (Platform Merger)",
+    seller: "N/A",
     sector: "Digital",
     subsector: "Fiber / Broadband",
     region: "Europe",
@@ -2544,6 +2622,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-079",
     title: "Igneo Infrastructure Partners acquires Vault Digital Infrastructure from CVC DIF, Northleaf & ADIA",
+    target: "Vault Digital Infrastructure",
     buyer: "Igneo Infrastructure Partners",
     seller: "CVC DIF / Northleaf / ADIA",
     sector: "Digital",
@@ -2579,8 +2658,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-080",
     title: "EQT Infrastructure acquires Reload via Scale Microgrids (bolt-on)",
+    target: "Reload",
     buyer: "EQT Infrastructure (via Scale Microgrids)",
-    seller: "Reload",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Distributed Energy",
     region: "North America",
@@ -2612,6 +2692,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-081",
     title: "DWS Infrastructure acquires Cleanwatts from Verdane",
+    target: "Cleanwatts",
     buyer: "DWS Infrastructure",
     seller: "Verdane",
     sector: "Power & ET",
@@ -2645,8 +2726,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-082",
     title: "Equitix leads growth equity investment in Andion CH4 Renewables",
+    target: "Andion CH4 Renewables",
     buyer: "Equitix",
-    seller: "Andion CH4 Renewables",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Biomethane / Bioenergy",
     region: "Europe",
@@ -2678,6 +2760,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-083",
     title: "Equitix acquires Cella Dati biomethane plant via Andion CH4 Renewables (bolt-on)",
+    target: "Cella Dati Biomethane Plant",
     buyer: "Equitix (via Andion CH4 Renewables)",
     seller: "IREN / Santini Agricoltura Rinnovabile",
     sector: "Power & ET",
@@ -2711,6 +2794,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-084",
     title: "Macquarie Asset Management / Nobian divest HyCC to Power2X",
+    target: "HyCC",
     buyer: "Power2X",
     seller: "Macquarie Asset Management / Nobian",
     sector: "Power & ET",
@@ -2743,6 +2827,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-085",
     title: "Stonepeak acquires 83 MW Indian solar portfolio via Digital Edge",
+    target: "83MW Indian Solar Energy Projects",
     buyer: "Stonepeak (via Digital Edge)",
     seller: "Hexa Climate Solutions",
     sector: "Power & ET",
@@ -2776,6 +2861,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-086",
     title: "Exus Renewables acquires 60% stake in Masdar Portuguese wind portfolio",
+    target: "Masdar Portuguese Wind Portfolio",
     buyer: "Exus Renewables",
     seller: "Masdar",
     sector: "Power & ET",
@@ -2812,6 +2898,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-087",
     title: "CPP Investments and Equinix acquire controlling stake in atNorth from Partners Group",
+    target: "atNorth",
     buyer: "CPP Investments / Equinix",
     seller: "Partners Group",
     sector: "Digital",
@@ -2846,8 +2933,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-088",
     title: "Brookfield Asset Management launches Radiant AI infrastructure platform via Ori Industries acquisition",
+    target: "Ori Industries",
     buyer: "Brookfield Asset Management",
-    seller: "Ori Industries",
+    seller: "N/A",
     sector: "Digital",
     subsector: "AI Infrastructure",
     region: "Europe",
@@ -2879,6 +2967,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-089",
     title: "Harrison Street divests Sandy Farms and Eternal Rings data centers",
+    target: "Sandy Farms & Eternal Rings Data Centers",
     buyer: "GI Partners",
     seller: "Harrison Street",
     sector: "Digital",
@@ -2912,6 +3001,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-090",
     title: "EQT Infrastructure acquires Skellefteå data center site via EdgeConneX (bolt-on)",
+    target: "Skellefteå Data Center Site",
     buyer: "EQT Infrastructure (via EdgeConneX)",
     seller: "Lyten",
     sector: "Digital",
@@ -2945,6 +3035,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-091",
     title: "Tiger Infrastructure Partners acquires Digital Sense via 11:11 Systems (bolt-on)",
+    target: "Digital Sense",
     buyer: "Tiger Infrastructure Partners (via 11:11 Systems)",
     seller: "Aussie Broadband",
     sector: "Digital",
@@ -2981,6 +3072,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-092",
     title: "Macquarie Asset Management / PGGM Infrastructure Fund / Australian Retirement Trust divest Macquarie AirFinance to Dubai Aerospace Enterprise",
+    target: "Macquarie AirFinance",
     buyer: "Dubai Aerospace Enterprise",
     seller: "Macquarie Asset Management / PGGM Infrastructure Fund / Australian Retirement Trust",
     sector: "Transportation",
@@ -3013,8 +3105,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-093",
     title: "Mainstay Maritime divests Lower Lakes Towing & 6 Canadian-flagged Lakers to Algoma Central",
+    target: "Lower Lakes Towing & 6 Canadian-flagged Lakers",
     buyer: "Algoma Central Corporation",
-    seller: "Mainstay Maritime",
+    seller: "Oaktree (via Mainstay Maritime)",
     sector: "Transportation",
     subsector: "Maritime Logistics",
     region: "North America",
@@ -3045,6 +3138,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-094",
     title: "Stonepeak divests 49% stake in 321 Precision Conversions via ATSG",
+    target: "321 Precision Conversions",
     buyer: "Erickson Group",
     seller: "Stonepeak (via ATSG)",
     sector: "Transportation",
@@ -3081,6 +3175,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-095",
     title: "Macquarie Infrastructure Partners exits DTG Recycle investment",
+    target: "DTG Recycle",
     buyer: "Dan Guimont / Waste Connections",
     seller: "Macquarie Infrastructure Partners",
     sector: "Waste & ES",
@@ -3118,8 +3213,9 @@ export const deals: Deal[] = [
     id: "INF-2026-096",
     title:
       "Bimergen Energy acquires 79.2 MW ERCOT South BESS portfolio from Aggreko IPP Solutions",
+    target: "79.2 MW DG BESS Portfolio",
     buyer: "Bimergen Energy",
-    seller: "Aggreko IPP Solutions business (owned by I Squared Capital)",
+    seller: "I Squared Capital (via Aggreko IPP Solutions)",
     sector: "Power & ET",
     subsector: "BESS",
     region: "North America",
@@ -3152,8 +3248,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-097",
     title: "Stonepeak invests in Aura Holdings retirement living platform",
+    target: "Aura Holdings",
     buyer: "Stonepeak",
-    seller: "Aura Holdings",
+    seller: "N/A",
     sector: "Social",
     subsector: "Retirement Living",
     region: "Asia-Pacific",
@@ -3189,8 +3286,9 @@ export const deals: Deal[] = [
     id: "INF-2026-098",
     title:
       "EQT Infrastructure and GIP co-lead take-private acquisition of AES Corporation",
+    target: "AES Corporation",
     buyer: "EQT Infrastructure / GIP",
-    seller: "AES Corporation",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Diversified Power",
     region: "North America",
@@ -3224,6 +3322,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-099",
     title: "HarbourVest Partners acquires stake in Calisen from Equitix",
+    target: "Calisen",
     buyer: "HarbourVest Partners",
     seller: "Equitix",
     sector: "Power & ET",
@@ -3259,6 +3358,7 @@ export const deals: Deal[] = [
     id: "INF-2026-100",
     title:
       "Macquarie Asset Management divests minority stake in Arqiva",
+    target: "Arqiva",
     buyer: "Polus Capital Management",
     seller: "Macquarie Asset Management",
     sector: "Digital",
@@ -3295,8 +3395,9 @@ export const deals: Deal[] = [
     id: "INF-2026-101",
     title:
       "GIP divests 11.4% minority stake in Naturgy Energy Group SA",
+    target: "Naturgy Energy Group",
     buyer: "Public Market",
-    seller: "GIP",
+    seller: "BlackRock / GIP (11.4% stake)",
     sector: "Utilities",
     subsector: "Integrated Utility",
     region: "Europe",
@@ -3331,6 +3432,7 @@ export const deals: Deal[] = [
     id: "INF-2026-102",
     title:
       "Brookfield Infrastructure Structured Solutions / Telia acquire stake in Valokuitunen Oy from CapMan Infra",
+    target: "Valokuitunen Oy",
     buyer: "Brookfield Infrastructure Structured Solutions / Telia",
     seller: "CapMan Infra",
     sector: "Digital",
@@ -3366,6 +3468,7 @@ export const deals: Deal[] = [
     id: "INF-2026-103",
     title:
       "Actis / Levanta Renewables acquire 80% stake in Gia Lai 50 MW onshore wind project from Super Energy",
+    target: "50 MW Onshore Wind Project (Gia Lai)",
     buyer: "Actis (via Levanta Renewables)",
     seller: "Super Energy Corporation",
     sector: "Power & ET",
@@ -3401,8 +3504,9 @@ export const deals: Deal[] = [
     id: "INF-2026-104",
     title:
       "Thames Clippers / Northleaf Capital acquire Gosport Ferry from FIH Group",
+    target: "Gosport Ferry",
     buyer: "Thames Clippers / Northleaf Capital",
-    seller: "FIH Group plc / Portsmouth Harbour Ferry Company",
+    seller: "FIH Group plc",
     sector: "Transportation",
     subsector: "Ferry",
     region: "Europe",
@@ -3436,6 +3540,7 @@ export const deals: Deal[] = [
     id: "INF-2026-105",
     title:
       "BCI / NBIM / Brookfield launch Northview Energy platform",
+    target: "Northview Energy",
     buyer: "BCI / NBIM / Brookfield",
     seller: "N/A",
     sector: "Power & ET",
@@ -3471,8 +3576,9 @@ export const deals: Deal[] = [
     id: "INF-2026-106",
     title:
       "Macquarie Asset Management / Gabia launch Gabia Data Centre JV platform",
+    target: "Gabia Data Centre",
     buyer: "Macquarie Asset Management / Gabia Inc.",
-    seller: "N/A (JV / platform launch with Gabia Inc.)",
+    seller: "N/A",
     sector: "Digital",
     subsector: "Data Centers",
     region: "Asia-Pacific",
@@ -3506,6 +3612,7 @@ export const deals: Deal[] = [
     id: "INF-2026-107",
     title:
       "DWS Infrastructure acquires Maaselänkangas onshore wind farm from wpd Group",
+    target: "Maaselänkangas Onshore Wind Farm",
     buyer: "DWS Infrastructure",
     seller: "wpd Group",
     sector: "Power & ET",
@@ -3542,8 +3649,9 @@ export const deals: Deal[] = [
     id: "INF-2026-108",
     title:
       "Allianz Global Investors acquires 50% stake in 11 German BESS Projects from TotalEnergies",
+    target: "11 German BESS Projects",
     buyer: "Allianz Global Investors",
-    seller: "TotalEnergies (via Kyon Energy)",
+    seller: "TotalEnergies (50% stake)",
     sector: "Power & ET",
     subsector: "BESS",
     region: "Europe",
@@ -3577,6 +3685,7 @@ export const deals: Deal[] = [
     id: "INF-2026-109",
     title:
       "GIP acquires 71% stake in TCR from 3i Infrastructure in secondary buyout",
+    target: "TCR",
     buyer: "GIP",
     seller: "3i Infrastructure",
     sector: "Transportation",
@@ -3613,6 +3722,7 @@ export const deals: Deal[] = [
     id: "INF-2026-110",
     title:
       "KKR acquires 43.5% minority stake in SK Eternix from SK Discovery / Hahn & Company",
+    target: "SK Eternix",
     buyer: "KKR",
     seller: "SK Discovery / Hahn & Company",
     sector: "Power & ET",
@@ -3648,8 +3758,9 @@ export const deals: Deal[] = [
     id: "INF-2026-111",
     title:
       "Greencoat Renewables / Schroders Greencoat launch green digital infrastructure JV and acquire Drogheda Energy Park",
+    target: "Drogheda Energy Park",
     buyer: "Greencoat Renewables / Schroders Greencoat",
-    seller: "Former Premier Periclase site owner (not named)",
+    seller: "N/A",
     sector: "Digital",
     subsector: "Data Centers",
     region: "Europe",
@@ -3686,8 +3797,9 @@ export const deals: Deal[] = [
     id: "INF-2026-112",
     title:
       "Nuveen Infrastructure acquires 70.4 MWp Brandenburg solar park from Trianel",
+    target: "70.4 MWp Brandenburg Solar Park",
     buyer: "Nuveen Infrastructure",
-    seller: "Trianel",
+    seller: "Trianel Energieprojekte",
     sector: "Power & ET",
     subsector: "Solar",
     region: "Europe",
@@ -3722,6 +3834,7 @@ export const deals: Deal[] = [
     id: "INF-2026-113",
     title:
       "Ara Partners acquires Gate City Power, Gate City Renewable Fuels, and JET from HF Capital",
+    target: "Gate City Power / Gate City Renewable Fuels / JET",
     buyer: "Ara Partners (via Ara Energy)",
     seller: "HF Capital",
     sector: "Power & ET",
@@ -3758,8 +3871,9 @@ export const deals: Deal[] = [
     id: "INF-2026-114",
     title:
       "Energy Capital Partners acquires TPI Composites wind blade operations via Section 363 sale",
+    target: "TPI Composites (Wind Blade Manufacturing)",
     buyer: "Energy Capital Partners (via ECP Blade Holdings)",
-    seller: "TPI Composites",
+    seller: "TPI Composites (Section 363 bankruptcy sale)",
     sector: "Power & ET",
     subsector: "Wind Manufacturing",
     region: "North America",
@@ -3794,6 +3908,7 @@ export const deals: Deal[] = [
     id: "INF-2026-115",
     title:
       "IFM Investors divests 14.84% minority stake in Arqiva to Polus Capital Management",
+    target: "Arqiva",
     buyer: "Polus Capital Management",
     seller: "IFM Investors",
     sector: "Digital",
@@ -3830,6 +3945,7 @@ export const deals: Deal[] = [
     id: "INF-2026-116",
     title:
       "Goldman Sachs Alternatives commits $169mm preferred equity in Nighthawk BESS project",
+    target: "Nighthawk Energy Storage Project",
     buyer: "Goldman Sachs Alternatives",
     seller: "N/A",
     sector: "Power & ET",
@@ -3866,6 +3982,7 @@ export const deals: Deal[] = [
     id: "INF-2026-117",
     title:
       "EQT Infrastructure acquires Steel River solar and storage project via Cypress Creek Renewables",
+    target: "Steel River Solar and Storage Project",
     buyer: "EQT Infrastructure (via Cypress Creek Renewables)",
     seller: "IFM Investors (via Swift Current Energy)",
     sector: "Power & ET",
@@ -3902,6 +4019,7 @@ export const deals: Deal[] = [
     id: "INF-2026-118",
     title:
       "3i Infrastructure acquires majority stake in Lefdal Mine Datacenter",
+    target: "Lefdal Mine Datacenter",
     buyer: "3i Infrastructure",
     seller: "N/A",
     sector: "Digital",
@@ -3938,8 +4056,9 @@ export const deals: Deal[] = [
     id: "INF-2026-119",
     title:
       "ArcLight Capital acquires InfraBridge's 50% stake in IATP thermal power platform",
+    target: "Invenergy AMPCI Thermal Power (IATP)",
     buyer: "ArcLight Capital",
-    seller: "InfraBridge",
+    seller: "InfraBridge (DigitalBridge)",
     sector: "Power & ET",
     subsector: "Thermal Power",
     region: "North America",
@@ -3974,6 +4093,7 @@ export const deals: Deal[] = [
     id: "INF-2026-120",
     title:
       "Ridgewood Infrastructure acquires controlling interest in Sierra Railroad Company",
+    target: "Sierra Railroad Company",
     buyer: "Ridgewood Infrastructure",
     seller: "N/A",
     sector: "Transportation",
@@ -4010,6 +4130,7 @@ export const deals: Deal[] = [
     id: "INF-2026-121",
     title:
       "Ridgewood Infrastructure acquires CVAT via Sierra Railroad bolt-on",
+    target: "Central Valley Ag Transport (CVAT)",
     buyer: "Ridgewood Infrastructure (via Sierra Railroad)",
     seller: "N/A",
     sector: "Transportation",
@@ -4046,8 +4167,9 @@ export const deals: Deal[] = [
     id: "INF-2026-122",
     title:
       "Diverso Energy / CVC DIF partner with Dandelion Energy on geothermal heat pump platform",
+    target: "Dandelion Partnership",
     buyer: "Diverso Energy / CVC DIF / Dandelion Energy",
-    seller: "N/A (JV / partnership launch)",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Geothermal",
     region: "North America",
@@ -4079,8 +4201,9 @@ export const deals: Deal[] = [
     id: "INF-2026-123",
     title:
       "Stonepeak / Alphabet combine GFiber with Astound Broadband",
+    target: "GFiber / Astound Broadband",
     buyer: "Stonepeak / Alphabet",
-    seller: "Alphabet / Stonepeak (platform combination)",
+    seller: "Alphabet (retaining minority)",
     sector: "Digital",
     subsector: "Fiber/Broadband",
     region: "North America",
@@ -4114,6 +4237,7 @@ export const deals: Deal[] = [
     id: "INF-2026-124",
     title:
       "EQT Infrastructure and GIC acquire 42% of Kelda Holdings (Yorkshire Water) from DWS and Corsair",
+    target: "Kelda Holdings (Yorkshire Water)",
     buyer: "EQT Infrastructure / GIC",
     seller: "DWS Infrastructure / Corsair Capital",
     sector: "Utilities",
@@ -4150,8 +4274,9 @@ export const deals: Deal[] = [
     id: "INF-2026-125",
     title:
       "Siris acquires majority stake in TAKKION from Apollo",
+    target: "TAKKION",
     buyer: "Siris",
-    seller: "Apollo",
+    seller: "Apollo Global Management",
     sector: "Power & ET",
     subsector: "Infrastructure Services",
     region: "North America",
@@ -4186,6 +4311,7 @@ export const deals: Deal[] = [
     id: "INF-2026-126",
     title:
       "Blackstone Energy Transition Partners acquires majority stake in Advanced Cooling Technologies",
+    target: "Advanced Cooling Technologies (ACT)",
     buyer: "Blackstone Energy Transition Partners",
     seller: "N/A",
     sector: "Digital",
@@ -4222,6 +4348,7 @@ export const deals: Deal[] = [
     id: "INF-2026-127",
     title:
       "EIG acquires JERA's interests in Gorgon LNG and Ichthys LNG via MidOcean Energy",
+    target: "Gorgon LNG / Ichthys LNG",
     buyer: "EIG (via MidOcean Energy)",
     seller: "JERA",
     sector: "Midstream",
@@ -4257,6 +4384,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-128",
     title: "Standard Solar / Brookfield acquire 48.4 MW New Mexico community solar portfolio",
+    target: "48.4 MW Community Solar Portfolio (NM)",
     buyer: "Standard Solar / Brookfield",
     seller: "Pluma Construction / ForeFront Power",
     sector: "Power & ET",
@@ -4289,8 +4417,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-129",
     title: "KKR invests in PMI Electro / Allfleet",
+    target: "PMI Electro / Allfleet",
     buyer: "KKR",
-    seller: "PMI Electro Mobility (issuer)",
+    seller: "N/A",
     sector: "Transportation",
     subsector: "EV Fleet",
     region: "Asia-Pacific",
@@ -4321,6 +4450,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-130",
     title: "Morgan Stanley Infrastructure Partners divests Bayonne Energy Center to Jupiter Energy Investor",
+    target: "Bayonne Energy Center",
     buyer: "Jupiter Energy Investor",
     seller: "Morgan Stanley Infrastructure Partners",
     sector: "Power & ET",
@@ -4353,8 +4483,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-131",
     title: "Equitix / COFIDES co-invest in Spanish Hybridisation Platform",
+    target: "Spanish Hybridisation Platform",
     buyer: "Equitix / COFIDES",
-    seller: "N/A (platform co-investment)",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Renewables",
     region: "Europe",
@@ -4385,8 +4516,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-132",
     title: "Cube Highways Trust / I Squared Capital acquire four highway assets from sponsor",
+    target: "Cube Highways Trust (4 Highway Assets)",
     buyer: "Cube Highways Trust / I Squared Capital",
-    seller: "Cube Highways sponsor / I Squared Capital",
+    seller: "I Squared Capital",
     sector: "Transportation",
     subsector: "Highways",
     region: "Asia-Pacific",
@@ -4417,8 +4549,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-133",
     title: "Ares Management invests in Plenitude via capital increase",
+    target: "Plenitude (Eni)",
     buyer: "Ares Management",
-    seller: "Eni / Plenitude (capital raise)",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Renewables",
     region: "Europe",
@@ -4449,8 +4582,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-134",
     title: "CBRE Investment Management acquires 10% stake in Porterbrook",
+    target: "Porterbrook",
     buyer: "CBRE Investment Management",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Transportation",
     subsector: "Rolling Stock",
     region: "Europe",
@@ -4481,8 +4615,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-135",
     title: "Zenobe / KKR acquire Revolv",
+    target: "Revolv",
     buyer: "Zenobe / KKR",
-    seller: "Revolv (previous owners)",
+    seller: "N/A",
     sector: "Transportation",
     subsector: "EV Fleet",
     region: "North America",
@@ -4513,6 +4648,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-136",
     title: "APG Asset Management co-invests in NorthC Datacenters alongside Antin",
+    target: "NorthC Datacenters",
     buyer: "APG Asset Management / Antin Infrastructure Partners",
     seller: "DWS (for Antin platform buyout)",
     sector: "Digital",
@@ -4545,6 +4681,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-137",
     title: "Axium Infrastructure Europe acquires 49.9% stake in 174 MW French wind portfolio",
+    target: "174 MW Wind Portfolio (France)",
     buyer: "Axium Infrastructure Europe",
     seller: "la Banque des Territoires",
     sector: "Power & ET",
@@ -4577,6 +4714,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-138",
     title: "ReNew Energy Global divests Tamil Nadu Solar Project to Technique Solaire / ADIA Infrastructure",
+    target: "Tamil Nadu Solar Project (100 MW)",
     buyer: "Technique Solaire / ADIA Infrastructure",
     seller: "ReNew Energy Global",
     sector: "Power & ET",
@@ -4609,6 +4747,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-139",
     title: "Generate Capital divests Equinox Growers greenhouse facility to Taylor Farms",
+    target: "Equinox Growers Greenhouse Facility",
     buyer: "Taylor Farms",
     seller: "Generate Capital",
     sector: "Social",
@@ -4641,8 +4780,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-140",
     title: "Igneo Infrastructure Partners acquires OnStream",
+    target: "OnStream",
     buyer: "Igneo Infrastructure Partners",
-    seller: "Undisclosed Seller",
+    seller: "N/A",
     sector: "Utilities",
     subsector: "Smart Metering",
     region: "Europe",
@@ -4673,8 +4813,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-141",
     title: "Brookfield / La Caisse acquire Boralex",
+    target: "Boralex Inc.",
     buyer: "Brookfield / La Caisse",
-    seller: "Public shareholders",
+    seller: "N/A",
     sector: "Power & ET",
     subsector: "Renewables",
     region: "North America",
@@ -4705,8 +4846,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-142",
     title: "KWAP joins Stonepeak / KJTS in Lestari Cooling Energy",
+    target: "Lestari Cooling Energy Sdn. Bhd.",
     buyer: "KWAP / Stonepeak / KJTS",
-    seller: "Lestari Cooling Energy / platform capital raise",
+    seller: "N/A",
     sector: "Utilities",
     subsector: "District Cooling",
     region: "Asia-Pacific",
@@ -4737,6 +4879,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-143",
     title: "Allianz Global Investors acquires stake in Amprion from Talanx",
+    target: "Amprion",
     buyer: "Allianz Global Investors",
     seller: "Talanx",
     sector: "Utilities",
@@ -4769,6 +4912,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-144",
     title: "Sonnedix / J.P. Morgan Asset Management acquire Akira solar portfolio",
+    target: "Akira Portfolio (6 Italian Solar PV Plants)",
     buyer: "Sonnedix / J.P. Morgan Asset Management",
     seller: "EOS Investment Management / Capital Dynamics",
     sector: "Power & ET",
@@ -4801,8 +4945,9 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-145",
     title: "VINCI Highways acquires Safeway Concessions from Macquarie Asset Management",
+    target: "Safeway Concessions (9 Indian Toll Highways)",
     buyer: "VINCI Highways",
-    seller: "Macquarie Asset Management",
+    seller: "Macquarie Asia Infrastructure Fund 2",
     sector: "Transportation",
     subsector: "Toll Roads",
     region: "Asia-Pacific",
@@ -4833,6 +4978,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-146",
     title: "Abertis acquires remaining stake in A63 Motorway from HICL / CVC DIF / NGE Autoroutes",
+    target: "A63 Motorway",
     buyer: "Abertis",
     seller: "HICL Infrastructure / CVC DIF / NGE Autoroutes",
     sector: "Transportation",
@@ -4865,6 +5011,7 @@ export const deals: Deal[] = [
   {
     id: "INF-2026-147",
     title: "H.I.G. Capital divests Desktop S.A. to Claro",
+    target: "Desktop S.A.",
     buyer: "Claro",
     seller: "H.I.G. Capital",
     sector: "Digital",

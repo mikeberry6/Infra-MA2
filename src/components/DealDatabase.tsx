@@ -308,18 +308,17 @@ function DealCard({
         </div>
         <ChevronRight className="h-4 w-4 text-[#999999] shrink-0" />
       </div>
-      <h3 className="text-sm-dense font-medium text-[#1a1a1a] mb-1.5 leading-snug tracking-tight">
-        {deal.title}
-      </h3>
-      <div className="grid grid-cols-2 gap-2 mt-2 mb-1">
-        <div>
-          <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Buyer</span>
-          <div className="text-xs-dense text-[#6e6e6e] font-medium truncate">{deal.buyer}</div>
-        </div>
-        <div>
-          <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Seller</span>
-          <div className="text-xs-dense text-[#6e6e6e] font-medium truncate">{deal.seller}</div>
-        </div>
+      <div className="mb-1.5">
+        <h3 className="text-sm-dense font-medium text-[#1a1a1a] leading-snug tracking-tight">
+          {deal.target}
+        </h3>
+        {deal.seller && deal.seller !== "N/A" && deal.seller !== "—" && (
+          <div className="text-xs-dense text-[#999999] mt-0.5 truncate">{deal.seller}</div>
+        )}
+      </div>
+      <div className="mt-2 mb-1">
+        <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Buyer</span>
+        <div className="text-xs-dense text-[#6e6e6e] font-medium truncate">{deal.buyer}</div>
       </div>
       <div className="flex items-center text-micro text-[#999999] mt-1">
         <span className="font-mono tabular-nums">{formatDate(deal.date)}</span>
@@ -386,10 +385,7 @@ function DealTable({
                   </span>
                 </th>
                 <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
-                  Target
-                </th>
-                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
-                  Seller
+                  Target / Seller
                 </th>
                 <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
                   Buyer
@@ -416,23 +412,27 @@ function DealTable({
                     onClick={() => onSelectDeal(deal)}
                     className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-all group"
                   >
-                    <td className="px-2.5 py-[4px]">
+                    <td className="px-2.5 py-2">
                       <span className="font-mono text-[11px] text-[#555] tabular-nums">
                         {formatDate(deal.date)}
                       </span>
                     </td>
-                    <td className="px-2.5 py-[4px]">
-                      <span className="text-[12px] font-bold text-[#1a1a1a] tracking-tight group-hover:text-[#008253] transition-colors truncate block max-w-[260px]">
-                        {deal.title}
-                      </span>
+                    <td className="px-2.5 py-2">
+                      <div>
+                        <span className="text-[12px] font-bold text-[#1a1a1a] tracking-tight group-hover:text-[#008253] transition-colors truncate block max-w-[260px]">
+                          {deal.target}
+                        </span>
+                        {deal.seller && deal.seller !== "N/A" && deal.seller !== "—" && (
+                          <span className="text-[10px] text-[#999] truncate block max-w-[260px] mt-0.5">
+                            {deal.seller}
+                          </span>
+                        )}
+                      </div>
                     </td>
-                    <td className="px-2.5 py-[4px] max-w-[160px]">
-                      <span className="text-[11px] text-[#555] truncate block">{deal.seller}</span>
-                    </td>
-                    <td className="px-2.5 py-[4px] max-w-[160px]">
+                    <td className="px-2.5 py-2 max-w-[160px]">
                       <span className="text-[11px] text-[#555] truncate block">{deal.buyer}</span>
                     </td>
-                    <td className="px-2.5 py-[4px]">
+                    <td className="px-2.5 py-2">
                       {(() => {
                         const color = getSectorColor(deal.sector);
                         return (
@@ -449,10 +449,10 @@ function DealTable({
                         );
                       })()}
                     </td>
-                    <td className="px-2.5 py-[4px]">
+                    <td className="px-2.5 py-2">
                       <span className="text-[11px] text-[#555]">{deal.region}</span>
                     </td>
-                    <td className="px-2.5 py-[4px]">
+                    <td className="px-2.5 py-2">
                       <div className="flex items-center gap-1">
                         {deal.category.map((cat) => {
                           const catColor = getCategoryColor(cat);
@@ -472,7 +472,7 @@ function DealTable({
                         })}
                       </div>
                     </td>
-                    <td className="px-2.5 py-[4px]">
+                    <td className="px-2.5 py-2">
                       <a
                         href={deal.sourceUrl}
                         target="_blank"
@@ -884,6 +884,7 @@ export function DealDatabase() {
         const q = debouncedSearch.toLowerCase();
         const match =
           deal.title.toLowerCase().includes(q) ||
+          deal.target.toLowerCase().includes(q) ||
           deal.buyer.toLowerCase().includes(q) ||
           deal.seller.toLowerCase().includes(q) ||
           deal.id.toLowerCase().includes(q) ||
