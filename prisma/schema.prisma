@@ -1,0 +1,420 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ── Shared Enums ────────────────────────────────────────
+
+enum RecordStatus {
+  DRAFT
+  IN_REVIEW
+  PUBLISHED
+  ARCHIVED
+}
+
+enum UserRole {
+  ADMIN
+  ANALYST
+  SUBSCRIBER
+  PUBLIC
+}
+
+// ── Organization ────────────────────────────────────────
+
+enum OrgType {
+  FUND_MANAGER
+  CORPORATE
+  ADVISOR_FINANCIAL
+  ADVISOR_LEGAL
+  SOVEREIGN_WEALTH
+  PENSION
+  OTHER
+}
+
+model Organization {
+  id           String   @id @default(cuid())
+  name         String   @unique
+  types        OrgType[]
+  website      String?
+  headquarters String?
+  description  String?
+  status       RecordStatus @default(PUBLISHED)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  managedFunds       Fund[]
+  dealParticipations DealParticipant[]
+  aliases            Alias[]
+
+  @@index([name])
+}
+
+model Alias {
+  id             String       @id @default(cuid())
+  alias          String       @unique
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id])
+
+  @@index([alias])
+  @@index([organizationId])
+}
+
+// ── Fund ────────────────────────────────────────────────
+
+enum FundStrategy {
+  CORE
+  CORE_PLUS
+  VALUE_ADD
+  OPPORTUNISTIC
+  GROWTH
+  CREDIT_DEBT
+  FUND_OF_FUNDS
+  SECONDARIES
+  CO_INVESTMENTS
+  GREENFIELD
+  RETAIL_ACT_40
+}
+
+enum FundStructure {
+  OPEN_END
+  CLOSED_END
+  PERMANENT_CAPITAL
+  EVERGREEN
+  LISTED_EVERGREEN
+  LISTED_CLOSED_END
+}
+
+enum FundStatusEnum {
+  EVERGREEN
+  FINANCIAL_CLOSE
+  RAISING
+}
+
+enum FundSectorEnum {
+  TRANSPORTATION
+  UTILITIES
+  DIGITAL_INFRASTRUCTURE
+  RENEWABLES_ENERGY_TRANSITION
+  WASTE_ENVIRONMENTAL_SERVICES
+  POWER_GENERATION
+  MIDSTREAM_ENERGY
+  SOCIAL_INFRASTRUCTURE
+  COMMUNICATIONS
+  LOGISTICS
+  WATER
+}
+
+enum FundRegionEnum {
+  NORTH_AMERICA
+  EUROPE
+  ASIA_PACIFIC
+  LATIN_AMERICA
+  MIDDLE_EAST_AFRICA
+  GLOBAL
+}
+
+model Fund {
+  id                 String          @id @default(cuid())
+  legacyId           String          @unique
+  managerId          String
+  manager            Organization    @relation(fields: [managerId], references: [id])
+  fundName           String          @unique
+  ticker             String?
+  investmentStrategy String          @default("")
+  size               String
+  sizeUsdMm          Float?
+  vintage            String
+  strategies         FundStrategy[]
+  structure          FundStructure
+  fundStatus         FundStatusEnum
+  sectors            FundSectorEnum[]
+  regions            FundRegionEnum[]
+  sourceUrls         String[]
+  strategyUrl        String          @default("")
+  status             RecordStatus    @default(PUBLISHED)
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+
+  ownershipPeriods OwnershipPeriod[]
+
+  @@index([managerId])
+  @@index([fundName])
+}
+
+// ── Company (Portfolio Company) ─────────────────────────
+
+enum CompanySector {
+  TRANSPORTATION
+  DIGITAL_INFRASTRUCTURE
+  ENERGY_TRANSITION
+  POWER_GENERATION
+  MIDSTREAM_ENERGY
+  REGULATED_UTILITIES
+  UTILITIES
+  SOCIAL_INFRASTRUCTURE
+  ENVIRONMENTAL_WASTE
+  RENEWABLE_RESOURCES
+  INFRASTRUCTURE_SERVICES
+}
+
+enum CompanyRegion {
+  NORTH_AMERICA
+  EUROPE
+  ASIA_PACIFIC
+  LATIN_AMERICA
+  GLOBAL
+}
+
+enum CompanyStatus {
+  ACTIVE
+  REALIZED
+}
+
+model Company {
+  id            String        @id @default(cuid())
+  name          String
+  sector        CompanySector
+  subsector     String        @default("")
+  region        CompanyRegion
+  country       String
+  countryTags   String[]
+  description   String        @default("")
+  companyStatus CompanyStatus
+  website       String?
+  yearFounded   Int?
+  headquarters  String?
+  status        RecordStatus  @default(PUBLISHED)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  ownershipPeriods OwnershipPeriod[]
+  milestones       Milestone[]
+  managementRoles  ManagementRole[]
+  citations        Citation[]
+
+  @@unique([name, country])
+  @@index([name])
+  @@index([sector])
+}
+
+// ── OwnershipPeriod ─────────────────────────────────────
+
+model OwnershipPeriod {
+  id             String  @id @default(cuid())
+  fundId         String
+  fund           Fund    @relation(fields: [fundId], references: [id])
+  companyId      String
+  company        Company @relation(fields: [companyId], references: [id])
+  investmentYear Int?
+  exitYear       Int?
+  isActive       Boolean @default(true)
+  createdAt      DateTime @default(now())
+
+  @@unique([fundId, companyId])
+  @@index([fundId])
+  @@index([companyId])
+}
+
+// ── Deal ────────────────────────────────────────────────
+
+enum DealSector {
+  TRANSPORTATION
+  POWER_ET
+  MIDSTREAM
+  UTILITIES
+  WASTE_ES
+  DIGITAL
+  SOCIAL
+}
+
+enum DealRegion {
+  NORTH_AMERICA
+  EUROPE
+  ASIA_PACIFIC
+  MIDDLE_EAST_AFRICA
+  LATIN_AMERICA
+}
+
+enum DealCategory {
+  ACQUISITION_BUYOUT
+  ACQUISITION_MAJORITY_STAKE
+  ACQUISITION_MINORITY_STAKE
+  ACQUISITION_BOLT_ON
+  SALE_BUYOUT
+  SALE_MAJORITY_STAKE
+  SALE_MINORITY_STAKE
+  SALE_CARVE_OUT
+  PLATFORM_LAUNCH
+  IPO
+  JOINT_VENTURE
+}
+
+enum DealStatusEnum {
+  ANNOUNCED
+  CLOSED
+  PENDING_REGULATORY_APPROVAL
+  TERMINATED
+}
+
+model Deal {
+  id                String         @id @default(cuid())
+  legacyId          String         @unique
+  title             String
+  target            String
+  sector            DealSector
+  subsector         String         @default("")
+  region            DealRegion
+  categories        DealCategory[]
+  date              DateTime
+  description       String         @default("")
+  targetDescription String         @default("")
+  country           String         @default("")
+
+  enterpriseValue   String?
+  equityValue       String?
+  stake             String?
+  dealStatus        DealStatusEnum
+  closingDate       DateTime?
+
+  assetScale        String?
+  valuationMultiple String?
+  fundVehicle       String?
+  keyHighlights     String[]
+
+  status    RecordStatus @default(PUBLISHED)
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  participants DealParticipant[]
+  citations    Citation[]
+
+  @@index([date])
+  @@index([sector])
+  @@index([region])
+  @@index([legacyId])
+}
+
+// ── DealParticipant ─────────────────────────────────────
+
+enum ParticipantRole {
+  BUYER
+  SELLER
+  FINANCIAL_ADVISOR_BUYER
+  FINANCIAL_ADVISOR_SELLER
+  LEGAL_ADVISOR_BUYER
+  LEGAL_ADVISOR_SELLER
+}
+
+model DealParticipant {
+  id             String          @id @default(cuid())
+  dealId         String
+  deal           Deal            @relation(fields: [dealId], references: [id])
+  organizationId String
+  organization   Organization    @relation(fields: [organizationId], references: [id])
+  role           ParticipantRole
+  displayName    String?
+
+  @@unique([dealId, organizationId, role])
+  @@index([dealId])
+  @@index([organizationId])
+}
+
+// ── Milestone ───────────────────────────────────────────
+
+enum MilestoneCategory {
+  FOUNDING
+  ACQUISITION
+  FINANCING
+  EXPANSION
+  MANAGEMENT
+  DIVESTITURE
+  IPO
+  OTHER
+}
+
+model Milestone {
+  id        String            @id @default(cuid())
+  companyId String
+  company   Company           @relation(fields: [companyId], references: [id])
+  date      String
+  event     String
+  category  MilestoneCategory
+  sortDate  DateTime?
+
+  @@index([companyId])
+}
+
+// ── Person + ManagementRole ─────────────────────────────
+
+model Person {
+  id    String           @id @default(cuid())
+  name  String
+  roles ManagementRole[]
+
+  @@index([name])
+}
+
+model ManagementRole {
+  id        String   @id @default(cuid())
+  personId  String
+  person    Person   @relation(fields: [personId], references: [id])
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id])
+  title     String
+  startDate DateTime?
+  endDate   DateTime?
+
+  @@index([companyId])
+  @@index([personId])
+}
+
+// ── Source + Citation ───────────────────────────────────
+
+enum SourceType {
+  ARTICLE
+  PRESS_RELEASE
+  SEC_FILING
+  PRESENTATION
+  WEBSITE
+  OTHER
+}
+
+model Source {
+  id        String     @id @default(cuid())
+  label     String
+  url       String     @unique
+  type      SourceType @default(ARTICLE)
+  createdAt DateTime   @default(now())
+
+  citations Citation[]
+}
+
+model Citation {
+  id        String   @id @default(cuid())
+  sourceId  String
+  source    Source   @relation(fields: [sourceId], references: [id])
+  dealId    String?
+  deal      Deal?   @relation(fields: [dealId], references: [id])
+  companyId String?
+  company   Company? @relation(fields: [companyId], references: [id])
+
+  @@index([sourceId])
+  @@index([dealId])
+  @@index([companyId])
+}
+
+// ── User ───────────────────────────────────────────────
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  role         UserRole @default(SUBSCRIBER)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
