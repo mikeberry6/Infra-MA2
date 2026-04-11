@@ -6,8 +6,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Ensure Prisma adapter is bundled correctly for server components
-  serverExternalPackages: ["@prisma/adapter-pg"],
+  experimental: {
+    // Ensure Prisma adapter is bundled correctly for server components (Next.js 14 syntax)
+    serverComponentsExternalPackages: ["@prisma/adapter-pg"],
+  },
 };
 
 module.exports = nextConfig;
