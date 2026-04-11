@@ -1,15 +1,27 @@
-import dynamic from "next/dynamic";
+export const dynamic = "force-dynamic";
+
 import type { Metadata } from "next";
+import { getAllCompanies } from "@/modules/companies/queries";
+import { getAllFunds } from "@/modules/funds/queries";
+import { getDatabaseCounts } from "@/modules/insights/queries";
+import { PortfolioDatabaseClient } from "@/components/PortfolioDatabaseClient";
 
 export const metadata: Metadata = {
   title: "Portfolio Companies",
 };
 
-const PortfolioDatabase = dynamic(
-  () => import("@/components/PortfolioDatabase").then((m) => ({ default: m.PortfolioDatabase })),
-  { ssr: false }
-);
+export default async function PortfolioPage() {
+  const [companies, funds, counts] = await Promise.all([
+    getAllCompanies(),
+    getAllFunds(),
+    getDatabaseCounts(),
+  ]);
 
-export default function PortfolioPage() {
-  return <PortfolioDatabase />;
+  return (
+    <PortfolioDatabaseClient
+      companies={companies}
+      funds={funds}
+      counts={counts}
+    />
+  );
 }

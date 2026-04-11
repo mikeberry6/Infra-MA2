@@ -1,0 +1,669 @@
+import "dotenv/config";
+import { PrismaClient } from "../src/generated/prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { deals } from "../src/data/deals";
+import { funds } from "../src/data/funds";
+import { companies as portcos } from "../src/data/portcos/companies";
+import { resolveOrgName, getOrgType, NON_INFRA_FUND_ENTITIES, ORG_CANONICAL } from "./entity-resolution";
+import {
+  FUND_STRATEGY_MAP,
+  FUND_STRUCTURE_MAP,
+  FUND_STATUS_MAP,
+  FUND_SECTOR_MAP,
+  FUND_REGION_MAP,
+  COMPANY_SECTOR_MAP,
+  COMPANY_REGION_MAP,
+  COMPANY_STATUS_MAP,
+  DEAL_SECTOR_MAP,
+  DEAL_REGION_MAP,
+  DEAL_CATEGORY_MAP,
+  DEAL_STATUS_MAP,
+  MILESTONE_CATEGORY_MAP,
+} from "../src/modules/shared/enum-maps";
+import type {
+  OrgType,
+  FundStrategy,
+  FundStructure,
+  FundStatusEnum,
+  FundSectorEnum,
+  FundRegionEnum,
+  CompanySector,
+  CompanyRegion,
+  CompanyStatus,
+  DealSector,
+  DealRegion,
+  DealCategory,
+  DealStatusEnum,
+  MilestoneCategory,
+  ParticipantRole,
+} from "../src/generated/prisma/client";
+import * as bcrypt from "bcryptjs";
+
+const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
+const prisma = new PrismaClient({ adapter });
+
+// ── Helpers ─────────────────────────────────────────────────
+
+function safeEnum<T>(map: Record<string, T>, value: string, fallback: T): T {
+  return map[value] ?? fallback;
+}
+
+function parseDateSafe(dateStr: string | null): Date | null {
+  if (!dateStr) return null;
+  const d = new Date(dateStr);
+  return isNaN(d.getTime()) ? null : d;
+}
+
+// Parse milestone date strings like "Feb 2025", "2010", "Q1 2024"
+function parseMilestoneDateForSort(dateStr: string): Date | null {
+  // Try direct ISO parse
+  const direct = new Date(dateStr);
+  if (!isNaN(direct.getTime())) return direct;
+
+  // Try "Month Year" format
+  const monthYear = dateStr.match(/^(\w+)\s+(\d{4})$/);
+  if (monthYear) {
+    const d = new Date(`${monthYear[1]} 1, ${monthYear[2]}`);
+    if (!isNaN(d.getTime())) return d;
+  }
+
+  // Try plain year
+  const yearOnly = dateStr.match(/^(\d{4})$/);
+  if (yearOnly) return new Date(`${yearOnly[1]}-01-01`);
+
+  // Try "Q# Year"
+  const quarter = dateStr.match(/^Q(\d)\s+(\d{4})$/);
+  if (quarter) {
+    const month = (parseInt(quarter[1]) - 1) * 3 + 1;
+    return new Date(`${quarter[2]}-${String(month).padStart(2, "0")}-01`);
+  }
+
+  return null;
+}
+
+// Split multi-buyer/seller strings like "A / B / C" or "A & B"
+function splitParticipants(name: string): string[] {
+  if (!name || name === "N/A" || name === "—" || name === "n/a") return [];
+  // Split on " / " but not on " / " that's inside parentheses
+  return name.split(/\s+\/\s+/).map((s) => s.trim()).filter(Boolean);
+}
+
+// ── Main Seed ───────────────────────────────────────────────
+
+async function main() {
+  console.log("🌱 Starting database seed...\n");
+
+  // ── Step 1: Collect all unique organization names ──────────
+
+  console.log("Step 1: Collecting organization names...");
+  const orgNamesRaw = new Set<string>();
+
+  // From funds
+  for (const fund of funds) {
+    orgNamesRaw.add(fund.managerName);
+  }
+
+  // From portcos
+  for (const pc of portcos) {
+    orgNamesRaw.add(pc.investmentFirm);
+  }
+
+  // From deals
+  for (const deal of deals) {
+    for (const name of splitParticipants(deal.buyer)) {
+      orgNamesRaw.add(name);
+    }
+    for (const name of splitParticipants(deal.seller)) {
+      orgNamesRaw.add(name);
+    }
+    for (const arr of [
+      deal.financialAdvisorBuyer,
+      deal.financialAdvisorSeller,
+      deal.legalAdvisorBuyer,
+      deal.legalAdvisorSeller,
+    ]) {
+      if (arr) {
+        for (const name of arr) {
+          if (name && name !== "N/A" && name !== "—") orgNamesRaw.add(name);
+        }
+      }
+    }
+  }
+
+  // Resolve to canonical names
+  const canonicalToVariants = new Map<string, Set<string>>();
+  for (const raw of orgNamesRaw) {
+    const canonical = resolveOrgName(raw);
+    if (!canonicalToVariants.has(canonical)) {
+      canonicalToVariants.set(canonical, new Set());
+    }
+    if (raw !== canonical) {
+      canonicalToVariants.get(canonical)!.add(raw);
+    }
+  }
+
+  console.log(`  Found ${orgNamesRaw.size} raw names -> ${canonicalToVariants.size} canonical organizations`);
+
+  // ── Step 2: Create Organizations + Aliases ────────────────
+
+  console.log("Step 2: Creating organizations...");
+  const orgIdMap = new Map<string, string>(); // canonical name -> DB id
+
+  for (const [canonical, variants] of canonicalToVariants) {
+    const orgType = getOrgType(canonical);
+    const types: OrgType[] = orgType === "CORPORATE" ? ["CORPORATE"] : ["FUND_MANAGER"];
+
+    const org = await prisma.organization.upsert({
+      where: { name: canonical },
+      update: {},
+      create: {
+        name: canonical,
+        types,
+        status: "PUBLISHED",
+      },
+    });
+    orgIdMap.set(canonical, org.id);
+
+    // Create aliases for all variant names
+    for (const variant of variants) {
+      await prisma.alias.upsert({
+        where: { alias: variant },
+        update: {},
+        create: {
+          alias: variant,
+          organizationId: org.id,
+        },
+      });
+    }
+  }
+
+  console.log(`  Created ${orgIdMap.size} organizations with aliases`);
+
+  // Helper to resolve a name to its org DB id
+  function getOrgId(name: string): string | null {
+    const canonical = resolveOrgName(name);
+    return orgIdMap.get(canonical) ?? null;
+  }
+
+  // ── Step 3: Create Funds ──────────────────────────────────
+
+  console.log("Step 3: Creating funds...");
+  const fundIdMap = new Map<string, string>(); // fundName -> DB id
+  let fundCount = 0;
+
+  for (const fund of funds) {
+    const managerId = getOrgId(fund.managerName);
+    if (!managerId) {
+      console.warn(`  ⚠ No org found for fund manager: ${fund.managerName}`);
+      continue;
+    }
+
+    const strategies = fund.strategies
+      .map((s) => FUND_STRATEGY_MAP[s])
+      .filter(Boolean) as FundStrategy[];
+
+    const structure = safeEnum(FUND_STRUCTURE_MAP, fund.structure, "CLOSED_END" as FundStructure);
+    const fundStatus = safeEnum(FUND_STATUS_MAP, fund.status, "FINANCIAL_CLOSE" as FundStatusEnum);
+
+    const sectors = fund.sectors
+      .map((s) => FUND_SECTOR_MAP[s])
+      .filter(Boolean) as FundSectorEnum[];
+
+    const regions = fund.regions
+      .map((r) => FUND_REGION_MAP[r])
+      .filter(Boolean) as FundRegionEnum[];
+
+    const dbFund = await prisma.fund.upsert({
+      where: { legacyId: fund.id },
+      update: {},
+      create: {
+        legacyId: fund.id,
+        managerId,
+        fundName: fund.fundName,
+        ticker: fund.ticker,
+        investmentStrategy: fund.investmentStrategy,
+        size: fund.size,
+        sizeUsdMm: fund.sizeUsdMm,
+        vintage: fund.vintage,
+        strategies,
+        structure,
+        fundStatus,
+        sectors,
+        regions,
+        sourceUrls: fund.sourceUrls,
+        strategyUrl: fund.strategyUrl,
+        status: "PUBLISHED",
+      },
+    });
+
+    fundIdMap.set(fund.fundName, dbFund.id);
+    fundCount++;
+  }
+
+  console.log(`  Created ${fundCount} funds`);
+
+  // ── Step 4: Create Companies ──────────────────────────────
+
+  console.log("Step 4: Creating companies...");
+  const companyIdMap = new Map<string, string>(); // "name|country" -> DB id
+  let companyCount = 0;
+
+  for (const pc of portcos) {
+    const sector = safeEnum(COMPANY_SECTOR_MAP, pc.sector, "INFRASTRUCTURE_SERVICES" as CompanySector);
+    const region = safeEnum(COMPANY_REGION_MAP, pc.region, "NORTH_AMERICA" as CompanyRegion);
+    const companyStatus = safeEnum(COMPANY_STATUS_MAP, pc.status, "ACTIVE" as CompanyStatus);
+
+    const companyKey = `${pc.name}|${pc.country}`;
+
+    // Skip duplicates (same name + country)
+    if (companyIdMap.has(companyKey)) continue;
+
+    try {
+      const company = await prisma.company.create({
+        data: {
+          name: pc.name,
+          sector,
+          subsector: pc.subsector || "",
+          region,
+          country: pc.country,
+          countryTags: pc.countryTags || [],
+          description: pc.description || "",
+          companyStatus,
+          website: pc.website,
+          yearFounded: pc.yearFounded,
+          headquarters: pc.headquarters,
+          status: "PUBLISHED",
+        },
+      });
+
+      companyIdMap.set(companyKey, company.id);
+      companyCount++;
+    } catch (err: any) {
+      if (err.code === "P2002") {
+        // Unique constraint violation — company already exists
+        const existing = await prisma.company.findFirst({
+          where: { name: pc.name, country: pc.country },
+        });
+        if (existing) companyIdMap.set(companyKey, existing.id);
+      } else {
+        console.warn(`  ⚠ Error creating company ${pc.name}: ${err.message}`);
+      }
+    }
+  }
+
+  console.log(`  Created ${companyCount} companies`);
+
+  // ── Step 5: Create OwnershipPeriods ───────────────────────
+
+  console.log("Step 5: Creating ownership periods...");
+  let ownershipCount = 0;
+
+  for (const pc of portcos) {
+    const companyKey = `${pc.name}|${pc.country}`;
+    const companyId = companyIdMap.get(companyKey);
+    if (!companyId) continue;
+
+    const fundId = fundIdMap.get(pc.ownershipVehicle);
+    if (!fundId) {
+      // Many portcos may reference funds not in our 149-fund list; that's OK
+      continue;
+    }
+
+    try {
+      await prisma.ownershipPeriod.upsert({
+        where: { fundId_companyId: { fundId, companyId } },
+        update: {},
+        create: {
+          fundId,
+          companyId,
+          investmentYear: pc.investmentYear,
+          isActive: pc.status === "Active",
+        },
+      });
+      ownershipCount++;
+    } catch (err: any) {
+      // Skip duplicate constraint errors silently
+      if (err.code !== "P2002") {
+        console.warn(`  ⚠ Error creating ownership for ${pc.name}: ${err.message}`);
+      }
+    }
+  }
+
+  console.log(`  Created ${ownershipCount} ownership periods`);
+
+  // ── Step 6: Create Milestones ─────────────────────────────
+
+  console.log("Step 6: Creating milestones...");
+  let milestoneCount = 0;
+
+  for (const pc of portcos) {
+    if (!pc.milestones || pc.milestones.length === 0) continue;
+
+    const companyKey = `${pc.name}|${pc.country}`;
+    const companyId = companyIdMap.get(companyKey);
+    if (!companyId) continue;
+
+    for (const ms of pc.milestones) {
+      const category = safeEnum(MILESTONE_CATEGORY_MAP, ms.category, "OTHER" as MilestoneCategory);
+      const sortDate = parseMilestoneDateForSort(ms.date);
+
+      await prisma.milestone.create({
+        data: {
+          companyId,
+          date: ms.date,
+          event: ms.event,
+          category,
+          sortDate,
+        },
+      });
+      milestoneCount++;
+    }
+  }
+
+  console.log(`  Created ${milestoneCount} milestones`);
+
+  // ── Step 7: Create Persons + ManagementRoles ──────────────
+
+  console.log("Step 7: Creating persons and management roles...");
+  const personIdMap = new Map<string, string>(); // name -> DB id
+  let roleCount = 0;
+
+  for (const pc of portcos) {
+    if (!pc.management || pc.management.length === 0) continue;
+
+    const companyKey = `${pc.name}|${pc.country}`;
+    const companyId = companyIdMap.get(companyKey);
+    if (!companyId) continue;
+
+    for (const exec of pc.management) {
+      // Dedup persons by name
+      let personId = personIdMap.get(exec.name);
+      if (!personId) {
+        const person = await prisma.person.create({
+          data: { name: exec.name },
+        });
+        personId = person.id;
+        personIdMap.set(exec.name, personId);
+      }
+
+      await prisma.managementRole.create({
+        data: {
+          personId,
+          companyId,
+          title: exec.title,
+        },
+      });
+      roleCount++;
+    }
+  }
+
+  console.log(`  Created ${personIdMap.size} persons, ${roleCount} management roles`);
+
+  // ── Step 8: Create Deals ──────────────────────────────────
+
+  console.log("Step 8: Creating deals...");
+  const dealIdMap = new Map<string, string>(); // legacyId -> DB id
+  let dealCount = 0;
+
+  for (const deal of deals) {
+    const sector = safeEnum(DEAL_SECTOR_MAP, deal.sector, "DIGITAL" as DealSector);
+    const region = safeEnum(DEAL_REGION_MAP, deal.region, "NORTH_AMERICA" as DealRegion);
+    const dealStatus = safeEnum(DEAL_STATUS_MAP, deal.status, "ANNOUNCED" as DealStatusEnum);
+    const categories = deal.category
+      .map((c) => DEAL_CATEGORY_MAP[c])
+      .filter(Boolean) as DealCategory[];
+
+    const date = parseDateSafe(deal.date);
+    if (!date) {
+      console.warn(`  ⚠ Invalid date for deal ${deal.id}: ${deal.date}`);
+      continue;
+    }
+
+    const closingDate = parseDateSafe(deal.closingDate);
+
+    const dbDeal = await prisma.deal.upsert({
+      where: { legacyId: deal.id },
+      update: {},
+      create: {
+        legacyId: deal.id,
+        title: deal.title,
+        target: deal.target,
+        sector,
+        subsector: deal.subsector || "",
+        region,
+        categories,
+        date,
+        description: deal.description || "",
+        targetDescription: deal.targetDescription || "",
+        country: deal.country || "",
+        enterpriseValue: deal.enterpriseValue,
+        equityValue: deal.equityValue,
+        stake: deal.stake,
+        dealStatus,
+        closingDate,
+        assetScale: deal.assetScale,
+        valuationMultiple: deal.valuationMultiple,
+        fundVehicle: deal.fundVehicle,
+        keyHighlights: deal.keyHighlights || [],
+        status: "PUBLISHED",
+      },
+    });
+
+    dealIdMap.set(deal.id, dbDeal.id);
+    dealCount++;
+  }
+
+  console.log(`  Created ${dealCount} deals`);
+
+  // ── Step 9: Create DealParticipants ───────────────────────
+
+  console.log("Step 9: Creating deal participants...");
+  let participantCount = 0;
+
+  for (const deal of deals) {
+    const dealId = dealIdMap.get(deal.id);
+    if (!dealId) continue;
+
+    // Helper to create participants
+    async function addParticipant(name: string, role: ParticipantRole, displayName?: string) {
+      const orgId = getOrgId(name);
+      if (!orgId) {
+        // Create org on the fly if we missed it
+        const canonical = resolveOrgName(name);
+        const org = await prisma.organization.upsert({
+          where: { name: canonical },
+          update: {},
+          create: {
+            name: canonical,
+            types: ["OTHER"],
+            status: "PUBLISHED",
+          },
+        });
+        orgIdMap.set(canonical, org.id);
+
+        try {
+          await prisma.dealParticipant.create({
+            data: {
+              dealId,
+              organizationId: org.id,
+              role,
+              displayName: displayName || null,
+            },
+          });
+          participantCount++;
+        } catch (err: any) {
+          if (err.code !== "P2002") console.warn(`  ⚠ Participant error: ${err.message}`);
+        }
+        return;
+      }
+
+      try {
+        await prisma.dealParticipant.create({
+          data: {
+            dealId,
+            organizationId: orgId,
+            role,
+            displayName: displayName || null,
+          },
+        });
+        participantCount++;
+      } catch (err: any) {
+        if (err.code !== "P2002") console.warn(`  ⚠ Participant error: ${err.message}`);
+      }
+    }
+
+    // Buyers
+    for (const name of splitParticipants(deal.buyer)) {
+      await addParticipant(name, "BUYER", deal.buyer);
+    }
+
+    // Sellers
+    for (const name of splitParticipants(deal.seller)) {
+      await addParticipant(name, "SELLER", deal.seller);
+    }
+
+    // Financial advisors
+    if (deal.financialAdvisorBuyer) {
+      for (const name of deal.financialAdvisorBuyer) {
+        if (name && name !== "N/A" && name !== "—") {
+          await addParticipant(name, "FINANCIAL_ADVISOR_BUYER");
+        }
+      }
+    }
+    if (deal.financialAdvisorSeller) {
+      for (const name of deal.financialAdvisorSeller) {
+        if (name && name !== "N/A" && name !== "—") {
+          await addParticipant(name, "FINANCIAL_ADVISOR_SELLER");
+        }
+      }
+    }
+
+    // Legal advisors
+    if (deal.legalAdvisorBuyer) {
+      for (const name of deal.legalAdvisorBuyer) {
+        if (name && name !== "N/A" && name !== "—") {
+          await addParticipant(name, "LEGAL_ADVISOR_BUYER");
+        }
+      }
+    }
+    if (deal.legalAdvisorSeller) {
+      for (const name of deal.legalAdvisorSeller) {
+        if (name && name !== "N/A" && name !== "—") {
+          await addParticipant(name, "LEGAL_ADVISOR_SELLER");
+        }
+      }
+    }
+  }
+
+  console.log(`  Created ${participantCount} deal participants`);
+
+  // ── Step 10: Create Sources + Citations ───────────────────
+
+  console.log("Step 10: Creating sources and citations...");
+  const sourceIdMap = new Map<string, string>(); // URL -> DB id
+  let sourceCount = 0;
+  let citationCount = 0;
+
+  // Helper to get or create a source by URL
+  async function getOrCreateSource(url: string, label: string): Promise<string> {
+    if (sourceIdMap.has(url)) return sourceIdMap.get(url)!;
+
+    const source = await prisma.source.upsert({
+      where: { url },
+      update: {},
+      create: { label, url, type: "ARTICLE" },
+    });
+    sourceIdMap.set(url, source.id);
+    sourceCount++;
+    return source.id;
+  }
+
+  // Deal sources
+  for (const deal of deals) {
+    const dealId = dealIdMap.get(deal.id);
+    if (!dealId || !deal.sourceUrl) continue;
+
+    const sourceId = await getOrCreateSource(deal.sourceUrl, deal.sourceName || "");
+    try {
+      await prisma.citation.create({
+        data: { sourceId, dealId },
+      });
+      citationCount++;
+    } catch {
+      // Skip duplicates
+    }
+  }
+
+  // PortCo sources
+  for (const pc of portcos) {
+    if (!pc.sources || pc.sources.length === 0) continue;
+    const companyKey = `${pc.name}|${pc.country}`;
+    const companyId = companyIdMap.get(companyKey);
+    if (!companyId) continue;
+
+    for (const src of pc.sources) {
+      if (!src.url) continue;
+      const sourceId = await getOrCreateSource(src.url, src.label);
+      try {
+        await prisma.citation.create({
+          data: { sourceId, companyId },
+        });
+        citationCount++;
+      } catch {
+        // Skip duplicates
+      }
+    }
+  }
+
+  // Fund sources
+  for (const fund of funds) {
+    if (!fund.sourceUrls || fund.sourceUrls.length === 0) continue;
+    for (const url of fund.sourceUrls) {
+      if (!url) continue;
+      await getOrCreateSource(url, fund.fundName);
+    }
+  }
+
+  console.log(`  Created ${sourceCount} sources, ${citationCount} citations`);
+
+  // ── Step 11: Create admin user ────────────────────────────
+
+  console.log("Step 11: Creating admin user...");
+  const passwordHash = await bcrypt.hash("admin123", 10);
+  await prisma.user.upsert({
+    where: { email: "admin@infra-ma2.com" },
+    update: {},
+    create: {
+      email: "admin@infra-ma2.com",
+      passwordHash,
+      name: "Admin",
+      role: "ADMIN",
+    },
+  });
+
+  console.log("  Created admin user (admin@infra-ma2.com)");
+
+  // ── Summary ───────────────────────────────────────────────
+
+  console.log("\n✅ Seed complete!");
+  console.log(`  Organizations: ${orgIdMap.size}`);
+  console.log(`  Funds: ${fundCount}`);
+  console.log(`  Companies: ${companyCount}`);
+  console.log(`  Ownership Periods: ${ownershipCount}`);
+  console.log(`  Milestones: ${milestoneCount}`);
+  console.log(`  Persons: ${personIdMap.size}`);
+  console.log(`  Management Roles: ${roleCount}`);
+  console.log(`  Deals: ${dealCount}`);
+  console.log(`  Deal Participants: ${participantCount}`);
+  console.log(`  Sources: ${sourceCount}`);
+  console.log(`  Citations: ${citationCount}`);
+}
+
+main()
+  .catch((e) => {
+    console.error("❌ Seed failed:", e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });

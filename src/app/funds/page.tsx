@@ -1,15 +1,19 @@
-import dynamic from "next/dynamic";
+export const dynamic = "force-dynamic";
+
 import type { Metadata } from "next";
+import { getAllFunds } from "@/modules/funds/queries";
+import { getDatabaseCounts } from "@/modules/insights/queries";
+import { FundDatabaseClient } from "@/components/FundDatabaseClient";
 
 export const metadata: Metadata = {
   title: "Funds",
 };
 
-const FundDatabase = dynamic(
-  () => import("@/components/FundDatabase").then((m) => ({ default: m.FundDatabase })),
-  { ssr: false }
-);
+export default async function FundsPage() {
+  const [funds, counts] = await Promise.all([
+    getAllFunds(),
+    getDatabaseCounts(),
+  ]);
 
-export default function FundsPage() {
-  return <FundDatabase />;
+  return <FundDatabaseClient funds={funds} counts={counts} />;
 }

@@ -7,24 +7,40 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "validate-portfolios": "npx tsx scripts/validate-portfolios.ts"
+    "validate-portfolios": "npx tsx scripts/validate-portfolios.ts",
+    "db:seed": "npx tsx prisma/seed.ts",
+    "db:verify": "npx tsx prisma/verify-seed.ts",
+    "db:generate": "npx prisma generate",
+    "db:migrate": "npx prisma migrate dev",
+    "db:studio": "npx prisma studio"
   },
   "dependencies": {
+    "@prisma/adapter-pg": "^7.7.0",
+    "@prisma/client": "^7.7.0",
+    "bcryptjs": "^3.0.3",
     "lucide-react": "0.453.0",
     "next": "14.2.15",
+    "next-auth": "^4.24.13",
+    "pg": "^8.20.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "20.14.0",
+    "@types/pg": "^8.20.0",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "autoprefixer": "10.4.19",
+    "dotenv": "^17.4.1",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.15",
     "postcss": "8.4.38",
+    "prisma": "^7.7.0",
     "tailwindcss": "3.4.4",
+    "tsx": "^4.21.0",
     "typescript": "5.4.5"
   }
 }
