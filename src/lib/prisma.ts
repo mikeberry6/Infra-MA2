@@ -1,5 +1,5 @@
 import { PrismaClient } from "@/generated/prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaNeon } from "@prisma/adapter-neon";
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
 
@@ -8,9 +8,7 @@ function createPrismaClient() {
   if (!connectionString) {
     throw new Error("DATABASE_URL environment variable is not set");
   }
-  // Remove channel_binding param if present — not supported by all pg drivers
-  const cleanUrl = connectionString.replace(/[&?]channel_binding=[^&]*/g, "");
-  const adapter = new PrismaPg({ connectionString: cleanUrl });
+  const adapter = new PrismaNeon({ connectionString });
   return new PrismaClient({ adapter });
 }
 
