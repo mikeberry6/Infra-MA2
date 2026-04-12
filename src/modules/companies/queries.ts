@@ -8,11 +8,23 @@ import {
 import type { CompanyView, MilestoneView, ExecutiveView, SourceView } from "@/modules/shared/types";
 
 function toCompanyView(company: any): CompanyView {
-  // Derive investmentFirm and ownershipVehicle from the first active ownership period
-  const activeOwnership = company.ownershipPeriods?.[0];
-  const investmentFirm = activeOwnership?.fund?.manager?.name || "";
-  const ownershipVehicle = activeOwnership?.fund?.fundName || "";
-  const investmentYear = activeOwnership?.investmentYear || undefined;
+  // Derive investmentFirm and ownershipVehicle from ownership periods
+  const ownerships = company.ownershipPeriods || [];
+  const primaryOwnership = ownerships[0];
+
+  // investmentFirm: prefer organization name, fall back to fund manager
+  const investmentFirm =
+    primaryOwnership?.organization?.name ||
+    primaryOwnership?.fund?.manager?.name ||
+    "";
+
+  // ownershipVehicle: prefer vehicleName, fall back to fund name
+  const ownershipVehicle =
+    primaryOwnership?.vehicleName ||
+    primaryOwnership?.fund?.fundName ||
+    "";
+
+  const investmentYear = primaryOwnership?.investmentYear || undefined;
 
   const milestones: MilestoneView[] | undefined = company.milestones?.map((m: any) => ({
     date: m.date,
@@ -55,10 +67,8 @@ function toCompanyView(company: any): CompanyView {
 const COMPANY_INCLUDE = {
   ownershipPeriods: {
     include: {
+      organization: { select: { name: true } },
       fund: {
-        include: {
-          manager: { select: { name: true } },
-        },
         select: {
           fundName: true,
           manager: { select: { name: true } },
@@ -66,7 +76,6 @@ const COMPANY_INCLUDE = {
       },
     },
     orderBy: { createdAt: "desc" as const },
-    take: 1,
   },
   milestones: {
     orderBy: { sortDate: "desc" as const },

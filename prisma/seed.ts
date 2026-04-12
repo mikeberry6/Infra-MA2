@@ -242,7 +242,7 @@ async function main() {
 
   console.log(`  Created ${fundCount} funds`);
 
-  // ── Step 4: Create Companies ──────────────────────────────
+  // ── Step 4: Create Companies (deduplicated) ────────────────
 
   console.log("Step 4: Creating companies...");
   const companyIdMap = new Map<string, string>(); // "name|country" -> DB id
@@ -255,7 +255,7 @@ async function main() {
 
     const companyKey = `${pc.name}|${pc.country}`;
 
-    // Skip duplicates (same name + country)
+    // Only create the Company record once per (name, country)
     if (companyIdMap.has(companyKey)) continue;
 
     try {
@@ -280,7 +280,6 @@ async function main() {
       companyCount++;
     } catch (err: any) {
       if (err.code === "P2002") {
-        // Unique constraint violation — company already exists
         const existing = await prisma.company.findFirst({
           where: { name: pc.name, country: pc.country },
         });
@@ -294,38 +293,77 @@ async function main() {
   console.log(`  Created ${companyCount} companies`);
 
   // ── Step 5: Create OwnershipPeriods ───────────────────────
+  // Uses investmentFirm → Organization as the primary link.
+  // Falls back to ownershipVehicle → Fund when available.
 
   console.log("Step 5: Creating ownership periods...");
   let ownershipCount = 0;
+  const ownershipSeen = new Set<string>(); // track companyId|orgId to avoid dupes
+
+  async function createOwnership(
+    companyId: string,
+    investmentFirm: string,
+    ownershipVehicle: string,
+    investmentYear: number | undefined,
+    isActive: boolean,
+    stake?: string,
+  ) {
+    const orgId = getOrgId(investmentFirm);
+    if (!orgId) return;
+
+    const dedupeKey = `${companyId}|${orgId}`;
+    if (ownershipSeen.has(dedupeKey)) return;
+    ownershipSeen.add(dedupeKey);
+
+    // Try to match fund by ownershipVehicle
+    const fundId = fundIdMap.get(ownershipVehicle) || null;
+
+    try {
+      await prisma.ownershipPeriod.create({
+        data: {
+          companyId,
+          organizationId: orgId,
+          fundId,
+          vehicleName: ownershipVehicle || null,
+          stake: stake || null,
+          investmentYear: investmentYear || null,
+          isActive,
+        },
+      });
+      ownershipCount++;
+    } catch (err: any) {
+      if (err.code !== "P2002") {
+        console.warn(`  ⚠ Error creating ownership for company ${companyId}: ${err.message}`);
+      }
+    }
+  }
 
   for (const pc of portcos) {
     const companyKey = `${pc.name}|${pc.country}`;
     const companyId = companyIdMap.get(companyKey);
     if (!companyId) continue;
 
-    const fundId = fundIdMap.get(pc.ownershipVehicle);
-    if (!fundId) {
-      // Many portcos may reference funds not in our 149-fund list; that's OK
-      continue;
-    }
-
-    try {
-      await prisma.ownershipPeriod.upsert({
-        where: { fundId_companyId: { fundId, companyId } },
-        update: {},
-        create: {
-          fundId,
+    // If the company has an owners array (consolidated multi-owner), process each owner
+    if (pc.owners && pc.owners.length > 0) {
+      for (const owner of pc.owners) {
+        await createOwnership(
           companyId,
-          investmentYear: pc.investmentYear,
-          isActive: pc.status === "Active",
-        },
-      });
-      ownershipCount++;
-    } catch (err: any) {
-      // Skip duplicate constraint errors silently
-      if (err.code !== "P2002") {
-        console.warn(`  ⚠ Error creating ownership for ${pc.name}: ${err.message}`);
+          owner.investmentFirm,
+          owner.ownershipVehicle,
+          owner.investmentYear,
+          owner.status === "Active",
+          owner.stake,
+        );
       }
+    } else {
+      // Single-owner company: use the top-level fields
+      await createOwnership(
+        companyId,
+        pc.investmentFirm,
+        pc.ownershipVehicle,
+        pc.investmentYear,
+        pc.status === "Active",
+      );
     }
   }
 

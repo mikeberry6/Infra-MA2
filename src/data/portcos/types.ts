@@ -52,6 +52,14 @@ export interface PortCoSource {
   url: string;
 }
 
+export interface PortCoOwner {
+  investmentFirm: string;
+  ownershipVehicle: string;
+  investmentYear?: number;
+  stake?: string;
+  status: PortCoStatus;
+}
+
 export interface PortCo {
   name: string;
   investmentFirm: string;
@@ -70,6 +78,7 @@ export interface PortCo {
   milestones?: PortCoMilestone[];
   management?: PortCoExecutive[];
   sources?: PortCoSource[];
+  owners?: PortCoOwner[];
 }
 
 // ─── Constants ──────────────────────────────────────────────

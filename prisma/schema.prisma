@@ -48,6 +48,7 @@ model Organization {
 
   managedFunds       Fund[]
   dealParticipations DealParticipant[]
+  ownershipPeriods   OwnershipPeriod[]
   aliases            Alias[]
 
   @@index([name])
@@ -204,18 +205,23 @@ model Company {
 // ── OwnershipPeriod ─────────────────────────────────────
 
 model OwnershipPeriod {
-  id             String  @id @default(cuid())
-  fundId         String
-  fund           Fund    @relation(fields: [fundId], references: [id])
+  id             String        @id @default(cuid())
+  fundId         String?
+  fund           Fund?         @relation(fields: [fundId], references: [id])
+  organizationId String?
+  organization   Organization? @relation(fields: [organizationId], references: [id])
   companyId      String
-  company        Company @relation(fields: [companyId], references: [id])
+  company        Company       @relation(fields: [companyId], references: [id])
+  vehicleName    String?
+  stake          String?
   investmentYear Int?
   exitYear       Int?
-  isActive       Boolean @default(true)
-  createdAt      DateTime @default(now())
+  isActive       Boolean       @default(true)
+  createdAt      DateTime      @default(now())
 
-  @@unique([fundId, companyId])
+  @@unique([companyId, organizationId])
   @@index([fundId])
+  @@index([organizationId])
   @@index([companyId])
 }
 
