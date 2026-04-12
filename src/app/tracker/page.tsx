@@ -10,10 +10,14 @@ export const metadata: Metadata = {
 };
 
 export default async function TrackerPage() {
-  const [deals, counts] = await Promise.all([
-    getAllDeals(),
-    getDatabaseCounts(),
-  ]);
-
-  return <DealDatabaseClient deals={deals} counts={counts} />;
+  try {
+    const [deals, counts] = await Promise.all([
+      getAllDeals(),
+      getDatabaseCounts(),
+    ]);
+    return <DealDatabaseClient deals={deals} counts={counts} />;
+  } catch (error) {
+    console.error("Database query failed on /tracker:", error);
+    return <DealDatabaseClient deals={[]} counts={{ deals: 0, funds: 0, portfolio: 0 }} />;
+  }
 }

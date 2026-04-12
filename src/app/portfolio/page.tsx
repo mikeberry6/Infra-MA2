@@ -11,17 +11,21 @@ export const metadata: Metadata = {
 };
 
 export default async function PortfolioPage() {
-  const [companies, funds, counts] = await Promise.all([
-    getAllCompanies(),
-    getAllFunds(),
-    getDatabaseCounts(),
-  ]);
-
-  return (
-    <PortfolioDatabaseClient
-      companies={companies}
-      funds={funds}
-      counts={counts}
-    />
-  );
+  try {
+    const [companies, funds, counts] = await Promise.all([
+      getAllCompanies(),
+      getAllFunds(),
+      getDatabaseCounts(),
+    ]);
+    return (
+      <PortfolioDatabaseClient
+        companies={companies}
+        funds={funds}
+        counts={counts}
+      />
+    );
+  } catch (error) {
+    console.error("Database query failed on /portfolio:", error);
+    return <PortfolioDatabaseClient companies={[]} funds={[]} counts={{ deals: 0, funds: 0, portfolio: 0 }} />;
+  }
 }
