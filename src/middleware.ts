@@ -23,7 +23,10 @@ export async function middleware(request: NextRequest) {
   const hasLegacyCookie = request.cookies.get("site-auth")?.value === "authenticated";
 
   if (!token && !hasLegacyCookie) {
-    return NextResponse.redirect(new URL("/login", request.url));
+    // Use nextUrl.clone() to preserve basePath in the redirect
+    const loginUrl = request.nextUrl.clone();
+    loginUrl.pathname = "/login";
+    return NextResponse.redirect(loginUrl);
   }
 
   // Role-based route protection (only enforced for NextAuth sessions)
@@ -32,7 +35,9 @@ export async function middleware(request: NextRequest) {
 
     // Admin routes — ADMIN only
     if (pathname.startsWith("/admin") && role !== "ADMIN") {
-      return NextResponse.redirect(new URL("/", request.url));
+      const homeUrl = request.nextUrl.clone();
+      homeUrl.pathname = "/";
+      return NextResponse.redirect(homeUrl);
     }
 
     // Import APIs — ADMIN only
