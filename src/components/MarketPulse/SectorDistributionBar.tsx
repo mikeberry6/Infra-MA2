@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import type { DealSector } from "@/data/deals";
 import { getSectorColor } from "@/data/deals";
 
 interface SectorData {
-  sector: DealSector;
+  sector: string;
   count: number;
   percentage: number;
 }

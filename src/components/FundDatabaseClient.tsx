@@ -8,8 +8,6 @@ interface FundDatabaseClientProps {
   counts: DatabaseCounts;
 }
 
-export function FundDatabaseClient(_props: FundDatabaseClientProps) {
-  // TODO (Phase 6): Pass props.funds, props.counts to FundDatabase
-  // instead of it importing data directly from TS files
-  return <FundDatabase />;
+export function FundDatabaseClient(props: FundDatabaseClientProps) {
+  return <FundDatabase funds={props.funds} counts={props.counts} />;
 }

@@ -1,6 +1,7 @@
 "use client";
 
-import { deals, getSectorColor } from "@/data/deals";
+import { getSectorColor } from "@/data/deals";
+import type { DealView } from "@/modules/shared/types";
 
 function TickerItem({
   title,
@@ -15,7 +16,7 @@ function TickerItem({
     <div className="inline-flex items-center gap-2 px-3 sm:gap-3 sm:px-6">
       <div
         className="h-1.5 w-1.5 rounded-full"
-        style={{ backgroundColor: getSectorColor(sector as any) }}
+        style={{ backgroundColor: getSectorColor(sector) }}
       />
       <span className="text-xs font-medium text-[#EDEDED] max-w-[260px] truncate">
         {title}
@@ -28,7 +29,7 @@ function TickerItem({
   );
 }
 
-export function Ticker() {
+export function Ticker({ deals }: { deals: DealView[] }) {
   const sortedDeals = [...deals].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );

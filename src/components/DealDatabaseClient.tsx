@@ -8,8 +8,6 @@ interface DealDatabaseClientProps {
   counts: DatabaseCounts;
 }
 
-export function DealDatabaseClient(_props: DealDatabaseClientProps) {
-  // TODO (Phase 6): Pass props.deals, props.counts to DealDatabase
-  // instead of it importing data directly from TS files
-  return <DealDatabase />;
+export function DealDatabaseClient(props: DealDatabaseClientProps) {
+  return <DealDatabase deals={props.deals} counts={props.counts} />;
 }

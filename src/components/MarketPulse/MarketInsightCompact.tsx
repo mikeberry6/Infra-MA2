@@ -1,12 +1,12 @@
 "use client";
 
+// TODO Phase 2: Convert to accept data via props instead of importing static functions
 import {
   getDealStats,
   getRegionStats,
   getSectorColor,
   getRegionColor,
 } from "@/data/deals";
-import type { DealSector } from "@/data/deals";
 
 export function MarketInsightCompact() {
   const stats = getDealStats();
@@ -15,7 +15,7 @@ export function MarketInsightCompact() {
   // Top 4 sectors
   const topSectors = Object.entries(stats.sectorCounts)
     .map(([sector, count]) => ({
-      sector: sector as DealSector,
+      sector,
       count,
       percentage: Math.round((count / stats.totalCount) * 100),
     }))

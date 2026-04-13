@@ -1,13 +1,13 @@
 "use client";
 
 import { useMemo } from "react";
+// TODO Phase 2: Convert to accept data via props instead of importing static functions
 import {
   getRecentDeals,
   getDealStats,
   getSectorColor,
   getRegionStats,
 } from "@/data/deals";
-import type { DealRegion } from "@/data/deals";
 
 // Convert lat/lng to x,y on a sphere projection
 function latLngToSphere(
@@ -27,7 +27,7 @@ function latLngToSphere(
   return { x, y, visible: z > -0.1 };
 }
 
-const REGION_LOCATIONS: Record<DealRegion, { lat: number; lng: number }> = {
+const REGION_LOCATIONS: Record<string, { lat: number; lng: number }> = {
   "North America": { lat: 40, lng: -100 },
   Europe: { lat: 50, lng: 10 },
   "Asia-Pacific": { lat: 35, lng: 120 },

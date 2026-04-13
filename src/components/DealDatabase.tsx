@@ -2,13 +2,12 @@
 
 import { useState, useMemo, useEffect, useCallback } from "react";
 import {
-  deals,
   formatDate,
   getSectorColor,
   getCategoryColor,
   getRegionColor,
 } from "@/data/deals";
-import type { Deal, DealSector, DealCategory, DealRegion } from "@/data/deals";
+import type { DealView, DatabaseCounts } from "@/modules/shared/types";
 
 // ─── Non-infrastructure-fund entities to exclude from fund tags ──
 const NON_INFRA_FUND_ENTITIES = new Set([
@@ -112,7 +111,7 @@ function isInfraFund(name: string): boolean {
   return !NON_INFRA_FUND_ENTITIES.has(name);
 }
 
-function getFundRoleTags(deal: Deal): { name: string; role: "Buyer" | "Seller" }[] {
+function getFundRoleTags(deal: DealView): { name: string; role: "Buyer" | "Seller" }[] {
   const tags: { name: string; role: "Buyer" | "Seller" }[] = [];
   if (isInfraFund(deal.buyer)) tags.push({ name: deal.buyer, role: "Buyer" });
   if (isInfraFund(deal.seller)) tags.push({ name: deal.seller, role: "Seller" });
@@ -154,13 +153,11 @@ import { FilterChip } from "@/components/shared/FilterChip";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
-import { funds as fundsData } from "@/data/funds";
-import { companies as portcosData } from "@/data/portcos/companies";
 
 // ─── Filters ────────────────────────────────────────────────
-const SECTORS: DealSector[] = ["Transportation", "Power & ET", "Midstream", "Utilities", "Waste & ES", "Digital", "Social"];
+const SECTORS: string[] = ["Transportation", "Power & ET", "Midstream", "Utilities", "Waste & ES", "Digital", "Social"];
 
-const CATEGORIES: DealCategory[] = [
+const CATEGORIES: string[] = [
   "Acquisition (Buyout)",
   "Acquisition (Majority Stake)",
   "Acquisition (Minority Stake)",
@@ -174,7 +171,7 @@ const CATEGORIES: DealCategory[] = [
   "Joint Venture",
 ];
 
-const REGIONS: DealRegion[] = [
+const REGIONS: string[] = [
   "North America",
   "Europe",
   "Asia-Pacific",
@@ -192,12 +189,12 @@ function ActiveFiltersChips({
   onClearCategory,
   onClearAll,
 }: {
-  activeSectors: Set<DealSector>;
-  activeRegions: Set<DealRegion>;
-  activeCategories: Set<DealCategory>;
-  onClearSector: (s: DealSector) => void;
-  onClearRegion: (r: DealRegion) => void;
-  onClearCategory: (c: DealCategory) => void;
+  activeSectors: Set<string>;
+  activeRegions: Set<string>;
+  activeCategories: Set<string>;
+  onClearSector: (s: string) => void;
+  onClearRegion: (r: string) => void;
+  onClearCategory: (c: string) => void;
   onClearAll: () => void;
 }) {
   const totalFilters = activeSectors.size + activeRegions.size + activeCategories.size;
@@ -259,12 +256,12 @@ function FilterBar({
 }: {
   search: string;
   onSearchChange: (v: string) => void;
-  activeSectors: Set<DealSector>;
-  onToggleSector: (s: DealSector) => void;
-  activeRegions: Set<DealRegion>;
-  onToggleRegion: (r: DealRegion) => void;
-  activeCategories: Set<DealCategory>;
-  onToggleCategory: (c: DealCategory) => void;
+  activeSectors: Set<string>;
+  onToggleSector: (s: string) => void;
+  activeRegions: Set<string>;
+  onToggleRegion: (r: string) => void;
+  activeCategories: Set<string>;
+  onToggleCategory: (c: string) => void;
   onClearAll: () => void;
 }) {
   return (
@@ -287,8 +284,8 @@ function FilterBar({
             label="Sector"
             options={SECTORS}
             selected={activeSectors as Set<string>}
-            onToggle={(v) => onToggleSector(v as DealSector)}
-            getColor={(v) => getSectorColor(v as DealSector)}
+            onToggle={onToggleSector}
+            getColor={(v) => getSectorColor(v)}
           />
         </div>
         <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
@@ -296,8 +293,8 @@ function FilterBar({
             label="Region"
             options={REGIONS}
             selected={activeRegions as Set<string>}
-            onToggle={(v) => onToggleRegion(v as DealRegion)}
-            getColor={(v) => getRegionColor(v as DealRegion)}
+            onToggle={onToggleRegion}
+            getColor={(v) => getRegionColor(v)}
           />
         </div>
         <div className="px-2 py-2 flex items-center">
@@ -305,8 +302,8 @@ function FilterBar({
             label="Type"
             options={CATEGORIES}
             selected={activeCategories as Set<string>}
-            onToggle={(v) => onToggleCategory(v as DealCategory)}
-            getColor={(v) => getCategoryColor(v as DealCategory)}
+            onToggle={onToggleCategory}
+            getColor={(v) => getCategoryColor(v)}
             align="right"
           />
         </div>
@@ -331,8 +328,8 @@ function DealCard({
   deal,
   onSelect,
 }: {
-  deal: Deal;
-  onSelect: (deal: Deal) => void;
+  deal: DealView;
+  onSelect: (deal: DealView) => void;
 }) {
   const sectorColor = getSectorColor(deal.sector);
   return (
@@ -398,10 +395,12 @@ function DealCard({
 // ─── Deal Table ─────────────────────────────────────────────
 function DealTable({
   filteredDeals,
+  totalCount,
   onSelectDeal,
 }: {
-  filteredDeals: Deal[];
-  onSelectDeal: (deal: Deal) => void;
+  filteredDeals: DealView[];
+  totalCount: number;
+  onSelectDeal: (deal: DealView) => void;
 }) {
   const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
 
@@ -432,7 +431,7 @@ function DealTable({
           <span className="text-micro text-[#999999]">
             Showing{" "}
             <span className="font-mono text-[#6e6e6e] tabular-nums">{sorted.length}</span> of{" "}
-            <span className="font-mono text-[#6e6e6e] tabular-nums">{deals.length}</span> deals
+            <span className="font-mono text-[#6e6e6e] tabular-nums">{totalCount}</span> deals
           </span>
         </div>
       </div>
@@ -660,7 +659,7 @@ function DealDrawer({
   deal,
   onClose,
 }: {
-  deal: Deal;
+  deal: DealView;
   onClose: () => void;
 }) {
   const hasAdvisors =
@@ -702,7 +701,7 @@ function DealDrawer({
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                <span className="font-mono text-micro text-[#999999] tabular-nums">{deal.id}</span>
+                <span className="font-mono text-micro text-[#999999] tabular-nums">{deal.legacyId}</span>
                 <StatusBadge status={deal.status} />
                 <span className="font-mono text-micro text-[#999999] tabular-nums">{formatDate(deal.date)}</span>
               </div>
@@ -930,18 +929,18 @@ function DealDrawer({
 }
 
 // ─── Main Component ─────────────────────────────────────────
-export function DealDatabase() {
+export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: DatabaseCounts }) {
   const [search, setSearch] = useState("");
-  const [activeSectors, setActiveSectors] = useState<Set<DealSector>>(
+  const [activeSectors, setActiveSectors] = useState<Set<string>>(
     new Set(),
   );
-  const [activeRegions, setActiveRegions] = useState<Set<DealRegion>>(
+  const [activeRegions, setActiveRegions] = useState<Set<string>>(
     new Set(),
   );
-  const [activeCategories, setActiveCategories] = useState<Set<DealCategory>>(
+  const [activeCategories, setActiveCategories] = useState<Set<string>>(
     new Set(),
   );
-  const [selectedDeal, setSelectedDeal] = useState<Deal | null>(null);
+  const [selectedDeal, setSelectedDeal] = useState<DealView | null>(null);
 
   // Debounce search for performance
   const debouncedSearch = useDebounce(search, 300);
@@ -966,7 +965,7 @@ export function DealDatabase() {
           deal.target.toLowerCase().includes(q) ||
           deal.buyer.toLowerCase().includes(q) ||
           deal.seller.toLowerCase().includes(q) ||
-          deal.id.toLowerCase().includes(q) ||
+          deal.legacyId.toLowerCase().includes(q) ||
           deal.category.some((c) => c.toLowerCase().includes(q)) ||
           deal.subsector.toLowerCase().includes(q);
         if (!match) return false;
@@ -997,7 +996,7 @@ export function DealDatabase() {
 
   return (
     <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-3 sm:py-4">
-      <DatabaseTiles counts={{ deals: deals.length, funds: fundsData.length, portfolio: portcosData.length }} />
+      <DatabaseTiles counts={counts} />
 
       {/* Breadcrumb */}
       <div className="flex items-center gap-1.5 mt-1.5 mb-1">
@@ -1036,7 +1035,7 @@ export function DealDatabase() {
           </div>
         </div>
 
-        <DealTable filteredDeals={filteredDeals} onSelectDeal={setSelectedDeal} />
+        <DealTable filteredDeals={filteredDeals} totalCount={deals.length} onSelectDeal={setSelectedDeal} />
       </div>
 
       <CTABlock />

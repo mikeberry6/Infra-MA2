@@ -1,13 +1,12 @@
 "use client";
 
 import {
-  getWeeklyDeals,
   formatDate,
   formatTime,
   getSectorColor,
   getCategoryColor,
 } from "@/data/deals";
-import type { Deal } from "@/data/deals";
+import type { DealView } from "@/modules/shared/types";
 import {
   ExternalLink,
   Clock,
@@ -17,7 +16,7 @@ import {
 } from "lucide-react";
 import { MarketInsightHero } from "./MarketPulse";
 
-function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
+function TimelineCard({ deal, index }: { deal: DealView; index: number }) {
   const categoryColor = getCategoryColor(deal.category[0]);
 
   return (
@@ -46,7 +45,7 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
             </span>
           </div>
           <div className="h-3 w-px bg-[#27272A]" />
-          <span className="mono text-[11px] text-[#52525B]">{deal.id}</span>
+          <span className="mono text-[11px] text-[#52525B]">{deal.legacyId}</span>
           <div className="h-3 w-px bg-[#27272A]" />
           <span
             className="text-[10px] font-medium px-1.5 py-0"
@@ -138,12 +137,10 @@ function TimelineCard({ deal, index }: { deal: Deal; index: number }) {
   );
 }
 
-export function WeeklyBriefing() {
-  const recentDeals = getWeeklyDeals();
-
+export function WeeklyBriefing({ deals }: { deals: DealView[] }) {
   return (
     <div className="mx-auto max-w-[900px] lg:max-w-[1100px] xl:max-w-[1400px] px-4 sm:px-6 lg:px-8 xl:px-12 py-8 lg:py-12">
-      <MarketInsightHero deals={recentDeals} />
+      <MarketInsightHero deals={deals} />
 
       {/* Timeline header */}
       <div className="mt-10 lg:mt-14 mb-6 lg:mb-8">
@@ -156,7 +153,7 @@ export function WeeklyBriefing() {
         {/* Vertical line */}
         <div className="timeline-line" />
 
-        {recentDeals.map((deal, i) => (
+        {deals.map((deal, i) => (
           <TimelineCard key={deal.id} deal={deal} index={i} />
         ))}
 
@@ -166,7 +163,7 @@ export function WeeklyBriefing() {
             <div className="h-2 w-2 rounded-full bg-[#3f3f46]" />
           </div>
           <p className="text-xs text-[#52525B] pt-0.5">
-            End of weekly briefing &mdash; {recentDeals.length} transactions
+            End of weekly briefing &mdash; {deals.length} transactions
           </p>
         </div>
       </div>

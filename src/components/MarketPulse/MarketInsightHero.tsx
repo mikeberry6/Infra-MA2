@@ -4,9 +4,9 @@ import {
   getSectorColor,
   getRegionColor,
 } from "@/data/deals";
-import type { Deal, DealRegion, DealSector } from "@/data/deals";
+import type { DealView } from "@/modules/shared/types";
 
-export function MarketInsightHero({ deals }: { deals: Deal[] }) {
+export function MarketInsightHero({ deals }: { deals: DealView[] }) {
   const totalCount = deals.length;
 
   // Sector counts
@@ -24,7 +24,7 @@ export function MarketInsightHero({ deals }: { deals: Deal[] }) {
   // Calculate region breakdown (top 4)
   const regionBreakdown = Object.entries(regionCounts)
     .map(([region, count]) => ({
-      region: region as DealRegion,
+      region,
       count,
       percentage: Math.round((count / totalCount) * 100),
     }))
@@ -34,7 +34,7 @@ export function MarketInsightHero({ deals }: { deals: Deal[] }) {
   // Calculate sector breakdown (top 4)
   const sectorBreakdown = Object.entries(sectorCounts)
     .map(([sector, count]) => ({
-      sector: sector as DealSector,
+      sector,
       count,
       percentage: Math.round((count / totalCount) * 100),
     }))
