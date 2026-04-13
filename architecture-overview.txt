@@ -1,0 +1,99 @@
+INFRA-MA2 ARCHITECTURE OVERVIEW
+================================
+
+CURRENT ARCHITECTURE
+--------------------
+
+How the site works today:
+
+Browser -> Vercel Edge (middleware/auth) -> Serverless Function (page.tsx)
+  - Tries: database query via Prisma -> Neon PostgreSQL (fails gracefully, result currently unused)
+  - Renders: Client Component, which imports data from TypeScript files:
+    - src/data/deals.ts (146 deals, 221KB)
+    - src/data/funds.ts (149 funds, 98KB)
+    - src/data/portcos/companies.ts (1,194 companies, 3.2MB)
+
+The database and server infrastructure exist and are connected, but the UI still reads directly from static TypeScript files bundled into the JavaScript. The database is a shadow copy -- seeded from the same TS files but not yet feeding the frontend.
+
+
+WHAT'S INSTALLED AND WORKING
+-----------------------------
+
+- Vercel hosting: SSR deployment, auto-deploys on merge to default branch
+- Auth middleware: NextAuth JWT + legacy cookie, basePath-aware redirects
+- Next.js 14 App Router: 5 pages as Server Components with force-dynamic (no caching)
+- Prisma ORM + Neon adapter: PrismaNeonHttp over HTTP (serverless-compatible)
+- Neon PostgreSQL: Database provisioned, environment variables configured on Vercel
+- Database schema: 8 models (Deal, Fund, Company, Organization, OwnershipPeriod, Milestone, Person, ManagementPosition)
+- Seed script: Populates DB from TS files with entity resolution (fund name normalization)
+- Query layer: src/modules/*/queries.ts -- Prisma queries that return typed view objects
+- CI pipeline: GitHub Actions -- TypeScript check + Next.js build on every push
+- Client components: DealDatabase, FundDatabase, PortfolioDatabase -- all rendering from TS file imports
+
+
+FILE STRUCTURE
+--------------
+
+src/
+  app/                            Next.js App Router pages
+    page.tsx                      / -- Server Component, queries DB, renders DealDatabaseClient
+    funds/page.tsx                /funds -- same pattern
+    portfolio/page.tsx            /portfolio -- same pattern
+    tracker/page.tsx              /tracker
+    login/page.tsx                /login -- client component, public
+    admin/                        Admin pages (scaffolded, not functional)
+    api/                          API routes (auth, login, imports, exports -- mostly scaffolded)
+  components/                     Client components (the actual UI)
+    DealDatabase.tsx
+    DealDatabase/DynamicInsightsHero.tsx
+    FundDatabase.tsx
+    PortfolioDatabase.tsx
+    shared/                       Reusable UI components
+  data/                           Static TypeScript data files (current source of truth for UI)
+    deals.ts
+    funds.ts
+    portcos/companies.ts
+  lib/
+    prisma.ts                     Prisma client with Neon HTTP adapter
+  modules/                        Server-side query layer
+    deals/queries.ts
+    funds/queries.ts
+    companies/queries.ts
+    insights/queries.ts
+    shared/types.ts               View types (DealView, FundView, CompanyView)
+  middleware.ts                   Auth middleware
+  generated/prisma/               Auto-generated Prisma client
+
+prisma/
+  schema.prisma                   Database schema
+  seed.ts                         Seed script
+  entity-resolution.ts            Fund name normalization for seeding
+  verify-seed.ts                  Verification script
+
+
+WHAT'S LEFT TO BUILD
+--------------------
+
+1. Wire client components to database data
+   The Server Components query the database and pass results as props to client components,
+   but the client components ignore the props and import their own data from TS files. Each
+   component needs to be updated to use props.deals / props.funds / props.companies instead
+   of importing from src/data/. This is the switch from "static TS files drive the UI" to
+   "database drives the UI."
+
+2. Admin CRUD pages
+   The routes exist (/admin/deals, /admin/funds, /admin/companies, /admin/users, /admin/sources)
+   but they are placeholder shells. They need forms, tables, and API endpoints to create/edit/delete
+   records.
+
+3. Import/Export API routes
+   /api/imports/* and /api/exports/* routes are scaffolded but empty. These would allow bulk
+   CSV/JSON import of deals, funds, and companies, and export for reporting.
+
+4. Remove static data files
+   Once client components are wired to the database, the 3.2MB companies.ts, 221KB deals.ts,
+   and 98KB funds.ts can be removed from the client bundle. They would only be needed for seeding.
+
+5. Incremental data management
+   Currently, adding a new deal means editing deals.ts and redeploying. The end state is: add
+   it via the admin UI or import API, and it appears immediately with no code change needed.
