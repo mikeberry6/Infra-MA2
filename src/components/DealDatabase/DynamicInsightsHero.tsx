@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import type { DealView } from "@/modules/shared/types";
-import { getSectorColor, getRegionColor } from "@/data/deals";
+import { getSectorColor, getRegionColor } from "@/lib/colors";
 
 // ─── Activity type colors (base category) ───────────────────
 const ACTIVITY_COLORS: Record<string, string> = {

@@ -1,19 +1,10 @@
 "use client";
 
 import { useState, useMemo, useEffect, useCallback } from "react";
-import {
-  PORTCO_SECTORS,
-  PORTCO_REGIONS,
-  PORTCO_COUNTRY_TAGS,
-  getPortCoSectorColor,
-  getPortCoRegionColor,
-  getPortCoStatusColor,
-  getPortCoCountryTagColor,
-  getMilestoneCategoryColor,
-  getUniqueFirms,
-} from "@/data/portcos";
+import { PORTCO_SECTORS, PORTCO_REGIONS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
+import { getPortCoSectorColor, getPortCoRegionColor, getPortCoStatusColor, getPortCoCountryTagColor, getMilestoneCategoryColor, getStrategyColor } from "@/lib/colors";
+import { getUniqueFirms } from "@/lib/portco-utils";
 import { exportPortfolioToExcel } from "@/utils/exportPortfolio";
-import { getStrategyColor } from "@/data/funds";
 import type { CompanyView, FundView, DatabaseCounts } from "@/modules/shared/types";
 import {
   Search,

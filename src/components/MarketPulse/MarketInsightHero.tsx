@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  getSectorColor,
-  getRegionColor,
-} from "@/data/deals";
+import { getSectorColor, getRegionColor } from "@/lib/colors";
 import type { DealView } from "@/modules/shared/types";
 
 export function MarketInsightHero({ deals }: { deals: DealView[] }) {

@@ -1,6 +1,6 @@
 "use client";
 
-import { getSectorColor } from "@/data/deals";
+import { getSectorColor } from "@/lib/colors";
 import type { DealView } from "@/modules/shared/types";
 
 function TickerItem({

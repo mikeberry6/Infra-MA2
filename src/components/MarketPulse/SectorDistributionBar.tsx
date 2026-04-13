@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { getSectorColor } from "@/data/deals";
+import { getSectorColor } from "@/lib/colors";
 
 interface SectorData {
   sector: string;

@@ -1,20 +1,9 @@
 "use client";
 
 import { useState, useMemo, useEffect, useCallback, Fragment } from "react";
-import {
-  FUND_STRATEGIES,
-  FUND_STATUSES,
-  FUND_SIZE_RANGES,
-  FUND_SECTORS,
-  getStrategyColor,
-  getStatusColor,
-  getSizeRangeColor,
-  getFundSectorColor,
-  getStructureColor,
-  matchesSizeRange,
-  groupFundsByManager,
-  getFundStats,
-} from "@/data/funds";
+import { FUND_STRATEGIES, FUND_STATUSES, FUND_SIZE_RANGES, FUND_SECTORS } from "@/lib/constants";
+import { getStrategyColor, getStatusColor, getSizeRangeColor, getFundSectorColor, getStructureColor } from "@/lib/colors";
+import { matchesSizeRange, groupFundsByManager, getFundStats } from "@/lib/fund-utils";
 import type { FundView, PortfolioCompanyView, DatabaseCounts } from "@/modules/shared/types";
 import {
   Search,

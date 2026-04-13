@@ -1,11 +1,7 @@
 "use client";
 
-import {
-  formatDate,
-  formatTime,
-  getSectorColor,
-  getCategoryColor,
-} from "@/data/deals";
+import { formatDate, formatTime } from "@/lib/format";
+import { getSectorColor, getCategoryColor } from "@/lib/colors";
 import type { DealView } from "@/modules/shared/types";
 import {
   ExternalLink,

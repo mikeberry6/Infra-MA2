@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo } from "react";
-// TODO Phase 2: Convert to accept data via props instead of importing static functions
-import { getRecentDeals, getDealStats, getSectorColor } from "@/data/deals";
+import { getSectorColor } from "@/lib/colors";
+import type { DealView } from "@/modules/shared/types";
 
 // Convert lat/lng to x,y on a sphere projection
 function latLngToSphere(
@@ -172,9 +172,12 @@ function generateContinentPath(
   return path;
 }
 
-export function DealGlobe() {
-  const stats = getDealStats();
-  const recentDeals = getRecentDeals();
+export function DealGlobe({ deals }: { deals: DealView[] }) {
+  const totalCount = deals.length;
+  const sectorCounts: Record<string, number> = {};
+  for (const d of deals) { sectorCounts[d.sector] = (sectorCounts[d.sector] || 0) + 1; }
+  const stats = { totalCount, sectorCounts };
+  const recentDeals = [...deals].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const cx = 150;
   const cy = 150;

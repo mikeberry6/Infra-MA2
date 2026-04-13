@@ -1,12 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  getDealStats,
-  getRegionStats,
-  getSectorDistribution,
-  getSectorColor,
-} from "@/data/deals";
+import { getDealStats, getRegionStats, getSectorDistribution } from "@/lib/deal-utils";
+import { getSectorColor } from "@/lib/colors";
+import type { DealView } from "@/modules/shared/types";
 
 // Animated count-up component
 function CountUp({ end, duration = 1000 }: { end: number; duration?: number }) {
@@ -35,8 +32,8 @@ function CountUp({ end, duration = 1000 }: { end: number; duration?: number }) {
 }
 
 // Mini sector distribution visualization
-function MicroDistribution() {
-  const sectorDist = getSectorDistribution().slice(0, 5);
+function MicroDistribution({ deals }: { deals: DealView[] }) {
+  const sectorDist = getSectorDistribution(deals).slice(0, 5);
 
   return (
     <div className="flex items-center gap-1">
@@ -60,9 +57,9 @@ function MicroDistribution() {
   );
 }
 
-export function MarketContextBar() {
-  const stats = getDealStats();
-  const regionStats = getRegionStats();
+export function MarketContextBar({ deals }: { deals: DealView[] }) {
+  const stats = getDealStats(deals);
+  const regionStats = getRegionStats(deals);
 
   return (
     <div className="surface-card-elevated rounded-[4px] p-5 lg:p-6 xl:p-8 mb-6 lg:mb-8">
@@ -135,7 +132,7 @@ export function MarketContextBar() {
             <span className="text-[11px] font-medium text-[#52525B] uppercase tracking-wider block mb-2">
               Sector Mix
             </span>
-            <MicroDistribution />
+            <MicroDistribution deals={deals} />
           </div>
         </div>
       </div>

@@ -1,12 +1,8 @@
 "use client";
 
 import { useState, useMemo, useEffect, useCallback } from "react";
-import {
-  formatDate,
-  getSectorColor,
-  getCategoryColor,
-  getRegionColor,
-} from "@/data/deals";
+import { formatDate } from "@/lib/format";
+import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import type { DealView, DatabaseCounts } from "@/modules/shared/types";
 
 // ─── Non-infrastructure-fund entities to exclude from fund tags ──
