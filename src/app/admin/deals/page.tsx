@@ -3,13 +3,14 @@ export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import { DEAL_SECTOR_DISPLAY, DEAL_STATUS_DISPLAY } from "@/modules/shared/enum-maps";
 import Link from "next/link";
+import DeleteButton from "@/components/admin/DeleteButton";
+import { deleteDeal } from "@/modules/admin/actions";
 
 export const metadata = { title: "Admin - Deals" };
 
 export default async function AdminDealsPage() {
   const deals = await prisma.deal.findMany({
     orderBy: { date: "desc" },
-    take: 50,
     select: {
       id: true,
       legacyId: true,
@@ -30,6 +31,12 @@ export default async function AdminDealsPage() {
             <Link href="/admin" className="text-sm text-[#71717A] hover:text-white mb-2 inline-block">&larr; Back to Admin</Link>
             <h1 className="text-2xl font-bold">Deals</h1>
           </div>
+          <Link
+            href="/admin/deals/new"
+            className="bg-[#818CF8] text-white px-4 py-2 rounded hover:bg-[#6366F1] text-sm font-medium"
+          >
+            New Deal
+          </Link>
         </div>
 
         <table className="w-full text-sm">
@@ -40,7 +47,8 @@ export default async function AdminDealsPage() {
               <th className="pb-2 pr-4">Sector</th>
               <th className="pb-2 pr-4">Deal Status</th>
               <th className="pb-2 pr-4">Record Status</th>
-              <th className="pb-2">Date</th>
+              <th className="pb-2 pr-4">Date</th>
+              <th className="pb-2">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -59,7 +67,18 @@ export default async function AdminDealsPage() {
                     {deal.status}
                   </span>
                 </td>
-                <td className="py-2 text-[#71717A]">{deal.date.toLocaleDateString()}</td>
+                <td className="py-2 pr-4 text-[#71717A]">{deal.date.toLocaleDateString()}</td>
+                <td className="py-2">
+                  <div className="flex items-center gap-2">
+                    <Link
+                      href={`/admin/deals/${deal.id}/edit`}
+                      className="text-xs px-2 py-1 rounded bg-[#818CF8]/10 text-[#818CF8] hover:bg-[#818CF8]/20"
+                    >
+                      Edit
+                    </Link>
+                    <DeleteButton deleteAction={deleteDeal} id={deal.id} />
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>

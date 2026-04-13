@@ -3,13 +3,14 @@ export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import { COMPANY_SECTOR_DISPLAY, COMPANY_STATUS_DISPLAY } from "@/modules/shared/enum-maps";
 import Link from "next/link";
+import DeleteButton from "@/components/admin/DeleteButton";
+import { deleteCompany } from "@/modules/admin/actions";
 
 export const metadata = { title: "Admin - Companies" };
 
 export default async function AdminCompaniesPage() {
   const companies = await prisma.company.findMany({
     orderBy: { name: "asc" },
-    take: 50,
     select: {
       id: true,
       name: true,
@@ -28,6 +29,12 @@ export default async function AdminCompaniesPage() {
             <Link href="/admin" className="text-sm text-[#71717A] hover:text-white mb-2 inline-block">&larr; Back to Admin</Link>
             <h1 className="text-2xl font-bold">Companies</h1>
           </div>
+          <Link
+            href="/admin/companies/new"
+            className="bg-[#818CF8] text-white px-4 py-2 rounded hover:bg-[#6366F1] text-sm font-medium"
+          >
+            New Company
+          </Link>
         </div>
 
         <table className="w-full text-sm">
@@ -37,7 +44,8 @@ export default async function AdminCompaniesPage() {
               <th className="pb-2 pr-4">Sector</th>
               <th className="pb-2 pr-4">Country</th>
               <th className="pb-2 pr-4">Status</th>
-              <th className="pb-2">Record Status</th>
+              <th className="pb-2 pr-4">Record Status</th>
+              <th className="pb-2">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -47,7 +55,7 @@ export default async function AdminCompaniesPage() {
                 <td className="py-2 pr-4 text-[#A1A1AA]">{COMPANY_SECTOR_DISPLAY[company.sector]}</td>
                 <td className="py-2 pr-4 text-[#A1A1AA]">{company.country}</td>
                 <td className="py-2 pr-4 text-[#A1A1AA]">{COMPANY_STATUS_DISPLAY[company.companyStatus]}</td>
-                <td className="py-2">
+                <td className="py-2 pr-4">
                   <span className={`text-xs px-1.5 py-0.5 rounded ${
                     company.status === "PUBLISHED" ? "bg-emerald-500/10 text-emerald-400" :
                     company.status === "DRAFT" ? "bg-amber-500/10 text-amber-400" :
@@ -55,6 +63,17 @@ export default async function AdminCompaniesPage() {
                   }`}>
                     {company.status}
                   </span>
+                </td>
+                <td className="py-2">
+                  <div className="flex items-center gap-2">
+                    <Link
+                      href={`/admin/companies/${company.id}/edit`}
+                      className="text-xs px-2 py-1 rounded bg-[#818CF8]/10 text-[#818CF8] hover:bg-[#818CF8]/20"
+                    >
+                      Edit
+                    </Link>
+                    <DeleteButton deleteAction={deleteCompany} id={company.id} />
+                  </div>
                 </td>
               </tr>
             ))}
