@@ -1804,10 +1804,10 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2018,
-    investmentYear: 2020,
+    investmentYear: 2022,
     headquarters: "Nevada",
     owners: [
-      { investmentFirm: "Quinbrook", ownershipVehicle: "Majority-owned by Quinbrook; APG acquired 49% during construction", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "Quinbrook", ownershipVehicle: "Majority-owned by Quinbrook; APG acquired 49% during construction", investmentYear: 2022, status: "Active" },
       { investmentFirm: "APG Infrastructure", ownershipVehicle: "APG Direct Infrastructure Pool", investmentYear: 2022, status: "Active" },
       { investmentFirm: "Quinbrook", ownershipVehicle: "Quinbrook Valley of Fire Fund", status: "Active" },
     ],
@@ -19408,7 +19408,7 @@ export const companies: PortCo[] = [
     description: "Kalaeloa Partners, L.P. owns a cogeneration facility on Oʻahu, Hawaii. The asset provides dispatchable generation capacity to the island grid and operates as essential thermal infrastructure within Hawaii’s isolated power system. Its business model is asset-heavy and based on long-lived operating generation infrastructure rather than development-only activity. Public disclosures identify the plant as a 208 MW low-sulfur-fuel-oil cogeneration facility. PSEG completed the sale of its 50% interest in Kalaeloa Partners to Harbert Infrastructure Fund VI in 2023. Public materials reviewed do not disclose the full current ownership split after that transaction, but they do show Harbert as the acquiring infrastructure sponsor.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2023,
     headquarters: "Hawaii",
     milestones: [
       { date: "1997: Harbert-affiliated investors were identified in public materials as early owners of the facility.", event: "1997: Harbert-affiliated investors were identified in public materials as early owners of the facility.", category: "Other" },
