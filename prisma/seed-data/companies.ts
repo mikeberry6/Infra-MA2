@@ -536,7 +536,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States","Canada"],
     yearFounded: 1923,
-    investmentYear: 2024,
+    investmentYear: 2021,
     headquarters: "Multi-state United States and Canada",
     owners: [
       { investmentFirm: "AIMCo", ownershipVehicle: "AIMCo disclosed a minority 10% position in Boldyn.", investmentYear: 2024, status: "Active" },
@@ -651,7 +651,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States","Mexico"],
     yearFounded: 2011,
-    investmentYear: 2026,
+    investmentYear: 2022,
     headquarters: "Texas; New Mexico; Mexico",
     milestones: [
       { date: "2011", event: "Howard Energy Partners was founded.", category: "Founding" },
@@ -704,7 +704,7 @@ export const companies: PortCo[] = [
     description: "Puget Energy is the holding company for Puget Sound Energy, Washington's regulated electric and gas utility. The utility serves approximately 1.2 million electric customers and 900,000 natural gas customers across Washington State. Its operating model is asset-heavy and regulated, with revenue supported by utility rate structures and long-lived network infrastructure. AIMCo has held the investment since the 2008 take-private and increased its stake in 2018, while the current public consortium also includes Macquarie, Ontario Teachers', OMERS, BCI, and PGGM. AIMCo continues to identify Puget Energy as one of its major infrastructure holdings.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2008,
     headquarters: "Washington",
     milestones: [
       { date: "2008", event: "Puget Energy was taken private by a consortium of infrastructure investors including AIMCo.", category: "Financing" },
@@ -1024,7 +1024,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["Canada"],
     yearFounded: 2008,
-    investmentYear: 2020,
+    investmentYear: 2008,
     headquarters: "Alberta",
     milestones: [
       { date: "2008", event: "Financial close was reached on the Alberta Schools Alternative Procurement I project.", category: "Other" },
@@ -1807,7 +1807,7 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Nevada",
     owners: [
-      { investmentFirm: "Quinbrook", ownershipVehicle: "Majority-owned by Quinbrook; APG acquired 49% during construction", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "Quinbrook", ownershipVehicle: "Majority-owned by Quinbrook; APG acquired 49% during construction", investmentYear: 2022, status: "Active" },
       { investmentFirm: "APG Infrastructure", ownershipVehicle: "APG Direct Infrastructure Pool", investmentYear: 2022, status: "Active" },
       { investmentFirm: "Quinbrook", ownershipVehicle: "Quinbrook Valley of Fire Fund", status: "Active" },
     ],
@@ -2174,7 +2174,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2025,
-    investmentYear: 2025,
+    investmentYear: 2023,
     headquarters: "New York; New England",
     milestones: [
       { date: "2023", event: "Bullrock expanded its renewables platform and investment management capabilities.", category: "Financing" },
@@ -2200,7 +2200,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2003,
-    investmentYear: 2025,
+    investmentYear: 2018,
     headquarters: "Mississippi",
     milestones: [
       { date: "2003", event: "Caledonia entered operation as a combined-cycle natural gas plant in Mississippi.", category: "Expansion" },
@@ -3894,7 +3894,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2003,
-    investmentYear: 2023,
+    investmentYear: 2017,
     headquarters: "Massachusetts; multi-state United States portfolio",
     milestones: [
       { date: "2003: Unison Site Management was founded by Dewey Shay.", event: "2003: Unison Site Management was founded by Dewey Shay.", category: "Other" },
@@ -4931,7 +4931,7 @@ export const companies: PortCo[] = [
     description: "Maurepas Pipeline is a natural-gas transportation asset in southern Louisiana. The pipeline serves an upstream and industrial end market through contracted transportation service, including long-term arrangements with a Shell affiliate disclosed at the time of Astatine's investment. Its operating model is asset-heavy and contracted because the asset generates infrastructure cash flows from pipeline transportation rather than merchant commodity trading. The system operates in Louisiana, where it forms part of the regional gas-transport network serving Gulf Coast demand centers. Astatine, then operating under the Alinda name, acquired a 49% interest in 2018, and the remaining interest is held by Energy Transfer.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2022,
+    investmentYear: 2018,
     headquarters: "Louisiana",
     milestones: [
       { date: "2018-08-20: Alinda Capital Partners, now Astatine Investment Partners, announced the acquisition of a 49% interest in Maurepas Pipeline from SemGroup for $350 million.", event: "2018-08-20: Alinda Capital Partners, now Astatine Investment Partners, announced the acquisition of a 49% interest in Maurepas Pipeline from SemGroup for $350 million.", category: "Other" },
@@ -5032,7 +5032,7 @@ export const companies: PortCo[] = [
     description: "Chesapeake is the ownership vehicle for Transurban's Greater Washington managed-lane toll-road assets and related development projects. The network serves passenger and commercial traffic in the Washington metropolitan area through the 495, 95, and 395 Express Lanes and associated expansions. Its operating model combines operational toll-road cash flows with development activity, and revenues are generated by dynamically priced managed lanes under long-dated concession arrangements. AustralianSuper describes the asset as comprising three operational toll roads and two developments in the Greater Washington, D.C. area, while Transurban's 2020 partnership materials covered the 495, 95, and 395 Express Lanes portfolio. AustralianSuper acquired its 25% stake in 2020 alongside CPP Investments and UniSuper, with Transurban retaining 50% and continuing to operate the network.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2020,
     headquarters: "Virginia; Maryland; District of Columbia",
     milestones: [
       { date: "2019-11-17: Tolling commenced on the 395 Express Lanes within the Chesapeake network.", event: "2019-11-17: Tolling commenced on the 395 Express Lanes within the Chesapeake network.", category: "Other" },
@@ -5132,7 +5132,7 @@ export const companies: PortCo[] = [
     description: "AgeCare Facilities Portfolio is a Canadian long-term-care platform comprising facilities in Ontario, Alberta, and British Columbia. The homes serve senior residents and their families, with revenues supported by provincially regulated and funded long-term-care and continuing-care frameworks plus resident co-payments. The operating model is asset-heavy and regulated because the portfolio owns physical facilities while AgeCare operates the homes under provincial licensing, funding, and care standards. Axium's portfolio materials describe a 92.5% interest in an Ontario portfolio of 16 facilities and 2,418 beds and a separate 92.5% interest in the Aster and Bloom portfolios in Alberta and British Columbia totaling 26 facilities and 4,114 beds. Axium partnered with AgeCare in 2020 in Alberta and currently owns the majority interest in the disclosed portfolios, with AgeCare retaining the balance and operating the assets.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2025,
+    investmentYear: 2020,
     headquarters: "Ontario; Alberta; British Columbia",
     milestones: [
       { date: "2020-01-08: Axium and AgeCare announced a partnership covering five continuing-care facilities in Alberta totaling 1,402 beds.", event: "2020-01-08: Axium and AgeCare announced a partnership covering five continuing-care facilities in Alberta totaling 1,402 beds.", category: "Other" },
@@ -5158,7 +5158,7 @@ export const companies: PortCo[] = [
     description: "Anthony Henday Drive Southeast is a public-private partnership road concession forming the southeast leg of Edmonton's ring road. The asset serves passenger and freight traffic in the Edmonton metropolitan area and its economic value is tied to a strategic urban bypass corridor rather than a local access road alone. Its operating model is asset-heavy and concession-based, with cash flows supported by a long-term agreement with the Province of Alberta rather than direct merchant exposure. Axium's portfolio materials describe an 11-kilometre roadway that reached commercial operation in October 2007 and remains under concession through 2037. A Fiera Axium-led consortium acquired the concession in 2010 from Macquarie's vehicle, and the current ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2037,
+    investmentYear: 2010,
     headquarters: "Alberta",
     milestones: [
       { date: "2007-10: Anthony Henday Drive Southeast reached commercial operation.", event: "2007-10: Anthony Henday Drive Southeast reached commercial operation.", category: "Other" },
@@ -5287,7 +5287,7 @@ export const companies: PortCo[] = [
     description: "Axium Great Plains Wind LLC holds a diversified wind portfolio in the United States. The assets sell power to utility and corporate offtakers under long-term agreements, with a portion of capacity subject to recontracting over time. Its model is asset-heavy because returns are driven by operating wind farms and their contracted cash flows rather than by a development-fee model. Axium portfolio materials describe 1,062 MW across seven wind assets in three states, with about 65% of capacity under long-term offtake agreements. An Axium-led consortium acquired a 49% interest from EDP Renewables in 2016, while EDP Renewables retained 51%.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2022,
+    investmentYear: 2015,
     headquarters: "United States (3 states)",
     milestones: [
       { date: "2015-11-11: Axium announced an agreement to acquire an interest in a 1,000 MW U.S. wind portfolio from EDP Renewables.", event: "2015-11-11: Axium announced an agreement to acquire an interest in a 1,000 MW U.S. wind portfolio from EDP Renewables.", category: "Other" },
@@ -5338,7 +5338,7 @@ export const companies: PortCo[] = [
     description: "Cascade Power Project is a combined-cycle natural-gas generation asset in Alberta. The project serves the Alberta power market with dispatchable generation capacity and is positioned near gas supply and high-voltage transmission infrastructure. Its model is asset-heavy and market-based because revenues depend on physical plant operations and power-market participation, while a substantial portion of gas supply is supported by long-term netback agreements. Axium's disclosures described the plant as a 900 MW project located about 200 kilometres west of Edmonton. Axium partnered with OPTrust, DIF Capital Partners, Kineticor Resource Corp., and Macquarie Capital at financing close in 2020, and the current ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2024,
+    investmentYear: 2020,
     headquarters: "Alberta",
     owners: [
       { investmentFirm: "Axium Infrastructure", ownershipVehicle: "Axium / OPTrust Partnership", investmentYear: 2024, status: "Active" },
@@ -5426,7 +5426,7 @@ export const companies: PortCo[] = [
     description: "Copper Crossing Solar Project is an operating solar asset in Arizona. The project supplies renewable power under long-term contracted arrangements, with Axium and Avangrid describing Salt River Project as the offtake counterparty for the Arizona wind-and-solar portfolio acquired in 2019. Its operating model is asset-heavy and contracted because cash flows are tied to the solar facility and long-term PPA-based revenues rather than to merchant market exposure. Axium's portfolio disclosures identify Copper Crossing as a 23 MWdc solar project in Arizona that forms part of a jointly owned renewables portfolio. Axium acquired a 50% interest from Avangrid Renewables in 2019, and Avangrid remained the operator and 50% co-owner.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2020,
+    investmentYear: 2019,
     headquarters: "Arizona",
     milestones: [
       { date: "2011-08: Copper Crossing reached commercial operation, according to Axium portfolio materials.", event: "2011-08: Copper Crossing reached commercial operation, according to Axium portfolio materials.", category: "Other" },
@@ -5530,7 +5530,7 @@ export const companies: PortCo[] = [
     description: "Dry Lake II Wind Farm is an operating wind-generation asset in Arizona. The project supplies renewable electricity under long-term contracted arrangements and forms part of a paired Arizona renewables investment with Copper Crossing Solar. Its operating model is asset-heavy and contracted because cash flows are generated by the wind facility under long-term offtake arrangements rather than by merchant exposure alone. Axium's portfolio materials identify Dry Lake II as a 65.1 MW wind asset in Arizona, and transaction disclosures stated that output from the Arizona portfolio was under long-term contract with Salt River Project. Axium acquired a 50% stake from Avangrid Renewables in 2019, while Avangrid remained operator and 50% co-owner.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2020,
+    investmentYear: 2019,
     headquarters: "Arizona",
     milestones: [
       { date: "2010-11: Dry Lake II reached commercial operation, according to Axium portfolio materials.", event: "2010-11: Dry Lake II reached commercial operation, according to Axium portfolio materials.", category: "Other" },
@@ -5556,7 +5556,7 @@ export const companies: PortCo[] = [
     description: "EDPR U.S. Wind Portfolio is a diversified wind generation investment assembled through Axium’s partnership with EDP Renewables. The assets supply electricity to utility and corporate offtakers under long-term power purchase agreements, with some value linked to recontracting as assets mature. Its model is asset-heavy because the portfolio consists of operating wind farms and associated contracted cash flows rather than development fees or equipment supply margins. Axium’s transaction materials described the portfolio at about 1,000 MW across seven wind farms located throughout the United States. An Axium-led consortium acquired a 49% interest at financial close in 2016, while EDP Renewables retained 51%.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2020,
+    investmentYear: 2015,
     headquarters: "United States",
     milestones: [
       { date: "2015-11-11: Axium announced an agreement to acquire an interest in EDPR's 1,000 MW U.S. wind portfolio.", event: "2015-11-11: Axium announced an agreement to acquire an interest in EDPR's 1,000 MW U.S. wind portfolio.", category: "Other" },
@@ -5582,7 +5582,7 @@ export const companies: PortCo[] = [
     description: "Edwards Sanborn 1A is a co-located solar and battery-storage facility in Kern County, California. The project serves utility, municipal-utility, and corporate offtakers through contracted renewable-power and storage arrangements. Its operating model is asset-heavy and contracted because value is derived from a physical generation-and-storage complex supported by long-term offtake agreements rather than from a merchant development strategy alone. Axium disclosed that phase 1A includes 397 MWac of solar capacity and 1,505 MWh of battery storage. Axium acquired an 80% interest from Terra-Gen in October 2022, and Terra-Gen retained the remaining 20%.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2024,
+    investmentYear: 2022,
     headquarters: "California",
     milestones: [
       { date: "2022-10-26: Axium acquired an 80% interest in Edwards Sanborn 1A from Terra-Gen.", event: "2022-10-26: Axium acquired an 80% interest in Edwards Sanborn 1A from Terra-Gen.", category: "Other" },
@@ -5608,7 +5608,7 @@ export const companies: PortCo[] = [
     description: "Edwards Sanborn 1A & 1B is a utility-scale solar and battery storage platform within the Edwards Sanborn complex in Kern County, California. Public disclosures describe Phase 1A at 397 MWac of solar capacity and 1,505 MWh of battery storage, and Phase 1B at 410 MWac of solar capacity and 1,497 MWh of battery storage. The platform is asset-heavy and contracted, with long-term offtake arrangements supporting revenue rather than merchant power exposure for the entire output. Its operating footprint is concentrated in California as part of one of the larger integrated solar and storage developments in the U.S. market. Axium acquired an 80% interest in Phase 1A in 2022 and later invested in Phase 1B in 2024, but the current combined ownership structure for the 1A and 1B platform is not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2024,
+    investmentYear: 2022,
     headquarters: "California",
     milestones: [
       { date: "2022-10-26: Axium announced an investment in Edwards Sanborn Phase 1A.", event: "2022-10-26: Axium announced an investment in Edwards Sanborn Phase 1A.", category: "Other" },
@@ -5709,7 +5709,7 @@ export const companies: PortCo[] = [
     description: "Jimmie Creek Hydroelectric Project is a 62 MW run-of-river hydro facility located northwest of Powell River in British Columbia. The project generates electricity under a long-term power purchase agreement with BC Hydro, giving it a contracted revenue profile rather than exposure to merchant power markets. It is an asset-heavy renewable infrastructure business with operations concentrated in a single hydro asset within British Columbia. The facility entered commercial operation in 2016 after development by Alterra Power and a partnership with Fiera Axium Infrastructure, and it remains part of the region’s contracted renewable generation fleet. Current ownership is publicly disclosed by Innergex at 50.99%, implying that Axium-managed funds hold the remaining 49.01% interest.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2016,
+    investmentYear: 2014,
     headquarters: "British Columbia",
     milestones: [
       { date: "2014-04-24: Alterra Power and Fiera Axium announced a partnership for the Jimmie Creek hydro project.", event: "2014-04-24: Alterra Power and Fiera Axium announced a partnership for the Jimmie Creek hydro project.", category: "Other" },
@@ -5735,7 +5735,7 @@ export const companies: PortCo[] = [
     description: "K2 Wind Facility is a 270 MW wind farm in Goderich, Ontario and is one of the larger operating wind projects in the province. All output is sold under a 20-year power purchase agreement with the Independent Electricity System Operator, which makes the project fully contracted rather than merchant. The asset is capital intensive and operates as a single utility-scale generation facility within Axium’s Canadian renewable portfolio. Public disclosures show that a consortium including Axium, Alberta Teachers’ Retirement Fund Board, and Manulife first acquired a one-third interest in 2016 and then acquired the remaining two-thirds from Pattern Energy and Capital Power in 2018. The current ownership percentages among the consortium members are not publicly disclosed.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2019,
+    investmentYear: 2016,
     headquarters: "Ontario",
     milestones: [
       { date: "2015-05: K2 Wind Facility achieved commercial operation.", event: "2015-05: K2 Wind Facility achieved commercial operation.", category: "Other" },
@@ -5761,7 +5761,7 @@ export const companies: PortCo[] = [
     description: "Kings Mountain Energy Center is a 470 MW combined-cycle natural gas-fired power plant located in North Carolina. The facility sells capacity and energy into the regional power market and forms part of a portfolio of U.S. gas-fired generation assets acquired by Axium from Capital Dynamics. Its operating model is asset-heavy, with revenues linked to contracted and market-based power sales typical for utility-scale thermal generation. The asset is geographically concentrated in North Carolina and reached commercial operation in 2018. Axium-managed funds acquired an approximately 25% equity interest in the broader generation portfolio in 2017, but the current full ownership structure of Kings Mountain is not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2019,
+    investmentYear: 2017,
     headquarters: "North Carolina",
     milestones: [
       { date: "2017-03-16: Axium Infrastructure closed the acquisition of equity interests in a U.S. natural gas generation portfolio that included Kings Mountain Energy Center.", event: "2017-03-16: Axium Infrastructure closed the acquisition of equity interests in a U.S. natural gas generation portfolio that included Kings Mountain Energy Center.", category: "Other" },
@@ -5786,7 +5786,7 @@ export const companies: PortCo[] = [
     description: "Longwood Medical Area Energy System, also known as MATEP, is a district energy and microgrid platform serving major hospitals, research institutions, and medical schools in Boston’s Longwood area. The system provides electricity, steam, and chilled water under long-term utility contracts to five hospitals and the Harvard Institutes of Medicine, supporting mission-critical healthcare and research operations. Its operating model is asset-heavy and contracted, with physical generation and thermal infrastructure underpinning long-duration service agreements through 2051. Public materials describe the platform as serving 74 buildings across roughly 12 million square feet and supporting institutions with more than 2,000 beds and substantial inpatient and outpatient volumes. ENGIE North America and Axium Infrastructure acquired the system in 2018 through Longwood Energy Partners, and the current ownership split is not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2018,
     headquarters: "Massachusetts",
     milestones: [
       { date: "2018-04-03: ENGIE and Axium completed the acquisition of the Longwood district energy system in Boston.", event: "2018-04-03: ENGIE and Axium completed the acquisition of the Longwood district energy system in Boston.", category: "Other" },
@@ -6044,7 +6044,7 @@ export const companies: PortCo[] = [
     description: "Sea-to-Sky Highway is a 100-kilometer road concession connecting West Vancouver and Whistler in British Columbia. The project supports passenger, freight, and tourism traffic on a strategic corridor and is governed under a long-term public-private partnership with the Province of British Columbia. Its operating model is asset-heavy and concession-based, with revenues derived from availability, usage, and safety-performance payments rather than toll collection. The highway upgrade reached completion in 2010, and public portfolio materials note that the concession runs through 2030. Fiera Axium Infrastructure Canada L.P. acquired an ownership interest in 2010, but the current ownership percentage is not publicly disclosed.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2030,
+    investmentYear: 2010,
     headquarters: "British Columbia",
     milestones: [
       { date: "2010-06: The Sea-to-Sky Highway improvement project reached completion.", event: "2010-06: The Sea-to-Sky Highway improvement project reached completion.", category: "Other" },
@@ -6070,7 +6070,7 @@ export const companies: PortCo[] = [
     description: "Slate Creek Wind Project is a 150 MW wind facility located in Kansas. The project sells all power under a 20-year power purchase agreement with Kansas City Power & Light, which provides a contracted revenue profile. It is an asset-heavy operating wind project using 75 Vestas turbines and forms part of Axium’s North American renewable energy portfolio. Commercial operation began in late 2015, after which EDF Renewable Energy brought in Axium as a partner in 2016. Axium-managed funds acquired a 50% interest in the project while EDF Renewables retained the remaining 50%.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2036,
+    investmentYear: 2016,
     headquarters: "Kansas",
     milestones: [
       { date: "2015-12-29: Slate Creek Wind Project achieved commercial operation.", event: "2015-12-29: Slate Creek Wind Project achieved commercial operation.", category: "Other" },
@@ -6096,7 +6096,7 @@ export const companies: PortCo[] = [
     description: "Sorel-Tracy Detention Centre is a correctional public-private partnership project in Sorel-Tracy, Quebec. The facility was developed to replace older detention capacity and includes approximately 300 jail cells together with additional dormitory beds under a long-term project agreement with the Government of Québec. Its operating model is asset-heavy and availability-based, with the project company receiving monthly availability payments rather than market-based revenues. The project includes design, construction, financing, and long-term facilities management obligations and is one of Axium’s social infrastructure PPP investments in Canada. Fiera Axium Infrastructure Canada II L.P. reached financial close in 2013 and led the project through its special purpose vehicle, while the detailed current ownership structure is not publicly disclosed.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2016,
+    investmentYear: 2013,
     headquarters: "Quebec",
     milestones: [
       { date: "2013-07-26: Fiera Axium Infrastructure Canada II L.P. achieved financial close on the Sorel-Tracy Detention Centre PPP.", event: "2013-07-26: Fiera Axium Infrastructure Canada II L.P. achieved financial close on the Sorel-Tracy Detention Centre PPP.", category: "Other" },
@@ -6201,7 +6201,7 @@ export const companies: PortCo[] = [
     description: "Wind Energy Transmission Texas is a regulated electric transmission utility operating in West Texas. The company provides transmission infrastructure that supports electricity delivery and renewable-power interconnection within the ERCOT market. Its model is asset-heavy and rate-regulated, with value tied to owned transmission lines and switching stations rather than merchant power generation. Axium's March 2025 announcement described the system as comprising approximately 415 circuit miles of transmission lines and 12 switching stations. Operations are concentrated in Texas as a single-state regulated transmission platform. Axium initially acquired control of WETT in 2020 and announced in March 2025 that it had purchased an additional 34.3% interest, bringing its ownership to 100% through Axium-managed funds.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2020,
     headquarters: "Texas",
     milestones: [
       { date: "2013-09 to 2014-01: Axium portfolio materials indicate the WETT transmission assets entered commercial operation in this period.", event: "2013-09 to 2014-01: Axium portfolio materials indicate the WETT transmission assets entered commercial operation in this period.", category: "Other" },
@@ -6330,7 +6330,7 @@ export const companies: PortCo[] = [
     description: "Habitat Solar is a residential solar platform formed to own and operate distributed solar assets serving homeowners in the United States. The platform's revenue profile is tied to long-term residential solar arrangements rather than merchant wholesale electricity exposure. Its model is asset-heavy because returns depend on the performance of owned distributed-generation systems deployed at customer sites. Public Basalt materials describe Habitat as a partnership with IGS Solar, an established residential solar provider. Operations span multiple US states where residential distributed solar deployment supports the platform's installed base. Basalt formed Habitat in partnership with IGS Solar around 2020, and public sources do not disclose founding-year treatment or partner ownership percentages for the platform.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2023,
+    investmentYear: 2020,
     headquarters: "Multiple U.S. states",
     milestones: [
       { date: "2020: Basalt and IGS Solar formed Habitat Solar to expand a residential distributed-solar platform.", event: "2020: Basalt and IGS Solar formed Habitat Solar to expand a residential distributed-solar platform.", category: "Other" },
@@ -6454,7 +6454,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2021,
-    investmentYear: 2024,
+    investmentYear: 2021,
     headquarters: "California and other U.S. permanent-crop regions",
     milestones: [
       { date: "2021: BCI established Ag Partners Capital as part of its renewable resources strategy.", event: "2021: BCI established Ag Partners Capital as part of its renewable resources strategy.", category: "Other" },
@@ -6966,7 +6966,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2015,
-    investmentYear: 2021,
+    investmentYear: 2018,
     headquarters: "27 U.S. states and one U.S. territory",
     milestones: [
       { date: "2015: Company materials identify CleanCapital's founding year as 2015.", event: "2015: Company materials identify CleanCapital's founding year as 2015.", category: "Other" },
@@ -7686,7 +7686,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2015,
-    investmentYear: 2026,
+    investmentYear: 2022,
     headquarters: "New Jersey and multiple U.S. states",
     milestones: [
       { date: "2015: Kindle Energy was formed.", event: "2015: Kindle Energy was formed.", category: "Other" },
@@ -7764,7 +7764,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2022,
-    investmentYear: 2026,
+    investmentYear: 2022,
     headquarters: "California and multiple U.S. states",
     milestones: [
       { date: "2022-04-19: Blackstone announced the acquisition of Therma Holdings.", event: "2022-04-19: Blackstone announced the acquisition of Therma Holdings.", category: "Other" },
@@ -7994,7 +7994,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1977,
-    investmentYear: 2026,
+    investmentYear: 2021,
     headquarters: "Texas and multiple U.S. states",
     milestones: [
       { date: "1977: Sabre Industries was founded.", event: "1977: Sabre Industries was founded.", category: "Other" },
@@ -8517,7 +8517,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States","Canada"],
     yearFounded: 2024,
-    investmentYear: 2024,
+    investmentYear: 2023,
     headquarters: "Multiple U.S. states and Canada",
     milestones: [
       { date: "2023: Brookfield acquired Cyxtera through bankruptcy proceedings.", event: "2023: Brookfield acquired Cyxtera through bankruptcy proceedings.", category: "Other" },
@@ -8722,7 +8722,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States","Canada"],
     yearFounded: 2026,
-    investmentYear: 2026,
+    investmentYear: 2025,
     headquarters: "United States and Canada",
     milestones: [
       { date: "2025-09-30: GATX and Brookfield announced an agreement to acquire Wells Fargo's rail operating lease assets.", event: "2025-09-30: GATX and Brookfield announced an agreement to acquire Wells Fargo's rail operating lease assets.", category: "Other" },
@@ -8812,7 +8812,7 @@ export const companies: PortCo[] = [
     description: "Holtwood and Safe Harbor are hydroelectric facilities on the lower Susquehanna River in Pennsylvania. Their output serves wholesale power markets and contracted clean-power buyers rather than retail utility customers directly. The assets are asset-heavy and long-lived because cash flow depends on regulated water rights, dam and generation infrastructure, and power sales from installed hydro capacity. Brookfield materials identify Holtwood and Safe Harbor as the first facilities covered under the company's 2025 hydro framework agreement with Google, and those materials cite combined capacity of roughly 670 megawatts. The principal operating footprint is in Pennsylvania. Brookfield Renewable acquired the remaining interest in Safe Harbor in 2014 and continues to own US hydro assets that include these facilities, although public sources reviewed do not disclose the current ownership percentages for the combined row.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2014,
     headquarters: "Pennsylvania",
     milestones: [
       { date: "1931: Safe Harbor entered service on the lower Susquehanna River.", event: "1931: Safe Harbor entered service on the lower Susquehanna River.", category: "Other" },
@@ -9034,7 +9034,7 @@ export const companies: PortCo[] = [
     description: "Ontario Wind is Brookfield's named Canadian wind portfolio in Ontario. The assets sell renewable electricity into the Ontario market under a wind-generation operating model rather than through equipment sales or development fees. The business is asset-heavy and primarily contracted because cash flow depends on operating wind farms and related long-term power arrangements. Brookfield Infrastructure Income Fund reports identify the investment as a private renewable-power holding acquired in November 2022, but the public materials reviewed do not disclose a consolidated asset count for the row-level portfolio. Its principal operating footprint is in Ontario. Brookfield Infrastructure Income Fund has reported the investment as an active portfolio company since the 2022 acquisition date.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2026,
+    investmentYear: 2022,
     headquarters: "Ontario",
     milestones: [
       { date: "2022-11: Brookfield Infrastructure Income Fund reports identify the Ontario Wind investment as acquired in November 2022.", event: "2022-11: Brookfield Infrastructure Income Fund reports identify the Ontario Wind investment as acquired in November 2022.", category: "Other" },
@@ -9098,7 +9098,7 @@ export const companies: PortCo[] = [
     description: "Rockpoint Gas Storage owns and operates natural-gas storage facilities in North America. Its customers are gas marketers, utilities, producers, and other shippers that use storage capacity for balancing, reliability, and seasonal optimization. The business is asset-heavy and storage-fee based because value depends on regulated and contracted storage rights tied to physical caverns and reservoirs. Company materials describe six storage facilities across Alberta and California with approximately 279.2 Bcf of working gas capacity. Its principal operating footprint is in Alberta and California. Public sources reviewed identify Rockpoint as an active Brookfield-backed storage platform, while detailed current ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["United States","Canada"],
-    investmentYear: 2021,
+    investmentYear: 2014,
     headquarters: "Alberta and California",
     milestones: [
       { date: "1988: Rockpoint's 2025 investor materials describe AECO Hub operations commencing in 1988 as part of the portfolio's operating history.", event: "1988: Rockpoint's 2025 investor materials describe AECO Hub operations commencing in 1988 as part of the portfolio's operating history.", category: "Other" },
@@ -9126,7 +9126,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2017,
-    investmentYear: 2026,
+    investmentYear: 2022,
     headquarters: "Colorado and multiple US states",
     milestones: [
       { date: "2017: Scout Clean Energy was founded in Boulder, Colorado.", event: "2017: Scout Clean Energy was founded in Boulder, Colorado.", category: "Other" },
@@ -9203,7 +9203,7 @@ export const companies: PortCo[] = [
     description: "Smoky Mountain Hydro is a portfolio of hydroelectric facilities in Tennessee and North Carolina. Its output is sold into the wholesale power market and through power-purchase arrangements rather than through retail utility billing. The business is asset-heavy and long-duration because value depends on dams, generation equipment, and water-rights-backed hydro operations. Public sources identify the portfolio at approximately 377 megawatts and note that TVA entered into a 10-year power purchase agreement for the facilities in 2024. Its principal operating footprint is in Tennessee and North Carolina. Brookfield acquired the former Alcoa hydro assets in 2012 and public reporting in 2024 identified Brookfield and Argo as owners of the Smoky Mountain facilities, while the parties' current ownership percentages were not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2012,
     headquarters: "Tennessee and North Carolina",
     milestones: [
       { date: "2012-11-15: Low Impact Hydropower Institute materials identify Brookfield's purchase of the former Alcoa hydro assets and the use of the Smoky Mountain Hydro name.", event: "2012-11-15: Low Impact Hydropower Institute materials identify Brookfield's purchase of the former Alcoa hydro assets and the use of the Smoky Mountain Hydro name.", category: "Other" },
@@ -9257,7 +9257,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States","Canada"],
     yearFounded: 2014,
-    investmentYear: 2022,
+    investmentYear: 2017,
     headquarters: "Multiple US states and Canadian provinces",
     milestones: [
       { date: "2014: TerraForm Power was formed as a publicly traded renewable-power company.", event: "2014: TerraForm Power was formed as a publicly traded renewable-power company.", category: "Other" },
@@ -9309,7 +9309,7 @@ export const companies: PortCo[] = [
     description: "Urban Grid develops utility-scale solar and energy-storage projects in the United States. Its customers are utilities, cooperatives, and corporate off-takers that contract for power and capacity from projects that the company originates and advances through development. The business is development-led and asset-heavy because value is tied to land positions, interconnection rights, permitting, and the eventual construction and ownership of utility-scale projects. Brookfield announced in 2022 that the acquisition added more than 20,000 megawatts of development pipeline across 12 states. Its principal operating footprint is in the United States. Brookfield Renewable acquired Urban Grid in January 2022 and has since used it as one of its US development platforms.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2022,
     headquarters: "12 US states",
     milestones: [
       { date: "2010s: Urban Grid built a US utility-scale renewable development business.", event: "2010s: Urban Grid built a US utility-scale renewable development business.", category: "Other" },
@@ -9416,7 +9416,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["Canada"],
     yearFounded: 2009,
-    investmentYear: 2025,
+    investmentYear: 2021,
     headquarters: "Ontario; multiple United States markets; Australia; United Kingdom",
     milestones: [
       { date: "2009: Company materials identify Amp Energy as founded in 2009.", event: "2009: Company materials identify Amp Energy as founded in 2009.", category: "Other" },
@@ -9711,7 +9711,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2004,
-    investmentYear: 2025,
+    investmentYear: 2021,
     headquarters: "Multiple US states",
     milestones: [
       { date: "2004: Public company descriptions identify 2004 as CitySwitch's founding year.", event: "2004: Public company descriptions identify 2004 as CitySwitch's founding year.", category: "Other" },
@@ -9814,7 +9814,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2019,
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "Missouri and multiple US states",
     milestones: [
       { date: "2019: Gateway Fiber was founded in Wright City, Missouri.", event: "2019: Gateway Fiber was founded in Wright City, Missouri.", category: "Other" },
@@ -9865,7 +9865,7 @@ export const companies: PortCo[] = [
     description: "WANRack builds and operates fiber networks for schools, municipalities, enterprises, and other institutional users, and it has expanded into broader community broadband through acquisitions including KwiKom. Its customers buy lit fiber, dark fiber, and related connectivity services under recurring service arrangements rather than one-time equipment purchases. The business is asset-heavy because value depends on network construction, long-term contracts, and recurring bandwidth revenues. Company materials describe a continental US footprint and more than a decade of operating history, with a significant expansion in Kansas and other markets after the KwiKom transaction. Its principal operating footprint is in the United States. CBRE Caledon completed an investment in WANRack in 2021 and company materials later stated that management retained an equity stake.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2021,
     headquarters: "Multiple US states",
     milestones: [
       { date: "2021: CBRE Caledon completed an investment in WANRack.", event: "2021: CBRE Caledon completed an investment in WANRack.", category: "Other" },
@@ -10358,7 +10358,7 @@ export const companies: PortCo[] = [
     description: "The Rainy River Solar Project comprises three solar facilities in northwestern Ontario developed in partnership with Rainy River First Nations. The assets supply contracted renewable electricity to the Ontario market and follow an asset-heavy generation model with long-term offtake arrangements. Public disclosures size the portfolio at 25 MW and place the facilities roughly 65 kilometres west of Fort Frances. The project illustrates Indigenous partnership in renewable infrastructure and serves the provincial electricity system rather than a single industrial customer. Connor, Clark & Lunn Infrastructure invested in the project in 2014 alongside Rainy River First Nations and Terrma Capital, and the detailed ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2020,
+    investmentYear: 2014,
     headquarters: "Ontario",
     milestones: [
       { date: "May 2014", event: "Rainy River First Nations, CC&L, and Terrma Capital announced financing for the 25 MW project.", category: "Financing" },
@@ -10489,7 +10489,7 @@ export const companies: PortCo[] = [
     description: "The Sakwi Creek Hydro Project is a run-of-river hydroelectric facility near Agassiz, British Columbia. Its customer base is the provincial power market under a long-term fixed-price power purchase agreement, which gives the asset a contracted operating model. Public materials identify the project at 6 MW and note that CC&L Infrastructure invested while it was still under construction. The facility was brought online in 2014 and is operated in partnership with WindRiver Power Corporation and Sts'ailes First Nation. Connor, Clark & Lunn Infrastructure made its initial investment in September 2013, and the detailed equity split among current owners is not publicly disclosed.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2020,
+    investmentYear: 2013,
     headquarters: "British Columbia",
     milestones: [
       { date: "Sep 2013", event: "CC&L Infrastructure made its initial investment in Sakwi Creek while the project was under construction.", category: "Financing" },
@@ -10542,7 +10542,7 @@ export const companies: PortCo[] = [
     description: "The South Fraser Perimeter Road P3 Project is a long-term concession for a major goods-movement corridor in Metro Vancouver. Its end market is public transportation infrastructure, and the revenue model is based on contractual availability payments rather than direct traffic tolling. Public descriptions identify a 40-kilometre four-lane expressway linking Deltaport, industrial areas south of the Fraser River, and regional highway connections. The asset is concentrated in British Columbia and serves freight, logistics, and commuter traffic in one of Canada's largest port regions. Connor, Clark & Lunn Infrastructure made its initial investment in the project in December 2016, and the current ownership split among consortium partners is not publicly disclosed.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2024,
+    investmentYear: 2016,
     headquarters: "British Columbia",
     milestones: [
       { date: "2013", event: "The South Fraser Perimeter Road opened to traffic.", category: "Expansion" },
@@ -10568,7 +10568,7 @@ export const companies: PortCo[] = [
     description: "Southgate Solar Project is a utility-scale solar facility in western Ontario. The asset supplies electricity under contracted arrangements and therefore operates as an asset-heavy generation project with limited merchant exposure. Public disclosures state that the facility has 50 MW of capacity and produces enough electricity for roughly 8,400 homes annually. The project serves the Ontario grid and is located in the municipality of Southgate. Connor, Clark & Lunn Infrastructure invested in the construction of the project in 2015, and the detailed current ownership structure is not publicly disclosed.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2024,
+    investmentYear: 2015,
     headquarters: "Ontario",
     milestones: [
       { date: "2015", event: "CC&L Infrastructure invested in the construction of Southgate Solar.", category: "Financing" },
@@ -10702,7 +10702,7 @@ export const companies: PortCo[] = [
     description: "VIP Rail is a Canadian rail logistics business providing terminal access, storage, and related services in major industrial markets. Its customers are industrial shippers and logistics users located near pipeline, rail, petrochemical, and heavy-industrial corridors, and the model is supported by terminal assets rather than pure brokerage activity. Public materials describe the broader Alpenglow platform as operating multiple Canadian terminals with more than 3,100 railcar spots across over 460 acres. The business is concentrated in Sarnia and Alberta industrial markets with connections to Ontario, Québec, and U.S. demand centres. Connor, Clark & Lunn Infrastructure announced its partnership with Alpenglow and the acquisition of VIP Rail in 2019, and later financing supported continued network growth.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2025,
+    investmentYear: 2019,
     headquarters: "Ontario, Alberta, and Québec",
     milestones: [
       { date: "2017", event: "Alpenglow Rail acquired VIP Rail from Stonecourt.", category: "Acquisition" },
@@ -10755,7 +10755,7 @@ export const companies: PortCo[] = [
     description: "Windsor Solar Project is a 50 MW utility-scale solar facility in Windsor, Ontario. The project supplies electricity to the Ontario grid under contracted arrangements and therefore operates as an asset-heavy generation asset with limited merchant exposure. Public materials state that the facility produces enough electricity for roughly 9,200 homes annually. The asset is concentrated in southwestern Ontario and serves the provincial power market rather than a single dedicated industrial buyer. Connor, Clark & Lunn Infrastructure invested in the project's construction in 2015, and the detailed current ownership structure is not publicly disclosed.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2024,
+    investmentYear: 2015,
     headquarters: "Ontario",
     milestones: [
       { date: "2015", event: "CC&L Infrastructure invested in the construction of Windsor Solar.", category: "Financing" },
@@ -10807,7 +10807,7 @@ export const companies: PortCo[] = [
     description: "AES Indiana is a regulated electric utility serving customers in the Indianapolis area. Its customer base consists of retail electricity users served through a regulated distribution and generation system rather than through competitive merchant power arrangements. The business is asset-heavy and rate-regulated because value is tied to utility infrastructure and approved investment recovery. AES filings state that CDPQ owns direct and indirect interests in IPALCO totaling approximately 30%. Its principal operating footprint is in Indiana. CDPQ established its utility partnership with AES through AES Indiana and later used the same model for AES Ohio, with AES remaining the operating sponsor.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2024,
     headquarters: "Indiana",
     milestones: [
       { date: "2001: AES acquired Indianapolis Power & Light, the predecessor utility business.", event: "2001: AES acquired Indianapolis Power & Light, the predecessor utility business.", category: "Other" },
@@ -10832,7 +10832,7 @@ export const companies: PortCo[] = [
     description: "AES Ohio is a regulated electric utility serving customers in the Dayton region. Its customer base consists of regulated retail electricity users connected to local transmission and distribution infrastructure rather than competitive merchant-power buyers. The business is asset-heavy and rate-regulated because earnings depend on utility capital investment and authorized recovery mechanisms. AES stated in 2026 that CDPQ began owning an aggregate indirect equity interest of approximately 30% in AES Ohio in April 2025. Its principal operating footprint is in Ohio. AES and CDPQ announced the transaction in September 2024 as an extension of their utility partnership model, with AES remaining the operator.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2024,
     headquarters: "Ohio",
     milestones: [
       { date: "2024-09-17: AES and CDPQ announced an agreement for CDPQ to acquire a 30% indirect equity interest in AES Ohio.", event: "2024-09-17: AES and CDPQ announced an agreement for CDPQ to acquire a 30% indirect equity interest in AES Ohio.", category: "Other" },
@@ -11045,7 +11045,7 @@ export const companies: PortCo[] = [
     description: "Invenergy Renewables develops, owns, and operates renewable power projects across wind, solar, and related technologies. Its customers include utilities, corporates, and power-market counterparties that contract for renewable-power output, capacity, and environmental attributes. The business is asset-heavy and development-led because value depends on operating generation assets and a pipeline of future projects. In 2018 Invenergy announced that CDPQ would acquire a 52.4% economic ownership interest in Invenergy Renewables while Invenergy would remain the managing member. Its principal operating footprint is in the United States. CDPQ has remained the majority economic owner since the 2018 transaction based on the public materials reviewed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2018,
+    investmentYear: 2013,
     headquarters: "Multiple US states",
     milestones: [
       { date: "2013: CDPQ made its initial investment in Invenergy.", event: "2013: CDPQ made its initial investment in Invenergy.", category: "Other" },
@@ -11070,7 +11070,7 @@ export const companies: PortCo[] = [
     description: "Plenary Americas develops, invests in, and manages public-private partnership infrastructure projects. Its counterparties are public-sector clients and concession authorities rather than retail or commodity-market customers. The business is contract- and concession-based because value depends on long-term project agreements across transportation, civic, and social infrastructure assets. CDPQ stated in 2020 that it acquired the operating business of Plenary Americas and a controlling interest in its portfolio of 36 projects. Its principal operating footprint is in the United States and Canada. CDPQ completed the acquisition in 2020 and made Plenary Americas a cornerstone of its North American infrastructure activities.",
     status: "Active",
     countryTags: ["United States","Canada"],
-    investmentYear: 2025,
+    investmentYear: 2020,
     headquarters: "Multiple US states and Canadian provinces",
     milestones: [
       { date: "2020-11-16: CDPQ announced the acquisition of the operating business of Plenary Americas and a controlling interest in its 36-project portfolio.", event: "2020-11-16: CDPQ announced the acquisition of the operating business of Plenary Americas and a controlling interest in its 36-project portfolio.", category: "Other" },
@@ -11187,7 +11187,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States","Canada"],
     yearFounded: 1997,
-    investmentYear: 2018,
+    investmentYear: 2004,
     headquarters: "23 US states, five Canadian provinces, and one territory",
     milestones: [
       { date: "1997: Student Transportation was founded.", event: "1997: Student Transportation was founded.", category: "Other" },
@@ -11325,7 +11325,7 @@ export const companies: PortCo[] = [
     description: "Antelope Valley Water Bank is a groundwater-storage asset in California that supports water banking and managed aquifer recharge. The asset is positioned to serve municipal and regional water agencies that need drought resilience and flexible storage capacity rather than conventional retail utility service. Its model is asset-heavy because value depends on land, water infrastructure, storage rights, and the ability to recharge and recover significant volumes over time. CIM has stated that it began investing in the project in 2007 and has described the site as spanning 1,838 acres with designed storage capacity of up to 500,000 acre-feet. Public sources reviewed do not disclose the current ownership structure beyond CIM's sponsorship of the asset.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2022,
+    investmentYear: 2007,
     headquarters: "California",
     milestones: [
       { date: "2007: CIM stated that it began investing in the Antelope Valley water bank.", event: "2007: CIM stated that it began investing in the Antelope Valley water bank.", category: "Other" },
@@ -11387,7 +11387,7 @@ export const companies: PortCo[] = [
     description: "Kelso Valley Wind, Solar & Water is a CIM-sponsored California platform that combines renewable-energy development with land and water infrastructure. Public disclosures indicate the platform is intended to serve utility and community-choice offtake markets through solar generation while also managing supporting land and water assets. Its model is asset-heavy because the strategy depends on control of large land positions, renewable-energy projects, and related irrigation and water-conveyance infrastructure. Public reporting has stated that CIM acquired roughly 68,000 acres in Kern County in 2008 and later contracted initial generation with California public-power and community-choice counterparties. Public sources reviewed do not disclose the current ownership percentages beyond CIM's sponsorship of the platform.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2021,
+    investmentYear: 2008,
     headquarters: "California",
     milestones: [
       { date: "2008: Public reporting states that CIM acquired approximately 68,000 acres in Kern County that became the Kelso Valley platform.", event: "2008: Public reporting states that CIM acquired approximately 68,000 acres in Kern County that became the Kelso Valley platform.", category: "Other" },
@@ -11413,7 +11413,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2020,
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "Utah; Colorado; Nevada; California; Arizona",
     milestones: [
       { date: "2020: Public materials identify 2020 as the launch year for Novva Data Centers.", event: "2020: Public materials identify 2020 as the launch year for Novva Data Centers.", category: "Other" },
@@ -11517,7 +11517,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States","Canada"],
     yearFounded: 2022,
-    investmentYear: 2024,
+    investmentYear: 2022,
     headquarters: "Multiple U.S. states",
     milestones: [
       { date: "2022: CIM founded Terreva as a portfolio company through the acquisition of 100% of MAS CanAm, LLC's RNG development platform.", event: "2022: CIM founded Terreva as a portfolio company through the acquisition of 100% of MAS CanAm, LLC's RNG development platform.", category: "Other" },
@@ -11569,7 +11569,7 @@ export const companies: PortCo[] = [
     description: "Westlands Solar Park is a large California renewable-energy development centered on utility-scale solar generation and storage. The project is designed to serve utilities and other power purchasers through long-term offtake arrangements rather than merchant exposure alone. Its operating model is asset-heavy because the value proposition depends on control of land, interconnection, generation assets, and associated storage infrastructure. CIM has described Westlands Solar Park as one of the largest permitted solar parks in North America, with total planned capacity that can exceed 2,700 MW at full build-out. Public sources identify Aquamarine Solar as part of the development, and CIM continues to sponsor the broader platform through privately held entities.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2020,
     headquarters: "California",
     milestones: [
       { date: "2020-03-02: CIM announced the start of construction at Westlands Solar Park.", event: "2020-03-02: CIM announced the start of construction at Westlands Solar Park.", category: "Other" },
@@ -12340,7 +12340,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States","Canada"],
     yearFounded: 2018,
-    investmentYear: 2025,
+    investmentYear: 2018,
     headquarters: "Alberta; Saskatchewan; Ontario; multiple U.S. states",
     milestones: [
       { date: "2018-04-05: CPP Investments announced an agreement to acquire a 49% interest in Enbridge's select North American and European renewable-power assets.", event: "2018-04-05: CPP Investments announced an agreement to acquire a 49% interest in Enbridge's select North American and European renewable-power assets.", category: "Other" },
@@ -12427,7 +12427,7 @@ export const companies: PortCo[] = [
     description: "IDEAL is a Mexican infrastructure concessions platform with exposure to toll roads, logistics terminals, wastewater treatment plants, electronic toll collection, and operating services. Its end markets are users of transport and utility infrastructure and public-sector counterparties that rely on long-term concession-based assets. The operating model is asset-heavy and concession driven, with revenue generated from operating infrastructure assets and related services rather than pure development fees. CPP Investments and Ontario Teachers' described IDEAL in 2020 as a portfolio comprising 18 infrastructure concessions in Mexico, including 13 toll roads, three logistics terminals, and two wastewater treatment plants. CPP Investments and Ontario Teachers' completed an expansion of their Mexican infrastructure partnership through IDEAL in 2020, but the detailed current ownership split of IDEAL itself is not publicly disclosed in the source materials reviewed.",
     status: "Active",
     countryTags: ["Mexico"],
-    investmentYear: 2020,
+    investmentYear: 2016,
     headquarters: "Mexico",
     milestones: [
       { date: "2016: CPP Investments entered Mexican infrastructure through an IDEAL partnership linked to Arco Norte.", event: "2016: CPP Investments entered Mexican infrastructure through an IDEAL partnership linked to Arco Norte.", category: "Other" },
@@ -12453,7 +12453,7 @@ export const companies: PortCo[] = [
     description: "Pacifico Sur is a toll road concession connecting central and northwestern Mexico, including the corridor between Guadalajara and Tepic. Its customers are passenger vehicles and commercial transport operators using a strategic intercity highway link. The operating model is asset-heavy and concession based, with long-duration toll revenue supporting the asset rather than short-term project development fees. Public investment announcements describe a 309-kilometer toll road and related bypasses serving both freight and tourism traffic. CPP Investments announced its investment in Pacifico Sur in 2018 in partnership with IDEAL and Ontario Teachers', with a disclosed ownership structure of 29%, 51%, and 20%, respectively.",
     status: "Active",
     countryTags: ["Mexico"],
-    investmentYear: 2020,
+    investmentYear: 2018,
     headquarters: "Guerrero; Morelos; State of Mexico",
     owners: [
       { investmentFirm: "OTPP", ownershipVehicle: "Joint investment with IDEAL and CPP Investments", status: "Active" },
@@ -12516,7 +12516,7 @@ export const companies: PortCo[] = [
     description: "Redaptive provides energy-as-a-service financing and execution for building-efficiency, renewable-power, and related decarbonization projects. Its customers are enterprise and institutional building owners that seek lower energy use and infrastructure upgrades without funding the full upfront capital cost themselves. The model is asset-heavy from a financing perspective because the company funds and manages installed equipment portfolios across customer sites under long-term contractual arrangements. Public materials describe solutions spanning energy efficiency, project finance, and equipment finance, with CPP Investments first investing in 2022 and increasing that investment in 2024. Public sources reviewed do not disclose the current ownership percentages of Redaptive's investor group.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2024,
+    investmentYear: 2022,
     headquarters: "Multiple U.S. states",
     milestones: [
       { date: "2022-12-19: CPP Investments announced an approximately US$200 million investment in Redaptive.", event: "2022-12-19: CPP Investments announced an approximately US$200 million investment in Redaptive.", category: "Other" },
@@ -12623,7 +12623,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2020,
-    investmentYear: 2025,
+    investmentYear: 2020,
     headquarters: "Virginia; Maryland; District of Columbia",
     milestones: [
       { date: "2020-12-16: CPP Investments announced the acquisition of a 15% interest in Transurban Chesapeake.", event: "2020-12-16: CPP Investments announced the acquisition of a 15% interest in Transurban Chesapeake.", category: "Other" },
@@ -12648,7 +12648,7 @@ export const companies: PortCo[] = [
     description: "VoltaGrid provides mobile power generation, energy optimization, and related infrastructure services for customers that need temporary, distributed, or flexible power solutions. Its end markets include oil and gas, utilities, data-center and industrial users, and other customers requiring reliable off-grid or behind-the-meter electricity. The business is asset-heavy because it owns and deploys physical generation equipment and related field infrastructure. Public financing disclosures show an investor group that has included Carnelian Energy Capital, Pilot Company, Walter Ventures, Longbow Capital, and CPP Investments, while CPP also provided a term loan in 2024. The current ownership structure has not been publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2024,
+    investmentYear: 2020,
     headquarters: "Texas; multiple U.S. states",
     milestones: [
       { date: "2020-12: VoltaGrid announced a US$73 million equity commitment from institutional investors including CPP Investments and other energy-focused backers.", event: "2020-12: VoltaGrid announced a US$73 million equity commitment from institutional investors including CPP Investments and other energy-focused backers.", category: "Other" },
@@ -12701,7 +12701,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["Canada"],
     yearFounded: 2015,
-    investmentYear: 2024,
+    investmentYear: 2015,
     headquarters: "Alberta",
     milestones: [
       { date: "2015-05-26: CPP Investments and Wolf announced the formation of Wolf Midstream.", event: "2015-05-26: CPP Investments and Wolf announced the formation of Wolf Midstream.", category: "Other" },
@@ -13433,7 +13433,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["Canada"],
     yearFounded: 1988,
-    investmentYear: 2023,
+    investmentYear: 2019,
     headquarters: "Ontario and Quebec",
     milestones: [
       { date: "1988: Public company materials state Beanfield was founded in Toronto.", event: "1988: Public company materials state Beanfield was founded in Toronto.", category: "Other" },
@@ -13604,7 +13604,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2010,
-    investmentYear: 2024,
+    investmentYear: 2021,
     headquarters: "United States",
     milestones: [
       { date: "2010: Public company materials identify Landmark Dividend as having been co-founded in 2010.", event: "2010: Public company materials identify Landmark Dividend as having been co-founded in 2010.", category: "Other" },
@@ -13715,7 +13715,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States","Canada"],
     yearFounded: 2010,
-    investmentYear: 2024,
+    investmentYear: 2017,
     headquarters: "North America",
     milestones: [
       { date: "2010: Vantage Data Centers launched with the acquisition of an Intel-owned data center in Santa Clara.", event: "2010: Vantage Data Centers launched with the acquisition of an Intel-owned data center in Santa Clara.", category: "Other" },
@@ -13740,7 +13740,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States","Canada"],
     yearFounded: 2020,
-    investmentYear: 2025,
+    investmentYear: 2020,
     headquarters: "North America",
     milestones: [
       { date: "2020-07: DigitalBridge states that Vantage SDC was formed as a strategic partnership with Vantage Data Centers.", event: "2020-07: DigitalBridge states that Vantage SDC was formed as a strategic partnership with Vantage Data Centers.", category: "Other" },
@@ -13889,7 +13889,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2022,
-    investmentYear: 2026,
+    investmentYear: 2022,
     headquarters: "California, Idaho, and other U.S. dairy markets",
     milestones: [
       { date: "Feb 2022", event: "ECP announced its commitment to a newly formed joint venture with Avolta.", category: "Other" },
@@ -13982,7 +13982,7 @@ export const companies: PortCo[] = [
     description: "Cornerstone Generation owns a portfolio of PJM gas-fired generation assets consisting of Waterford in Ohio, Lawrenceburg in Indiana, and Darby in Ohio. Its customers are wholesale power markets and capacity markets, and its earnings profile is therefore more merchant than contracted compared with regulated or availability-based infrastructure businesses. The platform is asset-heavy and ECP has described it as a 2.5 GW or approximately 2.6 GW fleet across the three facilities. Public deal materials show that ECP acquired the business from Talen in 2022 and later agreed to sell it back to Talen in 2026, subject to regulatory approvals. Pending completion of that sale, Cornerstone remains an ECP-backed merchant generation platform in the Midwest PJM market.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2022,
     headquarters: "Ohio and Indiana",
     milestones: [
       { date: "2022", event: "ECP acquired the portfolio from Talen and established Cornerstone Generation.", category: "Founding" },
@@ -14064,7 +14064,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2022,
-    investmentYear: 2026,
+    investmentYear: 2022,
     headquarters: "North Dakota and Indiana",
     milestones: [
       { date: "2022", event: "Harvestone Low Carbon Partners was formed by Harvestone Group and Energy Capital Partners.", category: "Financing" },
@@ -14311,7 +14311,7 @@ export const companies: PortCo[] = [
     description: "USD Group designs, develops, owns, and manages large-scale multi-modal logistics centers and energy-related midstream infrastructure across North America. Its customers are producers, refiners, and marketers that require origin-to-destination logistics solutions linking Western Canada, Cushing, and the U.S. Gulf Coast energy corridor. The company operates an asset-heavy model built around terminal, storage, rail, and other logistics infrastructure rather than an asset-light brokerage model. Public materials describe a portfolio of irreplaceable logistics terminals and identify Houston, Texas as the corporate base for the platform's North American operations. ECP partnered with the company in 2014, and current public disclosures state that USDG is owned by its employees, ECP, and Goldman Sachs.",
     status: "Active",
     countryTags: ["United States","Canada"],
-    investmentYear: 2025,
+    investmentYear: 2014,
     headquarters: "Texas and North America",
     owners: [
       { investmentFirm: "ECP", ownershipVehicle: "Owned by employees, ECP and Goldman Sachs", investmentYear: 2025, status: "Active" },
@@ -14542,7 +14542,7 @@ export const companies: PortCo[] = [
     description: "ARB Midstream provides crude oil and gas-liquids midstream, marketing, and logistics solutions in North America. It serves energy producers, marketers, and other users of hydrocarbon transportation and logistics services. The business is asset-heavy and fee-oriented because it relies on midstream and logistics infrastructure rather than an advisory-only model. EIG materials describe the business as a growth-oriented platform headquartered in Denver, and public sources reviewed do not disclose current revenue or ownership percentages. EIG identifies ARB Midstream as a current unrealized investment, while the precise acquisition date and current percentage ownership were not disclosed in the reviewed sources.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2017,
     headquarters: "North America",
     milestones: [
       { date: "2017-11-13: EIG's investment page described ARB Midstream as an unrealized portfolio company.", event: "2017-11-13: EIG's investment page described ARB Midstream as an unrealized portfolio company.", category: "Other" },
@@ -14661,7 +14661,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States","Mexico"],
     yearFounded: 2009,
-    investmentYear: 2025,
+    investmentYear: 2021,
     headquarters: "United States; Puerto Rico; Mexico; Guam",
     milestones: [
       { date: "2009", event: "BayWa r.e. was founded.", category: "Founding" },
@@ -14689,7 +14689,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2017,
-    investmentYear: 2025,
+    investmentYear: 2024,
     headquarters: "Texas; California",
     milestones: [
       { date: "2017", event: "Plenitude states it was formed from Eni's retail gas and power activities.", category: "Other" },
@@ -14914,7 +14914,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2021,
-    investmentYear: 2025,
+    investmentYear: 2021,
     headquarters: "Maine and Georgia",
     milestones: [
       { date: "2021-04-29: Ember Infrastructure and ReEnergy announced plans to create ReGenerate Energy.", event: "2021-04-29: Ember Infrastructure and ReEnergy announced plans to create ReGenerate Energy.", category: "Other" },
@@ -15012,7 +15012,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2025,
-    investmentYear: 2025,
+    investmentYear: 2017,
     headquarters: "Texas",
     milestones: [
       { date: "2017", event: "EnCap Flatrock Midstream made its initial investment in Aspen Midstream.", category: "Financing" },
@@ -15143,7 +15143,7 @@ export const companies: PortCo[] = [
     description: "Edgewater Midstream is a Houston-based midstream company focused on crude oil and refined products storage, transportation, terminalling, and related logistics assets. Its customers include refiners, marketers, and other counterparties that require Gulf Coast liquids infrastructure. The business is asset-heavy and built around owned or controlled logistics assets rather than an advisory or software model. Public disclosures highlight the company's focus on U.S. crude and refined products infrastructure and the 2024 acquisition of Shell's Sinco Pipeline System and Colex terminal. Detailed companywide storage, throughput, and revenue metrics were not publicly disclosed in the reviewed materials. EnCap Flatrock Midstream is the disclosed sponsor, and exact current ownership percentages were not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2020,
     headquarters: "Texas",
     milestones: [
       { date: "2020", event: "EnCap Flatrock Midstream made its initial investment in Edgewater Midstream.", category: "Financing" },
@@ -15195,7 +15195,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2017,
-    investmentYear: 2026,
+    investmentYear: 2017,
     headquarters: "Colorado",
     milestones: [
       { date: "2017", event: "EnCap Flatrock Midstream made its initial investment in Greenfield Midstream.", category: "Financing" },
@@ -15249,7 +15249,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2022,
-    investmentYear: 2026,
+    investmentYear: 2022,
     headquarters: "Texas; Louisiana",
     milestones: [
       { date: "2022", event: "EnCap Flatrock Midstream made its initial investment in M6 Midstream.", category: "Financing" },
@@ -15276,7 +15276,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2022,
-    investmentYear: 2026,
+    investmentYear: 2022,
     headquarters: "Texas",
     milestones: [
       { date: "2022", event: "EnCap Flatrock Midstream made its initial investment in Manchester Energy.", category: "Financing" },
@@ -15465,7 +15465,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1970,
-    investmentYear: 1970,
+    investmentYear: 2024,
     headquarters: "United States",
     milestones: [
       { date: "1970: EQT portfolio materials identify the founding year as 1970.", event: "1970: EQT portfolio materials identify the founding year as 1970.", category: "Other" },
@@ -15489,7 +15489,7 @@ export const companies: PortCo[] = [
     description: "Cirba Solutions recycles lithium and other battery chemistries and processes battery manufacturing scrap and end-of-life materials. It serves battery manufacturers, OEMs, industrial users, and other commercial customers across the battery supply chain. The business is asset-heavy and service-based because it operates processing infrastructure and collection networks rather than only providing advisory services. EQT states that the company operates through more than 150 collection points in the United States and has processed more than 60 million pounds of post-consumer batteries. EQT Infrastructure invested in Cirba in 2022 to support expansion of the North American circular battery supply chain.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "United States",
     milestones: [
       { date: "2022-12-15: Cirba announced that EQT Infrastructure had invested more than $200 million to support growth.", event: "2022-12-15: Cirba announced that EQT Infrastructure had invested more than $200 million to support growth.", category: "Other" },
@@ -15611,7 +15611,7 @@ export const companies: PortCo[] = [
     description: "First Student provides outsourced school transportation and related fleet, routing, and electrification services in North America. It serves school districts, municipalities, and communities that outsource student transportation operations. The business is asset-heavy and contracted because it manages large vehicle fleets and operates under long-term service contracts with public-sector customers. EQT states that First Student provides more than 900 million student journeys a year across North America, while public sources reviewed do not disclose a current revenue figure in the sources used for this batch. EQT completed the acquisition of First Student in July 2021 through EQT Infrastructure V.",
     status: "Active",
     countryTags: ["United States","Canada"],
-    investmentYear: 2025,
+    investmentYear: 2021,
     headquarters: "United States and Canada",
     milestones: [
       { date: "2021-07-22: EQT Infrastructure closed the acquisition of First Student and First Transit.", event: "2021-07-22: EQT Infrastructure closed the acquisition of First Student and First Transit.", category: "Other" },
@@ -15684,7 +15684,7 @@ export const companies: PortCo[] = [
     description: "Madison Energy Infrastructure develops, owns, and operates distributed solar and energy storage projects across the United States. It serves commercial and institutional customers seeking clean-energy, resilience, and on-site generation solutions. The business is asset-heavy and contracted because it finances and owns distributed energy assets rather than only providing development services. Company materials describe a national distributed-energy platform and emphasize partnerships that simplify clean-energy adoption for organizations of different sizes. EQT portfolio materials identify a 2023 entry date for the investment through EQT Infrastructure VI.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2023,
     headquarters: "United States",
     milestones: [
       { date: "2023: EQT portfolio materials identify 2023 as the entry year for Madison Energy Infrastructure.", event: "2023: EQT portfolio materials identify 2023 as the entry year for Madison Energy Infrastructure.", category: "Other" },
@@ -16334,7 +16334,7 @@ export const companies: PortCo[] = [
     description: "Caballero Battery Storage is a standalone battery energy storage project in California. Its customer base is the California grid and wholesale power market, where the project provides stored energy and related grid-support services. The project is asset-heavy and merchant or contracted storage exposure is embedded in the operating asset rather than in a service-only model. Public sources describe Caballero as a 100 MW / 400 MWh BESS in Nipomo, California, with commercial operations beginning in 2025. The reviewed materials did not disclose project-level revenue or the precise ownership split between Fengate and Alpha Omega Power. Fengate announced its initial investment in 2024 through Infrastructure Fund IV, and the project was acquired from Origis Energy.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2023,
     headquarters: "California",
     milestones: [
       { date: "2023", event: "Fengate and Alpha Omega Power formed a partnership to develop, acquire, and operate BESS projects.", category: "Acquisition" },
@@ -16360,7 +16360,7 @@ export const companies: PortCo[] = [
     description: "The Central Utility Block is the utility backbone for Inter Pipeline's Heartland Petrochemical Complex in Alberta. Its end customer is the petrochemical complex, which relies on the asset for electricity, steam, and other core utility services. The model is asset-heavy and contracted, with long-term utility supply arrangements rather than merchant power exposure as the principal value driver. Public sources describe the facility as a 102 MW natural gas-fired cogeneration asset that also supplies steam and related utility services. The reviewed materials did not disclose current project-level revenue or equity ownership percentages. Fengate acquired the asset from Inter Pipeline in 2018 and assumed responsibility for funding construction costs estimated at approximately $600 million.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2026,
+    investmentYear: 2018,
     headquarters: "Alberta",
     milestones: [
       { date: "Sep 2018", event: "Fengate acquired the Central Utility Block from Inter Pipeline.", category: "Acquisition" },
@@ -16439,7 +16439,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["Canada"],
     yearFounded: 2017,
-    investmentYear: 2024,
+    investmentYear: 2017,
     headquarters: "Quebec; Ontario; Alberta; British Columbia",
     milestones: [
       { date: "2017: Fengate made its initial investment in eStruxture Data Centers.", event: "2017: Fengate made its initial investment in eStruxture Data Centers.", category: "Other" },
@@ -16490,7 +16490,7 @@ export const companies: PortCo[] = [
     description: "Freeport Energy Center is a natural gas-fired combined-cycle cogeneration plant serving the Dow Freeport industrial complex in Texas. Its end market is contracted industrial utility service, with power and steam delivered to one of the largest integrated chemical manufacturing sites in North America. The asset is utility-like and asset-heavy, with value derived from operating generation and thermal infrastructure rather than merchant retail sales. Public sources describe the facility as a 260 MW plant that has been operating since 2007. The reviewed materials did not disclose current project-level revenue or equity ownership percentages. Fengate acquired the asset from Calpine in 2020 and later referenced it as a nearby companion asset to Freeport Power Limited.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2020,
     headquarters: "Texas",
     milestones: [
       { date: "2007", event: "Freeport Energy Center began operations, according to Fengate's acquisition announcement.", category: "Acquisition" },
@@ -16877,7 +16877,7 @@ export const companies: PortCo[] = [
     description: "Prairie Switch Wind is an onshore wind generation project in Wharton County, Texas. Its end market is contracted renewable power supply, with output committed under a long-term power purchase agreement rather than sold fully merchant. The project is asset-heavy and utility-like, with value tied to wind generation infrastructure and long-duration offtake. Fengate describes Prairie Switch as a 160 MW project near Houston and states that Meta contracted for the facility's output under a long-term PPA. The reviewed materials did not disclose project-level revenue or the current project-company ownership percentages. Fengate acquired the project from Triple Oak Power in 2022, achieved financial close in 2023, and announced completion in 2024.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2024,
+    investmentYear: 2022,
     headquarters: "Texas",
     milestones: [
       { date: "2022-11-10: Fengate announced the acquisition of the 160 MW Prairie Switch Wind project from Triple Oak Power and disclosed a long-term PPA with Meta.", event: "2022-11-10: Fengate announced the acquisition of the 160 MW Prairie Switch Wind project from Triple Oak Power and disclosed a long-term PPA with Meta.", category: "Other" },
@@ -17069,7 +17069,7 @@ export const companies: PortCo[] = [
     description: "TowerCom is a U.S. wireless communications tower platform. Its customers are national and regional wireless carriers that require leased vertical infrastructure and build-to-suit development in growing mobile coverage markets. The model is asset-heavy and contracted, with recurring tower lease economics supported by long-duration infrastructure assets. Fengate's current digital infrastructure materials describe the platform as a communications tower portfolio of more than 380 towers across 15 U.S. jurisdictions, while earlier acquisition announcements said the portfolio had surpassed 200 towers in 15 states. The reviewed materials did not disclose platform-level revenue or the current equity ownership percentages among the investment partners. Fengate formed its strategic partnership with TowerCom in 2020 and subsequently expanded the platform through acquisitions in 2021, 2022, and 2023.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2023,
+    investmentYear: 2020,
     headquarters: "Florida; multi-state U.S.",
     milestones: [
       { date: "2020-09-10: Fengate announced financial close on its multi-year partnership with TowerCom.", event: "2020-09-10: Fengate announced financial close on its multi-year partnership with TowerCom.", category: "Other" },
@@ -17271,7 +17271,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States","Canada"],
     yearFounded: 2010,
-    investmentYear: 2024,
+    investmentYear: 2020,
     headquarters: "California, Virginia, Arizona, Washington, and Quebec",
     milestones: [
       { date: "2010", event: "Vantage Data Centers North America was founded.", category: "Founding" },
@@ -17326,7 +17326,7 @@ export const companies: PortCo[] = [
     description: "Alturus is an infrastructure-as-a-service platform focused on energy efficiency, on-site generation, and storage projects for commercial and industrial customers. Its end users are businesses seeking decarbonization and utility cost savings without funding projects directly from their own balance sheets. The model is asset-heavy and contracted, with project economics built around financed energy infrastructure deployed at customer sites. Public materials state that Generate partnered with Alturus in 2020 and committed up to US$600 million to support sustainable infrastructure projects through the platform. The reviewed materials did not disclose company revenue or Generate's ownership percentage in the corporate platform. Generate expanded its customer solutions platform in 2024 and stated that it was incorporating key elements of Alturus into that broader offering.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2024,
+    investmentYear: 2020,
     headquarters: "Massachusetts; multi-state U.S.",
     milestones: [
       { date: "2020-10-06: Public reporting disclosed Generate's up to US$600 million partnership with Alturus for sustainable infrastructure projects.", event: "2020-10-06: Public reporting disclosed Generate's up to US$600 million partnership with Alturus for sustainable infrastructure projects.", category: "Other" },
@@ -17526,7 +17526,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States","Canada"],
     yearFounded: 2022,
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "Multiple U.S. states; Ontario",
     milestones: [
       { date: "2022-05-11: Generate launched Generate Upcycle and announced the acquisition of StormFisher Environmental Services.", event: "2022-05-11: Generate launched Generate Upcycle and announced the acquisition of StormFisher Environmental Services.", category: "Other" },
@@ -17552,7 +17552,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2007,
-    investmentYear: 2024,
+    investmentYear: 2021,
     headquarters: "Massachusetts; multi-state U.S.",
     milestones: [
       { date: "2007: Nexamp was founded.", event: "2007: Nexamp was founded.", category: "Other" },
@@ -17653,7 +17653,7 @@ export const companies: PortCo[] = [
     description: "SOLCAP is a joint tax equity platform used by Generate Capital and KeyState Renewables to finance community solar projects. Its end markets are distributed generation developers, tax equity investors, and community solar subscribers in U.S. states with established shared-solar programs. The model is asset-heavy and financing-oriented, with value created through structured tax equity investment in operating and construction-phase project portfolios. Public materials show that Generate and KeyState have used the platform across multiple funds, including a 53.5 MWdc portfolio of 11 New York projects announced in 2024 and an US$85 million commitment for 38 MWdc across New York and Illinois announced in 2025. The reviewed materials did not disclose ownership percentages within the platform. Generate and KeyState have continued to raise follow-on facilities through SOLCAP as community solar deployment has scaled.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2021,
     headquarters: "New York; Illinois",
     milestones: [
       { date: "2021: Generate and KeyState began raising repeated community solar tax equity funds together.", event: "2021: Generate and KeyState began raising repeated community solar tax equity funds together.", category: "Other" },
@@ -17727,7 +17727,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2019,
-    investmentYear: 2024,
+    investmentYear: 2022,
     headquarters: "Texas; California; Arizona; Nebraska",
     milestones: [
       { date: "2019: Ubiquity was founded.", event: "2019: Ubiquity was founded.", category: "Other" },
@@ -18833,7 +18833,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2016,
-    investmentYear: 2025,
+    investmentYear: 2017,
     headquarters: "Multi-market United States",
     milestones: [
       { date: "2016", event: "Grain formed its bidding entity for the FCC broadcast incentive auction.", category: "Other" },
@@ -18859,7 +18859,7 @@ export const companies: PortCo[] = [
     description: "NewLevel II, L.P. holds licensed C-band wireless spectrum acquired in the FCC’s Auction 107 process. Its customers or end markets include mobile operators and wireless ecosystem participants needing licensed mid-band spectrum for 5G deployment. The operating model is a spectrum ownership model rather than an operating mobile network. Operations are concentrated in ten U.S. partial economic areas. Public materials indicate a portfolio assembled through FCC Auction 107 with gross bids of approximately $1.277 billion according to FCC materials. Current ownership is associated with Grain Management’s sponsored NewLevel II vehicle, which acquired the license portfolio through the FCC auction process in 2021.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2021,
     headquarters: "United States",
     milestones: [
       { date: "Feb 2021", event: "FCC announced winning bidders in Auction 107 for C-band spectrum.", category: "Other" },
@@ -18885,7 +18885,7 @@ export const companies: PortCo[] = [
     description: "NewLevel III, L.P. holds licensed mid-band wireless spectrum acquired in the FCC’s 3.45 GHz auction. Its customers or end markets include mobile operators and wireless ecosystem participants seeking licensed spectrum capacity for 5G services. The operating model is a spectrum ownership model rather than an operating network or services platform. Operations are concentrated in six U.S. metropolitan markets. Public materials indicate a portfolio assembled through FCC Auction 110 covering densely populated markets according to Grain’s portfolio materials. Current ownership is associated with Grain Management’s sponsored NewLevel III vehicle, with the license portfolio acquired through the FCC auction process in 2021 and 2022.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "United States",
     milestones: [
       { date: "2021", event: "FCC Auction 110 for 3.45 GHz spectrum was conducted.", category: "Other" },
@@ -19408,7 +19408,7 @@ export const companies: PortCo[] = [
     description: "Kalaeloa Partners, L.P. owns a cogeneration facility on Oʻahu, Hawaii. The asset provides dispatchable generation capacity to the island grid and operates as essential thermal infrastructure within Hawaii’s isolated power system. Its business model is asset-heavy and based on long-lived operating generation infrastructure rather than development-only activity. Public disclosures identify the plant as a 208 MW low-sulfur-fuel-oil cogeneration facility. PSEG completed the sale of its 50% interest in Kalaeloa Partners to Harbert Infrastructure Fund VI in 2023. Public materials reviewed do not disclose the full current ownership split after that transaction, but they do show Harbert as the acquiring infrastructure sponsor.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2023,
     headquarters: "Hawaii",
     milestones: [
       { date: "1997: Harbert-affiliated investors were identified in public materials as early owners of the facility.", event: "1997: Harbert-affiliated investors were identified in public materials as early owners of the facility.", category: "Other" },
@@ -19432,7 +19432,7 @@ export const companies: PortCo[] = [
     description: "Northern Star Generation owns and manages a portfolio of thermal power generation assets in the United States. Its assets serve wholesale and capacity markets through dispatchable generation rather than regulated retail utility service. The portfolio follows an asset-heavy operating model built around ownership, operation, maintenance, and commercial administration of thermal generation facilities. Public portfolio disclosures from Gulf Pacific Power described Northern Star as a five-facility generation portfolio with approximately 1,052 MW of net capacity. Ownership materials state that Northern Star is jointly owned by Archmore International Infrastructure Fund and affiliates of Harbert Power and CalPERS, after Harbert acquired a 50% interest in 2014. Public materials reviewed do not provide current revenue or employee figures for the platform.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2021,
+    investmentYear: 2014,
     headquarters: "Multi-state U.S. operations",
     milestones: [
       { date: "2014-04-25: Harbert affiliates Gulf Pacific Power and Harbert Power Fund V announced the acquisition of a 50% interest in Northern Star Generation.", event: "2014-04-25: Harbert affiliates Gulf Pacific Power and Harbert Power Fund V announced the acquisition of a 50% interest in Northern Star Generation.", category: "Other" },
@@ -19723,7 +19723,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1997,
-    investmentYear: 2022,
+    investmentYear: 2019,
     headquarters: "Ohio",
     milestones: [
       { date: "1997: CoolCo began providing chilled-water service in downtown Cincinnati.", event: "1997: CoolCo began providing chilled-water service in downtown Cincinnati.", category: "Other" },
@@ -19799,7 +19799,7 @@ export const companies: PortCo[] = [
     description: "This row appears to refer to a district-energy asset associated with Harrison Street, but the specific operating entity is not clearly identifiable from public disclosures reviewed. District-energy systems typically serve university, government, hospital, or urban users through centralized heating, cooling, and related utility infrastructure. The operating model is asset-heavy and utility-like because cash flows are tied to long-lived plant and distribution infrastructure and contractual service relationships. Public sources indicate Harrison Street acquired a U.S. district-energy system in 2020 and has since continued to invest in long-duration campus and government utility partnerships, but the precise asset mapped to this row is not publicly disclosed. The current fund vehicle, principal operating location, scale metrics, and founding date for this specific row are not publicly disclosed. Accordingly, only limited profile fields can be populated from the public record reviewed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2024,
+    investmentYear: 2020,
     headquarters: "Not publicly disclosed.",
     milestones: [
       { date: "2020-05: Public reporting stated that Harrison Street acquired a U.S. district-energy system from BlackRock.", event: "2020-05: Public reporting stated that Harrison Street acquired a U.S. district-energy system from BlackRock.", category: "Other" },
@@ -20097,7 +20097,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2021,
-    investmentYear: 2026,
+    investmentYear: 2021,
     headquarters: "Virginia; Nevada; Texas",
     milestones: [
       { date: "2021: PowerHouse Data Centers was established through a venture between AREP and Harrison Street.", event: "2021: PowerHouse Data Centers was established through a venture between AREP and Harrison Street.", category: "Other" },
@@ -20249,7 +20249,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2012,
-    investmentYear: 2024,
+    investmentYear: 2021,
     headquarters: "Kentucky",
     milestones: [
       { date: "2012: University materials identify the beginning of the multi-phase on-campus housing partnership.", event: "2012: University materials identify the beginning of the multi-phase on-campus housing partnership.", category: "Other" },
@@ -20349,7 +20349,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2020,
-    investmentYear: 2021,
+    investmentYear: 2018,
     headquarters: "Illinois",
     milestones: [
       { date: "2018-08: Harrison Street announced a joint venture to develop Woodlawn Residential Commons near the University of Chicago.", event: "2018-08: Harrison Street announced a joint venture to develop Woodlawn Residential Commons near the University of Chicago.", category: "Other" },
@@ -20549,7 +20549,7 @@ export const companies: PortCo[] = [
     description: "Epirus develops solid-state, software-defined high-power microwave systems and related power-management technologies. Its customers include defense and government users as well as other organizations that need counter-electronics systems and advanced power-efficiency solutions. The business follows a technology and manufacturing model based on engineered hardware, software, and mission-critical electronics rather than regulated infrastructure ownership. Public materials describe a more than 100,000-square-foot headquarters in Torrance, California and show the company raising large private financing rounds to scale production. I Squared participated in Epirus’s February 2022 Series C financing through its InfraTech strategy; the resulting ownership percentage is not publicly disclosed. The investment gives I Squared exposure to power-electronics technologies adjacent to resilience, defense, and energy systems.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "California",
     milestones: [
       { date: "2021-11: Epirus announced the opening of its new Torrance, California headquarters.", event: "2021-11: Epirus announced the opening of its new Torrance, California headquarters.", category: "Other" },
@@ -20574,7 +20574,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2021,
-    investmentYear: 2025,
+    investmentYear: 2021,
     headquarters: "Texas; New Mexico; Washington",
     milestones: [
       { date: "2021: Ezee Fiber was established.", event: "2021: Ezee Fiber was established.", category: "Other" },
@@ -20600,7 +20600,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1955,
-    investmentYear: 2024,
+    investmentYear: 2020,
     headquarters: "United States",
     milestones: [
       { date: "1955: Public company materials identify FlexiVan’s founding year.", event: "1955: Public company materials identify FlexiVan’s founding year.", category: "Other" },
@@ -20625,7 +20625,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2003,
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "United States",
     milestones: [
       { date: "2003: Public materials identify GridPoint’s founding year.", event: "2003: Public materials identify GridPoint’s founding year.", category: "Other" },
@@ -20650,7 +20650,7 @@ export const companies: PortCo[] = [
     description: "HTEC develops, owns, and operates clean-hydrogen production, distribution, and fueling infrastructure in North America. Its customers include heavy-duty transport fleets and other users that require hydrogen supply and refueling services for decarbonization. The business follows an asset-heavy energy-transition model based on production plants, hydrogen logistics, and retail fueling stations. Public transaction materials state that I Squared and Chart Industries invested C$217 million in 2021 and together acquired a 60% interest in HTEC to accelerate clean-hydrogen infrastructure development. The split of that 60% ownership between I Squared and Chart was not publicly disclosed, so both are listed as current co-owners with undisclosed percentages. The platform represents I Squared’s exposure to hydrogen infrastructure spanning production through end-use fueling.",
     status: "Active",
     countryTags: ["United States","Canada"],
-    investmentYear: 2023,
+    investmentYear: 2021,
     headquarters: "British Columbia; Alberta; California",
     milestones: [
       { date: "2021-09-08: HTEC announced a C$217 million strategic investment from Chart Industries and I Squared Capital.", event: "2021-09-08: HTEC announced a C$217 million strategic investment from Chart Industries and I Squared Capital.", category: "Other" },
@@ -20675,7 +20675,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["Mexico"],
     yearFounded: 2002,
-    investmentYear: 2025,
+    investmentYear: 2021,
     headquarters: "Mexico, Central America, and the Caribbean",
     milestones: [
       { date: "2002: KIO began operations in Mexico.", event: "2002: KIO began operations in Mexico.", category: "Other" },
@@ -20825,7 +20825,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2009,
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "California",
     milestones: [
       { date: "2009: Public materials identify Tarana’s founding year.", event: "2009: Public materials identify Tarana’s founding year.", category: "Other" },
@@ -20877,7 +20877,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2007,
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "United States",
     milestones: [
       { date: "2007: Company materials identify VLS Environmental Solutions’ establishment year.", event: "2007: Company materials identify VLS Environmental Solutions’ establishment year.", category: "Other" },
@@ -21203,7 +21203,7 @@ export const companies: PortCo[] = [
     description: "Aleatica develops and operates toll roads and other mobility infrastructure assets across Europe and Latin America. Its customers are road users and transport-system participants that depend on concessioned mobility infrastructure rather than passenger transport services sold directly by a carrier. The operating model is asset-heavy and concession based, with long-duration revenue linked to regulated or concession toll and mobility assets. IFM states that Aleatica's portfolio comprises 20 assets across seven countries and that the platform focuses exclusively on transportation infrastructure. IFM first invested in Aleatica in 2015 through a minority toll-road stake and, according to IFM's 2025 portfolio disclosures, now holds a 100% fund ownership stake.",
     status: "Active",
     countryTags: ["Mexico"],
-    investmentYear: 2025,
+    investmentYear: 2015,
     headquarters: "Mexico, Italy, Peru, Spain, and the United Kingdom",
     milestones: [
       { date: "2015: IFM first invested in Aleatica through a minority stake in a Mexican toll road.", event: "2015: IFM first invested in Aleatica through a minority stake in a Mexican toll road.", category: "Other" },
@@ -21264,7 +21264,7 @@ export const companies: PortCo[] = [
     description: "This row appears to refer to a utilities or district-energy investment associated with IFM Investors, but the specific operating entity is not clearly identifiable from the source workbook or public disclosures reviewed. District-energy businesses generally provide centralized heating, cooling, and related thermal services to commercial, institutional, or municipal users through long-lived network infrastructure. The operating model is typically asset-heavy and utility-like, with revenues supported by connected customer demand and long-duration infrastructure assets. Public materials reviewed confirm IFM’s active ownership of district-energy assets, most notably its 50% stake in Enwave’s Canadian operations, but they do not clearly substantiate the precise U.S. company intended by this row. Accordingly, the principal operating location, founding year, scale metrics, acquisition date, and current ownership structure for this row are not publicly disclosed based on the materials reviewed. The profile is therefore populated conservatively to avoid misidentifying the company.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2021,
     headquarters: "Not publicly disclosed.",
     milestones: [
       { date: "2021-02-02: IFM and Ontario Teachers’ announced an agreement to acquire Enwave’s Canadian district-energy operations.", event: "2021-02-02: IFM and Ontario Teachers’ announced an agreement to acquire Enwave’s Canadian district-energy operations.", category: "Other" },
@@ -21494,7 +21494,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2005,
-    investmentYear: 2025,
+    investmentYear: 2023,
     headquarters: "New Jersey and 18 U.S. states",
     milestones: [
       { date: "2005: Soltage was established.", event: "2005: Soltage was established.", category: "Other" },
@@ -21521,7 +21521,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2007,
-    investmentYear: 2024,
+    investmentYear: 2020,
     headquarters: "California; Texas; New York",
     milestones: [
       { date: "2007: Terra-Gen was formed.", event: "2007: Terra-Gen was formed.", category: "Other" },
@@ -21548,7 +21548,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2001,
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "Michigan; Indiana; Illinois; Wisconsin",
     milestones: [
       { date: "2001: US Signal was founded.", event: "2001: US Signal was founded.", category: "Other" },
@@ -21695,7 +21695,7 @@ export const companies: PortCo[] = [
     description: "Deerfield Wind Facility is an operating utility-scale wind project in Michigan. Its end market is the regional power system, with revenues supported by contracted renewable generation arrangements rather than a pure development model. The operating model is asset-heavy and contracted because the project is a physical generation asset with long-term operating and offtake characteristics. InfraRed's public materials identify Deerfield as a 149 MW wind facility included in its North American onshore wind portfolio, with Algonquin remaining the operator after the transaction. InfraRed agreed in October 2022 to acquire a 49 percent stake from Algonquin, while Algonquin retained a 51 percent interest.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "Michigan",
     milestones: [
       { date: "2022-10-03: InfraRed announced an agreement to acquire a 49% stake in Deerfield from Algonquin.", event: "2022-10-03: InfraRed announced an agreement to acquire a 49% stake in Deerfield from Algonquin.", category: "Other" },
@@ -21890,7 +21890,7 @@ export const companies: PortCo[] = [
     description: "Odell Wind Facility is an operating utility-scale wind project in Minnesota. Its end markets are electricity purchasers supported by renewable generation contracts and grid demand for wind output. The operating model is asset-heavy and contracted because value depends on the performance of the physical wind asset and its underlying commercial arrangements. InfraRed's public materials identify Odell as a 200 MW operating wind facility and state that it was acquired as part of a North American onshore wind portfolio alongside Algonquin. InfraRed agreed in October 2022 to acquire a 49 percent stake, while Algonquin retained the remaining 51 percent and continued to operate the project.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "Minnesota",
     milestones: [
       { date: "2022-10-03: InfraRed announced an agreement to acquire a 49% stake in Odell from Algonquin.", event: "2022-10-03: InfraRed announced an agreement to acquire a 49% stake in Odell from Algonquin.", category: "Other" },
@@ -22037,7 +22037,7 @@ export const companies: PortCo[] = [
     description: "Sugar Creek is an operating utility-scale wind project in Illinois. Its end markets are electricity purchasers supported by renewable generation arrangements and regional grid demand for wind output. The operating model is asset-heavy and contracted because the project depends on physical generation infrastructure and long-term commercial arrangements. InfraRed's public materials identify Sugar Creek as a 202 MW operating wind facility within its North American onshore wind portfolio, with Algonquin remaining the operator. InfraRed agreed in October 2022 to acquire a 49 percent stake from Algonquin, while Algonquin retained the remaining 51 percent interest.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "Illinois",
     milestones: [
       { date: "2022-10-03: InfraRed announced an agreement to acquire a 49% stake in Sugar Creek from Algonquin.", event: "2022-10-03: InfraRed announced an agreement to acquire a 49% stake in Sugar Creek from Algonquin.", category: "Other" },
@@ -22136,7 +22136,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1964,
-    investmentYear: 2026,
+    investmentYear: 2018,
     headquarters: "United States and Mexico",
     milestones: [
       { date: "1964", event: "AMPORTS was founded.", category: "Founding" },
@@ -22308,7 +22308,7 @@ export const companies: PortCo[] = [
     description: "Pilot Water Solutions provides produced water gathering, transportation, recycling, and disposal infrastructure for upstream oil and gas operators. Its customer base is concentrated in shale basins where producers need outsourced water handling capacity tied to drilling and production activity. The business follows an asset-heavy midstream model based on pipelines, disposal wells, storage, and field logistics infrastructure rather than a pure service contractor approach. Public materials describe a footprint of more than 850 miles of pipeline in the Northern Delaware Basin and broader operations across the Permian, Eagle Ford, Rockies, Haynesville, and Appalachian basins. Instar entered the platform through its acquisition of Oilfield Water Logistics in October 2019, and the business later combined with Pilot Water Solutions under the PWS brand in 2022.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2019,
     headquarters: "Texas, New Mexico, and the Appalachian Basin",
     milestones: [
       { date: "Oct 2019", event: "Instar acquired Oilfield Water Logistics.", category: "Acquisition" },
@@ -22392,7 +22392,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2005,
-    investmentYear: 2025,
+    investmentYear: 2019,
     headquarters: "Washington, Oregon, and Montana",
     milestones: [
       { date: "2005: Leading Edge Jet Center, the predecessor U.S. business, was founded.", event: "2005: Leading Edge Jet Center, the predecessor U.S. business, was founded.", category: "Other" },
@@ -22445,7 +22445,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["Canada"],
     yearFounded: 2012,
-    investmentYear: 2025,
+    investmentYear: 2016,
     headquarters: "Saskatchewan, Alberta, Manitoba, and North Dakota",
     owners: [
       { investmentFirm: "Instar", ownershipVehicle: "InstarAGF Essential Infrastructure Fund investment, with expanded ownership via Fund II in 2020.", investmentYear: 2020, status: "Active" },
@@ -22481,7 +22481,7 @@ export const companies: PortCo[] = [
     description: "Windmill Farms produces mushrooms through controlled-environment agricultural operations serving retail and foodservice customers in Canada and the United States. Its customer base consists of large grocery and foodservice accounts that require year-round supply from scaled indoor agricultural facilities. The operating model is asset-heavy, built around vertically integrated composting and indoor growing infrastructure rather than open-field farming. Instar disclosed at acquisition that the company was headquartered in Ashburn, Ontario, produced approximately 27 million pounds of mushrooms per year, and operated North America's only fully enclosed composting facility in its category. Instar partnered with management to acquire Greenwood Mushrooms in 2022 and Windmill later acquired the assets of Ostrom Mushroom Farms in 2023; the current ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2025,
+    investmentYear: 2022,
     headquarters: "Ontario and Washington",
     milestones: [
       { date: "2022-06: Instar partnered with management to acquire Greenwood Mushrooms Development Corp.", event: "2022-06: Instar partnered with management to acquire Greenwood Mushrooms Development Corp.", category: "Other" },
@@ -22908,7 +22908,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2014,
-    investmentYear: 2026,
+    investmentYear: 2018,
     headquarters: "Global operations; Dublin, Ireland; Seattle, Washington",
     milestones: [
       { date: "2014: Altavair was founded.", event: "2014: Altavair was founded.", category: "Other" },
@@ -23011,7 +23011,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["Canada"],
     yearFounded: 2012,
-    investmentYear: 2024,
+    investmentYear: 2019,
     headquarters: "British Columbia",
     milestones: [
       { date: "2012: TC Energy was selected to design, build, own, and operate the Coastal GasLink pipeline.", event: "2012: TC Energy was selected to design, build, own, and operate the Coastal GasLink pipeline.", category: "Other" },
@@ -23140,7 +23140,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["Mexico"],
     yearFounded: 2018,
-    investmentYear: 2025,
+    investmentYear: 2018,
     headquarters: "Mexico",
     milestones: [
       { date: "2018: KKR acquired Fermaca natural gas assets in Mexico and established the Monterra platform.", event: "2018: KKR acquired Fermaca natural gas assets in Mexico and established the Monterra platform.", category: "Other" },
@@ -23164,7 +23164,7 @@ export const companies: PortCo[] = [
     description: "Neon Renewables is a KKR-backed vehicle associated with investments in contracted U.S. renewable energy assets. Its end markets are utility and other contracted offtakers purchasing wind and solar generation from operating projects. The operating model is asset-heavy and infrastructure based, with cash flows linked to ownership interests in renewable generation assets rather than an asset-light services business. Public filings related to KKR's transactions with NextEra Energy entities identify Neon as part of the investment structure used for a portfolio of contracted U.S. renewable energy assets, but detailed operating information on the standalone vehicle was not publicly disclosed in the reviewed sources. KKR's infrastructure team has publicly identified Neon Renewables as one of its portfolio investments, while additional details on current ownership percentages and portfolio composition were not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2020,
     headquarters: "United States",
     milestones: [
       { date: "2020-11-02: NextEra Energy entities and KKR announced transactions covering portfolios of contracted U.S. renewable energy assets.", event: "2020-11-02: NextEra Energy entities and KKR announced transactions covering portfolios of contracted U.S. renewable energy assets.", category: "Other" },
@@ -23189,7 +23189,7 @@ export const companies: PortCo[] = [
     description: "Nitrogen Renewables is a KKR-related renewable energy holding structure associated with a portfolio of contracted wind and solar assets. Its end markets are utilities and other contracted power buyers purchasing generation from operating renewable projects. The operating model is asset-heavy, with returns supported by ownership of long-lived wind and solar assets and related contracted cash flows. Public information reviewed indicates that Nitrogen was part of a joint venture structure with NextEra Energy Partners covering seven wind projects and three solar projects, but more detailed public operating disclosures on the standalone vehicle were limited. KKR has publicly identified Nitrogen Renewables as one of its infrastructure investments, while precise current ownership percentages were not publicly disclosed in the reviewed sources.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2019,
     headquarters: "United States",
     milestones: [
       { date: "2019: Public transaction documents referenced Nitrogen-related entities within KKR's renewable investment structure.", event: "2019: Public transaction documents referenced Nitrogen-related entities within KKR's renewable investment structure.", category: "Other" },
@@ -23396,7 +23396,7 @@ export const companies: PortCo[] = [
     description: "Bluebird Fiber operates regional communication infrastructure and fiber networks in the U.S. Midwest. Its customers include enterprises, carriers, schools, government users, and other organizations requiring middle-mile and last-mile fiber connectivity. The operating model is asset-heavy and recurring, supported by owned and leased fiber routes, network equipment, and long-term connectivity contracts. Macquarie's portfolio materials describe Bluebird as a communications infrastructure provider in the Midwest, and public transaction materials indicate Macquarie acquired the platform in 2019 to expand its regional fiber footprint. Reviewed public sources did not disclose the detailed current ownership percentage held by Macquarie-managed funds.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2019,
     headquarters: "Missouri; Illinois; Midwest United States",
     milestones: [
       { date: "2019-01-15: Bluebird Network announced an agreement to be acquired by Macquarie Infrastructure Partners.", event: "2019-01-15: Bluebird Network announced an agreement to be acquired by Macquarie Infrastructure Partners.", category: "Other" },
@@ -23473,7 +23473,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2017,
-    investmentYear: 2025,
+    investmentYear: 2023,
     headquarters: "Florida; Georgia; South Carolina",
     milestones: [
       { date: "2017: Coastal Waste & Recycling was founded by Brendon Pantano and partners.", event: "2017: Coastal Waste & Recycling was founded by Brendon Pantano and partners.", category: "Other" },
@@ -23710,7 +23710,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2016,
-    investmentYear: 2025,
+    investmentYear: 2019,
     headquarters: "California",
     milestones: [
       { date: "2016: The current Pier E facility opened at the Port of Long Beach.", event: "2016: The current Pier E facility opened at the Port of Long Beach.", category: "Other" },
@@ -23816,7 +23816,7 @@ export const companies: PortCo[] = [
     description: "Netrality Data Centers operates interconnection-focused data centers and carrier hotels in the United States. Its customers include network carriers, cloud and connectivity providers, enterprise users, and other digital infrastructure participants that require colocation and dense interconnection environments. The operating model is asset-heavy and recurring revenue based, supported by owned facilities, meet-me rooms, colocation deployments, and network connectivity services. Macquarie describes the platform as an interconnection data center business in the U.S., and transaction coverage around the acquisition referenced facilities in Chicago, Kansas City, Houston, Philadelphia, and St. Louis. Macquarie Infrastructure Partners IV acquired Netrality in partnership with the company’s management team in August 2019, while detailed current ownership percentages were not publicly disclosed in the reviewed sources.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2019,
     headquarters: "Illinois; Missouri; Pennsylvania; Texas; Kansas",
     milestones: [
       { date: "2019-08-30: Macquarie Infrastructure Partners IV and the management team acquired Netrality Data Centers.", event: "2019-08-30: Macquarie Infrastructure Partners IV and the management team acquired Netrality Data Centers.", category: "Other" },
@@ -23925,7 +23925,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1997,
-    investmentYear: 2022,
+    investmentYear: 2009,
     headquarters: "Washington",
     owners: [
       { investmentFirm: "OTPP", ownershipVehicle: "15.8% stake via Puget Holdings (last publicly disclosed)", status: "Active" },
@@ -24012,7 +24012,7 @@ export const companies: PortCo[] = [
     description: "SwyftFiber provides fiber broadband and related connectivity services to residential and business customers in rural communities in Louisiana, Arkansas, and Mississippi. Its customer base is primarily households and small businesses that require fixed broadband rather than mobile connectivity or wholesale-only services. The operating model is asset-heavy because the platform is funding and operating last-mile fiber network buildouts in its service territories. Public materials identify active service and expansion activity across the U.S. Gulf South, and Macquarie stated that its investment was intended to accelerate fiber deployment in existing and new markets. Macquarie Asset Management announced an agreement to invest in SwyftFiber in October 2023 and Houlihan Lokey stated that the transaction closed in February 2024; the exact ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2023,
     headquarters: "Louisiana, Arkansas, and Mississippi",
     milestones: [
       { date: "2023-10-26: Macquarie Asset Management announced an agreement to invest in SwyftFiber.", event: "2023-10-26: Macquarie Asset Management announced an agreement to invest in SwyftFiber.", category: "Other" },
@@ -24094,7 +24094,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["Canada"],
     yearFounded: 2023,
-    investmentYear: 2025,
+    investmentYear: 2023,
     headquarters: "Québec",
     milestones: [
       { date: "2023-09-27: Porter and Macquarie announced their partnership to develop the passenger terminal at Montréal Saint-Hubert Airport.", event: "2023-09-27: Porter and Macquarie announced their partnership to develop the passenger terminal at Montréal Saint-Hubert Airport.", category: "Other" },
@@ -24172,7 +24172,7 @@ export const companies: PortCo[] = [
     description: "Boldyn Networks US develops and operates shared communications infrastructure, including neutral-host, venue, transit, and private network assets. Its customers include mobile network operators, transit agencies, higher-education institutions, enterprises, and public-sector clients that require dense connectivity infrastructure. The business follows an asset-heavy model built around owned and managed wireless, fiber, and neutral-host systems. Public disclosures state that Manulife partnered with Boldyn's existing owners in 2021 to acquire a minority interest in the U.S. digital infrastructure assets and that the investor group provided additional capital in 2024. The company continues to expand through acquisitions and large-scale financings to support growth across the U.S. market.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2024,
+    investmentYear: 2021,
     headquarters: "Multi-state United States",
     milestones: [
       { date: "2021-Q4", event: "Manulife partnered with Boldyn to acquire a minority interest in its U.S. digital infrastructure assets.", category: "Acquisition" },
@@ -24227,7 +24227,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2015,
-    investmentYear: 2023,
+    investmentYear: 2021,
     headquarters: "Multi-state United States",
     milestones: [
       { date: "2015", event: "CleanCapital was founded.", category: "Founding" },
@@ -24414,7 +24414,7 @@ export const companies: PortCo[] = [
     description: "HEN Infrastructure is the investment vehicle Manulife associates with Hunt Energy Network's battery storage buildout in Texas. Public disclosures indicate that the platform is focused on developing, owning, and operating distribution-level and grid-connected battery energy storage assets in the ERCOT market. The customer base is the Texas power system and counterparties that value flexible capacity, congestion management, and grid services rather than retail end users. The operating model is asset-heavy and project-based, with capital committed to the development and ownership of batteries and related interconnection infrastructure. Public announcements from Hunt state that by 2024 the related platform had 270 MW operating and 80 MW under development, providing a disclosed scale indicator for the Texas footprint. Manulife announced an initial commitment in 2021 and continues to identify HEN Infrastructure as a Fund II investment, while detailed ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2021,
     headquarters: "Texas",
     milestones: [
       { date: "Mar 2021", event: "Manulife made an initial commitment to Hunt Energy Network's battery storage platform in Texas.", category: "Other" },
@@ -24441,7 +24441,7 @@ export const companies: PortCo[] = [
     description: "Hunt Energy Network develops and operates power infrastructure intended to support reliability and flexibility in the ERCOT market. Public materials describe the business as pursuing dispatchable generation, storage, and related asset development rather than a retail utility model. Its end market is the Texas wholesale power system, where assets can supply capacity, ancillary services, and localized reliability support. The company appears to follow an asset-heavy operating model built around originating, constructing, and owning infrastructure projects in Texas. Hunt's 2024 announcement with Manulife cites 270 MW operating and 80 MW under development across related assets, providing a public scale indicator for the platform. Manulife announced a new $250 million commitment in 2024 and its infrastructure team identifies Hunt Energy Network as a Fund III investment, while the detailed ownership structure is not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2021,
     headquarters: "Texas",
     milestones: [
       { date: "2021", event: "Manulife began funding Hunt Energy Network-related infrastructure development in Texas.", category: "Financing" },
@@ -24550,7 +24550,7 @@ export const companies: PortCo[] = [
     description: "JH Transport Portfolio is the transportation investment vehicle that Manulife continues to list within its direct infrastructure portfolio. Public disclosures reviewed for this workbook do not identify the individual operating assets, legal structure, or founding year of the platform. The portfolio is categorized by Manulife as transportation infrastructure, indicating exposure to long-life assets serving passenger or freight mobility end markets. The operating model and revenue profile are not described in current public materials, and no public scale metrics were located in the sources reviewed. Manulife's infrastructure team associates the investment with Fund I and continues to present it as an active portfolio company. Because current public disclosures are limited, further detail on co-owners, asset count, and acquisition history is not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2021,
     headquarters: "United States",
     milestones: [
       { date: "2021", event: "Manulife publicly listed JH Transport Portfolio among its direct infrastructure investments.", category: "Financing" },
@@ -24856,7 +24856,7 @@ export const companies: PortCo[] = [
     description: "Rocky Mountain Midstream is a natural gas gathering and processing system serving producing basins in the Rocky Mountain region. Publicly available system materials describe operations connected to the Greater Green River, Piceance, and Uinta basins, supporting upstream producers with transportation and related midstream services. The platform follows an asset-heavy fee-based operating model centered on gathering pipelines, treating facilities, and processing infrastructure. Williams identifies Rocky Mountain Midstream as part of its regional system information, and Manulife continues to include Rocky Mountain Midstream in its direct infrastructure materials. Public sources reviewed do not disclose a current founding year, asset count, or the present economic ownership structure in sufficient detail.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2020,
     headquarters: "Colorado, Utah, and Wyoming",
     milestones: [
       { date: "2015", event: "Colorado regulatory records identify Rocky Mountain Midstream as an operator in the state.", category: "Other" },
@@ -25030,7 +25030,7 @@ export const companies: PortCo[] = [
     description: "Alabama Fiber Networks is a Western and Central Alabama fiber-to-the-premise buildout that operates under the Yellowhammer Networks and mStreet Fiber Alabama branding. Its customer base is expected to include households, businesses, schools, healthcare users, and public institutions in underserved communities. The project follows an asset-heavy broadband infrastructure model designed to build utility-like fiber coverage rather than rely on selective overbuilds. Meridiam states that the network aims to pass about 52,000 premises, including rural locations supported by a $26 million Rural Digital Opportunity Fund award. Meridiam was approached in 2022 to develop the asset and has publicly described the project company as Meridiam-owned and financed. In June 2025, the platform was rebranded as mStreet Fiber Alabama.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2024,
+    investmentYear: 2022,
     headquarters: "Alabama",
     milestones: [
       { date: "2022", event: "Meridiam was approached to develop the Alabama fiber project and serve as lead investor.", category: "Financing" },
@@ -25082,7 +25082,7 @@ export const companies: PortCo[] = [
     description: "Central 70 is the DBFOM concession for a 10-mile reconstruction of Interstate 70 through Denver. The corridor serves commuter, freight, and regional traffic and combines reconstructed interstate lanes with an express lane, bridge replacements, and a cover park over part of the highway. Its operating model is a long-term public-private partnership with responsibility for design, construction, financing, and maintenance transferred to the private partner under a contracted framework. The project is capital intensive and addresses one of the most heavily used urban highway corridors in Colorado. Meridiam reached financial close on the project in 2018 and substantial completion was announced in 2022. The asset remains an operating transportation concession in Meridiam's U.S. portfolio.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2022,
+    investmentYear: 2018,
     headquarters: "Colorado",
     owners: [
       { investmentFirm: "Meridiam", ownershipVehicle: "—", investmentYear: 2022, status: "Active" },
@@ -25167,7 +25167,7 @@ export const companies: PortCo[] = [
     description: "This asset is the long-term campus utility partnership that modernizes and operates Fresno State's central heating and cooling infrastructure. Its end market is the university campus, including academic, administrative, and support buildings that rely on central utility service. The operating model is an asset-heavy campus utility concession under which infrastructure upgrades are financed and delivered in exchange for long-term contracted service revenues. Meridiam states that the system serves more than 3.1 million square feet across more than 80 buildings on a campus of roughly 1,100 acres. Public materials describe a 33-year contract with Fresno State that targets energy savings of more than 30%, and Meridiam announced substantial completion in October 2024. Current public materials do not disclose any separate co-owner or fund-level ownership split.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2024,
+    investmentYear: 2022,
     headquarters: "California",
     milestones: [
       { date: "2021", event: "Meridiam described a 33-year contract to modernize Fresno State's utility system.", category: "Other" },
@@ -25324,7 +25324,7 @@ export const companies: PortCo[] = [
     description: "The Long Beach Courthouse is a social infrastructure public-private partnership serving the California court system in Long Beach. Its users include the judiciary, public agencies, legal professionals, and court visitors. The project follows an asset-heavy availability-payment model under which the private partner finances, builds, operates, and maintains the courthouse complex. Meridiam states that the facility includes 31 courtrooms together with administrative space, retail space, and structured parking. Federal and court system materials indicate that financial close was reached in December 2010 and that Meridiam holds 100% equity in the project company. The courthouse has been in operation since 2013.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2024,
+    investmentYear: 2010,
     headquarters: "California",
     milestones: [
       { date: "Dec 2010", event: "The Long Beach Courthouse project reached financial close.", category: "Other" },
@@ -25401,7 +25401,7 @@ export const companies: PortCo[] = [
     description: "North Tarrant Express Segment 3 is the concession for the I-35W expansion in Fort Worth, including managed lanes, frontage roads, and interchange improvements. The corridor serves commuter and freight traffic in the Dallas-Fort Worth market, with revenues tied to tolled managed lanes within a broader long-term concession framework. Its operating model combines privately financed development of Segment 3A and operation and maintenance responsibilities for adjoining segments under the concession agreement with TxDOT. Public materials describe the program as a multistage corridor expansion with Segments 3A and 3B entering operation before the later 3C extension. Meridiam has been involved since the 2013 financial close for Segments 3A and 3B, and the project was expanded through an additional financing for Segment 3C in 2019. The full corridor entered operation in stages, with the last extension opening in 2024, and remains part of Meridiam's managed-lanes portfolio.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2019,
+    investmentYear: 2013,
     headquarters: "Texas",
     milestones: [
       { date: "2013", event: "TxDOT and the concessionaire reached financial close for NTE Segments 3A and 3B.", category: "Other" },
@@ -25428,7 +25428,7 @@ export const companies: PortCo[] = [
     description: "North Tarrant Express Segments 1 and 2 is a managed-lanes toll road concession covering key portions of IH-820 and SH 121/183 in Tarrant County. Its users are passenger vehicles and commercial traffic moving through the Dallas-Fort Worth area, and the project earns revenue from dynamically tolled managed lanes while also operating reconstructed general-purpose lanes and frontage roads. The asset is capital intensive and operates under a long-term concession with TxDOT through NTE Mobility Partners. Public project materials describe a 13.3-mile program with major direct connectors and corridor reconstruction. Meridiam reached financial close with the original consortium in 2009, and the corridor entered operation in 2014 with final acceptance in 2015. Meridiam continues to list the asset in operation, and public disclosures identify Cintra, Meridiam, and APG as current investors in the project structure.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2017,
+    investmentYear: 2009,
     headquarters: "Texas",
     owners: [
       { investmentFirm: "Meridiam", ownershipVehicle: "MI NTE Parallel LLC; Meridiam held 33.3% at financial close.", investmentYear: 2017, status: "Active" },
@@ -25498,7 +25498,7 @@ export const companies: PortCo[] = [
     description: "The Port of Miami Tunnel is a public-private partnership road tunnel linking Watson Island to PortMiami. Its users include freight carriers, cruise and port traffic, and general motorists using direct highway access to the port. The operating model is an asset-heavy availability-based concession under which the private partner designs, builds, finances, operates, and maintains the facility. Public materials describe twin tunnels that have been in operation since 2014 and were financed at close in October 2009. Meridiam held a 90% equity position at financial close alongside Bouygues, and Meridiam later acquired Bouygues Construction's 6.6% stake in the project company in 2014. Current public materials reviewed do not set out the project's present ownership breakdown in a single primary-source disclosure.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2014,
     headquarters: "Florida",
     milestones: [
       { date: "Oct 2009", event: "The Port of Miami Tunnel reached financial close.", category: "Other" },
@@ -26403,7 +26403,7 @@ export const companies: PortCo[] = [
     description: "Canadian Breaks is an operating onshore wind asset in northwest Texas that supplies renewable power into the regional market. Its end market is wholesale electricity, with cash flows supported by the operating characteristics and contracting profile of the wind project rather than a diversified utility platform. The asset follows an asset-heavy renewable generation model based on owned turbines, interconnection, and long-term operating infrastructure. Public sources describe a 210.1 MW project in Deaf Smith County, Texas, and Northleaf lists the asset as an active infrastructure investment made in 2019. Northleaf's current ownership interest is not publicly disclosed, but the firm continues to identify Canadian Breaks as part of its infrastructure portfolio.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2019,
     headquarters: "Texas",
     milestones: [
       { date: "2019", event: "Northleaf made its investment in Canadian Breaks.", category: "Financing" },
@@ -26614,7 +26614,7 @@ export const companies: PortCo[] = [
     description: "Odfjell Terminals US owns and operates bulk liquid storage terminals that handle chemicals, oil products, and other specialty liquids at major shipping locations. Its customers are industrial and trading counterparties that require marine-connected storage and handling infrastructure rather than inland distribution assets. The business follows an asset-heavy contracted terminal model built around tanks, marine access, and associated operating infrastructure at strategic ports. Public materials describe U.S. terminals in Houston, Texas, and Charleston, South Carolina as part of Odfjell's global terminal network. Funds managed by Northleaf acquired a 49% shareholding in June 2019, with Odfjell SE retaining 51% and continuing as the industrial partner.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2024,
+    investmentYear: 2019,
     headquarters: "Texas and South Carolina",
     milestones: [
       { date: "Jun 2019", event: "Odfjell announced the closing of Northleaf's acquisition of a 49% stake in Odfjell Holdings (US) Inc.", category: "Acquisition" },
@@ -26802,7 +26802,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2019,
-    investmentYear: 2024,
+    investmentYear: 2020,
     headquarters: "United States",
     milestones: [
       { date: "Jan 2019", event: "Western announced the formation of American Corporate Airport Partners with Oaktree and Connor Capital.", category: "Founding" },
@@ -26966,7 +26966,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2005,
-    investmentYear: 2023,
+    investmentYear: 2021,
     headquarters: "United States",
     owners: [
       { investmentFirm: "Oaktree / Duration", ownershipVehicle: "Duration Ports America Capital Partners, L.P. (publicly referenced in a 2025 holding report)", investmentYear: 2023, status: "Active" },
@@ -27030,7 +27030,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1985,
-    investmentYear: 2024,
+    investmentYear: 2022,
     headquarters: "United States",
     milestones: [
       { date: "1985", event: "STG Logistics was founded.", category: "Founding" },
@@ -27161,7 +27161,7 @@ export const companies: PortCo[] = [
     description: "Bruce Power operates a multi-unit nuclear generating facility that supplies baseload electricity and medical isotopes. Its customers or end markets include the Ontario electricity system and isotope markets. The operating model is an asset-heavy regulated-style generation model under long-term contractual and market frameworks in Ontario. Operations are concentrated in Bruce County, Ontario. Public materials indicate peak output of about 6,550 MW and roughly 30% of Ontario’s electricity supply according to OMERS. Current ownership includes OMERS Infrastructure, which has publicly described its holding as approximately 50% and dates its investment to 2003.",
     status: "Active",
     countryTags: ["Canada"],
-    investmentYear: 2025,
+    investmentYear: 2003,
     headquarters: "Ontario",
     milestones: [
       { date: "2003", event: "OMERS made its initial investment in Bruce Power.", category: "Financing" },
@@ -27214,7 +27214,7 @@ export const companies: PortCo[] = [
     description: "Navisun LLC develops, finances, owns, and operates distributed and small utility-scale solar and storage projects. Its customers or end markets include commercial, industrial, community solar, and utility counterparties in U.S. distributed generation markets. The operating model is a development-to-ownership model with contracted power sales and project financing at the asset level. Operations are concentrated in multiple U.S. states. Public materials indicate a distributed generation platform rather than a single-asset owner, with activity across solar and storage segments. Current ownership dates to OMERS Infrastructure’s 2021 agreement to acquire 100% of Navisun from Ares Management.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2021,
     headquarters: "Multi-state United States",
     milestones: [
       { date: "Nov 2021", event: "OMERS Infrastructure signed an agreement to acquire 100% of Navisun from Ares Management.", category: "Acquisition" },
@@ -27773,7 +27773,7 @@ export const companies: PortCo[] = [
     description: "Byrd Ranch is a utility-scale lithium-ion battery storage project in Sweeny, Texas that provides grid support services in ERCOT. Its end markets are wholesale ancillary services and power market applications that reward flexible storage capacity rather than traditional contracted utility rate base revenues. The project follows an asset-heavy merchant storage model supported by transmission interconnection, battery systems, and market optimization infrastructure. Public materials describe a 50 MW / 50 MWh project that began operations in 2022 and is managed through Quinbrook's GlidePath platform. Quinbrook identifies Byrd Ranch as a project acquired in 2019, with construction and operational delivery completed under GlidePath.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2019,
     headquarters: "Texas",
     milestones: [
       { date: "2019", event: "Quinbrook recorded the acquisition year for Byrd Ranch.", category: "Acquisition" },
@@ -28198,7 +28198,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2020,
-    investmentYear: 2026,
+    investmentYear: 2020,
     headquarters: "Maryland; Texas",
     milestones: [
       { date: "Nov 2020", event: "Rowan Digital Infrastructure was founded.", category: "Founding" },
@@ -28370,7 +28370,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2021,
-    investmentYear: 2026,
+    investmentYear: 2024,
     headquarters: "United States",
     milestones: [
       { date: "Mar 2021", event: "Ridgewood Infrastructure and Sustainability Partners announced the formation of Environmental Infrastructure Partners.", category: "Founding" },
@@ -28499,7 +28499,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1936,
-    investmentYear: 2024,
+    investmentYear: 2022,
     headquarters: "Texas, Louisiana, Florida, and South Carolina",
     milestones: [
       { date: "1936", event: "The Dupuy Group was founded.", category: "Founding" },
@@ -28526,7 +28526,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2016,
-    investmentYear: 2026,
+    investmentYear: 2017,
     headquarters: "Texas",
     milestones: [
       { date: "2016", event: "Undine was founded.", category: "Founding" },
@@ -28584,7 +28584,7 @@ export const companies: PortCo[] = [
     description: "Waste Resource Management provides collection, treatment, recycling, and disposal services for liquid waste and industrial wastewater streams. Its customer base includes commercial and industrial generators that require compliant processing of wastewater, sludges, and related liquid residuals. The operating model is asset heavy, with treatment facilities, transportation capabilities, and processing permits forming the core infrastructure base. Ridgewood stated at acquisition that the platform operated 13 treatment facilities in high-growth markets across Florida, Nevada, Texas, and Colorado. Ridgewood acquired the company in late 2023 as part of its water and environmental infrastructure strategy. The investment added a treatment and recycling platform to Ridgewood's existing water-sector portfolio.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2023,
     headquarters: "Florida, Nevada, Texas, and Colorado",
     milestones: [
       { date: "Dec 2023", event: "Ridgewood Infrastructure announced the acquisition of Waste Resource Management.", category: "Acquisition" },
@@ -28850,7 +28850,7 @@ export const companies: PortCo[] = [
     description: "Cityside Networks provides fiber-to-the-premise broadband services to residential, commercial, and carrier customers in Southern California. Its customers subscribe for internet and network services over company-owned fiber infrastructure, giving the business a recurring revenue model rather than project-based systems integration revenue. The platform is asset heavy because it finances and deploys local access networks and related broadband infrastructure. Public disclosures describe Cityside as a Southern California fiber provider, and later business media reporting said SDC Capital Partners had become the majority owner while Hanson Capital remained a minority investor. SDC first announced its partnership with Cityside in 2023, and exact ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2023,
     headquarters: "Southern California",
     owners: [
       { investmentFirm: "SDC", ownershipVehicle: "Majority interest acquired by funds managed by SDC", investmentYear: 2026, status: "Active" },
@@ -29311,7 +29311,7 @@ export const companies: PortCo[] = [
     description: "Cologix operates carrier-neutral data centers and interconnection hubs across major North American markets. Its customers include enterprises, networks, cloud providers, and digital infrastructure users that require colocation space, connectivity, and edge access under recurring contracts. The platform is asset-heavy, with revenues tied to long-lived data center facilities, power capacity, and cross-connect ecosystems rather than project-by-project development fees. Public materials describe more than 40 data centers serving over 700 networks and 350 cloud providers across Canada and the United States. Stonepeak first invested in Cologix in 2017 and completed a recapitalization of the business in 2022 to support continued expansion.",
     status: "Active",
     countryTags: ["United States","Canada"],
-    investmentYear: 2025,
+    investmentYear: 2017,
     headquarters: "Canada and United States",
     milestones: [
       { date: "2017", event: "Stonepeak made its initial investment in Cologix.", category: "Financing" },
@@ -29503,7 +29503,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2008,
-    investmentYear: 2024,
+    investmentYear: 2020,
     headquarters: "United States and international",
     milestones: [
       { date: "2008", event: "Lineage was founded with a single warehouse.", category: "Founding" },
@@ -29668,7 +29668,7 @@ export const companies: PortCo[] = [
     description: "Oryx Midstream owns and operates crude oil gathering, transportation, and related infrastructure in the Permian Basin. Its customers are upstream producers and downstream counterparties that contract for takeaway capacity and field connectivity rather than spot commodity services. The platform is asset-heavy and basin-focused, with revenue tied to gathering and transportation volumes on long-lived infrastructure. Stonepeak acquired Oryx in 2019, and in 2021 the business combined certain Permian assets with Plains All American to form the Plains Oryx Permian Basin joint venture. The detailed current ownership structure of the broader platform is not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2025,
+    investmentYear: 2019,
     headquarters: "Permian Basin",
     milestones: [
       { date: "Apr 2019", event: "Stonepeak announced the acquisition of Oryx Midstream.", category: "Acquisition" },
@@ -30473,7 +30473,7 @@ export const companies: PortCo[] = [
     description: "NorthLink Aviation is developing cargo airport infrastructure at Ted Stevens Anchorage International Airport in Alaska. The project is intended for air cargo carriers and logistics users that require dedicated terminal, warehouse, and apron capacity in Anchorage. Its operating model is asset-heavy and concession-based, anchored by a long-term airport lease and phased infrastructure development. Public disclosures describe a 120-acre South Park Campus under a 55-year lease and an initial phase including a 100,000-square-foot multi-tenant air cargo terminal. Tiger announced a controlling investment in 2021 and remains the sponsor identified in public materials.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2021,
     headquarters: "Alaska",
     milestones: [
       { date: "Nov 2021", event: "Tiger announced its investment in NorthLink Aviation.", category: "Financing" },
@@ -31408,7 +31408,7 @@ export const companies: PortCo[] = [
     description: "Cartier Energy is a U.S. district energy platform that owns and operates systems providing steam, chilled water, hot water, and electricity. Its customers include universities, hospitals, municipalities, and commercial and industrial users that rely on essential thermal and energy infrastructure. The business is asset-heavy and infrastructure based, with revenues supported by utility-style service arrangements tied to on-site and campus energy systems. Public materials describe a portfolio of eight district energy systems located across New Jersey, Michigan, Delaware, Massachusetts, and Connecticut. Vauban Infrastructure Partners identifies Cartier as its first North American investment, and public disclosures indicate the platform is owned through Vauban-managed investment funds. The reviewed public materials do not disclose the exact ownership percentages of those funds within the current structure.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2022,
     headquarters: "New Jersey; Michigan; Delaware; Massachusetts; Connecticut",
     milestones: [
       { date: "2022", event: "Vauban completed the acquisition of the Cartier district energy platform from prior owners.", category: "Acquisition" },
@@ -31641,7 +31641,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2021,
-    investmentYear: 2024,
+    investmentYear: 2021,
     headquarters: "United States",
     milestones: [
       { date: "Sep 2021", event: "Vision Ridge announced a $100 million commitment to establish Vision RNG.", category: "Other" },
@@ -31695,7 +31695,7 @@ export const companies: PortCo[] = [
     description: "Direct ChassisLink, Inc. leases marine and domestic intermodal chassis used to move containerized freight between ports, rail terminals, and inland customer locations across the United States. Its customers include ocean carriers, railroads, motor carriers, beneficial cargo owners, and logistics intermediaries that depend on chassis availability for port and inland intermodal flows. The operating model is asset heavy and lease based, supported by a large fleet positioned at strategic port and rail locations rather than a brokerage model. Wren House states that DCLI operates more than 151,000 marine chassis and 121,000 domestic chassis and employs approximately 470 people, with headquarters in Charlotte. GIC, OMERS Infrastructure, and Wren House signed the acquisition of DCLI in 2022, and the platform has since remained under that consortium ownership. The investment gives Wren House exposure to essential equipment underpinning U.S. container logistics.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2026,
+    investmentYear: 2023,
     headquarters: "United States",
     owners: [
       { investmentFirm: "OMERS", ownershipVehicle: "OMERS Infrastructure consortium investment; OMERS also disclosed SPP co-investors", investmentYear: 2022, status: "Active" },
@@ -31761,7 +31761,7 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1994,
-    investmentYear: 2024,
+    investmentYear: 2020,
     headquarters: "Illinois, Missouri, and Rhode Island",
     milestones: [
       { date: "1994", event: "The business traces its roots to OmniLEC, according to i3 Broadband's company history.", category: "Other" },
