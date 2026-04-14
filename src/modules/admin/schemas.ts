@@ -208,7 +208,7 @@ export const companySchema = z.object({
   yearFounded: z.number().int().min(1800).max(2100).optional(),
   investmentYear: z.number().int().min(1900).max(2100).optional(),
   headquarters: z.string().optional(),
-  investmentFirm: z.string().optional(),
+  investmentFirm: z.string().min(1, "Investment firm is required"),
   ownershipVehicle: z.string().optional(),
 });
 
