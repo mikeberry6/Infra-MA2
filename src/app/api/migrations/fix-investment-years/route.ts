@@ -192,6 +192,41 @@ const CORRECTIONS: { name: string; country: string; correctYear: number }[] = [
   { name: "YHU Infrastructure Partners", country: "Canada", correctYear: 2023 },
 ];
 
+export async function GET() {
+  return new Response(
+    `<!DOCTYPE html>
+<html><head><title>Fix Investment Years</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: system-ui; background: #09090B; color: #fff; padding: 2rem; }
+  button { background: #818CF8; color: #fff; border: none; padding: 12px 24px; border-radius: 6px; font-size: 16px; cursor: pointer; }
+  button:disabled { opacity: 0.5; }
+  pre { background: #18181B; padding: 1rem; border-radius: 6px; overflow: auto; font-size: 13px; }
+</style></head><body>
+<h1>Fix Investment Years Migration</h1>
+<p>This will update ${CORRECTIONS.length} ownership period records in the live database.</p>
+<button id="btn" onclick="run()">Run Migration</button>
+<pre id="out">Ready. Click the button to start.</pre>
+<script>
+async function run() {
+  const btn = document.getElementById('btn');
+  const out = document.getElementById('out');
+  btn.disabled = true;
+  out.textContent = 'Running...';
+  try {
+    const res = await fetch(window.location.href, { method: 'POST' });
+    const data = await res.json();
+    out.textContent = JSON.stringify(data, null, 2);
+  } catch (e) {
+    out.textContent = 'Error: ' + e.message;
+  }
+  btn.disabled = false;
+}
+</script></body></html>`,
+    { headers: { "Content-Type": "text/html" } },
+  );
+}
+
 export async function POST() {
   try {
     let updated = 0;
