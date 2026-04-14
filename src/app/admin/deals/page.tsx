@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { DEAL_SECTOR_DISPLAY, DEAL_STATUS_DISPLAY } from "@/modules/shared/enum-maps";
 import Link from "next/link";
 import DeleteButton from "@/components/admin/DeleteButton";
+import ImportExportBar from "@/components/admin/ImportExportBar";
 import { deleteDeal } from "@/modules/admin/actions";
 
 export const metadata = { title: "Admin - Deals" };
@@ -39,7 +40,9 @@ export default async function AdminDealsPage() {
           </Link>
         </div>
 
-        <table className="w-full text-sm">
+        <ImportExportBar entityType="deals" />
+
+        <table className="w-full text-sm mt-4">
           <thead>
             <tr className="border-b border-[#27272A] text-[#71717A] text-left">
               <th className="pb-2 pr-4">ID</th>
