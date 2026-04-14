@@ -1,9 +1,9 @@
 import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
-import { deals } from "../src/data/deals";
-import { funds } from "../src/data/funds";
-import { companies as portcos } from "../src/data/portcos/companies";
+import { deals } from "./seed-data/deals";
+import { funds } from "./seed-data/funds";
+import { companies as portcos } from "./seed-data/companies";
 import { resolveOrgName, getOrgType, NON_INFRA_FUND_ENTITIES, ORG_CANONICAL } from "./entity-resolution";
 import {
   FUND_STRATEGY_MAP,

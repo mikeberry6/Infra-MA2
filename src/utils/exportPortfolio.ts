@@ -1,26 +1,26 @@
-import type { PortCo, PortCoMilestone, PortCoExecutive, PortCoSource, PortCoCountryTag } from "@/data/portcos/types";
+import type { CompanyView, MilestoneView, ExecutiveView, SourceView } from "@/modules/shared/types";
 
-function flattenManagement(mgmt?: PortCoExecutive[]): string {
+function flattenManagement(mgmt?: ExecutiveView[]): string {
   if (!mgmt?.length) return "";
   return mgmt.map((e) => `${e.name} (${e.title})`).join("; ");
 }
 
-function flattenMilestones(ms?: PortCoMilestone[]): string {
+function flattenMilestones(ms?: MilestoneView[]): string {
   if (!ms?.length) return "";
   return ms.map((m) => `${m.date}: ${m.event} (${m.category})`).join("; ");
 }
 
-function flattenSources(sources?: PortCoSource[]): string {
+function flattenSources(sources?: SourceView[]): string {
   if (!sources?.length) return "";
   return sources.map((s) => `${s.label}: ${s.url}`).join("; ");
 }
 
-function flattenCountryTags(tags?: PortCoCountryTag[]): string {
+function flattenCountryTags(tags?: string[]): string {
   if (!tags?.length) return "";
   return tags.join("; ");
 }
 
-const COLUMNS: { header: string; key: keyof PortCo | string; width: number }[] = [
+const COLUMNS: { header: string; key: string; width: number }[] = [
   { header: "Company Name", key: "name", width: 30 },
   { header: "Investment Firm", key: "investmentFirm", width: 25 },
   { header: "Status", key: "status", width: 10 },
@@ -40,7 +40,7 @@ const COLUMNS: { header: string; key: keyof PortCo | string; width: number }[] =
   { header: "Sources", key: "sources", width: 40 },
 ];
 
-function toRow(c: PortCo): Record<string, string | number | undefined> {
+function toRow(c: CompanyView): Record<string, string | number | undefined> {
   return {
     "Company Name": c.name,
     "Investment Firm": c.investmentFirm,
@@ -62,7 +62,7 @@ function toRow(c: PortCo): Record<string, string | number | undefined> {
   };
 }
 
-export async function exportPortfolioToExcel(companies: PortCo[]): Promise<void> {
+export async function exportPortfolioToExcel(companies: CompanyView[]): Promise<void> {
   const XLSX = await import("xlsx");
   const rows = companies.map(toRow);
   const ws = XLSX.utils.json_to_sheet(rows, {

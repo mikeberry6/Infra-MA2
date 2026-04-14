@@ -1,4 +1,4 @@
-import type { PortCo } from "./types";
+import type { PortCo } from "./portco-types";
 
 export const companies: PortCo[] = [
   {

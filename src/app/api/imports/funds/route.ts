@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { parseCsv } from "@/lib/csv";
 import {
   FUND_STRATEGY_MAP,
   FUND_STRUCTURE_MAP,
@@ -15,57 +16,100 @@ import type {
   FundRegionEnum,
 } from "@/generated/prisma/client";
 
+/**
+ * Parse semicolon-separated string into trimmed array, or pass through arrays.
+ */
+function toArray(value: unknown): string[] {
+  if (Array.isArray(value)) return value;
+  if (typeof value === "string" && value.trim()) {
+    return value.split(";").map((s) => s.trim()).filter(Boolean);
+  }
+  return [];
+}
+
+/**
+ * Parse the incoming request body as either JSON or CSV.
+ */
+async function parseRequestBody(request: NextRequest): Promise<Record<string, any>[]> {
+  const contentType = request.headers.get("content-type") || "";
+
+  if (contentType.includes("multipart/form-data")) {
+    const formData = await request.formData();
+    const file = formData.get("file") as File | null;
+    if (!file) {
+      throw new Error("No file provided in form data");
+    }
+    const csvText = await file.text();
+    return parseCsv(csvText).map((row) => ({
+      ...row,
+      strategies: toArray(row.strategies),
+      sectors: toArray(row.sectors),
+      regions: toArray(row.regions),
+      sourceUrls: toArray(row.sourceUrls),
+      sizeUsdMm: row.sizeUsdMm ? Number(row.sizeUsdMm) : null,
+    }));
+  }
+
+  // Default: JSON body
+  const body = await request.json();
+  if (Array.isArray(body)) return body;
+  if (body.funds && Array.isArray(body.funds)) return body.funds;
+  throw new Error("Request body must contain a 'funds' array or be a JSON array");
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { funds } = body;
+    const funds = await parseRequestBody(request);
 
-    if (!Array.isArray(funds)) {
+    if (funds.length === 0) {
       return NextResponse.json(
-        { error: "Request body must contain a 'funds' array" },
+        { error: "No funds provided" },
         { status: 400 },
       );
     }
 
-    const results = [];
-    for (const fund of funds) {
-      const structure = FUND_STRUCTURE_MAP[fund.structure] as FundStructure;
-      const fundStatus = FUND_STATUS_MAP[fund.status] as FundStatusEnum;
+    const results = await prisma.$transaction(async (tx) => {
+      const txResults: { fundName?: string; dbId?: string; status?: string; error?: string }[] = [];
 
-      if (!structure || !fundStatus) {
-        results.push({ fundName: fund.fundName, error: "Invalid structure or status" });
-        continue;
-      }
+      for (const fund of funds) {
+        const structure = FUND_STRUCTURE_MAP[fund.structure] as FundStructure;
+        const fundStatus = FUND_STATUS_MAP[fund.status] as FundStatusEnum;
 
-      const strategies = (fund.strategies || [])
-        .map((s: string) => FUND_STRATEGY_MAP[s])
-        .filter(Boolean) as FundStrategy[];
+        if (!structure || !fundStatus) {
+          txResults.push({ fundName: fund.fundName, error: "Invalid structure or status" });
+          continue;
+        }
 
-      const sectors = (fund.sectors || [])
-        .map((s: string) => FUND_SECTOR_MAP[s])
-        .filter(Boolean) as FundSectorEnum[];
+        const strategies = toArray(fund.strategies)
+          .map((s: string) => FUND_STRATEGY_MAP[s])
+          .filter(Boolean) as FundStrategy[];
 
-      const regions = (fund.regions || [])
-        .map((r: string) => FUND_REGION_MAP[r])
-        .filter(Boolean) as FundRegionEnum[];
+        const sectors = toArray(fund.sectors)
+          .map((s: string) => FUND_SECTOR_MAP[s])
+          .filter(Boolean) as FundSectorEnum[];
 
-      // Find or create the manager organization
-      let manager = await prisma.organization.findFirst({
-        where: { name: fund.managerName },
-      });
-      if (!manager) {
-        manager = await prisma.organization.create({
-          data: {
-            name: fund.managerName,
-            types: ["FUND_MANAGER"],
-            status: "PUBLISHED",
-          },
+        const regions = toArray(fund.regions)
+          .map((r: string) => FUND_REGION_MAP[r])
+          .filter(Boolean) as FundRegionEnum[];
+
+        // Find or create the manager organization
+        let manager = await tx.organization.findFirst({
+          where: { name: fund.managerName },
         });
-      }
+        if (!manager) {
+          manager = await tx.organization.create({
+            data: {
+              name: fund.managerName,
+              types: ["FUND_MANAGER"],
+              status: "PUBLISHED",
+            },
+          });
+        }
 
-      try {
-        const created = await prisma.fund.upsert({
-          where: { legacyId: fund.id },
+        const fundId = fund.id || fund.legacyId;
+
+        const created = await tx.fund.upsert({
+          where: { legacyId: fundId },
           update: {
             fundName: fund.fundName,
             strategies,
@@ -75,39 +119,40 @@ export async function POST(request: NextRequest) {
             regions,
           },
           create: {
-            legacyId: fund.id,
+            legacyId: fundId,
             managerId: manager.id,
             fundName: fund.fundName,
-            ticker: fund.ticker,
+            ticker: fund.ticker || null,
             investmentStrategy: fund.investmentStrategy || "",
-            size: fund.size,
-            sizeUsdMm: fund.sizeUsdMm,
-            vintage: fund.vintage,
+            size: fund.size || "",
+            sizeUsdMm: fund.sizeUsdMm ?? null,
+            vintage: fund.vintage || "",
             strategies,
             structure,
             fundStatus,
             sectors,
             regions,
-            sourceUrls: fund.sourceUrls || [],
+            sourceUrls: toArray(fund.sourceUrls),
             strategyUrl: fund.strategyUrl || "",
             status: "DRAFT",
           },
         });
-        results.push({ fundName: fund.fundName, dbId: created.id, status: "ok" });
-      } catch (err: any) {
-        results.push({ fundName: fund.fundName, error: err.message });
+
+        txResults.push({ fundName: fund.fundName, dbId: created.id, status: "ok" });
       }
-    }
+
+      return txResults;
+    });
 
     return NextResponse.json({
       imported: results.filter((r) => r.status === "ok").length,
       errors: results.filter((r) => r.error),
       results,
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Fund import failed:", error);
     return NextResponse.json(
-      { error: "Failed to import funds" },
+      { error: `Failed to import funds: ${error.message}` },
       { status: 500 },
     );
   }

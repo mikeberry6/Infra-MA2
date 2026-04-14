@@ -1,21 +1,17 @@
 "use client";
 
-import {
-  getDealStats,
-  getRegionStats,
-  getSectorColor,
-  getRegionColor,
-} from "@/data/deals";
-import type { DealSector } from "@/data/deals";
+import { getDealStats, getRegionStats } from "@/lib/deal-utils";
+import { getSectorColor, getRegionColor } from "@/lib/colors";
+import type { DealView } from "@/modules/shared/types";
 
-export function MarketInsightCompact() {
-  const stats = getDealStats();
-  const regionStats = getRegionStats();
+export function MarketInsightCompact({ deals }: { deals: DealView[] }) {
+  const stats = getDealStats(deals);
+  const regionStats = getRegionStats(deals);
 
   // Top 4 sectors
   const topSectors = Object.entries(stats.sectorCounts)
     .map(([sector, count]) => ({
-      sector: sector as DealSector,
+      sector,
       count,
       percentage: Math.round((count / stats.totalCount) * 100),
     }))

@@ -1,29 +1,10 @@
 "use client";
 
 import { useState, useMemo, useEffect, useCallback, Fragment } from "react";
-import {
-  funds,
-  FUND_STRATEGIES,
-  FUND_STATUSES,
-  FUND_SIZE_RANGES,
-  FUND_SECTORS,
-  getStrategyColor,
-  getStatusColor,
-  getSizeRangeColor,
-  getFundSectorColor,
-  getStructureColor,
-  matchesSizeRange,
-  groupFundsByManager,
-  getFundStats,
-} from "@/data/funds";
-import type {
-  Fund,
-  FundStrategy,
-  FundStatus,
-  FundSizeRange,
-  FundSector,
-  PortfolioCompany,
-} from "@/data/funds";
+import { FUND_STRATEGIES, FUND_STATUSES, FUND_SIZE_RANGES, FUND_SECTORS } from "@/lib/constants";
+import { getStrategyColor, getStatusColor, getSizeRangeColor, getFundSectorColor, getStructureColor } from "@/lib/colors";
+import { matchesSizeRange, groupFundsByManager, getFundStats } from "@/lib/fund-utils";
+import type { FundView, PortfolioCompanyView, DatabaseCounts } from "@/modules/shared/types";
 import {
   Search,
   X,
@@ -46,8 +27,6 @@ import { FilterChip } from "@/components/shared/FilterChip";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
-import { deals as dealsData } from "@/data/deals";
-import { companies as portcosData } from "@/data/portcos/companies";
 
 
 // ─── Fund Filter Bar ────────────────────────────────────────
@@ -67,14 +46,14 @@ function FundFilterBar({
 }: {
   search: string;
   onSearchChange: (v: string) => void;
-  activeStrategies: Set<FundStrategy>;
-  onToggleStrategy: (s: FundStrategy) => void;
-  activeStatuses: Set<FundStatus>;
-  onToggleStatus: (s: FundStatus) => void;
-  activeSizeRanges: Set<FundSizeRange>;
-  onToggleSizeRange: (r: FundSizeRange) => void;
-  activeSectors: Set<FundSector>;
-  onToggleSector: (s: FundSector) => void;
+  activeStrategies: Set<string>;
+  onToggleStrategy: (s: string) => void;
+  activeStatuses: Set<string>;
+  onToggleStatus: (s: string) => void;
+  activeSizeRanges: Set<string>;
+  onToggleSizeRange: (r: string) => void;
+  activeSectors: Set<string>;
+  onToggleSector: (s: string) => void;
   onClearAll: () => void;
 }) {
   const total =
@@ -101,26 +80,26 @@ function FundFilterBar({
           <MultiSelectDropdown
             label="Strategy"
             options={FUND_STRATEGIES}
-            selected={activeStrategies as Set<string>}
-            onToggle={(v) => onToggleStrategy(v as FundStrategy)}
-            getColor={(v) => getStrategyColor(v as FundStrategy)}
+            selected={activeStrategies}
+            onToggle={onToggleStrategy}
+            getColor={(v) => getStrategyColor(v)}
           />
         </div>
         <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Status"
             options={FUND_STATUSES}
-            selected={activeStatuses as Set<string>}
-            onToggle={(v) => onToggleStatus(v as FundStatus)}
-            getColor={(v) => getStatusColor(v as FundStatus)}
+            selected={activeStatuses}
+            onToggle={onToggleStatus}
+            getColor={(v) => getStatusColor(v)}
           />
         </div>
         <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
           <MultiSelectDropdown
             label="Fund Size"
             options={FUND_SIZE_RANGES}
-            selected={activeSizeRanges as Set<string>}
-            onToggle={(v) => onToggleSizeRange(v as FundSizeRange)}
+            selected={activeSizeRanges}
+            onToggle={onToggleSizeRange}
             getColor={() => getSizeRangeColor()}
           />
         </div>
@@ -128,9 +107,9 @@ function FundFilterBar({
           <MultiSelectDropdown
             label="Sector"
             options={FUND_SECTORS}
-            selected={activeSectors as Set<string>}
-            onToggle={(v) => onToggleSector(v as FundSector)}
-            getColor={(v) => getFundSectorColor(v as FundSector)}
+            selected={activeSectors}
+            onToggle={onToggleSector}
+            getColor={(v) => getFundSectorColor(v)}
             align="right"
           />
         </div>
@@ -240,7 +219,7 @@ function RankingColumn({ title, rows }: { title: string; rows: SimpleRow[] }) {
 
 // ─── Fund Insights Hero ─────────────────────────────────────
 
-function FundsInsightsHero({ filteredFunds }: { filteredFunds: Fund[] }) {
+function FundsInsightsHero({ filteredFunds }: { filteredFunds: FundView[] }) {
   const stats = useMemo(() => getFundStats(filteredFunds), [filteredFunds]);
 
   const strategyRanking = useMemo(
@@ -304,8 +283,8 @@ function FundVehicleCard({
   fund,
   onSelect,
 }: {
-  fund: Fund;
-  onSelect: (fund: Fund) => void;
+  fund: FundView;
+  onSelect: (fund: FundView) => void;
 }) {
   return (
     <button
@@ -391,8 +370,8 @@ function FundRow({
   onSelect,
   isLast,
 }: {
-  fund: Fund;
-  onSelect: (fund: Fund) => void;
+  fund: FundView;
+  onSelect: (fund: FundView) => void;
   isLast?: boolean;
 }) {
   return (
@@ -446,8 +425,8 @@ function ManagerGroupedTable({
   sortedManagers,
   onSelectFund,
 }: {
-  sortedManagers: [string, Fund[]][];
-  onSelectFund: (fund: Fund) => void;
+  sortedManagers: [string, FundView[]][];
+  onSelectFund: (fund: FundView) => void;
 }) {
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const toggle = (name: string) =>
@@ -564,8 +543,8 @@ function AllFundsTable({
   funds: displayFunds,
   onSelectFund,
 }: {
-  funds: Fund[];
-  onSelectFund: (fund: Fund) => void;
+  funds: FundView[];
+  onSelectFund: (fund: FundView) => void;
 }) {
   const [sortField, setSortField] = useState<"name" | "strategy" | "size" | "vintage">("name");
   const [sortAsc, setSortAsc] = useState(true);
@@ -662,10 +641,10 @@ function FundDrawer({
   allFunds,
   onSelectFund,
 }: {
-  fund: Fund;
+  fund: FundView;
   onClose: () => void;
-  allFunds: Fund[];
-  onSelectFund: (fund: Fund) => void;
+  allFunds: FundView[];
+  onSelectFund: (fund: FundView) => void;
 }) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -682,14 +661,14 @@ function FundDrawer({
   // Aggregate all portfolio companies across the firm (all funds for this manager)
   const firmFunds = [fund, ...siblingFunds];
   const firmPortfolio = useMemo(() => {
-    const companiesByFund: { company: PortfolioCompany; fundName: string; strategies: FundStrategy[] }[] = [];
+    const companiesByFund: { company: PortfolioCompanyView; fundName: string; strategies: string[] }[] = [];
     for (const ff of firmFunds) {
       for (const pc of ff.portfolioCompanies) {
         companiesByFund.push({ company: pc, fundName: ff.fundName, strategies: ff.strategies });
       }
     }
     // Group by sector → subsector
-    const bySector: Record<string, Record<string, { company: PortfolioCompany; fundName: string; strategies: FundStrategy[] }[]>> = {};
+    const bySector: Record<string, Record<string, { company: PortfolioCompanyView; fundName: string; strategies: string[] }[]>> = {};
     for (const entry of companiesByFund) {
       const sector = entry.company.sector;
       const subsector = entry.company.subsector || "General";
@@ -700,7 +679,7 @@ function FundDrawer({
     // Sort sectors by company count (desc), subsectors alphabetically
     const sortedSectors = Object.entries(bySector)
       .map(([sector, subsectors]) => ({
-        sector: sector as FundSector,
+        sector,
         subsectors: Object.entries(subsectors)
           .map(([sub, entries]) => ({ subsector: sub, entries: entries.sort((a, b) => a.company.name.localeCompare(b.company.name)) }))
           .sort((a, b) => a.subsector.localeCompare(b.subsector)),
@@ -1012,14 +991,14 @@ function FundDrawer({
 
 // ─── Main Component ─────────────────────────────────────────
 
-export function FundDatabase() {
+export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: DatabaseCounts }) {
   // ── Fund state ──
   const [fundSearch, setFundSearch] = useState("");
-  const [activeStrategies, setActiveStrategies] = useState<Set<FundStrategy>>(new Set());
-  const [activeStatuses, setActiveStatuses] = useState<Set<FundStatus>>(new Set());
-  const [activeSizeRanges, setActiveSizeRanges] = useState<Set<FundSizeRange>>(new Set());
-  const [activeSectors, setActiveSectors] = useState<Set<FundSector>>(new Set());
-  const [selectedFund, setSelectedFund] = useState<Fund | null>(null);
+  const [activeStrategies, setActiveStrategies] = useState<Set<string>>(new Set());
+  const [activeStatuses, setActiveStatuses] = useState<Set<string>>(new Set());
+  const [activeSizeRanges, setActiveSizeRanges] = useState<Set<string>>(new Set());
+  const [activeSectors, setActiveSectors] = useState<Set<string>>(new Set());
+  const [selectedFund, setSelectedFund] = useState<FundView | null>(null);
   const [fundView, setFundView] = useState<"managers" | "all">("managers");
 
   const debouncedFundSearch = useDebounce(fundSearch, 300);
@@ -1075,7 +1054,7 @@ export function FundDatabase() {
 
   return (
     <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-3 sm:py-4">
-      <DatabaseTiles counts={{ deals: dealsData.length, funds: funds.length, portfolio: portcosData.length }} />
+      <DatabaseTiles counts={counts} />
 
       {/* Breadcrumb */}
       <div className="flex items-center gap-1.5 mt-1.5 mb-1">

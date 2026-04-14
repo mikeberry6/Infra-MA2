@@ -136,16 +136,16 @@ const STATUS_COLORS: Record<PortCoStatus, string> = {
   "Realized": "#a1a1aa",
 };
 
-export function getPortCoSectorColor(sector: PortCoSector): string {
-  return SECTOR_COLORS[sector] ?? "#a1a1aa";
+export function getPortCoSectorColor(sector: string): string {
+  return SECTOR_COLORS[sector as PortCoSector] ?? "#a1a1aa";
 }
 
-export function getPortCoRegionColor(region: PortCoRegion): string {
-  return REGION_COLORS[region] ?? "#a1a1aa";
+export function getPortCoRegionColor(region: string): string {
+  return REGION_COLORS[region as PortCoRegion] ?? "#a1a1aa";
 }
 
-export function getPortCoStatusColor(status: PortCoStatus): string {
-  return STATUS_COLORS[status] ?? "#a1a1aa";
+export function getPortCoStatusColor(status: string): string {
+  return STATUS_COLORS[status as PortCoStatus] ?? "#a1a1aa";
 }
 
 const COUNTRY_TAG_COLORS: Record<PortCoCountryTag, string> = {
@@ -154,25 +154,25 @@ const COUNTRY_TAG_COLORS: Record<PortCoCountryTag, string> = {
   "Mexico": "#22c55e",
 };
 
-export function getPortCoCountryTagColor(tag: PortCoCountryTag): string {
-  return COUNTRY_TAG_COLORS[tag] ?? "#a1a1aa";
+export function getPortCoCountryTagColor(tag: string): string {
+  return COUNTRY_TAG_COLORS[tag as PortCoCountryTag] ?? "#a1a1aa";
 }
 
 // ─── Utility Functions ──────────────────────────────────────
 
-export function getUniqueCountries(companies: PortCo[]): string[] {
+export function getUniqueCountries(companies: { country: string }[]): string[] {
   return Array.from(new Set(companies.map((c) => c.country))).sort();
 }
 
-export function getUniqueFirms(companies: PortCo[]): string[] {
+export function getUniqueFirms(companies: { investmentFirm: string }[]): string[] {
   return Array.from(new Set(companies.map((c) => c.investmentFirm))).sort();
 }
 
-export function getUniqueSubsectors(companies: PortCo[]): string[] {
+export function getUniqueSubsectors(companies: { subsector: string }[]): string[] {
   return Array.from(new Set(companies.map((c) => c.subsector).filter(Boolean))).sort();
 }
 
-export function getUniqueVehicles(companies: PortCo[]): string[] {
+export function getUniqueVehicles(companies: { ownershipVehicle: string }[]): string[] {
   return Array.from(new Set(companies.map((c) => c.ownershipVehicle))).sort();
 }
 
@@ -189,6 +189,6 @@ const MILESTONE_CATEGORY_COLORS: Record<MilestoneCategory, string> = {
   Other: "#71717a",
 };
 
-export function getMilestoneCategoryColor(category: MilestoneCategory): string {
-  return MILESTONE_CATEGORY_COLORS[category] ?? "#71717a";
+export function getMilestoneCategoryColor(category: string): string {
+  return MILESTONE_CATEGORY_COLORS[category as MilestoneCategory] ?? "#71717a";
 }

@@ -223,24 +223,24 @@ const STRUCTURE_COLORS: Record<FundStructure, string> = {
   "Listed / Closed-End": "#6366f1",
 };
 
-export function getStrategyColor(strategy: FundStrategy): string {
-  return STRATEGY_COLORS[strategy] ?? "#a1a1aa";
+export function getStrategyColor(strategy: string): string {
+  return STRATEGY_COLORS[strategy as FundStrategy] ?? "#a1a1aa";
 }
 
-export function getStatusColor(status: FundStatus): string {
-  return STATUS_COLORS[status] ?? "#a1a1aa";
+export function getStatusColor(status: string): string {
+  return STATUS_COLORS[status as FundStatus] ?? "#a1a1aa";
 }
 
-export function getFundSectorColor(sector: FundSector): string {
-  return FUND_SECTOR_COLORS[sector] ?? "#a1a1aa";
+export function getFundSectorColor(sector: string): string {
+  return FUND_SECTOR_COLORS[sector as FundSector] ?? "#a1a1aa";
 }
 
-export function getFundRegionColor(region: FundRegion): string {
-  return FUND_REGION_COLORS[region] ?? "#a1a1aa";
+export function getFundRegionColor(region: string): string {
+  return FUND_REGION_COLORS[region as FundRegion] ?? "#a1a1aa";
 }
 
-export function getStructureColor(structure: FundStructure): string {
-  return STRUCTURE_COLORS[structure] ?? "#a1a1aa";
+export function getStructureColor(structure: string): string {
+  return STRUCTURE_COLORS[structure as FundStructure] ?? "#a1a1aa";
 }
 
 export function getSizeRangeColor(): string {
@@ -249,7 +249,7 @@ export function getSizeRangeColor(): string {
 
 // ─── Size Range Filter Logic ─────────────────────────────────
 
-export function matchesSizeRange(sizeUsdMm: number | null, range: FundSizeRange): boolean {
+export function matchesSizeRange(sizeUsdMm: number | null, range: string): boolean {
   if (sizeUsdMm === null) return true; // Unknown size always passes
   switch (range) {
     case "< $500M": return sizeUsdMm < 500;
@@ -263,8 +263,8 @@ export function matchesSizeRange(sizeUsdMm: number | null, range: FundSizeRange)
 
 // ─── Utility Functions ───────────────────────────────────────
 
-export function groupFundsByManager(fundList: Fund[]): Map<string, Fund[]> {
-  const map = new Map<string, Fund[]>();
+export function groupFundsByManager<T extends { managerName: string }>(fundList: T[]): Map<string, T[]> {
+  const map = new Map<string, T[]>();
   for (const fund of fundList) {
     const existing = map.get(fund.managerName);
     if (existing) {
@@ -276,7 +276,7 @@ export function groupFundsByManager(fundList: Fund[]): Map<string, Fund[]> {
   return map;
 }
 
-export function getFundStats(fundList: Fund[]) {
+export function getFundStats(fundList: { managerName: string; sizeUsdMm: number | null }[]) {
   const managerSet = new Set(fundList.map((f) => f.managerName));
   const totalAum = fundList.reduce((sum, f) => sum + (f.sizeUsdMm ?? 0), 0);
   return {

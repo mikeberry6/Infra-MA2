@@ -1,13 +1,9 @@
 "use client";
 
 import { useMemo } from "react";
-import {
-  getRecentDeals,
-  getDealStats,
-  getSectorColor,
-  getRegionStats,
-} from "@/data/deals";
-import type { DealRegion } from "@/data/deals";
+import { getDealStats, getRecentDeals, getRegionStats } from "@/lib/deal-utils";
+import { getSectorColor } from "@/lib/colors";
+import type { DealView } from "@/modules/shared/types";
 
 // Convert lat/lng to x,y on a sphere projection
 function latLngToSphere(
@@ -27,7 +23,7 @@ function latLngToSphere(
   return { x, y, visible: z > -0.1 };
 }
 
-const REGION_LOCATIONS: Record<DealRegion, { lat: number; lng: number }> = {
+const REGION_LOCATIONS: Record<string, { lat: number; lng: number }> = {
   "North America": { lat: 40, lng: -100 },
   Europe: { lat: 50, lng: 10 },
   "Asia-Pacific": { lat: 35, lng: 120 },
@@ -60,10 +56,10 @@ function generateSimplePath(
   return path;
 }
 
-export function DealGlobeCompact() {
-  const stats = getDealStats();
-  const regionStats = getRegionStats();
-  const recentDeals = getRecentDeals();
+export function DealGlobeCompact({ deals }: { deals: DealView[] }) {
+  const stats = getDealStats(deals);
+  const regionStats = getRegionStats(deals);
+  const recentDeals = getRecentDeals(deals);
 
   const cx = 80;
   const cy = 80;

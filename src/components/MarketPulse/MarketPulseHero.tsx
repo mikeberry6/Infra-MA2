@@ -1,18 +1,15 @@
 "use client";
 
-import {
-  getDealStats,
-  getMarketNarrative,
-  getSectorDistribution,
-  getSectorColor,
-} from "@/data/deals";
+import { getDealStats, getMarketNarrative, getSectorDistribution } from "@/lib/deal-utils";
+import { getSectorColor } from "@/lib/colors";
 import { AmbientGradient } from "./AmbientGradient";
 import { SectorDistributionBar } from "./SectorDistributionBar";
+import type { DealView } from "@/modules/shared/types";
 
-export function MarketPulseHero() {
-  const stats = getDealStats();
-  const narrative = getMarketNarrative();
-  const sectorDist = getSectorDistribution();
+export function MarketPulseHero({ deals }: { deals: DealView[] }) {
+  const stats = getDealStats(deals);
+  const narrative = getMarketNarrative(deals);
+  const sectorDist = getSectorDistribution(deals);
   const primaryColor = getSectorColor(stats.topSector);
 
   return (

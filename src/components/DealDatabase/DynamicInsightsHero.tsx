@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo } from "react";
-import type { Deal, DealSector, DealRegion } from "@/data/deals";
-import { getSectorColor, getRegionColor } from "@/data/deals";
+import type { DealView } from "@/modules/shared/types";
+import { getSectorColor, getRegionColor } from "@/lib/colors";
 
 // ─── Activity type colors (base category) ───────────────────
 const ACTIVITY_COLORS: Record<string, string> = {
@@ -110,7 +110,7 @@ function splitEntities(field: string): string[] {
   return field.split(/\s+&\s+|\s+\/\s+/).map((s) => s.trim()).filter(Boolean);
 }
 
-function deriveFundRanking(deals: Deal[]): FundRow[] {
+function deriveFundRanking(deals: DealView[]): FundRow[] {
   // fund → activity → count
   const fundActivities: Record<string, Record<string, number>> = {};
 
@@ -152,7 +152,7 @@ function deriveFundRanking(deals: Deal[]): FundRow[] {
   return rows.sort((a, b) => b.total - a.total).slice(0, 5);
 }
 
-function deriveSectorRanking(deals: Deal[]): SimpleRow[] {
+function deriveSectorRanking(deals: DealView[]): SimpleRow[] {
   const counts: Record<string, number> = {};
   for (const d of deals) {
     counts[d.sector] = (counts[d.sector] ?? 0) + 1;
@@ -161,13 +161,13 @@ function deriveSectorRanking(deals: Deal[]): SimpleRow[] {
     .map(([name, count]) => ({
       name,
       count,
-      color: getSectorColor(name as DealSector),
+      color: getSectorColor(name),
     }))
     .sort((a, b) => b.count - a.count)
     .slice(0, 5);
 }
 
-function deriveRegionRanking(deals: Deal[]): SimpleRow[] {
+function deriveRegionRanking(deals: DealView[]): SimpleRow[] {
   const counts: Record<string, number> = {};
   for (const d of deals) {
     counts[d.region] = (counts[d.region] ?? 0) + 1;
@@ -176,7 +176,7 @@ function deriveRegionRanking(deals: Deal[]): SimpleRow[] {
     .map(([name, count]) => ({
       name,
       count,
-      color: getRegionColor(name as DealRegion),
+      color: getRegionColor(name),
     }))
     .sort((a, b) => b.count - a.count)
     .slice(0, 5);
@@ -289,7 +289,7 @@ function ActivityLegend({ activities }: { activities: string[] }) {
 export function DynamicInsightsHero({
   filteredDeals,
 }: {
-  filteredDeals: Deal[];
+  filteredDeals: DealView[];
 }) {
   const fundRanking = useMemo(() => deriveFundRanking(filteredDeals), [filteredDeals]);
   const sectorRanking = useMemo(() => deriveSectorRanking(filteredDeals), [filteredDeals]);

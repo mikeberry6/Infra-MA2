@@ -1,0 +1,67 @@
+export const dynamic = "force-dynamic";
+
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { prisma } from "@/lib/prisma";
+import FundForm from "@/components/admin/FundForm";
+import { updateFund } from "@/modules/admin/actions";
+import {
+  FUND_STRATEGY_DISPLAY,
+  FUND_STRUCTURE_DISPLAY,
+  FUND_STATUS_DISPLAY,
+  FUND_SECTOR_DISPLAY,
+  FUND_REGION_DISPLAY,
+} from "@/modules/shared/enum-maps";
+import type { FundView } from "@/modules/shared/types";
+
+export const metadata = { title: "Admin - Edit Fund" };
+
+export default async function EditFundPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+
+  const fund = await prisma.fund.findUnique({
+    where: { id },
+    include: {
+      manager: { select: { name: true } },
+    },
+  });
+
+  if (!fund) return notFound();
+
+  const initialData: Partial<FundView> = {
+    id: fund.id,
+    legacyId: fund.legacyId,
+    managerName: fund.manager.name,
+    fundName: fund.fundName,
+    ticker: fund.ticker,
+    investmentStrategy: fund.investmentStrategy,
+    sourceUrls: fund.sourceUrls,
+    size: fund.size,
+    sizeUsdMm: fund.sizeUsdMm,
+    vintage: fund.vintage,
+    strategies: fund.strategies.map((s) => FUND_STRATEGY_DISPLAY[s]),
+    structure: FUND_STRUCTURE_DISPLAY[fund.structure],
+    status: FUND_STATUS_DISPLAY[fund.fundStatus],
+    sectors: fund.sectors.map((s) => FUND_SECTOR_DISPLAY[s]),
+    regions: fund.regions.map((r) => FUND_REGION_DISPLAY[r]),
+    strategyUrl: fund.strategyUrl,
+  };
+
+  const boundUpdate = updateFund.bind(null, id);
+
+  return (
+    <div className="min-h-screen bg-[#09090B] text-white p-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-6">
+          <Link href="/admin/funds" className="text-sm text-[#71717A] hover:text-white mb-2 inline-block">
+            &larr; Back to Funds
+          </Link>
+          <h1 className="text-2xl font-bold">Edit Fund</h1>
+          <p className="text-sm text-[#71717A] mt-1">{fund.fundName} &mdash; {fund.legacyId}</p>
+        </div>
+
+        <FundForm initialData={initialData} action={boundUpdate} mode="edit" />
+      </div>
+    </div>
+  );
+}

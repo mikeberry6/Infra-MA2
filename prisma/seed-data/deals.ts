@@ -5044,7 +5044,7 @@ export const deals: Deal[] = [
 ];
 
 // Helper to get sector color
-export function getSectorColor(sector: DealSector): string {
+export function getSectorColor(sector: string): string {
   switch (sector) {
     case "Transportation":
       return "#8b5cf6";
@@ -5066,7 +5066,7 @@ export function getSectorColor(sector: DealSector): string {
 }
 
 // Helper to get category badge color
-export function getCategoryColor(category: DealCategory): string {
+export function getCategoryColor(category: string): string {
   if (category.startsWith("Acquisition")) return "#3b82f6";
   if (category.startsWith("Sale")) return "#f59e0b";
   if (category === "Platform Launch") return "#06b6d4";
@@ -5076,7 +5076,7 @@ export function getCategoryColor(category: DealCategory): string {
 }
 
 // Helper to get region color
-export function getRegionColor(region: DealRegion): string {
+export function getRegionColor(region: string): string {
   switch (region) {
     case "North America":
       return "#3b82f6";

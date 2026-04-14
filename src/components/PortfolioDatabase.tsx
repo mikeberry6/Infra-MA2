@@ -1,23 +1,11 @@
 "use client";
 
 import { useState, useMemo, useEffect, useCallback } from "react";
-import {
-  portcos,
-  PORTCO_SECTORS,
-  PORTCO_REGIONS,
-  PORTCO_COUNTRY_TAGS,
-  getPortCoSectorColor,
-  getPortCoRegionColor,
-  getPortCoStatusColor,
-  getPortCoCountryTagColor,
-  getMilestoneCategoryColor,
-  getUniqueFirms,
-} from "@/data/portcos";
+import { PORTCO_SECTORS, PORTCO_REGIONS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
+import { getPortCoSectorColor, getPortCoRegionColor, getPortCoStatusColor, getPortCoCountryTagColor, getMilestoneCategoryColor, getStrategyColor } from "@/lib/colors";
+import { getUniqueFirms } from "@/lib/portco-utils";
 import { exportPortfolioToExcel } from "@/utils/exportPortfolio";
-import type { PortCo, PortCoSector, PortCoRegion, PortCoCountryTag } from "@/data/portcos";
-import { funds, getStrategyColor } from "@/data/funds";
-import type { FundStrategy } from "@/data/funds";
-import { deals as dealsData } from "@/data/deals";
+import type { CompanyView, FundView, DatabaseCounts } from "@/modules/shared/types";
 import {
   Search,
   X,
@@ -95,7 +83,7 @@ function PortCoFilterBar({
             options={PORTCO_SECTORS}
             selected={activeSectors}
             onToggle={onToggleSector}
-            getColor={(v) => getPortCoSectorColor(v as PortCoSector)}
+            getColor={(v) => getPortCoSectorColor(v)}
           />
         </div>
         <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
@@ -104,7 +92,7 @@ function PortCoFilterBar({
             options={PORTCO_COUNTRY_TAGS as unknown as string[]}
             selected={activeCountryTags}
             onToggle={onToggleCountryTag}
-            getColor={(v) => getPortCoCountryTagColor(v as PortCoCountryTag)}
+            getColor={(v) => getPortCoCountryTagColor(v)}
           />
         </div>
         <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
@@ -134,10 +122,10 @@ function PortCoFilterBar({
             Active:
           </span>
           {Array.from(activeSectors).map((s) => (
-            <FilterChip key={`sec-${s}`} label={s} color={getPortCoSectorColor(s as PortCoSector)} onRemove={() => onToggleSector(s)} />
+            <FilterChip key={`sec-${s}`} label={s} color={getPortCoSectorColor(s)} onRemove={() => onToggleSector(s)} />
           ))}
           {Array.from(activeCountryTags).map((c) => (
-            <FilterChip key={`ctr-${c}`} label={c} color={getPortCoCountryTagColor(c as PortCoCountryTag)} onRemove={() => onToggleCountryTag(c)} />
+            <FilterChip key={`ctr-${c}`} label={c} color={getPortCoCountryTagColor(c)} onRemove={() => onToggleCountryTag(c)} />
           ))}
           {Array.from(activeFirms).map((f) => (
             <FilterChip key={`firm-${f}`} label={f} color="#a78bfa" onRemove={() => onToggleFirm(f)} />
@@ -223,7 +211,7 @@ function RankingColumn({ title, rows }: { title: string; rows: SimpleRow[] }) {
   );
 }
 
-function PortCoInsightsHero({ companies }: { companies: PortCo[] }) {
+function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
   const sectorRanking = useMemo(
     () => deriveRanking(companies.map((c) => c.sector), getPortCoSectorColor),
     [companies]
@@ -279,13 +267,15 @@ function PortCoInsightsHero({ companies }: { companies: PortCo[] }) {
   );
 }
 
-// ─── PortCo Drawer ──────────────────────────────────────────
+// ─── CompanyView Drawer ──────────────────────────────────────────
 
 function PortCoDrawer({
   company,
+  funds,
   onClose,
 }: {
-  company: PortCo;
+  company: CompanyView;
+  funds: FundView[];
   onClose: () => void;
 }) {
   const [showAllMilestones, setShowAllMilestones] = useState(false);
@@ -312,7 +302,7 @@ function PortCoDrawer({
     (/\bPresident\b/i.test(exec.title) && !/\bVice\s*President\b/i.test(exec.title))
   );
 
-  const detailRows: { label: string; value: string; dot?: string; badges?: FundStrategy[] }[] = [
+  const detailRows: { label: string; value: string; dot?: string; badges?: string[] }[] = [
     { label: "Firm", value: company.investmentFirm },
     { label: "Fund", value: company.ownershipVehicle },
     ...(matchedFund?.strategies?.length
@@ -622,14 +612,14 @@ function PortCoDrawer({
   );
 }
 
-// ─── PortCo Card (mobile) ───────────────────────────────────
+// ─── CompanyView Card (mobile) ───────────────────────────────────
 
 function PortCoCard({
   company,
   onSelect,
 }: {
-  company: PortCo;
-  onSelect: (company: PortCo) => void;
+  company: CompanyView;
+  onSelect: (company: CompanyView) => void;
 }) {
   return (
     <button
@@ -672,14 +662,14 @@ function PortCoCard({
   );
 }
 
-// ─── PortCo Table ───────────────────────────────────────────
+// ─── CompanyView Table ───────────────────────────────────────────
 
 function PortCoTable({
   companies,
   onSelect,
 }: {
-  companies: PortCo[];
-  onSelect: (company: PortCo) => void;
+  companies: CompanyView[];
+  onSelect: (company: CompanyView) => void;
 }) {
   const [sortField, setSortField] = useState<"name" | "sector" | "country" | "firm">("name");
   const [sortAsc, setSortAsc] = useState(true);
@@ -808,13 +798,13 @@ function PortCoTable({
 
 // ─── Main Component ─────────────────────────────────────────
 
-export function PortfolioDatabase() {
+export function PortfolioDatabase({ companies: portcos, funds, counts }: { companies: CompanyView[]; funds: FundView[]; counts: DatabaseCounts }) {
   const [search, setSearch] = useState("");
   const [activeSectors, setActiveSectors] = useState<Set<string>>(new Set());
   const [activeCountryTags, setActiveCountryTags] = useState<Set<string>>(new Set());
   const [activeFirms, setActiveFirms] = useState<Set<string>>(new Set());
   const [activeInvestmentYears, setActiveInvestmentYears] = useState<Set<string>>(new Set());
-  const [selectedCompany, setSelectedCompany] = useState<PortCo | null>(null);
+  const [selectedCompany, setSelectedCompany] = useState<CompanyView | null>(null);
 
   const debouncedSearch = useDebounce(search, 300);
 
@@ -868,7 +858,7 @@ export function PortfolioDatabase() {
 
   return (
     <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-3 sm:py-4">
-      <DatabaseTiles counts={{ deals: dealsData.length, funds: funds.length, portfolio: portcos.length }} />
+      <DatabaseTiles counts={counts} />
 
       {/* Breadcrumb */}
       <div className="flex items-center gap-1.5 mt-1.5 mb-1">
@@ -926,6 +916,7 @@ export function PortfolioDatabase() {
       {selectedCompany && (
         <PortCoDrawer
           company={selectedCompany}
+          funds={funds}
           onClose={() => setSelectedCompany(null)}
         />
       )}

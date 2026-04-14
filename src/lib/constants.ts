@@ -1,24 +1,21 @@
 // Canonical constant arrays for filter UIs
-// Re-exported from original data files for now; will become the single source
-// once the TS data files are removed.
+// Self-contained — no imports from data files.
 
-export {
-  FUND_STRATEGIES,
-  FUND_STATUSES,
-  FUND_SECTORS,
-  FUND_REGIONS,
-  FUND_STRUCTURES,
-  FUND_SIZE_RANGES,
-} from "@/data/funds";
+import type {
+  FundStrategy,
+  FundStatus,
+  FundSector,
+  FundRegion,
+  FundStructure,
+  FundSizeRange,
+  PortCoSector,
+  PortCoRegion,
+  PortCoStatus,
+  PortCoCountryTag,
+} from "@/lib/types";
 
-export {
-  PORTCO_SECTORS,
-  PORTCO_REGIONS,
-  PORTCO_STATUSES,
-  PORTCO_COUNTRY_TAGS,
-} from "@/data/portcos/types";
+// ─── Deal Constants ────────────────────────────────────────
 
-// Deal-level constants (not separately exported from deals.ts, defined here)
 export const DEAL_SECTORS = [
   "Transportation",
   "Power & ET",
@@ -57,3 +54,92 @@ export const DEAL_STATUSES = [
   "Pending Regulatory Approval",
   "Terminated",
 ] as const;
+
+// ─── Fund Constants ────────────────────────────────────────
+
+export const FUND_STRATEGIES: FundStrategy[] = [
+  "Core",
+  "Core-Plus",
+  "Value-Add",
+  "Opportunistic",
+  "Growth",
+  "Credit / Debt",
+  "Fund-of-Funds",
+  "Secondaries",
+  "Co-Investments",
+  "Retail Act '40",
+];
+
+export const FUND_STATUSES: FundStatus[] = [
+  "Evergreen",
+  "Financial Close",
+  "Raising",
+];
+
+export const FUND_SECTORS: FundSector[] = [
+  "Transportation",
+  "Utilities",
+  "Digital Infrastructure",
+  "Renewables / Energy Transition",
+  "Waste / Environmental Services",
+  "Power Generation",
+  "Midstream / Energy",
+  "Social Infrastructure",
+  "Communications",
+  "Logistics",
+  "Water",
+];
+
+export const FUND_REGIONS: FundRegion[] = [
+  "North America",
+  "Europe",
+  "Asia-Pacific",
+  "Latin America",
+  "Middle East & Africa",
+  "Global",
+];
+
+export const FUND_STRUCTURES: FundStructure[] = [
+  "Open-End",
+  "Closed-End",
+  "Permanent Capital",
+  "Evergreen",
+  "Listed / Evergreen",
+  "Listed / Closed-End",
+];
+
+export const FUND_SIZE_RANGES: FundSizeRange[] = [
+  "< $500M",
+  "$500M – $1B",
+  "$1B – $5B",
+  "$5B – $10B",
+  "$10B+",
+];
+
+// ─── PortCo Constants ──────────────────────────────────────
+
+export const PORTCO_SECTORS: PortCoSector[] = [
+  "Transportation",
+  "Digital Infrastructure",
+  "Energy Transition",
+  "Power Generation",
+  "Midstream Energy",
+  "Regulated Utilities",
+  "Utilities",
+  "Social Infrastructure",
+  "Environmental / Waste",
+  "Renewable Resources",
+  "Infrastructure Services",
+];
+
+export const PORTCO_REGIONS: PortCoRegion[] = [
+  "North America",
+  "Europe",
+  "Asia-Pacific",
+  "Latin America",
+  "Global",
+];
+
+export const PORTCO_STATUSES: PortCoStatus[] = ["Active", "Realized"];
+
+export const PORTCO_COUNTRY_TAGS: PortCoCountryTag[] = ["United States", "Canada", "Mexico"];
