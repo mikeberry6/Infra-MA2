@@ -234,40 +234,39 @@ export async function POST() {
     const errors: string[] = [];
 
     for (const correction of CORRECTIONS) {
-      // Find company by name + country
-      const company = await prisma.company.findFirst({
+      // Find company by name + country, fallback to name only
+      let company = await prisma.company.findFirst({
         where: { name: correction.name, country: correction.country },
-        select: { id: true, name: true },
+        select: { id: true },
       });
 
       if (!company) {
-        // Try matching by name only (country may differ slightly)
-        const byName = await prisma.company.findFirst({
+        company = await prisma.company.findFirst({
           where: { name: correction.name },
-          select: { id: true, name: true },
+          select: { id: true },
         });
+      }
 
-        if (!byName) {
-          notFound++;
-          errors.push(`Not found: ${correction.name}`);
-          continue;
-        }
-
-        // Update all ownership periods for this company
-        const result = await prisma.ownershipPeriod.updateMany({
-          where: { companyId: byName.id },
-          data: { investmentYear: correction.correctYear },
-        });
-        updated += result.count;
+      if (!company) {
+        notFound++;
+        errors.push(`Not found: ${correction.name}`);
         continue;
       }
 
-      // Update all ownership periods for this company
-      const result = await prisma.ownershipPeriod.updateMany({
+      // Find all ownership periods for this company and update each individually
+      // (updateMany uses transactions internally which Neon HTTP doesn't support)
+      const periods = await prisma.ownershipPeriod.findMany({
         where: { companyId: company.id },
-        data: { investmentYear: correction.correctYear },
+        select: { id: true },
       });
-      updated += result.count;
+
+      for (const period of periods) {
+        await prisma.ownershipPeriod.update({
+          where: { id: period.id },
+          data: { investmentYear: correction.correctYear },
+        });
+        updated++;
+      }
     }
 
     return NextResponse.json({
