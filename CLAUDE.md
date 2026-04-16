@@ -186,6 +186,7 @@ When adding portfolio companies to `src/data/portcos/companies.ts`:
 - **Buyer name shortening**: The `BUYER_SHORT_NAMES` map in `DealDatabase.tsx` abbreviates long fund names for table display (e.g. "Igneo Infrastructure Partners" → "Igneo", "Macquarie Asset Management" → "Macquarie AM"). The `shortenBuyer()` function also strips "(via XYZ)" suffixes and splits multi-buyer names on " / " to stack them vertically. When adding new deals with long buyer names, add an entry to `BUYER_SHORT_NAMES` if the name would truncate in the table.
 - The full unabbreviated buyer name is still stored in `deal.buyer` and shown in the deal drawer and mobile card — `BUYER_SHORT_NAMES` only affects the desktop table column.
 
+
 ## Adding New Deals
 
 When adding deals to `src/data/deals.ts`:
