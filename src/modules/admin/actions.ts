@@ -432,6 +432,8 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
       yearFounded: parseFormNumber(formData, "yearFounded"),
       investmentYear: parseFormNumber(formData, "investmentYear"),
       headquarters: (formData.get("headquarters") as string) || undefined,
+      investmentFirm: (formData.get("investmentFirm") as string) || undefined,
+      ownershipVehicle: (formData.get("ownershipVehicle") as string) || undefined,
     };
 
     const parsed = companySchema.safeParse(raw);
@@ -452,6 +454,39 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
         headquarters: c.headquarters || null,
       },
     });
+
+    if (c.investmentFirm) {
+      const orgId = await findOrCreateOrg(c.investmentFirm);
+      const fund = c.ownershipVehicle
+        ? await prisma.fund.findFirst({ where: { fundName: c.ownershipVehicle } })
+        : null;
+      await prisma.ownershipPeriod.upsert({
+        where: { companyId_organizationId: { companyId: id, organizationId: orgId } },
+        update: {
+          fundId: fund?.id ?? null,
+          vehicleName: c.ownershipVehicle || c.investmentFirm,
+          investmentYear: c.investmentYear ?? null,
+          isActive: c.status !== "Realized",
+        },
+        create: {
+          companyId: id, organizationId: orgId, fundId: fund?.id ?? null,
+          vehicleName: c.ownershipVehicle || c.investmentFirm,
+          investmentYear: c.investmentYear ?? null, isActive: c.status !== "Realized",
+        },
+      });
+    } else if (c.investmentYear !== undefined) {
+      const primary = await prisma.ownershipPeriod.findFirst({
+        where: { companyId: id },
+        orderBy: { createdAt: "desc" },
+        select: { id: true },
+      });
+      if (primary) {
+        await prisma.ownershipPeriod.update({
+          where: { id: primary.id },
+          data: { investmentYear: c.investmentYear },
+        });
+      }
+    }
 
     revalidateAll();
     return { success: true };

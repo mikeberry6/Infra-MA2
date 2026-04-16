@@ -14,6 +14,7 @@
     "validate-portfolios": "npx tsx scripts/validate-portfolios.ts",
     "db:seed": "npx tsx prisma/seed.ts",
     "db:verify": "npx tsx prisma/verify-seed.ts",
+    "db:reconcile-years": "npx tsx scripts/reconcile-investment-years.ts",
     "db:generate": "npx prisma generate",
     "db:migrate": "npx prisma migrate dev",
     "db:studio": "npx prisma studio"
