@@ -938,7 +938,7 @@ function FundDrawer({
             <div className="border-t border-[#27272A] pt-4">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-micro font-medium text-[#A1A1AA] uppercase tracking-wider">
-                  Portfolio Companies
+                  PortCos
                 </span>
                 <span className="text-micro text-[#52525B]">
                   {firmPortfolio.total} {firmPortfolio.total === 1 ? "company" : "companies"}

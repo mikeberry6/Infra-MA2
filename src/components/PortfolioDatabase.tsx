@@ -205,8 +205,8 @@ function PortfolioFilterBar({
             type="text"
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Search portfolio companies..."
-            aria-label="Search portfolio companies"
+            placeholder="Search PortCos..."
+            aria-label="Search PortCos"
             className="w-full rounded-[4px] border border-[#27272A] bg-[#18181B] pl-10 pr-4 py-1.5 text-sm-dense text-[#EDEDED] placeholder:text-[#52525B] focus:outline-none focus:border-[#A1A1AA] transition-colors"
           />
         </div>
@@ -372,7 +372,7 @@ function PortfolioInsightsHero({ companies }: { companies: PortfolioCompanyWithC
     return (
       <div className="rounded-[4px] border border-[#27272A] bg-[#18181B] p-6 text-center">
         <p className="text-sm-dense text-[#52525B]">
-          No portfolio companies match your current filters. Try broadening your search.
+          No PortCos match your current filters. Try broadening your search.
         </p>
       </div>
     );
@@ -382,7 +382,7 @@ function PortfolioInsightsHero({ companies }: { companies: PortfolioCompanyWithC
     <div className="rounded-[4px] border border-[#27272A] bg-[#18181B] overflow-hidden">
       <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-2">
         <p className="text-xs-dense text-[#52525B]">
-          <span className="mono text-[#EDEDED] font-medium">{companies.length}</span> portfolio companies
+          <span className="mono text-[#EDEDED] font-medium">{companies.length}</span> PortCos
           {" · "}
           <span className="mono text-[#EDEDED] font-medium">
             {new Set(companies.map((c) => c.managerName)).size}
@@ -667,7 +667,7 @@ function PortfolioCompanyTable({
   if (companies.length === 0) {
     return (
       <div className="flex items-center justify-center py-16 text-sm-dense text-[#52525B]">
-        No portfolio companies match your current filters.
+        No PortCos match your current filters.
       </div>
     );
   }
@@ -855,10 +855,10 @@ export function PortfolioDatabase() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-base font-medium tracking-tight text-[#EDEDED] mb-1">
-            Portfolio Database
+            PortCos
           </h1>
           <p className="text-xs-dense text-[#52525B]">
-            Infrastructure fund portfolio companies. Filter by sector, region, country, and fund manager.
+            Infrastructure fund PortCos. Filter by sector, region, country, and fund manager.
           </p>
         </div>
         <div className="hidden sm:flex items-center gap-6 text-xs-dense">
