@@ -20,59 +20,61 @@ function flattenCountryTags(tags?: string[]): string {
   return tags.join("; ");
 }
 
-const COLUMNS: { header: string; key: string; width: number }[] = [
-  { header: "Company Name", key: "name", width: 30 },
-  { header: "Investment Firm", key: "investmentFirm", width: 25 },
-  { header: "Status", key: "status", width: 10 },
-  { header: "Sector", key: "sector", width: 22 },
-  { header: "Subsector", key: "subsector", width: 22 },
-  { header: "Region", key: "region", width: 16 },
-  { header: "Country", key: "country", width: 18 },
-  { header: "Country Tags", key: "countryTags", width: 22 },
-  { header: "Ownership Vehicle", key: "ownershipVehicle", width: 30 },
-  { header: "Headquarters", key: "headquarters", width: 20 },
-  { header: "Year Founded", key: "yearFounded", width: 14 },
-  { header: "Investment Year", key: "investmentYear", width: 14 },
-  { header: "Website", key: "website", width: 30 },
-  { header: "Description", key: "description", width: 50 },
-  { header: "Management", key: "management", width: 40 },
-  { header: "Milestones", key: "milestones", width: 60 },
-  { header: "Sources", key: "sources", width: 40 },
-];
-
-function toRow(c: CompanyView): Record<string, string | number | undefined> {
-  return {
-    "Company Name": c.name,
-    "Investment Firm": c.investmentFirm,
-    "Status": c.status,
-    "Sector": c.sector,
-    "Subsector": c.subsector,
-    "Region": c.region,
-    "Country": c.country,
-    "Country Tags": flattenCountryTags(c.countryTags),
-    "Ownership Vehicle": c.ownershipVehicle,
-    "Headquarters": c.headquarters ?? "",
-    "Year Founded": c.yearFounded,
-    "Investment Year": c.investmentYear,
-    "Website": c.website ?? "",
-    "Description": c.description,
-    "Management": flattenManagement(c.management),
-    "Milestones": flattenMilestones(c.milestones),
-    "Sources": flattenSources(c.sources),
-  };
-}
+const COLUMNS = [
+  { header: "Company Name", key: "name", width: 30, get: (c: CompanyView) => c.name },
+  { header: "Investment Firm", key: "investmentFirm", width: 25, get: (c: CompanyView) => c.investmentFirm },
+  { header: "Status", key: "status", width: 10, get: (c: CompanyView) => c.status },
+  { header: "Sector", key: "sector", width: 22, get: (c: CompanyView) => c.sector },
+  { header: "Subsector", key: "subsector", width: 22, get: (c: CompanyView) => c.subsector },
+  { header: "Region", key: "region", width: 16, get: (c: CompanyView) => c.region },
+  { header: "Country", key: "country", width: 18, get: (c: CompanyView) => c.country },
+  { header: "Country Tags", key: "countryTags", width: 22, get: (c: CompanyView) => flattenCountryTags(c.countryTags) },
+  { header: "Ownership Vehicle", key: "ownershipVehicle", width: 30, get: (c: CompanyView) => c.ownershipVehicle },
+  { header: "Headquarters", key: "headquarters", width: 20, get: (c: CompanyView) => c.headquarters ?? "" },
+  { header: "Year Founded", key: "yearFounded", width: 14, get: (c: CompanyView) => c.yearFounded ?? "" },
+  { header: "Investment Year", key: "investmentYear", width: 14, get: (c: CompanyView) => c.investmentYear ?? "" },
+  { header: "Website", key: "website", width: 30, get: (c: CompanyView) => c.website ?? "" },
+  { header: "Description", key: "description", width: 50, get: (c: CompanyView) => c.description },
+  { header: "Management", key: "management", width: 40, get: (c: CompanyView) => flattenManagement(c.management) },
+  { header: "Milestones", key: "milestones", width: 60, get: (c: CompanyView) => flattenMilestones(c.milestones) },
+  { header: "Sources", key: "sources", width: 40, get: (c: CompanyView) => flattenSources(c.sources) },
+] as const;
 
 export async function exportPortfolioToExcel(companies: CompanyView[]): Promise<void> {
-  const XLSX = await import("xlsx");
-  const rows = companies.map(toRow);
-  const ws = XLSX.utils.json_to_sheet(rows, {
-    header: COLUMNS.map((c) => c.header),
-  });
-  ws["!cols"] = COLUMNS.map((c) => ({ wch: c.width }));
+  const ExcelJS = (await import("exceljs")).default;
 
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "Portfolio Companies");
+  const workbook = new ExcelJS.Workbook();
+  const sheet = workbook.addWorksheet("Portfolio Companies");
+
+  sheet.columns = COLUMNS.map((c) => ({
+    header: c.header,
+    key: c.key,
+    width: c.width,
+  }));
+
+  for (const company of companies) {
+    const row: Record<string, string | number> = {};
+    for (const col of COLUMNS) {
+      row[col.key] = col.get(company);
+    }
+    sheet.addRow(row);
+  }
+
+  // Header styling: bold
+  sheet.getRow(1).font = { bold: true };
+
+  const buffer = await workbook.xlsx.writeBuffer();
+  const blob = new Blob([buffer], {
+    type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  });
 
   const date = new Date().toISOString().slice(0, 10);
-  XLSX.writeFile(wb, `Portfolio_Companies_${date}.xlsx`);
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `Portfolio_Companies_${date}.xlsx`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
 }

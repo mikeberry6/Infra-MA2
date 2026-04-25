@@ -21,9 +21,10 @@ import {
   Link2,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useFilterToggle } from "@/hooks/useFilterToggle";
+import { useUrlFilterSet, useClearUrlFilters } from "@/hooks/useUrlFilterSet";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
-import { FilterChip } from "@/components/shared/FilterChip";
+import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
+import { deriveRanking, RankingColumn } from "@/components/shared/RankingBars";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
@@ -56,12 +57,6 @@ function FundFilterBar({
   onToggleSector: (s: string) => void;
   onClearAll: () => void;
 }) {
-  const total =
-    activeStrategies.size +
-    activeStatuses.size +
-    activeSizeRanges.size +
-    activeSectors.size;
-
   return (
     <div className="mb-0 space-y-2">
       <div className="bg-[#f3f3f3] border border-black/[0.08] shadow-sm flex items-stretch sticky top-[60px] sm:top-[124px] z-30 overflow-x-auto">
@@ -115,107 +110,19 @@ function FundFilterBar({
         </div>
       </div>
 
-      {total > 0 && (
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">
-            Active:
-          </span>
-          {Array.from(activeStrategies).map((s) => (
-            <FilterChip key={`strat-${s}`} label={s} color={getStrategyColor(s)} onRemove={() => onToggleStrategy(s)} />
-          ))}
-          {Array.from(activeStatuses).map((s) => (
-            <FilterChip key={`stat-${s}`} label={s} color={getStatusColor(s)} onRemove={() => onToggleStatus(s)} />
-          ))}
-          {Array.from(activeSizeRanges).map((r) => (
-            <FilterChip key={`size-${r}`} label={r} color={getSizeRangeColor()} onRemove={() => onToggleSizeRange(r)} />
-          ))}
-          {Array.from(activeSectors).map((s) => (
-            <FilterChip key={`sect-${s}`} label={s} color={getFundSectorColor(s)} onRemove={() => onToggleSector(s)} />
-          ))}
-          {total > 1 && (
-            <button
-              onClick={onClearAll}
-              className="text-micro text-[#999999] hover:text-[#6e6e6e] transition-colors ml-1"
-            >
-              Clear all
-            </button>
-          )}
-        </div>
-      )}
+      <ActiveFiltersStrip
+        groups={[
+          { keyPrefix: "strat", items: activeStrategies, getColor: getStrategyColor, onRemove: onToggleStrategy },
+          { keyPrefix: "stat", items: activeStatuses, getColor: getStatusColor, onRemove: onToggleStatus },
+          { keyPrefix: "size", items: activeSizeRanges, getColor: () => getSizeRangeColor(), onRemove: onToggleSizeRange },
+          { keyPrefix: "sect", items: activeSectors, getColor: getFundSectorColor, onRemove: onToggleSector },
+        ]}
+        onClearAll={onClearAll}
+      />
     </div>
   );
 }
 
-
-// ─── Insights Hero (shared bar chart components) ────────────
-
-interface SimpleRow {
-  name: string;
-  count: number;
-  color: string;
-}
-
-function SimpleBarRow({ row, maxCount }: { row: SimpleRow; maxCount: number }) {
-  const barPct = maxCount > 0 ? (row.count / maxCount) * 100 : 0;
-  return (
-    <div className="flex items-center gap-3 min-w-0">
-      <span className="text-micro sm:text-xs-dense text-[#1a1a1a] truncate w-28 sm:w-36 flex-shrink-0 text-right tracking-tight">
-        {row.name}
-      </span>
-      <div className="flex-1 flex items-center gap-2 min-w-0">
-        <div
-          className="h-4 transition-all duration-500 ease-out"
-          style={{
-            width: `${Math.max(barPct, 3)}%`,
-            backgroundColor: row.color,
-            opacity: 0.7,
-          }}
-          aria-label={`${row.name}: ${row.count}`}
-        />
-        <span className="text-micro font-mono text-[#6e6e6e] tabular-nums flex-shrink-0">
-          {row.count}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function SectionHeading({ children }: { children: React.ReactNode }) {
-  return (
-    <h3 className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider mb-2.5">
-      {children}
-    </h3>
-  );
-}
-
-function deriveRanking<T extends string>(
-  items: T[],
-  getColor: (item: T) => string,
-  limit = 5
-): SimpleRow[] {
-  const counts: Record<string, number> = {};
-  for (const item of items) {
-    counts[item] = (counts[item] ?? 0) + 1;
-  }
-  return Object.entries(counts)
-    .map(([name, count]) => ({ name, count, color: getColor(name as T) }))
-    .sort((a, b) => b.count - a.count)
-    .slice(0, limit);
-}
-
-function RankingColumn({ title, rows }: { title: string; rows: SimpleRow[] }) {
-  const maxCount = rows[0]?.count ?? 0;
-  return (
-    <div className="min-w-0">
-      <SectionHeading>{title}</SectionHeading>
-      <div className="space-y-2">
-        {rows.map((row) => (
-          <SimpleBarRow key={row.name} row={row} maxCount={maxCount} />
-        ))}
-      </div>
-    </div>
-  );
-}
 
 // ─── Fund Insights Hero ─────────────────────────────────────
 
@@ -994,27 +901,20 @@ function FundDrawer({
 export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: DatabaseCounts }) {
   // ── Fund state ──
   const [fundSearch, setFundSearch] = useState("");
-  const [activeStrategies, setActiveStrategies] = useState<Set<string>>(new Set());
-  const [activeStatuses, setActiveStatuses] = useState<Set<string>>(new Set());
-  const [activeSizeRanges, setActiveSizeRanges] = useState<Set<string>>(new Set());
-  const [activeSectors, setActiveSectors] = useState<Set<string>>(new Set());
+  const [activeStrategies, toggleStrategy] = useUrlFilterSet("strategy");
+  const [activeStatuses, toggleStatus] = useUrlFilterSet("status");
+  const [activeSizeRanges, toggleSizeRange] = useUrlFilterSet("size");
+  const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [selectedFund, setSelectedFund] = useState<FundView | null>(null);
   const [fundView, setFundView] = useState<"managers" | "all">("managers");
 
   const debouncedFundSearch = useDebounce(fundSearch, 300);
 
-  const toggleStrategy = useFilterToggle(setActiveStrategies);
-  const toggleStatus = useFilterToggle(setActiveStatuses);
-  const toggleSizeRange = useFilterToggle(setActiveSizeRanges);
-  const toggleSector = useFilterToggle(setActiveSectors);
-
+  const clearAllUrlFilters = useClearUrlFilters(["strategy", "status", "size", "sector"]);
   const clearFundFilters = useCallback(() => {
-    setActiveStrategies(new Set());
-    setActiveStatuses(new Set());
-    setActiveSizeRanges(new Set());
-    setActiveSectors(new Set());
+    clearAllUrlFilters();
     setFundSearch("");
-  }, []);
+  }, [clearAllUrlFilters]);
 
   // ── Filtered funds ──
   const filteredFunds = useMemo(() => {

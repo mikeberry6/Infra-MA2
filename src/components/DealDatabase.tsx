@@ -143,9 +143,9 @@ import {
 } from "lucide-react";
 import { DynamicInsightsHero } from "./DealDatabase/DynamicInsightsHero";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useFilterToggle } from "@/hooks/useFilterToggle";
+import { useUrlFilterSet, useClearUrlFilters } from "@/hooks/useUrlFilterSet";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
-import { FilterChip } from "@/components/shared/FilterChip";
+import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
@@ -193,48 +193,15 @@ function ActiveFiltersChips({
   onClearCategory: (c: string) => void;
   onClearAll: () => void;
 }) {
-  const totalFilters = activeSectors.size + activeRegions.size + activeCategories.size;
-
-  if (totalFilters === 0) return null;
-
   return (
-    <div className="flex items-center gap-2 flex-wrap">
-      <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">
-        Active:
-      </span>
-      {Array.from(activeSectors).map((sector) => (
-        <FilterChip
-          key={`sector-${sector}`}
-          label={sector}
-          color={getSectorColor(sector)}
-          onRemove={() => onClearSector(sector)}
-        />
-      ))}
-      {Array.from(activeRegions).map((region) => (
-        <FilterChip
-          key={`region-${region}`}
-          label={region}
-          color={getRegionColor(region)}
-          onRemove={() => onClearRegion(region)}
-        />
-      ))}
-      {Array.from(activeCategories).map((category) => (
-        <FilterChip
-          key={`category-${category}`}
-          label={category}
-          color={getCategoryColor(category)}
-          onRemove={() => onClearCategory(category)}
-        />
-      ))}
-      {totalFilters > 1 && (
-        <button
-          onClick={onClearAll}
-          className="text-micro text-[#999999] hover:text-[#6e6e6e] transition-colors ml-1"
-        >
-          Clear all
-        </button>
-      )}
-    </div>
+    <ActiveFiltersStrip
+      groups={[
+        { keyPrefix: "sector", items: activeSectors, getColor: getSectorColor, onRemove: onClearSector },
+        { keyPrefix: "region", items: activeRegions, getColor: getRegionColor, onRemove: onClearRegion },
+        { keyPrefix: "category", items: activeCategories, getColor: getCategoryColor, onRemove: onClearCategory },
+      ]}
+      onClearAll={onClearAll}
+    />
   );
 }
 
@@ -927,30 +894,19 @@ function DealDrawer({
 // ─── Main Component ─────────────────────────────────────────
 export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: DatabaseCounts }) {
   const [search, setSearch] = useState("");
-  const [activeSectors, setActiveSectors] = useState<Set<string>>(
-    new Set(),
-  );
-  const [activeRegions, setActiveRegions] = useState<Set<string>>(
-    new Set(),
-  );
-  const [activeCategories, setActiveCategories] = useState<Set<string>>(
-    new Set(),
-  );
+  const [activeSectors, toggleSector] = useUrlFilterSet("sector");
+  const [activeRegions, toggleRegion] = useUrlFilterSet("region");
+  const [activeCategories, toggleCategory] = useUrlFilterSet("category");
   const [selectedDeal, setSelectedDeal] = useState<DealView | null>(null);
 
   // Debounce search for performance
   const debouncedSearch = useDebounce(search, 300);
 
-  const toggleSector = useFilterToggle(setActiveSectors);
-  const toggleRegion = useFilterToggle(setActiveRegions);
-  const toggleCategory = useFilterToggle(setActiveCategories);
-
+  const clearAllUrlFilters = useClearUrlFilters(["sector", "region", "category"]);
   const clearAllFilters = useCallback(() => {
-    setActiveSectors(new Set());
-    setActiveRegions(new Set());
-    setActiveCategories(new Set());
+    clearAllUrlFilters();
     setSearch("");
-  }, []);
+  }, [clearAllUrlFilters]);
 
   const filteredDeals = useMemo(() => {
     return deals.filter((deal) => {
