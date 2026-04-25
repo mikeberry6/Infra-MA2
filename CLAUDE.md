@@ -2,197 +2,200 @@
 
 ## Architecture Overview
 
-- **Next.js 14** app with App Router, TypeScript, Tailwind CSS
-- Deal data lives in `src/data/deals.ts` (typed `Deal` interface)
-- Five main pages:
-  - `/` — Weekly Briefing (`src/components/WeeklyBriefing.tsx`)
-  - `/tracker` — Deal Database (`src/components/DealDatabase.tsx`)
-  - `/portfolio` — Portfolio Database (`src/components/PortfolioDatabase.tsx`)
-  - `/funds` — Fund Database (`src/components/FundDatabase.tsx`)
-  - `/earnings` — Earnings page
+- **Next.js 15** App Router, TypeScript (`strict`), Tailwind CSS
+- **Postgres via Neon + Prisma 7** is the system of record for deals, funds, companies, and users
+- **NextAuth 4** handles auth; admin routes are middleware-gated
+- Five public pages:
+  - `/` — Deal Database ([src/components/DealDatabase.tsx](src/components/DealDatabase.tsx)) — currently the home page
+  - `/tracker` — Deal Database (same component as `/`)
+  - `/portfolio` — Portfolio Database ([src/components/PortfolioDatabase.tsx](src/components/PortfolioDatabase.tsx))
+  - `/funds` — Fund Database ([src/components/FundDatabase.tsx](src/components/FundDatabase.tsx))
+  - `/search` — Cross-database search
+- Admin pages live under `/admin/*` (companies, deals, funds, sources, users), all gated by middleware
 
-## Weekly Briefing Page (`/`)
+### Layout: where things live
 
-- The `MarketInsightHero` component receives the weekly deals as a prop (`deals: Deal[]`)
-- It must ONLY reflect that week's deals (the same deals listed in the timeline below it), NOT all deals in the database
-- Weekly deals are sourced from `getWeeklyDeals()` which uses a **fixed anchor date** (`WEEKLY_ANCHOR` in `src/data/deals.ts`) set to the publish date. It returns all Announced deals in the 7 days up to and including that date.
-- **The weekly briefing is manually curated by the user.** Do NOT change `WEEKLY_ANCHOR` or add/remove/modify deals in the weekly window without explicit user instruction.
-- `getWeeklyDeals()` includes deals of any status — some deals are simultaneously announced and closed (e.g. sign-and-close transactions), and these should still appear in the briefing
-- When the user publishes a new weekly briefing, update `WEEKLY_ANCHOR` to the new publish date
+| Path | Purpose |
+|---|---|
+| `src/app/` | Next.js App Router routes, layouts, error/loading boundaries |
+| `src/components/` | React UI components (page-level + shared) |
+| `src/modules/{deals,funds,companies,insights,search}/queries.ts` | Server-side Prisma read queries returning *View types |
+| `src/modules/admin/{actions.ts,schemas.ts}` | Admin server actions + Zod validation |
+| `src/modules/auth/config.ts` | NextAuth configuration |
+| `src/modules/shared/{types.ts,enum-maps.ts}` | View-layer types and Prisma enum → display string maps |
+| `src/lib/` | Cross-cutting utilities: `prisma.ts`, `colors.ts`, `types.ts` (display unions), `csv.ts`, `format.ts`, `{deal,fund,portco}-utils.ts` |
+| `src/lib/colors.ts` | **Single source of truth** for all sector/region/strategy/category color helpers |
+| `src/hooks/` | `useDebounce`, `useFilterToggle`, `useAnimatedNumber` |
+| `src/generated/prisma/` | Generated Prisma client (run `npm run db:generate` if missing) |
+| `prisma/` | Schema, migrations, seed data |
 
-## Deal Database Page (`/tracker`)
+## Data Layer
 
-### YTD Subtitle
+### Source of truth
 
-The page subtitle reads "2026 year-to-date as of {date}" where the date is **automatically derived** from the most recent deal in the database via `getLatestDealDate()` in `src/data/deals.ts`. No manual date updates are needed when adding new deals — the subtitle updates itself.
+All public read paths query Postgres via Prisma. Static seed data lives under `prisma/seed-data/` and is only used by `npm run db:seed`. **Do not** import from `prisma/seed-data/` in app code.
 
-### Insights Hero (`DynamicInsightsHero`)
+### Prisma → View mapping
 
-The hero section displays exactly **3 ranked lists** (no donut charts, no KPI cards, no sparklines):
+The Prisma schema uses uppercase enums (e.g. `DEAL_DIGITAL`); the UI uses display strings (e.g. `"Digital"`). Maps live in [src/modules/shared/enum-maps.ts](src/modules/shared/enum-maps.ts). Conversion happens in the `to*View` functions inside each module's `queries.ts`. Components only ever see *View types — never raw Prisma types.
 
-1. **Top Fund Activity** — Top 5 infrastructure fund buyers ranked by deal count, with stacked horizontal bars color-coded by activity type (Acquisition, Sale, Platform Launch, IPO, Joint Venture)
-2. **Top Industries** — Top 5 sectors ranked by deal count, colored by sector
-3. **Top Regions** — Top 5 regions ranked by deal count, colored by region
+Display unions (`DealSector`, `FundStrategy`, `PortCoSector`, etc.) are in [src/lib/types.ts](src/lib/types.ts).
 
-All 3 rankings respond to the page's filter toggles (sector, region, category, search).
+### Adding new data
 
-### Fund Activity Exclusions
+Use the admin UI (`/admin/{deals,funds,companies}`). Inputs are validated with Zod schemas in [src/modules/admin/schemas.ts](src/modules/admin/schemas.ts). Bulk import/export is available via the import bar on each admin index page (CSV, ADMIN role only).
 
-The fund activity ranking must ONLY show infrastructure fund managers. Exclude non-infrastructure-fund buyers:
-- Undisclosed Buyer, Public Market, Bain Capital, Mitsui O.S.K. Lines, Talen Energy, Drax Group, Pilot Fiber
-- If new deals are added with non-infrastructure-fund buyers (corporate acquirers, operating companies, undisclosed parties), add them to the `NON_INFRA_FUND_BUYERS` set in `DynamicInsightsHero.tsx`
+## Page-Level Components
 
-### Fund Name Aliases
+Each public page uses a thin Server Component → `*Client` Client Component bridge:
 
-Fund names sometimes appear in variant forms across deals (e.g. `"CVC (CVC DIF)"` vs `"CVC DIF"`). The `FUND_NAME_ALIASES` map in `DynamicInsightsHero.tsx` normalizes these to a canonical name so all transactions for the same fund are counted together.
-- If a new deal uses a variant name for an existing fund (e.g. parent company prefix, abbreviation difference), add an entry to `FUND_NAME_ALIASES` mapping the variant to the canonical name
+- `src/app/page.tsx` and `src/app/tracker/page.tsx` → `DealDatabaseClient` → `DealDatabase`
+- `src/app/portfolio/page.tsx` → `PortfolioDatabaseClient` → `PortfolioDatabase`
+- `src/app/funds/page.tsx` → `FundDatabaseClient` → `FundDatabase`
 
-## Portfolio Database Page (`/portfolio`)
+The Server Component fetches via `getAllDeals()` / `getAllCompanies()` / `getAllFunds()` from `src/modules/*/queries.ts` and passes data as props.
 
-### Data Sources & Types
+### Filter pattern (shared across all three databases)
 
-- PortCo data: `src/data/portcos/companies.ts` (array), types in `src/data/portcos/types.ts`
-- `PortCo` interface fields: `name`, `investmentFirm`, `sector` (PortCoSector), `subsector`, `region` (PortCoRegion), `country`, `ownershipVehicle`, `description`, `status` (Active | Realized), optional: `website`, `yearFounded`, `investmentYear`, `headquarters`, `milestones[]`, `management[]`, `sources[]`
-- `PortCoExecutive` interface: `{ name: string; title: string }`
-- Color helpers: `getPortCoSectorColor()`, `getPortCoRegionColor()`, `getPortCoStatusColor()`, `getMilestoneCategoryColor()` in `src/data/portcos/types.ts`
+- Filter sets are URL-synced via [`useUrlFilterSet`](src/hooks/useUrlFilterSet.ts) (e.g. `?sector=Digital,Utilities&region=Europe`). Refreshing or sharing a URL preserves filters.
+- "Clear all" uses [`useClearUrlFilters`](src/hooks/useUrlFilterSet.ts) to wipe multiple params in a single `router.replace`
+- Search input is debounced via `useDebounce` (300ms) before being applied; search text is local state, not URL-synced
+- Multi-select dropdowns: [`MultiSelectDropdown`](src/components/shared/MultiSelectDropdown.tsx) — fully ARIA-compliant, portal-rendered, Escape-to-close
+- Active filter chips: [`ActiveFiltersStrip`](src/components/shared/ActiveFiltersStrip.tsx) wrapping [`FilterChip`](src/components/shared/FilterChip.tsx)
+- Ranking visualizations: shared `deriveRanking` + `RankingColumn` from [`RankingBars`](src/components/shared/RankingBars.tsx)
+
+## Deal Database (`/` and `/tracker`)
+
+### Insights Hero ([DynamicInsightsHero](src/components/DealDatabase/DynamicInsightsHero.tsx))
+
+Three ranked lists, each Top 5, all reactive to active filters:
+1. **Top Fund Activity** — infrastructure fund buyers by deal count, with stacked bars colored by activity type
+2. **Top Industries** — sectors by deal count
+3. **Top Regions** — regions by deal count
+
+### Fund-activity exclusions and aliases
+
+Inside `DynamicInsightsHero.tsx`:
+- `NON_INFRA_FUND_BUYERS` — set of buyer names to exclude from the fund-activity ranking (corporate acquirers, undisclosed buyers, etc.). When adding a deal whose buyer is not an infrastructure fund, add the name here.
+- `FUND_NAME_ALIASES` — normalizes variant fund names to a canonical name (e.g. `"CVC (CVC DIF)"` → `"CVC DIF"`). When a deal uses a variant of an existing fund name, add an entry here so transactions are counted together.
+
+### Buyer name shortening
+
+Inside [DealDatabase.tsx](src/components/DealDatabase.tsx):
+- `BUYER_SHORT_NAMES` — abbreviates long fund names for the desktop table column (e.g. "Macquarie Asset Management" → "Macquarie AM"). The full name is preserved in the deal drawer and mobile card.
+
+### Deal table layout
+
+- The `target` field (clean asset name) is displayed in bold; `seller` shows underneath in `text-[10px] text-[#999]`. When seller is `"N/A"` or `"—"`, only target is shown.
+- All `<td>` use `align-top`; target/seller cell uses `min-h-[28px]` for uniform row height.
+
+## Portfolio Database (`/portfolio`)
+
+### Data shape — `CompanyView`
+
+Defined in [src/modules/shared/types.ts](src/modules/shared/types.ts). Key fields: `id`, `name`, `investmentFirm`, `sector` (PortCoSector), `subsector`, `region` (PortCoRegion), `country`, `ownershipVehicle`, `description`, `status` (`Active` | `Realized`). Optional: `website`, `yearFounded`, `investmentYear`, `headquarters`, `milestones[]`, `management[]`, `sources[]`, `countryTags[]`.
+
+`investmentFirm` and `ownershipVehicle` are derived from the company's primary `OwnershipPeriod` in [src/modules/companies/queries.ts](src/modules/companies/queries.ts).
 
 ### PortCo Drawer (aka "Company Scorecard")
 
-The **PortCo Drawer** is the slide-in detail panel that appears when a user clicks on a portfolio company row. It is also referred to as a **"company scorecard"**. The component is `PortCoDrawer` inside `src/components/PortfolioDatabase.tsx` (not a separate file). It renders as a right-anchored full-height panel with `max-w-lg lg:max-w-xl xl:max-w-2xl`.
+The slide-in detail panel that opens when a company row is clicked. Component is `PortCoDrawer` inside [PortfolioDatabase.tsx](src/components/PortfolioDatabase.tsx) (still inline as of writing — extraction is a known TODO).
 
-**Terminology note:** If the user says "scorecard" in the context of portfolio companies, they mean this PortCoDrawer component — NOT the `ScorecardEntry` type in `earnings.ts` (which is for public asset manager earnings tracking).
+**Terminology:** "scorecard" in a portfolio context = `PortCoDrawer`, NOT the `ScorecardEntry` type used elsewhere.
 
-The drawer has **4 sections** rendered in this exact order:
+Renders in this order:
 
-#### Section 1: Header ("Ambient Canvas")
+1. **Header ("Ambient Canvas")** — sticky, dual ambient orbs (sector-colored + indigo), bold `text-2xl/3xl` company name, subtitle `{investmentFirm} · ● {status}`, optional website link icon, X close button (also Escape-bound). Design principle: restraint and bold typography over stacked decorations.
 
-- NO monogram, NO noise texture — the header uses ONE strong design element: dual ambient orbs creating a smooth gradient wash
-- Sticky header with `bg-[#09090B]/95 backdrop-blur-md`, bottom border
-- Accent bar: `h-[2px]` sector gradient (left → transparent) at top of header
-- Orb 1: `w-64 h-64`, sector-colored, `opacity-[0.10]`, `blur(80px)`, `animate-pulse-slow`, top-left
-- Orb 2: `w-48 h-48`, indigo `#818CF8`, `opacity-[0.07]`, `blur(80px)`, `animate-pulse-slower`, top-right
-- Company name: `text-2xl lg:text-3xl font-bold tracking-tight` — this is the hero element
-- Optional external link icon (if `company.website` exists) next to name
-- Subtitle: `{investmentFirm} · ● {status}` in `text-sm-dense`
-- Close button (X icon) top-right, triggers `onClose` (also bound to Escape key)
-- **Design principle: awe comes from restraint, bold typography, and generous spacing — NOT from stacking decorations**
+2. **Investment Details** — `Briefcase` icon, `glass-card` rows separated by `divide-y divide-[#27272A]`:
+   - Firm → `company.investmentFirm`
+   - Fund → `company.ownershipVehicle`
+   - Fund Strategy *(if matched fund has strategies)* — colored badge pills via `getStrategyColor()`. Lookup: `funds.find(f => f.fundName === company.ownershipVehicle)`
+   - Investment Date *(if `company.investmentYear`)* — year only
+   - Sector — with sector-colored dot
+   - Subsector *(if present)*
+   - Location — `company.headquarters || company.country`
 
-#### Section 2: Investment Details
+3. **Company Overview** — `FileText` icon, `company.description` in `text-sm-dense text-[#A1A1AA] leading-relaxed`. Optional Sources sub-panel (nested dark card) with external links if `sources.length > 0`.
 
-- Section icon: `Briefcase` (lucide-react), indigo colored
-- Section label: **"Investment Details"** (NOT "Company Details") — `text-micro font-medium uppercase tracking-wider`
-- Rendered as a `glass-card` with `divide-y divide-[#27272A]` between rows
-- Row order (each row is label on left, value on right):
-  1. **Firm** — `company.investmentFirm`
-  2. **Fund** — `company.ownershipVehicle`
-  3. **Fund Strategy** (conditional) — only if `matchedFund?.strategies?.length`. Rendered as colored badge pills using `getStrategyColor()`. Fund is matched via `funds.find(f => f.fundName === company.ownershipVehicle)`
-  4. **Investment Date** (conditional) — only if `company.investmentYear`. Shows year only (e.g. "2023"), NOT a combined "Fund [Year]" format
-  5. **Sector** — `company.sector` with a colored dot (`getPortCoSectorColor()`)
-  6. **Subsector** (conditional) — only if `company.subsector`
-  7. **Location** — `company.headquarters || company.country`
+4. **Historical Milestones** — `Clock` icon, vertical timeline (`w-px bg-[#27272A]`), reverse chronological. Shows max 6 with "Show all N" toggle. Each row: colored dot → date → category badge → event text.
 
-#### Section 3: Company Overview
+   **Investment callout highlighting:** the milestone for the firm's initial investment gets indigo treatment (larger dot, `bg-[#818CF8]/[0.06]`, "Investment" badge). Detection logic in [PortfolioDatabase.tsx](src/components/PortfolioDatabase.tsx):
+   ```
+   mentionsFirm = event text includes first word of company.investmentFirm
+   isInvestmentMilestone = date includes investmentYear AND (category === "Financing" OR mentionsFirm)
+   ```
+   The highlighted milestone year **must** match `investmentYear` — if not, fix the data. When entering milestones for a new company, include one for the initial investment using category `"Financing"` (preferred) or `"Acquisition"` with the firm name in the event text.
 
-- Section icon: `FileText` (lucide-react), indigo colored
-- Section label: **"Company Overview"** — `text-micro font-medium uppercase tracking-wider`
-- Shows `company.description` as `text-sm-dense text-[#A1A1AA] leading-relaxed`
-- **Sources sub-panel** (conditional, if `sources.length > 0`): nested dark card (`bg-[#111113] border border-[#1f1f23]`) with "Sources" micro label and list of external links. Each link has `ExternalLink` icon + label, hover state transitions to indigo.
+5. **Key Management** — `Users` icon, 2-column grid (1-column if single exec). Filter regex: title contains `\bChief\b` OR (`\bPresident\b` AND NOT `\bVice\s*President\b`). Excludes VP, GC, Director, Controller. When entering management data, only include C-suite and President — the drawer filters the rest.
 
-#### Section 4: Historical Milestones
+### Cross-database linking
 
-- Section icon: `Clock` (lucide-react), indigo colored
-- Section label: **"Historical Milestones"** — `text-micro font-medium uppercase tracking-wider`
-- Vertical timeline with a thin line (`w-px bg-[#27272A]`) on the left
-- Milestones are displayed in **reverse chronological order** (newest first)
-- Initially shows max 6 milestones; "Show all N milestones" / "Show less" toggle if more than 6
-- Each milestone shows: colored dot → date (tabular-nums) → category badge → event text
+- `CompanyView.ownershipVehicle` ↔ `FundView.fundName` (exact string match)
+- `CompanyView.investmentFirm` ↔ `FundView.managerName` (loose; can differ slightly)
+- The fund lookup is `funds.find(f => f.fundName === company.ownershipVehicle)` in PortfolioDatabase.tsx
+- If no fund matches, no strategy badges appear — check for typos in either record
 
-##### Investment Callout Highlighting
+## Fund Database (`/funds`)
 
-- The timeline auto-highlights the milestone representing the **investment firm's initial investment** with a special indigo callout
-- Highlighted milestone gets: `bg-[#818CF8]/[0.06]`, `border border-[#818CF8]/20`, `rounded-[6px]`, larger dot (13px vs 11px), indigo colors, "Investment" badge replacing category, brighter `text-[#EDEDED]` event text
-- **Detection logic** (line ~516 in PortfolioDatabase.tsx):
-  ```
-  mentionsFirm = event text includes first word of company.investmentFirm
-  isInvestmentMilestone = date includes investmentYear AND (category === "Financing" OR mentionsFirm)
-  ```
-- This means: "Financing" category milestones in the investment year always match. "Acquisition" or other categories only match if they also mention the firm name. This prevents bolt-on acquisitions in the same year from being incorrectly highlighted.
-- The highlighted milestone's year **must align** with the `investmentYear` field in Investment Details — if they don't match, fix the data
-- `investmentYear` represents the year the investment firm first invested in the business
-- When adding milestones for a new PortCo, always include one for the initial investment/acquisition by the firm, using category "Financing" (preferred) or "Acquisition" with the firm name mentioned in the event text
+### Data shape — `FundView`
 
-#### Section 5: Key Management
+Defined in [src/modules/shared/types.ts](src/modules/shared/types.ts). Key fields: `id`, `managerName`, `fundName`, `strategies: FundStrategy[]`, `investmentStrategy` (long-form), `size`, `sizeUsdMm`, `vintage`, `structure`, `status`, `sectors`, `regions`, `portfolioCompanies`.
 
-- Section icon: `Users` (lucide-react), indigo colored
-- Section label: **"Key Management"** — `text-micro font-medium uppercase tracking-wider`
-- Only **C-suite and President-level** executives are shown
-- Filter regex: title contains `\bChief\b` OR (`\bPresident\b` AND NOT `\bVice\s*President\b`)
-- Excludes: Vice President, General Counsel, Controller, Director, VP, etc.
-- Layout: 2-column grid (1-column if only 1 executive), each card is `glass-card rounded-[4px] px-4 py-3`
-- Each card shows: name (`text-sm-dense text-[#EDEDED] font-medium`) and title (`text-micro text-[#52525B]`)
-- When adding `management[]` data to a PortCo, only include C-suite (CEO, CFO, COO, CTO, etc.) and President — the drawer filters out everything else
+### Strategy types & colors
 
-#### Replicating a Scorecard for a New PortCo
+Strategies are `FundStrategy` from [src/lib/types.ts](src/lib/types.ts). Colors come from `getStrategyColor()` in [src/lib/colors.ts](src/lib/colors.ts).
 
-To create a scorecard for a new portfolio company, you do NOT need to build any new component. Simply add the company data to `src/data/portcos/companies.ts` following the `PortCo` interface, and the existing `PortCoDrawer` renders it automatically. The scorecard quality depends entirely on the richness of the data:
-- `description` — detailed company overview paragraph
-- `milestones[]` — chronological history including founding, key acquisitions, financing events, management changes, expansions
-- `management[]` — C-suite and President-level executives (the drawer filters the rest)
-- `sources[]` — external reference URLs
-- `ownershipVehicle` — must match a `fundName` in `src/data/funds.ts` for strategy badges to appear
-- `investmentYear` — required for the investment callout highlighting to work
+## Design System
 
-### Cross-Database Linking: PortCo ↔ Fund
+### Colors
 
-- `PortCo.ownershipVehicle` maps to `Fund.fundName` (exact string match)
-- `PortCo.investmentFirm` corresponds loosely to `Fund.managerName` (may differ slightly — e.g. "3i Infrastructure" vs "3i Group")
-- The fund lookup is: `funds.find(f => f.fundName === company.ownershipVehicle)` in `PortfolioDatabase.tsx`
-- If a new PortCo's `ownershipVehicle` doesn't match any fund name, no strategy badges will appear — check for typos or add the fund to `src/data/funds.ts`
+All color helpers live in [src/lib/colors.ts](src/lib/colors.ts):
+- Deal: `getSectorColor`, `getCategoryColor`, `getRegionColor`, `getActivityColor`
+- Fund: `getStrategyColor`, `getStatusColor`, `getFundSectorColor`, `getFundRegionColor`, `getStructureColor`
+- PortCo: `getPortCoSectorColor`, `getPortCoRegionColor`, `getPortCoStatusColor`, `getPortCoCountryTagColor`, `getMilestoneCategoryColor`
 
-### Adding New PortCos
+Every helper falls back to `#a1a1aa` (or `#71717a` for milestone) on unknown input — see [src/lib/colors.test.ts](src/lib/colors.test.ts) for the contract.
 
-When adding portfolio companies to `src/data/portcos/companies.ts`:
-- Follow the `PortCo` interface in `src/data/portcos/types.ts`
-- `ownershipVehicle` must match a `fundName` in `src/data/funds.ts` for strategy badges to appear
-- For `management[]`, only include C-suite (Chief X Officer) and President — the drawer filters out everything else
-- Use existing `PortCoSector`, `PortCoRegion`, `PortCoStatus` union types
-- **Do NOT batch-add portcos without user review** — always confirm individual companies with the user before adding them
+### Tailwind theme additions
 
-## Fund Database Page (`/funds`)
+- Custom font sizes: `text-micro` (11px), `text-xs-dense` (12px), `text-sm-dense` (13px)
+- Custom shadows: `shadow-card`, `shadow-card-hover`, `shadow-card-elevated`, `shadow-accent-glow`, `shadow-accent-ring`
+- Custom animations: `animate-fade-in`, `animate-fade-in-up`, `animate-pulse-slow`, `animate-pulse-slower`
+- Custom utilities: `glass-card`, `surface-card`, `filter-pill`
 
-### Data & Types
+### Canonical badge pattern
 
-- Fund data: `src/data/funds.ts` — contains `Fund` interface, `funds` array, strategy/color helpers
-- `Fund` key fields: `id`, `managerName`, `fundName`, `strategies: FundStrategy[]`, `investmentStrategy` (long-form text), `size`, `sizeUsdMm`, `vintage`, `structure`, `status`, `sectors`, `regions`, `portfolioCompanies`
-- `FundStrategy` union type: `"Core" | "Core-Plus" | "Value-Add" | "Opportunistic" | "Growth" | "Credit / Debt" | "Fund-of-Funds" | "Secondaries" | "Co-Investments" | "Greenfield" | "Retail Act '40"`
-- Color helper: `getStrategyColor(strategy: FundStrategy)` returns hex color string
-- Strategy colors: Core = #10b981 (emerald), Core-Plus = #06b6d4 (cyan), Value-Add = #3b82f6 (blue), Opportunistic = #f59e0b (amber), Growth = #8b5cf6 (purple), Credit/Debt = #ec4899 (pink), Fund-of-Funds = #a78bfa (violet), Secondaries = #f97316 (orange), Co-Investments = #14b8a6 (teal), Greenfield = #22c55e (green), Retail Act '40 = #ef4444 (red)
+Used site-wide for sector/category/strategy/status/structure tags:
+```
+text-[10px] font-medium px-1.5 py-0
+color: "#444444"
+backgroundColor: "${color}08"
+border: "1px solid ${color}12"
+```
+Color comes from the relevant helper. **Use tags for:** Sector, Category, Strategy, Status, Structure, Subsector (card view only). **Do NOT** use tags for Country (plain text) or Region in tables (plain text).
 
-## Design Principles
+### Mobile-first
 
-- **Mobile-first**: All components must look good on mobile devices. Avoid cramming too much into the hero/infographic sections.
-- Keep insights clean and minimal — horizontal bar charts with labels, not complex SVG visualizations
-- Use the existing color helpers: `getSectorColor()`, `getRegionColor()`, `getCategoryColor()` from `src/data/deals.ts`
-- Activity type colors: Acquisition = blue (#3b82f6), Sale = amber (#f59e0b), Platform Launch = cyan (#06b6d4), IPO = green (#10b981), Joint Venture = purple (#8b5cf6)
-- **Colored tag/badge pattern** (canonical, used site-wide in tables, cards, and drawers): `text-[10px] font-medium px-1.5 py-0` with `color: "#444444"`, `backgroundColor: "${color}08"`, `border: "1px solid ${color}12"`. Color comes from the relevant helper function (e.g. `getSectorColor()`, `getCategoryColor()`, `getStrategyColor()`).
-  - **Use tags for:** Sector, Category, Strategy, Status, Structure, Subsector (card view only)
-  - **Do NOT use tags for:** Country (plain text), Region (plain text in tables)
-  - All tag instances across all pages must use this exact pattern — do not introduce alternative sizing, padding, or opacity values
+All components must look good on mobile. Avoid cramming hero/infographic sections.
 
-### Deal Database Table Layout
+## Testing
 
-- The `Deal` interface has a `target` field (clean company/asset name, e.g. "Contact Energy") separate from `title` (long headline). The table's "Target / Seller" column shows `deal.target` in bold with `deal.seller` underneath in grey `text-[10px] text-[#999]`. When seller is "N/A" or "—", only the target is shown.
-- All rows use `min-h-[28px]` on the target/seller cell to ensure uniform row height regardless of whether a seller is present. All `<td>` elements use `align-top`.
-- **Buyer name shortening**: The `BUYER_SHORT_NAMES` map in `DealDatabase.tsx` abbreviates long fund names for table display (e.g. "Igneo Infrastructure Partners" → "Igneo", "Macquarie Asset Management" → "Macquarie AM"). The `shortenBuyer()` function also strips "(via XYZ)" suffixes and splits multi-buyer names on " / " to stack them vertically. When adding new deals with long buyer names, add an entry to `BUYER_SHORT_NAMES` if the name would truncate in the table.
-- The full unabbreviated buyer name is still stored in `deal.buyer` and shown in the deal drawer and mobile card — `BUYER_SHORT_NAMES` only affects the desktop table column.
+- Vitest config: [vitest.config.ts](vitest.config.ts)
+- Tests live alongside source as `*.test.ts` (e.g. [src/lib/csv.test.ts](src/lib/csv.test.ts))
+- Run: `npm test` (CI also runs this)
+- Current coverage: pure utility functions in `src/lib/`. Component tests are not yet set up.
 
+## Build & Deploy
 
-## Adding New Deals
+- Node 22 (pinned via `.nvmrc` and package.json `engines`)
+- CI: [.github/workflows/deploy.yml](.github/workflows/deploy.yml) runs `tsc --noEmit`, `npm test`, `next build`
+- After cloning, run `npx prisma generate` (or `npm install`, which triggers `postinstall`) to generate the Prisma client into `src/generated/prisma/`
+- App boundary files: [src/app/error.tsx](src/app/error.tsx), [src/app/loading.tsx](src/app/loading.tsx), [src/app/not-found.tsx](src/app/not-found.tsx), plus admin-scoped [src/app/admin/error.tsx](src/app/admin/error.tsx) and [src/app/admin/loading.tsx](src/app/admin/loading.tsx)
 
-When adding deals to `src/data/deals.ts`:
-- Follow the existing `Deal` interface exactly
-- Deals may have `status: "Announced"` or `status: "Closed"`. Some transactions are simultaneously announced and closed (sign-and-close deals like bolt-on acquisitions). These are valid and should be captured with `status: "Closed"`. Do NOT exclude a deal just because it has already closed — what matters is that it was newly disclosed during the relevant period.
-- If the buyer is not an infrastructure fund, add them to `NON_INFRA_FUND_BUYERS` in `DynamicInsightsHero.tsx`
-- If a buyer or seller name is a variant of an existing fund (e.g. `"CVC (CVC DIF)"` for `"CVC DIF"`), add it to `FUND_NAME_ALIASES` in `DynamicInsightsHero.tsx`
-- Use existing `DealSector`, `DealRegion`, `DealCategory`, and `DealStatus` union types
-- **Do NOT batch-add deals without user review** — always confirm individual deals with the user before adding them
+## Conventions for Claude
+
+- **Use the dedicated tools**: Read/Edit/Glob/Grep, not bash equivalents
+- **Don't batch-add data** to the DB without per-record review
+- **Don't introduce new color helpers** — extend [src/lib/colors.ts](src/lib/colors.ts)
+- **Don't introduce alternative badge sizing/padding** — use the canonical pattern

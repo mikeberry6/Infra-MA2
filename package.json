@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": ">=20.19"
+    "node": ">=22"
   },
   "scripts": {
     "dev": "next dev",
@@ -11,6 +11,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "validate-portfolios": "npx tsx scripts/validate-portfolios.ts",
     "db:seed": "npx tsx prisma/seed.ts",
     "db:verify": "npx tsx prisma/verify-seed.ts",
@@ -24,29 +26,37 @@
     "@prisma/adapter-pg": "^7.7.0",
     "@prisma/client": "^7.7.0",
     "bcryptjs": "^3.0.3",
+    "exceljs": "^4.4.0",
     "lucide-react": "0.453.0",
-    "next": "14.2.15",
+    "next": "^15.5.15",
     "next-auth": "^4.24.13",
     "pg": "^8.20.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "xlsx": "^0.18.5",
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/bcryptjs": "^2.4.6",
-    "@types/node": "20.14.0",
+    "@types/node": "^22.19.17",
     "@types/pg": "^8.20.0",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "@vitest/ui": "^2.1.9",
     "autoprefixer": "10.4.19",
     "dotenv": "^17.4.1",
     "eslint": "^8.57.1",
-    "eslint-config-next": "^14.2.15",
+    "eslint-config-next": "^15.5.15",
+    "jsdom": "^29.0.2",
     "postcss": "8.4.38",
     "prisma": "^7.7.0",
     "tailwindcss": "3.4.4",
     "tsx": "^4.21.0",
-    "typescript": "5.4.5"
+    "typescript": "5.4.5",
+    "vitest": "^2.1.9"
   }
 }
