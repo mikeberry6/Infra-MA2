@@ -13,13 +13,20 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Check for NextAuth session token
-  const token = await getToken({
-    req: request,
-    secret: process.env.NEXTAUTH_SECRET || "dev-secret-change-in-production",
-  });
+  // NextAuth secret is required — fail closed if missing rather than falling
+  // back to a baked-in string (which would let anyone with the source mint a
+  // session token).
+  const nextAuthSecret = process.env.NEXTAUTH_SECRET;
+  if (!nextAuthSecret) {
+    console.error("NEXTAUTH_SECRET is not configured");
+    return NextResponse.json({ error: "Server misconfigured" }, { status: 500 });
+  }
 
-  // Fallback: also check legacy cookie for backward compatibility
+  // Check for NextAuth session token
+  const token = await getToken({ req: request, secret: nextAuthSecret });
+
+  // Fallback: also check legacy cookie for backward compatibility. Legacy-cookie
+  // holders are authenticated but have no role — they get public-page access only.
   const hasLegacyCookie = request.cookies.get("site-auth")?.value === "authenticated";
 
   if (!token && !hasLegacyCookie) {
@@ -29,26 +36,26 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(loginUrl);
   }
 
-  // Role-based route protection (only enforced for NextAuth sessions)
-  if (token) {
-    const role = token.role as string;
+  // Role-based route protection. Applies regardless of which auth mechanism
+  // the user used — legacy-cookie users have `role === undefined` and so fail
+  // every privileged-route check below.
+  const role = (token?.role as string | undefined) ?? null;
 
-    // Admin routes — ADMIN only
-    if (pathname.startsWith("/admin") && role !== "ADMIN") {
-      const homeUrl = request.nextUrl.clone();
-      homeUrl.pathname = "/";
-      return NextResponse.redirect(homeUrl);
-    }
+  // Admin routes — ADMIN only
+  if (pathname.startsWith("/admin") && role !== "ADMIN") {
+    const homeUrl = request.nextUrl.clone();
+    homeUrl.pathname = "/";
+    return NextResponse.redirect(homeUrl);
+  }
 
-    // Import APIs — ADMIN only
-    if (pathname.startsWith("/api/imports") && role !== "ADMIN") {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-    }
+  // Import APIs — ADMIN only
+  if (pathname.startsWith("/api/imports") && role !== "ADMIN") {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
 
-    // Export APIs — ADMIN or ANALYST
-    if (pathname.startsWith("/api/exports") && !["ADMIN", "ANALYST"].includes(role)) {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-    }
+  // Export APIs — ADMIN or ANALYST
+  if (pathname.startsWith("/api/exports") && role !== "ADMIN" && role !== "ANALYST") {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
   return NextResponse.next();
