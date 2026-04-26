@@ -26,33 +26,76 @@ function ownerFirstWord(firm: string): string {
   return firm.toLowerCase().split(/\s+/)[0] || "";
 }
 
+// Strip generic corporate suffixes so "Brookfield Asset Management" can match
+// an event that just says "Brookfield acquires X".
+const CORPORATE_SUFFIX_RE =
+  /\b(asset management|investment management|capital partners|capital management|capital|management|partners|investors|infrastructure|advisors|llc|lp|inc|ltd|plc|holdings)\b/gi;
+
+function normalizeFirm(firm: string): string {
+  return firm
+    .toLowerCase()
+    .replace(CORPORATE_SUFFIX_RE, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// Score how well an owner is mentioned in an event string.
+//   2 = full normalized firm name appears in the event text
+//   1 = first word of firm appears AND no other owner scored 2
+//   0 = no mention
+// Returns the highest-scoring owner, or null if no owner is mentioned.
+function bestOwnerMatch(owners: OwnerView[], eventText: string): OwnerView | null {
+  const lowerEvent = eventText.toLowerCase();
+  let best: { owner: OwnerView; score: number } | null = null;
+  for (const o of owners) {
+    if (!o.firm) continue;
+    const normalized = normalizeFirm(o.firm);
+    let score = 0;
+    if (normalized && normalized.length >= 3 && lowerEvent.includes(normalized)) {
+      score = 2;
+    } else {
+      const firstWord = ownerFirstWord(o.firm);
+      if (firstWord && firstWord.length >= 3 && lowerEvent.includes(firstWord)) {
+        score = 1;
+      }
+    }
+    if (score > 0 && (!best || score > best.score)) {
+      best = { owner: o, score };
+    }
+  }
+  return best?.owner ?? null;
+}
+
 // Classify a milestone as an entry or exit transition for one of the owners.
 // Entry: the milestone year matches an owner's investmentYear AND
 //        (category is Financing/Acquisition OR the event mentions the firm).
 // Exit:  the milestone year matches an owner's exitYear AND
 //        (category is Divestiture OR the event mentions the firm).
-// Active owners with the latest investmentYear are checked first so the
-// "current" investment is preferred over an earlier overlap.
+// When multiple owners' first-word matches collide (e.g. two "Brookfield"
+// vehicles), the firm whose full normalized name appears in the event wins;
+// otherwise we fall back to the year-aligned owner.
 function classifyMilestone(m: MilestoneView, owners: OwnerView[]): MilestoneClassification {
+  const matchedOwner = bestOwnerMatch(owners, m.event);
+
+  // Entry pass: prefer the explicitly-mentioned owner when the year aligns;
+  // otherwise fall back to year-aligned owner with a categorical entry.
+  if (matchedOwner?.investmentYear && m.date.includes(String(matchedOwner.investmentYear))) {
+    return { kind: "entry", owner: matchedOwner };
+  }
   for (const o of owners) {
-    const firstWord = ownerFirstWord(o.firm);
-    const mentionsFirm = !!firstWord && m.event.toLowerCase().includes(firstWord);
-    if (
-      o.investmentYear &&
-      m.date.includes(String(o.investmentYear)) &&
-      (m.category === "Financing" || m.category === "Acquisition" || mentionsFirm)
-    ) {
+    if (!o.investmentYear || !m.date.includes(String(o.investmentYear))) continue;
+    if (m.category === "Financing" || m.category === "Acquisition") {
       return { kind: "entry", owner: o };
     }
   }
+
+  // Exit pass: same precedence — explicit firm mention beats categorical fallback.
+  if (matchedOwner?.exitYear && m.date.includes(String(matchedOwner.exitYear))) {
+    return { kind: "exit", owner: matchedOwner };
+  }
   for (const o of owners) {
-    const firstWord = ownerFirstWord(o.firm);
-    const mentionsFirm = !!firstWord && m.event.toLowerCase().includes(firstWord);
-    if (
-      o.exitYear &&
-      m.date.includes(String(o.exitYear)) &&
-      (m.category === "Divestiture" || mentionsFirm)
-    ) {
+    if (!o.exitYear || !m.date.includes(String(o.exitYear))) continue;
+    if (m.category === "Divestiture") {
       return { kind: "exit", owner: o };
     }
   }
