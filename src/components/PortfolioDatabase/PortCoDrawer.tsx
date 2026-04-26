@@ -133,10 +133,12 @@ export function PortCoDrawer({
   }, [onClose]);
 
   const locationDisplay = company.headquarters || company.country;
+  // Milestones arrive from queries.ts ordered by sortDate desc (newest first),
+  // which matches the "reverse chronological" rendering described in CLAUDE.md.
+  // Render that order directly; truncating to 6 keeps the most recent events.
   const milestones = company.milestones || [];
   const sources = company.sources || [];
-  const reversedMilestones = [...milestones].reverse();
-  const visibleMilestones = showAllMilestones ? reversedMilestones : reversedMilestones.slice(0, 6);
+  const visibleMilestones = showAllMilestones ? milestones : milestones.slice(0, 6);
 
   const sectorColor = getPortCoSectorColor(company.sector);
   const owners = company.owners || [];
@@ -359,20 +361,33 @@ export function PortCoDrawer({
                       Sources
                     </span>
                     <div className="space-y-1.5">
-                      {sources.map((s, i) => (
-                        <a
-                          key={i}
-                          href={s.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 group"
-                        >
-                          <ExternalLink className="h-3 w-3 text-[#c4c4c4] group-hover:text-[#008253] transition-colors shrink-0" />
-                          <span className="text-micro text-[#999999] group-hover:text-[#008253] transition-colors truncate">
-                            {s.label}
-                          </span>
-                        </a>
-                      ))}
+                      {sources.map((s, i) => {
+                        // Source.label values are inconsistent ("domain — company
+                        // name", duplicated by another field, sometimes blank).
+                        // Derive the hostname from the URL — same approach the
+                        // Fund drawer uses — so the list is informative and
+                        // distinguishes truly distinct articles even when the
+                        // labels are uninformative.
+                        let hostname = s.url;
+                        try {
+                          hostname = new URL(s.url).hostname.replace(/^www\./, "");
+                        } catch {}
+                        return (
+                          <a
+                            key={i}
+                            href={s.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 group"
+                            title={s.label || s.url}
+                          >
+                            <ExternalLink className="h-3 w-3 text-[#c4c4c4] group-hover:text-[#008253] transition-colors shrink-0" />
+                            <span className="text-micro text-[#999999] group-hover:text-[#008253] transition-colors truncate">
+                              {hostname}
+                            </span>
+                          </a>
+                        );
+                      })}
                     </div>
                   </div>
                 )}

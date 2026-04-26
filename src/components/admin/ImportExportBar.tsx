@@ -193,7 +193,7 @@ export default function ImportExportBar({ entityType }: ImportExportBarProps) {
       <a
         href={`/api/exports/${entityType}`}
         download
-        className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded bg-[#27272A] hover:bg-[#3f3f46] text-white transition-colors"
+        className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded bg-[#27272A] hover:bg-[#3f3f46] text-[#1a1a1a] transition-colors"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
@@ -202,7 +202,7 @@ export default function ImportExportBar({ entityType }: ImportExportBarProps) {
       </a>
 
       {/* Import CSV */}
-      <label className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded bg-[#27272A] hover:bg-[#3f3f46] text-white transition-colors cursor-pointer">
+      <label className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded bg-[#27272A] hover:bg-[#3f3f46] text-[#1a1a1a] transition-colors cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M17 8l-5-5m0 0L7 8m5-5v12" />
         </svg>
@@ -240,7 +240,7 @@ export default function ImportExportBar({ entityType }: ImportExportBarProps) {
           )}
           <button
             onClick={() => setImportStatus({ state: "idle" })}
-            className="text-[#71717A] hover:text-white ml-1"
+            className="text-[#71717A] hover:text-[#1a1a1a] ml-1"
             title="Dismiss"
           >
             &times;

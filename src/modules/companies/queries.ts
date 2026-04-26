@@ -15,7 +15,11 @@ function toCompanyView(company: any): CompanyView {
   const ownerships = company.ownershipPeriods || [];
   const owners: OwnerView[] = ownerships
     .map((p: any): OwnerView => ({
-      firm: p.organization?.name || p.fund?.manager?.name || "",
+      // Prefer the linked fund's manager (the canonical "investor of record")
+      // over a free-text organization on the OwnershipPeriod itself. The
+      // organization field is often a sleeve or co-investor; the fund manager
+      // is the deal counterparty users expect to see.
+      firm: p.fund?.manager?.name || p.organization?.name || "",
       vehicle: p.vehicleName || p.fund?.fundName || "",
       fundName: p.fund?.fundName || undefined,
       investmentYear: p.investmentYear ?? undefined,

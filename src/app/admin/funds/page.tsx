@@ -18,16 +18,16 @@ export default async function AdminFundsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-[#09090B] text-white p-8">
+    <div className="min-h-screen bg-[#f3f3f3] text-[#1a1a1a] p-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <Link href="/admin" className="text-sm text-[#71717A] hover:text-white mb-2 inline-block">&larr; Back to Admin</Link>
+            <Link href="/admin" className="text-sm text-[#71717A] hover:text-[#1a1a1a] mb-2 inline-block">&larr; Back to Admin</Link>
             <h1 className="text-2xl font-bold">Funds</h1>
           </div>
           <Link
             href="/admin/funds/new"
-            className="bg-[#818CF8] text-white px-4 py-2 rounded hover:bg-[#6366F1] text-sm font-medium"
+            className="bg-[#008253] text-[#1a1a1a] px-4 py-2 rounded hover:bg-[#006d45] text-sm font-medium"
           >
             New Fund
           </Link>
@@ -37,7 +37,7 @@ export default async function AdminFundsPage() {
 
         <table className="w-full text-sm mt-4">
           <thead>
-            <tr className="border-b border-[#27272A] text-[#71717A] text-left">
+            <tr className="border-b border-black/[0.08] text-[#71717A] text-left">
               <th className="pb-2 pr-4">ID</th>
               <th className="pb-2 pr-4">Fund Name</th>
               <th className="pb-2 pr-4">Manager</th>
@@ -48,7 +48,7 @@ export default async function AdminFundsPage() {
           </thead>
           <tbody>
             {funds.map((fund) => (
-              <tr key={fund.id} className="border-b border-[#1a1a1d] hover:bg-[#111113]">
+              <tr key={fund.id} className="border-b border-[#1a1a1d] hover:bg-white">
                 <td className="py-2 pr-4 text-[#71717A] font-mono text-xs">{fund.legacyId}</td>
                 <td className="py-2 pr-4 font-medium">{fund.fundName}</td>
                 <td className="py-2 pr-4 text-[#A1A1AA]">{fund.manager.name}</td>
@@ -58,7 +58,7 @@ export default async function AdminFundsPage() {
                   <div className="flex items-center gap-2">
                     <Link
                       href={`/admin/funds/${fund.id}/edit`}
-                      className="text-xs px-2 py-1 rounded bg-[#818CF8]/10 text-[#818CF8] hover:bg-[#818CF8]/20"
+                      className="text-xs px-2 py-1 rounded bg-[#008253]/10 text-[#818CF8] hover:bg-[#008253]/20"
                     >
                       Edit
                     </Link>

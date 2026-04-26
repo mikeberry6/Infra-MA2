@@ -27,13 +27,13 @@ export default function DeleteButton({ deleteAction, id }: DeleteButtonProps) {
               }
             });
           }}
-          className="text-xs px-2 py-1 rounded bg-red-600 hover:bg-red-700 text-white disabled:opacity-50"
+          className="text-xs px-2 py-1 rounded bg-red-600 hover:bg-red-700 text-[#1a1a1a] disabled:opacity-50"
         >
           {isPending ? "Deleting..." : "Confirm"}
         </button>
         <button
           onClick={() => setConfirming(false)}
-          className="text-xs px-2 py-1 rounded bg-[#27272A] hover:bg-[#3f3f46] text-white"
+          className="text-xs px-2 py-1 rounded bg-[#27272A] hover:bg-[#3f3f46] text-[#1a1a1a]"
         >
           Cancel
         </button>

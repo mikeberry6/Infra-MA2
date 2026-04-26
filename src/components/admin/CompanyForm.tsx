@@ -13,7 +13,7 @@ interface CompanyFormProps {
 }
 
 const inputClass =
-  "w-full bg-[#111113] border border-[#27272A] text-white rounded px-3 py-2 text-sm focus:outline-none focus:border-[#818CF8]";
+  "w-full bg-white border border-black/[0.08] text-[#1a1a1a] rounded px-3 py-2 text-sm focus:outline-none focus:border-[#008253]";
 const labelClass = "block text-sm text-[#A1A1AA] mb-1";
 
 export default function CompanyForm({ initialData, action, mode }: CompanyFormProps) {
@@ -259,11 +259,11 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
       </div>
 
       {/* Actions */}
-      <div className="flex items-center gap-4 pt-4 border-t border-[#27272A]">
+      <div className="flex items-center gap-4 pt-4 border-t border-black/[0.08]">
         <button
           type="submit"
           disabled={isPending}
-          className="bg-[#818CF8] text-white px-6 py-2 rounded hover:bg-[#6366F1] disabled:opacity-50 text-sm font-medium"
+          className="bg-[#008253] text-[#1a1a1a] px-6 py-2 rounded hover:bg-[#006d45] disabled:opacity-50 text-sm font-medium"
         >
           {isPending
             ? mode === "create"
@@ -273,7 +273,7 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
             ? "Create Company"
             : "Save Changes"}
         </button>
-        <Link href="/admin/companies" className="text-sm text-[#71717A] hover:text-white">
+        <Link href="/admin/companies" className="text-sm text-[#71717A] hover:text-[#1a1a1a]">
           Cancel
         </Link>
       </div>

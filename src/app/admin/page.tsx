@@ -21,7 +21,7 @@ export default async function AdminDashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#09090B] text-white p-8">
+    <div className="min-h-screen bg-[#f3f3f3] text-[#1a1a1a] p-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-2">Admin Dashboard</h1>
         <p className="text-[#71717A] mb-8">Manage deals, companies, funds, sources, and users.</p>
@@ -31,7 +31,7 @@ export default async function AdminDashboard() {
             <Link
               key={s.href}
               href={s.href}
-              className="block p-6 rounded-lg border border-[#27272A] bg-[#111113] hover:border-[#3f3f46] transition-colors"
+              className="block p-6 rounded-lg border border-black/[0.08] bg-white hover:border-black/[0.16] transition-colors"
             >
               <h2 className="text-lg font-semibold mb-1">{s.label}</h2>
               <p className="text-2xl font-bold text-[#818CF8]">{s.count}</p>

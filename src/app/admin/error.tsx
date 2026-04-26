@@ -20,7 +20,7 @@ export default function AdminError({
         <p className="mt-2 text-sm text-[#555]">{error.message || "Unknown error"}</p>
         <button
           onClick={reset}
-          className="mt-4 inline-flex h-8 items-center px-3 text-[11px] font-medium bg-[#1a1a1a] text-white hover:bg-[#333] transition-colors"
+          className="mt-4 inline-flex h-8 items-center px-3 text-[11px] font-medium bg-[#1a1a1a] text-[#1a1a1a] hover:bg-[#333] transition-colors"
         >
           Retry
         </button>
