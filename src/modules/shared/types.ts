@@ -65,6 +65,9 @@ export interface PortfolioCompanyView {
   region: string;
   country: string;
   description?: string;
+  isActive: boolean;
+  investmentYear?: number;
+  exitYear?: number;
 }
 
 export interface OwnerView {

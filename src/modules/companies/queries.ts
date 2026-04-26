@@ -44,10 +44,17 @@ function toCompanyView(company: any): CompanyView {
     title: r.title,
   }));
 
-  const sources: SourceView[] | undefined = company.citations?.map((c: any) => ({
-    label: c.source.label,
-    url: c.source.url,
-  }));
+  // Dedupe by URL: the underlying Citation table can contain multiple rows for
+  // the same (companyId, sourceId), and rendering each one would surface the
+  // same link N times in the drawer. Keep insertion order so the first cite wins.
+  const seenSourceUrls = new Set<string>();
+  const sources: SourceView[] | undefined = company.citations
+    ?.map((c: any) => ({ label: c.source.label, url: c.source.url }))
+    .filter((s: SourceView) => {
+      if (seenSourceUrls.has(s.url)) return false;
+      seenSourceUrls.add(s.url);
+      return true;
+    });
 
   return {
     id: company.id,
@@ -100,13 +107,82 @@ const COMPANY_INCLUDE = {
   },
 };
 
+// Merge multiple CompanyView records that share a name. The DB currently has
+// duplicate Company rows for ~12 companies (e.g. one row with country="United
+// States" and another with country="United States / Canada"); the existing
+// (name, country) unique key doesn't catch these. We merge at the view layer
+// so the UI shows one card per company without a destructive DB change.
+function mergeByName(views: CompanyView[]): CompanyView {
+  if (views.length === 1) return views[0];
+  // Pick the row with the most ownership periods as the "spine" (its scalar
+  // fields propagate). Ties go to the longer description.
+  const spine = [...views].sort((a, b) => {
+    if (b.owners.length !== a.owners.length) return b.owners.length - a.owners.length;
+    return (b.description?.length ?? 0) - (a.description?.length ?? 0);
+  })[0];
+
+  const dedup = <T,>(items: T[], key: (t: T) => string): T[] => {
+    const seen = new Set<string>();
+    return items.filter((t) => {
+      const k = key(t);
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
+  };
+
+  const owners = dedup(
+    views.flatMap((v) => v.owners),
+    (o) => `${o.firm}|${o.vehicle}|${o.investmentYear ?? ""}|${o.exitYear ?? ""}`,
+  ).sort((a, b) => {
+    if (a.isActive !== b.isActive) return a.isActive ? -1 : 1;
+    return (b.investmentYear ?? 0) - (a.investmentYear ?? 0);
+  });
+  const primary = owners[0];
+
+  const milestones = dedup(
+    views.flatMap((v) => v.milestones ?? []),
+    (m) => `${m.date}|${m.event}`,
+  );
+  const management = dedup(
+    views.flatMap((v) => v.management ?? []),
+    (e) => `${e.name}|${e.title}`,
+  );
+  const sources = dedup(
+    views.flatMap((v) => v.sources ?? []),
+    (s) => s.url,
+  );
+  const countryTags = Array.from(new Set(views.flatMap((v) => v.countryTags ?? [])));
+
+  return {
+    ...spine,
+    investmentFirm: primary?.firm || spine.investmentFirm,
+    ownershipVehicle: primary?.vehicle || spine.ownershipVehicle,
+    investmentYear: primary?.investmentYear ?? spine.investmentYear,
+    countryTags,
+    milestones: milestones.length > 0 ? milestones : undefined,
+    management: management.length > 0 ? management : undefined,
+    sources: sources.length > 0 ? sources : undefined,
+    owners,
+  };
+}
+
 export async function getAllCompanies(): Promise<CompanyView[]> {
   const companies = await prisma.company.findMany({
     where: { status: "PUBLISHED" },
     include: COMPANY_INCLUDE,
     orderBy: { name: "asc" },
   });
-  return companies.map(toCompanyView);
+  const views = companies.map(toCompanyView);
+  const byName = new Map<string, CompanyView[]>();
+  for (const v of views) {
+    const list = byName.get(v.name) ?? [];
+    list.push(v);
+    byName.set(v.name, list);
+  }
+  return Array.from(byName.values())
+    .map(mergeByName)
+    .sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export async function getCompanyById(id: string): Promise<CompanyView | null> {

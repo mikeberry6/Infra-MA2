@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import { NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
@@ -79,9 +80,16 @@ function shortenBuyer(raw: string): string[] {
   return shortened;
 }
 
-function isInfraFund(name: string): boolean {
-  if (!name || name === "—" || name === "N/A") return false;
-  return !NON_INFRA_FUND_ENTITIES.has(name);
+// `raw` is the View-layer joined string (e.g. "X / Y / Z"). Treat it as an
+// infra-fund only if every individual party is an infra fund — a single
+// non-infra co-buyer is enough to disqualify the badge.
+function isInfraFund(raw: string): boolean {
+  if (!raw || raw === "—" || raw === "N/A") return false;
+  const parts = raw.split(" / ").map((p) => p.trim()).filter(Boolean);
+  if (parts.length === 0) return false;
+  return parts.every(
+    (p) => p !== "—" && p !== "N/A" && !NON_INFRA_FUND_ENTITIES.has(p),
+  );
 }
 
 function getFundRoleTags(deal: DealView): { name: string; role: "Buyer" | "Seller" }[] {
@@ -851,17 +859,19 @@ function DealDrawer({
           )}
 
           {/* Source link */}
-          <div className="border-t border-black/[0.08] pt-4">
-            <a
-              href={deal.sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-micro font-medium text-[#6e6e6e] hover:text-[#008253] transition-colors"
-            >
-              View source on {deal.sourceName}
-              <ExternalLink className="h-3 w-3" />
-            </a>
-          </div>
+          {deal.sourceUrl && (
+            <div className="border-t border-black/[0.08] pt-4">
+              <a
+                href={deal.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-micro font-medium text-[#6e6e6e] hover:text-[#008253] transition-colors"
+              >
+                View source{deal.sourceName ? ` on ${deal.sourceName}` : ""}
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </>
@@ -914,7 +924,7 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
 
       return true;
     });
-  }, [debouncedSearch, activeSectors, activeRegions, activeCategories]);
+  }, [deals, debouncedSearch, activeSectors, activeRegions, activeCategories]);
 
   // Close drawer if selected deal is filtered out
   useEffect(() => {
@@ -922,6 +932,20 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
       setSelectedDeal(null);
     }
   }, [filteredDeals, selectedDeal]);
+
+  // Auto-open drawer when navigated here with `?focus=<legacyId>` (e.g. from
+  // the cross-database search page). Fires once per focus value.
+  const searchParams = useSearchParams();
+  const focusId = searchParams.get("focus");
+  const openedFocus = useRef<string | null>(null);
+  useEffect(() => {
+    if (!focusId || openedFocus.current === focusId) return;
+    const match = deals.find((d) => d.legacyId === focusId);
+    if (match) {
+      setSelectedDeal(match);
+      openedFocus.current = focusId;
+    }
+  }, [focusId, deals]);
 
   return (
     <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-3 sm:py-4">
