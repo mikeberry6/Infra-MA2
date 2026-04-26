@@ -80,14 +80,14 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
   }));
 
   return (
-    <div className="min-h-screen bg-[#09090B] text-white p-8">
+    <div className="min-h-screen bg-[#f3f3f3] text-[#1a1a1a] p-8">
       <div className="max-w-6xl mx-auto">
         <div className="mb-6">
-          <Link href="/admin/companies" className="text-sm text-[#71717A] hover:text-white mb-2 inline-block">
+          <Link href="/admin/companies" className="text-sm text-[#999999] hover:text-[#1a1a1a] mb-2 inline-block">
             &larr; Back to Companies
           </Link>
           <h1 className="text-2xl font-bold">Edit Company</h1>
-          <p className="text-sm text-[#71717A] mt-1">{company.name}</p>
+          <p className="text-sm text-[#999999] mt-1">{company.name}</p>
         </div>
 
         <CompanyForm initialData={initialData} action={boundUpdate} mode="edit" />

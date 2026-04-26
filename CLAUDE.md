@@ -75,9 +75,10 @@ Three ranked lists, each Top 5, all reactive to active filters:
 
 ### Fund-activity exclusions and aliases
 
-Inside `DynamicInsightsHero.tsx`:
-- `NON_INFRA_FUND_BUYERS` — set of buyer names to exclude from the fund-activity ranking (corporate acquirers, undisclosed buyers, etc.). When adding a deal whose buyer is not an infrastructure fund, add the name here.
-- `FUND_NAME_ALIASES` — normalizes variant fund names to a canonical name (e.g. `"CVC (CVC DIF)"` → `"CVC DIF"`). When a deal uses a variant of an existing fund name, add an entry here so transactions are counted together.
+Used by [DynamicInsightsHero](src/components/DealDatabase/DynamicInsightsHero.tsx) when bucketing buyers/sellers into the Top Fund Activity ranking:
+
+- `NON_INFRA_FUND_ENTITIES` in [src/lib/constants.ts](src/lib/constants.ts) — set of party names excluded from the fund-activity ranking (corporate acquirers, undisclosed buyers, etc.). When adding a deal whose buyer/seller is not an infrastructure fund, add the name here.
+- `normalizeFundName` + alias map in [src/lib/fund-name-utils.ts](src/lib/fund-name-utils.ts) — collapses variant fund names to a canonical name (e.g. `"CVC (CVC DIF)"` → `"CVC DIF"`). When a deal uses a variant of an existing fund name, add an entry here so transactions are counted together.
 
 ### Buyer name shortening
 
@@ -99,7 +100,7 @@ Defined in [src/modules/shared/types.ts](src/modules/shared/types.ts). Key field
 
 ### PortCo Drawer (aka "Company Scorecard")
 
-The slide-in detail panel that opens when a company row is clicked. Component is `PortCoDrawer` inside [PortfolioDatabase.tsx](src/components/PortfolioDatabase.tsx) (still inline as of writing — extraction is a known TODO).
+The slide-in detail panel that opens when a company row is clicked. Component is [PortCoDrawer](src/components/PortfolioDatabase/PortCoDrawer.tsx).
 
 **Terminology:** "scorecard" in a portfolio context = `PortCoDrawer`, NOT the `ScorecardEntry` type used elsewhere.
 
@@ -107,25 +108,13 @@ Renders in this order:
 
 1. **Header ("Ambient Canvas")** — sticky, dual ambient orbs (sector-colored + indigo), bold `text-2xl/3xl` company name, subtitle `{investmentFirm} · ● {status}`, optional website link icon, X close button (also Escape-bound). Design principle: restraint and bold typography over stacked decorations.
 
-2. **Investment Details** — `Briefcase` icon, `glass-card` rows separated by `divide-y divide-[#27272A]`:
-   - Firm → `company.investmentFirm`
-   - Fund → `company.ownershipVehicle`
-   - Fund Strategy *(if matched fund has strategies)* — colored badge pills via `getStrategyColor()`. Lookup: `funds.find(f => f.fundName === company.ownershipVehicle)`
-   - Investment Date *(if `company.investmentYear`)* — year only
-   - Sector — with sector-colored dot
-   - Subsector *(if present)*
-   - Location — `company.headquarters || company.country`
+2. **Investment Details** — `Briefcase` icon, one card per `OwnerView` in `company.owners` (active first, then prior owners chronologically). Each owner card shows firm name + Current/Former status pill, vehicle name, fund-strategy badges (looked up via `funds.find(f => f.fundName === owner.fundName ?? owner.vehicle)`), optional stake, and the year range from `formatYearRange()` (`2020–Present` for active, `2018–2024` or `Exited 2024` for realized). Below the owner cards: Sector (with sector-colored dot), optional Subsector, Location (`company.headquarters || company.country`). Note: there is no longer a separate "Investment Date" row — investment year lives inside each owner card's year range.
 
 3. **Company Overview** — `FileText` icon, `company.description` in `text-sm-dense text-[#A1A1AA] leading-relaxed`. Optional Sources sub-panel (nested dark card) with external links if `sources.length > 0`.
 
-4. **Historical Milestones** — `Clock` icon, vertical timeline (`w-px bg-[#27272A]`), reverse chronological. Shows max 6 with "Show all N" toggle. Each row: colored dot → date → category badge → event text.
+4. **Historical Milestones** — `Clock` icon, vertical timeline, reverse chronological (newest at top). Shows max 6 with "Show all N" toggle. Each row: colored dot → date → category badge → event text.
 
-   **Investment callout highlighting:** the milestone for the firm's initial investment gets indigo treatment (larger dot, `bg-[#818CF8]/[0.06]`, "Investment" badge). Detection logic in [PortfolioDatabase.tsx](src/components/PortfolioDatabase.tsx):
-   ```
-   mentionsFirm = event text includes first word of company.investmentFirm
-   isInvestmentMilestone = date includes investmentYear AND (category === "Financing" OR mentionsFirm)
-   ```
-   The highlighted milestone year **must** match `investmentYear` — if not, fix the data. When entering milestones for a new company, include one for the initial investment using category `"Financing"` (preferred) or `"Acquisition"` with the firm name in the event text.
+   **Entry / exit highlighting:** milestones that align with an owner's `investmentYear` or `exitYear` get a colored callout — green ("Investment") for entries, rust ("Exit") for exits. The classifier in [PortCoDrawer.tsx](src/components/PortfolioDatabase/PortCoDrawer.tsx) (`bestOwnerMatch` + `classifyMilestone`) tries to match the firm name in the event text first (full normalized form beats first-word match), then falls back to a year + category pattern (`Financing`/`Acquisition` for entries, `Divestiture` for exits). For entries to highlight cleanly, the milestone year **must** match an owner's `investmentYear` — if not, fix the data. When entering milestones for a new owner, include one using category `"Financing"` (preferred) or `"Acquisition"` with the firm name in the event text.
 
 5. **Key Management** — `Users` icon, 2-column grid (1-column if single exec). Filter regex: title contains `\bChief\b` OR (`\bPresident\b` AND NOT `\bVice\s*President\b`). Excludes VP, GC, Director, Controller. When entering management data, only include C-suite and President — the drawer filters the rest.
 

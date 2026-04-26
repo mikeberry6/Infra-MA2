@@ -31,6 +31,15 @@ import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
 
 
+// Fund size values in seed data sometimes carry editorial brackets — "[TBD]"
+// for placeholders, "[€5.0B]" for hand-keyed values. Strip a single pair of
+// outer brackets for display so the UI never shows the raw markup. Empty
+// placeholders ("[]", "[ ]") collapse to "—".
+function displaySize(size: string): string {
+  const inner = size.replace(/^\[(.*)\]$/, "$1").trim();
+  return inner || "—";
+}
+
 // ─── Fund Filter Bar ────────────────────────────────────────
 
 function FundFilterBar({
@@ -228,7 +237,7 @@ function FundVehicleCard({
       <div className="grid grid-cols-2 gap-2">
         <div>
           <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Size</span>
-          <div className="text-xs-dense text-[#6e6e6e] font-medium truncate">{fund.size}</div>
+          <div className="text-xs-dense text-[#6e6e6e] font-medium truncate">{displaySize(fund.size)}</div>
         </div>
         <div>
           <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Vintage</span>
@@ -315,7 +324,7 @@ function FundRow({
         </div>
       </td>
       <td className="px-3 py-[8px] text-right">
-        <span className="font-mono text-[11px] text-[#1a1a1a] tabular-nums">{fund.size}</span>
+        <span className="font-mono text-[11px] text-[#1a1a1a] tabular-nums">{displaySize(fund.size)}</span>
       </td>
       <td className="px-3 py-[8px] text-right">
         <span className="font-mono text-[11px] text-[#6d6d6d] tabular-nums">{fund.vintage}</span>
@@ -717,7 +726,7 @@ function FundDrawer({
               <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
                 <div>
                   <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Fund Size</span>
-                  <div className="text-sm-dense font-medium text-[#1a1a1a] mt-0.5">{fund.size}</div>
+                  <div className="text-sm-dense font-medium text-[#1a1a1a] mt-0.5">{displaySize(fund.size)}</div>
                 </div>
                 <div>
                   <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">Vintage</span>
@@ -933,7 +942,7 @@ function FundDrawer({
                     >
                       <div className="min-w-0">
                         <div className="text-sm-dense font-medium text-[#1a1a1a] truncate">{sib.fundName}</div>
-                        <div className="text-xs-dense text-[#999999]">{sib.size}</div>
+                        <div className="text-xs-dense text-[#999999]">{displaySize(sib.size)}</div>
                       </div>
                       <ChevronRight className="h-4 w-4 text-[#999999] shrink-0" />
                     </button>
