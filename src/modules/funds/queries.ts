@@ -15,6 +15,9 @@ function toFundView(
   fund: DbFund & {
     manager: { name: string };
     ownershipPeriods: {
+      isActive: boolean;
+      investmentYear: number | null;
+      exitYear: number | null;
       company: {
         name: string;
         sector: string;
@@ -37,6 +40,9 @@ function toFundView(
       op.company.region,
     country: op.company.country,
     description: op.company.description || undefined,
+    isActive: op.isActive,
+    investmentYear: op.investmentYear ?? undefined,
+    exitYear: op.exitYear ?? undefined,
   }));
 
   return {
@@ -60,11 +66,15 @@ function toFundView(
   };
 }
 
+// Include both active and realized ownership periods. The drawer flags
+// realized investments visually so users see the full track record.
 const FUND_INCLUDE = {
   manager: { select: { name: true } },
   ownershipPeriods: {
-    where: { isActive: true },
-    include: {
+    select: {
+      isActive: true,
+      investmentYear: true,
+      exitYear: true,
       company: {
         select: {
           name: true,

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import { PORTCO_SECTORS, PORTCO_REGIONS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
 import { getPortCoSectorColor, getPortCoRegionColor, getPortCoCountryTagColor } from "@/lib/colors";
 import { getUniqueFirms } from "@/lib/portco-utils";
@@ -134,6 +135,11 @@ function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
   const firmRanking = useMemo(() => {
     const counts: Record<string, number> = {};
     for (const c of companies) {
+      // Skip companies with no resolved investment firm (no OwnershipPeriod or
+      // an OwnershipPeriod missing both organization and fund.manager links) —
+      // otherwise they bucket under the empty string and surface as a
+      // ghost "Top Investment Firm" with no label.
+      if (!c.investmentFirm) continue;
       counts[c.investmentFirm] = (counts[c.investmentFirm] ?? 0) + 1;
     }
     return Object.entries(counts)
@@ -159,7 +165,7 @@ function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
           <span className="font-mono text-[#1a1a1a] font-medium tabular-nums">{companies.length}</span> portfolio companies
           {" · "}
           <span className="font-mono text-[#1a1a1a] font-medium tabular-nums">
-            {new Set(companies.map((c) => c.investmentFirm)).size}
+            {new Set(companies.map((c) => c.investmentFirm).filter(Boolean)).size}
           </span> investment firms
           {" · "}
           <span className="font-mono text-[#1a1a1a] font-medium tabular-nums">
@@ -375,18 +381,31 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
 
   const debouncedSearch = useDebounce(search, 300);
 
+  // Auto-open drawer when navigated here with `?focus=<companyId>`.
+  const searchParams = useSearchParams();
+  const focusId = searchParams.get("focus");
+  const openedFocus = useRef<string | null>(null);
+  useEffect(() => {
+    if (!focusId || openedFocus.current === focusId) return;
+    const match = portcos.find((c) => c.id === focusId);
+    if (match) {
+      setSelectedCompany(match);
+      openedFocus.current = focusId;
+    }
+  }, [focusId, portcos]);
+
   const clearAllUrlFilters = useClearUrlFilters(["sector", "country", "firm", "year"]);
   const clearFilters = useCallback(() => {
     clearAllUrlFilters();
     setSearch("");
   }, [clearAllUrlFilters]);
 
-  const firmOptions = useMemo(() => getUniqueFirms(portcos), []);
+  const firmOptions = useMemo(() => getUniqueFirms(portcos), [portcos]);
   const investmentYearOptions = useMemo(() => {
     return Array.from(
       new Set(portcos.map((c) => c.investmentYear).filter((y): y is number => y != null).map(String))
     ).sort((a, b) => parseInt(b) - parseInt(a));
-  }, []);
+  }, [portcos]);
 
   const filteredCompanies = useMemo(() => {
     return portcos.filter((c) => {
@@ -410,6 +429,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
       return true;
     });
   }, [
+    portcos,
     debouncedSearch,
     activeSectors,
     activeCountryTags,

@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback, Fragment } from "react";
+import { useState, useMemo, useEffect, useCallback, useRef, Fragment } from "react";
+import { useSearchParams } from "next/navigation";
 import { FUND_STRATEGIES, FUND_STATUSES, FUND_SIZE_RANGES, FUND_SECTORS } from "@/lib/constants";
-import { getStrategyColor, getStatusColor, getSizeRangeColor, getFundSectorColor, getStructureColor } from "@/lib/colors";
+import { getStrategyColor, getStatusColor, getSizeRangeColor, getFundSectorColor, getPortCoSectorColor, getStructureColor } from "@/lib/colors";
 import { matchesSizeRange, groupFundsByManager, getFundStats } from "@/lib/fund-utils";
 import type { FundView, PortfolioCompanyView, DatabaseCounts } from "@/modules/shared/types";
 import {
@@ -583,17 +584,27 @@ function FundDrawer({
       if (!bySector[sector][subsector]) bySector[sector][subsector] = [];
       bySector[sector][subsector].push(entry);
     }
-    // Sort sectors by company count (desc), subsectors alphabetically
+    // Sort sectors by company count (desc), subsectors alphabetically. Within
+    // each subsector, active investments come first, then realized; secondary
+    // sort by name.
     const sortedSectors = Object.entries(bySector)
       .map(([sector, subsectors]) => ({
         sector,
         subsectors: Object.entries(subsectors)
-          .map(([sub, entries]) => ({ subsector: sub, entries: entries.sort((a, b) => a.company.name.localeCompare(b.company.name)) }))
+          .map(([sub, entries]) => ({
+            subsector: sub,
+            entries: entries.sort((a, b) => {
+              if (a.company.isActive !== b.company.isActive) return a.company.isActive ? -1 : 1;
+              return a.company.name.localeCompare(b.company.name);
+            }),
+          }))
           .sort((a, b) => a.subsector.localeCompare(b.subsector)),
         count: Object.values(subsectors).reduce((sum, arr) => sum + arr.length, 0),
       }))
       .sort((a, b) => b.count - a.count);
-    return { sectors: sortedSectors, total: companiesByFund.length };
+    const activeCount = companiesByFund.filter((e) => e.company.isActive).length;
+    const realizedCount = companiesByFund.length - activeCount;
+    return { sectors: sortedSectors, total: companiesByFund.length, activeCount, realizedCount };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fund.id, siblingFunds.length]);
 
@@ -796,6 +807,11 @@ function FundDrawer({
                 </span>
                 <span className="text-micro text-[#999999] ml-auto">
                   {firmPortfolio.total} {firmPortfolio.total === 1 ? "company" : "companies"}
+                  {firmPortfolio.realizedCount > 0 && (
+                    <span className="text-micro text-[#999999]">
+                      {" "}({firmPortfolio.activeCount} active · {firmPortfolio.realizedCount} realized)
+                    </span>
+                  )}
                 </span>
               </div>
               <div className="px-4 py-4">
@@ -807,8 +823,8 @@ function FundDrawer({
                           className="text-[10px] font-medium px-1.5 py-0"
                           style={{
                             color: "#444444",
-                            backgroundColor: `${getFundSectorColor(sector)}08`,
-                            border: `1px solid ${getFundSectorColor(sector)}12`,
+                            backgroundColor: `${getPortCoSectorColor(sector)}08`,
+                            border: `1px solid ${getPortCoSectorColor(sector)}12`,
                           }}
                         >
                           {sector}
@@ -820,37 +836,65 @@ function FundDrawer({
                           <div key={subsector}>
                             <span className="text-micro text-[#999999] uppercase tracking-wider">{subsector}</span>
                             <div className="mt-1 space-y-1">
-                              {entries.map(({ company, fundName, strategies }) => (
-                                <div
-                                  key={`${company.name}-${fundName}`}
-                                  className="bg-[#fafaf9] border border-[#e8e8e8] rounded-[3px] px-2.5 py-1.5 flex items-start justify-between gap-2"
-                                >
-                                  <div className="min-w-0">
-                                    <div className="text-sm-dense text-[#1a1a1a]">{company.name}</div>
-                                    <div className="text-micro text-[#999999] mt-0.5">
-                                      {company.country}{firmFunds.length > 1 ? ` · ${fundName}` : ""}
+                              {entries.map(({ company, fundName, strategies }) => {
+                                const yearLabel = company.isActive
+                                  ? company.investmentYear
+                                    ? `${company.investmentYear}–Present`
+                                    : null
+                                  : company.investmentYear && company.exitYear
+                                    ? `${company.investmentYear}–${company.exitYear}`
+                                    : company.exitYear
+                                      ? `Exited ${company.exitYear}`
+                                      : null;
+                                return (
+                                  <div
+                                    key={`${company.name}-${fundName}`}
+                                    className="bg-[#fafaf9] border border-[#e8e8e8] rounded-[3px] px-2.5 py-1.5 flex items-start justify-between gap-2"
+                                    style={!company.isActive ? { opacity: 0.7 } : undefined}
+                                  >
+                                    <div className="min-w-0">
+                                      <div className="text-sm-dense text-[#1a1a1a] flex items-center gap-1.5 flex-wrap">
+                                        <span>{company.name}</span>
+                                        {!company.isActive && (
+                                          <span
+                                            className="text-[10px] font-medium px-1.5 py-0"
+                                            style={{
+                                              color: "#444444",
+                                              backgroundColor: "#a1a1aa10",
+                                              border: "1px solid #a1a1aa20",
+                                            }}
+                                          >
+                                            Realized
+                                          </span>
+                                        )}
+                                      </div>
+                                      <div className="text-micro text-[#999999] mt-0.5">
+                                        {company.country}
+                                        {yearLabel ? ` · ${yearLabel}` : ""}
+                                        {firmFunds.length > 1 ? ` · ${fundName}` : ""}
+                                      </div>
+                                    </div>
+                                    <div className="flex gap-1 shrink-0 flex-wrap justify-end">
+                                      {strategies.slice(0, 1).map((s) => {
+                                        const color = getStrategyColor(s);
+                                        return (
+                                          <span
+                                            key={s}
+                                            className="text-[10px] font-medium px-1.5 py-0"
+                                            style={{
+                                              color: "#444444",
+                                              backgroundColor: `${color}08`,
+                                              border: `1px solid ${color}12`,
+                                            }}
+                                          >
+                                            {s}
+                                          </span>
+                                        );
+                                      })}
                                     </div>
                                   </div>
-                                  <div className="flex gap-1 shrink-0 flex-wrap justify-end">
-                                    {strategies.slice(0, 1).map((s) => {
-                                      const color = getStrategyColor(s);
-                                      return (
-                                        <span
-                                          key={s}
-                                          className="text-[10px] font-medium px-1.5 py-0"
-                                          style={{
-                                            color: "#444444",
-                                            backgroundColor: `${color}08`,
-                                            border: `1px solid ${color}12`,
-                                          }}
-                                        >
-                                          {s}
-                                        </span>
-                                      );
-                                    })}
-                                  </div>
-                                </div>
-                              ))}
+                                );
+                              })}
                             </div>
                           </div>
                         ))}
@@ -937,7 +981,7 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
       if (activeSectors.size > 0 && !fund.sectors.some((s) => activeSectors.has(s))) return false;
       return true;
     });
-  }, [debouncedFundSearch, activeStrategies, activeStatuses, activeSizeRanges, activeSectors]);
+  }, [funds, debouncedFundSearch, activeStrategies, activeStatuses, activeSizeRanges, activeSectors]);
 
   const groupedFunds = useMemo(() => groupFundsByManager(filteredFunds), [filteredFunds]);
   const sortedManagers = useMemo(
@@ -951,6 +995,19 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
       setSelectedFund(null);
     }
   }, [filteredFunds, selectedFund]);
+
+  // Auto-open drawer when navigated here with `?focus=<legacyId>`.
+  const searchParams = useSearchParams();
+  const focusId = searchParams.get("focus");
+  const openedFocus = useRef<string | null>(null);
+  useEffect(() => {
+    if (!focusId || openedFocus.current === focusId) return;
+    const match = funds.find((f) => f.legacyId === focusId);
+    if (match) {
+      setSelectedFund(match);
+      openedFocus.current = focusId;
+    }
+  }, [focusId, funds]);
 
   return (
     <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-3 sm:py-4">
