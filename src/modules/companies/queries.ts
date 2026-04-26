@@ -5,26 +5,33 @@ import {
   COMPANY_STATUS_DISPLAY,
   MILESTONE_CATEGORY_DISPLAY,
 } from "@/modules/shared/enum-maps";
-import type { CompanyView, MilestoneView, ExecutiveView, SourceView } from "@/modules/shared/types";
+import type { CompanyView, MilestoneView, ExecutiveView, SourceView, OwnerView } from "@/modules/shared/types";
 
 function toCompanyView(company: any): CompanyView {
-  // Derive investmentFirm and ownershipVehicle from ownership periods
+  // Map every ownership period to an OwnerView, then sort: active first,
+  // then by investmentYear descending. The first entry becomes the "primary"
+  // owner whose values are projected onto the scalar legacy fields below
+  // (kept for filters, sorts, search, and CSV export compatibility).
   const ownerships = company.ownershipPeriods || [];
-  const primaryOwnership = ownerships[0];
+  const owners: OwnerView[] = ownerships
+    .map((p: any): OwnerView => ({
+      firm: p.organization?.name || p.fund?.manager?.name || "",
+      vehicle: p.vehicleName || p.fund?.fundName || "",
+      fundName: p.fund?.fundName || undefined,
+      investmentYear: p.investmentYear ?? undefined,
+      exitYear: p.exitYear ?? undefined,
+      isActive: !!p.isActive,
+      stake: p.stake ?? undefined,
+    }))
+    .sort((a: OwnerView, b: OwnerView) => {
+      if (a.isActive !== b.isActive) return a.isActive ? -1 : 1;
+      return (b.investmentYear ?? 0) - (a.investmentYear ?? 0);
+    });
 
-  // investmentFirm: prefer organization name, fall back to fund manager
-  const investmentFirm =
-    primaryOwnership?.organization?.name ||
-    primaryOwnership?.fund?.manager?.name ||
-    "";
-
-  // ownershipVehicle: prefer vehicleName, fall back to fund name
-  const ownershipVehicle =
-    primaryOwnership?.vehicleName ||
-    primaryOwnership?.fund?.fundName ||
-    "";
-
-  const investmentYear = primaryOwnership?.investmentYear || undefined;
+  const primary = owners[0];
+  const investmentFirm = primary?.firm || "";
+  const ownershipVehicle = primary?.vehicle || "";
+  const investmentYear = primary?.investmentYear;
 
   const milestones: MilestoneView[] | undefined = company.milestones?.map((m: any) => ({
     date: m.date,
@@ -61,6 +68,7 @@ function toCompanyView(company: any): CompanyView {
     milestones: milestones && milestones.length > 0 ? milestones : undefined,
     management: management && management.length > 0 ? management : undefined,
     sources: sources && sources.length > 0 ? sources : undefined,
+    owners,
   };
 }
 

@@ -56,6 +56,7 @@ export interface PortCoOwner {
   investmentFirm: string;
   ownershipVehicle: string;
   investmentYear?: number;
+  exitYear?: number;
   stake?: string;
   status: PortCoStatus;
 }

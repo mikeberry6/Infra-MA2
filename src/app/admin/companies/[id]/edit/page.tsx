@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import CompanyForm from "@/components/admin/CompanyForm";
+import { OwnershipPeriodsManager, type OwnershipPeriodRow } from "@/components/admin/OwnershipPeriodsManager";
 import { updateCompany } from "@/modules/admin/actions";
 import {
   COMPANY_SECTOR_DISPLAY,
@@ -68,6 +69,16 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
 
   const boundUpdate = updateCompany.bind(null, id);
 
+  const ownershipRows: OwnershipPeriodRow[] = company.ownershipPeriods.map((p) => ({
+    id: p.id,
+    investmentFirm: p.organization?.name || p.fund?.manager?.name || "",
+    ownershipVehicle: p.vehicleName || p.fund?.fundName || "",
+    investmentYear: p.investmentYear,
+    exitYear: p.exitYear,
+    isActive: p.isActive,
+    stake: p.stake,
+  }));
+
   return (
     <div className="min-h-screen bg-[#09090B] text-white p-8">
       <div className="max-w-6xl mx-auto">
@@ -80,6 +91,8 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
         </div>
 
         <CompanyForm initialData={initialData} action={boundUpdate} mode="edit" />
+
+        <OwnershipPeriodsManager companyId={id} initialPeriods={ownershipRows} />
       </div>
     </div>
   );
