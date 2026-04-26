@@ -2,7 +2,7 @@
 
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
-import { dealSchema, fundSchema, companySchema } from "./schemas";
+import { dealSchema, fundSchema, companySchema, ownershipPeriodSchema } from "./schemas";
 import {
   DEAL_SECTOR_MAP,
   DEAL_REGION_MAP,
@@ -484,5 +484,98 @@ export async function publishCompany(id: string): Promise<ActionResult> {
   } catch (error) {
     console.error("publishCompany error:", error);
     return { success: false, error: error instanceof Error ? error.message : "Failed to publish company" };
+  }
+}
+
+// ── Ownership Period Actions ──────────────────────────────────
+
+function parseOwnershipFormData(formData: FormData) {
+  const isActiveRaw = formData.get("isActive");
+  return {
+    investmentFirm: ((formData.get("investmentFirm") as string) || "").trim(),
+    ownershipVehicle: (formData.get("ownershipVehicle") as string) || undefined,
+    investmentYear: parseFormNumber(formData, "investmentYear"),
+    exitYear: parseFormNumber(formData, "exitYear"),
+    isActive: isActiveRaw === "true" || isActiveRaw === "on" || isActiveRaw === "1",
+    stake: (formData.get("stake") as string) || undefined,
+  };
+}
+
+export async function addOwnershipPeriod(
+  companyId: string,
+  formData: FormData,
+): Promise<ActionResult> {
+  try {
+    const parsed = ownershipPeriodSchema.safeParse(parseOwnershipFormData(formData));
+    if (!parsed.success) {
+      return { success: false, error: parsed.error.issues.map((i) => i.message).join(", ") };
+    }
+    const o = parsed.data;
+    const orgId = await findOrCreateOrg(o.investmentFirm);
+    const fund = o.ownershipVehicle
+      ? await prisma.fund.findFirst({ where: { fundName: o.ownershipVehicle } })
+      : null;
+    const created = await prisma.ownershipPeriod.create({
+      data: {
+        companyId,
+        organizationId: orgId,
+        fundId: fund?.id ?? null,
+        vehicleName: o.ownershipVehicle || o.investmentFirm,
+        investmentYear: o.investmentYear ?? null,
+        exitYear: o.exitYear ?? null,
+        isActive: o.isActive,
+        stake: o.stake ?? null,
+      },
+    });
+    revalidateAll();
+    return { success: true, id: created.id };
+  } catch (error) {
+    console.error("addOwnershipPeriod error:", error);
+    return { success: false, error: error instanceof Error ? error.message : "Failed to add ownership period" };
+  }
+}
+
+export async function updateOwnershipPeriod(
+  id: string,
+  formData: FormData,
+): Promise<ActionResult> {
+  try {
+    const parsed = ownershipPeriodSchema.safeParse(parseOwnershipFormData(formData));
+    if (!parsed.success) {
+      return { success: false, error: parsed.error.issues.map((i) => i.message).join(", ") };
+    }
+    const o = parsed.data;
+    const orgId = await findOrCreateOrg(o.investmentFirm);
+    const fund = o.ownershipVehicle
+      ? await prisma.fund.findFirst({ where: { fundName: o.ownershipVehicle } })
+      : null;
+    await prisma.ownershipPeriod.update({
+      where: { id },
+      data: {
+        organizationId: orgId,
+        fundId: fund?.id ?? null,
+        vehicleName: o.ownershipVehicle || o.investmentFirm,
+        investmentYear: o.investmentYear ?? null,
+        exitYear: o.exitYear ?? null,
+        isActive: o.isActive,
+        stake: o.stake ?? null,
+      },
+    });
+    revalidateAll();
+    return { success: true };
+  } catch (error) {
+    console.error("updateOwnershipPeriod error:", error);
+    return { success: false, error: error instanceof Error ? error.message : "Failed to update ownership period" };
+  }
+}
+
+export async function deleteOwnershipPeriod(id: string): Promise<ActionResult> {
+  try {
+    await prisma.ownershipPeriod.delete({ where: { id } });
+    revalidateAll();
+    return { success: true };
+  } catch (error) {
+    console.error("deleteOwnershipPeriod error:", error);
+    return { success: false, error: error instanceof Error ? error.message : "Failed to delete ownership period" };
   }
 }

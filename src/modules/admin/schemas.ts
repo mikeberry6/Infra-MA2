@@ -213,3 +213,16 @@ export const companySchema = z.object({
 });
 
 export type CompanyInput = z.infer<typeof companySchema>;
+
+// ── Ownership Period Schema ───────────────────────────────────────────
+
+export const ownershipPeriodSchema = z.object({
+  investmentFirm: z.string().min(1, "Investment firm is required"),
+  ownershipVehicle: z.string().optional(),
+  investmentYear: z.number().int().min(1900).max(2100).optional(),
+  exitYear: z.number().int().min(1900).max(2100).optional(),
+  isActive: z.boolean().default(true),
+  stake: z.string().optional(),
+});
+
+export type OwnershipPeriodInput = z.infer<typeof ownershipPeriodSchema>;

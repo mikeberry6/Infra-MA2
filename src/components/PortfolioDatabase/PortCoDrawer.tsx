@@ -15,7 +15,60 @@ import {
   getMilestoneCategoryColor,
   getStrategyColor,
 } from "@/lib/colors";
-import type { CompanyView, FundView } from "@/modules/shared/types";
+import type { CompanyView, FundView, OwnerView, MilestoneView } from "@/modules/shared/types";
+
+type MilestoneClassification =
+  | { kind: "entry"; owner: OwnerView }
+  | { kind: "exit"; owner: OwnerView }
+  | null;
+
+function ownerFirstWord(firm: string): string {
+  return firm.toLowerCase().split(/\s+/)[0] || "";
+}
+
+// Classify a milestone as an entry or exit transition for one of the owners.
+// Entry: the milestone year matches an owner's investmentYear AND
+//        (category is Financing/Acquisition OR the event mentions the firm).
+// Exit:  the milestone year matches an owner's exitYear AND
+//        (category is Divestiture OR the event mentions the firm).
+// Active owners with the latest investmentYear are checked first so the
+// "current" investment is preferred over an earlier overlap.
+function classifyMilestone(m: MilestoneView, owners: OwnerView[]): MilestoneClassification {
+  for (const o of owners) {
+    const firstWord = ownerFirstWord(o.firm);
+    const mentionsFirm = !!firstWord && m.event.toLowerCase().includes(firstWord);
+    if (
+      o.investmentYear &&
+      m.date.includes(String(o.investmentYear)) &&
+      (m.category === "Financing" || m.category === "Acquisition" || mentionsFirm)
+    ) {
+      return { kind: "entry", owner: o };
+    }
+  }
+  for (const o of owners) {
+    const firstWord = ownerFirstWord(o.firm);
+    const mentionsFirm = !!firstWord && m.event.toLowerCase().includes(firstWord);
+    if (
+      o.exitYear &&
+      m.date.includes(String(o.exitYear)) &&
+      (m.category === "Divestiture" || mentionsFirm)
+    ) {
+      return { kind: "exit", owner: o };
+    }
+  }
+  return null;
+}
+
+function formatYearRange(o: OwnerView): string {
+  if (o.investmentYear && o.exitYear) return `${o.investmentYear}–${o.exitYear}`;
+  if (o.investmentYear && o.isActive) return `${o.investmentYear}–Present`;
+  if (o.investmentYear) return String(o.investmentYear);
+  if (o.exitYear) return `–${o.exitYear}`;
+  return "";
+}
+
+const ENTRY_COLOR = "#008253";
+const EXIT_COLOR = "#9a3412"; // muted rust — distinct from entry green and from category red
 
 export function PortCoDrawer({
   company,
@@ -43,35 +96,12 @@ export function PortCoDrawer({
   const visibleMilestones = showAllMilestones ? reversedMilestones : reversedMilestones.slice(0, 6);
 
   const sectorColor = getPortCoSectorColor(company.sector);
-  const matchedFund = funds.find(f => f.fundName === company.ownershipVehicle);
+  const owners = company.owners || [];
+  const hasMultipleOwners = owners.length > 1;
   const cSuiteManagement = (company.management || []).filter(exec =>
     /\bChief\b/i.test(exec.title) ||
     (/\bPresident\b/i.test(exec.title) && !/\bVice\s*President\b/i.test(exec.title))
   );
-
-  const detailRows: { label: string; value: string; dot?: string; badges?: string[] }[] = [
-    { label: "Firm", value: company.investmentFirm },
-    { label: "Fund", value: company.ownershipVehicle },
-    ...(matchedFund?.strategies?.length
-      ? [{
-          label: "Fund Strategy",
-          value: matchedFund.strategies.join(", "),
-          badges: matchedFund.strategies,
-        }]
-      : []),
-    ...(company.investmentYear
-      ? [{ label: "Investment Date", value: String(company.investmentYear) }]
-      : []),
-    {
-      label: "Sector",
-      value: company.sector,
-      dot: sectorColor,
-    },
-    ...(company.subsector
-      ? [{ label: "Subsector", value: company.subsector }]
-      : []),
-    { label: "Location", value: locationDisplay },
-  ];
 
   return (
     <>
@@ -118,7 +148,7 @@ export function PortCoDrawer({
                 )}
               </div>
 
-              <div className="flex items-center gap-1.5 mt-2">
+              <div className="flex items-center gap-1.5 mt-2 flex-wrap">
                 <span className="text-sm-dense text-[#6e6e6e]">
                   {company.investmentFirm}
                 </span>
@@ -133,6 +163,14 @@ export function PortCoDrawer({
                 >
                   {company.status}
                 </span>
+                {hasMultipleOwners && (
+                  <>
+                    <span className="text-[#c4c4c4] text-sm-dense">·</span>
+                    <span className="text-sm-dense text-[#6e6e6e]">
+                      {owners.length} owners
+                    </span>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -148,43 +186,112 @@ export function PortCoDrawer({
               <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
                 Investment Details
               </span>
+              {hasMultipleOwners && (
+                <span className="text-micro text-[#999999] ml-auto">{owners.length} owners</span>
+              )}
             </div>
-            <div className="divide-y divide-[#e8e8e8]">
-              {detailRows.map((row) => (
-                <div
-                  key={row.label}
-                  className="flex justify-between items-center px-4 py-2.5"
-                >
-                  <span className="text-micro text-[#999999]">{row.label}</span>
-                  {row.badges ? (
-                    <div className="flex items-center gap-1.5 flex-wrap justify-end">
-                      {row.badges.map((s) => (
-                        <span
-                          key={s}
-                          className="text-[10px] font-medium px-1.5 py-0"
-                          style={{
-                            color: "#444444",
-                            backgroundColor: `${getStrategyColor(s)}08`,
-                            border: `1px solid ${getStrategyColor(s)}12`,
-                          }}
-                        >
-                          {s}
-                        </span>
-                      ))}
+
+            {/* Ownership cards: one per owner, active first, then prior owners (chronological) */}
+            {owners.length > 0 && (
+              <div className="divide-y divide-[#e8e8e8]">
+                {owners.map((owner, idx) => {
+                  const matchedFund = owner.fundName
+                    ? funds.find(f => f.fundName === owner.fundName)
+                    : funds.find(f => f.fundName === owner.vehicle);
+                  const yearRange = formatYearRange(owner);
+                  const ownerStatusColor = owner.isActive
+                    ? getPortCoStatusColor("Active")
+                    : getPortCoStatusColor("Realized");
+                  const ownerStatusLabel = owner.isActive ? "Current" : "Former";
+                  return (
+                    <div key={`${owner.firm}-${idx}`} className="px-4 py-3">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center gap-1.5 flex-wrap">
+                            <span
+                              className="inline-block h-1.5 w-1.5 rounded-full shrink-0"
+                              style={{ backgroundColor: ownerStatusColor }}
+                            />
+                            <span className="text-sm-dense font-semibold text-[#1a1a1a]">
+                              {owner.firm || "—"}
+                            </span>
+                            <span
+                              className="text-[10px] font-medium px-1.5 py-0 shrink-0"
+                              style={{
+                                color: "#444444",
+                                backgroundColor: `${ownerStatusColor}10`,
+                                border: `1px solid ${ownerStatusColor}20`,
+                              }}
+                            >
+                              {ownerStatusLabel}
+                            </span>
+                          </div>
+                          {owner.vehicle && (
+                            <div className="text-micro text-[#6e6e6e] mt-1">
+                              {owner.vehicle}
+                            </div>
+                          )}
+                          {matchedFund?.strategies && matchedFund.strategies.length > 0 && (
+                            <div className="flex items-center gap-1.5 flex-wrap mt-1.5">
+                              {matchedFund.strategies.map((s) => (
+                                <span
+                                  key={s}
+                                  className="text-[10px] font-medium px-1.5 py-0"
+                                  style={{
+                                    color: "#444444",
+                                    backgroundColor: `${getStrategyColor(s)}08`,
+                                    border: `1px solid ${getStrategyColor(s)}12`,
+                                  }}
+                                >
+                                  {s}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                          {owner.stake && (
+                            <div className="text-micro text-[#6e6e6e] mt-1">
+                              Stake: {owner.stake}
+                            </div>
+                          )}
+                        </div>
+                        {yearRange && (
+                          <span className="text-micro text-[#1a1a1a] font-medium tabular-nums shrink-0">
+                            {yearRange}
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  ) : (
-                    <span className="text-micro text-[#1a1a1a] text-right font-medium flex items-center gap-1.5">
-                      {row.dot && (
-                        <span
-                          className="inline-block h-2 w-2 rounded-full shrink-0"
-                          style={{ backgroundColor: row.dot }}
-                        />
-                      )}
-                      {row.value}
-                    </span>
-                  )}
+                  );
+                })}
+              </div>
+            )}
+
+            {/* Sector / Subsector / Location */}
+            <div className="divide-y divide-[#e8e8e8] border-t border-black/[0.06]">
+              <div className="flex justify-between items-center px-4 py-2.5">
+                <span className="text-micro text-[#999999]">Sector</span>
+                <span className="text-micro text-[#1a1a1a] text-right font-medium flex items-center gap-1.5">
+                  <span
+                    className="inline-block h-2 w-2 rounded-full shrink-0"
+                    style={{ backgroundColor: sectorColor }}
+                  />
+                  {company.sector}
+                </span>
+              </div>
+              {company.subsector && (
+                <div className="flex justify-between items-center px-4 py-2.5">
+                  <span className="text-micro text-[#999999]">Subsector</span>
+                  <span className="text-micro text-[#1a1a1a] text-right font-medium">
+                    {company.subsector}
+                  </span>
                 </div>
-              ))}
+              )}
+              <div className="flex justify-between items-center px-4 py-2.5">
+                <span className="text-micro text-[#999999]">Location</span>
+                <span className="text-micro text-[#1a1a1a] text-right font-medium">
+                  {locationDisplay}
+                </span>
+              </div>
             </div>
           </section>
 
@@ -245,52 +352,90 @@ export function PortCoDrawer({
                   <div className="absolute left-[5px] top-1 bottom-1 w-px bg-[#d6d6d6]" />
                   <div className="space-y-3">
                     {visibleMilestones.map((m, i) => {
-                      const mentionsFirm = m.event.toLowerCase().includes(company.investmentFirm.toLowerCase().split(" ")[0]);
-                      const isInvestmentMilestone = company.investmentYear
-                        ? m.date.includes(String(company.investmentYear)) &&
-                          (m.category === "Financing" || mentionsFirm)
-                        : false;
+                      const classification = classifyMilestone(m, owners);
+                      const isTransition = classification !== null;
+                      const transitionColor =
+                        classification?.kind === "entry"
+                          ? ENTRY_COLOR
+                          : classification?.kind === "exit"
+                          ? EXIT_COLOR
+                          : null;
+                      const transitionLabel =
+                        classification?.kind === "entry"
+                          ? "Investment"
+                          : classification?.kind === "exit"
+                          ? "Exit"
+                          : null;
+                      const transitionFirm = classification?.owner.firm;
                       return (
                       <div
                         key={i}
                         className={`flex items-start gap-3 relative ${
-                          isInvestmentMilestone
-                            ? "bg-[#008253]/[0.06] -mx-4 px-4 py-2 border border-[#008253]/20 rounded-[3px]"
+                          isTransition && transitionColor
+                            ? "-mx-4 px-4 py-2 border rounded-[3px]"
                             : ""
                         }`}
+                        style={
+                          isTransition && transitionColor
+                            ? {
+                                backgroundColor: `${transitionColor}0F`,
+                                borderColor: `${transitionColor}33`,
+                              }
+                            : undefined
+                        }
                       >
                         <div
                           className={`relative z-10 mt-1.5 shrink-0 border-2 ${
-                            isInvestmentMilestone
+                            isTransition
                               ? "h-[13px] w-[13px] rounded-full"
                               : "h-[11px] w-[11px] rounded-full"
                           }`}
                           style={{
-                            borderColor: isInvestmentMilestone ? "#008253" : getMilestoneCategoryColor(m.category),
-                            backgroundColor: isInvestmentMilestone ? "#00825333" : `${getMilestoneCategoryColor(m.category)}33`,
+                            borderColor: isTransition && transitionColor
+                              ? transitionColor
+                              : getMilestoneCategoryColor(m.category),
+                            backgroundColor: isTransition && transitionColor
+                              ? `${transitionColor}33`
+                              : `${getMilestoneCategoryColor(m.category)}33`,
                           }}
                         />
                         <div className="min-w-0 flex-1">
                           <div className="flex items-baseline gap-2 flex-wrap">
-                            <span className={`text-micro font-medium shrink-0 tabular-nums ${
-                              isInvestmentMilestone ? "text-[#008253]" : "text-[#999999]"
-                            }`}>
+                            <span
+                              className="text-micro font-medium shrink-0 tabular-nums"
+                              style={{
+                                color: isTransition && transitionColor
+                                  ? transitionColor
+                                  : "#999999",
+                              }}
+                            >
                               {m.date}
                             </span>
                             <span
                               className="text-[10px] font-medium px-1.5 py-0 shrink-0"
                               style={{
-                                color: isInvestmentMilestone ? "#008253" : "#444444",
-                                backgroundColor: isInvestmentMilestone ? "#00825308" : `${getMilestoneCategoryColor(m.category)}08`,
-                                border: isInvestmentMilestone ? "1px solid #00825312" : `1px solid ${getMilestoneCategoryColor(m.category)}12`,
+                                color: isTransition && transitionColor ? transitionColor : "#444444",
+                                backgroundColor: isTransition && transitionColor
+                                  ? `${transitionColor}10`
+                                  : `${getMilestoneCategoryColor(m.category)}08`,
+                                border: isTransition && transitionColor
+                                  ? `1px solid ${transitionColor}20`
+                                  : `1px solid ${getMilestoneCategoryColor(m.category)}12`,
                               }}
                             >
-                              {isInvestmentMilestone ? "Investment" : m.category}
+                              {transitionLabel ?? m.category}
                             </span>
+                            {transitionFirm && (
+                              <span className="text-[10px] text-[#6e6e6e] shrink-0">
+                                {transitionFirm}
+                              </span>
+                            )}
                           </div>
-                          <p className={`text-sm-dense mt-0.5 leading-relaxed ${
-                            isInvestmentMilestone ? "text-[#1a1a1a]" : "text-[#6e6e6e]"
-                          }`}>
+                          <p
+                            className={`text-sm-dense mt-0.5 leading-relaxed ${
+                              isTransition ? "text-[#1a1a1a]" : "text-[#6e6e6e]"
+                            }`}
+                          >
                             {m.event}
                           </p>
                         </div>

@@ -307,6 +307,7 @@ async function main() {
     investmentYear: number | undefined,
     isActive: boolean,
     stake?: string,
+    exitYear?: number,
   ) {
     const orgId = getOrgId(investmentFirm);
     if (!orgId) return;
@@ -327,6 +328,7 @@ async function main() {
           vehicleName: ownershipVehicle || null,
           stake: stake || null,
           investmentYear: investmentYear || null,
+          exitYear: exitYear || null,
           isActive,
         },
       });
@@ -353,6 +355,7 @@ async function main() {
           owner.investmentYear,
           owner.status === "Active",
           owner.stake,
+          owner.exitYear,
         );
       }
     } else {

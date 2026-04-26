@@ -67,6 +67,16 @@ export interface PortfolioCompanyView {
   description?: string;
 }
 
+export interface OwnerView {
+  firm: string;
+  vehicle: string;
+  fundName?: string;
+  investmentYear?: number;
+  exitYear?: number;
+  isActive: boolean;
+  stake?: string;
+}
+
 export interface CompanyView {
   id: string;
   name: string;
@@ -86,6 +96,7 @@ export interface CompanyView {
   milestones?: MilestoneView[];
   management?: ExecutiveView[];
   sources?: SourceView[];
+  owners: OwnerView[];
 }
 
 export interface MilestoneView {
