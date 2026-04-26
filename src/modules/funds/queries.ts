@@ -5,6 +5,8 @@ import {
   FUND_STATUS_DISPLAY,
   FUND_SECTOR_DISPLAY,
   FUND_REGION_DISPLAY,
+  COMPANY_SECTOR_DISPLAY,
+  COMPANY_REGION_DISPLAY,
 } from "@/modules/shared/enum-maps";
 import type { FundView, PortfolioCompanyView } from "@/modules/shared/types";
 import type { Fund as DbFund } from "@/generated/prisma/client";
@@ -26,9 +28,13 @@ function toFundView(
 ): FundView {
   const portfolioCompanies: PortfolioCompanyView[] = fund.ownershipPeriods.map((op) => ({
     name: op.company.name,
-    sector: op.company.sector,
+    sector:
+      COMPANY_SECTOR_DISPLAY[op.company.sector as keyof typeof COMPANY_SECTOR_DISPLAY] ||
+      op.company.sector,
     subsector: op.company.subsector || undefined,
-    region: op.company.region,
+    region:
+      COMPANY_REGION_DISPLAY[op.company.region as keyof typeof COMPANY_REGION_DISPLAY] ||
+      op.company.region,
     country: op.company.country,
     description: op.company.description || undefined,
   }));

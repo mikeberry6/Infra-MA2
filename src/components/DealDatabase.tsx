@@ -3,40 +3,17 @@
 import { useState, useMemo, useEffect, useCallback } from "react";
 import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
+import { NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
 import type { DealView, DatabaseCounts } from "@/modules/shared/types";
 
-// ─── Non-infrastructure-fund entities to exclude from fund tags ──
-const NON_INFRA_FUND_ENTITIES = new Set([
-  "Undisclosed Buyer",
-  "Undisclosed Seller",
-  "Public Market",
-  "Bain Capital",
-  "Mitsui O.S.K. Lines",
-  "Talen Energy",
-  "Drax Group",
-  "Pilot Fiber",
-  "Siris",
-  "Polus Capital Management",
-  "Corsair Capital",
-  "Equinix",
-  "Exus Renewables",
-  "IHS Towers",
-  "TPI Composites",
-  "Claro",
-  "Taylor Farms",
-  "Abertis",
-  "VINCI Highways",
-  "Technique Solaire",
-  "Algoma Central Corporation",
-  "Dubai Aerospace Enterprise",
-  "Power2X",
-  "Nobian",
-  "Jupiter Energy Investor",
-]);
-
 // ─── Buyer display shortening ──────────────────────────────
+// Purely cosmetic: shortens canonical fund/buyer names for compact table cells
+// and the deal drawer. NOT used for ranking dedup — that's FUND_NAME_ALIASES
+// in src/lib/fund-name-utils.ts. When you add an alias there, also add a
+// short-name entry here for the alias *target* if needed.
 const BUYER_SHORT_NAMES: Record<string, string> = {
   "Antin Infrastructure Partners": "Antin",
+  "Apollo Global Management": "Apollo",
   "Igneo Infrastructure Partners": "Igneo",
   "Tiger Infrastructure Partners": "Tiger",
   "Macquarie Asset Management": "Macquarie AM",

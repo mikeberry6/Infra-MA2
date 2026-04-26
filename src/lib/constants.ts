@@ -67,6 +67,7 @@ export const FUND_STRATEGIES: FundStrategy[] = [
   "Fund-of-Funds",
   "Secondaries",
   "Co-Investments",
+  "Greenfield",
   "Retail Act '40",
 ];
 
@@ -143,3 +144,38 @@ export const PORTCO_REGIONS: PortCoRegion[] = [
 export const PORTCO_STATUSES: PortCoStatus[] = ["Active", "Realized"];
 
 export const PORTCO_COUNTRY_TAGS: PortCoCountryTag[] = ["United States", "Canada", "Mexico"];
+
+// ─── Deal-row entity classification ────────────────────────
+// Buyer/seller names that appear in deals but are NOT infrastructure funds.
+// Used to:
+//   1) exclude these names from the "Top Fund Activity" ranking in DynamicInsightsHero
+//   2) suppress the "Infra Fund" tag on deal rows in DealDatabase
+// When adding a deal whose buyer is a corporate acquirer, undisclosed party,
+// or non-infra investor, add the exact name here.
+export const NON_INFRA_FUND_ENTITIES = new Set<string>([
+  "Undisclosed Buyer",
+  "Undisclosed Seller",
+  "Public Market",
+  "Bain Capital",
+  "Mitsui O.S.K. Lines",
+  "Talen Energy",
+  "Drax Group",
+  "Pilot Fiber",
+  "Siris",
+  "Polus Capital Management",
+  "Corsair Capital",
+  "Equinix",
+  "Exus Renewables",
+  "IHS Towers",
+  "TPI Composites",
+  "Claro",
+  "Taylor Farms",
+  "Abertis",
+  "VINCI Highways",
+  "Technique Solaire",
+  "Algoma Central Corporation",
+  "Dubai Aerospace Enterprise",
+  "Power2X",
+  "Nobian",
+  "Jupiter Energy Investor",
+]);
