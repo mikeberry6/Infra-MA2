@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import { PORTCO_SECTORS, PORTCO_REGIONS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
+import { PORTCO_SECTORS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
 import { getPortCoSectorColor, getPortCoRegionColor, getPortCoCountryTagColor } from "@/lib/colors";
 import { getUniqueFirms } from "@/lib/portco-utils";
 import { exportPortfolioToExcel } from "@/utils/exportPortfolio";
@@ -228,7 +228,7 @@ function PortCoCard({
         </div>
         <div>
           <span className="font-medium text-[#999999] uppercase tracking-wider">Firm</span>
-          <div className="text-xs-dense text-[#6e6e6e] font-medium truncate">{company.investmentFirm}{company.investmentYear ? ` (${company.investmentYear})` : ""}</div>
+          <div className="text-xs-dense text-[#6e6e6e] font-medium truncate">{company.investmentFirm || "—"}{company.investmentYear ? ` (${company.investmentYear})` : ""}</div>
         </div>
       </div>
     </button>
@@ -323,7 +323,7 @@ function PortCoTable({
                     </span>
                   </td>
                   <td className="px-2.5 py-[4px] max-w-[200px]">
-                    <span className="text-[11px] text-[#555] truncate block">{company.investmentFirm}{company.investmentYear ? ` (${company.investmentYear})` : ""}</span>
+                    <span className="text-[11px] text-[#555] truncate block">{company.investmentFirm || "—"}{company.investmentYear ? ` (${company.investmentYear})` : ""}</span>
                   </td>
                   <td className="px-2.5 py-[4px]">
                     {(() => {

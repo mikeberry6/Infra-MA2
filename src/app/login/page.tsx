@@ -15,8 +15,10 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/Infra-MA2";
-      const res = await fetch(`${basePath}/api/login`, {
+      // Use a relative URL so the request inherits whatever basePath Next.js
+      // is serving under — works in dev (no basePath), prod (`/Infra-MA2`),
+      // or any future rebrand without a code change.
+      const res = await fetch(`api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ password }),

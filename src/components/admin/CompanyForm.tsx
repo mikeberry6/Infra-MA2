@@ -38,6 +38,7 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
   const [headquarters, setHeadquarters] = useState(initialData?.headquarters ?? "");
   const [investmentFirm, setInvestmentFirm] = useState(initialData?.investmentFirm ?? "");
   const [ownershipVehicle, setOwnershipVehicle] = useState(initialData?.ownershipVehicle ?? "");
+  const [countryTags, setCountryTags] = useState((initialData?.countryTags ?? []).join(", "));
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -57,6 +58,7 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
     formData.set("headquarters", headquarters);
     formData.set("investmentFirm", investmentFirm);
     formData.set("ownershipVehicle", ownershipVehicle);
+    formData.set("countryTags", countryTags);
 
     startTransition(async () => {
       const result = await action(formData);
@@ -182,6 +184,18 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
             className={inputClass}
           />
         </div>
+      </div>
+
+      {/* Country tags */}
+      <div>
+        <label className={labelClass}>Country tags</label>
+        <input
+          type="text"
+          value={countryTags}
+          onChange={(e) => setCountryTags(e.target.value)}
+          className={inputClass}
+          placeholder="Comma-separated, e.g. United States, Canada"
+        />
       </div>
 
       {/* Headquarters + Website */}

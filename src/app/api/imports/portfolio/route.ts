@@ -56,16 +56,22 @@ export async function POST(request: NextRequest) {
           continue;
         }
 
+        // Mirror the create fields in update so re-imports refresh every
+        // CSV-driven column (was previously updating only 5 of 10).
         const created = await tx.company.upsert({
           where: {
             name_country: { name: company.name, country: company.country },
           },
           update: {
             sector,
-            region,
-            companyStatus,
-            description: company.description || "",
             subsector: company.subsector || "",
+            region,
+            countryTags: company.countryTags || [],
+            description: company.description || "",
+            companyStatus,
+            website: company.website || null,
+            yearFounded: company.yearFounded || null,
+            headquarters: company.headquarters || null,
           },
           create: {
             name: company.name,
