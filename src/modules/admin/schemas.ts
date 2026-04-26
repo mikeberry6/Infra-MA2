@@ -128,6 +128,7 @@ export const dealSchema = z.object({
   buyer: z.string().min(1, "Buyer is required"),
   seller: z.string().min(1, "Seller is required"),
   sector: z.enum(DEAL_SECTORS, { message: "Invalid deal sector" }),
+  subsector: z.string().optional().default(""),
   region: z.enum(DEAL_REGIONS, { message: "Invalid deal region" }),
   category: z
     .array(z.enum(DEAL_CATEGORIES, { message: "Invalid deal category" }))
@@ -210,19 +211,36 @@ export const companySchema = z.object({
   headquarters: z.string().optional(),
   investmentFirm: z.string().optional(),
   ownershipVehicle: z.string().optional(),
+  countryTags: z.array(z.string()).optional(),
 });
 
 export type CompanyInput = z.infer<typeof companySchema>;
 
 // ── Ownership Period Schema ───────────────────────────────────────────
 
-export const ownershipPeriodSchema = z.object({
-  investmentFirm: z.string().min(1, "Investment firm is required"),
-  ownershipVehicle: z.string().optional(),
-  investmentYear: z.number().int().min(1900).max(2100).optional(),
-  exitYear: z.number().int().min(1900).max(2100).optional(),
-  isActive: z.boolean().default(true),
-  stake: z.string().optional(),
-});
+export const ownershipPeriodSchema = z
+  .object({
+    investmentFirm: z.string().min(1, "Investment firm is required"),
+    ownershipVehicle: z.string().optional(),
+    investmentYear: z.number().int().min(1900).max(2100).optional(),
+    exitYear: z.number().int().min(1900).max(2100).optional(),
+    isActive: z.boolean().default(true),
+    stake: z.string().optional(),
+  })
+  .refine(
+    (o) => o.investmentYear == null || o.exitYear == null || o.exitYear >= o.investmentYear,
+    {
+      message: "Exit year must be greater than or equal to investment year",
+      path: ["exitYear"],
+    },
+  )
+  .refine((o) => !(o.isActive && o.exitYear != null), {
+    message: "An active ownership period cannot have an exit year",
+    path: ["exitYear"],
+  })
+  .refine((o) => o.isActive || o.exitYear != null, {
+    message: "A realized (inactive) ownership period must have an exit year",
+    path: ["exitYear"],
+  });
 
 export type OwnershipPeriodInput = z.infer<typeof ownershipPeriodSchema>;

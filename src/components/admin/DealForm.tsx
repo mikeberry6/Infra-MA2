@@ -28,8 +28,14 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
 
   const [title, setTitle] = useState(initialData?.title ?? "");
   const [target, setTarget] = useState(initialData?.target ?? "");
-  const [buyer, setBuyer] = useState(initialData?.buyer ?? "");
-  const [seller, setSeller] = useState(initialData?.seller ?? "");
+  // Buyer/seller are " / "-joined in the View layer; we split for editing
+  // so each party is on its own line, then re-join on submit.
+  const [buyer, setBuyer] = useState(
+    (initialData?.buyer ?? "").split(" / ").filter((s) => s && s !== "N/A").join("\n"),
+  );
+  const [seller, setSeller] = useState(
+    (initialData?.seller ?? "").split(" / ").filter((s) => s && s !== "N/A").join("\n"),
+  );
   const [sector, setSector] = useState(initialData?.sector ?? DEAL_SECTORS[0]);
   const [region, setRegion] = useState(initialData?.region ?? DEAL_REGIONS[0]);
   const [categories, setCategories] = useState<string[]>(initialData?.category ?? []);
@@ -64,11 +70,22 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
     e.preventDefault();
     setMessage(null);
 
+    const cleanLines = (s: string) =>
+      s.split("\n").map((l) => l.trim()).filter(Boolean);
+
     const formData = new FormData();
     formData.set("title", title);
     formData.set("target", target);
-    formData.set("buyer", buyer);
-    formData.set("seller", seller);
+    // Re-join buyers/sellers with " / " — the View layer + ranking code
+    // expects this separator. Empty list collapses to "N/A".
+    const buyers = cleanLines(buyer);
+    const sellers = cleanLines(seller);
+    formData.set("buyer", buyers.length ? buyers.join(" / ") : "N/A");
+    formData.set("seller", sellers.length ? sellers.join(" / ") : "N/A");
+    // Also send the split list so the action can create one DealParticipant
+    // per party rather than treating the joined string as a single org name.
+    for (const b of buyers) formData.append("buyers", b);
+    for (const s of sellers) formData.append("sellers", s);
     formData.set("sector", sector);
     formData.set("subsector", subsector);
     formData.set("region", region);
@@ -87,17 +104,10 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
     formData.set("sourceName", sourceName);
     formData.set("sourceUrl", sourceUrl);
 
-    // Encode arrays
-    for (const cat of categories) {
-      formData.append("categories", cat);
-    }
-    const highlights = keyHighlights
-      .split("\n")
-      .map((l) => l.trim())
-      .filter(Boolean);
-    for (const h of highlights) {
-      formData.append("keyHighlights", h);
-    }
+    // Send each category and highlight as a separate entry so values
+    // containing commas (e.g. "Strong cash flow, low risk") survive intact.
+    for (const c of categories) formData.append("category", c);
+    for (const h of cleanLines(keyHighlights)) formData.append("keyHighlights", h);
 
     startTransition(async () => {
       const result = await action(formData);
@@ -151,21 +161,23 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
           />
         </div>
         <div>
-          <label className={labelClass}>Buyer</label>
-          <input
-            type="text"
+          <label className={labelClass}>Buyer (one per line)</label>
+          <textarea
             value={buyer}
             onChange={(e) => setBuyer(e.target.value)}
+            rows={2}
             className={inputClass}
+            placeholder="One firm per line"
           />
         </div>
         <div>
-          <label className={labelClass}>Seller</label>
-          <input
-            type="text"
+          <label className={labelClass}>Seller (one per line)</label>
+          <textarea
             value={seller}
             onChange={(e) => setSeller(e.target.value)}
+            rows={2}
             className={inputClass}
+            placeholder="One firm per line"
           />
         </div>
       </div>

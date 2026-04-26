@@ -457,6 +457,14 @@ function AllFundsTable({
   const [sortField, setSortField] = useState<"name" | "strategy" | "size" | "vintage">("name");
   const [sortAsc, setSortAsc] = useState(true);
 
+  // Sort vintage numerically when both sides parse as years; non-numeric
+  // values ("Evergreen", "[TBD]", "—") sort to the end regardless of direction
+  // so they don't shuffle through the list as the user toggles asc/desc.
+  const vintageSortKey = (v: string): number => {
+    const m = v.match(/(\d{4})/);
+    return m ? parseInt(m[1], 10) : Number.POSITIVE_INFINITY;
+  };
+
   const sorted = useMemo(() => {
     const list = [...displayFunds];
     list.sort((a, b) => {
@@ -465,7 +473,7 @@ function AllFundsTable({
         case "name": cmp = a.fundName.localeCompare(b.fundName); break;
         case "strategy": cmp = (a.strategies[0] ?? "").localeCompare(b.strategies[0] ?? ""); break;
         case "size": cmp = (a.sizeUsdMm ?? 0) - (b.sizeUsdMm ?? 0); break;
-        case "vintage": cmp = a.vintage.localeCompare(b.vintage); break;
+        case "vintage": cmp = vintageSortKey(a.vintage) - vintageSortKey(b.vintage); break;
       }
       return sortAsc ? cmp : -cmp;
     });

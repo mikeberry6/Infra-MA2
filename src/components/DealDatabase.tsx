@@ -73,9 +73,11 @@ function shortenBuyer(raw: string): string[] {
   const parts = stripped.split(" / ");
   // Shorten each part
   const shortened = parts.map((p) => BUYER_SHORT_NAMES[p.trim()] || p.trim());
-  // If 3+ buyers, join with " / " into a single line
+  // Three or more buyers don't fit the table column even when shortened —
+  // collapse to "first +N" so the cell stays readable. The full list is
+  // still visible in the deal drawer.
   if (shortened.length >= 3) {
-    return [shortened.join(" / ")];
+    return [`${shortened[0]} +${shortened.length - 1}`];
   }
   return shortened;
 }
@@ -538,14 +540,17 @@ function StatusBadge({ status }: { status: string }) {
     "Pending Regulatory Approval": { color: "#f59e0b" },
     Terminated: { color: "#ef4444" },
   };
-  const s = config[status] || config.Announced;
+  // Unknown statuses fall back to a neutral grey rather than to "Announced"
+  // styling — silently mis-coloring a new status as Announced would mislead
+  // users (e.g. a "Withdrawn" deal looking like an active announcement).
+  const color = config[status]?.color ?? "#a1a1aa";
   return (
     <span
       className="text-[10px] font-medium px-1.5 py-0"
       style={{
         color: "#444444",
-        backgroundColor: `${s.color}08`,
-        border: `1px solid ${s.color}12`,
+        backgroundColor: `${color}08`,
+        border: `1px solid ${color}12`,
       }}
     >
       {status}

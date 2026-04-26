@@ -193,7 +193,7 @@ export function PortCoDrawer({
 
               <div className="flex items-center gap-1.5 mt-2 flex-wrap">
                 <span className="text-sm-dense text-[#6e6e6e]">
-                  {company.investmentFirm}
+                  {company.investmentFirm || "Unknown firm"}
                 </span>
                 <span className="text-[#c4c4c4] text-sm-dense">·</span>
                 <span

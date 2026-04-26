@@ -30,15 +30,24 @@ import type {
   CompanySector,
   CompanyRegion,
   CompanyStatus,
+  OrgType,
 } from "@/generated/prisma/client";
 
 type ActionResult = { success: boolean; error?: string; id?: string };
 
 // ── Helpers ───────────────────────────────────────────────────
 
+// Accept either repeated form fields (formData.append("key", "v1");
+// formData.append("key", "v2")) or a single comma-separated string.
+// Multi-value form is preferred when entries may themselves contain commas
+// (e.g. key highlights, party names).
 function parseFormArray(formData: FormData, key: string): string[] {
-  const val = formData.get(key);
-  if (!val || typeof val !== "string") return [];
+  const all = formData.getAll(key).filter((v): v is string => typeof v === "string");
+  if (all.length > 1) {
+    return all.map((s) => s.trim()).filter(Boolean);
+  }
+  const val = all[0] ?? "";
+  if (!val) return [];
   return val.split(",").map((s) => s.trim()).filter(Boolean);
 }
 
@@ -49,13 +58,44 @@ function parseFormNumber(formData: FormData, key: string): number | undefined {
   return isNaN(n) ? undefined : n;
 }
 
-async function findOrCreateOrg(name: string): Promise<string> {
-  const existing = await prisma.organization.findFirst({ where: { name } });
-  if (existing) return existing.id;
-  const created = await prisma.organization.create({
-    data: { name, types: ["FUND_MANAGER"] },
+// Resolve an Organization by name, creating it with the given default types
+// if it doesn't yet exist. Uses `upsert` against the unique `name` constraint
+// so concurrent calls with the same name don't race a duplicate insert.
+// `defaultTypes` is only applied on creation — existing orgs keep their type
+// list to avoid silently widening a record's classification.
+async function findOrCreateOrg(
+  name: string,
+  defaultTypes: OrgType[] = ["OTHER"],
+): Promise<string> {
+  const org = await prisma.organization.upsert({
+    where: { name },
+    update: {},
+    create: { name, types: defaultTypes },
   });
-  return created.id;
+  return org.id;
+}
+
+// Resolve a vehicle name (e.g. "Brookfield Fund III") to a Fund row by
+// matching on a normalized fundName (case-insensitive, whitespace collapsed,
+// punctuation stripped). Returns the Fund's id or null if no match.
+async function findFundByVehicleName(vehicleName: string): Promise<string | null> {
+  const target = normalizeFundLookup(vehicleName);
+  if (!target) return null;
+  // Try exact match first — fast path for the common case.
+  const exact = await prisma.fund.findFirst({ where: { fundName: vehicleName } });
+  if (exact) return exact.id;
+  // Fallback: load fundName + id pairs and match on the normalized form.
+  const all = await prisma.fund.findMany({ select: { id: true, fundName: true } });
+  const hit = all.find((f) => normalizeFundLookup(f.fundName) === target);
+  return hit?.id ?? null;
+}
+
+function normalizeFundLookup(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/[^\w\s]/g, " ") // strip punctuation (keeps roman numerals as-is)
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function revalidateAll() {
@@ -79,6 +119,7 @@ export async function createDeal(formData: FormData): Promise<ActionResult> {
       buyer: formData.get("buyer") as string,
       seller: formData.get("seller") as string,
       sector: formData.get("sector") as string,
+      subsector: (formData.get("subsector") as string) || "",
       region: formData.get("region") as string,
       category: parseFormArray(formData, "category"),
       date: formData.get("date") as string,
@@ -97,6 +138,11 @@ export async function createDeal(formData: FormData): Promise<ActionResult> {
       sourceName: (formData.get("sourceName") as string) || undefined,
       sourceUrl: (formData.get("sourceUrl") as string) || undefined,
     };
+    // Multi-party participants from the new admin form. Falls back to splitting
+    // the joined buyer/seller string if the form didn't send the new fields
+    // (CSV importer, programmatic callers, etc.).
+    const buyerNames = parseFormArray(formData, "buyers");
+    const sellerNames = parseFormArray(formData, "sellers");
 
     const parsed = dealSchema.safeParse(raw);
     if (!parsed.success) {
@@ -111,39 +157,54 @@ export async function createDeal(formData: FormData): Promise<ActionResult> {
 
     const legacyId = `INF-${new Date().getFullYear()}-${Date.now().toString(36).toUpperCase()}`;
 
-    const deal = await prisma.deal.create({
-      data: {
-        legacyId, title: d.title, target: d.target, sector, subsector: "", region,
-        categories, date: new Date(d.date), description: d.description,
-        targetDescription: d.targetDescription, country: d.country, dealStatus,
-        enterpriseValue: d.enterpriseValue || null, equityValue: d.equityValue || null,
-        stake: d.stake || null, closingDate: d.closingDate ? new Date(d.closingDate) : null,
-        assetScale: d.assetScale || null, valuationMultiple: d.valuationMultiple || null,
-        fundVehicle: d.fundVehicle || null, keyHighlights: d.keyHighlights || [],
-        status: "DRAFT",
-      },
-    });
+    // Resolve buyer/seller participants up front so the transaction body is
+    // pure DB writes (interactive transactions have a default 5s timeout).
+    const splitParty = (joined: string): string[] =>
+      joined && joined !== "N/A" && joined !== "—"
+        ? joined.split(" / ").map((s) => s.trim()).filter(Boolean)
+        : [];
+    const finalBuyers = buyerNames.length ? buyerNames : splitParty(d.buyer);
+    const finalSellers = sellerNames.length ? sellerNames : splitParty(d.seller);
+    const buyerOrgs = await Promise.all(
+      finalBuyers.map((name) => findOrCreateOrg(name, ["OTHER"]).then((id) => ({ id, name }))),
+    );
+    const sellerOrgs = await Promise.all(
+      finalSellers.map((name) => findOrCreateOrg(name, ["OTHER"]).then((id) => ({ id, name }))),
+    );
 
-    if (d.buyer && d.buyer !== "N/A" && d.buyer !== "—") {
-      const orgId = await findOrCreateOrg(d.buyer);
-      await prisma.dealParticipant.create({
-        data: { dealId: deal.id, organizationId: orgId, role: "BUYER", displayName: d.buyer },
+    const deal = await prisma.$transaction(async (tx) => {
+      const deal = await tx.deal.create({
+        data: {
+          legacyId, title: d.title, target: d.target, sector, subsector: d.subsector || "", region,
+          categories, date: new Date(d.date), description: d.description,
+          targetDescription: d.targetDescription, country: d.country, dealStatus,
+          enterpriseValue: d.enterpriseValue || null, equityValue: d.equityValue || null,
+          stake: d.stake || null, closingDate: d.closingDate ? new Date(d.closingDate) : null,
+          assetScale: d.assetScale || null, valuationMultiple: d.valuationMultiple || null,
+          fundVehicle: d.fundVehicle || null, keyHighlights: d.keyHighlights || [],
+          status: "DRAFT",
+        },
       });
-    }
-    if (d.seller && d.seller !== "N/A" && d.seller !== "—") {
-      const orgId = await findOrCreateOrg(d.seller);
-      await prisma.dealParticipant.create({
-        data: { dealId: deal.id, organizationId: orgId, role: "SELLER", displayName: d.seller },
-      });
-    }
-    if (d.sourceUrl) {
-      const source = await prisma.source.upsert({
-        where: { url: d.sourceUrl },
-        update: {},
-        create: { url: d.sourceUrl, label: d.sourceName || "", type: "ARTICLE" },
-      });
-      await prisma.citation.create({ data: { sourceId: source.id, dealId: deal.id } });
-    }
+      for (const { id: organizationId, name } of buyerOrgs) {
+        await tx.dealParticipant.create({
+          data: { dealId: deal.id, organizationId, role: "BUYER", displayName: name },
+        });
+      }
+      for (const { id: organizationId, name } of sellerOrgs) {
+        await tx.dealParticipant.create({
+          data: { dealId: deal.id, organizationId, role: "SELLER", displayName: name },
+        });
+      }
+      if (d.sourceUrl) {
+        const source = await tx.source.upsert({
+          where: { url: d.sourceUrl },
+          update: {},
+          create: { url: d.sourceUrl, label: d.sourceName || "", type: "ARTICLE" },
+        });
+        await tx.citation.create({ data: { sourceId: source.id, dealId: deal.id } });
+      }
+      return deal;
+    });
 
     revalidateAll();
     return { success: true, id: deal.id };
@@ -161,6 +222,7 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
       buyer: formData.get("buyer") as string,
       seller: formData.get("seller") as string,
       sector: formData.get("sector") as string,
+      subsector: (formData.get("subsector") as string) || "",
       region: formData.get("region") as string,
       category: parseFormArray(formData, "category"),
       date: formData.get("date") as string,
@@ -177,6 +239,8 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
       fundVehicle: (formData.get("fundVehicle") as string) || undefined,
       keyHighlights: parseFormArray(formData, "keyHighlights"),
     };
+    const buyerNames = parseFormArray(formData, "buyers");
+    const sellerNames = parseFormArray(formData, "sellers");
 
     const parsed = dealSchema.safeParse(raw);
     if (!parsed.success) {
@@ -184,21 +248,56 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
     }
 
     const d = parsed.data;
-    await prisma.deal.update({
-      where: { id },
-      data: {
-        title: d.title, target: d.target,
-        sector: DEAL_SECTOR_MAP[d.sector] as DealSector,
-        region: DEAL_REGION_MAP[d.region] as DealRegion,
-        categories: d.category.map((c) => DEAL_CATEGORY_MAP[c]).filter(Boolean) as DealCategory[],
-        date: new Date(d.date), description: d.description,
-        targetDescription: d.targetDescription, country: d.country,
-        dealStatus: DEAL_STATUS_MAP[d.status] as DealStatusEnum,
-        enterpriseValue: d.enterpriseValue || null, equityValue: d.equityValue || null,
-        stake: d.stake || null, closingDate: d.closingDate ? new Date(d.closingDate) : null,
-        assetScale: d.assetScale || null, valuationMultiple: d.valuationMultiple || null,
-        fundVehicle: d.fundVehicle || null, keyHighlights: d.keyHighlights || [],
-      },
+    const splitParty = (joined: string): string[] =>
+      joined && joined !== "N/A" && joined !== "—"
+        ? joined.split(" / ").map((s) => s.trim()).filter(Boolean)
+        : [];
+    const finalBuyers = buyerNames.length ? buyerNames : splitParty(d.buyer);
+    const finalSellers = sellerNames.length ? sellerNames : splitParty(d.seller);
+
+    // Resolve all participant orgs up front so the transaction body is
+    // entirely DB writes — Prisma's interactive transactions have a default
+    // 5-second timeout and serial upserts inside one would be slow.
+    const buyerOrgIds = await Promise.all(
+      finalBuyers.map((name) => findOrCreateOrg(name, ["OTHER"]).then((id) => ({ id, name }))),
+    );
+    const sellerOrgIds = await Promise.all(
+      finalSellers.map((name) => findOrCreateOrg(name, ["OTHER"]).then((id) => ({ id, name }))),
+    );
+
+    await prisma.$transaction(async (tx) => {
+      await tx.deal.update({
+        where: { id },
+        data: {
+          title: d.title, target: d.target,
+          sector: DEAL_SECTOR_MAP[d.sector] as DealSector,
+          subsector: d.subsector || "",
+          region: DEAL_REGION_MAP[d.region] as DealRegion,
+          categories: d.category.map((c) => DEAL_CATEGORY_MAP[c]).filter(Boolean) as DealCategory[],
+          date: new Date(d.date), description: d.description,
+          targetDescription: d.targetDescription, country: d.country,
+          dealStatus: DEAL_STATUS_MAP[d.status] as DealStatusEnum,
+          enterpriseValue: d.enterpriseValue || null, equityValue: d.equityValue || null,
+          stake: d.stake || null, closingDate: d.closingDate ? new Date(d.closingDate) : null,
+          assetScale: d.assetScale || null, valuationMultiple: d.valuationMultiple || null,
+          fundVehicle: d.fundVehicle || null, keyHighlights: d.keyHighlights || [],
+        },
+      });
+      // Replace buyer/seller participants. Advisor participants are managed
+      // elsewhere (advisor-card UI) so we leave those rows alone.
+      await tx.dealParticipant.deleteMany({
+        where: { dealId: id, role: { in: ["BUYER", "SELLER"] } },
+      });
+      for (const { id: organizationId, name } of buyerOrgIds) {
+        await tx.dealParticipant.create({
+          data: { dealId: id, organizationId, role: "BUYER", displayName: name },
+        });
+      }
+      for (const { id: organizationId, name } of sellerOrgIds) {
+        await tx.dealParticipant.create({
+          data: { dealId: id, organizationId, role: "SELLER", displayName: name },
+        });
+      }
     });
 
     revalidateAll();
@@ -211,9 +310,11 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
 
 export async function deleteDeal(id: string): Promise<ActionResult> {
   try {
-    await prisma.dealParticipant.deleteMany({ where: { dealId: id } });
-    await prisma.citation.deleteMany({ where: { dealId: id } });
-    await prisma.deal.delete({ where: { id } });
+    await prisma.$transaction([
+      prisma.dealParticipant.deleteMany({ where: { dealId: id } }),
+      prisma.citation.deleteMany({ where: { dealId: id } }),
+      prisma.deal.delete({ where: { id } }),
+    ]);
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -260,7 +361,7 @@ export async function createFund(formData: FormData): Promise<ActionResult> {
     }
 
     const f = parsed.data;
-    const managerId = await findOrCreateOrg(f.managerName);
+    const managerId = await findOrCreateOrg(f.managerName, ["FUND_MANAGER"]);
     const legacyId = `FUND-${Date.now().toString(36).toUpperCase()}`;
 
     const fund = await prisma.fund.create({
@@ -310,7 +411,7 @@ export async function updateFund(id: string, formData: FormData): Promise<Action
     }
 
     const f = parsed.data;
-    const managerId = await findOrCreateOrg(f.managerName);
+    const managerId = await findOrCreateOrg(f.managerName, ["FUND_MANAGER"]);
 
     await prisma.fund.update({
       where: { id },
@@ -337,8 +438,10 @@ export async function updateFund(id: string, formData: FormData): Promise<Action
 
 export async function deleteFund(id: string): Promise<ActionResult> {
   try {
-    await prisma.ownershipPeriod.deleteMany({ where: { fundId: id } });
-    await prisma.fund.delete({ where: { id } });
+    await prisma.$transaction([
+      prisma.ownershipPeriod.deleteMany({ where: { fundId: id } }),
+      prisma.fund.delete({ where: { id } }),
+    ]);
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -376,6 +479,7 @@ export async function createCompany(formData: FormData): Promise<ActionResult> {
       headquarters: (formData.get("headquarters") as string) || undefined,
       investmentFirm: (formData.get("investmentFirm") as string) || undefined,
       ownershipVehicle: (formData.get("ownershipVehicle") as string) || undefined,
+      countryTags: parseFormArray(formData, "countryTags"),
     };
 
     const parsed = companySchema.safeParse(raw);
@@ -384,31 +488,40 @@ export async function createCompany(formData: FormData): Promise<ActionResult> {
     }
 
     const c = parsed.data;
-    const company = await prisma.company.create({
-      data: {
-        name: c.name, country: c.country,
-        sector: COMPANY_SECTOR_MAP[c.sector] as CompanySector,
-        subsector: c.subsector || "", region: COMPANY_REGION_MAP[c.region] as CompanyRegion,
-        description: c.description || "",
-        companyStatus: COMPANY_STATUS_MAP[c.status] as CompanyStatus,
-        website: c.website || null, yearFounded: c.yearFounded ?? null,
-        headquarters: c.headquarters || null, status: "DRAFT",
-      },
-    });
+    // Resolve org + fund lookups outside the transaction (their queries hit
+    // separate Prisma calls and would inflate the tx body's wall-clock).
+    const orgId = c.investmentFirm
+      ? await findOrCreateOrg(c.investmentFirm, ["FUND_MANAGER"])
+      : null;
+    const fundId = c.ownershipVehicle
+      ? await findFundByVehicleName(c.ownershipVehicle)
+      : null;
 
-    if (c.investmentFirm) {
-      const orgId = await findOrCreateOrg(c.investmentFirm);
-      const fund = c.ownershipVehicle
-        ? await prisma.fund.findFirst({ where: { fundName: c.ownershipVehicle } })
-        : null;
-      await prisma.ownershipPeriod.create({
+    const company = await prisma.$transaction(async (tx) => {
+      const company = await tx.company.create({
         data: {
-          companyId: company.id, organizationId: orgId, fundId: fund?.id ?? null,
-          vehicleName: c.ownershipVehicle || c.investmentFirm,
-          investmentYear: c.investmentYear ?? null, isActive: c.status !== "Realized",
+          name: c.name, country: c.country,
+          sector: COMPANY_SECTOR_MAP[c.sector] as CompanySector,
+          subsector: c.subsector || "", region: COMPANY_REGION_MAP[c.region] as CompanyRegion,
+          description: c.description || "",
+          companyStatus: COMPANY_STATUS_MAP[c.status] as CompanyStatus,
+          website: c.website || null, yearFounded: c.yearFounded ?? null,
+          headquarters: c.headquarters || null,
+          countryTags: c.countryTags ?? [],
+          status: "DRAFT",
         },
       });
-    }
+      if (c.investmentFirm && orgId) {
+        await tx.ownershipPeriod.create({
+          data: {
+            companyId: company.id, organizationId: orgId, fundId,
+            vehicleName: c.ownershipVehicle || c.investmentFirm,
+            investmentYear: c.investmentYear ?? null, isActive: c.status !== "Realized",
+          },
+        });
+      }
+      return company;
+    });
 
     revalidateAll();
     return { success: true, id: company.id };
@@ -432,6 +545,7 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
       yearFounded: parseFormNumber(formData, "yearFounded"),
       investmentYear: parseFormNumber(formData, "investmentYear"),
       headquarters: (formData.get("headquarters") as string) || undefined,
+      countryTags: parseFormArray(formData, "countryTags"),
     };
 
     const parsed = companySchema.safeParse(raw);
@@ -450,6 +564,7 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
         companyStatus: COMPANY_STATUS_MAP[c.status] as CompanyStatus,
         website: c.website || null, yearFounded: c.yearFounded ?? null,
         headquarters: c.headquarters || null,
+        countryTags: c.countryTags ?? [],
       },
     });
 
@@ -463,11 +578,13 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
 
 export async function deleteCompany(id: string): Promise<ActionResult> {
   try {
-    await prisma.ownershipPeriod.deleteMany({ where: { companyId: id } });
-    await prisma.milestone.deleteMany({ where: { companyId: id } });
-    await prisma.managementRole.deleteMany({ where: { companyId: id } });
-    await prisma.citation.deleteMany({ where: { companyId: id } });
-    await prisma.company.delete({ where: { id } });
+    await prisma.$transaction([
+      prisma.ownershipPeriod.deleteMany({ where: { companyId: id } }),
+      prisma.milestone.deleteMany({ where: { companyId: id } }),
+      prisma.managementRole.deleteMany({ where: { companyId: id } }),
+      prisma.citation.deleteMany({ where: { companyId: id } }),
+      prisma.company.delete({ where: { id } }),
+    ]);
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -511,15 +628,13 @@ export async function addOwnershipPeriod(
       return { success: false, error: parsed.error.issues.map((i) => i.message).join(", ") };
     }
     const o = parsed.data;
-    const orgId = await findOrCreateOrg(o.investmentFirm);
-    const fund = o.ownershipVehicle
-      ? await prisma.fund.findFirst({ where: { fundName: o.ownershipVehicle } })
-      : null;
+    const orgId = await findOrCreateOrg(o.investmentFirm, ["FUND_MANAGER"]);
+    const fundId = o.ownershipVehicle ? await findFundByVehicleName(o.ownershipVehicle) : null;
     const created = await prisma.ownershipPeriod.create({
       data: {
         companyId,
         organizationId: orgId,
-        fundId: fund?.id ?? null,
+        fundId,
         vehicleName: o.ownershipVehicle || o.investmentFirm,
         investmentYear: o.investmentYear ?? null,
         exitYear: o.exitYear ?? null,
@@ -545,15 +660,13 @@ export async function updateOwnershipPeriod(
       return { success: false, error: parsed.error.issues.map((i) => i.message).join(", ") };
     }
     const o = parsed.data;
-    const orgId = await findOrCreateOrg(o.investmentFirm);
-    const fund = o.ownershipVehicle
-      ? await prisma.fund.findFirst({ where: { fundName: o.ownershipVehicle } })
-      : null;
+    const orgId = await findOrCreateOrg(o.investmentFirm, ["FUND_MANAGER"]);
+    const fundId = o.ownershipVehicle ? await findFundByVehicleName(o.ownershipVehicle) : null;
     await prisma.ownershipPeriod.update({
       where: { id },
       data: {
         organizationId: orgId,
-        fundId: fund?.id ?? null,
+        fundId,
         vehicleName: o.ownershipVehicle || o.investmentFirm,
         investmentYear: o.investmentYear ?? null,
         exitYear: o.exitYear ?? null,
