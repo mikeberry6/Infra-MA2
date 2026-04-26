@@ -80,7 +80,7 @@ export function OwnershipPeriodsManager({
         <div>
           <h2 className="text-base font-semibold">Ownership History</h2>
           <p className="text-xs text-[#71717A] mt-0.5">
-            Every firm that has owned this company. The "Active" period drives the table-view firm column.
+            Every firm that has owned this company. The &quot;Active&quot; period drives the table-view firm column.
           </p>
         </div>
         {editingId !== "new" && (
@@ -225,7 +225,7 @@ function OwnershipForm({
           />
         </label>
         <label className="text-xs space-y-1">
-          <span className="block text-[#A1A1AA]">Stake (e.g. "30%")</span>
+          <span className="block text-[#A1A1AA]">Stake (e.g. &quot;30%&quot;)</span>
           <input
             name="stake"
             defaultValue={initial?.stake ?? ""}
