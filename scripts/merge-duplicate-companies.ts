@@ -191,7 +191,17 @@ async function main() {
           await tx.company.update({ where: { id: canonical.id }, data: updates });
         }
 
-        // Delete the duplicate row (cascades clean up any leftover relations)
+        // The schema doesn't have ON DELETE CASCADE on these child tables, so
+        // any rows we deliberately skipped above (because the canonical
+        // already had an equivalent row) still point at the duplicate. Wipe
+        // those leftovers explicitly so `company.delete` below doesn't trip
+        // a foreign-key constraint.
+        await tx.milestone.deleteMany({ where: { companyId: dup.id } });
+        await tx.managementRole.deleteMany({ where: { companyId: dup.id } });
+        await tx.citation.deleteMany({ where: { companyId: dup.id } });
+        await tx.ownershipPeriod.deleteMany({ where: { companyId: dup.id } });
+
+        // Delete the duplicate row.
         await tx.company.delete({ where: { id: dup.id } });
         deletedCompanies++;
       }
