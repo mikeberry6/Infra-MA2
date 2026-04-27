@@ -33,36 +33,17 @@
 import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { canonicalCompanyKey } from "../src/lib/company-key";
 
 const APPLY = process.argv.includes("--apply");
 
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
 
-const SUFFIXES_TO_STRIP = [
-  "llc", "inc", "ltd", "limited", "corporation", "corp",
-  "holdings", "holding", "company", "co", "group", "partners",
-  "lp", "lllp", "plc", "ag", "sa", "spa", "nv", "bv",
-];
-
-function normalize(name: string): string {
-  let n = name.toLowerCase().trim();
-  n = n.replace(/[,.()'"]/g, "");
-  n = n.replace(/\s+/g, " ").trim();
-  let changed = true;
-  while (changed) {
-    changed = false;
-    for (const suffix of SUFFIXES_TO_STRIP) {
-      const re = new RegExp(`\\s${suffix}$`);
-      if (re.test(n)) {
-        n = n.replace(re, "").trim();
-        changed = true;
-      }
-    }
-  }
-  n = n.replace(/\s*&\s*/g, " and ");
-  return n;
-}
+// Use the same `canonicalCompanyKey` helper that the view layer uses, so the
+// DB cleanup catches exactly the clusters the UI was already collapsing
+// (and now also catches name variants like "(ASTP)" and ", LLC").
+const normalize = canonicalCompanyKey;
 
 async function main() {
   console.log(APPLY ? "⚠️  APPLY MODE — writing changes" : "🔍 DRY RUN — no changes will be made");

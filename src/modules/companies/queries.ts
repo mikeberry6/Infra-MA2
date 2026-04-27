@@ -6,6 +6,7 @@ import {
   MILESTONE_CATEGORY_DISPLAY,
 } from "@/modules/shared/enum-maps";
 import type { CompanyView, MilestoneView, ExecutiveView, SourceView, OwnerView } from "@/modules/shared/types";
+import { canonicalCompanyKey, preferredDisplayName } from "@/lib/company-key";
 
 function toCompanyView(company: any): CompanyView {
   // Map every ownership period to an OwnerView, then sort: active first,
@@ -111,12 +112,13 @@ const COMPANY_INCLUDE = {
   },
 };
 
-// Merge multiple CompanyView records that share a name. The DB currently has
-// duplicate Company rows for ~12 companies (e.g. one row with country="United
-// States" and another with country="United States / Canada"); the existing
-// (name, country) unique key doesn't catch these. We merge at the view layer
-// so the UI shows one card per company without a destructive DB change.
-function mergeByName(views: CompanyView[]): CompanyView {
+// Merge multiple CompanyView records that share a canonical key. The DB
+// contains duplicate Company rows for several companies (a) under different
+// `country` formats and (b) under name variants — entity suffixes like
+// ", LLC", parenthetical aliases like " (ASTP)", punctuation drift. We dedupe
+// at the view layer using `canonicalCompanyKey` so the UI shows one card per
+// real company without a destructive DB change.
+function mergeByCanonicalKey(views: CompanyView[]): CompanyView {
   if (views.length === 1) return views[0];
   // Pick the row with the most ownership periods as the "spine" (its scalar
   // fields propagate). Ties go to the longer description.
@@ -124,6 +126,10 @@ function mergeByName(views: CompanyView[]): CompanyView {
     if (b.owners.length !== a.owners.length) return b.owners.length - a.owners.length;
     return (b.description?.length ?? 0) - (a.description?.length ?? 0);
   })[0];
+
+  // Display name: prefer the longest user-friendly variant, not the spine's.
+  // "ALLO Communications, LLC" reads better than "ALLO Communications".
+  const displayName = preferredDisplayName(views.map((v) => v.name));
 
   const dedup = <T,>(items: T[], key: (t: T) => string): T[] => {
     const seen = new Set<string>();
@@ -160,6 +166,7 @@ function mergeByName(views: CompanyView[]): CompanyView {
 
   return {
     ...spine,
+    name: displayName,
     investmentFirm: primary?.firm || spine.investmentFirm,
     ownershipVehicle: primary?.vehicle || spine.ownershipVehicle,
     investmentYear: primary?.investmentYear ?? spine.investmentYear,
@@ -178,14 +185,18 @@ export async function getAllCompanies(): Promise<CompanyView[]> {
     orderBy: { name: "asc" },
   });
   const views = companies.map(toCompanyView);
-  const byName = new Map<string, CompanyView[]>();
+  // Group by `canonicalCompanyKey(name) | country`. The country segment keeps
+  // genuinely-distinct same-name companies in different countries apart;
+  // canonical-key collapses entity-suffix and parenthetical-alias variants.
+  const byKey = new Map<string, CompanyView[]>();
   for (const v of views) {
-    const list = byName.get(v.name) ?? [];
+    const key = `${canonicalCompanyKey(v.name)}|${v.country}`;
+    const list = byKey.get(key) ?? [];
     list.push(v);
-    byName.set(v.name, list);
+    byKey.set(key, list);
   }
-  return Array.from(byName.values())
-    .map(mergeByName)
+  return Array.from(byKey.values())
+    .map(mergeByCanonicalKey)
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
