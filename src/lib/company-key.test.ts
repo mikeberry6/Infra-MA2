@@ -1,5 +1,15 @@
 import { describe, it, expect } from "vitest";
-import { canonicalCompanyKey, preferredDisplayName } from "./company-key";
+import {
+  canonicalCompanyKey,
+  companyDedupKeys,
+  groupByDedupKeys,
+  preferredDisplayName,
+} from "./company-key";
+
+const intersects = (a: Set<string>, b: Set<string>) => {
+  for (const x of a) if (b.has(x)) return true;
+  return false;
+};
 
 describe("canonicalCompanyKey", () => {
   it("collapses entity suffixes (LLC, Inc, Ltd, etc.)", () => {
@@ -64,6 +74,71 @@ describe("canonicalCompanyKey", () => {
   it("handles empty / whitespace input", () => {
     expect(canonicalCompanyKey("")).toBe("");
     expect(canonicalCompanyKey("   ")).toBe("");
+  });
+});
+
+describe("canonicalCompanyKey — trailing asset descriptors", () => {
+  it("strips 'Pipeline Project' to match 'Pipeline'", () => {
+    expect(canonicalCompanyKey("Coastal GasLink Pipeline Project")).toBe(
+      canonicalCompanyKey("Coastal GasLink Pipeline"),
+    );
+  });
+  it("strips 'Portfolio'", () => {
+    expect(canonicalCompanyKey("Pearl/Ruby Solar Portfolio")).toBe(
+      canonicalCompanyKey("Pearl Ruby Solar"),
+    );
+  });
+});
+
+describe("companyDedupKeys — multi-key matching", () => {
+  it("returns two keys for parenthetical descriptive subnames", () => {
+    const a = companyDedupKeys("Etobicoke General Hospital (Phase 1 Patient Tower)");
+    const b = companyDedupKeys("Etobicoke General Hospital Phase 1 Patient Tower");
+    expect(intersects(a, b)).toBe(true);
+  });
+
+  it("still collapses ASTP-style aliases", () => {
+    const a = companyDedupKeys("American Student Transportation Partners (ASTP)");
+    const b = companyDedupKeys("American Student Transportation Partners");
+    expect(intersects(a, b)).toBe(true);
+  });
+
+  it("collapses ALLO-style entity-suffix dupes", () => {
+    const a = companyDedupKeys("ALLO Communications, LLC");
+    const b = companyDedupKeys("ALLO Communications");
+    expect(intersects(a, b)).toBe(true);
+  });
+
+  it("does NOT collapse legitimately different companies", () => {
+    expect(intersects(
+      companyDedupKeys("Renewable Energy AssetCo 1"),
+      companyDedupKeys("Renewable Energy AssetCo 2"),
+    )).toBe(false);
+    expect(intersects(
+      companyDedupKeys("Vantage Data Centers"),
+      companyDedupKeys("Vantage Data Centers Stabilized North America Portfolio"),
+    )).toBe(false);
+  });
+});
+
+describe("groupByDedupKeys — union-find clustering", () => {
+  it("collapses items that share any key (transitively)", () => {
+    const items = ["A LLC", "A Inc", "B Corp"];
+    const groups = groupByDedupKeys(items, companyDedupKeys);
+    expect(groups).toHaveLength(2);
+    const aGroup = groups.find((g) => g.includes("A LLC"))!;
+    expect(aGroup).toEqual(expect.arrayContaining(["A LLC", "A Inc"]));
+  });
+
+  it("transitively merges chains: a≈b, b≈c → {a,b,c}", () => {
+    // The "(Phase 1)" form bridges between "Hospital" and "Hospital Phase 1".
+    const items = [
+      "Etobicoke General Hospital",
+      "Etobicoke General Hospital (Phase 1 Patient Tower)",
+      "Etobicoke General Hospital Phase 1 Patient Tower",
+    ];
+    const groups = groupByDedupKeys(items, companyDedupKeys);
+    expect(groups).toHaveLength(1);
   });
 });
 

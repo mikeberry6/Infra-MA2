@@ -6,7 +6,7 @@ import {
   MILESTONE_CATEGORY_DISPLAY,
 } from "@/modules/shared/enum-maps";
 import type { CompanyView, MilestoneView, ExecutiveView, SourceView, OwnerView } from "@/modules/shared/types";
-import { canonicalCompanyKey, preferredDisplayName } from "@/lib/company-key";
+import { companyDedupKeys, groupByDedupKeys, preferredDisplayName } from "@/lib/company-key";
 
 function toCompanyView(company: any): CompanyView {
   // Map every ownership period to an OwnerView, then sort: active first,
@@ -131,6 +131,17 @@ function mergeByCanonicalKey(views: CompanyView[]): CompanyView {
   // "ALLO Communications, LLC" reads better than "ALLO Communications".
   const displayName = preferredDisplayName(views.map((v) => v.name));
 
+  // Country: pick the most descriptive variant. "United States / Canada"
+  // tells the user more than "North America", and both are richer than just
+  // "United States". Heuristic: most slashes (= more component countries),
+  // ties broken by length.
+  const displayCountry = [...new Set(views.map((v) => v.country))].sort((a, b) => {
+    const slashesA = (a.match(/\//g) || []).length;
+    const slashesB = (b.match(/\//g) || []).length;
+    if (slashesA !== slashesB) return slashesB - slashesA;
+    return b.length - a.length;
+  })[0] ?? spine.country;
+
   const dedup = <T,>(items: T[], key: (t: T) => string): T[] => {
     const seen = new Set<string>();
     return items.filter((t) => {
@@ -167,6 +178,7 @@ function mergeByCanonicalKey(views: CompanyView[]): CompanyView {
   return {
     ...spine,
     name: displayName,
+    country: displayCountry,
     investmentFirm: primary?.firm || spine.investmentFirm,
     ownershipVehicle: primary?.vehicle || spine.ownershipVehicle,
     investmentYear: primary?.investmentYear ?? spine.investmentYear,
@@ -185,17 +197,15 @@ export async function getAllCompanies(): Promise<CompanyView[]> {
     orderBy: { name: "asc" },
   });
   const views = companies.map(toCompanyView);
-  // Group by `canonicalCompanyKey(name) | country`. The country segment keeps
-  // genuinely-distinct same-name companies in different countries apart;
-  // canonical-key collapses entity-suffix and parenthetical-alias variants.
-  const byKey = new Map<string, CompanyView[]>();
-  for (const v of views) {
-    const key = `${canonicalCompanyKey(v.name)}|${v.country}`;
-    const list = byKey.get(key) ?? [];
-    list.push(v);
-    byKey.set(key, list);
-  }
-  return Array.from(byKey.values())
+  // Group by `companyDedupKeys(name)` via union-find — two views collapse if
+  // any of their canonical keys overlap. Country is intentionally NOT part of
+  // the key: in practice country-string variation ("United States" vs
+  // "United States / Canada") is editorial inconsistency, not a real
+  // distinction. Same-name same-company is the dominant pattern in this
+  // dataset; treating different country strings as different companies
+  // produced the visible duplicates the user flagged.
+  const groups = groupByDedupKeys(views, (v) => companyDedupKeys(v.name));
+  return groups
     .map(mergeByCanonicalKey)
     .sort((a, b) => a.name.localeCompare(b.name));
 }

@@ -33,17 +33,12 @@
 import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
-import { canonicalCompanyKey } from "../src/lib/company-key";
+import { companyDedupKeys, groupByDedupKeys } from "../src/lib/company-key";
 
 const APPLY = process.argv.includes("--apply");
 
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
-
-// Use the same `canonicalCompanyKey` helper that the view layer uses, so the
-// DB cleanup catches exactly the clusters the UI was already collapsing
-// (and now also catches name variants like "(ASTP)" and ", LLC").
-const normalize = canonicalCompanyKey;
 
 async function main() {
   console.log(APPLY ? "⚠️  APPLY MODE — writing changes" : "🔍 DRY RUN — no changes will be made");
@@ -60,14 +55,17 @@ async function main() {
 
   console.log(`Loaded ${companies.length} companies from DB.`);
 
-  const byKey = new Map<string, typeof companies>();
-  for (const c of companies) {
-    const key = `${normalize(c.name)}|${c.country}`;
-    if (!byKey.has(key)) byKey.set(key, []);
-    byKey.get(key)!.push(c);
-  }
-
-  const clusters = Array.from(byKey.entries()).filter(([, list]) => list.length >= 2);
+  // Cluster via union-find on `companyDedupKeys`. Country is no longer part
+  // of the key — same canonical name across different country strings was
+  // editorial inconsistency, not a real distinction.
+  const allClusters = groupByDedupKeys(companies, (c) => companyDedupKeys(c.name));
+  const clusters = allClusters
+    .filter((list) => list.length >= 2)
+    .map((list) => {
+      // Build a representative key for logging.
+      const firstKey = Array.from(companyDedupKeys(list[0].name))[0] ?? list[0].name;
+      return [firstKey, list] as const;
+    });
   console.log(`Found ${clusters.length} duplicate clusters covering ${clusters.reduce((n, [, l]) => n + l.length, 0)} rows.\n`);
 
   if (clusters.length === 0) {
