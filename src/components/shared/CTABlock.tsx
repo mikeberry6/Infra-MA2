@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 export function CTABlock() {
   return (
     <div className="my-6">
@@ -19,12 +17,6 @@ export function CTABlock() {
             <button className="bg-[#008253] text-white font-heading font-bold text-[12px] px-8 py-[8px] hover:bg-[#006d45] transition-colors tracking-wide uppercase">
               Register for free
             </button>
-            <span className="text-[11px] text-[#6e6e6e]">
-              Already have an account?{" "}
-              <Link href="/login" className="text-[#008253] hover:text-[#006d45] transition-colors font-medium">
-                Sign in
-              </Link>
-            </span>
           </div>
         </div>
       </div>
