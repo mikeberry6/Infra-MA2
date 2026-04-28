@@ -1,14 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const sitePassword = process.env.SITE_PASSWORD;
-  if (!sitePassword) {
-    console.error("SITE_PASSWORD is not configured");
-    return NextResponse.json(
-      { success: false, error: "Server misconfigured" },
-      { status: 500 },
-    );
-  }
+  const sitePassword = "12345";
 
   const { password } = await request.json();
 
