@@ -1,41 +1,46 @@
 /**
- * Audit + cleanup for Apollo / Argo ownership conflation.
+ * Audit + cleanup for misattributed Apollo OwnershipPeriod rows.
  *
- * The user surfaced a specific bug: Duquesne Light Company appears in the
- * portfolio with **Apollo Global Management** listed as a current owner,
- * even though Apollo has no ownership in Duquesne. The actual ownership
- * involves Argo Infrastructure Partners' AIA Montana vehicle (alongside
- * APG and CalSTRS as LPs in that vehicle), plus GIC, Manulife, and
- * Macquarie. Apollo is not in that cap table.
+ * Background. The user surfaced a UI bug: filtering the portfolio by
+ * "Apollo Global Management" returns 38 companies, many of which Apollo
+ * does not actually own — Carville Energy Center, Corning Natural Gas,
+ * Cross-Sound Cable, Duquesne Light, Brightspeed, etc. The drawers on
+ * those companies show an Apollo OwnershipPeriod whose vehicleName is a
+ * malformed "Argo via Apollo" / "X (Apollo)" annotation, not a real
+ * vehicle. The seed file (`prisma/seed-data/companies.ts`) is clean — these
+ * Apollo rows were added to the live DB later, presumably by a parser that
+ * promoted parenthetical "(Apollo)" notes into stand-alone Organization
+ * links.
  *
- * The seed file is clean. The conflation lives in the live DB, presumably
- * from an earlier hand-edit or a stale ingest run that mistook an
- * "Argo-managed" vehicle for an Apollo entity (both names start with the
- * same letter and have similar prose patterns; an aggressive substring
- * match against the Organization table can cause this).
+ * Detection (an Apollo OwnershipPeriod is flagged as suspect if ANY apply):
+ *   1. The vehicleName contains "Apollo" parenthetically (e.g.
+ *      "Argo Infrastructure Partners (Apollo)") — a clear annotation, not
+ *      a real Apollo vehicle.
+ *   2. The vehicleName starts with another known firm's name (e.g.
+ *      "Argo Infrastructure Partners ..."). The Apollo row is supposed
+ *      to be Apollo-the-firm with its own vehicle, not someone else's.
+ *   3. The vehicleName contains an Argo-vehicle hint ("AIA ",
+ *      "Argo Managed Funds", "Managed by Argo").
+ *   4. The company has another non-Apollo OwnershipPeriod whose firm
+ *      name appears verbatim in the Apollo row's vehicleName.
+ *   5. With `--duquesne-only` or `--list-all`, scope is overridden.
  *
- * This script:
- *   1. Always runs as audit first — lists every Company that has Apollo
- *      as an OwnershipPeriod where the prose / known cap table doesn't
- *      support it. Specifically it looks for Apollo OwnershipPeriods on
- *      companies whose other owners include Argo OR whose ownership
- *      vehicle name contains "AIA " (Argo's vehicle prefix).
- *   2. With --duquesne-only, narrows to just Duquesne Light Company —
- *      the specific row the user flagged.
- *   3. With --apply, removes the matching Apollo OwnershipPeriod rows.
+ * Modes:
  *
- *   Audit (default — read-only):
+ *   Audit suspects (default — read-only, prints the flagged set):
  *     npx tsx scripts/cleanup-apollo-argo-conflation.ts
  *
- *   Audit just Duquesne:
+ *   List every Apollo OwnershipPeriod (read-only, helpful for eyeballing):
+ *     npx tsx scripts/cleanup-apollo-argo-conflation.ts --list-all
+ *
+ *   Audit just the user's first-flagged row:
  *     npx tsx scripts/cleanup-apollo-argo-conflation.ts --duquesne-only
  *
- *   Apply (transactional, removes rows):
+ *   Apply (transactional, removes the flagged Apollo OwnershipPeriods):
  *     npx tsx scripts/cleanup-apollo-argo-conflation.ts --apply
- *     npx tsx scripts/cleanup-apollo-argo-conflation.ts --duquesne-only --apply
  *
- * Pattern follows scripts/manual-merges.ts: --apply opt-in, transactional
- * per company, exhaustive logging in audit mode.
+ * Pattern follows scripts/manual-merges.ts: --apply opt-in, single
+ * transaction, exhaustive logging.
  */
 import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
@@ -43,36 +48,49 @@ import { PrismaPg } from "@prisma/adapter-pg";
 
 const APPLY = process.argv.includes("--apply");
 const DUQUESNE_ONLY = process.argv.includes("--duquesne-only");
+const LIST_ALL = process.argv.includes("--list-all");
 
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
 
-// Names we treat as "Apollo" for purposes of detection (in case the
-// Organization table has variants). Matched case-insensitively.
+// Apollo Organization name variants — matched case-insensitively against
+// the live DB.
 const APOLLO_NAMES = ["Apollo Global Management", "Apollo"];
 
-// Names we treat as "Argo" for purposes of detection.
-const ARGO_NAMES = ["Argo Infrastructure Partners", "Argo"];
-
-// Vehicle-name substrings that strongly indicate an Argo-managed vehicle.
-// "AIA " covers AIA Montana LLC, AIA Energy North America, etc.
+// Vehicle-name substrings that indicate an Argo-managed vehicle.
 const ARGO_VEHICLE_HINTS = ["AIA ", "Argo Managed Funds", "Managed by Argo"];
 
-interface SuspectFinding {
+interface ApolloOpRow {
+  opId: string;
   companyId: string;
   companyName: string;
-  apolloOpId: string;
-  apolloVehicleName: string | null;
+  vehicleName: string | null;
+  isActive: boolean;
+  stake: string | null;
+  siblingOwnerNames: string[]; // every other firm on the same company
+}
+
+interface SuspectFinding extends ApolloOpRow {
   reason: string;
-  otherOwners: string[];
 }
 
 async function main() {
-  console.log(APPLY ? "⚠️  APPLY MODE — will remove rows" : "🔍 AUDIT — read-only");
+  if (LIST_ALL && APPLY) {
+    console.error("--list-all is read-only and incompatible with --apply.");
+    process.exit(1);
+  }
+
+  console.log(
+    APPLY
+      ? "⚠️  APPLY MODE — will remove rows"
+      : LIST_ALL
+        ? "📋 LIST-ALL — every Apollo OwnershipPeriod, no detection filter"
+        : "🔍 AUDIT — read-only, suspect-only",
+  );
   if (DUQUESNE_ONLY) console.log("   scope: Duquesne Light Company only");
   console.log();
 
-  // Find every Apollo Organization row (there should be one, but be defensive).
+  // Find every Apollo Organization row.
   const apolloOrgs = await prisma.organization.findMany({
     where: { name: { in: APOLLO_NAMES, mode: "insensitive" } },
     select: { id: true, name: true },
@@ -82,17 +100,17 @@ async function main() {
     return;
   }
   const apolloIds = new Set(apolloOrgs.map((o) => o.id));
-  console.log(`Found ${apolloOrgs.length} Apollo Organization row(s): ${apolloOrgs.map((o) => o.name).join(", ")}`);
+  console.log(
+    `Found ${apolloOrgs.length} Apollo Organization row(s): ${apolloOrgs.map((o) => o.name).join(", ")}`,
+  );
 
-  // Find every OwnershipPeriod whose org is Apollo, with the company and
-  // sibling ownerships included so we can detect the Argo / AIA pattern.
+  // Pull every Apollo OwnershipPeriod with the company + sibling owners.
   const where: Parameters<typeof prisma.ownershipPeriod.findMany>[0]["where"] = {
     organizationId: { in: Array.from(apolloIds) },
   };
   if (DUQUESNE_ONLY) {
     where.company = { name: "Duquesne Light Company" };
   }
-
   const apolloOps = await prisma.ownershipPeriod.findMany({
     where,
     include: {
@@ -108,65 +126,103 @@ async function main() {
     },
   });
 
-  console.log(`Found ${apolloOps.length} Apollo OwnershipPeriod(s) to inspect`);
+  // Reshape into a flat list keyed off the Apollo OP, with every sibling
+  // owner name attached for downstream detection.
+  const rows: ApolloOpRow[] = apolloOps.map((op) => ({
+    opId: op.id,
+    companyId: op.company.id,
+    companyName: op.company.name,
+    vehicleName: op.vehicleName,
+    isActive: op.isActive,
+    stake: op.stake,
+    siblingOwnerNames: op.company.ownershipPeriods
+      .filter((p) => p.id !== op.id)
+      .map((p) => p.organization?.name ?? "")
+      .filter(Boolean),
+  }));
+
+  console.log(`Found ${rows.length} Apollo OwnershipPeriod(s) to inspect`);
   console.log();
 
+  // ── Mode 1: --list-all just dumps every Apollo OP, sorted by company. ──
+  if (LIST_ALL) {
+    const sorted = [...rows].sort((a, b) => a.companyName.localeCompare(b.companyName));
+    for (const r of sorted) {
+      console.log(`  ${r.companyName}`);
+      console.log(`    opId:        ${r.opId}`);
+      console.log(`    vehicle:     ${r.vehicleName ?? "(none)"}`);
+      console.log(`    isActive:    ${r.isActive}${r.stake ? `  stake=${r.stake}` : ""}`);
+      console.log(`    siblings:    ${r.siblingOwnerNames.join(", ") || "(none)"}`);
+      console.log();
+    }
+    console.log(`Listed ${sorted.length} Apollo OwnershipPeriod(s).`);
+    return;
+  }
+
+  // ── Mode 2: detection. ──
   const suspects: SuspectFinding[] = [];
+  for (const r of rows) {
+    const v = r.vehicleName ?? "";
+    const vLower = v.toLowerCase();
+    const reasons: string[] = [];
 
-  for (const op of apolloOps) {
-    const otherOwners = op.company.ownershipPeriods
-      .filter((p) => p.id !== op.id)
-      .map((p) => p.organization?.name ?? "(unknown)")
-      .filter(Boolean);
-
-    const hasArgoSibling = op.company.ownershipPeriods.some((p) =>
-      ARGO_NAMES.some((a) => p.organization?.name?.toLowerCase() === a.toLowerCase()),
-    );
-    const looksLikeArgoVehicle =
-      op.vehicleName != null &&
-      ARGO_VEHICLE_HINTS.some((h) => op.vehicleName!.toLowerCase().includes(h.toLowerCase()));
-
-    let reason: string | null = null;
-    if (DUQUESNE_ONLY) {
-      reason = "company is Duquesne Light Company (user-flagged)";
-    } else if (hasArgoSibling && looksLikeArgoVehicle) {
-      reason = `vehicle "${op.vehicleName}" looks Argo-managed AND Argo is also an owner of the company`;
-    } else if (hasArgoSibling) {
-      reason = "Argo is an owner of the same company — likely conflation";
-    } else if (looksLikeArgoVehicle) {
-      reason = `vehicle "${op.vehicleName}" looks Argo-managed`;
+    // (1) parenthetical "(Apollo)" annotation
+    if (/\(apollo[^)]*\)/i.test(v)) {
+      reasons.push(`vehicle "${v}" contains parenthetical "(Apollo)" annotation — malformed`);
     }
 
-    if (reason) {
-      suspects.push({
-        companyId: op.company.id,
-        companyName: op.company.name,
-        apolloOpId: op.id,
-        apolloVehicleName: op.vehicleName,
-        reason,
-        otherOwners,
-      });
+    // (2) Argo vehicle hint
+    if (ARGO_VEHICLE_HINTS.some((h) => vLower.includes(h.toLowerCase()))) {
+      reasons.push(`vehicle "${v}" looks Argo-managed`);
+    }
+
+    // (3) vehicle name contains a sibling firm's name (i.e. "X" — where X
+    // is another owner on the same company — appears in the Apollo row's
+    // vehicleName). This catches "Argo Infrastructure Partners (Apollo)"
+    // and the Mubadala / GIC variants.
+    const siblingInVehicle = r.siblingOwnerNames.find(
+      (sib) => sib.length >= 4 && vLower.includes(sib.toLowerCase()),
+    );
+    if (siblingInVehicle) {
+      reasons.push(
+        `vehicle "${v}" contains another owner's firm name "${siblingInVehicle}" — likely a "via X" annotation, not a real Apollo vehicle`,
+      );
+    }
+
+    // (4) DUQUESNE_ONLY override — flag everything in scope.
+    if (DUQUESNE_ONLY && reasons.length === 0) {
+      reasons.push("company is Duquesne Light Company (user-flagged)");
+    }
+
+    if (reasons.length > 0) {
+      suspects.push({ ...r, reason: reasons.join("; ") });
     }
   }
 
   if (suspects.length === 0) {
-    console.log("No suspect Apollo→Argo conflations detected. Nothing to remove.");
+    console.log("No suspect Apollo OwnershipPeriods detected. Nothing to remove.");
     return;
   }
 
   console.log(`⚠ ${suspects.length} suspect Apollo OwnershipPeriod(s) flagged:`);
   console.log();
-  for (const s of suspects) {
+  const sorted = [...suspects].sort((a, b) => a.companyName.localeCompare(b.companyName));
+  for (const s of sorted) {
     console.log(`  ${s.companyName}`);
-    console.log(`    apolloOpId:    ${s.apolloOpId}`);
-    console.log(`    vehicleName:   ${s.apolloVehicleName ?? "(none)"}`);
-    console.log(`    reason:        ${s.reason}`);
-    console.log(`    other owners:  ${s.otherOwners.join(", ") || "(none)"}`);
+    console.log(`    opId:        ${s.opId}`);
+    console.log(`    vehicle:     ${s.vehicleName ?? "(none)"}`);
+    console.log(`    reason:      ${s.reason}`);
+    console.log(`    siblings:    ${s.siblingOwnerNames.join(", ") || "(none)"}`);
     console.log();
   }
 
   if (!APPLY) {
-    console.log(`Audit complete. Re-run with --apply to remove the ${suspects.length} flagged row(s).`);
+    const survivors = rows.length - suspects.length;
+    console.log(
+      `Audit complete. ${suspects.length} flagged for removal; ${survivors} Apollo OwnershipPeriod(s) would remain.`,
+    );
+    console.log(`Re-run with --apply to remove the ${suspects.length} flagged row(s).`);
+    console.log(`Or re-run with --list-all to see EVERY Apollo OwnershipPeriod (incl. real ones).`);
     return;
   }
 
@@ -174,7 +230,7 @@ async function main() {
   let removed = 0;
   await prisma.$transaction(async (tx) => {
     for (const s of suspects) {
-      await tx.ownershipPeriod.delete({ where: { id: s.apolloOpId } });
+      await tx.ownershipPeriod.delete({ where: { id: s.opId } });
       removed++;
     }
   });
