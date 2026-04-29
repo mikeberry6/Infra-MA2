@@ -10,7 +10,11 @@ export default defineConfig({
     },
   },
   test: {
-    include: ["src/**/*.test.ts", "src/**/*.test.tsx"],
+    include: [
+      "src/**/*.test.ts",
+      "src/**/*.test.tsx",
+      "scripts/**/*.test.ts",
+    ],
     globals: false,
     setupFiles: ["./vitest.setup.ts"],
     // node for pure utilities (default), jsdom for DOM-dependent component tests
