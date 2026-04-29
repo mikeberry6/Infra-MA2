@@ -187,7 +187,7 @@ function PortCoCard({
   return (
     <button
       onClick={() => onSelect(company)}
-      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)]"
+      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
     >
       <div className="flex items-start justify-between gap-3 mb-2">
         <h4 className="text-sm font-medium text-[var(--text-primary)] leading-snug tracking-tight truncate">
@@ -260,8 +260,17 @@ function PortCoTable({
 
   const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
     <th
-      className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors select-none"
+      role="button"
+      tabIndex={0}
       onClick={() => toggleSort(field)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggleSort(field);
+        }
+      }}
+      aria-sort={sortField === field ? (sortAsc ? "ascending" : "descending") : "none"}
+      className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
     >
       <span className="inline-flex items-center gap-1">
         {label}
@@ -311,12 +320,12 @@ function PortCoTable({
                   className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
                 >
                   <td className="px-3 py-2.5 align-top max-w-[260px]">
-                    <span className="text-[13px] font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
+                    <span title={company.name} className="text-[13px] font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
                       {company.name}
                     </span>
                   </td>
                   <td className="px-3 py-2.5 align-top max-w-[200px]">
-                    <span className="text-[12px] text-[var(--text-secondary)] truncate block">
+                    <span title={company.investmentFirm} className="text-[12px] text-[var(--text-secondary)] truncate block">
                       {company.investmentFirm || "—"}
                     </span>
                     {company.investmentYear && (

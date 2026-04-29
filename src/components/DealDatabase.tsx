@@ -256,7 +256,7 @@ function DealCard({
   return (
     <button
       onClick={() => onSelect(deal)}
-      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)]"
+      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
     >
       <div className="flex items-start justify-between gap-3 mb-2">
         <div className="flex items-center gap-2 flex-wrap min-w-0">
@@ -341,12 +341,21 @@ function DealTable({
             <thead>
               <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
                 <th
+                  role="button"
+                  tabIndex={0}
                   onClick={toggleSort}
-                  className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors w-[100px]"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      toggleSort();
+                    }
+                  }}
+                  aria-sort={sortDir === "asc" ? "ascending" : "descending"}
+                  className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors w-[100px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
                 >
                   <span className="inline-flex items-center gap-1">
                     Date
-                    <ArrowUpDown className="h-2.5 w-2.5" />
+                    <ArrowUpDown className="h-2.5 w-2.5" strokeWidth={1.75} />
                   </span>
                 </th>
                 <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
@@ -386,17 +395,17 @@ function DealTable({
                     </td>
                     <td className="px-3 py-2.5 align-top">
                       <div className="flex flex-col">
-                        <span className="text-[13px] font-medium text-[var(--text-primary)] tracking-tight group-hover:text-[var(--accent)] transition-colors block truncate max-w-[280px]">
+                        <span title={deal.target} className="text-[13px] font-medium text-[var(--text-primary)] tracking-tight group-hover:text-[var(--accent)] transition-colors block truncate max-w-[280px]">
                           {deal.target}
                         </span>
                         {showSeller && (
-                          <span className="text-[11px] text-[var(--text-tertiary)] block truncate max-w-[280px]">
+                          <span title={deal.seller} className="text-[11px] text-[var(--text-tertiary)] block truncate max-w-[280px]">
                             {deal.seller}
                           </span>
                         )}
                       </div>
                     </td>
-                    <td className="px-3 py-2.5 align-top max-w-[160px]">
+                    <td title={deal.buyer} className="px-3 py-2.5 align-top max-w-[160px]">
                       <div className="flex flex-col">
                         {shortenBuyer(deal.buyer).map((name, i) => (
                           <span key={i} className="text-[12px] text-[var(--text-secondary)] truncate block">
@@ -559,9 +568,9 @@ function DealDrawer({
             <button
               onClick={onClose}
               aria-label="Close drawer"
-              className="p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0"
+              className="p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4" strokeWidth={1.75} />
             </button>
           </div>
 

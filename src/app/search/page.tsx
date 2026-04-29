@@ -73,7 +73,7 @@ export default async function SearchPage({
           <Link
             key={`${result.type}-${result.id}`}
             href={resultHref(result)}
-            className="block surface px-4 py-3 hover:bg-[var(--bg-subtle)] transition-colors group"
+            className="block surface px-4 py-3 hover:bg-[var(--bg-subtle)] transition-colors group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
           >
             <div className="flex items-center gap-2 mb-1">
               <span className="inline-flex items-center gap-1.5">

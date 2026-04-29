@@ -190,7 +190,7 @@ function FundVehicleCard({
   return (
     <button
       onClick={() => onSelect(fund)}
-      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)]"
+      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
     >
       <div className="flex items-start justify-between gap-3 mb-2">
         <h4 className="text-sm font-medium text-[var(--text-primary)] leading-snug tracking-tight truncate">
@@ -269,7 +269,7 @@ function FundRow({
       className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group border-b border-[var(--border)] last:border-b-0"
     >
       <td className="px-3 py-2.5 align-top">
-        <span className="text-[13px] font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
+        <span title={fund.fundName} className="text-[13px] font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
           {fund.fundName}
         </span>
       </td>
@@ -478,10 +478,19 @@ function AllFundsTable({
               {sortableFields.map(({ field, label, idx }) => (
                 <th
                   key={field}
-                  className={`px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors select-none ${
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => toggleSort(field)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      toggleSort(field);
+                    }
+                  }}
+                  aria-sort={sortField === field ? (sortAsc ? "ascending" : "descending") : "none"}
+                  className={`px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm ${
                     idx >= 2 ? "text-right" : "text-left"
                   }`}
-                  onClick={() => toggleSort(field)}
                 >
                   <span className={`inline-flex items-center gap-1 ${idx >= 2 ? "justify-end w-full" : ""}`}>
                     {label}
@@ -624,9 +633,9 @@ function FundDrawer({
             <button
               onClick={onClose}
               aria-label="Close drawer"
-              className="p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0"
+              className="p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4" strokeWidth={1.75} />
             </button>
           </div>
         </div>
@@ -794,7 +803,7 @@ function FundDrawer({
                   <button
                     key={sib.id}
                     onClick={() => onSelectFund(sib)}
-                    className="w-full text-left surface p-3 hover:bg-[var(--bg-subtle)] transition-colors flex items-center justify-between gap-3 group"
+                    className="w-full text-left surface p-3 hover:bg-[var(--bg-subtle)] transition-colors flex items-center justify-between gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
                   >
                     <div className="min-w-0">
                       <div className="text-sm font-medium text-[var(--text-primary)] truncate">{sib.fundName}</div>
