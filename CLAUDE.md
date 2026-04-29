@@ -137,36 +137,66 @@ Strategies are `FundStrategy` from [src/lib/types.ts](src/lib/types.ts). Colors 
 
 ## Design System
 
+### Token layer
+
+All design tokens live in [src/app/globals.css](src/app/globals.css) `:root`:
+- **Primitives** (raw, never used directly): `--gray-0` through `--gray-900`, `--accent-500`, `--accent-600`, `--accent-50`
+- **Semantic** (consumed by components): `--bg-app`, `--bg-surface`, `--bg-subtle`, `--bg-hover`, `--bg-overlay` (drawer backdrop), `--border`, `--border-strong`, `--text-primary`, `--text-secondary`, `--text-tertiary`, `--accent`, `--accent-hover`, `--accent-soft`
+
+**Never hardcode hex in component code.** Color always flows through a token (`bg-[var(--bg-surface)]`) or a helper from `src/lib/colors.ts`.
+
 ### Colors
 
-All color helpers live in [src/lib/colors.ts](src/lib/colors.ts):
-- Deal: `getSectorColor`, `getCategoryColor`, `getRegionColor`, `getActivityColor`
-- Fund: `getStrategyColor`, `getStatusColor`, `getFundSectorColor`, `getFundRegionColor`, `getStructureColor`
+All categorical color helpers live in [src/lib/colors.ts](src/lib/colors.ts):
+- Deal: `getSectorColor`, `getCategoryColor`, `getRegionColor`, `getActivityColor`, `getDealPartyRoleColor`
+- Fund: `getStrategyColor`, `getStatusColor`, `getFundSectorColor`, `getFundRegionColor`, `getStructureColor`, `getSizeRangeColor`
 - PortCo: `getPortCoSectorColor`, `getPortCoRegionColor`, `getPortCoStatusColor`, `getPortCoCountryTagColor`, `getMilestoneCategoryColor`
+- Admin meta: `getRecordStatusColor`, `getUserRoleColor`
 
-Every helper falls back to `#a1a1aa` (or `#71717a` for milestone) on unknown input — see [src/lib/colors.test.ts](src/lib/colors.test.ts) for the contract.
+The whole palette flows through a single internal `PALETTE` constant in `colors.ts` — slightly desaturated values tuned toward the Mercury / Linear gamut. Every helper falls back to `#a1a1aa` (or `#71717a` for milestone) on unknown input — see [src/lib/colors.test.ts](src/lib/colors.test.ts) for the contract.
+
+### Shared primitives
+
+Use these whenever possible — don't reinvent inline:
+
+- [`<Button>`](src/components/shared/Button.tsx) — `primary` / `secondary` / `ghost` / `danger` × `sm` / `md` / `lg`. Carries focus rings, loading states, leading/trailing icons.
+- [`<Tag>`](src/components/shared/Tag.tsx) — `dot` (default — color dot + neutral text), `solid` (neutral chip for status), `tinted` (low-opacity color, used sparingly).
+- [`<TextInput>`](src/components/shared/TextInput.tsx) — canonical input pattern, takes a `leadingIcon` prop. Used in navbar, all filter bars, search page.
+- [`<SectionLabel>`](src/components/shared/SectionLabel.tsx) — uppercase 11px tracked-wider label for drawer sections, admin pages, hero columns. Optional `count` prop for the right-aligned numeric.
+- [`<Divider>`](src/components/shared/Divider.tsx) — vertical or horizontal hairline.
+- [`<MultiSelectDropdown>`](src/components/shared/MultiSelectDropdown.tsx), [`<FilterChip>`](src/components/shared/FilterChip.tsx), [`<ActiveFiltersStrip>`](src/components/shared/ActiveFiltersStrip.tsx), [`<RankingColumn>`, `<SimpleBarRow>`](src/components/shared/RankingBars.tsx), [`<DatabaseTiles>`](src/components/shared/DatabaseTiles.tsx), [`<CTABlock>`](src/components/shared/CTABlock.tsx), [`<MarketSnapshotSection>`](src/components/shared/MarketSnapshotSection.tsx).
+
+### Drawer chrome (unified)
+
+When adding a new drawer, match the established pattern:
+- Backdrop: `bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in`
+- Drawer container: `shadow-overlay bg-[var(--bg-surface)] animate-slide-in-right` (0.25s)
+- Left edge accent stripe: 2px wide, colored from the relevant data dimension
+- Sticky header with scroll-shadow: use [`useScrolledPast`](src/hooks/useScrolledPast.ts) hook → conditional `shadow-[0_1px_2px_rgba(17,17,20,0.04)]` on scroll
+- Section dividers between content blocks: `border-t border-[var(--border)] pt-6`
+- ESC key closes (handled per-drawer via `useEffect` keydown listener)
 
 ### Tailwind theme additions
 
-- Custom font sizes: `text-micro` (11px), `text-xs-dense` (12px), `text-sm-dense` (13px)
-- Custom shadows: `shadow-card`, `shadow-card-hover`, `shadow-card-elevated`, `shadow-accent-glow`, `shadow-accent-ring`
-- Custom animations: `animate-fade-in`, `animate-fade-in-up`, `animate-pulse-slow`, `animate-pulse-slower`
-- Custom utilities: `glass-card`, `surface-card`, `filter-pill`
+- Custom font sizes: `text-2xs` (11px) — most other sizes via standard Tailwind scale
+- Custom colors: token-aliased (`bg-app`, `bg-surface`, `bg-subtle`, `bg-hover`, `bg-overlay`, `text-primary`, `text-secondary`, `text-tertiary`, `accent`, `accent-soft`, `accent-hover`)
+- Custom shadows: `shadow-card`, `shadow-card-hover`, `shadow-card-elevated`, `shadow-overlay`, `shadow-focus-ring`
+- Custom animations: `animate-fade-in`, `animate-fade-in-up`, `animate-slide-in-right` (0.25s), `animate-scale-in`
+- Custom utilities (in `globals.css` `@layer components`): `.surface`, `.surface-elevated`, `.surface-overlay`, `.mono`, `.line-clamp-2`
 
 ### Canonical badge pattern
 
-Used site-wide for sector/category/strategy/status/structure tags:
+Use [`<Tag>`](src/components/shared/Tag.tsx) — never inline tinted-background spans:
+```tsx
+<Tag color={getSectorColor(sector)}>{sector}</Tag>      // dot+text (default)
+<Tag variant="solid">Closed</Tag>                       // neutral status chip
+<Tag variant="tinted" color={hex}>Active</Tag>          // tinted (use sparingly)
 ```
-text-[10px] font-medium px-1.5 py-0
-color: "#444444"
-backgroundColor: "${color}08"
-border: "1px solid ${color}12"
-```
-Color comes from the relevant helper. **Use tags for:** Sector, Category, Strategy, Status, Structure, Subsector (card view only). **Do NOT** use tags for Country (plain text) or Region in tables (plain text).
+**Use Tag for:** Sector, Category, Strategy, Status, Structure, Subsector (card view only). **Do NOT** use Tag for Country (plain text) or Region in tables (plain text).
 
 ### Mobile-first
 
-All components must look good on mobile. Avoid cramming hero/infographic sections.
+All components must look good on mobile. Touch targets ≥ 40px (use `h-10` for primary tap surfaces). Avoid cramming hero/infographic sections.
 
 ## Testing
 

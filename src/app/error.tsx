@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { Button } from "@/components/shared/Button";
 
 export default function GlobalError({
   error,
@@ -14,21 +15,27 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <div className="mx-auto max-w-[720px] px-4 sm:px-6 py-16">
-      <div className="border border-black/[0.08] bg-white p-8">
-        <h1 className="text-xl font-semibold text-[#1a1a1a]">Something went wrong</h1>
-        <p className="mt-2 text-sm text-[#555]">
+    <div className="mx-auto max-w-[640px] px-4 sm:px-6 py-16">
+      <div className="surface px-6 py-8 sm:px-8 sm:py-10">
+        <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+          Error
+        </div>
+        <h1 className="mt-1 text-xl font-semibold text-[var(--text-primary)] tracking-tight">
+          Something went wrong
+        </h1>
+        <p className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
           An unexpected error occurred while loading this page.
         </p>
         {error.digest && (
-          <p className="mt-2 text-[11px] font-mono text-[#999]">Error ID: {error.digest}</p>
+          <p className="mt-3 mono text-[11px] text-[var(--text-tertiary)] tabular-nums">
+            ID: {error.digest}
+          </p>
         )}
-        <button
-          onClick={reset}
-          className="mt-6 inline-flex h-9 items-center px-4 text-[12px] font-medium bg-[#008253] text-white hover:bg-[#006e46] transition-colors"
-        >
-          Try again
-        </button>
+        <div className="mt-6">
+          <Button variant="primary" size="md" onClick={reset}>
+            Try again
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ export function SimpleBarRow({
         <div
           className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-500 ease-out"
           style={{
-            width: `${Math.max(barPct, 3)}%`,
+            width: `${Math.max(barPct, 5)}%`,
             backgroundColor: row.color,
           }}
           aria-label={`${row.name}: ${row.count}`}
@@ -76,7 +76,7 @@ export function RankingColumn({
   const maxCount = rows[0]?.count ?? 0;
   return (
     <div className="min-w-0">
-      <h3 className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-3">
+      <h3 className="text-[11px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-3">
         {title}
       </h3>
       <div className="space-y-2">

@@ -6,6 +6,7 @@ import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import { NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
 import type { DealView, DatabaseCounts } from "@/modules/shared/types";
+import { useScrolledPast } from "@/hooks/useScrolledPast";
 
 // ─── Buyer display shortening ──────────────────────────────
 // Purely cosmetic: shortens canonical fund/buyer names for compact table cells
@@ -94,17 +95,6 @@ function isInfraFund(raw: string): boolean {
   );
 }
 
-function getFundRoleTags(deal: DealView): { name: string; role: "Buyer" | "Seller" }[] {
-  const tags: { name: string; role: "Buyer" | "Seller" }[] = [];
-  if (isInfraFund(deal.buyer)) tags.push({ name: deal.buyer, role: "Buyer" });
-  if (isInfraFund(deal.seller)) tags.push({ name: deal.seller, role: "Seller" });
-  return tags;
-}
-
-const ROLE_COLORS = {
-  Buyer: "#3b82f6",
-  Seller: "#f59e0b",
-} as const;
 import {
   Search,
   ExternalLink,
@@ -125,6 +115,8 @@ import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
 import { Tag } from "@/components/shared/Tag";
 import { Button } from "@/components/shared/Button";
+import { TextInput } from "@/components/shared/TextInput";
+import { Divider } from "@/components/shared/Divider";
 
 // ─── Filters ────────────────────────────────────────────────
 const SECTORS: string[] = ["Transportation", "Power & ET", "Midstream", "Utilities", "Waste & ES", "Digital", "Social"];
@@ -206,18 +198,16 @@ function FilterBar({
   return (
     <div className="mb-3 space-y-3">
       <div className="bg-[var(--bg-surface)] border border-[var(--border)] rounded-lg flex items-center gap-2 px-2 py-2 sticky top-14 z-30 overflow-x-auto">
-        <div className="relative flex-1 min-w-[160px] max-w-xs">
-          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[var(--text-tertiary)] pointer-events-none" />
-          <input
-            type="text"
+        <div className="flex-1 min-w-[160px] max-w-xs">
+          <TextInput
+            leadingIcon={<Search />}
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search deals..."
             aria-label="Search deals"
-            className="w-full h-8 pl-8 pr-2.5 rounded-md text-xs bg-[var(--bg-app)] border border-[var(--border)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:bg-[var(--bg-surface)] focus:border-[var(--accent)] focus:shadow-[0_0_0_2px_var(--accent-soft)] transition-colors"
           />
         </div>
-        <div className="h-5 w-px bg-[var(--border)]" />
+        <Divider orientation="vertical" />
         <MultiSelectDropdown
           label="Sector"
           options={SECTORS}
@@ -266,7 +256,7 @@ function DealCard({
   return (
     <button
       onClick={() => onSelect(deal)}
-      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)]"
+      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
     >
       <div className="flex items-start justify-between gap-3 mb-2">
         <div className="flex items-center gap-2 flex-wrap min-w-0">
@@ -351,12 +341,21 @@ function DealTable({
             <thead>
               <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
                 <th
+                  role="button"
+                  tabIndex={0}
                   onClick={toggleSort}
-                  className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors w-[100px]"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      toggleSort();
+                    }
+                  }}
+                  aria-sort={sortDir === "asc" ? "ascending" : "descending"}
+                  className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors w-[100px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
                 >
                   <span className="inline-flex items-center gap-1">
                     Date
-                    <ArrowUpDown className="h-2.5 w-2.5" />
+                    <ArrowUpDown className="h-2.5 w-2.5" strokeWidth={1.75} />
                   </span>
                 </th>
                 <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
@@ -387,7 +386,7 @@ function DealTable({
                   <tr
                     key={deal.id}
                     onClick={() => onSelectDeal(deal)}
-                    className="border-b border-[var(--border)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
+                    className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
                   >
                     <td className="px-3 py-2.5 align-top">
                       <span className="mono text-[11px] text-[var(--text-secondary)] tabular-nums">
@@ -396,17 +395,17 @@ function DealTable({
                     </td>
                     <td className="px-3 py-2.5 align-top">
                       <div className="flex flex-col">
-                        <span className="text-[13px] font-medium text-[var(--text-primary)] tracking-tight group-hover:text-[var(--accent)] transition-colors block truncate max-w-[280px]">
+                        <span title={deal.target} className="text-[13px] font-medium text-[var(--text-primary)] tracking-tight group-hover:text-[var(--accent)] transition-colors block truncate max-w-[280px]">
                           {deal.target}
                         </span>
                         {showSeller && (
-                          <span className="text-[11px] text-[var(--text-tertiary)] block truncate max-w-[280px]">
+                          <span title={deal.seller} className="text-[11px] text-[var(--text-tertiary)] block truncate max-w-[280px]">
                             {deal.seller}
                           </span>
                         )}
                       </div>
                     </td>
-                    <td className="px-3 py-2.5 align-top max-w-[160px]">
+                    <td title={deal.buyer} className="px-3 py-2.5 align-top max-w-[160px]">
                       <div className="flex flex-col">
                         {shortenBuyer(deal.buyer).map((name, i) => (
                           <span key={i} className="text-[12px] text-[var(--text-secondary)] truncate block">
@@ -446,7 +445,7 @@ function DealTable({
                       )}
                     </td>
                     <td className="px-2 py-2.5 align-middle text-right">
-                      <ChevronRight className="h-3.5 w-3.5 text-[var(--text-tertiary)] opacity-0 group-hover:opacity-100 transition-opacity inline-block" />
+                      <ChevronRight className="h-3.5 w-3.5 text-[var(--text-tertiary)] opacity-30 group-hover:opacity-100 group-hover:text-[var(--text-secondary)] transition-all inline-block" />
                     </td>
                   </tr>
                 );
@@ -518,6 +517,9 @@ function DealDrawer({
     deal.legalAdvisorBuyer ||
     deal.legalAdvisorSeller;
 
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const headerScrolled = useScrolledPast(drawerRef);
+
   // Escape key to close
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -540,14 +542,18 @@ function DealDrawer({
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
+        className="fixed inset-0 z-50 bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
         onClick={onClose}
       />
 
       {/* Drawer */}
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[var(--border)] surface-overlay rounded-none bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right">
+      <div ref={drawerRef} className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[var(--border)] surface-overlay rounded-none bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right">
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)] px-5 lg:px-7 py-4 lg:py-5">
+        <div
+          className={`sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)] px-5 lg:px-7 py-4 lg:py-5 transition-shadow duration-150 ${
+            headerScrolled ? "shadow-[0_1px_2px_rgba(17,17,20,0.04)]" : ""
+          }`}
+        >
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-2 flex-wrap">
@@ -562,9 +568,9 @@ function DealDrawer({
             <button
               onClick={onClose}
               aria-label="Close drawer"
-              className="p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0"
+              className="p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4" strokeWidth={1.75} />
             </button>
           </div>
 
@@ -661,7 +667,7 @@ function DealDrawer({
 
           {/* Key Highlights */}
           {deal.keyHighlights && deal.keyHighlights.length > 0 && (
-            <div className="border-t border-[var(--border)] pt-5">
+            <div className="border-t border-[var(--border)] pt-6">
               <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-3">
                 Key highlights
               </div>
@@ -678,7 +684,7 @@ function DealDrawer({
 
           {/* Advisors */}
           {hasAdvisors && (
-            <div className="border-t border-[var(--border)] pt-5">
+            <div className="border-t border-[var(--border)] pt-6">
               <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-3">
                 Advisors
               </div>
@@ -701,7 +707,7 @@ function DealDrawer({
 
           {/* Source link */}
           {deal.sourceUrl && (
-            <div className="border-t border-[var(--border)] pt-4">
+            <div className="border-t border-[var(--border)] pt-6">
               <a
                 href={deal.sourceUrl}
                 target="_blank"

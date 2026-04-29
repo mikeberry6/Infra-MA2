@@ -42,6 +42,9 @@
     --accent-hover: var(--accent-600);
     --accent-soft:  var(--accent-50);
 
+    --bg-overlay: rgba(17, 17, 20, 0.30);
+    --shadow-rgb: 17, 17, 20;
+
     --header-height: 56px;
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -66,8 +69,8 @@
   }
 
   ::selection {
-    background-color: rgba(0, 130, 83, 0.15);
-    color: #111111;
+    background-color: var(--accent-soft);
+    color: var(--text-primary);
   }
 
   ::-webkit-scrollbar {
@@ -113,13 +116,6 @@
     box-shadow:
       0 8px 32px rgba(17, 17, 20, 0.08),
       0 2px 8px rgba(17, 17, 20, 0.04);
-  }
-
-  /* ----- Legacy: still referenced by orphan components (Earnings.tsx) ----- */
-  .glass-card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
   }
 
   /* ----- Typography helpers ----- */

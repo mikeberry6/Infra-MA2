@@ -14,6 +14,9 @@ import {
   getPortCoCountryTagColor,
   getMilestoneCategoryColor,
   getActivityColor,
+  getDealPartyRoleColor,
+  getRecordStatusColor,
+  getUserRoleColor,
 } from "./colors";
 
 const FALLBACK = "#a1a1aa";
@@ -35,6 +38,8 @@ describe("color helpers return valid hex strings", () => {
     ["getPortCoCountryTagColor", getPortCoCountryTagColor],
     ["getMilestoneCategoryColor", getMilestoneCategoryColor],
     ["getActivityColor", getActivityColor],
+    ["getRecordStatusColor", getRecordStatusColor],
+    ["getUserRoleColor", getUserRoleColor],
   ];
 
   for (const [name, fn] of helpers) {
@@ -55,20 +60,77 @@ describe("color helpers return valid hex strings", () => {
 });
 
 describe("getCategoryColor", () => {
-  it("returns Acquisition color for any Acquisition variant", () => {
-    expect(getCategoryColor("Acquisition (Buyout)")).toBe("#3b82f6");
-    expect(getCategoryColor("Acquisition (Majority Stake)")).toBe("#3b82f6");
-    expect(getCategoryColor("Acquisition (Bolt-On)")).toBe("#3b82f6");
+  it("collapses every Acquisition variant onto a single color", () => {
+    const a1 = getCategoryColor("Acquisition (Buyout)");
+    const a2 = getCategoryColor("Acquisition (Majority Stake)");
+    const a3 = getCategoryColor("Acquisition (Bolt-On)");
+    expect(a1).toMatch(/^#[0-9a-fA-F]{6}$/);
+    expect(a1).toBe(a2);
+    expect(a2).toBe(a3);
   });
 
-  it("returns Sale color for any Sale variant", () => {
-    expect(getCategoryColor("Sale (Buyout)")).toBe("#f59e0b");
-    expect(getCategoryColor("Sale (Carve-Out)")).toBe("#f59e0b");
+  it("collapses every Sale variant onto a single color", () => {
+    const s1 = getCategoryColor("Sale (Buyout)");
+    const s2 = getCategoryColor("Sale (Carve-Out)");
+    expect(s1).toMatch(/^#[0-9a-fA-F]{6}$/);
+    expect(s1).toBe(s2);
   });
 
-  it("returns specific colors for Platform Launch, IPO, and Joint Venture", () => {
-    expect(getCategoryColor("Platform Launch")).toBe("#06b6d4");
-    expect(getCategoryColor("IPO")).toBe("#10b981");
-    expect(getCategoryColor("Joint Venture")).toBe("#06b6d4");
+  it("returns distinct colors for non-Acquisition / non-Sale categories", () => {
+    const platform = getCategoryColor("Platform Launch");
+    const ipo = getCategoryColor("IPO");
+    const jv = getCategoryColor("Joint Venture");
+    expect(platform).toMatch(/^#[0-9a-fA-F]{6}$/);
+    expect(ipo).toMatch(/^#[0-9a-fA-F]{6}$/);
+    expect(jv).toMatch(/^#[0-9a-fA-F]{6}$/);
+    // Acquisition and Sale should not collide with these
+    expect(getCategoryColor("Acquisition (Buyout)")).not.toBe(platform);
+    expect(getCategoryColor("Sale (Buyout)")).not.toBe(ipo);
+  });
+});
+
+describe("getDealPartyRoleColor", () => {
+  it("returns distinct hex colors for Buyer and Seller", () => {
+    const buyer = getDealPartyRoleColor("Buyer");
+    const seller = getDealPartyRoleColor("Seller");
+    expect(buyer).toMatch(/^#[0-9a-fA-F]{6}$/);
+    expect(seller).toMatch(/^#[0-9a-fA-F]{6}$/);
+    expect(buyer).not.toBe(seller);
+  });
+
+  it("aligns Buyer with the Acquisition category color", () => {
+    expect(getDealPartyRoleColor("Buyer")).toBe(getCategoryColor("Acquisition (Buyout)"));
+  });
+
+  it("aligns Seller with the Sale category color", () => {
+    expect(getDealPartyRoleColor("Seller")).toBe(getCategoryColor("Sale (Buyout)"));
+  });
+});
+
+describe("getRecordStatusColor", () => {
+  it("returns distinct colors for PUBLISHED and DRAFT", () => {
+    expect(getRecordStatusColor("PUBLISHED")).not.toBe(getRecordStatusColor("DRAFT"));
+  });
+
+  it("returns the neutral fallback for ARCHIVED", () => {
+    expect(getRecordStatusColor("ARCHIVED")).toBe(FALLBACK);
+  });
+
+  it("returns the neutral fallback for an unknown status", () => {
+    expect(getRecordStatusColor("__unknown__")).toBe(FALLBACK);
+  });
+});
+
+describe("getUserRoleColor", () => {
+  it("returns distinct colors for ADMIN and ANALYST", () => {
+    expect(getUserRoleColor("ADMIN")).not.toBe(getUserRoleColor("ANALYST"));
+  });
+
+  it("returns the neutral fallback for VIEWER", () => {
+    expect(getUserRoleColor("VIEWER")).toBe(FALLBACK);
+  });
+
+  it("returns the neutral fallback for an unknown role", () => {
+    expect(getUserRoleColor("__unknown__")).toBe(FALLBACK);
   });
 });

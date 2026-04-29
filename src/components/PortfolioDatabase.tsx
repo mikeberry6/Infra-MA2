@@ -12,6 +12,7 @@ import {
   Download,
   Mail,
   ChevronRight,
+  ArrowDown,
 } from "lucide-react";
 import { PortCoDrawer } from "@/components/PortfolioDatabase/PortCoDrawer";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -24,6 +25,8 @@ import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
 import { Tag } from "@/components/shared/Tag";
 import { Button } from "@/components/shared/Button";
+import { TextInput } from "@/components/shared/TextInput";
+import { Divider } from "@/components/shared/Divider";
 
 
 // ─── Filter Bar ─────────────────────────────────────────────
@@ -60,18 +63,16 @@ function PortCoFilterBar({
   return (
     <div className="mb-3 space-y-3">
       <div className="bg-[var(--bg-surface)] border border-[var(--border)] rounded-lg flex items-center gap-2 px-2 py-2 sticky top-14 z-30 overflow-x-auto">
-        <div className="relative flex-1 min-w-[160px] max-w-xs">
-          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[var(--text-tertiary)] pointer-events-none" />
-          <input
-            type="text"
+        <div className="flex-1 min-w-[160px] max-w-xs">
+          <TextInput
+            leadingIcon={<Search />}
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search portfolio companies..."
             aria-label="Search portfolio companies"
-            className="w-full h-8 pl-8 pr-2.5 rounded-md text-xs bg-[var(--bg-app)] border border-[var(--border)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:bg-[var(--bg-surface)] focus:border-[var(--accent)] focus:shadow-[0_0_0_2px_var(--accent-soft)] transition-colors"
           />
         </div>
-        <div className="h-5 w-px bg-[var(--border)]" />
+        <Divider orientation="vertical" />
         <MultiSelectDropdown
           label="Sector"
           options={PORTCO_SECTORS}
@@ -186,7 +187,7 @@ function PortCoCard({
   return (
     <button
       onClick={() => onSelect(company)}
-      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)]"
+      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
     >
       <div className="flex items-start justify-between gap-3 mb-2">
         <h4 className="text-sm font-medium text-[var(--text-primary)] leading-snug tracking-tight truncate">
@@ -259,13 +260,27 @@ function PortCoTable({
 
   const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
     <th
-      className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors select-none"
+      role="button"
+      tabIndex={0}
       onClick={() => toggleSort(field)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggleSort(field);
+        }
+      }}
+      aria-sort={sortField === field ? (sortAsc ? "ascending" : "descending") : "none"}
+      className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
     >
-      {label}
-      {sortField === field && (
-        <span className="ml-1 text-[var(--text-secondary)]">{sortAsc ? "↑" : "↓"}</span>
-      )}
+      <span className="inline-flex items-center gap-1">
+        {label}
+        {sortField === field && (
+          <ArrowDown
+            className={`h-3 w-3 text-[var(--text-secondary)] transition-transform ${sortAsc ? "rotate-180" : ""}`}
+            strokeWidth={1.75}
+          />
+        )}
+      </span>
     </th>
   );
 
@@ -302,15 +317,15 @@ function PortCoTable({
                 <tr
                   key={`${company.name}-${company.investmentFirm}-${i}`}
                   onClick={() => onSelect(company)}
-                  className="border-b border-[var(--border)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
+                  className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
                 >
                   <td className="px-3 py-2.5 align-top max-w-[260px]">
-                    <span className="text-[13px] font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
+                    <span title={company.name} className="text-[13px] font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
                       {company.name}
                     </span>
                   </td>
                   <td className="px-3 py-2.5 align-top max-w-[200px]">
-                    <span className="text-[12px] text-[var(--text-secondary)] truncate block">
+                    <span title={company.investmentFirm} className="text-[12px] text-[var(--text-secondary)] truncate block">
                       {company.investmentFirm || "—"}
                     </span>
                     {company.investmentYear && (
@@ -329,7 +344,7 @@ function PortCoTable({
                     <span className="text-[12px] text-[var(--text-secondary)]">{company.countryTags.join(", ")}</span>
                   </td>
                   <td className="px-2 py-2.5 align-middle text-right">
-                    <ChevronRight className="h-3.5 w-3.5 text-[var(--text-tertiary)] opacity-0 group-hover:opacity-100 transition-opacity inline-block" />
+                    <ChevronRight className="h-3.5 w-3.5 text-[var(--text-tertiary)] opacity-30 group-hover:opacity-100 group-hover:text-[var(--text-secondary)] transition-all inline-block" />
                   </td>
                 </tr>
               ))}
