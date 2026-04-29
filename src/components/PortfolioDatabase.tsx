@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import { PORTCO_SECTORS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
 import { getPortCoSectorColor, getPortCoRegionColor, getPortCoCountryTagColor } from "@/lib/colors";
-import { getUniqueFirms } from "@/lib/portco-utils";
+import { getUniqueFirms, getAllOwnerFirms } from "@/lib/portco-utils";
 import { exportPortfolioToExcel } from "@/utils/exportPortfolio";
 import type { CompanyView, FundView, DatabaseCounts } from "@/modules/shared/types";
 import {
@@ -129,14 +129,15 @@ function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
     [companies]
   );
   const firmRanking = useMemo(() => {
+    // Count every owner across every company (primary + co-owners) so the
+    // ranking reflects each firm's true portfolio exposure rather than only
+    // where it leads the deal. A company with N distinct owners contributes
+    // N times — once to each firm's count.
     const counts: Record<string, number> = {};
     for (const c of companies) {
-      // Skip companies with no resolved investment firm (no OwnershipPeriod or
-      // an OwnershipPeriod missing both organization and fund.manager links) —
-      // otherwise they bucket under the empty string and surface as a
-      // ghost "Top Investment Firm" with no label.
-      if (!c.investmentFirm) continue;
-      counts[c.investmentFirm] = (counts[c.investmentFirm] ?? 0) + 1;
+      for (const firm of getAllOwnerFirms(c)) {
+        counts[firm] = (counts[firm] ?? 0) + 1;
+      }
     }
     return Object.entries(counts)
       .map(([name, count]) => ({ name, count, color: "#a78bfa" }))
@@ -158,7 +159,7 @@ function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
         <span className="mono text-[var(--text-primary)] font-medium tabular-nums">{companies.length}</span> portfolio companies
         {" · "}
         <span className="mono text-[var(--text-primary)] font-medium tabular-nums">
-          {new Set(companies.map((c) => c.investmentFirm).filter(Boolean)).size}
+          {new Set(companies.flatMap((c) => getAllOwnerFirms(c))).size}
         </span> investment firms
         {" · "}
         <span className="mono text-[var(--text-primary)] font-medium tabular-nums">
@@ -175,15 +176,47 @@ function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
 }
 
 
+// ─── Firm display selection ─────────────────────────────────────
+//
+// When a company surfaces because the queried firm is a co-owner / minority
+// investor (not the primary), the Firm column should show *that* queried
+// firm — otherwise the row reads as a wrong match. The primary firm shifts
+// to a `via {primary}` second line so the canonical relationship isn't
+// hidden, just deprioritized for this row.
+//
+// `activeFirms` is the current filter selection. With no filter, behavior is
+// unchanged: show the primary.
+function pickDisplayedFirm(
+  company: CompanyView,
+  activeFirms: Set<string>
+): { firm: string; isCoOwner: boolean; primaryFirm: string } {
+  const primary = company.investmentFirm;
+  if (activeFirms.size === 0 || activeFirms.has(primary)) {
+    return { firm: primary, isCoOwner: false, primaryFirm: primary };
+  }
+  // Active filter doesn't include the primary — find the first co-owner
+  // that does match the filter. Falls through to the primary if none
+  // matches (shouldn't happen given the row passed the filter, but defensive).
+  const match = company.owners.find(
+    (o) => o.firm && o.firm !== primary && activeFirms.has(o.firm)
+  );
+  return match
+    ? { firm: match.firm, isCoOwner: true, primaryFirm: primary }
+    : { firm: primary, isCoOwner: false, primaryFirm: primary };
+}
+
 // ─── CompanyView Card (mobile) ───────────────────────────────────
 
 function PortCoCard({
   company,
+  activeFirms,
   onSelect,
 }: {
   company: CompanyView;
+  activeFirms: Set<string>;
   onSelect: (company: CompanyView) => void;
 }) {
+  const display = pickDisplayedFirm(company, activeFirms);
   return (
     <button
       onClick={() => onSelect(company)}
@@ -208,13 +241,22 @@ function PortCoCard({
         </div>
         <div>
           <div className="text-[10px] uppercase tracking-wider text-[var(--text-tertiary)]">Firm</div>
-          <div className="text-[var(--text-secondary)] font-medium truncate">
-            {company.investmentFirm || "—"}
+          <div className="flex items-center gap-1.5 min-w-0">
+            <span className="text-[var(--text-secondary)] font-medium truncate">
+              {display.firm || "—"}
+            </span>
+            {display.isCoOwner && <Tag variant="solid">Co-owner</Tag>}
           </div>
-          {company.investmentYear && (
+          {display.isCoOwner ? (
             <div className="text-[11px] italic text-[var(--text-tertiary)] truncate">
-              {company.investmentYear}
+              via {display.primaryFirm}
             </div>
+          ) : (
+            company.investmentYear && (
+              <div className="text-[11px] italic text-[var(--text-tertiary)] truncate">
+                {company.investmentYear}
+              </div>
+            )
           )}
         </div>
       </div>
@@ -226,9 +268,11 @@ function PortCoCard({
 
 function PortCoTable({
   companies,
+  activeFirms,
   onSelect,
 }: {
   companies: CompanyView[];
+  activeFirms: Set<string>;
   onSelect: (company: CompanyView) => void;
 }) {
   const [sortField, setSortField] = useState<"name" | "sector" | "country" | "firm">("name");
@@ -313,7 +357,9 @@ function PortCoTable({
               </tr>
             </thead>
             <tbody>
-              {sorted.map((company, i) => (
+              {sorted.map((company, i) => {
+                const display = pickDisplayedFirm(company, activeFirms);
+                return (
                 <tr
                   key={`${company.name}-${company.investmentFirm}-${i}`}
                   onClick={() => onSelect(company)}
@@ -325,13 +371,22 @@ function PortCoTable({
                     </span>
                   </td>
                   <td className="px-3 py-2.5 align-top max-w-[200px]">
-                    <span title={company.investmentFirm} className="text-[12px] text-[var(--text-secondary)] truncate block">
-                      {company.investmentFirm || "—"}
-                    </span>
-                    {company.investmentYear && (
-                      <span className="text-[11px] italic text-[var(--text-tertiary)] truncate block">
-                        {company.investmentYear}
+                    <div className="flex items-center gap-1.5 min-w-0">
+                      <span title={display.firm} className="text-[12px] text-[var(--text-secondary)] truncate">
+                        {display.firm || "—"}
                       </span>
+                      {display.isCoOwner && <Tag variant="solid">Co-owner</Tag>}
+                    </div>
+                    {display.isCoOwner ? (
+                      <span className="text-[11px] italic text-[var(--text-tertiary)] truncate block">
+                        via {display.primaryFirm}
+                      </span>
+                    ) : (
+                      company.investmentYear && (
+                        <span className="text-[11px] italic text-[var(--text-tertiary)] truncate block">
+                          {company.investmentYear}
+                        </span>
+                      )
                     )}
                   </td>
                   <td className="px-3 py-2.5 align-top">
@@ -347,7 +402,8 @@ function PortCoTable({
                     <ChevronRight className="h-3.5 w-3.5 text-[var(--text-tertiary)] opacity-30 group-hover:opacity-100 group-hover:text-[var(--text-secondary)] transition-all inline-block" />
                   </td>
                 </tr>
-              ))}
+                );
+              })}
             </tbody>
           </table>
         </div>
@@ -359,6 +415,7 @@ function PortCoTable({
           <PortCoCard
             key={`${company.name}-${company.investmentFirm}-${i}`}
             company={company}
+            activeFirms={activeFirms}
             onSelect={onSelect}
           />
         ))}
@@ -409,6 +466,8 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     return portcos.filter((c) => {
       if (debouncedSearch) {
         const q = debouncedSearch.toLowerCase();
+        // Search now also matches ANY owner's firm name (not just primary)
+        // so typing a co-investor surfaces the company.
         const match =
           c.name.toLowerCase().includes(q) ||
           c.description.toLowerCase().includes(q) ||
@@ -417,12 +476,18 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
           c.country.toLowerCase().includes(q) ||
           c.region.toLowerCase().includes(q) ||
           c.investmentFirm.toLowerCase().includes(q) ||
-          c.ownershipVehicle.toLowerCase().includes(q);
+          c.ownershipVehicle.toLowerCase().includes(q) ||
+          c.owners.some((o) => o.firm.toLowerCase().includes(q));
         if (!match) return false;
       }
       if (activeSectors.size > 0 && !activeSectors.has(c.sector)) return false;
       if (activeCountryTags.size > 0 && !c.countryTags.some((t: string) => activeCountryTags.has(t))) return false;
-      if (activeFirms.size > 0 && !activeFirms.has(c.investmentFirm)) return false;
+      // Firm filter: a company matches if ANY of its owners (primary or
+      // co-owner / minority) is in the active filter set.
+      if (activeFirms.size > 0) {
+        const ownerFirms = getAllOwnerFirms(c);
+        if (!ownerFirms.some((f) => activeFirms.has(f))) return false;
+      }
       if (activeInvestmentYears.size > 0 && (!c.investmentYear || !activeInvestmentYears.has(String(c.investmentYear)))) return false;
       return true;
     });
@@ -491,6 +556,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
 
         <PortCoTable
           companies={filteredCompanies}
+          activeFirms={activeFirms}
           onSelect={setSelectedCompany}
         />
       </div>
