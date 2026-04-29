@@ -6,6 +6,7 @@ import { FUND_STRATEGIES, FUND_STATUSES, FUND_SIZE_RANGES, FUND_SECTORS } from "
 import { getStrategyColor, getStatusColor, getSizeRangeColor, getFundSectorColor, getPortCoSectorColor, getStructureColor } from "@/lib/colors";
 import { matchesSizeRange, groupFundsByManager, getFundStats } from "@/lib/fund-utils";
 import type { FundView, PortfolioCompanyView, DatabaseCounts } from "@/modules/shared/types";
+import { useScrolledPast } from "@/hooks/useScrolledPast";
 import {
   Search,
   X,
@@ -13,6 +14,7 @@ import {
   ExternalLink,
   Download,
   Mail,
+  ArrowDown,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useUrlFilterSet, useClearUrlFilters } from "@/hooks/useUrlFilterSet";
@@ -264,7 +266,7 @@ function FundRow({
   return (
     <tr
       onClick={() => onSelect(fund)}
-      className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group border-b border-[var(--border)]"
+      className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group border-b border-[var(--border)] last:border-b-0"
     >
       <td className="px-3 py-2.5 align-top">
         <span className="text-[13px] font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
@@ -481,10 +483,15 @@ function AllFundsTable({
                   }`}
                   onClick={() => toggleSort(field)}
                 >
-                  {label}
-                  {sortField === field && (
-                    <span className="ml-1 text-[var(--text-secondary)]">{sortAsc ? "↑" : "↓"}</span>
-                  )}
+                  <span className={`inline-flex items-center gap-1 ${idx >= 2 ? "justify-end w-full" : ""}`}>
+                    {label}
+                    {sortField === field && (
+                      <ArrowDown
+                        className={`h-3 w-3 text-[var(--text-secondary)] transition-transform ${sortAsc ? "rotate-180" : ""}`}
+                        strokeWidth={1.75}
+                      />
+                    )}
+                  </span>
                 </th>
               ))}
               <th className="px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider text-right select-none">
@@ -523,6 +530,9 @@ function FundDrawer({
   allFunds: FundView[];
   onSelectFund: (fund: FundView) => void;
 }) {
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const headerScrolled = useScrolledPast(drawerRef);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -583,7 +593,7 @@ function FundDrawer({
         className="fixed inset-0 z-50 bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
         onClick={onClose}
       />
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl shadow-overlay bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right">
+      <div ref={drawerRef} className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl shadow-overlay bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right">
         {/* Left edge accent stripe */}
         <div
           aria-hidden
@@ -592,7 +602,11 @@ function FundDrawer({
         />
 
         {/* Header */}
-        <div className="sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)] px-6 lg:px-8 py-5 lg:py-6">
+        <div
+          className={`sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)] px-6 lg:px-8 py-5 lg:py-6 transition-shadow duration-150 ${
+            headerScrolled ? "shadow-[0_1px_2px_rgba(17,17,20,0.04)]" : ""
+          }`}
+        >
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0 pr-2">
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">

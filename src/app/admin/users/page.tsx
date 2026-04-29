@@ -48,7 +48,7 @@ export default async function AdminUsersPage() {
           </thead>
           <tbody>
             {users.map((user) => (
-              <tr key={user.id} className="border-b border-[var(--border)] hover:bg-[var(--bg-subtle)] transition-colors">
+              <tr key={user.id} className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] transition-colors">
                 <td className="px-3 py-2.5 text-[13px] font-medium text-[var(--text-primary)]">{user.email}</td>
                 <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{user.name || "—"}</td>
                 <td className="px-3 py-2.5">

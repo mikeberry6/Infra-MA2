@@ -44,7 +44,7 @@ export default async function AdminSourcesPage() {
           </thead>
           <tbody>
             {sources.map((source) => (
-              <tr key={source.id} className="border-b border-[var(--border)] hover:bg-[var(--bg-subtle)] transition-colors">
+              <tr key={source.id} className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] transition-colors">
                 <td className="px-3 py-2.5 text-[13px] font-medium text-[var(--text-primary)] max-w-xs truncate">{source.label || "—"}</td>
                 <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{source.type}</td>
                 <td className="px-3 py-2.5 text-[12px] mono tabular-nums text-[var(--text-secondary)]">{source._count.citations}</td>

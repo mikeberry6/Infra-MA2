@@ -49,7 +49,7 @@ export function SimpleBarRow({
         <div
           className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-500 ease-out"
           style={{
-            width: `${Math.max(barPct, 3)}%`,
+            width: `${Math.max(barPct, 5)}%`,
             backgroundColor: row.color,
           }}
           aria-label={`${row.name}: ${row.count}`}

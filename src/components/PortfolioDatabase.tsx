@@ -12,6 +12,7 @@ import {
   Download,
   Mail,
   ChevronRight,
+  ArrowDown,
 } from "lucide-react";
 import { PortCoDrawer } from "@/components/PortfolioDatabase/PortCoDrawer";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -262,10 +263,15 @@ function PortCoTable({
       className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors select-none"
       onClick={() => toggleSort(field)}
     >
-      {label}
-      {sortField === field && (
-        <span className="ml-1 text-[var(--text-secondary)]">{sortAsc ? "↑" : "↓"}</span>
-      )}
+      <span className="inline-flex items-center gap-1">
+        {label}
+        {sortField === field && (
+          <ArrowDown
+            className={`h-3 w-3 text-[var(--text-secondary)] transition-transform ${sortAsc ? "rotate-180" : ""}`}
+            strokeWidth={1.75}
+          />
+        )}
+      </span>
     </th>
   );
 
@@ -302,7 +308,7 @@ function PortCoTable({
                 <tr
                   key={`${company.name}-${company.investmentFirm}-${i}`}
                   onClick={() => onSelect(company)}
-                  className="border-b border-[var(--border)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
+                  className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
                 >
                   <td className="px-3 py-2.5 align-top max-w-[260px]">
                     <span className="text-[13px] font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
@@ -329,7 +335,7 @@ function PortCoTable({
                     <span className="text-[12px] text-[var(--text-secondary)]">{company.countryTags.join(", ")}</span>
                   </td>
                   <td className="px-2 py-2.5 align-middle text-right">
-                    <ChevronRight className="h-3.5 w-3.5 text-[var(--text-tertiary)] opacity-0 group-hover:opacity-100 transition-opacity inline-block" />
+                    <ChevronRight className="h-3.5 w-3.5 text-[var(--text-tertiary)] opacity-30 group-hover:opacity-100 group-hover:text-[var(--text-secondary)] transition-all inline-block" />
                   </td>
                 </tr>
               ))}

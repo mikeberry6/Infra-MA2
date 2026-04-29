@@ -68,7 +68,7 @@ export default async function AdminDealsPage() {
           </thead>
           <tbody>
             {deals.map((deal) => (
-              <tr key={deal.id} className="border-b border-[var(--border)] hover:bg-[var(--bg-subtle)] transition-colors">
+              <tr key={deal.id} className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] transition-colors">
                 <td className="px-3 py-2.5 text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{deal.legacyId}</td>
                 <td className="px-3 py-2.5 text-[13px] text-[var(--text-primary)] font-medium truncate max-w-[280px]">{deal.target}</td>
                 <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{DEAL_SECTOR_DISPLAY[deal.sector]}</td>

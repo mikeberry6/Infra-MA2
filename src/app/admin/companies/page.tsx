@@ -65,7 +65,7 @@ export default async function AdminCompaniesPage() {
           </thead>
           <tbody>
             {companies.map((company) => (
-              <tr key={company.id} className="border-b border-[var(--border)] hover:bg-[var(--bg-subtle)] transition-colors">
+              <tr key={company.id} className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] transition-colors">
                 <td className="px-3 py-2.5 text-[13px] font-medium text-[var(--text-primary)] truncate max-w-[280px]">{company.name}</td>
                 <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{COMPANY_SECTOR_DISPLAY[company.sector]}</td>
                 <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{company.country}</td>

@@ -59,7 +59,7 @@ export default async function AdminFundsPage() {
           </thead>
           <tbody>
             {funds.map((fund) => (
-              <tr key={fund.id} className="border-b border-[var(--border)] hover:bg-[var(--bg-subtle)] transition-colors">
+              <tr key={fund.id} className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] transition-colors">
                 <td className="px-3 py-2.5 text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{fund.legacyId}</td>
                 <td className="px-3 py-2.5 text-[13px] font-medium text-[var(--text-primary)] truncate max-w-[280px]">{fund.fundName}</td>
                 <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{fund.manager.name}</td>

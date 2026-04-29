@@ -46,7 +46,7 @@ const config: Config = {
       animation: {
         "fade-in": "fade-in 0.4s var(--ease-out, ease-out) forwards",
         "fade-in-up": "fade-in-up 0.5s var(--ease-out, ease-out) forwards",
-        "slide-in-right": "slide-in-right 0.3s var(--ease-out, ease-out) forwards",
+        "slide-in-right": "slide-in-right 0.25s var(--ease-out, ease-out) forwards",
         "scale-in": "scale-in 0.2s var(--ease-out, ease-out) forwards",
       },
       keyframes: {
