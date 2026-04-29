@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { X, ExternalLink } from "lucide-react";
 import {
   getPortCoSectorColor,
@@ -11,6 +11,7 @@ import {
 import type { CompanyView, FundView, OwnerView, MilestoneView } from "@/modules/shared/types";
 import { Tag } from "@/components/shared/Tag";
 import { Button } from "@/components/shared/Button";
+import { useScrolledPast } from "@/hooks/useScrolledPast";
 
 type MilestoneClassification =
   | { kind: "entry"; owner: OwnerView }
@@ -114,6 +115,8 @@ export function PortCoDrawer({
   onClose: () => void;
 }) {
   const [showAllMilestones, setShowAllMilestones] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const headerScrolled = useScrolledPast(drawerRef);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -139,10 +142,10 @@ export function PortCoDrawer({
   return (
     <>
       <div
-        className="fixed inset-0 z-50 bg-black/30 backdrop-blur-[2px] animate-fade-in"
+        className="fixed inset-0 z-50 bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
         onClick={onClose}
       />
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right shadow-overlay">
+      <div ref={drawerRef} className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right shadow-overlay">
         {/* Left edge accent stripe — anchors the drawer in the data color */}
         <div
           aria-hidden
@@ -151,7 +154,11 @@ export function PortCoDrawer({
         />
 
         {/* ── Header ── */}
-        <div className="sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)] px-6 lg:px-8 py-5 lg:py-6">
+        <div
+          className={`sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)] px-6 lg:px-8 py-5 lg:py-6 transition-shadow duration-150 ${
+            headerScrolled ? "shadow-[0_1px_2px_rgba(17,17,20,0.04)]" : ""
+          }`}
+        >
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0 pr-2">
               <div className="flex items-center gap-2.5">
@@ -199,9 +206,9 @@ export function PortCoDrawer({
             <button
               onClick={onClose}
               aria-label="Close drawer"
-              className="p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0"
+              className="p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4" strokeWidth={1.75} />
             </button>
           </div>
         </div>

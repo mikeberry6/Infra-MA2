@@ -11,17 +11,9 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
-        // Legacy alias — orphan components (Ticker, Earnings) still reference
-        // `font-heading`. Resolves to the same Geist sans as the rest of the
-        // site so legacy code renders correctly without restating the typeface.
-        heading: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       fontSize: {
         "2xs": ["11px", "16px"],
-        // Legacy aliases — same reasoning as `font-heading`.
-        micro: ["11px", "16px"],
-        "xs-dense": ["12px", "16px"],
-        "sm-dense": ["13px", "18px"],
       },
       colors: {
         "bg-app": "var(--bg-app)",
@@ -34,6 +26,7 @@ const config: Config = {
         "accent-soft": "var(--accent-soft)",
         "accent-hover": "var(--accent-hover)",
         accent: "var(--accent)",
+        "bg-overlay": "var(--bg-overlay)",
       },
       boxShadow: {
         card: "0 1px 2px rgba(17, 17, 20, 0.04), 0 4px 12px rgba(17, 17, 20, 0.04)",
@@ -45,7 +38,7 @@ const config: Config = {
       animation: {
         "fade-in": "fade-in 0.4s var(--ease-out, ease-out) forwards",
         "fade-in-up": "fade-in-up 0.5s var(--ease-out, ease-out) forwards",
-        "slide-in-right": "slide-in-right 0.3s var(--ease-out, ease-out) forwards",
+        "slide-in-right": "slide-in-right 0.25s var(--ease-out, ease-out) forwards",
         "scale-in": "scale-in 0.2s var(--ease-out, ease-out) forwards",
       },
       keyframes: {

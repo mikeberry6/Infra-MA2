@@ -7,13 +7,10 @@ import { ArrowLeft, Plus } from "lucide-react";
 import DeleteButton from "@/components/admin/DeleteButton";
 import ImportExportBar from "@/components/admin/ImportExportBar";
 import { deleteDeal } from "@/modules/admin/actions";
-export const metadata = { title: "Admin · Deals" };
+import { getRecordStatusColor } from "@/lib/colors";
+import { Button } from "@/components/shared/Button";
 
-const STATUS_DOT: Record<string, string> = {
-  PUBLISHED: "#10b981",
-  DRAFT: "#f59e0b",
-  ARCHIVED: "#a1a1aa",
-};
+export const metadata = { title: "Admin · Deals" };
 
 export default async function AdminDealsPage() {
   const deals = await prisma.deal.findMany({
@@ -47,11 +44,10 @@ export default async function AdminDealsPage() {
             <span className="mono tabular-nums">{deals.length.toLocaleString()}</span> total
           </p>
         </div>
-        <Link
-          href="/admin/deals/new"
-          className="inline-flex items-center gap-1.5 h-8 px-3 rounded-md text-xs font-medium bg-[var(--accent)] text-[var(--text-on-accent)] hover:bg-[var(--accent-hover)] transition-colors"
-        >
-          <Plus className="h-3 w-3" /> New deal
+        <Link href="/admin/deals/new">
+          <Button variant="primary" size="md" leadingIcon={<Plus className="h-3 w-3" />}>
+            New deal
+          </Button>
         </Link>
       </div>
 
@@ -72,7 +68,7 @@ export default async function AdminDealsPage() {
           </thead>
           <tbody>
             {deals.map((deal) => (
-              <tr key={deal.id} className="border-b border-[var(--border)] hover:bg-[var(--bg-subtle)] transition-colors">
+              <tr key={deal.id} className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] transition-colors">
                 <td className="px-3 py-2.5 text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{deal.legacyId}</td>
                 <td className="px-3 py-2.5 text-[13px] text-[var(--text-primary)] font-medium truncate max-w-[280px]">{deal.target}</td>
                 <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{DEAL_SECTOR_DISPLAY[deal.sector]}</td>
@@ -82,7 +78,7 @@ export default async function AdminDealsPage() {
                     <span
                       aria-hidden
                       className="h-[5px] w-[5px] rounded-full"
-                      style={{ backgroundColor: STATUS_DOT[deal.status] ?? "#a1a1aa" }}
+                      style={{ backgroundColor: getRecordStatusColor(deal.status) }}
                     />
                     {deal.status}
                   </span>
@@ -90,11 +86,8 @@ export default async function AdminDealsPage() {
                 <td className="px-3 py-2.5 text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{deal.date.toLocaleDateString()}</td>
                 <td className="px-3 py-2.5">
                   <div className="flex items-center gap-1.5">
-                    <Link
-                      href={`/admin/deals/${deal.id}/edit`}
-                      className="inline-flex h-7 px-2.5 items-center rounded-md text-[11px] font-medium bg-[var(--bg-hover)] text-[var(--text-primary)] hover:bg-[var(--border)] transition-colors"
-                    >
-                      Edit
+                    <Link href={`/admin/deals/${deal.id}/edit`}>
+                      <Button variant="secondary" size="sm">Edit</Button>
                     </Link>
                     <DeleteButton deleteAction={deleteDeal} id={deal.id} />
                   </div>

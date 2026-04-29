@@ -1,20 +1,26 @@
 import Link from "next/link";
+import { Button } from "@/components/shared/Button";
 
 export default function NotFound() {
   return (
-    <div className="mx-auto max-w-[720px] px-4 sm:px-6 py-16">
-      <div className="border border-black/[0.08] bg-white p-8">
-        <p className="text-[11px] font-medium uppercase tracking-wider text-[#008253]">404</p>
-        <h1 className="mt-1 text-xl font-semibold text-[#1a1a1a]">Page not found</h1>
-        <p className="mt-2 text-sm text-[#555]">
+    <div className="mx-auto max-w-[640px] px-4 sm:px-6 py-16">
+      <div className="surface px-6 py-8 sm:px-8 sm:py-10">
+        <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+          404
+        </div>
+        <h1 className="mt-1 text-xl font-semibold text-[var(--text-primary)] tracking-tight">
+          Page not found
+        </h1>
+        <p className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
-        <Link
-          href="/"
-          className="mt-6 inline-flex h-9 items-center px-4 text-[12px] font-medium bg-[#008253] text-white hover:bg-[#006e46] transition-colors"
-        >
-          Back to deals
-        </Link>
+        <div className="mt-6">
+          <Link href="/">
+            <Button variant="primary" size="md">
+              Back to deals
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

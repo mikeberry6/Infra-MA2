@@ -4,6 +4,7 @@ import { searchAll, type SearchResult } from "@/modules/search/queries";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Search } from "lucide-react";
+import { TextInput } from "@/components/shared/TextInput";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -49,17 +50,15 @@ export default async function SearchPage({
       </p>
 
       <form method="get" className="mb-6">
-        <div className="relative">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--text-tertiary)] pointer-events-none" />
-          <input
-            type="search"
-            name="q"
-            defaultValue={query}
-            placeholder="Search deals, companies, and funds..."
-            className="w-full h-11 pl-10 pr-3 rounded-md text-sm bg-[var(--bg-surface)] border border-[var(--border)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:border-[var(--accent)] focus:shadow-[0_0_0_2px_var(--accent-soft)] transition-colors"
-            autoFocus
-          />
-        </div>
+        <TextInput
+          type="search"
+          name="q"
+          size="md"
+          defaultValue={query}
+          leadingIcon={<Search />}
+          placeholder="Search deals, companies, and funds..."
+          autoFocus
+        />
       </form>
 
       {query && (
@@ -73,7 +72,7 @@ export default async function SearchPage({
           <Link
             key={`${result.type}-${result.id}`}
             href={resultHref(result)}
-            className="block surface px-4 py-3 hover:bg-[var(--bg-subtle)] transition-colors group"
+            className="block surface px-4 py-3 hover:bg-[var(--bg-subtle)] transition-colors group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
           >
             <div className="flex items-center gap-2 mb-1">
               <span className="inline-flex items-center gap-1.5">
