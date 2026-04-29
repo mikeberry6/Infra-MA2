@@ -650,7 +650,7 @@ function DealDrawer({
 
           {/* Key Highlights */}
           {deal.keyHighlights && deal.keyHighlights.length > 0 && (
-            <div className="border-t border-[var(--border)] pt-5">
+            <div className="border-t border-[var(--border)] pt-6">
               <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-3">
                 Key highlights
               </div>
@@ -667,7 +667,7 @@ function DealDrawer({
 
           {/* Advisors */}
           {hasAdvisors && (
-            <div className="border-t border-[var(--border)] pt-5">
+            <div className="border-t border-[var(--border)] pt-6">
               <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-3">
                 Advisors
               </div>
@@ -690,7 +690,7 @@ function DealDrawer({
 
           {/* Source link */}
           {deal.sourceUrl && (
-            <div className="border-t border-[var(--border)] pt-4">
+            <div className="border-t border-[var(--border)] pt-6">
               <a
                 href={deal.sourceUrl}
                 target="_blank"

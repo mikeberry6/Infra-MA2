@@ -76,7 +76,7 @@ export function RankingColumn({
   const maxCount = rows[0]?.count ?? 0;
   return (
     <div className="min-w-0">
-      <h3 className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-3">
+      <h3 className="text-[11px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-3">
         {title}
       </h3>
       <div className="space-y-2">

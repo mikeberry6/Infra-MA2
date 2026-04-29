@@ -2,6 +2,7 @@ export const dynamic = "force-dynamic";
 
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import CompanyForm from "@/components/admin/CompanyForm";
 import { OwnershipPeriodsManager, type OwnershipPeriodRow } from "@/components/admin/OwnershipPeriodsManager";
@@ -13,7 +14,7 @@ import {
 } from "@/modules/shared/enum-maps";
 import type { CompanyView } from "@/modules/shared/types";
 
-export const metadata = { title: "Admin - Edit Company" };
+export const metadata = { title: "Admin · Edit Company" };
 
 export default async function EditCompanyPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -80,20 +81,23 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
   }));
 
   return (
-    <div className="min-h-screen bg-[#f3f3f3] text-[#1a1a1a] p-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-6">
-          <Link href="/admin/companies" className="text-sm text-[#999999] hover:text-[#1a1a1a] mb-2 inline-block">
-            &larr; Back to Companies
-          </Link>
-          <h1 className="text-2xl font-bold">Edit Company</h1>
-          <p className="text-sm text-[#999999] mt-1">{company.name}</p>
-        </div>
-
-        <CompanyForm initialData={initialData} action={boundUpdate} mode="edit" />
-
-        <OwnershipPeriodsManager companyId={id} initialPeriods={ownershipRows} />
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-10">
+      <div className="mb-6">
+        <Link
+          href="/admin/companies"
+          className="inline-flex items-center gap-1.5 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors mb-2"
+        >
+          <ArrowLeft className="h-3 w-3" /> Companies
+        </Link>
+        <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-primary)] tracking-tight">
+          Edit company
+        </h1>
+        <p className="text-xs text-[var(--text-secondary)] mt-0.5">{company.name}</p>
       </div>
+
+      <CompanyForm initialData={initialData} action={boundUpdate} mode="edit" />
+
+      <OwnershipPeriodsManager companyId={id} initialPeriods={ownershipRows} />
     </div>
   );
 }
