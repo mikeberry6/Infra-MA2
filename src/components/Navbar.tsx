@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Search, User } from "lucide-react";
+import { TextInput } from "@/components/shared/TextInput";
 
 const navLinks = [
   { href: "/", label: "Deals", matches: (p: string) => p === "/" || p === "/tracker" },
@@ -71,16 +72,15 @@ export function Navbar() {
           <form
             method="get"
             action="/search"
-            className="relative w-[260px]"
+            className="w-[260px]"
             role="search"
           >
-            <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[var(--text-tertiary)] pointer-events-none" />
-            <input
+            <TextInput
               type="search"
               name="q"
+              leadingIcon={<Search />}
               placeholder="Search deals, funds, companies"
               aria-label="Search"
-              className="w-full h-8 pl-8 pr-2.5 rounded-md text-xs bg-[var(--bg-app)] border border-[var(--border)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] transition-colors focus:outline-none focus:bg-[var(--bg-surface)] focus:border-[var(--accent)] focus:shadow-[0_0_0_2px_var(--accent-soft)]"
             />
           </form>
           <button
@@ -112,16 +112,16 @@ export function Navbar() {
               method="get"
               action="/search"
               role="search"
-              className="relative mb-3"
+              className="mb-3"
               onSubmit={() => setMenuOpen(false)}
             >
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--text-tertiary)] pointer-events-none" />
-              <input
+              <TextInput
                 type="search"
                 name="q"
+                size="md"
+                leadingIcon={<Search />}
                 placeholder="Search..."
                 aria-label="Search"
-                className="w-full h-10 pl-10 pr-3 rounded-md text-sm bg-[var(--bg-app)] border border-[var(--border)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:border-[var(--accent)] focus:shadow-[0_0_0_2px_var(--accent-soft)]"
               />
             </form>
             {navLinks.map((link) => {

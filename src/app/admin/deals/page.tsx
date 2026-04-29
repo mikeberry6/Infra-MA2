@@ -8,6 +8,7 @@ import DeleteButton from "@/components/admin/DeleteButton";
 import ImportExportBar from "@/components/admin/ImportExportBar";
 import { deleteDeal } from "@/modules/admin/actions";
 import { getRecordStatusColor } from "@/lib/colors";
+import { Button } from "@/components/shared/Button";
 
 export const metadata = { title: "Admin · Deals" };
 
@@ -43,11 +44,10 @@ export default async function AdminDealsPage() {
             <span className="mono tabular-nums">{deals.length.toLocaleString()}</span> total
           </p>
         </div>
-        <Link
-          href="/admin/deals/new"
-          className="inline-flex items-center gap-1.5 h-8 px-3 rounded-md text-xs font-medium bg-[var(--accent)] text-[var(--text-on-accent)] hover:bg-[var(--accent-hover)] transition-colors"
-        >
-          <Plus className="h-3 w-3" /> New deal
+        <Link href="/admin/deals/new">
+          <Button variant="primary" size="md" leadingIcon={<Plus className="h-3 w-3" />}>
+            New deal
+          </Button>
         </Link>
       </div>
 
@@ -86,11 +86,8 @@ export default async function AdminDealsPage() {
                 <td className="px-3 py-2.5 text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{deal.date.toLocaleDateString()}</td>
                 <td className="px-3 py-2.5">
                   <div className="flex items-center gap-1.5">
-                    <Link
-                      href={`/admin/deals/${deal.id}/edit`}
-                      className="inline-flex h-7 px-2.5 items-center rounded-md text-[11px] font-medium bg-[var(--bg-hover)] text-[var(--text-primary)] hover:bg-[var(--border)] transition-colors"
-                    >
-                      Edit
+                    <Link href={`/admin/deals/${deal.id}/edit`}>
+                      <Button variant="secondary" size="sm">Edit</Button>
                     </Link>
                     <DeleteButton deleteAction={deleteDeal} id={deal.id} />
                   </div>

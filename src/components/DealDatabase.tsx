@@ -115,6 +115,8 @@ import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
 import { Tag } from "@/components/shared/Tag";
 import { Button } from "@/components/shared/Button";
+import { TextInput } from "@/components/shared/TextInput";
+import { Divider } from "@/components/shared/Divider";
 
 // ─── Filters ────────────────────────────────────────────────
 const SECTORS: string[] = ["Transportation", "Power & ET", "Midstream", "Utilities", "Waste & ES", "Digital", "Social"];
@@ -196,18 +198,16 @@ function FilterBar({
   return (
     <div className="mb-3 space-y-3">
       <div className="bg-[var(--bg-surface)] border border-[var(--border)] rounded-lg flex items-center gap-2 px-2 py-2 sticky top-14 z-30 overflow-x-auto">
-        <div className="relative flex-1 min-w-[160px] max-w-xs">
-          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[var(--text-tertiary)] pointer-events-none" />
-          <input
-            type="text"
+        <div className="flex-1 min-w-[160px] max-w-xs">
+          <TextInput
+            leadingIcon={<Search />}
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search deals..."
             aria-label="Search deals"
-            className="w-full h-8 pl-8 pr-2.5 rounded-md text-xs bg-[var(--bg-app)] border border-[var(--border)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:bg-[var(--bg-surface)] focus:border-[var(--accent)] focus:shadow-[0_0_0_2px_var(--accent-soft)] transition-colors"
           />
         </div>
-        <div className="h-5 w-px bg-[var(--border)]" />
+        <Divider orientation="vertical" />
         <MultiSelectDropdown
           label="Sector"
           options={SECTORS}

@@ -11,17 +11,9 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
-        // Legacy alias — orphan components (Ticker, Earnings) still reference
-        // `font-heading`. Resolves to the same Geist sans as the rest of the
-        // site so legacy code renders correctly without restating the typeface.
-        heading: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       fontSize: {
         "2xs": ["11px", "16px"],
-        // Legacy aliases — same reasoning as `font-heading`.
-        micro: ["11px", "16px"],
-        "xs-dense": ["12px", "16px"],
-        "sm-dense": ["13px", "18px"],
       },
       colors: {
         "bg-app": "var(--bg-app)",

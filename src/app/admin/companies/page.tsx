@@ -8,6 +8,7 @@ import DeleteButton from "@/components/admin/DeleteButton";
 import ImportExportBar from "@/components/admin/ImportExportBar";
 import { deleteCompany } from "@/modules/admin/actions";
 import { getRecordStatusColor } from "@/lib/colors";
+import { Button } from "@/components/shared/Button";
 
 export const metadata = { title: "Admin · Companies" };
 
@@ -41,11 +42,10 @@ export default async function AdminCompaniesPage() {
             <span className="mono tabular-nums">{companies.length.toLocaleString()}</span> total
           </p>
         </div>
-        <Link
-          href="/admin/companies/new"
-          className="inline-flex items-center gap-1.5 h-8 px-3 rounded-md text-xs font-medium bg-[var(--accent)] text-[var(--text-on-accent)] hover:bg-[var(--accent-hover)] transition-colors"
-        >
-          <Plus className="h-3 w-3" /> New company
+        <Link href="/admin/companies/new">
+          <Button variant="primary" size="md" leadingIcon={<Plus className="h-3 w-3" />}>
+            New company
+          </Button>
         </Link>
       </div>
 
@@ -78,11 +78,8 @@ export default async function AdminCompaniesPage() {
                 </td>
                 <td className="px-3 py-2.5">
                   <div className="flex items-center gap-1.5">
-                    <Link
-                      href={`/admin/companies/${company.id}/edit`}
-                      className="inline-flex h-7 px-2.5 items-center rounded-md text-[11px] font-medium bg-[var(--bg-hover)] text-[var(--text-primary)] hover:bg-[var(--border)] transition-colors"
-                    >
-                      Edit
+                    <Link href={`/admin/companies/${company.id}/edit`}>
+                      <Button variant="secondary" size="sm">Edit</Button>
                     </Link>
                     <DeleteButton deleteAction={deleteCompany} id={company.id} />
                   </div>
