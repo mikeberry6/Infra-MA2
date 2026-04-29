@@ -3,176 +3,145 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, Search, ShoppingCart } from "lucide-react";
+import { Menu, X, Search, User } from "lucide-react";
 
-const dataLinks = [
-  { href: "/", label: "Deals" },
-  { href: "/funds", label: "Funds" },
-  { href: "/portfolio", label: "Portfolio companies" },
+const navLinks = [
+  { href: "/", label: "Deals", matches: (p: string) => p === "/" || p === "/tracker" },
+  { href: "/funds", label: "Funds", matches: (p: string) => p.startsWith("/funds") },
+  { href: "/portfolio", label: "Portfolio", matches: (p: string) => p.startsWith("/portfolio") },
+  { href: "/search", label: "Search", matches: (p: string) => p.startsWith("/search") },
 ];
 
-const primaryNav = [
-  { label: "News and analysis", hasDropdown: true, active: false },
-  { label: "Data", hasDropdown: true, active: true },
-  { label: "Performance and rankings", hasDropdown: true, active: false },
-  { label: "Network and events", hasDropdown: true, active: false },
-  { label: "Sectors", hasDropdown: true, active: false },
-];
+function Wordmark({ className = "" }: { className?: string }) {
+  return (
+    <Link href="/" className={`inline-flex items-center gap-2 group ${className}`}>
+      <span
+        aria-hidden
+        className="h-2 w-2 rounded-full bg-[var(--accent)] transition-transform duration-200 group-hover:scale-110"
+      />
+      <span className="text-[15px] font-semibold tracking-tight text-[var(--text-primary)]">
+        InfraSight
+      </span>
+    </Link>
+  );
+}
 
 export function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
-      {/* Tier A: Black Utility Bar */}
-      <div className="hidden sm:block bg-[#1a1a1a] h-[28px]">
-        <div className="mx-auto flex h-full max-w-[1240px] items-center justify-between px-4 sm:px-6">
-          <div className="flex items-center text-[10.5px] leading-none text-[#b0b0b0]">
-            <a href="#" className="hover:text-white transition-colors px-[6px] first:pl-0">Contact us</a>
-            <span className="text-[#444]">|</span>
-            <a href="#" className="hover:text-white transition-colors px-[6px]">Sign-in</a>
-            <span className="text-[#444]">|</span>
-            <a href="#" className="hover:text-white transition-colors px-[6px]">FAQ</a>
-            <span className="text-[#444]">|</span>
-            <a href="#" className="hover:text-white transition-colors px-[6px]">About Infrastructure Investor</a>
-            <span className="text-[#444]">|</span>
-            <a href="#" className="hover:text-white transition-colors px-[6px]">Suggest a story</a>
-            <span className="text-[#444]">|</span>
-            <a href="#" className="hover:text-white transition-colors px-[6px]">Subscription Options</a>
-          </div>
-          <div className="flex items-center gap-3 text-[10.5px] leading-none text-[#b0b0b0]">
-            <a href="#" className="hover:text-white transition-colors">My account</a>
-            <ShoppingCart className="h-3 w-3 text-[#b0b0b0] hover:text-white cursor-pointer transition-colors" />
-          </div>
-        </div>
-      </div>
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 bg-[var(--bg-surface)] border-b border-[var(--border)]"
+      aria-label="Primary"
+    >
+      <div className="mx-auto flex h-14 max-w-[1280px] items-center justify-between gap-6 px-4 sm:px-6">
+        {/* Wordmark */}
+        <Wordmark />
 
-      {/* Tier B: White Masthead */}
-      <div className="bg-white border-b border-black/[0.08]">
-        <div className="mx-auto flex h-[60px] max-w-[1240px] items-center justify-between px-4 sm:px-6">
-          <Link href="/" className="flex items-center gap-[10px] group">
-            {/* Green vertical rule — matches II reference */}
-            <div className="w-[4px] h-[42px] bg-[#008253] flex-shrink-0" />
-            {/* Stacked wordmark — the real II logo uses a heavy condensed sans
-                with "Infrastructure" slightly lighter than "Investor" */}
-            <div className="flex flex-col" style={{ lineHeight: '0.88' }}>
-              <span
-                className="font-heading text-[#1a1a1a] tracking-[-0.04em]"
-                style={{ fontSize: '24px', fontWeight: 600, fontStretch: 'condensed' }}
+        {/* Desktop nav */}
+        <div className="hidden md:flex flex-1 items-center justify-center gap-1">
+          {navLinks.map((link) => {
+            const isActive = link.matches(pathname);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "page" : undefined}
+                className={`relative inline-flex items-center h-14 px-3 text-sm font-medium transition-colors ${
+                  isActive
+                    ? "text-[var(--text-primary)]"
+                    : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                }`}
               >
-                Infrastructure
-              </span>
-              <span
-                className="font-heading text-[#1a1a1a] tracking-[-0.04em]"
-                style={{ fontSize: '24px', fontWeight: 700, fontStretch: 'condensed' }}
-              >
-                Investor
-              </span>
-            </div>
-          </Link>
-
-          {/* Desktop: search field */}
-          <div className="hidden sm:flex items-center">
-            <div className="flex items-center border border-black/[0.08] bg-[#f7f7f7] h-[32px] w-[260px]">
-              <input
-                type="text"
-                placeholder="Search Infrastructure Investor"
-                className="bg-transparent text-[12px] text-[#1a1a1a] placeholder-[#999] outline-none flex-1 px-3"
-              />
-              <button className="h-full px-2.5 border-l border-black/[0.08] bg-[#eeeeee] hover:bg-[#e4e4e4] transition-colors flex items-center justify-center">
-                <Search className="h-3.5 w-3.5 text-[#666]" />
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile: hamburger */}
-          <div className="flex sm:hidden items-center">
-            <button
-              onClick={() => setMenuOpen((v) => !v)}
-              className="flex h-9 w-9 items-center justify-center text-[#6e6e6e] hover:text-[#1a1a1a] transition-colors"
-              aria-label="Toggle menu"
-            >
-              {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Tier C: Primary Navigation */}
-      <div className="hidden sm:block bg-white border-b border-black/[0.08] shadow-sm">
-        <div className="mx-auto flex h-[36px] max-w-[1240px] items-center px-4 sm:px-6">
-          {primaryNav.map((item) => (
-            <div
-              key={item.label}
-              className={`relative h-full flex items-center cursor-pointer transition-colors ${
-                item.active
-                  ? "text-[#1a1a1a]"
-                  : "text-[#555555] hover:text-[#1a1a1a]"
-              }`}
-            >
-              <span className={`flex items-center gap-[3px] px-[10px] text-[13px] font-heading ${
-                item.active ? "font-bold" : "font-semibold"
-              }`}>
-                {item.label}
-                {item.hasDropdown && (
-                  <ChevronDown className="h-[10px] w-[10px] opacity-40" />
+                {link.label}
+                {isActive && (
+                  <span
+                    aria-hidden
+                    className="absolute left-3 right-3 -bottom-px h-[2px] bg-[var(--accent)] rounded-full"
+                  />
                 )}
-              </span>
-              {item.active && (
-                <span className="absolute bottom-0 left-[10px] right-[10px] h-[3px] bg-[#008253]" />
-              )}
-            </div>
-          ))}
+              </Link>
+            );
+          })}
         </div>
+
+        {/* Desktop right cluster */}
+        <div className="hidden md:flex items-center gap-2">
+          <form
+            method="get"
+            action="/search"
+            className="relative w-[260px]"
+            role="search"
+          >
+            <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[var(--text-tertiary)] pointer-events-none" />
+            <input
+              type="search"
+              name="q"
+              placeholder="Search deals, funds, companies"
+              aria-label="Search"
+              className="w-full h-8 pl-8 pr-2.5 rounded-md text-xs bg-[var(--bg-app)] border border-[var(--border)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] transition-colors focus:outline-none focus:bg-[var(--bg-surface)] focus:border-[var(--accent)] focus:shadow-[0_0_0_2px_var(--accent-soft)]"
+            />
+          </form>
+          <button
+            type="button"
+            aria-label="Account"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-md text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] transition-colors"
+          >
+            <User className="h-4 w-4" />
+          </button>
+        </div>
+
+        {/* Mobile hamburger */}
+        <button
+          type="button"
+          onClick={() => setMenuOpen((v) => !v)}
+          className="md:hidden inline-flex h-9 w-9 items-center justify-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors rounded-md"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
       </div>
 
-      {/* Mobile dropdown menu */}
+      {/* Mobile sheet */}
       {menuOpen && (
-        <div className="sm:hidden border-b border-black/[0.08] bg-white shadow-sm">
-          <div className="px-4 py-3 space-y-1">
-            <div className="text-[10px] font-bold text-[#008253] uppercase tracking-wider mb-2 px-3">
-              Data
-            </div>
-            {dataLinks.map((link) => {
-              const isActive = pathname === link.href;
+        <div className="md:hidden bg-[var(--bg-surface)] border-t border-[var(--border)] animate-fade-in">
+          <div className="px-4 py-4 space-y-1">
+            <form
+              method="get"
+              action="/search"
+              role="search"
+              className="relative mb-3"
+              onSubmit={() => setMenuOpen(false)}
+            >
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--text-tertiary)] pointer-events-none" />
+              <input
+                type="search"
+                name="q"
+                placeholder="Search..."
+                aria-label="Search"
+                className="w-full h-10 pl-10 pr-3 rounded-md text-sm bg-[var(--bg-app)] border border-[var(--border)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:border-[var(--accent)] focus:shadow-[0_0_0_2px_var(--accent-soft)]"
+              />
+            </form>
+            {navLinks.map((link) => {
+              const isActive = link.matches(pathname);
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`block px-3 py-2.5 text-sm font-semibold transition-colors ${
+                  aria-current={isActive ? "page" : undefined}
+                  className={`block px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-[#008253] bg-[rgba(0,130,83,0.04)]"
-                      : "text-[#6e6e6e] hover:text-[#1a1a1a] hover:bg-[#f3f3f3]"
+                      ? "bg-[var(--bg-hover)] text-[var(--text-primary)]"
+                      : "text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
                   }`}
                 >
                   {link.label}
                 </Link>
               );
             })}
-            <div className="border-t border-[#e5e5e5] mt-2 pt-2">
-              {primaryNav.filter(n => !n.active).map((item) => (
-                <div
-                  key={item.label}
-                  className="px-3 py-2 text-sm text-[#999] cursor-default"
-                >
-                  {item.label}
-                </div>
-              ))}
-            </div>
-            <div className="border-t border-[#e5e5e5] mt-2 pt-3 px-3">
-              <div className="flex items-center border border-black/[0.08] bg-[#f7f7f7] h-[36px]">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="bg-transparent text-sm text-[#1a1a1a] placeholder-[#999] outline-none flex-1 px-3"
-                />
-                <button className="h-full px-3 border-l border-black/[0.08] bg-[#eeeeee]">
-                  <Search className="h-3.5 w-3.5 text-[#666]" />
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       )}

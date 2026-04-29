@@ -1,14 +1,27 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
-    template: "%s | Infrastructure Investor",
-    default: "Deals | Infrastructure Investor",
+    template: "%s | InfraSight",
+    default: "Deals | InfraSight",
   },
   description:
-    "Infrastructure Investor's data platform covering deals, fund managers, and portfolio companies across global infrastructure.",
+    "InfraSight — the data platform for global infrastructure investing. Deals, fund managers, and portfolio companies in one place.",
 };
 
 export default function RootLayout({
@@ -17,19 +30,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-[#f3f3f3] text-[#1a1a1a] antialiased">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="min-h-screen bg-[var(--bg-app)] text-[var(--text-primary)] antialiased">
         <Navbar />
-        {/* pt-[60px] on mobile (masthead only), sm:pt-[124px] on desktop (utility+masthead+nav) */}
-        <main className="pt-[60px] sm:pt-[124px]">{children}</main>
-        <footer className="border-t border-black/[0.08] bg-white mt-10">
-          <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-4">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#6e6e6e]">
-              <span>&copy; 2026 PEI Media</span>
-              <div className="flex gap-4">
-                <a href="#" className="hover:text-[#1a1a1a] transition-colors">Terms &amp; Conditions</a>
-                <a href="#" className="hover:text-[#1a1a1a] transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-[#1a1a1a] transition-colors">Contact</a>
+        <main className="pt-14">{children}</main>
+        <footer className="border-t border-[var(--border)] bg-[var(--bg-app)] mt-16">
+          <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-5">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[var(--text-tertiary)]">
+              <div className="inline-flex items-center gap-2">
+                <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+                <span className="font-medium text-[var(--text-secondary)]">InfraSight</span>
+                <span>· &copy; 2026</span>
+              </div>
+              <div className="flex gap-5">
+                <a href="#" className="hover:text-[var(--text-primary)] transition-colors">Terms</a>
+                <a href="#" className="hover:text-[var(--text-primary)] transition-colors">Privacy</a>
+                <a href="#" className="hover:text-[var(--text-primary)] transition-colors">Contact</a>
               </div>
             </div>
           </div>

@@ -26,12 +26,12 @@ export function MultiSelectDropdown({
   const calcPos = useCallback(() => {
     if (!buttonRef.current) return;
     const rect = buttonRef.current.getBoundingClientRect();
-    const panelW = 224; // w-56 = 14rem = 224px
+    const panelW = 240;
     if (align === "right") {
-      setPos({ top: rect.bottom, right: Math.max(0, window.innerWidth - rect.right) });
+      setPos({ top: rect.bottom + 4, right: Math.max(0, window.innerWidth - rect.right) });
     } else {
       const left = Math.min(rect.left, window.innerWidth - panelW - 8);
-      setPos({ top: rect.bottom, left: Math.max(0, left) });
+      setPos({ top: rect.bottom + 4, left: Math.max(0, left) });
     }
   }, [align]);
 
@@ -42,7 +42,6 @@ export function MultiSelectDropdown({
       if (e.key === "Escape") setIsOpen(false);
     };
     const handleScroll = (e: Event) => {
-      // Only close on page-level scrolls, not horizontal filter bar scrolls
       const t = e.target;
       if (t === document || t === document.documentElement || t === window) {
         setIsOpen(false);
@@ -56,6 +55,8 @@ export function MultiSelectDropdown({
     };
   }, [isOpen, calcPos]);
 
+  const isActive = selected.size > 0;
+
   return (
     <div className="relative inline-block">
       <button
@@ -64,19 +65,25 @@ export function MultiSelectDropdown({
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         aria-label={`Filter by ${label}`}
-        className={`flex items-center gap-1 h-full px-2 text-[11px] font-medium transition-colors whitespace-nowrap ${
-          selected.size > 0
-            ? "text-[#008253] font-semibold"
-            : "text-[#555] hover:text-[#1a1a1a]"
+        className={`inline-flex items-center gap-1.5 h-8 px-2.5 rounded-md text-xs font-medium transition-colors whitespace-nowrap focus:outline-none ${
+          isOpen
+            ? "bg-[var(--bg-surface)] border border-[var(--accent)] text-[var(--text-primary)] shadow-[0_0_0_2px_var(--accent-soft)]"
+            : isActive
+              ? "bg-[var(--accent-soft)] border border-[var(--accent)]/30 text-[var(--text-primary)] hover:border-[var(--accent)]"
+              : "bg-[var(--bg-surface)] border border-[var(--border)] text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
         }`}
       >
         <span>{label}</span>
-        {selected.size > 0 && (
-          <span className="font-mono text-[10px] bg-[#008253] text-white w-[16px] h-[16px] flex items-center justify-center text-[9px] font-bold">
+        {isActive && (
+          <span className="inline-flex items-center justify-center min-w-[16px] h-[16px] px-1 rounded text-[10px] font-semibold bg-[var(--accent)] text-[var(--text-on-accent)] tabular-nums">
             {selected.size}
           </span>
         )}
-        <ChevronDown className={`h-[10px] w-[10px] opacity-50 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown
+          className={`h-3 w-3 text-[var(--text-tertiary)] transition-transform duration-200 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
       </button>
 
       {isOpen && createPortal(
@@ -89,7 +96,7 @@ export function MultiSelectDropdown({
           <div
             role="listbox"
             aria-label={`${label} options`}
-            className="fixed w-56 max-h-56 overflow-y-auto border border-black/[0.08] bg-white"
+            className="fixed w-60 max-h-72 overflow-y-auto p-1 surface-overlay animate-fade-in"
             style={{
               zIndex: 9999,
               top: pos.top,
@@ -97,35 +104,39 @@ export function MultiSelectDropdown({
               ...(pos.right != null ? { right: pos.right } : {}),
             }}
           >
-            {options.map((option) => {
-              const color = getColor(option);
-              const isSelected = selected.has(option);
-              return (
-                <button
-                  key={option}
-                  role="option"
-                  aria-selected={isSelected}
-                  onClick={() => onToggle(option)}
-                  className={`w-full flex items-center gap-2 px-2 py-[5px] text-[11px] text-left transition-colors border-b border-[#f0f0f0] last:border-b-0 ${
-                    isSelected ? "bg-[#f5f5f5]" : "hover:bg-[#fafafa]"
-                  }`}
-                >
-                  <div
-                    className={`w-3 h-3 border flex items-center justify-center shrink-0 ${
-                      isSelected ? "border-[#008253] bg-[#008253]" : "border-[#c4c4c4]"
+            {options.length === 0 ? (
+              <div className="px-2 py-2 text-xs text-[var(--text-tertiary)]">
+                No options
+              </div>
+            ) : (
+              options.map((option) => {
+                const color = getColor(option);
+                const isSelected = selected.has(option);
+                return (
+                  <button
+                    key={option}
+                    role="option"
+                    aria-selected={isSelected}
+                    onClick={() => onToggle(option)}
+                    className={`w-full flex items-center gap-2 h-8 px-2 rounded-sm text-xs text-left transition-colors ${
+                      isSelected
+                        ? "bg-[var(--bg-hover)] text-[var(--text-primary)]"
+                        : "text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
                     }`}
                   >
-                    {isSelected && <Check className="h-2 w-2 text-white" />}
-                  </div>
-                  <span
-                    className="truncate"
-                    style={{ color: isSelected ? color : "#555" }}
-                  >
-                    {option}
-                  </span>
-                </button>
-              );
-            })}
+                    <span
+                      aria-hidden
+                      className="h-[5px] w-[5px] rounded-full shrink-0"
+                      style={{ backgroundColor: color }}
+                    />
+                    <span className="truncate flex-1">{option}</span>
+                    {isSelected && (
+                      <Check className="h-3 w-3 text-[var(--accent)] shrink-0" />
+                    )}
+                  </button>
+                );
+              })
+            )}
           </div>
         </>,
         document.body

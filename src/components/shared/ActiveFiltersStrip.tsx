@@ -1,6 +1,7 @@
 "use client";
 
 import { FilterChip } from "@/components/shared/FilterChip";
+import { Button } from "@/components/shared/Button";
 
 export interface FilterGroup {
   /** Unique key prefix for this group (e.g. "sec", "region") */
@@ -31,7 +32,7 @@ export function ActiveFiltersStrip({
 
   return (
     <div className="flex items-center gap-2 flex-wrap">
-      <span className="text-micro font-medium text-[#999999] uppercase tracking-wider">
+      <span className="text-[11px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
         Active:
       </span>
       {groups.flatMap((group) =>
@@ -45,12 +46,9 @@ export function ActiveFiltersStrip({
         ))
       )}
       {total > 1 && (
-        <button
-          onClick={onClearAll}
-          className="text-micro text-[#999999] hover:text-[#6e6e6e] transition-colors ml-1"
-        >
+        <Button variant="ghost" size="sm" onClick={onClearAll}>
           Clear all
-        </button>
+        </Button>
       )}
     </div>
   );

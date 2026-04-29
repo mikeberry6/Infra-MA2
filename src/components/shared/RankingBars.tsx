@@ -26,9 +26,11 @@ export function deriveRanking<T extends string>(
 }
 
 /**
- * Single horizontal bar row with label, bar, and count.
- * Bar width is proportional to row.count / maxCount, with a minimum of 3% so
- * very small values stay visible.
+ * Single horizontal bar row: label, neutral track, leading colored stripe, count.
+ *
+ * The track is a flat neutral fill scaled by `row.count / maxCount`. The leading
+ * 2px-wide accent stripe carries the data color — color marks the bar without
+ * dominating the visual mass. Mercury / Linear ranking-list pattern.
  */
 export function SimpleBarRow({
   row,
@@ -39,24 +41,23 @@ export function SimpleBarRow({
 }) {
   const barPct = maxCount > 0 ? (row.count / maxCount) * 100 : 0;
   return (
-    <div className="flex items-center gap-3 min-w-0">
-      <span className="text-micro sm:text-xs-dense text-[#1a1a1a] truncate w-28 sm:w-36 flex-shrink-0 text-right tracking-tight">
+    <div className="grid grid-cols-[minmax(0,9rem)_1fr_auto] items-center gap-3">
+      <span className="text-xs font-medium text-[var(--text-primary)] truncate">
         {row.name}
       </span>
-      <div className="flex-1 flex items-center gap-2 min-w-0">
+      <div className="relative h-1.5 w-full bg-[var(--bg-hover)] rounded-full overflow-hidden">
         <div
-          className="h-4 transition-all duration-500 ease-out"
+          className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-500 ease-out"
           style={{
             width: `${Math.max(barPct, 3)}%`,
             backgroundColor: row.color,
-            opacity: 0.7,
           }}
           aria-label={`${row.name}: ${row.count}`}
         />
-        <span className="text-micro font-mono text-[#6e6e6e] tabular-nums flex-shrink-0">
-          {row.count}
-        </span>
       </div>
+      <span className="text-[11px] mono text-[var(--text-secondary)] tabular-nums tracking-tight">
+        {row.count}
+      </span>
     </div>
   );
 }
@@ -75,7 +76,7 @@ export function RankingColumn({
   const maxCount = rows[0]?.count ?? 0;
   return (
     <div className="min-w-0">
-      <h3 className="text-micro font-medium text-[#6e6e6e] uppercase tracking-wider mb-2.5">
+      <h3 className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-3">
         {title}
       </h3>
       <div className="space-y-2">

@@ -2,8 +2,9 @@ export const dynamic = "force-dynamic";
 
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 
-export const metadata = { title: "Admin - Sources" };
+export const metadata = { title: "Admin · Sources" };
 
 export default async function AdminSourcesPage() {
   const sources = await prisma.source.findMany({
@@ -15,39 +16,56 @@ export default async function AdminSourcesPage() {
   });
 
   return (
-    <div className="min-h-screen bg-[#f3f3f3] text-[#1a1a1a] p-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
-          <div>
-            <Link href="/admin" className="text-sm text-[#71717A] hover:text-[#1a1a1a] mb-2 inline-block">&larr; Back to Admin</Link>
-            <h1 className="text-2xl font-bold">Sources</h1>
-          </div>
-        </div>
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-10">
+      <div className="mb-6">
+        <Link
+          href="/admin"
+          className="inline-flex items-center gap-1.5 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors mb-2"
+        >
+          <ArrowLeft className="h-3 w-3" /> Admin
+        </Link>
+        <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-primary)] tracking-tight">
+          Sources
+        </h1>
+        <p className="text-xs text-[var(--text-secondary)] mt-0.5">
+          50 most recent
+        </p>
+      </div>
 
-        <table className="w-full text-sm">
+      <div className="surface overflow-hidden">
+        <table className="w-full text-left border-collapse whitespace-nowrap">
           <thead>
-            <tr className="border-b border-black/[0.08] text-[#71717A] text-left">
-              <th className="pb-2 pr-4">Label</th>
-              <th className="pb-2 pr-4">Type</th>
-              <th className="pb-2 pr-4">Citations</th>
-              <th className="pb-2">URL</th>
+            <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Label</th>
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Type</th>
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Citations</th>
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">URL</th>
             </tr>
           </thead>
           <tbody>
             {sources.map((source) => (
-              <tr key={source.id} className="border-b border-[#1a1a1d] hover:bg-white">
-                <td className="py-2 pr-4 font-medium max-w-xs truncate">{source.label || "—"}</td>
-                <td className="py-2 pr-4 text-[#A1A1AA]">{source.type}</td>
-                <td className="py-2 pr-4 text-[#A1A1AA]">{source._count.citations}</td>
-                <td className="py-2 text-[#71717A] text-xs max-w-sm truncate">
-                  <a href={source.url} target="_blank" rel="noopener noreferrer" className="hover:text-[#818CF8]">
-                    {source.url}
+              <tr key={source.id} className="border-b border-[var(--border)] hover:bg-[var(--bg-subtle)] transition-colors">
+                <td className="px-3 py-2.5 text-[13px] font-medium text-[var(--text-primary)] max-w-xs truncate">{source.label || "—"}</td>
+                <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{source.type}</td>
+                <td className="px-3 py-2.5 text-[12px] mono tabular-nums text-[var(--text-secondary)]">{source._count.citations}</td>
+                <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)] max-w-sm truncate">
+                  <a
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 hover:text-[var(--text-primary)] transition-colors"
+                  >
+                    <span className="truncate">{source.url}</span>
+                    <ExternalLink className="h-3 w-3 shrink-0" />
                   </a>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+        {sources.length === 0 && (
+          <div className="py-12 text-center text-sm text-[var(--text-tertiary)]">No sources yet.</div>
+        )}
       </div>
     </div>
   );

@@ -1,14 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {
-  X,
-  Briefcase,
-  ExternalLink,
-  Clock,
-  FileText,
-  Users,
-} from "lucide-react";
+import { X, ExternalLink } from "lucide-react";
 import {
   getPortCoSectorColor,
   getPortCoStatusColor,
@@ -16,6 +9,8 @@ import {
   getStrategyColor,
 } from "@/lib/colors";
 import type { CompanyView, FundView, OwnerView, MilestoneView } from "@/modules/shared/types";
+import { Tag } from "@/components/shared/Tag";
+import { Button } from "@/components/shared/Button";
 
 type MilestoneClassification =
   | { kind: "entry"; owner: OwnerView }
@@ -26,8 +21,6 @@ function ownerFirstWord(firm: string): string {
   return firm.toLowerCase().split(/\s+/)[0] || "";
 }
 
-// Strip generic corporate suffixes so "Brookfield Asset Management" can match
-// an event that just says "Brookfield acquires X".
 const CORPORATE_SUFFIX_RE =
   /\b(asset management|investment management|capital partners|capital management|capital|management|partners|investors|infrastructure|advisors|llc|lp|inc|ltd|plc|holdings)\b/gi;
 
@@ -39,11 +32,6 @@ function normalizeFirm(firm: string): string {
     .trim();
 }
 
-// Score how well an owner is mentioned in an event string.
-//   2 = full normalized firm name appears in the event text
-//   1 = first word of firm appears AND no other owner scored 2
-//   0 = no mention
-// Returns the highest-scoring owner, or null if no owner is mentioned.
 function bestOwnerMatch(owners: OwnerView[], eventText: string): OwnerView | null {
   const lowerEvent = eventText.toLowerCase();
   let best: { owner: OwnerView; score: number } | null = null;
@@ -66,19 +54,9 @@ function bestOwnerMatch(owners: OwnerView[], eventText: string): OwnerView | nul
   return best?.owner ?? null;
 }
 
-// Classify a milestone as an entry or exit transition for one of the owners.
-// Entry: the milestone year matches an owner's investmentYear AND
-//        (category is Financing/Acquisition OR the event mentions the firm).
-// Exit:  the milestone year matches an owner's exitYear AND
-//        (category is Divestiture OR the event mentions the firm).
-// When multiple owners' first-word matches collide (e.g. two "Brookfield"
-// vehicles), the firm whose full normalized name appears in the event wins;
-// otherwise we fall back to the year-aligned owner.
 function classifyMilestone(m: MilestoneView, owners: OwnerView[]): MilestoneClassification {
   const matchedOwner = bestOwnerMatch(owners, m.event);
 
-  // Entry pass: prefer the explicitly-mentioned owner when the year aligns;
-  // otherwise fall back to year-aligned owner with a categorical entry.
   if (matchedOwner?.investmentYear && m.date.includes(String(matchedOwner.investmentYear))) {
     return { kind: "entry", owner: matchedOwner };
   }
@@ -89,7 +67,6 @@ function classifyMilestone(m: MilestoneView, owners: OwnerView[]): MilestoneClas
     }
   }
 
-  // Exit pass: same precedence — explicit firm mention beats categorical fallback.
   if (matchedOwner?.exitYear && m.date.includes(String(matchedOwner.exitYear))) {
     return { kind: "exit", owner: matchedOwner };
   }
@@ -111,7 +88,21 @@ function formatYearRange(o: OwnerView): string {
 }
 
 const ENTRY_COLOR = "#008253";
-const EXIT_COLOR = "#9a3412"; // muted rust — distinct from entry green and from category red
+const EXIT_COLOR = "#9a3412"; // muted rust
+
+/** Section heading — uppercase tracking, no icon (per redesign). */
+function SectionLabel({ children, count }: { children: React.ReactNode; count?: number }) {
+  return (
+    <div className="flex items-center justify-between mb-3">
+      <span className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+        {children}
+      </span>
+      {count != null && (
+        <span className="text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{count}</span>
+      )}
+    </div>
+  );
+}
 
 export function PortCoDrawer({
   company,
@@ -133,9 +124,6 @@ export function PortCoDrawer({
   }, [onClose]);
 
   const locationDisplay = company.headquarters || company.country;
-  // Milestones arrive from queries.ts ordered by sortDate desc (newest first),
-  // which matches the "reverse chronological" rendering described in CLAUDE.md.
-  // Render that order directly; truncating to 6 keeps the most recent events.
   const milestones = company.milestones || [];
   const sources = company.sources || [];
   const visibleMilestones = showAllMilestones ? milestones : milestones.slice(0, 6);
@@ -151,33 +139,23 @@ export function PortCoDrawer({
   return (
     <>
       <div
-        className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
+        className="fixed inset-0 z-50 bg-black/30 backdrop-blur-[2px] animate-fade-in"
         onClick={onClose}
       />
-      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-black/[0.08] shadow-2xl bg-[#f3f3f3] overflow-y-auto animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right shadow-overlay">
+        {/* Left edge accent stripe — anchors the drawer in the data color */}
+        <div
+          aria-hidden
+          className="absolute top-0 bottom-0 left-0 w-[2px]"
+          style={{ backgroundColor: sectorColor }}
+        />
+
         {/* ── Header ── */}
-        <div className="sticky top-0 z-10 border-b border-black/[0.08] bg-white relative overflow-hidden">
-          {/* Accent bar */}
-          <div
-            className="absolute top-0 left-0 right-0 h-[2px]"
-            style={{
-              background: `linear-gradient(90deg, ${sectorColor} 0%, transparent 100%)`,
-            }}
-          />
-
-          {/* Content */}
-          <div className="relative px-4 sm:px-6 lg:px-8 py-5 lg:py-6">
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-3 sm:right-5 p-2 text-[#999999] hover:text-[#1a1a1a] hover:bg-[#f0f0ee] transition-colors"
-              aria-label="Close drawer"
-            >
-              <X className="h-5 w-5" />
-            </button>
-
-            <div className="pr-10">
+        <div className="sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)] px-6 lg:px-8 py-5 lg:py-6">
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0 pr-2">
               <div className="flex items-center gap-2.5">
-                <h2 className="font-heading text-2xl lg:text-3xl font-bold text-[#1a1a1a] leading-tight tracking-tight">
+                <h2 className="text-2xl lg:text-[28px] font-semibold text-[var(--text-primary)] leading-tight tracking-tight">
                   {company.name}
                 </h2>
                 {company.website && (
@@ -185,7 +163,7 @@ export function PortCoDrawer({
                     href={company.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#c4c4c4] hover:text-[#008253] transition-colors shrink-0"
+                    className="text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors shrink-0"
                     title="Company website"
                   >
                     <ExternalLink className="h-4 w-4" />
@@ -193,114 +171,88 @@ export function PortCoDrawer({
                 )}
               </div>
 
-              <div className="flex items-center gap-1.5 mt-2 flex-wrap">
-                <span className="text-sm-dense text-[#6e6e6e]">
+              <div className="flex items-center gap-2.5 mt-2 flex-wrap">
+                <span className="text-sm text-[var(--text-secondary)]">
                   {company.investmentFirm || "Unknown firm"}
                 </span>
-                <span className="text-[#c4c4c4] text-sm-dense">·</span>
-                <span
-                  className="inline-block h-1.5 w-1.5 rounded-full shrink-0"
-                  style={{ backgroundColor: getPortCoStatusColor(company.status) }}
-                />
-                <span
-                  className="text-sm-dense font-medium shrink-0"
-                  style={{ color: getPortCoStatusColor(company.status) }}
-                >
-                  {company.status}
+                <span className="text-[var(--text-tertiary)]">·</span>
+                <Tag color={sectorColor}>{company.sector}</Tag>
+                <span className="text-[var(--text-tertiary)]">·</span>
+                <span className="inline-flex items-center gap-1.5">
+                  <span
+                    aria-hidden
+                    className="h-[5px] w-[5px] rounded-full shrink-0"
+                    style={{ backgroundColor: getPortCoStatusColor(company.status) }}
+                  />
+                  <span className="text-sm text-[var(--text-primary)] font-medium">{company.status}</span>
                 </span>
                 {hasMultipleOwners && (
                   <>
-                    <span className="text-[#c4c4c4] text-sm-dense">·</span>
-                    <span className="text-sm-dense text-[#6e6e6e]">
+                    <span className="text-[var(--text-tertiary)]">·</span>
+                    <span className="text-sm text-[var(--text-secondary)]">
                       {owners.length} owners
                     </span>
                   </>
                 )}
               </div>
             </div>
+            <button
+              onClick={onClose}
+              aria-label="Close drawer"
+              className="p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0"
+            >
+              <X className="h-4 w-4" />
+            </button>
           </div>
         </div>
 
         {/* ── Content ── */}
-        <div className="p-4 sm:p-5 lg:p-6 space-y-3 lg:space-y-4">
+        <div className="px-6 lg:px-8 py-6 space-y-7">
 
           {/* §1 — Investment Details */}
-          <section className="glass-card rounded-[4px] overflow-hidden">
-            <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
-              <Briefcase className="h-3.5 w-3.5 text-[#008253]" />
-              <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
-                Investment Details
-              </span>
-              {hasMultipleOwners && (
-                <span className="text-micro text-[#999999] ml-auto">{owners.length} owners</span>
-              )}
-            </div>
+          <section>
+            <SectionLabel count={hasMultipleOwners ? owners.length : undefined}>
+              Investment details
+            </SectionLabel>
 
-            {/* Ownership cards: one per owner, active first, then prior owners (chronological) */}
             {owners.length > 0 && (
-              <div className="divide-y divide-[#e8e8e8]">
+              <div className="space-y-2 mb-5">
                 {owners.map((owner, idx) => {
                   const matchedFund = owner.fundName
                     ? funds.find(f => f.fundName === owner.fundName)
                     : funds.find(f => f.fundName === owner.vehicle);
                   const yearRange = formatYearRange(owner);
-                  const ownerStatusColor = owner.isActive
-                    ? getPortCoStatusColor("Active")
-                    : getPortCoStatusColor("Realized");
                   const ownerStatusLabel = owner.isActive ? "Current" : "Former";
                   return (
-                    <div key={`${owner.firm}-${idx}`} className="px-4 py-3">
+                    <div key={`${owner.firm}-${idx}`} className="surface px-4 py-3.5">
                       <div className="flex items-start justify-between gap-3">
                         <div className="min-w-0 flex-1">
-                          <div className="flex items-center gap-1.5 flex-wrap">
-                            <span
-                              className="inline-block h-1.5 w-1.5 rounded-full shrink-0"
-                              style={{ backgroundColor: ownerStatusColor }}
-                            />
-                            <span className="text-sm-dense font-semibold text-[#1a1a1a]">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-sm font-semibold text-[var(--text-primary)]">
                               {owner.firm || "—"}
                             </span>
-                            <span
-                              className="text-[10px] font-medium px-1.5 py-0 shrink-0"
-                              style={{
-                                color: "#444444",
-                                backgroundColor: `${ownerStatusColor}10`,
-                                border: `1px solid ${ownerStatusColor}20`,
-                              }}
-                            >
-                              {ownerStatusLabel}
-                            </span>
+                            <Tag variant="solid">{ownerStatusLabel}</Tag>
                           </div>
                           {owner.vehicle && (
-                            <div className="text-micro text-[#6e6e6e] mt-1">
+                            <div className="text-xs text-[var(--text-secondary)] mt-1">
                               {owner.vehicle}
                             </div>
                           )}
                           {matchedFund?.strategies && matchedFund.strategies.length > 0 && (
-                            <div className="flex items-center gap-1.5 flex-wrap mt-1.5">
+                            <div className="flex items-center gap-3 flex-wrap mt-2">
                               {matchedFund.strategies.map((s) => (
-                                <span
-                                  key={s}
-                                  className="text-[10px] font-medium px-1.5 py-0"
-                                  style={{
-                                    color: "#444444",
-                                    backgroundColor: `${getStrategyColor(s)}08`,
-                                    border: `1px solid ${getStrategyColor(s)}12`,
-                                  }}
-                                >
-                                  {s}
-                                </span>
+                                <Tag key={s} color={getStrategyColor(s)}>{s}</Tag>
                               ))}
                             </div>
                           )}
                           {owner.stake && (
-                            <div className="text-micro text-[#6e6e6e] mt-1">
-                              Stake: {owner.stake}
+                            <div className="text-xs text-[var(--text-secondary)] mt-1.5">
+                              Stake: <span className="text-[var(--text-primary)] font-medium">{owner.stake}</span>
                             </div>
                           )}
                         </div>
                         {yearRange && (
-                          <span className="text-micro text-[#1a1a1a] font-medium tabular-nums shrink-0">
+                          <span className="text-xs mono text-[var(--text-primary)] font-medium tabular-nums shrink-0">
                             {yearRange}
                           </span>
                         )}
@@ -312,248 +264,155 @@ export function PortCoDrawer({
             )}
 
             {/* Sector / Subsector / Location */}
-            <div className="divide-y divide-[#e8e8e8] border-t border-black/[0.06]">
-              <div className="flex justify-between items-center px-4 py-2.5">
-                <span className="text-micro text-[#999999]">Sector</span>
-                <span className="text-micro text-[#1a1a1a] text-right font-medium flex items-center gap-1.5">
-                  <span
-                    className="inline-block h-2 w-2 rounded-full shrink-0"
-                    style={{ backgroundColor: sectorColor }}
-                  />
-                  {company.sector}
-                </span>
-              </div>
+            <dl className="grid grid-cols-[max-content_1fr] gap-x-6 gap-y-2.5 text-xs">
+              <dt className="text-[var(--text-tertiary)]">Sector</dt>
+              <dd><Tag color={sectorColor}>{company.sector}</Tag></dd>
               {company.subsector && (
-                <div className="flex justify-between items-center px-4 py-2.5">
-                  <span className="text-micro text-[#999999]">Subsector</span>
-                  <span className="text-micro text-[#1a1a1a] text-right font-medium">
-                    {company.subsector}
-                  </span>
-                </div>
+                <>
+                  <dt className="text-[var(--text-tertiary)]">Subsector</dt>
+                  <dd className="text-[var(--text-primary)]">{company.subsector}</dd>
+                </>
               )}
-              <div className="flex justify-between items-center px-4 py-2.5">
-                <span className="text-micro text-[#999999]">Location</span>
-                <span className="text-micro text-[#1a1a1a] text-right font-medium">
-                  {locationDisplay}
-                </span>
-              </div>
-            </div>
+              <dt className="text-[var(--text-tertiary)]">Location</dt>
+              <dd className="text-[var(--text-primary)]">{locationDisplay}</dd>
+            </dl>
           </section>
 
           {/* §2 — Company Overview / Description */}
           {company.description && (
-            <section className="glass-card rounded-[4px] overflow-hidden">
-              <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
-                <FileText className="h-3.5 w-3.5 text-[#008253]" />
-                <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
-                  Company Overview
-                </span>
-              </div>
-              <div className="px-4 py-4">
-                <p className="text-sm-dense text-[#6e6e6e] leading-relaxed">
-                  {company.description}
-                </p>
+            <section className="border-t border-[var(--border)] pt-6">
+              <SectionLabel>Overview</SectionLabel>
+              <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                {company.description}
+              </p>
 
-                {/* Sources */}
-                {sources.length > 0 && (
-                  <div className="mt-4 bg-[#fafaf9] border border-[#e5e5e5] rounded-[3px] px-4 py-3">
-                    <span className="text-micro font-medium text-[#999999] uppercase tracking-wider block mb-2">
-                      Sources
-                    </span>
-                    <div className="space-y-1.5">
-                      {sources.map((s, i) => {
-                        // Source.label values are inconsistent ("domain — company
-                        // name", duplicated by another field, sometimes blank).
-                        // Derive the hostname from the URL — same approach the
-                        // Fund drawer uses — so the list is informative and
-                        // distinguishes truly distinct articles even when the
-                        // labels are uninformative.
-                        let hostname = s.url;
-                        try {
-                          hostname = new URL(s.url).hostname.replace(/^www\./, "");
-                        } catch {}
-                        return (
-                          <a
-                            key={i}
-                            href={s.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 group"
-                            title={s.label || s.url}
-                          >
-                            <ExternalLink className="h-3 w-3 text-[#c4c4c4] group-hover:text-[#008253] transition-colors shrink-0" />
-                            <span className="text-micro text-[#999999] group-hover:text-[#008253] transition-colors truncate">
-                              {hostname}
-                            </span>
-                          </a>
-                        );
-                      })}
-                    </div>
+              {sources.length > 0 && (
+                <div className="mt-5 surface px-4 py-3">
+                  <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-2">
+                    Sources
                   </div>
-                )}
-              </div>
+                  <div className="space-y-1.5">
+                    {sources.map((s, i) => {
+                      let hostname = s.url;
+                      try {
+                        hostname = new URL(s.url).hostname.replace(/^www\./, "");
+                      } catch {}
+                      return (
+                        <a
+                          key={i}
+                          href={s.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 group mr-3"
+                          title={s.label || s.url}
+                        >
+                          <ExternalLink className="h-3 w-3 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)] transition-colors shrink-0" />
+                          <span className="text-xs text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">
+                            {hostname}
+                          </span>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </section>
           )}
 
           {/* §3 — Historical Milestones */}
           {milestones.length > 0 && (
-            <section className="glass-card rounded-[4px] overflow-hidden">
-              <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
-                <Clock className="h-3.5 w-3.5 text-[#008253]" />
-                <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
-                  Historical Milestones
-                </span>
-                <span className="text-micro text-[#999999] ml-auto">{milestones.length}</span>
-              </div>
-              <div className="px-4 py-4">
-                <div className="relative ml-2">
-                  <div className="absolute left-[5px] top-1 bottom-1 w-px bg-[#d6d6d6]" />
-                  <div className="space-y-3">
-                    {visibleMilestones.map((m, i) => {
-                      const classification = classifyMilestone(m, owners);
-                      const isTransition = classification !== null;
-                      const transitionColor =
-                        classification?.kind === "entry"
-                          ? ENTRY_COLOR
-                          : classification?.kind === "exit"
-                          ? EXIT_COLOR
-                          : null;
-                      const transitionLabel =
-                        classification?.kind === "entry"
-                          ? "Investment"
-                          : classification?.kind === "exit"
-                          ? "Exit"
-                          : null;
-                      const transitionFirm = classification?.owner.firm;
-                      return (
+            <section className="border-t border-[var(--border)] pt-6">
+              <SectionLabel count={milestones.length}>Historical milestones</SectionLabel>
+              <div className="relative pl-5">
+                <div aria-hidden className="absolute left-[5px] top-1.5 bottom-1.5 w-px bg-[var(--border)]" />
+                <div className="space-y-3">
+                  {visibleMilestones.map((m, i) => {
+                    const classification = classifyMilestone(m, owners);
+                    const isTransition = classification !== null;
+                    const transitionColor =
+                      classification?.kind === "entry"
+                        ? ENTRY_COLOR
+                        : classification?.kind === "exit"
+                        ? EXIT_COLOR
+                        : null;
+                    const transitionLabel =
+                      classification?.kind === "entry"
+                        ? "Investment"
+                        : classification?.kind === "exit"
+                        ? "Exit"
+                        : null;
+                    const transitionFirm = classification?.owner.firm;
+                    const dotColor = isTransition && transitionColor
+                      ? transitionColor
+                      : getMilestoneCategoryColor(m.category);
+                    return (
                       <div
                         key={i}
-                        className={`flex items-start gap-3 relative ${
-                          isTransition && transitionColor
-                            ? "-mx-4 px-4 py-2 border rounded-[3px]"
-                            : ""
-                        }`}
-                        style={
-                          isTransition && transitionColor
-                            ? {
-                                backgroundColor: `${transitionColor}0F`,
-                                borderColor: `${transitionColor}33`,
-                              }
-                            : undefined
-                        }
+                        className={`relative ${isTransition ? "pl-3 -ml-3 border-l-2" : ""}`}
+                        style={isTransition && transitionColor ? { borderLeftColor: transitionColor } : undefined}
                       >
+                        {/* Dot */}
                         <div
-                          className={`relative z-10 mt-1.5 shrink-0 border-2 ${
-                            isTransition
-                              ? "h-[13px] w-[13px] rounded-full"
-                              : "h-[11px] w-[11px] rounded-full"
-                          }`}
-                          style={{
-                            borderColor: isTransition && transitionColor
-                              ? transitionColor
-                              : getMilestoneCategoryColor(m.category),
-                            backgroundColor: isTransition && transitionColor
-                              ? `${transitionColor}33`
-                              : `${getMilestoneCategoryColor(m.category)}33`,
-                          }}
+                          aria-hidden
+                          className="absolute -left-[18px] top-1.5 h-2 w-2 rounded-full ring-2 ring-[var(--bg-surface)]"
+                          style={{ backgroundColor: dotColor }}
                         />
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-baseline gap-2 flex-wrap">
-                            <span
-                              className="text-micro font-medium shrink-0 tabular-nums"
-                              style={{
-                                color: isTransition && transitionColor
-                                  ? transitionColor
-                                  : "#999999",
-                              }}
-                            >
-                              {m.date}
+                        <div className="flex items-baseline gap-2 flex-wrap">
+                          <span className="text-[11px] mono text-[var(--text-tertiary)] tabular-nums">
+                            {m.date}
+                          </span>
+                          {transitionLabel ? (
+                            <Tag variant="solid">{transitionLabel}</Tag>
+                          ) : (
+                            <Tag color={getMilestoneCategoryColor(m.category)}>{m.category}</Tag>
+                          )}
+                          {transitionFirm && (
+                            <span className="text-[11px] text-[var(--text-secondary)]">
+                              {transitionFirm}
                             </span>
-                            <span
-                              className="text-[10px] font-medium px-1.5 py-0 shrink-0"
-                              style={{
-                                color: isTransition && transitionColor ? transitionColor : "#444444",
-                                backgroundColor: isTransition && transitionColor
-                                  ? `${transitionColor}10`
-                                  : `${getMilestoneCategoryColor(m.category)}08`,
-                                border: isTransition && transitionColor
-                                  ? `1px solid ${transitionColor}20`
-                                  : `1px solid ${getMilestoneCategoryColor(m.category)}12`,
-                              }}
-                            >
-                              {transitionLabel ?? m.category}
-                            </span>
-                            {transitionFirm && (
-                              <span className="text-[10px] text-[#6e6e6e] shrink-0">
-                                {transitionFirm}
-                              </span>
-                            )}
-                          </div>
-                          <p
-                            className={`text-sm-dense mt-0.5 leading-relaxed ${
-                              isTransition ? "text-[#1a1a1a]" : "text-[#6e6e6e]"
-                            }`}
-                          >
-                            {m.event}
-                          </p>
+                          )}
                         </div>
+                        <p className="text-sm mt-1 leading-relaxed text-[var(--text-secondary)]">
+                          {m.event}
+                        </p>
                       </div>
-                      );
-                    })}
-                  </div>
+                    );
+                  })}
                 </div>
-                {milestones.length > 6 && (
-                  <button
-                    onClick={() => setShowAllMilestones(!showAllMilestones)}
-                    className="mt-3 ml-2 text-micro text-[#008253] hover:text-[#a5b4fc] transition-colors"
-                  >
-                    {showAllMilestones
-                      ? "Show less"
-                      : `Show all ${milestones.length} milestones`}
-                  </button>
-                )}
               </div>
+              {milestones.length > 6 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="mt-4 ml-5"
+                  onClick={() => setShowAllMilestones(!showAllMilestones)}
+                >
+                  {showAllMilestones ? "Show less" : `Show all ${milestones.length} milestones`}
+                </Button>
+              )}
             </section>
           )}
 
-          {/* §4 — Key Management (C-Suite + President only) */}
+          {/* §4 — Key Management */}
           {cSuiteManagement.length > 0 && (
-            <section className="glass-card rounded-[4px] overflow-hidden">
-              <div className="flex items-center gap-2.5 px-4 py-3 border-b border-black/[0.06]">
-                <Users className="h-3.5 w-3.5 text-[#008253]" />
-                <span className="text-micro font-semibold text-[#1a1a1a] uppercase tracking-wider">
-                  Key Management
-                </span>
-              </div>
-              <div className="px-4 py-4">
-                <div
-                  className={`grid gap-2.5 ${
-                    cSuiteManagement.length === 1 ? "grid-cols-1" : "grid-cols-2"
-                  }`}
-                >
-                  {cSuiteManagement.map((exec, i) => (
-                    <div key={i} className="flex items-start gap-3 bg-[#fafaf9] border border-[#e8e8e8] rounded-[3px] px-3 py-2.5">
-                      <div
-                        className="shrink-0 h-8 w-8 rounded-full flex items-center justify-center text-[11px] font-semibold"
-                        style={{
-                          backgroundColor: `${sectorColor}10`,
-                          color: sectorColor,
-                          border: `1px solid ${sectorColor}20`,
-                        }}
-                      >
-                        {exec.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+            <section className="border-t border-[var(--border)] pt-6">
+              <SectionLabel>Key management</SectionLabel>
+              <div className={`grid gap-2 ${cSuiteManagement.length === 1 ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2"}`}>
+                {cSuiteManagement.map((exec, i) => (
+                  <div key={i} className="flex items-center gap-3 surface px-3 py-2.5">
+                    <div className="shrink-0 h-8 w-8 rounded-full flex items-center justify-center text-[11px] font-semibold bg-[var(--bg-hover)] text-[var(--text-secondary)] border border-[var(--border)]">
+                      {exec.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-sm text-[var(--text-primary)] font-medium leading-snug truncate">
+                        {exec.name}
                       </div>
-                      <div className="min-w-0">
-                        <span className="text-sm-dense text-[#1a1a1a] font-medium block leading-snug">
-                          {exec.name}
-                        </span>
-                        <span className="text-micro text-[#999999] block mt-0.5">
-                          {exec.title}
-                        </span>
+                      <div className="text-xs text-[var(--text-tertiary)] mt-0.5 truncate">
+                        {exec.title}
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </section>
           )}

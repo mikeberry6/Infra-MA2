@@ -12,36 +12,44 @@ interface DatabaseTilesProps {
 }
 
 const tiles = [
-  { href: "/", key: "deals" as const, label: "Deals", unit: "deals" },
-  { href: "/funds", key: "funds" as const, label: "Funds", unit: "funds" },
-  { href: "/portfolio", key: "portfolio" as const, label: "Portfolio companies", unit: "companies" },
+  { href: "/", key: "deals" as const, label: "Deals" },
+  { href: "/funds", key: "funds" as const, label: "Funds" },
+  { href: "/portfolio", key: "portfolio" as const, label: "Portfolio" },
 ];
 
+/**
+ * Attio-style segmented control: pill of tabs with the active tab as a raised
+ * white panel inside a soft gray track. Counts shown as muted numerics next to
+ * the active tab label only.
+ */
 export function DatabaseTiles({ counts }: DatabaseTilesProps) {
   const pathname = usePathname();
 
   return (
-    <div className="flex border border-black/[0.08] bg-white">
+    <div
+      role="tablist"
+      className="inline-flex items-center gap-1 p-1 rounded-lg bg-[var(--bg-hover)]"
+    >
       {tiles.map((tile) => {
         const isActive = pathname === tile.href;
         return (
           <Link
             key={tile.key}
+            role="tab"
+            aria-selected={isActive}
             href={tile.href}
-            className={`flex-1 px-3 py-[5px] border-r border-black/[0.08] last:border-r-0 transition-colors ${
+            className={`inline-flex items-center gap-2 h-7 px-3 rounded-md text-xs font-medium transition-colors ${
               isActive
-                ? "bg-white border-b-2 border-b-[#008253]"
-                : "bg-[#f3f3f3] hover:bg-[#eaeaea]"
+                ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
+                : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
             }`}
           >
-            <div className={`text-[12px] font-heading font-bold tracking-[-0.01em] leading-tight ${
-              isActive ? "text-[#1a1a1a]" : "text-[#555555]"
-            }`}>
-              {tile.label}
-            </div>
-            <div className="text-[10px] font-mono text-[#999] tabular-nums leading-tight">
-              {counts[tile.key].toLocaleString()} {tile.unit}
-            </div>
+            <span>{tile.label}</span>
+            {isActive && (
+              <span className="text-[10px] mono text-[var(--text-tertiary)] tabular-nums">
+                {counts[tile.key].toLocaleString()}
+              </span>
+            )}
           </Link>
         );
       })}
