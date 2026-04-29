@@ -139,7 +139,7 @@ export function PortCoDrawer({
   return (
     <>
       <div
-        className="fixed inset-0 z-50 bg-black/30 backdrop-blur-[2px] animate-fade-in"
+        className="fixed inset-0 z-50 bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
         onClick={onClose}
       />
       <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right shadow-overlay">

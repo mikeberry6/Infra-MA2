@@ -34,6 +34,7 @@ const config: Config = {
         "accent-soft": "var(--accent-soft)",
         "accent-hover": "var(--accent-hover)",
         accent: "var(--accent)",
+        "bg-overlay": "var(--bg-overlay)",
       },
       boxShadow: {
         card: "0 1px 2px rgba(17, 17, 20, 0.04), 0 4px 12px rgba(17, 17, 20, 0.04)",

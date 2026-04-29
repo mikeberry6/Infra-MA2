@@ -7,13 +7,9 @@ import { ArrowLeft, Plus } from "lucide-react";
 import DeleteButton from "@/components/admin/DeleteButton";
 import ImportExportBar from "@/components/admin/ImportExportBar";
 import { deleteDeal } from "@/modules/admin/actions";
-export const metadata = { title: "Admin · Deals" };
+import { getRecordStatusColor } from "@/lib/colors";
 
-const STATUS_DOT: Record<string, string> = {
-  PUBLISHED: "#10b981",
-  DRAFT: "#f59e0b",
-  ARCHIVED: "#a1a1aa",
-};
+export const metadata = { title: "Admin · Deals" };
 
 export default async function AdminDealsPage() {
   const deals = await prisma.deal.findMany({
@@ -82,7 +78,7 @@ export default async function AdminDealsPage() {
                     <span
                       aria-hidden
                       className="h-[5px] w-[5px] rounded-full"
-                      style={{ backgroundColor: STATUS_DOT[deal.status] ?? "#a1a1aa" }}
+                      style={{ backgroundColor: getRecordStatusColor(deal.status) }}
                     />
                     {deal.status}
                   </span>

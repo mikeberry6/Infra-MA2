@@ -94,17 +94,6 @@ function isInfraFund(raw: string): boolean {
   );
 }
 
-function getFundRoleTags(deal: DealView): { name: string; role: "Buyer" | "Seller" }[] {
-  const tags: { name: string; role: "Buyer" | "Seller" }[] = [];
-  if (isInfraFund(deal.buyer)) tags.push({ name: deal.buyer, role: "Buyer" });
-  if (isInfraFund(deal.seller)) tags.push({ name: deal.seller, role: "Seller" });
-  return tags;
-}
-
-const ROLE_COLORS = {
-  Buyer: "#3b82f6",
-  Seller: "#f59e0b",
-} as const;
 import {
   Search,
   ExternalLink,
@@ -540,7 +529,7 @@ function DealDrawer({
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
+        className="fixed inset-0 z-50 bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
         onClick={onClose}
       />
 

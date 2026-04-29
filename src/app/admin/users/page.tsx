@@ -3,14 +3,9 @@ export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { getUserRoleColor } from "@/lib/colors";
 
 export const metadata = { title: "Admin · Users" };
-
-const ROLE_DOT: Record<string, string> = {
-  ADMIN: "#dc2626",
-  ANALYST: "#3b82f6",
-  VIEWER: "#a1a1aa",
-};
 
 export default async function AdminUsersPage() {
   const users = await prisma.user.findMany({
@@ -58,7 +53,7 @@ export default async function AdminUsersPage() {
                 <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{user.name || "—"}</td>
                 <td className="px-3 py-2.5">
                   <span className="inline-flex items-center gap-1.5 text-[11px] text-[var(--text-secondary)]">
-                    <span aria-hidden className="h-[5px] w-[5px] rounded-full" style={{ backgroundColor: ROLE_DOT[user.role] ?? "#a1a1aa" }} />
+                    <span aria-hidden className="h-[5px] w-[5px] rounded-full" style={{ backgroundColor: getUserRoleColor(user.role) }} />
                     {user.role}
                   </span>
                 </td>

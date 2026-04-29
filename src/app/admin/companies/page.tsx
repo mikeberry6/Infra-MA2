@@ -7,14 +7,9 @@ import { ArrowLeft, Plus } from "lucide-react";
 import DeleteButton from "@/components/admin/DeleteButton";
 import ImportExportBar from "@/components/admin/ImportExportBar";
 import { deleteCompany } from "@/modules/admin/actions";
+import { getRecordStatusColor } from "@/lib/colors";
 
 export const metadata = { title: "Admin · Companies" };
-
-const STATUS_DOT: Record<string, string> = {
-  PUBLISHED: "#10b981",
-  DRAFT: "#f59e0b",
-  ARCHIVED: "#a1a1aa",
-};
 
 export default async function AdminCompaniesPage() {
   const companies = await prisma.company.findMany({
@@ -77,7 +72,7 @@ export default async function AdminCompaniesPage() {
                 <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{COMPANY_STATUS_DISPLAY[company.companyStatus]}</td>
                 <td className="px-3 py-2.5">
                   <span className="inline-flex items-center gap-1.5 text-[11px] text-[var(--text-secondary)]">
-                    <span aria-hidden className="h-[5px] w-[5px] rounded-full" style={{ backgroundColor: STATUS_DOT[company.status] ?? "#a1a1aa" }} />
+                    <span aria-hidden className="h-[5px] w-[5px] rounded-full" style={{ backgroundColor: getRecordStatusColor(company.status) }} />
                     {company.status}
                   </span>
                 </td>
