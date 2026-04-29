@@ -208,8 +208,13 @@ function PortCoCard({
         <div>
           <div className="text-[10px] uppercase tracking-wider text-[var(--text-tertiary)]">Firm</div>
           <div className="text-[var(--text-secondary)] font-medium truncate">
-            {company.investmentFirm || "—"}{company.investmentYear ? ` (${company.investmentYear})` : ""}
+            {company.investmentFirm || "—"}
           </div>
+          {company.investmentYear && (
+            <div className="text-[11px] italic text-[var(--text-tertiary)] truncate">
+              {company.investmentYear}
+            </div>
+          )}
         </div>
       </div>
     </button>
@@ -306,8 +311,13 @@ function PortCoTable({
                   </td>
                   <td className="px-3 py-2.5 align-top max-w-[200px]">
                     <span className="text-[12px] text-[var(--text-secondary)] truncate block">
-                      {company.investmentFirm || "—"}{company.investmentYear ? ` (${company.investmentYear})` : ""}
+                      {company.investmentFirm || "—"}
                     </span>
+                    {company.investmentYear && (
+                      <span className="text-[11px] italic text-[var(--text-tertiary)] truncate block">
+                        {company.investmentYear}
+                      </span>
+                    )}
                   </td>
                   <td className="px-3 py-2.5 align-top">
                     <Tag color={getPortCoSectorColor(company.sector)}>{company.sector}</Tag>
