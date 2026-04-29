@@ -2,6 +2,12 @@
 
 import { X } from "lucide-react";
 
+/**
+ * Removable chip used in the active-filter strip.
+ *
+ * The whole chip is a button — clicking anywhere on it triggers `onRemove`.
+ * A 5px color dot encodes the filter category; the surface is neutral.
+ */
 export function FilterChip({
   label,
   color,
@@ -14,15 +20,16 @@ export function FilterChip({
   return (
     <button
       onClick={onRemove}
-      className="inline-flex items-center gap-0.5 px-1.5 py-0 text-[10px] font-medium transition-colors hover:opacity-70 border"
-      style={{
-        color: "#444444",
-        backgroundColor: `${color}08`,
-        borderColor: `${color}12`,
-      }}
+      aria-label={`Remove ${label} filter`}
+      className="inline-flex items-center gap-1.5 h-6 pl-2 pr-1.5 rounded-md text-[11px] font-medium transition-colors group bg-[var(--bg-surface)] border border-[var(--border)] text-[var(--text-primary)] hover:bg-[var(--bg-hover)] hover:border-[var(--border-strong)]"
     >
-      {label}
-      <X className="h-2 w-2 opacity-60" />
+      <span
+        aria-hidden
+        className="h-[5px] w-[5px] rounded-full shrink-0"
+        style={{ backgroundColor: color }}
+      />
+      <span className="truncate">{label}</span>
+      <X className="h-3 w-3 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)] transition-colors" />
     </button>
   );
 }

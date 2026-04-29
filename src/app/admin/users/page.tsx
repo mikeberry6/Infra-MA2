@@ -2,8 +2,15 @@ export const dynamic = "force-dynamic";
 
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
-export const metadata = { title: "Admin - Users" };
+export const metadata = { title: "Admin · Users" };
+
+const ROLE_DOT: Record<string, string> = {
+  ADMIN: "#dc2626",
+  ANALYST: "#3b82f6",
+  VIEWER: "#a1a1aa",
+};
 
 export default async function AdminUsersPage() {
   const users = await prisma.user.findMany({
@@ -18,43 +25,51 @@ export default async function AdminUsersPage() {
   });
 
   return (
-    <div className="min-h-screen bg-[#f3f3f3] text-[#1a1a1a] p-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
-          <div>
-            <Link href="/admin" className="text-sm text-[#71717A] hover:text-[#1a1a1a] mb-2 inline-block">&larr; Back to Admin</Link>
-            <h1 className="text-2xl font-bold">Users</h1>
-          </div>
-        </div>
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-10">
+      <div className="mb-6">
+        <Link
+          href="/admin"
+          className="inline-flex items-center gap-1.5 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors mb-2"
+        >
+          <ArrowLeft className="h-3 w-3" /> Admin
+        </Link>
+        <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-primary)] tracking-tight">
+          Users
+        </h1>
+        <p className="text-xs text-[var(--text-secondary)] mt-0.5">
+          <span className="mono tabular-nums">{users.length.toLocaleString()}</span> total
+        </p>
+      </div>
 
-        <table className="w-full text-sm">
+      <div className="surface overflow-hidden">
+        <table className="w-full text-left border-collapse whitespace-nowrap">
           <thead>
-            <tr className="border-b border-black/[0.08] text-[#71717A] text-left">
-              <th className="pb-2 pr-4">Email</th>
-              <th className="pb-2 pr-4">Name</th>
-              <th className="pb-2 pr-4">Role</th>
-              <th className="pb-2">Created</th>
+            <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Email</th>
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Name</th>
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Role</th>
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Created</th>
             </tr>
           </thead>
           <tbody>
             {users.map((user) => (
-              <tr key={user.id} className="border-b border-[#1a1a1d] hover:bg-white">
-                <td className="py-2 pr-4 font-medium">{user.email}</td>
-                <td className="py-2 pr-4 text-[#A1A1AA]">{user.name || "—"}</td>
-                <td className="py-2 pr-4">
-                  <span className={`text-xs px-1.5 py-0.5 rounded ${
-                    user.role === "ADMIN" ? "bg-red-500/10 text-red-400" :
-                    user.role === "ANALYST" ? "bg-blue-500/10 text-blue-400" :
-                    "bg-zinc-500/10 text-zinc-400"
-                  }`}>
+              <tr key={user.id} className="border-b border-[var(--border)] hover:bg-[var(--bg-subtle)] transition-colors">
+                <td className="px-3 py-2.5 text-[13px] font-medium text-[var(--text-primary)]">{user.email}</td>
+                <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{user.name || "—"}</td>
+                <td className="px-3 py-2.5">
+                  <span className="inline-flex items-center gap-1.5 text-[11px] text-[var(--text-secondary)]">
+                    <span aria-hidden className="h-[5px] w-[5px] rounded-full" style={{ backgroundColor: ROLE_DOT[user.role] ?? "#a1a1aa" }} />
                     {user.role}
                   </span>
                 </td>
-                <td className="py-2 text-[#71717A]">{user.createdAt.toLocaleDateString()}</td>
+                <td className="px-3 py-2.5 text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{user.createdAt.toLocaleDateString()}</td>
               </tr>
             ))}
           </tbody>
         </table>
+        {users.length === 0 && (
+          <div className="py-12 text-center text-sm text-[var(--text-tertiary)]">No users yet.</div>
+        )}
       </div>
     </div>
   );

@@ -9,9 +9,9 @@ import { exportPortfolioToExcel } from "@/utils/exportPortfolio";
 import type { CompanyView, FundView, DatabaseCounts } from "@/modules/shared/types";
 import {
   Search,
-  X,
   Download,
   Mail,
+  ChevronRight,
 } from "lucide-react";
 import { PortCoDrawer } from "@/components/PortfolioDatabase/PortCoDrawer";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -22,6 +22,8 @@ import { deriveRanking, RankingColumn } from "@/components/shared/RankingBars";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
+import { Tag } from "@/components/shared/Tag";
+import { Button } from "@/components/shared/Button";
 
 
 // ─── Filter Bar ─────────────────────────────────────────────
@@ -56,56 +58,49 @@ function PortCoFilterBar({
   onClearAll: () => void;
 }) {
   return (
-    <div className="mb-2 space-y-3">
-      <div className="bg-[#f3f3f3] border border-black/[0.08] shadow-sm flex items-stretch sticky top-[60px] sm:top-[124px] z-30 overflow-x-auto">
-        <div className="border-r border-black/[0.06] px-2.5 py-2 flex items-center gap-2 flex-1 max-w-xs">
-          <Search className="h-4 w-4 text-[#999999] shrink-0" />
+    <div className="mb-3 space-y-3">
+      <div className="bg-[var(--bg-surface)] border border-[var(--border)] rounded-lg flex items-center gap-2 px-2 py-2 sticky top-14 z-30 overflow-x-auto">
+        <div className="relative flex-1 min-w-[160px] max-w-xs">
+          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[var(--text-tertiary)] pointer-events-none" />
           <input
             type="text"
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search portfolio companies..."
             aria-label="Search portfolio companies"
-            className="w-full bg-transparent text-xs text-[#1a1a1a] placeholder:text-[#999999] focus:outline-none"
+            className="w-full h-8 pl-8 pr-2.5 rounded-md text-xs bg-[var(--bg-app)] border border-[var(--border)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:bg-[var(--bg-surface)] focus:border-[var(--accent)] focus:shadow-[0_0_0_2px_var(--accent-soft)] transition-colors"
           />
         </div>
-        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
-          <MultiSelectDropdown
-            label="Sector"
-            options={PORTCO_SECTORS}
-            selected={activeSectors}
-            onToggle={onToggleSector}
-            getColor={(v) => getPortCoSectorColor(v)}
-          />
-        </div>
-        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
-          <MultiSelectDropdown
-            label="Country"
-            options={PORTCO_COUNTRY_TAGS as unknown as string[]}
-            selected={activeCountryTags}
-            onToggle={onToggleCountryTag}
-            getColor={(v) => getPortCoCountryTagColor(v)}
-          />
-        </div>
-        <div className="border-r border-black/[0.06] px-2 py-2 flex items-center">
-          <MultiSelectDropdown
-            label="Investment Firm"
-            options={firmOptions}
-            selected={activeFirms}
-            onToggle={onToggleFirm}
-            getColor={() => "#a78bfa"}
-          />
-        </div>
-        <div className="px-2 py-2 flex items-center">
-          <MultiSelectDropdown
-            label="Investment Year"
-            options={investmentYearOptions}
-            selected={activeInvestmentYears}
-            onToggle={onToggleInvestmentYear}
-            getColor={() => "#f59e0b"}
-            align="right"
-          />
-        </div>
+        <div className="h-5 w-px bg-[var(--border)]" />
+        <MultiSelectDropdown
+          label="Sector"
+          options={PORTCO_SECTORS}
+          selected={activeSectors}
+          onToggle={onToggleSector}
+          getColor={(v) => getPortCoSectorColor(v)}
+        />
+        <MultiSelectDropdown
+          label="Country"
+          options={PORTCO_COUNTRY_TAGS as unknown as string[]}
+          selected={activeCountryTags}
+          onToggle={onToggleCountryTag}
+          getColor={(v) => getPortCoCountryTagColor(v)}
+        />
+        <MultiSelectDropdown
+          label="Firm"
+          options={firmOptions}
+          selected={activeFirms}
+          onToggle={onToggleFirm}
+          getColor={() => "#a78bfa"}
+        />
+        <MultiSelectDropdown
+          label="Year"
+          options={investmentYearOptions}
+          selected={activeInvestmentYears}
+          onToggle={onToggleInvestmentYear}
+          getColor={() => "#f59e0b"}
+          align="right"
+        />
       </div>
 
       <ActiveFiltersStrip
@@ -150,35 +145,29 @@ function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
 
   if (companies.length === 0) {
     return (
-      <div className="border border-black/[0.08] shadow-card bg-white p-6 text-center">
-        <p className="text-sm-dense text-[#999999]">
-          No portfolio companies match your current filters. Try broadening your search.
-        </p>
+      <div className="py-10 text-center text-sm text-[var(--text-tertiary)]">
+        No portfolio companies match your current filters. Try broadening your search.
       </div>
     );
   }
 
   return (
-    <div className="border border-black/[0.08] shadow-card bg-white overflow-hidden">
-      <div className="px-3 sm:px-4 pt-3 pb-1.5 border-b border-[#e8e8e8]">
-        <p className="text-[11px] text-[#999999]">
-          <span className="font-mono text-[#1a1a1a] font-medium tabular-nums">{companies.length}</span> portfolio companies
-          {" · "}
-          <span className="font-mono text-[#1a1a1a] font-medium tabular-nums">
-            {new Set(companies.map((c) => c.investmentFirm).filter(Boolean)).size}
-          </span> investment firms
-          {" · "}
-          <span className="font-mono text-[#1a1a1a] font-medium tabular-nums">
-            {new Set(companies.map((c) => c.country)).size}
-          </span> countries
-        </p>
-      </div>
-      <div className="p-3 sm:p-4">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
-          <RankingColumn title="Top Sectors" rows={sectorRanking} />
-          <RankingColumn title="Top Countries" rows={countryTagRanking} />
-          <RankingColumn title="Top Investment Firms" rows={firmRanking} />
-        </div>
+    <div>
+      <p className="text-xs text-[var(--text-secondary)] mb-5">
+        <span className="mono text-[var(--text-primary)] font-medium tabular-nums">{companies.length}</span> portfolio companies
+        {" · "}
+        <span className="mono text-[var(--text-primary)] font-medium tabular-nums">
+          {new Set(companies.map((c) => c.investmentFirm).filter(Boolean)).size}
+        </span> investment firms
+        {" · "}
+        <span className="mono text-[var(--text-primary)] font-medium tabular-nums">
+          {new Set(companies.map((c) => c.country)).size}
+        </span> countries
+      </p>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+        <RankingColumn title="Top sectors" rows={sectorRanking} />
+        <RankingColumn title="Top countries" rows={countryTagRanking} />
+        <RankingColumn title="Top investment firms" rows={firmRanking} />
       </div>
     </div>
   );
@@ -197,38 +186,30 @@ function PortCoCard({
   return (
     <button
       onClick={() => onSelect(company)}
-      className="w-full text-left bg-white border border-[#e8e8e8] p-3 transition-colors hover:bg-[#f7f7f5] active:bg-[#f0f0ee]"
+      className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)]"
     >
-      <div className="flex items-center justify-between mb-1.5">
-        <h4 className="text-sm-dense font-medium text-[#1a1a1a] leading-snug tracking-tight truncate pr-2">
+      <div className="flex items-start justify-between gap-3 mb-2">
+        <h4 className="text-sm font-medium text-[var(--text-primary)] leading-snug tracking-tight truncate">
           {company.name}
         </h4>
+        <ChevronRight className="h-4 w-4 text-[var(--text-tertiary)] shrink-0 mt-0.5" />
       </div>
-      <div className="flex flex-wrap gap-1.5 mb-1.5">
-        <span
-          className="text-[10px] font-medium px-1.5 py-0"
-          style={{
-            color: "#444444",
-            backgroundColor: `${getPortCoSectorColor(company.sector)}08`,
-            border: `1px solid ${getPortCoSectorColor(company.sector)}12`,
-          }}
-        >
-          {company.sector}
-        </span>
+      <div className="flex flex-wrap gap-2 mb-2.5">
+        <Tag color={getPortCoSectorColor(company.sector)}>{company.sector}</Tag>
         {company.subsector && (
-          <span className="text-[10px] font-medium px-1.5 py-0" style={{ color: "#444444", backgroundColor: "#f59e0b08", border: "1px solid #f59e0b12" }}>
-            {company.subsector}
-          </span>
+          <span className="text-[11px] text-[var(--text-tertiary)]">{company.subsector}</span>
         )}
       </div>
-      <div className="grid grid-cols-2 gap-2 text-micro">
+      <div className="grid grid-cols-2 gap-3 text-xs">
         <div>
-          <span className="font-medium text-[#999999] uppercase tracking-wider">Country</span>
-          <div className="text-xs-dense text-[#6e6e6e] mt-0.5">{company.countryTags.join(", ")}</div>
+          <div className="text-[10px] uppercase tracking-wider text-[var(--text-tertiary)]">Country</div>
+          <div className="text-[var(--text-secondary)] mt-0.5 truncate">{company.countryTags.join(", ")}</div>
         </div>
         <div>
-          <span className="font-medium text-[#999999] uppercase tracking-wider">Firm</span>
-          <div className="text-xs-dense text-[#6e6e6e] font-medium truncate">{company.investmentFirm || "—"}{company.investmentYear ? ` (${company.investmentYear})` : ""}</div>
+          <div className="text-[10px] uppercase tracking-wider text-[var(--text-tertiary)]">Firm</div>
+          <div className="text-[var(--text-secondary)] font-medium truncate">
+            {company.investmentFirm || "—"}{company.investmentYear ? ` (${company.investmentYear})` : ""}
+          </div>
         </div>
       </div>
     </button>
@@ -273,19 +254,19 @@ function PortCoTable({
 
   const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
     <th
-      className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em] cursor-pointer hover:text-[#1a1a1a] transition-colors select-none"
+      className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors select-none"
       onClick={() => toggleSort(field)}
     >
       {label}
       {sortField === field && (
-        <span className="ml-1 text-[#008253]">{sortAsc ? "↑" : "↓"}</span>
+        <span className="ml-1 text-[var(--text-secondary)]">{sortAsc ? "↑" : "↓"}</span>
       )}
     </th>
   );
 
   if (companies.length === 0) {
     return (
-      <div className="flex items-center justify-center py-16 text-sm-dense text-[#999999]">
+      <div className="flex items-center justify-center py-16 text-sm text-[var(--text-tertiary)]">
         No portfolio companies match your current filters.
       </div>
     );
@@ -296,18 +277,19 @@ function PortCoTable({
       {/* Desktop table */}
       <div className="hidden md:block">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm-dense border-collapse whitespace-nowrap">
+          <table className="w-full text-left border-collapse whitespace-nowrap">
             <thead>
-              <tr className="bg-[#e8e8e6] border-b border-[#d0d0d0]">
-                <SortHeader field="name" label="Portfolio Company" />
+              <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
+                <SortHeader field="name" label="Company" />
                 <SortHeader field="firm" label="Firm" />
                 <SortHeader field="sector" label="Sector" />
-                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
+                <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
                   Subsector
                 </th>
-                <th className="text-left px-2.5 py-[5px] text-[10px] font-heading font-bold text-[#444] uppercase tracking-[0.06em]">
+                <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
                   Country
                 </th>
+                <th className="w-6" aria-hidden />
               </tr>
             </thead>
             <tbody>
@@ -315,38 +297,29 @@ function PortCoTable({
                 <tr
                   key={`${company.name}-${company.investmentFirm}-${i}`}
                   onClick={() => onSelect(company)}
-                  className="border-b border-[#e8e8e8] hover:bg-[#f7f7f5] cursor-pointer transition-colors group"
+                  className="border-b border-[var(--border)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
                 >
-                  <td className="px-2.5 py-[4px] max-w-[260px]">
-                    <span className="text-[12px] font-medium text-[#1a1a1a] group-hover:text-[#008253] transition-colors truncate">
+                  <td className="px-3 py-2.5 align-top max-w-[260px]">
+                    <span className="text-[13px] font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
                       {company.name}
                     </span>
                   </td>
-                  <td className="px-2.5 py-[4px] max-w-[200px]">
-                    <span className="text-[11px] text-[#555] truncate block">{company.investmentFirm || "—"}{company.investmentYear ? ` (${company.investmentYear})` : ""}</span>
+                  <td className="px-3 py-2.5 align-top max-w-[200px]">
+                    <span className="text-[12px] text-[var(--text-secondary)] truncate block">
+                      {company.investmentFirm || "—"}{company.investmentYear ? ` (${company.investmentYear})` : ""}
+                    </span>
                   </td>
-                  <td className="px-2.5 py-[4px]">
-                    {(() => {
-                      const color = getPortCoSectorColor(company.sector);
-                      return (
-                        <span
-                          className="text-[10px] font-medium px-1.5 py-0"
-                          style={{
-                            color: "#444444",
-                            backgroundColor: `${color}08`,
-                            border: `1px solid ${color}12`,
-                          }}
-                        >
-                          {company.sector}
-                        </span>
-                      );
-                    })()}
+                  <td className="px-3 py-2.5 align-top">
+                    <Tag color={getPortCoSectorColor(company.sector)}>{company.sector}</Tag>
                   </td>
-                  <td className="px-2.5 py-[4px]">
-                    <span className="text-[11px] text-[#777]">{company.subsector || "—"}</span>
+                  <td className="px-3 py-2.5 align-top">
+                    <span className="text-[12px] text-[var(--text-secondary)]">{company.subsector || "—"}</span>
                   </td>
-                  <td className="px-2.5 py-[4px]">
-                    <span className="text-[11px] text-[#555]">{company.countryTags.join(", ")}</span>
+                  <td className="px-3 py-2.5 align-top">
+                    <span className="text-[12px] text-[var(--text-secondary)]">{company.countryTags.join(", ")}</span>
+                  </td>
+                  <td className="px-2 py-2.5 align-middle text-right">
+                    <ChevronRight className="h-3.5 w-3.5 text-[var(--text-tertiary)] opacity-0 group-hover:opacity-100 transition-opacity inline-block" />
                   </td>
                 </tr>
               ))}
@@ -438,14 +411,21 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
   ]);
 
   return (
-    <div className="mx-auto max-w-[1240px] px-4 sm:px-6 py-3 sm:py-4">
-      <DatabaseTiles counts={counts} />
-
-      {/* Breadcrumb */}
-      <div className="flex items-center gap-1.5 mt-1.5 mb-1">
-        <span className="text-[10px] text-[#999] uppercase tracking-[0.06em]">Data</span>
-        <span className="text-[10px] text-[#ccc]">/</span>
-        <span className="text-[10px] text-[#1a1a1a] font-semibold uppercase tracking-[0.06em]">Portfolio companies</span>
+    <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
+      <div className="flex items-end justify-between flex-wrap gap-4 mb-5">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-primary)] tracking-tight">
+            Portfolio companies
+          </h1>
+          <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-0.5">
+            <span className="mono tabular-nums text-[var(--text-primary)] font-medium">{filteredCompanies.length.toLocaleString()}</span>
+            {filteredCompanies.length !== portcos.length && (
+              <> of <span className="mono tabular-nums">{portcos.length.toLocaleString()}</span></>
+            )}{" "}
+            companies held by global infrastructure funds
+          </p>
+        </div>
+        <DatabaseTiles counts={counts} />
       </div>
 
       <PortCoFilterBar
@@ -464,21 +444,23 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
         onClearAll={clearFilters}
       />
 
-      {/* White content panel */}
-      <div className="bg-white border border-black/[0.08] shadow-card">
-        {/* Results / Action Row */}
-        <div className="flex items-center justify-between px-3 py-[6px] border-b border-[#e8e8e8]">
-          <span className="text-[11px] text-[#6e6e6e]">
-            Showing <span className="font-mono text-[#1a1a1a] tabular-nums">{filteredCompanies.length}</span> of <span className="font-mono text-[#1a1a1a] tabular-nums">{portcos.length}</span> companies
+      <div className="surface overflow-hidden">
+        <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
+          <span className="text-[11px] text-[var(--text-tertiary)]">
+            <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredCompanies.length}</span>
+            {" "}of{" "}
+            <span className="mono text-[var(--text-secondary)] tabular-nums">{portcos.length}</span> companies
           </span>
-          <div className="hidden sm:flex items-center gap-3">
-            <button onClick={() => exportPortfolioToExcel(filteredCompanies)} className="text-[10px] text-[#888] hover:text-[#1a1a1a] transition-colors flex items-center gap-1 uppercase tracking-wide font-medium">
-              <Download className="h-3 w-3" /> Export
-            </button>
-            <span className="text-[#d6d6d6]">|</span>
-            <button className="text-[10px] text-[#888] hover:text-[#1a1a1a] transition-colors flex items-center gap-1 uppercase tracking-wide font-medium">
-              <Mail className="h-3 w-3" /> Contact research team
-            </button>
+          <div className="hidden sm:flex items-center gap-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              leadingIcon={<Download className="h-3 w-3" />}
+              onClick={() => exportPortfolioToExcel(filteredCompanies)}
+            >
+              Export
+            </Button>
+            <Button variant="ghost" size="sm" leadingIcon={<Mail className="h-3 w-3" />}>Contact research</Button>
           </div>
         </div>
 

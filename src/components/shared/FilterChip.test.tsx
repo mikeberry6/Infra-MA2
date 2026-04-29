@@ -16,12 +16,21 @@ describe("<FilterChip>", () => {
     expect(onRemove).toHaveBeenCalledOnce();
   });
 
-  it("applies the supplied color as low-opacity background and border", () => {
-    render(<FilterChip label="X" color="#3b82f6" onRemove={() => {}} />);
-    const button = screen.getByRole("button");
-    // jsdom normalizes #RRGGBBAA into rgba(r, g, b, alpha)
-    // 0x08/255 ≈ 0.03 background, 0x12/255 ≈ 0.07 border
-    expect(button.style.backgroundColor).toBe("rgba(59, 130, 246, 0.03)");
-    expect(button.style.borderColor).toBe("rgba(59, 130, 246, 0.07)");
+  it("has an accessible label naming the filter", () => {
+    render(<FilterChip label="Digital" color="#3b82f6" onRemove={() => {}} />);
+    expect(
+      screen.getByRole("button", { name: /remove digital filter/i })
+    ).toBeInTheDocument();
+  });
+
+  it("renders a color dot using the supplied color", () => {
+    const { container } = render(
+      <FilterChip label="X" color="#3b82f6" onRemove={() => {}} />
+    );
+    // The dot is the first aria-hidden span inside the chip.
+    const dot = container.querySelector('[aria-hidden="true"]') as HTMLElement;
+    expect(dot).not.toBeNull();
+    // jsdom normalizes #3b82f6 to rgb()
+    expect(dot.style.backgroundColor).toBe("rgb(59, 130, 246)");
   });
 });

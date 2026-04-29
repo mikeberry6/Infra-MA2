@@ -3,16 +3,17 @@ export const dynamic = "force-dynamic";
 import { searchAll, type SearchResult } from "@/modules/search/queries";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Search } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Search",
 };
 
 const TYPE_LABEL = { deal: "Deal", company: "Company", fund: "Fund" } as const;
-const TYPE_BADGE: Record<SearchResult["type"], React.CSSProperties> = {
-  deal: { color: "#1d4ed8", backgroundColor: "#3b82f612", border: "1px solid #3b82f624" },
-  company: { color: "#047857", backgroundColor: "#10b98112", border: "1px solid #10b98124" },
-  fund: { color: "#6d28d9", backgroundColor: "#8b5cf612", border: "1px solid #8b5cf624" },
+const TYPE_DOT_COLOR: Record<SearchResult["type"], string> = {
+  deal: "#3b82f6",
+  company: "#10b981",
+  fund: "#8b5cf6",
 };
 
 // Map a result to the database page that owns it. The database client reads
@@ -39,53 +40,72 @@ export default async function SearchPage({
   const results = query ? await searchAll(query) : [];
 
   return (
-    <div className="min-h-screen bg-[#f3f3f3] p-8">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="font-heading text-2xl font-bold mb-6 text-[#1a1a1a] tracking-tight">Search</h1>
+    <div className="mx-auto max-w-3xl px-4 sm:px-6 py-8 sm:py-10">
+      <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-primary)] tracking-tight mb-1">
+        Search
+      </h1>
+      <p className="text-xs sm:text-sm text-[var(--text-secondary)] mb-6">
+        Across deals, portfolio companies, and funds.
+      </p>
 
-        <form method="get" className="mb-8">
+      <form method="get" className="mb-6">
+        <div className="relative">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--text-tertiary)] pointer-events-none" />
           <input
-            type="text"
+            type="search"
             name="q"
             defaultValue={query}
             placeholder="Search deals, companies, and funds..."
-            className="w-full px-4 py-3 bg-white border border-black/[0.08] text-[#1a1a1a] placeholder-[#999999] focus:outline-none focus:border-[#008253]"
+            className="w-full h-11 pl-10 pr-3 rounded-md text-sm bg-[var(--bg-surface)] border border-[var(--border)] text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:border-[var(--accent)] focus:shadow-[0_0_0_2px_var(--accent-soft)] transition-colors"
+            autoFocus
           />
-        </form>
+        </div>
+      </form>
 
-        {query && (
-          <p className="text-sm text-[#6b6b6b] mb-4">
-            {results.length} result{results.length !== 1 ? "s" : ""} for &ldquo;{query}&rdquo;
-          </p>
-        )}
+      {query && (
+        <p className="text-xs text-[var(--text-tertiary)] mb-3">
+          <span className="mono tabular-nums text-[var(--text-secondary)]">{results.length}</span> result{results.length !== 1 ? "s" : ""} for &ldquo;{query}&rdquo;
+        </p>
+      )}
 
-        <div className="space-y-2">
-          {results.map((result) => (
-            <Link
-              key={`${result.type}-${result.id}`}
-              href={resultHref(result)}
-              className="block p-4 border border-black/[0.08] bg-white hover:bg-[#f7f7f5] transition-colors"
-            >
-              <div className="flex items-center gap-2 mb-1">
+      <div className="space-y-2">
+        {results.map((result) => (
+          <Link
+            key={`${result.type}-${result.id}`}
+            href={resultHref(result)}
+            className="block surface px-4 py-3 hover:bg-[var(--bg-subtle)] transition-colors group"
+          >
+            <div className="flex items-center gap-2 mb-1">
+              <span className="inline-flex items-center gap-1.5">
                 <span
-                  className="text-[10px] font-medium px-1.5 py-0"
-                  style={TYPE_BADGE[result.type]}
-                >
+                  aria-hidden
+                  className="h-[5px] w-[5px] rounded-full"
+                  style={{ backgroundColor: TYPE_DOT_COLOR[result.type] }}
+                />
+                <span className="text-[11px] font-medium text-[var(--text-secondary)]">
                   {TYPE_LABEL[result.type]}
                 </span>
-                {result.sector && (
-                  <span className="text-[10px] text-[#999999]">{result.sector}</span>
-                )}
-                {result.region && (
-                  <span className="text-[10px] text-[#999999]">· {result.region}</span>
-                )}
-              </div>
-              <h3 className="text-[#1a1a1a] font-medium">{result.title}</h3>
-              <p className="text-sm text-[#6e6e6e]">{result.subtitle}</p>
-            </Link>
-          ))}
-        </div>
+              </span>
+              {result.sector && (
+                <span className="text-[11px] text-[var(--text-tertiary)]">· {result.sector}</span>
+              )}
+              {result.region && (
+                <span className="text-[11px] text-[var(--text-tertiary)]">· {result.region}</span>
+              )}
+            </div>
+            <h3 className="text-sm font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
+              {result.title}
+            </h3>
+            <p className="text-xs text-[var(--text-secondary)] mt-0.5">{result.subtitle}</p>
+          </Link>
+        ))}
       </div>
+
+      {query && results.length === 0 && (
+        <div className="py-12 text-center text-sm text-[var(--text-tertiary)]">
+          No results matched your query.
+        </div>
+      )}
     </div>
   );
 }

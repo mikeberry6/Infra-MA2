@@ -3,8 +3,9 @@ export const dynamic = "force-dynamic";
 import { getDatabaseCounts } from "@/modules/insights/queries";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
-export const metadata = { title: "Admin Dashboard" };
+export const metadata = { title: "Admin" };
 
 export default async function AdminDashboard() {
   const counts = await getDatabaseCounts();
@@ -21,26 +22,39 @@ export default async function AdminDashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f3f3f3] text-[#1a1a1a] p-8">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-2">Admin Dashboard</h1>
-        <p className="text-[#71717A] mb-8">Manage deals, companies, funds, sources, and users.</p>
+    <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8 sm:py-10">
+      <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-primary)] tracking-tight mb-1">
+        Admin
+      </h1>
+      <p className="text-xs sm:text-sm text-[var(--text-secondary)] mb-7">
+        Manage deals, companies, funds, sources, and users.
+      </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {sections.map((s) => (
-            <Link
-              key={s.href}
-              href={s.href}
-              className="block p-6 rounded-lg border border-black/[0.08] bg-white hover:border-black/[0.16] transition-colors"
-            >
-              <h2 className="text-lg font-semibold mb-1">{s.label}</h2>
-              <p className="text-2xl font-bold text-[#818CF8]">{s.count}</p>
-              {s.drafts > 0 && (
-                <p className="text-xs text-[#f59e0b] mt-1">{s.drafts} drafts</p>
-              )}
-            </Link>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {sections.map((s) => (
+          <Link
+            key={s.href}
+            href={s.href}
+            className="surface px-4 py-4 hover:bg-[var(--bg-subtle)] transition-colors group"
+          >
+            <div className="flex items-start justify-between">
+              <div>
+                <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-1.5">
+                  {s.label}
+                </div>
+                <div className="text-2xl font-semibold text-[var(--text-primary)] mono tabular-nums leading-none">
+                  {s.count.toLocaleString()}
+                </div>
+                {s.drafts > 0 && (
+                  <div className="text-[11px] text-[var(--text-tertiary)] mt-2">
+                    <span className="mono tabular-nums text-[var(--text-secondary)]">{s.drafts}</span> draft{s.drafts !== 1 ? "s" : ""}
+                  </div>
+                )}
+              </div>
+              <ChevronRight className="h-4 w-4 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)] transition-colors" />
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );

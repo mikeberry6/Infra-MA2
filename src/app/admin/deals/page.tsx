@@ -3,11 +3,17 @@ export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import { DEAL_SECTOR_DISPLAY, DEAL_STATUS_DISPLAY } from "@/modules/shared/enum-maps";
 import Link from "next/link";
+import { ArrowLeft, Plus } from "lucide-react";
 import DeleteButton from "@/components/admin/DeleteButton";
 import ImportExportBar from "@/components/admin/ImportExportBar";
 import { deleteDeal } from "@/modules/admin/actions";
+export const metadata = { title: "Admin · Deals" };
 
-export const metadata = { title: "Admin - Deals" };
+const STATUS_DOT: Record<string, string> = {
+  PUBLISHED: "#10b981",
+  DRAFT: "#f59e0b",
+  ARCHIVED: "#a1a1aa",
+};
 
 export default async function AdminDealsPage() {
   const deals = await prisma.deal.findMany({
@@ -25,57 +31,68 @@ export default async function AdminDealsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-[#f3f3f3] text-[#1a1a1a] p-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
-          <div>
-            <Link href="/admin" className="text-sm text-[#71717A] hover:text-[#1a1a1a] mb-2 inline-block">&larr; Back to Admin</Link>
-            <h1 className="text-2xl font-bold">Deals</h1>
-          </div>
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-10">
+      <div className="flex items-end justify-between flex-wrap gap-4 mb-6">
+        <div>
           <Link
-            href="/admin/deals/new"
-            className="bg-[#008253] text-[#1a1a1a] px-4 py-2 rounded hover:bg-[#006d45] text-sm font-medium"
+            href="/admin"
+            className="inline-flex items-center gap-1.5 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors mb-2"
           >
-            New Deal
+            <ArrowLeft className="h-3 w-3" /> Admin
           </Link>
+          <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-primary)] tracking-tight">
+            Deals
+          </h1>
+          <p className="text-xs text-[var(--text-secondary)] mt-0.5">
+            <span className="mono tabular-nums">{deals.length.toLocaleString()}</span> total
+          </p>
         </div>
+        <Link
+          href="/admin/deals/new"
+          className="inline-flex items-center gap-1.5 h-8 px-3 rounded-md text-xs font-medium bg-[var(--accent)] text-[var(--text-on-accent)] hover:bg-[var(--accent-hover)] transition-colors"
+        >
+          <Plus className="h-3 w-3" /> New deal
+        </Link>
+      </div>
 
-        <ImportExportBar entityType="deals" />
+      <ImportExportBar entityType="deals" />
 
-        <table className="w-full text-sm mt-4">
+      <div className="surface overflow-hidden mt-4">
+        <table className="w-full text-left border-collapse whitespace-nowrap">
           <thead>
-            <tr className="border-b border-black/[0.08] text-[#71717A] text-left">
-              <th className="pb-2 pr-4">ID</th>
-              <th className="pb-2 pr-4">Target</th>
-              <th className="pb-2 pr-4">Sector</th>
-              <th className="pb-2 pr-4">Deal Status</th>
-              <th className="pb-2 pr-4">Record Status</th>
-              <th className="pb-2 pr-4">Date</th>
-              <th className="pb-2">Actions</th>
+            <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">ID</th>
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Target</th>
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Sector</th>
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Deal status</th>
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Record</th>
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Date</th>
+              <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Actions</th>
             </tr>
           </thead>
           <tbody>
             {deals.map((deal) => (
-              <tr key={deal.id} className="border-b border-[#1a1a1d] hover:bg-white">
-                <td className="py-2 pr-4 text-[#71717A] font-mono text-xs">{deal.legacyId}</td>
-                <td className="py-2 pr-4">{deal.target}</td>
-                <td className="py-2 pr-4 text-[#A1A1AA]">{DEAL_SECTOR_DISPLAY[deal.sector]}</td>
-                <td className="py-2 pr-4 text-[#A1A1AA]">{DEAL_STATUS_DISPLAY[deal.dealStatus]}</td>
-                <td className="py-2 pr-4">
-                  <span className={`text-xs px-1.5 py-0.5 rounded ${
-                    deal.status === "PUBLISHED" ? "bg-emerald-500/10 text-emerald-400" :
-                    deal.status === "DRAFT" ? "bg-amber-500/10 text-amber-400" :
-                    "bg-zinc-500/10 text-zinc-400"
-                  }`}>
+              <tr key={deal.id} className="border-b border-[var(--border)] hover:bg-[var(--bg-subtle)] transition-colors">
+                <td className="px-3 py-2.5 text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{deal.legacyId}</td>
+                <td className="px-3 py-2.5 text-[13px] text-[var(--text-primary)] font-medium truncate max-w-[280px]">{deal.target}</td>
+                <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{DEAL_SECTOR_DISPLAY[deal.sector]}</td>
+                <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{DEAL_STATUS_DISPLAY[deal.dealStatus]}</td>
+                <td className="px-3 py-2.5">
+                  <span className="inline-flex items-center gap-1.5 text-[11px] text-[var(--text-secondary)]">
+                    <span
+                      aria-hidden
+                      className="h-[5px] w-[5px] rounded-full"
+                      style={{ backgroundColor: STATUS_DOT[deal.status] ?? "#a1a1aa" }}
+                    />
                     {deal.status}
                   </span>
                 </td>
-                <td className="py-2 pr-4 text-[#71717A]">{deal.date.toLocaleDateString()}</td>
-                <td className="py-2">
-                  <div className="flex items-center gap-2">
+                <td className="px-3 py-2.5 text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{deal.date.toLocaleDateString()}</td>
+                <td className="px-3 py-2.5">
+                  <div className="flex items-center gap-1.5">
                     <Link
                       href={`/admin/deals/${deal.id}/edit`}
-                      className="text-xs px-2 py-1 rounded bg-[#008253]/10 text-[#818CF8] hover:bg-[#008253]/20"
+                      className="inline-flex h-7 px-2.5 items-center rounded-md text-[11px] font-medium bg-[var(--bg-hover)] text-[var(--text-primary)] hover:bg-[var(--border)] transition-colors"
                     >
                       Edit
                     </Link>
@@ -86,6 +103,9 @@ export default async function AdminDealsPage() {
             ))}
           </tbody>
         </table>
+        {deals.length === 0 && (
+          <div className="py-12 text-center text-sm text-[var(--text-tertiary)]">No deals yet.</div>
+        )}
       </div>
     </div>
   );
