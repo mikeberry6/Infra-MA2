@@ -484,12 +484,9 @@ function StatusBadge({ status }: { status: string }) {
 function AdvisorCard({
   label,
   firms,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  iconColor,
 }: {
   label: string;
   firms: string[];
-  iconColor: string;
 }) {
   return (
     <div className="surface p-3">
@@ -687,16 +684,16 @@ function DealDrawer({
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {deal.financialAdvisorBuyer && (
-                  <AdvisorCard label="Financial advisor (buyer)" firms={deal.financialAdvisorBuyer} iconColor="text-[var(--text-tertiary)]" />
+                  <AdvisorCard label="Financial advisor (buyer)" firms={deal.financialAdvisorBuyer} />
                 )}
                 {deal.financialAdvisorSeller && (
-                  <AdvisorCard label="Financial advisor (seller)" firms={deal.financialAdvisorSeller} iconColor="text-[var(--text-tertiary)]" />
+                  <AdvisorCard label="Financial advisor (seller)" firms={deal.financialAdvisorSeller} />
                 )}
                 {deal.legalAdvisorBuyer && (
-                  <AdvisorCard label="Legal counsel (buyer)" firms={deal.legalAdvisorBuyer} iconColor="text-[var(--text-tertiary)]" />
+                  <AdvisorCard label="Legal counsel (buyer)" firms={deal.legalAdvisorBuyer} />
                 )}
                 {deal.legalAdvisorSeller && (
-                  <AdvisorCard label="Legal counsel (seller)" firms={deal.legalAdvisorSeller} iconColor="text-[var(--text-tertiary)]" />
+                  <AdvisorCard label="Legal counsel (seller)" firms={deal.legalAdvisorSeller} />
                 )}
               </div>
             </div>
