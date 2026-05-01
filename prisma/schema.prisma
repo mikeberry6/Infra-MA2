@@ -36,20 +36,21 @@ enum OrgType {
 }
 
 model Organization {
-  id           String   @id @default(cuid())
-  name         String   @unique
+  id           String       @id @default(cuid())
+  name         String       @unique
   types        OrgType[]
   website      String?
   headquarters String?
   description  String?
   status       RecordStatus @default(PUBLISHED)
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
 
   managedFunds       Fund[]
   dealParticipations DealParticipant[]
   ownershipPeriods   OwnershipPeriod[]
   aliases            Alias[]
+  newsMentions       NewsMention[]
 
   @@index([name])
 }
@@ -119,13 +120,13 @@ enum FundRegionEnum {
 }
 
 model Fund {
-  id                 String          @id @default(cuid())
-  legacyId           String          @unique
+  id                 String           @id @default(cuid())
+  legacyId           String           @unique
   managerId          String
-  manager            Organization    @relation(fields: [managerId], references: [id])
-  fundName           String          @unique
+  manager            Organization     @relation(fields: [managerId], references: [id])
+  fundName           String           @unique
   ticker             String?
-  investmentStrategy String          @default("")
+  investmentStrategy String           @default("")
   size               String
   sizeUsdMm          Float?
   vintage            String
@@ -135,12 +136,13 @@ model Fund {
   sectors            FundSectorEnum[]
   regions            FundRegionEnum[]
   sourceUrls         String[]
-  strategyUrl        String          @default("")
-  status             RecordStatus    @default(PUBLISHED)
-  createdAt          DateTime        @default(now())
-  updatedAt          DateTime        @updatedAt
+  strategyUrl        String           @default("")
+  status             RecordStatus     @default(PUBLISHED)
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
 
   ownershipPeriods OwnershipPeriod[]
+  newsMentions     NewsMention[]
 
   @@index([managerId])
   @@index([fundName])
@@ -196,6 +198,7 @@ model Company {
   milestones       Milestone[]
   managementRoles  ManagementRole[]
   citations        Citation[]
+  newsMentions     NewsMention[]
 
   @@unique([name, country])
   @@index([name])
@@ -280,11 +283,11 @@ model Deal {
   targetDescription String         @default("")
   country           String         @default("")
 
-  enterpriseValue   String?
-  equityValue       String?
-  stake             String?
-  dealStatus        DealStatusEnum
-  closingDate       DateTime?
+  enterpriseValue String?
+  equityValue     String?
+  stake           String?
+  dealStatus      DealStatusEnum
+  closingDate     DateTime?
 
   assetScale        String?
   valuationMultiple String?
@@ -297,6 +300,7 @@ model Deal {
 
   participants DealParticipant[]
   citations    Citation[]
+  newsMentions NewsMention[]
 
   @@index([date])
   @@index([sector])
@@ -365,11 +369,11 @@ model Person {
 }
 
 model ManagementRole {
-  id        String   @id @default(cuid())
+  id        String    @id @default(cuid())
   personId  String
-  person    Person   @relation(fields: [personId], references: [id])
+  person    Person    @relation(fields: [personId], references: [id])
   companyId String
-  company   Company  @relation(fields: [companyId], references: [id])
+  company   Company   @relation(fields: [companyId], references: [id])
   title     String
   startDate DateTime?
   endDate   DateTime?
@@ -404,13 +408,84 @@ model Citation {
   sourceId  String
   source    Source   @relation(fields: [sourceId], references: [id])
   dealId    String?
-  deal      Deal?   @relation(fields: [dealId], references: [id])
+  deal      Deal?    @relation(fields: [dealId], references: [id])
   companyId String?
   company   Company? @relation(fields: [companyId], references: [id])
 
   @@index([sourceId])
   @@index([dealId])
   @@index([companyId])
+}
+
+// ── News Feed ──────────────────────────────────────────────
+
+enum NewsCategory {
+  TRANSACTION_ACTIVITY
+  FUNDRAISING_ACTIVITY
+  RUMORED_SALES_PROCESS
+}
+
+enum NewsMentionType {
+  COMPANY
+  FUND_MANAGER
+  FUND
+  DEAL
+}
+
+enum NewsConfidence {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+model NewsItem {
+  id          String         @id @default(cuid())
+  legacyId    String?        @unique
+  title       String
+  summary     String         @default("")
+  category    NewsCategory
+  sourceName  String         @default("")
+  sourceUrl   String?
+  publishedAt DateTime
+  isRumor     Boolean        @default(false)
+  confidence  NewsConfidence @default(HIGH)
+  status      RecordStatus   @default(PUBLISHED)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  mentions NewsMention[]
+
+  @@index([publishedAt])
+  @@index([category])
+  @@index([status])
+  @@index([sourceUrl])
+}
+
+model NewsMention {
+  id             String          @id @default(cuid())
+  newsItemId     String
+  newsItem       NewsItem        @relation(fields: [newsItemId], references: [id], onDelete: Cascade)
+  mentionType    NewsMentionType
+  label          String
+  confidence     NewsConfidence  @default(HIGH)
+  reason         String?
+  companyId      String?
+  company        Company?        @relation(fields: [companyId], references: [id])
+  fundId         String?
+  fund           Fund?           @relation(fields: [fundId], references: [id])
+  organizationId String?
+  organization   Organization?   @relation(fields: [organizationId], references: [id])
+  dealId         String?
+  deal           Deal?           @relation(fields: [dealId], references: [id])
+  createdAt      DateTime        @default(now())
+
+  @@unique([newsItemId, mentionType, label])
+  @@index([newsItemId])
+  @@index([companyId])
+  @@index([fundId])
+  @@index([organizationId])
+  @@index([dealId])
+  @@index([mentionType])
 }
 
 // ── User ───────────────────────────────────────────────

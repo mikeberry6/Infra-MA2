@@ -123,3 +123,41 @@ export interface DatabaseCounts {
   funds: number;
   portfolio: number;
 }
+
+export type NewsCategory =
+  | "Infrastructure Transaction Activity"
+  | "Infrastructure Fundraising Activity"
+  | "Rumored Infrastructure Sales Processes";
+
+export type NewsMentionType = "PortCo" | "Investment Firm" | "Fund" | "Deal";
+
+export type NewsConfidence = "High" | "Medium" | "Low";
+
+export interface NewsMentionView {
+  id: string;
+  label: string;
+  type: NewsMentionType;
+  href?: string;
+  confidence: NewsConfidence;
+  reason?: string;
+}
+
+export interface NewsItemView {
+  id: string;
+  title: string;
+  summary: string;
+  category: NewsCategory;
+  sourceName: string;
+  sourceUrl: string;
+  publishedAt: string;
+  isRumor: boolean;
+  confidence: NewsConfidence;
+  sector?: string;
+  region?: string;
+  mentions: NewsMentionView[];
+}
+
+export interface NewsFeedView {
+  items: NewsItemView[];
+  lastUpdated: string;
+}

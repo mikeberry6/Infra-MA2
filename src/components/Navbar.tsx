@@ -13,6 +13,7 @@ const navLinks = [
     matches: (p: string) =>
       p === "/" || p.startsWith("/tracker") || p.startsWith("/funds") || p.startsWith("/portfolio"),
   },
+  { href: "/news", label: "News Feed", matches: (p: string) => p.startsWith("/news") },
   { href: "/earnings", label: "Earnings", matches: (p: string) => p.startsWith("/earnings") },
   { href: "/search", label: "Search", matches: (p: string) => p.startsWith("/search") },
 ];
