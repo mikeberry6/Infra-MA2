@@ -17,14 +17,30 @@ const navLinks = [
   { href: "/search", label: "Search", matches: (p: string) => p.startsWith("/search") },
 ];
 
+const signalCells = [
+  "bg-[var(--accent)]",
+  "bg-[var(--gray-200)]",
+  "bg-[var(--gray-200)]",
+  "bg-[var(--gray-200)]",
+  "bg-[var(--accent)] opacity-75",
+  "bg-[var(--gray-200)]",
+  "bg-[var(--gray-200)]",
+  "bg-[var(--gray-200)]",
+  "bg-[var(--accent)] opacity-40",
+];
+
 function Wordmark({ className = "" }: { className?: string }) {
   return (
-    <Link href="/" className={`inline-flex items-center gap-2 group ${className}`}>
+    <Link href="/tracker" className={`inline-flex items-center gap-2.5 group ${className}`}>
       <span
         aria-hidden
-        className="h-2 w-2 rounded-full bg-[var(--accent)] transition-transform duration-200 group-hover:scale-110"
-      />
-      <span className="text-[15px] font-semibold tracking-tight text-[var(--text-primary)]">
+        className="grid h-6 w-6 grid-cols-3 gap-[2px] rounded-md border border-[var(--border)] bg-[var(--bg-app)] p-[3px] shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] transition-colors group-hover:border-[var(--border-strong)]"
+      >
+        {signalCells.map((cell, index) => (
+          <span key={index} className={`rounded-[1.5px] ${cell}`} />
+        ))}
+      </span>
+      <span className="text-[15px] font-semibold tracking-tight text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent)]">
         InfraSight
       </span>
     </Link>
@@ -37,7 +53,7 @@ export function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-[var(--bg-surface)] border-b border-[var(--border)]"
+      className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 shadow-[0_1px_0_rgba(17,17,20,0.02)] backdrop-blur-md"
       aria-label="Primary"
     >
       <div className="mx-auto flex h-14 max-w-[1280px] items-center justify-between gap-6 px-4 sm:px-6">
@@ -45,30 +61,26 @@ export function Navbar() {
         <Wordmark />
 
         {/* Desktop nav */}
-        <div className="hidden md:flex flex-1 items-center justify-center gap-1">
-          {navLinks.map((link) => {
-            const isActive = link.matches(pathname);
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={isActive ? "page" : undefined}
-                className={`relative inline-flex items-center h-14 px-3 text-sm font-medium transition-colors ${
-                  isActive
-                    ? "text-[var(--text-primary)]"
-                    : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-                }`}
-              >
-                {link.label}
-                {isActive && (
-                  <span
-                    aria-hidden
-                    className="absolute left-3 right-3 -bottom-px h-[2px] bg-[var(--accent)] rounded-full"
-                  />
-                )}
-              </Link>
-            );
-          })}
+        <div className="hidden md:flex flex-1 items-center justify-center">
+          <div className="inline-flex items-center gap-0.5 rounded-lg border border-[var(--border)] bg-[var(--bg-app)] p-0.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)]">
+            {navLinks.map((link) => {
+              const isActive = link.matches(pathname);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`inline-flex h-8 items-center rounded-md border px-3 text-xs font-medium transition-colors ${
+                    isActive
+                      ? "border-[var(--border)] bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.05)]"
+                      : "border-transparent text-[var(--text-secondary)] hover:bg-[var(--bg-surface)] hover:text-[var(--text-primary)]"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
         </div>
 
         {/* Desktop right cluster */}
@@ -83,14 +95,14 @@ export function Navbar() {
               type="search"
               name="q"
               leadingIcon={<Search />}
-              placeholder="Search deals, funds, companies"
+              placeholder="Search deals, funds, PortCos"
               aria-label="Search"
             />
           </form>
           <Link
             href="/login"
             aria-label="Account"
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] transition-colors"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-transparent text-[var(--text-secondary)] transition-colors hover:border-[var(--border)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
           >
             <User className="h-4 w-4" />
           </Link>
@@ -138,7 +150,7 @@ export function Navbar() {
                   aria-current={isActive ? "page" : undefined}
                   className={`block px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
                     isActive
-                      ? "bg-[var(--bg-hover)] text-[var(--text-primary)]"
+                      ? "bg-[var(--bg-hover)] text-[var(--text-primary)] shadow-[inset_2px_0_0_var(--accent)]"
                       : "text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
                   }`}
                 >
