@@ -1309,7 +1309,7 @@ export const funds: Fund[] = [
 
 // ─── Build-Time Data Validation ─────────────────────────────
 
-function validateFundData(): void {
+export function validateFundData(): string[] {
   const errors: string[] = [];
   const idSet = new Set<string>();
   const EXPECTED_COUNT = 149;
@@ -1324,9 +1324,6 @@ function validateFundData(): void {
     if (!fund.fundName) errors.push(`${fund.id}: missing fundName`);
     if (!fund.vintage) errors.push(`${fund.id}: missing vintage`);
     if (fund.strategies.length === 0) errors.push(`${fund.id}: no strategies`);
-
-    // Source URLs present
-    if (fund.sourceUrls.length === 0) errors.push(`${fund.id} (${fund.fundName}): no sourceUrls`);
 
     // Rationale present
     if (!fund.investmentStrategy) errors.push(`${fund.id} (${fund.fundName}): missing investmentStrategy`);
@@ -1349,9 +1346,5 @@ function validateFundData(): void {
     errors.push(`Expected ${EXPECTED_COUNT} funds, got ${funds.length}`);
   }
 
-  if (errors.length > 0) {
-    console.error(`Fund data validation failed (${errors.length} issue(s)):\n${errors.join("\n")}`);
-  }
+  return errors;
 }
-
-validateFundData();

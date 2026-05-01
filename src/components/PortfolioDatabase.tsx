@@ -304,19 +304,14 @@ function PortCoTable({
 
   const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
     <th
-      role="button"
-      tabIndex={0}
-      onClick={() => toggleSort(field)}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          toggleSort(field);
-        }
-      }}
       aria-sort={sortField === field ? (sortAsc ? "ascending" : "descending") : "none"}
-      className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
+      className="text-left px-3 py-2"
     >
-      <span className="inline-flex items-center gap-1">
+      <button
+        type="button"
+        onClick={() => toggleSort(field)}
+        className="inline-flex items-center gap-1 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
+      >
         {label}
         {sortField === field && (
           <ArrowDown
@@ -324,7 +319,7 @@ function PortCoTable({
             strokeWidth={1.75}
           />
         )}
-      </span>
+      </button>
     </th>
   );
 

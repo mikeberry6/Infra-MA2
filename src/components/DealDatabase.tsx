@@ -341,22 +341,17 @@ function DealTable({
             <thead>
               <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
                 <th
-                  role="button"
-                  tabIndex={0}
-                  onClick={toggleSort}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      toggleSort();
-                    }
-                  }}
                   aria-sort={sortDir === "asc" ? "ascending" : "descending"}
-                  className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors w-[100px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
+                  className="text-left px-3 py-2 w-[100px]"
                 >
-                  <span className="inline-flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={toggleSort}
+                    className="inline-flex items-center gap-1 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider hover:text-[var(--text-primary)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
+                  >
                     Date
                     <ArrowUpDown className="h-2.5 w-2.5" strokeWidth={1.75} />
-                  </span>
+                  </button>
                 </th>
                 <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
                   Target / Seller

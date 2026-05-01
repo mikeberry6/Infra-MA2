@@ -1,149 +1,136 @@
 /**
- * Portfolio Company Validation Script
+ * Portfolio company validation for the current seed-data architecture.
  *
- * Checks for:
- * 1. Cross-fund consistency (same company in multiple funds should have identical data)
- * 2. Source URL coverage
- * 3. Financial data completeness
- * 4. Missing descriptions / subsectors
- *
- * Run: npx tsx scripts/validate-portfolios.ts
+ * This replaces the retired `src/data/portfolios` validator. It validates the
+ * canonical seed files under `prisma/seed-data` and reports known enrichment
+ * gaps separately from hard structural failures.
  */
 
-import { PORTFOLIO_DATA } from "../src/data/portfolios";
-import type { PortfolioCompany } from "../src/data/funds";
+import { companies } from "../prisma/seed-data/companies";
+import { funds, validateFundData } from "../prisma/seed-data/funds";
+import {
+  PORTCO_REGIONS,
+  PORTCO_SECTORS,
+  PORTCO_STATUSES,
+  type PortCo,
+  type PortCoOwner,
+} from "../prisma/seed-data/portco-types";
 
-interface CompanyInstance {
-  fundId: string;
-  company: PortfolioCompany;
+const errors: string[] = [];
+const warnings: string[] = [];
+
+function addError(message: string) {
+  errors.push(message);
 }
 
-// Collect all instances grouped by company name
-const companyMap = new Map<string, CompanyInstance[]>();
+function addWarning(message: string) {
+  warnings.push(message);
+}
 
-for (const [fundId, companies] of Object.entries(PORTFOLIO_DATA)) {
-  for (const company of companies) {
-    const key = company.name;
-    if (!companyMap.has(key)) {
-      companyMap.set(key, []);
-    }
-    companyMap.get(key)!.push({ fundId, company });
+function validUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === "https:" || parsed.protocol === "http:";
+  } catch {
+    return false;
   }
 }
 
-const totalEntries = Object.values(PORTFOLIO_DATA).reduce((s, arr) => s + arr.length, 0);
-const uniqueCompanies = companyMap.size;
-
-// --- Check 1: Cross-fund consistency ---
-const inconsistencies: { name: string; field: string; values: { fundId: string; value: string }[] }[] = [];
-const fieldsToCheck: (keyof PortfolioCompany)[] = ["sector", "subsector", "region", "country", "description"];
-
-for (const [name, instances] of companyMap) {
-  if (instances.length < 2) continue;
-  for (const field of fieldsToCheck) {
-    const values = instances.map((inst) => ({
-      fundId: inst.fundId,
-      value: String(inst.company[field] ?? ""),
-    }));
-    const uniqueValues = new Set(values.map((v) => v.value));
-    if (uniqueValues.size > 1) {
-      inconsistencies.push({ name, field, values });
-    }
-  }
+function ownersFor(company: PortCo): PortCoOwner[] {
+  if (company.owners?.length) return company.owners;
+  return [
+    {
+      investmentFirm: company.investmentFirm,
+      ownershipVehicle: company.ownershipVehicle,
+      investmentYear: company.investmentYear,
+      status: company.status,
+    },
+  ];
 }
 
-// --- Check 2: Source URL coverage ---
-const withSources: string[] = [];
-const withoutSources: string[] = [];
+const fundNames = new Set(funds.map((fund) => fund.fundName));
+const seenCompanyKeys = new Map<string, number>();
+const seenSourceUrls = new Set<string>();
 
-for (const [name, instances] of companyMap) {
-  const hasSources = instances.some(
-    (inst) => inst.company.sourceUrls && inst.company.sourceUrls.length > 0
-  );
-  if (hasSources) {
-    withSources.push(name);
+for (const fundError of validateFundData()) {
+  addError(`funds: ${fundError}`);
+}
+
+for (const [index, company] of companies.entries()) {
+  const label = `${company.name || `(row ${index + 1})`} / ${company.country || "unknown country"}`;
+  const key = `${company.name}||${company.country}`;
+  seenCompanyKeys.set(key, (seenCompanyKeys.get(key) ?? 0) + 1);
+
+  if (!company.name) addError(`${label}: missing name`);
+  if (!company.investmentFirm) addError(`${label}: missing investmentFirm`);
+  if (!company.ownershipVehicle) addWarning(`${label}: missing ownershipVehicle`);
+  if (!company.description) addError(`${label}: missing description`);
+  if (!company.country) addError(`${label}: missing country`);
+  if (!PORTCO_SECTORS.includes(company.sector)) addError(`${label}: invalid sector "${company.sector}"`);
+  if (!PORTCO_REGIONS.includes(company.region)) addError(`${label}: invalid region "${company.region}"`);
+  if (!PORTCO_STATUSES.includes(company.status)) addError(`${label}: invalid status "${company.status}"`);
+
+  if (!company.sources?.length) {
+    addWarning(`${label}: no sources`);
   } else {
-    withoutSources.push(name);
-  }
-}
-
-// --- Check 3: Financial data ---
-const withFinancials: string[] = [];
-const withoutFinancials: string[] = [];
-
-for (const [name, instances] of companyMap) {
-  const hasFinancials = instances.some(
-    (inst) =>
-      inst.company.financials &&
-      Object.values(inst.company.financials).some((v) => v !== undefined)
-  );
-  if (hasFinancials) {
-    withFinancials.push(name);
-  } else {
-    withoutFinancials.push(name);
-  }
-}
-
-// --- Check 4: Missing descriptions / subsectors ---
-const missingDescriptions: string[] = [];
-const missingSubsectors: string[] = [];
-
-for (const [name, instances] of companyMap) {
-  if (instances.every((inst) => !inst.company.description)) {
-    missingDescriptions.push(name);
-  }
-  if (instances.every((inst) => !inst.company.subsector)) {
-    missingSubsectors.push(name);
-  }
-}
-
-// --- Output Report ---
-console.log("═══════════════════════════════════════════════════════════");
-console.log("  PORTFOLIO COMPANY VALIDATION REPORT");
-console.log("═══════════════════════════════════════════════════════════\n");
-
-console.log(`  Total entries:       ${totalEntries}`);
-console.log(`  Unique companies:    ${uniqueCompanies}`);
-console.log(`  Duplicates:          ${totalEntries - uniqueCompanies} entries across ${[...companyMap.values()].filter((v) => v.length > 1).length} companies\n`);
-
-const sourcePct = ((withSources.length / uniqueCompanies) * 100).toFixed(1);
-const finPct = ((withFinancials.length / uniqueCompanies) * 100).toFixed(1);
-
-console.log("─── Coverage ───────────────────────────────────────────");
-console.log(`  Source URLs:         ${withSources.length} / ${uniqueCompanies} (${sourcePct}%)`);
-console.log(`  Financial data:      ${withFinancials.length} / ${uniqueCompanies} (${finPct}%)`);
-console.log(`  Missing description: ${missingDescriptions.length}`);
-console.log(`  Missing subsector:   ${missingSubsectors.length}\n`);
-
-if (inconsistencies.length > 0) {
-  console.log("─── Cross-Fund Inconsistencies ─────────────────────────");
-  for (const inc of inconsistencies) {
-    console.log(`\n  ${inc.name} [${inc.field}]:`);
-    for (const v of inc.values) {
-      console.log(`    ${v.fundId}: "${v.value}"`);
+    for (const source of company.sources) {
+      if (!source.label) addError(`${label}: source without label`);
+      if (!source.url || !validUrl(source.url)) addError(`${label}: invalid source URL "${source.url}"`);
+      if (source.url) seenSourceUrls.add(source.url);
     }
   }
-  console.log();
-} else {
-  console.log("─── Cross-Fund Inconsistencies ─────────────────────────");
-  console.log("  None found.\n");
-}
 
-if (withoutSources.length > 0 && withoutSources.length <= 50) {
-  console.log("─── Companies Without Source URLs ───────────────────────");
-  for (const name of withoutSources.sort()) {
-    console.log(`  - ${name}`);
+  if (!company.milestones?.length) {
+    addWarning(`${label}: no milestones`);
+  } else {
+    const milestoneKeys = new Set<string>();
+    for (const milestone of company.milestones) {
+      if (!milestone.date) addError(`${label}: milestone without date`);
+      if (!milestone.event) addError(`${label}: milestone without event`);
+      const milestoneKey = `${milestone.date}|${milestone.event}`;
+      if (milestoneKeys.has(milestoneKey)) addWarning(`${label}: duplicate milestone "${milestoneKey}"`);
+      milestoneKeys.add(milestoneKey);
+    }
   }
-  console.log();
-} else if (withoutSources.length > 50) {
-  console.log("─── Companies Without Source URLs ───────────────────────");
-  console.log(`  ${withoutSources.length} companies (too many to list)\n`);
+
+  if (!company.management?.length) addWarning(`${label}: no management records`);
+
+  for (const owner of ownersFor(company)) {
+    if (!owner.investmentFirm) addError(`${label}: owner missing investmentFirm`);
+    if (!owner.ownershipVehicle) addWarning(`${label}: owner missing ownershipVehicle`);
+    if (!PORTCO_STATUSES.includes(owner.status)) addError(`${label}: owner has invalid status "${owner.status}"`);
+    if (owner.ownershipVehicle && !fundNames.has(owner.ownershipVehicle)) {
+      addWarning(`${label}: ownershipVehicle does not exactly match a fund name: "${owner.ownershipVehicle}"`);
+    }
+  }
 }
 
-// Summary
-const issues = inconsistencies.length + missingDescriptions.length;
-if (issues === 0 && withoutSources.length === 0) {
-  console.log("✓ All checks passed!\n");
+for (const [key, count] of seenCompanyKeys) {
+  if (count > 1) addError(`duplicate company name/country key: ${key} (${count} rows)`);
+}
+
+console.log("Portfolio Company Validation Report");
+console.log("===================================");
+console.log(`Companies: ${companies.length}`);
+console.log(`Funds: ${funds.length}`);
+console.log(`Unique source URLs: ${seenSourceUrls.size}`);
+console.log(`Errors: ${errors.length}`);
+console.log(`Warnings: ${warnings.length}`);
+
+if (errors.length) {
+  console.log("\nErrors:");
+  for (const error of errors.slice(0, 80)) console.log(`  - ${error}`);
+  if (errors.length > 80) console.log(`  ...and ${errors.length - 80} more`);
+}
+
+if (warnings.length) {
+  console.log("\nWarnings:");
+  for (const warning of warnings.slice(0, 80)) console.log(`  - ${warning}`);
+  if (warnings.length > 80) console.log(`  ...and ${warnings.length - 80} more`);
+}
+
+if (errors.length) {
+  process.exitCode = 1;
 } else {
-  console.log(`Summary: ${inconsistencies.length} inconsistencies, ${withoutSources.length} missing sources, ${missingDescriptions.length} missing descriptions\n`);
+  console.log("\nNo structural errors found.");
 }

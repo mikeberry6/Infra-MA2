@@ -17,8 +17,8 @@
  * ingest runs — splitting prose into individual firms happens in
  * `ingest-ownership-corrections.ts`.
  */
-import { readFileSync, writeFileSync } from "node:fs";
-import * as XLSX from "xlsx";
+import { writeFileSync } from "node:fs";
+import ExcelJS from "exceljs";
 
 const xlsxPath = process.argv[2];
 const outPath = process.argv[3];
@@ -30,27 +30,41 @@ if (!xlsxPath) {
   process.exit(1);
 }
 
-const wb = XLSX.read(readFileSync(xlsxPath));
-const changesSheet = wb.Sheets["High Conviction Changes"];
-const sourcesSheet = wb.Sheets["Sources"];
+function stringifyCellValue(value: ExcelJS.CellValue): string {
+  if (value == null) return "";
+  if (value instanceof Date) return value.toISOString().slice(0, 10);
+  if (typeof value !== "object") return String(value);
+  if ("richText" in value) {
+    return value.richText.map((part) => part.text).join("");
+  }
+  if ("text" in value) return String(value.text ?? "");
+  if ("result" in value) return stringifyCellValue(value.result as ExcelJS.CellValue);
+  return String(value);
+}
+
+function cellText(row: ExcelJS.Row, column: number): string {
+  return stringifyCellValue(row.getCell(column).value).trim();
+}
+
+// ── Parse Sources sheet ───────────────────────────────────────
+// Header at row 4 (0-indexed row 3): Source Row | Company | Current Owner URL(s) | Past Owner URL(s) | ...
+const workbook = new ExcelJS.Workbook();
+await workbook.xlsx.readFile(xlsxPath);
+
+const changesSheet = workbook.getWorksheet("High Conviction Changes");
+const sourcesSheet = workbook.getWorksheet("Sources");
 if (!changesSheet || !sourcesSheet) {
   console.error("Expected sheets: 'High Conviction Changes' and 'Sources'");
   process.exit(1);
 }
 
-// ── Parse Sources sheet ───────────────────────────────────────
-// Header at row 4 (0-indexed row 3): Source Row | Company | Current Owner URL(s) | Past Owner URL(s) | ...
 const sourcesByRow = new Map<string, string[]>();
-const sourcesRows = XLSX.utils.sheet_to_json<unknown[]>(sourcesSheet, {
-  header: 1,
-  defval: "",
-});
-for (let i = 4; i < sourcesRows.length; i++) {
-  const row = sourcesRows[i];
-  if (!row || !row[0]) continue;
-  const sourceRow = String(row[0]).trim();
-  const ownerUrls = String(row[2] || "");
-  const pastUrls = String(row[3] || "");
+for (let rowNumber = 5; rowNumber <= sourcesSheet.rowCount; rowNumber++) {
+  const row = sourcesSheet.getRow(rowNumber);
+  const sourceRow = cellText(row, 1);
+  if (!sourceRow) continue;
+  const ownerUrls = cellText(row, 3);
+  const pastUrls = cellText(row, 4);
   const urls = new Set<string>();
   for (const blob of [ownerUrls, pastUrls]) {
     for (const part of blob.split(/[;\n]+/)) {
@@ -89,29 +103,23 @@ interface Out {
   sources: string[];
 }
 
-const changesRows = XLSX.utils.sheet_to_json<unknown[]>(changesSheet, {
-  header: 1,
-  defval: "",
-});
-
 const out: Out[] = [];
-for (let i = 11; i < changesRows.length; i++) {
-  const row = changesRows[i];
-  if (!row) continue;
-  const company = String(row[0] || "").trim();
+for (let rowNumber = 12; rowNumber <= changesSheet.rowCount; rowNumber++) {
+  const row = changesSheet.getRow(rowNumber);
+  const company = cellText(row, 1);
   if (!company) continue;
-  const sourceRow = String(row[9] || "").trim();
+  const sourceRow = cellText(row, 10);
   out.push({
     sourceRow,
     company,
-    changeType: changeTypeToken(String(row[1] || "")),
-    originalFirm: String(row[2] || "").trim(),
-    revisedOwnersRaw: String(row[3] || "").trim(),
-    pastOwnersRaw: String(row[4] || "").trim(),
-    rationale: String(row[5] || "").trim(),
-    ownerEvidenceDate: String(row[6] || "").trim(),
-    transactionDate: String(row[7] || "").trim(),
-    confidence: String(row[8] || "").trim(),
+    changeType: changeTypeToken(cellText(row, 2)),
+    originalFirm: cellText(row, 3),
+    revisedOwnersRaw: cellText(row, 4),
+    pastOwnersRaw: cellText(row, 5),
+    rationale: cellText(row, 6),
+    ownerEvidenceDate: cellText(row, 7),
+    transactionDate: cellText(row, 8),
+    confidence: cellText(row, 9),
     sources: sourcesByRow.get(sourceRow) ?? [],
   });
 }

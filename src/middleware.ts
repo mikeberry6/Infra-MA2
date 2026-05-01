@@ -23,9 +23,10 @@ export async function middleware(request: NextRequest) {
   const role = (token?.role as string | undefined) ?? null;
 
   if (pathname.startsWith("/admin") && role !== "ADMIN") {
-    const homeUrl = request.nextUrl.clone();
-    homeUrl.pathname = "/";
-    return NextResponse.redirect(homeUrl);
+    const loginUrl = request.nextUrl.clone();
+    loginUrl.pathname = "/login";
+    loginUrl.searchParams.set("callbackUrl", request.nextUrl.pathname + request.nextUrl.search);
+    return NextResponse.redirect(loginUrl);
   }
 
   if (pathname.startsWith("/api/imports") && role !== "ADMIN") {
