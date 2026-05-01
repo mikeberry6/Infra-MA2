@@ -1,47 +1,73 @@
 import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
-import { deals } from "../src/data/deals";
-import { funds } from "../src/data/funds";
-import { companies as portcos } from "../src/data/portcos/companies";
+import { PrismaNeonHttp } from "@prisma/adapter-neon";
+import { deals } from "./seed-data/deals";
+import { funds } from "./seed-data/funds";
+import { companies as portcos } from "./seed-data/companies";
 
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
+const connectionString = process.env.DATABASE_URL;
+
+if (!connectionString) {
+  console.error("DATABASE_URL is not set.");
+  process.exit(1);
+}
+
+const adapter = new PrismaNeonHttp(connectionString, { arrayMode: false, fullResults: true });
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
-  console.log("🔍 Verifying database seed...\n");
+  console.log("Verifying database seed...\n");
 
   let allPassed = true;
 
   function check(label: string, expected: number, actual: number) {
     const passed = actual >= expected;
-    const icon = passed ? "✅" : "❌";
-    console.log(`  ${icon} ${label}: expected ≥${expected}, got ${actual}`);
+    console.log(`  ${passed ? "OK" : "FAIL"} ${label}: expected >=${expected}, got ${actual}`);
     if (!passed) allPassed = false;
   }
 
-  // ── Record counts ──────────────────────────────────────────
+  function exact(label: string, expected: number, actual: number) {
+    const passed = actual === expected;
+    console.log(`  ${passed ? "OK" : "FAIL"} ${label}: expected ${expected}, got ${actual}`);
+    if (!passed) allPassed = false;
+  }
 
   console.log("Record counts:");
-  const orgCount = await prisma.organization.count();
-  const aliasCount = await prisma.alias.count();
-  const fundCount = await prisma.fund.count();
-  const companyCount = await prisma.company.count();
-  const ownershipCount = await prisma.ownershipPeriod.count();
-  const milestoneCount = await prisma.milestone.count();
-  const personCount = await prisma.person.count();
-  const roleCount = await prisma.managementRole.count();
-  const dealCount = await prisma.deal.count();
-  const participantCount = await prisma.dealParticipant.count();
-  const sourceCount = await prisma.source.count();
-  const citationCount = await prisma.citation.count();
-  const userCount = await prisma.user.count();
+  const [
+    orgCount,
+    aliasCount,
+    fundCount,
+    companyCount,
+    ownershipCount,
+    milestoneCount,
+    personCount,
+    roleCount,
+    dealCount,
+    participantCount,
+    sourceCount,
+    citationCount,
+    userCount,
+  ] = await Promise.all([
+    prisma.organization.count(),
+    prisma.alias.count(),
+    prisma.fund.count(),
+    prisma.company.count(),
+    prisma.ownershipPeriod.count(),
+    prisma.milestone.count(),
+    prisma.person.count(),
+    prisma.managementRole.count(),
+    prisma.deal.count(),
+    prisma.dealParticipant.count(),
+    prisma.source.count(),
+    prisma.citation.count(),
+    prisma.user.count(),
+  ]);
 
   check("Organizations", 50, orgCount);
-  check("Funds", funds.length, fundCount);
-  check("Companies", 100, companyCount); // Some portcos may dedup
-  check("Deals", deals.length, dealCount);
-  check("Deal Participants", deals.length, participantCount); // At least 1 per deal
+  exact("Funds", funds.length, fundCount);
+  check("Companies", Math.floor(portcos.length * 0.9), companyCount);
+  exact("Deals", deals.length, dealCount);
+  check("Deal participants", deals.length, participantCount);
   check("Users", 1, userCount);
 
   console.log(`\n  Aliases: ${aliasCount}`);
@@ -52,45 +78,68 @@ async function main() {
   console.log(`  Sources: ${sourceCount}`);
   console.log(`  Citations: ${citationCount}`);
 
-  // ── Integrity checks ──────────────────────────────────────
-
   console.log("\nIntegrity checks:");
 
-  // Every fund has a manager
-  const fundsWithoutManager = await prisma.fund.count({
-    where: { manager: null as any },
-  });
-  check("Funds with manager", fundCount, fundCount - fundsWithoutManager);
+  const [
+    dealsWithBuyer,
+    dealsWithCitation,
+    companiesWithOwnership,
+    companiesWithMilestones,
+    ownershipsWithoutInvestor,
+    duplicateCompanyKeys,
+    duplicateDealLegacyIds,
+    duplicateFundLegacyIds,
+  ] = await Promise.all([
+    prisma.deal.count({ where: { participants: { some: { role: "BUYER" } } } }),
+    prisma.deal.count({ where: { citations: { some: {} } } }),
+    prisma.company.count({ where: { ownershipPeriods: { some: {} } } }),
+    prisma.company.count({ where: { milestones: { some: {} } } }),
+    prisma.ownershipPeriod.count({ where: { fundId: null, organizationId: null } }),
+    prisma.$queryRaw<Array<{ count: bigint }>>`
+      SELECT COUNT(*)::bigint AS count
+      FROM (
+        SELECT name, country
+        FROM "Company"
+        GROUP BY name, country
+        HAVING COUNT(*) > 1
+      ) duplicates
+    `,
+    prisma.$queryRaw<Array<{ count: bigint }>>`
+      SELECT COUNT(*)::bigint AS count
+      FROM (
+        SELECT "legacyId"
+        FROM "Deal"
+        GROUP BY "legacyId"
+        HAVING COUNT(*) > 1
+      ) duplicates
+    `,
+    prisma.$queryRaw<Array<{ count: bigint }>>`
+      SELECT COUNT(*)::bigint AS count
+      FROM (
+        SELECT "legacyId"
+        FROM "Fund"
+        GROUP BY "legacyId"
+        HAVING COUNT(*) > 1
+      ) duplicates
+    `,
+  ]);
 
-  // Every deal has at least one BUYER participant
-  const dealsWithBuyer = await prisma.deal.count({
-    where: {
-      participants: {
-        some: { role: "BUYER" },
-      },
-    },
-  });
-  check("Deals with buyer", Math.floor(dealCount * 0.9), dealsWithBuyer);
+  check("Deals with buyer", Math.floor(dealCount * 0.95), dealsWithBuyer);
+  check("Deals with citation", Math.floor(dealCount * 0.85), dealsWithCitation);
+  check("Companies with ownership", Math.floor(companyCount * 0.95), companiesWithOwnership);
+  check("Companies with milestones", Math.floor(companyCount * 0.95), companiesWithMilestones);
+  exact("Ownerships without fund or organization", 0, ownershipsWithoutInvestor);
+  exact("Duplicate company name/country keys", 0, Number(duplicateCompanyKeys[0]?.count ?? 0));
+  exact("Duplicate deal legacy IDs", 0, Number(duplicateDealLegacyIds[0]?.count ?? 0));
+  exact("Duplicate fund legacy IDs", 0, Number(duplicateFundLegacyIds[0]?.count ?? 0));
 
-  // Every ownership period has valid fund and company
-  const orphanedOwnership = await prisma.ownershipPeriod.count({
-    where: {
-      OR: [
-        { fund: null as any },
-        { company: null as any },
-      ],
-    },
-  });
-  check("Ownership integrity", ownershipCount, ownershipCount - orphanedOwnership);
-
-  // ── Summary ───────────────────────────────────────────────
-
-  console.log("\n" + (allPassed ? "✅ All checks passed!" : "❌ Some checks failed."));
+  console.log("\n" + (allPassed ? "All checks passed." : "Some checks failed."));
+  if (!allPassed) process.exit(1);
 }
 
 main()
-  .catch((e) => {
-    console.error("Verification failed:", e);
+  .catch((error) => {
+    console.error("Verification failed:", error);
     process.exit(1);
   })
   .finally(async () => {

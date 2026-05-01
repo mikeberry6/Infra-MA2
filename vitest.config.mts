@@ -17,13 +17,6 @@ export default defineConfig({
     ],
     globals: false,
     setupFiles: ["./vitest.setup.ts"],
-    // node for pure utilities (default), jsdom for DOM-dependent component tests
-    environment: "node",
-    environmentMatchGlobs: [
-      ["src/components/**/*.test.tsx", "jsdom"],
-      ["src/components/**/*.test.ts", "jsdom"],
-      ["src/hooks/**/*.test.tsx", "jsdom"],
-      ["src/hooks/**/*.test.ts", "jsdom"],
-    ],
+    environment: "jsdom",
   },
 });

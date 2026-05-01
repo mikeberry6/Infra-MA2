@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/", label: "Deals", matches: (p: string) => p === "/" || p === "/tracker" },
   { href: "/funds", label: "Funds", matches: (p: string) => p.startsWith("/funds") },
   { href: "/portfolio", label: "Portfolio", matches: (p: string) => p.startsWith("/portfolio") },
+  { href: "/earnings", label: "Earnings", matches: (p: string) => p.startsWith("/earnings") },
   { href: "/search", label: "Search", matches: (p: string) => p.startsWith("/search") },
 ];
 
@@ -83,13 +84,13 @@ export function Navbar() {
               aria-label="Search"
             />
           </form>
-          <button
-            type="button"
+          <Link
+            href="/login"
             aria-label="Account"
             className="inline-flex h-8 w-8 items-center justify-center rounded-md text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] transition-colors"
           >
             <User className="h-4 w-4" />
-          </button>
+          </Link>
         </div>
 
         {/* Mobile hamburger */}

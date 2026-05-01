@@ -478,21 +478,16 @@ function AllFundsTable({
               {sortableFields.map(({ field, label, idx }) => (
                 <th
                   key={field}
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => toggleSort(field)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      toggleSort(field);
-                    }
-                  }}
                   aria-sort={sortField === field ? (sortAsc ? "ascending" : "descending") : "none"}
-                  className={`px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider cursor-pointer hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm ${
+                  className={`px-3 py-2 ${
                     idx >= 2 ? "text-right" : "text-left"
                   }`}
                 >
-                  <span className={`inline-flex items-center gap-1 ${idx >= 2 ? "justify-end w-full" : ""}`}>
+                  <button
+                    type="button"
+                    onClick={() => toggleSort(field)}
+                    className={`inline-flex items-center gap-1 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm ${idx >= 2 ? "justify-end w-full" : ""}`}
+                  >
                     {label}
                     {sortField === field && (
                       <ArrowDown
@@ -500,7 +495,7 @@ function AllFundsTable({
                         strokeWidth={1.75}
                       />
                     )}
-                  </span>
+                  </button>
                 </th>
               ))}
               <th className="px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider text-right select-none">

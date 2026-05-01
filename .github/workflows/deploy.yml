@@ -2,9 +2,9 @@ name: CI Build
 
 on:
   push:
-    branches: ["main", "master", "claude/**"]
+    branches: ["main", "master", "claude/**", "codex/**"]
   pull_request:
-    branches: ["main", "master"]
+    branches: ["main", "master", "claude/infratracker-platform-FCgI9"]
   workflow_dispatch:
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "24"
           cache: "npm"
 
       - name: Install dependencies
