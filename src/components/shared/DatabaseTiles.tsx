@@ -12,9 +12,24 @@ interface DatabaseTilesProps {
 }
 
 const tiles = [
-  { href: "/", key: "deals" as const, label: "Deals" },
-  { href: "/funds", key: "funds" as const, label: "Funds" },
-  { href: "/portfolio", key: "portfolio" as const, label: "Portfolio" },
+  {
+    href: "/tracker",
+    key: "deals" as const,
+    label: "Deals",
+    matches: (pathname: string) => pathname === "/" || pathname.startsWith("/tracker"),
+  },
+  {
+    href: "/funds",
+    key: "funds" as const,
+    label: "Funds",
+    matches: (pathname: string) => pathname.startsWith("/funds"),
+  },
+  {
+    href: "/portfolio",
+    key: "portfolio" as const,
+    label: "PortCos",
+    matches: (pathname: string) => pathname.startsWith("/portfolio"),
+  },
 ];
 
 /**
@@ -31,7 +46,7 @@ export function DatabaseTiles({ counts }: DatabaseTilesProps) {
       className="inline-flex items-center gap-1 p-1 rounded-lg bg-[var(--bg-hover)]"
     >
       {tiles.map((tile) => {
-        const isActive = pathname === tile.href;
+        const isActive = tile.matches(pathname);
         return (
           <Link
             key={tile.key}

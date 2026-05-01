@@ -7,7 +7,7 @@ import { getDatabaseCounts } from "@/modules/insights/queries";
 import { PortfolioDatabaseClient } from "@/components/PortfolioDatabaseClient";
 
 export const metadata: Metadata = {
-  title: "Portfolio Companies",
+  title: "PortCos",
 };
 
 export default async function PortfolioPage() {
