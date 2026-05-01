@@ -500,7 +500,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
       <div className="flex items-end justify-between flex-wrap gap-4 mb-5">
         <div>
           <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-primary)] tracking-tight">
-            Portfolio companies
+            PortCos
           </h1>
           <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-0.5">
             <span className="mono tabular-nums text-[var(--text-primary)] font-medium">{filteredCompanies.length.toLocaleString()}</span>

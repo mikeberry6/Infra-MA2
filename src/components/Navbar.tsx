@@ -7,9 +7,12 @@ import { Menu, X, Search, User } from "lucide-react";
 import { TextInput } from "@/components/shared/TextInput";
 
 const navLinks = [
-  { href: "/", label: "Deals", matches: (p: string) => p === "/" || p === "/tracker" },
-  { href: "/funds", label: "Funds", matches: (p: string) => p.startsWith("/funds") },
-  { href: "/portfolio", label: "Portfolio", matches: (p: string) => p.startsWith("/portfolio") },
+  {
+    href: "/tracker",
+    label: "Database",
+    matches: (p: string) =>
+      p === "/" || p.startsWith("/tracker") || p.startsWith("/funds") || p.startsWith("/portfolio"),
+  },
   { href: "/earnings", label: "Earnings", matches: (p: string) => p.startsWith("/earnings") },
   { href: "/search", label: "Search", matches: (p: string) => p.startsWith("/search") },
 ];
