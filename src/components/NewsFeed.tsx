@@ -40,10 +40,23 @@ const MENTION_COLORS: Record<NewsMentionType, string> = {
   Deal: "#d98b1c",
 };
 
+type NewsCounts = {
+  total: number;
+  transactions: number;
+  fundraising: number;
+  rumors: number;
+};
+
 function categoryIcon(category: NewsCategory) {
   if (category === "Infrastructure Fundraising Activity") return DollarSign;
   if (category === "Rumored Infrastructure Sales Processes") return Radio;
   return Newspaper;
+}
+
+function categoryShortLabel(category: NewsCategory): string {
+  if (category === "Infrastructure Fundraising Activity") return "Fundraising";
+  if (category === "Rumored Infrastructure Sales Processes") return "Rumored Sales";
+  return "Transactions";
 }
 
 function mentionIcon(type: NewsMentionType) {
@@ -96,25 +109,147 @@ function topMentions(items: NewsItemView[], type: NewsMentionType, limit = 5) {
     .slice(0, limit);
 }
 
-function SignalTile({
-  label,
-  value,
-  color,
+function getBalancedNewsItems(items: NewsItemView[]): NewsItemView[] {
+  const buckets = NEWS_CATEGORIES.map((category) =>
+    items.filter((item) => item.category === category),
+  );
+  const result: NewsItemView[] = [];
+  const seen = new Set<string>();
+  const longest = Math.max(...buckets.map((bucket) => bucket.length), 0);
+
+  for (let index = 0; index < longest; index++) {
+    for (const bucket of buckets) {
+      const item = bucket[index];
+      if (!item || seen.has(item.id)) continue;
+      result.push(item);
+      seen.add(item.id);
+    }
+  }
+
+  return result;
+}
+
+function IntelligenceHeader({
+  counts,
+  lastUpdated,
 }: {
-  label: string;
-  value: number;
-  color: string;
+  counts: NewsCounts;
+  lastUpdated: string;
 }) {
+  const metrics = [
+    { label: "Signals", value: counts.total, color: "#111114" },
+    { label: "Transactions", value: counts.transactions, color: getNewsCategoryColor("Infrastructure Transaction Activity") },
+    { label: "Fundraising", value: counts.fundraising, color: getNewsCategoryColor("Infrastructure Fundraising Activity") },
+    { label: "Rumored Sales", value: counts.rumors, color: getNewsCategoryColor("Rumored Infrastructure Sales Processes") },
+  ];
+
   return (
-    <div className="surface px-3.5 py-3">
-      <div className="flex items-center gap-2">
-        <span aria-hidden className="h-2 w-2 rounded-full" style={{ backgroundColor: color }} />
-        <span className="text-[11px] font-medium text-[var(--text-secondary)]">{label}</span>
+    <section className="mb-5 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] shadow-[0_1px_2px_rgba(17,17,20,0.03)]">
+      <div className="h-[2px] bg-gradient-to-r from-[var(--accent)] via-[#3b6cf2] to-transparent" />
+      <div className="px-4 py-4 sm:px-5 sm:py-5">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <div className="mb-2 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+              Market Intelligence
+            </div>
+            <h1 className="text-2xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-3xl">
+              News Feed
+            </h1>
+            <p className="mt-1.5 text-sm leading-6 text-[var(--text-secondary)]">
+              Infrastructure market signals across transaction activity, fundraising momentum, and rumored sale processes.
+            </p>
+          </div>
+          <div className="text-[11px] text-[var(--text-tertiary)]">
+            Updated <span className="mono tabular-nums">{formatDate(lastUpdated)}</span>
+          </div>
+        </div>
+
+        <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
+          {metrics.map((metric) => (
+            <div key={metric.label} className="rounded-md border border-[var(--border)] bg-[var(--bg-subtle)] px-3 py-2.5">
+              <div className="flex items-center gap-2">
+                <span aria-hidden className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: metric.color }} />
+                <span className="text-[11px] font-medium text-[var(--text-secondary)]">{metric.label}</span>
+              </div>
+              <div className="mt-1 mono text-lg font-semibold tabular-nums text-[var(--text-primary)]">
+                {metric.value.toLocaleString()}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="mt-2 mono text-xl font-semibold tabular-nums text-[var(--text-primary)]">
-        {value.toLocaleString()}
+    </section>
+  );
+}
+
+function CategorySpotlight({
+  items,
+  onSelect,
+}: {
+  items: NewsItemView[];
+  onSelect: (item: NewsItemView) => void;
+}) {
+  const latestByCategory = NEWS_CATEGORIES.map((category) => ({
+    category,
+    item: items.find((item) => item.category === category),
+  }));
+
+  return (
+    <section className="mb-5">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <span className="text-[11px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+          Latest Signals
+        </span>
+        <div className="h-px flex-1 bg-[var(--border)]" />
       </div>
-    </div>
+      <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
+        {latestByCategory.map(({ category, item }) => {
+          const Icon = categoryIcon(category);
+          const color = getNewsCategoryColor(category);
+
+          if (!item) {
+            return (
+              <div key={category} className="surface min-h-[132px] px-4 py-3.5">
+                <div className="flex items-center gap-2">
+                  <Icon className="h-3.5 w-3.5" style={{ color }} />
+                  <span className="text-[11px] font-medium text-[var(--text-secondary)]">{categoryShortLabel(category)}</span>
+                </div>
+                <p className="mt-4 text-xs text-[var(--text-tertiary)]">No current signal in this category.</p>
+              </div>
+            );
+          }
+
+          return (
+            <button
+              key={category}
+              type="button"
+              onClick={() => onSelect(item)}
+              className="surface group min-h-[132px] w-full border-l-[3px] px-4 py-3.5 text-left transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+              style={{ borderLeftColor: color }}
+            >
+              <div className="mb-3 flex items-center justify-between gap-3">
+                <span className="inline-flex min-w-0 items-center gap-2">
+                  <Icon className="h-3.5 w-3.5 shrink-0" style={{ color }} />
+                  <span className="truncate text-[11px] font-medium text-[var(--text-secondary)]">
+                    {categoryShortLabel(category)}
+                  </span>
+                </span>
+                <span className="mono shrink-0 text-[10px] tabular-nums text-[var(--text-tertiary)]">
+                  {formatDate(item.publishedAt)}
+                </span>
+              </div>
+              <h2 className="line-clamp-2 text-sm font-semibold leading-snug tracking-tight text-[var(--text-primary)] group-hover:text-[var(--accent)]">
+                {item.title}
+              </h2>
+              <p className="mt-2 line-clamp-2 text-xs leading-5 text-[var(--text-secondary)]">
+                {item.summary}
+              </p>
+            </button>
+          );
+        })}
+      </div>
+    </section>
   );
 }
 
@@ -246,13 +381,16 @@ function NewsCard({
   const visibleMentions = item.mentions.slice(0, 5);
 
   return (
-    <article className="surface overflow-hidden transition-colors hover:bg-[var(--bg-subtle)]">
+    <article
+      className="surface group overflow-hidden border-l-[3px] transition-colors hover:bg-[var(--bg-subtle)]"
+      style={{ borderLeftColor: categoryColor }}
+    >
       <button
         type="button"
         onClick={() => onSelect(item)}
-        className="block w-full px-4 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+        className="block w-full px-4 py-3.5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
       >
-        <div className="mb-3 flex flex-wrap items-center gap-2">
+        <div className="mb-2.5 flex flex-wrap items-center gap-2">
           <span
             className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-[11px] font-medium"
             style={{
@@ -283,11 +421,13 @@ function NewsCard({
               {item.summary}
             </p>
           </div>
-          <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-[var(--text-tertiary)]" />
+          <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-[var(--text-tertiary)] transition-colors group-hover:bg-[var(--bg-hover)]">
+            <ChevronRight className="h-4 w-4" />
+          </span>
         </div>
 
         {visibleMentions.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-1.5">
+          <div className="mt-3 flex flex-wrap gap-1.5 border-t border-[var(--border)] pt-3">
             {visibleMentions.map((mention) => (
               <MentionPill key={`${mention.type}-${mention.id}`} mention={mention} interactive={false} />
             ))}
@@ -320,20 +460,30 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
   const firms = topMentions(items, "Investment Firm");
   const portcos = topMentions(items, "PortCo");
   const rumorCount = items.filter((item) => item.category === "Rumored Infrastructure Sales Processes").length;
+  const maxFirmCount = Math.max(...firms.map((firm) => firm.count), 1);
+  const maxPortCoCount = Math.max(...portcos.map((company) => company.count), 1);
 
   return (
     <aside className="space-y-4 lg:sticky lg:top-28">
       <div className="surface p-4">
         <SectionLabel>Most Mentioned Firms</SectionLabel>
-        <div className="space-y-2.5">
+        <div className="space-y-3">
           {firms.map((firm) => (
             <Link
               key={firm.label}
               href={firm.href || "/funds"}
-              className="flex items-center justify-between gap-3 rounded-md px-2 py-1.5 text-xs transition-colors hover:bg-[var(--bg-hover)]"
+              className="block rounded-md px-2 py-1.5 text-xs transition-colors hover:bg-[var(--bg-hover)]"
             >
-              <span className="truncate text-[var(--text-secondary)]">{firm.label}</span>
-              <span className="mono tabular-nums text-[var(--text-tertiary)]">{firm.count}</span>
+              <span className="flex items-center justify-between gap-3">
+                <span className="truncate text-[var(--text-secondary)]">{firm.label}</span>
+                <span className="mono tabular-nums text-[var(--text-tertiary)]">{firm.count}</span>
+              </span>
+              <span className="mt-1 block h-1 overflow-hidden rounded-full bg-[var(--bg-hover)]">
+                <span
+                  className="block h-full rounded-full bg-[#7d6cf0]"
+                  style={{ width: `${Math.max(12, (firm.count / maxFirmCount) * 100)}%` }}
+                />
+              </span>
             </Link>
           ))}
           {firms.length === 0 && <div className="text-xs text-[var(--text-tertiary)]">No firm mentions.</div>}
@@ -341,16 +491,24 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
       </div>
 
       <div className="surface p-4">
-        <SectionLabel>PortCo Watch</SectionLabel>
-        <div className="space-y-2.5">
+        <SectionLabel>PortCos In The News</SectionLabel>
+        <div className="space-y-3">
           {portcos.map((company) => (
             <Link
               key={company.label}
               href={company.href || "/portfolio"}
-              className="flex items-center justify-between gap-3 rounded-md px-2 py-1.5 text-xs transition-colors hover:bg-[var(--bg-hover)]"
+              className="block rounded-md px-2 py-1.5 text-xs transition-colors hover:bg-[var(--bg-hover)]"
             >
-              <span className="truncate text-[var(--text-secondary)]">{company.label}</span>
-              <span className="mono tabular-nums text-[var(--text-tertiary)]">{company.count}</span>
+              <span className="flex items-center justify-between gap-3">
+                <span className="truncate text-[var(--text-secondary)]">{company.label}</span>
+                <span className="mono tabular-nums text-[var(--text-tertiary)]">{company.count}</span>
+              </span>
+              <span className="mt-1 block h-1 overflow-hidden rounded-full bg-[var(--bg-hover)]">
+                <span
+                  className="block h-full rounded-full bg-[#3b6cf2]"
+                  style={{ width: `${Math.max(12, (company.count / maxPortCoCount) * 100)}%` }}
+                />
+              </span>
             </Link>
           ))}
           {portcos.length === 0 && <div className="text-xs text-[var(--text-tertiary)]">No PortCo mentions.</div>}
@@ -359,9 +517,14 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
 
       <div className="surface p-4">
         <SectionLabel>Rumor Watch</SectionLabel>
-        <div className="flex items-center justify-between">
-          <span className="text-xs text-[var(--text-secondary)]">Active sale-process signals</span>
-          <span className="mono text-lg font-semibold tabular-nums text-[var(--text-primary)]">{rumorCount}</span>
+        <div className="rounded-md border border-[#d98b1c]/15 bg-[#d98b1c]/[0.04] px-3 py-3">
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-[var(--text-secondary)]">Active sale-process signals</span>
+            <span className="mono text-lg font-semibold tabular-nums text-[var(--text-primary)]">{rumorCount}</span>
+          </div>
+          <p className="mt-1.5 text-[11px] leading-4 text-[var(--text-tertiary)]">
+            Sourced from tracked PortCo milestones and curated rumor records.
+          </p>
         </div>
       </div>
     </aside>
@@ -549,31 +712,21 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
     };
   }, [filteredItems]);
 
+  const displayItems = useMemo(() => {
+    const isUnfilteredView =
+      activeCategories.size === 0 &&
+      activeEntities.size === 0 &&
+      debouncedSearch.trim() === "" &&
+      dateWindow === "All";
+
+    return isUnfilteredView ? getBalancedNewsItems(filteredItems) : filteredItems;
+  }, [filteredItems, activeCategories, activeEntities, debouncedSearch, dateWindow]);
+
   return (
     <div className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6">
-      <div className="mb-5 flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h1 className="text-xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-2xl">
-            News Feed
-          </h1>
-          <p className="mt-0.5 text-xs text-[var(--text-secondary)] sm:text-sm">
-            <span className="mono font-medium tabular-nums text-[var(--text-primary)]">
-              {filteredItems.length.toLocaleString()}
-            </span>{" "}
-            tracked infrastructure signals across transactions, fundraising, and rumored sales
-          </p>
-        </div>
-        <div className="text-[11px] text-[var(--text-tertiary)]">
-          Updated <span className="mono tabular-nums">{formatDate(feed.lastUpdated)}</span>
-        </div>
-      </div>
+      <IntelligenceHeader counts={counts} lastUpdated={feed.lastUpdated} />
 
-      <div className="mb-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
-        <SignalTile label="Signals" value={counts.total} color="#111114" />
-        <SignalTile label="Transactions" value={counts.transactions} color={getNewsCategoryColor("Infrastructure Transaction Activity")} />
-        <SignalTile label="Fundraising" value={counts.fundraising} color={getNewsCategoryColor("Infrastructure Fundraising Activity")} />
-        <SignalTile label="Rumored Sales" value={counts.rumors} color={getNewsCategoryColor("Rumored Infrastructure Sales Processes")} />
-      </div>
+      <CategorySpotlight items={filteredItems} onSelect={setSelectedItem} />
 
       <NewsFilterBar
         search={search}
@@ -590,15 +743,31 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
       />
 
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_300px]">
-        <div className="space-y-3">
-          {filteredItems.map((item) => (
+        <div>
+          <div className="mb-3 flex items-center justify-between gap-3">
+            <span className="text-[11px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+              Signal Tape
+            </span>
+            <span className="mono text-[11px] tabular-nums text-[var(--text-tertiary)]">
+              {displayItems.length.toLocaleString()} items
+            </span>
+          </div>
+          <div className="space-y-3">
+          {displayItems.map((item) => (
             <NewsCard key={item.id} item={item} onSelect={setSelectedItem} />
           ))}
-          {filteredItems.length === 0 && (
-            <div className="surface py-12 text-center text-sm text-[var(--text-tertiary)]">
-              No news matched the current filters.
+          {displayItems.length === 0 && (
+            <div className="surface px-4 py-12 text-center">
+              <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--bg-subtle)] text-[var(--text-tertiary)]">
+                <Search className="h-4 w-4" />
+              </div>
+              <h2 className="mt-3 text-sm font-medium text-[var(--text-primary)]">No signals matched</h2>
+              <p className="mt-1 text-xs text-[var(--text-tertiary)]">
+                Broaden the category, entity, or date filters to bring more items back into view.
+              </p>
             </div>
           )}
+          </div>
         </div>
         <InsightRail items={filteredItems} />
       </div>
