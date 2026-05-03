@@ -68,6 +68,20 @@ export const NON_INFRA_FUND_ENTITIES = new Set([
   "Power2X",
   "Nobian",
   "Jupiter Energy Investor",
+  "Airtel",
+  "DataBank",
+  "Goodman",
+  "JEXI",
+  "Long-term investor consortium",
+  "Grupo México",
+  "Monarch Private Capital",
+  "Neoenergia",
+  "T-Mobile",
+  "CRH",
+  "Enagás",
+  "Premier Energy Group",
+  "CleanPeak Energy",
+  "BrightNight",
 ]);
 
 // Resolve an organization name to its canonical form

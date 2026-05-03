@@ -8,6 +8,16 @@ import {
 import type { DealView } from "@/modules/shared/types";
 import type { Deal as DbDeal, DealParticipant } from "@/generated/prisma/client";
 
+function uniqueNames(names: string[]): string[] {
+  const seen = new Set<string>();
+  return names.filter((name) => {
+    const key = name.trim();
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 // Map a DB deal + participants to the DealView that client components expect
 function toDealView(
   deal: DbDeal & {
@@ -15,24 +25,24 @@ function toDealView(
     citations: { source: { label: string; url: string } }[];
   },
 ): DealView {
-  const buyers = deal.participants
+  const buyers = uniqueNames(deal.participants
     .filter((p) => p.role === "BUYER")
-    .map((p) => p.displayName || p.organization.name);
-  const sellers = deal.participants
+    .map((p) => p.displayName || p.organization.name));
+  const sellers = uniqueNames(deal.participants
     .filter((p) => p.role === "SELLER")
-    .map((p) => p.displayName || p.organization.name);
-  const faBuyer = deal.participants
+    .map((p) => p.displayName || p.organization.name));
+  const faBuyer = uniqueNames(deal.participants
     .filter((p) => p.role === "FINANCIAL_ADVISOR_BUYER")
-    .map((p) => p.organization.name);
-  const faSeller = deal.participants
+    .map((p) => p.organization.name));
+  const faSeller = uniqueNames(deal.participants
     .filter((p) => p.role === "FINANCIAL_ADVISOR_SELLER")
-    .map((p) => p.organization.name);
-  const laBuyer = deal.participants
+    .map((p) => p.organization.name));
+  const laBuyer = uniqueNames(deal.participants
     .filter((p) => p.role === "LEGAL_ADVISOR_BUYER")
-    .map((p) => p.organization.name);
-  const laSeller = deal.participants
+    .map((p) => p.organization.name));
+  const laSeller = uniqueNames(deal.participants
     .filter((p) => p.role === "LEGAL_ADVISOR_SELLER")
-    .map((p) => p.organization.name);
+    .map((p) => p.organization.name));
 
   const firstCitation = deal.citations[0];
 
