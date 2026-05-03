@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
@@ -827,9 +828,15 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
             {" "}of{" "}
             <span className="mono text-[var(--text-secondary)] tabular-nums">{deals.length}</span> deals
           </span>
-          <div className="hidden sm:flex items-center gap-1">
-            <Button variant="ghost" size="sm" leadingIcon={<Download className="h-3 w-3" />}>Export</Button>
-            <Button variant="ghost" size="sm" leadingIcon={<Mail className="h-3 w-3" />}>Contact research</Button>
+          <div className="flex items-center gap-1">
+            <Button className="hidden sm:inline-flex" variant="ghost" size="sm" leadingIcon={<Download className="h-3 w-3" />}>Export</Button>
+            <Link
+              href="/email-format/index.html"
+              className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 text-[11px] font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+            >
+              <Mail className="h-3 w-3" />
+              <span className="truncate">Weekly email</span>
+            </Link>
           </div>
         </div>
 
