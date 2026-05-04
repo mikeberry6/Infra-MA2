@@ -1,4 +1,4 @@
-export type DealSector = "Transportation" | "Power & ET" | "Midstream" | "Utilities" | "Waste & ES" | "Digital" | "Social";
+export type DealSector = "Power & ET" | "Utilities" | "Digital" | "Midstream" | "Transportation" | "Social Infra";
 
 export type DealRegion = "North America" | "Europe" | "Asia-Pacific" | "Middle East & Africa" | "Latin America";
 
@@ -759,7 +759,7 @@ export const deals: Deal[] = [
     target: "Kalfresh Bioenergy Facility",
     buyer: "QIC / Wollemi Capital",
     seller: "N/A",
-    sector: "Waste & ES",
+    sector: "Power & ET",
     subsector: "Waste-to-Energy",
     region: "Asia-Pacific",
     category: ["Acquisition (Minority Stake)"],
@@ -1387,7 +1387,7 @@ export const deals: Deal[] = [
     ],
   },
   // ═══════════════════════════════════════════════════════════════
-  // 4. WASTE & ES (Environmental Services)
+  // 4. UTILITIES (Environmental Services)
   // ═══════════════════════════════════════════════════════════════
   {
     id: "INF-2026-041",
@@ -1395,7 +1395,7 @@ export const deals: Deal[] = [
     target: "Alliance Technical Group",
     buyer: "Blackstone",
     seller: "N/A",
-    sector: "Waste & ES",
+    sector: "Utilities",
     subsector: "Environmental Services",
     region: "North America",
     category: ["Acquisition (Buyout)"],
@@ -1428,7 +1428,7 @@ export const deals: Deal[] = [
     target: "Urbaser",
     buyer: "Blackstone / EQT Infrastructure",
     seller: "N/A",
-    sector: "Waste & ES",
+    sector: "Utilities",
     subsector: "Waste Management",
     region: "Europe",
     category: ["Acquisition (Buyout)", "Joint Venture"],
@@ -1888,7 +1888,7 @@ export const deals: Deal[] = [
     ],
   },
   // ═══════════════════════════════════════════════════════════════
-  // 6. SOCIAL (Healthcare, Education, Civic & Affordable Housing)
+  // 6. SOCIAL INFRA (Healthcare, Education, Civic & Affordable Housing)
   // ═══════════════════════════════════════════════════════════════
   {
     id: "INF-2026-056",
@@ -1896,7 +1896,7 @@ export const deals: Deal[] = [
     target: "49 Nordic Social Infrastructure Assets",
     buyer: "Patrizia (via Kinland)",
     seller: "N/A",
-    sector: "Social",
+    sector: "Social Infra",
     subsector: "Social Infrastructure",
     region: "Europe",
     category: ["Acquisition (Bolt-On)"],
@@ -1929,7 +1929,7 @@ export const deals: Deal[] = [
     target: "Awelon Healthcare",
     buyer: "Ancala Partners (via Iris Care Group)",
     seller: "N/A",
-    sector: "Social",
+    sector: "Social Infra",
     subsector: "Healthcare",
     region: "Europe",
     category: ["Acquisition (Bolt-On)"],
@@ -1962,7 +1962,7 @@ export const deals: Deal[] = [
     target: "Belambra",
     buyer: "Antin Infrastructure Partners",
     seller: "N/A",
-    sector: "Social",
+    sector: "Social Infra",
     subsector: "Tourism / Leisure Infrastructure",
     region: "Europe",
     category: ["Acquisition (Majority Stake)"],
@@ -1995,7 +1995,7 @@ export const deals: Deal[] = [
     target: "Culmia Affordable Housing Portfolio",
     buyer: "MEAG",
     seller: "Culmia",
-    sector: "Social",
+    sector: "Social Infra",
     subsector: "Affordable Housing",
     region: "Europe",
     category: ["Joint Venture"],
@@ -2028,7 +2028,7 @@ export const deals: Deal[] = [
     target: "Emsere",
     buyer: "Antin Infrastructure Partners",
     seller: "N/A",
-    sector: "Social",
+    sector: "Social Infra",
     subsector: "Healthcare Logistics",
     region: "Europe",
     category: ["Acquisition (Majority Stake)"],
@@ -2061,7 +2061,7 @@ export const deals: Deal[] = [
     target: "Prince George's County Schools P3",
     buyer: "Undisclosed Buyer",
     seller: "Fengate Asset Management",
-    sector: "Social",
+    sector: "Social Infra",
     subsector: "Education / P3",
     region: "North America",
     category: ["Sale (Buyout)"],
@@ -3170,7 +3170,7 @@ export const deals: Deal[] = [
     ],
   },
   // ═══════════════════════════════════════════════════════════════
-  // WASTE & ES
+  // UTILITIES
   // ═══════════════════════════════════════════════════════════════
   {
     id: "INF-2026-095",
@@ -3178,7 +3178,7 @@ export const deals: Deal[] = [
     target: "DTG Recycle",
     buyer: "Dan Guimont / Waste Connections",
     seller: "Macquarie Infrastructure Partners",
-    sector: "Waste & ES",
+    sector: "Utilities",
     subsector: "Waste Management",
     region: "North America",
     category: ["Sale (Buyout)"],
@@ -3251,7 +3251,7 @@ export const deals: Deal[] = [
     target: "Aura Holdings",
     buyer: "Stonepeak",
     seller: "N/A",
-    sector: "Social",
+    sector: "Social Infra",
     subsector: "Retirement Living",
     region: "Asia-Pacific",
     category: ["Acquisition (Minority Stake)"],
@@ -4750,7 +4750,7 @@ export const deals: Deal[] = [
     target: "Equinox Growers Greenhouse Facility",
     buyer: "Taylor Farms",
     seller: "Generate Capital",
-    sector: "Social",
+    sector: "Social Infra",
     subsector: "Controlled-Environment Agriculture",
     region: "North America",
     category: ["Sale (Buyout)"],
@@ -5047,7 +5047,7 @@ export const deals: Deal[] = [
     target: "All American Grease Services",
     buyer: "Goldman Sachs Asset Management (via LES)",
     seller: "N/A",
-    sector: "Waste & ES",
+    sector: "Utilities",
     subsector: "Waste Services",
     region: "North America",
     category: ["Acquisition (Bolt-On)"],
@@ -5207,7 +5207,7 @@ export const deals: Deal[] = [
     target: "UK social infrastructure PPP portfolio",
     buyer: "Equitix",
     seller: "Sir Robert McAlpine Capital Ventures",
-    sector: "Social",
+    sector: "Social Infra",
     subsector: "Social Infrastructure PPP",
     region: "Europe",
     category: ["Acquisition (Buyout)"],
@@ -5239,7 +5239,7 @@ export const deals: Deal[] = [
     target: "Orbis Protect",
     buyer: "Tiger Infrastructure Partners",
     seller: "Synova",
-    sector: "Social",
+    sector: "Social Infra",
     subsector: "Security Infrastructure",
     region: "Europe",
     category: ["Acquisition (Minority Stake)"],
@@ -5271,7 +5271,7 @@ export const deals: Deal[] = [
     target: "Northside East Cobb Medical Center",
     buyer: "Harrison Street / Stonemont",
     seller: "N/A",
-    sector: "Social",
+    sector: "Social Infra",
     subsector: "Outpatient Healthcare",
     region: "North America",
     category: ["Acquisition (Buyout)"],
@@ -5623,7 +5623,7 @@ export const deals: Deal[] = [
     target: "Sedron Technologies",
     buyer: "Ara Partners",
     seller: "N/A",
-    sector: "Waste & ES",
+    sector: "Utilities",
     subsector: "Wastewater / Resource Recovery",
     region: "North America",
     category: ["Acquisition (Minority Stake)"],
@@ -6295,7 +6295,7 @@ export const deals: Deal[] = [
     target: "Park Properties Housing Association (PPHA)",
     buyer: "Sixth Street",
     seller: "N/A",
-    sector: "Social",
+    sector: "Social Infra",
     subsector: "Affordable Housing",
     region: "Europe",
     category: ["Acquisition (Minority Stake)"],
@@ -6903,19 +6903,17 @@ export const deals: Deal[] = [
 // Helper to get sector color
 export function getSectorColor(sector: string): string {
   switch (sector) {
-    case "Transportation":
-      return "#8b5cf6";
     case "Power & ET":
       return "#f59e0b";
-    case "Midstream":
-      return "#f97316";
     case "Utilities":
       return "#06b6d4";
-    case "Waste & ES":
-      return "#10b981";
     case "Digital":
       return "#3b82f6";
-    case "Social":
+    case "Midstream":
+      return "#f97316";
+    case "Transportation":
+      return "#8b5cf6";
+    case "Social Infra":
       return "#ec4899";
     default:
       return "#a1a1aa";

@@ -3,13 +3,12 @@ import { z } from "zod";
 // ── Valid display-string values (derived from enum-maps) ──────────────
 
 const DEAL_SECTORS = [
-  "Transportation",
   "Power & ET",
-  "Midstream",
   "Utilities",
-  "Waste & ES",
   "Digital",
-  "Social",
+  "Midstream",
+  "Transportation",
+  "Social Infra",
 ] as const;
 
 const DEAL_REGIONS = [
@@ -71,17 +70,12 @@ const FUND_STATUSES = [
 ] as const;
 
 const FUND_SECTORS = [
-  "Transportation",
+  "Power & ET",
   "Utilities",
-  "Digital Infrastructure",
-  "Renewables / Energy Transition",
-  "Waste / Environmental Services",
-  "Power Generation",
-  "Midstream / Energy",
-  "Social Infrastructure",
-  "Communications",
-  "Logistics",
-  "Water",
+  "Digital",
+  "Midstream",
+  "Transportation",
+  "Social Infra",
 ] as const;
 
 const FUND_REGIONS = [
@@ -94,17 +88,12 @@ const FUND_REGIONS = [
 ] as const;
 
 const COMPANY_SECTORS = [
-  "Transportation",
-  "Digital Infrastructure",
-  "Energy Transition",
-  "Power Generation",
-  "Midstream Energy",
-  "Regulated Utilities",
+  "Power & ET",
   "Utilities",
-  "Social Infrastructure",
-  "Environmental / Waste",
-  "Renewable Resources",
-  "Infrastructure Services",
+  "Digital",
+  "Midstream",
+  "Transportation",
+  "Social Infra",
 ] as const;
 
 const COMPANY_REGIONS = [

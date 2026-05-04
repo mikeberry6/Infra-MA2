@@ -17,17 +17,12 @@ export interface PortCoMilestone {
 }
 
 export type PortCoSector =
-  | "Transportation"
-  | "Digital Infrastructure"
-  | "Energy Transition"
-  | "Power Generation"
-  | "Midstream Energy"
-  | "Regulated Utilities"
+  | "Power & ET"
   | "Utilities"
-  | "Social Infrastructure"
-  | "Environmental / Waste"
-  | "Renewable Resources"
-  | "Infrastructure Services";
+  | "Digital"
+  | "Midstream"
+  | "Transportation"
+  | "Social Infra";
 
 export type PortCoRegion =
   | "North America"
@@ -85,17 +80,12 @@ export interface PortCo {
 // ─── Constants ──────────────────────────────────────────────
 
 export const PORTCO_SECTORS: PortCoSector[] = [
-  "Transportation",
-  "Digital Infrastructure",
-  "Energy Transition",
-  "Power Generation",
-  "Midstream Energy",
-  "Regulated Utilities",
+  "Power & ET",
   "Utilities",
-  "Social Infrastructure",
-  "Environmental / Waste",
-  "Renewable Resources",
-  "Infrastructure Services",
+  "Digital",
+  "Midstream",
+  "Transportation",
+  "Social Infra",
 ];
 
 export const PORTCO_REGIONS: PortCoRegion[] = [
@@ -111,17 +101,12 @@ export const PORTCO_STATUSES: PortCoStatus[] = ["Active", "Realized"];
 // ─── Color Helpers ──────────────────────────────────────────
 
 const SECTOR_COLORS: Record<PortCoSector, string> = {
-  "Transportation": "#3b82f6",
-  "Digital Infrastructure": "#8b5cf6",
-  "Energy Transition": "#06b6d4",
-  "Power Generation": "#f59e0b",
-  "Midstream Energy": "#f97316",
-  "Regulated Utilities": "#10b981",
-  "Utilities": "#0ea5e9",
-  "Social Infrastructure": "#ec4899",
-  "Environmental / Waste": "#84cc16",
-  "Renewable Resources": "#22c55e",
-  "Infrastructure Services": "#a78bfa",
+  "Power & ET": "#f59e0b",
+  "Utilities": "#06b6d4",
+  "Digital": "#3b82f6",
+  "Midstream": "#f97316",
+  "Transportation": "#8b5cf6",
+  "Social Infra": "#ec4899",
 };
 
 const REGION_COLORS: Record<PortCoRegion, string> = {

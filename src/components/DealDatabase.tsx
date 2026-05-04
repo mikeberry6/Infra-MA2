@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
-import { NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
+import { DEAL_SECTORS, NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
 import type { DealView, DatabaseCounts } from "@/modules/shared/types";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 
@@ -120,7 +120,7 @@ import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
 
 // ─── Filters ────────────────────────────────────────────────
-const SECTORS: string[] = ["Transportation", "Power & ET", "Midstream", "Utilities", "Waste & ES", "Digital", "Social"];
+const SECTORS: string[] = [...DEAL_SECTORS];
 
 const CATEGORIES: string[] = [
   "Acquisition (Buyout)",

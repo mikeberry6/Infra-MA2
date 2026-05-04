@@ -249,7 +249,7 @@ async function main() {
   let companyCount = 0;
 
   for (const pc of portcos) {
-    const sector = safeEnum(COMPANY_SECTOR_MAP, pc.sector, "INFRASTRUCTURE_SERVICES" as CompanySector);
+    const sector = safeEnum(COMPANY_SECTOR_MAP, pc.sector, "UTILITIES" as CompanySector);
     const region = safeEnum(COMPANY_REGION_MAP, pc.region, "NORTH_AMERICA" as CompanyRegion);
     const companyStatus = safeEnum(COMPANY_STATUS_MAP, pc.status, "ACTIVE" as CompanyStatus);
 

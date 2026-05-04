@@ -1,6 +1,6 @@
 // ─── Deal Types ────────────────────────────────────────────
 
-export type DealSector = "Transportation" | "Power & ET" | "Midstream" | "Utilities" | "Waste & ES" | "Digital" | "Social";
+export type DealSector = "Power & ET" | "Utilities" | "Digital" | "Midstream" | "Transportation" | "Social Infra";
 
 export type DealRegion = "North America" | "Europe" | "Asia-Pacific" | "Middle East & Africa" | "Latin America";
 
@@ -37,17 +37,12 @@ export type FundStrategy =
 export type FundStatus = "Evergreen" | "Financial Close" | "Raising";
 
 export type FundSector =
-  | "Transportation"
+  | "Power & ET"
   | "Utilities"
-  | "Digital Infrastructure"
-  | "Renewables / Energy Transition"
-  | "Waste / Environmental Services"
-  | "Power Generation"
-  | "Midstream / Energy"
-  | "Social Infrastructure"
-  | "Communications"
-  | "Logistics"
-  | "Water";
+  | "Digital"
+  | "Midstream"
+  | "Transportation"
+  | "Social Infra";
 
 export type FundRegion =
   | "North America"
@@ -85,17 +80,12 @@ export type MilestoneCategory =
   | "Other";
 
 export type PortCoSector =
-  | "Transportation"
-  | "Digital Infrastructure"
-  | "Energy Transition"
-  | "Power Generation"
-  | "Midstream Energy"
-  | "Regulated Utilities"
+  | "Power & ET"
   | "Utilities"
-  | "Social Infrastructure"
-  | "Environmental / Waste"
-  | "Renewable Resources"
-  | "Infrastructure Services";
+  | "Digital"
+  | "Midstream"
+  | "Transportation"
+  | "Social Infra";
 
 export type PortCoRegion =
   | "North America"

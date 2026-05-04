@@ -126,7 +126,7 @@ For each qualifying deal, write a JSON array to `scripts/research/output/batch-{
     "title": "[Descriptive deal headline]",
     "buyer": "[Fund name. Use '(via [Portfolio Co])' suffix for Path 2 deals]",
     "seller": "[Seller name, or 'Undisclosed Seller' if unknown]",
-    "sector": "[One of: Transportation | Power & ET | Midstream | Utilities | Waste & ES | Digital | Social]",
+    "sector": "[One of: Power & ET | Utilities | Digital | Midstream | Transportation | Social Infra]",
     "subsector": "[e.g., Solar, Wind, Data Centers, Toll Roads, Fiber, Water, Airports]",
     "region": "[One of: North America | Europe | Asia-Pacific | Middle East & Africa | Latin America]",
     "category": ["[One or more of: Acquisition (Buyout) | Acquisition (Majority Stake) | Acquisition (Minority Stake) | Acquisition (Bolt-On) | Sale (Buyout) | Sale (Majority Stake) | Sale (Minority Stake) | Sale (Carve-Out) | Platform Launch | IPO | Joint Venture]"],

@@ -50,19 +50,17 @@ const MILESTONE_FALLBACK = "#71717a";
 
 export function getSectorColor(sector: string): string {
   switch (sector) {
-    case "Transportation":
-      return PALETTE.violet;
     case "Power & ET":
       return PALETTE.amber;
-    case "Midstream":
-      return PALETTE.orange;
     case "Utilities":
       return PALETTE.cyan;
-    case "Waste & ES":
-      return PALETTE.green;
     case "Digital":
       return PALETTE.blue;
-    case "Social":
+    case "Midstream":
+      return PALETTE.orange;
+    case "Transportation":
+      return PALETTE.violet;
+    case "Social Infra":
       return PALETTE.rose;
     default:
       return FALLBACK;
@@ -128,17 +126,12 @@ const FUND_STATUS_COLORS: Record<FundStatus, string> = {
 };
 
 const FUND_SECTOR_COLORS: Record<FundSector, string> = {
-  "Transportation": PALETTE.blue,
-  "Utilities": PALETTE.green,
-  "Digital Infrastructure": PALETTE.violet,
-  "Renewables / Energy Transition": PALETTE.cyan,
-  "Waste / Environmental Services": PALETTE.lime,
-  "Power Generation": PALETTE.amber,
-  "Midstream / Energy": PALETTE.red,
-  "Social Infrastructure": PALETTE.rose,
-  "Communications": PALETTE.indigo,
-  "Logistics": PALETTE.orange,
-  "Water": PALETTE.sky,
+  "Power & ET": PALETTE.amber,
+  "Utilities": PALETTE.cyan,
+  "Digital": PALETTE.blue,
+  "Midstream": PALETTE.orange,
+  "Transportation": PALETTE.violet,
+  "Social Infra": PALETTE.rose,
 };
 
 const FUND_REGION_COLORS: Record<FundRegion, string> = {
@@ -186,17 +179,12 @@ export function getSizeRangeColor(): string {
 // ─── PortCo Colors ─────────────────────────────────────────
 
 const PORTCO_SECTOR_COLORS: Record<PortCoSector, string> = {
-  "Transportation": PALETTE.blue,
-  "Digital Infrastructure": PALETTE.violet,
-  "Energy Transition": PALETTE.cyan,
-  "Power Generation": PALETTE.amber,
-  "Midstream Energy": PALETTE.orange,
-  "Regulated Utilities": PALETTE.green,
-  "Utilities": PALETTE.sky,
-  "Social Infrastructure": PALETTE.rose,
-  "Environmental / Waste": PALETTE.lime,
-  "Renewable Resources": PALETTE.emerald,
-  "Infrastructure Services": PALETTE.lavender,
+  "Power & ET": PALETTE.amber,
+  "Utilities": PALETTE.cyan,
+  "Digital": PALETTE.blue,
+  "Midstream": PALETTE.orange,
+  "Transportation": PALETTE.violet,
+  "Social Infra": PALETTE.rose,
 };
 
 const PORTCO_REGION_COLORS: Record<PortCoRegion, string> = {

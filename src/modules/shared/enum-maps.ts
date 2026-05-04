@@ -85,31 +85,34 @@ export const FUND_STATUS_DISPLAY: Record<DbFundStatus, string> = {
 // ── Fund Sector ────────────────────────────────────────────
 
 export const FUND_SECTOR_MAP: Record<string, DbFundSector> = {
-  "Transportation": "TRANSPORTATION",
+  "Power & ET": "POWER_ET",
   "Utilities": "UTILITIES",
-  "Digital Infrastructure": "DIGITAL_INFRASTRUCTURE",
-  "Renewables / Energy Transition": "RENEWABLES_ENERGY_TRANSITION",
-  "Waste / Environmental Services": "WASTE_ENVIRONMENTAL_SERVICES",
-  "Power Generation": "POWER_GENERATION",
-  "Midstream / Energy": "MIDSTREAM_ENERGY",
-  "Social Infrastructure": "SOCIAL_INFRASTRUCTURE",
-  "Communications": "COMMUNICATIONS",
-  "Logistics": "LOGISTICS",
-  "Water": "WATER",
+  "Digital": "DIGITAL",
+  "Midstream": "MIDSTREAM",
+  "Transportation": "TRANSPORTATION",
+  "Social Infra": "SOCIAL_INFRA",
+  "Digital Infrastructure": "DIGITAL",
+  "Communications": "DIGITAL",
+  "Renewables / Energy Transition": "POWER_ET",
+  "Power Generation": "POWER_ET",
+  "Energy Transition": "POWER_ET",
+  "Midstream / Energy": "MIDSTREAM",
+  "Midstream Energy": "MIDSTREAM",
+  "Social Infrastructure": "SOCIAL_INFRA",
+  "Social": "SOCIAL_INFRA",
+  "Waste / Environmental Services": "UTILITIES",
+  "Waste & ES": "UTILITIES",
+  "Water": "UTILITIES",
+  "Logistics": "TRANSPORTATION",
 };
 
 export const FUND_SECTOR_DISPLAY: Record<DbFundSector, string> = {
-  TRANSPORTATION: "Transportation",
+  POWER_ET: "Power & ET",
   UTILITIES: "Utilities",
-  DIGITAL_INFRASTRUCTURE: "Digital Infrastructure",
-  RENEWABLES_ENERGY_TRANSITION: "Renewables / Energy Transition",
-  WASTE_ENVIRONMENTAL_SERVICES: "Waste / Environmental Services",
-  POWER_GENERATION: "Power Generation",
-  MIDSTREAM_ENERGY: "Midstream / Energy",
-  SOCIAL_INFRASTRUCTURE: "Social Infrastructure",
-  COMMUNICATIONS: "Communications",
-  LOGISTICS: "Logistics",
-  WATER: "Water",
+  DIGITAL: "Digital",
+  MIDSTREAM: "Midstream",
+  TRANSPORTATION: "Transportation",
+  SOCIAL_INFRA: "Social Infra",
 };
 
 // ── Fund Region ────────────────────────────────────────────
@@ -135,31 +138,34 @@ export const FUND_REGION_DISPLAY: Record<DbFundRegion, string> = {
 // ── Company Sector ─────────────────────────────────────────
 
 export const COMPANY_SECTOR_MAP: Record<string, DbCompanySector> = {
-  "Transportation": "TRANSPORTATION",
-  "Digital Infrastructure": "DIGITAL_INFRASTRUCTURE",
-  "Energy Transition": "ENERGY_TRANSITION",
-  "Power Generation": "POWER_GENERATION",
-  "Midstream Energy": "MIDSTREAM_ENERGY",
-  "Regulated Utilities": "REGULATED_UTILITIES",
+  "Power & ET": "POWER_ET",
   "Utilities": "UTILITIES",
-  "Social Infrastructure": "SOCIAL_INFRASTRUCTURE",
-  "Environmental / Waste": "ENVIRONMENTAL_WASTE",
-  "Renewable Resources": "RENEWABLE_RESOURCES",
-  "Infrastructure Services": "INFRASTRUCTURE_SERVICES",
+  "Digital": "DIGITAL",
+  "Midstream": "MIDSTREAM",
+  "Transportation": "TRANSPORTATION",
+  "Social Infra": "SOCIAL_INFRA",
+  "Digital Infrastructure": "DIGITAL",
+  "Energy Transition": "POWER_ET",
+  "Power Generation": "POWER_ET",
+  "Renewable Resources": "POWER_ET",
+  "Midstream Energy": "MIDSTREAM",
+  "Regulated Utilities": "UTILITIES",
+  "Environmental / Waste": "UTILITIES",
+  "Infrastructure Services": "UTILITIES",
+  "Social Infrastructure": "SOCIAL_INFRA",
+  "Social": "SOCIAL_INFRA",
+  "Waste / Environmental Services": "UTILITIES",
+  "Waste & ES": "UTILITIES",
+  "Water": "UTILITIES",
 };
 
 export const COMPANY_SECTOR_DISPLAY: Record<DbCompanySector, string> = {
-  TRANSPORTATION: "Transportation",
-  DIGITAL_INFRASTRUCTURE: "Digital Infrastructure",
-  ENERGY_TRANSITION: "Energy Transition",
-  POWER_GENERATION: "Power Generation",
-  MIDSTREAM_ENERGY: "Midstream Energy",
-  REGULATED_UTILITIES: "Regulated Utilities",
+  POWER_ET: "Power & ET",
   UTILITIES: "Utilities",
-  SOCIAL_INFRASTRUCTURE: "Social Infrastructure",
-  ENVIRONMENTAL_WASTE: "Environmental / Waste",
-  RENEWABLE_RESOURCES: "Renewable Resources",
-  INFRASTRUCTURE_SERVICES: "Infrastructure Services",
+  DIGITAL: "Digital",
+  MIDSTREAM: "Midstream",
+  TRANSPORTATION: "Transportation",
+  SOCIAL_INFRA: "Social Infra",
 };
 
 // ── Company Region ─────────────────────────────────────────
@@ -195,23 +201,30 @@ export const COMPANY_STATUS_DISPLAY: Record<DbCompanyStatus, string> = {
 // ── Deal Sector ────────────────────────────────────────────
 
 export const DEAL_SECTOR_MAP: Record<string, DbDealSector> = {
-  "Transportation": "TRANSPORTATION",
   "Power & ET": "POWER_ET",
-  "Midstream": "MIDSTREAM",
   "Utilities": "UTILITIES",
-  "Waste & ES": "WASTE_ES",
   "Digital": "DIGITAL",
-  "Social": "SOCIAL",
+  "Midstream": "MIDSTREAM",
+  "Transportation": "TRANSPORTATION",
+  "Social Infra": "SOCIAL_INFRA",
+  "Waste & ES": "UTILITIES",
+  "Waste / Environmental Services": "UTILITIES",
+  "Social": "SOCIAL_INFRA",
+  "Social Infrastructure": "SOCIAL_INFRA",
+  "Digital Infrastructure": "DIGITAL",
+  "Energy Transition": "POWER_ET",
+  "Power Generation": "POWER_ET",
+  "Midstream Energy": "MIDSTREAM",
+  "Midstream / Energy": "MIDSTREAM",
 };
 
 export const DEAL_SECTOR_DISPLAY: Record<DbDealSector, string> = {
-  TRANSPORTATION: "Transportation",
   POWER_ET: "Power & ET",
-  MIDSTREAM: "Midstream",
   UTILITIES: "Utilities",
-  WASTE_ES: "Waste & ES",
   DIGITAL: "Digital",
-  SOCIAL: "Social",
+  MIDSTREAM: "Midstream",
+  TRANSPORTATION: "Transportation",
+  SOCIAL_INFRA: "Social Infra",
 };
 
 // ── Deal Region ────────────────────────────────────────────

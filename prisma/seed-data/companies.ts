@@ -4,7 +4,7 @@ export const companies: PortCo[] = [
   {
     name: "Amwaste LLC",
     investmentFirm: "3i Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Solid waste collection, transfer, landfill, and recycling",
     region: "North America",
     country: "United States",
@@ -37,7 +37,7 @@ export const companies: PortCo[] = [
   {
     name: "EC Waste",
     investmentFirm: "3i Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Solid waste collection, transfer, and landfill services",
     region: "North America",
     country: "United States",
@@ -135,7 +135,7 @@ export const companies: PortCo[] = [
   {
     name: "JVR Energy Park",
     investmentFirm: "Acadia Infrastructure Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and battery storage",
     region: "North America",
     country: "United States",
@@ -165,7 +165,7 @@ export const companies: PortCo[] = [
   {
     name: "Peregrine Energy Storage Project",
     investmentFirm: "Acadia Infrastructure Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale battery storage",
     region: "North America",
     country: "United States",
@@ -194,7 +194,7 @@ export const companies: PortCo[] = [
   {
     name: "Project Soho",
     investmentFirm: "Acadia Infrastructure Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale battery storage",
     region: "North America",
     country: "United States",
@@ -223,7 +223,7 @@ export const companies: PortCo[] = [
   {
     name: "Stillhouse Solar Project",
     investmentFirm: "Acadia Infrastructure Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar",
     region: "North America",
     country: "United States",
@@ -252,7 +252,7 @@ export const companies: PortCo[] = [
   {
     name: "Catalyze",
     investmentFirm: "Actis",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed solar, battery storage, and EV charging infrastructure",
     region: "North America",
     country: "United States",
@@ -294,7 +294,7 @@ export const companies: PortCo[] = [
   {
     name: "TERRANOVA",
     investmentFirm: "Actis",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data center development platform",
     region: "North America",
     country: "Mexico",
@@ -354,7 +354,7 @@ export const companies: PortCo[] = [
   {
     name: "Alpha Generation, LLC",
     investmentFirm: "ADIA Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Thermal generation infrastructure and independent power production",
     region: "North America",
     country: "United States",
@@ -386,7 +386,7 @@ export const companies: PortCo[] = [
   {
     name: "Arevon Energy, Inc.",
     investmentFirm: "ADIA Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and energy storage",
     region: "North America",
     country: "United States",
@@ -499,7 +499,7 @@ export const companies: PortCo[] = [
   {
     name: "Landmark Dividend LLC",
     investmentFirm: "ADIA Infrastructure",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Ground leases and digital real estate",
     region: "North America",
     country: "United States",
@@ -534,7 +534,7 @@ export const companies: PortCo[] = [
   {
     name: "AES Clean Energy",
     investmentFirm: "AIMCo",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable power generation and storage",
     region: "North America",
     country: "United States",
@@ -568,7 +568,7 @@ export const companies: PortCo[] = [
   {
     name: "Boldyn Networks",
     investmentFirm: "AIMCo",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Neutral-host wireless, DAS, private networks, Wi-Fi, and fiber",
     region: "North America",
     country: "United States / Canada",
@@ -633,7 +633,7 @@ export const companies: PortCo[] = [
   {
     name: "Castle Rock Ridge II Wind Farm",
     investmentFirm: "AIMCo",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "Canada",
@@ -662,7 +662,7 @@ export const companies: PortCo[] = [
   {
     name: "Coastal GasLink Pipeline Project",
     investmentFirm: "AIMCo",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas transmission pipeline",
     region: "North America",
     country: "Canada",
@@ -693,7 +693,7 @@ export const companies: PortCo[] = [
   {
     name: "Howard Energy Partners",
     investmentFirm: "AIMCo",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Gas, liquids, and downstream energy infrastructure",
     region: "North America",
     country: "United States / Mexico",
@@ -725,7 +725,7 @@ export const companies: PortCo[] = [
   {
     name: "Northern Courier Pipeline",
     investmentFirm: "AIMCo",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Oil sands pipeline",
     region: "North America",
     country: "Canada",
@@ -785,7 +785,7 @@ export const companies: PortCo[] = [
   {
     name: "Riverview Wind Farm",
     investmentFirm: "AIMCo",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "Canada",
@@ -847,7 +847,7 @@ export const companies: PortCo[] = [
   {
     name: "Broadview Wind Farm",
     investmentFirm: "Allianz Global Investors",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Contracted onshore wind generation",
     region: "North America",
     country: "United States",
@@ -877,7 +877,7 @@ export const companies: PortCo[] = [
   {
     name: "Colbeck's Corner Wind Farm",
     investmentFirm: "Allianz Global Investors",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -905,7 +905,7 @@ export const companies: PortCo[] = [
   {
     name: "Galloway 2 Solar Project",
     investmentFirm: "Allianz Global Investors",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Contracted utility-scale solar generation",
     region: "North America",
     country: "United States",
@@ -934,7 +934,7 @@ export const companies: PortCo[] = [
   {
     name: "Great Western Wind Farm",
     investmentFirm: "Allianz Global Investors",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Contracted onshore wind generation",
     region: "North America",
     country: "United States",
@@ -964,7 +964,7 @@ export const companies: PortCo[] = [
   {
     name: "Kelly Creek Wind Project",
     investmentFirm: "Allianz Global Investors",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -992,7 +992,7 @@ export const companies: PortCo[] = [
   {
     name: "Lotus Solar Farm",
     investmentFirm: "Allianz Global Investors",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Contracted utility-scale solar generation",
     region: "North America",
     country: "United States",
@@ -1020,7 +1020,7 @@ export const companies: PortCo[] = [
   {
     name: "Red Dirt Wind Project",
     investmentFirm: "Allianz Global Investors",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Contracted onshore wind generation",
     region: "North America",
     country: "United States",
@@ -1051,7 +1051,7 @@ export const companies: PortCo[] = [
   {
     name: "Stella Wind Farm",
     investmentFirm: "Allianz Global Investors",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -1081,7 +1081,7 @@ export const companies: PortCo[] = [
   {
     name: "7 Mile Pit Solar",
     investmentFirm: "Amber Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar development",
     region: "North America",
     country: "United States",
@@ -1111,7 +1111,7 @@ export const companies: PortCo[] = [
   {
     name: "Alberta Schools Alternative Procurement I",
     investmentFirm: "Amber Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Education public-private partnership",
     region: "North America",
     country: "Canada",
@@ -1171,7 +1171,7 @@ export const companies: PortCo[] = [
   {
     name: "Circle Power Renewables",
     investmentFirm: "Amber Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable energy development platform",
     region: "North America",
     country: "United States",
@@ -1228,7 +1228,7 @@ export const companies: PortCo[] = [
   {
     name: "City of San Marcos Public Services Complex",
     investmentFirm: "Amber Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Municipal civic facility public-private partnership",
     region: "North America",
     country: "United States",
@@ -1257,7 +1257,7 @@ export const companies: PortCo[] = [
   {
     name: "Durham Region Courthouse",
     investmentFirm: "Amber Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Judicial public-private partnership",
     region: "North America",
     country: "Canada",
@@ -1288,7 +1288,7 @@ export const companies: PortCo[] = [
   {
     name: "Euryalus Solar Portfolio",
     investmentFirm: "Amber Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar portfolio",
     region: "North America",
     country: "United States",
@@ -1318,7 +1318,7 @@ export const companies: PortCo[] = [
   {
     name: "Future Energy Park",
     investmentFirm: "Amber Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable natural gas and low-carbon fuels",
     region: "North America",
     country: "Canada",
@@ -1347,7 +1347,7 @@ export const companies: PortCo[] = [
   {
     name: "Granite Solar Portfolio",
     investmentFirm: "Amber Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar portfolio",
     region: "North America",
     country: "United States",
@@ -1377,7 +1377,7 @@ export const companies: PortCo[] = [
   {
     name: "GreenGas Colorado",
     investmentFirm: "Amber Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable natural gas",
     region: "North America",
     country: "United States",
@@ -1406,7 +1406,7 @@ export const companies: PortCo[] = [
   {
     name: "Groveland Mine Solar",
     investmentFirm: "Amber Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar development",
     region: "North America",
     country: "United States",
@@ -1435,7 +1435,7 @@ export const companies: PortCo[] = [
   {
     name: "Heelstone Solar Portfolio",
     investmentFirm: "Amber Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar portfolio",
     region: "North America",
     country: "United States",
@@ -1466,7 +1466,7 @@ export const companies: PortCo[] = [
   {
     name: "Iowa RNG",
     investmentFirm: "Amber Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable natural gas",
     region: "North America",
     country: "United States",
@@ -1524,7 +1524,7 @@ export const companies: PortCo[] = [
   {
     name: "Milford Solar Project",
     investmentFirm: "Amber Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar generation",
     region: "North America",
     country: "United States",
@@ -1554,7 +1554,7 @@ export const companies: PortCo[] = [
   {
     name: "Olympos Solar Portfolio",
     investmentFirm: "Amber Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar portfolio",
     region: "North America",
     country: "United States",
@@ -1584,7 +1584,7 @@ export const companies: PortCo[] = [
   {
     name: "Scotia Wind",
     investmentFirm: "Amber Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind development",
     region: "North America",
     country: "United States",
@@ -1612,7 +1612,7 @@ export const companies: PortCo[] = [
   {
     name: "Travis County Civil and Family Courts Facility",
     investmentFirm: "Amber Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Judicial public-private partnership",
     region: "North America",
     country: "United States",
@@ -1643,7 +1643,7 @@ export const companies: PortCo[] = [
   {
     name: "Noventa Energy Partners",
     investmentFirm: "Ancala Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wastewater energy transfer and thermal networks",
     region: "North America",
     country: "Canada",
@@ -1699,7 +1699,7 @@ export const companies: PortCo[] = [
   {
     name: "Valentra",
     investmentFirm: "Ancala Partners",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Chemical pipeline infrastructure",
     region: "North America",
     country: "United States",
@@ -1727,7 +1727,7 @@ export const companies: PortCo[] = [
   {
     name: "Empire Access",
     investmentFirm: "Antin Infrastructure Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-home broadband networks",
     region: "North America",
     country: "United States",
@@ -1757,7 +1757,7 @@ export const companies: PortCo[] = [
   {
     name: "FirstLight Fiber",
     investmentFirm: "Antin Infrastructure Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber network operator",
     region: "North America",
     country: "United States",
@@ -1786,7 +1786,7 @@ export const companies: PortCo[] = [
   {
     name: "GTL Leasing",
     investmentFirm: "Antin Infrastructure Partners",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Gas and hydrogen transport equipment leasing",
     region: "North America",
     country: "United States",
@@ -1899,7 +1899,7 @@ export const companies: PortCo[] = [
   {
     name: "Astoria Project Partners Holdings LLC",
     investmentFirm: "APG Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired independent power generation",
     region: "North America",
     country: "United States",
@@ -1962,7 +1962,7 @@ export const companies: PortCo[] = [
   {
     name: "Doral Renewables LLC",
     investmentFirm: "APG Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and storage",
     region: "North America",
     country: "United States",
@@ -1992,7 +1992,7 @@ export const companies: PortCo[] = [
   {
     name: "Gemini Solar + Storage",
     investmentFirm: "APG Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and battery storage",
     region: "North America",
     country: "United States",
@@ -2211,7 +2211,7 @@ export const companies: PortCo[] = [
   {
     name: "Pattern Energy Group LP",
     investmentFirm: "APG Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind, solar, storage, and transmission development",
     region: "North America",
     country: "United States",
@@ -2243,7 +2243,7 @@ export const companies: PortCo[] = [
   {
     name: "SiFi Networks America Limited",
     investmentFirm: "APG Infrastructure",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Open-access fiber-to-the-home networks",
     region: "North America",
     country: "United States",
@@ -2273,7 +2273,7 @@ export const companies: PortCo[] = [
   {
     name: "Southern Power",
     investmentFirm: "APG Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wholesale power generation and renewable infrastructure",
     region: "North America",
     country: "United States",
@@ -2304,7 +2304,7 @@ export const companies: PortCo[] = [
   {
     name: "Southern Power solar portfolio",
     investmentFirm: "APG Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Contracted utility-scale solar and storage portfolio",
     region: "North America",
     country: "United States",
@@ -2364,7 +2364,7 @@ export const companies: PortCo[] = [
   {
     name: "Broad Reach Power",
     investmentFirm: "Apollo Global Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable and storage development platform",
     region: "North America",
     country: "United States",
@@ -2393,7 +2393,7 @@ export const companies: PortCo[] = [
   {
     name: "Bullrock Energy Ventures",
     investmentFirm: "Apollo Global Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Community solar development platform",
     region: "North America",
     country: "United States",
@@ -2422,7 +2422,7 @@ export const companies: PortCo[] = [
   {
     name: "Caledonia Generating LLC",
     investmentFirm: "Apollo Global Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired power generation",
     region: "North America",
     country: "United States",
@@ -2452,7 +2452,7 @@ export const companies: PortCo[] = [
   {
     name: "Capital Power U.S. Natural Gas JV",
     investmentFirm: "Apollo Global Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Merchant natural gas generation investment platform",
     region: "North America",
     country: "United States",
@@ -2517,7 +2517,7 @@ export const companies: PortCo[] = [
   {
     name: "Eagle Creek Renewable Energy",
     investmentFirm: "Apollo Global Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Hydroelectric generation platform",
     region: "North America",
     country: "United States",
@@ -2546,7 +2546,7 @@ export const companies: PortCo[] = [
   {
     name: "FirstDigital Telecom, LLC",
     investmentFirm: "Apollo Global Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-based business telecommunications network",
     region: "North America",
     country: "United States",
@@ -2639,7 +2639,7 @@ export const companies: PortCo[] = [
   {
     name: "Great Bay Renewables",
     investmentFirm: "Apollo Global Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable energy royalties and project finance",
     region: "North America",
     country: "United States / Canada",
@@ -2702,7 +2702,7 @@ export const companies: PortCo[] = [
   {
     name: "IonicBlue",
     investmentFirm: "Apollo Global Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Energy-as-a-Service",
     region: "North America",
     country: "United States / Canada",
@@ -2843,7 +2843,7 @@ export const companies: PortCo[] = [
   {
     name: "NextEra Energy Partners 2.5 GW JV",
     investmentFirm: "Apollo Global Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-Scale Renewables Portfolio",
     region: "North America",
     country: "United States",
@@ -2871,7 +2871,7 @@ export const companies: PortCo[] = [
   {
     name: "Nokomis Energy",
     investmentFirm: "Apollo Global Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed Solar",
     region: "North America",
     country: "United States",
@@ -2900,7 +2900,7 @@ export const companies: PortCo[] = [
   {
     name: "Oneta Energy Center",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-Fired Power Generation",
     region: "North America",
     country: "United States",
@@ -2927,7 +2927,7 @@ export const companies: PortCo[] = [
   {
     name: "Pearl/Ruby Solar Portfolio",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Commercial and industrial solar portfolio",
     region: "North America",
     country: "United States",
@@ -2991,7 +2991,7 @@ export const companies: PortCo[] = [
   {
     name: "Pueblo Airport Generating Station",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-Fired Power Generation",
     region: "North America",
     country: "United States",
@@ -3020,7 +3020,7 @@ export const companies: PortCo[] = [
   {
     name: "Smoky Mountain Hydro",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Hydroelectric Generation",
     region: "North America",
     country: "United States",
@@ -3050,7 +3050,7 @@ export const companies: PortCo[] = [
   {
     name: "Stream Data Centers (SDC)",
     investmentFirm: "Apollo Global Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wholesale Data Centers",
     region: "North America",
     country: "United States",
@@ -3080,7 +3080,7 @@ export const companies: PortCo[] = [
   {
     name: "Summit Ridge Energy",
     investmentFirm: "Apollo Global Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed & Community Solar",
     region: "North America",
     country: "United States",
@@ -3112,7 +3112,7 @@ export const companies: PortCo[] = [
   {
     name: "The State Group",
     investmentFirm: "Apollo Global Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Electrical, Mechanical & Automation Services",
     region: "North America",
     country: "United States / Canada",
@@ -3141,7 +3141,7 @@ export const companies: PortCo[] = [
   {
     name: "TierPoint",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Data Centers & Managed IT",
     region: "North America",
     country: "United States",
@@ -3172,7 +3172,7 @@ export const companies: PortCo[] = [
   {
     name: "TotalEnergies Texas Solar & BESS",
     investmentFirm: "Apollo Global Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-Scale Solar & Battery Storage",
     region: "North America",
     country: "United States",
@@ -3229,7 +3229,7 @@ export const companies: PortCo[] = [
   {
     name: "US Wind",
     investmentFirm: "Apollo Global Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Offshore Wind",
     region: "North America",
     country: "United States",
@@ -3260,7 +3260,7 @@ export const companies: PortCo[] = [
   {
     name: "Valor Compute Infrastructure (VCI)",
     investmentFirm: "Apollo Global Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "AI Compute Infrastructure Leasing",
     region: "North America",
     country: "United States",
@@ -3287,7 +3287,7 @@ export const companies: PortCo[] = [
   {
     name: "Centric Fiber",
     investmentFirm: "Ara Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-Home",
     region: "North America",
     country: "United States",
@@ -3315,7 +3315,7 @@ export const companies: PortCo[] = [
   {
     name: "Gate City Power",
     investmentFirm: "Ara Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-Fired Power Generation",
     region: "North America",
     country: "United States",
@@ -3342,7 +3342,7 @@ export const companies: PortCo[] = [
   {
     name: "Gate City Renewable Fuels",
     investmentFirm: "Ara Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Ethanol Production",
     region: "North America",
     country: "United States",
@@ -3369,7 +3369,7 @@ export const companies: PortCo[] = [
   {
     name: "Lincoln Terminal Holdings",
     investmentFirm: "Ara Partners",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Renewable Fuel Logistics",
     region: "North America",
     country: "United States",
@@ -3398,7 +3398,7 @@ export const companies: PortCo[] = [
   {
     name: "USD Clean Fuels",
     investmentFirm: "Ara Partners",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Renewable Fuels Logistics",
     region: "North America",
     country: "United States",
@@ -3426,7 +3426,7 @@ export const companies: PortCo[] = [
   {
     name: "Advanced Power",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Power Development",
     region: "North America",
     country: "United States",
@@ -3456,7 +3456,7 @@ export const companies: PortCo[] = [
   {
     name: "Alpha Generation (AlphaGen)",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Power Asset Management",
     region: "North America",
     country: "United States",
@@ -3484,7 +3484,7 @@ export const companies: PortCo[] = [
   {
     name: "Catalyst Old River Hydroelectric",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Hydroelectric Generation",
     region: "North America",
     country: "United States",
@@ -3513,7 +3513,7 @@ export const companies: PortCo[] = [
   {
     name: "Eastern Generation",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-Fired Power Generation",
     region: "North America",
     country: "United States",
@@ -3541,7 +3541,7 @@ export const companies: PortCo[] = [
   {
     name: "Elevate Renewables",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery Energy Storage",
     region: "North America",
     country: "United States",
@@ -3570,7 +3570,7 @@ export const companies: PortCo[] = [
   {
     name: "Generation Bridge",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-Fired Power Generation",
     region: "North America",
     country: "United States",
@@ -3597,7 +3597,7 @@ export const companies: PortCo[] = [
   {
     name: "Gulf Coast Express Pipeline (GCX)",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural Gas Transmission",
     region: "North America",
     country: "United States",
@@ -3627,7 +3627,7 @@ export const companies: PortCo[] = [
   {
     name: "Haynesville Gas Gathering System",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Gas Gathering",
     region: "North America",
     country: "United States",
@@ -3654,7 +3654,7 @@ export const companies: PortCo[] = [
   {
     name: "Infinigen Renewables",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar & Battery Storage",
     region: "North America",
     country: "United States",
@@ -3710,7 +3710,7 @@ export const companies: PortCo[] = [
   {
     name: "Invenergy AMPCI Thermal Power",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-Fired Power Generation",
     region: "North America",
     country: "United States / Canada",
@@ -3747,7 +3747,7 @@ export const companies: PortCo[] = [
   {
     name: "Kleen Energy Systems",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-Fired Power Generation",
     region: "North America",
     country: "United States",
@@ -3774,7 +3774,7 @@ export const companies: PortCo[] = [
   {
     name: "Lordstown Energy Center",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-Fired Power Generation",
     region: "North America",
     country: "United States",
@@ -3801,7 +3801,7 @@ export const companies: PortCo[] = [
   {
     name: "Middletown Energy Center",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-Fired Power Generation",
     region: "North America",
     country: "United States",
@@ -3828,7 +3828,7 @@ export const companies: PortCo[] = [
   {
     name: "Natural Gas Pipeline Co. of America",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural Gas Transmission & Storage",
     region: "North America",
     country: "United States",
@@ -3858,7 +3858,7 @@ export const companies: PortCo[] = [
   {
     name: "Naugatuck Avenue Storage",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery Energy Storage",
     region: "North America",
     country: "United States",
@@ -3886,7 +3886,7 @@ export const companies: PortCo[] = [
   {
     name: "Parkway Generation",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-Fired Power Generation",
     region: "North America",
     country: "United States",
@@ -3913,7 +3913,7 @@ export const companies: PortCo[] = [
   {
     name: "Phoenix Renewables",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Operating Renewables Portfolio",
     region: "North America",
     country: "United States",
@@ -3940,7 +3940,7 @@ export const companies: PortCo[] = [
   {
     name: "Prospect Power",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery Energy Storage",
     region: "North America",
     country: "United States",
@@ -3967,7 +3967,7 @@ export const companies: PortCo[] = [
   {
     name: "REC Solar",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed Solar & Storage",
     region: "North America",
     country: "United States",
@@ -3997,7 +3997,7 @@ export const companies: PortCo[] = [
   {
     name: "Sequitur Renewables",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Operating Wind Portfolio",
     region: "North America",
     country: "United States",
@@ -4026,7 +4026,7 @@ export const companies: PortCo[] = [
   {
     name: "SkyVest Renewables",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable Asset Management",
     region: "North America",
     country: "United States",
@@ -4054,7 +4054,7 @@ export const companies: PortCo[] = [
   {
     name: "Takanock, LLC",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Data Center Power Infrastructure",
     region: "North America",
     country: "United States",
@@ -4081,7 +4081,7 @@ export const companies: PortCo[] = [
   {
     name: "Third Coast Infrastructure",
     investmentFirm: "J.P. Morgan Asset Management",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Offshore & Coastal Midstream Infrastructure",
     region: "North America",
     country: "United States",
@@ -4120,7 +4120,7 @@ export const companies: PortCo[] = [
   {
     name: "Thunderbird Renewables",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Operating Renewables Portfolio",
     region: "North America",
     country: "United States",
@@ -4147,7 +4147,7 @@ export const companies: PortCo[] = [
   {
     name: "Two Rivers Storage",
     investmentFirm: "ArcLight Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery Energy Storage",
     region: "North America",
     country: "United States",
@@ -4291,7 +4291,7 @@ export const companies: PortCo[] = [
   {
     name: "Dauntless Energy",
     investmentFirm: "Ardian",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable and flexible generation platform",
     region: "North America",
     country: "United States",
@@ -4321,7 +4321,7 @@ export const companies: PortCo[] = [
   {
     name: "Maple Leaf",
     investmentFirm: "Ardian",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery energy storage",
     region: "North America",
     country: "Canada",
@@ -4349,7 +4349,7 @@ export const companies: PortCo[] = [
   {
     name: "MXT Holdings",
     investmentFirm: "Ardian",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Neutral-host towers and metropolitan fiber",
     region: "North America",
     country: "Mexico",
@@ -4379,7 +4379,7 @@ export const companies: PortCo[] = [
   {
     name: "Unison Site Management",
     investmentFirm: "Ardian",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless infrastructure ground leases",
     region: "North America",
     country: "United States",
@@ -4409,7 +4409,7 @@ export const companies: PortCo[] = [
   {
     name: "Ada Infrastructure",
     investmentFirm: "Ares Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data center development",
     region: "North America",
     country: "United States",
@@ -4439,7 +4439,7 @@ export const companies: PortCo[] = [
   {
     name: "Apex Clean Energy",
     investmentFirm: "Ares Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale renewable energy development",
     region: "North America",
     country: "United States",
@@ -4467,7 +4467,7 @@ export const companies: PortCo[] = [
   {
     name: "Atlas Crane Service",
     investmentFirm: "Ares Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind maintenance and crane services",
     region: "North America",
     country: "United States",
@@ -4495,7 +4495,7 @@ export const companies: PortCo[] = [
   {
     name: "Birdsboro Power LLC",
     investmentFirm: "Ares Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Natural gas-fired generation",
     region: "North America",
     country: "United States",
@@ -4526,7 +4526,7 @@ export const companies: PortCo[] = [
   {
     name: "Bluepeak",
     investmentFirm: "Ares Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber broadband",
     region: "North America",
     country: "United States",
@@ -4554,7 +4554,7 @@ export const companies: PortCo[] = [
   {
     name: "Burnham RNG",
     investmentFirm: "Ares Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable natural gas",
     region: "North America",
     country: "United States",
@@ -4611,7 +4611,7 @@ export const companies: PortCo[] = [
   {
     name: "EDPR United States renewables portfolio",
     investmentFirm: "Ares Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Operating wind, solar, and storage portfolio",
     region: "North America",
     country: "United States",
@@ -4638,7 +4638,7 @@ export const companies: PortCo[] = [
   {
     name: "ENGIE United States renewables partnership portfolio",
     investmentFirm: "Ares Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Operating wind and solar portfolio",
     region: "North America",
     country: "United States",
@@ -4667,7 +4667,7 @@ export const companies: PortCo[] = [
   {
     name: "Meade Pipeline Co. LLC",
     investmentFirm: "Ares Management",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Interstate natural gas pipeline",
     region: "North America",
     country: "United States",
@@ -4694,7 +4694,7 @@ export const companies: PortCo[] = [
   {
     name: "Northampton Generating Company L.P.",
     investmentFirm: "Ares Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Waste coal-fired generation",
     region: "North America",
     country: "United States",
@@ -4722,7 +4722,7 @@ export const companies: PortCo[] = [
   {
     name: "Prime Data Centers",
     investmentFirm: "Ares Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale and wholesale data centers",
     region: "North America",
     country: "United States",
@@ -4751,7 +4751,7 @@ export const companies: PortCo[] = [
   {
     name: "RENEW Energy Partners",
     investmentFirm: "Ares Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Energy efficiency and energy-as-a-service",
     region: "North America",
     country: "United States",
@@ -4779,7 +4779,7 @@ export const companies: PortCo[] = [
   {
     name: "Sagepoint Energy",
     investmentFirm: "Ares Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable waste-to-energy and RNG",
     region: "North America",
     country: "United States",
@@ -4808,7 +4808,7 @@ export const companies: PortCo[] = [
   {
     name: "SB Energy",
     investmentFirm: "Ares Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and storage",
     region: "North America",
     country: "United States",
@@ -4837,7 +4837,7 @@ export const companies: PortCo[] = [
   {
     name: "Spruance Operating Services LLC",
     investmentFirm: "Ares Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Natural gas-fired generation",
     region: "North America",
     country: "United States",
@@ -4865,7 +4865,7 @@ export const companies: PortCo[] = [
   {
     name: "Tango Holdings LLC",
     investmentFirm: "Ares Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Operating solar portfolio",
     region: "North America",
     country: "United States",
@@ -4893,7 +4893,7 @@ export const companies: PortCo[] = [
   {
     name: "Underline Infrastructure",
     investmentFirm: "Ares Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Open access fiber networks",
     region: "North America",
     country: "United States",
@@ -4922,7 +4922,7 @@ export const companies: PortCo[] = [
   {
     name: "Astro Solar portfolio",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Commercial and industrial distributed solar",
     region: "North America",
     country: "United States",
@@ -4978,7 +4978,7 @@ export const companies: PortCo[] = [
   {
     name: "Black Hills Colorado IPP",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Natural gas-fired generation",
     region: "North America",
     country: "United States",
@@ -5007,7 +5007,7 @@ export const companies: PortCo[] = [
   {
     name: "Carville Energy Center",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Natural gas-fired generation",
     region: "North America",
     country: "United States",
@@ -5140,7 +5140,7 @@ export const companies: PortCo[] = [
   {
     name: "Isle Gas",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Propane storage and supply",
     region: "North America",
     country: "United States",
@@ -5197,7 +5197,7 @@ export const companies: PortCo[] = [
   {
     name: "Mobile Energy LLC",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Natural gas-fired generation",
     region: "North America",
     country: "United States",
@@ -5225,7 +5225,7 @@ export const companies: PortCo[] = [
   {
     name: "Oneta Power",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Natural gas-fired generation",
     region: "North America",
     country: "United States",
@@ -5253,7 +5253,7 @@ export const companies: PortCo[] = [
   {
     name: "Pearl / Ruby solar portfolio",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Commercial and industrial distributed solar",
     region: "North America",
     country: "United States",
@@ -5280,7 +5280,7 @@ export const companies: PortCo[] = [
   {
     name: "Smoky Mountain hydropower portfolio",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Hydroelectric generation",
     region: "North America",
     country: "United States",
@@ -5310,7 +5310,7 @@ export const companies: PortCo[] = [
   {
     name: "Thule Energy Storage",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Behind-the-meter thermal energy storage",
     region: "North America",
     country: "United States",
@@ -5338,7 +5338,7 @@ export const companies: PortCo[] = [
   {
     name: "Waihonu Solar Farm",
     investmentFirm: "Argo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar generation",
     region: "North America",
     country: "United States",
@@ -5398,7 +5398,7 @@ export const companies: PortCo[] = [
   {
     name: "Everfast Fiber Networks",
     investmentFirm: "Astatine Investment Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber Broadband",
     region: "North America",
     country: "United States",
@@ -5428,7 +5428,7 @@ export const companies: PortCo[] = [
   {
     name: "Maurepas Pipeline",
     investmentFirm: "Astatine Investment Partners",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural Gas Pipeline",
     region: "North America",
     country: "United States",
@@ -5574,7 +5574,7 @@ export const companies: PortCo[] = [
   {
     name: "DataBank",
     investmentFirm: "AustralianSuper",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Data Centers",
     region: "North America",
     country: "United States",
@@ -5623,7 +5623,7 @@ export const companies: PortCo[] = [
   {
     name: "527 Renewables Holdings LLC",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind and Solar Portfolio",
     region: "North America",
     country: "United States",
@@ -5652,7 +5652,7 @@ export const companies: PortCo[] = [
   {
     name: "AgeCare Facilities Portfolio",
     investmentFirm: "Axium Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Long-Term Care",
     region: "North America",
     country: "Canada",
@@ -5710,7 +5710,7 @@ export const companies: PortCo[] = [
   {
     name: "Arbour Heights",
     investmentFirm: "Axium Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Long-Term Care",
     region: "North America",
     country: "Canada",
@@ -5738,7 +5738,7 @@ export const companies: PortCo[] = [
   {
     name: "Aspire at West Campus",
     investmentFirm: "Axium Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Student Housing",
     region: "North America",
     country: "United States",
@@ -5767,7 +5767,7 @@ export const companies: PortCo[] = [
   {
     name: "Aurora Solar Portfolio",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar Portfolio",
     region: "North America",
     country: "Canada",
@@ -5828,7 +5828,7 @@ export const companies: PortCo[] = [
   {
     name: "Axium Great Plains Wind LLC",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind Portfolio",
     region: "North America",
     country: "United States",
@@ -5857,7 +5857,7 @@ export const companies: PortCo[] = [
   {
     name: "BlueWave",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed Solar and Storage Development",
     region: "North America",
     country: "United States",
@@ -5885,7 +5885,7 @@ export const companies: PortCo[] = [
   {
     name: "Cascade Power Project",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Natural Gas Power Generation",
     region: "North America",
     country: "Canada",
@@ -5923,7 +5923,7 @@ export const companies: PortCo[] = [
   {
     name: "Cedar Point II Wind Project",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind",
     region: "North America",
     country: "Canada",
@@ -5951,7 +5951,7 @@ export const companies: PortCo[] = [
   {
     name: "CHUM Research Centre (CRCHUM)",
     investmentFirm: "Axium Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Healthcare PPP",
     region: "North America",
     country: "Canada",
@@ -5979,7 +5979,7 @@ export const companies: PortCo[] = [
   {
     name: "Copper Crossing Solar Project",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar",
     region: "North America",
     country: "United States",
@@ -6008,7 +6008,7 @@ export const companies: PortCo[] = [
   {
     name: "CPV Three Rivers Energy Center",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Natural Gas Power Generation",
     region: "North America",
     country: "United States",
@@ -6037,7 +6037,7 @@ export const companies: PortCo[] = [
   {
     name: "Crimson Storage",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery Storage",
     region: "North America",
     country: "United States",
@@ -6068,7 +6068,7 @@ export const companies: PortCo[] = [
   {
     name: "Denfield Power Portfolio",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind and Solar Portfolio",
     region: "North America",
     country: "Canada",
@@ -6097,7 +6097,7 @@ export const companies: PortCo[] = [
   {
     name: "Dry Lake II Wind Farm",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind",
     region: "North America",
     country: "United States",
@@ -6126,7 +6126,7 @@ export const companies: PortCo[] = [
   {
     name: "EDPR U.S. Wind Portfolio",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind Portfolio",
     region: "North America",
     country: "United States",
@@ -6155,7 +6155,7 @@ export const companies: PortCo[] = [
   {
     name: "Edwards Sanborn 1A",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar + Battery Storage",
     region: "North America",
     country: "United States",
@@ -6184,7 +6184,7 @@ export const companies: PortCo[] = [
   {
     name: "Edwards Sanborn 1A & 1B",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar + Battery Storage",
     region: "North America",
     country: "United States",
@@ -6213,7 +6213,7 @@ export const companies: PortCo[] = [
   {
     name: "Etobicoke General Hospital (Phase 1 Patient Tower)",
     investmentFirm: "Axium Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Hospital public-private partnership",
     region: "North America",
     country: "Canada",
@@ -6250,7 +6250,7 @@ export const companies: PortCo[] = [
   {
     name: "Georgetown Energy Partners",
     investmentFirm: "Axium Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Campus Energy Infrastructure",
     region: "North America",
     country: "United States",
@@ -6278,7 +6278,7 @@ export const companies: PortCo[] = [
   {
     name: "Grand Valley III Wind Project",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind",
     region: "North America",
     country: "Canada",
@@ -6306,7 +6306,7 @@ export const companies: PortCo[] = [
   {
     name: "Jimmie Creek Hydroelectric Project",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Hydroelectric",
     region: "North America",
     country: "Canada",
@@ -6336,7 +6336,7 @@ export const companies: PortCo[] = [
   {
     name: "K2 Wind Facility",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind",
     region: "North America",
     country: "Canada",
@@ -6365,7 +6365,7 @@ export const companies: PortCo[] = [
   {
     name: "Kings Mountain Energy Center",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Natural Gas Power Generation",
     region: "North America",
     country: "United States",
@@ -6393,7 +6393,7 @@ export const companies: PortCo[] = [
   {
     name: "Longwood Medical Area Energy System",
     investmentFirm: "Axium Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "District Energy",
     region: "North America",
     country: "United States",
@@ -6422,7 +6422,7 @@ export const companies: PortCo[] = [
   {
     name: "Mass Ave Housing Partners",
     investmentFirm: "Axium Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Student Housing",
     region: "North America",
     country: "United States",
@@ -6452,7 +6452,7 @@ export const companies: PortCo[] = [
   {
     name: "Northwest British Columbia Hydroelectric Facilities",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Hydroelectric",
     region: "North America",
     country: "Canada",
@@ -6480,7 +6480,7 @@ export const companies: PortCo[] = [
   {
     name: "Ohio State Energy Partners",
     investmentFirm: "Axium Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Campus Energy Infrastructure",
     region: "North America",
     country: "United States",
@@ -6509,7 +6509,7 @@ export const companies: PortCo[] = [
   {
     name: "Optima Living Joint Ventures",
     investmentFirm: "Axium Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Long-Term Care",
     region: "North America",
     country: "Canada",
@@ -6538,7 +6538,7 @@ export const companies: PortCo[] = [
   {
     name: "Port Dover & Nanticoke Wind Project",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind",
     region: "North America",
     country: "Canada",
@@ -6598,7 +6598,7 @@ export const companies: PortCo[] = [
   {
     name: "Quality Wind Project",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind",
     region: "North America",
     country: "Canada",
@@ -6627,7 +6627,7 @@ export const companies: PortCo[] = [
   {
     name: "RET North American Solar Portfolio",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar Portfolio",
     region: "North America",
     country: "United States / Canada",
@@ -6655,7 +6655,7 @@ export const companies: PortCo[] = [
   {
     name: "Revera Joint Venture",
     investmentFirm: "Axium Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Long-Term Care",
     region: "North America",
     country: "Canada",
@@ -6713,7 +6713,7 @@ export const companies: PortCo[] = [
   {
     name: "Slate Creek Wind Project",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind",
     region: "North America",
     country: "United States",
@@ -6742,7 +6742,7 @@ export const companies: PortCo[] = [
   {
     name: "Sorel-Tracy Detention Centre",
     investmentFirm: "Axium Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Correctional",
     region: "North America",
     country: "Canada",
@@ -6771,7 +6771,7 @@ export const companies: PortCo[] = [
   {
     name: "Swiftsure Housing Partners (Broadview at Vanderbilt)",
     investmentFirm: "Axium Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Student housing P3",
     region: "North America",
     country: "United States",
@@ -6803,7 +6803,7 @@ export const companies: PortCo[] = [
   {
     name: "Travers Solar Project",
     investmentFirm: "Axium Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar",
     region: "North America",
     country: "Canada",
@@ -6891,7 +6891,7 @@ export const companies: PortCo[] = [
   {
     name: "EnviroSpark",
     investmentFirm: "Basalt Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "EV charging infrastructure",
     region: "North America",
     country: "United States",
@@ -6920,7 +6920,7 @@ export const companies: PortCo[] = [
   {
     name: "Fatbeam",
     investmentFirm: "Basalt Infrastructure Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber broadband",
     region: "North America",
     country: "United States",
@@ -6978,7 +6978,7 @@ export const companies: PortCo[] = [
   {
     name: "Go Lime",
     investmentFirm: "Basalt Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Residential energy equipment leasing",
     region: "North America",
     country: "Canada",
@@ -7008,7 +7008,7 @@ export const companies: PortCo[] = [
   {
     name: "Habitat Solar",
     investmentFirm: "Basalt Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Residential solar",
     region: "North America",
     country: "United States",
@@ -7036,7 +7036,7 @@ export const companies: PortCo[] = [
   {
     name: "Helios Power",
     investmentFirm: "Basalt Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed solar",
     region: "North America",
     country: "United States",
@@ -7064,7 +7064,7 @@ export const companies: PortCo[] = [
   {
     name: "OnSite Partners",
     investmentFirm: "Basalt Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "On-site distributed energy",
     region: "North America",
     country: "United States",
@@ -7094,7 +7094,7 @@ export const companies: PortCo[] = [
   {
     name: "Skyway Towers",
     investmentFirm: "Basalt Infrastructure Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless towers",
     region: "North America",
     country: "United States",
@@ -7121,7 +7121,7 @@ export const companies: PortCo[] = [
   {
     name: "Xpress Natural Gas",
     investmentFirm: "Basalt Infrastructure Partners",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Virtual pipeline and compressed natural gas logistics",
     region: "North America",
     country: "United States / Canada",
@@ -7148,7 +7148,7 @@ export const companies: PortCo[] = [
   {
     name: "Ag Partners Capital",
     investmentFirm: "BCI",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Permanent-crop farmland",
     region: "North America",
     country: "United States",
@@ -7176,7 +7176,7 @@ export const companies: PortCo[] = [
   {
     name: "Caddo Sustainable Timberlands LP",
     investmentFirm: "BCI",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Timberlands / sustainable forestry",
     region: "North America",
     country: "United States",
@@ -7236,7 +7236,7 @@ export const companies: PortCo[] = [
   {
     name: "Connaught Oil and Gas",
     investmentFirm: "BCI",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Oil and natural gas exploration and production",
     region: "North America",
     country: "Canada",
@@ -7264,7 +7264,7 @@ export const companies: PortCo[] = [
   {
     name: "Corex Resources Ltd.",
     investmentFirm: "BCI",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Oil and natural gas exploration and production",
     region: "North America",
     country: "Canada",
@@ -7391,7 +7391,7 @@ export const companies: PortCo[] = [
   {
     name: "Monterey Mushrooms",
     investmentFirm: "BCI",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Controlled-environment agriculture / mushrooms",
     region: "North America",
     country: "United States",
@@ -7421,7 +7421,7 @@ export const companies: PortCo[] = [
   {
     name: "Mosaic Forest Management",
     investmentFirm: "BCI",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Timberlands management / sustainable forestry",
     region: "North America",
     country: "Canada",
@@ -7483,7 +7483,7 @@ export const companies: PortCo[] = [
   {
     name: "Northview Energy",
     investmentFirm: "BCI",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Contracted utility-scale wind and solar",
     region: "North America",
     country: "United States / Canada",
@@ -7519,7 +7519,7 @@ export const companies: PortCo[] = [
   {
     name: "Teays River Investments",
     investmentFirm: "BCI",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Agricultural investment platform",
     region: "North America",
     country: "United States",
@@ -7604,7 +7604,7 @@ export const companies: PortCo[] = [
   {
     name: "Elevation",
     investmentFirm: "Bernhard Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Residential solar, storage, and home energy management",
     region: "North America",
     country: "United States",
@@ -7632,7 +7632,7 @@ export const companies: PortCo[] = [
   {
     name: "Green Meadow Sustainable Solutions",
     investmentFirm: "Bernhard Capital Partners",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Waste management",
     region: "North America",
     country: "United States",
@@ -7716,7 +7716,7 @@ export const companies: PortCo[] = [
   {
     name: "CleanCapital Holdings, LLC",
     investmentFirm: "Manulife",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed solar and energy storage",
     region: "North America",
     country: "United States",
@@ -7755,7 +7755,7 @@ export const companies: PortCo[] = [
   {
     name: "Conexon",
     investmentFirm: "BlackRock",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Rural fiber broadband",
     region: "North America",
     country: "United States",
@@ -7786,7 +7786,7 @@ export const companies: PortCo[] = [
   {
     name: "DSD Renewables",
     investmentFirm: "BlackRock",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed solar, storage, and EV charging",
     region: "North America",
     country: "United States",
@@ -7852,7 +7852,7 @@ export const companies: PortCo[] = [
   {
     name: "Environmental 360 Solutions",
     investmentFirm: "BlackRock",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Waste management and environmental services",
     region: "North America",
     country: "Canada",
@@ -7882,7 +7882,7 @@ export const companies: PortCo[] = [
   {
     name: "Excelsior U.S. Solar & Storage Portfolio",
     investmentFirm: "BlackRock",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar and solar-plus-storage portfolio",
     region: "North America",
     country: "United States",
@@ -7909,7 +7909,7 @@ export const companies: PortCo[] = [
   {
     name: "Gigapower",
     investmentFirm: "BlackRock",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Open-access fiber broadband",
     region: "North America",
     country: "United States",
@@ -7937,7 +7937,7 @@ export const companies: PortCo[] = [
   {
     name: "Harquahala Generation Company",
     investmentFirm: "BlackRock",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Natural gas-fired generation",
     region: "North America",
     country: "United States",
@@ -7966,7 +7966,7 @@ export const companies: PortCo[] = [
   {
     name: "Indian Energy",
     investmentFirm: "BlackRock",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Microgrids and distributed energy",
     region: "North America",
     country: "United States",
@@ -7995,7 +7995,7 @@ export const companies: PortCo[] = [
   {
     name: "Jupiter Power",
     investmentFirm: "BlackRock",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery energy storage",
     region: "North America",
     country: "United States",
@@ -8025,7 +8025,7 @@ export const companies: PortCo[] = [
   {
     name: "Lighthouse",
     investmentFirm: "BlackRock",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Commercial and industrial solar and battery storage",
     region: "North America",
     country: "United States",
@@ -8052,7 +8052,7 @@ export const companies: PortCo[] = [
   {
     name: "National Renewable Solutions",
     investmentFirm: "BlackRock",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable project development",
     region: "North America",
     country: "United States",
@@ -8080,7 +8080,7 @@ export const companies: PortCo[] = [
   {
     name: "Portland Natural Gas Transmission System",
     investmentFirm: "BlackRock",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas transmission pipeline",
     region: "North America",
     country: "United States / Canada",
@@ -8120,7 +8120,7 @@ export const companies: PortCo[] = [
   {
     name: "Recurrent Energy",
     investmentFirm: "BlackRock",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and storage",
     region: "North America",
     country: "United States / Canada",
@@ -8150,7 +8150,7 @@ export const companies: PortCo[] = [
   {
     name: "STRATOS",
     investmentFirm: "BlackRock",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Direct air capture / carbon removal",
     region: "North America",
     country: "United States",
@@ -8180,7 +8180,7 @@ export const companies: PortCo[] = [
   {
     name: "Vopak Industrial Infrastructure Americas",
     investmentFirm: "BlackRock",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Industrial terminals and storage",
     region: "North America",
     country: "United States",
@@ -8208,7 +8208,7 @@ export const companies: PortCo[] = [
   {
     name: "Accel International",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "High-performance electrical conductors",
     region: "North America",
     country: "United States",
@@ -8236,7 +8236,7 @@ export const companies: PortCo[] = [
   {
     name: "Advanced Cooling Technologies (ACT)",
     investmentFirm: "Blackstone",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Thermal management and cooling systems",
     region: "North America",
     country: "United States",
@@ -8265,7 +8265,7 @@ export const companies: PortCo[] = [
   {
     name: "Alliance Technical Group",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Environmental testing and compliance services",
     region: "North America",
     country: "United States",
@@ -8294,7 +8294,7 @@ export const companies: PortCo[] = [
   {
     name: "Arlington Industries",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Electrical fittings and wiring accessories",
     region: "North America",
     country: "United States",
@@ -8323,7 +8323,7 @@ export const companies: PortCo[] = [
   {
     name: "Atlantic Power Transmission LLC",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Offshore transmission development",
     region: "North America",
     country: "United States",
@@ -8352,7 +8352,7 @@ export const companies: PortCo[] = [
   {
     name: "Aypa Power",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery energy storage",
     region: "North America",
     country: "United States / Canada",
@@ -8383,7 +8383,7 @@ export const companies: PortCo[] = [
   {
     name: "Cheniere Energy Partners, L.P.",
     investmentFirm: "Blackstone",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "LNG export",
     region: "North America",
     country: "United States",
@@ -8415,7 +8415,7 @@ export const companies: PortCo[] = [
   {
     name: "Enverus",
     investmentFirm: "Blackstone",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Energy data and analytics software",
     region: "North America",
     country: "United States",
@@ -8444,7 +8444,7 @@ export const companies: PortCo[] = [
   {
     name: "Geosyntec Consultants",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Environmental engineering and consulting",
     region: "North America",
     country: "United States",
@@ -8472,7 +8472,7 @@ export const companies: PortCo[] = [
   {
     name: "Hill Top Energy Center",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired generation",
     region: "North America",
     country: "United States",
@@ -8500,7 +8500,7 @@ export const companies: PortCo[] = [
   {
     name: "Invenergy",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind, solar, storage and power generation development",
     region: "North America",
     country: "United States",
@@ -8529,7 +8529,7 @@ export const companies: PortCo[] = [
   {
     name: "Kindle Energy",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Power generation development and asset management",
     region: "North America",
     country: "United States",
@@ -8559,7 +8559,7 @@ export const companies: PortCo[] = [
   {
     name: "Kinetik Holdings Inc.",
     investmentFirm: "Blackstone",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Gas gathering, processing and transportation",
     region: "North America",
     country: "United States",
@@ -8591,7 +8591,7 @@ export const companies: PortCo[] = [
   {
     name: "Lancium",
     investmentFirm: "Blackstone",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "AI power campus and power interconnection development",
     region: "North America",
     country: "United States",
@@ -8621,7 +8621,7 @@ export const companies: PortCo[] = [
   {
     name: "Legence",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Building systems engineering and energy services",
     region: "North America",
     country: "United States",
@@ -8653,7 +8653,7 @@ export const companies: PortCo[] = [
   {
     name: "MacLean Power Systems",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility components and grid hardware",
     region: "North America",
     country: "United States",
@@ -8682,7 +8682,7 @@ export const companies: PortCo[] = [
   {
     name: "Magnolia Power Generating Station",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired generation",
     region: "North America",
     country: "United States",
@@ -8740,7 +8740,7 @@ export const companies: PortCo[] = [
   {
     name: "Onyx Renewables",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Commercial and industrial solar and storage",
     region: "North America",
     country: "United States",
@@ -8769,7 +8769,7 @@ export const companies: PortCo[] = [
   {
     name: "Potomac Energy Center",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired generation",
     region: "North America",
     country: "United States",
@@ -8797,7 +8797,7 @@ export const companies: PortCo[] = [
   {
     name: "PPL / Blackstone Power JV",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired generation development",
     region: "North America",
     country: "United States",
@@ -8826,7 +8826,7 @@ export const companies: PortCo[] = [
   {
     name: "QTS Data Centers",
     investmentFirm: "Blackstone",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale and wholesale data centers",
     region: "North America",
     country: "United States",
@@ -8857,7 +8857,7 @@ export const companies: PortCo[] = [
   {
     name: "Rover Pipeline",
     investmentFirm: "Ares Management",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas transmission",
     region: "North America",
     country: "United States",
@@ -8890,7 +8890,7 @@ export const companies: PortCo[] = [
   {
     name: "Sabre Industries",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Transmission, telecom and data center infrastructure components",
     region: "North America",
     country: "United States",
@@ -8952,7 +8952,7 @@ export const companies: PortCo[] = [
   {
     name: "Shermco Industries",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Electrical testing and maintenance services",
     region: "North America",
     country: "United States / Canada",
@@ -8983,7 +8983,7 @@ export const companies: PortCo[] = [
   {
     name: "Transmission Developers Inc. / Champlain Hudson Power Express",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "HVDC transmission development",
     region: "North America",
     country: "United States / Canada",
@@ -9011,7 +9011,7 @@ export const companies: PortCo[] = [
   {
     name: "Trystar",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Temporary and backup power equipment",
     region: "North America",
     country: "United States",
@@ -9072,7 +9072,7 @@ export const companies: PortCo[] = [
   {
     name: "Viridon",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Transmission development",
     region: "North America",
     country: "United States",
@@ -9102,7 +9102,7 @@ export const companies: PortCo[] = [
   {
     name: "Western LNG",
     investmentFirm: "Blackstone",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "LNG project development",
     region: "North America",
     country: "United States / Canada",
@@ -9130,7 +9130,7 @@ export const companies: PortCo[] = [
   {
     name: "Westwood Professional Services",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Engineering and design services",
     region: "North America",
     country: "United States",
@@ -9159,7 +9159,7 @@ export const companies: PortCo[] = [
   {
     name: "Wolf Summit Energy",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired generation",
     region: "North America",
     country: "United States",
@@ -9188,7 +9188,7 @@ export const companies: PortCo[] = [
   {
     name: "Xpansiv",
     investmentFirm: "Blackstone",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Environmental commodities exchange and market infrastructure",
     region: "North America",
     country: "United States",
@@ -9216,7 +9216,7 @@ export const companies: PortCo[] = [
   {
     name: "Beale Infrastructure",
     investmentFirm: "Blue Owl",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Data center development",
     region: "North America",
     country: "United States",
@@ -9248,7 +9248,7 @@ export const companies: PortCo[] = [
   {
     name: "Dark Fiber and Infrastructure, LLC",
     investmentFirm: "Blue Owl",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Dark fiber and conduit infrastructure",
     region: "North America",
     country: "United States",
@@ -9281,7 +9281,7 @@ export const companies: PortCo[] = [
   {
     name: "Gigabit Fiber, LLC",
     investmentFirm: "Blue Owl",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Dark and lit fiber for data center connectivity",
     region: "North America",
     country: "United States",
@@ -9311,7 +9311,7 @@ export const companies: PortCo[] = [
   {
     name: "RadiusDC",
     investmentFirm: "Blue Owl",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Edge and regional colocation data centers",
     region: "North America",
     country: "United States",
@@ -9344,7 +9344,7 @@ export const companies: PortCo[] = [
   {
     name: "South Reach Networks",
     investmentFirm: "Blue Owl",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Dark and lit fiber with edge colocation",
     region: "North America",
     country: "United States",
@@ -9374,7 +9374,7 @@ export const companies: PortCo[] = [
   {
     name: "STACK Infrastructure",
     investmentFirm: "Blue Owl",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale and wholesale data centers",
     region: "North America",
     country: "United States / Canada",
@@ -9404,7 +9404,7 @@ export const companies: PortCo[] = [
   {
     name: "5C Group / Hypertec Cloud",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "AI data centers",
     region: "North America",
     country: "United States / Canada",
@@ -9433,7 +9433,7 @@ export const companies: PortCo[] = [
   {
     name: "California Bioenergy",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Dairy renewable natural gas",
     region: "North America",
     country: "United States",
@@ -9462,7 +9462,7 @@ export const companies: PortCo[] = [
   {
     name: "Carbon TerraVault",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Carbon capture and storage",
     region: "North America",
     country: "United States",
@@ -9492,7 +9492,7 @@ export const companies: PortCo[] = [
   {
     name: "Centersquare",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Colocation data centers",
     region: "North America",
     country: "United States / Canada",
@@ -9522,7 +9522,7 @@ export const companies: PortCo[] = [
   {
     name: "Colonial Enterprises, Inc.",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Refined products pipeline",
     region: "North America",
     country: "United States",
@@ -9552,7 +9552,7 @@ export const companies: PortCo[] = [
   {
     name: "Cove Point LNG, LP",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "LNG terminal",
     region: "North America",
     country: "United States",
@@ -9581,7 +9581,7 @@ export const companies: PortCo[] = [
   {
     name: "Deriva Energy",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable power generation",
     region: "North America",
     country: "United States",
@@ -9666,7 +9666,7 @@ export const companies: PortCo[] = [
   {
     name: "Entropy Inc.",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Carbon capture technology",
     region: "North America",
     country: "Canada",
@@ -9696,7 +9696,7 @@ export const companies: PortCo[] = [
   {
     name: "Evolugen",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable power generation",
     region: "North America",
     country: "Canada",
@@ -9791,7 +9791,7 @@ export const companies: PortCo[] = [
   {
     name: "Geronimo Power",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar, wind, and battery storage",
     region: "North America",
     country: "United States",
@@ -9824,7 +9824,7 @@ export const companies: PortCo[] = [
   {
     name: "Holtwood and Safe Harbor Hydroelectric Facilities",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Hydroelectric generation",
     region: "North America",
     country: "United States",
@@ -9892,7 +9892,7 @@ export const companies: PortCo[] = [
   {
     name: "Hotwire Communications",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber broadband and communications infrastructure",
     region: "North America",
     country: "United States",
@@ -9929,7 +9929,7 @@ export const companies: PortCo[] = [
   {
     name: "Intel Arizona Joint Venture",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Semiconductor fabrication infrastructure",
     region: "North America",
     country: "United States",
@@ -9960,7 +9960,7 @@ export const companies: PortCo[] = [
   {
     name: "Inter Pipeline Ltd.",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Diversified midstream pipelines, processing, and storage",
     region: "North America",
     country: "Canada",
@@ -9989,7 +9989,7 @@ export const companies: PortCo[] = [
   {
     name: "Luminace",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed solar, storage, and energy-as-a-service",
     region: "North America",
     country: "United States / Canada",
@@ -10059,7 +10059,7 @@ export const companies: PortCo[] = [
   {
     name: "NorthRiver Midstream Inc.",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas gathering and processing",
     region: "North America",
     country: "Canada",
@@ -10091,7 +10091,7 @@ export const companies: PortCo[] = [
   {
     name: "Ontario Wind",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind portfolio",
     region: "North America",
     country: "Canada",
@@ -10119,7 +10119,7 @@ export const companies: PortCo[] = [
   {
     name: "Origis Energy",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and energy storage",
     region: "North America",
     country: "United States",
@@ -10156,7 +10156,7 @@ export const companies: PortCo[] = [
   {
     name: "Rockpoint Gas Storage",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas storage",
     region: "North America",
     country: "United States / Canada",
@@ -10188,7 +10188,7 @@ export const companies: PortCo[] = [
   {
     name: "Scout Clean Energy",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind, solar, and battery storage",
     region: "North America",
     country: "United States",
@@ -10280,7 +10280,7 @@ export const companies: PortCo[] = [
   {
     name: "Smoky Mountain Hydroelectric Facilities",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Hydroelectric generation",
     region: "North America",
     country: "United States",
@@ -10308,7 +10308,7 @@ export const companies: PortCo[] = [
   {
     name: "Standard Solar",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed and community solar",
     region: "North America",
     country: "United States",
@@ -10339,7 +10339,7 @@ export const companies: PortCo[] = [
   {
     name: "TerraForm Power",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable power owner and operator",
     region: "North America",
     country: "United States / Canada",
@@ -10403,7 +10403,7 @@ export const companies: PortCo[] = [
   {
     name: "Urban Grid",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and storage development",
     region: "North America",
     country: "United States",
@@ -10431,7 +10431,7 @@ export const companies: PortCo[] = [
   {
     name: "Westinghouse Electric Company",
     investmentFirm: "Brookfield Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Nuclear technology and services",
     region: "North America",
     country: "United States / Canada",
@@ -10462,7 +10462,7 @@ export const companies: PortCo[] = [
   {
     name: "Acadia Renewable Energy",
     investmentFirm: "Carlyle Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar and battery storage development",
     region: "North America",
     country: "United States",
@@ -10491,7 +10491,7 @@ export const companies: PortCo[] = [
   {
     name: "AlphaStruxure",
     investmentFirm: "Carlyle Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Microgrids and energy-as-a-service",
     region: "North America",
     country: "United States",
@@ -10521,7 +10521,7 @@ export const companies: PortCo[] = [
   {
     name: "Amp Energy",
     investmentFirm: "Carlyle Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar, storage, and renewable energy platform",
     region: "North America",
     country: "Canada",
@@ -10552,7 +10552,7 @@ export const companies: PortCo[] = [
   {
     name: "ARK Data Centers",
     investmentFirm: "Carlyle Infrastructure",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Colocation and hybrid cloud data centers",
     region: "North America",
     country: "United States",
@@ -10583,7 +10583,7 @@ export const companies: PortCo[] = [
   {
     name: "Aspen Power",
     investmentFirm: "Carlyle Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed generation and community solar",
     region: "North America",
     country: "United States",
@@ -10644,7 +10644,7 @@ export const companies: PortCo[] = [
   {
     name: "Cardinal Renewables",
     investmentFirm: "Carlyle Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar development platform",
     region: "North America",
     country: "United States",
@@ -10674,7 +10674,7 @@ export const companies: PortCo[] = [
   {
     name: "Copia Power",
     investmentFirm: "Carlyle Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar, storage, and power development",
     region: "North America",
     country: "United States",
@@ -10704,7 +10704,7 @@ export const companies: PortCo[] = [
   {
     name: "Crescent Midstream",
     investmentFirm: "Carlyle Infrastructure",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Crude oil midstream and carbon capture infrastructure",
     region: "North America",
     country: "United States",
@@ -10736,7 +10736,7 @@ export const companies: PortCo[] = [
   {
     name: "Fermata Energy",
     investmentFirm: "Carlyle Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Vehicle-to-grid technology and services",
     region: "North America",
     country: "United States",
@@ -10766,7 +10766,7 @@ export const companies: PortCo[] = [
   {
     name: "Tillman Infrastructure",
     investmentFirm: "Carlyle Infrastructure",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless tower infrastructure",
     region: "North America",
     country: "United States",
@@ -10796,7 +10796,7 @@ export const companies: PortCo[] = [
   {
     name: "Wyyerd Fiber",
     investmentFirm: "Carlyle Infrastructure",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-premise broadband",
     region: "North America",
     country: "United States",
@@ -10827,7 +10827,7 @@ export const companies: PortCo[] = [
   {
     name: "Accelerate Infrastructure Opportunities",
     investmentFirm: "CBRE Investment Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Infrastructure ground leases",
     region: "North America",
     country: "United States",
@@ -10856,7 +10856,7 @@ export const companies: PortCo[] = [
   {
     name: "CitySwitch",
     investmentFirm: "CBRE Investment Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless towers and communications sites",
     region: "North America",
     country: "United States",
@@ -10885,7 +10885,7 @@ export const companies: PortCo[] = [
   {
     name: "ClearGen Holdings",
     investmentFirm: "CBRE Investment Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed-energy project financing and ownership",
     region: "North America",
     country: "United States",
@@ -10914,7 +10914,7 @@ export const companies: PortCo[] = [
   {
     name: "ENGIE Battery Storage Portfolio",
     investmentFirm: "CBRE Investment Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery energy storage",
     region: "North America",
     country: "United States",
@@ -10971,7 +10971,7 @@ export const companies: PortCo[] = [
   {
     name: "Gateway Fiber",
     investmentFirm: "CBRE Investment Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-home broadband",
     region: "North America",
     country: "United States",
@@ -11003,7 +11003,7 @@ export const companies: PortCo[] = [
   {
     name: "Vantage Data Centers Stabilized North America Portfolio",
     investmentFirm: "CBRE Investment Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data centers",
     region: "North America",
     country: "United States / Canada",
@@ -11032,7 +11032,7 @@ export const companies: PortCo[] = [
   {
     name: "WANRack",
     investmentFirm: "CBRE Investment Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber broadband and institutional connectivity",
     region: "North America",
     country: "United States",
@@ -11061,7 +11061,7 @@ export const companies: PortCo[] = [
   {
     name: "Adelaide Wind",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "Canada",
@@ -11115,7 +11115,7 @@ export const companies: PortCo[] = [
   {
     name: "Armow Wind Farm",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "Canada",
@@ -11142,7 +11142,7 @@ export const companies: PortCo[] = [
   {
     name: "Bear Creek Hydro Project",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Run-of-river hydro",
     region: "North America",
     country: "Canada",
@@ -11169,7 +11169,7 @@ export const companies: PortCo[] = [
   {
     name: "Bornish Wind",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "Canada",
@@ -11196,7 +11196,7 @@ export const companies: PortCo[] = [
   {
     name: "Goshen Wind",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "Canada",
@@ -11223,7 +11223,7 @@ export const companies: PortCo[] = [
   {
     name: "Grand Renewable Solar Project",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar",
     region: "North America",
     country: "Canada",
@@ -11250,7 +11250,7 @@ export const companies: PortCo[] = [
   {
     name: "Grand Renewable Wind Farm",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "Canada",
@@ -11278,7 +11278,7 @@ export const companies: PortCo[] = [
   {
     name: "Harrison Hydro Project",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Run-of-river hydro",
     region: "North America",
     country: "Canada",
@@ -11305,7 +11305,7 @@ export const companies: PortCo[] = [
   {
     name: "Hog Creek Wind Farm",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "United States",
@@ -11334,7 +11334,7 @@ export const companies: PortCo[] = [
   {
     name: "Hunter Creek Hydro Project",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Run-of-river hydro",
     region: "North America",
     country: "Canada",
@@ -11361,7 +11361,7 @@ export const companies: PortCo[] = [
   {
     name: "Hy Stor Energy",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Green hydrogen and underground storage",
     region: "North America",
     country: "United States",
@@ -11388,7 +11388,7 @@ export const companies: PortCo[] = [
   {
     name: "Kingston Solar Project",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar",
     region: "North America",
     country: "Canada",
@@ -11441,7 +11441,7 @@ export const companies: PortCo[] = [
   {
     name: "Long Lake Hydro Project",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Run-of-river hydro",
     region: "North America",
     country: "Canada",
@@ -11468,7 +11468,7 @@ export const companies: PortCo[] = [
   {
     name: "Meadow Lake V Wind Farm",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "United States",
@@ -11496,7 +11496,7 @@ export const companies: PortCo[] = [
   {
     name: "North Island Hospitals Project",
     investmentFirm: "CC&L",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Acute care hospital P3",
     region: "North America",
     country: "Canada",
@@ -11526,7 +11526,7 @@ export const companies: PortCo[] = [
   {
     name: "Northside Student Housing Community",
     investmentFirm: "CC&L",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Student housing",
     region: "North America",
     country: "United States",
@@ -11557,7 +11557,7 @@ export const companies: PortCo[] = [
   {
     name: "Quilt Block Wind Farm",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -11588,7 +11588,7 @@ export const companies: PortCo[] = [
   {
     name: "Rainy River Solar Project",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar generation",
     region: "North America",
     country: "Canada",
@@ -11618,7 +11618,7 @@ export const companies: PortCo[] = [
   {
     name: "Redbed Plains Wind Farm",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -11677,7 +11677,7 @@ export const companies: PortCo[] = [
   {
     name: "Riverstart Solar Project",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar generation",
     region: "North America",
     country: "United States",
@@ -11738,7 +11738,7 @@ export const companies: PortCo[] = [
   {
     name: "Sakwi Creek Hydro Project",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Run-of-river hydroelectric generation",
     region: "North America",
     country: "Canada",
@@ -11767,7 +11767,7 @@ export const companies: PortCo[] = [
   {
     name: "Sharp Hills Wind Farm",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "Canada",
@@ -11826,7 +11826,7 @@ export const companies: PortCo[] = [
   {
     name: "Southgate Solar Project",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar generation",
     region: "North America",
     country: "Canada",
@@ -11885,7 +11885,7 @@ export const companies: PortCo[] = [
   {
     name: "Trio Creek Hydro Project",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Run-of-river hydroelectric generation",
     region: "North America",
     country: "Canada",
@@ -12005,7 +12005,7 @@ export const companies: PortCo[] = [
   {
     name: "White River Hydro Project",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Run-of-river hydroelectric generation",
     region: "North America",
     country: "Canada",
@@ -12034,7 +12034,7 @@ export const companies: PortCo[] = [
   {
     name: "Windsor Solar Project",
     investmentFirm: "CC&L",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar generation",
     region: "North America",
     country: "Canada",
@@ -12207,7 +12207,7 @@ export const companies: PortCo[] = [
   {
     name: "Enel Green Power Mexico",
     investmentFirm: "CDPQ",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale renewable generation",
     region: "North America",
     country: "Mexico",
@@ -12333,7 +12333,7 @@ export const companies: PortCo[] = [
   {
     name: "Innergex Renewable Energy",
     investmentFirm: "CDPQ",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Hydro, wind, solar, and energy storage",
     region: "North America",
     country: "United States / Canada",
@@ -12364,7 +12364,7 @@ export const companies: PortCo[] = [
   {
     name: "Invenergy Renewables LLC",
     investmentFirm: "CDPQ",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable generation and development",
     region: "North America",
     country: "United States",
@@ -12392,7 +12392,7 @@ export const companies: PortCo[] = [
   {
     name: "Plenary Americas",
     investmentFirm: "CDPQ",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Public-private partnership developer and operator",
     region: "North America",
     country: "United States / Canada",
@@ -12421,7 +12421,7 @@ export const companies: PortCo[] = [
   {
     name: "Renewa",
     investmentFirm: "CDPQ",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Land-under-infrastructure for renewable projects",
     region: "North America",
     country: "United States",
@@ -12490,7 +12490,7 @@ export const companies: PortCo[] = [
   {
     name: "Southern Star Central Gas Pipeline",
     investmentFirm: "CDPQ",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas transmission and storage",
     region: "North America",
     country: "United States",
@@ -12551,7 +12551,7 @@ export const companies: PortCo[] = [
   {
     name: "SunZia Wind and Transmission",
     investmentFirm: "CDPQ",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind generation and transmission",
     region: "North America",
     country: "United States",
@@ -12608,7 +12608,7 @@ export const companies: PortCo[] = [
   {
     name: "Vertical Bridge",
     investmentFirm: "CDPQ",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless towers and communications infrastructure",
     region: "North America",
     country: "United States",
@@ -12646,7 +12646,7 @@ export const companies: PortCo[] = [
   {
     name: "400 Paul Avenue Data Center",
     investmentFirm: "CIM Group",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale and wholesale data centers",
     region: "North America",
     country: "United States",
@@ -12703,7 +12703,7 @@ export const companies: PortCo[] = [
   {
     name: "Bolder Industries",
     investmentFirm: "CIM Group",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Circular materials and tire recycling",
     region: "North America",
     country: "United States",
@@ -12740,7 +12740,7 @@ export const companies: PortCo[] = [
   {
     name: "Kelso Valley Wind, Solar & Water",
     investmentFirm: "CIM Group",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable generation and water infrastructure",
     region: "North America",
     country: "United States",
@@ -12768,7 +12768,7 @@ export const companies: PortCo[] = [
   {
     name: "Novva Data Centers",
     investmentFirm: "CIM Group",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wholesale and colocation data centers",
     region: "North America",
     country: "United States",
@@ -12854,7 +12854,7 @@ export const companies: PortCo[] = [
   {
     name: "SolarBank Joint Venture (New HoldCo)",
     investmentFirm: "CIM Group",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed and community solar",
     region: "North America",
     country: "United States",
@@ -12884,7 +12884,7 @@ export const companies: PortCo[] = [
   {
     name: "Terreva Renewables",
     investmentFirm: "CIM Group",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable natural gas",
     region: "North America",
     country: "United States / Canada",
@@ -12914,7 +12914,7 @@ export const companies: PortCo[] = [
   {
     name: "Westlands Electric Power Company (WEPCO)",
     investmentFirm: "CIM Group",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and battery storage",
     region: "North America",
     country: "United States",
@@ -12943,7 +12943,7 @@ export const companies: PortCo[] = [
   {
     name: "Westlands Solar Park (incl. Aquamarine Solar)",
     investmentFirm: "CIM Group",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and battery storage",
     region: "North America",
     country: "United States",
@@ -12973,7 +12973,7 @@ export const companies: PortCo[] = [
   {
     name: "Aira Solar",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar PV",
     region: "North America",
     country: "Canada",
@@ -13002,7 +13002,7 @@ export const companies: PortCo[] = [
   {
     name: "Beehive Battery Energy Storage System",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery energy storage",
     region: "North America",
     country: "United States",
@@ -13031,7 +13031,7 @@ export const companies: PortCo[] = [
   {
     name: "BKV-CIP Joint Venture",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Carbon capture and sequestration",
     region: "North America",
     country: "United States",
@@ -13060,7 +13060,7 @@ export const companies: PortCo[] = [
   {
     name: "Buffalo Plains Wind Farm",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "Canada",
@@ -13090,7 +13090,7 @@ export const companies: PortCo[] = [
   {
     name: "Candela Renewables Portfolio",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar PV and storage development portfolio",
     region: "North America",
     country: "United States",
@@ -13121,7 +13121,7 @@ export const companies: PortCo[] = [
   {
     name: "Energy Storage",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery and long-duration energy storage portfolio",
     region: "North America",
     country: "United States",
@@ -13151,7 +13151,7 @@ export const companies: PortCo[] = [
   {
     name: "Excelsior Wind",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Offshore wind development",
     region: "North America",
     country: "United States",
@@ -13182,7 +13182,7 @@ export const companies: PortCo[] = [
   {
     name: "Fighting Jays Solar",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar PV",
     region: "North America",
     country: "United States",
@@ -13211,7 +13211,7 @@ export const companies: PortCo[] = [
   {
     name: "Goldendale Energy Storage",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Pumped hydro storage",
     region: "North America",
     country: "United States",
@@ -13241,7 +13241,7 @@ export const companies: PortCo[] = [
   {
     name: "Greasewood Solar",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar PV",
     region: "North America",
     country: "United States",
@@ -13269,7 +13269,7 @@ export const companies: PortCo[] = [
   {
     name: "Helax Istmo",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Green hydrogen and maritime fuels",
     region: "North America",
     country: "Mexico",
@@ -13298,7 +13298,7 @@ export const companies: PortCo[] = [
   {
     name: "Horizon New Energy",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable development platform",
     region: "North America",
     country: "Canada",
@@ -13327,7 +13327,7 @@ export const companies: PortCo[] = [
   {
     name: "Liberty Renewables",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind development",
     region: "North America",
     country: "United States",
@@ -13357,7 +13357,7 @@ export const companies: PortCo[] = [
   {
     name: "Misae Solar Park",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar PV",
     region: "North America",
     country: "United States",
@@ -13387,7 +13387,7 @@ export const companies: PortCo[] = [
   {
     name: "Panther Grove Wind",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "United States",
@@ -13416,7 +13416,7 @@ export const companies: PortCo[] = [
   {
     name: "Sage Solar PV Park",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar PV",
     region: "North America",
     country: "United States",
@@ -13446,7 +13446,7 @@ export const companies: PortCo[] = [
   {
     name: "Scatter Wash Battery Energy Storage System",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery energy storage",
     region: "North America",
     country: "United States",
@@ -13476,7 +13476,7 @@ export const companies: PortCo[] = [
   {
     name: "St. Charles Clean Fuels",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Blue ammonia and clean fuels",
     region: "North America",
     country: "United States",
@@ -13506,7 +13506,7 @@ export const companies: PortCo[] = [
   {
     name: "Sunrise Renewables",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar, storage, and green hydrogen development",
     region: "North America",
     country: "United States",
@@ -13534,7 +13534,7 @@ export const companies: PortCo[] = [
   {
     name: "Sunstone Power",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar PV and battery storage development",
     region: "North America",
     country: "Mexico",
@@ -13562,7 +13562,7 @@ export const companies: PortCo[] = [
   {
     name: "Swan Lake North Pumped Storage Project",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Pumped hydro storage",
     region: "North America",
     country: "United States",
@@ -13590,7 +13590,7 @@ export const companies: PortCo[] = [
   {
     name: "Tenaska-CIP Joint Venture",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Green hydrogen development",
     region: "North America",
     country: "United States",
@@ -13618,7 +13618,7 @@ export const companies: PortCo[] = [
   {
     name: "Toqlukuti'k Wind & Hydrogen",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind and green hydrogen",
     region: "North America",
     country: "Canada",
@@ -13645,7 +13645,7 @@ export const companies: PortCo[] = [
   {
     name: "Vineyard Northeast",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Offshore wind development",
     region: "North America",
     country: "United States",
@@ -13677,7 +13677,7 @@ export const companies: PortCo[] = [
   {
     name: "Vineyard Offshore",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Offshore wind development platform",
     region: "North America",
     country: "United States",
@@ -13706,7 +13706,7 @@ export const companies: PortCo[] = [
   {
     name: "Vineyard Wind 1",
     investmentFirm: "Copenhagen Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Offshore wind",
     region: "North America",
     country: "United States",
@@ -13768,7 +13768,7 @@ export const companies: PortCo[] = [
   {
     name: "AlphaGen",
     investmentFirm: "CPP Investments",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Conventional and flexible power generation",
     region: "North America",
     country: "United States",
@@ -13797,7 +13797,7 @@ export const companies: PortCo[] = [
   {
     name: "Caturus Energy",
     investmentFirm: "CPP Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Integrated natural gas and LNG",
     region: "North America",
     country: "United States",
@@ -13825,7 +13825,7 @@ export const companies: PortCo[] = [
   {
     name: "Cordelio Power",
     investmentFirm: "CPP Investments",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind, solar, and energy storage",
     region: "North America",
     country: "United States / Canada",
@@ -13856,7 +13856,7 @@ export const companies: PortCo[] = [
   {
     name: "Enbridge Onshore Renewables JV",
     investmentFirm: "CPP Investments",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind and solar",
     region: "North America",
     country: "United States / Canada",
@@ -13886,7 +13886,7 @@ export const companies: PortCo[] = [
   {
     name: "Equinix xScale U.S. JV",
     investmentFirm: "CPP Investments",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data centers",
     region: "North America",
     country: "United States",
@@ -13915,7 +13915,7 @@ export const companies: PortCo[] = [
   {
     name: "Golden State Wind",
     investmentFirm: "CPP Investments",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Offshore wind",
     region: "North America",
     country: "United States",
@@ -14016,7 +14016,7 @@ export const companies: PortCo[] = [
   {
     name: "Pattern Energy Group",
     investmentFirm: "CPP Investments",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable energy and transmission infrastructure",
     region: "North America",
     country: "United States / Canada",
@@ -14046,7 +14046,7 @@ export const companies: PortCo[] = [
   {
     name: "Redaptive",
     investmentFirm: "CPP Investments",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Energy-as-a-service",
     region: "North America",
     country: "United States",
@@ -14075,7 +14075,7 @@ export const companies: PortCo[] = [
   {
     name: "Sempra Infrastructure Partners, LP",
     investmentFirm: "CPP Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "LNG export, gas infrastructure, and low-carbon energy infrastructure",
     region: "North America",
     country: "United States",
@@ -14124,7 +14124,7 @@ export const companies: PortCo[] = [
   {
     name: "Texas Abilene Hyperscale Data Centre",
     investmentFirm: "CPP Investments",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data centers",
     region: "North America",
     country: "United States",
@@ -14154,7 +14154,7 @@ export const companies: PortCo[] = [
   {
     name: "TransAlta Keephills Data Centre JV",
     investmentFirm: "CPP Investments",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Powered data-center development",
     region: "North America",
     country: "Canada",
@@ -14213,7 +14213,7 @@ export const companies: PortCo[] = [
   {
     name: "VoltaGrid",
     investmentFirm: "CPP Investments",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Mobile power generation and energy optimization",
     region: "North America",
     country: "United States",
@@ -14243,7 +14243,7 @@ export const companies: PortCo[] = [
   {
     name: "Williams Ohio Valley Midstream JV",
     investmentFirm: "CPP Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas gathering and processing",
     region: "North America",
     country: "United States",
@@ -14274,7 +14274,7 @@ export const companies: PortCo[] = [
   {
     name: "Wolf Midstream",
     investmentFirm: "CPP Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Midstream and carbon infrastructure",
     region: "North America",
     country: "Canada",
@@ -14303,7 +14303,7 @@ export const companies: PortCo[] = [
   {
     name: "Airtower Networks",
     investmentFirm: "CVC DIF",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "In-building wireless and neutral-host networks",
     region: "North America",
     country: "United States",
@@ -14392,7 +14392,7 @@ export const companies: PortCo[] = [
   {
     name: "Bernhard, LLC",
     investmentFirm: "CVC DIF",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Energy-as-a-service and building infrastructure",
     region: "North America",
     country: "United States",
@@ -14422,7 +14422,7 @@ export const companies: PortCo[] = [
   {
     name: "BluEarth Renewables",
     investmentFirm: "CVC DIF",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind, hydro, and solar independent power producer",
     region: "North America",
     country: "United States / Canada",
@@ -14452,7 +14452,7 @@ export const companies: PortCo[] = [
   {
     name: "Brahms Wind",
     investmentFirm: "CVC DIF",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "United States",
@@ -14481,7 +14481,7 @@ export const companies: PortCo[] = [
   {
     name: "Canadian Hills Wind",
     investmentFirm: "CVC DIF",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "United States",
@@ -14538,7 +14538,7 @@ export const companies: PortCo[] = [
   {
     name: "Diverso Energy Inc.",
     investmentFirm: "CVC DIF",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Geothermal energy-as-a-service",
     region: "North America",
     country: "Canada",
@@ -14569,7 +14569,7 @@ export const companies: PortCo[] = [
   {
     name: "ENFRA",
     investmentFirm: "CVC DIF",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Energy solutions and building infrastructure services",
     region: "North America",
     country: "United States",
@@ -14600,7 +14600,7 @@ export const companies: PortCo[] = [
   {
     name: "Etobicoke Healthcare Partnership",
     investmentFirm: "CVC DIF",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Hospital public-private partnership",
     region: "North America",
     country: "Canada",
@@ -14630,7 +14630,7 @@ export const companies: PortCo[] = [
   {
     name: "Green Street Power Partners",
     investmentFirm: "CVC DIF",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed and community solar",
     region: "North America",
     country: "United States",
@@ -14660,7 +14660,7 @@ export const companies: PortCo[] = [
   {
     name: "GS Power Partners",
     investmentFirm: "CVC DIF",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed and community solar",
     region: "North America",
     country: "United States",
@@ -14690,7 +14690,7 @@ export const companies: PortCo[] = [
   {
     name: "Idaho Wind Partners",
     investmentFirm: "CVC DIF",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "United States",
@@ -14720,7 +14720,7 @@ export const companies: PortCo[] = [
   {
     name: "Joink, LLC",
     investmentFirm: "CVC DIF",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber and fixed wireless broadband",
     region: "North America",
     country: "United States",
@@ -14810,7 +14810,7 @@ export const companies: PortCo[] = [
   {
     name: "Kingfisher Wind",
     investmentFirm: "CVC DIF",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "United States",
@@ -14867,7 +14867,7 @@ export const companies: PortCo[] = [
   {
     name: "RFNOW Inc.",
     investmentFirm: "CVC DIF",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber and fixed wireless broadband",
     region: "North America",
     country: "Canada",
@@ -14926,7 +14926,7 @@ export const companies: PortCo[] = [
   {
     name: "SBA Canada",
     investmentFirm: "CVC DIF",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless tower infrastructure",
     region: "North America",
     country: "Canada",
@@ -14956,7 +14956,7 @@ export const companies: PortCo[] = [
   {
     name: "Tonaquint Data Centers",
     investmentFirm: "CVC DIF",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Colocation and cloud data centers",
     region: "North America",
     country: "United States",
@@ -14986,7 +14986,7 @@ export const companies: PortCo[] = [
   {
     name: "Valley Fiber Ltd.",
     investmentFirm: "CVC DIF",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Rural fiber broadband",
     region: "North America",
     country: "Canada",
@@ -15018,7 +15018,7 @@ export const companies: PortCo[] = [
   {
     name: "ValorC3",
     investmentFirm: "CVC DIF",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Colocation, cloud, and data centers",
     region: "North America",
     country: "United States",
@@ -15048,7 +15048,7 @@ export const companies: PortCo[] = [
   {
     name: "Aptum Technologies",
     investmentFirm: "DigitalBridge",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Data centers, cloud, and managed infrastructure",
     region: "North America",
     country: "United States / Canada",
@@ -15080,7 +15080,7 @@ export const companies: PortCo[] = [
   {
     name: "Beanfield Metroconnect",
     investmentFirm: "DigitalBridge",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Metro fiber networks",
     region: "North America",
     country: "Canada",
@@ -15110,7 +15110,7 @@ export const companies: PortCo[] = [
   {
     name: "Boingo Wireless",
     investmentFirm: "DigitalBridge",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wi-Fi / DAS / neutral-host networks",
     region: "North America",
     country: "United States",
@@ -15169,7 +15169,7 @@ export const companies: PortCo[] = [
   {
     name: "Expedient",
     investmentFirm: "DigitalBridge",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Data centers and managed cloud infrastructure",
     region: "North America",
     country: "United States",
@@ -15201,7 +15201,7 @@ export const companies: PortCo[] = [
   {
     name: "ExteNet Systems",
     investmentFirm: "Manulife",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Small cells, DAS, and fiber",
     region: "North America",
     country: "United States",
@@ -15261,7 +15261,7 @@ export const companies: PortCo[] = [
   {
     name: "Fibernow",
     investmentFirm: "DigitalBridge",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber broadband",
     region: "North America",
     country: "United States",
@@ -15289,7 +15289,7 @@ export const companies: PortCo[] = [
   {
     name: "Mexico Telecom Partners",
     investmentFirm: "DigitalBridge",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless towers and edge digital infrastructure",
     region: "North America",
     country: "Mexico",
@@ -15321,7 +15321,7 @@ export const companies: PortCo[] = [
   {
     name: "Orange Barrel Media",
     investmentFirm: "DigitalBridge",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Digital out-of-home and smart-city media infrastructure",
     region: "North America",
     country: "United States",
@@ -15350,7 +15350,7 @@ export const companies: PortCo[] = [
   {
     name: "Switch, Inc.",
     investmentFirm: "DigitalBridge",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Data centers",
     region: "North America",
     country: "United States",
@@ -15380,7 +15380,7 @@ export const companies: PortCo[] = [
   {
     name: "Vantage Data Centers",
     investmentFirm: "DigitalBridge",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data centers",
     region: "North America",
     country: "United States / Canada",
@@ -15409,7 +15409,7 @@ export const companies: PortCo[] = [
   {
     name: "Vantage SDC",
     investmentFirm: "DigitalBridge",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Stabilized hyperscale data centers",
     region: "North America",
     country: "United States / Canada",
@@ -15438,7 +15438,7 @@ export const companies: PortCo[] = [
   {
     name: "WideOpenWest, Inc.",
     investmentFirm: "DigitalBridge",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Broadband and fiber-to-the-home",
     region: "North America",
     country: "United States",
@@ -15465,7 +15465,7 @@ export const companies: PortCo[] = [
   {
     name: "Zayo Group Holdings, Inc.",
     investmentFirm: "DigitalBridge",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber networks and bandwidth infrastructure",
     region: "North America",
     country: "United States / Canada",
@@ -15501,7 +15501,7 @@ export const companies: PortCo[] = [
   {
     name: "Anza Renewables, LLC",
     investmentFirm: "ECP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar and storage procurement platform",
     region: "North America",
     country: "North America",
@@ -15532,7 +15532,7 @@ export const companies: PortCo[] = [
   {
     name: "Atlantica Sustainable Infrastructure plc",
     investmentFirm: "ECP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Contracted renewable, storage, transmission, and water infrastructure",
     region: "North America",
     country: "North America",
@@ -15577,7 +15577,7 @@ export const companies: PortCo[] = [
   {
     name: "Avolta Renewable Holdings, LLC",
     investmentFirm: "ECP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable natural gas from dairy waste",
     region: "North America",
     country: "United States",
@@ -15608,7 +15608,7 @@ export const companies: PortCo[] = [
   {
     name: "Braya Renewable Fuels",
     investmentFirm: "ECP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable diesel and low-carbon fuels refining",
     region: "North America",
     country: "Canada",
@@ -15639,7 +15639,7 @@ export const companies: PortCo[] = [
   {
     name: "Convergent Energy and Power",
     investmentFirm: "ECP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery storage and distributed energy infrastructure",
     region: "North America",
     country: "United States",
@@ -15675,7 +15675,7 @@ export const companies: PortCo[] = [
   {
     name: "Cornerstone Generation",
     investmentFirm: "ECP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired power generation",
     region: "North America",
     country: "United States",
@@ -15707,7 +15707,7 @@ export const companies: PortCo[] = [
   {
     name: "Gopher Resource, LLC",
     investmentFirm: "ECP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Lead-acid battery recycling",
     region: "North America",
     country: "United States",
@@ -15772,7 +15772,7 @@ export const companies: PortCo[] = [
   {
     name: "Harvestone Low Carbon Partners",
     investmentFirm: "ECP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Low-carbon ethanol and carbon capture",
     region: "North America",
     country: "United States",
@@ -15803,7 +15803,7 @@ export const companies: PortCo[] = [
   {
     name: "Metrus Energy",
     investmentFirm: "ECP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Energy-as-a-service financing for efficiency and distributed energy",
     region: "North America",
     country: "North America",
@@ -15833,7 +15833,7 @@ export const companies: PortCo[] = [
   {
     name: "New Leaf Energy",
     investmentFirm: "ECP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar and energy storage development",
     region: "North America",
     country: "United States",
@@ -15863,7 +15863,7 @@ export const companies: PortCo[] = [
   {
     name: "Next Wave Energy Partners, LP",
     investmentFirm: "ECP",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Alkylate production, processing, and fuels logistics",
     region: "North America",
     country: "United States",
@@ -15894,7 +15894,7 @@ export const companies: PortCo[] = [
   {
     name: "Pivot Energy",
     investmentFirm: "ECP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed and community solar and storage",
     region: "North America",
     country: "United States",
@@ -15955,7 +15955,7 @@ export const companies: PortCo[] = [
   {
     name: "Restaurant Technologies, Inc.",
     investmentFirm: "ECP",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Commercial kitchen oil management and back-of-house services",
     region: "North America",
     country: "United States",
@@ -15985,7 +15985,7 @@ export const companies: PortCo[] = [
   {
     name: "Shenandoah Telecommunications Company",
     investmentFirm: "ECP",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Rural fiber broadband, wireless towers, and telecom networks",
     region: "North America",
     country: "United States",
@@ -16018,7 +16018,7 @@ export const companies: PortCo[] = [
   {
     name: "Triple Oak Power",
     investmentFirm: "ECP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale wind and hybrid renewable development",
     region: "North America",
     country: "United States",
@@ -16049,7 +16049,7 @@ export const companies: PortCo[] = [
   {
     name: "USD Group LLC",
     investmentFirm: "ECP",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Multi-modal energy logistics terminals and infrastructure",
     region: "North America",
     country: "North America",
@@ -16080,7 +16080,7 @@ export const companies: PortCo[] = [
   {
     name: "Captis Energy",
     investmentFirm: "EIC",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Landfill-gas-to-energy",
     region: "North America",
     country: "United States",
@@ -16110,7 +16110,7 @@ export const companies: PortCo[] = [
   {
     name: "Conterra Networks",
     investmentFirm: "EIC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber telecom infrastructure",
     region: "North America",
     country: "United States",
@@ -16144,7 +16144,7 @@ export const companies: PortCo[] = [
   {
     name: "Desert Sky Energy",
     investmentFirm: "EIC",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale wind and solar generation",
     region: "North America",
     country: "United States",
@@ -16173,7 +16173,7 @@ export const companies: PortCo[] = [
   {
     name: "Public Infrastructure Partnership",
     investmentFirm: "EIC",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Public-private partnership concessions",
     region: "North America",
     country: "Canada",
@@ -16205,7 +16205,7 @@ export const companies: PortCo[] = [
   {
     name: "PureSky Energy",
     investmentFirm: "EIC",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Community solar and battery storage",
     region: "North America",
     country: "United States",
@@ -16240,7 +16240,7 @@ export const companies: PortCo[] = [
   {
     name: "West Coast Hydro",
     investmentFirm: "EIC",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Run-of-river hydroelectric generation",
     region: "North America",
     country: "United States / Canada",
@@ -16271,7 +16271,7 @@ export const companies: PortCo[] = [
   {
     name: "Woodford Social Infrastructure",
     investmentFirm: "EIC",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Public-private partnership concessions",
     region: "North America",
     country: "Canada",
@@ -16304,7 +16304,7 @@ export const companies: PortCo[] = [
   {
     name: "ARB Midstream",
     investmentFirm: "EIG Global Energy Partners",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Crude oil and NGL logistics",
     region: "North America",
     country: "United States",
@@ -16331,7 +16331,7 @@ export const companies: PortCo[] = [
   {
     name: "Aurora Sustainable Lands",
     investmentFirm: "EIG Global Energy Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Forest carbon and sustainable land management",
     region: "North America",
     country: "United States",
@@ -16362,7 +16362,7 @@ export const companies: PortCo[] = [
   {
     name: "Blue Racer Midstream, LLC",
     investmentFirm: "EIG Global Energy Partners",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas gathering, processing, and fractionation",
     region: "North America",
     country: "United States",
@@ -16391,7 +16391,7 @@ export const companies: PortCo[] = [
   {
     name: "Industrial Sun",
     investmentFirm: "EIG Global Energy Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Industrial solar and storage development",
     region: "North America",
     country: "United States",
@@ -16418,7 +16418,7 @@ export const companies: PortCo[] = [
   {
     name: "Midship Pipeline Company, LLC",
     investmentFirm: "EIG Global Energy Partners",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas transmission pipeline",
     region: "North America",
     country: "United States",
@@ -16445,7 +16445,7 @@ export const companies: PortCo[] = [
   {
     name: "BayWa r.e. AG",
     investmentFirm: "EIP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable energy development, IPP, asset operations, and energy trading",
     region: "North America",
     country: "United States / Mexico",
@@ -16477,7 +16477,7 @@ export const companies: PortCo[] = [
   {
     name: "Eni Plenitude S.p.A. Società Benefit",
     investmentFirm: "EIP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Integrated renewables, retail energy, and EV charging",
     region: "North America",
     country: "United States",
@@ -16511,7 +16511,7 @@ export const companies: PortCo[] = [
   {
     name: "Repsol Renovables, S.A.",
     investmentFirm: "EIP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable power generation and development",
     region: "North America",
     country: "United States",
@@ -16542,7 +16542,7 @@ export const companies: PortCo[] = [
   {
     name: "Advanced Recycling Technologies",
     investmentFirm: "Ember Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Metals recovery and recycling systems",
     region: "North America",
     country: "United States",
@@ -16569,7 +16569,7 @@ export const companies: PortCo[] = [
   {
     name: "Caban Systems, Inc.",
     investmentFirm: "Ember Infrastructure",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Telecom energy storage and energy-as-a-service",
     region: "North America",
     country: "United States",
@@ -16597,7 +16597,7 @@ export const companies: PortCo[] = [
   {
     name: "Earthwise Environmental Solutions",
     investmentFirm: "Ember Infrastructure",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Solid waste collection, recycling, and disposal",
     region: "North America",
     country: "United States",
@@ -16735,7 +16735,7 @@ export const companies: PortCo[] = [
   {
     name: "ReGenerate Energy Holdings, LLC",
     investmentFirm: "Ember Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Biomass power and sustainable products",
     region: "North America",
     country: "United States",
@@ -16763,7 +16763,7 @@ export const companies: PortCo[] = [
   {
     name: "SunShare, LLC",
     investmentFirm: "Ember Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Community solar",
     region: "North America",
     country: "United States",
@@ -16791,7 +16791,7 @@ export const companies: PortCo[] = [
   {
     name: "Aither Systems",
     investmentFirm: "EnCap Investments",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Critical-site microgrids and energy management",
     region: "North America",
     country: "United States",
@@ -16818,7 +16818,7 @@ export const companies: PortCo[] = [
   {
     name: "Arbor Renewable Gas",
     investmentFirm: "EnCap Investments",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Biomass-to-renewable fuels",
     region: "North America",
     country: "United States",
@@ -16846,7 +16846,7 @@ export const companies: PortCo[] = [
   {
     name: "Aspen Midstream II",
     investmentFirm: "EnCap Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas transmission and last-mile logistics",
     region: "North America",
     country: "United States",
@@ -16875,7 +16875,7 @@ export const companies: PortCo[] = [
   {
     name: "Bildmore Clean Energy",
     investmentFirm: "EnCap Investments",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Clean energy tax credit and structured equity finance",
     region: "North America",
     country: "United States",
@@ -16905,7 +16905,7 @@ export const companies: PortCo[] = [
   {
     name: "Bleutec Industries",
     investmentFirm: "EnCap Investments",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Offshore wind installation vessels and marine services",
     region: "North America",
     country: "United States",
@@ -16935,7 +16935,7 @@ export const companies: PortCo[] = [
   {
     name: "Cardinal Midstream Partners",
     investmentFirm: "EnCap Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas gathering, processing, and carbon management infrastructure",
     region: "North America",
     country: "United States",
@@ -16964,7 +16964,7 @@ export const companies: PortCo[] = [
   {
     name: "Clearfork Midstream",
     investmentFirm: "EnCap Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas gathering, processing, and transportation",
     region: "North America",
     country: "United States",
@@ -16994,7 +16994,7 @@ export const companies: PortCo[] = [
   {
     name: "Edgewater Midstream",
     investmentFirm: "EnCap Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Crude oil and refined products storage, transportation, and terminalling",
     region: "North America",
     country: "United States",
@@ -17023,7 +17023,7 @@ export const companies: PortCo[] = [
   {
     name: "Frontier Energy",
     investmentFirm: "EnCap Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Crude oil and natural gas midstream infrastructure",
     region: "North America",
     country: "United States",
@@ -17052,7 +17052,7 @@ export const companies: PortCo[] = [
   {
     name: "Greenfield Midstream",
     investmentFirm: "EnCap Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Crude oil gathering, storage, and transportation",
     region: "North America",
     country: "United States",
@@ -17082,7 +17082,7 @@ export const companies: PortCo[] = [
   {
     name: "Linea Energy",
     investmentFirm: "EnCap Investments",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar, wind, and battery storage development",
     region: "North America",
     country: "United States",
@@ -17113,7 +17113,7 @@ export const companies: PortCo[] = [
   {
     name: "M6 Midstream",
     investmentFirm: "EnCap Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas gathering and processing",
     region: "North America",
     country: "United States",
@@ -17143,7 +17143,7 @@ export const companies: PortCo[] = [
   {
     name: "Manchester Energy",
     investmentFirm: "EnCap Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Diversified midstream infrastructure",
     region: "North America",
     country: "United States",
@@ -17173,7 +17173,7 @@ export const companies: PortCo[] = [
   {
     name: "Moda Midstream II",
     investmentFirm: "EnCap Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Terminals, storage, distribution, and last-mile logistics",
     region: "North America",
     country: "United States",
@@ -17203,7 +17203,7 @@ export const companies: PortCo[] = [
   {
     name: "Parliament Energy",
     investmentFirm: "EnCap Investments",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar development",
     region: "North America",
     country: "United States",
@@ -17233,7 +17233,7 @@ export const companies: PortCo[] = [
   {
     name: "Quantica Infrastructure",
     investmentFirm: "EnCap Investments",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "AI and hyperscale-ready powered land and fiber infrastructure",
     region: "North America",
     country: "United States",
@@ -17263,7 +17263,7 @@ export const companies: PortCo[] = [
   {
     name: "Rangeland Midstream Canada",
     investmentFirm: "EnCap Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Crude oil and liquids transportation and storage",
     region: "North America",
     country: "Canada",
@@ -17294,7 +17294,7 @@ export const companies: PortCo[] = [
   {
     name: "SolarProponent",
     investmentFirm: "EnCap Investments",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar development and project origination",
     region: "North America",
     country: "United States",
@@ -17325,7 +17325,7 @@ export const companies: PortCo[] = [
   {
     name: "Vecino Energy",
     investmentFirm: "EnCap Investments",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas and liquids storage infrastructure",
     region: "North America",
     country: "United States",
@@ -17385,7 +17385,7 @@ export const companies: PortCo[] = [
   {
     name: "Cirba Solutions",
     investmentFirm: "EQT Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery recycling",
     region: "North America",
     country: "United States",
@@ -17412,7 +17412,7 @@ export const companies: PortCo[] = [
   {
     name: "Crown Castle Small Cells Solutions",
     investmentFirm: "EQT Infrastructure",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Small cells and venue infrastructure",
     region: "North America",
     country: "United States",
@@ -17440,7 +17440,7 @@ export const companies: PortCo[] = [
   {
     name: "Cypress Creek Renewables",
     investmentFirm: "EQT Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar and storage independent power producer",
     region: "North America",
     country: "United States",
@@ -17498,7 +17498,7 @@ export const companies: PortCo[] = [
   {
     name: "EdgeConneX",
     investmentFirm: "EQT Infrastructure",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Data centers",
     region: "North America",
     country: "United States",
@@ -17581,7 +17581,7 @@ export const companies: PortCo[] = [
   {
     name: "Lumos Fiber",
     investmentFirm: "EQT Infrastructure",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-home and wholesale fiber",
     region: "North America",
     country: "United States",
@@ -17608,7 +17608,7 @@ export const companies: PortCo[] = [
   {
     name: "Madison Energy Infrastructure",
     investmentFirm: "EQT Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed solar and energy storage",
     region: "North America",
     country: "United States",
@@ -17665,7 +17665,7 @@ export const companies: PortCo[] = [
   {
     name: "Radius Global Infrastructure",
     investmentFirm: "EQT Infrastructure",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Telecom real estate and lease aggregation",
     region: "North America",
     country: "United States",
@@ -17693,7 +17693,7 @@ export const companies: PortCo[] = [
   {
     name: "Scale Microgrids",
     investmentFirm: "EQT Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Microgrids and distributed energy",
     region: "North America",
     country: "United States",
@@ -17777,7 +17777,7 @@ export const companies: PortCo[] = [
   {
     name: "SUBURBAN EQ RNG, LLC",
     investmentFirm: "Equilibrium",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Renewable natural gas development platform",
     region: "North America",
     country: "United States",
@@ -17807,7 +17807,7 @@ export const companies: PortCo[] = [
   {
     name: "Trenton Biogas",
     investmentFirm: "Equilibrium",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Food-waste anaerobic digestion and renewable power",
     region: "North America",
     country: "United States",
@@ -17836,7 +17836,7 @@ export const companies: PortCo[] = [
   {
     name: "Abbotsford Regional Hospital and Cancer Centre",
     investmentFirm: "Equitix",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Availability-based hospital PPP",
     region: "North America",
     country: "Canada",
@@ -17896,7 +17896,7 @@ export const companies: PortCo[] = [
   {
     name: "Andion Global",
     investmentFirm: "Equitix",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Anaerobic digestion, biogas, and waste-to-energy systems",
     region: "North America",
     country: "United States / Canada",
@@ -17926,7 +17926,7 @@ export const companies: PortCo[] = [
   {
     name: "Boston AFC 2.0 OpCo",
     investmentFirm: "Equitix",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Transit fare collection systems",
     region: "North America",
     country: "United States",
@@ -17958,7 +17958,7 @@ export const companies: PortCo[] = [
   {
     name: "Centre Hospitalier de l'Université de Montréal (CHUM)",
     investmentFirm: "Equitix",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Availability-based hospital PPP",
     region: "North America",
     country: "Canada",
@@ -18019,7 +18019,7 @@ export const companies: PortCo[] = [
   {
     name: "Gordon and Leslie Diamond Health Care Centre",
     investmentFirm: "Equitix",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Availability-based outpatient healthcare PPP",
     region: "North America",
     country: "Canada",
@@ -18112,7 +18112,7 @@ export const companies: PortCo[] = [
   {
     name: "Kelowna and Vernon Hospitals Project",
     investmentFirm: "Equitix",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Availability-based hospital PPP",
     region: "North America",
     country: "Canada",
@@ -18141,7 +18141,7 @@ export const companies: PortCo[] = [
   {
     name: "Live Oak Wind Farm",
     investmentFirm: "Equitix",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -18204,7 +18204,7 @@ export const companies: PortCo[] = [
   {
     name: "North Carolina Solar",
     investmentFirm: "Equitix",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar generation portfolio",
     region: "North America",
     country: "United States",
@@ -18267,7 +18267,7 @@ export const companies: PortCo[] = [
   {
     name: "Ontario Science Partners",
     investmentFirm: "Equitix",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "DBFM cultural and science centre infrastructure",
     region: "North America",
     country: "Canada",
@@ -18297,7 +18297,7 @@ export const companies: PortCo[] = [
   {
     name: "Surrey Pretrial Services Centre Expansion Project",
     investmentFirm: "Equitix",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Correctional facility PPP",
     region: "North America",
     country: "Canada",
@@ -18326,7 +18326,7 @@ export const companies: PortCo[] = [
   {
     name: "Alberta P3 Schools Bundle 5",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Availability-based schools PPP",
     region: "North America",
     country: "Canada",
@@ -18354,7 +18354,7 @@ export const companies: PortCo[] = [
   {
     name: "Amadeus Wind Project",
     investmentFirm: "Fengate Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -18383,7 +18383,7 @@ export const companies: PortCo[] = [
   {
     name: "Caballero Battery Storage",
     investmentFirm: "Fengate Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery energy storage system",
     region: "North America",
     country: "United States",
@@ -18441,7 +18441,7 @@ export const companies: PortCo[] = [
   {
     name: "Clackamas County Circuit Courthouse",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Courthouse PPP",
     region: "North America",
     country: "United States",
@@ -18500,7 +18500,7 @@ export const companies: PortCo[] = [
   {
     name: "eStruxture Data Centers",
     investmentFirm: "Fengate Asset Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Data centers",
     region: "North America",
     country: "Canada",
@@ -18529,7 +18529,7 @@ export const companies: PortCo[] = [
   {
     name: "Fort St. James Green Energy Project",
     investmentFirm: "Fengate Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Biomass power generation",
     region: "North America",
     country: "Canada",
@@ -18588,7 +18588,7 @@ export const companies: PortCo[] = [
   {
     name: "Freeport Power Limited",
     investmentFirm: "Fengate Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Combined heat and power",
     region: "North America",
     country: "United States",
@@ -18618,7 +18618,7 @@ export const companies: PortCo[] = [
   {
     name: "Gander and Grand Falls-Windsor Care Homes Project",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Long-term care PPP",
     region: "North America",
     country: "Canada",
@@ -18647,7 +18647,7 @@ export const companies: PortCo[] = [
   {
     name: "Georgetown Inpatient Rehabilitation Facility",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Inpatient rehabilitation hospital",
     region: "North America",
     country: "United States",
@@ -18676,7 +18676,7 @@ export const companies: PortCo[] = [
   {
     name: "Grand Falls-Windsor Long-Term Care Home",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Long-term care PPP",
     region: "North America",
     country: "United States",
@@ -18733,7 +18733,7 @@ export const companies: PortCo[] = [
   {
     name: "Jim Pattison Outpatient Care and Surgery Centre",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Outpatient healthcare PPP",
     region: "North America",
     country: "Canada",
@@ -18764,7 +18764,7 @@ export const companies: PortCo[] = [
   {
     name: "Lambton College Residence",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Student housing PPP",
     region: "North America",
     country: "Canada",
@@ -18793,7 +18793,7 @@ export const companies: PortCo[] = [
   {
     name: "Macdonald Block Reconstruction Project",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Government office complex PPP",
     region: "North America",
     country: "Canada",
@@ -18820,7 +18820,7 @@ export const companies: PortCo[] = [
   {
     name: "Merritt Biomass Plant",
     investmentFirm: "Fengate Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Biomass-fired power generation",
     region: "North America",
     country: "Canada",
@@ -18849,7 +18849,7 @@ export const companies: PortCo[] = [
   {
     name: "Morris Cogeneration Facility",
     investmentFirm: "Fengate Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Combined heat and power",
     region: "North America",
     country: "United States",
@@ -18877,7 +18877,7 @@ export const companies: PortCo[] = [
   {
     name: "National Western Center Equestrian Center, Hotel & Garage Project",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Civic and event infrastructure redevelopment",
     region: "North America",
     country: "United States",
@@ -18906,7 +18906,7 @@ export const companies: PortCo[] = [
   {
     name: "New Perspective Seniors Housing Portfolio",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Seniors housing",
     region: "North America",
     country: "United States",
@@ -18933,7 +18933,7 @@ export const companies: PortCo[] = [
   {
     name: "Oakville Trafalgar Memorial Hospital",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Acute care hospital PPP",
     region: "North America",
     country: "Canada",
@@ -18960,7 +18960,7 @@ export const companies: PortCo[] = [
   {
     name: "PowerFin Partners Texas Solar Portfolio",
     investmentFirm: "Fengate Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Operating solar portfolio",
     region: "North America",
     country: "United States",
@@ -18987,7 +18987,7 @@ export const companies: PortCo[] = [
   {
     name: "Prairie Switch Wind",
     investmentFirm: "Fengate Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "United States",
@@ -19015,7 +19015,7 @@ export const companies: PortCo[] = [
   {
     name: "Prince George's County Blueprint Schools Program (Phase One)",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "K-12 school PPP",
     region: "North America",
     country: "United States",
@@ -19043,7 +19043,7 @@ export const companies: PortCo[] = [
   {
     name: "Providence Care Hospital",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Acute and mental health hospital PPP",
     region: "North America",
     country: "Canada",
@@ -19070,7 +19070,7 @@ export const companies: PortCo[] = [
   {
     name: "Saskatoon Civic Operations Centre",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Municipal operations and transit facility PPP",
     region: "North America",
     country: "Canada",
@@ -19097,7 +19097,7 @@ export const companies: PortCo[] = [
   {
     name: "Sunningdale Solar Project",
     investmentFirm: "Fengate Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar photovoltaic",
     region: "North America",
     country: "Canada",
@@ -19124,7 +19124,7 @@ export const companies: PortCo[] = [
   {
     name: "Surrey Memorial Hospital Critical Care Tower",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Acute care hospital expansion PPP",
     region: "North America",
     country: "Canada",
@@ -19152,7 +19152,7 @@ export const companies: PortCo[] = [
   {
     name: "Tavares Inpatient Rehabilitation Facility",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Inpatient rehabilitation hospital",
     region: "North America",
     country: "United States",
@@ -19180,7 +19180,7 @@ export const companies: PortCo[] = [
   {
     name: "The Peter Gilgan Mississauga Hospital and Shah Family Hospital for Women and Children",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Acute care hospital PPP",
     region: "North America",
     country: "Canada",
@@ -19207,7 +19207,7 @@ export const companies: PortCo[] = [
   {
     name: "TowerCom",
     investmentFirm: "Fengate Asset Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless communications towers",
     region: "North America",
     country: "United States",
@@ -19236,7 +19236,7 @@ export const companies: PortCo[] = [
   {
     name: "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Medical outpatient facilities",
     region: "North America",
     country: "United States",
@@ -19263,7 +19263,7 @@ export const companies: PortCo[] = [
   {
     name: "U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
     investmentFirm: "Fengate Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Medical outpatient facilities",
     region: "North America",
     country: "United States",
@@ -19290,7 +19290,7 @@ export const companies: PortCo[] = [
   {
     name: "Vertus Battery Storage",
     investmentFirm: "Fengate Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery energy storage",
     region: "North America",
     country: "United States",
@@ -19406,7 +19406,7 @@ export const companies: PortCo[] = [
   {
     name: "Shepherds Flat Wind Farm",
     investmentFirm: "GCM",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -19434,7 +19434,7 @@ export const companies: PortCo[] = [
   {
     name: "Vantage Data Centers North America",
     investmentFirm: "GCM",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale and wholesale data centers",
     region: "North America",
     country: "United States / Canada",
@@ -19466,7 +19466,7 @@ export const companies: PortCo[] = [
   {
     name: "Vesper Energy",
     investmentFirm: "GCM",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and battery storage development",
     region: "North America",
     country: "United States",
@@ -19497,7 +19497,7 @@ export const companies: PortCo[] = [
   {
     name: "Alturus",
     investmentFirm: "Generate Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Energy efficiency and infrastructure-as-a-service",
     region: "North America",
     country: "United States",
@@ -19524,7 +19524,7 @@ export const companies: PortCo[] = [
   {
     name: "Bright Power",
     investmentFirm: "Generate Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Building energy management and decarbonization services",
     region: "North America",
     country: "United States",
@@ -19610,7 +19610,7 @@ export const companies: PortCo[] = [
   {
     name: "CleanCapital C&I Solar SPVs",
     investmentFirm: "Generate Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed solar",
     region: "North America",
     country: "United States",
@@ -19639,7 +19639,7 @@ export const companies: PortCo[] = [
   {
     name: "Cultivate Power",
     investmentFirm: "Generate Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Community solar and distributed storage development",
     region: "North America",
     country: "United States",
@@ -19667,7 +19667,7 @@ export const companies: PortCo[] = [
   {
     name: "EnviraPAC Monticello",
     investmentFirm: "Generate Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Biomass-derived carbon products",
     region: "North America",
     country: "United States",
@@ -19694,7 +19694,7 @@ export const companies: PortCo[] = [
   {
     name: "esVolta",
     investmentFirm: "Generate Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale battery storage",
     region: "North America",
     country: "United States / Canada",
@@ -19724,7 +19724,7 @@ export const companies: PortCo[] = [
   {
     name: "Generate Upcycle",
     investmentFirm: "Generate Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Organics recycling and renewable natural gas",
     region: "North America",
     country: "United States / Canada",
@@ -19753,7 +19753,7 @@ export const companies: PortCo[] = [
   {
     name: "Nexamp, Inc.",
     investmentFirm: "Manulife",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed solar and energy storage",
     region: "North America",
     country: "United States",
@@ -19789,7 +19789,7 @@ export const companies: PortCo[] = [
   {
     name: "NYC Municipal Solar Portfolio",
     investmentFirm: "Generate Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Municipal rooftop solar",
     region: "North America",
     country: "United States",
@@ -19817,7 +19817,7 @@ export const companies: PortCo[] = [
   {
     name: "Pine Gate Renewables",
     investmentFirm: "Generate Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and storage development",
     region: "North America",
     country: "United States",
@@ -19846,7 +19846,7 @@ export const companies: PortCo[] = [
   {
     name: "Plug Power Fuel Cell Asset SPVs",
     investmentFirm: "Generate Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Fuel cell and hydrogen equipment financing",
     region: "North America",
     country: "United States",
@@ -19875,7 +19875,7 @@ export const companies: PortCo[] = [
   {
     name: "SOLCAP (KeyState Renewables JVs)",
     investmentFirm: "Generate Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Community solar tax equity",
     region: "North America",
     country: "United States",
@@ -19902,7 +19902,7 @@ export const companies: PortCo[] = [
   {
     name: "Stem Energy Storage Asset SPVs",
     investmentFirm: "Generate Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Behind-the-meter battery storage",
     region: "North America",
     country: "United States",
@@ -19931,7 +19931,7 @@ export const companies: PortCo[] = [
   {
     name: "Texas Microgrid Entities (Generate ER-NG)",
     investmentFirm: "Generate Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Microgrids and distributed generation",
     region: "North America",
     country: "United States",
@@ -19959,7 +19959,7 @@ export const companies: PortCo[] = [
   {
     name: "Ubiquity",
     investmentFirm: "Generate Capital",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Open-access fiber networks",
     region: "North America",
     country: "United States",
@@ -19988,7 +19988,7 @@ export const companies: PortCo[] = [
   {
     name: "Viridis Initiative",
     investmentFirm: "Generate Capital",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Energy-as-a-service building decarbonization",
     region: "North America",
     country: "United States",
@@ -20016,7 +20016,7 @@ export const companies: PortCo[] = [
   {
     name: "ACES Delta",
     investmentFirm: "Blackstone",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Hydrogen production and storage",
     region: "North America",
     country: "United States",
@@ -20083,7 +20083,7 @@ export const companies: PortCo[] = [
   {
     name: "Divert, Inc.",
     investmentFirm: "GIC",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Food waste recycling and renewable natural gas",
     region: "North America",
     country: "United States",
@@ -20138,7 +20138,7 @@ export const companies: PortCo[] = [
   {
     name: "Equinix xScale Data Centers (United States JV)",
     investmentFirm: "GIC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data centers",
     region: "North America",
     country: "United States",
@@ -20261,7 +20261,7 @@ export const companies: PortCo[] = [
   {
     name: "Reworld",
     investmentFirm: "GIC",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Waste-to-energy and resource recovery",
     region: "North America",
     country: "United States / Canada",
@@ -20293,7 +20293,7 @@ export const companies: PortCo[] = [
   {
     name: "Tallgrass Energy",
     investmentFirm: "Blackstone",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas and liquids pipeline infrastructure",
     region: "North America",
     country: "United States",
@@ -20334,7 +20334,7 @@ export const companies: PortCo[] = [
   {
     name: "WaterBridge Resources",
     investmentFirm: "GIC",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Produced water gathering, transportation, and disposal",
     region: "North America",
     country: "United States",
@@ -20362,7 +20362,7 @@ export const companies: PortCo[] = [
   {
     name: "Wecom Fiber",
     investmentFirm: "GIC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber broadband",
     region: "North America",
     country: "United States",
@@ -20394,7 +20394,7 @@ export const companies: PortCo[] = [
   {
     name: "Aligned Data Centers",
     investmentFirm: "Global Infrastructure Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale and build-to-suit data centers",
     region: "North America",
     country: "United States",
@@ -20466,7 +20466,7 @@ export const companies: PortCo[] = [
   {
     name: "Atlas Renewable Energy",
     investmentFirm: "Global Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and renewable power",
     region: "North America",
     country: "United States",
@@ -20495,7 +20495,7 @@ export const companies: PortCo[] = [
   {
     name: "Bluepoint Wind",
     investmentFirm: "Global Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Offshore wind development",
     region: "North America",
     country: "United States",
@@ -20524,7 +20524,7 @@ export const companies: PortCo[] = [
   {
     name: "Clearway Energy Group",
     investmentFirm: "Global Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale renewable power and storage",
     region: "North America",
     country: "United States",
@@ -20554,7 +20554,7 @@ export const companies: PortCo[] = [
   {
     name: "Eolian",
     investmentFirm: "Global Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable project development and battery storage",
     region: "North America",
     country: "United States",
@@ -20581,7 +20581,7 @@ export const companies: PortCo[] = [
   {
     name: "Revolution Wind & South Fork Wind",
     investmentFirm: "Global Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Offshore wind generation",
     region: "North America",
     country: "United States",
@@ -20609,7 +20609,7 @@ export const companies: PortCo[] = [
   {
     name: "Rio Grande LNG",
     investmentFirm: "GIC",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "LNG liquefaction and export terminal",
     region: "North America",
     country: "United States",
@@ -20651,7 +20651,7 @@ export const companies: PortCo[] = [
   {
     name: "Saavi Energía",
     investmentFirm: "Global Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired generation and gas infrastructure",
     region: "North America",
     country: "Mexico",
@@ -20710,7 +20710,7 @@ export const companies: PortCo[] = [
   {
     name: "Vanguard Renewables",
     investmentFirm: "Global Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Anaerobic digestion and renewable natural gas",
     region: "North America",
     country: "United States",
@@ -20772,7 +20772,7 @@ export const companies: PortCo[] = [
   {
     name: "BrightNight",
     investmentFirm: "Goldman Sachs Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable power development and ownership",
     region: "North America",
     country: "United States",
@@ -20802,7 +20802,7 @@ export const companies: PortCo[] = [
   {
     name: "GridStor",
     investmentFirm: "Goldman Sachs Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale battery storage",
     region: "North America",
     country: "United States",
@@ -20834,7 +20834,7 @@ export const companies: PortCo[] = [
   {
     name: "ImOn Communications",
     investmentFirm: "Goldman Sachs Asset Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-premises broadband",
     region: "North America",
     country: "United States",
@@ -20924,7 +20924,7 @@ export const companies: PortCo[] = [
   {
     name: "Synthica Energy",
     investmentFirm: "Goldman Sachs Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Anaerobic digestion and renewable natural gas",
     region: "North America",
     country: "United States",
@@ -20952,7 +20952,7 @@ export const companies: PortCo[] = [
   {
     name: "123NET",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber networks, carrier hotel, and colocation",
     region: "North America",
     country: "United States",
@@ -20981,7 +20981,7 @@ export const companies: PortCo[] = [
   {
     name: "55 Hereford Street",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Colocation data center",
     region: "North America",
     country: "Canada",
@@ -21013,7 +21013,7 @@ export const companies: PortCo[] = [
   {
     name: "AWS-1 A-Block License",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless spectrum license",
     region: "North America",
     country: "United States",
@@ -21042,7 +21042,7 @@ export const companies: PortCo[] = [
   {
     name: "Cincinnati Bell Wireless spectrum licenses",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless spectrum portfolio",
     region: "North America",
     country: "United States",
@@ -21071,7 +21071,7 @@ export const companies: PortCo[] = [
   {
     name: "Great Plains Communications",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Regional fiber broadband and enterprise connectivity",
     region: "North America",
     country: "United States",
@@ -21102,7 +21102,7 @@ export const companies: PortCo[] = [
   {
     name: "LightRiver",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Optical network integration and network software",
     region: "North America",
     country: "United States",
@@ -21132,7 +21132,7 @@ export const companies: PortCo[] = [
   {
     name: "Network Wireless Solutions",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Telecom distribution and field services",
     region: "North America",
     country: "United States",
@@ -21162,7 +21162,7 @@ export const companies: PortCo[] = [
   {
     name: "NewLevel",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Low-band wireless spectrum licenses",
     region: "North America",
     country: "United States",
@@ -21192,7 +21192,7 @@ export const companies: PortCo[] = [
   {
     name: "NewLevel II, L.P.",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Licensed wireless spectrum (C-band)",
     region: "North America",
     country: "United States",
@@ -21221,7 +21221,7 @@ export const companies: PortCo[] = [
   {
     name: "NewLevel III, L.P.",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Licensed wireless spectrum (3.45 GHz)",
     region: "North America",
     country: "United States",
@@ -21250,7 +21250,7 @@ export const companies: PortCo[] = [
   {
     name: "Quintillion",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Subsea and terrestrial fiber",
     region: "North America",
     country: "United States",
@@ -21278,7 +21278,7 @@ export const companies: PortCo[] = [
   {
     name: "Ritter Communications",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Regional fiber broadband and business telecom",
     region: "North America",
     country: "United States",
@@ -21309,7 +21309,7 @@ export const companies: PortCo[] = [
   {
     name: "Spectrotel",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Managed network services and connectivity aggregation",
     region: "North America",
     country: "United States",
@@ -21337,7 +21337,7 @@ export const companies: PortCo[] = [
   {
     name: "Summit Broadband",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber broadband and transport services",
     region: "North America",
     country: "United States",
@@ -21368,7 +21368,7 @@ export const companies: PortCo[] = [
   {
     name: "Tower Investments I",
     investmentFirm: "Grain",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless towers",
     region: "North America",
     country: "United States",
@@ -21418,7 +21418,7 @@ export const companies: PortCo[] = [
   {
     name: "Best Trash",
     investmentFirm: "H.I.G. Capital",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Residential solid waste collection",
     region: "North America",
     country: "United States",
@@ -21447,7 +21447,7 @@ export const companies: PortCo[] = [
   {
     name: "Greenflash Infrastructure",
     investmentFirm: "H.I.G. Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Grid-scale power and storage development",
     region: "North America",
     country: "United States",
@@ -21504,7 +21504,7 @@ export const companies: PortCo[] = [
   {
     name: "Northern Biogas",
     investmentFirm: "H.I.G. Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable natural gas from anaerobic digestion",
     region: "North America",
     country: "United States",
@@ -21532,7 +21532,7 @@ export const companies: PortCo[] = [
   {
     name: "Tower Engineering Professionals",
     investmentFirm: "H.I.G. Capital",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Telecom and fiber engineering services",
     region: "North America",
     country: "United States / Canada",
@@ -21560,7 +21560,7 @@ export const companies: PortCo[] = [
   {
     name: "Trail Ridge Power",
     investmentFirm: "H.I.G. Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed energy for real estate",
     region: "North America",
     country: "United States",
@@ -21586,7 +21586,7 @@ export const companies: PortCo[] = [
   {
     name: "AL Sandersville Holdings",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired peaking generation",
     region: "North America",
     country: "United States",
@@ -21613,7 +21613,7 @@ export const companies: PortCo[] = [
   {
     name: "Caney River Wind",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -21640,7 +21640,7 @@ export const companies: PortCo[] = [
   {
     name: "Chisholm View Wind",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -21667,7 +21667,7 @@ export const companies: PortCo[] = [
   {
     name: "Desert Sunlight",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar generation",
     region: "North America",
     country: "United States",
@@ -21694,7 +21694,7 @@ export const companies: PortCo[] = [
   {
     name: "Generate Capital",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Sustainable infrastructure investment and operations",
     region: "North America",
     country: "United States",
@@ -21753,7 +21753,7 @@ export const companies: PortCo[] = [
   {
     name: "Goodwell Wind",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -21780,7 +21780,7 @@ export const companies: PortCo[] = [
   {
     name: "Hamakua Energy Plant",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Thermal power generation",
     region: "North America",
     country: "United States",
@@ -21807,7 +21807,7 @@ export const companies: PortCo[] = [
   {
     name: "Kalaeloa Partners, L.P.",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Cogeneration facility",
     region: "North America",
     country: "United States",
@@ -21834,7 +21834,7 @@ export const companies: PortCo[] = [
   {
     name: "Northern Star Generation",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Thermal power generation portfolio",
     region: "North America",
     country: "United States",
@@ -21862,7 +21862,7 @@ export const companies: PortCo[] = [
   {
     name: "Origin Wind",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -21889,7 +21889,7 @@ export const companies: PortCo[] = [
   {
     name: "Prairie Rose Wind",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -21916,7 +21916,7 @@ export const companies: PortCo[] = [
   {
     name: "Rocky Ridge Wind",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -21943,7 +21943,7 @@ export const companies: PortCo[] = [
   {
     name: "St. Lawrence Wind",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "Canada",
@@ -21970,7 +21970,7 @@ export const companies: PortCo[] = [
   {
     name: "Thunderhead Energy Solutions",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Behind-the-meter power solutions for data centers",
     region: "North America",
     country: "United States",
@@ -21997,7 +21997,7 @@ export const companies: PortCo[] = [
   {
     name: "Washington County Power",
     investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired peaking generation",
     region: "North America",
     country: "United States",
@@ -22025,7 +22025,7 @@ export const companies: PortCo[] = [
   {
     name: "AlohaNAP",
     investmentFirm: "Harrison Street",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Carrier-neutral interconnection data center",
     region: "North America",
     country: "United States",
@@ -22054,7 +22054,7 @@ export const companies: PortCo[] = [
   {
     name: "American Campus Communities (ACC) ASU P3 Portfolio",
     investmentFirm: "Harrison Street",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Student housing public-private partnership",
     region: "North America",
     country: "United States",
@@ -22112,7 +22112,7 @@ export const companies: PortCo[] = [
   {
     name: "Chester County Hyperscale Data Center",
     investmentFirm: "Harrison Street",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data center development",
     region: "North America",
     country: "United States",
@@ -22140,7 +22140,7 @@ export const companies: PortCo[] = [
   {
     name: "Chicago CBD Data Center (CHIL2)",
     investmentFirm: "Harrison Street",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Carrier-neutral colocation data center",
     region: "North America",
     country: "United States",
@@ -22226,7 +22226,7 @@ export const companies: PortCo[] = [
   {
     name: "CPV Renewables",
     investmentFirm: "Harrison Street",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind, solar, and co-located storage development",
     region: "North America",
     country: "United States",
@@ -22280,7 +22280,7 @@ export const companies: PortCo[] = [
   {
     name: "Doug Meijer Medical Innovation Building",
     investmentFirm: "Harrison Street",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Academic medical facility P3",
     region: "North America",
     country: "United States",
@@ -22309,7 +22309,7 @@ export const companies: PortCo[] = [
   {
     name: "DRFortress",
     investmentFirm: "Harrison Street",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Carrier-neutral colocation and interconnection data center",
     region: "North America",
     country: "United States",
@@ -22337,7 +22337,7 @@ export const companies: PortCo[] = [
   {
     name: "Duquesne University Forbes Avenue Student Housing",
     investmentFirm: "Harrison Street",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Student housing P3",
     region: "North America",
     country: "United States",
@@ -22366,7 +22366,7 @@ export const companies: PortCo[] = [
   {
     name: "Ecoplexus Solar Portfolio",
     investmentFirm: "Harrison Street",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar portfolio",
     region: "North America",
     country: "United States",
@@ -22447,7 +22447,7 @@ export const companies: PortCo[] = [
   {
     name: "Jack D. Weiler Hospital Lease P3",
     investmentFirm: "Harrison Street",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Hospital infrastructure lease P3",
     region: "North America",
     country: "United States",
@@ -22474,7 +22474,7 @@ export const companies: PortCo[] = [
   {
     name: "Mayroad",
     investmentFirm: "Harrison Street",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Military housing",
     region: "North America",
     country: "United States",
@@ -22504,7 +22504,7 @@ export const companies: PortCo[] = [
   {
     name: "Midway Technology Centre",
     investmentFirm: "Harrison Street",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Colocation data center",
     region: "North America",
     country: "United States",
@@ -22531,7 +22531,7 @@ export const companies: PortCo[] = [
   {
     name: "Orangeburg Data Center (ORNY1)",
     investmentFirm: "Harrison Street",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Colocation data center",
     region: "North America",
     country: "United States",
@@ -22558,7 +22558,7 @@ export const companies: PortCo[] = [
   {
     name: "Pittock Block Data Center",
     investmentFirm: "Harrison Street",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Carrier hotel and colocation data center",
     region: "North America",
     country: "United States",
@@ -22586,7 +22586,7 @@ export const companies: PortCo[] = [
   {
     name: "PowerHouse Data Centers",
     investmentFirm: "Harrison Street",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Powered shell and hyperscale data center development",
     region: "North America",
     country: "United States",
@@ -22615,7 +22615,7 @@ export const companies: PortCo[] = [
   {
     name: "Purdue and University of Michigan Housing Developments",
     investmentFirm: "Harrison Street",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Student housing P3",
     region: "North America",
     country: "United States",
@@ -22642,7 +22642,7 @@ export const companies: PortCo[] = [
   {
     name: "Simon Fraser University Student Housing",
     investmentFirm: "Harrison Street",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Student housing P3",
     region: "North America",
     country: "Canada",
@@ -22670,7 +22670,7 @@ export const companies: PortCo[] = [
   {
     name: "Soltage Distributed Solar Portfolio (Iris & Helios)",
     investmentFirm: "Harrison Street",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed solar portfolio",
     region: "North America",
     country: "United States",
@@ -22699,7 +22699,7 @@ export const companies: PortCo[] = [
   {
     name: "Summit Infrastructure Group (SummitIG)",
     investmentFirm: "Harrison Street",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Dark fiber networks",
     region: "North America",
     country: "United States",
@@ -22727,7 +22727,7 @@ export const companies: PortCo[] = [
   {
     name: "Union Station Data Center and Carrier Hotel",
     investmentFirm: "Harrison Street",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Carrier hotel and interconnection data center",
     region: "North America",
     country: "United States",
@@ -22754,7 +22754,7 @@ export const companies: PortCo[] = [
   {
     name: "University of Kentucky On-Campus Housing Portfolio",
     investmentFirm: "Harrison Street",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Student housing P3",
     region: "North America",
     country: "United States",
@@ -22782,7 +22782,7 @@ export const companies: PortCo[] = [
   {
     name: "University of Washington Bothell Mixed-Use Development",
     investmentFirm: "Harrison Street",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Student housing and mixed-use P3",
     region: "North America",
     country: "United States",
@@ -22810,7 +22810,7 @@ export const companies: PortCo[] = [
   {
     name: "Warren County Solar Project",
     investmentFirm: "Harrison Street",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar project",
     region: "North America",
     country: "United States",
@@ -22839,7 +22839,7 @@ export const companies: PortCo[] = [
   {
     name: "Wells Building Data Center",
     investmentFirm: "Harrison Street",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Carrier hotel and colocation data center",
     region: "North America",
     country: "United States",
@@ -22866,7 +22866,7 @@ export const companies: PortCo[] = [
   {
     name: "Woodlawn Residential Commons",
     investmentFirm: "Harrison Street",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Student housing P3",
     region: "North America",
     country: "United States",
@@ -22923,7 +22923,7 @@ export const companies: PortCo[] = [
   {
     name: "Wyoming Data Center (CHWY1)",
     investmentFirm: "Harrison Street",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Colocation data center",
     region: "North America",
     country: "United States",
@@ -22950,7 +22950,7 @@ export const companies: PortCo[] = [
   {
     name: "Ambient Photonics",
     investmentFirm: "I Squared Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Low-light photovoltaic technology",
     region: "North America",
     country: "United States",
@@ -22979,7 +22979,7 @@ export const companies: PortCo[] = [
   {
     name: "Atlantic Power & Utilities",
     investmentFirm: "I Squared Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Power generation portfolio",
     region: "North America",
     country: "United States / Canada",
@@ -23007,7 +23007,7 @@ export const companies: PortCo[] = [
   {
     name: "Broadwing Energy / Low Carbon Infrastructure",
     investmentFirm: "I Squared Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Low-carbon power and carbon capture infrastructure",
     region: "North America",
     country: "United States",
@@ -23064,7 +23064,7 @@ export const companies: PortCo[] = [
   {
     name: "ENTEK Technology Holdings",
     investmentFirm: "I Squared Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery separator manufacturing",
     region: "North America",
     country: "United States",
@@ -23091,7 +23091,7 @@ export const companies: PortCo[] = [
   {
     name: "Epirus",
     investmentFirm: "I Squared Capital",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "High-power electronics and power systems",
     region: "North America",
     country: "United States",
@@ -23118,7 +23118,7 @@ export const companies: PortCo[] = [
   {
     name: "Ezee Fiber",
     investmentFirm: "I Squared Capital",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-home broadband",
     region: "North America",
     country: "United States",
@@ -23174,7 +23174,7 @@ export const companies: PortCo[] = [
   {
     name: "GridPoint",
     investmentFirm: "I Squared Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed energy management software and controls",
     region: "North America",
     country: "United States",
@@ -23204,7 +23204,7 @@ export const companies: PortCo[] = [
   {
     name: "HTEC",
     investmentFirm: "I Squared Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Hydrogen production and fueling infrastructure",
     region: "North America",
     country: "United States / Canada",
@@ -23231,7 +23231,7 @@ export const companies: PortCo[] = [
   {
     name: "KIO Networks",
     investmentFirm: "I Squared Capital",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Data centers and digital infrastructure services",
     region: "North America",
     country: "Mexico",
@@ -23261,7 +23261,7 @@ export const companies: PortCo[] = [
   {
     name: "Liberty Tire Recycling",
     investmentFirm: "I Squared Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Tire recycling and circular materials",
     region: "North America",
     country: "United States / Canada",
@@ -23289,7 +23289,7 @@ export const companies: PortCo[] = [
   {
     name: "Palmetto",
     investmentFirm: "I Squared Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Residential solar and home electrification platform",
     region: "North America",
     country: "United States",
@@ -23343,7 +23343,7 @@ export const companies: PortCo[] = [
   {
     name: "RPower",
     investmentFirm: "I Squared Capital",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed generation and microgrids",
     region: "North America",
     country: "United States",
@@ -23400,7 +23400,7 @@ export const companies: PortCo[] = [
   {
     name: "Tarana Wireless",
     investmentFirm: "I Squared Capital",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fixed wireless broadband equipment",
     region: "North America",
     country: "United States",
@@ -23488,7 +23488,7 @@ export const companies: PortCo[] = [
   {
     name: "WhiteWater / Whistler Pipeline",
     investmentFirm: "I Squared Capital",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas pipeline",
     region: "North America",
     country: "United States",
@@ -23546,7 +23546,7 @@ export const companies: PortCo[] = [
   {
     name: "Zenith Energy Terminal Portland",
     investmentFirm: "I Squared Capital",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Liquid bulk storage terminal",
     region: "North America",
     country: "United States",
@@ -23573,7 +23573,7 @@ export const companies: PortCo[] = [
   {
     name: "Capstone Infrastructure Corporation",
     investmentFirm: "iCON Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable and low-carbon power generation",
     region: "North America",
     country: "United States / Canada",
@@ -23633,7 +23633,7 @@ export const companies: PortCo[] = [
   {
     name: "Dobson Fiber",
     investmentFirm: "iCON Infrastructure",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Regional fiber broadband network",
     region: "North America",
     country: "United States",
@@ -23731,7 +23731,7 @@ export const companies: PortCo[] = [
   {
     name: "TruVista Communications",
     investmentFirm: "iCON Infrastructure",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Rural fiber broadband and telecom services",
     region: "North America",
     country: "United States",
@@ -23762,7 +23762,7 @@ export const companies: PortCo[] = [
   {
     name: "Utility Pipeline, Ltd.",
     investmentFirm: "iCON Infrastructure",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas distribution and related services",
     region: "North America",
     country: "United States",
@@ -23791,7 +23791,7 @@ export const companies: PortCo[] = [
   {
     name: "Vista Services",
     investmentFirm: "iCON Infrastructure",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Residential equipment leasing for HVAC, water, and home electrification equipment",
     region: "North America",
     country: "Canada",
@@ -23851,7 +23851,7 @@ export const companies: PortCo[] = [
   {
     name: "Buckeye Partners",
     investmentFirm: "IFM Investors",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Pipelines and terminals",
     region: "North America",
     country: "United States",
@@ -23947,7 +23947,7 @@ export const companies: PortCo[] = [
   {
     name: "Freeport LNG",
     investmentFirm: "IFM Investors",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "LNG export terminal",
     region: "North America",
     country: "United States",
@@ -23981,7 +23981,7 @@ export const companies: PortCo[] = [
   {
     name: "Mobius Renewables",
     investmentFirm: "IFM Investors",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable natural gas and low-carbon fuels",
     region: "North America",
     country: "United States",
@@ -24009,7 +24009,7 @@ export const companies: PortCo[] = [
   {
     name: "Swift Current Energy",
     investmentFirm: "IFM Investors",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar, wind, and battery storage",
     region: "North America",
     country: "United States",
@@ -24042,7 +24042,7 @@ export const companies: PortCo[] = [
   {
     name: "Altum Digital Infrastructure",
     investmentFirm: "Igneo Infrastructure Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wholesale data centers",
     region: "North America",
     country: "United States",
@@ -24070,7 +24070,7 @@ export const companies: PortCo[] = [
   {
     name: "Indigo Generation",
     investmentFirm: "Igneo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired peaking generation",
     region: "North America",
     country: "United States",
@@ -24156,7 +24156,7 @@ export const companies: PortCo[] = [
   {
     name: "Soltage",
     investmentFirm: "Igneo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed generation solar and storage",
     region: "North America",
     country: "United States",
@@ -24186,7 +24186,7 @@ export const companies: PortCo[] = [
   {
     name: "Terra-Gen",
     investmentFirm: "Igneo Infrastructure Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale wind, solar, and battery storage",
     region: "North America",
     country: "United States",
@@ -24216,7 +24216,7 @@ export const companies: PortCo[] = [
   {
     name: "US Signal",
     investmentFirm: "Igneo Infrastructure Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber network and data centers",
     region: "North America",
     country: "United States",
@@ -24246,7 +24246,7 @@ export const companies: PortCo[] = [
   {
     name: "Algoma Hydro",
     investmentFirm: "IMCO",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Contracted hydroelectric generation",
     region: "North America",
     country: "Canada",
@@ -24273,7 +24273,7 @@ export const companies: PortCo[] = [
   {
     name: "Backhaul Network Services Inc.",
     investmentFirm: "IMCO",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless backhaul infrastructure",
     region: "North America",
     country: "Canada",
@@ -24330,7 +24330,7 @@ export const companies: PortCo[] = [
   {
     name: "Blue Hill Wind Facility",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "Canada",
@@ -24357,7 +24357,7 @@ export const companies: PortCo[] = [
   {
     name: "Brazos Wind Farm",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -24384,7 +24384,7 @@ export const companies: PortCo[] = [
   {
     name: "Deerfield Wind Facility",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -24411,7 +24411,7 @@ export const companies: PortCo[] = [
   {
     name: "Fullmark Energy",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery energy storage development and operation",
     region: "North America",
     country: "United States",
@@ -24442,7 +24442,7 @@ export const companies: PortCo[] = [
   {
     name: "Hawtree Solar Project",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar generation",
     region: "North America",
     country: "United States",
@@ -24469,7 +24469,7 @@ export const companies: PortCo[] = [
   {
     name: "Iron Star Wind Project",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -24523,7 +24523,7 @@ export const companies: PortCo[] = [
   {
     name: "LiveOak Fiber",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-premises broadband",
     region: "North America",
     country: "United States",
@@ -24553,7 +24553,7 @@ export const companies: PortCo[] = [
   {
     name: "Madison Fields Solar Farm",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar generation",
     region: "North America",
     country: "United States",
@@ -24607,7 +24607,7 @@ export const companies: PortCo[] = [
   {
     name: "Odell Wind Facility",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -24662,7 +24662,7 @@ export const companies: PortCo[] = [
   {
     name: "Priddy Wind Project",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -24689,7 +24689,7 @@ export const companies: PortCo[] = [
   {
     name: "Public Safety Towers Company",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless telecommunications towers",
     region: "North America",
     country: "United States",
@@ -24718,7 +24718,7 @@ export const companies: PortCo[] = [
   {
     name: "Qu Data Centres",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Colocation data centers",
     region: "North America",
     country: "Canada",
@@ -24747,7 +24747,7 @@ export const companies: PortCo[] = [
   {
     name: "Royal Canadian Mounted Police 'E' Division HQ",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Government accommodation PPP",
     region: "North America",
     country: "Canada",
@@ -24774,7 +24774,7 @@ export const companies: PortCo[] = [
   {
     name: "Sugar Creek",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -24857,7 +24857,7 @@ export const companies: PortCo[] = [
   {
     name: "Wind Facility",
     investmentFirm: "InfraRed Capital Partners",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -24947,7 +24947,7 @@ export const companies: PortCo[] = [
   {
     name: "Greenwood Mushrooms Development Corp. (Windmill Farms)",
     investmentFirm: "Instar",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Controlled-environment agriculture",
     region: "North America",
     country: "Canada",
@@ -25037,7 +25037,7 @@ export const companies: PortCo[] = [
   {
     name: "LS Networks",
     investmentFirm: "Instar",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Middle-mile fiber and tower backhaul",
     region: "North America",
     country: "United States",
@@ -25074,7 +25074,7 @@ export const companies: PortCo[] = [
   {
     name: "Pilot Water Solutions",
     investmentFirm: "Instar",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Produced water gathering, transportation, and disposal",
     region: "North America",
     country: "United States",
@@ -25104,7 +25104,7 @@ export const companies: PortCo[] = [
   {
     name: "PRT Growing Services Ltd.",
     investmentFirm: "Instar",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Forest seedling nursery infrastructure",
     region: "North America",
     country: "Canada",
@@ -25228,7 +25228,7 @@ export const companies: PortCo[] = [
   {
     name: "Steel Reef Infrastructure Corp.",
     investmentFirm: "Instar",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Associated gas capture and processing infrastructure",
     region: "North America",
     country: "Canada",
@@ -25263,7 +25263,7 @@ export const companies: PortCo[] = [
   {
     name: "Windmill Farms",
     investmentFirm: "Instar",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Controlled-environment agriculture",
     region: "North America",
     country: "Canada",
@@ -25320,7 +25320,7 @@ export const companies: PortCo[] = [
   {
     name: "BWC Terminals",
     investmentFirm: "J.P. Morgan Asset Management",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Bulk liquid storage terminals",
     region: "North America",
     country: "United States / Canada",
@@ -25376,7 +25376,7 @@ export const companies: PortCo[] = [
   {
     name: "Enstor Gas",
     investmentFirm: "J.P. Morgan Asset Management",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas storage",
     region: "North America",
     country: "United States",
@@ -25432,7 +25432,7 @@ export const companies: PortCo[] = [
   {
     name: "Onward Energy",
     investmentFirm: "J.P. Morgan Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Independent power generation",
     region: "North America",
     country: "United States",
@@ -25522,7 +25522,7 @@ export const companies: PortCo[] = [
   {
     name: "38 Degrees North",
     investmentFirm: "Kimmeridge",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed generation, community solar, and battery storage",
     region: "North America",
     country: "United States",
@@ -25550,7 +25550,7 @@ export const companies: PortCo[] = [
   {
     name: "Caturus",
     investmentFirm: "Kimmeridge",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Integrated natural gas and LNG platform",
     region: "North America",
     country: "United States",
@@ -25581,7 +25581,7 @@ export const companies: PortCo[] = [
   {
     name: "Chestnut Carbon",
     investmentFirm: "Kimmeridge",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Nature-based carbon removal and forest carbon projects",
     region: "North America",
     country: "United States",
@@ -25610,7 +25610,7 @@ export const companies: PortCo[] = [
   {
     name: "Common Energy",
     investmentFirm: "Kimmeridge",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Community solar customer acquisition and clean-energy services",
     region: "North America",
     country: "United States",
@@ -25639,7 +25639,7 @@ export const companies: PortCo[] = [
   {
     name: "LandGate",
     investmentFirm: "Kimmeridge",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Energy and infrastructure data platform",
     region: "North America",
     country: "United States",
@@ -25667,7 +25667,7 @@ export const companies: PortCo[] = [
   {
     name: "SYSO Technologies",
     investmentFirm: "Kimmeridge",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable asset operations and market optimization software",
     region: "North America",
     country: "United States",
@@ -25783,7 +25783,7 @@ export const companies: PortCo[] = [
   {
     name: "Avantus",
     investmentFirm: "KKR",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and storage development",
     region: "North America",
     country: "United States",
@@ -25812,7 +25812,7 @@ export const companies: PortCo[] = [
   {
     name: "CarbonCount Holdings 1 LLC",
     investmentFirm: "KKR",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Sustainable infrastructure investment vehicle",
     region: "North America",
     country: "United States",
@@ -25841,7 +25841,7 @@ export const companies: PortCo[] = [
   {
     name: "Coastal GasLink Pipeline",
     investmentFirm: "KKR",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas transmission pipeline",
     region: "North America",
     country: "Canada",
@@ -25900,7 +25900,7 @@ export const companies: PortCo[] = [
   {
     name: "CyrusOne",
     investmentFirm: "KKR",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale and enterprise data centers",
     region: "North America",
     country: "United States",
@@ -25959,7 +25959,7 @@ export const companies: PortCo[] = [
   {
     name: "Metronet",
     investmentFirm: "KKR",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-home and wholesale fiber networks",
     region: "North America",
     country: "United States",
@@ -25988,7 +25988,7 @@ export const companies: PortCo[] = [
   {
     name: "Monterra Energy",
     investmentFirm: "KKR",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas transportation and distribution",
     region: "North America",
     country: "Mexico",
@@ -26016,7 +26016,7 @@ export const companies: PortCo[] = [
   {
     name: "Neon Renewables",
     investmentFirm: "KKR",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Contracted wind and solar generation portfolio",
     region: "North America",
     country: "United States",
@@ -26044,7 +26044,7 @@ export const companies: PortCo[] = [
   {
     name: "Nitrogen Renewables",
     investmentFirm: "KKR",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind and solar portfolio joint venture",
     region: "North America",
     country: "United States",
@@ -26072,7 +26072,7 @@ export const companies: PortCo[] = [
   {
     name: "Pembina Gas Infrastructure Inc.",
     investmentFirm: "KKR",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas processing, transportation, and NGL services",
     region: "North America",
     country: "Canada",
@@ -26101,7 +26101,7 @@ export const companies: PortCo[] = [
   {
     name: "Port Arthur LNG",
     investmentFirm: "KKR",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "LNG export terminal",
     region: "North America",
     country: "United States",
@@ -26129,7 +26129,7 @@ export const companies: PortCo[] = [
   {
     name: "Sol Systems",
     investmentFirm: "KKR",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar development, ownership, and energy-market services",
     region: "North America",
     country: "United States",
@@ -26187,7 +26187,7 @@ export const companies: PortCo[] = [
   {
     name: "TotalEnergies U.S. Solar Portfolio JV",
     investmentFirm: "KKR",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Contracted utility-scale solar generation",
     region: "North America",
     country: "United States",
@@ -26215,7 +26215,7 @@ export const companies: PortCo[] = [
   {
     name: "altafiber",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Incumbent fiber broadband and telecom network",
     region: "North America",
     country: "United States",
@@ -26246,7 +26246,7 @@ export const companies: PortCo[] = [
   {
     name: "APLD HPC TopCo 2 / Applied Digital HPC JV",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "High-performance computing and AI data centers",
     region: "North America",
     country: "United States",
@@ -26275,7 +26275,7 @@ export const companies: PortCo[] = [
   {
     name: "Bluebird Fiber",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Regional fiber network",
     region: "North America",
     country: "United States",
@@ -26303,7 +26303,7 @@ export const companies: PortCo[] = [
   {
     name: "Calibrant Energy",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "On-site solar, storage, and energy-as-a-service",
     region: "North America",
     country: "United States",
@@ -26362,7 +26362,7 @@ export const companies: PortCo[] = [
   {
     name: "Coastal Waste & Recycling",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Solid waste collection, transfer, recycling, and disposal",
     region: "North America",
     country: "United States",
@@ -26393,7 +26393,7 @@ export const companies: PortCo[] = [
   {
     name: "Cyrq Energy",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Geothermal power generation",
     region: "North America",
     country: "United States",
@@ -26424,7 +26424,7 @@ export const companies: PortCo[] = [
   {
     name: "DESRI Renewables, LLC",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and battery storage development and ownership",
     region: "North America",
     country: "United States",
@@ -26455,7 +26455,7 @@ export const companies: PortCo[] = [
   {
     name: "Diamond Infrastructure Solutions",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Industrial utilities, pipelines, and site infrastructure",
     region: "North America",
     country: "United States",
@@ -26558,7 +26558,7 @@ export const companies: PortCo[] = [
   {
     name: "GreenWaste",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Waste collection, recycling, and resource recovery",
     region: "North America",
     country: "United States",
@@ -26650,7 +26650,7 @@ export const companies: PortCo[] = [
   {
     name: "LRS",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Waste diversion, recycling, and portable services",
     region: "North America",
     country: "United States",
@@ -26710,7 +26710,7 @@ export const companies: PortCo[] = [
   {
     name: "Medical Properties Partnership",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Acute-care hospital real estate partnership",
     region: "North America",
     country: "United States",
@@ -26740,7 +26740,7 @@ export const companies: PortCo[] = [
   {
     name: "Netrality Data Centers",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Interconnection and colocation data centers",
     region: "North America",
     country: "United States",
@@ -26800,7 +26800,7 @@ export const companies: PortCo[] = [
   {
     name: "Pavlov Media, Inc.",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber connectivity for multifamily and student housing",
     region: "North America",
     country: "United States",
@@ -26951,7 +26951,7 @@ export const companies: PortCo[] = [
   {
     name: "SwyftFiber",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-home broadband",
     region: "North America",
     country: "United States",
@@ -27012,7 +27012,7 @@ export const companies: PortCo[] = [
   {
     name: "WIN Waste Innovations",
     investmentFirm: "Macquarie Asset Management",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Waste-to-energy, collection, transfer, and recycling services",
     region: "North America",
     country: "United States",
@@ -27105,7 +27105,7 @@ export const companies: PortCo[] = [
   {
     name: "Back Bay Solar, LLC",
     investmentFirm: "Manulife",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar generation",
     region: "North America",
     country: "United States",
@@ -27132,7 +27132,7 @@ export const companies: PortCo[] = [
   {
     name: "Boldyn Networks (US)",
     investmentFirm: "Manulife",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Shared wireless and fiber network infrastructure",
     region: "North America",
     country: "United States",
@@ -27232,7 +27232,7 @@ export const companies: PortCo[] = [
   {
     name: "Diamond Communications, LLC",
     investmentFirm: "OTPP",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless towers, sites, and related fiber infrastructure",
     region: "North America",
     country: "United States",
@@ -27300,7 +27300,7 @@ export const companies: PortCo[] = [
   {
     name: "HEN Infrastructure, LLC",
     investmentFirm: "Manulife",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "ERCOT battery storage development platform",
     region: "North America",
     country: "United States",
@@ -27330,7 +27330,7 @@ export const companies: PortCo[] = [
   {
     name: "Hunt Energy Network, LLC",
     investmentFirm: "Manulife",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Dispatchable power and battery storage platform",
     region: "North America",
     country: "United States",
@@ -27360,7 +27360,7 @@ export const companies: PortCo[] = [
   {
     name: "J-POWER USA Generation, L.P.",
     investmentFirm: "Manulife",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired power generation",
     region: "North America",
     country: "United States",
@@ -27423,7 +27423,7 @@ export const companies: PortCo[] = [
   {
     name: "JH Symphony Renewables, LLC",
     investmentFirm: "Manulife",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable generation holding platform",
     region: "North America",
     country: "United States",
@@ -27482,7 +27482,7 @@ export const companies: PortCo[] = [
   {
     name: "Lakefront Fiber, LLC",
     investmentFirm: "Manulife",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Long-haul and regional fiber network",
     region: "North America",
     country: "United States",
@@ -27512,7 +27512,7 @@ export const companies: PortCo[] = [
   {
     name: "Landmark Properties, Inc.",
     investmentFirm: "Manulife",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Student housing and residential development",
     region: "North America",
     country: "United States",
@@ -27549,7 +27549,7 @@ export const companies: PortCo[] = [
   {
     name: "Midland Cogeneration Venture",
     investmentFirm: "Manulife",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Natural gas-fired cogeneration",
     region: "North America",
     country: "United States",
@@ -27580,7 +27580,7 @@ export const companies: PortCo[] = [
   {
     name: "NineDot Energy",
     investmentFirm: "Manulife",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed battery energy storage",
     region: "North America",
     country: "United States",
@@ -27647,7 +27647,7 @@ export const companies: PortCo[] = [
   {
     name: "Phoenix Tower International",
     investmentFirm: "Blackstone",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless towers and telecom sites",
     region: "North America",
     country: "United States",
@@ -27702,7 +27702,7 @@ export const companies: PortCo[] = [
   {
     name: "PowerFlex Holdings, LLC",
     investmentFirm: "Manulife",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Behind-the-meter solar, storage, EV charging, and energy management",
     region: "North America",
     country: "United States",
@@ -27733,7 +27733,7 @@ export const companies: PortCo[] = [
   {
     name: "Rocky Mountain Midstream",
     investmentFirm: "Manulife",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas gathering and processing",
     region: "North America",
     country: "United States",
@@ -27762,7 +27762,7 @@ export const companies: PortCo[] = [
   {
     name: "Sabey Data Centers",
     investmentFirm: "Manulife",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wholesale and hyperscale data centers",
     region: "North America",
     country: "United States",
@@ -27793,7 +27793,7 @@ export const companies: PortCo[] = [
   {
     name: "Serverfarm, LLC",
     investmentFirm: "Manulife",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Data center development and operations",
     region: "North America",
     country: "United States / Canada",
@@ -27824,7 +27824,7 @@ export const companies: PortCo[] = [
   {
     name: "Silicon Ranch Corporation",
     investmentFirm: "Manulife",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and battery storage",
     region: "North America",
     country: "United States",
@@ -27856,7 +27856,7 @@ export const companies: PortCo[] = [
   {
     name: "Sunrun Mars Holdings 2020, LLC",
     investmentFirm: "Manulife",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Residential distributed solar portfolio",
     region: "North America",
     country: "United States",
@@ -27886,7 +27886,7 @@ export const companies: PortCo[] = [
   {
     name: "Tract",
     investmentFirm: "Manulife",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Data center land development",
     region: "North America",
     country: "United States",
@@ -27921,7 +27921,7 @@ export const companies: PortCo[] = [
   {
     name: "Alabama Fiber Networks",
     investmentFirm: "Meridiam",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-premise network",
     region: "North America",
     country: "United States",
@@ -27952,7 +27952,7 @@ export const companies: PortCo[] = [
   {
     name: "Alberta Fiber Networks (A-NET)",
     investmentFirm: "Meridiam",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-premise network",
     region: "North America",
     country: "Canada",
@@ -28041,7 +28041,7 @@ export const companies: PortCo[] = [
   {
     name: "CRCHUM",
     investmentFirm: "Meridiam",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Hospital research facility",
     region: "North America",
     country: "Canada",
@@ -28099,7 +28099,7 @@ export const companies: PortCo[] = [
   {
     name: "Hoosier Fiber Networks (H-NET)",
     investmentFirm: "Meridiam",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-premise network",
     region: "North America",
     country: "United States",
@@ -28128,7 +28128,7 @@ export const companies: PortCo[] = [
   {
     name: "Idaho Biogas",
     investmentFirm: "Meridiam",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Biogas and renewable natural gas",
     region: "North America",
     country: "United States",
@@ -28246,7 +28246,7 @@ export const companies: PortCo[] = [
   {
     name: "Long Beach Courthouse",
     investmentFirm: "Meridiam",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Courthouse public-private partnership",
     region: "North America",
     country: "United States",
@@ -28275,7 +28275,7 @@ export const companies: PortCo[] = [
   {
     name: "Memphis Fiber Networks",
     investmentFirm: "Meridiam",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Municipal dark fiber and fiber-to-the-premise network",
     region: "North America",
     country: "United States",
@@ -28308,7 +28308,7 @@ export const companies: PortCo[] = [
   {
     name: "Montreal University Hospital Research Center (CRCHUM)",
     investmentFirm: "Meridiam",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Hospital research facility",
     region: "North America",
     country: "Canada",
@@ -28675,7 +28675,7 @@ export const companies: PortCo[] = [
   {
     name: "Chrysalis Renewables LP",
     investmentFirm: "Morrison",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar and battery storage acquisition platform",
     region: "North America",
     country: "Canada",
@@ -28704,7 +28704,7 @@ export const companies: PortCo[] = [
   {
     name: "FiberLight",
     investmentFirm: "Morrison",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Metro and long-haul fiber",
     region: "North America",
     country: "United States",
@@ -28733,7 +28733,7 @@ export const companies: PortCo[] = [
   {
     name: "Fillex",
     investmentFirm: "Morrison",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Automated pharmacy fulfillment and healthcare logistics",
     region: "North America",
     country: "United States",
@@ -28762,7 +28762,7 @@ export const companies: PortCo[] = [
   {
     name: "Longroad Energy",
     investmentFirm: "Morrison",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale wind, solar, and storage",
     region: "North America",
     country: "United States",
@@ -28794,7 +28794,7 @@ export const companies: PortCo[] = [
   {
     name: "Altán Redes, S.A.P.I. de C.V.",
     investmentFirm: "MSIP",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wholesale mobile network infrastructure",
     region: "North America",
     country: "Mexico",
@@ -28857,7 +28857,7 @@ export const companies: PortCo[] = [
   {
     name: "Brazos Midstream",
     investmentFirm: "MSIP",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas gathering, processing, and crude oil infrastructure",
     region: "North America",
     country: "United States",
@@ -28900,7 +28900,7 @@ export const companies: PortCo[] = [
   {
     name: "Crowley Wind Services Holdings, LLC",
     investmentFirm: "MSIP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Offshore wind port and maritime infrastructure",
     region: "North America",
     country: "United States",
@@ -28931,7 +28931,7 @@ export const companies: PortCo[] = [
   {
     name: "Eureka Midstream",
     investmentFirm: "MSIP",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas gathering pipeline system",
     region: "North America",
     country: "United States",
@@ -28960,7 +28960,7 @@ export const companies: PortCo[] = [
   {
     name: "Flexential",
     investmentFirm: "MSIP",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Colocation, cloud, and connectivity data centers",
     region: "North America",
     country: "United States",
@@ -28989,7 +28989,7 @@ export const companies: PortCo[] = [
   {
     name: "Hornet Midstream",
     investmentFirm: "MSIP",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas gathering pipeline system",
     region: "North America",
     country: "United States",
@@ -29018,7 +29018,7 @@ export const companies: PortCo[] = [
   {
     name: "Lightpath Holdings LLC",
     investmentFirm: "MSIP",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Enterprise and carrier fiber networks",
     region: "North America",
     country: "United States",
@@ -29049,7 +29049,7 @@ export const companies: PortCo[] = [
   {
     name: "SpecialtyCare",
     investmentFirm: "MSIP",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Operating room services and outsourced clinical support",
     region: "North America",
     country: "United States",
@@ -29078,7 +29078,7 @@ export const companies: PortCo[] = [
   {
     name: "Torch Clean Energy",
     investmentFirm: "MSIP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale renewable power and storage development",
     region: "North America",
     country: "United States",
@@ -29106,7 +29106,7 @@ export const companies: PortCo[] = [
   {
     name: "Brightspeed",
     investmentFirm: "Mubadala",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber broadband and telecommunications networks",
     region: "North America",
     country: "United States",
@@ -29142,7 +29142,7 @@ export const companies: PortCo[] = [
   {
     name: "Commonwealth LNG",
     investmentFirm: "Mubadala",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "LNG export terminal development",
     region: "North America",
     country: "United States",
@@ -29179,7 +29179,7 @@ export const companies: PortCo[] = [
   {
     name: "Gulf Coast Express Pipeline LLC",
     investmentFirm: "Mubadala",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas transmission pipeline",
     region: "North America",
     country: "United States",
@@ -29211,7 +29211,7 @@ export const companies: PortCo[] = [
   {
     name: "NextDecade Corporation",
     investmentFirm: "Mubadala",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "LNG export development",
     region: "North America",
     country: "United States",
@@ -29284,7 +29284,7 @@ export const companies: PortCo[] = [
   {
     name: "Altius Renewable Royalties Corp.",
     investmentFirm: "Northampton",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable energy royalties",
     region: "North America",
     country: "Canada / United States",
@@ -29315,7 +29315,7 @@ export const companies: PortCo[] = [
   {
     name: "Blueprint Data Centers",
     investmentFirm: "Northampton",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Data center development",
     region: "North America",
     country: "United States",
@@ -29345,7 +29345,7 @@ export const companies: PortCo[] = [
   {
     name: "AMAROK",
     investmentFirm: "Northleaf",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Perimeter security infrastructure",
     region: "North America",
     country: "United States",
@@ -29375,7 +29375,7 @@ export const companies: PortCo[] = [
   {
     name: "Canadian Breaks",
     investmentFirm: "Northleaf",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
@@ -29403,7 +29403,7 @@ export const companies: PortCo[] = [
   {
     name: "Cotton Plains Portfolio",
     investmentFirm: "Northleaf",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind and solar generation portfolio",
     region: "North America",
     country: "United States",
@@ -29431,7 +29431,7 @@ export const companies: PortCo[] = [
   {
     name: "CSV Midstream",
     investmentFirm: "Northleaf",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas processing and compression",
     region: "North America",
     country: "Canada",
@@ -29462,7 +29462,7 @@ export const companies: PortCo[] = [
   {
     name: "CSV Midstream Solutions Corp.",
     investmentFirm: "Northleaf",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas processing and compression",
     region: "North America",
     country: "Canada",
@@ -29524,7 +29524,7 @@ export const companies: PortCo[] = [
   {
     name: "Maple PPP Portfolio",
     investmentFirm: "Northleaf",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Public-private partnership assets",
     region: "North America",
     country: "Canada",
@@ -29580,7 +29580,7 @@ export const companies: PortCo[] = [
   {
     name: "Odfjell Terminals US",
     investmentFirm: "Northleaf",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Bulk liquid storage terminals",
     region: "North America",
     country: "United States",
@@ -29668,7 +29668,7 @@ export const companies: PortCo[] = [
   {
     name: "Puna Geothermal Venture",
     investmentFirm: "Northleaf",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Geothermal generation",
     region: "North America",
     country: "United States",
@@ -29697,7 +29697,7 @@ export const companies: PortCo[] = [
   {
     name: "Shared Tower Inc.",
     investmentFirm: "Northleaf",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Carrier-neutral towers, fiber, and edge colocation",
     region: "North America",
     country: "Canada",
@@ -29727,7 +29727,7 @@ export const companies: PortCo[] = [
   {
     name: "Tillman FiberCo, LLC",
     investmentFirm: "Northleaf",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wholesale fiber-to-the-home broadband",
     region: "North America",
     country: "United States",
@@ -29757,7 +29757,7 @@ export const companies: PortCo[] = [
   {
     name: "WASH Multifamily Holdings Inc.",
     investmentFirm: "Northleaf",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Multifamily and campus laundry infrastructure",
     region: "North America",
     country: "United States / Canada",
@@ -30132,7 +30132,7 @@ export const companies: PortCo[] = [
   {
     name: "Beanfield Technologies Inc.",
     investmentFirm: "OMERS",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Metro fiber broadband and enterprise fiber",
     region: "North America",
     country: "Canada",
@@ -30199,7 +30199,7 @@ export const companies: PortCo[] = [
   {
     name: "Leeward Renewable Energy",
     investmentFirm: "OMERS",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale wind, solar, and storage",
     region: "North America",
     country: "United States",
@@ -30228,7 +30228,7 @@ export const companies: PortCo[] = [
   {
     name: "Navisun LLC",
     investmentFirm: "OMERS",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed solar and storage",
     region: "North America",
     country: "United States",
@@ -30256,7 +30256,7 @@ export const companies: PortCo[] = [
   {
     name: "Northstar New Jersey Lottery Group",
     investmentFirm: "OMERS",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Lottery concession and operations",
     region: "North America",
     country: "United States",
@@ -30285,7 +30285,7 @@ export const companies: PortCo[] = [
   {
     name: "Teranet Inc.",
     investmentFirm: "OMERS",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Land registry and statutory services concession",
     region: "North America",
     country: "Canada",
@@ -30381,7 +30381,7 @@ export const companies: PortCo[] = [
   {
     name: "Compass Datacenters",
     investmentFirm: "OTPP",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data center campuses",
     region: "North America",
     country: "United States",
@@ -30421,7 +30421,7 @@ export const companies: PortCo[] = [
   {
     name: "Cubico Sustainable Investments",
     investmentFirm: "OTPP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable power and transmission infrastructure",
     region: "North America",
     country: "Mexico",
@@ -30511,7 +30511,7 @@ export const companies: PortCo[] = [
   {
     name: "NextEra Energy Renewable Assets",
     investmentFirm: "OTPP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind, solar, and energy storage portfolio",
     region: "North America",
     country: "United States",
@@ -30539,7 +30539,7 @@ export const companies: PortCo[] = [
   {
     name: "NextEra Energy Renewable Assets 2",
     investmentFirm: "OTPP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Wind, solar, and energy storage portfolio",
     region: "North America",
     country: "United States",
@@ -30567,7 +30567,7 @@ export const companies: PortCo[] = [
   {
     name: "Sevana Bioenergy",
     investmentFirm: "OTPP",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable natural gas and organics processing",
     region: "North America",
     country: "United States / Canada / Mexico",
@@ -30598,7 +30598,7 @@ export const companies: PortCo[] = [
   {
     name: "Sidewalk Infrastructure Partners",
     investmentFirm: "OTPP",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Infrastructure development platform",
     region: "North America",
     country: "United States",
@@ -30662,7 +30662,7 @@ export const companies: PortCo[] = [
   {
     name: "Oryx Midstream Services",
     investmentFirm: "QIA",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Crude gathering, transportation, and storage",
     region: "North America",
     country: "United States",
@@ -30728,7 +30728,7 @@ export const companies: PortCo[] = [
   {
     name: "Ash Creek Solar",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar generation",
     region: "North America",
     country: "United States",
@@ -30764,7 +30764,7 @@ export const companies: PortCo[] = [
   {
     name: "Byrd Ranch",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery energy storage system",
     region: "North America",
     country: "United States",
@@ -30793,7 +30793,7 @@ export const companies: PortCo[] = [
   {
     name: "Elemental Clean Fuels",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable fuels development",
     region: "North America",
     country: "Canada",
@@ -30822,7 +30822,7 @@ export const companies: PortCo[] = [
   {
     name: "GlidePath Power Solutions",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Battery energy storage development and operation",
     region: "North America",
     country: "United States",
@@ -30858,7 +30858,7 @@ export const companies: PortCo[] = [
   {
     name: "Junction City Biomethane",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable natural gas production",
     region: "North America",
     country: "United States",
@@ -30886,7 +30886,7 @@ export const companies: PortCo[] = [
   {
     name: "Meyersdale Energy Storage",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Standalone battery energy storage",
     region: "North America",
     country: "United States",
@@ -30919,7 +30919,7 @@ export const companies: PortCo[] = [
   {
     name: "Middlebury Resource Recovery Center",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Anaerobic digestion and renewable electricity",
     region: "North America",
     country: "United States",
@@ -30953,7 +30953,7 @@ export const companies: PortCo[] = [
   {
     name: "Prairie Mist Solar",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar generation",
     region: "North America",
     country: "United States",
@@ -30987,7 +30987,7 @@ export const companies: PortCo[] = [
   {
     name: "Primergy",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and battery storage development",
     region: "North America",
     country: "United States",
@@ -31017,7 +31017,7 @@ export const companies: PortCo[] = [
   {
     name: "Prospect Storage",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Standalone battery energy storage",
     region: "North America",
     country: "United States",
@@ -31047,7 +31047,7 @@ export const companies: PortCo[] = [
   {
     name: "PurposeEnergy",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Organics-to-energy and renewable fuels",
     region: "North America",
     country: "United States",
@@ -31077,7 +31077,7 @@ export const companies: PortCo[] = [
   {
     name: "PurposeEnergy Minster",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Anaerobic digestion and industrial biogas",
     region: "North America",
     country: "United States",
@@ -31110,7 +31110,7 @@ export const companies: PortCo[] = [
   {
     name: "PurposeEnergy South Burlington",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Anaerobic digestion and renewable electricity",
     region: "North America",
     country: "United States",
@@ -31145,7 +31145,7 @@ export const companies: PortCo[] = [
   {
     name: "Rowan Bauxite",
     investmentFirm: "Quinbrook",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data center campus",
     region: "North America",
     country: "United States",
@@ -31182,7 +31182,7 @@ export const companies: PortCo[] = [
   {
     name: "Rowan Cinco",
     investmentFirm: "Quinbrook",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data center campus",
     region: "North America",
     country: "United States",
@@ -31219,7 +31219,7 @@ export const companies: PortCo[] = [
   {
     name: "Rowan Digital Infrastructure",
     investmentFirm: "Quinbrook",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data center development",
     region: "North America",
     country: "United States",
@@ -31250,7 +31250,7 @@ export const companies: PortCo[] = [
   {
     name: "Rowan Temple",
     investmentFirm: "Quinbrook",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data center campus",
     region: "North America",
     country: "United States",
@@ -31286,7 +31286,7 @@ export const companies: PortCo[] = [
   {
     name: "St. Albans Industrial Treatment (SAINT)",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Anaerobic digestion and renewable electricity",
     region: "North America",
     country: "United States",
@@ -31321,7 +31321,7 @@ export const companies: PortCo[] = [
   {
     name: "Valley of Fire",
     investmentFirm: "Quinbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar and battery storage development portfolio",
     region: "North America",
     country: "United States",
@@ -31380,7 +31380,7 @@ export const companies: PortCo[] = [
   {
     name: "Ecosave",
     investmentFirm: "Ridgewood",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Energy efficiency and energy-as-a-service",
     region: "North America",
     country: "United States",
@@ -31408,7 +31408,7 @@ export const companies: PortCo[] = [
   {
     name: "Environmental Infrastructure Partners",
     investmentFirm: "Ridgewood",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Sustainable infrastructure platform for MUSH customers",
     region: "North America",
     country: "United States",
@@ -31437,7 +31437,7 @@ export const companies: PortCo[] = [
   {
     name: "MN8 Energy",
     investmentFirm: "Ridgewood",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Solar, battery storage, and EV charging",
     region: "North America",
     country: "United States",
@@ -31673,7 +31673,7 @@ export const companies: PortCo[] = [
   {
     name: "Cloverleaf Infrastructure",
     investmentFirm: "Sandbrook",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Powered data center site development",
     region: "North America",
     country: "United States",
@@ -31734,7 +31734,7 @@ export const companies: PortCo[] = [
   {
     name: "rPlus Energies",
     investmentFirm: "Sandbrook",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale renewable generation and storage development",
     region: "North America",
     country: "United States",
@@ -31796,7 +31796,7 @@ export const companies: PortCo[] = [
   {
     name: "ALLO Communications, LLC",
     investmentFirm: "SDC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-premise broadband",
     region: "North America",
     country: "United States",
@@ -31832,7 +31832,7 @@ export const companies: PortCo[] = [
   {
     name: "Ashburn Data Center Development Site (300MW / 98 acres)",
     investmentFirm: "SDC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Powered land and hyperscale data center development site",
     region: "North America",
     country: "United States",
@@ -31860,7 +31860,7 @@ export const companies: PortCo[] = [
   {
     name: "Bandwidth Infrastructure Group, LLC d/b/a BIG Fiber",
     investmentFirm: "SDC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Metro dark fiber",
     region: "North America",
     country: "United States",
@@ -31894,7 +31894,7 @@ export const companies: PortCo[] = [
   {
     name: "BIG Fiber",
     investmentFirm: "SDC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Metro dark fiber",
     region: "North America",
     country: "United States",
@@ -31924,7 +31924,7 @@ export const companies: PortCo[] = [
   {
     name: "Cityside Networks",
     investmentFirm: "SDC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-premise broadband networks",
     region: "North America",
     country: "United States",
@@ -31958,7 +31958,7 @@ export const companies: PortCo[] = [
   {
     name: "Consolidated Smart Systems, LLC d/b/a Smartaira",
     investmentFirm: "SDC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Multifamily broadband and managed Wi-Fi",
     region: "North America",
     country: "United States",
@@ -31989,7 +31989,7 @@ export const companies: PortCo[] = [
   {
     name: "IQ Fiber, LLC",
     investmentFirm: "SDC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-home broadband",
     region: "North America",
     country: "United States",
@@ -32021,7 +32021,7 @@ export const companies: PortCo[] = [
   {
     name: "Lyte Fiber",
     investmentFirm: "SDC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-premise broadband networks",
     region: "North America",
     country: "United States",
@@ -32052,7 +32052,7 @@ export const companies: PortCo[] = [
   {
     name: "Not publicly disclosed.",
     investmentFirm: "SDC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data center campus development",
     region: "North America",
     country: "United States",
@@ -32083,7 +32083,7 @@ export const companies: PortCo[] = [
   {
     name: "ODATA",
     investmentFirm: "SDC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data center platform",
     region: "North America",
     country: "Mexico",
@@ -32114,7 +32114,7 @@ export const companies: PortCo[] = [
   {
     name: "Prince William County Data Center Development Site (300MW / 70 acres)",
     investmentFirm: "SDC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Powered land and hyperscale data center development site",
     region: "North America",
     country: "United States",
@@ -32142,7 +32142,7 @@ export const companies: PortCo[] = [
   {
     name: "SLIC Network Solutions, Inc.",
     investmentFirm: "SDC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-premise broadband",
     region: "North America",
     country: "United States",
@@ -32177,7 +32177,7 @@ export const companies: PortCo[] = [
   {
     name: "SQF, LLC d/b/a Verta",
     investmentFirm: "SDC",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless towers, poles, and fiber",
     region: "North America",
     country: "United States",
@@ -32211,7 +32211,7 @@ export const companies: PortCo[] = [
   {
     name: "All Points Broadband",
     investmentFirm: "Searchlight",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-home broadband",
     region: "North America",
     country: "United States",
@@ -32240,7 +32240,7 @@ export const companies: PortCo[] = [
   {
     name: "Consolidated Communications",
     investmentFirm: "Searchlight",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber broadband and enterprise connectivity",
     region: "North America",
     country: "United States",
@@ -32271,7 +32271,7 @@ export const companies: PortCo[] = [
   {
     name: "Mainstream Fiber Networks",
     investmentFirm: "Searchlight",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Rural fiber-to-the-premise broadband",
     region: "North America",
     country: "United States",
@@ -32299,7 +32299,7 @@ export const companies: PortCo[] = [
   {
     name: "Akumin",
     investmentFirm: "Stonepeak",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Outpatient imaging and radiation oncology services",
     region: "North America",
     country: "United States",
@@ -32329,7 +32329,7 @@ export const companies: PortCo[] = [
   {
     name: "Astound Broadband",
     investmentFirm: "Stonepeak",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hybrid fiber-coaxial and fiber broadband networks",
     region: "North America",
     country: "United States",
@@ -32389,7 +32389,7 @@ export const companies: PortCo[] = [
   {
     name: "Coastal Virginia Offshore Wind",
     investmentFirm: "Stonepeak",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Offshore wind generation",
     region: "North America",
     country: "United States",
@@ -32418,7 +32418,7 @@ export const companies: PortCo[] = [
   {
     name: "Cologix",
     investmentFirm: "Stonepeak",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Carrier-neutral colocation and interconnection data centers",
     region: "North America",
     country: "United States / Canada",
@@ -32448,7 +32448,7 @@ export const companies: PortCo[] = [
   {
     name: "CoreSite",
     investmentFirm: "Stonepeak",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Interconnection-focused data centers",
     region: "North America",
     country: "United States",
@@ -32509,7 +32509,7 @@ export const companies: PortCo[] = [
   {
     name: "Evolve Transition Infrastructure LP",
     investmentFirm: "Stonepeak",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Energy transition infrastructure and lower-carbon fuels assets",
     region: "North America",
     country: "United States",
@@ -32541,7 +32541,7 @@ export const companies: PortCo[] = [
   {
     name: "Extenet",
     investmentFirm: "Stonepeak",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Distributed wireless and fiber connectivity infrastructure",
     region: "North America",
     country: "United States",
@@ -32571,7 +32571,7 @@ export const companies: PortCo[] = [
   {
     name: "Intrado",
     investmentFirm: "Stonepeak",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "911 and public-safety communications software and services",
     region: "North America",
     country: "United States",
@@ -32601,7 +32601,7 @@ export const companies: PortCo[] = [
   {
     name: "KAPS",
     investmentFirm: "Stonepeak",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "NGL and condensate pipeline system",
     region: "North America",
     country: "Canada",
@@ -32724,7 +32724,7 @@ export const companies: PortCo[] = [
   {
     name: "Maas Energy Works",
     investmentFirm: "Stonepeak",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable natural gas from dairy digesters",
     region: "North America",
     country: "United States",
@@ -32754,7 +32754,7 @@ export const companies: PortCo[] = [
   {
     name: "Montera Infrastructure",
     investmentFirm: "Stonepeak",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data center development and operations",
     region: "North America",
     country: "North America",
@@ -32785,7 +32785,7 @@ export const companies: PortCo[] = [
   {
     name: "Ørsted U.S. Onshore Wind Portfolio Partnership",
     investmentFirm: "Stonepeak",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind generation portfolio",
     region: "North America",
     country: "United States",
@@ -32816,7 +32816,7 @@ export const companies: PortCo[] = [
   {
     name: "Oryx Midstream",
     investmentFirm: "Stonepeak",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Crude oil gathering and transportation",
     region: "North America",
     country: "United States",
@@ -32846,7 +32846,7 @@ export const companies: PortCo[] = [
   {
     name: "Pelican Pipeline",
     investmentFirm: "Stonepeak",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas transmission pipeline",
     region: "North America",
     country: "United States",
@@ -32876,7 +32876,7 @@ export const companies: PortCo[] = [
   {
     name: "Repsol U.S. Renewables Portfolio",
     investmentFirm: "Stonepeak",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Operating solar and battery storage portfolio",
     region: "North America",
     country: "United States",
@@ -32997,7 +32997,7 @@ export const companies: PortCo[] = [
   {
     name: "Venture Global Calcasieu Pass",
     investmentFirm: "Stonepeak",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "LNG liquefaction and export facility",
     region: "North America",
     country: "United States",
@@ -33028,7 +33028,7 @@ export const companies: PortCo[] = [
   {
     name: "Woodside Louisiana LNG",
     investmentFirm: "Stonepeak",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "LNG liquefaction and export project",
     region: "North America",
     country: "United States",
@@ -33059,7 +33059,7 @@ export const companies: PortCo[] = [
   {
     name: "Xplore Inc.",
     investmentFirm: "Stonepeak",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Rural broadband access networks",
     region: "North America",
     country: "Canada",
@@ -33090,7 +33090,7 @@ export const companies: PortCo[] = [
   {
     name: "Flamingo Crossings Village",
     investmentFirm: "Swiss Life",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Workforce housing for Disney program participants",
     region: "North America",
     country: "United States",
@@ -33275,7 +33275,7 @@ export const companies: PortCo[] = [
   {
     name: "TRG Datacenters",
     investmentFirm: "Tallvine",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Colocation and edge data centers",
     region: "North America",
     country: "United States",
@@ -33340,7 +33340,7 @@ export const companies: PortCo[] = [
   {
     name: "Eavor Technologies Inc.",
     investmentFirm: "Temasek",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Closed-loop geothermal technology",
     region: "North America",
     country: "Canada",
@@ -33373,7 +33373,7 @@ export const companies: PortCo[] = [
   {
     name: "Neoen S.A.",
     investmentFirm: "Temasek",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable power generation and battery storage",
     region: "North America",
     country: "Canada / Mexico",
@@ -33439,7 +33439,7 @@ export const companies: PortCo[] = [
   {
     name: "11:11 Systems",
     investmentFirm: "Tiger",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Managed cloud, network, and security infrastructure",
     region: "North America",
     country: "United States",
@@ -33469,7 +33469,7 @@ export const companies: PortCo[] = [
   {
     name: "American Natural",
     investmentFirm: "Tiger",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Multi-fuel retail and wholesale fuel distribution",
     region: "North America",
     country: "United States",
@@ -33499,7 +33499,7 @@ export const companies: PortCo[] = [
   {
     name: "Crosslake Fibre",
     investmentFirm: "Tiger",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Subsea and terrestrial fiber networks",
     region: "North America",
     country: "Canada / United States",
@@ -33529,7 +33529,7 @@ export const companies: PortCo[] = [
   {
     name: "Danskammer Energy",
     investmentFirm: "Tiger",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Gas-fired power generation",
     region: "North America",
     country: "United States",
@@ -33733,7 +33733,7 @@ export const companies: PortCo[] = [
   {
     name: "Strategic Venue Partners",
     investmentFirm: "Tiger",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "In-building wireless infrastructure",
     region: "North America",
     country: "United States",
@@ -33764,7 +33764,7 @@ export const companies: PortCo[] = [
   {
     name: "Unison Energy",
     investmentFirm: "Tiger",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Microgrids and energy-as-a-service",
     region: "North America",
     country: "United States",
@@ -33793,7 +33793,7 @@ export const companies: PortCo[] = [
   {
     name: "Altus Power",
     investmentFirm: "TPG",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed and community solar",
     region: "North America",
     country: "United States",
@@ -33826,7 +33826,7 @@ export const companies: PortCo[] = [
   {
     name: "Connected Infra Group",
     investmentFirm: "TPG",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless towers and telecom real estate",
     region: "North America",
     country: "United States",
@@ -33856,7 +33856,7 @@ export const companies: PortCo[] = [
   {
     name: "IPX Power",
     investmentFirm: "TPG",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and battery storage",
     region: "North America",
     country: "United States",
@@ -33886,7 +33886,7 @@ export const companies: PortCo[] = [
   {
     name: "Monarch Bioenergy",
     investmentFirm: "TPG",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Renewable natural gas",
     region: "North America",
     country: "United States",
@@ -33917,7 +33917,7 @@ export const companies: PortCo[] = [
   {
     name: "Olympus Terminals",
     investmentFirm: "TPG",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Renewable fuels and refined-product terminals",
     region: "North America",
     country: "United States",
@@ -33979,7 +33979,7 @@ export const companies: PortCo[] = [
   {
     name: "Summit Carbon Solutions",
     investmentFirm: "TPG",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "CO2 transportation and sequestration infrastructure",
     region: "North America",
     country: "United States",
@@ -34016,7 +34016,7 @@ export const companies: PortCo[] = [
   {
     name: "Digital Realty Northern Virginia Hyperscale Data Center JV",
     investmentFirm: "TPG Real Estate",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data centers",
     region: "North America",
     country: "United States",
@@ -34051,7 +34051,7 @@ export const companies: PortCo[] = [
   {
     name: "AES Clean Energy OpCo A",
     investmentFirm: "Ullico",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and wind portfolio",
     region: "North America",
     country: "United States",
@@ -34137,7 +34137,7 @@ export const companies: PortCo[] = [
   {
     name: "Eagle Creek Renewable Energy Hydro",
     investmentFirm: "Ullico",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Hydroelectric generation",
     region: "North America",
     country: "United States",
@@ -34167,7 +34167,7 @@ export const companies: PortCo[] = [
   {
     name: "Estuary Power",
     investmentFirm: "Ullico",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar and battery storage development",
     region: "North America",
     country: "United States",
@@ -34227,7 +34227,7 @@ export const companies: PortCo[] = [
   {
     name: "Kawailoa Wind",
     investmentFirm: "Ullico",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Onshore wind",
     region: "North America",
     country: "United States",
@@ -34255,7 +34255,7 @@ export const companies: PortCo[] = [
   {
     name: "Leading Light Wind",
     investmentFirm: "Ullico",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Offshore wind development",
     region: "North America",
     country: "United States",
@@ -34343,7 +34343,7 @@ export const companies: PortCo[] = [
   {
     name: "Ontario Solar 1",
     investmentFirm: "Ullico",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar",
     region: "North America",
     country: "Canada",
@@ -34370,7 +34370,7 @@ export const companies: PortCo[] = [
   {
     name: "Ontario Solar 2",
     investmentFirm: "Ullico",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Utility-scale solar",
     region: "North America",
     country: "Canada",
@@ -34397,7 +34397,7 @@ export const companies: PortCo[] = [
   {
     name: "Renewable Energy AssetCo 1",
     investmentFirm: "Ullico",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Contracted utility-scale solar and wind portfolio",
     region: "North America",
     country: "United States",
@@ -34426,7 +34426,7 @@ export const companies: PortCo[] = [
   {
     name: "Renewable Energy AssetCo 2",
     investmentFirm: "Ullico",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Contracted utility-scale solar and wind portfolio",
     region: "North America",
     country: "United States",
@@ -34483,7 +34483,7 @@ export const companies: PortCo[] = [
   {
     name: "Southern Star",
     investmentFirm: "Ullico",
-    sector: "Midstream Energy",
+    sector: "Midstream",
     subsector: "Natural gas transmission and storage",
     region: "North America",
     country: "United States",
@@ -34631,7 +34631,7 @@ export const companies: PortCo[] = [
   {
     name: "TowerPoint Infrastructure Partners",
     investmentFirm: "Ullico",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Wireless towers and telecom sites",
     region: "North America",
     country: "United States",
@@ -34773,7 +34773,7 @@ export const companies: PortCo[] = [
   {
     name: "Earthrise Energy",
     investmentFirm: "Vision Ridge",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Flexible gas generation and renewable repowering platform",
     region: "North America",
     country: "United States",
@@ -34899,7 +34899,7 @@ export const companies: PortCo[] = [
   {
     name: "Sparkfund",
     investmentFirm: "Vision Ridge",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Distributed energy deployment and energy-as-a-service",
     region: "North America",
     country: "United States",
@@ -34996,7 +34996,7 @@ export const companies: PortCo[] = [
   {
     name: "Vision RNG",
     investmentFirm: "Vision Ridge",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Landfill gas to renewable natural gas infrastructure",
     region: "North America",
     country: "United States",
@@ -35026,7 +35026,7 @@ export const companies: PortCo[] = [
   {
     name: "Almaviva Santé",
     investmentFirm: "Wren House",
-    sector: "Social Infrastructure",
+    sector: "Social Infra",
     subsector: "Private hospitals and healthcare facilities",
     region: "North America",
     country: "Canada",
@@ -35092,7 +35092,7 @@ export const companies: PortCo[] = [
   {
     name: "Global Power Generation, S.A.U.",
     investmentFirm: "Wren House",
-    sector: "Energy Transition",
+    sector: "Power & ET",
     subsector: "Independent power producer / renewable and gas-fired generation",
     region: "North America",
     country: "Mexico",
@@ -35125,7 +35125,7 @@ export const companies: PortCo[] = [
   {
     name: "i3 Broadband",
     investmentFirm: "Wren House",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Fiber-to-the-home broadband",
     region: "North America",
     country: "United States",
@@ -35190,7 +35190,7 @@ export const companies: PortCo[] = [
   {
     name: "QSP",
     investmentFirm: "Wren House",
-    sector: "Digital Infrastructure",
+    sector: "Digital",
     subsector: "Hyperscale data centers",
     region: "North America",
     country: "United States",

@@ -17,13 +17,12 @@ import type {
 // ─── Deal Constants ────────────────────────────────────────
 
 export const DEAL_SECTORS = [
-  "Transportation",
   "Power & ET",
-  "Midstream",
   "Utilities",
-  "Waste & ES",
   "Digital",
-  "Social",
+  "Midstream",
+  "Transportation",
+  "Social Infra",
 ] as const;
 
 export const DEAL_REGIONS = [
@@ -78,17 +77,12 @@ export const FUND_STATUSES: FundStatus[] = [
 ];
 
 export const FUND_SECTORS: FundSector[] = [
-  "Transportation",
+  "Power & ET",
   "Utilities",
-  "Digital Infrastructure",
-  "Renewables / Energy Transition",
-  "Waste / Environmental Services",
-  "Power Generation",
-  "Midstream / Energy",
-  "Social Infrastructure",
-  "Communications",
-  "Logistics",
-  "Water",
+  "Digital",
+  "Midstream",
+  "Transportation",
+  "Social Infra",
 ];
 
 export const FUND_REGIONS: FundRegion[] = [
@@ -120,17 +114,12 @@ export const FUND_SIZE_RANGES: FundSizeRange[] = [
 // ─── PortCo Constants ──────────────────────────────────────
 
 export const PORTCO_SECTORS: PortCoSector[] = [
-  "Transportation",
-  "Digital Infrastructure",
-  "Energy Transition",
-  "Power Generation",
-  "Midstream Energy",
-  "Regulated Utilities",
+  "Power & ET",
   "Utilities",
-  "Social Infrastructure",
-  "Environmental / Waste",
-  "Renewable Resources",
-  "Infrastructure Services",
+  "Digital",
+  "Midstream",
+  "Transportation",
+  "Social Infra",
 ];
 
 export const PORTCO_REGIONS: PortCoRegion[] = [
