@@ -759,7 +759,7 @@ export const deals: Deal[] = [
     target: "Kalfresh Bioenergy Facility",
     buyer: "QIC / Wollemi Capital",
     seller: "N/A",
-    sector: "Power & ET",
+    sector: "Social Infra",
     subsector: "Waste-to-Energy",
     region: "Asia-Pacific",
     category: ["Acquisition (Minority Stake)"],
@@ -1387,7 +1387,7 @@ export const deals: Deal[] = [
     ],
   },
   // ═══════════════════════════════════════════════════════════════
-  // 4. UTILITIES (Environmental Services)
+  // 4. SOCIAL INFRA (Environmental Services)
   // ═══════════════════════════════════════════════════════════════
   {
     id: "INF-2026-041",
@@ -1395,7 +1395,7 @@ export const deals: Deal[] = [
     target: "Alliance Technical Group",
     buyer: "Blackstone",
     seller: "N/A",
-    sector: "Utilities",
+    sector: "Social Infra",
     subsector: "Environmental Services",
     region: "North America",
     category: ["Acquisition (Buyout)"],
@@ -1428,7 +1428,7 @@ export const deals: Deal[] = [
     target: "Urbaser",
     buyer: "Blackstone / EQT Infrastructure",
     seller: "N/A",
-    sector: "Utilities",
+    sector: "Social Infra",
     subsector: "Waste Management",
     region: "Europe",
     category: ["Acquisition (Buyout)", "Joint Venture"],
@@ -3170,7 +3170,7 @@ export const deals: Deal[] = [
     ],
   },
   // ═══════════════════════════════════════════════════════════════
-  // UTILITIES
+  // SOCIAL INFRA
   // ═══════════════════════════════════════════════════════════════
   {
     id: "INF-2026-095",
@@ -3178,7 +3178,7 @@ export const deals: Deal[] = [
     target: "DTG Recycle",
     buyer: "Dan Guimont / Waste Connections",
     seller: "Macquarie Infrastructure Partners",
-    sector: "Utilities",
+    sector: "Social Infra",
     subsector: "Waste Management",
     region: "North America",
     category: ["Sale (Buyout)"],
@@ -5047,7 +5047,7 @@ export const deals: Deal[] = [
     target: "All American Grease Services",
     buyer: "Goldman Sachs Asset Management (via LES)",
     seller: "N/A",
-    sector: "Utilities",
+    sector: "Social Infra",
     subsector: "Waste Services",
     region: "North America",
     category: ["Acquisition (Bolt-On)"],
@@ -5623,7 +5623,7 @@ export const deals: Deal[] = [
     target: "Sedron Technologies",
     buyer: "Ara Partners",
     seller: "N/A",
-    sector: "Utilities",
+    sector: "Social Infra",
     subsector: "Wastewater / Resource Recovery",
     region: "North America",
     category: ["Acquisition (Minority Stake)"],

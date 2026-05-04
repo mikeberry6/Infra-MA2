@@ -32,7 +32,7 @@ describe("weekly sector taxonomy", () => {
   });
 
   it("normalizes legacy sector aliases for imports and backfills", () => {
-    expect(DEAL_SECTOR_MAP["Waste & ES"]).toBe("UTILITIES");
+    expect(DEAL_SECTOR_MAP["Waste & ES"]).toBe("SOCIAL_INFRA");
     expect(DEAL_SECTOR_MAP.Social).toBe("SOCIAL_INFRA");
 
     expect(FUND_SECTOR_MAP["Renewables / Energy Transition"]).toBe("POWER_ET");
@@ -40,7 +40,7 @@ describe("weekly sector taxonomy", () => {
     expect(FUND_SECTOR_MAP["Digital Infrastructure"]).toBe("DIGITAL");
     expect(FUND_SECTOR_MAP.Communications).toBe("DIGITAL");
     expect(FUND_SECTOR_MAP["Midstream / Energy"]).toBe("MIDSTREAM");
-    expect(FUND_SECTOR_MAP["Waste / Environmental Services"]).toBe("UTILITIES");
+    expect(FUND_SECTOR_MAP["Waste / Environmental Services"]).toBe("SOCIAL_INFRA");
     expect(FUND_SECTOR_MAP.Water).toBe("UTILITIES");
     expect(FUND_SECTOR_MAP.Logistics).toBe("TRANSPORTATION");
     expect(FUND_SECTOR_MAP["Social Infrastructure"]).toBe("SOCIAL_INFRA");
@@ -51,7 +51,7 @@ describe("weekly sector taxonomy", () => {
     expect(COMPANY_SECTOR_MAP["Digital Infrastructure"]).toBe("DIGITAL");
     expect(COMPANY_SECTOR_MAP["Midstream Energy"]).toBe("MIDSTREAM");
     expect(COMPANY_SECTOR_MAP["Regulated Utilities"]).toBe("UTILITIES");
-    expect(COMPANY_SECTOR_MAP["Environmental / Waste"]).toBe("UTILITIES");
+    expect(COMPANY_SECTOR_MAP["Environmental / Waste"]).toBe("SOCIAL_INFRA");
     expect(COMPANY_SECTOR_MAP["Infrastructure Services"]).toBe("UTILITIES");
     expect(COMPANY_SECTOR_MAP["Social Infrastructure"]).toBe("SOCIAL_INFRA");
   });
