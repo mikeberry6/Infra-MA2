@@ -28,6 +28,8 @@ import { Button } from "@/components/shared/Button";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
 
+const INVESTMENT_YEAR_NA = "N/A";
+
 
 // ─── Filter Bar ─────────────────────────────────────────────
 
@@ -252,11 +254,9 @@ function PortCoCard({
               via {display.primaryFirm}
             </div>
           ) : (
-            company.investmentYear && (
-              <div className="text-[11px] italic text-[var(--text-tertiary)] truncate">
-                {company.investmentYear}
-              </div>
-            )
+            <div className="text-[11px] italic text-[var(--text-tertiary)] truncate">
+              {company.investmentYear ?? INVESTMENT_YEAR_NA}
+            </div>
           )}
         </div>
       </div>
@@ -377,11 +377,9 @@ function PortCoTable({
                         via {display.primaryFirm}
                       </span>
                     ) : (
-                      company.investmentYear && (
-                        <span className="text-[11px] italic text-[var(--text-tertiary)] truncate block">
-                          {company.investmentYear}
-                        </span>
-                      )
+                      <span className="text-[11px] italic text-[var(--text-tertiary)] truncate block">
+                        {company.investmentYear ?? INVESTMENT_YEAR_NA}
+                      </span>
                     )}
                   </td>
                   <td className="px-3 py-2.5 align-top">
@@ -452,9 +450,12 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
 
   const firmOptions = useMemo(() => getUniqueFirms(portcos), [portcos]);
   const investmentYearOptions = useMemo(() => {
-    return Array.from(
+    const years = Array.from(
       new Set(portcos.map((c) => c.investmentYear).filter((y): y is number => y != null).map(String))
     ).sort((a, b) => parseInt(b) - parseInt(a));
+    return portcos.some((c) => c.investmentYear == null)
+      ? [...years, INVESTMENT_YEAR_NA]
+      : years;
   }, [portcos]);
 
   const filteredCompanies = useMemo(() => {
@@ -483,7 +484,10 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
         const ownerFirms = getAllOwnerFirms(c);
         if (!ownerFirms.some((f) => activeFirms.has(f))) return false;
       }
-      if (activeInvestmentYears.size > 0 && (!c.investmentYear || !activeInvestmentYears.has(String(c.investmentYear)))) return false;
+      if (activeInvestmentYears.size > 0) {
+        const investmentYear = c.investmentYear != null ? String(c.investmentYear) : INVESTMENT_YEAR_NA;
+        if (!activeInvestmentYears.has(investmentYear)) return false;
+      }
       return true;
     });
   }, [

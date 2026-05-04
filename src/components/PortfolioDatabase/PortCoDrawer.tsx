@@ -85,7 +85,7 @@ function formatYearRange(o: OwnerView): string {
   if (o.investmentYear && o.isActive) return `${o.investmentYear}–Present`;
   if (o.investmentYear) return String(o.investmentYear);
   if (o.exitYear) return `–${o.exitYear}`;
-  return "";
+  return "N/A";
 }
 
 const ENTRY_COLOR = "#008253";
