@@ -32,6 +32,7 @@ export const ORG_CANONICAL: Record<string, string> = {
   "Standard Solar / Brookfield": "Brookfield Asset Management",
   "Mainstay Maritime": "Oaktree Capital",
   "Brookfield / La Caisse": "Brookfield Asset Management",
+  "NBIM": "Norges Bank Investment Management",
 
   // Cross-dataset resolution: portco.investmentFirm -> fund.managerName
   "3i Infrastructure": "3i Group",

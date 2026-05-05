@@ -106,6 +106,9 @@ async function main() {
   // From portcos
   for (const pc of portcos) {
     orgNamesRaw.add(pc.investmentFirm);
+    for (const owner of pc.owners || []) {
+      orgNamesRaw.add(owner.investmentFirm);
+    }
   }
 
   // From deals

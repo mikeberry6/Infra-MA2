@@ -1891,9 +1891,11 @@ export const companies: PortCo[] = [
       { label: "Vigormarine — Vigor Marine Group", url: "https://www.vigormarine.com/" },
       { label: "Announcement date source — Antin Infrastructure Partners — Vigor Marine Group", url: "https://www.vigormarine.com/news-press/antin-to-acquire-vigor-marine-group" },
       { label: "Workboat — Vigor Marine Group", url: "https://www.workboat.com/french-private-equity-firm-to-acquire-vigor-marine-group" },
+      { label: "Naval News - INF-2026-055 - Vigor Marine Group", url: "https://www.navalnews.com/naval-news/2026/02/french-private-equity-firm-antin-to-acquire-vigor-marine-group/" },
     ],
     owners: [
       { investmentFirm: "Antin Infrastructure Partners", ownershipVehicle: "Flagship Fund V", investmentYear: 2026, status: "Active" },
+      { investmentFirm: "Lone Star Funds", ownershipVehicle: "Seller in announced Antin acquisition pending close", investmentYear: 2019, status: "Active" },
     ],
   },
   {
@@ -2258,6 +2260,7 @@ export const companies: PortCo[] = [
       { date: "May 2020", event: "SiFi announced Smart City Infrastructure Fund support for FiberCity growth.", category: "Other" },
       { date: "Sep 7, 2021", event: "APG signed an agreement to acquire a 16.7% direct stake in SiFi Networks America and establish a U.S. fiber joint venture.", category: "Acquisition" },
       { date: "Jun 2023", event: "Future Fiber, APG, and SiFi raised $350 million of seven-year financing for U.S. FTTH deployment.", category: "Financing" },
+      { date: "Apr 22, 2026", event: "Patrizia / APG Asset Management announced an acquisition of SiFi Networks America LLC from Ubuntu Business Holdings.", category: "Acquisition" },
     ],
     sources: [
       { label: "Sifinetworks — SiFi Networks America Limited", url: "https://sifinetworks.com/corporate/about-us-page-sifi-networks/" },
@@ -2265,9 +2268,12 @@ export const companies: PortCo[] = [
       { label: "APG — SiFi Networks America Limited", url: "https://apg.nl/en/publication/apg-investment-connects-1-million-american-households-to-fiber-optics/" },
       { label: "Sifinetworks — SiFi Networks America Limited", url: "https://sifinetworks.com/corporate/future-fiber-apg-and-sifi-networks-open-access-fiber-to-the-home-ftth-network-raises-us350-million-7-year-financing-to-deliver-future-proof-ftth-connectivity-and-smart/" },
       { label: "Smartcityinfrafund — SiFi Networks America Limited", url: "https://www.smartcityinfrafund.com/whitehelm-capital-finalises-deal-with-sifi-networks-to-fund-fibercity/" },
+      { label: "County Times - INF-2026-182 - SiFi Networks America LLC", url: "https://www.countytimes.co.uk/news/26050380.mike-harris-firm-sifi-networks-america-sold-new-owners/" },
     ],
     owners: [
       { investmentFirm: "APG Infrastructure", ownershipVehicle: "Smart City Infrastructure Fund (APG JV)", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Patrizia", ownershipVehicle: "Smart City Infrastructure Fund", investmentYear: 2026, status: "Active" },
+      { investmentFirm: "Ubuntu Business Holdings", ownershipVehicle: "Prior SiFi Networks America ownership", investmentYear: 2018, exitYear: 2026, status: "Realized" },
     ],
   },
   {
@@ -3962,6 +3968,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "ArcLight Capital Partners", ownershipVehicle: "Elevate Renewables / ArcLight", investmentYear: 2026, status: "Active" },
+      { investmentFirm: "IFM Investors", ownershipVehicle: "Prior ownership via Swift Current Energy", investmentYear: 2024, exitYear: 2026, status: "Realized" },
     ],
   },
   {
@@ -5600,6 +5607,7 @@ export const companies: PortCo[] = [
       { date: "Jul 13, 2016", event: "DigitalBridge acquired DataBank and launched its data center platform.", category: "Other" },
       { date: "2023", event: "DigitalBridge and DataBank completed a major recapitalization supported by new investor commitments.", category: "Other" },
       { date: "Jan 30, 2025", event: "DigitalBridge announced participation in a new DataBank financing and disclosed that it would retain an ownership stake.", category: "Other" },
+      { date: "Apr 8, 2026", event: "DataBank participated in the DataBank / Goodman Los Angeles JV (32 MW) joint venture.", category: "Expansion" },
     ],
     sources: [
       { label: "Databank — DataBank", url: "https://www.databank.com/" },
@@ -5612,6 +5620,7 @@ export const companies: PortCo[] = [
       { label: "Announcement date source — AustralianSuper — DataBank", url: "https://www.australiansuper.com/-/media/australian-super/files/about-us/media-releases/2024/australiansuper-agrees-to-invest-2-point-2-billion-in-databank.pdf" },
       { label: "Close date source — DigitalBridge — DataBank", url: "https://www.databank.com/resources/press-releases/digital-bridge-acquires-databank-launches-data-center-platform/" },
       { label: "Digitalbridge — DataBank", url: "https://www.digitalbridge.com/news/2025-01-30-digitalbridge-announces-participation-in-databank-financing" },
+      { label: "Goodman - INF-2026-162 - DataBank / Goodman Los Angeles JV (32 MW)", url: "https://www.goodman.com/investor-centre/announcements-media/2026/databank-and-goodman-group-partner-to-open-new-landmark-data-center-in-los-angeles" },
     ],
     owners: [
       { investmentFirm: "AustralianSuper", ownershipVehicle: "Mid Risk Portfolio (Real Assets / Direct Investment)", investmentYear: 2024, status: "Active" },
@@ -7086,6 +7095,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — Basalt Infrastructure Partners — OnSite Partners", url: "https://www.aep.com/news/releases/read/9796/AEP-Completes-Sale-of-AEP-OnSite-Partners/" },
       { label: "Onsitepartners — OnSite Partners", url: "https://onsitepartners.com/news/onsite-partners-llc-announces-acquisition-by-basalt-infrastructure-partners/" },
       { label: "Onsitepartners — OnSite Partners", url: "https://onsitepartners.com/news/onsite-partners-acquires-one-power-company-to-expand-distributed-generation-portfolio/" },
+      { label: "OnSite Partners - INF-2026-024 - One Power Company", url: "https://onsitepartners.com/news/onsite-partners-acquires-one-power-company/" },
     ],
     owners: [
       { investmentFirm: "Basalt Infrastructure Partners", ownershipVehicle: "Basalt IV", investmentYear: 2024, status: "Active" },
@@ -7222,15 +7232,21 @@ export const companies: PortCo[] = [
       { date: "Oct 20, 2014", event: "Cleco announced an agreement to be acquired by an investor group led by Macquarie Infrastructure and Real Assets and BCI.", category: "Acquisition" },
       { date: "Apr 13, 2016", event: "The investor group completed the acquisition of Cleco.", category: "Acquisition" },
       { date: "2016", event: "Louisiana regulatory materials disclosed the post-closing ownership interests of Macquarie, BCI, and John Hancock Financial.", category: "Other" },
+      { date: "Apr 30, 2026", event: "Macquarie Asset Management / BCI / Manulife Investment Management agreed to sell Cleco Group to Stonepeak / Bernhard Capital Partners.", category: "Divestiture" },
     ],
     sources: [
       { label: "Cleco — Cleco Corporation", url: "https://www.cleco.com/about/history" },
       { label: "Announcement date source — BCI — Cleco Corporation", url: "https://www.cleco.com/media/press-releases/detail/2014/10/20/cleco-enters-agreement-to-be-acquired-by-north-american-investor-group-led-by-macquarie-infrastructure-and-real-assets-and-british-columbia-investment-management-corporation" },
       { label: "Close date source — BCI — Cleco Corporation", url: "https://www.cleco.com/media/press-releases/detail/2016/04/13/north-american-led-investor-group-completes-acquisition-of-cleco" },
       { label: "Lpscpubvalence — Cleco Corporation", url: "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=SnuJItgVr6k%3D" },
+      { label: "Stonepeak - INF-2026-196 - Cleco Group", url: "https://stonepeak.com/news/stonepeak-and-bernhard-capital-partners-to-acquire-cleco" },
     ],
     owners: [
       { investmentFirm: "BCI", ownershipVehicle: "Infrastructure & Renewable Resources", investmentYear: 2016, status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Cleco investor consortium", investmentYear: 2016, status: "Active" },
+      { investmentFirm: "Manulife Investment Management", ownershipVehicle: "Cleco investor consortium", investmentYear: 2016, status: "Active" },
+      { investmentFirm: "Stonepeak", ownershipVehicle: "Announced Stonepeak / Bernhard acquisition consortium pending close", investmentYear: 2026, status: "Active" },
+      { investmentFirm: "Bernhard Capital Partners", ownershipVehicle: "Announced Stonepeak / Bernhard acquisition consortium pending close", investmentYear: 2026, status: "Active" },
     ],
   },
   {
@@ -7510,10 +7526,12 @@ export const companies: PortCo[] = [
       { label: "Milbank — Northview Energy", url: "https://www.milbank.com/en/news/milbank-advises-bci-on-launch-of-northview-energy.html" },
       { label: "Bam — Northview Energy", url: "https://bam.brookfield.com/press-releases/bci-norges-bank-investment-management-and-brookfield-partner-launch-northview-energy" },
       { label: "Announcement date source — BCI — Northview Energy", url: "https://www.bci.ca/news-and-insights/news-releases/bci-norges-bank-investment-management-and-brookfield-partner-to-launch-northview-energy/" },
+      { label: "GlobeNewsWire - INF-2026-105 - Northview Energy", url: "https://www.globenewswire.com/news-release/2026/03/03/3248185/0/en/BCI-Norges-Bank-Investment-Management-and-Brookfield-Partner-to-Launch-Northview-Energy.html" },
     ],
     owners: [
       { investmentFirm: "BCI", ownershipVehicle: "Infrastructure & Renewable Resources", investmentYear: 2026, status: "Active" },
       { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield", investmentYear: 2026, status: "Active" },
+      { investmentFirm: "Norges Bank Investment Management", ownershipVehicle: "Northview Energy joint venture", investmentYear: 2026, status: "Active" },
     ],
   },
   {
@@ -7590,12 +7608,14 @@ export const companies: PortCo[] = [
       { date: "Apr 2025", event: "The platform acquired approximately 12,000 miles of pipeline and about 380,000 customers through the CenterPoint transaction.", category: "Other" },
       { date: "Jul 1, 2025", event: "Bernhard Capital Partners-backed Delta Utilities completed the acquisition of Entergy's natural gas distribution businesses in New Orleans and East Baton Rouge Parish.", category: "Acquisition" },
       { date: "2025", event: "Following the Entergy transaction, company materials described roughly 600,000 customers and more than 800 employees.", category: "Other" },
+      { date: "Apr 21, 2026", event: "Delta Utilities acquired Spire Mississippi from Spire Inc.", category: "Acquisition" },
     ],
     sources: [
       { label: "Deltautilities — Delta Utilities", url: "https://deltautilities.com/corporate/home" },
       { label: "Deltautilities — Delta Utilities", url: "https://deltautilities.com/corporate/about-us" },
       { label: "Close date source — Bernhard Capital Partners — Delta Utilities", url: "https://www.bernhardcapital.com/bcp-backed-delta-utilities-completes-acquisition-of-centerpoint-energys-natural-gas-distribution-businesses-in-louisiana-and-mississippi/" },
       { label: "Bernhardcapital — Delta Utilities", url: "https://www.bernhardcapital.com/bcp-backed-delta-utilities-completes-acquisition-of-entergys-natural-gas-distribution-businesses-in-new-orleans-and-east-baton-rouge-parish/" },
+      { label: "PR Newswire - INF-2026-188 - Spire Mississippi", url: "https://www.prnewswire.com/news-releases/spire-announces-sale-of-its-mississippi-natural-gas-business-to-delta-utilities-for-75-million-302749447.html" },
     ],
     owners: [
       { investmentFirm: "Bernhard Capital Partners", ownershipVehicle: "BCP Infrastructure Fund II", investmentYear: 2025, status: "Active" },
@@ -8914,9 +8934,11 @@ export const companies: PortCo[] = [
       { label: "Investment date source — Blackstone — Sabre Industries", url: "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/" },
       { label: "Sabreindustries — Sabre Industries", url: "https://www.sabreindustries.com/" },
       { label: "Reuters — Sabre Industries", url: "https://www.reuters.com/legal/transactional/tpg-buys-majority-stake-35-billion-power-infrastructure-firm-sabre-industries-2026-02-06/" },
+      { label: "Business Wire - INF-2026-038 - Sabre Industries", url: "https://www.businesswire.com/news/home/20260205906188/en/TPG-to-Acquire-Majority-Stake-in-Sabre-Industries-from-Blackstone-Energy-Transition-Partners" },
     ],
     owners: [
-      { investmentFirm: "Blackstone", ownershipVehicle: "Blackstone Energy Transition Partners", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Blackstone", ownershipVehicle: "Blackstone Energy Transition Partners", investmentYear: 2021, stake: "Significant minority retained under signed 2026 sale", status: "Active" },
+      { investmentFirm: "TPG", ownershipVehicle: "Signed agreement for TPG Rise Climate majority stake", investmentYear: 2026, stake: "Majority", status: "Active" },
     ],
   },
   {
@@ -10325,12 +10347,14 @@ export const companies: PortCo[] = [
       { date: "Sep 29, 2022", event: "Brookfield announced the closing of its acquisition of Standard Solar and committed additional growth capital alongside the Scout Clean Energy agreement.", category: "Acquisition" },
       { date: "2024", event: "Standard Solar marked 20 years of operations.", category: "Other" },
       { date: "2025", event: "Company materials described more than 500 MW owned, operated, and under construction across more than 20 states and the District of Columbia.", category: "Other" },
+      { date: "Mar 16, 2026", event: "Standard Solar acquired 48.4 MW Community Solar Portfolio (NM) from Pluma Construction / ForeFront Power.", category: "Acquisition" },
     ],
     sources: [
       { label: "Standardsolar — Standard Solar", url: "https://standardsolar.com/" },
       { label: "Standardsolar — Standard Solar", url: "https://standardsolar.com/company/" },
       { label: "Close date source — Brookfield Asset Management — Standard Solar", url: "https://standardsolar.com/news/brookfield-to-invest-up-to-2-billion-in-scout-clean-energy-and-standard-solar/" },
       { label: "Standardsolar — Standard Solar", url: "https://standardsolar.com/blog/honoring-our-past-to-build-our-future/" },
+      { label: "BusinessWire - INF-2026-128 - 48.4 MW Community Solar Portfolio (NM)", url: "https://www.businesswire.com/news/home/20260316627025/en/Pluma-Construction-ForeFront-Power-and-Standard-Solar-Bring-48.4-MW-Community-Solar-Portfolio-to-New-Mexico" },
     ],
     owners: [
       { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield Global Transition Fund", investmentYear: 2022, status: "Active" },
@@ -12628,6 +12652,7 @@ export const companies: PortCo[] = [
       { date: "2014", event: "DigitalBridge entered its original Vertical Bridge investment in 2014.", category: "Financing" },
       { date: "2020", event: "Vertical Bridge states that it became the first tower company in the world to achieve CarbonNeutral company certification.", category: "Other" },
       { date: "2026", event: "Company materials describe a portfolio of more than 18,000 towers and over 500,000 sites nationwide.", category: "Other" },
+      { date: "Apr 23, 2026", event: "KKR / DigitalBridge / La Caisse announced an investment in Vertical Bridge.", category: "Financing" },
     ],
     sources: [
       { label: "Verticalbridge — Vertical Bridge", url: "https://www.verticalbridge.com/about" },
@@ -12637,10 +12662,12 @@ export const companies: PortCo[] = [
       { label: "Verticalbridge — Vertical Bridge", url: "https://www.verticalbridge.com/" },
       { label: "Investment date source — DigitalBridge — Vertical Bridge", url: "https://www.verticalbridge.com/press-releases/vertical-bridge-holdings-completes-second-round-capital-raise-equity-commitments-now-total-750-million" },
       { label: "Verticalbridge — Vertical Bridge", url: "https://www.verticalbridge.com/network-infrastructure/towers" },
+      { label: "Vertical Bridge - INF-2026-179 - Vertical Bridge", url: "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr" },
     ],
     owners: [
       { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure (30% Stake)", investmentYear: 2019, status: "Active" },
       { investmentFirm: "DigitalBridge", ownershipVehicle: "DigitalBridge Equity", investmentYear: 2014, status: "Active" },
+      { investmentFirm: "KKR", ownershipVehicle: "Strategic equity investment", investmentYear: 2026, status: "Active" },
     ],
   },
   {
@@ -13841,6 +13868,7 @@ export const companies: PortCo[] = [
       { date: "2023", event: "Public materials described an operating portfolio exceeding 1,200 MW and continued financing activity for project growth.", category: "Other" },
       { date: "Jan 6, 2026", event: "Pattern Energy and Cordelio announced a definitive agreement for Pattern to acquire the company.", category: "Other" },
       { date: "Apr 2, 2026", event: "Pattern Energy announced completion of the acquisition of Cordelio Power.", category: "Other" },
+      { date: "Apr 22, 2026", event: "Cordelio Power sold its 6 GW joint venture interest to BrightNight.", category: "Divestiture" },
     ],
     sources: [
       { label: "Cordeliopower — Cordelio Power", url: "https://cordeliopower.com/" },
@@ -13848,6 +13876,8 @@ export const companies: PortCo[] = [
       { label: "Investment date source — CPP Investments — Cordelio Power", url: "https://www.globenewswire.com/news-release/2018/08/10/1550309/0/en/CPP-Fund-Totals-366-6-Billion-at-First-Quarter-Fiscal-2019.html" },
       { label: "Cordeliopower — Cordelio Power", url: "https://cordeliopower.com/pattern_energy_announces_agreement_to_acquire_cordelio_power/" },
       { label: "Patternenergy — Cordelio Power", url: "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/" },
+      { label: "McCarthy Tétrault - INF-2026-013 - Cordelio Power", url: "https://www.mccarthy.ca/en/experience/cordelio-power-enters-into-definitive-agreement-in-connection-with-its-sale-to-pattern-energy-group" },
+      { label: "PR Newswire - INF-2026-176 - Cordelio Power’s 6GW Joint Venture Interest", url: "https://www.prnewswire.com/news-releases/brightnight-acquires-cordelio-powers-joint-venture-interest-adds-6-gw-to-its-independently-controlled-project-portfolio-302747628.html" },
     ],
     owners: [
       { investmentFirm: "CPP Investments", ownershipVehicle: "Sustainable Energies", investmentYear: 2018, status: "Active" },
@@ -14554,12 +14584,14 @@ export const companies: PortCo[] = [
       { date: "May 10, 2023", event: "DIF announced an agreement to acquire a 75% interest in Diverso through DIF Infrastructure VII.", category: "Acquisition" },
       { date: "2023", event: "DIF stated that the founders would retain the remaining 25% and continue leading the company.", category: "Other" },
       { date: "2023", event: "Diverso continued expanding geothermal energy-as-a-service projects in Canada.", category: "Other" },
+      { date: "Mar 12, 2026", event: "Diverso Energy Inc. participated in the Dandelion Partnership joint venture.", category: "Expansion" },
     ],
     sources: [
       { label: "Diversoenergy — Diverso Energy Inc.", url: "https://diversoenergy.com/our-company/" },
       { label: "Announcement date source — CVC DIF — Diverso Energy Inc.", url: "https://www.cvcdif.com/news-insights/dif-capital-partners-acquires-leading-canadian-geothermal-company-diverso" },
       { label: "Diversoenergy — Diverso Energy Inc.", url: "https://diversoenergy.com/news/diverso-energy-acquirnews-media-2023-05-10-diverso-energy-to-be-acquired-by-dif-capital-partners/14/" },
       { label: "Mccarthy — Diverso Energy Inc.", url: "https://www.mccarthy.ca/en/experience/cvc-dif-formerly-dif-capital-partners-acquires-majority-stake-in-diverso-energy" },
+      { label: "Newswire - INF-2026-122 - Dandelion Partnership", url: "https://www.newswire.ca/news-releases/diverso-energy-and-dandelion-energy-partner-to-accelerate-geothermal-deployment-across-u-s-housing-markets-841957958.html" },
     ],
     owners: [
       { investmentFirm: "CVC DIF", ownershipVehicle: "DIF Infrastructure VII", investmentYear: 2023, status: "Active" },
@@ -15233,6 +15265,7 @@ export const companies: PortCo[] = [
       { date: "Nov 2015", event: "Northleaf recorded its investment date for ExteNet.", category: "Financing" },
       { date: "May 10, 2021", event: "ExteNet announced the closing of the Manulife-led investment representing approximately 30% ownership.", category: "Financing" },
       { date: "Dec 2022", event: "ExteNet rebranded as Extenet.", category: "Other" },
+      { date: "Feb 5, 2026", event: "DigitalBridge (via Extenet Systems) agreed to sell Extenet Systems (Enterprise Fiber) to Undisclosed Buyer.", category: "Divestiture" },
     ],
     sources: [
       { label: "Extenet — ExteNet Systems", url: "https://www.extenet.com/" },
@@ -15250,6 +15283,7 @@ export const companies: PortCo[] = [
       { label: "Announcement date source — Stonepeak — ExteNet Systems", url: "https://www.prnewswire.com/news-releases/extenet-systems-announces-capital-restructuring-300117742.html" },
       { label: "Close date source — Stonepeak — ExteNet Systems", url: "https://www.prnewswire.com/news-releases/chicago-region-extenet-systems-completes-recapitalization-300180129.html" },
       { label: "Investment date source — Northleaf — ExteNet Systems", url: "https://www.northleafcapital.com/infrastructure-investments?page=2" },
+      { label: "Wireless Estimator - INF-2026-066 - Extenet Systems (Enterprise Fiber)", url: "https://wirelessestimator.com/articles/2026/pilot-fiber-to-acquire-carved-out-enterprise-fiber-unit-from-digitalbridge-backed-extenet/" },
     ],
     owners: [
       { investmentFirm: "Manulife", ownershipVehicle: "Manulife Infrastructure Fund II", investmentYear: 2021, status: "Active" },
@@ -15699,9 +15733,11 @@ export const companies: PortCo[] = [
       { label: "Ecpgp — Cornerstone Generation", url: "https://www.ecpgp.com/about/news-and-insights/press-releases/2026/energy-capital-partners-ecp-agrees-to-sell-cornerstone-generation-to-talen-energy" },
       { label: "Monitoringanalytics — Cornerstone Generation", url: "https://www.monitoringanalytics.com/filings/2026/IMM_Motion_for_Extension_Docket_No_EC26-59_20260217.pdf" },
       { label: "Ir — Cornerstone Generation", url: "https://ir.talenenergy.com/news-events/press-releases/detail/181/talen-energy-to-acquire-two-gas-fired-combined-cycle-plants-and-one-peaking-facility-for-3-5-billion" },
+      { label: "Talen Energy IR - INF-2026-014 - Cornerstone Generation", url: "https://ir.talenenergy.com/news-releases/news-release-details/talen-energy-continues-portfolio-expansion-acquisition" },
     ],
     owners: [
       { investmentFirm: "ECP", ownershipVehicle: "ECP acquisition", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "Talen Energy", ownershipVehicle: "Announced acquisition from ECP pending regulatory close", investmentYear: 2026, status: "Active" },
     ],
   },
   {
@@ -17456,12 +17492,14 @@ export const companies: PortCo[] = [
       { date: "Jul 6, 2021", event: "Cypress Creek announced that EQT had agreed to acquire the company.", category: "Acquisition" },
       { date: "Oct 8, 2021", event: "Cypress Creek announced the close of its sale to EQT, with EQT becoming sole owner.", category: "Acquisition" },
       { date: "Oct 20, 2025", event: "Cypress Creek announced financial close of a hybrid solar and storage project in Colorado.", category: "Other" },
+      { date: "Mar 10, 2026", event: "Cypress Creek Renewables acquired Steel River Solar and Storage Project from IFM Investors (via Swift Current Energy).", category: "Acquisition" },
     ],
     sources: [
       { label: "Ccrenew — Cypress Creek Renewables", url: "https://ccrenew.com/" },
       { label: "Eqtgroup — Cypress Creek Renewables", url: "https://eqtgroup.com/en/about/current-portfolio/cypress-creek" },
       { label: "Announcement date source — EQT Infrastructure — Cypress Creek Renewables", url: "https://ccrenew.com/news/welcome-eqt-to-the-cypress-creek-team/" },
       { label: "Close date source — EQT Infrastructure — Cypress Creek Renewables", url: "https://ccrenew.com/news/cypress-creek-announces-close-of-sale-to-eqt/" },
+      { label: "PR Newswire - INF-2026-117 - Steel River Solar and Storage Project", url: "https://www.prnewswire.com/news-releases/cypress-creek-acquires-2-5-gw-solar-project-with-2-9-gwh-energy-storage-in-development-in-arkansas-from-swift-current-energy-302711078.html" },
     ],
     owners: [
       { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure V", investmentYear: 2021, status: "Active" },
@@ -17512,12 +17550,16 @@ export const companies: PortCo[] = [
       { date: "Nov 5, 2020", event: "EdgeConneX announced completion of its acquisition by EQT Infrastructure.", category: "Acquisition" },
       { date: "2020", event: "EdgeConneX expanded from an edge-focused footprint into a broader global hyperscale data center platform.", category: "Other" },
       { date: "2026", event: "Company materials highlighted new campus developments in Japan, Sweden, and Chicago.", category: "Other" },
+      { date: "Feb 28, 2026", event: "EdgeConneX acquired Skellefteå Data Center Site from Lyten.", category: "Acquisition" },
+      { date: "Apr 21, 2026", event: "EQT introduced an AI infrastructure strategy with EdgeConneX as a core data center platform.", category: "Expansion" },
     ],
     sources: [
       { label: "Edgeconnex — EdgeConneX", url: "https://www.edgeconnex.com/" },
       { label: "Eqtgroup — EdgeConneX", url: "https://eqtgroup.com/about/current-portfolio/edgeconnex" },
       { label: "Announcement date source — EQT Infrastructure — EdgeConneX", url: "https://www.edgeconnex.com/news/press-releases/eqt-infrastructure-to-acquire-leading-global-data-center-provider-edgeconnex/" },
       { label: "Close date source — EQT Infrastructure — EdgeConneX", url: "https://www.edgeconnex.com/news/press-releases/edgeconnex-announces-completion-of-its-acquisition-by-eqt-infrastructure/" },
+      { label: "EdgeConneX - INF-2026-090 - Skellefteå Data Center Site", url: "https://www.edgeconnex.com/news/press-releases/edgeconnex-looks-to-enter-swedish-market-as-part-of-european-data-center-expansion-strategy/" },
+      { label: "EQT - INF-2026-180 - EdgeConneX", url: "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21" },
     ],
     owners: [
       { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure IV, V", investmentYear: 2020, status: "Active" },
@@ -17707,12 +17749,14 @@ export const companies: PortCo[] = [
       { date: "Jan 9, 2025", event: "EQT announced an agreement to acquire Scale Microgrids.", category: "Acquisition" },
       { date: "Feb 5, 2025", event: "EQT completed the acquisition of Scale Microgrids from Warburg Pincus and other shareholders.", category: "Acquisition" },
       { date: "2025", event: "Company materials continued to emphasize distributed-energy solutions for data centers and other high-demand users.", category: "Other" },
+      { date: "Feb 28, 2026", event: "Scale Microgrids acquired Reload.", category: "Acquisition" },
     ],
     sources: [
       { label: "Scalemicrogrids — Scale Microgrids", url: "https://www.scalemicrogrids.com/" },
       { label: "Eqtgroup — Scale Microgrids", url: "https://eqtgroup.com/en/about/current-portfolio/scale-microgrids" },
       { label: "Announcement date source — EQT Infrastructure — Scale Microgrids", url: "https://eqtgroup.com/news/eqt-to-acquire-distributed-energy-company-scale-microgrids" },
       { label: "Close date source — EQT Infrastructure — Scale Microgrids", url: "https://uk.marketscreener.com/quote/stock/EQT-AB-66480635/news/EQT-AB-OM-EQT-completed-the-acquisition-of-Scale-Microgrid-Solutions-LLC-from-Warburg-Pincus-LLC-50157590/" },
+      { label: "DCD - INF-2026-080 - Reload", url: "https://www.datacenterdynamics.com/en/news/eqt-backed-scale-acquires-powered-land-for-data-centers-company-reload/" },
     ],
     owners: [
       { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Transition Infrastructure", investmentYear: 2025, status: "Active" },
@@ -17888,9 +17932,11 @@ export const companies: PortCo[] = [
       { label: "Announcement date source — CVC DIF — American Roads", url: "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/" },
       { label: "Announcement date source — Equitix / John Laing — American Roads", url: "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/" },
       { label: "Ownership structure source — Equitix — John Laing Investments Limited", url: "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in" },
+      { label: "ENR - INF-2026-044 - American Roads", url: "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets" },
     ],
     owners: [
       { investmentFirm: "Equitix", ownershipVehicle: "John Laing Investments Limited (Equitix / KKR JV)", investmentYear: 2026, status: "Active" },
+      { investmentFirm: "CVC DIF", ownershipVehicle: "Seller in announced American Roads sale to John Laing", investmentYear: 2018, status: "Active" },
     ],
   },
   {
@@ -21725,6 +21771,8 @@ export const companies: PortCo[] = [
       { date: "Dec 4, 2014", event: "Generate Capital launched as a dedicated resource-efficiency finance company. (Founding)", category: "Other" },
       { date: "Nov 16, 2021", event: "Generate converted to a public benefit corporation. (Strategic change)", category: "Other" },
       { date: "Jan 31, 2024", event: "Generate announced a $1.5 billion capital raise with new and returning institutional investors including QIC. (Financing)", category: "Other" },
+      { date: "Mar 24, 2026", event: "Generate Capital announced the sale of Equinox Growers Greenhouse Facility to Taylor Farms.", category: "Divestiture" },
+      { date: "Apr 29, 2026", event: "Generate Capital and Monarch Private Capital announced a 104 MW community solar investment portfolio.", category: "Financing" },
     ],
     sources: [
       { label: "Investment date source — QIC — Generate Capital", url: "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Generate" },
@@ -21741,6 +21789,8 @@ export const companies: PortCo[] = [
       { label: "Close date source — Harbert Management Corp (Harbert Infra / Gulf Pacific) — Generate Capital", url: "https://www.harbert.net/assets/press-releases/harbert-infrastructure-generate-press-release-july-19-2021.pdf" },
       { label: "Generatecapital — Generate Capital", url: "https://generatecapital.com/wp-content/uploads/2022/06/Generate-Green-Financing-Framework_vFFF-clean.pdf" },
       { label: "Business Wire — Generate Capital", url: "https://www.businesswire.com/news/home/20240130298422/en/Leading-Global-Institutions-Invest-in-a-Clean-Energy-Future-With-Generate-Capital" },
+      { label: "Generate Capital - INF-2026-139 - Equinox Growers Greenhouse Facility", url: "https://generatecapital.com/generate-capital-announces-sale-of-equinox-growers-greenhouse-facility-to-taylor-farms/" },
+      { label: "GlobeNewswire - INF-2026-195 - 104 MW Community Solar Portfolio", url: "https://www.globenewswire.com/news-release/2026/04/29/3283723/0/en/monarch-private-capital-and-generate-capital-announce-104-mw-energy-investment-portfolio.html" },
     ],
     owners: [
       { investmentFirm: "Harbert Management Corp (Harbert Infra / Gulf Pacific)", ownershipVehicle: "Harbert Infrastructure", investmentYear: 2021, status: "Active" },
@@ -24232,12 +24282,14 @@ export const companies: PortCo[] = [
       { date: "Sep 12, 2022", event: "Igneo announced an agreement to acquire US Signal.", category: "Acquisition" },
       { date: "Feb 15, 2023", event: "Igneo announced completion of the US Signal acquisition.", category: "Acquisition" },
       { date: "2025", event: "Igneo continued to describe US Signal as a 10,000+ mile fiber and 17 data center platform.", category: "Other" },
+      { date: "Jan 30, 2026", event: "US Signal acquired Aurora IL Data Center.", category: "Acquisition" },
     ],
     sources: [
       { label: "Close date source — Igneo Infrastructure Partners — US Signal", url: "https://www.igneoip.com/usa/en/institutional/news-and-insights/press/igneo-infrastructure-partners-completes-acquisition-of-us-signal.html" },
       { label: "Igneoip — US Signal", url: "https://www.igneoip.com/usa/en/institutional/our-offering/middle-market-maximum-impact.html" },
       { label: "Ussignal — US Signal", url: "https://ussignal.com/" },
       { label: "Announcement date source — Igneo Infrastructure Partners — US Signal", url: "https://ussignal.com/press-releases/igneo-infrastructure-partners-to-acquire-us-signal/" },
+      { label: "US Signal - INF-2026-063 - Aurora IL Data Center", url: "https://ussignal.com/press-releases/aurora-data-center-acquisition/" },
     ],
     owners: [
       { investmentFirm: "Igneo Infrastructure Partners", ownershipVehicle: "Global Diversified", investmentYear: 2023, status: "Active" },
@@ -26087,15 +26139,18 @@ export const companies: PortCo[] = [
       { date: "Mar 1, 2022", event: "Pembina and KKR announced agreements to combine their Western Canadian processing assets into Pembina Gas Infrastructure.", category: "Financing" },
       { date: "Aug 15, 2022", event: "Pembina announced closing of the PGI joint venture and disclosed the 60% Pembina and 40% KKR ownership split.", category: "Financing" },
       { date: "2025", event: "Public materials continued to describe PGI as a major Western Canadian gas processing entity with 5 Bcf/d of capacity.", category: "Other" },
+      { date: "Apr 20, 2026", event: "KKR agreed to sell Pembina Gas Infrastructure (PGI) to Apollo Global Management.", category: "Divestiture" },
     ],
     sources: [
       { label: "Pembina — Pembina Gas Infrastructure Inc.", url: "https://www.pembina.com/operations/partnerships/pembina-gas-infrastructure" },
       { label: "Pembina — Pembina Gas Infrastructure Inc.", url: "https://www.pembina.com/operations/partnerships/pembina-gas-infrastructure/about-us" },
       { label: "Announcement source — KKR — Pembina Gas Infrastructure Inc.", url: "https://www.prnewswire.com/news-releases/pembina-pipeline-corporation-and-kkr-create-joint-venture-to-merge-western-canadian-processing-assets-301492668.html" },
       { label: "Close date source — KKR — Pembina Gas Infrastructure Inc.", url: "https://www.sec.gov/Archives/edgar/data/1546066/000127956922001364/ex991.pdf" },
+      { label: "Apollo - INF-2026-183 - Pembina Gas Infrastructure (PGI)", url: "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810" },
     ],
     owners: [
       { investmentFirm: "KKR", ownershipVehicle: "KKR Global Infrastructure Investors", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Announced acquisition of KKR's 40% interest", investmentYear: 2026, stake: "40%", status: "Active" },
     ],
   },
   {
@@ -28852,6 +28907,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "MSIP", ownershipVehicle: "Ownership stake in Thermal Bayonne Holdings, LLC", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "Jupiter Energy Investor", ownershipVehicle: "Announced acquisition from MSIP pending close", investmentYear: 2026, status: "Active" },
     ],
   },
   {
@@ -30809,11 +30865,13 @@ export const companies: PortCo[] = [
       { date: "Oct 2025", event: "Quinbrook announced a strategic ownership stake in Elemental Clean Fuels.", category: "Acquisition" },
       { date: "2025", event: "Quinbrook described the investment as its first in Canada.", category: "Financing" },
       { date: "2026", event: "Elemental continued advancing projects in Alberta and British Columbia.", category: "Other" },
+      { date: "Apr 22, 2026", event: "Elemental Clean Fuels acquired FPH2’s Los Angeles County Renewable Hydrogen Project from FPH2.", category: "Acquisition" },
     ],
     sources: [
       { label: "Elementalcf — Elemental Clean Fuels", url: "https://elementalcf.com/" },
       { label: "Investment date source — Quinbrook — Elemental Clean Fuels", url: "https://www.quinbrook.com/portfolio/elemental-clean-fuels/" },
       { label: "Announcement date source — Quinbrook — Elemental Clean Fuels", url: "https://www.quinbrook.com/news-insights/quinbrook-acquires-first-canadian-investment-with-strategic-stake-in-elemental-clean-fuels/" },
+      { label: "PR Newswire - INF-2026-178 - FPH2’s Los Angeles County Renewable Hydrogen Project", url: "https://www.prnewswire.com/news-releases/fph2-expands-california-renewable-hydrogen-supply-partnerships-to-support-public-fleets-data-infrastructure-and-energy-resilience-302746086.html" },
     ],
     owners: [
       { investmentFirm: "Quinbrook", ownershipVehicle: "Strategic ownership stake", investmentYear: 2025, status: "Active" },
@@ -31236,15 +31294,18 @@ export const companies: PortCo[] = [
       { date: "Jan 2023", event: "Quinbrook announced the expansion of Rowan's green data center platform in Texas.", category: "Other" },
       { date: "Jan 2025", event: "Rowan secured $975 million of financing for its Maryland campus.", category: "Financing" },
       { date: "2026", event: "Quinbrook described Rowan's development pipeline as exceeding 12 GW-IT.", category: "Other" },
+      { date: "Apr 7, 2026", event: "Quinbrook announced a strategic recapitalization of Rowan through the sale of a 49% minority stake to Blackstone-affiliated funds while retaining control.", category: "Financing" },
     ],
     sources: [
       { label: "Rowan — Rowan Digital Infrastructure", url: "https://rowan.digital/home" },
       { label: "Rowan — Rowan Digital Infrastructure", url: "https://rowan.digital/news/press-release/" },
       { label: "Investment date source — Quinbrook — Rowan Digital Infrastructure", url: "https://www.quinbrook.com/our-portfolio/rowan-digital-infrastructure/" },
       { label: "Quinbrook — Rowan Digital Infrastructure", url: "https://www.quinbrook.com/news-insights/rowan/" },
+      { label: "PR Newswire - INF-2026-161 - Rowan Digital Infrastructure", url: "https://www.prnewswire.com/news-releases/rowan-digital-infrastructure-announces-strategic-recapitalization-302738729.html" },
     ],
     owners: [
       { investmentFirm: "Quinbrook", ownershipVehicle: "Founded by Quinbrook in 2022", investmentYear: 2020, status: "Active" },
+      { investmentFirm: "Blackstone", ownershipVehicle: "Strategic minority stake", investmentYear: 2026, status: "Active" },
     ],
   },
   {
@@ -31539,11 +31600,13 @@ export const companies: PortCo[] = [
       { date: "2003", event: "Sierra Northern Railway was formed through the merger of Sierra Railroad and Yolo Shortline Railroad.", category: "Acquisition" },
       { date: "Mar 2026", event: "Ridgewood Infrastructure announced the acquisition of a controlling interest in Sierra Railroad Company.", category: "Acquisition" },
       { date: "2026", event: "Public transaction materials stated that the platform included approximately 130 miles of track and rail-linked operating businesses.", category: "Other" },
+      { date: "Mar 11, 2026", event: "Sierra Railroad Company acquired Central Valley Ag Transport (CVAT).", category: "Acquisition" },
     ],
     sources: [
       { label: "Investment date source — Ridgewood — Sierra Railroad Company", url: "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/" },
       { label: "Sierrarailroad — Sierra Railroad Company", url: "https://www.sierrarailroad.com/" },
       { label: "Sierranorthern — Sierra Railroad Company", url: "https://www.sierranorthern.com/" },
+      { label: "PR Newswire - INF-2026-121 - Central Valley Ag Transport (CVAT)", url: "http://www.prnewswire.com/news-releases/ridgewood-infrastructure-acquires-sierra-railroad-company-302708445.html" },
     ],
     owners: [
       { investmentFirm: "Ridgewood", ownershipVehicle: "Controlling interest", investmentYear: 2026, status: "Active" },
@@ -32375,12 +32438,14 @@ export const companies: PortCo[] = [
       { date: "Apr 2025", event: "Stonepeak completed the acquisition and ATSG became a private company.", category: "Acquisition" },
       { date: "2025", event: "ATSG continued operating its cargo-aircraft leasing and air transport subsidiaries under Stonepeak ownership.", category: "Other" },
       { date: "2025", event: "The transaction added an aviation logistics platform to Stonepeak's transport portfolio.", category: "Other" },
+      { date: "Feb 28, 2026", event: "ATSG agreed to sell 321 Precision Conversions to Erickson Group.", category: "Divestiture" },
     ],
     sources: [
       { label: "Announcement date source — Stonepeak — ATSG", url: "https://stonepeak.com/news/atsg-to-be-acquired-by-stonepeak-for-3-1-billion" },
       { label: "Close date source — Stonepeak — ATSG", url: "https://stonepeak.com/news/stonepeak-completes-acquisition-of-atsg" },
       { label: "Atsginc — ATSG", url: "https://www.atsginc.com/" },
       { label: "Atsginc — ATSG", url: "https://www.atsginc.com/about/" },
+      { label: "ATSG - INF-2026-094 - 321 Precision Conversions", url: "https://www.atsginc.com/news-and-media/newsroom/year/2026/2026-02-24-erickson-acquires-321-precision" },
     ],
     owners: [
       { investmentFirm: "Stonepeak", ownershipVehicle: "Take-private acquisition", investmentYear: 2025, status: "Active" },
@@ -33455,12 +33520,16 @@ export const companies: PortCo[] = [
       { date: "Sep 2021", event: "Tiger Infrastructure announced its investment in 11:11 Systems.", category: "Financing" },
       { date: "2021", event: "Public launch materials identified Fairfield, New Jersey as the company's headquarters.", category: "Other" },
       { date: "2026", event: "Company materials continued to describe the platform's core services as cloud, connectivity, security, and voice.", category: "Other" },
+      { date: "Jan 8, 2026", event: "11:11 Systems acquired Ntirety.", category: "Acquisition" },
+      { date: "Feb 28, 2026", event: "11:11 Systems acquired Digital Sense from Aussie Broadband.", category: "Acquisition" },
     ],
     sources: [
       { label: "1111Systems — 11:11 Systems", url: "https://1111systems.com/" },
       { label: "1111Systems — 11:11 Systems", url: "https://1111systems.com/why-1111/overview/" },
       { label: "Investment date source — Tiger — 11:11 Systems", url: "https://www.prnewswire.com/news-releases/tiger-infrastructure-announces-investment-in-1111-systems-301382251.html" },
       { label: "Business Wire — 11:11 Systems", url: "https://www.businesswire.com/news/home/20210923005209/en/1111-Systems-Launches-With-New-Managed-Infrastructure-Solutions-Model" },
+      { label: "GlobeNewswire - INF-2026-073 - Ntirety", url: "https://www.globenewswire.com/news-release/2026/01/08/3215407/0/en/11-11-Systems-Successfully-Completes-Acquisition-of-Ntirety.html" },
+      { label: "11:11 Systems - INF-2026-091 - Digital Sense", url: "https://1111systems.com/resources/1111-systems-successfully-completes-acquisition-of-digital-sense/" },
     ],
     owners: [
       { investmentFirm: "Tiger", ownershipVehicle: "Fund III", investmentYear: 2021, status: "Active" },
@@ -33812,12 +33881,18 @@ export const companies: PortCo[] = [
       { date: "2024", event: "Altus surpassed 1 gigawatt of operating assets.", category: "Expansion" },
       { date: "Feb 2025", event: "TPG announced an agreement to acquire Altus Power.", category: "Acquisition" },
       { date: "Apr 2025", event: "TPG completed the acquisition of Altus Power.", category: "Acquisition" },
+      { date: "Jan 8, 2026", event: "Altus Power acquired 12 MW Solar Operating Portfolio.", category: "Acquisition" },
+      { date: "Jan 15, 2026", event: "Altus Power acquired a 105 MW DC in-construction solar portfolio from Cordelio Power.", category: "Acquisition" },
+      { date: "Jan 28, 2026", event: "Altus Power acquired community solar projects in Minnesota.", category: "Acquisition" },
     ],
     sources: [
       { label: "Altus Power — About Us", url: "https://www.altuspower.com/about-us" },
       { label: "Announcement date source — TPG — Altus Power", url: "https://www.tpg.com/news-and-insights/altus-power-announces-agreement-to-be-acquired-by-tpg" },
       { label: "Close date source — TPG — Altus Power", url: "https://www.businesswire.com/news/home/20250416079847/en/Altus-Power-Closes-Transaction-with-TPG" },
       { label: "SEC — Altus Power 2022 Annual Report", url: "https://www.sec.gov/Archives/edgar/data/1828723/000182872323000051/amps-20221231.htm" },
+      { label: "Business Wire - INF-2026-001 - 12 MW Solar Operating Portfolio", url: "https://www.businesswire.com/news/home/20260108020262/en/Altus-Power-Acquires-12-MW-of-Commercial-Scale-Solar-Assets-Across-Four-States" },
+      { label: "Business Wire - INF-2026-004 - 105 MW In-Construction Solar Project", url: "https://www.businesswire.com/news/home/20260115191753/en/Altus-Power-Acquires-105MW-DC-of-In-Construction-Solar-Projects-from-Cordelio-Power" },
+      { label: "Business Wire - INF-2026-025 - Minnesota Community Solar Portfolio", url: "https://www.businesswire.com/news/home/20260128359646/en/Altus-Power-Announces-Acquisition-of-Community-Solar-Projects-in-Minnesota" },
     ],
     owners: [
       { investmentFirm: "TPG", ownershipVehicle: "TPG Rise Climate Transition Infrastructure", investmentYear: 2025, status: "Active" },
@@ -35143,15 +35218,18 @@ export const companies: PortCo[] = [
       { date: "2020", event: "Wren House acquired i3 Broadband.", category: "Acquisition" },
       { date: "2020", event: "i3 Broadband began a major network expansion into new and existing markets.", category: "Other" },
       { date: "2024", event: "Wren House reported that the platform had more than 300,000 homes passed.", category: "Other" },
+      { date: "Apr 30, 2026", event: "T-Mobile agreed to form a 50/50 joint venture with Wren House to acquire i3 Broadband.", category: "Expansion" },
     ],
     sources: [
       { label: "Whinfra — i3 Broadband", url: "https://www.whinfra.com/our-portfolio/i3-broadband/" },
       { label: "I3Broadband — i3 Broadband", url: "https://www.i3broadband.com/about-us/" },
       { label: "Whinfra — i3 Broadband", url: "https://www.whinfra.com/about/our-history/" },
       { label: "Announcement date source — Wren House — i3 Broadband", url: "https://www.prnewswire.com/news-releases/i3-broadband-to-be-acquired-by-wren-house-infrastructure-301130221.html" },
+      { label: "T-Mobile - INF-2026-201 - i3 Broadband", url: "https://www.t-mobile.com/news/business/t-mobile-add-two-strategic-fiber-joint-ventures-gonetspeed-greenlight-i3" },
     ],
     owners: [
       { investmentFirm: "Wren House", ownershipVehicle: "Wren House direct acquisition; exact stake details not disclosed in the cited public materials.", investmentYear: 2020, status: "Active" },
+      { investmentFirm: "T-Mobile", ownershipVehicle: "50/50 fiber joint venture with Wren House", investmentYear: 2026, stake: "50%", status: "Active" },
     ],
   },
   {
