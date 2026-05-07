@@ -382,6 +382,15 @@ enum SourceType {
   OTHER
 }
 
+enum CitationPurpose {
+  COMPANY_PROFILE
+  OWNERSHIP_INVESTMENT
+  OPERATIONS_ASSETS
+  MILESTONE_EVENT
+  FINANCING_FILINGS
+  SUPPORTING_CONTEXT
+}
+
 model Source {
   id        String     @id @default(cuid())
   label     String
@@ -393,13 +402,15 @@ model Source {
 }
 
 model Citation {
-  id        String   @id @default(cuid())
-  sourceId  String
-  source    Source   @relation(fields: [sourceId], references: [id])
-  dealId    String?
-  deal      Deal?    @relation(fields: [dealId], references: [id])
-  companyId String?
-  company   Company? @relation(fields: [companyId], references: [id])
+  id            String          @id @default(cuid())
+  sourceId      String
+  source        Source          @relation(fields: [sourceId], references: [id])
+  dealId        String?
+  deal          Deal?           @relation(fields: [dealId], references: [id])
+  companyId     String?
+  company       Company?        @relation(fields: [companyId], references: [id])
+  purpose       CitationPurpose @default(SUPPORTING_CONTEXT)
+  evidenceLabel String?
 
   @@index([sourceId])
   @@index([dealId])

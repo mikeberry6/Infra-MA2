@@ -8,7 +8,14 @@ import {
   getMilestoneCategoryColor,
   getStrategyColor,
 } from "@/lib/colors";
-import type { CompanyView, FundView, OwnerView, MilestoneView } from "@/modules/shared/types";
+import {
+  formatSourceType,
+  getSourceDisplayLabel,
+  getSourceHostname,
+  groupSourcesByPurpose,
+  inferSourceType,
+} from "@/lib/source-utils";
+import type { CompanyView, FundView, OwnerView, MilestoneView, SourceView } from "@/modules/shared/types";
 import { Tag } from "@/components/shared/Tag";
 import { Button } from "@/components/shared/Button";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
@@ -101,6 +108,49 @@ function SectionLabel({ children, count }: { children: React.ReactNode; count?: 
       {count != null && (
         <span className="text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{count}</span>
       )}
+    </div>
+  );
+}
+
+function SourceGroups({ sources }: { sources: SourceView[] }) {
+  const groups = groupSourcesByPurpose(sources);
+
+  return (
+    <div className="mt-5 surface px-4 py-3.5">
+      <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-3">
+        Sources
+      </div>
+      <div className="space-y-4">
+        {groups.map((group) => (
+          <div key={group.purpose}>
+            <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-1.5">
+              {group.label}
+            </div>
+            <div className="space-y-1">
+              {group.sources.map((source, i) => (
+                <a
+                  key={`${source.url}-${group.purpose}-${i}`}
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group -mx-2 flex items-start gap-2 rounded-[4px] px-2 py-1.5 transition-colors hover:bg-[var(--bg-hover)]"
+                  title={source.label || source.url}
+                >
+                  <ExternalLink className="mt-0.5 h-3.5 w-3.5 text-[var(--text-tertiary)] transition-colors group-hover:text-[var(--text-primary)] shrink-0" />
+                  <span className="min-w-0">
+                    <span className="block text-xs font-medium leading-snug text-[var(--text-secondary)] transition-colors group-hover:text-[var(--text-primary)]">
+                      {getSourceDisplayLabel(source)}
+                    </span>
+                    <span className="mt-0.5 block text-[11px] leading-snug text-[var(--text-tertiary)]">
+                      {getSourceHostname(source.url)} · {formatSourceType(inferSourceType(source))}
+                    </span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -293,36 +343,7 @@ export function PortCoDrawer({
                 {company.description}
               </p>
 
-              {sources.length > 0 && (
-                <div className="mt-5 surface px-4 py-3">
-                  <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-2">
-                    Sources
-                  </div>
-                  <div className="space-y-1.5">
-                    {sources.map((s, i) => {
-                      let hostname = s.url;
-                      try {
-                        hostname = new URL(s.url).hostname.replace(/^www\./, "");
-                      } catch {}
-                      return (
-                        <a
-                          key={i}
-                          href={s.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 group mr-3"
-                          title={s.label || s.url}
-                        >
-                          <ExternalLink className="h-3 w-3 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)] transition-colors shrink-0" />
-                          <span className="text-xs text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">
-                            {hostname}
-                          </span>
-                        </a>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
+              {sources.length > 0 && <SourceGroups sources={sources} />}
             </section>
           )}
 

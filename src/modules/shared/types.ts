@@ -1,5 +1,7 @@
 // Shared types for the module layer
 
+import type { SourceFormat, SourcePurpose } from "@/lib/source-utils";
+
 export type { RecordStatus, UserRole } from "@/generated/prisma/client";
 
 // View model types used to pass data from Server Components to Client Components.
@@ -116,6 +118,9 @@ export interface ExecutiveView {
 export interface SourceView {
   label: string;
   url: string;
+  type?: SourceFormat;
+  purpose?: SourcePurpose;
+  evidenceLabel?: string;
 }
 
 export interface DatabaseCounts {

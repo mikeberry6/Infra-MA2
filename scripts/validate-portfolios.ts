@@ -15,6 +15,7 @@ import {
   type PortCo,
   type PortCoOwner,
 } from "../prisma/seed-data/portco-types";
+import { SOURCE_FORMATS, SOURCE_PURPOSE_ORDER } from "../src/lib/source-utils";
 
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -76,6 +77,12 @@ for (const [index, company] of companies.entries()) {
     for (const source of company.sources) {
       if (!source.label) addError(`${label}: source without label`);
       if (!source.url || !validUrl(source.url)) addError(`${label}: invalid source URL "${source.url}"`);
+      if (source.type && !SOURCE_FORMATS.includes(source.type)) {
+        addError(`${label}: invalid source type "${source.type}"`);
+      }
+      if (source.purpose && !SOURCE_PURPOSE_ORDER.includes(source.purpose)) {
+        addError(`${label}: invalid source purpose "${source.purpose}"`);
+      }
       if (source.url) seenSourceUrls.add(source.url);
     }
   }

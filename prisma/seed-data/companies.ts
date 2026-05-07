@@ -9453,6 +9453,46 @@ export const companies: PortCo[] = [
     ],
   },
   {
+    name: "Boralex Inc.",
+    investmentFirm: "Brookfield Asset Management",
+    sector: "Power & ET",
+    subsector: "Renewable power generation and development",
+    region: "Global",
+    country: "United States / Canada / France / United Kingdom",
+    ownershipVehicle: "Brookfield flagship infrastructure strategy",
+    description: "Boralex develops, builds, owns, and operates renewable power and energy storage assets across Canada, the United States, France, and the United Kingdom. Its customers and counterparties include utilities, corporate offtakers, public procurement entities, and power-market participants that buy contracted renewable electricity, capacity, and related environmental attributes. The business is asset-heavy because value depends on wind, solar, hydroelectric, and battery storage facilities plus a development pipeline rather than on advisory or services revenue alone. Boralex reported 3,783 MW of installed capacity as of December 31, 2025 and an 8.2 GW portfolio of projects in development and construction. Brookfield and La Caisse announced a definitive agreement in March 2026 to acquire Boralex in an all-cash take-private transaction, with Brookfield expected to hold 70% and La Caisse expected to increase its ownership to 30% after closing; the transaction was expected to close by Q4 2026 subject to shareholder, court, regulatory, and other customary approvals.",
+    status: "Active",
+    countryTags: ["United States", "Canada"],
+    website: "https://www.boralex.com/",
+    yearFounded: 1990,
+    investmentYear: 2026,
+    headquarters: "Quebec; United States; France; United Kingdom",
+    milestones: [
+      { date: "1990", event: "Boralex was founded in Quebec as a renewable energy producer.", category: "Founding" },
+      { date: "2017", event: "La Caisse began supporting Boralex as a shareholder and lender, according to the March 2026 transaction announcement.", category: "Financing" },
+      { date: "Dec 31, 2025", event: "Boralex reported 3,783 MW of installed capacity and an 8.2 GW development and construction portfolio.", category: "Other" },
+      { date: "Mar 25, 2026", event: "Brookfield and La Caisse announced a definitive agreement to acquire Boralex for C$37.25 per share in cash.", category: "Acquisition" },
+      { date: "Mar 25, 2026", event: "The transaction announcement stated that La Caisse would own 30% and Brookfield would own 70% of Boralex after closing.", category: "Financing" },
+      { date: "Q4 2026", event: "The parties expected the Boralex take-private transaction to close by Q4 2026, subject to required approvals and other customary closing conditions.", category: "Other" },
+    ],
+    management: [
+      { name: "Patrick Decostre", title: "President and Chief Executive Officer" },
+      { name: "Stéphane Milot", title: "Executive Vice President and Chief Financial Officer (interim)" },
+    ],
+    sources: [
+      { label: "Boralex — Boralex Inc.", url: "https://www.boralex.com/" },
+      { label: "Announcement date source — Brookfield Asset Management / La Caisse — Boralex Inc.", url: "https://www.boralex.com/en/press-releases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-la-caisse" },
+      { label: "Announcement date source — La Caisse — Boralex Inc.", url: "https://www.lacaisse.com/en/news/pressreleases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-caisse" },
+      { label: "Scale source — Boralex Inc.", url: "https://us.boralex.com/en/press-releases/boralex-annual-results-2025" },
+      { label: "Management source — Boralex Inc.", url: "https://www.boralex.com/en/investors/our-governance/patrick-decostre" },
+      { label: "CFO transition source — Boralex Inc.", url: "https://us.boralex.com/en/press-releases/boralex-announces-departure-its-chief-financial-officer" },
+    ],
+    owners: [
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2017, stake: "30% pro forma post-close; shareholder/lender since 2017", status: "Active" },
+      { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield flagship infrastructure strategy", investmentYear: 2026, stake: "70% pro forma post-close", status: "Active" },
+    ],
+  },
+  {
     name: "California Bioenergy",
     investmentFirm: "Brookfield Asset Management",
     sector: "Power & ET",
@@ -25994,7 +26034,6 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Kkr — Monterra Energy", url: "https://www.kkr.com/businesses/infrastructure" },
       { label: "Kkr — Monterra Energy", url: "https://www.kkr.com/" },
-      { label: "Kkr — Monterra Energy", url: "https://www.kkr.com/businesses/infrastructure" },
     ],
     owners: [
       { investmentFirm: "KKR", ownershipVehicle: "KKR Infrastructure", investmentYear: 2015, status: "Active" },
@@ -31911,7 +31950,6 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Bigfiber — BIG Fiber", url: "https://bigfiber.com/" },
       { label: "Sdccapitalpartners — BIG Fiber", url: "https://sdccapitalpartners.com/investments/" },
-      { label: "Bigfiber — BIG Fiber", url: "https://bigfiber.com/" },
       { label: "Investment date source — SDC — BIG Fiber", url: "https://www.fierce-network.com/telecom/bandwidth-pitches-its-dark-fiber-alternative-big-name-rivals-3-key-markets" },
       { label: "Investment date source — SDC — BIG Fiber", url: "https://www.privsource.com/acquisitions/telecommunications/2020" },
     ],

@@ -49,15 +49,21 @@ function toCompanyView(company: any): CompanyView {
     title: r.title,
   }));
 
-  // Dedupe by URL: the underlying Citation table can contain multiple rows for
-  // the same (companyId, sourceId), and rendering each one would surface the
-  // same link N times in the drawer. Keep insertion order so the first cite wins.
-  const seenSourceUrls = new Set<string>();
+  // Dedupe identical citation rows while allowing one URL to support multiple
+  // distinct source purposes on the same company scorecard.
+  const seenSourceKeys = new Set<string>();
   const sources: SourceView[] | undefined = company.citations
-    ?.map((c: any) => ({ label: c.source.label, url: c.source.url }))
+    ?.map((c: any) => ({
+      label: c.source.label,
+      url: c.source.url,
+      type: c.source.type,
+      purpose: c.purpose,
+      evidenceLabel: c.evidenceLabel || undefined,
+    }))
     .filter((s: SourceView) => {
-      if (seenSourceUrls.has(s.url)) return false;
-      seenSourceUrls.add(s.url);
+      const sourceKey = `${s.url}|${s.purpose || ""}|${s.evidenceLabel || s.label}`;
+      if (seenSourceKeys.has(sourceKey)) return false;
+      seenSourceKeys.add(sourceKey);
       return true;
     });
 
@@ -107,7 +113,7 @@ const COMPANY_INCLUDE = {
   },
   citations: {
     include: {
-      source: { select: { label: true, url: true } },
+      source: { select: { label: true, url: true, type: true } },
     },
   },
 };
@@ -171,7 +177,7 @@ function mergeByCanonicalKey(views: CompanyView[]): CompanyView {
   );
   const sources = dedup(
     views.flatMap((v) => v.sources ?? []),
-    (s) => s.url,
+    (s) => `${s.url}|${s.purpose ?? ""}|${s.evidenceLabel ?? s.label}`,
   );
   const countryTags = Array.from(new Set(views.flatMap((v) => v.countryTags ?? [])));
 

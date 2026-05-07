@@ -12,7 +12,7 @@ function flattenMilestones(ms?: MilestoneView[]): string {
 
 function flattenSources(sources?: SourceView[]): string {
   if (!sources?.length) return "";
-  return sources.map((s) => `${s.label}: ${s.url}`).join("; ");
+  return sources.map((s) => `${s.evidenceLabel || s.label}: ${s.url}`).join("; ");
 }
 
 function flattenCountryTags(tags?: string[]): string {

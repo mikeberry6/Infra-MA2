@@ -248,7 +248,14 @@ function serializePortCo(pc: PortCo): string {
   if (pc.sources && pc.sources.length > 0) {
     lines.push(`    sources: [`);
     for (const src of pc.sources) {
-      lines.push(`      { label: ${JSON.stringify(src.label)}, url: ${JSON.stringify(src.url)} },`);
+      const fields = [
+        `label: ${JSON.stringify(src.label)}`,
+        `url: ${JSON.stringify(src.url)}`,
+        ...(src.type ? [`type: ${JSON.stringify(src.type)}`] : []),
+        ...(src.purpose ? [`purpose: ${JSON.stringify(src.purpose)}`] : []),
+        ...(src.evidenceLabel ? [`evidenceLabel: ${JSON.stringify(src.evidenceLabel)}`] : []),
+      ];
+      lines.push(`      { ${fields.join(", ")} },`);
     }
     lines.push(`    ],`);
   }

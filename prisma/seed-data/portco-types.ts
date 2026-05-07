@@ -1,5 +1,7 @@
 // ─── PortCo Types ───────────────────────────────────────────
 
+import type { SourceFormat, SourcePurpose } from "../../src/lib/source-utils";
+
 export type MilestoneCategory =
   | "Founding"
   | "Acquisition"
@@ -45,6 +47,9 @@ export interface PortCoExecutive {
 export interface PortCoSource {
   label: string;
   url: string;
+  type?: SourceFormat;
+  purpose?: SourcePurpose;
+  evidenceLabel?: string;
 }
 
 export interface PortCoOwner {

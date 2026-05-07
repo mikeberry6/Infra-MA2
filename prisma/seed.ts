@@ -20,6 +20,12 @@ import {
   DEAL_STATUS_MAP,
   MILESTONE_CATEGORY_MAP,
 } from "../src/modules/shared/enum-maps";
+import {
+  dedupeExactPortCoSources,
+  inferCitationPurpose,
+  inferSourceType,
+  getSourceDisplayLabel,
+} from "../src/lib/source-utils";
 import type {
   OrgType,
   FundStrategy,
@@ -36,6 +42,8 @@ import type {
   DealStatusEnum,
   MilestoneCategory,
   ParticipantRole,
+  CitationPurpose,
+  SourceType,
 } from "../src/generated/prisma/client";
 import * as bcrypt from "bcryptjs";
 
@@ -606,19 +614,38 @@ async function main() {
 
   console.log("Step 10: Creating sources and citations...");
   const sourceIdMap = new Map<string, string>(); // URL -> DB id
+  const sourceTypeMap = new Map<string, SourceType>();
   let sourceCount = 0;
   let citationCount = 0;
 
+  const sourceTypeRank: Record<SourceType, number> = {
+    OTHER: 0,
+    ARTICLE: 1,
+    WEBSITE: 2,
+    PRESS_RELEASE: 3,
+    PRESENTATION: 4,
+    SEC_FILING: 5,
+  };
+
   // Helper to get or create a source by URL
-  async function getOrCreateSource(url: string, label: string): Promise<string> {
-    if (sourceIdMap.has(url)) return sourceIdMap.get(url)!;
+  async function getOrCreateSource(url: string, label: string, type: SourceType = "ARTICLE"): Promise<string> {
+    if (sourceIdMap.has(url)) {
+      const id = sourceIdMap.get(url)!;
+      const currentType = sourceTypeMap.get(url) ?? "ARTICLE";
+      if (sourceTypeRank[type] > sourceTypeRank[currentType]) {
+        await prisma.source.update({ where: { id }, data: { type } });
+        sourceTypeMap.set(url, type);
+      }
+      return id;
+    }
 
     const source = await prisma.source.upsert({
       where: { url },
-      update: {},
-      create: { label, url, type: "ARTICLE" },
+      update: { type },
+      create: { label, url, type },
     });
     sourceIdMap.set(url, source.id);
+    sourceTypeMap.set(url, type);
     sourceCount++;
     return source.id;
   }
@@ -628,7 +655,7 @@ async function main() {
     const dealId = dealIdMap.get(deal.id);
     if (!dealId || !deal.sourceUrl) continue;
 
-    const sourceId = await getOrCreateSource(deal.sourceUrl, deal.sourceName || "");
+    const sourceId = await getOrCreateSource(deal.sourceUrl, deal.sourceName || "", "ARTICLE");
     try {
       await prisma.citation.create({
         data: { sourceId, dealId },
@@ -646,12 +673,17 @@ async function main() {
     const companyId = companyIdMap.get(companyKey);
     if (!companyId) continue;
 
-    for (const src of pc.sources) {
+    const { kept: keptSources } = dedupeExactPortCoSources(pc.sources);
+
+    for (const src of keptSources) {
       if (!src.url) continue;
-      const sourceId = await getOrCreateSource(src.url, src.label);
+      const sourceType = inferSourceType(src) as SourceType;
+      const purpose = inferCitationPurpose(src) as CitationPurpose;
+      const evidenceLabel = src.evidenceLabel || getSourceDisplayLabel({ ...src, purpose, type: sourceType });
+      const sourceId = await getOrCreateSource(src.url, src.label, sourceType);
       try {
         await prisma.citation.create({
-          data: { sourceId, companyId },
+          data: { sourceId, companyId, purpose, evidenceLabel },
         });
         citationCount++;
       } catch {
@@ -665,7 +697,7 @@ async function main() {
     if (!fund.sourceUrls || fund.sourceUrls.length === 0) continue;
     for (const url of fund.sourceUrls) {
       if (!url) continue;
-      await getOrCreateSource(url, fund.fundName);
+      await getOrCreateSource(url, fund.fundName, inferSourceType({ label: fund.fundName, url }) as SourceType);
     }
   }
 
