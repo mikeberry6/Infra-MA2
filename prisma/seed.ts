@@ -301,7 +301,7 @@ async function main() {
 
   console.log("Step 5: Creating ownership periods...");
   let ownershipCount = 0;
-  const ownershipSeen = new Set<string>(); // track companyId|orgId to avoid dupes
+  const ownershipSeen = new Set<string>(); // track companyId|orgId|vehicle to avoid dupes
 
   async function createOwnership(
     companyId: string,
@@ -315,7 +315,8 @@ async function main() {
     const orgId = getOrgId(investmentFirm);
     if (!orgId) return;
 
-    const dedupeKey = `${companyId}|${orgId}`;
+    const vehicleName = ownershipVehicle || investmentFirm;
+    const dedupeKey = `${companyId}|${orgId}|${vehicleName}`;
     if (ownershipSeen.has(dedupeKey)) return;
     ownershipSeen.add(dedupeKey);
 
@@ -328,7 +329,7 @@ async function main() {
           companyId,
           organizationId: orgId,
           fundId,
-          vehicleName: ownershipVehicle || null,
+          vehicleName,
           stake: stake || null,
           investmentYear: investmentYear || null,
           exitYear: exitYear || null,

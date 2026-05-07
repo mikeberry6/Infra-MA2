@@ -106,15 +106,20 @@ async function main() {
     }
 
     await prisma.$transaction(async (tx) => {
-      // Move ownership periods (skip orgs the keep row already has — schema
-      // enforces unique [companyId, organizationId]).
-      const keepOrgIds = new Set(
-        (await tx.ownershipPeriod.findMany({ where: { companyId: keep.id }, select: { organizationId: true } }))
-          .map((p) => p.organizationId).filter((x): x is string => !!x),
+      // Move ownership periods (skip exact org+vehicle pairs the keep row
+      // already has; one org can own through multiple vehicles).
+      const keepOwnershipKeys = new Set(
+        (await tx.ownershipPeriod.findMany({
+          where: { companyId: keep.id },
+          select: { organizationId: true, vehicleName: true },
+        }))
+          .map((p) => `${p.organizationId ?? ""}|${p.vehicleName ?? ""}`),
       );
       for (const op of dup.ownershipPeriods) {
-        if (op.organizationId && keepOrgIds.has(op.organizationId)) continue;
+        const key = `${op.organizationId ?? ""}|${op.vehicleName ?? ""}`;
+        if (keepOwnershipKeys.has(key)) continue;
         await tx.ownershipPeriod.update({ where: { id: op.id }, data: { companyId: keep.id } });
+        keepOwnershipKeys.add(key);
         totalOpsMoved++;
       }
 

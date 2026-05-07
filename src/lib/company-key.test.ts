@@ -109,14 +109,26 @@ describe("companyDedupKeys — multi-key matching", () => {
     expect(intersects(a, b)).toBe(true);
   });
 
+  it("collapses Vantage platform and stabilized-portfolio variants", () => {
+    const canonical = companyDedupKeys("Vantage Data Centers");
+    expect(intersects(
+      canonical,
+      companyDedupKeys("Vantage Data Centers North America"),
+    )).toBe(true);
+    expect(intersects(
+      canonical,
+      companyDedupKeys("Vantage Data Centers Stabilized North America Portfolio"),
+    )).toBe(true);
+    expect(intersects(
+      canonical,
+      companyDedupKeys("Vantage SDC"),
+    )).toBe(true);
+  });
+
   it("does NOT collapse legitimately different companies", () => {
     expect(intersects(
       companyDedupKeys("Renewable Energy AssetCo 1"),
       companyDedupKeys("Renewable Energy AssetCo 2"),
-    )).toBe(false);
-    expect(intersects(
-      companyDedupKeys("Vantage Data Centers"),
-      companyDedupKeys("Vantage Data Centers Stabilized North America Portfolio"),
     )).toBe(false);
   });
 });
@@ -151,6 +163,14 @@ describe("preferredDisplayName", () => {
 
   it("ties on tokens are broken by length", () => {
     expect(preferredDisplayName(["AT&T Inc", "AT and T Inc"])).toBe("AT and T Inc");
+  });
+
+  it("keeps the Vantage platform name when variants are merged", () => {
+    expect(preferredDisplayName([
+      "Vantage Data Centers",
+      "Vantage Data Centers Stabilized North America Portfolio",
+      "Vantage SDC",
+    ])).toBe("Vantage Data Centers");
   });
 
   it("returns the only entry when given one", () => {

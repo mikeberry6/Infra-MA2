@@ -56,6 +56,17 @@ function peelSuffixes(s: string): string {
   return n;
 }
 
+function applyCuratedAliases(s: string): string {
+  if (
+    s === "vantage sdc" ||
+    s === "vantage data centers north america" ||
+    s === "vantage data centers stabilized north america"
+  ) {
+    return "vantage data centers";
+  }
+  return s;
+}
+
 // Returns the primary canonical key (parens stripped to nothing). Kept as a
 // named export for callers that just want a single key (most callers should
 // use `companyDedupKeys` instead).
@@ -64,7 +75,7 @@ export function canonicalCompanyKey(name: string): string {
   n = n.replace(/\s*\([^)]*\)\s*/g, " ");
   n = stripPunctAndCollapse(n);
   n = n.replace(/^the\s+/, "").trim();
-  return peelSuffixes(n);
+  return applyCuratedAliases(peelSuffixes(n));
 }
 
 // Returns the SET of equivalence keys for a company name. Two companies
@@ -85,14 +96,14 @@ export function companyDedupKeys(name: string): Set<string> {
   let a = lower.replace(/\s*\([^)]*\)\s*/g, " ");
   a = stripPunctAndCollapse(a);
   a = a.replace(/^the\s+/, "").trim();
-  a = peelSuffixes(a);
+  a = applyCuratedAliases(peelSuffixes(a));
   if (a) keys.add(a);
 
   // Variant B: parens removed but their contents kept as bare tokens.
   let b = lower.replace(/\s*\(([^)]*)\)\s*/g, " $1 ");
   b = stripPunctAndCollapse(b);
   b = b.replace(/^the\s+/, "").trim();
-  b = peelSuffixes(b);
+  b = applyCuratedAliases(peelSuffixes(b));
   if (b) keys.add(b);
 
   return keys;
@@ -105,6 +116,9 @@ export function companyDedupKeys(name: string): Set<string> {
 export function preferredDisplayName(names: string[]): string {
   if (names.length === 0) return "";
   if (names.length === 1) return names[0];
+  if (names.some((name) => applyCuratedAliases(canonicalCompanyKey(name)) === "vantage data centers")) {
+    return "Vantage Data Centers";
+  }
   return [...names].sort((a, b) => {
     const tokensA = a.split(/\s+/).filter(Boolean).length;
     const tokensB = b.split(/\s+/).filter(Boolean).length;

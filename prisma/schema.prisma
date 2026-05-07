@@ -212,7 +212,7 @@ model OwnershipPeriod {
   isActive       Boolean       @default(true)
   createdAt      DateTime      @default(now())
 
-  @@unique([companyId, organizationId])
+  @@unique([companyId, organizationId, vehicleName])
   @@index([fundId])
   @@index([organizationId])
   @@index([companyId])

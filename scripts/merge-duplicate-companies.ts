@@ -21,8 +21,8 @@
  *   1. Pick a canonical Company (most milestones → longest description →
  *      shortest name).
  *   2. Move every duplicate's OwnershipPeriod to the canonical company,
- *      respecting the @@unique([companyId, organizationId]) constraint
- *      (skip if the canonical already has that org).
+ *      respecting the @@unique([companyId, organizationId, vehicleName]) constraint
+ *      (skip if the canonical already has that org+vehicle pair).
  *   3. Move milestones (dedup by date+event), managementRoles, citations,
  *      countryTags onto the canonical row.
  *   4. Backfill canonical fields (description, headquarters, yearFounded,
@@ -103,21 +103,24 @@ async function main() {
 
     await prisma.$transaction(async (tx) => {
       for (const dup of duplicates) {
-        // Move ownership periods (skip if canonical already has that org)
-        const canonicalOrgIds = new Set(
+        // Move ownership periods (skip exact org+vehicle pairs; the same
+        // organization can own through multiple funds/vehicles).
+        const canonicalOwnershipKeys = new Set(
           (
             await tx.ownershipPeriod.findMany({
               where: { companyId: canonical.id },
-              select: { organizationId: true },
+              select: { organizationId: true, vehicleName: true },
             })
-          ).map((p) => p.organizationId).filter((x): x is string => !!x),
+          ).map((p) => `${p.organizationId ?? ""}|${p.vehicleName ?? ""}`),
         );
         for (const op of dup.ownershipPeriods) {
-          if (op.organizationId && canonicalOrgIds.has(op.organizationId)) continue;
+          const ownershipKey = `${op.organizationId ?? ""}|${op.vehicleName ?? ""}`;
+          if (canonicalOwnershipKeys.has(ownershipKey)) continue;
           await tx.ownershipPeriod.update({
             where: { id: op.id },
             data: { companyId: canonical.id },
           });
+          canonicalOwnershipKeys.add(ownershipKey);
           movedOwnerships++;
         }
 

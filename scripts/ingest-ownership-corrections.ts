@@ -260,18 +260,20 @@ async function buildPlan(
             },
           });
           // Then create the OwnershipPeriod, guarded by the unique
-          // [companyId, organizationId] constraint
+          // [companyId, organizationId, vehicleName] constraint
           await prisma.ownershipPeriod.upsert({
             where: {
-              companyId_organizationId: {
+              companyId_organizationId_vehicleName: {
                 companyId: company.id,
                 organizationId: org.id,
+                vehicleName: orgName,
               },
             },
             update: {},
             create: {
               companyId: company.id,
               organizationId: org.id,
+              vehicleName: orgName,
               isActive: true,
               stake: stakeFromProse(row.revisedOwnersRaw, orgName),
             },
@@ -285,15 +287,17 @@ async function buildPlan(
         apply: async () => {
           await prisma.ownershipPeriod.upsert({
             where: {
-              companyId_organizationId: {
+              companyId_organizationId_vehicleName: {
                 companyId: company.id,
                 organizationId: r.org!.id,
+                vehicleName: r.org!.name,
               },
             },
             update: {},
             create: {
               companyId: company.id,
               organizationId: r.org!.id,
+              vehicleName: r.org!.name,
               isActive: true,
               stake: stakeFromProse(row.revisedOwnersRaw, r.org!.name),
             },
