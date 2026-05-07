@@ -5,6 +5,8 @@
 ALTER TABLE "OwnershipPeriod"
   DROP CONSTRAINT IF EXISTS "OwnershipPeriod_companyId_organizationId_key";
 
+DROP INDEX IF EXISTS "OwnershipPeriod_companyId_organizationId_key";
+
 UPDATE "Company"
 SET
   "subsector" = 'Hyperscale data centers',
@@ -382,25 +384,30 @@ DELETE FROM "Citation"
 WHERE "companyId" IN (SELECT "id" FROM duplicates)
   AND EXISTS (SELECT 1 FROM canonical);
 
-WITH canonical AS (
-  SELECT "id"
-  FROM "Company"
-  WHERE "name" = 'Vantage Data Centers'
-  LIMIT 1
-),
-duplicates AS (
-  SELECT "id"
-  FROM "Company"
-  WHERE "name" IN (
-    'Vantage Data Centers North America',
-    'Vantage SDC',
-    'Vantage Data Centers Stabilized North America Portfolio'
-  )
-)
-UPDATE "NewsMention"
-SET "companyId" = (SELECT "id" FROM canonical)
-WHERE "companyId" IN (SELECT "id" FROM duplicates)
-  AND EXISTS (SELECT 1 FROM canonical);
+DO $$
+BEGIN
+  IF to_regclass('public."NewsMention"') IS NOT NULL THEN
+    WITH canonical AS (
+      SELECT "id"
+      FROM "Company"
+      WHERE "name" = 'Vantage Data Centers'
+      LIMIT 1
+    ),
+    duplicates AS (
+      SELECT "id"
+      FROM "Company"
+      WHERE "name" IN (
+        'Vantage Data Centers North America',
+        'Vantage SDC',
+        'Vantage Data Centers Stabilized North America Portfolio'
+      )
+    )
+    UPDATE "NewsMention"
+    SET "companyId" = (SELECT "id" FROM canonical)
+    WHERE "companyId" IN (SELECT "id" FROM duplicates)
+      AND EXISTS (SELECT 1 FROM canonical);
+  END IF;
+END $$;
 
 WITH canonical AS (
   SELECT "id"
