@@ -7365,13 +7365,14 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Close date source — BCI — InTransit BC", url: "https://www.lexpert.ca/big-deals/ravco-intransit-bc-and-the-gvta-enter-into-p3/345743" },
       { label: "Close date source — CDPQ — InTransit BC", url: "https://www.lexpert.ca/big-deals/ravco-intransit-bc-and-the-gvta-enter-into-p3/345743" },
+      { label: "Interest confirmation source — CDPQ — InTransit BC", url: "https://www.cdpqinfra.com/sites/cdpqinfrad8/files/2021-10/03-CDPQI-AAM-EN_notice_to_market.pdf", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ 33.3% ownership interest" },
       { label: "Bci — InTransit BC", url: "https://www.bci.ca/wp-content/uploads/2018/01/2022_InfrastructureRenewableResources-Pooled-Fund-Financial-Statements-1.pdf" },
       { label: "Translink — InTransit BC", url: "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/quarterly_reports/2024/2024-year-end-financial-and-performance-report.pdf" },
       { label: "Translink — InTransit BC", url: "https://www.translink.ca/about-us/projects/canada-line" },
     ],
     owners: [
       { investmentFirm: "BCI", ownershipVehicle: "Infrastructure & Renewable Resources", investmentYear: 2005, status: "Active" },
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure (33.3% Stake)", investmentYear: 2005, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2005, stake: "33.3%", status: "Active" },
     ],
   },
   {
@@ -9447,14 +9448,14 @@ export const companies: PortCo[] = [
     ],
     sources: [
       { label: "Boralex — Boralex Inc.", url: "https://www.boralex.com/" },
-      { label: "Announcement date source — Brookfield Asset Management / La Caisse — Boralex Inc.", url: "https://www.boralex.com/en/press-releases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-la-caisse" },
+      { label: "Announcement date source — Brookfield Asset Management / La Caisse — Boralex Inc.", url: "https://www.boralex.com/en/press-releases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-la-caisse", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "La Caisse 30% pro forma post-close; 15% pre-close" },
       { label: "Announcement date source — La Caisse — Boralex Inc.", url: "https://www.lacaisse.com/en/news/pressreleases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-caisse" },
       { label: "Scale source — Boralex Inc.", url: "https://us.boralex.com/en/press-releases/boralex-annual-results-2025" },
       { label: "Management source — Boralex Inc.", url: "https://www.boralex.com/en/investors/our-governance/patrick-decostre" },
       { label: "CFO transition source — Boralex Inc.", url: "https://us.boralex.com/en/press-releases/boralex-announces-departure-its-chief-financial-officer" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2017, stake: "30% pro forma post-close; shareholder/lender since 2017", status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2017, stake: "30% pro forma post-close; 15% pre-close", status: "Active" },
       { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield flagship infrastructure strategy", investmentYear: 2026, stake: "70% pro forma post-close", status: "Active" },
     ],
   },
@@ -12082,12 +12083,12 @@ export const companies: PortCo[] = [
       { date: "2023", event: "A25 continued operating as a tolled urban road and bridge asset in Québec.", category: "Other" },
     ],
     sources: [
-      { label: "Announcement date source — CDPQ — A25 Concession", url: "https://www.lacaisse.com/en/news/pressreleases/cdpq-acquires-50-montreals-a25-concession-transurban" },
+      { label: "Announcement date source — CDPQ — A25 Concession", url: "https://www.lacaisse.com/en/news/pressreleases/cdpq-acquires-50-montreals-a25-concession-transurban", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ 50% interest in A25 Concession" },
       { label: "A25 — A25 Concession", url: "https://a25.com/en/" },
       { label: "Close date source — CDPQ — A25 Concession", url: "https://www.mccarthy.ca/en/experience/cdpq-acquires-a-50-interest-in-the-a25-concession-from-transurban-for-c-355m" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2023, stake: "50%", status: "Active" },
     ],
   },
   {
@@ -12097,7 +12098,7 @@ export const companies: PortCo[] = [
     subsector: "Regulated electric utility",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "CDPQ Infrastructure (~30% Stake)",
+    ownershipVehicle: "CDPQ Infrastructure",
     description: "AES Indiana is a regulated electric utility serving customers in the Indianapolis area. Its customer base consists of retail electricity users served through a regulated distribution and generation system rather than through competitive merchant power arrangements. The business is asset-heavy and rate-regulated because value is tied to utility infrastructure and approved investment recovery. AES filings state that CDPQ owns direct and indirect interests in IPALCO totaling approximately 30%. Its principal operating footprint is in Indiana. CDPQ established its utility partnership with AES through an initial February 11, 2015 investment in IPALCO/AES Indiana and later used the same model for AES Ohio, with AES remaining the operating sponsor.",
     status: "Active",
     countryTags: ["United States"],
@@ -12113,9 +12114,10 @@ export const companies: PortCo[] = [
       { label: "Aesindiana — AES Indiana", url: "https://www.aesindiana.com/" },
       { label: "Partnership source — CDPQ — AES Indiana", url: "https://www.lacaisse.com/en/news/pressreleases/aes-announces-strategic-partnership-cdpq-support-aes-ohios-robust-growth-plans" },
       { label: "Investment date source — CDPQ — AES Indiana", url: "https://www.sec.gov/Archives/edgar/data/728391/000072839116000035/ipalco10k20151231.htm" },
+      { label: "Interest confirmation source — CDPQ — AES Indiana", url: "https://www.aes.com/sites/vault/files/2026-03/AES-Corp-2025-Annual-Report-03-20-2026.pdf", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ approximately 30% direct and indirect interest in IPALCO" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure (~30% Stake)", investmentYear: 2015, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2015, stake: "Approximately 30% direct and indirect interest in IPALCO", status: "Active" },
     ],
   },
   {
@@ -12125,7 +12127,7 @@ export const companies: PortCo[] = [
     subsector: "Regulated electric utility",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "CDPQ Infrastructure (30% Stake)",
+    ownershipVehicle: "CDPQ Infrastructure",
     description: "AES Ohio is a regulated electric utility serving customers in the Dayton region. Its customer base consists of regulated retail electricity users connected to local transmission and distribution infrastructure rather than competitive merchant-power buyers. The business is asset-heavy and rate-regulated because earnings depend on utility capital investment and authorized recovery mechanisms. AES stated that CDPQ began owning an aggregate indirect equity interest of approximately 30% in AES Ohio on April 4, 2025. Its principal operating footprint is in Ohio. AES and CDPQ announced the transaction in September 2024 as an extension of their utility partnership model, with AES remaining the operator.",
     status: "Active",
     countryTags: ["United States"],
@@ -12138,12 +12140,12 @@ export const companies: PortCo[] = [
       { date: "Mar 20, 2026", event: "AES reiterated the 30% CDPQ ownership position in its 2025 annual report.", category: "Other" },
     ],
     sources: [
-      { label: "Announcement date source — CDPQ — AES Ohio", url: "https://www.lacaisse.com/en/news/pressreleases/aes-announces-strategic-partnership-cdpq-support-aes-ohios-robust-growth-plans" },
+      { label: "Announcement date source — CDPQ — AES Ohio", url: "https://www.lacaisse.com/en/news/pressreleases/aes-announces-strategic-partnership-cdpq-support-aes-ohios-robust-growth-plans", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ approximately 30% indirect equity interest in AES Ohio" },
       { label: "Aes — AES Ohio", url: "https://www.aes.com/sites/vault/files/2026-03/AES-Corp-2025-Annual-Report-03-20-2026.pdf" },
       { label: "Close date source — CDPQ — AES Ohio", url: "https://www.sec.gov/Archives/edgar/data/787250/000078725025000039/dpl-20250930.htm" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure (30% Stake)", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2025, stake: "Approximately 30% indirect equity interest", status: "Active" },
     ],
   },
   {
@@ -12168,11 +12170,11 @@ export const companies: PortCo[] = [
     ],
     sources: [
       { label: "Altotrain — Alto", url: "https://www.altotrain.ca/en/shaping-canadas-future-high-speed-train" },
-      { label: "Investment date source — CDPQ — Alto", url: "https://prod.cdpqinfra.com/en/news/pressreleases/toronto-quebec-city-high-speed-rail-first-major-milestone-reached" },
+      { label: "Investment date source — CDPQ — Alto", url: "https://prod.cdpqinfra.com/en/news/pressreleases/toronto-quebec-city-high-speed-rail-first-major-milestone-reached", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ Infra-led Cadence consortium; ownership percentage not publicly disclosed" },
       { label: "Cadence — Alto", url: "https://cadence.info/en" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infra", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infra", investmentYear: 2025, stake: "Not publicly disclosed", status: "Active" },
     ],
   },
   {
@@ -12182,7 +12184,7 @@ export const companies: PortCo[] = [
     subsector: "Port terminals and marine logistics",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "CDPQ / DP World Platform (45% Stake)",
+    ownershipVehicle: "CDPQ / DP World Platform",
     description: "DP World Canada operates marine terminals and related logistics infrastructure in Canada. Its customers include ocean carriers, importers, exporters, and supply-chain intermediaries that require terminal, stevedoring, and logistics services. The business is asset-heavy because value depends on port terminals, marine logistics assets, and throughput volumes. Public descriptions of the platform cite operations in Vancouver, Nanaimo, Prince Rupert, and Saint John. Its principal operating footprint is in British Columbia and New Brunswick. DP World and CDPQ announced their 55/45 ports-and-terminals investment platform in December 2016, and the Canadian terminal stake transaction closed in January 2017.",
     status: "Active",
     countryTags: ["Canada"],
@@ -12197,12 +12199,12 @@ export const companies: PortCo[] = [
     ],
     sources: [
       { label: "Dpworld — DP World Canada", url: "https://www.dpworld.com/en/canada" },
-      { label: "Announcement date source — CDPQ — DP World Canada", url: "https://www.dpworld.com/en/news/dp-world-and-cdpq-expand-global-investment-platform-to-us82-billion" },
+      { label: "Announcement date source — CDPQ — DP World Canada", url: "https://www.dpworld.com/en/news/dp-world-and-cdpq-expand-global-investment-platform-to-us82-billion", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ 45% of DP World/CDPQ ports platform" },
       { label: "Close date source — CDPQ — DP World Canada", url: "https://www.offshore-energy.biz/cdpq-acquires-stake-in-dp-worlds-canadian-terminals/" },
       { label: "Dpworld — DP World Canada", url: "https://www.dpworld.com/en/news/dp-world-acquires-fraser-surrey-docks" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ / DP World Platform (45% Stake)", investmentYear: 2017, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ / DP World Platform", investmentYear: 2017, stake: "45% of DP World/CDPQ ports platform", status: "Active" },
     ],
   },
   {
@@ -12212,7 +12214,7 @@ export const companies: PortCo[] = [
     subsector: "Utility-scale renewable generation",
     region: "North America",
     country: "Mexico",
-    ownershipVehicle: "CDPQ / CKD IM Platform (80% Stake; CDPQ 40.8%)",
+    ownershipVehicle: "CDPQ / CKD IM Platform",
     description: "Enel Green Power Mexico develops and operates utility-scale renewable power assets in Mexico. Its end markets are wholesale power purchasers and contracted offtakers rather than retail electricity customers. The operating model is asset-heavy and project based, with cash flows tied to large solar and wind plants and related project structures. Public transaction materials state that CDPQ and CKD IM acquired an 80% stake in eight Mexican renewable-project SPVs while Enel retained the remaining 20%; Enel's closing release states CDPQ held 40.8% through Kino Holding. The transaction was announced in October 2017 and closed on September 28, 2018, and Enel Green Power Mexico has continued to report operational and digitalization milestones for its renewable platform in the years since.",
     status: "Active",
     countryTags: ["Mexico"],
@@ -12230,10 +12232,10 @@ export const companies: PortCo[] = [
       { label: "Enelgreenpower — Enel Green Power Mexico", url: "https://www.enelgreenpower.com/media/press/2022/07/enel-green-power-mexico-begins-new-era-renewable-energy-digitalization" },
       { label: "Cms — Enel Green Power Mexico", url: "https://cms.law/en/mex/legal-updates/mexican-canadian-joint-venture-purchases-80-of-mexican-renewable-portfolio-for-1.35-billion" },
       { label: "Announcement date source — CDPQ — Enel Green Power Mexico", url: "https://www.prnewswire.com/news-releases/cdpq-and-ckd-im-acquire-mexican-wind-and-solar-assets-of-enel-green-power-for-a-total-capacity-of-1712-mw-650083693.html" },
-      { label: "Close date source — CDPQ — Enel Green Power Mexico", url: "https://www.enelgreenpower.com/megamenu/media/press/2018/09/enel-closes-sale-of-majority-stake-in-18-gw-of-renewables-in-mexico-retains-plant-management" },
+      { label: "Close date source — CDPQ — Enel Green Power Mexico", url: "https://www.enelgreenpower.com/megamenu/media/press/2018/09/enel-closes-sale-of-majority-stake-in-18-gw-of-renewables-in-mexico-retains-plant-management", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ 40.8% interest in project SPVs" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ / CKD IM Platform (80% Stake; CDPQ 40.8%)", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ / CKD IM Platform", investmentYear: 2018, stake: "40.8% in project SPVs", status: "Active" },
     ],
   },
   {
@@ -12243,7 +12245,7 @@ export const companies: PortCo[] = [
     subsector: "Natural gas distribution and renewable gas",
     region: "North America",
     country: "United States / Canada",
-    ownershipVehicle: "Trencap L.P. (80.9% Stake)",
+    ownershipVehicle: "Trencap L.P.",
     description: "Énergir distributes natural gas and related energy services in Quebec and Vermont and is expanding activities in renewable natural gas, energy efficiency, and other low-carbon infrastructure. Its customer base includes residential, commercial, industrial, and institutional users served through regulated utility operations and related energy platforms. The business is asset-heavy and largely regulated because it depends on long-lived distribution networks, storage assets, and contracted infrastructure rather than merchant commodity exposure alone. Public company materials identify Quebec as the principal operating market, with an additional gas utility footprint in Vermont and renewable energy interests elsewhere in North America. CDPQ increased its stake in 2022 through Trencap L.P., after which the company disclosed ownership of 80.9% by CDPQ and 19.1% by Fonds de solidarité FTQ.",
     status: "Active",
     countryTags: ["United States", "Canada"],
@@ -12262,11 +12264,11 @@ export const companies: PortCo[] = [
       { label: "Energir — Énergir", url: "https://energir.com/en/about/the-company/who-we-are/history" },
       { label: "Investment date source — CDPQ — Énergir", url: "https://www.lexpert.ca/big-deals/capital-infragaz-acquires-5038-per-cent-of-noverco/345019" },
       { label: "Announcement date source — CDPQ — Énergir", url: "https://www.lacaisse.com/en/news/pressreleases/cdpq-increases-its-majority-stake-energir" },
-      { label: "Close date source — CDPQ — Énergir", url: "https://www.lacaisse.com/en/news/pressreleases/cdpq-increases-its-stake-energir-making-company-entirely-quebec-owned" },
+      { label: "Close date source — CDPQ — Énergir", url: "https://www.lacaisse.com/en/news/pressreleases/cdpq-increases-its-stake-energir-making-company-entirely-quebec-owned", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ 80.9% of Trencap" },
       { label: "Ftq — Énergir", url: "https://www.ftq.ca/en/2022/01/energir-becomes-entirely-quebec-owned-again/" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "Trencap L.P. (80.9% Stake)", investmentYear: 2004, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "Trencap L.P.", investmentYear: 2004, stake: "80.9% of Trencap", status: "Active" },
     ],
   },
   {
@@ -12276,7 +12278,7 @@ export const companies: PortCo[] = [
     subsector: "Toll road operating platform",
     region: "North America",
     country: "Mexico",
-    ownershipVehicle: "CDPQ Infrastructure (49% Stake)",
+    ownershipVehicle: "CDPQ Infrastructure",
     description: "ICA OVT is an operating platform for Mexican transport concessions, focused on toll road and tunnel assets. Its customers are passenger and freight users of concessioned road infrastructure rather than consumers purchasing transport services directly from a carrier. The operating model is asset-heavy and concession based, with revenues linked to toll collection and long-term operating rights. Public disclosures at formation stated that ICA transferred interests in four concession projects into the platform, including the Acapulco Tunnel, the Mayab Toll Road, the Rio Verde-Ciudad Valles Highway, and the La Piedad bypass. ICA and CDPQ completed the creation of ICA OVT in 2015 with a 51% and 49% ownership split, respectively.",
     status: "Active",
     countryTags: ["Mexico"],
@@ -12290,13 +12292,13 @@ export const companies: PortCo[] = [
       { date: "2016", event: "ICA public filings continued to describe the 51% ICA and 49% CDPQ ownership structure at formation.", category: "Other" },
     ],
     sources: [
-      { label: "Close date source — CDPQ — ICA Operadora de Vías Terrestres, S.A.P.I. de C.V.", url: "https://www.newswire.ca/news-releases/ica-and-cdpq-complete-ps-3014-million-transaction-to-create-ica-ovt-an-operational-platform-dedicated-to-transport-projects-in-mexico-517964061.html" },
+      { label: "Close date source — CDPQ — ICA Operadora de Vías Terrestres, S.A.P.I. de C.V.", url: "https://www.newswire.ca/news-releases/ica-and-cdpq-complete-ps-3014-million-transaction-to-create-ica-ovt-an-operational-platform-dedicated-to-transport-projects-in-mexico-517964061.html", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ 49% interest in ICA OVT" },
       { label: "SEC — ICA Operadora de Vías Terrestres, S.A.P.I. de C.V.", url: "https://www.sec.gov/Archives/edgar/data/885012/000119312515162630/d915830d20f.htm" },
       { label: "SEC — ICA Operadora de Vías Terrestres, S.A.P.I. de C.V.", url: "https://www.sec.gov/Archives/edgar/data/885012/000090342316000944/ica6k_0330.htm" },
       { label: "PR Newswire — ICA Operadora de Vías Terrestres, S.A.P.I. de C.V.", url: "https://www.prnewswire.com/news-releases/cdpq-and-leading-mexican-institutional-investors-create-co-investment-platform-to-invest-in-infrastructure-opportunities-in-mexico-300146280.html" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure (49% Stake)", investmentYear: 2015, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2015, stake: "49%", status: "Active" },
     ],
   },
   {
@@ -12306,7 +12308,7 @@ export const companies: PortCo[] = [
     subsector: "Toll road concession",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "CDPQ Infrastructure (15% Stake)",
+    ownershipVehicle: "CDPQ Infrastructure",
     description: "Indiana Toll Road operates the tolled east-west highway corridor across northern Indiana. Its users are passenger and freight vehicles that pay tolls for access to a major interstate transportation route. The business is asset-heavy and concession-based because value depends on a long-lived roadway asset, traffic demand, and concession rights rather than contracted utility-style revenues. Company materials describe the corridor as 157 miles in length. Its principal operating footprint is in Indiana. IFM Global Infrastructure Fund completed its original acquisition of the concession company in 2015, and CDPQ acquired a 15% interest from IFM Investors in 2021 while IFM retained a more-than-70% majority position.",
     status: "Active",
     countryTags: ["United States"],
@@ -12323,11 +12325,11 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Indianatollroad — Indiana Toll Road", url: "https://www.indianatollroad.org/about-itrcc/" },
       { label: "Investment date source — IFM Investors — Indiana Toll Road", url: "https://www.ifminvestors.com/news-and-insights/media-centre/ifm-investors-completes-acquisition-of-indiana-toll-road-concession-company/" },
-      { label: "Investment date source — CDPQ — Indiana Toll Road", url: "https://www.lacaisse.com/en/news/pressreleases/ifm-investors-partners-cdpq-indiana-toll-road" },
+      { label: "Investment date source — CDPQ — Indiana Toll Road", url: "https://www.lacaisse.com/en/news/pressreleases/ifm-investors-partners-cdpq-indiana-toll-road", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ 15% interest in Indiana Toll Road" },
       { label: "Fhwa — Indiana Toll Road", url: "https://www.fhwa.dot.gov/ipd/project_profiles/in_indiana_toll.aspx" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure (15% Stake)", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2021, stake: "15%", status: "Active" },
       { investmentFirm: "IFM Investors", ownershipVehicle: "IFM Global Infrastructure Fund (GIF)", investmentYear: 2015, status: "Active" },
     ],
   },
@@ -12356,10 +12358,10 @@ export const companies: PortCo[] = [
       { label: "Innergex — Innergex Renewable Energy", url: "https://www.innergex.com/en/" },
       { label: "Announcement date source — CDPQ — Innergex Renewable Energy", url: "https://www.innergex.com/en/media/innergex-enters-into-definitive-agreement-to-be-acquired-by-cdpq-for-13-75-per-share" },
       { label: "Close date source — CDPQ — Innergex Renewable Energy", url: "https://www.innergex.com/en/media/la-caisse-completes-acquisition-of-innergex" },
-      { label: "Lacaisse — Innergex Renewable Energy", url: "https://www.lacaisse.com/en/news/pressreleases/caisse-finalizes-acquisition-innergex-mobilizes-group-investors-support-its-long" },
+      { label: "Ownership source — La Caisse — Innergex Renewable Energy", url: "https://www.lacaisse.com/en/news/pressreleases/caisse-finalizes-acquisition-innergex-mobilizes-group-investors-support-its-long", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "La Caisse-led control; exact post-syndication percentage not disclosed" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "La Caisse-led privatization", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "La Caisse-led privatization", investmentYear: 2025, stake: "La Caisse-led control; exact post-syndication percentage not disclosed", status: "Active" },
     ],
   },
   {
@@ -12369,7 +12371,7 @@ export const companies: PortCo[] = [
     subsector: "Renewable generation and development",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "CDPQ Infrastructure (Majority Stake)",
+    ownershipVehicle: "CDPQ Infrastructure",
     description: "Invenergy Renewables develops, owns, and operates renewable power projects across wind, solar, and related technologies. Its customers include utilities, corporates, and power-market counterparties that contract for renewable-power output, capacity, and environmental attributes. The business is asset-heavy and development-led because value depends on operating generation assets and a pipeline of future projects. In 2018 Invenergy announced that CDPQ would acquire a 52.4% economic ownership interest in Invenergy Renewables while Invenergy would remain the managing member. Its principal operating footprint is in the United States. CDPQ has remained the majority economic owner since the 2018 transaction based on the public materials reviewed.",
     status: "Active",
     countryTags: ["United States"],
@@ -12383,11 +12385,11 @@ export const companies: PortCo[] = [
     ],
     sources: [
       { label: "Investment date source — CDPQ — Invenergy Renewables LLC", url: "https://invenergy.com/news/invenergy-strengthens-its-diversified-clean-energy-platform-through-new-equity-transactions-with-cdpq-and-amp-capital" },
-      { label: "PR Newswire — Invenergy Renewables LLC", url: "https://www.prnewswire.com/news-releases/cdpq-acquires-significant-additional-stake-in-invenergy-renewables-llc-300652610.html" },
+      { label: "Ownership source — CDPQ — Invenergy Renewables LLC", url: "https://www.prnewswire.com/news-releases/cdpq-acquires-significant-additional-stake-in-invenergy-renewables-llc-300652610.html", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ 52.4% economic ownership in Invenergy Renewables" },
       { label: "Invenergy — Invenergy Renewables LLC", url: "https://invenergy.com/" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure (Majority Stake)", investmentYear: 2013, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2013, stake: "52.4% economic ownership", status: "Active" },
     ],
   },
   {
@@ -12397,7 +12399,7 @@ export const companies: PortCo[] = [
     subsector: "Public-private partnership developer and operator",
     region: "North America",
     country: "United States / Canada",
-    ownershipVehicle: "CDPQ Infrastructure (100% Stake)",
+    ownershipVehicle: "CDPQ Infrastructure",
     description: "Plenary Americas develops, invests in, and manages public-private partnership infrastructure projects. Its counterparties are public-sector clients and concession authorities rather than retail or commodity-market customers. The business is contract- and concession-based because value depends on long-term project agreements across transportation, civic, and social infrastructure assets. CDPQ stated in 2020 that it acquired the operating business of Plenary Americas and a controlling interest in its portfolio of 36 projects. Its principal operating footprint is in the United States and Canada. CDPQ completed the acquisition in 2020 and made Plenary Americas a cornerstone of its North American infrastructure activities.",
     status: "Active",
     countryTags: ["United States", "Canada"],
@@ -12413,10 +12415,10 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Announcement date source — CDPQ — Plenary Americas", url: "https://plenary.com/americas/news/cdpq-acquires-plenary-americas" },
       { label: "Plenary — Plenary Americas", url: "https://plenary.com/americas/" },
-      { label: "Close date source — CDPQ — Plenary Americas", url: "https://www.fasken.com/en/experience/2020/03/caisse-de-depot-et-placement-du-quebec-acquires-plenary-americas" },
+      { label: "Close date source — CDPQ — Plenary Americas", url: "https://www.fasken.com/en/experience/2020/03/caisse-de-depot-et-placement-du-quebec-acquires-plenary-americas", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ acquired operating business; controlling stake in PPP portfolio" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure (100% Stake)", investmentYear: 2020, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2020, stake: "Operating business acquired; controlling stake in PPP portfolio", status: "Active" },
     ],
   },
   {
@@ -12445,12 +12447,12 @@ export const companies: PortCo[] = [
       { label: "Investment date source — QIC — Renewa", url: "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Renewa" },
       { label: "Qic — Renewa", url: "https://www.qic.com/News-and-Insights/US-land-under-infrastructure-company-Renewa" },
       { label: "Qic — Renewa", url: "https://www.qic.com/News-and-Insights/QIC-Infrastructure-backed-Renewa-secures-US450m-of-capital" },
-      { label: "Investment date source — CDPQ — Renewa", url: "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under" },
+      { label: "Investment date source — CDPQ — Renewa", url: "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-us200-million-qic-backed-renewa-accelerate-funding-land-under", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ acquired stake; exact percentage not publicly disclosed" },
       { label: "Renewa — Renewa", url: "https://www.renewa.com/about/" },
       { label: "Qic — Renewa", url: "https://www.qic.com/news/media-release-qic-backed-renewa-secures-200m-investment-from-cdpq/" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "Sustainable Land Management Strategy", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "Sustainable Land Management Strategy", investmentYear: 2025, stake: "Stake acquired; exact percentage not publicly disclosed", status: "Active" },
       { investmentFirm: "QIC", ownershipVehicle: "Managed client (100% QIC managed interest disclosed)", investmentYear: 2022, status: "Active" },
     ],
   },
@@ -12481,11 +12483,11 @@ export const companies: PortCo[] = [
       { label: "Rem — Réseau express métropolitain", url: "https://rem.info/en" },
       { label: "Investment date source — CDPQ — Réseau express métropolitain", url: "https://cdpqinfra.com/en/reseau-express-metropolitain-project-officially-launches" },
       { label: "Construction start source — CDPQ — Réseau express métropolitain", url: "https://www.newswire.ca/news-releases/construction-of-the-reseau-express-metropolitain-has-officially-started-679551913.html" },
-      { label: "Financial close source — CDPQ — Réseau express métropolitain", url: "https://cdpqinfra.com/en/canada-infrastructure-bank-invests-r%C3%A9seau-express-m%C3%A9tropolitain-project-128-billion-15-year-loan" },
+      { label: "Financial close source — CDPQ — Réseau express métropolitain", url: "https://cdpqinfra.com/en/canada-infrastructure-bank-invests-r%C3%A9seau-express-m%C3%A9tropolitain-project-128-billion-15-year-loan", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ Infra approximately 70% equity stake" },
       { label: "Cdpqinfra — Réseau express métropolitain", url: "https://cdpqinfra.com/en/news/updates/opening-rem-south-shore-remains-scheduled-july-31-2023" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infra", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infra", investmentYear: 2018, stake: "Approximately 70% equity stake", status: "Active" },
     ],
   },
   {
@@ -12510,12 +12512,12 @@ export const companies: PortCo[] = [
     ],
     sources: [
       { label: "Southernstar — Southern Star Central Gas Pipeline", url: "https://southernstar.com/" },
-      { label: "Southernstar — Southern Star Central Gas Pipeline", url: "https://southernstar.com/southern-star-celebrates-120-years-of-service/" },
+      { label: "Ownership source — Southern Star — Southern Star Central Gas Pipeline", url: "https://southernstar.com/southern-star-celebrates-120-years-of-service/", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ majority ownership; exact current percentage not publicly disclosed" },
       { label: "Announcement date source — CDPQ — Southern Star Central Gas Pipeline", url: "https://www.prnewswire.com/news-releases/la-caisse-enters-partnership-to-acquire-southern-star-central-corp-517672801.html" },
       { label: "Sale agreement source — CDPQ — Southern Star Central Gas Pipeline", url: "https://www.morganstanley.com/press-releases/morgan-stanley-infrastructure-announces-sale-of-southern-star-central-corp_ce2c81f4-7b97-454a-a663-e0c41d9c71e4" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2015, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2015, stake: "Majority ownership; exact current percentage not publicly disclosed", status: "Active" },
     ],
   },
   {
@@ -12543,10 +12545,10 @@ export const companies: PortCo[] = [
       { label: "Ridesta — Student Transportation of America and Canada", url: "https://ridesta.com/student-transportation-inc-to-be-acquired-by-a-group-of-investors-led-by-cdpq/" },
       { label: "Investment date source — CDPQ — Student Transportation of America and Canada", url: "https://www.lacaisse.com/en/news/articles/3-factors-have-made-student-transportation-third-largest-school-transportation-player" },
       { label: "Close date source — CDPQ — Student Transportation of America and Canada", url: "https://www.torys.com/work/2018/02/student-transportation-acquired-by-a-group-of-investors-led-by-cdpq" },
-      { label: "Lacaisse — Student Transportation of America and Canada", url: "https://www.lacaisse.com/en/news/pressreleases/student-transportation-expands-canadian-operations-through-major-acquisition" },
+      { label: "Ownership source — La Caisse — Student Transportation of America and Canada", url: "https://www.lacaisse.com/en/news/pressreleases/student-transportation-expands-canadian-operations-through-major-acquisition", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ controlling shareholder; exact percentage not publicly disclosed" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2004, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2004, stake: "Controlling shareholder; exact percentage not publicly disclosed", status: "Active" },
     ],
   },
   {
@@ -12571,10 +12573,10 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Financing date source — Pattern Energy — SunZia Wind and Transmission", url: "https://patternenergy.com/pattern-energy-closes-11-billion-financing-of-largest-clean-energy-infrastructure-project-in-u-s-history/" },
       { label: "Patternenergy — SunZia Wind and Transmission", url: "https://patternenergy.com/fr/projects/sunzia-wind-and-transmission/" },
-      { label: "Holding source — CDPQ — SunZia Wind and Transmission", url: "https://www.lacaisse.com/sites/default/files/medias/pdf/en/ra/2024_cdpq_add_information.pdf" },
+      { label: "Holding source — CDPQ — SunZia Wind and Transmission", url: "https://www.lacaisse.com/sites/default/files/medias/pdf/en/ra/2024_cdpq_add_information.pdf", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ holding reported; ownership percentage not publicly disclosed" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2023, stake: "Not publicly disclosed", status: "Active" },
     ],
   },
   {
@@ -12597,13 +12599,13 @@ export const companies: PortCo[] = [
       { date: "Mar 26, 2026", event: "TramCité announced preferred bidders for the civil and systems contracts under CDPQ Infra's procurement process.", category: "Other" },
     ],
     sources: [
-      { label: "Agreement date source — CDPQ — TramCité", url: "https://cdpqinfra.com/en/news/pressreleases/cdpq-infra-launches-a-procurement-notice-for-the-tramcite-project" },
+      { label: "Agreement date source — CDPQ — TramCité", url: "https://cdpqinfra.com/en/news/pressreleases/cdpq-infra-launches-a-procurement-notice-for-the-tramcite-project", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ Infra development role; ownership percentage not publicly disclosed" },
       { label: "Cdpqinfra — TramCité", url: "https://cdpqinfra.com/sites/cdpqinfrad8/files/2025-03/Seance_information_avis_marche_TramCite-EN_web_0.pdf" },
       { label: "Qualified consortia source — CDPQ — TramCité", url: "https://www.newswire.ca/news-releases/tramcite-takes-an-important-step-forward-with-the-announcement-of-the-qualified-consortia-for-two-major-contracts-834300933.html" },
       { label: "Preferred bidders source — CDPQ — TramCité", url: "https://cdpqinfra.com/en/news/pressreleases/tramcite-announces-selected-consortia-for-the-civil-and-systems-contracts" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infra", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infra", investmentYear: 2024, stake: "Not publicly disclosed", status: "Active" },
     ],
   },
   {
@@ -12613,7 +12615,7 @@ export const companies: PortCo[] = [
     subsector: "Wireless towers and communications infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "CDPQ Infrastructure (30% Stake)",
+    ownershipVehicle: "CDPQ Infrastructure",
     description: "Vertical Bridge owns and operates wireless towers and related communications infrastructure in the United States. Its customers are wireless carriers and other communications tenants that lease access to towers, rooftops, billboards, utility structures, and other sites. The business is asset-heavy and contracted because revenue depends on long-duration site leases and recurring tenancy agreements. Company materials describe Vertical Bridge as the largest private owner and operator of communications infrastructure in the United States, with more than 500,000 sites including more than 18,000 towers. Its principal operating footprint is in the United States. CDPQ acquired a 30% stake in April 2019, while the remaining ownership interests have not been publicly broken out in the materials reviewed.",
     status: "Active",
     countryTags: ["United States"],
@@ -12633,14 +12635,14 @@ export const companies: PortCo[] = [
     ],
     sources: [
       { label: "Verticalbridge — Vertical Bridge", url: "https://www.verticalbridge.com/about" },
-      { label: "Announcement date source — CDPQ — Vertical Bridge", url: "https://www.prnewswire.com/news-releases/cdpq-to-acquire-30-stake-in-us-wireless-infrastructure-leader-vertical-bridge-300822891.html" },
+      { label: "Announcement date source — CDPQ — Vertical Bridge", url: "https://www.lacaisse.com/en/news/pressreleases/cdpq-to-acquire-30-stake-in-us-wireless-infrastructure-leader-vertical-bridge", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ 30% stake in Vertical Bridge" },
       { label: "Digitalbridge — Vertical Bridge", url: "https://www.digitalbridge.com/news/2021-10-13-digitalbridge-completes-acquisition-of-controlling-stake-in-vertical-bridge" },
       { label: "Investment date source — DigitalBridge — Vertical Bridge", url: "https://www.verticalbridge.com/press-releases/vertical-bridge-holdings-completes-second-round-capital-raise-equity-commitments-now-total-750-million" },
       { label: "Verticalbridge — Vertical Bridge", url: "https://www.verticalbridge.com/network-infrastructure/towers" },
       { label: "Vertical Bridge - INF-2026-179 - Vertical Bridge", url: "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure (30% Stake)", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2019, stake: "30%", status: "Active" },
       { investmentFirm: "DigitalBridge", ownershipVehicle: "DigitalBridge Equity", investmentYear: 2014, status: "Active" },
       { investmentFirm: "KKR", ownershipVehicle: "Strategic equity investment", investmentYear: 2026, status: "Active" },
     ],
@@ -23651,14 +23653,14 @@ export const companies: PortCo[] = [
     ],
     sources: [
       { label: "Qsl — QSL International Ltd.", url: "https://qsl.com/" },
-      { label: "Announcement date source — CDPQ — QSL International Ltd.", url: "https://qsl.com/qsl-to-drive-further-growth-with-icon-and-cdpq-as-new-shareholders/" },
+      { label: "Announcement date source — CDPQ — QSL International Ltd.", url: "https://qsl.com/qsl-to-drive-further-growth-with-icon-and-cdpq-as-new-shareholders/", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ equity stake; exact percentage not publicly disclosed" },
       { label: "Qsl — QSL International Ltd.", url: "https://qsl.com/the-government-of-quebec-confirms-its-support-for-qsl/" },
       { label: "Qsl — QSL International Ltd.", url: "https://qsl.com/about-qsl/our-company/" },
       { label: "Announcement date source — iCON Infrastructure — QSL International Ltd.", url: "https://www.lacaisse.com/en/news/pressreleases/qsl-drive-further-growth-icon-cdpq-new-shareholders" },
       { label: "Iconinfrastructure — QSL International Ltd.", url: "https://iconinfrastructure.com/investments/" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2024, stake: "Equity stake; exact percentage not publicly disclosed", status: "Active" },
       { investmentFirm: "iCON Infrastructure", ownershipVehicle: "Not Disclosed (Co-invested with CDPQ)", investmentYear: 2024, status: "Active" },
     ],
   },
