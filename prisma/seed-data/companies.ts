@@ -24843,12 +24843,12 @@ export const companies: PortCo[] = [
     ],
     sources: [
       { label: "Amports — AMPORTS, Inc.", url: "https://www.amports.com/history/" },
-      { label: "Investment date source — Instar — AMPORTS, Inc.", url: "https://www.globenewswire.com/news-release/2018/04/03/1459589/0/en/InstarAGF-Asset-Management-Acquires-AMPORTS-Inc.html" },
+      { label: "Investment date source — Instar — AMPORTS, Inc.", url: "https://www.globenewswire.com/news-release/2018/04/03/1459589/0/en/InstarAGF-Asset-Management-Acquires-AMPORTS-Inc.html", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar 100% equity interest" },
       { label: "Seller source — Lincolnshire — AMPORTS, Inc.", url: "https://www.lincolnshiremgmt.com/press-release-lincolnshire-management-sells-amports-inc-leading-port-terminal-operator/" },
       { label: "Instarinvest — AMPORTS, Inc.", url: "https://instarinvest.com/portfolio/" },
     ],
     owners: [
-      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF acquired 100% alongside Canadian and international infrastructure co-investors.", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF acquired 100% alongside Canadian and international infrastructure co-investors.", investmentYear: 2018, stake: "100% equity interest", status: "Active" },
     ],
   },
   {
@@ -24874,12 +24874,12 @@ export const companies: PortCo[] = [
     ],
     sources: [
       { label: "Creative — Creative Energy", url: "https://creative.energy/projects/vancouver-core" },
-      { label: "Investment date source — Instar — Creative Energy", url: "https://www.globenewswire.com/news-release/2018/02/13/1340017/0/en/InstarAGF-Essential-Infrastructure-Fund-Partners-with-Creative-Energy.html" },
+      { label: "Investment date source — Instar — Creative Energy", url: "https://www.globenewswire.com/news-release/2018/02/13/1340017/0/en/InstarAGF-Essential-Infrastructure-Fund-Partners-with-Creative-Energy.html", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar 50% equity interest" },
       { label: "Central — Creative Energy", url: "https://central.cvca.ca/data-analysis/creative-energy-behind-deal-instaragf-asset-management/" },
       { label: "Instarinvest — Creative Energy", url: "https://instarinvest.com/portfolio/" },
     ],
     owners: [
-      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF Essential Infrastructure Fund acquired a 50% interest.", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF Essential Infrastructure Fund acquired a 50% interest.", investmentYear: 2018, stake: "50% equity interest", status: "Active" },
     ],
   },
   {
@@ -24905,11 +24905,11 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Windmillmushrooms — Greenwood Mushrooms Development Corp. (Windmill Farms)", url: "https://windmillmushrooms.com/" },
       { label: "Windmillmushrooms — Greenwood Mushrooms Development Corp. (Windmill Farms)", url: "https://windmillmushrooms.com/facilities/" },
-      { label: "Investment date source — Instar — Greenwood Mushrooms Development Corp. (Windmill Farms)", url: "https://instarinvest.com/2022/06/instar-partners-with-leading-controlled-environment-agricultural-producers/" },
+      { label: "Investment date source — Instar — Greenwood Mushrooms Development Corp. (Windmill Farms)", url: "https://instarinvest.com/2022/06/instar-partners-with-leading-controlled-environment-agricultural-producers/", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar partnership with management; ownership percentage not disclosed" },
       { label: "Seller source — Novacap — Greenwood Mushrooms Development Corp. (Windmill Farms)", url: "https://novacapcorp.com/news/novacap-announces-sale-of-greenwood-mushrooms-development-corp-to-instar-asset-management-inc/" },
     ],
     owners: [
-      { investmentFirm: "Instar", ownershipVehicle: "Instar partnered with management.", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "Instar partnered with management.", investmentYear: 2022, stake: "Partnered with management; exact % not publicly disclosed", status: "Active" },
     ],
   },
   {
@@ -24935,11 +24935,11 @@ export const companies: PortCo[] = [
     ],
     sources: [
       { label: "Groupesomavrac — Groupe Somavrac Inc.", url: "https://www.groupesomavrac.com/en/company/" },
-      { label: "Investment date source — Instar — Groupe Somavrac Inc.", url: "https://instarinvest.com/instar-acquires-groupe-somavrac-to-support-continued-growth/" },
+      { label: "Investment date source — Instar — Groupe Somavrac Inc.", url: "https://instarinvest.com/instar-acquires-groupe-somavrac-to-support-continued-growth/", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar-led consortium acquired entire Somavrac group" },
       { label: "Co-investor source — Fonds FTQ — Groupe Somavrac Inc.", url: "https://www.fondsftq.com/en/press-center/press-releases/2026/20260107-instar-acquires-groupe-somavrac" },
     ],
     owners: [
-      { investmentFirm: "Instar", ownershipVehicle: "Instar-led consortium with Investissement Québec and Fonds de solidarité FTQ.", investmentYear: 2026, status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "Instar-led consortium with Investissement Québec and Fonds de solidarité FTQ.", investmentYear: 2026, stake: "Instar-led consortium acquired 100%; Instar share not disclosed", status: "Active" },
     ],
   },
   {
@@ -24965,11 +24965,11 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Jet Infrastructure — JET Infrastructure", url: "https://www.jet-infrastructure.com/about" },
       { label: "Jet Infrastructure — JET Infrastructure", url: "https://www.jet-infrastructure.com/service/pipelines-distribution" },
-      { label: "Investment date source — Instar — JET Infrastructure", url: "https://www.globenewswire.com/news-release/2018/12/19/1669169/0/en/InstarAGF-Asset-Management-Acquires-Jet-Fuel-Pipeline-and-Terminal-Assets-in-United-States.html" },
+      { label: "Investment date source — Instar — JET Infrastructure", url: "https://www.globenewswire.com/news-release/2018/12/19/1669169/0/en/InstarAGF-Asset-Management-Acquires-Jet-Fuel-Pipeline-and-Terminal-Assets-in-United-States.html", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar wholly owned JET Infrastructure platform" },
       { label: "Kslaw — JET Infrastructure", url: "https://www.kslaw.com/news-and-insights/king-spalding-represents-jet-infrastructure-on-the-acquisition-of-imtt-epic-llc" },
     ],
     owners: [
-      { investmentFirm: "Instar", ownershipVehicle: "JET Infrastructure Holdings, a wholly owned InstarAGF subsidiary, alongside Instar co-investors.", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "JET Infrastructure Holdings, a wholly owned InstarAGF subsidiary, alongside Instar co-investors.", investmentYear: 2018, stake: "Wholly owned Instar platform; co-investor split not disclosed", status: "Active" },
     ],
   },
   {
@@ -25000,13 +25000,13 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Lsnetworks — LS Networks", url: "https://www.lsnetworks.net/history/" },
       { label: "Investment date source — LS Networks — Instar", url: "https://www.lsnetworks.net/investor-relations/" },
-      { label: "Announcement source — Instar — LS Networks", url: "https://www.lsnetworks.net/instaragf-agrees-to-acquire-ls-networks/" },
+      { label: "Announcement source — Instar — LS Networks", url: "https://www.globenewswire.com/news-release/2020/10/15/2109210/0/en/InstarAGF-Agrees-to-Acquire-LS-Networks.html", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar agreement to acquire 100% of LS Networks" },
       { label: "Instarinvest — LS Networks", url: "https://instarinvest.com/portfolio/" },
       { label: "Lsnetworks — LS Networks", url: "https://www.lsnetworks.net/" },
     ],
     owners: [
-      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF acquired 100% from a collective of Oregon rural electric cooperatives.", investmentYear: 2021, status: "Active" },
-      { investmentFirm: "Instar", ownershipVehicle: "Instar Asset Management", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF acquired 100% from a collective of Oregon rural electric cooperatives.", investmentYear: 2021, stake: "100% equity interest", status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "Instar Asset Management", investmentYear: 2021, stake: "100% equity interest", status: "Active" },
     ],
   },
   {
@@ -25032,11 +25032,12 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Instarinvest — Pilot Water Solutions", url: "https://instarinvest.com/portfolio/" },
       { label: "Investment date source — Instar — Pilot Water Solutions / Oilfield Water Logistics", url: "https://www.globenewswire.com/news-release/2019/10/28/1936162/0/en/InstarAGF-Asset-Management-Acquires-Oilfield-Water-Logistics.html" },
+      { label: "Current ownership source — Instar — Pilot Water Solutions", url: "https://instarinvest.com/assets/files/INSTAR_ESG_2025_Web_HighRes.pdf", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar minority ownership with strong governance rights" },
       { label: "Pilotwatersolutions — Pilot Water Solutions", url: "https://pilotwatersolutions.com/?p=1305" },
       { label: "Pilotwatersolutions — Pilot Water Solutions", url: "https://pilotwatersolutions.com/?p=1233" },
     ],
     owners: [
-      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF plus Canadian and international co-investors via the Oilfield Water Logistics acquisition.", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF plus Canadian and international co-investors via the Oilfield Water Logistics acquisition.", investmentYear: 2019, stake: "Minority ownership with strong governance rights", status: "Active" },
     ],
   },
   {
@@ -25063,12 +25064,12 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Prt — PRT Growing Services Ltd.", url: "https://prt.com/about/who-we-are/" },
       { label: "Prt — PRT Growing Services Ltd.", url: "https://prt.com/about/where-we-grow/" },
-      { label: "Investment date source — Instar — PRT Growing Services Ltd.", url: "https://instarinvest.com/2021/04/instaragf-acquires-prt-growing/" },
+      { label: "Investment date source — Instar — PRT Growing Services Ltd.", url: "https://instarinvest.com/2021/04/instaragf-acquires-prt-growing/", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar acquisition from TriWest; ownership percentage not disclosed" },
       { label: "Instarinvest — PRT Growing Services Ltd.", url: "https://instarinvest.com/portfolio/" },
       { label: "Prt — PRT Growing Services Ltd.", url: "https://prt.com/prt-growing-services-acquires-southern-seed-company-assets-to-enhance-capabilities-in-southeast/" },
     ],
     owners: [
-      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF acquisition from TriWest.", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF acquisition from TriWest.", investmentYear: 2021, stake: "Acquired from TriWest; exact % not publicly disclosed", status: "Active" },
     ],
   },
   {
@@ -25095,11 +25096,11 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Skyservice — Skyservice Business Aviation Inc.", url: "https://www.skyservice.com/" },
       { label: "Skyservice — Skyservice Business Aviation Inc.", url: "https://www.skyservice.com/about/locations/" },
-      { label: "Investment date source — Instar — Skyservice Business Aviation Inc.", url: "https://www.globenewswire.com/news-release/2017/09/18/1124082/0/en/InstarAGF-Essential-Infrastructure-Fund-Partners-With-Skyservice.html" },
+      { label: "Investment date source — Instar — Skyservice Business Aviation Inc.", url: "https://www.globenewswire.com/news-release/2017/09/18/1124082/0/en/InstarAGF-Essential-Infrastructure-Fund-Partners-With-Skyservice.html", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar majority equity ownership interest" },
       { label: "Skyservice — Skyservice Business Aviation Inc.", url: "https://www.skyservice.com/wp-content/uploads/2023/11/SKY400-Corporate-Overview-English-111423.pdf" },
     ],
     owners: [
-      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF Essential Infrastructure Fund acquired a majority equity stake.", investmentYear: 2017, status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF Essential Infrastructure Fund acquired a majority equity stake.", investmentYear: 2017, stake: "Majority equity ownership interest", status: "Active" },
     ],
   },
   {
@@ -25124,11 +25125,11 @@ export const companies: PortCo[] = [
     ],
     sources: [
       { label: "Ainonline — Skyservice US", url: "https://www.ainonline.com/aviation-news/business-aviation/2021-11-10/canadas-skyservice-expands-us" },
-      { label: "Investment date source — Instar — Skyservice US", url: "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf" },
+      { label: "Investment date source — Instar — Skyservice US", url: "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar portfolio company; Skyservice US exact ownership percentage not disclosed" },
       { label: "LinkedIn — Skyservice US", url: "https://www.linkedin.com/company/skyservice-usa" },
     ],
     owners: [
-      { investmentFirm: "Instar", ownershipVehicle: "Instar Asset Management", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "Instar Asset Management", investmentYear: 2019, stake: "Instar portfolio company; exact % not publicly disclosed", status: "Active" },
     ],
   },
   {
@@ -25157,10 +25158,10 @@ export const companies: PortCo[] = [
       { label: "Corporatejetinvestor — Skyservice US (formerly Leading Edge Jet Center)", url: "https://www.corporatejetinvestor.com/news/skyservice-business-aviation-expands-to-the-united-states/" },
       { label: "GlobeNewsWire — Skyservice US (formerly Leading Edge Jet Center)", url: "https://www.globenewswire.com/news-release/2020/09/29/2100789/0/en/Leading-Edge-Jet-Center-Expands-its-Business-Aviation-Footprint.html" },
       { label: "Ainonline — Skyservice US (formerly Leading Edge Jet Center)", url: "https://www.ainonline.com/aviation-news/business-aviation/2021-11-10/canadas-skyservice-expands-us" },
-      { label: "Investment date source — Instar — Skyservice US (formerly Leading Edge Jet Center)", url: "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf" },
+      { label: "Investment date source — Instar — Skyservice US (formerly Leading Edge Jet Center)", url: "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar portfolio company formerly known as LEJC; exact ownership percentage not disclosed" },
     ],
     owners: [
-      { investmentFirm: "Instar", ownershipVehicle: "Not disclosed; Instar’s fact sheet identifies it as an Instar portfolio company formerly known as LEJC.", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "Not disclosed; Instar’s fact sheet identifies it as an Instar portfolio company formerly known as LEJC.", investmentYear: 2019, stake: "Instar portfolio company; exact % not publicly disclosed", status: "Active" },
     ],
   },
   {
@@ -25189,13 +25190,13 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Steelreef — Steel Reef Infrastructure Corp.", url: "https://steelreef.ca/" },
       { label: "Steelreef — Steel Reef Infrastructure Corp.", url: "https://steelreef.ca/about-us/" },
-      { label: "Investment date source — Instar — Steel Reef Infrastructure Corp.", url: "https://boereport.com/2016/04/21/instaragf-essential-infrastructure-fund-invests-75-million-in-steel-reef-infrastructure-corp/" },
+      { label: "Investment date source — Instar — Steel Reef Infrastructure Corp.", url: "https://boereport.com/2016/04/21/instaragf-essential-infrastructure-fund-invests-75-million-in-steel-reef-infrastructure-corp/", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar initial 20.6% Steel Reef stake" },
       { label: "Instarinvest — Steel Reef Infrastructure Corp.", url: "https://instarinvest.com/portfolio/" },
-      { label: "Instarinvest — Steel Reef Infrastructure Corp.", url: "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q2-2025.pdf" },
+      { label: "Instarinvest — Steel Reef Infrastructure Corp.", url: "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar expanded ownership in Steel Reef through Fund II" },
     ],
     owners: [
-      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF Essential Infrastructure Fund investment, with expanded ownership via Fund II in 2020.", investmentYear: 2016, status: "Active" },
-      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF Essential Infrastructure Fund", investmentYear: 2016, status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF Essential Infrastructure Fund investment, with expanded ownership via Fund II in 2020.", investmentYear: 2016, stake: "20.6% initial stake; expanded ownership in 2020, current % not disclosed", status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "InstarAGF Essential Infrastructure Fund", investmentYear: 2016, stake: "20.6% initial stake; expanded ownership in 2020, current % not disclosed", status: "Active" },
     ],
   },
   {
@@ -25219,12 +25220,12 @@ export const companies: PortCo[] = [
     ],
     sources: [
       { label: "Windmillmushrooms — Windmill Farms", url: "https://windmillmushrooms.com/" },
-      { label: "Investment date source — Instar — Windmill Farms", url: "https://instarinvest.com/2022/06/instar-partners-with-leading-controlled-environment-agricultural-producers/" },
+      { label: "Investment date source — Instar — Windmill Farms", url: "https://instarinvest.com/2022/06/instar-partners-with-leading-controlled-environment-agricultural-producers/", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Instar partnership with Windmill management; ownership percentage not disclosed" },
       { label: "Instarinvest — Windmill Farms", url: "https://instarinvest.com/portfolio/" },
-      { label: "Instarinvest — Windmill Farms", url: "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q2-2025.pdf" },
+      { label: "Instarinvest — Windmill Farms", url: "https://instarinvest.com/assets/files/strategy/Instar-Fact-Sheet-Q3-2025.pdf" },
     ],
     owners: [
-      { investmentFirm: "Instar", ownershipVehicle: "Instar Asset Management", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Instar", ownershipVehicle: "Instar Asset Management", investmentYear: 2022, stake: "Partnered with management; exact % not publicly disclosed", status: "Active" },
     ],
   },
   {
