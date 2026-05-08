@@ -304,6 +304,141 @@ export function getUniqueManagers(companies: PortfolioCompanyWithContext[]): str
 
 // Portfolio data now lives in src/data/portcos/ (PortCo Database)
 
+const MANAGER_SOURCE_URLS: Record<string, string[]> = {
+  "3i Group": ["https://www.3i-infrastructure.com/"],
+  "Abu Dhabi Investment Authority (ADIA)": ["https://www.adia.ae/en/investments/infrastructure"],
+  "AIMCo": ["https://www.aimco.ca/what-we-do/asset-classes/infrastructure-renewable-resources/"],
+  "Amber Infrastructure Group": ["https://www.internationalpublicpartnerships.com/"],
+  "Ancala Partners": ["https://www.ancala.com/"],
+  "Antin Infrastructure Partners": ["https://www.antin-ip.com/"],
+  "APG Asset Management": ["https://assetmanagement.apg.nl/infrastructure/"],
+  "Apollo Global Management": ["https://www.apollo.com/strategies/asset-management/real-assets/infrastructure"],
+  "Ara Partners": ["https://www.arapartners.com/what-we-do/strategies/infrastructure/"],
+  "ArcLight Capital Partners": ["https://www.arclight.com/"],
+  "Ardian": ["https://www.ardian.com/infrastructure"],
+  "Ares Management": ["https://www.aresmgmt.com/our-business/infrastructure"],
+  "Argo Infrastructure Partners": ["https://www.argoip.com/"],
+  "Astatine Investment Partners": ["https://www.astatineip.com/"],
+  "AustralianSuper": ["https://www.australiansuper.com/global-investors/capabilities/portfolio-asset-class-capabilities"],
+  "Axium Infrastructure": ["https://axiuminfra.com/"],
+  "Basalt Infrastructure Partners": ["https://www.basaltinfra.com/"],
+  "BCI": ["https://www.bci.ca/investments/infrastructure-renewable-resources/"],
+  "Bernhard Capital Partners": ["https://www.bernhardcapital.com/"],
+  "BlackRock": ["https://www.blackrock.com/institutions/en-us/strategies/alternatives/infrastructure"],
+  "BlackRock (GIP)": ["https://www.global-infra.com/"],
+  "Blackstone": ["https://www.blackstone.com/our-businesses/infrastructure/"],
+  "Blue Owl Capital": ["https://www.blueowl.com/real-assets"],
+  "Brookfield": ["https://www.brookfield.com/our-businesses/infrastructure"],
+  "Carlyle Group": ["https://www.carlyle.com/our-business/global-investment-solutions/infrastructure"],
+  "CBRE Investment Management": ["https://www.cbreim.com/strategies/infrastructure"],
+  "CIM Group": ["https://www.cimgroup.com/investment-platforms/infrastructure"],
+  "Connor, Clark & Lunn": ["https://cclprivatecapital.com/"],
+  "Copenhagen Infrastructure Partners": ["https://www.cip.com/"],
+  "CPP Investments": ["https://www.cppinvestments.com/the-fund/our-investments/real-assets/infrastructure/"],
+  "CVC DIF": ["https://www.cvcdif.com/"],
+  "DigitalBridge": ["https://www.digitalbridge.com/"],
+  "Duration Capital Partners": ["https://durationcapital.com/"],
+  "DWS": ["https://www.dws.com/en-gb/capabilities/alternatives/infrastructure/"],
+  "EIG": ["https://www.eigpartners.com/"],
+  "Ember Infrastructure Management": ["https://www.ember-infra.com/"],
+  "Energy Capital Partners": ["https://www.ecpgp.com/about"],
+  "Energy Infrastructure Partners": ["https://www.energy-infrastructure-partners.com/"],
+  "EQT": ["https://eqtgroup.com/en/infrastructure"],
+  "Equilibrium": ["https://eq-cap.com/"],
+  "Fengate Asset Management": ["https://fengate.com/infrastructure/"],
+  "Fiera Infrastructure": ["https://www.fierainfrastructure.com/"],
+  "GCM Grosvenor": ["https://www.gcmgrosvenor.com/investment-strategies/infrastructure/"],
+  "Generate Capital": ["https://generatecapital.com/"],
+  "GIC": ["https://www.gic.com.sg/what-we-do/investment-groups/infrastructure/"],
+  "Goldman Sachs Alternatives": ["https://am.gs.com/en-us/advisors/products/infrastructure"],
+  "Grain Management": ["https://grainmanagement.com/"],
+  "H.I.G. Capital": ["https://higinfrastructure.com/"],
+  "Harbert Management Corporation": ["https://www.harbert.net/investment-strategies/infrastructure/"],
+  "Harrison Street": ["https://harrisonst.com/infrastructure/"],
+  "I Squared Capital": ["https://isquaredcapital.com/"],
+  "iCON Infrastructure": ["https://www.iconinfrastructure.com/"],
+  "IFM Investors": ["https://www.ifminvestors.com/investment-capabilities/infrastructure/"],
+  "Igneo Infrastructure Partners": ["https://www.igneoip.com/"],
+  "InfraBridge": ["https://www.infrabridge.com/"],
+  "InfraRed Capital Partners": ["https://www.ircp.com/investments/"],
+  "Instar Asset Management": ["https://instarinvest.com/"],
+  "J.P. Morgan Asset Management": ["https://am.jpmorgan.com/us/en/asset-management/adv/funds/alternatives/infrastructure/"],
+  "KKR": ["https://www.kkr.com/businesses/infrastructure"],
+  "Kuwait Investment Authority (KIA)": ["https://www.wrenhouseinfra.com/"],
+  "La Caisse de dépôt (CDPQ)": ["https://www.cdpq.com/en/investments/infrastructure"],
+  "Macquarie Asset Management": ["https://www.macquarie.com/us/en/about/company/macquarie-asset-management/institutional-investor/capabilities/Infrastructure.html"],
+  "Manulife Investment Management": ["https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure"],
+  "Meridiam": ["https://www.meridiam.com/"],
+  "Morgan Stanley Infrastructure Partners": ["https://www.morganstanley.com/im/en-us/institutional-investor/about-us/investment-teams/real-assets/private-infrastructure-team.html"],
+  "Morrison & Co": ["https://www.hrlmorrison.com/"],
+  "Mubadala Investment Company": ["https://www.mubadala.com/en/what-we-do/investments/real-estate-infrastructure"],
+  "Northampton Capital": ["https://www.northamptonllc.com/"],
+  "Northleaf Capital Partners": ["https://www.northleafcapital.com/infrastructure/"],
+  "OMERS Infrastructure": ["https://www.omersinfrastructure.com/"],
+  "Ontario Teachers' Pension Plan": ["https://www.otpp.com/en-ca/investments/our-investments/infrastructure-and-natural-resources/"],
+  "Partners Group": ["https://www.partnersgroup.com/en/our-investments/infrastructure"],
+  "Qatar Investment Authority (QIA)": ["https://www.qia.qa/"],
+  "QIC": ["https://www.qic.com/investment-capabilities/infrastructure"],
+  "Quinbrook Infrastructure Partners": ["https://www.quinbrook.com/"],
+  "Ridgewood Infrastructure": ["https://ridgewoodinfrastructure.com/"],
+  "Sandbrook Capital": ["https://sandbrook.com/"],
+  "SDC Capital Partners": ["https://sdccapitalpartners.com/"],
+  "Searchlight Capital Partners": ["https://www.searchlightcap.com/"],
+  "Stonepeak": ["https://stonepeak.com/"],
+  "Swiss Life Asset Managers": ["https://www.swisslife-am.com/en/home/funds-invest/asset-classes/infrastructure.html"],
+  "Tallvine Partners": ["https://www.tallvinepartners.com/"],
+  "Temasek": ["https://www.temasek.com.sg/en/our-investments"],
+  "Tiger Infrastructure Partners": ["https://www.tigerinfrastructure.com/"],
+  "TPG": ["https://www.tpg.com/platforms/impact/rise-climate"],
+  "Ullico": ["https://www.ullico.com/products/ullico-infrastructure-fund/"],
+  "Vauban Infrastructure Partners": ["https://www.im.natixis.com/en-intl/about/investment-managers-and-capabilities/vauban-infrastructure-partners"],
+  "Vision Ridge Partners": ["https://vision-ridge.com/"],
+};
+
+const FUND_SOURCE_URLS: Record<string, string[]> = {
+  "FUND-017": ["https://www.arapartners.com/news/ara-partners-reaches-final-close-for-inaugural-infrastructure-fund-surpassing-target/"],
+  "FUND-038": ["https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/blackrock-global-infrastructure-partners-microsoft-and-mgx-launch-new-ai"],
+  "FUND-041": ["https://www.blackstone.com/news/press/blackstone-announces-5-6-billion-final-close-for-blackstone-energy-transition-partners-iv-at-hard-cap/"],
+  "FUND-043": ["https://ir.blueowl.com/Investors/news/news-details/2025/Blue-Owl-Capital-Announces-7-Billion-Final-Close-for-Digital-Infrastructure-Fund/default.aspx"],
+  "FUND-044": ["https://bam.brookfield.com/press-releases/brookfield-launches-100-billion-ai-infrastructure-program"],
+  "FUND-045": ["https://bam.brookfield.com/press-releases/brookfield-raises-20-billion-record-transition-fund"],
+  "FUND-048": ["https://www.globenewswire.com/news-release/2025/03/11/3040401/0/en/Brookfield-Closes-Infrastructure-Structured-Solutions-Fund.html"],
+  "FUND-061": [
+    "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025-58%20pserb%20resolution%20dif%20infrastructure%20fund%20viii%20scsp.pdf",
+    "https://nj.gov/njbonds/treasury/doinvest/pdf/AlternativeInvestments/RealAsset/DIF_Infrastructure_VIII_SCSp.pdf",
+    "https://www.cvc.com/media/news/2026/full-year-2025-activity-update/",
+  ],
+  "FUND-062": ["https://www.cvc.com/media/news/2026/full-year-2025-activity-update/"],
+  "FUND-063": ["https://www.digitalbridge.com/press"],
+  "FUND-065": [
+    "https://www.eib.org/en/products/equity/funds/pan-european-infrastructure-3",
+    "https://www.dws.com/AssetDownload/Index?assetGuid=0612b36b-92ef-428c-9981-9c75ed30a267&consumer=E-Library",
+  ],
+  "FUND-072": ["https://eqtgroup.com/news/eqt-ab-publ-q1-annoucement-2026-2026-04-22"],
+  "FUND-074": [
+    "https://eqtgroup.com/infrastructure/eqt-transition-infrastructure",
+    "https://eqtgroup.com/news/eqt-introduces-the-eqt-transition-infrastructure-strategy-with-the-acquisition-of-energy-storage-system-developer-and-operator-ju-niz-energy",
+  ],
+  "FUND-107": ["https://www.sec.gov/Archives/edgar/data/2022923/000202292324000002/xslFormDX01/primary_doc.xml"],
+  "FUND-146": ["https://www.sec.gov/Archives/edgar/data/1880661/000188066126000033/tpg-20260331.htm"],
+};
+
+function uniqUrls(urls: string[]): string[] {
+  return Array.from(new Set(urls.filter(Boolean)));
+}
+
+function getFundSourceUrls(id: string, managerName: string, sourceUrls: string[] = []): string[] {
+  return uniqUrls([
+    ...sourceUrls,
+    ...(FUND_SOURCE_URLS[id] ?? []),
+    ...(MANAGER_SOURCE_URLS[managerName] ?? []),
+  ]);
+}
+
+function getStrategyUrl(managerName: string): string {
+  return MANAGER_SOURCE_URLS[managerName]?.[0] ?? "";
+}
+
 function f(
   id: string,
   managerName: string,
@@ -321,7 +456,7 @@ function f(
     fundName,
     ticker: overrides?.ticker ?? null,
     investmentStrategy: overrides?.investmentStrategy ?? "",
-    sourceUrls: overrides?.sourceUrls ?? [],
+    sourceUrls: getFundSourceUrls(id, managerName, overrides?.sourceUrls),
     size,
     sizeUsdMm,
     vintage,
@@ -331,11 +466,11 @@ function f(
     sectors: overrides?.sectors ?? [],
     regions: overrides?.regions ?? [],
     portfolioCompanies: [],
-    strategyUrl: overrides?.strategyUrl ?? "",
+    strategyUrl: overrides?.strategyUrl ?? getStrategyUrl(managerName),
   };
 }
 
-// ─── Fund Manifest (149 funds) ──────────────────────────────
+// ─── Fund Manifest (150 funds) ──────────────────────────────
 // ─── End Manifest ──────────────────────────────────────────
 
 export const funds: Fund[] = [
@@ -444,10 +579,10 @@ export const funds: Fund[] = [
     sectors: ["Power & ET", "Utilities", "Midstream", "Transportation"],
     regions: ["North America"],
   }),
-  f("FUND-017", "Ara Partners", "Ara Infrastructure Fund I", "2025", "$800M", 800, "Value-Add", "Raising", {
-    investmentStrategy: "Debut Ara infrastructure vehicle targeting mid-market industrial-decarbonization infrastructure by building or repurposing assets for the lower-carbon economy.",
+  f("FUND-017", "Ara Partners", "Ara Infrastructure Fund I", "2025", "$800M", 800, "Value-Add", "Financial Close", {
+    investmentStrategy: "Debut Ara infrastructure vehicle that reached final close above target in May 2025, targeting mid-market industrial-decarbonization infrastructure by building or repurposing assets for the lower-carbon economy.",
     sectors: ["Power & ET", "Digital", "Midstream", "Social Infra"],
-    regions: ["North America"],
+    regions: ["North America", "Europe"],
   }),
 
   // ── ArcLight Capital Partners ─────────────────────────────
@@ -578,8 +713,8 @@ export const funds: Fund[] = [
   }),
 
   // ── Blackstone ────────────────────────────────────────────
-  f("FUND-038", "Blackstone", "Blackstone AIP", "2026", "[$30.0B]", 30000, "Core-Plus", "Raising", {
-    investmentStrategy: "Could not verify as a Blackstone-managed infrastructure fund; the row appears to match BlackRock/GIP's AI Infrastructure Partnership, which targets AI data centers and supporting power infrastructure.",
+  f("FUND-038", "BlackRock (GIP)", "Global AI Infrastructure Investment Partnership (GAIIP)", "2024", "[$30.0B]", 30000, "Core-Plus", "Raising", {
+    investmentStrategy: "BlackRock/GIP-led partnership with Microsoft and MGX seeking to mobilize $30B of private equity capital over time, and up to $100B including debt, for AI data centers and supporting power infrastructure.",
     sectors: ["Power & ET", "Utilities", "Digital"],
     regions: ["Global"],
   }),
@@ -587,7 +722,7 @@ export const funds: Fund[] = [
     investmentStrategy: "Permanent-capital, multi-sector infrastructure vehicle with a long-term buy-and-hold approach; public deployment is concentrated in digital, transport, utilities/midstream, and some waste/environmental assets.",
     sectors: ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation", "Social Infra"],
     regions: ["Global"],
-    structure: "Listed / Evergreen",
+    structure: "Permanent Capital",
   }),
   f("FUND-040", "Blackstone", "BXINFRA", "Evergreen", "$4.1B", 4100, "Retail Act '40", "Evergreen", {
     investmentStrategy: "Perpetual, semiliquid retail infrastructure vehicle targeting Blackstone's Digital, Energy, and Transportation themes; early portfolio construction is currently centered on transport, digital, and pipeline energy, with Urbaser adding environmental services.",
@@ -596,7 +731,7 @@ export const funds: Fund[] = [
     structure: "Open-End",
   }),
 
-  f("FUND-041", "Blackstone", "Blackstone Energy Transition Partners IV (BETP IV)", "2025", "$5.6B", 5600, "Opportunistic", "Raising", {
+  f("FUND-041", "Blackstone", "Blackstone Energy Transition Partners IV (BETP IV)", "2025", "$5.6B", 5600, "Opportunistic", "Financial Close", {
     investmentStrategy: "Energy-focused private equity fund backing businesses across the energy-transition value chain, but with actual deployment spanning grid equipment, transmission, gas-fired reliability power, software, and environmental services as well as renewable enablers.",
     sectors: ["Power & ET", "Utilities", "Midstream", "Social Infra"],
     regions: ["North America", "Europe"],
@@ -615,8 +750,8 @@ export const funds: Fund[] = [
   }),
 
   // ── Brookfield ────────────────────────────────────────────
-  f("FUND-044", "Brookfield", "Brookfield BAIF", "2025", "$10.0B", 10000, "Value-Add", "Raising", {
-    investmentStrategy: "Treated as Brookfield's officially named BAIIF: an inaugural AI infrastructure fund investing across AI factories, power, compute, and adjacent assets across the AI value chain.",
+  f("FUND-044", "Brookfield", "Brookfield Artificial Intelligence Infrastructure Fund (BAIIF)", "2025", "[$10.0B]", 10000, "Value-Add", "Raising", {
+    investmentStrategy: "Brookfield's AI infrastructure fund launched in November 2025 with a $10B equity target and $5B of initial commitments, investing across AI factories, behind-the-meter power, compute infrastructure and adjacent AI value-chain assets.",
     sectors: ["Power & ET", "Utilities", "Digital"],
     regions: ["Global"],
   }),
@@ -718,13 +853,13 @@ export const funds: Fund[] = [
     regions: ["Europe", "North America"],
   }),
 
-  f("FUND-061", "CVC DIF", "CVC DIF Infrastructure VIII", "2025", "[€8.0B]", 8800, "Core-Plus", "Raising", {
-    investmentStrategy: "Successor core-plus vehicle using a build-to-core approach on diversified global infrastructure businesses with predictable revenues and development upside.",
-    sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
+  f("FUND-061", "CVC DIF", "CVC DIF Infrastructure VIII", "2025", "[€6.0B]", 6600, "Core-Plus", "Raising", {
+    investmentStrategy: "Successor core-plus vehicle targeting €6B of commitments for a diversified portfolio of roughly 20 positions, with public LP materials emphasizing renewable energy, utilities and transport across Europe and North America.",
+    sectors: ["Power & ET", "Utilities", "Transportation"],
     regions: ["Europe", "North America"],
   }),
-  f("FUND-062", "CVC DIF", "CVC DIF Value-Add IV", "2024", "€2.0B", 2200, "Value-Add", "Financial Close", {
-    investmentStrategy: "Rebranded successor to the CIF series pursuing diversified buy-and-build value-add infrastructure, but with public evidence pointing to a strongly digital-led lineage.",
+  f("FUND-062", "CVC DIF", "CVC DIF Value-Add IV", "2025", "[€2.0B]", 2200, "Value-Add", "Raising", {
+    investmentStrategy: "Activated successor to the CVC DIF value-add series, part of CVC's combined €8B DIF VIII / VA IV infrastructure fundraising target and focused on higher-growth mid-market infrastructure platforms.",
     sectors: ["Digital", "Midstream", "Transportation", "Social Infra"],
     regions: ["Europe", "North America"],
   }),
@@ -744,8 +879,8 @@ export const funds: Fund[] = [
   }),
 
   // ── DWS ───────────────────────────────────────────────────
-  f("FUND-065", "DWS", "DWS PEIF III", "Raising", "€3.1B", 3410, "Value-Add", "Raising", {
-    investmentStrategy: "Latest flagship DWS private infrastructure fund targeting long-term critical infrastructure in Europe and North America; lineage spans transport, utilities, digital, and social infrastructure.",
+  f("FUND-065", "DWS", "DWS PEIF III", "2021", "€3.1B", 3410, "Value-Add", "Financial Close", {
+    investmentStrategy: "Third flagship DWS Pan-European Infrastructure fund, which reached final close in June 2021 at approximately €3.1B and targets mature European infrastructure across transportation, power, utilities and digital infrastructure.",
     sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
     regions: ["Europe", "North America"],
   }),
@@ -789,20 +924,21 @@ export const funds: Fund[] = [
     sectors: ["Power & ET", "Utilities", "Digital", "Transportation"],
     regions: ["Europe", "North America"],
   }),
-  f("FUND-072", "EQT", "EQT AI Infrastructure", "2026", "[TBD]", null, "Value-Add", "Raising", {
-    investmentStrategy: "Public evidence remains preliminary rather than a fully launched fund; the clearest current read-through is a prospective AI-enabling infrastructure strategy centered on data centers, fiber, and adjacent power needs.",
-    sectors: ["Digital"],
+  f("FUND-072", "EQT", "EQT AI Infrastructure Strategy", "2026", "[TBD]", null, "Value-Add", "Evergreen", {
+    investmentStrategy: "Dedicated open-ended AI infrastructure strategy launched in 2026 and seeded by EQT Infrastructure portfolio company EdgeConneX, focused on building the foundation of the AI economy.",
+    sectors: ["Power & ET", "Digital"],
     regions: ["Global"],
+    structure: "Open-End",
   }),
   f("FUND-073", "EQT", "EQT Infrastructure Fund VI", "2023", "€21.5B", 23650, "Value-Add", "Financial Close", {
     investmentStrategy: "Flagship EQT value-add infrastructure fund focused on essential-service infrastructure businesses with protected cash flows and thematic value creation across digital, energy/decarbonization, circularity, and social infrastructure.",
     sectors: ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation", "Social Infra"],
     regions: ["Europe", "North America"],
   }),
-  f("FUND-074", "EQT", "EQT Transition Infrastructure", "2024", "[€5.0B]", 5500, "Opportunistic", "Raising", {
-    investmentStrategy: "Scale-up strategy for businesses enabling decarbonization and climate resilience, especially clean energy and resource-efficient / circular-economy infrastructure.",
+  f("FUND-074", "EQT", "EQT Transition Infrastructure", "2024", "[TBD]", null, "Opportunistic", "Raising", {
+    investmentStrategy: "Scale-up transition infrastructure strategy introduced in 2024 for businesses enabling decarbonization and climate resilience; no primary public target-size disclosure was found, so size remains undisclosed.",
     sectors: ["Power & ET", "Social Infra"],
-    regions: ["Europe", "North America"],
+    regions: ["Europe", "North America", "Asia-Pacific"],
   }),
 
   // ── Equilibrium ───────────────────────────────────────────
@@ -1152,6 +1288,22 @@ export const funds: Fund[] = [
     structure: "Permanent Capital",
   }),
 
+  // ── Partners Group ────────────────────────────────────────
+  f("FUND-150", "Partners Group", "Partners Group Direct Infrastructure Fund IV", "2023", "[$8.0B]", 8000, "Core-Plus", "Raising", {
+    investmentStrategy: "Fourth-generation Partners Group direct infrastructure vehicle in fundraising, targeting next-generation infrastructure platforms with core-plus/value-add characteristics across decarbonization, digitization, new living and economic infrastructure themes.",
+    sourceUrls: [
+      "https://www.partnersgroup.com/news-and-views/press-releases/corporate-news/detail?news_id=35550643-444b-49c8-9f72-1502c2e822a6",
+      "https://www.partnersgroup.com/~/media/Files/P/Partnersgroup/Universal/in-the-media/20240301-infrastructure-investor-esther-peiner-feb24.pdf",
+      "https://irei.com/news/imrf-commits-up-to-25m-to-partners-group-direct-infrastructure-fund-iv/",
+      "https://www.partnersgroup.com/news-and-views/press-releases/corporate-news/detail?news_id=b968937c-2e81-4691-984d-d8fdd68a0ad7",
+    ],
+    sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
+    regions: ["North America", "Europe", "Asia-Pacific"],
+    strategies: ["Core-Plus", "Value-Add"],
+    structure: "Closed-End",
+    strategyUrl: "https://www.partnersgroup.com/en/our-investments/infrastructure",
+  }),
+
   // ── QIA ───────────────────────────────────────────────────
   f("FUND-129", "Qatar Investment Authority (QIA)", "QIA Infrastructure", "Evergreen", "—", null, "Core", "Evergreen", {
     investmentStrategy: "Core infrastructure platform centered on regulated utilities and gateway transport assets, with newer commitments in renewables and digital infrastructure.",
@@ -1264,8 +1416,8 @@ export const funds: Fund[] = [
     sectors: ["Digital"],
     regions: ["North America"],
   }),
-  f("FUND-146", "TPG", "TPG Rise Climate", "2025", "$6.6B", 6600, "Opportunistic", "Raising", {
-    investmentStrategy: "Broad climate-solutions private-equity series within TPG Rise Climate, investing across clean power, electrification, industrial decarbonization, and circularity/environmental solutions, with some value-added infrastructure characteristics.",
+  f("FUND-146", "TPG", "TPG Rise Climate II", "2025", "$6.8B", 6773, "Opportunistic", "Raising", {
+    investmentStrategy: "Second TPG Rise Climate fund, reported in TPG filings with approximately $6.8B committed by March 31, 2026; this row tracks the climate private-equity vehicle rather than the separate Rise Climate Transition Infrastructure product.",
     sectors: ["Power & ET", "Utilities", "Social Infra"],
     regions: ["Global"],
   }),
@@ -1297,7 +1449,7 @@ export const funds: Fund[] = [
 export function validateFundData(): string[] {
   const errors: string[] = [];
   const idSet = new Set<string>();
-  const EXPECTED_COUNT = 149;
+  const EXPECTED_COUNT = 150;
 
   for (const fund of funds) {
     // Unique IDs
