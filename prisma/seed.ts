@@ -224,26 +224,30 @@ async function main() {
       .map((r) => FUND_REGION_MAP[r])
       .filter(Boolean) as FundRegionEnum[];
 
+    const fundPayload = {
+      managerId,
+      fundName: fund.fundName,
+      ticker: fund.ticker,
+      investmentStrategy: fund.investmentStrategy,
+      size: fund.size,
+      sizeUsdMm: fund.sizeUsdMm,
+      vintage: fund.vintage,
+      strategies,
+      structure,
+      fundStatus,
+      sectors,
+      regions,
+      sourceUrls: fund.sourceUrls,
+      strategyUrl: fund.strategyUrl,
+      status: "PUBLISHED" as const,
+    };
+
     const dbFund = await prisma.fund.upsert({
       where: { legacyId: fund.id },
-      update: {},
+      update: fundPayload,
       create: {
         legacyId: fund.id,
-        managerId,
-        fundName: fund.fundName,
-        ticker: fund.ticker,
-        investmentStrategy: fund.investmentStrategy,
-        size: fund.size,
-        sizeUsdMm: fund.sizeUsdMm,
-        vintage: fund.vintage,
-        strategies,
-        structure,
-        fundStatus,
-        sectors,
-        regions,
-        sourceUrls: fund.sourceUrls,
-        strategyUrl: fund.strategyUrl,
-        status: "PUBLISHED",
+        ...fundPayload,
       },
     });
 

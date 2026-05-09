@@ -330,7 +330,7 @@ const MANAGER_SOURCE_URLS: Record<string, string[]> = {
   "Blue Owl Capital": ["https://www.blueowl.com/real-assets"],
   "Brookfield": ["https://www.brookfield.com/our-businesses/infrastructure"],
   "Carlyle Group": ["https://www.carlyle.com/our-business/global-investment-solutions/infrastructure"],
-  "CBRE Investment Management": ["https://www.cbreim.com/strategies/infrastructure"],
+  "CBRE Investment Management": ["https://www.cbreim.com/strategies-and-solutions/investment/private-infrastructure"],
   "CIM Group": ["https://www.cimgroup.com/investment-platforms/infrastructure"],
   "Connor, Clark & Lunn": ["https://cclprivatecapital.com/"],
   "Copenhagen Infrastructure Partners": ["https://www.cip.com/"],
@@ -341,7 +341,7 @@ const MANAGER_SOURCE_URLS: Record<string, string[]> = {
   "DWS": ["https://www.dws.com/en-gb/capabilities/alternatives/infrastructure/"],
   "EIG": ["https://www.eigpartners.com/"],
   "Ember Infrastructure Management": ["https://www.ember-infra.com/"],
-  "Energy Capital Partners": ["https://www.ecpgp.com/about"],
+  "Energy Capital Partners": ["https://www.ecpgp.com/about/"],
   "Energy Infrastructure Partners": ["https://www.energy-infrastructure-partners.com/"],
   "EQT": ["https://eqtgroup.com/en/infrastructure"],
   "Equilibrium": ["https://eq-cap.com/"],
@@ -357,7 +357,7 @@ const MANAGER_SOURCE_URLS: Record<string, string[]> = {
   "Harrison Street": ["https://harrisonst.com/infrastructure/"],
   "I Squared Capital": ["https://isquaredcapital.com/"],
   "iCON Infrastructure": ["https://www.iconinfrastructure.com/"],
-  "IFM Investors": ["https://www.ifminvestors.com/investment-capabilities/infrastructure/"],
+  "IFM Investors": ["https://www.ifminvestors.com/capabilities/know-how/"],
   "Igneo Infrastructure Partners": ["https://www.igneoip.com/"],
   "InfraBridge": ["https://www.infrabridge.com/"],
   "InfraRed Capital Partners": ["https://www.ircp.com/investments/"],
@@ -370,7 +370,7 @@ const MANAGER_SOURCE_URLS: Record<string, string[]> = {
   "Manulife Investment Management": ["https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure"],
   "Meridiam": ["https://www.meridiam.com/"],
   "Morgan Stanley Infrastructure Partners": ["https://www.morganstanley.com/im/en-us/institutional-investor/about-us/investment-teams/real-assets/private-infrastructure-team.html"],
-  "Morrison & Co": ["https://www.hrlmorrison.com/"],
+  "Morrison & Co": ["https://morrisonglobal.com/"],
   "Mubadala Investment Company": ["https://www.mubadala.com/en/what-we-do/investments/real-estate-infrastructure"],
   "Northampton Capital": ["https://www.northamptonllc.com/"],
   "Northleaf Capital Partners": ["https://www.northleafcapital.com/infrastructure/"],
@@ -391,18 +391,67 @@ const MANAGER_SOURCE_URLS: Record<string, string[]> = {
   "Tiger Infrastructure Partners": ["https://www.tigerinfrastructure.com/"],
   "TPG": ["https://www.tpg.com/platforms/impact/rise-climate"],
   "Ullico": ["https://www.ullico.com/products/ullico-infrastructure-fund/"],
-  "Vauban Infrastructure Partners": ["https://www.im.natixis.com/en-intl/about/investment-managers-and-capabilities/vauban-infrastructure-partners"],
+  "Vauban Infrastructure Partners": ["https://vauban-ip.com/en/about-us"],
   "Vision Ridge Partners": ["https://vision-ridge.com/"],
 };
 
 const FUND_SOURCE_URLS: Record<string, string[]> = {
+  "FUND-001": [
+    "https://www.3i-infrastructure.com/investors/results-reports-presentations/annual-report-2025/",
+    "https://www.3i.com/infrastructure/our-funds/",
+  ],
+  "FUND-002": ["https://www.3i.com/infrastructure/our-funds/"],
+  "FUND-005": ["https://www.internationalpublicpartnerships.com/"],
+  "FUND-006": ["https://ancala.com/ancala-announces-final-close-of-third-flagship-infrastructure-fund/"],
+  "FUND-007": ["https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-closes-flagship-fund-v-above-e10-billion-target"],
+  "FUND-008": ["https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-closes-inaugural-mid-cap-fund-e22-billion-hard-cap"],
+  "FUND-009": ["https://www.antin-ip.com/media/our-news/antin-holds-final-close-on-inaugural-nextgen-fund-at-e1-2-billion-target"],
+  "FUND-011": ["https://www.apollo.com/wealth/strategies/products/apollo-infrastructure-company"],
+  "FUND-012": ["https://www.apollo.com/institutional/insights-news/pressreleases/2023/04/apollo-launches-clean-transition-capital-strategy-to-support-firmwide-target-to-deploy-50-billion-by-2027-2654978"],
+  "FUND-013": ["https://www.sec.gov/Archives/edgar/data/2002112/000095014224002977/xslFormDX01/primary_doc.xml"],
+  "FUND-014": ["https://www.sec.gov/Archives/edgar/data/1961489/000095014225001711/xslFormDX01/primary_doc.xml"],
+  "FUND-015": ["https://www.prnewswire.com/news-releases/ara-partners-closes-over-3-billion-of-new-capital-commitments-302013579.html"],
+  "FUND-016": ["https://www.arapartners.com/what-we-do/strategies/energy/"],
   "FUND-017": ["https://www.arapartners.com/news/ara-partners-reaches-final-close-for-inaugural-infrastructure-fund-surpassing-target/"],
+  "FUND-018": ["https://www.prnewswire.com/news-releases/arclight-announces-final-fund-viii-close-of-3-9-billion-302734967.html"],
+  "FUND-019": ["https://www.ardian.com/press-releases/ardian-closes-its-second-generation-americas-infrastructure-fund-us21bn"],
+  "FUND-020": ["https://www.ardian.com/news-insights/press-releases/ardian-raises-20bn-power-essential-european-infrastructure"],
+  "FUND-021": ["https://www.areswms.com/solutions/aci"],
+  "FUND-022": ["https://www.sec.gov/Archives/edgar/data/1970645/000092963824004318/xslFormDX01/primary_doc.xml"],
+  "FUND-023": ["https://www.apollo.com/institutional/insights-news/pressreleases/2025/01/apollo-to-acquire-argo-infrastructure-partners-3008446"],
+  "FUND-024": ["https://astatineip.com/2020/06/10/alinda-fund-iii-has-strong-gain-on-first-exit/"],
+  "FUND-025": ["https://www.sec.gov/Archives/edgar/data/1831477/000183147720000001/xslFormDX01/primary_doc.xml"],
+  "FUND-028": ["https://www.basaltinfra.com/wp-content/uploads/2026/01/Public-Full-Transparency-Report-Basalt-Infrastructure-Partners-2.pdf"],
+  "FUND-029": ["https://find-and-update.company-information.service.gov.uk/company/LP024280"],
+  "FUND-031": ["https://www.sec.gov/Archives/edgar/data/1936264/000193626423000001/xslFormDX01/primary_doc.xml"],
+  "FUND-032": ["https://www.businesswire.com/news/home/20221024005921/en/BlackRock-Global-Infrastructure-Fund-IV-Raises-US%244.5-Billion-at-First-Close"],
+  "FUND-033": ["https://www.sec.gov/Archives/edgar/data/2003071/000204912525000006/xslFormDX01/primary_doc.xml"],
+  "FUND-034": ["https://www.global-infra.com/about/"],
+  "FUND-035": ["https://www.sec.gov/Archives/edgar/data/2077639/000207763925000001/xslFormDX01/primary_doc.xml"],
+  "FUND-036": ["https://www.sec.gov/Archives/edgar/data/1950567/000195056725000002/xslFormDX01/primary_doc.xml"],
+  "FUND-037": ["https://www.sec.gov/Archives/edgar/data/2087294/000208729425000001/xslFormDX01/primary_doc.xml"],
   "FUND-038": ["https://www.blackrock.com/corporate/newsroom/press-releases/article/corporate-one/press-releases/blackrock-global-infrastructure-partners-microsoft-and-mgx-launch-new-ai"],
+  "FUND-039": ["https://www.sec.gov/Archives/edgar/data/1735632/000173563225000001/xslFormDX01/primary_doc.xml"],
+  "FUND-040": ["https://www.blackstone.com/fund/blackstone-infrastructure-strategies-eltif-bxinfra/"],
   "FUND-041": ["https://www.blackstone.com/news/press/blackstone-announces-5-6-billion-final-close-for-blackstone-energy-transition-partners-iv-at-hard-cap/"],
+  "FUND-042": ["https://www.sec.gov/Archives/edgar/data/2112720/000211272026000001/xslFormDX01/primary_doc.xml"],
   "FUND-043": ["https://ir.blueowl.com/Investors/news/news-details/2025/Blue-Owl-Capital-Announces-7-Billion-Final-Close-for-Digital-Infrastructure-Fund/default.aspx"],
   "FUND-044": ["https://bam.brookfield.com/press-releases/brookfield-launches-100-billion-ai-infrastructure-program"],
   "FUND-045": ["https://bam.brookfield.com/press-releases/brookfield-raises-20-billion-record-transition-fund"],
+  "FUND-046": ["https://bam.brookfield.com/press-releases/brookfield-raises-record-30-billion-flagship-infrastructure-strategy"],
+  "FUND-047": ["https://privatewealth.brookfield.com/fund/brookfield-infrastructure-income-fund-0"],
   "FUND-048": ["https://www.globenewswire.com/news-release/2025/03/11/3040401/0/en/Brookfield-Closes-Infrastructure-Structured-Solutions-Fund.html"],
+  "FUND-049": ["https://www.sec.gov/Archives/edgar/data/1470924/000146064610000002/xslFormDX01/primary_doc.xml"],
+  "FUND-050": ["https://www.sec.gov/Archives/edgar/data/1742013/000174201325000002/xslFormDX01/primary_doc.xml"],
+  "FUND-051": ["https://www.carlyle.com/media-room/news-release-archive/carlyle-group-raises-22-billion-global-infrastructure-opportunity"],
+  "FUND-052": ["https://www.sec.gov/Archives/edgar/data/2075288/000207528825000001/xslFormDX01/primary_doc.xml"],
+  "FUND-053": ["https://www.sec.gov/Archives/edgar/data/1933884/000193388423000002/xslFormDX01/primary_doc.xml"],
+  "FUND-054": ["https://www.cbreim.com/strategies-and-solutions/investment/private-infrastructure"],
+  "FUND-055": ["https://www.sec.gov/Archives/edgar/data/1900624/000190062423000003/xslFormDX01/primary_doc.xml"],
+  "FUND-056": ["https://www.cip.com/funds/flagship-funds/"],
+  "FUND-057": ["https://cclinfrastructure.cclgroup.com/"],
+  "FUND-059": ["https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds"],
+  "FUND-060": ["https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds"],
   "FUND-061": [
     "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025-58%20pserb%20resolution%20dif%20infrastructure%20fund%20viii%20scsp.pdf",
     "https://nj.gov/njbonds/treasury/doinvest/pdf/AlternativeInvestments/RealAsset/DIF_Infrastructure_VIII_SCSp.pdf",
@@ -410,17 +459,128 @@ const FUND_SOURCE_URLS: Record<string, string[]> = {
   ],
   "FUND-062": ["https://www.cvc.com/media/news/2026/full-year-2025-activity-update/"],
   "FUND-063": ["https://www.digitalbridge.com/press"],
+  "FUND-064": ["https://durationcapital.com/"],
   "FUND-065": [
     "https://www.eib.org/en/products/equity/funds/pan-european-infrastructure-3",
     "https://www.dws.com/AssetDownload/Index?assetGuid=0612b36b-92ef-428c-9981-9c75ed30a267&consumer=E-Library",
   ],
+  "FUND-066": ["https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners-ecp-completes-67-billion-fundraise"],
+  "FUND-068": ["https://www.sec.gov/Archives/edgar/data/1712778/000171277818000003/xslFormDX01/primary_doc.xml"],
+  "FUND-069": ["https://energy-infrastructure-partners.com/products/"],
+  "FUND-070": ["https://www.sec.gov/Archives/edgar/data/1991445/000199144525000002/xslFormDX01/primary_doc.xml"],
+  "FUND-071": ["https://eqtgroup.com/news/eqt-active-core-infrastructure-fund-holds-final-close-2024-09-24"],
   "FUND-072": ["https://eqtgroup.com/news/eqt-ab-publ-q1-annoucement-2026-2026-04-22"],
+  "FUND-073": ["https://eqtgroup.com/news/eqt-infrastructure-vi-holds-final-close-at-its-hard-cap-raising-eur-215-billion-in-total-commitments-2025-03-28"],
   "FUND-074": [
     "https://eqtgroup.com/infrastructure/eqt-transition-infrastructure",
     "https://eqtgroup.com/news/eqt-introduces-the-eqt-transition-infrastructure-strategy-with-the-acquisition-of-energy-storage-system-developer-and-operator-ju-niz-energy",
   ],
-  "FUND-107": ["https://www.sec.gov/Archives/edgar/data/2022923/000202292324000002/xslFormDX01/primary_doc.xml"],
-  "FUND-146": ["https://www.sec.gov/Archives/edgar/data/1880661/000188066126000033/tpg-20260331.htm"],
+  "FUND-075": [
+    "https://www.dbj.jp/en/topics/dbj_news/2020/html/20201119_202978.html",
+    "https://eq-cap.com/development-bank-of-japan-invests-in-equilibrium-capitals-controlled-environment-foods-fund-ii/",
+  ],
+  "FUND-076": ["https://fengate.com/news/fengate-announces-final-close-of-us1-1-billion-flagship-infrastructure-fund-above-target"],
+  "FUND-077": ["https://fengate.com/news/fengate-announces-final-close-of-us1-1-billion-flagship-infrastructure-fund-above-target"],
+  "FUND-078": ["https://www.fierainfrastructure.com/wp-content/uploads/default/20240529/assetco-successfully-completes-exit-from-infrastructure-asset-management-business-en.pdf"],
+  "FUND-079": ["https://www.fierainfrastructure.com/en/strategies/eaglecrest-infrastructure/"],
+  "FUND-080": ["https://www.gcmgrosvenor.com/2025/04/22/gcm-grosvenor-announces-1-3-billion-final-close-for-infrastructure-advantage-fund-ii-a-nearly-50-increase-over-its-predecessor-fund/"],
+  "FUND-081": ["https://generatecapital.com/"],
+  "FUND-083": ["https://graingp.com/about/"],
+  "FUND-084": ["https://www.sec.gov/Archives/edgar/data/1984790/000095014224001965/xslFormDX01/primary_doc.xml"],
+  "FUND-085": ["https://am.gs.com/en-int/institutions/news/press-release/2025/g-infra-launch"],
+  "FUND-086": ["https://am.gs.com/en-int/advisors/news/press-release/2023/Goldman-Sachs-Asset-Management-Completes-Final-Close-of-Horizon-Environment-and-Climate-Solutions-I"],
+  "FUND-087": ["https://am.gs.com/en-us/advisors/news/press-release/2023/goldman-sachs-asset-management-raises-4-billion-for-west-street-infrastructure-partners-iv"],
+  "FUND-088": ["https://www.sec.gov/Archives/edgar/data/2081965/000208196525000001/xslFormDX01/primary_doc.xml"],
+  "FUND-089": ["https://higinfrastructure.com/news/h-i-g-capital-raises-1-3-billion-for-infrastructure-fund/"],
+  "FUND-090": ["https://www.globenewswire.com/news-release/2022/10/06/2529666/0/en/harbert-infrastructure-fund-vi-lp-announces-final-close.html"],
+  "FUND-091": ["https://www.sec.gov/Archives/edgar/data/2080982/000208098225000001/xslFormDX01/primary_doc.xml"],
+  "FUND-092": [
+    "https://www.sec.gov/Archives/edgar/data/1744138/000174413825000002/xslFormDX08/primary_doc.xml",
+    "https://www.sec.gov/Archives/edgar/data/1744140/000174414024000001/xslFormDX01/primary_doc.xml",
+  ],
+  "FUND-093": ["https://isquaredcapital.com/cpt_news/i-squared-capital-accelerates-u-s-energy-transition-with-acquisition-of-oregons-premier-renewable-fuels-terminal/"],
+  "FUND-094": [
+    "https://www.pa.gov/content/dam/copapwp-pagov/en/psers/documents/board3/resolutions/2025/2025.21%20pserb%20resolution%20i%20squared%20global%20infrastructure%20fund%20iv.pdf",
+    "https://www.sec.gov/Archives/edgar/data/2049770/000204977025000002/xslFormDX01/primary_doc.xml",
+  ],
+  "FUND-095": ["https://www.iconinfrastructure.com/"],
+  "FUND-096": ["https://www.ifminvestors.com/capabilities/know-how/"],
+  "FUND-097": [
+    "https://www.ifminvestors.com/capabilities/know-how/",
+    "https://www.green.ch/en/about-green/who-we-are/ifm-investors",
+  ],
+  "FUND-098": ["https://www.igneoip.com/australia/en/institutional/news-and-insights/press/igneo-refinances-green-tranche-credit-facility.html"],
+  "FUND-099": ["https://www.sec.gov/Archives/edgar/data/2036260/000203626025000003/xslFormDX01/primary_doc.xml"],
+  "FUND-100": [
+    "https://www.infrabridge.com/",
+    "https://www.infrabridge.com/news/2023-02-03-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business",
+  ],
+  "FUND-101": ["https://www.ircp.com/who-we-are/"],
+  "FUND-102": ["https://www.hicl.com/"],
+  "FUND-103": [
+    "https://www.sec.gov/Archives/edgar/data/2107530/000210753026000001/xslFormDX01/primary_doc.xml",
+    "https://www.sec.gov/Archives/edgar/data/1967019/000196701925000002/xslFormDX01/primary_doc.xml",
+  ],
+  "FUND-104": ["https://www.nasdaq.com/press-release/south-jersey-industries-inc.-enters-into-agreement-to-be-acquired-by-the"],
+  "FUND-105": [
+    "https://kseries.kkr.com/infrastructure/",
+    "https://www.sec.gov/Archives/edgar/data/1933581/000193358126000001/xslFormDX01/primary_doc.xml",
+  ],
+  "FUND-106": ["https://www.sec.gov/Archives/edgar/data/2015282/000201528325000005/xslFormDX01/primary_doc.xml"],
+  "FUND-107": [
+    "https://www.sec.gov/Archives/edgar/data/2022923/000202292324000002/xslFormDX01/primary_doc.xml",
+    "https://www.sec.gov/Archives/edgar/data/2022923/000202292325000001/xslFormDX01/primary_doc.xml",
+  ],
+  "FUND-108": ["https://kseries.kkr.com/infrastructure/"],
+  "FUND-109": ["https://www.wrenhouseinfra.com/"],
+  "FUND-111": ["https://www.macquarie.com/au/en/about/company/macquarie-asset-management/financial-advisor/investments/unlisted-infrastructure.html"],
+  "FUND-112": ["https://www.greeninvestmentgroup.com/en/news/2024/macquarie-green-energy-and-climate-opportunities-fund-acquires-p.html"],
+  "FUND-113": ["https://www.macquarie.com/ph/en/about/news/2025/macquarie-asset-management-reaches-us3-billion-close-of-green-energy-transition-solutions-fund-and-co-investment-commitment.html"],
+  "FUND-114": ["https://www.macquarie.com/au/en/about/company/macquarie-asset-management/financial-advisor/investments/unlisted-infrastructure.html"],
+  "FUND-115": ["https://www.businesswire.com/news/home/20250617787003/en/Macquarie-Asset-Management-Closes-Macquarie-Infrastructure-Partners-VI-With-Over-%24US8-Billion-of-Total-Fund-and-Co-Investment-Commitments"],
+  "FUND-116": ["https://www.sec.gov/Archives/edgar/data/2123130/000212313026000001/xslFormDX01/primary_doc.xml"],
+  "FUND-117": ["https://www.prnewswire.com/news-releases/manulife-investment-managements-infrastructure-fund-iii-reaches-us-5-5-billion-in-an-oversubscribed-close-302578671.html"],
+  "FUND-118": ["https://www.meridiam.com/news/meridiam-successfully-closes-mina-iv-its-flagship-north-america-infrastructure-fund-raising-more-than-1-8-billion/"],
+  "FUND-119": ["https://www.morganstanley.com/press-releases/msim-closes-fourth-global-infrastructure-fund"],
+  "FUND-120": ["https://infratil.com/"],
+  "FUND-121": ["https://morrisonglobal.com/"],
+  "FUND-122": ["https://morrisonglobal.com/sites/mn/assets/Form-21-3_Explanatory-Document_B.pdf"],
+  "FUND-124": [
+    "https://www.sec.gov/Archives/edgar/data/2043231/000204323125000002/xslFormDX01/primary_doc.xml",
+    "https://www.sec.gov/Archives/edgar/data/2043228/000204322825000002/xslFormDX01/primary_doc.xml",
+  ],
+  "FUND-125": ["https://www.kirkland.com/news/press-release/2021/11/kirkland-advises-northleaf-on-infra-fund"],
+  "FUND-126": ["https://www.northleafcapital.com/news/northleaf-hits-hard-cap-final-close-its-us26-billion-infrastructure-fund"],
+  "FUND-130": ["https://www.cefc.com.au/media/media-release/cefc-backs-new-qic-infrastructure-investment-to-accelerate-energy-transition/"],
+  "FUND-131": ["https://www.quinbrook.com/news-insights/quinbrook-exceeds-target-for-net-zero-power-strategy-raising-usd-3-billion-in-capital-commitments/"],
+  "FUND-132": ["https://www.prnewswire.com/news-releases/ridgewood-infrastructure-announced-1-2-billion-final-close-for-fund-ii-significantly-surpassing-its-target-302352437.html"],
+  "FUND-133": ["https://www.sec.gov/Archives/edgar/data/2075494/000206508925000001/xslFormDX01/primary_doc.xml"],
+  "FUND-134": ["https://www.sec.gov/Archives/edgar/data/2005226/000200522624000001/xslFormDX01/primary_doc.xml"],
+  "FUND-135": [
+    "https://www.gic.com.sg/thinkspace/emerging-markets/infrastructure-a-resilient-strategy-in-uncertain-times/",
+    "https://searchlightcap.com/news/mainstream-fiber-networks-plans-rapid-expansion-with-strategic-investment-from-searchlight-capital-partners/",
+  ],
+  "FUND-136": ["https://www.sec.gov/Archives/edgar/data/2074413/000207441325000001/xslFormDX01/primary_doc.xml"],
+  "FUND-137": ["https://www.sec.gov/Archives/edgar/data/2003495/000200349525000001/xslFormDX01/primary_doc.xml"],
+  "FUND-138": ["https://www.sec.gov/Archives/edgar/data/2030457/000203045726000001/xslFormDX01/primary_doc.xml"],
+  "FUND-139": ["https://www.sec.gov/Archives/edgar/data/2098508/000209850825000001/xslFormDX01/primary_doc.xml"],
+  "FUND-140": ["https://www.swisslife-am.com/en/home/media/news/switzerland/institutional/2023/0502-infrastructure-fund.html"],
+  "FUND-141": ["https://www.swisslife-am.com/en/home/media/news/corporate/company-news/2024/0704-gio-4.html"],
+  "FUND-142": ["https://www.sec.gov/Archives/edgar/data/2017078/000201707825000003/xslFormDX01/primary_doc.xml"],
+  "FUND-144": ["https://www.sec.gov/Archives/edgar/data/1995540/000199554025000003/xslFormDX01/primary_doc.xml"],
+  "FUND-145": [
+    "https://www.sec.gov/Archives/edgar/data/1985097/000198509724000001/xslFormDX01/primary_doc.xml",
+    "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000011/tpg-20251231.htm",
+  ],
+  "FUND-146": [
+    "https://www.tpg.com/platforms/impact/rise-climate",
+    "https://www.sec.gov/Archives/edgar/data/2014691/000201469126000001/xslFormDX01/primary_doc.xml",
+    "https://www.sec.gov/Archives/edgar/data/1880661/000188066126000033/tpg-20260331.htm",
+  ],
+  "FUND-147": ["https://www.ullico.com/products/ullico-infrastructure-fund/"],
+  "FUND-148": ["https://vauban-ip.com/en/about-us"],
+  "FUND-149": ["https://www.streetinsider.com/Business%2BWire/Vision%2BRidge%2BPartners%2BRaises%2B~%242.4%2BBillion%2Bfor%2BFlagship%2BSustainable%2BReal%2BAssets%2BStrategy/25980007.html"],
+  "FUND-150": ["https://www.sec.gov/Archives/edgar/data/1971296/000197129625000002/xslFormDX01/primary_doc.xml"],
 };
 
 function uniqUrls(urls: string[]): string[] {
@@ -428,11 +588,11 @@ function uniqUrls(urls: string[]): string[] {
 }
 
 function getFundSourceUrls(id: string, managerName: string, sourceUrls: string[] = []): string[] {
-  return uniqUrls([
+  const directSources = uniqUrls([
     ...sourceUrls,
     ...(FUND_SOURCE_URLS[id] ?? []),
-    ...(MANAGER_SOURCE_URLS[managerName] ?? []),
   ]);
+  return directSources.length > 0 ? directSources : uniqUrls(MANAGER_SOURCE_URLS[managerName] ?? []);
 }
 
 function getStrategyUrl(managerName: string): string {
@@ -586,8 +746,8 @@ export const funds: Fund[] = [
   }),
 
   // ── ArcLight Capital Partners ─────────────────────────────
-  f("FUND-018", "ArcLight Capital Partners", "ArcLight Energy Partners Fund VIII", "2023", "$3.0B", 3000, "Opportunistic", "Financial Close", {
-    investmentStrategy: "Current vehicle is publicly filed as ArcLight Infrastructure Partners Fund VIII-A/B, the successor flagship focused on electrification infrastructure through power, renewables, strategic gas and selective transformative assets.",
+  f("FUND-018", "ArcLight Capital Partners", "ArcLight Infrastructure Partners Fund VIII", "2026", "$3.9B", 3900, "Opportunistic", "Financial Close", {
+    investmentStrategy: "Eighth flagship ArcLight infrastructure vehicle, which reached final close in April 2026 above its original $3.0B target and focuses on electrification infrastructure through power, renewables, strategic gas, storage, transmission, midstream and digital infrastructure.",
     sectors: ["Power & ET", "Utilities", "Digital", "Midstream"],
     regions: ["North America"],
   }),
@@ -645,8 +805,8 @@ export const funds: Fund[] = [
   }),
 
   // ── Axium Infrastructure ──────────────────────────────────
-  f("FUND-027", "Axium Infrastructure", "AxInfra Fund I-IV", "Evergreen", "$7.7B", 7700, "Core", "Evergreen", {
-    investmentStrategy: "Core infrastructure series targeting brownfield and greenfield energy, transportation, and social assets in OECD markets, typically backed by long-term contracts, concessions, or regulated frameworks.",
+  f("FUND-027", "Axium Infrastructure", "AxInfra Fund I-IV", "Evergreen", "[TBD]", null, "Core", "Evergreen", {
+    investmentStrategy: "Core infrastructure series targeting brownfield and greenfield energy, transportation, and social assets in OECD markets, typically backed by long-term contracts, concessions, or regulated frameworks. Public manager materials support the strategy context, but this pass did not find a fund-specific source for aggregate size.",
     sectors: ["Power & ET", "Utilities", "Transportation", "Social Infra"],
     regions: ["North America", "Europe"],
   }),
@@ -891,8 +1051,8 @@ export const funds: Fund[] = [
     sectors: ["Power & ET", "Utilities", "Midstream", "Social Infra"],
     regions: ["North America"],
   }),
-  f("FUND-067", "Energy Capital Partners", "ECP Fund VI", "2025", "$5.0B", 5000, "Opportunistic", "Raising", {
-    investmentStrategy: "Successor flagship vehicle continuing ECP's value-added, primarily control strategy across renewable and conventional power generation, storage, environmental infrastructure, plus smaller biofuels/carbon-capture exposure.",
+  f("FUND-067", "Energy Capital Partners", "ECP Fund VI", "2025", "[TBD]", null, "Opportunistic", "Raising", {
+    investmentStrategy: "Successor flagship vehicle expected to continue ECP's value-added, primarily control strategy across renewable and conventional power generation, storage, environmental infrastructure, plus smaller biofuels/carbon-capture exposure. No fund-specific public primary source was found in this pass for size or fundraising status beyond manager-level strategy context.",
     sectors: ["Power & ET", "Utilities", "Midstream", "Social Infra"],
     regions: ["North America"],
   }),
@@ -905,8 +1065,8 @@ export const funds: Fund[] = [
   }),
 
   // ── Energy Infrastructure Partners ────────────────────────
-  f("FUND-069", "Energy Infrastructure Partners", "EIP III", "Raising", "€4.0B", 4400, "Core-Plus", "Raising", {
-    investmentStrategy: "Third-generation energy-only infrastructure strategy focused on system-critical OECD assets across transmission & distribution, storage & flexibility, and renewable energy.",
+  f("FUND-069", "Energy Infrastructure Partners", "EIP III", "2022", "€1.5B", 1650, "Core-Plus", "Raising", {
+    investmentStrategy: "Third-generation EIP energy infrastructure product, disclosed by the manager as open with EUR 1.5B of AUM as of December 31, 2024 and focused on system-critical OECD assets across transmission and distribution, storage and flexibility, and renewable energy.",
     sectors: ["Power & ET", "Utilities", "Midstream"],
     regions: ["Europe", "North America"],
   }),
@@ -996,8 +1156,8 @@ export const funds: Fund[] = [
   }),
 
   // ── Grain Management ──────────────────────────────────────
-  f("FUND-083", "Grain Management", "Grain GCOF III", "Raising", "$2.25B", 2250, "Opportunistic", "Raising", {
-    investmentStrategy: "Specialist communications vehicle focused on mission-critical communications assets and broadband infrastructure companies; historical deployment is dominated by fiber, broadband, and adjacent telecom-network/service platforms.",
+  f("FUND-083", "Grain Management", "Grain GCOF III", "2021", "$2.25B", 2250, "Opportunistic", "Financial Close", {
+    investmentStrategy: "Specialist communications vehicle that closed in April 2021 with $2.25B of commitments and focuses on mission-critical communications assets and broadband infrastructure companies, including fiber, broadband, and adjacent telecom-network/service platforms.",
     sectors: ["Digital"],
     regions: ["North America"],
   }),
@@ -1185,8 +1345,8 @@ export const funds: Fund[] = [
     sectors: ["Power & ET", "Social Infra"],
     regions: ["Global"],
   }),
-  f("FUND-113", "Macquarie Asset Management", "Macquarie MGETS", "2022", "$3.0B", 3000, "Opportunistic", "Financial Close", {
-    investmentStrategy: "Dedicated transition-solutions fund beyond mature renewables, targeting storage, distributed energy, renewable fuels, clean transport, carbon capture and circular economy.",
+  f("FUND-113", "Macquarie Asset Management", "Macquarie MGETS", "2025", "$3.0B", 3000, "Opportunistic", "Financial Close", {
+    investmentStrategy: "Dedicated transition-solutions fund beyond mature renewables, which reached final close in September 2025 with over $3B of fund and co-investment commitments and targets storage, distributed energy, renewable fuels, clean transport, carbon capture and circular economy.",
     sectors: ["Power & ET", "Transportation", "Social Infra"],
     regions: ["Global"],
   }),
@@ -1207,22 +1367,22 @@ export const funds: Fund[] = [
   }),
 
   // ── Manulife Investment Management ────────────────────────
-  f("FUND-117", "Manulife Investment Management", "Manulife MIF III", "2021", "$5.5B", 5500, "Core-Plus", "Financial Close", {
-    investmentStrategy: "Third flagship North American mid-market core-plus vehicle; the lineage is most visibly concentrated in digital infrastructure, renewables/distributed energy and utilities.",
+  f("FUND-117", "Manulife Investment Management", "Manulife MIF III", "2025", "$5.5B", 5500, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Third flagship North American mid-market core-plus vehicle, which reached an oversubscribed final close in October 2025 at $5.5B and is visibly concentrated in digital infrastructure, renewables/distributed energy and utilities.",
     sectors: ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation", "Social Infra"],
     regions: ["North America"],
   }),
 
   // ── Meridiam ──────────────────────────────────────────────
-  f("FUND-118", "Meridiam", "Meridiam MINA IV", "Raising", "$1.8B", 1800, "Core-Plus", "Raising", {
-    investmentStrategy: "Fourth-generation North America Meridiam vehicle centered on critical public services and sustainable mobility, now broadened by fiber and water assets.",
+  f("FUND-118", "Meridiam", "Meridiam MINA IV", "2025", "$1.8B", 1800, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Fourth-generation North America Meridiam vehicle that closed in October 2025 with more than $1.8B of commitments, centered on contracted infrastructure across energy, mobility and essential services, and supported by Meridiam's long-duration public-infrastructure model.",
     sectors: ["Digital", "Transportation", "Social Infra"],
     regions: ["North America"],
   }),
 
   // ── Morgan Stanley ────────────────────────────────────────
-  f("FUND-119", "Morgan Stanley Infrastructure Partners", "North Haven Infrastructure Partners IV", "2021", "$4.1B", 4100, "Value-Add", "Financial Close", {
-    investmentStrategy: "Global/OECD infrastructure fund targeting inflation-linked assets in transport, digital, energy transition and utilities with active asset-management upside.",
+  f("FUND-119", "Morgan Stanley Infrastructure Partners", "North Haven Infrastructure Partners IV", "2025", "$4.1B", 4100, "Value-Add", "Financial Close", {
+    investmentStrategy: "Fourth Morgan Stanley Infrastructure Partners global infrastructure fund, which closed in March 2025 at $4.1B and targets inflation-linked assets in transportation, digital infrastructure, energy transition and utilities with active asset-management upside.",
     sectors: ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation"],
     regions: ["North America", "Europe"],
   }),
@@ -1313,22 +1473,22 @@ export const funds: Fund[] = [
   }),
 
   // ── QIC ───────────────────────────────────────────────────
-  f("FUND-130", "QIC", "QIC QGIF II", "2023", "[$2.0B]", 2000, "Core-Plus", "Financial Close", {
-    investmentStrategy: "Thematic successor fund now concentrated on Australasian energy-transition infrastructure, while still sitting within QIC's broader diversified energy, transport and social infrastructure franchise.",
+  f("FUND-130", "QIC", "QIC QGIF II", "2023", "[TBD]", null, "Core-Plus", "Raising", {
+    investmentStrategy: "Second QIC Global Infrastructure Fund. Public CEFC materials verify the QGIF II vehicle and a January 2026 CEFC commitment, but do not evidence a final close or official total fund size, so the database keeps size conservative.",
     sectors: ["Power & ET", "Utilities", "Transportation", "Social Infra"],
     regions: ["Asia-Pacific"],
   }),
 
   // ── Quinbrook Infrastructure Partners ─────────────────────
-  f("FUND-131", "Quinbrook Infrastructure Partners", "Quinbrook NZPF", "2021", "$3.0B", 3000, "Value-Add", "Financial Close", {
-    investmentStrategy: "Value-add net-zero-power strategy focused on solar+storage, grid support, battery storage, renewable fuels and renewable-powered hyperscale data-center infrastructure.",
+  f("FUND-131", "Quinbrook Infrastructure Partners", "Quinbrook Net Zero Power Fund (NZPF)", "2024", "$3.0B", 3000, "Value-Add", "Financial Close", {
+    investmentStrategy: "Value-add net-zero-power strategy that held final close in August 2024 with USD 3B across the fund and co-investment vehicles, focused on solar+storage, grid support, battery storage, renewable fuels and renewable-powered hyperscale data-center infrastructure.",
     sectors: ["Power & ET", "Utilities", "Digital", "Social Infra"],
     regions: ["North America", "Europe", "Asia-Pacific"],
   }),
 
   // ── Ridgewood Infrastructure ──────────────────────────────
-  f("FUND-132", "Ridgewood Infrastructure", "Ridgewood Water & Strategic Infrastructure Fund II", "2022", "$1.2B", 1200, "Opportunistic", "Financial Close", {
-    investmentStrategy: "Lower-middle-market essential infrastructure strategy spanning water/wastewater, utilities, logistics/transport and selected energy-transition assets with active operational improvement.",
+  f("FUND-132", "Ridgewood Infrastructure", "Ridgewood Water & Strategic Infrastructure Fund II", "2025", "$1.2B", 1200, "Opportunistic", "Financial Close", {
+    investmentStrategy: "Second Ridgewood lower-middle-market essential infrastructure fund, which reached final close in January 2025 at $1.2B and spans water/wastewater, utilities, logistics/transport and selected energy-transition assets with active operational improvement.",
     sectors: ["Power & ET", "Utilities", "Transportation", "Social Infra"],
     regions: ["North America"],
   }),
@@ -1341,8 +1501,8 @@ export const funds: Fund[] = [
   }),
 
   // ── SDC Capital Partners ──────────────────────────────────
-  f("FUND-134", "SDC Capital Partners", "SDC Fund IV", "2022", "$2.1B", 2100, "Value-Add", "Financial Close", {
-    investmentStrategy: "Pure-play digital infrastructure strategy across data centers, fiber, wireless, and cloud/IT platforms, with a development-heavy value-add orientation.",
+  f("FUND-134", "SDC Capital Partners", "SDC Digital Infrastructure Opportunity Fund IV", "2024", "[TBD]", null, "Value-Add", "Raising", {
+    investmentStrategy: "Pure-play digital infrastructure strategy across data centers, fiber, wireless, and cloud/IT platforms. Public SEC evidence verifies the Fund IV vehicle and fundraising, but no primary final-close or official size source was found in this pass.",
     sectors: ["Digital"],
     regions: ["North America"],
   }),
@@ -1360,8 +1520,8 @@ export const funds: Fund[] = [
     sectors: ["Power & ET", "Utilities", "Digital", "Transportation"],
     regions: ["Global"],
   }),
-  f("FUND-137", "Stonepeak", "Stonepeak Fund V", "2023", "$15.0B", 15000, "Core-Plus", "Financial Close", {
-    investmentStrategy: "Fifth flagship Stonepeak diversified North American infrastructure strategy targeting high-barrier assets with durable cash flows; predecessor deployment shows recurring emphasis on digital/data, transport/logistics, and energy-related platforms.",
+  f("FUND-137", "Stonepeak", "Stonepeak Fund V", "2023", "[TBD]", null, "Core-Plus", "Raising", {
+    investmentStrategy: "Fifth flagship Stonepeak diversified North American infrastructure strategy targeting high-barrier assets with durable cash flows. Public SEC evidence verifies ongoing fundraising and disclosed roughly $7.3B sold as of the January 2025 amendment, but no primary final-close or official target-size source was found in this pass.",
     sectors: ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation"],
     regions: ["North America"],
   }),
@@ -1370,7 +1530,7 @@ export const funds: Fund[] = [
     sectors: ["Power & ET"],
     regions: ["Global"],
   }),
-  f("FUND-139", "Stonepeak", "Stonepeak Opportunities Fund III", "2025", "[$4.0B]", 4000, "Opportunistic", "Raising", {
+  f("FUND-139", "Stonepeak", "Stonepeak Opportunities Fund II", "2025", "[TBD]", null, "Opportunistic", "Raising", {
     investmentStrategy: "Public evidence aligns this 2025 current vehicle with Stonepeak Opportunities Fund II, the successor to the inaugural SOF I; strategy is a middle-market infrastructure / structured-capital sleeve focused on digital infrastructure, transport/logistics, and energy-related assets in North America and Europe.",
     sectors: ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation"],
     regions: ["North America", "Europe"],
@@ -1423,8 +1583,8 @@ export const funds: Fund[] = [
   }),
 
   // ── Ullico ────────────────────────────────────────────────
-  f("FUND-147", "Ullico", "Ullico UIF", "Evergreen", "$2.0B", 2000, "Core", "Evergreen", {
-    investmentStrategy: "North American essential-services infrastructure vehicle investing long term across utilities, transport, renewables, water and communications.",
+  f("FUND-147", "Ullico", "Ullico UIF", "Evergreen", "$6.7B", 6700, "Core", "Evergreen", {
+    investmentStrategy: "North American open-ended essential-services infrastructure vehicle investing long term across utilities, transport, renewables, water and communications; official Ullico materials disclose $6.7B of fund AUM as of December 31, 2025.",
     sectors: ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation", "Social Infra"],
     regions: ["North America"],
   }),
@@ -1437,8 +1597,8 @@ export const funds: Fund[] = [
   }),
 
   // ── Vision Ridge Partners ─────────────────────────────────
-  f("FUND-149", "Vision Ridge Partners", "Vision Ridge SAF IV", "2023", "$2.4B", 2400, "Opportunistic", "Financial Close", {
-    investmentStrategy: "Flagship sustainable real-assets strategy targeting the transition of energy, transportation and agriculture.",
+  f("FUND-149", "Vision Ridge Partners", "Vision Ridge Sustainable Asset Fund IV (SAF IV)", "2026", "$2.4B", 2400, "Opportunistic", "Financial Close", {
+    investmentStrategy: "Flagship sustainable real-assets strategy that closed in February 2026 with approximately $2.4B across the fund and related vehicles, targeting the transition of energy, transportation and agriculture.",
     sectors: ["Power & ET", "Utilities", "Transportation", "Social Infra"],
     regions: ["North America"],
   }),
