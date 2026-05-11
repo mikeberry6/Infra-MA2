@@ -33,7 +33,50 @@ type DiligenceFact = {
   children?: ReactNode;
 };
 
+type SponsorFundRow = {
+  key: string;
+  sponsor: string;
+  fund?: string | null;
+};
+
+type MilestoneMeta = {
+  color: string;
+  label: "Investment" | "Exit" | null;
+  ownerName: string | null;
+  isTransition: boolean;
+};
+
 const MATERIAL_MILESTONE_CATEGORIES = new Set(["Founding", "Financing", "Acquisition", "Divestiture"]);
+
+const TEXT_STOPWORDS = new Set([
+  "a",
+  "an",
+  "and",
+  "are",
+  "as",
+  "at",
+  "by",
+  "for",
+  "from",
+  "in",
+  "is",
+  "it",
+  "of",
+  "on",
+  "or",
+  "the",
+  "to",
+  "with",
+]);
+
+const EVIDENCE_HOST_LABELS: Record<string, string> = {
+  "3i.com": "3i",
+  "aimco.ca": "AIMCo",
+  "businesswire.com": "Business Wire",
+  "globenewswire.com": "GlobeNewswire",
+  "prnewswire.com": "PR Newswire",
+  "sec.gov": "SEC",
+};
 
 function ownerFirstWord(firm: string): string {
   return firm.toLowerCase().split(/\s+/)[0] || "";
@@ -72,6 +115,22 @@ function bestOwnerMatch(owners: OwnerView[], eventText: string): OwnerView | nul
   return best?.owner ?? null;
 }
 
+function eventMentionsOwner(eventText: string, firm: string): boolean {
+  const lowerEvent = eventText.toLowerCase();
+  const normalized = normalizeFirm(firm);
+  if (normalized && normalized.length >= 3 && lowerEvent.includes(normalized)) return true;
+  const firstWord = ownerFirstWord(firm);
+  return !!firstWord && firstWord.length >= 3 && lowerEvent.includes(firstWord);
+}
+
+function looksLikeOwnerEntryEvent(milestone: MilestoneView): boolean {
+  if (milestone.category === "Acquisition") return true;
+  if (milestone.category !== "Financing") return false;
+  return /\b(invest|investment|invested|equity|sponsor|syndication|recapitalization|stake|backed|partnered)\b/i.test(
+    milestone.event,
+  );
+}
+
 function classifyMilestone(milestone: MilestoneView, owners: OwnerView[]): MilestoneClassification {
   const matchedOwner = bestOwnerMatch(owners, milestone.event);
 
@@ -80,7 +139,7 @@ function classifyMilestone(milestone: MilestoneView, owners: OwnerView[]): Miles
   }
   for (const owner of owners) {
     if (!owner.investmentYear || !milestone.date.includes(String(owner.investmentYear))) continue;
-    if (milestone.category === "Financing" || milestone.category === "Acquisition") {
+    if (looksLikeOwnerEntryEvent(milestone)) {
       return { kind: "entry", owner };
     }
   }
@@ -175,8 +234,60 @@ function normalizeFactValue(value: string): string {
   return value.trim().toLowerCase().replace(/\s+/g, " ");
 }
 
+function normalizeTextForComparison(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function meaningfulWords(value: string): string[] {
+  return normalizeTextForComparison(value)
+    .split(" ")
+    .filter((word) => word.length > 2 && !TEXT_STOPWORDS.has(word));
+}
+
+function isRedundantText(a?: string | null, b?: string | null): boolean {
+  if (!a || !b) return false;
+  const left = normalizeTextForComparison(a);
+  const right = normalizeTextForComparison(b);
+  if (!left || !right) return false;
+  if (left === right || left.includes(right) || right.includes(left)) return true;
+
+  const leftWords = new Set(meaningfulWords(left));
+  const rightWords = new Set(meaningfulWords(right));
+  if (leftWords.size < 2 || rightWords.size < 2) return false;
+
+  let shared = 0;
+  rightWords.forEach((word) => {
+    if (leftWords.has(word)) shared += 1;
+  });
+  return shared >= 2 && shared / Math.min(leftWords.size, rightWords.size) >= 0.65;
+}
+
 function getIdentityDescriptor(company: CompanyView): string {
   return company.subsector?.trim() || company.sector || "Portfolio company";
+}
+
+function formatHeaderStatusPeriod(company: CompanyView, owner: OwnerView | null): string {
+  const investmentYear = owner?.investmentYear ?? company.investmentYear;
+
+  if (owner?.investmentYear && owner.exitYear) return `Held ${owner.investmentYear}-${owner.exitYear}`;
+  if (company.status === "Active" && investmentYear) return `Active since ${investmentYear}`;
+  if (investmentYear) return `Invested ${investmentYear}`;
+  return company.status === "Realized" ? "Realized" : company.status;
+}
+
+function shouldRenderLead(lead: string, descriptor: string): boolean {
+  return !!lead.trim() && !isRedundantText(lead, descriptor);
+}
+
+function formatSponsorList(values: string[], max = 3): string {
+  if (values.length === 0) return "Not disclosed";
+  if (values.length <= max) return values.join(", ");
+  return `${values.slice(0, max).join(", ")} +${values.length - max}`;
 }
 
 function buildUniqueFacts(facts: DiligenceFact[], reservedClaims: string[] = []): DiligenceFact[] {
@@ -188,20 +299,32 @@ function buildUniqueFacts(facts: DiligenceFact[], reservedClaims: string[] = [])
   });
 }
 
-function shouldShowOwnershipLedger(
-  activeOwners: OwnerView[],
-  formerOwners: OwnerView[],
-  vehicleLabel: string,
-): boolean {
-  if (activeOwners.length > 1 || formerOwners.length > 0) return true;
+function shouldShowOwnerField(value: string | undefined | null, repeatedValues: string[]): boolean {
+  if (!value?.trim()) return false;
+  const normalized = normalizeFactValue(value);
+  if (normalized === "not disclosed" || normalized === "n/a") return false;
+  return !repeatedValues.some((repeated) => (
+    normalizeFactValue(repeated) === normalized || isRedundantText(value, repeated)
+  ));
+}
 
-  return activeOwners.some((owner) => {
-    const hasDistinctVehicle =
-      owner.vehicle &&
-      vehicleLabel !== "Not disclosed" &&
-      normalizeFactValue(owner.vehicle) !== normalizeFactValue(vehicleLabel);
-    return !!owner.stake || !!hasDistinctVehicle;
-  });
+function buildSponsorFundRows(
+  owners: OwnerView[],
+  fallbackSponsor: string,
+  fallbackFund: string,
+): SponsorFundRow[] {
+  const rows = owners.map((owner, index) => ({
+    key: `${owner.firm}-${owner.vehicle || owner.fundName || index}`,
+    sponsor: owner.firm || "Unknown sponsor",
+    fund: owner.vehicle || owner.fundName || null,
+  }));
+
+  if (rows.length > 0) return rows;
+  return [{
+    key: "fallback-sponsor-fund",
+    sponsor: fallbackSponsor || "Not disclosed",
+    fund: fallbackFund !== "Not disclosed" ? fallbackFund : null,
+  }];
 }
 
 function getMatchedFund(owner: OwnerView | null, funds: FundView[]): FundView | undefined {
@@ -239,11 +362,7 @@ function dedupeMilestones(milestones: MilestoneView[]): MilestoneView[] {
 function dedupeSources(sources: SourceView[]): SourceView[] {
   const seen = new Set<string>();
   return sources.filter((source) => {
-    const key = [
-      source.url.trim().toLowerCase(),
-      getSourceDisplayLabel(source).trim().toLowerCase(),
-      source.purpose ?? "",
-    ].join("|");
+    const key = source.url.trim().toLowerCase().replace(/\/$/, "");
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
@@ -273,36 +392,93 @@ function getMaterialMilestones(milestones: MilestoneView[], owners: OwnerView[],
   return selected.map(({ milestone }) => milestone);
 }
 
+function formatMilestoneMeta(
+  milestone: MilestoneView,
+  classification: MilestoneClassification,
+): MilestoneMeta {
+  const label =
+    classification?.kind === "entry"
+      ? "Investment"
+      : classification?.kind === "exit"
+      ? "Exit"
+      : null;
+  const color =
+    classification?.kind === "entry"
+      ? getPortCoStatusColor("Active")
+      : classification?.kind === "exit"
+      ? getMilestoneCategoryColor("Divestiture")
+      : getMilestoneCategoryColor(milestone.category);
+  const ownerName = classification?.owner.firm || null;
+
+  return {
+    color,
+    label,
+    ownerName: ownerName && !eventMentionsOwner(milestone.event, ownerName) ? ownerName : null,
+    isTransition: classification !== null,
+  };
+}
+
+function titleCaseHostToken(value: string): string {
+  return value
+    .replace(/\.(com|org|net|ca|co|io|gov|sg|uk)$/i, "")
+    .replace(/[_-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
+function sourceBrand(source: SourceView): string {
+  const host = getSourceHostname(source.url);
+  return EVIDENCE_HOST_LABELS[host] || titleCaseHostToken(host.split(".")[0] || host || "Source");
+}
+
+function getEvidenceLabel(source: SourceView, groupLabel?: string): string {
+  const displayLabel = getSourceDisplayLabel(source);
+  const sourceText = `${source.evidenceLabel || ""} ${source.label || ""} ${displayLabel}`.toLowerCase();
+  const sourceType = inferSourceType(source);
+
+  let label: string;
+  if (sourceText.includes("investment date") || sourceText.includes("initial investment")) {
+    label = "Initial investment";
+  } else if (sourceText.includes("close date") || sourceText.includes("closing")) {
+    label = "Closing confirmation";
+  } else if (sourceText.includes("interest confirmation") || sourceText.includes("ownership interest")) {
+    label = "Ownership interest";
+  } else if (sourceText.includes("ownership history")) {
+    label = "Ownership history";
+  } else if (sourceType === "SEC_FILING" || sourceText.includes("sec filing")) {
+    label = "SEC filing";
+  } else if (/\b(financing|debt|bond|filing|annual report|aif)\b/.test(sourceText)) {
+    label = "Financing";
+  } else if (/\b(operations|asset|project|facility|network|locations)\b/.test(sourceText)) {
+    label = "Operations";
+  } else if (/\b(company profile|portfolio|about)\b/.test(sourceText)) {
+    label = "Company profile";
+  } else if (/\b(transaction|milestone|acquisition|acquired|divestiture|sale|announcement)\b/.test(sourceText)) {
+    label = "Event detail";
+  } else if (source.evidenceLabel?.trim()) {
+    label = source.evidenceLabel.trim();
+  } else {
+    label = sourceBrand(source);
+  }
+
+  if (!groupLabel || !isRedundantText(label, groupLabel)) return label;
+  if (label === "Company profile") return sourceBrand(source);
+  if (label === "Operations") return "Asset detail";
+  if (label === "Financing") return sourceType === "SEC_FILING" ? "SEC filing" : "Public filing";
+  if (label === "Event detail") return "Transaction detail";
+  return sourceBrand(source);
+}
+
 function buildOwnershipFacts({
-  sponsorLabel,
-  activeSponsorCount,
-  vehicleLabel,
   strategies,
   stakes,
 }: {
-  sponsorLabel: string;
-  activeSponsorCount: number;
-  vehicleLabel: string;
   strategies: string[];
   stakes: string[];
 }): DiligenceFact[] {
   return buildUniqueFacts(
     [
-      {
-        claim: "sponsor",
-        label: "Sponsor",
-        value: sponsorLabel !== "Not disclosed" ? sponsorLabel : undefined,
-        children: activeSponsorCount > 1 ? (
-          <span className="text-[11px] text-[var(--text-tertiary)]">
-            {pluralize(activeSponsorCount, "current sponsor")}
-          </span>
-        ) : undefined,
-      },
-      {
-        claim: "vehicle",
-        label: "Vehicle",
-        value: vehicleLabel !== "Not disclosed" ? vehicleLabel : undefined,
-      },
       {
         claim: "strategy",
         label: "Strategy",
@@ -321,6 +497,46 @@ function buildOwnershipFacts({
       },
     ],
     ["status", "geography", "holdPeriod", "evidence"],
+  );
+}
+
+function SponsorFundLine({ row }: { row: SponsorFundRow }) {
+  const showFund = row.fund && normalizeFactValue(row.fund) !== normalizeFactValue(row.sponsor);
+
+  return (
+    <div className="border-b border-[var(--border)] py-3 last:border-b-0">
+      <div className="text-sm font-semibold leading-snug text-[var(--text-primary)]">
+        {row.sponsor}
+      </div>
+      {showFund && (
+        <div className="mt-1 text-xs leading-snug text-[var(--text-secondary)]">
+          {row.fund}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DetailSection({
+  title,
+  children,
+  className = "",
+}: {
+  title: string;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <section className={`surface-elevated overflow-hidden ${className}`}>
+      <div className="border-b border-[var(--border)] px-4 py-3.5">
+        <div className="text-xs font-semibold uppercase tracking-wider text-[var(--text-primary)]">
+          {title}
+        </div>
+      </div>
+      <div className="px-4 py-4">
+        {children}
+      </div>
+    </section>
   );
 }
 
@@ -362,8 +578,24 @@ function FactRow({ label, value, children }: { label: string; value?: ReactNode;
   );
 }
 
-function OwnerLine({ owner, funds }: { owner: OwnerView; funds: FundView[] }) {
+function OwnerLine({
+  owner,
+  funds,
+  repeatedValues,
+  repeatedStrategies,
+}: {
+  owner: OwnerView;
+  funds: FundView[];
+  repeatedValues: string[];
+  repeatedStrategies: string[];
+}) {
   const strategies = getOwnerStrategies(owner, funds);
+  const yearRange = formatCompactYearRange(owner);
+  const showVehicle = shouldShowOwnerField(owner.vehicle, repeatedValues);
+  const showYear = shouldShowOwnerField(yearRange, repeatedValues);
+  const visibleStrategies = strategies.filter((strategy) => (
+    !repeatedStrategies.some((repeated) => normalizeFactValue(repeated) === normalizeFactValue(strategy))
+  ));
 
   return (
     <div className="border-b border-[var(--border)] py-3 last:border-b-0">
@@ -372,17 +604,21 @@ function OwnerLine({ owner, funds }: { owner: OwnerView; funds: FundView[] }) {
           <div className="text-sm font-semibold leading-snug text-[var(--text-primary)]">
             {owner.firm || "Unknown owner"}
           </div>
-          <div className="mt-1 text-xs leading-snug text-[var(--text-secondary)]">
-            {owner.vehicle || "Vehicle not disclosed"}
-          </div>
+          {showVehicle && (
+            <div className="mt-1 text-xs leading-snug text-[var(--text-secondary)]">
+              {owner.vehicle}
+            </div>
+          )}
         </div>
-        <span className="shrink-0 text-xs font-medium tabular-nums text-[var(--text-primary)] mono">
-          {formatCompactYearRange(owner)}
-        </span>
+        {showYear && (
+          <span className="shrink-0 text-xs font-medium tabular-nums text-[var(--text-primary)] mono">
+            {yearRange}
+          </span>
+        )}
       </div>
-      {(strategies.length > 0 || owner.stake) && (
+      {(visibleStrategies.length > 0 || owner.stake) && (
         <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5">
-          {strategies.map((strategy) => (
+          {visibleStrategies.map((strategy) => (
             <Tag key={strategy} color={getStrategyColor(strategy)}>{strategy}</Tag>
           ))}
           {owner.stake && (
@@ -394,17 +630,17 @@ function OwnerLine({ owner, funds }: { owner: OwnerView; funds: FundView[] }) {
   );
 }
 
-function EvidenceGroups({ sources }: { sources: SourceView[] }) {
+function EvidenceGroups({ sources, compact = false }: { sources: SourceView[]; compact?: boolean }) {
   const groups = groupSourcesByPurpose(sources);
 
   return (
-    <div className="divide-y divide-[var(--border)] border-y border-[var(--border)]">
+    <div className={compact ? "divide-y divide-[var(--border)]" : "divide-y divide-[var(--border)] border-y border-[var(--border)]"}>
       {groups.map((group) => (
-        <div key={group.purpose} className="py-4">
+        <div key={group.purpose} className={compact ? "py-3" : "py-4"}>
           <div className="mb-2 text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
             {group.label}
           </div>
-          <div className="grid grid-cols-1 gap-x-5 gap-y-2 sm:grid-cols-2">
+          <div className={compact ? "grid grid-cols-1 gap-y-1.5" : "grid grid-cols-1 gap-x-5 gap-y-2 sm:grid-cols-2"}>
             {group.sources.map((source, i) => (
               <a
                 key={`${source.url}-${group.purpose}-${i}`}
@@ -417,7 +653,7 @@ function EvidenceGroups({ sources }: { sources: SourceView[] }) {
                 <ExternalLink className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--text-tertiary)] transition-colors group-hover:text-[var(--text-primary)]" />
                 <span className="min-w-0">
                   <span className="block truncate text-xs font-medium text-[var(--text-secondary)] transition-colors group-hover:text-[var(--text-primary)]">
-                    {getSourceDisplayLabel(source)}
+                    {getEvidenceLabel(source, group.label)}
                   </span>
                   <span className="mt-0.5 block truncate text-[11px] text-[var(--text-tertiary)]">
                     {getSourceHostname(source.url)} / {formatSourceType(inferSourceType(source))}
@@ -468,27 +704,37 @@ export function PortCoDrawer({
   const primaryOwner = useMemo(() => getPrimaryOwner(displayOwners), [displayOwners]);
   const primaryStrategies = useMemo(() => getOwnerStrategies(primaryOwner, funds), [primaryOwner, funds]);
   const identityDescriptor = useMemo(() => getIdentityDescriptor(company), [company]);
-  const descriptorOwnsSector = normalizeFactValue(identityDescriptor) === normalizeFactValue(company.sector);
+  const descriptorOwnsSector = isRedundantText(identityDescriptor, company.sector);
   const activeSponsorNames = uniqueValues(activeOwners.map((owner) => owner.firm));
   const currentSponsorNames = activeSponsorNames.length > 0
     ? activeSponsorNames
     : uniqueValues([primaryOwner?.firm || company.investmentFirm]);
-  const currentSponsorLabel = compactList(currentSponsorNames);
+  const currentSponsorLabel = formatSponsorList(currentSponsorNames);
   const vehicleLabel = primaryOwner?.vehicle || company.ownershipVehicle || "Not disclosed";
-  const holdPeriodLabel = primaryOwner ? formatCompactYearRange(primaryOwner) : company.investmentYear ? String(company.investmentYear) : "N/A";
+  const sponsorFundRows = useMemo(
+    () => buildSponsorFundRows(activeOwners.length > 0 ? activeOwners : primaryOwner ? [primaryOwner] : [], company.investmentFirm, vehicleLabel),
+    [activeOwners, company.investmentFirm, primaryOwner, vehicleLabel],
+  );
+  const primaryOwnerPeriod = primaryOwner
+    ? formatCompactYearRange(primaryOwner)
+    : company.investmentYear
+    ? String(company.investmentYear)
+    : "N/A";
+  const headerStatusPeriod = formatHeaderStatusPeriod(company, primaryOwner);
   const disclosedStakes = uniqueValues(activeOwners.map((owner) => owner.stake));
   const ownershipFacts = useMemo(
     () => buildOwnershipFacts({
-      sponsorLabel: currentSponsorLabel,
-      activeSponsorCount: activeSponsorNames.length,
-      vehicleLabel,
       strategies: primaryStrategies,
       stakes: disclosedStakes,
     }),
-    [activeSponsorNames.length, currentSponsorLabel, disclosedStakes, primaryStrategies, vehicleLabel],
+    [disclosedStakes, primaryStrategies],
   );
-  const showOwnershipLedger = shouldShowOwnershipLedger(activeOwners, formerOwners, vehicleLabel);
+  const ownerRepeatedValues = uniqueValues([currentSponsorLabel, vehicleLabel, primaryOwnerPeriod, headerStatusPeriod]);
   const description = useMemo(() => splitDescription(company.description || ""), [company.description]);
+  const leadAddsMeaning = shouldRenderLead(description.lead, identityDescriptor);
+  const overviewBodyText = [leadAddsMeaning ? "" : description.lead, description.body]
+    .filter(Boolean)
+    .join(" ");
   const milestones = useMemo(() => dedupeMilestones(company.milestones || []), [company.milestones]);
   const sources = useMemo(() => dedupeSources(company.sources || []), [company.sources]);
   const visibleMilestones = showAllMilestones ? milestones : getMaterialMilestones(milestones, displayOwners, 5);
@@ -546,13 +792,10 @@ export function PortCoDrawer({
                 )}
                 <HeaderMetaItem>
                   <Dot color={statusColor} />
-                  <span className="font-medium text-[var(--text-primary)]">{company.status}</span>
+                  <span className="font-medium text-[var(--text-primary)]">{headerStatusPeriod}</span>
                 </HeaderMetaItem>
                 <HeaderMetaItem>
                   <span>{locationDisplay}</span>
-                </HeaderMetaItem>
-                <HeaderMetaItem>
-                  <span className="tabular-nums mono">{holdPeriodLabel}</span>
                 </HeaderMetaItem>
               </div>
             </div>
@@ -568,52 +811,59 @@ export function PortCoDrawer({
 
         <div className="grid grid-cols-1 gap-8 px-6 py-8 sm:grid-cols-[minmax(0,1fr)_240px] sm:px-8 lg:grid-cols-[minmax(0,1fr)_250px] lg:px-10 lg:py-10">
           <aside className="order-1 sm:order-2">
-            <div className="surface-elevated sm:sticky sm:top-32">
-              <div className="px-4 py-4">
-                <div className="text-[11px] font-semibold uppercase tracking-wider text-[var(--text-primary)]">
-                  Ownership
+            <div className="space-y-4 sm:sticky sm:top-32">
+              <DetailSection title="Ownership">
+                <div>
+                  <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+                    Sponsor / fund
+                  </div>
+                  <div className="mt-1 divide-y divide-[var(--border)]">
+                    {sponsorFundRows.map((row) => (
+                      <SponsorFundLine key={row.key} row={row} />
+                    ))}
+                  </div>
                 </div>
-                <div className="mt-3 divide-y divide-[var(--border)]">
-                  {ownershipFacts.map((fact) => (
-                    <FactRow key={fact.claim} label={fact.label} value={fact.value}>
-                      {fact.children}
-                    </FactRow>
-                  ))}
-                </div>
-              </div>
+                {ownershipFacts.length > 0 && (
+                  <div className="mt-1 divide-y divide-[var(--border)] border-t border-[var(--border)]">
+                    {ownershipFacts.map((fact) => (
+                      <FactRow key={fact.claim} label={fact.label} value={fact.value}>
+                        {fact.children}
+                      </FactRow>
+                    ))}
+                  </div>
+                )}
 
-              {showOwnershipLedger && (
-                <div className="border-t border-[var(--border)] px-4 py-4">
-                  {activeOwners.length > 0 && (
-                    <>
-                      <div className="mb-1 text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
-                        Current ownership
-                      </div>
-                      <div className="divide-y divide-[var(--border)]">
-                        {activeOwners.map((owner, idx) => (
-                          <OwnerLine key={`${owner.firm}-${owner.vehicle}-${idx}`} owner={owner} funds={funds} />
-                        ))}
-                      </div>
-                    </>
-                  )}
-                  {formerOwners.length > 0 && (
+                {formerOwners.length > 0 && (
+                  <div className="mt-3 border-t border-[var(--border)] pt-3">
                     <Button
                       variant="ghost"
                       size="sm"
-                      className={activeOwners.length > 0 ? "mt-2 -ml-2" : "-ml-2"}
+                      className="-ml-2"
                       onClick={() => setShowFormerOwners(!showFormerOwners)}
                     >
                       {showFormerOwners ? "Hide prior owners" : `Show ${pluralize(formerOwners.length, "prior owner")}`}
                     </Button>
-                  )}
-                  {showFormerOwners && (
-                    <div className="mt-2 divide-y divide-[var(--border)] border-t border-[var(--border)]">
-                      {formerOwners.map((owner, idx) => (
-                        <OwnerLine key={`${owner.firm}-${owner.vehicle}-${idx}`} owner={owner} funds={funds} />
-                      ))}
-                    </div>
-                  )}
-                </div>
+                    {showFormerOwners && (
+                      <div className="mt-2 divide-y divide-[var(--border)] border-t border-[var(--border)]">
+                        {formerOwners.map((owner, idx) => (
+                          <OwnerLine
+                            key={`${owner.firm}-${owner.vehicle}-${idx}`}
+                            owner={owner}
+                            funds={funds}
+                            repeatedValues={ownerRepeatedValues}
+                            repeatedStrategies={primaryStrategies}
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </DetailSection>
+
+              {sources.length > 0 && (
+                <DetailSection title="Sources">
+                  <EvidenceGroups sources={sources} compact />
+                </DetailSection>
               )}
             </div>
           </aside>
@@ -623,12 +873,14 @@ export function PortCoDrawer({
               <section>
                 <SectionLabel>Business overview</SectionLabel>
                 <div className="max-w-[58ch] space-y-4">
-                  <p className="text-lg font-semibold leading-relaxed tracking-tight text-[var(--text-primary)]">
-                    {description.lead}
-                  </p>
-                  {description.body && (
+                  {leadAddsMeaning && (
+                    <p className="text-lg font-semibold leading-relaxed tracking-tight text-[var(--text-primary)]">
+                      {description.lead}
+                    </p>
+                  )}
+                  {overviewBodyText && (
                     <p className="text-[15px] leading-7 text-[var(--text-secondary)]">
-                      {description.body}
+                      {overviewBodyText}
                     </p>
                   )}
                 </div>
@@ -637,52 +889,41 @@ export function PortCoDrawer({
 
             {milestones.length > 0 && (
               <section className="border-t border-[var(--border)] pt-7">
-                <SectionLabel count={milestones.length}>Story timeline</SectionLabel>
+                <SectionLabel>Story timeline</SectionLabel>
                 <div className="relative pl-5">
                   <div aria-hidden className="absolute left-[5px] top-1.5 bottom-1.5 w-px bg-[var(--border)]" />
                   <div className="space-y-4">
                     {visibleMilestones.map((milestone, i) => {
                       const classification = classifyMilestone(milestone, displayOwners);
-                      const isTransition = classification !== null;
-                      const transitionColor =
-                        classification?.kind === "entry"
-                          ? getPortCoStatusColor("Active")
-                          : classification?.kind === "exit"
-                          ? getMilestoneCategoryColor("Divestiture")
-                          : null;
-                      const transitionLabel =
-                        classification?.kind === "entry"
-                          ? "Investment"
-                          : classification?.kind === "exit"
-                          ? "Exit"
-                          : null;
-                      const dotColor = transitionColor ?? getMilestoneCategoryColor(milestone.category);
+                      const meta = formatMilestoneMeta(milestone, classification);
                       return (
                         <div key={`${milestone.date}-${milestone.event}-${i}`} className="relative">
                           <div
                             aria-hidden
                             className={`absolute -left-[18px] rounded-full ring-2 ring-[var(--bg-surface)] ${
-                              isTransition ? "top-2 h-2.5 w-2.5" : "top-1.5 h-2 w-2"
+                              meta.isTransition ? "top-2 h-2.5 w-2.5" : "top-1.5 h-2 w-2"
                             }`}
-                            style={{ backgroundColor: dotColor }}
+                            style={{ backgroundColor: meta.color }}
                           />
-                          <div className={isTransition ? "rounded-[8px] bg-[var(--bg-subtle)] px-3 py-2.5 ring-1 ring-[var(--border)]" : ""}>
+                          <div className={meta.isTransition ? "rounded-[8px] bg-[var(--bg-subtle)] px-3 py-2.5 ring-1 ring-[var(--border)]" : ""}>
                             <div className="flex flex-wrap items-baseline gap-2">
                               <span className="text-[11px] tabular-nums text-[var(--text-tertiary)] mono">
                                 {milestone.date}
                               </span>
-                              {transitionLabel ? (
-                                <Tag color={dotColor}>{transitionLabel}</Tag>
-                              ) : (
-                                <Tag color={getMilestoneCategoryColor(milestone.category)}>{milestone.category}</Tag>
+                              {meta.label ? (
+                                <Tag color={meta.color}>{meta.label}</Tag>
+                              ) : milestone.category !== "Other" && (
+                                <span className="text-[11px] text-[var(--text-tertiary)]">
+                                  {milestone.category}
+                                </span>
                               )}
-                              {classification?.owner.firm && (
+                              {meta.ownerName && (
                                 <span className="text-[11px] text-[var(--text-secondary)]">
-                                  {classification.owner.firm}
+                                  {meta.ownerName}
                                 </span>
                               )}
                             </div>
-                            <p className={`mt-1.5 text-sm leading-relaxed ${isTransition ? "text-[var(--text-primary)]" : "text-[var(--text-secondary)]"}`}>
+                            <p className={`mt-1.5 text-sm leading-relaxed ${meta.isTransition ? "text-[var(--text-primary)]" : "text-[var(--text-secondary)]"}`}>
                               {milestone.event}
                             </p>
                           </div>
@@ -722,12 +963,6 @@ export function PortCoDrawer({
               </section>
             )}
 
-            {sources.length > 0 && (
-              <section className="border-t border-[var(--border)] pt-7">
-                <SectionLabel count={sources.length}>Evidence</SectionLabel>
-                <EvidenceGroups sources={sources} />
-              </section>
-            )}
           </div>
         </div>
       </div>
