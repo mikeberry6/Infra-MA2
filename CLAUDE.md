@@ -25,7 +25,7 @@
 | `src/modules/shared/{types.ts,enum-maps.ts}` | View-layer types and Prisma enum → display string maps |
 | `src/lib/` | Cross-cutting utilities: `prisma.ts`, `colors.ts`, `types.ts` (display unions), `csv.ts`, `format.ts`, `{deal,fund,portco}-utils.ts` |
 | `src/lib/colors.ts` | **Single source of truth** for all sector/region/strategy/category color helpers |
-| `src/hooks/` | `useDebounce`, `useFilterToggle`, `useAnimatedNumber` |
+| `src/hooks/` | `useDebounce`, `useScrolledPast`, `useUrlFilterSet` |
 | `src/generated/prisma/` | Generated Prisma client (run `npm run db:generate` if missing) |
 | `prisma/` | Schema, migrations, seed data |
 
