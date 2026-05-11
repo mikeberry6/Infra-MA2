@@ -27,6 +27,8 @@ const VALID_MILESTONE_DATE_RE = new RegExp(
 );
 const TRANSACTIONAL_EVENT_RE =
   /\b(acquir\w*|invest\w*|financ\w*|funding|capital raise|equity raise|completed|closed|agreement|stake|sale|sold|divest\w*|ipo|joint venture|merger|merged)\b/i;
+const LOW_VALUE_MILESTONE_RE =
+  /\b(not publicly disclosed|continued\b|remained\b|active portfolio (company|investment)|current page|(?:public|company|project|portfolio|fund|industry|regulatory|filing|filings|materials|disclosures|sources|reporting|website) (?:described|stated|identified|listed|reported|cited|said|highlighted|referenced)|public company materials continued|company materials continued|portfolio materials continued|public disclosures reviewed|reviewed public materials do not|not disclosed in reviewed)\b/i;
 
 function addError(message: string) {
   errors.push(message);
@@ -154,14 +156,17 @@ for (const [index, company] of companies.entries()) {
       ) {
         addWarning(`${label}: transactional milestone is categorized as Other: "${milestoneKey}"`);
       }
+      if (LOW_VALUE_MILESTONE_RE.test(`${milestone.date} ${milestone.event}`)) {
+        addWarning(`${label}: low-value milestone should be removed: "${milestoneKey}"`);
+      }
     }
-    if (company.milestones.length > 8) {
+    if (company.milestones.length > 6) {
       addWarning(`${label}: over-dense milestone scorecard (${company.milestones.length} milestones)`);
     }
-    if (company.milestones.length <= 2) {
+    if (company.milestones.length === 1) {
       addWarning(`${label}: thin milestone scorecard (${company.milestones.length} milestones)`);
     }
-    if (otherCount > 3 || otherCount / company.milestones.length > 0.6) {
+    if (otherCount > 2 || otherCount / company.milestones.length > 0.5) {
       addWarning(`${label}: high Other milestone usage (${otherCount}/${company.milestones.length})`);
     }
   }

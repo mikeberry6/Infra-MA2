@@ -394,11 +394,15 @@ async function main() {
   let milestoneCount = 0;
 
   for (const pc of portcos) {
-    if (!pc.milestones || pc.milestones.length === 0) continue;
-
     const companyKey = `${pc.name}|${pc.country}`;
     const companyId = companyIdMap.get(companyKey);
     if (!companyId) continue;
+
+    await prisma.milestone.deleteMany({
+      where: { companyId },
+    });
+
+    if (!pc.milestones || pc.milestones.length === 0) continue;
 
     for (const ms of pc.milestones) {
       const category = safeEnum(MILESTONE_CATEGORY_MAP, ms.category, "OTHER" as MilestoneCategory);

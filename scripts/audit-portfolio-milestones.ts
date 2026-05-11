@@ -69,7 +69,7 @@ const TRANSACTIONAL_EVENT_RE =
   /\b(acquir\w*|invest\w*|financ\w*|funding|capital raise|equity raise|formed|launched|created|completed|closed|signed|agreement|stake|sale|sold|divest\w*|ipo|public offering|joint venture|merger|merged)\b/i;
 
 const LOW_VALUE_EVENT_RE =
-  /\b(not publicly disclosed|continued to (identify|list|describe|operate)|continued operating|remained active|remained an active|current page|as of public|public company materials continued|company materials continued|portfolio materials continued|no public|not disclosed in reviewed)\b/i;
+  /\b(not publicly disclosed|continued\b|remained\b|active portfolio (company|investment)|current page|as of public|(?:public|company|project|portfolio|fund|industry|regulatory|filing|filings|materials|disclosures|sources|reporting|website) (?:described|stated|identified|listed|reported|cited|said|highlighted|referenced)|public company materials continued|company materials continued|portfolio materials continued|public disclosures reviewed|reviewed public materials do not|no public|not disclosed in reviewed)\b/i;
 
 const CORPORATE_SUFFIX_RE =
   /\b(asset management|investment management|capital partners|capital management|capital|management|partners|investors|infrastructure|advisors|llc|lp|inc|ltd|plc|holdings|group|funds?)\b/gi;
@@ -268,21 +268,19 @@ function findNearDuplicates(milestones: PortCoMilestone[]): NearDuplicate[] {
 function isDistinctFollowOnPair(first: PortCoMilestone, second: PortCoMilestone): boolean {
   const text = `${first.event} ${second.event}`.toLowerCase();
   if (/\b(follow-on|additional|second|subsequent)\b/.test(text) && /\b(initial|first)\b/.test(text)) return true;
-  if (/\b(announced|agreement|agreed)\b/.test(text) && /\b(closed|closing|completed|completion)\b/.test(text)) return true;
   return false;
 }
 
 function suggestedCategory(milestone: PortCoMilestone): string | null {
   if (milestone.category !== "Other") return null;
   const event = milestone.event.toLowerCase();
-  if (/\bidentifies\b.*\bactive\b.*\bportfolio (company|investment)\b/.test(event)) return null;
-  if (/\b(founded|was founded|established)\b/.test(event)) return "Founding";
+  if (/\b(founded|was founded|established|was formed|were formed|formed as|formed by|incorporated|traces .* back|identify .* founding year|identifies .* founding year)\b/.test(event)) return "Founding";
   if (/\b(ipo|initial public offering|publicly listed|began trading)\b/.test(event)) return "IPO";
   if (/\b(divest\w*|sale|sold|sell|exit)\b/.test(event)) return "Divestiture";
-  if (/\b(acquir\w*|purchase|purchased|bought|stake|take-private)\b/.test(event)) return "Acquisition";
-  if (/\b(financ\w*|funding|capital raise|equity raise|investment|invested|commitment|financial close)\b/.test(event)) return "Financing";
+  if (/\b(acquir\w*|purchase|purchased|bought|stake|ownership interest|completed the transaction|closed the transaction|take-private)\b/.test(event)) return "Acquisition";
+  if (/\b(financ\w*|funding|capital raise|equity raise|credit facility|investment|invested|commitment|committed|financial close)\b/.test(event)) return "Financing";
   if (/\b(appointed|joined as|chief|ceo|cfo|coo|president)\b/.test(event)) return "Management";
-  if (/\b(expand\w*|opened|entered service|commercial operation|commissioned|cod|capacity|portfolio grew|connected to the grid)\b/.test(event)) return "Expansion";
+  if (/\b(expand\w*|opened|entered service|entered operation|entered operations|commercial operation|commercial operations|commercial in-service|in service|began operations|began operation|began operating|started operations|commenced operations|mechanical completion|substantial completion|construction began|start of construction|groundbreaking|commissioned|cod|capacity|portfolio grew|connected to the grid|selected|awarded|approved|executed|dedicated)\b/.test(event)) return "Expansion";
   return null;
 }
 
@@ -332,7 +330,7 @@ function priorityAndScore(flags: Set<string>, milestoneCount: number, ownerCount
     no_transaction_or_milestone_source_purpose: 15,
     no_sources: 15,
   };
-  let score = milestoneCount > 8 ? milestoneCount : 0;
+  let score = milestoneCount > 6 ? milestoneCount : 0;
   if (ownerCount > 1) score += ownerCount * 2;
   for (const flag of flags) score += weights[flag] ?? 5;
 
@@ -352,10 +350,9 @@ function priorityAndScore(flags: Set<string>, milestoneCount: number, ownerCount
 }
 
 function proposedTargetCount(milestoneCount: number, ownerCount: number, hasThinFlag: boolean): string {
-  if (hasThinFlag) return "4-6 after research";
-  if (milestoneCount > 8) return ownerCount > 2 ? "6-8 after pruning" : "4-6 after pruning";
-  if (milestoneCount > 6) return "4-6 if non-core items prune cleanly";
-  return "current 4-6 target";
+  if (hasThinFlag) return "2-5 after research";
+  if (milestoneCount > 6) return ownerCount > 2 ? "5-6 after pruning" : "2-5 after pruning";
+  return "current 2-5 target";
 }
 
 function auditCompany(company: PortCo, sourceLine: number | ""): CompanyAuditRow {
@@ -378,10 +375,10 @@ function auditCompany(company: PortCo, sourceLine: number | ""): CompanyAuditRow
   if (missingEntryOwners.length) flags.add("missing_owner_entry_milestone");
   if (missingExitOwners.length) flags.add("missing_owner_exit_milestone");
   if (nearDuplicates.length) flags.add("near_duplicate_milestone");
-  if (milestones.length > 8) flags.add("over_dense_scorecard");
+  if (milestones.length > 6) flags.add("over_dense_scorecard");
   if (recategoryCandidates.length) flags.add("recategorization_candidate");
-  if (milestones.length > 0 && milestones.length <= 2) flags.add("thin_scorecard");
-  if (otherCount > 3 || (milestones.length >= 3 && otherCount / milestones.length > 0.6)) flags.add("excessive_other_milestones");
+  if (milestones.length === 1) flags.add("thin_scorecard");
+  if (otherCount > 2 || (milestones.length >= 3 && otherCount / milestones.length > 0.5)) flags.add("excessive_other_milestones");
   if (lowValueMilestones.length) flags.add("low_value_milestone");
   for (const flag of coverageFlags) flags.add(flag);
 
@@ -477,7 +474,7 @@ Run at: ${RUN_AT}
 
 ## Review Standard
 
-- Target 4-6 curated milestones for most scorecards.
+- Target 2-5 curated milestones for most scorecards, with a hard cap of 6.
 - Keep founding, sponsor entry, material M&A/financing, platform launch, major expansion, exit/divestiture, IPO, and defining contract/concession/FID/COD events.
 - Prune duplicated, vague, stale, unsupported, or low-value context items.
 - Allowed date formats: \`YYYY\`, \`Mon YYYY\`, \`Mon D, YYYY\`, and \`Q# YYYY\`.

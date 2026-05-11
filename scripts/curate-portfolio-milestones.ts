@@ -22,7 +22,7 @@ const FULL_DATE_RE = new RegExp(`^(${MONTHS})\\s+\\d{1,2},\\s+\\d{4}$`);
 const QUARTER_RE = /^Q[1-4]\s+\d{4}$/;
 
 const LOW_VALUE_RE =
-  /\b(not publicly disclosed|not disclosed in reviewed|continued to (identify|list|describe|operate)|continued operating|remained active|remained an active|current page|public company materials continued|company materials continued|portfolio materials continued|public filings continued|power plant databases continued|historical milestones .* not comprehensively disclosed)\b/i;
+  /\b(not publicly disclosed|not disclosed in reviewed|continued\b|remained\b|active portfolio (company|investment)|current page|(?:public|company|project|portfolio|fund|industry|regulatory|filing|filings|materials|disclosures|sources|reporting|website) (?:described|stated|identified|listed|reported|cited|said|highlighted|referenced)|public company materials continued|company materials continued|portfolio materials continued|public filings continued|power plant databases continued|public disclosures reviewed|reviewed public materials do not|historical milestones .* not comprehensively disclosed)\b/i;
 const TRANSACTION_RE =
   /\b(acquir\w*|invest\w*|financ\w*|funding|capital raise|equity raise|completed|closed|agreement|stake|sale|sold|divest\w*|ipo|joint venture|merger|merged|financial close|commercial operation|commissioned|entered service)\b/i;
 const CORPORATE_SUFFIX_RE =
@@ -43,6 +43,10 @@ const MANUAL_DROP_RULES: Record<string, RegExp[]> = {
   "Generate Capital": [
     /Generate announced that the \$2 billion corporate equity raise had closed/i,
     /Harbert Infrastructure acquired an interest in Generate as part of the \$2 billion equity raise/i,
+  ],
+  "Northview Energy": [
+    /Brookfield stated that the seed portfolio consisted of 22 contracted wind and solar assets/i,
+    /The sponsors stated that Northview would be equally funded and owned by the three investors/i,
   ],
   "Phoenix Tower International": [
     /Grain Management and BlackRock joined Blackstone as investors in PTI/i,
@@ -176,6 +180,8 @@ function categoryWeight(category: string): number {
 function milestoneQuality(milestone: PortCoMilestone): number {
   let score = categoryWeight(milestone.category) * 10 + dateSpecificity(milestone.date) * 4;
   if (TRANSACTION_RE.test(milestone.event)) score += 8;
+  if (/\b(completed|closed|completion|closing|commercial operation|began operations|entered service|commissioned)\b/i.test(milestone.event)) score += 6;
+  if (/\b(announced|agreement|agreed|planned|expected)\b/i.test(milestone.event)) score -= 4;
   if (LOW_VALUE_RE.test(`${milestone.date} ${milestone.event}`)) score -= 40;
   if (!VALID_DATE_RE.test(milestone.date)) score -= 20;
   score += Math.min(12, Math.floor(milestone.event.length / 35));
@@ -247,6 +253,8 @@ function normalizeDate(date: string, event: string): string | null {
 function cleanEvent(event: string): string {
   return event
     .replace(/\s+\((Founding|Acquisition|Financing|Expansion|Management|Divestiture|IPO|Strategic change)\)\.?$/i, ".")
+    .replace(/^The Sandersville plant began operations\.?$/i, "Sandersville peaking plant began commercial operations.")
+    .replace(/\s+through\s+[^.]*not publicly disclosed\.?/i, ".")
     .replace(/\.\.+/g, ".")
     .replace(/\s+/g, " ")
     .trim();
@@ -255,13 +263,13 @@ function cleanEvent(event: string): string {
 function suggestedCategory(milestone: PortCoMilestone): MilestoneCategory | null {
   if (milestone.category !== "Other") return null;
   const event = milestone.event.toLowerCase();
-  if (/\b(founded|was founded|established)\b/.test(event)) return "Founding";
+  if (/\b(founded|was founded|established|was formed|were formed|formed as|formed by|incorporated|traces .* back|identify .* founding year|identifies .* founding year)\b/.test(event)) return "Founding";
   if (/\b(ipo|initial public offering|publicly listed|began trading)\b/.test(event)) return "IPO";
   if (/\b(divest\w*|sale|sold|sell|exit)\b/.test(event)) return "Divestiture";
-  if (/\b(acquir\w*|purchase|purchased|bought|stake|take-private)\b/.test(event)) return "Acquisition";
-  if (/\b(financ\w*|funding|capital raise|equity raise|investment|invested|commitment|financial close)\b/.test(event)) return "Financing";
+  if (/\b(acquir\w*|purchase|purchased|bought|stake|ownership interest|completed the transaction|closed the transaction|take-private)\b/.test(event)) return "Acquisition";
+  if (/\b(financ\w*|funding|capital raise|equity raise|credit facility|investment|invested|commitment|committed|financial close)\b/.test(event)) return "Financing";
   if (/\b(appointed|joined as|chief|ceo|cfo|coo|president)\b/.test(event)) return "Management";
-  if (/\b(expand\w*|opened|entered service|commercial operation|commissioned|cod|capacity|portfolio grew|connected to the grid)\b/.test(event)) return "Expansion";
+  if (/\b(expand\w*|opened|entered service|entered operation|entered operations|commercial operation|commercial operations|commercial in-service|in service|began operations|began operation|began operating|started operations|commenced operations|mechanical completion|substantial completion|construction began|start of construction|groundbreaking|commissioned|cod|capacity|portfolio grew|connected to the grid|selected|awarded|approved|executed|dedicated)\b/.test(event)) return "Expansion";
   return null;
 }
 
@@ -292,7 +300,10 @@ function addStructuredMilestones(company: PortCo, milestones: PortCoMilestone[])
 
   for (const owner of ownersFor(company)) {
     if (owner.investmentYear && !next.some((milestone) => isOwnerEntryMilestone(milestone, owner))) {
-      const vehicle = owner.ownershipVehicle ? ` through ${owner.ownershipVehicle}` : "";
+      const vehicle =
+        owner.ownershipVehicle && !/\bnot publicly disclosed|not disclosed\b/i.test(owner.ownershipVehicle)
+          ? ` through ${owner.ownershipVehicle}`
+          : "";
       next.push({
         date: String(owner.investmentYear),
         event: `${owner.investmentFirm} invested in ${company.name}${vehicle}.`,
@@ -310,22 +321,12 @@ function addStructuredMilestones(company: PortCo, milestones: PortCoMilestone[])
     }
   }
 
-  if (next.length === 0 && company.sources?.length) {
-    next.push({
-      date: "2026",
-      event: `${company.investmentFirm} identifies ${company.name} as an active ${company.sector.toLowerCase()} portfolio company.`,
-      category: "Other",
-    });
-    stats.foundingAdded++;
-  }
-
   return next;
 }
 
 function isDistinctFollowOnPair(first: PortCoMilestone, second: PortCoMilestone): boolean {
   const text = `${first.event} ${second.event}`.toLowerCase();
   if (/\b(follow-on|additional|second|subsequent)\b/.test(text) && /\b(initial|first)\b/.test(text)) return true;
-  if (/\b(announced|agreement|agreed)\b/.test(text) && /\b(closed|closing|completed|completion)\b/.test(text)) return true;
   return false;
 }
 
@@ -383,7 +384,7 @@ function dedupeMilestones(milestones: PortCoMilestone[]): PortCoMilestone[] {
 
 function isLowValue(milestone: PortCoMilestone): boolean {
   if (!LOW_VALUE_RE.test(`${milestone.date} ${milestone.event}`)) return false;
-  if (/\bcontinued to (identify|list|describe|operate)|continued operating|remained active|remained an active|current page|public company materials continued|company materials continued|portfolio materials continued|public filings continued|power plant databases continued\b/i.test(milestone.event)) {
+  if (/\bcontinued\b|remained\b|current page|(?:public|company|project|portfolio|fund|industry|regulatory|filing|filings|materials|disclosures|sources|reporting|website) (?:described|stated|identified|listed|reported|cited|said|highlighted|referenced)|public company materials continued|company materials continued|portfolio materials continued|public filings continued|power plant databases continued\b/i.test(milestone.event)) {
     return true;
   }
   if (milestone.category !== "Other" && milestone.category !== "Expansion") return false;
@@ -443,7 +444,7 @@ function baselineMilestones(company: PortCo, milestones: PortCoMilestone[]): Por
 
 function pruneOverDense(company: PortCo, milestones: PortCoMilestone[]): PortCoMilestone[] {
   const owners = ownersFor(company);
-  const target = owners.length > 3 ? 8 : 6;
+  const target = owners.length > 2 ? 6 : 5;
   if (milestones.length <= target) return milestones;
 
   const baseline = baselineMilestones(company, milestones);

@@ -17,6 +17,7 @@
     "audit:portfolio-years": "node --experimental-strip-types scripts/audit-portfolio-investment-years.ts",
     "audit:portfolio-milestones": "node --experimental-strip-types scripts/audit-portfolio-milestones.ts",
     "curate:portfolio-milestones": "node --experimental-strip-types scripts/curate-portfolio-milestones.ts",
+    "reconcile:portfolio-milestones": "npx tsx scripts/reconcile-portfolio-milestones.ts",
     "validate-portfolios": "node --experimental-strip-types scripts/validate-portfolios.ts",
     "db:seed": "npx tsx prisma/seed.ts",
     "db:verify": "npx tsx prisma/verify-seed.ts",

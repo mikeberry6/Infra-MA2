@@ -1,18 +1,18 @@
 # Portfolio Milestone Audit
 
-Run at: 2026-05-11T16:21:55.239Z
+Run at: 2026-05-11T17:30:30.348Z
 
 ## Scope
 
 - Company records: 1169
-- Milestones reviewed by automated checks: 4899
-- Average milestones per company: 4.19
-- Companies in priority queue: 199
-- `Other` milestones: 1671
+- Milestones reviewed by automated checks: 4133
+- Average milestones per company: 3.54
+- Companies in priority queue: 104
+- `Other` milestones: 880
 
 ## Review Standard
 
-- Target 4-6 curated milestones for most scorecards.
+- Target 2-5 curated milestones for most scorecards, with a hard cap of 6.
 - Keep founding, sponsor entry, material M&A/financing, platform launch, major expansion, exit/divestiture, IPO, and defining contract/concession/FID/COD events.
 - Prune duplicated, vague, stale, unsupported, or low-value context items.
 - Allowed date formats: `YYYY`, `Mon YYYY`, `Mon D, YYYY`, and `Q# YYYY`.
@@ -22,83 +22,83 @@ Run at: 2026-05-11T16:21:55.239Z
 
 - critical: 0
 - high: 0
-- medium: 199
+- medium: 104
 - low: 0
-- none: 970
+- none: 1065
 
 ## Top Flags
 
-- excessive_other_milestones: 134
-- thin_scorecard: 64
+- excessive_other_milestones: 65
+- thin_scorecard: 35
 - no_transaction_or_milestone_source_purpose: 4
 - no_sources: 1
 
 ## Priority Queue By Sector
 
-- Power & ET: 96
-- Digital: 31
-- Transportation: 25
-- Utilities: 20
-- Social Infra: 17
-- Midstream: 10
+- Power & ET: 43
+- Digital: 21
+- Transportation: 15
+- Social Infra: 13
+- Utilities: 11
+- Midstream: 1
 
 ## Priority Queue By Firm
 
-- Axium Infrastructure: 14
-- Copenhagen Infrastructure Partners: 13
-- Harrison Street: 10
-- Argo Infrastructure Partners: 9
-- InfraRed Capital Partners: 9
-- EQT Infrastructure: 8
-- Fengate Asset Management: 8
-- Harbert Management Corp (Harbert Infra / Gulf Pacific): 8
-- ArcLight Capital Partners: 7
-- Ember Infrastructure: 6
-- Generate Capital: 5
-- Grain: 5
-- Manulife: 5
-- Meridiam: 5
-- Quinbrook: 5
-- Blackstone: 4
-- CC&L: 4
-- Basalt Infrastructure Partners: 3
-- Bernhard Capital Partners: 3
-- H.I.G. Capital: 3
+- Axium Infrastructure: 8
+- Harrison Street: 8
+- Harbert Management Corp (Harbert Infra / Gulf Pacific): 5
+- ArcLight Capital Partners: 4
+- Copenhagen Infrastructure Partners: 4
+- Ember Infrastructure: 4
+- Argo Infrastructure Partners: 3
+- CPP Investments: 3
+- EQT Infrastructure: 3
+- Grain: 3
+- InfraRed Capital Partners: 3
+- Macquarie Asset Management: 3
+- Manulife: 3
+- Basalt Infrastructure Partners: 2
+- Bernhard Capital Partners: 2
+- Brookfield Asset Management: 2
+- CC&L: 2
+- CDPQ: 2
+- Fengate Asset Management: 2
+- Generate Capital: 2
 
 ## First Review Packet
 
 | Priority | Line | Company | Current | Target | Flags |
 |---|---:|---|---:|---|---|
-| medium | 3890 | Phoenix Renewables | 2 | 4-6 after research | no_transaction_or_milestone_source_purpose / thin_scorecard |
-| medium | 4094 | Thunderbird Renewables | 2 | 4-6 after research | no_transaction_or_milestone_source_purpose / thin_scorecard |
-| medium | 23405 | Cruise Terminals International | 5 | current 4-6 target | excessive_other_milestones / no_transaction_or_milestone_source_purpose |
-| medium | 29605 | OnTrac | 6 | current 4-6 target | excessive_other_milestones / no_transaction_or_milestone_source_purpose |
-| medium | 25317 | 38 Degrees North | 2 | 4-6 after research | thin_scorecard |
-| medium | 8140 | Accel International | 2 | 4-6 after research | thin_scorecard |
-| medium | 5604 | AgeCare Facilities Portfolio | 2 | 4-6 after research | thin_scorecard |
-| medium | 16646 | Aither Systems | 2 | 4-6 after research | thin_scorecard |
-| medium | 21388 | AL Sandersville Holdings | 2 | 4-6 after research | thin_scorecard |
-| medium | 19322 | Alturus | 2 | 4-6 after research | thin_scorecard |
-| medium | 16672 | Arbor Renewable Gas | 2 | 4-6 after research | thin_scorecard |
-| medium | 21195 | ARC | 1 | 4-6 after research | thin_scorecard |
-| medium | 5688 | Aspire at West Campus | 2 | 4-6 after research | thin_scorecard |
-| medium | 24132 | Blue Hill Wind Facility | 2 | 4-6 after research | thin_scorecard |
-| medium | 16225 | Blue Racer Midstream, LLC | 2 | 4-6 after research | thin_scorecard |
-| medium | 26075 | Bluebird Fiber | 2 | 4-6 after research | thin_scorecard |
-| medium | 19376 | BYD EV Fleet Asset SPVs | 2 | 4-6 after research | thin_scorecard |
-| medium | 5891 | CHUM Research Centre (CRCHUM) | 2 | 4-6 after research | thin_scorecard |
-| medium | 1184 | City Light & Power, Inc. | 2 | 4-6 after research | thin_scorecard |
-| medium | 7482 | ClearCurrent | 2 | 4-6 after research | thin_scorecard |
-| medium | 25404 | Common Energy | 2 | 4-6 after research | thin_scorecard |
-| medium | 7204 | Corex Resources Ltd. | 2 | 4-6 after research | thin_scorecard |
-| medium | 24185 | Deerfield Wind Facility | 2 | 4-6 after research | thin_scorecard |
-| medium | 31031 | Ecosave | 2 | 4-6 after research | thin_scorecard |
-| medium | 7541 | Elevation | 2 | 4-6 after research | thin_scorecard |
-| medium | 13111 | Fighting Jays Solar | 2 | 4-6 after research | thin_scorecard |
-| medium | 17394 | First Student | 2 | 4-6 after research | thin_scorecard |
-| medium | 1752 | FirstLight Fiber | 2 | 4-6 after research | thin_scorecard |
-| medium | 6183 | Georgetown Energy Partners | 2 | 4-6 after research | thin_scorecard |
-| medium | 16511 | H2O Innovation Inc. | 2 | 4-6 after research | thin_scorecard |
+| medium | 22880 | Cruise Terminals International | 4 | current 2-5 target | excessive_other_milestones / no_transaction_or_milestone_source_purpose |
+| medium | 7983 | Accel International | 1 | 2-5 after research | thin_scorecard |
+| medium | 16041 | Advanced Recycling Technologies | 1 | 2-5 after research | thin_scorecard |
+| medium | 5504 | AgeCare Facilities Portfolio | 1 | 2-5 after research | thin_scorecard |
+| medium | 16304 | Arbor Renewable Gas | 1 | 2-5 after research | thin_scorecard |
+| medium | 20732 | ARC | 1 | 2-5 after research | thin_scorecard |
+| medium | 29387 | Autopista Arco Norte, S.A. de C.V. | 1 | 2-5 after research | thin_scorecard |
+| medium | 23595 | Blue Hill Wind Facility | 1 | 2-5 after research | thin_scorecard |
+| medium | 21445 | Chicago CBD Data Center (CHIL2) | 1 | 2-5 after research | thin_scorecard |
+| medium | 7344 | ClearCurrent | 1 | 2-5 after research | thin_scorecard |
+| medium | 24857 | Common Energy | 1 | 2-5 after research | thin_scorecard |
+| medium | 5841 | CPV Three Rivers Energy Center | 1 | 2-5 after research | thin_scorecard |
+| medium | 16094 | Earthwise Environmental Solutions | 1 | 2-5 after research | thin_scorecard |
+| medium | 30353 | Ecosave | 1 | 2-5 after research | thin_scorecard |
+| medium | 12845 | Fighting Jays Solar | 1 | 2-5 after research | thin_scorecard |
+| medium | 17009 | First Student | 1 | 2-5 after research | thin_scorecard |
+| medium | 16119 | Ground/Water Treatment & Technology, LLC | 1 | 2-5 after research | thin_scorecard |
+| medium | 16145 | H2O Innovation Inc. | 1 | 2-5 after research | thin_scorecard |
+| medium | 6817 | Habitat Solar | 1 | 2-5 after research | thin_scorecard |
+| medium | 26627 | JH Transport Portfolio | 1 | 2-5 after research | thin_scorecard |
+| medium | 28595 | Maple PPP Portfolio | 1 | 2-5 after research | thin_scorecard |
+| medium | 21800 | Midway Technology Centre | 1 | 2-5 after research | thin_scorecard |
+| medium | 21825 | Orangeburg Data Center (ORNY1) | 1 | 2-5 after research | thin_scorecard |
+| medium | 5126 | Pearl / Ruby solar portfolio | 1 | 2-5 after research | thin_scorecard |
+| medium | 12470 | Pine Street Garage | 1 | 2-5 after research | thin_scorecard |
+| medium | 21850 | Pittock Block Data Center | 1 | 2-5 after research | thin_scorecard |
+| medium | 17200 | Seven Seas Water Group | 1 | 2-5 after research | thin_scorecard |
+| medium | 6902 | Skyway Towers | 1 | 2-5 after research | thin_scorecard |
+| medium | 21990 | Summit Infrastructure Group (SummitIG) | 1 | 2-5 after research | thin_scorecard |
+| medium | 13202 | Swan Lake North Pumped Storage Project | 1 | 2-5 after research | thin_scorecard |
 
 ## Files
 

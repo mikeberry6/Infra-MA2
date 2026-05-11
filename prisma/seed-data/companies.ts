@@ -18,7 +18,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2010", event: "Founded by Chip Russell as Matter Management Enterprises in the Birmingham market.", category: "Founding" },
       { date: "2020", event: "Acquired the Sylvan Springs Waste Complex from Meredith Environmental.", category: "Acquisition" },
-      { date: "2020", event: "Expanded into Louisiana and won the City of West Point, Georgia residential collection contract.", category: "Expansion" },
       { date: "2023", event: "Acquired the Whitestone Valley C&D Landfill and four transfer stations from Cash Environmental Resources.", category: "Acquisition" },
       { date: "Jul 2023", event: "3i North American Infrastructure Fund completed its growth-capital investment in Amwaste.", category: "Financing" },
       { date: "Nov 2024", event: "Acquired Waste Away Environmental in Milledgeville, Georgia.", category: "Acquisition" },
@@ -81,10 +80,9 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2007", event: "Regional Rail, LLC was founded.", category: "Founding" },
       { date: "Apr 2007", event: "Regional Rail was formed and acquired East Penn Railroad as its first operating railroad.", category: "Acquisition" },
+      { date: "Oct 2019", event: "Acquired Pinsly Railroad Company's Florida operations.", category: "Acquisition" },
       { date: "Apr 2019", event: "3i announced its agreement to acquire 100% of Regional Rail.", category: "Acquisition" },
       { date: "Jul 2019", event: "3i invested in Regional Rail after announcing its agreement to acquire the company.", category: "Acquisition" },
-      { date: "Oct 2019", event: "Acquired Pinsly Railroad Company's Florida operations.", category: "Acquisition" },
-      { date: "Jun 2025", event: "Acquired Minnesota Commercial Railway.", category: "Acquisition" },
     ],
     sources: [
       { label: "Regional Rail — Regional Rail, LLC", url: "https://regional-rail.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -115,7 +113,6 @@ export const companies: PortCo[] = [
       { date: "1970", event: "Smarte Carte was founded in Minnesota.", category: "Founding" },
       { date: "Oct 2017", event: "3i agreed to invest alongside management in Smarte Carte.", category: "Financing" },
       { date: "Apr 2018", event: "Acquired Aviation Mobility and completed a $225 million refinancing.", category: "Financing" },
-      { date: "2019", event: "Expanded its ancillary passenger-services platform through additional add-on activity.", category: "Expansion" },
       { date: "Jun 2024", event: "Won the Heathrow Airport luggage trolley contract, expanding its European operations.", category: "Expansion" },
       { date: "Feb 2026", event: "Acquired Lost and Found Software.", category: "Acquisition" },
     ],
@@ -144,7 +141,6 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "California",
     milestones: [
-      { date: "2021", event: "San Diego County environmental review materials described the JVR project configuration.", category: "Other" },
       { date: "2023", event: "JVR Energy Park was founded.", category: "Founding" },
       { date: "Dec 9, 2025", event: "BayWa r.e. closed $416 million of financing for JVR Energy Park.", category: "Financing" },
       { date: "Dec 9, 2025", event: "Acadia Infrastructure Capital invested preferred equity in JVR Energy Park alongside Wafra.", category: "Financing" },
@@ -268,7 +264,6 @@ export const companies: PortCo[] = [
       { date: "2019", event: "EnCap made its initial investment in Catalyze.", category: "Financing" },
       { date: "Feb 2023", event: "Actis and EnCap announced a co-control investment in Catalyze targeting the build-out of roughly 600 MW of solar and storage capacity.", category: "Financing" },
       { date: "May 2024", event: "NY Green Bank committed $100 million of financing for a 79 MW community distributed-generation portfolio.", category: "Financing" },
-      { date: "Jan 2024", event: "Catalyze acquired PermaCity as part of its market consolidation strategy.", category: "Acquisition" },
       { date: "Jan 2026", event: "Catalyze closed a 100 MW distributed-solar tax-equity financing with RBC Community Investments.", category: "Financing" },
     ],
     sources: [
@@ -334,7 +329,6 @@ export const companies: PortCo[] = [
       { date: "Jul 2023", event: "Valia Energía acquired EVM Energia.", category: "Acquisition" },
       { date: "Oct 2023", event: "Valia announced completion of EVM integration and a 3.2 GW operating platform.", category: "Other" },
       { date: "Jan 2024", event: "Valia completed a $530 million project bond financing.", category: "Financing" },
-      { date: "2025", event: "Valia received public ESG and workplace recognitions in Mexico.", category: "Other" },
     ],
     sources: [
       { label: "Valiaenergia — Valia Energía", url: "https://valiaenergia.com/en/", type: "ARTICLE" },
@@ -366,7 +360,6 @@ export const companies: PortCo[] = [
       { date: "Jan 2024", event: "ArcLight created AlphaGen to manage its U.S. power infrastructure portfolio.", category: "Other" },
       { date: "Jan 2025", event: "ADIA agreed a $500 million minority investment in AlphaGen.", category: "Financing" },
       { date: "Oct 2025", event: "CPP Investments announced a $1.0 billion investment in AlphaGen.", category: "Financing" },
-      { date: "May 2025", event: "AlphaGen projects were selected by PJM for expedited interconnection.", category: "Other" },
     ],
     sources: [
       { label: "Alphagen — Alpha Generation, LLC", url: "https://www.alphagen.com/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -394,10 +387,9 @@ export const companies: PortCo[] = [
     headquarters: "Arizona; California; Texas; Nevada; multi-state U.S. operations",
     milestones: [
       { date: "2021", event: "Arevon Energy, Inc. was founded.", category: "Founding" },
-      { date: "Aug 2021", event: "Arevon Energy was formed from Capital Dynamics' U.S. clean energy infrastructure team and Arevon Asset Management.", category: "Financing" },
       { date: "Aug 2021", event: "APG, CalSTRS, and ADIA-backed investors were announced as the owners of the new platform.", category: "Financing" },
+      { date: "Aug 2021", event: "Arevon Energy was formed from Capital Dynamics' U.S. clean energy infrastructure team and Arevon Asset Management.", category: "Financing" },
       { date: "Jul 2025", event: "Arevon announced a $600 million credit facility at the corporate level.", category: "Financing" },
-      { date: "Aug 2025", event: "Reached full operations at the Eland solar-plus-storage project.", category: "Other" },
       { date: "Sep 2025", event: "Reported more than $10 billion of operating assets and 5.3 GW of operating capacity.", category: "Expansion" },
     ],
     sources: [
@@ -427,9 +419,8 @@ export const companies: PortCo[] = [
     investmentYear: 2009,
     headquarters: "Illinois",
     milestones: [
-      { date: "2008", event: "Chicago Parking Meters, LLC was founded.", category: "Founding" },
       { date: "Dec 2008", event: "MSIP / Morgan Stanley Infrastructure's consortium was selected as winning bidder for the 75-year Chicago parking meter concession.", category: "Acquisition" },
-      { date: "Nov 2008", event: "Chicago Parking Meters, LLC was formed.", category: "Other" },
+      { date: "Nov 2008", event: "Chicago Parking Meters, LLC was formed.", category: "Founding" },
       { date: "Feb 2009", event: "The MSIP / Morgan Stanley Infrastructure-led consortium, including ADIA and Allianz, reached financial close on the 75-year Chicago parking meter concession for $1.151 billion.", category: "Acquisition" },
       { date: "2013", event: "The city and concessionaire amended portions of the operating relationship following early implementation disputes.", category: "Other" },
       { date: "2026", event: "Chicago officials stated the city would not pursue a buyback of the concession in the near term.", category: "Other" },
@@ -465,7 +456,6 @@ export const companies: PortCo[] = [
       { date: "2011", event: "FirstEnergy Transmission, LLC was founded.", category: "Founding" },
       { date: "Mar 18, 2021", event: "FirstEnergy announced the sale of a 19.9% stake in FirstEnergy Transmission to Brookfield.", category: "Divestiture" },
       { date: "May 31, 2022", event: "Brookfield Super-Core Infrastructure Partners completed the acquisition of the initial 19.9% minority stake in FirstEnergy Transmission.", category: "Acquisition" },
-      { date: "Feb 2023", event: "FirstEnergy announced the sale of an additional 30.0% interest to Brookfield.", category: "Divestiture" },
       { date: "Nov 6, 2023", event: "FirstEnergy announced the sale of an additional 30.0% stake to Brookfield.", category: "Divestiture" },
       { date: "Mar 25, 2024", event: "Brookfield closed its follow-on FET acquisition through a structure for which public regulatory records identify ADIA Infrastructure as holding an indirect passive economic interest.", category: "Acquisition" },
     ],
@@ -531,10 +521,9 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "United States (multi-state)",
     milestones: [
-      { date: "2020", event: "The formation announcement described 2.5 GW of operating assets, 2.6 GW of backlog, and a 12 GW development pipeline.", category: "Other" },
       { date: "2020", event: "AES Clean Energy was founded.", category: "Founding" },
+      { date: "2020", event: "The formation announcement described 2.5 GW of operating assets, 2.6 GW of backlog, and a 12 GW development pipeline.", category: "Other" },
       { date: "Nov 17, 2020", event: "AES and AIMCo announced an agreement to form the AES Clean Energy platform by merging sPower with AES' U.S. clean energy business.", category: "Financing" },
-      { date: "2021", event: "The combined platform began operating under the AES Clean Energy name.", category: "Other" },
       { date: "Dec 20, 2021", event: "Community Energy Solar joined AES, adding development pipeline and team capacity.", category: "Expansion" },
       { date: "Apr 16, 2025", event: "AES Clean Energy secured funding to support construction of 2 GW of projects in the United States.", category: "Financing" },
     ],
@@ -567,7 +556,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1923", event: "Boldyn Networks was founded.", category: "Founding" },
       { date: "2021", event: "Manulife Investment Management invested in certain U.S. digital infrastructure assets associated with the platform.", category: "Financing" },
-      { date: "Jun 28, 2023", event: "Boldyn Networks publicly introduced its new global brand. (Rebranding)", category: "Other" },
       { date: "2024", event: "The consortium-backed company supported the acquisition of Apogee Telecom to expand in higher education connectivity.", category: "Expansion" },
       { date: "Mar 2024", event: "AIMCo disclosed that CPP Investments held 86% and AIMCo held 10% of Boldyn Networks.", category: "Financing" },
       { date: "Mar 6, 2024", event: "CPP Investments, AIMCo, and Manulife IM announced additional investment to support U.S. growth.", category: "Financing" },
@@ -599,7 +587,6 @@ export const companies: PortCo[] = [
     headquarters: "Manitoba",
     milestones: [
       { date: "1978", event: "Cando Rail & Terminals was founded.", category: "Founding" },
-      { date: "2022", event: "Public disclosures described more than 40 industrial rail yards, nine terminals, and one short-line railroad.", category: "Other" },
       { date: "2022", event: "Public disclosures also cited more than 100 locomotives and over 900 employees.", category: "Other" },
       { date: "Jul 20, 2022", event: "AIMCo announced a definitive agreement to acquire 100% of Cando Rail & Terminals from TorQuest Partners and Cando employees.", category: "Acquisition" },
     ],
@@ -658,8 +645,8 @@ export const companies: PortCo[] = [
       { date: "Dec 2019", event: "TC Energy announced the sale of a combined 65% interest in Coastal GasLink to KKR and AIMCo while retaining 35%.", category: "Divestiture" },
       { date: "May 2020", event: "TC Energy closed the sale of 65% of Coastal GasLink to KKR and AIMCo, retaining 35%.", category: "Divestiture" },
       { date: "Mar 2022", event: "TC Energy signed equity option agreements with Indigenous communities along the project corridor.", category: "Other" },
-      { date: "Nov 2023", event: "TC Energy reported mechanical completion of the pipeline project.", category: "Other" },
-      { date: "Nov 2024", event: "Coastal GasLink announced commercial in-service.", category: "Other" },
+      { date: "Nov 2023", event: "TC Energy reported mechanical completion of the pipeline project.", category: "Expansion" },
+      { date: "Nov 2024", event: "Coastal GasLink announced commercial in-service.", category: "Expansion" },
     ],
     sources: [
       { label: "Coastalgaslink — Coastal GasLink Pipeline Project", url: "https://www.coastalgaslink.com/about/faqs/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -749,7 +736,7 @@ export const companies: PortCo[] = [
       { date: "Feb 6, 2009", event: "Puget Holdings completed the take-private acquisition of Puget Energy through a consortium of infrastructure investors including AIMCo.", category: "Acquisition" },
       { date: "Mar 2018", event: "AIMCo announced that it had increased its stake in Puget Sound Energy's parent company.", category: "Acquisition" },
       { date: "Dec 2021", event: "Macquarie Asset Management and Ontario Teachers' signed an agreement to acquire a stake in Puget Holdings.", category: "Acquisition" },
-      { date: "Jan 2022", event: "Macquarie and Ontario Teachers' completed the transaction and each disclosed a 15.8% ownership interest.", category: "Other" },
+      { date: "Jan 2022", event: "Macquarie and Ontario Teachers' completed the transaction and each disclosed a 15.8% ownership interest.", category: "Acquisition" },
     ],
     sources: [
       { label: "Aimco — Puget Energy / Puget Sound Energy", url: "https://www.aimco.ca/insights/aimco-increases-stake-in-puget-sound-energy", type: "ARTICLE" },
@@ -776,9 +763,8 @@ export const companies: PortCo[] = [
     investmentYear: 2018,
     headquarters: "Alberta",
     milestones: [
-      { date: "2018", event: "Project development and construction continued near Pincher Creek, Alberta.", category: "Other" },
       { date: "Feb 2018", event: "Enel announced the sale of a 49% interest in Riverview Wind Farm to AIMCo.", category: "Divestiture" },
-      { date: "2020", event: "The project began operating under a long-term Renewable Electricity Support Agreement with AESO.", category: "Other" },
+      { date: "2020", event: "The project began operating under a long-term Renewable Electricity Support Agreement with AESO.", category: "Expansion" },
       { date: "May 2020", event: "Enel announced that Riverview had been connected to the grid.", category: "Expansion" },
     ],
     sources: [
@@ -807,7 +793,6 @@ export const companies: PortCo[] = [
     headquarters: "Alberta, British Columbia, Nova Scotia, and Alaska",
     milestones: [
       { date: "1954", event: "AltaGas Utilities traces part of the platform’s history to utility operations established in Alberta.", category: "Founding" },
-      { date: "2002", event: "Heritage Gas was established in Nova Scotia.", category: "Founding" },
       { date: "2018", event: "AltaGas Canada completed an IPO.", category: "IPO" },
       { date: "2020", event: "TriSummit Utilities was founded.", category: "Founding" },
       { date: "Mar 31, 2020", event: "PSP Investments and the Alberta Teachers’ Retirement Fund, with ATRF's interest managed by AIMCo per TriSummit disclosures, completed the acquisition of AltaGas Canada and renamed the business TriSummit Utilities.", category: "Acquisition" },
@@ -838,7 +823,7 @@ export const companies: PortCo[] = [
     headquarters: "New Mexico",
     milestones: [
       { date: "Jun 2016", event: "Pattern Development announced financing close and the start of construction for the 324 MW Broadview project.", category: "Financing" },
-      { date: "Mar 2017", event: "Broadview began commercial operations.", category: "Other" },
+      { date: "Mar 2017", event: "Broadview began commercial operations.", category: "Expansion" },
       { date: "Apr 2017", event: "Pattern Energy announced it had acquired Broadview as the project entered operations.", category: "Acquisition" },
       { date: "May 2017", event: "Allianz Capital Partners and Capital One completed a tax-equity investment in the project.", category: "Financing" },
       { date: "Oct 2023", event: "Pattern Energy's updated project factsheet described Broadview as a 324 MW operating wind facility under long-term Southern California Edison contracts.", category: "Other" },
@@ -867,10 +852,9 @@ export const companies: PortCo[] = [
     investmentYear: 2016,
     headquarters: "Texas",
     milestones: [
-      { date: "2016", event: "Public materials described the project as a roughly 200 MW wind facility using 112 turbines.", category: "Other" },
       { date: "May 2016", event: "E.ON, Allianz Capital Partners, and State Street Corporation closed tax-equity financing for Colbeck's Corner.", category: "Financing" },
       { date: "May 2016", event: "E.ON announced Colbeck's Corner had been added to its renewable-generation portfolio in the United States.", category: "Other" },
-      { date: "Nov 2016", event: "E.ON dedicated the operating wind farm in Carson and Gray counties, Texas.", category: "Other" },
+      { date: "Nov 2016", event: "E.ON dedicated the operating wind farm in Carson and Gray counties, Texas.", category: "Expansion" },
     ],
     sources: [
       { label: "Eon — Colbeck's Corner Wind Farm", url: "https://www.eon.com/en/about-us/media/press-release/2016/eon-adds-us-based-colbeck-s-corner-wind-farm-to-its-renewable-portfolio.html", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -897,9 +881,8 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Nov 2022", event: "Avantus completed the sale of Galloway 2 to Allianz Capital Partners.", category: "Divestiture" },
       { date: "Nov 2022", event: "CIT announced construction financing for the project and stated that Allianz had purchased a majority interest while Avantus retained a minority stake.", category: "Financing" },
-      { date: "2023", event: "Public sources described the project as expected to come online in 2023 under long-term contracted arrangements.", category: "Other" },
       { date: "2023", event: "The project was presented as Allianz's second transaction with Avantus following the earlier Lotus Solar Farm acquisition.", category: "Acquisition" },
-      { date: "Feb 2023", event: "Avantus and local officials marked the project's groundbreaking in Concho County.", category: "Other" },
+      { date: "Feb 2023", event: "Avantus and local officials marked the project's groundbreaking in Concho County.", category: "Expansion" },
     ],
     sources: [
       { label: "Close date source — Allianz Global Investors — Galloway 2 Solar Project", url: "https://avantus.com/news/avantus-and-allianz-capital-partners-announce-completion-of-sale-for-galloway-2-solar-project", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -924,7 +907,7 @@ export const companies: PortCo[] = [
     investmentYear: 2017,
     headquarters: "Oklahoma",
     milestones: [
-      { date: "Dec 2016", event: "Great Western began commercial operations.", category: "Other" },
+      { date: "Dec 2016", event: "Great Western began commercial operations.", category: "Expansion" },
       { date: "Jan 2017", event: "EDF Renewables publicly announced commercial operation of the 225 MW project.", category: "Expansion" },
       { date: "Feb 2017", event: "Allianz Capital Partners and MUFG completed a tax-equity investment in Great Western.", category: "Financing" },
       { date: "Jun 2017", event: "Alliant Energy announced an agreement to acquire a 50% interest in the project from EDF Renewable Energy.", category: "Acquisition" },
@@ -954,9 +937,7 @@ export const companies: PortCo[] = [
     headquarters: "Illinois",
     milestones: [
       { date: "Dec 2016", event: "EDF Renewables announced commercial operation of the 184 MW Kelly Creek Wind Project.", category: "Expansion" },
-      { date: "2017", event: "Public materials described the project as a 92-turbine facility in Ford and Kankakee counties, Illinois.", category: "Other" },
       { date: "Jan 2017", event: "Allianz Capital Partners announced its tax-equity investment as sole tax-equity partner for Kelly Creek.", category: "Financing" },
-      { date: "2026", event: "EDF power solutions North America's project page continued to include Kelly Creek in its operating wind portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Edf Re — Kelly Creek Wind Project", url: "https://www.edf-re.com/project/kelly-creek-wind/", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -984,7 +965,6 @@ export const companies: PortCo[] = [
       { date: "Sep 2019", event: "8minute Solar Energy announced the sale of the equity interests in Lotus Solar Farm to Allianz Global Investors.", category: "Divestiture" },
       { date: "Sep 2019", event: "Deal counsel disclosed that construction had begun and the project was expected to complete in 2020.", category: "Other" },
       { date: "Sep 2020", event: "8minute announced that the 67 MWdc Lotus Solar Farm was fully operational.", category: "Expansion" },
-      { date: "Sep 2020", event: "Public materials described Lotus as AllianzGI Infrastructure Equity's first U.S. solar project acquisition.", category: "Acquisition" },
     ],
     sources: [
       { label: "Announcement date source — Allianz Global Investors — Lotus Solar Farm", url: "https://www.businesswire.com/news/home/20190910005984/en/8minute-Solar-Energy-and-Allianz-Global-Investors-Announce-First-Major-U.S.-Acquisition", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -1012,7 +992,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2017", event: "Red Dirt entered operations in Oklahoma.", category: "Expansion" },
       { date: "2017", event: "Red Dirt Wind Project was founded.", category: "Founding" },
-      { date: "Apr 2017", event: "Enel Green Power North America announced the start of construction on the 300 MW Red Dirt project.", category: "Other" },
+      { date: "Apr 2017", event: "Enel Green Power North America announced the start of construction on the 300 MW Red Dirt project.", category: "Expansion" },
       { date: "Aug 17, 2017", event: "Enel signed a tax-equity agreement with MUFG and Allianz Renewable Energy Partners of America covering 100% of the project's Class B interests.", category: "Financing" },
       { date: "2020", event: "Enel highlighted Red Dirt in project materials describing community engagement and operating performance.", category: "Other" },
     ],
@@ -1042,7 +1022,7 @@ export const companies: PortCo[] = [
     headquarters: "Kenedy County, Texas",
     milestones: [
       { date: "2018", event: "Stella Wind Farm was founded.", category: "Founding" },
-      { date: "Jan 2018", event: "E.ON announced the start of construction of the 201 MW Stella wind project in Kenedy County, Texas.", category: "Other" },
+      { date: "Jan 2018", event: "E.ON announced the start of construction of the 201 MW Stella wind project in Kenedy County, Texas.", category: "Expansion" },
       { date: "Dec 2018", event: "Stella achieved commercial operation.", category: "Expansion" },
       { date: "Dec 2018", event: "Allianz Capital Partners provided tax equity financing for the project at commercial operation.", category: "Financing" },
       { date: "Aug 2019", event: "E.ON publicly inaugurated the operating wind farm in Texas.", category: "Other" },
@@ -1073,10 +1053,8 @@ export const companies: PortCo[] = [
     headquarters: "Crawford County, Michigan",
     milestones: [
       { date: "2020", event: "7 Mile Pit Solar was founded.", category: "Founding" },
-      { date: "Sep 2020", event: "Michigan DNR awarded Circle Power a lease to develop solar generation at the former 7 Mile Pit site.", category: "Other" },
+      { date: "Sep 2020", event: "Michigan DNR awarded Circle Power a lease to develop solar generation at the former 7 Mile Pit site.", category: "Expansion" },
       { date: "May 27, 2021", event: "Amber Infrastructure and Circle Power launched Circle Power Renewables as a U.S. renewable development platform covering 7 Mile Pit Solar and other Michigan projects.", category: "Financing" },
-      { date: "2023", event: "Public development materials continued to position 7 Mile Pit as part of the Circle Power Michigan solar pipeline.", category: "Other" },
-      { date: "2024", event: "The project remained in development in reviewed public materials.", category: "Other" },
     ],
     sources: [
       { label: "Thinkingafield — 7 Mile Pit Solar", url: "https://thinkingafield.org/2020/09/michigan-dnr-partners-with-circle-power-to-repurpose-former-mine-sites.html", type: "ARTICLE" },
@@ -1135,7 +1113,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2020", event: "Biddeford Lincoln Garage & RiverWalk was founded.", category: "Founding" },
       { date: "Aug 2020", event: "Amber and Hunt achieved financial close on the Biddeford Lincoln Garage & RiverWalk project.", category: "Financing" },
-      { date: "Aug 2020", event: "Construction began on the downtown garage and RiverWalk improvements.", category: "Other" },
+      { date: "Aug 2020", event: "Construction began on the downtown garage and RiverWalk improvements.", category: "Expansion" },
       { date: "2021", event: "Federal Highway Administration publications highlighted the transaction as a municipal P3 case study.", category: "Other" },
       { date: "Jul 2021", event: "The Lincoln Garage opened to the public.", category: "Expansion" },
     ],
@@ -1164,7 +1142,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Michigan; United States",
     milestones: [
-      { date: "2017", event: "Circle Power was formed by its founders before the launch of the joint platform.", category: "Other" },
+      { date: "2017", event: "Circle Power was formed by its founders before the launch of the joint platform.", category: "Founding" },
       { date: "2021", event: "Scotia Wind became the first publicly highlighted project for the platform.", category: "Other" },
       { date: "2021", event: "Circle Power Renewables was founded.", category: "Founding" },
       { date: "May 27, 2021", event: "Amber Infrastructure and Circle Power launched Circle Power Renewables.", category: "Financing" },
@@ -1283,9 +1261,8 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2020", event: "Euryalus Solar Portfolio was founded.", category: "Founding" },
       { date: "Jun 2020", event: "US Solar Fund, now managed by Amber Infrastructure, closed the acquisition of the Euryalus portfolio from Southern Current.", category: "Acquisition" },
-      { date: "Jul 2020", event: "The four Oregon solar projects reached full commercial operations.", category: "Other" },
+      { date: "Jul 2020", event: "The four Oregon solar projects reached full commercial operations.", category: "Expansion" },
       { date: "Dec 2023", event: "Amber became investment manager to US Solar Fund.", category: "Financing" },
-      { date: "2025", event: "US Solar Fund continued to report the portfolio as part of its contracted U.S. solar asset base.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Amber Infrastructure — Euryalus Solar Portfolio", url: "https://www.ussolarfund.co.uk/portfolio/acquisition-five", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -1313,10 +1290,8 @@ export const companies: PortCo[] = [
     headquarters: "Alberta",
     milestones: [
       { date: "2021", event: "Future Energy Park was founded.", category: "Founding" },
-      { date: "2023", event: "Green Impact Partners continued project development and commercial work for the Calgary facility.", category: "Other" },
       { date: "Feb 2023", event: "Amber agreed to acquire a 50% equity interest in Future Energy Park through its partnership with Green Impact Partners.", category: "Acquisition" },
       { date: "Dec 2023", event: "Public materials indicated the project had received Alberta environmental approval to proceed with development work.", category: "Other" },
-      { date: "2024", event: "The project remained under development in reviewed public disclosures.", category: "Other" },
     ],
     sources: [
       { label: "Greenipi — Future Energy Park", url: "https://www.greenipi.com/project/future-energy-park/", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -1345,7 +1320,6 @@ export const companies: PortCo[] = [
       { date: "2020", event: "The Granite assets were incorporated into the fund's contracted operating portfolio.", category: "Founding" },
       { date: "Jan 2020", event: "US Solar Fund, now managed by Amber Infrastructure, closed the acquisition of the Granite portfolio of eight North Carolina solar projects.", category: "Acquisition" },
       { date: "Dec 2023", event: "Amber became investment manager to US Solar Fund.", category: "Financing" },
-      { date: "2025", event: "US Solar Fund continued to report Granite as part of its 41-asset U.S. portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Amber Infrastructure — Granite Solar Portfolio", url: "https://www.ussolarfund.co.uk/portfolio/granite", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -1373,10 +1347,8 @@ export const companies: PortCo[] = [
     headquarters: "Colorado",
     milestones: [
       { date: "2022", event: "GreenGas Colorado was founded.", category: "Founding" },
-      { date: "2023", event: "Green Impact continued commissioning and ramp-up activities for the project.", category: "Expansion" },
       { date: "Feb 2023", event: "Amber agreed to acquire a 50% interest in GreenGas Colorado as part of the Green Impact partnership.", category: "Acquisition" },
       { date: "Dec 2023", event: "Public investor materials indicated the project had begun producing gas.", category: "Financing" },
-      { date: "2024", event: "The project remained part of the disclosed Amber and Green Impact RNG partnership portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Amber Infrastructure — GreenGas Colorado", url: "https://americanbiogascouncil.org/green-impact-partners-announces-545-million-partnering-agreement/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -1405,7 +1377,7 @@ export const companies: PortCo[] = [
       { date: "2020", event: "Circle Power advanced Michigan mine-site solar repurposing initiatives that included the Groveland development area.", category: "Other" },
       { date: "2020", event: "Groveland Mine Solar was founded.", category: "Founding" },
       { date: "May 27, 2021", event: "Amber and Circle Power launched Circle Power Renewables as the platform developing Groveland Mine Solar.", category: "Financing" },
-      { date: "Oct 2023", event: "Felch Township approved a conditional use permit for Groveland Mine Solar.", category: "Other" },
+      { date: "Oct 2023", event: "Felch Township approved a conditional use permit for Groveland Mine Solar.", category: "Expansion" },
       { date: "Aug 2024", event: "The Michigan Public Service Commission approved UPPCO's power purchase agreement for output from the project.", category: "Acquisition" },
     ],
     sources: [
@@ -1467,7 +1439,6 @@ export const companies: PortCo[] = [
       { date: "2023", event: "Iowa RNG was identified as one of the named projects in the Amber and Green Impact transaction.", category: "Management" },
       { date: "2023", event: "Iowa RNG was founded.", category: "Founding" },
       { date: "Feb 2023", event: "Amber agreed to acquire a 50% equity interest in Iowa RNG through its partnership with Green Impact Partners.", category: "Acquisition" },
-      { date: "2024", event: "The project remained part of the disclosed RNG partnership portfolio in reviewed public materials.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Amber Infrastructure — Iowa RNG", url: "https://www.greenipi.com/newsroom/green-impact-partners-announces-545-million-partnering-agreement/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -1496,7 +1467,7 @@ export const companies: PortCo[] = [
       { date: "2021", event: "Maine International Cold Storage Facility was founded.", category: "Founding" },
       { date: "2022", event: "The project was positioned to expand cold-chain logistics capacity at the Port of Portland.", category: "Expansion" },
       { date: "Aug 22, 2022", event: "Amber Infrastructure and Treadwell Franklin Infrastructure moved the Maine International Cold Storage Facility into execution after a 50-year ground lease cleared the path to break ground.", category: "Financing" },
-      { date: "2024", event: "Taylor Logistics was selected as operator for the facility.", category: "Other" },
+      { date: "2024", event: "Taylor Logistics was selected as operator for the facility.", category: "Expansion" },
       { date: "2025", event: "The facility was reported as operational in reviewed public materials.", category: "Expansion" },
     ],
     sources: [
@@ -1528,7 +1499,6 @@ export const companies: PortCo[] = [
       { date: "Sep 2, 2019", event: "US Solar Fund, now managed by Amber Infrastructure, closed the acquisition and financing of Milford Solar.", category: "Acquisition" },
       { date: "Nov 2020", event: "Milford Solar achieved commercial operation.", category: "Expansion" },
       { date: "Dec 2023", event: "Amber became investment manager to US Solar Fund.", category: "Financing" },
-      { date: "2025", event: "The project remained part of US Solar Fund's 41-asset operating portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Amber Infrastructure — Milford Solar Project", url: "https://www.ussolarfund.co.uk/portfolio/milford-solar-plant", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -1588,7 +1558,6 @@ export const companies: PortCo[] = [
       { date: "2021", event: "Scotia Wind secured a long-term power purchase arrangement with UPPCO according to reviewed public materials.", category: "Acquisition" },
       { date: "2021", event: "Scotia Wind was founded.", category: "Founding" },
       { date: "May 27, 2021", event: "Amber and Circle Power launched Circle Power Renewables and identified Scotia Wind as an early project.", category: "Financing" },
-      { date: "2024", event: "The project remained part of Circle Power's disclosed Michigan renewable development pipeline.", category: "Other" },
     ],
     sources: [
       { label: "Scotiawindfarm — Scotia Wind", url: "https://www.scotiawindfarm.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -1614,7 +1583,7 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "Texas",
     milestones: [
-      { date: "Jul 2018", event: "Travis County selected the Hunt and Amber-led team for the courthouse PPP.", category: "Other" },
+      { date: "Jul 2018", event: "Travis County selected the Hunt and Amber-led team for the courthouse PPP.", category: "Expansion" },
       { date: "2019", event: "Travis County Civil and Family Courts Facility was founded.", category: "Founding" },
       { date: "Apr 2019", event: "The Hunt and Amber-led consortium reached financial close on the Travis County Civil and Family Courts Facility P3 and construction began.", category: "Financing" },
       { date: "Dec 2022", event: "The Travis County Civil and Family Courts Facility opened.", category: "Expansion" },
@@ -1648,7 +1617,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2018", event: "Dennis Fotinos founded Noventa Energy Partners.", category: "Founding" },
       { date: "2021", event: "Noventa reached financial close on Toronto Western Hospital as an anchor reference project.", category: "Financing" },
-      { date: "Apr 2023", event: "The Canada Infrastructure Bank committed C$100 million to support Noventa projects.", category: "Other" },
+      { date: "Apr 2023", event: "The Canada Infrastructure Bank committed C$100 million to support Noventa projects.", category: "Financing" },
       { date: "Apr 3, 2023", event: "Ancala acquired a majority interest in Noventa on behalf of Ancala Infrastructure Fund III.", category: "Acquisition" },
     ],
     sources: [
@@ -1675,7 +1644,6 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Pennsylvania",
     milestones: [
-      { date: "2025", event: "Public materials described the platform's first asset as a 61-mile short line and intermodal terminal operation in Pennsylvania.", category: "Other" },
       { date: "2025", event: "Phoenix Rail was founded.", category: "Founding" },
       { date: "Jan 28, 2025", event: "Ancala formed Phoenix Rail with the completed acquisition of Lehigh Valley Rail Management.", category: "Acquisition" },
     ],
@@ -1733,7 +1701,6 @@ export const companies: PortCo[] = [
     headquarters: "New York; Pennsylvania",
     milestones: [
       { date: "2022", event: "Antin announced its investment in Empire Access and North Penn.", category: "Financing" },
-      { date: "2023", event: "Empire Access continued fiber expansion across its New York and Pennsylvania footprint.", category: "Other" },
       { date: "Jan 17, 2023", event: "Antin completed the acquisition of Empire Access and North Penn.", category: "Acquisition" },
       { date: "1896", event: "Empire Telephone Company was founded in Prattsburgh, New York.", category: "Founding" },
       { date: "1896", event: "Empire Access was founded.", category: "Founding" },
@@ -1791,7 +1758,6 @@ export const companies: PortCo[] = [
     headquarters: "North America",
     milestones: [
       { date: "2013", event: "GTL Leasing was founded.", category: "Founding" },
-      { date: "2024", event: "Public transaction materials highlighted GTL's position in hydrogen and industrial gas equipment leasing.", category: "Other" },
       { date: "Jun 20, 2024", event: "Antin agreed to acquire a majority stake in GTL Leasing through NextGen Fund I.", category: "Acquisition" },
     ],
     sources: [
@@ -1821,7 +1787,6 @@ export const companies: PortCo[] = [
       { date: "1992", event: "Lake State Railway was formed following the acquisition of lines from Detroit & Mackinac Railway.", category: "Acquisition" },
       { date: "1992", event: "Lake State Railway Company was founded.", category: "Founding" },
       { date: "Mar 8, 2022", event: "Antin completed a strategic investment in Lake State Railway.", category: "Financing" },
-      { date: "2024", event: "Public transaction materials described annual volumes of approximately 60,000 carloads.", category: "Other" },
     ],
     sources: [
       { label: "Lsrc — Lake State Railway Company", url: "https://www.lsrc.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -1877,7 +1842,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1995", event: "Frank Foti acquired the Cascade General shipyard and founded Vigor.", category: "Founding" },
       { date: "2019", event: "Lone Star Funds invested in Vigor Marine Group through Seller in announced Antin acquisition pending close.", category: "Acquisition" },
-      { date: "2026", event: "The announced sale remained subject to regulatory approvals in reviewed public materials.", category: "Divestiture" },
       { date: "Feb 4, 2026", event: "Antin Infrastructure Partners announced an agreement to acquire Vigor Marine Group from an affiliate of Lone Star Funds.", category: "Acquisition" },
     ],
     sources: [
@@ -1937,7 +1901,7 @@ export const companies: PortCo[] = [
     investmentYear: 2015,
     headquarters: "Connecticut; New York",
     milestones: [
-      { date: "2002", event: "Construction began on the Cross-Sound Cable system.", category: "Other" },
+      { date: "2002", event: "Construction began on the Cross-Sound Cable system.", category: "Expansion" },
       { date: "2002", event: "Cross-Sound Cable entered commercial operation.", category: "Expansion" },
       { date: "2002", event: "Cross-Sound Cable Company, LLC was founded.", category: "Founding" },
       { date: "Aug 25, 2015", event: "AIA Energy, managed by Argo Infrastructure Partners and backed by APG and CalSTRS, completed the acquisition of Cross-Sound Cable.", category: "Acquisition" },
@@ -1972,7 +1936,6 @@ export const companies: PortCo[] = [
     headquarters: "Indiana; Pennsylvania; multi-state U.S. operations",
     milestones: [
       { date: "2019", event: "Doral Renewables was established as Doral Group's U.S. renewables platform.", category: "Founding" },
-      { date: "2024", event: "Continued construction and development across the Mammoth Solar portfolio in Indiana.", category: "Other" },
       { date: "Jun 2024", event: "Doral announced a $400 million minority equity investment from APG.", category: "Financing" },
       { date: "Sep 13, 2024", event: "Doral closed the APG investment and described APG as its largest individual shareholder.", category: "Financing" },
     ],
@@ -2002,7 +1965,6 @@ export const companies: PortCo[] = [
     headquarters: "Nevada",
     milestones: [
       { date: "2018", event: "Gemini Solar + Storage was founded.", category: "Founding" },
-      { date: "Oct 2022", event: "Quinbrook and Primergy announced APG's agreement to acquire a 49% interest in Gemini on behalf of ABP.", category: "Acquisition" },
       { date: "Oct 2022", event: "APG acquired a 49% equity stake in Gemini on behalf of ABP.", category: "Acquisition" },
       { date: "Oct 21, 2022", event: "APG agreed to acquire a 49% equity stake in Gemini on behalf of ABP.", category: "Acquisition" },
       { date: "Apr 4, 2024", event: "Quinbrook closed the Valley of Fire continuation fund, which acquired a 51% interest in Gemini.", category: "Acquisition" },
@@ -2036,7 +1998,7 @@ export const companies: PortCo[] = [
     headquarters: "New Jersey; New York",
     milestones: [
       { date: "2011", event: "Hudson Transmission Project was founded.", category: "Founding" },
-      { date: "May 2011", event: "Construction began on the Hudson Transmission project.", category: "Other" },
+      { date: "May 2011", event: "Construction began on the Hudson Transmission project.", category: "Expansion" },
       { date: "Jun 2013", event: "Hudson Transmission entered commercial service.", category: "Expansion" },
       { date: "Sep 2018", event: "Ares EIF and Starwood Energy signed an agreement to sell Hudson Transmission to an Argo-managed investment vehicle.", category: "Divestiture" },
       { date: "Q1 2019", event: "Argo acquired principal equity ownership of Hudson Transmission for institutional investors including APG.", category: "Acquisition" },
@@ -2138,9 +2100,8 @@ export const companies: PortCo[] = [
     headquarters: "Texas",
     milestones: [
       { date: "2009", event: "LBJ Infrastructure Group, LLC was founded.", category: "Founding" },
-      { date: "Sep 2009", event: "Commercial close was reached for the LBJ Express concession.", category: "Other" },
       { date: "Jun 22, 2010", event: "LBJ Infrastructure Group, whose private partners included APG Investments, Meridiam, and Cintra, reached financial close on the LBJ Express concession.", category: "Financing" },
-      { date: "Jan 2011", event: "Construction began on the LBJ managed-lanes project.", category: "Other" },
+      { date: "Jan 2011", event: "Construction began on the LBJ managed-lanes project.", category: "Expansion" },
       { date: "Sep 2015", event: "LBJ Express opened to traffic ahead of the contractual schedule.", category: "Expansion" },
       { date: "Sep 2025", event: "The consortium marked the tenth anniversary of the LBJ Express opening.", category: "Other" },
     ],
@@ -2168,12 +2129,11 @@ export const companies: PortCo[] = [
     investmentYear: 2017,
     headquarters: "Texas",
     milestones: [
-      { date: "Jun 2009", event: "TxDOT executed the comprehensive development agreement for North Tarrant Express Segments 1 and 2W.", category: "Other" },
       { date: "Dec 2009", event: "Financial close was reached on the initial North Tarrant Express project.", category: "Financing" },
       { date: "Oct 2014", event: "Phase I opened to traffic ahead of schedule.", category: "Expansion" },
       { date: "Sep 2017", event: "APG Group became part of the current North Tarrant Express ownership group after the original pension-fund stake sale to the concession partners.", category: "Acquisition" },
-      { date: "Jul 2018", event: "NTE 35W Segments 3A and 3B reached substantial completion.", category: "Other" },
-      { date: "Jun 2023", event: "NTE 35W Segment 3C reached substantial completion ahead of schedule.", category: "Other" },
+      { date: "Jul 2018", event: "NTE 35W Segments 3A and 3B reached substantial completion.", category: "Expansion" },
+      { date: "Jun 2023", event: "NTE 35W Segment 3C reached substantial completion ahead of schedule.", category: "Expansion" },
     ],
     sources: [
       { label: "Txdot — North Tarrant Express", url: "https://www.txdot.gov/projects/projects-studies/fort-worth/north-tarrant-express.html", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -2203,7 +2163,6 @@ export const companies: PortCo[] = [
       { date: "2009", event: "Pattern Energy Group was founded.", category: "Founding" },
       { date: "Sep 2013", event: "Pattern completed its initial public offering on NASDAQ.", category: "IPO" },
       { date: "Mar 2020", event: "CPP Investments completed the take-private acquisition of Pattern.", category: "Financing" },
-      { date: "Dec 2023", event: "Pattern reached financial close on the SunZia Transmission and SunZia Wind financing package.", category: "Financing" },
       { date: "Dec 2024", event: "Pattern announced the sale of Riverstone's equity stake to a consortium led by APG and ART.", category: "Divestiture" },
       { date: "Jun 9, 2025", event: "Pattern closed the equity investment from the APG- and ART-headed consortium, which became an owner alongside CPP Investments and Pattern management.", category: "Financing" },
     ],
@@ -2269,7 +2228,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2001", event: "Southern Power was formed as Southern Company's wholesale generating subsidiary.", category: "Founding" },
       { date: "May 2018", event: "Southern Power agreed to sell a 33% minority interest in a 26-facility solar portfolio to Global Atlantic.", category: "Divestiture" },
-      { date: "Feb 2021", event: "Southern Power announced battery storage additions at selected California solar projects.", category: "Other" },
+      { date: "Feb 2021", event: "Southern Power announced battery storage additions at selected California solar projects.", category: "Expansion" },
       { date: "Sep 2023", event: "Southern Power acquired the Millers Branch Solar Facility in Texas.", category: "Acquisition" },
       { date: "Nov 2023", event: "APG acquired Global Atlantic's minority interest in the Southern Power-managed solar portfolio.", category: "Acquisition" },
     ],
@@ -2299,7 +2258,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2018", event: "Global Atlantic completed the minority investment in the 26-facility solar portfolio.", category: "Financing" },
       { date: "May 2018", event: "Southern Power agreed to sell a 33% minority interest in the solar portfolio to Global Atlantic.", category: "Divestiture" },
-      { date: "2021", event: "Southern Power added battery storage to selected projects within the broader portfolio.", category: "Other" },
+      { date: "2021", event: "Southern Power added battery storage to selected projects within the broader portfolio.", category: "Expansion" },
       { date: "2023", event: "The portfolio was described as comprising 26 solar facilities and two battery storage assets totaling about 2.2 GW.", category: "Other" },
       { date: "Nov 2023", event: "APG acquired Global Atlantic's 33% stake in the portfolio.", category: "Acquisition" },
     ],
@@ -2332,7 +2291,7 @@ export const companies: PortCo[] = [
       { date: "Jul 2021", event: "Apollo-managed funds announced an agreement for the exclusive right to invest in Arthur Kill Terminal.", category: "Financing" },
       { date: "2022", event: "The project was awarded federal PIDP funding for port development work.", category: "Financing" },
       { date: "2024", event: "Federal and local permitting materials were published for the offshore wind terminal project.", category: "Other" },
-      { date: "Aug 2025", event: "The U.S. Department of Transportation terminated the previously awarded federal grant for the project.", category: "Other" },
+      { date: "Aug 2025", event: "The U.S. Department of Transportation terminated the previously awarded federal grant for the project.", category: "Expansion" },
     ],
     sources: [
       { label: "Announcement date source — Apollo Global Management — Arthur Kill Terminal", url: "https://ir.apollo.com/news-events/press-releases/detail/80/apollo-funds-and-atlantic-offshore-terminals-enter", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -2361,7 +2320,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2019", event: "Broad Reach Power was founded with backing from EnCap Energy Transition.", category: "Founding" },
       { date: "Nov 2021", event: "Apollo agreed to acquire a 50% stake in Broad Reach Power.", category: "Acquisition" },
-      { date: "2022", event: "The company continued to build out its U.S. storage and renewables pipeline.", category: "Other" },
       { date: "Aug 2023", event: "The shareholder group agreed to sell the battery storage business to ENGIE while excluding the Mountain West portfolio from the sale.", category: "Divestiture" },
     ],
     sources: [
@@ -2479,7 +2437,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1904", event: "Corning Natural Gas was incorporated.", category: "Founding" },
       { date: "2014", event: "Corning acquired Pike County Light & Power.", category: "Acquisition" },
-      { date: "2016", event: "Leatherstocking Gas expanded the platform into additional New York service territories.", category: "Expansion" },
       { date: "Aug 2016", event: "Corning acquired Pike County Light and Power from Orange and Rockland.", category: "Acquisition" },
       { date: "Jul 2022", event: "ACP Crotona, managed by Argo, completed the acquisition of 100% of Corning's common and preferred stock.", category: "Acquisition" },
       { date: "Jul 2022", event: "Argo acquired Corning Natural Gas Holding Corp. through ACP Crotona.", category: "Acquisition" },
@@ -2512,10 +2469,8 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "United States",
     milestones: [
-      { date: "2009", event: "Eagle Creek Renewable Energy was formed.", category: "Other" },
-      { date: "2009", event: "Eagle Creek Renewable Energy was founded.", category: "Founding" },
+      { date: "2009", event: "Eagle Creek Renewable Energy was formed.", category: "Founding" },
       { date: "Nov 2018", event: "Ontario Power Generation completed its acquisition of Eagle Creek.", category: "Acquisition" },
-      { date: "2019", event: "Eagle Creek continued to expand and operate its U.S. hydro portfolio.", category: "Expansion" },
       { date: "Oct 2025", event: "Apollo-managed funds announced an agreement to acquire Eagle Creek, subject to closing conditions.", category: "Acquisition" },
     ],
     sources: [
@@ -2545,7 +2500,6 @@ export const companies: PortCo[] = [
       { date: "2000", event: "Wesley McDougal founded FirstDigital.", category: "Founding" },
       { date: "2021", event: "The investment supported FirstDigital's acquisition of Veracity Networks.", category: "Financing" },
       { date: "Jul 2021", event: "Apollo announced a $200 million preferred equity investment in FirstDigital.", category: "Financing" },
-      { date: "2025", event: "Company materials described more than 2,000 fiber miles and 10,000 lit buildings.", category: "Other" },
     ],
     sources: [
       { label: "Firstdigital — FirstDigital Telecom, LLC", url: "https://www.firstdigital.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -2571,9 +2525,7 @@ export const companies: PortCo[] = [
     headquarters: "United States; Canada",
     milestones: [
       { date: "Dec 2021", event: "LAZ Parking was an Argo Infrastructure Partners-backed platform before the FleetLogix transaction.", category: "Other" },
-      { date: "2025", event: "FleetLogix began operating as \"FleetLogix Powered by LAZ.\"", category: "Other" },
-      { date: "2025", event: "FleetLogix continued to market nationwide fleet management and staffing services.", category: "Other" },
-      { date: "2025", event: "FleetLogix remained headquartered in San Diego, California.", category: "Other" },
+      { date: "2025", event: "FleetLogix began operating as \"FleetLogix Powered by LAZ.\"", category: "Expansion" },
       { date: "Apr 22, 2025", event: "Argo Infrastructure Partners-backed LAZ Parking acquired a majority interest in FleetLogix.", category: "Acquisition" },
     ],
     sources: [
@@ -2634,8 +2586,7 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "New Hampshire; North America",
     milestones: [
-      { date: "2017", event: "Great Bay Renewables was formed.", category: "Other" },
-      { date: "2017", event: "Great Bay Renewables was founded.", category: "Founding" },
+      { date: "2017", event: "Great Bay Renewables was formed.", category: "Founding" },
       { date: "2020", event: "Apollo disclosed the opportunity to acquire up to a 50% stake in Great Bay.", category: "Acquisition" },
       { date: "Oct 13, 2020", event: "Apollo and Altius announced a joint venture to accelerate Great Bay's growth.", category: "Financing" },
     ],
@@ -2662,9 +2613,8 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Canada",
     milestones: [
-      { date: "2025", event: "Public company materials described more than 315,000 stalls across 79 Canadian cities.", category: "Other" },
       { date: "Jul 2025", event: "INDIGO Group announced that it retained a 40% stake following the transaction.", category: "Acquisition" },
-      { date: "Jul 2025", event: "Indigo Group retained a 40 percent ownership interest in the Canadian business.", category: "Other" },
+      { date: "Jul 2025", event: "Indigo Group retained a 40 percent ownership interest in the Canadian business.", category: "Acquisition" },
       { date: "Jul 1, 2025", event: "Argo Infrastructure Partners-backed LAZ Parking acquired a 60% stake in INDIGO Park Canada.", category: "Acquisition" },
       { date: "Mar 2026", event: "Indigo Group's annual results confirmed the June 2025 disposal of the 60 percent stake.", category: "Acquisition" },
     ],
@@ -2699,7 +2649,7 @@ export const companies: PortCo[] = [
       { date: "2021", event: "IonicBlue was established as the operating platform for the new energy-as-a-service venture.", category: "Founding" },
       { date: "Aug 12, 2021", event: "Johnson Controls and Apollo announced the formation of a joint venture to pursue performance-based energy efficiency and smart-building services in the United States and Canada.", category: "Financing" },
       { date: "2023", event: "Johnson Controls publicly identified IonicBlue as a joint venture between Johnson Controls and Apollo funds focused on decarbonization and efficiency projects.", category: "Other" },
-      { date: "May 2023", event: "The Canada Infrastructure Bank committed up to C$100 million to support IonicBlue projects in Canada.", category: "Other" },
+      { date: "May 2023", event: "The Canada Infrastructure Bank committed up to C$100 million to support IonicBlue projects in Canada.", category: "Financing" },
     ],
     sources: [
       { label: "Ionicbluellc — IonicBlue", url: "https://www.ionicbluellc.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -2727,11 +2677,10 @@ export const companies: PortCo[] = [
     headquarters: "United States & Canada",
     milestones: [
       { date: "1981", event: "LAZ Parking was founded in Hartford, Connecticut.", category: "Founding" },
-      { date: "2007", event: "VINCI Park acquired a 50% partnership stake in LAZ Parking, providing capital for expansion.", category: "Acquisition" },
       { date: "Dec 30, 2021", event: "LAZ Parking announced a long-term preferred investment from Argo Infrastructure Partners.", category: "Financing" },
-      { date: "Jul 2025", event: "LAZ announced the acquisition of a 60% majority stake in INDIGO Park Canada.", category: "Acquisition" },
       { date: "Jul 2025", event: "LAZ acquired a 60 percent majority stake in Indigo Park Canada.", category: "Acquisition" },
       { date: "Apr 2025", event: "LAZ acquired a majority interest in FleetLogix.", category: "Acquisition" },
+      { date: "Jul 2025", event: "LAZ announced the acquisition of a 60% majority stake in INDIGO Park Canada.", category: "Acquisition" },
     ],
     sources: [
       { label: "Lazparking — LAZ Parking", url: "https://www.lazparking.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -2760,12 +2709,10 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Pennsylvania & New York",
     milestones: [
-      { date: "2010", event: "Leatherstocking Gas Company was founded.", category: "Founding" },
-      { date: "Nov 2010", event: "Leatherstocking Gas Company was formed as a joint venture between Corning Natural Gas Holding Corporation and Mirabito Regulated Industries in New York.", category: "Other" },
+      { date: "Nov 2010", event: "Leatherstocking Gas Company was formed as a joint venture between Corning Natural Gas Holding Corporation and Mirabito Regulated Industries in New York.", category: "Founding" },
       { date: "Jan 2020", event: "Corning Natural Gas became sole owner of the Pennsylvania Leatherstocking utility operations.", category: "Other" },
-      { date: "Jan 2020", event: "Leatherstocking Gas Company of Pennsylvania became wholly owned within Corning Natural Gas Holding Corp.", category: "Other" },
       { date: "Jul 6, 2022", event: "Argo Infrastructure Partners completed the acquisition of Corning Natural Gas Holding Corp., the parent of Leatherstocking Gas.", category: "Acquisition" },
-      { date: "Jun 2023", event: "The Pennsylvania Public Utility Commission approved a rate settlement for Leatherstocking's Pennsylvania natural gas service territory.", category: "Other" },
+      { date: "Jun 2023", event: "The Pennsylvania Public Utility Commission approved a rate settlement for Leatherstocking's Pennsylvania natural gas service territory.", category: "Expansion" },
     ],
     sources: [
       { label: "Leatherstockinggas — Leatherstocking Gas Company", url: "https://leatherstockinggas.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -2795,10 +2742,9 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "United States; Puerto Rico",
     milestones: [
-      { date: "2018", event: "Tiger Infrastructure Partners made its initial investment in Modern Aviation.", category: "Financing" },
       { date: "2018", event: "Modern Aviation was founded as an FBO platform focused on business and general aviation infrastructure.", category: "Founding" },
       { date: "2018", event: "The company completed its first acquisition with the purchase of Landmark Aviation's facilities at Pittsburgh International Airport.", category: "Acquisition" },
-      { date: "2023", event: "Tiger said the platform had reached 16 locations through nine acquisitions.", category: "Acquisition" },
+      { date: "2018", event: "Tiger Infrastructure Partners made its initial investment in Modern Aviation.", category: "Financing" },
       { date: "Nov 2023", event: "Tiger announced the sale of Modern Aviation from Fund II and said Tiger funds would reinvest alongside Apollo.", category: "Divestiture" },
       { date: "Nov 2, 2023", event: "Apollo Infrastructure Funds announced a definitive agreement to acquire a majority stake in Modern Aviation.", category: "Acquisition" },
     ],
@@ -2828,7 +2774,6 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "United States",
     milestones: [
-      { date: "2021", event: "Public disclosures described the portfolio as 13 wind and solar facilities totaling approximately 2,520 MW, plus roughly 115 MW of battery storage.", category: "Other" },
       { date: "2021", event: "The transaction expanded NextEra Energy Partners into three additional U.S. states through the acquired portfolio.", category: "Acquisition" },
       { date: "Oct 2021", event: "NextEra Energy Partners announced an agreement to acquire a 50% interest in an approximately 2.5 GW renewable portfolio from affiliates of NextEra Energy Resources.", category: "Acquisition" },
       { date: "Dec 29, 2021", event: "Apollo funds made a first close on the convertible equity portfolio financing supporting NextEra Energy Partners' portfolio acquisition.", category: "Financing" },
@@ -2856,8 +2801,6 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "United States",
     milestones: [
-      { date: "2024", event: "Public disclosures identified Nokomis Energy as a distributed solar platform with a 77-project portfolio across seven U.S. states.", category: "Other" },
-      { date: "2024", event: "Great Bay stated that the investment would support the continued build-out of Nokomis's solar portfolio.", category: "Financing" },
       { date: "2024", event: "Public materials linked Great Bay's sponsorship to the Altius Renewable Royalties and Apollo-affiliated joint-venture structure.", category: "Other" },
       { date: "Jun 27, 2024", event: "Great Bay Renewables, jointly controlled by Altius Renewable Royalties and Apollo-affiliated funds, announced a $30 million investment in Nokomis Energy.", category: "Financing" },
     ],
@@ -2912,7 +2855,6 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "United States",
     milestones: [
-      { date: "2019", event: "Public transaction materials described the portfolio across 134 sites in 12 states under long-term PPAs.", category: "Other" },
       { date: "2019", event: "Pearl/Ruby Solar Portfolio was founded.", category: "Founding" },
       { date: "Feb 5, 2019", event: "Argo invested in the 114 MW Pearl/Ruby commercial and industrial solar portfolio.", category: "Financing" },
     ],
@@ -2940,8 +2882,7 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Pennsylvania",
     milestones: [
-      { date: "1910", event: "Pike County Light & Power was founded.", category: "Founding" },
-      { date: "May 17, 1910", event: "Pike County Light & Power Company was incorporated in Pennsylvania.", category: "Other" },
+      { date: "May 17, 1910", event: "Pike County Light & Power Company was incorporated in Pennsylvania.", category: "Founding" },
       { date: "Aug 2016", event: "Pike County Light and Power became part of Corning Natural Gas Holding Corp.", category: "Other" },
       { date: "Jul 6, 2022", event: "Argo Infrastructure Partners completed the acquisition of Corning Natural Gas Holding Corp., the parent of Pike County Light & Power.", category: "Acquisition" },
       { date: "Nov 2025", event: "Pennsylvania PUC filings documented a change-of-control application involving Pike County Light & Power and Argo-affiliated entities.", category: "Other" },
@@ -3002,7 +2943,6 @@ export const companies: PortCo[] = [
     headquarters: "Tennessee & North Carolina",
     milestones: [
       { date: "Mar 17, 2023", event: "Argo Infrastructure Partners acquired a 50% interest in Smoky Mountain Holdings, the JV with Brookfield owning the four-facility hydroelectric portfolio.", category: "Acquisition" },
-      { date: "2024", event: "Public disclosures described the portfolio as 377 MW of installed hydro capacity producing about 1.4 million MWh annually on average.", category: "Expansion" },
       { date: "Nov 2024", event: "TVA announced a 10-year power purchase agreement with Argo and Brookfield for the Smoky Mountain Hydro facilities.", category: "Acquisition" },
       { date: "2025", event: "The TVA offtake agreement was scheduled to begin for the four-facility hydro portfolio.", category: "Other" },
     ],
@@ -3033,7 +2973,6 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "1999", event: "Stream Data Centers was founded.", category: "Founding" },
-      { date: "2025", event: "Company materials described more than 4 GW of active development and over 90% of inventory leased to Fortune 100 customers.", category: "Other" },
       { date: "Aug 6, 2025", event: "Apollo announced an agreement to acquire a majority stake in Stream Data Centers.", category: "Acquisition" },
       { date: "Nov 3, 2025", event: "Apollo completed the acquisition of a majority stake in Stream Data Centers.", category: "Acquisition" },
     ],
@@ -3062,11 +3001,10 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "United States",
     milestones: [
-      { date: "2017", event: "Summit Ridge Energy was launched.", category: "Other" },
       { date: "2017", event: "Summit Ridge Energy was founded.", category: "Founding" },
       { date: "Jul 2022", event: "Apollo funds announced a $175 million strategic investment in Summit Ridge Energy.", category: "Financing" },
-      { date: "Apr 2025", event: "Apollo funds committed up to $400 million for a new commercial solar partnership with Summit Ridge.", category: "Other" },
-      { date: "Sep 2025", event: "Summit Ridge and Bank of America closed a $305 million credit facility for a solar portfolio.", category: "Other" },
+      { date: "Sep 2025", event: "Summit Ridge and Bank of America closed a $305 million credit facility for a solar portfolio.", category: "Financing" },
+      { date: "Apr 2025", event: "Apollo funds committed up to $400 million for a new commercial solar partnership with Summit Ridge.", category: "Financing" },
       { date: "Jan 2026", event: "Summit Ridge announced a $290 million facility with MUFG and stated that it had raised more than $5 billion for over 200 solar facilities since launch.", category: "Other" },
     ],
     sources: [
@@ -3125,11 +3063,9 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "2010", event: "TierPoint was founded.", category: "Founding" },
-      { date: "2022", event: "The company stated that Argo became TierPoint's largest single equity investor through the transaction.", category: "Other" },
       { date: "Feb 28, 2022", event: "TierPoint announced the closing of a $500 million investment from Argo Infrastructure Partners.", category: "Financing" },
-      { date: "Dec 2025", event: "Argo announced an increase in its ownership and capital commitment to TierPoint.", category: "Financing" },
       { date: "Dec 2025", event: "Argo increased its ownership and capital commitment to TierPoint.", category: "Financing" },
-      { date: "Dec 2025", event: "Argo said total capital formation under its ownership of TierPoint exceeded $3 billion.", category: "Other" },
+      { date: "Dec 2025", event: "Argo announced an increase in its ownership and capital commitment to TierPoint.", category: "Financing" },
     ],
     sources: [
       { label: "Tierpoint — TierPoint", url: "https://www.tierpoint.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -3154,7 +3090,6 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Texas",
     milestones: [
-      { date: "2024", event: "Public disclosures described the portfolio as three solar projects totaling about 1.7 GW and two battery systems totaling about 300 MW.", category: "Other" },
       { date: "Dec 2024", event: "Apollo announced an agreement to acquire a 50% stake in TotalEnergies' approximately 2 GW Texas solar and battery storage portfolio.", category: "Acquisition" },
       { date: "Dec 2024", event: "TotalEnergies stated that it would retain a 50% stake and continue operating the portfolio.", category: "Acquisition" },
     ],
@@ -3182,10 +3117,10 @@ export const companies: PortCo[] = [
     investmentYear: 2017,
     headquarters: "New Jersey & Pennsylvania",
     milestones: [
-      { date: "2012", event: "Bayonne, New Jersey awarded a 40-year water and wastewater concession to the platform.", category: "Other" },
+      { date: "2012", event: "Bayonne, New Jersey awarded a 40-year water and wastewater concession to the platform.", category: "Expansion" },
       { date: "2012", event: "US Water Systems was founded.", category: "Founding" },
       { date: "2017", event: "KKR and SUEZ sold interests in the Bayonne and Middletown water concessions to Argo Infrastructure Partners.", category: "Acquisition" },
-      { date: "2019", event: "Middletown Borough selected a private concession arrangement for water and wastewater operations.", category: "Other" },
+      { date: "2019", event: "Middletown Borough selected a private concession arrangement for water and wastewater operations.", category: "Expansion" },
       { date: "2019", event: "Public reporting connected the Middletown concession to the same US Water Systems platform.", category: "Other" },
     ],
     sources: [
@@ -3216,7 +3151,7 @@ export const companies: PortCo[] = [
       { date: "2011", event: "US Wind was founded.", category: "Founding" },
       { date: "2014", event: "US Wind acquired federal offshore wind lease rights off Maryland.", category: "Acquisition" },
       { date: "Dec 2020", event: "Apollo infrastructure funds announced a strategic investment in US Wind.", category: "Financing" },
-      { date: "2021", event: "Maryland regulators selected additional offshore wind output associated with the company's development program.", category: "Other" },
+      { date: "2021", event: "Maryland regulators selected additional offshore wind output associated with the company's development program.", category: "Expansion" },
       { date: "2024", event: "Federal approval was announced for the project's Construction and Operations Plan.", category: "Other" },
     ],
     sources: [
@@ -3245,7 +3180,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2026", event: "The transaction was structured as a triple-net lease arrangement tied to AI compute infrastructure.", category: "Other" },
       { date: "Jan 2026", event: "Apollo announced a $3.5 billion capital solution for Valor Compute Infrastructure.", category: "Financing" },
-      { date: "Jan 2026", event: "Public disclosures described a $5.4 billion transaction to acquire and lease NVIDIA GB200 compute infrastructure to an xAI subsidiary.", category: "Acquisition" },
     ],
     sources: [
       { label: "Investment date source — Apollo Global Management — Valor Compute Infrastructure (VCI)", url: "https://www.apollo.com/insights-news/pressreleases/2026/01/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution-3214463", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -3299,7 +3233,6 @@ export const companies: PortCo[] = [
     headquarters: "New York & New England",
     milestones: [
       { date: "2026", event: "The announced transaction was framed as part of Ara Energy's strategy to optimize and decarbonize critical energy infrastructure over time.", category: "Other" },
-      { date: "Mar 2026", event: "Public disclosures described Gate City Power as owning about 2.2 GW of thermal generation capacity across NYISO and ISO New England.", category: "Expansion" },
       { date: "Mar 11, 2026", event: "Ara Energy announced an agreement to acquire Gate City Power from HF Capital as part of an approximately $875 million transaction.", category: "Acquisition" },
     ],
     sources: [
@@ -3326,7 +3259,6 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "2026", event: "The announced transaction positioned the assets within Ara Energy's decarbonization and conventional-energy transition strategy.", category: "Other" },
-      { date: "Mar 2026", event: "Public disclosures described the renewable fuels portfolio as representing about 400 million gallons per year of ethanol production capacity.", category: "Expansion" },
       { date: "Mar 11, 2026", event: "Ara Energy announced an agreement to acquire Gate City Renewable Fuels from HF Capital as part of an approximately $875 million transaction.", category: "Acquisition" },
     ],
     sources: [
@@ -3353,7 +3285,6 @@ export const companies: PortCo[] = [
     headquarters: "Alabama, Georgia, North Carolina & South Carolina",
     milestones: [
       { date: "2022", event: "Ara described Lincoln as the first investment for its infrastructure strategy.", category: "Financing" },
-      { date: "2022", event: "Public disclosures stated that Lincoln operated five rail transloading and storage facilities across four states.", category: "Other" },
       { date: "2022", event: "Ara also committed additional capital to expand Lincoln's renewable fuel infrastructure footprint.", category: "Expansion" },
       { date: "Nov 15, 2022", event: "Ara Partners acquired a majority ownership interest in Lincoln Terminal Holdings.", category: "Acquisition" },
     ],
@@ -3382,7 +3313,6 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "2024", event: "Ara described USD Clean Fuels as a logistics infrastructure platform spanning renewable fuel feedstocks, biofuels, and distribution.", category: "Other" },
-      { date: "2024", event: "Company materials highlighted West Colton as a strategic terminal asset within the platform.", category: "Other" },
       { date: "Jan 2, 2024", event: "Ara Partners acquired a majority interest in USD Clean Fuels.", category: "Acquisition" },
     ],
     sources: [
@@ -3412,7 +3342,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2000", event: "Advanced Power was founded.", category: "Founding" },
       { date: "2025", event: "ArcLight disclosed that the platform had developed more than 6 GW of power projects historically.", category: "Other" },
-      { date: "2025", event: "Public materials described a development pipeline exceeding 12 GW of new generation and more than 10 GWh of storage.", category: "Other" },
       { date: "Jul 24, 2025", event: "ArcLight announced the acquisition of Advanced Power and a $1 billion equity commitment for new power infrastructure development.", category: "Acquisition" },
     ],
     sources: [
@@ -3501,7 +3430,7 @@ export const companies: PortCo[] = [
       { date: "2015", event: "Eastern Generation was founded.", category: "Founding" },
       { date: "Dec 23, 2015", event: "Eastern Generation, a newly formed ArcLight portfolio company, completed the acquisition of seven power plants totaling 4.8 GW from affiliates of Tenaska.", category: "Acquisition" },
       { date: "2016", event: "Regulatory filings addressed the indirect transfer of control of lightly regulated generation facilities involving Eastern Generation.", category: "Other" },
-      { date: "2024", event: "ArcLight's AlphaGen platform was formed to provide strategic oversight across Eastern Generation and related power assets.", category: "Other" },
+      { date: "2024", event: "ArcLight's AlphaGen platform was formed to provide strategic oversight across Eastern Generation and related power assets.", category: "Founding" },
     ],
     sources: [
       { label: "Close date source — ArcLight Capital Partners — Eastern Generation", url: "https://www.prnewswire.com/news-releases/arclight-capital-partners-announces-completion-of-eastern-generations-acquisition-of-a-power-asset-portfolio-from-tenaska-300196879.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -3529,7 +3458,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2022", event: "ArcLight formed Elevate Renewables as its battery storage platform.", category: "Financing" },
       { date: "2022", event: "Elevate Renewables was founded.", category: "Founding" },
-      { date: "2023", event: "Public materials described an initial brownfield storage pipeline exceeding 5 GW across more than 20 sites.", category: "Other" },
       { date: "Jan 31, 2023", event: "ArcLight announced a $150 million commitment to Elevate Renewables.", category: "Financing" },
       { date: "Jun 2024", event: "Elevate and ArcLight announced a large battery storage project at Arthur Kill in New York City.", category: "Other" },
     ],
@@ -3556,7 +3484,6 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "California, New York & New England",
     milestones: [
-      { date: "2021", event: "Public disclosures described the portfolio as eight power generation facilities across California, New York, and New England.", category: "Other" },
       { date: "Dec 2021", event: "ArcLight closed the acquisition of the 4.9 GW Generation Bridge portfolio from NRG Energy for $760 million.", category: "Acquisition" },
       { date: "2024", event: "Generation Bridge was identified as part of ArcLight's AlphaGen-managed power portfolio.", category: "Other" },
     ],
@@ -3613,7 +3540,6 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Louisiana & Texas",
     milestones: [
-      { date: "2022", event: "Public disclosures described the system as having up to 1.2 Bcf per day of gathering capacity.", category: "Expansion" },
       { date: "2022", event: "The assets were identified as being located in Caddo Parish, Louisiana and Harrison County, Texas.", category: "Other" },
       { date: "Mar 22, 2022", event: "ArcLight and Cutlass Energy announced an agreement to acquire the Haynesville Gas Gathering System through Saber Midstream.", category: "Acquisition" },
     ],
@@ -3701,7 +3627,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2018", event: "The portfolio was established to manage Invenergy thermal power assets across North America.", category: "Founding" },
       { date: "Aug 2018", event: "DigitalBridge's InfraBridge platform and Invenergy Clean Power created Invenergy AMPCI Thermal Power as a 50/50 joint venture to manage Invenergy thermal power assets.", category: "Financing" },
-      { date: "2026", event: "Public disclosures described the portfolio as 11 dispatchable thermal assets totaling 5.4 GW across North America.", category: "Other" },
       { date: "2026", event: "The transaction announcement indicated that Invenergy would remain involved as operator and continuing owner.", category: "Other" },
       { date: "Mar 12, 2026", event: "ArcLight announced a definitive agreement to acquire InfraBridge's 50% stake in the Invenergy AMPCI Thermal Power portfolio.", category: "Acquisition" },
       { date: "Mar 12, 2026", event: "InfraBridge announced an agreement for ArcLight to acquire its 50% stake in IATP.", category: "Acquisition" },
@@ -3818,7 +3743,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Mar 8, 2021", event: "ArcLight completed the acquisition of an initial 25% stake in NGPL from Kinder Morgan and Brookfield Infrastructure.", category: "Acquisition" },
       { date: "Jun 2023", event: "ArcLight acquired an incremental 12.5% stake in NGPL from Brookfield Infrastructure, increasing its ownership to 37.5%.", category: "Acquisition" },
-      { date: "2025", event: "Public disclosures identified Kinder Morgan as operator and 37.5% economic owner.", category: "Other" },
       { date: "May 2025", event: "ArcLight announced the acquisition of Brookfield's remaining 25% interest in NGPL.", category: "Other" },
       { date: "May 2025", event: "ArcLight stated that it would become the largest owner of NGPL with a 62.5% economic interest.", category: "Other" },
     ],
@@ -3927,7 +3851,6 @@ export const companies: PortCo[] = [
     headquarters: "Virginia",
     milestones: [
       { date: "2024", event: "IFM Investors invested in Prospect Power through Prior ownership via Swift Current Energy.", category: "Financing" },
-      { date: "2026", event: "Public disclosures described the project as a 150 MW and 600 MWh battery storage asset in Rockingham County, Virginia.", category: "Other" },
       { date: "2026", event: "The project was reported to be under construction with expected operations in mid-2026.", category: "Other" },
       { date: "Jan 15, 2026", event: "Elevate Renewables, an ArcLight platform, acquired Prospect Power from Swift Current Energy.", category: "Acquisition" },
     ],
@@ -4015,7 +3938,6 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "United States",
     milestones: [
-      { date: "2024", event: "ArcLight portfolio-services materials identified SkyVest as the manager of Phoenix Renewables and Thunderbird Renewables for Fund VIII.", category: "Other" },
       { date: "2024", event: "SkyVest Renewables was founded.", category: "Founding" },
       { date: "Jul 29, 2024", event: "ArcLight launched SkyVest Renewables with an initial $500 million capital commitment.", category: "Financing" },
       { date: "Jul 29, 2024", event: "SkyVest concurrently closed on the acquisition of a 160 MW operating wind farm in Texas.", category: "Acquisition" },
@@ -4043,7 +3965,6 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Michigan & United States",
     milestones: [
-      { date: "2025", event: "Public disclosures described the company as a provider of digital and power infrastructure solutions for data centers.", category: "Other" },
       { date: "2025", event: "The transaction positioned Takanock to pursue deployments in power-constrained data center markets.", category: "Other" },
       { date: "Jun 25, 2025", event: "Takanock announced a $500 million capital commitment from ArcLight and DigitalBridge.", category: "Financing" },
     ],
@@ -4074,7 +3995,6 @@ export const companies: PortCo[] = [
       { date: "2009", event: "Third Coast Infrastructure was founded.", category: "Founding" },
       { date: "Jul 23, 2019", event: "ArcLight completed the take-private of American Midstream Partners, which converted into Third Coast Midstream, LLC, via Magnolia Infrastructure Holdings.", category: "Acquisition" },
       { date: "Jun 2021", event: "Third Coast Midstream completed the sale of a significant minority interest in a subsidiary infrastructure holding company.", category: "Divestiture" },
-      { date: "Jul 2021", event: "ArcLight announced a continuation fund that included Third Coast infrastructure assets.", category: "Other" },
       { date: "Jun 7, 2021", event: "Third Coast announced the sale of an approximately 50% interest in Lighthouse Super Holdings to an affiliate later publicly identified as J.P. Morgan Asset Management's Infrastructure Investments Fund.", category: "Acquisition" },
       { date: "Jan 2025", event: "Third Coast Super Holdings announced a $25 million loan upsize and repricing at the infrastructure subsidiary level.", category: "Other" },
     ],
@@ -4130,7 +4050,6 @@ export const companies: PortCo[] = [
     investmentYear: 2026,
     headquarters: "New Jersey",
     milestones: [
-      { date: "2026", event: "Public materials described the project as a 150 MW and 600 MWh battery facility at the Bergen Generating Station site in Ridgefield, New Jersey.", category: "Other" },
       { date: "2026", event: "The project was advanced as part of ArcLight and Elevate's broader battery-storage build-out in high-demand power markets.", category: "Other" },
       { date: "Mar 16, 2026", event: "Elevate Renewables, an ArcLight-owned platform, announced that New Jersey BPU selected the Garden State Reliability Project, also known as Two Rivers Storage, under the state energy storage program.", category: "Financing" },
     ],
@@ -4216,10 +4135,9 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Ohio",
     milestones: [
-      { date: "2012", event: "CampusParc was formed by QIC and LAZ Parking to serve as the concessionaire for the university parking system.", category: "Other" },
+      { date: "2012", event: "CampusParc was formed by QIC and LAZ Parking to serve as the concessionaire for the university parking system.", category: "Founding" },
       { date: "2012", event: "The concession became the first long-term lease and concession for a North American university parking system.", category: "Other" },
-      { date: "2012", event: "CampusParc was founded.", category: "Founding" },
-      { date: "Jun 2012", event: "Ohio State executed the 50-year parking lease and concession agreement with CampusParc LP.", category: "Other" },
+      { date: "Jun 2012", event: "Ohio State executed the 50-year parking lease and concession agreement with CampusParc LP.", category: "Expansion" },
       { date: "Jun 10, 2024", event: "Ardian acquired a 100 percent stake in CampusParc from funds managed by QIC.", category: "Acquisition" },
     ],
     sources: [
@@ -4277,7 +4195,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Mar 5, 2018", event: "Ardian and TPH launched Skyline Renewables as a United States renewables platform.", category: "Financing" },
       { date: "Mar 5, 2018", event: "Skyline Renewables completed its first acquisition, the 60 MW Whirlwind Energy wind farm in Texas.", category: "Acquisition" },
-      { date: "2024", event: "The North American energy asset manager began operating under the Dauntless Energy brand.", category: "Other" },
+      { date: "2024", event: "The North American energy asset manager began operating under the Dauntless Energy brand.", category: "Expansion" },
       { date: "2025", event: "Dauntless added 1370 Clean Energy as a growth vehicle for clean energy investments.", category: "Other" },
     ],
     sources: [
@@ -4393,7 +4311,6 @@ export const companies: PortCo[] = [
     headquarters: "Virginia; multi-market North America portfolio",
     milestones: [
       { date: "2025", event: "Ada Infrastructure was integrated into Ares' vertically integrated digital infrastructure strategy.", category: "Other" },
-      { date: "2025", event: "Public company materials described nine in-flight campuses totaling more than 1 GW of planned IT capacity.", category: "Expansion" },
       { date: "Dec 2025", event: "Ada announced the acquisition of a 314-acre site in Spotsylvania County, Virginia for a planned 200 MW first phase.", category: "Expansion" },
       { date: "Mar 1, 2025", event: "Ares Management completed the acquisition of GCP International, including the Ada Infrastructure platform.", category: "Acquisition" },
     ],
@@ -4510,7 +4427,7 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "South Dakota, North Dakota, Oklahoma, Wyoming, and Minnesota",
     milestones: [
-      { date: "2021", event: "Bluepeak began operating as a regional fiber broadband platform.", category: "Other" },
+      { date: "2021", event: "Bluepeak began operating as a regional fiber broadband platform.", category: "Expansion" },
       { date: "2021", event: "Bluepeak was founded.", category: "Founding" },
       { date: "Feb 29, 2024", event: "Ares Management announced a strategic investment in Bluepeak.", category: "Financing" },
     ],
@@ -4539,7 +4456,6 @@ export const companies: PortCo[] = [
     headquarters: "Washington; multi-state United States project pipeline",
     milestones: [
       { date: "2021", event: "Burnham RNG was established as a renewable natural gas platform.", category: "Founding" },
-      { date: "2023", event: "Public disclosures identified the Pasco Resource Recovery Center and a broader project pipeline as part of the platform.", category: "Other" },
       { date: "Dec 4, 2023", event: "Ares Management acquired Burnham RNG from Edge Natural Resources.", category: "Acquisition" },
     ],
     sources: [
@@ -4568,7 +4484,6 @@ export const companies: PortCo[] = [
     headquarters: "New Jersey; multi-state United States operations",
     milestones: [
       { date: "2021", event: "Current Trucking was founded.", category: "Founding" },
-      { date: "2023", event: "Current continued to market its trucks-as-a-service model for Class 3 through Class 8 electric fleets.", category: "Other" },
       { date: "Feb 27, 2023", event: "Ares Management acquired a controlling interest in Current Trucking and committed up to $250 million of capital.", category: "Acquisition" },
     ],
     sources: [
@@ -4595,7 +4510,6 @@ export const companies: PortCo[] = [
     headquarters: "Multi-state United States portfolio",
     milestones: [
       { date: "Oct 2025", event: "EDPR stated that the portfolio comprised ten operating assets across four United States power markets.", category: "Other" },
-      { date: "Oct 2025", event: "EDPR retained 51 percent ownership and continued as manager of the portfolio.", category: "Other" },
       { date: "Oct 3, 2025", event: "EDPR closed the sale of a 49 percent common equity stake in a 1,632 MW United States renewables portfolio to a fund managed by Ares.", category: "Acquisition" },
     ],
     sources: [
@@ -4905,7 +4819,6 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Multi-state United States portfolio",
     milestones: [
-      { date: "2021", event: "Public materials stated that the operating portfolio spanned seven states.", category: "Other" },
       { date: "2021", event: "The acquired assets were identified as distributed solar projects serving commercial and industrial sites.", category: "Acquisition" },
       { date: "Aug 19, 2021", event: "Argo Infrastructure Partners closed the acquisition of a 129 MW commercial and industrial solar portfolio from CarVal Investors and CleanCapital.", category: "Acquisition" },
     ],
@@ -4933,7 +4846,7 @@ export const companies: PortCo[] = [
     investmentYear: 2017,
     headquarters: "New Jersey",
     milestones: [
-      { date: "2012", event: "Bayonne approved the long-term water and wastewater concession.", category: "Other" },
+      { date: "2012", event: "Bayonne approved the long-term water and wastewater concession.", category: "Expansion" },
       { date: "2012", event: "KKR and United Water agreed to a 40-year concession and upfront payment to the city.", category: "Other" },
       { date: "2012", event: "Bayonne water and wastewater concession was founded.", category: "Founding" },
       { date: "2017", event: "KKR and SUEZ sold interests in the Bayonne concession to Argo Infrastructure Partners.", category: "Acquisition" },
@@ -4993,11 +4906,8 @@ export const companies: PortCo[] = [
     headquarters: "Louisiana",
     milestones: [
       { date: "2003", event: "Carville Energy Center was founded.", category: "Founding" },
-      { date: "2014", event: "LS Power acquired the plant as part of a six-facility generation acquisition.", category: "Acquisition" },
-      { date: "2019", event: "Public transaction materials described Carville as a 516 MW natural gas-fired combined-cycle facility.", category: "Other" },
       { date: "Q4 2019", event: "LS Power stated that the sale was expected to close in the fourth quarter of 2019 subject to regulatory approvals.", category: "Divestiture" },
       { date: "Aug 15, 2019", event: "LS Power announced an agreement to sell Carville Energy Center and Oneta Energy Center to an Argo-managed investment vehicle.", category: "Acquisition" },
-      { date: "2020", event: "Financing market materials referenced Argo as sponsor of Carville and Oneta.", category: "Financing" },
     ],
     sources: [
       { label: "Announcement date source — Argo Infrastructure Partners — Carville Energy Center", url: "https://www.lspower.com/news/ls-power-announces-sale-of-carville-and-oneta-projects-to-argo-infrastructure-partners/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -5025,9 +4935,7 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "Dec 2021", event: "LAZ Parking was an Argo Infrastructure Partners-backed platform before the Freight Ninja transaction.", category: "Other" },
-      { date: "2025", event: "Company materials described a growing national network of truck parking and IOS locations.", category: "Other" },
       { date: "2025", event: "Freight Ninja publicly described a nationwide network of more than 65 truck parking facilities.", category: "Other" },
-      { date: "2025", event: "Public company materials cited over 300 acres and about 10,000 parking spaces across the platform.", category: "Other" },
       { date: "May 6, 2025", event: "Argo Infrastructure Partners-backed LAZ Parking announced it had acquired a majority interest in Freight Ninja.", category: "Acquisition" },
     ],
     sources: [
@@ -5147,9 +5055,8 @@ export const companies: PortCo[] = [
     headquarters: "Pennsylvania",
     milestones: [
       { date: "2014", event: "Middletown Water Joint Venture LLC was founded.", category: "Founding" },
-      { date: "Sep 2014", event: "Middletown executed the concession and lease agreement with Middletown Water Joint Venture LLC.", category: "Other" },
+      { date: "Sep 2014", event: "Middletown executed the concession and lease agreement with Middletown Water Joint Venture LLC.", category: "Expansion" },
       { date: "2017", event: "KKR and SUEZ sold interests in the Middletown concession to Argo Infrastructure Partners.", category: "Acquisition" },
-      { date: "2018", event: "Court filings identified the joint venture as comprising SUEZ Water Environmental Services and Argo Infrastructure Partners.", category: "Other" },
     ],
     sources: [
       { label: "Middletownborough — Middletown Water Joint Venture LLC", url: "https://middletownborough.com/wp-content/uploads/2020/12/Executed-Concession-Agreement-A4495119.pdf", type: "PRESENTATION", purpose: "MILESTONE_EVENT" },
@@ -5176,7 +5083,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Alabama",
     milestones: [
-      { date: "Jul 2001", event: "Hog Bayou began operations according to public power plant databases.", category: "Other" },
+      { date: "Jul 2001", event: "Hog Bayou began operations according to public power plant databases.", category: "Expansion" },
       { date: "Jul 2021", event: "LS Power signed an agreement to sell the Hog Bayou Energy Center to an Argo-managed investment vehicle.", category: "Acquisition" },
     ],
     sources: [
@@ -5229,7 +5136,6 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "Multi-state United States portfolio",
     milestones: [
-      { date: "2019", event: "Transaction materials described 134 operating sites across 12 states.", category: "Other" },
       { date: "Feb 5, 2019", event: "Argo Infrastructure Partners invested in a 114 MW distributed solar portfolio later referenced as Pearl / Ruby Solar.", category: "Financing" },
     ],
     sources: [
@@ -5287,7 +5193,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Jun 2018", event: "Ice Energy announced a long-term funding agreement with Argo Infrastructure Partners for Ice Bear thermal energy storage assets.", category: "Financing" },
       { date: "2019", event: "Ice Energy filed for Chapter 7 bankruptcy and Thule Energy Storage acquired customer assets and services.", category: "Acquisition" },
-      { date: "2020", event: "CPUC filings identified ACP Thule Investments LLC, managed by Argo, as the parent of the operating platform.", category: "Other" },
     ],
     sources: [
       { label: "Iceenergy — Thule Energy Storage", url: "https://www.iceenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -5313,7 +5218,7 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Hawaii",
     milestones: [
-      { date: "Aug 2016", event: "Waihonu Solar and Sheep Farm was dedicated in Mililani.", category: "Other" },
+      { date: "Aug 2016", event: "Waihonu Solar and Sheep Farm was dedicated in Mililani.", category: "Expansion" },
       { date: "Jun 2021", event: "Public reporting on Argo's acquisition of Hawaiʻi Gas stated that the transaction also included Waihonu Solar Farm.", category: "Other" },
       { date: "Jul 2022", event: "Argo completed the acquisition of Hawaiʻi Gas and related smaller energy businesses, including Waihonu.", category: "Acquisition" },
     ],
@@ -5378,7 +5283,6 @@ export const companies: PortCo[] = [
       { date: "1999", event: "Everfast Fiber Networks was founded.", category: "Founding" },
       { date: "Dec 2022", event: "Astatine Investment Partners acquired the Kansas City assets of Consolidated Communications and established Everfast Fiber Networks as a standalone platform.", category: "Acquisition" },
       { date: "Jul 12, 2024", event: "Everfast Fiber Networks announced the appointment of Scott Randall as chief executive officer.", category: "Management" },
-      { date: "2025", event: "Everfast continued expanding fiber-internet, business-connectivity, and managed Wi-Fi offerings in the Kansas City metro area.", category: "Expansion" },
     ],
     sources: [
       { label: "Everfastfiber — Everfast Fiber Networks", url: "https://www.everfastfiber.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -5405,7 +5309,6 @@ export const companies: PortCo[] = [
     headquarters: "Louisiana",
     milestones: [
       { date: "2018", event: "Following the transaction, Maurepas became a joint venture between Energy Transfer and Astatine.", category: "Other" },
-      { date: "2018", event: "Public transaction materials described the pipeline as supported by long-term contracted transportation arrangements with a Shell affiliate.", category: "Other" },
       { date: "Aug 20, 2018", event: "Alinda Capital Partners, now Astatine Investment Partners, announced the acquisition of a 49% interest in Maurepas Pipeline from SemGroup for $350 million.", category: "Acquisition" },
       { date: "2022", event: "Alinda Capital Partners rebranded as Astatine Investment Partners.", category: "Financing" },
     ],
@@ -5463,12 +5366,10 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "United States; Canada; Mexico",
     milestones: [
-      { date: "1997", event: "PECO Pallet began operations in the rental-pallet market.", category: "Other" },
       { date: "1997", event: "PECO Pallet was founded.", category: "Founding" },
-      { date: "Oct 5, 2020", event: "Astatine predecessor Alinda Capital Partners and USS announced an agreement to acquire PECO Pallet.", category: "Acquisition" },
+      { date: "1997", event: "PECO Pallet began operations in the rental-pallet market.", category: "Expansion" },
       { date: "Oct 9, 2020", event: "Astatine predecessor Alinda Capital Partners and USS closed the acquisition of PECO Pallet.", category: "Acquisition" },
-      { date: "2022", event: "PECO marked its 25th year in business and reported a pool of roughly 22 million pallets.", category: "Other" },
-      { date: "2025", event: "Company materials described more than 90 depots and approximately 24 million pallets in circulation across North America.", category: "Other" },
+      { date: "Oct 5, 2020", event: "Astatine predecessor Alinda Capital Partners and USS announced an agreement to acquire PECO Pallet.", category: "Acquisition" },
     ],
     sources: [
       { label: "Pecopallet — PECO Pallet", url: "https://www.pecopallet.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -5522,7 +5423,6 @@ export const companies: PortCo[] = [
       { date: "Nov 17, 2019", event: "Tolling commenced on the 395 Express Lanes within the Chesapeake network.", category: "Other" },
       { date: "Dec 17, 2020", event: "AustralianSuper announced an agreement to acquire a 25% stake in Chesapeake alongside CPP Investments and UniSuper.", category: "Acquisition" },
       { date: "Mar 31, 2021", event: "Transurban completed the sale of a 50% interest in Transurban Chesapeake to AustralianSuper, CPP Investments, and UniSuper.", category: "Acquisition" },
-      { date: "Mar 31, 2021", event: "Transurban retained a 50% interest and continued as operator of the Chesapeake assets.", category: "Other" },
     ],
     sources: [
       { label: "Australiansuper — Chesapeake toll road network", url: "https://www.australiansuper.com/global-investors/who-we-are/north-america", type: "ARTICLE" },
@@ -5615,7 +5515,6 @@ export const companies: PortCo[] = [
     headquarters: "Ontario; Alberta; British Columbia",
     milestones: [
       { date: "Jan 8, 2020", event: "Axium and AgeCare announced a partnership covering five continuing-care facilities in Alberta totaling 1,402 beds.", category: "Financing" },
-      { date: "2025", event: "Axium continued to report majority ownership positions in AgeCare-operated long-term-care portfolios across Ontario, Alberta, and British Columbia.", category: "Other" },
     ],
     sources: [
       { label: "Axiuminfra — AgeCare Facilities Portfolio", url: "https://www.axiuminfra.com/portfolio-assets/?lang=en", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -5786,7 +5685,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Nov 11, 2015", event: "Axium announced an agreement to acquire an interest in a 1,000 MW U.S. wind portfolio from EDP Renewables.", category: "Acquisition" },
       { date: "Jan 20, 2016", event: "Axium's consortium completed the acquisition of its interest in the portfolio.", category: "Acquisition" },
-      { date: "2022", event: "Axium's portfolio materials described the current holding as 1,062 MW across seven wind assets in three states.", category: "Other" },
     ],
     sources: [
       { label: "Axiuminfra — Axium Great Plains Wind LLC", url: "https://www.axiuminfra.com/portfolio-assets/?lang=en", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -5814,7 +5712,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2022", event: "Axium disclosed that BlueWave's pipeline exceeded 1.3 GW across more than 140 projects in five states.", category: "Other" },
       { date: "May 12, 2022", event: "Axium acquired BlueWave to accelerate growth in solar and energy-storage development.", category: "Acquisition" },
-      { date: "2023", event: "BlueWave continued developing community-solar, DG solar, and storage assets in the U.S. Northeast and Mid-Atlantic.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Axium Infrastructure — BlueWave", url: "https://www.axiuminfra.com/2022/05/12/may-12-2022-bluewave-acquired-by-axium-infrastructure-to-accelerate-growth-in-solar-and-energy-storage-development/?lang=en", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -5844,8 +5741,7 @@ export const companies: PortCo[] = [
       { date: "2020", event: "Sponsors closed approximately C$1.5 billion of project financing for Cascade.", category: "Financing" },
       { date: "Aug 28, 2020", event: "Axium and its partners announced financing close on Cascade Power Project.", category: "Financing" },
       { date: "Aug 28, 2020", event: "DIF announced an investment in the Cascade Power Project through DIF Infrastructure VI.", category: "Financing" },
-      { date: "2024", event: "Kineticor stated that the project completed construction and commenced operations.", category: "Other" },
-      { date: "2024", event: "Axium portfolio materials referenced commercial operations expected in 2024.", category: "Other" },
+      { date: "2024", event: "Kineticor stated that the project completed construction and commenced operations.", category: "Expansion" },
     ],
     sources: [
       { label: "Close date source — Axium Infrastructure — Cascade Power Project", url: "https://www.axiuminfra.com/2020/08/28/august-28-2020-axium-infrastructure-partners-with-industry-leaders-on-combined-cycle-natural-gas-fired-project-in-alberta/?lang=en", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -5873,7 +5769,6 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Ontario",
     milestones: [
-      { date: "2024", event: "Public disclosures described Cedar Point II as a 100 MW operational Ontario wind project.", category: "Other" },
       { date: "2024", event: "Axium stated that 100% of the project's output was sold to the IESO under a 20-year feed-in-tariff PPA.", category: "Divestiture" },
       { date: "Jun 18, 2024", event: "Axium and NS Pension acquired a 50% equity interest in Cedar Point II from Fiera Infrastructure.", category: "Acquisition" },
     ],
@@ -5956,9 +5851,7 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Illinois",
     milestones: [
-      { date: "2020", event: "Transaction materials described the project as a new combined-cycle gas-fired facility in Grundy County, Illinois.", category: "Other" },
       { date: "Aug 24, 2020", event: "Axium and its partners reached financial close on CPV Three Rivers.", category: "Financing" },
-      { date: "2023", event: "Axium portfolio materials referenced anticipated commercial operations in 2023.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Axium Infrastructure — CPV Three Rivers Energy Center", url: "https://www.axiuminfra.com/news/page/7/?lang=en", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -5988,7 +5881,6 @@ export const companies: PortCo[] = [
       { date: "Sep 8, 2021", event: "Recurrent Energy completed the majority sale of an 80% stake in the 350 MW Crimson Storage project to Axium.", category: "Acquisition" },
       { date: "Aug 2022", event: "Commercial operation was targeted for August 2022 in Axium's portfolio materials.", category: "Expansion" },
       { date: "Oct 18, 2022", event: "Axium and Recurrent Energy announced that Crimson Storage was in operation.", category: "Other" },
-      { date: "Oct 18, 2022", event: "Public disclosures stated that a fund managed by Axium owned 80% of the project and Recurrent Energy retained 20%.", category: "Other" },
     ],
     sources: [
       { label: "Axiuminfra — Crimson Storage", url: "https://www.axiuminfra.com/portfolio-assets/?lang=en", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -6016,7 +5908,6 @@ export const companies: PortCo[] = [
     headquarters: "Ontario",
     milestones: [
       { date: "2021", event: "Axium described the portfolio as 396 MW across four wind and two solar projects in southwestern Ontario.", category: "Other" },
-      { date: "2021", event: "Cordelio remained responsible for management of the portfolio.", category: "Other" },
       { date: "Jan 12, 2021", event: "Cordelio Power sold a 49% stake in its Ontario renewable portfolio to Axium.", category: "Acquisition" },
     ],
     sources: [
@@ -6072,7 +5963,6 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "Nov 11, 2015", event: "Axium announced an agreement to acquire an interest in EDPR's 1,000 MW U.S. wind portfolio.", category: "Acquisition" },
-      { date: "2016", event: "Public disclosures described the transaction as a seven-wind-farm portfolio acquisition from EDP Renewables.", category: "Other" },
       { date: "Jan 20, 2016", event: "Axium's consortium completed the acquisition of its interest in the EDPR U.S. wind portfolio.", category: "Acquisition" },
     ],
     sources: [
@@ -6128,9 +6018,7 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "California",
     milestones: [
-      { date: "2022", event: "Public disclosures described Phase 1A at 397 MWac of solar and 1,505 MWh of battery storage.", category: "Other" },
       { date: "Oct 26, 2022", event: "Axium completed the acquisition of an 80% interest in Edwards Sanborn Phase 1A.", category: "Acquisition" },
-      { date: "2024", event: "Public disclosures described Phase 1B at 410 MWac of solar and 1,497 MWh of battery storage.", category: "Other" },
       { date: "Jan 11, 2024", event: "Axium announced an additional investment to acquire a 50% interest in Edwards Sanborn Phase 1B.", category: "Acquisition" },
     ],
     sources: [
@@ -6158,12 +6046,10 @@ export const companies: PortCo[] = [
     investmentYear: 2016,
     headquarters: "Ontario",
     milestones: [
-      { date: "2016", event: "Axium Infrastructure Canada II L.P. and DIF Infrastructure IV were disclosed as the equity sponsors in the project consortium.", category: "Financing" },
-      { date: "2016", event: "Financial-close materials identified DIF Infrastructure IV and Axium Infrastructure Canada II as equity sponsors.", category: "Financing" },
       { date: "2016", event: "Etobicoke General Hospital (Phase 1 Patient Tower) was founded.", category: "Founding" },
+      { date: "2016", event: "Axium Infrastructure Canada II L.P. and DIF Infrastructure IV were disclosed as the equity sponsors in the project consortium.", category: "Financing" },
       { date: "May 13, 2016", event: "Axium announced financial close on the Etobicoke General Hospital Phase 1 Patient Tower PPP project.", category: "Financing" },
       { date: "Jun 28, 2016", event: "Ontario announced up to C$358 million of provincial investment in the project.", category: "Financing" },
-      { date: "2019", event: "Walsh announced completion of the new patient tower at Etobicoke General Hospital.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Axium Infrastructure — Etobicoke General Hospital Phase 1 Patient Tower", url: "https://www.axiuminfra.com/2016/05/13/may-13-2016-axium-infrastructure-achieves-financial-close-on-hospital-ppp-in-ontario/?lang=en", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -6250,9 +6136,9 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Apr 24, 2014", event: "Alterra Power and Fiera Axium completed a partnership agreement for the Jimmie Creek hydro project, with Axium taking a 49% interest.", category: "Financing" },
       { date: "Oct 16, 2014", event: "Alterra Power and Fiera Axium completed a $176.5 million project financing for the Jimmie Creek hydroelectric project.", category: "Financing" },
-      { date: "Aug 3, 2016", event: "Axium and Alterra announced the start of commercial operations at Jimmie Creek.", category: "Other" },
+      { date: "Aug 3, 2016", event: "Axium and Alterra announced the start of commercial operations at Jimmie Creek.", category: "Expansion" },
       { date: "Feb 2018", event: "Alterra Power was acquired by Innergex Renewable Energy, making Innergex the operating partner in the project.", category: "Acquisition" },
-      { date: "2024", event: "Innergex disclosed a 50.99% ownership interest in Jimmie Creek in its annual reporting.", category: "Other" },
+      { date: "2024", event: "Innergex disclosed a 50.99% ownership interest in Jimmie Creek in its annual reporting.", category: "Acquisition" },
     ],
     sources: [
       { label: "Close date source — Axium Infrastructure — Jimmie Creek Hydroelectric Project", url: "https://www.axiuminfra.com/2014/04/24/april-24-2014-alterra-power-and-fiera-axium-announce-partnership-for-jimmie-creek-hydro-project/?lang=en", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -6334,7 +6220,7 @@ export const companies: PortCo[] = [
     investmentYear: 2018,
     headquarters: "Massachusetts",
     milestones: [
-      { date: "2018", event: "The asset began operating under Longwood Energy Partners following the ownership change.", category: "Other" },
+      { date: "2018", event: "The asset began operating under Longwood Energy Partners following the ownership change.", category: "Expansion" },
       { date: "Apr 3, 2018", event: "ENGIE and Axium completed the acquisition of the Longwood district energy system in Boston.", category: "Acquisition" },
     ],
     sources: [
@@ -6450,7 +6336,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Nov 2020", event: "Axium formed a joint venture with Optima Living for seniors housing assets in western Canada.", category: "Financing" },
       { date: "Sep 23, 2022", event: "The continuing-care platform added nearly 1,100 beds in eight seniors communities in Alberta and British Columbia, including The Hamlets portfolio.", category: "Expansion" },
-      { date: "2023", event: "Axium’s public portfolio materials described the venture at 25 facilities and 2,935 beds.", category: "Other" },
       { date: "Oct 4, 2023", event: "Optima Living, Axium, and Desjardins announced a partnership to expand the continuing care platform in western Canada.", category: "Expansion" },
     ],
     sources: [
@@ -6507,11 +6392,10 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Ontario",
     milestones: [
-      { date: "2021", event: "PUC Transmission LP was incorporated.", category: "Other" },
       { date: "2021", event: "PUC Transmission LP was founded.", category: "Founding" },
       { date: "Oct 2021", event: "PUC Transmission received its Ontario transmission licence.", category: "Other" },
-      { date: "Aug 28, 2024", event: "The Ontario Energy Board approved the leave-to-construct application for the transmission line and station.", category: "Other" },
       { date: "Sep 25, 2024", event: "Axium Infrastructure announced the acquisition of an 80% equity interest in PUC Transmission LP.", category: "Acquisition" },
+      { date: "Aug 28, 2024", event: "The Ontario Energy Board approved the leave-to-construct application for the transmission line and station.", category: "Expansion" },
       { date: "2027", event: "Commercial operation is expected by the end of 2027 according to public project materials.", category: "Expansion" },
     ],
     sources: [
@@ -6716,7 +6600,6 @@ export const companies: PortCo[] = [
       { date: "Apr 30, 2021", event: "Balfour Beatty Campus Solutions and Axium Infrastructure reached financial close on the Vanderbilt mixed-use student housing project.", category: "Financing" },
       { date: "Aug 2023", event: "Broadview at Vanderbilt opened for the academic year.", category: "Expansion" },
       { date: "May 29, 2024", event: "Balfour Beatty announced that Broadview at Vanderbilt had earned LEED Gold certification.", category: "Other" },
-      { date: "2086", event: "The long-term lease and concession arrangement is scheduled to run through 2086.", category: "Other" },
     ],
     sources: [
       { label: "Axiuminfra — Swiftsure Housing Partners (Broadview at Vanderbilt)", url: "https://www.axiuminfra.com/portfolio-assets/?lang=en", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -6744,8 +6627,7 @@ export const companies: PortCo[] = [
     headquarters: "Alberta",
     milestones: [
       { date: "2021", event: "Travers Solar reached financial close under its development consortium.", category: "Financing" },
-      { date: "2022", event: "The project entered operations in Alberta.", category: "Other" },
-      { date: "2023", event: "Axium portfolio materials described the project at 691 MWdc / 465 MWac with a 400 MW long-term PPA.", category: "Other" },
+      { date: "2022", event: "The project entered operations in Alberta.", category: "Expansion" },
       { date: "Jan 24, 2023", event: "Axium Infrastructure acquired the Travers Solar Project.", category: "Acquisition" },
     ],
     sources: [
@@ -6773,7 +6655,6 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Michigan",
     milestones: [
-      { date: "2021", event: "Axium portfolio materials described UPPCO as a regulated utility serving approximately 53,000 customers in Michigan's Upper Peninsula.", category: "Other" },
       { date: "Jan 2021", event: "Axium Infrastructure announced an agreement to acquire UPPCO from Basalt Infrastructure Partners.", category: "Acquisition" },
       { date: "Jun 4, 2021", event: "Axium Infrastructure announced completion of the acquisition.", category: "Acquisition" },
       { date: "1884", event: "Public disclosures trace the utility's origins to 1884.", category: "Other" },
@@ -6832,10 +6713,8 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Georgia and multiple U.S. states",
     milestones: [
-      { date: "2014", event: "Basalt portfolio materials identify EnviroSpark's founding year as 2014.", category: "Other" },
-      { date: "2014", event: "EnviroSpark was founded.", category: "Founding" },
+      { date: "2014", event: "Basalt portfolio materials identify EnviroSpark's founding year as 2014.", category: "Founding" },
       { date: "2024", event: "Basalt added EnviroSpark to its portfolio as an EV charging platform.", category: "Other" },
-      { date: "2024", event: "Company materials stated that EnviroSpark had deployed more than 10,000 chargers.", category: "Other" },
       { date: "May 2, 2024", event: "EnviroSpark announced a $50 million investment from Basalt Infrastructure Partners.", category: "Financing" },
     ],
     sources: [
@@ -6862,10 +6741,8 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Washington, Oregon, Montana, Arizona, New Mexico, Idaho, Wyoming, and Nevada",
     milestones: [
-      { date: "2010", event: "Basalt portfolio materials identify Fatbeam's founding year as 2010.", category: "Other" },
-      { date: "2010", event: "Fatbeam was founded.", category: "Founding" },
+      { date: "2010", event: "Basalt portfolio materials identify Fatbeam's founding year as 2010.", category: "Founding" },
       { date: "Mar 27, 2023", event: "Basalt Infrastructure Partners announced an agreement to acquire Fatbeam from SDC Capital Partners and the company's founders.", category: "Acquisition" },
-      { date: "2024", event: "Company materials described an expanded network footprint across eight western U.S. states and more than 150 cities.", category: "Expansion" },
     ],
     sources: [
       { label: "Fatbeamfiber — Fatbeam", url: "https://www.fatbeamfiber.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -6923,7 +6800,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2011", event: "Company materials state that Go Lime has served Ontario customers since 2011.", category: "Other" },
       { date: "2011", event: "Go Lime was founded.", category: "Founding" },
-      { date: "2025", event: "Public company materials described a customer base of more than 150,000 across Ontario.", category: "Other" },
       { date: "Dec 17, 2025", event: "Basalt announced that funds advised by Basalt acquired Go Lime and the assets of Simply Green Home Services.", category: "Acquisition" },
     ],
     sources: [
@@ -7036,8 +6912,6 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Multi-state United States",
     milestones: [
-      { date: "2022", event: "Transaction materials described a portfolio of more than 400 communications structures.", category: "Other" },
-      { date: "2022", event: "Skyway continued tower development and ownership across the United States under Basalt ownership.", category: "Other" },
       { date: "May 2022", event: "Basalt III acquired Skyway Towers from Tinicum.", category: "Acquisition" },
     ],
     sources: [
@@ -7091,9 +6965,7 @@ export const companies: PortCo[] = [
     headquarters: "California and other U.S. permanent-crop regions",
     milestones: [
       { date: "2021", event: "BCI established Ag Partners Capital alongside experienced farmland investors and operators as part of its renewable-resources strategy.", category: "Financing" },
-      { date: "2021", event: "Public materials identified permanent-crop farmland as the platform's initial focus area.", category: "Other" },
       { date: "2021", event: "Ag Partners Capital was founded.", category: "Founding" },
-      { date: "2024", event: "BCI continued to reference Ag Partners Capital in public discussions of its global renewable-resources partnerships.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — BCI — Ag Partners Capital", url: "https://www.bci.ca/owen-martin-a-global-partnership-approach-in-renewable-resources/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -7119,11 +6991,10 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Texas and Louisiana",
     milestones: [
-      { date: "2022", event: "Caddo began operating as a dedicated timberland ownership and management vehicle.", category: "Other" },
+      { date: "2022", event: "Caddo began operating as a dedicated timberland ownership and management vehicle.", category: "Expansion" },
       { date: "2022", event: "Caddo Sustainable Timberlands LP was founded.", category: "Founding" },
       { date: "Feb 14, 2022", event: "BCI and BTG Pactual Timberland Investment Group announced the creation of Caddo Sustainable Timberlands LP.", category: "Financing" },
       { date: "Feb 14, 2022", event: "The platform launched with approximately 772,000 acres in East Texas.", category: "Other" },
-      { date: "2024", event: "Company materials referenced an expanded footprint of approximately 903,000 acres across Texas and Louisiana.", category: "Expansion" },
     ],
     sources: [
       { label: "Caddolp — Caddo Sustainable Timberlands LP", url: "https://www.caddolp.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -7186,9 +7057,8 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Alberta",
     milestones: [
-      { date: "Nov 27, 2020", event: "Alberta court materials identified Connaught as a Calgary-based petroleum and fossil-gas business.", category: "Other" },
       { date: "Sep 19, 2024", event: "Energy Voice reported that Connaught sold its stake in the Rathlin JV in the United Kingdom.", category: "Divestiture" },
-      { date: "2025", event: "Public pension-climate reporting identified BCI as an investor in Connaught Oil and Gas.", category: "Other" },
+      { date: "2025", event: "BCI invested in Connaught Oil and Gas through Infrastructure & Renewable Resources.", category: "Financing" },
     ],
     sources: [
       { label: "Energyvoice — Connaught Oil and Gas", url: "https://www.energyvoice.com/markets/energy-finance/564385/canadas-connaught-sells-out-of-uk-gas-field-to-bullish-reabold/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -7215,7 +7085,7 @@ export const companies: PortCo[] = [
     headquarters: "Alberta",
     milestones: [
       { date: "Jun 8, 2022", event: "Corex announced that a limited partnership managed by Azimuth Capital Management had acquired all shares held by CDPQ.", category: "Acquisition" },
-      { date: "2025", event: "Public pension-climate reporting identified BCI as an investor in Corex Resources.", category: "Other" },
+      { date: "2025", event: "BCI invested in Corex Resources Ltd. through Infrastructure & Renewable Resources.", category: "Financing" },
     ],
     sources: [
       { label: "Corexresources — Corex Resources Ltd.", url: "https://corexresources.ca/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -7243,9 +7113,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2006", event: "BCI affiliates acquired shares of Terasen Utility Services, the predecessor to Corix Multi-Utility Services, causing BCI to indirectly control the business.", category: "Acquisition" },
       { date: "Oct 24, 2012", event: "BCI acquired CAI Capital Partners' interest in the Corix Group of Companies, taking effective control through an additional share acquisition.", category: "Acquisition" },
-      { date: "2021", event: "BCI investment inventory materials listed a 26.5% interest in Corix Infrastructure.", category: "Financing" },
       { date: "Aug 26, 2022", event: "Corix entered an agreement with IIF Subway Investment L.P., SWMAC and SouthWest Water to combine its U.S. water utility business.", category: "Financing" },
-      { date: "2024", event: "Corix remained associated with legacy district-energy and related infrastructure operations.", category: "Other" },
       { date: "Apr 1, 2024", event: "Corix Infrastructure's U.S. water and wastewater business completed its merger with SouthWest Water to form Nexus Water Group.", category: "Other" },
     ],
     sources: [
@@ -7304,8 +7172,6 @@ export const companies: PortCo[] = [
       { date: "Jul 29, 2005", event: "InTransit BC closed the 35-year Canada Line P3 concession with the Greater Vancouver Transportation Authority; BCI invested as one of the three equity partners alongside SNC-Lavalin and CDPQ.", category: "Financing" },
       { date: "2009", event: "The Canada Line entered service between downtown Vancouver, Richmond, and Vancouver International Airport.", category: "Expansion" },
       { date: "Aug 2009", event: "TransLink's public reporting indicates the Canada Line concession commenced in August 2009.", category: "Other" },
-      { date: "2016", event: "Public materials later identified CDPQ's 33.3% ownership interest in InTransit BC.", category: "Other" },
-      { date: "2021", event: "CDPQ continued reporting InTransit BC as part of its infrastructure portfolio.", category: "Other" },
       { date: "2022", event: "BCI pooled-fund financial statements disclosed a 28.7% interest in InTransit BC.", category: "Financing" },
     ],
     sources: [
@@ -7337,7 +7203,6 @@ export const companies: PortCo[] = [
     headquarters: "California, Texas, Illinois, Tennessee, Florida, and Pennsylvania",
     milestones: [
       { date: "1971", event: "Company history materials indicate that Monterey Mushrooms was founded in 1971.", category: "Founding" },
-      { date: "2021", event: "Company materials referenced a 50-year operating history.", category: "Other" },
       { date: "Jul 22, 2025", event: "BCI and Paine Schwartz Partners submitted a European Commission merger filing for joint control of Monterey Mushrooms Holdings.", category: "Acquisition" },
     ],
     sources: [
@@ -7368,7 +7233,6 @@ export const companies: PortCo[] = [
       { date: "2018", event: "Mosaic began managing extensive private forest lands and public tenures in coastal British Columbia.", category: "Other" },
       { date: "2018", event: "Mosaic Forest Management was founded.", category: "Founding" },
       { date: "Nov 1, 2018", event: "BCI, PSP Investments, and AIMCo-affiliated Island Timberlands investors launched Mosaic Forest Management as the management platform for TimberWest and Island Timberlands.", category: "Financing" },
-      { date: "2024", event: "Supply-chain reporting described a network of roughly 2,000 employees and contractors and more than 700 vendors.", category: "Other" },
     ],
     sources: [
       { label: "Mosaicforests — Mosaic Forest Management", url: "https://www.mosaicforests.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -7431,9 +7295,7 @@ export const companies: PortCo[] = [
       { date: "2026", event: "Northview Energy was founded.", category: "Founding" },
       { date: "Mar 3, 2026", event: "Brookfield, BCI, and Norges Bank Investment Management announced the launch of Northview Energy.", category: "Financing" },
       { date: "Mar 3, 2026", event: "The partners announced equal ownership among Brookfield, BCI, and Norges Bank Investment Management.", category: "Financing" },
-      { date: "Mar 3, 2026", event: "The sponsors stated that Northview would be equally funded and owned by the three investors.", category: "Other" },
       { date: "Mar 3, 2026", event: "The partners disclosed a 2.3 GW seed portfolio of 22 contracted operating renewable assets across six U.S. power markets.", category: "Other" },
-      { date: "Mar 3, 2026", event: "Brookfield stated that the seed portfolio consisted of 22 contracted wind and solar assets totaling about 2.3 GW across six US markets.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — BCI — Northview Energy", url: "https://bep.brookfield.com/press-releases/bep/bci-norges-bank-investment-management-and-brookfield-partner-launch-northview", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -7493,7 +7355,6 @@ export const companies: PortCo[] = [
     headquarters: "North Carolina and Indiana",
     milestones: [
       { date: "2021", event: "Bernhard Capital Partners invested in ClearCurrent.", category: "Financing" },
-      { date: "2024", event: "BCP ESG reporting described ClearCurrent as serving roughly 2,000 customers across North Carolina and Indiana.", category: "Other" },
     ],
     sources: [
       { label: "Clearcurrent — ClearCurrent", url: "https://clearcurrent.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -7519,7 +7380,6 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Louisiana and Mississippi",
     milestones: [
-      { date: "2025", event: "Following the Entergy transaction, company materials described roughly 600,000 customers and more than 800 employees.", category: "Other" },
       { date: "2025", event: "Delta Utilities was founded.", category: "Founding" },
       { date: "Apr 2025", event: "The platform acquired approximately 12,000 miles of pipeline and about 380,000 customers through the CenterPoint transaction.", category: "Acquisition" },
       { date: "Apr 1, 2025", event: "Bernhard Capital Partners-backed Delta Utilities completed the acquisition of CenterPoint Energy's natural gas distribution businesses in Louisiana and Mississippi.", category: "Acquisition" },
@@ -7579,7 +7439,7 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Mississippi and Louisiana",
     milestones: [
-      { date: "2019", event: "Green Meadow Sustainable Solutions began operations.", category: "Other" },
+      { date: "2019", event: "Green Meadow Sustainable Solutions began operations.", category: "Expansion" },
       { date: "2019", event: "Green Meadow Sustainable Solutions was founded.", category: "Founding" },
       { date: "2020", event: "Bernhard Capital Partners invested in Green Meadow Sustainable Solutions.", category: "Financing" },
       { date: "2021", event: "Green Meadow expanded through the acquisition of Riverbend.", category: "Expansion" },
@@ -7636,7 +7496,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Oct 2024", event: "Bernhard Capital Partners, Emera, and New Mexico Gas Company applied to the New Mexico Public Regulation Commission for approval of the transaction.", category: "Other" },
       { date: "Aug 5, 2024", event: "Emera announced an agreement to sell New Mexico Gas Company to Bernhard Capital Partners.", category: "Acquisition" },
-      { date: "2025", event: "NMGC continued to publish regulatory materials related to Case No. 24-00266-UT concerning the proposed purchase.", category: "Acquisition" },
     ],
     sources: [
       { label: "Bernhardcapital — New Mexico Gas Company", url: "https://www.bernhardcapital.com/portfolio-items/new-mexico-gas-company/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -7666,7 +7525,6 @@ export const companies: PortCo[] = [
       { date: "2015", event: "CleanCapital was founded.", category: "Founding" },
       { date: "Apr 2, 2019", event: "CleanCapital announced a new investment in the firm from funds managed by BlackRock's Renewable Power Group.", category: "Financing" },
       { date: "Apr 20, 2021", event: "CleanCapital announced a corporate investment from Manulife Investment Management and a $300 million commitment to grow clean-energy assets.", category: "Financing" },
-      { date: "Jun 2023", event: "CleanCapital announced an additional commitment of up to $500 million from Manulife.", category: "Financing" },
       { date: "Dec 2024", event: "CleanCapital acquired a 40-asset, 22.7 MW portfolio from Kendall Sustainable Infrastructure and secured further equity investment.", category: "Financing" },
       { date: "Jun 2025", event: "CleanCapital announced the acquisition of a 25 MWh storage portfolio from Pacifico.", category: "Financing" },
     ],
@@ -7699,11 +7557,9 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Missouri and multi-state rural United States",
     milestones: [
-      { date: "2015", event: "Company materials identify Conexon's founding year as 2015.", category: "Other" },
-      { date: "2015", event: "Conexon was founded.", category: "Founding" },
+      { date: "2015", event: "Company materials identify Conexon's founding year as 2015.", category: "Founding" },
       { date: "2021", event: "Conexon launched Conexon Connect as its retail internet service provider platform.", category: "Other" },
       { date: "2023", event: "TAP Advisors disclosed an investment in Conexon by funds and accounts managed by BlackRock.", category: "Financing" },
-      { date: "2025", event: "Company materials described work with more than 275 electric cooperatives and more than 800 employees.", category: "Other" },
     ],
     sources: [
       { label: "Conexon — Conexon", url: "https://conexon.us/about/about-conexon/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -7731,12 +7587,11 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "New York; multi-state United States portfolio",
     milestones: [
+      { date: "2019", event: "DSD Renewables was founded.", category: "Founding" },
       { date: "2019", event: "DSD Renewables was formed from GE's distributed solar business with BlackRock Real Assets as majority investor.", category: "Financing" },
       { date: "2019", event: "DSD launched as a standalone distributed-energy platform backed by BlackRock.", category: "Financing" },
-      { date: "2019", event: "DSD Renewables was founded.", category: "Founding" },
       { date: "Mar 3, 2022", event: "DSD secured a $200 million preferred equity investment from a fund managed by Ares Management's Infrastructure and Power strategy.", category: "Financing" },
       { date: "Nov 2023", event: "DSD received a $250 million strategic investment from Cox Enterprises.", category: "Financing" },
-      { date: "Apr 25, 2023", event: "DSD announced a $250 million strategic investment from Cox Enterprises.", category: "Financing" },
     ],
     sources: [
       { label: "Dsdrenewables — DSD Renewables", url: "https://dsdrenewables.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -7797,9 +7652,7 @@ export const companies: PortCo[] = [
     headquarters: "Alberta, British Columbia, Ontario, Québec, and Saskatchewan",
     milestones: [
       { date: "2018", event: "Environmental 360 Solutions was founded.", category: "Founding" },
-      { date: "2023", event: "The founder remained one of the largest individual shareholders following the transaction.", category: "Other" },
       { date: "Feb 16, 2023", event: "Environmental 360 Solutions announced the closing of BlackRock Alternatives' acquisition of a majority interest.", category: "Acquisition" },
-      { date: "2025", event: "Company materials described a workforce of more than 2,200 and service to more than 750,000 customers.", category: "Other" },
     ],
     sources: [
       { label: "E360S — Environmental 360 Solutions", url: "https://e360s.ca/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -7826,7 +7679,6 @@ export const companies: PortCo[] = [
     headquarters: "Multiple U.S. states",
     milestones: [
       { date: "2024", event: "Natural Power announced support for BlackRock's acquisition of the operating portfolio.", category: "Other" },
-      { date: "Mar 2024", event: "Public transaction materials described the portfolio as 38 projects totaling 89 MW.", category: "Other" },
       { date: "Mar 12, 2024", event: "Excelsior Energy Capital announced the sale of a sub-portfolio of solar and solar-plus-storage assets to BlackRock.", category: "Acquisition" },
     ],
     sources: [
@@ -7856,7 +7708,6 @@ export const companies: PortCo[] = [
       { date: "Dec 23, 2022", event: "AT&T and BlackRock signed a definitive agreement to form the Gigapower joint venture.", category: "Financing" },
       { date: "2023", event: "Gigapower was founded.", category: "Founding" },
       { date: "May 11, 2023", event: "AT&T and BlackRock closed the Gigapower joint venture and launched the open-access fiber platform.", category: "Financing" },
-      { date: "2025", event: "Public reporting referenced Gigapower's expansion across multiple U.S. states and communities.", category: "Other" },
     ],
     sources: [
       { label: "Gigapower — Gigapower", url: "https://www.gigapower.com/about-us", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -7911,10 +7762,8 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "California",
     milestones: [
-      { date: "2009", event: "Company materials identify Indian Energy's founding year as 2009.", category: "Other" },
-      { date: "2009", event: "Indian Energy was founded.", category: "Founding" },
+      { date: "2009", event: "Company materials identify Indian Energy's founding year as 2009.", category: "Founding" },
       { date: "2023", event: "BlackRock Impact Opportunities identified Indian Energy as a portfolio investment.", category: "Financing" },
-      { date: "2024", event: "Company materials described a development pipeline including 4 GW of renewable generation and 6 GWh of storage.", category: "Other" },
       { date: "Aug 20, 2024", event: "Indian Energy announced financial close on the Viejas Enterprise microgrid project.", category: "Financing" },
     ],
     sources: [
@@ -7941,11 +7790,10 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Multi-state United States",
     milestones: [
-      { date: "2017", event: "Company materials identify Jupiter Power's founding year as 2017.", category: "Other" },
-      { date: "2017", event: "Jupiter Power was founded.", category: "Founding" },
+      { date: "2017", event: "Company materials identify Jupiter Power's founding year as 2017.", category: "Founding" },
       { date: "Nov 15, 2022", event: "EnCap Investments announced an agreement to sell Jupiter Power to BlackRock.", category: "Acquisition" },
       { date: "2024", event: "Jupiter announced new battery storage projects totaling 652 MWh.", category: "Other" },
-      { date: "Jan 28, 2025", event: "Jupiter announced a $500 million upsized corporate credit facility to support expansion.", category: "Other" },
+      { date: "Jan 28, 2025", event: "Jupiter announced a $500 million upsized corporate credit facility to support expansion.", category: "Financing" },
     ],
     sources: [
       { label: "Jupiterpower — Jupiter Power", url: "https://www.jupiterpower.io/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -7971,7 +7819,6 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Six U.S. states",
     milestones: [
-      { date: "2023", event: "Public fundraising materials continued to reference Lighthouse as an early Evergreen Infrastructure investment.", category: "Financing" },
       { date: "Nov 2023", event: "BlackRock described Lighthouse as a U.S. C&I solar and battery storage platform with an operating portfolio across six states.", category: "Other" },
       { date: "Nov 15, 2023", event: "BlackRock stated that its Evergreen Infrastructure fund had signed definitive documentation to acquire Lighthouse.", category: "Acquisition" },
     ],
@@ -7999,8 +7846,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Minnesota and multi-state United States",
     milestones: [
-      { date: "2011", event: "Company materials identify National Renewable Solutions' founding year as 2011.", category: "Other" },
-      { date: "2011", event: "National Renewable Solutions was founded.", category: "Founding" },
+      { date: "2011", event: "Company materials identify National Renewable Solutions' founding year as 2011.", category: "Founding" },
       { date: "Aug 18, 2021", event: "National Renewable Solutions announced that BlackRock had acquired 100% of the company.", category: "Acquisition" },
     ],
     sources: [
@@ -8028,11 +7874,10 @@ export const companies: PortCo[] = [
     headquarters: "Maine; New Hampshire; Canada",
     milestones: [
       { date: "1999", event: "Portland Natural Gas Transmission System was founded.", category: "Founding" },
-      { date: "1999", event: "PNGTS entered service to bring Canadian natural gas into New England markets.", category: "Expansion" },
       { date: "2024", event: "Transaction materials valued the sale at approximately $1.14 billion including assumption of notes.", category: "Divestiture" },
-      { date: "Mar 4, 2024", event: "TC Energy announced an agreement to sell PNGTS to BlackRock and Morgan Stanley Infrastructure Partners (MSIP).", category: "Acquisition" },
       { date: "Aug 15, 2024", event: "TC Energy completed the sale of PNGTS to BlackRock and Morgan Stanley Infrastructure Partners (MSIP).", category: "Acquisition" },
       { date: "Mar 4, 2024", event: "TC Energy announced the sale of PNGTS to BlackRock's Diversified Infrastructure business and Morgan Stanley Infrastructure Partners.", category: "Divestiture" },
+      { date: "Mar 4, 2024", event: "TC Energy announced an agreement to sell PNGTS to BlackRock and Morgan Stanley Infrastructure Partners (MSIP).", category: "Acquisition" },
     ],
     sources: [
       { label: "Close date source — BlackRock — Portland Natural Gas Transmission System", url: "https://www.tcenergy.com/announcements/2024/2024-08-15-tc-energy-completes-the-sale-of-portland-natural-gas-transmission-system/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -8061,8 +7906,7 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "United States and Canada, with international operations",
     milestones: [
-      { date: "2006", event: "Company materials identify Recurrent Energy's founding year as 2006.", category: "Other" },
-      { date: "2006", event: "Recurrent Energy was founded.", category: "Founding" },
+      { date: "2006", event: "Company materials identify Recurrent Energy's founding year as 2006.", category: "Founding" },
       { date: "2024", event: "Recurrent stated that BlackRock's investment represented 20% of fully diluted shares and that Canadian Solar retained majority ownership.", category: "Financing" },
       { date: "Jan 8, 2024", event: "Recurrent Energy announced a $500 million capital commitment from BlackRock.", category: "Financing" },
       { date: "Oct 3, 2024", event: "Recurrent Energy announced the final closing of BlackRock's $500 million investment.", category: "Financing" },
@@ -8094,8 +7938,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2023", event: "STRATOS was founded.", category: "Founding" },
       { date: "Nov 7, 2023", event: "Occidental and BlackRock signed a definitive agreement to form a joint venture to own and develop STRATOS.", category: "Financing" },
-      { date: "Sep 22, 2023", event: "1PointFive held the groundbreaking ceremony for the facility.", category: "Other" },
-      { date: "2025", event: "1PointFive stated that the project remained on track to start commercial operations in 2025.", category: "Other" },
+      { date: "Sep 22, 2023", event: "1PointFive held the groundbreaking ceremony for the facility.", category: "Expansion" },
       { date: "Apr 3, 2025", event: "Occidental and 1PointFive announced receipt of Class VI permits for STRATOS.", category: "Other" },
     ],
     sources: [
@@ -8150,7 +7993,6 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Connecticut, Indiana, and Florida",
     milestones: [
-      { date: "2021", event: "Company materials referenced expansion of a Florida manufacturing facility.", category: "Other" },
       { date: "Apr 2025", event: "Blackstone Energy Transition Partners agreed to invest in Accel International.", category: "Financing" },
     ],
     sources: [
@@ -8267,7 +8109,6 @@ export const companies: PortCo[] = [
       { date: "Sep 9, 2021", event: "APT announced a bid for New Jersey's offshore wind transmission project.", category: "Other" },
       { date: "Dec 1, 2021", event: "Atlantic Power Transmission, a Blackstone Infrastructure Partners portfolio company, announced its bid for New Jersey's offshore wind transmission project.", category: "Other" },
       { date: "Apr 27, 2022", event: "APT announced a $50 million commitment to workforce development in New Jersey.", category: "Financing" },
-      { date: "2023", event: "The platform continued advancing transmission development efforts tied to offshore wind buildout in the Northeast.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — Blackstone — Atlantic Power Transmission LLC", url: "https://www.blackstone.com/news/press/atlantic-power-transmission-llc-a-blackstone-infrastructure-partners-portfolio-company-announces-50-million-commitment-to-new-jersey-workforce-development/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -8325,9 +8166,8 @@ export const companies: PortCo[] = [
     headquarters: "Louisiana and Texas",
     milestones: [
       { date: "1996", event: "Cheniere Energy was founded.", category: "Founding" },
-      { date: "2005", event: "Sabine Pass received federal authorization for LNG import terminal development.", category: "Other" },
-      { date: "2012", event: "Cheniere Partners closed a major credit facility for Sabine Pass liquefaction development.", category: "Other" },
-      { date: "2016", event: "Sabine Pass Train 1 achieved substantial completion and commenced LNG exports.", category: "Other" },
+      { date: "2012", event: "Cheniere Partners closed a major credit facility for Sabine Pass liquefaction development.", category: "Financing" },
+      { date: "2016", event: "Sabine Pass Train 1 achieved substantial completion and commenced LNG exports.", category: "Expansion" },
       { date: "Sep 24, 2020", event: "Blackstone Infrastructure Partners and Brookfield Infrastructure closed the acquisition of an approximately 42% stake in Cheniere Energy Partners.", category: "Acquisition" },
       { date: "2022", event: "Sabine Pass Train 6 was completed, bringing the terminal to six operating liquefaction trains.", category: "Other" },
     ],
@@ -8414,7 +8254,6 @@ export const companies: PortCo[] = [
       { date: "2021", event: "Hill Top Energy Center entered commercial operation in western Pennsylvania.", category: "Expansion" },
       { date: "2025", event: "The asset was highlighted by Blackstone as part of its strategy to invest in dispatchable generation supporting rising data center demand.", category: "Other" },
       { date: "Sep 15, 2025", event: "Blackstone announced an agreement to acquire Hill Top Energy Center from Ardian.", category: "Acquisition" },
-      { date: "2026", event: "Hill Top remained part of Blackstone's regional power-generation buildout alongside new greenfield generation initiatives.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Blackstone — Hill Top Energy Center", url: "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-hill-top-energy-center-in-western-pennsylvania-for-nearly-1-billion/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -8471,7 +8310,7 @@ export const companies: PortCo[] = [
       { date: "2015", event: "Blackstone founded Kindle Energy as a portfolio company.", category: "Financing" },
       { date: "2015", event: "Kindle Energy was founded.", category: "Founding" },
       { date: "2018", event: "Kindle built out a portfolio of gas-fired power assets and asset-management capabilities in North America.", category: "Other" },
-      { date: "2022", event: "Construction began on the Magnolia Power Generating Station in Louisiana with Kindle as the development platform.", category: "Other" },
+      { date: "2022", event: "Construction began on the Magnolia Power Generating Station in Louisiana with Kindle as the development platform.", category: "Expansion" },
       { date: "Feb 25, 2026", event: "Magnolia entered commercial operation, highlighting Kindle's role within Blackstone's generation strategy.", category: "Expansion" },
     ],
     sources: [
@@ -8502,9 +8341,8 @@ export const companies: PortCo[] = [
       { date: "Jun 2017", event: "Blackstone closed its acquisition of EagleClaw Midstream Ventures.", category: "Acquisition" },
       { date: "Apr 17, 2017", event: "Blackstone Energy Partners announced a binding agreement to acquire EagleClaw Midstream Ventures, Kinetik's Blackstone-backed predecessor platform.", category: "Acquisition" },
       { date: "Dec 1, 2021", event: "Altus Midstream and EagleClaw announced an all-stock business combination.", category: "Other" },
-      { date: "2022", event: "The combined company began operating as Kinetik Holdings.", category: "Other" },
       { date: "2022", event: "Kinetik Holdings Inc. was founded.", category: "Founding" },
-      { date: "Feb 15, 2022", event: "Altus shareholders approved the combination with BCP Raptor HoldCo.", category: "Other" },
+      { date: "Feb 15, 2022", event: "Altus shareholders approved the combination with BCP Raptor HoldCo.", category: "Expansion" },
     ],
     sources: [
       { label: "Kinetik — Kinetik Holdings Inc.", url: "https://www.kinetik.com/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -8564,9 +8402,8 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Q4 2020", event: "Blackstone closed the acquisition of Therma Holdings.", category: "Acquisition" },
       { date: "Nov 9, 2020", event: "Blackstone announced the acquisition of Therma Holdings from Gemspring Capital.", category: "Acquisition" },
-      { date: "2022", event: "Therma Holdings was rebranded as Legence.", category: "Other" },
-      { date: "2022", event: "Legence expanded through additional operating brands and acquisitions in building systems and energy services.", category: "Expansion" },
       { date: "2022", event: "Legence was founded.", category: "Founding" },
+      { date: "2022", event: "Legence expanded through additional operating brands and acquisitions in building systems and energy services.", category: "Expansion" },
       { date: "Sep 15, 2025", event: "Legence completed an initial public offering while continuing to describe itself as a Blackstone portfolio company.", category: "IPO" },
     ],
     sources: [
@@ -8595,7 +8432,6 @@ export const companies: PortCo[] = [
     headquarters: "Illinois and multiple U.S. states",
     milestones: [
       { date: "Dec 10, 2025", event: "Blackstone announced the merger of MacLean Power Systems and Power Grid Components.", category: "Other" },
-      { date: "2026", event: "The combined company continued under the MacLean Power Systems name.", category: "Other" },
       { date: "Mar 4, 2026", event: "Blackstone became the majority owner of the combined MacLean Power Systems when MacLean and Power Grid Components completed their merger.", category: "Acquisition" },
     ],
     sources: [
@@ -8623,7 +8459,7 @@ export const companies: PortCo[] = [
     headquarters: "Louisiana",
     milestones: [
       { date: "2021", event: "Blackstone, through its North American power platform Kindle Energy, started developing Magnolia Power.", category: "Financing" },
-      { date: "2022", event: "Construction began on the Magnolia Power Generating Station in Louisiana.", category: "Other" },
+      { date: "2022", event: "Construction began on the Magnolia Power Generating Station in Louisiana.", category: "Expansion" },
       { date: "2025", event: "Project development advanced within Kindle Energy, Blackstone's power generation platform.", category: "Other" },
       { date: "2026", event: "Magnolia entered commercial operation.", category: "Expansion" },
       { date: "Feb 26, 2026", event: "Blackstone announced completion of the 694 MW Magnolia Power Generating Station.", category: "Other" },
@@ -8655,7 +8491,6 @@ export const companies: PortCo[] = [
       { date: "1912", event: "Northern Indiana Public Service Company traces its origins to predecessor utility operations in Indiana.", category: "Other" },
       { date: "1912", event: "Northern Indiana Public Service Company LLC was founded.", category: "Founding" },
       { date: "Jun 20, 2023", event: "NiSource announced an agreement to sell a 19.9% minority equity interest in NIPSCO Holdings II LLC to Blackstone Infrastructure.", category: "Acquisition" },
-      { date: "2024", event: "NIPSCO continued executing regulated electric and gas investment programs in Indiana.", category: "Financing" },
       { date: "Jan 2, 2024", event: "NiSource completed the minority equity interest transaction with Blackstone Infrastructure.", category: "Acquisition" },
     ],
     sources: [
@@ -8684,7 +8519,6 @@ export const companies: PortCo[] = [
       { date: "Oct 21, 2014", event: "Blackstone formed Onyx Renewable Partners as a contracted distributed solar and storage platform in the United States.", category: "Financing" },
       { date: "Dec 24, 2020", event: "SDCL Energy Efficiency Income Trust agreed to acquire a portfolio of projects and a 50% interest in Onyx.", category: "Acquisition" },
       { date: "Feb 26, 2021", event: "SDCL became a 50% co-owner of Onyx, with Blackstone retaining the other 50% stake.", category: "Acquisition" },
-      { date: "2024", event: "Onyx reported more than 400 projects in operation and continued expanding its C&I solar and storage portfolio.", category: "Expansion" },
     ],
     sources: [
       { label: "Onyxrenewables — Onyx Renewables", url: "https://www.onyxrenewables.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -8743,7 +8577,6 @@ export const companies: PortCo[] = [
       { date: "2025", event: "The JV advanced development work for generation intended to support data center load growth.", category: "Other" },
       { date: "2025", event: "PPL / Blackstone Power JV was founded.", category: "Founding" },
       { date: "Jul 15, 2025", event: "PPL and Blackstone Infrastructure announced a joint venture to develop gas-fired generation in Pennsylvania.", category: "Financing" },
-      { date: "2026", event: "The venture remained in development, with construction subject to permitting and utility approvals.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — Blackstone — PPL / Blackstone Power JV", url: "https://investors.pplweb.com/2025-07-15-PPL-Corporation-and-Blackstone-Infrastructure-create-joint-venture-to-build-natural-gas-generation-in-Pennsylvania-in-support-of-data-center-development", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -8773,7 +8606,6 @@ export const companies: PortCo[] = [
       { date: "2013", event: "QTS became a public company through its IPO.", category: "IPO" },
       { date: "Jun 7, 2021", event: "QTS announced it would be acquired by Blackstone funds in a roughly $10 billion transaction.", category: "Acquisition" },
       { date: "Aug 31, 2021", event: "The acquisition by Blackstone funds was completed.", category: "Acquisition" },
-      { date: "2022", event: "QTS continued expanding hyperscale data center campuses to serve cloud and AI demand.", category: "Expansion" },
     ],
     sources: [
       { label: "Announcement date source — Blackstone — QTS Data Centers", url: "https://qtsdatacenters.com/news/qts-realty-trust-to-be-acquired-by-blackstone-funds-in-10-billion-transaction/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -8898,7 +8730,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1974", event: "Shermco Industries was founded.", category: "Founding" },
       { date: "2019", event: "Gryphon Investors acquired Shermco.", category: "Acquisition" },
-      { date: "2025", event: "Shermco continued serving utilities, data centers, and industrial customers with electrical field services.", category: "Other" },
       { date: "Aug 21, 2025", event: "Blackstone announced an agreement to acquire Shermco from Gryphon Investors.", category: "Acquisition" },
       { date: "Oct 27, 2025", event: "Gryphon Investors completed the sale of Shermco to Blackstone.", category: "Acquisition" },
     ],
@@ -8927,8 +8758,8 @@ export const companies: PortCo[] = [
     headquarters: "New York and Vermont",
     milestones: [
       { date: "Feb 23, 2010", event: "Transmission Developers announced CHPE, with Blackstone identified as the lead investor.", category: "Financing" },
-      { date: "2021", event: "New York selected CHPE to support the state's renewable energy and reliability goals.", category: "Other" },
-      { date: "2022", event: "Construction began on CHPE.", category: "Other" },
+      { date: "2021", event: "New York selected CHPE to support the state's renewable energy and reliability goals.", category: "Expansion" },
+      { date: "2022", event: "Construction began on CHPE.", category: "Expansion" },
       { date: "2026", event: "CHPE was expected to move toward completion and energization.", category: "Other" },
     ],
     sources: [
@@ -8959,7 +8790,6 @@ export const companies: PortCo[] = [
       { date: "Jul 16, 2024", event: "Blackstone announced a definitive agreement to acquire Trystar.", category: "Acquisition" },
       { date: "Aug 6, 2024", event: "Blackstone completed the acquisition of Trystar.", category: "Acquisition" },
       { date: "Sep 30, 2024", event: "Blackstone and Trystar completed the bolt-on acquisition of Salient.", category: "Acquisition" },
-      { date: "2025", event: "The combined platform continued serving backup and temporary power markets, including data centers and utilities.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Blackstone — Trystar", url: "https://www.blackstone.com/news/press/blackstone-to-acquire-trystar-premier-provider-of-backup-power-solutions/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -8985,12 +8815,10 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "New Mexico and Texas",
     milestones: [
-      { date: "2000", event: "PNM Resources, now TXNM Energy, was formed through the merger of Public Service Company of New Mexico and Texas-New Mexico Power.", category: "Other" },
-      { date: "2000", event: "TXNM Energy was founded.", category: "Founding" },
-      { date: "2024", event: "The company adopted the TXNM Energy name.", category: "Other" },
+      { date: "2000", event: "PNM Resources, now TXNM Energy, was formed through the merger of Public Service Company of New Mexico and Texas-New Mexico Power.", category: "Founding" },
       { date: "May 19, 2025", event: "TXNM Energy entered into an agreement to be acquired by Blackstone Infrastructure.", category: "Acquisition" },
       { date: "Aug 1, 2025", event: "TXNM reported that its second-quarter equity issuance included $400 million issued to affiliates of Blackstone Infrastructure Partners.", category: "Financing" },
-      { date: "Feb 20, 2026", event: "Reuters reported that FERC approved the Blackstone transaction, with other approvals still pending.", category: "Other" },
+      { date: "Feb 20, 2026", event: "Reuters reported that FERC approved the Blackstone transaction, with other approvals still pending.", category: "Expansion" },
     ],
     sources: [
       { label: "Txnmenergy — TXNM Energy", url: "https://www.txnmenergy.com/investors/acquisition.aspx", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -9020,8 +8848,7 @@ export const companies: PortCo[] = [
       { date: "2023", event: "Viridon was launched as a Blackstone-sponsored transmission development platform.", category: "Financing" },
       { date: "2023", event: "Viridon was founded.", category: "Founding" },
       { date: "2025", event: "Viridon advanced bids and development efforts across CAISO, MISO, ISO-NE, and New York transmission processes.", category: "Other" },
-      { date: "Jun 2, 2025", event: "CAISO sponsor-selection materials referenced the combined resources of Viridon and Blackstone.", category: "Other" },
-      { date: "Jan 8, 2026", event: "Utility Dive reported that MISO selected a Viridon project in southeast Wisconsin.", category: "Other" },
+      { date: "Jan 8, 2026", event: "Utility Dive reported that MISO selected a Viridon project in southeast Wisconsin.", category: "Expansion" },
     ],
     sources: [
       { label: "Viridon — Viridon", url: "https://viridon.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -9049,7 +8876,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2011", event: "Western LNG was founded.", category: "Founding" },
       { date: "Dec 30, 2024", event: "Western LNG announced a private placement of more than $150 million led by investors including Blackstone-backed capital.", category: "Financing" },
-      { date: "2025", event: "The company continued commercial and development work on its British Columbia LNG projects.", category: "Other" },
       { date: "Jan 14, 2025", event: "Western LNG said the new capital would help advance Ksi Lisims LNG and Prince Rupert Gas Transmission to FID.", category: "Other" },
     ],
     sources: [
@@ -9078,7 +8904,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1972", event: "Westwood Professional Services was founded.", category: "Founding" },
       { date: "2024", event: "Blackstone said management and employee shareholders would retain a minority stake.", category: "Acquisition" },
-      { date: "2024", event: "Westwood continued to support renewable, power, land development, and public infrastructure projects across the United States.", category: "Other" },
       { date: "Aug 7, 2024", event: "Blackstone announced a majority investment in Westwood Professional Services.", category: "Acquisition" },
     ],
     sources: [
@@ -9109,7 +8934,6 @@ export const companies: PortCo[] = [
       { date: "2025", event: "Development advanced with Kindle Energy as part of Blackstone's broader power generation buildout.", category: "Other" },
       { date: "2025", event: "Wolf Summit Energy was founded.", category: "Founding" },
       { date: "Nov 13, 2025", event: "Blackstone Energy Transition Partners announced a $1.2 billion investment to build Wolf Summit Energy in West Virginia.", category: "Financing" },
-      { date: "2026", event: "Wolf Summit remained under development.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — Blackstone — Wolf Summit Energy", url: "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-1-2-billion-investment-to-build-first-ever-natural-gas-power-generation-facility-in-west-virginia/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -9136,7 +8960,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2016", event: "Xpansiv was founded.", category: "Founding" },
       { date: "2021", event: "Xpansiv acquired APX and Evolution Markets to broaden market infrastructure capabilities.", category: "Acquisition" },
-      { date: "2022", event: "The platform continued building carbon and environmental commodity exchange infrastructure.", category: "Other" },
       { date: "Jul 6, 2022", event: "Blackstone announced a $400 million investment in Xpansiv.", category: "Financing" },
     ],
     sources: [
@@ -9227,7 +9050,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2025", event: "The company announced plans to expand across Texas and New Mexico with Blue Owl support.", category: "Expansion" },
       { date: "Sep 2025", event: "Gigabit Fiber disclosed approximately 500 route miles of conduit and connections to more than 50 data centers.", category: "Other" },
-      { date: "Sep 2025", event: "The company stated that management would remain invested and continue operating the business independently from Blue Owl's other fiber platforms.", category: "Financing" },
       { date: "Sep 15, 2025", event: "Gigabit Fiber announced that it had received a majority investment from a fund managed by Blue Owl Capital's Digital Infrastructure strategy.", category: "Acquisition" },
     ],
     sources: [
@@ -9256,7 +9078,6 @@ export const companies: PortCo[] = [
     headquarters: "Florida; Colorado; Georgia; Tennessee; Indiana; Arizona",
     milestones: [
       { date: "2022", event: "RadiusDC was founded.", category: "Founding" },
-      { date: "Sep 2022", event: "RadiusDC launched as a new North America metro edge data center platform under IPI Partners sponsorship.", category: "Expansion" },
       { date: "Aug 2024", event: "RadiusDC announced the acquisition of a network-centric data center in Miami.", category: "Acquisition" },
       { date: "Dec 2025", event: "RadiusDC announced the acquisition and expansion of the 55 Marietta carrier hotel in Atlanta.", category: "Acquisition" },
       { date: "Jan 6, 2025", event: "Blue Owl completed its acquisition of IPI Partners' business, bringing RadiusDC into Blue Owl's digital infrastructure strategy.", category: "Acquisition" },
@@ -9288,7 +9109,6 @@ export const companies: PortCo[] = [
     headquarters: "Florida",
     milestones: [
       { date: "May 2020", event: "South Reach announced the acquisition of Florida fiber and colocation assets from Resurgence IG.", category: "Acquisition" },
-      { date: "2024", event: "Corporate materials described more than 370 route miles of network and five edge colocation facilities.", category: "Other" },
       { date: "Oct 2025", event: "South Reach announced a major Florida fiber network expansion initiative.", category: "Other" },
       { date: "Jul 15, 2025", event: "Blue Owl completed the acquisition of South Reach Networks through a fund managed by its Digital Infrastructure strategy.", category: "Acquisition" },
     ],
@@ -9346,9 +9166,7 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Quebec",
     milestones: [
-      { date: "2025", event: "The platform continued developing AI-focused data center capacity in Canada.", category: "Expansion" },
-      { date: "2025", event: "5C Group / Hypertec Cloud was founded.", category: "Founding" },
-      { date: "Apr 10, 2025", event: "5C Group was formed through the combination of 5C Data Centers and Hypertec Cloud.", category: "Other" },
+      { date: "Apr 10, 2025", event: "5C Group was formed through the combination of 5C Data Centers and Hypertec Cloud.", category: "Founding" },
       { date: "Apr 10, 2025", event: "The platform announced the LaSalle campus and sovereign AI research hub initiative in Quebec.", category: "Other" },
       { date: "Jul 23, 2025", event: "5C Group announced that it had secured $835 million of capital, including equity financing led by Brookfield Asset Management.", category: "Financing" },
     ],
@@ -9379,10 +9197,9 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1990", event: "Boralex was founded in Quebec as a renewable energy producer.", category: "Founding" },
       { date: "2017", event: "La Caisse began supporting Boralex as a shareholder and lender, according to the March 2026 transaction announcement.", category: "Financing" },
-      { date: "Dec 31, 2025", event: "Boralex reported 3,783 MW of installed capacity and an 8.2 GW development and construction portfolio.", category: "Expansion" },
       { date: "Q4 2026", event: "The parties expected the Boralex take-private transaction to close by Q4 2026, subject to required approvals and other customary closing conditions.", category: "Acquisition" },
-      { date: "Mar 25, 2026", event: "Brookfield and La Caisse announced a definitive agreement to acquire Boralex for C$37.25 per share in cash.", category: "Acquisition" },
       { date: "Mar 25, 2026", event: "The transaction announcement stated that La Caisse would own 30% and Brookfield would own 70% of Boralex after closing.", category: "Financing" },
+      { date: "Mar 25, 2026", event: "Brookfield and La Caisse announced a definitive agreement to acquire Boralex for C$37.25 per share in cash.", category: "Acquisition" },
     ],
     management: [
       { name: "Patrick Decostre", title: "President and Chief Executive Officer" },
@@ -9419,7 +9236,6 @@ export const companies: PortCo[] = [
       { date: "2006", event: "California Bioenergy was founded.", category: "Founding" },
       { date: "Dec 22, 2022", event: "CalBio and Brookfield Renewable announced a strategic funding partnership of up to $500 million to develop RNG projects.", category: "Financing" },
       { date: "2023", event: "CalBio announced additional project funding and expansion activity beyond California.", category: "Financing" },
-      { date: "2024", event: "The company continued scaling dairy methane capture and renewable natural gas production.", category: "Other" },
     ],
     sources: [
       { label: "Calbioenergy — California Bioenergy", url: "https://www.calbioenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -9477,7 +9293,6 @@ export const companies: PortCo[] = [
     headquarters: "Multiple U.S. states and Canada",
     milestones: [
       { date: "2024", event: "Centersquare launched as a 17-market colocation platform in North America.", category: "Other" },
-      { date: "2024", event: "The platform continued integration and commercial repositioning under the Centersquare name.", category: "Other" },
       { date: "2024", event: "Centersquare was founded.", category: "Founding" },
       { date: "Jan 16, 2024", event: "Brookfield completed the acquisition of Cyxtera Technologies through its portfolio company, Evoque Data Center Solutions.", category: "Acquisition" },
       { date: "Apr 2, 2024", event: "Brookfield combined Evoque and Cyxtera under the new Centersquare brand.", category: "Other" },
@@ -9507,7 +9322,7 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Texas, Louisiana, Mississippi, Alabama, Georgia, South Carolina, North Carolina, Virginia, Maryland, Tennessee and New Jersey",
     milestones: [
-      { date: "1962", event: "Colonial Pipeline began operations.", category: "Other" },
+      { date: "1962", event: "Colonial Pipeline began operations.", category: "Expansion" },
       { date: "1962", event: "Colonial Enterprises, Inc. was founded.", category: "Founding" },
       { date: "2017", event: "Colonial completed system restoration following a major cybersecurity incident, underscoring the asset's importance to East Coast fuel markets.", category: "Other" },
       { date: "Apr 3, 2025", event: "Brookfield Infrastructure announced an agreement to acquire Colonial Enterprises.", category: "Acquisition" },
@@ -9537,10 +9352,9 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "Maryland",
     milestones: [
-      { date: "1978", event: "Cove Point began operating as an LNG import terminal.", category: "Other" },
+      { date: "1978", event: "Cove Point began operating as an LNG import terminal.", category: "Expansion" },
       { date: "2017", event: "The LNG export project at Cove Point entered service.", category: "Expansion" },
       { date: "Dec 2019", event: "Brookfield Super-Core Infrastructure Partners completed acquisition of a 25% interest in Cove Point LNG from Dominion Energy.", category: "Acquisition" },
-      { date: "Sep 1, 2023", event: "Berkshire Hathaway Energy completed acquisition of Dominion's remaining stake; Brookfield remained a 25% owner.", category: "Acquisition" },
     ],
     sources: [
       { label: "Close date source — Brookfield Asset Management — Cove Point LNG, LP", url: "https://investors.dominionenergy.com/news/press-release-details/2019/Dominion-Energy-Completes-Equity-Recapitalization-of-Cove-Point/default.aspx", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -9595,9 +9409,8 @@ export const companies: PortCo[] = [
     investmentYear: 2026,
     headquarters: "Florida",
     milestones: [
-      { date: "2025", event: "The transaction was structured in phases with an eventual target ownership interest of approximately 19.9%.", category: "Other" },
+      { date: "2025", event: "The transaction was structured in phases with an eventual target ownership interest of approximately 19.9%.", category: "Acquisition" },
       { date: "Aug 5, 2025", event: "Duke Energy announced a partnership with Brookfield to fund part of Duke Energy Florida's capital plan.", category: "Financing" },
-      { date: "2026", event: "Duke Energy continued to control and operate the utility.", category: "Other" },
       { date: "Mar 3, 2026", event: "The initial closing occurred and Brookfield acquired a 9.2% interest in Duke Energy Florida.", category: "Financing" },
     ],
     sources: [
@@ -9623,7 +9436,7 @@ export const companies: PortCo[] = [
     investmentYear: 2018,
     headquarters: "Ontario and multiple Canadian provinces",
     milestones: [
-      { date: "1950", event: "The business that became Enercare began operating in Ontario's residential energy services market.", category: "Other" },
+      { date: "1950", event: "The business that became Enercare began operating in Ontario's residential energy services market.", category: "Expansion" },
       { date: "2014", event: "Enercare became an independent public company after being spun out from The Consumers' Waterheater Income Fund structure.", category: "Other" },
       { date: "Aug 14, 2018", event: "Brookfield Infrastructure agreed to acquire Enercare.", category: "Acquisition" },
       { date: "Oct 16, 2018", event: "Brookfield Infrastructure announced completion of the acquisition of Enercare.", category: "Acquisition" },
@@ -9652,8 +9465,7 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Alberta",
     milestones: [
-      { date: "2020", event: "Entropy was formed within Advantage Energy's carbon capture initiative.", category: "Other" },
-      { date: "2020", event: "Entropy Inc. was founded.", category: "Founding" },
+      { date: "2020", event: "Entropy was formed within Advantage Energy's carbon capture initiative.", category: "Founding" },
       { date: "Mar 28, 2022", event: "Brookfield Renewable announced a C$300 million investment agreement with Entropy.", category: "Financing" },
       { date: "Dec 14, 2023", event: "Canada Growth Fund announced a strategic investment in Entropy and a carbon credit offtake structure.", category: "Financing" },
       { date: "2025", event: "Entropy announced acquisitions and project steps tied to carbon storage hub development.", category: "Other" },
@@ -9780,7 +9592,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2007", event: "Company history materials trace the business to the original Geronimo platform founded in 2007.", category: "Founding" },
       { date: "2019", event: "National Grid acquired Geronimo Energy and combined it with other US renewables activities under National Grid Renewables.", category: "Acquisition" },
-      { date: "2025", event: "Company materials reported more than 2 GW in operation, about 1 GW under construction, and a development pipeline exceeding 20 GW.", category: "Other" },
       { date: "May 30, 2025", event: "National Grid completed the sale of National Grid Renewables to Brookfield Asset Management and institutional partners, including Brookfield Renewable Partners.", category: "Acquisition" },
       { date: "May 30, 2025", event: "National Grid Renewables announced that it would move forward under the Geronimo Power name.", category: "Other" },
     ],
@@ -9810,7 +9621,6 @@ export const companies: PortCo[] = [
     investmentYear: 2014,
     headquarters: "Pennsylvania",
     milestones: [
-      { date: "1910", event: "Holtwood entered service as one of the older hydro facilities on the river.", category: "Expansion" },
       { date: "Mar 28, 2014", event: "Brookfield Renewable and institutional partners completed the acquisition of an initial 33% economic interest in Safe Harbor.", category: "Acquisition" },
       { date: "May 15, 2014", event: "Brookfield Renewable announced an agreement to acquire the remaining interest in the 417 MW Safe Harbor hydro facility.", category: "Acquisition" },
       { date: "Aug 8, 2014", event: "Brookfield Renewable completed its acquisition of the remaining interest in Safe Harbor.", category: "Acquisition" },
@@ -9845,9 +9655,8 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Multiple US states and Canadian provinces",
     milestones: [
-      { date: "2003", event: "HomeServe launched its first North American utility partnership, marking the start of the region's operating history.", category: "Other" },
       { date: "2003", event: "HomeServe North America was founded.", category: "Founding" },
-      { date: "2018", event: "HomeServe reported roughly 3.6 million North American customers across the United States and Canada.", category: "Other" },
+      { date: "2003", event: "HomeServe launched its first North American utility partnership, marking the start of the region's operating history.", category: "Other" },
       { date: "May 19, 2022", event: "Brookfield announced an offer to acquire HomeServe plc.", category: "Acquisition" },
       { date: "Jan 4, 2023", event: "HomeServe's scheme of arrangement became effective and Brookfield completed the acquisition of HomeServe plc.", category: "Acquisition" },
       { date: "Oct 2, 2023", event: "HomeServe marked 20 years in North America and reported nearly 5 million customers in the region.", category: "Other" },
@@ -9880,10 +9689,9 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2000", event: "Hotwire Communications was founded in South Florida.", category: "Founding" },
       { date: "Apr 29, 2021", event: "Blackstone announced its investment in Hotwire Communications in partnership with the founders.", category: "Financing" },
-      { date: "2025", event: "Brookfield identified Hotwire as a scaled residential fiber platform serving more than 300,000 customers.", category: "Other" },
       { date: "Sep 3, 2025", event: "Brookfield Infrastructure completed its acquisition of control of Hotwire Communications.", category: "Acquisition" },
-      { date: "Jun 13, 2025", event: "Hotwire announced a strategic investment by Brookfield Infrastructure and Brookfield's agreement to acquire Blackstone's stake.", category: "Acquisition" },
       { date: "Sep 3, 2025", event: "Brookfield later disclosed that it had acquired control of Hotwire Communications.", category: "Acquisition" },
+      { date: "Jun 13, 2025", event: "Hotwire announced a strategic investment by Brookfield Infrastructure and Brookfield's agreement to acquire Blackstone's stake.", category: "Acquisition" },
     ],
     sources: [
       { label: "Hotwirecommunication — Hotwire Communications", url: "https://www.hotwirecommunication.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -9913,12 +9721,11 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Arizona",
     milestones: [
+      { date: "2022", event: "Intel Arizona Joint Venture was founded.", category: "Founding" },
       { date: "2022", event: "The parties structured the arrangement so that Brookfield would hold a 49% interest and Intel would hold 51%.", category: "Other" },
       { date: "2022", event: "The joint venture supported construction of new semiconductor manufacturing capacity at Intel's Ocotillo campus in Chandler.", category: "Expansion" },
-      { date: "2022", event: "Intel Arizona Joint Venture was founded.", category: "Founding" },
       { date: "Q4 2022", event: "Intel closed the Brookfield transaction, forming Arizona Fab LLC with Intel owning 51% and Brookfield owning 49%.", category: "Financing" },
       { date: "Aug 23, 2022", event: "Brookfield Infrastructure and Intel announced a definitive agreement for Brookfield to fund up to $15 billion for Intel's Arizona fab expansion.", category: "Financing" },
-      { date: "2024", event: "Intel continued positioning the Arizona expansion as part of its foundry and manufacturing buildout strategy.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Brookfield Asset Management — Intel Arizona Joint Venture", url: "https://bip.brookfield.com/press-releases/bip/brookfield-infrastructure-signs-definitive-agreement-intel", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -9974,10 +9781,9 @@ export const companies: PortCo[] = [
     headquarters: "Multiple US states",
     milestones: [
       { date: "2021", event: "Luminace was founded.", category: "Founding" },
-      { date: "2021", event: "Luminace was formed from Brookfield distributed generation businesses.", category: "Other" },
       { date: "Jul 21, 2021", event: "Brookfield Renewable's Luminace platform announced completion of its brand launch and identified itself as a Brookfield Renewable company.", category: "Financing" },
       { date: "2025", event: "Brookfield Renewable completed a majority sale of Luminace as part of its capital-recycling program.", category: "Divestiture" },
-      { date: "Oct 23, 2025", event: "European Commission merger review materials identified Brookfield and Temasek as acquiring joint control of Luminace.", category: "Acquisition" },
+      { date: "2025", event: "Temasek invested in Luminace.", category: "Financing" },
       { date: "Jan 30, 2026", event: "Brookfield Renewable highlighted the 2025 majority sale of Luminace in its annual results release.", category: "Divestiture" },
     ],
     sources: [
@@ -10069,9 +9875,7 @@ export const companies: PortCo[] = [
     headquarters: "Ontario",
     milestones: [
       { date: "Nov 2022", event: "Brookfield Infrastructure Income Fund reports identify the Ontario Wind investment as acquired in November 2022.", category: "Acquisition" },
-      { date: "2023", event: "The fund continued to report Ontario Wind as part of its private renewable-power holdings.", category: "Other" },
       { date: "Sep 30, 2025", event: "Brookfield's quarterly holdings report again listed Ontario Wind among private equity investments.", category: "Other" },
-      { date: "Feb 2, 2026", event: "Brookfield's annual report continued to show Ontario Wind as an active private investment.", category: "Financing" },
     ],
     sources: [
       { label: "Investment date source — Brookfield Asset Management — Ontario Wind", url: "https://privatewealth.brookfield.com/sites/default/files/funds/tender-offer-funds/financial-reports/brookfield-infrastructure-income-fund-annual-report.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT" },
@@ -10098,10 +9902,7 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "2008", event: "Origis Energy was founded.", category: "Founding" },
-      { date: "2021", event: "Company history materials identified Antin Infrastructure Partners as majority shareholder and as committing a multi-billion-dollar capital injection.", category: "Acquisition" },
       { date: "Oct 18, 2021", event: "Antin Infrastructure Partners announced a definitive agreement to acquire a majority stake in Origis Energy.", category: "Acquisition" },
-      { date: "2023", event: "Origis marked 15 years of operations and highlighted its US utility-scale solar and storage platform.", category: "Other" },
-      { date: "2025", event: "Origis continued developing and operating utility-scale solar and storage projects across the United States.", category: "Other" },
       { date: "Jan 15, 2025", event: "Origis announced a strategic investment of more than $1 billion from Brookfield and Antin, welcoming Brookfield as a new significant investor.", category: "Financing" },
     ],
     sources: [
@@ -10135,7 +9936,6 @@ export const companies: PortCo[] = [
       { date: "1988", event: "Rockpoint's 2025 investor materials describe AECO Hub operations commencing in 1988 as part of the portfolio's operating history.", category: "Other" },
       { date: "Jun 2015", event: "Niska Gas Storage Partners announced an agreement to be acquired by Brookfield Infrastructure for approximately $911.9 million including assumed debt.", category: "Acquisition" },
       { date: "Jul 19, 2016", event: "Brookfield Infrastructure acquired an effective 40% interest in Niska Gas Storage, which was later rebranded as Rockpoint Gas Storage.", category: "Acquisition" },
-      { date: "2021", event: "A CPUC filing described Brookfield's consolidation of its storage assets under Rockpoint Gas Storage.", category: "Other" },
       { date: "Sep 26, 2025", event: "Rockpoint launched its initial public offering and reported six facilities with approximately 280 Bcf of effective working gas storage capacity.", category: "IPO" },
     ],
     sources: [
@@ -10167,7 +9967,6 @@ export const companies: PortCo[] = [
       { date: "2017", event: "Scout Clean Energy was founded in Boulder, Colorado.", category: "Founding" },
       { date: "2020", event: "Scout expanded beyond wind into utility-scale solar and battery storage development.", category: "Expansion" },
       { date: "Dec 16, 2022", event: "Brookfield Renewable finalized its acquisition of Scout Clean Energy from Quinbrook Infrastructure Partners.", category: "Acquisition" },
-      { date: "2025", event: "Scout remained one of Brookfield's US renewable development platforms.", category: "Other" },
       { date: "Mar 3, 2026", event: "Brookfield identified Scout assets as part of the seed portfolio for the newly launched Northview Energy platform.", category: "Other" },
     ],
     sources: [
@@ -10195,10 +9994,8 @@ export const companies: PortCo[] = [
     investmentYear: 2018,
     headquarters: "31 US states",
     milestones: [
-      { date: "1996", event: "Company history materials identify 1996 as the founding year.", category: "Other" },
-      { date: "1996", event: "Service Experts was founded.", category: "Founding" },
+      { date: "1996", event: "Company history materials identify 1996 as the founding year.", category: "Founding" },
       { date: "Oct 16, 2018", event: "Brookfield Infrastructure completed its acquisition of Enercare, including the Service Experts home-services platform.", category: "Acquisition" },
-      { date: "2024", event: "Company materials described more than 75 service centers in 31 states and nearly 3,000 employees.", category: "Other" },
     ],
     sources: [
       { label: "Serviceexperts — Service Experts", url: "https://www.serviceexperts.com/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -10254,9 +10051,7 @@ export const companies: PortCo[] = [
     headquarters: "Tennessee and North Carolina",
     milestones: [
       { date: "Nov 15, 2012", event: "Low Impact Hydropower Institute materials identify Brookfield's purchase of the former Alcoa hydro assets and the use of the Smoky Mountain Hydro name.", category: "Acquisition" },
-      { date: "2023", event: "Brookfield Infrastructure Income Fund reported U.S. Hydros (Smoky Mountain) as part of its renewable-power holdings.", category: "Other" },
       { date: "2024", event: "TVA entered into a 10-year power purchase agreement with Argo and Brookfield's Smoky Mountain hydro facilities.", category: "Acquisition" },
-      { date: "2025", event: "Brookfield continued to report the hydro portfolio in fund materials.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Brookfield Asset Management — Smoky Mountain Hydroelectric Facilities", url: "https://lowimpacthydro.org/lihi-certificate-18-smoky-mountain-project-north-carolina/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -10285,8 +10080,6 @@ export const companies: PortCo[] = [
       { date: "2004", event: "Standard Solar was founded.", category: "Founding" },
       { date: "2008", event: "Standard Solar completed a major commercial rooftop project for the US Department of Energy.", category: "Other" },
       { date: "Sep 29, 2022", event: "Brookfield announced the closing of its acquisition of Standard Solar and committed additional growth capital alongside the Scout Clean Energy agreement.", category: "Acquisition" },
-      { date: "2024", event: "Standard Solar marked 20 years of operations.", category: "Other" },
-      { date: "2025", event: "Company materials described more than 500 MW owned, operated, and under construction across more than 20 states and the District of Columbia.", category: "Other" },
       { date: "Mar 16, 2026", event: "Standard Solar acquired 48.4 MW Community Solar Portfolio (NM) from Pluma Construction / ForeFront Power.", category: "Acquisition" },
     ],
     sources: [
@@ -10316,11 +10109,10 @@ export const companies: PortCo[] = [
     headquarters: "Multiple US states and Canadian provinces",
     milestones: [
       { date: "2014", event: "TerraForm Power was founded.", category: "Founding" },
-      { date: "Mar 7, 2017", event: "Brookfield announced that it would acquire a controlling stake and assume sponsorship of TerraForm Power.", category: "Acquisition" },
       { date: "Oct 16, 2017", event: "Brookfield and its institutional partners closed the acquisition of a 51% interest in TerraForm Power and Brookfield assumed sponsorship.", category: "Acquisition" },
-      { date: "Jan 13, 2020", event: "Brookfield Renewable and TerraForm Power announced a definitive merger agreement.", category: "Other" },
+      { date: "Mar 7, 2017", event: "Brookfield announced that it would acquire a controlling stake and assume sponsorship of TerraForm Power.", category: "Acquisition" },
       { date: "Jul 31, 2020", event: "TerraForm Power closed its merger with Brookfield Renewable and was taken private.", category: "Other" },
-      { date: "2022", event: "Brookfield continued to report TerraForm as part of its global renewable-power portfolio.", category: "Other" },
+      { date: "Jan 13, 2020", event: "Brookfield Renewable and TerraForm Power announced a definitive merger agreement.", category: "Other" },
     ],
     sources: [
       { label: "Terraform — TerraForm Power", url: "https://www.terraform.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -10348,7 +10140,7 @@ export const companies: PortCo[] = [
     investmentYear: 2026,
     headquarters: "California",
     milestones: [
-      { date: "2005", event: "CAISO selected the Trans Bay Cable project as the transmission solution for the San Francisco area.", category: "Other" },
+      { date: "2005", event: "CAISO selected the Trans Bay Cable project as the transmission solution for the San Francisco area.", category: "Expansion" },
       { date: "2010", event: "The cable entered commercial service.", category: "Other" },
       { date: "2010", event: "Trans Bay Cable LLC was founded.", category: "Founding" },
       { date: "Jul 16, 2019", event: "NextEra Energy Transmission announced completion of its acquisition of Trans Bay Cable from SteelRiver Infrastructure Fund North America affiliates.", category: "Other" },
@@ -10408,7 +10200,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Oct 11, 2022", event: "Cameco and Brookfield announced a strategic partnership to acquire Westinghouse.", category: "Acquisition" },
       { date: "Nov 7, 2023", event: "Cameco and Brookfield completed the acquisition of Westinghouse.", category: "Acquisition" },
-      { date: "Nov 7, 2023", event: "Public materials stated that Brookfield would own 51% and Cameco would own 49%.", category: "Other" },
       { date: "1886", event: "Westinghouse traces its origins to the original Westinghouse company founded in 1886.", category: "Founding" },
       { date: "1886", event: "Westinghouse Electric Company was founded.", category: "Founding" },
     ],
@@ -10441,7 +10232,6 @@ export const companies: PortCo[] = [
       { date: "2020", event: "Acadia Renewable Energy was founded.", category: "Founding" },
       { date: "Aug 25, 2020", event: "Carlyle and BNRG announced the acquisition of a Maine solar-development portfolio through newly established affiliate Acadia Renewable Energy.", category: "Acquisition" },
       { date: "2024", event: "Acadia announced a joint venture with Alternus to develop up to 200 MW of microgrid projects in New York.", category: "Other" },
-      { date: "2024", event: "Acadia continued to position itself as a U.S. solar and storage development platform.", category: "Other" },
     ],
     sources: [
       { label: "Acadiaenergyllc — Acadia Renewable Energy", url: "https://acadiaenergyllc.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -10469,9 +10259,8 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2019", event: "AlphaStruxure was founded.", category: "Founding" },
       { date: "Apr 12, 2019", event: "Carlyle and Schneider Electric announced the launch of AlphaStruxure.", category: "Financing" },
-      { date: "2022", event: "AlphaStruxure was selected for the Montgomery County electric-bus depot infrastructure project.", category: "Other" },
+      { date: "2022", event: "AlphaStruxure was selected for the Montgomery County electric-bus depot infrastructure project.", category: "Expansion" },
       { date: "2023", event: "AlphaStruxure announced the New Terminal One microgrid project at JFK Airport.", category: "Other" },
-      { date: "2024", event: "The company continued developing and operating energy-as-a-service and microgrid infrastructure in the United States.", category: "Other" },
     ],
     sources: [
       { label: "Alphastruxure — AlphaStruxure", url: "https://alphastruxure.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -10529,8 +10318,7 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Arizona; Idaho; Iowa; Minnesota; Ohio; Pennsylvania; Wisconsin",
     milestones: [
-      { date: "2007", event: "Company materials state that the business was formed through the merger of TRC and CoVault.", category: "Other" },
-      { date: "2007", event: "ARK Data Centers was founded.", category: "Founding" },
+      { date: "2007", event: "Company materials state that the business was formed through the merger of TRC and CoVault.", category: "Founding" },
       { date: "Dec 22, 2021", event: "Carlyle announced an agreement to acquire Involta.", category: "Acquisition" },
       { date: "Feb 1, 2022", event: "Carlyle completed the acquisition of ARK Data Centers, then operating as Involta.", category: "Acquisition" },
       { date: "May 15, 2024", event: "Involta rebranded as ARK Data Centers.", category: "Other" },
@@ -10594,10 +10382,9 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2019", event: "CAG Holdings / The New Terminal One at JFK was founded.", category: "Founding" },
       { date: "Sep 19, 2019", event: "Carlyle identified CAG Holdings as a portfolio company of Carlyle Global Infrastructure Opportunity Fund and its dedicated U.S.-based airport infrastructure platform.", category: "Financing" },
-      { date: "Dec 13, 2021", event: "New York announced the consortium selected to develop the New Terminal One at JFK.", category: "Other" },
+      { date: "Dec 13, 2021", event: "New York announced the consortium selected to develop the New Terminal One at JFK.", category: "Expansion" },
       { date: "Jun 10, 2022", event: "The New Terminal One consortium announced financial close and full notice to proceed.", category: "Financing" },
       { date: "Jun 2023", event: "Construction activity accelerated at the site as phased demolition and major works progressed.", category: "Other" },
-      { date: "2024", event: "Public project updates reported continued structural and foundation progress ahead of the first phase opening.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — Carlyle Infrastructure — CAG Holdings / The New Terminal One at JFK", url: "https://www.carlyle.com/media-room/news-release-archive/dr-gerrard-p-bushell-named-executive-chair-new-terminal-one", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -10624,9 +10411,8 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Southeastern United States",
     milestones: [
-      { date: "2019", event: "Carlyle materials later referenced 2019 pre-launch planning for Cardinal Renewables.", category: "Other" },
-      { date: "2020", event: "Carlyle said the platform launched with 12 operating assets and a broader development pipeline.", category: "Other" },
       { date: "2020", event: "Cardinal Renewables was founded.", category: "Founding" },
+      { date: "2020", event: "Carlyle said the platform launched with 12 operating assets and a broader development pipeline.", category: "Other" },
       { date: "Jan 24, 2020", event: "Carlyle's Renewable and Sustainable Energy Fund completed its original Cardinal Renewables investment with Alchemy Renewable Energy.", category: "Financing" },
       { date: "Jan 28, 2020", event: "Alchemy Renewable Energy announced its partnership with Carlyle to form Cardinal Renewables.", category: "Other" },
       { date: "Nov 13, 2020", event: "Cardinal Renewables announced a power purchase agreement for the Twittys Creek solar project.", category: "Acquisition" },
@@ -10658,8 +10444,7 @@ export const companies: PortCo[] = [
       { date: "2021", event: "Copia Power was founded.", category: "Founding" },
       { date: "Mar 2021", event: "Copia Power states that Carlyle invested in Birch Infrastructure and simultaneously launched Copia Power.", category: "Financing" },
       { date: "2024", event: "Copia said its western solar and storage development portfolio exceeded 17 GW.", category: "Other" },
-      { date: "Apr 2, 2024", event: "Copia announced a $300 million corporate credit facility.", category: "Other" },
-      { date: "2025", event: "Company materials reported more than 1,500 MW and 4,469 MWh operating or under construction and a broader multi-sector pipeline.", category: "Other" },
+      { date: "Apr 2, 2024", event: "Copia announced a $300 million corporate credit facility.", category: "Financing" },
     ],
     sources: [
       { label: "Copiapower — Copia Power", url: "https://www.copiapower.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -10689,7 +10474,6 @@ export const companies: PortCo[] = [
       { date: "2020", event: "Public leadership materials state that Jeremiah Ashcroft became Chief Executive Officer.", category: "Management" },
       { date: "Jan 2021", event: "Company materials state that the Crescent Midstream name was unveiled.", category: "Other" },
       { date: "Sep 17, 2024", event: "Crescent announced selection to develop an integrated carbon capture solution for an Entergy Louisiana natural-gas power plant.", category: "Other" },
-      { date: "2025", event: "Crescent announced support for a DOE-selected offshore carbon sequestration project in Louisiana.", category: "Other" },
       { date: "Feb 18, 2026", event: "Crescent completed a $600 million debt capital raise and refinancing.", category: "Financing" },
     ],
     sources: [
@@ -10839,11 +10623,9 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Multiple US states",
     milestones: [
-      { date: "2004", event: "Public company descriptions identify 2004 as CitySwitch's founding year.", category: "Other" },
-      { date: "2004", event: "CitySwitch was founded.", category: "Founding" },
+      { date: "2004", event: "Public company descriptions identify 2004 as CitySwitch's founding year.", category: "Founding" },
       { date: "Sep 14, 2021", event: "CBRE Investment Management made a strategic acquisition and follow-on financial commitment to CitySwitch.", category: "Acquisition" },
       { date: "2025", event: "CitySwitch announced a debt-capital package that included a $125 million rated note placement, according to CBRE IM.", category: "Other" },
-      { date: "2025", event: "CitySwitch continued developing and operating communications infrastructure throughout the United States.", category: "Other" },
     ],
     sources: [
       { label: "Cityswitch — CitySwitch", url: "https://www.cityswitch.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -10897,7 +10679,6 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Texas and California",
     milestones: [
-      { date: "2025", event: "Public materials described the portfolio as one of the larger US stand-alone battery storage platforms.", category: "Other" },
       { date: "May 15, 2025", event: "ENGIE and CBRE IM announced a partnership covering a 2.4 GW portfolio of battery storage assets in Texas and California, with CBRE IM investing in the portfolio while ENGIE retained control.", category: "Acquisition" },
       { date: "May 15, 2025", event: "ENGIE stated that it would retain the controlling share and continue to operate and manage the portfolio.", category: "Other" },
     ],
@@ -10926,8 +10707,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Jan 17, 2023", event: "Forum Mobility announced the closing of a $400 million joint venture with CBRE Investment Management and Homecoming Capital.", category: "Financing" },
       { date: "Jan 17, 2023", event: "The company also announced the closing of a $15 million Series A financing.", category: "Financing" },
-      { date: "2024", event: "Forum continued building charging infrastructure for zero-emission trucking around California freight hubs.", category: "Other" },
-      { date: "2025", event: "The platform remained focused on heavy-duty charging and fleet electrification infrastructure.", category: "Other" },
     ],
     sources: [
       { label: "Forummobility — Forum Mobility", url: "https://forummobility.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -10988,7 +10767,6 @@ export const companies: PortCo[] = [
       { date: "Jul 2, 2021", event: "CBRE Caledon completed the acquisition of WANRack after receiving regulatory approvals.", category: "Acquisition" },
       { date: "2023", event: "WANRack expanded through the KwiKom acquisition.", category: "Expansion" },
       { date: "2025", event: "CBRE IM announced the strategic merger of WANRack and Gateway Fiber.", category: "Other" },
-      { date: "2025", event: "Company materials stated that WANRack continued serving schools, municipalities, enterprises, and broadband communities across the continental United States.", category: "Other" },
     ],
     sources: [
       { label: "Wanrack — WANRack", url: "https://www.wanrack.com/about", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -11014,7 +10792,7 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Ontario",
     milestones: [
-      { date: "Nov 2013", event: "Construction began on Adelaide Wind.", category: "Other" },
+      { date: "Nov 2013", event: "Construction began on Adelaide Wind.", category: "Expansion" },
       { date: "Aug 2014", event: "Adelaide Wind reached commercial operation.", category: "Expansion" },
       { date: "Sep 29, 2025", event: "CC&L Infrastructure announced the acquisition of a 49% interest in Adelaide Wind from NextEra Energy Resources.", category: "Acquisition" },
     ],
@@ -11068,7 +10846,7 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Ontario",
     milestones: [
-      { date: "Dec 2015", event: "Armow Wind Farm began commercial operations.", category: "Other" },
+      { date: "Dec 2015", event: "Armow Wind Farm began commercial operations.", category: "Expansion" },
       { date: "Dec 2024", event: "CC&L Infrastructure made its initial investment in Armow Wind Farm by acquiring a significant interest from Pattern Energy.", category: "Acquisition" },
       { date: "Jan 7, 2025", event: "CC&L Infrastructure announced the acquisition of a significant interest in Armow Wind Farm from Pattern Energy.", category: "Acquisition" },
     ],
@@ -11122,7 +10900,7 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Ontario",
     milestones: [
-      { date: "Nov 2013", event: "Construction began on Bornish Wind.", category: "Other" },
+      { date: "Nov 2013", event: "Construction began on Bornish Wind.", category: "Expansion" },
       { date: "Aug 2014", event: "Bornish Wind reached commercial operation.", category: "Expansion" },
       { date: "Sep 29, 2025", event: "CC&L Infrastructure announced the acquisition of a 49% interest in Bornish Wind from NextEra Energy Resources.", category: "Acquisition" },
     ],
@@ -11149,7 +10927,7 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Ontario",
     milestones: [
-      { date: "Aug 2014", event: "Construction began on Goshen Wind.", category: "Other" },
+      { date: "Aug 2014", event: "Construction began on Goshen Wind.", category: "Expansion" },
       { date: "Feb 2015", event: "Goshen Wind reached commercial operation.", category: "Expansion" },
       { date: "Sep 29, 2025", event: "CC&L Infrastructure announced the acquisition of a 49% interest in Goshen Wind from NextEra Energy Resources.", category: "Acquisition" },
     ],
@@ -11203,8 +10981,8 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Ontario",
     milestones: [
-      { date: "Sep 2013", event: "Construction began on Grand Renewable Wind Farm.", category: "Other" },
-      { date: "Dec 2014", event: "Grand Renewable Wind Farm began commercial operations.", category: "Other" },
+      { date: "Sep 2013", event: "Construction began on Grand Renewable Wind Farm.", category: "Expansion" },
+      { date: "Dec 2014", event: "Grand Renewable Wind Farm began commercial operations.", category: "Expansion" },
       { date: "Dec 2024", event: "CC&L Infrastructure made its initial investment in Grand Renewable Wind Farm by acquiring a significant interest from Pattern Energy.", category: "Acquisition" },
       { date: "Jan 7, 2025", event: "CC&L Infrastructure announced the acquisition of a significant interest in Grand Renewable Wind Farm from Pattern Energy.", category: "Acquisition" },
     ],
@@ -11341,7 +11119,7 @@ export const companies: PortCo[] = [
     investmentYear: 2014,
     headquarters: "Ontario",
     milestones: [
-      { date: "2014", event: "Construction began on Kingston Solar Project.", category: "Other" },
+      { date: "2014", event: "Construction began on Kingston Solar Project.", category: "Expansion" },
       { date: "Jul 2014", event: "CC&L Infrastructure made its initial investment in Kingston Solar Project.", category: "Financing" },
       { date: "Sep 2015", event: "Kingston Solar Project achieved commercial operation.", category: "Expansion" },
     ],
@@ -11394,8 +11172,7 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "British Columbia",
     milestones: [
-      { date: "2011", event: "Construction began on Long Lake Hydro Project.", category: "Other" },
-      { date: "2014", event: "British Columbia project materials listed Long Lake as completed.", category: "Other" },
+      { date: "2011", event: "Construction began on Long Lake Hydro Project.", category: "Expansion" },
       { date: "Mar 2019", event: "CC&L Infrastructure made its initial investment in Long Lake Hydro Project.", category: "Financing" },
     ],
     sources: [
@@ -11453,7 +11230,7 @@ export const companies: PortCo[] = [
       { date: "Jul 3, 2014", event: "Balfour Beatty, CC&L affiliate Connor Clark & Lunn Traditional Infrastructure, and Gracorp reached financial close on the North Island Hospitals Project.", category: "Financing" },
       { date: "2015", event: "Construction advanced under the Tandem Health Partners consortium.", category: "Other" },
       { date: "2017", event: "The new hospitals opened to patients and replaced aging acute-care infrastructure in the region.", category: "Expansion" },
-      { date: "Sep 2017", event: "Infrastructure BC reported substantial completion of the Campbell River and Comox Valley hospitals.", category: "Other" },
+      { date: "Sep 2017", event: "Infrastructure BC reported substantial completion of the Campbell River and Comox Valley hospitals.", category: "Expansion" },
     ],
     sources: [
       { label: "Investment date source — CC&L — North Island Hospitals Project", url: "https://cclinfrastructure.cclgroup.com/cases/north-island-hospitals-project/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -11481,10 +11258,9 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2016", event: "Phase I of Northside opened next to the University of Texas at Dallas.", category: "Expansion" },
       { date: "2017", event: "Additional residential and retail components were added as the project expanded.", category: "Expansion" },
-      { date: "2019", event: "Further phases increased unit count and amenity space at the community.", category: "Other" },
       { date: "2021", event: "The fourth phase completed the build-out of the approximately 1,200-unit development.", category: "Other" },
-      { date: "Jan 13, 2025", event: "CC&L Infrastructure and Bestinver Infra announced the acquisition of a majority stake in Northside.", category: "Acquisition" },
       { date: "Jan 13, 2025", event: "Balfour Beatty Communities retained a minority ownership interest after CC&L Infrastructure and Bestinver acquired Tikehau Star Infra's interest.", category: "Acquisition" },
+      { date: "Jan 13, 2025", event: "CC&L Infrastructure and Bestinver Infra announced the acquisition of a majority stake in Northside.", category: "Acquisition" },
     ],
     sources: [
       { label: "Announcement date source — CC&L — Northside Student Housing Community", url: "https://cclinfrastructure.cclgroup.com/insight/news-connor-clark-lunn-infrastructure-and-bestinver-infra-acquire-majority-stake-in-northside-student-housing/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -11510,7 +11286,7 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Wisconsin",
     milestones: [
-      { date: "2015", event: "Dairyland Power Cooperative selected the project to support its renewable energy supply strategy.", category: "Other" },
+      { date: "2015", event: "Dairyland Power Cooperative selected the project to support its renewable energy supply strategy.", category: "Expansion" },
       { date: "2016", event: "Construction progressed in Lafayette County, Wisconsin.", category: "Other" },
       { date: "2017", event: "The 98 MW wind farm entered commercial operation.", category: "Expansion" },
       { date: "Sep 2, 2020", event: "EDP Renewables agreed to sell an 80% stake in a U.S. portfolio including Quilt Block to CC&L Infrastructure.", category: "Acquisition" },
@@ -11541,7 +11317,7 @@ export const companies: PortCo[] = [
     investmentYear: 2014,
     headquarters: "Ontario",
     milestones: [
-      { date: "2014", event: "Construction began on the three solar facilities in northwestern Ontario.", category: "Other" },
+      { date: "2014", event: "Construction began on the three solar facilities in northwestern Ontario.", category: "Expansion" },
       { date: "May 2014", event: "Rainy River First Nations, CC&L, and Terrma Capital announced financing for the 25 MW project.", category: "Financing" },
       { date: "2015", event: "The solar portfolio reached completion and entered operation.", category: "Expansion" },
       { date: "2015", event: "Project ownership included Rainy River First Nations together with private capital partners.", category: "Financing" },
@@ -11574,7 +11350,6 @@ export const companies: PortCo[] = [
       { date: "2017", event: "The 99 MW wind farm entered operation.", category: "Expansion" },
       { date: "Sep 2, 2020", event: "EDP Renewables North America announced an agreement to sell an 80% equity shareholding in a U.S. renewables portfolio that included Redbed Plains to CC&L Infrastructure.", category: "Acquisition" },
       { date: "Dec 28, 2020", event: "CC&L Infrastructure completed the acquisition of an 80% interest in a U.S. wind and solar portfolio that included Redbed Plains Wind Farm.", category: "Acquisition" },
-      { date: "2024", event: "Redbed Plains remained listed among CC&L Infrastructure's active investments.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — CC&L — Redbed Plains Wind Farm", url: "https://cclinfrastructure.cclgroup.com/cases/redbed-plains-wind-farm/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -11600,7 +11375,7 @@ export const companies: PortCo[] = [
     investmentYear: 2015,
     headquarters: "Saskatchewan",
     milestones: [
-      { date: "May 2015", event: "The Government of Saskatchewan selected the preferred proponent for the Regina Bypass Project.", category: "Other" },
+      { date: "May 2015", event: "The Government of Saskatchewan selected the preferred proponent for the Regina Bypass Project.", category: "Expansion" },
       { date: "Aug 2015", event: "CC&L Infrastructure made its initial investment in the Regina Bypass P3 Project alongside its consortium partners.", category: "Financing" },
       { date: "2017", event: "Major segments of the bypass were opened to traffic in phases.", category: "Expansion" },
       { date: "2019", event: "The full bypass corridor opened to traffic.", category: "Expansion" },
@@ -11632,9 +11407,8 @@ export const companies: PortCo[] = [
       { date: "Sep 2, 2020", event: "EDP Renewables signed an agreement to sell CC&L Infrastructure an 80% equity interest in a U.S. renewables portfolio that included the Riverstart Solar Project.", category: "Acquisition" },
       { date: "2021", event: "Construction and commissioning activities progressed toward commercial operations.", category: "Expansion" },
       { date: "Dec 30, 2021", event: "EDPR completed the sale to CC&L Infrastructure of an 80% equity interest in the Riverstart Solar Project.", category: "Acquisition" },
-      { date: "Jan 2022", event: "CC&L Infrastructure announced commencement of operations for the 200 MW project.", category: "Other" },
       { date: "Jan 2022", event: "Riverstart closed an US$87 million project-level debt financing concurrent with commencement of operations.", category: "Financing" },
-      { date: "2024", event: "Riverstart remained listed in CC&L Infrastructure's renewable portfolio.", category: "Other" },
+      { date: "Jan 2022", event: "CC&L Infrastructure announced commencement of operations for the 200 MW project.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — CC&L — Riverstart Solar Project", url: "https://cclinfrastructure.cclgroup.com/cases/riverstart-solar-project/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -11693,7 +11467,6 @@ export const companies: PortCo[] = [
       { date: "Sep 2013", event: "CC&L Infrastructure made its initial investment in Sakwi Creek while the project was under construction.", category: "Financing" },
       { date: "2014", event: "The 6 MW project was brought online near Agassiz, British Columbia.", category: "Other" },
       { date: "2014", event: "Long-term contracted revenues commenced under a 40-year fixed-price power purchase agreement.", category: "Acquisition" },
-      { date: "2024", event: "The asset continued to be described publicly as a partnership with WindRiver Power and Sts'ailes First Nation.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — CC&L — Sakwi Creek Hydro Project", url: "https://cclinfrastructure.cclgroup.com/cases/sakwi-creek-hydro-project/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -11718,7 +11491,6 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Alberta",
     milestones: [
-      { date: "2024", event: "EDP Renewables Canada remained operator and asset manager following the sale.", category: "Divestiture" },
       { date: "2024", event: "CC&L Infrastructure said the transaction lifted its clean-energy capacity exposure above 1.8 GW.", category: "Expansion" },
       { date: "2024", event: "Remaining construction work was expected to be completed during the second quarter of 2024.", category: "Other" },
       { date: "Feb 2024", event: "CC&L Infrastructure announced an agreement to acquire an 80% interest in Sharp Hills Wind Farm from EDP Renewables Canada.", category: "Acquisition" },
@@ -11779,7 +11551,6 @@ export const companies: PortCo[] = [
       { date: "2015", event: "Engineering and construction activities advanced on the western Ontario facility.", category: "Other" },
       { date: "2016", event: "The project reached operation as a 50 MW solar facility.", category: "Other" },
       { date: "2016", event: "The Ontario Energy Board issued an electricity generation licence for Southgate Solar LP.", category: "Other" },
-      { date: "2024", event: "Southgate Solar remained part of CC&L Infrastructure's renewable portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — CC&L — Southgate Solar Project", url: "https://cclinfrastructure.cclgroup.com/what-we-do/southgate-solar-project-case-study/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -11866,7 +11637,6 @@ export const companies: PortCo[] = [
       { date: "1989", event: "Twin City Transportation was founded.", category: "Founding" },
       { date: "1994", event: "The company expanded into Type III student transportation services.", category: "Expansion" },
       { date: "2024", event: "CC&L Infrastructure identified Twin City Transportation as an add-on acquisition within its Landmark Student Transportation platform.", category: "Acquisition" },
-      { date: "2024", event: "Public disclosures described the business as serving more than 250 routes with roughly 175 vehicles.", category: "Other" },
     ],
     sources: [
       { label: "Tctinc — Twin City Transportation", url: "https://www.tctinc.org/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -11892,7 +11662,6 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Louisiana and Texas",
     milestones: [
-      { date: "2020", event: "Public materials described the business as having more than 1,600 combined railcar storage spots.", category: "Other" },
       { date: "Jul 2020", event: "CC&L Infrastructure made its initial investment in USA Rail Terminals through a partnership with Alpenglow Rail.", category: "Acquisition" },
       { date: "Aug 2020", event: "Alpenglow Rail and CC&L Infrastructure announced the acquisition of USA Rail Terminals.", category: "Acquisition" },
       { date: "Dec 2025", event: "CC&L Infrastructure announced financing for the broader Alpenglow rail-terminal platform.", category: "Financing" },
@@ -11925,7 +11694,6 @@ export const companies: PortCo[] = [
       { date: "2017", event: "VIP Rail became part of the Alpenglow Rail platform under prior ownership.", category: "Other" },
       { date: "Sep 2019", event: "CC&L Infrastructure announced a partnership with Alpenglow and the acquisition of VIP Rail.", category: "Acquisition" },
       { date: "Oct 2022", event: "The rail platform added the Alberta Midland terminal.", category: "Expansion" },
-      { date: "2025", event: "Public materials described the Canadian network as spanning more than 460 acres and over 3,100 railcar spots.", category: "Other" },
       { date: "Dec 2025", event: "The Alpenglow terminal portfolio announced debt financing to support future growth.", category: "Financing" },
     ],
     sources: [
@@ -11952,9 +11720,7 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "Ontario",
     milestones: [
-      { date: "2019", event: "Development and construction continued on the two-site hydro project in northern Ontario.", category: "Other" },
       { date: "Mar 2019", event: "CC&L Infrastructure made its initial investment in White River Hydro.", category: "Financing" },
-      { date: "2024", event: "White River remained listed among CC&L Infrastructure's renewable generation assets.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — CC&L — White River Hydro Project", url: "https://cclinfrastructure.cclgroup.com/cases/white-river-hydro-project/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -11982,7 +11748,6 @@ export const companies: PortCo[] = [
       { date: "2015", event: "Canadian Solar announced module supply for the project.", category: "Other" },
       { date: "Nov 2015", event: "CC&L Infrastructure invested in the construction of Windsor Solar.", category: "Financing" },
       { date: "2016", event: "The 50 MW facility entered operation in Windsor, Ontario.", category: "Expansion" },
-      { date: "2024", event: "Windsor Solar remained listed among CC&L Infrastructure's operating renewable projects.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — CC&L — Windsor Solar Project", url: "https://cclinfrastructure.cclgroup.com/cases/windsor-solar-project/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -12091,11 +11856,9 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Ontario and Québec",
     milestones: [
-      { date: "2025", event: "Project materials described a corridor of roughly 1,000 kilometers.", category: "Other" },
       { date: "Mar 21, 2025", event: "Alto and the CDPQ Infra-led Cadence consortium signed the development contract for the Toronto-Québec City high-speed rail project.", category: "Financing" },
-      { date: "Feb 19, 2025", event: "The Government of Canada selected Cadence as preferred private developer partner for the Alto high-speed rail project.", category: "Other" },
+      { date: "Feb 19, 2025", event: "The Government of Canada selected Cadence as preferred private developer partner for the Alto high-speed rail project.", category: "Expansion" },
       { date: "2026", event: "Alto branding was adopted for the high-speed rail project.", category: "Other" },
-      { date: "2026", event: "CDPQ Infra continued overseeing project development through the Cadence consortium.", category: "Other" },
     ],
     sources: [
       { label: "Altotrain — Alto", url: "https://www.altotrain.ca/en/shaping-canadas-future-high-speed-train", type: "ARTICLE" },
@@ -12123,7 +11886,6 @@ export const companies: PortCo[] = [
       { date: "Dec 2, 2016", event: "DP World and CDPQ announced creation of a CA$5 billion (US$3.7 billion) ports investment platform with CDPQ acquiring a 45% stake in DP World's Canadian container terminals in Vancouver and Prince Rupert.", category: "Acquisition" },
       { date: "Jan 2017", event: "DP World closed the transaction selling a 45% stake in its Vancouver and Prince Rupert Canadian container terminals to CDPQ.", category: "Acquisition" },
       { date: "Feb 24, 2020", event: "DP World and CDPQ's platform completed the acquisition of Fraser Surrey Docks.", category: "Acquisition" },
-      { date: "2024", event: "The platform remained part of Canada's container, bulk, and logistics infrastructure network.", category: "Other" },
     ],
     sources: [
       { label: "Dpworld — DP World Canada", url: "https://www.dpworld.com/en/canada", type: "ARTICLE" },
@@ -12153,7 +11915,6 @@ export const companies: PortCo[] = [
       { date: "2018", event: "Enel advanced expansion of its Villanueva and Don José projects in Mexico.", category: "Other" },
       { date: "Sep 28, 2018", event: "Enel closed the sale to CDPQ and CKD IM of an 80% stake in eight Mexican renewable-project SPVs.", category: "Acquisition" },
       { date: "Jul 11, 2022", event: "Enel Green Power Mexico announced a digitalization initiative across its plants.", category: "Other" },
-      { date: "2025", event: "Enel Green Power Mexico continued public reporting on operations in Mexico.", category: "Other" },
     ],
     sources: [
       { label: "Enelgreenpower — Enel Green Power Mexico", url: "https://www.enelgreenpower.com/countries/north-america/mexico", type: "ARTICLE" },
@@ -12181,7 +11942,6 @@ export const companies: PortCo[] = [
     investmentYear: 2004,
     headquarters: "Quebec; Vermont",
     milestones: [
-      { date: "1957", event: "Company history materials identify the founding of Gaz Métropolitain, the predecessor to Énergir.", category: "Other" },
       { date: "1957", event: "Énergir was founded.", category: "Founding" },
       { date: "Jun 30, 2004", event: "A CDPQ-led investor group completed the acquisition of a 50.38% stake in Noverco, the holding company above Gaz Métro / Énergir.", category: "Acquisition" },
       { date: "2017", event: "Gaz Métro rebranded as Énergir as the group broadened its energy activities beyond traditional gas distribution.", category: "Other" },
@@ -12245,11 +12005,9 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Indiana",
     milestones: [
-      { date: "1956", event: "The Indiana Toll Road opened to traffic.", category: "Expansion" },
       { date: "1956", event: "Indiana Toll Road was founded.", category: "Founding" },
-      { date: "2006", event: "The State of Indiana entered into the long-term concession for operation of the toll road.", category: "Other" },
+      { date: "1956", event: "The Indiana Toll Road opened to traffic.", category: "Expansion" },
       { date: "May 28, 2015", event: "IFM Investors completed IFM Global Infrastructure Fund's acquisition of 100% of the equity in Indiana Toll Road Concession Company.", category: "Acquisition" },
-      { date: "2021", event: "IFM Global Infrastructure Fund remained the controlling investor while CDPQ held a minority interest.", category: "Other" },
       { date: "Apr 19, 2021", event: "IFM Investors and CDPQ announced CDPQ's acquisition of a 15% interest in the concession company.", category: "Acquisition" },
     ],
     sources: [
@@ -12282,7 +12040,6 @@ export const companies: PortCo[] = [
       { date: "2018", event: "Innergex acquired Alterra Power, expanding its renewable portfolio in Canada and the United States.", category: "Acquisition" },
       { date: "Feb 25, 2025", event: "Innergex announced a definitive agreement to be acquired by CDPQ.", category: "Acquisition" },
       { date: "Jul 21, 2025", event: "Innergex announced completion of the acquisition by La Caisse.", category: "Acquisition" },
-      { date: "2026", event: "Company materials described 89 operating facilities and 4,411 MW of gross installed capacity.", category: "Expansion" },
     ],
     sources: [
       { label: "Innergex — Innergex Renewable Energy", url: "https://www.innergex.com/en/", type: "ARTICLE" },
@@ -12309,7 +12066,6 @@ export const companies: PortCo[] = [
     headquarters: "Multiple US states",
     milestones: [
       { date: "2013", event: "CDPQ made its initial investment in wind farms operated by Invenergy Renewables LLC.", category: "Financing" },
-      { date: "2018", event: "Invenergy Renewables continued developing and operating renewable power projects under the CDPQ-Invenergy ownership structure.", category: "Other" },
       { date: "May 22, 2018", event: "Invenergy announced that CDPQ would acquire a 52.4% economic ownership interest in Invenergy Renewables LLC.", category: "Acquisition" },
       { date: "May 22, 2018", event: "Invenergy stated that it would remain the managing member after the transaction.", category: "Other" },
     ],
@@ -12338,7 +12094,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Mar 2020", event: "Transaction counsel reported that CDPQ closed the acquisition of Plenary Americas.", category: "Acquisition" },
       { date: "Mar 12, 2020", event: "CDPQ announced the acquisition of the operating business of Plenary Americas and a controlling interest in its 36-project portfolio.", category: "Acquisition" },
-      { date: "2025", event: "CDPQ continued referencing Plenary Americas within its infrastructure activities.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — CDPQ — Plenary Americas", url: "https://plenary.com/americas/news/cdpq-acquires-plenary-americas", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -12364,12 +12119,11 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Multi-state United States",
     milestones: [
-      { date: "2022", event: "QIC acquired Renewa on behalf of a managed client.", category: "Acquisition" },
       { date: "2022", event: "Renewa was founded.", category: "Founding" },
+      { date: "2022", event: "QIC acquired Renewa on behalf of a managed client.", category: "Acquisition" },
       { date: "Aug 2023", event: "QIC-backed Renewa secured $450 million of capital.", category: "Financing" },
       { date: "Jul 15, 2025", event: "CDPQ (La Caisse) made a $200 million primary equity commitment in QIC-backed Renewa, acquiring a stake in the business.", category: "Financing" },
       { date: "Jul 15, 2025", event: "CDPQ stated that Renewa had secured more than $750 million of commitments since inception.", category: "Other" },
-      { date: "2026", event: "Renewa announced additional financing to support land investments under infrastructure assets.", category: "Financing" },
     ],
     sources: [
       { label: "Investment date source — QIC — Renewa", url: "https://www.qic.com/Investment-Capabilities/Infrastructure/Global-Portfolio/Renewa", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -12400,11 +12154,9 @@ export const companies: PortCo[] = [
     headquarters: "Québec",
     milestones: [
       { date: "2016", event: "Réseau express métropolitain was founded.", category: "Founding" },
+      { date: "Aug 22, 2018", event: "Canada Infrastructure Bank and CDPQ Infra announced that REM project financing was completed, with CDPQ Infra retaining an approximately 70% equity stake.", category: "Financing" },
       { date: "Feb 8, 2018", event: "CDPQ Infra awarded EPC and RSSOM contracts to the NouvLR and PMM consortia and announced the official REM project launch.", category: "Financing" },
       { date: "Apr 12, 2018", event: "CDPQ Infra officially started REM construction and project contractors finalized major EPC and systems agreements.", category: "Financing" },
-      { date: "Aug 22, 2018", event: "Canada Infrastructure Bank and CDPQ Infra announced that REM project financing was completed, with CDPQ Infra retaining an approximately 70% equity stake.", category: "Financing" },
-      { date: "Jul 31, 2023", event: "The first REM operating section opened on the South Shore.", category: "Expansion" },
-      { date: "2025", event: "Additional segments were commissioned as staged openings continued across the network.", category: "Expansion" },
     ],
     sources: [
       { label: "Rem — Réseau express métropolitain", url: "https://rem.info/en", type: "ARTICLE" },
@@ -12494,7 +12246,6 @@ export const companies: PortCo[] = [
       { date: "2023", event: "Pattern described the project as 3.5 GW of wind generation paired with a 550-mile transmission line.", category: "Other" },
       { date: "Dec 27, 2023", event: "Pattern Energy announced the closing of approximately $11 billion of financing for SunZia Wind and Transmission.", category: "Financing" },
       { date: "2024", event: "CDPQ reported SunZia-related holdings in its additional information disclosures.", category: "Other" },
-      { date: "2026", event: "Pattern continued targeting project completion and commercial operation during 2026.", category: "Expansion" },
     ],
     sources: [
       { label: "Financing date source — Pattern Energy — SunZia Wind and Transmission", url: "https://patternenergy.com/pattern-energy-closes-11-billion-financing-of-largest-clean-energy-infrastructure-project-in-u-s-history/", type: "ARTICLE", purpose: "FINANCING_FILINGS" },
@@ -12520,7 +12271,6 @@ export const companies: PortCo[] = [
     headquarters: "Québec",
     milestones: [
       { date: "Dec 19, 2024", event: "CDPQ Infra launched the TramCité procurement notice following its implementation agreement with the Government of Québec.", category: "Financing" },
-      { date: "2025", event: "Project materials described a tramway corridor of approximately 19 kilometers.", category: "Other" },
       { date: "Jun 5, 2025", event: "TramCité announced qualified consortia for major civil-works and systems contracts under a CDPQ Infra-led procurement process.", category: "Other" },
       { date: "Mar 26, 2026", event: "TramCité announced preferred bidders for the civil and systems contracts under CDPQ Infra's procurement process.", category: "Other" },
     ],
@@ -12584,10 +12334,9 @@ export const companies: PortCo[] = [
     investmentYear: 2017,
     headquarters: "California",
     milestones: [
-      { date: "Aug 10, 2017", event: "Public reporting said CIM Group and fifteenfortyseven Critical Systems Realty had bought the land from The Cambay Group for the 400 Paul Avenue data-center project.", category: "Acquisition" },
+      { date: "2017", event: "CIM Group invested in 400 Paul Avenue Data Center through CIM Group / 1547 CSR JV.", category: "Financing" },
       { date: "Apr 16, 2018", event: "CIM Group and fifteenfortyseven Critical Systems Realty marked the start of construction on the 400 Paul Avenue data-center campus in San Francisco.", category: "Expansion" },
       { date: "2022", event: "Marketing materials for the campus referenced approximately 24 MW of powered-shell capacity for lease.", category: "Expansion" },
-      { date: "2024", event: "The project continued to be marketed in public data-center directories as a Bay Area wholesale data-center campus.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — CIM Group — 400 Paul Avenue Data Center", url: "https://www.datacenterdynamics.com/en/news/1547-and-cim-are-planning-a-data-center-in-san-francisco/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -12616,7 +12365,6 @@ export const companies: PortCo[] = [
       { date: "2007", event: "CIM Group made its original investment in the Antelope Valley water bank.", category: "Financing" },
       { date: "2007", event: "Public descriptions of the asset identified groundwater storage design capacity of up to 500,000 acre-feet on approximately 1,838 acres.", category: "Expansion" },
       { date: "2022", event: "CIM highlighted the asset as part of its infrastructure strategy focused on water management and drought resilience in California.", category: "Other" },
-      { date: "2024", event: "Public water-infrastructure materials continued to reference the Antelope Valley water-bank storage capacity in regional supply planning discussions.", category: "Expansion" },
     ],
     sources: [
       { label: "Cimgroup — Antelope Valley Water Bank", url: "https://www.cimgroup.com/our-platforms/assets", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -12645,7 +12393,6 @@ export const companies: PortCo[] = [
       { date: "2011", event: "Bolder Industries was founded.", category: "Founding" },
       { date: "2020", event: "Bolder opened its Maryville, Missouri facility.", category: "Expansion" },
       { date: "Oct 8, 2021", event: "CIM Group announced that it had expanded its investment in Bolder Industries.", category: "Financing" },
-      { date: "Sep 1, 2022", event: "Bolder announced a long-term end-of-life tire supply agreement with Liberty Tire Recycling to support feedstock for growth.", category: "Other" },
       { date: "Feb 2025", event: "Tiger completed its growth investment in Bolder Industries.", category: "Financing" },
       { date: "Feb 10, 2025", event: "Tiger Infrastructure Partners announced a transformational growth investment in Bolder Industries.", category: "Financing" },
     ],
@@ -12678,8 +12425,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2008", event: "Public reporting states that CIM acquired approximately 68,000 acres in Kern County that became the Kelso Valley platform.", category: "Acquisition" },
       { date: "2008", event: "CIM improved irrigation and water-conveyance systems on the property as part of the platform build-out.", category: "Other" },
-      { date: "2021", event: "Public reporting said initial solar output from the platform had been contracted with Valley Clean Energy and Silicon Valley Power.", category: "Other" },
-      { date: "2021", event: "CIM fund materials listed Kelso Valley among infrastructure investments within the platform.", category: "Other" },
     ],
     sources: [
       { label: "SEC — Kelso Valley Wind, Solar & Water", url: "https://www.sec.gov/Archives/edgar/data/1767074/000176707421000009/cimintervalfund486bposjan2.htm", type: "SEC_FILING", purpose: "FINANCING_FILINGS" },
@@ -12708,7 +12453,6 @@ export const companies: PortCo[] = [
       { date: "2020", event: "Novva was founded and backed by $100 million of funding from CIM Group and Novva's founders.", category: "Financing" },
       { date: "2020", event: "Novva Data Centers was founded.", category: "Founding" },
       { date: "Jun 1, 2022", event: "Novva announced an additional $355 million growth-equity investment from CIM Group.", category: "Financing" },
-      { date: "2024", event: "Novva continued expanding its western U.S. campus footprint beyond Utah into Colorado, Nevada, California, and Arizona.", category: "Expansion" },
       { date: "Mar 5, 2025", event: "CIM Group and Novva announced $2 billion of new financing to accelerate development across the western United States.", category: "Financing" },
     ],
     sources: [
@@ -12736,7 +12480,6 @@ export const companies: PortCo[] = [
     investmentYear: 2018,
     headquarters: "Washington",
     milestones: [
-      { date: "2018", event: "Acquisition materials described the property as an 11-level, 844-stall garage with approximately 20,300 square feet of ground-floor retail.", category: "Other" },
       { date: "Feb 12, 2018", event: "CIM Group announced the acquisition of Pine Street Garage in downtown Seattle with partner LAZ Parking Realty Investors.", category: "Acquisition" },
     ],
     sources: [
@@ -12825,7 +12568,6 @@ export const companies: PortCo[] = [
       { date: "2022", event: "The founding acquisition included a portfolio of in-construction and development RNG assets.", category: "Other" },
       { date: "2022", event: "Terreva Renewables was founded.", category: "Founding" },
       { date: "Aug 30, 2023", event: "CIM announced that Terreva had raised $417 million from corporate and institutional investors to support platform growth.", category: "Other" },
-      { date: "2024", event: "CIM case-study materials highlighted continued expansion of the RNG platform across North America.", category: "Other" },
     ],
     sources: [
       { label: "Terrevarenewables — Terreva Renewables", url: "https://terrevarenewables.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -12852,7 +12594,7 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "California",
     milestones: [
-      { date: "Mar 2, 2020", event: "CIM announced the start of construction at Westlands Solar Park, the asset base that would later support WEPCO.", category: "Other" },
+      { date: "Mar 2, 2020", event: "CIM announced the start of construction at Westlands Solar Park, the asset base that would later support WEPCO.", category: "Expansion" },
       { date: "2025", event: "CIM said WEPCO's initial portfolio included seven solar facilities and one battery-storage facility in Westlands Solar Park.", category: "Other" },
       { date: "2025", event: "CIM stated that WEPCO was intended to grow through both organic development and additional acquisitions.", category: "Other" },
       { date: "2025", event: "Westlands Electric Power Company (WEPCO) was founded.", category: "Founding" },
@@ -12884,7 +12626,6 @@ export const companies: PortCo[] = [
       { date: "2014", event: "CIM Group and a joint venture partner obtained rights to acquire more than 20,000 acres for the Westlands Solar Park clean-energy development.", category: "Acquisition" },
       { date: "2020", event: "CIM stated that the permitted development could exceed 2,700 MW of total capacity at full build-out.", category: "Expansion" },
       { date: "Mar 2, 2020", event: "CIM Group announced that it was advancing development and starting construction at Westlands Solar Park.", category: "Financing" },
-      { date: "2021", event: "Public reporting referenced the first phase of the solar park and associated offtake arrangements with California public-power buyers.", category: "Other" },
       { date: "2025", event: "CIM stated that the initial WEPCO portfolio at Westlands Solar Park included seven solar facilities and one battery-storage facility.", category: "Other" },
     ],
     sources: [
@@ -12912,9 +12653,8 @@ export const companies: PortCo[] = [
     headquarters: "Alberta",
     milestones: [
       { date: "Nov 21, 2023", event: "Copenhagen Infrastructure Partners announced the launch of Horizon New Energy as a dedicated Canadian renewable-energy platform.", category: "Financing" },
-      { date: "2024", event: "Public project materials described Aira as a 450 MWac solar development near Seven Persons in Alberta.", category: "Other" },
-      { date: "Feb 28, 2024", event: "The AESO approved the Aira Solar Project connection under the abbreviated needs approval process.", category: "Other" },
-      { date: "Mar 21, 2024", event: "Alberta regulators approved the Aira Solar Project and associated substation.", category: "Other" },
+      { date: "Feb 28, 2024", event: "The AESO approved the Aira Solar Project connection under the abbreviated needs approval process.", category: "Expansion" },
+      { date: "Mar 21, 2024", event: "Alberta regulators approved the Aira Solar Project and associated substation.", category: "Expansion" },
     ],
     sources: [
       { label: "Majorprojects — Aira Solar", url: "https://majorprojects.alberta.ca/details/Aira-Solar-Project/11104", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -12940,7 +12680,6 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Arizona",
     milestones: [
-      { date: "2024", event: "Public project materials identified Beehive as a 250 MW, 1 GWh battery project in Peoria, Arizona.", category: "Other" },
       { date: "Nov 4, 2024", event: "EDF announced a 20-year energy storage power purchase agreement with Arizona Public Service for Beehive.", category: "Acquisition" },
       { date: "Aug 15, 2025", event: "Copenhagen Infrastructure Partners announced the acquisition of full ownership of Beehive through CI V.", category: "Acquisition" },
       { date: "2026", event: "EDF project disclosures indicate an expected operational date in 2026.", category: "Other" },
@@ -12971,10 +12710,9 @@ export const companies: PortCo[] = [
     headquarters: "Texas; Louisiana",
     milestones: [
       { date: "2025", event: "BKV-CIP Joint Venture was founded.", category: "Founding" },
-      { date: "May 2025", event: "BKV's public filings identified the venture's operating vehicle as BKV dCarbon Project, LLC.", category: "Other" },
       { date: "May 2025", event: "BKV's first-quarter 2025 filing disclosed the ownership split as 51% BKV and 49% CIP.", category: "Other" },
       { date: "May 8, 2025", event: "BKV and Copenhagen Infrastructure Partners announced a strategic carbon capture joint venture with up to $500 million of capital.", category: "Financing" },
-      { date: "Aug 12, 2025", event: "BKV reaffirmed that CIP Energy Transition Fund I had committed up to $500 million for no more than a 49% interest.", category: "Other" },
+      { date: "Aug 12, 2025", event: "BKV reaffirmed that CIP Energy Transition Fund I had committed up to $500 million for no more than a 49% interest.", category: "Financing" },
     ],
     sources: [
       { label: "Announcement date source — Copenhagen Infrastructure Partners — BKV-CIP Joint Venture", url: "https://ir.bkv.com/news-events/latest-news/detail/208/bkv-and-copenhagen-infrastructure-partners-announce-strategic-carbon-capture-joint-venture-with-500-million-investment", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -12999,7 +12737,6 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Alberta",
     milestones: [
-      { date: "2022", event: "Public project materials described Buffalo Plains as a 495 MW wind development near Lomond, Alberta.", category: "Other" },
       { date: "Jul 28, 2022", event: "ABO Energy announced the sale of Buffalo Plains' ready-to-build project rights, and Copenhagen Infrastructure Partners later disclosed that CI IV took final investment decision on Buffalo Plains in July 2022.", category: "Acquisition" },
       { date: "2024", event: "Alberta major-project materials characterized Buffalo Plains as the largest single-phase wind farm in Canada.", category: "Other" },
       { date: "Dec 2024", event: "CIP project materials indicated expected commercial operation around year-end 2024.", category: "Expansion" },
@@ -13032,7 +12769,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2018", event: "Candela states that it was founded in 2018.", category: "Founding" },
       { date: "Jan 15, 2021", event: "Naturgy announced the purchase of a 25-project solar and storage portfolio from Candela and a five-year development agreement with the company.", category: "Acquisition" },
-      { date: "2025", event: "Kentucky regulatory filings identified transfer of at least one former Candela project to a CI V-managed entity.", category: "Other" },
       { date: "2026", event: "Candela's public project list showed 27 projects totaling 11.2 GW across five RTO markets.", category: "Other" },
       { date: "Mar 19, 2026", event: "Kentucky regulators approved the transfer of Summer Shade Solar and related Naturgy Candela DevCo project entities to CI V Activate TopCo, a Copenhagen Infrastructure Partners-managed entity.", category: "Acquisition" },
     ],
@@ -13061,8 +12797,7 @@ export const companies: PortCo[] = [
     headquarters: "Arizona; Washington; Oregon",
     milestones: [
       { date: "Nov 13, 2020", event: "Copenhagen Infrastructure Partners acquired ownership of the Swan Lake and Goldendale pumped-storage projects in the United States.", category: "Acquisition" },
-      { date: "2024", event: "CIP's ESG reporting identified Scatter Wash as a CI V battery storage acquisition.", category: "Other" },
-      { date: "2025", event: "CI V periodic disclosure reported Scatter Wash had entered operations in the second quarter of 2025.", category: "Other" },
+      { date: "2025", event: "CI V periodic disclosure reported Scatter Wash had entered operations in the second quarter of 2025.", category: "Expansion" },
       { date: "Aug 15, 2025", event: "CIP announced the acquisition of the Beehive battery storage project in Arizona.", category: "Other" },
     ],
     sources: [
@@ -13091,8 +12826,7 @@ export const companies: PortCo[] = [
     headquarters: "New York; federal waters off the Mid-Atlantic",
     milestones: [
       { date: "Feb 23, 2022", event: "Copenhagen Infrastructure Partners-backed Vineyard Wind LLC (CI IV) won lease OCS-A 0544 in the New York Bight BOEM auction (the Excelsior Wind project area).", category: "Acquisition" },
-      { date: "Oct 24, 2023", event: "Vineyard Offshore announced that Excelsior Wind had been selected in New York's offshore wind solicitation.", category: "Other" },
-      { date: "2024", event: "Public project materials described Excelsior as a 1,350 MW project planned to serve New York.", category: "Other" },
+      { date: "Oct 24, 2023", event: "Vineyard Offshore announced that Excelsior Wind had been selected in New York's offshore wind solicitation.", category: "Expansion" },
       { date: "Jan 2025", event: "BOEM began environmental review of the Vineyard Mid-Atlantic offshore wind proposal.", category: "Other" },
       { date: "Feb 13, 2026", event: "NYSERDA concluded its 2024 offshore wind solicitation without awards.", category: "Other" },
     ],
@@ -13122,7 +12856,6 @@ export const companies: PortCo[] = [
     headquarters: "Texas",
     milestones: [
       { date: "Jul 22, 2020", event: "Copenhagen Infrastructure Partners completed the acquisition of the Fighting Jays Solar project in Texas from Plus Renewable Technologies and Avondale Solar.", category: "Acquisition" },
-      { date: "2021", event: "CIP ESG reporting identified Fighting Jays as a 350 MWac solar PV project.", category: "Other" },
     ],
     sources: [
       { label: "Cip — Fighting Jays Solar", url: "https://www.cip.com/media/wyanyzxq/cip_esg-report_2021_reduced-file-size.pdf", type: "PRESENTATION" },
@@ -13149,7 +12882,6 @@ export const companies: PortCo[] = [
     headquarters: "Washington",
     milestones: [
       { date: "2018", event: "Public project materials identify the preliminary permit stage for Goldendale.", category: "Other" },
-      { date: "2020", event: "Goldendale project materials identified FERC license filing activity.", category: "Other" },
       { date: "Nov 13, 2020", event: "Copenhagen Infrastructure Partners acquired ownership of the Goldendale and Swan Lake closed-loop pumped-storage projects.", category: "Acquisition" },
       { date: "2026", event: "Project materials indicated a target year for receiving the federal license, with later construction and operation milestones planned thereafter.", category: "Other" },
     ],
@@ -13180,7 +12912,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Dec 2018", event: "OnPeak Power states that Copenhagen Infrastructure Partners acquired Greasewood Solar.", category: "Acquisition" },
       { date: "Jul 2020", event: "CIP raised tax equity financing for the 347 MWdc Greasewood project.", category: "Financing" },
-      { date: "2021", event: "Public project materials identified long-term power contracts with City of Garland, New Braunfels Utilities, and Kerrville Public Utility Board.", category: "Other" },
       { date: "Feb 2021", event: "OnPeak states that Greasewood reached completion.", category: "Other" },
     ],
     sources: [
@@ -13208,7 +12939,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Dec 22, 2023", event: "Copenhagen Infrastructure Partners announced an MoU with Mexican authorities for the Helax Istmo green hydrogen project.", category: "Financing" },
       { date: "2024", event: "Industry coverage described Helax Istmo as part of the Interoceanic Corridor fuel and logistics strategy.", category: "Other" },
-      { date: "May 2024", event: "CIP stated publicly that the project remained in pre-development.", category: "Other" },
       { date: "Dec 2024", event: "Industry reports indicated a targeted operating timeframe around 2028, subject to development progress.", category: "Other" },
     ],
     sources: [
@@ -13267,7 +12997,6 @@ export const companies: PortCo[] = [
       { date: "2024", event: "Liberty's parent-company page identified support from CI V.", category: "Other" },
       { date: "Apr 15, 2024", event: "Copenhagen Infrastructure Partners completed the acquisition of Liberty Renewables through CI V.", category: "Acquisition" },
       { date: "May 16, 2024", event: "Orrick described the acquired platform as an approximately 1.3 GW New York onshore wind pipeline.", category: "Acquisition" },
-      { date: "2025", event: "Liberty continued to present itself as a CIP-backed New York wind development platform.", category: "Other" },
     ],
     sources: [
       { label: "Liberty Renewables — Liberty Renewables", url: "https://www.liberty-renewables.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -13296,7 +13025,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Jul 2018", event: "Copenhagen Infrastructure Partners acquired Misae Solar Park in Childress County, Texas.", category: "Acquisition" },
       { date: "2019", event: "CIP identified Misae as its first large-scale solar investment through CI II and CI III.", category: "Financing" },
-      { date: "2025", event: "CIP continued to reference Misae alongside related United States solar holdings.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — Copenhagen Infrastructure Partners — Misae Solar Park", url: "https://www.misaesolar.com/misae-solar-park", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -13323,9 +13051,7 @@ export const companies: PortCo[] = [
     headquarters: "Illinois",
     milestones: [
       { date: "Dec 17, 2019", event: "Copenhagen Infrastructure Partners completed the acquisition of Panther Grove Wind, then known as Woodford Wind Energy, from Tri Global Energy.", category: "Acquisition" },
-      { date: "2020", event: "Public project materials described Panther Grove as a 94-turbine wind farm in Woodford County, Illinois.", category: "Other" },
       { date: "Jul 1, 2020", event: "AEP Energy announced a power purchase agreement for the 400 MW Panther Grove Wind project.", category: "Acquisition" },
-      { date: "2025", event: "Public project communications continued to position Panther Grove as a major Illinois wind asset.", category: "Other" },
     ],
     sources: [
       { label: "Panthergrove1 — Panther Grove Wind", url: "https://www.panthergrove1.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -13352,9 +13078,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Apr 2017", event: "Copenhagen Infrastructure Partners acquired the Sage solar project from a local developer as part of a larger portfolio.", category: "Acquisition" },
       { date: "2019", event: "CIP investor materials grouped Sage with Misae as part of its early United States solar investments.", category: "Other" },
-      { date: "2024", event: "CIP ESG reporting listed Sage within the United States solar PV portfolio.", category: "Other" },
-      { date: "2024", event: "PensionDanmark materials identified Sage as a 58 MW solar PV project in Utah.", category: "Other" },
-      { date: "2025", event: "Sage remained listed in public materials as a CIP solar holding.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — Copenhagen Infrastructure Partners — Sage Solar PV Park", url: "https://pv-magazine-usa.com/2020/06/18/denmarks-cip-reaches-first-close-for-6-billion-renewable-infrastructure-fund-the-worlds-largest/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -13380,9 +13103,8 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Arizona",
     milestones: [
-      { date: "2024", event: "CIP ESG reporting identified Scatter Wash as a CI V battery storage acquisition.", category: "Other" },
       { date: "Jan 2024", event: "Strata announced a 20-year tolling agreement with APS for Scatter Wash.", category: "Other" },
-      { date: "Apr 2024", event: "Strata announced groundbreaking on the 1 GWh Scatter Wash project.", category: "Other" },
+      { date: "Apr 2024", event: "Strata announced groundbreaking on the 1 GWh Scatter Wash project.", category: "Expansion" },
       { date: "Sep 24, 2024", event: "Copenhagen Infrastructure Partners acquired the 1 GWh Scatter Wash Battery Energy Storage Project in Arizona from Strata Clean Energy.", category: "Acquisition" },
     ],
     sources: [
@@ -13411,8 +13133,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2023", event: "Public releases proposed a $4.6 billion reduced-carbon ammonia facility in St. Rose, Louisiana.", category: "Other" },
       { date: "Feb 23, 2023", event: "Copenhagen Infrastructure Partners, through CI Energy Transition Fund I, acquired a majority stake in the St. Charles Clean Fuels blue-ammonia project alongside Sustainable Fuels Group.", category: "Acquisition" },
-      { date: "2024", event: "The project continued development and stakeholder engagement activities in Louisiana.", category: "Other" },
-      { date: "2025", event: "CIP and Sustainable Fuels Group selected Topsoe technology for the blue-ammonia project.", category: "Other" },
+      { date: "2025", event: "CIP and Sustainable Fuels Group selected Topsoe technology for the blue-ammonia project.", category: "Expansion" },
     ],
     sources: [
       { label: "Stccf — St. Charles Clean Fuels", url: "https://www.stccf.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -13438,10 +13159,8 @@ export const companies: PortCo[] = [
     countryTags: ["United States"],
     headquarters: "Kentucky; multiple United States markets",
     milestones: [
-      { date: "Jan 2025", event: "Kentucky filings identified CI V Sunrise Renewables LLC in the corporate chain for the Lost City project.", category: "Other" },
       { date: "Jan 2025", event: "Corporate-information filings tied Sunrise entities to CIP-managed fund structures.", category: "Other" },
       { date: "Mar 2025", event: "Regulatory responses described Sunrise and Lost City as using CIP development processes and templates.", category: "Other" },
-      { date: "Jun 2025", event: "Witness disclosures described Sunrise Renewables as developing utility-scale solar, battery storage, and green hydrogen projects for CIP.", category: "Other" },
     ],
     sources: [
       { label: "Psc — Sunrise Renewables", url: "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/01292025030138/2_KSB_Lost_City_Application.pdf", type: "PRESENTATION" },
@@ -13467,7 +13186,6 @@ export const companies: PortCo[] = [
     headquarters: "Campeche",
     milestones: [
       { date: "2025", event: "Sunstone Power was identified as a key CIP-backed renewable developer in Mexico.", category: "Other" },
-      { date: "Dec 2025", event: "Sector reporting said Sunstone secured permits for the La Alegría and La Esperanza projects in Campeche.", category: "Other" },
       { date: "2026", event: "Reporting linked Sunstone's projects to a potential power purchase arrangement with CFE.", category: "Acquisition" },
     ],
     sources: [
@@ -13495,8 +13213,6 @@ export const companies: PortCo[] = [
     headquarters: "Oregon",
     milestones: [
       { date: "Nov 13, 2020", event: "Copenhagen Infrastructure Partners acquired ownership of the Swan Lake and Goldendale closed-loop pumped-storage projects.", category: "Acquisition" },
-      { date: "2025", event: "CIP continued to include long-duration storage within its public infrastructure strategy.", category: "Other" },
-      { date: "2025", event: "Swan Lake remained part of the public development portfolio associated with CIP's United States storage investments.", category: "Other" },
     ],
     sources: [
       { label: "Slenergystorage — Swan Lake North Pumped Storage Project", url: "https://www.slenergystorage.com/project.html", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -13525,8 +13241,6 @@ export const companies: PortCo[] = [
       { date: "2023", event: "CIP stated it was investing through Energy Transition Fund I.", category: "Other" },
       { date: "2023", event: "Tenaska-CIP Joint Venture was founded.", category: "Founding" },
       { date: "Oct 26, 2023", event: "Tenaska and Copenhagen Infrastructure Partners announced a joint venture to develop green hydrogen projects in the United States.", category: "Financing" },
-      { date: "2024", event: "The venture continued to be presented publicly as a greenfield hydrogen development platform.", category: "Other" },
-      { date: "2025", event: "Public disclosures continued to position the partnership around gigawatt-scale United States hydrogen opportunities.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Copenhagen Infrastructure Partners — Tenaska-CIP Joint Venture", url: "https://www.tenaska.com/copenhagen-infrastructure-partners-and-tenaska-to-develop-green-hydrogen-projects-in-the-u-s/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -13552,7 +13266,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Dec 17, 2024", event: "ABO Energy announced that Copenhagen Infrastructure Partners had acquired a 90% interest in Toqlukuti'k.", category: "Acquisition" },
       { date: "Dec 17, 2024", event: "ABO Energy disclosed that it retained a 10% interest in the project.", category: "Other" },
-      { date: "2025", event: "CIP and ABO continued advancing the project under the disclosed ownership structure.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Copenhagen Infrastructure Partners — Toqlukuti'k Wind & Hydrogen", url: "https://www.aboenergy.com/en/media-center/press/2024/2024-12-17_toqlukuti-k_cip_en.html", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -13581,7 +13294,6 @@ export const companies: PortCo[] = [
       { date: "2024", event: "BOEM materials linked Vineyard Northeast to lease area OCS-A 0522.", category: "Other" },
       { date: "2024", event: "Vineyard Northeast was founded.", category: "Founding" },
       { date: "Mar 27, 2024", event: "Vineyard Offshore announced Vineyard Northeast as its next offshore wind project for New England.", category: "Other" },
-      { date: "2025", event: "Vineyard Northeast remained part of the CIP-supported Vineyard Offshore portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Vineyardoffshore — Vineyard Northeast", url: "https://www.vineyardoffshore.com/where-we-work/east-coast/vineyard-wind-2/vineyard-northeast/", type: "ARTICLE" },
@@ -13612,7 +13324,6 @@ export const companies: PortCo[] = [
       { date: "2022", event: "Public platform materials state that Copenhagen Infrastructure Partners-supported Vineyard Offshore was established in 2022.", category: "Financing" },
       { date: "2022", event: "Vineyard Offshore was founded.", category: "Founding" },
       { date: "Oct 24, 2023", event: "Vineyard Offshore announced the selection of Excelsior Wind in New York's offshore wind solicitation.", category: "Other" },
-      { date: "2024", event: "Public materials continued to show a coast-to-coast offshore wind development portfolio, including California.", category: "Other" },
       { date: "Mar 27, 2024", event: "Vineyard Offshore announced Vineyard Northeast for New England.", category: "Other" },
     ],
     sources: [
@@ -13667,7 +13378,6 @@ export const companies: PortCo[] = [
     investmentYear: 2010,
     headquarters: "Ontario",
     milestones: [
-      { date: "1999", event: "407 International became the owner of the 407 ETR Concession Company.", category: "Other" },
       { date: "1999", event: "407 ETR was founded.", category: "Founding" },
       { date: "2010", event: "CPP Investments first invested in 407 International, acquiring control of a 40% holding in the 407 ETR business through two transactions.", category: "Acquisition" },
       { date: "2025", event: "Public ownership disclosures reflected the updated control split of 48.29% Ferrovial, 44.20% CPP Investments and other institutional investors, and 7.51% PSP Investments.", category: "Other" },
@@ -13700,7 +13410,6 @@ export const companies: PortCo[] = [
     headquarters: "Multiple U.S. states",
     milestones: [
       { date: "2025", event: "CPP Investments described AlphaGen as one of the largest independent power portfolios in the United States, with more than 11 GW of capacity.", category: "Expansion" },
-      { date: "2025", event: "The investment positioned AlphaGen for continued operation of a large dispatchable power portfolio.", category: "Financing" },
       { date: "Oct 2, 2025", event: "ArcLight announced that CPP Investments entered into a definitive agreement to invest US$1.0 billion for a strategic minority position in AlphaGen.", category: "Financing" },
     ],
     sources: [
@@ -13728,9 +13437,7 @@ export const companies: PortCo[] = [
     headquarters: "Texas",
     milestones: [
       { date: "2025", event: "CPP Investments disclosed a 12% stake in Caturus Energy in its quarterly results materials.", category: "Acquisition" },
-      { date: "2025", event: "Company materials described a strategy focused on integrated natural gas and LNG with more than 200,000 net acres in Texas.", category: "Other" },
       { date: "2025", event: "Public company materials outlined a growth plan tied to low-emissions gas supply and LNG demand.", category: "Other" },
-      { date: "2026", event: "Caturus continued to present itself as an integrated natural gas and LNG platform.", category: "Other" },
     ],
     sources: [
       { label: "Caturus — Caturus Energy", url: "https://caturus.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -13758,10 +13465,8 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2018", event: "Cordelio Power was founded.", category: "Founding" },
       { date: "Jun 29, 2018", event: "CPP Investments completed the acquisition of a 396 MW portfolio of contracted renewable energy projects in Canada through Cordelio Power.", category: "Acquisition" },
-      { date: "2023", event: "Public materials described an operating portfolio exceeding 1,200 MW and continued financing activity for project growth.", category: "Financing" },
-      { date: "Jan 6, 2026", event: "Pattern Energy and Cordelio announced a definitive agreement for Pattern to acquire the company.", category: "Acquisition" },
-      { date: "Apr 2, 2026", event: "Pattern Energy announced completion of the acquisition of Cordelio Power.", category: "Other" },
       { date: "Apr 22, 2026", event: "Cordelio Power sold its 6 GW joint venture interest to BrightNight.", category: "Divestiture" },
+      { date: "Jan 6, 2026", event: "Pattern Energy and Cordelio announced a definitive agreement for Pattern to acquire the company.", category: "Acquisition" },
     ],
     sources: [
       { label: "Cordeliopower — Cordelio Power", url: "https://cordeliopower.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -13793,7 +13498,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2018", event: "The transaction established a long-term partnership with Enbridge on contracted renewable-generation infrastructure.", category: "Founding" },
       { date: "Aug 1, 2018", event: "CPP Investments completed the acquisition of a 49% interest in Enbridge's select North American onshore renewable-power assets and related European offshore wind interests.", category: "Acquisition" },
-      { date: "2019", event: "CPP Investments continued to report the renewable partnership within its sustainable-energies portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Cppinvestments — Enbridge Onshore Renewables JV", url: "https://www.cppinvestments.com/newsroom/cppib-acquire-enbridge-interests-in-select-renewable-power-assets-na-eu/", type: "PRESS_RELEASE", purpose: "OPERATIONS_ASSETS" },
@@ -13850,10 +13554,9 @@ export const companies: PortCo[] = [
     headquarters: "California",
     milestones: [
       { date: "2023", event: "The partners disclosed that the lease could support approximately 2 GW of offshore wind capacity.", category: "Expansion" },
-      { date: "2023", event: "The venture committed US$30 million to workforce development and community benefit initiatives tied to the lease award.", category: "Other" },
+      { date: "2023", event: "The venture committed US$30 million to workforce development and community benefit initiatives tied to the lease award.", category: "Financing" },
       { date: "Jun 1, 2023", event: "BOEM executed the OCS-P 0564 California offshore wind lease effective for Golden State Wind, the Ocean Winds and CPP Investments joint venture.", category: "Acquisition" },
       { date: "Jan 18, 2023", event: "CPP Investments and Ocean Winds publicly announced the California offshore-wind lease win.", category: "Other" },
-      { date: "2024", event: "Vineyard Offshore public materials described Golden State Wind as a west-coast floating offshore wind project.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — CPP Investments — Golden State Wind", url: "https://goldenstatewind.com/golden-state-wind-a-joint-venture-of-ocean-winds-and-cpp-investments-wins-2-gw-california-wind-energy-lease/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -13942,8 +13645,7 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Multiple U.S. states and Canadian provinces",
     milestones: [
-      { date: "2009", event: "Public company materials identify 2009 as the founding year for Pattern Energy.", category: "Other" },
-      { date: "2009", event: "Pattern Energy Group was founded.", category: "Founding" },
+      { date: "2009", event: "Public company materials identify 2009 as the founding year for Pattern Energy.", category: "Founding" },
       { date: "Mar 16, 2020", event: "CPP Investments completed the take-private acquisition of Pattern Energy.", category: "Acquisition" },
       { date: "Jun 9, 2025", event: "Pattern announced the closing of an equity investment from a consortium headed by APG and Australian Retirement Trust, which acquired Riverstone's stake.", category: "Acquisition" },
       { date: "Apr 2, 2026", event: "Pattern completed the acquisition of Cordelio Power, expanding the platform across the United States and Canada.", category: "Expansion" },
@@ -13974,8 +13676,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Dec 19, 2022", event: "CPP Investments announced an approximately US$200 million investment in Redaptive.", category: "Financing" },
       { date: "Oct 22, 2024", event: "Redaptive announced an additional US$100 million equity investment from CPP Investments.", category: "Financing" },
-      { date: "2025", event: "The company continued expanding its energy-as-a-service offering across efficiency and renewable infrastructure.", category: "Expansion" },
-      { date: "May 8, 2025", event: "Redaptive announced a US$650 million credit facility from CDPQ and Nuveen to support platform expansion.", category: "Other" },
+      { date: "May 8, 2025", event: "Redaptive announced a US$650 million credit facility from CDPQ and Nuveen to support platform expansion.", category: "Financing" },
     ],
     sources: [
       { label: "Redaptive — Redaptive", url: "https://redaptive.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -14103,7 +13804,6 @@ export const companies: PortCo[] = [
       { date: "Dec 16, 2020", event: "CPP Investments announced an agreement to acquire a 15% interest in Transurban Chesapeake.", category: "Acquisition" },
       { date: "Apr 1, 2021", event: "Transurban reached financial close on the sale of a 50% interest in Transurban Chesapeake to CPP Investments, AustralianSuper, and UniSuper.", category: "Acquisition" },
       { date: "2023", event: "The Fredericksburg Extension opened within the broader Chesapeake express-lanes system.", category: "Expansion" },
-      { date: "2025", event: "Transurban investor materials continued to show ownership of 50% Transurban, 25% AustralianSuper, 15% CPP Investments, and 10% UniSuper.", category: "Other" },
     ],
     sources: [
       { label: "Cppinvestments — Transurban Chesapeake", url: "https://www.cppinvestments.com/newsroom/cpp-investments-to-acquire-stake-in-toll-road-business-transurban-chesapeake/", type: "PRESS_RELEASE" },
@@ -14132,7 +13832,6 @@ export const companies: PortCo[] = [
       { date: "Dec 2021", event: "The company announced a follow-on US$100 million strategic investment from its existing investor group.", category: "Financing" },
       { date: "Feb 2, 2021", event: "VoltaGrid closed a US$72.6 million equity commitment from institutional investors including CPP Investments and other energy-focused backers.", category: "Financing" },
       { date: "2024", event: "CPP Investments disclosed a commitment of up to US$138 million in term-loan financing to VoltaGrid.", category: "Financing" },
-      { date: "2024", event: "VoltaGrid continued expanding its mobile and distributed power platform in the United States.", category: "Expansion" },
     ],
     sources: [
       { label: "Voltagrid — VoltaGrid", url: "https://voltagrid.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -14194,8 +13893,6 @@ export const companies: PortCo[] = [
       { date: "2015", event: "The partnership established a new Alberta-focused midstream platform backed by long-term capital.", category: "Financing" },
       { date: "2015", event: "Wolf Midstream was founded.", category: "Founding" },
       { date: "Sep 30, 2015", event: "CPP Investments and Wolf signed an agreement to establish Wolf Midstream as a Western Canada midstream energy infrastructure vehicle.", category: "Financing" },
-      { date: "2024", event: "CPP Investments highlighted the platform's growth and continued build-out of infrastructure in Alberta.", category: "Other" },
-      { date: "2025", event: "Public materials referenced the recent commissioning of additional platform infrastructure.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — CPP Investments — Wolf Midstream", url: "https://www.cppinvestments.com/newsroom/cppib-wolf-2015/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -14221,9 +13918,7 @@ export const companies: PortCo[] = [
     headquarters: "Multiple U.S. states",
     milestones: [
       { date: "2022", event: "The sponsors said the investment would support Airtower's nationwide platform build-out.", category: "Financing" },
-      { date: "2022", event: "Airtower continued offering DAS, small-cell, Wi-Fi, and public-safety network solutions across the United States.", category: "Other" },
       { date: "May 4, 2022", event: "DIF announced a strategic investment in Airtower Networks through DIF CIF III.", category: "Financing" },
-      { date: "2024", event: "Public materials continued to present Airtower as a neutral-host wireless-infrastructure platform.", category: "Other" },
     ],
     sources: [
       { label: "Airtower — Airtower Networks", url: "https://www.airtower.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -14310,8 +14005,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Louisiana; Texas; multiple U.S. states",
     milestones: [
-      { date: "1919", event: "Company materials identify 1919 as the founding year.", category: "Other" },
-      { date: "1919", event: "Bernhard, LLC was founded.", category: "Founding" },
+      { date: "1919", event: "Company materials identify 1919 as the founding year.", category: "Founding" },
       { date: "Oct 4, 2021", event: "DIF announced an agreement to acquire Bernhard, LLC through DIF Infrastructure VI.", category: "Acquisition" },
       { date: "Dec 2, 2021", event: "Bernhard Capital Partners announced completion of the sale to DIF Capital Partners.", category: "Acquisition" },
       { date: "May 7, 2025", event: "Bernhard announced its rebrand to ENFRA.", category: "Other" },
@@ -14341,8 +14035,7 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "Alberta; British Columbia; Ontario; multiple U.S. states",
     milestones: [
-      { date: "2010", event: "Company history materials identify 2010 as the founding year.", category: "Other" },
-      { date: "2010", event: "BluEarth Renewables was founded.", category: "Founding" },
+      { date: "2010", event: "Company history materials identify 2010 as the founding year.", category: "Founding" },
       { date: "May 15, 2019", event: "BluEarth announced the execution of an agreement for DIF Infrastructure V to acquire the company.", category: "Acquisition" },
       { date: "Nov 20, 2019", event: "BluEarth announced closing of the transaction and stated that DIF V owned 100% of BluEarth.", category: "Acquisition" },
     ],
@@ -14399,7 +14092,7 @@ export const companies: PortCo[] = [
     investmentYear: 2017,
     headquarters: "Oklahoma",
     milestones: [
-      { date: "Dec 2012", event: "SEC filings state that Canadian Hills achieved commercial operations in December 2012.", category: "Other" },
+      { date: "Dec 2012", event: "SEC filings state that Canadian Hills achieved commercial operations in December 2012.", category: "Expansion" },
       { date: "2017", event: "DIF completed the acquisition of Canadian Hills through DIF Infrastructure IV.", category: "Acquisition" },
       { date: "Feb 3, 2017", event: "FTC records show DIF Infrastructure IV seeking early termination clearance to acquire Canadian Hills Wind from SunEdison.", category: "Acquisition" },
       { date: "Sep 1, 2022", event: "Deutsche Windtechnik announced a service agreement for Canadian Hills and identified DIF Infrastructure IV as owner.", category: "Other" },
@@ -14457,10 +14150,8 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Ontario; multiple Canadian provinces",
     milestones: [
-      { date: "2015", event: "DIF identified 2015 as Diverso's founding year.", category: "Other" },
       { date: "2015", event: "Diverso Energy Inc. was founded.", category: "Founding" },
       { date: "2023", event: "DIF stated that the founders would retain the remaining 25% and continue leading the company.", category: "Other" },
-      { date: "2023", event: "Diverso continued expanding geothermal energy-as-a-service projects in Canada.", category: "Expansion" },
       { date: "May 10, 2023", event: "DIF announced an agreement to acquire a 75% interest in Diverso through DIF Infrastructure VII.", category: "Acquisition" },
       { date: "Mar 12, 2026", event: "Diverso Energy Inc. participated in the Dandelion Partnership joint venture.", category: "Expansion" },
     ],
@@ -14522,7 +14213,6 @@ export const companies: PortCo[] = [
     investmentYear: 2016,
     headquarters: "Ontario",
     milestones: [
-      { date: "2016", event: "Financial-close materials identified DIF Infrastructure IV and Axium Infrastructure Canada II as equity sponsors.", category: "Financing" },
       { date: "2016", event: "Etobicoke Healthcare Partnership was founded.", category: "Founding" },
       { date: "May 6, 2016", event: "William Osler Health System and Infrastructure Ontario reached financial close with Etobicoke Healthcare Partnership, whose equity sponsors included DIF Infra 4 Canada Ltd.", category: "Financing" },
       { date: "Jun 28, 2016", event: "Ontario announced up to C$358 million of provincial investment in the project.", category: "Financing" },
@@ -14553,9 +14243,7 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Northeast and Midwest U.S.",
     milestones: [
-      { date: "2015", event: "Public company profiles identify 2015 as the founding year.", category: "Other" },
-      { date: "2015", event: "Green Street Power Partners was founded.", category: "Founding" },
-      { date: "2023", event: "DIF's sustainability reporting stated that DIF VII closed its investment in Green Street Power Partners.", category: "Acquisition" },
+      { date: "2015", event: "Public company profiles identify 2015 as the founding year.", category: "Founding" },
       { date: "Apr 3, 2023", event: "DIF announced an agreement to acquire a majority equity interest in Green Street Power Partners through DIF Infrastructure VII.", category: "Acquisition" },
     ],
     sources: [
@@ -14583,9 +14271,7 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Northeast and Midwest U.S.",
     milestones: [
-      { date: "2015", event: "Public company profiles identify 2015 as the founding year.", category: "Other" },
-      { date: "2015", event: "GS Power Partners was founded.", category: "Founding" },
-      { date: "2023", event: "DIF's sustainability reporting stated that DIF VII closed its investment in Green Street Power Partners.", category: "Acquisition" },
+      { date: "2015", event: "Public company profiles identify 2015 as the founding year.", category: "Founding" },
       { date: "Apr 3, 2023", event: "DIF announced an agreement to acquire a majority equity interest in Green Street Power Partners through DIF Infrastructure VII.", category: "Acquisition" },
     ],
     sources: [
@@ -14613,10 +14299,10 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "Idaho",
     milestones: [
-      { date: "2011", event: "Public sources indicate the Idaho Wind Partners portfolio entered operation in 2011.", category: "Other" },
+      { date: "2011", event: "Public sources indicate the Idaho Wind Partners portfolio entered operation in 2011.", category: "Expansion" },
       { date: "2011", event: "Idaho Wind Partners was founded.", category: "Founding" },
       { date: "Aug 1, 2019", event: "DIF Infrastructure V reached financial close on the acquisition of a U.S. wind portfolio that included Idaho Wind Partners.", category: "Acquisition" },
-      { date: "Aug 27, 2019", event: "Longroad Energy Services was selected by DIF to manage the Idaho Wind Partners project.", category: "Other" },
+      { date: "Aug 27, 2019", event: "Longroad Energy Services was selected by DIF to manage the Idaho Wind Partners project.", category: "Expansion" },
       { date: "2020", event: "GE Renewable Energy announced a 10-year service agreement for Idaho Wind Partners.", category: "Other" },
     ],
     sources: [
@@ -14644,8 +14330,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Indiana; Illinois",
     milestones: [
-      { date: "2001", event: "Public company profiles identify 2001 as the founding year.", category: "Other" },
-      { date: "2001", event: "Joink, LLC was founded.", category: "Founding" },
+      { date: "2001", event: "Public company profiles identify 2001 as the founding year.", category: "Founding" },
       { date: "2021", event: "DIF disclosed that Joink's existing investors, including Gilead Group, Hank Stephens, and Brian Wick, would remain shareholders.", category: "Other" },
       { date: "Nov 9, 2021", event: "DIF announced an investment in Joink through DIF CIF II to support fiber-network expansion.", category: "Financing" },
       { date: "Aug 10, 2022", event: "Joink, as a DIF CIF II portfolio company, agreed to acquire CTI Fiber in Illinois.", category: "Acquisition" },
@@ -14797,7 +14482,6 @@ export const companies: PortCo[] = [
       { date: "2000", event: "RFNOW Inc. was founded.", category: "Founding" },
       { date: "2022", event: "RFNOW expanded its fiber footprint across Manitoba and into southeast Saskatchewan.", category: "Expansion" },
       { date: "Jan 2023", event: "DIF Capital Partners announced an investment in RFNOW through DIF CIF III.", category: "Financing" },
-      { date: "2025", event: "Company materials stated that RFNOW employed more than 190 full-time employees and operated 35 tower sites.", category: "Other" },
     ],
     sources: [
       { label: "Rfnow — RFNOW Inc.", url: "https://www.rfnow.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -14882,8 +14566,7 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Utah; Idaho; Oklahoma",
     milestones: [
-      { date: "2008", event: "Public company profiles identify 2008 as the founding year.", category: "Other" },
-      { date: "2008", event: "Tonaquint Data Centers was founded.", category: "Founding" },
+      { date: "2008", event: "Public company profiles identify 2008 as the founding year.", category: "Founding" },
       { date: "2023", event: "DIF stated that Tonaquint management would retain a minority stake.", category: "Acquisition" },
       { date: "Jan 10, 2023", event: "DIF announced the acquisition of Tonaquint Data Centers through DIF CIF III.", category: "Acquisition" },
       { date: "Nov 30, 2023", event: "DIF announced Tonaquint's acquisition of EdgeX Data Centers in Oklahoma City.", category: "Other" },
@@ -14914,11 +14597,9 @@ export const companies: PortCo[] = [
     headquarters: "Manitoba",
     milestones: [
       { date: "2016", event: "Valley Fiber Ltd. was founded.", category: "Founding" },
-      { date: "Dec 2016", event: "Valley Fiber stated that it was incorporated in December 2016.", category: "Other" },
       { date: "Apr 20, 2020", event: "DIF Capital Partners completed a majority investment in Valley Fiber through DIF CIF II, the fund's first investment.", category: "Financing" },
       { date: "2022", event: "Valley Fiber completed the asset purchase of Simply Connected as part of platform expansion.", category: "Acquisition" },
       { date: "2023", event: "Valley Fiber, DIF, and the Canada Infrastructure Bank achieved financial close on the Manitoba fibre project.", category: "Financing" },
-      { date: "2023", event: "The company continued expanding broadband infrastructure across underserved rural Manitoba communities.", category: "Expansion" },
     ],
     sources: [
       { label: "Valleyfiber — Valley Fiber Ltd.", url: "https://valleyfiber.ca/company/", type: "ARTICLE" },
@@ -14946,8 +14627,7 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Utah; Idaho; Oklahoma",
     milestones: [
-      { date: "2008", event: "Public company materials identify the platform's founding year as 2008.", category: "Other" },
-      { date: "2008", event: "ValorC3 was founded.", category: "Founding" },
+      { date: "2008", event: "Public company materials identify the platform's founding year as 2008.", category: "Founding" },
       { date: "Jan 10, 2023", event: "DIF announced the acquisition of Tonaquint Data Centers through DIF CIF III.", category: "Acquisition" },
       { date: "Nov 30, 2023", event: "DIF announced Tonaquint's acquisition of EdgeX Data Centers in Oklahoma City.", category: "Other" },
       { date: "Jan 17, 2025", event: "Tonaquint Data Centers rebranded as ValorC3.", category: "Other" },
@@ -14977,10 +14657,8 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "Ontario; multiple North American markets; United Kingdom",
     milestones: [
-      { date: "1996", event: "Aptum's history page traces the business back to the founding of Peer 1.", category: "Other" },
-      { date: "1996", event: "Aptum Technologies was founded.", category: "Founding" },
+      { date: "1996", event: "Aptum's history page traces the business back to the founding of Peer 1.", category: "Founding" },
       { date: "2015", event: "Cogeco combined Peer 1 with Cogeco Data Services to create Cogeco Peer 1.", category: "Other" },
-      { date: "2019", event: "Cogeco Peer 1 rebranded as Aptum Technologies.", category: "Other" },
       { date: "May 1, 2019", event: "Digital Colony (now DigitalBridge) completed the acquisition of Cogeco Peer 1.", category: "Acquisition" },
       { date: "Jan 12, 2023", event: "Aptum announced the acquisition of CloudOps.", category: "Other" },
     ],
@@ -15099,11 +14777,9 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "United States",
     milestones: [
-      { date: "2001", event: "Public company materials identify 2001 as the founding year.", category: "Other" },
-      { date: "2001", event: "Expedient was founded.", category: "Founding" },
+      { date: "2001", event: "Public company materials identify 2001 as the founding year.", category: "Founding" },
       { date: "Oct 21, 2019", event: "Expedient announced that InfraBridge, then operating as AMP Capital, had agreed to acquire the company.", category: "Acquisition" },
       { date: "Dec 2, 2019", event: "Expedient completed its acquisition by DigitalBridge / InfraBridge.", category: "Acquisition" },
-      { date: "2020", event: "The company continued expanding its managed cloud and regional data center platform under InfraBridge ownership.", category: "Expansion" },
     ],
     sources: [
       { label: "Expedient — Expedient", url: "https://expedient.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -15201,7 +14877,6 @@ export const companies: PortCo[] = [
       { date: "2014", event: "Mexico Telecom Partners was founded.", category: "Founding" },
       { date: "May 21, 2014", event: "Macquarie Mexican Infrastructure Fund and Digital Bridge formed Mexico Tower Partners by merging their existing Mexican tower portfolios.", category: "Financing" },
       { date: "Jun 19, 2023", event: "MTP inaugurated a data center in Mexico City.", category: "Other" },
-      { date: "2025", event: "Industry reporting stated that MTP's edge data center footprint had expanded materially.", category: "Expansion" },
     ],
     sources: [
       { label: "Investment date source — Macquarie Asset Management — Mexico Telecom Partners", url: "https://www.mtpsites.com/ourcompany.html", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -15259,10 +14934,8 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Nevada and other U.S. markets",
     milestones: [
-      { date: "2000", event: "Public company materials identify 2000 as the founding year.", category: "Other" },
-      { date: "2000", event: "Switch, Inc. was founded.", category: "Founding" },
+      { date: "2000", event: "Public company materials identify 2000 as the founding year.", category: "Founding" },
       { date: "Dec 6, 2022", event: "DigitalBridge and IFM completed the $11 billion take-private acquisition of Switch.", category: "Acquisition" },
-      { date: "2025", event: "Company materials highlighted new AI-focused data center designs and continued U.S. campus development.", category: "Other" },
     ],
     sources: [
       { label: "Switch — Switch, Inc.", url: "https://www.switch.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -15293,8 +14966,6 @@ export const companies: PortCo[] = [
       { date: "2010", event: "Vantage Data Centers launched with the acquisition of an Intel-owned data center in Santa Clara.", category: "Founding" },
       { date: "Mar 27, 2017", event: "A consortium including Digital Bridge Holdings, PSP Investments, and TIAA Investments acquired Vantage Data Centers from Silver Lake.", category: "Acquisition" },
       { date: "Jul 2020", event: "DigitalBridge-led investors formed Vantage SDC through a $3.5 billion strategic partnership with Vantage Data Centers.", category: "Financing" },
-      { date: "Jul 2020", event: "The Vantage SDC strategic partnership included 12 stabilized North American data centers totaling more than 1.4 million gross square feet and about 150 MW of IT capacity.", category: "Expansion" },
-      { date: "Nov 2020", event: "GCM Grosvenor's Labor Impact Fund committed equity capital to Vantage Data Centers' North American growth platform.", category: "Financing" },
       { date: "Jul 23, 2020", event: "CBRE Caledon completed an investment in the newly formed Vantage SDC platform containing 12 stabilized Vantage Data Centers assets.", category: "Acquisition" },
       { date: "Jan 2024", event: "Vantage announced a $6.4 billion equity investment round led by DigitalBridge and Silver Lake.", category: "Financing" },
       { date: "Jun 13, 2024", event: "Vantage completed a $9.2 billion equity investment led by DigitalBridge and Silver Lake.", category: "Financing" },
@@ -15359,7 +15030,6 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "North America and Western Europe",
     milestones: [
-      { date: "2007", event: "Public company materials identify 2007 as the founding year.", category: "Other" },
       { date: "2007", event: "Zayo Group Holdings, Inc. was founded.", category: "Founding" },
       { date: "May 8, 2019", event: "Zayo announced a definitive agreement to be acquired by Digital Colony and EQT.", category: "Acquisition" },
       { date: "Mar 9, 2020", event: "Zayo completed its take-private acquisition by Digital Colony (now DigitalBridge) and EQT.", category: "Acquisition" },
@@ -15398,8 +15068,6 @@ export const companies: PortCo[] = [
       { date: "2022", event: "Anza Renewables, LLC was founded.", category: "Founding" },
       { date: "Sep 2022", event: "Anza was formally launched.", category: "Expansion" },
       { date: "May 17, 2023", event: "Anza completed its separation from Borrego and received new investment from an ECP / Energy Capital Partners-led consortium.", category: "Financing" },
-      { date: "2024", event: "Anza continued expanding its procurement and analytics platform for solar and storage buyers.", category: "Expansion" },
-      { date: "2025", event: "Anza said its platform supported more than 2 GW of solar safe-harbor procurements during the year.", category: "Other" },
       { date: "Feb 2026", event: "Anza published updated safe-harbor procurement activity and historical purchase-order data.", category: "Acquisition" },
     ],
     sources: [
@@ -15463,11 +15131,8 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "California, Idaho, and other U.S. dairy markets",
     milestones: [
-      { date: "2022", event: "Avolta Renewable Holdings was formed to develop a portfolio of dairy RNG projects.", category: "Other" },
-      { date: "2022", event: "Avolta Renewable Holdings, LLC was founded.", category: "Founding" },
+      { date: "2022", event: "Avolta Renewable Holdings was formed to develop a portfolio of dairy RNG projects.", category: "Founding" },
       { date: "Feb 2022", event: "ECP committed to invest in Avolta Renewable Holdings, a newly formed joint venture with Avolta, LLC.", category: "Financing" },
-      { date: "2024", event: "Avolta continued advancing projects and development activities across U.S. dairy markets.", category: "Other" },
-      { date: "2025", event: "Avolta continued marketing its RNG development platform and project pipeline.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — ECP — Avolta Renewable Holdings, LLC", url: "https://www.ecpgp.com/equity/portfolio/avolta-renewable-holdings", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -15495,8 +15160,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2021", event: "The Come By Chance refinery changed ownership and began repositioning toward renewable fuels.", category: "Other" },
       { date: "Apr 20, 2023", event: "ECP announced a $300 million preferred equity investment in Braya Renewable Fuels.", category: "Financing" },
-      { date: "Feb 2024", event: "Braya announced commencement of commercial operations.", category: "Other" },
-      { date: "Sep 2025", event: "Provincial materials identified the Braya ownership group as including Cresta, North Atlantic Refining Corp. managed by Silverpeak, and ECP.", category: "Other" },
+      { date: "Feb 2024", event: "Braya announced commencement of commercial operations.", category: "Expansion" },
     ],
     sources: [
       { label: "Brayafuels — Braya Renewable Fuels", url: "https://brayafuels.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -15525,10 +15189,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2011", event: "Convergent Energy and Power was founded.", category: "Founding" },
       { date: "Jul 9, 2019", event: "ECP / Energy Capital Partners acquired Convergent Energy and Power.", category: "Acquisition" },
-      { date: "2023", event: "Convergent continued expanding its storage development and operating portfolio.", category: "Expansion" },
       { date: "2024", event: "Convergent’s sustainability report cited more than 800 MW and 1 GWh of projects developed or acquired.", category: "Acquisition" },
-      { date: "2025", event: "Convergent continued to expand utility-scale and distributed storage development.", category: "Expansion" },
-      { date: "Jan 17, 2025", event: "The U.S. Department of Energy announced a loan guarantee for Convergent subsidiaries in Puerto Rico.", category: "Other" },
     ],
     sources: [
       { label: "Convergentep — Convergent Energy and Power", url: "https://convergentep.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -15558,11 +15219,10 @@ export const companies: PortCo[] = [
     headquarters: "Ohio and Indiana",
     milestones: [
       { date: "Sep 2024", event: "ECP announced an agreement to acquire Lightstone Generation from Blackstone and ArcLight, with the gas-fired plants to be carved out as Cornerstone Generation.", category: "Acquisition" },
-      { date: "2025", event: "Cornerstone began operating the Waterford, Lawrenceburg, and Darby gas plants in PJM under ECP ownership.", category: "Other" },
+      { date: "2025", event: "Cornerstone began operating the Waterford, Lawrenceburg, and Darby gas plants in PJM under ECP ownership.", category: "Expansion" },
       { date: "Jul 2025", event: "ECP invested in Cornerstone Generation, according to ECP's portfolio investment date.", category: "Acquisition" },
       { date: "Mar 19, 2025", event: "The Indiana Utility Regulatory Commission approved the sale of Lawrenceburg Power to Cornerstone, supporting the transaction's close.", category: "Divestiture" },
       { date: "Jan 2026", event: "ECP and Talen announced an agreement for Talen to acquire Cornerstone Generation for $3.45 billion.", category: "Acquisition" },
-      { date: "Feb 2026", event: "FERC-related filings showed the transaction moving through the approval process.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — ECP — Cornerstone Generation", url: "https://www.ecpgp.com/equity/portfolio/cornerstone-generation", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -15591,8 +15251,7 @@ export const companies: PortCo[] = [
     investmentYear: 2018,
     headquarters: "Minnesota and Florida",
     milestones: [
-      { date: "1946", event: "Gopher Resource traces its operating history back roughly 80 years.", category: "Other" },
-      { date: "1946", event: "Gopher Resource, LLC was founded.", category: "Founding" },
+      { date: "1946", event: "Gopher Resource traces its operating history back roughly 80 years.", category: "Founding" },
       { date: "Mar 6, 2018", event: "ECP / Energy Capital Partners completed the acquisition of Gopher Resource.", category: "Acquisition" },
       { date: "2025", event: "Gopher reported recycling roughly 600 million pounds of lead and 41 million pounds of plastic.", category: "Other" },
       { date: "Mar 2026", event: "Gopher highlighted its 2025 recycling volumes in a Global Recycling Day release.", category: "Other" },
@@ -15627,7 +15286,6 @@ export const companies: PortCo[] = [
       { date: "2025", event: "GFL stated that after the recapitalization it would retain an approximately 30.1% equity interest.", category: "Financing" },
       { date: "Aug 7, 2025", event: "GFL announced an agreement to recapitalize GIP at a C$4.25 billion enterprise value with investment from ECP / Energy Capital Partners.", category: "Financing" },
       { date: "Sep 4, 2025", event: "Green Infrastructure Partners completed the recapitalization with investment by ECP / Energy Capital Partners.", category: "Financing" },
-      { date: "2026", event: "GIP continued marketing vertically integrated infrastructure solutions across Ontario.", category: "Other" },
     ],
     sources: [
       { label: "Gipi — Green Infrastructure Partners Inc.", url: "https://gipi.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -15657,7 +15315,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2022", event: "Harvestone Low Carbon Partners was formed by Harvestone Group and ECP / Energy Capital Partners.", category: "Financing" },
       { date: "2022", event: "Harvestone Low Carbon Partners was founded.", category: "Founding" },
-      { date: "2023", event: "The platform continued integrating Blue Flint, Dakota Spirit, and Iroquois Bio-Energy under a low-carbon strategy.", category: "Other" },
       { date: "Sep 2024", event: "Harvestone announced $205 million of tax-equity financing for the Blue Flint carbon capture project.", category: "Financing" },
     ],
     sources: [
@@ -15687,7 +15344,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2009", event: "Metrus Energy was founded and launched its energy-as-a-service financing model.", category: "Founding" },
       { date: "Jul 7, 2022", event: "Metrus announced its acquisition by ECP.", category: "Acquisition" },
-      { date: "2023", event: "Metrus continued scaling its national efficiency and clean energy financing platform under ECP ownership.", category: "Financing" },
       { date: "2024", event: "Metrus reported more than 760 project sites across 32 states in its public materials.", category: "Other" },
     ],
     sources: [
@@ -15719,7 +15375,6 @@ export const companies: PortCo[] = [
       { date: "2022", event: "New Leaf Energy launched as a standalone U.S. solar and storage development company.", category: "Expansion" },
       { date: "2022", event: "New Leaf Energy was founded.", category: "Founding" },
       { date: "Jul 28, 2022", event: "Borrego completed the spin-off and sale of its development business to ECP, creating New Leaf Energy.", category: "Acquisition" },
-      { date: "2024", event: "Public materials described the platform as having approximately 15 GW of solar and 7 GW of storage in development.", category: "Other" },
     ],
     sources: [
       { label: "Newleafenergy — New Leaf Energy", url: "https://newleafenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -15746,12 +15401,10 @@ export const companies: PortCo[] = [
     investmentYear: 2015,
     headquarters: "Texas",
     milestones: [
-      { date: "2014", event: "Next Wave Energy Partners was formed.", category: "Other" },
       { date: "2014", event: "Next Wave Energy Partners, LP was founded.", category: "Founding" },
       { date: "Apr 14, 2015", event: "Next Wave announced an investment of up to $500 million from ECP.", category: "Financing" },
       { date: "Nov 2019", event: "The company announced a final investment decision to build Project Traveler near the Houston Ship Channel.", category: "Financing" },
       { date: "Mar 2024", event: "Project Traveler entered commercial operations in Pasadena, Texas.", category: "Expansion" },
-      { date: "May 2024", event: "Public disclosures described startup completion of the stand-alone alkylation complex.", category: "Other" },
     ],
     sources: [
       { label: "Nextwaveenergy — Next Wave Energy Partners, LP", url: "https://www.nextwaveenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -15841,7 +15494,6 @@ export const companies: PortCo[] = [
       { date: "1999", event: "Restaurant Technologies was founded.", category: "Founding" },
       { date: "Apr 2022", event: "ECP identified April 2022 as its investment date in Restaurant Technologies.", category: "Acquisition" },
       { date: "Feb 28, 2022", event: "ECP announced an agreement to acquire Restaurant Technologies from Goldman Sachs Asset Management.", category: "Acquisition" },
-      { date: "2025", event: "Public company materials reported a national footprint of more than 45,000 customers served through 41 depots.", category: "Other" },
     ],
     sources: [
       { label: "Rti Inc — Restaurant Technologies, Inc.", url: "https://www.rti-inc.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -15873,7 +15525,6 @@ export const companies: PortCo[] = [
       { date: "Mar 2024", event: "Shentel closed the sale of its tower portfolio and entered a leaseback arrangement for wireless locations.", category: "Divestiture" },
       { date: "Apr 1, 2024", event: "Shentel completed the Horizon acquisition and issued 7% participating preferred stock to an ECP affiliate.", category: "Financing" },
       { date: "Apr 1, 2024", event: "Shentel completed its acquisition of Horizon Telcom.", category: "Acquisition" },
-      { date: "2025", event: "Shentel continued integration and expansion of its Mid-Atlantic fiber and broadband platform.", category: "Other" },
     ],
     sources: [
       { label: "Shentel — Shenandoah Telecommunications Company", url: "https://www.shentel.com/en/history", type: "ARTICLE" },
@@ -15964,7 +15615,6 @@ export const companies: PortCo[] = [
       { date: "Dec 15, 2021", event: "EIC / Fiera Infrastructure completed the acquisition of Cube District Energy, the predecessor to Captis Energy.", category: "Acquisition" },
       { date: "Dec 15, 2021", event: "Cube District Energy was renamed Captis Energy following the transaction.", category: "Management" },
       { date: "Nov 2023", event: "Captis announced a landfill gas expansion project with Bi-County Solid Waste Management in Tennessee.", category: "Other" },
-      { date: "2026", event: "Captis continued to market landfill-gas-to-energy and related biogas solutions under the Captis Energy brand.", category: "Other" },
     ],
     sources: [
       { label: "Captis Energy — Captis Energy", url: "https://www.captis-energy.com/about", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -15996,7 +15646,6 @@ export const companies: PortCo[] = [
       { date: "May 1, 2019", event: "Conterra announced a new equity investment from EIC / Fiera Infrastructure and related debt facilities.", category: "Financing" },
       { date: "Jun 30, 2021", event: "APG and Fiera Infrastructure announced completion of the purchase of Conterra from Court Square Capital Partners and other indirect equity holders.", category: "Acquisition" },
       { date: "Apr 2022", event: "Conterra marked 21 years in business and reiterated that it was founded in 2001.", category: "Founding" },
-      { date: "Jul 2025", event: "Conterra reported a 15,000-mile fiber network spanning 22 states.", category: "Other" },
     ],
     sources: [
       { label: "Fierainfrastructure — Conterra Networks", url: "https://www.fierainfrastructure.com/en/assets/conterra-networks/", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -16057,7 +15706,6 @@ export const companies: PortCo[] = [
       { date: "Oct 2018", event: "EIC / Fiera Infrastructure and EllisDon Capital formed the Public Infrastructure Partnership.", category: "Financing" },
       { date: "Jan 2019", event: "Fiera Infrastructure and EllisDon Capital publicly announced their long-term PPP partnership.", category: "Financing" },
       { date: "2020", event: "Fiera Infrastructure and EllisDon began collecting portfolio-wide ESG data through an annual ESG information request.", category: "Other" },
-      { date: "2021", event: "The PPP portfolio began reporting to GRESB.", category: "Other" },
       { date: "2024", event: "The portfolio recorded a GRESB score of 89, received a 5-star rating, and ranked first in class for Social Infrastructure.", category: "Other" },
     ],
     sources: [
@@ -16087,7 +15735,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2016", event: "PureSky Energy was founded.", category: "Founding" },
       { date: "2016", event: "The platform entered the U.S. community solar market with its first projects in Minnesota and opened its Denver office.", category: "Expansion" },
-      { date: "2017", event: "The business launched its first battery energy storage solution in Massachusetts.", category: "Expansion" },
       { date: "Nov 2023", event: "PureSky closed a 3-year $150 million revolving credit facility led by Nomura.", category: "Financing" },
       { date: "Jun 12, 2023", event: "Funds managed by EIC / Fiera Infrastructure and Palisade Infrastructure Group completed the acquisition of 100% of Amp US and rebranded the business as PureSky Energy.", category: "Acquisition" },
       { date: "Dec 2025", event: "PureSky stated that it had surpassed 200 MW of operational solar and described a portfolio of approximately 241 MW across 52 sites or near-term projects.", category: "Expansion" },
@@ -16119,8 +15766,7 @@ export const companies: PortCo[] = [
       { date: "2012", event: "EIC / Fiera Infrastructure lists the initial investment year for West Coast Hydro as 2012.", category: "Financing" },
       { date: "2012", event: "Travelers Capital stated that Raging River had reached commercial operation on January 28, 2012.", category: "Financing" },
       { date: "Oct 30, 2012", event: "Travelers Capital arranged acquisition financing for the 8 MW Raging River hydroelectric facility for Aquila Infrastructure Management's investment platform.", category: "Financing" },
-      { date: "Jun 2014", event: "Oregon water-right materials stated that the Dorena hydropower project was under construction and expected online in the summer of 2014.", category: "Other" },
-      { date: "Dec 2014", event: "The U.S. Army Corps of Engineers later stated that the non-federal Dorena hydropower project began operations in December 2014.", category: "Other" },
+      { date: "Dec 2014", event: "The U.S. Army Corps of Engineers later stated that the non-federal Dorena hydropower project began operations in December 2014.", category: "Expansion" },
     ],
     sources: [
       { label: "Investment date source — EIC — West Coast Hydro", url: "https://www.fierainfrastructure.com/en/assets/west-coast-hydro/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -16147,10 +15793,9 @@ export const companies: PortCo[] = [
     headquarters: "Ontario; British Columbia",
     milestones: [
       { date: "Feb 2014", event: "The Surrey Pretrial Services Centre Expansion officially opened.", category: "Expansion" },
-      { date: "Jul 2014", event: "The South West Detention Centre officially opened.", category: "Expansion" },
       { date: "Jul 2015", event: "The Billy Bishop Toronto City Airport Pedestrian Tunnel officially opened.", category: "Expansion" },
-      { date: "Apr 20, 2016", event: "EIC / Fiera Infrastructure announced the acquisition of five PPP assets from Forum, including 100% stakes in Billy Bishop, Surrey, social housing, and South West Detention, plus a 50% stake in Quinte.", category: "Acquisition" },
       { date: "Apr 19, 2016", event: "Fiera reached financial close on Quinte, Billy Bishop, and Surrey, with South West Detention and the social housing project scheduled to follow later in 2016.", category: "Acquisition" },
+      { date: "Apr 20, 2016", event: "EIC / Fiera Infrastructure announced the acquisition of five PPP assets from Forum, including 100% stakes in Billy Bishop, Surrey, social housing, and South West Detention, plus a 50% stake in Quinte.", category: "Acquisition" },
       { date: "Apr 2019", event: "Fiera announced the acquisition of a 100% equity interest in the Enterprise Data Centre Borden PPP Project.", category: "Acquisition" },
     ],
     sources: [
@@ -16178,7 +15823,6 @@ export const companies: PortCo[] = [
     headquarters: "North America",
     milestones: [
       { date: "Nov 13, 2017", event: "EIG Global Energy Partners identified ARB Midstream with a November 13, 2017 investment date.", category: "Financing" },
-      { date: "2018", event: "SEC fund disclosures listed ARB Midstream as a midstream investment held by EIG-affiliated funds.", category: "Financing" },
       { date: "2025", event: "Public sources reviewed continue to identify ARB Midstream as part of EIG's unrealized investment portfolio.", category: "Financing" },
     ],
     sources: [
@@ -16207,8 +15851,6 @@ export const companies: PortCo[] = [
       { date: "2021", event: "Aurora states that the platform was established as a joint venture between Anew Climate and an equity-investor group led by Oak Hill Advisors and including EIG.", category: "Financing" },
       { date: "Nov 2, 2022", event: "Aurora predecessor Blue Source Sustainable Forests Company completed the acquisition of entities managed by The Forestland Group.", category: "Acquisition" },
       { date: "2024", event: "Aurora described itself as a major FSC-certified forestland manager focused on carbon stewardship in the United States.", category: "Other" },
-      { date: "2025", event: "Company materials stated that Aurora managed more than 1.6 million acres of forestland.", category: "Other" },
-      { date: "2025", event: "Aurora and project partners continued issuing and marketing forest-carbon credits under active carbon programs.", category: "Other" },
     ],
     sources: [
       { label: "Aurorasustainablelands — Aurora Sustainable Lands", url: "https://aurorasustainablelands.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -16320,7 +15962,6 @@ export const companies: PortCo[] = [
       { date: "Apr 7, 2021", event: "EIP (Energy Infrastructure Partners) completed its capital-increase transaction and acquired a 49% stake in BayWa r.e.", category: "Acquisition" },
       { date: "Mar 2025", event: "BayWa r.e. announced approximately €435 million of transformation financing.", category: "Financing" },
       { date: "Jul 2025", event: "BayWa r.e. announced a comprehensive refinancing package totaling around €3 billion.", category: "Financing" },
-      { date: "Jul 2025", event: "Official disclosures continued to show BayWa AG at 51% and EIP at 49%.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — EIP — BayWa r.e. AG", url: "https://www.baywa-re.com/en/news/details/capital-increase-transaction-and-registration-completed", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -16351,9 +15992,8 @@ export const companies: PortCo[] = [
       { date: "2017", event: "Eni Plenitude S.p.A. Società Benefit was founded.", category: "Founding" },
       { date: "Mar 8, 2024", event: "EIP closed its initial investment in Plenitude through a €588 million capital increase.", category: "Financing" },
       { date: "Mar 2025", event: "EIP completed an increase of its stake to 10%.", category: "Acquisition" },
-      { date: "Jun 2025", event: "Eni announced the agreement for Ares to acquire a 20% stake.", category: "Acquisition" },
       { date: "Nov 2025", event: "Ares completed its 20% investment in Plenitude.", category: "Financing" },
-      { date: "Mar 2026", event: "Eni announced a shareholding reorganization intended to establish joint control with Ares.", category: "Other" },
+      { date: "Jun 2025", event: "Eni announced the agreement for Ares to acquire a 20% stake.", category: "Acquisition" },
     ],
     sources: [
       { label: "Close date source — EIP — Eni Plenitude S.p.A. Società Benefit", url: "https://www.eni.com/en-IT/media/press-release/2024/03/eni-eip-investment-plenitude.html", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -16411,8 +16051,6 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "New Jersey and U.S. recycling markets",
     milestones: [
-      { date: "2024", event: "Company materials highlighted more than 40 million tons of incinerator ash processed by ART leadership over two decades.", category: "Other" },
-      { date: "2024", event: "ART continued focusing on metal recovery from auto shredder residue and waste-to-energy ash.", category: "Other" },
       { date: "Nov 26, 2024", event: "ART announced a growth investment from Ember Infrastructure.", category: "Financing" },
     ],
     sources: [
@@ -16467,8 +16105,6 @@ export const companies: PortCo[] = [
     headquarters: "Pennsylvania and Ohio",
     milestones: [
       { date: "2023", event: "Earthwise Environmental Solutions, LLC was established as an Ember Infrastructure platform focused on waste collections, recycling, and disposal services.", category: "Financing" },
-      { date: "2025", event: "Company materials referenced operations across Pennsylvania and Ohio and multiple acquired local brands.", category: "Acquisition" },
-      { date: "2025", event: "Earthwise continued expanding its portfolio of resource-recovery solutions in its regional markets.", category: "Expansion" },
     ],
     sources: [
       { label: "Earthwisees — Earthwise Environmental Solutions", url: "https://www.earthwisees.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -16494,8 +16130,6 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "Jun 21, 2023", event: "Ember Infrastructure announced a majority growth investment in GWTT.", category: "Financing" },
-      { date: "2025", event: "GWTT continued marketing vertically integrated dewatering, remedial contracting, equipment, and O&M services on a national basis.", category: "Other" },
-      { date: "2025", event: "Company materials highlighted service lines for groundwater remediation, landfill leachate, and infrastructure projects.", category: "Other" },
     ],
     sources: [
       { label: "Gwttllc — Ground/Water Treatment & Technology, LLC", url: "https://www.gwttllc.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -16522,7 +16156,6 @@ export const companies: PortCo[] = [
     headquarters: "United States and Canada",
     milestones: [
       { date: "Dec 8, 2023", event: "Ember completed the acquisition of H2O Innovation.", category: "Acquisition" },
-      { date: "2025", event: "Company materials cited more than 750 installed systems and more than 275 municipal and industrial systems under operation.", category: "Other" },
     ],
     sources: [
       { label: "H2Oinnovation — H2O Innovation Inc.", url: "https://www.h2oinnovation.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -16604,7 +16237,6 @@ export const companies: PortCo[] = [
       { date: "2021", event: "ReGenerate Energy Holdings, LLC was founded.", category: "Founding" },
       { date: "Apr 29, 2021", event: "Ember Infrastructure and ReEnergy announced plans to create ReGenerate Energy.", category: "Financing" },
       { date: "Jul 1, 2021", event: "ReGenerate completed the acquisition of the 50 MW Albany Green Energy biomass facility in Georgia.", category: "Acquisition" },
-      { date: "2025", event: "Ember stated that ReGenerate remained jointly owned by Ember and ReEnergy and was pursuing biochar and other sustainable-product opportunities.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Ember Infrastructure — ReGenerate Energy Holdings, LLC", url: "https://ember-infra.com/e/regenerate-energy-launch", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -16683,7 +16315,6 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "Aug 17, 2021", event: "Arbor Renewable Gas announced a capital commitment from EnCap Investments and Mercuria Energy.", category: "Financing" },
-      { date: "2025", event: "Arbor continued positioning its platform around development of low-carbon-intensity fuels infrastructure.", category: "Other" },
     ],
     sources: [
       { label: "Arborgas — Arbor Renewable Gas", url: "https://www.arborgas.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -16801,8 +16432,7 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Texas; New Mexico",
     milestones: [
-      { date: "2022", event: "The company was formed by industry veterans to pursue natural gas and carbon-management infrastructure opportunities in the Delaware Basin.", category: "Other" },
-      { date: "2022", event: "Cardinal Midstream Partners was founded.", category: "Founding" },
+      { date: "2022", event: "The company was formed by industry veterans to pursue natural gas and carbon-management infrastructure opportunities in the Delaware Basin.", category: "Founding" },
       { date: "Apr 21, 2022", event: "Cardinal Midstream Partners launched with a $300 million initial capital commitment from EnCap Flatrock Midstream.", category: "Financing" },
       { date: "Mar 2023", event: "Cardinal closed the acquisition of Medallion's natural gas business in the Delaware Basin.", category: "Acquisition" },
     ],
@@ -16890,8 +16520,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2026", event: "EnCap Flatrock Midstream made its initial investment in Frontier Energy.", category: "Financing" },
       { date: "2026", event: "Frontier Energy was publicly listed as a current Tulsa-based EnCap Flatrock portfolio company.", category: "IPO" },
-      { date: "2026", event: "Public materials described the platform's mandate as acquiring, building, and developing crude oil and natural gas midstream assets across the United States.", category: "Acquisition" },
-      { date: "2026", event: "EnCap Flatrock's portfolio materials identified Tulsa, Oklahoma as the company's principal operating base.", category: "Other" },
       { date: "2026", event: "Frontier Energy was founded.", category: "Founding" },
     ],
     sources: [
@@ -16922,7 +16550,6 @@ export const companies: PortCo[] = [
       { date: "2017", event: "Greenfield Midstream was founded.", category: "Founding" },
       { date: "Jan 2018", event: "Greenfield established Black Diamond Gathering with Chevron in the DJ Basin.", category: "Founding" },
       { date: "Jan 2018", event: "Greenfield and Noble Midstream closed the acquisition of certain DJ Basin assets for Black Diamond Gathering.", category: "Acquisition" },
-      { date: "2026", event: "Greenfield continued to be listed in EnCap Flatrock's active portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Greenfieldmidstream — Greenfield Midstream", url: "https://www.greenfieldmidstream.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -17013,7 +16640,6 @@ export const companies: PortCo[] = [
       { date: "2022", event: "EnCap Flatrock Midstream made its initial investment in Manchester Energy.", category: "Financing" },
       { date: "2022", event: "Manchester Energy launched as a diversified Houston-based midstream platform.", category: "Expansion" },
       { date: "2022", event: "Manchester Energy was founded.", category: "Founding" },
-      { date: "2026", event: "Manchester remained listed in EnCap's current midstream portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — EnCap Investments — Manchester Energy", url: "https://www.encapinvestments.com/about/midstream/portfolio/current/manchester-energy", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -17072,8 +16698,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2023", event: "EnCap Investments made its initial investment in Parliament Energy.", category: "Financing" },
       { date: "2023", event: "Parliament Energy was founded.", category: "Founding" },
-      { date: "Jun 2023", event: "Parliament Solar selected Ideematec for the 640 MWdc Texas project.", category: "Other" },
-      { date: "2025", event: "Public company materials described a contracted utility-scale solar portfolio of approximately 2.7 GWdc.", category: "Other" },
+      { date: "Jun 2023", event: "Parliament Solar selected Ideematec for the 640 MWdc Texas project.", category: "Expansion" },
       { date: "Jan 2026", event: "Parliament Energy signed an interconnection agreement for the 286.4 MW Spindletop solar project.", category: "Other" },
     ],
     sources: [
@@ -17105,7 +16730,6 @@ export const companies: PortCo[] = [
       { date: "Aug 2025", event: "Quantica introduced Big Sky Digital Infrastructure as its flagship development platform in Montana.", category: "Other" },
       { date: "Jul 28, 2025", event: "Quantica Infrastructure officially launched with EnCap backing.", category: "Financing" },
       { date: "2026", event: "Quantica stated plans to begin construction of the Big Sky campus in 2026.", category: "Other" },
-      { date: "2026", event: "Public materials described the Big Sky platform as expandable to 1 GW.", category: "Expansion" },
     ],
     sources: [
       { label: "Quanticainfra — Quantica Infrastructure", url: "https://quanticainfra.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -17132,8 +16756,7 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Alberta",
     milestones: [
-      { date: "2022", event: "Rangeland Midstream Canada was founded.", category: "Founding" },
-      { date: "Apr 2022", event: "Rangeland Midstream Canada was formed to pursue Western Canadian liquids infrastructure opportunities.", category: "Other" },
+      { date: "Apr 2022", event: "Rangeland Midstream Canada was formed to pursue Western Canadian liquids infrastructure opportunities.", category: "Founding" },
       { date: "May 3, 2022", event: "Rangeland Energy announced a $300 million growth equity commitment from EnCap Flatrock Midstream to support Rangeland Energy IV, whose Canadian subsidiary was Rangeland Midstream Canada.", category: "Financing" },
       { date: "Sep 2023", event: "Rangeland Midstream Canada materials state that the sale of the Marten Hills pipeline business closed in September 2023.", category: "Divestiture" },
       { date: "Sep 5, 2023", event: "Rangeland Energy and financial sponsor EnCap Flatrock Midstream entered into a definitive agreement to sell Rangeland Midstream Canada to Kingston Midstream.", category: "Divestiture" },
@@ -17166,7 +16789,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2020", event: "SolarProponent was founded, according to company materials.", category: "Founding" },
       { date: "Dec 8, 2020", event: "SolarProponent announced its formation and underlying capital commitment from EnCap Investments, with Yorktown, Mercuria, and management also investing growth capital.", category: "Financing" },
-      { date: "2023", event: "Public materials described a project focus on 100 MW-plus utility-scale solar opportunities.", category: "Other" },
       { date: "Sep 2025", event: "SolarProponent announced it had reached a $10 million interconnection agreement milestone.", category: "Other" },
     ],
     sources: [
@@ -17195,11 +16817,9 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Texas",
     milestones: [
-      { date: "2022", event: "Vecino was formed to pursue greenfield storage and related midstream opportunities.", category: "Other" },
-      { date: "2022", event: "Vecino Energy was founded.", category: "Founding" },
+      { date: "2022", event: "Vecino was formed to pursue greenfield storage and related midstream opportunities.", category: "Founding" },
       { date: "Jul 19, 2022", event: "Vecino Energy received a $200 million equity commitment from EnCap Flatrock Midstream.", category: "Financing" },
       { date: "Jan 2025", event: "Vecino and DRW Energy Trading announced an agreement to develop and anchor the Piedras Pintas salt dome storage project.", category: "Other" },
-      { date: "2026", event: "Public materials continued to present Vecino as an active EnCap Flatrock portfolio company.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — EnCap Investments — Vecino Energy", url: "https://www.encapinvestments.com/news/vecino-energy-receives-200-million-equity-commitment-encap-flatrock-midstream", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -17226,8 +16846,7 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "United States",
     milestones: [
-      { date: "1970", event: "EQT portfolio materials identify the founding year as 1970.", category: "Other" },
-      { date: "1970", event: "Arcwood Environmental was founded.", category: "Founding" },
+      { date: "1970", event: "EQT portfolio materials identify the founding year as 1970.", category: "Founding" },
       { date: "Jan 2024", event: "EQT Infrastructure completed the acquisition of a majority position in Heritage Environmental Services, which later rebranded as Arcwood Environmental.", category: "Acquisition" },
       { date: "Jun 27, 2024", event: "The business announced the acquisition of EBV from General Dynamics.", category: "Other" },
       { date: "Mar 18, 2025", event: "Heritage Environmental Services rebranded as Arcwood Environmental.", category: "Other" },
@@ -17258,7 +16877,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2022", event: "The company adopted the Cirba Solutions brand following the merger of Heritage Battery Recycling and Retriev.", category: "Other" },
       { date: "Dec 15, 2022", event: "Cirba announced that EQT Infrastructure had invested more than $200 million to support growth.", category: "Financing" },
-      { date: "2025", event: "EQT portfolio materials reported more than 150 collection points and more than 60 million pounds of post-consumer batteries processed.", category: "Other" },
     ],
     sources: [
       { label: "Cirbasolutions — Cirba Solutions", url: "https://www.cirbasolutions.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -17312,10 +16930,9 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "United States",
     milestones: [
-      { date: "2014", event: "EQT portfolio materials identify the founding year as 2014.", category: "Other" },
       { date: "2014", event: "Cypress Creek Renewables was founded.", category: "Founding" },
-      { date: "Jul 6, 2021", event: "Cypress Creek announced that EQT had agreed to acquire the company.", category: "Acquisition" },
       { date: "Oct 8, 2021", event: "Cypress Creek announced the close of its sale to EQT, with EQT becoming sole owner.", category: "Acquisition" },
+      { date: "Jul 6, 2021", event: "Cypress Creek announced that EQT had agreed to acquire the company.", category: "Acquisition" },
       { date: "Oct 20, 2025", event: "Cypress Creek announced financial close of a hybrid solar and storage project in Colorado.", category: "Financing" },
       { date: "Mar 10, 2026", event: "Cypress Creek Renewables acquired Steel River Solar and Storage Project from IFM Investors (via Swift Current Energy).", category: "Acquisition" },
     ],
@@ -17345,7 +16962,6 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "2001", event: "Eagle Railcar Services was founded by Marc and Joe Walraven in Elkhart, Texas.", category: "Founding" },
-      { date: "2025", event: "Company materials described 13 full-service railcar repair and maintenance facilities across the United States.", category: "Other" },
       { date: "Apr 1, 2025", event: "EQT Infrastructure VI announced an agreement to acquire Eagle Railcar Services from JM Texas Companies.", category: "Acquisition" },
     ],
     sources: [
@@ -17374,7 +16990,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2020", event: "EdgeConneX expanded from an edge-focused footprint into a broader global hyperscale data center platform.", category: "Expansion" },
       { date: "Nov 5, 2020", event: "EdgeConneX announced completion of its acquisition by EQT Infrastructure.", category: "Acquisition" },
-      { date: "2026", event: "Company materials highlighted new campus developments in Japan, Sweden, and Chicago.", category: "Other" },
       { date: "Feb 28, 2026", event: "EdgeConneX acquired Skellefteå Data Center Site from Lyten.", category: "Acquisition" },
       { date: "Apr 21, 2026", event: "EQT introduced an AI infrastructure strategy with EdgeConneX as a core data center platform.", category: "Expansion" },
     ],
@@ -17405,7 +17020,6 @@ export const companies: PortCo[] = [
     headquarters: "United States and Canada",
     milestones: [
       { date: "Jul 22, 2021", event: "EQT Infrastructure closed the acquisition of First Student and First Transit.", category: "Acquisition" },
-      { date: "2025", event: "EQT portfolio materials stated that First Student provides more than 900 million student journeys annually.", category: "Other" },
     ],
     sources: [
       { label: "Firststudentinc — First Student", url: "https://firststudentinc.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -17512,8 +17126,7 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "United States and Canada",
     milestones: [
-      { date: "1934", event: "Company history materials identify the founding year as 1934.", category: "Other" },
-      { date: "1934", event: "Osmose Utilities Services, Inc. was founded.", category: "Founding" },
+      { date: "1934", event: "Company history materials identify the founding year as 1934.", category: "Founding" },
       { date: "2019", event: "Osmose acquired Power Survey Company, according to its published history.", category: "Acquisition" },
       { date: "Jan 24, 2019", event: "EQT Infrastructure acquired Osmose Utilities Services from Kohlberg & Company.", category: "Acquisition" },
       { date: "Jan 28, 2026", event: "Osmose Australia announced the acquisition of Mainswest and assets of Centillion Solutions.", category: "Other" },
@@ -17597,7 +17210,6 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "United States, Caribbean, and Latin America",
     milestones: [
-      { date: "2025", event: "EQT portfolio materials cited a managed base of more than 220 plants.", category: "Other" },
       { date: "May 22, 2025", event: "EQT Infrastructure announced the acquisition of Seven Seas Water Group from Morgan Stanley Infrastructure Partners.", category: "Acquisition" },
     ],
     sources: [
@@ -17654,9 +17266,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2022", event: "SUBURBAN EQ RNG, LLC was founded.", category: "Founding" },
       { date: "Dec 28, 2022", event: "Suburban Propane closed the $190 million acquisition of RNG assets from Equilibrium and formed the development partnership at simultaneous signing and closing.", category: "Acquisition" },
-      { date: "2023", event: "Public filings described the acquired operating facilities in Stanfield, Arizona and Columbus, Ohio.", category: "Acquisition" },
       { date: "May 2023", event: "Suburban disclosed that the development company would be approximately 70% owned by Suburban and 30% by Equilibrium once fully funded.", category: "Other" },
-      { date: "2025", event: "Suburban's SEC filings continued to reference the RNG acquisition and related development company.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Equilibrium — SUBURBAN EQ RNG, LLC", url: "https://www.suburbanpropane.com/news/suburban-propane-partners-l-p-to-acquire-renewable-natural-gas-rng-production-assets-from-equilibrium-capital-group-and-establishes-partnership-for-the-development-of-additional-rng-projects/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -17681,8 +17291,7 @@ export const companies: PortCo[] = [
     countryTags: ["United States"],
     headquarters: "New Jersey",
     milestones: [
-      { date: "2019", event: "Trenton Biogas began operations.", category: "Other" },
-      { date: "Oct 2019", event: "State materials referenced the facility's commercial development and operating framework.", category: "Other" },
+      { date: "2019", event: "Trenton Biogas began operations.", category: "Expansion" },
       { date: "Feb 2021", event: "Industry coverage described the plant as operating with 400 tons per day of food waste processing capacity.", category: "Expansion" },
     ],
     sources: [
@@ -17712,7 +17321,6 @@ export const companies: PortCo[] = [
       { date: "2005", event: "Financial close was completed for the hospital PPP project.", category: "Financing" },
       { date: "2008", event: "The hospital opened and began serving the Fraser Valley region.", category: "Expansion" },
       { date: "Sep 28, 2018", event: "John Laing Infrastructure Fund's scheme of arrangement became effective, taking the portfolio private through Jura Acquisition, a vehicle backed by Equitix and Dalmore-managed funds.", category: "Acquisition" },
-      { date: "2026", event: "The asset remained associated with the Jura Acquisition portfolio in reviewed materials.", category: "Acquisition" },
     ],
     sources: [
       { label: "Fraserhealth — Abbotsford Regional Hospital and Cancer Centre", url: "https://www.fraserhealth.ca/Service-Directory/Locations/Abbotsford/abbotsford-regional-hospital-and-cancer-centre", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -17740,7 +17348,6 @@ export const companies: PortCo[] = [
     headquarters: "Alabama; Michigan",
     milestones: [
       { date: "2018", event: "DIF acquired American Roads, according to industry reporting.", category: "Acquisition" },
-      { date: "2026", event: "Public sources described the platform as a four-asset toll portfolio serving about seven million annual trips.", category: "Other" },
       { date: "Feb 2026", event: "CVC DIF announced an agreement to sell American Roads to John Laing.", category: "Acquisition" },
       { date: "Feb 2026", event: "Equitix-backed John Laing announced an agreement to acquire 100% of the platform from CVC DIF.", category: "Acquisition" },
     ],
@@ -17774,7 +17381,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2017", event: "Andion was founded, according to company profile sources.", category: "Founding" },
       { date: "Feb 2022", event: "Equitix invested in Andion as part of a $270 million financing package to expand waste processing and renewable energy deployments.", category: "Financing" },
-      { date: "2025", event: "Public deal disclosures referenced a migration from Canada to Luxembourg and a subsequent capital raise.", category: "Financing" },
     ],
     sources: [
       { label: "Investment date source — Equitix — Andion Global", url: "https://www.businesswire.com/news/home/20220228006263/en/Andion-Global-Secures-%24270-Million-to-Expand-Operations-and-Deployment-of-Waste-Processing-Plants-to-Upcycle-Organic-Waste-and-Create-Renewable-Energy", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -17800,10 +17406,9 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Massachusetts",
     milestones: [
-      { date: "2017", event: "MBTA awarded the AFC 2.0 project to the Cubic-led team.", category: "Other" },
+      { date: "2017", event: "MBTA awarded the AFC 2.0 project to the Cubic-led team.", category: "Expansion" },
       { date: "2019", event: "Project implementation began under the long-term automated fare collection contract.", category: "Other" },
       { date: "Sep 22, 2021", event: "John Laing Group's scheme of arrangement became effective, bringing Boston AFC 2.0 OpCo into the John Laing Investments Limited holding structure backed by Equitix and KKR.", category: "Acquisition" },
-      { date: "2024", event: "Massachusetts audit materials continued to track project execution and cost performance.", category: "Other" },
     ],
     sources: [
       { label: "Fhwa — Boston AFC 2.0 OpCo", url: "https://www.fhwa.dot.gov/ipd/project_profiles/ma_massachusetts_auto_fare_collection_system.aspx", type: "ARTICLE" },
@@ -17834,7 +17439,6 @@ export const companies: PortCo[] = [
       { date: "2011", event: "Construction commenced on the CHUM hospital redevelopment under the PPP structure.", category: "Expansion" },
       { date: "2017", event: "The new CHUM hospital entered service in Montréal.", category: "Expansion" },
       { date: "Nov 28, 2024", event: "John Laing (under the Equitix/KKR JV) completed its acquisition of a 25% stake in the CHUM PPP project from OHLA.", category: "Acquisition" },
-      { date: "2026", event: "CHUM remained listed in John Laing's portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Laing — Centre Hospitalier de l'Université de Montréal (CHUM)", url: "https://www.laing.com/portfolio/centre-hospitalier-de-luniversite-de-montreal-chum-canada/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -17860,11 +17464,10 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Colorado",
     milestones: [
-      { date: "2010", event: "Denver Transit Partners was selected for the Denver Eagle P3 project.", category: "Other" },
+      { date: "2010", event: "Denver Transit Partners was selected for the Denver Eagle P3 project.", category: "Expansion" },
       { date: "2016", event: "Passenger service began on the A Line and later on the B and G lines.", category: "Other" },
       { date: "Jun 29, 2021", event: "John Laing announced an additional investment to increase its shareholding in the Denver Eagle P3 project from 45% to 50%.", category: "Acquisition" },
       { date: "Sep 22, 2021", event: "John Laing Group's scheme of arrangement became effective, bringing Denver Transit Partners into the John Laing Investments Limited holding structure backed by Equitix and KKR.", category: "Acquisition" },
-      { date: "2026", event: "The project remained listed in John Laing's active portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Laing — Denver Transit Partners", url: "https://www.laing.com/portfolio/denver-eagle-us/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -17921,9 +17524,9 @@ export const companies: PortCo[] = [
     headquarters: "Florida",
     milestones: [
       { date: "2014", event: "I-4 Mobility Partners reached commercial close on the I-4 Ultimate PPP.", category: "Other" },
-      { date: "2015", event: "Major construction began on the corridor reconstruction and managed-lane works.", category: "Other" },
+      { date: "2015", event: "Major construction began on the corridor reconstruction and managed-lane works.", category: "Expansion" },
       { date: "Sep 22, 2021", event: "John Laing Group's scheme of arrangement became effective, bringing I-4 Mobility Partners into the John Laing Investments Limited holding structure backed by Equitix and KKR.", category: "Acquisition" },
-      { date: "2022", event: "Substantial completion was achieved on the I-4 Ultimate project.", category: "Other" },
+      { date: "2022", event: "Substantial completion was achieved on the I-4 Ultimate project.", category: "Expansion" },
       { date: "Apr 2, 2026", event: "Equitix announced that John Laing Investments Limited reached financial close on acquiring Skanska's remaining stake, increasing ownership to 100%.", category: "Acquisition" },
     ],
     sources: [
@@ -17956,7 +17559,6 @@ export const companies: PortCo[] = [
       { date: "2018", event: "The express lanes opened to traffic in the Charlotte region.", category: "Expansion" },
       { date: "Sep 22, 2021", event: "John Laing Group's scheme of arrangement became effective, bringing I-77 Mobility Partners into the John Laing Investments Limited holding structure backed by Equitix and KKR.", category: "Acquisition" },
       { date: "Dec 1, 2022", event: "John Laing acquired an additional 7.135% stake in I-77 Mobility Partners from abrdn.", category: "Acquisition" },
-      { date: "2026", event: "The asset remained listed in John Laing's active portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Laing — I-77 Mobility Partners", url: "https://www.laing.com/portfolio/i-77-express-lanes-us/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -18016,8 +17618,6 @@ export const companies: PortCo[] = [
       { date: "Dec 2018", event: "Live Oak Wind Farm reached commercial operation.", category: "Expansion" },
       { date: "2019", event: "John Laing sustainability materials began referencing the project as an operating wind asset.", category: "Other" },
       { date: "Sep 22, 2021", event: "John Laing Group's scheme of arrangement became effective, bringing Live Oak Wind Farm into the John Laing Investments Limited holding structure backed by Equitix and KKR.", category: "Acquisition" },
-      { date: "2024", event: "John Laing's sustainability report continued to cite Live Oak as a current operating project.", category: "Other" },
-      { date: "2026", event: "The asset remained in John Laing's active portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Laing — Live Oak Wind Farm", url: "https://www.laing.com/portfolio/live-oak-us/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -18044,10 +17644,9 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Ontario",
     milestones: [
-      { date: "2019", event: "Transdev was awarded the operating contract for the line.", category: "Other" },
+      { date: "2019", event: "Transdev was awarded the operating contract for the line.", category: "Expansion" },
       { date: "Sep 2019", event: "Mobilinx reached financial close on the Hurontario LRT DBFOM project.", category: "Financing" },
       { date: "Sep 22, 2021", event: "John Laing Group's scheme of arrangement became effective, bringing Mobilinx into the John Laing Investments Limited holding structure backed by Equitix and KKR.", category: "Acquisition" },
-      { date: "2024", event: "Construction continued on the Hazel McCallion Line corridor.", category: "Other" },
     ],
     sources: [
       { label: "Mobilinx — Mobilinx", url: "https://www.mobilinx.ca/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -18078,8 +17677,6 @@ export const companies: PortCo[] = [
       { date: "2018", event: "Two projects in the portfolio changed ownership from Cypress Creek before the current holding structure.", category: "Other" },
       { date: "2018", event: "The five-project North Carolina solar portfolio reached commercial operation.", category: "Expansion" },
       { date: "Sep 22, 2021", event: "John Laing Group's scheme of arrangement became effective, bringing the North Carolina solar portfolio into the John Laing Investments Limited holding structure backed by Equitix and KKR.", category: "Acquisition" },
-      { date: "2022", event: "John Laing sustainability reporting continued to reference the 334 MW portfolio.", category: "Other" },
-      { date: "2026", event: "The portfolio remained listed in John Laing's active assets.", category: "Other" },
     ],
     sources: [
       { label: "Laing — North Carolina Solar", url: "https://www.laing.com/portfolio/north-carolina-solar-us/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -18110,7 +17707,6 @@ export const companies: PortCo[] = [
       { date: "2018", event: "Construction commenced on the segment 3 modernization works.", category: "Expansion" },
       { date: "Sep 22, 2021", event: "John Laing Group's scheme of arrangement became effective, bringing Oakland Corridor Partners into the John Laing Investments Limited holding structure backed by Equitix and KKR.", category: "Acquisition" },
       { date: "Dec 10, 2024", event: "Equitix announced that John Laing Investments Limited had acquired the remaining shareholder stakes in Oakland Corridor Partners, increasing its commitment to 100%.", category: "Acquisition" },
-      { date: "2026", event: "The project remained listed in John Laing's portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Ocp I75 — Oakland Corridor Partners", url: "https://ocp-i75.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -18198,7 +17794,7 @@ export const companies: PortCo[] = [
     headquarters: "Alberta",
     milestones: [
       { date: "2025", event: "Fengate recorded its initial investment in the project.", category: "Financing" },
-      { date: "Apr 2025", event: "The EllisDon Infrastructure consortium, including Fengate, was selected for Alberta P3 Schools Bundle #5.", category: "Other" },
+      { date: "Apr 2025", event: "The EllisDon Infrastructure consortium, including Fengate, was selected for Alberta P3 Schools Bundle #5.", category: "Expansion" },
       { date: "Apr 1, 2025", event: "EllisDon Infrastructure reached financial close on the six-school PPP project, with Fengate Capital Management providing financing.", category: "Financing" },
     ],
     sources: [
@@ -18227,7 +17823,6 @@ export const companies: PortCo[] = [
       { date: "2020", event: "The project began selling power into the grid.", category: "Other" },
       { date: "Dec 21, 2020", event: "Fengate announced financial close on its acquisition of a majority interest in the 250 MW Amadeus Wind Project.", category: "Acquisition" },
       { date: "Dec 21, 2020", event: "BayWa r.e. announced completion and financial close of the project, with Fengate taking a cash equity position.", category: "Financing" },
-      { date: "2026", event: "Amadeus remained part of Fengate's infrastructure portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Fengate Asset Management — Amadeus Wind Project", url: "https://fengate.com/news/fengate-announces-structured-equity-investment-in-250-megawatt-wind-project", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -18285,7 +17880,6 @@ export const companies: PortCo[] = [
       { date: "2018", event: "Fengate assumed responsibility for funding the remaining CUB construction cost.", category: "Financing" },
       { date: "Sep 25, 2018", event: "Fengate acquired the Central Utility Block from Inter Pipeline.", category: "Acquisition" },
       { date: "2022", event: "Heartland Petrochemical Complex construction progressed toward commissioning with the CUB as a core utility asset.", category: "Expansion" },
-      { date: "2026", event: "Fengate continued to reference the Central Utility Block in its infrastructure portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — Fengate Asset Management — Central Utility Block (Heartland Petrochemical Complex)", url: "https://fengate.com/news/fengate-acquires-heartland-petrochemical-complexs-central-utility-block", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -18311,7 +17905,7 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Oregon",
     milestones: [
-      { date: "Jul 25, 2022", event: "Fengate PCL Progress Partners was selected as the P3 partner for the Clackamas courthouse project.", category: "Other" },
+      { date: "Jul 25, 2022", event: "Fengate PCL Progress Partners was selected as the P3 partner for the Clackamas courthouse project.", category: "Expansion" },
       { date: "Aug 30, 2022", event: "The Fengate-led consortium reached financial close on the US$313 million courthouse P3.", category: "Financing" },
       { date: "Dec 11, 2023", event: "Fengate announced a major construction milestone on the replacement courthouse project.", category: "Other" },
       { date: "May 2025", event: "The new courthouse opened to the public.", category: "Expansion" },
@@ -18400,9 +17994,8 @@ export const companies: PortCo[] = [
     headquarters: "British Columbia",
     milestones: [
       { date: "Nov 14, 2013", event: "Financing closed on the Fort St. James Green Energy Project sponsored by Fengate and Dalkia.", category: "Financing" },
-      { date: "2016", event: "Commercial operations were initially expected to begin in 2016 under the BC Hydro PPA.", category: "Other" },
-      { date: "2017", event: "Industry reporting later stated that the project first began commercial operations in late 2017.", category: "Other" },
-      { date: "2021", event: "Public reporting stated that the plant was shuttered.", category: "Other" },
+      { date: "2016", event: "Commercial operations were initially expected to begin in 2016 under the BC Hydro PPA.", category: "Expansion" },
+      { date: "2017", event: "Industry reporting later stated that the project first began commercial operations in late 2017.", category: "Expansion" },
       { date: "2022", event: "The project was publicly discussed as a restart candidate through a new industry and Indigenous partnership.", category: "Other" },
     ],
     sources: [
@@ -18429,10 +18022,9 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Texas",
     milestones: [
-      { date: "2007", event: "Freeport Energy Center began operations, according to Fengate's acquisition announcement.", category: "Other" },
+      { date: "2007", event: "Freeport Energy Center began operations, according to Fengate's acquisition announcement.", category: "Expansion" },
       { date: "Oct 21, 2020", event: "Fengate completed the acquisition of Freeport Energy Center from Calpine for the Fengate Core Infrastructure Fund III.", category: "Acquisition" },
       { date: "2024", event: "Fengate referenced the plant as a nearby companion asset when discussing Freeport Power Limited.", category: "Other" },
-      { date: "2026", event: "The facility remained part of Fengate's utilities portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Fengate Asset Management — Freeport Energy Center", url: "https://fengate.com/news/fengate-acquires-freeport-energy-center-from-calpine", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -18490,8 +18082,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Jul 2018", event: "Fengate and Pomerleau announced that their consortium had been shortlisted for the project.", category: "Other" },
       { date: "Jun 14, 2019", event: "Fengate-led NL Healthcare Partners achieved financial close on the Gander and Grand Falls-Windsor care homes project.", category: "Financing" },
-      { date: "May 2022", event: "Government materials stated that the facilities had opened.", category: "Expansion" },
-      { date: "2026", event: "The care homes remained operating social infrastructure assets in Newfoundland and Labrador.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Fengate Asset Management — Gander and Grand Falls-Windsor Care Homes Project", url: "https://fengate.com/news/fengate-led-consortium-achieves-financial-close-for-gander-and-grand-falls-windsor-care-homes-infrastructure-project", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -18517,10 +18107,9 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Delaware",
     milestones: [
-      { date: "2022", event: "The Georgetown IRF started operations.", category: "Other" },
+      { date: "2022", event: "The Georgetown IRF started operations.", category: "Expansion" },
       { date: "2024", event: "BMO Healthcare Real Estate Finance provided term financing for the acquisition portfolio.", category: "Financing" },
       { date: "Nov 5, 2024", event: "Fengate announced financial close on the acquisition of the Georgetown and Tavares IRFs.", category: "Acquisition" },
-      { date: "2026", event: "The facility remained part of Fengate's healthcare infrastructure portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Fengate Asset Management — Georgetown Inpatient Rehabilitation Facility", url: "https://fengate.com/news/fengate-asset-management-announces-financial-close-on-two-u-s-healthcare-facilities", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -18547,9 +18136,7 @@ export const companies: PortCo[] = [
     headquarters: "Newfoundland and Labrador",
     milestones: [
       { date: "Jun 14, 2019", event: "Fengate-led NL Healthcare Partners achieved financial close for the Gander and Grand Falls-Windsor care homes project.", category: "Financing" },
-      { date: "Mar 2022", event: "The Grand Falls-Windsor home reached substantial completion, according to PPP Council records.", category: "Other" },
-      { date: "May 2022", event: "Government of Newfoundland and Labrador materials stated that the facility had opened.", category: "Expansion" },
-      { date: "2026", event: "The asset remained an operating long-term care PPP facility.", category: "Other" },
+      { date: "Mar 2022", event: "The Grand Falls-Windsor home reached substantial completion, according to PPP Council records.", category: "Expansion" },
     ],
     sources: [
       { label: "Pppcouncil — Grand Falls-Windsor Long-Term Care Home", url: "https://www.pppcouncil.ca/projects/central-long-term-care-%28grand-falls-windsor%29", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -18577,7 +18164,6 @@ export const companies: PortCo[] = [
       { date: "Nov 2020", event: "Fengate recorded its initial investment in the terminal redevelopment project.", category: "Financing" },
       { date: "2022", event: "The Port Authority selected JFK Millennium Partners to deliver the new terminal.", category: "Expansion" },
       { date: "Nov 2024", event: "JFK Millennium Partners completed a nearly $2 billion bond issuance for the redevelopment.", category: "Financing" },
-      { date: "2026", event: "The project remained under construction within Fengate's transportation portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — Fengate Asset Management — JFK Terminal 6 Redevelopment", url: "https://fengate.com/investments/jfk-terminal-6-redevelopment", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -18606,7 +18192,7 @@ export const companies: PortCo[] = [
       { date: "2008", event: "Financial close was achieved on the outpatient centre project.", category: "Financing" },
       { date: "May 2011", event: "The Government of British Columbia announced the official opening of the centre.", category: "Other" },
       { date: "Jun 2011", event: "Operations commenced for outpatient and surgical services.", category: "Expansion" },
-      { date: "Sep 2014", event: "Fengate materials listed Jim Pattison Outpatient Centre and Surgical Care with financial close / investment start in September 2014.", category: "Financing" },
+      { date: "2014", event: "Fengate Asset Management invested in Jim Pattison Outpatient Care and Surgery Centre through Fengate Infrastructure Funds.", category: "Financing" },
     ],
     sources: [
       { label: "Infrastructurebc — Jim Pattison Outpatient Care and Surgery Centre", url: "https://www.infrastructurebc.com/project/jim-pattison-outpatient-care-and-surgery-centre-2/", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -18688,10 +18274,8 @@ export const companies: PortCo[] = [
     investmentYear: 2014,
     headquarters: "British Columbia",
     milestones: [
-      { date: "Aug 4, 2011", event: "BC Hydro identified Merritt among the selected bioenergy projects from its Phase 2 bioenergy process.", category: "Other" },
+      { date: "Aug 4, 2011", event: "BC Hydro identified Merritt among the selected bioenergy projects from its Phase 2 bioenergy process.", category: "Expansion" },
       { date: "Jul 31, 2014", event: "Fengate and Dalkia closed financing on the approximately C$235 million Merritt Green Energy Project.", category: "Financing" },
-      { date: "Jul 12, 2017", event: "Project reporting stated that site construction was finished and the plant was entering commissioning.", category: "Other" },
-      { date: "Apr 18, 2018", event: "Local reporting stated that the plant was generating power and selling electricity back to BC Hydro.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Fengate Asset Management — Merritt Biomass Plant", url: "https://fengate.com/news/fengate-and-dalkia-close-financing-on-merritt-green-energy-project-in-british-columbia", type: "ARTICLE", purpose: "FINANCING_FILINGS" },
@@ -18718,7 +18302,7 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Illinois",
     milestones: [
-      { date: "1998", event: "The Morris cogeneration facility began commercial operations in Morris, Illinois.", category: "Other" },
+      { date: "1998", event: "The Morris cogeneration facility began commercial operations in Morris, Illinois.", category: "Expansion" },
       { date: "1998", event: "Morris Cogeneration Facility was founded.", category: "Founding" },
       { date: "2022", event: "Fengate and Ironclad began working together on cogeneration and industrial generation asset operations.", category: "Other" },
       { date: "Dec 19, 2023", event: "Fengate announced financial close on the acquisition of Morris Cogeneration from Atlantic Power and Utilities.", category: "Acquisition" },
@@ -18746,10 +18330,10 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Colorado",
     milestones: [
-      { date: "2015", event: "Denver voters approved the National Western Center redevelopment program that set the broader campus plan in motion.", category: "Other" },
-      { date: "Jan 2024", event: "Community Activation Partners, led by Fengate, was selected to move forward as a stage-two proposer for the Equestrian Center, Hotel, and Parking Garage project.", category: "Other" },
+      { date: "2015", event: "Denver voters approved the National Western Center redevelopment program that set the broader campus plan in motion.", category: "Expansion" },
+      { date: "Jan 2024", event: "Community Activation Partners, led by Fengate, was selected to move forward as a stage-two proposer for the Equestrian Center, Hotel, and Parking Garage project.", category: "Expansion" },
       { date: "Jun 6, 2024", event: "Fengate announced that its consortium had been selected to develop the arena and equestrian center portion of the project.", category: "Financing" },
-      { date: "Jun 2, 2025", event: "Denver City Council approved major spending related to completion of the National Western Center redevelopment phases.", category: "Other" },
+      { date: "Jun 2, 2025", event: "Denver City Council approved major spending related to completion of the National Western Center redevelopment phases.", category: "Expansion" },
     ],
     sources: [
       { label: "Nationalwesterncenter — National Western Center Equestrian Center, Hotel & Garage Project", url: "https://nationalwesterncenter.com/construction-updates/two-partners-equestrian-center-hotel-and-parking-garage-project/", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -18775,7 +18359,6 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Wisconsin; North Dakota; Missouri",
     milestones: [
-      { date: "2024", event: "Public disclosures stated that the portfolio added more than 850 care beds to Fengate's U.S. healthcare and seniors housing exposure.", category: "Other" },
       { date: "2024", event: "The portfolio expanded Fengate's healthcare and seniors housing footprint across Wisconsin, North Dakota, and Missouri.", category: "Expansion" },
       { date: "May 2, 2024", event: "Fengate announced financial close on six seniors housing facilities as part of its joint venture with New Perspective and Boldt Real Estate.", category: "Acquisition" },
     ],
@@ -18913,7 +18496,7 @@ export const companies: PortCo[] = [
     headquarters: "Ontario",
     milestones: [
       { date: "Dec 13, 2013", event: "Contract award and financial close were announced for the Providence Care Hospital project, with Fengate participating in the project consortium.", category: "Financing" },
-      { date: "Nov 30, 2016", event: "The project reached substantial completion.", category: "Other" },
+      { date: "Nov 30, 2016", event: "The project reached substantial completion.", category: "Expansion" },
       { date: "2017", event: "The hospital opened in Kingston as a replacement facility for Providence Care services.", category: "Expansion" },
     ],
     sources: [
@@ -18940,7 +18523,7 @@ export const companies: PortCo[] = [
     headquarters: "Saskatchewan",
     milestones: [
       { date: "Dec 16, 2014", event: "Fengate Capital Management, through the Integrated Team Solutions SCOC Partnership, reached financial close on the Saskatoon Civic Operations Centre P3 project.", category: "Financing" },
-      { date: "Dec 31, 2016", event: "The Saskatoon Civic Operations Centre reached substantial completion.", category: "Other" },
+      { date: "Dec 31, 2016", event: "The Saskatoon Civic Operations Centre reached substantial completion.", category: "Expansion" },
       { date: "2017", event: "Operations transitioned into the new consolidated municipal facility.", category: "Other" },
     ],
     sources: [
@@ -19022,7 +18605,7 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Florida",
     milestones: [
-      { date: "2023", event: "The 42-bed Tavares inpatient rehabilitation facility began operations.", category: "Other" },
+      { date: "2023", event: "The 42-bed Tavares inpatient rehabilitation facility began operations.", category: "Expansion" },
       { date: "2023", event: "Tavares Inpatient Rehabilitation Facility was founded.", category: "Founding" },
       { date: "2024", event: "Fengate stated that the acquisition expanded its healthcare portfolio and bed count.", category: "Expansion" },
       { date: "Nov 5, 2024", event: "Fengate announced financial close on the acquisition of the Tavares and Georgetown inpatient rehabilitation facilities.", category: "Acquisition" },
@@ -19050,7 +18633,6 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Ontario",
     milestones: [
-      { date: "2025", event: "Public project materials described the development as approximately 2.8 million square feet.", category: "Other" },
       { date: "2025", event: "The project advanced under the ED+PCL Healthcare Partners, Fengate, and Plenary consortium.", category: "Other" },
       { date: "Jul 11, 2025", event: "ED+PCL Healthcare Partners, with Fengate and Plenary as equity partners, reached financial close on the Peter Gilgan Mississauga Hospital and Shah Family Hospital for Women and Children project.", category: "Financing" },
     ],
@@ -19188,7 +18770,7 @@ export const companies: PortCo[] = [
     headquarters: "California and Minnesota",
     milestones: [
       { date: "Aug 2019", event: "GCM Grosvenor's Labor Impact Fund committed initial equity capital to an Arctic Cold joint venture to build and operate a West Coast cold-storage portfolio.", category: "Financing" },
-      { date: "2021", event: "Arctic Cold began operating a leased 350,000-square-foot facility in Santa Maria, California.", category: "Other" },
+      { date: "2021", event: "Arctic Cold began operating a leased 350,000-square-foot facility in Santa Maria, California.", category: "Expansion" },
       { date: "2023", event: "Construction started on a new approximately 450,000-square-foot Santa Maria cold storage facility.", category: "Other" },
       { date: "Jul 2024", event: "GCM Grosvenor reported delivery of the new Santa Maria facility.", category: "Other" },
     ],
@@ -19273,7 +18855,7 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Oregon",
     milestones: [
-      { date: "2012", event: "Shepherds Flat began commercial operations as a large U.S. wind project.", category: "Other" },
+      { date: "2012", event: "Shepherds Flat began commercial operations as a large U.S. wind project.", category: "Expansion" },
       { date: "2021", event: "Brookfield acquired Shepherds Flat.", category: "Acquisition" },
       { date: "2024", event: "Public reports described Shepherds Flat as a repowered 845 MW operating wind farm.", category: "Other" },
       { date: "Sep 24, 2024", event: "GCM Grosvenor announced the acquisition of a 25% equity interest in Shepherds Flat from Brookfield.", category: "Acquisition" },
@@ -19415,7 +18997,7 @@ export const companies: PortCo[] = [
       { date: "Nov 18, 2015", event: "Cambrian announced a $30 million WEPA financing vehicle; public reporting later identified Generate Capital as lead investor in the fund.", category: "Financing" },
       { date: "Oct 30, 2019", event: "Cambrian announced a dedicated capital program with project finance partners to support service-based industrial water projects.", category: "Financing" },
       { date: "Nov 16, 2023", event: "Pennybacker announced the acquisition of Cambrian and a US$200 million growth commitment at the corporate level.", category: "Financing" },
-      { date: "Jun 4, 2025", event: "Cambrian announced a US$150 million credit facility with ING to support further expansion of its water and energy infrastructure offerings.", category: "Other" },
+      { date: "Jun 4, 2025", event: "Cambrian announced a US$150 million credit facility with ING to support further expansion of its water and energy infrastructure offerings.", category: "Financing" },
     ],
     sources: [
       { label: "Cambrianinnovation — Cambrian Innovation Water Asset SPVs", url: "https://cambrianinnovation.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -19475,7 +19057,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Oct 2, 2023", event: "Cultivate Power announced that it had secured a US$10 million corporate equity investment from Generate Capital.", category: "Financing" },
       { date: "2024", event: "Generate and Cultivate highlighted community solar project delivery in Illinois.", category: "Other" },
-      { date: "2025", event: "Cultivate continued expanding development activity in distributed clean energy markets.", category: "Expansion" },
     ],
     sources: [
       { label: "Investment date source — Generate Capital — Cultivate Power", url: "https://www.cultivate-power.com/news/cultivate-power-secures-dollar10-million-equity-investment-from-generate-capital", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -19499,11 +19080,6 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     headquarters: "Arkansas",
-    milestones: [
-      { date: "2016", event: "Industry project materials described design and build work for a new biomass-to-carbon facility in Monticello, Arkansas.", category: "Other" },
-      { date: "2022", event: "Arkansas regulatory materials referenced operating oversight of the EnviraPAC Monticello facility with Generate-linked management involvement.", category: "Other" },
-      { date: "Sep 20, 2024", event: "Public reporting highlighted the Monticello operation as a carbon venture backed by Generate Capital.", category: "Other" },
-    ],
     sources: [
       { label: "Portfolio evidence source — Generate Capital — EnviraPAC Monticello", url: "https://generatecapital.com/investment/", type: "ARTICLE" },
       { label: "Ncat — EnviraPAC Monticello", url: "https://www.ncat.org/arkansas-carbon-venture-turns-sustainable-forestry-management-residuals-into-market-ready-product/", type: "ARTICLE" },
@@ -19532,7 +19108,6 @@ export const companies: PortCo[] = [
       { date: "2017", event: "esVolta became active in the energy storage industry.", category: "Other" },
       { date: "2017", event: "esVolta was founded.", category: "Founding" },
       { date: "Jul 21, 2022", event: "Generate Capital announced that it had acquired battery storage developer esVolta.", category: "Acquisition" },
-      { date: "2025", event: "Company materials described 1.4 GWh operating or in-construction and more than 25 GWh in development.", category: "Other" },
       { date: "Jan 27, 2025", event: "esVolta announced a $243 million preferred-equity investment for three battery storage projects in Texas.", category: "Financing" },
     ],
     sources: [
@@ -19562,7 +19137,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2022", event: "Generate Upcycle was founded.", category: "Founding" },
       { date: "May 11, 2022", event: "Generate launched Generate Upcycle and announced the acquisition of StormFisher Environmental Services.", category: "Acquisition" },
-      { date: "2025", event: "Company materials described a portfolio of facilities processing approximately 400,000 tons of food waste annually.", category: "Other" },
       { date: "Oct 20, 2025", event: "Generate announced C$60 million of financing from Fiera Infrastructure Private Debt for Upcycle's North American RNG portfolio.", category: "Financing" },
     ],
     sources: [
@@ -19594,7 +19168,6 @@ export const companies: PortCo[] = [
       { date: "2018", event: "Mitsubishi Corporation announced an investment in Nexamp.", category: "Financing" },
       { date: "Aug 17, 2021", event: "Nexamp announced a US$680 million capital raise that included a US$240 million equity investment led by Generate Capital.", category: "Financing" },
       { date: "Apr 11, 2024", event: "Mitsubishi announced Nexamp's US$520 million capital raise from lead investor Manulife Investment Management and existing shareholders including Generate.", category: "Financing" },
-      { date: "2025", event: "Nexamp said it raised more than $1.5 billion during the year and generated over 1.2 billion kilowatt-hours.", category: "Financing" },
       { date: "Nov 2025", event: "Nexamp announced $340 million of financing for a 39-project portfolio totaling 150 MW of solar and 37 MWh of storage.", category: "Financing" },
     ],
     sources: [
@@ -19626,7 +19199,6 @@ export const companies: PortCo[] = [
     headquarters: "New York",
     milestones: [
       { date: "2017", event: "Generate Capital acquired the 88-building NYC municipal rooftop solar portfolio from Tangent Energy Solutions.", category: "Acquisition" },
-      { date: "2018", event: "Generate's investment materials stated that commercial operations would begin on a rolling basis after construction started.", category: "Financing" },
       { date: "Dec 10, 2024", event: "New York City announced completion of the city's largest collection of solar arrays on city-owned buildings under the broader program.", category: "Other" },
     ],
     sources: [
@@ -19682,7 +19254,6 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "Multiple U.S. states",
     milestones: [
-      { date: "2019", event: "Public materials described Generate as a project capital partner for Plug's fuel-cell deployments.", category: "Other" },
       { date: "Apr 3, 2019", event: "Plug Power announced a US$100 million debt facility from Generate Capital to fund new fuel-cell project deployments.", category: "Financing" },
       { date: "May 7, 2020", event: "Plug Power and Generate Capital restructured and increased the existing term loan facility.", category: "Financing" },
     ],
@@ -19740,7 +19311,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2009", event: "Stem, Inc. was founded.", category: "Founding" },
       { date: "Aug 2016", event: "Stem's project-financing pool included primary project financing from Generate Capital for behind-the-meter storage deployments.", category: "Financing" },
-      { date: "2018", event: "Public reporting described additional project-funding arrangements that expanded Stem's financing capacity.", category: "Financing" },
     ],
     sources: [
       { label: "Generatecapital — Stem Energy Storage Asset SPVs", url: "https://generatecapital.com/investment/", type: "ARTICLE" },
@@ -19797,7 +19367,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2019", event: "Ubiquity was founded.", category: "Founding" },
       { date: "Jan 19, 2022", event: "Generate Capital announced that it had acquired Ubiquity and its existing fiber networks.", category: "Acquisition" },
-      { date: "2024", event: "Public disclosures identified Generate Capital and 1248 Holdings as existing sponsors.", category: "Other" },
       { date: "Dec 17, 2024", event: "Ubiquity secured $420 million of green debt and construction financing to expand fiber deployments.", category: "Expansion" },
     ],
     sources: [
@@ -19825,7 +19394,7 @@ export const companies: PortCo[] = [
     headquarters: "Multi-state U.S. operations",
     milestones: [
       { date: "2019", event: "A large U.S. school district modernization project became the operating precedent for the later Viridis venture.", category: "Other" },
-      { date: "2023", event: "Viridis formalized the partners’ institutional decarbonization model as a dedicated joint venture.", category: "Other" },
+      { date: "2023", event: "Viridis formalized the partners’ institutional decarbonization model as a dedicated joint venture.", category: "Expansion" },
       { date: "2023", event: "Viridis Initiative was founded.", category: "Founding" },
       { date: "Jun 6, 2023", event: "Generate Capital and McKinstry launched Viridis Initiative as a dedicated joint venture for institutional decarbonization projects.", category: "Financing" },
     ],
@@ -19857,7 +19426,6 @@ export const companies: PortCo[] = [
       { date: "Jun 9, 2022", event: "Haddington Ventures announced a $650 million equity syndication for ACES Delta with investment from AIMCo, GIC, Manulife, and Ontario Teachers' (OTPP).", category: "Financing" },
       { date: "Jun 3, 2022", event: "DOE closed a US$504.4 million loan guarantee for the project.", category: "Financing" },
       { date: "2023", event: "Public reporting indicated Chevron had acquired a majority stake in ACES Delta from Haddington Ventures.", category: "Acquisition" },
-      { date: "2025", event: "ACES Delta continued development as a Chevron and Mitsubishi Power joint venture with Chevron as majority owner.", category: "Other" },
     ],
     sources: [
       { label: "Aces Delta — ACES Delta", url: "https://aces-delta.com/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -19919,7 +19487,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2007", event: "Divert was founded.", category: "Founding" },
       { date: "Jun 22, 2021", event: "Divert announced a US$100 million investment from Ara Partners, GIC, and Ontario Power Generation Pension Fund.", category: "Financing" },
-      { date: "Mar 12, 2024", event: "Divert announced business momentum updates as it continued expanding its food waste infrastructure platform.", category: "Expansion" },
     ],
     sources: [
       { label: "Divertinc — Divert, Inc.", url: "https://divertinc.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -19999,8 +19566,7 @@ export const companies: PortCo[] = [
     investmentYear: 2016,
     headquarters: "Michigan; Iowa; Minnesota; Illinois; Missouri; Kansas; Oklahoma; Wisconsin",
     milestones: [
-      { date: "2003", event: "ITC Holdings was formed as an independent electricity transmission company.", category: "Other" },
-      { date: "2003", event: "ITC Holdings Corp. was founded.", category: "Founding" },
+      { date: "2003", event: "ITC Holdings was formed as an independent electricity transmission company.", category: "Founding" },
       { date: "Apr 20, 2016", event: "Fortis reached a definitive agreement with GIC for GIC to acquire a 19.9% equity interest in ITC Holdings upon closing of Fortis's ITC acquisition.", category: "Acquisition" },
       { date: "Oct 14, 2016", event: "Fortis completed its $11.3B acquisition of ITC Holdings with GIC as a 19.9% minority investor.", category: "Acquisition" },
     ],
@@ -20028,11 +19594,9 @@ export const companies: PortCo[] = [
     headquarters: "Texas",
     milestones: [
       { date: "Nov 6, 2008", event: "GIC Special Investments and OMERS, through Texas Transmission Investment LLC, completed the purchase of a 19.75% equity interest in Oncor.", category: "Acquisition" },
-      { date: "2018", event: "Oncor's ownership structure shifted as Sempra became the indirect majority owner and Texas Transmission Investment LLC remained the minority owner.", category: "Financing" },
       { date: "2018", event: "Oncor publicly disclosed the 80.25% / 19.75% ownership split between Sempra and Texas Transmission Investment LLC.", category: "Financing" },
       { date: "Mar 2018", event: "Sempra completed the acquisition of a majority stake in Oncor.", category: "Acquisition" },
       { date: "Jun 2020", event: "OMERS prevailed in Delaware Supreme Court litigation connected to the Oncor transaction process.", category: "Other" },
-      { date: "2025", event: "Oncor disclosed a multiyear capital plan and stated that it served more than four million homes and businesses in Texas.", category: "Other" },
     ],
     sources: [
       { label: "Oncor — Oncor Electric Delivery", url: "https://www.oncor.com/investorrelations", type: "ARTICLE" },
@@ -20093,10 +19657,8 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "United States and Canada",
     milestones: [
-      { date: "1992", event: "EQT portfolio materials identify 1992 as the founding year.", category: "Other" },
-      { date: "1992", event: "Reworld was founded.", category: "Founding" },
+      { date: "1992", event: "EQT portfolio materials identify 1992 as the founding year.", category: "Founding" },
       { date: "Nov 30, 2021", event: "EQT Infrastructure completed the acquisition of Covanta, which later became Reworld.", category: "Acquisition" },
-      { date: "Oct 8, 2024", event: "EQT and GIC announced an agreement for GIC to acquire a 25% minority interest in Reworld while EQT remained the largest shareholder.", category: "Acquisition" },
       { date: "Jan 22, 2025", event: "The sale of the 25% minority equity stake in Reworld to GIC closed.", category: "Acquisition" },
     ],
     sources: [
@@ -20190,7 +19752,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2023", event: "The company outlined plans to expand fiber service in underserved Arizona markets.", category: "Expansion" },
       { date: "May 15, 2023", event: "Searchlight announced its strategic investment in Wecom; FCC materials later showed Epsom Investment Pte. Ltd. (GIC) in the Searchlight Fiber Alliance ownership chain.", category: "Financing" },
-      { date: "Oct 20, 2023", event: "FCC public materials described the Searchlight/Wecom ownership structure following the transaction.", category: "Other" },
       { date: "Aug 2024", event: "FCC materials disclosed the post-transaction ownership structure for Wecom.", category: "Other" },
       { date: "Aug 14, 2024", event: "FCC materials showed Epsom Investment Pte. Ltd. with a 46.74% equity interest in the Searchlight Fiber Alliance structure.", category: "Financing" },
     ],
@@ -20224,7 +19785,6 @@ export const companies: PortCo[] = [
       { date: "Apr 23, 2018", event: "Macquarie Infrastructure Partners made its initial investment in Aligned Data Centers, with the company jointly controlled by existing owners and MIP after the transaction.", category: "Financing" },
       { date: "Jul 2020", event: "Macquarie Infrastructure Partners V acquired an additional stake in Aligned Data Centers.", category: "Financing" },
       { date: "Aug 2, 2023", event: "Mubadala announced a minority investment in Aligned alongside majority partners managed by Macquarie Asset Management.", category: "Financing" },
-      { date: "2024", event: "Public materials described the platform at more than 40 data centers at full buildout and approximately 2.5 GW of capacity.", category: "Expansion" },
       { date: "Oct 15, 2025", event: "AI Infrastructure Partnership, MGX, and BlackRock's Global Infrastructure Partners (GIP) announced an agreement to acquire all equity in Aligned Data Centers, subject to closing.", category: "Acquisition" },
     ],
     sources: [
@@ -20256,7 +19816,6 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Minnesota; Wisconsin; North Dakota",
     milestones: [
-      { date: "1906", event: "ALLETE traces its origins to the founding of the utility business that became the company.", category: "Other" },
       { date: "1906", event: "ALLETE, Inc. was founded.", category: "Founding" },
       { date: "2024", event: "ALLETE's annual report described a diversified regulated-utility and clean-energy platform with 1,616 employees at year-end.", category: "Other" },
       { date: "May 6, 2024", event: "ALLETE announced an agreement to be acquired by a partnership led by CPP Investments and Global Infrastructure Partners.", category: "Acquisition" },
@@ -20320,7 +19879,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Feb 25, 2022", event: "Ocean Winds East, a partnership between Ocean Winds and Global Infrastructure Partners (GIP), was named winning bidder for the New York Bight lease area that became Bluepoint Wind.", category: "Financing" },
       { date: "Sep 15, 2022", event: "The sponsors introduced the Bluepoint Wind project name and public branding.", category: "Other" },
-      { date: "2026", event: "NYSERDA materials identified Bluepoint Wind as a partnership between Ocean Winds and Global Infrastructure Partners.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Global Infrastructure Partners — Bluepoint Wind", url: "https://bluepointwind.com/ocean-winds-east-awarded-lease-area-in-new-york-bight-offshore-wind-energy-auction/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -20350,7 +19908,6 @@ export const companies: PortCo[] = [
       { date: "2018", event: "Clearway Energy Group was founded.", category: "Founding" },
       { date: "Aug 31, 2018", event: "Global Infrastructure Partners (GIP) completed the acquisition of NRG's renewables platform and controlling interest in NRG Yield, forming Clearway Energy Group as an independent enterprise.", category: "Acquisition" },
       { date: "2022", event: "Clearway was described publicly as the fifth-largest U.S. renewable energy player.", category: "Other" },
-      { date: "2022", event: "The company continued to expand its U.S. wind, solar, and storage portfolio.", category: "Expansion" },
       { date: "May 25, 2022", event: "TotalEnergies announced an agreement to acquire 50% of Clearway Energy Group from GIP.", category: "Acquisition" },
     ],
     sources: [
@@ -20379,7 +19936,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Dec 29, 2020", event: "Global Infrastructure Partners (GIP) announced the acquisition of MAP Energy's renewable-energy business to form Eolian.", category: "Acquisition" },
       { date: "Dec 23, 2021", event: "Eolian acquired the remaining ownership interests in Able Grid Energy Solutions.", category: "Acquisition" },
-      { date: "2022", event: "Eolian continued to develop and operate renewable and battery-storage projects across U.S. power markets.", category: "Other" },
     ],
     sources: [
       { label: "Eolianenergy — Eolian", url: "https://www.eolianenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -20434,7 +19990,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2019", event: "Rio Grande LNG received federal approvals for the Brownsville project.", category: "Other" },
       { date: "Sep 2023", event: "Federal Register materials disclosed the post-transaction ownership structure for Rio Grande LNG Phase 1.", category: "Other" },
-      { date: "Jul 2023", event: "Phase 1 construction began following notice to proceed to Bechtel.", category: "Other" },
+      { date: "Jul 2023", event: "Phase 1 construction began following notice to proceed to Bechtel.", category: "Expansion" },
       { date: "Jul 12, 2023", event: "NextDecade executed and closed the Rio Grande LNG Phase 1 joint venture with financial commitments from Global Infrastructure Partners (GIP), GIC, Mubadala, and TotalEnergies.", category: "Financing" },
       { date: "Oct 2025", event: "NextDecade announced a positive final investment decision for Train 5 at the Rio Grande LNG complex.", category: "Financing" },
       { date: "Sep 11, 2025", event: "NextDecade announced a positive final investment decision on Train 4 and disclosed the continuing equity partner group.", category: "Financing" },
@@ -20471,7 +20027,6 @@ export const companies: PortCo[] = [
       { date: "1995", event: "InterGen México, the predecessor business identified by the company, was founded.", category: "Founding" },
       { date: "2018", event: "Actis acquired InterGen México’s portfolio and the Saavi Energía brand was established.", category: "Founding" },
       { date: "Aug 20, 2021", event: "Global Infrastructure Partners (GIP) announced the acquisition of Saavi Energía from Actis.", category: "Acquisition" },
-      { date: "2022", event: "Company materials stated that Saavi became Mexico’s second-largest private generator after adding Tierra Mojada.", category: "Other" },
     ],
     sources: [
       { label: "Saavienergia — Saavi Energía", url: "https://www.saavienergia.com/en/", type: "ARTICLE" },
@@ -20527,11 +20082,9 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Northeast United States and national project pipeline",
     milestones: [
-      { date: "2014", event: "Company materials identify Vanguard Renewables' founding year as 2014.", category: "Other" },
-      { date: "2014", event: "Vanguard Renewables was founded.", category: "Founding" },
+      { date: "2014", event: "Company materials identify Vanguard Renewables' founding year as 2014.", category: "Founding" },
       { date: "Jul 20, 2022", event: "BlackRock Real Assets acquired Vanguard Renewables from Vision Ridge Partners; the investment is now identified with Global Infrastructure Partners (GIP) as part of BlackRock.", category: "Acquisition" },
       { date: "Mar 12, 2024", event: "Vanguard and TotalEnergies announced an equally owned joint venture for future U.S. farm-based RNG projects.", category: "Other" },
-      { date: "2026", event: "Vanguard’s website identified the company as a portfolio company of Global Infrastructure Partners, a part of BlackRock.", category: "Other" },
     ],
     sources: [
       { label: "Vanguardrenewables — Vanguard Renewables", url: "https://www.vanguardrenewables.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -20621,8 +20174,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2022", event: "GridStor was founded.", category: "Founding" },
       { date: "Dec 20, 2022", event: "GridStor said Goldman Sachs Asset Management had invested in the battery-storage platform.", category: "Financing" },
-      { date: "2024", event: "GridStor continued expanding its battery development and operating footprint in western and ERCOT markets.", category: "Expansion" },
-      { date: "2025", event: "Public materials described a growing multi-state battery storage platform backed by Goldman Sachs Asset Management.", category: "Other" },
       { date: "Jan 16, 2025", event: "GridStor announced the acquisition of a 200 MW / 800 MWh Oklahoma battery project from Black Mountain Energy Storage.", category: "Other" },
     ],
     sources: [
@@ -20682,7 +20233,6 @@ export const companies: PortCo[] = [
     headquarters: "Multi-state U.S. operations",
     milestones: [
       { date: "2002", event: "LES was founded.", category: "Founding" },
-      { date: "2025", event: "Transaction materials described a 64-location, 26-facility national platform.", category: "Other" },
       { date: "Jul 22, 2025", event: "Goldman Sachs Alternatives announced a definitive agreement to acquire LES from Audax Private Equity.", category: "Acquisition" },
       { date: "Sep 2, 2025", event: "Infrastructure at Goldman Sachs Alternatives acquired LES from Audax Private Equity.", category: "Acquisition" },
     ],
@@ -20771,7 +20321,6 @@ export const companies: PortCo[] = [
     headquarters: "Michigan",
     milestones: [
       { date: "1995", event: "123NET was founded.", category: "Founding" },
-      { date: "2024", event: "Public materials highlighted 123NET’s 3,100-plus route mile fiber network.", category: "Other" },
       { date: "Apr 22, 2024", event: "Grain Management announced an agreement to acquire a majority interest in 123NET.", category: "Acquisition" },
       { date: "Jul 21, 2024", event: "Grain Management completed its previously announced acquisition of a majority investment in 123NET.", category: "Acquisition" },
     ],
@@ -20798,11 +20347,8 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Ontario",
     milestones: [
-      { date: "2023", event: "Public transaction materials described the site as a Tier III data center in Brampton, Ontario.", category: "Other" },
       { date: "2023", event: "Expansion plans were disclosed to increase power capacity from 10 MVA to 27 MVA.", category: "Expansion" },
       { date: "Jun 15, 2023", event: "Grain Management acquired a majority stake in 55 Hereford Street in partnership with StratCap.", category: "Acquisition" },
-      { date: "2024", event: "The asset remained part of Grain’s digital infrastructure portfolio.", category: "Other" },
-      { date: "2025", event: "Public site materials described the facility at 215,100 square feet and high-density liquid-cooling capability. (Expansion disclosure)", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — Grain — 55 Hereford Street", url: "https://www.prnewswire.com/news-releases/grain-management-acquires-majority-stake-in-toronto-data-center-in-partnership-with-stratcap-301852200.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -20830,7 +20376,7 @@ export const companies: PortCo[] = [
     investmentYear: 2013,
     headquarters: "Texas",
     milestones: [
-      { date: "2013", event: "The FCC approved the AT&T-Verizon Wireless-Grain transaction.", category: "Other" },
+      { date: "2013", event: "The FCC approved the AT&T-Verizon Wireless-Grain transaction.", category: "Expansion" },
       { date: "2013", event: "Grain added the Texas AWS-1 A-Block license to its communications infrastructure portfolio.", category: "Other" },
       { date: "Jan 25, 2013", event: "Verizon disclosed that Grain Management was acquiring an AWS license covering Dallas, Texas from AT&T.", category: "Acquisition" },
     ],
@@ -20891,7 +20437,6 @@ export const companies: PortCo[] = [
       { date: "Oct 17, 2018", event: "Grain Management completed its acquisition of Great Plains Communications.", category: "Acquisition" },
       { date: "May 2019", event: "Great Plains announced the acquisition of InterCarrier Networks.", category: "Acquisition" },
       { date: "Oct 2021", event: "Great Plains completed the acquisition of USA Communications.", category: "Acquisition" },
-      { date: "Jul 2024", event: "Company materials described a fiber network exceeding 19,000 miles across the Midwest and beyond.", category: "Other" },
     ],
     sources: [
       { label: "Gpcom — Great Plains Communications", url: "https://gpcom.com/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -21007,8 +20552,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2021", event: "FCC license award materials established the NewLevel II spectrum portfolio.", category: "Founding" },
       { date: "Feb 24, 2021", event: "FCC announced Auction 107 results showing Grain-sponsored NewLevel II as a winning bidder for approximately US$1.277 billion of C-band licenses.", category: "Acquisition" },
-      { date: "2024", event: "Grain portfolio materials described the portfolio as covering ten U.S. markets.", category: "Other" },
-      { date: "2025", event: "NewLevel II remained part of Grain’s digital infrastructure holdings.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — Grain — NewLevel II, L.P.", url: "https://graingp.com/investments/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -21035,9 +20578,7 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "2021", event: "FCC Auction 110 for 3.45 GHz spectrum was conducted.", category: "Other" },
-      { date: "Jan 14, 2022", event: "FCC Auction 110 payment materials identified Grain-sponsored NewLevel III as a winning bidder for 3.45 GHz spectrum licenses.", category: "Acquisition" },
-      { date: "2024", event: "Grain portfolio materials described the portfolio as covering six densely populated U.S. markets.", category: "Other" },
-      { date: "2025", event: "NewLevel III remained part of Grain’s digital infrastructure holdings.", category: "Other" },
+      { date: "2022", event: "Grain invested in NewLevel III, L.P. through FCC Auction 110 license portfolio.", category: "Financing" },
     ],
     sources: [
       { label: "Investment date source — Grain — NewLevel III, L.P.", url: "https://graingp.com/investments/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -21091,11 +20632,9 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "Arkansas, Tennessee, Missouri, Texas, and Kentucky",
     milestones: [
-      { date: "1906", event: "The Ritter family began providing local telephone service in Marked Tree, Arkansas.", category: "Other" },
       { date: "1906", event: "Ritter Communications was founded.", category: "Founding" },
+      { date: "1906", event: "The Ritter family began providing local telephone service in Marked Tree, Arkansas.", category: "Other" },
       { date: "Nov 1, 2019", event: "Grain Management completed its acquisition of a majority stake in Ritter Communications in partnership with E. Ritter and Company.", category: "Acquisition" },
-      { date: "2022", event: "Ritter announced multiple funded expansion programs across Arkansas, Missouri, and Tennessee.", category: "Other" },
-      { date: "Nov 2024", event: "Ritter closed an upsized $590 million debt refinancing to support continued network expansion.", category: "Financing" },
       { date: "Apr 2025", event: "RightFiber, a Ritter brand, announced a $4 million expansion into Poplar Bluff, Missouri.", category: "Other" },
     ],
     sources: [
@@ -21124,7 +20663,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Jan 19, 2023", event: "Grain Management completed its acquisition of Spectrotel.", category: "Acquisition" },
       { date: "2025", event: "Spectrotel announced the acquisition of Mosaic NetworkX.", category: "Acquisition" },
-      { date: "2025", event: "The company continued expansion of its managed communications service offering.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Grain — Spectrotel", url: "https://www.spectrotel.com/resource-center/press-releases/detail/2023/01/18/grain-management-announces-acquisition-of-spectrotel", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -21150,11 +20688,10 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Florida",
     milestones: [
-      { date: "1994", event: "Summit Broadband began operations in Florida.", category: "Other" },
       { date: "1994", event: "Summit Broadband was founded.", category: "Founding" },
+      { date: "1994", event: "Summit Broadband began operations in Florida.", category: "Expansion" },
       { date: "Jan 22, 2020", event: "Grain Management completed the acquisition of a majority interest in Summit Broadband from Cable Bahamas.", category: "Acquisition" },
       { date: "2023", event: "Grain appointed Kurt Van Wagenen as Chief Executive Officer.", category: "Management" },
-      { date: "Apr 2024", event: "Summit announced 400 Gbps wavelength services for enterprise customers.", category: "Other" },
       { date: "Dec 2024", event: "Summit closed an incremental $100 million debt facility and term expansion with Brookfield Asset Management.", category: "Financing" },
     ],
     sources: [
@@ -21234,7 +20771,6 @@ export const companies: PortCo[] = [
       { date: "2009", event: "Best Trash was founded.", category: "Founding" },
       { date: "Jul 11, 2024", event: "H.I.G. Capital / H.I.G. Infrastructure completed the acquisition of Best Trash.", category: "Acquisition" },
       { date: "2025", event: "Best Trash completed acquisitions of BlackJack Disposal and Pelican Waste & Debris.", category: "Other" },
-      { date: "2025", event: "Company materials stated that the business had expanded to 700,000 homes served.", category: "Expansion" },
     ],
     sources: [
       { label: "Best Trash — Best Trash", url: "https://best-trash.com/about/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -21260,7 +20796,6 @@ export const companies: PortCo[] = [
     headquarters: "Texas",
     milestones: [
       { date: "Sep 25, 2024", event: "H.I.G. Capital / H.I.G. Infrastructure acquired a controlling interest in Greenflash Infrastructure.", category: "Acquisition" },
-      { date: "2025", event: "The company continued to develop grid-scale storage and generation assets in ERCOT-linked markets.", category: "Other" },
       { date: "Oct 7, 2025", event: "Greenflash announced financing for Project Soho and referenced a broader Texas development pipeline.", category: "Financing" },
     ],
     sources: [
@@ -21287,8 +20822,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Multi-state U.S. and Canada operations",
     milestones: [
-      { date: "2004", event: "Public materials identify NAC School Bus’s founding year as 2004.", category: "Other" },
-      { date: "2004", event: "North America Central School Bus was founded.", category: "Founding" },
+      { date: "2004", event: "Public materials identify NAC School Bus’s founding year as 2004.", category: "Founding" },
       { date: "Aug 2, 2021", event: "H.I.G. Capital / H.I.G. Infrastructure acquired North America Central School Bus.", category: "Acquisition" },
       { date: "Jul 29, 2025", event: "Gryphon Junior Capital announced an investment in NAC School Bus.", category: "Financing" },
     ],
@@ -21317,7 +20851,6 @@ export const companies: PortCo[] = [
     headquarters: "Multi-state U.S. operations",
     milestones: [
       { date: "Sep 20, 2022", event: "H.I.G. Capital / H.I.G. Infrastructure acquired a controlling interest in Northern Biogas.", category: "Acquisition" },
-      { date: "2023", event: "The company continued developing and operating anaerobic-digestion and RNG assets.", category: "Other" },
       { date: "Feb 6, 2023", event: "Northern Biogas announced the acquisition of three dairy RNG projects.", category: "Other" },
     ],
     sources: [
@@ -21346,7 +20879,6 @@ export const companies: PortCo[] = [
     headquarters: "North Carolina; multi-state U.S. and Canada operations",
     milestones: [
       { date: "1997", event: "Tower Engineering Professionals was founded.", category: "Founding" },
-      { date: "2023", event: "Sponsor materials described more than 35 locations and over 100,000 projects supported annually.", category: "Other" },
       { date: "Apr 13, 2023", event: "H.I.G. Capital / H.I.G. Infrastructure completed its acquisition of Tower Engineering Professionals.", category: "Acquisition" },
     ],
     sources: [
@@ -21373,7 +20905,6 @@ export const companies: PortCo[] = [
     headquarters: "Multi-state U.S. operations",
     milestones: [
       { date: "2024", event: "H.I.G. Capital / H.I.G. Infrastructure invested in Trail Ridge Power.", category: "Financing" },
-      { date: "2024", event: "The company continued developing distributed renewable and storage projects for real estate assets.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — H.I.G. Capital — Trail Ridge Power", url: "https://hig.com/portfolio/trail-ridge-power/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -21398,7 +20929,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Georgia",
     milestones: [
-      { date: "2002", event: "The Sandersville plant began operations.", category: "Other" },
+      { date: "2002", event: "Sandersville peaking plant began commercial operations.", category: "Expansion" },
       { date: "Jul 29, 2021", event: "Gulf Pacific Power completed the acquisition of a 50% stake in AL Sandersville Holdings.", category: "Acquisition" },
     ],
     sources: [
@@ -21424,7 +20955,7 @@ export const companies: PortCo[] = [
     investmentYear: 2017,
     headquarters: "Kansas",
     milestones: [
-      { date: "2012", event: "Public project databases identify Caney River Wind as having entered operations in 2012.", category: "Other" },
+      { date: "2012", event: "Public project databases identify Caney River Wind as having entered operations in 2012.", category: "Expansion" },
       { date: "Nov 30, 2017", event: "Enel announced an agreement to sell an 80% stake in Caney River Wind to Gulf Pacific Power while retaining a 20% interest and operational responsibility.", category: "Acquisition" },
       { date: "Jun 27, 2022", event: "Gulf Pacific Power announced an increase in its stake in selected wind portfolios and updated its portfolio disclosures.", category: "Acquisition" },
     ],
@@ -21478,9 +21009,8 @@ export const companies: PortCo[] = [
     investmentYear: 2016,
     headquarters: "California",
     milestones: [
-      { date: "2015", event: "Desert Sunlight entered operations as a large utility-scale solar project in California.", category: "Other" },
+      { date: "2015", event: "Desert Sunlight entered operations as a large utility-scale solar project in California.", category: "Expansion" },
       { date: "Aug 15, 2016", event: "Gulf Pacific Power announced an agreement to acquire up to a 25% stake in Desert Sunlight.", category: "Acquisition" },
-      { date: "Jun 27, 2022", event: "Gulf Pacific Power portfolio disclosures continued to include Desert Sunlight among its renewable holdings.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Harbert Management Corp (Harbert Infra / Gulf Pacific) — Desert Sunlight", url: "https://www.businesswire.com/news/home/20160815006143/en/Gulf-Pacific-Power-to-Acquire-an-Interest-in-Desert-Sunlight-Solar-Farm-Project", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -21597,7 +21127,7 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Hawaii",
     milestones: [
-      { date: "1997", event: "The Kalaeloa cogeneration facility began commercial operations.", category: "Other" },
+      { date: "1997", event: "The Kalaeloa cogeneration facility began commercial operations.", category: "Expansion" },
       { date: "Jul 31, 2023", event: "PSEG completed the sale of its 50% interest in Kalaeloa Partners to Harbert Infrastructure Fund VI.", category: "Acquisition" },
       { date: "Mar 2025", event: "Public reporting connected Harbert’s Kalaeloa ownership with the subsequent Hamakua acquisition.", category: "Other" },
     ],
@@ -21626,8 +21156,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2014", event: "Harbert and Gulf Pacific Power closed the acquisition of the 50% interest in Northern Star Generation following customary regulatory approvals.", category: "Acquisition" },
       { date: "Apr 25, 2014", event: "Harbert affiliates Gulf Pacific Power and Harbert Power Fund V announced an agreement with Ontario Teachers' Pension Plan Board to acquire a 50% interest in Northern Star Generation.", category: "Acquisition" },
-      { date: "2021", event: "Public WSPP materials described Northern Star as jointly owned by Archmore and Harbert/CalPERS affiliates.", category: "Other" },
-      { date: "Jun 27, 2022", event: "Gulf Pacific Power portfolio disclosures identified Northern Star as a 1,052 MW generation portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Northernstargeneration — Northern Star Generation", url: "https://northernstargeneration.com/owners.html", type: "ARTICLE" },
@@ -21761,7 +21289,6 @@ export const companies: PortCo[] = [
     headquarters: "Texas",
     milestones: [
       { date: "2025", event: "The parties disclosed plans to collaborate on up to 1,500 MW of new power-generation capacity for data centers.", category: "Expansion" },
-      { date: "2025", event: "Thunderhead continued developing ultra-reliable behind-the-meter power solutions for digital infrastructure.", category: "Other" },
       { date: "May 6, 2025", event: "Thunderhead announced a funding partnership with Harbert Management Corporation.", category: "Financing" },
     ],
     sources: [
@@ -21790,7 +21317,6 @@ export const companies: PortCo[] = [
       { date: "Nov 30, 2018", event: "Gulf Pacific Power, an investment fund managed by Harbert Management Corporation, completed acquisition of the Washington County Power facility.", category: "Acquisition" },
       { date: "Dec 2022", event: "Oglethorpe’s investor materials indicated the acquisition of Washington County units had closed.", category: "Other" },
       { date: "Oct 24, 2022", event: "Oglethorpe Power and Harbert announced a purchase and sale agreement for two Washington County Power generating units.", category: "Divestiture" },
-      { date: "2023", event: "Public materials described power output being sold under tolling arrangements following the ownership split.", category: "Divestiture" },
     ],
     sources: [
       { label: "Opc — Washington County Power", url: "https://opc.com/2022/10/24/washington-county-power-acquisition/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -21848,7 +21374,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2021", event: "American Campus Communities (ACC) ASU P3 Portfolio was founded.", category: "Founding" },
       { date: "Dec 31, 2021", event: "The first stage of Harrison Street's 45% ASU portfolio joint venture with American Campus Communities closed, contributing three properties to the venture.", category: "Acquisition" },
-      { date: "2022", event: "Transaction materials identified 8,187 beds across eight assets.", category: "Other" },
       { date: "Jan 14, 2022", event: "Harrison Street and American Campus Communities announced formation of the two-stage ASU portfolio joint venture.", category: "Other" },
     ],
     sources: [
@@ -21904,9 +21429,7 @@ export const companies: PortCo[] = [
     headquarters: "Pennsylvania",
     milestones: [
       { date: "2022", event: "1547 and Green Fig acquired land for the Chester County data center campus.", category: "Acquisition" },
-      { date: "Sep 1, 2022", event: "Public reporting described initial plans for a campus of up to 2 million square feet and 150 MW of utility power.", category: "Other" },
       { date: "2025", event: "Public reporting indicated the campus was under construction with timing for initial operations in the 2025-2026 period.", category: "Other" },
-      { date: "Jan 2026", event: "Local reporting described a proposed expansion of the development footprint.", category: "Other" },
     ],
     sources: [
       { label: "Data Center Dynamics — Chester County Hyperscale Data Center", url: "https://www.datacenterdynamics.com/en/news/1547-csr-planning-2-million-sq-ft-150mw-campus-outside-philadelphia-pennsylvania/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -21932,9 +21455,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Illinois",
     milestones: [
-      { date: "2021", event: "Public materials identified the site as 725 South Wells in downtown Chicago.", category: "Other" },
       { date: "Nov 2, 2021", event: "Harrison Street and 1547 announced the acquisition of four U.S. data-center facilities, including the Chicago CBD asset.", category: "Acquisition" },
-      { date: "2025", event: "1547 continued to market the facility as CHIL2 with connectivity to 350 East Cermak and other Chicago network routes.", category: "Other" },
     ],
     sources: [
       { label: "1547Realty — Chicago CBD Data Center (CHIL2)", url: "https://www.1547realty.com/data-center/chicago-il-chil2/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -21964,7 +21485,6 @@ export const companies: PortCo[] = [
       { date: "1997", event: "CoolCo was founded.", category: "Founding" },
       { date: "2019", event: "Harrison Street acquired the Cincinnati district energy system.", category: "Acquisition" },
       { date: "Nov 1, 2022", event: "Harrison Street identified CoolCo as its existing Cincinnati infrastructure investment when announcing the Warren County solar acquisition.", category: "Financing" },
-      { date: "2025", event: "Public materials described central and satellite plant capacity of more than 10,000 tons of cooling.", category: "Expansion" },
     ],
     sources: [
       { label: "Coolco — CoolCo", url: "https://coolco.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -21994,7 +21514,6 @@ export const companies: PortCo[] = [
       { date: "1997", event: "CoolCo began providing chilled-water service in downtown Cincinnati.", category: "Other" },
       { date: "1997", event: "CoolCo (Cincinnati District Energy) was founded.", category: "Founding" },
       { date: "2019", event: "Harrison Street acquired the Cincinnati district energy system.", category: "Acquisition" },
-      { date: "2025", event: "Public materials described central and satellite plant capacity of more than 10,000 tons of cooling.", category: "Expansion" },
     ],
     sources: [
       { label: "Coolco — CoolCo (Cincinnati District Energy)", url: "https://coolco.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -22020,7 +21539,6 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Multi-state U.S. operations",
     milestones: [
-      { date: "2024", event: "Transaction materials identified nine operating and under-construction projects totaling more than 700 MW-ac and a near-term pipeline of roughly 4 GW-ac.", category: "Other" },
       { date: "Aug 18, 2024", event: "CPV announced Harrison Street’s planned one-third investment in CPV Renewables.", category: "Financing" },
       { date: "Nov 13, 2024", event: "CPV and Harrison Street announced closing of the investment.", category: "Financing" },
     ],
@@ -22047,8 +21565,7 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Not publicly disclosed.",
     milestones: [
-      { date: "2020", event: "Harrison Street impact-report materials referenced an investment in a district-energy system serving Cincinnati.", category: "Financing" },
-      { date: "May 2020", event: "Public reporting stated that Harrison Street acquired a U.S. district-energy system from BlackRock.", category: "Acquisition" },
+      { date: "2020", event: "Harrison Street invested in District Energy System.", category: "Financing" },
       { date: "Mar 26, 2024", event: "Harrison Street was reported to have raised financing for a utility P3 district-energy project, underscoring the firm’s continuing district-energy focus.", category: "Financing" },
     ],
     sources: [
@@ -22075,7 +21592,6 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "Michigan",
     milestones: [
-      { date: "2019", event: "Public materials described the planned building at 205,659 square feet.", category: "Other" },
       { date: "2019", event: "Doug Meijer Medical Innovation Building was founded.", category: "Founding" },
       { date: "Nov 27, 2019", event: "Harrison Street announced its investment in the Doug Meijer Medical Innovation Building project.", category: "Financing" },
       { date: "2021", event: "The facility opened as part of Michigan State University’s Grand Rapids Innovation Park.", category: "Expansion" },
@@ -22162,7 +21678,6 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "California; Minnesota",
     milestones: [
-      { date: "2021", event: "Public disclosures described the assets as operating projects in California and Minnesota with approximately 16 years of remaining contract life.", category: "Other" },
       { date: "2021", event: "CohnReznick announced Ecoplexus’s sale of partial equity interests in the related CA-SUN and MN-SUN portfolios.", category: "Divestiture" },
       { date: "Jan 12, 2021", event: "Harrison Street announced the acquisition of the 101.9 MW Ecoplexus solar portfolio.", category: "Acquisition" },
     ],
@@ -22189,9 +21704,8 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Maryland",
     milestones: [
-      { date: "2016", event: "The Fort Detrick solar facility entered operations according to Army disclosures.", category: "Other" },
+      { date: "2016", event: "The Fort Detrick solar facility entered operations according to Army disclosures.", category: "Expansion" },
       { date: "May 2020", event: "Harrison Street announced the acquisition of the Fort Detrick Energy Production Facility from BlackRock.", category: "Acquisition" },
-      { date: "Jun 20, 2024", event: "Army materials stated that a 6 MW/6 MWh battery energy-storage system had become operational at the facility.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Harrison Street — Fort Detrick Energy Production Facility", url: "https://www.harrisonst.com/wp-content/uploads/2020/05/Harrison-Street-Acquires-Fort-Detrick-Energy-Production-Facility-PR.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT" },
@@ -22216,7 +21730,6 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Illinois",
     milestones: [
-      { date: "2021", event: "Public materials described the system as providing chilled water, steam, and electricity production to the campus.", category: "Other" },
       { date: "2021", event: "Harrison Street disclosed plans to install a trigeneration system as part of the redevelopment program.", category: "Other" },
       { date: "Jul 21, 2021", event: "Harrison Street announced a 40-year P3 partnership to operate and redevelop Illinois Tech’s central power system.", category: "Financing" },
     ],
@@ -22243,7 +21756,6 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "New York",
     milestones: [
-      { date: "2021", event: "Public transaction materials described the leasehold as a 49-year term with hospital occupancy contracted to Montefiore under an existing 99-year lease.", category: "Other" },
       { date: "2021", event: "The transaction expanded Harrison Street’s healthcare-focused social-infrastructure holdings.", category: "Expansion" },
       { date: "Feb 2021", event: "Harrison Street announced the monetization of the Jack D. Weiler Hospital ground lease from Yeshiva University.", category: "Acquisition" },
     ],
@@ -22273,8 +21785,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2021", event: "Mayroad was established.", category: "Founding" },
       { date: "Dec 21, 2021", event: "Harrison Street announced the acquisition of the Air Force Continental Group military-housing partnership and the launch of Mayroad.", category: "Acquisition" },
-      { date: "2022", event: "Public materials described the portfolio as more than 4,000 homes across six Air Force installations.", category: "Other" },
-      { date: "Jul 2022", event: "Air Force and industry sources reported strong tenant-satisfaction results across the Mayroad portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Themayroad — Mayroad", url: "https://www.themayroad.com/aboutus", type: "ARTICLE" },
@@ -22300,9 +21810,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Illinois",
     milestones: [
-      { date: "2021", event: "Public reporting described the facility at roughly 230,000 square feet and 26 MW.", category: "Other" },
       { date: "Nov 2, 2021", event: "Harrison Street and 1547 announced the acquisition of Midway Technology Centre within a four-asset portfolio from CIM Group.", category: "Acquisition" },
-      { date: "2025", event: "The property remained part of 1547’s connectivity-focused U.S. data-center platform.", category: "Other" },
     ],
     sources: [
       { label: "Harrisonst — Midway Technology Centre", url: "https://harrisonst.com/exclusive-harrison-street-and-fifteenfortyseven-acquire-four-data-center-facilities-in-u-s/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -22327,9 +21835,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "New York",
     milestones: [
-      { date: "2021", event: "Public materials identified the site as a 232,000-square-foot property on 23 acres.", category: "Other" },
       { date: "Nov 2, 2021", event: "Harrison Street and 1547 announced the acquisition of Orangeburg Data Center from CIM Group.", category: "Acquisition" },
-      { date: "2025", event: "1547 continued to market the facility as ORNY1 for New York metro colocation demand.", category: "Other" },
     ],
     sources: [
       { label: "1547Realty — Orangeburg Data Center (ORNY1)", url: "https://www.1547realty.com/data-center/orangeburg-new-york-orny1/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -22354,10 +21860,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Oregon",
     milestones: [
-      { date: "2021", event: "Public materials identified the property as a carrier hotel anchored by one of the Pacific Northwest’s primary internet exchanges.", category: "Other" },
       { date: "Jan 4, 2021", event: "Harrison Street and 1547 announced the acquisition of the Pittock Block building in Portland.", category: "Acquisition" },
-      { date: "2022", event: "Public reporting described capital improvements to the facility after acquisition.", category: "Other" },
-      { date: "2025", event: "The site continued to be presented as part of 1547’s connectivity-focused platform.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Harrison Street — Pittock Block Data Center", url: "https://www.1547realty.com/resource/1547-and-harrison-street-acquire-portland-carrier-hotel-and-data-center/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -22413,7 +21916,6 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Indiana; Michigan",
     milestones: [
-      { date: "2024", event: "Public materials described the combined pipeline at 856 units and 2,316 beds.", category: "Other" },
       { date: "2024", event: "Purdue and University of Michigan Housing Developments was founded.", category: "Founding" },
       { date: "Dec 3, 2024", event: "Harrison Street and LV Collective announced a joint venture to develop two student-oriented housing projects near Purdue and the University of Michigan.", category: "Financing" },
     ],
@@ -22473,7 +21975,6 @@ export const companies: PortCo[] = [
       { date: "2021", event: "Soltage Distributed Solar Portfolio (Iris & Helios) was founded.", category: "Founding" },
       { date: "Mar 2021", event: "Soltage announced the formation of the Iris capital partnership with Harrison Street.", category: "Financing" },
       { date: "Aug 18, 2021", event: "Soltage announced a second investment from the partnership for 20 MW of distributed solar projects.", category: "Financing" },
-      { date: "2022", event: "Public materials stated that the program targeted up to 450 MW of distributed solar capacity.", category: "Expansion" },
       { date: "Feb 16, 2022", event: "Soltage reported a further deployment covering 31 MW of solar facilities.", category: "Financing" },
     ],
     sources: [
@@ -22499,10 +22000,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Virginia; Maryland; District of Columbia",
     milestones: [
-      { date: "2021", event: "Public materials stated that SDC retained a majority position and Columbia retained a minority position.", category: "Other" },
       { date: "Jul 1, 2021", event: "Harrison Street announced the acquisition of a significant minority interest in SummitIG.", category: "Acquisition" },
-      { date: "2022", event: "Company materials cited more than 550 route miles of fiber in operation.", category: "Other" },
-      { date: "2022", event: "Public reporting referenced nearly $40 million of annual recurring revenue by year-end.", category: "Other" },
     ],
     sources: [
       { label: "Summitig — Summit Infrastructure Group (SummitIG)", url: "https://www.summitig.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -22527,7 +22025,6 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Indiana",
     milestones: [
-      { date: "2024", event: "Public materials described the facility as a top U.S. carrier hotel with more than 20 telecom providers.", category: "Other" },
       { date: "2024", event: "The buyers disclosed planned capacity and facility upgrades following the acquisition.", category: "Expansion" },
       { date: "Sep 4, 2024", event: "Harrison Street and 1547 announced the acquisition of the Union Station Data Center and Carrier Hotel in South Bend.", category: "Acquisition" },
     ],
@@ -22585,7 +22082,6 @@ export const companies: PortCo[] = [
     headquarters: "Washington",
     milestones: [
       { date: "2019", event: "University materials indicated that UW Bothell pursued a P3 to redevelop Husky Village.", category: "Other" },
-      { date: "2021", event: "Public materials described the redevelopment at 1,055 beds.", category: "Other" },
       { date: "2021", event: "University of Washington Bothell Mixed-Use Development was founded.", category: "Founding" },
       { date: "Nov 23, 2021", event: "Harrison Street and Capstone announced the mixed-use student-housing P3 project.", category: "Financing" },
     ],
@@ -22613,11 +22109,8 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Ohio",
     milestones: [
-      { date: "2022", event: "Public materials stated that the project had two power-purchase agreements in place.", category: "Acquisition" },
       { date: "2022", event: "Warren County Solar Project was founded.", category: "Founding" },
       { date: "Nov 1, 2022", event: "Harrison Street announced the acquisition of the 28 MW Warren County solar project from Soltage.", category: "Acquisition" },
-      { date: "2023", event: "Harrison Street’s ESG reporting highlighted agrivoltaic sheep grazing at the site.", category: "Other" },
-      { date: "2024", event: "Cincinnati Zoo materials reported that the Bowyer Farm solar array was online.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Harrison Street — Warren County Solar Project", url: "https://harrisonst.com/harrison-street-acquires-28-mw-cincinnati-solar-project/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -22644,7 +22137,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Sep 3, 2020", event: "Harrison Street and 1547 announced the acquisition of the Wells Building in Milwaukee.", category: "Acquisition" },
       { date: "Nov 2, 2021", event: "The firms referenced the Wells Building as an earlier acquisition when announcing their four-asset portfolio deal.", category: "Other" },
-      { date: "2025", event: "1547 continued to market the building as MIWI1 with access to more than 35 providers.", category: "Other" },
     ],
     sources: [
       { label: "1547Realty — Wells Building Data Center", url: "https://www.1547realty.com/data-center/milwaukee-wi-miwi1/", type: "ARTICLE" },
@@ -22674,7 +22166,6 @@ export const companies: PortCo[] = [
       { date: "2020", event: "The building opened for the academic year.", category: "Expansion" },
       { date: "2020", event: "Woodlawn Residential Commons was founded.", category: "Founding" },
       { date: "Jun 2020", event: "Public reporting indicated that construction of Woodlawn Residential Commons was completed.", category: "Other" },
-      { date: "2021", event: "Harrison Street ESG reporting described the asset as serving approximately 1,300 students and staff.", category: "Other" },
     ],
     sources: [
       { label: "Harrisonst — Woodlawn Residential Commons", url: "https://harrisonst.com/harrison-street-jv-plans-mixed-use-student-housing-development-at-the-university-of-chicago/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -22701,7 +22192,6 @@ export const companies: PortCo[] = [
     headquarters: "Massachusetts",
     milestones: [
       { date: "2023", event: "The parties disclosed that Cogen Power Technologies would operate the facility.", category: "Other" },
-      { date: "2023", event: "Public materials identified planned solar, CHP, efficiency, and potential microgrid upgrades as part of the program.", category: "Other" },
       { date: "2023", event: "Worcester Polytechnic Institute Utility System was founded.", category: "Founding" },
       { date: "Jan 10, 2023", event: "Harrison Street announced a 40-year public-private partnership to lease, manage, operate, develop, and finance WPI’s utility system.", category: "Financing" },
     ],
@@ -22728,7 +22218,6 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Wyoming",
     milestones: [
-      { date: "2021", event: "Public materials stated that the facility was fully leased to a national virtual infrastructure and IT-services company at acquisition.", category: "Other" },
       { date: "Nov 2, 2021", event: "Harrison Street and 1547 announced the acquisition of Wyoming Data Center from CIM Group.", category: "Acquisition" },
     ],
     sources: [
@@ -22757,7 +22246,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2019", event: "Ambient Photonics was founded.", category: "Founding" },
       { date: "May 10, 2022", event: "Ambient Photonics announced a $31 million Series A financing, which included participation from I Squared Capital.", category: "Financing" },
-      { date: "Sep 2023", event: "Ambient Photonics announced a Series A2 extension with continued backing from existing investors.", category: "Other" },
       { date: "Apr 24, 2023", event: "The company announced the opening of a U.S. manufacturing facility for low-light photovoltaic cells.", category: "Other" },
     ],
     sources: [
@@ -22952,10 +22440,8 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "United States",
     milestones: [
-      { date: "1955", event: "Public company materials identify FlexiVan’s founding year.", category: "Other" },
-      { date: "1955", event: "FlexiVan was founded.", category: "Founding" },
+      { date: "1955", event: "Public company materials identify FlexiVan’s founding year.", category: "Founding" },
       { date: "Jan 27, 2020", event: "I Squared Capital announced the combination of FlexiVan and American Intermodal Management and its acquisition of a controlling interest.", category: "Acquisition" },
-      { date: "2024", event: "Public materials described the combined fleet at more than 120,000 chassis.", category: "Other" },
     ],
     sources: [
       { label: "Flexivan — FlexiVan", url: "https://www.flexivan.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -22981,8 +22467,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "United States",
     milestones: [
-      { date: "2003", event: "Public materials identify GridPoint’s founding year.", category: "Other" },
-      { date: "2003", event: "GridPoint was founded.", category: "Founding" },
+      { date: "2003", event: "Public materials identify GridPoint’s founding year.", category: "Founding" },
       { date: "2021", event: "I Squared's Global InfraTech Fund launched and made GridPoint its first investment.", category: "Financing" },
       { date: "Mar 1, 2022", event: "GridPoint announced a $75 million strategic capital raise and identified I Squared Capital among its investors.", category: "Financing" },
       { date: "2025", event: "GridPoint announced additional financing to support commercial-building electrification growth.", category: "Financing" },
@@ -23038,7 +22523,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Mexico, Central America, and the Caribbean",
     milestones: [
-      { date: "2002", event: "KIO began operations in Mexico.", category: "Other" },
+      { date: "2002", event: "KIO began operations in Mexico.", category: "Expansion" },
       { date: "2002", event: "KIO Networks was founded.", category: "Founding" },
       { date: "2021", event: "I Squared described KIO as Mexico's largest data center operator with regional expansion potential.", category: "Other" },
       { date: "Dec 2, 2021", event: "I Squared Capital announced completion of its acquisition of KIO Networks.", category: "Acquisition" },
@@ -23123,8 +22608,7 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Texas",
     milestones: [
-      { date: "2001", event: "Company materials identify Priority Power’s founding year.", category: "Other" },
-      { date: "2001", event: "Priority Power Management was founded.", category: "Founding" },
+      { date: "2001", event: "Company materials identify Priority Power’s founding year.", category: "Founding" },
       { date: "2024", event: "The transaction announcement stated that founder Brandon Schwertner would continue with the company and retain an equity stake.", category: "Acquisition" },
       { date: "Jul 30, 2024", event: "I Squared Capital announced an agreement to acquire Priority Power Management.", category: "Acquisition" },
     ],
@@ -23152,10 +22636,8 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Texas",
     milestones: [
-      { date: "2021", event: "Company materials identify RPower’s founding year.", category: "Other" },
-      { date: "2021", event: "RPower was founded.", category: "Founding" },
+      { date: "2021", event: "Company materials identify RPower’s founding year.", category: "Founding" },
       { date: "Apr 25, 2023", event: "I Squared completed a growth capital investment in RPower, targeting up to $400 million of equity capital for growth initiatives.", category: "Financing" },
-      { date: "2024", event: "Public materials highlighted RPower’s expansion into bridge-power and data-center-adjacent opportunities.", category: "Other" },
     ],
     sources: [
       { label: "Rpowernow — RPower", url: "https://rpowernow.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -23182,8 +22664,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Apr 25, 2025", event: "I Squared announced an agreement to acquire National Express School from Mobico Group.", category: "Acquisition" },
       { date: "Jul 14, 2025", event: "I Squared completed the acquisition of Mobico's North America School Bus business, later branded Summit School Services.", category: "Acquisition" },
-      { date: "Jul 16, 2025", event: "I Squared portfolio materials described the renamed Summit School Services platform and its operating footprint.", category: "Other" },
-      { date: "2026", event: "Company and trade sources continued to reference the Summit School Services identity across the platform.", category: "Other" },
     ],
     sources: [
       { label: "Isquaredcapital — Summit School Services", url: "https://isquaredcapital.com/cpt_invest/national-express/", type: "ARTICLE" },
@@ -23210,11 +22690,9 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "California",
     milestones: [
-      { date: "2009", event: "Public materials identify Tarana’s founding year.", category: "Other" },
-      { date: "2009", event: "Tarana Wireless was founded.", category: "Founding" },
+      { date: "2009", event: "Public materials identify Tarana’s founding year.", category: "Founding" },
       { date: "2022", event: "The financing announcement stated that the company expected to surpass $100 million in annual revenue.", category: "Financing" },
       { date: "Mar 23, 2022", event: "Tarana announced a $170 million growth financing round that included I Squared Capital.", category: "Financing" },
-      { date: "2025", event: "Company materials described deployments by more than 300 operators in 24 countries and 47 U.S. states.", category: "Other" },
     ],
     sources: [
       { label: "Taranawireless — Tarana Wireless", url: "https://www.taranawireless.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -23299,7 +22777,7 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Texas",
     milestones: [
-      { date: "2021", event: "Whistler Pipeline began operating as a major Permian natural-gas takeaway line.", category: "Other" },
+      { date: "2021", event: "Whistler Pipeline began operating as a major Permian natural-gas takeaway line.", category: "Expansion" },
       { date: "2021", event: "WhiteWater / Whistler Pipeline was founded.", category: "Founding" },
       { date: "Feb 16, 2023", event: "I Squared Capital announced completion of its acquisition of a controlling interest in Whistler Pipeline.", category: "Acquisition" },
       { date: "2024", event: "The post-combination ownership was publicly disclosed at 50.6% for WhiteWater/I Squared, 30.4% for MPLX, and 19.0% for Enbridge.", category: "Other" },
@@ -23329,9 +22807,7 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Wisconsin; Minnesota; Illinois; Idaho; Washington",
     milestones: [
-      { date: "1977", event: "Company materials identify WOW Logistics’ founding year.", category: "Other" },
-      { date: "1977", event: "WOW Logistics was founded.", category: "Founding" },
-      { date: "2024", event: "Public materials described the company’s multi-state network at 25 facilities.", category: "Other" },
+      { date: "1977", event: "Company materials identify WOW Logistics’ founding year.", category: "Founding" },
       { date: "Mar 15, 2024", event: "I Squared Capital announced the acquisition of WOW Logistics.", category: "Acquisition" },
       { date: "2025", event: "I Squared highlighted WOW Logistics as an example of its transport and cold-chain platform-building approach.", category: "Other" },
     ],
@@ -23387,7 +22863,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Jan 20, 2016", event: "Capstone announced an agreement for iCON Infrastructure Partners III to acquire the company for $4.90 per share.", category: "Acquisition" },
       { date: "Apr 29, 2016", event: "iCON Infrastructure Partners III completed its acquisition of Capstone Infrastructure for approximately $480 million in equity value.", category: "Acquisition" },
-      { date: "2024", event: "Capstone continued to advance its North American renewable development pipeline.", category: "Other" },
       { date: "Sep 16, 2025", event: "Capstone announced successful commissioning of the 192 MW Wild Rose 2 wind farm in Alberta.", category: "Other" },
     ],
     sources: [
@@ -23416,9 +22891,8 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Florida, Spain, Italy, Caribbean, and U.S. Virgin Islands",
     milestones: [
-      { date: "2023", event: "Cruise Terminals International was formed as a partnership between iCON Infrastructure and Royal Caribbean Group.", category: "Other" },
+      { date: "2023", event: "Cruise Terminals International was formed as a partnership between iCON Infrastructure and Royal Caribbean Group.", category: "Founding" },
       { date: "2023", event: "CTI began with Cruise Terminal A in Miami and additional cruise terminal projects in Europe and the Caribbean.", category: "Other" },
-      { date: "2023", event: "Cruise Terminals International was founded.", category: "Founding" },
       { date: "Dec 17, 2025", event: "CTI signed a long-term lease for the Crown Bay district redevelopment in St. Thomas.", category: "Other" },
       { date: "Dec 18, 2025", event: "CTI, VIPA, and Royal Caribbean publicly commemorated the Crown Bay redevelopment signing.", category: "Other" },
     ],
@@ -23451,7 +22925,6 @@ export const companies: PortCo[] = [
       { date: "2021", event: "Dobson announced its 85th anniversary.", category: "Other" },
       { date: "Feb 14, 2022", event: "iCON Infrastructure announced a strategic partnership to acquire a 57% stake in Dobson Fiber.", category: "Acquisition" },
       { date: "Oct 19, 2022", event: "iCON Infrastructure closed its strategic partnership with Dobson Fiber to support a $700 million fiber deployment plan.", category: "Acquisition" },
-      { date: "2024", event: "Company and industry updates highlighted continued network expansion across Oklahoma, Arkansas, and Texas.", category: "Other" },
     ],
     sources: [
       { label: "Dobson — Dobson Fiber", url: "https://www.dobson.net/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -23478,7 +22951,7 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Iowa and Illinois",
     milestones: [
-      { date: "1984", event: "Iowa Interstate Railroad began operations.", category: "Other" },
+      { date: "1984", event: "Iowa Interstate Railroad began operations.", category: "Expansion" },
       { date: "1984", event: "Iowa Interstate Railroad, Ltd. was founded.", category: "Founding" },
       { date: "Dec 31, 2020", event: "iCON Infrastructure Partners V closed on a 40% partnership interest in IAIS, with RDC remaining majority owner.", category: "Acquisition" },
       { date: "2021", event: "Industry publications reported the closed iCON partnership with RDC remaining majority owner.", category: "Other" },
@@ -23512,7 +22985,6 @@ export const companies: PortCo[] = [
       { date: "1978", event: "QSL was founded.", category: "Founding" },
       { date: "Feb 23, 2024", event: "QSL announced that iCON Infrastructure and CDPQ would become shareholders alongside management.", category: "Acquisition" },
       { date: "2025", event: "QSL announced support from the Government of Québec for its financing and growth plans.", category: "Financing" },
-      { date: "2025", event: "The company continued to position itself as a North American marine and logistics platform.", category: "Other" },
       { date: "May 1, 2025", event: "QSL announced the acquisition of grain silo infrastructure at the Port of Québec.", category: "Other" },
     ],
     sources: [
@@ -23542,7 +23014,7 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "South Carolina and Georgia",
     milestones: [
-      { date: "2019", event: "The FCC approved the transfer of control of TruVista to an iCON acquisition vehicle.", category: "Other" },
+      { date: "2019", event: "The FCC approved the transfer of control of TruVista to an iCON acquisition vehicle.", category: "Expansion" },
       { date: "Oct 11, 2019", event: "iCON Infrastructure Partners IV completed the acquisition of TruVista.", category: "Acquisition" },
       { date: "Nov 4, 2021", event: "PlantTel agreed to be acquired by TruVista.", category: "Acquisition" },
       { date: "2022", event: "TruVista announced completion of the PlantTel acquisition.", category: "Other" },
@@ -23605,8 +23077,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2002", event: "Vista Services states that it was founded.", category: "Founding" },
       { date: "2018", event: "iCON IV completed the acquisition of an 80% interest in Vista Credit Corporation from CEO/founder Jacob Polisuk and senior management.", category: "Acquisition" },
-      { date: "2025", event: "Vista continued to market lease-to-own offerings for HVAC, water systems, and EV chargers across Ontario.", category: "Other" },
-      { date: "2025", event: "Company materials described Vista as the third-largest lease-to-own company in Ontario.", category: "Other" },
     ],
     sources: [
       { label: "Vistaservices — Vista Services", url: "https://www.vistaservices.ca/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -23632,10 +23102,9 @@ export const companies: PortCo[] = [
     investmentYear: 2018,
     headquarters: "Mexico, Italy, Peru, Spain, and the United Kingdom",
     milestones: [
-      { date: "2018", event: "IFM Investors launched Aleática as a wholly-owned dedicated operator of transport infrastructure assets.", category: "Other" },
+      { date: "2018", event: "IFM Investors launched Aleática as a wholly-owned dedicated operator of transport infrastructure assets.", category: "Expansion" },
       { date: "Apr 2018", event: "IFM Investors completed the acquisition of 100% of OHL Concesiones for approximately EUR 2,158 million.", category: "Acquisition" },
       { date: "Sep 28, 2023", event: "IFM announced a successful voluntary tender offer for Aleatica shares.", category: "Other" },
-      { date: "2024", event: "IFM continued to expand control over the transportation platform.", category: "Expansion" },
       { date: "2025", event: "IFM portfolio materials disclosed a 100% fund ownership stake in Aleatica.", category: "Acquisition" },
     ],
     sources: [
@@ -23664,11 +23133,10 @@ export const companies: PortCo[] = [
     headquarters: "Texas; New Jersey; New York; Pennsylvania",
     milestones: [
       { date: "2019", event: "AustralianSuper participated through IFM in the acquisition of Buckeye Partners.", category: "Acquisition" },
-      { date: "May 10, 2019", event: "Buckeye agreed to be acquired by entities affiliated with IFM Investors.", category: "Acquisition" },
       { date: "Nov 1, 2019", event: "IFM Investors completed the acquisition of Buckeye Partners.", category: "Acquisition" },
+      { date: "May 10, 2019", event: "Buckeye agreed to be acquired by entities affiliated with IFM Investors.", category: "Acquisition" },
       { date: "May 10, 2019", event: "Buckeye agreed to be acquired by IFM Investors.", category: "Acquisition" },
       { date: "1886", event: "Buckeye was founded.", category: "Founding" },
-      { date: "1886", event: "Buckeye Partners was founded.", category: "Founding" },
     ],
     sources: [
       { label: "Buckeye — Buckeye Partners", url: "https://www.buckeye.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -23725,8 +23193,7 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Ontario",
     milestones: [
-      { date: "1990", event: "Public sources identify Enwave's founding year as 1990.", category: "Other" },
-      { date: "1990", event: "Enwave Energy was founded.", category: "Founding" },
+      { date: "1990", event: "Public sources identify Enwave's founding year as 1990.", category: "Founding" },
       { date: "2021", event: "The transaction announcement identified Ontario Teachers' and IFM as 50-50 owners.", category: "Other" },
       { date: "Jun 2021", event: "OTPP / Ontario Teachers' and IFM completed the acquisition of Enwave's Canadian district energy operations from Brookfield Infrastructure for C$2.8 billion as 50-50 owners.", category: "Acquisition" },
     ],
@@ -23756,11 +23223,10 @@ export const companies: PortCo[] = [
     headquarters: "Texas",
     milestones: [
       { date: "2002", event: "Freeport LNG was founded.", category: "Founding" },
-      { date: "2008", event: "The original LNG import terminal commenced operations.", category: "Other" },
+      { date: "2008", event: "The original LNG import terminal commenced operations.", category: "Expansion" },
       { date: "Dec 16, 2013", event: "Freeport LNG announced a planned $1.3 billion equity agreement to support development of the export project.", category: "Other" },
       { date: "Oct 2014", event: "IFM's portfolio materials identify October 2014 as the initial fund investment date for Freeport LNG.", category: "Financing" },
       { date: "Nov 25, 2014", event: "Freeport LNG closed financing and commenced construction of its initial two liquefaction trains.", category: "Financing" },
-      { date: "2019", event: "The terminal began LNG export operations from its liquefaction facilities.", category: "Other" },
     ],
     sources: [
       { label: "Freeportlng — Freeport LNG", url: "https://freeportlng.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -23853,7 +23319,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2026", event: "Altum Digital Infrastructure was founded.", category: "Founding" },
       { date: "Feb 5, 2026", event: "Igneo acquired the Vault Digital portfolio from CVC DIF and Northleaf Capital Partners.", category: "Acquisition" },
-      { date: "Feb 5, 2026", event: "The business began operating as Altum Digital Infrastructure.", category: "Other" },
+      { date: "Feb 5, 2026", event: "The business began operating as Altum Digital Infrastructure.", category: "Expansion" },
       { date: "Feb 5, 2026", event: "Igneo disclosed that the platform comprised seven operational data centers totaling about 75 MW of critical IT load.", category: "Other" },
     ],
     sources: [
@@ -23941,7 +23407,6 @@ export const companies: PortCo[] = [
       { date: "2019", event: "First Sentier Investors (later Igneo Infrastructure Partners) acquired Patriot Rail from SteelRiver.", category: "Acquisition" },
       { date: "2021", event: "Patriot Rail acquired Salt Lake Garfield & Western Railway.", category: "Acquisition" },
       { date: "Aug 2022", event: "Patriot Rail acquired Pioneer Lines, Inc., adding 15 short line railroads across 12 states.", category: "Acquisition" },
-      { date: "2025", event: "Igneo materials described Patriot Rail as operating 32 short line railroads across 23 states from a Jacksonville base.", category: "Other" },
     ],
     sources: [
       { label: "Igneoip — Patriot Rail", url: "https://www.igneoip.com/usa/en/institutional/our-offering/assets/patriot-rail.html", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -23968,7 +23433,6 @@ export const companies: PortCo[] = [
     headquarters: "New Jersey and 18 U.S. states",
     milestones: [
       { date: "2005", event: "Soltage was established.", category: "Founding" },
-      { date: "2023", event: "Public disclosures stated that Soltage management and founders would remain shareholders after the transaction.", category: "Other" },
       { date: "Sep 7, 2023", event: "Igneo announced an agreement to acquire a majority equity interest in Soltage.", category: "Acquisition" },
     ],
     sources: [
@@ -23996,8 +23460,7 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "California; Texas; New York",
     milestones: [
-      { date: "2007", event: "Terra-Gen was formed.", category: "Other" },
-      { date: "2007", event: "Terra-Gen was founded.", category: "Founding" },
+      { date: "2007", event: "Terra-Gen was formed.", category: "Founding" },
       { date: "Dec 2020", event: "Igneo made its initial investment in Terra-Gen.", category: "Financing" },
       { date: "Mar 19, 2024", event: "Masdar announced an agreement to acquire a 50% stake in Terra-Gen from Energy Capital Partners.", category: "Acquisition" },
       { date: "Oct 1, 2024", event: "Masdar completed the acquisition and Igneo retained its 50% interest.", category: "Other" },
@@ -24142,7 +23605,6 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Saskatchewan",
     milestones: [
-      { date: "Dec 2022", event: "InfraRed case-study materials identified Blue Hill as part of its North American onshore wind portfolio.", category: "Acquisition" },
       { date: "Oct 3, 2022", event: "InfraRed announced an agreement to acquire an 80% stake in Blue Hill from Algonquin.", category: "Acquisition" },
     ],
     sources: [
@@ -24667,7 +24129,7 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Texas",
     milestones: [
-      { date: "2019", event: "InfraRed's acquisition announcement stated that the wind farm commenced operations in 2019.", category: "Other" },
+      { date: "2019", event: "InfraRed's acquisition announcement stated that the wind farm commenced operations in 2019.", category: "Expansion" },
       { date: "2019", event: "Wind Facility was founded.", category: "Founding" },
       { date: "May 30, 2024", event: "InfraRed announced acquisition of a 202 MW operational onshore wind farm in south Texas from Duke Energy.", category: "Acquisition" },
       { date: "May 30, 2024", event: "InfraRed disclosed that the asset had been acquired with all-cash equity and no leverage or tax equity financing.", category: "Acquisition" },
@@ -24729,7 +24191,6 @@ export const companies: PortCo[] = [
       { date: "1968", event: "Creative Energy was founded.", category: "Founding" },
       { date: "2014", event: "Central Heat Distribution rebranded as Creative Energy.", category: "Other" },
       { date: "Feb 2018", event: "Instar agreed to acquire a 50% interest in Creative Energy.", category: "Acquisition" },
-      { date: "2024", event: "Public reporting described the company as active across six cities in Canada and the United States.", category: "Other" },
     ],
     sources: [
       { label: "Creative — Creative Energy", url: "https://creative.energy/projects/vancouver-core", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -24818,7 +24279,6 @@ export const companies: PortCo[] = [
       { date: "Dec 2018", event: "Buckeye agreed to continue operating and maintaining the acquired assets under a long-term contract.", category: "Acquisition" },
       { date: "Oct 2023", event: "JET Infrastructure acquired IMTT Epic LLC.", category: "Acquisition" },
       { date: "Oct 2023", event: "The IMTT Epic transaction added five jet and renewable fuel terminals plus associated pipelines.", category: "Other" },
-      { date: "2026", event: "JET continued to market itself as an independent aviation fuel infrastructure owner and developer.", category: "Other" },
     ],
     sources: [
       { label: "Jet Infrastructure — JET Infrastructure", url: "https://www.jet-infrastructure.com/about", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -24879,9 +24339,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Oct 2019", event: "Instar acquired Oilfield Water Logistics.", category: "Acquisition" },
       { date: "Mar 2021", event: "Pilot Water Solutions announced the acquisition of Felix Water.", category: "Acquisition" },
-      { date: "2022", event: "Public materials described the combined company as a scaled Northern Delaware Basin water midstream operator.", category: "Other" },
       { date: "Sep 2022", event: "Pilot Water Solutions and Oilfield Water Logistics announced their partnership and combination under the PWS brand.", category: "Other" },
-      { date: "2026", event: "Instar's portfolio materials cited more than 850 miles of pipeline across the Northern Delaware Basin.", category: "Other" },
     ],
     sources: [
       { label: "Instarinvest — Pilot Water Solutions", url: "https://instarinvest.com/portfolio/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -24910,7 +24368,6 @@ export const companies: PortCo[] = [
     headquarters: "British Columbia and North America",
     milestones: [
       { date: "1971", event: "PRT Growing Services was founded.", category: "Founding" },
-      { date: "2021", event: "Public disclosures described PRT as North America's largest network of forest seedling nurseries.", category: "Other" },
       { date: "Apr 2021", event: "Instar completed its acquisition of PRT Growing Services.", category: "Acquisition" },
       { date: "2025", event: "PRT reported cumulative production of more than six billion seedlings and annual capacity of about 630 million seedlings.", category: "Expansion" },
       { date: "Sep 2025", event: "PRT announced the acquisition of Southern Seed.", category: "Acquisition" },
@@ -25005,7 +24462,6 @@ export const companies: PortCo[] = [
       { date: "Aug 2019", event: "Leading Edge Jet Center was established as a standalone company.", category: "Founding" },
       { date: "Sep 2020", event: "Leading Edge Jet Center announced the acquisition of Kenmore Aero Services' FBO business in Seattle.", category: "Acquisition" },
       { date: "Jan 2021", event: "Leading Edge Jet Center acquired Helena Aviation Services in Montana.", category: "Acquisition" },
-      { date: "Nov 2021", event: "Skyservice rebranded four Leading Edge Jet Center locations in the United States.", category: "Other" },
     ],
     sources: [
       { label: "Corporatejetinvestor — Skyservice US (formerly Leading Edge Jet Center)", url: "https://www.corporatejetinvestor.com/news/skyservice-business-aviation-expands-to-the-united-states/", type: "ARTICLE" },
@@ -25037,7 +24493,6 @@ export const companies: PortCo[] = [
       { date: "Feb 2019", event: "Steel Reef completed a C$90.5 million equity financing involving Instar and PFM Capital.", category: "Financing" },
       { date: "2020", event: "Steel Reef acquired natural gas and NGL processing assets in the Williston Basin with additional support from Instar.", category: "Acquisition" },
       { date: "Jan 2020", event: "Instar disclosed expanded ownership in Steel Reef through a Fund II investment.", category: "Financing" },
-      { date: "2024", event: "Steel Reef announced plans to supply flare-gas-based power to SaskPower and reported management of about 140 million cubic feet per day of flare gas.", category: "Other" },
     ],
     sources: [
       { label: "Steelreef — Steel Reef Infrastructure Corp.", url: "https://steelreef.ca/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -25123,7 +24578,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Dec 18, 2019", event: "Contanda announced that it had been acquired by institutional investors advised by J.P. Morgan Asset Management.", category: "Acquisition" },
       { date: "Jan 12, 2021", event: "BW Terminals and Contanda announced the new BWC Terminals corporate brand.", category: "Other" },
-      { date: "2025", event: "Company materials described a network of 22 terminals with more than 20 million barrels of storage capacity.", category: "Expansion" },
     ],
     sources: [
       { label: "Bwcterminals — BWC Terminals", url: "https://bwcterminals.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -25238,7 +24692,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2021", event: "Onward Energy was founded.", category: "Founding" },
       { date: "Jan 12, 2021", event: "J.P. Morgan Asset Management-advised Infrastructure Investments Fund formed Onward Energy through the combination of Novatus Energy and Southwest Generation.", category: "Financing" },
-      { date: "2025", event: "Company materials stated that Onward had 57 projects in 22 states and that it was majority-owned by investors advised by J.P. Morgan Asset Management.", category: "Other" },
       { date: "Jan 6, 2025", event: "Onward Energy completed the acquisition of Griffith Power Plant.", category: "Other" },
     ],
     sources: [
@@ -25415,7 +24868,6 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "Sep 11, 2023", event: "Kimmeridge disclosed that Kimmeridge Carbon Solutions had made targeted investments including Common Energy.", category: "Other" },
-      { date: "2025", event: "Common Energy continued to market community solar and related clean-energy services across multiple U.S. states.", category: "Other" },
     ],
     sources: [
       { label: "Commonenergy — Common Energy", url: "https://www.commonenergy.us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -25469,7 +24921,6 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "United States",
     milestones: [
-      { date: "2024", event: "Kimmeridge's public materials identified SYSO as a portfolio investment focused on operating renewable assets in power markets.", category: "Financing" },
       { date: "Aug 8, 2024", event: "SYSO announced a $14.5 million Series B financing led by Kimmeridge.", category: "Financing" },
       { date: "Mar 4, 2026", event: "SYSO announced a $7 million Series B extension, bringing the total round to $15.5 million.", category: "Other" },
     ],
@@ -25498,8 +24949,7 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Ohio; Indiana; Michigan",
     milestones: [
-      { date: "2012", event: "AEP Transmission Company was formed as a transmission-focused utility platform within American Electric Power.", category: "Other" },
-      { date: "2012", event: "AEP Transmission Company was founded.", category: "Founding" },
+      { date: "2012", event: "AEP Transmission Company was formed as a transmission-focused utility platform within American Electric Power.", category: "Founding" },
       { date: "Jan 9, 2025", event: "AEP announced a definitive agreement for KKR and PSP Investments to acquire a 19.9% equity interest in its Ohio and Indiana Michigan transmission companies.", category: "Acquisition" },
       { date: "Jun 5, 2025", event: "AEP, KKR, and PSP Investments announced closing of the $2.82 billion transmission investment partnership.", category: "Acquisition" },
     ],
@@ -25559,7 +25009,6 @@ export const companies: PortCo[] = [
       { date: "Jun 7, 2021", event: "Macquarie Infrastructure Corporation and KKR announced an agreement for KKR to acquire Atlantic Aviation for $4.475 billion.", category: "Acquisition" },
       { date: "Sep 23, 2021", event: "MIC announced the closing of the sale of Atlantic Aviation to KKR.", category: "Acquisition" },
       { date: "Nov 16, 2021", event: "Atlantic Aviation and Ross Aviation announced an agreement to combine their FBO networks with investment from KKR and KSL Capital.", category: "Financing" },
-      { date: "2026", event: "Atlantic continued to report a national FBO network with more than 100 U.S. locations.", category: "Other" },
     ],
     sources: [
       { label: "Atlanticaviation — Atlantic Aviation", url: "https://www.atlanticaviation.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -25646,7 +25095,7 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "British Columbia",
     milestones: [
-      { date: "2012", event: "TC Energy was selected to design, build, own, and operate the Coastal GasLink pipeline.", category: "Other" },
+      { date: "2012", event: "TC Energy was selected to design, build, own, and operate the Coastal GasLink pipeline.", category: "Expansion" },
       { date: "2012", event: "Coastal GasLink Pipeline was founded.", category: "Founding" },
       { date: "Dec 26, 2019", event: "TC Energy announced the sale of a combined 65% equity interest in Coastal GasLink to KKR and AIMCo.", category: "Acquisition" },
       { date: "May 25, 2020", event: "TC Energy closed the sale of a combined 65% equity interest in Coastal GasLink to KKR and AIMCo.", category: "Acquisition" },
@@ -25678,7 +25127,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2022", event: "The business was rebranded as Cordia and appointed Earl Collins as chief executive officer.", category: "Management" },
       { date: "May 2, 2022", event: "Clearway Energy closed the sale of its Thermal Business, commercially known as Clearway Community Energy, to KKR for approximately $1.9 billion.", category: "Acquisition" },
-      { date: "2024", event: "Cordia's public materials described a broadened offering spanning district energy, distributed energy, and energy-as-a-service systems.", category: "Other" },
     ],
     sources: [
       { label: "Cordiaenergy — Cordia", url: "https://cordiaenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -25708,7 +25156,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2001", event: "CyrusOne was founded.", category: "Founding" },
       { date: "Mar 25, 2022", event: "KKR and Global Infrastructure Partners completed the $15 billion acquisition of CyrusOne.", category: "Acquisition" },
-      { date: "2025", event: "CyrusOne's public materials described more than 60 operational data centers and more than 50 data centers in development.", category: "Other" },
     ],
     sources: [
       { label: "Cyrusone — CyrusOne", url: "https://www.cyrusone.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -25735,10 +25182,8 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "United States; Canada; Europe",
     milestones: [
-      { date: "2021", event: "Depot Connect International was formed as a growth platform in tank container services.", category: "Other" },
-      { date: "2021", event: "Depot Connect International was founded.", category: "Founding" },
+      { date: "2021", event: "Depot Connect International was formed as a growth platform in tank container services.", category: "Founding" },
       { date: "Oct 6, 2022", event: "Apax announced a definitive agreement to sell Boasso Global to KKR Global Infrastructure Investors IV.", category: "Acquisition" },
-      { date: "2025", event: "DCI's public materials described a network of more than 190 locations across six countries.", category: "Other" },
     ],
     sources: [
       { label: "Depotconnect — Depot Connect International", url: "https://depotconnect.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -25798,7 +25243,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2014", event: "Monterra Energy was founded by Arturo Vivar and Michael A. Williams to pursue Mexican midstream investments.", category: "Founding" },
       { date: "May 15, 2015", event: "KKR formed a joint venture with Monterra Energy and committed equity capital from KKR North America Fund XI for Mexican midstream investments.", category: "Financing" },
-      { date: "2025", event: "Monterra continued to be included within KKR's infrastructure activities in Mexico.", category: "Other" },
     ],
     sources: [
       { label: "Kkr — Monterra Energy", url: "https://www.kkr.com/businesses/infrastructure", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -25851,7 +25295,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2019", event: "Public transaction documents referenced Nitrogen-related entities within KKR's renewable investment structure.", category: "Financing" },
       { date: "Nov 2, 2020", event: "NextEra Energy entities and KKR announced transactions covering contracted renewable portfolios that included Nitrogen-related structures.", category: "Other" },
-      { date: "2025", event: "KKR's public team materials continued to reference Nitrogen Renewables as an infrastructure investment.", category: "Financing" },
     ],
     sources: [
       { label: "Kkr — Nitrogen Renewables", url: "https://www.kkr.com/about/our-people/kate-casey", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -25911,7 +25354,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Mar 2023", event: "Port Arthur LNG Phase 1 reached final investment decision.", category: "Financing" },
       { date: "Sep 12, 2023", event: "Sempra Infrastructure completed the sale of a 42% indirect non-controlling interest in Port Arthur LNG Phase 1 to KKR.", category: "Acquisition" },
-      { date: "Sep 2025", event: "Public materials described KKR's participation in an additional investment related to Port Arthur LNG Phase 2.", category: "Financing" },
     ],
     sources: [
       { label: "Portarthurlng — Port Arthur LNG", url: "https://portarthurlng.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -26026,7 +25468,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Jul 2, 2018", event: "Cincinnati Bell completed its combination with Hawaiian Telcom.", category: "Other" },
       { date: "Sep 7, 2021", event: "Cincinnati Bell announced completion of its acquisition by Macquarie Infrastructure Partners V.", category: "Acquisition" },
-      { date: "2022", event: "Hawaiian Telcom branded its 100% fiber internet service as Fioptics.", category: "Other" },
       { date: "Mar 2022", event: "Cincinnati Bell rebranded as altafiber.", category: "Other" },
       { date: "1873", event: "Cincinnati Bell, the predecessor business to altafiber, was founded.", category: "Founding" },
       { date: "1873", event: "altafiber was founded.", category: "Founding" },
@@ -26143,7 +25584,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2015", event: "Macquarie Infrastructure Partners III made an initial investment in Ceres Terminals, acquiring a 49% interest.", category: "Acquisition" },
       { date: "2019", event: "Macquarie Infrastructure Partners III acquired 100% of Ceres Terminals.", category: "Acquisition" },
-      { date: "Feb 14, 2022", event: "JAXPORT approved a 20-year agreement with Ceres for the lease and modernization of the TraPac Jacksonville container terminal.", category: "Other" },
+      { date: "Feb 14, 2022", event: "JAXPORT approved a 20-year agreement with Ceres for the lease and modernization of the TraPac Jacksonville container terminal.", category: "Expansion" },
       { date: "Jun 28, 2023", event: "Macquarie announced an agreement to divest Ceres Terminals to Carrix.", category: "Divestiture" },
       { date: "Oct 12, 2023", event: "Macquarie announced completion of the sale of Ceres Terminals to Carrix.", category: "Divestiture" },
     ],
@@ -26173,7 +25614,6 @@ export const companies: PortCo[] = [
     headquarters: "Florida; Georgia; South Carolina",
     milestones: [
       { date: "2017", event: "Coastal Waste & Recycling was founded by Brendon Pantano and partners.", category: "Founding" },
-      { date: "2021", event: "Company materials described the business as having completed 11 acquisitions during its early expansion period.", category: "Other" },
       { date: "Jun 13, 2023", event: "Macquarie Asset Management announced completion of its investment in Coastal Waste & Recycling.", category: "Financing" },
       { date: "2026", event: "Company materials describe operations across Florida, Georgia, and South Carolina with 25 facilities.", category: "Other" },
     ],
@@ -26201,7 +25641,6 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Nevada; California; Utah",
     milestones: [
-      { date: "2014", event: "Public project materials referenced operating geothermal assets that now form part of Cyrq Energy’s western U.S. portfolio.", category: "Other" },
       { date: "Mar 19, 2021", event: "Macquarie Infrastructure and Real Assets reached financial close on the acquisition of Cyrq Energy.", category: "Acquisition" },
       { date: "2024", event: "Cyrq Energy publicly described itself as a geothermal platform with operating assets and development projects in the western United States.", category: "Other" },
       { date: "2026", event: "Company leadership materials describe five operating geothermal facilities across Nevada, California, and Utah.", category: "Other" },
@@ -26234,7 +25673,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2010", event: "DESRI began operating as a renewable energy investment and development platform.", category: "Financing" },
       { date: "2010", event: "DESRI Renewables, LLC was founded.", category: "Founding" },
-      { date: "Dec 17, 2024", event: "DESRI announced a 400 MWac clean energy and storage portfolio with Meta, reflecting continued project expansion.", category: "Other" },
       { date: "2025", event: "Macquarie identified DESRI as a portfolio company following the transaction closing.", category: "Other" },
       { date: "Jan 13, 2025", event: "DESRI and Macquarie Asset Management announced closing of Macquarie’s investment in the company.", category: "Financing" },
     ],
@@ -26294,14 +25732,11 @@ export const companies: PortCo[] = [
     investmentYear: 2011,
     headquarters: "Pennsylvania",
     milestones: [
-      { date: "1912", event: "Duquesne Light Company was formed through the consolidation of predecessor electric companies.", category: "Other" },
       { date: "1912", event: "Duquesne Light Company was founded.", category: "Founding" },
       { date: "May 2007", event: "Duquesne was taken private by a Macquarie-led consortium of infrastructure investors.", category: "Acquisition" },
       { date: "2011", event: "GIC, through Epsom Investment Pte. Ltd., became the largest shareholder in DQE Holdings.", category: "Acquisition" },
       { date: "Sep 2016", event: "Three Rivers Utility Holdings, the Manulife/John Hancock and PGGM investment vehicle, closed its purchase of a 30.4% stake in DQE Holdings.", category: "Acquisition" },
       { date: "2017", event: "AIA Montana LLC, owned by APG Americas Infrastructure, CalSTRS, and managed by Argo Infrastructure Partners, became an owner in DQE Holdings.", category: "Acquisition" },
-      { date: "2024", event: "Duquesne disclosed its then-current ownership breakdown as 44.4% GIC, 30.4% Three Rivers Utility Holdings, and 25.2% AIA Montana LLC.", category: "Other" },
-      { date: "2025", event: "Duquesne continued regulated grid modernization and customer electrification initiatives in southwestern Pennsylvania.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — GIC — Duquesne Light Company", url: "https://duquesnelight.com/company/about/investors", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -26361,7 +25796,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1993", event: "GreenWaste began resource recovery operations in the City of San José according to company sustainability materials.", category: "Other" },
       { date: "2012", event: "GreenWaste and Zanker published joint sustainability reporting on operations and goals.", category: "Other" },
-      { date: "Oct 13, 2021", event: "Public transaction reporting said MIP V Waste, a subsidiary of Macquarie Asset Management, agreed to acquire large majority stakes in GreenWaste and Zanker Recycling.", category: "Acquisition" },
+      { date: "2021", event: "Macquarie Asset Management invested in GreenWaste through MIP V.", category: "Financing" },
       { date: "Aug 6, 2025", event: "GreenWaste announced the appointment of Clete Elms as Chief Executive Officer.", category: "Management" },
       { date: "Nov 4, 2025", event: "GreenWaste announced the appointment of Kevin DiVincenzo as Chief Operating Officer.", category: "Management" },
     ],
@@ -26455,8 +25890,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2013", event: "LRS was founded.", category: "Founding" },
       { date: "Sep 9, 2021", event: "Macquarie Infrastructure Partners V completed the recapitalization of LRS alongside Goldman Sachs Asset Management.", category: "Financing" },
-      { date: "2022", event: "LRS continued Midwest expansion through acquisitions including GHW Waste Services.", category: "Other" },
-      { date: "2024", event: "LRS published sustainability materials highlighting continued investment in recycling and diversion infrastructure.", category: "Financing" },
     ],
     sources: [
       { label: "Lrsrecycles — LRS", url: "https://www.lrsrecycles.com/about/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -26485,7 +25918,6 @@ export const companies: PortCo[] = [
       { date: "2006", event: "Maher began implementing sustainability initiatives highlighted in later company reporting.", category: "Other" },
       { date: "2016", event: "Macquarie Infrastructure Partners III completed the acquisition of Maher Terminals from Deutsche Bank, with NYK acquiring a 20% interest.", category: "Acquisition" },
       { date: "2020", event: "Maher published its inaugural sustainability report.", category: "Other" },
-      { date: "Oct 12, 2023", event: "Macquarie stated that Maher remained one of its significant port terminal investments following the Ceres sale.", category: "Divestiture" },
       { date: "2024", event: "Maher published updated sustainability reporting covering 2023 operations.", category: "Other" },
     ],
     sources: [
@@ -26517,7 +25949,6 @@ export const companies: PortCo[] = [
       { date: "2022", event: "Medical Properties Partnership was founded.", category: "Founding" },
       { date: "Mar 16, 2022", event: "Medical Properties Trust announced completion of the hospital partnership with Macquarie.", category: "Financing" },
       { date: "Mar 30, 2023", event: "Medical Properties Trust reaffirmed the March 2022 50/50 partnership structure in shareholder communications.", category: "Other" },
-      { date: "2025", event: "The partnership remained part of Medical Properties Trust’s disclosed capital allocation actions in company reporting.", category: "Other" },
     ],
     sources: [
       { label: "Announcement source — Macquarie Asset Management — Medical Properties Partnership", url: "https://www.macquarie.com/au/en/about/news/2021/macquarie-infrastructure-partners-v-and-medical-properties-trust-enter-partnership-for-eight-massachusetts-hospitals-valued-at-1-78-billion-usd.html", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
@@ -26575,8 +26006,7 @@ export const companies: PortCo[] = [
       { date: "2013", event: "NYNJ Link Partnership was founded.", category: "Founding" },
       { date: "Aug 2013", event: "The Port Authority and Macquarie-owned NYNJ Link reached commercial close on the concession agreement.", category: "Financing" },
       { date: "Nov 5, 2013", event: "NYNJ Link executed its TIFIA credit agreement for the project financing package.", category: "Financing" },
-      { date: "2014", event: "Construction began on the replacement bridge.", category: "Other" },
-      { date: "Jun 2018", event: "U.S. Department of Transportation reporting states that the project reached substantial completion.", category: "Other" },
+      { date: "Jun 2018", event: "U.S. Department of Transportation reporting states that the project reached substantial completion.", category: "Expansion" },
       { date: "2025", event: "Macquarie disclosed a 90% / 10% ownership split between Macquarie and Kiewit.", category: "Other" },
     ],
     sources: [
@@ -26703,7 +26133,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2013", event: "Supervía Poniente was founded.", category: "Founding" },
       { date: "Jun 15, 2013", event: "The third and final section of Supervía Poniente opened.", category: "Expansion" },
-      { date: "2026", event: "Supervía remained in operation as a Mexico City urban toll road under its concession structure.", category: "Other" },
     ],
     sources: [
       { label: "Supervia — Supervía Poniente", url: "https://supervia.mx/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -26732,7 +26161,6 @@ export const companies: PortCo[] = [
       { date: "Oct 26, 2023", event: "Macquarie Asset Management announced an agreement to invest in SwyftFiber.", category: "Other" },
       { date: "Feb 23, 2024", event: "Macquarie Asset Management completed an equity investment in SwyftFiber, according to transaction adviser Houlihan Lokey.", category: "Financing" },
       { date: "2025", event: "Macquarie identified SwyftFiber as an existing investment of Macquarie Infrastructure Partners VI.", category: "Financing" },
-      { date: "2026", event: "Company operating materials continued to market fiber service across Louisiana, Arkansas, and Mississippi.", category: "Other" },
     ],
     sources: [
       { label: "Swyftfiber — SwyftFiber", url: "https://www.swyftfiber.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -26762,7 +26190,7 @@ export const companies: PortCo[] = [
       { date: "1985", event: "TraPac was established by Mitsui O.S.K. Lines to operate a container terminal in Los Angeles.", category: "Founding" },
       { date: "1991", event: "TraPac expanded to Oakland with the opening of its terminal there.", category: "Expansion" },
       { date: "2014", event: "TraPac Los Angeles became the first U.S. West Coast terminal to automate vessel loading and unloading operations.", category: "Other" },
-      { date: "Nov 6, 2023", event: "Ocean Network Express announced completion of the TraPac transaction after EU materials identified Macquarie Asset Management-controlled Skipjack as the joint-control partner.", category: "Acquisition" },
+      { date: "2023", event: "Macquarie Asset Management invested in TraPac LLC through MIP VI.", category: "Financing" },
       { date: "Jan 9, 2026", event: "TraPac announced the arrival of new ship-to-shore cranes at its U.S. West Coast terminals.", category: "Other" },
     ],
     sources: [
@@ -26857,7 +26285,6 @@ export const companies: PortCo[] = [
       { date: "Dec 27, 2022", event: "Ocean Network Express announced an agreement to acquire a 51% stake in YTI.", category: "Acquisition" },
       { date: "Nov 6, 2023", event: "Ocean Network Express announced completion of its 51% acquisition in YTI.", category: "Other" },
       { date: "Jun 27, 2024", event: "YTI announced deployment of commercially available battery-electric top handlers.", category: "Other" },
-      { date: "2025", event: "YTI published updates highlighting operational and sustainability milestones at the terminal.", category: "Other" },
     ],
     sources: [
       { label: "Yti — Yusen Terminals LLC", url: "https://yti.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -26884,7 +26311,6 @@ export const companies: PortCo[] = [
     headquarters: "Not publicly disclosed.",
     milestones: [
       { date: "2024", event: "Manulife identified Back Bay Solar as a current infrastructure portfolio company.", category: "Other" },
-      { date: "2025", event: "Public records continued to show Back Bay Solar, LLC as an active legal entity connected to solar project interests.", category: "Other" },
       { date: "Nov 2025", event: "Court filings in the Pine Gate Renewables bankruptcy referenced Back Bay Solar, LLC as a joint-venture counterparty.", category: "Other" },
     ],
     sources: [
@@ -26911,7 +26337,6 @@ export const companies: PortCo[] = [
     headquarters: "Multi-state United States",
     milestones: [
       { date: "2021", event: "Manulife invested in Boldyn Networks (US) through Manulife Infrastructure Fund II.", category: "Financing" },
-      { date: "Mar 2023", event: "BAI Communications announced its rebrand to Boldyn Networks.", category: "Other" },
       { date: "2024", event: "Boldyn closed the acquisition of Apogee Telecom's platform for higher education connectivity.", category: "Acquisition" },
       { date: "Mar 2024", event: "CPP Investments, AIMCo, and Manulife announced a new follow-on commitment to support U.S. growth.", category: "Financing" },
       { date: "Jan 2025", event: "Boldyn Networks US completed approximately $1.2 billion of debt financing.", category: "Financing" },
@@ -26943,7 +26368,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Nov 29, 2022", event: "PennDOT and Bridging Pennsylvania Partners reached commercial close on the Major Bridges P3 initiative.", category: "Financing" },
       { date: "Dec 22, 2022", event: "Manulife-listed Bridging Pennsylvania Developer I reached financial close on the first bundle of six bridges.", category: "Financing" },
-      { date: "2024", event: "PennDOT reported continued preconstruction and permitting progress for the bridge bundle.", category: "Other" },
       { date: "Jan 2025", event: "PennDOT’s P3 board report stated that construction had started on the project.", category: "Other" },
     ],
     sources: [
@@ -26972,11 +26396,9 @@ export const companies: PortCo[] = [
     headquarters: "Louisiana",
     milestones: [
       { date: "1935", event: "Cleco Corporate Holdings LLC was founded.", category: "Founding" },
-      { date: "Oct 2014", event: "Cleco announced an agreement to be acquired by a North American investor group led by Macquarie Infrastructure and Real Assets and bcIMC.", category: "Acquisition" },
       { date: "2016", event: "A Macquarie-led consortium completed the take-private acquisition of Cleco.", category: "Acquisition" },
       { date: "Apr 2016", event: "The investor group, with Cleco later listed in Manulife Infrastructure Fund I, completed the acquisition and Cleco became privately held.", category: "Acquisition" },
       { date: "Feb 2019", event: "Cleco completed the acquisition of NRG South Central Generating through Cleco Cajun.", category: "Acquisition" },
-      { date: "Feb 2025", event: "Cleco marked 90 years of operating history and continued transmission and generation investment planning in Louisiana.", category: "Financing" },
     ],
     sources: [
       { label: "Cleco — Cleco Corporate Holdings LLC", url: "https://www.cleco.com/about/our-company", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -27039,12 +26461,11 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Virginia",
     milestones: [
-      { date: "2011", event: "The comprehensive agreement for the Elizabeth River Tunnels project was executed with Virginia.", category: "Other" },
-      { date: "Nov 2020", event: "Abertis and Manulife agreed to acquire 100% of Elizabeth River Crossings from the prior owners.", category: "Acquisition" },
       { date: "Dec 2020", event: "The acquisition closed and Abertis and Manulife became the concession owners.", category: "Acquisition" },
+      { date: "Nov 2020", event: "Abertis and Manulife agreed to acquire 100% of Elizabeth River Crossings from the prior owners.", category: "Acquisition" },
       { date: "Jan 2021", event: "Abertis and Manulife named David Sullivan chief executive officer of ERC.", category: "Management" },
       { date: "Feb 2022", event: "Anna Bonet was named chief executive officer of Elizabeth River Crossings.", category: "Management" },
-      { date: "Feb 2023", event: "ERC selected Emovis to upgrade the tolling roadside systems.", category: "Other" },
+      { date: "Feb 2023", event: "ERC selected Emovis to upgrade the tolling roadside systems.", category: "Expansion" },
     ],
     sources: [
       { label: "Driveerc — Elizabeth River Crossings OpCo, LLC", url: "https://driveerc.com/about/overview", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -27073,8 +26494,6 @@ export const companies: PortCo[] = [
       { date: "2021", event: "HEN Infrastructure became the vehicle through which Manulife associates its Fund II battery storage investment.", category: "Financing" },
       { date: "Mar 2021", event: "Manulife made an initial commitment to Hunt Energy Network's battery storage platform in Texas.", category: "Financing" },
       { date: "Aug 2024", event: "Hunt announced a new $250 million commitment from Manulife and disclosed 270 MW operating with 80 MW under development across related assets.", category: "Financing" },
-      { date: "2025", event: "Hunt continued development of battery and dispatchable power assets in ERCOT.", category: "Other" },
-      { date: "2026", event: "Manulife continues to identify HEN Infrastructure as an active portfolio company.", category: "Other" },
     ],
     sources: [
       { label: "Huntenergynetwork — HEN Infrastructure, LLC", url: "https://huntenergynetwork.com/asset-development/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -27103,7 +26522,6 @@ export const companies: PortCo[] = [
       { date: "2021", event: "Manulife began funding Hunt Energy Network-related infrastructure development in Texas.", category: "Financing" },
       { date: "Aug 2024", event: "Hunt announced a new $250 million funding commitment from Manulife.", category: "Financing" },
       { date: "Aug 2024", event: "Hunt disclosed 270 MW operating and 80 MW under development across related assets.", category: "Other" },
-      { date: "2025", event: "Hunt continued building dispatchable power and storage assets in ERCOT.", category: "Other" },
       { date: "2026", event: "Manulife continues to list Hunt Energy Network as an active Fund III portfolio company.", category: "Other" },
     ],
     sources: [
@@ -27132,9 +26550,8 @@ export const companies: PortCo[] = [
     headquarters: "New York, Illinois, Oklahoma, and Virginia",
     milestones: [
       { date: "2007", event: "J-POWER USA Generation, L.P. was founded.", category: "Founding" },
-      { date: "May 2007", event: "J-POWER established J-POWER USA Generation as a 50/50 joint venture with John Hancock / Manulife.", category: "Financing" },
       { date: "Sep 2007", event: "The partnership completed the acquisition of the Green Country cogeneration plant in Oklahoma.", category: "Acquisition" },
-      { date: "Dec 2008", event: "J-POWER USA Generation acquired Pinelawn Power, Equus Power, and a 30% interest in Fluvanna Power.", category: "Acquisition" },
+      { date: "May 2007", event: "J-POWER established J-POWER USA Generation as a 50/50 joint venture with John Hancock / Manulife.", category: "Financing" },
       { date: "Feb 2010", event: "The partnership completed the acquisition of the Shoreham and Edgewood peaking facilities on Long Island.", category: "Acquisition" },
       { date: "Nov 2016", event: "J-POWER USA Generation acquired a 50% interest in the Elwood Energy facility in Illinois.", category: "Acquisition" },
     ],
@@ -27192,8 +26609,6 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "Texas",
     milestones: [
-      { date: "May 2019", event: "Texas PUC filings identified JH Symphony Renewables in a transaction involving Duke Energy Renewables affiliates.", category: "Other" },
-      { date: "Jul 2019", event: "Texas PUC materials stated that a related Symphony vehicle would own one solar project, eight wind projects, and one battery project in Texas after an internal reorganization.", category: "Other" },
       { date: "Sep 6, 2019", event: "Duke Energy completed the sale of a minority interest in its commercial renewables portfolio to John Hancock / Manulife, establishing the JH Symphony renewables investment.", category: "Acquisition" },
       { date: "2026", event: "Public disclosures still do not provide a detailed current ownership breakdown for the platform.", category: "Other" },
     ],
@@ -27223,9 +26638,6 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "2021", event: "Manulife publicly listed JH Transport Portfolio among its direct infrastructure investments.", category: "Financing" },
-      { date: "2025", event: "Manulife continued to include JH Transport Portfolio on its infrastructure portfolio pages.", category: "Other" },
-      { date: "2026", event: "Manulife still lists JH Transport Portfolio as an active portfolio company.", category: "Other" },
-      { date: "2026", event: "Public disclosures reviewed for this workbook do not provide additional asset-level milestones.", category: "Other" },
     ],
     sources: [
       { label: "Manulifeim — JH Transport Portfolio", url: "https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/direct-infrastructure-equity", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -27313,7 +26725,7 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Michigan",
     milestones: [
-      { date: "1989", event: "Commercial operations began at the Midland cogeneration facility.", category: "Other" },
+      { date: "1989", event: "Commercial operations began at the Midland cogeneration facility.", category: "Expansion" },
       { date: "Jul 2022", event: "Capital Power and Manulife announced an agreement to acquire Midland Cogeneration Venture.", category: "Acquisition" },
       { date: "Sep 23, 2022", event: "Capital Power and Manulife completed the acquisition of Midland Cogeneration Venture.", category: "Acquisition" },
       { date: "Dec 2025", event: "Capital Power announced a new long-term contract with Consumers Energy extending through 2040.", category: "Other" },
@@ -27346,7 +26758,6 @@ export const companies: PortCo[] = [
       { date: "2015", event: "Company materials state that NineDot was founded in Brooklyn.", category: "Founding" },
       { date: "2021", event: "NineDot said it launched as an evolution of Certain Solar’s development platform.", category: "Expansion" },
       { date: "Dec 2021", event: "Carlyle made its initial investment in NineDot Energy and later committed additional capital in a 2024 equity financing.", category: "Financing" },
-      { date: "Jun 2023", event: "NineDot announced the activation of its first battery storage project in the Bronx.", category: "Other" },
       { date: "Jan 10, 2024", event: "NineDot announced a $225 million equity financing led by Manulife Investment Management, with Carlyle committing additional capital after its initial 2021 investment.", category: "Financing" },
       { date: "2026", event: "NineDot reported a workforce of more than 80 employees and an expanded metro-area development pipeline.", category: "Expansion" },
     ],
@@ -27411,7 +26822,7 @@ export const companies: PortCo[] = [
       { date: "Jul 2018", event: "John Hancock (Manulife) acquired a 35% stake in PTI from a prior shareholder.", category: "Acquisition" },
       { date: "Oct 2022", event: "Wren House announced its investment in PTI as a minority investor.", category: "Financing" },
       { date: "Jan 18, 2022", event: "Blackstone Infrastructure Partners completed its purchase of a 35% stake in PTI from Manulife Investment Management.", category: "Acquisition" },
-      { date: "Dec 2, 2024", event: "PTI announced a new investment from Grain Management and BlackRock to support continued expansion.", category: "Financing" },
+      { date: "2024", event: "Grain invested in Phoenix Tower International through Strategic investment through Grain’s flagship funds (with BlackRock).", category: "Financing" },
       { date: "Jul 2025", event: "PTI entered exclusive negotiations to acquire 3,700 sites from Bouygues Telecom and SFR.", category: "Acquisition" },
     ],
     sources: [
@@ -27446,7 +26857,6 @@ export const companies: PortCo[] = [
       { date: "2019", event: "EDF Renewables acquired PowerFlex Systems and combined it with EDF’s EV charging activities in North America.", category: "Acquisition" },
       { date: "Dec 2022", event: "Manulife Investment Management announced a $100 million minority investment in PowerFlex.", category: "Financing" },
       { date: "Dec 2022", event: "EDF Renewables North America said it would retain majority ownership after the investment.", category: "Financing" },
-      { date: "2024", event: "PowerFlex continued expanding deployments in onsite solar, storage, and EV charging.", category: "Expansion" },
       { date: "Mar 2025", event: "PowerFlex announced that it had surpassed 500 MW of solar, 50 MWh of storage, and 50,000 EV chargers under management.", category: "Expansion" },
     ],
     sources: [
@@ -27474,7 +26884,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2015", event: "Colorado regulatory records identify Rocky Mountain Midstream as an operator in the state.", category: "Other" },
       { date: "2020", event: "Manulife’s Equator Principles reporting period included several North American power and infrastructure financings, after which Rocky Mountain Midstream later appeared in its portfolio materials.", category: "Financing" },
-      { date: "2026", event: "Williams continued to publish Rocky Mountain Midstream system information for the region.", category: "Other" },
     ],
     sources: [
       { label: "Williams — Rocky Mountain Midstream", url: "https://www.williams.com/pipeline/rocky-mountain-midstream/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -27501,12 +26910,9 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "Washington, Virginia, New York, and Texas",
     milestones: [
-      { date: "2010", event: "Sabey Corporation and National Real Estate Advisors formed Sabey Data Centers.", category: "Other" },
       { date: "2010", event: "Sabey Data Centers was founded.", category: "Founding" },
       { date: "Feb 2021", event: "Sabey and National Real Estate Advisors announced a $150 million investment from Manulife Investment Management.", category: "Financing" },
-      { date: "2023", event: "Sabey continued expanding its Ashburn, Austin, and East Wenatchee development pipeline.", category: "Expansion" },
       { date: "Jan 2025", event: "Sabey announced additional power availability across several campuses, including more than 70 MW expected by 2027.", category: "Other" },
-      { date: "2026", event: "Sabey continued to market six operating campuses across its national footprint.", category: "Other" },
     ],
     sources: [
       { label: "Sabeydatacenters — Sabey Data Centers", url: "https://sabeydatacenters.com/about", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -27535,8 +26941,6 @@ export const companies: PortCo[] = [
       { date: "Aug 2023", event: "Manulife Investment Management announced a definitive agreement to acquire a controlling interest in Serverfarm.", category: "Acquisition" },
       { date: "Oct 2023", event: "Manulife announced completion of its acquisition of Serverfarm.", category: "Acquisition" },
       { date: "Oct 2024", event: "Serverfarm announced the acquisition of two Houston-area data centers with more than 500 MW of potential capacity.", category: "Acquisition" },
-      { date: "2025", event: "Serverfarm continued development of hyperscale campuses across North America.", category: "Other" },
-      { date: "2026", event: "Serverfarm continued to market operations across North America and EMEA.", category: "Other" },
       { date: "Mar 2026", event: "Serverfarm announced a $3.0 billion credit facility to accelerate North American hyperscale campus development.", category: "Financing" },
     ],
     sources: [
@@ -27566,8 +26970,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2011", event: "Silicon Ranch was founded.", category: "Founding" },
       { date: "Feb 16, 2022", event: "Silicon Ranch announced completion of its $775 million equity raise led by Manulife Investment Management.", category: "Financing" },
-      { date: "2024", event: "Silicon Ranch continued expanding its utility-scale solar and storage portfolio across the United States.", category: "Expansion" },
-      { date: "Feb 2025", event: "Silicon Ranch announced an investment from AIP Management.", category: "Financing" },
       { date: "Jun 2025", event: "Silicon Ranch announced closing of AIP Management’s investment.", category: "Financing" },
     ],
     sources: [
@@ -27594,9 +26996,8 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "United States",
     milestones: [
-      { date: "2020", event: "Manulife Equator Principles disclosures identified Sunrun Mars Portfolio 2020-B LLC as a U.S. power transaction reaching financial close.", category: "Financing" },
+      { date: "2020", event: "Manulife invested in Sunrun Mars Holdings 2020, LLC through Manulife Infrastructure Fund I.", category: "Financing" },
       { date: "Feb 2021", event: "Sunrun’s subsidiary list included Sunrun Mars holdco and portfolio entities.", category: "Other" },
-      { date: "2025", event: "Manulife continued to include Sunrun Mars in its direct infrastructure portfolio materials.", category: "Other" },
     ],
     sources: [
       { label: "Manulifeim — Sunrun Mars Holdings 2020, LLC", url: "https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/direct-infrastructure-equity", type: "ARTICLE" },
@@ -27684,7 +27085,7 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Alberta",
     milestones: [
-      { date: "2021", event: "Municipal procurement processes selected Alberta Broadband Networks as the preferred fiber partner in parts of the Edmonton region.", category: "Other" },
+      { date: "2021", event: "Municipal procurement processes selected Alberta Broadband Networks as the preferred fiber partner in parts of the Edmonton region.", category: "Expansion" },
       { date: "Oct 2022", event: "Meridiam reached financial close on the A-NET project.", category: "Financing" },
       { date: "Nov 2023", event: "Beaumont publicly announced local fiber deployment by Alberta Broadband Networks.", category: "Other" },
       { date: "2024", event: "Construction advanced across Sherwood Park and surrounding communities.", category: "Other" },
@@ -27716,7 +27117,7 @@ export const companies: PortCo[] = [
       { date: "Dec 21, 2017", event: "Kiewit Meridiam Partners reached financial close on the Central 70 DBFOM project.", category: "Financing" },
       { date: "Aug 2018", event: "Full-scale construction on the corridor commenced with a public groundbreaking.", category: "Expansion" },
       { date: "2022", event: "The reconstructed corridor and cover park entered service.", category: "Expansion" },
-      { date: "Nov 2022", event: "Meridiam, Kiewit, and CDOT announced ribbon cutting and substantial completion for the project.", category: "Other" },
+      { date: "Nov 2022", event: "Meridiam, Kiewit, and CDOT announced ribbon cutting and substantial completion for the project.", category: "Expansion" },
     ],
     sources: [
       { label: "Meridiam — Central 70", url: "https://www.meridiam.com/assets/c70-highway-colorado-usa/", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -27802,9 +27203,9 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "California",
     milestones: [
-      { date: "Jan 2021", event: "Meridiam-led Bulldog Infrastructure Group was awarded the 33-year PPP contract to modernize Fresno State's utility system.", category: "Other" },
+      { date: "Jan 2021", event: "Meridiam-led Bulldog Infrastructure Group was awarded the 33-year PPP contract to modernize Fresno State's utility system.", category: "Expansion" },
       { date: "Mar 2021", event: "Meridiam announced financial close for the Fresno State campus utility project via an SDG impact bond.", category: "Financing" },
-      { date: "Oct 2024", event: "Meridiam announced substantial completion of the Fresno State utility project.", category: "Other" },
+      { date: "Oct 2024", event: "Meridiam announced substantial completion of the Fresno State utility project.", category: "Expansion" },
       { date: "2025", event: "Fresno State described the project as a completed long-term campus utilities partnership.", category: "Other" },
     ],
     sources: [
@@ -27832,7 +27233,7 @@ export const companies: PortCo[] = [
     headquarters: "Indiana",
     milestones: [
       { date: "Aug 2022", event: "Meridiam announced the Hoosier network agreement with Bloomington, Columbus, and Shelbyville.", category: "Financing" },
-      { date: "Sep 2022", event: "GigabitNow was selected as ISP for the project.", category: "Other" },
+      { date: "Sep 2022", event: "GigabitNow was selected as ISP for the project.", category: "Expansion" },
       { date: "Oct 2022", event: "Bloomington hosted a launch event for Hoosier Networks.", category: "Other" },
       { date: "Jun 2025", event: "Meridiam rebranded the project as mStreet Fiber Indiana.", category: "Other" },
     ],
@@ -27860,7 +27261,7 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Idaho",
     milestones: [
-      { date: "2011", event: "The Idaho biogas facility began operating near Twin Falls, Idaho.", category: "Other" },
+      { date: "2011", event: "The Idaho biogas facility began operating near Twin Falls, Idaho.", category: "Expansion" },
       { date: "2020", event: "Meridiam described the transaction as its first investment in the U.S. biogas sector.", category: "Financing" },
       { date: "Nov 2020", event: "Meridiam announced the acquisition of a 75% stake in New Energy One and its Idaho biogas project.", category: "Acquisition" },
       { date: "2021", event: "Meridiam reported that the asset had been upgraded to produce renewable natural gas for transportation-fuel markets.", category: "Other" },
@@ -27888,7 +27289,7 @@ export const companies: PortCo[] = [
     investmentYear: 2014,
     headquarters: "Ontario",
     milestones: [
-      { date: "2014", event: "The Region of Waterloo selected GrandLinq for the ION light rail project.", category: "Other" },
+      { date: "2014", event: "The Region of Waterloo selected GrandLinq for the ION light rail project.", category: "Expansion" },
       { date: "2014", event: "Meridiam and its GrandLinq partners reached financial close for Stage 1 of the concession.", category: "Financing" },
       { date: "Jun 2019", event: "The ION light rail line entered service.", category: "Expansion" },
       { date: "2022", event: "Meridiam reported that the operation and maintenance program had achieved ISO 9001 certification.", category: "Other" },
@@ -27918,7 +27319,6 @@ export const companies: PortCo[] = [
     headquarters: "New York",
     milestones: [
       { date: "Jun 2016", event: "Meridiam reached financial close on the LaGuardia Terminal B redevelopment concession.", category: "Financing" },
-      { date: "2018", event: "The first new concourse opened to passengers.", category: "Expansion" },
       { date: "2020", event: "The eastern concourse opened as the redevelopment progressed in phases.", category: "Expansion" },
       { date: "Jul 2022", event: "The redeveloped Terminal B was fully completed and operational.", category: "Expansion" },
       { date: "Dec 2023", event: "Skanska agreed to divest its 32% ownership interest to Meridiam and Vantage.", category: "Divestiture" },
@@ -27951,7 +27351,6 @@ export const companies: PortCo[] = [
       { date: "2020", event: "The associated pipeline serving the core contract base was completed.", category: "Other" },
       { date: "Dec 16, 2022", event: "Meridiam completed the acquisition of the Laguna Water Supply portfolio.", category: "Acquisition" },
       { date: "2025", event: "Meridiam disclosed that Laguna Water Supply was being operated in partnership with PERENfra.", category: "Other" },
-      { date: "2026", event: "The asset remained listed as an active utility investment within Meridiam's portfolio.", category: "Financing" },
     ],
     sources: [
       { label: "Close date source — Meridiam — Laguna Water Supply", url: "https://www.meridiam.com/assets/laguna-water-supply/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -27980,7 +27379,6 @@ export const companies: PortCo[] = [
       { date: "2010", event: "Meridiam became the 100% equity owner of the project company.", category: "Acquisition" },
       { date: "Dec 2010", event: "The Long Beach Courthouse project reached financial close.", category: "Financing" },
       { date: "2013", event: "The courthouse entered operations.", category: "Expansion" },
-      { date: "2024", event: "California courts continued to present Long Beach Judicial Partners LLC as the Meridiam project company.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Meridiam — Long Beach Courthouse", url: "https://www.meridiam.com/assets/long-beach-courthouse-usa/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -28038,9 +27436,9 @@ export const companies: PortCo[] = [
     investmentYear: 2010,
     headquarters: "Quebec",
     milestones: [
-      { date: "Mar 2010", event: "The CRCHUM consortium was selected as successful proponent.", category: "Other" },
+      { date: "Mar 2010", event: "The CRCHUM consortium was selected as successful proponent.", category: "Expansion" },
       { date: "May 2010", event: "Meridiam reached commercial and financial close for the CRCHUM facility.", category: "Financing" },
-      { date: "Sep 2013", event: "The project achieved substantial completion.", category: "Other" },
+      { date: "Sep 2013", event: "The project achieved substantial completion.", category: "Expansion" },
       { date: "Mar 2014", event: "Final completion was reached.", category: "Other" },
     ],
     sources: [
@@ -28100,7 +27498,6 @@ export const companies: PortCo[] = [
       { date: "Jun 2009", event: "TxDOT awarded the concession for North Tarrant Express Segments 1 and 2 to NTE Mobility Partners, whose investors included Meridiam.", category: "Acquisition" },
       { date: "Jun 23, 2009", event: "The concession for North Tarrant Express Segments 1 and 2 reached commercial close with Meridiam as an equity investor. (Concession)", category: "Financing" },
       { date: "2012", event: "Meridiam sold part of its interest to a co-investor, according to project disclosures.", category: "Financing" },
-      { date: "Oct 2014", event: "The managed-lanes corridor opened to traffic.", category: "Expansion" },
       { date: "2017", event: "Meridiam purchased an additional 3.7% stake from the Dallas Police and Fire Pension System, while Cintra acquired the balance of that sale.", category: "Acquisition" },
       { date: "Dec 2019", event: "The project refinanced its private activity bonds and TIFIA loan.", category: "Financing" },
     ],
@@ -28132,7 +27529,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2012", event: "Capital City Link General Partnership, including Meridiam Infrastructure, reached financial close for the Northeast Anthony Henday Drive project.", category: "Financing" },
       { date: "2012", event: "Construction commenced on the new ring-road segment.", category: "Expansion" },
-      { date: "May 8, 2012", event: "The DBFO agreement for NEAH was executed. (Concession)", category: "Other" },
       { date: "Oct 2016", event: "The highway opened to traffic.", category: "Expansion" },
       { date: "Jul 2019", event: "Meridiam announced the acquisition of the remaining 50% stake and became the 100% owner of the asset.", category: "Acquisition" },
       { date: "Jul 1, 2019", event: "Meridiam increased its stake from 50% to 100%. (Ownership change)", category: "Acquisition" },
@@ -28250,7 +27646,7 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Nevada",
     milestones: [
-      { date: "Mar 2024", event: "The Reno-Tahoe Airport Authority board approved the project.", category: "Other" },
+      { date: "Mar 2024", event: "The Reno-Tahoe Airport Authority board approved the project.", category: "Expansion" },
       { date: "May 2024", event: "Meridiam reached financial close for the Reno Airport Ground Transportation Center.", category: "Financing" },
       { date: "2025", event: "The project received Proximo Infra's North American Aviation Deal of the Year recognition.", category: "Other" },
       { date: "Oct 2025", event: "Project stakeholders broke ground on the facility at Reno-Tahoe International Airport.", category: "Expansion" },
@@ -28307,7 +27703,7 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Georgia",
     milestones: [
-      { date: "Aug 2024", event: "Georgia selected the Meridiam, ACS Infrastructure, and Acciona Concesiones consortium as best-value proposer for the project.", category: "Other" },
+      { date: "Aug 2024", event: "Georgia selected the Meridiam, ACS Infrastructure, and Acciona Concesiones consortium as best-value proposer for the project.", category: "Expansion" },
       { date: "Nov 2024", event: "The project reached commercial close.", category: "Other" },
       { date: "2025", event: "Construction mobilization began following financial close.", category: "Financing" },
       { date: "Aug 2025", event: "The Meridiam-led consortium reached financial close on the SR 400 Express Lanes project.", category: "Financing" },
@@ -28336,9 +27732,8 @@ export const companies: PortCo[] = [
     investmentYear: 2017,
     headquarters: "Virginia",
     milestones: [
-      { date: "2016", event: "Virginia selected the private consortium for the I-66 Outside the Beltway project.", category: "Other" },
+      { date: "2016", event: "Virginia selected the private consortium for the I-66 Outside the Beltway project.", category: "Expansion" },
       { date: "2017", event: "Transform 66 Outside the Beltway reached financial close and entered construction with Meridiam as an equity investor. (Concession)", category: "Financing" },
-      { date: "2017", event: "Major construction began across the 22.5-mile corridor.", category: "Other" },
       { date: "Nov 9, 2017", event: "I-66 Express Mobility Partners, whose equity investors included Meridiam Infrastructure North America Fund II, reached financial close on the DBFOM concession.", category: "Financing" },
       { date: "Nov 2022", event: "Transform 66 Outside the Beltway opened to traffic.", category: "Expansion" },
       { date: "Nov 29, 2022", event: "The final section of the new express lanes opened. (Operations)", category: "Expansion" },
@@ -28369,7 +27764,7 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Iowa",
     milestones: [
-      { date: "2019", event: "The University of Iowa awarded the utility system concession to the ENGIE and Meridiam team.", category: "Other" },
+      { date: "2019", event: "The University of Iowa awarded the utility system concession to the ENGIE and Meridiam team.", category: "Expansion" },
       { date: "Mar 10, 2020", event: "Meridiam and ENGIE achieved financial close on the 50-year concession.", category: "Financing" },
       { date: "Mar 11, 2020", event: "Operations and maintenance responsibilities transferred to the ENGIE and Meridiam concessionaire at 12:01 p.m.", category: "Other" },
       { date: "2025", event: "The concession framework included a target to transition campus energy production away from coal by 2025.", category: "Other" },
@@ -28428,9 +27823,7 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Multi-state United States",
     milestones: [
-      { date: "2022", event: "Public transaction materials described FiberLight as operating more than 20 years in the market.", category: "Other" },
       { date: "Jun 2022", event: "A Morrison-led investor group announced an agreement to acquire FiberLight.", category: "Acquisition" },
-      { date: "2023", event: "FiberLight continued network expansion and customer growth under new ownership.", category: "Other" },
       { date: "Apr 2023", event: "The Morrison-led consortium completed the acquisition of FiberLight.", category: "Acquisition" },
     ],
     sources: [
@@ -28492,7 +27885,6 @@ export const companies: PortCo[] = [
       { date: "2016", event: "Infratil and New Zealand Super Fund closed their equity investment in Longroad Energy, with Morrison & Co managing the investment.", category: "Financing" },
       { date: "2022", event: "Public disclosures updated the shareholder split following the MEAG investment.", category: "Financing" },
       { date: "Aug 2022", event: "MEAG made a $500 million equity investment in Longroad Energy.", category: "Financing" },
-      { date: "2024", event: "Longroad continued to expand its U.S. renewable development and operating portfolio.", category: "Expansion" },
     ],
     sources: [
       { label: "Investment date source — Morrison — Longroad Energy", url: "https://www.longroadenergy.com/longroad-announces-new-investors/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -28522,9 +27914,8 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2016", event: "Altán Redes, S.A.P.I. de C.V. was founded.", category: "Founding" },
       { date: "Mar 2017", event: "MSIP / Morgan Stanley Infrastructure Partners invested in Altán Redes.", category: "Financing" },
-      { date: "Jan 2017", event: "Altán executed the public-private partnership contract and obtained the wholesale concession for the network.", category: "Other" },
+      { date: "Jan 2017", event: "Altán executed the public-private partnership contract and obtained the wholesale concession for the network.", category: "Expansion" },
       { date: "Mar 2018", event: "Red Compartida launched commercial operations.", category: "Expansion" },
-      { date: "Oct 2022", event: "Mexican court approval concluded Altán's concurso mercantil restructuring process.", category: "Other" },
       { date: "2025", event: "Public reports indicated additional state participation and continuing operational expansion.", category: "Expansion" },
     ],
     sources: [
@@ -28588,7 +27979,6 @@ export const companies: PortCo[] = [
       { date: "Apr 9, 2018", event: "Brazos Midstream agreed to sell its Delaware Basin subsidiaries to Morgan Stanley Infrastructure Partners for $1.75 billion.", category: "Acquisition" },
       { date: "2022", event: "EnCap Flatrock Midstream listed an initial investment in Brazos Midstream.", category: "Financing" },
       { date: "Oct 2023", event: "Brazos announced a Delaware Basin acquisition and the formation of a new Northern Midland Basin venture.", category: "Founding" },
-      { date: "Aug 2024", event: "Morgan Stanley Infrastructure Partners disclosed a majority investment in Brazos Midstream Holdings II.", category: "Financing" },
     ],
     sources: [
       { label: "Brazosmidstream — Brazos Midstream", url: "https://brazosmidstream.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -28623,7 +28013,6 @@ export const companies: PortCo[] = [
       { date: "Mar 2024", event: "MSIP and Crowley closed the Crowley Wind Services Holdings joint venture.", category: "Financing" },
       { date: "Apr 2024", event: "Morgan Stanley's portfolio materials list Crowley Wind as an investment from April 2024.", category: "Financing" },
       { date: "Aug 2024", event: "Crowley broke ground on the Salem Offshore Wind Terminal in Massachusetts.", category: "Expansion" },
-      { date: "2025", event: "Crowley Wind continued to market port, terminal, and maritime solutions for offshore wind developers.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — MSIP — Crowley Wind Services Holdings, LLC", url: "https://www.crowley.com/news-and-media/press-releases/morgan-stanley-infrastructure-partners-crowley-advance-u-s-wind-energy/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -28651,7 +28040,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Oct 2014", event: "MSIP / Morgan Stanley Infrastructure Partners invested in Eureka Midstream.", category: "Financing" },
       { date: "Oct 2017", event: "Black River and Morgan Stanley completed the sale of Eureka Midstream into a new partnership with SK Holdings.", category: "Divestiture" },
-      { date: "2019", event: "Eureka continued integration with connected regional gathering infrastructure.", category: "Other" },
       { date: "Mar 2019", event: "Equitrans announced an agreement to acquire a 60% interest in Eureka Midstream from a fund managed by MSIP.", category: "Acquisition" },
     ],
     sources: [
@@ -28680,7 +28068,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "May 2024", event: "Flexential announced the expansion of its FlexAnywhere platform and said it operated 42 data centers.", category: "Other" },
       { date: "Oct 2024", event: "MSIP / Morgan Stanley Infrastructure Partners announced a strategic investment in Flexential alongside GI Partners.", category: "Financing" },
-      { date: "2025", event: "Flexential continued campus expansion activity, including additional capacity in Atlanta.", category: "Expansion" },
       { date: "Mar 2025", event: "Flexential announced expanded network-as-a-service capabilities with Lumen.", category: "Expansion" },
     ],
     sources: [
@@ -28708,7 +28095,6 @@ export const companies: PortCo[] = [
     headquarters: "West Virginia",
     milestones: [
       { date: "Aug 2016", event: "MSIP / Morgan Stanley Infrastructure Partners invested in Hornet Midstream.", category: "Financing" },
-      { date: "2019", event: "Transaction materials described Hornet as a 15-mile high-pressure gathering system connected to the Eureka network.", category: "Other" },
       { date: "2019", event: "Hornet became part of regional consolidation activity in the Marcellus and Utica gathering market.", category: "Other" },
       { date: "Mar 2019", event: "Equitrans announced an agreement to acquire 100% of Hornet Midstream from a fund managed by MSIP.", category: "Acquisition" },
     ],
@@ -28736,12 +28122,11 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "New York; New Jersey; Connecticut; Massachusetts; Virginia; Florida; Ohio; Arizona; Pennsylvania",
     milestones: [
-      { date: "Jul 2020", event: "Altice USA agreed to sell a 49.99% interest in Lightpath to Morgan Stanley Infrastructure Partners.", category: "Acquisition" },
       { date: "Dec 2020", event: "Altice USA closed the Lightpath sale to MSIP while retaining 50.01% ownership.", category: "Acquisition" },
+      { date: "Jul 2020", event: "Altice USA agreed to sell a 49.99% interest in Lightpath to Morgan Stanley Infrastructure Partners.", category: "Acquisition" },
       { date: "Jun 2021", event: "Lightpath entered the Boston market through acquisitions and new network builds.", category: "Acquisition" },
       { date: "May 2022", event: "Lightpath said its network had reached 20,000 route miles and 13,500 service locations.", category: "Other" },
-      { date: "Dec 2025", event: "Lightpath announced expansion of its AI-grade network footprint in the Columbus market.", category: "Other" },
-      { date: "Mar 2026", event: "Lightpath announced it had been awarded a U.S. General Services Administration schedule contract.", category: "Other" },
+      { date: "Mar 2026", event: "Lightpath announced it had been awarded a U.S. General Services Administration schedule contract.", category: "Expansion" },
     ],
     sources: [
       { label: "Lightpathfiber — Lightpath Holdings LLC", url: "https://lightpathfiber.com/our-network", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -28796,7 +28181,6 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Colorado; Virginia; Arizona",
     milestones: [
-      { date: "2025", event: "Public materials stated that Torch had originated, developed, and sold more than 1.2 GW of projects since inception.", category: "Divestiture" },
       { date: "Jan 2025", event: "MSIP / Morgan Stanley Infrastructure Partners announced a strategic investment in Torch Clean Energy.", category: "Financing" },
     ],
     sources: [
@@ -28825,7 +28209,6 @@ export const companies: PortCo[] = [
     headquarters: "20 U.S. states",
     milestones: [
       { date: "2021", event: "Brightspeed was founded.", category: "Founding" },
-      { date: "Nov 2021", event: "Apollo and Brightspeed unveiled the Brightspeed brand.", category: "Other" },
       { date: "Aug 3, 2021", event: "Apollo announced an agreement to acquire Lumen's incumbent local exchange carrier business.", category: "Acquisition" },
       { date: "Nov 17, 2021", event: "Brightspeed unveiled the brand for the pending Apollo acquisition of Lumen's ILEC operations.", category: "Other" },
       { date: "Oct 3, 2022", event: "Apollo completed the acquisition from Lumen and Brightspeed began operating the business.", category: "Acquisition" },
@@ -28859,7 +28242,6 @@ export const companies: PortCo[] = [
     headquarters: "Louisiana",
     milestones: [
       { date: "Jun 25, 2024", event: "Kimmeridge announced a follow-on control investment in Commonwealth LNG.", category: "Financing" },
-      { date: "Sep 19, 2024", event: "Commonwealth LNG and Kimmeridge Texas Gas announced heads of terms with Glencore for a natural gas and LNG partnership.", category: "Other" },
       { date: "May 2025", event: "Commonwealth LNG announced a long-term LNG sale and purchase agreement with Glencore.", category: "Divestiture" },
       { date: "Aug 2025", event: "Kimmeridge rebranded its platform as Caturus and announced Mubadala Energy's 24.1% investment.", category: "Financing" },
       { date: "Aug 7, 2025", event: "Kimmeridge announced the rebranding of the parent platform to Caturus after closing Mubadala Energy's strategic equity investment.", category: "Financing" },
@@ -28896,7 +28278,6 @@ export const companies: PortCo[] = [
       { date: "2018", event: "Gulf Coast Express was sanctioned to transport Permian gas to the Texas Gulf Coast.", category: "Other" },
       { date: "Sep 2019", event: "Gulf Coast Express entered commercial service.", category: "Expansion" },
       { date: "2020", event: "Kinder Morgan expanded its Permian gas transmission footprint around the pipeline's delivery corridor.", category: "Expansion" },
-      { date: "2025", event: "Kinder Morgan continued to report the pipeline as fully subscribed under long-term transportation agreements.", category: "Other" },
       { date: "Feb 3, 2025", event: "ArcLight completed the acquisition of a 25% stake in GCX from Phillips 66 and publicly identified Mubadala as its partner in acquiring an interest in the pipeline.", category: "Acquisition" },
     ],
     sources: [
@@ -28931,7 +28312,6 @@ export const companies: PortCo[] = [
       { date: "Oct 24, 2019", event: "Mubadala announced an agreement to purchase US$50 million of NextDecade common stock in a private placement.", category: "Financing" },
       { date: "Jul 2023", event: "Global Infrastructure Partners announced an investment in Rio Grande LNG Phase 1 and related final investment decisions for the first three trains.", category: "Financing" },
       { date: "Sep 2025", event: "TotalEnergies announced expanded investments in the Rio Grande LNG project and related NextDecade interests.", category: "Financing" },
-      { date: "Oct 2025", event: "NextDecade announced a positive final investment decision and financing for Train 5.", category: "Financing" },
     ],
     sources: [
       { label: "Next Decade — NextDecade Corporation", url: "https://www.next-decade.com/who-we-are/", type: "ARTICLE" },
@@ -28961,11 +28341,9 @@ export const companies: PortCo[] = [
     headquarters: "Multi-state United States and Canada",
     milestones: [
       { date: "2024", event: "Transportation Equipment Network was founded.", category: "Founding" },
-      { date: "Jul 2024", event: "Star Leasing and related businesses announced their rebrand to Transportation Equipment Network.", category: "Other" },
-      { date: "Jul 2024", event: "QIA announced an investment in TEN alongside I Squared Capital and Mubadala.", category: "Financing" },
-      { date: "Apr 2024", event: "TEN announced the combination with TIP Canada.", category: "Other" },
       { date: "Jul 2024", event: "I Squared Capital announced more than $600 million of new equity from QIA, Mubadala, and other co-investors for TEN.", category: "Financing" },
-      { date: "Jul 2024", event: "Public disclosures described TEN as North America's second-largest full-service trailer lessor with more than 83,000 trailers.", category: "Other" },
+      { date: "Jul 2024", event: "QIA announced an investment in TEN alongside I Squared Capital and Mubadala.", category: "Financing" },
+      { date: "Jul 2024", event: "Star Leasing and related businesses announced their rebrand to Transportation Equipment Network.", category: "Other" },
     ],
     sources: [
       { label: "Qia — Transportation Equipment Network", url: "https://www.qia.qa/en/Newsroom/Pages/QIA-invests-in-Transportation-Equipment-Network-%28TEN%29%2C-the-leading-North-American-full-service-trailer-lessor.aspx", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
@@ -28997,9 +28375,8 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2021", event: "Altius Renewable Royalties completed its public listing.", category: "Other" },
       { date: "Oct 2023", event: "ARR announced closing of a $247 million credit facility.", category: "Financing" },
-      { date: "Sep 2024", event: "ARR entered into an arrangement agreement under which Northampton affiliate Royal Aggregator LP would acquire the public float.", category: "Acquisition" },
-      { date: "Nov 2024", event: "Shareholders approved the arrangement transaction.", category: "Other" },
       { date: "Dec 2024", event: "Northampton affiliate Royal Aggregator LP completed the arrangement to acquire ARR shares other than Altius Minerals' retained stake.", category: "Acquisition" },
+      { date: "Sep 2024", event: "ARR entered into an arrangement agreement under which Northampton affiliate Royal Aggregator LP would acquire the public float.", category: "Acquisition" },
       { date: "Dec 2024", event: "Post-closing ownership was disclosed at approximately 57% Altius Minerals and 43% Northampton.", category: "Other" },
     ],
     sources: [
@@ -29058,7 +28435,6 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "1973", event: "The business that became AMAROK was founded by Bill Mullis.", category: "Founding" },
-      { date: "2021", event: "Public disclosures described approximately 5,000 installed sites under service agreements at the time of the acquisition.", category: "Acquisition" },
       { date: "Dec 2021", event: "Northleaf and AVALT announced the acquisition of AMAROK.", category: "Acquisition" },
       { date: "2026", event: "AMAROK reported that it secures more than 9,000 commercial businesses.", category: "Other" },
       { date: "Mar 2026", event: "South Carolina announced AMAROK's headquarters expansion in Columbia.", category: "Other" },
@@ -29113,7 +28489,6 @@ export const companies: PortCo[] = [
     investmentYear: 2016,
     headquarters: "Texas",
     milestones: [
-      { date: "2016", event: "Public disclosures identified Cotton Plains Wind, Old Settler Wind, and Phantom Solar as the portfolio assets.", category: "Other" },
       { date: "2016", event: "The transaction supported the U.S. Army's renewable energy power purchase arrangement at Fort Hood.", category: "Acquisition" },
       { date: "Jul 2016", event: "Apex sold a majority ownership stake in the 217 MW portfolio to Northleaf.", category: "Acquisition" },
     ],
@@ -29176,7 +28551,6 @@ export const companies: PortCo[] = [
       { date: "2018", event: "Resthaven came online as CSV's first greenfield gas plant.", category: "Other" },
       { date: "Jun 2019", event: "Northleaf acquired 100% of CSV Midstream.", category: "Acquisition" },
       { date: "Aug 2019", event: "CSV completed the acquisition of the Karr 6-18 natural gas facility from Paramount Resources.", category: "Acquisition" },
-      { date: "2026", event: "CSV's public materials described a network of six midstream plants in northern Alberta.", category: "Other" },
     ],
     sources: [
       { label: "Csvmidstream — CSV Midstream Solutions Corp.", url: "https://www.csvmidstream.com/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -29205,9 +28579,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2020", event: "EVPassport was founded, according to public reporting.", category: "Founding" },
       { date: "2022", event: "EVPassport partnered with Phoenix Sky Harbor International Airport on a Level 2 charging deployment.", category: "Other" },
-      { date: "2023", event: "Public reporting described EVPassport as active in 35 U.S. states plus Canada and Mexico.", category: "Other" },
       { date: "Oct 2023", event: "Northleaf committed US$200 million to EVPassport and acquired a controlling stake.", category: "Acquisition" },
-      { date: "Dec 2025", event: "EVPassport said Northleaf continued to support its capital program through infrastructure funds.", category: "Financing" },
     ],
     sources: [
       { label: "Evpassport — EVPassport", url: "https://evpassport.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -29234,7 +28606,6 @@ export const companies: PortCo[] = [
     headquarters: "Canada",
     milestones: [
       { date: "Dec 2014", event: "Northleaf made its investment in Maple PPP Portfolio.", category: "Financing" },
-      { date: "Jan 2017", event: "Public reporting on Northleaf's second infrastructure fund identified Maple PPP Portfolio as an existing investment.", category: "Financing" },
     ],
     sources: [
       { label: "Investment date source — Northleaf — Maple PPP Portfolio", url: "https://www.northleafcapital.com/infrastructure-investments?page=2", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -29290,7 +28661,6 @@ export const companies: PortCo[] = [
       { date: "2019", event: "Northleaf listed Odfjell Terminals as an active infrastructure investment.", category: "Financing" },
       { date: "Jun 2019", event: "Odfjell announced the closing of Northleaf's acquisition of a 49% stake in Odfjell Holdings (US) Inc.", category: "Acquisition" },
       { date: "Dec 2024", event: "Odfjell disclosed a dispute with Northleaf regarding leverage at the U.S. terminals joint venture.", category: "Other" },
-      { date: "2026", event: "Odfjell continued to report U.S. terminal operations in Houston and Charleston.", category: "Other" },
     ],
     sources: [
       { label: "Northleafcapital — Odfjell Terminals US", url: "https://www.northleafcapital.com/infrastructure-investments?page=1", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -29315,7 +28685,7 @@ export const companies: PortCo[] = [
     investmentYear: 2017,
     headquarters: "Virginia",
     milestones: [
-      { date: "1998", event: "Construction began on the Pocahontas Parkway project.", category: "Other" },
+      { date: "1998", event: "Construction began on the Pocahontas Parkway project.", category: "Expansion" },
       { date: "2002", event: "The toll road opened to traffic in stages.", category: "Expansion" },
       { date: "2006", event: "Virginia's 99-year concession structure was in place for the asset.", category: "Other" },
       { date: "Dec 2016", event: "Globalvia completed its purchase of the Pocahontas Parkway concession.", category: "Acquisition" },
@@ -29350,7 +28720,6 @@ export const companies: PortCo[] = [
       { date: "2023", event: "Northleaf identified Provident as an NICP IV investment.", category: "Financing" },
       { date: "Aug 2023", event: "Northleaf acquired a majority stake in Provident while management retained a minority interest.", category: "Acquisition" },
       { date: "Oct 2025", event: "Provident acquired PowerStream Energy Services.", category: "Acquisition" },
-      { date: "2026", event: "Provident continued marketing sub-metering and building automation services in Ontario.", category: "Other" },
     ],
     sources: [
       { label: "Pemi — Provident Energy Management Inc.", url: "https://www.pemi.com/about-us", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -29409,7 +28778,6 @@ export const companies: PortCo[] = [
       { date: "2021", event: "The company launched its Oakville, Ontario platform for neutral-host communications infrastructure.", category: "Expansion" },
       { date: "2025", event: "Northleaf identified Shared Tower as an NICP IV investment.", category: "Financing" },
       { date: "Mar 2025", event: "Northleaf committed an initial C$100 million to Shared Tower.", category: "Financing" },
-      { date: "2026", event: "Shared Tower continued marketing tower, fiber, and edge colocation development services across Canada.", category: "Other" },
     ],
     sources: [
       { label: "Sharedtower — Shared Tower Inc.", url: "https://www.sharedtower.ca/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -29439,7 +28807,6 @@ export const companies: PortCo[] = [
       { date: "Aug 2023", event: "Northleaf announced an initial US$200 million investment in Tillman FiberCo.", category: "Financing" },
       { date: "Aug 2023", event: "Northleaf and Tillman FiberCo formalized a strategic partnership to scale open-access fiber deployment.", category: "Financing" },
       { date: "Dec 2023", event: "Tillman FiberCo and Northleaf expanded the funding relationship to US$500 million.", category: "Financing" },
-      { date: "2026", event: "Tillman continued to market itself as an open-access fiber network owner and developer.", category: "Other" },
     ],
     sources: [
       { label: "Tillmanfiber — Tillman FiberCo, LLC", url: "https://www.tillmanfiber.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -29467,8 +28834,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1947", event: "WASH was established.", category: "Founding" },
       { date: "2015", event: "EQT Infrastructure II acquired WASH.", category: "Acquisition" },
-      { date: "2025", event: "Public disclosures described approximately 660,000 installed machines across more than 80,000 locations.", category: "Other" },
-      { date: "2025", event: "The company continued serving multifamily and university customers under long-term contracts across the United States and Canada.", category: "Other" },
       { date: "Jul 2025", event: "Northleaf and AVALT announced the acquisition of WASH from EQT.", category: "Acquisition" },
     ],
     sources: [
@@ -29498,7 +28863,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Jan 2019", event: "Western announced the formation of American Corporate Airport Partners with Oaktree and Connor Capital.", category: "Founding" },
       { date: "Jan 2019", event: "Oaktree and partners announced ACAP and an initial $100 million capital commitment.", category: "Financing" },
-      { date: "2024", event: "ACAP remained listed as a current Oaktree infrastructure portfolio company.", category: "Other" },
     ],
     sources: [
       { label: "Oaktreecapital — American Corporate Airport Partners, LLC", url: "https://www.oaktreecapital.com/portfolio-companies/infrastructure-investing", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -29524,8 +28888,7 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "United States",
     milestones: [
-      { date: "2023", event: "Public materials described the transaction as providing CCM with expanded capital support.", category: "Financing" },
-      { date: "Oct 2023", event: "SACP 3.0 began operations with CCM as exclusive manager and sole chassis provider.", category: "Other" },
+      { date: "Oct 2023", event: "SACP 3.0 began operations with CCM as exclusive manager and sole chassis provider.", category: "Expansion" },
       { date: "Oct 2023", event: "Oaktree announced its acquisition of Consolidated Chassis Management from OCEMA.", category: "Acquisition" },
       { date: "Mar 2025", event: "CCM announced rollout of its 12,000th refurbished chassis to the South Atlantic Chassis Pool.", category: "Other" },
       { date: "Mar 2025", event: "CCM stated that its nearly 45,000-unit SACP fleet was expected to be fully upgraded by the end of 2027.", category: "Other" },
@@ -29587,9 +28950,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2020", event: "Neighborhood Property Group was founded.", category: "Founding" },
       { date: "Nov 2020", event: "Oaktree and REEF launched Neighborhood Property Group as a $300 million joint infrastructure vehicle.", category: "Financing" },
-      { date: "Nov 2020", event: "Oaktree portfolio materials described the platform as focused on parking and last-mile real estate acquisitions.", category: "Acquisition" },
-      { date: "2022", event: "The platform continued acquiring and repositioning parking assets in U.S. metropolitan markets.", category: "Acquisition" },
-      { date: "2024", event: "Neighborhood Property Group remained listed as a current Oaktree infrastructure portfolio company.", category: "Other" },
     ],
     sources: [
       { label: "Oaktreecapital — Neighborhood Property Group", url: "https://www.oaktreecapital.com/portfolio-companies/infrastructure-investing", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -29618,9 +28978,7 @@ export const companies: PortCo[] = [
       { date: "1991", event: "OnTrac was founded.", category: "Founding" },
       { date: "Oct 2021", event: "American Securities announced the combination of LaserShip and OnTrac.", category: "Other" },
       { date: "Jan 2022", event: "The combined platform launched transcontinental parcel service across 35 states and Washington, D.C.", category: "Expansion" },
-      { date: "Mar 2023", event: "LaserShip and OnTrac announced the unified OnTrac brand identity.", category: "Other" },
       { date: "Sep 2025", event: "OnTrac announced new Ground Essentials and express service offerings for early 2026 rollout.", category: "Other" },
-      { date: "Mar 2026", event: "Company materials described network reach to more than 75% of the U.S. population.", category: "Other" },
     ],
     sources: [
       { label: "Ontrac — OnTrac", url: "https://www.ontrac.com/about/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -29681,7 +29039,6 @@ export const companies: PortCo[] = [
       { date: "2014", event: "CPP Investments became a minority shareholder in Ports America.", category: "Financing" },
       { date: "2014", event: "Oaktree gained ownership of Ports America through its acquisition of Highstar Capital.", category: "Acquisition" },
       { date: "2014", event: "CPP Investments became a minority investor in Ports America.", category: "Financing" },
-      { date: "Sep 29, 2021", event: "CPP Investments announced a definitive agreement to acquire Oaktree's interest and become the 100% owner of Ports America.", category: "Acquisition" },
       { date: "Dec 15, 2022", event: "CPP Investments reported that it had expanded its investment in Ports America to full ownership.", category: "Acquisition" },
     ],
     sources: [
@@ -29713,7 +29070,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Nov 2020", event: "REEF announced a $700 million funding round with Mubadala, SoftBank, Oaktree, UBS Asset Management, and Target Global.", category: "Financing" },
       { date: "Nov 2020", event: "REEF and Oaktree separately formed Neighborhood Property Group as a $300 million real estate vehicle.", category: "Other" },
-      { date: "2022", event: "REEF public materials described an ecosystem of about 5,000 locations and more than 18,000 team members.", category: "Other" },
     ],
     sources: [
       { label: "Reeftechnology — REEF Technology", url: "https://reeftechnology.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -29804,8 +29160,7 @@ export const companies: PortCo[] = [
     headquarters: "Ontario",
     milestones: [
       { date: "2004", event: "OMERS Infrastructure made its initial investment in Alectra.", category: "Financing" },
-      { date: "2017", event: "Alectra Inc. was founded.", category: "Founding" },
-      { date: "Jan 2017", event: "Alectra was formed through the merger of predecessor municipally owned utilities.", category: "Other" },
+      { date: "Jan 2017", event: "Alectra was formed through the merger of predecessor municipally owned utilities.", category: "Founding" },
       { date: "Jan 2019", event: "Alectra completed the integration of Guelph Hydro.", category: "Other" },
       { date: "2023", event: "Alectra’s public financial statements disclosed the current ownership percentages.", category: "Financing" },
     ],
@@ -29900,7 +29255,6 @@ export const companies: PortCo[] = [
       { date: "2018", event: "Leeward became an OMERS Infrastructure portfolio company.", category: "Other" },
       { date: "Mar 2018", event: "OMERS Infrastructure announced an agreement to acquire Leeward Renewable Energy from ArcLight.", category: "Acquisition" },
       { date: "Apr 2021", event: "Leeward completed the acquisition of First Solar’s U.S. development platform.", category: "Acquisition" },
-      { date: "2024", event: "Current company materials reported an operating portfolio of approximately 4 GW.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — OMERS — Leeward Renewable Energy", url: "https://www.omers.com/news/omers-infrastructure-announces-agreement-to-acquire-leeward-renewable-energy", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -29928,8 +29282,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2021", event: "The acquisition marked OMERS’s entry into the distributed generation segment.", category: "Acquisition" },
       { date: "Nov 2021", event: "OMERS Infrastructure signed an agreement to acquire 100% of Navisun from Ares Management.", category: "Acquisition" },
-      { date: "2023", event: "Navisun completed financing activity to support continued portfolio growth.", category: "Financing" },
-      { date: "2025", event: "Navisun remained an OMERS-owned distributed solar platform based on public materials.", category: "Other" },
     ],
     sources: [
       { label: "Navisunllc — Navisun LLC", url: "https://navisunllc.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -29958,7 +29310,6 @@ export const companies: PortCo[] = [
       { date: "2013", event: "Northstar New Jersey Lottery Group was formed for the New Jersey Lottery concession.", category: "Founding" },
       { date: "Jun 2013", event: "OMERS entered the Northstar New Jersey Lottery Group consortium for the 15-year New Jersey Lottery concession.", category: "Acquisition" },
       { date: "2019", event: "Scientific Games disclosed ownership information related to Northstar New Jersey Holding Co.", category: "Other" },
-      { date: "2025", event: "Public materials indicated the concession remained in effect through June 2029.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — OMERS — Northstar New Jersey Lottery Group", url: "https://www.jonesday.com/en/practices/experience/2013/06/omers-enters-consortium-for-15-year-concession-with-state-of-new-jersey-to-run-new-jersey-lottery", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -30015,7 +29366,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Jul 2009", event: "The first phase of Arco Norte opened to traffic. (Operations)", category: "Expansion" },
       { date: "2011", event: "The second phase to Atlacomulco opened.", category: "Expansion" },
-      { date: "May 3, 2011", event: "The toll road reached full operation. (Operations)", category: "Other" },
       { date: "Jun 9, 2016", event: "CPP Investments and OTPP (Ontario Teachers') acquired stakes in Arco Norte through the IDEAL partnership.", category: "Acquisition" },
       { date: "Jun 9, 2016", event: "IDEAL, CPP Investments, and OTPP (Ontario Teachers') announced the acquisition of Arco Norte.", category: "Acquisition" },
       { date: "Oct 2, 2018", event: "The same consortium expanded its Mexican toll-road partnership through the Pacifico Sur transaction. (Strategic expansion)", category: "Expansion" },
@@ -30047,9 +29397,7 @@ export const companies: PortCo[] = [
     investmentYear: 2016,
     headquarters: "State of Mexico; Hidalgo; Tlaxcala; Puebla",
     milestones: [
-      { date: "2016", event: "Public disclosures identified the Arco Norte ownership split as 51% IDEAL, 29% CPP Investments, and 20% OTPP (Ontario Teachers').", category: "Financing" },
       { date: "Jul 2016", event: "IDEAL, CPP Investments, and OTPP (Ontario Teachers') created a strategic partnership to invest in Mexican infrastructure assets including Arco Norte.", category: "Acquisition" },
-      { date: "2020", event: "Ontario Teachers' continued to include Arco Norte within its expanded Mexican infrastructure partnership with IDEAL and CPP Investments.", category: "Financing" },
     ],
     sources: [
       { label: "Arconorte — Autopista Arco Norte, S.A. de C.V.", url: "https://www.arconorte.com.mx/en/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -30111,7 +29459,6 @@ export const companies: PortCo[] = [
       { date: "2015", event: "Cubico Sustainable Investments was founded.", category: "Founding" },
       { date: "May 2015", event: "Cubico Sustainable Investments was established by OTPP / Ontario Teachers' Pension Plan, PSP Investments, and Banco Santander as equal one-third owners.", category: "Financing" },
       { date: "Jul 2016", event: "PSP Investments and Ontario Teachers' agreed to acquire Banco Santander's stake in Cubico, becoming 50-50 owners.", category: "Acquisition" },
-      { date: "2020", event: "Public disclosures identified Ontario Teachers' and PSP Investments as 50-50 owners following the transaction.", category: "Financing" },
     ],
     sources: [
       { label: "Investment date source — OTPP — Cubico Sustainable Investments", url: "https://www.otpp.com/en-ca/about-us/news-and-insights/portfolio-insights/cubico-sustainable-investments-ceo-renewable-energy/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -30196,7 +29543,6 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "United States (multi-state)",
     milestones: [
-      { date: "2021", event: "Public disclosures described the portfolio as 13 wind, solar, and storage assets totaling approximately 2,520 MW.", category: "Other" },
       { date: "2021", event: "NextEra Energy Partners agreed to acquire the other 50% interest in the portfolio.", category: "Acquisition" },
       { date: "Nov 2021", event: "OTPP / Ontario Teachers' announced an agreement to acquire a 50% interest in a 2,520 MW renewable portfolio from NextEra Energy.", category: "Acquisition" },
     ],
@@ -30223,7 +29569,6 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "United States (multi-state)",
     milestones: [
-      { date: "2022", event: "Public disclosures described the portfolio as roughly 2 GW of wind, solar, and storage assets.", category: "Other" },
       { date: "2022", event: "Transaction materials set out a structured investment involving portfolio interests and convertible equity financing.", category: "Financing" },
       { date: "Nov 2022", event: "OTPP / Ontario Teachers' announced an approximately US$805 million investment in a second NextEra-linked renewables portfolio.", category: "Financing" },
     ],
@@ -30251,8 +29596,7 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Idaho; California",
     milestones: [
-      { date: "2017", event: "Public sources identify Sevana Bioenergy's founding year as 2017.", category: "Other" },
-      { date: "2017", event: "Sevana Bioenergy was founded.", category: "Founding" },
+      { date: "2017", event: "Public sources identify Sevana Bioenergy's founding year as 2017.", category: "Founding" },
       { date: "Mar 2023", event: "OTPP / Ontario Teachers' acquired a majority stake in Sevana with a US$250 million capital commitment.", category: "Financing" },
       { date: "Jul 2024", event: "Sevana acquired the Rialto Bioenergy facility in California.", category: "Acquisition" },
       { date: "Nov 2024", event: "Sevana reported progress on capital and operational improvements at Rialto.", category: "Financing" },
@@ -30282,10 +29626,8 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "New York",
     milestones: [
-      { date: "2019", event: "Public materials identified Alphabet, StepStone, and Ontario Teachers' as backers of the new platform.", category: "Other" },
       { date: "2019", event: "Sidewalk Infrastructure Partners was founded.", category: "Founding" },
       { date: "Aug 2019", event: "Sidewalk Infrastructure Partners launched as a spin-out from Alphabet's Sidewalk Labs, with OTPP / Ontario Teachers' as a founding backer alongside Alphabet and StepStone.", category: "Financing" },
-      { date: "2021", event: "Sidewalk Infrastructure Partners continued to advance next-generation infrastructure project development across multiple sectors.", category: "Other" },
     ],
     sources: [
       { label: "Sidewalkinfra — Sidewalk Infrastructure Partners", url: "https://sidewalkinfra.com/about", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -30312,7 +29654,6 @@ export const companies: PortCo[] = [
     headquarters: "Illinois; Indiana",
     milestones: [
       { date: "2005", event: "Skyway Concession Company was founded.", category: "Founding" },
-      { date: "Sep 2015", event: "CPP Investments, OMERS, and Ontario Teachers' agreed to acquire the Chicago Skyway concession.", category: "Acquisition" },
       { date: "Jan 2016", event: "The consortium including Ontario Teachers' (OTPP) completed the acquisition of Skyway Concession Company.", category: "Acquisition" },
       { date: "Feb 2016", event: "Ontario Teachers’ (OTPP) and other Canadian pension investors acquired the Chicago Skyway concession.", category: "Acquisition" },
       { date: "2022", event: "Atlas Arteria acquired a 66.67% stake while the Canadian consortium retained the balance. (Ownership change)", category: "Divestiture" },
@@ -30376,11 +29717,10 @@ export const companies: PortCo[] = [
     headquarters: "Illinois, Louisiana, Oregon, Texas, Washington, Colorado, New York, and California",
     milestones: [
       { date: "2021", event: "CenTrio was established as an independent district energy platform following the transaction.", category: "Founding" },
-      { date: "Feb 2021", event: "QIC and Ullico signed a definitive agreement to acquire Enwave Energy's U.S. business.", category: "Acquisition" },
       { date: "Jul 2021", event: "QIC and Ullico completed the acquisition of CenTrio.", category: "Acquisition" },
+      { date: "Feb 2021", event: "QIC and Ullico signed a definitive agreement to acquire Enwave Energy's U.S. business.", category: "Acquisition" },
       { date: "Jan 2022", event: "Eric Miller joined the company as Chief Financial Officer.", category: "Management" },
       { date: "Feb 2024", event: "Eric Miller was promoted to Chief Executive Officer.", category: "Management" },
-      { date: "Sep 2024", event: "QIC published an update on CenTrio’s operating footprint and decarbonization projects.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — QIC / Ullico — CenTrio", url: "https://www.prnewswire.com/news-releases/qic-and-ullico-complete-acquisition-of-centrio-leading-us-district-energy-platform-301335780.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -30412,7 +29752,6 @@ export const companies: PortCo[] = [
       { date: "Mar 2024", event: "Primergy signed a long-term power purchase agreement with Microsoft for the project.", category: "Financing" },
       { date: "Mar 12, 2024", event: "Primergy closed $588 million of project financing and a long-term PPA with Microsoft.", category: "Financing" },
       { date: "Oct 18, 2024", event: "Primergy secured an additional $350 million of tax equity financing for Ash Creek.", category: "Financing" },
-      { date: "Jul 2025", event: "Primergy announced commercial operation of Ash Creek Solar.", category: "Expansion" },
       { date: "Jul 17, 2025", event: "Ash Creek reached commercial operation.", category: "Expansion" },
     ],
     sources: [
@@ -30445,7 +29784,7 @@ export const companies: PortCo[] = [
       { date: "2019", event: "Quinbrook recorded the acquisition year for Byrd Ranch.", category: "Acquisition" },
       { date: "2022", event: "Construction and commissioning activities were completed for the project.", category: "Expansion" },
       { date: "Jan 2022", event: "GlidePath announced the project as an addition to its Texas battery storage portfolio.", category: "Other" },
-      { date: "Nov 2022", event: "Byrd Ranch began operations.", category: "Other" },
+      { date: "Nov 2022", event: "Byrd Ranch began operations.", category: "Expansion" },
     ],
     sources: [
       { label: "Quinbrook — Byrd Ranch", url: "https://www.quinbrook.com/projects/byrd-ranch/", type: "WEBSITE", purpose: "MILESTONE_EVENT" },
@@ -30474,7 +29813,6 @@ export const companies: PortCo[] = [
       { date: "2023", event: "Elemental Clean Fuels was founded.", category: "Founding" },
       { date: "2025", event: "Quinbrook described the investment as its first in Canada.", category: "Financing" },
       { date: "Oct 2025", event: "Quinbrook announced a strategic ownership stake in Elemental Clean Fuels.", category: "Acquisition" },
-      { date: "2026", event: "Elemental continued advancing projects in Alberta and British Columbia.", category: "Other" },
       { date: "Apr 22, 2026", event: "Elemental Clean Fuels acquired FPH2’s Los Angeles County Renewable Hydrogen Project from FPH2.", category: "Acquisition" },
     ],
     sources: [
@@ -30504,7 +29842,6 @@ export const companies: PortCo[] = [
       { date: "2017", event: "Quinbrook acquired GlidePath.", category: "Acquisition" },
       { date: "Jan 2018", event: "GlidePath acquired a wind power portfolio under Quinbrook ownership.", category: "Acquisition" },
       { date: "Jan 18, 2018", event: "GlidePath acquired a 223 MW operational wind portfolio from NextEra.", category: "Acquisition" },
-      { date: "Feb 4, 2020", event: "GlidePath advanced an 80 MW New York storage portfolio after receiving NYSERDA support.", category: "Other" },
       { date: "Jan 25, 2022", event: "GlidePath announced construction of the 50 MW Byrd Ranch storage project in Texas.", category: "Expansion" },
       { date: "Jan 2024", event: "GlidePath appointed a new chief commercial officer.", category: "Management" },
     ],
@@ -30534,7 +29871,7 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Oregon",
     milestones: [
-      { date: "2021", event: "The Junction City facility began commercial operations.", category: "Other" },
+      { date: "2021", event: "The Junction City facility began commercial operations.", category: "Expansion" },
       { date: "Sep 2021", event: "Shell announced initial RNG production at the Junction City plant.", category: "Other" },
       { date: "2025", event: "Quinbrook acquired Junction City Biomethane.", category: "Acquisition" },
     ],
@@ -30562,7 +29899,7 @@ export const companies: PortCo[] = [
     headquarters: "Pennsylvania",
     milestones: [
       { date: "2015", event: "Public project materials identify the Meyersdale battery as originally built in Somerset County, Pennsylvania.", category: "Other" },
-      { date: "2015", event: "The Meyersdale battery was originally placed in service.", category: "Other" },
+      { date: "2015", event: "The Meyersdale battery was originally placed in service.", category: "Expansion" },
       { date: "2019", event: "Quinbrook's GlidePath acquired Meyersdale as an operating project.", category: "Acquisition" },
       { date: "2024", event: "Quinbrook reported that the project was repowered in late 2024.", category: "Other" },
       { date: "2024", event: "GlidePath completed a repowering of the asset.", category: "Other" },
@@ -30592,8 +29929,7 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Vermont",
     milestones: [
-      { date: "Dec 2022", event: "PurposeEnergy announced the start of construction on the Middlebury project.", category: "Other" },
-      { date: "Dec 16, 2022", event: "PurposeEnergy held a groundbreaking for the Middlebury project.", category: "Other" },
+      { date: "Dec 16, 2022", event: "PurposeEnergy held a groundbreaking for the Middlebury project.", category: "Expansion" },
       { date: "Apr 2023", event: "Quinbrook acquired PurposeEnergy, the platform developing the project.", category: "Acquisition" },
       { date: "Apr 12, 2023", event: "Quinbrook acquired PurposeEnergy, the platform that owns and develops Middlebury.", category: "Acquisition" },
       { date: "Oct 2024", event: "PurposeEnergy held the grand opening for the Middlebury Resource Recovery Center.", category: "Other" },
@@ -30626,8 +29962,6 @@ export const companies: PortCo[] = [
     headquarters: "Arkansas",
     milestones: [
       { date: "Nov 29, 2023", event: "Quinbrook's Primergy closed $300 million of debt and tax equity financing for Prairie Mist.", category: "Financing" },
-      { date: "2024", event: "Company materials described Prairie Mist as a 100 MWac project in Ashley County, Arkansas.", category: "Other" },
-      { date: "2024", event: "Primergy identified Amazon as the customer for the project.", category: "Other" },
       { date: "2024", event: "Primergy reported that Prairie Mist reached commercial operation.", category: "Expansion" },
       { date: "Dec 2024", event: "Primergy announced commercial operation of Prairie Mist Solar.", category: "Expansion" },
       { date: "Dec 18, 2024", event: "Primergy announced the project was fully operational and delivering solar energy to the grid.", category: "Other" },
@@ -30662,7 +29996,6 @@ export const companies: PortCo[] = [
       { date: "2020", event: "Primergy was founded.", category: "Founding" },
       { date: "May 18, 2020", event: "Quinbrook launched Primergy as a new portfolio company to develop solar and battery storage projects across North America.", category: "Financing" },
       { date: "Oct 2022", event: "Quinbrook and Primergy announced APG's investment in the Gemini Solar + Storage project.", category: "Financing" },
-      { date: "Apr 2024", event: "A Valley of Fire continuation fund transaction transferred Gemini and the remaining Valley of Fire development portfolio from the prior fund structure.", category: "Other" },
       { date: "Jul 2025", event: "Primergy announced commercial operation of the 408 MWac Ash Creek Solar project in Texas.", category: "Expansion" },
       { date: "Mar 2026", event: "Primergy reported lifetime closed transactions of more than $5 billion.", category: "Financing" },
     ],
@@ -30748,12 +30081,9 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Ohio",
     milestones: [
-      { date: "2023", event: "Quinbrook project materials identified Minster as acquired in 2023.", category: "Acquisition" },
-      { date: "2023", event: "Public project materials described the facility as converting organic waste into biogas for industrial processes.", category: "Other" },
       { date: "2023", event: "Quinbrook identified Minster as part of the acquired PurposeEnergy project portfolio.", category: "Acquisition" },
       { date: "Apr 2023", event: "Quinbrook acquired PurposeEnergy, the platform developing the Minster project.", category: "Acquisition" },
       { date: "Apr 12, 2023", event: "Quinbrook acquired PurposeEnergy.", category: "Acquisition" },
-      { date: "2025", event: "Local reporting noted that PurposeEnergy had been working for several years on the Minster biodigester development.", category: "Other" },
     ],
     sources: [
       { label: "Purposeenergy — PurposeEnergy Minster", url: "https://purposeenergy.com/project/minster/", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -30780,10 +30110,7 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Vermont",
     milestones: [
-      { date: "Mar 2008", event: "Magic Hat and PurposeEnergy executed the development agreement for the brewery digester project.", category: "Other" },
-      { date: "2010", event: "The South Burlington digester began operating at the brewery site.", category: "Other" },
-      { date: "2019", event: "Public construction materials described the South Burlington anaerobic digester serving Zero Gravity Brewery.", category: "Other" },
-      { date: "2019", event: "Project materials said the facility would use combined heat and power equipment and net metering.", category: "Other" },
+      { date: "Mar 2008", event: "Magic Hat and PurposeEnergy executed the development agreement for the brewery digester project.", category: "Expansion" },
       { date: "Apr 2023", event: "Quinbrook acquired PurposeEnergy, the parent platform for the project.", category: "Acquisition" },
       { date: "Apr 12, 2023", event: "Quinbrook acquired PurposeEnergy and became the current sponsor of the South Burlington asset.", category: "Acquisition" },
     ],
@@ -30816,7 +30143,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Nov 2020", event: "Rowan Digital Infrastructure was founded.", category: "Founding" },
       { date: "2022", event: "Quinbrook project materials list Bauxite as acquired in 2022.", category: "Acquisition" },
-      { date: "Jan 10, 2024", event: "Bauxite received site development plan approval in Frederick County. (Development)", category: "Other" },
       { date: "2025", event: "Rowan secured $1.24 billion of financing for Bauxite II.", category: "Financing" },
       { date: "Jan 2025", event: "Quinbrook's Rowan Digital Infrastructure closed $975 million of construction financing for Bauxite I.", category: "Financing" },
       { date: "Feb 2025", event: "Rowan secured an additional $1.24 billion of financing for the second phase of the campus.", category: "Financing" },
@@ -30850,8 +30176,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Nov 2020", event: "Rowan Digital Infrastructure was founded.", category: "Founding" },
       { date: "2022", event: "Quinbrook project materials list Cinco as acquired in 2022.", category: "Acquisition" },
-      { date: "Aug 2025", event: "Quinbrook-backed Rowan announced the start of construction on the Cinco data center campus outside San Antonio.", category: "Other" },
-      { date: "Aug 7, 2025", event: "Quinbrook-backed Rowan announced the start of construction on the 300 MW Cinco campus. (Development)", category: "Other" },
+      { date: "Aug 7, 2025", event: "Quinbrook-backed Rowan announced the start of construction on the 300 MW Cinco campus. (Development)", category: "Expansion" },
       { date: "Feb 2026", event: "Rowan closed $551 million of project financing for Rowan Cinco LLC.", category: "Financing" },
       { date: "Feb 11, 2026", event: "Rowan closed approximately $550 million of construction financing for Cinco.", category: "Financing" },
     ],
@@ -30887,7 +30212,6 @@ export const companies: PortCo[] = [
       { date: "Nov 2020", event: "Quinbrook established Rowan Digital Infrastructure as a hyperscale data center platform.", category: "Financing" },
       { date: "Jan 2023", event: "Quinbrook announced the expansion of Rowan's green data center platform in Texas.", category: "Other" },
       { date: "Jan 2025", event: "Rowan secured $975 million of financing for its Maryland campus.", category: "Financing" },
-      { date: "2026", event: "Quinbrook described Rowan's development pipeline as exceeding 12 GW-IT.", category: "Other" },
       { date: "Apr 7, 2026", event: "Quinbrook announced a strategic recapitalization of Rowan through the sale of a 49% minority stake to Blackstone-affiliated funds while retaining control.", category: "Financing" },
     ],
     sources: [
@@ -30920,7 +30244,6 @@ export const companies: PortCo[] = [
       { date: "2022", event: "Quinbrook project materials list Temple as acquired in 2022.", category: "Acquisition" },
       { date: "Aug 13, 2024", event: "UPP completed a co-investment in Rowan Digital Infrastructure.", category: "Financing" },
       { date: "2026", event: "Rowan said it had secured 1.6 GW of power capacity at Temple expected online between 2026 and 2030.", category: "Expansion" },
-      { date: "Jan 2026", event: "Rowan announced the start of construction on a 300 MW Temple data center phase.", category: "Other" },
       { date: "Jan 5, 2026", event: "Rowan announced construction had begun on the 300 MW Temple project. (Construction)", category: "Other" },
     ],
     sources: [
@@ -30953,7 +30276,6 @@ export const companies: PortCo[] = [
       { date: "May 2023", event: "PurposeEnergy announced plans to build the St. Albans biogas plant in partnership with Ben & Jerry's.", category: "Other" },
       { date: "Apr 12, 2023", event: "Quinbrook acquired PurposeEnergy, the platform developing SAINT.", category: "Acquisition" },
       { date: "May 23, 2023", event: "PurposeEnergy announced plans to build the SAINT biogas facility with Ben & Jerry's and Unilever.", category: "Other" },
-      { date: "Dec 2024", event: "The project began exporting renewable electricity.", category: "Other" },
       { date: "May 2025", event: "PurposeEnergy held the grand opening for the St. Albans facility.", category: "Other" },
       { date: "May 29, 2025", event: "PurposeEnergy held the SAINT grand opening.", category: "Other" },
     ],
@@ -31042,7 +30364,6 @@ export const companies: PortCo[] = [
     headquarters: "Pennsylvania, New York, and Massachusetts",
     milestones: [
       { date: "2002", event: "Ecosave was founded, based on the company's stated operating history of more than 20 years.", category: "Founding" },
-      { date: "2026", event: "Ecosave continued to market energy service agreements, building automation, and renewable-energy solutions from its Northeast offices.", category: "Other" },
     ],
     sources: [
       { label: "Ridgewoodinfrastructure — Ecosave", url: "https://ridgewoodinfrastructure.com/ecosave/", type: "ARTICLE" },
@@ -31070,7 +30391,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2021", event: "The platform was established to target sustainable infrastructure for municipalities, universities, schools, and hospitals.", category: "Founding" },
       { date: "Mar 15, 2021", event: "Ridgewood Infrastructure formed Environmental Infrastructure Partners as a joint venture with Sustainability Partners.", category: "Financing" },
-      { date: "2026", event: "The platform remained part of Ridgewood's active portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Ridgewoodinfrastructure — Environmental Infrastructure Partners", url: "https://ridgewoodinfrastructure.com/environmental-infrastructure-partners/", type: "ARTICLE" },
@@ -31097,7 +30417,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2024", event: "Ridgewood described the investment as growth capital for one of the larger privately owned U.S. solar platforms.", category: "Financing" },
       { date: "Apr 2024", event: "Ridgewood Infrastructure announced a structured preferred equity investment in MN8 Energy.", category: "Financing" },
-      { date: "2025", event: "MN8 continued to report a portfolio exceeding 3 GW of solar generation and more than 250 MW of battery storage.", category: "Other" },
     ],
     sources: [
       { label: "Ridgewoodinfrastructure — MN8 Energy", url: "https://ridgewoodinfrastructure.com/mn8-energy/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -31150,7 +30469,7 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "Florida",
     milestones: [
-      { date: "Feb 2023", event: "The City of Fort Lauderdale selected the Prospect Lake Clean Water Center proposal.", category: "Other" },
+      { date: "Feb 2023", event: "The City of Fort Lauderdale selected the Prospect Lake Clean Water Center proposal.", category: "Expansion" },
       { date: "Feb 21, 2023", event: "Ridgewood Infrastructure and IDE Technologies announced the closing of the public-private partnership with the City of Fort Lauderdale for the Prospect Lake Clean Water Center.", category: "Financing" },
       { date: "2024", event: "Ridgewood cited the project as one of the notable investments in Fund II.", category: "Other" },
       { date: "2025", event: "Ridgewood stated the project would provide approximately 80% of Fort Lauderdale's fresh water under a 30-year concession agreement.", category: "Other" },
@@ -31181,11 +30500,10 @@ export const companies: PortCo[] = [
     headquarters: "California",
     milestones: [
       { date: "2003", event: "Sierra Northern Railway was formed through the merger of Sierra Railroad and Yolo Shortline Railroad.", category: "Acquisition" },
-      { date: "2026", event: "Public transaction materials stated that the platform included approximately 130 miles of track and rail-linked operating businesses.", category: "Other" },
       { date: "Mar 2026", event: "Ridgewood Infrastructure announced the acquisition of a controlling interest in Sierra Railroad Company.", category: "Acquisition" },
       { date: "Mar 11, 2026", event: "Sierra Railroad Company acquired Central Valley Ag Transport (CVAT).", category: "Acquisition" },
-      { date: "1897", event: "Sierra Railroad was founded.", category: "Founding" },
       { date: "1897", event: "Sierra Railroad Company was founded.", category: "Founding" },
+      { date: "1897", event: "Sierra Railroad was founded.", category: "Founding" },
     ],
     sources: [
       { label: "Investment date source — Ridgewood — Sierra Railroad Company", url: "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -31268,8 +30586,6 @@ export const companies: PortCo[] = [
     headquarters: "New Mexico",
     milestones: [
       { date: "2020", event: "Valley Cold’s website identifies the operating business in its current form.", category: "Founding" },
-      { date: "2024", event: "Public transaction materials highlighted facilities in Las Cruces and Santa Teresa.", category: "Other" },
-      { date: "2024", event: "Public materials described two operating locations in Las Cruces and Santa Teresa. (Scale disclosure)", category: "Other" },
       { date: "Dec 3, 2024", event: "Ridgewood Infrastructure announced its acquisition of Valley Cold.", category: "Acquisition" },
     ],
     sources: [
@@ -31300,7 +30616,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2023", event: "Ridgewood said WRM operated 13 treatment facilities at the time of acquisition.", category: "Acquisition" },
       { date: "Dec 2023", event: "Ridgewood Infrastructure announced the acquisition of Waste Resource Management.", category: "Acquisition" },
-      { date: "2024", event: "Ridgewood continued to position WRM within its water and environmental infrastructure strategy.", category: "Other" },
       { date: "2026", event: "Ridgewood listed WRM as a realized portfolio investment.", category: "Financing" },
     ],
     sources: [
@@ -31359,7 +30674,6 @@ export const companies: PortCo[] = [
       { date: "2025", event: "Sandbrook added intellirent to its published portfolio.", category: "Other" },
       { date: "2025", event: "Sandbrook described the business as serving utilities, EPC contractors, and electrical equipment manufacturers across North America.", category: "Other" },
       { date: "Feb 2025", event: "Sandbrook announced an agreement to acquire intellirent from Electro Rent.", category: "Acquisition" },
-      { date: "2026", event: "Sandbrook continued to present intellirent as a platform tied to grid modernization and expansion work.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Sandbrook — intellirent", url: "https://www.prnewswire.com/news-releases/sandbrook-capital-acquires-intellirent-a-market-leader-in-mission-critical-testing-equipment-solutions-for-power-and-infrastructure-markets-302380177.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -31390,7 +30704,6 @@ export const companies: PortCo[] = [
       { date: "Feb 2024", event: "rPlus announced Sandbrook's commitment of up to $460 million.", category: "Financing" },
       { date: "Mar 2024", event: "rPlus announced the expanded Green River Energy Center configuration in Utah.", category: "Expansion" },
       { date: "Dec 2024", event: "rPlus announced two major financing milestones, including project-level debt financing.", category: "Financing" },
-      { date: "2025", event: "Sandbrook's sustainability reporting stated that the investment helped rPlus reach FID and secure more than $1 billion of construction debt financing.", category: "Financing" },
     ],
     sources: [
       { label: "Investment date source — Sandbrook — rPlus Energies", url: "https://www.rplusenergies.com/sandbrook-capital-commits-up-to-460-million-to-rplus-energies", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -31420,7 +30733,6 @@ export const companies: PortCo[] = [
       { date: "2018", event: "Bernhard Capital Partners formed United Utility.", category: "Founding" },
       { date: "Sep 2022", event: "United Utility announced the acquisition of BHI Power Delivery.", category: "Acquisition" },
       { date: "Dec 2025", event: "Sandbrook announced an agreement to acquire United Utility with Blackstone Credit & Insurance.", category: "Acquisition" },
-      { date: "2026", event: "United Utility continued to present itself as an integrated platform serving transmission, distribution, substation, smart grid, and battery storage work.", category: "Other" },
       { date: "Mar 2, 2026", event: "Sandbrook Capital, in partnership with funds managed by Blackstone Credit & Insurance, closed the acquisition of United Utility.", category: "Acquisition" },
     ],
     sources: [
@@ -31451,9 +30763,8 @@ export const companies: PortCo[] = [
       { date: "2003", event: "ALLO began building its first fiber networks.", category: "Founding" },
       { date: "2015", event: "Nelnet became ALLO's principal owner and capital partner.", category: "Financing" },
       { date: "2020", event: "SDC disclosed an approximately 48% stake in ALLO.", category: "Financing" },
-      { date: "Oct 2020", event: "SDC and Nelnet announced SDC's investment in ALLO.", category: "Financing" },
       { date: "Oct 2020", event: "SDC and Nelnet announced SDC's $197 million investment for an approximately 48% stake.", category: "Financing" },
-      { date: "2024", event: "ALLO continued evaluating a minority equity process as it expanded its regional network footprint.", category: "Expansion" },
+      { date: "Oct 2020", event: "SDC and Nelnet announced SDC's investment in ALLO.", category: "Financing" },
     ],
     sources: [
       { label: "Allocommunications — ALLO Communications", url: "https://www.allocommunications.com/about/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -31480,10 +30791,9 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Virginia",
     milestones: [
-      { date: "2025", event: "Third-party coverage indicated the site was approved for multiple data center buildings and an on-site substation.", category: "Other" },
+      { date: "2025", event: "Third-party coverage indicated the site was approved for multiple data center buildings and an on-site substation.", category: "Expansion" },
       { date: "Nov 7, 2025", event: "SDC Capital Partners acquired approximately 97 acres of data-center-zoned land in the Ashburn market.", category: "Acquisition" },
       { date: "2026", event: "SDC's investment portfolio page listed the property as a 300 MW, 98-acre development site in Ashburn, Virginia.", category: "Financing" },
-      { date: "2026", event: "The site remained categorized as a development investment rather than an operating data center campus.", category: "Financing" },
     ],
     sources: [
       { label: "Sdccapitalpartners — Ashburn Data Center Development Site (300MW / 98 acres)", url: "https://sdccapitalpartners.com/investments/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -31510,7 +30820,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Oct 16, 2020", event: "SDC Capital Partners acquired a minority interest in Bandwidth Infrastructure Group to support network expansion.", category: "Financing" },
       { date: "2021", event: "Bandwidth IG published network overview materials for its dark fiber platform.", category: "Other" },
-      { date: "2025", event: "BIG Fiber continued expanding in Greater Atlanta and other core metro markets.", category: "Expansion" },
       { date: "May 2025", event: "The company upsized its green loan facility to support further network expansion.", category: "Financing" },
       { date: "May 2025", event: "Bandwidth IG announced its rebrand to BIG Fiber.", category: "Other" },
     ],
@@ -31542,7 +30851,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Oct 16, 2020", event: "SDC Capital Partners acquired a minority interest in Bandwidth Infrastructure Group to support network expansion.", category: "Financing" },
       { date: "2025", event: "BIG Fiber disclosed more than 320 route miles across three U.S. metro markets.", category: "Other" },
-      { date: "2025", event: "The company continued marketing metro dark fiber to data center and enterprise users.", category: "Other" },
       { date: "May 2025", event: "Bandwidth IG announced its rebrand to BIG Fiber.", category: "Other" },
     ],
     sources: [
@@ -31571,9 +30879,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2023", event: "The company positioned the partnership to fund Southern California fiber expansion.", category: "Other" },
       { date: "Feb 2023", event: "Funds managed by SDC Capital Partners acquired a majority interest in Cityside Networks.", category: "Acquisition" },
-      { date: "2025", event: "Orange County Business Journal reported that SDC had become the majority owner and Hanson Capital remained a minority investor.", category: "Financing" },
       { date: "2025", event: "The company outlined further capital investment for network expansion in Irvine.", category: "Financing" },
-      { date: "2025", event: "Cityside continued marketing residential and business fiber services in Southern California.", category: "Other" },
     ],
     sources: [
       { label: "Citysidefiber — Cityside Networks", url: "https://www.citysidefiber.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -31603,7 +30909,6 @@ export const companies: PortCo[] = [
       { date: "2010", event: "The company expanded its service offering to include internet services.", category: "Expansion" },
       { date: "2016", event: "Smartaira introduced its InstantON move-in internet service model.", category: "Other" },
       { date: "May 3, 2022", event: "Smartaira announced that funds managed by SDC Capital Partners recently acquired a majority interest in the company.", category: "Acquisition" },
-      { date: "2023", event: "Smartaira continued expanding managed Wi-Fi and bulk connectivity services for property owners.", category: "Expansion" },
       { date: "Jan 2023", event: "Smartaira acquired Direct Plus to expand into additional multifamily markets.", category: "Acquisition" },
     ],
     sources: [
@@ -31636,7 +30941,6 @@ export const companies: PortCo[] = [
       { date: "Aug 2021", event: "IQ Fiber launched operations.", category: "Expansion" },
       { date: "May 2023", event: "IQ Fiber announced a $150 million follow-on equity commitment from SDC.", category: "Financing" },
       { date: "Nov 2024", event: "IQ Fiber agreed to acquire ThinkBig Networks in Maryland.", category: "Acquisition" },
-      { date: "Mar 2026", event: "IQ Fiber announced its entry into Delaware as its fifth state.", category: "Other" },
     ],
     sources: [
       { label: "Iqfiber — IQ Fiber, LLC", url: "https://www.iqfiber.com/about/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -31666,7 +30970,7 @@ export const companies: PortCo[] = [
       { date: "2023", event: "Lyte Fiber was founded in Houston, Texas.", category: "Founding" },
       { date: "Oct 2024", event: "Lyte Fiber announced its launch in partnership with SDC Capital Partners.", category: "Financing" },
       { date: "2025", event: "The company began market expansion and network construction activity in Texas communities.", category: "Other" },
-      { date: "2025", event: "Lyte Fiber was selected for a state broadband grant in Texas.", category: "Other" },
+      { date: "2025", event: "Lyte Fiber was selected for a state broadband grant in Texas.", category: "Expansion" },
     ],
     sources: [
       { label: "Lytefiber — Lyte Fiber", url: "https://www.lytefiber.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -31693,10 +30997,7 @@ export const companies: PortCo[] = [
     headquarters: "Virginia",
     milestones: [
       { date: "Oct 2022", event: "SDC Capital Partners planned the Belmont Innovation Campus data center development in Ashburn and owned seven parcels at the site.", category: "Financing" },
-      { date: "2024", event: "SDC's portfolio materials listed a multi-building 600MW data center campus in Ashburn, Virginia.", category: "Other" },
-      { date: "2024", event: "Market reporting cited SDC's Ashburn holdings as part of its larger Northern Virginia development pipeline.", category: "Other" },
       { date: "Nov 2025", event: "Data Center Dynamics reported that SDC listed a 112-acre, 600MW site in Ashburn among its Virginia developments.", category: "Other" },
-      { date: "2026", event: "The campus remained part of SDC's active digital infrastructure portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Sdccapitalpartners — Not publicly disclosed.", url: "https://sdccapitalpartners.com/investments/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -31727,7 +31028,6 @@ export const companies: PortCo[] = [
       { date: "Dec 2022", event: "Aligned announced an agreement to acquire ODATA.", category: "Acquisition" },
       { date: "2023", event: "Aligned disclosed that funds managed by SDC Capital Partners made a structured minority investment in the business.", category: "Financing" },
       { date: "May 2023", event: "Aligned completed the acquisition of ODATA.", category: "Acquisition" },
-      { date: "2025", event: "ODATA continued expanding campuses in Brazil, Mexico, Chile, and Colombia.", category: "Expansion" },
     ],
     sources: [
       { label: "Odatacolocation — ODATA", url: "https://odatacolocation.com/en/", type: "ARTICLE" },
@@ -31753,10 +31053,8 @@ export const companies: PortCo[] = [
     investmentYear: 2026,
     headquarters: "Virginia",
     milestones: [
-      { date: "2025", event: "SDC continued building out a Northern Virginia development pipeline for large-scale data center capacity.", category: "Expansion" },
       { date: "Nov 2025", event: "DatacenterDynamics referenced SDC's separate 70-acre, 300 MW Prince William County development site in addition to its Ashburn-area holdings.", category: "Other" },
       { date: "2026", event: "SDC's investment portfolio page listed the property as a 300 MW, 70-acre development site in Prince William County, Virginia.", category: "Financing" },
-      { date: "2026", event: "The site remained described publicly as a development investment.", category: "Financing" },
     ],
     sources: [
       { label: "Sdccapitalpartners — Prince William County Data Center Development Site (300MW / 70 acres)", url: "https://sdccapitalpartners.com/investments/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -31784,8 +31082,6 @@ export const companies: PortCo[] = [
       { date: "2022", event: "SLIC moved into SDC ownership.", category: "Acquisition" },
       { date: "Nov 2022", event: "The FCC approved the indirect transfer of control of SLIC to an SDC acquisition vehicle.", category: "Acquisition" },
       { date: "Apr 2022", event: "The FCC authorized SLIC to receive Rural Digital Opportunity Fund support for broadband deployment in New York.", category: "Other" },
-      { date: "Aug 2025", event: "New York regulatory filings stated that SDC Fund III controlled the investment fund with majority ownership of the petitioners, including SLIC.", category: "Financing" },
-      { date: "2026", event: "SLIC continued marketing 100% fiber internet, voice, and television services across its upstate New York footprint.", category: "Other" },
     ],
     sources: [
       { label: "Slicfiber — SLIC Network Solutions", url: "https://www.slicfiber.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -31815,7 +31111,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Apr 9, 2019", event: "SDC Capital Partners completed an investment in Tilson that enabled the spin-out and capitalization of SQF, LLC, now Verta.", category: "Financing" },
       { date: "Aug 8, 2019", event: "New York regulators approved the transfer of control of SQF, LLC to SDC Tilson Investor, LLC.", category: "Acquisition" },
-      { date: "2025", event: "Verta continued to market build-to-suit poles, towers, and fiber solutions to carrier and public-sector customers.", category: "Other" },
       { date: "Sep 2025", event: "Verta highlighted a pipeline including hundreds of sites under development across the country.", category: "Other" },
       { date: "Oct 2025", event: "Verta acquired Arcadia Towers.", category: "Acquisition" },
     ],
@@ -31876,9 +31171,8 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Oct 2023", event: "Consolidated announced an agreement to be acquired by Searchlight Capital Partners and BCI.", category: "Acquisition" },
       { date: "2024", event: "Regulatory approvals were secured for the take-private transaction.", category: "Acquisition" },
-      { date: "Jan 2024", event: "Shareholders approved the proposed transaction.", category: "Other" },
+      { date: "Jan 2024", event: "Shareholders approved the proposed transaction.", category: "Expansion" },
       { date: "Dec 2024", event: "Searchlight and BCI completed the take-private of Consolidated Communications on December 27, 2024.", category: "Acquisition" },
-      { date: "2025", event: "Consolidated continued execution of its fiber build program under private ownership.", category: "Other" },
     ],
     sources: [
       { label: "Consolidated — Consolidated Communications", url: "https://www.consolidated.com/About-Us/News/Article-Detail/ID/979/Consolidated-Communications-Announces-Agreement-to-be-Acquired-by-Searchlight-Capital-Partners-and-British-Columbia-Investment-Management-Corporation", type: "WEBSITE", purpose: "MILESTONE_EVENT" },
@@ -31907,7 +31201,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2023", event: "Mainstream outlined plans to accelerate expansion in Indiana.", category: "Other" },
       { date: "Oct 2023", event: "Searchlight announced a strategic investment in Mainstream Fiber Networks.", category: "Financing" },
-      { date: "2024", event: "Financing support was arranged to back continued fiber buildout.", category: "Financing" },
     ],
     sources: [
       { label: "Searchlightcap — Mainstream Fiber Networks", url: "https://searchlightcap.com/news/mainstream-fiber-networks-plans-rapid-expansion-with-strategic-investment-from-searchlight-capital-partners/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -31933,7 +31226,6 @@ export const companies: PortCo[] = [
     headquarters: "Multi-state United States",
     milestones: [
       { date: "2021", event: "Akumin completed its acquisition of Alliance HealthCare Services.", category: "Acquisition" },
-      { date: "2022", event: "The combined company reported national scale across imaging centers, mobile assets, and hospital partnerships.", category: "Other" },
       { date: "Oct 2023", event: "Akumin announced a deleveraging transaction and agreement to become privately held under Stonepeak ownership.", category: "Acquisition" },
       { date: "Feb 2024", event: "Akumin completed the transaction and became wholly owned by Stonepeak.", category: "Acquisition" },
     ],
@@ -32022,10 +31314,8 @@ export const companies: PortCo[] = [
     headquarters: "Virginia",
     milestones: [
       { date: "2023", event: "Dominion Energy advanced construction on the commercial-scale Coastal Virginia Offshore Wind project.", category: "Other" },
-      { date: "2024", event: "Dominion remained the project's operator and constructor after closing.", category: "Other" },
       { date: "Feb 2024", event: "Stonepeak announced an agreement to acquire a 50% interest in the project.", category: "Acquisition" },
       { date: "Oct 2024", event: "Dominion Energy and Stonepeak announced the closing of the sale of the noncontrolling equity interest.", category: "Acquisition" },
-      { date: "2025", event: "Construction continued on the 2.6 GW offshore wind project.", category: "Other" },
     ],
     sources: [
       { label: "Stonepeak — Coastal Virginia Offshore Wind", url: "https://stonepeak.com/news/stonepeak-to-acquire-50-interest-in-dominion-energys-coastal-virginia-offshore-wind-project", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -32082,7 +31372,6 @@ export const companies: PortCo[] = [
       { date: "Nov 2021", event: "American Tower completed its acquisition of CoreSite before the 2022 minority investment.", category: "Financing" },
       { date: "Aug 2022", event: "Stonepeak completed its initial investment in American Tower's CoreSite data center platform.", category: "Financing" },
       { date: "Oct 2022", event: "American Tower and CoreSite announced that Stonepeak had increased its investment to approximately 36%.", category: "Financing" },
-      { date: "2025", event: "Stonepeak remained the minority partner in the business.", category: "Other" },
     ],
     sources: [
       { label: "Coresite — CoreSite", url: "https://www.coresite.com/about", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -32139,12 +31428,10 @@ export const companies: PortCo[] = [
     investmentYear: 2015,
     headquarters: "Texas",
     milestones: [
-      { date: "2005", event: "The platform's predecessor business was formed.", category: "Other" },
       { date: "2005", event: "Evolve Transition Infrastructure LP was founded.", category: "Founding" },
       { date: "2015", event: "Stonepeak invested in the gathering system acquisition from Sanchez Energy for $346 million.", category: "Financing" },
       { date: "Aug 2021", event: "Evolve and Stonepeak announced the Levo joint venture to pursue electric fleet infrastructure.", category: "Other" },
       { date: "Nov 2021", event: "Evolve and HOBO Renewable Diesel announced an agreement to develop renewable fuels projects.", category: "Other" },
-      { date: "2024", event: "Evolve remained focused on energy transition infrastructure development and ownership.", category: "Other" },
     ],
     sources: [
       { label: "Stonepeak — Evolve Transition Infrastructure LP", url: "https://stonepeak.com/category/news/portfolio/page/2", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -32197,7 +31484,6 @@ export const companies: PortCo[] = [
       { date: "Sep 2022", event: "Intrado announced that Stonepeak had agreed to acquire its life and safety business.", category: "Acquisition" },
       { date: "2023", event: "West announced completion of the divestiture of the business to Stonepeak.", category: "Divestiture" },
       { date: "Jan 2023", event: "Stonepeak completed the acquisition of Intrado Life & Safety.", category: "Acquisition" },
-      { date: "2025", event: "Intrado remained part of Stonepeak's infrastructure portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Intrado — Intrado", url: "https://www.intrado.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -32257,8 +31543,6 @@ export const companies: PortCo[] = [
       { date: "May 2018", event: "Stonepeak made its initial investment in Lineage.", category: "Financing" },
       { date: "Feb 2019", event: "Lineage completed its acquisition of Preferred Freezer Services.", category: "Acquisition" },
       { date: "2020", event: "The company completed a major equity raise supported by existing investors including Stonepeak.", category: "Financing" },
-      { date: "2021", event: "Lineage announced a further strategic equity capital raise with support from Stonepeak.", category: "Financing" },
-      { date: "2024", event: "The company completed its initial public offering while Stonepeak remained an investor.", category: "IPO" },
     ],
     sources: [
       { label: "Stonepeak — Lineage", url: "https://stonepeak.com/portfolio-highlights/lineage-logistics", type: "WEBSITE", purpose: "MILESTONE_EVENT" },
@@ -32314,10 +31598,8 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Missouri and multi-state United States",
     milestones: [
-      { date: "2025", event: "Public materials highlighted management experience across every major U.S. RTO and ISO.", category: "Other" },
       { date: "Mar 2025", event: "Longview Infrastructure launched as a newly formed electric transmission platform.", category: "Founding" },
       { date: "Mar 2025", event: "Stonepeak announced an equity commitment to partner with Longview.", category: "Financing" },
-      { date: "2026", event: "Longview continued developing transmission opportunities supported by Stonepeak.", category: "Other" },
     ],
     sources: [
       { label: "Longviewinfra — Longview Infrastructure", url: "https://www.longviewinfra.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -32344,10 +31626,8 @@ export const companies: PortCo[] = [
     headquarters: "California, Wisconsin, Texas, Michigan, Illinois, and New York",
     milestones: [
       { date: "Nov 2022", event: "Stonepeak invested in Maas Energy Works.", category: "Financing" },
-      { date: "2023", event: "Stonepeak's climate reporting described Maas as a U.S. renewable natural gas developer focused on dairy digesters.", category: "Other" },
       { date: "May 2024", event: "Clean Energy and Maas announced a joint development agreement for nine RNG dairy facilities across seven states.", category: "Other" },
       { date: "2025", event: "Stonepeak described Maas as having more than 85 digesters in operation and 30-plus in development or construction.", category: "Other" },
-      { date: "2026", event: "Maas continued expanding its dairy-based RNG footprint across key agricultural markets.", category: "Expansion" },
     ],
     sources: [
       { label: "Maasenergy — Maas Energy Works", url: "https://www.maasenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -32378,7 +31658,6 @@ export const companies: PortCo[] = [
       { date: "2025", event: "Market coverage identified the platform as a new entrant focused on large-scale AI and cloud demand.", category: "Other" },
       { date: "Apr 2025", event: "Stonepeak announced the launch of Montera Infrastructure.", category: "Financing" },
       { date: "Apr 2025", event: "Stonepeak said it had committed $1.5 billion of capital to the platform.", category: "Financing" },
-      { date: "2026", event: "Montera continued to present itself as a Stonepeak-backed hyperscale data center company.", category: "Other" },
     ],
     sources: [
       { label: "Montera — Montera Infrastructure", url: "https://montera.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -32404,11 +31683,9 @@ export const companies: PortCo[] = [
     investmentYear: 2024,
     headquarters: "Illinois, Kansas, and Texas",
     milestones: [
-      { date: "2024", event: "The transaction covered four operating projects totaling 957 MW.", category: "Other" },
-      { date: "2024", event: "Ørsted retained operatorship of the portfolio after the transaction.", category: "Other" },
       { date: "2024", event: "Stonepeak completed the acquisition of an 80% interest in the four-project onshore wind portfolio.", category: "Acquisition" },
+      { date: "2024", event: "The transaction covered four operating projects totaling 957 MW.", category: "Other" },
       { date: "Mar 2024", event: "Ørsted announced an agreement to divest an equity stake in four U.S. onshore wind farms to Stonepeak.", category: "Acquisition" },
-      { date: "2025", event: "The partnership remained part of Stonepeak's renewable power portfolio.", category: "Other" },
       { date: "Mar 2025", event: "Stonepeak awards materials later stated that it had completed the acquisition during 2024.", category: "Other" },
     ],
     sources: [
@@ -32439,7 +31716,6 @@ export const companies: PortCo[] = [
       { date: "Apr 2019", event: "Stonepeak announced a binding agreement to acquire Oryx Midstream.", category: "Acquisition" },
       { date: "Jul 2021", event: "Stonepeak and Plains announced a joint venture of Permian Basin midstream assets.", category: "Other" },
       { date: "Oct 2021", event: "Stonepeak and Plains completed the joint venture transaction.", category: "Other" },
-      { date: "2025", event: "Oryx remained part of Stonepeak's midstream portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — Stonepeak — Oryx Midstream", url: "https://www.oryxmidstream.com/news/stonepeak-infrastructure-partners-acquire-oryx-midstream", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -32497,7 +31773,6 @@ export const companies: PortCo[] = [
       { date: "2022", event: "Repsol brought the 125 MW Jicarilla solar and battery project in New Mexico into service before the 2025 portfolio investment.", category: "Financing" },
       { date: "2024", event: "Repsol brought the 632 MW Frye solar project in Texas into service before the 2025 portfolio investment.", category: "Financing" },
       { date: "2025", event: "The transaction marked Repsol's first U.S. renewables partnership and Stonepeak's first partnership with Repsol.", category: "Other" },
-      { date: "2025", event: "The operating portfolio continued serving power markets in Texas and New Mexico.", category: "Other" },
       { date: "Apr 2025", event: "Repsol announced that Stonepeak had agreed to acquire a 46.3% stake in the 777 MW portfolio.", category: "Acquisition" },
     ],
     sources: [
@@ -32557,9 +31832,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Jun 2021", event: "Stonepeak records indicate the logistics platform's initial investment date.", category: "Financing" },
       { date: "Dec 2024", event: "Stonepeak announced the acquisition of six Houston logistics assets totaling approximately 2.3 million square feet.", category: "Acquisition" },
-      { date: "2025", event: "Public materials highlighted the platform's focus on strategic locations near major transport nodes.", category: "Other" },
       { date: "Aug 2025", event: "Stonepeak announced the acquisition of a logistics portfolio in Fort Worth's Alliance submarket.", category: "Acquisition" },
-      { date: "2026", event: "The platform remained part of Stonepeak's transport and logistics portfolio.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — Stonepeak — Stonepeak Infrastructure Logistics Platform", url: "https://stonepeak.com/investments", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -32587,8 +31860,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Feb 2020", event: "TRAC announced that Stonepeak had signed an agreement to acquire the company.", category: "Acquisition" },
       { date: "Mar 2020", event: "Railway Age reported completion of Stonepeak's acquisition of TRAC.", category: "Acquisition" },
-      { date: "2024", event: "TRAC remained part of Stonepeak's transportation portfolio.", category: "Other" },
-      { date: "2025", event: "The company continued serving marine and intermodal freight markets nationwide.", category: "Other" },
     ],
     sources: [
       { label: "Tracintermodal — TRAC Intermodal", url: "https://www.tracintermodal.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -32644,10 +31915,8 @@ export const companies: PortCo[] = [
     headquarters: "Louisiana",
     milestones: [
       { date: "2024", event: "Woodside acquired Tellurian and the Driftwood LNG project that became Louisiana LNG.", category: "Acquisition" },
-      { date: "2025", event: "Woodside continued discussions with other potential strategic partners for the remaining project interest.", category: "Other" },
       { date: "Apr 2025", event: "Stonepeak announced an agreement to acquire a 40% interest in Louisiana LNG.", category: "Acquisition" },
       { date: "Jun 24, 2025", event: "Woodside completed the 40% sell-down of Louisiana LNG Infrastructure LLC to Stonepeak.", category: "Acquisition" },
-      { date: "2026", event: "Louisiana LNG remained a development-stage LNG export project under Woodside and Stonepeak ownership.", category: "Other" },
     ],
     sources: [
       { label: "Stonepeak — Woodside Louisiana LNG", url: "https://stonepeak.com/news/stonepeak-to-acquire-interest-in-woodsides-louisiana-lng", type: "ARTICLE" },
@@ -32734,12 +32003,11 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "New York",
     milestones: [
-      { date: "Sep 2022", event: "The New Terminal One project officially broke ground.", category: "Expansion" },
       { date: "Jun 2022", event: "Ullico closed its investment as an equity sponsor in the New Terminal One development consortium.", category: "Financing" },
+      { date: "Sep 2022", event: "The New Terminal One project officially broke ground.", category: "Expansion" },
       { date: "Jul 2022", event: "Swiss Life Asset Managers committed a minority equity stake in the project.", category: "Financing" },
       { date: "Jul 2025", event: "The project completed a $1.367 billion Series 2025 green bond issuance.", category: "Financing" },
       { date: "Jul 2025", event: "The project completed a $1.367 billion green bond issuance to fund remaining Phase A costs.", category: "Financing" },
-      { date: "Jul 2025", event: "Assured Guaranty stated that the project had issued $5.9 billion of bonds across three transactions.", category: "Financing" },
     ],
     sources: [
       { label: "Governor — JFK New Terminal One", url: "https://www.governor.ny.gov/news/governor-hochul-announces-groundbreaking-95-billion-new-terminal-one-major-step-forward-port", type: "ARTICLE" },
@@ -32799,7 +32067,7 @@ export const companies: PortCo[] = [
     headquarters: "Louisiana",
     milestones: [
       { date: "2021", event: "Public reports indicate the current east-ramp facility opened at Baton Rouge Metropolitan Airport.", category: "Expansion" },
-      { date: "2026", event: "BTR Jet Center began operating within the Tallvine-backed network.", category: "Other" },
+      { date: "2026", event: "BTR Jet Center began operating within the Tallvine-backed network.", category: "Expansion" },
       { date: "Feb 2026", event: "Tallvine-backed Velocity FBO Network acquired BTR Jet Center.", category: "Acquisition" },
       { date: "Feb 2026", event: "Public reports identified Baton Rouge as Velocity’s fifth operating location.", category: "Other" },
     ],
@@ -32829,8 +32097,6 @@ export const companies: PortCo[] = [
     headquarters: "New Jersey and multi-state United States",
     milestones: [
       { date: "1964", event: "Donjon Marine traces its operating history to its founding.", category: "Founding" },
-      { date: "2025", event: "Public transaction materials highlighted Donjon’s national operating footprint in marine services.", category: "Other" },
-      { date: "2025", event: "Donjon continued operations in salvage, dredging, and marine contracting under Tallvine ownership.", category: "Other" },
       { date: "Sep 2025", event: "Tallvine Partners acquired Donjon Marine and launched a marine infrastructure platform.", category: "Acquisition" },
     ],
     sources: [
@@ -32858,7 +32124,7 @@ export const companies: PortCo[] = [
     headquarters: "Arizona",
     milestones: [
       { date: "2025", event: "The seller retained separate aircraft management activities outside the transferred FBO assets.", category: "Other" },
-      { date: "2025", event: "Havasu Air Center began operating within the Tallvine-backed FBO network.", category: "Other" },
+      { date: "2025", event: "Havasu Air Center began operating within the Tallvine-backed FBO network.", category: "Expansion" },
       { date: "Oct 2025", event: "Tallvine-backed Velocity FBO Network acquired Havasu Air Center’s fixed-base operator assets.", category: "Acquisition" },
       { date: "Oct 2025", event: "Public reports identified the site as Velocity’s fourth operating location.", category: "Other" },
     ],
@@ -32887,7 +32153,6 @@ export const companies: PortCo[] = [
     headquarters: "Texas",
     milestones: [
       { date: "2025", event: "Tallvine disclosed plans to expand the Houston campus and enter additional metro markets.", category: "Expansion" },
-      { date: "2025", event: "The platform continued development activity around HOU2.", category: "Other" },
       { date: "Aug 2025", event: "Tallvine Partners acquired TRG Datacenters and launched a digital infrastructure platform.", category: "Acquisition" },
       { date: "Aug 2025", event: "TRG Datacenters announced it was entering a new chapter under Tallvine ownership.", category: "Other" },
     ],
@@ -32915,12 +32180,11 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Michigan, Florida, and Georgia",
     milestones: [
-      { date: "2025", event: "Tallvine began executing add-on acquisitions to expand the platform.", category: "Acquisition" },
       { date: "2025", event: "Velocity FBO Network was founded.", category: "Founding" },
-      { date: "Jun 2025", event: "Odyssey Aviation North America rebranded to Velocity FBO Network.", category: "Other" },
+      { date: "2025", event: "Tallvine began executing add-on acquisitions to expand the platform.", category: "Acquisition" },
       { date: "Jan 30, 2025", event: "Tallvine launched its U.S. FBO platform using Odyssey Aviation North America assets.", category: "Acquisition" },
-      { date: "Jun 12, 2025", event: "The platform rebranded as Velocity FBO Network. (Rebranding)", category: "Other" },
       { date: "Oct 1, 2025", event: "Velocity added the Lake Havasu FBO location.", category: "Acquisition" },
+      { date: "Jun 12, 2025", event: "The platform rebranded as Velocity FBO Network. (Rebranding)", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — Tallvine — Velocity FBO Network", url: "https://via.ritzau.dk/pressemeddelelse/14244238/tallvine-launches-north-america-fixed-based-operator-platform-with-odyssey-aviations-us-assets-as-inaugural-acquisition?lang=en&publisherId=90456", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -32953,9 +32217,7 @@ export const companies: PortCo[] = [
       { date: "2017", event: "Eavor was founded in Calgary.", category: "Founding" },
       { date: "Feb 16, 2021", event: "Eavor announced completion of a US$40 million financing round with investors including Temasek.", category: "Financing" },
       { date: "Oct 2023", event: "Eavor announced a US$182 million capital raise to support commercialization.", category: "Financing" },
-      { date: "Jul 2025", event: "Eavor announced first electricity production at its Geretsried site in Germany.", category: "Other" },
       { date: "Sep 2025", event: "Canada Growth Fund announced an additional investment in Eavor.", category: "Financing" },
-      { date: "2026", event: "Eavor continued advancing closed-loop geothermal commercialization.", category: "Other" },
     ],
     sources: [
       { label: "Eavor — Eavor Technologies Inc.", url: "https://eavor.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -33018,7 +32280,6 @@ export const companies: PortCo[] = [
       { date: "1996", event: "PSA’s regulatory functions transferred to the Maritime and Port Authority of Singapore, allowing PSA Corporation to focus on commercial terminal management.", category: "Other" },
       { date: "2003", event: "Temasek-owned PSA formed PSA International as the group's global investment and strategic holding company.", category: "Financing" },
       { date: "2024", event: "PSA surpassed 100 million TEUs of annual throughput for the first time.", category: "Expansion" },
-      { date: "2025", event: "PSA handled a record 105 million TEUs across its global terminals.", category: "Other" },
       { date: "Mar 2026", event: "PSA published its FY2025 financial results.", category: "Financing" },
     ],
     sources: [
@@ -33048,7 +32309,6 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "New Jersey",
     milestones: [
-      { date: "2021", event: "Public launch materials identified Fairfield, New Jersey as the company's headquarters.", category: "Other" },
       { date: "Sep 2021", event: "11:11 Systems launched as a new managed infrastructure platform.", category: "Founding" },
       { date: "Sep 2021", event: "Tiger Infrastructure announced its investment in 11:11 Systems.", category: "Financing" },
       { date: "Jan 8, 2026", event: "11:11 Systems acquired Ntirety.", category: "Acquisition" },
@@ -33113,7 +32373,6 @@ export const companies: PortCo[] = [
       { date: "2016", event: "Crosslake Fibre was founded.", category: "Founding" },
       { date: "Dec 2017", event: "Tiger Infrastructure announced its investment in Crosslake Fibre.", category: "Financing" },
       { date: "2019", event: "Crosslake launched service on its Toronto-Buffalo-New York route.", category: "Expansion" },
-      { date: "2026", event: "Company materials described a footprint of more than 40 points of presence.", category: "Other" },
     ],
     sources: [
       { label: "Crosslakefibre — Crosslake Fibre", url: "https://crosslakefibre.ca/company/", type: "ARTICLE" },
@@ -33139,7 +32398,6 @@ export const companies: PortCo[] = [
     investmentYear: 2017,
     headquarters: "New York",
     milestones: [
-      { date: "2017", event: "Public disclosures described the asset as a 500 MW gas-fired plant near Newburgh, New York.", category: "Other" },
       { date: "Sep 2017", event: "Tiger announced an agreement to acquire Danskammer Energy.", category: "Acquisition" },
       { date: "Dec 2017", event: "Tiger completed the acquisition of Danskammer Energy through Fund II.", category: "Acquisition" },
     ],
@@ -33168,7 +32426,6 @@ export const companies: PortCo[] = [
     headquarters: "Illinois",
     milestones: [
       { date: "1998", event: "ELM Utility Services was founded.", category: "Founding" },
-      { date: "2025", event: "Public disclosures described ELM as serving more than 60 utilities across 13 states.", category: "Other" },
       { date: "2025", event: "Public disclosures also cited a fleet of more than 1,400 vehicles and annual processing of more than 3 million locate tickets.", category: "Other" },
       { date: "Nov 2025", event: "Tiger completed its growth investment in ELM Utility Services.", category: "Financing" },
     ],
@@ -33228,7 +32485,6 @@ export const companies: PortCo[] = [
     headquarters: "California; Ireland",
     milestones: [
       { date: "1980", event: "Public sources identify IAC's founding year as 1980.", category: "Founding" },
-      { date: "2022", event: "Sponsor materials described IAC as a market-leading aviation services provider.", category: "Other" },
       { date: "Dec 2022", event: "Tiger Fund III completed the acquisition of IAC.", category: "Acquisition" },
     ],
     sources: [
@@ -33257,8 +32513,6 @@ export const companies: PortCo[] = [
     headquarters: "Minnesota; Wisconsin",
     milestones: [
       { date: "1959", event: "Public sources identify the platform's founding year as 1959.", category: "Founding" },
-      { date: "2024", event: "Public materials stated that the company served thousands of students daily across 36 school districts.", category: "Other" },
-      { date: "2024", event: "Transaction materials said the Regan family had completed 11 acquisitions before Tiger's investment.", category: "Financing" },
       { date: "Dec 2024", event: "Tiger announced a growth investment in Minnesota Coaches, the core MNC Transportation platform.", category: "Financing" },
     ],
     sources: [
@@ -33286,7 +32540,6 @@ export const companies: PortCo[] = [
     headquarters: "Alaska",
     milestones: [
       { date: "2021", event: "Tiger said the project was based on a 55-year lease for the South Park Campus at Ted Stevens Anchorage International Airport.", category: "Other" },
-      { date: "2021", event: "Public materials described an initial 100,000-square-foot multi-tenant cargo terminal on a 120-acre site.", category: "Other" },
       { date: "Nov 2021", event: "Tiger announced its investment in NorthLink Aviation.", category: "Financing" },
     ],
     sources: [
@@ -33312,7 +32565,6 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Missouri; Kansas",
     milestones: [
-      { date: "2025", event: "Transaction materials identified Grandview, Missouri as the company's headquarters.", category: "Other" },
       { date: "2025", event: "Tiger described the platform as operating two transfer stations with integrated hauling assets.", category: "Other" },
       { date: "2025", event: "The transaction announcement said founders Shawn Polowniak and Kit Starr retained an ownership stake.", category: "Acquisition" },
       { date: "Dec 2025", event: "Tiger completed its growth investment in Raptor Waste Solutions.", category: "Financing" },
@@ -33372,7 +32624,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2024", event: "Tiger described Unison as a fully integrated energy-as-a-service microgrid platform.", category: "Other" },
       { date: "Jun 2024", event: "Tiger closed its growth capital investment and acquisition of Unison Energy.", category: "Acquisition" },
-      { date: "2026", event: "Public materials identified the company's headquarters in Greenwich, Connecticut.", category: "Other" },
     ],
     sources: [
       { label: "Unisonenergy — Unison Energy", url: "https://unisonenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -33401,10 +32652,9 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2013", event: "Altus Power was founded.", category: "Founding" },
       { date: "2021", event: "Altus listed on the New York Stock Exchange following a business combination.", category: "IPO" },
-      { date: "Feb 2025", event: "TPG announced an agreement to acquire Altus Power.", category: "Acquisition" },
       { date: "Apr 2025", event: "TPG completed the acquisition of Altus Power.", category: "Acquisition" },
+      { date: "Feb 2025", event: "TPG announced an agreement to acquire Altus Power.", category: "Acquisition" },
       { date: "Jan 15, 2026", event: "Altus Power acquired a 105 MW DC in-construction solar portfolio from Cordelio Power.", category: "Acquisition" },
-      { date: "Jan 8, 2026", event: "Altus Power acquired 12 MW Solar Operating Portfolio.", category: "Acquisition" },
     ],
     sources: [
       { label: "Altus Power — About Us", url: "https://www.altuspower.com/about-us", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -33555,7 +32805,6 @@ export const companies: PortCo[] = [
     headquarters: "North Carolina and multi-state United States",
     milestones: [
       { date: "1945", event: "Pike Corporation was founded.", category: "Founding" },
-      { date: "2002", event: "Lindsay Goldberg made its first investment in Pike Electric Corporation.", category: "Financing" },
       { date: "2005", event: "Pike completed its initial public offering.", category: "IPO" },
       { date: "Dec 2020", event: "Lindsay Goldberg affiliates acquired a majority interest in Pike.", category: "Acquisition" },
       { date: "Nov 2025", event: "TPG Rise Climate, La Caisse, and management announced an acquisition of Pike.", category: "Acquisition" },
@@ -33587,7 +32836,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Dec 2019", event: "Summit Agricultural Group announced the creation of Summit Carbon Solutions.", category: "Founding" },
       { date: "Apr 20, 2021", event: "Tiger Infrastructure announced an agreement to invest in Summit Carbon Solutions.", category: "Financing" },
-      { date: "2022", event: "Public project materials described a network serving approximately 30 ethanol plants.", category: "Other" },
       { date: "May 2022", event: "SK E&S agreed to acquire a 10% stake in Summit Carbon Solutions for $110 million.", category: "Acquisition" },
       { date: "May 2022", event: "Summit announced more than $1 billion of equity commitments, including $300 million from TPG Rise Climate.", category: "Financing" },
       { date: "Apr 2022", event: "Summit Carbon Solutions announced Tiger Infrastructure's investment.", category: "Financing" },
@@ -33622,10 +32870,9 @@ export const companies: PortCo[] = [
     headquarters: "Virginia",
     milestones: [
       { date: "2023", event: "Digital Realty Northern Virginia Hyperscale Data Center JV was founded.", category: "Founding" },
-      { date: "Jul 2023", event: "Digital Realty retained a 20% interest and continued to manage the assets.", category: "Other" },
-      { date: "Jul 2023", event: "Digital Realty and TPG announced the Northern Virginia hyperscale joint venture.", category: "Other" },
-      { date: "Jul 2023", event: "TPG Real Estate agreed to acquire an 80% interest in the portfolio.", category: "Acquisition" },
       { date: "Jul 2023", event: "Digital Realty retained a 20% stake and operating responsibility.", category: "Acquisition" },
+      { date: "Jul 2023", event: "TPG Real Estate agreed to acquire an 80% interest in the portfolio.", category: "Acquisition" },
+      { date: "Jul 2023", event: "Digital Realty and TPG announced the Northern Virginia hyperscale joint venture.", category: "Other" },
       { date: "Jul 25, 2023", event: "Digital Realty formed the Northern Virginia hyperscale data center joint venture and TPG Real Estate acquired an 80% interest in the three-data-center portfolio.", category: "Acquisition" },
     ],
     sources: [
@@ -33685,8 +32932,8 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Apr 2015", event: "Advanced Power closed $899 million of project financing for Carroll County Energy.", category: "Financing" },
       { date: "Apr 2015", event: "Ullico announced the closing of its approximately $58 million investment in the project.", category: "Financing" },
-      { date: "Jul 2015", event: "Construction began on Carroll County Energy.", category: "Other" },
-      { date: "Dec 2017", event: "Carroll County Energy began operations.", category: "Other" },
+      { date: "Jul 2015", event: "Construction began on Carroll County Energy.", category: "Expansion" },
+      { date: "Dec 2017", event: "Carroll County Energy began operations.", category: "Expansion" },
     ],
     sources: [
       { label: "Ullico — Carroll County Energy", url: "https://www.ullico.com/uif-portfolio/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -33800,11 +33047,10 @@ export const companies: PortCo[] = [
     headquarters: "West Virginia",
     milestones: [
       { date: "2020", event: "Hope acquired gathering assets from Dominion Energy Transmission.", category: "Acquisition" },
-      { date: "Feb 2022", event: "Ullico signed an agreement to acquire Hope Gas from Dominion Energy.", category: "Acquisition" },
       { date: "Aug 2022", event: "Hearthstone closed the acquisition and rebranded the utility as Hope Gas.", category: "Acquisition" },
+      { date: "Feb 2022", event: "Ullico signed an agreement to acquire Hope Gas from Dominion Energy.", category: "Acquisition" },
       { date: "Dec 2023", event: "Hope Gas acquired Southern Public Service Company.", category: "Acquisition" },
       { date: "May 2024", event: "Hope Gas agreed to acquire Consumers Gas Utility Company.", category: "Acquisition" },
-      { date: "1898", event: "Hope Gas traces its origins to 1898.", category: "Other" },
     ],
     sources: [
       { label: "Hopeutilities — Hope Utilities", url: "https://hopeutilities.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -33830,7 +33076,7 @@ export const companies: PortCo[] = [
     investmentYear: 2013,
     headquarters: "Hawaii",
     milestones: [
-      { date: "Nov 2012", event: "Kawailoa Wind began commercial operations.", category: "Other" },
+      { date: "Nov 2012", event: "Kawailoa Wind began commercial operations.", category: "Expansion" },
       { date: "May 2013", event: "Ullico made its initial investment in Kawailoa Wind.", category: "Financing" },
       { date: "Jan 2015", event: "Ullico made a follow-on investment in Kawailoa Wind.", category: "Financing" },
     ],
@@ -33860,7 +33106,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2022", event: "Ullico Infrastructure Fund invested in Leading Light Wind.", category: "Financing" },
       { date: "Aug 2023", event: "Leading Light Wind submitted its bid in New Jersey offshore wind solicitation round 4.", category: "Other" },
-      { date: "Jan 2024", event: "Leading Light Wind was awarded a contract by the State of New Jersey.", category: "Other" },
+      { date: "Jan 2024", event: "Leading Light Wind was awarded a contract by the State of New Jersey.", category: "Expansion" },
       { date: "Nov 2025", event: "The developers filed notice with the New Jersey Board of Public Utilities that the project would not proceed.", category: "Other" },
       { date: "Nov 2025", event: "Public reports disclosed the project cancellation.", category: "Other" },
     ],
@@ -33917,7 +33163,7 @@ export const companies: PortCo[] = [
     investmentYear: 2014,
     headquarters: "New Jersey and New York",
     milestones: [
-      { date: "Jun 2005", event: "Construction began on the Neptune Regional Transmission System.", category: "Other" },
+      { date: "Jun 2005", event: "Construction began on the Neptune Regional Transmission System.", category: "Expansion" },
       { date: "Jun 2007", event: "Neptune was completed on budget and ahead of schedule.", category: "Other" },
       { date: "Nov 2014", event: "Ullico closed a $75 million investment in Neptune.", category: "Financing" },
       { date: "Dec 2015", event: "Ullico made a follow-on investment in Neptune.", category: "Financing" },
@@ -34176,7 +33422,6 @@ export const companies: PortCo[] = [
       { date: "Sep 2017", event: "Tidewater acquired Island Tug and Barge and ITB Subsea.", category: "Acquisition" },
       { date: "2018", event: "Ullico Infrastructure Fund invested in Tidewater Transportation and Terminals.", category: "Financing" },
       { date: "Jan 2019", event: "Upper Bay Infrastructure Partners acquired Tidewater from Stonepeak.", category: "Acquisition" },
-      { date: "2022", event: "Island Tug and Barge was rebranded as Tidewater Transportation Canada.", category: "Other" },
       { date: "Mar 2025", event: "Tidewater contracted for four new liquid refined product barges.", category: "Other" },
     ],
     sources: [
@@ -34205,7 +33450,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Aug 2016", event: "Ullico agreed to acquire a 13.7% stake in Towantic from GE Energy Financial Services.", category: "Acquisition" },
       { date: "Oct 2016", event: "Ullico announced the closing of its investment in CPV Towantic.", category: "Financing" },
-      { date: "May 2018", event: "Towantic Energy Center began operations.", category: "Other" },
+      { date: "May 2018", event: "Towantic Energy Center began operations.", category: "Expansion" },
       { date: "Dec 2018", event: "Competitive Power Ventures sold a 25% interest in Towantic to Osaka Gas USA.", category: "Divestiture" },
     ],
     sources: [
@@ -34288,7 +33533,7 @@ export const companies: PortCo[] = [
     headquarters: "Texas",
     milestones: [
       { date: "Nov 2016", event: "Vista Ridge reached financial close.", category: "Financing" },
-      { date: "2017", event: "Construction began on the Vista Ridge water supply project.", category: "Other" },
+      { date: "2017", event: "Construction began on the Vista Ridge water supply project.", category: "Expansion" },
       { date: "Apr 2020", event: "Water began flowing through the Vista Ridge pipeline.", category: "Other" },
       { date: "Oct 2024", event: "Ullico closed its acquisition of a majority equity interest in Vista Ridge.", category: "Acquisition" },
     ],
@@ -34318,7 +33563,6 @@ export const companies: PortCo[] = [
       { date: "Nov 2014", event: "West Deptford Energy Center achieved commercial operation.", category: "Expansion" },
       { date: "2016", event: "Ullico Infrastructure Fund invested in West Deptford Energy Center.", category: "Financing" },
       { date: "Sep 2016", event: "A Marubeni-led investor group acquired a majority interest from LS Power.", category: "Acquisition" },
-      { date: "Sep 2016", event: "LS Power remained a co-owner and operator after the transaction.", category: "Other" },
     ],
     sources: [
       { label: "Nevadatreasurer — West Deptford Energy Center", url: "https://www.nevadatreasurer.gov/uploadedFiles/nevadatreasurergov/content/NCIC/Meetings/2024/3.6.24.Meeting_Materials.pdf", type: "PRESENTATION", purpose: "MILESTONE_EVENT" },
@@ -34406,7 +33650,6 @@ export const companies: PortCo[] = [
       { date: "Jan 9, 2023", event: "Guzman and Kit Carson announced a 15-year contract extension through 2041.", category: "Other" },
       { date: "Aug 2024", event: "Guzman announced leadership changes to support growth and energy transition expansion.", category: "Other" },
       { date: "Feb 29, 2024", event: "Guzman announced a 20-year wholesale power supply partnership with Mountain Parks Electric.", category: "Other" },
-      { date: "2025", event: "Guzman filed a resource adequacy report describing its role as a wholesale power provider serving communities across North America.", category: "Other" },
     ],
     sources: [
       { label: "Guzmanenergy — Guzman Energy", url: "https://www.guzmanenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -34464,10 +33707,6 @@ export const companies: PortCo[] = [
     status: "Active",
     countryTags: ["United States"],
     headquarters: "California",
-    milestones: [
-      { date: "2021", event: "Vision Ridge publicly highlighted water as a focus area for Fund III and continued to hold Homer as a California water platform.", category: "Other" },
-      { date: "Feb 2026", event: "Public reporting identified Homer as an RRG-backed platform and noted the appointment of a chief executive.", category: "Management" },
-    ],
     sources: [
       { label: "Vision Ridge — Homer", url: "https://vision-ridge.com/investments/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Rrgcapitalmanagement — Homer", url: "https://rrgcapitalmanagement.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -34496,7 +33735,6 @@ export const companies: PortCo[] = [
       { date: "2013", event: "Sparkfund was founded.", category: "Founding" },
       { date: "2017", event: "Vision Ridge participated in Sparkfund's Series B financing.", category: "Financing" },
       { date: "2025", event: "Sparkfund's distributed capacity procurement model was advanced in utility procurement discussions.", category: "Expansion" },
-      { date: "Mar 2025", event: "Sparkfund announced the appointment of a chief financial officer as it continued scaling utility and DER deployment services.", category: "Management" },
     ],
     sources: [
       { label: "Sparkfund — Sparkfund", url: "https://sparkfund.com/about-us", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -34527,7 +33765,6 @@ export const companies: PortCo[] = [
       { date: "Sep 2022", event: "TeraWatt announced a capital raise of more than $1 billion with funds managed by Vision Ridge Partners investing alongside Keyframe and Cyrus.", category: "Financing" },
       { date: "Sep 13, 2022", event: "TeraWatt announced that funds managed by Vision Ridge Partners invested as part of its more than $1 billion capital raise.", category: "Financing" },
       { date: "Oct 2024", event: "The company opened an EV fleet charging site in the Los Angeles market.", category: "Expansion" },
-      { date: "2025", event: "TeraWatt continued expanding purpose-built charging centers for commercial fleets across the United States.", category: "Expansion" },
     ],
     sources: [
       { label: "Terawattinfrastructure — TeraWatt Infrastructure", url: "https://www.terawattinfrastructure.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -34558,9 +33795,7 @@ export const companies: PortCo[] = [
     headquarters: "Mexico",
     milestones: [
       { date: "2021", event: "VEMO was founded in Mexico City.", category: "Founding" },
-      { date: "2025", event: "VEMO continued scaling charging infrastructure, EV deployment, and fleet technology across Mexico.", category: "Other" },
       { date: "Sep 2025", event: "Vision Ridge led a $250 million equity commitment to VEMO.", category: "Financing" },
-      { date: "Feb 2026", event: "Public reporting described a planned US$1.5 billion expansion program for VEMO's Mexican EV network.", category: "Other" },
     ],
     sources: [
       { label: "Vemovilidad — VEMO", url: "https://vemovilidad.com/en/", type: "ARTICLE" },
@@ -34647,12 +33882,10 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "United States",
     milestones: [
-      { date: "Jun 2022", event: "GIC, OMERS Infrastructure, and Wren House announced an agreement to acquire DCLI.", category: "Acquisition" },
       { date: "Dec 2022", event: "GIC, OMERS Infrastructure, and Wren House completed the consortium acquisition of DCLI.", category: "Acquisition" },
+      { date: "Jun 2022", event: "GIC, OMERS Infrastructure, and Wren House announced an agreement to acquire DCLI.", category: "Acquisition" },
       { date: "Jun 2022", event: "GIC, OMERS Infrastructure, and Wren House announced the acquisition of DCLI.", category: "Acquisition" },
-      { date: "2023", event: "DCLI reported continued fleet investment under new ownership.", category: "Financing" },
       { date: "2023", event: "Wren House portfolio materials reflected DCLI as a 2022 investment.", category: "Acquisition" },
-      { date: "2026", event: "Wren House's portfolio page reported over 151,000 marine chassis and 121,000 domestic chassis in service.", category: "Other" },
     ],
     sources: [
       { label: "Announcement date source — OMERS — Direct ChassisLink, Inc.", url: "https://www.omers.com/news/gic-omers-infrastructure-and-wren-house-to-acquire-direct-chassislink-inc", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -34682,11 +33915,10 @@ export const companies: PortCo[] = [
     headquarters: "Mexico; Australia; Chile; Costa Rica; Dominican Republic",
     milestones: [
       { date: "2014", event: "Naturgy and Wren House established Global Power Generation.", category: "Founding" },
-      { date: "Oct 2014", event: "GPG began operation of the Bii Hioxo wind farm in Mexico.", category: "Other" },
+      { date: "Oct 2014", event: "GPG began operation of the Bii Hioxo wind farm in Mexico.", category: "Expansion" },
       { date: "Mar 30, 2015", event: "Naturgy and KIA, through Wren House, signed an agreement for a $550 million capital increase to acquire 25% of GPG.", category: "Financing" },
       { date: "Jun 2023", event: "Berrybank 2 wind farm in Victoria entered operation.", category: "Expansion" },
       { date: "Dec 2024", event: "GPG Australia secured approximately A$2.3 billion of financing for its renewable portfolio.", category: "Financing" },
-      { date: "Apr 2025", event: "GPG inaugurated the Cunderdin hybrid solar and battery project in Western Australia.", category: "Other" },
     ],
     sources: [
       { label: "Whinfra — Global Power Generation, S.A.U.", url: "https://www.whinfra.com/our-portfolio/global-power-generation/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -34717,7 +33949,6 @@ export const companies: PortCo[] = [
       { date: "2016", event: "iTV-3 was renamed i3 Broadband.", category: "Management" },
       { date: "2018", event: "i3 Broadband acquired Full Channel, Inc. in Rhode Island.", category: "Acquisition" },
       { date: "2020", event: "Wren House acquired i3 Broadband.", category: "Acquisition" },
-      { date: "2024", event: "Wren House reported that the platform had more than 300,000 homes passed.", category: "Other" },
       { date: "Apr 30, 2026", event: "T-Mobile agreed to form a 50/50 joint venture with Wren House to acquire i3 Broadband.", category: "Expansion" },
     ],
     sources: [
@@ -34781,7 +34012,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2024", event: "Wren House recorded an investment in QSP on its portfolio timeline.", category: "Financing" },
       { date: "2024", event: "The recapitalization delivered approximately 100 MW of critical IT capacity in fully constructed assets.", category: "Financing" },
-      { date: "2024", event: "QTS retained an ownership stake and continued as operator of the facilities.", category: "Acquisition" },
       { date: "2024", event: "QSP was founded.", category: "Founding" },
       { date: "Nov 2024", event: "Wren House announced completion of the joint venture for three Northern Virginia data centers.", category: "Acquisition" },
     ],
