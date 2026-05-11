@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
 import { X, ExternalLink } from "lucide-react";
 import {
   getPortCoSectorColor,
@@ -18,12 +18,22 @@ import {
 import type { CompanyView, FundView, OwnerView, MilestoneView, SourceView } from "@/modules/shared/types";
 import { Tag } from "@/components/shared/Tag";
 import { Button } from "@/components/shared/Button";
+import { SectionLabel } from "@/components/shared/SectionLabel";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 
 type MilestoneClassification =
   | { kind: "entry"; owner: OwnerView }
   | { kind: "exit"; owner: OwnerView }
   | null;
+
+type DiligenceFact = {
+  claim: string;
+  label: string;
+  value?: ReactNode;
+  children?: ReactNode;
+};
+
+const MATERIAL_MILESTONE_CATEGORIES = new Set(["Founding", "Financing", "Acquisition", "Divestiture"]);
 
 function ownerFirstWord(firm: string): string {
   return firm.toLowerCase().split(/\s+/)[0] || "";
@@ -43,114 +53,381 @@ function normalizeFirm(firm: string): string {
 function bestOwnerMatch(owners: OwnerView[], eventText: string): OwnerView | null {
   const lowerEvent = eventText.toLowerCase();
   let best: { owner: OwnerView; score: number } | null = null;
-  for (const o of owners) {
-    if (!o.firm) continue;
-    const normalized = normalizeFirm(o.firm);
+  for (const owner of owners) {
+    if (!owner.firm) continue;
+    const normalized = normalizeFirm(owner.firm);
     let score = 0;
     if (normalized && normalized.length >= 3 && lowerEvent.includes(normalized)) {
       score = 2;
     } else {
-      const firstWord = ownerFirstWord(o.firm);
+      const firstWord = ownerFirstWord(owner.firm);
       if (firstWord && firstWord.length >= 3 && lowerEvent.includes(firstWord)) {
         score = 1;
       }
     }
     if (score > 0 && (!best || score > best.score)) {
-      best = { owner: o, score };
+      best = { owner, score };
     }
   }
   return best?.owner ?? null;
 }
 
-function classifyMilestone(m: MilestoneView, owners: OwnerView[]): MilestoneClassification {
-  const matchedOwner = bestOwnerMatch(owners, m.event);
+function classifyMilestone(milestone: MilestoneView, owners: OwnerView[]): MilestoneClassification {
+  const matchedOwner = bestOwnerMatch(owners, milestone.event);
 
-  if (matchedOwner?.investmentYear && m.date.includes(String(matchedOwner.investmentYear))) {
+  if (matchedOwner?.investmentYear && milestone.date.includes(String(matchedOwner.investmentYear))) {
     return { kind: "entry", owner: matchedOwner };
   }
-  for (const o of owners) {
-    if (!o.investmentYear || !m.date.includes(String(o.investmentYear))) continue;
-    if (m.category === "Financing" || m.category === "Acquisition") {
-      return { kind: "entry", owner: o };
+  for (const owner of owners) {
+    if (!owner.investmentYear || !milestone.date.includes(String(owner.investmentYear))) continue;
+    if (milestone.category === "Financing" || milestone.category === "Acquisition") {
+      return { kind: "entry", owner };
     }
   }
 
-  if (matchedOwner?.exitYear && m.date.includes(String(matchedOwner.exitYear))) {
+  if (matchedOwner?.exitYear && milestone.date.includes(String(matchedOwner.exitYear))) {
     return { kind: "exit", owner: matchedOwner };
   }
-  for (const o of owners) {
-    if (!o.exitYear || !m.date.includes(String(o.exitYear))) continue;
-    if (m.category === "Divestiture") {
-      return { kind: "exit", owner: o };
+  for (const owner of owners) {
+    if (!owner.exitYear || !milestone.date.includes(String(owner.exitYear))) continue;
+    if (milestone.category === "Divestiture") {
+      return { kind: "exit", owner };
     }
   }
   return null;
 }
 
-function formatYearRange(o: OwnerView): string {
-  if (o.investmentYear && o.exitYear) return `${o.investmentYear}–${o.exitYear}`;
-  if (o.investmentYear && o.isActive) return `${o.investmentYear}–Present`;
-  if (o.investmentYear) return String(o.investmentYear);
-  if (o.exitYear) return `–${o.exitYear}`;
+function formatCompactYearRange(owner: OwnerView): string {
+  if (owner.investmentYear && owner.exitYear) return `${owner.investmentYear}-${owner.exitYear}`;
+  if (owner.investmentYear && isCurrentOwner(owner)) return `${owner.investmentYear}-Present`;
+  if (owner.investmentYear) return String(owner.investmentYear);
+  if (owner.exitYear) return `Exited ${owner.exitYear}`;
   return "N/A";
 }
 
-const ENTRY_COLOR = "#008253";
-const EXIT_COLOR = "#9a3412"; // muted rust
+function isCurrentOwner(owner: OwnerView): boolean {
+  return owner.isActive && !owner.exitYear;
+}
 
-/** Section heading — uppercase tracking, no icon (per redesign). */
-function SectionLabel({ children, count }: { children: React.ReactNode; count?: number }) {
+function ownerDisplayKey(owner: OwnerView): string {
+  return `${normalizeFirm(owner.firm) || owner.firm.trim().toLowerCase()}|${isCurrentOwner(owner) ? "active" : "former"}`;
+}
+
+function vehicleScore(owner: OwnerView): number {
+  if (!owner.vehicle) return 0;
+  let score = 1;
+  if (owner.fundName) score += 2;
+  if (owner.vehicle.length <= 72) score += 2;
+  if (owner.vehicle.length > 140 || /;/.test(owner.vehicle)) score -= 2;
+  return score;
+}
+
+function mergeOwnerDisplayRows(owners: OwnerView[]): OwnerView[] {
+  const byOwner = new Map<string, OwnerView[]>();
+
+  for (const owner of owners) {
+    const key = ownerDisplayKey(owner);
+    byOwner.set(key, [...(byOwner.get(key) || []), owner]);
+  }
+
+  return Array.from(byOwner.values()).map((group) => {
+    const preferred = [...group].sort((a, b) => vehicleScore(b) - vehicleScore(a))[0];
+    const investmentYears = group
+      .map((owner) => owner.investmentYear)
+      .filter((year): year is number => typeof year === "number");
+    const exitYears = group
+      .map((owner) => owner.exitYear)
+      .filter((year): year is number => typeof year === "number");
+    const stakes = uniqueValues(group.map((owner) => owner.stake));
+
+    return {
+      ...preferred,
+      investmentYear: investmentYears.length > 0 ? Math.min(...investmentYears) : preferred.investmentYear,
+      exitYear: exitYears.length > 0 ? Math.max(...exitYears) : preferred.exitYear,
+      stake: stakes.length > 0 ? compactList(stakes, 2) : preferred.stake,
+    };
+  });
+}
+
+function splitOwners(owners: OwnerView[]): { active: OwnerView[]; former: OwnerView[] } {
+  return {
+    active: owners.filter((owner) => isCurrentOwner(owner)),
+    former: owners.filter((owner) => !isCurrentOwner(owner)),
+  };
+}
+
+function getPrimaryOwner(owners: OwnerView[]): OwnerView | null {
+  const { active } = splitOwners(owners);
+  return active[0] ?? owners[0] ?? null;
+}
+
+function uniqueValues(values: Array<string | undefined | null>): string[] {
+  return Array.from(new Set(values.map((value) => value?.trim()).filter((value): value is string => !!value)));
+}
+
+function compactList(values: string[], max = 2): string {
+  if (values.length === 0) return "Not disclosed";
+  if (values.length <= max) return values.join(", ");
+  return `${values.slice(0, max).join(", ")} +${values.length - max}`;
+}
+
+function normalizeFactValue(value: string): string {
+  return value.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function getIdentityDescriptor(company: CompanyView): string {
+  return company.subsector?.trim() || company.sector || "Portfolio company";
+}
+
+function buildUniqueFacts(facts: DiligenceFact[], reservedClaims: string[] = []): DiligenceFact[] {
+  const seen = new Set(reservedClaims);
+  return facts.filter((fact) => {
+    if (seen.has(fact.claim) || (!fact.value && !fact.children)) return false;
+    seen.add(fact.claim);
+    return true;
+  });
+}
+
+function shouldShowOwnershipLedger(
+  activeOwners: OwnerView[],
+  formerOwners: OwnerView[],
+  vehicleLabel: string,
+): boolean {
+  if (activeOwners.length > 1 || formerOwners.length > 0) return true;
+
+  return activeOwners.some((owner) => {
+    const hasDistinctVehicle =
+      owner.vehicle &&
+      vehicleLabel !== "Not disclosed" &&
+      normalizeFactValue(owner.vehicle) !== normalizeFactValue(vehicleLabel);
+    return !!owner.stake || !!hasDistinctVehicle;
+  });
+}
+
+function getMatchedFund(owner: OwnerView | null, funds: FundView[]): FundView | undefined {
+  if (!owner) return undefined;
+  if (owner.fundName) {
+    const fund = funds.find((f) => f.fundName === owner.fundName);
+    if (fund) return fund;
+  }
+  return owner.vehicle ? funds.find((f) => f.fundName === owner.vehicle) : undefined;
+}
+
+function getOwnerStrategies(owner: OwnerView | null, funds: FundView[]): string[] {
+  return getMatchedFund(owner, funds)?.strategies ?? [];
+}
+
+function splitDescription(description: string): { lead: string; body: string } {
+  const trimmed = description.trim();
+  if (!trimmed) return { lead: "", body: "" };
+
+  const match = trimmed.match(/^(.{80,260}?[.!?])\s+([\s\S]+)$/);
+  if (!match) return { lead: trimmed, body: "" };
+  return { lead: match[1], body: match[2].trim() };
+}
+
+function dedupeMilestones(milestones: MilestoneView[]): MilestoneView[] {
+  const seen = new Set<string>();
+  return milestones.filter((milestone) => {
+    const key = `${milestone.date.trim().toLowerCase()}|${milestone.event.trim().toLowerCase()}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function dedupeSources(sources: SourceView[]): SourceView[] {
+  const seen = new Set<string>();
+  return sources.filter((source) => {
+    const key = [
+      source.url.trim().toLowerCase(),
+      getSourceDisplayLabel(source).trim().toLowerCase(),
+      source.purpose ?? "",
+    ].join("|");
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function getMaterialMilestones(milestones: MilestoneView[], owners: OwnerView[], limit = 5): MilestoneView[] {
+  if (milestones.length <= limit) return milestones;
+
+  const selected = milestones
+    .map((milestone, index) => {
+      const classification = classifyMilestone(milestone, owners);
+      const isMaterialCategory = MATERIAL_MILESTONE_CATEGORIES.has(milestone.category);
+      const recencyScore = Math.max(0, limit + 2 - index);
+      const score =
+        (classification ? 100 : 0) +
+        (isMaterialCategory ? 40 : 0) +
+        (milestone.category !== "Other" ? 10 : 0) +
+        recencyScore;
+
+      return { milestone, index, score };
+    })
+    .sort((a, b) => b.score - a.score || a.index - b.index)
+    .slice(0, limit)
+    .sort((a, b) => a.index - b.index);
+
+  return selected.map(({ milestone }) => milestone);
+}
+
+function buildOwnershipFacts({
+  sponsorLabel,
+  activeSponsorCount,
+  vehicleLabel,
+  strategies,
+  stakes,
+}: {
+  sponsorLabel: string;
+  activeSponsorCount: number;
+  vehicleLabel: string;
+  strategies: string[];
+  stakes: string[];
+}): DiligenceFact[] {
+  return buildUniqueFacts(
+    [
+      {
+        claim: "sponsor",
+        label: "Sponsor",
+        value: sponsorLabel !== "Not disclosed" ? sponsorLabel : undefined,
+        children: activeSponsorCount > 1 ? (
+          <span className="text-[11px] text-[var(--text-tertiary)]">
+            {pluralize(activeSponsorCount, "current sponsor")}
+          </span>
+        ) : undefined,
+      },
+      {
+        claim: "vehicle",
+        label: "Vehicle",
+        value: vehicleLabel !== "Not disclosed" ? vehicleLabel : undefined,
+      },
+      {
+        claim: "strategy",
+        label: "Strategy",
+        children: strategies.length > 0 ? (
+          <>
+            {strategies.map((strategy) => (
+              <Tag key={strategy} color={getStrategyColor(strategy)}>{strategy}</Tag>
+            ))}
+          </>
+        ) : undefined,
+      },
+      {
+        claim: "stake",
+        label: "Stake",
+        value: stakes.length > 0 ? compactList(stakes, 2) : undefined,
+      },
+    ],
+    ["status", "geography", "holdPeriod", "evidence"],
+  );
+}
+
+function pluralize(count: number, singular: string, plural = `${singular}s`): string {
+  return `${count} ${count === 1 ? singular : plural}`;
+}
+
+function Dot({ color }: { color: string }) {
   return (
-    <div className="flex items-center justify-between mb-3">
-      <span className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
-        {children}
-      </span>
-      {count != null && (
-        <span className="text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{count}</span>
+    <span
+      aria-hidden
+      className="h-[5px] w-[5px] shrink-0 rounded-full"
+      style={{ backgroundColor: color }}
+    />
+  );
+}
+
+function HeaderMetaItem({ children }: { children: ReactNode }) {
+  return (
+    <span className="inline-flex min-w-0 items-center gap-1.5 text-sm text-[var(--text-secondary)]">
+      {children}
+    </span>
+  );
+}
+
+function FactRow({ label, value, children }: { label: string; value?: ReactNode; children?: ReactNode }) {
+  return (
+    <div className="border-b border-[var(--border)] py-3 last:border-b-0">
+      <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+        {label}
+      </div>
+      {value && (
+        <div className="mt-1 text-sm font-semibold leading-snug text-[var(--text-primary)]">
+          {value}
+        </div>
+      )}
+      {children && <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5">{children}</div>}
+    </div>
+  );
+}
+
+function OwnerLine({ owner, funds }: { owner: OwnerView; funds: FundView[] }) {
+  const strategies = getOwnerStrategies(owner, funds);
+
+  return (
+    <div className="border-b border-[var(--border)] py-3 last:border-b-0">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <div className="text-sm font-semibold leading-snug text-[var(--text-primary)]">
+            {owner.firm || "Unknown owner"}
+          </div>
+          <div className="mt-1 text-xs leading-snug text-[var(--text-secondary)]">
+            {owner.vehicle || "Vehicle not disclosed"}
+          </div>
+        </div>
+        <span className="shrink-0 text-xs font-medium tabular-nums text-[var(--text-primary)] mono">
+          {formatCompactYearRange(owner)}
+        </span>
+      </div>
+      {(strategies.length > 0 || owner.stake) && (
+        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+          {strategies.map((strategy) => (
+            <Tag key={strategy} color={getStrategyColor(strategy)}>{strategy}</Tag>
+          ))}
+          {owner.stake && (
+            <span className="text-[11px] text-[var(--text-tertiary)]">Stake: {owner.stake}</span>
+          )}
+        </div>
       )}
     </div>
   );
 }
 
-function SourceGroups({ sources }: { sources: SourceView[] }) {
+function EvidenceGroups({ sources }: { sources: SourceView[] }) {
   const groups = groupSourcesByPurpose(sources);
 
   return (
-    <div className="mt-5 surface px-4 py-3.5">
-      <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-3">
-        Sources
-      </div>
-      <div className="space-y-4">
-        {groups.map((group) => (
-          <div key={group.purpose}>
-            <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-1.5">
-              {group.label}
-            </div>
-            <div className="space-y-1">
-              {group.sources.map((source, i) => (
-                <a
-                  key={`${source.url}-${group.purpose}-${i}`}
-                  href={source.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group -mx-2 flex items-start gap-2 rounded-[4px] px-2 py-1.5 transition-colors hover:bg-[var(--bg-hover)]"
-                  title={source.label || source.url}
-                >
-                  <ExternalLink className="mt-0.5 h-3.5 w-3.5 text-[var(--text-tertiary)] transition-colors group-hover:text-[var(--text-primary)] shrink-0" />
-                  <span className="min-w-0">
-                    <span className="block text-xs font-medium leading-snug text-[var(--text-secondary)] transition-colors group-hover:text-[var(--text-primary)]">
-                      {getSourceDisplayLabel(source)}
-                    </span>
-                    <span className="mt-0.5 block text-[11px] leading-snug text-[var(--text-tertiary)]">
-                      {getSourceHostname(source.url)} · {formatSourceType(inferSourceType(source))}
-                    </span>
-                  </span>
-                </a>
-              ))}
-            </div>
+    <div className="divide-y divide-[var(--border)] border-y border-[var(--border)]">
+      {groups.map((group) => (
+        <div key={group.purpose} className="py-4">
+          <div className="mb-2 text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+            {group.label}
           </div>
-        ))}
-      </div>
+          <div className="grid grid-cols-1 gap-x-5 gap-y-2 sm:grid-cols-2">
+            {group.sources.map((source, i) => (
+              <a
+                key={`${source.url}-${group.purpose}-${i}`}
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex min-w-0 items-start gap-2 rounded-[6px] py-1.5 transition-colors hover:text-[var(--text-primary)]"
+                title={source.label || source.url}
+              >
+                <ExternalLink className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--text-tertiary)] transition-colors group-hover:text-[var(--text-primary)]" />
+                <span className="min-w-0">
+                  <span className="block truncate text-xs font-medium text-[var(--text-secondary)] transition-colors group-hover:text-[var(--text-primary)]">
+                    {getSourceDisplayLabel(source)}
+                  </span>
+                  <span className="mt-0.5 block truncate text-[11px] text-[var(--text-tertiary)]">
+                    {getSourceHostname(source.url)} / {formatSourceType(inferSourceType(source))}
+                  </span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
@@ -165,6 +442,7 @@ export function PortCoDrawer({
   onClose: () => void;
 }) {
   const [showAllMilestones, setShowAllMilestones] = useState(false);
+  const [showFormerOwners, setShowFormerOwners] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
   const headerScrolled = useScrolledPast(drawerRef);
 
@@ -176,14 +454,44 @@ export function PortCoDrawer({
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
-  const locationDisplay = company.headquarters || company.country;
-  const milestones = company.milestones || [];
-  const sources = company.sources || [];
-  const visibleMilestones = showAllMilestones ? milestones : milestones.slice(0, 6);
+  useEffect(() => {
+    setShowAllMilestones(false);
+    setShowFormerOwners(false);
+  }, [company.id]);
 
   const sectorColor = getPortCoSectorColor(company.sector);
-  const owners = company.owners || [];
-  const hasMultipleOwners = owners.length > 1;
+  const statusColor = getPortCoStatusColor(company.status);
+  const locationDisplay = company.headquarters || company.country || "Not disclosed";
+  const owners = company.owners;
+  const displayOwners = useMemo(() => mergeOwnerDisplayRows(owners), [owners]);
+  const { active: activeOwners, former: formerOwners } = useMemo(() => splitOwners(displayOwners), [displayOwners]);
+  const primaryOwner = useMemo(() => getPrimaryOwner(displayOwners), [displayOwners]);
+  const primaryStrategies = useMemo(() => getOwnerStrategies(primaryOwner, funds), [primaryOwner, funds]);
+  const identityDescriptor = useMemo(() => getIdentityDescriptor(company), [company]);
+  const descriptorOwnsSector = normalizeFactValue(identityDescriptor) === normalizeFactValue(company.sector);
+  const activeSponsorNames = uniqueValues(activeOwners.map((owner) => owner.firm));
+  const currentSponsorNames = activeSponsorNames.length > 0
+    ? activeSponsorNames
+    : uniqueValues([primaryOwner?.firm || company.investmentFirm]);
+  const currentSponsorLabel = compactList(currentSponsorNames);
+  const vehicleLabel = primaryOwner?.vehicle || company.ownershipVehicle || "Not disclosed";
+  const holdPeriodLabel = primaryOwner ? formatCompactYearRange(primaryOwner) : company.investmentYear ? String(company.investmentYear) : "N/A";
+  const disclosedStakes = uniqueValues(activeOwners.map((owner) => owner.stake));
+  const ownershipFacts = useMemo(
+    () => buildOwnershipFacts({
+      sponsorLabel: currentSponsorLabel,
+      activeSponsorCount: activeSponsorNames.length,
+      vehicleLabel,
+      strategies: primaryStrategies,
+      stakes: disclosedStakes,
+    }),
+    [activeSponsorNames.length, currentSponsorLabel, disclosedStakes, primaryStrategies, vehicleLabel],
+  );
+  const showOwnershipLedger = shouldShowOwnershipLedger(activeOwners, formerOwners, vehicleLabel);
+  const description = useMemo(() => splitDescription(company.description || ""), [company.description]);
+  const milestones = useMemo(() => dedupeMilestones(company.milestones || []), [company.milestones]);
+  const sources = useMemo(() => dedupeSources(company.sources || []), [company.sources]);
+  const visibleMilestones = showAllMilestones ? milestones : getMaterialMilestones(milestones, displayOwners, 5);
   const cSuiteManagement = (company.management || []).filter(exec =>
     /\bChief\b/i.test(exec.title) ||
     (/\bPresident\b/i.test(exec.title) && !/\bVice\s*President\b/i.test(exec.title))
@@ -195,24 +503,21 @@ export function PortCoDrawer({
         className="fixed inset-0 z-50 bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
         onClick={onClose}
       />
-      <div ref={drawerRef} className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right shadow-overlay">
-        {/* Left edge accent stripe — anchors the drawer in the data color */}
-        <div
-          aria-hidden
-          className="absolute top-0 bottom-0 left-0 w-[2px]"
-          style={{ backgroundColor: sectorColor }}
-        />
-
-        {/* ── Header ── */}
-        <div
-          className={`sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)] px-6 lg:px-8 py-5 lg:py-6 transition-shadow duration-150 ${
+      <div ref={drawerRef} className="fixed top-0 right-0 bottom-0 z-50 w-full bg-[var(--bg-surface)] shadow-overlay overflow-y-auto animate-slide-in-right sm:max-w-[760px] xl:max-w-[860px]">
+        <header
+          className={`sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 px-6 py-6 backdrop-blur-md transition-shadow duration-150 sm:px-8 lg:px-10 ${
             headerScrolled ? "shadow-[0_1px_2px_rgba(17,17,20,0.04)]" : ""
           }`}
         >
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0 pr-2">
-              <div className="flex items-center gap-2.5">
-                <h2 className="text-2xl lg:text-[28px] font-semibold text-[var(--text-primary)] leading-tight tracking-tight">
+          <div className="flex items-start justify-between gap-4">
+            <div className="min-w-0">
+              <div
+                aria-hidden
+                className="mb-5 h-[3px] w-14 rounded-full"
+                style={{ backgroundColor: sectorColor }}
+              />
+              <div className="flex items-start gap-3">
+                <h2 className="text-3xl font-semibold leading-[1.08] tracking-tight text-[var(--text-primary)] lg:text-[40px]">
                   {company.name}
                 </h2>
                 {company.website && (
@@ -220,230 +525,210 @@ export function PortCoDrawer({
                     href={company.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors shrink-0"
+                    className="mt-2 shrink-0 rounded-full p-1.5 text-[var(--text-tertiary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
                     title="Company website"
                   >
                     <ExternalLink className="h-4 w-4" />
                   </a>
                 )}
               </div>
-
-              <div className="flex items-center gap-2.5 mt-2 flex-wrap">
-                <span className="text-sm text-[var(--text-secondary)]">
-                  {company.investmentFirm || "Unknown firm"}
-                </span>
-                <span className="text-[var(--text-tertiary)]">·</span>
-                <Tag color={sectorColor}>{company.sector}</Tag>
-                <span className="text-[var(--text-tertiary)]">·</span>
-                <span className="inline-flex items-center gap-1.5">
-                  <span
-                    aria-hidden
-                    className="h-[5px] w-[5px] rounded-full shrink-0"
-                    style={{ backgroundColor: getPortCoStatusColor(company.status) }}
-                  />
-                  <span className="text-sm text-[var(--text-primary)] font-medium">{company.status}</span>
-                </span>
-                {hasMultipleOwners && (
-                  <>
-                    <span className="text-[var(--text-tertiary)]">·</span>
-                    <span className="text-sm text-[var(--text-secondary)]">
-                      {owners.length} owners
-                    </span>
-                  </>
+              {identityDescriptor && (
+                <p className="mt-3 max-w-[54ch] text-[15px] leading-6 text-[var(--text-secondary)]">
+                  {identityDescriptor}
+                </p>
+              )}
+              <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                {!descriptorOwnsSector && (
+                  <HeaderMetaItem>
+                    <Dot color={sectorColor} />
+                    <span>{company.sector}</span>
+                  </HeaderMetaItem>
                 )}
+                <HeaderMetaItem>
+                  <Dot color={statusColor} />
+                  <span className="font-medium text-[var(--text-primary)]">{company.status}</span>
+                </HeaderMetaItem>
+                <HeaderMetaItem>
+                  <span>{locationDisplay}</span>
+                </HeaderMetaItem>
+                <HeaderMetaItem>
+                  <span className="tabular-nums mono">{holdPeriodLabel}</span>
+                </HeaderMetaItem>
               </div>
             </div>
             <button
               onClick={onClose}
               aria-label="Close drawer"
-              className="p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+              className="shrink-0 rounded-full p-2 text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
               <X className="h-4 w-4" strokeWidth={1.75} />
             </button>
           </div>
-        </div>
+        </header>
 
-        {/* ── Content ── */}
-        <div className="px-6 lg:px-8 py-6 space-y-7">
-
-          {/* §1 — Investment Details */}
-          <section>
-            <SectionLabel count={hasMultipleOwners ? owners.length : undefined}>
-              Investment details
-            </SectionLabel>
-
-            {owners.length > 0 && (
-              <div className="space-y-2 mb-5">
-                {owners.map((owner, idx) => {
-                  const matchedFund = owner.fundName
-                    ? funds.find(f => f.fundName === owner.fundName)
-                    : funds.find(f => f.fundName === owner.vehicle);
-                  const yearRange = formatYearRange(owner);
-                  const ownerStatusLabel = owner.isActive ? "Current" : "Former";
-                  return (
-                    <div key={`${owner.firm}-${idx}`} className="surface px-4 py-3.5">
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <span className="text-sm font-semibold text-[var(--text-primary)]">
-                              {owner.firm || "—"}
-                            </span>
-                            <Tag variant="solid">{ownerStatusLabel}</Tag>
-                          </div>
-                          {owner.vehicle && (
-                            <div className="text-xs text-[var(--text-secondary)] mt-1">
-                              {owner.vehicle}
-                            </div>
-                          )}
-                          {matchedFund?.strategies && matchedFund.strategies.length > 0 && (
-                            <div className="flex items-center gap-3 flex-wrap mt-2">
-                              {matchedFund.strategies.map((s) => (
-                                <Tag key={s} color={getStrategyColor(s)}>{s}</Tag>
-                              ))}
-                            </div>
-                          )}
-                          {owner.stake && (
-                            <div className="text-xs text-[var(--text-secondary)] mt-1.5">
-                              Stake: <span className="text-[var(--text-primary)] font-medium">{owner.stake}</span>
-                            </div>
-                          )}
-                        </div>
-                        {yearRange && (
-                          <span className="text-xs mono text-[var(--text-primary)] font-medium tabular-nums shrink-0">
-                            {yearRange}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-
-            {/* Sector / Subsector / Location */}
-            <dl className="grid grid-cols-[max-content_1fr] gap-x-6 gap-y-2.5 text-xs">
-              <dt className="text-[var(--text-tertiary)]">Sector</dt>
-              <dd><Tag color={sectorColor}>{company.sector}</Tag></dd>
-              {company.subsector && (
-                <>
-                  <dt className="text-[var(--text-tertiary)]">Subsector</dt>
-                  <dd className="text-[var(--text-primary)]">{company.subsector}</dd>
-                </>
-              )}
-              <dt className="text-[var(--text-tertiary)]">Location</dt>
-              <dd className="text-[var(--text-primary)]">{locationDisplay}</dd>
-            </dl>
-          </section>
-
-          {/* §2 — Company Overview / Description */}
-          {company.description && (
-            <section className="border-t border-[var(--border)] pt-6">
-              <SectionLabel>Overview</SectionLabel>
-              <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                {company.description}
-              </p>
-
-              {sources.length > 0 && <SourceGroups sources={sources} />}
-            </section>
-          )}
-
-          {/* §3 — Historical Milestones */}
-          {milestones.length > 0 && (
-            <section className="border-t border-[var(--border)] pt-6">
-              <SectionLabel count={milestones.length}>Historical milestones</SectionLabel>
-              <div className="relative pl-5">
-                <div aria-hidden className="absolute left-[5px] top-1.5 bottom-1.5 w-px bg-[var(--border)]" />
-                <div className="space-y-3">
-                  {visibleMilestones.map((m, i) => {
-                    const classification = classifyMilestone(m, owners);
-                    const isTransition = classification !== null;
-                    const transitionColor =
-                      classification?.kind === "entry"
-                        ? ENTRY_COLOR
-                        : classification?.kind === "exit"
-                        ? EXIT_COLOR
-                        : null;
-                    const transitionLabel =
-                      classification?.kind === "entry"
-                        ? "Investment"
-                        : classification?.kind === "exit"
-                        ? "Exit"
-                        : null;
-                    const transitionFirm = classification?.owner.firm;
-                    const dotColor = isTransition && transitionColor
-                      ? transitionColor
-                      : getMilestoneCategoryColor(m.category);
-                    return (
-                      <div
-                        key={i}
-                        className={`relative ${isTransition ? "pl-3 -ml-3 border-l-2" : ""}`}
-                        style={isTransition && transitionColor ? { borderLeftColor: transitionColor } : undefined}
-                      >
-                        {/* Dot */}
-                        <div
-                          aria-hidden
-                          className="absolute -left-[18px] top-1.5 h-2 w-2 rounded-full ring-2 ring-[var(--bg-surface)]"
-                          style={{ backgroundColor: dotColor }}
-                        />
-                        <div className="flex items-baseline gap-2 flex-wrap">
-                          <span className="text-[11px] mono text-[var(--text-tertiary)] tabular-nums">
-                            {m.date}
-                          </span>
-                          {transitionLabel ? (
-                            <Tag variant="solid">{transitionLabel}</Tag>
-                          ) : (
-                            <Tag color={getMilestoneCategoryColor(m.category)}>{m.category}</Tag>
-                          )}
-                          {transitionFirm && (
-                            <span className="text-[11px] text-[var(--text-secondary)]">
-                              {transitionFirm}
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-sm mt-1 leading-relaxed text-[var(--text-secondary)]">
-                          {m.event}
-                        </p>
-                      </div>
-                    );
-                  })}
+        <div className="grid grid-cols-1 gap-8 px-6 py-8 sm:grid-cols-[minmax(0,1fr)_240px] sm:px-8 lg:grid-cols-[minmax(0,1fr)_250px] lg:px-10 lg:py-10">
+          <aside className="order-1 sm:order-2">
+            <div className="surface-elevated sm:sticky sm:top-32">
+              <div className="px-4 py-4">
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-[var(--text-primary)]">
+                  Ownership
+                </div>
+                <div className="mt-3 divide-y divide-[var(--border)]">
+                  {ownershipFacts.map((fact) => (
+                    <FactRow key={fact.claim} label={fact.label} value={fact.value}>
+                      {fact.children}
+                    </FactRow>
+                  ))}
                 </div>
               </div>
-              {milestones.length > 6 && (
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="mt-4 ml-5"
-                  onClick={() => setShowAllMilestones(!showAllMilestones)}
-                >
-                  {showAllMilestones ? "Show less" : `Show all ${milestones.length} milestones`}
-                </Button>
-              )}
-            </section>
-          )}
 
-          {/* §4 — Key Management */}
-          {cSuiteManagement.length > 0 && (
-            <section className="border-t border-[var(--border)] pt-6">
-              <SectionLabel>Key management</SectionLabel>
-              <div className={`grid gap-2 ${cSuiteManagement.length === 1 ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2"}`}>
-                {cSuiteManagement.map((exec, i) => (
-                  <div key={i} className="flex items-center gap-3 surface px-3 py-2.5">
-                    <div className="shrink-0 h-8 w-8 rounded-full flex items-center justify-center text-[11px] font-semibold bg-[var(--bg-hover)] text-[var(--text-secondary)] border border-[var(--border)]">
-                      {exec.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+              {showOwnershipLedger && (
+                <div className="border-t border-[var(--border)] px-4 py-4">
+                  {activeOwners.length > 0 && (
+                    <>
+                      <div className="mb-1 text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+                        Current ownership
+                      </div>
+                      <div className="divide-y divide-[var(--border)]">
+                        {activeOwners.map((owner, idx) => (
+                          <OwnerLine key={`${owner.firm}-${owner.vehicle}-${idx}`} owner={owner} funds={funds} />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                  {formerOwners.length > 0 && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className={activeOwners.length > 0 ? "mt-2 -ml-2" : "-ml-2"}
+                      onClick={() => setShowFormerOwners(!showFormerOwners)}
+                    >
+                      {showFormerOwners ? "Hide prior owners" : `Show ${pluralize(formerOwners.length, "prior owner")}`}
+                    </Button>
+                  )}
+                  {showFormerOwners && (
+                    <div className="mt-2 divide-y divide-[var(--border)] border-t border-[var(--border)]">
+                      {formerOwners.map((owner, idx) => (
+                        <OwnerLine key={`${owner.firm}-${owner.vehicle}-${idx}`} owner={owner} funds={funds} />
+                      ))}
                     </div>
-                    <div className="min-w-0">
-                      <div className="text-sm text-[var(--text-primary)] font-medium leading-snug truncate">
+                  )}
+                </div>
+              )}
+            </div>
+          </aside>
+
+          <div className="order-2 min-w-0 space-y-9 sm:order-1">
+            {company.description && (
+              <section>
+                <SectionLabel>Business overview</SectionLabel>
+                <div className="max-w-[58ch] space-y-4">
+                  <p className="text-lg font-semibold leading-relaxed tracking-tight text-[var(--text-primary)]">
+                    {description.lead}
+                  </p>
+                  {description.body && (
+                    <p className="text-[15px] leading-7 text-[var(--text-secondary)]">
+                      {description.body}
+                    </p>
+                  )}
+                </div>
+              </section>
+            )}
+
+            {milestones.length > 0 && (
+              <section className="border-t border-[var(--border)] pt-7">
+                <SectionLabel count={milestones.length}>Story timeline</SectionLabel>
+                <div className="relative pl-5">
+                  <div aria-hidden className="absolute left-[5px] top-1.5 bottom-1.5 w-px bg-[var(--border)]" />
+                  <div className="space-y-4">
+                    {visibleMilestones.map((milestone, i) => {
+                      const classification = classifyMilestone(milestone, displayOwners);
+                      const isTransition = classification !== null;
+                      const transitionColor =
+                        classification?.kind === "entry"
+                          ? getPortCoStatusColor("Active")
+                          : classification?.kind === "exit"
+                          ? getMilestoneCategoryColor("Divestiture")
+                          : null;
+                      const transitionLabel =
+                        classification?.kind === "entry"
+                          ? "Investment"
+                          : classification?.kind === "exit"
+                          ? "Exit"
+                          : null;
+                      const dotColor = transitionColor ?? getMilestoneCategoryColor(milestone.category);
+                      return (
+                        <div key={`${milestone.date}-${milestone.event}-${i}`} className="relative">
+                          <div
+                            aria-hidden
+                            className={`absolute -left-[18px] rounded-full ring-2 ring-[var(--bg-surface)] ${
+                              isTransition ? "top-2 h-2.5 w-2.5" : "top-1.5 h-2 w-2"
+                            }`}
+                            style={{ backgroundColor: dotColor }}
+                          />
+                          <div className={isTransition ? "rounded-[8px] bg-[var(--bg-subtle)] px-3 py-2.5 ring-1 ring-[var(--border)]" : ""}>
+                            <div className="flex flex-wrap items-baseline gap-2">
+                              <span className="text-[11px] tabular-nums text-[var(--text-tertiary)] mono">
+                                {milestone.date}
+                              </span>
+                              {transitionLabel ? (
+                                <Tag color={dotColor}>{transitionLabel}</Tag>
+                              ) : (
+                                <Tag color={getMilestoneCategoryColor(milestone.category)}>{milestone.category}</Tag>
+                              )}
+                              {classification?.owner.firm && (
+                                <span className="text-[11px] text-[var(--text-secondary)]">
+                                  {classification.owner.firm}
+                                </span>
+                              )}
+                            </div>
+                            <p className={`mt-1.5 text-sm leading-relaxed ${isTransition ? "text-[var(--text-primary)]" : "text-[var(--text-secondary)]"}`}>
+                              {milestone.event}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+                {milestones.length > 5 && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="mt-4 ml-5"
+                    onClick={() => setShowAllMilestones(!showAllMilestones)}
+                  >
+                    {showAllMilestones ? "Show less" : `Show all ${milestones.length} milestones`}
+                  </Button>
+                )}
+              </section>
+            )}
+
+            {cSuiteManagement.length > 0 && (
+              <section className="border-t border-[var(--border)] pt-7">
+                <SectionLabel>Key management</SectionLabel>
+                <div className={`grid gap-x-5 gap-y-3 ${cSuiteManagement.length === 1 ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2"}`}>
+                  {cSuiteManagement.map((exec, i) => (
+                    <div key={`${exec.name}-${i}`} className="border-b border-[var(--border)] pb-3">
+                      <div className="truncate text-sm font-semibold leading-snug text-[var(--text-primary)]">
                         {exec.name}
                       </div>
-                      <div className="text-xs text-[var(--text-tertiary)] mt-0.5 truncate">
+                      <div className="mt-0.5 truncate text-xs text-[var(--text-tertiary)]">
                         {exec.title}
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {sources.length > 0 && (
+              <section className="border-t border-[var(--border)] pt-7">
+                <SectionLabel count={sources.length}>Evidence</SectionLabel>
+                <EvidenceGroups sources={sources} />
+              </section>
+            )}
+          </div>
         </div>
       </div>
     </>
