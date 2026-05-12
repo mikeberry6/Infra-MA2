@@ -64,8 +64,21 @@ function applyCuratedAliases(s: string): string {
   ) {
     return "vantage data centers";
   }
+  if (s === "cleco corporate" || s === "cleco group") {
+    return "cleco";
+  }
+  if (s === "puget energy puget sound energy") {
+    return "puget sound energy";
+  }
   return s;
 }
+
+const PREFERRED_DISPLAY_BY_KEY: Record<string, string> = {
+  "vantage data centers": "Vantage Data Centers",
+  cleco: "Cleco Corporation",
+  "puget sound energy": "Puget Sound Energy",
+  "gct global container terminals": "GCT Global Container Terminals",
+};
 
 // Returns the primary canonical key (parens stripped to nothing). Kept as a
 // named export for callers that just want a single key (most callers should
@@ -116,8 +129,10 @@ export function companyDedupKeys(name: string): Set<string> {
 export function preferredDisplayName(names: string[]): string {
   if (names.length === 0) return "";
   if (names.length === 1) return names[0];
-  if (names.some((name) => applyCuratedAliases(canonicalCompanyKey(name)) === "vantage data centers")) {
-    return "Vantage Data Centers";
+  for (const [key, displayName] of Object.entries(PREFERRED_DISPLAY_BY_KEY)) {
+    if (names.some((name) => canonicalCompanyKey(name) === key)) {
+      return displayName;
+    }
   }
   return [...names].sort((a, b) => {
     const tokensA = a.split(/\s+/).filter(Boolean).length;

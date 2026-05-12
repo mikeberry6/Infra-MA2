@@ -125,6 +125,28 @@ describe("companyDedupKeys — multi-key matching", () => {
     )).toBe(true);
   });
 
+  it("collapses BCI portfolio company duplicate variants", () => {
+    const cleco = companyDedupKeys("Cleco Corporation");
+    expect(intersects(
+      cleco,
+      companyDedupKeys("Cleco Group"),
+    )).toBe(true);
+    expect(intersects(
+      cleco,
+      companyDedupKeys("Cleco Corporate Holdings LLC"),
+    )).toBe(true);
+
+    expect(intersects(
+      companyDedupKeys("Puget Energy / Puget Sound Energy"),
+      companyDedupKeys("Puget Sound Energy"),
+    )).toBe(true);
+
+    expect(intersects(
+      companyDedupKeys("GCT Global Container Terminals"),
+      companyDedupKeys("GCT Global Container Terminals Inc."),
+    )).toBe(true);
+  });
+
   it("does NOT collapse legitimately different companies", () => {
     expect(intersects(
       companyDedupKeys("Renewable Energy AssetCo 1"),
@@ -171,6 +193,21 @@ describe("preferredDisplayName", () => {
       "Vantage Data Centers Stabilized North America Portfolio",
       "Vantage SDC",
     ])).toBe("Vantage Data Centers");
+  });
+
+  it("uses clean BCI canonical names when portfolio variants are merged", () => {
+    expect(preferredDisplayName([
+      "Cleco Corporate Holdings LLC",
+      "Cleco Corporation",
+    ])).toBe("Cleco Corporation");
+    expect(preferredDisplayName([
+      "Puget Energy / Puget Sound Energy",
+      "Puget Sound Energy",
+    ])).toBe("Puget Sound Energy");
+    expect(preferredDisplayName([
+      "GCT Global Container Terminals Inc.",
+      "GCT Global Container Terminals",
+    ])).toBe("GCT Global Container Terminals");
   });
 
   it("returns the only entry when given one", () => {
