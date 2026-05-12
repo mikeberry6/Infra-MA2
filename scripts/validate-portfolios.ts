@@ -101,6 +101,10 @@ const fundNames = new Set(funds.map((fund) => fund.fundName));
 const seenCompanyKeys = new Map<string, number>();
 const seenSourceUrls = new Set<string>();
 
+function isUndisclosedVehicle(vehicle: string): boolean {
+  return /^n\.?a\.?$/i.test(vehicle.trim());
+}
+
 for (const fundError of validateFundData()) {
   addError(`funds: ${fundError}`);
 }
@@ -177,7 +181,7 @@ for (const [index, company] of companies.entries()) {
     if (!owner.investmentFirm) addError(`${label}: owner missing investmentFirm`);
     if (!owner.ownershipVehicle) addWarning(`${label}: owner missing ownershipVehicle`);
     if (!PORTCO_STATUSES.includes(owner.status)) addError(`${label}: owner has invalid status "${owner.status}"`);
-    if (owner.ownershipVehicle && !fundNames.has(owner.ownershipVehicle)) {
+    if (owner.ownershipVehicle && !isUndisclosedVehicle(owner.ownershipVehicle) && !fundNames.has(owner.ownershipVehicle)) {
       addWarning(`${label}: ownershipVehicle does not exactly match a fund name: "${owner.ownershipVehicle}"`);
     }
     if (!hasOwnerEntryMilestone(owner, company)) {
