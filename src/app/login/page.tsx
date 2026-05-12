@@ -16,13 +16,13 @@ export default async function LoginPage({
     <div className="mx-auto flex min-h-[calc(100vh-8rem)] max-w-[420px] items-center px-4 sm:px-6 py-12">
       <div className="surface-elevated w-full px-5 py-6 sm:px-6 sm:py-7">
         <div className="mb-5">
-          <p className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+          <p className="type-label">
             InfraSight
           </p>
-          <h1 className="mt-1 text-xl font-semibold tracking-tight text-[var(--text-primary)]">
+          <h1 className="mt-1 type-page-title">
             Sign in
           </h1>
-          <p className="mt-1 text-sm text-[var(--text-secondary)]">
+          <p className="mt-1 type-meta">
             Use your admin or analyst account to continue.
           </p>
         </div>

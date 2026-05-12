@@ -41,7 +41,7 @@ function Wordmark({ className = "" }: { className?: string }) {
           <span key={index} className={`rounded-[1.5px] ${cell}`} />
         ))}
       </span>
-      <span className="text-[15px] font-semibold tracking-tight text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent)]">
+      <span className="type-row-title font-semibold transition-colors group-hover:text-[var(--accent)]">
         InfraSight
       </span>
     </Link>
@@ -71,7 +71,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   aria-current={isActive ? "page" : undefined}
-                  className={`inline-flex h-8 items-center rounded-md border px-3 text-xs font-medium transition-colors ${
+                  className={`inline-flex h-8 items-center rounded-md border px-3 type-meta font-medium transition-colors ${
                     isActive
                       ? "border-[var(--border)] bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.05)]"
                       : "border-transparent text-[var(--text-secondary)] hover:bg-[var(--bg-surface)] hover:text-[var(--text-primary)]"
@@ -149,7 +149,7 @@ export function Navbar() {
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
                   aria-current={isActive ? "page" : undefined}
-                  className={`block px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
+                  className={`block px-3 py-2.5 rounded-md type-row-title transition-colors ${
                     isActive
                       ? "bg-[var(--bg-hover)] text-[var(--text-primary)] shadow-[inset_2px_0_0_var(--accent)]"
                       : "text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"

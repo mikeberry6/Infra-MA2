@@ -150,7 +150,7 @@ function FundsInsightsHero({ filteredFunds }: { filteredFunds: FundView[] }) {
 
   if (filteredFunds.length === 0) {
     return (
-      <div className="py-10 text-center text-sm text-[var(--text-tertiary)]">
+      <div className="py-10 text-center type-meta text-[var(--text-tertiary)]">
         No funds match your current filters. Try broadening your search.
       </div>
     );
@@ -158,7 +158,7 @@ function FundsInsightsHero({ filteredFunds }: { filteredFunds: FundView[] }) {
 
   return (
     <div>
-      <p className="text-xs text-[var(--text-secondary)] mb-5">
+      <p className="type-meta mb-5">
         <span className="mono text-[var(--text-primary)] font-medium tabular-nums">{stats.managers}</span> managers
         {" · "}
         <span className="mono text-[var(--text-primary)] font-medium tabular-nums">{stats.funds}</span> fund vehicles
@@ -193,7 +193,7 @@ function FundVehicleCard({
       className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
     >
       <div className="flex items-start justify-between gap-3 mb-2">
-        <h4 className="text-sm font-medium text-[var(--text-primary)] leading-snug tracking-tight truncate">
+        <h4 className="type-row-title truncate">
           {fund.fundName}
         </h4>
         <ChevronRight className="h-4 w-4 text-[var(--text-tertiary)] shrink-0 mt-0.5" />
@@ -203,18 +203,18 @@ function FundVehicleCard({
         {fund.strategies.map((s) => (
           <Tag key={s} color={getStrategyColor(s)}>{s}</Tag>
         ))}
-        <span className="text-[11px] text-[var(--text-tertiary)]">·</span>
-        <span className="text-[11px] text-[var(--text-secondary)]">{fund.status}</span>
+        <span className="type-micro">·</span>
+        <span className="type-micro text-[var(--text-secondary)]">{fund.status}</span>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 text-xs">
+      <div className="grid grid-cols-2 gap-3">
         <div>
-          <div className="text-[10px] uppercase tracking-wider text-[var(--text-tertiary)]">Size</div>
-          <div className="text-[var(--text-primary)] font-medium mono tabular-nums truncate">{displaySize(fund.size)}</div>
+          <div className="type-label">Size</div>
+          <div className="type-meta text-[var(--text-primary)] font-medium mono tabular-nums truncate">{displaySize(fund.size)}</div>
         </div>
         <div>
-          <div className="text-[10px] uppercase tracking-wider text-[var(--text-tertiary)]">Vintage</div>
-          <div className="text-[var(--text-primary)] mono tabular-nums">{fund.vintage}</div>
+          <div className="type-label">Vintage</div>
+          <div className="type-meta text-[var(--text-primary)] mono tabular-nums">{fund.vintage}</div>
         </div>
       </div>
     </button>
@@ -243,7 +243,7 @@ function FundTableHead({ sticky = false }: { sticky?: boolean }) {
         {TABLE_HEADERS.map((label, i) => (
           <th
             key={label}
-            className={`px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider select-none ${
+            className={`px-3 py-2 type-table-header select-none ${
               i >= 2 ? "text-right" : "text-left"
             }`}
           >
@@ -269,7 +269,7 @@ function FundRow({
       className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group border-b border-[var(--border)] last:border-b-0"
     >
       <td className="px-3 py-2.5 align-top">
-        <span title={fund.fundName} className="text-[13px] font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
+        <span title={fund.fundName} className="type-row-title group-hover:text-[var(--accent)] transition-colors truncate block">
           {fund.fundName}
         </span>
       </td>
@@ -281,13 +281,13 @@ function FundRow({
         </div>
       </td>
       <td className="px-3 py-2.5 align-top text-right">
-        <span className="mono text-[12px] text-[var(--text-primary)] font-medium tabular-nums">{displaySize(fund.size)}</span>
+        <span className="type-meta mono text-[var(--text-primary)] font-medium tabular-nums">{displaySize(fund.size)}</span>
       </td>
       <td className="px-3 py-2.5 align-top text-right">
-        <span className="mono text-[12px] text-[var(--text-secondary)] tabular-nums">{fund.vintage}</span>
+        <span className="type-meta mono tabular-nums">{fund.vintage}</span>
       </td>
       <td className="px-3 py-2.5 align-top text-right">
-        <span className="text-[12px] text-[var(--text-secondary)]">{fund.status}</span>
+        <span className="type-meta">{fund.status}</span>
       </td>
     </tr>
   );
@@ -312,7 +312,7 @@ function ManagerGroupedTable({
 
   if (sortedManagers.length === 0) {
     return (
-      <div className="flex items-center justify-center py-16 text-sm text-[var(--text-tertiary)]">
+      <div className="flex items-center justify-center py-16 type-meta text-[var(--text-tertiary)]">
         No funds match your current filters.
       </div>
     );
@@ -346,10 +346,10 @@ function ManagerGroupedTable({
                             !isCollapsed ? "rotate-90" : ""
                           }`}
                         />
-                        <span className="text-[13px] font-semibold text-[var(--text-primary)] tracking-tight">
+                        <span className="type-row-title font-semibold">
                           {managerName}
                         </span>
-                        <span className="text-[11px] text-[var(--text-tertiary)] mono tabular-nums">
+                        <span className="type-micro mono tabular-nums">
                           {managerFunds.length}
                         </span>
                       </div>
@@ -386,10 +386,10 @@ function ManagerGroupedTable({
                     !isCollapsed ? "rotate-90" : ""
                   }`}
                 />
-                <span className="text-[13px] font-semibold text-[var(--text-primary)] tracking-tight">
+                <span className="type-row-title font-semibold">
                   {managerName}
                 </span>
-                <span className="text-[11px] text-[var(--text-tertiary)] mono tabular-nums">
+                <span className="type-micro mono tabular-nums">
                   {managerFunds.length}
                 </span>
               </button>
@@ -454,7 +454,7 @@ function AllFundsTable({
 
   if (displayFunds.length === 0) {
     return (
-      <div className="flex items-center justify-center py-16 text-sm text-[var(--text-tertiary)]">
+      <div className="flex items-center justify-center py-16 type-meta text-[var(--text-tertiary)]">
         No funds match your current filters.
       </div>
     );
@@ -486,7 +486,7 @@ function AllFundsTable({
                   <button
                     type="button"
                     onClick={() => toggleSort(field)}
-                    className={`inline-flex items-center gap-1 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm ${idx >= 2 ? "justify-end w-full" : ""}`}
+                    className={`inline-flex items-center gap-1 type-table-header hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm ${idx >= 2 ? "justify-end w-full" : ""}`}
                   >
                     {label}
                     {sortField === field && (
@@ -498,7 +498,7 @@ function AllFundsTable({
                   </button>
                 </th>
               ))}
-              <th className="px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider text-right select-none">
+              <th className="px-3 py-2 type-table-header text-right select-none">
                 Status
               </th>
             </tr>
@@ -614,14 +614,14 @@ function FundDrawer({
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0 pr-2">
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                <span className="text-xs text-[var(--text-secondary)]">{fund.managerName}</span>
+                <span className="type-meta">{fund.managerName}</span>
                 {fund.ticker && (
-                  <span className="mono text-[10px] text-[var(--text-tertiary)] bg-[var(--bg-hover)] px-1.5 py-0.5 rounded">
+                  <span className="type-label normal-case mono bg-[var(--bg-hover)] px-1.5 py-0.5 rounded">
                     {fund.ticker}
                   </span>
                 )}
               </div>
-              <h2 className="text-xl lg:text-2xl font-semibold text-[var(--text-primary)] leading-tight tracking-tight">
+              <h2 className="type-page-title">
                 {fund.fundName}
               </h2>
             </div>
@@ -639,7 +639,7 @@ function FundDrawer({
         <div className="px-6 lg:px-8 py-6 space-y-7">
           {/* Fund overview */}
           <section>
-            <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-3">
+            <div className="type-section-title text-[var(--text-tertiary)] mb-3">
               Fund overview
             </div>
             <div className="flex items-center gap-3 flex-wrap mb-4">
@@ -651,14 +651,14 @@ function FundDrawer({
               <span className="text-[var(--text-tertiary)]">·</span>
               <Tag color={getStructureColor(fund.structure)}>{fund.structure}</Tag>
             </div>
-            <dl className="grid grid-cols-2 gap-x-6 gap-y-2.5 text-xs">
+            <dl className="grid grid-cols-2 gap-x-6 gap-y-2.5">
               <div>
-                <dt className="text-[10px] uppercase tracking-wider text-[var(--text-tertiary)]">Fund size</dt>
-                <dd className="text-sm font-medium text-[var(--text-primary)] mono tabular-nums mt-0.5">{displaySize(fund.size)}</dd>
+                <dt className="type-label">Fund size</dt>
+                <dd className="type-row-title mono tabular-nums mt-0.5">{displaySize(fund.size)}</dd>
               </div>
               <div>
-                <dt className="text-[10px] uppercase tracking-wider text-[var(--text-tertiary)]">Vintage</dt>
-                <dd className="text-sm font-medium text-[var(--text-primary)] mono tabular-nums mt-0.5">{fund.vintage}</dd>
+                <dt className="type-label">Vintage</dt>
+                <dd className="type-row-title mono tabular-nums mt-0.5">{fund.vintage}</dd>
               </div>
             </dl>
           </section>
@@ -666,10 +666,10 @@ function FundDrawer({
           {/* Investment Strategy */}
           {fund.investmentStrategy && (
             <section className="border-t border-[var(--border)] pt-6">
-              <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-3">
+              <div className="type-section-title text-[var(--text-tertiary)] mb-3">
                 Investment strategy
               </div>
-              <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+              <p className="type-meta">
                 {fund.investmentStrategy}
               </p>
             </section>
@@ -678,7 +678,7 @@ function FundDrawer({
           {/* Target Sectors */}
           {fund.sectors.length > 0 && (
             <section className="border-t border-[var(--border)] pt-6">
-              <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-3">
+              <div className="type-section-title text-[var(--text-tertiary)] mb-3">
                 Target sectors
               </div>
               <div className="flex flex-wrap gap-3">
@@ -692,7 +692,7 @@ function FundDrawer({
           {/* Source URLs */}
           {fund.sourceUrls.length > 0 && (
             <section className="border-t border-[var(--border)] pt-6">
-              <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-3">
+              <div className="type-section-title text-[var(--text-tertiary)] mb-3">
                 Sources
               </div>
               <div className="flex flex-wrap gap-x-4 gap-y-1.5">
@@ -705,7 +705,7 @@ function FundDrawer({
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
+                      className="inline-flex items-center gap-1.5 type-meta hover:text-[var(--text-primary)] transition-colors group"
                     >
                       <ExternalLink className="h-3 w-3 shrink-0 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)]" />
                       <span className="truncate">{hostname}</span>
@@ -720,10 +720,10 @@ function FundDrawer({
           {firmPortfolio.total > 0 && (
             <section className="border-t border-[var(--border)] pt-6">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+                <span className="type-section-title text-[var(--text-tertiary)]">
                   Portfolio companies
                 </span>
-                <span className="text-[11px] text-[var(--text-tertiary)]">
+                <span className="type-micro">
                   <span className="mono tabular-nums">{firmPortfolio.total}</span>
                   {firmPortfolio.realizedCount > 0 && (
                     <> · {firmPortfolio.activeCount} active · {firmPortfolio.realizedCount} realized</>
@@ -735,12 +735,12 @@ function FundDrawer({
                   <div key={sector}>
                     <div className="flex items-center gap-2 mb-2">
                       <Tag color={getPortCoSectorColor(sector)}>{sector}</Tag>
-                      <span className="text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{count}</span>
+                      <span className="type-micro mono tabular-nums">{count}</span>
                     </div>
                     <div className="space-y-3 ml-1">
                       {subsectors.map(({ subsector, entries }) => (
                         <div key={subsector}>
-                          <div className="text-[10px] uppercase tracking-wider text-[var(--text-tertiary)] mb-1.5">{subsector}</div>
+                          <div className="type-label mb-1.5">{subsector}</div>
                           <div className="space-y-1.5">
                             {entries.map(({ company, fundName, strategies }) => {
                               const yearLabel = company.isActive
@@ -759,11 +759,11 @@ function FundDrawer({
                                   style={!company.isActive ? { opacity: 0.65 } : undefined}
                                 >
                                   <div className="min-w-0">
-                                    <div className="text-sm text-[var(--text-primary)] flex items-center gap-2 flex-wrap">
+                                    <div className="type-row-title flex items-center gap-2 flex-wrap">
                                       <span className="font-medium">{company.name}</span>
                                       {!company.isActive && <Tag variant="solid">Realized</Tag>}
                                     </div>
-                                    <div className="text-[11px] text-[var(--text-tertiary)] mt-0.5">
+                                    <div className="type-micro mt-0.5">
                                       {company.country}
                                       {yearLabel ? ` · ${yearLabel}` : ""}
                                       {firmFunds.length > 1 ? ` · ${fundName}` : ""}
@@ -790,7 +790,7 @@ function FundDrawer({
           {/* Sibling funds */}
           {siblingFunds.length > 0 && (
             <section className="border-t border-[var(--border)] pt-6">
-              <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-3">
+              <div className="type-section-title text-[var(--text-tertiary)] mb-3">
                 Other {fund.managerName} vehicles
               </div>
               <div className="space-y-2">
@@ -801,8 +801,8 @@ function FundDrawer({
                     className="w-full text-left surface p-3 hover:bg-[var(--bg-subtle)] transition-colors flex items-center justify-between gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
                   >
                     <div className="min-w-0">
-                      <div className="text-sm font-medium text-[var(--text-primary)] truncate">{sib.fundName}</div>
-                      <div className="text-[11px] mono text-[var(--text-tertiary)] tabular-nums">{displaySize(sib.size)}</div>
+                      <div className="type-row-title truncate">{sib.fundName}</div>
+                      <div className="type-micro mono tabular-nums">{displaySize(sib.size)}</div>
                     </div>
                     <ChevronRight className="h-4 w-4 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)] shrink-0 transition-colors" />
                   </button>
@@ -889,10 +889,10 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
       <div className="flex items-end justify-between flex-wrap gap-4 mb-5">
         <div>
-          <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-primary)] tracking-tight">
+          <h1 className="type-page-title">
             Funds
           </h1>
-          <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-0.5">
+          <p className="type-meta mt-0.5">
             <span className="mono tabular-nums text-[var(--text-primary)] font-medium">{filteredFunds.length.toLocaleString()}</span>
             {filteredFunds.length !== funds.length && (
               <> of <span className="mono tabular-nums">{funds.length.toLocaleString()}</span></>
@@ -920,7 +920,7 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
       <div className="surface overflow-hidden">
         <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
           <div className="flex items-center gap-3">
-            <span className="text-[11px] text-[var(--text-tertiary)]">
+            <span className="type-micro">
               <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredFunds.length}</span>
               {" "}of{" "}
               <span className="mono text-[var(--text-secondary)] tabular-nums">{funds.length}</span> funds
@@ -928,7 +928,7 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
             <div className="hidden sm:inline-flex items-center gap-1 p-0.5 rounded-md bg-[var(--bg-hover)]">
               <button
                 onClick={() => setFundView("managers")}
-                className={`px-2.5 h-6 rounded text-[11px] font-medium transition-colors ${
+                className={`px-2.5 h-6 rounded type-micro font-medium transition-colors ${
                   fundView === "managers"
                     ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
                     : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
@@ -938,7 +938,7 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
               </button>
               <button
                 onClick={() => setFundView("all")}
-                className={`px-2.5 h-6 rounded text-[11px] font-medium transition-colors ${
+                className={`px-2.5 h-6 rounded type-micro font-medium transition-colors ${
                   fundView === "all"
                     ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
                     : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"

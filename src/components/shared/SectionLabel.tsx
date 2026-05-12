@@ -1,10 +1,9 @@
 import type { ReactNode } from "react";
 
 /**
- * The canonical uppercase-tracking section divider used in drawers, admin
+ * The canonical section divider used in drawers, admin
  * pages, hero columns, and key/value lists. Replaces the inline pattern
- * `text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]`
- * which was repeated 30+ times before consolidation.
+ * that was repeated 30+ times before consolidation.
  *
  * Pass an optional `count` to render a right-aligned monospace numeric on
  * the same line — used in drawer sections like "Historical milestones · 12".
@@ -21,10 +20,10 @@ export function SectionLabel({
   if (count != null) {
     return (
       <div className={`flex items-center justify-between mb-3 ${className}`}>
-        <span className="text-[11px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+        <span className="type-section-title">
           {children}
         </span>
-        <span className="text-[11px] mono tabular-nums text-[var(--text-tertiary)]">
+        <span className="type-micro mono tabular-nums">
           {count}
         </span>
       </div>
@@ -32,7 +31,7 @@ export function SectionLabel({
   }
   return (
     <div
-      className={`text-[11px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-3 ${className}`}
+      className={`type-section-title mb-3 ${className}`}
     >
       {children}
     </div>

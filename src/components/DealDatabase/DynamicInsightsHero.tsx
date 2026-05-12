@@ -81,7 +81,7 @@ function FundStackedBar({ row, maxTotal }: { row: FundRow; maxTotal: number }) {
   const barPct = maxTotal > 0 ? (row.total / maxTotal) * 100 : 0;
   return (
     <div className="grid grid-cols-[minmax(0,9rem)_1fr_auto] items-center gap-3">
-      <span className="text-xs font-medium text-[var(--text-primary)] truncate">
+      <span className="type-row-title truncate">
         {row.name}
       </span>
       <div className="relative h-1.5 w-full bg-[var(--bg-hover)] rounded-full overflow-hidden">
@@ -105,7 +105,7 @@ function FundStackedBar({ row, maxTotal }: { row: FundRow; maxTotal: number }) {
           })}
         </div>
       </div>
-      <span className="text-[11px] mono text-[var(--text-secondary)] tabular-nums tracking-tight">
+      <span className="type-micro mono text-[var(--text-secondary)] tabular-nums">
         {row.total}
       </span>
     </div>
@@ -122,7 +122,7 @@ function ActivityLegend({ activities }: { activities: string[] }) {
             className="h-[5px] w-[5px] rounded-full"
             style={{ backgroundColor: getActivityColor(act) }}
           />
-          <span className="text-[11px] text-[var(--text-secondary)]">{act}</span>
+          <span className="type-micro text-[var(--text-secondary)]">{act}</span>
         </div>
       ))}
     </div>
@@ -159,7 +159,7 @@ export function DynamicInsightsHero({
 
   if (filteredDeals.length === 0) {
     return (
-      <div className="py-10 text-center text-sm text-[var(--text-tertiary)]">
+      <div className="py-10 text-center type-meta text-[var(--text-tertiary)]">
         No deals match your current filters. Try broadening your search.
       </div>
     );
@@ -169,7 +169,7 @@ export function DynamicInsightsHero({
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
       {/* ── Fund Activity ─────────────────────────────── */}
       <div className="min-w-0">
-        <h3 className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-3">
+        <h3 className="type-section-title text-[var(--text-tertiary)] mb-3">
           Top fund activity
         </h3>
         <div className="space-y-2">

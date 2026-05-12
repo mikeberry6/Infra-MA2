@@ -61,7 +61,7 @@ export function LoginForm({ callbackUrl }: { callbackUrl: string }) {
         required
       />
       {error && (
-        <p className="text-xs text-[#b91c1c]" role="alert">
+        <p className="type-meta text-[#b91c1c]" role="alert">
           {error}
         </p>
       )}

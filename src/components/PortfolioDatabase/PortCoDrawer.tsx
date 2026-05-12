@@ -505,11 +505,11 @@ function SponsorFundLine({ row }: { row: SponsorFundRow }) {
 
   return (
     <div className="border-b border-[var(--border)] py-3 last:border-b-0">
-      <div className="text-sm font-semibold leading-snug text-[var(--text-primary)]">
+      <div className="type-row-title font-semibold">
         {row.sponsor}
       </div>
       {showFund && (
-        <div className="mt-1 text-xs leading-snug text-[var(--text-secondary)]">
+        <div className="mt-1 type-meta">
           {row.fund}
         </div>
       )}
@@ -529,7 +529,7 @@ function DetailSection({
   return (
     <section className={`surface-elevated overflow-hidden ${className}`}>
       <div className="border-b border-[var(--border)] px-4 py-3.5">
-        <div className="text-xs font-semibold uppercase tracking-wider text-[var(--text-primary)]">
+        <div className="type-section-title">
           {title}
         </div>
       </div>
@@ -556,7 +556,7 @@ function Dot({ color }: { color: string }) {
 
 function HeaderMetaItem({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex min-w-0 items-center gap-1.5 text-sm text-[var(--text-secondary)]">
+    <span className="inline-flex min-w-0 items-center gap-1.5 type-meta">
       {children}
     </span>
   );
@@ -565,11 +565,11 @@ function HeaderMetaItem({ children }: { children: ReactNode }) {
 function FactRow({ label, value, children }: { label: string; value?: ReactNode; children?: ReactNode }) {
   return (
     <div className="border-b border-[var(--border)] py-3 last:border-b-0">
-      <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+      <div className="type-label">
         {label}
       </div>
       {value && (
-        <div className="mt-1 text-sm font-semibold leading-snug text-[var(--text-primary)]">
+        <div className="mt-1 type-row-title font-semibold">
           {value}
         </div>
       )}
@@ -601,17 +601,17 @@ function OwnerLine({
     <div className="border-b border-[var(--border)] py-3 last:border-b-0">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <div className="text-sm font-semibold leading-snug text-[var(--text-primary)]">
+          <div className="type-row-title font-semibold">
             {owner.firm || "Unknown owner"}
           </div>
           {showVehicle && (
-            <div className="mt-1 text-xs leading-snug text-[var(--text-secondary)]">
+            <div className="mt-1 type-meta">
               {owner.vehicle}
             </div>
           )}
         </div>
         {showYear && (
-          <span className="shrink-0 text-xs font-medium tabular-nums text-[var(--text-primary)] mono">
+          <span className="shrink-0 type-meta font-medium tabular-nums text-[var(--text-primary)] mono">
             {yearRange}
           </span>
         )}
@@ -622,7 +622,7 @@ function OwnerLine({
             <Tag key={strategy} color={getStrategyColor(strategy)}>{strategy}</Tag>
           ))}
           {owner.stake && (
-            <span className="text-[11px] text-[var(--text-tertiary)]">Stake: {owner.stake}</span>
+            <span className="type-micro">Stake: {owner.stake}</span>
           )}
         </div>
       )}
@@ -637,7 +637,7 @@ function EvidenceGroups({ sources, compact = false }: { sources: SourceView[]; c
     <div className={compact ? "divide-y divide-[var(--border)]" : "divide-y divide-[var(--border)] border-y border-[var(--border)]"}>
       {groups.map((group) => (
         <div key={group.purpose} className={compact ? "py-3" : "py-4"}>
-          <div className="mb-2 text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+          <div className="mb-2 type-label">
             {group.label}
           </div>
           <div className={compact ? "grid grid-cols-1 gap-y-1.5" : "grid grid-cols-1 gap-x-5 gap-y-2 sm:grid-cols-2"}>
@@ -652,10 +652,10 @@ function EvidenceGroups({ sources, compact = false }: { sources: SourceView[]; c
               >
                 <ExternalLink className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--text-tertiary)] transition-colors group-hover:text-[var(--text-primary)]" />
                 <span className="min-w-0">
-                  <span className="block truncate text-xs font-medium text-[var(--text-secondary)] transition-colors group-hover:text-[var(--text-primary)]">
+                  <span className="block truncate type-meta font-medium transition-colors group-hover:text-[var(--text-primary)]">
                     {getEvidenceLabel(source, group.label)}
                   </span>
-                  <span className="mt-0.5 block truncate text-[11px] text-[var(--text-tertiary)]">
+                  <span className="mt-0.5 block truncate type-micro">
                     {getSourceHostname(source.url)} / {formatSourceType(inferSourceType(source))}
                   </span>
                 </span>
@@ -763,7 +763,7 @@ export function PortCoDrawer({
                 style={{ backgroundColor: sectorColor }}
               />
               <div className="flex items-start gap-3">
-                <h2 className="text-3xl font-semibold leading-[1.08] tracking-tight text-[var(--text-primary)] lg:text-[40px]">
+                <h2 className="type-drawer-title">
                   {company.name}
                 </h2>
                 {company.website && (
@@ -779,7 +779,7 @@ export function PortCoDrawer({
                 )}
               </div>
               {identityDescriptor && (
-                <p className="mt-3 max-w-[54ch] text-[15px] leading-6 text-[var(--text-secondary)]">
+                <p className="mt-3 max-w-[54ch] type-narrative">
                   {identityDescriptor}
                 </p>
               )}
@@ -814,7 +814,7 @@ export function PortCoDrawer({
             <div className="space-y-4 sm:sticky sm:top-32">
               <DetailSection title="Ownership">
                 <div>
-                  <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+                  <div className="type-label">
                     Sponsor / fund
                   </div>
                   <div className="mt-1 divide-y divide-[var(--border)]">
@@ -868,28 +868,26 @@ export function PortCoDrawer({
             </div>
           </aside>
 
-          <div className="order-2 min-w-0 space-y-9 sm:order-1">
+          <div className="order-2 min-w-0 space-y-4 sm:order-1">
             {company.description && (
-              <section>
-                <SectionLabel>Business overview</SectionLabel>
+              <DetailSection title="Business overview">
                 <div className="max-w-[58ch] space-y-4">
                   {leadAddsMeaning && (
-                    <p className="text-lg font-semibold leading-relaxed tracking-tight text-[var(--text-primary)]">
+                    <p className="type-narrative font-semibold text-[var(--text-primary)]">
                       {description.lead}
                     </p>
                   )}
                   {overviewBodyText && (
-                    <p className="text-[15px] leading-7 text-[var(--text-secondary)]">
+                    <p className="type-narrative">
                       {overviewBodyText}
                     </p>
                   )}
                 </div>
-              </section>
+              </DetailSection>
             )}
 
             {milestones.length > 0 && (
-              <section className="border-t border-[var(--border)] pt-7">
-                <SectionLabel>Story timeline</SectionLabel>
+              <DetailSection title="Story timeline">
                 <div className="relative pl-5">
                   <div aria-hidden className="absolute left-[5px] top-1.5 bottom-1.5 w-px bg-[var(--border)]" />
                   <div className="space-y-4">
@@ -907,23 +905,23 @@ export function PortCoDrawer({
                           />
                           <div className={meta.isTransition ? "rounded-[8px] bg-[var(--bg-subtle)] px-3 py-2.5 ring-1 ring-[var(--border)]" : ""}>
                             <div className="flex flex-wrap items-baseline gap-2">
-                              <span className="text-[11px] tabular-nums text-[var(--text-tertiary)] mono">
+                              <span className="type-micro tabular-nums mono">
                                 {milestone.date}
                               </span>
                               {meta.label ? (
                                 <Tag color={meta.color}>{meta.label}</Tag>
                               ) : milestone.category !== "Other" && (
-                                <span className="text-[11px] text-[var(--text-tertiary)]">
+                                <span className="type-micro">
                                   {milestone.category}
                                 </span>
                               )}
                               {meta.ownerName && (
-                                <span className="text-[11px] text-[var(--text-secondary)]">
+                                <span className="type-micro text-[var(--text-secondary)]">
                                   {meta.ownerName}
                                 </span>
                               )}
                             </div>
-                            <p className={`mt-1.5 text-sm leading-relaxed ${meta.isTransition ? "text-[var(--text-primary)]" : "text-[var(--text-secondary)]"}`}>
+                            <p className={`mt-1.5 type-meta ${meta.isTransition ? "text-[var(--text-primary)]" : "text-[var(--text-secondary)]"}`}>
                               {milestone.event}
                             </p>
                           </div>
@@ -942,7 +940,7 @@ export function PortCoDrawer({
                     {showAllMilestones ? "Show less" : `Show all ${milestones.length} milestones`}
                   </Button>
                 )}
-              </section>
+              </DetailSection>
             )}
 
             {cSuiteManagement.length > 0 && (
@@ -951,10 +949,10 @@ export function PortCoDrawer({
                 <div className={`grid gap-x-5 gap-y-3 ${cSuiteManagement.length === 1 ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2"}`}>
                   {cSuiteManagement.map((exec, i) => (
                     <div key={`${exec.name}-${i}`} className="border-b border-[var(--border)] pb-3">
-                      <div className="truncate text-sm font-semibold leading-snug text-[var(--text-primary)]">
+                      <div className="truncate type-row-title font-semibold">
                         {exec.name}
                       </div>
-                      <div className="mt-0.5 truncate text-xs text-[var(--text-tertiary)]">
+                      <div className="mt-0.5 truncate type-micro">
                         {exec.title}
                       </div>
                     </div>

@@ -32,7 +32,7 @@ export function ActiveFiltersStrip({
 
   return (
     <div className="flex items-center gap-2 flex-wrap">
-      <span className="text-[11px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+      <span className="type-label">
         Active:
       </span>
       {groups.flatMap((group) =>

@@ -36,7 +36,7 @@ export default function RootLayout({
         <main className="pt-14">{children}</main>
         <footer className="border-t border-[var(--border)] bg-[var(--bg-app)] mt-16">
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-5">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[var(--text-tertiary)]">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 type-micro">
               <div className="inline-flex items-center gap-2">
                 <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
                 <span className="font-medium text-[var(--text-secondary)]">InfraSight</span>

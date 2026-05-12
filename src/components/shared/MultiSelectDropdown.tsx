@@ -65,7 +65,7 @@ export function MultiSelectDropdown({
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         aria-label={`Filter by ${label}`}
-        className={`inline-flex items-center gap-1.5 h-8 px-2.5 rounded-md text-xs font-medium transition-colors whitespace-nowrap focus:outline-none ${
+        className={`inline-flex items-center gap-1.5 h-8 px-2.5 rounded-md type-meta font-medium transition-colors whitespace-nowrap focus:outline-none ${
           isOpen
             ? "bg-[var(--bg-surface)] border border-[var(--accent)] text-[var(--text-primary)] shadow-[0_0_0_2px_var(--accent-soft)]"
             : isActive
@@ -75,7 +75,7 @@ export function MultiSelectDropdown({
       >
         <span>{label}</span>
         {isActive && (
-          <span className="inline-flex items-center justify-center min-w-[16px] h-[16px] px-1 rounded text-[10px] font-semibold bg-[var(--accent)] text-[var(--text-on-accent)] tabular-nums">
+          <span className="inline-flex items-center justify-center min-w-[16px] h-[16px] px-1 rounded type-label normal-case bg-[var(--accent)] text-[var(--text-on-accent)] tabular-nums">
             {selected.size}
           </span>
         )}
@@ -105,7 +105,7 @@ export function MultiSelectDropdown({
             }}
           >
             {options.length === 0 ? (
-              <div className="px-2 py-2 text-xs text-[var(--text-tertiary)]">
+              <div className="px-2 py-2 type-meta text-[var(--text-tertiary)]">
                 No options
               </div>
             ) : (
@@ -118,7 +118,7 @@ export function MultiSelectDropdown({
                     role="option"
                     aria-selected={isSelected}
                     onClick={() => onToggle(option)}
-                    className={`w-full flex items-center gap-2 h-8 px-2 rounded-sm text-xs text-left transition-colors ${
+                    className={`w-full flex items-center gap-2 h-8 px-2 rounded-sm type-meta text-left transition-colors ${
                       isSelected
                         ? "bg-[var(--bg-hover)] text-[var(--text-primary)]"
                         : "text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"

@@ -266,25 +266,25 @@ function DealCard({
             <Tag key={cat} color={getCategoryColor(cat)}>{cat}</Tag>
           ))}
           {deal.category.length > 1 && (
-            <span className="text-[11px] text-[var(--text-tertiary)]">+{deal.category.length - 1}</span>
+            <span className="type-micro">+{deal.category.length - 1}</span>
           )}
         </div>
         <ChevronRight className="h-4 w-4 text-[var(--text-tertiary)] shrink-0 mt-0.5" />
       </div>
       <div className="mb-2">
-        <h3 className="text-sm font-medium text-[var(--text-primary)] leading-snug tracking-tight">
+        <h3 className="type-row-title">
           {deal.target}
         </h3>
         {deal.seller && deal.seller !== "N/A" && deal.seller !== "—" && (
-          <div className="text-xs text-[var(--text-tertiary)] mt-0.5 truncate">{deal.seller}</div>
+          <div className="type-micro mt-0.5 truncate">{deal.seller}</div>
         )}
       </div>
-      <div className="flex items-center justify-between gap-3 text-xs">
+      <div className="flex items-center justify-between gap-3">
         <div className="min-w-0 flex-1">
-          <div className="text-[10px] uppercase tracking-wider text-[var(--text-tertiary)]">Buyer</div>
-          <div className="text-[var(--text-secondary)] font-medium truncate">{deal.buyer}</div>
+          <div className="type-label">Buyer</div>
+          <div className="type-meta font-medium truncate">{deal.buyer}</div>
         </div>
-        <span className="mono text-[var(--text-tertiary)] tabular-nums shrink-0">{formatDate(deal.date)}</span>
+        <span className="type-micro mono tabular-nums shrink-0">{formatDate(deal.date)}</span>
       </div>
     </button>
   );
@@ -321,12 +321,12 @@ function DealTable({
           <DealCard key={deal.id} deal={deal} onSelect={onSelectDeal} />
         ))}
         {sorted.length === 0 && (
-          <div className="flex items-center justify-center py-16 text-sm text-[var(--text-tertiary)]">
+          <div className="flex items-center justify-center py-16 type-meta text-[var(--text-tertiary)]">
             No deals match your current filters.
           </div>
         )}
         <div className="px-1 pt-3 pb-1">
-          <span className="text-[11px] text-[var(--text-tertiary)]">
+          <span className="type-micro">
             Showing{" "}
             <span className="mono text-[var(--text-secondary)] tabular-nums">{sorted.length}</span>{" "}
             of{" "}
@@ -348,28 +348,28 @@ function DealTable({
                   <button
                     type="button"
                     onClick={toggleSort}
-                    className="inline-flex items-center gap-1 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider hover:text-[var(--text-primary)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
+                    className="inline-flex items-center gap-1 type-table-header hover:text-[var(--text-primary)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
                   >
                     Date
                     <ArrowUpDown className="h-2.5 w-2.5" strokeWidth={1.75} />
                   </button>
                 </th>
-                <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                <th className="text-left px-3 py-2 type-table-header">
                   Target / Seller
                 </th>
-                <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                <th className="text-left px-3 py-2 type-table-header">
                   Buyer
                 </th>
-                <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                <th className="text-left px-3 py-2 type-table-header">
                   Sector
                 </th>
-                <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                <th className="text-left px-3 py-2 type-table-header">
                   Region
                 </th>
-                <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                <th className="text-left px-3 py-2 type-table-header">
                   Category
                 </th>
-                <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                <th className="text-left px-3 py-2 type-table-header">
                   Source
                 </th>
                 <th className="w-6" aria-hidden />
@@ -385,17 +385,17 @@ function DealTable({
                     className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
                   >
                     <td className="px-3 py-2.5 align-top">
-                      <span className="mono text-[11px] text-[var(--text-secondary)] tabular-nums">
+                      <span className="type-micro mono text-[var(--text-secondary)] tabular-nums">
                         {formatDate(deal.date)}
                       </span>
                     </td>
                     <td className="px-3 py-2.5 align-top">
                       <div className="flex flex-col">
-                        <span title={deal.target} className="text-[13px] font-medium text-[var(--text-primary)] tracking-tight group-hover:text-[var(--accent)] transition-colors block truncate max-w-[280px]">
+                        <span title={deal.target} className="type-row-title group-hover:text-[var(--accent)] transition-colors block truncate max-w-[280px]">
                           {deal.target}
                         </span>
                         {showSeller && (
-                          <span title={deal.seller} className="text-[11px] text-[var(--text-tertiary)] block truncate max-w-[280px]">
+                          <span title={deal.seller} className="type-micro block truncate max-w-[280px]">
                             {deal.seller}
                           </span>
                         )}
@@ -404,7 +404,7 @@ function DealTable({
                     <td title={deal.buyer} className="px-3 py-2.5 align-top max-w-[160px]">
                       <div className="flex flex-col">
                         {shortenBuyer(deal.buyer).map((name, i) => (
-                          <span key={i} className="text-[12px] text-[var(--text-secondary)] truncate block">
+                          <span key={i} className="type-meta truncate block">
                             {name}
                           </span>
                         ))}
@@ -414,7 +414,7 @@ function DealTable({
                       <Tag color={getSectorColor(deal.sector)}>{deal.sector}</Tag>
                     </td>
                     <td className="px-3 py-2.5 align-top">
-                      <span className="text-[12px] text-[var(--text-secondary)]">{deal.region}</span>
+                      <span className="type-meta">{deal.region}</span>
                     </td>
                     <td className="px-3 py-2.5 align-top">
                       <div className="flex items-center gap-2 flex-wrap">
@@ -430,14 +430,14 @@ function DealTable({
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center gap-1 text-[11px] text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors"
+                          className="inline-flex items-center gap-1 type-micro hover:text-[var(--text-primary)] transition-colors"
                           title={deal.sourceName || deal.sourceUrl}
                         >
                           <span className="truncate max-w-[80px]">{deal.sourceName || "Source"}</span>
                           <ExternalLink className="h-3 w-3 flex-shrink-0" />
                         </a>
                       ) : (
-                        <span className="text-[11px] text-[var(--text-tertiary)]">—</span>
+                        <span className="type-micro">—</span>
                       )}
                     </td>
                     <td className="px-2 py-2.5 align-middle text-right">
@@ -451,7 +451,7 @@ function DealTable({
         </div>
 
         {sorted.length === 0 && (
-          <div className="flex items-center justify-center py-16 text-sm text-[var(--text-tertiary)]">
+          <div className="flex items-center justify-center py-16 type-meta text-[var(--text-tertiary)]">
             No deals match your current filters.
           </div>
         )}
@@ -485,12 +485,12 @@ function AdvisorCard({
 }) {
   return (
     <div className="surface p-3">
-      <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)] mb-1.5">
+      <div className="type-label mb-1.5">
         {label}
       </div>
       <div className="space-y-0.5">
         {firms.map((firm) => (
-          <div key={firm} className="text-sm text-[var(--text-primary)] font-medium">
+          <div key={firm} className="type-row-title">
             {firm}
           </div>
         ))}
@@ -553,11 +553,11 @@ function DealDrawer({
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-2 flex-wrap">
-                <span className="mono text-[11px] text-[var(--text-tertiary)] tabular-nums">{deal.legacyId}</span>
+                <span className="type-micro mono tabular-nums">{deal.legacyId}</span>
                 <StatusBadge status={deal.status} />
-                <span className="mono text-[11px] text-[var(--text-tertiary)] tabular-nums">{formatDate(deal.date)}</span>
+                <span className="type-micro mono tabular-nums">{formatDate(deal.date)}</span>
               </div>
-              <h2 className="text-lg lg:text-xl font-semibold text-[var(--text-primary)] leading-tight tracking-tight">
+              <h2 className="type-page-title">
                 {deal.title}
               </h2>
             </div>
@@ -574,14 +574,14 @@ function DealDrawer({
           <div className="flex items-center gap-3 mt-3 flex-wrap">
             <Tag color={getSectorColor(deal.sector)}>{deal.sector}</Tag>
             {deal.subsector && (
-              <span className="text-xs text-[var(--text-tertiary)]">{deal.subsector}</span>
+              <span className="type-micro">{deal.subsector}</span>
             )}
             <div className="h-3 w-px bg-[var(--border)]" />
             {deal.category.map((cat) => (
               <Tag key={cat} color={getCategoryColor(cat)}>{cat}</Tag>
             ))}
             <div className="h-3 w-px bg-[var(--border)]" />
-            <span className="text-xs text-[var(--text-tertiary)]">{deal.country}</span>
+            <span className="type-micro">{deal.country}</span>
           </div>
         </div>
 
@@ -591,18 +591,18 @@ function DealDrawer({
           <div className="surface p-4 space-y-3">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Buyer</div>
+                <div className="type-label">Buyer</div>
                 <div className="flex items-center gap-2 mt-1 flex-wrap">
-                  <span className="text-sm font-medium text-[var(--text-primary)]">{deal.buyer}</span>
+                  <span className="type-row-title">{deal.buyer}</span>
                   {isInfraFund(deal.buyer) && (
                     <Tag variant="solid">Infra fund</Tag>
                   )}
                 </div>
               </div>
               <div>
-                <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Seller</div>
+                <div className="type-label">Seller</div>
                 <div className="flex items-center gap-2 mt-1 flex-wrap">
-                  <span className="text-sm font-medium text-[var(--text-primary)]">{deal.seller}</span>
+                  <span className="type-row-title">{deal.seller}</span>
                   {isInfraFund(deal.seller) && (
                     <Tag variant="solid">Infra fund</Tag>
                   )}
@@ -616,8 +616,8 @@ function DealDrawer({
                 <div className="flex flex-wrap gap-x-6 gap-y-3">
                   {econItems.map((item) => (
                     <div key={item.label}>
-                      <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">{item.label}</div>
-                      <div className="text-sm font-semibold text-[var(--text-primary)] mono tabular-nums mt-0.5">{item.value}</div>
+                      <div className="type-label">{item.label}</div>
+                      <div className="type-row-title font-semibold mono tabular-nums mt-0.5">{item.value}</div>
                     </div>
                   ))}
                 </div>
@@ -627,25 +627,25 @@ function DealDrawer({
             <div className="border-t border-[var(--border)]" />
             <div className="flex flex-wrap gap-x-6 gap-y-3">
               <div>
-                <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Announced</div>
-                <div className="mono text-sm text-[var(--text-secondary)] tabular-nums mt-0.5">{formatDate(deal.date)}</div>
+                <div className="type-label">Announced</div>
+                <div className="type-meta mono tabular-nums mt-0.5">{formatDate(deal.date)}</div>
               </div>
               {deal.closingDate && (
                 <div>
-                  <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Expected close</div>
-                  <div className="text-sm text-[var(--text-secondary)] mt-0.5">{deal.closingDate}</div>
+                  <div className="type-label">Expected close</div>
+                  <div className="type-meta mt-0.5">{deal.closingDate}</div>
                 </div>
               )}
               {deal.assetScale && (
                 <div>
-                  <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Scale</div>
-                  <div className="text-sm text-[var(--text-secondary)] mt-0.5">{deal.assetScale}</div>
+                  <div className="type-label">Scale</div>
+                  <div className="type-meta mt-0.5">{deal.assetScale}</div>
                 </div>
               )}
               {deal.fundVehicle && (
                 <div>
-                  <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Fund</div>
-                  <div className="text-sm text-[var(--text-secondary)] mt-0.5">{deal.fundVehicle}</div>
+                  <div className="type-label">Fund</div>
+                  <div className="type-meta mt-0.5">{deal.fundVehicle}</div>
                 </div>
               )}
             </div>
@@ -654,8 +654,8 @@ function DealDrawer({
           {/* Target overview */}
           {deal.targetDescription && (
             <div>
-              <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-2">Overview</div>
-              <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+              <div className="type-section-title text-[var(--text-tertiary)] mb-2">Overview</div>
+              <p className="type-meta">
                 {deal.targetDescription}
               </p>
             </div>
@@ -664,12 +664,12 @@ function DealDrawer({
           {/* Key Highlights */}
           {deal.keyHighlights && deal.keyHighlights.length > 0 && (
             <div className="border-t border-[var(--border)] pt-6">
-              <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-3">
+              <div className="type-section-title text-[var(--text-tertiary)] mb-3">
                 Key highlights
               </div>
               <ul className="space-y-2">
                 {deal.keyHighlights.map((highlight, i) => (
-                  <li key={i} className="flex gap-3 text-sm">
+                  <li key={i} className="flex gap-3 type-meta">
                     <span aria-hidden className="mt-2 h-1 w-1 rounded-full bg-[var(--text-tertiary)] shrink-0" />
                     <span className="text-[var(--text-secondary)] leading-relaxed">{highlight}</span>
                   </li>
@@ -681,7 +681,7 @@ function DealDrawer({
           {/* Advisors */}
           {hasAdvisors && (
             <div className="border-t border-[var(--border)] pt-6">
-              <div className="text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-3">
+              <div className="type-section-title text-[var(--text-tertiary)] mb-3">
                 Advisors
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -708,7 +708,7 @@ function DealDrawer({
                 href={deal.sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                className="inline-flex items-center gap-1.5 type-meta font-medium hover:text-[var(--text-primary)] transition-colors"
               >
                 View source{deal.sourceName ? ` on ${deal.sourceName}` : ""}
                 <ExternalLink className="h-3 w-3" />
@@ -795,10 +795,10 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
       {/* Page header: title + count + tabs */}
       <div className="flex items-end justify-between flex-wrap gap-4 mb-5">
         <div>
-          <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-primary)] tracking-tight">
+          <h1 className="type-page-title">
             Deals
           </h1>
-          <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-0.5">
+          <p className="type-meta mt-0.5">
             <span className="mono tabular-nums text-[var(--text-primary)] font-medium">{filteredDeals.length.toLocaleString()}</span>
             {filteredDeals.length !== deals.length && (
               <> of <span className="mono tabular-nums">{deals.length.toLocaleString()}</span></>
@@ -823,7 +823,7 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
 
       <div className="surface overflow-hidden">
         <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
-          <span className="text-[11px] text-[var(--text-tertiary)]">
+          <span className="type-micro">
             <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredDeals.length}</span>
             {" "}of{" "}
             <span className="mono text-[var(--text-secondary)] tabular-nums">{deals.length}</span> deals
@@ -832,7 +832,7 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
             <Button className="hidden sm:inline-flex" variant="ghost" size="sm" leadingIcon={<Download className="h-3 w-3" />}>Export</Button>
             <Link
               href="/email-format/index.html"
-              className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 text-[11px] font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+              className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
               <Mail className="h-3 w-3" />
               <span className="truncate">Weekly email</span>

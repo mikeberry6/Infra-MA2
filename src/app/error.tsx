@@ -17,17 +17,17 @@ export default function GlobalError({
   return (
     <div className="mx-auto max-w-[640px] px-4 sm:px-6 py-16">
       <div className="surface px-6 py-8 sm:px-8 sm:py-10">
-        <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+        <div className="type-label">
           Error
         </div>
-        <h1 className="mt-1 text-xl font-semibold text-[var(--text-primary)] tracking-tight">
+        <h1 className="mt-1 type-page-title">
           Something went wrong
         </h1>
-        <p className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
+        <p className="mt-2 type-meta">
           An unexpected error occurred while loading this page.
         </p>
         {error.digest && (
-          <p className="mt-3 mono text-[11px] text-[var(--text-tertiary)] tabular-nums">
+          <p className="mt-3 type-micro mono tabular-nums">
             ID: {error.digest}
           </p>
         )}

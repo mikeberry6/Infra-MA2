@@ -66,13 +66,13 @@ export default function EarningsPage() {
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-8 sm:py-10">
       <div className="mb-6 max-w-3xl">
-        <p className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+        <p className="type-label">
           Public Markets
         </p>
-        <h1 className="mt-1 text-2xl sm:text-3xl font-semibold tracking-tight text-[var(--text-primary)]">
+        <h1 className="mt-1 type-page-title">
           Earnings Tracker
         </h1>
-        <p className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
+        <p className="mt-2 type-meta">
           Public asset-manager signals for infrastructure fundraising,
           deployment, and portfolio activity. This page restores the earnings
           surface while keeping the data model separate from the core deal,
@@ -85,10 +85,10 @@ export default function EarningsPage() {
           <article key={card.manager} className="surface p-4">
             <div className="flex items-start justify-between gap-3">
               <div>
-                <h2 className="text-sm font-semibold text-[var(--text-primary)]">
+                <h2 className="type-row-title font-semibold">
                   {card.manager}
                 </h2>
-                <p className="mono mt-0.5 text-[11px] text-[var(--text-tertiary)]">
+                <p className="type-micro mono mt-0.5">
                   {card.ticker} · {card.period}
                 </p>
               </div>
@@ -102,23 +102,23 @@ export default function EarningsPage() {
                 <ExternalLink className="h-3.5 w-3.5" />
               </a>
             </div>
-            <p className="mt-3 text-xs leading-relaxed text-[var(--text-secondary)]">
+            <p className="mt-3 type-meta">
               {card.context}
             </p>
             <dl className="mt-4 grid grid-cols-1 gap-3 border-t border-[var(--border)] pt-3">
               <div>
-                <dt className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+                <dt className="type-label">
                   Fundraising
                 </dt>
-                <dd className="mt-0.5 text-xs text-[var(--text-primary)]">
+                <dd className="mt-0.5 type-meta text-[var(--text-primary)]">
                   {card.fundraising}
                 </dd>
               </div>
               <div>
-                <dt className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+                <dt className="type-label">
                   Deployment
                 </dt>
-                <dd className="mt-0.5 text-xs text-[var(--text-primary)]">
+                <dd className="mt-0.5 type-meta text-[var(--text-primary)]">
                   {card.deployment}
                 </dd>
               </div>

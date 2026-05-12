@@ -9,8 +9,8 @@ export interface TextInputProps extends Omit<InputHTMLAttributes<HTMLInputElemen
 }
 
 const sizeClasses: Record<Size, string> = {
-  sm: "h-8 text-xs",
-  md: "h-10 text-sm",
+  sm: "h-8 type-meta",
+  md: "h-10 type-row-title",
 };
 
 const iconLeftPad: Record<Size, string> = {

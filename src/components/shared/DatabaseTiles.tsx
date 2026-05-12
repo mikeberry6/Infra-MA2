@@ -53,7 +53,7 @@ export function DatabaseTiles({ counts }: DatabaseTilesProps) {
             role="tab"
             aria-selected={isActive}
             href={tile.href}
-            className={`inline-flex items-center gap-2 h-7 px-3 rounded-md text-xs font-medium transition-colors ${
+            className={`inline-flex items-center gap-2 h-7 px-3 rounded-md type-meta font-medium transition-colors ${
               isActive
                 ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
                 : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
@@ -61,7 +61,7 @@ export function DatabaseTiles({ counts }: DatabaseTilesProps) {
           >
             <span>{tile.label}</span>
             {isActive && (
-              <span className="text-[10px] mono text-[var(--text-tertiary)] tabular-nums">
+              <span className="type-label mono normal-case text-[var(--text-tertiary)] tabular-nums">
                 {counts[tile.key].toLocaleString()}
               </span>
             )}

@@ -42,7 +42,7 @@ export function SimpleBarRow({
   const barPct = maxCount > 0 ? (row.count / maxCount) * 100 : 0;
   return (
     <div className="grid grid-cols-[minmax(0,9rem)_1fr_auto] items-center gap-3">
-      <span className="text-xs font-medium text-[var(--text-primary)] truncate">
+      <span className="type-row-title truncate">
         {row.name}
       </span>
       <div className="relative h-1.5 w-full bg-[var(--bg-hover)] rounded-full overflow-hidden">
@@ -55,7 +55,7 @@ export function SimpleBarRow({
           aria-label={`${row.name}: ${row.count}`}
         />
       </div>
-      <span className="text-[11px] mono text-[var(--text-secondary)] tabular-nums tracking-tight">
+      <span className="type-micro mono text-[var(--text-secondary)] tabular-nums">
         {row.count}
       </span>
     </div>
@@ -76,7 +76,7 @@ export function RankingColumn({
   const maxCount = rows[0]?.count ?? 0;
   return (
     <div className="min-w-0">
-      <h3 className="text-[11px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider mb-3">
+      <h3 className="type-section-title text-[var(--text-tertiary)] mb-3">
         {title}
       </h3>
       <div className="space-y-2">

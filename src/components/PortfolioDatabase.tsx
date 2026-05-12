@@ -149,7 +149,7 @@ function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
 
   if (companies.length === 0) {
     return (
-      <div className="py-10 text-center text-sm text-[var(--text-tertiary)]">
+      <div className="py-10 text-center type-meta text-[var(--text-tertiary)]">
         No portfolio companies match your current filters. Try broadening your search.
       </div>
     );
@@ -157,7 +157,7 @@ function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
 
   return (
     <div>
-      <p className="text-xs text-[var(--text-secondary)] mb-5">
+      <p className="type-meta mb-5">
         <span className="mono text-[var(--text-primary)] font-medium tabular-nums">{companies.length}</span> portfolio companies
         {" · "}
         <span className="mono text-[var(--text-primary)] font-medium tabular-nums">
@@ -225,7 +225,7 @@ function PortCoCard({
       className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
     >
       <div className="flex items-start justify-between gap-3 mb-2">
-        <h4 className="text-sm font-medium text-[var(--text-primary)] leading-snug tracking-tight truncate">
+        <h4 className="type-row-title truncate">
           {company.name}
         </h4>
         <ChevronRight className="h-4 w-4 text-[var(--text-tertiary)] shrink-0 mt-0.5" />
@@ -233,28 +233,28 @@ function PortCoCard({
       <div className="flex flex-wrap gap-2 mb-2.5">
         <Tag color={getPortCoSectorColor(company.sector)}>{company.sector}</Tag>
         {company.subsector && (
-          <span className="text-[11px] text-[var(--text-tertiary)]">{company.subsector}</span>
+          <span className="type-micro">{company.subsector}</span>
         )}
       </div>
-      <div className="grid grid-cols-2 gap-3 text-xs">
+      <div className="grid grid-cols-2 gap-3">
         <div>
-          <div className="text-[10px] uppercase tracking-wider text-[var(--text-tertiary)]">Country</div>
-          <div className="text-[var(--text-secondary)] mt-0.5 truncate">{company.countryTags.join(", ")}</div>
+          <div className="type-label">Country</div>
+          <div className="type-meta mt-0.5 truncate">{company.countryTags.join(", ")}</div>
         </div>
         <div>
-          <div className="text-[10px] uppercase tracking-wider text-[var(--text-tertiary)]">Firm</div>
+          <div className="type-label">Firm</div>
           <div className="flex items-center gap-1.5 min-w-0">
-            <span className="text-[var(--text-secondary)] font-medium truncate">
+            <span className="type-meta font-medium truncate">
               {display.firm || "—"}
             </span>
             {display.isCoOwner && <Tag variant="solid">Co-owner</Tag>}
           </div>
           {display.isCoOwner ? (
-            <div className="text-[11px] italic text-[var(--text-tertiary)] truncate">
+            <div className="type-micro italic truncate">
               via {display.primaryFirm}
             </div>
           ) : (
-            <div className="text-[11px] italic text-[var(--text-tertiary)] truncate">
+            <div className="type-micro italic truncate">
               {company.investmentYear ?? INVESTMENT_YEAR_NA}
             </div>
           )}
@@ -310,7 +310,7 @@ function PortCoTable({
       <button
         type="button"
         onClick={() => toggleSort(field)}
-        className="inline-flex items-center gap-1 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
+        className="inline-flex items-center gap-1 type-table-header hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
       >
         {label}
         {sortField === field && (
@@ -325,7 +325,7 @@ function PortCoTable({
 
   if (companies.length === 0) {
     return (
-      <div className="flex items-center justify-center py-16 text-sm text-[var(--text-tertiary)]">
+      <div className="flex items-center justify-center py-16 type-meta text-[var(--text-tertiary)]">
         No portfolio companies match your current filters.
       </div>
     );
@@ -342,10 +342,10 @@ function PortCoTable({
                 <SortHeader field="name" label="Company" />
                 <SortHeader field="firm" label="Firm" />
                 <SortHeader field="sector" label="Sector" />
-                <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                <th className="text-left px-3 py-2 type-table-header">
                   Subsector
                 </th>
-                <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                <th className="text-left px-3 py-2 type-table-header">
                   Country
                 </th>
                 <th className="w-6" aria-hidden />
@@ -361,23 +361,23 @@ function PortCoTable({
                   className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
                 >
                   <td className="px-3 py-2.5 align-top max-w-[260px]">
-                    <span title={company.name} className="text-[13px] font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
+                    <span title={company.name} className="type-row-title group-hover:text-[var(--accent)] transition-colors truncate block">
                       {company.name}
                     </span>
                   </td>
                   <td className="px-3 py-2.5 align-top max-w-[200px]">
                     <div className="flex items-center gap-1.5 min-w-0">
-                      <span title={display.firm} className="text-[12px] text-[var(--text-secondary)] truncate">
+                      <span title={display.firm} className="type-meta truncate">
                         {display.firm || "—"}
                       </span>
                       {display.isCoOwner && <Tag variant="solid">Co-owner</Tag>}
                     </div>
                     {display.isCoOwner ? (
-                      <span className="text-[11px] italic text-[var(--text-tertiary)] truncate block">
+                      <span className="type-micro italic truncate block">
                         via {display.primaryFirm}
                       </span>
                     ) : (
-                      <span className="text-[11px] italic text-[var(--text-tertiary)] truncate block">
+                      <span className="type-micro italic truncate block">
                         {company.investmentYear ?? INVESTMENT_YEAR_NA}
                       </span>
                     )}
@@ -386,10 +386,10 @@ function PortCoTable({
                     <Tag color={getPortCoSectorColor(company.sector)}>{company.sector}</Tag>
                   </td>
                   <td className="px-3 py-2.5 align-top">
-                    <span className="text-[12px] text-[var(--text-secondary)]">{company.subsector || "—"}</span>
+                    <span className="type-meta">{company.subsector || "—"}</span>
                   </td>
                   <td className="px-3 py-2.5 align-top">
-                    <span className="text-[12px] text-[var(--text-secondary)]">{company.countryTags.join(", ")}</span>
+                    <span className="type-meta">{company.countryTags.join(", ")}</span>
                   </td>
                   <td className="px-2 py-2.5 align-middle text-right">
                     <ChevronRight className="h-3.5 w-3.5 text-[var(--text-tertiary)] opacity-30 group-hover:opacity-100 group-hover:text-[var(--text-secondary)] transition-all inline-block" />
@@ -503,10 +503,10 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
       <div className="flex items-end justify-between flex-wrap gap-4 mb-5">
         <div>
-          <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-primary)] tracking-tight">
+          <h1 className="type-page-title">
             PortCos
           </h1>
-          <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-0.5">
+          <p className="type-meta mt-0.5">
             <span className="mono tabular-nums text-[var(--text-primary)] font-medium">{filteredCompanies.length.toLocaleString()}</span>
             {filteredCompanies.length !== portcos.length && (
               <> of <span className="mono tabular-nums">{portcos.length.toLocaleString()}</span></>
@@ -535,7 +535,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
 
       <div className="surface overflow-hidden">
         <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
-          <span className="text-[11px] text-[var(--text-tertiary)]">
+          <span className="type-micro">
             <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredCompanies.length}</span>
             {" "}of{" "}
             <span className="mono text-[var(--text-secondary)] tabular-nums">{portcos.length}</span> companies

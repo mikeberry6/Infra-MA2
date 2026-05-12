@@ -149,18 +149,18 @@ function IntelligenceHeader({
       <div className="px-4 py-4 sm:px-5 sm:py-5">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <div className="mb-2 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+            <div className="mb-2 inline-flex items-center gap-2 type-label">
               <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
               Market Intelligence
             </div>
-            <h1 className="text-2xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-3xl">
+            <h1 className="type-page-title">
               News Feed
             </h1>
-            <p className="mt-1.5 text-sm leading-6 text-[var(--text-secondary)]">
+            <p className="mt-1.5 type-meta">
               Infrastructure market signals across transaction activity, fundraising momentum, and rumored sale processes.
             </p>
           </div>
-          <div className="text-[11px] text-[var(--text-tertiary)]">
+          <div className="type-micro">
             Updated <span className="mono tabular-nums">{formatDate(lastUpdated)}</span>
           </div>
         </div>
@@ -170,9 +170,9 @@ function IntelligenceHeader({
             <div key={metric.label} className="rounded-md border border-[var(--border)] bg-[var(--bg-subtle)] px-3 py-2.5">
               <div className="flex items-center gap-2">
                 <span aria-hidden className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: metric.color }} />
-                <span className="text-[11px] font-medium text-[var(--text-secondary)]">{metric.label}</span>
+                <span className="type-micro font-medium text-[var(--text-secondary)]">{metric.label}</span>
               </div>
-              <div className="mt-1 mono text-lg font-semibold tabular-nums text-[var(--text-primary)]">
+              <div className="mt-1 mono type-page-title tabular-nums">
                 {metric.value.toLocaleString()}
               </div>
             </div>
@@ -198,7 +198,7 @@ function CategorySpotlight({
   return (
     <section className="mb-5">
       <div className="mb-3 flex items-center justify-between gap-3">
-        <span className="text-[11px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+        <span className="type-section-title text-[var(--text-tertiary)]">
           Latest Signals
         </span>
         <div className="h-px flex-1 bg-[var(--border)]" />
@@ -213,9 +213,9 @@ function CategorySpotlight({
               <div key={category} className="surface min-h-[132px] px-4 py-3.5">
                 <div className="flex items-center gap-2">
                   <Icon className="h-3.5 w-3.5" style={{ color }} />
-                  <span className="text-[11px] font-medium text-[var(--text-secondary)]">{categoryShortLabel(category)}</span>
+                  <span className="type-micro font-medium text-[var(--text-secondary)]">{categoryShortLabel(category)}</span>
                 </div>
-                <p className="mt-4 text-xs text-[var(--text-tertiary)]">No current signal in this category.</p>
+                <p className="mt-4 type-micro">No current signal in this category.</p>
               </div>
             );
           }
@@ -231,18 +231,18 @@ function CategorySpotlight({
               <div className="mb-3 flex items-center justify-between gap-3">
                 <span className="inline-flex min-w-0 items-center gap-2">
                   <Icon className="h-3.5 w-3.5 shrink-0" style={{ color }} />
-                  <span className="truncate text-[11px] font-medium text-[var(--text-secondary)]">
+                  <span className="truncate type-micro font-medium text-[var(--text-secondary)]">
                     {categoryShortLabel(category)}
                   </span>
                 </span>
-                <span className="mono shrink-0 text-[10px] tabular-nums text-[var(--text-tertiary)]">
+                <span className="mono shrink-0 type-label normal-case tabular-nums">
                   {formatDate(item.publishedAt)}
                 </span>
               </div>
-              <h2 className="line-clamp-2 text-sm font-semibold leading-snug tracking-tight text-[var(--text-primary)] group-hover:text-[var(--accent)]">
+              <h2 className="line-clamp-2 type-row-title font-semibold group-hover:text-[var(--accent)]">
                 {item.title}
               </h2>
-              <p className="mt-2 line-clamp-2 text-xs leading-5 text-[var(--text-secondary)]">
+              <p className="mt-2 line-clamp-2 type-meta">
                 {item.summary}
               </p>
             </button>
@@ -311,7 +311,7 @@ function NewsFilterBar({
               key={option.label}
               type="button"
               onClick={() => onDateWindowChange(option.label)}
-              className={`h-7 rounded px-2 text-[11px] font-medium transition-colors ${
+              className={`h-7 rounded px-2 type-micro font-medium transition-colors ${
                 dateWindow === option.label
                   ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
                   : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
@@ -353,7 +353,7 @@ function MentionPill({
 }) {
   const Icon = mentionIcon(mention.type);
   const content = (
-    <span className="inline-flex max-w-full items-center gap-1.5 rounded-md border border-[var(--border)] bg-[var(--bg-subtle)] px-2 py-1 text-[11px] font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]">
+    <span className="inline-flex max-w-full items-center gap-1.5 rounded-md border border-[var(--border)] bg-[var(--bg-subtle)] px-2 py-1 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]">
       <Icon className="h-3 w-3 shrink-0" />
       <span className="truncate">{mention.label}</span>
     </span>
@@ -392,7 +392,7 @@ function NewsCard({
       >
         <div className="mb-2.5 flex flex-wrap items-center gap-2">
           <span
-            className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-[11px] font-medium"
+            className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 type-micro font-medium"
             style={{
               color: "#444444",
               backgroundColor: `${categoryColor}08`,
@@ -403,21 +403,21 @@ function NewsCard({
             <span>{item.category}</span>
           </span>
           {item.isRumor && <Tag variant="solid">Rumor</Tag>}
-          <span className="inline-flex items-center gap-1.5 text-[11px] text-[var(--text-tertiary)]">
+          <span className="inline-flex items-center gap-1.5 type-micro">
             <CalendarDays className="h-3 w-3" />
             <span className="mono tabular-nums">{formatDate(item.publishedAt)}</span>
           </span>
           {item.sourceName && (
-            <span className="text-[11px] text-[var(--text-tertiary)]">· {item.sourceName}</span>
+            <span className="type-micro">· {item.sourceName}</span>
           )}
         </div>
 
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
-            <h2 className="text-sm font-semibold leading-snug tracking-tight text-[var(--text-primary)] sm:text-[15px]">
+            <h2 className="type-row-title font-semibold">
               {item.title}
             </h2>
-            <p className="mt-1.5 line-clamp-2 text-xs leading-5 text-[var(--text-secondary)]">
+            <p className="mt-1.5 line-clamp-2 type-meta">
               {item.summary}
             </p>
           </div>
@@ -432,7 +432,7 @@ function NewsCard({
               <MentionPill key={`${mention.type}-${mention.id}`} mention={mention} interactive={false} />
             ))}
             {item.mentions.length > visibleMentions.length && (
-              <span className="inline-flex items-center rounded-md border border-[var(--border)] px-2 py-1 text-[11px] text-[var(--text-tertiary)]">
+              <span className="inline-flex items-center rounded-md border border-[var(--border)] px-2 py-1 type-micro">
                 +{item.mentions.length - visibleMentions.length}
               </span>
             )}
@@ -445,7 +445,7 @@ function NewsCard({
             href={item.sourceUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-7 items-center gap-1.5 rounded-md px-2 text-[11px] font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
+            className="inline-flex h-7 items-center gap-1.5 rounded-md px-2 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
           >
             <ExternalLink className="h-3 w-3" />
             Source
@@ -472,7 +472,7 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
             <Link
               key={firm.label}
               href={firm.href || "/funds"}
-              className="block rounded-md px-2 py-1.5 text-xs transition-colors hover:bg-[var(--bg-hover)]"
+              className="block rounded-md px-2 py-1.5 type-meta transition-colors hover:bg-[var(--bg-hover)]"
             >
               <span className="flex items-center justify-between gap-3">
                 <span className="truncate text-[var(--text-secondary)]">{firm.label}</span>
@@ -486,7 +486,7 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
               </span>
             </Link>
           ))}
-          {firms.length === 0 && <div className="text-xs text-[var(--text-tertiary)]">No firm mentions.</div>}
+          {firms.length === 0 && <div className="type-meta text-[var(--text-tertiary)]">No firm mentions.</div>}
         </div>
       </div>
 
@@ -497,7 +497,7 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
             <Link
               key={company.label}
               href={company.href || "/portfolio"}
-              className="block rounded-md px-2 py-1.5 text-xs transition-colors hover:bg-[var(--bg-hover)]"
+              className="block rounded-md px-2 py-1.5 type-meta transition-colors hover:bg-[var(--bg-hover)]"
             >
               <span className="flex items-center justify-between gap-3">
                 <span className="truncate text-[var(--text-secondary)]">{company.label}</span>
@@ -511,7 +511,7 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
               </span>
             </Link>
           ))}
-          {portcos.length === 0 && <div className="text-xs text-[var(--text-tertiary)]">No PortCo mentions.</div>}
+          {portcos.length === 0 && <div className="type-meta text-[var(--text-tertiary)]">No PortCo mentions.</div>}
         </div>
       </div>
 
@@ -519,10 +519,10 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
         <SectionLabel>Rumor Watch</SectionLabel>
         <div className="rounded-md border border-[#d98b1c]/15 bg-[#d98b1c]/[0.04] px-3 py-3">
           <div className="flex items-center justify-between">
-            <span className="text-xs text-[var(--text-secondary)]">Active sale-process signals</span>
-            <span className="mono text-lg font-semibold tabular-nums text-[var(--text-primary)]">{rumorCount}</span>
+            <span className="type-meta">Active sale-process signals</span>
+            <span className="mono type-page-title tabular-nums">{rumorCount}</span>
           </div>
-          <p className="mt-1.5 text-[11px] leading-4 text-[var(--text-tertiary)]">
+          <p className="mt-1.5 type-micro">
             Sourced from tracked PortCo milestones and curated rumor records.
           </p>
         </div>
@@ -561,7 +561,7 @@ function NewsDrawer({
         <div className="sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 px-5 py-4 backdrop-blur-md">
           <div className="mb-3 flex items-center justify-between gap-3">
             <span
-              className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-[11px] font-medium"
+              className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 type-micro font-medium"
               style={{
                 color: "#444444",
                 backgroundColor: `${categoryColor}08`,
@@ -580,10 +580,10 @@ function NewsDrawer({
               <X className="h-4 w-4" />
             </button>
           </div>
-          <h2 className="text-xl font-semibold leading-tight tracking-tight text-[var(--text-primary)]">
+          <h2 className="type-page-title">
             {item.title}
           </h2>
-          <div className="mt-2 flex flex-wrap items-center gap-2 text-[11px] text-[var(--text-tertiary)]">
+          <div className="mt-2 flex flex-wrap items-center gap-2 type-micro">
             <span className="mono tabular-nums">{formatDate(item.publishedAt)}</span>
             {item.sourceName && <span>· {item.sourceName}</span>}
             <span>· {item.confidence} confidence</span>
@@ -593,7 +593,7 @@ function NewsDrawer({
         <div className="flex-1 overflow-y-auto px-5 py-5">
           <section className="mb-6">
             <SectionLabel>Brief</SectionLabel>
-            <p className="text-sm leading-6 text-[var(--text-secondary)]">{item.summary}</p>
+            <p className="type-meta">{item.summary}</p>
           </section>
 
           {item.mentions.length > 0 && (
@@ -606,11 +606,11 @@ function NewsDrawer({
                     <span className="surface flex items-center justify-between gap-3 px-3 py-2.5 transition-colors hover:bg-[var(--bg-subtle)]">
                       <span className="flex min-w-0 items-center gap-2">
                         <MentionIcon className="h-3.5 w-3.5 shrink-0 text-[var(--text-tertiary)]" />
-                        <span className="truncate text-sm font-medium text-[var(--text-primary)]">
+                        <span className="truncate type-row-title">
                           {mention.label}
                         </span>
                       </span>
-                      <span className="shrink-0 text-[11px] text-[var(--text-tertiary)]">{mention.type}</span>
+                      <span className="shrink-0 type-micro">{mention.type}</span>
                     </span>
                   );
                   return mention.href ? (
@@ -629,10 +629,10 @@ function NewsDrawer({
             <SectionLabel>Source</SectionLabel>
             <div className="surface flex items-center justify-between gap-3 px-3 py-3">
               <div className="min-w-0">
-                <div className="truncate text-sm font-medium text-[var(--text-primary)]">
+                <div className="truncate type-row-title">
                   {item.sourceName || "News source"}
                 </div>
-                <div className="mt-0.5 truncate text-xs text-[var(--text-tertiary)]">
+                <div className="mt-0.5 truncate type-micro">
                   {isHttpUrl(item.sourceUrl) ? item.sourceUrl : "Internal record"}
                 </div>
               </div>
@@ -641,7 +641,7 @@ function NewsDrawer({
                   href={item.sourceUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex h-8 items-center gap-1.5 rounded-md border border-[var(--border)] px-2.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
+                  className="inline-flex h-8 items-center gap-1.5 rounded-md border border-[var(--border)] px-2.5 type-meta font-medium transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
                 >
                   <ExternalLink className="h-3.5 w-3.5" />
                   Open
@@ -745,10 +745,10 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_300px]">
         <div>
           <div className="mb-3 flex items-center justify-between gap-3">
-            <span className="text-[11px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+            <span className="type-section-title text-[var(--text-tertiary)]">
               Signal Tape
             </span>
-            <span className="mono text-[11px] tabular-nums text-[var(--text-tertiary)]">
+            <span className="type-micro mono tabular-nums">
               {displayItems.length.toLocaleString()} items
             </span>
           </div>
@@ -761,8 +761,8 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
               <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--bg-subtle)] text-[var(--text-tertiary)]">
                 <Search className="h-4 w-4" />
               </div>
-              <h2 className="mt-3 text-sm font-medium text-[var(--text-primary)]">No signals matched</h2>
-              <p className="mt-1 text-xs text-[var(--text-tertiary)]">
+              <h2 className="mt-3 type-row-title">No signals matched</h2>
+              <p className="mt-1 type-micro">
                 Broaden the category, entity, or date filters to bring more items back into view.
               </p>
             </div>

@@ -42,10 +42,10 @@ export default async function SearchPage({
 
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 py-8 sm:py-10">
-      <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-primary)] tracking-tight mb-1">
+      <h1 className="type-page-title mb-1">
         Search
       </h1>
-      <p className="text-xs sm:text-sm text-[var(--text-secondary)] mb-6">
+      <p className="type-meta mb-6">
         Across deals, portfolio companies, and funds.
       </p>
 
@@ -62,7 +62,7 @@ export default async function SearchPage({
       </form>
 
       {query && (
-        <p className="text-xs text-[var(--text-tertiary)] mb-3">
+        <p className="type-micro mb-3">
           <span className="mono tabular-nums text-[var(--text-secondary)]">{results.length}</span> result{results.length !== 1 ? "s" : ""} for &ldquo;{query}&rdquo;
         </p>
       )}
@@ -81,27 +81,27 @@ export default async function SearchPage({
                   className="h-[5px] w-[5px] rounded-full"
                   style={{ backgroundColor: TYPE_DOT_COLOR[result.type] }}
                 />
-                <span className="text-[11px] font-medium text-[var(--text-secondary)]">
+                <span className="type-micro font-medium text-[var(--text-secondary)]">
                   {TYPE_LABEL[result.type]}
                 </span>
               </span>
               {result.sector && (
-                <span className="text-[11px] text-[var(--text-tertiary)]">· {result.sector}</span>
+                <span className="type-micro">· {result.sector}</span>
               )}
               {result.region && (
-                <span className="text-[11px] text-[var(--text-tertiary)]">· {result.region}</span>
+                <span className="type-micro">· {result.region}</span>
               )}
             </div>
-            <h3 className="text-sm font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
+            <h3 className="type-row-title group-hover:text-[var(--accent)] transition-colors">
               {result.title}
             </h3>
-            <p className="text-xs text-[var(--text-secondary)] mt-0.5">{result.subtitle}</p>
+            <p className="type-meta mt-0.5">{result.subtitle}</p>
           </Link>
         ))}
       </div>
 
       {query && results.length === 0 && (
-        <div className="py-12 text-center text-sm text-[var(--text-tertiary)]">
+        <div className="py-12 text-center type-meta text-[var(--text-tertiary)]">
           No results matched your query.
         </div>
       )}
