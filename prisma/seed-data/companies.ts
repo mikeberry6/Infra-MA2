@@ -8,7 +8,7 @@ export const companies: PortCo[] = [
     subsector: "Solid waste collection, transfer, landfill, and recycling",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "3i North American Infrastructure Fund",
+    ownershipVehicle: "3i NA Infrastructure Fund",
     description: "Amwaste provides non-hazardous solid waste collection, transfer, landfill, and recycling services in the Southeastern United States. Its customer base includes residential, commercial, construction and industrial end markets across Alabama, Georgia, and Louisiana. The business operates an asset-heavy, vertically integrated model supported by owned disposal sites, transfer stations, and recycling infrastructure. Public materials describe a platform with more than 300,000 customers, eight landfill sites, ten transfer stations, and a materials recovery facility. The company has expanded through bolt-on acquisitions and local contract wins to deepen density in its core Southeastern markets. 3i invested growth capital through the 3i North American Infrastructure Fund in July 2023, and current ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
@@ -29,7 +29,7 @@ export const companies: PortCo[] = [
       { label: "Wastetodaymagazine — Amwaste LLC", url: "https://www.wastetodaymagazine.com/news/amwaste-acquires-waste-away-environmental/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
-      { investmentFirm: "3i Infrastructure", ownershipVehicle: "3i North American Infrastructure Fund", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "3i Infrastructure", ownershipVehicle: "3i NA Infrastructure Fund", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -39,7 +39,7 @@ export const companies: PortCo[] = [
     subsector: "Solid waste collection, transfer, and landfill services",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "3i North American Infrastructure Fund",
+    ownershipVehicle: "3i NA Infrastructure Fund",
     description: "EC Waste provides non-hazardous solid waste collection, transfer, recycling, and disposal services across Puerto Rico. Its customers include residential, commercial, industrial, and municipal accounts served through an island-wide operating footprint. The business uses an asset-heavy, vertically integrated model supported by disposal sites, transfer infrastructure, hauling operations, and related environmental services. 3i has described the company as the largest vertically integrated waste-services provider in Puerto Rico, with more than 80,000 customers and multiple disposal and transfer assets. The platform has grown through acquisitions, including the 2020 purchase of Republic Services of Puerto Rico and the 2025 acquisition of ARB Waste Services. 3i acquired a majority interest through the 3i North American Infrastructure Fund in 2021, with management reinvesting alongside the fund.",
     status: "Active",
     countryTags: ["United States"],
@@ -60,7 +60,7 @@ export const companies: PortCo[] = [
       { label: "Postcp — EC Waste", url: "https://www.postcp.com/article?ID=528966", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "3i Infrastructure", ownershipVehicle: "3i North American Infrastructure Fund", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "3i Infrastructure", ownershipVehicle: "3i NA Infrastructure Fund", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -70,7 +70,7 @@ export const companies: PortCo[] = [
     subsector: "Short-line freight railroads",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "3i North American Infrastructure Fund",
+    ownershipVehicle: "3i NA Infrastructure Fund",
     description: "Regional Rail owns and operates short-line freight railroads and related rail services across the United States and Canada. Its customer base spans industrial, agricultural, chemicals, aggregates, food, and logistics end markets that depend on local freight connectivity and transload services. The company follows an asset-heavy operating model built around owned and leased track, rail-served industrial infrastructure, and operating railroad franchises. Public disclosures describe a network of more than 875 route miles, 17 railroad operations, and approximately 65,000 annual carloads as of 2023. The footprint expanded materially after 2019 through acquisitions in Florida, the Midwest, Ohio, Indiana, and western Canada. 3i agreed to acquire 100% of Regional Rail in 2019 as its North American rail infrastructure platform and remains the disclosed owner.",
     status: "Active",
     countryTags: ["United States"],
@@ -92,7 +92,7 @@ export const companies: PortCo[] = [
       { label: "Regional Rail — Regional Rail, LLC", url: "https://regional-rail.com/2026/01/16/regional-rail-expands-its-network-in-the-midwest-via-the-acquisition-of-several-short-line-freight-railroads/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
-      { investmentFirm: "3i Infrastructure", ownershipVehicle: "3i North American Infrastructure Fund", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "3i Infrastructure", ownershipVehicle: "3i NA Infrastructure Fund", investmentYear: 2019, status: "Active" },
     ],
   },
   {
@@ -1077,7 +1077,7 @@ export const companies: PortCo[] = [
     subsector: "Education public-private partnership",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "International Public Partnerships",
+    ownershipVehicle: "International Public Partnerships (INPP)",
     description: "Alberta Schools Alternative Procurement I is a public-private partnership covering 18 school facilities in Calgary and Edmonton. The project serves provincial education authorities, school boards, students, and local communities through a long-term availability-based social infrastructure model. Public materials describe the scope as design, construction, finance, and lifecycle maintenance rather than direct education service provision. Amber-managed International Public Partnerships has identified the project within its education portfolio, and the schools were originally procured by the Province of Alberta under its school P3 program. Reviewed public sources do not disclose the current project-level ownership split within the investment vehicle.",
     status: "Active",
     countryTags: ["Canada"],
@@ -1097,7 +1097,7 @@ export const companies: PortCo[] = [
       { label: "Announcement date source — Amber Infrastructure — Alberta Schools Alternative Procurement I", url: "https://www.investegate.co.uk/announcement/rns/international-public-partnerships-ltd---inpp/alberta-schools-acquisition/1790414", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Amber Infrastructure", ownershipVehicle: "International Public Partnerships", investmentYear: 2008, status: "Active" },
+      { investmentFirm: "Amber Infrastructure", ownershipVehicle: "International Public Partnerships (INPP)", investmentYear: 2008, status: "Active" },
     ],
   },
   {
@@ -1225,7 +1225,7 @@ export const companies: PortCo[] = [
     subsector: "Judicial public-private partnership",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "International Public Partnerships",
+    ownershipVehicle: "International Public Partnerships (INPP)",
     description: "Durham Region Courthouse is a judicial public-private partnership in Ontario. The project serves the provincial court system and related users through a long-term availability-based concession covering facility delivery and lifecycle responsibilities. Public materials identify the asset within Amber-managed judicial infrastructure portfolios rather than as a demand-exposed commercial property. The courthouse reached financial close in 2007 and has been held through infrastructure investment vehicles associated with Amber and International Public Partnerships. Reviewed public sources do not disclose the current project-level ownership split.",
     status: "Active",
     countryTags: ["Canada"],
@@ -1245,7 +1245,7 @@ export const companies: PortCo[] = [
       { label: "Ccppp — Durham Region Courthouse", url: "https://www.ccppp.ca/events-and-awards/awards/past-winners/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Amber Infrastructure", ownershipVehicle: "International Public Partnerships", investmentYear: 2007, status: "Active" },
+      { investmentFirm: "Amber Infrastructure", ownershipVehicle: "International Public Partnerships (INPP)", investmentYear: 2007, status: "Active" },
     ],
   },
   {
@@ -3824,7 +3824,7 @@ export const companies: PortCo[] = [
     subsector: "Operating Renewables Portfolio",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "ArcLight Infra Partners Fund VIII",
+    ownershipVehicle: "ArcLight Infrastructure Partners Fund VIII",
     description: "Phoenix Renewables is an operating portfolio of renewable generation assets managed within ArcLight's renewables services platform. The assets serve wholesale power markets through an asset-heavy operating model focused on existing wind and solar infrastructure rather than early-stage development. ArcLight's portfolio-services materials identify Phoenix Renewables as one of the initial ArcLight Fund VIII portfolio investments managed through SkyVest Renewables. The platform is therefore tied to operating renewable asset management and commercialization rather than a standalone equipment or services business. ArcLight's renewable-services platform disclosed the management structure in 2024, while public sources reviewed do not disclose Phoenix's separate founding year or ownership percentages.",
     status: "Active",
     countryTags: ["United States"],
@@ -3840,7 +3840,7 @@ export const companies: PortCo[] = [
       { label: "PR Newswire — Phoenix Renewables", url: "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html", type: "PRESS_RELEASE" },
     ],
     owners: [
-      { investmentFirm: "ArcLight Capital Partners", ownershipVehicle: "ArcLight Infra Partners Fund VIII", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "ArcLight Capital Partners", ownershipVehicle: "ArcLight Infrastructure Partners Fund VIII", investmentYear: 2024, status: "Active" },
     ],
   },
   {
@@ -4024,7 +4024,7 @@ export const companies: PortCo[] = [
     subsector: "Operating Renewables Portfolio",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "ArcLight Infra Partners Fund VIII",
+    ownershipVehicle: "ArcLight Infrastructure Partners Fund VIII",
     description: "Thunderbird Renewables is an operating portfolio of renewable generation assets managed within ArcLight's renewables services platform. The assets serve wholesale power markets through an asset-heavy operating model focused on commercial optimization of existing renewable infrastructure. ArcLight's portfolio-services materials identify Thunderbird Renewables as one of the initial ArcLight Fund VIII portfolio investments managed through SkyVest Renewables. The platform is therefore structured around ownership and management of operating renewable assets rather than equipment supply or greenfield development alone. ArcLight disclosed the management structure in 2024, while public sources reviewed do not disclose Thunderbird's separate founding year or detailed ownership percentages.",
     status: "Active",
     countryTags: ["United States"],
@@ -4040,7 +4040,7 @@ export const companies: PortCo[] = [
       { label: "PR Newswire — Thunderbird Renewables", url: "https://www.prnewswire.com/news-releases/arclight-announces-operating-focused-renewables-initiative-and-new-wind-investment-302207994.html", type: "PRESS_RELEASE" },
     ],
     owners: [
-      { investmentFirm: "ArcLight Capital Partners", ownershipVehicle: "ArcLight Infra Partners Fund VIII", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "ArcLight Capital Partners", ownershipVehicle: "ArcLight Infrastructure Partners Fund VIII", investmentYear: 2024, status: "Active" },
     ],
   },
   {
@@ -4251,7 +4251,7 @@ export const companies: PortCo[] = [
     subsector: "Neutral-host towers and metropolitan fiber",
     region: "North America",
     country: "Mexico",
-    ownershipVehicle: "Ardian Americas Infrastructure Fund V",
+    ownershipVehicle: "Ardian Americas Infrastructure Fund V (AAIF V)",
     description: "MXT Holdings develops, owns, and operates neutral-host telecommunications infrastructure in Mexico, including towers and metropolitan fiber assets. Its customers are mobile network operators and other communications users that require shared infrastructure rather than single-tenant proprietary networks. The operating model is asset-heavy and lease driven, with recurring revenue tied to long-lived telecom sites and network infrastructure. The platform is focused on Mexico and is positioned around neutral-host infrastructure that supports carrier densification and connectivity demand. Ardian announced in 2023 that it had acquired a 50% co-control equity interest in MXT Holdings, which it described as its first direct investment in Mexico.",
     status: "Active",
     countryTags: ["Mexico"],
@@ -4270,7 +4270,7 @@ export const companies: PortCo[] = [
       { label: "Investment date source — Ardian — MXT Holdings", url: "https://www.ardian.com/expertise/real-assets/infrastructure/investments?nid=3350", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Ardian", ownershipVehicle: "Ardian Americas Infrastructure Fund V", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "Ardian", ownershipVehicle: "Ardian Americas Infrastructure Fund V (AAIF V)", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -9775,7 +9775,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "n.a.", investmentYear: 2025, status: "Active" },
-      { investmentFirm: "Blackstone", ownershipVehicle: "Blackstone Infrastructure Partners", investmentYear: 2021, exitYear: 2025, status: "Realized" },
+      { investmentFirm: "Blackstone", ownershipVehicle: "Blackstone Infrastructure Partners (BIP)", investmentYear: 2021, exitYear: 2025, status: "Realized" },
     ],
   },
   {
@@ -10205,7 +10205,7 @@ export const companies: PortCo[] = [
     subsector: "Electric transmission cable",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Brookfield Super-Core Infra",
+    ownershipVehicle: "Brookfield Super-Core Infrastructure Partners",
     description: "Trans Bay Cable owns and operates a high-voltage direct-current transmission link between Pittsburg and San Francisco, California. Its function is to provide transmission capacity into the San Francisco area rather than to generate power or provide retail utility service directly. The business is asset-heavy because value is tied to a long-lived submarine and underground transmission cable system and related transmission rights. Current company materials describe the system as a 53-mile cable that supplies approximately 40% of the electricity used daily in San Francisco and surrounding areas. Its principal operating footprint is in California. NextEra Energy Transmission completed its acquisition of the asset in July 2019, and California regulators approved a 2026 transfer of a 50% indirect ownership interest in Trans Bay Cable to Brookfield Corporation subsidiary California Transmission Company L.P.; reviewed sources did not disclose a separate close date.",
     status: "Active",
     countryTags: ["United States"],
@@ -10226,7 +10226,7 @@ export const companies: PortCo[] = [
       { label: "Newsroom — Trans Bay Cable LLC", url: "https://newsroom.nexteraenergy.com/2019-07-16-NextEra-Energy-Transmission-completes-acquisition-of-underwater-transmission-cable-system", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
-      { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield Super-Core Infra", investmentYear: 2026, status: "Active" },
+      { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield Super-Core Infrastructure Partners", investmentYear: 2026, status: "Active" },
     ],
   },
   {
@@ -10263,7 +10263,7 @@ export const companies: PortCo[] = [
     subsector: "Nuclear technology and services",
     region: "North America",
     country: "United States / Canada",
-    ownershipVehicle: "Brookfield Global Transition Fund I",
+    ownershipVehicle: "Brookfield Global Transition Fund I (BGTF I)",
     description: "Westinghouse Electric Company provides nuclear technology, fuel, equipment, and services to utilities and other nuclear-industry customers. Its customer base includes operators of existing nuclear fleets as well as buyers of reactor technology, outage services, maintenance, and fuel-related products. The business is asset- and technology-intensive because value depends on installed equipment, engineering capability, long-duration service relationships, and nuclear intellectual property. Public transaction materials describe Westinghouse as one of the largest nuclear-services businesses globally. Its operations span the United States and Canada as well as other international nuclear markets. Brookfield and Cameco completed the acquisition in November 2023, with Brookfield holding 51% through Brookfield Global Transition Fund I and associated institutional partners and Cameco holding 49%.",
     status: "Active",
     countryTags: ["United States", "Canada"],
@@ -10283,7 +10283,7 @@ export const companies: PortCo[] = [
       { label: "Announcement date source — Brookfield Asset Management — Westinghouse Electric Company", url: "https://bep.brookfield.com/press-releases/bep/cameco-and-brookfield-renewable-form-strategic-partnership-acquire-westinghouse", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield Global Transition Fund I", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield Global Transition Fund I (BGTF I)", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -12091,7 +12091,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "CDPQ", ownershipVehicle: "n.a.", investmentYear: 2021, stake: "15%", status: "Active" },
-      { investmentFirm: "IFM Investors", ownershipVehicle: "IFM Global Infrastructure Fund", investmentYear: 2015, status: "Active" },
+      { investmentFirm: "IFM Investors", ownershipVehicle: "IFM Global Infrastructure Fund (GIF)", investmentYear: 2015, status: "Active" },
     ],
   },
   {
@@ -14916,7 +14916,7 @@ export const companies: PortCo[] = [
     subsector: "Fiber broadband",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "DigitalBridge Partners III",
+    ownershipVehicle: "DigitalBridge Fund III",
     description: "Fibernow provides fiber broadband, managed Wi-Fi, television, and voice services to communities and institutions. It serves residential communities, businesses, homeowners' associations, student housing, and assisted-living facilities. The business is asset-heavy and recurring because it provides connectivity services over owned or controlled fiber broadband infrastructure and community service contracts. DigitalBridge materials describe a footprint across Florida and beyond, while public sources reviewed do not disclose current revenue or employee count. DigitalBridge portfolio materials identify 2024 as the year of investment through DigitalBridge Partners III.",
     status: "Active",
     countryTags: ["United States"],
@@ -14934,7 +14934,7 @@ export const companies: PortCo[] = [
       { label: "Fibernow — Fibernow", url: "https://fibernow.com/aboutus/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "DigitalBridge", ownershipVehicle: "DigitalBridge Partners III", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "DigitalBridge", ownershipVehicle: "DigitalBridge Fund III", investmentYear: 2024, status: "Active" },
     ],
   },
   {
@@ -14976,7 +14976,7 @@ export const companies: PortCo[] = [
     subsector: "Digital out-of-home and smart-city media infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "DigitalBridge Partners III",
+    ownershipVehicle: "DigitalBridge Fund III",
     description: "Orange Barrel Media develops and operates digital out-of-home media and related smart-city infrastructure in urban environments. It serves advertisers, municipalities, real estate owners, and public-space stakeholders. The business is asset-heavy and contracted because it secures long-term rights to premium urban locations and operates physical display infrastructure in partnership with cities and property owners. Company materials highlight major urban markets including Columbus and New York and describe a platform built around landmark media assets rather than a traditional agency model. DigitalBridge portfolio materials identify 2025 as the year of investment through DigitalBridge Partners III.",
     status: "Active",
     countryTags: ["United States"],
@@ -14995,7 +14995,7 @@ export const companies: PortCo[] = [
       { label: "Obm — Orange Barrel Media", url: "https://obm.com/wp-content/uploads/2024/01/OBM_MarketOverview_WEB.pdf", type: "PRESENTATION" },
     ],
     owners: [
-      { investmentFirm: "DigitalBridge", ownershipVehicle: "DigitalBridge Partners III", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "DigitalBridge", ownershipVehicle: "DigitalBridge Fund III", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -16916,7 +16916,7 @@ export const companies: PortCo[] = [
     subsector: "Industrial waste management and environmental services",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "EQT Infrastructure VI",
+    ownershipVehicle: "EQT Infrastructure Fund VI",
     description: "Arcwood Environmental provides sustainability, industrial waste management, wastewater, emergency response, and related environmental services in the United States. It serves industrial customers and other generators of regulated and difficult waste streams. The business is asset-heavy and service-based because it operates processing facilities, transportation assets, and field-service capabilities across the waste value chain. EQT describes Arcwood as a vertically integrated platform with a broad network of facilities and fleet assets, while public sources reviewed do not disclose current revenue. EQT Infrastructure VI identified Arcwood as a current portfolio company in 2025, and the business rebranded from Heritage Environmental Services in March 2025.",
     status: "Active",
     countryTags: ["United States"],
@@ -16936,7 +16936,7 @@ export const companies: PortCo[] = [
       { label: "Arcwoodenviro — Arcwood Environmental", url: "https://arcwoodenviro.com/news/heritage-environmental-services-rebrands-to-arcwood-environmental/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure VI", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure Fund VI", investmentYear: 2024, status: "Active" },
     ],
   },
   {
@@ -16972,7 +16972,7 @@ export const companies: PortCo[] = [
     subsector: "Small cells and venue infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "EQT Active Core Infrastructure I",
+    ownershipVehicle: "EQT Active Core I",
     description: "Crown Castle Small Cells Solutions comprises Crown Castle's small-cell and venue communications infrastructure business in the United States. It serves mobile network operators and venue customers that require densification and in-building or outdoor wireless connectivity assets. The business is asset-heavy and lease-based because it consists of physical small-cell, fiber-connected, and venue communications infrastructure. Public transaction materials describe the business as part of Crown Castle's fiber segment and note that it includes the company's small-cell and venue assets. EQT Active Core Infrastructure signed a definitive agreement in March 2025 to acquire the business, and Crown Castle announced the completed sale of its Small Cell business to Arium Networks, an EQT Active Core Infrastructure fund company, on May 1, 2026.",
     status: "Active",
     countryTags: ["United States"],
@@ -16990,7 +16990,7 @@ export const companies: PortCo[] = [
       { label: "Crowncastle — Crown Castle Small Cells Solutions", url: "https://www.crowncastle.com/strategic-review-results", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Active Core Infrastructure I", investmentYear: 2026, status: "Active" },
+      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Active Core I", investmentYear: 2026, status: "Active" },
     ],
   },
   {
@@ -17032,7 +17032,7 @@ export const companies: PortCo[] = [
     subsector: "Railcar repair and maintenance",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "EQT Infrastructure VI",
+    ownershipVehicle: "EQT Infrastructure Fund VI",
     description: "Eagle Railcar Services provides regulatorily driven railcar repair, maintenance, cleaning, paint and lining, and related shop services across the United States. It serves railcar owners, shippers, and other freight-rail market participants requiring maintenance and compliance work. The business is asset-heavy and service-based because it operates a network of specialized shop facilities with rail-connected repair capacity. Company materials describe ten full-service facilities strategically located across the United States, while public sources reviewed do not disclose current revenue. EQT portfolio materials identify Eagle as a current holding of EQT Infrastructure IV and VI, with a 2025 entry date listed in the reviewed source.",
     status: "Active",
     countryTags: ["United States"],
@@ -17049,7 +17049,7 @@ export const companies: PortCo[] = [
       { label: "Eaglerailcar — Eagle Railcar Services", url: "https://www.eaglerailcar.com/locations", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure VI", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure Fund VI", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -17115,7 +17115,7 @@ export const companies: PortCo[] = [
     subsector: "Outsourced yard management and spotting",
     region: "North America",
     country: "United States / Canada",
-    ownershipVehicle: "EQT Infrastructure VI",
+    ownershipVehicle: "EQT Infrastructure Fund VI",
     description: "Lazer Logistics provides outsourced yard management, spotting, shuttle, drayage, trailer rental, and yard electrification services. It serves large distribution, industrial, and logistics customers that need on-site yard operations and equipment support. The business is asset-heavy and service-based because it combines operating contracts with managed fleets, including electric yard trucks. EQT states that Lazer serves more than 550 customer sites across 39 states and territories with about 5,000 employees and 6,000 fleet assets. EQT announced the acquisition in March 2023 through EQT Infrastructure VI after the company had operated independently since 1996, and EQT portfolio materials identify 2023 as its entry year.",
     status: "Active",
     countryTags: ["United States", "Canada"],
@@ -17132,7 +17132,7 @@ export const companies: PortCo[] = [
       { label: "Announcement date source — EQT Infrastructure — Lazer Logistics", url: "https://eqtgroup.com/news/eqt-value-add-infrastructure-to-acquire-lazer-logistics-a-leading-north-american-provider-of-outsourced-yard-management-and-spotting-services-2023-03-29", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure VI", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure Fund VI", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -17142,7 +17142,7 @@ export const companies: PortCo[] = [
     subsector: "Fiber-to-the-home and wholesale fiber",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "EQT Infrastructure VI",
+    ownershipVehicle: "EQT Infrastructure Fund VI",
     description: "Lumos Fiber builds and operates fiber broadband infrastructure for residential, wholesale, and T-Mobile Fiber customers in the United States. It serves households, wholesale users, and mobile and broadband users reached through T-Mobile Fiber. The business is asset-heavy and recurring because it develops and owns last-mile and middle-mile fiber infrastructure and sells services over that network. Company and EQT materials describe a rollout plan targeting millions of underserved homes and a current operating footprint across the Southeast and Midwest. EQT and T-Mobile closed a 50/50 joint venture to acquire Lumos in April 2025 and are using the platform to expand fiber access.",
     status: "Active",
     countryTags: ["United States"],
@@ -17159,7 +17159,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — EQT Infrastructure — Lumos Fiber", url: "https://www.lumosfiber.com/blog/2025/04/01/t-mobile-and-eqt-close-joint-venture-to-acquire-lumos-and-expand-fiber-internet-access/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure VI", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure Fund VI", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -17169,7 +17169,7 @@ export const companies: PortCo[] = [
     subsector: "Distributed solar and energy storage",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "EQT Infrastructure VI",
+    ownershipVehicle: "EQT Infrastructure Fund VI",
     description: "Madison Energy Infrastructure develops, owns, and operates distributed solar and energy storage projects across the United States. It serves commercial and institutional customers seeking clean-energy, resilience, and on-site generation solutions. The business is asset-heavy and contracted because it finances and owns distributed energy assets rather than only providing development services. Company materials describe a national distributed-energy platform and emphasize partnerships that simplify clean-energy adoption for organizations of different sizes. EQT portfolio materials identify a 2023 entry date for the investment through EQT Infrastructure VI.",
     status: "Active",
     countryTags: ["United States"],
@@ -17186,7 +17186,7 @@ export const companies: PortCo[] = [
       { label: "Madisonei — Madison Energy Infrastructure", url: "https://www.madisonei.com/resource/madison-energy-infrastructure-and-eqt-real-estate-announce-completion-of-maryland-rooftop-solar-project", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure VI", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure Fund VI", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -17225,7 +17225,7 @@ export const companies: PortCo[] = [
     subsector: "Telecom real estate and lease aggregation",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "EQT Active Core Infrastructure I",
+    ownershipVehicle: "EQT Active Core I",
     description: "Radius Global Infrastructure acquires and manages real property interests that support telecommunications and other digital infrastructure networks. It serves wireless operators, wired operators, tower companies, and other digital infrastructure users. The business is asset-heavy and lease-based because it owns rental streams and real estate that underpin communications infrastructure deployment. Company materials describe more than 13,800 lease streams across 23 countries and position the business as one of the largest international real-property acquirers in the sector. EQT Active Core Infrastructure and PSP completed the acquisition of Radius in September 2023.",
     status: "Active",
     countryTags: ["United States"],
@@ -17242,7 +17242,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — EQT Infrastructure — Radius Global Infrastructure", url: "https://www.radiusglobal.com/news-releases/news-release-details/eqt-and-psp-complete-acquisition-radius-global-infrastructure/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Active Core Infrastructure I", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Active Core I", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -17281,7 +17281,7 @@ export const companies: PortCo[] = [
     subsector: "Water and wastewater treatment",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "EQT Infrastructure VI",
+    ownershipVehicle: "EQT Infrastructure Fund VI",
     description: "Seven Seas Water Group builds, owns, and operates decentralized water and wastewater treatment plants using its Water-as-a-Service model. It serves municipal, industrial, and commercial customers that need desalination, treatment, reuse, and wastewater infrastructure without upfront capital spending. The business is asset-heavy and contracted because it develops, finances, and operates treatment plants under long-term availability and service arrangements. EQT states that the company manages more than 220 plants across the U.S., Caribbean, and Latin America and has operated in the water sector for more than two decades. EQT announced the acquisition in May 2025 through EQT Infrastructure VI.",
     status: "Active",
     countryTags: ["United States"],
@@ -17297,7 +17297,7 @@ export const companies: PortCo[] = [
       { label: "Sevenseaswater — Seven Seas Water Group", url: "https://sevenseaswater.com/news/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure VI", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure Fund VI", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -17951,7 +17951,7 @@ export const companies: PortCo[] = [
     subsector: "Industrial cogeneration and utility supply",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "The Central Utility Block is the utility backbone for Inter Pipeline's Heartland Petrochemical Complex in Alberta. Its end customer is the petrochemical complex, which relies on the asset for electricity, steam, and other core utility services. The model is asset-heavy and contracted, with long-term utility supply arrangements rather than merchant power exposure as the principal value driver. Public sources describe the facility as a 102 MW natural gas-fired cogeneration asset that also supplies steam and related utility services. The reviewed materials did not disclose current project-level revenue or equity ownership percentages. Fengate acquired the asset from Inter Pipeline in 2018 and assumed responsibility for funding construction costs estimated at approximately $600 million.",
     status: "Active",
     countryTags: ["Canada"],
@@ -17969,7 +17969,7 @@ export const companies: PortCo[] = [
       { label: "Announcement date source — Fengate Asset Management — Central Utility Block (Heartland Petrochemical Complex)", url: "https://www.globenewswire.com/news-release/2018/09/25/1576014/0/en/Fengate-Acquires-Heartland-Petrochemical-Complex-s-Central-Utility-Block-from-Inter-Pipeline.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2018, status: "Active" },
     ],
   },
   {
@@ -18008,7 +18008,7 @@ export const companies: PortCo[] = [
     subsector: "Light rail transit PPP",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "Edmonton Valley Line LRT Southeast is a light rail PPP connecting downtown Edmonton to Mill Woods. Its end users are public transit riders, while the commercial framework is built around a long-term project agreement with the City of Edmonton. The model is asset-heavy and concession-based, with private-sector responsibilities for design, construction, operations, and maintenance. Public sources describe the line as approximately 13 kilometres long with 11 street-level stops, an elevated station, a transit centre, and a park-and-ride facility. The reviewed materials did not disclose project-level revenue or equity ownership percentages. Fengate is part of the consortium behind the TransEd line, and passenger service began in November 2023.",
     status: "Active",
     countryTags: ["Canada"],
@@ -18027,7 +18027,7 @@ export const companies: PortCo[] = [
       { label: "Bechtel — Edmonton Valley Line LRT Southeast", url: "https://www.bechtel.com/press-releases/bechtel-celebrates-the-opening-of-edmontons-valley-line-southeast/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2016, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2016, status: "Active" },
     ],
   },
   {
@@ -18067,7 +18067,7 @@ export const companies: PortCo[] = [
     subsector: "Biomass power generation",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "The Fort St. James Green Energy Project is a biomass-fired power plant in British Columbia. Its principal customer is the provincial power system through a long-term electricity purchase agreement, and the plant converts wood waste into renewable electricity. The project is asset-heavy and utility-like, with value tied to the operation of a dedicated generation facility and associated fuel supply infrastructure. Public sources describe the plant as a 40 MW facility near Fort St. James and note a 30-year power purchase agreement with BC Hydro. The reviewed materials did not disclose current project-level revenue or exact ownership percentages. Fengate developed the project with Dalkia, and later public reporting identified Veolia and Fengate as owners when the plant was shuttered and subsequently considered for restart.",
     status: "Active",
     countryTags: ["Canada"],
@@ -18086,7 +18086,7 @@ export const companies: PortCo[] = [
       { label: "Biv — Fort St. James Green Energy Project", url: "https://www.biv.com/news/resources-agriculture/shuttered-fort-st-james-bioenergy-plant-restart-8265716", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2013, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2013, status: "Active" },
     ],
   },
   {
@@ -18096,7 +18096,7 @@ export const companies: PortCo[] = [
     subsector: "Industrial cogeneration",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "Freeport Energy Center is a natural gas-fired combined-cycle cogeneration plant serving the Dow Freeport industrial complex in Texas. Its end market is contracted industrial utility service, with power and steam delivered to one of the largest integrated chemical manufacturing sites in North America. The asset is utility-like and asset-heavy, with value derived from operating generation and thermal infrastructure rather than merchant retail sales. Public sources describe the facility as a 260 MW plant that has been operating since 2007. The reviewed materials did not disclose current project-level revenue or equity ownership percentages. Fengate acquired the asset from Calpine in 2020 and later referenced it as a nearby companion asset to Freeport Power Limited.",
     status: "Active",
     countryTags: ["United States"],
@@ -18114,7 +18114,7 @@ export const companies: PortCo[] = [
       { label: "Bakerbotts — Freeport Energy Center", url: "https://www.bakerbotts.com/news/2025/12/baker-botts-represents-fengate-asset-management-in-acquisition-of-440mw-texas-cogeneration-facility", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2020, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2020, status: "Active" },
     ],
   },
   {
@@ -18144,7 +18144,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "Fengate Asset Management", ownershipVehicle: "n.a.", investmentYear: 2024, status: "Active" },
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2024, status: "Active" },
     ],
   },
   {
@@ -18263,7 +18263,7 @@ export const companies: PortCo[] = [
     subsector: "Outpatient healthcare PPP",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "The Jim Pattison Outpatient Care and Surgery Centre is an outpatient healthcare facility in Surrey, British Columbia. Its end users are patients receiving scheduled day surgery, diagnostics, and specialist outpatient care in the Fraser Health system. The facility is infrastructure-heavy and functions as a healthcare PPP asset rather than a multi-tenant commercial building. Public sources describe the building as approximately 188,000 square feet and note that it opened in 2011 with more than 50 services and six operating rooms. The reviewed materials did not disclose current property-level revenue or equity ownership percentages. Fengate team materials identify the centre within its healthcare infrastructure portfolio, while public project records show the facility was delivered through a PPP structure. A public procurement submittal lists Fengate's financial close / investment start for the asset in September 2014.",
     status: "Active",
     countryTags: ["Canada"],
@@ -18283,7 +18283,7 @@ export const companies: PortCo[] = [
       { label: "Investment date source — Fengate Asset Management — Jim Pattison Outpatient Care and Surgery Centre", url: "https://www.broward.org/Purchasing/Documents/RLIRFPAgendaInformationNew/PNC2122559R1/PNC2122559R1%20B%20-%20Submittal%20-%20Civic%20Unity%20Partners%20%28CUP%29.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2014, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2014, status: "Active" },
     ],
   },
   {
@@ -18293,7 +18293,7 @@ export const companies: PortCo[] = [
     subsector: "Student housing PPP",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "Lambton College Residence is a new on-campus student housing PPP in Sarnia, Ontario. Its end users are college students, with value driven by the delivery and long-term operation of purpose-built accommodation rather than short-cycle market-rate rentals. The project is asset-heavy and structured as a design-build-finance-operate-maintain partnership. Public sources describe the residence as a 311-bed development and the largest capital project in Lambton College's history, with opening targeted for September 2027. The reviewed materials did not disclose project-level revenue or the ownership split between Fengate and Tilbury. Fengate and Tilbury reached financial close in 2025 and subsequently broke ground on the project.",
     status: "Active",
     countryTags: ["Canada"],
@@ -18311,7 +18311,7 @@ export const companies: PortCo[] = [
       { label: "Torys — Lambton College Residence", url: "https://www.torys.com/work/2025/06/4847b56d-7705-4a49-b943-cc500d9260bd", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -18348,7 +18348,7 @@ export const companies: PortCo[] = [
     subsector: "Biomass-fired power generation",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "Merritt Biomass Plant is a biomass-fired generation asset in Merritt, British Columbia. Its customer base is utility-oriented, with output sold under a long-term electricity purchase agreement with BC Hydro rather than into a short-duration merchant market. The project is asset-heavy and contracted, combining a dedicated generation plant with fuel sourcing and operations infrastructure tied to local wood waste. Public sources describe the facility as a 40 MW plant backed by a 30-year BC Hydro agreement and designed to use sawmill residues as feedstock. The reviewed materials did not disclose current project-level revenue or the present equity split between Fengate and its partners. Fengate and Dalkia reached financing close in 2014, and later public records showed the plant operating and delivering power into the BC Hydro system.",
     status: "Active",
     countryTags: ["Canada"],
@@ -18365,7 +18365,7 @@ export const companies: PortCo[] = [
       { label: "Canadianbiomassmagazine — Merritt Biomass Plant", url: "https://www.canadianbiomassmagazine.ca/merritt-40mw-biomass-plant-on-track-for-fall-start-6388/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2014, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2014, status: "Active" },
     ],
   },
   {
@@ -18375,7 +18375,7 @@ export const companies: PortCo[] = [
     subsector: "Combined heat and power",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "Morris Cogeneration Facility is a natural gas-fired combined heat and power plant in Morris, Illinois. Its principal end market is industrial energy service, with steam and electricity supplied to LyondellBasell's Morris petrochemical facility and surplus capacity sold into the PJM market. The operating model is asset-heavy and utility-like, with value driven by on-site generation and thermal integration rather than retail power sales. Fengate's current investment materials describe the asset as a 192 MW operational facility that uses three combustion turbines and a steam turbine and that has been in commercial operation since 1998. The reviewed materials did not disclose plant-level revenue or the exact current ownership percentages between Fengate and its operating partner. Fengate acquired the asset from Atlantic Power and Utilities in 2023 under its strategic partnership with Ironclad Energy.",
     status: "Active",
     countryTags: ["United States"],
@@ -18394,7 +18394,7 @@ export const companies: PortCo[] = [
       { label: "Ironclad Energy — Morris Cogeneration Facility", url: "https://ironclad-energy.com/project/morriscogen-copy/", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -18459,7 +18459,7 @@ export const companies: PortCo[] = [
     subsector: "Acute care hospital PPP",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "Oakville Trafalgar Memorial Hospital is an acute care hospital PPP asset in Oakville, Ontario. Its end users are patients, clinicians, and the Halton healthcare system, with economics linked to a long-term public hospital infrastructure contract rather than private-pay demand. The project is asset-heavy and availability-based under a design-build-finance-maintain procurement structure. Public project materials describe the hospital as a 1.6 million square foot facility that opened in 2015 under an approximately C$2 billion contract. The reviewed materials did not disclose project-level revenue or the current equity ownership percentages of the project company. Fengate's current investment page lists an initial investment in July 2011, and Fengate later increased its position in 2016 when it acquired Carillion's 40% equity interest in the hospital project.",
     status: "Active",
     countryTags: ["Canada"],
@@ -18476,7 +18476,7 @@ export const companies: PortCo[] = [
       { label: "Add-on close date source — Fengate Asset Management — Oakville Trafalgar Memorial Hospital", url: "https://www.newswire.ca/news-releases/fengate-acquires-carillions-equity-interest-in-the-oakville-trafalgar-memorial-hospital-586460361.html", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2011, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2011, status: "Active" },
     ],
   },
   {
@@ -18486,7 +18486,7 @@ export const companies: PortCo[] = [
     subsector: "Operating solar portfolio",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "PowerFin Partners Texas Solar Portfolio is a portfolio of operating solar assets and related development opportunities in Texas. Its end markets are electricity purchasers and grid-connected solar offtake arrangements rather than uncontracted retail energy sales. The model is asset-heavy and renewable generation focused, with Fengate pairing operating assets with a co-development platform. Fengate disclosed a US$100 million partnership with PowerFin in 2018 to acquire operating solar assets and to pursue additional project development in Texas. The reviewed materials did not disclose aggregate portfolio capacity, project-level revenue, or current ownership percentages. Fengate announced the initial acquisition and co-development partnership with PowerFin in 2018 through its infrastructure funds.",
     status: "Active",
     countryTags: ["United States"],
@@ -18503,7 +18503,7 @@ export const companies: PortCo[] = [
       { label: "Powerfin — PowerFin Partners Texas Solar Portfolio", url: "https://powerfin.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2018, status: "Active" },
     ],
   },
   {
@@ -18569,7 +18569,7 @@ export const companies: PortCo[] = [
     subsector: "Acute and mental health hospital PPP",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "Providence Care Hospital is a hospital PPP asset in Kingston, Ontario. Its end users are patients and healthcare providers in the regional mental health, rehabilitation, and complex care system, with economics tied to a long-term public infrastructure contract. The project is asset-heavy and availability-based under a design-build-finance-maintain procurement structure. Public project materials describe the hospital as a roughly 622,000 square foot facility with 270 private inpatient rooms delivered under an approximately C$810 million contract. The reviewed materials did not disclose project-level revenue or the current equity ownership percentages. Fengate participated in the consortium that reached contract award in 2013, and substantial completion was announced in late 2016 ahead of the hospital's opening in 2017.",
     status: "Active",
     countryTags: ["Canada"],
@@ -18586,7 +18586,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — Fengate Asset Management — Providence Care Hospital", url: "https://www.newswire.ca/news-releases/contract-awarded-for-providence-care-hospital-project-513444281.html", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2013, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2013, status: "Active" },
     ],
   },
   {
@@ -18596,7 +18596,7 @@ export const companies: PortCo[] = [
     subsector: "Municipal operations and transit facility PPP",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "Saskatoon Civic Operations Centre is a municipal operations PPP asset in Saskatoon, Saskatchewan. Its end users are the City of Saskatoon and its residents through consolidated transit, fleet, public works, and snow management functions. The project is asset-heavy and availability-based under a long-term public infrastructure arrangement rather than a merchant leasing model. Public materials describe it as the city's first P3 project and note that it consolidated multiple operations onto a 73-hectare site that includes a transit operations centre and the city's first permanent snow management facility. The reviewed materials did not disclose project-level revenue or the current equity ownership percentages. The project reached financial close in 2014 and substantial completion at the end of 2016.",
     status: "Active",
     countryTags: ["Canada"],
@@ -18613,7 +18613,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — Fengate Asset Management — Saskatoon Civic Operations Centre", url: "https://www.lexpert.ca/big-deals/city-of-saskatoon-civic-operations-centre-reaches-financial-close/349713", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2014, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2014, status: "Active" },
     ],
   },
   {
@@ -18623,7 +18623,7 @@ export const companies: PortCo[] = [
     subsector: "Solar photovoltaic",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "Sunningdale Solar Project is a utility-contracted solar photovoltaic asset in Ontario. Its customer base is utility-oriented, with power sold under the provincial renewable procurement framework rather than through direct retail supply. The project is asset-heavy and contracted, with value derived from the operation of a dedicated solar plant under long-duration power arrangements. Public disclosures describe Sunningdale as a 10 MW project that achieved financial close in 2014 and entered commercial operation later that year. The reviewed materials did not disclose project-level revenue or current project-company ownership percentages. Fengate announced the financing close with Recurrent Energy in 2014 as part of its Canadian renewable power portfolio.",
     status: "Active",
     countryTags: ["Canada"],
@@ -18640,7 +18640,7 @@ export const companies: PortCo[] = [
       { label: "Fengate — Sunningdale Solar Project", url: "https://fengate.com/energy-transition", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2014, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2014, status: "Active" },
     ],
   },
   {
@@ -18650,7 +18650,7 @@ export const companies: PortCo[] = [
     subsector: "Acute care hospital expansion PPP",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "Surrey Memorial Hospital Critical Care Tower is a hospital expansion PPP asset in Surrey, British Columbia. Its end users are patients, clinicians, and Fraser Health, with economics tied to a long-term public infrastructure delivery and facilities-management contract rather than private-pay demand. The project is asset-heavy and availability-based under a design-build-finance-maintain structure. Public project materials describe the expansion as an approximately C$512 million critical care tower that added a new emergency department, intensive care capacity, inpatient beds, perinatal services, and academic space. The reviewed materials did not disclose project-level revenue or current project-company ownership percentages. Public records show that the Integrated Team Solutions consortium, which included Fengate Capital Management, reached financial close in 2010 and the project was completed in 2014.",
     status: "Active",
     countryTags: ["Canada"],
@@ -18668,7 +18668,7 @@ export const companies: PortCo[] = [
       { label: "Wsp — Surrey Memorial Hospital Critical Care Tower", url: "https://www.wsp.com/en-us/projects/surrey-memorial-hospital", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2010, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2010, status: "Active" },
     ],
   },
   {
@@ -18707,7 +18707,7 @@ export const companies: PortCo[] = [
     subsector: "Acute care hospital PPP",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "The Peter Gilgan Mississauga Hospital and Shah Family Hospital for Women and Children is a major hospital PPP project in Mississauga, Ontario. Its end users are patients, clinicians, and Trillium Health Partners, with economics expected to be supported by a long-term public hospital infrastructure contract rather than private-pay demand. The project is asset-heavy and availability-based under a design-build-finance-maintain structure. Public materials describe the development as approximately 2.8 million square feet and identify it as the largest hospital project in Canada by project scale at financial close. The reviewed materials did not disclose project-level revenue or current project-company ownership percentages. ED+PCL Healthcare Partners, Fengate, and Plenary reached financial close in 2025 and are advancing the project for Trillium Health Partners.",
     status: "Active",
     countryTags: ["Canada"],
@@ -18723,7 +18723,7 @@ export const companies: PortCo[] = [
       { label: "Plenary — The Peter Gilgan Mississauga Hospital and Shah Family Hospital for Women and Children", url: "https://plenary.com/project/peter-gilgan-shah-hospital", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -18762,7 +18762,7 @@ export const companies: PortCo[] = [
     subsector: "Medical outpatient facilities",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Fengate Infrastructure Funds",
+    ownershipVehicle: "Fengate Infrastructure Fund IV",
     description: "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV) is a portfolio of medical outpatient buildings in the United States. Its end users are patients and healthcare providers, with occupancy tied to a major nonprofit health system under a sale-leaseback structure rather than broad multi-tenant speculative leasing. The model is asset-heavy and healthcare-oriented, with value supported by essential outpatient real estate and a large health-system tenant. Fengate disclosed in 2025 that the portfolio comprises 24 facilities with more than 900,000 square feet of medical space across two states. The reviewed materials did not disclose the specific states, property-level revenue, or current ownership percentages within the joint venture. Fengate acquired the portfolio in 2025 alongside MedCraft as part of its healthcare infrastructure strategy.",
     status: "Active",
     countryTags: ["United States"],
@@ -18779,7 +18779,7 @@ export const companies: PortCo[] = [
       { label: "Medcraft — U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)", url: "https://www.medcraft.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Funds", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -20149,7 +20149,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "Global Infrastructure Partners", ownershipVehicle: "EQT Infrastructure VI", investmentYear: 2026, status: "Active" },
-      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure VI", investmentYear: 2026, status: "Active" },
+      { investmentFirm: "EQT Infrastructure", ownershipVehicle: "EQT Infrastructure Fund VI", investmentYear: 2026, status: "Active" },
     ],
   },
   {
@@ -22919,7 +22919,7 @@ export const companies: PortCo[] = [
     subsector: "Liquid bulk storage terminal",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "ISQ Energy Transition Infrastructure Fund (ETIF)",
+    ownershipVehicle: "ISQ Energy Transition Infrastructure Fund",
     description: "Zenith Energy Terminal in Portland is a liquid bulk storage and multimodal fuels terminal on the Willamette River. Its users include fuel suppliers, logistics counterparties, and renewable-fuels market participants that require marine, rail, truck, and pipeline-connected storage infrastructure. The asset follows an asset-heavy midstream model based on storage tanks, terminal handling systems, and logistics connectivity. I Squared announced in December 2025 that its Energy Transition Infrastructure Fund had entered into a definitive agreement to acquire 100% of the terminal and described the facility at about 1.7 million barrels of storage capacity with a planned transition to renewable-fuels service by 2027. Public sources reviewed did not clearly confirm closing of the transaction as of the review date, so the current ownership status and resulting ownership percentage remain not publicly disclosed in this row. Even so, the announced transaction positions the asset as a significant Pacific Northwest energy-transition terminal investment for I Squared.",
     status: "Active",
     countryTags: ["United States"],
@@ -22936,7 +22936,7 @@ export const companies: PortCo[] = [
       { label: "Oregonlive — Zenith Energy Terminal Portland", url: "https://www.oregonlive.com/environment/2025/12/zenith-portland-fuel-terminal-to-be-bought-by-infrastructure-firm-with-plans-to-convert-it-to-renewable-fuels.html", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "I Squared Capital", ownershipVehicle: "ISQ Energy Transition Infrastructure Fund (ETIF)", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "I Squared Capital", ownershipVehicle: "ISQ Energy Transition Infrastructure Fund", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -23187,7 +23187,7 @@ export const companies: PortCo[] = [
     subsector: "Toll roads and mobility infrastructure",
     region: "North America",
     country: "Mexico",
-    ownershipVehicle: "IFM Global Infrastructure Fund",
+    ownershipVehicle: "IFM Global Infrastructure Fund (GIF)",
     description: "Aleatica develops and operates toll roads and other mobility infrastructure assets across Europe and Latin America. Its customers are road users and transport-system participants that depend on concessioned mobility infrastructure rather than passenger transport services sold directly by a carrier. The operating model is asset-heavy and concession based, with long-duration revenue linked to regulated or concession toll and mobility assets. IFM states that Aleatica's portfolio comprises 20 assets across seven countries and that the platform focuses exclusively on transportation infrastructure. IFM acquired OHL Concesiones (subsequently renamed Aleática) in 2018 and, according to IFM's 2025 portfolio disclosures, now holds a 100% fund ownership stake.",
     status: "Active",
     countryTags: ["Mexico"],
@@ -23206,7 +23206,7 @@ export const companies: PortCo[] = [
       { label: "Aleatica — Aleatica, S.A.B. de C.V.", url: "https://www.aleatica.com/en/annual-sustainability-report/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "IFM Investors", ownershipVehicle: "IFM Global Infrastructure Fund", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "IFM Investors", ownershipVehicle: "IFM Global Infrastructure Fund (GIF)", investmentYear: 2018, status: "Active" },
     ],
   },
   {
@@ -25241,7 +25241,7 @@ export const companies: PortCo[] = [
     subsector: "Hyperscale and enterprise data centers",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "KKR Global Infrastructure Investors",
+    ownershipVehicle: "KKR Global Infrastructure Investors V",
     description: "CyrusOne designs, builds, and operates data centers for hyperscale cloud, enterprise, and network customers. Its customers use the platform for mission-critical colocation, wholesale, and build-to-suit deployments that require large amounts of reliable power and connectivity. The operating model is asset-heavy and contracted, centered on long-lived data center campuses, utility power procurement, and multi-year customer commitments. Public company materials indicate that the business operates more than 60 data center facilities in nine countries and has more than 50 additional data centers in development. Funds managed by KKR and Global Infrastructure Partners completed the take-private acquisition of CyrusOne in March 2022.",
     status: "Active",
     countryTags: ["United States"],
@@ -25259,7 +25259,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — KKR / GIP — CyrusOne", url: "https://www.global-infra.com/news/kkr-and-gip-complete-acquisition-of-cyrusone/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "KKR", ownershipVehicle: "KKR Global Infrastructure Investors", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "KKR", ownershipVehicle: "KKR Global Infrastructure Investors V", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -30600,7 +30600,7 @@ export const companies: PortCo[] = [
     subsector: "Drinking water treatment plant",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Ridgewood Water & Strategic Infrastructure Fund II LP",
+    ownershipVehicle: "Ridgewood Water & Strategic Infrastructure Fund II",
     description: "Prospect Lake Clean Water Center is a new drinking water treatment plant being developed for the City of Fort Lauderdale under a long-term public-private partnership. The asset's end customer is the municipal water authority and, by extension, the city's residential and commercial water users. Its operating model is contracted and availability based, with the project company responsible for delivering and operating the facility under a 30-year agreement rather than selling water on a merchant basis. Public materials describe a 50 million gallon per day membrane treatment plant that is expected to supply most of Fort Lauderdale's fresh water and replace the aging Fiveash facility. Ridgewood selected the project through its Water & Strategic Infrastructure Fund II in partnership with IDE Technologies, and the public award was announced in 2023. The development remains one of Ridgewood's larger current water investments.",
     status: "Active",
     countryTags: ["United States"],
@@ -30619,7 +30619,7 @@ export const companies: PortCo[] = [
       { label: "Fortlauderdale — Prospect Lake Clean Water Center", url: "https://www.fortlauderdale.gov/Home/Components/News/News/7119/16", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Ridgewood", ownershipVehicle: "Ridgewood Water & Strategic Infrastructure Fund II LP", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "Ridgewood", ownershipVehicle: "Ridgewood Water & Strategic Infrastructure Fund II", investmentYear: 2023, status: "Active" },
     ],
   },
   {
