@@ -4,7 +4,7 @@ import { companies } from "../prisma/seed-data/companies.ts";
 import { funds } from "../prisma/seed-data/funds.ts";
 import type { PortCo, PortCoOwner, PortCoSource } from "../prisma/seed-data/portco-types.ts";
 
-const AUDIT_DATE = "2026-05-11";
+const AUDIT_DATE = "2026-05-13";
 const ROOT = process.cwd();
 const AUDIT_DIR = path.join(ROOT, "audits");
 const CSV_PATH = path.join(AUDIT_DIR, `portfolio-current-owner-fund-verification-${AUDIT_DATE}.csv`);
@@ -70,6 +70,7 @@ const FIRM_ALIASES: Record<string, string[]> = {
   "cvc dif": ["cvc", "dif"],
   "ifm investors": ["ifm"],
   "msip": ["morgan stanley infrastructure partners", "morgan stanley infrastructure"],
+  "otpp": ["ontario teachers", "ontario teachers pension plan", "ontario teachers pension plan board", "teachers"],
   "quinbrook": ["quinbrook infrastructure", "quinbrook infrastructure partners"],
   "tpg": ["tpg rise climate"],
 };
@@ -140,6 +141,7 @@ function normalizeCompanyName(value: string): string {
 function normalizeForCompare(value: string): string {
   return value
     .toLowerCase()
+    .replace(/\bopps?\b/g, "opportunities")
     .replace(/&/g, "and")
     .replace(
       /\b(the|inc|llc|ltd|plc|lp|l p|limited|corp|corporation|holdings|group|partners|partner|capital|asset|management|infrastructure|infra|investment|investments|investors|fund|funds|company|co)\b/g,
@@ -262,9 +264,10 @@ function isProseDisclosure(value: string): boolean {
 }
 
 function isGenericVehicle(value: string): boolean {
+  if (/^apollo(?:-managed)? funds$/i.test(value.trim())) return true;
   return /\b(funds? managed by|managed funds?|clients?|preferred equity|tax equity|direct stake|direct equity|co-investment|co-invest|consortium|pool|department|platform|strategy|account|sma|balance sheet|proprietary capital|managed vehicle|investment manager|control|jv|joint venture)\b/i.test(
     value,
-  );
+  ) || /\bflagship funds?\b/i.test(value);
 }
 
 function looksLikeNamedFund(value: string): boolean {
@@ -294,6 +297,34 @@ function isInFundList(value: string): boolean {
     if (fundName.length < 12) return false;
     return fundName.includes(normalized) || normalized.includes(fundName) || overlapScore(fundName, normalized) >= 0.9;
   });
+}
+
+function compositeFundParts(value: string): string[] {
+  return value
+    .split(/\s+\/\s+/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+}
+
+function isCompositeInFundList(value: string): boolean {
+  const parts = compositeFundParts(value);
+  return parts.length > 1 && parts.every((part) => isInFundList(part));
+}
+
+function seedTextMentionsVehicle(company: PortCo, vehicle: string): boolean {
+  const normalizedVehicle = normalizeForCompare(vehicle);
+  if (!normalizedVehicle) return false;
+
+  const text = [
+    company.description,
+    ...(company.milestones ?? []).map((milestone) => `${milestone.date} ${milestone.category} ${milestone.event}`),
+    ...(company.sources ?? []).map((source) => `${source.label} ${source.evidenceLabel ?? ""}`),
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  if (text.toLowerCase().includes(vehicle.toLowerCase())) return true;
+  return normalizeForCompare(text).includes(normalizedVehicle);
 }
 
 function sourceText(source: PortCoSource): string {
@@ -407,6 +438,35 @@ function classifyRow(
     };
   }
 
+  if ((isInFundList(currentVehicle) || isCompositeInFundList(currentVehicle)) && seedTextMentionsVehicle(company, currentVehicle)) {
+    return {
+      verified_fund_vehicle_result: currentVehicle,
+      result_status: "Verified fund",
+      confidence: evidenceAvailable ? "High" : "Medium",
+      proposed_seed_data_action: "No seed-data action suggested.",
+      notes: appendNoEvidence(notes, evidenceAvailable, "Seed milestones or source evidence explicitly name the current fund vehicle."),
+    };
+  }
+
+  if (
+    hasSupplementalFund &&
+    isNoFundDisclosure(candidate) &&
+    isGenericVehicle(currentVehicle) &&
+    seedTextMentionsVehicle(company, currentVehicle)
+  ) {
+    return {
+      verified_fund_vehicle_result: currentVehicle,
+      result_status: "Disclosed but generic",
+      confidence: evidenceAvailable ? "Medium" : "Low",
+      proposed_seed_data_action: "No seed-data action suggested.",
+      notes: appendNoEvidence(
+        notes,
+        evidenceAvailable,
+        "Seed evidence supports the current generic vehicle label, but no distinct exact fund was publicly disclosed.",
+      ),
+    };
+  }
+
   if (
     hasSupplementalFund &&
     (isNoFundDisclosure(candidate) || fundEqualsOwnerFirm(candidate, owner.investmentFirm)) &&
@@ -429,6 +489,28 @@ function classifyRow(
         fundEqualsOwnerFirm(candidate, owner.investmentFirm)
           ? "Supplemental detail discloses only the owner/manager name, not a distinct fund."
           : "Supplemental detail states the fund was not publicly disclosed.",
+      ),
+    };
+  }
+
+  if (
+    hasSupplementalFund &&
+    !isNoFundDisclosure(candidate) &&
+    normalizeForCompare(candidate) === normalizeForCompare(currentVehicle) &&
+    (fundEqualsOwnerFirm(candidate, owner.investmentFirm) || isGenericVehicle(candidate))
+  ) {
+    return {
+      verified_fund_vehicle_result: candidate,
+      result_status: "Disclosed but generic",
+      confidence: evidenceAvailable ? "Medium" : "Low",
+      proposed_seed_data_action:
+        candidate.trim() === currentVehicle.trim()
+          ? "No seed-data action suggested."
+          : `Review replacing current ownershipVehicle with "${candidate}".`,
+      notes: appendNoEvidence(
+        notes,
+        evidenceAvailable,
+        "Supplemental detail supports the current generic vehicle label but does not identify a distinct exact fund.",
       ),
     };
   }
@@ -478,6 +560,19 @@ function classifyRow(
       confidence: evidenceAvailable ? "Medium" : "Low",
       proposed_seed_data_action: "Keep generic disclosure only if preferred; otherwise review whether n.a. is cleaner.",
       notes: appendNoEvidence(notes, evidenceAvailable, "Disclosure identifies a generic vehicle, account, client pool, or transaction structure rather than an exact fund."),
+    };
+  }
+
+  if (isCompositeInFundList(candidate)) {
+    return {
+      verified_fund_vehicle_result: candidate,
+      result_status: "Verified fund",
+      confidence: supplementalDetail || evidenceAvailable ? "High" : "Medium",
+      proposed_seed_data_action:
+        normalizeForCompare(candidate) === normalizeForCompare(currentVehicle)
+          ? "No seed-data action suggested."
+          : `Review replacing current ownershipVehicle with "${candidate}".`,
+      notes: appendNoEvidence(notes, evidenceAvailable, "Composite ownership vehicle is made up of fund-list entries."),
     };
   }
 
@@ -619,6 +714,13 @@ function summaryMarkdown(auditRows: AuditRow[], workingRows: ActiveOwnerRow[]): 
       return "Manual review";
     }),
   );
+  const recommendations = [
+    statusCounts["Needs user review"]
+      ? "Review `Needs user review` rows by investment firm, starting with the concentration table above."
+      : "No `Needs user review` rows remain in the current-owner audit.",
+    "Review `Verified fund - missing from funds list` rows for fund-list additions or aliases so strategy badges can appear where appropriate.",
+    "Review `Disclosed but generic` rows and decide whether generic account/client-pool language should remain visible or become `n.a.`.",
+  ];
 
   return `# Current Owner Fund Verification Audit - ${AUDIT_DATE}
 
@@ -678,9 +780,7 @@ ${markdownTable([
 
 ## Recommended Follow-Up Batches
 
-1. Review \`Needs user review\` rows by investment firm, starting with the concentration table above.
-2. Review \`Verified fund - missing from funds list\` rows for fund-list additions or aliases so strategy badges can appear where appropriate.
-3. Review \`Disclosed but generic\` rows and decide whether generic account/client-pool language should remain visible or become \`n.a.\`.
+${recommendations.map((item, index) => `${index + 1}. ${item}`).join("\n")}
 `;
 }
 

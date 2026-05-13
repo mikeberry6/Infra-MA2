@@ -733,7 +733,7 @@ export const companies: PortCo[] = [
     investmentYear: 2009,
     headquarters: "Washington",
     milestones: [
-      { date: "Feb 6, 2009", event: "Puget Holdings completed the take-private acquisition of Puget Energy through a consortium of infrastructure investors including AIMCo.", category: "Acquisition" },
+      { date: "Feb 6, 2009", event: "Puget Holdings completed the take-private acquisition of Puget Energy through a consortium of infrastructure investors including AIMCo and BCI.", category: "Acquisition" },
       { date: "Mar 2018", event: "AIMCo announced that it had increased its stake in Puget Sound Energy's parent company.", category: "Acquisition" },
       { date: "Dec 2021", event: "Macquarie Asset Management and Ontario Teachers' signed an agreement to acquire a stake in Puget Holdings.", category: "Acquisition" },
       { date: "Jan 2022", event: "Macquarie and Ontario Teachers' completed the transaction and each disclosed a 15.8% ownership interest.", category: "Acquisition" },
@@ -1691,20 +1691,20 @@ export const companies: PortCo[] = [
   },
   {
     name: "Empire Access",
-    investmentFirm: "Antin Infrastructure Partners",
+    investmentFirm: "Lone Star Funds",
     sector: "Digital",
     subsector: "Fiber-to-the-home broadband networks",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Mid Cap Fund I",
-    description: "Empire Access provides fiber-to-the-home broadband and communications services in New York and Pennsylvania. Its customer base includes residential broadband subscribers, business users, and communications customers served over owned last-mile fiber infrastructure. The company follows an asset-heavy network expansion model with recurring subscription revenues rather than a wholesale-only carrier model. Antin completed its investment in Empire Access and North Penn in 2023, and public transaction materials described roughly 96,000 addresses served and approximately 29,000 customers at signing. Reviewed public sources do not disclose Antin's ownership percentage.",
+    ownershipVehicle: "Antin Mid Cap Fund I",
+    description: "Empire Access provides fiber-to-the-home broadband and communications services in New York and Pennsylvania. Its customer base includes residential broadband subscribers, business users, and communications customers served over owned last-mile fiber infrastructure. The company follows an asset-heavy network expansion model with recurring subscription revenues rather than a wholesale-only carrier model. Antin Mid Cap Fund I completed its investment in Empire Access and North Penn in 2023, and public transaction materials described roughly 96,000 addresses served and approximately 29,000 customers at signing. Reviewed public sources do not disclose Antin's ownership percentage.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1896,
     investmentYear: 2023,
     headquarters: "New York; Pennsylvania",
     milestones: [
-      { date: "2022", event: "Antin announced its investment in Empire Access and North Penn.", category: "Financing" },
+      { date: "2022", event: "Antin Mid Cap Fund I announced its investment in Empire Access and North Penn.", category: "Financing" },
       { date: "Jan 17, 2023", event: "Antin completed the acquisition of Empire Access and North Penn.", category: "Acquisition" },
       { date: "1896", event: "Empire Telephone Company was founded in Prattsburgh, New York.", category: "Founding" },
       { date: "1896", event: "Empire Access was founded.", category: "Founding" },
@@ -1716,7 +1716,7 @@ export const companies: PortCo[] = [
       { label: "Empireaccess — Empire Access", url: "https://www.empireaccess.com/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Antin Infrastructure Partners", ownershipVehicle: "Mid Cap Fund I", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "Antin Infrastructure Partners", ownershipVehicle: "Antin Mid Cap Fund I", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -1726,8 +1726,8 @@ export const companies: PortCo[] = [
     subsector: "Fiber network operator",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Flagship Fund III",
-    description: "FirstLight Fiber owns and operates fiber communications infrastructure across the northeastern United States. Its customers include enterprises, carriers, wireless operators, schools, healthcare organizations, and public-sector users served through an asset-heavy regional fiber platform. Public company materials describe a network of more than 14,000 route miles and service to thousands of on-net and near-net locations. Antin acquired the company from Oak Hill in 2018 as its first U.S. investment and has continued to support network growth through acquisitions and organic expansion. Reviewed public sources do not disclose Antin's current ownership percentage.",
+    ownershipVehicle: "Antin Flagship Fund III / Antin Fund III-B",
+    description: "FirstLight Fiber owns and operates fiber communications infrastructure across the northeastern United States. Its customers include enterprises, carriers, wireless operators, schools, healthcare organizations, and public-sector users served through an asset-heavy regional fiber platform. Public company materials describe a network of more than 14,000 route miles and service to thousands of on-net and near-net locations. Antin Flagship Fund III acquired the company from Oak Hill in 2018 as Antin's first U.S. investment, and Antin later reported FirstLight under Fund III and III-B. Reviewed public sources do not disclose Antin's current ownership percentage.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1999,
@@ -1735,15 +1735,17 @@ export const companies: PortCo[] = [
     headquarters: "Northeastern United States",
     milestones: [
       { date: "1999", event: "Tech Valley Communications, a predecessor to FirstLight, was founded in Albany, New York.", category: "Founding" },
-      { date: "Jul 2018", event: "Antin acquired FirstLight from Oak Hill Capital Partners.", category: "Financing" },
+      { date: "Jul 2018", event: "Antin Flagship Fund III acquired FirstLight from Oak Hill Capital Partners.", category: "Financing" },
+      { date: "2023", event: "Antin reported FirstLight Fiber under Antin Flagship Fund III and Antin Fund III-B.", category: "Other" },
     ],
     sources: [
       { label: "Firstlight — FirstLight Fiber", url: "https://www.firstlight.net/about/our-story/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Close date source — Antin Infrastructure Partners — FirstLight Fiber", url: "https://www.prnewswire.com/news-releases/antin-infrastructure-partners-completes-acquisition-of-firstlight-300686268.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Fund vehicle source — Antin Flagship Fund III / Antin Fund III-B — FirstLight Fiber", url: "https://financialreports.eu/filings/835156/content/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Firstlight — FirstLight Fiber", url: "https://www.firstlight.net/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Antin Infrastructure Partners", ownershipVehicle: "Flagship Fund III", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "Antin Infrastructure Partners", ownershipVehicle: "Antin Flagship Fund III / Antin Fund III-B", investmentYear: 2018, status: "Active" },
     ],
   },
   {
@@ -1780,8 +1782,8 @@ export const companies: PortCo[] = [
     subsector: "Regional freight railroad",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Mid Cap Fund I",
-    description: "Lake State Railway Company operates a regional freight rail network in Michigan's Lower Peninsula. Its customer base includes industrial and bulk commodity shippers that depend on short line and regional rail connectivity, transload services, and interchange access. The business follows an asset-heavy rail operating model built around owned or leased track infrastructure and associated freight services. Antin made a strategic investment in the company in 2022, and public materials describe a network of roughly 375 route miles handling tens of thousands of annual carloads. Reviewed public sources do not disclose Antin's ownership percentage.",
+    ownershipVehicle: "Antin Mid Cap Fund I",
+    description: "Lake State Railway Company operates a regional freight rail network in Michigan's Lower Peninsula. Its customer base includes industrial and bulk commodity shippers that depend on short line and regional rail connectivity, transload services, and interchange access. The business follows an asset-heavy rail operating model built around owned or leased track infrastructure and associated freight services. Antin Mid Cap Fund I made a strategic investment in the company in 2022, and public materials describe a network of roughly 375 route miles handling tens of thousands of annual carloads. Reviewed public sources do not disclose Antin's ownership percentage.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1992,
@@ -1790,7 +1792,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1992", event: "Lake State Railway was formed following the acquisition of lines from Detroit & Mackinac Railway.", category: "Acquisition" },
       { date: "1992", event: "Lake State Railway Company was founded.", category: "Founding" },
-      { date: "Mar 8, 2022", event: "Antin completed a strategic investment in Lake State Railway.", category: "Financing" },
+      { date: "Mar 8, 2022", event: "Antin Mid Cap Fund I completed a strategic investment in Lake State Railway.", category: "Financing" },
     ],
     sources: [
       { label: "Lsrc — Lake State Railway Company", url: "https://www.lsrc.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -1798,7 +1800,7 @@ export const companies: PortCo[] = [
       { label: "Lsrc — Lake State Railway Company", url: "https://www.lsrc.com/about-lake-state-railway/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Antin Infrastructure Partners", ownershipVehicle: "Mid Cap Fund I", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Antin Infrastructure Partners", ownershipVehicle: "Antin Mid Cap Fund I", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -1808,15 +1810,15 @@ export const companies: PortCo[] = [
     subsector: "District energy systems",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Flagship Fund IV",
-    description: "Vicinity Energy owns and operates district energy systems serving buildings in major U.S. urban markets. Its customer base includes commercial real estate, healthcare, education, and government users that buy steam, hot water, chilled water, and related thermal services. The company follows an asset-heavy utility model with recurring contracted or utility-like revenues from central energy plants and distribution networks. Antin acquired Veolia North America's U.S. district energy portfolio in late 2019 and launched the Vicinity Energy brand in 2020. Public company materials describe one of the largest district energy portfolios in the country, with systems across multiple cities.",
+    ownershipVehicle: "Antin Flagship Fund IV",
+    description: "Vicinity Energy owns and operates district energy systems serving buildings in major U.S. urban markets. Its customer base includes commercial real estate, healthcare, education, and government users that buy steam, hot water, chilled water, and related thermal services. The company follows an asset-heavy utility model with recurring contracted or utility-like revenues from central energy plants and distribution networks. Antin Flagship Fund IV acquired Veolia North America's U.S. district energy portfolio in late 2019 and launched the Vicinity Energy brand in 2020. Public company materials describe one of the largest district energy portfolios in the country, with systems across multiple cities.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2020,
     investmentYear: 2019,
     headquarters: "United States",
     milestones: [
-      { date: "Dec 30, 2019", event: "Antin completed the acquisition of Veolia North America's U.S. district energy assets.", category: "Acquisition" },
+      { date: "Dec 30, 2019", event: "Antin Flagship Fund IV completed the acquisition of Veolia North America's U.S. district energy assets.", category: "Acquisition" },
       { date: "2020", event: "Vicinity Energy was founded.", category: "Founding" },
       { date: "Jan 2020", event: "Vicinity Energy launched as the new operating brand.", category: "Expansion" },
     ],
@@ -1826,7 +1828,7 @@ export const companies: PortCo[] = [
       { label: "Vicinityenergy — Vicinity Energy", url: "https://www.vicinityenergy.us/about-vicinity/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Antin Infrastructure Partners", ownershipVehicle: "Flagship Fund IV", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "Antin Infrastructure Partners", ownershipVehicle: "Antin Flagship Fund IV", investmentYear: 2019, status: "Active" },
     ],
   },
   {
@@ -1836,27 +1838,28 @@ export const companies: PortCo[] = [
     subsector: "Shipbuilding and ship repair",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Flagship Fund V",
-    description: "Vigor Marine Group provides shipbuilding, ship repair, and marine fabrication services in the Pacific Northwest and Alaska. Its customer base includes defense, commercial maritime, and industrial users, and the business relies on an asset-heavy operating model built around shipyards, dry docks, and specialized fabrication facilities. Public materials describe a multi-yard platform assembled through acquisitions and capital investment over two decades. Antin announced an agreement to acquire the company from Lone Star Funds in February 2026, but the transaction was still subject to regulatory approvals and expected to close later in 2026 in reviewed public materials. Because a closing announcement was not identified in the reviewed public sources, the current ownership structure is treated as not publicly disclosed for this profile.",
+    ownershipVehicle: "n.a.",
+    description: "Vigor Marine Group provides shipbuilding, ship repair, and marine fabrication services in the Pacific Northwest and Alaska. Its customer base includes defense, commercial maritime, and industrial users, and the business relies on an asset-heavy operating model built around shipyards, dry docks, and specialized fabrication facilities. Public materials describe a multi-yard platform assembled through acquisitions and capital investment over two decades. Lone Star Funds acquired the Titan platform that includes Vigor in June 2023. Antin announced an agreement to acquire the company from Lone Star Funds in February 2026, but the transaction was still subject to regulatory approvals and expected to close later in 2026 in reviewed public materials. Because a closing announcement was not identified in the reviewed public sources, Lone Star remains the current owner and no distinct Lone Star fund vehicle is treated as publicly disclosed for this profile.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1995,
-    investmentYear: 2026,
+    investmentYear: 2023,
     headquarters: "Pacific Northwest; Alaska",
     milestones: [
       { date: "1995", event: "Frank Foti acquired the Cascade General shipyard and founded Vigor.", category: "Founding" },
-      { date: "2019", event: "Lone Star Funds invested in Vigor Marine Group through Seller in announced Antin acquisition pending close.", category: "Acquisition" },
+      { date: "2019", event: "Carlyle and Stellex acquired and combined Vigor Industrial and MHI Holdings to form the Titan platform.", category: "Acquisition" },
+      { date: "Jun 15, 2023", event: "Lone Star Funds completed the acquisition of Titan Acquisition Holdings, the parent platform that includes Vigor.", category: "Acquisition" },
       { date: "Feb 4, 2026", event: "Antin Infrastructure Partners announced an agreement to acquire Vigor Marine Group from an affiliate of Lone Star Funds.", category: "Acquisition" },
     ],
     sources: [
       { label: "Vigormarine — Vigor Marine Group", url: "https://www.vigormarine.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
+      { label: "Close date source — Lone Star Funds — Vigor Marine Group", url: "https://www.vigormarine.com/news-press/carlyle-and-stellex-complete-sale-of-titan-to-an-affiliate-of-lone-star-funds", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Announcement date source — Antin Infrastructure Partners — Vigor Marine Group", url: "https://www.vigormarine.com/news-press/antin-to-acquire-vigor-marine-group", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Workboat — Vigor Marine Group", url: "https://www.workboat.com/french-private-equity-firm-to-acquire-vigor-marine-group", type: "ARTICLE" },
       { label: "Naval News - INF-2026-055 - Vigor Marine Group", url: "https://www.navalnews.com/naval-news/2026/02/french-private-equity-firm-antin-to-acquire-vigor-marine-group/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Antin Infrastructure Partners", ownershipVehicle: "Flagship Fund V", investmentYear: 2026, status: "Active" },
-      { investmentFirm: "Lone Star Funds", ownershipVehicle: "Seller in announced Antin acquisition pending close", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "Lone Star Funds", ownershipVehicle: "n.a.", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -1921,7 +1924,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "Argo Infrastructure Partners", ownershipVehicle: "AIA Energy North America LLC", investmentYear: 2015, status: "Active" },
-      { investmentFirm: "APG Infrastructure", ownershipVehicle: "AIA Montana LLC (Managed by Argo Infrastructure)", investmentYear: 2015, status: "Active" },
+      { investmentFirm: "APG Infrastructure", ownershipVehicle: "Argo-managed AIA platform", investmentYear: 2015, status: "Active" },
     ],
   },
   {
@@ -2222,7 +2225,7 @@ export const companies: PortCo[] = [
     subsector: "Wholesale power generation and renewable infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "APG Direct",
+    ownershipVehicle: "n.a.",
     description: "Southern Power is the wholesale generation subsidiary of Southern Company and develops, owns, and operates conventional and renewable power assets across the United States. Its customers are municipalities, electric cooperatives, investor-owned utilities, and commercial and industrial counterparties that contract for wholesale electricity and capacity. The company follows an asset-heavy ownership model with contracted generation assets spanning solar, wind, gas, and storage technologies. Public materials describe more than 3,050 megawatts of solar capacity at 30 facilities and a broader renewable fleet exceeding 5,000 megawatts, alongside gas-fired generation assets. Although Southern Power itself remains wholly owned by Southern Company, APG's disclosed exposure relates to the separate 2023 purchase of a 33% minority stake in a Southern Power-managed solar portfolio. Accordingly, public sources do not indicate that APG holds a direct corporate ownership stake in Southern Power itself.",
     status: "Active",
     countryTags: ["United States"],
@@ -2243,7 +2246,7 @@ export const companies: PortCo[] = [
       { label: "Business Wire — Southern Power", url: "https://www.businesswire.com/news/home/20231114814709/en/Global-Atlantic-Sells-Stake-in-26-Solar-Facilities-to-APG", type: "PRESS_RELEASE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "APG Infrastructure", ownershipVehicle: "APG Direct", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "APG Infrastructure", ownershipVehicle: "n.a.", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -2283,7 +2286,7 @@ export const companies: PortCo[] = [
     subsector: "Offshore wind port infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Apollo Infrastructure Funds",
+    ownershipVehicle: "Apollo-managed funds",
     description: "Arthur Kill Terminal is a heavy-lift marine terminal project under development on Staten Island, New York for offshore wind staging and assembly. The facility is intended to serve offshore wind developers and marine logistics users through an asset-heavy port infrastructure model rather than a traditional shipping terminal concession. Public project materials describe a roughly 32.5-acre site with marine improvements designed to handle large turbine components. Apollo-managed funds announced in 2021 that they had secured the exclusive right to invest in the project alongside Atlantic Offshore Terminals, but reviewed public materials do not disclose the current finalized ownership structure. The project continued through permitting and development work, although a previously awarded federal port grant was later withdrawn in 2025.",
     status: "Active",
     countryTags: ["United States"],
@@ -2304,7 +2307,7 @@ export const companies: PortCo[] = [
       { label: "Transportation — Arthur Kill Terminal", url: "https://www.transportation.gov/briefing-room/trumps-transportation-secretary-sean-p-duffy-terminates-and-withdraws-679-million", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Apollo Infrastructure Funds", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Apollo-managed funds", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -2465,8 +2468,8 @@ export const companies: PortCo[] = [
     subsector: "Hydroelectric generation platform",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Apollo Infrastructure Funds",
-    description: "Eagle Creek Renewable Energy owns and operates a large portfolio of hydroelectric facilities across the United States. Its customer base includes utilities, power market counterparties, and communities served through an asset-heavy renewable generation model centered on owned hydro plants and related water infrastructure. Public company materials describe approximately 85 hydroelectric facilities across 18 states totaling nearly 700 MW. Apollo announced in October 2025 that Apollo-managed funds had agreed to acquire the company, with closing targeted for the first quarter of 2026, but a public completion notice was not identified in the reviewed sources. Accordingly, the current ownership structure is treated as not publicly disclosed for this profile.",
+    ownershipVehicle: "Pending acquisition by Apollo-managed funds",
+    description: "Eagle Creek Renewable Energy owns and operates a large portfolio of hydroelectric facilities across the United States. Its customer base includes utilities, power market counterparties, and communities served through an asset-heavy renewable generation model centered on owned hydro plants and related water infrastructure. Public company materials describe approximately 85 hydroelectric facilities across 18 states totaling nearly 700 MW. Apollo announced in October 2025 that Apollo-managed funds had agreed to acquire the company, with closing targeted for the first quarter of 2026, but a public completion notice was not identified in the reviewed sources as of May 13, 2026. Accordingly, the current ownership structure is treated as pending rather than confirmed for this profile.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2009,
@@ -2483,7 +2486,7 @@ export const companies: PortCo[] = [
       { label: "Eaglecreekre — Eagle Creek Renewable Energy", url: "https://www.eaglecreekre.com/media/news/apollo-funds-acquire-eagle-creek-renewable-energy-one-largest-us-hydroelectric-power-platforms", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Apollo Infrastructure Funds", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Pending acquisition by Apollo-managed funds", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -2493,8 +2496,8 @@ export const companies: PortCo[] = [
     subsector: "Fiber-based business telecommunications network",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Apollo Infrastructure Opps. Fund II",
-    description: "FirstDigital Telecom provides fiber-based internet, data, voice, and unified communications services in the Intermountain West. Its customer base includes enterprise, multifamily, and other business users served over owned and managed fiber infrastructure. The company follows an asset-heavy communications model built around fiber networks, lit buildings, and managed telecom services rather than a consumer-only broadband approach. Apollo announced in 2021 that Apollo Infrastructure Funds would invest $200 million of preferred equity to support FirstDigital's acquisition of Veracity Networks and broader expansion. Because the disclosed Apollo investment was preferred equity rather than a publicly disclosed common equity acquisition, the current ownership structure is treated as not publicly disclosed.",
+    ownershipVehicle: "Apollo Infrastructure Opportunities Fund II",
+    description: "FirstDigital Telecom provides fiber-based internet, data, voice, and unified communications services in the Intermountain West. Its customer base includes enterprise, multifamily, and other business users served over owned and managed fiber infrastructure. The company follows an asset-heavy communications model built around fiber networks, lit buildings, and managed telecom services rather than a consumer-only broadband approach. Apollo Infrastructure Opportunities Fund II invested $200 million of preferred equity to support FirstDigital's acquisition of Veracity Networks and broader expansion. Because the disclosed Apollo investment was preferred equity rather than a publicly disclosed common equity acquisition, the current ownership structure is treated as not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2000,
@@ -2503,15 +2506,16 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2000", event: "Wesley McDougal founded FirstDigital.", category: "Founding" },
       { date: "2021", event: "The investment supported FirstDigital's acquisition of Veracity Networks.", category: "Financing" },
-      { date: "Jul 2021", event: "Apollo announced a $200 million preferred equity investment in FirstDigital.", category: "Financing" },
+      { date: "Jul 2021", event: "Apollo Infrastructure Opportunities Fund II announced a $200 million preferred equity investment in FirstDigital.", category: "Financing" },
     ],
     sources: [
       { label: "Firstdigital — FirstDigital Telecom, LLC", url: "https://www.firstdigital.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Firstdigital — FirstDigital Telecom, LLC", url: "https://www.firstdigital.com/about-firstdigital", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Investment date source — Apollo Global Management — FirstDigital Telecom, LLC", url: "https://ir.apollo.com/news-events/press-releases/detail/76/apollo-infrastructure-funds-invest-200-million-in", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Fund vehicle source — Apollo Infrastructure Opportunities Fund II — FirstDigital Telecom, LLC", url: "https://www.apollo.com/insights-news/pressreleases/2022/01/apollo-closes-second-dedicated-infrastructure-fund-with-more-than-2-5-billion-in-capital-commitments-130444186", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Apollo Infrastructure Opps. Fund II", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Apollo Infrastructure Opportunities Fund II", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -2642,7 +2646,7 @@ export const companies: PortCo[] = [
     subsector: "Energy-as-a-Service",
     region: "North America",
     country: "United States / Canada",
-    ownershipVehicle: "Apollo Infrastructure Opps. Fund II",
+    ownershipVehicle: "Apollo Infrastructure Opportunities Fund II",
     description: "IonicBlue is an energy-as-a-service provider that develops, finances, and manages building-efficiency and decarbonization projects for commercial, institutional, and public-sector customers. The business packages energy upgrades such as HVAC, controls, lighting, and related infrastructure into contracted service arrangements so customers can avoid large upfront capital expenditures. Its operating footprint spans the United States and Canada, and public materials describe the platform as a joint venture combining Johnson Controls' technical capabilities with Apollo's capital. Johnson Controls stated in 2023 that IonicBlue was founded in 2021 and had received up to C$100 million of additional capital from the Canada Infrastructure Bank to support Canadian projects. The platform was formed in 2021 through a joint venture between Johnson Controls and Apollo infrastructure funds, while public sources do not disclose the current ownership percentages.",
     status: "Active",
     countryTags: ["United States", "Canada"],
@@ -2662,7 +2666,7 @@ export const companies: PortCo[] = [
       { label: "Johnsoncontrols — IonicBlue", url: "https://www.johnsoncontrols.com/media-center/news/press-releases/2023/05/23/ionicblue-receives-up-to-cad-%24100-million-investment", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Apollo Infrastructure Opps. Fund II", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Apollo Infrastructure Opportunities Fund II", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -2738,8 +2742,8 @@ export const companies: PortCo[] = [
     subsector: "FBO & Airport Services",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Apollo Infrastructure Opps. Fund III",
-    description: "Modern Aviation operates fixed-base operations that provide fueling, hangarage, ground handling, and related services to business, general aviation, cargo, commercial, and military aircraft. The business serves airport operators, aircraft owners, charter operators, and corporate flight departments through an asset-heavy model combining long-term airport leases with recurring service revenue. Company materials describe a multi-airport footprint across the United States and Puerto Rico, and Apollo's 2023 transaction announcement referred to 16 locations. The platform was established in 2018 and has expanded through acquisitions and site additions since launch. Apollo announced in November 2023 that its infrastructure funds had entered a definitive agreement to acquire a majority stake in Modern Aviation, while Tiger Infrastructure Partners and management reinvested and public sources do not disclose the resulting ownership percentages.",
+    ownershipVehicle: "Apollo Infrastructure Opportunities Fund III",
+    description: "Modern Aviation operates fixed-base operations that provide fueling, hangarage, ground handling, and related services to business, general aviation, cargo, commercial, and military aircraft. The business serves airport operators, aircraft owners, charter operators, and corporate flight departments through an asset-heavy model combining long-term airport leases with recurring service revenue. Company materials describe a multi-airport footprint across the United States and Puerto Rico, and Apollo's 2023 transaction announcement referred to 16 locations. The platform was established in 2018 and has expanded through acquisitions and site additions since launch. Apollo Infrastructure Opportunities Fund III announced in November 2023 that it had entered a definitive agreement to acquire a majority stake in Modern Aviation, while Tiger Infrastructure Partners and management reinvested and public sources do not disclose the resulting ownership percentages.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2018,
@@ -2749,8 +2753,8 @@ export const companies: PortCo[] = [
       { date: "2018", event: "Modern Aviation was founded as an FBO platform focused on business and general aviation infrastructure.", category: "Founding" },
       { date: "2018", event: "The company completed its first acquisition with the purchase of Landmark Aviation's facilities at Pittsburgh International Airport.", category: "Acquisition" },
       { date: "2018", event: "Tiger Infrastructure Partners made its initial investment in Modern Aviation.", category: "Financing" },
-      { date: "Nov 2023", event: "Tiger announced the sale of Modern Aviation from Fund II and said Tiger funds would reinvest alongside Apollo.", category: "Divestiture" },
-      { date: "Nov 2, 2023", event: "Apollo Infrastructure Funds announced a definitive agreement to acquire a majority stake in Modern Aviation.", category: "Acquisition" },
+      { date: "Nov 2023", event: "Tiger announced the sale of Modern Aviation from Fund II and said Tiger funds would reinvest alongside Apollo; the post-transaction Tiger fund vehicle was not publicly disclosed.", category: "Divestiture" },
+      { date: "Nov 2, 2023", event: "Apollo Infrastructure Opportunities Fund III announced a definitive agreement to acquire a majority stake in Modern Aviation.", category: "Acquisition" },
     ],
     sources: [
       { label: "Modern Aviation — Modern Aviation", url: "https://modern-aviation.com/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -2760,8 +2764,8 @@ export const companies: PortCo[] = [
       { label: "Announcement date source — Apollo Global Management — Modern Aviation", url: "https://www.apollo.com/insights-news/pressreleases/2023/11/apollo-infrastructure-funds-acquire-majority-stake-in-modern-aviation-2772854", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Apollo Infrastructure Opps. Fund III", investmentYear: 2023, status: "Active" },
-      { investmentFirm: "Tiger", ownershipVehicle: "Fund II", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Apollo Infrastructure Opportunities Fund III", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "Tiger", ownershipVehicle: "n.a.", investmentYear: 2018, status: "Active" },
     ],
   },
   {
@@ -3144,7 +3148,7 @@ export const companies: PortCo[] = [
     subsector: "Offshore Wind",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Apollo Infrastructure Opps. Fund II",
+    ownershipVehicle: "Apollo Infrastructure Opportunities Fund II",
     description: "US Wind develops offshore wind generation projects off the coast of Maryland. The platform serves utility and wholesale power markets through an asset-heavy development model focused on federal leasehold rights, permitting, interconnection, and long-term offtake arrangements. Public materials describe an 80,000-acre federal lease area and a development program capable of supporting roughly 1,500 MW to 1,800 MW of generation. The company has been active since 2011 and has advanced both state-level offtake awards and federal permitting milestones for its Maryland offshore projects. Apollo announced in 2020 that its infrastructure funds had made a strategic investment in US Wind, whose controlling shareholder is associated with Renexia, while public sources do not disclose the ownership percentages.",
     status: "Active",
     countryTags: ["United States"],
@@ -3165,7 +3169,7 @@ export const companies: PortCo[] = [
       { label: "Uswindinc — US Wind", url: "https://uswindinc.com/us-wind-wins-big-in-maryland/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Apollo Infrastructure Opps. Fund II", investmentYear: 2020, status: "Active" },
+      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Apollo Infrastructure Opportunities Fund II", investmentYear: 2020, status: "Active" },
     ],
   },
   {
@@ -3331,7 +3335,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Advanced Power",
-    investmentFirm: "ArcLight Capital Partners",
+    investmentFirm: "InfraBridge",
     sector: "Power & ET",
     subsector: "Power Development",
     region: "North America",
@@ -3621,12 +3625,12 @@ export const companies: PortCo[] = [
     subsector: "Gas-Fired Power Generation",
     region: "North America",
     country: "United States / Canada",
-    ownershipVehicle: "n.a.",
-    description: "Invenergy AMPCI Thermal Power is a portfolio of dispatchable thermal generation assets operated by Invenergy. The business serves competitive wholesale power markets through an asset-heavy portfolio of generation plants rather than through regulated distribution operations. ArcLight stated in March 2026 that the portfolio comprised 11 assets totaling 5.4 GW across North America. The announcement described the transaction as an acquisition of InfraBridge's 50% stake, indicating a continuing co-ownership and operating role for Invenergy after closing. ArcLight announced the transaction in March 2026, but public sources reviewed do not disclose a separate platform founding year or the post-close ownership percentages beyond the acquired 50% interest.",
+    ownershipVehicle: "AMP Capital Global Infrastructure Fund II (GIF II)",
+    description: "Invenergy AMPCI Thermal Power is a portfolio of dispatchable thermal generation assets operated by Invenergy. The business serves competitive wholesale power markets through an asset-heavy portfolio of generation plants rather than through regulated distribution operations. InfraBridge currently owns a 50% stake through the legacy AMP Capital Global Infrastructure Fund II (GIF II) strategy, with Invenergy retaining the other 50% and operational role. ArcLight announced a definitive agreement in March 2026 to acquire InfraBridge's 50% stake, but the transaction remains subject to regulatory approvals and was expected to close in the second half of 2026.",
     status: "Active",
     countryTags: ["United States", "Canada"],
     yearFounded: 2018,
-    investmentYear: 2026,
+    investmentYear: 2018,
     headquarters: "United States & Canada",
     milestones: [
       { date: "2018", event: "The portfolio was established to manage Invenergy thermal power assets across North America.", category: "Founding" },
@@ -3641,13 +3645,12 @@ export const companies: PortCo[] = [
       { label: "Invenergy — Invenergy AMPCI Thermal Power", url: "https://invenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Investment date source — DigitalBridge — Invenergy AMPCI Thermal Power", url: "https://www.infrabridge.com/our-portfolio", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Investment date source — InfraBridge — Invenergy AMPCI Thermal Power", url: "https://www.infrabridge.com/our-portfolio", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "The Asset — AMP Capital Global Infrastructure Fund II", url: "https://www.theasset.com/article/39539/amp-capital-global-infrastructure-fund-ii-closes-at-us-3-4-billion", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Fund close reporting identified Invenergy AMPCI Thermal Power as a current asset of AMP Capital Global Infrastructure Fund II (GIF II)." },
       { label: "Invenergy — Invenergy AMPCI Thermal Power", url: "https://www.invenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Owner relationship source — DigitalBridge — InfraBridge", url: "https://www.digitalbridge.com/news/2023-02-02-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
-      { investmentFirm: "ArcLight Capital Partners", ownershipVehicle: "n.a.", investmentYear: 2026, status: "Active" },
-      { investmentFirm: "DigitalBridge", ownershipVehicle: "InfraBridge", investmentYear: 2018, status: "Active" },
-      { investmentFirm: "InfraBridge", ownershipVehicle: "Global Infrastructure Fund II (GIF II)", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "InfraBridge", ownershipVehicle: "AMP Capital Global Infrastructure Fund II (GIF II)", investmentYear: 2018, status: "Active" },
     ],
   },
   {
@@ -4162,7 +4165,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Ardian Americas Infrastructure Fund V (AAIF V)",
-    description: "Clermont is a Canadian parking investment platform formed by Ardian and Indigo Group. The platform is intended to acquire and manage parking assets, concessions, and long-term leases serving municipalities, institutions, and commercial customers across Canada. Its operating model combines long-duration parking rights with Indigo's operating capabilities and local market coverage. Public launch materials describe Clermont as a dedicated national vehicle for further parking investments in Canada, with Indigo continuing to manage operations. Clermont was created in March 2024 by Ardian and Indigo Group as a new joint venture, and the detailed ownership split has not been publicly disclosed.",
+    description: "Clermont is a Canadian parking investment platform formed by Ardian and Indigo Group. The platform is intended to acquire and manage parking assets, concessions, and long-term leases serving municipalities, institutions, and commercial customers across Canada. Its operating model combines long-duration parking rights with Indigo's operating capabilities and local market coverage. Public launch materials describe Clermont as a dedicated national vehicle for further parking investments in Canada, with Indigo continuing to manage operations. Ardian stated that the Clermont transaction would be made through Ardian Americas Infrastructure Fund V (AAIF V). Clermont was created in March 2024 by Ardian and Indigo Group as a new joint venture, and the detailed ownership split has not been publicly disclosed.",
     status: "Active",
     countryTags: ["Canada"],
     yearFounded: 2024,
@@ -4172,7 +4175,7 @@ export const companies: PortCo[] = [
       { date: "2024", event: "Clermont was founded.", category: "Founding" },
       { date: "Mar 2024", event: "Clermont was launched to invest in parking assets, concessions, and long-term leases across Canada.", category: "Other" },
       { date: "Mar 2024", event: "Indigo Group said it would continue to manage parking operations for the platform.", category: "Other" },
-      { date: "Mar 25, 2024", event: "Ardian and Indigo Group announced the creation of Clermont as a Canadian parking investment joint venture.", category: "Financing" },
+      { date: "Mar 25, 2024", event: "Ardian and Indigo Group announced the creation of Clermont as a Canadian parking investment joint venture through Ardian Americas Infrastructure Fund V (AAIF V).", category: "Financing" },
     ],
     sources: [
       { label: "Announcement date source — Ardian — Clermont", url: "https://www.ardian.com/news-insights/press-releases/indigo-group-and-ardian-create-clermont-new-venture-accelerate-growth", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -4191,13 +4194,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ardian Americas Infrastructure Fund IV (AAIF IV)",
-    description: "Dauntless Energy is Ardian's North American energy asset manager and independent power platform. The company develops, acquires, and manages wind, solar, storage, and efficient gas-fired generation assets serving wholesale power markets and contracted offtakers. Its operating model is asset-heavy and combines portfolio management, development, and operating oversight across multiple generation vehicles. Public materials identify Skyline Renewables, launched in 2018, and 1370 Clean Energy, launched in 2025, as key portfolio vehicles managed by Dauntless in the United States. The platform traces back to Ardian's 2018 launch of Skyline Renewables with TPH and was rebranded as Dauntless Energy, while ownership details for the current management platform have not been publicly disclosed.",
+    description: "Dauntless Energy is Ardian's North American energy asset manager and independent power platform. The company develops, acquires, and manages wind, solar, storage, and efficient gas-fired generation assets serving wholesale power markets and contracted offtakers. Its operating model is asset-heavy and combines portfolio management, development, and operating oversight across multiple generation vehicles. Public materials identify Skyline Renewables, launched in 2018 through Ardian Americas Infrastructure Fund IV (AAIF IV), and 1370 Clean Energy, launched in 2025, as key portfolio vehicles managed by Dauntless in the United States. The platform traces back to Ardian's 2018 launch of Skyline Renewables with TPH and was rebranded as Dauntless Energy, while ownership percentages for the current management platform have not been publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2018,
     headquarters: "Texas; multi-state United States portfolio",
     milestones: [
-      { date: "Mar 5, 2018", event: "Ardian and TPH launched Skyline Renewables as a United States renewables platform.", category: "Financing" },
+      { date: "Mar 5, 2018", event: "Ardian and TPH launched Skyline Renewables as a United States renewables platform tied to Ardian Americas Infrastructure Fund IV (AAIF IV).", category: "Financing" },
       { date: "Mar 5, 2018", event: "Skyline Renewables completed its first acquisition, the 60 MW Whirlwind Energy wind farm in Texas.", category: "Acquisition" },
       { date: "2024", event: "The North American energy asset manager began operating under the Dauntless Energy brand.", category: "Expansion" },
       { date: "2025", event: "Dauntless added 1370 Clean Energy as a growth vehicle for clean energy investments.", category: "Other" },
@@ -4984,7 +4987,7 @@ export const companies: PortCo[] = [
       { label: "Hawaiigas — Hawaiʻi Gas", url: "https://www.hawaiigas.com/posts/argo-acquires-ugis-gas-storage-and-supply-assets-in-hawai-i", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
-      { investmentFirm: "APG Infrastructure", ownershipVehicle: "AIA Montana LLC (Managed by Argo Infrastructure)", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "APG Infrastructure", ownershipVehicle: "Argo-managed AIA platform", investmentYear: 2022, status: "Active" },
       { investmentFirm: "Argo Infrastructure Partners", ownershipVehicle: "AMF Hawaiʻi Investment Holdings", investmentYear: 2022, status: "Active" },
     ],
   },
@@ -4995,7 +4998,7 @@ export const companies: PortCo[] = [
     subsector: "Parking management",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "LAZ Parking",
+    ownershipVehicle: "n.a.",
     description: "International Parking Management provides parking management services in the Seattle market. Its customers include commercial and hospitality properties, event venues, and off-airport parking users that require outsourced parking operations and local market expertise. The business is primarily service-based and cash-flow driven, with site-level operating contracts rather than ownership of large physical infrastructure portfolios. LAZ said at acquisition that the company had approximately 74 employees and managed about $40 million of annual parking revenues. IPM traces its origins to 1985, the business was purchased by Mark and Tracy Sundberg in 2006, and LAZ acquired the company in April 2024.",
     status: "Active",
     countryTags: ["United States"],
@@ -5013,7 +5016,7 @@ export const companies: PortCo[] = [
       { label: "Lazparking — International Parking Management", url: "https://www.lazparking.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Argo Infrastructure Partners", ownershipVehicle: "LAZ Parking", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "Argo Infrastructure Partners", ownershipVehicle: "n.a.", investmentYear: 2024, status: "Active" },
     ],
   },
   {
@@ -5394,9 +5397,10 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Astatine Investment Partners (Funds)",
-    description: "Twin Parking Holdings owns parking assets in the Minneapolis central business district. Its end market is urban mobility and commercial real estate, serving commuters, visitors, and businesses that rely on structured parking in the downtown core. The operating model is asset-heavy because revenues are generated from owned garages and related parking operations rather than from an advisory or management-only model. Astatine identifies the platform as consisting of three parking garages in Minneapolis, Minnesota. Astatine Investment Partners is the disclosed sponsor of the business, but the acquisition date and the current ownership split are not publicly disclosed.",
+    description: "Twin Parking Holdings owns parking assets in the Minneapolis central business district. Its end market is urban mobility and commercial real estate, serving commuters, visitors, and businesses that rely on structured parking in the downtown core. The operating model is asset-heavy because revenues are generated from owned garages and related parking operations rather than from an advisory or management-only model. Astatine identifies the platform as consisting of three parking garages in Minneapolis, Minnesota. Astatine Investment Partners is the disclosed sponsor of the business. The acquisition date and current ownership split are not publicly disclosed; the 2026 date reflects the first current portfolio evidence reviewed.",
     status: "Active",
     countryTags: ["United States"],
+    investmentYear: 2026,
     headquarters: "Minnesota",
     milestones: [
       { date: "2026", event: "Astatine Investment Partners identifies Twin Parking Holdings as an active transportation portfolio company.", category: "Financing" },
@@ -5407,7 +5411,7 @@ export const companies: PortCo[] = [
       { label: "Astatineip — Twin Parking Holdings", url: "https://astatineip.com/about/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Astatine Investment Partners", ownershipVehicle: "Astatine Investment Partners (Funds)", status: "Active" },
+      { investmentFirm: "Astatine Investment Partners", ownershipVehicle: "Astatine Investment Partners (Funds)", investmentYear: 2026, status: "Active" },
     ],
   },
   {
@@ -6015,7 +6019,7 @@ export const companies: PortCo[] = [
     subsector: "Solar + Battery Storage",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "",
+    ownershipVehicle: "n.a.",
     description: "Edwards Sanborn 1A & 1B is a utility-scale solar and battery storage platform within the Edwards Sanborn complex in Kern County, California. Public disclosures describe Phase 1A at 397 MWac of solar capacity and 1,505 MWh of battery storage, and Phase 1B at 410 MWac of solar capacity and 1,497 MWh of battery storage. The platform is asset-heavy and contracted, with long-term offtake arrangements supporting revenue rather than merchant power exposure for the entire output. Its operating footprint is concentrated in California as part of one of the larger integrated solar and storage developments in the U.S. market. Axium acquired an 80% interest in Phase 1A in 2022 and later invested in Phase 1B in 2024, but the current combined ownership structure for the 1A and 1B platform is not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
@@ -6032,7 +6036,7 @@ export const companies: PortCo[] = [
       { label: "Axiuminfra — Edwards Sanborn 1A & 1B", url: "https://www.axiuminfra.com/wp-content/uploads/2022/10/Axium_News-Release_Edwards-Sanborn-1A.pdf", type: "PRESENTATION" },
     ],
     owners: [
-      { investmentFirm: "Axium Infrastructure", ownershipVehicle: "", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Axium Infrastructure", ownershipVehicle: "n.a.", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -7036,7 +7040,7 @@ export const companies: PortCo[] = [
       { date: "1933", event: "Cleco's corporate history materials trace the company's founding to 1933.", category: "Other" },
       { date: "1933", event: "Cleco Corporation was founded.", category: "Founding" },
       { date: "Oct 20, 2014", event: "Cleco announced an agreement to be acquired by an investor group led by Macquarie Infrastructure and Real Assets and BCI.", category: "Acquisition" },
-      { date: "2016", event: "Louisiana regulatory materials disclosed the post-closing ownership interests of Macquarie, BCI, and John Hancock Financial.", category: "Financing" },
+      { date: "2016", event: "Louisiana regulatory materials disclosed the post-closing ownership interests of Macquarie, BCI, and John Hancock Financial / Manulife.", category: "Financing" },
       { date: "Apr 13, 2016", event: "The investor group completed the acquisition of Cleco.", category: "Acquisition" },
       { date: "Apr 27, 2026", event: "Macquarie Asset Management, BCI, and Manulife Investment Management announced an agreement to sell Cleco Group to Stonepeak and Bernhard Capital Partners, subject to regulatory approvals.", category: "Divestiture" },
     ],
@@ -7165,7 +7169,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "Infrastructure & Renewable Resources",
-    description: "GCT Global Container Terminals is a marine terminal operator serving containerized trade flows through Canada's Pacific Gateway. Its customers are ocean carriers, logistics providers, railroads, truckers, and cargo owners that rely on terminal infrastructure for import, export, and intermodal flows. The business is asset-heavy and volume-linked because performance depends on terminal concessions, berths, yard capacity, cranes, rail infrastructure, and throughput levels. Current company materials identify GCT as the largest majority Canadian-owned container terminal operator on Canada's west coast, operating GCT Deltaport in Delta and GCT Vanterm in Vancouver with four berths and nearly 3.5 million TEUs of annual capacity. Ontario Teachers', IFM Investors, and BCI announced in 2018 that IFM and BCI would join Teachers as equity partners in GCT, with disclosed ownership of 37.5% Ontario Teachers', 37.5% IFM Investors, and 25% BCI.",
+    description: "GCT Global Container Terminals is a marine terminal operator serving containerized trade flows through Canada's Pacific Gateway. Its customers are ocean carriers, logistics providers, railroads, truckers, and cargo owners that rely on terminal infrastructure for import, export, and intermodal flows. The business is asset-heavy and volume-linked because performance depends on terminal concessions, berths, yard capacity, cranes, rail infrastructure, and throughput levels. Current company materials identify GCT as the largest majority Canadian-owned container terminal operator on Canada's west coast, operating GCT Deltaport in Delta and GCT Vanterm in Vancouver with four berths and nearly 3.5 million TEUs of annual capacity. Ontario Teachers', IFM Global Infrastructure Fund (GIF), and BCI announced in 2018 that IFM and BCI would join Teachers as equity partners in GCT, with disclosed ownership of 37.5% Ontario Teachers', 37.5% IFM Investors, and 25% BCI.",
     status: "Active",
     countryTags: ["Canada"],
     website: "https://globalterminals.com/",
@@ -7175,7 +7179,8 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1907", event: "Public company history materials trace GCT's origins in Vancouver to 1907.", category: "Other" },
       { date: "1907", event: "GCT Global Container Terminals Inc. was founded.", category: "Founding" },
-      { date: "Jun 7, 2018", event: "Ontario Teachers' announced that IFM Investors and BCI would join as equity partners in GCT.", category: "Acquisition" },
+      { date: "2007", event: "OTPP / Ontario Teachers' established GCT as a wholly owned subsidiary after acquiring four North American container terminals.", category: "Acquisition" },
+      { date: "Jun 7, 2018", event: "Ontario Teachers' announced that IFM Global Infrastructure Fund (GIF) and BCI would join as equity partners in GCT.", category: "Acquisition" },
       { date: "Jun 7, 2018", event: "The transaction disclosures set ownership at 37.5% for Ontario Teachers', 37.5% for IFM, and 25% for BCI.", category: "Other" },
     ],
     management: [
@@ -7188,14 +7193,15 @@ export const companies: PortCo[] = [
     sources: [
       { label: "Company profile source — GCT Global Container Terminals Inc.", url: "https://globalterminals.com/about/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE", evidenceLabel: "Two-terminal Port of Vancouver operator and annual capacity" },
       { label: "Management source — GCT Global Container Terminals Inc.", url: "https://globalterminals.com/about/leadership/", type: "WEBSITE", purpose: "COMPANY_PROFILE", evidenceLabel: "Current GCT leadership team" },
+      { label: "Investment date source — OTPP — GCT Global Container Terminals Inc.", url: "https://www.ourcommons.ca/Content/Committee/411/FINA/WebDoc/WD5138047/411_FINA_PBC2011_Briefs/Global%20Container%20Terminals%20E.html", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "GCT established in 2007 as a wholly owned OTPP subsidiary" },
       { label: "Investment source — GCT Global Container Terminals Inc.", url: "https://globalterminals.com/ifm-investors-bci-join-ontario-teachers-equity-partners-gct-global-container-terminals-inc/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "BCI 25%, IFM 37.5%, Ontario Teachers' 37.5%" },
       { label: "Announcement date source — BCI — GCT Global Container Terminals Inc.", url: "https://www.otpp.com/en-ca/about-us/news-and-insights/2018/ifm-investors-and-bci-to-join-ontario-teachers-as-equity-partners-in-gct-global-container-terminals-inc-/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Operations source — GCT Global Container Terminals Inc.", url: "https://bcmarineterminals.com/global-container-terminals/", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "OTPP", ownershipVehicle: "n.a.", investmentYear: 2007, stake: "37.5%", status: "Active" },
-      { investmentFirm: "IFM Investors", ownershipVehicle: "IFM Global Infrastructure Fund (GIF)", investmentYear: 2018, stake: "37.5%", status: "Active" },
       { investmentFirm: "BCI", ownershipVehicle: "Infrastructure & Renewable Resources", investmentYear: 2018, stake: "25%", status: "Active" },
+      { investmentFirm: "IFM Investors", ownershipVehicle: "IFM Global Infrastructure Fund (GIF)", investmentYear: 2018, stake: "37.5%", status: "Active" },
+      { investmentFirm: "OTPP", ownershipVehicle: "n.a.", investmentYear: 2007, stake: "37.5%", status: "Active" },
     ],
   },
   {
@@ -7547,18 +7553,19 @@ export const companies: PortCo[] = [
   },
   {
     name: "New Mexico Gas Company",
-    investmentFirm: "Bernhard Capital Partners",
+    investmentFirm: "Emera",
     sector: "Utilities",
     subsector: "Regulated natural gas distribution",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "BCP Infrastructure Fund II",
-    description: "New Mexico Gas Company is a regulated natural gas utility serving customers across New Mexico. Its customer base includes residential, commercial, and industrial users connected to a regulated local gas distribution network. The business is asset-heavy and rate-regulated because its value is tied to owned distribution infrastructure and approved utility tariffs rather than commodity trading. Operations are concentrated in New Mexico, and public company materials identify Albuquerque as the headquarters. Bernhard Capital Partners and Emera announced an agreement in August 2024 for BCP to acquire the utility, but public regulatory filings during 2025 indicate that the transaction remained subject to approval. Because public sources do not confirm a completed closing as of the latest available filings reviewed, the current ownership structure is treated here as not publicly disclosed.",
+    ownershipVehicle: "n.a.",
+    description: "New Mexico Gas Company is a regulated natural gas utility serving customers across New Mexico. Its customer base includes residential, commercial, and industrial users connected to a regulated local gas distribution network. The business is asset-heavy and rate-regulated because its value is tied to owned distribution infrastructure and approved utility tariffs rather than commodity trading. Operations are concentrated in New Mexico, and public company materials identify Albuquerque as the headquarters. Emera acquired New Mexico Gas Company through its TECO acquisition in 2016. Bernhard Capital Partners and Emera announced an agreement in August 2024 for BCP to acquire the utility, but New Mexico Gas Company materials still described the sale as requiring New Mexico Public Regulation Commission approval in 2026. Because public sources do not confirm a completed closing as of May 13, 2026, Emera is treated as the current owner and the pending BCP transaction is retained only as an announced milestone.",
     status: "Active",
     countryTags: ["United States"],
-    investmentYear: 2024,
+    investmentYear: 2016,
     headquarters: "New Mexico",
     milestones: [
+      { date: "2016", event: "Emera acquired New Mexico Gas Company as part of its TECO Energy acquisition.", category: "Acquisition" },
       { date: "Oct 2024", event: "Bernhard Capital Partners, Emera, and New Mexico Gas Company applied to the New Mexico Public Regulation Commission for approval of the transaction.", category: "Other" },
       { date: "Aug 5, 2024", event: "Emera announced an agreement to sell New Mexico Gas Company to Bernhard Capital Partners.", category: "Acquisition" },
     ],
@@ -7569,7 +7576,7 @@ export const companies: PortCo[] = [
       { label: "Nmgco — New Mexico Gas Company", url: "https://www.nmgco.com/en/regulatory_filings", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Bernhard Capital Partners", ownershipVehicle: "BCP Infrastructure Fund II", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "Emera", ownershipVehicle: "n.a.", investmentYear: 2016, status: "Active" },
     ],
   },
   {
@@ -7604,7 +7611,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "Manulife", ownershipVehicle: "Manulife Infrastructure Fund II", investmentYear: 2021, status: "Active" },
-      { investmentFirm: "BlackRock", ownershipVehicle: "Global Renewable Power Fund II", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "BlackRock", ownershipVehicle: "n.a.", investmentYear: 2019, status: "Active" },
     ],
   },
   {
@@ -7669,7 +7676,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "BlackRock", ownershipVehicle: "n.a.", investmentYear: 2019, status: "Active" },
-      { investmentFirm: "Ares Management", ownershipVehicle: "Ares Infrastructure Opportunities", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Ares Management", ownershipVehicle: "Infrastructure and Power strategy", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -8689,8 +8696,8 @@ export const companies: PortCo[] = [
     subsector: "Natural gas transmission",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Ares Infrastructure Opportunities",
-    description: "Rover Pipeline transports natural gas from the Marcellus and Utica basins to markets in the US Midwest and Canada. Its customers are upstream producers, marketers, and downstream market participants that contract for long-haul transportation capacity. The asset is capital intensive and fee-based, with economics tied primarily to contracted transportation volumes rather than direct commodity ownership. Public disclosures describe Rover as one of the largest interstate natural gas pipelines built in the United States in recent decades. Energy Transfer sold an interest in the holding entity for Rover to Blackstone in 2017, and Ares acquired Blackstone's 32.4% Rover stake in April 2026.",
+    ownershipVehicle: "Infrastructure Opportunities strategy",
+    description: "Rover Pipeline transports natural gas from the Marcellus and Utica basins to markets in the US Midwest and Canada. Its customers are upstream producers, marketers, and downstream market participants that contract for long-haul transportation capacity. The asset is capital intensive and fee-based, with economics tied primarily to contracted transportation volumes rather than direct commodity ownership. Public disclosures describe Rover as one of the largest interstate natural gas pipelines built in the United States in recent decades. Energy Transfer sold an interest in the holding entity for Rover to Blackstone in 2017, and funds led by Ares Management's Infrastructure Opportunities strategy acquired Blackstone's 32.4% Rover stake in April 2026.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2026,
@@ -8700,7 +8707,7 @@ export const companies: PortCo[] = [
       { date: "Jul 31, 2017", event: "Energy Transfer announced the sale of a 32.44% stake in the entity owning Rover Pipeline to Blackstone.", category: "Acquisition" },
       { date: "Oct 31, 2017", event: "Energy Transfer closed the sale of a 49.9% interest in the holding company owning Rover Pipeline to Blackstone Energy Partners.", category: "Acquisition" },
       { date: "2018", event: "Rover entered full commercial service as a major Marcellus and Utica takeaway pipeline.", category: "Other" },
-      { date: "Apr 29, 2026", event: "Ares acquired a 32.4% stake in Rover Pipeline from Blackstone Energy Transition Partners.", category: "Acquisition" },
+      { date: "Apr 29, 2026", event: "Funds led by Ares Management's Infrastructure Opportunities strategy acquired a 32.4% stake in Rover Pipeline from Blackstone Energy Transition Partners.", category: "Acquisition" },
     ],
     sources: [
       { label: "Announcement date source — Blackstone — Rover Pipeline", url: "https://ir.energytransfer.com/news-releases/news-release-details/energy-transfer-announces-sale-3244-stake-entity-rover-pipeline", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -8710,7 +8717,7 @@ export const companies: PortCo[] = [
       { label: "Energytransfer — Rover Pipeline", url: "https://www.energytransfer.com/operations/natural-gas/rover-pipeline/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Ares Management", ownershipVehicle: "Ares Infrastructure Opportunities", investmentYear: 2026, status: "Active" },
+      { investmentFirm: "Ares Management", ownershipVehicle: "Infrastructure Opportunities strategy", investmentYear: 2026, status: "Active" },
       { investmentFirm: "Blackstone", ownershipVehicle: "Blackstone Energy Transition Partners", investmentYear: 2017, exitYear: 2026, status: "Realized" },
     ],
   },
@@ -9261,7 +9268,7 @@ export const companies: PortCo[] = [
     headquarters: "Quebec; United States; France; United Kingdom",
     milestones: [
       { date: "1990", event: "Boralex was founded in Quebec as a renewable energy producer.", category: "Founding" },
-      { date: "2017", event: "La Caisse began supporting Boralex as a shareholder and lender, according to the March 2026 transaction announcement.", category: "Financing" },
+      { date: "2017", event: "CDPQ / La Caisse began supporting Boralex as a shareholder and lender, according to the March 2026 transaction announcement.", category: "Financing" },
       { date: "Q4 2026", event: "The parties expected the Boralex take-private transaction to close by Q4 2026, subject to required approvals and other customary closing conditions.", category: "Acquisition" },
       { date: "Mar 25, 2026", event: "The transaction announcement stated that La Caisse would own 30% and Brookfield would own 70% of Boralex after closing.", category: "Financing" },
       { date: "Mar 25, 2026", event: "Brookfield and La Caisse announced a definitive agreement to acquire Boralex for C$37.25 per share in cash.", category: "Acquisition" },
@@ -9279,8 +9286,8 @@ export const companies: PortCo[] = [
       { label: "CFO transition source — Boralex Inc.", url: "https://us.boralex.com/en/press-releases/boralex-announces-departure-its-chief-financial-officer", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2017, stake: "30% pro forma post-close; 15% pre-close", status: "Active" },
       { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield flagship infrastructure strategy", investmentYear: 2026, stake: "70% pro forma post-close", status: "Active" },
+      { investmentFirm: "CDPQ", ownershipVehicle: "CDPQ Infrastructure", investmentYear: 2017, stake: "30% pro forma post-close; 15% pre-close", status: "Active" },
     ],
   },
   {
@@ -9290,8 +9297,8 @@ export const companies: PortCo[] = [
     subsector: "Dairy renewable natural gas",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Brookfield Global Transition Fund",
-    description: "California Bioenergy develops, owns, and operates anaerobic digester and renewable natural gas projects tied to dairy farms. Its customers and counterparties include dairy operators, utilities, transportation fuel markets, and other buyers of renewable gas and environmental attributes. The business is asset-heavy and contract-based, with economics supported by RNG sales, environmental credits, and long-term farmer partnerships. Public materials describe more than 50 operational manure digesters and identify California as the core operating market. Brookfield Renewable and its institutional partners announced a strategic funding partnership with CalBio in December 2022, with detailed ownership percentages not publicly disclosed.",
+    ownershipVehicle: "Brookfield Global Transition Fund I (BGTF I)",
+    description: "California Bioenergy develops, owns, and operates anaerobic digester and renewable natural gas projects tied to dairy farms. Its customers and counterparties include dairy operators, utilities, transportation fuel markets, and other buyers of renewable gas and environmental attributes. The business is asset-heavy and contract-based, with economics supported by RNG sales, environmental credits, and long-term farmer partnerships. Public materials describe more than 50 operational manure digesters and identify California as the core operating market. Brookfield Renewable and its institutional partners announced a strategic funding partnership with CalBio in December 2022 through Brookfield Global Transition Fund I (BGTF I), with detailed ownership percentages not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2006,
@@ -9299,7 +9306,7 @@ export const companies: PortCo[] = [
     headquarters: "California",
     milestones: [
       { date: "2006", event: "California Bioenergy was founded.", category: "Founding" },
-      { date: "Dec 22, 2022", event: "CalBio and Brookfield Renewable announced a strategic funding partnership of up to $500 million to develop RNG projects.", category: "Financing" },
+      { date: "Dec 22, 2022", event: "CalBio and Brookfield Renewable announced a strategic funding partnership through Brookfield Global Transition Fund I (BGTF I) of up to $500 million to develop RNG projects.", category: "Financing" },
       { date: "2023", event: "CalBio announced additional project funding and expansion activity beyond California.", category: "Financing" },
     ],
     sources: [
@@ -9308,7 +9315,7 @@ export const companies: PortCo[] = [
       { label: "Investment date source — Brookfield Asset Management — California Bioenergy", url: "https://americanbiogascouncil.org/california-bioenergy-and-brookfield-renewable-form-strategic-partnership-to-develop-renewable-natural-gas-projects/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield Global Transition Fund", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield Global Transition Fund I (BGTF I)", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -9318,8 +9325,8 @@ export const companies: PortCo[] = [
     subsector: "Carbon capture and storage",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Brookfield Global Transition Fund",
-    description: "Carbon TerraVault develops carbon capture and sequestration infrastructure in California, including storage hubs and related transport solutions. Its counterparties include industrial emitters, ethanol producers, refiners, and other companies seeking permanent CO2 storage to meet decarbonization requirements. The platform is asset-heavy and development-led, with economics tied to storage capacity, project permitting, transport linkages, and long-term sequestration agreements. Public materials state that Carbon TerraVault was formed as a joint venture between California Resources Corporation and Brookfield in 2022 and has advanced Class VI permitting activity in California. CRC owns 51% of the venture and Brookfield owns 49%.",
+    ownershipVehicle: "Brookfield Global Transition Fund I (BGTF I)",
+    description: "Carbon TerraVault develops carbon capture and sequestration infrastructure in California, including storage hubs and related transport solutions. Its counterparties include industrial emitters, ethanol producers, refiners, and other companies seeking permanent CO2 storage to meet decarbonization requirements. The platform is asset-heavy and development-led, with economics tied to storage capacity, project permitting, transport linkages, and long-term sequestration agreements. Public materials state that Carbon TerraVault was formed as a joint venture between California Resources Corporation and Brookfield in 2022 and has advanced Class VI permitting activity in California. CRC owns 51% of the venture and Brookfield Global Transition Fund I (BGTF I) owns 49%.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2022,
@@ -9327,7 +9334,7 @@ export const companies: PortCo[] = [
     headquarters: "California",
     milestones: [
       { date: "2022", event: "Carbon TerraVault was founded.", category: "Founding" },
-      { date: "Aug 3, 2022", event: "California Resources Corporation announced the formation of a Carbon TerraVault joint venture with Brookfield Renewable, including Brookfield's initial $500 million commitment for approved CCS projects.", category: "Financing" },
+      { date: "Aug 3, 2022", event: "California Resources Corporation announced the formation of a Carbon TerraVault joint venture with Brookfield Global Transition Fund I (BGTF I), including Brookfield's initial $500 million commitment for approved CCS projects.", category: "Financing" },
       { date: "2023", event: "Carbon TerraVault advanced storage-site characterization and permitting work in California.", category: "Other" },
       { date: "2025", event: "CRC broke ground on California's first carbon capture and storage project linked to Carbon TerraVault.", category: "Other" },
       { date: "2025", event: "The venture reported progress on Class VI permitting and expected initial CO2 injection timing.", category: "Other" },
@@ -9339,7 +9346,7 @@ export const companies: PortCo[] = [
       { label: "Crc — Carbon TerraVault", url: "https://www.crc.com/news-releases/news-release-details/california-resources-corporation-breaks-ground-californias-first", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield Global Transition Fund", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield Global Transition Fund I (BGTF I)", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -9522,8 +9529,8 @@ export const companies: PortCo[] = [
     subsector: "Carbon capture technology",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Brookfield Global Transition Fund",
-    description: "Entropy develops carbon capture technology and project solutions for industrial emitters, with an initial focus on gas processing and related applications. Its counterparties include energy producers, industrial operators, and public-sector capital providers seeking lower-cost carbon capture deployment and carbon credit exposure. The company combines technology development with project participation, making its model a mix of intellectual property, project development, and structured infrastructure investment. Public materials identify Brookfield Renewable's strategic capital commitment and later support from Canada Growth Fund as key financing milestones. Brookfield Renewable announced a C$300 million strategic investment agreement with Entropy in 2022, while detailed current ownership percentages were not publicly disclosed in the cited sources.",
+    ownershipVehicle: "Brookfield Global Transition Fund I (BGTF I)",
+    description: "Entropy develops carbon capture technology and project solutions for industrial emitters, with an initial focus on gas processing and related applications. Its counterparties include energy producers, industrial operators, and public-sector capital providers seeking lower-cost carbon capture deployment and carbon credit exposure. The company combines technology development with project participation, making its model a mix of intellectual property, project development, and structured infrastructure investment. Public materials identify Brookfield Renewable's strategic capital commitment and later support from Canada Growth Fund as key financing milestones. Brookfield Renewable announced a C$300 million strategic investment agreement through Brookfield Global Transition Fund I (BGTF I) in 2022, while detailed current ownership percentages were not publicly disclosed in the cited sources.",
     status: "Active",
     countryTags: ["Canada"],
     yearFounded: 2020,
@@ -9531,7 +9538,7 @@ export const companies: PortCo[] = [
     headquarters: "Alberta",
     milestones: [
       { date: "2020", event: "Entropy was formed within Advantage Energy's carbon capture initiative.", category: "Founding" },
-      { date: "Mar 28, 2022", event: "Brookfield Renewable announced a C$300 million investment agreement with Entropy.", category: "Financing" },
+      { date: "Mar 28, 2022", event: "Brookfield Renewable announced a C$300 million investment agreement with Entropy through Brookfield Global Transition Fund I (BGTF I).", category: "Financing" },
       { date: "Dec 14, 2023", event: "Canada Growth Fund announced a strategic investment in Entropy and a carbon credit offtake structure.", category: "Financing" },
       { date: "2025", event: "Entropy announced acquisitions and project steps tied to carbon storage hub development.", category: "Other" },
     ],
@@ -9542,7 +9549,7 @@ export const companies: PortCo[] = [
       { label: "Bam — Entropy Inc.", url: "https://bam.brookfield.com/press-releases/canada-growth-fund-announces-strategic-investment-entropy-inc-and-carbon-credit", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield Global Transition Fund", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield Global Transition Fund I (BGTF I)", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -9959,7 +9966,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Brookfield Infra Structured Solutions",
-    description: "Origis Energy develops, finances, constructs, and operates utility-scale solar and energy-storage projects in the United States. Its counterparties include utilities, cooperatives, and corporate off-takers that procure power, capacity, and related clean-energy attributes under long-term arrangements. The business is asset-heavy and largely contracted because value is tied to a portfolio of operating projects and a development pipeline rather than merchant trading activity alone. Company materials trace the platform to 2008 and position it as a US-focused renewable developer and owner with a large solar and storage pipeline. Its principal operating footprint is in the United States, with corporate headquarters in Florida. Brookfield announced a $1 billion strategic investment in January 2025 alongside existing majority owner Antin, and public sources reviewed do not disclose the ownership percentages of the current investor group.",
+    description: "Origis Energy develops, finances, constructs, and operates utility-scale solar and energy-storage projects in the United States. Its counterparties include utilities, cooperatives, and corporate off-takers that procure power, capacity, and related clean-energy attributes under long-term arrangements. The business is asset-heavy and largely contracted because value is tied to a portfolio of operating projects and a development pipeline rather than merchant trading activity alone. Company materials trace the platform to 2008 and position it as a US-focused renewable developer and owner with a large solar and storage pipeline. Its principal operating footprint is in the United States, with corporate headquarters in Florida. Antin Flagship Fund IV became majority owner in 2021, and Brookfield announced a $1 billion strategic investment in January 2025 alongside existing majority owner Antin. Public sources reviewed do not disclose the ownership percentages of the current investor group.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2008,
@@ -9967,12 +9974,13 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "2008", event: "Origis Energy was founded.", category: "Founding" },
-      { date: "Oct 18, 2021", event: "Antin Infrastructure Partners announced a definitive agreement to acquire a majority stake in Origis Energy.", category: "Acquisition" },
+      { date: "Oct 18, 2021", event: "Antin Flagship Fund IV announced a definitive agreement to acquire a majority stake in Origis Energy.", category: "Acquisition" },
       { date: "Jan 15, 2025", event: "Origis announced a strategic investment of more than $1 billion from Brookfield and Antin, welcoming Brookfield as a new significant investor.", category: "Financing" },
     ],
     sources: [
       { label: "Origisenergy — Origis Energy", url: "https://origisenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Announcement date source — Antin Infrastructure Partners — Origis Energy", url: "https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-become-majority-shareholder-origis-energy-leading-us", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Fund vehicle source — Antin Flagship Fund IV — Origis Energy", url: "https://www.marketscreener.com/quote/stock/ANTIN-INFRASTRUCTURE-PART-127080817/news/Antin-Flagship-Fund-IV-a-fund-manged-by-Antin-Infrastructure-Partners-S-A-entered-into-a-definitiv-36717620/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Origisenergy — Origis Energy", url: "https://origisenergy.com/insights/antin-infrastructure-partners-to-become-majority-shareholder-in-origis-energy-a-leading-u-s-renewable-energy-platform/", type: "ARTICLE" },
       { label: "Investment date source — Brookfield Asset Management — Origis Energy", url: "https://origisenergy.com/insights/origis-energy-secures-1-billion-strategic-investment-from-brookfield-and-antin/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Antin Ip — Origis Energy", url: "https://www.antin-ip.com/investments/origis-energy/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -9981,7 +9989,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "Brookfield Asset Management", ownershipVehicle: "Brookfield Infra Structured Solutions", investmentYear: 2025, status: "Active" },
-      { investmentFirm: "Antin Infrastructure Partners", ownershipVehicle: "Flagship Fund IV", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Antin Infrastructure Partners", ownershipVehicle: "Antin Flagship Fund IV", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -10354,12 +10362,12 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2009", event: "Company materials identify Amp Energy as founded in 2009.", category: "Founding" },
       { date: "Dec 1, 2020", event: "Amp announced the purchase of 11.2 MW of solar-plus-storage projects from Dynamic Energy.", category: "Acquisition" },
-      { date: "Jan 6, 2021", event: "Carlyle announced a $374 million strategic growth investment commitment to Amp Energy.", category: "Financing" },
+      { date: "Jan 6, 2021", event: "Carlyle announced a $374 million strategic growth investment commitment to Amp Energy, with equity capital committed from Carlyle's Global Infrastructure Opportunity Fund and Renewable & Sustainable Energy Fund.", category: "Financing" },
       { date: "Nov 16, 2021", event: "Amp and Distributed Sun announced a partnership on more than $100 million of New York community-solar projects.", category: "Other" },
       { date: "May 19, 2025", event: "Carlyle announced the launch of Revera, a separately branded platform backed by certain former Amp Energy Australia and United Kingdom assets.", category: "Other" },
     ],
     sources: [
-      { label: "Investment date source — Carlyle Infrastructure — Amp Energy", url: "https://www.carlyle.com/media-room/news-release-archive/carlyle-makes-commitment-to-amp-energy", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Investment date source — Carlyle Infrastructure — Amp Energy", url: "https://www.carlyle.com/media-room/news-release-archive/carlyle-makes-commitment-to-amp-energy", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Equity capital from Carlyle Global Infrastructure Opportunity Fund / Renewable & Sustainable Energy Fund" },
       { label: "Amp — Amp Energy", url: "https://www.amp.energy/hubfs/Sustainability/Amp%20Energy%20Sustainability%20Report%202021.pdf?hsLang=en", type: "PRESENTATION" },
       { label: "Amp — Amp Energy", url: "https://www.amp.energy/news/amp-energy-and-distributed-sun-partner-on-over-100-million-of-ny-community-solar-projects", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
       { label: "Carlyle — Amp Energy", url: "https://www.carlyle.com/media-room/news-release-archive/revera-launches-independent-energy-infrastructure-platform-backed", type: "ARTICLE" },
@@ -10406,7 +10414,7 @@ export const companies: PortCo[] = [
     subsector: "Distributed generation and community solar",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Carlyle Renewable & Sustainable Energy Fund",
+    ownershipVehicle: "n.a.",
     description: "Aspen Power develops, acquires, finances, owns, and operates distributed solar and storage assets in the United States. Its customers include commercial users, municipalities, and community-solar subscribers that procure contracted distributed-generation capacity rather than owning the underlying assets directly. The platform is asset-heavy and largely contracted because it depends on owning and operating physical projects supported by long-term power contracts and subscription arrangements. Company materials state that Aspen launched in 2020 and, as of 2025, had financed more than $2.5 billion and supported more than 600 projects. Carlyle announced a $350 million investment in 2022 to support growth and acquisition activity, including Aspen's acquisition of Safari Energy.",
     status: "Active",
     countryTags: ["United States"],
@@ -10427,7 +10435,7 @@ export const companies: PortCo[] = [
       { label: "Aspenpower — Aspen Power", url: "https://aspenpower.com/team/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Carlyle Infrastructure", ownershipVehicle: "Carlyle Renewable & Sustainable Energy Fund", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Carlyle Infrastructure", ownershipVehicle: "n.a.", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -10478,12 +10486,12 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2020", event: "Cardinal Renewables was founded.", category: "Founding" },
       { date: "2020", event: "Carlyle said the platform launched with 12 operating assets and a broader development pipeline.", category: "Other" },
-      { date: "Jan 24, 2020", event: "Carlyle's Renewable and Sustainable Energy Fund completed its original Cardinal Renewables investment with Alchemy Renewable Energy.", category: "Financing" },
+      { date: "Jan 24, 2020", event: "Carlyle Renewable & Sustainable Energy Fund completed its original Cardinal Renewables investment with Alchemy Renewable Energy.", category: "Financing" },
       { date: "Jan 28, 2020", event: "Alchemy Renewable Energy announced its partnership with Carlyle to form Cardinal Renewables.", category: "Other" },
       { date: "Nov 13, 2020", event: "Cardinal Renewables announced a power purchase agreement for the Twittys Creek solar project.", category: "Acquisition" },
     ],
     sources: [
-      { label: "Investment date source — Carlyle Infrastructure — Cardinal Renewables", url: "https://www.carlyle.com/esg/cardinal-renewables", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Investment date source — Carlyle Infrastructure — Cardinal Renewables", url: "https://www.carlyle.com/esg/cardinal-renewables", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Lead Fund: Carlyle Renewable & Sustainable Energy Fund" },
       { label: "Alchemyenergy — Cardinal Renewables", url: "https://alchemyenergy.com/carlyle-partners-with-alchemy/", type: "ARTICLE" },
       { label: "Monarchprivate — Cardinal Renewables", url: "https://www.monarchprivate.com/impact-investing-news/view/cardinal-renewables-a-strategic-partnership-between-the-carlyle-group-and-alchemy-renewable-energy-secures-ppa-with-direct-energy-business/", type: "ARTICLE" },
     ],
@@ -10498,7 +10506,7 @@ export const companies: PortCo[] = [
     subsector: "Utility-scale solar, storage, and power development",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund",
+    ownershipVehicle: "n.a.",
     description: "Copia Power develops utility-scale solar, battery storage, and related power infrastructure projects in the western United States. Its customers include utilities, corporate buyers, and large-load power users that need contracted or dedicated generation and storage capacity. The business follows an asset-heavy development model because it originates, finances, procures, and advances physical infrastructure assets rather than acting only as an advisory platform. Company materials state that the platform was founded by Carlyle in 2021 and, by late 2025, had more than 1,500 MW and 4,469 MWh operating or under construction, with a much larger multi-sector development pipeline. Carlyle remains the disclosed sponsor, and Copia also announced a $300 million corporate credit facility in 2024 to accelerate development and procurement.",
     status: "Active",
     countryTags: ["United States"],
@@ -10518,7 +10526,7 @@ export const companies: PortCo[] = [
       { label: "Copiapower — Copia Power", url: "https://www.copiapower.com/news/copia-power-closes-300-million-corporate-credit-facility-to-accelerate-development-and-procurement-efforts-on-its-western-solar-and-storage-portfolio", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Carlyle Infrastructure", ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Carlyle Infrastructure", ownershipVehicle: "n.a.", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -10535,14 +10543,14 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "Louisiana; Gulf of Mexico",
     milestones: [
-      { date: "Jan 14, 2019", event: "Carlyle Infrastructure announced a strategic equity investment in Crimson Midstream, the predecessor platform to Crescent Midstream.", category: "Financing" },
+      { date: "Jan 14, 2019", event: "Carlyle Infrastructure announced a strategic equity investment in Crimson Midstream, the predecessor platform to Crescent Midstream, with equity provided by Carlyle Global Infrastructure Opportunity Fund.", category: "Financing" },
       { date: "2020", event: "Public leadership materials state that Jeremiah Ashcroft became Chief Executive Officer.", category: "Management" },
       { date: "Jan 2021", event: "Company materials state that the Crescent Midstream name was unveiled.", category: "Other" },
       { date: "Sep 17, 2024", event: "Crescent announced selection to develop an integrated carbon capture solution for an Entergy Louisiana natural-gas power plant.", category: "Other" },
       { date: "Feb 18, 2026", event: "Crescent completed a $600 million debt capital raise and refinancing.", category: "Financing" },
     ],
     sources: [
-      { label: "Investment date source — Carlyle Infrastructure — Crescent Midstream", url: "https://www.crimsonmidstream.com/media/the-carlyle-group", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Investment date source — Carlyle Infrastructure — Crescent Midstream", url: "https://www.crimsonmidstream.com/media/the-carlyle-group", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Carlyle Global Infrastructure Opportunity Fund provided the equity for the strategic investment" },
       { label: "Crescentmidstream — Crescent Midstream", url: "https://crescentmidstream.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Crescentmidstream — Crescent Midstream", url: "https://crescentmidstream.com/operations/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
       { label: "Crescentmidstream — Crescent Midstream", url: "https://crescentmidstream.com/news/crescent-midstream-selected-to-develop-an-integrated-carbon-capture-solution-for-entergy-louisiana-natural-gas-power-plant/", type: "ARTICLE" },
@@ -10559,7 +10567,7 @@ export const companies: PortCo[] = [
     subsector: "Vehicle-to-grid technology and services",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Carlyle Renewable",
+    ownershipVehicle: "n.a.",
     description: "Fermata Energy develops vehicle-to-grid software and integration capabilities that enable bidirectional charging and grid services from electric vehicles. Its customers include fleet operators, site hosts, and power-market participants that use electric vehicles and charging assets to reduce energy costs or provide grid-support services. The model is more technology- and services-oriented than a traditional generation asset owner, but it still depends on deployment of charging hardware and market participation arrangements at customer sites. Company materials identify 2010 as the founding year, and Fermata became one of the earlier public vehicle-to-grid specialists in the United States market. Carlyle led a financing round announced in 2022, while Nuvve announced in 2025 that it had acquired Fermata Energy assets through Fermata Energy II LLC.",
     status: "Active",
     countryTags: ["United States"],
@@ -10579,7 +10587,7 @@ export const companies: PortCo[] = [
       { label: "Investors — Fermata Energy", url: "https://investors.nuvve.com/static-files/84b0dfdb-e40a-42e0-bb8e-0fe795b9972c", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Carlyle Infrastructure", ownershipVehicle: "Carlyle Renewable", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Carlyle Infrastructure", ownershipVehicle: "n.a.", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -10589,7 +10597,7 @@ export const companies: PortCo[] = [
     subsector: "Wireless tower infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund",
+    ownershipVehicle: "n.a.",
     description: "Tillman Infrastructure develops, owns, and operates wireless tower sites in the United States. Its customers are wireless carriers and related communications tenants that need tower space and site infrastructure to expand network coverage and capacity. The business is asset-heavy and contracted because returns depend on the ownership, development, and leasing of macro tower assets under multi-year tenant agreements. Company materials state that Tillman was founded in October 2016, built its first tower in May 2017, and by 2024 had more than 2,000 macro tower sites in service with several thousand more in development. Carlyle announced in 2022 that it would commit up to $1 billion to accelerate investment in the platform.",
     status: "Active",
     countryTags: ["United States"],
@@ -10609,7 +10617,7 @@ export const companies: PortCo[] = [
       { label: "PR Newswire — Tillman Infrastructure", url: "https://www.prnewswire.com/news-releases/tillman-infrastructure-secures-1-billion-in-financing-to-drive-growth-302126976.html", type: "PRESS_RELEASE", purpose: "FINANCING_FILINGS" },
     ],
     owners: [
-      { investmentFirm: "Carlyle Infrastructure", ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Carlyle Infrastructure", ownershipVehicle: "n.a.", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -10619,7 +10627,7 @@ export const companies: PortCo[] = [
     subsector: "Fiber-to-the-premise broadband",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund",
+    ownershipVehicle: "n.a.",
     description: "Wyyerd Fiber builds and operates fiber-to-the-premise broadband networks in the southwestern United States. Its customers include residential users, businesses, and community institutions that need high-speed internet and related communications services. The business is asset-heavy because growth depends on network construction, last-mile deployment, and operation of owned fiber infrastructure rather than a resale-only service model. Company materials show an operating footprint in Arizona and California, while financing announcements in 2025 highlighted continued expansion into Tucson and the Phoenix metro area. Public disclosures identify Carlyle and Columbia Capital among the platform's equity sponsors, and Wyyerd announced debt financings in 2023 and 2025 to accelerate network expansion.",
     status: "Active",
     countryTags: ["United States"],
@@ -10640,7 +10648,7 @@ export const companies: PortCo[] = [
       { label: "Wyyerd — Wyyerd Fiber", url: "https://www.wyyerd.com/post/wyyerd-fiber-announces-major-arizona-expansion-with-acquisition-of-fiber-network-assets", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
-      { investmentFirm: "Carlyle Infrastructure", ownershipVehicle: "Carlyle Global Infrastructure Opportunity Fund", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Carlyle Infrastructure", ownershipVehicle: "n.a.", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -12369,7 +12377,7 @@ export const companies: PortCo[] = [
       { date: "Apr 2, 2019", event: "CDPQ announced that it would acquire a 30% stake in Vertical Bridge.", category: "Acquisition" },
       { date: "Oct 13, 2021", event: "DigitalBridge announced completion of its acquisition of a controlling stake in Vertical Bridge.", category: "Acquisition" },
       { date: "Dec 23, 2024", event: "Vertical Bridge closed its previously announced transaction with Verizon for a tower portfolio.", category: "Other" },
-      { date: "Apr 23, 2026", event: "KKR / DigitalBridge / La Caisse announced an investment in Vertical Bridge.", category: "Financing" },
+      { date: "Apr 22, 2026", event: "Vertical Bridge announced a $1.5 billion strategic equity investment from KKR, funded primarily through KKR's core infrastructure strategy.", category: "Financing" },
     ],
     sources: [
       { label: "Verticalbridge — Vertical Bridge", url: "https://www.verticalbridge.com/about", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -12377,12 +12385,12 @@ export const companies: PortCo[] = [
       { label: "Digitalbridge — Vertical Bridge", url: "https://www.digitalbridge.com/news/2021-10-13-digitalbridge-completes-acquisition-of-controlling-stake-in-vertical-bridge", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
       { label: "Investment date source — DigitalBridge — Vertical Bridge", url: "https://www.verticalbridge.com/press-releases/vertical-bridge-holdings-completes-second-round-capital-raise-equity-commitments-now-total-750-million", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Verticalbridge — Vertical Bridge", url: "https://www.verticalbridge.com/network-infrastructure/towers", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
-      { label: "Vertical Bridge - INF-2026-179 - Vertical Bridge", url: "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr", type: "ARTICLE" },
+      { label: "Investment date source — KKR — Vertical Bridge", url: "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "KKR $1.5B strategic equity investment funded primarily through core infrastructure strategy" },
     ],
     owners: [
       { investmentFirm: "CDPQ", ownershipVehicle: "n.a.", investmentYear: 2019, stake: "30%", status: "Active" },
       { investmentFirm: "DigitalBridge", ownershipVehicle: "DigitalBridge Equity", investmentYear: 2014, status: "Active" },
-      { investmentFirm: "KKR", ownershipVehicle: "DigitalBridge Equity", investmentYear: 2026, status: "Active" },
+      { investmentFirm: "KKR", ownershipVehicle: "KKR core infrastructure strategy", investmentYear: 2026, status: "Active" },
     ],
   },
   {
@@ -12710,7 +12718,7 @@ export const companies: PortCo[] = [
     subsector: "Solar PV",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "CI IV",
+    ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)",
     description: "Aira Solar is a utility-scale solar development in Alberta near Seven Persons and the Medicine Hat area. The project is intended to supply large-scale renewable generation into the Alberta market, although the final offtake structure has not been publicly disclosed. The model is asset-heavy because value depends on permitting, financing, construction, and operation of a 450 MWac solar facility rather than on a services-only platform. Public project materials describe approximately 1.15 million solar panels on roughly 4,480 to 4,500 acres, making it one of the larger solar developments publicly identified in Alberta. The project is presented on Horizon New Energy's project list following CIP's launch of that Canadian renewables platform in 2023.",
     status: "Active",
     countryTags: ["Canada"],
@@ -12728,7 +12736,7 @@ export const companies: PortCo[] = [
       { label: "Aeso — Aira Solar", url: "https://www.aeso.ca/grid/transmission-projects/aira-solar-project-connection-2461/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "CI IV", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -12795,7 +12803,7 @@ export const companies: PortCo[] = [
     subsector: "Onshore wind",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "CI IV",
+    ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)",
     description: "Buffalo Plains Wind Farm is a large onshore wind project in Alberta near Lomond. The asset supplies utility-scale renewable generation into the Alberta market, with project materials emphasizing its role as a major grid-connected wind facility in the province. The operating model is asset-heavy because value is tied to the development, construction, and operation of a 495 MW wind farm rather than an outsourced management model. Public sources describe 83 turbines and characterize Buffalo Plains as one of the largest single-phase wind farms in Canada. CIP disclosed that CI IV acquired the project and took final investment decision in 2022, with public materials later indicating commercial operation around the end of 2024.",
     status: "Active",
     countryTags: ["Canada"],
@@ -12814,7 +12822,7 @@ export const companies: PortCo[] = [
       { label: "Majorprojects — Buffalo Plains Wind Farm", url: "https://majorprojects.alberta.ca/details/Buffalo-Plains-Wind-Farm/4320", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "CI IV", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -12854,14 +12862,14 @@ export const companies: PortCo[] = [
     subsector: "Battery and long-duration energy storage portfolio",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Funds",
-    description: "Public CIP materials use energy storage as a portfolio theme covering battery and long-duration storage investments rather than describing a single standalone operating company. The underlying assets serve utilities and grid operators through capacity, tolling, balancing, and related storage services. The model is asset-heavy because value depends on owning or developing physical storage assets at the project level. Public disclosures across CIP fund materials identify storage projects including Scatter Wash and Beehive in Arizona and long-duration pumped-storage projects such as Goldendale and Swan Lake. CIP's first clearly disclosed U.S. storage-asset acquisition in the reviewed materials was the 2020 acquisition of the Swan Lake and Goldendale pumped-storage projects, while later Scatter Wash and Beehive disclosures represent subsequent project additions.",
+    ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)",
+    description: "Public CIP materials use energy storage as a portfolio theme covering battery and long-duration storage investments rather than describing a single standalone operating company. The underlying assets serve utilities and grid operators through capacity, tolling, balancing, and related storage services. The model is asset-heavy because value depends on owning or developing physical storage assets at the project level. Public disclosures across CIP fund materials identify storage projects including Scatter Wash and Beehive in Arizona and long-duration pumped-storage projects such as Goldendale and Swan Lake. CIP's first clearly disclosed U.S. storage-asset acquisition in the reviewed materials was the 2020 acquisition of the Swan Lake and Goldendale pumped-storage projects on behalf of Copenhagen Infrastructure IV (CI IV), while later Scatter Wash and Beehive disclosures represent subsequent project additions.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2020,
     headquarters: "Arizona; Washington; Oregon",
     milestones: [
-      { date: "Nov 13, 2020", event: "Copenhagen Infrastructure Partners acquired ownership of the Swan Lake and Goldendale pumped-storage projects in the United States.", category: "Acquisition" },
+      { date: "Nov 13, 2020", event: "Copenhagen Infrastructure Partners acquired ownership of the Swan Lake and Goldendale pumped-storage projects in the United States on behalf of Copenhagen Infrastructure IV (CI IV).", category: "Acquisition" },
       { date: "2025", event: "CI V periodic disclosure reported Scatter Wash had entered operations in the second quarter of 2025.", category: "Expansion" },
       { date: "Aug 15, 2025", event: "CIP announced the acquisition of the Beehive battery storage project in Arizona.", category: "Other" },
     ],
@@ -12873,7 +12881,7 @@ export const companies: PortCo[] = [
       { label: "Cip — Energy Storage", url: "https://www.cip.com/media/qe1ljfnt/copenhagen-infrastructure-v-eur-blocker-feeder-scsp-2025-periodic-disclosure.pdf?rnd=134188218845870000", type: "PRESENTATION" },
     ],
     owners: [
-      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "Funds", investmentYear: 2020, status: "Active" },
+      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)", investmentYear: 2020, status: "Active" },
     ],
   },
   {
@@ -12913,7 +12921,7 @@ export const companies: PortCo[] = [
     subsector: "Solar PV",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "CI IV",
+    ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)",
     description: "Fighting Jays Solar is a utility-scale solar project in Texas within CIP's United States renewables portfolio. The asset serves wholesale electricity and contracted offtake markets through large-scale solar generation rather than distributed retail service. The model is asset-heavy because it depends on development, construction, and ownership of a physical solar plant. CIP ESG reporting identifies Fighting Jays as a 350 MWac solar PV project and later portfolio reporting lists it as a wholly owned United States solar asset. Public market reports state that CIP acquired the project in 2020, making it part of the firm's North American flagship renewables build-out.",
     status: "Active",
     countryTags: ["United States"],
@@ -12929,7 +12937,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — Copenhagen Infrastructure Partners — Fighting Jays Solar", url: "https://renewablesnow.com/news/cip-finalises-acquisition-of-350-mw-solar-project-in-texas-707841/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "CI IV", investmentYear: 2020, status: "Active" },
+      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)", investmentYear: 2020, status: "Active" },
     ],
   },
   {
@@ -12939,15 +12947,15 @@ export const companies: PortCo[] = [
     subsector: "Pumped hydro storage",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "n.a.",
-    description: "Goldendale Energy Storage is a proposed pumped hydro storage project on a former industrial site in Washington. Its end market is the regional electric grid, which would use the asset for long-duration storage, capacity, and balancing services. The business is asset-heavy because it requires major civil works, transmission integration, and long-term operation of a 1,200 MW storage facility with about 12 hours of duration. Public project materials identify CIP as the project owner and Rye Development as a development partner. Public disclosures also show that CIP acquired Goldendale in 2020 and continues to advance licensing and development milestones.",
+    ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)",
+    description: "Goldendale Energy Storage is a proposed pumped hydro storage project on a former industrial site in Washington. Its end market is the regional electric grid, which would use the asset for long-duration storage, capacity, and balancing services. The business is asset-heavy because it requires major civil works, transmission integration, and long-term operation of a 1,200 MW storage facility with about 12 hours of duration. Public project materials identify CIP as the project owner and Rye Development as a development partner. Public disclosures also show that CIP acquired Goldendale through Copenhagen Infrastructure IV (CI IV) in 2020 and continues to advance licensing and development milestones.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2020,
     headquarters: "Washington",
     milestones: [
       { date: "2018", event: "Public project materials identify the preliminary permit stage for Goldendale.", category: "Other" },
-      { date: "Nov 13, 2020", event: "Copenhagen Infrastructure Partners acquired ownership of the Goldendale and Swan Lake closed-loop pumped-storage projects.", category: "Acquisition" },
+      { date: "Nov 13, 2020", event: "Copenhagen Infrastructure Partners acquired ownership of the Goldendale and Swan Lake closed-loop pumped-storage projects on behalf of Copenhagen Infrastructure IV (CI IV).", category: "Acquisition" },
       { date: "2026", event: "Project materials indicated a target year for receiving the federal license, with later construction and operation milestones planned thereafter.", category: "Other" },
     ],
     sources: [
@@ -12958,7 +12966,7 @@ export const companies: PortCo[] = [
       { label: "Goldendaleenergystorage — Goldendale Energy Storage", url: "https://goldendaleenergystorage.com/news.html", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "n.a.", investmentYear: 2020, status: "Active" },
+      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)", investmentYear: 2020, status: "Active" },
     ],
   },
   {
@@ -13024,7 +13032,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "CIP Flagship Funds",
-    description: "Horizon New Energy is CIP's dedicated renewable development platform for Canada. The platform develops utility-scale solar, onshore wind, and battery storage projects for the Canadian power market. Its model is asset-heavy because it focuses on originating, permitting, interconnecting, financing, and building physical generation and storage assets. CIP announced the launch in 2023 and said the initial portfolio comprised about 1.2 GW of Alberta-based development assets. Public materials position Horizon as the local development vehicle for multiple Alberta projects including Aira Solar.",
+    description: "Horizon New Energy is CIP's dedicated renewable development platform for Canada. The platform develops utility-scale solar, onshore wind, and battery storage projects for the Canadian power market. Its model is asset-heavy because it focuses on originating, permitting, interconnecting, financing, and building physical generation and storage assets. CIP announced the launch on behalf of its Flagship Funds in 2023 and said the initial portfolio comprised about 1.2 GW of Alberta-based development assets. Public materials position Horizon as the local development vehicle for multiple Alberta projects including Aira Solar.",
     status: "Active",
     countryTags: ["Canada"],
     yearFounded: 2023,
@@ -13033,7 +13041,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2023", event: "CIP said the new platform started with about 1.2 GW of Alberta renewable development assets.", category: "Other" },
       { date: "2023", event: "Horizon New Energy was founded.", category: "Founding" },
-      { date: "Nov 21, 2023", event: "Copenhagen Infrastructure Partners announced the launch of Horizon New Energy.", category: "Financing" },
+      { date: "Nov 21, 2023", event: "Copenhagen Infrastructure Partners, on behalf of its Flagship Funds, announced the launch of Horizon New Energy.", category: "Financing" },
       { date: "2024", event: "Horizon publicly listed Alberta projects including Aira Solar and other renewable developments.", category: "IPO" },
     ],
     sources: [
@@ -13219,11 +13227,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "n.a.",
-    description: "Sunrise Renewables is a CIP-affiliated development platform for utility-scale solar, battery storage, and green hydrogen projects in the United States. Its customers are expected to be utilities, corporate buyers, and industrial energy users that contract for large-scale renewable generation and related decarbonization infrastructure. The model is asset-heavy because it depends on project origination, permitting, interconnection, and eventual construction of large energy assets. Kentucky regulatory filings identify project entities such as CI V Sunrise Renewables LLC and describe Sunrise as using CIP development processes and personnel. The public record therefore supports Sunrise as a CIP-sponsored development vehicle, although the platform's overall ownership structure and founding year are not publicly disclosed.",
+    description: "Sunrise Renewables is a CIP-affiliated development platform for utility-scale solar, battery storage, and green hydrogen projects in the United States. Its customers are expected to be utilities, corporate buyers, and industrial energy users that contract for large-scale renewable generation and related decarbonization infrastructure. The model is asset-heavy because it depends on project origination, permitting, interconnection, and eventual construction of large energy assets. Kentucky regulatory filings identify project entities such as CI V Sunrise Renewables LLC and describe Sunrise as using CIP development processes and personnel. The filings also identify the Lost City project entity as a wholly owned affiliate of Copenhagen Infrastructure Partners' CI V Master DevCo LLC structure. The public record therefore supports Sunrise as a CIP-sponsored CI V development vehicle, although the platform's full ownership structure and ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
+    investmentYear: 2022,
     headquarters: "Kentucky; multiple United States markets",
     milestones: [
+      { date: "Jun 21, 2022", event: "A Copenhagen Infrastructure Partners-backed Lost City project entity was formed under the CI V Sunrise Renewables ownership chain.", category: "Financing" },
       { date: "Jan 2025", event: "Corporate-information filings tied Sunrise entities to CIP-managed fund structures.", category: "Other" },
       { date: "Mar 2025", event: "Regulatory responses described Sunrise and Lost City as using CIP development processes and templates.", category: "Other" },
     ],
@@ -13234,7 +13244,7 @@ export const companies: PortCo[] = [
       { label: "Psc — Sunrise Renewables", url: "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/06062025050850/Lost_City_Witness_List.pdf", type: "PRESENTATION" },
     ],
     owners: [
-      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "n.a.", status: "Active" },
+      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "n.a.", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -13248,8 +13258,11 @@ export const companies: PortCo[] = [
     description: "Sunstone Power is a renewable development platform in Mexico focused on utility-scale solar and battery storage projects. Its end markets are grid offtakers and power purchasers that require new renewable generation and storage capacity rather than end-user retail services. The operating model is asset-heavy and development led, with project value dependent on permitting, interconnection, construction, and long-term contracted power sales. Recent sector reporting in Mexico identified Sunstone as the largest awarded private developer in a new permitting round, tied to projects in Campeche totaling more than 1 GW of solar capacity plus battery storage. The platform is backed by Copenhagen Infrastructure Partners through its Growth Markets strategy, and the current ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["Mexico"],
+    yearFounded: 2023,
+    investmentYear: 2023,
     headquarters: "Campeche",
     milestones: [
+      { date: "2023", event: "Copenhagen Infrastructure Partners-backed Sunstone Power was founded in Mexico as a privately funded renewable-development company.", category: "Financing" },
       { date: "2025", event: "Sunstone Power was identified as a key CIP-backed renewable developer in Mexico.", category: "Other" },
       { date: "2026", event: "Reporting linked Sunstone's projects to a potential power purchase arrangement with CFE.", category: "Acquisition" },
     ],
@@ -13260,7 +13273,7 @@ export const companies: PortCo[] = [
       { label: "Bnamericas — Sunstone Power", url: "https://www.bnamericas.com/en/news/us2bn-solar-projects-in-mexico-reach-power-purchase-deal-with-cfe", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "CI Growth Markets Fund II", status: "Active" },
+      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "CI Growth Markets Fund II", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -13270,14 +13283,14 @@ export const companies: PortCo[] = [
     subsector: "Pumped hydro storage",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "n.a.",
-    description: "Swan Lake is a proposed pumped hydro storage project in Oregon. The asset is intended to provide long-duration storage, balancing, and grid-reliability services to western power markets. The business is asset-heavy because it depends on major civil infrastructure, water conveyance systems, and long-term storage operations. Public project materials describe a development of nearly 400 MW, and public industry reports state that CIP acquired Swan Lake together with Goldendale in 2020. CIP therefore appears as the publicly identified sponsor, while project-level ownership percentages are not publicly disclosed.",
+    ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)",
+    description: "Swan Lake is a proposed pumped hydro storage project in Oregon. The asset is intended to provide long-duration storage, balancing, and grid-reliability services to western power markets. The business is asset-heavy because it depends on major civil infrastructure, water conveyance systems, and long-term storage operations. Public project materials describe a development of nearly 400 MW, and public industry reports state that CIP acquired Swan Lake together with Goldendale through Copenhagen Infrastructure IV (CI IV) in 2020. CIP therefore appears as the publicly identified sponsor, while project-level ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2020,
     headquarters: "Oregon",
     milestones: [
-      { date: "Nov 13, 2020", event: "Copenhagen Infrastructure Partners acquired ownership of the Swan Lake and Goldendale closed-loop pumped-storage projects.", category: "Acquisition" },
+      { date: "Nov 13, 2020", event: "Copenhagen Infrastructure Partners acquired ownership of the Swan Lake and Goldendale closed-loop pumped-storage projects on behalf of Copenhagen Infrastructure IV (CI IV).", category: "Acquisition" },
     ],
     sources: [
       { label: "Slenergystorage — Swan Lake North Pumped Storage Project", url: "https://www.slenergystorage.com/project.html", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
@@ -13285,7 +13298,7 @@ export const companies: PortCo[] = [
       { label: "Goldendaleenergystorage — Swan Lake North Pumped Storage Project", url: "https://goldendaleenergystorage.com/news.html", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "n.a.", investmentYear: 2020, status: "Active" },
+      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)", investmentYear: 2020, status: "Active" },
     ],
   },
   {
@@ -13378,15 +13391,15 @@ export const companies: PortCo[] = [
     subsector: "Offshore wind development platform",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "CIP Flagship Funds",
-    description: "Vineyard Offshore is a United States offshore wind development platform created by the team behind Vineyard Wind 1. Its target customers are utilities and wholesale power markets that procure large-scale offshore renewable generation through state and regional solicitations. The platform is asset-heavy because it controls offshore leases and advances major capital projects that require marine construction, transmission development, and long-term project financing. Public platform materials and federal fact sheets state that Vineyard Offshore was established in 2022 and is supported by Copenhagen Infrastructure Partners. Its disclosed portfolio spans east-coast and west-coast projects including Vineyard Northeast, Excelsior Wind, and Golden State Wind.",
+    ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)",
+    description: "Vineyard Offshore is a United States offshore wind development platform created by the team behind Vineyard Wind 1. Its target customers are utilities and wholesale power markets that procure large-scale offshore renewable generation through state and regional solicitations. The platform is asset-heavy because it controls offshore leases and advances major capital projects that require marine construction, transmission development, and long-term project financing. Public platform materials and federal fact sheets state that Vineyard Offshore was established in 2022 and is supported by Copenhagen Infrastructure Partners. Public reporting at launch stated that the platform's initial lease areas were owned by Copenhagen Infrastructure IV (CI IV), and its disclosed portfolio spans east-coast and west-coast projects including Vineyard Northeast, Excelsior Wind, and Golden State Wind.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2022,
     investmentYear: 2022,
     headquarters: "Massachusetts; New York; California",
     milestones: [
-      { date: "2022", event: "Public platform materials state that Copenhagen Infrastructure Partners-supported Vineyard Offshore was established in 2022.", category: "Financing" },
+      { date: "2022", event: "Public platform materials state that Copenhagen Infrastructure Partners-supported Vineyard Offshore was established in 2022 with initial lease areas owned by Copenhagen Infrastructure IV (CI IV).", category: "Financing" },
       { date: "2022", event: "Vineyard Offshore was founded.", category: "Founding" },
       { date: "Oct 24, 2023", event: "Vineyard Offshore announced the selection of Excelsior Wind in New York's offshore wind solicitation.", category: "Other" },
       { date: "Mar 27, 2024", event: "Vineyard Offshore announced Vineyard Northeast for New England.", category: "Other" },
@@ -13395,9 +13408,10 @@ export const companies: PortCo[] = [
       { label: "Vineyardoffshore — Vineyard Offshore", url: "https://www.vineyardoffshore.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Vineyardoffshore — Vineyard Offshore", url: "https://www.vineyardoffshore.com/who-we-are/", type: "ARTICLE" },
       { label: "Investment date source — Copenhagen Infrastructure Partners — Vineyard Offshore", url: "https://www.boem.gov/renewable-energy/state-activities/vineyard-offshore-fact-sheet", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Windtech International — Vineyard Offshore", url: "https://www.windtech-international.com/company-news/team-behind-vineyard-wind-launches-vineyard-offshore", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Launch reporting stated that both initial lease areas were owned by the CI-IV fund managed by Copenhagen Infrastructure Partners." },
     ],
     owners: [
-      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "CIP Flagship Funds", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "Copenhagen Infrastructure Partners", ownershipVehicle: "Copenhagen Infrastructure IV (CI IV)", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -13520,7 +13534,7 @@ export const companies: PortCo[] = [
     subsector: "Wind, solar, and energy storage",
     region: "North America",
     country: "United States / Canada",
-    ownershipVehicle: "Sustainable Energies",
+    ownershipVehicle: "n.a.",
     description: "Cordelio Power develops, builds, and operates wind, solar, and energy-storage projects in the United States and Canada. Its customers are utilities, corporates, and other power offtakers that contract for renewable generation and related capacity. The business is asset-heavy and largely contracted because value is linked to owned and under-construction projects plus a sizable development pipeline. Public company materials have described an operating portfolio of 1,860 MW across the United States and Canada and a U.S. development pipeline of more than 18,000 MW. Pattern Energy completed its acquisition of Cordelio in April 2026 after the platform had been wholly owned by CPP Investments, and the direct ownership percentages of the resulting structure have not been publicly disclosed.",
     status: "Active",
     countryTags: ["United States", "Canada"],
@@ -13543,7 +13557,7 @@ export const companies: PortCo[] = [
       { label: "PR Newswire - INF-2026-176 - Cordelio Power’s 6GW Joint Venture Interest", url: "https://www.prnewswire.com/news-releases/brightnight-acquires-cordelio-powers-joint-venture-interest-adds-6-gw-to-its-independently-controlled-project-portfolio-302747628.html", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
-      { investmentFirm: "CPP Investments", ownershipVehicle: "Sustainable Energies", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "CPP Investments", ownershipVehicle: "n.a.", investmentYear: 2018, status: "Active" },
     ],
   },
   {
@@ -13692,7 +13706,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "CPP Investments", ownershipVehicle: "Real Assets (Infrastructure)", investmentYear: 2018, status: "Active" },
-      { investmentFirm: "OTPP", ownershipVehicle: "Joint investment with IDEAL and CPP Investments", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "OTPP", ownershipVehicle: "n.a.", investmentYear: 2018, status: "Active" },
     ],
   },
   {
@@ -13771,6 +13785,7 @@ export const companies: PortCo[] = [
       { date: "2021", event: "Sempra Infrastructure Partners, LP was founded.", category: "Founding" },
       { date: "Apr 5, 2021", event: "Sempra announced an agreement to sell a 20% equity interest in Sempra Infrastructure Partners to KKR.", category: "Divestiture" },
       { date: "Oct 1, 2021", event: "KKR completed the acquisition of a 20% non-controlling equity interest in Sempra Infrastructure Partners.", category: "Acquisition" },
+      { date: "2021", event: "Mubadala invested in Sempra Infrastructure as part of a KKR-led consortium, according to Mubadala portfolio materials.", category: "Financing" },
       { date: "Jun 1, 2022", event: "KKR and ADIA Infrastructure completed their acquisition of a combined 30% non-controlling interest in Sempra Infrastructure Partners.", category: "Acquisition" },
       { date: "Sep 23, 2025", event: "CPP Investments announced a definitive agreement to acquire an approximate 13% indirect equity interest in Sempra Infrastructure Partners alongside KKR.", category: "Acquisition" },
     ],
@@ -14709,7 +14724,7 @@ export const companies: PortCo[] = [
   },
   {
     name: "Aptum Technologies",
-    investmentFirm: "DigitalBridge",
+    investmentFirm: "InfraBridge",
     sector: "Digital",
     subsector: "Data centers, cloud, and managed infrastructure",
     region: "North America",
@@ -14804,38 +14819,37 @@ export const companies: PortCo[] = [
     subsector: "Intermodal terminals and container depots",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "InfraBridge",
-    description: "ConGlobal operates intermodal terminals, container yards, finished-vehicle handling sites, and railcar switching operations. It serves shipping lines, railroads, terminal operators, and other logistics users moving containers and vehicles through North American supply chains. The business is asset-heavy and service-based because it operates physical terminals, depots, and handling equipment under operating contracts and customer service arrangements. Company materials describe operations across the U.S., Mexico, and Costa Rica and characterize the platform as the largest depot terminal network in North America, while public sources reviewed do not disclose current revenue. AMP Capital, now operating as InfraBridge, acquired ITS ConGlobal in 2017 and continues to own the platform through InfraBridge vehicles.",
+    ownershipVehicle: "AMP Capital Global Infrastructure Fund",
+    description: "ConGlobal operates intermodal terminals, container yards, finished-vehicle handling sites, and railcar switching operations. It serves shipping lines, railroads, terminal operators, and other logistics users moving containers and vehicles through North American supply chains. The business is asset-heavy and service-based because it operates physical terminals, depots, and handling equipment under operating contracts and customer service arrangements. Company materials describe operations across the U.S., Mexico, and Costa Rica and characterize the platform as the largest depot terminal network in North America, while public sources reviewed do not disclose current revenue. AMP Capital, now operating as InfraBridge, acquired ITS ConGlobal in 2017 on behalf of its global infrastructure equity platform, including the AMP Capital Global Infrastructure Fund.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2017,
     headquarters: "United States",
     milestones: [
-      { date: "Oct 9, 2017", event: "AMP Capital, now DigitalBridge / InfraBridge, reached financial close on its acquisition of ITS ConGlobal from Carlyle.", category: "Acquisition" },
+      { date: "Oct 9, 2017", event: "AMP Capital, now InfraBridge, reached financial close on its acquisition of ITS ConGlobal from Carlyle on behalf of investors including the AMP Capital Global Infrastructure Fund.", category: "Acquisition" },
       { date: "Apr 27, 2023", event: "InfraBridge announced an investment in Phantom Auto through ConGlobal to expand remote-operation technology for logistics vehicles.", category: "Financing" },
       { date: "Jan 16, 2025", event: "ConGlobal announced the opening of a new foreign-trade-zone facility in Laredo, Texas.", category: "Other" },
     ],
     sources: [
       { label: "Conglobal — ConGlobal", url: "https://conglobal.com/company/", type: "ARTICLE" },
       { label: "Infrabridge — ConGlobal", url: "https://www.infrabridge.com/our-portfolio", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
-      { label: "Close date source — DigitalBridge / InfraBridge — ConGlobal", url: "https://www.marketscreener.com/quote/stock/THE-CARLYLE-GROUP-INC-10531255/news/Carlyle-LP-AMP-Capital-makes-landmark-deal-in-the-US-with-ITS-ConGlobal-acquisition-25251604/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Close date source — InfraBridge — ConGlobal", url: "https://www.carlyle.com/media-room/news-release-archive/amp-capital-makes-landmark-deal-us-its-conglobal-acquisition", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Transaction release stated the acquisition was made on behalf of AMP Capital's global infrastructure equity platform, including the Global Infrastructure Fund." },
       { label: "Investment date source — InfraBridge — ConGlobal", url: "https://www.infrabridge.com/our-portfolio", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Conglobal — ConGlobal", url: "https://conglobal.com/2023/04/27/infrabridge-invests-in-remote-operation-technology-for-logistics-vehicles-via-conglobal/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "DigitalBridge", ownershipVehicle: "InfraBridge", investmentYear: 2017, status: "Active" },
-      { investmentFirm: "InfraBridge", ownershipVehicle: "Global Infrastructure Fund I (GIF I)", investmentYear: 2017, status: "Active" },
+      { investmentFirm: "InfraBridge", ownershipVehicle: "AMP Capital Global Infrastructure Fund", investmentYear: 2017, status: "Active" },
     ],
   },
   {
     name: "Expedient",
-    investmentFirm: "DigitalBridge",
+    investmentFirm: "InfraBridge",
     sector: "Digital",
     subsector: "Data centers and managed cloud infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "InfraBridge",
-    description: "Expedient provides data center colocation, managed cloud, edge, and related infrastructure services in the United States. It serves mid-market and enterprise customers that need managed hybrid-cloud and infrastructure services. The business is asset-heavy and contracted because it combines owned or operated data center infrastructure with recurring managed-services relationships. Company materials describe a multi-market U.S. footprint anchored in Pittsburgh and other regional data center locations, while public sources reviewed do not disclose current revenue. InfraBridge agreed to acquire the company in October 2019 and completed the acquisition in December 2019.",
+    ownershipVehicle: "AMP Capital Global Infrastructure Fund II (GIF II)",
+    description: "Expedient provides data center colocation, managed cloud, edge, and related infrastructure services in the United States. It serves mid-market and enterprise customers that need managed hybrid-cloud and infrastructure services. The business is asset-heavy and contracted because it combines owned or operated data center infrastructure with recurring managed-services relationships. Company materials describe a multi-market U.S. footprint anchored in Pittsburgh and other regional data center locations, while public sources reviewed do not disclose current revenue. InfraBridge, then operating as AMP Capital, agreed to acquire the company in October 2019 and completed the acquisition in December 2019. AMP Capital Global Infrastructure Fund II (GIF II) fund-close reporting later identified Expedient as a current GIF II asset.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2001,
@@ -14844,18 +14858,18 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2001", event: "Public company materials identify 2001 as the founding year.", category: "Founding" },
       { date: "Oct 21, 2019", event: "Expedient announced that InfraBridge, then operating as AMP Capital, had agreed to acquire the company.", category: "Acquisition" },
-      { date: "Dec 2, 2019", event: "Expedient completed its acquisition by DigitalBridge / InfraBridge.", category: "Acquisition" },
+      { date: "Dec 2, 2019", event: "Expedient completed its acquisition by AMP Capital, now InfraBridge.", category: "Acquisition" },
     ],
     sources: [
       { label: "Expedient — Expedient", url: "https://expedient.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Expedient — Expedient", url: "https://expedient.com/about/media/expedient-secures-new-investment-sponsor-amp-capital-to-fund-continued-growth-and-expansion-of-its-data-center-and-enterprise-cloud-platforms/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Close date source — DigitalBridge / InfraBridge — Expedient", url: "https://expedient.com/about/media/expedient-announces-the-completion-of-previously-announced-acquisition-by-amp-capital/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Investment date source — InfraBridge — Expedient", url: "https://www.infrabridge.com/our-portfolio", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "The Asset — AMP Capital Global Infrastructure Fund II", url: "https://www.theasset.com/article/39539/amp-capital-global-infrastructure-fund-ii-closes-at-us-3-4-billion", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Fund close reporting identified Expedient as a current asset of AMP Capital Global Infrastructure Fund II (GIF II)." },
       { label: "Expedient — Expedient", url: "https://expedient.com/about/board-and-investors/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "DigitalBridge", ownershipVehicle: "InfraBridge", investmentYear: 2019, status: "Active" },
-      { investmentFirm: "InfraBridge", ownershipVehicle: "Global Infrastructure Fund II (GIF II)", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "InfraBridge", ownershipVehicle: "AMP Capital Global Infrastructure Fund II (GIF II)", investmentYear: 2019, status: "Active" },
     ],
   },
   {
@@ -14992,7 +15006,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "DigitalBridge Partners II",
-    description: "Switch, Inc. develops, owns, and operates large-scale data center campuses in North America. It serves cloud, AI, and enterprise users that require wholesale and colocation data center capacity. The business is asset-heavy and contracted because it owns specialized data center real estate and sells long-term colocation and infrastructure services to large customers. IFM states that the company operates 20 data centers in the United States and company materials emphasize high-density and AI-ready campus designs. DigitalBridge and IFM completed the take-private acquisition in December 2022, and IFM subsequently disclosed that DigitalBridge held a 55.8% stake while IFM held 37.2%.",
+    description: "Switch, Inc. develops, owns, and operates large-scale data center campuses in North America. It serves cloud, AI, and enterprise users that require wholesale and colocation data center capacity. The business is asset-heavy and contracted because it owns specialized data center real estate and sells long-term colocation and infrastructure services to large customers. IFM states that the company operates 20 data centers in the United States and company materials emphasize high-density and AI-ready campus designs. DigitalBridge and IFM Global Infrastructure Fund (GIF) completed the take-private acquisition in December 2022, and IFM subsequently disclosed that DigitalBridge held a 55.8% stake while IFM held 37.2%.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2000,
@@ -15000,7 +15014,7 @@ export const companies: PortCo[] = [
     headquarters: "Nevada and other U.S. markets",
     milestones: [
       { date: "2000", event: "Public company materials identify 2000 as the founding year.", category: "Founding" },
-      { date: "Dec 6, 2022", event: "DigitalBridge and IFM completed the $11 billion take-private acquisition of Switch.", category: "Acquisition" },
+      { date: "Dec 6, 2022", event: "DigitalBridge and IFM Global Infrastructure Fund (GIF) completed the $11 billion take-private acquisition of Switch.", category: "Acquisition" },
     ],
     sources: [
       { label: "Switch — Switch, Inc.", url: "https://www.switch.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -15029,9 +15043,10 @@ export const companies: PortCo[] = [
     headquarters: "Denver, Colorado",
     milestones: [
       { date: "2010", event: "Vantage Data Centers launched with the acquisition of an Intel-owned data center in Santa Clara.", category: "Founding" },
-      { date: "Mar 27, 2017", event: "A consortium including Digital Bridge Holdings, PSP Investments, and TIAA Investments acquired Vantage Data Centers from Silver Lake.", category: "Acquisition" },
+      { date: "Mar 27, 2017", event: "A consortium including Digital Bridge Holdings, PSP Investments, and TIAA Investments acquired Vantage Data Centers from its prior sponsor.", category: "Acquisition" },
       { date: "Jul 2020", event: "DigitalBridge-led investors formed Vantage SDC through a $3.5 billion strategic partnership with Vantage Data Centers.", category: "Financing" },
       { date: "Jul 23, 2020", event: "CBRE Caledon completed an investment in the newly formed Vantage SDC platform containing 12 stabilized Vantage Data Centers assets.", category: "Acquisition" },
+      { date: "2020", event: "GCM Grosvenor's Labor Impact Fund committed equity capital to Vantage's North American growth platform.", category: "Financing" },
       { date: "Jan 2024", event: "Vantage announced a $6.4 billion equity investment round led by DigitalBridge and Silver Lake.", category: "Financing" },
       { date: "Jun 13, 2024", event: "Vantage completed a $9.2 billion equity investment led by DigitalBridge and Silver Lake.", category: "Financing" },
     ],
@@ -15046,7 +15061,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "DigitalBridge", ownershipVehicle: "n.a.", investmentYear: 2017, stake: "Core Vantage platform acquisition", status: "Active" },
-      { investmentFirm: "CBRE Investment Management", ownershipVehicle: "CBRE Caledon", investmentYear: 2020, stake: "Significant minority stake in stabilized North American portfolio", status: "Active" },
+      { investmentFirm: "CBRE Investment Management", ownershipVehicle: "n.a.", investmentYear: 2020, stake: "Significant minority stake in stabilized North American portfolio", status: "Active" },
       { investmentFirm: "GCM Grosvenor", ownershipVehicle: "Labor Impact Fund, L.P. / Infrastructure Advantage Strategy", investmentYear: 2020, status: "Active" },
       { investmentFirm: "DigitalBridge", ownershipVehicle: "n.a.", investmentYear: 2020, stake: "Vantage SDC exposure; DigitalBridge retained 12.8% balance-sheet interest after 2023 deconsolidation", status: "Active" },
       { investmentFirm: "Silver Lake", ownershipVehicle: "n.a.", investmentYear: 2024, stake: "Lead investor in 2024 equity investment", status: "Active" },
@@ -15152,7 +15167,7 @@ export const companies: PortCo[] = [
     subsector: "Contracted renewable, storage, transmission, and water infrastructure",
     region: "North America",
     country: "North America",
-    ownershipVehicle: "Take-private led by ECP and co-investors",
+    ownershipVehicle: "n.a.",
     description: "Atlantica Sustainable Infrastructure owns and manages a diversified portfolio of renewable energy, energy storage, efficient natural gas, transmission, and water assets. The company’s revenue profile is predominantly contracted, with management disclosures indicating that the vast majority of expected cash flow is supported by long-term agreements. Its footprint includes North American assets across the United States, Canada, and Mexico, alongside additional operations in South America and Europe. Atlantica’s December 2024 factsheet described approximately 2.2 GW of operating renewable generation, 355 MW of storage, and more than 1,200 miles of transmission lines. Energy Capital Partners agreed to acquire Atlantica in 2024 and completed the take-private in December 2024 with co-investors, after which the company continued operating as a contracted clean-energy infrastructure platform.",
     status: "Active",
     countryTags: ["United States", "Canada", "Mexico"],
@@ -15176,9 +15191,8 @@ export const companies: PortCo[] = [
       { label: "Court approval source — ECP co-investors — Atlantica Sustainable Infrastructure plc", url: "https://www.globenewswire.com/news-release/2024/12/10/2994567/33705/en/Acquisition-by-Energy-Capital-Partners-and-Co-Investors-Approved-by-the-High-Court-of-Justice-of-England-and-Wales.html", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
-      { investmentFirm: "ECP", ownershipVehicle: "Take-private led by ECP and co-investors", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "ECP", ownershipVehicle: "n.a.", investmentYear: 2024, status: "Active" },
       { investmentFirm: "Temasek", ownershipVehicle: "n.a.", investmentYear: 2024, status: "Active" },
-      { investmentFirm: "ECP", ownershipVehicle: "Energy Capital Partners", investmentYear: 2024, status: "Active" },
     ],
   },
   {
@@ -15216,7 +15230,7 @@ export const companies: PortCo[] = [
     subsector: "Renewable diesel and low-carbon fuels refining",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "ECP investment",
+    ownershipVehicle: "n.a.",
     description: "Braya Renewable Fuels owns the Come By Chance refinery complex in Newfoundland and Labrador and is converting and operating the site for renewable and low-carbon fuel production. Its customer base is tied to fuel markets and distributors, with economics influenced by physical refining margins and low-carbon fuel programs rather than regulated utility-style revenues. The platform is highly asset-heavy, centered on a large existing refinery and associated logistics infrastructure that has been repurposed for renewable diesel production. Energy Capital Partners announced a $300 million investment in 2023, and Braya said in early 2024 that the facility had commenced commercial operations for renewable fuel production. Newfoundland and Labrador government materials in 2025 identified the ownership group as including Cresta Fund Management, North Atlantic Refining Corp. managed by Silverpeak, and Energy Capital Partners.",
     status: "Active",
     countryTags: ["Canada"],
@@ -15234,7 +15248,7 @@ export const companies: PortCo[] = [
       { label: "Gov — Braya Renewable Fuels", url: "https://www.gov.nl.ca/releases/2025/exec/0911n07/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "ECP", ownershipVehicle: "ECP investment", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "ECP", ownershipVehicle: "n.a.", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -15244,7 +15258,7 @@ export const companies: PortCo[] = [
     subsector: "Battery storage and distributed energy infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Energy Capital Partners",
+    ownershipVehicle: "n.a.",
     description: "Convergent develops, owns, and operates battery storage and related distributed energy infrastructure. Its customers include utilities, commercial and industrial users, and public-sector counterparties that need reliability, demand management, and energy cost savings. The operating model is asset-heavy and project based, with Convergent managing development, financing, construction, and operations across its storage portfolio. Company materials state that the platform has developed or acquired more than 800 MW and 1 GWh of storage capacity across North America. Convergent was founded in 2011, and Energy Capital Partners acquired the company in 2019; ECP and U.S. Department of Energy materials show the platform remained active in large-scale growth projects in 2025.",
     status: "Active",
     countryTags: ["United States", "Canada"],
@@ -15265,8 +15279,7 @@ export const companies: PortCo[] = [
       { label: "Energy — Convergent Energy and Power", url: "https://www.energy.gov/edf/articles/doe-announces-5845-million-loan-guarantee-subsidiaries-convergent-energy-and-power-inc", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "ECP", ownershipVehicle: "Acquisition by ECP", investmentYear: 2019, status: "Active" },
-      { investmentFirm: "ECP", ownershipVehicle: "Energy Capital Partners", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "ECP", ownershipVehicle: "n.a.", investmentYear: 2019, status: "Active" },
     ],
   },
   {
@@ -15276,7 +15289,7 @@ export const companies: PortCo[] = [
     subsector: "Gas-fired power generation",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "ECP acquisition",
+    ownershipVehicle: "n.a.",
     description: "Cornerstone Generation owns a portfolio of PJM gas-fired generation assets consisting of Waterford in Ohio, Lawrenceburg in Indiana, and Darby in Ohio. Its customers are wholesale power markets and capacity markets, and its earnings profile is therefore more merchant than contracted compared with regulated or availability-based infrastructure businesses. The platform is asset-heavy and ECP has described it as a 2.5 GW or approximately 2.6 GW fleet across the three facilities. Public deal materials show that ECP acquired the business as a carve-out of Lightstone Generation from Blackstone and ArcLight in a deal announced in September 2024 and closed in early 2025, and later agreed to sell it to Talen in 2026, subject to regulatory approvals. Pending completion of that sale, Cornerstone remains an ECP-backed merchant generation platform in the Midwest PJM market.",
     status: "Active",
     countryTags: ["United States"],
@@ -15297,8 +15310,7 @@ export const companies: PortCo[] = [
       { label: "Talen Energy IR - INF-2026-014 - Cornerstone Generation", url: "https://ir.talenenergy.com/news-releases/news-release-details/talen-energy-continues-portfolio-expansion-acquisition", type: "WEBSITE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
-      { investmentFirm: "ECP", ownershipVehicle: "ECP acquisition", investmentYear: 2025, status: "Active" },
-      { investmentFirm: "Talen Energy", ownershipVehicle: "Announced acquisition from ECP pending regulatory close", investmentYear: 2026, status: "Active" },
+      { investmentFirm: "ECP", ownershipVehicle: "n.a.", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -15308,7 +15320,7 @@ export const companies: PortCo[] = [
     subsector: "Lead-acid battery recycling",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Acquisition by ECP",
+    ownershipVehicle: "n.a.",
     description: "Gopher Resource recycles lead-acid batteries and related materials, producing recycled lead and polypropylene for battery manufacturers and industrial customers. Its operations are asset-heavy, anchored by large recycling plants in Eagan, Minnesota and Tampa, Florida, and supported by a nationwide battery collection network. The company describes itself as a long-established industrial recycler with approximately 80 years of operating history. Public materials indicate that it recycled about 600 million pounds of lead and 41 million pounds of plastic in 2025. Energy Capital Partners announced the acquisition of Gopher Resource in 2018 and remains the publicly disclosed owner.",
     status: "Active",
     countryTags: ["United States"],
@@ -15329,7 +15341,7 @@ export const companies: PortCo[] = [
       { label: "Waste360 — Gopher Resource, LLC", url: "https://www.waste360.com/mergers-acquisitions/energy-capital-partners-to-acquire-gopher-resource", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "ECP", ownershipVehicle: "Acquisition by ECP", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "ECP", ownershipVehicle: "n.a.", investmentYear: 2018, status: "Active" },
     ],
   },
   {
@@ -15339,7 +15351,7 @@ export const companies: PortCo[] = [
     subsector: "Integrated heavy civil construction, asphalt, and aggregates",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "Funds managed by ECP recapitalization investment",
+    ownershipVehicle: "n.a.",
     description: "Green Infrastructure Partners is a vertically integrated heavy civil contractor serving transportation and broader public and private infrastructure markets in Canada. Its services span aggregates, asphalt production and paving, construction engineering, and major civil works, making it a self-perform, asset-heavy operating platform rather than a concession asset owner. The company’s operating footprint is centered in Ontario, where it supplies materials and construction services for roads, bridges, airports, and related infrastructure. Public disclosures state that GIP was established in 2022 and in 2025 ECP agreed to recapitalize the company at a C$4.25 billion enterprise value. Following that transaction announcement, GFL said it would retain an approximately 30.1% equity interest, with ECP becoming the lead new investor alongside continuing minority holders.",
     status: "Active",
     countryTags: ["Canada"],
@@ -15360,7 +15372,7 @@ export const companies: PortCo[] = [
       { label: "Ecpgp — Green Infrastructure Partners Inc.", url: "https://www.ecpgp.com/about/news-and-insights/press-releases/2025/gfl-environmental-inc--announces-agreement-to-recapitalize-green-infrastructure-partners-at-an-enterprise-value-of-4-25-billion-with-investment-from-energy-capital-partners", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "ECP", ownershipVehicle: "Funds managed by ECP recapitalization investment", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "ECP", ownershipVehicle: "n.a.", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -15370,7 +15382,7 @@ export const companies: PortCo[] = [
     subsector: "Low-carbon ethanol and carbon capture",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Formed by Harvestone Group and ECP",
+    ownershipVehicle: "n.a.",
     description: "Harvestone Low Carbon Partners is a low-carbon fuels platform that owns and operates ethanol and related carbon management assets. Its facilities serve fuel and agricultural markets, with economics supported by ethanol sales, feed coproducts, and increasingly carbon-capture and low-carbon fuel attributes. The business is asset-heavy, with operating plants at Blue Flint in Underwood, North Dakota, Dakota Spirit in Spiritwood, North Dakota, and Iroquois Bio-Energy in Rensselaer, Indiana. Harvestone states that the platform was formed in 2022 by Harvestone Group and Energy Capital Partners and has capacity of more than 200 million gallons per year. In 2024 the company announced a $205 million carbon-capture tax-equity financing for the Blue Flint CCS project, further shifting the platform toward lower-carbon fuel production.",
     status: "Active",
     countryTags: ["United States"],
@@ -15389,7 +15401,7 @@ export const companies: PortCo[] = [
       { label: "Harvestonelcp — Harvestone Low Carbon Partners", url: "https://harvestonelcp.com/storyArchives-375", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "ECP", ownershipVehicle: "Formed by Harvestone Group and ECP", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "ECP", ownershipVehicle: "n.a.", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -15988,8 +16000,8 @@ export const companies: PortCo[] = [
     subsector: "Natural gas transmission pipeline",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "EIG Global Project Funds",
-    description: "Midship Pipeline Company, LLC owns and operates a FERC-regulated natural gas transmission pipeline in Oklahoma's SCOOP and STACK region. It serves upstream producers, midstream shippers, and gas-market participants that need takeaway and transportation capacity. The business is asset-heavy and contracted because value depends on pipeline transportation infrastructure and associated shipper arrangements. Public sources describe a roughly 200-mile pipeline in the Anadarko Basin, while detailed current revenue figures were not disclosed in the reviewed sources. Cheniere and EIG jointly financed the project in 2019, and Howard Energy acquired equity interests from Cheniere in 2025 while EIG's ownership exposure remained publicly referenced.",
+    ownershipVehicle: "n.a.",
+    description: "Midship Pipeline Company, LLC owns and operates a FERC-regulated natural gas transmission pipeline in Oklahoma's SCOOP and STACK region. It serves upstream producers, midstream shippers, and gas-market participants that need takeaway and transportation capacity. The business is asset-heavy and contracted because value depends on pipeline transportation infrastructure and associated shipper arrangements. Public sources describe a roughly 200-mile pipeline in the Anadarko Basin, while detailed current revenue figures were not disclosed in the reviewed sources. Cheniere and EIG jointly financed the project in 2019, and Howard Energy acquired equity interests from Cheniere in 2025 while EIG's ownership exposure remained publicly referenced. The reviewed public sources do not disclose the exact current EIG fund vehicle.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2019,
@@ -16005,7 +16017,7 @@ export const companies: PortCo[] = [
       { label: "Howardenergypartners — Midship Pipeline Company, LLC", url: "https://www.howardenergypartners.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "EIG Global Energy Partners", ownershipVehicle: "EIG Global Project Funds", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "EIG Global Energy Partners", ownershipVehicle: "n.a.", investmentYear: 2019, status: "Active" },
     ],
   },
   {
@@ -16292,7 +16304,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Ember Infrastructure Fund I",
-    description: "ReGenerate Energy Holdings, LLC owns and operates biomass power assets and seeks to produce other sustainable products from residual feedstocks. It serves power markets, industrial users, and counterparties seeking biobased energy and related sustainable products. The business is asset-heavy and merchant-sensitive because it owns operating biomass power plants and depends on plant operations and energy-product commercialization. Ember materials describe an initial platform of biomass facilities in Maine and Georgia, while public sources reviewed do not disclose current revenue. Ember and ReEnergy announced the joint venture in April 2021 and public sources state that the business remains jointly owned by those parties.",
+    description: "ReGenerate Energy Holdings, LLC owns and operates biomass power assets and seeks to produce other sustainable products from residual feedstocks. It serves power markets, industrial users, and counterparties seeking biobased energy and related sustainable products. The business is asset-heavy and merchant-sensitive because it owns operating biomass power plants and depends on plant operations and energy-product commercialization. Ember materials describe an initial platform of biomass facilities in Maine and Georgia, while public sources reviewed do not disclose current revenue. Ember and ReEnergy announced the joint venture in April 2021, and Ember's Fund I final-close materials identify ReGenerate as an investment of Ember Infrastructure Fund I.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2021,
@@ -16300,11 +16312,12 @@ export const companies: PortCo[] = [
     headquarters: "Maine and Georgia",
     milestones: [
       { date: "2021", event: "ReGenerate Energy Holdings, LLC was founded.", category: "Founding" },
-      { date: "Apr 29, 2021", event: "Ember Infrastructure and ReEnergy announced plans to create ReGenerate Energy.", category: "Financing" },
+      { date: "Apr 29, 2021", event: "Ember Infrastructure and ReEnergy announced plans to create ReGenerate Energy, later identified in Ember's final-close materials as an Ember Infrastructure Fund I investment.", category: "Financing" },
       { date: "Jul 1, 2021", event: "ReGenerate completed the acquisition of the 50 MW Albany Green Energy biomass facility in Georgia.", category: "Acquisition" },
     ],
     sources: [
       { label: "Announcement date source — Ember Infrastructure — ReGenerate Energy Holdings, LLC", url: "https://ember-infra.com/e/regenerate-energy-launch", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Fund vehicle source — Ember Infrastructure Fund I — ReGenerate Energy Holdings, LLC", url: "https://ember-infra.com/e/ember-closes-fund-i", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Close date source — Ember Infrastructure — ReGenerate Energy Holdings, LLC", url: "https://ember-infra.com/e/regenerate-acquires-50mw-biomass-facility", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Ember Infra — ReGenerate Energy Holdings, LLC", url: "https://ember-infra.com/e/regenerate-maine-biochar-grant", type: "ARTICLE" },
     ],
@@ -17351,12 +17364,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "n.a.",
-    description: "Trenton Biogas is a food-waste anaerobic digestion facility that processes organic waste and converts it into renewable power and related byproducts. Its customers include food waste generators and other waste counterparties in the tri-state region, and the operating model is asset-heavy with tipping-fee revenues and energy production from a dedicated processing plant. Official company materials state that the facility began operations in 2019 and is designed to process about 110,000 tons of food waste per year. Public technical materials also describe a 400-ton-per-day processing capability and approximately 3.3 MW of cogeneration output. The facility operates in Trenton, New Jersey, serving a concentrated regional market for organics diversion and renewable energy. The reviewed public materials do not clearly disclose the current equity ownership structure of the project.",
+    description: "Trenton Biogas is a food-waste anaerobic digestion facility that processes organic waste and converts it into renewable power and related byproducts. Its customers include food waste generators and other waste counterparties in the tri-state region, and the operating model is asset-heavy with tipping-fee revenues and energy production from a dedicated processing plant. Official company materials state that the facility began operations in 2019 and is designed to process about 110,000 tons of food waste per year. Public technical materials also describe a 400-ton-per-day processing capability and approximately 3.3 MW of cogeneration output. The facility operates in Trenton, New Jersey, serving a concentrated regional market for organics diversion and renewable energy. Equilibrium's 2020 sustainability materials identify Trenton Biogas as a Water-Waste-Energy partner and state that WWE enabled the site's repurposing, but the reviewed public materials do not clearly disclose current equity ownership percentages or the original investment date.",
     status: "Active",
     countryTags: ["United States"],
+    investmentYear: 2020,
     headquarters: "New Jersey",
     milestones: [
       { date: "2019", event: "Trenton Biogas began operations.", category: "Expansion" },
+      { date: "2020", event: "Equilibrium's Water-Waste-Energy team identified Trenton Biogas as a partner and said WWE enabled the site's repurposing.", category: "Financing" },
       { date: "Feb 2021", event: "Industry coverage described the plant as operating with 400 tons per day of food waste processing capacity.", category: "Expansion" },
     ],
     sources: [
@@ -17364,14 +17379,15 @@ export const companies: PortCo[] = [
       { label: "Trentonrenewables — Trenton Biogas", url: "https://www.trentonrenewables.com/about-us", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Chptap — Trenton Biogas", url: "https://chptap.ornl.gov/profile/367/TrentonBiogas-Project_Profile.pdf", type: "PRESENTATION" },
       { label: "Americanbiogascouncil — Trenton Biogas", url: "https://americanbiogascouncil.org/large-scale-food-waste-digestion-in-new-jersey-with-trenton-biogas/", type: "ARTICLE" },
+      { label: "Investment evidence source — Equilibrium — Trenton Biogas", url: "https://eq-cap.com/wp-content/uploads/2020/05/EQ-Sustainability-Report-2020-Single-Page-FINAL-2.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Equilibrium", ownershipVehicle: "n.a.", status: "Active" },
+      { investmentFirm: "Equilibrium", ownershipVehicle: "n.a.", investmentYear: 2020, status: "Active" },
     ],
   },
   {
     name: "Abbotsford Regional Hospital and Cancer Centre",
-    investmentFirm: "Equitix",
+    investmentFirm: "CVC DIF",
     sector: "Social Infra",
     subsector: "Availability-based hospital PPP",
     region: "North America",
@@ -17405,28 +17421,28 @@ export const companies: PortCo[] = [
     subsector: "Toll roads and tunnel concession",
     region: "North America",
     country: "United States / Canada",
-    ownershipVehicle: "n.a.",
-    description: "American Roads owns and operates a portfolio of tolled transportation assets in the United States. Its user base is made up of passenger and commercial vehicle traffic using the Detroit-Windsor Tunnel and three toll bridges in Alabama. The platform is asset-heavy and revenue is tied to tolling rights and concession-based transportation operations. Public sources state that the company's four operational assets serve approximately seven million trips annually across Alabama and Michigan. As of the reviewed public record, a February 2026 announcement said John Laing had agreed to acquire the platform from CVC DIF, but closing had not been publicly confirmed. Because the current post-signing ownership structure was not publicly verified in the reviewed materials, detailed current ownership percentages are not publicly disclosed.",
+    ownershipVehicle: "DIF Infrastructure V",
+    description: "American Roads owns and operates a portfolio of tolled transportation assets in the United States. Its user base is made up of passenger and commercial vehicle traffic using the Detroit-Windsor Tunnel and three toll bridges in Alabama. The platform is asset-heavy and revenue is tied to tolling rights and concession-based transportation operations. Public sources state that the company's four operational assets serve approximately seven million trips annually across Alabama and Michigan. DIF Infrastructure V acquired American Roads in July 2018. As of the reviewed public record, a February 2026 announcement said John Laing had agreed to acquire the platform from CVC DIF, but closing had not been publicly confirmed, so CVC DIF remains treated as the current owner pending closing.",
     status: "Active",
     countryTags: ["United States", "Canada"],
-    investmentYear: 2026,
+    investmentYear: 2018,
     headquarters: "Alabama; Michigan",
     milestones: [
-      { date: "2018", event: "DIF acquired American Roads, according to industry reporting.", category: "Acquisition" },
+      { date: "Jul 17, 2018", event: "DIF Infrastructure V acquired 100% of American Roads.", category: "Acquisition" },
       { date: "Feb 2026", event: "CVC DIF announced an agreement to sell American Roads to John Laing.", category: "Acquisition" },
       { date: "Feb 2026", event: "Equitix-backed John Laing announced an agreement to acquire 100% of the platform from CVC DIF.", category: "Acquisition" },
     ],
     sources: [
       { label: "Americanroads — American Roads", url: "https://www.americanroads.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Americanroads — American Roads", url: "https://www.americanroads.com/Assets.aspx", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
+      { label: "Private Equity News — American Roads", url: "https://www.private-equitynews.com/news/dif-infrastructure-v-acquires-100-of-american-roads/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "DIF Infrastructure V announced the acquisition of 100% of American Roads in July 2018." },
       { label: "Announcement date source — CVC DIF — American Roads", url: "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Announcement date source — Equitix / John Laing — American Roads", url: "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Ownership structure source — Equitix — John Laing Investments Limited", url: "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in", type: "ARTICLE" },
       { label: "ENR - INF-2026-044 - American Roads", url: "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Equitix", ownershipVehicle: "n.a.", investmentYear: 2026, status: "Active" },
-      { investmentFirm: "CVC DIF", ownershipVehicle: "Seller in announced American Roads sale to John Laing", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "CVC DIF", ownershipVehicle: "DIF Infrastructure V", investmentYear: 2018, status: "Active" },
     ],
   },
   {
@@ -18192,11 +18208,11 @@ export const companies: PortCo[] = [
     sector: "Social Infra",
     subsector: "Long-term care PPP",
     region: "North America",
-    country: "United States",
-    ownershipVehicle: "Funds",
+    country: "Canada",
+    ownershipVehicle: "n.a.",
     description: "The Grand Falls-Windsor Long-Term Care Home is a long-term care PPP asset in Newfoundland and Labrador. Its end users are residents and the provincial health system, with economics tied to a long-term public infrastructure contract rather than private-pay occupancy risk. The model is asset-heavy and availability-based under a DBFM procurement structure. Public sources describe the home as a 60-bed facility that reached substantial completion in 2022. The reviewed materials did not disclose current project-level revenue or equity ownership percentages. The project forms part of the broader Gander and Grand Falls-Windsor care homes program in which Fengate-led NL Healthcare Partners reached financial close in 2019.",
     status: "Active",
-    countryTags: ["United States"],
+    countryTags: ["Canada"],
     investmentYear: 2019,
     headquarters: "Newfoundland and Labrador",
     milestones: [
@@ -18209,7 +18225,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — Fengate Asset Management — Grand Falls-Windsor Long-Term Care Home", url: "https://fengate.com/news/fengate-led-consortium-achieves-financial-close-for-gander-and-grand-falls-windsor-care-homes-infrastructure-project", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Funds", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "n.a.", investmentYear: 2019, status: "Active" },
     ],
   },
   {
@@ -18219,8 +18235,8 @@ export const companies: PortCo[] = [
     subsector: "Airport terminal concession",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Fengate Infrastructure Fund IV",
-    description: "JFK Terminal 6 Redevelopment is a major airport terminal concession project at John F. Kennedy International Airport in New York. Its end users are airline passengers and airport stakeholders, while project economics are tied to a long-term design-build-finance-operate-maintain concession. The project is asset-heavy and long-duration, with value creation driven by terminal capacity, commercial spaces, and airport service infrastructure. Public sources describe the redevelopment as a roughly 1.2 million-square-foot, approximately $4.2 billion project on the former Terminal 6 and Terminal 7 sites. The reviewed public materials did not disclose the complete current equity ownership percentages of the project company. Fengate states that it is an equity partner in the JFK Millennium Partners consortium, and public bond market materials show the project advanced with a large 2024 financing.",
+    ownershipVehicle: "n.a.",
+    description: "JFK Terminal 6 Redevelopment is a major airport terminal concession project at John F. Kennedy International Airport in New York. Its end users are airline passengers and airport stakeholders, while project economics are tied to a long-term design-build-finance-operate-maintain concession. The project is asset-heavy and long-duration, with value creation driven by terminal capacity, commercial spaces, and airport service infrastructure. Public sources describe the redevelopment as a roughly 1.2 million-square-foot, approximately $4.2 billion project on the former Terminal 6 and Terminal 7 sites. The reviewed public materials did not disclose the complete current equity ownership percentages of the project company or Fengate's exact project-level fund vehicle. Fengate states that it is an equity partner in the JFK Millennium Partners consortium, and public bond market materials show the project advanced with a large 2024 financing.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2020,
@@ -18237,7 +18253,7 @@ export const companies: PortCo[] = [
       { label: "Fengate — JFK Terminal 6 Redevelopment", url: "https://fengate.com/transportation", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "Fengate Infrastructure Fund IV", investmentYear: 2020, status: "Active" },
+      { investmentFirm: "Fengate Asset Management", ownershipVehicle: "n.a.", investmentYear: 2020, status: "Active" },
     ],
   },
   {
@@ -19141,18 +19157,23 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Corporate Equity",
-    description: "EnviraPAC Monticello is a biomass processing facility in Monticello, Arkansas that converts forestry residuals into renewable engineered carbon products. Its end markets include industrial and agricultural users that require activated carbon or related carbon powder products derived from biomass feedstock. The model is asset-heavy and process-oriented, with value tied to a dedicated manufacturing facility and feedstock conversion technology. Public materials describe the Monticello facility as a renewable carbon powder operation backed by Generate Capital and designed around sustainable forestry residuals. The reviewed materials did not disclose facility-level revenue or a detailed current ownership structure beyond Generate's backing. Generate's investment supports a specialized processing asset rather than a diversified portfolio company with publicly reported financials.",
+    description: "EnviraPAC Monticello is a biomass processing facility in Monticello, Arkansas that converts forestry residuals into renewable engineered carbon products. Its end markets include industrial and agricultural users that require activated carbon or related carbon powder products derived from biomass feedstock. The model is asset-heavy and process-oriented, with value tied to a dedicated manufacturing facility and feedstock conversion technology. Public materials describe the Monticello facility as a renewable carbon powder operation backed by Generate Capital and designed around sustainable forestry residuals. Generate describes its investment in an EnviraPAC-operated project SPV, while 2021 industry materials show Generate-linked management involvement at EnviraPAC Monticello. The reviewed materials did not disclose facility-level revenue, ownership percentages, or an exact original investment date.",
     status: "Active",
     countryTags: ["United States"],
+    investmentYear: 2021,
     headquarters: "Arkansas",
+    milestones: [
+      { date: "2021", event: "Generate Capital had Generate-linked management involvement with EnviraPAC Monticello and later described its investment in the project SPV.", category: "Financing" },
+    ],
     sources: [
       { label: "Portfolio evidence source — Generate Capital — EnviraPAC Monticello", url: "https://generatecapital.com/investment/", type: "ARTICLE" },
       { label: "Ncat — EnviraPAC Monticello", url: "https://www.ncat.org/arkansas-carbon-venture-turns-sustainable-forestry-management-residuals-into-market-ready-product/", type: "ARTICLE" },
       { label: "Biomassmagazine — EnviraPAC Monticello", url: "https://biomassmagazine.com/directory/companies/772", type: "ARTICLE" },
       { label: "Chemicalsamerica — EnviraPAC Monticello", url: "https://chemicalsamerica.com/companies/envirapac-monticello", type: "ARTICLE" },
+      { label: "Investment evidence source — Generate Capital — EnviraPAC Monticello", url: "https://chemicalsamerica.com/2021-Attendee-List", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Generate Capital", ownershipVehicle: "Corporate Equity", status: "Active" },
+      { investmentFirm: "Generate Capital", ownershipVehicle: "Corporate Equity", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -19827,23 +19848,23 @@ export const companies: PortCo[] = [
       { label: "Investment structure source — GIC — Wecom Fiber", url: "https://docs.fcc.gov/public/attachments/DOC-397850A1.pdf", type: "PRESENTATION" },
     ],
     owners: [
-      { investmentFirm: "Searchlight", ownershipVehicle: "Searchlight WCM Holdco, LLC / SCP Holdco; FCC materials state Wecom LLC becomes wholly owned by SCP Holdco, whose parent chain includes Searchlight Topco, Searchlight Fiber Alliance, Simple Broadband II, and seller rollover equity.", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "Searchlight", ownershipVehicle: "n.a.", investmentYear: 2023, status: "Active" },
       { investmentFirm: "GIC", ownershipVehicle: "Epsom Investment Pte. Ltd", investmentYear: 2023, status: "Active" },
     ],
   },
   {
     name: "Aligned Data Centers",
-    investmentFirm: "Global Infrastructure Partners",
+    investmentFirm: "Macquarie Asset Management",
     sector: "Digital",
     subsector: "Hyperscale and build-to-suit data centers",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "AI Infrastructure Partnership (AIP) / GIP",
-    description: "Aligned Data Centers develops and operates data center campuses for hyperscale, cloud, and enterprise customers. Its operating model is asset-heavy, built around powered land, build-to-suit delivery, and long-duration customer contracts for wholesale and hyperscale capacity. The company’s geographic footprint spans major U.S. data center markets, including Texas, Arizona, Illinois, and Virginia, with additional development activity in other markets. Public materials reviewed describe a large-scale campus platform focused on high-density and AI-oriented workloads, though they do not disclose revenue or employee count in the sources used here. Macquarie Asset Management-managed funds and co-invest partners were the disclosed owners in the latest transaction announcement reviewed. In October 2025, AI Infrastructure Partnership, MGX, and BlackRock’s Global Infrastructure Partners announced an agreement to acquire all equity in the company from those sellers.",
+    ownershipVehicle: "MIP IV / MIP V and related vehicles",
+    description: "Aligned Data Centers develops and operates data center campuses for hyperscale, cloud, and enterprise customers. Its operating model is asset-heavy, built around powered land, build-to-suit delivery, and long-duration customer contracts for wholesale and hyperscale capacity. The company’s geographic footprint spans major U.S. data center markets, including Texas, Arizona, Illinois, and Virginia, with additional development activity in other markets. Public materials reviewed describe a large-scale campus platform focused on high-density and AI-oriented workloads, though they do not disclose revenue or employee count in the sources used here. Macquarie Asset Management-managed funds and co-invest partners were the disclosed owners in the latest transaction announcement reviewed. In October 2025, AI Infrastructure Partnership, MGX, and BlackRock’s Global Infrastructure Partners announced an agreement to acquire all equity in the company from those sellers, but public sources reviewed as of May 13, 2026 still describe that transaction as expected to close in the first half of 2026 and do not confirm completion.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2013,
-    investmentYear: 2025,
+    investmentYear: 2018,
     headquarters: "Virginia; Texas; Arizona; Illinois; Utah; Ohio; Oregon",
     milestones: [
       { date: "2013", event: "Aligned Data Centers was founded.", category: "Founding" },
@@ -19861,7 +19882,6 @@ export const companies: PortCo[] = [
       { label: "Announcement date source — Macquarie Asset Management — Aligned Data Centers", url: "https://www.macquarie.com/au/en/about/news/2025/macquarie-asset-management-to-lead-sale-of-aligned-data-centers-at-an-enterprise-value-of-us-40-billion.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Global Infrastructure Partners", ownershipVehicle: "AI Infrastructure Partnership (AIP) / GIP", investmentYear: 2025, status: "Active" },
       { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP IV / MIP V and related vehicles", investmentYear: 2018, status: "Active" },
       { investmentFirm: "Mubadala", ownershipVehicle: "n.a.", investmentYear: 2023, status: "Active" },
     ],
@@ -20662,8 +20682,8 @@ export const companies: PortCo[] = [
     subsector: "Subsea and terrestrial fiber",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Acquisition of QSH Parent Holdco LLC",
-    description: "Quintillion owns and operates terrestrial and subsea fiber infrastructure connecting Alaska and the North American Arctic. Its customers or end markets include telecom carriers, enterprises, public-sector users, and broadband providers requiring long-distance connectivity. The operating model is an asset-heavy fiber infrastructure model supported by subsea cable and terrestrial backhaul assets. Operations are concentrated in Alaska and the North American Arctic. Public materials indicate a regional backbone platform connecting remote markets to the Lower 48 and other interconnection points. Current ownership reflects Grain Management’s acquisition process announced in 2023 and completed in 2024.",
+    ownershipVehicle: "n.a.",
+    description: "Quintillion owns and operates terrestrial and subsea fiber infrastructure connecting Alaska and the North American Arctic. Its customers or end markets include telecom carriers, enterprises, public-sector users, and broadband providers requiring long-distance connectivity. The operating model is an asset-heavy fiber infrastructure model supported by subsea cable and terrestrial backhaul assets. Operations are concentrated in Alaska and the North American Arctic. Public materials indicate a regional backbone platform connecting remote markets to the Lower 48 and other interconnection points. Current ownership reflects Grain Management’s acquisition process announced in 2023 and completed in 2024, but the reviewed public materials do not disclose Grain's exact fund vehicle.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2024,
@@ -20679,7 +20699,7 @@ export const companies: PortCo[] = [
       { label: "Docs — Quintillion", url: "https://docs.fcc.gov/public/attachments/DA-24-122A1.pdf", type: "PRESENTATION" },
     ],
     owners: [
-      { investmentFirm: "Grain", ownershipVehicle: "Acquisition of QSH Parent Holdco LLC", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "Grain", ownershipVehicle: "n.a.", investmentYear: 2024, status: "Active" },
     ],
   },
   {
@@ -20777,12 +20797,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "n.a.",
-    description: "Tower Investments I is a communications tower portfolio held within Grain's digital infrastructure platform. The assets serve carrier and government users that require tower space and related communications site infrastructure. The operating model is an asset-heavy tower leasing business built around owned or controlled vertical real estate. Grain states that the portfolio includes approximately 150 towers and related assets located across multiple U.S. regions. Public materials do not disclose the original acquisition date, founding year, or ownership percentages for the portfolio. Grain continues to present the asset as an active portfolio investment.",
+    description: "Tower Investments I is a communications tower portfolio held within Grain's digital infrastructure platform. The assets serve carrier and government users that require tower space and related communications site infrastructure. The operating model is an asset-heavy tower leasing business built around owned or controlled vertical real estate. Grain states that the portfolio includes approximately 150 towers and related assets located across multiple U.S. regions. Public materials do not disclose the original acquisition date, founding year, or ownership percentages for the portfolio. The 2026 date reflects the first current portfolio evidence reviewed.",
     status: "Active",
     countryTags: ["United States"],
+    investmentYear: 2026,
     headquarters: "Multi-state United States",
     milestones: [
-      { date: "2026", event: "Grain identifies Tower Investments I as an active digital portfolio company.", category: "Other" },
+      { date: "2026", event: "Grain identifies Tower Investments I as an active digital portfolio company.", category: "Financing" },
     ],
     sources: [
       { label: "Graingp — Tower Investments I", url: "https://graingp.com/investments/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -20790,7 +20811,7 @@ export const companies: PortCo[] = [
       { label: "LinkedIn — Tower Investments I", url: "https://www.linkedin.com/company/grain-management-llc/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
-      { investmentFirm: "Grain", ownershipVehicle: "n.a.", status: "Active" },
+      { investmentFirm: "Grain", ownershipVehicle: "n.a.", investmentYear: 2026, status: "Active" },
     ],
   },
   {
@@ -21487,13 +21508,15 @@ export const companies: PortCo[] = [
     subsector: "Hyperscale data center development",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Harrison Street Digital Fund",
-    description: "The Chester County Hyperscale Data Center is a planned data center campus in East Whiteland Township, Pennsylvania. Its target end market is hyperscale and large-scale digital infrastructure demand in the greater Philadelphia region. The project follows an asset-heavy development model based on land control, zoning, utility power delivery, and phased campus construction. Public reporting describes the development as a more than 100-acre parcel initially planned for two data centers totaling about 2 million square feet, with utility capacity discussed in the range of 150 MW initially and up to roughly 290 MW through later reporting on buildout. Project materials identify 1547 Critical Systems Realty and Green Fig Land Company as development partners, while Harrison Street’s digital infrastructure relationship is at the platform level rather than fully disclosed at the project-company level in the sources reviewed here. Public sources therefore do not fully disclose the current project-level ownership structure.",
+    ownershipVehicle: "n.a.",
+    description: "The Chester County Hyperscale Data Center is a planned data center campus in East Whiteland Township, Pennsylvania. Its target end market is hyperscale and large-scale digital infrastructure demand in the greater Philadelphia region. The project follows an asset-heavy development model based on land control, zoning, utility power delivery, and phased campus construction. Public reporting describes the development as a more than 100-acre parcel initially planned for two data centers totaling about 2 million square feet, with utility capacity discussed in the range of 150 MW initially and up to roughly 290 MW through later reporting on buildout. Project materials identify 1547 Critical Systems Realty and Green Fig Land Company as development partners, while Harrison Street's digital infrastructure relationship is at the platform level rather than fully disclosed at the project-company level in the sources reviewed here. Public sources therefore do not fully disclose the current project-level ownership structure, exact fund vehicle, or original project-level investment date; the 2024 date reflects the first public source reviewed that ties Harrison Street's 1547 data-center fund relationship to the Chester County campus.",
     status: "Active",
     countryTags: ["United States"],
+    investmentYear: 2024,
     headquarters: "Pennsylvania",
     milestones: [
       { date: "2022", event: "1547 and Green Fig acquired land for the Chester County data center campus.", category: "Acquisition" },
+      { date: "Feb 2024", event: "Reporting described 1547's data-center fund relationship with Harrison Street and identified the Chester County campus as a major 1547 project.", category: "Financing" },
       { date: "2025", event: "Public reporting indicated the campus was under construction with timing for initial operations in the 2025-2026 period.", category: "Other" },
     ],
     sources: [
@@ -21501,9 +21524,10 @@ export const companies: PortCo[] = [
       { label: "Data Center Dynamics — Chester County Hyperscale Data Center", url: "https://www.datacenterdynamics.com/en/news/1547-csr-seeks-to-raise-250m-for-data-center-fund-report/", type: "ARTICLE" },
       { label: "Baxtel — Chester County Hyperscale Data Center", url: "https://baxtel.com/data-center/1547-chester-county-pa", type: "ARTICLE" },
       { label: "Eastwhiteland — Chester County Hyperscale Data Center", url: "https://www.eastwhiteland.org/news_detail_T2_R162.php", type: "ARTICLE" },
+      { label: "Investment evidence source — Harrison Street — Chester County Hyperscale Data Center", url: "https://dcmag.fr/1547-critical-systems-realty-veut-lever-250-millions-supplementaire-pour-son-fonds-datacenters/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Harrison Street", ownershipVehicle: "Harrison Street Digital Fund", status: "Active" },
+      { investmentFirm: "Harrison Street", ownershipVehicle: "n.a.", investmentYear: 2024, status: "Active" },
     ],
   },
   {
@@ -21623,7 +21647,7 @@ export const companies: PortCo[] = [
     subsector: "District energy system",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "",
+    ownershipVehicle: "n.a.",
     description: "This row appears to refer to a district-energy asset associated with Harrison Street, but the specific operating entity is not clearly identifiable from public disclosures reviewed. District-energy systems typically serve university, government, hospital, or urban users through centralized heating, cooling, and related utility infrastructure. The operating model is asset-heavy and utility-like because cash flows are tied to long-lived plant and distribution infrastructure and contractual service relationships. Public sources indicate Harrison Street acquired a U.S. district-energy system in 2020 and has since continued to invest in long-duration campus and government utility partnerships, but the precise asset mapped to this row is not publicly disclosed. The current fund vehicle, principal operating location, scale metrics, and founding date for this specific row are not publicly disclosed. Accordingly, only limited profile fields can be populated from the public record reviewed.",
     status: "Active",
     countryTags: ["United States"],
@@ -21639,7 +21663,7 @@ export const companies: PortCo[] = [
       { label: "Harrisonst — District Energy System", url: "https://www.harrisonst.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Harrison Street", ownershipVehicle: "", investmentYear: 2020, status: "Active" },
+      { investmentFirm: "Harrison Street", ownershipVehicle: "n.a.", investmentYear: 2020, status: "Active" },
     ],
   },
   {
@@ -22640,12 +22664,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "ISQ Global InfraTech Fund",
-    description: "Palmetto is a technology-enabled residential solar and home-electrification platform. Its customers are homeowners and channel partners that use the platform for rooftop solar, financing, and broader residential energy-upgrade solutions. The business follows a technology-enabled operating model built around software, customer acquisition, financing, and distributed energy service delivery rather than ownership of a single contracted generation portfolio. I Squared lists Palmetto within its InfraTech portfolio, and company materials describe a national platform spanning residential solar and adjacent home-energy products. Public materials reviewed confirm I Squared as an investor, but the date and resulting ownership percentage were not directly disclosed in the primary sources reviewed and therefore remain not publicly disclosed. The investment fits I Squared’s strategy of backing technology-enabled businesses linked to electrification and distributed energy adoption.",
+    description: "Palmetto is a technology-enabled residential solar and home-electrification platform. Its customers are homeowners and channel partners that use the platform for rooftop solar, financing, and broader residential energy-upgrade solutions. The business follows a technology-enabled operating model built around software, customer acquisition, financing, and distributed energy service delivery rather than ownership of a single contracted generation portfolio. I Squared lists Palmetto within its InfraTech portfolio, and funding databases identify I Squared Capital as a participant in Palmetto's 2022 Series C round. The resulting ownership percentage was not publicly disclosed. The investment fits I Squared's strategy of backing technology-enabled businesses linked to electrification and distributed energy adoption.",
     status: "Active",
     countryTags: ["United States"],
+    investmentYear: 2022,
     headquarters: "United States",
     milestones: [
-      { date: "2022", event: "Palmetto announced a large capital raise to support expansion of its residential solar platform.", category: "Financing" },
+      { date: "Feb 24, 2022", event: "I Squared Capital was identified as an investor in Palmetto's Series C round to support expansion of the residential solar platform.", category: "Financing" },
       { date: "2023", event: "I Squared listed Palmetto within its InfraTech portfolio.", category: "Other" },
       { date: "2024", event: "Palmetto disclosed additional large-scale capital formation to support home electrification and residential energy deployment.", category: "Other" },
     ],
@@ -22653,9 +22678,11 @@ export const companies: PortCo[] = [
       { label: "Palmetto — Palmetto", url: "https://palmetto.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Portfolio evidence — I Squared Capital — Palmetto", url: "https://isquaredcapital.com/txnm_fund/infratech/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
       { label: "Palmetto — Palmetto", url: "https://www.palmetto.com/about-us", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
+      { label: "Investment date source — I Squared Capital — Palmetto", url: "https://www.crunchbase.com/funding_round/palmetto-series-c--905d1165", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Announcement date source — Palmetto Series C", url: "https://www.prnewswire.com/news-releases/palmetto-raises-375-million-to-accelerate-residential-clean-energy-independence-301490295.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "I Squared Capital", ownershipVehicle: "ISQ Global InfraTech Fund", status: "Active" },
+      { investmentFirm: "I Squared Capital", ownershipVehicle: "ISQ Global InfraTech Fund", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -23223,7 +23250,7 @@ export const companies: PortCo[] = [
     subsector: "District energy system",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Infrastructure Fund (GIF)",
+    ownershipVehicle: "n.a.",
     description: "This row appears to refer to a utilities or district-energy investment associated with IFM Investors, but the specific operating entity is not clearly identifiable from the source workbook or public disclosures reviewed. District-energy businesses generally provide centralized heating, cooling, and related thermal services to commercial, institutional, or municipal users through long-lived network infrastructure. The operating model is typically asset-heavy and utility-like, with revenues supported by connected customer demand and long-duration infrastructure assets. Public materials reviewed confirm IFM’s active ownership of district-energy assets, most notably its 50% stake in Enwave’s Canadian operations, but they do not clearly substantiate the precise U.S. company intended by this row. Accordingly, the principal operating location, founding year, scale metrics, acquisition date, and current ownership structure for this row are not publicly disclosed based on the materials reviewed. The profile is therefore populated conservatively to avoid misidentifying the company.",
     status: "Active",
     countryTags: ["United States"],
@@ -23240,7 +23267,7 @@ export const companies: PortCo[] = [
       { label: "Ifminvestors — Corporation", url: "https://www.ifminvestors.com/capabilities/infrastructure/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "IFM Investors", ownershipVehicle: "Infrastructure Fund (GIF)", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "IFM Investors", ownershipVehicle: "n.a.", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -23269,7 +23296,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "IFM Investors", ownershipVehicle: "n.a.", investmentYear: 2021, status: "Active" },
-      { investmentFirm: "OTPP", ownershipVehicle: "Co-owned with IFM Investors", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "OTPP", ownershipVehicle: "n.a.", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -23279,7 +23306,7 @@ export const companies: PortCo[] = [
     subsector: "LNG export terminal",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "IFM Global Infrastructure Fund (GIF)",
+    ownershipVehicle: "n.a.",
     description: "Freeport LNG develops and operates LNG liquefaction, storage, and marine loading infrastructure on Quintana Island, Texas. Its customers are LNG offtakers, gas suppliers, and international end markets that use the terminal for export and related midstream services. The operating model is asset-heavy and largely contracted because value depends on long-lived liquefaction trains, storage tanks, and port infrastructure supported by long-term commercial arrangements. Company materials describe three operating liquefaction trains with total export capacity of approximately 17 million tonnes per annum, with Train 4 under development at the same site. Freeport LNG was founded in 2002, and IFM announced a $1.3 billion equity agreement in 2013 to support development of the export project, while the full current ownership structure is not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
@@ -23342,7 +23369,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "IFM Global Infrastructure Fund (GIF)",
-    description: "Swift Current Energy develops, constructs, owns, and operates utility-scale solar, wind, and energy storage projects across the United States. Its customers and end markets include utilities, corporate offtakers, and wholesale power markets that purchase renewable generation and storage capacity. The operating model is asset-heavy and project-based because the business develops and finances physical generation assets and combines contracted offtake with development-stage and merchant exposure. Company materials state that Swift Current has commercialized 5 GW of projects, owns and operates more than 1 GW, and is advancing a pipeline of more than 10 GW from a Boston base with activity in multiple U.S. markets. Swift Current was founded in 2016, and current company materials state that it is majority-owned by funds managed by IFM Investors and Lookout Ridge Energy Partners.",
+    description: "Swift Current Energy develops, constructs, owns, and operates utility-scale solar, wind, and energy storage projects across the United States. Its customers and end markets include utilities, corporate offtakers, and wholesale power markets that purchase renewable generation and storage capacity. The operating model is asset-heavy and project-based because the business develops and finances physical generation assets and combines contracted offtake with development-stage and merchant exposure. Company materials state that Swift Current has commercialized 5 GW of projects, owns and operates more than 1 GW, and is advancing a pipeline of more than 10 GW from a Boston base with activity in multiple U.S. markets. Swift Current was founded in 2016, and current company materials state that it is majority-owned by funds managed by IFM Investors and Lookout Ridge Energy Partners, without naming a distinct IFM fund vehicle in the reviewed sources.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2016,
@@ -23364,7 +23391,7 @@ export const companies: PortCo[] = [
       { label: "Follow-on ownership source — Buckeye Partners / IFM Investors — Swift Current Energy", url: "https://www.buckeye.com/press-releases/buckeye-energy-holdings-spins-out-its-ownership-interest-in-swift-current-energy-to-funds-managed-by-ifm-investors", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "IFM Investors", ownershipVehicle: "IFM Global Infrastructure Fund (GIF)", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "IFM Investors", ownershipVehicle: "n.a.", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -23461,7 +23488,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Global Diversified Infrastructure Fund (GDIF)",
-    description: "Patriot Rail operates a portfolio of short line freight railroads and related rail services in the United States. Its customers include industrial shippers, rail-connected facilities, logistics users, and counterparties requiring storage, transloading, switching, and equipment services. The operating model is asset-heavy and service-based because it relies on owned or leased rail infrastructure, locomotives, rail yards, and operating contracts tied to freight volumes. Igneo states that Patriot Rail operates 32 short line railroads encompassing more than 1,260 track miles across 23 states, with additional services including railcar storage, cleaning, repair, scrapping, transloading, and contract switching from a Jacksonville base. Public materials reviewed identify Igneo as the current owner, but the initial acquisition date and the current ownership percentages were not publicly disclosed in the sources reviewed.",
+    description: "Patriot Rail operates a portfolio of short line freight railroads and related rail services in the United States. Its customers include industrial shippers, rail-connected facilities, logistics users, and counterparties requiring storage, transloading, switching, and equipment services. The operating model is asset-heavy and service-based because it relies on owned or leased rail infrastructure, locomotives, rail yards, and operating contracts tied to freight volumes. Igneo states that Patriot Rail operates 32 short line railroads encompassing more than 1,260 track miles across 23 states, with additional services including railcar storage, cleaning, repair, scrapping, transloading, and contract switching from a Jacksonville base. Public materials identify Patriot Rail as majority owned by Global Diversified Infrastructure Fund (GDIF), managed by Igneo.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2019,
@@ -23469,7 +23496,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2006", event: "Patriot Rail was founded after acquiring the 149-mile Tennessee Southern Railroad.", category: "Founding" },
       { date: "Jun 2012", event: "SteelRiver Infrastructure Partners acquired Patriot Rail Company.", category: "Acquisition" },
-      { date: "2019", event: "First Sentier Investors (later Igneo Infrastructure Partners) acquired Patriot Rail from SteelRiver.", category: "Acquisition" },
+      { date: "2019", event: "First Sentier Investors (later Igneo Infrastructure Partners) acquired Patriot Rail from SteelRiver through Global Diversified Infrastructure Fund (GDIF).", category: "Acquisition" },
       { date: "2021", event: "Patriot Rail acquired Salt Lake Garfield & Western Railway.", category: "Acquisition" },
       { date: "Aug 2022", event: "Patriot Rail acquired Pioneer Lines, Inc., adding 15 short line railroads across 12 states.", category: "Acquisition" },
     ],
@@ -23477,6 +23504,7 @@ export const companies: PortCo[] = [
       { label: "Igneoip — Patriot Rail", url: "https://www.igneoip.com/usa/en/institutional/our-offering/assets/patriot-rail.html", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
       { label: "Igneoip — Patriot Rail", url: "https://www.igneoip.com/usa/en/institutional/news-and-insights/transportation-and-the-rise-of-the-secondary-city-a-case-study.html", type: "ARTICLE" },
       { label: "Patriotrail — Patriot Rail", url: "https://patriotrail.com/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
+      { label: "PNWARS — Patriot Rail", url: "https://www.pnrailshippers.com/wp-content/uploads/sites/4/2025/04/Christian-PNWARS-Presentation-03-25-2025.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Patriot Rail presentation states the company is majority owned by Global Diversified Infrastructure Fund (GDIF), managed by Igneo." },
     ],
     owners: [
       { investmentFirm: "Igneo Infrastructure Partners", ownershipVehicle: "Global Diversified Infrastructure Fund (GDIF)", investmentYear: 2019, status: "Active" },
@@ -23490,7 +23518,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Global Diversified Infrastructure Fund (GDIF)",
-    description: "Soltage develops, owns, operates, and manages solar and battery storage assets across the United States. Its customers include utility, commercial, industrial, and municipal users that procure distributed and utility-scale clean energy capacity. The operating model is asset-heavy and development-led because the company combines in-house origination, engineering, financing, construction oversight, and asset management with ownership of operating projects. Igneo states that Soltage operates across 18 U.S. states, and public company materials describe more than 125 projects, over 500 MW of developed capacity, and more than $1 billion deployed into clean energy assets. Soltage was established in 2005, and Igneo announced in 2023 that it had agreed to acquire a majority equity interest while management and founders remained shareholders.",
+    description: "Soltage develops, owns, operates, and manages solar and battery storage assets across the United States. Its customers include utility, commercial, industrial, and municipal users that procure distributed and utility-scale clean energy capacity. The operating model is asset-heavy and development-led because the company combines in-house origination, engineering, financing, construction oversight, and asset management with ownership of operating projects. Igneo states that Soltage operates across 18 U.S. states, and public company materials describe more than 125 projects, over 500 MW of developed capacity, and more than $1 billion deployed into clean energy assets. Soltage was established in 2005, and Igneo announced in 2023 that it had agreed to acquire a majority equity interest while management and founders remained shareholders. Public permitting materials identify Soltage as owned through Igneo's Global Diversified Infrastructure Fund (GDIF).",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2005,
@@ -23498,13 +23526,14 @@ export const companies: PortCo[] = [
     headquarters: "New Jersey and 18 U.S. states",
     milestones: [
       { date: "2005", event: "Soltage was established.", category: "Founding" },
-      { date: "Sep 7, 2023", event: "Igneo announced an agreement to acquire a majority equity interest in Soltage.", category: "Acquisition" },
+      { date: "Sep 7, 2023", event: "Igneo announced an agreement to acquire a majority equity interest in Soltage through Global Diversified Infrastructure Fund (GDIF).", category: "Acquisition" },
     ],
     sources: [
       { label: "Igneoip — Soltage", url: "https://www.igneoip.com/usa/en/institutional/our-offering/assets/soltage.html", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
       { label: "Announcement date source — Igneo Infrastructure Partners — Soltage", url: "https://www.igneoip.com/usa/en/institutional/news-and-insights/press/igneo-to-acquire-majority-equity-interest-in-us-renewable-power-producer-soltage.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Soltage — Soltage", url: "https://www.soltage.com/about", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Soltage — Soltage", url: "https://www.soltage.com/origination", type: "ARTICLE" },
+      { label: "Vermilion County — Soltage", url: "https://www.vercounty.org/wp-content/uploads/2025/03/4200-North-Solar-1-LLC_CSEF-Package-2025-01-13.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Permitting materials state that Igneo is invested in Soltage through its open-ended Global Diversified Infrastructure Fund (GDIF)." },
     ],
     owners: [
       { investmentFirm: "Igneo Infrastructure Partners", ownershipVehicle: "Global Diversified Infrastructure Fund (GDIF)", investmentYear: 2023, status: "Active" },
@@ -23518,7 +23547,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Global Diversified Infrastructure Fund (GDIF)",
-    description: "Terra-Gen develops, constructs, owns, and operates utility-scale wind, solar, and battery storage projects in the United States. Its end markets include utilities, corporate offtakers, and wholesale power markets that require large-scale renewable generation and storage capacity. The operating model is asset-heavy and development-to-ownership because the business originates, finances, builds, and operates physical generation and storage assets with a mix of contracted and market-based revenues. Public disclosures describe a portfolio concentrated in California with additional assets in Texas and New York, including roughly 3.8 GW of operating capacity and 5.1 GWh of storage across about 30 sites, plus a development pipeline exceeding 12 GW. Terra-Gen was formed in 2007, Igneo made its initial investment in December 2020, and Masdar closed the acquisition of a 50 percent stake in October 2024 while Igneo retained its 50 percent interest.",
+    description: "Terra-Gen develops, constructs, owns, and operates utility-scale wind, solar, and battery storage projects in the United States. Its end markets include utilities, corporate offtakers, and wholesale power markets that require large-scale renewable generation and storage capacity. The operating model is asset-heavy and development-to-ownership because the business originates, finances, builds, and operates physical generation and storage assets with a mix of contracted and market-based revenues. Public disclosures describe a portfolio concentrated in California with additional assets in Texas and New York, including roughly 3.8 GW of operating capacity and 5.1 GWh of storage across about 30 sites, plus a development pipeline exceeding 12 GW. Terra-Gen was formed in 2007, Igneo made its initial investment through Global Diversified Infrastructure Fund (GDIF) in December 2020, and Masdar closed the acquisition of a 50 percent stake in October 2024 while Igneo retained its 50 percent interest.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2007,
@@ -23526,7 +23555,7 @@ export const companies: PortCo[] = [
     headquarters: "California; Texas; New York",
     milestones: [
       { date: "2007", event: "Terra-Gen was formed.", category: "Founding" },
-      { date: "Dec 2020", event: "Igneo made its initial investment in Terra-Gen.", category: "Financing" },
+      { date: "Dec 2020", event: "Igneo made its initial investment in Terra-Gen through Global Diversified Infrastructure Fund (GDIF).", category: "Financing" },
       { date: "Mar 19, 2024", event: "Masdar announced an agreement to acquire a 50% stake in Terra-Gen from Energy Capital Partners.", category: "Acquisition" },
       { date: "Oct 1, 2024", event: "Masdar completed the acquisition and Igneo retained its 50% interest.", category: "Other" },
     ],
@@ -23535,6 +23564,7 @@ export const companies: PortCo[] = [
       { label: "Terra Gen — Terra-Gen", url: "https://terra-gen.com/masdar-accelerates-u-s-renewables-expansion-closes-acquisition-of-50-stake-in-terra-gen/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
       { label: "Terra Gen — Terra-Gen", url: "https://terra-gen.com/masdar-to-acquire-50-stake-in-terra-gen-from-energy-capital-partners/", type: "ARTICLE" },
       { label: "Investment date source — Igneo Infrastructure Partners — Terra-Gen", url: "https://www.igneoip.com/usa/en/institutional/our-offering/assets/terra-gen-soltage.html", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "New York DPS — Terra-Gen", url: "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B90212793-0000-CC39-A8FF-DBA29A84F19B%7D", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Regulatory filing states that Igneo acquired its 50% interest in Terra-Gen through Global Diversified Infrastructure Fund (North America)." },
     ],
     owners: [
       { investmentFirm: "Igneo Infrastructure Partners", ownershipVehicle: "Global Diversified Infrastructure Fund (GDIF)", investmentYear: 2020, status: "Active" },
@@ -23962,7 +23992,7 @@ export const companies: PortCo[] = [
     subsector: "Availability-based road PPP",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "InfraRed Infrastructure Fund III",
+    ownershipVehicle: "n.a.",
     description: "Portsmouth Gateway Group is the concession company for the Portsmouth Bypass project in Ohio. Its end users are passenger and freight vehicles using the new limited-access highway connection around Portsmouth, Ohio. The operating model is asset-heavy and availability-based because revenues are linked to long-term project delivery, operations, and maintenance obligations rather than toll collection. Federal and project-company materials describe the project as a 16-mile four-lane highway delivered under a design-build-finance-operate-maintain structure with a 35-year operating term after construction. Public sources identify InfraRed Capital Partners, Star America Infrastructure Partners, and ACS Infrastructure Development as equity sponsors, but the individual ownership percentages were not publicly disclosed in the reviewed materials.",
     status: "Active",
     countryTags: ["United States"],
@@ -23979,7 +24009,7 @@ export const companies: PortCo[] = [
       { label: "Fhwa — Portsmouth Gateway Group", url: "https://www.fhwa.dot.gov/ipd/project_profiles/oh_veterans_highway.aspx", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "InfraRed Capital Partners", ownershipVehicle: "InfraRed Infrastructure Fund III", investmentYear: 2015, status: "Active" },
+      { investmentFirm: "InfraRed Capital Partners", ownershipVehicle: "n.a.", investmentYear: 2015, status: "Active" },
     ],
   },
   {
@@ -24016,7 +24046,7 @@ export const companies: PortCo[] = [
     subsector: "Wireless telecommunications towers",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "InfraRed Infrastructure Fund VI",
+    ownershipVehicle: "n.a.",
     description: "Public Safety Towers Company develops and operates telecommunications tower infrastructure in the United States. Its customer base includes wireless carriers, public safety agencies, and communities that require improved cellular coverage and communications resilience. The operating model is asset-heavy and lease-based because it invests in tower sites and generates recurring income from infrastructure use rather than consumer telecom subscriptions. InfraRed stated at launch that PSTC began with a seed portfolio in California, would be headquartered in Carlsbad, and would receive about $50 million for its initial rollout. InfraRed launched PSTC in February 2022, and the current ownership structure beyond InfraRed-managed capital was not publicly disclosed in the reviewed sources.",
     status: "Active",
     countryTags: ["United States"],
@@ -24035,7 +24065,7 @@ export const companies: PortCo[] = [
       { label: "Publicsafetytowers — Public Safety Towers Company", url: "https://publicsafetytowers.com/what-we-do/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "InfraRed Capital Partners", ownershipVehicle: "InfraRed Infrastructure Fund VI", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "InfraRed Capital Partners", ownershipVehicle: "n.a.", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -24157,7 +24187,7 @@ export const companies: PortCo[] = [
     subsector: "Passenger ferry service",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "InfraRed Infrastructure Fund VI",
+    ownershipVehicle: "n.a.",
     description: "Hullo is a passenger ferry business operating service between downtown Vancouver and downtown Nanaimo. Its customer base includes commuters, tourists, and other travelers seeking a direct passenger-only marine connection across the Strait of Georgia. The operating model is asset-heavy and traffic-linked because the business depends on owned or leased vessels, terminal access, and passenger volumes rather than regulated utility revenues. InfraRed's investment announcement stated that the company would operate two high-speed catamarans with capacity of up to 354 passengers each and a scheduled crossing time of about 70 minutes, while later case-study materials described Hullo as the active service brand. InfraRed invested in Vancouver Island Ferry Company in November 2022, acquired a majority stake, and partnered with Conqora Capital Partners to establish and develop the business.",
     status: "Active",
     countryTags: ["Canada"],
@@ -24176,7 +24206,7 @@ export const companies: PortCo[] = [
       { label: "Hullo — Vancouver Island Ferry Company / Hullo", url: "https://hullo.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "InfraRed Capital Partners", ownershipVehicle: "InfraRed Infrastructure Fund VI", investmentYear: 2022, status: "Active" },
+      { investmentFirm: "InfraRed Capital Partners", ownershipVehicle: "n.a.", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -24186,7 +24216,7 @@ export const companies: PortCo[] = [
     subsector: "Onshore wind generation",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Funds",
+    ownershipVehicle: "n.a.",
     description: "This row refers to an InfraRed-owned onshore wind asset in Texas whose specific project name was not clearly disclosed in the reviewed public materials. The available public source describes the asset as a 202 MW operational onshore wind farm in south Texas serving wholesale power markets and generating renewable energy credits. The operating model is asset-heavy and merchant-sensitive because value depends on a physical wind generation facility that sells output into the wholesale market rather than under fully disclosed long-term utility regulation. InfraRed stated that the project commenced operations in 2019, uses Vestas turbines, and was acquired with all-cash equity and no leverage or tax equity financing. InfraRed announced the acquisition from Duke Energy in May 2024, while the project name and detailed ownership structure were not publicly disclosed in the reviewed source.",
     status: "Active",
     countryTags: ["United States"],
@@ -24205,7 +24235,7 @@ export const companies: PortCo[] = [
       { label: "Ircp — Wind Facility", url: "https://www.ircp.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "InfraRed Capital Partners", ownershipVehicle: "Funds", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "InfraRed Capital Partners", ownershipVehicle: "n.a.", investmentYear: 2024, status: "Active" },
     ],
   },
   {
@@ -24748,7 +24778,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Infrastructure Investments Fund (IIF)",
-    description: "Onward Energy owns and operates a diversified portfolio of wind, solar, and natural gas generation assets in the United States. Its customers and end markets include utilities, load-serving entities, and wholesale power markets that require reliable thermal capacity and renewable generation. The operating model is asset-heavy because the company owns and manages a fleet of operating plants with a mix of contracted and market-based revenue exposure rather than only developing projects for sale. Current company materials describe 57 generation projects in 22 states and more than 6.7 GW of operating capacity following the 2025 Griffith acquisition. Onward Energy was formed in 2021 through the combination of Novatus Energy and Southwest Generation, and company materials state that it is majority-owned by institutional investors advised by J.P. Morgan Asset Management.",
+    description: "Onward Energy owns and operates a diversified portfolio of wind, solar, and natural gas generation assets in the United States. Its customers and end markets include utilities, load-serving entities, and wholesale power markets that require reliable thermal capacity and renewable generation. The operating model is asset-heavy because the company owns and manages a fleet of operating plants with a mix of contracted and market-based revenue exposure rather than only developing projects for sale. Current company materials describe 57 generation projects in 22 states and more than 6.7 GW of operating capacity following the 2025 Griffith acquisition. Onward Energy was formed in 2021 through the combination of Novatus Energy and Southwest Generation, and public launch materials identified the sponsor vehicle as Infrastructure Investments Fund (IIF), advised by J.P. Morgan Asset Management.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2021,
@@ -24756,7 +24786,7 @@ export const companies: PortCo[] = [
     headquarters: "Multi-state United States",
     milestones: [
       { date: "2021", event: "Onward Energy was founded.", category: "Founding" },
-      { date: "Jan 12, 2021", event: "J.P. Morgan Asset Management-advised Infrastructure Investments Fund formed Onward Energy through the combination of Novatus Energy and Southwest Generation.", category: "Financing" },
+      { date: "Jan 12, 2021", event: "J.P. Morgan Asset Management-advised Infrastructure Investments Fund (IIF) formed Onward Energy through the combination of Novatus Energy and Southwest Generation.", category: "Financing" },
       { date: "Jan 6, 2025", event: "Onward Energy completed the acquisition of Griffith Power Plant.", category: "Other" },
     ],
     sources: [
@@ -25389,18 +25419,17 @@ export const companies: PortCo[] = [
       { date: "2022", event: "Pembina Gas Infrastructure Inc. was founded.", category: "Founding" },
       { date: "Mar 1, 2022", event: "Pembina and KKR announced agreements to combine their Western Canadian processing assets into Pembina Gas Infrastructure.", category: "Financing" },
       { date: "Aug 15, 2022", event: "Pembina announced closing of the PGI joint venture and disclosed the 60% Pembina and 40% KKR ownership split.", category: "Financing" },
-      { date: "Apr 20, 2026", event: "KKR agreed to sell Pembina Gas Infrastructure (PGI) to Apollo Global Management.", category: "Divestiture" },
+      { date: "Apr 23, 2026", event: "Apollo-managed funds agreed to acquire KKR's 40% interest in Pembina Gas Infrastructure, with closing expected by the end of Q2 2026.", category: "Divestiture" },
     ],
     sources: [
       { label: "Pembina — Pembina Gas Infrastructure Inc.", url: "https://www.pembina.com/operations/partnerships/pembina-gas-infrastructure", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
       { label: "Pembina — Pembina Gas Infrastructure Inc.", url: "https://www.pembina.com/operations/partnerships/pembina-gas-infrastructure/about-us", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
       { label: "Announcement source — KKR — Pembina Gas Infrastructure Inc.", url: "https://www.prnewswire.com/news-releases/pembina-pipeline-corporation-and-kkr-create-joint-venture-to-merge-western-canadian-processing-assets-301492668.html", type: "PRESS_RELEASE", purpose: "OPERATIONS_ASSETS" },
       { label: "Close date source — KKR — Pembina Gas Infrastructure Inc.", url: "https://www.sec.gov/Archives/edgar/data/1546066/000127956922001364/ex991.pdf", type: "SEC_FILING", purpose: "FINANCING_FILINGS" },
-      { label: "Apollo - INF-2026-183 - Pembina Gas Infrastructure (PGI)", url: "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810", type: "ARTICLE" },
+      { label: "Announcement source — Apollo Global Management — Pembina Gas Infrastructure Inc.", url: "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810", type: "ARTICLE", purpose: "MILESTONE_EVENT", evidenceLabel: "Apollo agreed to acquire KKR's 40% interest; expected close by end of Q2 2026" },
     ],
     owners: [
       { investmentFirm: "KKR", ownershipVehicle: "KKR Global Infrastructure Funds", investmentYear: 2022, status: "Active" },
-      { investmentFirm: "Apollo Global Management", ownershipVehicle: "Announced acquisition of KKR's 40% interest", investmentYear: 2026, stake: "40%", status: "Active" },
     ],
   },
   {
@@ -25523,7 +25552,7 @@ export const companies: PortCo[] = [
     subsector: "Incumbent fiber broadband and telecom network",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "MIP V",
+    ownershipVehicle: "Macquarie Infrastructure Partners V",
     description: "altafiber provides fiber-based broadband, voice, video, enterprise connectivity, and related telecommunications services to residential and business customers in Greater Cincinnati and through Hawaiian Telcom in Hawaii. The operating model is asset-heavy because the platform owns and upgrades local access networks, transport infrastructure, and related communications assets across incumbent service territories. Company materials state that the business can deliver gigabit internet to more than 1 million addresses and that Hawaiian Telcom remains a major fiber communications provider in Hawaii. The platform expanded materially through the 2018 combination of Cincinnati Bell and Hawaiian Telcom and has continued to invest in fiber deployment after going private. Macquarie Infrastructure Partners V completed the take-private acquisition of Cincinnati Bell in 2021, and the company subsequently operated under the altafiber brand; the current ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
@@ -25544,7 +25573,7 @@ export const companies: PortCo[] = [
       { label: "Hawaiiantel — altafiber", url: "https://www.hawaiiantel.com/aboutus/Our-History", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP V", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Macquarie Infrastructure Partners V", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -25584,8 +25613,8 @@ export const companies: PortCo[] = [
     subsector: "Regional fiber network",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "MIP IV",
-    description: "Bluebird Fiber operates regional communication infrastructure and fiber networks in the U.S. Midwest. Its customers include enterprises, carriers, schools, government users, and other organizations requiring middle-mile and last-mile fiber connectivity. The operating model is asset-heavy and recurring, supported by owned and leased fiber routes, network equipment, and long-term connectivity contracts. Macquarie's portfolio materials describe Bluebird as a communications infrastructure provider in the Midwest, and public transaction materials indicate Macquarie acquired the platform in 2019 to expand its regional fiber footprint. Reviewed public sources did not disclose the detailed current ownership percentage held by Macquarie-managed funds.",
+    ownershipVehicle: "Macquarie Infrastructure Partners IV",
+    description: "Bluebird Fiber operates regional communication infrastructure and fiber networks in the U.S. Midwest. Its customers include enterprises, carriers, schools, government users, and other organizations requiring middle-mile and last-mile fiber connectivity. The operating model is asset-heavy and recurring, supported by owned and leased fiber routes, network equipment, and long-term connectivity contracts. Macquarie's portfolio materials describe Bluebird as a communications infrastructure provider in the Midwest, and public transaction materials indicate Macquarie Infrastructure Partners IV acquired the platform in 2019 to expand its regional fiber footprint. Reviewed public sources did not disclose the detailed current ownership percentage held by Macquarie-managed funds.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2019,
@@ -25601,7 +25630,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — Macquarie Asset Management — Bluebird Fiber", url: "https://unitigroupinc.gcs-web.com/news-releases/news-release-details/uniti-group-inc-and-macquarie-infrastructure-partners-complete/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP IV", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Macquarie Infrastructure Partners IV", investmentYear: 2019, status: "Active" },
     ],
   },
   {
@@ -25640,9 +25669,9 @@ export const companies: PortCo[] = [
     subsector: "Marine container terminal",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "MIP III",
+    ownershipVehicle: "Macquarie Infrastructure Partners III",
     description: "Ceres Terminals Jacksonville is a marine terminal operation at JAXPORT serving container and related port logistics activity. Its customers include shipping lines, cargo owners, trucking operators, and logistics providers moving containerized freight through Jacksonville. The operating model is asset-heavy and concession based, relying on terminal lease rights, yard and berth infrastructure, cargo-handling equipment, and throughput-linked operating revenue. Public materials reviewed indicate that Ceres signed a long-term lease and modernization program for the TraPac Jacksonville terminal in 2022, while Macquarie later announced the divestment of Ceres Terminals in 2023. Because the reviewed current ownership structure for the Jacksonville terminal after that broader divestment was not publicly disclosed in the reviewed primary sources, the current ownership details are listed as not publicly disclosed.",
-    status: "Active",
+    status: "Realized",
     countryTags: ["United States"],
     investmentYear: 2015,
     headquarters: "Florida",
@@ -25660,7 +25689,7 @@ export const companies: PortCo[] = [
       { label: "Macquarie — Ceres Terminals Jacksonville", url: "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/maher-terminals.html", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP III", investmentYear: 2015, status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Macquarie Infrastructure Partners III", investmentYear: 2015, exitYear: 2023, status: "Realized" },
     ],
   },
   {
@@ -25670,8 +25699,8 @@ export const companies: PortCo[] = [
     subsector: "Solid waste collection, transfer, recycling, and disposal",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "MIP VI",
-    description: "Coastal Waste & Recycling provides municipal, residential, commercial, industrial, and recycling services across the southeastern United States. Its customers include municipalities, households, commercial establishments, and industrial waste generators that require recurring collection and post-collection services. The operating model is asset-heavy, supported by a network of collection routes, transfer stations, recycling facilities, portable restroom operations, and disposal infrastructure. Macquarie stated in 2023 that Coastal had 19 locations in Florida and Georgia at closing, while more recent company materials describe a footprint spanning Florida, Georgia, and South Carolina with more than 1,100 employees, more than 700 vehicles, and 25 facilities. Macquarie Asset Management completed an investment in the company in June 2023, and the detailed current ownership percentage was not publicly disclosed in the reviewed sources.",
+    ownershipVehicle: "Macquarie Infrastructure Partners VI",
+    description: "Coastal Waste & Recycling provides municipal, residential, commercial, industrial, and recycling services across the southeastern United States. Its customers include municipalities, households, commercial establishments, and industrial waste generators that require recurring collection and post-collection services. The operating model is asset-heavy, supported by a network of collection routes, transfer stations, recycling facilities, portable restroom operations, and disposal infrastructure. Macquarie stated in 2023 that Coastal had 19 locations in Florida and Georgia at closing, while more recent company materials describe a footprint spanning Florida, Georgia, and South Carolina with more than 1,100 employees, more than 700 vehicles, and 25 facilities. Macquarie Infrastructure Partners VI completed an investment in the company in June 2023, and the detailed current ownership percentage was not publicly disclosed in the reviewed sources.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2017,
@@ -25679,17 +25708,18 @@ export const companies: PortCo[] = [
     headquarters: "Florida; Georgia; South Carolina",
     milestones: [
       { date: "2017", event: "Coastal Waste & Recycling was founded by Brendon Pantano and partners.", category: "Founding" },
-      { date: "Jun 13, 2023", event: "Macquarie Asset Management announced completion of its investment in Coastal Waste & Recycling.", category: "Financing" },
+      { date: "Jun 13, 2023", event: "Macquarie Infrastructure Partners VI completed its investment in Coastal Waste & Recycling.", category: "Financing" },
       { date: "2026", event: "Company materials describe operations across Florida, Georgia, and South Carolina with 25 facilities.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Macquarie Asset Management — Coastal Waste & Recycling", url: "https://www.macquarie.com/au/en/about/news/2023/macquarie-asset-management-completes-investment-in-coastal-waste-and-recycling.html", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Fund vehicle source — Macquarie Infrastructure Partners VI — Coastal Waste & Recycling", url: "https://www.macquarie.com/about/news/2025/macquarie-asset-management-closes-macquarie-infrastructure-partners-vi.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Macquarie portfolio source — Coastal Waste & Recycling", url: "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/our-portfolio/coastal-waste-and-recycling.html", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Coastalwasteinc — Coastal Waste & Recycling", url: "https://www.coastalwasteinc.com/history/", type: "ARTICLE" },
       { label: "Coastalwasteinc — Coastal Waste & Recycling", url: "https://www.coastalwasteinc.com/brendon-pantanos-coastal-vision/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP VI", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Macquarie Infrastructure Partners VI", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -25852,7 +25882,7 @@ export const companies: PortCo[] = [
     subsector: "Waste collection, recycling, and resource recovery",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "MIP V",
+    ownershipVehicle: "Macquarie Infrastructure Partners V",
     description: "GreenWaste provides collection, recycling, organics processing, and resource recovery services in California. Its customers include municipalities, households, businesses, and public agencies that require integrated waste collection and diversion services. The operating model is asset-heavy, supported by hauling fleets, material recovery facilities, organics processing assets, and related recycling infrastructure. Company and sponsor materials describe a Northern California platform with long operating history in recycling and waste diversion and an emphasis on high-diversion resource recovery. Macquarie Asset Management identifies GreenWaste as a portfolio company, while the reviewed public sources did not disclose the detailed current acquisition date, fund vehicle, or ownership percentage.",
     status: "Active",
     countryTags: ["United States"],
@@ -25861,7 +25891,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1993", event: "GreenWaste began resource recovery operations in the City of San José according to company sustainability materials.", category: "Other" },
       { date: "2012", event: "GreenWaste and Zanker published joint sustainability reporting on operations and goals.", category: "Other" },
-      { date: "2021", event: "Macquarie Asset Management invested in GreenWaste through MIP V.", category: "Financing" },
+      { date: "2021", event: "Macquarie Infrastructure Partners V invested in GreenWaste.", category: "Financing" },
       { date: "Aug 6, 2025", event: "GreenWaste announced the appointment of Clete Elms as Chief Executive Officer.", category: "Management" },
       { date: "Nov 4, 2025", event: "GreenWaste announced the appointment of Kevin DiVincenzo as Chief Operating Officer.", category: "Management" },
     ],
@@ -25870,10 +25900,11 @@ export const companies: PortCo[] = [
       { label: "Greenwaste — GreenWaste", url: "https://www.greenwaste.com/our-story/", type: "ARTICLE" },
       { label: "Greenwaste — GreenWaste", url: "https://www.greenwaste.com/media-room/", type: "ARTICLE" },
       { label: "Announcement date source — Macquarie Asset Management — GreenWaste", url: "https://www.wastedive.com/news/macquarie-greenwaste-zanker-california-organics-private-equity/608084/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Fund vehicle source — Macquarie Infrastructure Partners V — GreenWaste", url: "https://www.greenwaste.com/wp-content/uploads/GreenWaste-and-Macquarie-Letter-1.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Macquarie — GreenWaste", url: "https://www.macquarie.com/us/en/about/company/macquarie-asset-management/our-portfolio/greenwaste.html", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP V", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Macquarie Infrastructure Partners V", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -25883,7 +25914,7 @@ export const companies: PortCo[] = [
     subsector: "Marine container terminal",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "MIP V",
+    ownershipVehicle: "Macquarie Infrastructure Partners V",
     description: "International Transportation Service operates a container terminal at the Port of Long Beach. Its customers include ocean carriers, trucking companies, rail operators, and cargo owners moving containerized freight through Southern California. The operating model is asset-heavy and concession based, relying on terminal infrastructure, cranes, rail connections, yard operations, and throughput-linked service revenues. Macquarie materials state that ITS is undergoing a redevelopment intended to increase terminal capacity by approximately 50 percent to around 1.5 million lifts per year. Macquarie Asset Management continues to identify ITS as a current port terminal investment, while the reviewed public sources did not disclose the detailed current ownership percentage.",
     status: "Active",
     countryTags: ["United States"],
@@ -25894,7 +25925,7 @@ export const companies: PortCo[] = [
       { date: "1971", event: "ITS was founded and began operations in Long Beach.", category: "Founding" },
       { date: "1972", event: "ITS moved into its completed terminal on Pier J in the Port of Long Beach.", category: "Other" },
       { date: "2006", event: "ITS marked its 35th anniversary and the anniversary of its on-dock double-stack rail operations.", category: "Other" },
-      { date: "Aug 2020", event: "K Line agreed to sell its 70% stake in ITS to Macquarie's MIP V and Bidco.", category: "Acquisition" },
+      { date: "Aug 2020", event: "K Line agreed to sell its 70% stake in ITS to Macquarie Infrastructure Partners V and Bidco.", category: "Acquisition" },
       { date: "Feb 28, 2025", event: "Macquarie published an update on ITS redevelopment plans aimed at increasing capacity to about 1.5 million lifts per year.", category: "Expansion" },
     ],
     sources: [
@@ -25904,7 +25935,7 @@ export const companies: PortCo[] = [
       { label: "Macquarie — International Transportation Service, LLC", url: "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/financial-advisor/insights/2025/transforming-terminals-international-transportation-service.html", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP V", investmentYear: 2020, status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Macquarie Infrastructure Partners V", investmentYear: 2020, status: "Active" },
     ],
   },
   {
@@ -25945,7 +25976,7 @@ export const companies: PortCo[] = [
     subsector: "Waste diversion, recycling, and portable services",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "MIP V",
+    ownershipVehicle: "Macquarie Infrastructure Partners V",
     description: "LRS provides waste collection, recycling, portable services, and related environmental services across the Midwest. Its customers include municipalities, residential customers, commercial businesses, and construction and industrial users that require integrated solid-waste and recycling solutions. The operating model is asset-heavy, supported by collection fleets, transfer and recycling facilities, and ancillary service equipment deployed across local markets. Company sustainability materials state that LRS was founded in 2013, and Macquarie describes it as a waste diversion, recycling, and portable services provider in the United States. Macquarie recapitalized the company in 2021 alongside Goldman Sachs Asset Management, while the reviewed sources did not disclose the precise current ownership percentages.",
     status: "Active",
     countryTags: ["United States"],
@@ -25963,7 +25994,7 @@ export const companies: PortCo[] = [
       { label: "Waste Dive — LRS", url: "https://www.wastedive.com/news/lrs-lakeshore-macquarie-goldman-recapitalization-midwest-expansion/606228/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP V", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Macquarie Infrastructure Partners V", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -25973,7 +26004,7 @@ export const companies: PortCo[] = [
     subsector: "Marine container terminal",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "MIP III",
+    ownershipVehicle: "Macquarie Infrastructure Partners III",
     description: "Maher Terminals operates a large multi-user marine container terminal in the Port of New York and New Jersey. Its customers include global ocean carriers, truckers, rail providers, and cargo owners serving one of the largest consumer markets in North America. The operating model is asset-heavy and throughput driven, supported by terminal concessions, berth and yard infrastructure, cargo-handling equipment, and associated intermodal connections. Company and sponsor materials describe Maher as one of the largest privately held multi-user container terminal operators in the world and the largest marine container terminal in the Port of New York and New Jersey. Macquarie Asset Management continues to identify Maher as a current transport portfolio asset, while the reviewed public sources did not disclose the detailed current ownership percentage or the original acquisition date.",
     status: "Active",
     countryTags: ["United States"],
@@ -25992,7 +26023,7 @@ export const companies: PortCo[] = [
       { label: "Macquarie — Maher Terminals LLC", url: "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/capabilities/infrastructure.html", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP III", investmentYear: 2016, status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Macquarie Infrastructure Partners III", investmentYear: 2016, status: "Active" },
     ],
   },
   {
@@ -26162,7 +26193,7 @@ export const companies: PortCo[] = [
       { date: "1997", event: "Puget Sound Energy was founded.", category: "Founding" },
       { date: "Feb 6, 2009", event: "Puget Holdings completed the take-private acquisition of Puget Energy and Puget Sound Energy with AIMCo and BCI included in the original investor consortium.", category: "Acquisition" },
       { date: "Aug 2018", event: "OMERS Infrastructure announced an investment representing approximately 24% of Puget Holdings.", category: "Financing" },
-      { date: "Aug 8, 2018", event: "AIMCo and BCI increased their Puget Holdings positions and OMERS acquired an initial stake as the consortium acquired predecessor infrastructure-fund interests.", category: "Acquisition" },
+      { date: "Aug 8, 2018", event: "AIMCo and BCI increased their Puget Holdings positions, while OMERS and PGGM acquired initial stakes of 23.9% and 10%, respectively.", category: "Acquisition" },
       { date: "Feb 22, 2022", event: "Macquarie Asset Management and Ontario Teachers' (OTPP) completed the acquisition of a 31.6% stake in Puget Holdings.", category: "Acquisition" },
       { date: "Sep 4, 2025", event: "BCI published an investment insight describing Puget Sound Energy as one of BCI's largest and longest-standing infrastructure investments.", category: "Other" },
     ],
@@ -26174,6 +26205,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — AIMCo — Puget Sound Energy", url: "https://www.sec.gov/Archives/edgar/data/81100/000119312509027209/dex991.htm", type: "SEC_FILING", purpose: "FINANCING_FILINGS" },
       { label: "Close date source — BCI — Puget Sound Energy", url: "https://www.sec.gov/Archives/edgar/data/81100/000119312509027209/dex991.htm", type: "SEC_FILING", purpose: "FINANCING_FILINGS" },
       { label: "Close date source — Macquarie Asset Management — Puget Sound Energy", url: "https://www.macquarie.com/us/en/about/news/2022/macquarie-asset-management-and-ontario-teachers-complete-acquisition-of-stake-in-puget-holdings.html", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Investment date source — PGGM — Puget Sound Energy", url: "https://pggm.nl/en/press/puget-sound-energy-welcomes-new-investment", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "PGGM acquired a 10% position in Puget Sound Energy in 2018" },
       { label: "Current investment source — BCI — Puget Sound Energy", url: "https://www.bci.ca/powering-the-pacific-northwest-bcis-strategic-investment-in-puget-sound-energy/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "BCI 2009 initial investment and continuing PSE ownership context" },
       { label: "Ownership interest source — BCI I&RR 2024 financial statements — Puget Sound Energy", url: "https://www.bci.ca/wp-content/uploads/2024/08/IRR-Program-FS-2024_Secured.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "BCI 20.9% ownership interest in Puget Sound Energy as of December 31, 2024" },
     ],
@@ -26183,7 +26215,7 @@ export const companies: PortCo[] = [
       { investmentFirm: "OMERS", ownershipVehicle: "n.a.", investmentYear: 2018, status: "Active" },
       { investmentFirm: "BCI", ownershipVehicle: "Infrastructure & Renewable Resources", investmentYear: 2009, stake: "20.9%", status: "Active" },
       { investmentFirm: "AIMCo", ownershipVehicle: "n.a.", investmentYear: 2009, status: "Active" },
-      { investmentFirm: "PGGM", ownershipVehicle: "n.a.", status: "Active" },
+      { investmentFirm: "PGGM", ownershipVehicle: "n.a.", investmentYear: 2018, stake: "10%", status: "Active" },
     ],
   },
   {
@@ -26193,24 +26225,27 @@ export const companies: PortCo[] = [
     subsector: "Urban toll road",
     region: "North America",
     country: "Mexico",
-    ownershipVehicle: "MIP V / MMIF",
-    description: "Supervía Poniente is an urban toll road in Mexico City linking the Santa Fe district with the Periférico corridor in the city's southwest. Its customers are passenger and commercial vehicle users that require faster road access into and out of one of Mexico City's main business districts. The operating model is asset-heavy and concession based, with toll revenue generated from a fixed transport corridor rather than from transport operations or rolling stock. The road comprises tunnels, elevated structures, and related urban highway infrastructure crossing complex topography in western Mexico City. The final section opened in 2013, and Macquarie Asset Management continues to identify Supervía as a portfolio transportation investment in Mexico; the current ownership percentages are not publicly disclosed.",
+    ownershipVehicle: "Macquarie Infrastructure Partners V",
+    description: "Supervía Poniente is an urban toll road in Mexico City linking the Santa Fe district with the Periférico corridor in the city's southwest. Its customers are passenger and commercial vehicle users that require faster road access into and out of one of Mexico City's main business districts. The operating model is asset-heavy and concession based, with toll revenue generated from a fixed transport corridor rather than from transport operations or rolling stock. The road comprises tunnels, elevated structures, and related urban highway infrastructure crossing complex topography in western Mexico City. The final section opened in 2013. A 2022 Legal 500 profile of Macquarie Asset Management's Latin America M&A lead described Macquarie Infrastructure Partners V as having signed and closed the acquisition of 50% of Supervía Poniente from Grupo Copri, and Macquarie continues to identify Supervía as a portfolio transportation investment in Mexico; the current ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["Mexico"],
     yearFounded: 2013,
+    investmentYear: 2022,
     headquarters: "Mexico City",
     milestones: [
       { date: "2013", event: "Supervía Poniente was founded.", category: "Founding" },
       { date: "Jun 15, 2013", event: "The third and final section of Supervía Poniente opened.", category: "Expansion" },
+      { date: "2022", event: "Macquarie Infrastructure Partners V signed and closed the acquisition of 50% of Supervía Poniente from Grupo Copri.", category: "Acquisition" },
     ],
     sources: [
       { label: "Supervia — Supervía Poniente", url: "https://supervia.mx/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Macquarie — Supervía Poniente", url: "https://www.macquarie.com/li/en/about/company/macquarie-asset-management/our-portfolio/supervia.html", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
+      { label: "Investment date source — Macquarie Asset Management — Supervía Poniente", url: "https://www.legal500.com/gc-powerlist/mexico-2022/thomas-heather/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Es — Supervía Poniente", url: "https://es.wikipedia.org/wiki/Superv%C3%ADa_Poniente", type: "ARTICLE" },
       { label: "Cfcsl — Supervía Poniente", url: "https://cfcsl.com/en/portfolio-items/supervia-poniente-bridge-expansion-of-av-de-los-poetas-mexico-2012/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP V / MMIF", status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Macquarie Infrastructure Partners V", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -26220,7 +26255,7 @@ export const companies: PortCo[] = [
     subsector: "Fiber-to-the-home broadband",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "MIP VI",
+    ownershipVehicle: "Macquarie Infrastructure Partners VI",
     description: "SwyftFiber provides fiber broadband and related connectivity services to residential and business customers in rural communities in Louisiana, Arkansas, and Mississippi. Its customer base is primarily households and small businesses that require fixed broadband rather than mobile connectivity or wholesale-only services. The operating model is asset-heavy because the platform is funding and operating last-mile fiber network buildouts in its service territories. Public materials identify active service and expansion activity across the U.S. Gulf South, and Macquarie stated that its investment was intended to accelerate fiber deployment in existing and new markets. Macquarie Asset Management announced an agreement to invest in SwyftFiber in October 2023 and Houlihan Lokey stated that the transaction closed in February 2024; the exact ownership percentages are not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
@@ -26238,7 +26273,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — Macquarie Asset Management — SwyftFiber", url: "https://hl.com/about-us/transactions/houlihan-lokey-advises-swyftfiber/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP VI", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Macquarie Infrastructure Partners VI", investmentYear: 2024, status: "Active" },
     ],
   },
   {
@@ -26248,7 +26283,7 @@ export const companies: PortCo[] = [
     subsector: "Marine container terminals",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "MIP VI",
+    ownershipVehicle: "Macquarie Infrastructure Partners VI",
     description: "TraPac operates marine container terminals in Los Angeles and Oakland serving ocean carriers, truckers, rail providers, and cargo owners moving containerized freight through the U.S. West Coast. Its revenue model is infrastructure and throughput driven, with asset-heavy terminal operations supported by berth access, cranes, yard equipment, gate systems, and intermodal rail connectivity. Company materials highlight automated on-dock rail in Los Angeles and direct access to BNSF and Union Pacific rail connections in Oakland. Public sustainability materials describe TraPac as a two-terminal California platform that continues to invest in equipment modernization and emissions reduction. TraPac was established in 1985 by Mitsui O.S.K. Lines, and company and ONE disclosures state that Ocean Network Express completed the acquisition of a 51% stake in 2023 while Macquarie-managed funds remain an investor.",
     status: "Active",
     countryTags: ["United States"],
@@ -26259,7 +26294,7 @@ export const companies: PortCo[] = [
       { date: "1985", event: "TraPac was established by Mitsui O.S.K. Lines to operate a container terminal in Los Angeles.", category: "Founding" },
       { date: "1991", event: "TraPac expanded to Oakland with the opening of its terminal there.", category: "Expansion" },
       { date: "2014", event: "TraPac Los Angeles became the first U.S. West Coast terminal to automate vessel loading and unloading operations.", category: "Other" },
-      { date: "2023", event: "Macquarie Asset Management invested in TraPac LLC through MIP VI.", category: "Financing" },
+      { date: "2023", event: "Macquarie Infrastructure Partners VI invested in TraPac LLC.", category: "Financing" },
       { date: "Jan 9, 2026", event: "TraPac announced the arrival of new ship-to-shore cranes at its U.S. West Coast terminals.", category: "Other" },
     ],
     sources: [
@@ -26270,7 +26305,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — Macquarie Asset Management — TraPac LLC", url: "https://www.one-line.com/en/news/one-strengthens-global-presence-terminal-acquisitions-us-west-coast-and-rotterdam", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP VI", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Macquarie Infrastructure Partners VI", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -26311,7 +26346,7 @@ export const companies: PortCo[] = [
     subsector: "Airport passenger terminal",
     region: "North America",
     country: "Canada",
-    ownershipVehicle: "MIP VI",
+    ownershipVehicle: "Macquarie Infrastructure Partners VI",
     description: "YHU Infrastructure Partners is developing and operating the new passenger terminal at Montréal Saint-Hubert Airport. Its customers include Porter Airlines, Pascan Aviation, additional future air carriers, and airport passengers using the South Shore airport serving Greater Montréal. The operating model is asset-heavy and concession like, with revenues tied to terminal operations, passenger throughput, and associated airport infrastructure services. Macquarie and the terminal operator describe the project as a partnership between Porter Aviation Holdings and Macquarie Asset Management, with an eventual capacity of up to four million passengers per year. The partnership was announced in 2023, and March 2026 public statements said the terminal would open on June 15, 2026, while the reviewed materials did not disclose ownership percentages.",
     status: "Active",
     countryTags: ["Canada"],
@@ -26321,17 +26356,18 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2023", event: "YHU Infrastructure Partners was founded.", category: "Founding" },
       { date: "Sep 27, 2023", event: "Porter and Macquarie announced their partnership to develop the passenger terminal at Montréal Saint-Hubert Airport.", category: "Financing" },
-      { date: "2025", event: "Macquarie listed YHU Infrastructure Partners as a current transport portfolio asset.", category: "Other" },
+      { date: "2025", event: "Macquarie listed YHU Infrastructure Partners / Montreal Metropolitan Airport as a Macquarie Infrastructure Partners VI portfolio asset.", category: "Other" },
       { date: "Mar 24, 2026", event: "The terminal operator announced that the new terminal would open on 2026-06-15.", category: "Other" },
     ],
     sources: [
       { label: "Yhuterminal — YHU Infrastructure Partners", url: "https://www.yhuterminal.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Yhuterminal — YHU Infrastructure Partners", url: "https://www.yhuterminal.com/about-us", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Announcement date source — Macquarie Asset Management — YHU Infrastructure Partners", url: "https://www.macquarie.com/us/en/about/company/macquarie-asset-management/our-portfolio/yhu-infrastructure-partners.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Fund vehicle source — Macquarie Infrastructure Partners VI — YHU Infrastructure Partners", url: "https://www.macquarie.com/about/news/2025/macquarie-asset-management-closes-macquarie-infrastructure-partners-vi.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Newswire — YHU Infrastructure Partners", url: "https://www.newswire.ca/news-releases/greater-montreal-to-have-its-second-airport-on-june-15-with-the-opening-of-a-new-terminal-888899267.html", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP VI", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Macquarie Infrastructure Partners VI", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -26341,7 +26377,7 @@ export const companies: PortCo[] = [
     subsector: "Marine container terminal",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "MIP III",
+    ownershipVehicle: "Macquarie Infrastructure Partners III",
     description: "Yusen Terminals operates a marine cargo terminal at the Port of Los Angeles serving shipping lines, trucking companies, and other supply-chain customers moving transpacific container traffic. The operating model is asset-heavy and throughput based, supported by berth, yard, gate, and cargo-handling infrastructure under long-dated port operating arrangements. Company materials describe high-volume operations at berths 212 to 218 and continuing investment in zero-emission equipment and other terminal modernization initiatives. The platform is concentrated in Los Angeles and functions as a critical gateway asset for Southern California import and export flows. YTI began operations in 1991, and public transaction reporting states that Macquarie Infrastructure Partners III completed its acquisition of a 49% stake in NYK Ports, the holding company for Yusen Terminals, in February 2015. Public announcements in 2023 stated that Ocean Network Express completed the acquisition of a 51% stake while Macquarie portfolio materials have continued to reference YTI as an investment.",
     status: "Active",
     countryTags: ["United States"],
@@ -26363,7 +26399,7 @@ export const companies: PortCo[] = [
       { label: "Macquarie — Yusen Terminals LLC", url: "https://www.macquarie.com/au/en/about/news/2023/macquarie-infrastructure-partners-iii-completes-sales-of-ceres-terminals.html", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "MIP III", investmentYear: 2015, status: "Active" },
+      { investmentFirm: "Macquarie Asset Management", ownershipVehicle: "Macquarie Infrastructure Partners III", investmentYear: 2015, status: "Active" },
     ],
   },
   {
@@ -26374,12 +26410,13 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Manulife Infrastructure Fund I",
-    description: "Back Bay Solar is identified by Manulife Investment Management as a current Fund I portfolio company in its infrastructure materials. Publicly available information about the platform's project list, customer base, and contracted profile is limited. Available public records tie Back Bay Solar, LLC to U.S. solar project interests, but the principal operating states and scale metrics are not publicly disclosed. The available disclosures do not provide a verifiable founding year or complete ownership structure. Manulife continues to surface the investment on its portfolio materials, indicating ongoing fund exposure.",
+    description: "Back Bay Solar is identified by Manulife Investment Management as a current Fund I portfolio company in its infrastructure materials. Publicly available information about the platform's project list, customer base, and contracted profile is limited. Available public records tie Back Bay Solar, LLC to U.S. solar project interests, but the principal operating states and scale metrics are not publicly disclosed. The available disclosures do not provide a verifiable founding year, original investment date, or complete ownership structure. The 2024 date reflects the first public Manulife portfolio evidence reviewed.",
     status: "Active",
     countryTags: ["United States"],
+    investmentYear: 2024,
     headquarters: "Not publicly disclosed.",
     milestones: [
-      { date: "2024", event: "Manulife identified Back Bay Solar as a current infrastructure portfolio company.", category: "Other" },
+      { date: "2024", event: "Manulife identified Back Bay Solar as a current infrastructure portfolio company.", category: "Financing" },
       { date: "Nov 2025", event: "Court filings in the Pine Gate Renewables bankruptcy referenced Back Bay Solar, LLC as a joint-venture counterparty.", category: "Other" },
     ],
     sources: [
@@ -26388,7 +26425,7 @@ export const companies: PortCo[] = [
       { label: "Casedocs — Back Bay Solar, LLC", url: "https://casedocs.omniagentsolutions.com/cmsvol2/pub_47561/ee723603-978e-4a6c-b181-4500bc35cb22_509.pdf", type: "PRESENTATION" },
     ],
     owners: [
-      { investmentFirm: "Manulife", ownershipVehicle: "Manulife Infrastructure Fund I", status: "Active" },
+      { investmentFirm: "Manulife", ownershipVehicle: "Manulife Infrastructure Fund I", investmentYear: 2024, status: "Active" },
     ],
   },
   {
@@ -26468,7 +26505,7 @@ export const companies: PortCo[] = [
       { date: "1933", event: "Cleco's corporate history materials trace the company's founding to 1933.", category: "Other" },
       { date: "1933", event: "Cleco Corporate Holdings LLC was founded.", category: "Founding" },
       { date: "Oct 20, 2014", event: "Cleco announced an agreement to be acquired by an investor group led by Macquarie Infrastructure and Real Assets and BCI.", category: "Acquisition" },
-      { date: "2016", event: "Louisiana regulatory materials disclosed the post-closing ownership interests of Macquarie, BCI, and John Hancock Financial.", category: "Financing" },
+      { date: "2016", event: "Louisiana regulatory materials disclosed the post-closing ownership interests of Macquarie, BCI, and John Hancock Financial / Manulife.", category: "Financing" },
       { date: "Apr 13, 2016", event: "The investor group completed the acquisition of Cleco.", category: "Acquisition" },
       { date: "Apr 27, 2026", event: "Macquarie Asset Management, BCI, and Manulife Investment Management announced an agreement to sell Cleco Group to Stonepeak and Bernhard Capital Partners, subject to regulatory approvals.", category: "Divestiture" },
     ],
@@ -26502,7 +26539,7 @@ export const companies: PortCo[] = [
     subsector: "Wireless towers, sites, and related fiber infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "—",
+    ownershipVehicle: "n.a.",
     description: "Diamond Communications develops, owns, leases, and manages wireless communications infrastructure across the United States. Its customer base includes wireless carriers, infrastructure tenants, landlords, and enterprise venue users that require tower, rooftop, DAS, small-cell, and related fiber solutions. The company operates an asset-heavy model built around owned tenanted sites as well as long-term managed properties for third-party asset owners. Diamond states that it owns and manages more than 4,000 tenanted wireless sites and markets more than 500,000 third-party properties across all 50 states, which provides national operating scale. Ontario Teachers' acquired a significant equity position in 2023, joining existing investors including Sculptor Real Estate and Manulife Investment Management, and Manulife's infrastructure team continues to identify Diamond as a Fund I investment. Public disclosures do not state the exact ownership split among the investors.",
     status: "Active",
     countryTags: ["United States"],
@@ -26524,7 +26561,7 @@ export const companies: PortCo[] = [
       { label: "Diamondcomm — Diamond Communications", url: "https://www.diamondcomm.com/news-article/inside-towers-interviews-ed-farscht-diamond-ceo", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "OTPP", ownershipVehicle: "—", investmentYear: 2023, status: "Active" },
+      { investmentFirm: "OTPP", ownershipVehicle: "n.a.", investmentYear: 2023, status: "Active" },
       { investmentFirm: "Manulife", ownershipVehicle: "Manulife Infrastructure Fund I", investmentYear: 2019, status: "Active" },
     ],
   },
@@ -26712,18 +26749,18 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Manulife Infrastructure Fund I",
-    description: "JH Transport Portfolio is the transportation investment vehicle that Manulife continues to list within its direct infrastructure portfolio. Public disclosures reviewed for this workbook do not identify the individual operating assets, legal structure, or founding year of the platform. The portfolio is categorized by Manulife as transportation infrastructure, indicating exposure to long-life assets serving passenger or freight mobility end markets. The operating model and revenue profile are not described in current public materials, and no public scale metrics were located in the sources reviewed. Manulife's infrastructure team associates the investment with Fund I and continues to present it as an active portfolio company. Because current public disclosures are limited, further detail on co-owners, asset count, and acquisition history is not publicly disclosed.",
+    description: "JH Transport Portfolio is the transportation investment vehicle that Manulife continues to list within its direct infrastructure portfolio. Public disclosures reviewed for this workbook do not identify the individual operating assets, legal structure, or founding year of the platform. The portfolio is categorized by Manulife as transportation infrastructure, indicating exposure to long-life assets serving passenger or freight mobility end markets. The operating model and revenue profile are not described in current public materials, and no public scale metrics were located in the sources reviewed. Manulife's infrastructure team associates the investment with Manulife Infrastructure Fund I and continues to present it as an active portfolio company. Because current public disclosures are limited, further detail on co-owners, asset count, and acquisition history is not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2021,
     headquarters: "United States",
     milestones: [
-      { date: "2021", event: "Manulife publicly listed JH Transport Portfolio among its direct infrastructure investments.", category: "Financing" },
+      { date: "2021", event: "Manulife publicly listed JH Transport Portfolio as a Manulife Infrastructure Fund I transportation investment.", category: "Financing" },
     ],
     sources: [
       { label: "Manulifeim — JH Transport Portfolio", url: "https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/direct-infrastructure-equity", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
       { label: "Manulifeim — JH Transport Portfolio", url: "https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/partners", type: "ARTICLE" },
-      { label: "Manulifeim — JH Transport Portfolio", url: "https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/infrastructure-team", type: "ARTICLE" },
+      { label: "Manulifeim — JH Transport Portfolio", url: "https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/infrastructure-team", type: "ARTICLE", evidenceLabel: "Manulife infrastructure team states the Transportation Portfolio is within Manulife Infrastructure Fund I" },
     ],
     owners: [
       { investmentFirm: "Manulife", ownershipVehicle: "Manulife Infrastructure Fund I", investmentYear: 2021, status: "Active" },
@@ -26800,7 +26837,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Manulife Infrastructure Fund II",
-    description: "Midland Cogeneration Venture owns a large natural gas-fired cogeneration facility in Midland, Michigan that supplies both electricity and steam. The plant serves Consumers Energy under a long-term power purchase arrangement and also provides steam to industrial customers in the surrounding chemical manufacturing complex. Its operating model is asset-heavy and largely contracted, with Capital Power responsible for operations and maintenance under the joint ownership structure. Capital Power describes the facility as the largest natural gas-fired combined electrical and steam cogeneration plant in the United States, with 1,633 MW of generation capacity and significant steam output. Capital Power and Manulife announced the acquisition in July 2022, completed it in September 2022, and in December 2025 Capital Power said the owners had secured a new contract with Consumers Energy through 2040.",
+    description: "Midland Cogeneration Venture owns a large natural gas-fired cogeneration facility in Midland, Michigan that supplies both electricity and steam. The plant serves Consumers Energy under a long-term power purchase arrangement and also provides steam to industrial customers in the surrounding chemical manufacturing complex. Its operating model is asset-heavy and largely contracted, with Capital Power responsible for operations and maintenance under the joint ownership structure. Capital Power and Manulife announced the acquisition in July 2022, completed it in September 2022, and Manulife stated the acquisition was made on behalf of Manulife Infrastructure Fund II and affiliates. In December 2025 Capital Power said the owners had secured a new contract with Consumers Energy through 2040.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2022,
@@ -26808,12 +26845,13 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1989", event: "Commercial operations began at the Midland cogeneration facility.", category: "Expansion" },
       { date: "Jul 2022", event: "Capital Power and Manulife announced an agreement to acquire Midland Cogeneration Venture.", category: "Acquisition" },
-      { date: "Sep 23, 2022", event: "Capital Power and Manulife completed the acquisition of Midland Cogeneration Venture.", category: "Acquisition" },
+      { date: "Sep 23, 2022", event: "Capital Power and Manulife completed the acquisition of Midland Cogeneration Venture on behalf of Manulife Infrastructure Fund II and affiliates.", category: "Acquisition" },
       { date: "Dec 2025", event: "Capital Power announced a new long-term contract with Consumers Energy extending through 2040.", category: "Other" },
     ],
     sources: [
       { label: "Capitalpower — Midland Cogeneration Venture", url: "https://www.capitalpower.com/operations/midland/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
       { label: "Announcement source — Manulife — Midland Cogeneration Venture", url: "https://www.globenewswire.com/news-release/2022/07/12/2478003/0/en/Capital-Power-and-Manulife-Investment-Management-announce-the-acquisition-of-the-Midland-Cogeneration-facility-in-the-United-States.html", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
+      { label: "Close date source — Manulife — Midland Cogeneration Venture", url: "https://www.manulifeim.com/institutional/global/en/about-us/press-releases/capital-power-and-manulife-investment-management-complete-acquis", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Manulife states the acquisition was made on behalf of Manulife Infrastructure Fund II and affiliates" },
       { label: "Close date source — Manulife — Midland Cogeneration Venture", url: "https://www.capitalpower.com/media/media_releases/capital-power-and-manulife-investment-management-complete-acquisition-of-midland-cogeneration-facility/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Capitalpower — Midland Cogeneration Venture", url: "https://www.capitalpower.com/media/media_releases/capital-power-executes-new-contract-for-midland-cogeneration-venture-with-consumers-energy/", type: "ARTICLE" },
     ],
@@ -26852,7 +26890,7 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "Manulife", ownershipVehicle: "Manulife Infrastructure Fund III", investmentYear: 2024, status: "Active" },
-      { investmentFirm: "Carlyle Infrastructure", ownershipVehicle: "Carlyle Renewable & Sustainable Energy Fund", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Carlyle Infrastructure", ownershipVehicle: "n.a.", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -26958,22 +26996,25 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Manulife Infrastructure Fund I",
-    description: "Rocky Mountain Midstream is a natural gas gathering and processing system serving producing basins in the Rocky Mountain region. Publicly available system materials describe operations connected to the Greater Green River, Piceance, and Uinta basins, supporting upstream producers with transportation and related midstream services. The platform follows an asset-heavy fee-based operating model centered on gathering pipelines, treating facilities, and processing infrastructure. Williams identifies Rocky Mountain Midstream as part of its regional system information, and Manulife continues to include Rocky Mountain Midstream in its direct infrastructure materials. Public sources reviewed do not disclose a current founding year, asset count, or the present economic ownership structure in sufficient detail.",
-    status: "Active",
+    description: "Rocky Mountain Midstream is a natural gas gathering and processing system serving producing basins in the Rocky Mountain region. Publicly available system materials describe operations connected to the Greater Green River, Piceance, and Uinta basins, supporting upstream producers with transportation and related midstream services. The platform follows an asset-heavy fee-based operating model centered on gathering pipelines, treating facilities, and processing infrastructure. Manulife's infrastructure team associates Discovery/Rocky Mountain Midstream with Manulife Infrastructure Fund I, but Williams reported that it acquired the remaining 50% interest in Rocky Mountain Midstream Holdings on November 30, 2023 and now owns 100% of RMM. As a result, Manulife is treated as a realized historical owner rather than a current active owner.",
+    status: "Realized",
     countryTags: ["United States"],
+    investmentYear: 2020,
     headquarters: "Colorado, Utah, and Wyoming",
     milestones: [
       { date: "2015", event: "Colorado regulatory records identify Rocky Mountain Midstream as an operator in the state.", category: "Other" },
       { date: "2020", event: "Manulife’s Equator Principles reporting period included several North American power and infrastructure financings, after which Rocky Mountain Midstream later appeared in its portfolio materials.", category: "Financing" },
+      { date: "Nov 30, 2023", event: "Williams acquired the remaining 50% interest in Rocky Mountain Midstream Holdings and reported 100% ownership of RMM.", category: "Divestiture" },
     ],
     sources: [
       { label: "Williams — Rocky Mountain Midstream", url: "https://www.williams.com/pipeline/rocky-mountain-midstream/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
       { label: "Ecmc — Rocky Mountain Midstream", url: "https://ecmc.state.co.us/cogisdb/NameAddressSearch/CompanyDetail?COID=8478&OpNum=10716", type: "ARTICLE" },
       { label: "Manulifeim — Rocky Mountain Midstream", url: "https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/direct-infrastructure-equity", type: "ARTICLE" },
+      { label: "Williams ownership source — Rocky Mountain Midstream", url: "https://investor.williams.com/news-releases/news-release-details/williams-completes-strategic-transactions-dj-basin?mobile=1", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "Williams acquired KKR's 50% interest in RMM on November 30, 2023, resulting in 100% Williams ownership" },
       { label: "Wyoenergy — Rocky Mountain Midstream", url: "https://wyoenergy.org/wp-content/uploads/2025/10/WSTN25v2_Small.pdf", type: "PRESENTATION" },
     ],
     owners: [
-      { investmentFirm: "Manulife", ownershipVehicle: "Manulife Infrastructure Fund I", status: "Active" },
+      { investmentFirm: "Manulife", ownershipVehicle: "Manulife Infrastructure Fund I", investmentYear: 2020, exitYear: 2023, status: "Realized" },
     ],
   },
   {
@@ -27092,33 +27133,41 @@ export const companies: PortCo[] = [
   },
   {
     name: "Tract",
-    investmentFirm: "Manulife",
+    investmentFirm: "Tract Capital Management",
     sector: "Digital",
     subsector: "Data center land development",
     region: "North America",
     country: "United States",
     ownershipVehicle: "n.a.",
-    description: "Tract acquires, entitles, and develops master-planned land campuses for data center and digital infrastructure customers. Its end market is hyperscale and large enterprise computing demand, with the platform providing entitled land, utilities planning, and development-readiness rather than retail colocation services. The model is asset-heavy and land-intensive, focused on assembling large sites in markets with power access and long-term digital infrastructure demand. Public materials show a growing U.S. footprint that includes large holdings in greater Reno as well as projects in Arizona, Utah, Iowa, and Texas. Public sources reviewed do not disclose the company’s founding year or full ownership structure, but company announcements in 2025 show continued expansion through new land acquisitions and rezoning activity across multiple markets.",
+    description: "Tract acquires, entitles, and develops master-planned land campuses for data center and digital infrastructure customers. Its end market is hyperscale and large enterprise computing demand, with the platform providing entitled land, utilities planning, and development-readiness rather than retail colocation services. The model is asset-heavy and land-intensive, focused on assembling large sites in markets with power access and long-term digital infrastructure demand. Public materials show a growing U.S. footprint that includes large holdings in greater Reno as well as projects in Arizona, Utah, Iowa, and Texas. Tract Capital identifies Tract as one of its businesses and describes Tract as a TCM portfolio company; Data Center Dynamics also reported that Tract Capital currently owns Tract and Fleet Data Centers. The platform launch and financing trail dates to 2022, but public sources reviewed do not disclose a distinct fund vehicle or exact ownership percentages.",
     status: "Active",
     countryTags: ["United States"],
+    investmentYear: 2022,
     headquarters: "Nevada, Arizona, Utah, Iowa, and Texas",
     milestones: [
+      { date: "Aug 2022", event: "Columbia Capital, Cologix management, and the van Rooyen family office were reported to be forming Tract as a new data center land platform seeking investor capital.", category: "Financing" },
+      { date: "Dec 29, 2022", event: "Tract (Landco) I, LP filed a Form D amendment for pooled investment fund interests with the SEC.", category: "Financing" },
+      { date: "May 2024", event: "Tract announced the acquisition of 1,200 acres in Hanover County, Virginia for hyperscale data center campuses.", category: "Acquisition" },
+      { date: "Jan 10, 2025", event: "Data Center Dynamics reported that Tract Capital currently owns Tract and Fleet Data Centers.", category: "Other" },
       { date: "May 2025", event: "Tract announced the acquisition of 1,515 acres in Caldwell County, Texas for a multi-gigawatt technology park.", category: "Acquisition" },
       { date: "Mar 2025", event: "Tract announced entry into the Des Moines market through the acquisition of 453 acres in Altoona, Iowa.", category: "Acquisition" },
       { date: "Jun 2025", event: "Tract announced an additional 1,060-acre closing in Silver Springs, Nevada after rezoning and a development agreement with Lyon County.", category: "Other" },
-      { date: "Jan 10, 2025", event: "Data Center Dynamics described Tract as a Colorado-based developer active across several U.S. markets.", category: "Other" },
       { date: "Mar 2026", event: "Bloomberg described Tract as overseeing more than 30,000 acres for data center land development.", category: "Other" },
     ],
     sources: [
+      { label: "Tract Capital — Businesses", url: "https://tractcapital.com/strategies-portfolio/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Tract Capital — Meet the Team", url: "https://tractcapital.com/meet-the-team/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Data Center Dynamics — Tract Capital owns Tract and Fleet", url: "https://www.datacenterdynamics.com/en/news/tracts-grant-van-rooyen-launches-new-data-center-developer-fleet-dc/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Data Center Dynamics — ColCap and van Rooyen launch Tract", url: "https://www.datacenterdynamics.com/en/news/colcap-and-van-rooyen-launching-new-1-billion-data-center-fund-known-as-tract/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "SEC — Tract (Landco) I, LP Form D", url: "https://www.sec.gov/Archives/edgar/data/1954956/000195708522000005/xslFormDX08/primary_doc.xml", type: "SEC_FILING", purpose: "FINANCING_FILINGS" },
       { label: "Tract — Tract", url: "https://www.tract.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Tract — Tract", url: "https://www.tract.com/who-we-are/", type: "ARTICLE" },
+      { label: "Tract Capital — Hanover County acquisition", url: "https://tractcapital.com/news/tract-announces-acquisition-of-1200-acres-in-hanover-county-va/", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
       { label: "Tract — Tract", url: "https://www.tract.com/news/tract-closes-acquisition-of-1515-acres-in-caldwell-county-texas-for-multi-gigawatt-data-center-technology-park/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
       { label: "Tract — Tract", url: "https://www.tract.com/news/tract-expands-its-greater-reno-portfolio-closing-on-1060-acres-in-silver-springs-nevada-following-successful-rezoning-and-development-agreement-with-lyon-county/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
-      { label: "Data Center Dynamics — Tract", url: "https://www.datacenterdynamics.com/en/news/tracts-grant-van-rooyen-launches-new-data-center-developer-fleet-dc/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Manulife", ownershipVehicle: "n.a.", status: "Active" },
-      { investmentFirm: "Manulife", ownershipVehicle: "n.a.", status: "Active" },
+      { investmentFirm: "Tract Capital Management", ownershipVehicle: "n.a.", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -27392,7 +27441,7 @@ export const companies: PortCo[] = [
     subsector: "Airport terminal concession",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "LaGuardia Gateway Partners LLC; Meridiam held c.48% after its January 2024 increase.",
+    ownershipVehicle: "n.a.",
     description: "LaGuardia Terminal B is the concession company that redeveloped and now operates Terminal B at New York's LaGuardia Airport under a long-term public-private partnership. The asset serves airlines and passengers using one of the primary airports in the New York metropolitan area, with revenues supported by terminal operations under the lease framework with the Port Authority. Its operating model is asset heavy and contracted, with the private consortium financing, developing, and managing the terminal rather than relying on airline ownership. Public disclosures describe a 35-gate terminal that was completed in phases before full completion in 2022 and continues under a lease that runs through 2050. Meridiam was part of the original consortium at the 2016 financial close and increased its ownership to approximately 48% in early 2024 after acquiring part of Skanska's divested stake. The asset remains one of Meridiam's flagship North American airport investments.",
     status: "Active",
     countryTags: ["United States"],
@@ -27412,7 +27461,7 @@ export const companies: PortCo[] = [
       { label: "Usa — LaGuardia Terminal B", url: "https://www.usa.skanska.com/who-we-are/media/press-releases/277033/Skanska-divests-ownership-of-LaGuardia-Airport-Terminal-B-in-New-York%2C-NY-for-115-million", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Meridiam", ownershipVehicle: "LaGuardia Gateway Partners LLC; Meridiam held c.48% after its January 2024 increase.", investmentYear: 2016, status: "Active" },
+      { investmentFirm: "Meridiam", ownershipVehicle: "n.a.", investmentYear: 2016, stake: "c.48% after January 2024 increase", status: "Active" },
     ],
   },
   {
@@ -27954,7 +28003,7 @@ export const companies: PortCo[] = [
     subsector: "Utility-scale wind, solar, and storage",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Infratil Ltd (Morrison’s listed infrastructure business).",
+    ownershipVehicle: "Infratil",
     description: "Longroad Energy develops, owns, and operates utility-scale wind, solar, and storage projects in the United States. Its customers or end markets include utilities, corporations, and wholesale power markets seeking renewable generation and storage capacity. The operating model is a development-to-ownership model with contracted offtake, asset management, and project-level financing. Operations are concentrated in multiple U.S. markets across a large national development pipeline. Public materials indicate approximately 28 GW of development pipeline and a portfolio of owned and managed renewable assets according to public company materials. Current ownership includes Infratil and New Zealand Super Fund as the principal sponsors, with MEAG joining the shareholder group in 2022.",
     status: "Active",
     countryTags: ["United States"],
@@ -27974,7 +28023,7 @@ export const companies: PortCo[] = [
       { label: "Morrisonglobal — Longroad Energy", url: "https://morrisonglobal.com/news-insights/portfolio-company-longroad-energy-to-receive-significant-new-capital-from-current-investors-and-a-new-co-investor/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Morrison", ownershipVehicle: "Infratil Ltd (Morrison’s listed infrastructure business).", investmentYear: 2016, status: "Active" },
+      { investmentFirm: "Morrison", ownershipVehicle: "Infratil", investmentYear: 2016, status: "Active" },
       { investmentFirm: "Infratil", ownershipVehicle: "n.a.", investmentYear: 2016, status: "Active" },
     ],
   },
@@ -28037,7 +28086,6 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "MSIP", ownershipVehicle: "n.a.", investmentYear: 2018, status: "Active" },
-      { investmentFirm: "Jupiter Energy Investor", ownershipVehicle: "Announced acquisition from MSIP pending close", investmentYear: 2026, status: "Active" },
     ],
   },
   {
@@ -28047,8 +28095,8 @@ export const companies: PortCo[] = [
     subsector: "Natural gas gathering, processing, and crude oil infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "NHIP II subsidiary / related funds",
-    description: "Brazos Midstream provides natural gas gathering, processing, compression, and related crude and water infrastructure services in the Permian Basin. Its customers are upstream producers, and the business follows an asset-heavy, predominantly contracted midstream model built around gathering systems and processing plants. Company materials state that Brazos was founded in 2014 and now operates across both the Delaware and Midland Basins. Public disclosures reviewed in 2025 and 2026 describe expansion in the Midland Basin, including approximately 525 miles of gathering pipeline and 16 compressor stations expected by mid-2026, together with up to 800 MMcf/d of operated processing capacity by late 2026. Morgan Stanley Infrastructure Partners disclosed a majority investment in Brazos Midstream Holdings II in 2024, but reviewed public sources do not provide a complete current ownership breakdown across the broader Brazos platform. The business continues to expand processing and gathering capacity to serve producer activity in West Texas.",
+    ownershipVehicle: "North Haven Infrastructure Partners II (NHIP II)",
+    description: "Brazos Midstream provides natural gas gathering, processing, compression, and related crude and water infrastructure services in the Permian Basin. Its customers are upstream producers, and the business follows an asset-heavy, predominantly contracted midstream model built around gathering systems and processing plants. Company materials state that Brazos was founded in 2014 and now operates across both the Delaware and Midland Basins. Public disclosures reviewed in 2025 and 2026 describe expansion in the Midland Basin, including approximately 525 miles of gathering pipeline and 16 compressor stations expected by mid-2026, together with up to 800 MMcf/d of operated processing capacity by late 2026. The 2018 Delaware Basin transaction identified North Haven Infrastructure Partners II (NHIP II), an investment fund managed by Morgan Stanley Infrastructure, as the buyer, while later materials describe Morgan Stanley Infrastructure Partners as a majority investor in Brazos Midstream Holdings II. The business continues to expand processing and gathering capacity to serve producer activity in West Texas.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2014,
@@ -28070,7 +28118,7 @@ export const companies: PortCo[] = [
       { label: "Investment date source — MSIP — Brazos Midstream", url: "https://www.morganstanley.com/im/en-gb/intermediary-investor/companies/brazos-midstream.html", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "MSIP", ownershipVehicle: "NHIP II subsidiary / related funds", investmentYear: 2018, status: "Active" },
+      { investmentFirm: "MSIP", ownershipVehicle: "North Haven Infrastructure Partners II (NHIP II)", investmentYear: 2018, status: "Active" },
       { investmentFirm: "EnCap Investments", ownershipVehicle: "EnCap Flatrock Midstream", investmentYear: 2022, status: "Active" },
     ],
   },
@@ -28349,8 +28397,8 @@ export const companies: PortCo[] = [
     subsector: "Natural gas transmission pipeline",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Real Assets / Infrastructure",
-    description: "Gulf Coast Express is a large-diameter natural gas transmission pipeline moving Permian gas to South Texas markets. Its customers are upstream producers, marketers, and downstream gas market participants, and the asset operates under an asset-heavy pipeline model supported by long-term transportation agreements. Public filings describe the pipeline as approximately 500 miles in length with 2.0 Bcf/d of capacity. The system is located entirely in Texas and links Waha-area supply to Agua Dulce, a major downstream trading and delivery hub. Kinder Morgan's public materials state that it owns 34% of the pipeline and that the remaining ownership includes an ArcLight affiliate after ArcLight acquired an additional 25% interest from Phillips 66 in early 2025. Mubadala lists Gulf Coast Express as a real-assets infrastructure holding, and ArcLight's official public post states that Mubadala partnered with ArcLight to acquire an interest in the pipeline in the 2025 $865 million transaction. The reviewed public materials do not disclose the full current ownership split among all non-Kinder Morgan holders.",
+    ownershipVehicle: "n.a.",
+    description: "Gulf Coast Express is a large-diameter natural gas transmission pipeline moving Permian gas to South Texas markets. Its customers are upstream producers, marketers, and downstream gas market participants, and the asset operates under an asset-heavy pipeline model supported by long-term transportation agreements. Public filings describe the pipeline as approximately 500 miles in length with 2.0 Bcf/d of capacity. The system is located entirely in Texas and links Waha-area supply to Agua Dulce, a major downstream trading and delivery hub. Kinder Morgan's public materials state that it owns 34% of the pipeline and that the remaining ownership includes an ArcLight affiliate after ArcLight acquired an additional 25% interest from Phillips 66 in early 2025. Mubadala lists Gulf Coast Express as a real-assets infrastructure holding, and ArcLight's official public post states that Mubadala partnered with ArcLight to acquire an interest in the pipeline in the 2025 $865 million transaction. The reviewed public materials do not disclose the full current ownership split among all non-Kinder Morgan holders or a distinct Mubadala fund vehicle.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2025,
@@ -28370,7 +28418,7 @@ export const companies: PortCo[] = [
       { label: "Kindermorgan — Gulf Coast Express Pipeline LLC", url: "https://www.kindermorgan.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Mubadala", ownershipVehicle: "Real Assets / Infrastructure", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "Mubadala", ownershipVehicle: "n.a.", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -28477,8 +28525,8 @@ export const companies: PortCo[] = [
     subsector: "Data center development",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Strategic investment by Northampton Capital Partners LLC",
-    description: "Blueprint Data Centers is a U.S. data center development platform focused on new campus delivery for hyperscale and large enterprise demand. Its customer base is centered on cloud, AI, and other users that require utility-backed wholesale capacity rather than retail colocation services. The operating model is asset-heavy and development led, with site control, power procurement, construction, and eventual leasing or disposition of completed capacity. Public company materials describe two greater Austin campuses in Taylor and Georgetown totaling 85 MW, with energization targeted across 2026 and 2027. The platform is concentrated in Texas and is being built to serve one of the more active U.S. data center growth corridors. Northampton Capital Partners announced its investment in Blueprint in April 2025, and the reviewed public materials do not disclose the resulting ownership percentage.",
+    ownershipVehicle: "n.a.",
+    description: "Blueprint Data Centers is a U.S. data center development platform focused on new campus delivery for hyperscale and large enterprise demand. Its customer base is centered on cloud, AI, and other users that require utility-backed wholesale capacity rather than retail colocation services. The operating model is asset-heavy and development led, with site control, power procurement, construction, and eventual leasing or disposition of completed capacity. Public company materials describe two greater Austin campuses in Taylor and Georgetown totaling 85 MW, with energization targeted across 2026 and 2027. The platform is concentrated in Texas and is being built to serve one of the more active U.S. data center growth corridors. Northampton Capital Partners announced its investment in Blueprint in April 2025, and the reviewed public materials do not disclose the resulting ownership percentage or exact fund vehicle.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2025,
@@ -28497,7 +28545,7 @@ export const companies: PortCo[] = [
       { label: "Taylortx — Blueprint Data Centers", url: "https://www.taylortx.gov/1293/Blueprint-Projects-Data-Center", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Northampton", ownershipVehicle: "Strategic investment by Northampton Capital Partners LLC", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "Northampton", ownershipVehicle: "n.a.", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -29050,13 +29098,15 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "n.a.",
-    description: "OnTrac provides parcel logistics and last-mile delivery services for e-commerce retailers, marketplaces, and other high-volume shippers. Its operating model is network-based and service oriented, with pickup, sortation, linehaul, and final-mile delivery rather than ownership of a national integrated air network. Official company materials state that the network reaches more than 75% of the U.S. population across 35 states and Washington, D.C., and that the company has been expanding service offerings beyond its traditional regional parcel product. The platform was formed by combining the historical LaserShip and OnTrac networks and is marketed under the OnTrac brand across the United States. American Securities announced the combination of LaserShip and OnTrac in 2021, and the rebranded business launched in 2023. The reviewed public materials do not clearly disclose the current ownership structure or current sponsor ownership percentages.",
+    description: "OnTrac provides parcel logistics and last-mile delivery services for e-commerce retailers, marketplaces, and other high-volume shippers. Its operating model is network-based and service oriented, with pickup, sortation, linehaul, and final-mile delivery rather than ownership of a national integrated air network. Official company materials state that the network reaches more than 75% of the U.S. population across 35 states and Washington, D.C., and that the company has been expanding service offerings beyond its traditional regional parcel product. The platform was formed by combining the historical LaserShip and OnTrac networks and is marketed under the OnTrac brand across the United States. American Securities announced the combination of LaserShip and OnTrac in 2021, and the rebranded business launched in 2023. A later public executive biography states that a Duration founder previously led Oaktree's investment in LaserShip OnTrac, but the reviewed public materials do not clearly disclose the current ownership structure or current sponsor ownership percentages.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 1991,
+    investmentYear: 2021,
     headquarters: "35 states and Washington, D.C.",
     milestones: [
       { date: "1991", event: "OnTrac was founded.", category: "Founding" },
+      { date: "2021", event: "A public executive biography later stated that a Duration founder previously led Oaktree's investment in LaserShip OnTrac.", category: "Financing" },
       { date: "Oct 2021", event: "American Securities announced the combination of LaserShip and OnTrac.", category: "Other" },
       { date: "Jan 2022", event: "The combined platform launched transcontinental parcel service across 35 states and Washington, D.C.", category: "Expansion" },
       { date: "Sep 2025", event: "OnTrac announced new Ground Essentials and express service offerings for early 2026 rollout.", category: "Other" },
@@ -29066,9 +29116,10 @@ export const companies: PortCo[] = [
       { label: "Ontrac — OnTrac", url: "https://www.ontrac.com/lasership-and-ontrac-unveil-new-name-and-brand-identity/", type: "ARTICLE" },
       { label: "Ontrac — OnTrac", url: "https://www.ontrac.com/7-day/", type: "ARTICLE" },
       { label: "American Securities — OnTrac", url: "https://www.american-securities.com/en/news/press-releases/lasership-and-ontrac-logistics-to-combine-forming-the-first-pure-play-and-nationwide-e-commerce-last-mile-delivery-network", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
+      { label: "Investment evidence source — Oaktree / Duration — OnTrac", url: "https://fengate.com/team-member/darcy-wilson", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Oaktree / Duration", ownershipVehicle: "n.a.", status: "Active" },
+      { investmentFirm: "Oaktree / Duration", ownershipVehicle: "n.a.", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -29438,7 +29489,7 @@ export const companies: PortCo[] = [
     subsector: "Toll road concession",
     region: "North America",
     country: "Mexico",
-    ownershipVehicle: "Ontario Teachers' Pension Plan",
+    ownershipVehicle: "n.a.",
     description: "Arco Norte is a 224-kilometer toll road concession that serves as a transportation link across central Mexico. The road carries passenger and freight traffic around the Mexico City metropolitan area, with revenues generated from toll-paying users rather than from regulated utility tariffs. Its model is asset-heavy and concession-based, with long-lived roadway infrastructure, traffic operations, and maintenance obligations concentrated in central Mexico. Public owner disclosures show that IDEAL, CPP Investments, and Ontario Teachers' have owned the road together since 2016, following the prior phased opening of the concession in 2009 and 2011. Ontario Teachers' current interest is held through its infrastructure portfolio, while detailed fund-level ownership beyond the disclosed consortium stakes is not publicly disclosed.",
     status: "Active",
     countryTags: ["Mexico"],
@@ -29460,7 +29511,7 @@ export const companies: PortCo[] = [
       { label: "Otpp — Arco Norte", url: "https://www.otpp.com/en-ca/modals/portfolio/arco-norte/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "OTPP", ownershipVehicle: "Ontario Teachers' Pension Plan", investmentYear: 2016, status: "Active" },
+      { investmentFirm: "OTPP", ownershipVehicle: "n.a.", investmentYear: 2016, status: "Active" },
       { investmentFirm: "CPP Investments", ownershipVehicle: "Real Assets (Infrastructure)", investmentYear: 2016, status: "Active" },
     ],
   },
@@ -29471,7 +29522,7 @@ export const companies: PortCo[] = [
     subsector: "Toll road concession",
     region: "North America",
     country: "Mexico",
-    ownershipVehicle: "—",
+    ownershipVehicle: "n.a.",
     description: "Arco Norte is a toll road concession in central Mexico that serves passenger and freight traffic around the Mexico City metropolitan area. Its customers are motorists, logistics operators, and commercial freight users seeking a bypass route for central Mexican corridors. The operating model is asset-heavy and concession-based, with revenue generated from road usage rather than ancillary service businesses. Ontario Teachers' has described the asset as a 224 kilometer toll road and a current portfolio holding within its Mexican partnership with IDEAL and CPP Investments. Public disclosures identify IDEAL, CPP Investments, and Ontario Teachers' as the current co-owners.",
     status: "Active",
     countryTags: ["Mexico"],
@@ -29487,7 +29538,7 @@ export const companies: PortCo[] = [
       { label: "Proyectosmexico — Autopista Arco Norte, S.A. de C.V.", url: "https://www.proyectosmexico.gob.mx/?language=en&p=4809&post_type=proyecto_inversion&so=1", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "OTPP", ownershipVehicle: "—", investmentYear: 2016, status: "Active" },
+      { investmentFirm: "OTPP", ownershipVehicle: "n.a.", investmentYear: 2016, status: "Active" },
     ],
   },
   {
@@ -29568,7 +29619,7 @@ export const companies: PortCo[] = [
       { date: "1907", event: "GCT states that it has operated on the Vancouver waterfront since 1907.", category: "Other" },
       { date: "1907", event: "GCT Global Container Terminals was founded.", category: "Founding" },
       { date: "Jun 2007", event: "OTPP / Ontario Teachers' acquired GCT, then known as Orient Overseas International's terminal business, for approximately US$2.35 billion.", category: "Acquisition" },
-      { date: "Dec 2018", event: "IFM Investors' portfolio page lists December 2018 as the initial fund investment in GCT after the June 2018 transaction announcement.", category: "Acquisition" },
+      { date: "Dec 2018", event: "IFM Global Infrastructure Fund (GIF) lists December 2018 as its initial fund investment in GCT, after the June 2018 transaction in which IFM and BCI joined Ontario Teachers' as equity partners.", category: "Acquisition" },
       { date: "2019", event: "The company disclosed an ownership split of 37.5% Ontario Teachers', 37.5% IFM, and 25% BCI.", category: "Other" },
     ],
     sources: [
@@ -29728,7 +29779,7 @@ export const companies: PortCo[] = [
     subsector: "Toll road concession",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Ontario Teachers' Pension Plan",
+    ownershipVehicle: "n.a.",
     description: "Skyway Concession Company operates the Chicago Skyway toll bridge and roadway linking Chicago with the Indiana Toll Road. The asset serves passenger vehicles, commercial traffic, and regional freight flows, with revenue derived from toll collections under a long-term concession structure. Its business model is asset-heavy and concession-based, with operations and maintenance responsibilities concentrated on a 7.8-mile corridor in Illinois. Public infrastructure profiles show that SCC assumed operations in 2005 under a 99-year lease, and the asset was acquired by a Canadian pension-fund consortium in 2016. Ontario Teachers' remains an investor in the asset, although detailed current fund-level ownership allocations for the retained interest are not publicly disclosed.",
     status: "Active",
     countryTags: ["United States"],
@@ -29751,7 +29802,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — OTPP — Skyway Concession Company", url: "https://www.fhwa.dot.gov/ipd/project_profiles/il_chicago_skyway.aspx", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "OTPP", ownershipVehicle: "Ontario Teachers' Pension Plan", investmentYear: 2016, status: "Active" },
+      { investmentFirm: "OTPP", ownershipVehicle: "n.a.", investmentYear: 2016, status: "Active" },
     ],
   },
   {
@@ -30440,21 +30491,25 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "n.a.",
-    description: "Ecosave develops and implements energy-efficiency, smart-building, renewable-energy, and building-automation projects for commercial real estate, developers, and facility owners. Its customers are principally commercial and institutional building owners seeking utility savings and decarbonization without large upfront capital expenditures. The operating model is services and infrastructure oriented, with projects frequently delivered under long-term energy service agreements tied to measured savings rather than merchant energy sales. The company states that it has more than 20 years of operating history and that its solutions are delivered from offices in Philadelphia, New York, and Boston. Ridgewood lists Ecosave as a current portfolio company within its energy transition holdings, but the acquisition date and ownership percentage are not publicly disclosed. The business remains a platform for distributed building-level efficiency and clean-energy projects.",
+    description: "Ecosave develops and implements energy-efficiency, smart-building, renewable-energy, and building-automation projects for commercial real estate, developers, and facility owners. Its customers are principally commercial and institutional building owners seeking utility savings and decarbonization without large upfront capital expenditures. The operating model is services and infrastructure oriented, with projects frequently delivered under long-term energy service agreements tied to measured savings rather than merchant energy sales. The company states that it has more than 20 years of operating history and that its solutions are delivered from offices in Philadelphia, New York, and Boston. Ridgewood lists Ecosave as a current portfolio company within its energy transition holdings, and third-party company data indicates Ridgewood owned a majority of the business by 2021. The exact closing date and current ownership percentage are not publicly disclosed. The business remains a platform for distributed building-level efficiency and clean-energy projects.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2002,
+    investmentYear: 2021,
     headquarters: "Pennsylvania, New York, and Massachusetts",
     milestones: [
       { date: "2002", event: "Ecosave was founded, based on the company's stated operating history of more than 20 years.", category: "Founding" },
+      { date: "2021", event: "Ridgewood Infrastructure had become the majority owner of Ecosave, according to third-party company data and counsel transaction descriptions.", category: "Acquisition" },
     ],
     sources: [
       { label: "Ridgewoodinfrastructure — Ecosave", url: "https://ridgewoodinfrastructure.com/ecosave/", type: "ARTICLE" },
       { label: "Ecosaveinc — Ecosave", url: "https://ecosaveinc.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Ecosaveinc — Ecosave", url: "https://ecosaveinc.com/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
+      { label: "Investment evidence source — Ridgewood — Ecosave", url: "https://app.dealroom.co/companies/ecosave", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Transaction counsel source — Ridgewood — Ecosave", url: "https://www.kslaw.com/people/enrico-granata", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Ridgewood", ownershipVehicle: "n.a.", status: "Active" },
+      { investmentFirm: "Ridgewood", ownershipVehicle: "n.a.", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -30747,8 +30802,8 @@ export const companies: PortCo[] = [
     subsector: "Electrical testing equipment rentals",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Sandbrook acquisition from Electro Rent; specific Sandbrook fund not named in the public release.",
-    description: "intellirent rents specialized electrical testing equipment used in commissioning, maintenance, and repair work on medium- and high-voltage infrastructure. Its customers include utilities, EPC contractors, and electrical equipment manufacturers, and the operating model is asset-heavy because it relies on owned rental fleets of testing and diagnostic equipment. Sandbrook describes the company as serving power infrastructure work across North America, positioning it within the grid modernization and expansion value chain. The business supports field work where customers need temporary access to specialized equipment rather than owning underutilized fleets themselves. Sandbrook signed an agreement to acquire intellirent from Electro Rent in February 2025 and subsequently added the company to its portfolio. The reviewed public materials do not disclose the purchase price or Sandbrook’s ownership percentage.",
+    ownershipVehicle: "n.a.",
+    description: "intellirent rents specialized electrical testing equipment used in commissioning, maintenance, and repair work on medium- and high-voltage infrastructure. Its customers include utilities, EPC contractors, and electrical equipment manufacturers, and the operating model is asset-heavy because it relies on owned rental fleets of testing and diagnostic equipment. Sandbrook describes the company as serving power infrastructure work across North America, positioning it within the grid modernization and expansion value chain. The business supports field work where customers need temporary access to specialized equipment rather than owning underutilized fleets themselves. Sandbrook signed an agreement to acquire intellirent from Electro Rent in February 2025 and subsequently added the company to its portfolio. The reviewed public materials do not disclose the purchase price, Sandbrook's ownership percentage, or a specific Sandbrook fund vehicle.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2025,
@@ -30765,7 +30820,7 @@ export const companies: PortCo[] = [
       { label: "Sandbrook — intellirent", url: "https://sandbrook.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
-      { investmentFirm: "Sandbrook", ownershipVehicle: "Sandbrook acquisition from Electro Rent; specific Sandbrook fund not named in the public release.", investmentYear: 2025, status: "Active" },
+      { investmentFirm: "Sandbrook", ownershipVehicle: "n.a.", investmentYear: 2025, status: "Active" },
     ],
   },
   {
@@ -31216,7 +31271,7 @@ export const companies: PortCo[] = [
     subsector: "Fiber-to-the-home broadband",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Searchlight TYP Holdco, LLC / SCP Holdco; Simple Broadband as minority investor.",
+    ownershipVehicle: "n.a.",
     description: "All Points Broadband builds and operates fiber broadband networks serving rural and underserved communities. Its customers or end markets include residential broadband users, businesses, and public-sector communities in rural markets. The operating model is an asset-heavy broadband network model often developed through public-private and utility partnerships. Operations are concentrated in Virginia and Kentucky. Public materials indicate regional network projects that include a Northern Neck initiative reaching more than 10,000 locations. Current ownership dates to Searchlight Capital Partners’ strategic investment announced in 2021.",
     status: "Active",
     countryTags: ["United States"],
@@ -31235,7 +31290,7 @@ export const companies: PortCo[] = [
       { label: "Northernneck — All Points Broadband", url: "https://www.northernneck.us/northern-neck-broadband-project/", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Searchlight", ownershipVehicle: "Searchlight TYP Holdco, LLC / SCP Holdco; Simple Broadband as minority investor.", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Searchlight", ownershipVehicle: "n.a.", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -31558,6 +31613,13 @@ export const companies: PortCo[] = [
       { date: "Jul 2015", event: "Stonepeak and DigitalBridge announced a recapitalization of ExteNet Systems.", category: "Acquisition" },
       { date: "May 10, 2021", event: "ExteNet announced the closing of a strategic investment from Manulife Investment Management.", category: "Financing" },
       { date: "Dec 15, 2022", event: "ExteNet Systems announced its rebrand to Extenet.", category: "Other" },
+    ],
+    sources: [
+      { label: "Company profile source — Extenet", url: "https://extenet.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
+      { label: "Announcement date source — Stonepeak — Extenet", url: "https://www.prnewswire.com/news-releases/extenet-systems-announces-capital-restructuring-300117742.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Close date source — Stonepeak — Extenet", url: "https://www.prnewswire.com/news-releases/chicago-region-extenet-systems-completes-recapitalization-300180129.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Investment date source — Manulife Investment Management — Extenet", url: "https://extenet.com/extenet-systems-announces-successful-closing-of-manulife-investment/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Rebrand source — Extenet", url: "https://extenet.com/extenet-systems-is-now-extenet/", type: "PRESS_RELEASE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
       { investmentFirm: "Stonepeak", ownershipVehicle: "n.a.", investmentYear: 2015, status: "Active" },
@@ -32063,26 +32125,29 @@ export const companies: PortCo[] = [
     subsector: "Workforce housing for Disney program participants",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "n.a.",
-    description: "Flamingo Crossings Village is a purpose-built housing community serving participants in Disney's internship and college program ecosystem near Walt Disney World in Florida. Its end users are program participants who require furnished housing, while the asset is supported by a long-term ground lease and institutional residential operating model. The project is asset-heavy, with ownership and management tied to a large-scale residential community rather than an asset-light accommodations platform. American Campus Communities describes the property as a 10,440-bed, 41-building development on a 75-year Disney ground lease, giving the asset significant physical scale. Swiss Life Asset Managers identifies Flamingo Crossings Village as a North American social infrastructure investment, while public materials indicate that ACC owns and manages the community under its ACE structure.",
+    ownershipVehicle: "Swiss Life GIO III Holding S.à r.l.",
+    description: "Flamingo Crossings Village is a purpose-built housing community serving participants in Disney's internship and college program ecosystem near Walt Disney World in Florida. Its end users are program participants who require furnished housing, while the asset is supported by a long-term ground lease and institutional residential operating model. The project is asset-heavy, with ownership and management tied to a large-scale residential community rather than an asset-light accommodations platform. American Campus Communities describes the property as a 10,440-bed, 41-building development on a 75-year Disney ground lease, giving the asset significant physical scale. A public 2023 deal tracker identifies Swiss Life Asset Management as buyer through Swiss Life GIO III Holding S.à r.l. on June 9, 2023, and Swiss Life Asset Managers identifies Flamingo Crossings Village as a North American social infrastructure investment, while public materials indicate that ACC owns and manages the community under its ACE structure.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2018,
+    investmentYear: 2023,
     headquarters: "Florida",
     milestones: [
       { date: "2018", event: "American Campus Communities and Walt Disney World began the Flamingo Crossings Village development partnership.", category: "Other" },
       { date: "2018", event: "Flamingo Crossings Village was founded.", category: "Founding" },
       { date: "2021", event: "Initial phases of the housing community opened for program participants.", category: "Expansion" },
+      { date: "Jun 9, 2023", event: "Swiss Life Asset Management acquired its Flamingo Crossings Village interest through Swiss Life GIO III Holding S.à r.l.", category: "Acquisition" },
       { date: "2023", event: "Public reporting indicated the project would fully stabilize as subsequent phases were delivered.", category: "Other" },
     ],
     sources: [
       { label: "Americancampus — Flamingo Crossings Village", url: "https://www.americancampus.com/flamingo-crossings-village", type: "ARTICLE" },
       { label: "Americancampus — Flamingo Crossings Village", url: "https://www.americancampus.com/student-apartments/fl/disney/flamingo-crossings-village", type: "ARTICLE" },
       { label: "Support — Flamingo Crossings Village", url: "https://support.disneyprograms.com/hc/en-us/articles/360059715531-Housing-Flamingo-Crossings-Village", type: "ARTICLE" },
+      { label: "Investment date source — Swiss Life — Flamingo Crossings Village", url: "https://texaslawbook.net/?p=103071", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Ch — Flamingo Crossings Village", url: "https://ch.swisslife-am.com/content/dam/slam/documents_publications/investment_foundation/en/r/e_ast_qb_03_2024_igchf.pdf", type: "PRESENTATION" },
     ],
     owners: [
-      { investmentFirm: "Swiss Life", ownershipVehicle: "n.a.", status: "Active" },
+      { investmentFirm: "Swiss Life", ownershipVehicle: "Swiss Life GIO III Holding S.à r.l.", investmentYear: 2023, status: "Active" },
     ],
   },
   {
@@ -32397,8 +32462,8 @@ export const companies: PortCo[] = [
     subsector: "Managed cloud, network, and security infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Fund III",
-    description: "11:11 Systems provides managed cloud, network, security, and connectivity infrastructure services. Its customers are enterprise and mid-market organizations that outsource IT infrastructure, connectivity, security, and disaster recovery functions. The business model is service-led rather than utility-regulated, but it relies on owned and managed digital infrastructure capabilities delivered under recurring customer relationships. Company materials describe an integrated offering spanning managed network services, cloud, security, and voice. Tiger announced its investment when the platform launched in 2021 and remains the sponsor identified in public materials.",
+    ownershipVehicle: "Tiger Infrastructure Partners Fund III",
+    description: "11:11 Systems provides managed cloud, network, security, and connectivity infrastructure services. Its customers are enterprise and mid-market organizations that outsource IT infrastructure, connectivity, security, and disaster recovery functions. The business model is service-led rather than utility-regulated, but it relies on owned and managed digital infrastructure capabilities delivered under recurring customer relationships. Company materials describe an integrated offering spanning managed network services, cloud, security, and voice. Tiger Infrastructure Partners Fund III invested when the platform launched in 2021, and Tiger remains the sponsor identified in public materials.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2021,
@@ -32406,7 +32471,7 @@ export const companies: PortCo[] = [
     headquarters: "New Jersey",
     milestones: [
       { date: "Sep 2021", event: "11:11 Systems launched as a new managed infrastructure platform.", category: "Founding" },
-      { date: "Sep 2021", event: "Tiger Infrastructure announced its investment in 11:11 Systems.", category: "Financing" },
+      { date: "Sep 2021", event: "Tiger Infrastructure Partners Fund III invested in 11:11 Systems.", category: "Financing" },
       { date: "Jan 8, 2026", event: "11:11 Systems acquired Ntirety.", category: "Acquisition" },
       { date: "Feb 28, 2026", event: "11:11 Systems acquired Digital Sense from Aussie Broadband.", category: "Acquisition" },
     ],
@@ -32414,12 +32479,13 @@ export const companies: PortCo[] = [
       { label: "1111Systems — 11:11 Systems", url: "https://1111systems.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "1111Systems — 11:11 Systems", url: "https://1111systems.com/why-1111/overview/", type: "ARTICLE" },
       { label: "Investment date source — Tiger — 11:11 Systems", url: "https://www.prnewswire.com/news-releases/tiger-infrastructure-announces-investment-in-1111-systems-301382251.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Fund vehicle source — Tiger Infrastructure Partners Fund III — 11:11 Systems", url: "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Business Wire — 11:11 Systems", url: "https://www.businesswire.com/news/home/20210923005209/en/1111-Systems-Launches-With-New-Managed-Infrastructure-Solutions-Model", type: "PRESS_RELEASE" },
       { label: "GlobeNewswire - INF-2026-073 - Ntirety", url: "https://www.globenewswire.com/news-release/2026/01/08/3215407/0/en/11-11-Systems-Successfully-Completes-Acquisition-of-Ntirety.html", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
       { label: "11:11 Systems - INF-2026-091 - Digital Sense", url: "https://1111systems.com/resources/1111-systems-successfully-completes-acquisition-of-digital-sense/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
-      { investmentFirm: "Tiger", ownershipVehicle: "Fund III", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Tiger", ownershipVehicle: "Tiger Infrastructure Partners Fund III", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -32429,8 +32495,8 @@ export const companies: PortCo[] = [
     subsector: "Multi-fuel retail and wholesale fuel distribution",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Fund I",
-    description: "American Natural owns and operates multi-fuel retail fueling stations and wholesale fuel distribution operations in western Pennsylvania and eastern Ohio. Its customer base includes commercial fleets, retail motorists, and wholesale fuel users seeking conventional and alternative-fuel supply. The operating model is asset-heavy and based on station, logistics, and fuel-distribution infrastructure. Public materials describe the company as Pittsburgh-based and focused on natural gas, other alternative fuels, and conventional fuel supply. Tiger closed its initial investment in American Natural's parent platform in 2015 and is the current sponsor identified in public portfolio materials.",
+    ownershipVehicle: "Tiger Infrastructure Partners Fund I",
+    description: "American Natural owns and operates multi-fuel retail fueling stations and wholesale fuel distribution operations in western Pennsylvania and eastern Ohio. Its customer base includes commercial fleets, retail motorists, and wholesale fuel users seeking conventional and alternative-fuel supply. The operating model is asset-heavy and based on station, logistics, and fuel-distribution infrastructure. Public materials describe the company as Pittsburgh-based and focused on natural gas, other alternative fuels, and conventional fuel supply. Tiger Infrastructure Partners Fund I closed its initial investment in American Natural's parent platform in 2015 and is the current sponsor identified in public portfolio materials.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2011,
@@ -32438,7 +32504,7 @@ export const companies: PortCo[] = [
     headquarters: "Pennsylvania; Ohio",
     milestones: [
       { date: "2011", event: "Public sources identify American Natural's founding year as 2011.", category: "Founding" },
-      { date: "May 28, 2015", event: "Tiger Infrastructure announced the closing of its investment in American Natural's parent platform.", category: "Financing" },
+      { date: "May 28, 2015", event: "Tiger Infrastructure Partners Fund I closed its investment in American Natural's parent platform.", category: "Financing" },
       { date: "Dec 2017", event: "American Natural announced a series of strategic transactions to support its growth plan.", category: "Other" },
     ],
     sources: [
@@ -32448,7 +32514,7 @@ export const companies: PortCo[] = [
       { label: "PR Newswire — American Natural", url: "https://www.prnewswire.com/news-releases/american-natural-closes-series-of-strategic-transactions-to-facilitate-growth-plan-300568637.html", type: "PRESS_RELEASE" },
     ],
     owners: [
-      { investmentFirm: "Tiger", ownershipVehicle: "Fund I", investmentYear: 2015, status: "Active" },
+      { investmentFirm: "Tiger", ownershipVehicle: "Tiger Infrastructure Partners Fund I", investmentYear: 2015, status: "Active" },
     ],
   },
   {
@@ -32458,8 +32524,8 @@ export const companies: PortCo[] = [
     subsector: "Subsea and terrestrial fiber networks",
     region: "North America",
     country: "Canada / United States",
-    ownershipVehicle: "Fund II",
-    description: "Crosslake Fibre develops and operates subsea and terrestrial fiber networks in North America. Its customers are enterprise, carrier, cloud, and content-network users that require high-capacity connectivity between major metropolitan markets. The operating model is asset-heavy and based on owned long-haul fiber infrastructure and interconnection points. Company materials describe a network with more than 40 points of presence and an initial flagship route linking Toronto, Buffalo, and New York City. Tiger invested in Crosslake in 2017 and remains the sponsor identified in public portfolio materials.",
+    ownershipVehicle: "Tiger Infrastructure Partners Fund II",
+    description: "Crosslake Fibre develops and operates subsea and terrestrial fiber networks in North America. Its customers are enterprise, carrier, cloud, and content-network users that require high-capacity connectivity between major metropolitan markets. The operating model is asset-heavy and based on owned long-haul fiber infrastructure and interconnection points. Company materials describe a network with more than 40 points of presence and an initial flagship route linking Toronto, Buffalo, and New York City. Tiger Infrastructure Partners Fund II invested in Crosslake in 2017 and remains the sponsor identified in public portfolio materials.",
     status: "Active",
     countryTags: ["United States", "Canada"],
     yearFounded: 2016,
@@ -32467,7 +32533,7 @@ export const companies: PortCo[] = [
     headquarters: "Ontario; New York",
     milestones: [
       { date: "2016", event: "Crosslake Fibre was founded.", category: "Founding" },
-      { date: "Dec 2017", event: "Tiger Infrastructure announced its investment in Crosslake Fibre.", category: "Financing" },
+      { date: "Dec 2017", event: "Tiger Infrastructure Partners Fund II invested in Crosslake Fibre.", category: "Financing" },
       { date: "2019", event: "Crosslake launched service on its Toronto-Buffalo-New York route.", category: "Expansion" },
     ],
     sources: [
@@ -32475,9 +32541,10 @@ export const companies: PortCo[] = [
       { label: "Crosslakefibre — Crosslake Fibre", url: "https://crosslakefibre.ca/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Tigerinfrastructure — Crosslake Fibre", url: "https://www.tigerinfrastructure.com/portfolio/Crosslake", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
       { label: "Announcement date source — Tiger — Crosslake Fibre", url: "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/584279_Crosslake_Press_Release_-_Final.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Fund vehicle source — Tiger Infrastructure Partners Fund II — Crosslake Fibre", url: "https://www.fcc.report/IBFS/Public-Notices/1350410", type: "ARTICLE", purpose: "FINANCING_FILINGS" },
     ],
     owners: [
-      { investmentFirm: "Tiger", ownershipVehicle: "Fund II", investmentYear: 2017, status: "Active" },
+      { investmentFirm: "Tiger", ownershipVehicle: "Tiger Infrastructure Partners Fund II", investmentYear: 2017, status: "Active" },
     ],
   },
   {
@@ -32542,8 +32609,8 @@ export const companies: PortCo[] = [
     subsector: "Residential HVAC infrastructure and services",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Fund II",
-    description: "Granite Comfort acquires and partners with residential HVAC contractors across the United States. Its customer base is residential homeowners that use the platform's recurring-payment heating, cooling, and plumbing offering through local operating brands. The operating model combines service operations with installed equipment ownership and a rental-style infrastructure-as-a-service structure. Public materials identify the platform as founded in 2018 and show continued acquisition-driven geographic expansion, including entry into Georgia in 2024. Tiger is the current sponsor identified in public materials for the platform.",
+    ownershipVehicle: "n.a.",
+    description: "Granite Comfort acquires and partners with residential HVAC contractors across the United States. Its customer base is residential homeowners that use the platform's recurring-payment heating, cooling, and plumbing offering through local operating brands. The operating model combines service operations with installed equipment ownership and a rental-style infrastructure-as-a-service structure. Public materials identify the platform as founded in 2018 and show continued acquisition-driven geographic expansion, including entry into Georgia in 2024. Tiger is the current sponsor identified in public materials for the platform, but the reviewed public sources do not identify a distinct fund vehicle for Granite Comfort.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2018,
@@ -32562,7 +32629,7 @@ export const companies: PortCo[] = [
       { label: "Sfnet — Granite Comfort", url: "https://www.sfnet.com/home/industry-data-publications/the-secured-lender/tsl-express-daily-articles-news/tsl-express-daily-articles-news/2024/11/19/granite-comfort-announces-asset-based-credit-facility-to-propel-its-hvac-infrastructure-as-a-service-offering", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Tiger", ownershipVehicle: "Fund II", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "Tiger", ownershipVehicle: "n.a.", investmentYear: 2019, status: "Active" },
     ],
   },
   {
@@ -32628,23 +32695,24 @@ export const companies: PortCo[] = [
     subsector: "Airport cargo infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Fund III",
-    description: "NorthLink Aviation is developing cargo airport infrastructure at Ted Stevens Anchorage International Airport in Alaska. The project is intended for air cargo carriers and logistics users that require dedicated terminal, warehouse, and apron capacity in Anchorage. Its operating model is asset-heavy and concession-based, anchored by a long-term airport lease and phased infrastructure development. Public disclosures describe a 120-acre South Park Campus under a 55-year lease and an initial phase including a 100,000-square-foot multi-tenant air cargo terminal. Tiger announced a controlling investment in 2021 and remains the sponsor identified in public materials.",
+    ownershipVehicle: "Tiger Infrastructure Partners Fund III",
+    description: "NorthLink Aviation is developing cargo airport infrastructure at Ted Stevens Anchorage International Airport in Alaska. The project is intended for air cargo carriers and logistics users that require dedicated terminal, warehouse, and apron capacity in Anchorage. Its operating model is asset-heavy and concession-based, anchored by a long-term airport lease and phased infrastructure development. Public disclosures describe a 120-acre South Park Campus under a 55-year lease and an initial phase including a 100,000-square-foot multi-tenant air cargo terminal. Tiger Infrastructure Partners Fund III announced a controlling investment in 2021 and remains the sponsor identified in public materials.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2021,
     headquarters: "Alaska",
     milestones: [
       { date: "2021", event: "Tiger said the project was based on a 55-year lease for the South Park Campus at Ted Stevens Anchorage International Airport.", category: "Other" },
-      { date: "Nov 2021", event: "Tiger announced its investment in NorthLink Aviation.", category: "Financing" },
+      { date: "Nov 2021", event: "Tiger Infrastructure Partners Fund III announced its investment in NorthLink Aviation.", category: "Financing" },
     ],
     sources: [
       { label: "Tigerinfrastructure — NorthLink Aviation", url: "https://www.tigerinfrastructure.com/portfolio/NorthLink-Aviation", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
       { label: "Announcement date source — Tiger — NorthLink Aviation", url: "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-announces-investment-in-northlink-aviation-to-fund-construction-of-air-cargo-terminal-at-the-ted-stevens-anchorage-international-airport-301417223.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Fund vehicle source — Tiger Infrastructure Partners Fund III — NorthLink Aviation", url: "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Northlinkaviation — NorthLink Aviation", url: "https://www.northlinkaviation.com/documents/FG/northlinkaviation/news/615095_Tiger_NorthLink_Press_Release_vFinal.pdf", type: "PRESENTATION" },
     ],
     owners: [
-      { investmentFirm: "Tiger", ownershipVehicle: "Fund III", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Tiger", ownershipVehicle: "Tiger Infrastructure Partners Fund III", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -32681,8 +32749,8 @@ export const companies: PortCo[] = [
     subsector: "In-building wireless infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Fund II",
-    description: "Strategic Venue Partners designs, finances, owns, and operates in-building wireless infrastructure for venues and property owners. Its customers are real estate owners, venues, wireless carriers, and enterprise users that need distributed antenna systems, Wi-Fi, fiber, and public-safety communications infrastructure without self-funding the installation. The operating model is asset-heavy and contract-based, with the company funding and owning systems under long-term venue agreements. Public materials describe the platform as established in 2018, while Tiger Infrastructure identifies 2019 as its initial Fund II investment year. In December 2024, Brookfield Asset Management acquired a minority equity interest from existing investors as part of a recapitalization.",
+    ownershipVehicle: "Tiger Infrastructure Partners Fund II",
+    description: "Strategic Venue Partners designs, finances, owns, and operates in-building wireless infrastructure for venues and property owners. Its customers are real estate owners, venues, wireless carriers, and enterprise users that need distributed antenna systems, Wi-Fi, fiber, and public-safety communications infrastructure without self-funding the installation. The operating model is asset-heavy and contract-based, with the company funding and owning systems under long-term venue agreements. Public materials describe the platform as established in 2018, while Tiger Infrastructure identifies 2019 as its initial Tiger Infrastructure Partners Fund II investment year. In December 2024, Brookfield Asset Management acquired a minority equity interest from existing investors as part of a recapitalization.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2018,
@@ -32690,7 +32758,7 @@ export const companies: PortCo[] = [
     headquarters: "United States (multi-state)",
     milestones: [
       { date: "2018", event: "Strategic Venue Partners launched as a wireless infrastructure platform.", category: "Founding" },
-      { date: "2019", event: "Tiger Infrastructure made its initial Fund II investment in Strategic Venue Partners.", category: "Financing" },
+      { date: "2019", event: "Tiger Infrastructure Partners Fund II made its initial investment in Strategic Venue Partners.", category: "Financing" },
       { date: "Feb 2019", event: "Strategic Venue Partners announced the formation of a new holding company for its wireless infrastructure assets with equity backing from Tiger Infrastructure.", category: "Other" },
       { date: "Dec 2024", event: "Strategic Venue Partners announced financial transactions that included Tiger's minority investment from Brookfield.", category: "Financing" },
     ],
@@ -32701,7 +32769,7 @@ export const companies: PortCo[] = [
       { label: "Strategicvenue — Strategic Venue Partners", url: "https://www.strategicvenue.com/strategic-venue-partners-announces-financial-transactions/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Tiger", ownershipVehicle: "Fund II", investmentYear: 2019, status: "Active" },
+      { investmentFirm: "Tiger", ownershipVehicle: "Tiger Infrastructure Partners Fund II", investmentYear: 2019, status: "Active" },
     ],
   },
   {
@@ -32711,7 +32779,7 @@ export const companies: PortCo[] = [
     subsector: "Microgrids and energy-as-a-service",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Fund III",
+    ownershipVehicle: "Tiger Infrastructure Partners Fund III",
     description: "Unison Energy designs, builds, owns, operates, and maintains behind-the-meter microgrids for commercial and industrial customers. Its customer base includes data centers, healthcare facilities, campuses, industrial sites, and other users that require resilient onsite energy infrastructure. The operating model is asset-heavy and contract-based, with Unison providing energy-as-a-service rather than selling equipment only. Company materials describe the platform as fully integrated across development, construction, ownership, and operations. Tiger completed its acquisition-backed growth investment in 2024 and is the current sponsor identified in public materials.",
     status: "Active",
     countryTags: ["United States"],
@@ -32719,7 +32787,7 @@ export const companies: PortCo[] = [
     headquarters: "Connecticut",
     milestones: [
       { date: "2024", event: "Tiger described Unison as a fully integrated energy-as-a-service microgrid platform.", category: "Other" },
-      { date: "Jun 2024", event: "Tiger closed its growth capital investment and acquisition of Unison Energy.", category: "Acquisition" },
+      { date: "Jun 2024", event: "Tiger Infrastructure Partners Fund III closed its growth capital investment and acquisition of Unison Energy.", category: "Acquisition" },
     ],
     sources: [
       { label: "Unisonenergy — Unison Energy", url: "https://unisonenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -32728,7 +32796,7 @@ export const companies: PortCo[] = [
       { label: "Close date source — Tiger — Unison Energy", url: "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-growth-capital-investment-with-the-acquisition-of-unison-energy-a-fully-integrated-energy-as-a-service-microgrid-platform-302173823.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
-      { investmentFirm: "Tiger", ownershipVehicle: "Fund III", investmentYear: 2024, status: "Active" },
+      { investmentFirm: "Tiger", ownershipVehicle: "Tiger Infrastructure Partners Fund III", investmentYear: 2024, status: "Active" },
     ],
   },
   {
@@ -32924,14 +32992,14 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "n.a.",
-    description: "Summit Carbon Solutions is developing a carbon capture, transportation, and permanent sequestration system for ethanol plants and other industrial facilities in the Midwest. Its end market is the low-carbon fuels and industrial decarbonization value chain, with customers that need lower lifecycle carbon intensity and permanent CO2 storage. The company follows an asset-heavy infrastructure model built around pipeline transportation and geological sequestration rather than a services-only offering. Public disclosures describe a system of about 2,000 miles of pipeline designed to capture up to 20 million tons of carbon dioxide per year across Iowa, Minnesota, Nebraska, South Dakota, and North Dakota. TPG Rise Climate invested $300 million in May 2022 as part of Summit's more than $1 billion equity raise alongside existing sponsors including Tiger Infrastructure Partners and Continental Resources.",
+    description: "Summit Carbon Solutions is developing a carbon capture, transportation, and permanent sequestration system for ethanol plants and other industrial facilities in the Midwest. Its end market is the low-carbon fuels and industrial decarbonization value chain, with customers that need lower lifecycle carbon intensity and permanent CO2 storage. The company follows an asset-heavy infrastructure model built around pipeline transportation and geological sequestration rather than a services-only offering. Public disclosures describe a system of about 2,000 miles of pipeline designed to capture up to 20 million tons of carbon dioxide per year across Iowa, Minnesota, Nebraska, South Dakota, and North Dakota. TPG Rise Climate invested $300 million in May 2022 as part of Summit's more than $1 billion equity raise alongside existing sponsors including Tiger Infrastructure Partners Fund III and Continental Resources.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2022,
     headquarters: "Iowa, Minnesota, Nebraska, North Dakota, and South Dakota",
     milestones: [
       { date: "Dec 2019", event: "Summit Agricultural Group announced the creation of Summit Carbon Solutions.", category: "Founding" },
-      { date: "Apr 20, 2021", event: "Tiger Infrastructure announced an agreement to invest in Summit Carbon Solutions.", category: "Financing" },
+      { date: "Apr 20, 2021", event: "Tiger Infrastructure Partners Fund III announced an agreement to invest in Summit Carbon Solutions.", category: "Financing" },
       { date: "May 2022", event: "SK E&S agreed to acquire a 10% stake in Summit Carbon Solutions for $110 million.", category: "Acquisition" },
       { date: "May 2022", event: "Summit announced more than $1 billion of equity commitments, including $300 million from TPG Rise Climate.", category: "Financing" },
       { date: "Apr 2022", event: "Summit Carbon Solutions announced Tiger Infrastructure's investment.", category: "Financing" },
@@ -32942,12 +33010,13 @@ export const companies: PortCo[] = [
       { label: "Summitag — Summit Carbon Solutions", url: "https://www.summitag.com/summit-carbon-solutions-announces-successful-completion-of-1-billion-equity-raise-following-300-million-investment-from-tpg-rise-climate/", type: "ARTICLE" },
       { label: "Tigerinfrastructure — Summit Carbon Solutions", url: "https://www.tigerinfrastructure.com/portfolio/Summit-Carbon-Solutions", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
       { label: "Announcement date source — Tiger — Summit Carbon Solutions", url: "https://www.tigerinfrastructure.com/documents/FG/tigerNew/news/611388_SCS_Press_Release___Tiger___2021_04_20.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Fund vehicle source — Tiger Infrastructure Partners Fund III — Summit Carbon Solutions", url: "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Follow-on investment source — Tiger — Summit Carbon Solutions", url: "https://www.prnewswire.com/news-releases/summit-carbon-solutions-announces-investment-from-tiger-infrastructure-partners-301517587.html", type: "PRESS_RELEASE" },
       { label: "Summitag — Summit Carbon Solutions", url: "https://www.summitag.com/summit-carbon-solutions/", type: "ARTICLE" },
     ],
     owners: [
       { investmentFirm: "TPG", ownershipVehicle: "n.a.", investmentYear: 2022, status: "Active" },
-      { investmentFirm: "Tiger", ownershipVehicle: "Fund III", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Tiger", ownershipVehicle: "Tiger Infrastructure Partners Fund III", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -33705,7 +33774,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Sustainable Asset Fund III",
-    description: "Earthrise Energy acquires, owns, and operates power generation assets while developing renewable projects that reuse existing transmission infrastructure. Its customers are wholesale power markets and grid operators that require flexible reliability services, as well as communities and offtakers connected to new renewable projects under development. The company follows an asset-heavy independent power producer model with a base of operating peaker plants and a contracted and development-oriented renewable pipeline. Public materials state that Earthrise owns nearly 1.7 gigawatts of natural gas peaking plants and is developing more than 1.5 gigawatts of renewable projects, with operations concentrated in Illinois. Vision Ridge backs the platform, which raised more than $250 million of debt financing in 2022 and continues to position legacy thermal assets for renewable buildout.",
+    description: "Earthrise Energy acquires, owns, and operates power generation assets while developing renewable projects that reuse existing transmission infrastructure. Its customers are wholesale power markets and grid operators that require flexible reliability services, as well as communities and offtakers connected to new renewable projects under development. The company follows an asset-heavy independent power producer model with a base of operating peaker plants and a contracted and development-oriented renewable pipeline. Public materials state that Earthrise owns nearly 1.7 gigawatts of natural gas peaking plants and is developing more than 1.5 gigawatts of renewable projects, with operations concentrated in Illinois. Sustainable Asset Fund III backs the platform, which raised more than $250 million of debt financing in 2022 and continues to position legacy thermal assets for renewable buildout.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2022,
@@ -33720,6 +33789,7 @@ export const companies: PortCo[] = [
       { label: "Earthriseenergy — Earthrise Energy", url: "https://earthriseenergy.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Earthriseenergy — Earthrise Energy", url: "https://earthriseenergy.com/who-we-are/", type: "ARTICLE" },
       { label: "Investment date source — Vision Ridge — Earthrise Energy", url: "https://earthriseenergy.com/2022/12/20/earthrise-energy-secures-more-than-250-million-in-debt-financing/", type: "ARTICLE", purpose: "FINANCING_FILINGS" },
+      { label: "Fund vehicle source — Sustainable Asset Fund III — Earthrise Energy", url: "https://www.wsj.com/articles/vision-ridge-raises-700-million-for-third-sustainable-asset-fund-11618834014", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Vision Ridge — Earthrise Energy", url: "https://vision-ridge.com/investments/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
@@ -33757,7 +33827,6 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "Vision Ridge", ownershipVehicle: "Sustainable Asset Fund II", investmentYear: 2018, status: "Active" },
-      { investmentFirm: "Vision Ridge", ownershipVehicle: "Sustainable Asset Fund II", investmentYear: 2018, status: "Active" },
     ],
   },
   {
@@ -33767,7 +33836,7 @@ export const companies: PortCo[] = [
     subsector: "Electric fleet and school bus electrification services",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Sustainable Asset Fund II",
+    ownershipVehicle: "n.a.",
     description: "Highland Electric Fleets finances, deploys, and manages electric school bus and other fleet electrification programs for school districts, municipalities, and fleet operators. Its offering bundles vehicles, charging infrastructure, construction, financing, operations, and maintenance under long-term electrification-as-a-service contracts. The platform is asset-heavy and contracted, with infrastructure ownership and service revenues tied to fleet deployments rather than to one-time vehicle sales alone. Public materials describe Highland as operating across North America and focusing on school transportation and other fleet use cases where charging and fleet operations must be delivered together. Vision Ridge led a $253 million equity investment in 2021, and Highland raised an additional $150 million in 2025 to support continued expansion.",
     status: "Active",
     countryTags: ["United States"],
@@ -33776,7 +33845,7 @@ export const companies: PortCo[] = [
     headquarters: "United States and Canada",
     milestones: [
       { date: "2019", event: "Highland Electric Fleets was founded.", category: "Founding" },
-      { date: "Feb 2021", event: "Vision Ridge led a $253 million equity investment in Highland.", category: "Financing" },
+      { date: "Feb 2021", event: "Vision Ridge led a $253 million equity investment in Highland; the exact fund vehicle was not publicly disclosed in reviewed sources.", category: "Financing" },
       { date: "Sep 2025", event: "Highland was named the official electric school bus provider of the LA28 Olympic and Paralympic Games.", category: "Management" },
       { date: "Dec 2025", event: "Highland announced a $150 million equity investment from Aiga Capital Partners.", category: "Financing" },
     ],
@@ -33788,7 +33857,7 @@ export const companies: PortCo[] = [
       { label: "PR Newswire — Highland Electric Fleets", url: "https://www.prnewswire.com/news-releases/highland-electric-fleets-secures-150-million-equity-investment-from-aiga-capital-partners-to-accelerate-national-expansion-302637254.html", type: "PRESS_RELEASE" },
     ],
     owners: [
-      { investmentFirm: "Vision Ridge", ownershipVehicle: "Sustainable Asset Fund II", investmentYear: 2021, status: "Active" },
+      { investmentFirm: "Vision Ridge", ownershipVehicle: "n.a.", investmentYear: 2021, status: "Active" },
     ],
   },
   {
@@ -33798,19 +33867,25 @@ export const companies: PortCo[] = [
     subsector: "Water rights, storage, and groundwater infrastructure",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Sustainable Asset Fund I & II",
-    description: "Homer is a California water asset platform comprising water in storage, water rights, and related water storage infrastructure. Its end markets are public and private water users that require supply, storage, and water management solutions in a state facing structural water scarcity and groundwater regulation. The platform follows an asset-heavy model built around ownership or control of long-lived water assets rather than an asset-light advisory model. Public disclosures describe the business as a collection of strategic water assets in California, and the platform is managed by Renewable Resources Group, which focuses on land and water infrastructure. Vision Ridge identifies Homer as an active investment, and current public materials indicate that the asset base continues to be managed in partnership with RRG.",
+    ownershipVehicle: "n.a.",
+    description: "Homer is a California water asset platform comprising water in storage, water rights, and related water storage infrastructure. Its end markets are public and private water users that require supply, storage, and water management solutions in a state facing structural water scarcity and groundwater regulation. The platform follows an asset-heavy model built around ownership or control of long-lived water assets rather than an asset-light advisory model. Public disclosures describe the business as a collection of strategic water assets in California, and the platform is managed by Renewable Resources Group, which focuses on land and water infrastructure. A Rockefeller Brothers Fund case study states that Renewable Resources Group established Homer as a Vision Ridge portfolio company in 2011, and current public materials indicate that the asset base continues to be managed in partnership with RRG.",
     status: "Active",
     countryTags: ["United States"],
+    yearFounded: 2011,
+    investmentYear: 2011,
     headquarters: "California",
+    milestones: [
+      { date: "2011", event: "Renewable Resources Group established Homer as a Vision Ridge portfolio company to improve the resilience of California's water system.", category: "Financing" },
+    ],
     sources: [
       { label: "Vision Ridge — Homer", url: "https://vision-ridge.com/investments/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Rrgcapitalmanagement — Homer", url: "https://rrgcapitalmanagement.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Rrgcapitalmanagement — Homer", url: "https://rrgcapitalmanagement.com/investments", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
+      { label: "Investment date source — Vision Ridge — Homer", url: "https://www.rbf.org/sites/default/files/rbf-investing-2020-report-final-pages.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Privateequityinfo — Homer", url: "https://privateequityinfo.com/directory/private-equity-portfolio-company/1/homer", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
-      { investmentFirm: "Vision Ridge", ownershipVehicle: "Sustainable Asset Fund I & II", status: "Active" },
+      { investmentFirm: "Vision Ridge", ownershipVehicle: "n.a.", investmentYear: 2011, status: "Active" },
     ],
   },
   {
@@ -33820,7 +33895,7 @@ export const companies: PortCo[] = [
     subsector: "Distributed energy deployment and energy-as-a-service",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Sustainable Asset Fund I",
+    ownershipVehicle: "n.a.",
     description: "Sparkfund develops and manages distributed energy deployment programs and energy-as-a-service offerings for utilities, energy companies, and building owners. Its customer base spans utilities, energy majors, and large-load or commercial hosts that need distributed assets deployed at scale to support grid and building use cases. The company operates a contracted, service-led model that coordinates program design, host engagement, asset deployment, and value-chain management rather than merchant power sales. Public materials describe more than a decade of operating history and a national role in distributed capacity procurement and other distributed energy resource deployment programs. Vision Ridge invested in the platform and continues to identify Sparkfund as an active portfolio company focused on scaling distributed energy infrastructure in the built environment.",
     status: "Active",
     countryTags: ["United States"],
@@ -33829,7 +33904,7 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "2013", event: "Sparkfund was founded.", category: "Founding" },
-      { date: "2017", event: "Vision Ridge participated in Sparkfund's Series B financing.", category: "Financing" },
+      { date: "2017", event: "Vision Ridge participated in Sparkfund's Series B financing; the exact fund vehicle was not publicly disclosed in reviewed sources.", category: "Financing" },
       { date: "2025", event: "Sparkfund's distributed capacity procurement model was advanced in utility procurement discussions.", category: "Expansion" },
     ],
     sources: [
@@ -33839,7 +33914,7 @@ export const companies: PortCo[] = [
       { label: "Latitudemedia — Sparkfund", url: "https://www.latitudemedia.com/news/xcel-proposes-nations-first-distributed-capacity-procurement-in-minnesota/", type: "ARTICLE" },
     ],
     owners: [
-      { investmentFirm: "Vision Ridge", ownershipVehicle: "Sustainable Asset Fund I", investmentYear: 2017, status: "Active" },
+      { investmentFirm: "Vision Ridge", ownershipVehicle: "n.a.", investmentYear: 2017, status: "Active" },
     ],
   },
   {
@@ -33850,7 +33925,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Sustainable Asset Fund III",
-    description: "TeraWatt Infrastructure develops, owns, and operates charging sites and related energy infrastructure for commercial electric vehicle fleets, autonomous fleets, and heavy-duty transport users. Its customers are fleet operators and logistics users that need property, charging equipment, energy management, and ongoing site operations delivered as a single infrastructure solution. The platform is asset-heavy, with owned and developed real estate, charging systems, and associated energy infrastructure supporting long-term fleet deployment rather than one-time equipment sales. Public materials describe the company as operating the nation's largest portfolio of purpose-built commercial EV charging sites and as expanding in major U.S. freight and fleet corridors. Vision Ridge is one of TeraWatt's backers, and the company raised more than $1 billion in 2022 to accelerate national buildout after emerging publicly in 2021.",
+    description: "TeraWatt Infrastructure develops, owns, and operates charging sites and related energy infrastructure for commercial electric vehicle fleets, autonomous fleets, and heavy-duty transport users. Its customers are fleet operators and logistics users that need property, charging equipment, energy management, and ongoing site operations delivered as a single infrastructure solution. The platform is asset-heavy, with owned and developed real estate, charging systems, and associated energy infrastructure supporting long-term fleet deployment rather than one-time equipment sales. Public materials describe the company as operating the nation's largest portfolio of purpose-built commercial EV charging sites and as expanding in major U.S. freight and fleet corridors. Sustainable Asset Fund III is one of TeraWatt's backers, and the company raised more than $1 billion in 2022 to accelerate national buildout after emerging publicly in 2021.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2021,
@@ -33858,7 +33933,7 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "May 2021", event: "TeraWatt launched publicly.", category: "Founding" },
-      { date: "Sep 2022", event: "TeraWatt announced a capital raise of more than $1 billion with funds managed by Vision Ridge Partners investing alongside Keyframe and Cyrus.", category: "Financing" },
+      { date: "Sep 2022", event: "TeraWatt announced a capital raise of more than $1 billion with Sustainable Asset Fund III investing alongside Keyframe and Cyrus.", category: "Financing" },
       { date: "Sep 13, 2022", event: "TeraWatt announced that funds managed by Vision Ridge Partners invested as part of its more than $1 billion capital raise.", category: "Financing" },
       { date: "Oct 2024", event: "The company opened an EV fleet charging site in the Los Angeles market.", category: "Expansion" },
     ],
@@ -33872,7 +33947,6 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "Vision Ridge", ownershipVehicle: "Sustainable Asset Fund III", investmentYear: 2022, status: "Active" },
-      { investmentFirm: "Vision Ridge", ownershipVehicle: "Sustainable Asset Fund III", investmentYear: 2022, status: "Active" },
     ],
   },
   {
@@ -33883,7 +33957,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Mexico",
     ownershipVehicle: "Sustainable Asset Fund IV",
-    description: "VEMO operates an integrated clean mobility platform that combines electric vehicles, charging infrastructure, and fleet management technology in Mexico. Its customers include ride-hailing drivers, fleet operators, logistics users, and other mobility participants seeking bundled access to EVs, charging, and operational technology. The company uses an integrated and capital-intensive operating model that combines physical charging assets and vehicles with software and data tools for fleet management. Public disclosures describe the platform as founded in Mexico City in 2021 and supported by a growing national charging and fleet deployment footprint. Vision Ridge led a $250 million equity commitment in September 2025 to support VEMO's continued expansion across Mexico.",
+    description: "VEMO operates an integrated clean mobility platform that combines electric vehicles, charging infrastructure, and fleet management technology in Mexico. Its customers include ride-hailing drivers, fleet operators, logistics users, and other mobility participants seeking bundled access to EVs, charging, and operational technology. The company uses an integrated and capital-intensive operating model that combines physical charging assets and vehicles with software and data tools for fleet management. Public disclosures describe the platform as founded in Mexico City in 2021 and supported by a growing national charging and fleet deployment footprint. Vision Ridge's Sustainable Asset Fund IV led a $250 million equity commitment in September 2025 to support VEMO's continued expansion across Mexico.",
     status: "Active",
     countryTags: ["Mexico"],
     yearFounded: 2021,
@@ -33891,11 +33965,12 @@ export const companies: PortCo[] = [
     headquarters: "Mexico",
     milestones: [
       { date: "2021", event: "VEMO was founded in Mexico City.", category: "Founding" },
-      { date: "Sep 2025", event: "Vision Ridge led a $250 million equity commitment to VEMO.", category: "Financing" },
+      { date: "Sep 2025", event: "Vision Ridge's Sustainable Asset Fund IV led a $250 million equity commitment to VEMO.", category: "Financing" },
     ],
     sources: [
       { label: "Vemovilidad — VEMO", url: "https://vemovilidad.com/en/", type: "ARTICLE" },
       { label: "Investment date source — Vision Ridge — VEMO", url: "https://vemovilidad.com/en/vemo-announces-us250-million-commitment-led-by-vision-ridge-partners-to-accelerate-clean-mobility-expansion/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Fund vehicle source — Sustainable Asset Fund IV — VEMO", url: "https://www.streetinsider.com/Business%2BWire/Vision%2BRidge%2BPartners%2BRaises%2B~%242.4%2BBillion%2Bfor%2BFlagship%2BSustainable%2BReal%2BAssets%2BStrategy/25980007.html", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Vision Ridge — VEMO", url: "https://vision-ridge.com/investments/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Evinfrastructurenews — VEMO", url: "https://www.evinfrastructurenews.com/ev-fleet-charging/vemo-lands-us-250-million-for-mexican-expansion", type: "ARTICLE" },
     ],
@@ -33911,7 +33986,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "United States",
     ownershipVehicle: "Sustainable Asset Fund II",
-    description: "Vision RNG develops, designs, builds, owns, and operates landfill gas infrastructure that converts waste emissions into pipeline-grade renewable natural gas and related energy products. Its customers and counterparties include landfill owners, gas offtakers, and utilities seeking contracted renewable gas supply and emissions reduction solutions. The company follows an asset-heavy model based on owned gas collection, processing, and interconnection infrastructure supported by long-term operating and offtake arrangements. Vision Ridge committed an initial $100 million to establish the platform in 2021, and Vision RNG has since continued adding project agreements in the landfill gas market. The platform was created in 2021 with Vision Ridge backing and remains an active energy transition investment focused on converting landfill gas into renewable fuel infrastructure.",
+    description: "Vision RNG develops, designs, builds, owns, and operates landfill gas infrastructure that converts waste emissions into pipeline-grade renewable natural gas and related energy products. Its customers and counterparties include landfill owners, gas offtakers, and utilities seeking contracted renewable gas supply and emissions reduction solutions. The company follows an asset-heavy model based on owned gas collection, processing, and interconnection infrastructure supported by long-term operating and offtake arrangements. Sustainable Asset Fund II committed an initial $100 million to establish the platform in 2021, and Vision RNG has since continued adding project agreements in the landfill gas market. The platform was created in 2021 with Vision Ridge backing and remains an active energy transition investment focused on converting landfill gas into renewable fuel infrastructure.",
     status: "Active",
     countryTags: ["United States"],
     yearFounded: 2021,
@@ -33919,7 +33994,7 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "2021", event: "Vision RNG launched as a landfill gas-to-RNG platform.", category: "Founding" },
-      { date: "Sep 2021", event: "Vision Ridge announced a $100 million commitment to establish Vision RNG.", category: "Financing" },
+      { date: "Sep 2021", event: "Sustainable Asset Fund II announced a $100 million commitment to establish Vision RNG.", category: "Financing" },
       { date: "Mar 2024", event: "The company announced an agreement covering three landfill gas-to-RNG facilities.", category: "Other" },
       { date: "Nov 2024", event: "Vision RNG announced an RNG agreement for a Waste Connections landfill project in Nebraska.", category: "Other" },
     ],
@@ -34056,7 +34131,6 @@ export const companies: PortCo[] = [
     ],
     owners: [
       { investmentFirm: "Wren House", ownershipVehicle: "n.a.", investmentYear: 2020, status: "Active" },
-      { investmentFirm: "T-Mobile", ownershipVehicle: "50/50 fiber joint venture with Wren House", investmentYear: 2026, stake: "50%", status: "Active" },
     ],
   },
   {

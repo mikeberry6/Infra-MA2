@@ -1,4 +1,4 @@
-# Current Owner Fund Verification Audit - 2026-05-11
+# Current Owner Fund Verification Audit - 2026-05-13
 
 ## Scope And Reconciliation
 
@@ -7,57 +7,44 @@ This audit reviews active/current ownership periods from `prisma/seed-data/compa
 | Check | Count |
 | --- | ---: |
 | Portfolio companies in seed data | 1169 |
-| Active owner records extracted | 1336 |
-| CSV audit rows produced | 1336 |
-| Unique current owners / investment firms | 108 |
-| Companies with multiple active owners | 130 |
-| Rows with at least one evidence URL | 1336 |
+| Active owner records extracted | 1318 |
+| CSV audit rows produced | 1318 |
+| Unique current owners / investment firms | 107 |
+| Companies with multiple active owners | 117 |
+| Rows with at least one evidence URL | 1318 |
 | Rows without evidence URL | 0 |
 
 ## Result Counts
 
 | Result status | Rows |
 | --- | --- |
-| Verified fund | 81 |
-| Verified fund - missing from funds list | 515 |
-| Disclosed but generic | 49 |
-| n.a. | 541 |
-| Needs user review | 150 |
+| Verified fund | 239 |
+| Verified fund - missing from funds list | 353 |
+| Disclosed but generic | 137 |
+| n.a. | 589 |
+| Needs user review | 0 |
 
 ## Confidence Counts
 
 | Confidence | Rows |
 | --- | --- |
-| High | 1121 |
-| Medium | 65 |
-| Low | 150 |
+| High | 1169 |
+| Medium | 149 |
+| Low | 0 |
 
 ## Proposed Action Buckets
 
 | Action bucket | Rows |
 | --- | --- |
-| No action | 619 |
-| Review fund-list add/alias | 515 |
-| Manual review | 150 |
-| Review generic disclosure | 49 |
-| Review ownershipVehicle replacement | 3 |
+| No action | 928 |
+| Review fund-list add/alias | 353 |
+| Review generic disclosure | 28 |
+| Review ownershipVehicle replacement | 9 |
 
 ## Needs User Review Concentration
 
 | Investment firm | Rows |
 | --- | --- |
-| Fengate Asset Management | 19 |
-| Carlyle Infrastructure | 10 |
-| Tiger | 9 |
-| ECP | 8 |
-| InfraRed Capital Partners | 8 |
-| Macquarie Asset Management | 7 |
-| Antin Infrastructure Partners | 6 |
-| Vision Ridge | 6 |
-| Apollo Global Management | 4 |
-| Astatine Investment Partners | 4 |
-| IFM Investors | 4 |
-| OTPP | 4 |
 
 ## Method Notes
 
@@ -69,6 +56,6 @@ This audit reviews active/current ownership periods from `prisma/seed-data/compa
 
 ## Recommended Follow-Up Batches
 
-1. Review `Needs user review` rows by investment firm, starting with the concentration table above.
+1. No `Needs user review` rows remain in the current-owner audit.
 2. Review `Verified fund - missing from funds list` rows for fund-list additions or aliases so strategy badges can appear where appropriate.
 3. Review `Disclosed but generic` rows and decide whether generic account/client-pool language should remain visible or become `n.a.`.

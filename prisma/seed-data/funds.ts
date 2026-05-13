@@ -403,9 +403,13 @@ const FUND_SOURCE_URLS: Record<string, string[]> = {
   "FUND-002": ["https://www.3i.com/infrastructure/our-funds/"],
   "FUND-005": ["https://www.internationalpublicpartnerships.com/"],
   "FUND-006": ["https://ancala.com/ancala-announces-final-close-of-third-flagship-infrastructure-fund/"],
+  "FUND-006A": ["https://financialreports.eu/filings/835156/content/"],
+  "FUND-006B": ["https://financialreports.eu/filings/835156/content/"],
+  "FUND-006C": ["https://financialreports.eu/filings/835156/content/"],
   "FUND-007": ["https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-closes-flagship-fund-v-above-e10-billion-target"],
   "FUND-008": ["https://www.antin-ip.com/media/our-news/antin-infrastructure-partners-closes-inaugural-mid-cap-fund-e22-billion-hard-cap"],
   "FUND-009": ["https://www.antin-ip.com/media/our-news/antin-holds-final-close-on-inaugural-nextgen-fund-at-e1-2-billion-target"],
+  "FUND-010A": ["https://www.apollo.com/insights-news/pressreleases/2022/01/apollo-closes-second-dedicated-infrastructure-fund-with-more-than-2-5-billion-in-capital-commitments-130444186"],
   "FUND-011": ["https://www.apollo.com/wealth/strategies/products/apollo-infrastructure-company"],
   "FUND-012": ["https://www.apollo.com/institutional/insights-news/pressreleases/2023/04/apollo-launches-clean-transition-capital-strategy-to-support-firmwide-target-to-deploy-50-billion-by-2027-2654978"],
   "FUND-013": ["https://www.sec.gov/Archives/edgar/data/2002112/000095014224002977/xslFormDX01/primary_doc.xml"],
@@ -414,6 +418,7 @@ const FUND_SOURCE_URLS: Record<string, string[]> = {
   "FUND-016": ["https://www.arapartners.com/what-we-do/strategies/energy/"],
   "FUND-017": ["https://www.arapartners.com/news/ara-partners-reaches-final-close-for-inaugural-infrastructure-fund-surpassing-target/"],
   "FUND-018": ["https://www.prnewswire.com/news-releases/arclight-announces-final-fund-viii-close-of-3-9-billion-302734967.html"],
+  "FUND-018A": ["https://www.ardian.com/sites/default/files/2020-04/PR-Americas-Infrastructure-Fund-IV-20180514-ENG.pdf"],
   "FUND-019": ["https://www.ardian.com/press-releases/ardian-closes-its-second-generation-americas-infrastructure-fund-us21bn"],
   "FUND-020": ["https://www.ardian.com/news-insights/press-releases/ardian-raises-20bn-power-essential-european-infrastructure"],
   "FUND-021": ["https://www.areswms.com/solutions/aci"],
@@ -426,6 +431,7 @@ const FUND_SOURCE_URLS: Record<string, string[]> = {
   "FUND-031": ["https://www.sec.gov/Archives/edgar/data/1936264/000193626423000001/xslFormDX01/primary_doc.xml"],
   "FUND-032": ["https://www.businesswire.com/news/home/20221024005921/en/BlackRock-Global-Infrastructure-Fund-IV-Raises-US%244.5-Billion-at-First-Close"],
   "FUND-033": ["https://www.sec.gov/Archives/edgar/data/2003071/000204912525000006/xslFormDX01/primary_doc.xml"],
+  "FUND-033A": ["https://www.businesswire.com/news/home/20231115151975/en/BlackRocks-Evergreen-Infrastructure-Fund-Partners-with-European-Institutional-Investors-to-Invest-in-Energy-Transition-and-Energy-Security"],
   "FUND-034": ["https://www.global-infra.com/about/"],
   "FUND-035": ["https://www.sec.gov/Archives/edgar/data/2077639/000207763925000001/xslFormDX01/primary_doc.xml"],
   "FUND-036": ["https://www.sec.gov/Archives/edgar/data/1950567/000195056725000002/xslFormDX01/primary_doc.xml"],
@@ -437,6 +443,7 @@ const FUND_SOURCE_URLS: Record<string, string[]> = {
   "FUND-042": ["https://www.sec.gov/Archives/edgar/data/2112720/000211272026000001/xslFormDX01/primary_doc.xml"],
   "FUND-043": ["https://ir.blueowl.com/Investors/news/news-details/2025/Blue-Owl-Capital-Announces-7-Billion-Final-Close-for-Digital-Infrastructure-Fund/default.aspx"],
   "FUND-044": ["https://bam.brookfield.com/press-releases/brookfield-launches-100-billion-ai-infrastructure-program"],
+  "FUND-044A": ["https://bam.brookfield.com/press-releases/brookfield-announces-10-billion-first-closing-second-brookfield-global-transition"],
   "FUND-045": ["https://bam.brookfield.com/press-releases/brookfield-raises-20-billion-record-transition-fund"],
   "FUND-046": ["https://bam.brookfield.com/press-releases/brookfield-raises-record-30-billion-flagship-infrastructure-strategy"],
   "FUND-047": ["https://privatewealth.brookfield.com/fund/brookfield-infrastructure-income-fund-0"],
@@ -445,11 +452,20 @@ const FUND_SOURCE_URLS: Record<string, string[]> = {
   "FUND-050": ["https://www.sec.gov/Archives/edgar/data/1742013/000174201325000002/xslFormDX01/primary_doc.xml"],
   "FUND-051": ["https://www.carlyle.com/media-room/news-release-archive/carlyle-group-raises-22-billion-global-infrastructure-opportunity"],
   "FUND-052": ["https://www.sec.gov/Archives/edgar/data/2075288/000207528825000001/xslFormDX01/primary_doc.xml"],
+  "FUND-053A": [
+    "https://www.sec.gov/Archives/edgar/data/1792361/000179236119000001/xslFormDX01/primary_doc.xml",
+    "https://www.carlyle.com/media-room/news-release-archive/carlyle-group-partner-alchemy-renewable-energy",
+  ],
   "FUND-053": ["https://www.sec.gov/Archives/edgar/data/1933884/000193388423000002/xslFormDX01/primary_doc.xml"],
   "FUND-054": ["https://www.cbreim.com/strategies-and-solutions/investment/private-infrastructure"],
   "FUND-055": ["https://www.sec.gov/Archives/edgar/data/1900624/000190062423000003/xslFormDX01/primary_doc.xml"],
+  "FUND-056A": ["https://www.cip.com/funds/flagship-funds/"],
   "FUND-056": ["https://www.cip.com/funds/flagship-funds/"],
   "FUND-057": ["https://cclinfrastructure.cclgroup.com/"],
+  "FUND-059A": ["https://www.cvcdif.com/about-us"],
+  "FUND-059B": ["https://www.cvcdif.com/about-us"],
+  "FUND-059C": ["https://www.cvcdif.com/about-us"],
+  "FUND-059D": ["https://www.cvcdif.com/about-us"],
   "FUND-059": ["https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds"],
   "FUND-060": ["https://www.cvcdif.com/news-insights/dif-capital-partners-raises-eur-68-billion-for-its-latest-infrastructure-funds"],
   "FUND-061": [
@@ -467,6 +483,7 @@ const FUND_SOURCE_URLS: Record<string, string[]> = {
   "FUND-066": ["https://www.ecpgp.com/about/news-and-insights/press-releases/2024/energy-capital-partners-ecp-completes-67-billion-fundraise"],
   "FUND-068": ["https://www.sec.gov/Archives/edgar/data/1712778/000171277818000003/xslFormDX01/primary_doc.xml"],
   "FUND-069": ["https://energy-infrastructure-partners.com/products/"],
+  "FUND-069A": ["https://ember-infra.com/e/ember-closes-fund-i"],
   "FUND-070": ["https://www.sec.gov/Archives/edgar/data/1991445/000199144525000002/xslFormDX01/primary_doc.xml"],
   "FUND-071": ["https://eqtgroup.com/news/eqt-active-core-infrastructure-fund-holds-final-close-2024-09-24"],
   "FUND-072": ["https://eqtgroup.com/news/eqt-ab-publ-q1-annoucement-2026-2026-04-22"],
@@ -483,6 +500,8 @@ const FUND_SOURCE_URLS: Record<string, string[]> = {
   "FUND-077": ["https://fengate.com/news/fengate-announces-final-close-of-us1-1-billion-flagship-infrastructure-fund-above-target"],
   "FUND-078": ["https://www.fierainfrastructure.com/wp-content/uploads/default/20240529/assetco-successfully-completes-exit-from-infrastructure-asset-management-business-en.pdf"],
   "FUND-079": ["https://www.fierainfrastructure.com/en/strategies/eaglecrest-infrastructure/"],
+  "FUND-079A": ["https://www.fierainfrastructure.com/en/assets/captis-energy/"],
+  "FUND-079B": ["https://www.fierainfrastructure.com/en/portfolio/"],
   "FUND-080": ["https://www.gcmgrosvenor.com/2025/04/22/gcm-grosvenor-announces-1-3-billion-final-close-for-infrastructure-advantage-fund-ii-a-nearly-50-increase-over-its-predecessor-fund/"],
   "FUND-081": ["https://generatecapital.com/"],
   "FUND-083": ["https://graingp.com/about/"],
@@ -511,6 +530,8 @@ const FUND_SOURCE_URLS: Record<string, string[]> = {
   ],
   "FUND-098": ["https://www.igneoip.com/australia/en/institutional/news-and-insights/press/igneo-refinances-green-tranche-credit-facility.html"],
   "FUND-099": ["https://www.sec.gov/Archives/edgar/data/2036260/000203626025000003/xslFormDX01/primary_doc.xml"],
+  "FUND-099A": ["https://www.carlyle.com/media-room/news-release-archive/amp-capital-makes-landmark-deal-us-its-conglobal-acquisition"],
+  "FUND-099B": ["https://www.theasset.com/article/39539/amp-capital-global-infrastructure-fund-ii-closes-at-us-3-4-billion"],
   "FUND-100": [
     "https://www.infrabridge.com/",
     "https://www.infrabridge.com/news/2023-02-03-digitalbridge-completes-acquisition-of-amp-capital-global-infrastructure-equity-investment-management-business",
@@ -534,14 +555,20 @@ const FUND_SOURCE_URLS: Record<string, string[]> = {
   "FUND-108": ["https://kseries.kkr.com/infrastructure/"],
   "FUND-109": ["https://www.wrenhouseinfra.com/"],
   "FUND-111": ["https://www.macquarie.com/au/en/about/company/macquarie-asset-management/financial-advisor/investments/unlisted-infrastructure.html"],
+  "FUND-111A": ["https://www.macquarie.com/li/en/about/news/2014/mira-closes-fourth-north-american-infrastructure-fund-with-3billion-in-commitments-taking-global-fundraising-to-11billion-in-two-years.html"],
+  "FUND-111B": ["https://www.macquarie.com/li/en/about/news/2019/mira-closes-macquarie-infrastructure-partners-iv-with-5-billion-in-commitments.html"],
+  "FUND-111C": ["https://www.macquarie.com/id/en/about/news/2021/macquarie-asset-management-closes-sixth-americas-infrastructure-fund-with-6-9-billion-usd-in-commitments.html"],
   "FUND-112": ["https://www.greeninvestmentgroup.com/en/news/2024/macquarie-green-energy-and-climate-opportunities-fund-acquires-p.html"],
   "FUND-113": ["https://www.macquarie.com/ph/en/about/news/2025/macquarie-asset-management-reaches-us3-billion-close-of-green-energy-transition-solutions-fund-and-co-investment-commitment.html"],
   "FUND-114": ["https://www.macquarie.com/au/en/about/company/macquarie-asset-management/financial-advisor/investments/unlisted-infrastructure.html"],
   "FUND-115": ["https://www.businesswire.com/news/home/20250617787003/en/Macquarie-Asset-Management-Closes-Macquarie-Infrastructure-Partners-VI-With-Over-%24US8-Billion-of-Total-Fund-and-Co-Investment-Commitments"],
   "FUND-116": ["https://www.sec.gov/Archives/edgar/data/2123130/000212313026000001/xslFormDX01/primary_doc.xml"],
+  "FUND-117A": ["https://www.manulifeim.com/institutional/global/en/strategies/private-markets/infrastructure/infrastructure-team"],
+  "FUND-117B": ["https://www.manulifeim.com/institutional/global/en/about-us/press-releases/manulife-investment-management-closes-us-4-65b-infrastructure-fund"],
   "FUND-117": ["https://www.prnewswire.com/news-releases/manulife-investment-managements-infrastructure-fund-iii-reaches-us-5-5-billion-in-an-oversubscribed-close-302578671.html"],
   "FUND-118": ["https://www.meridiam.com/news/meridiam-successfully-closes-mina-iv-its-flagship-north-america-infrastructure-fund-raising-more-than-1-8-billion/"],
   "FUND-119": ["https://www.morganstanley.com/press-releases/msim-closes-fourth-global-infrastructure-fund"],
+  "FUND-119A": ["https://brazosmidstream.com/news/brazos-midstream-completes-sale-delaware-basin-subsidiaries-morgan-stanley-infrastructure"],
   "FUND-120": ["https://infratil.com/"],
   "FUND-121": ["https://morrisonglobal.com/"],
   "FUND-122": ["https://morrisonglobal.com/sites/mn/assets/Form-21-3_Explanatory-Document_B.pdf"],
@@ -567,6 +594,15 @@ const FUND_SOURCE_URLS: Record<string, string[]> = {
   "FUND-140": ["https://www.swisslife-am.com/en/home/media/news/switzerland/institutional/2023/0502-infrastructure-fund.html"],
   "FUND-141": ["https://www.swisslife-am.com/en/home/media/news/corporate/company-news/2024/0704-gio-4.html"],
   "FUND-142": ["https://www.sec.gov/Archives/edgar/data/2017078/000201707825000003/xslFormDX01/primary_doc.xml"],
+  "FUND-143A": ["https://www.tigerinfrastructure.com/portfolio/American-Natural"],
+  "FUND-143B": [
+    "https://www.sec.gov/Archives/edgar/data/1695127/000169512718000001/xslFormDX01/primary_doc.xml",
+    "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-announces-fund-ii-sale-of-fbo-leader-modern-aviation-301976481.html",
+  ],
+  "FUND-143C": [
+    "https://www.prnewswire.com/news-releases/tiger-infrastructure-partners-fund-iii-closes-at-1-25-billion-hard-cap-reflecting-investor-demand-for-its-innovative-growth-capital-strategy-301531549.html",
+    "https://www.sec.gov/Archives/edgar/data/1822453/000182245320000002/xslFormDX01/primary_doc.xml",
+  ],
   "FUND-144": ["https://www.sec.gov/Archives/edgar/data/1995540/000199554025000003/xslFormDX01/primary_doc.xml"],
   "FUND-145": [
     "https://www.sec.gov/Archives/edgar/data/1985097/000198509724000001/xslFormDX01/primary_doc.xml",
@@ -579,6 +615,8 @@ const FUND_SOURCE_URLS: Record<string, string[]> = {
   ],
   "FUND-147": ["https://www.ullico.com/products/ullico-infrastructure-fund/"],
   "FUND-148": ["https://vauban-ip.com/en/about-us"],
+  "FUND-148A": ["https://www.businesswire.com/news/home/20200917005289/en/Vision-Ridge-Partners-Announces-Final-Close-of-Sustainable-Asset-Fund-II"],
+  "FUND-148B": ["https://www.wsj.com/articles/vision-ridge-raises-700-million-for-third-sustainable-asset-fund-11618834014"],
   "FUND-149": ["https://www.streetinsider.com/Business%2BWire/Vision%2BRidge%2BPartners%2BRaises%2B~%242.4%2BBillion%2Bfor%2BFlagship%2BSustainable%2BReal%2BAssets%2BStrategy/25980007.html"],
   "FUND-150": ["https://www.sec.gov/Archives/edgar/data/1971296/000197129625000002/xslFormDX01/primary_doc.xml"],
 };
@@ -630,7 +668,7 @@ function f(
   };
 }
 
-// ─── Fund Manifest (150 funds) ──────────────────────────────
+// ─── Fund Manifest (169 funds) ──────────────────────────────
 // ─── End Manifest ──────────────────────────────────────────
 
 export const funds: Fund[] = [
@@ -681,7 +719,22 @@ export const funds: Fund[] = [
   }),
 
   // ── Antin Infrastructure Partners ─────────────────────────
-  f("FUND-007", "Antin Infrastructure Partners", "Antin Flagship Fund 5", "2022", "€10.2B", 11220, "Value-Add", "Financial Close", {
+  f("FUND-006A", "Antin Infrastructure Partners", "Antin Flagship Fund III", "2016", "€3.6B", 3960, "Value-Add", "Financial Close", {
+    investmentStrategy: "Third Antin flagship infrastructure fund investing in established infrastructure companies across Europe and North America, with current and realized exposure across digital, transport, energy, and social infrastructure.",
+    sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
+    regions: ["Europe", "North America"],
+  }),
+  f("FUND-006B", "Antin Infrastructure Partners", "Antin Fund III-B", "2020", "€1.2B", 1320, "Value-Add", "Financial Close", {
+    investmentStrategy: "Continuation / companion vehicle associated with Antin Flagship Fund III portfolio holdings, including retained exposure to digital infrastructure assets such as FirstLight and CityFibre.",
+    sectors: ["Digital", "Transportation", "Social Infra"],
+    regions: ["Europe", "North America"],
+  }),
+  f("FUND-006C", "Antin Infrastructure Partners", "Antin Flagship Fund IV", "2019", "€6.5B", 7150, "Value-Add", "Financial Close", {
+    investmentStrategy: "Fourth Antin flagship infrastructure fund focused on established infrastructure businesses across Europe and North America, with deployment across energy, environment, digital, transport, and social infrastructure.",
+    sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
+    regions: ["Europe", "North America"],
+  }),
+  f("FUND-007", "Antin Infrastructure Partners", "Antin Flagship Fund V", "2022", "€10.2B", 11220, "Value-Add", "Financial Close", {
     investmentStrategy: "Large-ticket value-add fund investing in established infrastructure platforms across Europe and North America; typically writes ~€600m-€1bn+ equity checks.",
     sectors: ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation", "Social Infra"],
     regions: ["Europe", "North America"],
@@ -706,6 +759,11 @@ export const funds: Fund[] = [
   }),
 
   // ── Apollo Global Management ──────────────────────────────
+  f("FUND-010A", "Apollo Global Management", "Apollo Infrastructure Opportunities Fund II", "2022", "$2.54B", 2540, "Value-Add", "Financial Close", {
+    investmentStrategy: "Second dedicated Apollo infrastructure fund focused on mid-market communications, power and renewables, and transportation infrastructure assets, including Broad Reach Power, IonicBlue, US Wind, and FirstDigital.",
+    sectors: ["Power & ET", "Utilities", "Digital", "Transportation"],
+    regions: ["North America", "Europe"],
+  }),
   f("FUND-011", "Apollo Global Management", "Apollo Infrastructure Company (AIC)", "Evergreen", "$1.7B", 1700, "Retail Act '40", "Evergreen", {
     investmentStrategy: "Evergreen Apollo infrastructure vehicle pursuing income and appreciation through control acquisitions, financings and strategic investments across essential infrastructure sectors.",
     sectors: ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation"],
@@ -753,6 +811,11 @@ export const funds: Fund[] = [
   }),
 
   // ── Ardian ────────────────────────────────────────────────
+  f("FUND-018A", "Ardian", "Ardian Americas Infrastructure Fund IV (AAIF IV)", "2018", "$0.8B", 800, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Inaugural Ardian Americas infrastructure fund dedicated to US and other OECD American essential infrastructure assets, with early deployment across renewables and bulk liquid storage.",
+    sectors: ["Power & ET", "Midstream", "Transportation"],
+    regions: ["North America"],
+  }),
   f("FUND-019", "Ardian", "Ardian Americas Infrastructure Fund V (AAIF V)", "2022", "$2.1B", 2100, "Core-Plus", "Financial Close", {
     investmentStrategy: "Ardian's second-generation Americas mid-market essential-infrastructure fund, focused on telecom, transport and energy-transition assets across the US and other OECD American markets.",
     sectors: ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation"],
@@ -824,8 +887,8 @@ export const funds: Fund[] = [
   }),
 
   // ── BCI ───────────────────────────────────────────────────
-  f("FUND-030", "BCI", "BCI Infrastructure & Renewable Resource Program", "Evergreen", "~C$32B", 23680, "Core", "Evergreen", {
-    investmentStrategy: "Open-ended core infrastructure and renewable-resources program seeking long-hold, governance-rich positions in essential-service assets globally, with current emphasis on utilities, transport, digital infrastructure, and energy-transition themes.",
+  f("FUND-030", "BCI", "Infrastructure & Renewable Resources", "Evergreen", "~C$32B", 23680, "Core", "Evergreen", {
+    investmentStrategy: "BCI's public infrastructure and renewable-resources program invests through long-term direct and partnership structures across regulated utilities, transportation, digital infrastructure, timberland, agriculture, energy and related essential assets.",
     sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
     regions: ["Global"],
     structure: "Permanent Capital",
@@ -848,6 +911,12 @@ export const funds: Fund[] = [
     investmentStrategy: "Fourth-vintage climate infrastructure / renewable power fund focused on OECD wind, solar, batteries, and grid infrastructure, with lineage deployment overwhelmingly in clean-power platforms.",
     sectors: ["Power & ET"],
     regions: ["Global"],
+  }),
+  f("FUND-033A", "BlackRock", "Evergreen Infrastructure Fund", "Evergreen", "$1.0B+", 1000, "Core-Plus", "Evergreen", {
+    investmentStrategy: "Open-ended infrastructure strategy focused on energy-transition and energy-security investments, launched with European institutional partners and seeded with Lighthouse acquisition documentation.",
+    sectors: ["Power & ET"],
+    regions: ["North America", "Europe"],
+    structure: "Open-End",
   }),
 
   // ── BlackRock (GIP) ───────────────────────────────────────
@@ -915,7 +984,12 @@ export const funds: Fund[] = [
     sectors: ["Power & ET", "Utilities", "Digital"],
     regions: ["Global"],
   }),
-  f("FUND-045", "Brookfield", "Brookfield BGTF II", "2023", "$20.0B", 20000, "Core-Plus", "Financial Close", {
+  f("FUND-044A", "Brookfield", "Brookfield Global Transition Fund I (BGTF I)", "2022", "$15.0B", 15000, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Inaugural Brookfield Global Transition Fund, dedicated to energy-transition investments including renewables, carbon capture, sustainable fuels, battery storage and nuclear services.",
+    sectors: ["Power & ET", "Utilities", "Social Infra"],
+    regions: ["Global"],
+  }),
+  f("FUND-045", "Brookfield", "Brookfield Global Transition Fund II (BGTF II)", "2023", "$20.0B", 20000, "Core-Plus", "Financial Close", {
     investmentStrategy: "Flagship transition fund investing across clean-energy buildout, sustainable solutions, and decarbonization of carbon-intensive businesses.",
     sectors: ["Power & ET", "Utilities", "Social Infra"],
     regions: ["Global"],
@@ -949,7 +1023,7 @@ export const funds: Fund[] = [
   }),
 
   // ── Carlyle Group ─────────────────────────────────────────
-  f("FUND-051", "Carlyle Group", "Carlyle CGI Fund I", "2019", "$2.2B", 2200, "Value-Add", "Financial Close", {
+  f("FUND-051", "Carlyle Group", "Carlyle Global Infrastructure Opportunity Fund", "2019", "$2.2B", 2200, "Value-Add", "Financial Close", {
     investmentStrategy: "Inaugural OECD-focused value-add infrastructure fund targeting transport, energy/power and water infrastructure, with actual deployment spanning airports, crude logistics, water assets, towers and microgrids.",
     sectors: ["Power & ET", "Digital", "Midstream", "Transportation", "Social Infra"],
     regions: ["North America", "Europe"],
@@ -957,6 +1031,11 @@ export const funds: Fund[] = [
   f("FUND-052", "Carlyle Group", "Carlyle CGI Fund II", "2026", "TBD", null, "Value-Add", "Raising", {
     investmentStrategy: "Successor CGI vehicle under Carlyle's current four-vertical platform, emphasizing middle-market transport, digital, renewables and midstream opportunities in OECD markets.",
     sectors: ["Power & ET", "Digital", "Midstream", "Transportation"],
+    regions: ["North America", "Europe"],
+  }),
+  f("FUND-053A", "Carlyle Group", "Carlyle Renewable & Sustainable Energy Fund", "2019", "—", null, "Value-Add", "Financial Close", {
+    investmentStrategy: "First dedicated Carlyle renewable and sustainable energy vehicle, formed in 2019 and publicly identified as the equity source for U.S. solar and energy-transition platform investments including Cardinal Renewables.",
+    sectors: ["Power & ET"],
     regions: ["North America", "Europe"],
   }),
   f("FUND-053", "Carlyle Group", "Carlyle CRSEF II", "2022", "$2.0B", 2000, "Value-Add", "Financial Close", {
@@ -980,6 +1059,11 @@ export const funds: Fund[] = [
   }),
 
   // ── Copenhagen Infrastructure Partners ────────────────────
+  f("FUND-056A", "Copenhagen Infrastructure Partners", "Copenhagen Infrastructure IV (CI IV)", "2020", "€7.0B", 7700, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Fourth flagship greenfield renewable-energy infrastructure fund investing in offshore wind, onshore wind, solar PV, transmission, storage and waste-to-energy across low-risk OECD markets.",
+    sectors: ["Power & ET", "Utilities"],
+    regions: ["Global"],
+  }),
   f("FUND-056", "Copenhagen Infrastructure Partners", "Copenhagen Infrastructure V (CI V)", "2023", "€12.0B", 13200, "Core-Plus", "Financial Close", {
     investmentStrategy: "Global flagship greenfield renewable-energy infrastructure fund focused on large-scale contracted or regulated clean-energy and system-integration assets in low-risk OECD markets.",
     sectors: ["Power & ET", "Utilities"],
@@ -1002,18 +1086,38 @@ export const funds: Fund[] = [
   }),
 
   // ── CVC DIF ───────────────────────────────────────────────
-  f("FUND-059", "CVC DIF", "CVC DIF CIF III", "2022", "€1.6B", 1760, "Value-Add", "Financial Close", {
+  f("FUND-059A", "CVC DIF", "DIF CIF II", "2021", "€1.0B", 1100, "Value-Add", "Financial Close", {
+    investmentStrategy: "Core-plus infrastructure growth vehicle focused on scalable mid-market companies, with CVC DIF history materials identifying the final close at €1.0B.",
+    sectors: ["Digital", "Midstream", "Transportation", "Social Infra"],
+    regions: ["Europe", "North America"],
+  }),
+  f("FUND-059", "CVC DIF", "DIF CIF III", "2022", "€1.6B", 1760, "Value-Add", "Financial Close", {
     investmentStrategy: "Legacy-CIF / current Value-Add growth infrastructure fund focused on buy-and-build platforms, especially in digital infrastructure, alongside transport and other growth infrastructure niches.",
     sectors: ["Digital", "Midstream", "Transportation", "Social Infra"],
     regions: ["Europe", "North America"],
   }),
-  f("FUND-060", "CVC DIF", "CVC DIF Infrastructure VII", "2022", "€4.4B", 4840, "Core-Plus", "Financial Close", {
+  f("FUND-059B", "CVC DIF", "DIF Infrastructure IV", "2015", "€1.15B", 1265, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Traditional DIF infrastructure strategy targeting stable long-term contracted or regulated assets, including PPP, concessions, utilities and renewable energy projects.",
+    sectors: ["Power & ET", "Utilities", "Transportation", "Social Infra"],
+    regions: ["Europe", "North America"],
+  }),
+  f("FUND-059C", "CVC DIF", "DIF Infrastructure V", "2018", "€1.9B", 2090, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Traditional DIF infrastructure strategy targeting contracted and concession-based infrastructure projects and companies across energy, utilities, transport and social infrastructure.",
+    sectors: ["Power & ET", "Utilities", "Transportation", "Social Infra"],
+    regions: ["Europe", "North America"],
+  }),
+  f("FUND-059D", "CVC DIF", "DIF Infrastructure VI", "2020", "€3.0B", 3300, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Traditional DIF infrastructure strategy focused on long-term contracted or regulated income streams across PPP, concessions, utilities and renewable energy assets.",
+    sectors: ["Power & ET", "Utilities", "Transportation", "Social Infra"],
+    regions: ["Europe", "North America"],
+  }),
+  f("FUND-060", "CVC DIF", "DIF Infrastructure VII", "2022", "€4.4B", 4840, "Core-Plus", "Financial Close", {
     investmentStrategy: "Core-plus flagship targeting contracted, downside-protected essential infrastructure across CVC DIF's mid-market platform, with yield plus longer-term value creation.",
     sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
     regions: ["Europe", "North America"],
   }),
 
-  f("FUND-061", "CVC DIF", "CVC DIF Infrastructure VIII", "2025", "[€6.0B]", 6600, "Core-Plus", "Raising", {
+  f("FUND-061", "CVC DIF", "DIF Infrastructure VIII", "2025", "[€6.0B]", 6600, "Core-Plus", "Raising", {
     investmentStrategy: "Successor core-plus vehicle targeting €6B of commitments for a diversified portfolio of roughly 20 positions, with public LP materials emphasizing renewable energy, utilities and transport across Europe and North America.",
     sectors: ["Power & ET", "Utilities", "Transportation"],
     regions: ["Europe", "North America"],
@@ -1072,6 +1176,11 @@ export const funds: Fund[] = [
   }),
 
   // ── Ember Infrastructure Management ───────────────────────
+  f("FUND-069A", "Ember Infrastructure Management", "Ember Infrastructure Fund I", "2022", "$0.34B", 340, "Opportunistic", "Financial Close", {
+    investmentStrategy: "Inaugural Ember infrastructure fund investing in energy transition and resource-efficiency platforms, with public close materials identifying ReGenerate, Caban Systems, and SunShare among its first investments.",
+    sectors: ["Power & ET", "Social Infra"],
+    regions: ["North America"],
+  }),
   f("FUND-070", "Ember Infrastructure Management", "Ember Infrastructure Fund II", "2023", "$0.8B", 800, "Opportunistic", "Financial Close", {
     investmentStrategy: "Middle-market infrastructure strategy targeting lower-carbon, resource-efficient and climate-resilient platforms, with real deployment split between environmental-resource systems and selected clean-energy assets.",
     sectors: ["Power & ET", "Social Infra"],
@@ -1130,6 +1239,16 @@ export const funds: Fund[] = [
     investmentStrategy: "Fiera's flagship open-end core/core-plus strategy targeting stable, predictable, contracted or regulated cash flows across OECD infrastructure subsectors, with a buy-and-manage approach and opportunistic exits.",
     sectors: ["Power & ET", "Digital", "Transportation", "Social Infra"],
     regions: ["North America", "Europe"],
+  }),
+  f("FUND-079A", "Fiera Infrastructure", "EICLP & EISCSp", "Evergreen", "—", null, "Core-Plus", "Evergreen", {
+    investmentStrategy: "Fiera Infrastructure / EagleCrest investment vehicle combination publicly shown for portfolio holdings including Captis Energy, Conterra Networks, Public Infrastructure Partnership, and other EagleCrest assets.",
+    sectors: ["Power & ET", "Digital", "Transportation", "Social Infra"],
+    regions: ["North America", "Europe"],
+  }),
+  f("FUND-079B", "Fiera Infrastructure", "EICLP", "Evergreen", "—", null, "Core-Plus", "Evergreen", {
+    investmentStrategy: "Fiera Infrastructure / EagleCrest investment vehicle publicly shown for portfolio holdings including Desert Sky Energy, West Coast Hydro, and Woodford Social Infrastructure.",
+    sectors: ["Power & ET", "Social Infra"],
+    regions: ["North America"],
   }),
 
   // ── GCM Grosvenor ─────────────────────────────────────────
@@ -1248,18 +1367,28 @@ export const funds: Fund[] = [
   }),
 
   // ── Igneo Infrastructure Partners ─────────────────────────
-  f("FUND-098", "Igneo Infrastructure Partners", "Igneo GDIF", "Evergreen", "$7.5B", 7500, "Core-Plus", "Evergreen", {
+  f("FUND-098", "Igneo Infrastructure Partners", "Global Diversified Infrastructure Fund (GDIF)", "Evergreen", "$7.5B", 7500, "Core-Plus", "Evergreen", {
     investmentStrategy: "Open-ended global income-oriented infrastructure vehicle; public GDIF-specific evidence is strongest in renewables plus water/waste platforms rather than a clearly proven digital/transport-heavy mix.",
     sectors: ["Power & ET", "Utilities", "Social Infra"],
     regions: ["Global"],
   }),
-  f("FUND-099", "Igneo Infrastructure Partners", "Igneo NADIF", "2024", "$1.0B", 1000, "Value-Add", "Financial Close", {
+  f("FUND-099", "Igneo Infrastructure Partners", "North American Diversified Infrastructure Fund (NADIF)", "2024", "$1.0B", 1000, "Value-Add", "Financial Close", {
     investmentStrategy: "Closed-ended North American diversified infrastructure vehicle; public evidence shows a live portfolio across digital/connectivity, energy and transportation platforms in the lower middle market.",
     sectors: ["Power & ET", "Utilities", "Digital", "Transportation"],
     regions: ["North America"],
   }),
 
   // ── InfraBridge ───────────────────────────────────────────
+  f("FUND-099A", "InfraBridge", "AMP Capital Global Infrastructure Fund", "2016", "$2.4B", 2400, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Legacy AMP Capital global infrastructure equity vehicle, now associated with InfraBridge after DigitalBridge acquired and rebranded AMP Capital's global infrastructure equity investment management business.",
+    sectors: ["Transportation", "Digital", "Power & ET", "Social Infra"],
+    regions: ["Global"],
+  }),
+  f("FUND-099B", "InfraBridge", "AMP Capital Global Infrastructure Fund II (GIF II)", "2019", "$3.4B", 3400, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Second legacy AMP Capital global infrastructure equity vehicle, now associated with InfraBridge, with public disclosures identifying investments including Invenergy AMPCI Thermal Power and Expedient.",
+    sectors: ["Transportation", "Digital", "Power & ET", "Social Infra"],
+    regions: ["Global"],
+  }),
   f("FUND-100", "InfraBridge", "InfraBridge GIF III", "Raising", "$4.75B", 4750, "Value-Add", "Raising", {
     investmentStrategy: "Current InfraBridge strategy is a diversified middle-market platform focused on digital infrastructure, transport/logistics and energy transition, with an additional InfraHealth sleeve for care-related assets.",
     sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
@@ -1288,7 +1417,7 @@ export const funds: Fund[] = [
   }),
 
   // ── J.P. Morgan Asset Management ─────────────────────────
-  f("FUND-104", "J.P. Morgan Asset Management", "J.P. Morgan IIF", "Evergreen", "$41.0B", 41000, "Core-Plus", "Evergreen", {
+  f("FUND-104", "J.P. Morgan Asset Management", "Infrastructure Investments Fund (IIF)", "Evergreen", "$41.0B", 41000, "Core-Plus", "Evergreen", {
     investmentStrategy: "Open-ended, perpetual-life J.P. Morgan infrastructure fund seeking mature, regulated/contracted core/core-plus assets with stable cash flow and broad exposure across transportation, utilities, power and renewables.",
     sectors: ["Power & ET", "Utilities", "Midstream", "Transportation"],
     regions: ["Global"],
@@ -1340,6 +1469,21 @@ export const funds: Fund[] = [
     regions: ["Global"],
     structure: "Open-End",
   }),
+  f("FUND-111A", "Macquarie Asset Management", "Macquarie Infrastructure Partners III", "2014", "$3.0B", 3000, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Third numbered Americas MIP fund, a North American unlisted infrastructure vehicle investing across transportation, communications, energy, utilities, and adjacent infrastructure sectors.",
+    sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
+    regions: ["North America"],
+  }),
+  f("FUND-111B", "Macquarie Asset Management", "Macquarie Infrastructure Partners IV", "2018", "$5.0B", 5000, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Fourth numbered Americas MIP fund, closed at its $5B hard cap and focused on transportation, communications, energy, and waste infrastructure assets.",
+    sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
+    regions: ["North America"],
+  }),
+  f("FUND-111C", "Macquarie Asset Management", "Macquarie Infrastructure Partners V", "2021", "$6.9B", 6900, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Fifth numbered Americas MIP fund, closed at $6.9B and focused on high-quality infrastructure assets across transportation, communications, waste management, utilities, and energy.",
+    sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
+    regions: ["North America"],
+  }),
   f("FUND-112", "Macquarie Asset Management", "Macquarie MGECO", "Evergreen", "[TBU]", null, "Core", "Evergreen", {
     investmentStrategy: "Core renewables/climate vehicle seeded with six solar, wind, storage and natural-climate-solutions investments, with initial deployment centered on solar, wind and batteries.",
     sectors: ["Power & ET", "Social Infra"],
@@ -1355,19 +1499,29 @@ export const funds: Fund[] = [
     sectors: ["Power & ET", "Utilities", "Digital", "Transportation"],
     regions: ["Global"],
   }),
-  f("FUND-115", "Macquarie Asset Management", "Macquarie MIP VI", "2022", "$6.8B", 6800, "Core-Plus", "Financial Close", {
+  f("FUND-115", "Macquarie Asset Management", "Macquarie Infrastructure Partners VI", "2022", "$6.8B", 6800, "Core-Plus", "Financial Close", {
     investmentStrategy: "Latest vintage in Macquarie's Americas MIP series, continuing the platform's long-standing transport, digital, utilities/energy and waste playbook.",
     sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
     regions: ["North America"],
   }),
-  f("FUND-116", "Macquarie Asset Management", "Macquarie MIP VII", "2025", "[$7.0B]", 7000, "Core-Plus", "Raising", {
+  f("FUND-116", "Macquarie Asset Management", "Macquarie Infrastructure Partners VII", "2025", "[$7.0B]", 7000, "Core-Plus", "Raising", {
     investmentStrategy: "Continuation fund for the MIP series; institutional media describes it as a core-plus vehicle for mid-market brownfield digital, transport, utilities, energy and waste assets.",
     sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
     regions: ["North America"],
   }),
 
   // ── Manulife Investment Management ────────────────────────
-  f("FUND-117", "Manulife Investment Management", "Manulife MIF III", "2025", "$5.5B", 5500, "Core-Plus", "Financial Close", {
+  f("FUND-117A", "Manulife Investment Management", "Manulife Infrastructure Fund I", "2018", "—", null, "Core-Plus", "Financial Close", {
+    investmentStrategy: "First flagship North American infrastructure fund, with Manulife public infrastructure-team materials mapping Fund I exposure across utilities, renewables, midstream, digital and transport assets.",
+    sectors: ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation", "Social Infra"],
+    regions: ["North America"],
+  }),
+  f("FUND-117B", "Manulife Investment Management", "Manulife Infrastructure Fund II", "2021", "$4.65B", 4650, "Core-Plus", "Financial Close", {
+    investmentStrategy: "Second flagship North American infrastructure fund investing equity in core and core-plus infrastructure assets across diversified mid-market sectors.",
+    sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
+    regions: ["North America"],
+  }),
+  f("FUND-117", "Manulife Investment Management", "Manulife Infrastructure Fund III", "2025", "$5.5B", 5500, "Core-Plus", "Financial Close", {
     investmentStrategy: "Third flagship North American mid-market core-plus vehicle, which reached an oversubscribed final close in October 2025 at $5.5B and is visibly concentrated in digital infrastructure, renewables/distributed energy and utilities.",
     sectors: ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation", "Social Infra"],
     regions: ["North America"],
@@ -1385,6 +1539,11 @@ export const funds: Fund[] = [
     investmentStrategy: "Fourth Morgan Stanley Infrastructure Partners global infrastructure fund, which closed in March 2025 at $4.1B and targets inflation-linked assets in transportation, digital infrastructure, energy transition and utilities with active asset-management upside.",
     sectors: ["Power & ET", "Utilities", "Digital", "Midstream", "Transportation"],
     regions: ["North America", "Europe"],
+  }),
+  f("FUND-119A", "Morgan Stanley Infrastructure Partners", "North Haven Infrastructure Partners II (NHIP II)", "2018", "$3.6B", 3600, "Value-Add", "Financial Close", {
+    investmentStrategy: "Second Morgan Stanley Infrastructure Partners North Haven vehicle, publicly identified as the fund vehicle for Brazos Midstream's 2018 Delaware Basin transaction.",
+    sectors: ["Midstream"],
+    regions: ["North America"],
   }),
 
   // ── Morrison & Co ─────────────────────────────────────────
@@ -1564,6 +1723,21 @@ export const funds: Fund[] = [
   }),
 
   // ── Tiger Infrastructure Partners ─────────────────────────
+  f("FUND-143A", "Tiger Infrastructure Partners", "Tiger Infrastructure Partners Fund I", "2011", "—", null, "Value-Add", "Financial Close", {
+    investmentStrategy: "First Tiger infrastructure growth vehicle; public portfolio evidence identifies Fund I holdings and the strategy is consistent with Tiger's middle-market growth infrastructure approach across digital, energy transition, and transportation platforms.",
+    sectors: ["Power & ET", "Utilities", "Digital", "Transportation"],
+    regions: ["North America"],
+  }),
+  f("FUND-143B", "Tiger Infrastructure Partners", "Tiger Infrastructure Partners Fund II", "2017", "[$176.5M+]", 176.5, "Value-Add", "Financial Close", {
+    investmentStrategy: "Second Tiger growth infrastructure fund; public filings show Fund II fundraising and Tiger transaction releases identify Fund II ownership in platforms such as Modern Aviation.",
+    sectors: ["Power & ET", "Utilities", "Digital", "Transportation"],
+    regions: ["North America", "Europe"],
+  }),
+  f("FUND-143C", "Tiger Infrastructure Partners", "Tiger Infrastructure Partners Fund III", "2022", "$1.25B", 1250, "Value-Add", "Financial Close", {
+    investmentStrategy: "Third Tiger flagship growth infrastructure fund, closed at its $1.25B hard cap and focused on communications/digital infrastructure, transportation, and energy transition platforms in North America and Europe.",
+    sectors: ["Power & ET", "Utilities", "Digital", "Transportation"],
+    regions: ["North America", "Europe"],
+  }),
   f("FUND-144", "Tiger Infrastructure Partners", "Tiger Infrastructure Fund IV", "2024", "[$2.0B]", 2000, "Value-Add", "Raising", {
     investmentStrategy: "Latest fund in a lineage investing growth capital in essential-service infrastructure platforms across digital infrastructure, energy transition, and transportation.",
     sectors: ["Power & ET", "Utilities", "Digital", "Transportation", "Social Infra"],
@@ -1597,7 +1771,17 @@ export const funds: Fund[] = [
   }),
 
   // ── Vision Ridge Partners ─────────────────────────────────
-  f("FUND-149", "Vision Ridge Partners", "Vision Ridge Sustainable Asset Fund IV (SAF IV)", "2026", "$2.4B", 2400, "Opportunistic", "Financial Close", {
+  f("FUND-148A", "Vision Ridge Partners", "Sustainable Asset Fund II", "2020", "$1.25B", 1250, "Opportunistic", "Financial Close", {
+    investmentStrategy: "Second Vision Ridge sustainable real-assets fund, focused on energy transition, transportation transition, and sustainable agriculture and resource efficiency platforms.",
+    sectors: ["Power & ET", "Utilities", "Transportation", "Social Infra"],
+    regions: ["North America"],
+  }),
+  f("FUND-148B", "Vision Ridge Partners", "Sustainable Asset Fund III", "2021", "$0.7B", 700, "Opportunistic", "Financial Close", {
+    investmentStrategy: "Third Vision Ridge sustainable real-assets fund focused on scalable energy transition, transportation transition, and resource-efficiency platforms across North America.",
+    sectors: ["Power & ET", "Utilities", "Transportation", "Social Infra"],
+    regions: ["North America"],
+  }),
+  f("FUND-149", "Vision Ridge Partners", "Sustainable Asset Fund IV", "2026", "$2.4B", 2400, "Opportunistic", "Financial Close", {
     investmentStrategy: "Flagship sustainable real-assets strategy that closed in February 2026 with approximately $2.4B across the fund and related vehicles, targeting the transition of energy, transportation and agriculture.",
     sectors: ["Power & ET", "Utilities", "Transportation", "Social Infra"],
     regions: ["North America"],
@@ -1609,7 +1793,7 @@ export const funds: Fund[] = [
 export function validateFundData(): string[] {
   const errors: string[] = [];
   const idSet = new Set<string>();
-  const EXPECTED_COUNT = 150;
+  const EXPECTED_COUNT = 179;
 
   for (const fund of funds) {
     // Unique IDs
