@@ -1,14 +1,14 @@
 # Portfolio Milestone Audit
 
-Run at: 2026-05-13T23:41:04.177Z
+Run at: 2026-05-13T23:56:13.033Z
 
 ## Scope
 
 - Company records: 1169
-- Milestones reviewed by automated checks: 4162
-- Average milestones per company: 3.56
-- Companies in priority queue: 113
-- `Other` milestones: 884
+- Milestones reviewed by automated checks: 4179
+- Average milestones per company: 3.57
+- Companies in priority queue: 88
+- `Other` milestones: 877
 
 ## Review Standard
 
@@ -21,86 +21,84 @@ Run at: 2026-05-13T23:41:04.177Z
 ## Priority Summary
 
 - critical: 0
-- high: 5
-- medium: 108
+- high: 0
+- medium: 88
 - low: 0
-- none: 1056
+- none: 1081
 
 ## Top Flags
 
-- excessive_other_milestones: 66
-- thin_scorecard: 36
-- low_value_milestone: 5
-- no_transaction_or_milestone_source_purpose: 5
-- over_dense_scorecard: 3
-- recategorization_candidate: 2
+- excessive_other_milestones: 63
+- thin_scorecard: 18
+- low_value_milestone: 4
+- no_transaction_or_milestone_source_purpose: 3
 
 ## Priority Queue By Sector
 
-- Power & ET: 46
-- Digital: 23
-- Transportation: 16
-- Utilities: 14
-- Social Infra: 13
+- Power & ET: 36
+- Digital: 19
+- Transportation: 13
+- Social Infra: 11
+- Utilities: 8
 - Midstream: 1
 
 ## Priority Queue By Firm
 
-- Harrison Street: 9
-- Axium Infrastructure: 8
-- Copenhagen Infrastructure Partners: 5
+- Harrison Street: 8
+- Axium Infrastructure: 6
 - Harbert Management Corp (Harbert Infra / Gulf Pacific): 5
 - ArcLight Capital Partners: 4
-- Ember Infrastructure: 4
-- Macquarie Asset Management: 4
-- Vision Ridge: 4
 - Argo Infrastructure Partners: 3
+- Copenhagen Infrastructure Partners: 3
 - CPP Investments: 3
-- EQT Infrastructure: 3
-- Generate Capital: 3
 - Grain: 3
-- InfraRed Capital Partners: 3
+- Macquarie Asset Management: 3
 - Manulife: 3
-- Basalt Infrastructure Partners: 2
-- Bernhard Capital Partners: 2
+- Vision Ridge: 3
 - Brookfield Asset Management: 2
 - CC&L: 2
 - CDPQ: 2
+- EQT Infrastructure: 2
+- Fengate Asset Management: 2
+- Generate Capital: 2
+- H.I.G. Capital: 2
+- I Squared Capital: 2
+- InfraRed Capital Partners: 2
 
 ## First Review Packet
 
 | Priority | Line | Company | Current | Target | Flags |
 |---|---:|---|---:|---|---|
-| high | 31297 | Consolidated Communications | 7 | 2-5 after pruning | low_value_milestone / over_dense_scorecard |
-| high | 27135 | Tract | 8 | 2-5 after pruning | excessive_other_milestones / over_dense_scorecard |
-| high | 15031 | Vantage Data Centers | 7 | 5-6 after pruning | over_dense_scorecard |
-| high | 26179 | Puget Sound Energy | 6 | current 2-5 target | recategorization_candidate |
-| high | 723 | Puget Energy / Puget Sound Energy | 5 | current 2-5 target | recategorization_candidate |
-| medium | 22972 | Cruise Terminals International | 4 | current 2-5 target | excessive_other_milestones / no_transaction_or_milestone_source_purpose |
-| medium | 13223 | Sunrise Renewables | 3 | current 2-5 target | excessive_other_milestones / no_transaction_or_milestone_source_purpose |
-| medium | 8055 | Accel International | 1 | 2-5 after research | thin_scorecard |
-| medium | 16118 | Advanced Recycling Technologies | 1 | 2-5 after research | thin_scorecard |
-| medium | 5512 | AgeCare Facilities Portfolio | 1 | 2-5 after research | thin_scorecard |
-| medium | 16382 | Arbor Renewable Gas | 1 | 2-5 after research | thin_scorecard |
-| medium | 20818 | ARC | 1 | 2-5 after research | thin_scorecard |
-| medium | 29519 | Autopista Arco Norte, S.A. de C.V. | 1 | 2-5 after research | thin_scorecard |
-| medium | 23690 | Blue Hill Wind Facility | 1 | 2-5 after research | thin_scorecard |
-| medium | 21534 | Chicago CBD Data Center (CHIL2) | 1 | 2-5 after research | thin_scorecard |
-| medium | 7415 | ClearCurrent | 1 | 2-5 after research | thin_scorecard |
-| medium | 24952 | Common Energy | 1 | 2-5 after research | thin_scorecard |
-| medium | 5849 | CPV Three Rivers Energy Center | 1 | 2-5 after research | thin_scorecard |
-| medium | 16171 | Earthwise Environmental Solutions | 1 | 2-5 after research | thin_scorecard |
-| medium | 19153 | EnviraPAC Monticello | 1 | 2-5 after research | thin_scorecard |
-| medium | 12918 | Fighting Jays Solar | 1 | 2-5 after research | thin_scorecard |
-| medium | 17087 | First Student | 1 | 2-5 after research | thin_scorecard |
-| medium | 16196 | Ground/Water Treatment & Technology, LLC | 1 | 2-5 after research | thin_scorecard |
-| medium | 16222 | H2O Innovation Inc. | 1 | 2-5 after research | thin_scorecard |
-| medium | 6825 | Habitat Solar | 1 | 2-5 after research | thin_scorecard |
-| medium | 33864 | Homer | 1 | 2-5 after research | thin_scorecard |
-| medium | 26745 | JH Transport Portfolio | 1 | 2-5 after research | thin_scorecard |
-| medium | 28724 | Maple PPP Portfolio | 1 | 2-5 after research | thin_scorecard |
-| medium | 21889 | Midway Technology Centre | 1 | 2-5 after research | thin_scorecard |
-| medium | 21914 | Orangeburg Data Center (ORNY1) | 1 | 2-5 after research | thin_scorecard |
+| medium | 20848 | ARC | 1 | 2-5 after research | thin_scorecard |
+| medium | 26780 | JH Transport Portfolio | 1 | 2-5 after research | thin_scorecard |
+| medium | 28756 | Maple PPP Portfolio | 1 | 2-5 after research | thin_scorecard |
+| medium | 21920 | Midway Technology Centre | 1 | 2-5 after research | thin_scorecard |
+| medium | 21945 | Orangeburg Data Center (ORNY1) | 1 | 2-5 after research | thin_scorecard |
+| medium | 5132 | Pearl / Ruby solar portfolio | 1 | 2-5 after research | thin_scorecard |
+| medium | 12552 | Pine Street Garage | 1 | 2-5 after research | thin_scorecard |
+| medium | 21970 | Pittock Block Data Center | 1 | 2-5 after research | thin_scorecard |
+| medium | 17306 | Seven Seas Water Group | 1 | 2-5 after research | thin_scorecard |
+| medium | 6914 | Skyway Towers | 1 | 2-5 after research | thin_scorecard |
+| medium | 22110 | Summit Infrastructure Group (SummitIG) | 1 | 2-5 after research | thin_scorecard |
+| medium | 13290 | Swan Lake North Pumped Storage Project | 1 | 2-5 after research | thin_scorecard |
+| medium | 28332 | Torch Clean Energy | 1 | 2-5 after research | thin_scorecard |
+| medium | 20823 | Tower Investments I | 1 | 2-5 after research | thin_scorecard |
+| medium | 21010 | Trail Ridge Power | 1 | 2-5 after research | thin_scorecard |
+| medium | 5392 | Twin Parking Holdings | 1 | 2-5 after research | thin_scorecard |
+| medium | 11792 | White River Hydro Project | 1 | 2-5 after research | thin_scorecard |
+| medium | 22328 | Wyoming Data Center (CHWY1) | 1 | 2-5 after research | thin_scorecard |
+| medium | 30056 | Meyersdale Energy Storage | 5 | current 2-5 target | excessive_other_milestones |
+| medium | 2738 | Modern Aviation | 5 | current 2-5 target | low_value_milestone |
+| medium | 30431 | St. Albans Industrial Treatment (SAINT) | 5 | current 2-5 target | excessive_other_milestones |
+| medium | 5483 | 527 Renewables Holdings LLC | 3 | current 2-5 target | excessive_other_milestones |
+| medium | 31302 | All Points Broadband | 4 | current 2-5 target | excessive_other_milestones |
+| medium | 5567 | Arbour Heights | 3 | current 2-5 target | excessive_other_milestones |
+| medium | 5651 | Autopistas Metropolitanas de Puerto Rico (Metropistas) | 4 | current 2-5 target | excessive_other_milestones |
+| medium | 31011 | BIG Fiber | 3 | current 2-5 target | excessive_other_milestones |
+| medium | 24668 | Bold Ocean / Schuyler Line Navigation | 3 | current 2-5 target | excessive_other_milestones |
+| medium | 22410 | Broadwing Energy / Low Carbon Infrastructure | 3 | current 2-5 target | excessive_other_milestones |
+| medium | 29376 | Bruce Power | 5 | current 2-5 target | excessive_other_milestones |
+| medium | 9331 | Carbon TerraVault | 5 | current 2-5 target | excessive_other_milestones |
 
 ## Files
 

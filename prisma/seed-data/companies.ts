@@ -737,7 +737,6 @@ export const companies: PortCo[] = [
       { date: "Mar 2018", event: "AIMCo announced that it had increased its stake in Puget Sound Energy's parent company.", category: "Acquisition" },
       { date: "Dec 2021", event: "Macquarie Asset Management and Ontario Teachers' signed an agreement to acquire a stake in Puget Holdings.", category: "Acquisition" },
       { date: "Jan 2022", event: "Macquarie and Ontario Teachers' completed the transaction and each disclosed a 15.8% ownership interest.", category: "Acquisition" },
-      { date: "Sep 4, 2025", event: "BCI published an investment insight describing Puget Sound Energy as one of BCI's largest and longest-standing infrastructure investments.", category: "Other" },
     ],
     sources: [
       { label: "Aimco — Puget Energy / Puget Sound Energy", url: "https://www.aimco.ca/insights/aimco-increases-stake-in-puget-sound-energy", type: "ARTICLE" },
@@ -5522,13 +5521,14 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Ontario; Alberta; British Columbia",
     milestones: [
+      { date: "1998", event: "AgeCare was founded as a Canadian seniors housing and care operator.", category: "Founding" },
       { date: "Jan 8, 2020", event: "Axium and AgeCare announced a partnership covering five continuing-care facilities in Alberta totaling 1,402 beds.", category: "Financing" },
     ],
     sources: [
       { label: "Axiuminfra — AgeCare Facilities Portfolio", url: "https://www.axiuminfra.com/portfolio-assets/?lang=en", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
       { label: "Announcement date source — Axium Infrastructure — AgeCare Facilities Portfolio", url: "https://www.axiuminfra.com/2020/01/08/agecare-and-axium-infrastructure-form-a-partnership-to-share-ownership-of-five-continuing-care-facilities-in-alberta/?lang=en", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Agecare — AgeCare Facilities Portfolio", url: "https://www.agecare.ca/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
-      { label: "Axiuminfra — AgeCare Facilities Portfolio", url: "https://www.axiuminfra.com/wp-content/uploads/2020/01/Website-Release_Project-Aster_Axium_en_Final.pdf", type: "PRESENTATION" },
+      { label: "Axiuminfra — AgeCare Facilities Portfolio", url: "https://www.axiuminfra.com/wp-content/uploads/2020/01/Website-Release_Project-Aster_Axium_en_Final.pdf", type: "PRESENTATION", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
       { investmentFirm: "Axium Infrastructure", ownershipVehicle: "Axium Managed Funds", investmentYear: 2020, status: "Active" },
@@ -5860,12 +5860,14 @@ export const companies: PortCo[] = [
     headquarters: "Illinois",
     milestones: [
       { date: "Aug 24, 2020", event: "Axium and its partners reached financial close on CPV Three Rivers.", category: "Financing" },
+      { date: "Aug 2023", event: "CPV Three Rivers achieved commercial operation as a 1,250 MW combined-cycle electric generation facility.", category: "Expansion" },
     ],
     sources: [
       { label: "Close date source — Axium Infrastructure — CPV Three Rivers Energy Center", url: "https://www.axiuminfra.com/news/page/7/?lang=en", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Close date source — Axium Infrastructure — CPV Three Rivers Energy Center", url: "https://www.axiuminfra.com/wp-content/uploads/2020/08/Media-Release_Axium-Invests-in-Three-Rivers-Project.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Axiuminfra — CPV Three Rivers Energy Center", url: "https://www.axiuminfra.com/portfolio-assets/?lang=en", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
       { label: "Cpv — CPV Three Rivers Energy Center", url: "https://cpv.com/portfolio/cpv-three-rivers/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
+      { label: "CPV — CPV Three Rivers commercial operation", url: "https://cpv.com/2023/08/16/commercial-operation-achieved-for-cpv-three-rivers-energy-center/", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
       { investmentFirm: "Axium Infrastructure", ownershipVehicle: "Axium Managed Funds", investmentYear: 2020, status: "Active" },
@@ -6836,9 +6838,11 @@ export const companies: PortCo[] = [
     headquarters: "Multiple U.S. states",
     milestones: [
       { date: "Oct 29, 2020", event: "Basalt completed the acquisition of a stake in a residential solar portfolio and formed Habitat Solar with IGS Solar.", category: "Acquisition" },
+      { date: "Oct 29, 2020", event: "Habitat Solar launched with approximately 11,000 operational residential solar projects across eight states totaling about 100 MW.", category: "Expansion" },
     ],
     sources: [
       { label: "Close date source — Basalt Infrastructure Partners — Habitat Solar", url: "https://www.marketscreener.com/quote/stock/ARES-MANAGEMENT-CORPORATI-50061101/news/Basalt-III-managed-by-Basalt-Infrastructure-Partners-LLP-and-IGS-Solar-LLC-acquired-unknown-stake-i-33649345/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Basalt — Habitat Solar acquisition", url: "https://www.basaltinfra.com/2020/10/30/basalt-iii-completes-habitat-solar-acquisition/", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
       { label: "Basaltinfra — Habitat Solar", url: "https://www.basaltinfra.com/portfolio/habitat-solar/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
       { label: "Basaltinfra — Habitat Solar", url: "https://www.basaltinfra.com/wp-content/uploads/2023/05/Annual-ESG-Report-2022-website.pdf", type: "PRESENTATION" },
       { label: "Igssolar — Habitat Solar", url: "https://www.igssolar.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -7426,11 +7430,12 @@ export const companies: PortCo[] = [
     headquarters: "North Carolina and Indiana",
     milestones: [
       { date: "2021", event: "Bernhard Capital Partners invested in ClearCurrent.", category: "Financing" },
+      { date: "2026", event: "Bernhard Capital described ClearCurrent as a regional water and wastewater utility platform headquartered in Raleigh.", category: "Other" },
     ],
     sources: [
       { label: "Clearcurrent — ClearCurrent", url: "https://clearcurrent.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Investment date source — Bernhard Capital Partners — ClearCurrent", url: "https://www.bernhardcapital.com/portfolio-items/clearcurrent/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
-      { label: "Bernhardcapital — ClearCurrent", url: "https://www.bernhardcapital.com/wp-content/uploads/2025/11/BCP_ESGReport_24_102025.pdf", type: "PRESENTATION" },
+      { label: "Bernhardcapital — ClearCurrent", url: "https://www.bernhardcapital.com/wp-content/uploads/2025/11/BCP_ESGReport_24_102025.pdf", type: "PRESENTATION", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
       { investmentFirm: "Bernhard Capital Partners", ownershipVehicle: "BCP Infrastructure Fund I", investmentYear: 2021, status: "Active" },
@@ -8062,15 +8067,19 @@ export const companies: PortCo[] = [
     description: "Accel International manufactures high-performance electrical conductors and related wire products for industrial end markets. Its customer base includes aerospace, medical electronics, telecommunications, computing, industrial, and oil and gas equipment manufacturers. The business is asset-heavy because it operates vertically integrated manufacturing facilities and depends on specialized production capacity rather than outsourced fabrication alone. Company materials describe three operating factories in Connecticut and Indiana with nearly 500,000 square feet of manufacturing space and reference expansion activity in Florida. Operations are therefore concentrated in Connecticut, Indiana, and Florida within the United States. Blackstone Energy Transition Partners is identified in Blackstone's public portfolio biographies as an investor in Accel International, but public sources reviewed here do not disclose the investment date, exact ownership percentage, or full ownership structure.",
     status: "Active",
     countryTags: ["United States"],
+    yearFounded: 2006,
     investmentYear: 2025,
     headquarters: "Connecticut, Indiana, and Florida",
     milestones: [
+      { date: "2006", event: "Accel International was founded as a high-performance wire and cable manufacturer.", category: "Founding" },
+      { date: "Jul 2020", event: "Accel selected Port St. Lucie, Florida for a $55 million, 150,000-square-foot manufacturing expansion.", category: "Expansion" },
       { date: "Apr 2025", event: "Blackstone Energy Transition Partners agreed to invest in Accel International.", category: "Financing" },
     ],
     sources: [
       { label: "Accelinternational — Accel International", url: "https://accelinternational.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Accelinternational — Accel International", url: "https://accelinternational.com/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Accelinternational — Accel International", url: "https://accelinternational.com/products/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
+      { label: "Florida expansion source — Accel International", url: "https://www.accelinternational.com/wp-content/uploads/2020/07/Accel-International-to-Build-New-Manufacturing-Facility-in-Port-St-Lucie-bringing-125-new-jobs-003.pdf", type: "PRESENTATION", purpose: "OPERATIONS_ASSETS" },
       { label: "Blackstone — Accel International", url: "https://www.blackstone.com/our-businesses/blackstone-energy-transition-partners/", type: "ARTICLE" },
     ],
     owners: [
@@ -12928,6 +12937,8 @@ export const companies: PortCo[] = [
     investmentYear: 2020,
     headquarters: "Texas",
     milestones: [
+      { date: "Mar 2020", event: "Copenhagen Infrastructure Partners agreed to acquire the 350 MW Fighting Jays Solar project.", category: "Acquisition" },
+      { date: "Jul 2020", event: "Shell Energy signed a long-term hedge agreement to buy physical power from Fighting Jays Solar.", category: "Financing" },
       { date: "Jul 22, 2020", event: "Copenhagen Infrastructure Partners completed the acquisition of the Fighting Jays Solar project in Texas from Plus Renewable Technologies and Avondale Solar.", category: "Acquisition" },
     ],
     sources: [
@@ -13234,13 +13245,12 @@ export const companies: PortCo[] = [
     headquarters: "Kentucky; multiple United States markets",
     milestones: [
       { date: "Jun 21, 2022", event: "A Copenhagen Infrastructure Partners-backed Lost City project entity was formed under the CI V Sunrise Renewables ownership chain.", category: "Financing" },
-      { date: "Jan 2025", event: "Corporate-information filings tied Sunrise entities to CIP-managed fund structures.", category: "Other" },
-      { date: "Mar 2025", event: "Regulatory responses described Sunrise and Lost City as using CIP development processes and templates.", category: "Other" },
+      { date: "Jan 2025", event: "Kentucky regulatory filings for the Lost City project tied Sunrise entities to CIP-managed fund structures.", category: "Expansion" },
     ],
     sources: [
-      { label: "Psc — Sunrise Renewables", url: "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/01292025030138/2_KSB_Lost_City_Application.pdf", type: "PRESENTATION" },
-      { label: "Psc — Sunrise Renewables", url: "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/01292025030138/2A_Lost_City_Attachment_A_Corporate_Information.pdf", type: "PRESENTATION" },
-      { label: "Psc — Sunrise Renewables", url: "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/03212025051535/01_Response_to_KSB_RFI-1.pdf", type: "PRESENTATION" },
+      { label: "Psc — Sunrise Renewables", url: "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/01292025030138/2_KSB_Lost_City_Application.pdf", type: "PRESENTATION", purpose: "OPERATIONS_ASSETS" },
+      { label: "Psc — Sunrise Renewables", url: "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/01292025030138/2A_Lost_City_Attachment_A_Corporate_Information.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Psc — Sunrise Renewables", url: "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/03212025051535/01_Response_to_KSB_RFI-1.pdf", type: "PRESENTATION", purpose: "MILESTONE_EVENT" },
       { label: "Psc — Sunrise Renewables", url: "https://psc.ky.gov/pscecf/2024-00406/tosterloh%40sturgillturner.com/06062025050850/Lost_City_Witness_List.pdf", type: "PRESENTATION" },
     ],
     owners: [
@@ -15047,7 +15057,6 @@ export const companies: PortCo[] = [
       { date: "Jul 2020", event: "DigitalBridge-led investors formed Vantage SDC through a $3.5 billion strategic partnership with Vantage Data Centers.", category: "Financing" },
       { date: "Jul 23, 2020", event: "CBRE Caledon completed an investment in the newly formed Vantage SDC platform containing 12 stabilized Vantage Data Centers assets.", category: "Acquisition" },
       { date: "2020", event: "GCM Grosvenor's Labor Impact Fund committed equity capital to Vantage's North American growth platform.", category: "Financing" },
-      { date: "Jan 2024", event: "Vantage announced a $6.4 billion equity investment round led by DigitalBridge and Silver Lake.", category: "Financing" },
       { date: "Jun 13, 2024", event: "Vantage completed a $9.2 billion equity investment led by DigitalBridge and Silver Lake.", category: "Financing" },
     ],
     sources: [
@@ -16125,10 +16134,13 @@ export const companies: PortCo[] = [
     description: "Advanced Recycling Technologies designs and integrates systems that recover non-ferrous metals from automobile shredder residue and waste-to-energy ash. It serves recycling operators, waste-to-energy facilities, and other processors seeking higher recovery yields from residual streams. The business is asset-light relative to an owner-operator platform but infrastructure-linked because it supplies specialized recovery systems embedded in waste and recycling operations. Company materials state that leadership has processed more than 40 million tons of incinerator ash over the past two decades, while public sources reviewed do not disclose current revenue. ART announced a growth investment from Ember Infrastructure in November 2024.",
     status: "Active",
     countryTags: ["United States"],
+    yearFounded: 2022,
     investmentYear: 2024,
     headquarters: "New Jersey and U.S. recycling markets",
     milestones: [
+      { date: "2022", event: "Advanced Recycling Technologies was founded by Steve Bossotti and Robert Blenden.", category: "Founding" },
       { date: "Nov 26, 2024", event: "ART announced a growth investment from Ember Infrastructure.", category: "Financing" },
+      { date: "Nov 26, 2024", event: "ART acquired Mid-City Scrap in connection with Ember's investment, adding a New England operating asset.", category: "Acquisition" },
     ],
     sources: [
       { label: "Advancedrecyclingtechnologies — Advanced Recycling Technologies", url: "https://www.advancedrecyclingtechnologies.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -16182,11 +16194,15 @@ export const companies: PortCo[] = [
     headquarters: "Pennsylvania and Ohio",
     milestones: [
       { date: "2023", event: "Earthwise Environmental Solutions, LLC was established as an Ember Infrastructure platform focused on waste collections, recycling, and disposal services.", category: "Financing" },
+      { date: "Sep 15, 2023", event: "Earthwise acquired Big's Sanitation in western Pennsylvania.", category: "Acquisition" },
+      { date: "Jun 1, 2025", event: "Triple H Disposal joined forces with Earthwise Environmental Solutions.", category: "Acquisition" },
     ],
     sources: [
       { label: "Earthwisees — Earthwise Environmental Solutions", url: "https://www.earthwisees.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Ember Infra — Earthwise Environmental Solutions", url: "https://ember-infra.com/portfolio", type: "WEBSITE", purpose: "MILESTONE_EVENT" },
       { label: "Earthwisees — Earthwise Environmental Solutions", url: "https://www.earthwisees.com/leadership", type: "ARTICLE" },
+      { label: "BBB — Big's Sanitation acquisition", url: "https://www.bbb.org/us/pa/belle-vernon/profile/sanitation-consultants/bigs-sanitation-inc-0141-71019213", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
+      { label: "Triple H Disposal — Earthwise transition", url: "https://triplehdisposal.com/about-us", type: "WEBSITE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
       { investmentFirm: "Ember Infrastructure", ownershipVehicle: "n.a.", investmentYear: 2023, status: "Active" },
@@ -16203,9 +16219,11 @@ export const companies: PortCo[] = [
     description: "Ground/Water Treatment & Technology, LLC provides remediation contracting, dewatering, treatment-system operations, and related water-management services. It serves infrastructure, environmental, landfill, and construction project owners that need treatment and dewatering support. The business is asset-heavy and project-based because it designs, deploys, and operates field treatment systems and related equipment rather than only advising clients. Company materials describe GWTT as a vertically integrated total-water-management contractor with national reach and more than 25 years of industry experience. The reviewed sources identify Ember as the sponsor in the master workbook, although the public ownership percentage and investment date were not disclosed.",
     status: "Active",
     countryTags: ["United States"],
+    yearFounded: 1996,
     investmentYear: 2023,
     headquarters: "United States",
     milestones: [
+      { date: "1996", event: "GWTT was founded as a water treatment and remediation services business.", category: "Founding" },
       { date: "Jun 21, 2023", event: "Ember Infrastructure announced a majority growth investment in GWTT.", category: "Financing" },
     ],
     sources: [
@@ -16213,6 +16231,7 @@ export const companies: PortCo[] = [
       { label: "Gwttllc — Ground/Water Treatment & Technology, LLC", url: "https://www.gwttllc.com/about-gwtt/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Investment date source — Ember Infrastructure — Ground/Water Treatment & Technology, LLC", url: "https://www.prnewswire.com/news-releases/groundwater-treatment--technology-llc-announces-majority-growth-investment-from-ember-infrastructure-301856032.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Gwttllc — Ground/Water Treatment & Technology, LLC", url: "https://www.gwttllc.com/services/", type: "ARTICLE" },
+      { label: "Mergr — GWTT", url: "https://mergr.com/transaction/ember-infrastructure-acquires-gwtt", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
       { investmentFirm: "Ember Infrastructure", ownershipVehicle: "n.a.", investmentYear: 2023, status: "Active" },
@@ -16229,15 +16248,19 @@ export const companies: PortCo[] = [
     description: "H2O Innovation Inc. provides water treatment technologies, specialty products, operations and maintenance services, and water-infrastructure development solutions. It serves municipal, industrial, and commercial customers facing drinking-water, wastewater, and water-reuse challenges. The business is asset-light to asset-moderate because it combines equipment and services with development of WaterHub and other water infrastructure projects. Company materials describe more than 750 installed systems, more than 275 municipal and industrial systems under operation in Canada and the United States, and distribution reach in over 70 countries. Ember completed the acquisition of H2O Innovation in December 2023.",
     status: "Active",
     countryTags: ["United States", "Canada"],
+    yearFounded: 2000,
     investmentYear: 2023,
     headquarters: "United States and Canada",
     milestones: [
+      { date: "2000", event: "H2O Innovation was founded as a water treatment technology and services company.", category: "Founding" },
       { date: "Dec 8, 2023", event: "Ember completed the acquisition of H2O Innovation.", category: "Acquisition" },
+      { date: "Oct 1, 2024", event: "H2O Innovation acquired NextEra Distributed Water to expand its Water Infrastructure & Development business.", category: "Acquisition" },
     ],
     sources: [
       { label: "H2Oinnovation — H2O Innovation Inc.", url: "https://www.h2oinnovation.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "H2Oinnovation — H2O Innovation Inc.", url: "https://www.h2oinnovation.com/about-us/company/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Close date source — Ember Infrastructure — H2O Innovation Inc.", url: "https://www.businesswire.com/news/home/20231208427843/en/Ember-Completes-Acquisition-of-H2O-Innovation", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "H2O Innovation — NextEra Distributed Water acquisition", url: "https://www.h2oinnovation.com/wp-content/uploads/2024/09/H2O-Innovation-Acquires-NextEra-Distributed-Water-english.pdf", type: "PRESENTATION", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
       { investmentFirm: "Ember Infrastructure", ownershipVehicle: "n.a.", investmentYear: 2023, status: "Active" },
@@ -16393,9 +16416,12 @@ export const companies: PortCo[] = [
     headquarters: "United States",
     milestones: [
       { date: "Aug 17, 2021", event: "Arbor Renewable Gas announced a capital commitment from EnCap Investments and Mercuria Energy.", category: "Financing" },
+      { date: "Nov 17, 2021", event: "Arbor Renewable Gas announced plant site locations for its renewable gasoline and hydrogen projects.", category: "Expansion" },
+      { date: "Apr 2022", event: "Arbor selected Modular Plant Solutions as exclusive modularization provider for its first industrial-scale green gasoline plant.", category: "Expansion" },
     ],
     sources: [
       { label: "Arborgas — Arbor Renewable Gas", url: "https://www.arborgas.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
+      { label: "Arborgas — Arbor Renewable Gas news", url: "https://www.arborgas.com/news", type: "WEBSITE", purpose: "MILESTONE_EVENT" },
       { label: "Encapinvestments — Arbor Renewable Gas", url: "https://www.encapinvestments.com/about/energy-transition/portfolio/current/arbor-renewable-gas", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
       { label: "Investment date source — EnCap Investments — Arbor Renewable Gas", url: "https://www.encapinvestments.com/news/arbor-renewable-gas-llc-secures-capital-commitment-encap-investments-lp", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Encapinvestments — Arbor Renewable Gas", url: "https://www.encapinvestments.com/about/energy-transition/portfolio", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
@@ -17097,11 +17123,13 @@ export const companies: PortCo[] = [
     investmentYear: 2021,
     headquarters: "United States and Canada",
     milestones: [
+      { date: "Apr 23, 2021", event: "EQT Infrastructure agreed to acquire First Student and First Transit from FirstGroup for $4.6 billion.", category: "Acquisition" },
       { date: "Jul 22, 2021", event: "EQT Infrastructure closed the acquisition of First Student and First Transit.", category: "Acquisition" },
     ],
     sources: [
       { label: "Firststudentinc — First Student", url: "https://firststudentinc.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Eqtgroup — First Student", url: "https://eqtgroup.com/about/current-portfolio/first-student", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
+      { label: "Announcement source — EQT Infrastructure — First Student", url: "https://eqtgroup.com/en/news/eqt-infrastructure-to-acquire-first-student-and-first-transit-the-market-leading-providers-of-essential-north-american-transportation-services-for-usd-46bn-2021-04-23", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
       { label: "Close date source — EQT Infrastructure — First Student", url: "https://firststudentinc.com/resources/newsroom/eqt-infrastructure-closes-acquisition-of-first-student-and-first-transit/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
@@ -19164,12 +19192,14 @@ export const companies: PortCo[] = [
     headquarters: "Arkansas",
     milestones: [
       { date: "2021", event: "Generate Capital had Generate-linked management involvement with EnviraPAC Monticello and later described its investment in the project SPV.", category: "Financing" },
+      { date: "2022", event: "EnviraPAC Monticello was named one of Arkansas's Exceptional 8 in the Coolest Things Made in Arkansas contest.", category: "Other" },
+      { date: "Sep 2024", event: "NCAT profiled EnviraPAC's Monticello operation converting forestry residuals into renewable engineered biochar carbon powder.", category: "Expansion" },
     ],
     sources: [
       { label: "Portfolio evidence source — Generate Capital — EnviraPAC Monticello", url: "https://generatecapital.com/investment/", type: "ARTICLE" },
-      { label: "Ncat — EnviraPAC Monticello", url: "https://www.ncat.org/arkansas-carbon-venture-turns-sustainable-forestry-management-residuals-into-market-ready-product/", type: "ARTICLE" },
+      { label: "Ncat — EnviraPAC Monticello", url: "https://www.ncat.org/arkansas-carbon-venture-turns-sustainable-forestry-management-residuals-into-market-ready-product/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
       { label: "Biomassmagazine — EnviraPAC Monticello", url: "https://biomassmagazine.com/directory/companies/772", type: "ARTICLE" },
-      { label: "Chemicalsamerica — EnviraPAC Monticello", url: "https://chemicalsamerica.com/companies/envirapac-monticello", type: "ARTICLE" },
+      { label: "Chemicalsamerica — EnviraPAC Monticello", url: "https://chemicalsamerica.com/companies/envirapac-monticello", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
       { label: "Investment evidence source — Generate Capital — EnviraPAC Monticello", url: "https://chemicalsamerica.com/2021-Attendee-List", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
     ],
     owners: [
@@ -21545,6 +21575,7 @@ export const companies: PortCo[] = [
     headquarters: "Illinois",
     milestones: [
       { date: "Nov 2, 2021", event: "Harrison Street and 1547 announced the acquisition of four U.S. data-center facilities, including the Chicago CBD asset.", category: "Acquisition" },
+      { date: "2026", event: "1547 identified CHIL2 as a downtown Chicago carrier-neutral facility at 725 South Wells serving enterprise and network customers.", category: "Other" },
     ],
     sources: [
       { label: "1547Realty — Chicago CBD Data Center (CHIL2)", url: "https://www.1547realty.com/data-center/chicago-il-chil2/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
@@ -22984,15 +23015,14 @@ export const companies: PortCo[] = [
     headquarters: "Florida, Spain, Italy, Caribbean, and U.S. Virgin Islands",
     milestones: [
       { date: "2023", event: "Cruise Terminals International was formed as a partnership between iCON Infrastructure and Royal Caribbean Group.", category: "Founding" },
-      { date: "2023", event: "CTI began with Cruise Terminal A in Miami and additional cruise terminal projects in Europe and the Caribbean.", category: "Other" },
-      { date: "Dec 17, 2025", event: "CTI signed a long-term lease for the Crown Bay district redevelopment in St. Thomas.", category: "Other" },
-      { date: "Dec 18, 2025", event: "CTI, VIPA, and Royal Caribbean publicly commemorated the Crown Bay redevelopment signing.", category: "Other" },
+      { date: "2023", event: "CTI began with Cruise Terminal A in Miami and additional cruise terminal projects in Europe and the Caribbean.", category: "Expansion" },
+      { date: "Dec 17, 2025", event: "CTI signed a long-term lease for the Crown Bay district redevelopment in St. Thomas.", category: "Expansion" },
     ],
     sources: [
       { label: "Cruisetermint — Cruise Terminals International", url: "https://cruisetermint.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
-      { label: "Cruisetermint — Cruise Terminals International", url: "https://cruisetermint.com/partners/", type: "ARTICLE" },
+      { label: "Cruisetermint — Cruise Terminals International", url: "https://cruisetermint.com/partners/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Iconinfrastructure — Cruise Terminals International", url: "https://iconinfrastructure.com/investments/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
-      { label: "PR Newswire — Cruise Terminals International", url: "https://www.prnewswire.com/news-releases/the-virgin-islands-port-authority-royal-caribbean-group-and-cruise-terminals-international-commemorate-crown-bay-district-redevelopment-signing-302646007.html", type: "PRESS_RELEASE" },
+      { label: "PR Newswire — Cruise Terminals International", url: "https://www.prnewswire.com/news-releases/the-virgin-islands-port-authority-royal-caribbean-group-and-cruise-terminals-international-commemorate-crown-bay-district-redevelopment-signing-302646007.html", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
       { investmentFirm: "iCON Infrastructure", ownershipVehicle: "iCON Infrastructure Partners VI", investmentYear: 2023, status: "Active" },
@@ -23700,12 +23730,17 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "Saskatchewan",
     milestones: [
+      { date: "Sep 2018", event: "Saskatchewan approved the Blue Hill Wind Energy Project near Herbert.", category: "Expansion" },
+      { date: "Aug 2019", event: "Construction started on the Blue Hill Wind Facility.", category: "Expansion" },
+      { date: "Apr 14, 2022", event: "Blue Hill achieved commercial operation under a 25-year power purchase agreement with SaskPower.", category: "Expansion" },
       { date: "Oct 3, 2022", event: "InfraRed announced an agreement to acquire an 80% stake in Blue Hill from Algonquin.", category: "Acquisition" },
     ],
     sources: [
       { label: "Announcement date source — InfraRed Capital Partners — Blue Hill Wind Facility", url: "https://www.ircp.com/news/infrared-capital-partners-acquire-stakes-four-wind-assets-algonquin-power-utilities-corp-0/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Investment date source — InfraRed Capital Partners — Blue Hill Wind Facility", url: "https://www.ircp.com/case-study/us-onshore-wind/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
-      { label: "Saskpower — Blue Hill Wind Facility", url: "https://www.saskpower.com/our-power-future/our-electricity/electrical-system/system-map/blue-hill-wind-facility", type: "ARTICLE" },
+      { label: "Saskpower — Blue Hill Wind Facility", url: "https://www.saskpower.com/our-power-future/our-electricity/electrical-system/system-map/blue-hill-wind-facility", type: "ARTICLE", purpose: "OPERATIONS_ASSETS" },
+      { label: "Torys — Blue Hill Wind Facility", url: "https://www.torys.com/work/2020/12/ced1d7c0-3830-4659-9514-3f3da5837bad", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
+      { label: "Government of Saskatchewan — Blue Hill Wind Facility", url: "https://www.saskatchewan.ca/government/news-and-media/2018/september/20/blue-hill-wind-project", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
       { investmentFirm: "InfraRed Capital Partners", ownershipVehicle: "n.a.", investmentYear: 2022, status: "Active" },
@@ -24962,13 +24997,14 @@ export const companies: PortCo[] = [
     investmentYear: 2023,
     headquarters: "United States",
     milestones: [
-      { date: "Sep 11, 2023", event: "Kimmeridge disclosed that Kimmeridge Carbon Solutions had made targeted investments including Common Energy.", category: "Other" },
+      { date: "Sep 11, 2023", event: "Kimmeridge disclosed that Kimmeridge Carbon Solutions had made targeted investments including Common Energy.", category: "Financing" },
+      { date: "2026", event: "Common Energy listed community solar availability across multiple U.S. state programs including Illinois, Massachusetts, Maryland, Maine, Minnesota, New Jersey, New York, Oregon, and Rhode Island.", category: "Expansion" },
     ],
     sources: [
       { label: "Commonenergy — Common Energy", url: "https://www.commonenergy.us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Commonenergy — Common Energy", url: "https://www.commonenergy.us/locations", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
       { label: "Commonenergy — Common Energy", url: "https://www.commonenergy.us/for-organizations", type: "ARTICLE" },
-      { label: "Portfolio evidence source — Kimmeridge — Common Energy", url: "https://www.prnewswire.com/news-releases/kimmeridge-carbon-solutions-commits-15-million-to-us-light-energy--a-highly-regarded-developer-of-community-solar-solutions-301923528.html", type: "PRESS_RELEASE" },
+      { label: "Portfolio evidence source — Kimmeridge — Common Energy", url: "https://www.prnewswire.com/news-releases/kimmeridge-carbon-solutions-commits-15-million-to-us-light-energy--a-highly-regarded-developer-of-community-solar-solutions-301923528.html", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
       { label: "Kimmeridge — Common Energy", url: "https://kimmeridge.com/select-investments/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
@@ -26195,7 +26231,6 @@ export const companies: PortCo[] = [
       { date: "Aug 2018", event: "OMERS Infrastructure announced an investment representing approximately 24% of Puget Holdings.", category: "Financing" },
       { date: "Aug 8, 2018", event: "AIMCo and BCI increased their Puget Holdings positions, while OMERS and PGGM acquired initial stakes of 23.9% and 10%, respectively.", category: "Acquisition" },
       { date: "Feb 22, 2022", event: "Macquarie Asset Management and Ontario Teachers' (OTPP) completed the acquisition of a 31.6% stake in Puget Holdings.", category: "Acquisition" },
-      { date: "Sep 4, 2025", event: "BCI published an investment insight describing Puget Sound Energy as one of BCI's largest and longest-standing infrastructure investments.", category: "Other" },
     ],
     sources: [
       { label: "Pse — Puget Sound Energy", url: "https://www.pse.com/en/about-us", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -27146,13 +27181,10 @@ export const companies: PortCo[] = [
     headquarters: "Nevada, Arizona, Utah, Iowa, and Texas",
     milestones: [
       { date: "Aug 2022", event: "Columbia Capital, Cologix management, and the van Rooyen family office were reported to be forming Tract as a new data center land platform seeking investor capital.", category: "Financing" },
-      { date: "Dec 29, 2022", event: "Tract (Landco) I, LP filed a Form D amendment for pooled investment fund interests with the SEC.", category: "Financing" },
       { date: "May 2024", event: "Tract announced the acquisition of 1,200 acres in Hanover County, Virginia for hyperscale data center campuses.", category: "Acquisition" },
-      { date: "Jan 10, 2025", event: "Data Center Dynamics reported that Tract Capital currently owns Tract and Fleet Data Centers.", category: "Other" },
-      { date: "May 2025", event: "Tract announced the acquisition of 1,515 acres in Caldwell County, Texas for a multi-gigawatt technology park.", category: "Acquisition" },
       { date: "Mar 2025", event: "Tract announced entry into the Des Moines market through the acquisition of 453 acres in Altoona, Iowa.", category: "Acquisition" },
-      { date: "Jun 2025", event: "Tract announced an additional 1,060-acre closing in Silver Springs, Nevada after rezoning and a development agreement with Lyon County.", category: "Other" },
-      { date: "Mar 2026", event: "Bloomberg described Tract as overseeing more than 30,000 acres for data center land development.", category: "Other" },
+      { date: "May 2025", event: "Tract announced the acquisition of 1,515 acres in Caldwell County, Texas for a multi-gigawatt technology park.", category: "Acquisition" },
+      { date: "Jun 2025", event: "Tract announced an additional 1,060-acre closing in Silver Springs, Nevada after rezoning and a development agreement with Lyon County.", category: "Acquisition" },
     ],
     sources: [
       { label: "Tract Capital — Businesses", url: "https://tractcapital.com/strategies-portfolio/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -29529,13 +29561,15 @@ export const companies: PortCo[] = [
     investmentYear: 2016,
     headquarters: "State of Mexico; Hidalgo; Tlaxcala; Puebla",
     milestones: [
+      { date: "Jul 2009", event: "The first phase of Arco Norte opened to traffic.", category: "Expansion" },
+      { date: "2011", event: "The second phase to Atlacomulco opened.", category: "Expansion" },
       { date: "Jul 2016", event: "IDEAL, CPP Investments, and OTPP (Ontario Teachers') created a strategic partnership to invest in Mexican infrastructure assets including Arco Norte.", category: "Acquisition" },
     ],
     sources: [
       { label: "Arconorte — Autopista Arco Norte, S.A. de C.V.", url: "https://www.arconorte.com.mx/en/about-us/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Otpp — Autopista Arco Norte, S.A. de C.V.", url: "https://www.otpp.com/en-ca/about-us/news-and-insights/2016/impulsora-del-desarrollo-y-el-empleo-en-america-latina-s-a-b-de-c-v-cppib-and-ontario-teachers-pension-plan-create-strategic-partnership-to-invest-in/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Cppinvestments — Autopista Arco Norte, S.A. de C.V.", url: "https://www.cppinvestments.com/newsroom/cppib-invests-mexican-infrastructure/", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
-      { label: "Proyectosmexico — Autopista Arco Norte, S.A. de C.V.", url: "https://www.proyectosmexico.gob.mx/?language=en&p=4809&post_type=proyecto_inversion&so=1", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
+      { label: "Proyectosmexico — Autopista Arco Norte, S.A. de C.V.", url: "https://www.proyectosmexico.gob.mx/?language=en&p=4809&post_type=proyecto_inversion&so=1", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
     ],
     owners: [
       { investmentFirm: "OTPP", ownershipVehicle: "n.a.", investmentYear: 2016, status: "Active" },
@@ -31309,12 +31343,9 @@ export const companies: PortCo[] = [
     headquarters: "Conroe, Texas; Mattoon, Illinois",
     milestones: [
       { date: "Oct 2023", event: "Consolidated announced an agreement to be acquired by Searchlight Capital Partners and BCI.", category: "Acquisition" },
-      { date: "2024", event: "Regulatory approvals were secured for the take-private transaction.", category: "Acquisition" },
-      { date: "Jan 2024", event: "Shareholders approved the proposed transaction.", category: "Expansion" },
       { date: "Dec 27, 2024", event: "Searchlight and BCI completed the take-private acquisition of Consolidated Communications.", category: "Acquisition" },
       { date: "Sep 17, 2025", event: "Consolidated announced a planned CEO transition, with Gaurav Juneja to become CEO at the beginning of 2026.", category: "Management" },
       { date: "Sep 22, 2025", event: "Consolidated Communications announced that its residential, business, and wholesale lines of business would unite under the Fidium brand.", category: "Other" },
-      { date: "Sep 22, 2025", event: "Fidium disclosed an inaugural ABS financing exceeding $1 billion to help fuel continued fiber expansion.", category: "Financing" },
     ],
     management: [
       { name: "Gaurav Juneja", title: "President and Chief Executive Officer" },
@@ -33876,6 +33907,7 @@ export const companies: PortCo[] = [
     headquarters: "California",
     milestones: [
       { date: "2011", event: "Renewable Resources Group established Homer as a Vision Ridge portfolio company to improve the resilience of California's water system.", category: "Financing" },
+      { date: "2020", event: "A Rockefeller Brothers Fund case study highlighted Homer as a Vision Ridge-backed California water asset platform managed with Renewable Resources Group.", category: "Other" },
     ],
     sources: [
       { label: "Vision Ridge — Homer", url: "https://vision-ridge.com/investments/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
