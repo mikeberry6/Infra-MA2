@@ -1,14 +1,14 @@
 # Portfolio Milestone Audit
 
-Run at: 2026-05-14T01:25:14.815Z
+Run at: 2026-05-15T04:29:58.000Z
 
 ## Scope
 
 - Company records: 1169
-- Milestones reviewed by automated checks: 4177
-- Average milestones per company: 3.57
+- Milestones reviewed by automated checks: 4055
+- Average milestones per company: 3.47
 - Companies in priority queue: 0
-- `Other` milestones: 719
+- `Other` milestones: 373
 
 ## Review Standard
 

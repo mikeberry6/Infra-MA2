@@ -41,9 +41,11 @@ interface CompanyAuditRow {
   exactDuplicates: string;
   nearDuplicates: string;
   lowValueMilestones: string;
+  redundantGenericFoundings: string;
   recategoryCandidates: string;
   missingEntryOwners: string;
   missingExitOwners: string;
+  duplicateOwners: string;
   sourceCoverage: string;
   sourceUrls: string;
   reviewerDecision: string;
@@ -124,9 +126,11 @@ function toCsv(rows: CompanyAuditRow[]): string {
     "exactDuplicates",
     "nearDuplicates",
     "lowValueMilestones",
+    "redundantGenericFoundings",
     "recategoryCandidates",
     "missingEntryOwners",
     "missingExitOwners",
+    "duplicateOwners",
     "sourceCoverage",
     "sourceUrls",
     "reviewerDecision",
@@ -202,6 +206,28 @@ function ownerTokens(owner: PortCoOwner): string[] {
   return Array.from(tokens);
 }
 
+function ownerKey(owner: PortCoOwner): string {
+  return [
+    owner.investmentFirm,
+    owner.ownershipVehicle,
+    owner.investmentYear ?? "",
+    owner.exitYear ?? "",
+    owner.stake ?? "",
+    owner.status,
+  ].join(" / ");
+}
+
+function findDuplicateOwners(owners: PortCoOwner[]): string[] {
+  const seen = new Set<string>();
+  const duplicates: string[] = [];
+  for (const owner of owners) {
+    const key = ownerKey(owner);
+    if (seen.has(key)) duplicates.push(key);
+    seen.add(key);
+  }
+  return duplicates;
+}
+
 function milestoneMentionsOwner(milestone: PortCoMilestone, owner: PortCoOwner): boolean {
   const haystack = normalizeEvent(milestone.event);
   const compactHaystack = haystack.replace(/[^a-z0-9]+/g, "");
@@ -265,6 +291,28 @@ function findNearDuplicates(milestones: PortCoMilestone[]): NearDuplicate[] {
   return results;
 }
 
+function isGenericFoundingMilestone(milestone: PortCoMilestone): boolean {
+  return milestone.category === "Founding" && /^.+ was founded\.$/.test(milestone.event);
+}
+
+function isRicherSameYearContext(milestone: PortCoMilestone, genericFounding: PortCoMilestone): boolean {
+  const genericYears = milestoneDateYears(genericFounding);
+  if (!genericYears.length || !milestoneDateYears(milestone).some((year) => genericYears.includes(year))) return false;
+  return /\b(formed|launched|created|financial close|commercial close|acquir|investment|invested|construction|operation|operations|entered service|in service|commission|groundbreaking|dedicated)\b/i.test(
+    milestone.event,
+  );
+}
+
+function findRedundantGenericFoundings(milestones: PortCoMilestone[]): string[] {
+  const redundant = milestones.filter(
+    (milestone) =>
+      isGenericFoundingMilestone(milestone) &&
+      milestones.some((candidate) => candidate !== milestone && isRicherSameYearContext(candidate, milestone)),
+  );
+  if (!redundant.length || milestones.length - redundant.length < 2) return [];
+  return redundant.map(milestoneToText);
+}
+
 function isDistinctFollowOnPair(first: PortCoMilestone, second: PortCoMilestone): boolean {
   const text = `${first.event} ${second.event}`.toLowerCase();
   if (/\b(follow-on|additional|second|subsequent)\b/.test(text) && /\b(initial|first)\b/.test(text)) return true;
@@ -275,12 +323,13 @@ function suggestedCategory(milestone: PortCoMilestone): string | null {
   if (milestone.category !== "Other") return null;
   const event = milestone.event.toLowerCase();
   if (/\b(founded|was founded|established|was formed|were formed|formed as|formed by|incorporated|traces .* back|identify .* founding year|identifies .* founding year)\b/.test(event)) return "Founding";
+  if (/\b(launched as|launched with|announced (?:the )?launch|entered the market|started with|platform launched)\b/.test(event)) return "Founding";
   if (/\b(ipo|initial public offering|publicly listed|began trading)\b/.test(event)) return "IPO";
   if (/\b(divest\w*|sale|sold|sell|exit)\b/.test(event)) return "Divestiture";
-  if (/\b(acquir\w*|purchase|purchased|bought|stake|ownership interest|completed the transaction|closed the transaction|take-private)\b/.test(event)) return "Acquisition";
-  if (/\b(financ\w*|funding|capital raise|equity raise|credit facility|investment|invested|commitment|committed|financial close)\b/.test(event)) return "Financing";
-  if (/\b(appointed|joined as|chief|ceo|cfo|coo|president)\b/.test(event)) return "Management";
-  if (/\b(expand\w*|opened|entered service|entered operation|entered operations|commercial operation|commercial operations|commercial in-service|in service|began operations|began operation|began operating|started operations|commenced operations|mechanical completion|substantial completion|construction began|start of construction|groundbreaking|commissioned|cod|capacity|portfolio grew|connected to the grid|selected|awarded|approved|executed|dedicated)\b/.test(event)) return "Expansion";
+  if (/\b(acquir\w*|purchase|purchased|bought|stake|ownership interest|completed the transaction|completed .* acquisition|closed the transaction|closed .* transaction|closed .* acquisition|announced the acquisition|concurrent acquisition|take-private|entered .* portfolio|added .* portfolio|became .* portfolio company|transaction added|transaction covered|changed ownership)\b/.test(event)) return "Acquisition";
+  if (/\b(financ\w*|funding|capital raise|equity raise|credit facility|investment|invested|commitment|committed|capital commitments|financial close|commercial close|tax equity|agreement to invest|structured .* reduce upfront costs|partnership to fund|project financing|ownership split|ownership structure|ownership information|wholly owned|owned by affiliates|retained (?:its |a )?\d+(?:\.\d+)?%|retained .*interest|remaining shareholders|joint venture between|post-closing ownership|post-combination ownership|economic interest|shareholders backing)\b/.test(event)) return "Financing";
+  if (/\b(appointed|joined as|chief|ceo|cfo|coo|president|management responsibilities|operate and manage|continue to manage|would remain .*operator|managing member|continuing to lead|expected to continue operating|employee ownership program|climate action plan|gresb|esg data|rebranded as|announced (?:its )?rebrand|adopted the .* brand|introduced the .* brand|brand refresh|officially rebranded|unveiled the .* brand)\b/.test(event)) return "Management";
+  if (/\b(expand\w*|opened|opening|opening of|entered service|entered operation|entered operations|commercial operation|commercial operations|commercial in-service|commercial service|in service|in operation|began operations|began operation|began operating|started operations|commenced operations|commenced .*operations|commencement of operations|mechanical completion|substantial completion|construction began|construction started|construction proceeded|construction progressed|construction advanced|construction was completed|construction had begun|start of construction|under construction|groundbreaking|commissioned|commissioning|inaugurated|ribbon cutting|grand opening|cod|capacity|portfolio grew|operating assets|development pipeline|project pipeline|pipeline spanning|route miles|track miles|square feet|customers|facilities|beds|connected to the grid|selected|awarded|approved|executed|dedicated|fully stabilize|approval to proceed with development work|operating in |operating footprint|platform spanning|regional .*platform|project delivery|delivered more than|reported more than|largest .*platform|largest .*complex|largest .*player|fully upgraded|more than \d|approximately \d|about \d|fleet (?:comprised|of)|\d[\d,]* employees|\d[\d,]* vehicles|\d[\d,]* sites|\d[\d,]* facilities|\d[\d,]* teu|\d[\d,]* tons|\d[\d,]* locate tickets|\b(?:mw|gw|mwh)\b)\b/.test(event)) return "Expansion";
   return null;
 }
 
@@ -327,6 +376,8 @@ function priorityAndScore(flags: Set<string>, milestoneCount: number, ownerCount
     thin_scorecard: 30,
     excessive_other_milestones: 25,
     low_value_milestone: 25,
+    redundant_generic_founding: 25,
+    duplicate_owner: 25,
     no_transaction_or_milestone_source_purpose: 15,
     no_sources: 15,
   };
@@ -364,9 +415,11 @@ function auditCompany(company: PortCo, sourceLine: number | ""): CompanyAuditRow
   const exactDuplicates = findExactDuplicates(milestones);
   const nearDuplicates = findNearDuplicates(milestones);
   const lowValueMilestones = milestones.filter((milestone) => LOW_VALUE_EVENT_RE.test(`${milestone.date} ${milestone.event}`));
+  const redundantGenericFoundings = findRedundantGenericFoundings(milestones);
   const recategoryCandidates = findRecategorizationCandidates(milestones);
   const missingEntryOwners = owners.filter((owner) => owner.investmentYear && !hasEntryMilestone(owner, milestones));
   const missingExitOwners = owners.filter((owner) => owner.exitYear && !hasExitMilestone(owner, milestones));
+  const duplicateOwners = findDuplicateOwners(owners);
   const otherCount = milestones.filter((milestone) => milestone.category === "Other").length;
   const coverageFlags = sourceCoverage(company, milestones);
 
@@ -374,12 +427,14 @@ function auditCompany(company: PortCo, sourceLine: number | ""): CompanyAuditRow
   if (exactDuplicates.length) flags.add("exact_duplicate_milestone");
   if (missingEntryOwners.length) flags.add("missing_owner_entry_milestone");
   if (missingExitOwners.length) flags.add("missing_owner_exit_milestone");
+  if (duplicateOwners.length) flags.add("duplicate_owner");
   if (nearDuplicates.length) flags.add("near_duplicate_milestone");
   if (milestones.length > 6) flags.add("over_dense_scorecard");
   if (recategoryCandidates.length) flags.add("recategorization_candidate");
   if (milestones.length === 1) flags.add("thin_scorecard");
   if (otherCount > 2 || (milestones.length >= 3 && otherCount / milestones.length > 0.5)) flags.add("excessive_other_milestones");
   if (lowValueMilestones.length) flags.add("low_value_milestone");
+  if (redundantGenericFoundings.length) flags.add("redundant_generic_founding");
   for (const flag of coverageFlags) flags.add(flag);
 
   const { priority, score } = priorityAndScore(flags, milestones.length, owners.length);
@@ -403,6 +458,7 @@ function auditCompany(company: PortCo, sourceLine: number | ""): CompanyAuditRow
     exactDuplicates: exactDuplicates.join(" || "),
     nearDuplicates: nearDuplicates.map((item) => `${item.reason}: ${item.first} <-> ${item.second}`).join(" || "),
     lowValueMilestones: lowValueMilestones.map(milestoneToText).join(" || "),
+    redundantGenericFoundings: redundantGenericFoundings.join(" || "),
     recategoryCandidates: recategoryCandidates
       .map((item) => `${item.suggestedCategory}: ${item.milestone}`)
       .join(" || "),
@@ -412,6 +468,7 @@ function auditCompany(company: PortCo, sourceLine: number | ""): CompanyAuditRow
     missingExitOwners: missingExitOwners
       .map((owner) => `${owner.investmentFirm} / ${owner.ownershipVehicle} / ${owner.exitYear}`)
       .join(" || "),
+    duplicateOwners: duplicateOwners.join(" || "),
     sourceCoverage: coverageFlags.join(" | "),
     sourceUrls: (company.sources ?? []).map((source) => source.url).join(" | "),
     reviewerDecision: "",
@@ -515,8 +572,10 @@ function packetAction(row: CompanyAuditRow): string {
   const actions: string[] = [];
   if (row.malformedDates) actions.push("Fix or remove non-standard date labels.");
   if (row.exactDuplicates || row.nearDuplicates) actions.push("Prune duplicate or near-duplicate milestones.");
+  if (row.redundantGenericFoundings) actions.push("Remove generic founding placeholders duplicated by richer same-year milestones.");
   if (row.missingEntryOwners) actions.push("Research/add owner entry milestone aligned to investment year.");
   if (row.missingExitOwners) actions.push("Research/add owner exit milestone aligned to exit year.");
+  if (row.duplicateOwners) actions.push("Remove exact duplicate owner records.");
   if (row.recategoryCandidates) actions.push("Recategorize obvious non-Other transaction or event milestones.");
   if (row.flags.includes("over_dense_scorecard")) actions.push("Prune toward curated target while retaining owner history.");
   if (row.flags.includes("thin_scorecard")) actions.push("Research missing founding/investment/growth context.");
