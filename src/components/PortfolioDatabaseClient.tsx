@@ -1,11 +1,11 @@
 "use client";
 
 import { PortfolioDatabase } from "@/components/PortfolioDatabase";
-import type { CompanyView, FundView, DatabaseCounts } from "@/modules/shared/types";
+import type { CompanyView, FundStrategyView, DatabaseCounts } from "@/modules/shared/types";
 
 interface PortfolioDatabaseClientProps {
   companies: CompanyView[];
-  funds: FundView[];
+  funds: FundStrategyView[];
   counts: DatabaseCounts;
 }
 

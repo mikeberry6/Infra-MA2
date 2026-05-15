@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAllDeals } from "@/modules/deals/queries";
 import { toCsv } from "@/lib/csv";
+import { hasAnyRole } from "@/modules/auth/guards";
 
 const DEAL_COLUMNS = [
   "legacyId",
@@ -29,11 +30,17 @@ const DEAL_COLUMNS = [
 
 export async function GET(request: NextRequest) {
   try {
-    const deals = await getAllDeals();
-
     // Support ?format=json for backward compatibility
     const { searchParams } = new URL(request.url);
-    if (searchParams.get("format") === "json") {
+    const wantsJson = searchParams.get("format") === "json";
+
+    if (wantsJson && !(await hasAnyRole(["ADMIN", "ANALYST"]))) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+
+    const deals = await getAllDeals();
+
+    if (wantsJson) {
       return NextResponse.json({
         data: deals,
         count: deals.length,

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAllCompanies } from "@/modules/companies/queries";
 import { toCsv } from "@/lib/csv";
+import { hasAnyRole } from "@/modules/auth/guards";
 
 const PORTFOLIO_COLUMNS = [
   "name",
@@ -21,11 +22,17 @@ const PORTFOLIO_COLUMNS = [
 
 export async function GET(request: NextRequest) {
   try {
-    const companies = await getAllCompanies();
-
     // Support ?format=json for backward compatibility
     const { searchParams } = new URL(request.url);
-    if (searchParams.get("format") === "json") {
+    const wantsJson = searchParams.get("format") === "json";
+
+    if (wantsJson && !(await hasAnyRole(["ADMIN", "ANALYST"]))) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+
+    const companies = await getAllCompanies();
+
+    if (wantsJson) {
       return NextResponse.json({
         data: companies,
         count: companies.length,

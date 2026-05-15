@@ -1,8 +1,9 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { revalidatePath } from "next/cache";
+import { revalidateAppData } from "@/lib/revalidation";
 import { parseDateInput } from "@/lib/format";
+import { isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { dealSchema, fundSchema, companySchema, ownershipPeriodSchema } from "./schemas";
 import {
   DEAL_SECTOR_MAP,
@@ -100,20 +101,28 @@ function normalizeFundLookup(s: string): string {
 }
 
 function revalidateAll() {
-  revalidatePath("/");
-  revalidatePath("/tracker");
-  revalidatePath("/funds");
-  revalidatePath("/portfolio");
-  revalidatePath("/admin");
-  revalidatePath("/admin/deals");
-  revalidatePath("/admin/funds");
-  revalidatePath("/admin/companies");
+  revalidateAppData();
+}
+
+async function requireAdminAction(): Promise<ActionResult | null> {
+  try {
+    await requireAdmin();
+    return null;
+  } catch (error) {
+    if (isAuthorizationError(error)) {
+      return { success: false, error: "Forbidden" };
+    }
+    throw error;
+  }
 }
 
 // ── Deal Actions ──────────────────────────────────────────────
 
 export async function createDeal(formData: FormData): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     const raw = {
       title: formData.get("title") as string,
       target: formData.get("target") as string,
@@ -217,6 +226,9 @@ export async function createDeal(formData: FormData): Promise<ActionResult> {
 
 export async function updateDeal(id: string, formData: FormData): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     const raw = {
       title: formData.get("title") as string,
       target: formData.get("target") as string,
@@ -311,9 +323,13 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
 
 export async function deleteDeal(id: string): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     await prisma.$transaction([
       prisma.dealParticipant.deleteMany({ where: { dealId: id } }),
       prisma.citation.deleteMany({ where: { dealId: id } }),
+      prisma.newsMention.deleteMany({ where: { dealId: id } }),
       prisma.deal.delete({ where: { id } }),
     ]);
     revalidateAll();
@@ -326,6 +342,9 @@ export async function deleteDeal(id: string): Promise<ActionResult> {
 
 export async function publishDeal(id: string): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     await prisma.deal.update({ where: { id }, data: { status: "PUBLISHED" } });
     revalidateAll();
     return { success: true };
@@ -339,6 +358,9 @@ export async function publishDeal(id: string): Promise<ActionResult> {
 
 export async function createFund(formData: FormData): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     const raw = {
       managerName: formData.get("managerName") as string,
       fundName: formData.get("fundName") as string,
@@ -389,6 +411,9 @@ export async function createFund(formData: FormData): Promise<ActionResult> {
 
 export async function updateFund(id: string, formData: FormData): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     const raw = {
       managerName: formData.get("managerName") as string,
       fundName: formData.get("fundName") as string,
@@ -439,8 +464,12 @@ export async function updateFund(id: string, formData: FormData): Promise<Action
 
 export async function deleteFund(id: string): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     await prisma.$transaction([
       prisma.ownershipPeriod.deleteMany({ where: { fundId: id } }),
+      prisma.newsMention.deleteMany({ where: { fundId: id } }),
       prisma.fund.delete({ where: { id } }),
     ]);
     revalidateAll();
@@ -453,6 +482,9 @@ export async function deleteFund(id: string): Promise<ActionResult> {
 
 export async function publishFund(id: string): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     await prisma.fund.update({ where: { id }, data: { status: "PUBLISHED" } });
     revalidateAll();
     return { success: true };
@@ -466,6 +498,9 @@ export async function publishFund(id: string): Promise<ActionResult> {
 
 export async function createCompany(formData: FormData): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     const raw = {
       name: formData.get("name") as string,
       country: formData.get("country") as string,
@@ -534,6 +569,9 @@ export async function createCompany(formData: FormData): Promise<ActionResult> {
 
 export async function updateCompany(id: string, formData: FormData): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     const raw = {
       name: formData.get("name") as string,
       country: formData.get("country") as string,
@@ -579,11 +617,15 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
 
 export async function deleteCompany(id: string): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     await prisma.$transaction([
       prisma.ownershipPeriod.deleteMany({ where: { companyId: id } }),
       prisma.milestone.deleteMany({ where: { companyId: id } }),
       prisma.managementRole.deleteMany({ where: { companyId: id } }),
       prisma.citation.deleteMany({ where: { companyId: id } }),
+      prisma.newsMention.deleteMany({ where: { companyId: id } }),
       prisma.company.delete({ where: { id } }),
     ]);
     revalidateAll();
@@ -596,6 +638,9 @@ export async function deleteCompany(id: string): Promise<ActionResult> {
 
 export async function publishCompany(id: string): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     await prisma.company.update({ where: { id }, data: { status: "PUBLISHED" } });
     revalidateAll();
     return { success: true };
@@ -624,6 +669,9 @@ export async function addOwnershipPeriod(
   formData: FormData,
 ): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     const parsed = ownershipPeriodSchema.safeParse(parseOwnershipFormData(formData));
     if (!parsed.success) {
       return { success: false, error: parsed.error.issues.map((i) => i.message).join(", ") };
@@ -656,6 +704,9 @@ export async function updateOwnershipPeriod(
   formData: FormData,
 ): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     const parsed = ownershipPeriodSchema.safeParse(parseOwnershipFormData(formData));
     if (!parsed.success) {
       return { success: false, error: parsed.error.issues.map((i) => i.message).join(", ") };
@@ -685,6 +736,9 @@ export async function updateOwnershipPeriod(
 
 export async function deleteOwnershipPeriod(id: string): Promise<ActionResult> {
   try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+
     await prisma.ownershipPeriod.delete({ where: { id } });
     revalidateAll();
     return { success: true };

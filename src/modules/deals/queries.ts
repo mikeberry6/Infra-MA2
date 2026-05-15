@@ -1,4 +1,6 @@
 import { prisma } from "@/lib/prisma";
+import { unstable_cache } from "next/cache";
+import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
 import {
   DEAL_SECTOR_DISPLAY,
   DEAL_REGION_DISPLAY,
@@ -89,13 +91,23 @@ const DEAL_INCLUDE = {
   },
 } as const;
 
-export async function getAllDeals(): Promise<DealView[]> {
+async function getAllDealsRaw(): Promise<DealView[]> {
   const deals = await prisma.deal.findMany({
     where: { status: "PUBLISHED" },
     include: DEAL_INCLUDE,
     orderBy: { date: "desc" },
   });
   return deals.map(toDealView);
+}
+
+const getAllDealsCached = unstable_cache(
+  getAllDealsRaw,
+  ["deals:all"],
+  { tags: [CACHE_TAGS.deals], revalidate: CACHE_REVALIDATE_SECONDS },
+);
+
+export async function getAllDeals(): Promise<DealView[]> {
+  return getAllDealsCached();
 }
 
 export async function getDealById(legacyId: string): Promise<DealView | null> {

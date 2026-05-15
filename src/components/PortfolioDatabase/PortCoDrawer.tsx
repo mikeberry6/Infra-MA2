@@ -15,7 +15,7 @@ import {
   groupSourcesByPurpose,
   inferSourceType,
 } from "@/lib/source-utils";
-import type { CompanyView, FundView, OwnerView, MilestoneView, SourceView } from "@/modules/shared/types";
+import type { CompanyView, FundStrategyView, OwnerView, MilestoneView, SourceView } from "@/modules/shared/types";
 import { Tag } from "@/components/shared/Tag";
 import { Button } from "@/components/shared/Button";
 import { SectionLabel } from "@/components/shared/SectionLabel";
@@ -328,7 +328,7 @@ function buildSponsorFundRows(
   }];
 }
 
-function getMatchedFund(owner: OwnerView | null, funds: FundView[]): FundView | undefined {
+function getMatchedFund(owner: OwnerView | null, funds: FundStrategyView[]): FundStrategyView | undefined {
   if (!owner) return undefined;
   if (owner.fundName) {
     const fund = funds.find((f) => f.fundName === owner.fundName);
@@ -337,7 +337,7 @@ function getMatchedFund(owner: OwnerView | null, funds: FundView[]): FundView | 
   return owner.vehicle ? funds.find((f) => f.fundName === owner.vehicle) : undefined;
 }
 
-function getOwnerStrategies(owner: OwnerView | null, funds: FundView[]): string[] {
+function getOwnerStrategies(owner: OwnerView | null, funds: FundStrategyView[]): string[] {
   return getMatchedFund(owner, funds)?.strategies ?? [];
 }
 
@@ -586,7 +586,7 @@ function OwnerLine({
   repeatedStrategies,
 }: {
   owner: OwnerView;
-  funds: FundView[];
+  funds: FundStrategyView[];
   repeatedValues: string[];
   repeatedStrategies: string[];
 }) {
@@ -675,7 +675,7 @@ export function PortCoDrawer({
   onClose,
 }: {
   company: CompanyView;
-  funds: FundView[];
+  funds: FundStrategyView[];
   onClose: () => void;
 }) {
   const [showAllMilestones, setShowAllMilestones] = useState(false);

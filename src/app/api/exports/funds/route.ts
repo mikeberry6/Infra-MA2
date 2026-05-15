@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAllFunds } from "@/modules/funds/queries";
 import { toCsv } from "@/lib/csv";
+import { hasAnyRole } from "@/modules/auth/guards";
 
 const FUND_COLUMNS = [
   "legacyId",
@@ -22,11 +23,17 @@ const FUND_COLUMNS = [
 
 export async function GET(request: NextRequest) {
   try {
-    const funds = await getAllFunds();
-
     // Support ?format=json for backward compatibility
     const { searchParams } = new URL(request.url);
-    if (searchParams.get("format") === "json") {
+    const wantsJson = searchParams.get("format") === "json";
+
+    if (wantsJson && !(await hasAnyRole(["ADMIN", "ANALYST"]))) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+
+    const funds = await getAllFunds();
+
+    if (wantsJson) {
       return NextResponse.json({
         data: funds,
         count: funds.length,

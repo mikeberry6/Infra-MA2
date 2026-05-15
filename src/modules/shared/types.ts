@@ -60,6 +60,11 @@ export interface FundView {
   strategyUrl: string;
 }
 
+export interface FundStrategyView {
+  fundName: string;
+  strategies: string[];
+}
+
 export interface PortfolioCompanyView {
   name: string;
   sector: string;

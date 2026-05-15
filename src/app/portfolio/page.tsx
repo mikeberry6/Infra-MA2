@@ -2,7 +2,7 @@ export const dynamic = "force-dynamic";
 
 import type { Metadata } from "next";
 import { getAllCompanies } from "@/modules/companies/queries";
-import { getAllFunds } from "@/modules/funds/queries";
+import { getFundStrategyIndex } from "@/modules/funds/queries";
 import { getDatabaseCounts } from "@/modules/insights/queries";
 import { PortfolioDatabaseClient } from "@/components/PortfolioDatabaseClient";
 
@@ -14,7 +14,7 @@ export default async function PortfolioPage() {
   try {
     const [companies, funds, counts] = await Promise.all([
       getAllCompanies({ detail: false }),
-      getAllFunds(),
+      getFundStrategyIndex(),
       getDatabaseCounts(),
     ]);
     return (

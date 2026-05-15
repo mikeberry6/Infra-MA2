@@ -1,4 +1,6 @@
 import { prisma } from "@/lib/prisma";
+import { unstable_cache } from "next/cache";
+import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
 import {
   companyAliases,
   fundAliases,
@@ -65,7 +67,7 @@ type RawCuratedNewsItem = {
   confidence: string;
 };
 
-export async function getNewsFeed(): Promise<NewsFeedView> {
+async function getNewsFeedRaw(): Promise<NewsFeedView> {
   const context = await buildCandidateContext();
   const [curatedItems, transactionItems, fundraisingItems, rumorItems] = await Promise.all([
     getCuratedNewsItems(context),
@@ -88,6 +90,16 @@ export async function getNewsFeed(): Promise<NewsFeedView> {
     items,
     lastUpdated: new Date().toISOString(),
   };
+}
+
+const getNewsFeedCached = unstable_cache(
+  getNewsFeedRaw,
+  ["news:feed"],
+  { tags: [CACHE_TAGS.news, CACHE_TAGS.deals, CACHE_TAGS.funds, CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
+);
+
+export async function getNewsFeed(): Promise<NewsFeedView> {
+  return getNewsFeedCached();
 }
 
 async function buildCandidateContext(): Promise<CandidateContext> {

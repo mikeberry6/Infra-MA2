@@ -7,7 +7,7 @@ import { getPortCoSectorColor, getPortCoRegionColor, getPortCoCountryTagColor } 
 import { getUniqueFirms, getAllOwnerFirms } from "@/lib/portco-utils";
 import { exportPortfolioToExcel } from "@/utils/exportPortfolio";
 import { withBasePath } from "@/lib/base-path";
-import type { CompanyView, FundView, DatabaseCounts } from "@/modules/shared/types";
+import type { CompanyView, FundStrategyView, DatabaseCounts } from "@/modules/shared/types";
 import {
   Search,
   Download,
@@ -428,7 +428,7 @@ function PortCoTable({
 
 // ─── Main Component ─────────────────────────────────────────
 
-export function PortfolioDatabase({ companies: portcos, funds, counts }: { companies: CompanyView[]; funds: FundView[]; counts: DatabaseCounts }) {
+export function PortfolioDatabase({ companies: portcos, funds, counts }: { companies: CompanyView[]; funds: FundStrategyView[]; counts: DatabaseCounts }) {
   const [search, setSearch] = useState("");
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeCountryTags, toggleCountryTag] = useUrlFilterSet("country");

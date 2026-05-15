@@ -1,4 +1,6 @@
 import { prisma } from "@/lib/prisma";
+import { unstable_cache } from "next/cache";
+import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
 import {
   FUND_STRATEGY_DISPLAY,
   FUND_STRUCTURE_DISPLAY,
@@ -8,7 +10,7 @@ import {
   COMPANY_SECTOR_DISPLAY,
   COMPANY_REGION_DISPLAY,
 } from "@/modules/shared/enum-maps";
-import type { FundView, PortfolioCompanyView } from "@/modules/shared/types";
+import type { FundStrategyView, FundView, PortfolioCompanyView } from "@/modules/shared/types";
 import type { Fund as DbFund } from "@/generated/prisma/client";
 
 function toFundView(
@@ -89,13 +91,48 @@ const FUND_INCLUDE = {
   },
 } as const;
 
-export async function getAllFunds(): Promise<FundView[]> {
+async function getAllFundsRaw(): Promise<FundView[]> {
   const funds = await prisma.fund.findMany({
     where: { status: "PUBLISHED" },
     include: FUND_INCLUDE,
     orderBy: { fundName: "asc" },
   });
   return funds.map(toFundView);
+}
+
+const getAllFundsCached = unstable_cache(
+  getAllFundsRaw,
+  ["funds:all"],
+  { tags: [CACHE_TAGS.funds], revalidate: CACHE_REVALIDATE_SECONDS },
+);
+
+export async function getAllFunds(): Promise<FundView[]> {
+  return getAllFundsCached();
+}
+
+async function getFundStrategyIndexRaw(): Promise<FundStrategyView[]> {
+  const funds = await prisma.fund.findMany({
+    where: { status: "PUBLISHED" },
+    select: {
+      fundName: true,
+      strategies: true,
+    },
+    orderBy: { fundName: "asc" },
+  });
+  return funds.map((fund) => ({
+    fundName: fund.fundName,
+    strategies: fund.strategies.map((strategy) => FUND_STRATEGY_DISPLAY[strategy]),
+  }));
+}
+
+const getFundStrategyIndexCached = unstable_cache(
+  getFundStrategyIndexRaw,
+  ["funds:strategy-index"],
+  { tags: [CACHE_TAGS.funds], revalidate: CACHE_REVALIDATE_SECONDS },
+);
+
+export async function getFundStrategyIndex(): Promise<FundStrategyView[]> {
+  return getFundStrategyIndexCached();
 }
 
 export async function getFundById(legacyId: string): Promise<FundView | null> {

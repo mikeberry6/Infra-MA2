@@ -1,4 +1,6 @@
 import { prisma } from "@/lib/prisma";
+import { unstable_cache } from "next/cache";
+import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
 import {
   COMPANY_SECTOR_DISPLAY,
   COMPANY_REGION_DISPLAY,
@@ -361,7 +363,7 @@ function mergeByCanonicalKey(views: CompanyView[]): CompanyView {
   };
 }
 
-export async function getAllCompanies(options: { detail?: boolean } = {}): Promise<CompanyView[]> {
+async function getAllCompaniesRaw(options: { detail?: boolean } = {}): Promise<CompanyView[]> {
   const companies = await prisma.company.findMany({
     where: { status: "PUBLISHED" },
     include: options.detail === false ? COMPANY_LIST_INCLUDE : COMPANY_INCLUDE,
@@ -381,11 +383,61 @@ export async function getAllCompanies(options: { detail?: boolean } = {}): Promi
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
+const getAllCompaniesListCached = unstable_cache(
+  () => getAllCompaniesRaw({ detail: false }),
+  ["companies:all:list"],
+  { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
+);
+
+const getAllCompaniesDetailCached = unstable_cache(
+  () => getAllCompaniesRaw({ detail: true }),
+  ["companies:all:detail"],
+  { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
+);
+
+export async function getAllCompanies(options: { detail?: boolean } = {}): Promise<CompanyView[]> {
+  return options.detail === false
+    ? getAllCompaniesListCached()
+    : getAllCompaniesDetailCached();
+}
+
+async function getCompanyByFocusIdRaw(focusId: string): Promise<CompanyView | null> {
+  const target = await prisma.company.findFirst({
+    where: { id: focusId, status: "PUBLISHED" },
+    select: { id: true },
+  });
+  if (!target) return null;
+
+  // Find dedupe siblings without loading every company's milestones, sources,
+  // and management. This keeps the detail endpoint scoped to one company
+  // cluster while preserving the existing view-layer merge semantics.
+  const rows = await prisma.company.findMany({
+    where: { status: "PUBLISHED" },
+    select: { id: true, name: true },
+    orderBy: { name: "asc" },
+  });
+  const groups = groupByDedupKeys(rows, (row) => companyDedupKeys(row.name));
+  const siblingIds = groups.find((group) => group.some((row) => row.id === target.id))
+    ?.map((row) => row.id) ?? [target.id];
+
+  const companies = await prisma.company.findMany({
+    where: { id: { in: siblingIds }, status: "PUBLISHED" },
+    include: COMPANY_INCLUDE,
+    orderBy: { name: "asc" },
+  });
+
+  if (companies.length === 0) return null;
+  return mergeByCanonicalKey(companies.map(toCompanyView));
+}
+
+const getCompanyByFocusIdCached = unstable_cache(
+  getCompanyByFocusIdRaw,
+  ["companies:by-focus"],
+  { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
+);
+
 export async function getCompanyByFocusId(focusId: string): Promise<CompanyView | null> {
-  const companies = await getAllCompanies();
-  return companies.find((company) => (
-    company.id === focusId || company.focusIds.includes(focusId)
-  )) ?? null;
+  return getCompanyByFocusIdCached(focusId);
 }
 
 export async function getCompanyById(id: string): Promise<CompanyView | null> {
