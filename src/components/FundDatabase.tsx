@@ -28,6 +28,8 @@ import { Tag } from "@/components/shared/Tag";
 import { Button } from "@/components/shared/Button";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
+import { useDialogFocus } from "@/hooks/useDialogFocus";
+import { withBasePath } from "@/lib/base-path";
 
 
 // Fund size values in seed data sometimes carry editorial brackets — "[TBD]"
@@ -266,6 +268,14 @@ function FundRow({
   return (
     <tr
       onClick={() => onSelect(fund)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onSelect(fund);
+        }
+      }}
+      role="button"
+      tabIndex={0}
       className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group border-b border-[var(--border)] last:border-b-0"
     >
       <td className="px-3 py-2.5 align-top">
@@ -536,6 +546,7 @@ function FundDrawer({
 }) {
   const drawerRef = useRef<HTMLDivElement>(null);
   const headerScrolled = useScrolledPast(drawerRef);
+  useDialogFocus(drawerRef);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -597,7 +608,14 @@ function FundDrawer({
         className="fixed inset-0 z-50 bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
         onClick={onClose}
       />
-      <div ref={drawerRef} className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl shadow-overlay bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right">
+      <div
+        ref={drawerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="fund-drawer-title"
+        tabIndex={-1}
+        className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl shadow-overlay bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right"
+      >
         {/* Left edge accent stripe */}
         <div
           aria-hidden
@@ -621,7 +639,7 @@ function FundDrawer({
                   </span>
                 )}
               </div>
-              <h2 className="type-page-title">
+              <h2 id="fund-drawer-title" className="type-page-title">
                 {fund.fundName}
               </h2>
             </div>
@@ -949,8 +967,21 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
             </div>
           </div>
           <div className="hidden sm:flex items-center gap-1">
-            <Button variant="ghost" size="sm" leadingIcon={<Download className="h-3 w-3" />}>Export</Button>
-            <Button variant="ghost" size="sm" leadingIcon={<Mail className="h-3 w-3" />}>Contact research</Button>
+            <a
+              href={withBasePath("/api/exports/funds")}
+              download
+              className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+            >
+              <Download className="h-3 w-3" />
+              <span className="truncate">Export</span>
+            </a>
+            <a
+              href="mailto:research@infrasight.com"
+              className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+            >
+              <Mail className="h-3 w-3" />
+              <span className="truncate">Contact research</span>
+            </a>
           </div>
         </div>
 

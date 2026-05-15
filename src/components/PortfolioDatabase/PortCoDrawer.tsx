@@ -20,6 +20,7 @@ import { Tag } from "@/components/shared/Tag";
 import { Button } from "@/components/shared/Button";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
+import { useDialogFocus } from "@/hooks/useDialogFocus";
 
 type MilestoneClassification =
   | { kind: "entry"; owner: OwnerView }
@@ -681,6 +682,7 @@ export function PortCoDrawer({
   const [showFormerOwners, setShowFormerOwners] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
   const headerScrolled = useScrolledPast(drawerRef);
+  useDialogFocus(drawerRef);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -749,7 +751,14 @@ export function PortCoDrawer({
         className="fixed inset-0 z-50 bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
         onClick={onClose}
       />
-      <div ref={drawerRef} className="fixed top-0 right-0 bottom-0 z-50 w-full bg-[var(--bg-surface)] shadow-overlay overflow-y-auto animate-slide-in-right sm:max-w-[760px] xl:max-w-[860px]">
+      <div
+        ref={drawerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="portco-drawer-title"
+        tabIndex={-1}
+        className="fixed top-0 right-0 bottom-0 z-50 w-full bg-[var(--bg-surface)] shadow-overlay overflow-y-auto animate-slide-in-right sm:max-w-[760px] xl:max-w-[860px]"
+      >
         <header
           className={`sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 px-6 py-6 backdrop-blur-md transition-shadow duration-150 sm:px-8 lg:px-10 ${
             headerScrolled ? "shadow-[0_1px_2px_rgba(17,17,20,0.04)]" : ""
@@ -763,7 +772,7 @@ export function PortCoDrawer({
                 style={{ backgroundColor: sectorColor }}
               />
               <div className="flex items-start gap-3">
-                <h2 className="type-drawer-title">
+                <h2 id="portco-drawer-title" className="type-drawer-title">
                   {company.name}
                 </h2>
                 {company.website && (

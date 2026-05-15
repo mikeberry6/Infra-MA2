@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getUserRoleColor } from "@/lib/colors";
+import { formatDate } from "@/lib/format";
 
 export const metadata = { title: "Admin · Users" };
 
@@ -57,7 +58,7 @@ export default async function AdminUsersPage() {
                     {user.role}
                   </span>
                 </td>
-                <td className="px-3 py-2.5 text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{user.createdAt.toLocaleDateString()}</td>
+                <td className="px-3 py-2.5 text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{formatDate(user.createdAt)}</td>
               </tr>
             ))}
           </tbody>

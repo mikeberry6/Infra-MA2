@@ -6,6 +6,7 @@ import { PORTCO_SECTORS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
 import { getPortCoSectorColor, getPortCoRegionColor, getPortCoCountryTagColor } from "@/lib/colors";
 import { getUniqueFirms, getAllOwnerFirms } from "@/lib/portco-utils";
 import { exportPortfolioToExcel } from "@/utils/exportPortfolio";
+import { withBasePath } from "@/lib/base-path";
 import type { CompanyView, FundView, DatabaseCounts } from "@/modules/shared/types";
 import {
   Search,
@@ -358,6 +359,14 @@ function PortCoTable({
                 <tr
                   key={`${company.name}-${company.investmentFirm}-${i}`}
                   onClick={() => onSelect(company)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      onSelect(company);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
                   className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
                 >
                   <td className="px-3 py-2.5 align-top max-w-[260px]">
@@ -426,6 +435,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
   const [activeFirms, toggleFirm] = useUrlFilterSet("firm");
   const [activeInvestmentYears, toggleInvestmentYear] = useUrlFilterSet("year");
   const [selectedCompany, setSelectedCompany] = useState<CompanyView | null>(null);
+  const [selectedCompanyDetail, setSelectedCompanyDetail] = useState<CompanyView | null>(null);
 
   const debouncedSearch = useDebounce(search, 300);
 
@@ -435,12 +445,37 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
   const openedFocus = useRef<string | null>(null);
   useEffect(() => {
     if (!focusId || openedFocus.current === focusId) return;
-    const match = portcos.find((c) => c.id === focusId);
+    const match = portcos.find((c) => c.id === focusId || c.focusIds.includes(focusId));
     if (match) {
       setSelectedCompany(match);
       openedFocus.current = focusId;
     }
   }, [focusId, portcos]);
+
+  useEffect(() => {
+    if (!selectedCompany) {
+      setSelectedCompanyDetail(null);
+      return;
+    }
+
+    let cancelled = false;
+    setSelectedCompanyDetail(null);
+
+    fetch(withBasePath(`/api/portfolio/${encodeURIComponent(selectedCompany.id)}`))
+      .then((response) => response.ok ? response.json() : null)
+      .then((data) => {
+        if (!cancelled && data?.company) {
+          setSelectedCompanyDetail(data.company);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setSelectedCompanyDetail(null);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedCompany]);
 
   const clearAllUrlFilters = useClearUrlFilters(["sector", "country", "firm", "year"]);
   const clearFilters = useCallback(() => {
@@ -549,7 +584,13 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
             >
               Export
             </Button>
-            <Button variant="ghost" size="sm" leadingIcon={<Mail className="h-3 w-3" />}>Contact research</Button>
+            <a
+              href="mailto:research@infrasight.com"
+              className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+            >
+              <Mail className="h-3 w-3" />
+              <span className="truncate">Contact research</span>
+            </a>
           </div>
         </div>
 
@@ -568,9 +609,12 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
 
       {selectedCompany && (
         <PortCoDrawer
-          company={selectedCompany}
+          company={selectedCompanyDetail ?? selectedCompany}
           funds={funds}
-          onClose={() => setSelectedCompany(null)}
+          onClose={() => {
+            setSelectedCompany(null);
+            setSelectedCompanyDetail(null);
+          }}
         />
       )}
     </div>

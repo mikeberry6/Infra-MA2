@@ -84,6 +84,7 @@ export interface OwnerView {
 
 export interface CompanyView {
   id: string;
+  focusIds: string[];
   name: string;
   investmentFirm: string;
   sector: string;

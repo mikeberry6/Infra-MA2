@@ -2,17 +2,22 @@
 
 ## Architecture Overview
 
-- **Next.js 14** app with App Router, TypeScript, Tailwind CSS
-- Deal data lives in `src/data/deals.ts` (typed `Deal` interface)
-- Five main pages:
-  - `/` — Weekly Briefing (`src/components/WeeklyBriefing.tsx`)
+- **Next.js 15** app with App Router, TypeScript, Tailwind CSS, Prisma, and Neon/Postgres
+- Public database pages fetch Prisma-backed view models from `src/modules/*/queries.ts`, then hand them to client components for filtering and drawers
+- Seed/reference data still lives under `prisma/seed-data/*`; do not treat old `src/data/*` paths as the active data source unless they are reintroduced
+- Main pages:
+  - `/` — Deal Database landing view (`src/components/DealDatabase.tsx`)
   - `/tracker` — Deal Database (`src/components/DealDatabase.tsx`)
   - `/portfolio` — Portfolio Database (`src/components/PortfolioDatabase.tsx`)
   - `/funds` — Fund Database (`src/components/FundDatabase.tsx`)
+  - `/news` — News Feed (`src/components/NewsFeed.tsx`)
+  - `/search` — Cross-database search
   - `/earnings` — Earnings page
 
 ## Weekly Briefing Page (`/`)
 
+- Historical note: the current `/` route no longer renders the Weekly Briefing; it renders the Deal Database landing view from Prisma-backed deal data.
+- If the Weekly Briefing is restored, preserve the manual-curation rules below.
 - The `MarketInsightHero` component receives the weekly deals as a prop (`deals: Deal[]`)
 - It must ONLY reflect that week's deals (the same deals listed in the timeline below it), NOT all deals in the database
 - Weekly deals are sourced from `getWeeklyDeals()` which uses a **fixed anchor date** (`WEEKLY_ANCHOR` in `src/data/deals.ts`) set to the publish date. It returns all Announced deals in the 7 days up to and including that date.

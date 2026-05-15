@@ -118,6 +118,8 @@ import { Tag } from "@/components/shared/Tag";
 import { Button } from "@/components/shared/Button";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
+import { useDialogFocus } from "@/hooks/useDialogFocus";
+import { withBasePath } from "@/lib/base-path";
 
 // ─── Filters ────────────────────────────────────────────────
 const SECTORS: string[] = [...DEAL_SECTORS];
@@ -382,6 +384,14 @@ function DealTable({
                   <tr
                     key={deal.id}
                     onClick={() => onSelectDeal(deal)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        onSelectDeal(deal);
+                      }
+                    }}
+                    role="button"
+                    tabIndex={0}
                     className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
                   >
                     <td className="px-3 py-2.5 align-top">
@@ -515,6 +525,7 @@ function DealDrawer({
 
   const drawerRef = useRef<HTMLDivElement>(null);
   const headerScrolled = useScrolledPast(drawerRef);
+  useDialogFocus(drawerRef);
 
   // Escape key to close
   useEffect(() => {
@@ -543,7 +554,14 @@ function DealDrawer({
       />
 
       {/* Drawer */}
-      <div ref={drawerRef} className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[var(--border)] surface-overlay rounded-none bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right">
+      <div
+        ref={drawerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="deal-drawer-title"
+        tabIndex={-1}
+        className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[var(--border)] surface-overlay rounded-none bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right"
+      >
         {/* Header */}
         <div
           className={`sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)] px-5 lg:px-7 py-4 lg:py-5 transition-shadow duration-150 ${
@@ -557,7 +575,7 @@ function DealDrawer({
                 <StatusBadge status={deal.status} />
                 <span className="type-micro mono tabular-nums">{formatDate(deal.date)}</span>
               </div>
-              <h2 className="type-page-title">
+              <h2 id="deal-drawer-title" className="type-page-title">
                 {deal.title}
               </h2>
             </div>
@@ -633,7 +651,7 @@ function DealDrawer({
               {deal.closingDate && (
                 <div>
                   <div className="type-label">Expected close</div>
-                  <div className="type-meta mt-0.5">{deal.closingDate}</div>
+                  <div className="type-meta mono tabular-nums mt-0.5">{formatDate(deal.closingDate)}</div>
                 </div>
               )}
               {deal.assetScale && (
@@ -829,7 +847,14 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
             <span className="mono text-[var(--text-secondary)] tabular-nums">{deals.length}</span> deals
           </span>
           <div className="flex items-center gap-1">
-            <Button className="hidden sm:inline-flex" variant="ghost" size="sm" leadingIcon={<Download className="h-3 w-3" />}>Export</Button>
+            <a
+              href={withBasePath("/api/exports/deals")}
+              download
+              className="hidden sm:inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+            >
+              <Download className="h-3 w-3" />
+              <span className="truncate">Export</span>
+            </a>
             <Link
               href="/email-format/index.html"
               className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"

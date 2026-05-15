@@ -9,6 +9,7 @@ const PORTFOLIO_COLUMNS = [
   "subsector",
   "region",
   "country",
+  "countryTags",
   "ownershipVehicle",
   "status",
   "description",

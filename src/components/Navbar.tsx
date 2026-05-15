@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Search, User } from "lucide-react";
 import { TextInput } from "@/components/shared/TextInput";
+import { withBasePath } from "@/lib/base-path";
 
 const navLinks = [
   {
@@ -88,7 +89,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-2">
           <form
             method="get"
-            action="/search"
+            action={withBasePath("/search")}
             className="w-[260px]"
             role="search"
           >
@@ -127,7 +128,7 @@ export function Navbar() {
           <div className="px-4 py-4 space-y-1">
             <form
               method="get"
-              action="/search"
+              action={withBasePath("/search")}
               role="search"
               className="mb-3"
               onSubmit={() => setMenuOpen(false)}

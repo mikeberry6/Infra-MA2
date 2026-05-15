@@ -1,9 +1,14 @@
 const path = require("path");
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/Infra-MA2";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: "/Infra-MA2",
-  assetPrefix: "/Infra-MA2/",
+  basePath,
+  assetPrefix: `${basePath}/`,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   images: {
     unoptimized: true,
   },

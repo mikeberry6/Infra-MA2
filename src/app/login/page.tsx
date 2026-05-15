@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LoginForm } from "./LoginForm";
+import { withBasePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   title: "Sign In",
@@ -26,7 +27,7 @@ export default async function LoginPage({
             Use your admin or analyst account to continue.
           </p>
         </div>
-        <LoginForm callbackUrl={callbackUrl || "/"} />
+        <LoginForm callbackUrl={callbackUrl || withBasePath("/")} />
       </div>
     </div>
   );

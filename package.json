@@ -10,7 +10,7 @@
     "postinstall": "prisma generate",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint src prisma scripts next.config.js --ext .js,.jsx,.ts,.tsx",
     "test": "vitest run",
     "test:watch": "vitest",
     "doctor": "npx tsx scripts/doctor.ts",

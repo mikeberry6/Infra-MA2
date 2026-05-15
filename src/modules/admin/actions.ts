@@ -2,6 +2,7 @@
 
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { parseDateInput } from "@/lib/format";
 import { dealSchema, fundSchema, companySchema, ownershipPeriodSchema } from "./schemas";
 import {
   DEAL_SECTOR_MAP,
@@ -176,10 +177,10 @@ export async function createDeal(formData: FormData): Promise<ActionResult> {
       const deal = await tx.deal.create({
         data: {
           legacyId, title: d.title, target: d.target, sector, subsector: d.subsector || "", region,
-          categories, date: new Date(d.date), description: d.description,
+          categories, date: parseDateInput(d.date)!, description: d.description,
           targetDescription: d.targetDescription, country: d.country, dealStatus,
           enterpriseValue: d.enterpriseValue || null, equityValue: d.equityValue || null,
-          stake: d.stake || null, closingDate: d.closingDate ? new Date(d.closingDate) : null,
+          stake: d.stake || null, closingDate: parseDateInput(d.closingDate),
           assetScale: d.assetScale || null, valuationMultiple: d.valuationMultiple || null,
           fundVehicle: d.fundVehicle || null, keyHighlights: d.keyHighlights || [],
           status: "DRAFT",
@@ -274,11 +275,11 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
           subsector: d.subsector || "",
           region: DEAL_REGION_MAP[d.region] as DealRegion,
           categories: d.category.map((c) => DEAL_CATEGORY_MAP[c]).filter(Boolean) as DealCategory[],
-          date: new Date(d.date), description: d.description,
+          date: parseDateInput(d.date)!, description: d.description,
           targetDescription: d.targetDescription, country: d.country,
           dealStatus: DEAL_STATUS_MAP[d.status] as DealStatusEnum,
           enterpriseValue: d.enterpriseValue || null, equityValue: d.equityValue || null,
-          stake: d.stake || null, closingDate: d.closingDate ? new Date(d.closingDate) : null,
+          stake: d.stake || null, closingDate: parseDateInput(d.closingDate),
           assetScale: d.assetScale || null, valuationMultiple: d.valuationMultiple || null,
           fundVehicle: d.fundVehicle || null, keyHighlights: d.keyHighlights || [],
         },

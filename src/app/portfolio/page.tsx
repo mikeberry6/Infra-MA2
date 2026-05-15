@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default async function PortfolioPage() {
   try {
     const [companies, funds, counts] = await Promise.all([
-      getAllCompanies(),
+      getAllCompanies({ detail: false }),
       getAllFunds(),
       getDatabaseCounts(),
     ]);

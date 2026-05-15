@@ -93,30 +93,35 @@ export async function POST(request: NextRequest) {
           .filter(Boolean) as FundRegionEnum[];
 
         // Find or create the manager organization
-        let manager = await tx.organization.findFirst({
+        const manager = await tx.organization.upsert({
           where: { name: fund.managerName },
+          update: {},
+          create: {
+            name: fund.managerName,
+            types: ["FUND_MANAGER"],
+            status: "PUBLISHED",
+          },
         });
-        if (!manager) {
-          manager = await tx.organization.create({
-            data: {
-              name: fund.managerName,
-              types: ["FUND_MANAGER"],
-              status: "PUBLISHED",
-            },
-          });
-        }
 
         const fundId = fund.id || fund.legacyId;
 
         const created = await tx.fund.upsert({
           where: { legacyId: fundId },
           update: {
+            managerId: manager.id,
             fundName: fund.fundName,
+            ticker: fund.ticker || null,
+            investmentStrategy: fund.investmentStrategy || "",
+            size: fund.size || "",
+            sizeUsdMm: fund.sizeUsdMm ?? null,
+            vintage: fund.vintage || "",
             strategies,
             structure,
             fundStatus,
             sectors,
             regions,
+            sourceUrls: toArray(fund.sourceUrls),
+            strategyUrl: fund.strategyUrl || "",
           },
           create: {
             legacyId: fundId,

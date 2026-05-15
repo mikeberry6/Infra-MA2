@@ -231,6 +231,7 @@ function toCompanyView(company: any): CompanyView {
 
   return {
     id: company.id,
+    focusIds: [company.id],
     name: company.name,
     investmentFirm,
     sector: COMPANY_SECTOR_DISPLAY[company.sector as keyof typeof COMPANY_SECTOR_DISPLAY] || company.sector,
@@ -279,6 +280,10 @@ const COMPANY_INCLUDE = {
     },
   },
 };
+
+const COMPANY_LIST_INCLUDE = {
+  ownershipPeriods: COMPANY_INCLUDE.ownershipPeriods,
+} as const;
 
 // Merge multiple CompanyView records that share a canonical key. The DB
 // contains duplicate Company rows for several companies (a) under different
@@ -342,6 +347,7 @@ function mergeByCanonicalKey(views: CompanyView[]): CompanyView {
 
   return {
     ...spine,
+    focusIds: Array.from(new Set(views.flatMap((v) => v.focusIds.length > 0 ? v.focusIds : [v.id]))),
     name: displayName,
     country: displayCountry,
     investmentFirm: primary?.firm || spine.investmentFirm,
@@ -355,10 +361,10 @@ function mergeByCanonicalKey(views: CompanyView[]): CompanyView {
   };
 }
 
-export async function getAllCompanies(): Promise<CompanyView[]> {
+export async function getAllCompanies(options: { detail?: boolean } = {}): Promise<CompanyView[]> {
   const companies = await prisma.company.findMany({
     where: { status: "PUBLISHED" },
-    include: COMPANY_INCLUDE,
+    include: options.detail === false ? COMPANY_LIST_INCLUDE : COMPANY_INCLUDE,
     orderBy: { name: "asc" },
   });
   const views = companies.map(toCompanyView);
@@ -373,6 +379,13 @@ export async function getAllCompanies(): Promise<CompanyView[]> {
   return groups
     .map(mergeByCanonicalKey)
     .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export async function getCompanyByFocusId(focusId: string): Promise<CompanyView | null> {
+  const companies = await getAllCompanies();
+  return companies.find((company) => (
+    company.id === focusId || company.focusIds.includes(focusId)
+  )) ?? null;
 }
 
 export async function getCompanyById(id: string): Promise<CompanyView | null> {

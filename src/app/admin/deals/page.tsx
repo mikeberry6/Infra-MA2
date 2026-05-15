@@ -9,6 +9,7 @@ import ImportExportBar from "@/components/admin/ImportExportBar";
 import { deleteDeal } from "@/modules/admin/actions";
 import { getRecordStatusColor } from "@/lib/colors";
 import { Button } from "@/components/shared/Button";
+import { formatDate } from "@/lib/format";
 
 export const metadata = { title: "Admin · Deals" };
 
@@ -83,7 +84,7 @@ export default async function AdminDealsPage() {
                     {deal.status}
                   </span>
                 </td>
-                <td className="px-3 py-2.5 text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{deal.date.toLocaleDateString()}</td>
+                <td className="px-3 py-2.5 text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{formatDate(deal.date)}</td>
                 <td className="px-3 py-2.5">
                   <div className="flex items-center gap-1.5">
                     <Link href={`/admin/deals/${deal.id}/edit`}>

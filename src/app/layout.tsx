@@ -42,11 +42,9 @@ export default function RootLayout({
                 <span className="font-medium text-[var(--text-secondary)]">InfraSight</span>
                 <span>· &copy; 2026</span>
               </div>
-              <div className="flex gap-5">
-                <a href="#" className="hover:text-[var(--text-primary)] transition-colors">Terms</a>
-                <a href="#" className="hover:text-[var(--text-primary)] transition-colors">Privacy</a>
-                <a href="#" className="hover:text-[var(--text-primary)] transition-colors">Contact</a>
-              </div>
+              <a href="mailto:research@infrasight.com" className="hover:text-[var(--text-primary)] transition-colors">
+                Contact research
+              </a>
             </div>
           </div>
         </footer>

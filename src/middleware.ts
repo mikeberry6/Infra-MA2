@@ -6,8 +6,7 @@ export async function middleware(request: NextRequest) {
 
   const isPrivileged =
     pathname.startsWith("/admin") ||
-    pathname.startsWith("/api/imports") ||
-    pathname.startsWith("/api/exports");
+    pathname.startsWith("/api/imports");
 
   if (!isPrivileged) {
     return NextResponse.next();
@@ -30,10 +29,6 @@ export async function middleware(request: NextRequest) {
   }
 
   if (pathname.startsWith("/api/imports") && role !== "ADMIN") {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
-  if (pathname.startsWith("/api/exports") && role !== "ADMIN" && role !== "ANALYST") {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 

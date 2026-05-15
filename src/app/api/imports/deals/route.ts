@@ -1,8 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { parseCsv } from "@/lib/csv";
+import { parseDateInput } from "@/lib/format";
 import { DEAL_SECTOR_MAP, DEAL_REGION_MAP, DEAL_CATEGORY_MAP, DEAL_STATUS_MAP } from "@/modules/shared/enum-maps";
 import type { DealSector, DealRegion, DealCategory, DealStatusEnum } from "@/generated/prisma/client";
+
+function uniqueValues(values: string[]): string[] {
+  const seen = new Set<string>();
+  return values.filter((value) => {
+    const trimmed = value.trim();
+    if (!trimmed || trimmed === "N/A" || trimmed === "—" || seen.has(trimmed)) return false;
+    seen.add(trimmed);
+    return true;
+  });
+}
+
+function partyArray(value: unknown): string[] {
+  if (Array.isArray(value)) return uniqueValues(value.map(String));
+  if (typeof value !== "string") return [];
+  return uniqueValues(value.split(" / "));
+}
 
 /**
  * Parse the incoming request body as either JSON or CSV.
@@ -49,6 +66,10 @@ export async function POST(request: NextRequest) {
 
       for (const deal of deals) {
         const dealId = deal.id || deal.legacyId;
+        if (!dealId) {
+          txResults.push({ error: "Missing id or legacyId" });
+          continue;
+        }
         const sector = DEAL_SECTOR_MAP[deal.sector] as DealSector;
         const region = DEAL_REGION_MAP[deal.region] as DealRegion;
         const dealStatus = DEAL_STATUS_MAP[deal.status] as DealStatusEnum;
@@ -60,6 +81,12 @@ export async function POST(request: NextRequest) {
           txResults.push({ id: dealId, error: "Invalid sector, region, or status" });
           continue;
         }
+        const dealDate = parseDateInput(deal.date);
+        if (!dealDate) {
+          txResults.push({ id: dealId, error: "Invalid date" });
+          continue;
+        }
+        const closingDate = parseDateInput(deal.closingDate);
 
         const created = await tx.deal.upsert({
           where: { legacyId: dealId },
@@ -67,11 +94,22 @@ export async function POST(request: NextRequest) {
             title: deal.title,
             target: deal.target,
             sector,
+            subsector: deal.subsector || "",
             region,
             categories,
-            date: new Date(deal.date),
+            date: dealDate,
             description: deal.description || "",
+            targetDescription: deal.targetDescription || "",
+            country: deal.country || "",
+            enterpriseValue: deal.enterpriseValue || null,
+            equityValue: deal.equityValue || null,
+            stake: deal.stake || null,
             dealStatus,
+            closingDate,
+            assetScale: deal.assetScale || null,
+            valuationMultiple: deal.valuationMultiple || null,
+            fundVehicle: deal.fundVehicle || null,
+            keyHighlights: deal.keyHighlights || [],
           },
           create: {
             legacyId: dealId,
@@ -81,7 +119,7 @@ export async function POST(request: NextRequest) {
             subsector: deal.subsector || "",
             region,
             categories,
-            date: new Date(deal.date),
+            date: dealDate,
             description: deal.description || "",
             targetDescription: deal.targetDescription || "",
             country: deal.country || "",
@@ -89,7 +127,7 @@ export async function POST(request: NextRequest) {
             equityValue: deal.equityValue || null,
             stake: deal.stake || null,
             dealStatus,
-            closingDate: deal.closingDate ? new Date(deal.closingDate) : null,
+            closingDate,
             assetScale: deal.assetScale || null,
             valuationMultiple: deal.valuationMultiple || null,
             fundVehicle: deal.fundVehicle || null,
@@ -97,6 +135,45 @@ export async function POST(request: NextRequest) {
             status: "DRAFT",
           },
         });
+
+        await tx.dealParticipant.deleteMany({
+          where: { dealId: created.id, role: { in: ["BUYER", "SELLER"] } },
+        });
+
+        const buyers = partyArray(deal.buyers ?? deal.buyer);
+        const sellers = partyArray(deal.sellers ?? deal.seller);
+
+        for (const name of buyers) {
+          const organization = await tx.organization.upsert({
+            where: { name },
+            update: {},
+            create: { name, types: ["OTHER"] },
+          });
+          await tx.dealParticipant.create({
+            data: { dealId: created.id, organizationId: organization.id, role: "BUYER", displayName: name },
+          });
+        }
+
+        for (const name of sellers) {
+          const organization = await tx.organization.upsert({
+            where: { name },
+            update: {},
+            create: { name, types: ["OTHER"] },
+          });
+          await tx.dealParticipant.create({
+            data: { dealId: created.id, organizationId: organization.id, role: "SELLER", displayName: name },
+          });
+        }
+
+        await tx.citation.deleteMany({ where: { dealId: created.id } });
+        if (deal.sourceUrl) {
+          const source = await tx.source.upsert({
+            where: { url: deal.sourceUrl },
+            update: { label: deal.sourceName || undefined },
+            create: { url: deal.sourceUrl, label: deal.sourceName || "", type: "ARTICLE" },
+          });
+          await tx.citation.create({ data: { sourceId: source.id, dealId: created.id } });
+        }
 
         txResults.push({ id: dealId, dbId: created.id, status: "ok" });
       }

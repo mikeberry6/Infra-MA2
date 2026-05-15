@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {
   Building2,
@@ -22,6 +22,7 @@ import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useClearUrlFilters, useUrlFilterSet } from "@/hooks/useUrlFilterSet";
+import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { formatDate } from "@/lib/format";
 import { getNewsCategoryColor, NEWS_CATEGORIES } from "@/lib/news-utils";
 import type { NewsCategory, NewsFeedView, NewsItemView, NewsMentionType } from "@/modules/shared/types";
@@ -538,6 +539,9 @@ function NewsDrawer({
   item: NewsItemView;
   onClose: () => void;
 }) {
+  const drawerRef = useRef<HTMLElement>(null);
+  useDialogFocus(drawerRef);
+
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") onClose();
@@ -557,7 +561,14 @@ function NewsDrawer({
         className="absolute inset-0 bg-[var(--bg-overlay)]"
         onClick={onClose}
       />
-      <aside className="absolute right-0 top-0 flex h-full w-full max-w-lg flex-col border-l border-[var(--border)] bg-[var(--bg-surface)] shadow-[0_12px_48px_rgba(17,17,20,0.14)] sm:max-w-xl">
+      <aside
+        ref={drawerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="news-drawer-title"
+        tabIndex={-1}
+        className="absolute right-0 top-0 flex h-full w-full max-w-lg flex-col border-l border-[var(--border)] bg-[var(--bg-surface)] shadow-[0_12px_48px_rgba(17,17,20,0.14)] sm:max-w-xl"
+      >
         <div className="sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 px-5 py-4 backdrop-blur-md">
           <div className="mb-3 flex items-center justify-between gap-3">
             <span
@@ -580,7 +591,7 @@ function NewsDrawer({
               <X className="h-4 w-4" />
             </button>
           </div>
-          <h2 className="type-page-title">
+          <h2 id="news-drawer-title" className="type-page-title">
             {item.title}
           </h2>
           <div className="mt-2 flex flex-wrap items-center gap-2 type-micro">
