@@ -20,6 +20,8 @@ export const ORG_CANONICAL: Record<string, string> = {
   "Greencoat Renewables": "Schroders Greencoat",
   "Goldman Sachs Alternatives": "Goldman Sachs Asset Management",
   "Apollo": "Apollo Global Management",
+  "Apollo-managed funds": "Apollo Global Management",
+  "Apollo Funds": "Apollo Global Management",
   "Vauban Infrastructure": "Vauban Infrastructure Partners",
   "Tallvine Partners": "Tallvine",
   "TPG Rise Climate": "TPG",
@@ -32,6 +34,8 @@ export const ORG_CANONICAL: Record<string, string> = {
   "Standard Solar / Brookfield": "Brookfield Asset Management",
   "Mainstay Maritime": "Oaktree Capital",
   "Brookfield / La Caisse": "Brookfield Asset Management",
+  "Global Infrastructure Partners": "GIP",
+  "Global Infrastructure Partners / BlackRock": "GIP",
   "NBIM": "Norges Bank Investment Management",
 
   // Cross-dataset resolution: portco.investmentFirm -> fund.managerName
@@ -39,6 +43,7 @@ export const ORG_CANONICAL: Record<string, string> = {
   "ADIA Infrastructure": "Abu Dhabi Investment Authority (ADIA)",
   "CC&L": "Connor, Clark & Lunn",
   "CDPQ": "La Caisse de dépôt (CDPQ)",
+  "La Caisse": "La Caisse de dépôt (CDPQ)",
 };
 
 // Non-infrastructure-fund entities (from NON_INFRA_FUND_BUYERS in DynamicInsightsHero.tsx)
@@ -83,6 +88,18 @@ export const NON_INFRA_FUND_ENTITIES = new Set([
   "Premier Energy Group",
   "CleanPeak Energy",
   "BrightNight",
+  "BMO Financial Group",
+  "Halliburton",
+  "Craftskills Energy",
+  "J&V Energy",
+  "Nymo",
+  "Kinetic",
+  "Blackstone Digital Infrastructure Trust Inc.",
+  "World Freight Company",
+  "Grupo Energía Bogotá",
+  "Kimmeridge Energy",
+  "Caturus",
+  "DivcoWest",
 ]);
 
 // Resolve an organization name to its canonical form

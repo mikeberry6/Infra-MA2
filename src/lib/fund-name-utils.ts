@@ -25,6 +25,8 @@ export const FUND_NAME_ALIASES: Record<string, string> = {
   "Greencoat Renewables": "Schroders Greencoat",
   "Goldman Sachs Alternatives": "Goldman Sachs Asset Management",
   Apollo: "Apollo Global Management",
+  "Apollo-managed funds": "Apollo Global Management",
+  "Apollo Funds": "Apollo Global Management",
   "Vauban Infrastructure": "Vauban Infrastructure Partners",
   "Tallvine Partners": "Tallvine",
   "TPG Rise Climate": "TPG",
@@ -37,6 +39,10 @@ export const FUND_NAME_ALIASES: Record<string, string> = {
   "Standard Solar / Brookfield": "Brookfield Asset Management",
   "Mainstay Maritime": "Oaktree Capital",
   "Brookfield / La Caisse": "Brookfield Asset Management",
+  "Global Infrastructure Partners": "GIP",
+  "Global Infrastructure Partners / BlackRock": "GIP",
+  CDPQ: "La Caisse de dépôt (CDPQ)",
+  "La Caisse": "La Caisse de dépôt (CDPQ)",
 };
 
 /** Normalize a fund name to its canonical form using known aliases. */
