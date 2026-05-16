@@ -22,6 +22,7 @@ import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { deriveRanking, RankingColumn } from "@/components/shared/RankingBars";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
+import { DatabaseIntelligenceHeader, type IntelligenceMetric } from "@/components/shared/DatabaseIntelligenceHeader";
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
 import { Tag } from "@/components/shared/Tag";
@@ -39,6 +40,17 @@ import { withBasePath } from "@/lib/base-path";
 function displaySize(size: string): string {
   const inner = size.replace(/^\[(.*)\]$/, "$1").trim();
   return inner || "—";
+}
+
+function mostCommonLabel(items: string[]): { label: string; count: number } | null {
+  const counts = new Map<string, number>();
+  for (const item of items) {
+    if (!item) continue;
+    counts.set(item, (counts.get(item) ?? 0) + 1);
+  }
+  return Array.from(counts.entries())
+    .map(([label, count]) => ({ label, count }))
+    .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))[0] ?? null;
 }
 
 // ─── Fund Filter Bar ────────────────────────────────────────
@@ -238,10 +250,10 @@ function FundTableColGroup() {
   );
 }
 
-function FundTableHead({ sticky = false }: { sticky?: boolean }) {
+function FundTableHead({ sticky = true }: { sticky?: boolean }) {
   return (
-    <thead className={sticky ? "sticky top-14 z-20" : ""}>
-      <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
+    <thead className={sticky ? "sticky top-0 z-10" : ""}>
+      <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]/95 backdrop-blur-sm shadow-[0_1px_0_rgba(17,17,20,0.03)]">
         {TABLE_HEADERS.map((label, i) => (
           <th
             key={label}
@@ -276,7 +288,7 @@ function FundRow({
       }}
       role="button"
       tabIndex={0}
-      className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group border-b border-[var(--border)] last:border-b-0"
+      className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group border-b border-[var(--border)] last:border-b-0 focus:bg-[var(--bg-subtle)] focus:outline-none"
     >
       <td className="px-3 py-2.5 align-top">
         <span title={fund.fundName} className="type-row-title group-hover:text-[var(--accent)] transition-colors truncate block">
@@ -483,8 +495,8 @@ function AllFundsTable({
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full text-left border-collapse table-fixed">
           <FundTableColGroup />
-          <thead>
-            <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
+          <thead className="sticky top-0 z-10">
+            <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]/95 backdrop-blur-sm shadow-[0_1px_0_rgba(17,17,20,0.03)]">
               {sortableFields.map(({ field, label, idx }) => (
                 <th
                   key={field}
@@ -625,13 +637,21 @@ function FundDrawer({
 
         {/* Header */}
         <div
-          className={`sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)] px-6 lg:px-8 py-5 lg:py-6 transition-shadow duration-150 ${
+          className={`sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 px-6 py-6 backdrop-blur-md transition-shadow duration-150 lg:px-8 ${
             headerScrolled ? "shadow-[0_1px_2px_rgba(17,17,20,0.04)]" : ""
           }`}
         >
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0 pr-2">
-              <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+              <div
+                aria-hidden
+                className="mb-4 h-[3px] w-14 rounded-full"
+                style={{ backgroundColor: fund.strategies.length > 0 ? getStrategyColor(fund.strategies[0]) : "var(--accent)" }}
+              />
+              <div className="mb-2 inline-flex items-center gap-2 type-label">
+                Fund scorecard
+              </div>
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
                 <span className="type-meta">{fund.managerName}</span>
                 {fund.ticker && (
                   <span className="type-label normal-case mono bg-[var(--bg-hover)] px-1.5 py-0.5 rounded">
@@ -639,7 +659,7 @@ function FundDrawer({
                   </span>
                 )}
               </div>
-              <h2 id="fund-drawer-title" className="type-page-title">
+              <h2 id="fund-drawer-title" className="type-drawer-title">
                 {fund.fundName}
               </h2>
             </div>
@@ -656,7 +676,7 @@ function FundDrawer({
         {/* Content */}
         <div className="px-6 lg:px-8 py-6 space-y-7">
           {/* Fund overview */}
-          <section>
+          <section className="surface p-4">
             <div className="type-section-title text-[var(--text-tertiary)] mb-3">
               Fund overview
             </div>
@@ -713,7 +733,8 @@ function FundDrawer({
               <div className="type-section-title text-[var(--text-tertiary)] mb-3">
                 Sources
               </div>
-              <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+              <div className="surface px-4 py-3">
+                <div className="flex flex-wrap gap-x-4 gap-y-1.5">
                 {fund.sourceUrls.map((url, i) => {
                   let hostname = url;
                   try { hostname = new URL(url).hostname.replace(/^www\./, ""); } catch {}
@@ -730,6 +751,7 @@ function FundDrawer({
                     </a>
                   );
                 })}
+                </div>
               </div>
             </section>
           )}
@@ -877,6 +899,41 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
     });
   }, [funds, debouncedFundSearch, activeStrategies, activeStatuses, activeSizeRanges, activeSectors]);
 
+  const headerMetrics = useMemo<IntelligenceMetric[]>(() => {
+    const stats = getFundStats(filteredFunds);
+    const topStrategy = mostCommonLabel(filteredFunds.flatMap((fund) => fund.strategies));
+    const topManager = mostCommonLabel(filteredFunds.map((fund) => fund.managerName));
+    const topSector = mostCommonLabel(filteredFunds.flatMap((fund) => fund.sectors));
+    const filterCount = activeStrategies.size + activeStatuses.size + activeSizeRanges.size + activeSectors.size + (debouncedFundSearch ? 1 : 0);
+
+    return [
+      {
+        label: "Visible funds",
+        value: filteredFunds.length.toLocaleString(),
+        detail: filteredFunds.length === funds.length ? "Full fund universe" : `${filterCount} active filter${filterCount === 1 ? "" : "s"}`,
+        color: "var(--accent)",
+      },
+      {
+        label: "Managers",
+        value: stats.managers.toLocaleString(),
+        detail: `${stats.funds.toLocaleString()} vehicles shown`,
+        color: "#7d6cf0",
+      },
+      {
+        label: "Visible AUM",
+        value: `$${stats.totalAumBn.toLocaleString()}B`,
+        detail: "Reported size where available",
+        color: "#3b6cf2",
+      },
+      {
+        label: "Top strategy",
+        value: topStrategy?.label ?? "N/A",
+        detail: topManager ? `Leading manager: ${topManager.label}` : topSector ? `Top sector: ${topSector.label}` : "No strategy match",
+        color: topStrategy ? getStrategyColor(topStrategy.label) : "var(--text-tertiary)",
+      },
+    ];
+  }, [filteredFunds, funds, activeStrategies, activeStatuses, activeSizeRanges, activeSectors, debouncedFundSearch]);
+
   const groupedFunds = useMemo(() => groupFundsByManager(filteredFunds), [filteredFunds]);
   const sortedManagers = useMemo(
     () => Array.from(groupedFunds.entries()).sort((a, b) => a[0].localeCompare(b[0])),
@@ -905,21 +962,13 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
-      <div className="flex items-end justify-between flex-wrap gap-4 mb-5">
-        <div>
-          <h1 className="type-page-title">
-            Funds
-          </h1>
-          <p className="type-meta mt-0.5">
-            <span className="mono tabular-nums text-[var(--text-primary)] font-medium">{filteredFunds.length.toLocaleString()}</span>
-            {filteredFunds.length !== funds.length && (
-              <> of <span className="mono tabular-nums">{funds.length.toLocaleString()}</span></>
-            )}{" "}
-            fund vehicles raised by global infrastructure managers
-          </p>
-        </div>
-        <DatabaseTiles counts={counts} />
-      </div>
+      <DatabaseIntelligenceHeader
+        eyebrow="Fund intelligence"
+        title="Infrastructure Fund Database"
+        summary="Fund vehicles, strategies, size ranges, manager platforms, and sector exposure across the global infrastructure market."
+        metrics={headerMetrics}
+        actions={<DatabaseTiles counts={counts} />}
+      />
 
       <FundFilterBar
         search={fundSearch}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ExternalLink } from "lucide-react";
+import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
 
 export const metadata: Metadata = {
   title: "Earnings",
@@ -63,22 +64,41 @@ const earningsCards = [
 ];
 
 export default function EarningsPage() {
+  const uniquePeriods = Array.from(new Set(earningsCards.map((card) => card.period)));
+
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-8 sm:py-10">
-      <div className="mb-6 max-w-3xl">
-        <p className="type-label">
-          Public Markets
-        </p>
-        <h1 className="mt-1 type-page-title">
-          Earnings Tracker
-        </h1>
-        <p className="mt-2 type-meta">
-          Public asset-manager signals for infrastructure fundraising,
-          deployment, and portfolio activity. This page restores the earnings
-          surface while keeping the data model separate from the core deal,
-          fund, and portfolio databases.
-        </p>
-      </div>
+      <DatabaseIntelligenceHeader
+        eyebrow="Public markets"
+        title="Earnings Tracker"
+        summary="Public asset-manager signals for infrastructure fundraising, deployment, and portfolio activity, kept separate from the core private-market databases."
+        metrics={[
+          {
+            label: "Managers tracked",
+            value: earningsCards.length.toLocaleString(),
+            detail: "Public alternatives platforms",
+            color: "var(--accent)",
+          },
+          {
+            label: "Reporting period",
+            value: uniquePeriods[0] ?? "N/A",
+            detail: uniquePeriods.length > 1 ? `${uniquePeriods.length} periods shown` : "Current coverage set",
+            color: "#3b6cf2",
+          },
+          {
+            label: "Signal types",
+            value: "2",
+            detail: "Fundraising and deployment",
+            color: "#7d6cf0",
+          },
+          {
+            label: "Source quality",
+            value: "IR",
+            detail: "Investor relations links",
+            color: "#f59e0b",
+          },
+        ]}
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
         {earningsCards.map((card) => (

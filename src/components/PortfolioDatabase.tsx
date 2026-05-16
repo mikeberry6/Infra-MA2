@@ -22,6 +22,7 @@ import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { deriveRanking, RankingColumn } from "@/components/shared/RankingBars";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
+import { DatabaseIntelligenceHeader, type IntelligenceMetric } from "@/components/shared/DatabaseIntelligenceHeader";
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
 import { Tag } from "@/components/shared/Tag";
@@ -31,6 +32,16 @@ import { Divider } from "@/components/shared/Divider";
 
 const INVESTMENT_YEAR_NA = "N/A";
 
+function mostCommonLabel(items: string[]): { label: string; count: number } | null {
+  const counts = new Map<string, number>();
+  for (const item of items) {
+    if (!item) continue;
+    counts.set(item, (counts.get(item) ?? 0) + 1);
+  }
+  return Array.from(counts.entries())
+    .map(([label, count]) => ({ label, count }))
+    .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))[0] ?? null;
+}
 
 // ─── Filter Bar ─────────────────────────────────────────────
 
@@ -338,8 +349,8 @@ function PortCoTable({
       <div className="hidden md:block">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse whitespace-nowrap">
-            <thead>
-              <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
+            <thead className="sticky top-0 z-10">
+              <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]/95 backdrop-blur-sm shadow-[0_1px_0_rgba(17,17,20,0.03)]">
                 <SortHeader field="name" label="Company" />
                 <SortHeader field="firm" label="Firm" />
                 <SortHeader field="sector" label="Sector" />
@@ -367,7 +378,7 @@ function PortCoTable({
                   }}
                   role="button"
                   tabIndex={0}
-                  className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
+                  className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group focus:bg-[var(--bg-subtle)] focus:outline-none"
                 >
                   <td className="px-3 py-2.5 align-top max-w-[260px]">
                     <span title={company.name} className="type-row-title group-hover:text-[var(--accent)] transition-colors truncate block">
@@ -534,23 +545,50 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     activeInvestmentYears,
   ]);
 
+  const headerMetrics = useMemo<IntelligenceMetric[]>(() => {
+    const sponsorCount = new Set(filteredCompanies.flatMap(getAllOwnerFirms)).size;
+    const activeCount = filteredCompanies.filter((company) => company.status === "Active").length;
+    const topSector = mostCommonLabel(filteredCompanies.map((company) => company.sector));
+    const topCountry = mostCommonLabel(filteredCompanies.flatMap((company) => company.countryTags.length > 0 ? company.countryTags : [company.country]));
+    const filterCount = activeSectors.size + activeCountryTags.size + activeFirms.size + activeInvestmentYears.size + (debouncedSearch ? 1 : 0);
+
+    return [
+      {
+        label: "Visible PortCos",
+        value: filteredCompanies.length.toLocaleString(),
+        detail: filteredCompanies.length === portcos.length ? "Full portfolio universe" : `${filterCount} active filter${filterCount === 1 ? "" : "s"}`,
+        color: "var(--accent)",
+      },
+      {
+        label: "Sponsors",
+        value: sponsorCount.toLocaleString(),
+        detail: "Current and co-owner firms",
+        color: "#7d6cf0",
+      },
+      {
+        label: "Active holdings",
+        value: activeCount.toLocaleString(),
+        detail: `${(filteredCompanies.length - activeCount).toLocaleString()} realized records`,
+        color: "#3b6cf2",
+      },
+      {
+        label: "Top sector",
+        value: topSector?.label ?? "N/A",
+        detail: topCountry ? `Leading country: ${topCountry.label}` : "No country match",
+        color: topSector ? getPortCoSectorColor(topSector.label) : "var(--text-tertiary)",
+      },
+    ];
+  }, [filteredCompanies, portcos, activeSectors, activeCountryTags, activeFirms, activeInvestmentYears, debouncedSearch]);
+
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
-      <div className="flex items-end justify-between flex-wrap gap-4 mb-5">
-        <div>
-          <h1 className="type-page-title">
-            PortCos
-          </h1>
-          <p className="type-meta mt-0.5">
-            <span className="mono tabular-nums text-[var(--text-primary)] font-medium">{filteredCompanies.length.toLocaleString()}</span>
-            {filteredCompanies.length !== portcos.length && (
-              <> of <span className="mono tabular-nums">{portcos.length.toLocaleString()}</span></>
-            )}{" "}
-            companies held by global infrastructure funds
-          </p>
-        </div>
-        <DatabaseTiles counts={counts} />
-      </div>
+      <DatabaseIntelligenceHeader
+        eyebrow="Portfolio intelligence"
+        title="Infrastructure Portfolio Company Database"
+        summary="Operating companies, projects, ownership periods, strategy exposure, and evidence trails across infrastructure fund portfolios."
+        metrics={headerMetrics}
+        actions={<DatabaseTiles counts={counts} />}
+      />
 
       <PortCoFilterBar
         search={search}

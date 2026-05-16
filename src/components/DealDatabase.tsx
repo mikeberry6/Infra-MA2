@@ -96,6 +96,26 @@ function isInfraFund(raw: string): boolean {
   );
 }
 
+function mostCommonLabel(items: string[]): { label: string; count: number } | null {
+  const counts = new Map<string, number>();
+  for (const item of items) {
+    if (!item) continue;
+    counts.set(item, (counts.get(item) ?? 0) + 1);
+  }
+  return Array.from(counts.entries())
+    .map(([label, count]) => ({ label, count }))
+    .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))[0] ?? null;
+}
+
+function latestDealDateLabel(deals: DealView[]): string {
+  let latest = 0;
+  for (const deal of deals) {
+    const time = new Date(deal.date).getTime();
+    if (Number.isFinite(time) && time > latest) latest = time;
+  }
+  return latest > 0 ? formatDate(new Date(latest)) : "N/A";
+}
+
 import {
   Search,
   ExternalLink,
@@ -112,6 +132,7 @@ import { useUrlFilterSet, useClearUrlFilters } from "@/hooks/useUrlFilterSet";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
+import { DatabaseIntelligenceHeader, type IntelligenceMetric } from "@/components/shared/DatabaseIntelligenceHeader";
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
 import { Tag } from "@/components/shared/Tag";
@@ -341,8 +362,8 @@ function DealTable({
       <div className="hidden md:block">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse whitespace-nowrap">
-            <thead>
-              <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
+            <thead className="sticky top-0 z-10">
+              <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]/95 backdrop-blur-sm shadow-[0_1px_0_rgba(17,17,20,0.03)]">
                 <th
                   aria-sort={sortDir === "asc" ? "ascending" : "descending"}
                   className="text-left px-3 py-2 w-[100px]"
@@ -392,7 +413,7 @@ function DealTable({
                     }}
                     role="button"
                     tabIndex={0}
-                    className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group"
+                    className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group focus:bg-[var(--bg-subtle)] focus:outline-none"
                   >
                     <td className="px-3 py-2.5 align-top">
                       <span className="type-micro mono text-[var(--text-secondary)] tabular-nums">
@@ -544,6 +565,7 @@ function DealDrawer({
   if (deal.equityValue) econItems.push({ label: "Equity", value: deal.equityValue });
   if (deal.stake) econItems.push({ label: "Stake", value: deal.stake });
   if (deal.valuationMultiple) econItems.push({ label: "Multiple", value: deal.valuationMultiple });
+  const accentColor = getCategoryColor(deal.category[0] ?? deal.sector);
 
   return (
     <>
@@ -562,22 +584,38 @@ function DealDrawer({
         tabIndex={-1}
         className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[var(--border)] surface-overlay rounded-none bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right"
       >
+        <div
+          aria-hidden
+          className="absolute top-0 bottom-0 left-0 w-[2px]"
+          style={{ backgroundColor: accentColor }}
+        />
         {/* Header */}
         <div
-          className={`sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)] px-5 lg:px-7 py-4 lg:py-5 transition-shadow duration-150 ${
+          className={`sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 px-5 py-5 backdrop-blur-md transition-shadow duration-150 lg:px-7 lg:py-6 ${
             headerScrolled ? "shadow-[0_1px_2px_rgba(17,17,20,0.04)]" : ""
           }`}
         >
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
+              <div
+                aria-hidden
+                className="mb-4 h-[3px] w-14 rounded-full"
+                style={{ backgroundColor: accentColor }}
+              />
+              <div className="mb-2 inline-flex items-center gap-2 type-label">
+                Transaction scorecard
+              </div>
               <div className="flex items-center gap-2 mb-2 flex-wrap">
                 <span className="type-micro mono tabular-nums">{deal.legacyId}</span>
                 <StatusBadge status={deal.status} />
                 <span className="type-micro mono tabular-nums">{formatDate(deal.date)}</span>
               </div>
-              <h2 id="deal-drawer-title" className="type-page-title">
-                {deal.title}
+              <h2 id="deal-drawer-title" className="type-drawer-title">
+                {deal.target}
               </h2>
+              <p className="mt-2 type-meta max-w-[58ch]">
+                {deal.title}
+              </p>
             </div>
             <button
               onClick={onClose}
@@ -722,15 +760,18 @@ function DealDrawer({
           {/* Source link */}
           {deal.sourceUrl && (
             <div className="border-t border-[var(--border)] pt-6">
-              <a
-                href={deal.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 type-meta font-medium hover:text-[var(--text-primary)] transition-colors"
-              >
-                View source{deal.sourceName ? ` on ${deal.sourceName}` : ""}
-                <ExternalLink className="h-3 w-3" />
-              </a>
+              <div className="surface px-4 py-3">
+                <div className="type-label mb-1.5">Primary source</div>
+                <a
+                  href={deal.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex max-w-full items-center gap-1.5 type-meta font-medium hover:text-[var(--text-primary)] transition-colors group"
+                >
+                  <span className="truncate">{deal.sourceName || deal.sourceUrl}</span>
+                  <ExternalLink className="h-3 w-3 shrink-0 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)]" />
+                </a>
+              </div>
             </div>
           )}
         </div>
@@ -787,6 +828,40 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
     });
   }, [deals, debouncedSearch, activeSectors, activeRegions, activeCategories]);
 
+  const headerMetrics = useMemo<IntelligenceMetric[]>(() => {
+    const topSector = mostCommonLabel(filteredDeals.map((deal) => deal.sector));
+    const topRegion = mostCommonLabel(filteredDeals.map((deal) => deal.region));
+    const topCategory = mostCommonLabel(filteredDeals.flatMap((deal) => deal.category));
+    const filterCount = activeSectors.size + activeRegions.size + activeCategories.size + (debouncedSearch ? 1 : 0);
+
+    return [
+      {
+        label: "Visible deals",
+        value: filteredDeals.length.toLocaleString(),
+        detail: filteredDeals.length === deals.length ? "Full transaction tape" : `${filterCount} active filter${filterCount === 1 ? "" : "s"}`,
+        color: "var(--accent)",
+      },
+      {
+        label: "Latest disclosure",
+        value: latestDealDateLabel(filteredDeals.length > 0 ? filteredDeals : deals),
+        detail: "Most recent matching deal",
+        color: "#3b6cf2",
+      },
+      {
+        label: "Top sector",
+        value: topSector?.label ?? "N/A",
+        detail: topSector ? `${topSector.count.toLocaleString()} deals` : "No sector match",
+        color: topSector ? getSectorColor(topSector.label) : "var(--text-tertiary)",
+      },
+      {
+        label: "Top region",
+        value: topRegion?.label ?? "N/A",
+        detail: topCategory ? `Leading type: ${topCategory.label}` : "No category match",
+        color: topRegion ? getRegionColor(topRegion.label) : "var(--text-tertiary)",
+      },
+    ];
+  }, [filteredDeals, deals, activeSectors, activeRegions, activeCategories, debouncedSearch]);
+
   // Close drawer if selected deal is filtered out
   useEffect(() => {
     if (selectedDeal && !filteredDeals.find((d) => d.id === selectedDeal.id)) {
@@ -810,22 +885,13 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
-      {/* Page header: title + count + tabs */}
-      <div className="flex items-end justify-between flex-wrap gap-4 mb-5">
-        <div>
-          <h1 className="type-page-title">
-            Deals
-          </h1>
-          <p className="type-meta mt-0.5">
-            <span className="mono tabular-nums text-[var(--text-primary)] font-medium">{filteredDeals.length.toLocaleString()}</span>
-            {filteredDeals.length !== deals.length && (
-              <> of <span className="mono tabular-nums">{deals.length.toLocaleString()}</span></>
-            )}{" "}
-            transactions across global infrastructure
-          </p>
-        </div>
-        <DatabaseTiles counts={counts} />
-      </div>
+      <DatabaseIntelligenceHeader
+        eyebrow="Transaction intelligence"
+        title="Infrastructure Deal Tape"
+        summary="A curated transaction database for infrastructure M&A, platform formation, public-market activity, and fund-backed strategic moves."
+        metrics={headerMetrics}
+        actions={<DatabaseTiles counts={counts} />}
+      />
 
       <FilterBar
         search={search}

@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Search } from "lucide-react";
 import { TextInput } from "@/components/shared/TextInput";
+import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -39,15 +40,43 @@ export default async function SearchPage({
   const { q } = await searchParams;
   const query = q || "";
   const results = query ? await searchAll(query) : [];
+  const dealCount = results.filter((result) => result.type === "deal").length;
+  const companyCount = results.filter((result) => result.type === "company").length;
+  const fundCount = results.filter((result) => result.type === "fund").length;
 
   return (
-    <div className="mx-auto max-w-3xl px-4 sm:px-6 py-8 sm:py-10">
-      <h1 className="type-page-title mb-1">
-        Search
-      </h1>
-      <p className="type-meta mb-6">
-        Across deals, portfolio companies, and funds.
-      </p>
+    <div className="mx-auto max-w-[900px] px-4 sm:px-6 py-8 sm:py-10">
+      <DatabaseIntelligenceHeader
+        eyebrow="Cross-database search"
+        title="Search InfraSight"
+        summary="Search across transactions, fund vehicles, and portfolio companies, then jump directly into the owning database record."
+        metrics={[
+          {
+            label: "Results",
+            value: query ? results.length.toLocaleString() : "Ready",
+            detail: query ? `for "${query}"` : "Enter a company, fund, or buyer",
+            color: "var(--accent)",
+          },
+          {
+            label: "Deals",
+            value: dealCount.toLocaleString(),
+            detail: "Transaction records",
+            color: TYPE_DOT_COLOR.deal,
+          },
+          {
+            label: "PortCos",
+            value: companyCount.toLocaleString(),
+            detail: "Portfolio companies",
+            color: TYPE_DOT_COLOR.company,
+          },
+          {
+            label: "Funds",
+            value: fundCount.toLocaleString(),
+            detail: "Fund vehicles",
+            color: TYPE_DOT_COLOR.fund,
+          },
+        ]}
+      />
 
       <form method="get" className="mb-6">
         <TextInput
