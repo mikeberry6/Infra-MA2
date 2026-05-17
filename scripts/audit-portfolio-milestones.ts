@@ -46,6 +46,7 @@ interface CompanyAuditRow {
   missingEntryOwners: string;
   missingExitOwners: string;
   duplicateOwners: string;
+  ambiguousIdentity: string;
   sourceCoverage: string;
   sourceUrls: string;
   reviewerDecision: string;
@@ -131,6 +132,7 @@ function toCsv(rows: CompanyAuditRow[]): string {
     "missingEntryOwners",
     "missingExitOwners",
     "duplicateOwners",
+    "ambiguousIdentity",
     "sourceCoverage",
     "sourceUrls",
     "reviewerDecision",
@@ -226,6 +228,22 @@ function findDuplicateOwners(owners: PortCoOwner[]): string[] {
     seen.add(key);
   }
   return duplicates;
+}
+
+function findAmbiguousIdentity(company: PortCo): string[] {
+  const notes: string[] = [];
+  const normalizedName = company.name.toLowerCase().replace(/[.'""]/g, "").trim();
+  if (["corporation", "company", "asset", "project", "not publicly disclosed"].includes(normalizedName)) {
+    notes.push(`generic company name: ${company.name}`);
+  }
+  if (
+    /\b(specific operating entity is not clearly identifiable|not clearly identify the specific company|avoid misidentifying the company|do not clearly substantiate the precise)\b/i.test(
+      company.description,
+    )
+  ) {
+    notes.push("description states company identity is unresolved");
+  }
+  return notes;
 }
 
 function milestoneMentionsOwner(milestone: PortCoMilestone, owner: PortCoOwner): boolean {
@@ -326,10 +344,10 @@ function suggestedCategory(milestone: PortCoMilestone): string | null {
   if (/\b(launched as|launched with|announced (?:the )?launch|entered the market|started with|platform launched)\b/.test(event)) return "Founding";
   if (/\b(ipo|initial public offering|publicly listed|began trading)\b/.test(event)) return "IPO";
   if (/\b(divest\w*|sale|sold|sell|exit)\b/.test(event)) return "Divestiture";
-  if (/\b(acquir\w*|purchase|purchased|bought|stake|ownership interest|completed the transaction|completed .* acquisition|closed the transaction|closed .* transaction|closed .* acquisition|announced the acquisition|concurrent acquisition|take-private|entered .* portfolio|added .* portfolio|became .* portfolio company|transaction added|transaction covered|changed ownership)\b/.test(event)) return "Acquisition";
-  if (/\b(financ\w*|funding|capital raise|equity raise|credit facility|investment|invested|commitment|committed|capital commitments|financial close|commercial close|tax equity|agreement to invest|structured .* reduce upfront costs|partnership to fund|project financing|ownership split|ownership structure|ownership information|wholly owned|owned by affiliates|retained (?:its |a )?\d+(?:\.\d+)?%|retained .*interest|remaining shareholders|joint venture between|post-closing ownership|post-combination ownership|economic interest|shareholders backing)\b/.test(event)) return "Financing";
-  if (/\b(appointed|joined as|chief|ceo|cfo|coo|president|management responsibilities|operate and manage|continue to manage|would remain .*operator|managing member|continuing to lead|expected to continue operating|employee ownership program|climate action plan|gresb|esg data|rebranded as|announced (?:its )?rebrand|adopted the .* brand|introduced the .* brand|brand refresh|officially rebranded|unveiled the .* brand)\b/.test(event)) return "Management";
-  if (/\b(expand\w*|opened|opening|opening of|entered service|entered operation|entered operations|commercial operation|commercial operations|commercial in-service|commercial service|in service|in operation|began operations|began operation|began operating|started operations|commenced operations|commenced .*operations|commencement of operations|mechanical completion|substantial completion|construction began|construction started|construction proceeded|construction progressed|construction advanced|construction was completed|construction had begun|start of construction|under construction|groundbreaking|commissioned|commissioning|inaugurated|ribbon cutting|grand opening|cod|capacity|portfolio grew|operating assets|development pipeline|project pipeline|pipeline spanning|route miles|track miles|square feet|customers|facilities|beds|connected to the grid|selected|awarded|approved|executed|dedicated|fully stabilize|approval to proceed with development work|operating in |operating footprint|platform spanning|regional .*platform|project delivery|delivered more than|reported more than|largest .*platform|largest .*complex|largest .*player|fully upgraded|more than \d|approximately \d|about \d|fleet (?:comprised|of)|\d[\d,]* employees|\d[\d,]* vehicles|\d[\d,]* sites|\d[\d,]* facilities|\d[\d,]* teu|\d[\d,]* tons|\d[\d,]* locate tickets|\b(?:mw|gw|mwh)\b)\b/.test(event)) return "Expansion";
+  if (/\b(acquir\w*|purchase|purchased|bought|stake|ownership interest|completed the transaction|completed .* acquisition|closed the transaction|closed .* transaction|closed .* acquisition|announced the acquisition|concurrent acquisition|take-private|entered .* portfolio|added .* portfolio|became part of|became .* portfolio company|transaction added|transaction covered|changed ownership|change in ownership)\b/.test(event)) return "Acquisition";
+  if (/\b(financ\w*|funding|capital raise|equity raise|credit facility|investment|invested|commitment|committed|capital commitments|financial close|commercial close|tax equity|agreement to invest|structured .* reduce upfront costs|partnership to fund|project financing|ownership split|ownership structure|ownership information|ownership position|set ownership|control split|change-of-control|wholly owned|owned by affiliates|owned \d+(?:\.\d+)?%|retained (?:its |a )?\d+(?:\.\d+)?%|retained .*interest|remaining shareholders|joint venture between|equally owned joint venture|post-closing ownership|post-combination ownership|economic interest|shareholders backing)\b/.test(event)) return "Financing";
+  if (/\b(appointed|joined as|chief|ceo|cfo|coo|president|management responsibilities|operate and manage|continue to manage|would remain .*operator|managing member|continuing to lead|expected to continue operating|employee ownership program|climate action plan|gresb|esg data|rebranded as|rebrand to|announced (?:its |their |a )?rebrand|adopted the .* brand|introduced the .* brand|brand refresh|officially rebranded|unveiled the .* brand|restructuring|new leadership|iso 9001)\b/.test(event)) return "Management";
+  if (/\b(expand\w*|opened|opening|opening of|entered service|entered operation|entered operations|became operational|commercial operation|commercial operations|commercial in-service|commercial service|in service|in operation|began operations|began operation|began operating|started operations|commenced operations|commenced .*operations|commencement of operations|mechanical completion|substantial completion|construction began|construction started|construction proceeded|construction progressed|construction advanced|construction was completed|construction had begun|start of construction|under construction|groundbreaking|commissioned|commissioning|inaugurated|ribbon cutting|grand opening|cod|capacity|portfolio grew|operating assets|development pipeline|project pipeline|pipeline spanning|route miles|track miles|square feet|customers|facilities|beds|connected to the grid|selected|awarded|approved|executed|dedicated|fully stabilize|approval to proceed with development work|operating in |operating footprint|platform spanning|regional .*platform|owned and managed sites|owned .*business lines|largest collection|project delivery|delivered more than|reported more than|largest .*platform|largest .*complex|largest .*player|fully upgraded|more than \d|approximately \d|about \d|fleet (?:comprised|of)|\d[\d,]* employees|\d[\d,]* vehicles|\d[\d,]* sites|\d[\d,]* facilities|\d[\d,]* teu|\d[\d,]* tons|\d[\d,]* locate tickets|\b(?:mw|gw|mwh)\b)\b/.test(event)) return "Expansion";
   return null;
 }
 
@@ -378,6 +396,7 @@ function priorityAndScore(flags: Set<string>, milestoneCount: number, ownerCount
     low_value_milestone: 25,
     redundant_generic_founding: 25,
     duplicate_owner: 25,
+    ambiguous_company_identity: 85,
     no_transaction_or_milestone_source_purpose: 15,
     no_sources: 15,
   };
@@ -388,6 +407,7 @@ function priorityAndScore(flags: Set<string>, milestoneCount: number, ownerCount
   if (
     flags.has("malformed_date_format") ||
     flags.has("exact_duplicate_milestone") ||
+    flags.has("ambiguous_company_identity") ||
     flags.has("missing_owner_entry_milestone") ||
     flags.has("missing_owner_exit_milestone")
   ) {
@@ -420,6 +440,7 @@ function auditCompany(company: PortCo, sourceLine: number | ""): CompanyAuditRow
   const missingEntryOwners = owners.filter((owner) => owner.investmentYear && !hasEntryMilestone(owner, milestones));
   const missingExitOwners = owners.filter((owner) => owner.exitYear && !hasExitMilestone(owner, milestones));
   const duplicateOwners = findDuplicateOwners(owners);
+  const ambiguousIdentity = findAmbiguousIdentity(company);
   const otherCount = milestones.filter((milestone) => milestone.category === "Other").length;
   const coverageFlags = sourceCoverage(company, milestones);
 
@@ -428,6 +449,7 @@ function auditCompany(company: PortCo, sourceLine: number | ""): CompanyAuditRow
   if (missingEntryOwners.length) flags.add("missing_owner_entry_milestone");
   if (missingExitOwners.length) flags.add("missing_owner_exit_milestone");
   if (duplicateOwners.length) flags.add("duplicate_owner");
+  if (ambiguousIdentity.length) flags.add("ambiguous_company_identity");
   if (nearDuplicates.length) flags.add("near_duplicate_milestone");
   if (milestones.length > 6) flags.add("over_dense_scorecard");
   if (recategoryCandidates.length) flags.add("recategorization_candidate");
@@ -469,6 +491,7 @@ function auditCompany(company: PortCo, sourceLine: number | ""): CompanyAuditRow
       .map((owner) => `${owner.investmentFirm} / ${owner.ownershipVehicle} / ${owner.exitYear}`)
       .join(" || "),
     duplicateOwners: duplicateOwners.join(" || "),
+    ambiguousIdentity: ambiguousIdentity.join(" || "),
     sourceCoverage: coverageFlags.join(" | "),
     sourceUrls: (company.sources ?? []).map((source) => source.url).join(" | "),
     reviewerDecision: "",
@@ -576,6 +599,7 @@ function packetAction(row: CompanyAuditRow): string {
   if (row.missingEntryOwners) actions.push("Research/add owner entry milestone aligned to investment year.");
   if (row.missingExitOwners) actions.push("Research/add owner exit milestone aligned to exit year.");
   if (row.duplicateOwners) actions.push("Remove exact duplicate owner records.");
+  if (row.ambiguousIdentity) actions.push("Resolve company identity before relying on the scorecard timeline.");
   if (row.recategoryCandidates) actions.push("Recategorize obvious non-Other transaction or event milestones.");
   if (row.flags.includes("over_dense_scorecard")) actions.push("Prune toward curated target while retaining owner history.");
   if (row.flags.includes("thin_scorecard")) actions.push("Research missing founding/investment/growth context.");

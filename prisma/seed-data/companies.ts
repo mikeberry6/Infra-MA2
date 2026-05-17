@@ -610,7 +610,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2012", event: "The original Castle Rock Ridge I wind farm entered operation.", category: "Expansion" },
       { date: "Feb 2018", event: "Enel announced an agreement to sell a 49% interest in Castle Rock Ridge II to AIMCo.", category: "Acquisition" },
-      { date: "2020", event: "The project became part of the operating Castle Rock Ridge wind complex in Alberta.", category: "Other" },
       { date: "May 2020", event: "Enel announced that Castle Rock Ridge II had been connected to the grid.", category: "Expansion" },
     ],
     sources: [
@@ -2864,9 +2863,9 @@ export const companies: PortCo[] = [
     headquarters: "Pennsylvania",
     milestones: [
       { date: "May 17, 1910", event: "Pike County Light & Power Company was incorporated in Pennsylvania.", category: "Founding" },
-      { date: "Aug 2016", event: "Pike County Light and Power became part of Corning Natural Gas Holding Corp.", category: "Other" },
+      { date: "Aug 2016", event: "Pike County Light and Power became part of Corning Natural Gas Holding Corp.", category: "Acquisition" },
       { date: "Jul 6, 2022", event: "Argo Infrastructure Partners completed the acquisition of Corning Natural Gas Holding Corp., the parent of Pike County Light & Power.", category: "Acquisition" },
-      { date: "Nov 2025", event: "Pennsylvania PUC filings documented a change-of-control application involving Pike County Light & Power and Argo-affiliated entities.", category: "Other" },
+      { date: "Nov 2025", event: "Pennsylvania PUC filings documented a change-of-control application involving Pike County Light & Power and Argo-affiliated entities.", category: "Financing" },
     ],
     sources: [
       { label: "Pclpeg — Pike County Light & Power", url: "https://pclpeg.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -5222,7 +5221,7 @@ export const companies: PortCo[] = [
       { date: "2002", event: "Big Truck Rental was founded to provide refuse-truck rental services in North America.", category: "Founding" },
       { date: "2018", event: "Trivest Growth Investment Fund I made an investment in Big Truck Rental.", category: "Financing" },
       { date: "Sep 30, 2021", event: "Alinda Capital Partners, now Astatine Investment Partners, completed its strategic acquisition of Big Truck Rental.", category: "Acquisition" },
-      { date: "Apr 25, 2025", event: "Big Truck Rental announced a rebrand to BTR.", category: "Other" },
+      { date: "Apr 25, 2025", event: "Big Truck Rental announced a rebrand to BTR.", category: "Management" },
       { date: "Apr 28, 2025", event: "BTR announced the appointment of Zach Martin as chief executive officer.", category: "Management" },
     ],
     sources: [
@@ -7149,7 +7148,7 @@ export const companies: PortCo[] = [
       { date: "1907", event: "GCT Global Container Terminals Inc. was founded.", category: "Founding" },
       { date: "2007", event: "OTPP / Ontario Teachers' established GCT as a wholly owned subsidiary after acquiring four North American container terminals.", category: "Acquisition" },
       { date: "Jun 7, 2018", event: "Ontario Teachers' announced that IFM Global Infrastructure Fund (GIF) and BCI would join as equity partners in GCT.", category: "Acquisition" },
-      { date: "Jun 7, 2018", event: "The transaction disclosures set ownership at 37.5% for Ontario Teachers', 37.5% for IFM, and 25% for BCI.", category: "Other" },
+      { date: "Jun 7, 2018", event: "The transaction disclosures set ownership at 37.5% for Ontario Teachers', 37.5% for IFM, and 25% for BCI.", category: "Financing" },
     ],
     management: [
       { name: "Eric Waltz", title: "President & Chief Executive Officer" },
@@ -8289,7 +8288,6 @@ export const companies: PortCo[] = [
     headquarters: "Pennsylvania",
     milestones: [
       { date: "2021", event: "Hill Top Energy Center entered commercial operation in western Pennsylvania.", category: "Expansion" },
-      { date: "2025", event: "The asset was highlighted by Blackstone as part of its strategy to invest in dispatchable generation supporting rising data center demand.", category: "Other" },
       { date: "Sep 15, 2025", event: "Blackstone announced an agreement to acquire Hill Top Energy Center from Ardian.", category: "Acquisition" },
     ],
     sources: [
@@ -8581,7 +8579,6 @@ export const companies: PortCo[] = [
     headquarters: "Virginia",
     milestones: [
       { date: "2017", event: "Potomac Energy Center entered commercial operation in Loudoun County, Virginia.", category: "Expansion" },
-      { date: "2025", event: "The asset was positioned within Blackstone's strategy to invest in generation serving data center load growth in Northern Virginia.", category: "Other" },
       { date: "Jan 24, 2025", event: "Blackstone Energy Transition Partners announced an agreement to acquire Potomac Energy Center.", category: "Acquisition" },
       { date: "Aug 5, 2025", event: "Houlihan Lokey reported completion of the sale of Potomac Energy Center to Blackstone.", category: "Acquisition" },
     ],
@@ -10053,7 +10050,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2012", event: "The southern SH 130 toll-road segment opened to traffic in Texas.", category: "Expansion" },
       { date: "2016", event: "The concession company filed for Chapter 11 protection after traffic underperformed expectations.", category: "Other" },
-      { date: "Jul 28, 2017", event: "SH 130 Concession Company announced completion of its restructuring under new leadership, with Strategic Value Partners identified as the new majority ownership group.", category: "Other" },
+      { date: "Jul 28, 2017", event: "SH 130 Concession Company announced completion of its restructuring under new leadership, with Strategic Value Partners identified as the new majority ownership group.", category: "Financing" },
       { date: "Dec 2024", event: "Brookfield Infrastructure Income Fund acquired its U.S. Toll Road (SH 130) investment.", category: "Acquisition" },
     ],
     sources: [
@@ -11715,7 +11712,7 @@ export const companies: PortCo[] = [
     investmentYear: 2019,
     headquarters: "Ontario, Alberta, and Québec",
     milestones: [
-      { date: "2017", event: "VIP Rail became part of the Alpenglow Rail platform under prior ownership.", category: "Other" },
+      { date: "2017", event: "VIP Rail became part of the Alpenglow Rail platform under prior ownership.", category: "Acquisition" },
       { date: "Sep 2019", event: "CC&L Infrastructure announced a partnership with Alpenglow and the acquisition of VIP Rail.", category: "Acquisition" },
       { date: "Oct 2022", event: "The rail platform added the Alberta Midland terminal.", category: "Expansion" },
       { date: "Dec 2025", event: "The Alpenglow terminal portfolio announced debt financing to support future growth.", category: "Financing" },
@@ -11856,7 +11853,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Sep 17, 2024", event: "AES and CDPQ announced an agreement for CDPQ to acquire a 30% indirect equity interest in AES Ohio for $546M.", category: "Acquisition" },
       { date: "Apr 4, 2025", event: "CDPQ closed the acquisition of an approximately 30% indirect equity interest in AES Ohio.", category: "Acquisition" },
-      { date: "Mar 20, 2026", event: "AES reiterated the 30% CDPQ ownership position in its 2025 annual report.", category: "Other" },
+      { date: "Mar 20, 2026", event: "AES reiterated the 30% CDPQ ownership position in its 2025 annual report.", category: "Financing" },
     ],
     sources: [
       { label: "Announcement date source — CDPQ — AES Ohio", url: "https://www.lacaisse.com/en/news/pressreleases/aes-announces-strategic-partnership-cdpq-support-aes-ohios-robust-growth-plans", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT", evidenceLabel: "CDPQ approximately 30% indirect equity interest in AES Ohio" },
@@ -13411,7 +13408,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1999", event: "407 ETR was founded.", category: "Founding" },
       { date: "2010", event: "CPP Investments first invested in 407 International, acquiring control of a 40% holding in the 407 ETR business through two transactions.", category: "Acquisition" },
-      { date: "2025", event: "Public ownership disclosures reflected the updated control split of 48.29% Ferrovial, 44.20% CPP Investments and other institutional investors, and 7.51% PSP Investments.", category: "Other" },
+      { date: "2025", event: "Public ownership disclosures reflected the updated control split of 48.29% Ferrovial, 44.20% CPP Investments and other institutional investors, and 7.51% PSP Investments.", category: "Financing" },
       { date: "Mar 13, 2025", event: "PSP Investments announced agreements to acquire a 7.51% interest in 407 ETR, alongside related stake transfers involving CPP Investments, Ferrovial, and AtkinsRéalis.", category: "Acquisition" },
       { date: "Jun 6, 2025", event: "CPP Investments and PSP Investments announced completion of the 407 ETR transactions.", category: "Other" },
     ],
@@ -14564,7 +14561,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2009", event: "CVC DIF identified 2009 as the establishment year of SBA Canada's tower business.", category: "Other" },
       { date: "2009", event: "SBA Canada was founded.", category: "Founding" },
-      { date: "2025", event: "CVC DIF stated that the platform comprised approximately 500 owned and managed sites.", category: "Other" },
+      { date: "2025", event: "CVC DIF stated that the platform comprised approximately 500 owned and managed sites.", category: "Expansion" },
       { date: "Oct 15, 2025", event: "SBA Communications closed the sale of its Canadian towers and related operations to CVC DIF through DIF Infrastructure VIII.", category: "Acquisition" },
     ],
     sources: [
@@ -16208,7 +16205,7 @@ export const companies: PortCo[] = [
     investmentYear: 2022,
     headquarters: "United States",
     milestones: [
-      { date: "2022", event: "Ember said the company owned Porous Technologies and other stormwater-related business lines.", category: "Other" },
+      { date: "2022", event: "Ember said the company owned Porous Technologies and other stormwater-related business lines.", category: "Expansion" },
       { date: "Nov 1, 2022", event: "LID Tech announced that it had received an investment from Ember Infrastructure.", category: "Financing" },
     ],
     sources: [
@@ -16372,7 +16369,6 @@ export const companies: PortCo[] = [
     investmentYear: 2025,
     headquarters: "Texas",
     milestones: [
-      { date: "2017", event: "Legacy Aspen I was launched by the same management team before the separate Aspen II formation.", category: "Other" },
       { date: "2018", event: "Aspen established and began building its Austin Chalk natural gas system in Texas, according to company materials.", category: "Founding" },
       { date: "2025", event: "Aspen II launched to pursue natural gas transmission and last-mile infrastructure opportunities across North America.", category: "Expansion" },
       { date: "Sep 9, 2025", event: "Aspen Midstream secured an equity commitment from EnCap Flatrock Midstream for the formation of Aspen II.", category: "Financing" },
@@ -19227,7 +19223,7 @@ export const companies: PortCo[] = [
     headquarters: "New York",
     milestones: [
       { date: "2017", event: "Generate Capital acquired the 88-building NYC municipal rooftop solar portfolio from Tangent Energy Solutions.", category: "Acquisition" },
-      { date: "Dec 10, 2024", event: "New York City announced completion of the city's largest collection of solar arrays on city-owned buildings under the broader program.", category: "Other" },
+      { date: "Dec 10, 2024", event: "New York City announced completion of the city's largest collection of solar arrays on city-owned buildings under the broader program.", category: "Expansion" },
     ],
     sources: [
       { label: "Investment date source — Generate Capital — NYC Municipal Solar Portfolio", url: "https://generatecapital.com/investment/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -20108,7 +20104,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2014", event: "Company materials identify Vanguard Renewables' founding year as 2014.", category: "Founding" },
       { date: "Jul 20, 2022", event: "BlackRock Real Assets acquired Vanguard Renewables from Vision Ridge Partners; the investment is now identified with Global Infrastructure Partners (GIP) as part of BlackRock.", category: "Acquisition" },
-      { date: "Mar 12, 2024", event: "Vanguard and TotalEnergies announced an equally owned joint venture for future U.S. farm-based RNG projects.", category: "Other" },
+      { date: "Mar 12, 2024", event: "Vanguard and TotalEnergies announced an equally owned joint venture for future U.S. farm-based RNG projects.", category: "Financing" },
     ],
     sources: [
       { label: "Vanguardrenewables — Vanguard Renewables", url: "https://www.vanguardrenewables.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -21152,7 +21148,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1997", event: "The Kalaeloa cogeneration facility began commercial operations.", category: "Expansion" },
       { date: "Jul 31, 2023", event: "PSEG completed the sale of its 50% interest in Kalaeloa Partners to Harbert Infrastructure Fund VI.", category: "Acquisition" },
-      { date: "Mar 2025", event: "Public reporting connected Harbert’s Kalaeloa ownership with the subsequent Hamakua acquisition.", category: "Other" },
     ],
     sources: [
       { label: "Close date source — Harbert Management Corp (Harbert Infra / Gulf Pacific) — Kalaeloa Partners, L.P.", url: "https://nj.pseg.com/newsroom/newsrelease368", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -21574,32 +21569,6 @@ export const companies: PortCo[] = [
     ],
   },
   {
-    name: "District Energy System",
-    investmentFirm: "Harrison Street",
-    sector: "Utilities",
-    subsector: "District energy system",
-    region: "North America",
-    country: "United States",
-    ownershipVehicle: "n.a.",
-    description: "This row appears to refer to a district-energy asset associated with Harrison Street, but the specific operating entity is not clearly identifiable from public disclosures reviewed. District-energy systems typically serve university, government, hospital, or urban users through centralized heating, cooling, and related utility infrastructure. The operating model is asset-heavy and utility-like because cash flows are tied to long-lived plant and distribution infrastructure and contractual service relationships. Public sources indicate Harrison Street acquired a U.S. district-energy system in 2020 and has since continued to invest in long-duration campus and government utility partnerships, but the precise asset mapped to this row is not publicly disclosed. The current fund vehicle, principal operating location, scale metrics, and founding date for this specific row are not publicly disclosed. Accordingly, only limited profile fields can be populated from the public record reviewed.",
-    status: "Active",
-    countryTags: ["United States"],
-    investmentYear: 2020,
-    headquarters: "Not publicly disclosed.",
-    milestones: [
-      { date: "2020", event: "Harrison Street invested in District Energy System.", category: "Financing" },
-      { date: "Mar 26, 2024", event: "Harrison Street was reported to have raised financing for a utility P3 district-energy project, underscoring the firm’s continuing district-energy focus.", category: "Financing" },
-    ],
-    sources: [
-      { label: "Acquisition date source — IPE Real Assets — District Energy System", url: "https://realassets.ipe.com/news/harrison-street-buys-us-district-energy-system-from-blackrock/10045818.article", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
-      { label: "Harrisonst — District Energy System", url: "https://www.harrisonst.com/wp-content/uploads/2020/05/HSRE_ESG-Impact_2019.pdf", type: "PRESENTATION" },
-      { label: "Harrisonst — District Energy System", url: "https://www.harrisonst.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
-    ],
-    owners: [
-      { investmentFirm: "Harrison Street", ownershipVehicle: "n.a.", investmentYear: 2020, status: "Active" },
-    ],
-  },
-  {
     name: "Doug Meijer Medical Innovation Building",
     investmentFirm: "Harrison Street",
     sector: "Social Infra",
@@ -21716,23 +21685,28 @@ export const companies: PortCo[] = [
     subsector: "District energy and resiliency services",
     region: "North America",
     country: "United States",
-    ownershipVehicle: "Social Infrastructure Fund",
-    description: "Fort Detrick Energy Production Facility provides mission-critical utility and resiliency services to U.S. government users at Fort Detrick in Maryland. Its customer base consists of government and defense facilities that rely on the system for steam, chilled water, electricity conditioning, and emergency backup power. The asset follows an asset-heavy utility model supported by long-duration contracted infrastructure service arrangements. Public materials identify the facility as including an 18.6 MW direct-current solar installation that has been operating since 2016 and a 6 MW/6 MWh battery energy-storage system that became operational in 2024. Harrison Street acquired the facility from BlackRock in May 2020 through its social-infrastructure strategy; the ownership split is not publicly disclosed. The project illustrates Harrison Street’s focus on government-serving energy and resiliency infrastructure.",
+    ownershipVehicle: "Harrison Street Social Infrastructure Fund",
+    description: "Fort Detrick Energy Production Facility provides mission-critical utility and resiliency services to U.S. government users at Fort Detrick in Maryland. Its customer base consists of government and defense facilities that rely on the system for steam, chilled water, electricity conditioning, and emergency backup power. The asset follows an asset-heavy utility model supported by long-duration contracted infrastructure service arrangements. Public materials identify the facility as including an 18.6 MW direct-current solar installation that has been operating since 2016 and a 6 MW/6 MWh battery energy-storage system that became operational in 2024. Public transaction reporting identified the asset as the U.S. district-energy system Harrison Street acquired from BlackRock's Global Energy & Power Infrastructure Fund in 2020 through its Social Infrastructure Fund. The contract was reworked in 2019 as a 30-year energy production facility arrangement expiring in March 2049, supporting mission-critical utility service for the Fort Detrick campus.",
     status: "Active",
     countryTags: ["United States"],
     investmentYear: 2020,
     headquarters: "Maryland",
     milestones: [
       { date: "2016", event: "The Fort Detrick solar facility entered operations according to Army disclosures.", category: "Expansion" },
-      { date: "May 2020", event: "Harrison Street announced the acquisition of the Fort Detrick Energy Production Facility from BlackRock.", category: "Acquisition" },
+      { date: "Apr 2019", event: "The Army awarded a $1.35 billion energy service contract that converted Fort Detrick utility support into a 30-year energy production facility arrangement.", category: "Financing" },
+      { date: "May 27, 2020", event: "Harrison Street's Social Infrastructure Fund acquired BlackRock GEPIF's interest in the Fort Detrick Energy Production Facility.", category: "Acquisition" },
+      { date: "Jun 2024", event: "A 6 MW / 6 MWh battery energy-storage system became operational alongside the existing Fort Detrick solar facility.", category: "Expansion" },
     ],
     sources: [
       { label: "Announcement date source — Harrison Street — Fort Detrick Energy Production Facility", url: "https://www.harrisonst.com/wp-content/uploads/2020/05/Harrison-Street-Acquires-Fort-Detrick-Energy-Production-Facility-PR.pdf", type: "PRESENTATION", purpose: "OWNERSHIP_INVESTMENT" },
-      { label: "Home — Fort Detrick Energy Production Facility", url: "https://home.army.mil/detrick/about/Garrison/public-affairs/index.php/news/new-battery-energy-storage-system-now-operational-fort-detrick-energy-production-facility", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
+      { label: "Acquisition date source — IPE Real Assets — Fort Detrick Energy Production Facility", url: "https://realassets.ipe.com/news/harrison-street-buys-us-district-energy-system-from-blackrock/10045818.article", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Simpson Thacher — Fort Detrick Energy Production Facility", url: "https://www.stblaw.com/about-us/news/view/2020/05/28/simpson-thacher-advises-blackrock-s-global-energy-power-infrastructure-fund-in-the-sale-of-its-fort-detrick-energy-production-facility", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "U.S. Army — Fort Detrick Energy Service Contract", url: "https://www.army.mil/article-amp/222418/fort_detrick_energy_service_contract_to_replace_aging_utilities", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
+      { label: "Home — Fort Detrick Energy Production Facility", url: "https://home.army.mil/detrick/about/Garrison/public-affairs/index.php/news/new-battery-energy-storage-system-now-operational-fort-detrick-energy-production-facility", type: "WEBSITE", purpose: "MILESTONE_EVENT" },
       { label: "Harrisonst — Fort Detrick Energy Production Facility", url: "https://harrisonst.com/harrison-street-acquires-partnership-for-military-family-housing-at-six-u-s-air-force-bases/", type: "ARTICLE", purpose: "MILESTONE_EVENT" },
     ],
     owners: [
-      { investmentFirm: "Harrison Street", ownershipVehicle: "Social Infrastructure Fund", investmentYear: 2020, status: "Active" },
+      { investmentFirm: "Harrison Street", ownershipVehicle: "Harrison Street Social Infrastructure Fund", investmentYear: 2020, status: "Active" },
     ],
   },
   {
@@ -22295,7 +22269,6 @@ export const companies: PortCo[] = [
     headquarters: "United States; Canada",
     milestones: [
       { date: "2004", event: "Atlantic Power & Utilities was founded.", category: "Founding" },
-      { date: "2021", event: "The transaction took the company private and reoriented ownership under infrastructure funds advised by I Squared.", category: "Other" },
       { date: "Jan 14, 2021", event: "Atlantic Power announced a definitive agreement to be acquired by I Squared Capital.", category: "Acquisition" },
       { date: "May 14, 2021", event: "Atlantic Power announced completion of the acquisition by I Squared Capital.", category: "Acquisition" },
     ],
@@ -23172,33 +23145,6 @@ export const companies: PortCo[] = [
     ],
   },
   {
-    name: "Corporation",
-    investmentFirm: "IFM Investors",
-    sector: "Utilities",
-    subsector: "District energy system",
-    region: "North America",
-    country: "United States",
-    ownershipVehicle: "n.a.",
-    description: "This row appears to refer to a utilities or district-energy investment associated with IFM Investors, but the specific operating entity is not clearly identifiable from the source workbook or public disclosures reviewed. District-energy businesses generally provide centralized heating, cooling, and related thermal services to commercial, institutional, or municipal users through long-lived network infrastructure. The operating model is typically asset-heavy and utility-like, with revenues supported by connected customer demand and long-duration infrastructure assets. Public materials reviewed confirm IFM’s active ownership of district-energy assets, most notably its 50% stake in Enwave’s Canadian operations, but they do not clearly substantiate the precise U.S. company intended by this row. Accordingly, the principal operating location, founding year, scale metrics, acquisition date, and current ownership structure for this row are not publicly disclosed based on the materials reviewed. The profile is therefore populated conservatively to avoid misidentifying the company.",
-    status: "Active",
-    countryTags: ["United States"],
-    investmentYear: 2021,
-    headquarters: "Not publicly disclosed.",
-    milestones: [
-      { date: "Feb 2, 2021", event: "IFM and Ontario Teachers’ announced an agreement to acquire Enwave’s Canadian district-energy operations.", category: "Acquisition" },
-      { date: "Jun 7, 2021", event: "IFM and Ontario Teachers’ completed the acquisition of Enwave’s Canadian business.", category: "Acquisition" },
-      { date: "2026", event: "Public materials reviewed did not clearly identify the specific company intended by this separate “Corporation” row.", category: "Other" },
-    ],
-    sources: [
-      { label: "Ifminvestors — Corporation", url: "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/enwave/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
-      { label: "Close date source — IFM Investors — Corporation", url: "https://www.ifminvestors.com/news-and-insights/media-centre/ifm-investors-and-ontario-teachers-pension-plan-board-jointly-acquire-canadian-district-energy-operations-owned-by-enwave-energy-corporation/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
-      { label: "Ifminvestors — Corporation", url: "https://www.ifminvestors.com/capabilities/infrastructure/", type: "ARTICLE" },
-    ],
-    owners: [
-      { investmentFirm: "IFM Investors", ownershipVehicle: "n.a.", investmentYear: 2021, status: "Active" },
-    ],
-  },
-  {
     name: "Enwave Energy",
     investmentFirm: "IFM Investors",
     sector: "Utilities",
@@ -23206,7 +23152,7 @@ export const companies: PortCo[] = [
     region: "North America",
     country: "Canada",
     ownershipVehicle: "n.a.",
-    description: "Enwave Energy Corporation develops and operates district heating, cooling, and related energy systems in Canada. Its customers include commercial, residential, institutional, and mixed-use buildings connected to centralized thermal networks. The operating model is asset-heavy and utility-like, built on long-life network infrastructure and customer connections. Public materials identify Toronto as the headquarters and emphasize continued low-carbon district energy expansion in Canadian urban markets. Ontario Teachers' and IFM jointly acquired Enwave's Canadian district energy operations in 2021 and each hold 50% according to the transaction announcement.",
+    description: "Enwave Energy Corporation develops and operates district heating, cooling, and related energy systems in Canada. Its customers include commercial, residential, institutional, and mixed-use buildings connected to centralized thermal networks. The operating model is asset-heavy and utility-like, built on long-life network infrastructure and customer connections. Public materials identify Toronto as the headquarters and emphasize continued low-carbon district energy expansion in Canadian urban markets, including Deep Lake Water Cooling expansion, thermal storage at The Well, and GeoExchange community energy projects. Ontario Teachers' and IFM jointly acquired Enwave's Canadian district energy operations in 2021 and each hold 50% according to the transaction announcement.",
     status: "Active",
     countryTags: ["Canada"],
     yearFounded: 1990,
@@ -23214,12 +23160,15 @@ export const companies: PortCo[] = [
     headquarters: "Ontario",
     milestones: [
       { date: "1990", event: "Public sources identify Enwave's founding year as 1990.", category: "Founding" },
-      { date: "2021", event: "The transaction announcement identified Ontario Teachers' and IFM as 50-50 owners.", category: "Other" },
-      { date: "Jun 2021", event: "OTPP / Ontario Teachers' and IFM completed the acquisition of Enwave's Canadian district energy operations from Brookfield Infrastructure for C$2.8 billion as 50-50 owners.", category: "Acquisition" },
+      { date: "Feb 2, 2021", event: "IFM Investors and Ontario Teachers' agreed to acquire Enwave's Canadian district energy operations from Brookfield Infrastructure for C$2.8 billion, with each sponsor owning 50%.", category: "Acquisition" },
+      { date: "Jun 7, 2021", event: "Ontario Teachers' and IFM completed the acquisition of Enwave and appointed Carlyle Coutinho as CEO.", category: "Acquisition" },
+      { date: "Jun 2021", event: "Enwave completed inaugural green financing facilities to fund eligible low-carbon projects, including expansion of Toronto's Deep Lake Water Cooling system.", category: "Financing" },
+      { date: "Dec 2025", event: "IFM highlighted Enwave's Deep Lake Water Cooling expansion, The Well thermal storage facility, and Markham GeoExchange community as priority district-energy projects.", category: "Expansion" },
     ],
     sources: [
       { label: "Enwave — Enwave Energy", url: "https://www.enwave.com/about", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Close date source — IFM Investors / OTPP — Enwave Energy", url: "https://www.ifminvestors.com/news-and-insights/media-centre/ifm-investors-and-ontario-teachers-pension-plan-board-jointly-acquire-canadian-district-energy-operations-owned-by-enwave-energy-corporation/", type: "WEBSITE", purpose: "OWNERSHIP_INVESTMENT" },
+      { label: "Ifminvestors — Enwave Energy", url: "https://www.ifminvestors.com/capabilities/infrastructure/our-portfolio/enwave/", type: "WEBSITE", purpose: "OPERATIONS_ASSETS" },
       { label: "Otpp — Enwave Energy", url: "https://www.otpp.com/en-ca/about-us/news-and-insights/2021/enwave-s-new-owners-ignite-next-era-of-growth-for-canadian-sustainable-energy-company/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
     ],
     owners: [
@@ -24181,7 +24130,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "1964", event: "AMPORTS was founded.", category: "Founding" },
       { date: "2006", event: "AMPORTS went private.", category: "Other" },
-      { date: "2018", event: "AMPORTS identified the Instar transaction as a change in ownership on its company history page.", category: "Other" },
+      { date: "2018", event: "AMPORTS identified the Instar transaction as a change in ownership on its company history page.", category: "Acquisition" },
       { date: "Apr 2018", event: "Instar acquired AMPORTS from Lincolnshire Management.", category: "Acquisition" },
     ],
     sources: [
@@ -24828,7 +24777,7 @@ export const companies: PortCo[] = [
       { date: "Aug 14, 2023", event: "Kimmeridge closed development-capital funding for Commonwealth LNG, the LNG project later incorporated into the Caturus integrated platform.", category: "Financing" },
       { date: "Jun 25, 2024", event: "Kimmeridge closed a follow-on control investment in Commonwealth LNG through Kimmeridge Texas Gas, building the integrated platform later rebranded as Caturus.", category: "Acquisition" },
       { date: "Aug 7, 2025", event: "Kimmeridge announced the rebranding of SoTex HoldCo as Caturus and the closing of Mubadala Energy's strategic investment.", category: "Financing" },
-      { date: "Sep 5, 2025", event: "DOE change-of-control materials disclosed that Mubadala Energy owned 24.1% of Caturus and Kimmeridge retained 75.9%.", category: "Other" },
+      { date: "Sep 5, 2025", event: "DOE change-of-control materials disclosed that Mubadala Energy owned 24.1% of Caturus and Kimmeridge retained 75.9%.", category: "Financing" },
     ],
     sources: [
       { label: "Caturus — Caturus", url: "https://caturus.com/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
@@ -26644,7 +26593,7 @@ export const companies: PortCo[] = [
     headquarters: "Texas",
     milestones: [
       { date: "Sep 6, 2019", event: "Duke Energy completed the sale of a minority interest in its commercial renewables portfolio to John Hancock / Manulife, establishing the JH Symphony renewables investment.", category: "Acquisition" },
-      { date: "2026", event: "Public disclosures still do not provide a detailed current ownership breakdown for the platform.", category: "Other" },
+      { date: "2026", event: "A related Symphony vehicle held one solar project, eight wind projects, and one battery project in Texas after an internal reorganization.", category: "Expansion" },
     ],
     sources: [
       { label: "Interchange — JH Symphony Renewables, LLC", url: "https://interchange.puc.texas.gov/Documents/49507_1_1016671.PDF", type: "PRESENTATION" },
@@ -27335,7 +27284,7 @@ export const companies: PortCo[] = [
       { date: "2014", event: "The Region of Waterloo selected GrandLinq for the ION light rail project.", category: "Expansion" },
       { date: "2014", event: "Meridiam and its GrandLinq partners reached financial close for Stage 1 of the concession.", category: "Financing" },
       { date: "Jun 2019", event: "The ION light rail line entered service.", category: "Expansion" },
-      { date: "2022", event: "Meridiam reported that the operation and maintenance program had achieved ISO 9001 certification.", category: "Other" },
+      { date: "2022", event: "Meridiam reported that the operation and maintenance program had achieved ISO 9001 certification.", category: "Management" },
     ],
     sources: [
       { label: "Close date source — Meridiam — ION Light Rail Transit", url: "https://www.meridiam.com/assets/waterloo-lrt-ontario-canada/", type: "ARTICLE", purpose: "OWNERSHIP_INVESTMENT" },
@@ -27659,7 +27608,7 @@ export const companies: PortCo[] = [
     headquarters: "Maryland",
     milestones: [
       { date: "Jun 2016", event: "Meridiam announced the original financial close on the Maryland Purple Line project.", category: "Financing" },
-      { date: "2020", event: "Construction halted after the original design-build consortium withdrew.", category: "Other" },
+      { date: "2020", event: "Construction halted after the original design-build consortium withdrew.", category: "Management" },
       { date: "2022", event: "Maryland Transit Solutions began work under the replacement construction contract.", category: "Expansion" },
       { date: "Apr 2022", event: "Meridiam announced financial close on the restructured project and the resumption of full-scale construction.", category: "Financing" },
     ],
@@ -28131,7 +28080,6 @@ export const companies: PortCo[] = [
     headquarters: "West Virginia",
     milestones: [
       { date: "Aug 2016", event: "MSIP / Morgan Stanley Infrastructure Partners invested in Hornet Midstream.", category: "Financing" },
-      { date: "2019", event: "Hornet became part of regional consolidation activity in the Marcellus and Utica gathering market.", category: "Other" },
       { date: "Mar 2019", event: "Equitrans announced an agreement to acquire 100% of Hornet Midstream from a fund managed by MSIP.", category: "Acquisition" },
     ],
     sources: [
@@ -28378,7 +28326,7 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "Jul 2024", event: "I Squared Capital announced more than $600 million of new equity from QIA, Mubadala, and other co-investors for TEN.", category: "Financing" },
       { date: "Jul 2024", event: "QIA announced an investment in TEN alongside I Squared Capital and Mubadala.", category: "Financing" },
-      { date: "Jul 2024", event: "Star Leasing and related businesses announced their rebrand to Transportation Equipment Network.", category: "Other" },
+      { date: "Jul 2024", event: "Star Leasing and related businesses announced their rebrand to Transportation Equipment Network.", category: "Management" },
     ],
     sources: [
       { label: "Qia — Transportation Equipment Network", url: "https://www.qia.qa/en/Newsroom/Pages/QIA-invests-in-Transportation-Equipment-Network-%28TEN%29%2C-the-leading-North-American-full-service-trailer-lessor.aspx", type: "PRESS_RELEASE", purpose: "MILESTONE_EVENT" },
@@ -31004,7 +30952,7 @@ export const companies: PortCo[] = [
     ],
   },
   {
-    name: "Not publicly disclosed.",
+    name: "Ashburn Data Center Campus (600MW)",
     investmentFirm: "SDC",
     sector: "Digital",
     subsector: "Hyperscale data center campus development",
@@ -31021,10 +30969,10 @@ export const companies: PortCo[] = [
       { date: "Nov 2025", event: "Data Center Dynamics reported that SDC listed a 112-acre, 600MW site in Ashburn among its Virginia developments.", category: "Expansion" },
     ],
     sources: [
-      { label: "Sdccapitalpartners — Not publicly disclosed.", url: "https://sdccapitalpartners.com/investments/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
+      { label: "Sdccapitalpartners — Ashburn Data Center Campus (600MW)", url: "https://sdccapitalpartners.com/investments/", type: "WEBSITE", purpose: "COMPANY_PROFILE" },
       { label: "Announcement date source — SDC — Belmont Innovation Campus / Ashburn 600MW campus", url: "https://www.datacenterdynamics.com/en/news/sdc-capital-partners-planning-data-center-campus-in-belmont-virginia/", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
-      { label: "Data Center Dynamics — Not publicly disclosed.", url: "https://www.datacenterdynamics.com/en/news/sdc-capital-partners-buys-97-acres-of-data-center-zoned-land-in-virginia-for-615-million/", type: "ARTICLE" },
-      { label: "Aterio — Not publicly disclosed.", url: "https://www.aterio.io/insights/us-data-centers/dc/sdc-capital-partners-54283-va", type: "ARTICLE" },
+      { label: "Data Center Dynamics — Ashburn Data Center Campus (600MW)", url: "https://www.datacenterdynamics.com/en/news/sdc-capital-partners-buys-97-acres-of-data-center-zoned-land-in-virginia-for-615-million/", type: "ARTICLE" },
+      { label: "Aterio — Ashburn Data Center Campus (600MW)", url: "https://www.aterio.io/insights/us-data-centers/dc/sdc-capital-partners-54283-va", type: "ARTICLE" },
     ],
     owners: [
       { investmentFirm: "SDC", ownershipVehicle: "n.a.", investmentYear: 2022, status: "Active" },
@@ -32194,7 +32142,6 @@ export const companies: PortCo[] = [
     milestones: [
       { date: "2025", event: "Tallvine disclosed plans to expand the Houston campus and enter additional metro markets.", category: "Expansion" },
       { date: "Aug 2025", event: "Tallvine Partners acquired TRG Datacenters and launched a digital infrastructure platform.", category: "Acquisition" },
-      { date: "Aug 2025", event: "TRG Datacenters announced it was entering a new chapter under Tallvine ownership.", category: "Other" },
     ],
     sources: [
       { label: "Investment date source — Tallvine — TRG Datacenters", url: "https://www.businesswire.com/news/home/20250804742889/en/Tallvine-Partners-Acquires-TRG-Datacenters-and-Launches-Digital-Infrastructure-Platform", type: "PRESS_RELEASE", purpose: "OWNERSHIP_INVESTMENT" },
