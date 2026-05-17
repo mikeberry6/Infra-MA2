@@ -355,7 +355,7 @@ function DealTable({
   return (
     <>
       {/* Mobile card list */}
-      <div className="md:hidden space-y-2">
+      <div className="lg:hidden space-y-2">
         {sorted.map((deal) => (
           <DealCard key={deal.id} deal={deal} onSelect={onSelectDeal} />
         ))}
@@ -375,7 +375,7 @@ function DealTable({
       </div>
 
       {/* Desktop table */}
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <div className="overflow-x-auto">
           <table className="w-full table-fixed border-collapse text-left">
             <DealTableColGroup />
