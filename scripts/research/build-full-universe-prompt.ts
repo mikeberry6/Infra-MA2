@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import { deals } from "../../prisma/seed-data/deals.ts";
-import { funds } from "../../prisma/seed-data/funds.ts";
 
 interface Options {
   start: string;
@@ -10,15 +9,10 @@ interface Options {
   print: boolean;
 }
 
-interface FundGroup {
-  managerName: string;
-  fundNames: string[];
-  aliases: string[];
-}
-
 const ROOT = process.cwd();
 const TEMPLATE_PATH = path.join(ROOT, "scripts/research/full-universe-protocol.md");
 const OUTPUT_DIR = path.join(ROOT, "scripts/research/output");
+const MANAGER_AUDIT_PATH = path.join(ROOT, "audits/portfolio-current-owner-fund-verification-2026-05-11.csv");
 
 function usage(): never {
   throw new Error(
@@ -103,40 +97,62 @@ function uniqueSorted(values: string[]): string[] {
   );
 }
 
-function aliasesFor(managerName: string, fundNames: string[]): string[] {
-  const aliases = new Set<string>();
-  aliases.add(managerName);
+function parseCsv(text: string): string[][] {
+  const rows: string[][] = [];
+  let row: string[] = [];
+  let field = "";
+  let inQuotes = false;
 
-  const strippedParenthetical = managerName.replace(/\s*\([^)]*\)/g, "").trim();
-  if (strippedParenthetical && strippedParenthetical !== managerName) aliases.add(strippedParenthetical);
+  for (let i = 0; i < text.length; i += 1) {
+    const char = text[i];
+    const next = text[i + 1];
 
-  for (const match of managerName.matchAll(/\(([^)]+)\)/g)) {
-    aliases.add(match[1].trim());
+    if (char === '"' && inQuotes && next === '"') {
+      field += '"';
+      i += 1;
+      continue;
+    }
+
+    if (char === '"') {
+      inQuotes = !inQuotes;
+      continue;
+    }
+
+    if (char === "," && !inQuotes) {
+      row.push(field);
+      field = "";
+      continue;
+    }
+
+    if ((char === "\n" || char === "\r") && !inQuotes) {
+      if (char === "\r" && next === "\n") i += 1;
+      row.push(field);
+      rows.push(row);
+      row = [];
+      field = "";
+      continue;
+    }
+
+    field += char;
   }
 
-  for (const fundName of fundNames) {
-    aliases.add(fundName);
+  if (field.length > 0 || row.length > 0) {
+    row.push(field);
+    rows.push(row);
   }
 
-  return uniqueSorted(Array.from(aliases));
+  return rows.filter((csvRow) => csvRow.some((value) => value.trim()));
 }
 
-function groupFunds(): FundGroup[] {
-  const byManager = new Map<string, string[]>();
-
-  for (const fund of funds) {
-    const current = byManager.get(fund.managerName) ?? [];
-    current.push(fund.fundName);
-    byManager.set(fund.managerName, current);
+function getManagerUniverse(): string[] {
+  const rows = parseCsv(fs.readFileSync(MANAGER_AUDIT_PATH, "utf8"));
+  const header = rows[0];
+  const managerIndex = header.indexOf("current_owner_investment_firm");
+  if (managerIndex === -1) {
+    throw new Error(`Missing current_owner_investment_firm column in ${MANAGER_AUDIT_PATH}`);
   }
 
-  return Array.from(byManager.entries())
-    .map(([managerName, fundNames]) => ({
-      managerName,
-      fundNames: uniqueSorted(fundNames),
-      aliases: aliasesFor(managerName, fundNames),
-    }))
-    .sort((a, b) => a.managerName.localeCompare(b.managerName));
+  return uniqueSorted(rows.slice(1).map((row) => row[managerIndex] ?? ""));
 }
 
 function markdownEscape(value: string | null | undefined): string {
@@ -146,16 +162,8 @@ function markdownEscape(value: string | null | undefined): string {
     .trim();
 }
 
-function renderFundUniverse(groups: FundGroup[]): string {
-  return groups
-    .map((group, index) => {
-      return [
-        `${index + 1}. ${group.managerName}`,
-        `   - Fund vehicles: ${group.fundNames.join("; ")}`,
-        `   - Search aliases: ${group.aliases.join("; ")}`,
-      ].join("\n");
-    })
-    .join("\n");
+function renderManagerUniverse(managers: string[]): string {
+  return managers.map((manager, index) => `${index + 1}. ${manager}`).join("\n");
 }
 
 function renderExistingDeals(start: string, end: string): string {
@@ -196,14 +204,13 @@ function renderExistingDeals(start: string, end: string): string {
 
 function renderPrompt(options: Options): string {
   const template = fs.readFileSync(TEMPLATE_PATH, "utf8");
-  const groups = groupFunds();
+  const managers = getManagerUniverse();
   const replacements: Record<string, string> = {
     PERIOD_START: options.start,
     PERIOD_END: options.end,
     GENERATED_AT: new Date().toISOString(),
-    MANAGER_COUNT: String(groups.length),
-    FUND_COUNT: String(funds.length),
-    FUND_UNIVERSE: renderFundUniverse(groups),
+    MANAGER_COUNT: String(managers.length),
+    MANAGER_UNIVERSE: renderManagerUniverse(managers),
     EXISTING_DEALS: renderExistingDeals(options.start, options.end),
   };
 
