@@ -21,7 +21,6 @@ export function DatabaseIntelligenceHeader({
   eyebrow,
   title,
   summary,
-  metrics,
   actions,
 }: DatabaseIntelligenceHeaderProps) {
   return (
@@ -48,37 +47,6 @@ export function DatabaseIntelligenceHeader({
           </div>
         )}
       </div>
-
-      {metrics.length > 0 && (
-        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-          {metrics.map((metric, index) => {
-            const color = metric.color ?? "var(--accent)";
-            return (
-              <div
-                key={`${metric.label}-${index}`}
-                className="inline-flex max-w-full min-w-0 items-center gap-2 border-r border-[var(--border)] pr-4 last:border-r-0 last:pr-0"
-              >
-                <span
-                  aria-hidden
-                  className="h-1.5 w-1.5 shrink-0 rounded-full"
-                  style={{ backgroundColor: color }}
-                />
-                <span className="type-micro font-medium text-[var(--text-tertiary)]">
-                  {metric.label}
-                </span>
-                <span className="mono text-[13px] font-semibold leading-4 text-[var(--text-primary)] tabular-nums">
-                  {metric.value}
-                </span>
-                {metric.detail && (
-                  <span className="min-w-0 max-w-[18rem] truncate type-micro text-[var(--text-tertiary)]">
-                    {metric.detail}
-                  </span>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      )}
     </section>
   );
 }
