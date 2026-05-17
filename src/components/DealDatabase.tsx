@@ -318,6 +318,18 @@ function DealCard({
 }
 
 // ─── Deal Table ─────────────────────────────────────────────
+const DEAL_TABLE_COL_WIDTHS = ["9%", "25%", "15%", "13%", "12%", "17%", "7%", "2%"] as const;
+
+function DealTableColGroup() {
+  return (
+    <colgroup>
+      {DEAL_TABLE_COL_WIDTHS.map((width, index) => (
+        <col key={index} style={{ width }} />
+      ))}
+    </colgroup>
+  );
+}
+
 function DealTable({
   filteredDeals,
   totalCount,
@@ -365,12 +377,13 @@ function DealTable({
       {/* Desktop table */}
       <div className="hidden md:block">
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse whitespace-nowrap">
+          <table className="w-full table-fixed border-collapse text-left">
+            <DealTableColGroup />
             <thead className="sticky top-0 z-10">
               <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]/95 backdrop-blur-sm shadow-[0_1px_0_rgba(17,17,20,0.03)]">
                 <th
                   aria-sort={sortDir === "asc" ? "ascending" : "descending"}
-                  className="text-left px-3 py-2 w-[100px]"
+                  className="px-3 py-2 text-left"
                 >
                   <button
                     type="button"
@@ -399,7 +412,7 @@ function DealTable({
                 <th className="text-left px-3 py-2 type-table-header">
                   Source
                 </th>
-                <th className="w-6" aria-hidden />
+                <th className="px-2 py-2" aria-hidden />
               </tr>
             </thead>
             <tbody>
@@ -417,65 +430,67 @@ function DealTable({
                     }}
                     role="button"
                     tabIndex={0}
-                    className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group focus:bg-[var(--bg-subtle)] focus:outline-none"
+                    className="group cursor-pointer border-b border-[var(--border)] bg-[var(--bg-surface)] transition-colors last:border-b-0 hover:bg-[var(--bg-subtle)] focus:bg-[var(--bg-subtle)] focus:outline-none"
                   >
-                    <td className="px-3 py-2.5 align-top">
-                      <span className="type-micro mono text-[var(--text-secondary)] tabular-nums">
+                    <td className="px-3 py-3 align-top">
+                      <span className="mono type-meta tabular-nums text-[var(--text-secondary)]">
                         {formatDate(deal.date)}
                       </span>
                     </td>
-                    <td className="px-3 py-2.5 align-top">
-                      <div className="flex flex-col">
-                        <span title={deal.target} className="type-row-title group-hover:text-[var(--accent)] transition-colors block truncate max-w-[280px]">
+                    <td className="px-3 py-3 align-top">
+                      <div className="flex min-w-0 flex-col gap-0.5">
+                        <span title={deal.target} className="block truncate type-row-title transition-colors group-hover:text-[var(--accent)]">
                           {deal.target}
                         </span>
                         {showSeller && (
-                          <span title={deal.seller} className="type-micro block truncate max-w-[280px]">
+                          <span title={deal.seller} className="block truncate type-micro">
                             {deal.seller}
                           </span>
                         )}
                       </div>
                     </td>
-                    <td title={deal.buyer} className="px-3 py-2.5 align-top max-w-[160px]">
-                      <div className="flex flex-col">
+                    <td title={deal.buyer} className="px-3 py-3 align-top">
+                      <div className="flex min-w-0 flex-col gap-0.5">
                         {shortenBuyer(deal.buyer).map((name, i) => (
-                          <span key={i} className="type-meta truncate block">
+                          <span key={i} className="block truncate type-meta">
                             {name}
                           </span>
                         ))}
                       </div>
                     </td>
-                    <td className="px-3 py-2.5 align-top">
-                      <Tag color={getSectorColor(deal.sector)}>{deal.sector}</Tag>
+                    <td className="px-3 py-3 align-top">
+                      <div className="min-w-0">
+                        <Tag color={getSectorColor(deal.sector)}>{deal.sector}</Tag>
+                      </div>
                     </td>
-                    <td className="px-3 py-2.5 align-top">
-                      <span className="type-meta">{deal.region}</span>
+                    <td className="px-3 py-3 align-top">
+                      <span className="block truncate type-meta">{deal.region}</span>
                     </td>
-                    <td className="px-3 py-2.5 align-top">
-                      <div className="flex items-center gap-2 flex-wrap">
+                    <td className="px-3 py-3 align-top">
+                      <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1.5">
                         {deal.category.map((cat) => (
                           <Tag key={cat} color={getCategoryColor(cat)}>{cat}</Tag>
                         ))}
                       </div>
                     </td>
-                    <td className="px-3 py-2.5 align-top">
+                    <td className="px-3 py-3 align-top">
                       {deal.sourceUrl ? (
                         <a
                           href={deal.sourceUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center gap-1 type-micro hover:text-[var(--text-primary)] transition-colors"
+                          className="inline-flex max-w-full items-center gap-1 type-micro transition-colors hover:text-[var(--text-primary)]"
                           title={deal.sourceName || deal.sourceUrl}
                         >
-                          <span className="truncate max-w-[80px]">{deal.sourceName || "Source"}</span>
+                          <span className="truncate">{deal.sourceName || "Source"}</span>
                           <ExternalLink className="h-3 w-3 flex-shrink-0" />
                         </a>
                       ) : (
                         <span className="type-micro">—</span>
                       )}
                     </td>
-                    <td className="px-2 py-2.5 align-middle text-right">
+                    <td className="px-2 py-3 align-middle text-right">
                       <ChevronRight className="h-3.5 w-3.5 text-[var(--text-tertiary)] opacity-30 group-hover:opacity-100 group-hover:text-[var(--text-secondary)] transition-all inline-block" />
                     </td>
                   </tr>
