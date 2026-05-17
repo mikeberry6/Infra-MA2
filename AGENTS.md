@@ -25,6 +25,38 @@
 - `getWeeklyDeals()` includes deals of any status — some deals are simultaneously announced and closed (e.g. sign-and-close transactions), and these should still appear in the briefing
 - When the user publishes a new weekly briefing, update `WEEKLY_ANCHOR` to the new publish date
 
+## Weekly Email Briefing (`public/email-format/`)
+
+- Weekly email briefings are static HTML files in `public/email-format/`. Use `public/email-format/template.html` as the starting point for each new issue.
+- Preserve the visual and editorial style established in `public/email-format/2026-05-02.html` and `public/email-format/2026-05-09.html`: Guggenheim purple/gold accents, bordered sector cards, compact metadata lines, grey body text, simple horizontal YTD bars, and a factual advisory tone.
+- Do not rewrite historical weekly email files unless the user explicitly asks for historical cleanup.
+
+### Weekly Section Ordering
+
+- In each published weekly email, order current-week sector sections by that week's deal count in descending order, from most to least active.
+- If sector counts are tied, use this fixed tie-break order: Power & ET, Digital, Transportation, Utilities, Midstream, Social Infra.
+- Omit sectors with zero deals from final published briefings unless the user explicitly requests zero-deal sections.
+- Preheader and previous-editions summaries should list active sectors in the same most-to-least activity order.
+
+### Deal Overview Writing Rubric
+
+- Each deal card uses this structure:
+  1. **Title:** `{Target / Asset} | {Sponsor or Sponsor-backed Platform}`
+  2. **Metadata line:** `{Sponsor} ({transaction type}) · {subsector} · {region/country}`
+  3. **Overview paragraph:** one concise paragraph, generally 1–2 sentences
+  4. **Source:** one source link labeled "Source"
+- Overview paragraphs should state what happened, who is buying/selling/investing, and why the asset or platform matters.
+- Prefer concrete facts when available: capacity, geography, market role, enterprise value, capital commitment, customer base, development status, or strategic rationale.
+- Keep language factual and restrained. Avoid generic hype or unsupported "strategic fit" phrasing.
+- Use consistent transaction labels such as Buyout, Minority Stake, Majority Stake, Joint Venture, Platform Launch, Bolt-On, Portfolio Company Acquisition, Portfolio Company Divestiture, Primary Capital Raise, Sale, and Co-Investment.
+
+### YTD Bar Charts
+
+- The `Deal Count By Sector (YTD)` and `Deal Count By Region (YTD)` tables must both be ordered in descending count order, from most to least active.
+- Recalculate bar widths after sorting: the leading row is `100%`; every other row is `round(count / leadingCount * 100)`.
+- Before publishing, verify that no lower-count row appears before a higher-count row. For example, if Social Infra has more YTD deals than Midstream, Social Infra must appear above Midstream.
+- Use simple email-compatible horizontal bars only; do not introduce complex SVG charts.
+
 ## Deal Database Page (`/tracker`)
 
 ### YTD Subtitle

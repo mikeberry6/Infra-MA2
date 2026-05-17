@@ -4,13 +4,26 @@
   Usage:
     1. cp template.html YYYY-MM-DD.html
     2. Replace {{DEAL_SUMMARY}}, {{DATE_RANGE_SHORT}} in preheader
+       - List active sectors by current-week deal count, most to least active
     3. Replace {{PREVIOUS_EDITIONS}} in HTML comment
     4. Replace {{EDITION_DATE_RANGE}} in masthead
     5. Replace {{KEY_THEME_1}} and {{KEY_THEME_2}}
-    6. For each sector with deals: update deal count, replace "No transactions" row with deal blocks
-    7. Update YTD bar charts (sector + region counts and bar widths)
-    8. Replace {{CURRENT_WEEK_PILL}} comment with active pill, add nav link for new week
-    9. Update index.html redirect to point to new file
+    6. Build sector sections for sectors with deals only
+       - Order sections by current-week deal count, most to least active
+       - Break ties in this order: Power & ET, Digital, Transportation, Utilities, Midstream, Social Infra
+       - Omit zero-deal sectors unless explicitly requested
+    7. Build each deal overview using the standard rubric
+       - Title: {Target / Asset} | {Sponsor or Sponsor-backed Platform}
+       - Metadata: {Sponsor} ({transaction type}) · {subsector} · {region/country}
+       - Body: one concise factual paragraph, usually 1-2 sentences
+       - Source: one link labeled "Source"
+       - Include concrete facts when available: capacity, geography, market role, value, capital commitment, customers, development status, or strategic rationale
+    8. Update YTD bar charts (sector + region counts and bar widths)
+       - Sort both charts by count in descending order
+       - Recalculate widths after sorting: top row = 100%; others = round(count / topCount * 100)
+       - Verify no lower-count row appears before a higher-count row
+    9. Replace {{CURRENT_WEEK_PILL}} comment with active pill, add nav link for new week
+    10. Update index.html redirect to point to new file
 
   Placeholder search: grep for '{{' to find all remaining placeholders
 -->
