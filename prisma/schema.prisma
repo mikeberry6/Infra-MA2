@@ -492,6 +492,97 @@ model NewsMention {
   @@index([mentionType])
 }
 
+// ── Daily Infrastructure M&A Conditions Dashboard ───────
+
+model DashboardMetricDefinition {
+  id             String   @id
+  label          String
+  section        String
+  group          String
+  unit           String?
+  format         String   @default("number")
+  cadence        String   @default("daily")
+  sourceId       String
+  sourceName     String
+  sourceUrl      String?
+  sourceKind     String   @default("official")
+  description    String   @default("")
+  staleAfterDays Int      @default(7)
+  status         String   @default("ACTIVE")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  observations DashboardObservation[]
+
+  @@index([section])
+  @@index([sourceId])
+}
+
+model DashboardObservation {
+  id          String   @id @default(cuid())
+  metricId    String
+  metric      DashboardMetricDefinition @relation(fields: [metricId], references: [id], onDelete: Cascade)
+  sourceId    String
+  sourceRunId String?
+  observedAt  DateTime
+  periodEnd   DateTime
+  value       Float?
+  textValue   String?
+  unit        String?
+  status      String   @default("CACHED")
+  metadata    Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([metricId, periodEnd, sourceId])
+  @@index([metricId, periodEnd])
+  @@index([sourceId])
+  @@index([status])
+}
+
+model DashboardSignal {
+  id         String   @id @default(cuid())
+  signalKey  String
+  section    String
+  title      String
+  summary    String   @default("")
+  direction  String   @default("NEEDS_REVIEW")
+  severity   Int      @default(1)
+  observedAt DateTime
+  sourceId   String
+  sourceName String
+  sourceUrl  String?
+  metadata   Json?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([signalKey, observedAt, sourceId])
+  @@index([section])
+  @@index([sourceId])
+  @@index([direction])
+  @@index([observedAt])
+}
+
+model DashboardSourceRun {
+  id                   String   @id @default(cuid())
+  sourceId             String
+  sourceName           String
+  status               String
+  startedAt            DateTime
+  endedAt              DateTime?
+  observationsFetched  Int      @default(0)
+  observationsUpserted Int      @default(0)
+  signalsFetched       Int      @default(0)
+  signalsUpserted      Int      @default(0)
+  error                String?
+  metadata             Json?
+  createdAt            DateTime @default(now())
+
+  @@index([sourceId])
+  @@index([status])
+  @@index([startedAt])
+}
+
 // ── User ───────────────────────────────────────────────
 
 model User {
