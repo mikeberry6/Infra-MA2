@@ -2,15 +2,21 @@ import { companyDedupKeys } from "@/lib/company-key";
 import type { NewsCategory, NewsConfidence, NewsMentionView, NewsMentionType } from "@/modules/shared/types";
 
 export const NEWS_CATEGORIES: NewsCategory[] = [
-  "Infrastructure Transaction Activity",
-  "Infrastructure Fundraising Activity",
-  "Rumored Infrastructure Sales Processes",
+  "Transaction Activity",
+  "Fundraising Activity",
+  "Portfolio Company News",
+  "Investment Firm News",
+  "Rumored Sales Processes",
+  "Low Confidence / Needs Review",
 ];
 
 const NEWS_CATEGORY_COLORS: Record<NewsCategory, string> = {
-  "Infrastructure Transaction Activity": "#3b6cf2",
-  "Infrastructure Fundraising Activity": "#1d9d76",
-  "Rumored Infrastructure Sales Processes": "#d98b1c",
+  "Transaction Activity": "#3b6cf2",
+  "Fundraising Activity": "#1d9d76",
+  "Portfolio Company News": "#0ea5e9",
+  "Investment Firm News": "#7d6cf0",
+  "Rumored Sales Processes": "#d98b1c",
+  "Low Confidence / Needs Review": "#71717a",
 };
 
 const LOW_SIGNAL_TERMS = new Set([

@@ -136,9 +136,12 @@ export interface DatabaseCounts {
 }
 
 export type NewsCategory =
-  | "Infrastructure Transaction Activity"
-  | "Infrastructure Fundraising Activity"
-  | "Rumored Infrastructure Sales Processes";
+  | "Transaction Activity"
+  | "Fundraising Activity"
+  | "Portfolio Company News"
+  | "Investment Firm News"
+  | "Rumored Sales Processes"
+  | "Low Confidence / Needs Review";
 
 export type NewsMentionType = "PortCo" | "Investment Firm" | "Fund" | "Deal";
 
@@ -160,6 +163,7 @@ export interface NewsItemView {
   category: NewsCategory;
   sourceName: string;
   sourceUrl: string;
+  linkedinUrls: string[];
   publishedAt: string;
   isRumor: boolean;
   confidence: NewsConfidence;

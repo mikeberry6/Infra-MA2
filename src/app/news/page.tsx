@@ -5,7 +5,7 @@ import { NewsFeed } from "@/components/NewsFeed";
 import { getNewsFeed } from "@/modules/news/queries";
 
 export const metadata: Metadata = {
-  title: "News Feed",
+  title: "Daily Intelligence Feed",
 };
 
 export default async function NewsPage() {

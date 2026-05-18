@@ -422,7 +422,10 @@ model Citation {
 enum NewsCategory {
   TRANSACTION_ACTIVITY
   FUNDRAISING_ACTIVITY
+  PORTFOLIO_COMPANY_NEWS
+  INVESTMENT_FIRM_NEWS
   RUMORED_SALES_PROCESS
+  LOW_CONFIDENCE_NEEDS_REVIEW
 }
 
 enum NewsMentionType {
@@ -439,19 +442,20 @@ enum NewsConfidence {
 }
 
 model NewsItem {
-  id          String         @id @default(cuid())
-  legacyId    String?        @unique
-  title       String
-  summary     String         @default("")
-  category    NewsCategory
-  sourceName  String         @default("")
-  sourceUrl   String?
-  publishedAt DateTime
-  isRumor     Boolean        @default(false)
-  confidence  NewsConfidence @default(HIGH)
-  status      RecordStatus   @default(PUBLISHED)
-  createdAt   DateTime       @default(now())
-  updatedAt   DateTime       @updatedAt
+  id           String         @id @default(cuid())
+  legacyId     String?        @unique
+  title        String
+  summary      String         @default("")
+  category     NewsCategory
+  sourceName   String         @default("")
+  sourceUrl    String?
+  linkedinUrls String[]       @default([])
+  publishedAt  DateTime
+  isRumor      Boolean        @default(false)
+  confidence   NewsConfidence @default(HIGH)
+  status       RecordStatus   @default(PUBLISHED)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
 
   mentions NewsMention[]
 

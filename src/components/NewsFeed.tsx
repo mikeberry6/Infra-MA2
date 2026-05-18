@@ -3,18 +3,22 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {
+  AlertTriangle,
   Building2,
   CalendarDays,
+  CheckCircle2,
   ChevronRight,
   DollarSign,
   ExternalLink,
   FileText,
   Landmark,
+  Link2,
   Newspaper,
   Radio,
   Search,
   X,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { SectionLabel } from "@/components/shared/SectionLabel";
@@ -28,10 +32,10 @@ import { getNewsCategoryColor, NEWS_CATEGORIES } from "@/lib/news-utils";
 import type { NewsCategory, NewsFeedView, NewsItemView, NewsMentionType } from "@/modules/shared/types";
 
 const DATE_WINDOWS = [
-  { label: "All", days: null },
+  { label: "Today", days: 0 },
+  { label: "7D", days: 7 },
   { label: "30D", days: 30 },
-  { label: "90D", days: 90 },
-  { label: "1Y", days: 365 },
+  { label: "All", days: null },
 ] as const;
 
 const MENTION_COLORS: Record<NewsMentionType, string> = {
@@ -43,24 +47,30 @@ const MENTION_COLORS: Record<NewsMentionType, string> = {
 
 type NewsCounts = {
   total: number;
-  transactions: number;
-  fundraising: number;
-  rumors: number;
+  highConfidence: number;
+  needsReview: number;
+  linkedinLinks: number;
 };
 
-function categoryIcon(category: NewsCategory) {
-  if (category === "Infrastructure Fundraising Activity") return DollarSign;
-  if (category === "Rumored Infrastructure Sales Processes") return Radio;
+function categoryIcon(category: NewsCategory): LucideIcon {
+  if (category === "Fundraising Activity") return DollarSign;
+  if (category === "Portfolio Company News") return Building2;
+  if (category === "Investment Firm News") return Landmark;
+  if (category === "Rumored Sales Processes") return Radio;
+  if (category === "Low Confidence / Needs Review") return AlertTriangle;
   return Newspaper;
 }
 
 function categoryShortLabel(category: NewsCategory): string {
-  if (category === "Infrastructure Fundraising Activity") return "Fundraising";
-  if (category === "Rumored Infrastructure Sales Processes") return "Rumored Sales";
-  return "Transactions";
+  if (category === "Transaction Activity") return "Transactions";
+  if (category === "Fundraising Activity") return "Fundraising";
+  if (category === "Portfolio Company News") return "PortCo News";
+  if (category === "Investment Firm News") return "Firm News";
+  if (category === "Rumored Sales Processes") return "Rumored Sales";
+  return "Needs Review";
 }
 
-function mentionIcon(type: NewsMentionType) {
+function mentionIcon(type: NewsMentionType): LucideIcon {
   if (type === "PortCo") return Building2;
   if (type === "Investment Firm") return Landmark;
   if (type === "Fund") return FileText;
@@ -90,6 +100,48 @@ function getEntityOptions(items: NewsItemView[]): string[] {
     .map(([name]) => name);
 }
 
+function sourceLabel(item: NewsItemView): string {
+  if (item.sourceName) return item.sourceName;
+  try {
+    return new URL(item.sourceUrl).hostname.replace(/^www\./, "");
+  } catch {
+    return "Unknown Source";
+  }
+}
+
+function getSourceOptions(items: NewsItemView[]): string[] {
+  const counts = new Map<string, number>();
+  for (const item of items) {
+    const label = sourceLabel(item);
+    counts.set(label, (counts.get(label) ?? 0) + 1);
+  }
+  return Array.from(counts.entries())
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, 80)
+    .map(([source]) => source);
+}
+
+function confidenceFilterLabel(item: NewsItemView): string {
+  if (item.confidence === "Low" || item.category === "Low Confidence / Needs Review") return "Needs Review";
+  if (item.confidence === "High") return "High Confidence";
+  return "Medium Confidence";
+}
+
+function confidenceColor(label: string): string {
+  if (label === "High Confidence") return "#1d9d76";
+  if (label === "Medium Confidence") return "#d98b1c";
+  return "#71717a";
+}
+
+function confidenceDisplay(item: NewsItemView): { label: string; color: string; icon: LucideIcon } {
+  const label = confidenceFilterLabel(item);
+  return {
+    label,
+    color: confidenceColor(label),
+    icon: label === "High Confidence" ? CheckCircle2 : AlertTriangle,
+  };
+}
+
 function getMentionColor(label: string, items: NewsItemView[]): string {
   const mention = items.flatMap((item) => item.mentions).find((m) => m.label === label);
   return mention ? MENTION_COLORS[mention.type] : "#a1a1aa";
@@ -110,26 +162,6 @@ function topMentions(items: NewsItemView[], type: NewsMentionType, limit = 5) {
     .slice(0, limit);
 }
 
-function getBalancedNewsItems(items: NewsItemView[]): NewsItemView[] {
-  const buckets = NEWS_CATEGORIES.map((category) =>
-    items.filter((item) => item.category === category),
-  );
-  const result: NewsItemView[] = [];
-  const seen = new Set<string>();
-  const longest = Math.max(...buckets.map((bucket) => bucket.length), 0);
-
-  for (let index = 0; index < longest; index++) {
-    for (const bucket of buckets) {
-      const item = bucket[index];
-      if (!item || seen.has(item.id)) continue;
-      result.push(item);
-      seen.add(item.id);
-    }
-  }
-
-  return result;
-}
-
 function IntelligenceHeader({
   counts,
   lastUpdated,
@@ -138,10 +170,10 @@ function IntelligenceHeader({
   lastUpdated: string;
 }) {
   const metrics = [
-    { label: "Signals", value: counts.total, color: "#111114" },
-    { label: "Transactions", value: counts.transactions, color: getNewsCategoryColor("Infrastructure Transaction Activity") },
-    { label: "Fundraising", value: counts.fundraising, color: getNewsCategoryColor("Infrastructure Fundraising Activity") },
-    { label: "Rumored Sales", value: counts.rumors, color: getNewsCategoryColor("Rumored Infrastructure Sales Processes") },
+    { label: "Review Items", value: counts.total, color: "#111114" },
+    { label: "High Confidence", value: counts.highConfidence, color: "#1d9d76" },
+    { label: "Needs Review", value: counts.needsReview, color: "#71717a" },
+    { label: "LinkedIn Links", value: counts.linkedinLinks, color: "#0a66c2" },
   ];
 
   return (
@@ -152,13 +184,13 @@ function IntelligenceHeader({
           <div className="max-w-2xl">
             <div className="mb-2 inline-flex items-center gap-2 type-label">
               <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
-              Market Intelligence
+              Daily Monitoring Output
             </div>
             <h1 className="type-page-title">
-              News Feed
+              Daily Intelligence Feed
             </h1>
             <p className="mt-1.5 type-meta">
-              Infrastructure market signals across transaction activity, fundraising momentum, and rumored sale processes.
+              Public news discovered from tracked PortCos, investment firms, fund managers, and funds. Review items here before promoting anything into the deal database.
             </p>
           </div>
           <div className="type-micro">
@@ -262,6 +294,11 @@ function NewsFilterBar({
   activeEntities,
   onToggleEntity,
   entityOptions,
+  activeSources,
+  onToggleSource,
+  sourceOptions,
+  activeConfidence,
+  onToggleConfidence,
   allItems,
   dateWindow,
   onDateWindowChange,
@@ -274,6 +311,11 @@ function NewsFilterBar({
   activeEntities: Set<string>;
   onToggleEntity: (value: string) => void;
   entityOptions: string[];
+  activeSources: Set<string>;
+  onToggleSource: (value: string) => void;
+  sourceOptions: string[];
+  activeConfidence: Set<string>;
+  onToggleConfidence: (value: string) => void;
   allItems: NewsItemView[];
   dateWindow: (typeof DATE_WINDOWS)[number]["label"];
   onDateWindowChange: (value: (typeof DATE_WINDOWS)[number]["label"]) => void;
@@ -304,6 +346,22 @@ function NewsFilterBar({
           selected={activeEntities}
           onToggle={onToggleEntity}
           getColor={(label) => getMentionColor(label, allItems)}
+          align="right"
+        />
+        <MultiSelectDropdown
+          label="Source"
+          options={sourceOptions}
+          selected={activeSources}
+          onToggle={onToggleSource}
+          getColor={() => "#0a66c2"}
+          align="right"
+        />
+        <MultiSelectDropdown
+          label="Confidence"
+          options={["High Confidence", "Medium Confidence", "Needs Review"]}
+          selected={activeConfidence}
+          onToggle={onToggleConfidence}
+          getColor={confidenceColor}
           align="right"
         />
         <div className="inline-flex shrink-0 items-center gap-0.5 rounded-md bg-[var(--bg-hover)] p-0.5">
@@ -337,6 +395,18 @@ function NewsFilterBar({
             items: activeEntities,
             getColor: (label) => getMentionColor(label, allItems),
             onRemove: onToggleEntity,
+          },
+          {
+            keyPrefix: "source",
+            items: activeSources,
+            getColor: () => "#0a66c2",
+            onRemove: onToggleSource,
+          },
+          {
+            keyPrefix: "confidence",
+            items: activeConfidence,
+            getColor: confidenceColor,
+            onRemove: onToggleConfidence,
           },
         ]}
         onClearAll={onClearAll}
@@ -379,6 +449,8 @@ function NewsCard({
 }) {
   const Icon = categoryIcon(item.category);
   const categoryColor = getNewsCategoryColor(item.category);
+  const confidence = confidenceDisplay(item);
+  const ConfidenceIcon = confidence.icon;
   const visibleMentions = item.mentions.slice(0, 5);
 
   return (
@@ -402,6 +474,17 @@ function NewsCard({
           >
             <Icon className="h-3 w-3" style={{ color: categoryColor }} />
             <span>{item.category}</span>
+          </span>
+          <span
+            className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 type-micro font-medium"
+            style={{
+              color: "#444444",
+              backgroundColor: `${confidence.color}08`,
+              borderColor: `${confidence.color}12`,
+            }}
+          >
+            <ConfidenceIcon className="h-3 w-3" style={{ color: confidence.color }} />
+            {confidence.label}
           </span>
           {item.isRumor && <Tag variant="solid">Rumor</Tag>}
           <span className="inline-flex items-center gap-1.5 type-micro">
@@ -440,8 +523,19 @@ function NewsCard({
           </div>
         )}
       </button>
-      {isHttpUrl(item.sourceUrl) && (
-        <div className="flex justify-end border-t border-[var(--border)] px-4 py-2">
+      {(isHttpUrl(item.sourceUrl) || item.linkedinUrls.length > 0) && (
+        <div className="flex flex-wrap justify-end gap-2 border-t border-[var(--border)] px-4 py-2">
+          {item.linkedinUrls.length > 0 && (
+            <button
+              type="button"
+              onClick={() => onSelect(item)}
+              className="inline-flex h-7 items-center gap-1.5 rounded-md px-2 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
+            >
+              <Link2 className="h-3 w-3" />
+              LinkedIn {item.linkedinUrls.length}
+            </button>
+          )}
+          {isHttpUrl(item.sourceUrl) && (
           <a
             href={item.sourceUrl}
             target="_blank"
@@ -451,6 +545,7 @@ function NewsCard({
             <ExternalLink className="h-3 w-3" />
             Source
           </a>
+          )}
         </div>
       )}
     </article>
@@ -460,9 +555,11 @@ function NewsCard({
 function InsightRail({ items }: { items: NewsItemView[] }) {
   const firms = topMentions(items, "Investment Firm");
   const portcos = topMentions(items, "PortCo");
-  const rumorCount = items.filter((item) => item.category === "Rumored Infrastructure Sales Processes").length;
+  const funds = topMentions(items, "Fund");
+  const needsReviewCount = items.filter((item) => confidenceFilterLabel(item) === "Needs Review").length;
   const maxFirmCount = Math.max(...firms.map((firm) => firm.count), 1);
   const maxPortCoCount = Math.max(...portcos.map((company) => company.count), 1);
+  const maxFundCount = Math.max(...funds.map((fund) => fund.count), 1);
 
   return (
     <aside className="space-y-4 lg:sticky lg:top-28">
@@ -517,14 +614,39 @@ function InsightRail({ items }: { items: NewsItemView[] }) {
       </div>
 
       <div className="surface p-4">
-        <SectionLabel>Rumor Watch</SectionLabel>
-        <div className="rounded-md border border-[#d98b1c]/15 bg-[#d98b1c]/[0.04] px-3 py-3">
+        <SectionLabel>Funds Mentioned</SectionLabel>
+        <div className="space-y-3">
+          {funds.map((fund) => (
+            <Link
+              key={fund.label}
+              href={fund.href || "/funds"}
+              className="block rounded-md px-2 py-1.5 type-meta transition-colors hover:bg-[var(--bg-hover)]"
+            >
+              <span className="flex items-center justify-between gap-3">
+                <span className="truncate text-[var(--text-secondary)]">{fund.label}</span>
+                <span className="mono tabular-nums text-[var(--text-tertiary)]">{fund.count}</span>
+              </span>
+              <span className="mt-1 block h-1 overflow-hidden rounded-full bg-[var(--bg-hover)]">
+                <span
+                  className="block h-full rounded-full bg-[#1d9d76]"
+                  style={{ width: `${Math.max(12, (fund.count / maxFundCount) * 100)}%` }}
+                />
+              </span>
+            </Link>
+          ))}
+          {funds.length === 0 && <div className="type-meta text-[var(--text-tertiary)]">No fund mentions.</div>}
+        </div>
+      </div>
+
+      <div className="surface p-4">
+        <SectionLabel>Review Queue</SectionLabel>
+        <div className="rounded-md border border-[#71717a]/15 bg-[#71717a]/[0.04] px-3 py-3">
           <div className="flex items-center justify-between">
-            <span className="type-meta">Active sale-process signals</span>
-            <span className="mono type-page-title tabular-nums">{rumorCount}</span>
+            <span className="type-meta">Needs review items</span>
+            <span className="mono type-page-title tabular-nums">{needsReviewCount}</span>
           </div>
           <p className="mt-1.5 type-micro">
-            Sourced from tracked PortCo milestones and curated rumor records.
+            Low-confidence scanner results stay here until an analyst promotes or dismisses them.
           </p>
         </div>
       </div>
@@ -552,6 +674,8 @@ function NewsDrawer({
 
   const Icon = categoryIcon(item.category);
   const categoryColor = getNewsCategoryColor(item.category);
+  const confidence = confidenceDisplay(item);
+  const ConfidenceIcon = confidence.icon;
 
   return (
     <div className="fixed inset-0 z-50">
@@ -582,6 +706,17 @@ function NewsDrawer({
               <Icon className="h-3 w-3" style={{ color: categoryColor }} />
               {item.category}
             </span>
+            <span
+              className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 type-micro font-medium"
+              style={{
+                color: "#444444",
+                backgroundColor: `${confidence.color}08`,
+                borderColor: `${confidence.color}12`,
+              }}
+            >
+              <ConfidenceIcon className="h-3 w-3" style={{ color: confidence.color }} />
+              {confidence.label}
+            </span>
             <button
               type="button"
               onClick={onClose}
@@ -597,7 +732,6 @@ function NewsDrawer({
           <div className="mt-2 flex flex-wrap items-center gap-2 type-micro">
             <span className="mono tabular-nums">{formatDate(item.publishedAt)}</span>
             {item.sourceName && <span>· {item.sourceName}</span>}
-            <span>· {item.confidence} confidence</span>
           </div>
         </div>
 
@@ -617,11 +751,21 @@ function NewsDrawer({
                     <span className="surface flex items-center justify-between gap-3 px-3 py-2.5 transition-colors hover:bg-[var(--bg-subtle)]">
                       <span className="flex min-w-0 items-center gap-2">
                         <MentionIcon className="h-3.5 w-3.5 shrink-0 text-[var(--text-tertiary)]" />
-                        <span className="truncate type-row-title">
-                          {mention.label}
+                        <span className="min-w-0">
+                          <span className="block truncate type-row-title">
+                            {mention.label}
+                          </span>
+                          {mention.reason && (
+                            <span className="block truncate type-micro text-[var(--text-tertiary)]">
+                              {mention.reason}
+                            </span>
+                          )}
                         </span>
                       </span>
-                      <span className="shrink-0 type-micro">{mention.type}</span>
+                      <span className="shrink-0 text-right type-micro">
+                        <span className="block">{mention.type}</span>
+                        <span className="block text-[var(--text-tertiary)]">{mention.confidence}</span>
+                      </span>
                     </span>
                   );
                   return mention.href ? (
@@ -632,6 +776,26 @@ function NewsDrawer({
                     <div key={`${mention.type}-${mention.id}`}>{body}</div>
                   );
                 })}
+              </div>
+            </section>
+          )}
+
+          {item.linkedinUrls.length > 0 && (
+            <section className="mb-6">
+              <SectionLabel count={item.linkedinUrls.length}>Discovered LinkedIn Links</SectionLabel>
+              <div className="grid grid-cols-1 gap-2">
+                {item.linkedinUrls.map((url) => (
+                  <a
+                    key={url}
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="surface flex items-center justify-between gap-3 px-3 py-2.5 transition-colors hover:bg-[var(--bg-subtle)]"
+                  >
+                    <span className="min-w-0 truncate type-meta text-[var(--text-secondary)]">{url}</span>
+                    <ExternalLink className="h-3.5 w-3.5 shrink-0 text-[var(--text-tertiary)]" />
+                  </a>
+                ))}
               </div>
             </section>
           )}
@@ -670,43 +834,51 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
   const [search, setSearch] = useState("");
   const [activeCategories, toggleCategory] = useUrlFilterSet("category");
   const [activeEntities, toggleEntity] = useUrlFilterSet("entity");
-  const [dateWindow, setDateWindow] = useState<(typeof DATE_WINDOWS)[number]["label"]>("All");
+  const [activeSources, toggleSource] = useUrlFilterSet("source");
+  const [activeConfidence, toggleConfidence] = useUrlFilterSet("confidence");
+  const [dateWindow, setDateWindow] = useState<(typeof DATE_WINDOWS)[number]["label"]>("Today");
   const [selectedItem, setSelectedItem] = useState<NewsItemView | null>(null);
   const debouncedSearch = useDebounce(search, 250);
 
-  const clearUrlFilters = useClearUrlFilters(["category", "entity"]);
+  const clearUrlFilters = useClearUrlFilters(["category", "entity", "source", "confidence"]);
   const clearAll = useCallback(() => {
     clearUrlFilters();
     setSearch("");
-    setDateWindow("All");
+    setDateWindow("Today");
   }, [clearUrlFilters]);
 
   const entityOptions = useMemo(() => getEntityOptions(feed.items), [feed.items]);
+  const sourceOptions = useMemo(() => getSourceOptions(feed.items), [feed.items]);
 
   const filteredItems = useMemo(() => {
     const selectedWindow = DATE_WINDOWS.find((option) => option.label === dateWindow);
-    const threshold = selectedWindow?.days ? daysAgo(selectedWindow.days) : null;
+    const threshold = selectedWindow?.days != null ? daysAgo(selectedWindow.days) : null;
     const query = debouncedSearch.toLowerCase().trim();
 
     return feed.items.filter((item) => {
       if (activeCategories.size > 0 && !activeCategories.has(item.category)) return false;
       if (activeEntities.size > 0 && !item.mentions.some((mention) => activeEntities.has(mention.label))) return false;
+      if (activeSources.size > 0 && !activeSources.has(sourceLabel(item))) return false;
+      if (activeConfidence.size > 0 && !activeConfidence.has(confidenceFilterLabel(item))) return false;
       if (threshold != null && new Date(item.publishedAt).getTime() < threshold) return false;
       if (query) {
         const searchable = [
           item.title,
           item.summary,
           item.sourceName,
+          item.sourceUrl,
           item.category,
           item.sector,
           item.region,
+          confidenceFilterLabel(item),
+          item.linkedinUrls.join(" "),
           item.mentions.map((mention) => mention.label).join(" "),
         ].join(" ").toLowerCase();
         if (!searchable.includes(query)) return false;
       }
       return true;
     });
-  }, [feed.items, activeCategories, activeEntities, dateWindow, debouncedSearch]);
+  }, [feed.items, activeCategories, activeEntities, activeSources, activeConfidence, dateWindow, debouncedSearch]);
 
   useEffect(() => {
     if (selectedItem && !filteredItems.some((item) => item.id === selectedItem.id)) {
@@ -717,21 +889,15 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
   const counts = useMemo(() => {
     return {
       total: filteredItems.length,
-      transactions: filteredItems.filter((item) => item.category === "Infrastructure Transaction Activity").length,
-      fundraising: filteredItems.filter((item) => item.category === "Infrastructure Fundraising Activity").length,
-      rumors: filteredItems.filter((item) => item.category === "Rumored Infrastructure Sales Processes").length,
+      highConfidence: filteredItems.filter((item) => confidenceFilterLabel(item) === "High Confidence").length,
+      needsReview: filteredItems.filter((item) => confidenceFilterLabel(item) === "Needs Review").length,
+      linkedinLinks: filteredItems.reduce((total, item) => total + item.linkedinUrls.length, 0),
     };
   }, [filteredItems]);
 
   const displayItems = useMemo(() => {
-    const isUnfilteredView =
-      activeCategories.size === 0 &&
-      activeEntities.size === 0 &&
-      debouncedSearch.trim() === "" &&
-      dateWindow === "All";
-
-    return isUnfilteredView ? getBalancedNewsItems(filteredItems) : filteredItems;
-  }, [filteredItems, activeCategories, activeEntities, debouncedSearch, dateWindow]);
+    return filteredItems;
+  }, [filteredItems]);
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6">
@@ -747,6 +913,11 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
         activeEntities={activeEntities}
         onToggleEntity={toggleEntity}
         entityOptions={entityOptions}
+        activeSources={activeSources}
+        onToggleSource={toggleSource}
+        sourceOptions={sourceOptions}
+        activeConfidence={activeConfidence}
+        onToggleConfidence={toggleConfidence}
         allItems={feed.items}
         dateWindow={dateWindow}
         onDateWindowChange={setDateWindow}
