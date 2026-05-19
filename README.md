@@ -34,12 +34,34 @@ NEWS_SCAN_DELAY_MS=900
 NEWS_SCAN_MAX_PAGES=750
 NEWS_SCAN_MAX_PAGES_PER_SITE=6
 NEWS_SCAN_MAX_TARGETS=25
+NEWS_SCAN_SINCE_DAYS=7
+NEWS_SCAN_SEARCH_ENABLED=true
+NEWS_SCAN_SEARCH_MAX_RESULTS_PER_ENTITY=5
+NEWS_SCAN_SEARCH_CONCURRENCY=1
+NEWS_SCAN_SEARCH_DELAY_MS=500
 ```
 
 You can also pass equivalent flags, for example:
 
 ```bash
 npm run news:scan:dry-run -- --max-targets=25 --max-pages=100
+```
+
+For a seven-day import window:
+
+```bash
+npm run news:scan -- --since-days=7
+```
+
+The scanner now has two discovery phases:
+
+- source crawl: tracked company, manager, and fund websites plus discovered public pages
+- public news search: exact-name public-news API queries for each tracked company, manager, and fund
+
+For a full universe news-search screen without the slower source-site crawl:
+
+```bash
+npm run news:scan -- --since-days=7 --skip-source-crawl --search-max-results-per-entity=5
 ```
 
 ## Daily M&A Conditions Dashboard

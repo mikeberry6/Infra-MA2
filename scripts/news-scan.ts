@@ -1,7 +1,10 @@
 import "dotenv/config";
+import { execFile } from "child_process";
 import { createHash } from "crypto";
+import { setDefaultResultOrder } from "dns";
 import { mkdir, writeFile } from "fs/promises";
 import path from "path";
+import { promisify } from "util";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import {
@@ -14,6 +17,9 @@ import {
   type NewsMatchCandidate,
 } from "../src/lib/news-utils";
 import type { NewsConfidence, NewsMentionType, NewsMentionView } from "../src/modules/shared/types";
+
+setDefaultResultOrder("ipv4first");
+const execFileAsync = promisify(execFile);
 
 type DbNewsCategory =
   | "TRANSACTION_ACTIVITY"
@@ -30,13 +36,19 @@ type SeedKind = "official" | "source" | "sitemap" | "common-path" | "discovered"
 
 type Options = {
   dryRun: boolean;
+  sourceCrawl: boolean;
+  newsSearch: boolean;
   concurrency: number;
   requestDelayMs: number;
   maxPages: number;
   maxPagesPerSite: number;
   maxLinksPerPage: number;
   maxSitemapUrlsPerSite: number;
+  searchConcurrency: number;
+  searchDelayMs: number;
+  searchMaxResultsPerEntity: number;
   maxTargets?: number;
+  sinceDays?: number;
 };
 
 type MentionCandidate = NewsMatchCandidate & {
@@ -88,6 +100,7 @@ type ExtractedCandidate = {
   sourceUrl: string;
   linkedinUrls: string[];
   publishedAt: Date;
+  publishedAtInferred: boolean;
   isRumor: boolean;
   confidence: DbNewsConfidence;
   mentions: NewsMentionView[];
@@ -119,9 +132,19 @@ type RunSummary = {
     failedFetches: number;
     cappedByMaxPages: boolean;
   };
+  search: {
+    enabled: boolean;
+    entitiesSearched: number;
+    queriesRun: number;
+    resultsFetched: number;
+    candidateNewsItems: number;
+    skippedLinkedInResults: number;
+    failedQueries: number;
+  };
   results: {
     candidateNewsItems: number;
     existingSourceUrlMatches: number;
+    outsideDateWindow: number;
     created: number;
     updated: number;
     mentions: number;
@@ -165,6 +188,17 @@ const GENERIC_TITLE_RE =
   /^(home|news|newsroom|press|press releases?|media|insights?|blog|updates?|about|team|portfolio|our portfolio|.*\bpress release news\b.*|.*\|\s*home)$/i;
 const SKIP_EXTENSION_RE =
   /\.(?:pdf|docx?|xlsx?|pptx?|zip|rar|7z|jpg|jpeg|png|gif|webp|svg|ico|mp4|mov|avi|mp3|wav)(?:[?#].*)?$/i;
+const BING_NEWS_RSS_URL = "https://www.bing.com/news/search";
+
+type NewsSearchArticle = {
+  url?: string;
+  title?: string;
+  seendate?: string;
+  description?: string;
+  domain?: string;
+  language?: string;
+  sourcecountry?: string;
+};
 
 function parseArgs(): Options {
   const args = new Set(process.argv.slice(2));
@@ -174,20 +208,36 @@ function parseArgs(): Options {
     const parsed = raw ? Number(raw) : fallback;
     return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
   };
+  const booleanOption = (name: string, envName: string, fallback: boolean): boolean => {
+    const arg = process.argv.find((value) => value === name || value.startsWith(`${name}=`));
+    const raw = arg?.includes("=") ? arg.split("=")[1] : process.env[envName];
+    if (arg && !arg.includes("=")) return true;
+    if (!raw) return fallback;
+    return !["0", "false", "no", "off"].includes(raw.toLowerCase());
+  };
 
   const maxTargetsRaw = process.argv.find((value) => value.startsWith("--max-targets="))?.split("=")[1]
     ?? process.env.NEWS_SCAN_MAX_TARGETS;
   const maxTargets = maxTargetsRaw && Number(maxTargetsRaw) > 0 ? Number(maxTargetsRaw) : undefined;
+  const sinceDaysRaw = process.argv.find((value) => value.startsWith("--since-days="))?.split("=")[1]
+    ?? process.env.NEWS_SCAN_SINCE_DAYS;
+  const sinceDays = sinceDaysRaw && Number(sinceDaysRaw) > 0 ? Number(sinceDaysRaw) : undefined;
 
   return {
     dryRun: args.has("--dry-run"),
+    sourceCrawl: !args.has("--skip-source-crawl") && booleanOption("--source-crawl", "NEWS_SCAN_SOURCE_CRAWL", true),
+    newsSearch: !args.has("--no-news-search") && booleanOption("--news-search", "NEWS_SCAN_SEARCH_ENABLED", true),
     concurrency: optionValue("--concurrency", "NEWS_SCAN_CONCURRENCY", 3),
     requestDelayMs: optionValue("--delay-ms", "NEWS_SCAN_DELAY_MS", 900),
     maxPages: optionValue("--max-pages", "NEWS_SCAN_MAX_PAGES", 750),
     maxPagesPerSite: optionValue("--max-pages-per-site", "NEWS_SCAN_MAX_PAGES_PER_SITE", 6),
     maxLinksPerPage: optionValue("--max-links-per-page", "NEWS_SCAN_MAX_LINKS_PER_PAGE", 10),
     maxSitemapUrlsPerSite: optionValue("--max-sitemap-urls-per-site", "NEWS_SCAN_MAX_SITEMAP_URLS_PER_SITE", 12),
+    searchConcurrency: optionValue("--search-concurrency", "NEWS_SCAN_SEARCH_CONCURRENCY", 1),
+    searchDelayMs: optionValue("--search-delay-ms", "NEWS_SCAN_SEARCH_DELAY_MS", 500),
+    searchMaxResultsPerEntity: optionValue("--search-max-results-per-entity", "NEWS_SCAN_SEARCH_MAX_RESULTS_PER_ENTITY", 5),
     maxTargets,
+    sinceDays,
   };
 }
 
@@ -217,9 +267,19 @@ async function main() {
       failedFetches: 0,
       cappedByMaxPages: false,
     },
+    search: {
+      enabled: options.newsSearch,
+      entitiesSearched: 0,
+      queriesRun: 0,
+      resultsFetched: 0,
+      candidateNewsItems: 0,
+      skippedLinkedInResults: 0,
+      failedQueries: 0,
+    },
     results: {
       candidateNewsItems: 0,
       existingSourceUrlMatches: 0,
+      outsideDateWindow: 0,
       created: 0,
       updated: 0,
       mentions: 0,
@@ -236,11 +296,24 @@ async function main() {
       deals: context.counts.deals,
     };
 
-    const crawl = await crawlTrackedSources(context.entities, context.candidates, context.candidateByKey, options);
-    summary.crawl = { ...summary.crawl, ...crawl.crawlSummary };
+    const extractedCandidates: ExtractedCandidate[] = [];
 
-    const candidates = mergeCandidates(crawl.candidates);
+    if (options.sourceCrawl) {
+      const crawl = await crawlTrackedSources(context.entities, context.candidates, context.candidateByKey, options);
+      summary.crawl = { ...summary.crawl, ...crawl.crawlSummary };
+      extractedCandidates.push(...crawl.candidates);
+    }
+
+    if (options.newsSearch) {
+      const search = await searchTrackedNews(context.entities, context.candidates, options);
+      summary.search = { ...summary.search, ...search.searchSummary };
+      extractedCandidates.push(...search.candidates);
+    }
+
+    const mergedCandidates = mergeCandidates(extractedCandidates);
+    const candidates = filterCandidatesByDateWindow(mergedCandidates, options);
     summary.results.candidateNewsItems = candidates.length;
+    summary.results.outsideDateWindow = mergedCandidates.length - candidates.length;
     summary.results.mentions = candidates.reduce((total, item) => total + item.mentions.length, 0);
     summary.sampleCandidates = candidates.slice(0, 10).map((item) => ({
       title: item.title,
@@ -594,6 +667,233 @@ async function crawlTrackedSources(
   return { candidates: extracted, crawlSummary };
 }
 
+async function searchTrackedNews(
+  entities: TrackedEntity[],
+  candidates: MentionCandidate[],
+  options: Options,
+) {
+  const queue = [...entities];
+  const extracted: ExtractedCandidate[] = [];
+  const searchSummary = {
+    enabled: true,
+    entitiesSearched: entities.length,
+    queriesRun: 0,
+    resultsFetched: 0,
+    candidateNewsItems: 0,
+    skippedLinkedInResults: 0,
+    failedQueries: 0,
+  };
+
+  const worker = async () => {
+    while (queue.length > 0) {
+      const entity = queue.shift();
+      if (!entity) return;
+
+      const query = newsSearchQuery(entity);
+      if (!query) continue;
+
+      searchSummary.queriesRun++;
+      const articles = await fetchNewsSearchArticles(query, options);
+      if (!articles) {
+        searchSummary.failedQueries++;
+        await wait(options.searchDelayMs);
+        continue;
+      }
+
+      searchSummary.resultsFetched += articles.length;
+      for (const article of articles) {
+        const sourceUrl = normalizeUrl(article.url);
+        if (!sourceUrl) continue;
+        if (isLinkedInUrl(sourceUrl)) {
+          searchSummary.skippedLinkedInResults++;
+          continue;
+        }
+        const candidate = candidateFromNewsSearchArticle(article, entity, sourceUrl, candidates);
+        if (!candidate) continue;
+        extracted.push(candidate);
+      }
+
+      await wait(options.searchDelayMs);
+    }
+  };
+
+  await Promise.all(Array.from({ length: options.searchConcurrency }, () => worker()));
+
+  searchSummary.candidateNewsItems = extracted.length;
+  return { candidates: extracted, searchSummary };
+}
+
+function newsSearchQuery(entity: TrackedEntity): string {
+  const label = entity.label.replace(/["“”]/g, " ").replace(/\s+/g, " ").trim();
+  if (label.length < 2) return "";
+  return `"${label}"`;
+}
+
+async function fetchNewsSearchArticles(query: string, options: Options): Promise<NewsSearchArticle[] | null> {
+  const params = new URLSearchParams({
+    q: query,
+    format: "rss",
+    mkt: "en-US",
+  });
+  const url = `${BING_NEWS_RSS_URL}?${params.toString()}`;
+
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const { stdout } = await execFileAsync("curl", [
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-time",
+        "30",
+        "--user-agent",
+        USER_AGENT,
+        "--header",
+        "Accept: application/rss+xml,application/xml,text/xml",
+        url,
+      ], { maxBuffer: 2_500_000 });
+
+      if (/limit requests|too many requests|rate/i.test(stdout) && attempt < 3) {
+        await wait(Math.max(options.searchDelayMs, 6_000));
+        continue;
+      }
+
+      return parseBingNewsRss(stdout, options.searchMaxResultsPerEntity);
+    } catch {
+      if (attempt < 3) {
+        await wait(Math.max(options.searchDelayMs, 6_000));
+        continue;
+      }
+      return null;
+    }
+  }
+
+  return null;
+}
+
+function parseBingNewsRss(xml: string, maxResults: number): NewsSearchArticle[] {
+  const articles: NewsSearchArticle[] = [];
+  const itemRe = /<item>([\s\S]*?)<\/item>/gi;
+  let match: RegExpExecArray | null;
+
+  while ((match = itemRe.exec(xml)) !== null && articles.length < maxResults) {
+    const item = match[1];
+    const link = decodeHtml(firstMatch(item, /<link>([\s\S]*?)<\/link>/i));
+    const url = directPublisherUrlFromBingLink(link);
+    if (!url) continue;
+
+    const pubDate = cleanText(firstMatch(item, /<pubDate>([\s\S]*?)<\/pubDate>/i));
+    const title = cleanText(firstMatch(item, /<title>([\s\S]*?)<\/title>/i));
+    const description = cleanText(firstMatch(item, /<description>([\s\S]*?)<\/description>/i));
+    const source = cleanText(firstMatch(item, /<News:Source>([\s\S]*?)<\/News:Source>/i));
+    const domain = safeUrl(url)?.hostname.replace(/^www\./, "");
+
+    articles.push({
+      url,
+      title,
+      description,
+      seendate: pubDate,
+      domain: source || domain,
+      language: "English",
+    });
+  }
+
+  return articles;
+}
+
+function directPublisherUrlFromBingLink(link: string): string | null {
+  const normalized = normalizeUrl(link);
+  if (!normalized) return null;
+  const parsed = safeUrl(normalized);
+  const target = parsed?.searchParams.get("url");
+  return normalizeUrl(target ?? normalized);
+}
+
+function candidateFromNewsSearchArticle(
+  article: NewsSearchArticle,
+  entity: TrackedEntity,
+  sourceUrl: string,
+  candidates: MentionCandidate[],
+): ExtractedCandidate | null {
+  if (SKIP_EXTENSION_RE.test(sourceUrl)) return null;
+  if (article.language && article.language.toLowerCase() !== "english") return null;
+
+  const title = cleanText(article.title ?? "");
+  if (!title || title.length < 8 || GENERIC_TITLE_RE.test(title)) return null;
+  const searchSummary = cleanText(article.description ?? "");
+  if (!textMentionsEntity(`${title} ${searchSummary}`, entity)) return null;
+
+  const publishedAt = parseNewsSearchDate(article.seendate ?? "");
+  if (!publishedAt) return null;
+
+  const titleHasEntity = textMentionsEntity(title, entity);
+  const sourceMentions = entity.mentionCandidates.map((candidate) =>
+    mentionFromCandidate(
+      candidate,
+      titleHasEntity ? "High" : "Medium",
+      "Matched public-news search query",
+    ),
+  );
+  const text = `${title} ${entity.label} ${article.domain ?? ""}`;
+  const matchedMentions = matchNewsCandidates(text, candidates, 20);
+  const mentions = mergeNewsMentions(sourceMentions, matchedMentions);
+  if (mentions.length === 0) return null;
+
+  const summary = [
+    searchSummary || `Public news search result for ${entity.label}.`,
+    article.domain ? `Source domain: ${article.domain}.` : "",
+    article.sourcecountry ? `Source country: ${article.sourcecountry}.` : "",
+  ].filter(Boolean).join(" ");
+
+  const classification = classifyCandidate({
+    title,
+    summary,
+    text,
+    url: sourceUrl,
+    mentions,
+    hasParsedDate: true,
+  });
+  if (classification.category === "LOW_CONFIDENCE_NEEDS_REVIEW" && !titleHasEntity) return null;
+
+  return {
+    title: trimTo(title, 220),
+    summary: trimTo(summary || title, 500),
+    category: classification.category,
+    sourceName: article.domain ? trimTo(article.domain, 80) : sourceNameFromUrl(sourceUrl),
+    sourceUrl,
+    linkedinUrls: [],
+    publishedAt,
+    publishedAtInferred: false,
+    isRumor: classification.isRumor,
+    confidence: classification.confidence,
+    mentions,
+  };
+}
+
+function textMentionsEntity(text: string, entity: TrackedEntity): boolean {
+  const normalizedText = ` ${normalizeNewsText(text)} `;
+  return entity.mentionCandidates.some((candidate) =>
+    candidate.aliases.some((alias) => normalizedText.includes(` ${alias.term} `)),
+  );
+}
+
+function parseNewsSearchDate(value: string): Date | null {
+  const match = value.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})Z$/);
+  if (!match) return parseDate(value);
+  const [, year, month, day, hour, minute, second] = match;
+  return new Date(Date.UTC(
+    Number(year),
+    Number(month) - 1,
+    Number(day),
+    Number(hour),
+    Number(minute),
+    Number(second),
+  ));
+}
+
+function wait(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function buildInitialQueue(entities: TrackedEntity[]): CrawlJob[] {
   const byUrl = new Map<string, CrawlJob>();
 
@@ -824,6 +1124,7 @@ function extractCandidate(
     sourceUrl: job.url,
     linkedinUrls,
     publishedAt: publishedAt ?? new Date(),
+    publishedAtInferred: !publishedAt,
     isRumor: classification.isRumor,
     confidence: classification.confidence,
     mentions,
@@ -934,8 +1235,21 @@ function mergeCandidates(candidates: ExtractedCandidate[]): ExtractedCandidate[]
   }
 
   return Array.from(byUrl.values())
-    .sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime())
-    .slice(0, 500);
+    .sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
+}
+
+function filterCandidatesByDateWindow(candidates: ExtractedCandidate[], options: Options): ExtractedCandidate[] {
+  if (!options.sinceDays) return candidates;
+  const since = new Date();
+  since.setUTCHours(0, 0, 0, 0);
+  since.setUTCDate(since.getUTCDate() - options.sinceDays);
+  const now = new Date();
+
+  return candidates.filter((candidate) => (
+    !candidate.publishedAtInferred
+    && candidate.publishedAt.getTime() >= since.getTime()
+    && candidate.publishedAt.getTime() <= now.getTime()
+  ));
 }
 
 function higherConfidenceItem(first: ExtractedCandidate, second: ExtractedCandidate): ExtractedCandidate {
