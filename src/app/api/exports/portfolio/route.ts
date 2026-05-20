@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAllCompanies } from "@/modules/companies/queries";
 import { toCsv } from "@/lib/csv";
-import { hasAnyRole } from "@/modules/auth/guards";
+import { canExportData } from "@/modules/auth/guards";
 
 const PORTFOLIO_COLUMNS = [
   "name",
@@ -22,13 +22,13 @@ const PORTFOLIO_COLUMNS = [
 
 export async function GET(request: NextRequest) {
   try {
+    if (!(await canExportData())) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+
     // Support ?format=json for backward compatibility
     const { searchParams } = new URL(request.url);
     const wantsJson = searchParams.get("format") === "json";
-
-    if (wantsJson && !(await hasAnyRole(["ADMIN", "ANALYST"]))) {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-    }
 
     const companies = await getAllCompanies();
 

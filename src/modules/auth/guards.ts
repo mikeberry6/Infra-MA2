@@ -26,3 +26,9 @@ export async function hasAnyRole(roles: string[]): Promise<boolean> {
   const role = await getSessionRole();
   return !!role && roles.includes(role);
 }
+
+export const EXPORT_ROLES = ["ADMIN", "ANALYST"];
+
+export async function canExportData(): Promise<boolean> {
+  return hasAnyRole(EXPORT_ROLES);
+}

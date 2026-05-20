@@ -439,7 +439,7 @@ function PortCoTable({
 
 // ─── Main Component ─────────────────────────────────────────
 
-export function PortfolioDatabase({ companies: portcos, funds, counts }: { companies: CompanyView[]; funds: FundStrategyView[]; counts: DatabaseCounts }) {
+export function PortfolioDatabase({ companies: portcos, funds, counts, canExport }: { companies: CompanyView[]; funds: FundStrategyView[]; counts: DatabaseCounts; canExport: boolean }) {
   const [search, setSearch] = useState("");
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeCountryTags, toggleCountryTag] = useUrlFilterSet("country");
@@ -614,14 +614,16 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
             <span className="mono text-[var(--text-secondary)] tabular-nums">{portcos.length}</span> companies
           </span>
           <div className="hidden sm:flex items-center gap-1">
-            <Button
-              variant="ghost"
-              size="sm"
-              leadingIcon={<Download className="h-3 w-3" />}
-              onClick={() => exportPortfolioToExcel(filteredCompanies)}
-            >
-              Export
-            </Button>
+            {canExport && (
+              <Button
+                variant="ghost"
+                size="sm"
+                leadingIcon={<Download className="h-3 w-3" />}
+                onClick={() => exportPortfolioToExcel(filteredCompanies)}
+              >
+                Export
+              </Button>
+            )}
             <a
               href="mailto:research@infrasight.com"
               className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"

@@ -2,6 +2,7 @@ export const dynamic = "force-dynamic";
 
 import type { Metadata } from "next";
 import { NewsFeed } from "@/components/NewsFeed";
+import { DataUnavailable } from "@/components/shared/DataUnavailable";
 import { getNewsFeed } from "@/modules/news/queries";
 
 export const metadata: Metadata = {
@@ -14,6 +15,6 @@ export default async function NewsPage() {
     return <NewsFeed feed={feed} />;
   } catch (error) {
     console.error("Database query failed on /news:", error);
-    return <NewsFeed feed={{ items: [], lastUpdated: new Date().toISOString() }} />;
+    return <DataUnavailable title="News feed data could not be loaded." />;
   }
 }

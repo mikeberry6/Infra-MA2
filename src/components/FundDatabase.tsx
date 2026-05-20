@@ -858,7 +858,7 @@ function FundDrawer({
 
 // ─── Main Component ─────────────────────────────────────────
 
-export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: DatabaseCounts }) {
+export function FundDatabase({ funds, counts, canExport }: { funds: FundView[]; counts: DatabaseCounts; canExport: boolean }) {
   // ── Fund state ──
   const [fundSearch, setFundSearch] = useState("");
   const [activeStrategies, toggleStrategy] = useUrlFilterSet("strategy");
@@ -1016,14 +1016,16 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
             </div>
           </div>
           <div className="hidden sm:flex items-center gap-1">
-            <a
-              href={withBasePath("/api/exports/funds")}
-              download
-              className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-            >
-              <Download className="h-3 w-3" />
-              <span className="truncate">Export</span>
-            </a>
+            {canExport && (
+              <a
+                href={withBasePath("/api/exports/funds")}
+                download
+                className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+              >
+                <Download className="h-3 w-3" />
+                <span className="truncate">Export</span>
+              </a>
+            )}
             <a
               href="mailto:research@infrasight.com"
               className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"

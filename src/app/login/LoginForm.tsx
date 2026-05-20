@@ -33,7 +33,7 @@ export function LoginForm({ callbackUrl }: { callbackUrl: string }) {
       return;
     }
 
-    router.push(result?.url || callbackUrl);
+    router.push(callbackUrl);
     router.refresh();
   }
 

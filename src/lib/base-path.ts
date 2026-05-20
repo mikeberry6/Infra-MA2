@@ -12,3 +12,11 @@ export function withoutBasePath(path: string): string {
   if (path.startsWith(`${BASE_PATH}/`)) return path.slice(BASE_PATH.length);
   return path;
 }
+
+export function normalizeBasePathCallback(callbackUrl: string | undefined): string {
+  if (!callbackUrl) return withBasePath("/");
+  if (callbackUrl.startsWith("/") && !callbackUrl.startsWith("//")) {
+    return withBasePath(callbackUrl);
+  }
+  return callbackUrl;
+}

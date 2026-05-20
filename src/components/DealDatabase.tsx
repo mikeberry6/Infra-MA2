@@ -800,7 +800,7 @@ function DealDrawer({
 }
 
 // ─── Main Component ─────────────────────────────────────────
-export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: DatabaseCounts }) {
+export function DealDatabase({ deals, counts, canExport }: { deals: DealView[]; counts: DatabaseCounts; canExport: boolean }) {
   const [search, setSearch] = useState("");
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeRegions, toggleRegion] = useUrlFilterSet("region");
@@ -932,14 +932,16 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
             <span className="mono text-[var(--text-secondary)] tabular-nums">{deals.length}</span> deals
           </span>
           <div className="flex items-center gap-1">
-            <a
-              href={withBasePath("/api/exports/deals")}
-              download
-              className="hidden sm:inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-            >
-              <Download className="h-3 w-3" />
-              <span className="truncate">Export</span>
-            </a>
+            {canExport && (
+              <a
+                href={withBasePath("/api/exports/deals")}
+                download
+                className="hidden sm:inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+              >
+                <Download className="h-3 w-3" />
+                <span className="truncate">Export</span>
+              </a>
+            )}
             <a
               href={withBasePath("/email-format/index.html")}
               className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"

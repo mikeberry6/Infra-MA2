@@ -68,8 +68,10 @@ async function main() {
   // snapshots are imported, so require broad coverage rather than exact parity.
   check("Funds", Math.floor(funds.length * 0.8), fundCount);
   check("Companies", Math.floor(portcos.length * 0.9), companyCount);
-  exact("Deals", deals.length, dealCount);
-  check("Deal participants", deals.length, participantCount);
+  // Deal curation has moved to the Prisma-backed database. Seed-data snapshots
+  // can include retired references, so verify broad coverage plus integrity.
+  check("Deals", Math.floor(deals.length * 0.9), dealCount);
+  check("Deal participants", dealCount, participantCount);
   check("Users", 1, userCount);
 
   console.log(`\n  Aliases: ${aliasCount}`);
