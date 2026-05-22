@@ -8,11 +8,9 @@ const replace = vi.fn((url: string) => {
   const qs = url.includes("?") ? url.split("?")[1] : "";
   window.history.replaceState({}, "", `/${qs ? `?${qs}` : ""}`);
 });
-let currentSearch = "";
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ replace, push: vi.fn(), back: vi.fn() }),
   usePathname: () => "/tracker",
-  useSearchParams: () => new URLSearchParams(currentSearch),
 }));
 
 import { useUrlFilterSet, useClearUrlFilters } from "./useUrlFilterSet";
@@ -34,7 +32,6 @@ function Harness() {
 describe("useUrlFilterSet", () => {
   beforeEach(() => {
     replace.mockClear();
-    currentSearch = "";
     window.history.replaceState({}, "", "/");
   });
 
@@ -44,7 +41,7 @@ describe("useUrlFilterSet", () => {
   });
 
   it("reads the set from the URL on mount", () => {
-    currentSearch = "sector=Digital,Utilities";
+    window.history.replaceState({}, "", "/?sector=Digital,Utilities");
     render(<Harness />);
     expect(screen.getByTestId("sectors")).toHaveTextContent("Digital|Utilities");
   });
@@ -56,7 +53,6 @@ describe("useUrlFilterSet", () => {
   });
 
   it("toggle on an already-present value removes it", async () => {
-    currentSearch = "sector=Digital";
     window.history.replaceState({}, "", "/?sector=Digital");
     render(<Harness />);
     await userEvent.click(screen.getByText("toggle-digital"));
@@ -65,7 +61,6 @@ describe("useUrlFilterSet", () => {
   });
 
   it("clear() wipes only this param, not others", async () => {
-    currentSearch = "sector=Digital&region=Europe";
     window.history.replaceState({}, "", "/?sector=Digital&region=Europe");
     render(<Harness />);
     await userEvent.click(screen.getByText("clear"));
@@ -76,12 +71,10 @@ describe("useUrlFilterSet", () => {
 describe("useClearUrlFilters", () => {
   beforeEach(() => {
     replace.mockClear();
-    currentSearch = "";
     window.history.replaceState({}, "", "/");
   });
 
   it("removes all named params in one call", async () => {
-    currentSearch = "sector=Digital&region=Europe&keep=yes";
     window.history.replaceState({}, "", "/?sector=Digital&region=Europe&keep=yes");
     render(<Harness />);
     await userEvent.click(screen.getByText("clear-all"));
@@ -90,7 +83,6 @@ describe("useClearUrlFilters", () => {
   });
 
   it("wipes the whole query string when no other params remain", async () => {
-    currentSearch = "sector=Digital&region=Europe";
     window.history.replaceState({}, "", "/?sector=Digital&region=Europe");
     render(<Harness />);
     await userEvent.click(screen.getByText("clear-all"));

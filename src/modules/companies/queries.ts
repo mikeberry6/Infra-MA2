@@ -283,7 +283,15 @@ const COMPANY_INCLUDE = {
   },
 };
 
-const COMPANY_LIST_INCLUDE = {
+const COMPANY_LIST_SELECT = {
+  id: true,
+  name: true,
+  sector: true,
+  subsector: true,
+  region: true,
+  country: true,
+  countryTags: true,
+  companyStatus: true,
   ownershipPeriods: COMPANY_INCLUDE.ownershipPeriods,
 } as const;
 
@@ -364,11 +372,17 @@ function mergeByCanonicalKey(views: CompanyView[]): CompanyView {
 }
 
 async function getAllCompaniesRaw(options: { detail?: boolean } = {}): Promise<CompanyView[]> {
-  const companies = await prisma.company.findMany({
-    where: { status: "PUBLISHED" },
-    include: options.detail === false ? COMPANY_LIST_INCLUDE : COMPANY_INCLUDE,
-    orderBy: { name: "asc" },
-  });
+  const companies = options.detail === false
+    ? await prisma.company.findMany({
+        where: { status: "PUBLISHED" },
+        select: COMPANY_LIST_SELECT,
+        orderBy: { name: "asc" },
+      })
+    : await prisma.company.findMany({
+        where: { status: "PUBLISHED" },
+        include: COMPANY_INCLUDE,
+        orderBy: { name: "asc" },
+      });
   const views = companies.map(toCompanyView);
   // Group by `companyDedupKeys(name)` via union-find — two views collapse if
   // any of their canonical keys overlap. Country is intentionally NOT part of

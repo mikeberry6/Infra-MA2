@@ -1,11 +1,9 @@
 "use client";
 
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
-import { useSearchParams } from "next/navigation";
 import { PORTCO_SECTORS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
 import { getPortCoSectorColor, getPortCoRegionColor, getPortCoCountryTagColor } from "@/lib/colors";
 import { getUniqueFirms, getAllOwnerFirms } from "@/lib/portco-utils";
-import { exportPortfolioToExcel } from "@/utils/exportPortfolio";
 import { withBasePath } from "@/lib/base-path";
 import type { CompanyView, FundStrategyView, DatabaseCounts } from "@/modules/shared/types";
 import {
@@ -17,7 +15,8 @@ import {
 } from "lucide-react";
 import { PortCoDrawer } from "@/components/PortfolioDatabase/PortCoDrawer";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters } from "@/hooks/useUrlFilterSet";
+import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam } from "@/hooks/useUrlFilterSet";
+import { useCanExport } from "@/hooks/useCanExport";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { deriveRanking, RankingColumn } from "@/components/shared/RankingBars";
@@ -26,11 +25,12 @@ import { DatabaseIntelligenceHeader, type IntelligenceMetric } from "@/component
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
 import { Tag } from "@/components/shared/Tag";
-import { Button } from "@/components/shared/Button";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
+import { PaginationControls } from "@/components/shared/PaginationControls";
 
 const INVESTMENT_YEAR_NA = "N/A";
+const PORTCO_PAGE_SIZE = 100;
 
 function mostCommonLabel(items: string[]): { label: string; count: number } | null {
   const counts = new Map<string, number>();
@@ -289,6 +289,7 @@ function PortCoTable({
 }) {
   const [sortField, setSortField] = useState<"name" | "sector" | "country" | "firm">("name");
   const [sortAsc, setSortAsc] = useState(true);
+  const [page, setPage] = useState(1);
 
   const sorted = useMemo(() => {
     const list = [...companies];
@@ -304,6 +305,17 @@ function PortCoTable({
     });
     return list;
   }, [companies, sortField, sortAsc]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [companies]);
+
+  const totalPages = Math.max(1, Math.ceil(sorted.length / PORTCO_PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const visibleCompanies = useMemo(() => {
+    const start = (safePage - 1) * PORTCO_PAGE_SIZE;
+    return sorted.slice(start, start + PORTCO_PAGE_SIZE);
+  }, [sorted, safePage]);
 
   const toggleSort = (field: typeof sortField) => {
     if (sortField === field) {
@@ -364,7 +376,7 @@ function PortCoTable({
               </tr>
             </thead>
             <tbody>
-              {sorted.map((company, i) => {
+              {visibleCompanies.map((company, i) => {
                 const display = pickDisplayedFirm(company, activeFirms);
                 return (
                 <tr
@@ -424,7 +436,7 @@ function PortCoTable({
 
       {/* Mobile cards */}
       <div className="md:hidden space-y-2">
-        {sorted.map((company, i) => (
+        {visibleCompanies.map((company, i) => (
           <PortCoCard
             key={`${company.name}-${company.investmentFirm}-${i}`}
             company={company}
@@ -433,13 +445,20 @@ function PortCoTable({
           />
         ))}
       </div>
+
+      <PaginationControls
+        page={safePage}
+        pageSize={PORTCO_PAGE_SIZE}
+        totalItems={sorted.length}
+        onPageChange={setPage}
+      />
     </>
   );
 }
 
 // ─── Main Component ─────────────────────────────────────────
 
-export function PortfolioDatabase({ companies: portcos, funds, counts, canExport }: { companies: CompanyView[]; funds: FundStrategyView[]; counts: DatabaseCounts; canExport: boolean }) {
+export function PortfolioDatabase({ companies: portcos, funds, counts }: { companies: CompanyView[]; funds: FundStrategyView[]; counts: DatabaseCounts }) {
   const [search, setSearch] = useState("");
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeCountryTags, toggleCountryTag] = useUrlFilterSet("country");
@@ -447,12 +466,12 @@ export function PortfolioDatabase({ companies: portcos, funds, counts, canExport
   const [activeInvestmentYears, toggleInvestmentYear] = useUrlFilterSet("year");
   const [selectedCompany, setSelectedCompany] = useState<CompanyView | null>(null);
   const [selectedCompanyDetail, setSelectedCompanyDetail] = useState<CompanyView | null>(null);
+  const canExport = useCanExport();
 
   const debouncedSearch = useDebounce(search, 300);
 
   // Auto-open drawer when navigated here with `?focus=<companyId>`.
-  const searchParams = useSearchParams();
-  const focusId = searchParams.get("focus");
+  const focusId = useUrlQueryParam("focus");
   const openedFocus = useRef<string | null>(null);
   useEffect(() => {
     if (!focusId || openedFocus.current === focusId) return;
@@ -512,7 +531,6 @@ export function PortfolioDatabase({ companies: portcos, funds, counts, canExport
         // so typing a co-investor surfaces the company.
         const match =
           c.name.toLowerCase().includes(q) ||
-          c.description.toLowerCase().includes(q) ||
           c.sector.toLowerCase().includes(q) ||
           c.subsector.toLowerCase().includes(q) ||
           c.country.toLowerCase().includes(q) ||
@@ -615,14 +633,14 @@ export function PortfolioDatabase({ companies: portcos, funds, counts, canExport
           </span>
           <div className="hidden sm:flex items-center gap-1">
             {canExport && (
-              <Button
-                variant="ghost"
-                size="sm"
-                leadingIcon={<Download className="h-3 w-3" />}
-                onClick={() => exportPortfolioToExcel(filteredCompanies)}
+              <a
+                href={withBasePath("/api/exports/portfolio")}
+                download
+                className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
               >
-                Export
-              </Button>
+                <Download className="h-3 w-3" />
+                <span className="truncate">Export</span>
+              </a>
             )}
             <a
               href="mailto:research@infrasight.com"

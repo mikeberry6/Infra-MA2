@@ -1,7 +1,47 @@
 "use client";
 
-import { useCallback, useMemo } from "react";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
+
+const URL_FILTER_CHANGE_EVENT = "infra:url-filter-change";
+
+function readSearchParam(paramName: string, search?: string): string | null {
+  if (typeof window === "undefined" && search === undefined) return null;
+  return new URLSearchParams(search ?? window.location.search).get(paramName);
+}
+
+function readFilterSet(paramName: string, search?: string): Set<string> {
+  const raw = readSearchParam(paramName, search);
+  if (!raw) return new Set<string>();
+  return new Set(raw.split(",").filter(Boolean));
+}
+
+function notifyUrlFiltersChanged(query: string) {
+  window.dispatchEvent(
+    new CustomEvent(URL_FILTER_CHANGE_EVENT, { detail: { search: query ? `?${query}` : "" } }),
+  );
+}
+
+export function useUrlQueryParam(paramName: string): string | null {
+  const [value, setValue] = useState<string | null>(null);
+
+  useEffect(() => {
+    const sync = () => setValue(readSearchParam(paramName));
+    const syncFromEvent = (event: Event) => {
+      const search = (event as CustomEvent<{ search?: string }>).detail?.search;
+      setValue(readSearchParam(paramName, search));
+    };
+    sync();
+    window.addEventListener("popstate", sync);
+    window.addEventListener(URL_FILTER_CHANGE_EVENT, syncFromEvent);
+    return () => {
+      window.removeEventListener("popstate", sync);
+      window.removeEventListener(URL_FILTER_CHANGE_EVENT, syncFromEvent);
+    };
+  }, [paramName]);
+
+  return value;
+}
 
 /**
  * Syncs a Set<string> filter to a URL query parameter.
@@ -10,7 +50,7 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
  * Empty sets are serialized as the absence of the param so URLs stay clean.
  *
  * Reads/writes against `window.location.search` at call time rather than
- * against the render-time `useSearchParams` snapshot — this avoids races when
+ * against a render-time query snapshot — this avoids races when
  * multiple filter updates fire in the same tick.
  *
  * Uses `router.replace({ scroll: false })` so filter changes don't pollute the
@@ -24,13 +64,22 @@ export function useUrlFilterSet(
 ): [Set<string>, (value: string) => void, () => void, (next: Set<string>) => void] {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const [value, setValue] = useState<Set<string>>(() => new Set());
 
-  const value = useMemo(() => {
-    const raw = searchParams.get(paramName);
-    if (!raw) return new Set<string>();
-    return new Set(raw.split(",").filter(Boolean));
-  }, [searchParams, paramName]);
+  useEffect(() => {
+    const sync = () => setValue(readFilterSet(paramName));
+    const syncFromEvent = (event: Event) => {
+      const search = (event as CustomEvent<{ search?: string }>).detail?.search;
+      setValue(readFilterSet(paramName, search));
+    };
+    sync();
+    window.addEventListener("popstate", sync);
+    window.addEventListener(URL_FILTER_CHANGE_EVENT, syncFromEvent);
+    return () => {
+      window.removeEventListener("popstate", sync);
+      window.removeEventListener(URL_FILTER_CHANGE_EVENT, syncFromEvent);
+    };
+  }, [paramName]);
 
   const writeUrl = useCallback(
     (nextValues: Set<string>) => {
@@ -43,7 +92,9 @@ export function useUrlFilterSet(
         latest.delete(paramName);
       }
       const query = latest.toString();
+      setValue(new Set(nextValues));
       router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+      notifyUrlFiltersChanged(query);
     },
     [paramName, router, pathname],
   );
@@ -85,5 +136,6 @@ export function useClearUrlFilters(paramNames: string[]): () => void {
     }
     const query = latest.toString();
     router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+    notifyUrlFiltersChanged(query);
   }, [router, pathname, key]);
 }

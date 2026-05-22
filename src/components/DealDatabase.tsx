@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
-import { useSearchParams } from "next/navigation";
 import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import { DEAL_SECTORS, NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
@@ -132,7 +131,7 @@ import {
 } from "lucide-react";
 import { DynamicInsightsHero } from "./DealDatabase/DynamicInsightsHero";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters } from "@/hooks/useUrlFilterSet";
+import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam } from "@/hooks/useUrlFilterSet";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
@@ -140,10 +139,11 @@ import { DatabaseIntelligenceHeader, type IntelligenceMetric } from "@/component
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
 import { Tag } from "@/components/shared/Tag";
-import { Button } from "@/components/shared/Button";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
+import { PaginationControls } from "@/components/shared/PaginationControls";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
+import { useCanExport } from "@/hooks/useCanExport";
 import { withBasePath } from "@/lib/base-path";
 
 // ─── Filters ────────────────────────────────────────────────
@@ -170,6 +170,8 @@ const REGIONS: string[] = [
   "Middle East & Africa",
   "Latin America",
 ];
+
+const DEAL_PAGE_SIZE = 100;
 
 // ─── Active Filters Chips ───────────────────────────────────
 function ActiveFiltersChips({
@@ -332,14 +334,13 @@ function DealTableColGroup() {
 
 function DealTable({
   filteredDeals,
-  totalCount,
   onSelectDeal,
 }: {
   filteredDeals: DealView[];
-  totalCount: number;
   onSelectDeal: (deal: DealView) => void;
 }) {
   const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
+  const [page, setPage] = useState(1);
 
   const sorted = useMemo(() => {
     return [...filteredDeals].sort((a, b) => {
@@ -347,6 +348,17 @@ function DealTable({
       return mul * (new Date(a.date).getTime() - new Date(b.date).getTime());
     });
   }, [filteredDeals, sortDir]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [filteredDeals]);
+
+  const totalPages = Math.max(1, Math.ceil(sorted.length / DEAL_PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const visibleDeals = useMemo(() => {
+    const start = (safePage - 1) * DEAL_PAGE_SIZE;
+    return sorted.slice(start, start + DEAL_PAGE_SIZE);
+  }, [sorted, safePage]);
 
   function toggleSort() {
     setSortDir((d) => (d === "desc" ? "asc" : "desc"));
@@ -356,7 +368,7 @@ function DealTable({
     <>
       {/* Mobile card list */}
       <div className="lg:hidden space-y-2">
-        {sorted.map((deal) => (
+        {visibleDeals.map((deal) => (
           <DealCard key={deal.id} deal={deal} onSelect={onSelectDeal} />
         ))}
         {sorted.length === 0 && (
@@ -367,9 +379,9 @@ function DealTable({
         <div className="px-1 pt-3 pb-1">
           <span className="type-micro">
             Showing{" "}
-            <span className="mono text-[var(--text-secondary)] tabular-nums">{sorted.length}</span>{" "}
+            <span className="mono text-[var(--text-secondary)] tabular-nums">{visibleDeals.length}</span>{" "}
             of{" "}
-            <span className="mono text-[var(--text-secondary)] tabular-nums">{totalCount}</span> deals
+            <span className="mono text-[var(--text-secondary)] tabular-nums">{sorted.length}</span> matching deals
           </span>
         </div>
       </div>
@@ -416,7 +428,7 @@ function DealTable({
               </tr>
             </thead>
             <tbody>
-              {sorted.map((deal) => {
+              {visibleDeals.map((deal) => {
                 const showSeller = deal.seller && deal.seller !== "N/A" && deal.seller !== "—";
                 return (
                   <tr
@@ -506,6 +518,13 @@ function DealTable({
           </div>
         )}
       </div>
+
+      <PaginationControls
+        page={safePage}
+        pageSize={DEAL_PAGE_SIZE}
+        totalItems={sorted.length}
+        onPageChange={setPage}
+      />
     </>
   );
 }
@@ -800,12 +819,13 @@ function DealDrawer({
 }
 
 // ─── Main Component ─────────────────────────────────────────
-export function DealDatabase({ deals, counts, canExport }: { deals: DealView[]; counts: DatabaseCounts; canExport: boolean }) {
+export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: DatabaseCounts }) {
   const [search, setSearch] = useState("");
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeRegions, toggleRegion] = useUrlFilterSet("region");
   const [activeCategories, toggleCategory] = useUrlFilterSet("category");
   const [selectedDeal, setSelectedDeal] = useState<DealView | null>(null);
+  const canExport = useCanExport();
 
   // Debounce search for performance
   const debouncedSearch = useDebounce(search, 300);
@@ -890,8 +910,7 @@ export function DealDatabase({ deals, counts, canExport }: { deals: DealView[]; 
 
   // Auto-open drawer when navigated here with `?focus=<legacyId>` (e.g. from
   // the cross-database search page). Fires once per focus value.
-  const searchParams = useSearchParams();
-  const focusId = searchParams.get("focus");
+  const focusId = useUrlQueryParam("focus");
   const openedFocus = useRef<string | null>(null);
   useEffect(() => {
     if (!focusId || openedFocus.current === focusId) return;
@@ -952,7 +971,7 @@ export function DealDatabase({ deals, counts, canExport }: { deals: DealView[]; 
           </div>
         </div>
 
-        <DealTable filteredDeals={filteredDeals} totalCount={deals.length} onSelectDeal={setSelectedDeal} />
+        <DealTable filteredDeals={filteredDeals} onSelectDeal={setSelectedDeal} />
       </div>
 
       <CTABlock />

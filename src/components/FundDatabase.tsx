@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo, useEffect, useCallback, useRef, Fragment } from "react";
-import { useSearchParams } from "next/navigation";
 import { FUND_STRATEGIES, FUND_STATUSES, FUND_SIZE_RANGES, FUND_SECTORS } from "@/lib/constants";
 import { getStrategyColor, getStatusColor, getSizeRangeColor, getFundSectorColor, getPortCoSectorColor, getStructureColor } from "@/lib/colors";
 import { matchesSizeRange, groupFundsByManager, getFundStats } from "@/lib/fund-utils";
@@ -17,7 +16,8 @@ import {
   ArrowDown,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters } from "@/hooks/useUrlFilterSet";
+import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam } from "@/hooks/useUrlFilterSet";
+import { useCanExport } from "@/hooks/useCanExport";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { deriveRanking, RankingColumn } from "@/components/shared/RankingBars";
@@ -26,11 +26,13 @@ import { DatabaseIntelligenceHeader, type IntelligenceMetric } from "@/component
 import { CTABlock } from "@/components/shared/CTABlock";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
 import { Tag } from "@/components/shared/Tag";
-import { Button } from "@/components/shared/Button";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
+import { PaginationControls } from "@/components/shared/PaginationControls";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { withBasePath } from "@/lib/base-path";
+
+const FUND_PAGE_SIZE = 100;
 
 
 // Fund size values in seed data sometimes carry editorial brackets — "[TBD]"
@@ -441,6 +443,7 @@ function AllFundsTable({
 }) {
   const [sortField, setSortField] = useState<"name" | "strategy" | "size" | "vintage">("name");
   const [sortAsc, setSortAsc] = useState(true);
+  const [page, setPage] = useState(1);
 
   // Sort vintage numerically when both sides parse as years; non-numeric
   // values ("Evergreen", "[TBD]", "—") sort to the end regardless of direction
@@ -464,6 +467,17 @@ function AllFundsTable({
     });
     return list;
   }, [displayFunds, sortField, sortAsc]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [displayFunds]);
+
+  const totalPages = Math.max(1, Math.ceil(sorted.length / FUND_PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const visibleFunds = useMemo(() => {
+    const start = (safePage - 1) * FUND_PAGE_SIZE;
+    return sorted.slice(start, start + FUND_PAGE_SIZE);
+  }, [sorted, safePage]);
 
   const toggleSort = (field: typeof sortField) => {
     if (sortField === field) {
@@ -526,7 +540,7 @@ function AllFundsTable({
             </tr>
           </thead>
           <tbody>
-            {sorted.map((fund) => (
+            {visibleFunds.map((fund) => (
               <FundRow key={fund.id} fund={fund} onSelect={onSelectFund} />
             ))}
           </tbody>
@@ -535,10 +549,17 @@ function AllFundsTable({
 
       {/* Mobile cards */}
       <div className="md:hidden space-y-2">
-        {sorted.map((fund) => (
+        {visibleFunds.map((fund) => (
           <FundVehicleCard key={fund.id} fund={fund} onSelect={onSelectFund} />
         ))}
       </div>
+
+      <PaginationControls
+        page={safePage}
+        pageSize={FUND_PAGE_SIZE}
+        totalItems={sorted.length}
+        onPageChange={setPage}
+      />
     </>
   );
 }
@@ -858,7 +879,7 @@ function FundDrawer({
 
 // ─── Main Component ─────────────────────────────────────────
 
-export function FundDatabase({ funds, counts, canExport }: { funds: FundView[]; counts: DatabaseCounts; canExport: boolean }) {
+export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: DatabaseCounts }) {
   // ── Fund state ──
   const [fundSearch, setFundSearch] = useState("");
   const [activeStrategies, toggleStrategy] = useUrlFilterSet("strategy");
@@ -867,6 +888,7 @@ export function FundDatabase({ funds, counts, canExport }: { funds: FundView[]; 
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [selectedFund, setSelectedFund] = useState<FundView | null>(null);
   const [fundView, setFundView] = useState<"managers" | "all">("managers");
+  const canExport = useCanExport();
 
   const debouncedFundSearch = useDebounce(fundSearch, 300);
 
@@ -948,8 +970,7 @@ export function FundDatabase({ funds, counts, canExport }: { funds: FundView[]; 
   }, [filteredFunds, selectedFund]);
 
   // Auto-open drawer when navigated here with `?focus=<legacyId>`.
-  const searchParams = useSearchParams();
-  const focusId = searchParams.get("focus");
+  const focusId = useUrlQueryParam("focus");
   const openedFocus = useRef<string | null>(null);
   useEffect(() => {
     if (!focusId || openedFocus.current === focusId) return;
