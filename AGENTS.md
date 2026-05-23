@@ -31,12 +31,19 @@
 - Preserve the visual and editorial style established in `public/email-format/2026-05-02.html` and `public/email-format/2026-05-09.html`: Guggenheim purple/gold accents, bordered sector cards, compact metadata lines, grey body text, simple horizontal YTD bars, and a factual advisory tone.
 - Do not rewrite historical weekly email files unless the user explicitly asks for historical cleanup.
 
+### Key Themes
+
+- Key themes should highlight the week's strongest capital deployment angles, not just sector volume.
+- When notable direct deployment deals are present, especially North American direct asset or platform acquisitions, explicitly call them out in the second theme paragraph with named transactions.
+- Distinguish direct deployment / operating-asset acquisitions from secondaries, exits, and broad platform announcements when writing theme language.
+
 ### Weekly Section Ordering
 
 - In each published weekly email, order current-week sector sections by that week's deal count in descending order, from most to least active.
 - If sector counts are tied, use this fixed tie-break order: Power & ET, Digital, Transportation, Utilities, Midstream, Social Infra.
 - Omit sectors with zero deals from final published briefings unless the user explicitly requests zero-deal sections.
 - Preheader and previous-editions summaries should list active sectors in the same most-to-least activity order.
+- Within each active sector section/card, order deal cards from largest to smallest. Rank by disclosed economic size first (enterprise value, purchase price, committed equity, project financing, PPA/offtake notional, or fund interest size), then by physical asset scale if economics are undisclosed (MW/MWh, km, fleet, portfolio footprint), with undisclosed/no-quantum deals last. If metrics are not directly comparable, use the clearest scale indicator and make the rationale obvious in the overview paragraph.
 
 ### Deal Overview Writing Rubric
 
