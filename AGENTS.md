@@ -48,10 +48,13 @@
 ### Deal Overview Writing Rubric
 
 - Each deal card uses this structure:
-  1. **Title:** `{Target / Asset} | {Sponsor or Sponsor-backed Platform}`
+  1. **Title:** `{Target / Asset} | {Infrastructure fund / fund manager only}`
   2. **Metadata line:** `{Sponsor} ({transaction type}) · {subsector} · {region/country}`
   3. **Overview paragraph:** one concise paragraph, generally 1–2 sentences
   4. **Source:** one source link labeled "Source"
+- In deal card titles, the name after `|` must be the infrastructure fund or fund manager only. Do not put portfolio companies, sponsor-backed platforms, developers, sellers, or co-developers after the pipe; mention those parties in metadata or the overview paragraph.
+- If multiple infrastructure funds are direct sponsors, separate fund names with `/`.
+- Use canonical sponsor short names consistently across titles, metadata, themes, and body copy. For Goldman Sachs Asset Management, always use **GSAM**.
 - Overview paragraphs should state what happened, who is buying/selling/investing, and why the asset or platform matters.
 - Prefer concrete facts when available: capacity, geography, market role, enterprise value, capital commitment, customer base, development status, or strategic rationale.
 - Keep language factual and restrained. Avoid generic hype or unsupported "strategic fit" phrasing.
