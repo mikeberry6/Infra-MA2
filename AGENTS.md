@@ -35,6 +35,7 @@
 
 - Key themes should highlight the week's strongest capital deployment angles, not just sector volume.
 - When notable direct deployment deals are present, especially North American direct asset or platform acquisitions, explicitly call them out in the second theme paragraph with named transactions.
+- The final theme paragraph should explicitly touch on U.S. deployment when any U.S. transactions are present. Name the strongest U.S. direct asset or platform deals and use non-U.S. platform activity only as contrast.
 - Distinguish direct deployment / operating-asset acquisitions from secondaries, exits, and broad platform announcements when writing theme language.
 
 ### Weekly Section Ordering
