@@ -45,6 +45,7 @@
 - Omit sectors with zero deals from final published briefings unless the user explicitly requests zero-deal sections.
 - Preheader and previous-editions summaries should list active sectors in the same most-to-least activity order.
 - Within each active sector section/card, order deal cards from largest to smallest. Rank by disclosed economic size first (enterprise value, purchase price, committed equity, project financing, PPA/offtake notional, or fund interest size), then by physical asset scale if economics are undisclosed (MW/MWh, km, fleet, portfolio footprint), with undisclosed/no-quantum deals last. If metrics are not directly comparable, use the clearest scale indicator and make the rationale obvious in the overview paragraph.
+- When multiple current-week deals share a subsector or closely comparable subsector, rank those deals largest to smallest using public disclosure and editorial judgment. Prefer disclosed transaction value, committed equity, or asset/fund interest size; when those are unavailable, use disclosed operating/development scale, platform breadth, portfolio footprint, customer base, or other public evidence of transaction scale. Do not mechanically preserve source-discovery order.
 
 ### Deal Overview Writing Rubric
 
