@@ -1,3 +1,5 @@
+import { weeklyBriefingDeals } from "./weekly-briefing-deals";
+
 export type DealSector = "Power & ET" | "Utilities" | "Digital" | "Midstream" | "Transportation" | "Social Infra";
 
 export type DealRegion = "North America" | "Europe" | "Asia-Pacific" | "Middle East & Africa" | "Latin America";
@@ -56,7 +58,7 @@ export interface Deal {
   keyHighlights: string[] | null;
 }
 
-export const deals: Deal[] = [
+const baseDeals: Deal[] = [
   // ═══════════════════════════════════════════════════════════════
   // 1. POWER & ET (Energy Transition & Power Generation)
   // ═══════════════════════════════════════════════════════════════
@@ -7359,6 +7361,22 @@ export const deals: Deal[] = [
       "IAC operates 25 aircraft painting and aviation technical services hangars across 11 sites in the United States and Europe.",
     ],
   },
+];
+
+const WEEKLY_BRIEFING_MERGE_START = new Date("2026-05-08T00:00:00Z").getTime();
+const baseDealSourceUrls = new Set(baseDeals.map((deal) => deal.sourceUrl).filter(Boolean));
+
+function isKnownWeeklyDuplicate(deal: Deal): boolean {
+  return deal.target === "Axius Water" && deal.date.startsWith("2026-05-08");
+}
+
+export const deals: Deal[] = [
+  ...baseDeals,
+  ...weeklyBriefingDeals.filter((deal) => {
+    if (new Date(deal.date).getTime() < WEEKLY_BRIEFING_MERGE_START) return false;
+    if (isKnownWeeklyDuplicate(deal)) return false;
+    return !baseDealSourceUrls.has(deal.sourceUrl);
+  }),
 ];
 
 // Helper to get sector color

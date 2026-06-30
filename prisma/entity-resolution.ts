@@ -36,6 +36,7 @@ export const ORG_CANONICAL: Record<string, string> = {
   "Brookfield / La Caisse": "Brookfield Asset Management",
   "Global Infrastructure Partners": "GIP",
   "Global Infrastructure Partners / BlackRock": "GIP",
+  "EQT": "EQT Infrastructure",
   "NBIM": "Norges Bank Investment Management",
 
   // Cross-dataset resolution: portco.investmentFirm -> fund.managerName

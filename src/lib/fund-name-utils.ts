@@ -41,6 +41,7 @@ export const FUND_NAME_ALIASES: Record<string, string> = {
   "Brookfield / La Caisse": "Brookfield Asset Management",
   "Global Infrastructure Partners": "GIP",
   "Global Infrastructure Partners / BlackRock": "GIP",
+  EQT: "EQT Infrastructure",
   CDPQ: "La Caisse de dépôt (CDPQ)",
   "La Caisse": "La Caisse de dépôt (CDPQ)",
 };
