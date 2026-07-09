@@ -183,6 +183,25 @@ const REGIONS: string[] = [
 
 const DEAL_PAGE_SIZE = 100;
 
+function EmailAccessLinks({ compact = false }: { compact?: boolean }) {
+  const className = compact
+    ? "inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+    : "inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-secondary)] shadow-[0_1px_2px_rgba(17,17,20,0.04)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]";
+
+  return (
+    <div className="flex flex-wrap items-center justify-end gap-1">
+      <a href={withBasePath("/email-format/latest")} className={className}>
+        <Mail className="h-3 w-3" />
+        <span className="truncate">Weekly email</span>
+      </a>
+      <a href={withBasePath("/one-off-requests")} className={className}>
+        <FileText className="h-3 w-3" />
+        <span className="truncate">One-offs</span>
+      </a>
+    </div>
+  );
+}
+
 // ─── Active Filters Chips ───────────────────────────────────
 function ActiveFiltersChips({
   activeSectors,
@@ -938,7 +957,12 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
         title="Infrastructure Deal Tape"
         summary="A curated transaction database for infrastructure M&A, platform formation, public-market activity, and fund-backed strategic moves."
         metrics={headerMetrics}
-        actions={<DatabaseTiles counts={counts} />}
+        actions={
+          <div className="flex flex-col items-start gap-2 sm:items-end">
+            <DatabaseTiles counts={counts} />
+            <EmailAccessLinks />
+          </div>
+        }
       />
 
       <FilterBar
@@ -954,13 +978,13 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
       />
 
       <div className="surface overflow-hidden">
-        <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
+        <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-[var(--border)]">
           <span className="type-micro">
             <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredDeals.length}</span>
             {" "}of{" "}
             <span className="mono text-[var(--text-secondary)] tabular-nums">{deals.length}</span> deals
           </span>
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap items-center justify-end gap-1">
             {canExport && (
               <a
                 href={withBasePath("/api/exports/deals")}
@@ -971,20 +995,7 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
                 <span className="truncate">Export</span>
               </a>
             )}
-            <a
-              href={withBasePath("/email-format/latest")}
-              className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-            >
-              <Mail className="h-3 w-3" />
-              <span className="truncate">Weekly email</span>
-            </a>
-            <a
-              href={withBasePath("/one-off-requests")}
-              className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-            >
-              <FileText className="h-3 w-3" />
-              <span className="truncate">One-offs</span>
-            </a>
+            <EmailAccessLinks compact />
           </div>
         </div>
 
