@@ -978,6 +978,13 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
               <Mail className="h-3 w-3" />
               <span className="truncate">Weekly email</span>
             </a>
+            <a
+              href={withBasePath("/one-off-requests")}
+              className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+            >
+              <FileText className="h-3 w-3" />
+              <span className="truncate">One-offs</span>
+            </a>
           </div>
         </div>
 
