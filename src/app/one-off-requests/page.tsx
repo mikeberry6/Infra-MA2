@@ -16,6 +16,14 @@ const ONE_OFF_REQUESTS = [
     format: "Outlook HTML",
     date: "Jul 2026",
   },
+  {
+    title: "Q1 2026 Infrastructure Quarterly Email",
+    description:
+      "Professional Guggenheim infrastructure quarterly formatted for direct Chrome-to-Outlook pasting.",
+    href: "/email-format/2026-q2-infrastructure-quarterly.html",
+    format: "Outlook HTML",
+    date: "Apr 2026",
+  },
 ];
 
 export default function OneOffRequestsPage() {
