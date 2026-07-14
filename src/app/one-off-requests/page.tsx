@@ -11,7 +11,7 @@ const ONE_OFF_REQUESTS = [
   {
     title: "Waste & ES and rental infrastructure manager tiers",
     description:
-      "Plain Arial bullet list of tiered infrastructure-manager transaction experience, formatted for direct Outlook pasting.",
+      "Plain Arial bullet list of tiered infrastructure-manager transaction experience with one-click Outlook copying.",
     href: "/one-off-requests/waste-es-rental-infrastructure-manager-tiers-outlook.html",
     format: "Outlook HTML",
     date: "Jul 2026",
