@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Waste and Asset-Intensive Rental Transactions</title>
+  </head>
+  <body style="margin:0;padding:24px 12px;background:#FFFFFF;font-family:Arial,Helvetica,sans-serif;color:#000000;">
+    <div style="width:100%;max-width:640px;margin:0 auto 14px auto;">
+      <button id="copy-button" type="button" style="padding:8px 14px;border:1px solid #000000;border-radius:3px;background:#000000;color:#FFFFFF;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;cursor:pointer;">Copy for Outlook</button>
+      <span id="copy-status" style="margin-left:8px;font-size:12px;line-height:16px;color:#444444;">Copies only the email content below.</span>
+    </div>
+
+    <div id="email-content" style="width:100%;max-width:640px;margin:0 auto;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#000000;">
+      <p style="margin:0 0 8px 0;font-size:14px;line-height:19px;font-weight:700;">Solid Waste</p>
+      <ul style="margin:0 0 20px 22px;padding:0 0 0 16px;">
+        <li style="margin:0 0 3px 0;">Amwaste (3i)</li>
+        <li style="margin:0 0 3px 0;">Coastal Waste &amp; Recycling (Macquarie) | 14.5x</li>
+        <li style="margin:0 0 3px 0;">Covanta (EQT) | 10.9x</li>
+        <li style="margin:0 0 3px 0;">Environmental 360 Solutions (BlackRock) | 10.5x</li>
+        <li style="margin:0 0 3px 0;">GreenWaste (Macquarie) | 12.6x</li>
+        <li style="margin:0;">Liberty Tire Recycling / Waste Eliminator (TPG Rise)</li>
+      </ul>
+
+      <p style="margin:0 0 8px 0;font-size:14px;line-height:19px;font-weight:700;">Hazardous Waste</p>
+      <ul style="margin:0 0 20px 22px;padding:0 0 0 16px;">
+        <li style="margin:0 0 3px 0;">Heritage Environmental (EQT) | ~16.0x</li>
+        <li style="margin:0;">VLS Environmental Solutions (I Squared Capital) | 14.6x</li>
+      </ul>
+
+      <p style="margin:0 0 8px 0;font-size:14px;line-height:19px;font-weight:700;">Liquid Waste</p>
+      <ul style="margin:0 0 20px 22px;padding:0 0 0 16px;">
+        <li style="margin:0 0 3px 0;">Liquid Environmental Solutions (Goldman Sachs) | ~14.0x</li>
+        <li style="margin:0 0 3px 0;">Restaurant Technologies (ECP) | ~14.0x</li>
+        <li style="margin:0;">Waste Resources Management (Ridgewood Infrastructure) | 13.5x</li>
+      </ul>
+
+      <p style="margin:0 0 8px 0;font-size:14px;line-height:19px;font-weight:700;">Recycling</p>
+      <ul style="margin:0 0 20px 22px;padding:0 0 0 16px;">
+        <li style="margin:0 0 3px 0;">Bolder Industries (Tiger Infrastructure Partners)</li>
+        <li style="margin:0 0 3px 0;">Cirba Solutions (EQT)</li>
+        <li style="margin:0;">Liberty Tire Recycling (I Squared Capital)</li>
+      </ul>
+
+      <p style="margin:0 0 8px 0;font-size:14px;line-height:19px;font-weight:700;">Asset-Intensive Rental</p>
+      <ul style="margin:0 0 20px 22px;padding:0 0 0 16px;">
+        <li style="margin:0 0 3px 0;">Big Truck Rental (Astatine Infrastructure Partners)</li>
+        <li style="margin:0;">Compactor Rentals of America (Kinderhook Industries)</li>
+      </ul>
+    </div>
+
+    <script>
+      document.getElementById("copy-button").addEventListener("click", async function () {
+        var content = document.getElementById("email-content");
+        var status = document.getElementById("copy-status");
+        var html = '<div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#000000;">' + content.innerHTML + '</div>';
+        var text = content.innerText;
+        try {
+          await navigator.clipboard.write([new ClipboardItem({
+            "text/html": new Blob([html], { type: "text/html" }),
+            "text/plain": new Blob([text], { type: "text/plain" })
+          })]);
+          this.textContent = "Copied";
+          status.textContent = "Paste directly into Outlook.";
+        } catch (error) {
+          status.textContent = "Select the content below, copy, and paste into Outlook.";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Waste and asset-intensive rental transaction multiples",
+    description:
+      "Plain Arial sector list with selected transaction multiples and one-click Outlook copying.",
+    href: "/one-off-requests/waste-transaction-multiples-outlook.html",
+    format: "Outlook HTML",
+    date: "Jul 2026",
+  },
+  {
     title: "Waste & ES and rental infrastructure manager tiers",
     description:
       "Plain Arial bullet list of tiered infrastructure-manager transaction experience with one-click Outlook copying.",
