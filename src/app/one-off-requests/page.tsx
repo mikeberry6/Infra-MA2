@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Comparable sector assessment",
+    description:
+      "Plain Arial comparability analysis covering six customer-site equipment and infrastructure-services sectors.",
+    href: "/one-off-requests/comparable-sector-assessment-outlook.html",
+    format: "Outlook HTML",
+    date: "Jul 2026",
+  },
+  {
     title: "Waste and asset-intensive rental transaction multiples",
     description:
       "Plain Arial sector list with selected transaction multiples and one-click Outlook copying.",

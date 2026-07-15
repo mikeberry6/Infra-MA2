@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comparable Sector Assessment</title>
+  </head>
+  <body style="margin:0;padding:24px 12px;background:#FFFFFF;font-family:Arial,Helvetica,sans-serif;color:#000000;">
+    <div style="width:100%;max-width:640px;margin:0 auto 14px auto;">
+      <button id="copy-button" type="button" style="padding:8px 14px;border:1px solid #000000;border-radius:3px;background:#000000;color:#FFFFFF;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;cursor:pointer;">Copy for Outlook</button>
+      <span id="copy-status" role="status" aria-live="polite" style="margin-left:8px;font-size:12px;line-height:16px;color:#444444;">Copies only the email content below.</span>
+    </div>
+
+    <div id="email-content" style="width:100%;max-width:640px;margin:0 auto;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#000000;">
+      <p style="margin:0 0 12px 0;font-size:14px;line-height:19px;font-weight:700;">Comparable Sector Assessment</p>
+      <ul style="margin:0 0 0 22px;padding:0 0 0 16px;">
+        <li style="margin:0 0 10px 0;"><strong>Home comfort:</strong> Highly comparable installed-equipment model featuring long customer tenures, recurring rental payments, maintenance responsibility, meaningful switching friction and attractive margins, with differences primarily in residential exposure and market-specific contract structures.</li>
+        <li style="margin:0 0 10px 0;"><strong>Submetering:</strong> Fairly comparable recurring-revenue model built around embedded onsite assets, long-duration contracts, low service intensity and strong retention, although regulatory support, mandated adoption and technology exposure can enhance defensibility.</li>
+        <li style="margin:0 0 10px 0;"><strong>Point-of-use water:</strong> Fairly comparable equipment-as-a-service model with installed customer assets, recurring payments, maintenance and route-density benefits, but shorter tenures, office exposure, consumables and service frequency reduce comparability.</li>
+        <li style="margin:0 0 10px 0;"><strong>Environmental solutions:</strong> Useful reference for essential, recurring environmental services, resilient demand and consolidation potential, but economics are often driven by routes, labor, fuel, permits, treatment assets and waste volumes.</li>
+        <li style="margin:0 0 10px 0;"><strong>Transportation solutions:</strong> Provides useful parallels in mission-critical equipment ownership, long-term customer relationships and full-service maintenance, yet mobile fleets, utilization, residual values, aviation or rail cyclicality and heavier capex limit comparability.</li>
+        <li style="margin:0;"><strong>Specialty rental:</strong> Structurally less comparable because value depends on short-term demand, fleet utilization, project cycles, redeployment and higher churn; nevertheless, shared asset ownership and maintenance requirements establish a credible valuation floor.</li>
+      </ul>
+    </div>
+
+    <script>
+      document.getElementById("copy-button").addEventListener("click", async function () {
+        var content = document.getElementById("email-content");
+        var status = document.getElementById("copy-status");
+        var html = '<div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#000000;">' + content.innerHTML + '</div>';
+        var text = content.innerText;
+
+        try {
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              "text/html": new Blob([html], { type: "text/html" }),
+              "text/plain": new Blob([text], { type: "text/plain" })
+            })
+          ]);
+          this.textContent = "Copied";
+          status.textContent = "Paste directly into Outlook.";
+        } catch (error) {
+          status.textContent = "Select the content below, copy, and paste into Outlook.";
+        }
+      });
+    </script>
+  </body>
+</html>
