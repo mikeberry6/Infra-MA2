@@ -9,6 +9,62 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "Operating benchmark two-page briefs - combined pack",
+    description:
+      "Twelve-page review pack covering Home Comfort, Point-of-Use Water, Submetering, Liquid Environmental Services, Transportation Solutions, and Specialty Rental.",
+    href: "/one-off-requests/operating-benchmark-two-pagers/all-subverticals-two-page-briefs.pdf",
+    format: "PDF",
+    date: "Jul 2026",
+  },
+  {
+    title: "Home Comfort operating benchmark",
+    description:
+      "Two-page brief with metric rationales and supporting business profiles for Reliance Home Comfort and Enercare.",
+    href: "/one-off-requests/operating-benchmark-two-pagers/01-home-comfort-two-page-brief.pdf",
+    format: "PDF",
+    date: "Jul 2026",
+  },
+  {
+    title: "Point-of-Use Water operating benchmark",
+    description:
+      "Two-page brief with metric rationales and supporting business profiles for AquaVenture Holdings / Quench and Primo Water.",
+    href: "/one-off-requests/operating-benchmark-two-pagers/02-point-of-use-water-two-page-brief.pdf",
+    format: "PDF",
+    date: "Jul 2026",
+  },
+  {
+    title: "Submetering operating benchmark",
+    description:
+      "Two-page brief covering benchmark economics and six building-submetering, billing, and meter-asset businesses.",
+    href: "/one-off-requests/operating-benchmark-two-pagers/03-submetering-two-page-brief.pdf",
+    format: "PDF",
+    date: "Jul 2026",
+  },
+  {
+    title: "Liquid Environmental Services operating benchmark",
+    description:
+      "Two-page brief preserving separate onsite-system and route-processing archetypes across four businesses.",
+    href: "/one-off-requests/operating-benchmark-two-pagers/04-liquid-environmental-services-two-page-brief.pdf",
+    format: "PDF",
+    date: "Jul 2026",
+  },
+  {
+    title: "Transportation Solutions operating benchmark",
+    description:
+      "Two-page brief covering railcar, locomotive, airport ground-support equipment, and yard-logistics archetypes.",
+    href: "/one-off-requests/operating-benchmark-two-pagers/05-transportation-solutions-two-page-brief.pdf",
+    format: "PDF",
+    date: "Jul 2026",
+  },
+  {
+    title: "Specialty Rental operating benchmark",
+    description:
+      "Two-page brief covering consumer storage, B2B storage, modular space, and trench-safety rental archetypes.",
+    href: "/one-off-requests/operating-benchmark-two-pagers/06-specialty-rental-two-page-brief.pdf",
+    format: "PDF",
+    date: "Jul 2026",
+  },
+  {
     title: "Comparable sector assessment",
     description:
       "Plain Arial comparability analysis covering six customer-site equipment and infrastructure-services sectors.",
@@ -66,8 +122,8 @@ export default function OneOffRequestsPage() {
           },
           {
             label: "Primary format",
-            value: "HTML",
-            detail: "Outlook-ready",
+            value: "PDF + HTML",
+            detail: "Review and Outlook",
             color: "#442142",
           },
           {
