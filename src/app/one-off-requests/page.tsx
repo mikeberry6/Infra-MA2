@@ -11,7 +11,7 @@ const ONE_OFF_REQUESTS = [
   {
     title: "Operating benchmark source compendium - full evidence archive",
     description:
-      "348-page provenance pack with six research reports, a 42-metric and 25-business evidence audit, and final briefs that repeat every comp-derived input on the relevant company page.",
+      "Full provenance pack with five research reports, a 35-metric and 19-business evidence audit, and final briefs that repeat every comp-derived input on the relevant company page.",
     href: "/one-off-requests/operating-benchmark-two-pagers/operating-benchmark-source-compendium.pdf",
     format: "PDF",
     date: "Jul 2026",
@@ -19,7 +19,7 @@ const ONE_OFF_REQUESTS = [
   {
     title: "Operating benchmark two-page briefs - combined pack",
     description:
-      "Twelve-page review pack covering six subverticals; comp-derived inputs appear in each company profile and unsupported estimates use first-principles directional frameworks.",
+      "Ten-page review pack covering five subverticals; comp-derived inputs appear in each company profile and unsupported estimates use first-principles directional frameworks.",
     href: "/one-off-requests/operating-benchmark-two-pagers/all-subverticals-two-page-briefs.pdf",
     format: "PDF",
     date: "Jul 2026",
@@ -61,14 +61,6 @@ const ONE_OFF_REQUESTS = [
     description:
       "Two-page brief covering railcar, locomotive, airport ground-support equipment, and yard-logistics archetypes.",
     href: "/one-off-requests/operating-benchmark-two-pagers/05-transportation-solutions-two-page-brief.pdf",
-    format: "PDF",
-    date: "Jul 2026",
-  },
-  {
-    title: "Specialty Rental operating benchmark",
-    description:
-      "Two-page brief covering consumer storage, B2B storage, modular space, and trench-safety rental archetypes.",
-    href: "/one-off-requests/operating-benchmark-two-pagers/06-specialty-rental-two-page-brief.pdf",
     format: "PDF",
     date: "Jul 2026",
   },
