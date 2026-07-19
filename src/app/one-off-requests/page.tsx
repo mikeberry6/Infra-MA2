@@ -11,7 +11,7 @@ const ONE_OFF_REQUESTS = [
   {
     title: "Operating benchmark source compendium - full evidence archive",
     description:
-      "347-page provenance pack with the original request, six prompts, 198 research pages, draft synthesis, a 42-metric and 25-business evidence audit, source URL index, methodology, and final briefs.",
+      "349-page provenance pack with the original request, six prompts, 198 research pages, draft synthesis, a 42-metric and 25-business evidence audit, source URL index, methodology, and final briefs.",
     href: "/one-off-requests/operating-benchmark-two-pagers/operating-benchmark-source-compendium.pdf",
     format: "PDF",
     date: "Jul 2026",
@@ -19,7 +19,7 @@ const ONE_OFF_REQUESTS = [
   {
     title: "Operating benchmark two-page briefs - combined pack",
     description:
-      "Twelve-page evidence-cited review pack covering six subverticals; Low-support estimate components are explicitly omitted.",
+      "Twelve-page review pack covering six subverticals; unsupported point estimates are replaced with first-principles directional frameworks.",
     href: "/one-off-requests/operating-benchmark-two-pagers/all-subverticals-two-page-briefs.pdf",
     format: "PDF",
     date: "Jul 2026",
