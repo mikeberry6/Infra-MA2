@@ -4,8 +4,8 @@
 
 - Target period: July 11, 2026 through July 17, 2026
 - Started: 2026-07-18T18:25:00Z (2026-07-18 2:25:00 PM EDT)
-- Last updated: 2026-07-20T00:09:07Z
-- Finished: 2026-07-20T00:09:07Z (final analysis scoped to Batches 1–19 at the user's direction)
+- Last updated: 2026-07-20T00:53:47Z
+- Finished: 2026-07-20T00:53:47Z (final analysis scoped to Batches 1–19, followed by the user's final briefing-selection decision)
 - Timezone: America/New_York
 - Required model: Gemini 3.1 Pro Deep Think / Pro Deep Think
 - Briefing under review: `public/email-format/2026-07-17.html`
@@ -2176,24 +2176,25 @@ None	None	None	No qualifying transactions found within the strictly mandated Jul
 
 ## Briefing Review
 
-- Candidates added to the weekly briefing: Williams Power Innovation Projects; Csquare; Nebius AI Power Project; Formosa 2 Offshore Wind Farm.
+- Candidate added to the weekly briefing: Formosa 2 Offshore Wind Farm.
+- Qualifying candidates omitted from the briefing at the user's direction: Williams Power Innovation Projects; Csquare; Nebius AI Power Project. These remain source-backed PASS records in the research results but are not counted in the final email.
 - Candidates already present: Sprng Energy; Raxio Group; Summit Ridge Energy; ClearGen C&amp;I Solar Portfolio; TIP Group; Cyntox Biohazard Solutions; AdvoWaste Medical Services; Delfin FLNG2; EcoEridania; SELCHP.
 - Existing independently verified briefing transactions retained even though they did not receive a literal Gemini `INCLUDE`: Tuscania BESS Portfolio; CD Energy Services; Liberty Tire Recycling's three-acquisition card.
-- Final briefing count: 17 deal cards across Power &amp; ET 9; Social Infra 4; Digital 2; Transportation 1; Midstream 1.
-- Key themes, preheader, previous-editions comment, YTD counts, and YTD bar widths updated to match the 17-card briefing.
+- Final briefing count: 14 deal cards across Power &amp; ET 7; Social Infra 4; Digital 1; Transportation 1; Midstream 1.
+- Key themes, preheader, previous-editions comment, YTD counts, and YTD bar widths updated to match the 14-card briefing.
 
 ## Validation and Git Handoff
 
-- Weekly deal cards: 17.
-- Deal-card source links: 17.
-- Weekly section counts: Power &amp; ET 9; Social Infra 4; Digital 2; Transportation 1; Midstream 1.
+- Weekly deal cards: 14.
+- Deal-card source links: 14.
+- Weekly section counts: Power &amp; ET 7; Social Infra 4; Digital 1; Transportation 1; Midstream 1.
 - Section order: Power &amp; ET; Social Infra; Digital; Transportation; Midstream.
 - Deal ordering: Power and Digital cards are ranked by disclosed economics first, then operating scale; undisclosed/no-quantum transactions are last within their comparable groups.
 - Removed / false-positive names absent: Grupo Supera; Munich Electrification; Steel River Energy Center; Island Green Power; Galehead Development.
-- Balanced HTML tags: 52 opening / 52 closing `table`; 153 / 153 `tr`; 210 / 210 `td`; 40 / 40 `a`.
-- Presentation tables: all 52 tables include `role="presentation"`.
+- Balanced HTML tags: 49 opening / 49 closing `table`; 138 / 138 `tr`; 195 / 195 `td`; 37 / 37 `a`.
+- Presentation tables: all 49 tables include `role="presentation"`.
 - Prohibited low-contrast greys: none present.
-- YTD sector order and widths: Power &amp; ET 138 / 100%; Digital 68 / 49%; Transportation 63 / 46%; Social Infra 35 / 25%; Utilities 29 / 21%; Midstream 18 / 13%.
-- YTD region order and widths: North America 147 / 100%; Europe 139 / 95%; Asia-Pacific 47 / 32%; Latin America 14 / 10%; Middle East &amp; Africa 4 / 3%.
+- YTD sector order and widths: Power &amp; ET 136 / 100%; Digital 67 / 49%; Transportation 63 / 46%; Social Infra 35 / 26%; Utilities 29 / 21%; Midstream 18 / 13%.
+- YTD region order and widths: North America 144 / 100%; Europe 139 / 97%; Asia-Pacific 47 / 33%; Latin America 14 / 10%; Middle East &amp; Africa 4 / 3%.
 - Automated weekly-briefing test: 2 tests passed.
 - Exact Git scope: this run note and `public/email-format/2026-07-17.html` only; unrelated dirty files must remain unstaged.
