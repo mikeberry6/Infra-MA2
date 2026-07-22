@@ -36,7 +36,7 @@ const nextConfig = {
     unoptimized: true,
   },
   // Next 15 promoted serverComponentsExternalPackages out of experimental.
-  serverExternalPackages: ["@neondatabase/serverless", "@prisma/adapter-neon"],
+  serverExternalPackages: ["@prisma/adapter-pg", "pg"],
   // Anchor file-tracing at this directory; without this, Next walks up the
   // tree and warns when there are multiple lockfiles (e.g. in worktrees).
   outputFileTracingRoot: path.join(__dirname),
