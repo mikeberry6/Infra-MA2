@@ -2,6 +2,7 @@ import {
   dashboardSignalContentHash,
   type DashboardSignalHashContent,
 } from "@/modules/dashboard/content-hash";
+import { ACTIVE_DASHBOARD_SIGNAL_SOURCE_IDS } from "@/modules/dashboard/catalog";
 import type { DashboardSignalReviewStatus } from "@/modules/dashboard/types";
 
 export type DashboardSignalPublicationState = DashboardSignalHashContent & {
@@ -13,7 +14,8 @@ export type DashboardSignalPublicationState = DashboardSignalHashContent & {
 };
 
 export function isPublicDashboardSignal(signal: DashboardSignalPublicationState): boolean {
-  return signal.reviewStatus === "APPROVED"
+  return ACTIVE_DASHBOARD_SIGNAL_SOURCE_IDS.has(signal.sourceId ?? "")
+    && signal.reviewStatus === "APPROVED"
     && Boolean(signal.contentHash)
     && signal.contentHash === signal.reviewedContentHash
     && signal.contentHash === dashboardSignalContentHash(signal)

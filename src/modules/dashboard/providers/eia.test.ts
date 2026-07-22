@@ -1,7 +1,9 @@
-import { describe, expect, it } from "vitest";
-import { aggregateHourlyRows, mapWeeklyRows } from "@/modules/dashboard/providers/eia";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { aggregateHourlyRows, eiaProvider, mapWeeklyRows } from "@/modules/dashboard/providers/eia";
 
 describe("EIA provider fixtures", () => {
+  afterEach(() => vi.unstubAllGlobals());
+
   it("aggregates only days with all 24 distinct valid hourly observations", () => {
     const completeDay = Array.from({ length: 24 }, (_, hour) => ({
       period: `2026-07-21T${String(hour).padStart(2, "0")}`,
@@ -69,5 +71,32 @@ describe("EIA provider fixtures", () => {
       value: 1,
       "value-units": "BCF",
     }])).toThrow("unexpected value-units");
+  });
+
+  it("rejects missing units and hourly rows outside the registered US48 geography", () => {
+    expect(() => aggregateHourlyRows([{
+      period: "2026-07-21T00",
+      respondent: "US48",
+      type: "D",
+      value: 1,
+    }])).toThrow("no value-units");
+
+    expect(() => aggregateHourlyRows([{
+      period: "2026-07-21T00",
+      respondent: "CAL",
+      type: "D",
+      value: 1,
+      "value-units": "MWh",
+    }])).toThrow("expected US48");
+  });
+
+  it("rejects a malformed HTTP-200 payload instead of treating it as an empty release", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(JSON.stringify({ response: {} }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    })));
+
+    await expect(eiaProvider("fixture-key", new Date("2026-07-22T11:30:00.000Z")).fetch())
+      .rejects.toThrow("no response data array");
   });
 });

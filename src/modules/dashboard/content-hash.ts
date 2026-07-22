@@ -12,8 +12,8 @@ export interface DashboardSignalHashContent {
 
 /**
  * Deterministic change detector for the fields an administrator actually
- * reviews. MD5 is not used as an authentication primitive; its compact output
- * is only an optimistic-concurrency token.
+ * reviews. SHA-256 binds the approved content to the public record and also
+ * serves as the optimistic-concurrency token for review actions.
  */
 export function dashboardSignalContentHash(item: DashboardSignalHashContent): string {
   const content = [
@@ -25,5 +25,5 @@ export function dashboardSignalContentHash(item: DashboardSignalHashContent): st
     item.sourceName,
     item.sourceUrl ?? "",
   ].join("\u001f");
-  return createHash("md5").update(content).digest("hex");
+  return createHash("sha256").update(content).digest("hex");
 }

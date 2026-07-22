@@ -257,6 +257,32 @@ describe("dashboard pipeline idempotency and failure recovery", () => {
     }));
   });
 
+  it("fails closed and records a failed run when cached-state demotion cannot be persisted", async () => {
+    const prisma = prismaDouble();
+    prisma.dashboardObservation.updateMany = vi.fn().mockRejectedValue(new Error("database write unavailable"));
+
+    const summary = await syncDashboard(prisma, {
+      providers: [provider(vi.fn().mockResolvedValue({
+        observations: [observation],
+        signals: [],
+      }))],
+    });
+
+    expect(summary.sources[0]).toMatchObject({
+      status: "FAILED",
+      observationsUpserted: 0,
+      error: expect.stringContaining("could not mark prior U.S. Treasury observations cached"),
+    });
+    expect(prisma.dashboardObservation.upsert).not.toHaveBeenCalled();
+    expect(prisma.dashboardObservation.updateMany).toHaveBeenCalledTimes(2);
+    expect(prisma.dashboardSourceRun.update).toHaveBeenLastCalledWith(expect.objectContaining({
+      data: expect.objectContaining({
+        status: "FAILED",
+        error: expect.stringContaining("database write unavailable"),
+      }),
+    }));
+  });
+
   it("demotes stale returned metrics and their cached history instead of leaving LIVE values public", async () => {
     const prisma = prismaDouble();
     await syncDashboard(prisma, {

@@ -55,6 +55,12 @@ describe("dashboard signal publication gate", () => {
     expect(isPublicDashboardSignal({ ...approved, metadata: { sample: false } })).toBe(true);
   });
 
+  it("rejects approved signals outside the active reviewed-source allowlist", () => {
+    const approved = signal(1, "APPROVED");
+    expect(isPublicDashboardSignal({ ...approved, sourceId: "manual-import", sourceName: "Manual Import" })).toBe(false);
+    expect(isPublicDashboardSignal({ ...approved, sourceId: "unknown-source" })).toBe(false);
+  });
+
   it("keeps approval for unchanged public content and invalidates changed interpretations", () => {
     const current = signal(1, "APPROVED");
     expect(signalContentHash(current)).toBe(signalContentHash({ ...current, metadata: { refreshed: true } }));

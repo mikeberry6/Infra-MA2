@@ -131,6 +131,8 @@ jobs:
           mkdir -p tmp/schema-stage
           set -o pipefail
           npx prisma migrate deploy 2>&1 | tee tmp/schema-stage/migrate-deploy.log
+          npx tsx scripts/quarantine-dashboard-methodology-history.ts 2>&1 | tee tmp/schema-stage/dashboard-methodology-cutover.log
+          npx tsx scripts/backfill-dashboard-signal-approvals.ts 2>&1 | tee tmp/schema-stage/dashboard-signal-backfill.log
           npx prisma migrate status 2>&1 | tee tmp/schema-stage/migrate-status.log
           npx prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/schema-stage/schema-drift.log
 

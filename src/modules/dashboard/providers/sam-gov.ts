@@ -45,6 +45,9 @@ const TITLE_KEYWORDS = [
 ] as const;
 const PAGE_SIZE = 1_000;
 const MAX_PAGES_PER_KEYWORD = 5;
+// SAM.gov public API ptype codes for pre-solicitation, sources sought,
+// solicitation, combined synopsis/solicitation, and intent to bundle.
+const PROCUREMENT_TYPES = ["p", "r", "o", "k", "i"] as const;
 
 export function samGovProvider(
   apiKey = process.env.SAM_API_KEY,
@@ -67,6 +70,10 @@ export function samGovProvider(
           const pageResult = validatedSamPage(response, keyword, page);
           total = pageResult.totalRecords;
           for (const item of pageResult.opportunities) {
+            // The public API documents `status` as not yet implemented, so the
+            // server query is narrowed by ptype and the active flag is enforced
+            // locally before the automatic count is calculated.
+            if (item.active?.trim().toLowerCase() !== "yes") continue;
             const id = item.noticeId || `${item.solicitationNumber ?? "unknown"}:${item.postedDate ?? "unknown"}`;
             opportunities.set(id, item);
           }
@@ -111,6 +118,8 @@ export function samGovProvider(
             metadata: {
               lookbackDays: 7,
               titleKeywords: TITLE_KEYWORDS,
+              procurementTypes: PROCUREMENT_TYPES,
+              activeOnly: true,
               deduplicated: true,
             },
           }),
@@ -137,6 +146,9 @@ function validatedSamPage(
   if (totalRecords === 0 && response.opportunitiesData.length > 0) {
     throw new Error(`SAM.gov title query "${keyword}" returned records with a zero total on page ${page}.`);
   }
+  if (response.opportunitiesData.some((item) => typeof item.active !== "string")) {
+    throw new Error(`SAM.gov title query "${keyword}" returned a record without an active flag on page ${page}.`);
+  }
   return { totalRecords, opportunities: response.opportunitiesData };
 }
 
@@ -152,6 +164,9 @@ async function fetchSamPage(
   url.searchParams.set("postedFrom", samDate(startDate));
   url.searchParams.set("postedTo", samDate(endDate));
   url.searchParams.set("title", keyword);
+  for (const procurementType of PROCUREMENT_TYPES) {
+    url.searchParams.append("ptype", procurementType);
+  }
   url.searchParams.set("limit", String(PAGE_SIZE));
   url.searchParams.set("offset", String(offset));
   return fetchJson<SamResponse>(url.toString());

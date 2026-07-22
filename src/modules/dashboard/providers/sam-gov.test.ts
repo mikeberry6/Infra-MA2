@@ -13,13 +13,13 @@ describe("SAM.gov provider fixtures", () => {
         ? offset === 0
           ? {
               totalRecords: 1001,
-              opportunitiesData: [{ noticeId: "A", title: "Infrastructure program", postedDate: "2026-07-21" }],
+              opportunitiesData: [{ noticeId: "A", title: "Infrastructure program", postedDate: "2026-07-21", active: "Yes" }],
             }
           : {
               totalRecords: 1001,
               opportunitiesData: [
-                { noticeId: "A", title: "Infrastructure program revised", postedDate: "2026-07-21" },
-                { noticeId: "B", title: "Bridge work", postedDate: "2026-07-20" },
+                { noticeId: "A", title: "Infrastructure program revised", postedDate: "2026-07-21", active: "Yes" },
+                { noticeId: "B", title: "Bridge work", postedDate: "2026-07-20", active: "Yes" },
               ],
             }
         : { totalRecords: 0, opportunitiesData: [] };
@@ -40,6 +40,8 @@ describe("SAM.gov provider fixtures", () => {
     expect(new Set(fetchMock.mock.calls.map(([input]) =>
       new URL(String(input)).searchParams.get("postedFrom"))))
       .toEqual(new Set(["07/16/2026"]));
+    expect(new URL(String(fetchMock.mock.calls[0][0])).searchParams.getAll("ptype"))
+      .toEqual(["p", "r", "o", "k", "i"]);
   });
 
   it("emits every matched opportunity for analyst review", async () => {
@@ -47,6 +49,7 @@ describe("SAM.gov provider fixtures", () => {
       noticeId: `notice-${index}`,
       title: `Infrastructure opportunity ${index}`,
       postedDate: "2026-07-21",
+      active: "Yes",
     }));
     vi.stubGlobal("fetch", vi.fn(async (input: string | URL | Request) => {
       const url = new URL(String(input));
@@ -73,10 +76,33 @@ describe("SAM.gov provider fixtures", () => {
     expect(result.signals).toEqual([]);
   });
 
+  it("excludes inactive notices from the automatic procurement count and review queue", async () => {
+    vi.stubGlobal("fetch", vi.fn(async (input: string | URL | Request) => {
+      const url = new URL(String(input));
+      const body = url.searchParams.get("title") === "infrastructure"
+        ? {
+            totalRecords: 2,
+            opportunitiesData: [
+              { noticeId: "active", title: "Active infrastructure solicitation", postedDate: "2026-07-21", active: "Yes" },
+              { noticeId: "inactive", title: "Closed infrastructure solicitation", postedDate: "2026-07-20", active: "No" },
+            ],
+          }
+        : { totalRecords: 0, opportunitiesData: [] };
+      return new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } });
+    }));
+
+    const result = await samGovProvider("fixture-key", new Date("2026-07-22T11:30:00.000Z")).fetch();
+
+    expect(result.observations[0]).toMatchObject({ value: 1 });
+    expect(result.signals).toHaveLength(1);
+    expect(result.signals?.[0]).toMatchObject({ signalKey: "sam-opportunity-active" });
+  });
+
   it.each([
     [{ opportunitiesData: [] }, "totalRecords"],
     [{ totalRecords: 0 }, "opportunitiesData"],
-    [{ totalRecords: 0, opportunitiesData: [{ noticeId: "unexpected" }] }, "zero total"],
+    [{ totalRecords: 0, opportunitiesData: [{ noticeId: "unexpected", active: "Yes" }] }, "zero total"],
+    [{ totalRecords: 1, opportunitiesData: [{ noticeId: "missing-active" }] }, "active flag"],
   ])("rejects malformed HTTP-200 pagination instead of publishing zero", async (body, message) => {
     vi.stubGlobal("fetch", vi.fn(async () => new Response(JSON.stringify(body), {
       status: 200,

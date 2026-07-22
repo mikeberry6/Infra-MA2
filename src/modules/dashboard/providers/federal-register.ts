@@ -34,6 +34,7 @@ export const FEDERAL_REGISTER_TERMS = [
 
 const PAGE_SIZE = 100;
 const MAX_PAGES_PER_TERM = 100;
+const INCLUDED_DOCUMENT_TYPES = new Set(["Notice", "Rule", "Proposed Rule"]);
 
 export function federalRegisterProvider(
   now = new Date(),
@@ -68,6 +69,7 @@ export function federalRegisterProvider(
             ) {
               throw new Error(`Federal Register returned a malformed document for term "${term}".`);
             }
+            if (!INCLUDED_DOCUMENT_TYPES.has(item.type)) continue;
             const current = documents.get(item.document_number);
             if (current) current.matchedTerms.add(term);
             else documents.set(item.document_number, { document: item, matchedTerms: new Set([term]) });
@@ -118,6 +120,7 @@ export function federalRegisterProvider(
             metadata: {
               lookbackDays: 7,
               queryTerms: terms,
+              documentTypes: Array.from(INCLUDED_DOCUMENT_TYPES),
               deduplicatedBy: "document_number",
             },
           }),

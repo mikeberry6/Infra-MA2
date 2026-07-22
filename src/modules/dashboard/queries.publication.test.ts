@@ -26,6 +26,7 @@ describe("public dashboard Prisma query boundary", () => {
     mocks.signals.mockReset().mockResolvedValue([
       signal("safe", null),
       signal("sample", { sourceKind: "sample" }),
+      { ...signal("unknown-source", null), sourceId: "manual-import" },
     ]);
     mocks.sourceRuns.mockReset().mockResolvedValue([{
       id: "run-sensitive",
@@ -57,10 +58,12 @@ describe("public dashboard Prisma query boundary", () => {
       where: expect.objectContaining({
         updatedAt: { gte: expect.any(Date) },
         reviewStatus: "APPROVED",
+        sourceId: { in: expect.arrayContaining(["federal-register", "usaspending", "sam-gov", "sec-edgar"]) },
         NOT: expect.arrayContaining([
           { sourceId: { contains: "sample", mode: "insensitive" } },
         ]),
       }),
+      orderBy: [{ updatedAt: "desc" }, { observedAt: "desc" }],
     }));
     expect(view.allSeries.find((series) => series.metric.id === "us_treasury_10y")?.observations).toHaveLength(1);
     expect(view.sections.find((section) => section.section === "policy-regulatory")?.signals.map((item) => item.signalKey)).toEqual(["safe"]);

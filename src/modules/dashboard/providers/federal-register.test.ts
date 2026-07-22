@@ -69,6 +69,30 @@ describe("Federal Register provider fixtures", () => {
     expect(result.signals).toEqual([]);
   });
 
+  it("counts only notices and rules while ignoring other matching document types", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({
+      count: 4,
+      results: [
+        document("2026-notice"),
+        { ...document("2026-rule"), type: "Rule" },
+        { ...document("2026-proposed"), type: "Proposed Rule" },
+        { ...document("2026-presidential"), type: "Presidential Document" },
+      ],
+    }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    })));
+
+    const result = await federalRegisterProvider(
+      new Date("2026-07-22T11:30:00.000Z"),
+      ["infrastructure"],
+    ).fetch();
+
+    expect(result.observations[0]).toMatchObject({ value: 3 });
+    expect(result.signals).toHaveLength(3);
+    expect(result.signals?.map((signal) => signal.metadata?.type)).not.toContain("Presidential Document");
+  });
+
   it("rejects a malformed HTTP-200 response instead of publishing a zero count", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({ count: 0 }), {
       status: 200,

@@ -23,6 +23,22 @@ describe("USAspending provider fixtures", () => {
         return jsonResponse({ results: [{ aggregated_amount: 3_000_000_000 }, { aggregated_amount: -500_000_000 }] });
       }
       const page = Number(body.page);
+      const codes = body.filters.award_type_codes as string[];
+      if (codes.includes("07")) {
+        return jsonResponse({
+          results: [{
+            generated_internal_id: "LOAN",
+            "Award ID": "LOAN-1",
+            "Recipient Name": "Loan recipient",
+            "Loan Value": 125,
+            "Issued Date": "2026-07-04",
+          }],
+          page_metadata: { hasNext: false },
+        });
+      }
+      if (!codes.includes("A")) {
+        return jsonResponse({ results: [], page_metadata: { hasNext: false } });
+      }
       if (page === 1) {
         return jsonResponse({
           results: [
@@ -48,23 +64,36 @@ describe("USAspending provider fixtures", () => {
       expect.objectContaining({ metricId: "usaspending_infra_awards_30d", value: 35, unit: "count" }),
       expect.objectContaining({ metricId: "usaspending_infra_obligations_30d", value: 2.5, unit: "$bn" }),
     ]));
-    expect(result.signals).toHaveLength(3);
-    expect(result.signals?.[0]).toMatchObject({
+    expect(result.signals).toHaveLength(4);
+    expect(result.signals?.find((signal) => signal.signalKey === "usaspending-LOAN")).toMatchObject({
+      signalKey: "usaspending-LOAN",
+      observedAt: "2026-07-04T00:00:00.000Z",
+      metadata: { observedAtBasis: "Issued Date" },
+    });
+    expect(result.signals?.find((signal) => signal.signalKey === "usaspending-A")).toMatchObject({
       signalKey: "usaspending-A",
       reviewStatus: "PENDING",
       observedAt: "2026-07-01T00:00:00.000Z",
       metadata: { observedAtBasis: "Start Date" },
     });
-    expect(fetchMock).toHaveBeenCalledTimes(4);
+    expect(fetchMock).toHaveBeenCalledTimes(9);
     expect(new Set(fetchMock.mock.calls.map(([, init]) =>
       JSON.parse(String(init?.body)).filters.time_period[0].start_date))).toEqual(new Set(["2026-06-23"]));
     expect(JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body)).filters.award_type_codes)
-      .toEqual(expect.arrayContaining(["06", "07", "09", "IDV_A", "IDV_E"]));
+      .toEqual(expect.arrayContaining(["06", "07", "09", "F001", "F010", "IDV_A", "IDV_E"]));
+    const candidateBodies = fetchMock.mock.calls
+      .filter(([input]) => String(input).includes("spending_by_award/"))
+      .map(([, init]) => JSON.parse(String(init?.body)));
+    expect(candidateBodies.every((body) => body.filters.award_type_codes.length <= 8)).toBe(true);
+    expect(candidateBodies.find((body) => body.filters.award_type_codes.includes("07"))).toMatchObject({
+      fields: expect.arrayContaining(["Loan Value", "Issued Date"]),
+      sort: "Loan Value",
+    });
 
     const rerun = await usaSpendingProvider(new Date("2026-07-23T11:30:00.000Z")).fetch();
     expect(rerun.signals?.find((signal) => signal.signalKey === "usaspending-A")?.observedAt)
       .toBe("2026-07-01T00:00:00.000Z");
-    expect(new Set(fetchMock.mock.calls.slice(4).map(([, init]) =>
+    expect(new Set(fetchMock.mock.calls.slice(9).map(([, init]) =>
       JSON.parse(String(init?.body)).filters.time_period[0].start_date))).toEqual(new Set(["2026-06-24"]));
   });
 
@@ -91,7 +120,7 @@ describe("USAspending provider fixtures", () => {
       expect.objectContaining({ metricId: "usaspending_infra_awards_30d", value: 1 }),
     ]));
     expect(result.signals).toEqual([]);
-    expect(result.warnings).toContain("USAspending award missing-date has no valid official Start Date.");
+    expect(result.warnings).toContain("USAspending award missing-date has no valid official award date.");
   });
 
   it("accepts a schema-valid empty release as an objective zero", async () => {

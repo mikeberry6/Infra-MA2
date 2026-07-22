@@ -35,6 +35,7 @@ export function buildDashboardView({
   const publishedSignals = signals.filter(isPublicDashboardSignal);
   const observationsByMetric = new Map<string, DashboardObservation[]>();
   const activeMetricById = new Map(ACTIVE_DASHBOARD_METRICS.map((metric) => [metric.id, metric]));
+  const latestRunBySource = latestSourceRuns(sourceHealth);
 
   for (const observation of observations) {
     const metric = activeMetricById.get(observation.metricId);
@@ -56,8 +57,14 @@ export function buildDashboardView({
     const weekly = previousAtLeastDaysAgo(metricObservations, 7);
     const dailyChange = numericChange(latest, previous);
     const weeklyChange = numericChange(latest, weekly ?? previous);
+    const latestRun = latestRunBySource.get(metric.source.id);
+    const sourceRunStale = latestRun?.status === "FAILED"
+      || latestRun?.status === "SKIPPED"
+      || (latestRun?.status === "PARTIAL" && !latestRun.endedAt);
     const stale = latest
-      ? latest.status === "CACHED" || daysBetween(dateOnlyUtc(latest.periodEnd), now) > metric.staleAfterDays
+      ? latest.status === "CACHED"
+        || sourceRunStale
+        || daysBetween(dateOnlyUtc(latest.periodEnd), now) > metric.staleAfterDays
       : true;
 
     return {
@@ -154,4 +161,13 @@ function completeSourceHealth(
     });
 
   return known.sort((a, b) => a.sourceName.localeCompare(b.sourceName));
+}
+
+function latestSourceRuns(sourceHealth: DashboardRunSummary[]): Map<string, DashboardRunSummary> {
+  const latestBySource = new Map<string, DashboardRunSummary>();
+  for (const run of sourceHealth) {
+    const current = latestBySource.get(run.sourceId);
+    if (!current || run.startedAt > current.startedAt) latestBySource.set(run.sourceId, run);
+  }
+  return latestBySource;
 }

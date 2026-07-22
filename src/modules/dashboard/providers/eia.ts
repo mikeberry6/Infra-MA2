@@ -136,10 +136,13 @@ async function fetchEiaRows(
 
   const json = await fetchJson<EiaResponse>(url.toString());
   if (json.error) throw new Error(json.error);
+  if (!json.response || !Array.isArray(json.response.data)) {
+    throw new Error(`EIA ${route} returned no response data array.`);
+  }
   for (const item of json.response?.warnings ?? []) {
     warnings.push([item.warning, item.description].filter(Boolean).join(": "));
   }
-  return json.response?.data ?? [];
+  return json.response.data;
 }
 
 export function aggregateHourlyRows(rows: EiaRow[]): DashboardObservation[] {
@@ -151,6 +154,9 @@ export function aggregateHourlyRows(rows: EiaRow[]): DashboardObservation[] {
   for (const row of rows) {
     const mapping = row.type ? HOURLY_METRICS[row.type] : undefined;
     if (!mapping) continue;
+    if (row.respondent !== "US48") {
+      throw new Error(`EIA ${mapping.metricId} returned respondent "${row.respondent ?? "missing"}"; expected US48.`);
+    }
     assertExpectedEiaUnit(row, mapping);
     const value = numericValue(row.value);
     const period = /^(\d{4}-\d{2}-\d{2})T([01]\d|2[0-3])/.exec(row.period ?? "");
@@ -210,7 +216,9 @@ function numericValue(value: EiaRow["value"]): number | null {
 }
 
 function assertExpectedEiaUnit(row: EiaRow, mapping: EiaMetricMapping): void {
-  if (row["value-units"] === undefined) return;
+  if (typeof row["value-units"] !== "string" || !row["value-units"].trim()) {
+    throw new Error(`EIA ${mapping.metricId} returned no value-units.`);
+  }
   const actual = normalizeEiaUnit(row["value-units"]);
   const expected = mapping.sourceUnits.map(normalizeEiaUnit);
   if (!expected.includes(actual)) {

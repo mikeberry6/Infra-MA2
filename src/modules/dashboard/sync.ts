@@ -123,15 +123,11 @@ export async function syncDashboard(
       let signalsUpserted = 0;
 
       if (!dryRun) {
-        try {
-          await markNonCurrentSourceObservationsCached(
-            prisma,
-            provider.source.id,
-            new Set(requiredMetricHealth.currentMetricIds),
-          );
-        } catch (error) {
-          warnings.push(`Could not mark non-current ${provider.source.name} observations cached: ${error instanceof Error ? error.message : String(error)}`);
-        }
+        await markNonCurrentSourceObservationsCached(
+          prisma,
+          provider.source.id,
+          new Set(requiredMetricHealth.currentMetricIds),
+        );
         const staleMetricIds = new Set(requiredMetricHealth.staleMetricIds);
         for (const item of observations) {
           await upsertObservation(
@@ -192,13 +188,14 @@ export async function syncDashboard(
       });
     } catch (error) {
       const endedAt = new Date().toISOString();
-      const message = error instanceof Error ? error.message : String(error);
+      let message = error instanceof Error ? error.message : String(error);
       const requiredMetricHealth = inspectRequiredDashboardMetrics(provider.source.id, [], new Date());
       if (!dryRun) {
         try {
           await markNonCurrentSourceObservationsCached(prisma, provider.source.id, new Set());
         } catch (cacheError) {
-          console.error(`Could not mark failed ${provider.source.name} observations cached:`, cacheError);
+          const cacheMessage = cacheError instanceof Error ? cacheError.message : String(cacheError);
+          message = `${message}; could not mark prior ${provider.source.name} observations cached: ${cacheMessage}`;
         }
       }
       if (!dryRun && sourceRunId) {

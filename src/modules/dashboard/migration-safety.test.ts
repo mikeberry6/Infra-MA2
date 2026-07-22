@@ -18,15 +18,30 @@ describe("dashboard recurring-source migration", () => {
     expect(auditAdditiveMigrationSql(migration)).toEqual([]);
   });
 
-  it("never auto-approves legacy signals during schema staging", () => {
+  it("runs the bounded legacy-signal approval backfill immediately after migration", () => {
     const stageWorkflow = readFileSync(path.join(
       process.cwd(),
       ".github/workflows/stage-production-schema.yml",
     ), "utf8");
-    const packageJson = readFileSync(path.join(process.cwd(), "package.json"), "utf8");
 
     expect(stageWorkflow).toContain("npx prisma migrate deploy");
-    expect(stageWorkflow).not.toContain("backfill-signal-approvals");
-    expect(packageJson).not.toContain("backfill-signal-approvals");
+    expect(stageWorkflow).toContain("npx tsx scripts/quarantine-dashboard-methodology-history.ts");
+    expect(stageWorkflow).toContain("npx tsx scripts/backfill-dashboard-signal-approvals.ts");
+    expect(stageWorkflow.indexOf("npx tsx scripts/quarantine-dashboard-methodology-history.ts"))
+      .toBeGreaterThan(stageWorkflow.indexOf("npx prisma migrate deploy"));
+    expect(stageWorkflow.indexOf("npx tsx scripts/backfill-dashboard-signal-approvals.ts"))
+      .toBeGreaterThan(stageWorkflow.indexOf("npx tsx scripts/quarantine-dashboard-methodology-history.ts"));
+  });
+
+  it("gives remote cutover transactions an explicit bounded timeout", () => {
+    for (const script of [
+      "scripts/quarantine-dashboard-methodology-history.ts",
+      "scripts/backfill-dashboard-signal-approvals.ts",
+    ]) {
+      const contents = readFileSync(path.join(process.cwd(), script), "utf8");
+      expect(contents).toContain('isolationLevel: "Serializable"');
+      expect(contents).toContain("maxWait: 15_000");
+      expect(contents).toContain("timeout: 120_000");
+    }
   });
 });

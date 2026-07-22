@@ -151,6 +151,55 @@ describe("dashboard freshness classification", () => {
     expect(freshView.scorecard.score).not.toBe(cachedView.scorecard.score);
   });
 
+  it("treats a current LIVE row as stale when the latest provider run failed", () => {
+    const metric = ACTIVE_DASHBOARD_METRICS.find((item) => item.id === "us_treasury_10y")!;
+    const view = buildDashboardView({
+      observations: [observation(metric.id, "2026-07-22", "LIVE")],
+      signals: [],
+      sourceHealth: [{
+        sourceId: metric.source.id,
+        sourceName: metric.source.name,
+        status: "FAILED",
+        startedAt: "2026-07-22T11:30:00.000Z",
+        observationsFetched: 0,
+        observationsUpserted: 0,
+        signalsFetched: 0,
+        signalsUpserted: 0,
+      }],
+      generatedAt,
+      hasDatabaseData: true,
+    });
+
+    expect(view.allSeries.find((series) => series.metric.id === metric.id)).toMatchObject({
+      stale: true,
+      unavailable: false,
+    });
+    expect(view.scorecard.score).toBe(50);
+  });
+
+  it("treats a LIVE row as stale while the latest source run is incomplete", () => {
+    const metric = ACTIVE_DASHBOARD_METRICS.find((item) => item.id === "us_treasury_10y")!;
+    const view = buildDashboardView({
+      observations: [observation(metric.id, "2026-07-22", "LIVE")],
+      signals: [],
+      sourceHealth: [{
+        sourceId: metric.source.id,
+        sourceName: metric.source.name,
+        status: "PARTIAL",
+        startedAt: "2026-07-22T11:30:00.000Z",
+        endedAt: null,
+        observationsFetched: 0,
+        observationsUpserted: 0,
+        signalsFetched: 0,
+        signalsUpserted: 0,
+      }],
+      generatedAt,
+      hasDatabaseData: true,
+    });
+
+    expect(view.allSeries.find((series) => series.metric.id === metric.id)?.stale).toBe(true);
+  });
+
   it("uses the exact configured freshness boundary used by provider validation", () => {
     const metric = ACTIVE_DASHBOARD_METRICS.find((item) => item.id === "us_treasury_10y")!;
     const input = {

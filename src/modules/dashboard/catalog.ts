@@ -116,7 +116,7 @@ export const DASHBOARD_SOURCES = {
     owner: "Research",
     observationPublicationMode: "AUTOMATIC",
     signalPublicationMode: "REVIEW",
-    notes: "Public procurement opportunities adapter with review-gated matches.",
+    notes: "Active pre-award public procurement opportunities adapter with review-gated matches.",
   },
   sec: {
     id: "sec-edgar",
@@ -247,11 +247,11 @@ export const DASHBOARD_METRICS: DashboardMetric[] = [
   metric("epa_echo_compliance", "EPA ECHO Compliance", "sector-micro", "Waste / Water / Environmental", "count", "count", manual, "EPA ECHO compliance placeholder.", 30),
   metric("public_water_sewer_construction", "Public Water / Sewer Construction", "sector-micro", "Waste / Water / Environmental", "$bn", "currency", fred, "Monthly public water-supply plus sewage-and-waste-disposal construction spending at a seasonally adjusted annual rate.", 60),
 
-  metric("usaspending_infra_awards_30d", "USAspending Infrastructure Awards", "policy-regulatory", "P3 / Grants / Procurement", "count", "count", usa, "Infrastructure-related federal awards over the sync lookback.", 3),
-  metric("usaspending_infra_obligations_30d", "USAspending Infrastructure Obligations", "policy-regulatory", "P3 / Grants / Procurement", "$bn", "currency", usa, "Infrastructure-keyword federal contract and assistance obligations over the trailing 30-day window.", 3),
-  metric("sam_opportunities", "SAM.gov Opportunities", "policy-regulatory", "P3 / Grants / Procurement", "count", "count", sam, "De-duplicated infrastructure-title procurement opportunities posted in the trailing seven days.", 3),
+  metric("usaspending_infra_awards_30d", "USAspending Infrastructure Awards", "policy-regulatory", "P3 / Grants / Procurement", "count", "count", usa, "Infrastructure-keyword prime awards across all award types over the trailing 30-day window.", 3),
+  metric("usaspending_infra_obligations_30d", "USAspending Infrastructure Obligations", "policy-regulatory", "P3 / Grants / Procurement", "$bn", "currency", usa, "Infrastructure-keyword prime-award obligations across all award types over the trailing 30-day window.", 3),
+  metric("sam_opportunities", "SAM.gov Opportunities", "policy-regulatory", "P3 / Grants / Procurement", "count", "count", sam, "De-duplicated active pre-award infrastructure-title procurement opportunities posted in the trailing seven days.", 3),
   metric("fast41_projects", "FAST-41 Projects", "policy-regulatory", "P3 / Grants / Procurement", "count", "count", manual, "Federal Permitting Dashboard / FAST-41 project placeholder.", 14),
-  metric("federal_register_infra_notices", "Federal Register Notices", "policy-regulatory", "P3 / Grants / Procurement", "count", "count", fedReg, "Federal Register infrastructure notices/rules over the sync lookback.", 3),
+  metric("federal_register_infra_notices", "Federal Register Notices", "policy-regulatory", "P3 / Grants / Procurement", "count", "count", fedReg, "Federal Register infrastructure notices, proposed rules, and rules over the trailing seven days.", 3),
 
   metric("sec_ma_watchlist", "SEC M&A Watchlist", "deal-friction", "Filings", "count", "count", sec, "Transaction-related SEC 8-K, merger agreement, tender, and proxy filings from the configured watchlist.", 3),
   metric("ftc_doj_antitrust", "FTC / DOJ Antitrust Posture", "deal-friction", "Regulatory", "text", "text", manual, "Antitrust and HSR posture placeholder.", 14),
@@ -263,6 +263,12 @@ export const DASHBOARD_METRICS: DashboardMetric[] = [
 
 export const DASHBOARD_METRIC_BY_ID = new Map(DASHBOARD_METRICS.map((metric) => [metric.id, metric]));
 export const ACTIVE_DASHBOARD_METRICS = DASHBOARD_METRICS.filter((metric) => metric.status === "ACTIVE");
+export const ACTIVE_DASHBOARD_SIGNAL_SOURCE_IDS = new Set(
+  ACTIVE_DASHBOARD_METRICS
+    .filter((metric) => metric.source.signalPublicationMode === "REVIEW")
+    .map((metric) => metric.source.id),
+);
+export const ACTIVE_DASHBOARD_SIGNAL_SOURCE_ID_LIST = Array.from(ACTIVE_DASHBOARD_SIGNAL_SOURCE_IDS);
 
 function metric(
   id: string,

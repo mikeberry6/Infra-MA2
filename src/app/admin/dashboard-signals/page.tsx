@@ -23,7 +23,7 @@ export default async function AdminDashboardSignalsPage({
   const { page, totalPages, skip, take } = dashboardSignalReviewPagination(rawPage, total);
   const signals = await prisma.dashboardSignal.findMany({
     where: reviewQueueWhere,
-    orderBy: [{ observedAt: "desc" }, { id: "desc" }],
+    orderBy: [{ updatedAt: "desc" }, { observedAt: "desc" }, { id: "desc" }],
     skip,
     take,
     include: { reviewedBy: { select: { email: true } } },

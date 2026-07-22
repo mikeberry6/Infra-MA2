@@ -1,5 +1,8 @@
 import { prisma } from "@/lib/prisma";
-import { ACTIVE_DASHBOARD_METRICS } from "@/modules/dashboard/catalog";
+import {
+  ACTIVE_DASHBOARD_METRICS,
+  ACTIVE_DASHBOARD_SIGNAL_SOURCE_ID_LIST,
+} from "@/modules/dashboard/catalog";
 import {
   isPublicDashboardSignal,
   isSampleDashboardRecord,
@@ -46,12 +49,13 @@ export async function getDashboardView() {
         // in the active source window, without creating a new review row daily.
         updatedAt: { gte: signalSince },
         reviewStatus: "APPROVED",
+        sourceId: { in: ACTIVE_DASHBOARD_SIGNAL_SOURCE_ID_LIST },
         NOT: [
           { sourceId: { contains: "sample", mode: "insensitive" } },
           { sourceName: { contains: "sample", mode: "insensitive" } },
         ],
       },
-      orderBy: [{ observedAt: "desc" }],
+      orderBy: [{ updatedAt: "desc" }, { observedAt: "desc" }],
       take: 250,
     }),
     prisma.dashboardSourceRun.findMany({
