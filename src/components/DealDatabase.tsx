@@ -1055,6 +1055,11 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
     if (openedFocus.current === focusId) return;
     const match = deals.find((d) => d.legacyId === focusId);
     if (match) {
+      // Manual opens set openedFocus before writing the URL, so this branch is
+      // reserved for direct/search/history focus navigation and cannot double
+      // count the manual handler below.
+      markDrawerOpen("deal");
+      track("drawer_opened", { entity: "deal" });
       setSelectedDeal(match);
       openedFocus.current = focusId;
       return;

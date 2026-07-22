@@ -43,6 +43,8 @@
     "db:duplicates:verify": "npx tsx scripts/report-company-merge-candidates.ts --published-only --require-clean",
     "db:citations:report": "npx tsx scripts/report-primary-citation-remediation.ts",
     "db:citations:apply": "npx tsx scripts/apply-primary-citation-remediation.ts",
+    "db:fund-primary-sources:report": "npx tsx scripts/report-fund-primary-source-remediation.ts",
+    "db:fund-primary-sources:apply": "npx tsx scripts/apply-fund-primary-source-remediation.ts",
     "db:ownership-funds:report": "npx tsx scripts/report-ownership-fund-link-remediation.ts",
     "db:ownership-funds:apply": "npx tsx scripts/apply-ownership-fund-link-remediation.ts",
     "db:seller-disclosures:report": "npx tsx scripts/report-deal-seller-disclosure-remediation.ts",
@@ -68,6 +70,7 @@
     "pg": "^8.20.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "undici": "7.28.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {

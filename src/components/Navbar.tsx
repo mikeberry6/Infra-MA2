@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { type FormEvent, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Search, User } from "lucide-react";
+import { track } from "@vercel/analytics";
 import { TextInput } from "@/components/shared/TextInput";
 import { withBasePath } from "@/lib/base-path";
 
@@ -54,6 +55,14 @@ export function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  function trackSearch(event: FormEvent<HTMLFormElement>) {
+    const query = new FormData(event.currentTarget).get("q");
+    track("search_submitted", {
+      surface: "navbar",
+      has_query: typeof query === "string" && query.trim().length > 0,
+    });
+  }
+
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 shadow-[0_1px_0_rgba(17,17,20,0.02)] backdrop-blur-md"
@@ -93,6 +102,7 @@ export function Navbar() {
             action={withBasePath("/search")}
             className="w-[260px]"
             role="search"
+            onSubmit={trackSearch}
           >
             <TextInput
               type="search"
@@ -132,7 +142,10 @@ export function Navbar() {
               action={withBasePath("/search")}
               role="search"
               className="mb-3"
-              onSubmit={() => setMenuOpen(false)}
+              onSubmit={(event) => {
+                trackSearch(event);
+                setMenuOpen(false);
+              }}
             >
               <TextInput
                 type="search"

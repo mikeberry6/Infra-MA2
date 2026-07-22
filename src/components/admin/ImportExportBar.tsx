@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { Download, FileUp, X } from "lucide-react";
+import { track } from "@vercel/analytics";
 import { withBasePath } from "@/lib/base-path";
 import { Button } from "@/components/shared/Button";
 import { FormMessage } from "@/components/shared/FormControls";
@@ -179,7 +180,12 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-2">
-        <a href={withBasePath(`/api/exports/${entityType}`)} download className="inline-flex h-8 items-center justify-center gap-1.5 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-primary)] hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]">
+        <a
+          href={withBasePath(`/api/exports/${entityType}`)}
+          download
+          onClick={() => track("export_started", { entity: CACHE_ENTITY[entityType] })}
+          className="inline-flex h-8 items-center justify-center gap-1.5 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-primary)] hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+        >
           <Download className="h-3.5 w-3.5" /> Export CSV
         </a>
         <label className="inline-flex h-8 cursor-pointer items-center justify-center gap-1.5 rounded-md bg-[var(--accent)] px-3 type-meta font-medium text-[var(--text-on-accent)] hover:bg-[var(--accent-hover)] focus-within:ring-2 focus-within:ring-[var(--accent-soft)]">

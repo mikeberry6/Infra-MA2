@@ -131,6 +131,7 @@ function validateFundRows(funds: Record<string, unknown>[]): { validRows: FundIm
       sectors: toArray(fund.sectors),
       regions: toArray(fund.regions),
       sourceUrls: toArray(fund.sourceUrls),
+      primarySourceUrl: stringValue(fund.primarySourceUrl) || undefined,
       ticker: stringValue(fund.ticker) || undefined,
       strategyUrl: stringValue(fund.strategyUrl) || undefined,
     });
@@ -329,6 +330,7 @@ async function importFunds(request: NextRequest) {
             sectors,
             regions,
             sourceUrls: toArray(fund.sourceUrls),
+            primarySourceUrl: fund.primarySourceUrl || null,
             strategyUrl: fund.strategyUrl || "",
           };
 

@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
   coveragePercentage,
-  fundHasSource,
+  fundHasPrimarySource,
   PUBLISHED_COMPANY_MISSING_PRIMARY_WHERE,
   PUBLISHED_DEAL_MISSING_PRIMARY_WHERE,
-  PUBLISHED_FUND_SOURCE_REVIEW_WHERE,
+  PUBLISHED_FUND_PRIMARY_SOURCE_REVIEW_WHERE,
   sourceCoverageIsComplete,
 } from "@/modules/operations/source-coverage";
 
@@ -20,22 +20,24 @@ describe("publication source coverage", () => {
     });
   });
 
-  it("accepts either a fund source URL or strategy URL", () => {
-    expect(PUBLISHED_FUND_SOURCE_REVIEW_WHERE).toEqual({ status: "PUBLISHED" });
-    expect(fundHasSource({ sourceUrls: ["https://example.test/source"], strategyUrl: "" })).toBe(true);
-    expect(fundHasSource({ sourceUrls: [], strategyUrl: " https://example.test/strategy " })).toBe(true);
-    expect(fundHasSource({ sourceUrls: ["  "], strategyUrl: "  " })).toBe(false);
+  it("counts only the explicitly reviewed fund primary source", () => {
+    expect(PUBLISHED_FUND_PRIMARY_SOURCE_REVIEW_WHERE).toEqual({ status: "PUBLISHED" });
+    expect(fundHasPrimarySource({ primarySourceUrl: " https://example.com/test/primary " })).toBe(true);
+    expect(fundHasPrimarySource({ primarySourceUrl: null })).toBe(false);
+    expect(fundHasPrimarySource({ primarySourceUrl: "  " })).toBe(false);
+    expect(fundHasPrimarySource({ primarySourceUrl: "javascript:alert(1)" })).toBe(false);
+    expect(fundHasPrimarySource({ primarySourceUrl: "ftp://example.test/source" })).toBe(false);
   });
 
   it("fails completeness when any published entity class has a gap", () => {
     expect(sourceCoverageIsComplete({
       dealsMissingPrimary: 0,
-      fundsMissingSource: 0,
+      fundsMissingPrimary: 0,
       companiesMissingPrimary: 0,
     })).toBe(true);
     expect(sourceCoverageIsComplete({
       dealsMissingPrimary: 1,
-      fundsMissingSource: 0,
+      fundsMissingPrimary: 0,
       companiesMissingPrimary: 0,
     })).toBe(false);
     expect(coveragePercentage(3, 4)).toBe(75);

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { withServerOperation } from "@/lib/server-log";
+import { effectiveNewsPipelineRunStatus } from "@/modules/news/source-coverage";
 import { nextDashboardSyncAt } from "@/modules/operations/pipeline-schedules";
 
 const PIPELINES = ["NEWS_SCAN", "DASHBOARD_SYNC"] as const;
@@ -55,6 +56,12 @@ async function schemaIsReady(): Promise<boolean> {
         WHERE table_schema = current_schema()
           AND table_name = 'Fund'
           AND column_name = 'lastVerifiedAt'
+      )
+      AND EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_schema = current_schema()
+          AND table_name = 'Fund'
+          AND column_name = 'primarySourceUrl'
       )
       AND EXISTS (
         SELECT 1 FROM information_schema.columns
@@ -139,18 +146,29 @@ export async function GET(request: Request) {
             where: { pipeline: name },
             orderBy: { startedAt: "desc" },
           }),
-          prisma.pipelineRun.findFirst({
-            where: { pipeline: name, status: "SUCCEEDED" },
-            orderBy: { endedAt: "desc" },
-          }),
+          name === "NEWS_SCAN"
+            ? prisma.pipelineRun.findMany({
+              where: { pipeline: name, status: "SUCCEEDED" },
+              orderBy: { endedAt: "desc" },
+              take: 100,
+            }).then((runs) => runs.find(
+              (run) => effectiveNewsPipelineRunStatus(run) === "SUCCEEDED",
+            ))
+            : prisma.pipelineRun.findFirst({
+              where: { pipeline: name, status: "SUCCEEDED" },
+              orderBy: { endedAt: "desc" },
+            }),
         ]);
         const successfulAt = latestSuccess?.endedAt ?? latestSuccess?.startedAt ?? null;
         const stale = pipelineIsStale(name, successfulAt, generatedAt);
+        const latestAttemptStatus = name === "NEWS_SCAN" && latestAttempt
+          ? effectiveNewsPipelineRunStatus(latestAttempt)
+          : latestAttempt?.status;
         return {
           name,
           status: !latestAttempt
             ? "never-run"
-            : latestAttempt.status === "FAILED"
+            : latestAttemptStatus === "FAILED"
               ? "failed"
               : stale
                 ? "stale"

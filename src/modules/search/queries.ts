@@ -18,20 +18,37 @@ export interface SearchResult {
 
 export interface SearchResults {
   results: SearchResult[];
+  /** Total matches across every entity type. */
   total: number;
+  /** Total matches in the selected entity scope. */
+  scopeTotal: number;
   counts: Record<SearchResult["type"], number>;
+  scope: SearchScope;
+  page: number;
+  pageSize: number;
+  totalPages: number;
 }
 
-// Each tier is independently bounded in Postgres. Exact and prefix candidates
-// are fetched separately so a broad description/participant match cannot crowd
-// a stronger name match out of the ranked result set. The selected values keep
-// the maximum hydrated candidate set below 500 records while retaining enough
-// exact/prefix rows to satisfy the public 20-result view deterministically.
-const SEARCH_TIER_CAPS = {
-  exact: 25,
-  prefix: 40,
-  contains: 90,
-} as const;
+export type SearchScope = "all" | SearchResult["type"];
+
+export interface SearchOptions {
+  scope?: SearchScope;
+  page?: number;
+  pageSize?: number;
+}
+
+export interface SearchResultGroup {
+  type: SearchResult["type"];
+  results: Array<{ result: SearchResult; rank: number }>;
+}
+
+export const SEARCH_PAGE_SIZE = 20;
+const MAX_SEARCH_PAGE_SIZE = 100;
+const SEARCH_TYPE_ORDER: Record<SearchResult["type"], number> = {
+  deal: 0,
+  company: 1,
+  fund: 2,
+};
 
 const DEAL_SEARCH_SELECT = {
   legacyId: true,
@@ -89,42 +106,71 @@ export function normalizeSearchQuery(value: string | string[] | undefined): stri
   return firstValue.trim().slice(0, 200);
 }
 
-/**
- * Preserve global relevance while reserving a fair share for every entity
- * type that has hydrated candidates. This prevents a broad deal match from
- * crowding companies or funds out of the grouped result view.
- */
-export function selectFairSearchResults<T extends SearchResult>(
-  rankedResults: T[],
-  limit: number,
-): T[] {
-  const safeLimit = Number.isFinite(limit) ? Math.max(0, Math.floor(limit)) : 20;
-  if (safeLimit === 0 || rankedResults.length === 0) return [];
-  const types = (["deal", "company", "fund"] as const)
-    .filter((type) => rankedResults.some((result) => result.type === type));
-  const quota = Math.floor(safeLimit / Math.max(types.length, 1));
-  const selected = new Set<string>();
-  const key = (result: SearchResult) => `${result.type}:${result.id}`;
-
-  if (quota > 0) {
-    for (const type of types) {
-      for (const result of rankedResults.filter((candidate) => candidate.type === type).slice(0, quota)) {
-        selected.add(key(result));
-      }
-    }
-  }
-
-  for (const result of rankedResults) {
-    if (selected.size >= safeLimit) break;
-    selected.add(key(result));
-  }
-
-  return rankedResults.filter((result) => selected.has(key(result))).slice(0, safeLimit);
+export function normalizeSearchScope(value: string | string[] | undefined): SearchScope {
+  const firstValue = Array.isArray(value) ? value[0] : value;
+  return firstValue === "deal" || firstValue === "company" || firstValue === "fund"
+    ? firstValue
+    : "all";
 }
 
-export async function searchAllWithMeta(query: string, limit = 20): Promise<SearchResults> {
+export function normalizeSearchPage(value: string | string[] | undefined): number {
+  const firstValue = Array.isArray(value) ? value[0] : value;
+  if (!firstValue || !/^\d+$/.test(firstValue)) return 1;
+  const parsed = Number(firstValue);
+  return Number.isSafeInteger(parsed) && parsed > 0 ? parsed : 1;
+}
+
+/** Group one globally selected result page without losing its global rank. */
+export function groupSearchPageResults(
+  results: SearchResult[],
+  firstRank = 1,
+): SearchResultGroup[] {
+  const safeFirstRank = Number.isFinite(firstRank)
+    ? Math.max(1, Math.floor(firstRank))
+    : 1;
+  return (["deal", "company", "fund"] as const)
+    .map((type) => ({
+      type,
+      results: results.flatMap((result, index) => result.type === type
+        ? [{ result, rank: safeFirstRank + index }]
+        : []),
+    }))
+    .filter((group) => group.results.length > 0);
+}
+
+function normalizedOptions(options: SearchOptions | number): Required<SearchOptions> {
+  const requested = typeof options === "number" ? { pageSize: options } : options;
+  const page = Number.isFinite(requested.page)
+    ? Math.max(1, Math.floor(requested.page ?? 1))
+    : 1;
+  const pageSize = Number.isFinite(requested.pageSize)
+    ? Math.min(MAX_SEARCH_PAGE_SIZE, Math.max(1, Math.floor(requested.pageSize ?? SEARCH_PAGE_SIZE)))
+    : SEARCH_PAGE_SIZE;
+  return {
+    scope: requested.scope === "deal" || requested.scope === "company" || requested.scope === "fund"
+      ? requested.scope
+      : "all",
+    page,
+    pageSize,
+  };
+}
+
+export async function searchAllWithMeta(
+  query: string,
+  options: SearchOptions | number = {},
+): Promise<SearchResults> {
   const normalizedQuery = normalizeSearchQuery(query);
-  const empty: SearchResults = { results: [], total: 0, counts: { deal: 0, company: 0, fund: 0 } };
+  const normalized = normalizedOptions(options);
+  const empty: SearchResults = {
+    results: [],
+    total: 0,
+    scopeTotal: 0,
+    counts: { deal: 0, company: 0, fund: 0 },
+    scope: normalized.scope,
+    page: 1,
+    pageSize: normalized.pageSize,
+    totalPages: 1,
+  };
   if (normalizedQuery.length < 2) return empty;
 
   const dealContainsWhere = {
@@ -162,85 +208,129 @@ export async function searchAllWithMeta(query: string, limit = 20): Promise<Sear
     ],
   };
 
-  const [
-    dealExact,
-    dealPrefix,
-    dealContains,
-    companyExact,
-    companyPrefix,
-    companyContains,
-    fundExact,
-    fundPrefix,
-    fundContains,
-    dealTotal,
-    companyTotal,
-    fundTotal,
-  ] = await Promise.all([
-    prisma.deal.findMany({
-      where: { status: "PUBLISHED", target: { equals: normalizedQuery, mode: "insensitive" } },
-      select: DEAL_SEARCH_SELECT,
-      orderBy: [{ target: "asc" }, { legacyId: "asc" }],
-      take: SEARCH_TIER_CAPS.exact,
-    }),
-    prisma.deal.findMany({
-      where: { status: "PUBLISHED", target: { startsWith: normalizedQuery, mode: "insensitive" } },
-      select: DEAL_SEARCH_SELECT,
-      orderBy: [{ target: "asc" }, { legacyId: "asc" }],
-      take: SEARCH_TIER_CAPS.prefix,
-    }),
-    prisma.deal.findMany({
-      where: dealContainsWhere,
-      select: DEAL_SEARCH_SELECT,
-      orderBy: [{ target: "asc" }, { legacyId: "asc" }],
-      take: SEARCH_TIER_CAPS.contains,
-    }),
-    prisma.company.findMany({
-      where: { status: "PUBLISHED", name: { equals: normalizedQuery, mode: "insensitive" } },
-      select: COMPANY_SEARCH_SELECT,
-      orderBy: [{ name: "asc" }, { id: "asc" }],
-      take: SEARCH_TIER_CAPS.exact,
-    }),
-    prisma.company.findMany({
-      where: { status: "PUBLISHED", name: { startsWith: normalizedQuery, mode: "insensitive" } },
-      select: COMPANY_SEARCH_SELECT,
-      orderBy: [{ name: "asc" }, { id: "asc" }],
-      take: SEARCH_TIER_CAPS.prefix,
-    }),
-    prisma.company.findMany({
-      where: companyContainsWhere,
-      select: COMPANY_SEARCH_SELECT,
-      orderBy: [{ name: "asc" }, { id: "asc" }],
-      take: SEARCH_TIER_CAPS.contains,
-    }),
-    prisma.fund.findMany({
-      where: { status: "PUBLISHED", fundName: { equals: normalizedQuery, mode: "insensitive" } },
-      select: FUND_SEARCH_SELECT,
-      orderBy: [{ fundName: "asc" }, { legacyId: "asc" }],
-      take: SEARCH_TIER_CAPS.exact,
-    }),
-    prisma.fund.findMany({
-      where: { status: "PUBLISHED", fundName: { startsWith: normalizedQuery, mode: "insensitive" } },
-      select: FUND_SEARCH_SELECT,
-      orderBy: [{ fundName: "asc" }, { legacyId: "asc" }],
-      take: SEARCH_TIER_CAPS.prefix,
-    }),
-    prisma.fund.findMany({
-      where: fundContainsWhere,
-      select: FUND_SEARCH_SELECT,
-      orderBy: [{ fundName: "asc" }, { legacyId: "asc" }],
-      take: SEARCH_TIER_CAPS.contains,
-    }),
+  const [dealTotal, companyTotal, fundTotal] = await Promise.all([
     prisma.deal.count({ where: dealContainsWhere }),
     prisma.company.count({ where: companyContainsWhere }),
     prisma.fund.count({ where: fundContainsWhere }),
   ]);
+  const counts: SearchResults["counts"] = {
+    deal: dealTotal,
+    company: companyTotal,
+    fund: fundTotal,
+  };
+  const total = dealTotal + companyTotal + fundTotal;
+  const scopeTotal = normalized.scope === "all" ? total : counts[normalized.scope];
+  const totalPages = Math.max(1, Math.ceil(scopeTotal / normalized.pageSize));
+  const page = Math.min(normalized.page, totalPages);
+  const resultEnd = page * normalized.pageSize;
+  const selectedTypes = normalized.scope === "all"
+    ? (["deal", "company", "fund"] as const)
+    : ([normalized.scope] as const);
 
+  // The three search tiers are mutually exclusive. Hydrating the first
+  // `page * pageSize` rows from each selected entity/tier is sufficient to
+  // produce the requested globally ranked page without loading the complete
+  // search universe on the common first-page path.
+  const [dealRows, companyRows, fundRows] = await Promise.all([
+    selectedTypes.includes("deal") ? Promise.all([
+      prisma.deal.findMany({
+        where: { status: "PUBLISHED", target: { equals: normalizedQuery, mode: "insensitive" } },
+        select: DEAL_SEARCH_SELECT,
+        orderBy: [{ target: "asc" }, { legacyId: "asc" }],
+        take: resultEnd,
+      }),
+      prisma.deal.findMany({
+        where: {
+          status: "PUBLISHED",
+          target: { startsWith: normalizedQuery, mode: "insensitive" },
+          NOT: { target: { equals: normalizedQuery, mode: "insensitive" } },
+        },
+        select: DEAL_SEARCH_SELECT,
+        orderBy: [{ target: "asc" }, { legacyId: "asc" }],
+        take: resultEnd,
+      }),
+      prisma.deal.findMany({
+        where: {
+          ...dealContainsWhere,
+          NOT: { target: { startsWith: normalizedQuery, mode: "insensitive" } },
+        },
+        select: DEAL_SEARCH_SELECT,
+        orderBy: [{ target: "asc" }, { legacyId: "asc" }],
+        take: resultEnd,
+      }),
+    ]) : Promise.resolve([[], [], []] as const),
+    selectedTypes.includes("company") ? Promise.all([
+      prisma.company.findMany({
+        where: { status: "PUBLISHED", name: { equals: normalizedQuery, mode: "insensitive" } },
+        select: COMPANY_SEARCH_SELECT,
+        orderBy: [{ name: "asc" }, { id: "asc" }],
+        take: resultEnd,
+      }),
+      prisma.company.findMany({
+        where: {
+          status: "PUBLISHED",
+          name: { startsWith: normalizedQuery, mode: "insensitive" },
+          NOT: { name: { equals: normalizedQuery, mode: "insensitive" } },
+        },
+        select: COMPANY_SEARCH_SELECT,
+        orderBy: [{ name: "asc" }, { id: "asc" }],
+        take: resultEnd,
+      }),
+      prisma.company.findMany({
+        where: {
+          ...companyContainsWhere,
+          NOT: { name: { startsWith: normalizedQuery, mode: "insensitive" } },
+        },
+        select: COMPANY_SEARCH_SELECT,
+        orderBy: [{ name: "asc" }, { id: "asc" }],
+        take: resultEnd,
+      }),
+    ]) : Promise.resolve([[], [], []] as const),
+    selectedTypes.includes("fund") ? Promise.all([
+      prisma.fund.findMany({
+        where: { status: "PUBLISHED", fundName: { equals: normalizedQuery, mode: "insensitive" } },
+        select: FUND_SEARCH_SELECT,
+        orderBy: [{ fundName: "asc" }, { legacyId: "asc" }],
+        take: resultEnd,
+      }),
+      prisma.fund.findMany({
+        where: {
+          status: "PUBLISHED",
+          fundName: { startsWith: normalizedQuery, mode: "insensitive" },
+          NOT: { fundName: { equals: normalizedQuery, mode: "insensitive" } },
+        },
+        select: FUND_SEARCH_SELECT,
+        orderBy: [{ fundName: "asc" }, { legacyId: "asc" }],
+        take: resultEnd,
+      }),
+      prisma.fund.findMany({
+        where: {
+          ...fundContainsWhere,
+          NOT: { fundName: { startsWith: normalizedQuery, mode: "insensitive" } },
+        },
+        select: FUND_SEARCH_SELECT,
+        orderBy: [{ fundName: "asc" }, { legacyId: "asc" }],
+        take: resultEnd,
+      }),
+    ]) : Promise.resolve([[], [], []] as const),
+  ]);
+
+  const [dealExact, dealPrefix, dealContains] = dealRows;
+  const [companyExact, companyPrefix, companyContains] = companyRows;
+  const [fundExact, fundPrefix, fundContains] = fundRows;
   const deals = uniqueBy([...dealExact, ...dealPrefix, ...dealContains], (row) => row.legacyId);
   const companies = uniqueBy([...companyExact, ...companyPrefix, ...companyContains], (row) => row.id);
   const funds = uniqueBy([...fundExact, ...fundPrefix, ...fundContains], (row) => row.legacyId);
 
-  const rankedResults: Array<SearchResult & { score: number }> = [
-    ...deals.map((d): SearchResult & { score: number } => ({
+  // Preserve each tier query's database order when breaking equal-score ties.
+  // Candidate queries are intentionally bounded to `resultEnd`; re-sorting a
+  // truncated tier with a different JavaScript collation (for example natural
+  // numeric title ordering) can otherwise duplicate rows across pages and omit
+  // rows entirely. Type order provides a deterministic cross-entity merge,
+  // while sourceOrder exactly matches the order used to select each bounded
+  // per-type candidate set.
+  const rankedResults: Array<SearchResult & { score: number; sourceOrder: number }> = [
+    ...deals.map((d, sourceOrder): SearchResult & { score: number; sourceOrder: number } => ({
       type: "deal",
       id: d.legacyId,
       legacyId: d.legacyId,
@@ -253,8 +343,9 @@ export async function searchAllWithMeta(query: string, limit = 20): Promise<Sear
         `${d.title} ${d.description} ${d.participants.map((participant) => `${participant.displayName ?? ""} ${participant.organization.name}`).join(" ")}`,
         normalizedQuery,
       ),
+      sourceOrder,
     })),
-    ...companies.map((c): SearchResult & { score: number } => ({
+    ...companies.map((c, sourceOrder): SearchResult & { score: number; sourceOrder: number } => ({
       type: "company",
       id: c.id,
       title: c.name,
@@ -262,40 +353,44 @@ export async function searchAllWithMeta(query: string, limit = 20): Promise<Sear
       sector: COMPANY_SECTOR_DISPLAY[c.sector],
       region: COMPANY_REGION_DISPLAY[c.region],
       score: matchScore(c.name, `${c.subsector} ${c.description}`, normalizedQuery),
+      sourceOrder,
     })),
-    ...funds.map((f): SearchResult & { score: number } => ({
+    ...funds.map((f, sourceOrder): SearchResult & { score: number; sourceOrder: number } => ({
       type: "fund",
       id: f.legacyId,
       legacyId: f.legacyId,
       title: f.fundName,
       subtitle: f.manager.name,
       score: matchScore(f.fundName, `${f.manager.name} ${f.investmentStrategy}`, normalizedQuery),
+      sourceOrder,
     })),
   ];
 
   rankedResults.sort((a, b) => (
     a.score - b.score
-    || a.title.localeCompare(b.title, undefined, { sensitivity: "base", numeric: true })
-    || a.type.localeCompare(b.type)
-    || a.id.localeCompare(b.id)
+    || SEARCH_TYPE_ORDER[a.type] - SEARCH_TYPE_ORDER[b.type]
+    || a.sourceOrder - b.sourceOrder
   ));
 
-  const resultLimit = Number.isFinite(limit) ? Math.max(0, Math.floor(limit)) : 20;
-  const selectedResults = selectFairSearchResults(rankedResults, resultLimit);
-  const counts: SearchResults["counts"] = {
-    deal: dealTotal,
-    company: companyTotal,
-    fund: fundTotal,
-  };
+  const resultStart = (page - 1) * normalized.pageSize;
+  const selectedResults = rankedResults.slice(resultStart, resultEnd);
 
   return {
     results: selectedResults
-      .map(({ score: _score, ...result }) => result),
-    total: dealTotal + companyTotal + fundTotal,
+      .map(({ score: _score, sourceOrder: _sourceOrder, ...result }) => result),
+    total,
+    scopeTotal,
     counts,
+    scope: normalized.scope,
+    page,
+    pageSize: normalized.pageSize,
+    totalPages,
   };
 }
 
-export async function searchAll(query: string, limit = 20): Promise<SearchResult[]> {
-  return (await searchAllWithMeta(query, limit)).results;
+export async function searchAll(
+  query: string,
+  options: SearchOptions | number = {},
+): Promise<SearchResult[]> {
+  return (await searchAllWithMeta(query, options)).results;
 }

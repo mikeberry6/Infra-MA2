@@ -12,7 +12,9 @@ import {
 } from "lucide-react";
 import type { CSSProperties, ReactNode } from "react";
 import { SectionLabel } from "@/components/shared/SectionLabel";
+import { TrackedAnalyticsLink } from "@/components/shared/TrackedAnalyticsLink";
 import { formatScheduledDateTime } from "@/lib/format";
+import { isHttpUrl } from "@/lib/source-utils";
 import { directionForSeries } from "@/modules/dashboard/score";
 import {
   formatChange,
@@ -550,11 +552,20 @@ function SignalsTable({
                     <RiskBadge direction={item.direction}>{directionLabel(item.direction)}</RiskBadge>
                   </td>
                   <td className="px-3 py-2 align-top type-meta">
-                    {item.sourceUrl ? (
-                      <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-[var(--accent)]">
+                    {isHttpUrl(item.sourceUrl) ? (
+                      <TrackedAnalyticsLink
+                        href={item.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        analyticsEvent={{
+                          name: "source_link_clicked",
+                          properties: { entity: "dashboard", placement: "signal" },
+                        }}
+                        className="inline-flex items-center gap-1.5 hover:text-[var(--accent)]"
+                      >
                         {item.sourceName}
                         <ExternalLink className="h-3 w-3" />
-                      </a>
+                      </TrackedAnalyticsLink>
                     ) : item.sourceName}
                   </td>
                   <td className="px-3 py-2 text-right align-top mono type-micro tabular-nums">
@@ -600,10 +611,19 @@ function SourceHealthTable({ view }: { view: DashboardView }) {
               <tr key={source.sourceId} className="border-b border-[var(--border)] last:border-b-0">
                 <td className="px-3 py-2 align-top">
                   <div className="type-row-title">
-                    {typeof source.metadata?.url === "string" ? (
-                      <a href={source.metadata.url} target={source.metadata.url.startsWith("http") ? "_blank" : undefined} rel={source.metadata.url.startsWith("http") ? "noopener noreferrer" : undefined} className="hover:text-[var(--accent)]">
+                    {typeof source.metadata?.url === "string" && isHttpUrl(source.metadata.url) ? (
+                      <TrackedAnalyticsLink
+                        href={source.metadata.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        analyticsEvent={{
+                          name: "source_link_clicked",
+                          properties: { entity: "dashboard", placement: "source_health" },
+                        }}
+                        className="hover:text-[var(--accent)]"
+                      >
                         {source.sourceName}
-                      </a>
+                      </TrackedAnalyticsLink>
                     ) : source.sourceName}
                   </div>
                   <div className="type-micro mono">{source.sourceId}</div>
@@ -655,17 +675,22 @@ function sourceMetricCoverageNote(
 function MetricSourceLabel({ series }: { series: DashboardSeries }) {
   const url = series.metric.source.url;
   if (!url) return series.metric.label;
-  const external = url.startsWith("http");
+  const external = isHttpUrl(url);
+  if (!external) return series.metric.label;
   return (
-    <a
+    <TrackedAnalyticsLink
       href={url}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noopener noreferrer" : undefined}
+      target="_blank"
+      rel="noopener noreferrer"
+      analyticsEvent={{
+        name: "source_link_clicked",
+        properties: { entity: "dashboard", placement: "metric" },
+      }}
       className="hover:text-[var(--accent)]"
       title={`Open ${series.metric.source.name} source`}
     >
       {series.metric.label}
-    </a>
+    </TrackedAnalyticsLink>
   );
 }
 

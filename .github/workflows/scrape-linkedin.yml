@@ -1,7 +1,10 @@
 name: Collect LinkedIn Research Candidates
 
 on:
-  workflow_dispatch:
+  # repository_dispatch executes the workflow from the default branch and
+  # prevents branch-selected scraper code from receiving the Apify token.
+  repository_dispatch:
+    types: [collect-linkedin-candidates]
 
 permissions:
   contents: read
@@ -18,7 +21,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: refs/heads/main
+          fetch-depth: 1
           persist-credentials: false
+
+      - name: Verify exact default-branch scraper provenance
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_EVENT_NAME" != "repository_dispatch" ] || [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Research collection must execute from refs/heads/main."
+            exit 1
+          fi
+          if ! [[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]] || [ "$(git rev-parse HEAD)" != "$GITHUB_SHA" ] || [ "$(git rev-parse refs/heads/main)" != "$GITHUB_SHA" ]; then
+            echo "::error::Checked-out scraper code does not match the triggering main revision."
+            exit 1
+          fi
 
       - name: Setup Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0

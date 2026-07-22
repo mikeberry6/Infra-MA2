@@ -69,6 +69,7 @@ const detailRow = {
   managerId: "manager-1",
   ticker: null,
   investmentStrategy: "Core-plus infrastructure",
+  primarySourceUrl: "https://example.test/fund-primary",
   sourceUrls: ["https://example.test/fund"],
   structure: "CLOSED_END",
   regions: ["NORTH_AMERICA"],
@@ -141,6 +142,7 @@ describe("fund query projections", () => {
     expect(fund).toMatchObject({
       id: "FUND-1",
       investmentStrategy: "Core-plus infrastructure",
+      primarySourceUrl: "https://example.test/fund-primary",
       structure: "Closed-End",
       regions: ["North America"],
       portfolioCompanies: [{

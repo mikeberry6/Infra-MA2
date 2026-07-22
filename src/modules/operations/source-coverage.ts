@@ -1,4 +1,5 @@
 import type { Prisma } from "@/generated/prisma/client";
+import { isHttpUrl } from "@/lib/source-utils";
 
 export const PUBLISHED_DEAL_MISSING_PRIMARY_WHERE = {
   status: "PUBLISHED",
@@ -10,13 +11,12 @@ export const PUBLISHED_COMPANY_MISSING_PRIMARY_WHERE = {
   citations: { none: { isPrimary: true } },
 } satisfies Prisma.CompanyWhereInput;
 
-export const PUBLISHED_FUND_SOURCE_REVIEW_WHERE = {
+export const PUBLISHED_FUND_PRIMARY_SOURCE_REVIEW_WHERE = {
   status: "PUBLISHED",
 } satisfies Prisma.FundWhereInput;
 
-export function fundHasSource(fund: { sourceUrls: string[]; strategyUrl: string }): boolean {
-  return fund.sourceUrls.some((url) => url.trim().length > 0)
-    || fund.strategyUrl.trim().length > 0;
+export function fundHasPrimarySource(fund: { primarySourceUrl: string | null }): boolean {
+  return isHttpUrl(fund.primarySourceUrl);
 }
 
 export function coveragePercentage(covered: number, total: number): number {
@@ -25,10 +25,10 @@ export function coveragePercentage(covered: number, total: number): number {
 
 export function sourceCoverageIsComplete(input: {
   dealsMissingPrimary: number;
-  fundsMissingSource: number;
+  fundsMissingPrimary: number;
   companiesMissingPrimary: number;
 }): boolean {
   return input.dealsMissingPrimary === 0
-    && input.fundsMissingSource === 0
+    && input.fundsMissingPrimary === 0
     && input.companiesMissingPrimary === 0;
 }

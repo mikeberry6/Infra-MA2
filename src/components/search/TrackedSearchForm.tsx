@@ -2,15 +2,32 @@
 
 import { Search } from "lucide-react";
 import { track } from "@vercel/analytics";
+import type { FormEvent } from "react";
 import { TextInput } from "@/components/shared/TextInput";
+import type { SearchScope } from "@/modules/search/queries";
 
-export function TrackedSearchForm({ query }: { query: string }) {
+export function TrackedSearchForm({
+  query,
+  scope = "all",
+}: {
+  query: string;
+  scope?: SearchScope;
+}) {
+  function trackSearch(event: FormEvent<HTMLFormElement>) {
+    const submitted = new FormData(event.currentTarget).get("q");
+    track("search_submitted", {
+      surface: "global_search",
+      has_query: typeof submitted === "string" && submitted.trim().length > 0,
+    });
+  }
+
   return (
     <form
       method="get"
       className="mb-6"
-      onSubmit={() => track("search_submitted", { surface: "global_search", has_query: true })}
+      onSubmit={trackSearch}
     >
+      {scope !== "all" && <input type="hidden" name="scope" value={scope} />}
       <TextInput
         type="search"
         name="q"

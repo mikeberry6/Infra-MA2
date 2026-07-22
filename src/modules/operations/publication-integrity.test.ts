@@ -25,6 +25,7 @@ describe("publication completeness", () => {
       strategies: ["CORE_PLUS"],
       fundStatus: "FINANCIAL_CLOSE",
       size: "USD 2.0bn",
+      primarySourceUrl: "https://example.com/fund-primary",
       sourceUrls: ["https://example.com/fund"],
       strategyUrl: "",
     })).toEqual([]);
@@ -61,16 +62,37 @@ describe("publication completeness", () => {
     ]);
   });
 
-  it("treats whitespace-only fund sources as missing", () => {
+  it("requires an explicit primary fund source and never promotes supporting links", () => {
     expect(missingFundPublicationFields({
       managerId: "manager-1",
       fundName: "Fund",
       strategies: ["CORE"],
       fundStatus: "RAISING",
       size: "TBD",
-      sourceUrls: ["   "],
-      strategyUrl: " ",
-    })).toEqual(["primary source"]);
+      primarySourceUrl: null,
+      sourceUrls: ["https://example.com/supporting"],
+      strategyUrl: "https://example.com/strategy",
+    })).toEqual(["valid HTTP(S) primary source"]);
+    expect(missingFundPublicationFields({
+      managerId: "manager-1",
+      fundName: "Fund",
+      strategies: ["CORE"],
+      fundStatus: "RAISING",
+      size: "TBD",
+      primarySourceUrl: "javascript:alert(1)",
+      sourceUrls: [],
+      strategyUrl: "",
+    })).toEqual(["valid HTTP(S) primary source"]);
+    expect(missingFundPublicationFields({
+      managerId: "manager-1",
+      fundName: "Fund",
+      strategies: ["CORE"],
+      fundStatus: "RAISING",
+      size: "TBD",
+      primarySourceUrl: "https://example.com/primary",
+      sourceUrls: ["data:text/html,unsafe"],
+      strategyUrl: "",
+    })).toEqual(["valid HTTP(S) supporting sources"]);
   });
 
   it.each(["DRAFT", "IN_REVIEW", "ARCHIVED"])(

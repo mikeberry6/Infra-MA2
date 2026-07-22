@@ -1,3 +1,4 @@
+import { isHttpUrl } from "@/lib/source-utils";
 import {
   hasReviewedSellerTreatment,
   type SellerDisclosureState,
@@ -21,6 +22,7 @@ export type FundPublicationRecord = {
   strategies: readonly string[];
   fundStatus: string | null | undefined;
   size: string;
+  primarySourceUrl: string | null | undefined;
   sourceUrls: readonly string[];
   strategyUrl: string;
 };
@@ -30,6 +32,7 @@ export type CompanyPublicationRecord = {
   country: string;
   sector: string | null | undefined;
   description: string;
+  website?: string | null;
   ownershipPeriods: ReadonlyArray<{
     id?: string;
     fundId?: string | null;
@@ -56,15 +59,17 @@ export function missingDealPublicationFields(deal: DealPublicationRecord): strin
 }
 
 export function missingFundPublicationFields(fund: FundPublicationRecord): string[] {
+  const supportingUrls = [...fund.sourceUrls, fund.strategyUrl]
+    .map((url) => url.trim())
+    .filter(Boolean);
   return [
     !fund.managerId && "manager",
     !fund.fundName.trim() && "fund vehicle",
     fund.strategies.length === 0 && "strategy",
     !fund.fundStatus && "status",
     !fund.size.trim() && "size basis or TBD",
-    !fund.sourceUrls.some((url) => url.trim().length > 0)
-      && !fund.strategyUrl.trim()
-      && "primary source",
+    !isHttpUrl(fund.primarySourceUrl) && "valid HTTP(S) primary source",
+    supportingUrls.some((url) => !isHttpUrl(url)) && "valid HTTP(S) supporting sources",
   ].filter((field): field is string => Boolean(field));
 }
 
@@ -77,6 +82,7 @@ export function missingCompanyPublicationFields(company: CompanyPublicationRecor
     !company.country.trim() && "location",
     !company.sector && "sector",
     !company.description.trim() && "description",
+    Boolean(company.website?.trim()) && !isHttpUrl(company.website) && "valid HTTP(S) website",
     !hasPublicOwnership && "ownership period backed by a published fund or free-text owner",
     company.citations.length === 0 && "primary citation",
   ].filter((field): field is string => Boolean(field));

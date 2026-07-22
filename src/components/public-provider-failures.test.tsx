@@ -33,6 +33,15 @@ describe("public external-provider failure states", () => {
         lastSuccessfulAt: "2026-07-21T23:00:00.000Z",
         nextExpectedAt: "2026-07-22T23:00:00.000Z",
         sourceCoverage: { attempted: 50, succeeded: 42, failed: 8 },
+        scanWindow: {
+          selectionDateUtc: "2026-07-22",
+          fullUniverseCount: 1_434,
+          eligibleCount: 1_434,
+          selectedCount: 200,
+          offset: 1_200,
+          windowIndex: 6,
+          windowsPerCycle: 8,
+        },
         message: "The latest scan failed; the last successful results remain visible.",
       },
     };
@@ -43,6 +52,7 @@ describe("public external-provider failure states", () => {
     expect(pipelineStatus).toHaveTextContent("Latest scan failed");
     expect(pipelineStatus).toHaveTextContent("Jul 21, 2026");
     expect(pipelineStatus).toHaveTextContent("42/50 attempts");
+    expect(pipelineStatus).toHaveTextContent("200/1,434 entities · window 7/8 · Jul 22, 2026");
     expect(screen.getByRole("heading", { name: "The latest scan failed" })).toBeVisible();
     expect(screen.queryByRole("heading", { name: "Scan completed with no qualifying signals" })).not.toBeInTheDocument();
   });

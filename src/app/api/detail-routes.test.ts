@@ -85,8 +85,9 @@ describe("published detail API envelopes", () => {
       status: "PUBLISHED",
       updatedAt: new Date("2026-07-21T12:00:00.000Z"),
       lastVerifiedAt: null,
-      sourceUrls: ["https://example.test/a", "https://example.test/a", "https://example.test/b"],
-      strategyUrl: "https://example.test/b",
+      primarySourceUrl: "  https://example.test/a  ",
+      sourceUrls: ["https://example.test/a", " https://example.test/a ", "https://example.test/b"],
+      strategyUrl: " https://example.test/b ",
     });
 
     const published = await getFundDetail(
@@ -100,6 +101,7 @@ describe("published detail API envelopes", () => {
       status: "DRAFT",
       updatedAt: new Date(),
       lastVerifiedAt: null,
+      primarySourceUrl: null,
       sourceUrls: [],
       strategyUrl: "",
     });

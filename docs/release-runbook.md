@@ -30,7 +30,7 @@ Merging `main` may create a Vercel production build, but automatic production-do
 1. Open a pull request containing one coherent phase. Do not combine framework upgrades, schema changes, and major UI work.
 2. Review every migration as additive. `DROP`, data mutation, destructive type conversion, table replacement, and column alteration are outside the normal staging workflow.
 3. Wait for the complete pull-request **Release Gate**, including exact committed-blob migration auditing, isolated database migration, source/canonical-data reports, authenticated Playwright, axe, responsive, and visual checks.
-4. When source, canonical-company, ownership-link, or seller-treatment coverage blocks validation, download the reviewer-neutral company-merge, ownership-link, deal seller-disclosure, and primary-citation approval templates. A failing gate is expected until Research supplies evidence-backed decisions; do not weaken the gate.
+4. When source, canonical-company, ownership-link, or seller-treatment coverage blocks validation, download the reviewer-neutral company-merge, ownership-link, Fund primary-source, deal seller-disclosure, and primary-citation approval templates. A failing gate is expected until Research supplies evidence-backed decisions; do not weaken the gate.
 5. Review the migration manifest, source-coverage report, duplicate-company and ownership-link reports, weekly-email verification, production dependency audit, and Playwright artifacts.
 6. Exercise anonymous browse/search/filter/sort/pagination/deep-link flows and authenticated admin/import-preview/export authorization flows on the Vercel Preview. For each administrative list, verify the fixed 25-row `?page=N` navigation, malformed/out-of-range normalization, and browser back/forward behavior. Do not commit an import solely for smoke testing.
 
@@ -66,20 +66,20 @@ The Preview proves the pull request against non-production configuration. It is 
 
 If `main` advances, stop. The old SHA is no longer eligible: rerun the `main` gate, regenerate/review the manifest, and use the new staged production deployment. If schema was already staged and the migration tree is unchanged, use the successfully staged commit as `migration_base_sha`; the staging workflow independently proves both that baseline and the still-live application are ancestors of the new release, verifies the ledger, and performs a no-op migration deploy.
 
-## Reviewed citation, ownership-link, seller-disclosure, and duplicate remediation
+## Reviewed citation, Fund source, ownership-link, seller-disclosure, and duplicate remediation
 
-Publication gates intentionally remain closed while published records lack an explicit primary citation or reviewed seller treatment, a public duplicate cluster remains, or an ownership period has a broken, stale, or missing exact fund link.
+Publication gates intentionally remain closed while published deals or companies lack an explicit primary citation, a published Fund lacks an explicitly reviewed HTTP(S) `primarySourceUrl`, a published deal lacks reviewed seller treatment, a public duplicate cluster remains, or an ownership period has a broken, stale, or missing exact fund link.
 
 The isolated validation gate uses deliberate staged review when these backlogs coexist:
 
-1. A blocked validation run emits neutral company, ownership-link, seller-disclosure, and citation templates before the strict gates fail.
+1. A blocked validation run emits neutral company, ownership-link, Fund primary-source, seller-disclosure, and citation templates before the strict gates fail.
 2. Research reviews the all-status company template first, chooses each canonical survivor, confirms ownership/citation relationships, and requires a `CompanyRedirect` for every retired public ID. Commit the exact result as `audits/approvals/company-merges.json` through review.
-3. On the next validation run, CI computes that committed file's SHA-256 and applies it only to the isolated validation branch. The apply is snapshot-bound and idempotent. CI then generates post-merge ownership-link and citation templates, plus the independent current seller-disclosure template, when their committed approvals are absent.
-4. Discard any ownership-link or citation template generated before company merges that changed a candidate entity. Research verifies each link correction and primary citation explicitly. An ownership approval may only unlink a stale fund ID or link the vehicle to an exact normalized fund-name match; it cannot rewrite ownership metadata. Citation candidate ordering is not a recommendation and must never become an automatic first-citation rule.
+3. On the next validation run, CI computes that committed file's SHA-256 and applies it only to the isolated validation branch. The apply is snapshot-bound and idempotent. CI then generates post-merge ownership-link and citation templates, plus the independent current Fund primary-source and seller-disclosure templates, when their committed approvals are absent.
+4. Discard any ownership-link or citation template generated before company merges that changed a candidate entity. Research verifies each link correction and primary citation explicitly. An ownership approval may only unlink a stale fund ID or link the vehicle to an exact normalized fund-name match; it cannot rewrite ownership metadata. Citation candidate ordering is not a recommendation and must never become an automatic first-citation rule. For each Fund item, Research must choose an exact HTTP(S) URL already listed in the neutral candidates drawn from `sourceUrls` and `strategyUrl`; lexical URL order is not a recommendation. Correct missing or invalid supporting evidence through the editorial workflow and regenerate instead of inventing or auto-selecting a URL in the approval.
 5. Review every seller-free deal independently. If its evidence identifies a seller, add the seller through the editorial interface and regenerate the report. Otherwise choose only `NOT_DISCLOSED` or `NOT_APPLICABLE`, provide an evidence-based reason of at least 10 characters, and commit the exact result as `audits/approvals/deal-seller-disclosures.json`. The generated file never chooses a status or reason.
-6. Commit reviewed decisions as `audits/approvals/ownership-fund-links.json`, `audits/approvals/deal-seller-disclosures.json`, and `audits/approvals/primary-citations.json`. The next validation run applies company merges, ownership links, seller treatments, and citations in that order, then requires complete sources, reviewed seller treatment, valid ownership linkage, and a clean published duplicate scope.
+6. Commit reviewed decisions as `audits/approvals/ownership-fund-links.json`, `audits/approvals/fund-primary-sources.json`, `audits/approvals/deal-seller-disclosures.json`, and `audits/approvals/primary-citations.json`. The next validation run applies company merges, ownership links, Fund primary sources, seller treatments, and citations in that order, then requires complete sources, reviewed seller treatment, valid ownership linkage, and a clean published duplicate scope.
 
-If no company merges are approved, Research may proceed directly with the current ownership-link, seller-disclosure, and citation templates. Never edit an approval artifact after review; a changed decision requires a regenerated template and new reviewed commit.
+If no company merges are approved, Research may proceed directly with the current ownership-link, Fund primary-source, seller-disclosure, and citation templates. Never edit an approval artifact after review; a changed decision requires a regenerated template and new reviewed commit.
 
 For production, run **Review or Remediate Release Data** one operation at a time against the exact protected-main release. Supply the committed path and exact reviewed hash, retain the evidence, and rerun read-only reports after each operation. Before any production apply, create or confirm a current Neon restore branch. The operation must prove both the approved host and database name and reject stale snapshots or a mismatched approval hash.
 
@@ -98,9 +98,35 @@ If adding an approval file advances `main`, that commit becomes a new release SH
    - the reviewed `migration_manifest_sha256`;
    - confirmation `STAGE`.
 
-5. Approve the protected `production` environment. The workflow reads the canonical origin from protected `PRODUCTION_URL`, requires its live deployment's protected scope, project, GitHub source SHA, and repository ID to match, independently requires both the reviewed migration baseline and production application to be ancestors of the release, and rechecks exact protected-main provenance plus the live app and migration ledger immediately before writing. It also requires `DASHBOARD_WRITES_ENABLED=false`, proves the production host and database name, applies only the release's additive migration history, verifies the resulting migration checksums exactly match the release, checks status/drift, and records citation, duplicate, ownership-link, seller-disclosure, and dashboard-cutover backlogs without auto-remediating them.
-6. Review and commit any dashboard methodology or legacy-signal manifest. The approval commit is a new release SHA: rerun the exact-SHA gate and preparation, use the staged schema commit as the migration baseline when the migration tree is unchanged, and run the no-op schema-stage verification for that SHA. Then dispatch its explicit apply operation through **Review or Remediate Release Data** while `DASHBOARD_WRITES_ENABLED` is still exactly `false`. Supply the exact file SHA-256, matching reviewer identity, and mutation reason. Use the corresponding rollback operation only with that same committed manifest, the flag still false, and every post-apply row still matching. Complete any approved citation/company/ownership-link/seller-disclosure remediation and rerun reports until all gates are clean.
-7. Keep the write flag false and manually dispatch the `source-audit` pipeline. Review the all-source read-only dry-run artifact. Only after it passes may Operations set `DASHBOARD_WRITES_ENABLED=true`; immediately dispatch dashboard synchronization and news scanning from the exact release SHA, wait for both to succeed, and review provider/source threshold artifacts. If the dry run or live synchronization fails, restore the flag to false and stop.
+5. Approve the protected `production` environment. The workflow reads the canonical origin from protected `PRODUCTION_URL`, requires its live deployment's protected scope, project, GitHub source SHA, and repository ID to match, independently requires both the reviewed migration baseline and production application to be ancestors of the release, and rechecks exact protected-main provenance plus the live app and migration ledger immediately before writing. It also requires `DASHBOARD_WRITES_ENABLED=false`, proves the production host and database name, applies only the release's additive migration history, verifies the resulting migration checksums exactly match the release, checks status/drift, and records citation, Fund primary-source, duplicate, ownership-link, seller-disclosure, and dashboard-cutover backlogs without auto-remediating them.
+6. Review and commit any dashboard methodology or legacy-signal manifest. The approval commit is a new release SHA: rerun the exact-SHA gate and preparation, use the staged schema commit as the migration baseline when the migration tree is unchanged, and run the no-op schema-stage verification for that SHA. Then dispatch its explicit apply operation through **Review or Remediate Release Data** while `DASHBOARD_WRITES_ENABLED` is still exactly `false`. Supply the exact file SHA-256, matching reviewer identity, and mutation reason. Use the corresponding rollback operation only with that same committed dashboard manifest, the flag still false, and every post-apply row still matching. Complete any approved citation/company/ownership-link/Fund-primary-source/seller-disclosure remediation and rerun reports until all gates are clean. Fund primary-source designation follows the same forward-only reviewed correction model as citations and ownership links; clearing a designation would reopen the strict publication gate and is not an automated rollback operation.
+7. Keep the write flag false and confirm that the protected `main` head still equals the frozen release SHA. On-demand production pipelines use `repository_dispatch`, which executes only the protected default-branch workflow; callers choose an allowlisted pipeline, not a branch or SHA. Dispatch the read-only source audit with:
+
+   ```bash
+   frozen_release_sha='<40-character-frozen-release-sha>'
+   test "$(gh api repos/mikeberry6/Infra-MA2/git/ref/heads/main --jq '.object.sha')" = "$frozen_release_sha" || {
+     echo "protected main no longer equals the frozen release SHA" >&2
+     exit 1
+   }
+
+   gh api --method POST repos/mikeberry6/Infra-MA2/dispatches \
+     --field event_type=run-data-pipeline \
+     --field 'client_payload[pipeline]=source-audit'
+   ```
+
+   Review the all-source dry-run artifact. Only after it passes may Operations set `DASHBOARD_WRITES_ENABLED=true`. Reconfirm that protected `main` still equals the frozen release SHA, then dispatch dashboard synchronization and news scanning:
+
+   ```bash
+   gh api --method POST repos/mikeberry6/Infra-MA2/dispatches \
+     --field event_type=run-data-pipeline \
+     --field 'client_payload[pipeline]=dashboard'
+
+   gh api --method POST repos/mikeberry6/Infra-MA2/dispatches \
+     --field event_type=run-data-pipeline \
+     --field 'client_payload[pipeline]=news'
+   ```
+
+   The workflow rejects any event other than the schedule or approved repository dispatch, authenticates `refs/heads/main` and its triggering SHA before any credential-bearing step, and rechecks that every job uses that same revision. Wait for both live runs to succeed and review their provider/source threshold artifacts. If `main` advances, refreeze and repeat release preparation; if the dry run or live synchronization fails, restore the write flag to false and stop.
 8. Run **Promote Production Release** with the exact release SHA, its immutable staged production deployment URL (never an alias), and confirmation `PROMOTE`; approve the protected environment. Promotion requires the dashboard write flag to be true after the reviewed dry run and successful live synchronization.
 
 The promotion workflow requires all of the following before changing domains:

@@ -17,6 +17,7 @@ const FUND_COLUMNS = [
   "sectors",
   "regions",
   "investmentStrategy",
+  "primarySourceUrl",
   "sourceUrls",
   "ticker",
   "strategyUrl",

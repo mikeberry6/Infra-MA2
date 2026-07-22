@@ -1,6 +1,22 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 import { appPath, expectNoHorizontalOverflow, waitForApplication } from "./helpers";
-import { DRAWER_SHELL_BUDGET_MS, drawerShellMeasure } from "../../src/lib/drawer-performance";
+import {
+  DRAWER_SHELL_BUDGET_MS,
+  drawerShellMeasure,
+  type DrawerKind,
+} from "../../src/lib/drawer-performance";
+
+const RESPONSIVE_WIDTHS = [320, 390, 768, 1280, 1440] as const;
+
+async function expectDrawerShellWithinBudget(page: Page, kind: DrawerKind) {
+  const shellDuration = await page.evaluate((measureName) => {
+    const entries = performance.getEntriesByName(measureName, "measure");
+    return entries.at(-1)?.duration ?? null;
+  }, drawerShellMeasure(kind));
+
+  expect(shellDuration).not.toBeNull();
+  expect(shellDuration ?? Number.POSITIVE_INFINITY).toBeLessThan(DRAWER_SHELL_BUDGET_MS);
+}
 
 test.describe("anonymous database journeys", () => {
   test("root permanently resolves to the canonical deal database", async ({ page }) => {
@@ -79,12 +95,7 @@ test.describe("anonymous database journeys", () => {
     const dialog = page.getByRole("dialog");
     await expect(dialog).toBeVisible();
     await expect(dialog.getByRole("status")).toContainText("Loading the latest verified detail");
-    const shellDuration = await page.evaluate((measureName) => {
-      const entries = performance.getEntriesByName(measureName, "measure");
-      return entries.at(-1)?.duration ?? null;
-    }, drawerShellMeasure("deal"));
-    expect(shellDuration).not.toBeNull();
-    expect(shellDuration ?? Number.POSITIVE_INFINITY).toBeLessThan(DRAWER_SHELL_BUDGET_MS);
+    await expectDrawerShellWithinBudget(page, "deal");
     await expect(page).toHaveURL(/focus=/);
     await expect(page.locator("body")).toHaveCSS("overflow", "hidden");
 
@@ -95,33 +106,99 @@ test.describe("anonymous database journeys", () => {
   });
 
   for (const database of [
-    { path: "/funds", heading: "Infrastructure Fund Database" },
-    { path: "/portfolio", heading: "Infrastructure Portfolio Company Database" },
+    {
+      path: "/funds",
+      heading: "Infrastructure Fund Database",
+      apiPattern: "**/api/funds/*",
+      kind: "fund",
+    },
+    {
+      path: "/portfolio",
+      heading: "Infrastructure Portfolio Company Database",
+      apiPattern: "**/api/portfolio/*",
+      kind: "company",
+    },
   ] as const) {
-    test(`${database.path} drawer restores focus to its triggering result`, async ({ page }) => {
+    test(`${database.path} drawer renders its shell within budget, restores focus, and reopens from cache`, async ({ page }) => {
+      let detailRequests = 0;
+      await page.route(database.apiPattern, async (route) => {
+        detailRequests += 1;
+        await new Promise((resolve) => setTimeout(resolve, 250));
+        await route.continue();
+      });
       await page.goto(appPath(database.path));
       await waitForApplication(page, database.heading);
 
       const row = page.locator("tbody tr[role=button]").first();
       await row.focus();
       await row.press("Enter");
-      const dialog = page.getByRole("dialog");
+      let dialog = page.getByRole("dialog");
       await expect(dialog).toBeVisible();
+      await expect(dialog.getByRole("status")).toContainText("Loading the latest verified detail");
+      await expectDrawerShellWithinBudget(page, database.kind);
       await expect(page.locator("body")).toHaveCSS("overflow", "hidden");
+      await expect(dialog.getByRole("status")).toBeHidden();
+      await expect(dialog.getByText(/^Last verified /)).toBeVisible();
+
       await dialog.press("Escape");
       await expect(dialog).toBeHidden();
       await expect(row).toBeFocused();
       await expect(page).not.toHaveURL(/focus=/);
+
+      await row.press("Enter");
+      dialog = page.getByRole("dialog");
+      await expect(dialog).toBeVisible();
+      await expectDrawerShellWithinBudget(page, database.kind);
+      expect(await dialog.getByRole("status").count()).toBe(0);
+      await expect(dialog.getByText(/^Last verified /)).toBeVisible();
+      await expect.poll(() => detailRequests).toBe(2);
+
+      await dialog.press("Escape");
+      await expect(dialog).toBeHidden();
+      await expect(row).toBeFocused();
     });
   }
 
-  test("cross-database search is ranked, grouped, and deep-linked", async ({ page }) => {
+  test("cross-database search exposes a global ranking, entity scopes, and deep links", async ({ page }) => {
     await page.goto(`${appPath("/search")}?q=Brookfield`);
     await waitForApplication(page, "Search InfraSight");
+    await expect(page.getByRole("heading", { name: "All results" })).toBeVisible();
+    await expect(page.getByRole("link", { name: /^All\s/ })).toHaveAttribute("aria-current", "page");
+    await expect(page.getByRole("heading", { level: 3 }).first()).toBeVisible();
+    await expect(page.getByText(/Relevance #\d+/).first()).toBeVisible();
+    const firstResult = page.locator('a[href*="focus="]').first();
+    await expect(firstResult).toBeVisible();
+    const href = await firstResult.getAttribute("href");
+    let drawerKind: DrawerKind;
+    if (href?.includes("/tracker?")) drawerKind = "deal";
+    else if (href?.includes("/funds?")) drawerKind = "fund";
+    else if (href?.includes("/portfolio?")) drawerKind = "company";
+    else throw new Error(`Unexpected search result destination: ${href ?? "missing href"}`);
+
+    await firstResult.click();
+    await expect(page).toHaveURL(/focus=/);
+    await expect(page.getByRole("dialog")).toBeVisible();
+    await expectDrawerShellWithinBudget(page, drawerKind);
+
+    await page.goBack();
+    await waitForApplication(page, "Search InfraSight");
+    await expect(page).toHaveURL(/\/search\?q=Brookfield/);
+
+    await page.getByRole("link", { name: /^Deals\s/ }).click();
+    await expect(page).toHaveURL(/q=Brookfield&scope=deal/);
     await expect(page.getByRole("heading", { name: "Deals" })).toBeVisible();
+    await expect(page.getByRole("link", { name: /^Deals\s/ })).toHaveAttribute("aria-current", "page");
+  });
+
+  test("cross-database search pagination is URL-addressable beyond the first result page", async ({ page }) => {
+    await page.goto(`${appPath("/search")}?q=in&scope=company`);
+    await waitForApplication(page, "Search InfraSight");
     await expect(page.getByRole("heading", { name: "Companies" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Funds" })).toBeVisible();
-    await expect(page.locator('a[href*="focus="]').first()).toBeVisible();
+
+    await page.getByRole("link", { name: "Next" }).click();
+    await expect(page).toHaveURL(/q=in&scope=company&page=2/);
+    await expect(page.getByText(/Page 2 of \d+/)).toBeVisible();
+    await expect(page.getByRole("link", { name: "Previous" })).toBeVisible();
   });
 
   for (const database of [
@@ -167,19 +244,21 @@ test.describe("anonymous database journeys", () => {
     await expect(trigger).toContainText("1");
     await dialog.press("Escape");
     await expect(trigger).toBeFocused();
-    for (const width of [320, 390, 768, 1280, 1440]) {
-      await page.setViewportSize({ width, height: 900 });
-      await expectNoHorizontalOverflow(page);
-    }
+    await expectNoHorizontalOverflow(page);
   });
 
   for (const [path, heading] of [
     ["/tracker", "Infrastructure Deal Tape"],
     ["/funds", "Infrastructure Fund Database"],
     ["/portfolio", "Infrastructure Portfolio Company Database"],
+    ["/dashboard", "M&A Conditions Dashboard"],
+    ["/news", "Daily Intelligence Feed"],
+    ["/search", "Search InfraSight"],
+    ["/earnings", "Earnings Tracker"],
+    ["/login", "Sign in"],
   ] as const) {
     test(`${path} has no horizontal overflow from mobile to desktop`, async ({ page }) => {
-      for (const width of [320, 390, 768, 1280, 1440]) {
+      for (const width of RESPONSIVE_WIDTHS) {
         await page.setViewportSize({ width, height: 900 });
         await page.goto(appPath(path));
         await waitForApplication(page, heading);
@@ -187,4 +266,16 @@ test.describe("anonymous database journeys", () => {
       }
     });
   }
+
+  test("anonymous admin redirects remain overflow-free from mobile to desktop", async ({ page }) => {
+    for (const width of RESPONSIVE_WIDTHS) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto(appPath("/admin"));
+      await expect(page).toHaveURL(/\/login\?callbackUrl=/);
+      await waitForApplication(page, "Sign in");
+      expect(decodeURIComponent(new URL(page.url()).searchParams.get("callbackUrl") || ""))
+        .toBe(appPath("/admin"));
+      await expectNoHorizontalOverflow(page);
+    }
+  });
 });

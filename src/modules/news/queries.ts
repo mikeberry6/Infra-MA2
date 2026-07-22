@@ -2,7 +2,11 @@ import { unstable_cache } from "next/cache";
 import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
 import { prisma } from "@/lib/prisma";
 import { nextNewsScanAt } from "@/modules/operations/pipeline-schedules";
-import { parseNewsSourceCoverage } from "@/modules/news/source-coverage";
+import {
+  effectiveNewsPipelineRunStatus,
+  parseNewsSourceCoverage,
+} from "@/modules/news/source-coverage";
+import { parsePublicNewsScanWindow } from "@/modules/news/scan-window";
 import type {
   NewsCategory,
   NewsConfidence,
@@ -75,19 +79,26 @@ async function getLatestNewsAttempt() {
   });
 }
 
-async function getLatestSuccessfulNewsRun() {
-  return prisma.pipelineRun.findFirst({
+async function getRecentStoredSuccessfulNewsRuns() {
+  return prisma.pipelineRun.findMany({
     where: { pipeline: "NEWS_SCAN", status: "SUCCEEDED" },
     orderBy: { endedAt: "desc" },
+    take: 100,
   });
 }
 
 async function getNewsFeedRaw(): Promise<NewsFeedView> {
-  const [rows, latestAttempt, latestSuccess] = await Promise.all([
+  const [rows, latestAttempt, storedSuccessfulRuns] = await Promise.all([
     getNewsRows(),
     getLatestNewsAttempt(),
-    getLatestSuccessfulNewsRun(),
+    getRecentStoredSuccessfulNewsRuns(),
   ]);
+  const latestSuccess = storedSuccessfulRuns.find(
+    (run) => effectiveNewsPipelineRunStatus(run) === "SUCCEEDED",
+  );
+  const latestAttemptStatus = latestAttempt
+    ? effectiveNewsPipelineRunStatus(latestAttempt)
+    : null;
   const now = new Date();
   const lastSuccessfulAt = latestSuccess?.endedAt ?? latestSuccess?.startedAt;
   const nextExpected = nextNewsScanAt(now);
@@ -100,11 +111,13 @@ async function getNewsFeedRaw(): Promise<NewsFeedView> {
     : null;
   const sourceCoverage = parseNewsSourceCoverage(attemptMetadata?.sourceCoverage)
     ?? parseNewsSourceCoverage(successMetadata?.sourceCoverage);
+  const scanWindow = parsePublicNewsScanWindow(attemptMetadata?.selection)
+    ?? parsePublicNewsScanWindow(successMetadata?.selection);
   const state = !latestAttempt
     ? "never-run"
-    : latestAttempt.status === "FAILED"
+    : latestAttemptStatus === "FAILED"
       ? "failed"
-      : latestAttempt.status === "RUNNING"
+      : latestAttemptStatus === "RUNNING"
         ? "pending"
       : overdue
         ? "overdue"
@@ -119,8 +132,9 @@ async function getNewsFeedRaw(): Promise<NewsFeedView> {
       lastSuccessfulAt: lastSuccessfulAt?.toISOString(),
       nextExpectedAt: nextExpected.toISOString(),
       sourceCoverage,
+      scanWindow,
       message: state === "healthy"
-        ? "The daily public-source scan completed successfully."
+        ? "The current rotating public-source window completed successfully."
         : state === "failed"
           ? "The latest scan failed; the last successful results remain visible."
           : state === "pending"

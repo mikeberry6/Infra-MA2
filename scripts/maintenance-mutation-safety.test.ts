@@ -43,6 +43,7 @@ describe("legacy maintenance mutation safety", () => {
 describe("reviewed remediation mutation safety", () => {
   for (const fileName of [
     "apply-primary-citation-remediation.ts",
+    "apply-fund-primary-source-remediation.ts",
     "apply-ownership-fund-link-remediation.ts",
     "apply-deal-seller-disclosure-remediation.ts",
     "merge-duplicate-companies.ts",
@@ -61,6 +62,8 @@ describe("reviewed remediation mutation safety", () => {
     it(`${fileName} persists the complete execution context in audit metadata`, () => {
       const metadataFile = fileName === "apply-primary-citation-remediation.ts"
         ? path.join(process.cwd(), "src/modules/operations/primary-citation-remediation.ts")
+        : fileName === "apply-fund-primary-source-remediation.ts"
+          ? path.join(process.cwd(), "src/modules/operations/fund-primary-source-remediation.ts")
         : fileName === "apply-ownership-fund-link-remediation.ts"
           ? path.join(process.cwd(), "src/modules/operations/ownership-fund-link-remediation.ts")
         : fileName === "apply-deal-seller-disclosure-remediation.ts"
@@ -77,6 +80,14 @@ describe("reviewed remediation mutation safety", () => {
   it.each([
     [
       "apply-primary-citation-remediation.ts",
+      [
+        "--apply",
+        "--approval-file=does-not-exist.json",
+        `--expected-sha256=${"a".repeat(64)}`,
+      ],
+    ],
+    [
+      "apply-fund-primary-source-remediation.ts",
       [
         "--apply",
         "--approval-file=does-not-exist.json",

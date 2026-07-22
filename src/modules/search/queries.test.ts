@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { matchScore, normalizeSearchQuery, selectFairSearchResults } from "./queries";
+import {
+  groupSearchPageResults,
+  matchScore,
+  normalizeSearchPage,
+  normalizeSearchQuery,
+  normalizeSearchScope,
+} from "./queries";
 
 describe("search result scoring", () => {
   it("ranks exact name, prefix, then name/body matches", () => {
@@ -23,20 +29,42 @@ describe("normalizeSearchQuery", () => {
   });
 });
 
-describe("selectFairSearchResults", () => {
-  it("keeps every available entity type in a bounded grouped result set", () => {
-    const deals = Array.from({ length: 25 }, (_, index) => ({
-      type: "deal" as const,
-      id: `deal-${index}`,
-      title: `Deal ${index}`,
-      subtitle: "Deal",
-    }));
-    const company = { type: "company" as const, id: "company-1", title: "Company", subtitle: "Company" };
-    const fund = { type: "fund" as const, id: "fund-1", title: "Fund", subtitle: "Fund" };
+describe("search URL state", () => {
+  it("normalizes supported entity scopes and defaults invalid input to All", () => {
+    expect(normalizeSearchScope("deal")).toBe("deal");
+    expect(normalizeSearchScope(["company", "fund"])).toBe("company");
+    expect(normalizeSearchScope("unknown")).toBe("all");
+    expect(normalizeSearchScope(undefined)).toBe("all");
+  });
 
-    const selected = selectFairSearchResults([...deals, company, fund], 20);
+  it("accepts only a positive integer page", () => {
+    expect(normalizeSearchPage("3")).toBe(3);
+    expect(normalizeSearchPage(["2", "4"])).toBe(2);
+    expect(normalizeSearchPage("0")).toBe(1);
+    expect(normalizeSearchPage("2.5")).toBe(1);
+    expect(normalizeSearchPage("invalid")).toBe(1);
+  });
+});
 
-    expect(selected).toHaveLength(20);
-    expect(new Set(selected.map((result) => result.type))).toEqual(new Set(["deal", "company", "fund"]));
+describe("total-result grouping", () => {
+  it("groups a globally selected page by entity while retaining global relevance ranks", () => {
+    const results = [
+      { type: "fund" as const, id: "fund-1", title: "Exact Fund", subtitle: "Fund" },
+      { type: "deal" as const, id: "deal-1", title: "Prefix Deal", subtitle: "Deal" },
+      { type: "fund" as const, id: "fund-2", title: "Body Fund", subtitle: "Fund" },
+      { type: "company" as const, id: "company-1", title: "Body Company", subtitle: "Company" },
+    ];
+
+    expect(groupSearchPageResults(results, 21)).toEqual([
+      { type: "deal", results: [{ result: results[1], rank: 22 }] },
+      { type: "company", results: [{ result: results[3], rank: 24 }] },
+      {
+        type: "fund",
+        results: [
+          { result: results[0], rank: 21 },
+          { result: results[2], rank: 23 },
+        ],
+      },
+    ]);
   });
 });

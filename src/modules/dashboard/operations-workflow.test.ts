@@ -7,6 +7,7 @@ describe("dashboard operational workflows", () => {
   const release = readFileSync(path.join(process.cwd(), ".github/workflows/release-production.yml"), "utf8");
   const schemaStage = readFileSync(path.join(process.cwd(), ".github/workflows/stage-production-schema.yml"), "utf8");
   const rollback = readFileSync(path.join(process.cwd(), ".github/workflows/rollback-production.yml"), "utf8");
+  const linkedIn = readFileSync(path.join(process.cwd(), ".github/workflows/scrape-linkedin.yml"), "utf8");
 
   const pipelineStep = (name: string) => {
     const marker = `      - name: ${name}\n`;
@@ -14,6 +15,15 @@ describe("dashboard operational workflows", () => {
     expect(start, `missing workflow step: ${name}`).toBeGreaterThanOrEqual(0);
     const next = pipeline.indexOf("\n      - ", start + marker.length);
     return pipeline.slice(start, next === -1 ? pipeline.length : next);
+  };
+
+  const pipelineJob = (id: string) => {
+    const marker = `\n  ${id}:\n`;
+    const start = pipeline.indexOf(marker);
+    expect(start, `missing workflow job: ${id}`).toBeGreaterThanOrEqual(0);
+    const contentStart = start + marker.length;
+    const next = pipeline.slice(contentStart).search(/\n  [a-z][a-z0-9_-]*:\n/);
+    return pipeline.slice(start, next === -1 ? pipeline.length : contentStart + next);
   };
 
   it("uses DST-safe weekday 07:30 America/New_York scheduling", () => {
@@ -47,6 +57,78 @@ describe("dashboard operational workflows", () => {
       .toBeLessThan(schemaStage.indexOf("npm ci"));
   });
 
+  it("authenticates exact main code before exposing production pipeline credentials", () => {
+    const workflowEnvironment = pipeline.slice(
+      pipeline.indexOf("\nenv:\n"),
+      pipeline.indexOf("\njobs:\n"),
+    );
+    const trustedMain = pipelineJob("trusted_main");
+    const credentialLines = pipeline.split("\n").filter((line) => line.includes("secrets."));
+
+    expect(workflowEnvironment).not.toContain("DATABASE_URL");
+    expect(workflowEnvironment).not.toContain("secrets.");
+    expect(credentialLines.length).toBeGreaterThan(0);
+    expect(credentialLines.filter((line) => (
+      !line.includes("github.ref == 'refs/heads/main'") || !line.endsWith("|| '' }}")
+    ))).toEqual([]);
+    expect(trustedMain).toContain('if [ "$GITHUB_REF" != "refs/heads/main" ]');
+    expect(trustedMain).toContain('"$GITHUB_EVENT_NAME" != "schedule"');
+    expect(trustedMain).toContain('"$GITHUB_EVENT_NAME" != "repository_dispatch"');
+    expect(trustedMain).toContain('case "$REQUESTED_PIPELINE" in');
+    expect(pipeline).toContain("repository_dispatch:");
+    expect(pipeline).toContain("types: [run-data-pipeline]");
+    expect(pipeline).not.toContain("workflow_dispatch:");
+    expect(pipeline).not.toContain("inputs.pipeline");
+    expect(trustedMain).toContain("ref: refs/heads/main");
+    expect(trustedMain).toContain('checked_out_sha="$(git rev-parse HEAD)"');
+    expect(trustedMain).toContain('checked_out_main_sha="$(git rev-parse refs/heads/main)"');
+    expect(trustedMain).toContain('"$checked_out_sha" != "$GITHUB_SHA"');
+    expect(trustedMain).toContain('"$checked_out_main_sha" != "$GITHUB_SHA"');
+    expect(trustedMain).toContain('echo "release_sha=$checked_out_sha" >> "$GITHUB_OUTPUT"');
+    expect(trustedMain).not.toContain("secrets.");
+
+    for (const id of ["dashboard", "news", "verify", "source-audit"]) {
+      const job = pipelineJob(id);
+      const checkout = job.indexOf("- name: Checkout verified main pipeline code");
+      const identity = job.indexOf("- name: Verify checked-out main pipeline identity");
+      const identityEnd = job.indexOf("\n      - ", identity + 1);
+      const firstSecret = job.indexOf("secrets.");
+
+      expect(job, id).toContain("needs: trusted_main");
+      expect(job, id).toContain("needs.trusted_main.result == 'success'");
+      expect(checkout, id).toBeGreaterThanOrEqual(0);
+      expect(identity, id).toBeGreaterThan(checkout);
+      expect(identityEnd, id).toBeGreaterThan(identity);
+      expect(firstSecret, id).toBeGreaterThan(identityEnd);
+      expect(job.slice(0, identityEnd), id).not.toContain("secrets.");
+      expect(job.slice(checkout, identity), id).toContain("ref: refs/heads/main");
+      expect(job.slice(checkout, identity), id).toContain("persist-credentials: false");
+      expect(job.slice(identity, identityEnd), id).toContain(
+        "TRUSTED_MAIN_SHA: ${{ needs.trusted_main.outputs.release_sha }}",
+      );
+      expect(job.slice(identity, identityEnd), id).toContain(
+        '"$(git rev-parse HEAD)" != "$TRUSTED_MAIN_SHA"',
+      );
+      expect(job.slice(identity, identityEnd), id).toContain(
+        '"$(git rev-parse refs/heads/main)" != "$TRUSTED_MAIN_SHA"',
+      );
+    }
+  });
+
+  it("keeps the research scraper token behind exact default-branch provenance", () => {
+    const provenance = linkedIn.indexOf("Verify exact default-branch scraper provenance");
+    const firstSecret = linkedIn.indexOf("secrets.APIFY_TOKEN");
+
+    expect(linkedIn).toContain("repository_dispatch:");
+    expect(linkedIn).toContain("types: [collect-linkedin-candidates]");
+    expect(linkedIn).not.toContain("workflow_dispatch:");
+    expect(linkedIn).toContain("ref: refs/heads/main");
+    expect(provenance).toBeGreaterThanOrEqual(0);
+    expect(firstSecret).toBeGreaterThan(provenance);
+    expect(linkedIn.slice(0, firstSecret)).not.toContain("secrets.");
+    expect(linkedIn).toContain('"$(git rev-parse HEAD)" != "$GITHUB_SHA"');
+  });
+
   it("collects independent pipeline diagnostics before returning a failure", () => {
     const dashboardReliability = pipelineStep("Enforce provider and rolling reliability thresholds");
     const newsReliability = pipelineStep("Enforce scan and rolling reliability thresholds");
@@ -59,6 +141,14 @@ describe("dashboard operational workflows", () => {
     expect(dashboardReliability).toContain("steps.install.outcome == 'success'");
     expect(newsReliability).toContain("if: always() && steps.install.outcome == 'success'");
     expect(newsReliability).toContain("if [ -f tmp/news-scan-summary.json ]");
+    const newsScan = pipelineStep("Scan public sources with bounded transient retries");
+    expect(newsScan).toMatch(/news:scan -- --max-targets=200 --max-pages=750/);
+    expect(newsScan).toContain("NEWS_SCAN_AS_OF: ${{ steps.news_clock.outputs.scan_as_of }}");
+    expect(newsScan).toContain("NEWS_SCAN_ROTATION_DATE: ${{ steps.news_clock.outputs.rotation_date }}");
+    const newsClock = pipelineStep("Pin the UTC news window across every retry");
+    expect(newsClock).toContain("EVENT_NAME: ${{ github.event_name }}");
+    expect(newsClock).toContain("date -u -d '6 hours ago'");
+    expect(newsClock).toContain('rotation_date="${scan_as_of%%T*}"');
 
     for (const step of [weeklyDatabase, weeklyFreshness, monthlyCoverage]) {
       expect(step).toContain("if: always()");
@@ -72,6 +162,9 @@ describe("dashboard operational workflows", () => {
     expect(weeklyDatabase).toContain("report-company-merge-candidates.ts --published-only --require-clean");
     expect(weeklyDatabase.match(/overall=1/g)).toHaveLength(3);
     expect(weeklyFreshness.match(/verify-pipeline-health\.ts/g)).toHaveLength(2);
+    expect(weeklyFreshness).toMatch(
+      /--pipeline=NEWS_SCAN[^\n]*--max-source-failure-rate=0\.25/,
+    );
     expect(weeklyFreshness.match(/overall=1/g)).toHaveLength(3);
     expect(monthlyDependencies).toContain("if: always()");
     expect(monthlyDependencies).toContain("tmp/monthly-audit/dependency-audit.log");

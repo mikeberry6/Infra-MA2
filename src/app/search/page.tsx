@@ -1,6 +1,15 @@
 export const dynamic = "force-dynamic";
 
-import { normalizeSearchQuery, searchAllWithMeta, type SearchResult } from "@/modules/search/queries";
+import {
+  groupSearchPageResults,
+  normalizeSearchPage,
+  normalizeSearchQuery,
+  normalizeSearchScope,
+  SEARCH_PAGE_SIZE,
+  searchAllWithMeta,
+  type SearchResult,
+  type SearchScope,
+} from "@/modules/search/queries";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
@@ -19,6 +28,12 @@ const TYPE_DOT_COLOR: Record<SearchResult["type"], string> = {
   company: "#10b981",
   fund: "#8b5cf6",
 };
+const SCOPE_LABEL: Record<SearchScope, string> = {
+  all: "All",
+  deal: "Deals",
+  company: "PortCos",
+  fund: "Funds",
+};
 
 // Map a result to the database page that owns it. The database client reads
 // the `focus` query param on mount and opens the matching drawer.
@@ -34,24 +49,88 @@ function resultHref(r: SearchResult): string {
   }
 }
 
+function searchHref(query: string, scope: SearchScope, page = 1): string {
+  const params = new URLSearchParams({ q: query });
+  if (scope !== "all") params.set("scope", scope);
+  if (page > 1) params.set("page", String(page));
+  return `/search?${params.toString()}`;
+}
+
+function ResultLink({
+  result,
+  rank,
+  grouped = false,
+}: {
+  result: SearchResult;
+  rank?: number;
+  grouped?: boolean;
+}) {
+  const Heading = grouped ? "h4" : "h3";
+  return (
+    <Link
+      href={resultHref(result)}
+      className="block surface px-4 py-3 hover:bg-[var(--bg-subtle)] transition-colors group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+    >
+      <div className="flex flex-wrap items-center gap-2 mb-1">
+        <span aria-hidden className="h-[5px] w-[5px] rounded-full" style={{ backgroundColor: TYPE_DOT_COLOR[result.type] }} />
+        <span className="type-micro font-medium text-[var(--text-secondary)]">{TYPE_LABEL[result.type]}</span>
+        {rank !== undefined && <span className="type-micro mono tabular-nums">· Relevance #{rank}</span>}
+        {result.sector && <span className="type-micro">· {result.sector}</span>}
+        {result.region && <span className="type-micro">· {result.region}</span>}
+      </div>
+      <Heading className="type-row-title group-hover:text-[var(--accent)] transition-colors">{result.title}</Heading>
+      <p className="type-meta mt-0.5">{result.subtitle}</p>
+    </Link>
+  );
+}
+
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string | string[] }>;
+  searchParams: Promise<{
+    q?: string | string[];
+    scope?: string | string[];
+    page?: string | string[];
+  }>;
 }) {
-  const { q } = await searchParams;
+  const { q, scope: rawScope, page: rawPage } = await searchParams;
   const query = normalizeSearchQuery(q);
+  const scope = normalizeSearchScope(rawScope);
+  const page = normalizeSearchPage(rawPage);
   const requestId = await currentServerRequestId();
   const search = query
     ? await withServerTask(
         { route: "/search", operation: "search_all", requestId },
-        () => searchAllWithMeta(query),
+        () => searchAllWithMeta(query, { scope, page }),
       )
-    : { results: [], total: 0, counts: { deal: 0, company: 0, fund: 0 } };
+    : {
+        results: [],
+        total: 0,
+        scopeTotal: 0,
+        counts: { deal: 0, company: 0, fund: 0 },
+        scope,
+        page: 1,
+        pageSize: SEARCH_PAGE_SIZE,
+        totalPages: 1,
+      };
   const { results } = search;
-  const groupedResults = (["deal", "company", "fund"] as const)
-    .map((type) => ({ type, results: results.filter((result) => result.type === type) }))
-    .filter((group) => group.results.length > 0);
+  const resultStart = search.scopeTotal === 0 ? 0 : (search.page - 1) * search.pageSize + 1;
+  const resultEnd = Math.min(search.page * search.pageSize, search.scopeTotal);
+  const activeType = search.scope === "all" ? null : search.scope;
+  const sectionLabel = activeType ? TYPE_PLURAL_LABEL[activeType] : "All results";
+  const scopeNoun = search.scope === "all"
+    ? "result"
+    : search.scope === "company"
+      ? "portfolio company"
+      : search.scope;
+  const scopeNounPlural = search.scope === "company" ? "portfolio companies" : `${scopeNoun}s`;
+  const scopeCounts: Record<SearchScope, number> = {
+    all: search.total,
+    deal: search.counts.deal,
+    company: search.counts.company,
+    fund: search.counts.fund,
+  };
+  const groupedResults = groupSearchPageResults(results, resultStart);
 
   return (
     <div className="mx-auto max-w-[900px] px-4 sm:px-6 py-8 sm:py-10">
@@ -87,50 +166,99 @@ export default async function SearchPage({
         ]}
       />
 
-      <TrackedSearchForm query={query} />
+      <TrackedSearchForm query={query} scope={search.scope} />
 
       {query && (
-        <p className="type-micro mb-3">
-          Showing <span className="mono tabular-nums text-[var(--text-secondary)]">{results.length}</span>
-          {search.total > results.length && <> of <span className="mono tabular-nums text-[var(--text-secondary)]">{search.total}</span></>}
-          {" "}result{search.total !== 1 ? "s" : ""} for &ldquo;{query}&rdquo;
-        </p>
+        <>
+          <nav aria-label="Search result scopes" className="mb-4 flex flex-wrap gap-2">
+            {(["all", "deal", "company", "fund"] as const).map((item) => {
+              const isActive = search.scope === item;
+              return (
+                <Link
+                  key={item}
+                  href={searchHref(query, item)}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`inline-flex items-center gap-2 rounded-md border px-3 py-2 type-meta font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] ${
+                    isActive
+                      ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--accent)]"
+                      : "border-[var(--border)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
+                  }`}
+                >
+                  {SCOPE_LABEL[item]}
+                  <span className="mono tabular-nums text-[10px] opacity-75">
+                    {scopeCounts[item].toLocaleString()}
+                  </span>
+                </Link>
+              );
+            })}
+          </nav>
+          <p className="type-micro mb-3">
+            Showing <span className="mono tabular-nums text-[var(--text-secondary)]">{resultStart}-{resultEnd}</span>
+            {" "}of <span className="mono tabular-nums text-[var(--text-secondary)]">{search.scopeTotal.toLocaleString()}</span>
+            {" "}{search.scopeTotal === 1 ? scopeNoun : scopeNounPlural} for &ldquo;{query}&rdquo;
+          </p>
+        </>
       )}
 
-      <div className="space-y-7">
-        {groupedResults.map((group) => (
-          <section key={group.type} aria-labelledby={`results-${group.type}`}>
+      {query && results.length > 0 && (
+        <div className="space-y-7">
+          <section aria-labelledby="search-results-heading">
             <div className="mb-2 flex items-center gap-2">
-              <h2 id={`results-${group.type}`} className="type-section-title text-[var(--text-primary)]">
-                {TYPE_PLURAL_LABEL[group.type]}
+              <h2 id="search-results-heading" className="type-section-title text-[var(--text-primary)]">
+                {sectionLabel}
               </h2>
               <span className="type-micro mono tabular-nums">
-                {group.results.length}
-                {search.counts[group.type] > group.results.length ? ` of ${search.counts[group.type]}` : ""}
+                {resultStart}-{resultEnd} of {search.scopeTotal.toLocaleString()}
               </span>
               <div className="h-px flex-1 bg-[var(--border)]" />
             </div>
-            <div className="space-y-2">
-              {group.results.map((result) => (
-                <Link
-                  key={`${result.type}-${result.id}`}
-                  href={resultHref(result)}
-                  className="block surface px-4 py-3 hover:bg-[var(--bg-subtle)] transition-colors group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-                >
-                  <div className="flex items-center gap-2 mb-1">
-                    <span aria-hidden className="h-[5px] w-[5px] rounded-full" style={{ backgroundColor: TYPE_DOT_COLOR[result.type] }} />
-                    <span className="type-micro font-medium text-[var(--text-secondary)]">{TYPE_LABEL[result.type]}</span>
-                    {result.sector && <span className="type-micro">· {result.sector}</span>}
-                    {result.region && <span className="type-micro">· {result.region}</span>}
-                  </div>
-                  <h3 className="type-row-title group-hover:text-[var(--accent)] transition-colors">{result.title}</h3>
-                  <p className="type-meta mt-0.5">{result.subtitle}</p>
-                </Link>
-              ))}
-            </div>
+            {search.scope === "all" ? (
+              <div className="space-y-6">
+                {groupedResults.map((group) => (
+                  <section key={group.type} aria-labelledby={`search-group-${group.type}`}>
+                    <div className="mb-2 flex items-center gap-2">
+                      <h3 id={`search-group-${group.type}`} className="type-label text-[var(--text-secondary)]">
+                        {TYPE_PLURAL_LABEL[group.type]}
+                      </h3>
+                      <span className="type-micro mono tabular-nums">{group.results.length} on this page</span>
+                    </div>
+                    <div className="space-y-2">
+                      {group.results.map(({ result, rank }) => (
+                        <ResultLink
+                          key={`${result.type}-${result.id}`}
+                          result={result}
+                          rank={rank}
+                          grouped
+                        />
+                      ))}
+                    </div>
+                  </section>
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {results.map((result) => (
+                  <ResultLink key={`${result.type}-${result.id}`} result={result} />
+                ))}
+              </div>
+            )}
           </section>
-        ))}
-      </div>
+
+          {search.totalPages > 1 && (
+            <nav aria-label="Search result pages" className="flex items-center justify-between gap-4 border-t border-[var(--border)] pt-4 type-meta">
+              {search.page > 1
+                ? <Link href={searchHref(query, search.scope, search.page - 1)}>← Previous</Link>
+                : <span aria-hidden />}
+              <span className="mono tabular-nums text-[var(--text-tertiary)]">
+                Page {search.page} of {search.totalPages}
+              </span>
+              {search.page < search.totalPages
+                ? <Link href={searchHref(query, search.scope, search.page + 1)}>Next →</Link>
+                : <span aria-hidden />}
+            </nav>
+          )}
+        </div>
+      )}
 
       {!query && (
         <section className="surface p-5 sm:p-6">
@@ -151,9 +279,9 @@ export default async function SearchPage({
         </section>
       )}
 
-      {query && results.length === 0 && (
+      {query && search.scopeTotal === 0 && (
         <div className="py-12 text-center type-meta text-[var(--text-tertiary)]">
-          No results matched your query.
+          No {scopeNounPlural} matched your query.
         </div>
       )}
     </div>

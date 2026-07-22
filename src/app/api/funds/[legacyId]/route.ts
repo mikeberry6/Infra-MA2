@@ -22,6 +22,7 @@ export async function GET(
           status: true,
           updatedAt: true,
           lastVerifiedAt: true,
+          primarySourceUrl: true,
           sourceUrls: true,
           strategyUrl: true,
         },
@@ -30,7 +31,13 @@ export async function GET(
     if (!fund || meta?.status !== "PUBLISHED") {
       return NextResponse.json({ error: "Fund not found" }, { status: 404 });
     }
-    const sourceCount = new Set([...meta.sourceUrls, meta.strategyUrl].filter(Boolean)).size;
+    const sourceCount = new Set([
+      meta.primarySourceUrl,
+      ...meta.sourceUrls,
+      meta.strategyUrl,
+    ]
+      .map((url) => url?.trim())
+      .filter((url): url is string => Boolean(url))).size;
     const response: DetailResponse<FundView> = {
       data: fund,
       meta: {

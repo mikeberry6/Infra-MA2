@@ -28,6 +28,7 @@ import { deriveRanking, RankingColumn } from "@/components/shared/RankingBars";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
 import { DatabaseIntelligenceHeader, type IntelligenceMetric } from "@/components/shared/DatabaseIntelligenceHeader";
 import { CTABlock } from "@/components/shared/CTABlock";
+import { TrackedAnalyticsLink } from "@/components/shared/TrackedAnalyticsLink";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
 import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
@@ -512,6 +513,10 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     if (openedFocus.current === focusId) return;
     const match = portcos.find((c) => c.id === focusId || c.focusIds.includes(focusId));
     if (match) {
+      // Manual opens set openedFocus before writing the URL, so direct/search
+      // focus navigation is measured and tracked exactly once here.
+      markDrawerOpen("company");
+      track("drawer_opened", { entity: "company" });
       setSelectedCompany(match);
       openedFocus.current = focusId;
       return;
@@ -690,13 +695,17 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
                 <span className="truncate">Export</span>
               </a>
             )}
-            <a
+            <TrackedAnalyticsLink
               href="mailto:research@infrasight.com"
+              analyticsEvent={{
+                name: "research_contact_initiated",
+                properties: { placement: "portfolio_database_toolbar" },
+              }}
               className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
               <Mail className="h-3 w-3" />
               <span className="truncate">Contact research</span>
-            </a>
+            </TrackedAnalyticsLink>
           </div>
         </div>
 

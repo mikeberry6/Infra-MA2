@@ -238,7 +238,7 @@ function IntelligenceHeader({
 function OperationalStatus({ operations }: { operations: FeedOperationsView }) {
   const isHealthy = operations.state === "healthy";
   const label = isHealthy
-    ? "Scan current"
+    ? "Window current"
     : operations.state === "failed"
       ? "Latest scan failed"
       : operations.state === "overdue"
@@ -269,6 +269,19 @@ function OperationalStatus({ operations }: { operations: FeedOperationsView }) {
             <dt className="inline">Source coverage </dt>
             <dd className="inline mono tabular-nums text-[var(--text-secondary)]">
               {operations.sourceCoverage.succeeded.toLocaleString()}/{operations.sourceCoverage.attempted.toLocaleString()} attempts
+            </dd>
+          </div>
+        )}
+        {operations.scanWindow && (
+          <div>
+            <dt className="inline">Rotating window </dt>
+            <dd className="inline mono tabular-nums text-[var(--text-secondary)]">
+              {operations.scanWindow.selectedCount.toLocaleString()}/{operations.scanWindow.fullUniverseCount.toLocaleString()} entities
+              {operations.scanWindow.eligibleCount !== operations.scanWindow.fullUniverseCount
+                ? ` (${operations.scanWindow.eligibleCount.toLocaleString()} eligible)`
+                : ""}
+              {" · "}window {operations.scanWindow.windowIndex + 1}/{operations.scanWindow.windowsPerCycle}
+              {" · "}{formatDate(`${operations.scanWindow.selectionDateUtc}T12:00:00.000Z`)}
             </dd>
           </div>
         )}

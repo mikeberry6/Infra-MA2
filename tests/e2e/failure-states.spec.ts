@@ -45,6 +45,10 @@ test.describe("public failure and retry journeys", () => {
       const failure = dialog.getByRole("alert");
       await expect(failure).toContainText("Latest detail could not be loaded");
       await expect(dialog).toContainText("Showing the list record");
+      if (database.path === "/funds") {
+        await expect(dialog.getByText("Unavailable while verified detail is offline")).toBeVisible();
+        await expect(dialog.getByText("Pending Research review")).toHaveCount(0);
+      }
       await expect.poll(() => detailRequests).toBe(1);
 
       await failure.getByRole("button", { name: "Retry" }).click();
@@ -78,7 +82,9 @@ test.describe("top-level database failure and retry journeys", () => {
       });
 
       await page.goto(appPath(route.path));
-      const alert = page.getByRole("alert");
+      // Next.js also renders a route-announcer div with role="alert". Scope
+      // assertions to the application's semantic failure-state section.
+      const alert = page.locator('section[role="alert"]');
       await expect(alert.getByRole("heading", { name: route.title })).toBeVisible();
       await expect(alert).toContainText("not showing an empty result set");
       const retry = alert.getByRole("link", { name: "Try again" });

@@ -13,6 +13,7 @@ import {
   missingFundPublicationFields,
 } from "../src/modules/operations/publication-integrity";
 import { weeklyDealIdentitiesMatch } from "../src/modules/operations/weekly-deal-identity";
+import { isHttpUrl } from "../src/lib/source-utils";
 
 const connectionString = process.env.DATABASE_URL;
 
@@ -103,6 +104,7 @@ async function main() {
     duplicateCompanyKeys,
     duplicateDealLegacyIds,
     duplicateFundLegacyIds,
+    sourceUrlRows,
   ] = await Promise.all([
     prisma.deal.count({ where: { participants: { some: { role: "BUYER" } } } }),
     prisma.deal.findMany({
@@ -145,7 +147,10 @@ async function main() {
         HAVING COUNT(*) > 1
       ) duplicates
     `,
+    prisma.source.findMany({ select: { id: true, url: true }, orderBy: { id: "asc" } }),
   ]);
+
+  const invalidSourceUrls = sourceUrlRows.filter((source) => !isHttpUrl(source.url));
 
   check("Deals with buyer", Math.floor(dealCount * 0.95), dealsWithBuyer);
   exact("Published deals missing a primary citation", 0, publishedDealsMissingCitation.length);
@@ -162,6 +167,10 @@ async function main() {
   exact("Duplicate company name/country keys", 0, Number(duplicateCompanyKeys[0]?.count ?? 0));
   exact("Duplicate deal legacy IDs", 0, Number(duplicateDealLegacyIds[0]?.count ?? 0));
   exact("Duplicate fund legacy IDs", 0, Number(duplicateFundLegacyIds[0]?.count ?? 0));
+  exact("Non-HTTP(S) source URLs", 0, invalidSourceUrls.length);
+  if (invalidSourceUrls.length > 0) {
+    console.log(`    Invalid source URLs: ${invalidSourceUrls.map((source) => source.id).join(", ")}`);
+  }
 
   const [
     publishedDealIntegrityRows,
@@ -194,6 +203,7 @@ async function main() {
         strategies: true,
         fundStatus: true,
         size: true,
+        primarySourceUrl: true,
         sourceUrls: true,
         strategyUrl: true,
       },
@@ -206,6 +216,7 @@ async function main() {
         country: true,
         sector: true,
         description: true,
+        website: true,
         ownershipPeriods: { select: { id: true } },
         citations: { where: { isPrimary: true }, select: { id: true } },
       },

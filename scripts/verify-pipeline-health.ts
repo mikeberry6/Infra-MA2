@@ -6,6 +6,10 @@ import { PrismaClient } from "../src/generated/prisma/client";
 import { SafeOperationalError } from "../src/lib/safe-error";
 import { withServerTask } from "../src/lib/server-log";
 import {
+  effectiveNewsPipelineRunStatus,
+  MAX_NEWS_SOURCE_FAILURE_RATE,
+} from "../src/modules/news/source-coverage";
+import {
   assessPipelineReliability,
   collapsePipelineAttemptsByRefreshWindow,
   findConsecutiveCriticalSourceIssues,
@@ -115,7 +119,13 @@ async function main() {
   const expectedRunsPerWeek = numericOption("expected-runs-per-week", 0);
   const minSuccessRate = numericOption("min-success-rate", 0.95);
   const maxRunningHours = numericOption("max-running-hours", 3);
-  const maxSourceFailureRate = numericOption("max-source-failure-rate", 1);
+  // NEWS_SCAN must fail closed even when a caller accidentally omits the
+  // explicit CLI option. Other pipelines retain their existing opt-in source
+  // threshold because they use provider-specific completeness checks.
+  const maxSourceFailureRate = numericOption(
+    "max-source-failure-rate",
+    pipeline === "NEWS_SCAN" ? MAX_NEWS_SOURCE_FAILURE_RATE : 1,
+  );
   if (minSuccessRate > 1 || maxSourceFailureRate > 1) {
     throw new Error("Rate options must be between 0 and 1.");
   }
@@ -148,7 +158,16 @@ async function main() {
         : Promise.resolve([]),
     ]);
 
-    const refreshWindows = collapsePipelineAttemptsByRefreshWindow(windowRuns);
+    const effectiveWindowRuns = pipeline === "NEWS_SCAN"
+      ? windowRuns.map((run) => ({
+        ...run,
+        status: effectiveNewsPipelineRunStatus(run, maxSourceFailureRate),
+      }))
+      : windowRuns;
+    const sourceReclassifiedAttempts = pipeline === "NEWS_SCAN"
+      ? effectiveWindowRuns.filter((run, index) => run.status !== windowRuns[index].status).length
+      : 0;
+    const refreshWindows = collapsePipelineAttemptsByRefreshWindow(effectiveWindowRuns);
     const succeeded = refreshWindows.filter((run) => run.status === "SUCCEEDED").length;
     const failed = refreshWindows.filter((run) => run.status === "FAILED").length;
     const completed = succeeded + failed;
@@ -249,6 +268,7 @@ async function main() {
         completed,
         minimumCompleted,
         attempts: windowRuns.length,
+        sourceReclassifiedAttempts,
       },
       successRate,
       latestSuccessfulAt: latestSuccessfulAt?.toISOString() ?? null,

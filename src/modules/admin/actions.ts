@@ -637,6 +637,7 @@ export async function createFund(formData: FormData): Promise<ActionResult> {
       sectors: parseFormArray(formData, "sectors"),
       regions: parseFormArray(formData, "regions"),
       sourceUrls: parseFormArray(formData, "sourceUrls"),
+      primarySourceUrl: (formData.get("primarySourceUrl") as string) || undefined,
       ticker: (formData.get("ticker") as string) || undefined,
       strategyUrl: (formData.get("strategyUrl") as string) || undefined,
     };
@@ -659,6 +660,7 @@ export async function createFund(formData: FormData): Promise<ActionResult> {
         data: {
           legacyId, managerId: manager.id, fundName: f.fundName, ticker: f.ticker || null,
           investmentStrategy: f.investmentStrategy || "", sourceUrls: f.sourceUrls || [],
+          primarySourceUrl: f.primarySourceUrl || null,
           size: f.size, sizeUsdMm: f.sizeUsdMm ?? null, vintage: f.vintage,
           strategies: f.strategies.map((s) => FUND_STRATEGY_MAP[s]).filter(Boolean) as FundStrategy[],
           structure: FUND_STRUCTURE_MAP[f.structure] as FundStructure,
@@ -698,6 +700,7 @@ export async function updateFund(id: string, formData: FormData): Promise<Action
       sectors: parseFormArray(formData, "sectors"),
       regions: parseFormArray(formData, "regions"),
       sourceUrls: parseFormArray(formData, "sourceUrls"),
+      primarySourceUrl: (formData.get("primarySourceUrl") as string) || undefined,
       ticker: (formData.get("ticker") as string) || undefined,
       strategyUrl: (formData.get("strategyUrl") as string) || undefined,
     };
@@ -729,6 +732,7 @@ export async function updateFund(id: string, formData: FormData): Promise<Action
         data: {
           managerId: manager.id, fundName: f.fundName, ticker: f.ticker || null,
           investmentStrategy: f.investmentStrategy || "", sourceUrls: f.sourceUrls || [],
+          primarySourceUrl: f.primarySourceUrl || null,
           size: f.size, sizeUsdMm: f.sizeUsdMm ?? null, vintage: f.vintage,
           strategies: f.strategies.map((s) => FUND_STRATEGY_MAP[s]).filter(Boolean) as FundStrategy[],
           structure: FUND_STRUCTURE_MAP[f.structure] as FundStructure,
@@ -819,6 +823,7 @@ export async function publishFund(id: string): Promise<ActionResult> {
         strategies: true,
         fundStatus: true,
         size: true,
+        primarySourceUrl: true,
         sourceUrls: true,
         strategyUrl: true,
       },
@@ -863,6 +868,7 @@ export async function verifyFund(id: string): Promise<ActionResult> {
         strategies: true,
         fundStatus: true,
         size: true,
+        primarySourceUrl: true,
         sourceUrls: true,
         strategyUrl: true,
       },
@@ -1186,6 +1192,7 @@ export async function publishCompany(id: string): Promise<ActionResult> {
         country: true,
         sector: true,
         description: true,
+        website: true,
         ownershipPeriods: {
           select: {
             id: true,
@@ -1235,6 +1242,7 @@ export async function verifyCompany(id: string): Promise<ActionResult> {
         country: true,
         sector: true,
         description: true,
+        website: true,
         ownershipPeriods: {
           select: {
             id: true,

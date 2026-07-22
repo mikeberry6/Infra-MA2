@@ -6,6 +6,7 @@ import path from "path";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
+import { fetchPublicText } from "../src/lib/server/public-network-fetch";
 import { SafeOperationalError } from "../src/lib/safe-error";
 import { withServerTask } from "../src/lib/server-log";
 import {
@@ -18,7 +19,20 @@ import {
   type NewsMatchCandidate,
 } from "../src/lib/news-utils";
 import type { NewsConfidence, NewsMentionType, NewsMentionView } from "../src/modules/shared/types";
-import { newsSourceCoverageFromSummary } from "../src/modules/news/source-coverage";
+import {
+  assessNewsSourceCoverage,
+  newsSourceCoverageFromSummary,
+} from "../src/modules/news/source-coverage";
+import {
+  DEFAULT_NEWS_SCAN_MAX_TARGETS,
+  effectiveNewsScanLookbackDays,
+  parseNewsScanAsOf,
+  parseNewsScanRotationDate,
+  selectCanonicalNewsScanTerms,
+  selectNewsScanWindow,
+  sortNewsScanEntityUrls,
+  type NewsScanWindowMetadata,
+} from "../src/modules/news/scan-window";
 import { completePipelineRun, failPipelineRun, startPipelineRun } from "../src/modules/operations/pipeline-runs";
 
 setDefaultResultOrder("ipv4first");
@@ -52,8 +66,10 @@ type Options = {
   searchDelayMs: number;
   searchMaxQueriesPerEntity: number;
   searchMaxResultsPerEntity: number;
-  maxTargets?: number;
+  maxTargets: number;
   sinceDays?: number;
+  rotationDateUtc: string;
+  scanAsOfUtc: string;
 };
 
 type MentionCandidate = NewsMatchCandidate & {
@@ -87,6 +103,16 @@ type CrawlJob = {
   depth: number;
   kind: SeedKind;
   sourceEntities: TrackedEntity[];
+  requiredForWindow: boolean;
+};
+
+type InitialQueuePlan = {
+  queue: CrawlJob[];
+  totalSeedUrls: number;
+  plannedSeedUrls: number;
+  deferredSeedUrls: number;
+  requiredSeedUrls: number;
+  requiredSeedUrlsDeferred: number;
 };
 
 type HtmlLink = {
@@ -130,15 +156,31 @@ type RunSummary = {
     funds: number;
     deals: number;
   };
+  selection: NewsScanWindowMetadata | null;
+  lookback: {
+    requestedDays: number | null;
+    effectiveDays: number;
+    cycleDays: number;
+    marginDays: number;
+  } | null;
   crawl: {
     queuedUrls: number;
     websites: number;
+    initialSeedUrls: number;
+    plannedInitialSeedUrls: number;
+    deferredInitialSeedUrls: number;
+    requiredInitialSeedUrls: number;
+    requiredInitialSeedsDeferred: number;
+    discoveredUrls: number;
+    deferredQueuedUrls: number;
     pagesFetched: number;
     pagesSkipped: number;
     excessiveCrawlDelaySkipped: number;
     robotsDisallowed: number;
     nonHtmlSkipped: number;
     failedFetches: number;
+    configuredBudgetExhausted: boolean;
+    intentionallyDeferred: boolean;
     cappedByMaxPages: boolean;
   };
   search: {
@@ -208,6 +250,7 @@ const BING_NEWS_RSS_URL = "https://www.bing.com/news/search";
 const SEARCH_TRANSACTION_TERMS = ["acquisition", "sale", "investment", "stake"];
 const SEARCH_FUND_TERMS = ["fund close", "capital commitments", "fundraising"];
 const FUTURE_DATE_GRACE_MS = 6 * 60 * 60 * 1000;
+const INITIAL_SEED_BUDGET_RATIO = 0.7;
 const TRACKING_QUERY_PARAMS = [
   "utm_source",
   "utm_medium",
@@ -242,6 +285,7 @@ type SearchCandidateResult =
   | { candidate: null; rejectionReason: string };
 
 function parseArgs(): Options {
+  const parsedAt = new Date();
   const args = new Set(process.argv.slice(2));
   const optionValue = (name: string, envName: string, fallback: number): number => {
     const arg = process.argv.find((value) => value.startsWith(`${name}=`));
@@ -264,12 +308,22 @@ function parseArgs(): Options {
     return uniqueStrings([...values, ...envValues].map((value) => value.trim()).filter(Boolean));
   };
 
-  const maxTargetsRaw = process.argv.find((value) => value.startsWith("--max-targets="))?.split("=")[1]
-    ?? process.env.NEWS_SCAN_MAX_TARGETS;
-  const maxTargets = maxTargetsRaw && Number(maxTargetsRaw) > 0 ? Number(maxTargetsRaw) : undefined;
+  const maxTargets = optionValue(
+    "--max-targets",
+    "NEWS_SCAN_MAX_TARGETS",
+    DEFAULT_NEWS_SCAN_MAX_TARGETS,
+  );
   const sinceDaysRaw = process.argv.find((value) => value.startsWith("--since-days="))?.split("=")[1]
     ?? process.env.NEWS_SCAN_SINCE_DAYS;
   const sinceDays = sinceDaysRaw && Number(sinceDaysRaw) > 0 ? Number(sinceDaysRaw) : undefined;
+  const scanAsOfRaw = process.argv.find((value) => value.startsWith("--scan-as-of="))?.split("=").slice(1).join("=")
+    ?? process.env.NEWS_SCAN_AS_OF
+    ?? parsedAt.toISOString();
+  const scanAsOf = parseNewsScanAsOf(scanAsOfRaw);
+  const rotationDateRaw = process.argv.find((value) => value.startsWith("--rotation-date="))?.split("=")[1]
+    ?? process.env.NEWS_SCAN_ROTATION_DATE
+    ?? scanAsOf.toISOString().slice(0, 10);
+  const rotationDate = parseNewsScanRotationDate(rotationDateRaw);
 
   return {
     dryRun: args.has("--dry-run"),
@@ -289,6 +343,8 @@ function parseArgs(): Options {
     searchMaxResultsPerEntity: optionValue("--search-max-results-per-entity", "NEWS_SCAN_SEARCH_MAX_RESULTS_PER_ENTITY", 5),
     maxTargets,
     sinceDays,
+    rotationDateUtc: rotationDate.toISOString().slice(0, 10),
+    scanAsOfUtc: scanAsOf.toISOString(),
   };
 }
 
@@ -302,27 +358,44 @@ function createPrisma(): PrismaClient {
 
 async function main() {
   const options = parseArgs();
+  const runStartedAt = new Date();
+  const scanAsOf = parseNewsScanAsOf(options.scanAsOfUtc);
+  const rotationDate = parseNewsScanRotationDate(options.rotationDateUtc);
   if (!options.dryRun) assertMutationDatabaseTargetFromEnv();
   const prisma = createPrisma();
   const pipelineRunId = options.dryRun ? null : await startPipelineRun(prisma, "NEWS_SCAN", {
+    refreshWindow: options.rotationDateUtc,
     sourceCrawl: options.sourceCrawl,
     newsSearch: options.newsSearch,
     sinceDays: options.sinceDays ?? null,
+    rotationDateUtc: options.rotationDateUtc,
+    scanAsOfUtc: options.scanAsOfUtc,
   });
   const summary: RunSummary = {
-    runAt: new Date().toISOString(),
+    runAt: runStartedAt.toISOString(),
     dryRun: options.dryRun,
     options,
     tracked: { companies: 0, fundManagers: 0, funds: 0, deals: 0 },
+    selection: null,
+    lookback: null,
     crawl: {
       queuedUrls: 0,
       websites: 0,
+      initialSeedUrls: 0,
+      plannedInitialSeedUrls: 0,
+      deferredInitialSeedUrls: 0,
+      requiredInitialSeedUrls: 0,
+      requiredInitialSeedsDeferred: 0,
+      discoveredUrls: 0,
+      deferredQueuedUrls: 0,
       pagesFetched: 0,
       pagesSkipped: 0,
       excessiveCrawlDelaySkipped: 0,
       robotsDisallowed: 0,
       nonHtmlSkipped: 0,
       failedFetches: 0,
+      configuredBudgetExhausted: false,
+      intentionallyDeferred: false,
       cappedByMaxPages: false,
     },
     search: {
@@ -354,13 +427,25 @@ async function main() {
     const context = await withServerTask({
       task: "news_scan",
       operation: "load_tracked_context",
-    }, () => buildTrackedContext(prisma, options));
+    }, () => buildTrackedContext(prisma, options, rotationDate));
     summary.tracked = {
       companies: context.counts.companies,
       fundManagers: context.counts.fundManagers,
       funds: context.counts.funds,
       deals: context.counts.deals,
     };
+    summary.selection = context.selection;
+    const effectiveSinceDays = effectiveNewsScanLookbackDays(
+      context.selection.windowsPerCycle,
+      options.sinceDays,
+    );
+    summary.lookback = {
+      requestedDays: options.sinceDays ?? null,
+      effectiveDays: effectiveSinceDays,
+      cycleDays: context.selection.windowsPerCycle,
+      marginDays: effectiveSinceDays - context.selection.windowsPerCycle,
+    };
+    const effectiveOptions = { ...options, sinceDays: effectiveSinceDays };
 
     const extractedCandidates: ExtractedCandidate[] = [];
 
@@ -368,7 +453,7 @@ async function main() {
       const crawl = await withServerTask({
         task: "news_provider",
         operation: "crawl_tracked_sources",
-      }, () => crawlTrackedSources(context.entities, context.candidates, context.candidateByKey, options));
+      }, () => crawlTrackedSources(context.entities, context.candidates, context.candidateByKey, effectiveOptions));
       summary.crawl = { ...summary.crawl, ...crawl.crawlSummary };
       extractedCandidates.push(...crawl.candidates);
     }
@@ -377,13 +462,13 @@ async function main() {
       const search = await withServerTask({
         task: "news_provider",
         operation: "search_tracked_news",
-      }, () => searchTrackedNews(context.entities, context.candidates, options));
+      }, () => searchTrackedNews(context.entities, context.candidates, effectiveOptions));
       summary.search = { ...summary.search, ...search.searchSummary };
       extractedCandidates.push(...search.candidates);
     }
 
     const mergedCandidates = mergeCandidates(extractedCandidates);
-    const candidates = filterCandidatesByDateWindow(mergedCandidates, options);
+    const candidates = filterCandidatesByDateWindow(mergedCandidates, effectiveOptions, scanAsOf);
     summary.results.candidateNewsItems = candidates.length;
     summary.results.outsideDateWindow = mergedCandidates.length - candidates.length;
     summary.results.mentions = candidates.reduce((total, item) => total + item.mentions.length, 0);
@@ -402,28 +487,73 @@ async function main() {
     };
     if (pipelineRunId) {
       const sourceCoverage = newsSourceCoverageFromSummary(summary);
+      const sourceHealth = assessNewsSourceCoverage(sourceCoverage, {
+        cappedByMaxPages: summary.crawl.cappedByMaxPages,
+        configuredBudgetExhausted: summary.crawl.configuredBudgetExhausted,
+        intentionalDeferral: summary.crawl.intentionallyDeferred,
+      });
+      if (!sourceHealth.healthy) {
+        throw new Error(`News provider source coverage failed: ${sourceHealth.reason}.`);
+      }
       await completePipelineRun(prisma, pipelineRunId, {
         inserted: summary.results.created,
         updated: summary.results.updated,
         skipped: summary.results.existingSourceUrlMatches + summary.results.outsideDateWindow,
       }, {
+        refreshWindow: options.rotationDateUtc,
         tracked: summary.tracked,
+        selection: summary.selection,
+        lookback: summary.lookback,
         failedFetches: summary.crawl.failedFetches,
         failedQueries: summary.search.failedQueries,
         sourceCoverage,
+        sourceHealth,
+        cappedByMaxPages: summary.crawl.cappedByMaxPages,
+        configuredBudgetExhausted: summary.crawl.configuredBudgetExhausted,
+        intentionalDeferral: summary.crawl.intentionallyDeferred,
+        crawlBudget: {
+          maxPages: options.maxPages,
+          initialSeedUrls: summary.crawl.initialSeedUrls,
+          plannedInitialSeedUrls: summary.crawl.plannedInitialSeedUrls,
+          deferredInitialSeedUrls: summary.crawl.deferredInitialSeedUrls,
+          requiredInitialSeedsDeferred: summary.crawl.requiredInitialSeedsDeferred,
+          discoveredUrls: summary.crawl.discoveredUrls,
+          deferredQueuedUrls: summary.crawl.deferredQueuedUrls,
+        },
       });
     }
   } catch (error) {
     if (pipelineRunId) {
+      const sourceCoverage = newsSourceCoverageFromSummary(summary);
       await failPipelineRun(prisma, pipelineRunId, error, {
         inserted: summary.results.created,
         updated: summary.results.updated,
         skipped: summary.results.existingSourceUrlMatches + summary.results.outsideDateWindow,
       }, {
+        refreshWindow: options.rotationDateUtc,
         tracked: summary.tracked,
+        selection: summary.selection,
+        lookback: summary.lookback,
         failedFetches: summary.crawl.failedFetches,
         failedQueries: summary.search.failedQueries,
-        sourceCoverage: newsSourceCoverageFromSummary(summary),
+        sourceCoverage,
+        sourceHealth: assessNewsSourceCoverage(sourceCoverage, {
+          cappedByMaxPages: summary.crawl.cappedByMaxPages,
+          configuredBudgetExhausted: summary.crawl.configuredBudgetExhausted,
+          intentionalDeferral: summary.crawl.intentionallyDeferred,
+        }),
+        cappedByMaxPages: summary.crawl.cappedByMaxPages,
+        configuredBudgetExhausted: summary.crawl.configuredBudgetExhausted,
+        intentionalDeferral: summary.crawl.intentionallyDeferred,
+        crawlBudget: {
+          maxPages: options.maxPages,
+          initialSeedUrls: summary.crawl.initialSeedUrls,
+          plannedInitialSeedUrls: summary.crawl.plannedInitialSeedUrls,
+          deferredInitialSeedUrls: summary.crawl.deferredInitialSeedUrls,
+          requiredInitialSeedsDeferred: summary.crawl.requiredInitialSeedsDeferred,
+          discoveredUrls: summary.crawl.discoveredUrls,
+          deferredQueuedUrls: summary.crawl.deferredQueuedUrls,
+        },
       });
     }
     throw error;
@@ -435,7 +565,7 @@ async function main() {
   console.log("News scan completed; review tmp/news-scan-summary.json.");
 }
 
-async function buildTrackedContext(prisma: PrismaClient, options: Options) {
+async function buildTrackedContext(prisma: PrismaClient, options: Options, rotationDate: Date) {
   const [companies, managers, funds, deals] = await Promise.all([
     prisma.company.findMany({
       where: { status: "PUBLISHED" },
@@ -451,6 +581,7 @@ async function buildTrackedContext(prisma: PrismaClient, options: Options) {
           },
         },
         ownershipPeriods: {
+          orderBy: { id: "asc" },
           select: {
             vehicleName: true,
             organization: { select: { name: true } },
@@ -471,9 +602,10 @@ async function buildTrackedContext(prisma: PrismaClient, options: Options) {
         id: true,
         name: true,
         website: true,
-        aliases: { select: { alias: true } },
+        aliases: { orderBy: { alias: "asc" }, select: { alias: true } },
         managedFunds: {
           where: { status: "PUBLISHED" },
+          orderBy: [{ legacyId: "asc" }, { id: "asc" }],
           select: { sourceUrls: true, strategyUrl: true },
         },
       },
@@ -492,7 +624,7 @@ async function buildTrackedContext(prisma: PrismaClient, options: Options) {
             id: true,
             name: true,
             website: true,
-            aliases: { select: { alias: true } },
+            aliases: { orderBy: { alias: "asc" }, select: { alias: true } },
           },
         },
       },
@@ -653,11 +785,17 @@ async function buildTrackedContext(prisma: PrismaClient, options: Options) {
   const targetFilteredEntities = options.targetTerms.length > 0
     ? entities.filter((entity) => entityMatchesTargets(entity, options.targetTerms))
     : entities;
-  const selectedEntities = options.maxTargets ? targetFilteredEntities.slice(0, options.maxTargets) : targetFilteredEntities;
+  const selection = selectNewsScanWindow(targetFilteredEntities, {
+    date: rotationDate,
+    maxTargets: options.maxTargets,
+    fullUniverseCount: entities.length,
+    targetFiltered: options.targetTerms.length > 0,
+  });
   const candidateByKey = new Map(candidates.map((candidate) => [`${candidate.type}:${candidate.id}`, candidate]));
 
   return {
-    entities: selectedEntities,
+    entities: selection.entities,
+    selection: selection.metadata,
     candidates,
     candidateByKey,
     counts: {
@@ -684,7 +822,10 @@ function searchAliasesFromValues(values: Array<string | null | undefined>): stri
     if (!normalized || !isSearchableAlias(normalized)) continue;
     if (!aliases.has(normalized)) aliases.set(normalized, cleaned);
   }
-  return Array.from(aliases.values()).slice(0, 12);
+  return selectCanonicalNewsScanTerms(
+    Array.from(aliases, ([key, value]) => ({ key, value })),
+    12,
+  );
 }
 
 function searchAliasHintsFromUrl(value: string | null | undefined): string[] {
@@ -771,7 +912,8 @@ async function crawlTrackedSources(
   candidateByKey: Map<string, MentionCandidate>,
   options: Options,
 ) {
-  const queue = buildInitialQueue(entities);
+  const initialQueuePlan = buildInitialQueue(entities, options.maxPages);
+  const queue = [...initialQueuePlan.queue];
   const seen = new Set(queue.map((job) => job.url));
   const pagesByOrigin = new Map<string, number>();
   const sitemapAddsByOrigin = new Map<string, number>();
@@ -785,13 +927,22 @@ async function crawlTrackedSources(
   const crawlSummary = {
     queuedUrls: queue.length,
     websites: websiteOrigins.size,
+    initialSeedUrls: initialQueuePlan.totalSeedUrls,
+    plannedInitialSeedUrls: initialQueuePlan.plannedSeedUrls,
+    deferredInitialSeedUrls: initialQueuePlan.deferredSeedUrls,
+    requiredInitialSeedUrls: initialQueuePlan.requiredSeedUrls,
+    requiredInitialSeedsDeferred: initialQueuePlan.requiredSeedUrlsDeferred,
+    discoveredUrls: 0,
+    deferredQueuedUrls: 0,
     pagesFetched: 0,
     pagesSkipped: 0,
     excessiveCrawlDelaySkipped: 0,
     robotsDisallowed: 0,
     nonHtmlSkipped: 0,
     failedFetches: 0,
-    cappedByMaxPages: false,
+    configuredBudgetExhausted: false,
+    intentionallyDeferred: initialQueuePlan.deferredSeedUrls > 0,
+    cappedByMaxPages: initialQueuePlan.requiredSeedUrlsDeferred > 0,
   };
 
   const enqueue = (job: CrawlJob) => {
@@ -799,15 +950,23 @@ async function crawlTrackedSources(
     if (!normalized || seen.has(normalized) || isLinkedInUrl(normalized)) return;
     if (SKIP_EXTENSION_RE.test(normalized)) return;
     seen.add(normalized);
-    queue.push({ ...job, url: normalized });
+    queue.push({ ...job, url: normalized, requiredForWindow: false });
+    crawlSummary.discoveredUrls++;
     const origin = originOf(normalized);
     if (origin) websiteOrigins.add(origin);
+  };
+
+  const deferForConfiguredBudget = (count: number) => {
+    if (count <= 0) return;
+    crawlSummary.configuredBudgetExhausted = true;
+    crawlSummary.intentionallyDeferred = true;
+    crawlSummary.deferredQueuedUrls += count;
   };
 
   const worker = async () => {
     while (queue.length > 0) {
       if (fetchBudgetUsed >= options.maxPages) {
-        crawlSummary.cappedByMaxPages = queue.length > 0;
+        deferForConfiguredBudget(queue.length);
         queue.length = 0;
         return;
       }
@@ -837,6 +996,14 @@ async function crawlTrackedSources(
         continue;
       }
 
+      // Other workers can consume the final slots while this worker waits for
+      // robots.txt. Recheck synchronously so concurrency never exceeds the
+      // configured global page budget.
+      if (fetchBudgetUsed >= options.maxPages) {
+        deferForConfiguredBudget(queue.length + 1);
+        queue.length = 0;
+        return;
+      }
       fetchBudgetUsed++;
       const response = await withOriginLock(origin, originLocks, async () => {
         const canFetch = await waitForPoliteSlot(
@@ -861,23 +1028,37 @@ async function crawlTrackedSources(
 
       pagesByOrigin.set(origin, originCount + 1);
       crawlSummary.pagesFetched++;
+      const finalOrigin = originOf(response.finalUrl) ?? origin;
+      websiteOrigins.add(finalOrigin);
 
       if (response.kind === "sitemap") {
         for (const url of extractSitemapUrls(response.body)) {
           const normalized = normalizeUrl(url);
-          if (!normalized || originOf(normalized) !== origin) continue;
-          const added = sitemapAddsByOrigin.get(origin) ?? 0;
+          if (!normalized || originOf(normalized) !== finalOrigin) continue;
+          const added = sitemapAddsByOrigin.get(finalOrigin) ?? 0;
           if (added >= options.maxSitemapUrlsPerSite) break;
 
           if (isSitemapUrl(normalized)) {
-            sitemapAddsByOrigin.set(origin, added + 1);
-            enqueue({ url: normalized, depth: job.depth + 1, kind: "sitemap", sourceEntities: job.sourceEntities });
+            sitemapAddsByOrigin.set(finalOrigin, added + 1);
+            enqueue({
+              url: normalized,
+              depth: job.depth + 1,
+              kind: "sitemap",
+              sourceEntities: job.sourceEntities,
+              requiredForWindow: false,
+            });
             continue;
           }
 
           if (isLikelyNewsUrl(normalized, "")) {
-            sitemapAddsByOrigin.set(origin, added + 1);
-            enqueue({ url: normalized, depth: job.depth + 1, kind: "discovered", sourceEntities: job.sourceEntities });
+            sitemapAddsByOrigin.set(finalOrigin, added + 1);
+            enqueue({
+              url: normalized,
+              depth: job.depth + 1,
+              kind: "discovered",
+              sourceEntities: job.sourceEntities,
+              requiredForWindow: false,
+            });
           }
         }
         continue;
@@ -888,17 +1069,27 @@ async function crawlTrackedSources(
         continue;
       }
 
-      const candidate = extractCandidate(job, response.body, candidates, candidateByKey);
+      const finalJob = {
+        ...job,
+        url: normalizeUrl(response.finalUrl) ?? response.finalUrl,
+      };
+      const candidate = extractCandidate(finalJob, response.body, candidates, candidateByKey);
       if (candidate) extracted.push(candidate);
 
       if (job.depth >= 1) continue;
-      const links = extractLinks(response.body, job.url)
-        .filter((link) => originOf(link.url) === origin)
+      const links = extractLinks(response.body, response.finalUrl)
+        .filter((link) => originOf(link.url) === finalOrigin)
         .filter((link) => isLikelyNewsUrl(link.url, link.text))
         .slice(0, options.maxLinksPerPage);
 
       for (const link of links) {
-        enqueue({ url: link.url, depth: job.depth + 1, kind: "discovered", sourceEntities: job.sourceEntities });
+        enqueue({
+          url: link.url,
+          depth: job.depth + 1,
+          kind: "discovered",
+          sourceEntities: job.sourceEntities,
+          requiredForWindow: false,
+        });
       }
     }
   };
@@ -1003,7 +1194,10 @@ function newsSearchQueries(entity: TrackedEntity, options: Options): NewsSearchQ
     ...entity.searchAliases,
     ...entity.mentionCandidates.flatMap((candidate) => candidate.aliases.map((alias) => alias.term)),
   ]);
-  const rankedAliases = aliases.sort((first, second) => aliasSearchRank(second) - aliasSearchRank(first));
+  const rankedAliases = aliases.sort((first, second) =>
+    aliasSearchRank(second) - aliasSearchRank(first)
+    || normalizeNewsText(first).localeCompare(normalizeNewsText(second)),
+  );
   const contextTerms = searchAliasesFromValues(entity.searchContextTerms).slice(0, 3);
   const intentTerms = entity.type === "FUND" ? SEARCH_FUND_TERMS : SEARCH_TRANSACTION_TERMS;
 
@@ -1073,15 +1267,16 @@ async function fetchNewsSearchArticles(query: string, options: Options): Promise
 
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
-      const response = await fetch(url, {
-        redirect: "follow",
+      const response = await fetchPublicText(url, {
         headers: {
           "User-Agent": USER_AGENT,
           Accept: "application/rss+xml,application/xml,text/xml",
         },
-        signal: AbortSignal.timeout(30_000),
+        maxRedirects: 5,
+        maxResponseBytes: 2_000_000,
+        timeoutMs: 30_000,
       });
-      const xml = await response.text();
+      const xml = response.body;
 
       if ((!response.ok || /limit requests|too many requests|rate/i.test(xml)) && attempt < 3) {
         await wait(Math.max(options.searchDelayMs, 6_000));
@@ -1271,37 +1466,127 @@ function wait(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function buildInitialQueue(entities: TrackedEntity[]): CrawlJob[] {
-  const byUrl = new Map<string, CrawlJob>();
+type RankedCrawlJob = CrawlJob & {
+  priority: number;
+  round: number;
+  entityKey: string;
+};
 
-  const add = (url: string, sourceEntities: TrackedEntity[], kind: SeedKind, depth = 0) => {
+/**
+ * Build a fair seed plan instead of allowing the first entities (or thousands
+ * of historical citation URLs) to consume the page budget. Every entity with
+ * a usable URL receives one required seed first. Remaining official site/news
+ * paths are round-robined next, and historical source URLs are last. Seventy
+ * percent of the page budget is reserved for these deterministic seeds; the
+ * rest stays available for current article links discovered from them.
+ */
+function buildInitialQueue(entities: TrackedEntity[], maxPages: number): InitialQueuePlan {
+  const byUrl = new Map<string, RankedCrawlJob>();
+  const sortedEntities = [...entities].sort((first, second) =>
+    `${first.type}:${first.id}`.localeCompare(`${second.type}:${second.id}`),
+  );
+
+  const add = (
+    url: string,
+    entity: TrackedEntity,
+    kind: SeedKind,
+    priority: number,
+    round: number,
+    requiredForWindow: boolean,
+  ) => {
     const normalized = normalizeUrl(url);
     if (!normalized || isLinkedInUrl(normalized) || SKIP_EXTENSION_RE.test(normalized)) return;
+    const entityKey = `${entity.type}:${entity.id}`;
     const existing = byUrl.get(normalized);
     if (existing) {
-      existing.sourceEntities = mergeEntities(existing.sourceEntities, sourceEntities);
+      existing.sourceEntities = mergeEntities(existing.sourceEntities, [entity]);
+      existing.requiredForWindow = existing.requiredForWindow || requiredForWindow;
+      if (
+        priority < existing.priority
+        || (priority === existing.priority && round < existing.round)
+        || (priority === existing.priority && round === existing.round && entityKey < existing.entityKey)
+      ) {
+        existing.priority = priority;
+        existing.round = round;
+        existing.entityKey = entityKey;
+        existing.kind = kind;
+      }
       return;
     }
-    byUrl.set(normalized, { url: normalized, depth, kind, sourceEntities });
+    byUrl.set(normalized, {
+      url: normalized,
+      depth: 0,
+      kind,
+      sourceEntities: [entity],
+      requiredForWindow,
+      priority,
+      round,
+      entityKey,
+    });
   };
 
-  for (const entity of entities) {
-    for (const entry of entity.urls) {
-      add(entry.url, [entity], entry.expandSite ? "official" : "source");
-
-      if (!entry.expandSite) continue;
-      const parsed = safeUrl(entry.url);
-      if (!parsed) continue;
-      const origin = parsed.origin;
-      add(origin, [entity], "official");
-      add(`${origin}/sitemap.xml`, [entity], "sitemap");
-      for (const commonPath of COMMON_NEWS_PATHS) {
-        add(`${origin}${commonPath}`, [entity], "common-path");
+  for (const entity of sortedEntities) {
+    const officialSeeds = new Map<string, SeedKind>();
+    const historicalSeeds = new Set<string>();
+    for (const entry of sortNewsScanEntityUrls(entity.urls)) {
+      const normalized = normalizeUrl(entry.url);
+      if (!normalized || isLinkedInUrl(normalized) || SKIP_EXTENSION_RE.test(normalized)) continue;
+      if (!entry.expandSite) {
+        historicalSeeds.add(normalized);
+        continue;
       }
+
+      officialSeeds.set(normalized, "official");
+      const parsed = safeUrl(normalized);
+      if (!parsed) continue;
+      officialSeeds.set(parsed.origin, "official");
+      for (const commonPath of COMMON_NEWS_PATHS) {
+        officialSeeds.set(`${parsed.origin}${commonPath}`, "common-path");
+      }
+      officialSeeds.set(`${parsed.origin}/sitemap.xml`, "sitemap");
     }
+
+    const officialEntries = Array.from(officialSeeds.entries());
+    const historicalEntries = Array.from(historicalSeeds).sort();
+    const requiredUrl = officialEntries[0]?.[0] ?? historicalEntries[0];
+
+    officialEntries.forEach(([url, kind], index) => {
+      add(url, entity, kind, url === requiredUrl ? 0 : 1, index, url === requiredUrl);
+    });
+    historicalEntries.forEach((url, index) => {
+      add(url, entity, "source", url === requiredUrl ? 0 : 2, index, url === requiredUrl);
+    });
   }
 
-  return Array.from(byUrl.values());
+  const rankedSeeds = Array.from(byUrl.values()).sort((first, second) =>
+    first.priority - second.priority
+    || first.round - second.round
+    || first.entityKey.localeCompare(second.entityKey)
+    || first.url.localeCompare(second.url),
+  );
+  const requiredSeedUrls = rankedSeeds.filter((seed) => seed.requiredForWindow).length;
+  const requestedSeedBudget = Math.max(
+    requiredSeedUrls,
+    Math.floor(maxPages * INITIAL_SEED_BUDGET_RATIO),
+  );
+  const plannedSeedUrls = Math.min(rankedSeeds.length, maxPages, requestedSeedBudget);
+  const queue = rankedSeeds.slice(0, plannedSeedUrls).map((seed) => ({
+    url: seed.url,
+    depth: seed.depth,
+    kind: seed.kind,
+    sourceEntities: seed.sourceEntities,
+    requiredForWindow: seed.requiredForWindow,
+  }));
+  const deferredSeeds = rankedSeeds.slice(plannedSeedUrls);
+
+  return {
+    queue,
+    totalSeedUrls: rankedSeeds.length,
+    plannedSeedUrls,
+    deferredSeedUrls: deferredSeeds.length,
+    requiredSeedUrls,
+    requiredSeedUrlsDeferred: deferredSeeds.filter((seed) => seed.requiredForWindow).length,
+  };
 }
 
 function mergeEntities(existing: TrackedEntity[], incoming: TrackedEntity[]): TrackedEntity[] {
@@ -1319,12 +1604,14 @@ async function getRobots(origin: string, cache: Map<string, Promise<RobotsRules>
 
 async function fetchRobots(origin: string): Promise<RobotsRules> {
   try {
-    const response = await fetch(`${origin}/robots.txt`, {
+    const response = await fetchPublicText(`${origin}/robots.txt`, {
       headers: { "User-Agent": USER_AGENT },
-      signal: AbortSignal.timeout(10_000),
+      maxRedirects: 3,
+      maxResponseBytes: 256_000,
+      timeoutMs: 10_000,
     });
     if (!response.ok) return { allow: [], disallow: [] };
-    return parseRobots(await response.text());
+    return parseRobots(response.body);
   } catch {
     return { allow: [], disallow: [] };
   }
@@ -1421,30 +1708,37 @@ async function waitForPoliteSlot(
   return true;
 }
 
-async function fetchPage(url: string): Promise<{ ok: true; kind: "html" | "sitemap" | "other"; body: string } | { ok: false }> {
+async function fetchPage(url: string): Promise<{
+  ok: true;
+  kind: "html" | "sitemap" | "other";
+  body: string;
+  finalUrl: string;
+} | { ok: false }> {
   try {
-    const response = await fetch(url, {
-      redirect: "follow",
+    const response = await fetchPublicText(url, {
       headers: {
         "User-Agent": USER_AGENT,
         Accept: "text/html,application/xhtml+xml,application/xml,text/xml;q=0.9,*/*;q=0.4",
       },
-      signal: AbortSignal.timeout(18_000),
+      maxRedirects: 5,
+      maxResponseBytes: 1_500_000,
+      timeoutMs: 18_000,
     });
     if (!response.ok) return { ok: false };
 
-    const contentType = response.headers.get("content-type")?.toLowerCase() ?? "";
-    const finalUrl = normalizeUrl(response.url) ?? url;
-    const body = await response.text();
-    const trimmed = body.slice(0, 1_500_000);
+    const contentType = response.contentType;
+    // Preserve the fetcher's exact validated redirect destination for relative
+    // URL resolution. Canonicalize separately when persisting a candidate.
+    const finalUrl = response.url;
+    const trimmed = response.body;
 
     if (isSitemapUrl(finalUrl) || contentType.includes("xml")) {
-      return { ok: true, kind: "sitemap", body: trimmed };
+      return { ok: true, kind: "sitemap", body: trimmed, finalUrl };
     }
     if (contentType.includes("html") || /<html[\s>]/i.test(trimmed)) {
-      return { ok: true, kind: "html", body: trimmed };
+      return { ok: true, kind: "html", body: trimmed, finalUrl };
     }
-    return { ok: true, kind: "other", body: "" };
+    return { ok: true, kind: "other", body: "", finalUrl };
   } catch {
     return { ok: false };
   }
@@ -1628,12 +1922,16 @@ function candidateMergeKey(candidate: ExtractedCandidate): string {
   return normalizeUrl(candidate.sourceUrl) ?? candidate.sourceUrl;
 }
 
-function filterCandidatesByDateWindow(candidates: ExtractedCandidate[], options: Options): ExtractedCandidate[] {
+function filterCandidatesByDateWindow(
+  candidates: ExtractedCandidate[],
+  options: Options,
+  scanAsOf: Date,
+): ExtractedCandidate[] {
   if (!options.sinceDays) return candidates;
-  const since = new Date();
+  const since = new Date(scanAsOf);
   since.setUTCHours(0, 0, 0, 0);
   since.setUTCDate(since.getUTCDate() - options.sinceDays);
-  const latestAllowed = Date.now() + FUTURE_DATE_GRACE_MS;
+  const latestAllowed = scanAsOf.getTime() + FUTURE_DATE_GRACE_MS;
 
   return candidates.filter((candidate) => (
     !candidate.publishedAtInferred

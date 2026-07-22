@@ -3,13 +3,15 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import ImportExportBar from "./ImportExportBar";
 
-const { invalidateDetailCache } = vi.hoisted(() => ({
+const { invalidateDetailCache, track } = vi.hoisted(() => ({
   invalidateDetailCache: vi.fn(),
+  track: vi.fn(),
 }));
 
 vi.mock("@/lib/detail-cache-events", () => ({
   invalidateDetailCache,
 }));
+vi.mock("@vercel/analytics", () => ({ track }));
 
 function csvFile(contents: string, name = "deals.csv"): File {
   const file = new File([contents], name, { type: "text/csv" });
@@ -32,6 +34,18 @@ describe("ImportExportBar", () => {
     vi.unstubAllGlobals();
     vi.restoreAllMocks();
     invalidateDetailCache.mockReset();
+    track.mockReset();
+  });
+
+  it("tracks an authenticated CSV export without record or query data", () => {
+    render(<ImportExportBar entityType="portfolio" />);
+    const exportLink = screen.getByRole("link", { name: "Export CSV" });
+    exportLink.addEventListener("click", (event) => event.preventDefault());
+
+    fireEvent.click(exportLink);
+
+    expect(track).toHaveBeenCalledWith("export_started", { entity: "company" });
+    expect(track.mock.calls[0]).toHaveLength(2);
   });
 
   it("shows a detailed preview and only commits after explicit confirmation", async () => {

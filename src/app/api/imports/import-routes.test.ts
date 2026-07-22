@@ -79,7 +79,7 @@ function deal(overrides: Record<string, unknown> = {}) {
     country: "United States",
     status: "Announced",
     sourceName: "Company announcement",
-    sourceUrl: "https://example.test/deal",
+    sourceUrl: "https://example.com/test/deal",
     ...overrides,
   };
 }
@@ -98,7 +98,7 @@ function fund(overrides: Record<string, unknown> = {}) {
     status: "Raising",
     sectors: ["Digital"],
     regions: ["North America"],
-    sourceUrls: ["https://example.test/fund"],
+    sourceUrls: ["https://example.com/test/fund"],
     ...overrides,
   };
 }
@@ -112,7 +112,7 @@ function company(overrides: Record<string, unknown> = {}) {
     region: "North America",
     description: "A fiber platform.",
     status: "Active",
-    website: "https://example.test/company",
+    website: "https://example.com/test/company",
     yearFounded: 2012,
     investmentYear: 2024,
     investmentFirm: "Manager",
@@ -565,7 +565,12 @@ describe("two-step import routes", () => {
       funds: [
         fund({ id: "FUND-PUBLISHED", fundName: "Published Fund", managerName: "Published Manager" }),
         fund({ id: "FUND-DRAFT", fundName: "Draft Fund", managerName: "Draft Manager" }),
-        fund({ id: "FUND-NEW", fundName: "New Fund", managerName: "New Manager" }),
+        fund({
+          id: "FUND-NEW",
+          fundName: "New Fund",
+          managerName: "New Manager",
+          primarySourceUrl: "https://example.com/test/fund-primary",
+        }),
       ],
     }));
 
@@ -591,7 +596,14 @@ describe("two-step import routes", () => {
       },
     }));
     expect(fundTx.fund.create).toHaveBeenCalledWith(expect.objectContaining({
-      data: expect.objectContaining({ legacyId: "FUND-NEW", status: "DRAFT" }),
+      data: expect.objectContaining({
+        legacyId: "FUND-NEW",
+        primarySourceUrl: "https://example.com/test/fund-primary",
+        status: "DRAFT",
+      }),
+    }));
+    expect(fundTx.fund.updateMany).toHaveBeenCalledWith(expect.objectContaining({
+      data: expect.objectContaining({ primarySourceUrl: null }),
     }));
     expect(mocks.recordAuditEvent).toHaveBeenCalledWith({
       entityType: "Fund",

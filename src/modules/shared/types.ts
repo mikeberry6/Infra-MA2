@@ -71,6 +71,7 @@ export interface FundView {
   ticker: string | null;
   investmentStrategy: string;
   sourceUrls: string[];
+  primarySourceUrl: string | null;
   size: string;
   sizeUsdMm: number | null;
   vintage: string;
@@ -254,7 +255,18 @@ export interface FeedOperationsView {
   lastSuccessfulAt?: string;
   nextExpectedAt?: string;
   sourceCoverage?: NewsSourceCoverage;
+  scanWindow?: NewsScanWindowView;
   message: string;
+}
+
+export interface NewsScanWindowView {
+  selectionDateUtc: string;
+  fullUniverseCount: number;
+  eligibleCount: number;
+  selectedCount: number;
+  offset: number;
+  windowIndex: number;
+  windowsPerCycle: number;
 }
 
 export interface NewsSourceCoverage {

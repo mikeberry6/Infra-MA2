@@ -1,4 +1,11 @@
 import { z } from "zod";
+import { isHttpUrl } from "@/lib/source-utils";
+
+function httpUrlSchema(message: string) {
+  return z.string().trim().url(message).refine(isHttpUrl, {
+    message: `${message}; use an absolute http or https URL`,
+  });
+}
 
 // ── Valid display-string values (derived from enum-maps) ──────────────
 
@@ -159,7 +166,7 @@ export const dealSchema = z.object({
 
   // Source
   sourceName: z.string().optional(),
-  sourceUrl: z.string().url("Invalid source URL").optional().or(z.literal("")),
+  sourceUrl: httpUrlSchema("Invalid source URL").optional().or(z.literal("")),
 
   // Advisors
   financialAdvisorBuyer: z.array(z.string()).optional(),
@@ -198,9 +205,10 @@ export const fundSchema = z.object({
   status: z.enum(FUND_STATUSES, { message: "Invalid fund status" }),
   sectors: z.array(z.enum(FUND_SECTORS, { message: "Invalid fund sector" })).default([]),
   regions: z.array(z.enum(FUND_REGIONS, { message: "Invalid fund region" })).default([]),
-  sourceUrls: z.array(z.string().url("Invalid source URL")).optional(),
+  sourceUrls: z.array(httpUrlSchema("Invalid source URL")).optional(),
+  primarySourceUrl: httpUrlSchema("Invalid primary source URL").optional().or(z.literal("")),
   ticker: z.string().optional(),
-  strategyUrl: z.string().url("Invalid strategy URL").optional().or(z.literal("")),
+  strategyUrl: httpUrlSchema("Invalid strategy URL").optional().or(z.literal("")),
 });
 
 export type FundInput = z.infer<typeof fundSchema>;
@@ -215,7 +223,7 @@ export const companySchema = z.object({
   region: z.enum(COMPANY_REGIONS, { message: "Invalid company region" }),
   description: z.string().optional(),
   status: z.enum(COMPANY_STATUSES, { message: "Invalid company status" }).default("Active"),
-  website: z.string().url("Invalid website URL").optional().or(z.literal("")),
+  website: httpUrlSchema("Invalid website URL").optional().or(z.literal("")),
   yearFounded: z.number().int().min(1800).max(2100).optional(),
   investmentYear: z.number().int().min(1900).max(2100).optional(),
   headquarters: z.string().optional(),
@@ -223,7 +231,7 @@ export const companySchema = z.object({
   ownershipVehicle: z.string().optional(),
   countryTags: z.array(z.string()).optional(),
   sourceName: z.string().optional(),
-  sourceUrl: z.string().url("Invalid source URL").optional().or(z.literal("")),
+  sourceUrl: httpUrlSchema("Invalid source URL").optional().or(z.literal("")),
 });
 
 export type CompanyInput = z.infer<typeof companySchema>;

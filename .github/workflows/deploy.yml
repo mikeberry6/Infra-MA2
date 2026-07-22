@@ -185,6 +185,7 @@ jobs:
           set -o pipefail
           company_approval="audits/approvals/company-merges.json"
           ownership_approval="audits/approvals/ownership-fund-links.json"
+          fund_primary_source_approval="audits/approvals/fund-primary-sources.json"
           seller_disclosure_approval="audits/approvals/deal-seller-disclosures.json"
           citation_approval="audits/approvals/primary-citations.json"
 
@@ -221,6 +222,23 @@ jobs:
           else
             ./node_modules/.bin/tsx scripts/report-ownership-fund-link-remediation.ts \
               --output=tmp/ci/ownership-fund-link-approval-template.json
+          fi
+
+          if [ -f "$fund_primary_source_approval" ]; then
+            test ! -L "$fund_primary_source_approval"
+            git ls-files --error-unmatch -- "$fund_primary_source_approval" >/dev/null
+            fund_primary_source_sha="$(sha256sum "$fund_primary_source_approval" | awk '{print $1}')"
+            fund_primary_source_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$fund_primary_source_approval")"
+            MUTATION_REVIEWED_BY="$fund_primary_source_reviewer" \
+            MUTATION_REASON="Validate the committed Fund primary-source approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/apply-fund-primary-source-remediation.ts \
+              --apply \
+              --approval-file="$fund_primary_source_approval" \
+              --expected-sha256="$fund_primary_source_sha" \
+              2>&1 | tee tmp/ci/fund-primary-source-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-fund-primary-source-remediation.ts \
+              --output=tmp/ci/fund-primary-source-approval-template.json
           fi
 
           if [ -f "$seller_disclosure_approval" ]; then
@@ -287,6 +305,49 @@ jobs:
         env:
           E2E_BASE_PATH: /Infra-MA2
         run: npm run test:e2e
+
+      - name: Prove top-level database failure and retry journeys
+        shell: bash
+        env:
+          # The normal authenticated suite uses the allow-listed Neon branch.
+          # This separate, read-only server must never inherit that write URL.
+          E2E_DATABASE_URL: ""
+          DATABASE_URL: postgresql://failure_fixture:failure_fixture@127.0.0.1:1/failure_fixture?connect_timeout=1
+          NEXTAUTH_SECRET: loopback-failure-fixture-only
+          E2E_BASE_PATH: /Infra-MA2
+        run: |
+          mkdir -p tmp/ci
+          failure_port=3101
+          failure_url="http://127.0.0.1:${failure_port}"
+          npm run start -- -p "$failure_port" > tmp/ci/top-level-failure-server.log 2>&1 &
+          failure_pid=$!
+          cleanup() {
+            kill "$failure_pid" 2>/dev/null || true
+            wait "$failure_pid" 2>/dev/null || true
+          }
+          trap cleanup EXIT
+
+          ready=0
+          for _ in $(seq 1 60); do
+            if ! kill -0 "$failure_pid" 2>/dev/null; then
+              break
+            fi
+            if curl --silent --output /dev/null --max-time 2 "${failure_url}/Infra-MA2/tracker"; then
+              ready=1
+              break
+            fi
+            sleep 1
+          done
+          if [ "$ready" -ne 1 ]; then
+            echo "::error::Loopback failure server did not become ready."
+            sed -n '1,200p' tmp/ci/top-level-failure-server.log
+            exit 1
+          fi
+
+          E2E_TOP_LEVEL_FAILURE_FIXTURE=1 \
+          PLAYWRIGHT_BASE_URL="$failure_url" \
+            npx playwright test tests/e2e/failure-states.spec.ts \
+              --grep "distinguishes a database failure"
 
       - name: Upload migration and data evidence
         if: always()

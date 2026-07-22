@@ -174,6 +174,12 @@ jobs:
           ./node_modules/.bin/tsx scripts/report-deal-seller-disclosure-remediation.ts \
             --output=tmp/release/deal-seller-disclosure-approval-template.json
 
+      - name: Record the current Fund primary-source backlog
+        shell: bash
+        run: |
+          ./node_modules/.bin/tsx scripts/report-fund-primary-source-remediation.ts \
+            --output=tmp/release/fund-primary-source-approval-template.json
+
       - name: Verify production data and source gates
         shell: bash
         run: |
@@ -189,7 +195,7 @@ jobs:
       - name: Require healthy critical pipelines before promotion
         run: |
           ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --freshness-schedule=dashboard-weekday --expected-runs-per-week=5 --min-success-rate=0.95 --require-full-window --output=tmp/release/dashboard-reliability.json
-          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --require-full-window --output=tmp/release/news-reliability.json
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --max-source-failure-rate=0.25 --require-full-window --output=tmp/release/news-reliability.json
 
       - name: Reverify exact main head immediately before promotion
         env:

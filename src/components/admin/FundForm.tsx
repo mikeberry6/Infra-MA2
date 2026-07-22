@@ -49,6 +49,7 @@ export default function FundForm({ initialData, action, mode }: FundFormProps) {
   const [sourceUrls, setSourceUrls] = useState(
     (initialData?.sourceUrls ?? []).join("\n")
   );
+  const [primarySourceUrl, setPrimarySourceUrl] = useState(initialData?.primarySourceUrl ?? "");
   const [ticker, setTicker] = useState(initialData?.ticker ?? "");
   const [strategyUrl, setStrategyUrl] = useState(initialData?.strategyUrl ?? "");
 
@@ -70,6 +71,7 @@ export default function FundForm({ initialData, action, mode }: FundFormProps) {
     formData.set("structure", structure);
     formData.set("status", status);
     formData.set("ticker", ticker);
+    formData.set("primarySourceUrl", primarySourceUrl);
     formData.set("strategyUrl", strategyUrl);
 
     for (const s of strategies) {
@@ -263,6 +265,20 @@ export default function FundForm({ initialData, action, mode }: FundFormProps) {
       </FormField>
 
       <div className="surface space-y-4 p-4">
+        <FormField
+          htmlFor="fund-primary-source-url"
+          label="Primary Source URL"
+          hint="Designate only after Research review. Supporting and strategy links are not promoted automatically."
+        >
+          <TextInput
+            id="fund-primary-source-url"
+            size="md"
+            type="url"
+            aria-describedby="fund-primary-source-url-hint"
+            value={primarySourceUrl}
+            onChange={(e) => setPrimarySourceUrl(e.target.value)}
+          />
+        </FormField>
         <FormField htmlFor="fund-strategy-url" label="Strategy URL">
           <TextInput
             id="fund-strategy-url"

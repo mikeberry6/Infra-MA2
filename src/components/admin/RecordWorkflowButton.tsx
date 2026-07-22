@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { Button } from "@/components/shared/Button";
+import { FormMessage } from "@/components/shared/FormControls";
 import { invalidateDetailCache, type DetailCacheEntity } from "@/lib/detail-cache-events";
 
 interface RecordWorkflowButtonProps {
@@ -30,7 +31,7 @@ export default function RecordWorkflowButton({
   const action = isPublished ? verify : isReview ? publish : submitForReview;
 
   return (
-    <span className="inline-flex items-center gap-1.5">
+    <div className="flex flex-wrap items-center gap-1.5">
       <Button
         variant={isReview ? "primary" : "secondary"}
         size="sm"
@@ -46,7 +47,7 @@ export default function RecordWorkflowButton({
       >
         {isPublished ? "Verify" : isReview ? "Publish" : "Submit review"}
       </Button>
-      {error && <span className="max-w-48 whitespace-normal type-micro text-[#b91c1c]">{error}</span>}
-    </span>
+      {error && <FormMessage tone="error" className="max-w-64 whitespace-normal">{error}</FormMessage>}
+    </div>
   );
 }

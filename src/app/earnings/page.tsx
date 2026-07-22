@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ExternalLink } from "lucide-react";
 import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
+import { TrackedAnalyticsLink } from "@/components/shared/TrackedAnalyticsLink";
 
 export const metadata: Metadata = {
   title: "Earnings",
@@ -112,15 +113,19 @@ export default function EarningsPage() {
                   {card.ticker} · {card.period}
                 </p>
               </div>
-              <a
+              <TrackedAnalyticsLink
                 href={card.source}
                 target="_blank"
                 rel="noopener noreferrer"
+                analyticsEvent={{
+                  name: "source_link_clicked",
+                  properties: { entity: "earnings", placement: "card" },
+                }}
                 className="inline-flex h-7 w-7 items-center justify-center rounded-md text-[var(--text-tertiary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] transition-colors"
                 aria-label={`${card.manager} investor relations`}
               >
                 <ExternalLink className="h-3.5 w-3.5" />
-              </a>
+              </TrackedAnalyticsLink>
             </div>
             <p className="mt-3 type-meta">
               {card.context}

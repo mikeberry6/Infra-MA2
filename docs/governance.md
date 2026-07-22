@@ -10,6 +10,7 @@
 | Production release | Engineering + Operations | Required `production` environment reviewer |
 | Canonical company merge | Research + Engineering | Research approves survivors; Engineering approves transaction/redirect plan |
 | Ownership-to-fund link correction | Research + Engineering | Research confirms vehicle identity; Engineering approves the hash-bound link/unlink plan |
+| Fund primary-source designation | Research + Engineering | Research selects an exact HTTP(S) candidate; Engineering approves the hash-bound designation path |
 | Deal seller-disclosure treatment | Research + Engineering | Research verifies each source-backed absence classification; Engineering approves the hash-bound status/reason-only plan |
 | Credential/access change | Operations + affected account owner | Two-person review for production secrets |
 
@@ -38,7 +39,7 @@ Automation may propose records but may not publish deals or portfolio companies.
 - Public mobile/desktop Core Web Vitals at p75: LCP below 2.5s, INP below 200ms, CLS below 0.1.
 - Public database first-load JavaScript below 150 KB unless a release record documents a reviewed exception.
 - Initial list rendering: no more than 25 rows.
-- Published deals, funds, and companies: 100% required source presence; primary-source quality confirmed by Research until explicitly modeled.
+- Published deals, Funds, and companies: 100% required source presence. Deals and companies require a Research-designated primary citation; Funds require a Research-designated HTTP(S) `primarySourceUrl`. Missing or invalid Fund designations use the neutral candidate report, immutable reviewed approval, and protected hash-bound apply workflow before release.
 - Accessibility: WCAG 2.2 AA for public and administrative routes, plus manual keyboard review each quarter.
 
 Objectives that require elapsed telemetry are not declared complete from a one-time test. The monthly review records the actual rolling window and follow-up when an objective is missed.

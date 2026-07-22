@@ -2,6 +2,7 @@
 
 import { useTransition, useState } from "react";
 import { Button } from "@/components/shared/Button";
+import { FormMessage } from "@/components/shared/FormControls";
 import { invalidateDetailCache, type DetailCacheEntity } from "@/lib/detail-cache-events";
 
 interface DeleteButtonProps {
@@ -20,7 +21,7 @@ export default function DeleteButton({ deleteAction, id, entity, status }: Delet
 
   if (confirming) {
     return (
-      <span className="inline-flex items-center gap-1.5">
+      <div className="flex flex-wrap items-center gap-1.5">
         <Button
           variant="danger"
           size="sm"
@@ -43,19 +44,17 @@ export default function DeleteButton({ deleteAction, id, entity, status }: Delet
         <Button variant="ghost" size="sm" onClick={() => setConfirming(false)}>
           Cancel
         </Button>
-        {error && (
-          <span className="text-[11px] text-[#dc2626]">{error}</span>
-        )}
-      </span>
+        {error && <FormMessage tone="error" className="max-w-64 whitespace-normal">{error}</FormMessage>}
+      </div>
     );
   }
 
   return (
-    <span className="inline-flex items-center gap-1.5">
+    <div className="flex flex-wrap items-center gap-1.5">
       <Button variant="ghost" size="sm" onClick={() => { setError(null); setConfirming(true); }}>
         Delete
       </Button>
-      {error && <span className="max-w-64 whitespace-normal type-micro text-[#b91c1c]" role="alert">{error}</span>}
-    </span>
+      {error && <FormMessage tone="error" className="max-w-64 whitespace-normal">{error}</FormMessage>}
+    </div>
   );
 }

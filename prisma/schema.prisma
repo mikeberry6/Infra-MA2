@@ -131,6 +131,7 @@ model Fund {
   sectors            FundSectorEnum[]
   regions            FundRegionEnum[]
   sourceUrls         String[]
+  primarySourceUrl   String?
   strategyUrl        String           @default("")
   status             RecordStatus     @default(PUBLISHED)
   lastVerifiedAt     DateTime?

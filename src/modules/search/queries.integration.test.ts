@@ -84,8 +84,8 @@ describe("cross-database search integration", () => {
     expect(results.map((result) => result.title)).toEqual([
       "Brookfield",
       "Brookfield Renewables",
-      "Alpha Infrastructure Fund",
       "Global Brookfield Asset",
+      "Alpha Infrastructure Fund",
     ]);
     for (const query of [mocks.deals, mocks.companies, mocks.funds]) {
       expect(query).toHaveBeenCalledTimes(3);
@@ -108,7 +108,7 @@ describe("cross-database search integration", () => {
     });
   });
 
-  it("globally ranks independently bounded exact, prefix, and contains tiers", async () => {
+  it("globally ranks mutually exclusive exact, prefix, and contains tiers", async () => {
     mocks.deals.mockResolvedValue(Array.from({ length: 5 }, (_, index) => ({
       legacyId: `DEAL-${index}`,
       title: `Matching deal ${index}`,
@@ -136,11 +136,50 @@ describe("cross-database search integration", () => {
 
     const results = await searchAll("Match", 3);
 
-    expect(mocks.deals.mock.calls.map(([options]) => options.take)).toEqual([25, 40, 90]);
-    expect(mocks.companies.mock.calls.map(([options]) => options.take)).toEqual([25, 40, 90]);
-    expect(mocks.funds.mock.calls.map(([options]) => options.take)).toEqual([25, 40, 90]);
+    expect(mocks.deals.mock.calls.map(([options]) => options.take)).toEqual([3, 3, 3]);
+    expect(mocks.companies.mock.calls.map(([options]) => options.take)).toEqual([3, 3, 3]);
+    expect(mocks.funds.mock.calls.map(([options]) => options.take)).toEqual([3, 3, 3]);
+    expect(mocks.deals.mock.calls[1][0].where.NOT.target.equals).toBe("Match");
+    expect(mocks.deals.mock.calls[2][0].where.NOT.target.startsWith).toBe("Match");
     expect(results).toHaveLength(3);
     expect(results.slice(0, 2).map((result) => result.type).sort()).toEqual(["company", "fund"]);
+  });
+
+  it("uses pure global relevance in All scope instead of reserving entity quotas", async () => {
+    mocks.deals.mockResolvedValue(Array.from({ length: 4 }, (_, index) => ({
+      legacyId: `DEAL-${index}`,
+      title: `Match transaction ${index}`,
+      target: `Match Asset ${index}`,
+      description: "",
+      sector: "DIGITAL",
+      region: "EUROPE",
+      participants: [],
+    })));
+    mocks.companies.mockResolvedValue([{
+      id: "company-body",
+      name: "Alpha Networks",
+      description: "A Match operating company",
+      subsector: "Fiber",
+      sector: "DIGITAL",
+      region: "EUROPE",
+      country: "United Kingdom",
+    }]);
+    mocks.funds.mockResolvedValue([{
+      legacyId: "fund-body",
+      fundName: "Alpha Infrastructure Fund",
+      investmentStrategy: "Match strategy",
+      manager: { name: "Manager" },
+    }]);
+    mocks.dealCount.mockResolvedValue(4);
+    mocks.companyCount.mockResolvedValue(1);
+    mocks.fundCount.mockResolvedValue(1);
+
+    const search = await searchAllWithMeta("Match", { pageSize: 3 });
+
+    expect(search.results).toHaveLength(3);
+    expect(search.results.every((result) => result.type === "deal")).toBe(true);
+    expect(search.total).toBe(6);
+    expect(search.totalPages).toBe(2);
   });
 
   it("reports complete totals while globally limiting the ranked display set", async () => {
@@ -178,7 +217,114 @@ describe("cross-database search integration", () => {
 
     expect(search.results.map((result) => result.title)).toEqual(["Match", "Match Networks"]);
     expect(search.total).toBe(3);
+    expect(search.scopeTotal).toBe(3);
     expect(search.counts).toEqual({ deal: 1, company: 1, fund: 1 });
+    expect(search).toMatchObject({ scope: "all", page: 1, pageSize: 2, totalPages: 2 });
+  });
+
+  it("hydrates later pages and isolates entity-scoped result queries", async () => {
+    const deals = Array.from({ length: 20 }, (_, index) => ({
+      legacyId: `DEAL-${String(index + 1).padStart(2, "0")}`,
+      title: `Match transaction ${index + 1}`,
+      target: `Match Asset ${String(index + 1).padStart(2, "0")}`,
+      description: "",
+      sector: "DIGITAL",
+      region: "EUROPE",
+      participants: [],
+    }));
+    mocks.dealCount.mockResolvedValue(25);
+    mocks.companyCount.mockResolvedValue(7);
+    mocks.fundCount.mockResolvedValue(4);
+    mocks.deals
+      .mockResolvedValueOnce([])
+      .mockResolvedValueOnce(deals)
+      .mockResolvedValueOnce([]);
+
+    const search = await searchAllWithMeta("Match", {
+      scope: "deal",
+      page: 2,
+      pageSize: 10,
+    });
+
+    expect(search.results.map((result) => result.id)).toEqual(
+      Array.from({ length: 10 }, (_, index) => `DEAL-${String(index + 11).padStart(2, "0")}`),
+    );
+    expect(search).toMatchObject({
+      total: 36,
+      scopeTotal: 25,
+      counts: { deal: 25, company: 7, fund: 4 },
+      scope: "deal",
+      page: 2,
+      pageSize: 10,
+      totalPages: 3,
+    });
+    expect(mocks.deals).toHaveBeenCalledTimes(3);
+    expect(mocks.deals.mock.calls.map(([options]) => options.take)).toEqual([20, 20, 20]);
+    expect(mocks.companies).not.toHaveBeenCalled();
+    expect(mocks.funds).not.toHaveBeenCalled();
+  });
+
+  it("keeps non-zero-padded equal-score pages disjoint and complete", async () => {
+    const deals = Array.from({ length: 25 }, (_, index) => ({
+      legacyId: `DEAL-${String(index + 1).padStart(2, "0")}`,
+      title: `Match transaction ${index + 1}`,
+      target: `Match Asset ${index + 1}`,
+      description: "",
+      sector: "DIGITAL",
+      region: "EUROPE",
+      participants: [],
+    }));
+    const databaseOrdered = [...deals].sort((a, b) => (
+      a.target < b.target ? -1 : a.target > b.target ? 1 : 0
+    ));
+    mocks.dealCount.mockResolvedValue(deals.length);
+    mocks.deals.mockImplementation(async (options) => {
+      // Exact and contains tiers are empty. The prefix tier emulates the
+      // database's lexical title order and honors the requested candidate cap.
+      if (!options.where.target?.startsWith) return [];
+      return databaseOrdered.slice(0, options.take);
+    });
+
+    const pages = [];
+    for (const page of [1, 2, 3]) {
+      pages.push(await searchAllWithMeta("Match", {
+        scope: "deal",
+        page,
+        pageSize: 10,
+      }));
+    }
+
+    const pageIds = pages.map((result) => result.results.map((row) => row.id));
+    expect(pageIds.map((ids) => ids.length)).toEqual([10, 10, 5]);
+    expect(pageIds[0].filter((id) => pageIds[1].includes(id))).toEqual([]);
+    expect(pageIds[0].filter((id) => pageIds[2].includes(id))).toEqual([]);
+    expect(pageIds[1].filter((id) => pageIds[2].includes(id))).toEqual([]);
+    expect(new Set(pageIds.flat())).toEqual(new Set(deals.map((deal) => deal.legacyId)));
+  });
+
+  it("clamps an out-of-range page before hydrating candidates", async () => {
+    mocks.dealCount.mockResolvedValue(3);
+    mocks.deals.mockResolvedValue([
+      {
+        legacyId: "DEAL-1",
+        title: "Match transaction",
+        target: "Match Asset",
+        description: "",
+        sector: "DIGITAL",
+        region: "EUROPE",
+        participants: [],
+      },
+    ]);
+
+    const search = await searchAllWithMeta("Match", {
+      scope: "deal",
+      page: 999,
+      pageSize: 10,
+    });
+
+    expect(search.page).toBe(1);
+    expect(search.totalPages).toBe(1);
+    expect(mocks.deals.mock.calls.map(([options]) => options.take)).toEqual([10, 10, 10]);
   });
 
   it("searches deal participants and includes them in fallback scoring", async () => {

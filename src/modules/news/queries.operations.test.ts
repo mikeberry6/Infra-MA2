@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 const mocks = vi.hoisted(() => ({
   newsFindMany: vi.fn(),
   pipelineFindFirst: vi.fn(),
+  pipelineFindMany: vi.fn(),
 }));
 
 vi.mock("next/cache", () => ({
@@ -12,7 +13,10 @@ vi.mock("next/cache", () => ({
 vi.mock("@/lib/prisma", () => ({
   prisma: {
     newsItem: { findMany: mocks.newsFindMany },
-    pipelineRun: { findFirst: mocks.pipelineFindFirst },
+    pipelineRun: {
+      findFirst: mocks.pipelineFindFirst,
+      findMany: mocks.pipelineFindMany,
+    },
   },
 }));
 
@@ -23,8 +27,18 @@ function pipelineRun(status: "RUNNING" | "SUCCEEDED" | "FAILED", startedAt: stri
     status,
     startedAt: new Date(startedAt),
     endedAt: endedAt ? new Date(endedAt) : null,
-    metadata: null,
+    metadata: status === "SUCCEEDED"
+      ? { sourceCoverage: { attempted: 10, succeeded: 10, failed: 0 } }
+      : null,
   };
+}
+
+function mockPipelineReads(
+  latestAttempt: ReturnType<typeof pipelineRun> | null,
+  storedSuccesses: Array<ReturnType<typeof pipelineRun>> = [],
+) {
+  mocks.pipelineFindFirst.mockResolvedValue(latestAttempt);
+  mocks.pipelineFindMany.mockResolvedValue(storedSuccesses);
 }
 
 describe("news pipeline freshness states", () => {
@@ -33,10 +47,11 @@ describe("news pipeline freshness states", () => {
     vi.setSystemTime(new Date("2026-07-22T12:00:00.000Z"));
     mocks.newsFindMany.mockReset().mockResolvedValue([]);
     mocks.pipelineFindFirst.mockReset();
+    mocks.pipelineFindMany.mockReset();
   });
 
   it("reports never-run when no attempt exists", async () => {
-    mocks.pipelineFindFirst.mockResolvedValue(null);
+    mockPipelineReads(null);
 
     const feed = await getNewsFeed();
 
@@ -55,10 +70,20 @@ describe("news pipeline freshness states", () => {
     );
     success.metadata = {
       sourceCoverage: { attempted: 15, succeeded: 12, failed: 3 },
+      selection: {
+        selectionDateUtc: "2026-07-22",
+        fullUniverseCount: 1_434,
+        eligibleCount: 1_434,
+        selectedCount: 200,
+        maxTargets: 200,
+        offset: 1_200,
+        windowIndex: 6,
+        windowsPerCycle: 8,
+        cycleNumber: 900,
+        targetFiltered: false,
+      },
     } as never;
-    mocks.pipelineFindFirst.mockImplementation(({ where }: { where: { status?: string } }) => (
-      Promise.resolve(where.status ? success : success)
-    ));
+    mockPipelineReads(success, [success]);
 
     const feed = await getNewsFeed();
 
@@ -67,7 +92,16 @@ describe("news pipeline freshness states", () => {
       lastSuccessfulAt: "2026-07-22T00:05:00.000Z",
       nextExpectedAt: "2026-07-22T23:30:00.000Z",
       sourceCoverage: { attempted: 15, succeeded: 12, failed: 3 },
-      message: "The daily public-source scan completed successfully.",
+      scanWindow: {
+        selectionDateUtc: "2026-07-22",
+        fullUniverseCount: 1_434,
+        eligibleCount: 1_434,
+        selectedCount: 200,
+        offset: 1_200,
+        windowIndex: 6,
+        windowsPerCycle: 8,
+      },
+      message: "The current rotating public-source window completed successfully.",
     });
   });
 
@@ -84,9 +118,7 @@ describe("news pipeline freshness states", () => {
     success.metadata = {
       sourceCoverage: { attempted: 18, succeeded: 18, failed: 0 },
     } as never;
-    mocks.pipelineFindFirst.mockImplementation(({ where }: { where: { status?: string } }) => (
-      Promise.resolve(where.status ? success : failed)
-    ));
+    mockPipelineReads(failed, [success]);
 
     const feed = await getNewsFeed();
 
@@ -95,9 +127,7 @@ describe("news pipeline freshness states", () => {
 
   it("reports a first-ever running scan as pending instead of overdue", async () => {
     const running = pipelineRun("RUNNING", "2026-07-22T11:58:00.000Z");
-    mocks.pipelineFindFirst.mockImplementation(({ where }: { where: { status?: string } }) => (
-      Promise.resolve(where.status ? null : running)
-    ));
+    mockPipelineReads(running);
 
     const feed = await getNewsFeed();
 
@@ -117,9 +147,7 @@ describe("news pipeline freshness states", () => {
       "2026-07-21T00:00:00.000Z",
       "2026-07-21T00:05:00.000Z",
     );
-    mocks.pipelineFindFirst.mockImplementation(({ where }: { where: { status?: string } }) => (
-      Promise.resolve(where.status ? success : running)
-    ));
+    mockPipelineReads(running, [success]);
 
     const feed = await getNewsFeed();
 
@@ -137,9 +165,7 @@ describe("news pipeline freshness states", () => {
       "2026-07-21T00:00:00.000Z",
       "2026-07-21T00:10:00.000Z",
     );
-    mocks.pipelineFindFirst.mockImplementation(({ where }: { where: { status?: string } }) => (
-      Promise.resolve(where.status ? success : failed)
-    ));
+    mockPipelineReads(failed, [success]);
 
     const feed = await getNewsFeed();
 
@@ -158,9 +184,7 @@ describe("news pipeline freshness states", () => {
       "2026-07-20T18:00:00.000Z",
       "2026-07-20T18:05:00.000Z",
     );
-    mocks.pipelineFindFirst.mockImplementation(({ where }: { where: { status?: string } }) => (
-      Promise.resolve(where.status ? success : attempt)
-    ));
+    mockPipelineReads(attempt, [success]);
 
     const feed = await getNewsFeed();
 
@@ -178,10 +202,32 @@ describe("news pipeline freshness states", () => {
       "2026-07-22T23:30:00.000Z",
       "2026-07-22T23:40:00.000Z",
     );
-    mocks.pipelineFindFirst.mockResolvedValue(success);
+    mockPipelineReads(success, [success]);
 
     const feed = await getNewsFeed();
 
     expect(feed.operations.nextExpectedAt).toBe("2026-07-23T23:30:00.000Z");
+  });
+
+  it("does not treat a stored success with unhealthy source coverage as fresh", async () => {
+    const invalidSuccess = pipelineRun(
+      "SUCCEEDED",
+      "2026-07-22T10:00:00.000Z",
+      "2026-07-22T10:05:00.000Z",
+    );
+    invalidSuccess.metadata = {
+      sourceCoverage: { attempted: 10, succeeded: 6, failed: 4 },
+    } as never;
+    mockPipelineReads(invalidSuccess, [invalidSuccess]);
+
+    const feed = await getNewsFeed();
+
+    expect(feed.operations).toMatchObject({
+      state: "failed",
+      lastAttemptAt: "2026-07-22T10:00:00.000Z",
+      message: "The latest scan failed; the last successful results remain visible.",
+    });
+    expect(feed.operations.lastSuccessfulAt).toBeUndefined();
+    expect(feed.lastUpdated).toBeNull();
   });
 });

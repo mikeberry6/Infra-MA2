@@ -30,6 +30,7 @@ import { deriveRanking, RankingColumn } from "@/components/shared/RankingBars";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
 import { DatabaseIntelligenceHeader, type IntelligenceMetric } from "@/components/shared/DatabaseIntelligenceHeader";
 import { CTABlock } from "@/components/shared/CTABlock";
+import { TrackedAnalyticsLink } from "@/components/shared/TrackedAnalyticsLink";
 import { MarketSnapshotSection } from "@/components/shared/MarketSnapshotSection";
 import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
@@ -55,6 +56,7 @@ function fundDetailShell(fund: FundListItem): FundView {
     ticker: null,
     investmentStrategy: "",
     sourceUrls: [],
+    primarySourceUrl: null,
     structure: "",
     regions: [],
     portfolioCompanies: [],
@@ -650,6 +652,11 @@ function FundDrawer({
   const siblingFunds = allFunds.filter(
     (f) => f.managerName === fund.managerName && f.id !== fund.id
   );
+  const supportingSourceUrls = Array.from(new Set([
+    ...fund.sourceUrls,
+    fund.strategyUrl,
+  ].map((url) => url.trim()).filter(Boolean)))
+    .filter((url) => url !== fund.primarySourceUrl?.trim());
 
   // Aggregate all portfolio companies across the firm (all funds for this manager)
   const firmFunds = [fund, ...siblingFunds];
@@ -817,35 +824,63 @@ function FundDrawer({
             </section>
           )}
 
-          {/* Source URLs */}
-          {fund.sourceUrls.length > 0 && (
-            <section className="border-t border-[var(--border)] pt-6">
-              <div className="type-section-title text-[var(--text-tertiary)] mb-3">
-                Sources
-              </div>
-              <div className="surface px-4 py-3">
-                <div className="flex flex-wrap gap-x-4 gap-y-1.5">
-                {fund.sourceUrls.map((url, i) => {
-                  let hostname = url;
-                  try { hostname = new URL(url).hostname.replace(/^www\./, ""); } catch {}
+          {/* Reviewed primary and legacy supporting sources */}
+          <section className="border-t border-[var(--border)] pt-6">
+            <div className="type-section-title text-[var(--text-tertiary)] mb-3">
+              Provenance
+            </div>
+            <div className="surface space-y-4 px-4 py-3">
+              <div>
+                <div className="type-label mb-1.5">Primary source</div>
+                {fund.primarySourceUrl ? (() => {
+                  let hostname = fund.primarySourceUrl;
+                  try { hostname = new URL(fund.primarySourceUrl).hostname.replace(/^www\./, ""); } catch {}
                   return (
                     <a
-                      key={i}
-                      href={url}
+                      href={fund.primarySourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => track("source_link_clicked", { entity: "fund", placement: "drawer" })}
-                      className="inline-flex items-center gap-1.5 type-meta hover:text-[var(--text-primary)] transition-colors group"
+                      onClick={() => track("source_link_clicked", { entity: "fund", placement: "drawer_primary" })}
+                      className="inline-flex items-center gap-1.5 type-meta font-medium hover:text-[var(--text-primary)] transition-colors group"
                     >
                       <ExternalLink className="h-3 w-3 shrink-0 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)]" />
                       <span className="truncate">{hostname}</span>
                     </a>
                   );
-                })}
-                </div>
+                })() : detailState === "loading" ? (
+                  <p className="type-meta text-[var(--text-tertiary)]">Loading verified provenance…</p>
+                ) : detailState === "error" ? (
+                  <p className="type-meta text-[var(--text-tertiary)]">Unavailable while verified detail is offline</p>
+                ) : (
+                  <p className="type-meta text-[var(--text-tertiary)]">Pending Research review</p>
+                )}
               </div>
-            </section>
-          )}
+              {supportingSourceUrls.length > 0 && (
+                <div className="border-t border-[var(--border)] pt-3">
+                  <div className="type-label mb-1.5">Supporting sources</div>
+                  <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+                    {supportingSourceUrls.map((url, i) => {
+                      let hostname = url;
+                      try { hostname = new URL(url).hostname.replace(/^www\./, ""); } catch {}
+                      return (
+                        <a
+                          key={i}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => track("source_link_clicked", { entity: "fund", placement: "drawer" })}
+                          className="inline-flex items-center gap-1.5 type-meta hover:text-[var(--text-primary)] transition-colors group"
+                        >
+                          <ExternalLink className="h-3 w-3 shrink-0 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)]" />
+                          <span className="truncate">{hostname}</span>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
 
           {/* Portfolio Companies */}
           {firmPortfolio.total > 0 && (
@@ -1078,6 +1113,10 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
     if (openedFocus.current === focusId) return;
     const match = funds.find((f) => f.legacyId === focusId);
     if (match) {
+      // Manual opens set openedFocus before writing the URL, so direct/search
+      // focus navigation is measured and tracked exactly once here.
+      markDrawerOpen("fund");
+      track("drawer_opened", { entity: "fund" });
       setSelectedFund(match);
       openedFocus.current = focusId;
       return;
@@ -1172,13 +1211,17 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
                 <span className="truncate">Export</span>
               </a>
             )}
-            <a
+            <TrackedAnalyticsLink
               href="mailto:research@infrasight.com"
+              analyticsEvent={{
+                name: "research_contact_initiated",
+                properties: { placement: "fund_database_toolbar" },
+              }}
               className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
               <Mail className="h-3 w-3" />
               <span className="truncate">Contact research</span>
-            </a>
+            </TrackedAnalyticsLink>
           </div>
         </div>
 

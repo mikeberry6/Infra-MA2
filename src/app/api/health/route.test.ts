@@ -3,18 +3,25 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 const mocks = vi.hoisted(() => ({
   queryRaw: vi.fn(),
   pipelineFindFirst: vi.fn(),
+  pipelineFindMany: vi.fn(),
 }));
 
 vi.mock("@/lib/prisma", () => ({
   prisma: {
     $queryRaw: mocks.queryRaw,
-    pipelineRun: { findFirst: mocks.pipelineFindFirst },
+    pipelineRun: {
+      findFirst: mocks.pipelineFindFirst,
+      findMany: mocks.pipelineFindMany,
+    },
   },
 }));
 
 import { GET } from "@/app/api/health/route";
 
 const NOW = new Date("2026-07-22T15:00:00.000Z");
+const HEALTHY_NEWS_COVERAGE = {
+  sourceCoverage: { attempted: 10, succeeded: 10, failed: 0 },
+};
 
 function request() {
   return new Request("http://localhost/api/health", {
@@ -31,14 +38,22 @@ function healthyPipelineReads() {
         status: "SUCCEEDED",
         startedAt: new Date("2026-07-22T12:00:00.000Z"),
         endedAt: new Date("2026-07-22T12:05:00.000Z"),
+        metadata: where.pipeline === "NEWS_SCAN" ? HEALTHY_NEWS_COVERAGE : null,
       });
     }
     return Promise.resolve({
       status: "SUCCEEDED",
       startedAt: new Date("2026-07-22T12:00:00.000Z"),
       endedAt: new Date("2026-07-22T12:05:00.000Z"),
+      metadata: where.pipeline === "NEWS_SCAN" ? HEALTHY_NEWS_COVERAGE : null,
     });
   });
+  mocks.pipelineFindMany.mockResolvedValue([{
+    status: "SUCCEEDED",
+    startedAt: new Date("2026-07-22T12:00:00.000Z"),
+    endedAt: new Date("2026-07-22T12:05:00.000Z"),
+    metadata: HEALTHY_NEWS_COVERAGE,
+  }]);
 }
 
 describe("GET /api/health", () => {
@@ -48,6 +63,7 @@ describe("GET /api/health", () => {
     vi.spyOn(console, "info").mockImplementation(() => undefined);
     mocks.queryRaw.mockReset();
     mocks.pipelineFindFirst.mockReset();
+    mocks.pipelineFindMany.mockReset();
   });
 
   afterEach(() => {
@@ -85,6 +101,8 @@ describe("GET /api/health", () => {
       expect.objectContaining({ name: "NEWS_SCAN", status: "healthy" }),
       expect.objectContaining({ name: "DASHBOARD_SYNC", status: "healthy" }),
     ]);
+    const schemaQuery = mocks.queryRaw.mock.calls[1]?.[0];
+    expect(Array.from(schemaQuery ?? []).join(" ")).toContain("primarySourceUrl");
   });
 
   it("reports an unavailable database without exposing connection errors", async () => {
@@ -144,7 +162,14 @@ describe("GET /api/health", () => {
       endedAt: where.status === "SUCCEEDED"
         ? new Date("2026-07-19T12:05:00.000Z")
         : new Date("2026-07-19T12:05:00.000Z"),
+      metadata: where.pipeline === "NEWS_SCAN" ? HEALTHY_NEWS_COVERAGE : null,
     }));
+    mocks.pipelineFindMany.mockResolvedValue([{
+      status: "SUCCEEDED",
+      startedAt: new Date("2026-07-19T12:00:00.000Z"),
+      endedAt: new Date("2026-07-19T12:05:00.000Z"),
+      metadata: HEALTHY_NEWS_COVERAGE,
+    }]);
 
     const response = await GET(request());
     const payload = await response.json();
@@ -171,8 +196,19 @@ describe("GET /api/health", () => {
       const endedAt = where.pipeline === "DASHBOARD_SYNC"
         ? new Date("2026-07-24T11:35:00.000Z")
         : new Date("2026-07-26T01:00:00.000Z");
-      return Promise.resolve({ status: "SUCCEEDED", startedAt: endedAt, endedAt });
+      return Promise.resolve({
+        status: "SUCCEEDED",
+        startedAt: endedAt,
+        endedAt,
+        metadata: where.pipeline === "NEWS_SCAN" ? HEALTHY_NEWS_COVERAGE : null,
+      });
     });
+    mocks.pipelineFindMany.mockResolvedValue([{
+      status: "SUCCEEDED",
+      startedAt: new Date("2026-07-26T01:00:00.000Z"),
+      endedAt: new Date("2026-07-26T01:00:00.000Z"),
+      metadata: HEALTHY_NEWS_COVERAGE,
+    }]);
 
     const response = await GET(request());
     const payload = await response.json();
@@ -195,8 +231,19 @@ describe("GET /api/health", () => {
       const endedAt = where.pipeline === "DASHBOARD_SYNC"
         ? new Date("2026-07-24T11:35:00.000Z")
         : new Date("2026-07-27T00:00:00.000Z");
-      return Promise.resolve({ status: "SUCCEEDED", startedAt: endedAt, endedAt });
+      return Promise.resolve({
+        status: "SUCCEEDED",
+        startedAt: endedAt,
+        endedAt,
+        metadata: where.pipeline === "NEWS_SCAN" ? HEALTHY_NEWS_COVERAGE : null,
+      });
     });
+    mocks.pipelineFindMany.mockResolvedValue([{
+      status: "SUCCEEDED",
+      startedAt: new Date("2026-07-27T00:00:00.000Z"),
+      endedAt: new Date("2026-07-27T00:00:00.000Z"),
+      metadata: HEALTHY_NEWS_COVERAGE,
+    }]);
 
     const response = await GET(request());
     const payload = await response.json();
@@ -205,6 +252,42 @@ describe("GET /api/health", () => {
     expect(payload.pipelines).toEqual([
       expect.objectContaining({ name: "NEWS_SCAN", status: "healthy" }),
       expect.objectContaining({ name: "DASHBOARD_SYNC", status: "stale" }),
+    ]);
+  });
+
+  it("returns 503 when a stored news success breached source coverage", async () => {
+    mocks.queryRaw
+      .mockResolvedValueOnce([{ connected: 1 }])
+      .mockResolvedValueOnce([{ ready: true }]);
+    const badNewsRun = {
+      status: "SUCCEEDED",
+      startedAt: new Date("2026-07-22T12:00:00.000Z"),
+      endedAt: new Date("2026-07-22T12:05:00.000Z"),
+      metadata: { sourceCoverage: { attempted: 10, succeeded: 5, failed: 5 } },
+    };
+    mocks.pipelineFindFirst.mockImplementation(({ where }: {
+      where: { pipeline: string; status?: string };
+    }) => Promise.resolve(where.pipeline === "NEWS_SCAN"
+      ? badNewsRun
+      : {
+        status: "SUCCEEDED",
+        startedAt: new Date("2026-07-22T12:00:00.000Z"),
+        endedAt: new Date("2026-07-22T12:05:00.000Z"),
+        metadata: null,
+      }));
+    mocks.pipelineFindMany.mockResolvedValue([badNewsRun]);
+
+    const response = await GET(request());
+    const payload = await response.json();
+
+    expect(response.status).toBe(503);
+    expect(payload.pipelines).toEqual([
+      expect.objectContaining({
+        name: "NEWS_SCAN",
+        status: "failed",
+        lastSuccessfulAt: null,
+      }),
+      expect.objectContaining({ name: "DASHBOARD_SYNC", status: "healthy" }),
     ]);
   });
 });

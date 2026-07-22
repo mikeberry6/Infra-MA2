@@ -4,6 +4,8 @@
 
 This review covers the 16 deal rows `INF-2026-080` through `INF-2026-095`, whose seed records currently have blank source fields, plus the proposed duplicate-company merge between `ExteNet Systems` and `Extenet`. It records candidate evidence and corrections for a human reviewer; it is not an implementation plan.
 
+The hosted seller-disclosure template later identified Reload, Andion CH4 Renewables, and Ori Industries as its only no-source items. Their transaction-structure and seller-specific evidence is expanded in [Deal Seller-Disclosure Source-Gap Review — 2026-07-22](deal-seller-disclosure-source-gap-review-2026-07-22.md). That companion remains review-only and does not select a seller treatment.
+
 ## Evidence classes
 
 - **Authoritative primary — direct:** an announcement hosted by the buyer, seller, target, portfolio company, or other transaction party.

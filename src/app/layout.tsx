@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { TrackedAnalyticsLink } from "@/components/shared/TrackedAnalyticsLink";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -63,9 +64,16 @@ export default function RootLayout({
                 <span className="font-medium text-[var(--text-secondary)]">InfraSight</span>
                 <span>· &copy; 2026</span>
               </div>
-              <a href="mailto:research@infrasight.com" className="hover:text-[var(--text-primary)] transition-colors">
+              <TrackedAnalyticsLink
+                href="mailto:research@infrasight.com"
+                analyticsEvent={{
+                  name: "research_contact_initiated",
+                  properties: { placement: "footer" },
+                }}
+                className="hover:text-[var(--text-primary)] transition-colors"
+              >
                 Contact research
-              </a>
+              </TrackedAnalyticsLink>
             </div>
           </div>
         </footer>

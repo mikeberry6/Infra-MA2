@@ -7,10 +7,10 @@ import { SafeOperationalError } from "../src/lib/safe-error.ts";
 import { withServerTask } from "../src/lib/server-log.ts";
 import {
   coveragePercentage,
-  fundHasSource,
+  fundHasPrimarySource,
   PUBLISHED_COMPANY_MISSING_PRIMARY_WHERE,
   PUBLISHED_DEAL_MISSING_PRIMARY_WHERE,
-  PUBLISHED_FUND_SOURCE_REVIEW_WHERE,
+  PUBLISHED_FUND_PRIMARY_SOURCE_REVIEW_WHERE,
   sourceCoverageIsComplete,
 } from "../src/modules/operations/source-coverage.ts";
 
@@ -45,8 +45,8 @@ async function main() {
       }),
       prisma.fund.count({ where: { status: "PUBLISHED" } }),
       prisma.fund.findMany({
-        where: PUBLISHED_FUND_SOURCE_REVIEW_WHERE,
-        select: { legacyId: true, fundName: true, sourceUrls: true, strategyUrl: true },
+        where: PUBLISHED_FUND_PRIMARY_SOURCE_REVIEW_WHERE,
+        select: { legacyId: true, fundName: true, primarySourceUrl: true },
         orderBy: { legacyId: "asc" },
       }),
       prisma.company.count({ where: { status: "PUBLISHED" } }),
@@ -59,8 +59,8 @@ async function main() {
       prisma.fund.count({ where: { status: "PUBLISHED", lastVerifiedAt: null } }),
       prisma.company.count({ where: { status: "PUBLISHED", lastVerifiedAt: null } }),
     ]);
-    const fundsMissingSource = publishedFundSourceRows
-      .filter((fund) => !fundHasSource(fund))
+    const fundsMissingPrimary = publishedFundSourceRows
+      .filter((fund) => !fundHasPrimarySource(fund))
       .map(({ legacyId, fundName }) => ({ legacyId, fundName }));
 
     const report = {
@@ -74,9 +74,9 @@ async function main() {
         },
         funds: {
           published: publishedFunds,
-          withSource: publishedFunds - fundsMissingSource.length,
-          coveragePercent: coveragePercentage(publishedFunds - fundsMissingSource.length, publishedFunds),
-          missing: fundsMissingSource,
+          withPrimarySource: publishedFunds - fundsMissingPrimary.length,
+          coveragePercent: coveragePercentage(publishedFunds - fundsMissingPrimary.length, publishedFunds),
+          missing: fundsMissingPrimary,
         },
         companies: {
           published: publishedCompanies,
@@ -90,7 +90,7 @@ async function main() {
         funds: fundsMissingVerification,
         companies: companiesMissingVerification,
       },
-      methodology: "Deals and companies require an explicit primary citation. Funds require at least one source URL or a strategy URL.",
+      methodology: "Deals and companies require an explicit primary citation. Funds require an explicitly reviewed primarySourceUrl; supporting sourceUrls and strategyUrl do not satisfy this gate.",
     };
 
     const outputPath = option("output") ?? path.join("tmp", "source-coverage.json");
@@ -102,7 +102,7 @@ async function main() {
       requireComplete
       && !sourceCoverageIsComplete({
         dealsMissingPrimary: dealsMissingCitation.length,
-        fundsMissingSource: fundsMissingSource.length,
+        fundsMissingPrimary: fundsMissingPrimary.length,
         companiesMissingPrimary: companiesMissingCitation.length,
       })
     ) {

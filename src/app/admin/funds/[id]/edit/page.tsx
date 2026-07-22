@@ -37,6 +37,7 @@ export default async function EditFundPage({ params }: { params: Promise<{ id: s
     ticker: fund.ticker,
     investmentStrategy: fund.investmentStrategy,
     sourceUrls: fund.sourceUrls,
+    primarySourceUrl: fund.primarySourceUrl,
     size: fund.size,
     sizeUsdMm: fund.sizeUsdMm,
     vintage: fund.vintage,

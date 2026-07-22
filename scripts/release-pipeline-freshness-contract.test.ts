@@ -19,7 +19,7 @@ describe("production release pipeline freshness contract", () => {
 
   it("retains the explicit max-age contract for the daily news pipeline", () => {
     expect(workflow).toMatch(
-      /verify-pipeline-health\.ts --pipeline=NEWS_SCAN --max-age-hours=36\b/,
+      /verify-pipeline-health\.ts --pipeline=NEWS_SCAN --max-age-hours=36\b[^\n]*--max-source-failure-rate=0\.25\b/,
     );
   });
 });

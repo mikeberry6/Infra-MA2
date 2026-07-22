@@ -2,19 +2,21 @@ import type { ReactElement } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import type { CompanyListItem, DealListItem, FundListItem } from "@/modules/shared/types";
 
 const navigation = vi.hoisted(() => ({
   pathname: "/tracker",
   push: vi.fn(),
   replace: vi.fn(),
 }));
+const analytics = vi.hoisted(() => ({ track: vi.fn() }));
 
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: navigation.push, replace: navigation.replace, back: vi.fn() }),
   usePathname: () => navigation.pathname,
 }));
 
-vi.mock("@vercel/analytics", () => ({ track: vi.fn() }));
+vi.mock("@vercel/analytics", () => ({ track: analytics.track }));
 
 import { DealDatabase } from "@/components/DealDatabase";
 import { FundDatabase } from "@/components/FundDatabase";
@@ -22,6 +24,56 @@ import { NewsFeed } from "@/components/NewsFeed";
 import { PortfolioDatabase } from "@/components/PortfolioDatabase";
 
 const counts = { deals: 0, funds: 0, portfolio: 0 };
+const deal: DealListItem = {
+  id: "deal-db-id",
+  legacyId: "DEAL-FOCUS",
+  title: "Manager acquires GridCo",
+  target: "GridCo",
+  buyer: "Manager",
+  seller: "Seller",
+  sector: "Utilities",
+  subsector: "Electric Utility",
+  region: "North America",
+  category: ["Acquisition"],
+  date: "2026-07-01",
+  status: "Announced",
+  country: "United States",
+  sourceName: "Source",
+  sourceUrl: "https://example.test/deal",
+};
+const fund: FundListItem = {
+  id: "FUND-FOCUS",
+  legacyId: "FUND-FOCUS",
+  managerName: "Manager",
+  fundName: "Infrastructure Fund I",
+  size: "USD 1bn",
+  sizeUsdMm: 1_000,
+  vintage: "2026",
+  strategies: ["Core"],
+  status: "Raising",
+  sectors: ["Utilities"],
+};
+const company: CompanyListItem = {
+  id: "company-focus",
+  focusIds: ["company-focus"],
+  name: "GridCo",
+  investmentFirm: "Manager",
+  sector: "Utilities",
+  subsector: "Electric Utility",
+  region: "North America",
+  country: "United States",
+  ownershipVehicle: "Infrastructure Fund I",
+  status: "Active",
+  countryTags: ["United States"],
+  investmentYear: 2026,
+  owners: [{
+    firm: "Manager",
+    vehicle: "Infrastructure Fund I",
+    fundName: "Infrastructure Fund I",
+    investmentYear: 2026,
+    isActive: true,
+  }],
+};
 
 async function expectAtomicClear({
   pathname,
@@ -46,6 +98,7 @@ describe("database clear-all URL state", () => {
   beforeEach(() => {
     navigation.push.mockReset();
     navigation.replace.mockReset();
+    analytics.track.mockReset();
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({
       ok: true,
       json: async () => ({ canExport: false }),
@@ -102,5 +155,54 @@ describe("database clear-all URL state", () => {
       `${pathname}?sort=name`,
       { scroll: false },
     ));
+  });
+
+  it.each([
+    {
+      pathname: "/tracker",
+      focus: deal.legacyId,
+      entity: "deal",
+      renderDatabase: () => <DealDatabase deals={[deal]} counts={counts} />,
+    },
+    {
+      pathname: "/funds",
+      focus: fund.legacyId,
+      entity: "fund",
+      renderDatabase: () => <FundDatabase funds={[fund]} counts={counts} />,
+    },
+    {
+      pathname: "/portfolio",
+      focus: company.id,
+      entity: "company",
+      renderDatabase: () => <PortfolioDatabase companies={[company]} funds={[]} counts={counts} />,
+    },
+  ])("tracks a direct $entity focus only once", async ({
+    pathname,
+    focus,
+    entity,
+    renderDatabase,
+  }) => {
+    navigation.pathname = pathname;
+    window.history.replaceState({}, "", `${pathname}?focus=${focus}`);
+
+    const view = render(renderDatabase());
+    await waitFor(() => expect(analytics.track).toHaveBeenCalledWith("drawer_opened", { entity }));
+
+    view.rerender(renderDatabase());
+    await waitFor(() => expect(analytics.track.mock.calls.filter(
+      ([name]) => name === "drawer_opened",
+    )).toHaveLength(1));
+  });
+
+  it("does not double-count a manual drawer open when its focus URL synchronizes", async () => {
+    navigation.pathname = "/tracker";
+    window.history.replaceState({}, "", "/tracker");
+    render(<DealDatabase deals={[deal]} counts={counts} />);
+
+    await userEvent.click(await screen.findByRole("button", { name: "Open GridCo deal details" }));
+
+    await waitFor(() => expect(analytics.track.mock.calls.filter(
+      ([name]) => name === "drawer_opened",
+    )).toEqual([["drawer_opened", { entity: "deal" }]]));
   });
 });
