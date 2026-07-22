@@ -8,7 +8,7 @@ import type {
   DashboardProviderResult,
   DashboardSignal,
 } from "@/modules/dashboard/types";
-import { fetchJson, isoDateDaysAgo, keyMissingProvider, observation, todayIsoDate } from "@/modules/dashboard/providers/shared";
+import { fetchJsonOrNullOnNotFound, isoDateDaysAgo, keyMissingProvider, observation, todayIsoDate } from "@/modules/dashboard/providers/shared";
 
 type SamOpportunity = {
   noticeId?: string;
@@ -71,7 +71,9 @@ export function samGovProvider(
         let total = 0;
         const seenPageOpportunityIds = new Set<string>();
         for (let page = 0; page < MAX_PAGES_PER_KEYWORD; page += 1) {
-          const offset = page * PAGE_SIZE;
+          // Despite the parameter name, SAM.gov's live v2 search contract uses
+          // a zero-based page index here (0, 1, 2), not a record displacement.
+          const offset = page;
           const response = await fetchSamPage(apiKey, keyword, startDate, endDate, offset);
           const pageResult = validatedSamPage(response, keyword, page, offset);
           total = pageResult.totalRecords;
@@ -205,7 +207,20 @@ async function fetchSamPage(
   }
   url.searchParams.set("limit", String(PAGE_SIZE));
   url.searchParams.set("offset", String(offset));
-  return fetchJson<SamResponse>(url.toString());
+  // SAM.gov documents HTTP 404 as "No Data found" for this search API. That
+  // is a valid empty result only on the first page; a 404 after pagination has
+  // begun would make the release incomplete and must fail closed.
+  const response = await fetchJsonOrNullOnNotFound<SamResponse>(url.toString());
+  if (response) return response;
+  if (offset > 0) {
+    throw new Error(`SAM.gov title query "${keyword}" returned no data after pagination began on page ${offset}.`);
+  }
+  return {
+    totalRecords: 0,
+    limit: PAGE_SIZE,
+    offset,
+    opportunitiesData: [],
+  };
 }
 
 function samDate(isoDate: string): string {
