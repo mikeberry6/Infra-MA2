@@ -26,6 +26,10 @@ import {
   weeklyDealIdentitiesMatch,
   weeklyLegacyIdCollides,
 } from "../src/modules/operations/weekly-deal-identity";
+import {
+  runWeeklySyncLifecycle,
+  type WeeklySyncProgress,
+} from "../src/modules/operations/weekly-sync-lifecycle";
 
 const applyChanges = process.argv.includes("--apply");
 const connectionString = process.env.DATABASE_URL;
@@ -312,9 +316,7 @@ async function persistedIdentityRows(): Promise<CoverageRow[]> {
   }));
 }
 
-async function main() {
-  const pipelineRunId = applyChanges ? await startPipelineRun(prisma, "WEEKLY_DEAL_SYNC") : null;
-  try {
+async function executeSync(progress: WeeklySyncProgress | null) {
   const [beforeRows, persistedRows] = await Promise.all([
     publishedCoverageRows(),
     persistedIdentityRows(),
@@ -347,48 +349,68 @@ async function main() {
     console.log("Dry run only. Re-run with --apply to write the missing deals.");
     return;
   }
+  if (!progress) throw new Error("Weekly sync progress is required in apply mode.");
+  progress.setPlan(
+    syncCandidates.length,
+    weeklyBriefingDeals.length - missingWeeklyDeals.length,
+  );
   if (legacyIdCollisions.length > 0) {
     throw new Error(
       "Weekly sync found ordinal legacy-ID collisions; assign stable, non-conflicting identities before applying any proposals",
     );
   }
 
-  let created = 0;
-  let updated = 0;
+  progress.beginSync();
   for (const [index, deal] of syncCandidates.entries()) {
     const result = await syncDeal(deal);
-    if (result === "created") created += 1;
-    else updated += 1;
+    progress.record(result);
 
     if ((index + 1) % 25 === 0 || index === syncCandidates.length - 1) {
       console.log(`Synced ${index + 1}/${syncCandidates.length} deal records...`);
     }
   }
 
+  progress.beginVerification();
   const afterRows = await publishedCoverageRows();
   const stillMissing = weeklyBriefingDeals.filter((deal) => !isCovered(deal, afterRows));
   const latestDeal = afterRows.reduce<Date | null>(
     (latest, row) => (!latest || row.date > latest ? row.date : latest),
     null,
   );
+  const counts = progress.counts();
 
-  console.log(`Created: ${created}`);
-  console.log(`Updated draft proposals: ${updated}`);
+  console.log(`Created: ${counts.inserted}`);
+  console.log(`Updated draft proposals: ${counts.updated}`);
   console.log(`Published deals after sync: ${afterRows.length}`);
   console.log(`Latest published deal: ${latestDeal?.toISOString() ?? "none"}`);
   console.log(`Awaiting individual editorial review/publication: ${stillMissing.length}`);
   console.log(`Pending review by issue: ${JSON.stringify(groupByIssue(stillMissing))}`);
-  if (pipelineRunId) {
-    await completePipelineRun(prisma, pipelineRunId, {
-      inserted: created,
-      updated,
-      skipped: weeklyBriefingDeals.length - missingWeeklyDeals.length,
-    });
+}
+
+async function main() {
+  if (!applyChanges) {
+    await executeSync(null);
+    return;
   }
-  } catch (error) {
-    if (pipelineRunId) await failPipelineRun(prisma, pipelineRunId, error);
-    throw error;
-  }
+
+  const pipelineRunId = await startPipelineRun(prisma, "WEEKLY_DEAL_SYNC");
+  await runWeeklySyncLifecycle({
+    weeklyCardCount: weeklyBriefingDeals.length,
+    execute: executeSync,
+    complete: (counts, metadata) => completePipelineRun(
+      prisma,
+      pipelineRunId,
+      counts,
+      metadata,
+    ),
+    fail: (error, counts, metadata) => failPipelineRun(
+      prisma,
+      pipelineRunId,
+      error,
+      counts,
+      metadata,
+    ),
+  });
 }
 
 withServerTask({ task: "weekly_briefing_deals", operation: "sync_weekly_deals" }, main)

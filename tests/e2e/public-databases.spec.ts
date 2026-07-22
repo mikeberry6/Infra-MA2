@@ -26,6 +26,37 @@ test.describe("anonymous database journeys", () => {
     await waitForApplication(page, "Infrastructure Deal Tape");
   });
 
+  test("mobile primary navigation exposes search and restores its disclosure trigger", async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(appPath("/earnings"));
+    await waitForApplication(page, "Earnings Tracker");
+
+    const navigation = page.getByRole("navigation", { name: "Primary" });
+    const openMenu = navigation.getByRole("button", { name: "Open menu" });
+    await openMenu.focus();
+    await openMenu.press("Enter");
+
+    const closeMenu = navigation.getByRole("button", { name: "Close menu" });
+    await expect(closeMenu).toBeFocused();
+    await expect(closeMenu).toHaveAttribute("aria-expanded", "true");
+    for (const label of ["Database", "Dashboard", "News", "Earnings", "Search"]) {
+      await expect(navigation.getByRole("link", { name: label, exact: true })).toBeVisible();
+    }
+    await expect(navigation.getByRole("searchbox", { name: "Search" })).toBeVisible();
+
+    await closeMenu.click();
+    await expect(openMenu).toBeFocused();
+    await expect(openMenu).toHaveAttribute("aria-expanded", "false");
+    await expect(navigation.getByRole("link", { name: "Dashboard", exact: true })).toBeHidden();
+
+    await openMenu.press("Enter");
+    await navigation.getByRole("searchbox", { name: "Search" }).fill("Brookfield");
+    await navigation.getByRole("link", { name: "Search", exact: true }).click();
+    await expect(page).toHaveURL(new RegExp(`${appPath("/search")}$`));
+    await waitForApplication(page, "Search InfraSight");
+    await expect(navigation.getByRole("button", { name: "Open menu" })).toHaveAttribute("aria-expanded", "false");
+  });
+
   test("browse, sort, paginate, search, and restore URL state", async ({ page }) => {
     await page.goto(appPath("/tracker"));
     await waitForApplication(page, "Infrastructure Deal Tape");

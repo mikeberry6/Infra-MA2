@@ -222,6 +222,31 @@ describe("two-step import routes", () => {
     expect(mocks.pipelineCreate).not.toHaveBeenCalled();
   });
 
+  it.each(["—", "N/A", "[TBU]", "unknown"])(
+    "rejects an ambiguous fund size during import preview: %s",
+    async (size) => {
+      const response = await importFunds(jsonRequest(
+        "/api/imports/funds?preview=1",
+        { funds: [fund({ size })] },
+      ));
+
+      expect(response.status).toBe(200);
+      await expect(response.json()).resolves.toMatchObject({
+        total: 1,
+        valid: 0,
+        creates: 0,
+        updates: 0,
+        errors: [{
+          fundName: "Infrastructure Fund V",
+          error: "Size must include a disclosed currency amount or be TBD",
+        }],
+      });
+      expect(mocks.fundFindMany).not.toHaveBeenCalled();
+      expect(mocks.transaction).not.toHaveBeenCalled();
+      expect(mocks.pipelineCreate).not.toHaveBeenCalled();
+    },
+  );
+
   it("previews published fund updates as quarantined instead of writable updates", async () => {
     mocks.fundFindMany.mockResolvedValue([
       { id: "database-fund-published", legacyId: "FUND-PUBLISHED", status: "PUBLISHED" },

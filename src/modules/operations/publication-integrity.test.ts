@@ -95,6 +95,35 @@ describe("publication completeness", () => {
     })).toEqual(["valid HTTP(S) supporting sources"]);
   });
 
+  it.each(["—", "N/A", "[TBU]", "unknown", "123"])(
+    "blocks fund publication for an ambiguous size placeholder: %s",
+    (size) => {
+      expect(missingFundPublicationFields({
+        managerId: "manager-1",
+        fundName: "Fund",
+        strategies: ["CORE"],
+        fundStatus: "RAISING",
+        size,
+        primarySourceUrl: "https://example.com/primary",
+        sourceUrls: [],
+        strategyUrl: "",
+      })).toEqual(["size basis or explicit TBD"]);
+    },
+  );
+
+  it("keeps legacy bracketed TBD publishable while inputs migrate to canonical TBD", () => {
+    expect(missingFundPublicationFields({
+      managerId: "manager-1",
+      fundName: "Fund",
+      strategies: ["CORE"],
+      fundStatus: "RAISING",
+      size: "[TBD]",
+      primarySourceUrl: "https://example.com/primary",
+      sourceUrls: [],
+      strategyUrl: "",
+    })).toEqual([]);
+  });
+
   it.each(["DRAFT", "IN_REVIEW", "ARCHIVED"])(
     "blocks company publication when its only ownership links a %s fund",
     (status) => {

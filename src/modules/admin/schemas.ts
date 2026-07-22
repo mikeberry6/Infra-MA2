@@ -1,5 +1,10 @@
 import { z } from "zod";
 import { isHttpUrl } from "@/lib/source-utils";
+import {
+  FUND_SIZE_VALIDATION_MESSAGE,
+  isValidFundSize,
+  normalizeFundSize,
+} from "@/modules/funds/size";
 
 function httpUrlSchema(message: string) {
   return z.string().trim().url(message).refine(isHttpUrl, {
@@ -195,7 +200,11 @@ export const fundSchema = z.object({
   managerName: z.string().min(1, "Manager name is required"),
   fundName: z.string().min(1, "Fund name is required"),
   investmentStrategy: z.string().optional(),
-  size: z.string().min(1, "Size is required"),
+  size: z.string()
+    .trim()
+    .min(1, "Size is required")
+    .transform(normalizeFundSize)
+    .refine(isValidFundSize, { message: FUND_SIZE_VALIDATION_MESSAGE }),
   sizeUsdMm: z.number().optional(),
   vintage: z.string().min(1, "Vintage is required"),
   strategies: z

@@ -72,4 +72,23 @@ describe("isolated validation workflow remediation context", () => {
     expect(sellerApply).toBeGreaterThan(ownershipApply);
     expect(citationApply).toBeGreaterThan(sellerApply);
   });
+
+  it("collects browser evidence after an editorial gate failure but still fails closed", () => {
+    const strictGate = workflow.indexOf("- name: Verify database integrity and strict publication gates");
+    const browserGate = workflow.indexOf("- name: Run end-to-end, axe, keyboard, responsive, and visual checks");
+    const evidenceUpload = workflow.indexOf("- name: Upload migration and data evidence");
+    const enforcement = workflow.indexOf(
+      "- name: Enforce strict publication gate after collecting validation evidence",
+    );
+
+    expect(strictGate).toBeGreaterThan(-1);
+    expect(workflow.slice(strictGate, browserGate)).toContain("continue-on-error: true");
+    expect(browserGate).toBeGreaterThan(strictGate);
+    expect(evidenceUpload).toBeGreaterThan(browserGate);
+    expect(enforcement).toBeGreaterThan(evidenceUpload);
+    expect(workflow.slice(enforcement)).toContain(
+      'if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]',
+    );
+    expect(workflow.slice(enforcement)).toContain("exit 1");
+  });
 });

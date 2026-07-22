@@ -1,4 +1,5 @@
 import { isHttpUrl } from "@/lib/source-utils";
+import { isValidFundSize } from "@/modules/funds/size";
 import {
   hasReviewedSellerTreatment,
   type SellerDisclosureState,
@@ -67,7 +68,7 @@ export function missingFundPublicationFields(fund: FundPublicationRecord): strin
     !fund.fundName.trim() && "fund vehicle",
     fund.strategies.length === 0 && "strategy",
     !fund.fundStatus && "status",
-    !fund.size.trim() && "size basis or TBD",
+    !isValidFundSize(fund.size) && "size basis or explicit TBD",
     !isHttpUrl(fund.primarySourceUrl) && "valid HTTP(S) primary source",
     supportingUrls.some((url) => !isHttpUrl(url)) && "valid HTTP(S) supporting sources",
   ].filter((field): field is string => Boolean(field));

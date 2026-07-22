@@ -3,6 +3,9 @@
 ## Identity
 
 - Release/date:
+- Program phase (1, 2, 3, or 4):
+- Independent phase scope / explicit exclusions:
+- Integration source PR (never the production release PR):
 - Approved Git SHA:
 - Pull request:
 - Required CI run/artifacts:

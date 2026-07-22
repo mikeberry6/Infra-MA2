@@ -107,3 +107,33 @@ describe("public URL validation", () => {
     }).website).toBe("https://example.com/company");
   });
 });
+
+describe("fund size input validation", () => {
+  const validFund = {
+    managerName: "Manager",
+    fundName: "Fund I",
+    vintage: "2026",
+    strategies: ["Core" as const],
+    structure: "Closed-End" as const,
+    status: "Raising" as const,
+    sectors: [],
+    regions: [],
+  };
+
+  it("canonicalizes the legacy bracketed TBD spelling", () => {
+    expect(fundSchema.parse({ ...validFund, size: " [TBD] " }).size).toBe("TBD");
+  });
+
+  it.each(["—", "N/A", "[TBU]", "unknown", "large fund", "123"])(
+    "rejects an ambiguous size placeholder: %s",
+    (size) => {
+      const parsed = fundSchema.safeParse({ ...validFund, size });
+      expect(parsed.success).toBe(false);
+      if (!parsed.success) {
+        expect(parsed.error.issues).toEqual(expect.arrayContaining([
+          expect.objectContaining({ path: ["size"] }),
+        ]));
+      }
+    },
+  );
+});

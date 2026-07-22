@@ -135,14 +135,20 @@ export default function FundForm({ initialData, action, mode }: FundFormProps) {
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-        <FormField htmlFor="fund-size" label="Size (display)" required>
+        <FormField
+          htmlFor="fund-size"
+          label="Size (display)"
+          required
+          hint="Enter a currency-denominated amount or use TBD when no amount is disclosed."
+        >
           <TextInput
             id="fund-size"
             size="md"
             required
+            aria-describedby="fund-size-hint"
             value={size}
             onChange={(e) => setSize(e.target.value)}
-            placeholder="e.g. $5.0B"
+            placeholder="e.g. $5.0B or TBD"
           />
         </FormField>
         <FormField htmlFor="fund-size-usd" label="Size (USD MM)">

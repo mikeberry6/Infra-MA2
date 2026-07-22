@@ -276,6 +276,8 @@ jobs:
           fi
 
       - name: Verify database integrity and strict publication gates
+        id: strict_publication_gate
+        continue-on-error: true
         shell: bash
         run: |
           set -o pipefail
@@ -349,6 +351,58 @@ jobs:
             npx playwright test tests/e2e/failure-states.spec.ts \
               --grep "distinguishes a database failure"
 
+      - name: Prove failed external-provider browser journeys
+        shell: bash
+        env:
+          E2E_BASE_PATH: /Infra-MA2
+        run: |
+          set -euo pipefail
+          mkdir -p tmp/ci
+          provider_port=3102
+          provider_url="http://127.0.0.1:${provider_port}"
+          provider_pid=""
+          cleanup() {
+            status=$?
+            if [ -n "$provider_pid" ]; then
+              kill "$provider_pid" 2>/dev/null || true
+              wait "$provider_pid" 2>/dev/null || true
+            fi
+            set +e
+            ./node_modules/.bin/tsx tests/e2e/provider-failure-fixture.ts cleanup \
+              2>&1 | tee tmp/ci/provider-failure-fixture-cleanup.json
+            cleanup_status=${PIPESTATUS[0]}
+            set -e
+            if [ "$status" -eq 0 ] && [ "$cleanup_status" -ne 0 ]; then status=$cleanup_status; fi
+            exit "$status"
+          }
+          trap cleanup EXIT
+
+          ./node_modules/.bin/tsx tests/e2e/provider-failure-fixture.ts setup \
+            2>&1 | tee tmp/ci/provider-failure-fixture-setup.json
+          npm run start -- -p "$provider_port" > tmp/ci/provider-failure-server.log 2>&1 &
+          provider_pid=$!
+
+          ready=0
+          for _ in $(seq 1 60); do
+            if ! kill -0 "$provider_pid" 2>/dev/null; then break; fi
+            if curl --silent --fail --output /dev/null --max-time 2 "${provider_url}/Infra-MA2/news"; then
+              ready=1
+              break
+            fi
+            sleep 1
+          done
+          if [ "$ready" -ne 1 ]; then
+            echo "::error::Provider-failure fixture server did not become ready."
+            sed -n '1,200p' tmp/ci/provider-failure-server.log
+            exit 1
+          fi
+
+          env -u DATABASE_URL -u E2E_DATABASE_URL \
+            E2E_PROVIDER_FAILURE_FIXTURE=1 \
+            PLAYWRIGHT_BASE_URL="$provider_url" \
+            E2E_BASE_PATH="$E2E_BASE_PATH" \
+              npx playwright test tests/e2e/provider-failures.spec.ts
+
       - name: Upload migration and data evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -357,6 +411,17 @@ jobs:
           path: tmp/ci/
           if-no-files-found: warn
           retention-days: 30
+
+      - name: Enforce strict publication gate after collecting validation evidence
+        if: always()
+        env:
+          STRICT_PUBLICATION_GATE_OUTCOME: ${{ steps.strict_publication_gate.outcome }}
+        shell: bash
+        run: |
+          if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]; then
+            echo "::error::Strict publication/data integrity remains blocking; browser evidence was collected without weakening the release gate."
+            exit 1
+          fi
 
       - name: Upload Playwright report and failure media
         if: always()
