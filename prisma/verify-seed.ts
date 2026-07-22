@@ -12,6 +12,7 @@ import {
   missingDealPublicationFields,
   missingFundPublicationFields,
 } from "../src/modules/operations/publication-integrity";
+import { weeklyDealIdentitiesMatch } from "../src/modules/operations/weekly-deal-identity";
 
 const connectionString = process.env.DATABASE_URL;
 
@@ -22,28 +23,6 @@ if (!connectionString) {
 
 const adapter = new PrismaNeonHttp(connectionString, { arrayMode: false, fullResults: true });
 const prisma = new PrismaClient({ adapter });
-const MAX_WEEKLY_DATE_DRIFT_MS = 14 * 24 * 60 * 60 * 1000;
-
-function normalizeWeeklyTarget(value: string): string {
-  return value
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/\([^)]*\)/g, "")
-    .replace(/&/g, " and ")
-    .replace(/[^a-zA-Z0-9]+/g, " ")
-    .trim()
-    .replace(/\s+/g, " ")
-    .toLowerCase();
-}
-
-function weeklyTargetsMatch(left: string, right: string): boolean {
-  const a = normalizeWeeklyTarget(left);
-  const b = normalizeWeeklyTarget(right);
-  if (!a || !b) return false;
-  if (a === b) return true;
-  const [shorter, longer] = a.length < b.length ? [a, b] : [b, a];
-  return shorter.length >= 4 && longer.includes(shorter);
-}
 
 async function main() {
   console.log("Verifying database seed...\n");
@@ -277,15 +256,20 @@ async function main() {
 
   const publishedDeals = await prisma.deal.findMany({
     where: { status: "PUBLISHED" },
-    select: { legacyId: true, target: true, date: true },
+    select: {
+      legacyId: true,
+      target: true,
+      date: true,
+      citations: { select: { source: { select: { url: true } } } },
+    },
   });
   const missingWeeklyDeals = weeklyBriefingDeals.filter((weeklyDeal) =>
     !publishedDeals.some((deal) =>
-      deal.legacyId === weeklyDeal.id ||
-      (
-        weeklyTargetsMatch(deal.target, weeklyDeal.target) &&
-        Math.abs(deal.date.getTime() - new Date(weeklyDeal.date).getTime()) <= MAX_WEEKLY_DATE_DRIFT_MS
-      ),
+      weeklyDealIdentitiesMatch(weeklyDeal, {
+        target: deal.target,
+        date: deal.date,
+        sourceUrls: deal.citations.map((citation) => citation.source.url),
+      }),
     ),
   );
   exact("Missing published weekly briefing deals", 0, missingWeeklyDeals.length);

@@ -21,8 +21,12 @@ import {
 } from "../src/modules/shared/enum-maps";
 import { completePipelineRun, failPipelineRun, startPipelineRun } from "../src/modules/operations/pipeline-runs";
 import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
+import {
+  resolveWeeklySeedDeal,
+  weeklyDealIdentitiesMatch,
+  weeklyLegacyIdCollides,
+} from "../src/modules/operations/weekly-deal-identity";
 
-const MAX_DATE_DRIFT_MS = 14 * 24 * 60 * 60 * 1000;
 const applyChanges = process.argv.includes("--apply");
 const connectionString = process.env.DATABASE_URL;
 
@@ -40,6 +44,7 @@ type CoverageRow = {
   legacyId: string;
   target: string;
   date: Date;
+  sourceUrls: string[];
 };
 
 type ParticipantSeed = {
@@ -48,38 +53,8 @@ type ParticipantSeed = {
   displayName?: string;
 };
 
-function normalizeTarget(value: string): string {
-  return value
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/\([^)]*\)/g, "")
-    .replace(/&/g, " and ")
-    .replace(/[^a-zA-Z0-9]+/g, " ")
-    .trim()
-    .replace(/\s+/g, " ")
-    .toLowerCase();
-}
-
-function targetsMatch(left: string, right: string): boolean {
-  const a = normalizeTarget(left);
-  const b = normalizeTarget(right);
-  if (!a || !b) return false;
-  if (a === b) return true;
-
-  const [shorter, longer] = a.length < b.length ? [a, b] : [b, a];
-  return shorter.length >= 4 && longer.includes(shorter);
-}
-
-function datesAreNear(left: Date | string, right: Date | string): boolean {
-  return Math.abs(new Date(left).getTime() - new Date(right).getTime()) <= MAX_DATE_DRIFT_MS;
-}
-
 function isCovered(weeklyDeal: Deal, rows: CoverageRow[]): boolean {
-  return rows.some(
-    (row) =>
-      row.legacyId === weeklyDeal.id ||
-      (targetsMatch(row.target, weeklyDeal.target) && datesAreNear(row.date, weeklyDeal.date)),
-  );
+  return rows.some((row) => weeklyDealIdentitiesMatch(weeklyDeal, row));
 }
 
 function issueId(deal: Deal): string {
@@ -95,20 +70,7 @@ function groupByIssue(items: Deal[]): Record<string, number> {
 }
 
 function resolveSeedDeal(weeklyDeal: Deal): Deal {
-  const exactId = deals.find((deal) => deal.id === weeklyDeal.id);
-  if (exactId) return exactId;
-
-  const targetAndDateMatches = deals.filter(
-    (deal) => targetsMatch(deal.target, weeklyDeal.target) && datesAreNear(deal.date, weeklyDeal.date),
-  );
-  if (targetAndDateMatches.length === 1) return targetAndDateMatches[0];
-
-  const sourceAndTargetMatch = targetAndDateMatches.find(
-    (deal) => deal.sourceUrl === weeklyDeal.sourceUrl,
-  );
-  if (sourceAndTargetMatch) return sourceAndTargetMatch;
-
-  throw new Error(`Could not resolve ${weeklyDeal.id}: ${weeklyDeal.target} to a seed deal.`);
+  return resolveWeeklySeedDeal(weeklyDeal, deals);
 }
 
 function splitParticipants(value: string): string[] {
@@ -188,8 +150,24 @@ async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
     async (tx) => {
       const existing = await tx.deal.findUnique({
         where: { legacyId: deal.id },
-        select: { id: true, status: true },
+        select: {
+          id: true,
+          status: true,
+          target: true,
+          date: true,
+          citations: { select: { source: { select: { url: true } } } },
+        },
       });
+      if (existing && weeklyLegacyIdCollides(deal, {
+        legacyId: deal.id,
+        target: existing.target,
+        date: existing.date,
+        sourceUrls: existing.citations.map((citation) => citation.source.url),
+      })) {
+        throw new Error(
+          `Refusing to reuse weekly legacy ID ${deal.id}: it belongs to ${existing.target}, not ${deal.target}`,
+        );
+      }
       if (existing && existing.status !== "DRAFT") {
         throw new Error(
           `${deal.id} is ${existing.status}; automation cannot modify a record that has entered review or publication`,
@@ -300,17 +278,52 @@ async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
 }
 
 async function publishedCoverageRows(): Promise<CoverageRow[]> {
-  return prisma.deal.findMany({
+  const rows = await prisma.deal.findMany({
     where: { status: "PUBLISHED" },
-    select: { legacyId: true, target: true, date: true },
+    select: {
+      legacyId: true,
+      target: true,
+      date: true,
+      citations: { select: { source: { select: { url: true } } } },
+    },
   });
+  return rows.map((row) => ({
+    legacyId: row.legacyId,
+    target: row.target,
+    date: row.date,
+    sourceUrls: row.citations.map((citation) => citation.source.url),
+  }));
+}
+
+async function persistedIdentityRows(): Promise<CoverageRow[]> {
+  const rows = await prisma.deal.findMany({
+    select: {
+      legacyId: true,
+      target: true,
+      date: true,
+      citations: { select: { source: { select: { url: true } } } },
+    },
+  });
+  return rows.map((row) => ({
+    legacyId: row.legacyId,
+    target: row.target,
+    date: row.date,
+    sourceUrls: row.citations.map((citation) => citation.source.url),
+  }));
 }
 
 async function main() {
   const pipelineRunId = applyChanges ? await startPipelineRun(prisma, "WEEKLY_DEAL_SYNC") : null;
   try {
-  const beforeRows = await publishedCoverageRows();
+  const [beforeRows, persistedRows] = await Promise.all([
+    publishedCoverageRows(),
+    persistedIdentityRows(),
+  ]);
   const missingWeeklyDeals = weeklyBriefingDeals.filter((deal) => !isCovered(deal, beforeRows));
+  const legacyIdCollisions = missingWeeklyDeals.flatMap((weeklyDeal) =>
+    persistedRows
+      .filter((persistedDeal) => weeklyLegacyIdCollides(weeklyDeal, persistedDeal))
+      .map((persistedDeal) => ({ weeklyDeal, persistedDeal })));
   const syncCandidates = Array.from(
     new Map(missingWeeklyDeals.map((weeklyDeal) => {
       const seedDeal = resolveSeedDeal(weeklyDeal);
@@ -323,10 +336,21 @@ async function main() {
   console.log(`Missing weekly briefing cards: ${missingWeeklyDeals.length}`);
   console.log(`Deal records to sync: ${syncCandidates.length}`);
   console.log(`Missing by issue: ${JSON.stringify(groupByIssue(missingWeeklyDeals))}`);
+  console.log(`Ordinal legacy-ID collisions: ${legacyIdCollisions.length}`);
 
   if (!applyChanges) {
+    for (const collision of legacyIdCollisions) {
+      console.log(
+        `  ${collision.weeklyDeal.id}: ${collision.weeklyDeal.target} conflicts with ${collision.persistedDeal.target}`,
+      );
+    }
     console.log("Dry run only. Re-run with --apply to write the missing deals.");
     return;
+  }
+  if (legacyIdCollisions.length > 0) {
+    throw new Error(
+      "Weekly sync found ordinal legacy-ID collisions; assign stable, non-conflicting identities before applying any proposals",
+    );
   }
 
   let created = 0;

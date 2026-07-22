@@ -190,7 +190,10 @@ jobs:
             test ! -L "$company_approval"
             git ls-files --error-unmatch -- "$company_approval" >/dev/null
             company_sha="$(sha256sum "$company_approval" | awk '{print $1}')"
-            ./node_modules/.bin/tsx scripts/merge-duplicate-companies.ts \
+            company_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$company_approval")"
+            MUTATION_REVIEWED_BY="$company_reviewer" \
+            MUTATION_REASON="Validate the committed company-merge approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/merge-duplicate-companies.ts \
               --apply \
               --approval-file="$company_approval" \
               --approval-sha256="$company_sha" \
@@ -205,7 +208,10 @@ jobs:
             test ! -L "$citation_approval"
             git ls-files --error-unmatch -- "$citation_approval" >/dev/null
             citation_sha="$(sha256sum "$citation_approval" | awk '{print $1}')"
-            ./node_modules/.bin/tsx scripts/apply-primary-citation-remediation.ts \
+            citation_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$citation_approval")"
+            MUTATION_REVIEWED_BY="$citation_reviewer" \
+            MUTATION_REASON="Validate the committed primary-citation approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/apply-primary-citation-remediation.ts \
               --apply \
               --approval-file="$citation_approval" \
               --expected-sha256="$citation_sha" \
