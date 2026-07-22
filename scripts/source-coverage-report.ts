@@ -3,6 +3,8 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client.ts";
+import { SafeOperationalError } from "../src/lib/safe-error.ts";
+import { withServerTask } from "../src/lib/server-log.ts";
 import {
   coveragePercentage,
   fundHasSource,
@@ -19,7 +21,7 @@ function option(name: string): string | undefined {
 
 async function main() {
   const connectionString = process.env.DATABASE_URL;
-  if (!connectionString) throw new Error("DATABASE_URL is required.");
+  if (!connectionString) throw new SafeOperationalError("database_url_required");
   const requireComplete = process.argv.includes("--require-complete");
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
 
@@ -95,13 +97,7 @@ async function main() {
     await mkdir(path.dirname(outputPath), { recursive: true });
     await writeFile(outputPath, `${JSON.stringify(report, null, 2)}\n`);
 
-    console.log(
-      `Published source coverage: deals ${report.publicationCoverage.deals.coveragePercent}%, funds ${report.publicationCoverage.funds.coveragePercent}%, companies ${report.publicationCoverage.companies.coveragePercent}%.`,
-    );
-    console.log(
-      `Unverified published records: deals ${dealsMissingVerification}, funds ${fundsMissingVerification}, companies ${companiesMissingVerification}.`,
-    );
-
+    console.log("Source coverage verification completed; review the configured output artifact.");
     if (
       requireComplete
       && !sourceCoverageIsComplete({
@@ -117,7 +113,9 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : error);
+withServerTask({
+  task: "source_coverage",
+  operation: "verify_source_coverage",
+}, main).catch(() => {
   process.exitCode = 1;
 });

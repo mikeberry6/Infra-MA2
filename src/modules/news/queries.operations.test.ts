@@ -44,7 +44,7 @@ describe("news pipeline freshness states", () => {
       state: "never-run",
       message: "No completed news scan has been recorded yet.",
     });
-    expect(feed.lastUpdated).toBe("1970-01-01T00:00:00.000Z");
+    expect(feed.lastUpdated).toBeNull();
   });
 
   it("reports a healthy scan and derives its next expected update", async () => {
@@ -63,7 +63,7 @@ describe("news pipeline freshness states", () => {
     expect(feed.operations).toMatchObject({
       state: "healthy",
       lastSuccessfulAt: "2026-07-22T00:05:00.000Z",
-      nextExpectedAt: "2026-07-23T00:05:00.000Z",
+      nextExpectedAt: "2026-07-22T23:30:00.000Z",
       trackedEntities: 15,
       message: "The daily public-source scan completed successfully.",
     });
@@ -83,7 +83,7 @@ describe("news pipeline freshness states", () => {
       message: "The first news scan is currently running.",
     });
     expect(feed.operations.lastSuccessfulAt).toBeUndefined();
-    expect(feed.operations.nextExpectedAt).toBeUndefined();
+    expect(feed.operations.nextExpectedAt).toBe("2026-07-22T23:30:00.000Z");
   });
 
   it("reports a running refresh as pending while preserving the last success", async () => {
@@ -142,7 +142,22 @@ describe("news pipeline freshness states", () => {
 
     expect(feed.operations).toMatchObject({
       state: "overdue",
+      nextExpectedAt: "2026-07-22T23:30:00.000Z",
       message: "The next scheduled scan is overdue.",
     });
+  });
+
+  it("moves next expected to tomorrow after today's scheduled UTC scan", async () => {
+    vi.setSystemTime(new Date("2026-07-22T23:45:00.000Z"));
+    const success = pipelineRun(
+      "SUCCEEDED",
+      "2026-07-22T23:30:00.000Z",
+      "2026-07-22T23:40:00.000Z",
+    );
+    mocks.pipelineFindFirst.mockResolvedValue(success);
+
+    const feed = await getNewsFeed();
+
+    expect(feed.operations.nextExpectedAt).toBe("2026-07-23T23:30:00.000Z");
   });
 });

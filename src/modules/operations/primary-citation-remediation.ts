@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import type { Prisma, PrismaClient } from "@/generated/prisma/client";
+import type { MaintenanceMutationContext } from "@/lib/database-target";
 import {
   PUBLISHED_COMPANY_MISSING_PRIMARY_WHERE,
   PUBLISHED_DEAL_MISSING_PRIMARY_WHERE,
@@ -98,6 +99,55 @@ const citationSelect = {
   isPrimary: true,
   source: { select: { label: true, url: true, type: true } },
 } satisfies Prisma.CitationSelect;
+
+function jsonObject(value: Prisma.JsonValue | null): Record<string, Prisma.JsonValue> | null {
+  return value && typeof value === "object" && !Array.isArray(value)
+    ? value as Record<string, Prisma.JsonValue>
+    : null;
+}
+
+function sameStringSet(value: Prisma.JsonValue | undefined, expected: string[]): boolean {
+  return Array.isArray(value)
+    && value.every((item) => typeof item === "string")
+    && [...value].sort().join("\0") === [...expected].sort().join("\0");
+}
+
+async function assertExactPrimaryCitationReplay(input: {
+  tx: PrimaryCitationRemediationTransaction;
+  approval: ReviewedPrimaryCitationApproval;
+  approvalSha256: string;
+  item: ReviewedPrimaryCitationApproval["items"][number];
+  approvedCandidateIds: string[];
+  context: MaintenanceMutationContext;
+}): Promise<void> {
+  const { tx, approval, approvalSha256, item, approvedCandidateIds, context } = input;
+  const audits = await tx.auditEvent.findMany({
+    where: {
+      entityType: item.entityType,
+      entityId: item.entityId,
+      action: "PRIMARY_CITATION_REMEDIATION",
+    },
+    select: { changes: true, metadata: true },
+  });
+  const exactAudit = audits.some((audit) => {
+    const changes = jsonObject(audit.changes);
+    const metadata = jsonObject(audit.metadata);
+    return changes?.afterPrimaryCitationId === item.selectedCitationId
+      && metadata?.approvalSha256 === approvalSha256
+      && metadata.approvalSchemaVersion === approval.schemaVersion
+      && metadata.approvalScope === approval.scope
+      && metadata.reviewedBy === approval.reviewedBy
+      && metadata.reviewedAt === approval.reviewedAt
+      && metadata.executedBy === context.reviewedBy
+      && metadata.mutationReason === context.reason
+      && metadata.releaseSha === context.releaseSha
+      && metadata.targetDatabase === context.targetDatabase
+      && sameStringSet(metadata.candidateCitationIds, approvedCandidateIds);
+  });
+  if (!exactAudit) {
+    throw new Error(`${item.entityType}:${item.entityId} has no exact hash-bound citation-remediation audit`);
+  }
+}
 
 function candidateFromCitation(
   citation: ReportCitation,
@@ -340,8 +390,12 @@ export async function applyReviewedPrimaryCitationApproval(
   tx: PrimaryCitationRemediationTransaction,
   approval: ReviewedPrimaryCitationApproval,
   approvalSha256: string,
+  context: MaintenanceMutationContext,
 ): Promise<PrimaryCitationApplyResult> {
   if (!/^[a-f0-9]{64}$/.test(approvalSha256)) throw new Error("Approval provenance requires a lowercase SHA-256 digest");
+  if (approval.reviewedBy !== context.reviewedBy) {
+    throw new Error("Execution reviewer must exactly match the committed approval reviewer");
+  }
   const itemByKey = new Map(approval.items.map((item) => [`${item.entityType}:${item.entityId}`, item]));
   const [missingDeals, missingCompanies] = await Promise.all([
     tx.deal.findMany({ where: PUBLISHED_DEAL_MISSING_PRIMARY_WHERE, select: { id: true } }),
@@ -388,6 +442,14 @@ export async function applyReviewedPrimaryCitationApproval(
 
     const primaryIds = entity.citations.filter((citation) => citation.isPrimary).map((citation) => citation.id);
     if (primaryIds.length === 1 && primaryIds[0] === item.selectedCitationId) {
+      await assertExactPrimaryCitationReplay({
+        tx,
+        approval,
+        approvalSha256,
+        item,
+        approvedCandidateIds,
+        context,
+      });
       unchanged += 1;
       continue;
     }
@@ -425,6 +487,10 @@ export async function applyReviewedPrimaryCitationApproval(
           approvalSchemaVersion: approval.schemaVersion,
           approvalScope: approval.scope,
           candidateCitationIds: approvedCandidateIds,
+          executedBy: context.reviewedBy,
+          mutationReason: context.reason,
+          releaseSha: context.releaseSha,
+          targetDatabase: context.targetDatabase,
         },
       },
     });

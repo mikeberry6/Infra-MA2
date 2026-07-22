@@ -8,6 +8,25 @@ export type VerifiedVercelDeployment = {
   githubRepositoryId: string;
 };
 
+/**
+ * Personal-account API calls intentionally omit teamId. Team-owned projects
+ * must use the immutable team identifier documented by Vercel rather than a
+ * mutable display slug.
+ */
+export function vercelDeploymentApiUrl(reference: string, teamId?: string): string {
+  const endpoint = new URL(
+    `https://api.vercel.com/v13/deployments/${encodeURIComponent(reference)}`,
+  );
+  const normalizedTeamId = teamId?.trim();
+  if (normalizedTeamId) {
+    if (!/^team_[A-Za-z0-9]+$/.test(normalizedTeamId)) {
+      throw new Error("Vercel team ID must be an immutable team_ identifier.");
+    }
+    endpoint.searchParams.set("teamId", normalizedTeamId);
+  }
+  return endpoint.toString();
+}
+
 function record(value: unknown): Record<string, unknown> {
   if (!value || typeof value !== "object" || Array.isArray(value)) {
     throw new Error("Vercel returned an invalid deployment payload.");

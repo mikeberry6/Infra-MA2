@@ -10,9 +10,15 @@ export default function AdminError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const errorId = error.digest && /^[A-Za-z0-9_-]{1,128}$/.test(error.digest)
+    ? error.digest
+    : null;
+
   useEffect(() => {
-    console.error("Admin error:", error);
-  }, [error]);
+    // The server records the underlying exception. Keep the browser console
+    // and rendered boundary free of raw database or configuration details.
+    console.error("Admin operation failed", { digest: errorId ?? "unavailable" });
+  }, [errorId]);
 
   return (
     <div className="mx-auto max-w-[640px] px-4 sm:px-6 py-12">
@@ -24,11 +30,11 @@ export default function AdminError({
           Admin action failed
         </h2>
         <p className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
-          {error.message || "Unknown error"}
+          The admin page could not complete this operation. Retry, or use the error ID when contacting support.
         </p>
-        {error.digest && (
+        {errorId && (
           <p className="mt-3 mono text-[11px] text-[var(--text-tertiary)] tabular-nums">
-            ID: {error.digest}
+            ID: {errorId}
           </p>
         )}
         <div className="mt-5">

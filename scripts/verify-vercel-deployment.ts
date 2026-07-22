@@ -1,6 +1,10 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { verifyVercelDeployment } from "../src/lib/vercel-deployment.ts";
+import {
+  vercelDeploymentApiUrl,
+  verifyVercelDeployment,
+} from "../src/lib/vercel-deployment.ts";
+import { withServerTask } from "../src/lib/server-log.ts";
 
 function option(name: string): string | undefined {
   const prefix = `--${name}=`;
@@ -32,7 +36,7 @@ async function main(): Promise<void> {
     throw new Error("--expected-sha, --expected-project-id, and --expected-github-repository-id are required.");
   }
   const deployment = deploymentReference();
-  const response = await fetch(`https://api.vercel.com/v13/deployments/${encodeURIComponent(deployment.reference)}`, {
+  const response = await fetch(vercelDeploymentApiUrl(deployment.reference, option("team-id")), {
     signal: AbortSignal.timeout(30_000),
     headers: {
       Authorization: `Bearer ${token}`,
@@ -56,7 +60,6 @@ async function main(): Promise<void> {
   console.log(`Vercel deployment ${verified.id} verified for ${verified.githubCommitSha}.`);
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : error);
+withServerTask({ task: "vercel_deployment_verification", operation: "verify_deployment" }, main).catch(() => {
   process.exitCode = 1;
 });

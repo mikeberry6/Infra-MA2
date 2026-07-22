@@ -10,28 +10,31 @@ import {
   COMPANY_SECTOR_DISPLAY,
   COMPANY_REGION_DISPLAY,
 } from "@/modules/shared/enum-maps";
-import type { FundListItem, FundStrategyView, FundView, PortfolioCompanyView } from "@/modules/shared/types";
+import type {
+  FundListItem,
+  FundPortfolioCompanyView,
+  FundStrategyView,
+  FundView,
+  PortfolioCompanyView,
+} from "@/modules/shared/types";
 import type { Fund as DbFund } from "@/generated/prisma/client";
 
-function toFundView(
-  fund: DbFund & {
-    manager: { name: string };
-    ownershipPeriods: {
-      isActive: boolean;
-      investmentYear: number | null;
-      exitYear: number | null;
-      company: {
-        name: string;
-        sector: string;
-        subsector: string;
-        region: string;
-        country: string;
-        description: string;
-      };
-    }[];
-  },
-): FundView {
-  const portfolioCompanies: PortfolioCompanyView[] = fund.ownershipPeriods.map((op) => ({
+type OwnershipPeriodProjection = {
+  isActive: boolean;
+  investmentYear: number | null;
+  exitYear: number | null;
+  company: {
+    name: string;
+    sector: string;
+    subsector: string;
+    region: string;
+    country: string;
+    description: string;
+  };
+};
+
+function toPortfolioCompany(op: OwnershipPeriodProjection): PortfolioCompanyView {
+  return {
     name: op.company.name,
     sector:
       COMPANY_SECTOR_DISPLAY[op.company.sector as keyof typeof COMPANY_SECTOR_DISPLAY] ||
@@ -45,7 +48,18 @@ function toFundView(
     isActive: op.isActive,
     investmentYear: op.investmentYear ?? undefined,
     exitYear: op.exitYear ?? undefined,
-  }));
+  };
+}
+
+function toFundView(
+  fund: DbFund & {
+    manager: { name: string };
+    ownershipPeriods: OwnershipPeriodProjection[];
+  },
+  managerPortfolioCompanies?: FundPortfolioCompanyView[],
+): FundView {
+  const portfolioCompanies = fund.ownershipPeriods.map(toPortfolioCompany);
+  const strategies = fund.strategies.map((s) => FUND_STRATEGY_DISPLAY[s]);
 
   return {
     id: fund.legacyId,
@@ -58,12 +72,17 @@ function toFundView(
     size: fund.size,
     sizeUsdMm: fund.sizeUsdMm,
     vintage: fund.vintage,
-    strategies: fund.strategies.map((s) => FUND_STRATEGY_DISPLAY[s]),
+    strategies,
     structure: FUND_STRUCTURE_DISPLAY[fund.structure],
     status: FUND_STATUS_DISPLAY[fund.fundStatus],
     sectors: fund.sectors.map((s) => FUND_SECTOR_DISPLAY[s]),
     regions: fund.regions.map((r) => FUND_REGION_DISPLAY[r]),
     portfolioCompanies,
+    managerPortfolioCompanies: managerPortfolioCompanies ?? portfolioCompanies.map((company) => ({
+      company,
+      fundName: fund.fundName,
+      strategies,
+    })),
     strategyUrl: fund.strategyUrl,
   };
 }
@@ -91,6 +110,24 @@ const FUND_INCLUDE = {
           region: true,
           country: true,
           description: true,
+        },
+      },
+    },
+  },
+} as const;
+
+const FUND_DETAIL_INCLUDE = {
+  ...FUND_INCLUDE,
+  manager: {
+    select: {
+      name: true,
+      managedFunds: {
+        where: { status: "PUBLISHED" },
+        orderBy: { fundName: "asc" },
+        select: {
+          fundName: true,
+          strategies: true,
+          ownershipPeriods: FUND_INCLUDE.ownershipPeriods,
         },
       },
     },
@@ -145,7 +182,7 @@ export async function getAllFundDetails(): Promise<FundView[]> {
     include: FUND_INCLUDE,
     orderBy: { fundName: "asc" },
   });
-  return funds.map(toFundView);
+  return funds.map((fund) => toFundView(fund));
 }
 
 async function getFundStrategyIndexRaw(): Promise<FundStrategyView[]> {
@@ -176,9 +213,18 @@ export async function getFundStrategyIndex(): Promise<FundStrategyView[]> {
 export async function getFundById(legacyId: string): Promise<FundView | null> {
   const fund = await prisma.fund.findFirst({
     where: { legacyId, status: "PUBLISHED" },
-    include: FUND_INCLUDE,
+    include: FUND_DETAIL_INCLUDE,
   });
-  return fund ? toFundView(fund) : null;
+  if (!fund) return null;
+  const managerPortfolioCompanies = fund.manager.managedFunds.flatMap((managerFund) => {
+    const strategies = managerFund.strategies.map((strategy) => FUND_STRATEGY_DISPLAY[strategy]);
+    return managerFund.ownershipPeriods.map((ownershipPeriod) => ({
+      company: toPortfolioCompany(ownershipPeriod),
+      fundName: managerFund.fundName,
+      strategies,
+    }));
+  });
+  return toFundView(fund, managerPortfolioCompanies);
 }
 
 export async function getFundCount(): Promise<number> {

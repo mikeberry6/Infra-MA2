@@ -17,6 +17,7 @@
  * the entry is skipped (logged) rather than merged into the wrong row.
  */
 import "dotenv/config";
+import { withServerTask } from "../src/lib/server-log";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { rehomeCompanyRedirects } from "../src/modules/companies/redirects";
@@ -228,10 +229,9 @@ async function main() {
   if (!APPLY) console.log("\nThis was a dry run. Re-run with --apply to write changes.");
 }
 
-main()
-  .catch((e) => {
-    console.error("❌ Manual merges failed:", e);
-    process.exit(1);
+withServerTask({ task: "manual_merges", operation: "review_manual_merges" }, main)
+  .catch(() => {
+    process.exitCode = 1;
   })
   .finally(async () => {
     await prisma.$disconnect();

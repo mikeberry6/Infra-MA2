@@ -1,5 +1,6 @@
 import { PrismaClient } from "@/generated/prisma/client";
 import { PrismaNeonHttp } from "@prisma/adapter-neon";
+import { logServerOperation } from "@/lib/server-log";
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | null };
 
@@ -7,7 +8,14 @@ function createPrismaClient(): PrismaClient | null {
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) {
     // Don't throw during build — DATABASE_URL is only available at runtime
-    console.warn("DATABASE_URL not set — database queries will fail");
+    logServerOperation({
+      taskId: crypto.randomUUID(),
+      task: "prisma_client",
+      operation: "initialize_database",
+      durationMs: 0,
+      status: 503,
+      errorClassification: "configuration_error",
+    });
     return null;
   }
   const adapter = new PrismaNeonHttp(connectionString, { arrayMode: false, fullResults: true });

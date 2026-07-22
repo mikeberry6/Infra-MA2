@@ -8,8 +8,10 @@ import {
   isSampleDashboardRecord,
 } from "@/modules/dashboard/publication";
 import { buildDashboardView } from "@/modules/dashboard/view-model";
+import { nextDashboardSyncAt } from "@/modules/operations/pipeline-schedules";
 import type {
   DashboardObservation,
+  DashboardOperationsView,
   DashboardRunStatus,
   DashboardSignal,
 } from "@/modules/dashboard/types";
@@ -29,7 +31,7 @@ export async function getDashboardView() {
     sourceId: metric.source.id,
   }));
 
-  const [observationRows, signalRows, runRows] = await Promise.all([
+  const [observationRows, signalRows, runRows, latestAttempt, latestSuccess] = await Promise.all([
     prisma.dashboardObservation.findMany({
       where: {
         periodEnd: { gte: observationSince },
@@ -74,6 +76,8 @@ export async function getDashboardView() {
         signalsUpserted: true,
       },
     }),
+    getLatestDashboardAttempt(),
+    getLatestSuccessfulDashboardRun(),
   ]);
 
   const publicObservationRows = observationRows.filter((row) => !isSampleDashboardRecord({
@@ -82,9 +86,7 @@ export async function getDashboardView() {
   }));
   const publicSignalRows = signalRows.filter(isPublicDashboardSignal);
 
-  if (publicObservationRows.length === 0 && publicSignalRows.length === 0) {
-    throw new Error("No dashboard cache records were found in Prisma.");
-  }
+  const hasDatabaseData = publicObservationRows.length > 0 || publicSignalRows.length > 0;
 
   return buildDashboardView({
     observations: publicObservationRows
@@ -148,8 +150,80 @@ export async function getDashboardView() {
       };
     }),
     generatedAt: now.toISOString(),
-    hasDatabaseData: true,
+    hasDatabaseData,
+    operations: dashboardOperations({ latestAttempt, latestSuccess, now }),
   });
+}
+
+async function getLatestDashboardAttempt() {
+  return prisma.pipelineRun.findFirst({
+    where: { pipeline: "DASHBOARD_SYNC" },
+    orderBy: { startedAt: "desc" },
+    select: {
+      status: true,
+      startedAt: true,
+      endedAt: true,
+    },
+  });
+}
+
+async function getLatestSuccessfulDashboardRun() {
+  return prisma.pipelineRun.findFirst({
+    where: { pipeline: "DASHBOARD_SYNC", status: "SUCCEEDED" },
+    orderBy: [{ endedAt: "desc" }, { startedAt: "desc" }],
+    select: {
+      status: true,
+      startedAt: true,
+      endedAt: true,
+    },
+  });
+}
+
+function dashboardOperations({
+  latestAttempt,
+  latestSuccess,
+  now,
+}: {
+  latestAttempt: Awaited<ReturnType<typeof getLatestDashboardAttempt>>;
+  latestSuccess: Awaited<ReturnType<typeof getLatestSuccessfulDashboardRun>>;
+  now: Date;
+}): DashboardOperationsView {
+  const successfulRun = latestSuccess
+    ?? (latestAttempt?.status === "SUCCEEDED" ? latestAttempt : null);
+  const lastSuccessfulAt = successfulRun?.endedAt ?? successfulRun?.startedAt;
+  const nextExpectedAt = nextDashboardSyncAt(now);
+  const missedScheduledRun = lastSuccessfulAt
+    ? nextDashboardSyncAt(lastSuccessfulAt).getTime() <= now.getTime()
+    : false;
+  const state: DashboardOperationsView["state"] = !latestAttempt
+    ? "never-run"
+    : latestAttempt.status === "FAILED"
+      ? "failed"
+      : latestAttempt.status === "RUNNING"
+        ? "pending"
+        : latestAttempt.status !== "SUCCEEDED"
+          ? "failed"
+          : missedScheduledRun
+            ? "overdue"
+            : "healthy";
+
+  return {
+    state,
+    lastAttemptAt: latestAttempt?.startedAt.toISOString(),
+    lastSuccessfulAt: lastSuccessfulAt?.toISOString(),
+    nextExpectedAt: nextExpectedAt.toISOString(),
+    message: state === "healthy"
+      ? "The latest weekday dashboard synchronization completed successfully."
+      : state === "failed"
+        ? "The latest dashboard synchronization failed."
+        : state === "pending"
+          ? lastSuccessfulAt
+            ? "A dashboard synchronization is running."
+            : "The first dashboard synchronization is running."
+          : state === "overdue"
+            ? "The scheduled weekday dashboard synchronization is overdue."
+            : "No dashboard synchronization has been recorded yet.",
+  };
 }
 
 function publicSourceRunNote(status: DashboardRunStatus): string | null {

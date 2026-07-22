@@ -37,7 +37,7 @@ jobs:
       - name: Install locked dependencies
         run: npm ci
 
-      - name: Audit changed migrations as additive-only
+      - name: Audit additive migrations and immutable weekly history
         shell: bash
         env:
           EVENT_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
@@ -52,10 +52,14 @@ jobs:
               base_sha="$(git merge-base HEAD origin/main)"
             fi
           fi
-          node --experimental-strip-types scripts/audit-additive-migrations.ts \
+          ./node_modules/.bin/tsx scripts/audit-additive-migrations.ts \
             --base-sha="$base_sha" \
             --release-sha=HEAD \
             --output=tmp/ci/migration-manifest.json
+          npm run audit:weekly-history -- \
+            --base-sha="$base_sha" \
+            --release-sha=HEAD \
+            --output=tmp/ci/weekly-history-audit.json
 
       - name: Generate Prisma client
         run: npm run db:generate
@@ -83,6 +87,9 @@ jobs:
 
       - name: Build production application
         run: npm run build
+
+      - name: Enforce public JavaScript bundle budgets
+        run: npm run check:bundle-budget
 
       - name: Upload quality and migration evidence
         if: always()

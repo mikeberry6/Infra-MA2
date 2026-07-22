@@ -10,6 +10,7 @@ import type {
   ParticipantRole,
 } from "../src/generated/prisma/client";
 import { resolveOrgName, getOrgType } from "../prisma/entity-resolution";
+import { withServerTask } from "../src/lib/server-log";
 import { deals, type Deal } from "../prisma/seed-data/deals";
 import { weeklyBriefingDeals } from "../prisma/seed-data/weekly-briefing-deals";
 import {
@@ -19,6 +20,7 @@ import {
   DEAL_STATUS_MAP,
 } from "../src/modules/shared/enum-maps";
 import { completePipelineRun, failPipelineRun, startPipelineRun } from "../src/modules/operations/pipeline-runs";
+import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
 
 const MAX_DATE_DRIFT_MS = 14 * 24 * 60 * 60 * 1000;
 const applyChanges = process.argv.includes("--apply");
@@ -28,6 +30,7 @@ if (!connectionString) {
   console.error("DATABASE_URL is not set.");
   process.exit(1);
 }
+if (applyChanges) assertMutationDatabaseTargetFromEnv();
 
 const prisma = new PrismaClient({
   adapter: new PrismaPg({ connectionString }),
@@ -364,9 +367,8 @@ async function main() {
   }
 }
 
-main()
-  .catch((error) => {
-    console.error("Weekly briefing deal sync failed:", error);
+withServerTask({ task: "weekly_briefing_deals", operation: "sync_weekly_deals" }, main)
+  .catch(() => {
     process.exitCode = 1;
   })
   .finally(async () => {

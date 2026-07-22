@@ -6,6 +6,9 @@ import { getSessionIdentity, isAuthorizationError, requireAdmin } from "@/module
 import { recordAuditEvent } from "@/modules/operations/audit";
 import type { DashboardSignalReviewStatus } from "@/generated/prisma/client";
 import { dashboardSignalContentHash } from "@/modules/dashboard/content-hash";
+import { currentServerRequestId } from "@/lib/server-request-context";
+import { logServerFailure } from "@/lib/server-log";
+import { AdminActionUserError, adminActionErrorMessage } from "@/modules/admin/action-error";
 
 type ReviewActionResult = { success: boolean; error?: string };
 
@@ -51,10 +54,12 @@ async function reviewDashboardSignal(
           signalKey: true,
         },
       });
-      if (!signal) throw new Error("Dashboard signal not found.");
+      if (!signal) throw new AdminActionUserError("Dashboard signal not found.");
       const currentContentHash = dashboardSignalContentHash(signal);
       if (currentContentHash !== renderedContentHash) {
-        throw new Error("This signal changed after it was rendered. Refresh the review queue before reviewing it.");
+        throw new AdminActionUserError(
+          "This signal changed after it was rendered. Refresh the review queue before reviewing it.",
+        );
       }
 
       const updated = await tx.dashboardSignal.updateMany({
@@ -78,7 +83,9 @@ async function reviewDashboardSignal(
         },
       });
       if (updated.count !== 1) {
-        throw new Error("This signal changed during review. Refresh the review queue before trying again.");
+        throw new AdminActionUserError(
+          "This signal changed during review. Refresh the review queue before trying again.",
+        );
       }
       await recordAuditEvent({
         actorId: identity.id,
@@ -103,14 +110,19 @@ async function reviewDashboardSignal(
     revalidatePath("/admin/dashboard-signals");
     return { success: true };
   } catch (error) {
-    if (!isAuthorizationError(error)) console.error("reviewDashboardSignal error:", error);
+    if (!isAuthorizationError(error)) {
+      const requestId = await currentServerRequestId();
+      logServerFailure({
+        task: "dashboard_admin_action",
+        operation: "review_dashboard_signal",
+        requestId,
+      }, error);
+    }
     return {
       success: false,
       error: isAuthorizationError(error)
         ? "Forbidden"
-        : error instanceof Error
-          ? error.message
-          : "Dashboard signal review failed.",
+        : adminActionErrorMessage(error, "Dashboard signal review failed."),
     };
   }
 }

@@ -170,6 +170,24 @@ describe("weekly email validation", () => {
     expect(errorCodes(report)).toEqual(expect.arrayContaining(["card-metadata", "static-coverage"]));
   });
 
+  it("rejects an email that omits a qualifying current-week deal", async () => {
+    const report = await validateWeeklyEmail({
+      issuePath: "/tmp/2026-07-17.html",
+      html: fixtureHtml(),
+      coverageDeals: [
+        ...coverage,
+        {
+          target: "Delta Transit",
+          sector: "Transportation",
+          sourceUrl: "https://example.com/delta",
+        },
+      ],
+      requireStaticCoverage: true,
+    });
+
+    expect(errorCodes(report)).toContain("missing-current-week-deal");
+  });
+
   it("identifies a card whose required Source link is missing", async () => {
     const html = fixtureHtml().replace(
       '<a href="https://example.com/alpha" style="font-size: 10px; font-weight: 600; color: #5B5563;">Source</a>',
@@ -206,6 +224,30 @@ describe("weekly email validation", () => {
       severity: "warning",
       code: "inferred-scale",
     }));
+  });
+
+  it("requires explicit scale evidence for issues published after the cutover", async () => {
+    const report = await validateWeeklyEmail({
+      issuePath: "/tmp/2026-07-24.html",
+      html: fixtureHtml({ explicitScale: false }),
+      coverageDeals: coverage,
+    });
+
+    expect(errorCodes(report)).toContain("missing-scale-metadata");
+  });
+
+  it("requires scale evidence even when an active sector has only one deal", async () => {
+    const html = fixtureHtml().replace(
+      ' data-scale-kind="economic" data-scale-value="50" data-scale-unit="USD-mm"',
+      "",
+    );
+    const report = await validateWeeklyEmail({
+      issuePath: "/tmp/2026-07-24.html",
+      html,
+      coverageDeals: coverage,
+    });
+
+    expect(errorCodes(report)).toContain("missing-scale-metadata");
   });
 
   it("checks YTD descending rows and recalculated bar widths", async () => {
@@ -272,5 +314,5 @@ describe("weekly email validation", () => {
     expect(run([validPath]).status).toBe(0);
     expect(run([invalidPath]).status).toBe(1);
     expect(run(["--unknown-option"]).status).toBe(2);
-  });
+  }, 20_000);
 });

@@ -21,6 +21,7 @@ test.describe("anonymous database journeys", () => {
     await page.getByRole("button", { name: "Next page" }).click();
     await expect(page).toHaveURL(/page=2/);
     await expect(page.getByText("2/15", { exact: true })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Deal results" })).toBeFocused();
 
     await page.getByRole("textbox", { name: "Search deals" }).fill("Brookfield");
     await expect(page).toHaveURL(/q=Brookfield/);
@@ -43,11 +44,19 @@ test.describe("anonymous database journeys", () => {
     await expect(dialog).toBeVisible();
     await expect(page.locator("body")).toHaveCSS("overflow", "hidden");
 
-    await dialog.getByRole("button", { name: "Filter by Sector" }).click();
-    await page.getByRole("option", { name: /Power & ET/ }).click();
+    const sectorFilter = dialog.getByRole("button", { name: "Filter by Sector" });
+    await sectorFilter.focus();
+    await sectorFilter.press("Enter");
+    const powerOption = page.getByRole("option", { name: /Power & ET/ });
+    await expect(powerOption).toBeFocused();
+    await powerOption.press("Space");
     await expect(page).toHaveURL(/sector=Power(?:\+|%20)%26(?:\+|%20)ET/);
     await expect(page).not.toHaveURL(/page=2/);
     await expect(trigger).toContainText("1");
+
+    await powerOption.press("Escape");
+    await expect(sectorFilter).toBeFocused();
+    await expect(dialog).toBeVisible();
 
     await dialog.press("Escape");
     await expect(dialog).toBeHidden();

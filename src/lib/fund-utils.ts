@@ -1,7 +1,9 @@
 // ─── Fund Utility Functions ─────────────────────────────────
 
 export function matchesSizeRange(sizeUsdMm: number | null, range: string): boolean {
-  if (sizeUsdMm === null) return true; // Unknown size always passes
+  // A numeric size filter must never imply that an undisclosed/TBD vehicle is
+  // inside the selected range.
+  if (sizeUsdMm === null) return false;
   switch (range) {
     case "< $500M": return sizeUsdMm < 500;
     case "$500M – $1B": return sizeUsdMm >= 500 && sizeUsdMm < 1000;
@@ -10,6 +12,18 @@ export function matchesSizeRange(sizeUsdMm: number | null, range: string): boole
     case "$10B+": return sizeUsdMm >= 10000;
     default: return true;
   }
+}
+
+/** Compare optional numeric values while keeping unknowns last in either direction. */
+export function compareOptionalNumbersUnknownLast(
+  left: number | null,
+  right: number | null,
+  ascending: boolean,
+): number {
+  if (left === null && right === null) return 0;
+  if (left === null) return 1;
+  if (right === null) return -1;
+  return ascending ? left - right : right - left;
 }
 
 export function groupFundsByManager<T extends { managerName: string }>(fundList: T[]): Map<string, T[]> {

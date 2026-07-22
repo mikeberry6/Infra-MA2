@@ -10,6 +10,7 @@ import "dotenv/config";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { PrismaClient } from "../src/generated/prisma/client";
+import { withServerTask } from "../src/lib/server-log";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { companyDedupKeys, groupByDedupKeys } from "../src/lib/company-key";
 import {
@@ -144,9 +145,8 @@ async function main() {
   }
 }
 
-main()
-  .catch((error) => {
-    console.error(error instanceof Error ? error.message : "Duplicate report failed");
+withServerTask({ task: "company_merge_report", operation: "report_merge_candidates" }, main)
+  .catch(() => {
     process.exitCode = 1;
   })
   .finally(async () => {

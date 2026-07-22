@@ -1,4 +1,5 @@
 import type { DashboardPublicationMode } from "@/modules/dashboard/types";
+import { DASHBOARD_METHODOLOGY_VERSIONS } from "@/modules/dashboard/methodology-cutover";
 
 export type DashboardValueTransform =
   | "IDENTITY"
@@ -26,6 +27,7 @@ export interface DashboardSourceRegistryEntry {
   owner: string;
   observationPublicationMode: DashboardPublicationMode;
   signalPublicationMode?: DashboardPublicationMode;
+  methodologyVersion?: string;
   fredUnits?: "lin" | "pc1";
   minValue?: number;
   maxValue?: number;
@@ -180,6 +182,7 @@ export const DASHBOARD_SOURCE_REGISTRY: DashboardSourceRegistryEntry[] = [
     owner: "Research",
     observationPublicationMode: "AUTOMATIC",
     signalPublicationMode: "REVIEW",
+    methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.usaSpendingAwards30d,
     minValue: 0,
     maxValue: 10_000_000,
   },
@@ -198,6 +201,7 @@ export const DASHBOARD_SOURCE_REGISTRY: DashboardSourceRegistryEntry[] = [
     owner: "Research",
     observationPublicationMode: "AUTOMATIC",
     signalPublicationMode: "REVIEW",
+    methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.usaSpendingObligations30d,
     minValue: -1_000,
     maxValue: 100_000,
   },
@@ -216,6 +220,7 @@ export const DASHBOARD_SOURCE_REGISTRY: DashboardSourceRegistryEntry[] = [
     owner: "Research",
     observationPublicationMode: "AUTOMATIC",
     signalPublicationMode: "REVIEW",
+    methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.federalRegisterInfraNotices,
     minValue: 0,
     maxValue: 100_000,
   },
@@ -235,6 +240,7 @@ export const DASHBOARD_SOURCE_REGISTRY: DashboardSourceRegistryEntry[] = [
     owner: "Research",
     observationPublicationMode: "AUTOMATIC",
     signalPublicationMode: "REVIEW",
+    methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.samGovOpportunities,
     minValue: 0,
     maxValue: 1_000_000,
   },

@@ -3,10 +3,13 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
+import { SafeOperationalError } from "../src/lib/safe-error";
+import { withServerTask } from "../src/lib/server-log";
 import {
   collapsePipelineAttemptsByRefreshWindow,
   findConsecutiveCriticalSourceIssues,
 } from "../src/modules/operations/pipeline-reliability";
+import { nextDashboardSyncAt } from "../src/modules/operations/pipeline-schedules";
 
 const DAY_MS = 86_400_000;
 
@@ -85,10 +88,20 @@ async function inspectSummary(filePath: string, kind: string): Promise<SummaryCh
 
 async function main() {
   const connectionString = process.env.DATABASE_URL;
-  if (!connectionString) throw new Error("DATABASE_URL is required.");
+  if (!connectionString) throw new SafeOperationalError("database_url_required");
 
   const pipeline = option("pipeline")?.trim();
   if (!pipeline) throw new Error("--pipeline is required.");
+  const freshnessSchedule = option("freshness-schedule")?.trim();
+  if (freshnessSchedule && freshnessSchedule !== "dashboard-weekday") {
+    throw new Error("freshness-schedule must be dashboard-weekday when provided.");
+  }
+  if (freshnessSchedule === "dashboard-weekday" && pipeline !== "DASHBOARD_SYNC") {
+    throw new Error("dashboard-weekday freshness is only valid for DASHBOARD_SYNC.");
+  }
+  if (freshnessSchedule && option("max-age-hours") !== undefined) {
+    throw new Error("freshness-schedule and max-age-hours are mutually exclusive.");
+  }
   const maxAgeHours = numericOption("max-age-hours", 36);
   const windowDays = numericOption("window-days", 30);
   const expectedRunsPerWeek = numericOption("expected-runs-per-week", 0);
@@ -142,6 +155,9 @@ async function main() {
     const ageHours = latestSuccessfulAt
       ? (now.getTime() - latestSuccessfulAt.getTime()) / 3_600_000
       : null;
+    const nextExpectedAt = freshnessSchedule === "dashboard-weekday" && latestSuccessfulAt
+      ? nextDashboardSyncAt(latestSuccessfulAt)
+      : null;
 
     const effectiveStart = firstRun && firstRun.startedAt > windowStart ? firstRun.startedAt : windowStart;
     const observedDays = firstRun
@@ -162,7 +178,11 @@ async function main() {
     const consecutiveSourceIssues = findConsecutiveCriticalSourceIssues(dashboardSourceRuns);
 
     const failures: string[] = [];
-    if (!latestSuccessfulAt || ageHours === null || ageHours > maxAgeHours) {
+    if (!latestSuccessfulAt || ageHours === null) {
+      failures.push("latest success is missing");
+    } else if (nextExpectedAt && nextExpectedAt.getTime() <= now.getTime()) {
+      failures.push(`latest success missed the dashboard weekday schedule; next expected run was ${nextExpectedAt.toISOString()}`);
+    } else if (!freshnessSchedule && ageHours > maxAgeHours) {
       failures.push(`latest success is missing or older than ${maxAgeHours} hours`);
     }
     if (successRate < minSuccessRate) {
@@ -189,7 +209,9 @@ async function main() {
       generatedAt: now.toISOString(),
       pipeline,
       windowDays,
-      maxAgeHours,
+      freshnessSchedule: freshnessSchedule ?? null,
+      maxAgeHours: freshnessSchedule ? null : maxAgeHours,
+      nextExpectedAt: nextExpectedAt?.toISOString() ?? null,
       expectedRunsPerWeek,
       minSuccessRate,
       counts: {
@@ -214,16 +236,16 @@ async function main() {
     await mkdir(path.dirname(outputPath), { recursive: true });
     await writeFile(outputPath, `${JSON.stringify(report, null, 2)}\n`);
 
-    console.log(
-      `${pipeline}: ${succeeded}/${completed} completed refresh windows succeeded in the rolling ${windowDays}-day window (${windowRuns.length} attempt(s)); latest success ${ageHours === null ? "missing" : `${ageHours.toFixed(1)}h ago`}.`,
-    );
+    console.log("Pipeline health verification completed; review the configured output artifact.");
     if (failures.length) throw new Error(failures.join("; "));
   } finally {
     await prisma.$disconnect();
   }
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : error);
+withServerTask({
+  task: "pipeline_health",
+  operation: "verify_pipeline_health",
+}, main).catch(() => {
   process.exitCode = 1;
 });

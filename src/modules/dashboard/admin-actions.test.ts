@@ -116,4 +116,15 @@ describe("dashboard signal review actions", () => {
     expect(result.error).toContain("changed during review");
     expect(mocks.recordAuditEvent).not.toHaveBeenCalled();
   });
+
+  it("does not expose unexpected database details", async () => {
+    mocks.transaction.mockRejectedValueOnce(
+      new Error("connection failed for postgresql://admin:secret@private-db/signals"),
+    );
+
+    await expect(approveDashboardSignal("signal-1", renderedHash)).resolves.toEqual({
+      success: false,
+      error: "Dashboard signal review failed.",
+    });
+  });
 });

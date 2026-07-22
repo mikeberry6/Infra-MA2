@@ -2,6 +2,9 @@ import "dotenv/config";
 import bcrypt from "bcryptjs";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
+import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
+import { SafeOperationalError } from "../src/lib/safe-error";
+import { withServerTask } from "../src/lib/server-log";
 
 const email = process.env.ADMIN_EMAIL?.trim().toLowerCase();
 const password = process.env.ADMIN_PASSWORD ?? "";
@@ -16,15 +19,16 @@ function validatePassword(value: string): string | null {
 }
 
 async function main() {
-  if (!connectionString) throw new Error("DATABASE_URL is not set.");
+  if (!connectionString) throw new SafeOperationalError("database_url_missing");
   if (!email || !email.includes("@")) throw new Error("ADMIN_EMAIL must be a valid email address.");
   const passwordError = validatePassword(password);
   if (passwordError) throw new Error(passwordError);
+  assertMutationDatabaseTargetFromEnv();
 
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
   try {
     const passwordHash = await bcrypt.hash(password, 12);
-    const user = await prisma.$transaction(async (tx) => {
+    await prisma.$transaction(async (tx) => {
       const admin = await tx.user.upsert({
         where: { email },
         update: { name, passwordHash, role: "ADMIN" },
@@ -40,15 +44,16 @@ async function main() {
           metadata: { email: admin.email },
         },
       });
-      return admin;
     });
-    console.log(`Administrator account created or rotated for ${user.email}.`);
+    console.log("Administrator account created or rotated.");
   } finally {
     await prisma.$disconnect();
   }
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : error);
+withServerTask({
+  task: "create_admin",
+  operation: "create_or_rotate_admin",
+}, main).catch(() => {
   process.exitCode = 1;
 });

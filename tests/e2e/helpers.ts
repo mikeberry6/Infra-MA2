@@ -1,6 +1,12 @@
 import { expect, type Page } from "@playwright/test";
+import { assertIsolatedWriteTarget } from "./isolation-guard";
 
 export const BASE_PATH = process.env.E2E_BASE_PATH || "/Infra-MA2";
+export const ADMIN_E2E_ENV = [
+  "E2E_DATABASE_URL",
+  "E2E_ADMIN_EMAIL",
+  "E2E_ADMIN_PASSWORD",
+] as const;
 
 export function appPath(path = "/") {
   const suffix = path.startsWith("/") ? path : `/${path}`;
@@ -17,4 +23,24 @@ export async function expectNoHorizontalOverflow(page: Page) {
     document: document.documentElement.scrollWidth,
   }));
   expect(dimensions.document).toBeLessThanOrEqual(dimensions.viewport);
+}
+
+export function configuredAdminE2E(): boolean {
+  return ADMIN_E2E_ENV.every((name) => Boolean(process.env[name]));
+}
+
+/** Authenticate only against Playwright's explicitly isolated local target. */
+export async function signInAsConfiguredAdmin(page: Page, callbackPath = "/admin") {
+  assertIsolatedWriteTarget();
+  const email = process.env.E2E_ADMIN_EMAIL;
+  const password = process.env.E2E_ADMIN_PASSWORD;
+  if (!email || !password) {
+    throw new Error(`${ADMIN_E2E_ENV.join(", ")} are required for authenticated E2E`);
+  }
+
+  await page.goto(`${appPath("/login")}?callbackUrl=${encodeURIComponent(appPath(callbackPath))}`);
+  await page.getByRole("textbox", { name: /Email(?: address)?/i }).fill(email);
+  await page.getByLabel("Password").fill(password);
+  await page.getByRole("button", { name: "Sign In" }).click();
+  await expect(page).toHaveURL(new RegExp(`${appPath(callbackPath)}$`));
 }

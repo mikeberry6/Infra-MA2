@@ -31,3 +31,29 @@ export function normalizeBasePathCallback(callbackUrl: string | undefined): stri
     return withBasePath("/");
   }
 }
+
+export function normalizeNextAuthRedirect(callbackUrl: string | undefined, baseUrl: string): string {
+  let applicationUrl: URL;
+  try {
+    applicationUrl = new URL(baseUrl);
+  } catch {
+    return normalizeBasePathCallback(undefined);
+  }
+
+  let applicationPath = callbackUrl;
+  if (callbackUrl && !callbackUrl.startsWith("/")) {
+    try {
+      const parsedCallback = new URL(callbackUrl);
+      if (parsedCallback.origin !== applicationUrl.origin) {
+        applicationPath = undefined;
+      } else {
+        applicationPath = `${parsedCallback.pathname}${parsedCallback.search}${parsedCallback.hash}`;
+      }
+    } catch {
+      applicationPath = undefined;
+    }
+  }
+
+  const normalizedPath = normalizeBasePathCallback(applicationPath);
+  return new URL(normalizedPath, applicationUrl.origin).toString();
+}

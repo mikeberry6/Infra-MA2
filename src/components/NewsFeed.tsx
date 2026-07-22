@@ -25,10 +25,11 @@ import { SectionLabel } from "@/components/shared/SectionLabel";
 import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
+import { PaginationControls } from "@/components/shared/PaginationControls";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useClearUrlFilters, useUrlFilterSet, useUrlQueryState } from "@/hooks/useUrlFilterSet";
+import { useUrlFilterSet, useUrlQueryParamsWriter, useUrlQueryState } from "@/hooks/useUrlFilterSet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
-import { formatDate } from "@/lib/format";
+import { formatDate, formatScheduledDateTime } from "@/lib/format";
 import { getNewsCategoryColor, NEWS_CATEGORIES } from "@/lib/news-utils";
 import type { FeedOperationsView, NewsCategory, NewsFeedView, NewsItemView, NewsMentionType } from "@/modules/shared/types";
 import { track } from "@vercel/analytics";
@@ -39,6 +40,8 @@ const DATE_WINDOWS = [
   { label: "30D", days: 30 },
   { label: "All", days: null },
 ] as const;
+
+const NEWS_PAGE_SIZE = 25;
 
 type DateWindow = (typeof DATE_WINDOWS)[number]["label"];
 
@@ -183,7 +186,7 @@ function IntelligenceHeader({
   lastUpdated,
 }: {
   counts: NewsCounts;
-  lastUpdated: string;
+  lastUpdated: string | null;
 }) {
   const metrics = [
     { label: "Review Items", value: counts.total, color: "#111114" },
@@ -210,7 +213,7 @@ function IntelligenceHeader({
             </p>
           </div>
           <div className="type-micro">
-            Updated <span className="mono tabular-nums">{formatDate(lastUpdated)}</span>
+            Updated <span className="mono tabular-nums">{lastUpdated ? formatDate(lastUpdated) : "Not recorded"}</span>
           </div>
         </div>
 
@@ -259,7 +262,7 @@ function OperationalStatus({ operations }: { operations: FeedOperationsView }) {
         </div>
         <div>
           <dt className="inline">Next expected </dt>
-          <dd className="inline mono tabular-nums text-[var(--text-secondary)]">{operations.nextExpectedAt ? formatDate(operations.nextExpectedAt) : "Pending schedule"}</dd>
+          <dd className="inline mono tabular-nums text-[var(--text-secondary)]">{operations.nextExpectedAt ? formatScheduledDateTime(operations.nextExpectedAt, "UTC") : "Pending schedule"}</dd>
         </div>
         {operations.trackedEntities != null && (
           <div>
@@ -930,17 +933,27 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
   const [activeSources, toggleSource] = useUrlFilterSet("source");
   const [activeConfidence, toggleConfidence] = useUrlFilterSet("confidence");
   const [dateWindowParam, setDateWindowParam] = useUrlQueryState("window", "Today", { resetPage: true });
+  const [pageParam, setPageParam] = useUrlQueryState("page", "1");
   const dateWindow: DateWindow = isDateWindow(dateWindowParam) ? dateWindowParam : "Today";
   const setDateWindow = useCallback((value: DateWindow) => setDateWindowParam(value), [setDateWindowParam]);
   const [selectedItem, setSelectedItem] = useState<NewsItemView | null>(null);
   const debouncedSearch = useDebounce(search, 250);
+  const openNewsItem = useCallback((item: NewsItemView) => {
+    setSelectedItem(item);
+    track("drawer_opened", { entity: "news" });
+  }, []);
 
-  const clearUrlFilters = useClearUrlFilters(["category", "entity", "source", "confidence"]);
+  const writeQueryParams = useUrlQueryParamsWriter();
   const clearAll = useCallback(() => {
-    clearUrlFilters();
-    setSearch("");
-    setDateWindow("Today");
-  }, [clearUrlFilters, setDateWindow, setSearch]);
+    writeQueryParams({
+      q: null,
+      category: null,
+      entity: null,
+      source: null,
+      confidence: null,
+      window: null,
+    }, { resetPage: true });
+  }, [writeQueryParams]);
 
   const entityOptions = useMemo(() => getEntityOptions(feed.items), [feed.items]);
   const sourceOptions = useMemo(() => getSourceOptions(feed.items), [feed.items]);
@@ -990,16 +1003,21 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
     };
   }, [filteredItems]);
 
-  const displayItems = useMemo(() => {
-    return filteredItems;
-  }, [filteredItems]);
+  const parsedPage = Number.parseInt(pageParam, 10);
+  const requestedPage = Number.isFinite(parsedPage) && parsedPage > 0 ? parsedPage : 1;
+  const totalPages = Math.max(1, Math.ceil(filteredItems.length / NEWS_PAGE_SIZE));
+  const safePage = Math.min(requestedPage, totalPages);
+  const displayItems = useMemo(
+    () => filteredItems.slice((safePage - 1) * NEWS_PAGE_SIZE, safePage * NEWS_PAGE_SIZE),
+    [filteredItems, safePage],
+  );
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6">
       <IntelligenceHeader counts={counts} lastUpdated={feed.lastUpdated} />
       <OperationalStatus operations={feed.operations} />
 
-      <CategorySpotlight items={filteredItems} onSelect={setSelectedItem} />
+      <CategorySpotlight items={filteredItems} onSelect={openNewsItem} />
 
       <NewsFilterBar
         search={search}
@@ -1023,16 +1041,16 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_300px]">
         <div>
           <div className="mb-3 flex items-center justify-between gap-3">
-            <span className="type-section-title text-[var(--text-tertiary)]">
+            <h2 id="news-results-heading" tabIndex={-1} className="scroll-mt-20 type-section-title text-[var(--text-tertiary)] outline-none">
               Signal Tape
-            </span>
+            </h2>
             <span className="type-micro mono tabular-nums">
-              {displayItems.length.toLocaleString()} items
+              {filteredItems.length.toLocaleString()} items
             </span>
           </div>
           <div className="space-y-3">
           {displayItems.map((item) => (
-            <NewsCard key={item.id} item={item} onSelect={setSelectedItem} />
+            <NewsCard key={item.id} item={item} onSelect={openNewsItem} />
           ))}
           {displayItems.length === 0 && (
             <div className="surface px-4 py-12 text-center">
@@ -1052,6 +1070,13 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
             </div>
           )}
           </div>
+          <PaginationControls
+            page={safePage}
+            pageSize={NEWS_PAGE_SIZE}
+            totalItems={filteredItems.length}
+            onPageChange={(next) => setPageParam(String(next))}
+            resultHeadingId="news-results-heading"
+          />
         </div>
         <InsightRail items={filteredItems} />
       </div>

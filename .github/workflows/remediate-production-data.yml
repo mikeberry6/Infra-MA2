@@ -24,12 +24,24 @@ on:
           - report
           - apply-citations
           - apply-company-merges
+          - apply-dashboard-methodology-cutover
+          - rollback-dashboard-methodology-cutover
+          - apply-dashboard-signal-backfill
+          - rollback-dashboard-signal-backfill
       approval_file:
         description: Committed audits/approvals/*.json file (apply operations only)
         required: false
         type: string
       approval_sha256:
         description: Exact SHA-256 of the reviewed approval file (apply operations only)
+        required: false
+        type: string
+      mutation_reviewed_by:
+        description: Exact reviewer identity recorded in the committed approval (mutation operations only)
+        required: false
+        type: string
+      mutation_reason:
+        description: Reviewed operational reason for the mutation or rollback
         required: false
         type: string
       confirmation:
@@ -58,6 +70,8 @@ jobs:
       CONFIRMATION: ${{ inputs.confirmation }}
       APPROVAL_FILE: ${{ inputs.approval_file }}
       APPROVAL_SHA256: ${{ inputs.approval_sha256 }}
+      MUTATION_REVIEWED_BY: ${{ inputs.mutation_reviewed_by }}
+      MUTATION_REASON: ${{ inputs.mutation_reason }}
       VALIDATION_DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
       PRODUCTION_DATABASE_URL: ${{ secrets.PRODUCTION_MIGRATION_DATABASE_URL }}
       VALIDATION_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
@@ -65,7 +79,15 @@ jobs:
       PRODUCTION_POOLED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
       VALIDATION_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
       PRODUCTION_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+      DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}
     steps:
+      - name: Require protected workflow ref
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Production remediation workflows must be dispatched from refs/heads/main."
+            exit 1
+          fi
+
       - name: Require explicit operation authorization
         shell: bash
         run: |
@@ -75,13 +97,36 @@ jobs:
             echo "::error::confirmation must exactly equal $expected for $OPERATION."
             exit 1
           fi
+          if [ "$OPERATION" != "report" ] && { [ -z "$MUTATION_REVIEWED_BY" ] || [ -z "$MUTATION_REASON" ]; }; then
+            echo "::error::mutation_reviewed_by and mutation_reason are required for $OPERATION."
+            exit 1
+          fi
+          case "$OPERATION" in
+            apply-dashboard-methodology-cutover|rollback-dashboard-methodology-cutover|apply-dashboard-signal-backfill|rollback-dashboard-signal-backfill)
+              if [ "$DASHBOARD_WRITES_ENABLED" != "false" ]; then
+                echo "::error::DASHBOARD_WRITES_ENABLED must exactly equal false for dashboard cutover apply or rollback."
+                exit 1
+              fi
+              ;;
+          esac
 
       - name: Checkout approved release
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ inputs.release_sha }}
+          ref: refs/heads/main
           fetch-depth: 0
           persist-credentials: false
+
+      - name: Verify checked-out release identity
+        run: |
+          if ! [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::release_sha must be a full lowercase Git SHA."
+            exit 1
+          fi
+          if [ "$(git rev-parse HEAD)" != "$RELEASE_SHA" ]; then
+            echo "::error::Protected main HEAD does not match release_sha."
+            exit 1
+          fi
 
       - name: Setup Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -184,7 +229,7 @@ jobs:
         shell: bash
         run: |
           git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
-          node --experimental-strip-types scripts/verify-release-provenance.ts \
+          ./node_modules/.bin/tsx scripts/verify-release-provenance.ts \
             --release-sha="$RELEASE_SHA" \
             --branch=main \
             --required-check=build \
@@ -207,6 +252,22 @@ jobs:
               --approval-file="$APPROVAL_FILE" \
               --approval-sha256="$APPROVAL_SHA256" \
               2>&1 | tee tmp/remediation/company-merge-apply.log
+          elif [ "$OPERATION" = "apply-dashboard-methodology-cutover" ] || [ "$OPERATION" = "rollback-dashboard-methodology-cutover" ]; then
+            mode=--apply
+            if [ "$OPERATION" = "rollback-dashboard-methodology-cutover" ]; then mode=--rollback; fi
+            ./node_modules/.bin/tsx scripts/quarantine-dashboard-methodology-history.ts \
+              "$mode" \
+              --approval-file="$APPROVAL_FILE" \
+              --approval-sha256="$APPROVAL_SHA256" \
+              2>&1 | tee tmp/remediation/dashboard-methodology-cutover.log
+          elif [ "$OPERATION" = "apply-dashboard-signal-backfill" ] || [ "$OPERATION" = "rollback-dashboard-signal-backfill" ]; then
+            mode=--apply
+            if [ "$OPERATION" = "rollback-dashboard-signal-backfill" ]; then mode=--rollback; fi
+            ./node_modules/.bin/tsx scripts/backfill-dashboard-signal-approvals.ts \
+              "$mode" \
+              --approval-file="$APPROVAL_FILE" \
+              --approval-sha256="$APPROVAL_SHA256" \
+              2>&1 | tee tmp/remediation/dashboard-signal-backfill.log
           else
             echo "::error::Unsupported operation $OPERATION."
             exit 1
@@ -218,6 +279,12 @@ jobs:
         run: |
           if [ -z "${DATABASE_URL:-}" ] || [ ! -x ./node_modules/.bin/tsx ]; then exit 0; fi
           set -o pipefail
+          ./node_modules/.bin/tsx scripts/quarantine-dashboard-methodology-history.ts \
+            --output=tmp/remediation/dashboard-methodology-cutover-approval-template.json \
+            2>&1 | tee tmp/remediation/dashboard-methodology-cutover-report.log
+          ./node_modules/.bin/tsx scripts/backfill-dashboard-signal-approvals.ts \
+            --output=tmp/remediation/dashboard-signal-backfill-approval-template.json \
+            2>&1 | tee tmp/remediation/dashboard-signal-backfill-report.log
           ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts \
             --output=tmp/remediation/primary-citation-approval-template.json \
             2>&1 | tee tmp/remediation/primary-citation-report.log

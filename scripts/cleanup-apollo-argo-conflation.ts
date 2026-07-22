@@ -38,11 +38,14 @@
  * per company, exhaustive logging in audit mode.
  */
 import "dotenv/config";
+import { withServerTask } from "../src/lib/server-log";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { assertMaintenanceMutationContext } from "../src/lib/database-target";
 
 const APPLY = process.argv.includes("--apply");
 const DUQUESNE_ONLY = process.argv.includes("--duquesne-only");
+const mutationContext = APPLY ? assertMaintenanceMutationContext() : undefined;
 
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
@@ -177,14 +180,29 @@ async function main() {
       await tx.ownershipPeriod.delete({ where: { id: s.apolloOpId } });
       removed++;
     }
+    await tx.auditEvent.create({
+      data: {
+        actorId: null,
+        entityType: "OwnershipPeriod",
+        action: "APOLLO_ARGO_CONFLATION_CLEANUP",
+        changes: {
+          removedOwnershipPeriodIds: suspects.map((suspect) => suspect.apolloOpId),
+          companyIds: [...new Set(suspects.map((suspect) => suspect.companyId))],
+        },
+        metadata: {
+          source: "scripts/cleanup-apollo-argo-conflation.ts",
+          duquesneOnly: DUQUESNE_ONLY,
+          ...mutationContext!,
+        },
+      },
+    });
   });
   console.log(`Removed ${removed} OwnershipPeriod row(s).`);
 }
 
-main()
-  .catch((e) => {
-    console.error("❌ Cleanup failed:", e);
-    process.exit(1);
+withServerTask({ task: "ownership_cleanup", operation: "cleanup_apollo_argo_conflation" }, main)
+  .catch(() => {
+    process.exitCode = 1;
   })
   .finally(async () => {
     await prisma.$disconnect();

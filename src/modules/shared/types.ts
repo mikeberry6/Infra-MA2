@@ -80,6 +80,7 @@ export interface FundView {
   sectors: string[];
   regions: string[];
   portfolioCompanies: PortfolioCompanyView[];
+  managerPortfolioCompanies: FundPortfolioCompanyView[];
   strategyUrl: string;
 }
 
@@ -114,6 +115,12 @@ export interface PortfolioCompanyView {
   isActive: boolean;
   investmentYear?: number;
   exitYear?: number;
+}
+
+export interface FundPortfolioCompanyView {
+  company: PortfolioCompanyView;
+  fundName: string;
+  strategies: string[];
 }
 
 export interface OwnerView {
@@ -237,7 +244,7 @@ export interface NewsItemView {
 
 export interface NewsFeedView {
   items: NewsItemView[];
-  lastUpdated: string;
+  lastUpdated: string | null;
   operations: FeedOperationsView;
 }
 

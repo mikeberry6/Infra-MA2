@@ -11,10 +11,17 @@ import {
   type PrimaryCitationRemediationTransaction,
   type ReviewedPrimaryCitationApproval,
 } from "@/modules/operations/primary-citation-remediation";
+import type { MaintenanceMutationContext } from "@/lib/database-target";
 
 const generatedAt = new Date("2026-07-22T12:00:00.000Z");
 const reviewedAt = "2026-07-22T13:00:00.000Z";
 const approvalHash = "a".repeat(64);
+const executionContext: MaintenanceMutationContext = {
+  targetDatabase: "validation",
+  releaseSha: "b".repeat(40),
+  reviewedBy: "Research Reviewer",
+  reason: "Apply the exact reviewed primary-citation approval",
+};
 
 function citation(id: string, url = `https://example.com/${id}`) {
   return {
@@ -77,13 +84,14 @@ function mockTransaction() {
   const citationUpdateMany = vi.fn().mockResolvedValue({ count: 1 });
   const citationCount = vi.fn().mockResolvedValue(1);
   const auditCreate = vi.fn().mockResolvedValue({ id: "audit-1" });
+  const auditFindMany = vi.fn().mockResolvedValue([]);
   const dealCount = vi.fn().mockResolvedValue(0);
   const companyCount = vi.fn().mockResolvedValue(0);
   const tx = {
     deal: { findMany: dealFindMany, findUnique: dealFindUnique, count: dealCount },
     company: { findMany: companyFindMany, findUnique: companyFindUnique, count: companyCount },
     citation: { updateMany: citationUpdateMany, count: citationCount },
-    auditEvent: { create: auditCreate },
+    auditEvent: { create: auditCreate, findMany: auditFindMany },
   } as unknown as PrimaryCitationRemediationTransaction;
   return {
     tx,
@@ -94,6 +102,7 @@ function mockTransaction() {
     citationUpdateMany,
     citationCount,
     auditCreate,
+    auditFindMany,
     dealCount,
     companyCount,
   };
@@ -184,6 +193,19 @@ describe("primary-citation approval validation", () => {
 });
 
 describe("primary-citation transactional apply", () => {
+  it("rejects an execution reviewer that differs from the approval before reading state", async () => {
+    const mocks = mockTransaction();
+    await expect(applyReviewedPrimaryCitationApproval(
+      mocks.tx,
+      reviewed(),
+      approvalHash,
+      { ...executionContext, reviewedBy: "Different Reviewer" },
+    )).rejects.toThrow("exactly match the committed approval reviewer");
+    expect(mocks.dealFindMany).not.toHaveBeenCalled();
+    expect(mocks.companyFindMany).not.toHaveBeenCalled();
+    expect(mocks.auditCreate).not.toHaveBeenCalled();
+  });
+
   it("sets exactly one primary and records reviewer/hash provenance", async () => {
     const mocks = mockTransaction();
     const approval = reviewed().items.filter((item) => item.entityType === "Deal");
@@ -191,6 +213,7 @@ describe("primary-citation transactional apply", () => {
       mocks.tx,
       { ...reviewed(), items: approval },
       approvalHash,
+      executionContext,
     );
 
     expect(result).toEqual({
@@ -218,6 +241,10 @@ describe("primary-citation transactional apply", () => {
           reviewedBy: "Research Reviewer",
           reviewedAt,
           approvalSha256: approvalHash,
+          executedBy: "Research Reviewer",
+          mutationReason: executionContext.reason,
+          releaseSha: executionContext.releaseSha,
+          targetDatabase: "validation",
         }),
       }),
     });
@@ -238,6 +265,7 @@ describe("primary-citation transactional apply", () => {
       mocks.tx,
       { ...reviewed(), items: companyItems },
       approvalHash,
+      executionContext,
     );
     expect(result.updated).toBe(1);
     expect(mocks.citationUpdateMany).toHaveBeenNthCalledWith(2, {
@@ -249,7 +277,7 @@ describe("primary-citation transactional apply", () => {
     });
   });
 
-  it("is idempotent when the reviewed selection is already the sole primary", async () => {
+  it("is idempotent only when the reviewed selection has an exact approval-bound audit", async () => {
     const mocks = mockTransaction();
     mocks.dealFindMany.mockResolvedValue([]);
     mocks.dealFindUnique.mockResolvedValue({
@@ -262,9 +290,56 @@ describe("primary-citation transactional apply", () => {
       ],
     });
     const dealItems = reviewed().items.filter((item) => item.entityType === "Deal");
-    const result = await applyReviewedPrimaryCitationApproval(mocks.tx, { ...reviewed(), items: dealItems }, approvalHash);
+    mocks.auditFindMany.mockResolvedValue([{
+      changes: { afterPrimaryCitationId: "citation-a" },
+      metadata: {
+        reviewedBy: "Research Reviewer",
+        reviewedAt,
+        approvalSha256: approvalHash,
+        approvalSchemaVersion: 1,
+        approvalScope: "PUBLISHED_DEAL_AND_COMPANY_MISSING_PRIMARY",
+        candidateCitationIds: ["citation-a", "citation-b"],
+        executedBy: executionContext.reviewedBy,
+        mutationReason: executionContext.reason,
+        releaseSha: executionContext.releaseSha,
+        targetDatabase: executionContext.targetDatabase,
+      },
+    }]);
+    const result = await applyReviewedPrimaryCitationApproval(
+      mocks.tx,
+      { ...reviewed(), items: dealItems },
+      approvalHash,
+      executionContext,
+    );
     expect(result.updated).toBe(0);
     expect(result.unchanged).toBe(1);
+    expect(mocks.citationUpdateMany).not.toHaveBeenCalled();
+    expect(mocks.auditCreate).not.toHaveBeenCalled();
+  });
+
+  it("rejects an already-primary selection without the exact approval audit", async () => {
+    const mocks = mockTransaction();
+    mocks.dealFindMany.mockResolvedValue([]);
+    mocks.dealFindUnique.mockResolvedValue({
+      id: "deal-1",
+      status: "PUBLISHED",
+      updatedAt: generatedAt,
+      citations: [
+        { ...citation("citation-a"), isPrimary: true },
+        citation("citation-b"),
+      ],
+    });
+    mocks.auditFindMany.mockResolvedValue([{
+      changes: { afterPrimaryCitationId: "citation-a" },
+      metadata: { approvalSha256: "c".repeat(64) },
+    }]);
+    const dealItems = reviewed().items.filter((item) => item.entityType === "Deal");
+    await expect(applyReviewedPrimaryCitationApproval(
+      mocks.tx,
+      { ...reviewed(), items: dealItems },
+      approvalHash,
+      executionContext,
+    )).rejects.toThrow("no exact hash-bound citation-remediation audit");
     expect(mocks.citationUpdateMany).not.toHaveBeenCalled();
     expect(mocks.auditCreate).not.toHaveBeenCalled();
   });
@@ -277,6 +352,7 @@ describe("primary-citation transactional apply", () => {
       mocks.tx,
       { ...reviewed(), items: dealItems },
       approvalHash,
+      executionContext,
     )).rejects.toThrow("Company:unmapped-company");
     expect(mocks.citationUpdateMany).not.toHaveBeenCalled();
     expect(mocks.auditCreate).not.toHaveBeenCalled();
@@ -290,6 +366,7 @@ describe("primary-citation transactional apply", () => {
       mocks.tx,
       { ...reviewed(), items: dealItems },
       approvalHash,
+      executionContext,
     )).rejects.toThrow("rolling back all remediation changes");
     expect(mocks.auditCreate).toHaveBeenCalledOnce();
   });
@@ -310,6 +387,7 @@ describe("primary-citation transactional apply", () => {
       drift.tx,
       { ...reviewed(), items: dealItems },
       approvalHash,
+      executionContext,
     )).rejects.toThrow("source evidence changed");
 
     const conflict = mockTransaction();
@@ -326,6 +404,7 @@ describe("primary-citation transactional apply", () => {
       conflict.tx,
       { ...reviewed(), items: dealItems },
       approvalHash,
+      executionContext,
     )).rejects.toThrow("different primary citation");
   });
 });

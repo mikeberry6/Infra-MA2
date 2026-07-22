@@ -10,6 +10,7 @@
  *   npx tsx scripts/report-primary-citation-remediation.ts > approval.json
  */
 import "dotenv/config";
+import { withServerTask } from "../src/lib/server-log";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { PrismaPg } from "@prisma/adapter-pg";
@@ -52,7 +53,6 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : "Primary-citation report failed");
+withServerTask({ task: "citation_report", operation: "report_primary_citations" }, main).catch(() => {
   process.exitCode = 1;
 });

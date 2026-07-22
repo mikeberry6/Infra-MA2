@@ -39,6 +39,7 @@ jobs:
     env:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+      VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
       EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
       EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
       ROLLBACK_DEPLOYMENT: ${{ inputs.deployment }}
@@ -47,6 +48,13 @@ jobs:
       CONFIRMATION: ${{ inputs.confirmation }}
       SMOKE_POLICY: ${{ inputs.smoke_policy }}
     steps:
+      - name: Require protected workflow ref
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Production rollback workflows must be dispatched from refs/heads/main."
+            exit 1
+          fi
+
       - name: Require explicit rollback authorization
         run: |
           if [ "$CONFIRMATION" != "ROLLBACK" ]; then
@@ -57,7 +65,19 @@ jobs:
       - name: Checkout rollback tooling
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: refs/heads/main
           persist-credentials: false
+
+      - name: Verify checked-out rollback tooling identity
+        run: |
+          if ! [[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::The dispatched tooling SHA must be a full lowercase Git SHA."
+            exit 1
+          fi
+          if [ "$(git rev-parse HEAD)" != "$GITHUB_SHA" ]; then
+            echo "::error::Protected main changed after rollback dispatch; dispatch again."
+            exit 1
+          fi
 
       - name: Setup Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -95,12 +115,13 @@ jobs:
             --expected-sha="$ROLLBACK_SHA" \
             --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
             --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
             --require-immutable-url \
             --output=tmp/rollback/candidate-inspect.json
           rollback_url="https://$(jq -r '.url' tmp/rollback/candidate-inspect.json)"
           echo "ROLLBACK_URL=$rollback_url" >> "$GITHUB_ENV"
-          smoke_args=()
-          if [ "$SMOKE_POLICY" = "public-only" ]; then smoke_args+=(--skip-health --allow-legacy-root); fi
+          smoke_args=(--expected-version="$ROLLBACK_SHA")
+          if [ "$SMOKE_POLICY" = "public-only" ]; then smoke_args=(--skip-health --allow-legacy-root); fi
           node scripts/release-smoke.mjs --base-url="$rollback_url" --output=tmp/rollback/candidate-smoke.json "${smoke_args[@]}"
 
       # Additive migrations deliberately remain in place. This workflow changes
@@ -113,6 +134,7 @@ jobs:
             --expected-sha="$ROLLBACK_SHA" \
             --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
             --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
             --require-immutable-url \
             --output=tmp/rollback/candidate-inspect-before-rollback.json
           deployment_id="$(jq -r '.id' tmp/rollback/candidate-inspect-before-rollback.json)"
@@ -123,8 +145,15 @@ jobs:
       - name: Verify canonical production after rollback
         shell: bash
         run: |
-          smoke_args=()
-          if [ "$SMOKE_POLICY" = "public-only" ]; then smoke_args+=(--skip-health --allow-legacy-root); fi
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$PRODUCTION_URL" \
+            --expected-sha="$ROLLBACK_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
+            --output=tmp/rollback/canonical-production-inspect.json
+          smoke_args=(--expected-version="$ROLLBACK_SHA")
+          if [ "$SMOKE_POLICY" = "public-only" ]; then smoke_args=(--skip-health --allow-legacy-root); fi
           node scripts/release-smoke.mjs --base-url="$PRODUCTION_URL" --output=tmp/rollback/production-smoke.json "${smoke_args[@]}"
 
       - name: Upload rollback evidence

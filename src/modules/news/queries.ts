@@ -1,6 +1,7 @@
 import { unstable_cache } from "next/cache";
 import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
 import { prisma } from "@/lib/prisma";
+import { nextNewsScanAt } from "@/modules/operations/pipeline-schedules";
 import type {
   NewsCategory,
   NewsConfidence,
@@ -86,11 +87,10 @@ async function getNewsFeedRaw(): Promise<NewsFeedView> {
     getLatestNewsAttempt(),
     getLatestSuccessfulNewsRun(),
   ]);
+  const now = new Date();
   const lastSuccessfulAt = latestSuccess?.endedAt ?? latestSuccess?.startedAt;
-  const nextExpected = lastSuccessfulAt
-    ? new Date(lastSuccessfulAt.getTime() + 24 * 60 * 60 * 1000)
-    : null;
-  const overdue = !lastSuccessfulAt || Date.now() - lastSuccessfulAt.getTime() > 36 * 60 * 60 * 1000;
+  const nextExpected = nextNewsScanAt(now);
+  const overdue = !lastSuccessfulAt || now.getTime() - lastSuccessfulAt.getTime() > 36 * 60 * 60 * 1000;
   const latestMetadata = latestSuccess?.metadata && typeof latestSuccess.metadata === "object"
     ? latestSuccess.metadata as Record<string, unknown>
     : null;
@@ -112,12 +112,12 @@ async function getNewsFeedRaw(): Promise<NewsFeedView> {
 
   return {
     items: rows.map(toNewsItemView),
-    lastUpdated: lastSuccessfulAt?.toISOString() ?? rows[0]?.updatedAt.toISOString() ?? new Date(0).toISOString(),
+    lastUpdated: lastSuccessfulAt?.toISOString() ?? rows[0]?.updatedAt.toISOString() ?? null,
     operations: {
       state,
       lastAttemptAt: latestAttempt?.startedAt.toISOString(),
       lastSuccessfulAt: lastSuccessfulAt?.toISOString(),
-      nextExpectedAt: nextExpected?.toISOString(),
+      nextExpectedAt: nextExpected.toISOString(),
       trackedEntities: tracked,
       message: state === "healthy"
         ? "The daily public-source scan completed successfully."

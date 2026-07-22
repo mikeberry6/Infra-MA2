@@ -16,6 +16,7 @@ import type {
   SourceView,
   OwnerView,
 } from "@/modules/shared/types";
+import type { Prisma } from "@/generated/prisma/client";
 
 const MONTH_INDEX: Record<string, number> = {
   jan: 1,
@@ -183,7 +184,9 @@ function toCompanyView(company: any): CompanyView {
   // then by investmentYear descending. The first entry becomes the "primary"
   // owner whose values are projected onto the scalar legacy fields below
   // (kept for filters, sorts, search, and CSV export compatibility).
-  const ownerships = company.ownershipPeriods || [];
+  const ownerships = (company.ownershipPeriods || []).filter(
+    (period: any) => !period.fundId || period.fund?.status === "PUBLISHED",
+  );
   const owners: OwnerView[] = ownerships
     .map((p: any): OwnerView => ({
       // Prefer the linked fund's manager (the canonical "investor of record")
@@ -240,7 +243,10 @@ function toCompanyView(company: any): CompanyView {
 
   return {
     id: company.id,
-    focusIds: [company.id],
+    focusIds: Array.from(new Set([
+      company.id,
+      ...(company.redirects ?? []).map((redirect: { retiredId: string }) => redirect.retiredId),
+    ])),
     name: company.name,
     investmentFirm,
     sector: COMPANY_SECTOR_DISPLAY[company.sector as keyof typeof COMPANY_SECTOR_DISPLAY] || company.sector,
@@ -280,12 +286,25 @@ function toCompanyListItem(company: CompanyView): CompanyListItem {
   };
 }
 
+const PUBLISHED_OWNERSHIP_WHERE = {
+  OR: [
+    { fundId: null },
+    { fund: { is: { status: "PUBLISHED" } } },
+  ],
+} satisfies Prisma.OwnershipPeriodWhereInput;
+
 const COMPANY_INCLUDE = {
+  redirects: {
+    select: { retiredId: true },
+    orderBy: { retiredId: "asc" as const },
+  },
   ownershipPeriods: {
+    where: PUBLISHED_OWNERSHIP_WHERE,
     include: {
       organization: { select: { name: true } },
       fund: {
         select: {
+          status: true,
           fundName: true,
           manager: { select: { name: true } },
         },
@@ -311,6 +330,10 @@ const COMPANY_INCLUDE = {
 
 const COMPANY_LIST_SELECT = {
   id: true,
+  redirects: {
+    select: { retiredId: true },
+    orderBy: { retiredId: "asc" as const },
+  },
   name: true,
   sector: true,
   subsector: true,
@@ -319,13 +342,16 @@ const COMPANY_LIST_SELECT = {
   countryTags: true,
   companyStatus: true,
   ownershipPeriods: {
+    where: PUBLISHED_OWNERSHIP_WHERE,
     select: {
+      fundId: true,
       vehicleName: true,
       investmentYear: true,
       isActive: true,
       organization: { select: { name: true } },
       fund: {
         select: {
+          status: true,
           fundName: true,
           manager: { select: { name: true } },
         },

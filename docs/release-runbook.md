@@ -7,7 +7,7 @@ InfraSight releases are exact-SHA, schema-first, and promotion-based:
 1. A pull request validates additive migrations and compatible application code against an isolated Neon branch and a Vercel Preview deployment.
 2. After merge, the release SHA must be the current protected `main` head and the GitHub Actions `build` check from the `github-actions` app must have succeeded for that exact SHA.
 3. Vercel builds that `main` commit as a staged **production** deployment with production configuration but without assigning the production domains.
-4. A reviewed v2 manifest binds the current production application SHA, exact applied production migration baseline, release SHA, migration paths, and committed migration-blob hashes. The identities remain distinct because an application deployment does not prove that its bundled migrations were applied. Only additive DDL may be staged while the prior application remains active.
+4. A reviewed v2 manifest binds the current production application SHA, exact applied production migration baseline, release SHA, migration paths, and committed migration-blob hashes. The application and migration baselines are independently required to be ancestors of the release; neither is assumed to precede the other because schema-first staging can advance the migration ledger while the prior application remains active. Only additive DDL may be staged during that interval.
 5. Citation and duplicate-company backlogs are handled separately through explicit Research decisions and audited remediation. A schema migration never invents citations, selects canonical survivors, or publishes records.
 6. Production promotion requires clean schema, data, source, pipeline, deployment-identity, and smoke gates. Promoting the staged production deployment does not rebuild it.
 7. The prior deployment and additive schema remain compatible for immediate application rollback.
@@ -39,15 +39,19 @@ The Preview proves the pull request against non-production configuration. It is 
 ## Exact release preparation
 
 1. Merge only after the pull-request gate succeeds. Pause additional `main` merges for the release window.
-2. Wait for the `main` push **Release Gate**. Record the full SHA; it must remain the current protected `main` head through schema staging and promotion.
+2. Wait for the `main` push **Release Gate**. Record the full SHA; it must remain the current protected `main` head for each production dispatch. A later committed approval creates a new eligible release only after its own exact-SHA gate and preparation pass.
 3. Identify the full SHA of the application currently serving production. This is `production_app_sha`; resolve it from immutable deployment metadata rather than a branch name or assumed deploy time.
 4. Identify `migration_base_sha`: the full commit whose `prisma/migrations` names and SHA-256 checksums exactly match the successfully applied production migration ledger. From a clean checkout of the release SHA, prove that baseline read-only and generate the additive manifest:
 
    ```bash
    DATABASE_URL=<direct-production-url> \
-     node --experimental-strip-types scripts/verify-migration-baseline.ts \
-     --base-sha=<migration-base-sha> \
-     --output=tmp/release-preparation/migration-baseline.json
+   EXPECTED_DATABASE_HOST=<direct-production-host> \
+   EXPECTED_DATABASE_NAME=<production-database-name> \
+   FORBIDDEN_DATABASE_HOST=<validation-database-host> \
+     sh -c 'node --experimental-strip-types scripts/assert-database-target.ts && \
+       node --experimental-strip-types scripts/verify-migration-baseline.ts \
+       --base-sha=<migration-base-sha> \
+       --output=tmp/release-preparation/migration-baseline.json'
 
    node --experimental-strip-types scripts/audit-additive-migrations.ts \
      --base-sha=<migration-base-sha> \
@@ -60,7 +64,7 @@ The Preview proves the pull request against non-production configuration. It is 
 5. Confirm Vercel created a ready staged production deployment for the exact release SHA. Record its immutable deployment URL. Do not use an automatically aliased URL or a Preview candidate.
 6. Record the release SHA, current production application SHA, verified migration-baseline SHA, manifest hash, CI run, validation Neon branch, staged deployment URL, restore branch, and prior deployment in a copy of [release-record-template.md](./release-record-template.md).
 
-If `main` advances, stop. The old SHA is no longer eligible: rerun the `main` gate, regenerate/review the manifest, and use the new staged production deployment.
+If `main` advances, stop. The old SHA is no longer eligible: rerun the `main` gate, regenerate/review the manifest, and use the new staged production deployment. If schema was already staged and the migration tree is unchanged, use the successfully staged commit as `migration_base_sha`; the staging workflow independently proves both that baseline and the still-live application are ancestors of the new release, verifies the ledger, and performs a no-op migration deploy.
 
 ## Reviewed citation and duplicate remediation
 
@@ -78,12 +82,12 @@ If no company merges are approved, Research may proceed directly with the curren
 
 For production, run **Review or Remediate Release Data** one operation at a time against the exact protected-main release. Supply the committed path and exact reviewed hash, retain the evidence, and rerun read-only reports after each operation. Before any production apply, create or confirm a current Neon restore branch. The operation must prove both the approved host and database name and reject stale snapshots or a mismatched approval hash.
 
-If adding an approval file advances `main`, that commit becomes a new release SHA. Repeat exact release preparation and schema staging; do not promote the older SHA. Data remediation is a controlled production change, not part of `prisma migrate deploy`.
+If adding an approval file advances `main`, that commit becomes a new release SHA. Repeat exact release preparation and schema staging; do not promote the older SHA. When the approval-only commit does not add migrations, use the previously staged schema commit as the verified migration baseline and review the resulting empty migration delta. Data remediation remains a controlled production change, not part of `prisma migrate deploy`.
 
 ## Production schema staging and promotion
 
 1. Announce the release window; pause manual imports/publication and keep `main` frozen.
-2. Confirm dashboard and news pipelines are healthy and no pipeline/import is running.
+2. Confirm dashboard and news pipelines are healthy and no pipeline/import is running. Set the protected `DASHBOARD_WRITES_ENABLED` variable to the literal `false` before staging. All data-pipeline and production-release workflows share the `production-release` lock, so wait for the lock to clear and leave the flag false through every dashboard cutover apply or rollback.
 3. Create a Neon production restore branch immediately before the first production write; record its ID and timestamp.
 4. Run **Stage Production Schema** with:
 
@@ -93,10 +97,10 @@ If adding an approval file advances `main`, that commit becomes a new release SH
    - the reviewed `migration_manifest_sha256`;
    - confirmation `STAGE`.
 
-5. Approve the protected `production` environment. The workflow reads the canonical origin from protected `PRODUCTION_URL`, requires its live deployment's GitHub source SHA and repository ID to match, rechecks exact protected-main provenance plus the live app and migration ledger immediately before writing, proves the production host and database name, applies only the release's additive migration history, checks status/drift, and records citation/duplicate backlogs without auto-remediating them.
-6. Complete any approved citation/company remediation described above. Re-run reports until source coverage is complete and published duplicate clusters are clean.
-7. Manually dispatch dashboard and news pipelines from the exact release SHA. Wait for both to succeed and review provider/source threshold artifacts.
-8. Run **Promote Production Release** with the exact release SHA, its immutable staged production deployment URL (never an alias), and confirmation `PROMOTE`; approve the protected environment.
+5. Approve the protected `production` environment. The workflow reads the canonical origin from protected `PRODUCTION_URL`, requires its live deployment's protected scope, project, GitHub source SHA, and repository ID to match, independently requires both the reviewed migration baseline and production application to be ancestors of the release, and rechecks exact protected-main provenance plus the live app and migration ledger immediately before writing. It also requires `DASHBOARD_WRITES_ENABLED=false`, proves the production host and database name, applies only the release's additive migration history, verifies the resulting migration checksums exactly match the release, checks status/drift, and records citation, duplicate, and dashboard-cutover backlogs without auto-remediating them.
+6. Review and commit any dashboard methodology or legacy-signal manifest. The approval commit is a new release SHA: rerun the exact-SHA gate and preparation, use the staged schema commit as the migration baseline when the migration tree is unchanged, and run the no-op schema-stage verification for that SHA. Then dispatch its explicit apply operation through **Review or Remediate Release Data** while `DASHBOARD_WRITES_ENABLED` is still exactly `false`. Supply the exact file SHA-256, matching reviewer identity, and mutation reason. Use the corresponding rollback operation only with that same committed manifest, the flag still false, and every post-apply row still matching. Complete any approved citation/company remediation and rerun reports until all gates are clean.
+7. Keep the write flag false and manually dispatch the `source-audit` pipeline. Review the all-source read-only dry-run artifact. Only after it passes may Operations set `DASHBOARD_WRITES_ENABLED=true`; immediately dispatch dashboard synchronization and news scanning from the exact release SHA, wait for both to succeed, and review provider/source threshold artifacts. If the dry run or live synchronization fails, restore the flag to false and stop.
+8. Run **Promote Production Release** with the exact release SHA, its immutable staged production deployment URL (never an alias), and confirmation `PROMOTE`; approve the protected environment. Promotion requires the dashboard write flag to be true after the reviewed dry run and successful live synchronization.
 
 The promotion workflow requires all of the following before changing domains:
 

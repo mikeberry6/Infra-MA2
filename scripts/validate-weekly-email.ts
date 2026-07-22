@@ -2,6 +2,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { basename, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { JSDOM } from "jsdom";
+import { formatSafeErrorSummary } from "../src/lib/safe-error.ts";
 
 const EMAIL_DIRECTORY = join(process.cwd(), "public", "email-format");
 const DATED_ISSUE = /^\d{4}-\d{2}-\d{2}\.html$/;
@@ -18,6 +19,7 @@ const DEFAULT_LINK_TIMEOUT_MS = 5_000;
 const DEFAULT_LINK_BUDGET_MS = 30_000;
 const DEFAULT_MAX_LINKS = 80;
 const MAX_LINK_CONCURRENCY = 4;
+const SCALE_METADATA_CUTOVER = "2026-07-24";
 
 type Severity = "error" | "warning";
 type ScaleKind = "economic" | "physical" | "undisclosed";
@@ -90,6 +92,7 @@ export type ValidateWeeklyEmailOptions = {
   html?: string;
   coverageDeals?: StaticCoverageDeal[];
   requireStaticCoverage?: boolean;
+  requireScaleMetadata?: boolean;
   linkCheck?: Partial<LinkCheckOptions> & { enabled?: boolean };
 };
 
@@ -409,11 +412,22 @@ function scaleKindOrder(kind: ScaleKind): number {
   return kind === "economic" ? 0 : kind === "physical" ? 1 : 2;
 }
 
-function validateScaleOrder(section: SectorSection, findings: ValidationFinding[]) {
-  if (section.cards.length < 2) return;
+function validateScaleOrder(
+  section: SectorSection,
+  findings: ValidationFinding[],
+  requireScaleMetadata: boolean,
+) {
+  if (section.cards.length === 0) return;
   const explicitCount = section.cards.filter((card) => card.scale.explicit).length;
   const strict = explicitCount > 0;
-  if (strict && explicitCount !== section.cards.length) {
+  if (requireScaleMetadata && explicitCount !== section.cards.length) {
+    addFinding(
+      findings,
+      "error",
+      "missing-scale-metadata",
+      `${section.label} must annotate every card with data-scale-kind and the applicable value/unit or rank.`,
+    );
+  } else if (strict && explicitCount !== section.cards.length) {
     addFinding(
       findings,
       "error",
@@ -739,6 +753,21 @@ function validateStaticCoverage(
       );
     }
   });
+  coverageDeals.forEach((deal) => {
+    const source = normalizeSourceUrl(deal.sourceUrl ?? "");
+    const match = cards.find((card) =>
+      (source && card.sourceUrl && normalizeSourceUrl(card.sourceUrl) === source) ||
+      (targetsMatch(card.target, deal.target) && (!deal.sector || deal.sector === card.sector)),
+    );
+    if (!match) {
+      addFinding(
+        findings,
+        "error",
+        "missing-current-week-deal",
+        `${deal.sector ? `${deal.sector}: ` : ""}“${deal.target}” is in current-week coverage but missing from the email.`,
+      );
+    }
+  });
   return matched;
 }
 
@@ -817,10 +846,14 @@ export async function validateWeeklyEmail(
   const document = new JSDOM(html).window.document;
   const sections = parseSections(document, findings);
   const cards = sections.flatMap((section) => section.cards);
+  const issueId = basename(options.issuePath, ".html");
+  const requireScaleMetadata = options.requireScaleMetadata ?? (
+    /^\d{4}-\d{2}-\d{2}$/.test(issueId) && issueId >= SCALE_METADATA_CUTOVER
+  );
 
   validateSectorOrder(sections, findings);
   validateCardStructure(cards, findings);
-  sections.forEach((section) => validateScaleOrder(section, findings));
+  sections.forEach((section) => validateScaleOrder(section, findings, requireScaleMetadata));
   validateThemes(document, sections, findings);
   validateYtdTable(document, "Deal Count By Sector (YTD)", findings);
   validateYtdTable(document, "Deal Count By Region (YTD)", findings);
@@ -955,7 +988,7 @@ export async function runWeeklyEmailValidationCli(argv = process.argv.slice(2)):
     console.error(JSON.stringify({
       status: "usage-error",
       exitCode: 2,
-      error: error instanceof Error ? error.message : String(error),
+      error: formatSafeErrorSummary(error),
     }, null, 2));
     return 2;
   }
@@ -986,7 +1019,7 @@ export async function runWeeklyEmailValidationCli(argv = process.argv.slice(2)):
     console.error(JSON.stringify({
       status: "validation-error",
       exitCode: 2,
-      error: error instanceof Error ? error.message : String(error),
+      error: formatSafeErrorSummary(error),
     }, null, 2));
     return 2;
   }

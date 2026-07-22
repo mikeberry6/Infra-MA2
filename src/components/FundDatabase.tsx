@@ -3,8 +3,14 @@
 import { useState, useMemo, useEffect, useCallback, useRef, Fragment } from "react";
 import { FUND_STRATEGIES, FUND_STATUSES, FUND_SIZE_RANGES, FUND_SECTORS } from "@/lib/constants";
 import { getStrategyColor, getStatusColor, getSizeRangeColor, getFundSectorColor, getPortCoSectorColor, getStructureColor } from "@/lib/colors";
-import { matchesSizeRange, groupFundsByManager, getFundStats, paginateManagerGroups } from "@/lib/fund-utils";
-import type { FundListItem, FundView, PortfolioCompanyView, DatabaseCounts, RecordMeta } from "@/modules/shared/types";
+import {
+  compareOptionalNumbersUnknownLast,
+  matchesSizeRange,
+  groupFundsByManager,
+  getFundStats,
+  paginateManagerGroups,
+} from "@/lib/fund-utils";
+import type { FundListItem, FundView, FundPortfolioCompanyView, DatabaseCounts, RecordMeta } from "@/modules/shared/types";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import {
   Search,
@@ -16,7 +22,7 @@ import {
   ArrowDown,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam, useUrlQueryParamsWriter, useUrlQueryState, useUrlQueryWriter } from "@/hooks/useUrlFilterSet";
+import { useUrlFilterSet, useUrlQueryParam, useUrlQueryParamsWriter, useUrlQueryState, useUrlQueryWriter } from "@/hooks/useUrlFilterSet";
 import { useCanExport } from "@/hooks/useCanExport";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
@@ -35,9 +41,11 @@ import { withBasePath } from "@/lib/base-path";
 import { track } from "@vercel/analytics";
 import { formatDate } from "@/lib/format";
 import { subscribeToDetailCacheInvalidation } from "@/lib/detail-cache-events";
+import { BoundedDetailCache } from "@/lib/detail-cache";
+import { useFreshDetail } from "@/hooks/useFreshDetail";
 
 const FUND_PAGE_SIZE = 25;
-const fundDetailCache = new Map<string, { data: FundView; meta: RecordMeta }>();
+const fundDetailCache = new BoundedDetailCache<FundView>();
 
 function fundDetailShell(fund: FundListItem): FundView {
   return {
@@ -48,6 +56,7 @@ function fundDetailShell(fund: FundListItem): FundView {
     structure: "",
     regions: [],
     portfolioCompanies: [],
+    managerPortfolioCompanies: [],
     strategyUrl: "",
   };
 }
@@ -300,7 +309,7 @@ function FundRow({
       role="button"
       tabIndex={0}
       aria-label={`Open ${fund.fundName} fund details`}
-      className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group border-b border-[var(--border)] last:border-b-0 focus:bg-[var(--bg-subtle)] focus:outline-none"
+      className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group border-b border-[var(--border)] last:border-b-0 focus:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--accent)]"
     >
       <td className="px-3 py-2.5 align-top">
         <span title={fund.fundName} className="type-row-title group-hover:text-[var(--accent)] transition-colors truncate block">
@@ -459,6 +468,7 @@ function ManagerGroupedTable({
         pageSize={FUND_PAGE_SIZE}
         totalItems={totalFunds}
         onPageChange={(next) => setPageParam(String(next))}
+        resultHeadingId="fund-results-heading"
       />
     </>
   );
@@ -486,9 +496,9 @@ function AllFundsTable({
   // Sort vintage numerically when both sides parse as years; non-numeric
   // values ("Evergreen", "[TBD]", "—") sort to the end regardless of direction
   // so they don't shuffle through the list as the user toggles asc/desc.
-  const vintageSortKey = (v: string): number => {
+  const vintageSortKey = (v: string): number | null => {
     const m = v.match(/(\d{4})/);
-    return m ? parseInt(m[1], 10) : Number.POSITIVE_INFINITY;
+    return m ? parseInt(m[1], 10) : null;
   };
 
   const sorted = useMemo(() => {
@@ -498,8 +508,8 @@ function AllFundsTable({
       switch (sortField) {
         case "name": cmp = a.fundName.localeCompare(b.fundName); break;
         case "strategy": cmp = (a.strategies[0] ?? "").localeCompare(b.strategies[0] ?? ""); break;
-        case "size": cmp = (a.sizeUsdMm ?? 0) - (b.sizeUsdMm ?? 0); break;
-        case "vintage": cmp = vintageSortKey(a.vintage) - vintageSortKey(b.vintage); break;
+        case "size": return compareOptionalNumbersUnknownLast(a.sizeUsdMm, b.sizeUsdMm, sortAsc);
+        case "vintage": return compareOptionalNumbersUnknownLast(vintageSortKey(a.vintage), vintageSortKey(b.vintage), sortAsc);
       }
       return sortAsc ? cmp : -cmp;
     });
@@ -597,6 +607,7 @@ function AllFundsTable({
         pageSize={FUND_PAGE_SIZE}
         totalItems={sorted.length}
         onPageChange={(next) => setPageParam(String(next))}
+        resultHeadingId="fund-results-heading"
       />
     </>
   );
@@ -640,15 +651,9 @@ function FundDrawer({
   // Aggregate all portfolio companies across the firm (all funds for this manager)
   const firmFunds = [fund, ...siblingFunds];
   const firmPortfolio = useMemo(() => {
-    const companiesByFund: { company: PortfolioCompanyView; fundName: string; strategies: string[] }[] = [];
-    for (const ff of firmFunds) {
-      const portfolioCompanies: PortfolioCompanyView[] = ff.id === fund.id ? fund.portfolioCompanies : [];
-      for (const pc of portfolioCompanies) {
-        companiesByFund.push({ company: pc, fundName: ff.fundName, strategies: ff.strategies });
-      }
-    }
+    const companiesByFund = fund.managerPortfolioCompanies;
     // Group by sector → subsector
-    const bySector: Record<string, Record<string, { company: PortfolioCompanyView; fundName: string; strategies: string[] }[]>> = {};
+    const bySector: Record<string, Record<string, FundPortfolioCompanyView[]>> = {};
     for (const entry of companiesByFund) {
       const sector = entry.company.sector;
       const subsector = entry.company.subsector || "General";
@@ -677,8 +682,7 @@ function FundDrawer({
     const activeCount = companiesByFund.filter((e) => e.company.isActive).length;
     const realizedCount = companiesByFund.length - activeCount;
     return { sectors: sortedSectors, total: companiesByFund.length, activeCount, realizedCount };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [fund.id, siblingFunds.length]);
+  }, [fund.managerPortfolioCompanies]);
 
   return (
     <>
@@ -950,27 +954,41 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
   const [activeSizeRanges, toggleSizeRange] = useUrlFilterSet("size");
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [selectedFund, setSelectedFund] = useState<FundListItem | null>(null);
-  const [selectedFundDetail, setSelectedFundDetail] = useState<FundView | null>(null);
-  const [detailMeta, setDetailMeta] = useState<RecordMeta | null>(null);
-  const [detailState, setDetailState] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [detailRequest, setDetailRequest] = useState(0);
 
   useEffect(() => subscribeToDetailCacheInvalidation("fund", () => {
     fundDetailCache.clear();
     setDetailRequest((value) => value + 1);
   }), []);
+  const {
+    detail: selectedFundDetail,
+    meta: detailMeta,
+    state: detailState,
+  } = useFreshDetail<FundView>({
+    cache: fundDetailCache,
+    cacheKey: selectedFund?.legacyId ?? null,
+    requestUrl: selectedFund
+      ? withBasePath(`/api/funds/${encodeURIComponent(selectedFund.legacyId)}`)
+      : null,
+    requestVersion: detailRequest,
+  });
   const [fundViewParam, setFundViewParam] = useUrlQueryState("view", "all", { resetPage: true });
   const fundView: "managers" | "all" = fundViewParam === "managers" ? "managers" : "all";
   const writeQuery = useUrlQueryWriter();
+  const writeQueryParams = useUrlQueryParamsWriter();
   const canExport = useCanExport();
 
   const debouncedFundSearch = useDebounce(fundSearch, 300);
 
-  const clearAllUrlFilters = useClearUrlFilters(["strategy", "status", "size", "sector"]);
   const clearFundFilters = useCallback(() => {
-    clearAllUrlFilters();
-    setFundSearch("");
-  }, [clearAllUrlFilters, setFundSearch]);
+    writeQueryParams({
+      q: null,
+      strategy: null,
+      status: null,
+      size: null,
+      sector: null,
+    }, { resetPage: true });
+  }, [writeQueryParams]);
 
   // ── Filtered funds ──
   const filteredFunds = useMemo(() => {
@@ -1042,9 +1060,6 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
   useEffect(() => {
     if (selectedFund && !filteredFunds.find((f) => f.id === selectedFund.id)) {
       setSelectedFund(null);
-      setSelectedFundDetail(null);
-      setDetailMeta(null);
-      setDetailState("idle");
       openedFocus.current = null;
       writeQuery("focus", null);
     }
@@ -1054,8 +1069,6 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
   useEffect(() => {
     if (!focusId) {
       if (openedFocus.current) setSelectedFund(null);
-      setSelectedFundDetail(null);
-      setDetailMeta(null);
       openedFocus.current = null;
       return;
     }
@@ -1064,40 +1077,12 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
     if (match) {
       setSelectedFund(match);
       openedFocus.current = focusId;
-    }
-  }, [focusId, funds]);
-
-  useEffect(() => {
-    if (!selectedFund) {
-      setSelectedFundDetail(null);
-      setDetailState("idle");
       return;
     }
-    const cached = fundDetailCache.get(selectedFund.legacyId);
-    if (cached) {
-      setSelectedFundDetail(cached.data);
-      setDetailMeta(cached.meta);
-      setDetailState("ready");
-      return;
-    }
-    let cancelled = false;
-    setSelectedFundDetail(null);
-    setDetailMeta(null);
-    setDetailState("loading");
-    fetch(withBasePath(`/api/funds/${encodeURIComponent(selectedFund.legacyId)}`))
-      .then((response) => response.ok ? response.json() : null)
-      .then((response) => {
-        if (cancelled) return;
-        if (response?.data) {
-          fundDetailCache.set(selectedFund.legacyId, response);
-          setSelectedFundDetail(response.data);
-          setDetailMeta(response.meta);
-          setDetailState("ready");
-        } else setDetailState("error");
-      })
-      .catch(() => !cancelled && setDetailState("error"));
-    return () => { cancelled = true; };
-  }, [selectedFund, detailRequest]);
+    setSelectedFund(null);
+    openedFocus.current = null;
+    writeQuery("focus", null);
+  }, [focusId, funds, writeQuery]);
 
   const openFund = useCallback((fund: FundListItem) => {
     setSelectedFund(fund);
@@ -1108,9 +1093,6 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
 
   const closeFund = useCallback(() => {
     setSelectedFund(null);
-    setSelectedFundDetail(null);
-    setDetailMeta(null);
-    setDetailState("idle");
     openedFocus.current = null;
     writeQuery("focus", null);
   }, [writeQuery]);
@@ -1146,11 +1128,11 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
       <div className="surface overflow-hidden">
         <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
           <div className="flex items-center gap-3">
-            <span className="type-micro">
+            <h2 id="fund-results-heading" tabIndex={-1} aria-label="Fund results" className="scroll-mt-20 type-micro outline-none">
               <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredFunds.length}</span>
               {" "}of{" "}
               <span className="mono text-[var(--text-secondary)] tabular-nums">{funds.length}</span> funds
-            </span>
+            </h2>
             <div className="hidden sm:inline-flex items-center gap-1 p-0.5 rounded-md bg-[var(--bg-hover)]">
               <button
                 onClick={() => setFundViewParam("managers")}

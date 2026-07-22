@@ -156,4 +156,52 @@ describe("GET /api/health", () => {
       expect.objectContaining({ name: "DASHBOARD_SYNC", status: "stale" }),
     ]);
   });
+
+  it("keeps a successful Friday dashboard run healthy through the unscheduled weekend", async () => {
+    vi.setSystemTime(new Date("2026-07-26T20:00:00.000Z"));
+    mocks.queryRaw
+      .mockResolvedValueOnce([{ connected: 1 }])
+      .mockResolvedValueOnce([{ ready: true }]);
+    mocks.pipelineFindFirst.mockImplementation(({ where }: {
+      where: { pipeline: string; status?: string };
+    }) => {
+      const endedAt = where.pipeline === "DASHBOARD_SYNC"
+        ? new Date("2026-07-24T11:35:00.000Z")
+        : new Date("2026-07-26T01:00:00.000Z");
+      return Promise.resolve({ status: "SUCCEEDED", startedAt: endedAt, endedAt });
+    });
+
+    const response = await GET(request());
+    const payload = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(payload.pipelines).toEqual([
+      expect.objectContaining({ name: "NEWS_SCAN", status: "healthy" }),
+      expect.objectContaining({ name: "DASHBOARD_SYNC", status: "healthy" }),
+    ]);
+  });
+
+  it("marks the Friday dashboard run stale once Monday's scheduled window is due", async () => {
+    vi.setSystemTime(new Date("2026-07-27T11:31:00.000Z"));
+    mocks.queryRaw
+      .mockResolvedValueOnce([{ connected: 1 }])
+      .mockResolvedValueOnce([{ ready: true }]);
+    mocks.pipelineFindFirst.mockImplementation(({ where }: {
+      where: { pipeline: string; status?: string };
+    }) => {
+      const endedAt = where.pipeline === "DASHBOARD_SYNC"
+        ? new Date("2026-07-24T11:35:00.000Z")
+        : new Date("2026-07-27T00:00:00.000Z");
+      return Promise.resolve({ status: "SUCCEEDED", startedAt: endedAt, endedAt });
+    });
+
+    const response = await GET(request());
+    const payload = await response.json();
+
+    expect(response.status).toBe(503);
+    expect(payload.pipelines).toEqual([
+      expect.objectContaining({ name: "NEWS_SCAN", status: "healthy" }),
+      expect.objectContaining({ name: "DASHBOARD_SYNC", status: "stale" }),
+    ]);
+  });
 });

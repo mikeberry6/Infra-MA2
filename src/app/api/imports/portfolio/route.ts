@@ -7,7 +7,12 @@ import { AuthorizationError, getSessionIdentity, isAuthorizationError, requireAd
 import { companySchema, type CompanyInput } from "@/modules/admin/schemas";
 import { COMPANY_SECTOR_MAP, COMPANY_REGION_MAP, COMPANY_STATUS_MAP } from "@/modules/shared/enum-maps";
 import type { CompanySector, CompanyRegion, CompanyStatus } from "@/generated/prisma/client";
-import { commitImport, sanitizeImportError } from "@/modules/imports/commit";
+import { commitImport } from "@/modules/imports/commit";
+import {
+  ImportConflictError,
+  ImportRequestError,
+  importUserErrorDetails,
+} from "@/modules/imports/user-error";
 import {
   consumeImportPreviewToken,
   createImportPreviewToken,
@@ -201,7 +206,7 @@ async function parseRequestBody(request: NextRequest): Promise<Record<string, un
     const formData = await request.formData();
     const file = formData.get("file") as File | null;
     if (!file) {
-      throw new Error("No file provided in form data");
+      throw new ImportRequestError("No file provided in form data");
     }
     const csvText = await file.text();
     return parseCsv(csvText).map((row, index) => ({
@@ -220,7 +225,7 @@ async function parseRequestBody(request: NextRequest): Promise<Record<string, un
     const companies = (body as { companies?: unknown }).companies;
     if (Array.isArray(companies)) return companies as Record<string, unknown>[];
   }
-  throw new Error("Request body must contain a 'companies' array or be a JSON array");
+  throw new ImportRequestError("Request body must contain a 'companies' array or be a JSON array");
 }
 
 async function importPortfolio(request: NextRequest) {
@@ -386,7 +391,7 @@ async function importPortfolio(request: NextRequest) {
               data: companyData,
             });
             if (updateResult.count !== 1) {
-              throw new Error("Company import review-state changed during commit");
+              throw new ImportConflictError("Company import review state changed during commit. Preview the file again.");
             }
             created = { id: existingCompany.id };
             updated += 1;
@@ -517,7 +522,10 @@ async function importPortfolio(request: NextRequest) {
     if (error instanceof ImportPreviewTokenError) {
       return NextResponse.json({ error: error.message }, { status: 409 });
     }
-    console.error("Portfolio import failed:", sanitizeImportError(error));
+    const userError = importUserErrorDetails(error);
+    if (userError) {
+      return NextResponse.json({ error: userError.message }, { status: userError.status });
+    }
     return NextResponse.json(
       { error: "Failed to import portfolio companies" },
       { status: 500 },

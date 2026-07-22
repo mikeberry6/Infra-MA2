@@ -41,6 +41,28 @@ const listRow = {
   manager: { name: "Manager" },
 };
 
+const ownershipRow = {
+  isActive: true,
+  investmentYear: 2024,
+  exitYear: null,
+  company: {
+    name: "Portfolio Company",
+    sector: "DIGITAL",
+    subsector: "Fiber",
+    region: "NORTH_AMERICA",
+    country: "United States",
+    description: "A fiber platform",
+  },
+};
+
+const siblingOwnershipRow = {
+  ...ownershipRow,
+  company: {
+    ...ownershipRow.company,
+    name: "Sibling Portfolio Company",
+  },
+};
+
 const detailRow = {
   ...listRow,
   id: "database-fund-1",
@@ -55,19 +77,22 @@ const detailRow = {
   createdAt: new Date("2026-07-20T00:00:00.000Z"),
   updatedAt: new Date("2026-07-21T00:00:00.000Z"),
   lastVerifiedAt: new Date("2026-07-21T00:00:00.000Z"),
-  ownershipPeriods: [{
-    isActive: true,
-    investmentYear: 2024,
-    exitYear: null,
-    company: {
-      name: "Portfolio Company",
-      sector: "DIGITAL",
-      subsector: "Fiber",
-      region: "NORTH_AMERICA",
-      country: "United States",
-      description: "A fiber platform",
-    },
-  }],
+  manager: {
+    name: "Manager",
+    managedFunds: [
+      {
+        fundName: "Infrastructure Fund V",
+        strategies: ["CORE_PLUS"],
+        ownershipPeriods: [ownershipRow],
+      },
+      {
+        fundName: "Infrastructure Fund IV",
+        strategies: ["CORE"],
+        ownershipPeriods: [siblingOwnershipRow],
+      },
+    ],
+  },
+  ownershipPeriods: [ownershipRow],
 };
 
 describe("fund query projections", () => {
@@ -123,7 +148,18 @@ describe("fund query projections", () => {
         isActive: true,
         investmentYear: 2024,
       }],
+      managerPortfolioCompanies: [
+        { company: { name: "Portfolio Company" }, fundName: "Infrastructure Fund V", strategies: ["Core-Plus"] },
+        { company: { name: "Sibling Portfolio Company" }, fundName: "Infrastructure Fund IV", strategies: ["Core"] },
+      ],
     });
+    const include = mocks.findFirst.mock.calls[0][0].include;
+    expect(include.manager.select.managedFunds).toMatchObject({
+      where: { status: "PUBLISHED" },
+      orderBy: { fundName: "asc" },
+    });
+    expect(include.manager.select.managedFunds.select.ownershipPeriods.where)
+      .toEqual({ company: { status: "PUBLISHED" } });
   });
 
   it.each(["DRAFT", "IN_REVIEW", "ARCHIVED"])(

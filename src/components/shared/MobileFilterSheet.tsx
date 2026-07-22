@@ -23,13 +23,28 @@ export function MobileFilterSheet({
   useEffect(() => {
     if (!open) return;
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape" && !document.querySelector("[data-multiselect-popup]")) {
+        setOpen(false);
+      }
     };
     document.addEventListener("keydown", onKeyDown);
     return () => {
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [open]);
+
+  useEffect(() => {
+    if (!open || typeof window.matchMedia !== "function") return;
+    const query = window.matchMedia(
+      desktopBreakpoint === "lg" ? "(min-width: 1024px)" : "(min-width: 768px)",
+    );
+    const closeAtDesktop = (event: Pick<MediaQueryListEvent, "matches">) => {
+      if (event.matches) setOpen(false);
+    };
+    closeAtDesktop(query);
+    query.addEventListener("change", closeAtDesktop);
+    return () => query.removeEventListener("change", closeAtDesktop);
+  }, [desktopBreakpoint, open]);
 
   return (
     <>

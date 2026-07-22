@@ -64,8 +64,7 @@ async function exportDeals(request: NextRequest) {
         "Content-Disposition": `attachment; filename="deals_export_${date}.csv"`,
       },
     });
-  } catch (error) {
-    console.error("Deal export failed:", error);
+  } catch {
     return NextResponse.json(
       { error: "Failed to export deals" },
       { status: 500 },

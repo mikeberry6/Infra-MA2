@@ -1,11 +1,9 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { withServerOperation } from "@/lib/server-log";
+import { nextDashboardSyncAt } from "@/modules/operations/pipeline-schedules";
 
-const PIPELINES = [
-  { name: "NEWS_SCAN", staleAfterHours: 36 },
-  { name: "DASHBOARD_SYNC", staleAfterHours: 36 },
-] as const;
+const PIPELINES = ["NEWS_SCAN", "DASHBOARD_SYNC"] as const;
 
 const SCHEMA_ERROR_CODES = new Set(["P2021", "P2022", "42P01", "42703"]);
 
@@ -87,6 +85,19 @@ async function schemaIsReady(): Promise<boolean> {
   return rows[0]?.ready === true;
 }
 
+function pipelineIsStale(
+  name: (typeof PIPELINES)[number],
+  successfulAt: Date | null,
+  generatedAt: Date,
+): boolean {
+  if (!successfulAt) return true;
+  if (name === "DASHBOARD_SYNC") {
+    return nextDashboardSyncAt(successfulAt).getTime() <= generatedAt.getTime();
+  }
+  return generatedAt.getTime() - successfulAt.getTime()
+    > 36 * 60 * 60 * 1000;
+}
+
 export async function GET(request: Request) {
   const generatedAt = new Date();
 
@@ -124,7 +135,7 @@ export async function GET(request: Request) {
         }, { status: 503 });
       }
 
-      const pipelines = await Promise.all(PIPELINES.map(async ({ name, staleAfterHours }) => {
+      const pipelines = await Promise.all(PIPELINES.map(async (name) => {
         const [latestAttempt, latestSuccess] = await Promise.all([
           prisma.pipelineRun.findFirst({
             where: { pipeline: name },
@@ -136,8 +147,7 @@ export async function GET(request: Request) {
           }),
         ]);
         const successfulAt = latestSuccess?.endedAt ?? latestSuccess?.startedAt ?? null;
-        const stale = !successfulAt
-          || generatedAt.getTime() - successfulAt.getTime() > staleAfterHours * 60 * 60 * 1000;
+        const stale = pipelineIsStale(name, successfulAt, generatedAt);
         return {
           name,
           status: !latestAttempt

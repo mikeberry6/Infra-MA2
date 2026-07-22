@@ -12,7 +12,16 @@ const FOCUSABLE_SELECTOR = [
 ].join(",");
 
 function visibleFocusableElements(container: HTMLElement): HTMLElement[] {
-  return Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR))
+  const scopes = [container];
+  if (container.id) {
+    const ownedScopes = Array.from(document.querySelectorAll<HTMLElement>("[data-dialog-focus-owner]"))
+      .filter((scope) => scope.dataset.dialogFocusOwner === container.id);
+    scopes.push(...ownedScopes);
+  }
+
+  return Array.from(new Set(
+    scopes.flatMap((scope) => Array.from(scope.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR))),
+  ))
     .filter((element) => !element.hasAttribute("disabled") && element.getClientRects().length > 0);
 }
 

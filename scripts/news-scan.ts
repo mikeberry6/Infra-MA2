@@ -5,6 +5,9 @@ import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
+import { SafeOperationalError } from "../src/lib/safe-error";
+import { withServerTask } from "../src/lib/server-log";
 import {
   companyAliases,
   fundAliases,
@@ -291,13 +294,14 @@ function parseArgs(): Options {
 function createPrisma(): PrismaClient {
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) {
-    throw new Error("DATABASE_URL is not set.");
+    throw new SafeOperationalError("database_url_missing");
   }
   return new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
 }
 
 async function main() {
   const options = parseArgs();
+  if (!options.dryRun) assertMutationDatabaseTargetFromEnv();
   const prisma = createPrisma();
   const pipelineRunId = options.dryRun ? null : await startPipelineRun(prisma, "NEWS_SCAN", {
     sourceCrawl: options.sourceCrawl,
@@ -405,7 +409,7 @@ async function main() {
     await prisma.$disconnect();
   }
 
-  console.log(JSON.stringify(summary, null, 2));
+  console.log("News scan completed; review tmp/news-scan-summary.json.");
 }
 
 async function buildTrackedContext(prisma: PrismaClient, options: Options) {
@@ -1918,7 +1922,9 @@ async function writeSummary(summary: RunSummary) {
   );
 }
 
-main().catch((error) => {
-  console.error(error);
+withServerTask({
+  task: "news_scan",
+  operation: "run_news_scan",
+}, main).catch(() => {
   process.exit(1);
 });

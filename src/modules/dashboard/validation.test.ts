@@ -6,6 +6,7 @@ import {
 } from "@/modules/dashboard/validation";
 import type { DashboardObservation, DashboardSignal } from "@/modules/dashboard/types";
 import { DASHBOARD_SOURCE_REGISTRY } from "@/modules/dashboard/source-registry";
+import { DASHBOARD_METHODOLOGY_VERSIONS } from "@/modules/dashboard/methodology-cutover";
 
 const validObservation: DashboardObservation = {
   metricId: "us_treasury_10y",
@@ -100,6 +101,30 @@ describe("dashboard provider validation", () => {
     expect(() => validateDashboardProviderResult(DASHBOARD_SOURCES.treasury, {
       observations: [{ ...validObservation, observedAt: "2026-08-01T00:00:00.000Z" }],
     }, now)).toThrow("future observation timestamp");
+  });
+
+  it("requires the current methodology contract before persistence", () => {
+    const awards: DashboardObservation = {
+      ...validObservation,
+      metricId: "usaspending_infra_awards_30d",
+      sourceId: "usaspending",
+      unit: "count",
+      value: 12,
+      metadata: { countEndpoint: true },
+    };
+
+    expect(() => validateDashboardProviderResult(DASHBOARD_SOURCES.usaSpending, {
+      observations: [awards],
+    })).toThrow("incompatible methodology metadata");
+    expect(() => validateDashboardProviderResult(DASHBOARD_SOURCES.usaSpending, {
+      observations: [{
+        ...awards,
+        metadata: {
+          methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.usaSpendingAwards30d,
+          countEndpoint: true,
+        },
+      }],
+    })).not.toThrow();
   });
 
   it("enforces signal source and classification fields at runtime", () => {

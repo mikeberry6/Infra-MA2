@@ -20,6 +20,10 @@ vi.mock("@/modules/auth/guards", () => ({
 }));
 vi.mock("@/modules/operations/audit", () => ({ recordAuditEvent: mocks.recordAuditEvent }));
 vi.mock("@/lib/revalidation", () => ({ revalidateAppData: mocks.revalidate }));
+vi.mock("@/lib/server-request-context", () => ({
+  currentServerRequestId: vi.fn().mockResolvedValue("request-test"),
+}));
+vi.mock("@/lib/server-log", () => ({ logServerFailure: vi.fn() }));
 
 import { publishDeal } from "@/modules/admin/actions";
 
@@ -92,5 +96,34 @@ describe("deal publication seller gate", () => {
     );
 
     await expect(publishDeal("deal-1")).resolves.toEqual({ success: true });
+  });
+
+  it("preserves a safe stale-state message", async () => {
+    mocks.findUnique.mockResolvedValue({
+      ...publishable,
+      sellerDisclosureStatus: "NOT_DISCLOSED",
+      sellerDisclosureReason: "The primary announcement does not identify a seller.",
+    });
+    const tx = { deal: { updateMany: vi.fn().mockResolvedValue({ count: 0 }) } };
+    mocks.transaction.mockImplementation(
+      async (callback: (client: typeof tx) => unknown) => callback(tx),
+    );
+
+    await expect(publishDeal("deal-1")).resolves.toEqual({
+      success: false,
+      error: "Deal workflow state changed during publication",
+    });
+  });
+
+  it("does not expose an unexpected database exception", async () => {
+    mocks.findUnique.mockRejectedValue(Object.assign(
+      new Error("connection failed at postgresql://admin:secret@private-db/deals"),
+      { code: "P1001" },
+    ));
+
+    await expect(publishDeal("deal-1")).resolves.toEqual({
+      success: false,
+      error: "Failed to publish deal",
+    });
   });
 });

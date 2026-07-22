@@ -451,7 +451,7 @@ describe("two-step import routes", () => {
       where: { id: "pipeline-1" },
       data: expect.objectContaining({
         status: "FAILED",
-        errorSummary: "Import audit write failed",
+        errorSummary: "internal_error: Server operation failed.",
       }),
     });
     expect(JSON.stringify(mocks.pipelineUpdate.mock.calls)).not.toContain("do-not-store");
@@ -785,8 +785,10 @@ describe("two-step import routes", () => {
       funds: [fund({ id: "FUND-DRAFT", fundName: "Draft Fund" })],
     }));
 
-    expect(response.status).toBe(500);
-    await expect(response.json()).resolves.toEqual({ error: "Failed to import funds" });
+    expect(response.status).toBe(409);
+    await expect(response.json()).resolves.toEqual({
+      error: "Fund import review state changed during commit. Preview the file again.",
+    });
     expect(fundTx.fund.updateMany).toHaveBeenCalledWith(expect.objectContaining({
       where: {
         id: "database-fund-draft",
@@ -797,7 +799,10 @@ describe("two-step import routes", () => {
     expect(fundTx.pipelineRun.update).not.toHaveBeenCalled();
     expect(mocks.pipelineUpdate).toHaveBeenCalledWith(expect.objectContaining({
       where: { id: "pipeline-1" },
-      data: expect.objectContaining({ status: "FAILED", errorSummary: "Import commit failed" }),
+      data: expect.objectContaining({
+        status: "FAILED",
+        errorSummary: "internal_error: Server operation failed.",
+      }),
     }));
     expect(mocks.revalidateAppData).not.toHaveBeenCalled();
   });
@@ -811,6 +816,20 @@ describe("two-step import routes", () => {
     expect(response.status).toBe(413);
     await expect(response.json()).resolves.toEqual({ error: "Deal import is limited to 500 rows" });
     expect(mocks.dealFindMany).not.toHaveBeenCalled();
+  });
+
+  it("returns a safe validation message for a malformed import body", async () => {
+    const response = await importDeals(jsonRequest(
+      "/api/imports/deals?preview=1",
+      { records: [deal()] },
+    ));
+
+    expect(response.status).toBe(400);
+    await expect(response.json()).resolves.toEqual({
+      error: "Request body must contain a 'deals' array or be a JSON array",
+    });
+    expect(mocks.dealFindMany).not.toHaveBeenCalled();
+    expect(mocks.transaction).not.toHaveBeenCalled();
   });
 
   it("rejects duplicate stable identities within one preview instead of double-counting creates", async () => {

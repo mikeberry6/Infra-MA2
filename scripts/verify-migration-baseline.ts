@@ -8,6 +8,7 @@ import {
   verifyMigrationBaseline,
   type MigrationChecksum,
 } from "../src/lib/migration-baseline.ts";
+import { withServerTask } from "../src/lib/server-log.ts";
 
 function option(name: string): string | undefined {
   const prefix = `--${name}=`;
@@ -72,7 +73,6 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : error);
+withServerTask({ task: "migration_baseline", operation: "verify_applied_migrations" }, main).catch(() => {
   process.exitCode = 1;
 });

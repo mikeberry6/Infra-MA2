@@ -10,8 +10,13 @@ import "dotenv/config";
 import { readFile } from "node:fs/promises";
 import { PrismaClient, type Prisma } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { withServerTask } from "../src/lib/server-log";
 import { companyDedupKeys, groupByDedupKeys } from "../src/lib/company-key";
-import { assertMutationDatabaseTarget } from "../src/lib/database-target";
+import {
+  assertApprovalReviewerMatchesMutationContext,
+  assertMaintenanceMutationContext,
+  type MaintenanceMutationContext,
+} from "../src/lib/database-target";
 import {
   COMPANY_MERGE_SNAPSHOT_SELECT,
   assertApprovalMatchesDetectedClusters,
@@ -33,8 +38,7 @@ function option(name: string): string | undefined {
     ?.slice(name.length + 3);
 }
 
-interface MutationContext {
-  releaseSha: string;
+interface MutationContext extends MaintenanceMutationContext {
   targetDatabase: "validation" | "production";
   expectedHost: string;
   expectedDatabase: string;
@@ -63,29 +67,15 @@ interface ApplyTotals {
 }
 
 function mutationContext(): MutationContext {
-  const connectionString = process.env.DATABASE_URL;
+  const context = assertMaintenanceMutationContext();
   const expectedHost = process.env.EXPECTED_DATABASE_HOST?.trim();
   const expectedDatabase = process.env.EXPECTED_DATABASE_NAME?.trim();
-  assertMutationDatabaseTarget({
-    connectionString,
-    expectedHost,
-    expectedDatabase,
-    forbiddenHosts: [
-      process.env.FORBIDDEN_DATABASE_HOST,
-      process.env.FORBIDDEN_DATABASE_HOST_2,
-    ],
-  });
-  const releaseSha = process.env.RELEASE_SHA?.trim() ?? "";
-  if (!/^[0-9a-f]{40}$/.test(releaseSha)) {
-    throw new Error("RELEASE_SHA must be the exact lowercase 40-character reviewed release commit");
-  }
-  const targetDatabase = process.env.TARGET_DATABASE;
-  if (targetDatabase !== "validation" && targetDatabase !== "production") {
+  if (context.targetDatabase !== "validation" && context.targetDatabase !== "production") {
     throw new Error("TARGET_DATABASE must explicitly be validation or production");
   }
   return {
-    releaseSha,
-    targetDatabase,
+    ...context,
+    targetDatabase: context.targetDatabase,
     expectedHost: expectedHost!,
     expectedDatabase: expectedDatabase!,
   };
@@ -342,6 +332,8 @@ async function applyPendingCluster(input: {
           id: candidate.id,
           snapshotSha256: candidate.snapshotSha256,
         })),
+        executedBy: context.reviewedBy,
+        mutationReason: context.reason,
         releaseSha: context.releaseSha,
         targetDatabase: context.targetDatabase,
         expectedDatabaseHost: context.expectedHost,
@@ -447,6 +439,9 @@ async function main() {
   if (!connectionString) throw new Error("DATABASE_URL is required");
   const context = APPLY ? mutationContext() : null;
   const approvalFile = APPLY ? await loadApproval() : null;
+  if (context && approvalFile) {
+    assertApprovalReviewerMatchesMutationContext(approvalFile.approval.reviewedBy, context);
+  }
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
   try {
     if (!APPLY) {
@@ -476,6 +471,10 @@ async function main() {
       approvalSha256: approvalFile!.approvalSha256,
       reviewedBy: approvalFile!.approval.reviewedBy,
       reviewedAt: approvalFile!.approval.reviewedAt,
+      executedBy: context!.reviewedBy,
+      mutationReason: context!.reason,
+      releaseSha: context!.releaseSha,
+      targetDatabase: context!.targetDatabase,
       ...result,
     }, null, 2));
   } finally {
@@ -483,7 +482,6 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : "Canonical company merge failed");
+withServerTask({ task: "company_merge", operation: "merge_duplicate_companies" }, main).catch(() => {
   process.exitCode = 1;
 });

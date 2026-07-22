@@ -10,10 +10,14 @@
  */
 import "dotenv/config";
 import { readFile } from "node:fs/promises";
+import { withServerTask } from "../src/lib/server-log";
 import path from "node:path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
-import { assertMutationDatabaseTarget } from "../src/lib/database-target";
+import {
+  assertApprovalReviewerMatchesMutationContext,
+  assertMaintenanceMutationContext,
+} from "../src/lib/database-target";
 import {
   applyReviewedPrimaryCitationApproval,
   parseReviewedPrimaryCitationApproval,
@@ -34,6 +38,7 @@ async function main() {
   if (!approvalFile) throw new Error("--apply requires --approval-file=<reviewed JSON file>");
   const expectedSha256 = option("expected-sha256");
   if (!expectedSha256) throw new Error("--apply requires --expected-sha256=<exact lowercase SHA-256>");
+  const context = assertMaintenanceMutationContext();
 
   const approvalPath = path.resolve(approvalFile);
   const raw = await readFile(approvalPath);
@@ -45,22 +50,14 @@ async function main() {
     throw new Error("Approval file is not valid JSON");
   }
   const approval = parseReviewedPrimaryCitationApproval(parsed);
+  assertApprovalReviewerMatchesMutationContext(approval.reviewedBy, context);
 
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) throw new Error("DATABASE_URL is required for citation remediation");
-  assertMutationDatabaseTarget({
-    connectionString,
-    expectedHost: process.env.EXPECTED_DATABASE_HOST,
-    expectedDatabase: process.env.EXPECTED_DATABASE_NAME,
-    forbiddenHosts: [
-      process.env.FORBIDDEN_DATABASE_HOST,
-      process.env.FORBIDDEN_DATABASE_HOST_2,
-    ],
-  });
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
   try {
     const result = await prisma.$transaction(
-      (tx) => applyReviewedPrimaryCitationApproval(tx, approval, approvalSha256),
+      (tx) => applyReviewedPrimaryCitationApproval(tx, approval, approvalSha256, context),
       { isolationLevel: "Serializable", maxWait: 10_000, timeout: 60_000 },
     );
     console.log(JSON.stringify({
@@ -70,6 +67,10 @@ async function main() {
       approvalSha256,
       reviewedBy: approval.reviewedBy,
       reviewedAt: approval.reviewedAt,
+      executedBy: context.reviewedBy,
+      mutationReason: context.reason,
+      releaseSha: context.releaseSha,
+      targetDatabase: context.targetDatabase,
       ...result,
     }, null, 2));
   } finally {
@@ -77,7 +78,6 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : "Primary-citation remediation failed");
+withServerTask({ task: "citation_remediation", operation: "apply_primary_citations" }, main).catch(() => {
   process.exitCode = 1;
 });

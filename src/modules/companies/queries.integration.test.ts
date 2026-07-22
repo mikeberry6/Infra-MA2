@@ -44,6 +44,7 @@ const ownershipPeriod = {
   updatedAt: new Date("2026-07-20T00:00:00.000Z"),
   organization: { name: "Fallback Organization" },
   fund: {
+    status: "PUBLISHED",
     fundName: "Infrastructure Fund V",
     manager: { name: "Canonical Manager" },
   },
@@ -51,6 +52,10 @@ const ownershipPeriod = {
 
 const listRow = {
   id: "company-1",
+  redirects: [
+    { retiredId: "company-retired" },
+    { retiredId: "company-retired-older" },
+  ],
   name: "Portfolio Company",
   sector: "DIGITAL",
   subsector: "Fiber",
@@ -94,6 +99,10 @@ describe("company query projections and canonical redirects", () => {
       where: { status: "PUBLISHED" },
       select: expect.objectContaining({
         id: true,
+        redirects: {
+          select: { retiredId: true },
+          orderBy: { retiredId: "asc" },
+        },
         name: true,
         ownershipPeriods: expect.any(Object),
       }),
@@ -105,11 +114,18 @@ describe("company query projections and canonical redirects", () => {
     expect(select).not.toHaveProperty("citations");
     expect(select.ownershipPeriods.select).not.toHaveProperty("stake");
     expect(select.ownershipPeriods.select).not.toHaveProperty("exitYear");
+    expect(select.ownershipPeriods.where).toEqual({
+      OR: [
+        { fundId: null },
+        { fund: { is: { status: "PUBLISHED" } } },
+      ],
+    });
     expect(companies[0]).toMatchObject({
       id: "company-1",
       investmentFirm: "Canonical Manager",
       ownershipVehicle: "Infrastructure Fund V",
       investmentYear: 2024,
+      focusIds: ["company-1", "company-retired", "company-retired-older"],
       sector: "Digital",
       region: "North America",
     });
@@ -152,6 +168,7 @@ describe("company query projections and canonical redirects", () => {
     expect(mocks.findFirst).toHaveBeenNthCalledWith(1, expect.objectContaining({
       where: { id: "company-retired", status: "PUBLISHED" },
       include: expect.objectContaining({
+        redirects: expect.any(Object),
         milestones: expect.any(Object),
         managementRoles: expect.any(Object),
         citations: expect.any(Object),
@@ -164,6 +181,7 @@ describe("company query projections and canonical redirects", () => {
     expect(mocks.findFirst).toHaveBeenNthCalledWith(2, expect.objectContaining({
       where: { id: "company-1", status: "PUBLISHED" },
       include: expect.objectContaining({
+        redirects: expect.any(Object),
         milestones: expect.any(Object),
         managementRoles: expect.any(Object),
         citations: expect.any(Object),
@@ -172,7 +190,7 @@ describe("company query projections and canonical redirects", () => {
     expect(mocks.findMany).not.toHaveBeenCalled();
     expect(company).toMatchObject({
       id: "company-1",
-      focusIds: ["company-1"],
+      focusIds: ["company-1", "company-retired", "company-retired-older"],
       description: "A fiber platform.",
       management: [{ name: "Executive", title: "Chief Executive Officer" }],
       sources: [{
@@ -202,6 +220,7 @@ describe("company query projections and canonical redirects", () => {
     expect(mocks.findFirst).toHaveBeenCalledWith(expect.objectContaining({
       where: { id: "company-1", status: "PUBLISHED" },
       include: expect.objectContaining({
+        redirects: expect.any(Object),
         milestones: expect.any(Object),
         managementRoles: expect.any(Object),
         citations: expect.any(Object),
@@ -209,6 +228,38 @@ describe("company query projections and canonical redirects", () => {
     }));
     expect(company).toMatchObject({ id: "company-1", description: "A fiber platform." });
   });
+
+  it.each(["DRAFT", "IN_REVIEW", "ARCHIVED"])(
+    "suppresses ownership linked to a %s fund in list and detail projections",
+    async (fundStatus) => {
+      const hiddenOwnership = {
+        ...ownershipPeriod,
+        fund: { ...ownershipPeriod.fund, status: fundStatus },
+      };
+      mocks.findMany.mockResolvedValue([{ ...listRow, ownershipPeriods: [hiddenOwnership] }]);
+      mocks.findFirst.mockResolvedValue([{ ...detailRow, ownershipPeriods: [hiddenOwnership] }][0]);
+
+      const list = await getAllCompanies({ detail: false });
+      const detail = await getCompanyById("company-1");
+
+      expect(list[0]).toMatchObject({
+        investmentFirm: "",
+        ownershipVehicle: "",
+        owners: [],
+      });
+      expect(detail).toMatchObject({
+        investmentFirm: "",
+        ownershipVehicle: "",
+        owners: [],
+      });
+      expect(mocks.findFirst.mock.calls.at(-1)?.[0].include.ownershipPeriods.where).toEqual({
+        OR: [
+          { fundId: null },
+          { fund: { is: { status: "PUBLISHED" } } },
+        ],
+      });
+    },
+  );
 
   it("counts only published companies", async () => {
     mocks.count.mockResolvedValue(17);

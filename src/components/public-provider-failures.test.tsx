@@ -50,6 +50,13 @@ describe("public external-provider failure states", () => {
     const view: DashboardView = {
       generatedAt: "2026-07-22T12:00:00.000Z",
       hasDatabaseData: true,
+      operations: {
+        state: "healthy",
+        lastAttemptAt: "2026-07-22T11:30:00.000Z",
+        lastSuccessfulAt: "2026-07-22T11:35:00.000Z",
+        nextExpectedAt: "2026-07-23T11:30:00.000Z",
+        message: "The latest weekday dashboard synchronization completed successfully.",
+      },
       scorecard: {
         stance: "Neutral",
         score: 50,
@@ -87,6 +94,45 @@ describe("public external-provider failure states", () => {
     expect(within(sourceTable).getByText("U.S. Treasury")).toBeVisible();
     expect(within(sourceTable).getByText("failed")).toBeVisible();
     expect(within(sourceTable).getByText("Provider timed out after bounded retries")).toBeVisible();
+  });
+
+  it.each([
+    ["pending", "Dashboard synchronization in progress"],
+    ["failed", "Dashboard synchronization failed"],
+    ["healthy", "Synchronization completed without public data"],
+  ] as const)("renders a meaningful zero-data dashboard when the pipeline is %s", (state, title) => {
+    const view: DashboardView = {
+      generatedAt: "2026-07-22T12:00:00.000Z",
+      hasDatabaseData: false,
+      operations: {
+        state,
+        lastAttemptAt: "2026-07-22T11:30:00.000Z",
+        lastSuccessfulAt: state === "healthy" ? "2026-07-22T11:35:00.000Z" : undefined,
+        nextExpectedAt: "2026-07-23T11:30:00.000Z",
+        message: state === "pending"
+          ? "The first dashboard synchronization is running."
+          : state === "failed"
+            ? "The latest dashboard synchronization failed."
+            : "The latest weekday dashboard synchronization completed successfully.",
+      },
+      scorecard: {
+        stance: "Neutral",
+        score: 50,
+        explanations: ["No strong directional signal.", "No public data."],
+        positiveContributors: [],
+        negativeContributors: [],
+        freshnessWarnings: [],
+      },
+      sections: [],
+      allSeries: [],
+      sourceHealth: [],
+    };
+
+    render(<DashboardPage view={view} />);
+
+    expect(screen.getByText(title)).toBeVisible();
+    expect(screen.getByText(/Production never substitutes sample values/)).toBeVisible();
+    expect(screen.queryByText("M&A Risk-On / Risk-Off Scorecard")).not.toBeInTheDocument();
   });
 
   it("puts every news filter in a focus-contained mobile sheet and exposes active date state", async () => {

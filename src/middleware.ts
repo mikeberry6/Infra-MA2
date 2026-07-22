@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
-import { getRequestId, logServerOperation } from "@/lib/server-log";
+import {
+  getRequestId,
+  logServerOperation,
+  type ServerErrorClassification,
+} from "@/lib/server-log";
 import { hasUsableSignedAuthSnapshot } from "@/modules/auth/session";
 
 function requestPathWithBasePath(request: NextRequest): string {
@@ -33,23 +37,28 @@ export async function middleware(request: NextRequest) {
     : pathname.startsWith("/api/imports")
       ? "/api/imports/*"
       : "/api/exports/*";
-  const logDecision = (response: NextResponse, operation: string) => {
+  const logDecision = (
+    response: NextResponse,
+    operation: string,
+    errorClassification?: ServerErrorClassification,
+  ) => {
     logServerOperation({
       route: logRoute,
       operation,
       durationMs: Math.round(performance.now() - startedAt),
       status: response.status,
       requestId,
+      errorClassification,
     });
     return response;
   };
 
   const nextAuthSecret = process.env.NEXTAUTH_SECRET;
   if (!nextAuthSecret) {
-    console.error("NEXTAUTH_SECRET is not configured");
     return logDecision(
       NextResponse.json({ error: "Server misconfigured" }, { status: 500, headers: { "x-request-id": requestId } }),
       "authorize_privileged_request",
+      "configuration_error",
     );
   }
 

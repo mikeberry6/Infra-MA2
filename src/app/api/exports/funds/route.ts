@@ -60,8 +60,7 @@ async function exportFunds(request: NextRequest) {
         "Content-Disposition": `attachment; filename="funds_export_${date}.csv"`,
       },
     });
-  } catch (error) {
-    console.error("Fund export failed:", error);
+  } catch {
     return NextResponse.json(
       { error: "Failed to export funds" },
       { status: 500 },

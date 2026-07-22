@@ -10,7 +10,6 @@ import type {
   CompanyListItem,
   FundStrategyView,
   DatabaseCounts,
-  RecordMeta,
 } from "@/modules/shared/types";
 import {
   Search,
@@ -21,7 +20,7 @@ import {
 } from "lucide-react";
 import { PortCoDrawer } from "@/components/PortfolioDatabase/PortCoDrawer";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam, useUrlQueryParamsWriter, useUrlQueryState, useUrlQueryWriter } from "@/hooks/useUrlFilterSet";
+import { useUrlFilterSet, useUrlQueryParam, useUrlQueryParamsWriter, useUrlQueryState, useUrlQueryWriter } from "@/hooks/useUrlFilterSet";
 import { useCanExport } from "@/hooks/useCanExport";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
@@ -37,10 +36,12 @@ import { PaginationControls } from "@/components/shared/PaginationControls";
 import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { track } from "@vercel/analytics";
 import { subscribeToDetailCacheInvalidation } from "@/lib/detail-cache-events";
+import { BoundedDetailCache } from "@/lib/detail-cache";
+import { useFreshDetail } from "@/hooks/useFreshDetail";
 
 const INVESTMENT_YEAR_NA = "N/A";
 const PORTCO_PAGE_SIZE = 25;
-const companyDetailCache = new Map<string, { data: CompanyDetail; meta: RecordMeta }>();
+const companyDetailCache = new BoundedDetailCache<CompanyDetail>();
 
 function mostCommonLabel(items: string[]): { label: string; count: number } | null {
   const counts = new Map<string, number>();
@@ -396,7 +397,7 @@ function PortCoTable({
                   role="button"
                   tabIndex={0}
                   aria-label={`Open ${company.name} company details`}
-                  className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group focus:bg-[var(--bg-subtle)] focus:outline-none"
+                  className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group focus:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--accent)]"
                 >
                   <td className="px-3 py-2.5 align-top max-w-[260px]">
                     <span title={company.name} className="type-row-title group-hover:text-[var(--accent)] transition-colors truncate block">
@@ -457,6 +458,7 @@ function PortCoTable({
         pageSize={PORTCO_PAGE_SIZE}
         totalItems={sorted.length}
         onPageChange={(next) => setPageParam(String(next))}
+        resultHeadingId="portfolio-results-heading"
       />
     </>
   );
@@ -471,16 +473,26 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
   const [activeFirms, toggleFirm] = useUrlFilterSet("firm");
   const [activeInvestmentYears, toggleInvestmentYear] = useUrlFilterSet("year");
   const [selectedCompany, setSelectedCompany] = useState<CompanyListItem | null>(null);
-  const [selectedCompanyDetail, setSelectedCompanyDetail] = useState<CompanyDetail | null>(null);
-  const [detailMeta, setDetailMeta] = useState<RecordMeta | null>(null);
-  const [detailState, setDetailState] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [detailRequest, setDetailRequest] = useState(0);
 
   useEffect(() => subscribeToDetailCacheInvalidation("company", () => {
     companyDetailCache.clear();
     setDetailRequest((value) => value + 1);
   }), []);
+  const {
+    detail: selectedCompanyDetail,
+    meta: detailMeta,
+    state: detailState,
+  } = useFreshDetail<CompanyDetail>({
+    cache: companyDetailCache,
+    cacheKey: selectedCompany?.id ?? null,
+    requestUrl: selectedCompany
+      ? withBasePath(`/api/portfolio/${encodeURIComponent(selectedCompany.id)}`)
+      : null,
+    requestVersion: detailRequest,
+  });
   const writeQuery = useUrlQueryWriter();
+  const writeQueryParams = useUrlQueryParamsWriter();
   const canExport = useCanExport();
 
   const debouncedSearch = useDebounce(search, 300);
@@ -492,8 +504,6 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     if (!focusId) {
       if (openedFocus.current) {
         setSelectedCompany(null);
-        setSelectedCompanyDetail(null);
-        setDetailMeta(null);
       }
       openedFocus.current = null;
       return;
@@ -503,53 +513,12 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     if (match) {
       setSelectedCompany(match);
       openedFocus.current = focusId;
-    }
-  }, [focusId, portcos]);
-
-  useEffect(() => {
-    if (!selectedCompany) {
-      setSelectedCompanyDetail(null);
-      setDetailMeta(null);
-      setDetailState("idle");
       return;
     }
-
-    const cached = companyDetailCache.get(selectedCompany.id);
-    if (cached) {
-      setSelectedCompanyDetail(cached.data);
-      setDetailMeta(cached.meta);
-      setDetailState("ready");
-      return;
-    }
-
-    let cancelled = false;
-    setSelectedCompanyDetail(null);
-    setDetailMeta(null);
-    setDetailState("loading");
-
-    fetch(withBasePath(`/api/portfolio/${encodeURIComponent(selectedCompany.id)}`))
-      .then((response) => response.ok ? response.json() : null)
-      .then((data) => {
-        if (!cancelled && data?.data) {
-          companyDetailCache.set(selectedCompany.id, data);
-          setSelectedCompanyDetail(data.data);
-          setDetailMeta(data.meta);
-          setDetailState("ready");
-        } else if (!cancelled) {
-          setDetailState("error");
-        }
-      })
-      .catch(() => {
-        if (!cancelled) {
-          setSelectedCompanyDetail(null);
-          setDetailState("error");
-        }
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [selectedCompany, detailRequest]);
+    setSelectedCompany(null);
+    openedFocus.current = null;
+    writeQuery("focus", null);
+  }, [focusId, portcos, writeQuery]);
 
   const openCompany = useCallback((company: CompanyListItem) => {
     setSelectedCompany(company);
@@ -560,18 +529,19 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
 
   const closeCompany = useCallback(() => {
     setSelectedCompany(null);
-    setSelectedCompanyDetail(null);
-    setDetailMeta(null);
-    setDetailState("idle");
     openedFocus.current = null;
     writeQuery("focus", null);
   }, [writeQuery]);
 
-  const clearAllUrlFilters = useClearUrlFilters(["sector", "country", "firm", "year"]);
   const clearFilters = useCallback(() => {
-    clearAllUrlFilters();
-    setSearch("");
-  }, [clearAllUrlFilters, setSearch]);
+    writeQueryParams({
+      q: null,
+      sector: null,
+      country: null,
+      firm: null,
+      year: null,
+    }, { resetPage: true });
+  }, [writeQueryParams]);
 
   const firmOptions = useMemo(() => getUniqueFirms(portcos), [portcos]);
   const investmentYearOptions = useMemo(() => {
@@ -629,9 +599,6 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
   useEffect(() => {
     if (selectedCompany && !filteredCompanies.some((company) => company.id === selectedCompany.id)) {
       setSelectedCompany(null);
-      setSelectedCompanyDetail(null);
-      setDetailMeta(null);
-      setDetailState("idle");
       openedFocus.current = null;
       writeQuery("focus", null);
     }
@@ -704,11 +671,11 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
 
       <div className="surface overflow-hidden">
         <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
-          <span className="type-micro">
+          <h2 id="portfolio-results-heading" tabIndex={-1} aria-label="Portfolio company results" className="scroll-mt-20 type-micro outline-none">
             <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredCompanies.length}</span>
             {" "}of{" "}
             <span className="mono text-[var(--text-secondary)] tabular-nums">{portcos.length}</span> companies
-          </span>
+          </h2>
           <div className="hidden sm:flex items-center gap-1">
             {canExport && (
               <a

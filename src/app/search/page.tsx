@@ -1,10 +1,12 @@
 export const dynamic = "force-dynamic";
 
-import { searchAllWithMeta, type SearchResult } from "@/modules/search/queries";
+import { normalizeSearchQuery, searchAllWithMeta, type SearchResult } from "@/modules/search/queries";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
 import { TrackedSearchForm } from "@/components/search/TrackedSearchForm";
+import { currentServerRequestId } from "@/lib/server-request-context";
+import { withServerTask } from "@/lib/server-log";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -35,12 +37,16 @@ function resultHref(r: SearchResult): string {
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ q?: string | string[] }>;
 }) {
   const { q } = await searchParams;
-  const query = q || "";
+  const query = normalizeSearchQuery(q);
+  const requestId = await currentServerRequestId();
   const search = query
-    ? await searchAllWithMeta(query)
+    ? await withServerTask(
+        { route: "/search", operation: "search_all", requestId },
+        () => searchAllWithMeta(query),
+      )
     : { results: [], total: 0, counts: { deal: 0, company: 0, fund: 0 } };
   const { results } = search;
   const groupedResults = (["deal", "company", "fund"] as const)
@@ -98,7 +104,10 @@ export default async function SearchPage({
               <h2 id={`results-${group.type}`} className="type-section-title text-[var(--text-primary)]">
                 {TYPE_PLURAL_LABEL[group.type]}
               </h2>
-              <span className="type-micro mono tabular-nums">{group.results.length}</span>
+              <span className="type-micro mono tabular-nums">
+                {group.results.length}
+                {search.counts[group.type] > group.results.length ? ` of ${search.counts[group.type]}` : ""}
+              </span>
               <div className="h-px flex-1 bg-[var(--border)]" />
             </div>
             <div className="space-y-2">

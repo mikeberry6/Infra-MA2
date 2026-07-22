@@ -1,4 +1,5 @@
 import type { Prisma, PrismaClient } from "@/generated/prisma/client";
+import { formatSafeErrorSummary } from "@/lib/safe-error";
 
 type PipelineClient = Pick<PrismaClient, "pipelineRun">;
 
@@ -6,11 +7,6 @@ export interface PipelineCounts {
   inserted?: number;
   updated?: number;
   skipped?: number;
-}
-
-function errorSummary(error: unknown): string {
-  const value = error instanceof Error ? error.message : String(error);
-  return value.replace(/\s+/g, " ").trim().slice(0, 500);
 }
 
 export async function startPipelineRun(
@@ -56,7 +52,7 @@ export async function failPipelineRun(
     data: {
       status: "FAILED",
       endedAt: new Date(),
-      errorSummary: errorSummary(error),
+      errorSummary: formatSafeErrorSummary(error),
       inserted: counts.inserted ?? 0,
       updated: counts.updated ?? 0,
       skipped: counts.skipped ?? 0,

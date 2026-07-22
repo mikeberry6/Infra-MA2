@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import type { CSSProperties, ReactNode } from "react";
 import { SectionLabel } from "@/components/shared/SectionLabel";
+import { formatScheduledDateTime } from "@/lib/format";
 import { directionForSeries } from "@/modules/dashboard/score";
 import {
   formatChange,
@@ -57,6 +58,7 @@ export function DashboardPage({
   const policy = view.sections.find((section) => section.section === "policy-regulatory");
   const dealFriction = view.sections.find((section) => section.section === "deal-friction");
   const failedSources = view.sourceHealth.filter((source) => source.status === "FAILED");
+  const operationalState = view.operations.state;
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6 sm:py-8">
@@ -76,82 +78,113 @@ export function DashboardPage({
         </StateBanner>
       )}
 
-      {!view.hasDatabaseData && (
-        <StateBanner tone="needs_review" title="Dashboard data pending">
-          No validated dashboard observations are available yet. Run the synchronization pipeline or review provider status below; production never substitutes sample values.
+      {view.hasDatabaseData && operationalState !== "healthy" && (
+        <StateBanner
+          tone={operationalState === "failed" ? "restrictive" : "needs_review"}
+          title={dashboardOperationalTitle(operationalState)}
+        >
+          {view.operations.message} Previously validated public data remains visible below.
         </StateBanner>
       )}
 
-      <section className="grid grid-cols-1 gap-3 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
-        <ScorecardPanel view={view} />
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {CORE_TILE_IDS.map((id) => {
-            const series = allSeriesById.get(id);
-            return series ? <MetricTile key={id} series={series} /> : null;
-          })}
-        </div>
-      </section>
-
-      {capital && (
-        <section className="mt-5">
-          <SectionHeading section={capital} />
-          <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
-            <ChartPanel title="Rates" series={pickSeries(allSeriesById, RATE_CHART_IDS)} />
-            <ChartPanel title="Credit Spreads" series={pickSeries(allSeriesById, CREDIT_CHART_IDS)} />
-            <ChartPanel title="Volatility" series={pickSeries(allSeriesById, VOL_CHART_IDS)} />
-            <CompactMetricGrid
-              title="Funding / Public Comps"
-              series={capital.series.filter((item) => ["Funding", "Public Comps"].includes(item.metric.group))}
-            />
-            <CompactMetricGrid
-              title="Curves / Inflation"
-              series={capital.series.filter((item) => item.metric.group === "Rates" && !(RATE_CHART_IDS as readonly string[]).includes(item.metric.id))}
-            />
-          </div>
-        </section>
+      {!view.hasDatabaseData && (
+        <StateBanner
+          tone={operationalState === "failed" ? "restrictive" : "needs_review"}
+          title={dashboardEmptyStateTitle(operationalState)}
+        >
+          {view.operations.message} No validated public observations or approved signals are available. Production never substitutes sample values.
+        </StateBanner>
       )}
 
-      {macro && (
-        <section className="mt-5">
-          <SectionHeading section={macro} />
-          <GroupedMetricTiles series={macro.series} />
-        </section>
-      )}
+      {view.hasDatabaseData && (
+        <>
+          <section className="grid grid-cols-1 gap-3 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
+            <ScorecardPanel view={view} />
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {CORE_TILE_IDS.map((id) => {
+                const series = allSeriesById.get(id);
+                return series ? <MetricTile key={id} series={series} /> : null;
+              })}
+            </div>
+          </section>
 
-      {sector && (
-        <section className="mt-5">
-          <SectionHeading section={sector} />
-          <div className="grid grid-cols-1 gap-3 xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
-            <ChartPanel title="Energy Prices" series={pickSeries(allSeriesById, ENERGY_CHART_IDS)} />
-            <GroupedMetricTiles series={sector.series} compact />
-          </div>
-        </section>
-      )}
+          {capital && (
+            <section className="mt-5">
+              <SectionHeading section={capital} />
+              <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
+                <ChartPanel title="Rates" series={pickSeries(allSeriesById, RATE_CHART_IDS)} />
+                <ChartPanel title="Credit Spreads" series={pickSeries(allSeriesById, CREDIT_CHART_IDS)} />
+                <ChartPanel title="Volatility" series={pickSeries(allSeriesById, VOL_CHART_IDS)} />
+                <CompactMetricGrid
+                  title="Funding / Public Comps"
+                  series={capital.series.filter((item) => ["Funding", "Public Comps"].includes(item.metric.group))}
+                />
+                <CompactMetricGrid
+                  title="Curves / Inflation"
+                  series={capital.series.filter((item) => item.metric.group === "Rates" && !(RATE_CHART_IDS as readonly string[]).includes(item.metric.id))}
+                />
+              </div>
+            </section>
+          )}
 
-      <section className="mt-5 grid grid-cols-1 gap-3 xl:grid-cols-2">
-        {policy && (
-          <SignalsTable
-            title={policy.title}
-            summary={policy.summary}
-            signals={policy.signals}
-            series={policy.series}
-          />
-        )}
-        {dealFriction && (
-          <SignalsTable
-            title={dealFriction.title}
-            summary={dealFriction.summary}
-            signals={dealFriction.signals}
-            series={dealFriction.series}
-          />
-        )}
-      </section>
+          {macro && (
+            <section className="mt-5">
+              <SectionHeading section={macro} />
+              <GroupedMetricTiles series={macro.series} />
+            </section>
+          )}
+
+          {sector && (
+            <section className="mt-5">
+              <SectionHeading section={sector} />
+              <div className="grid grid-cols-1 gap-3 xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
+                <ChartPanel title="Energy Prices" series={pickSeries(allSeriesById, ENERGY_CHART_IDS)} />
+                <GroupedMetricTiles series={sector.series} compact />
+              </div>
+            </section>
+          )}
+
+          <section className="mt-5 grid grid-cols-1 gap-3 xl:grid-cols-2">
+            {policy && (
+              <SignalsTable
+                title={policy.title}
+                summary={policy.summary}
+                signals={policy.signals}
+                series={policy.series}
+              />
+            )}
+            {dealFriction && (
+              <SignalsTable
+                title={dealFriction.title}
+                summary={dealFriction.summary}
+                signals={dealFriction.signals}
+                series={dealFriction.series}
+              />
+            )}
+          </section>
+        </>
+      )}
 
       <section className="mt-5">
         <SourceHealthTable view={view} />
       </section>
     </div>
   );
+}
+
+function dashboardOperationalTitle(state: DashboardView["operations"]["state"]): string {
+  if (state === "failed") return "Dashboard synchronization failed";
+  if (state === "pending") return "Dashboard synchronization in progress";
+  if (state === "overdue") return "Dashboard synchronization overdue";
+  return "Dashboard synchronization not recorded";
+}
+
+function dashboardEmptyStateTitle(state: DashboardView["operations"]["state"]): string {
+  if (state === "failed") return "Dashboard synchronization failed";
+  if (state === "pending") return "Dashboard synchronization in progress";
+  if (state === "overdue") return "Dashboard synchronization overdue";
+  if (state === "healthy") return "Synchronization completed without public data";
+  return "Dashboard data pending";
 }
 
 function DashboardHeader({ view }: { view: DashboardView }) {
@@ -164,13 +197,6 @@ function DashboardHeader({ view }: { view: DashboardView }) {
     }, new Map<string, DashboardView["sourceHealth"][number]>()),
   ).map(([, run]) => run);
   const successfulRuns = latestBySource.filter((run) => run.status === "SUCCESS" || run.status === "PARTIAL");
-  const latestSuccessfulRun = successfulRuns
-    .map((run) => run.endedAt ?? run.startedAt)
-    .sort()
-    .at(-1);
-  const nextExpected = latestSuccessfulRun
-    ? new Date(new Date(latestSuccessfulRun).getTime() + 24 * 60 * 60 * 1000).toISOString().slice(0, 10)
-    : "Pending";
   const availableSeries = view.allSeries.filter((series) => !series.unavailable).length;
 
   return (
@@ -204,8 +230,16 @@ function DashboardHeader({ view }: { view: DashboardView }) {
         </div>
         <dl className="mt-5 grid grid-cols-2 gap-2 lg:grid-cols-4" aria-label="Dashboard data operations summary">
           {[
-            { label: "Last successful run", value: latestSuccessfulRun?.slice(0, 10) ?? "Not recorded" },
-            { label: "Next expected", value: nextExpected },
+            {
+              label: "Last successful run",
+              value: view.operations.lastSuccessfulAt
+                ? formatScheduledDateTime(view.operations.lastSuccessfulAt, "America/New_York")
+                : "Not recorded",
+            },
+            {
+              label: "Next expected",
+              value: formatScheduledDateTime(view.operations.nextExpectedAt, "America/New_York"),
+            },
             { label: "Metric availability", value: `${availableSeries}/${view.allSeries.length}` },
             { label: "Source coverage", value: `${successfulRuns.length}/${latestBySource.length || 0}` },
           ].map((metric) => (

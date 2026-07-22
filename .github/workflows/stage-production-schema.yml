@@ -44,8 +44,10 @@ jobs:
       EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
       FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
       EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
       EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
+      DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}
       RELEASE_SHA: ${{ inputs.release_sha }}
       PRODUCTION_APP_SHA: ${{ inputs.production_app_sha }}
       MIGRATION_BASE_SHA: ${{ inputs.migration_base_sha }}
@@ -53,6 +55,13 @@ jobs:
       PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
       CONFIRMATION: ${{ inputs.confirmation }}
     steps:
+      - name: Require protected workflow ref
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Production schema workflows must be dispatched from refs/heads/main."
+            exit 1
+          fi
+
       - name: Require explicit schema authorization
         run: |
           if [ "$CONFIRMATION" != "STAGE" ]; then
@@ -63,7 +72,7 @@ jobs:
       - name: Checkout approved release
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ inputs.release_sha }}
+          ref: refs/heads/main
           fetch-depth: 0
           persist-credentials: false
 
@@ -87,6 +96,10 @@ jobs:
           fi
           git merge-base --is-ancestor "$MIGRATION_BASE_SHA" "$RELEASE_SHA" || {
             echo "::error::migration_base_sha must be an ancestor of release_sha."
+            exit 1
+          }
+          git merge-base --is-ancestor "$PRODUCTION_APP_SHA" "$RELEASE_SHA" || {
+            echo "::error::production_app_sha must be an ancestor of release_sha."
             exit 1
           }
 
@@ -126,6 +139,10 @@ jobs:
           test -n "$EXPECTED_VERCEL_PROJECT_ID" || { echo "::error::VERCEL_PROJECT_ID is required."; exit 1; }
           test -n "$EXPECTED_GITHUB_REPOSITORY_ID" || { echo "::error::GitHub repository ID is required."; exit 1; }
           test -n "$PRODUCTION_URL" || { echo "::error::PRODUCTION_URL is required."; exit 1; }
+          if [ "$DASHBOARD_WRITES_ENABLED" != "false" ]; then
+            echo "::error::DASHBOARD_WRITES_ENABLED must exactly equal false throughout schema staging and reviewed dashboard cutovers."
+            exit 1
+          fi
           node - <<'NODE'
           const value = process.env.PRODUCTION_URL;
           const parsed = new URL(value);
@@ -150,6 +167,7 @@ jobs:
           --expected-sha="$PRODUCTION_APP_SHA"
           --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID"
           --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID"
+          --team-id="$VERCEL_TEAM_ID"
           --output=tmp/schema-stage/production-app-inspect.json
 
       - name: Prove the applied production migration baseline
@@ -163,7 +181,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
-          node --experimental-strip-types scripts/verify-release-provenance.ts \
+          ./node_modules/.bin/tsx scripts/verify-release-provenance.ts \
             --release-sha="$RELEASE_SHA" \
             --branch=main \
             --required-check=build \
@@ -179,23 +197,31 @@ jobs:
             --expected-sha="$PRODUCTION_APP_SHA" \
             --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
             --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
             --output=tmp/schema-stage/production-app-inspect-before-write.json
           node --experimental-strip-types scripts/verify-migration-baseline.ts \
             --base-sha="$MIGRATION_BASE_SHA" \
             --output=tmp/schema-stage/migration-baseline-before-write.json
-          npx prisma migrate deploy 2>&1 | tee tmp/schema-stage/migrate-deploy.log
-          npx tsx scripts/quarantine-dashboard-methodology-history.ts 2>&1 | tee tmp/schema-stage/dashboard-methodology-cutover.log
-          npx tsx scripts/backfill-dashboard-signal-approvals.ts 2>&1 | tee tmp/schema-stage/dashboard-signal-backfill.log
-          npx prisma migrate status 2>&1 | tee tmp/schema-stage/migrate-status.log
-          npx prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/schema-stage/schema-drift.log
+          ./node_modules/.bin/prisma migrate deploy 2>&1 | tee tmp/schema-stage/migrate-deploy.log
+          node --experimental-strip-types scripts/verify-migration-baseline.ts \
+            --base-sha="$RELEASE_SHA" \
+            --output=tmp/schema-stage/migration-baseline-after-write.json
+          ./node_modules/.bin/prisma migrate status 2>&1 | tee tmp/schema-stage/migrate-status.log
+          ./node_modules/.bin/prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/schema-stage/schema-drift.log
 
       - name: Record post-stage remediation backlogs without blocking additive schema compatibility
         shell: bash
         run: |
           set -o pipefail
-          npx tsx scripts/report-primary-citation-remediation.ts --output=tmp/schema-stage/primary-citation-approval-template.json
-          npx tsx scripts/source-coverage-report.ts --output=tmp/schema-stage/source-coverage.json
-          npx tsx scripts/report-company-merge-candidates.ts \
+          ./node_modules/.bin/tsx scripts/quarantine-dashboard-methodology-history.ts \
+            --output=tmp/schema-stage/dashboard-methodology-cutover-approval-template.json \
+            2>&1 | tee tmp/schema-stage/dashboard-methodology-cutover-report.log
+          ./node_modules/.bin/tsx scripts/backfill-dashboard-signal-approvals.ts \
+            --output=tmp/schema-stage/dashboard-signal-backfill-approval-template.json \
+            2>&1 | tee tmp/schema-stage/dashboard-signal-backfill-report.log
+          ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts --output=tmp/schema-stage/primary-citation-approval-template.json
+          ./node_modules/.bin/tsx scripts/source-coverage-report.ts --output=tmp/schema-stage/source-coverage.json
+          ./node_modules/.bin/tsx scripts/report-company-merge-candidates.ts \
             --published-only \
             --approval-output=tmp/schema-stage/company-merge-approval-template.json \
             > tmp/schema-stage/company-canonical-review.md

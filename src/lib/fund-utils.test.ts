@@ -1,10 +1,16 @@
 import { describe, it, expect } from "vitest";
-import { matchesSizeRange, groupFundsByManager, getFundStats, paginateManagerGroups } from "./fund-utils";
+import {
+  compareOptionalNumbersUnknownLast,
+  matchesSizeRange,
+  groupFundsByManager,
+  getFundStats,
+  paginateManagerGroups,
+} from "./fund-utils";
 
 describe("matchesSizeRange", () => {
-  it("returns true when size is null (unknown)", () => {
-    expect(matchesSizeRange(null, "< $500M")).toBe(true);
-    expect(matchesSizeRange(null, "$10B+")).toBe(true);
+  it("excludes an unknown size from numeric ranges", () => {
+    expect(matchesSizeRange(null, "< $500M")).toBe(false);
+    expect(matchesSizeRange(null, "$10B+")).toBe(false);
   });
 
   it("classifies < $500M correctly", () => {
@@ -40,6 +46,17 @@ describe("matchesSizeRange", () => {
 
   it("returns true for unknown range labels (passthrough)", () => {
     expect(matchesSizeRange(1234, "bogus")).toBe(true);
+  });
+});
+
+describe("compareOptionalNumbersUnknownLast", () => {
+  it("keeps unknown values last in ascending and descending order", () => {
+    const values = [null, 2024, 2022, null];
+
+    expect([...values].sort((a, b) => compareOptionalNumbersUnknownLast(a, b, true)))
+      .toEqual([2022, 2024, null, null]);
+    expect([...values].sort((a, b) => compareOptionalNumbersUnknownLast(a, b, false)))
+      .toEqual([2024, 2022, null, null]);
   });
 });
 

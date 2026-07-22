@@ -195,7 +195,16 @@ describe("cross-database search integration", () => {
     const results = await searchAll("Brookfield");
 
     expect(mocks.deals.mock.calls[2][0].where.OR).toEqual(expect.arrayContaining([
-      expect.objectContaining({ participants: expect.any(Object) }),
+      expect.objectContaining({
+        participants: {
+          some: {
+            OR: [
+              { displayName: { contains: "Brookfield", mode: "insensitive" } },
+              { organization: { name: { contains: "Brookfield", mode: "insensitive" } } },
+            ],
+          },
+        },
+      }),
     ]));
     expect(results).toEqual([expect.objectContaining({ type: "deal", id: "DEAL-BUYER" })]);
   });

@@ -9,6 +9,8 @@ import { parseDealSortField, sortDeals, type DealSortField } from "@/modules/dea
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import { track } from "@vercel/analytics";
 import { subscribeToDetailCacheInvalidation } from "@/lib/detail-cache-events";
+import { BoundedDetailCache } from "@/lib/detail-cache";
+import { useFreshDetail } from "@/hooks/useFreshDetail";
 
 // ─── Buyer display shortening ──────────────────────────────
 // Purely cosmetic: shortens canonical fund/buyer names for compact table cells
@@ -123,16 +125,13 @@ function mostCommonLabel(items: string[]): { label: string; count: number } | nu
     .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))[0] ?? null;
 }
 
-const dealDetailCache = new Map<string, { data: DealView; meta: RecordMeta }>();
+const dealDetailCache = new BoundedDetailCache<DealView>();
 
 function dealDetailShell(deal: DealListItem): DealView {
   return {
     ...deal,
-    title: deal.target,
     description: "",
     targetDescription: "",
-    sourceName: "",
-    sourceUrl: "",
     enterpriseValue: null,
     equityValue: null,
     stake: null,
@@ -169,7 +168,7 @@ import {
 } from "lucide-react";
 import { DynamicInsightsHero } from "./DealDatabase/DynamicInsightsHero";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam, useUrlQueryState, useUrlQueryWriter, useUrlQueryParamsWriter } from "@/hooks/useUrlFilterSet";
+import { useUrlFilterSet, useUrlQueryParam, useUrlQueryState, useUrlQueryWriter, useUrlQueryParamsWriter } from "@/hooks/useUrlFilterSet";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
@@ -607,6 +606,7 @@ function DealTable({
         pageSize={DEAL_PAGE_SIZE}
         totalItems={sorted.length}
         onPageChange={(next) => setPageParam(String(next))}
+        resultHeadingId="deal-results-heading"
       />
     </>
   );
@@ -932,26 +932,39 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
   const [activeRegions, toggleRegion] = useUrlFilterSet("region");
   const [activeCategories, toggleCategory] = useUrlFilterSet("category");
   const [selectedDeal, setSelectedDeal] = useState<DealListItem | null>(null);
-  const [selectedDealDetail, setSelectedDealDetail] = useState<DealView | null>(null);
-  const [detailMeta, setDetailMeta] = useState<RecordMeta | null>(null);
-  const [detailState, setDetailState] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [detailRequest, setDetailRequest] = useState(0);
 
   useEffect(() => subscribeToDetailCacheInvalidation("deal", () => {
     dealDetailCache.clear();
     setDetailRequest((value) => value + 1);
   }), []);
+  const {
+    detail: selectedDealDetail,
+    meta: detailMeta,
+    state: detailState,
+  } = useFreshDetail<DealView>({
+    cache: dealDetailCache,
+    cacheKey: selectedDeal?.legacyId ?? null,
+    requestUrl: selectedDeal
+      ? withBasePath(`/api/deals/${encodeURIComponent(selectedDeal.legacyId)}`)
+      : null,
+    requestVersion: detailRequest,
+  });
   const writeQuery = useUrlQueryWriter();
+  const writeQueryParams = useUrlQueryParamsWriter();
   const canExport = useCanExport();
 
   // Debounce search for performance
   const debouncedSearch = useDebounce(search, 300);
 
-  const clearAllUrlFilters = useClearUrlFilters(["sector", "region", "category"]);
   const clearAllFilters = useCallback(() => {
-    clearAllUrlFilters();
-    setSearch("");
-  }, [clearAllUrlFilters, setSearch]);
+    writeQueryParams({
+      q: null,
+      sector: null,
+      region: null,
+      category: null,
+    }, { resetPage: true });
+  }, [writeQueryParams]);
 
   const filteredDeals = useMemo(() => {
     return deals.filter((deal) => {
@@ -999,8 +1012,8 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
       },
       {
         label: "Latest disclosure",
-        value: latestDealDateLabel(filteredDeals.length > 0 ? filteredDeals : deals),
-        detail: "Most recent matching deal",
+        value: filteredDeals.length > 0 ? latestDealDateLabel(filteredDeals) : "N/A",
+        detail: filteredDeals.length > 0 ? "Most recent matching deal" : "No matching disclosure",
         color: "#3b6cf2",
       },
       {
@@ -1033,8 +1046,6 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
   useEffect(() => {
     if (!focusId) {
       if (openedFocus.current) setSelectedDeal(null);
-      setSelectedDealDetail(null);
-      setDetailMeta(null);
       openedFocus.current = null;
       return;
     }
@@ -1043,40 +1054,12 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
     if (match) {
       setSelectedDeal(match);
       openedFocus.current = focusId;
-    }
-  }, [focusId, deals]);
-
-  useEffect(() => {
-    if (!selectedDeal) {
-      setSelectedDealDetail(null);
-      setDetailState("idle");
       return;
     }
-    const cached = dealDetailCache.get(selectedDeal.legacyId);
-    if (cached) {
-      setSelectedDealDetail(cached.data);
-      setDetailMeta(cached.meta);
-      setDetailState("ready");
-      return;
-    }
-    let cancelled = false;
-    setSelectedDealDetail(null);
-    setDetailMeta(null);
-    setDetailState("loading");
-    fetch(withBasePath(`/api/deals/${encodeURIComponent(selectedDeal.legacyId)}`))
-      .then((response) => response.ok ? response.json() : null)
-      .then((response) => {
-        if (cancelled) return;
-        if (response?.data) {
-          dealDetailCache.set(selectedDeal.legacyId, response);
-          setSelectedDealDetail(response.data);
-          setDetailMeta(response.meta);
-          setDetailState("ready");
-        } else setDetailState("error");
-      })
-      .catch(() => !cancelled && setDetailState("error"));
-    return () => { cancelled = true; };
-  }, [selectedDeal, detailRequest]);
+    setSelectedDeal(null);
+    openedFocus.current = null;
+    writeQuery("focus", null);
+  }, [focusId, deals, writeQuery]);
 
   const openDeal = useCallback((deal: DealListItem) => {
     setSelectedDeal(deal);
@@ -1087,9 +1070,6 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
 
   const closeDeal = useCallback(() => {
     setSelectedDeal(null);
-    setSelectedDealDetail(null);
-    setDetailMeta(null);
-    setDetailState("idle");
     openedFocus.current = null;
     writeQuery("focus", null);
   }, [writeQuery]);
@@ -1127,11 +1107,11 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
 
       <div className="surface overflow-hidden">
         <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-[var(--border)]">
-          <span className="type-micro">
+          <h2 id="deal-results-heading" tabIndex={-1} aria-label="Deal results" className="scroll-mt-20 type-micro outline-none">
             <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredDeals.length}</span>
             {" "}of{" "}
             <span className="mono text-[var(--text-secondary)] tabular-nums">{deals.length}</span> deals
-          </span>
+          </h2>
           <div className="flex flex-wrap items-center justify-end gap-1">
             {canExport && (
               <a

@@ -31,6 +31,11 @@ describe("dashboard operational workflows", () => {
     expect(release).toContain("--require-immutable-url");
     expect(release).toContain('promote "$deployment_id"');
     expect(release).toContain('--token "$VERCEL_TOKEN"');
+    expect(pipeline).toContain("group: production-release");
+    expect(schemaStage).toContain("DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}");
+    expect(schemaStage).toContain('if [ "$DASHBOARD_WRITES_ENABLED" != "false" ]');
+    expect(schemaStage.indexOf('if [ "$DASHBOARD_WRITES_ENABLED" != "false" ]'))
+      .toBeLessThan(schemaStage.indexOf("npm ci"));
   });
 
   it("separates the live application from the applied migration baseline", () => {
@@ -43,6 +48,10 @@ describe("dashboard operational workflows", () => {
     expect(schemaStage).toContain("production-app-inspect.json");
     expect(schemaStage).toContain("production-app-inspect-before-write.json");
     expect(schemaStage).toContain("migration-baseline-before-write.json");
+    expect(schemaStage).toContain("migration-baseline-after-write.json");
+    expect(schemaStage).toContain('git merge-base --is-ancestor "$MIGRATION_BASE_SHA" "$RELEASE_SHA"');
+    expect(schemaStage).not.toContain('git merge-base --is-ancestor "$MIGRATION_BASE_SHA" "$PRODUCTION_APP_SHA"');
+    expect(schemaStage).toContain('git merge-base --is-ancestor "$PRODUCTION_APP_SHA" "$RELEASE_SHA"');
     expect(schemaStage).toContain("PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}");
     expect(schemaStage).not.toContain("production_base_sha");
   });
@@ -53,6 +62,9 @@ describe("dashboard operational workflows", () => {
     expect(rollback).toContain("--require-immutable-url");
     expect(rollback).toContain('rollback "$deployment_id"');
     expect(rollback).toContain("PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}");
+    expect(rollback).toContain("canonical-production-inspect.json");
+    expect(rollback).toContain('--expected-sha="$ROLLBACK_SHA"');
+    expect(rollback).toContain('--expected-version="$ROLLBACK_SHA"');
     expect(rollback).not.toContain("vercel@51.7.0 inspect");
   });
 });

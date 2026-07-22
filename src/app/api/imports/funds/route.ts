@@ -19,7 +19,12 @@ import type {
   FundSectorEnum,
   FundRegionEnum,
 } from "@/generated/prisma/client";
-import { commitImport, sanitizeImportError } from "@/modules/imports/commit";
+import { commitImport } from "@/modules/imports/commit";
+import {
+  ImportConflictError,
+  ImportRequestError,
+  importUserErrorDetails,
+} from "@/modules/imports/user-error";
 import {
   consumeImportPreviewToken,
   createImportPreviewToken,
@@ -156,7 +161,7 @@ async function parseRequestBody(request: NextRequest): Promise<Record<string, un
     const formData = await request.formData();
     const file = formData.get("file") as File | null;
     if (!file) {
-      throw new Error("No file provided in form data");
+      throw new ImportRequestError("No file provided in form data");
     }
     const csvText = await file.text();
     return parseCsv(csvText).map((row, index) => ({
@@ -177,7 +182,7 @@ async function parseRequestBody(request: NextRequest): Promise<Record<string, un
     const funds = (body as { funds?: unknown }).funds;
     if (Array.isArray(funds)) return funds as Record<string, unknown>[];
   }
-  throw new Error("Request body must contain a 'funds' array or be a JSON array");
+  throw new ImportRequestError("Request body must contain a 'funds' array or be a JSON array");
 }
 
 async function importFunds(request: NextRequest) {
@@ -340,7 +345,7 @@ async function importFunds(request: NextRequest) {
             // Guard against a concurrent review/publish transition after the
             // initial lookup. Throwing rolls the entire import transaction back.
             if (updateResult.count !== 1) {
-              throw new Error("Fund import review-state changed during commit");
+              throw new ImportConflictError("Fund import review state changed during commit. Preview the file again.");
             }
             dbId = existingFund.id;
             updated += 1;
@@ -389,7 +394,10 @@ async function importFunds(request: NextRequest) {
     if (error instanceof ImportPreviewTokenError) {
       return NextResponse.json({ error: error.message }, { status: 409 });
     }
-    console.error("Fund import failed:", sanitizeImportError(error));
+    const userError = importUserErrorDetails(error);
+    if (userError) {
+      return NextResponse.json({ error: userError.message }, { status: userError.status });
+    }
     return NextResponse.json(
       { error: "Failed to import funds" },
       { status: 500 },

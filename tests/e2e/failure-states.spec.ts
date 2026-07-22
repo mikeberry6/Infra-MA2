@@ -1,6 +1,8 @@
 import { expect, test } from "@playwright/test";
 import { appPath, waitForApplication } from "./helpers";
 
+const TOP_LEVEL_FAILURE_FIXTURE = "E2E_TOP_LEVEL_FAILURE_FIXTURE";
+
 test.describe("public failure and retry journeys", () => {
   const databases = [
     {
@@ -51,3 +53,64 @@ test.describe("public failure and retry journeys", () => {
     });
   }
 });
+
+test.describe("top-level database failure and retry journeys", () => {
+  const routes = [
+    { path: "/tracker", title: "Deal data could not be loaded." },
+    { path: "/funds", title: "Fund data could not be loaded." },
+    { path: "/portfolio", title: "Portfolio company data could not be loaded." },
+    { path: "/news", title: "News feed data could not be loaded." },
+    { path: "/dashboard", title: "Dashboard data could not be loaded." },
+  ] as const;
+
+  for (const route of routes) {
+    test(`${route.path} distinguishes a database failure and retries the top-level query`, async ({ page }) => {
+      test.skip(
+        process.env[TOP_LEVEL_FAILURE_FIXTURE] !== "1",
+        `Set ${TOP_LEVEL_FAILURE_FIXTURE}=1 with PLAYWRIGHT_BASE_URL pointing to a loopback-only local server whose test DATABASE_URL is deliberately unreachable`,
+      );
+      assertLoopbackFailureFixture();
+
+      let routeRequests = 0;
+      page.on("request", (request) => {
+        const url = new URL(request.url());
+        if (request.method() === "GET" && url.pathname === appPath(route.path)) routeRequests += 1;
+      });
+
+      await page.goto(appPath(route.path));
+      const alert = page.getByRole("alert");
+      await expect(alert.getByRole("heading", { name: route.title })).toBeVisible();
+      await expect(alert).toContainText("not showing an empty result set");
+      const retry = alert.getByRole("link", { name: "Try again" });
+      await expect(retry).toHaveAttribute("href", appPath(route.path));
+      await expect(alert.getByRole("link", { name: "Contact research" })).toHaveAttribute(
+        "href",
+        "mailto:research@infrasight.com",
+      );
+
+      const requestsBeforeRetry = routeRequests;
+      await retry.click();
+      await expect.poll(() => routeRequests).toBeGreaterThan(requestsBeforeRetry);
+      await expect(page.getByRole("alert").getByRole("heading", { name: route.title })).toBeVisible();
+    });
+  }
+});
+
+/**
+ * Server Components execute top-level Prisma/provider-state queries before
+ * browser routing can intercept them. This fixture therefore uses the
+ * existing PLAYWRIGHT_BASE_URL mechanism and a separate local failure server,
+ * never a production failure toggle. Persisted aggregate provider failures
+ * still require an isolated seeded database; drawer provider retries above
+ * remain fully deterministic through Playwright's browser API interception.
+ */
+function assertLoopbackFailureFixture(): void {
+  const configured = process.env.PLAYWRIGHT_BASE_URL;
+  if (!configured) {
+    throw new Error(`${TOP_LEVEL_FAILURE_FIXTURE}=1 requires PLAYWRIGHT_BASE_URL.`);
+  }
+  const url = new URL(configured);
+  if (url.protocol !== "http:" || !["127.0.0.1", "localhost", "::1", "[::1]"].includes(url.hostname)) {
+    throw new Error("Top-level failure E2E is restricted to a loopback-only HTTP application server.");
+  }
+}

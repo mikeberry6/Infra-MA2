@@ -3,6 +3,8 @@
 import { prisma } from "@/lib/prisma";
 import { revalidateAppData } from "@/lib/revalidation";
 import { parseDateInput } from "@/lib/format";
+import { currentServerRequestId } from "@/lib/server-request-context";
+import { logServerFailure } from "@/lib/server-log";
 import { isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { recordAuditEvent } from "@/modules/operations/audit";
 import {
@@ -13,7 +15,13 @@ import {
   statusAfterEditorialEdit,
 } from "@/modules/admin/workflow";
 import { draftDeletionBlockReason, toAuditSnapshot } from "@/modules/admin/deletion";
-import { hasReviewedSellerTreatment } from "@/modules/deals/seller-disclosure";
+import { AdminActionUserError, adminActionErrorMessage } from "@/modules/admin/action-error";
+import {
+  missingCompanyPublicationFields,
+  missingDealPublicationFields,
+  missingFundPublicationFields,
+  normalizeFundLookup,
+} from "@/modules/operations/publication-integrity";
 import { dealSchema, fundSchema, companySchema, ownershipPeriodSchema } from "./schemas";
 import {
   DEAL_SECTOR_MAP,
@@ -49,6 +57,11 @@ type ActionResult = { success: boolean; error?: string; id?: string };
 
 // ── Helpers ───────────────────────────────────────────────────
 
+async function logAdminActionFailure(operation: string, error: unknown): Promise<void> {
+  const requestId = await currentServerRequestId();
+  logServerFailure({ task: "admin_action", operation, requestId }, error);
+}
+
 // Accept either repeated form fields (formData.append("key", "v1");
 // formData.append("key", "v2")) or a single comma-separated string.
 // Multi-value form is preferred when entries may themselves contain commas
@@ -83,14 +96,6 @@ async function findFundByVehicleName(vehicleName: string): Promise<string | null
   const all = await prisma.fund.findMany({ select: { id: true, fundName: true } });
   const hit = all.find((f) => normalizeFundLookup(f.fundName) === target);
   return hit?.id ?? null;
-}
-
-function normalizeFundLookup(s: string): string {
-  return s
-    .toLowerCase()
-    .replace(/[^\w\s]/g, " ") // strip punctuation (keeps roman numerals as-is)
-    .replace(/\s+/g, " ")
-    .trim();
 }
 
 function revalidateAll() {
@@ -281,8 +286,8 @@ export async function createDeal(formData: FormData): Promise<ActionResult> {
     revalidateAll();
     return { success: true, id: deal.id };
   } catch (error) {
-    console.error("createDeal error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to create deal" };
+    await logAdminActionFailure("create_deal", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to create deal") };
   }
 }
 
@@ -368,7 +373,7 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
         },
       });
       if (updateResult.count !== 1) {
-        throw new Error("Deal workflow state changed during edit");
+        throw new AdminActionUserError("Deal workflow state changed during edit");
       }
       // Replace buyer/seller participants. Advisor participants are managed
       // elsewhere (advisor-card UI) so we leave those rows alone.
@@ -412,8 +417,8 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("updateDeal error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to update deal" };
+    await logAdminActionFailure("update_deal", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to update deal") };
   }
 }
 
@@ -424,7 +429,7 @@ export async function deleteDeal(id: string): Promise<ActionResult> {
 
     await prisma.$transaction(async (tx) => {
       const deal = await tx.deal.findUnique({ where: { id } });
-      if (!deal) throw new Error("Deal not found");
+      if (!deal) throw new AdminActionUserError("Deal not found");
       const publicationAuditCount = await tx.auditEvent.count({
         where: { entityType: "Deal", entityId: id, action: { in: ["PUBLISH", "VERIFY"] } },
       });
@@ -439,7 +444,7 @@ export async function deleteDeal(id: string): Promise<ActionResult> {
         publicationAuditCount,
         blockingDependencies: { "news mentions": newsMentionCount },
       });
-      if (blockReason) throw new Error(blockReason);
+      if (blockReason) throw new AdminActionUserError(blockReason);
 
       await recordAuditEvent({
         entityType: "Deal",
@@ -455,13 +460,15 @@ export async function deleteDeal(id: string): Promise<ActionResult> {
       const deleted = await tx.deal.deleteMany({
         where: { id, status: "DRAFT", updatedAt: deal.updatedAt },
       });
-      if (deleted.count !== 1) throw new Error("Deal changed while deletion was in progress");
+      if (deleted.count !== 1) {
+        throw new AdminActionUserError("Deal changed while deletion was in progress");
+      }
     }, { isolationLevel: "Serializable" });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("deleteDeal error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to delete deal" };
+    await logAdminActionFailure("delete_deal", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to delete deal") };
   }
 }
 
@@ -490,20 +497,7 @@ export async function publishDeal(id: string): Promise<ActionResult> {
     if (!canPublish(deal.status)) {
       return { success: false, error: "Publication requires an in-review record." };
     }
-    const missing = [
-      !deal.target.trim() && "target",
-      !deal.country.trim() && "country",
-      !deal.date && "date",
-      !deal.dealStatus && "transaction status",
-      deal.categories.length === 0 && "category",
-      !deal.participants.some((participant) => participant.role === "BUYER") && "buyer",
-      !hasReviewedSellerTreatment({
-        sellerCount: deal.participants.filter((participant) => participant.role === "SELLER").length,
-        status: deal.sellerDisclosureStatus,
-        reason: deal.sellerDisclosureReason,
-      }) && "seller or reviewed seller-disclosure reason",
-      deal.citations.length === 0 && "primary citation",
-    ].filter(Boolean);
+    const missing = missingDealPublicationFields(deal);
     if (missing.length > 0) {
       return { success: false, error: `Publication blocked. Missing: ${missing.join(", ")}.` };
     }
@@ -512,14 +506,16 @@ export async function publishDeal(id: string): Promise<ActionResult> {
         where: { id, status: "IN_REVIEW", updatedAt: deal.updatedAt },
         data: { status: "PUBLISHED", lastVerifiedAt: new Date() },
       });
-      if (updated.count !== 1) throw new Error("Deal workflow state changed during publication");
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Deal workflow state changed during publication");
+      }
       await auditMutation("Deal", id, "PUBLISH", ["status", "lastVerifiedAt"], tx);
     });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("publishDeal error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to publish deal" };
+    await logAdminActionFailure("publish_deal", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to publish deal") };
   }
 }
 
@@ -547,20 +543,7 @@ export async function verifyDeal(id: string): Promise<ActionResult> {
     if (!canVerify(deal.status)) {
       return { success: false, error: "Only published deals can be verified." };
     }
-    const missing = [
-      !deal.target.trim() && "target",
-      !deal.country.trim() && "country",
-      !deal.date && "date",
-      !deal.dealStatus && "transaction status",
-      deal.categories.length === 0 && "category",
-      !deal.participants.some((participant) => participant.role === "BUYER") && "buyer",
-      !hasReviewedSellerTreatment({
-        sellerCount: deal.participants.filter((participant) => participant.role === "SELLER").length,
-        status: deal.sellerDisclosureStatus,
-        reason: deal.sellerDisclosureReason,
-      }) && "seller or reviewed seller-disclosure reason",
-      deal.citations.length === 0 && "primary citation",
-    ].filter(Boolean);
+    const missing = missingDealPublicationFields(deal);
     if (missing.length > 0) {
       return { success: false, error: `Verification blocked. Missing: ${missing.join(", ")}.` };
     }
@@ -569,14 +552,16 @@ export async function verifyDeal(id: string): Promise<ActionResult> {
         where: { id, status: "PUBLISHED", updatedAt: deal.updatedAt },
         data: { lastVerifiedAt: new Date() },
       });
-      if (updated.count !== 1) throw new Error("Deal workflow state changed during verification");
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Deal workflow state changed during verification");
+      }
       await auditMutation("Deal", id, "VERIFY", ["lastVerifiedAt"], tx);
     });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("verifyDeal error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to verify deal" };
+    await logAdminActionFailure("verify_deal", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to verify deal") };
   }
 }
 
@@ -594,14 +579,16 @@ export async function submitDealForReview(id: string): Promise<ActionResult> {
         where: { id, status: "DRAFT" },
         data: { status: "IN_REVIEW" },
       });
-      if (updated.count !== 1) throw new Error("Deal workflow state changed during submission");
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Deal workflow state changed during submission");
+      }
       await auditMutation("Deal", id, "SUBMIT_FOR_REVIEW", ["status"], tx);
     });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("submitDealForReview error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to submit deal" };
+    await logAdminActionFailure("submit_deal_for_review", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to submit deal") };
   }
 }
 
@@ -617,14 +604,16 @@ export async function archiveDeal(id: string): Promise<ActionResult> {
         where: { id, status: deal.status },
         data: { status: "ARCHIVED" },
       });
-      if (updated.count !== 1) throw new Error("Deal workflow state changed during archival");
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Deal workflow state changed during archival");
+      }
       await auditMutation("Deal", id, "ARCHIVE", ["status"], tx);
     });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("archiveDeal error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to archive deal" };
+    await logAdminActionFailure("archive_deal", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to archive deal") };
   }
 }
 
@@ -686,8 +675,8 @@ export async function createFund(formData: FormData): Promise<ActionResult> {
     revalidateAll();
     return { success: true, id: fund.id };
   } catch (error) {
-    console.error("createFund error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to create fund" };
+    await logAdminActionFailure("create_fund", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to create fund") };
   }
 }
 
@@ -751,7 +740,7 @@ export async function updateFund(id: string, formData: FormData): Promise<Action
         },
       });
       if (updateResult.count !== 1) {
-        throw new Error("Fund workflow state changed during edit");
+        throw new AdminActionUserError("Fund workflow state changed during edit");
       }
       await auditMutation(
         "Fund",
@@ -765,8 +754,8 @@ export async function updateFund(id: string, formData: FormData): Promise<Action
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("updateFund error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to update fund" };
+    await logAdminActionFailure("update_fund", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to update fund") };
   }
 }
 
@@ -777,7 +766,7 @@ export async function deleteFund(id: string): Promise<ActionResult> {
 
     await prisma.$transaction(async (tx) => {
       const fund = await tx.fund.findUnique({ where: { id } });
-      if (!fund) throw new Error("Fund not found");
+      if (!fund) throw new AdminActionUserError("Fund not found");
       const publicationAuditCount = await tx.auditEvent.count({
         where: { entityType: "Fund", entityId: id, action: { in: ["PUBLISH", "VERIFY"] } },
       });
@@ -792,7 +781,7 @@ export async function deleteFund(id: string): Promise<ActionResult> {
           "news mentions": newsMentionCount,
         },
       });
-      if (blockReason) throw new Error(blockReason);
+      if (blockReason) throw new AdminActionUserError(blockReason);
 
       await recordAuditEvent({
         entityType: "Fund",
@@ -803,13 +792,15 @@ export async function deleteFund(id: string): Promise<ActionResult> {
       const deleted = await tx.fund.deleteMany({
         where: { id, status: "DRAFT", updatedAt: fund.updatedAt },
       });
-      if (deleted.count !== 1) throw new Error("Fund changed while deletion was in progress");
+      if (deleted.count !== 1) {
+        throw new AdminActionUserError("Fund changed while deletion was in progress");
+      }
     }, { isolationLevel: "Serializable" });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("deleteFund error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to delete fund" };
+    await logAdminActionFailure("delete_fund", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to delete fund") };
   }
 }
 
@@ -836,14 +827,7 @@ export async function publishFund(id: string): Promise<ActionResult> {
     if (!canPublish(fund.status)) {
       return { success: false, error: "Publication requires an in-review record." };
     }
-    const missing = [
-      !fund.managerId && "manager",
-      !fund.fundName.trim() && "fund vehicle",
-      fund.strategies.length === 0 && "strategy",
-      !fund.fundStatus && "status",
-      !fund.size.trim() && "size basis or TBD",
-      fund.sourceUrls.length === 0 && !fund.strategyUrl.trim() && "primary source",
-    ].filter(Boolean);
+    const missing = missingFundPublicationFields(fund);
     if (missing.length > 0) {
       return { success: false, error: `Publication blocked. Missing: ${missing.join(", ")}.` };
     }
@@ -852,14 +836,16 @@ export async function publishFund(id: string): Promise<ActionResult> {
         where: { id, status: "IN_REVIEW", updatedAt: fund.updatedAt },
         data: { status: "PUBLISHED", lastVerifiedAt: new Date() },
       });
-      if (updated.count !== 1) throw new Error("Fund workflow state changed during publication");
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Fund workflow state changed during publication");
+      }
       await auditMutation("Fund", id, "PUBLISH", ["status", "lastVerifiedAt"], tx);
     });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("publishFund error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to publish fund" };
+    await logAdminActionFailure("publish_fund", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to publish fund") };
   }
 }
 
@@ -885,14 +871,7 @@ export async function verifyFund(id: string): Promise<ActionResult> {
     if (!canVerify(fund.status)) {
       return { success: false, error: "Only published funds can be verified." };
     }
-    const missing = [
-      !fund.managerId && "manager",
-      !fund.fundName.trim() && "fund vehicle",
-      fund.strategies.length === 0 && "strategy",
-      !fund.fundStatus && "status",
-      !fund.size.trim() && "size basis or TBD",
-      fund.sourceUrls.length === 0 && !fund.strategyUrl.trim() && "primary source",
-    ].filter(Boolean);
+    const missing = missingFundPublicationFields(fund);
     if (missing.length > 0) {
       return { success: false, error: `Verification blocked. Missing: ${missing.join(", ")}.` };
     }
@@ -901,14 +880,16 @@ export async function verifyFund(id: string): Promise<ActionResult> {
         where: { id, status: "PUBLISHED", updatedAt: fund.updatedAt },
         data: { lastVerifiedAt: new Date() },
       });
-      if (updated.count !== 1) throw new Error("Fund workflow state changed during verification");
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Fund workflow state changed during verification");
+      }
       await auditMutation("Fund", id, "VERIFY", ["lastVerifiedAt"], tx);
     });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("verifyFund error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to verify fund" };
+    await logAdminActionFailure("verify_fund", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to verify fund") };
   }
 }
 
@@ -926,14 +907,16 @@ export async function submitFundForReview(id: string): Promise<ActionResult> {
         where: { id, status: "DRAFT" },
         data: { status: "IN_REVIEW" },
       });
-      if (updated.count !== 1) throw new Error("Fund workflow state changed during submission");
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Fund workflow state changed during submission");
+      }
       await auditMutation("Fund", id, "SUBMIT_FOR_REVIEW", ["status"], tx);
     });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("submitFundForReview error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to submit fund" };
+    await logAdminActionFailure("submit_fund_for_review", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to submit fund") };
   }
 }
 
@@ -949,14 +932,16 @@ export async function archiveFund(id: string): Promise<ActionResult> {
         where: { id, status: fund.status },
         data: { status: "ARCHIVED" },
       });
-      if (updated.count !== 1) throw new Error("Fund workflow state changed during archival");
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Fund workflow state changed during archival");
+      }
       await auditMutation("Fund", id, "ARCHIVE", ["status"], tx);
     });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("archiveFund error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to archive fund" };
+    await logAdminActionFailure("archive_fund", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to archive fund") };
   }
 }
 
@@ -1036,8 +1021,8 @@ export async function createCompany(formData: FormData): Promise<ActionResult> {
     revalidateAll();
     return { success: true, id: company.id };
   } catch (error) {
-    console.error("createCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to create company" };
+    await logAdminActionFailure("create_company", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to create company") };
   }
 }
 
@@ -1098,7 +1083,7 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
         },
       });
       if (updateResult.count !== 1) {
-        throw new Error("Company workflow state changed during edit");
+        throw new AdminActionUserError("Company workflow state changed during edit");
       }
       await replacePrimaryCitation(tx, {
         companyId: id,
@@ -1117,8 +1102,8 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("updateCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to update company" };
+    await logAdminActionFailure("update_company", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to update company") };
   }
 }
 
@@ -1129,7 +1114,7 @@ export async function deleteCompany(id: string): Promise<ActionResult> {
 
     await prisma.$transaction(async (tx) => {
       const company = await tx.company.findUnique({ where: { id } });
-      if (!company) throw new Error("Company not found");
+      if (!company) throw new AdminActionUserError("Company not found");
       const publicationAuditCount = await tx.auditEvent.count({
         where: { entityType: "Company", entityId: id, action: { in: ["PUBLISH", "VERIFY"] } },
       });
@@ -1153,7 +1138,7 @@ export async function deleteCompany(id: string): Promise<ActionResult> {
           redirects: redirectCount,
         },
       });
-      if (blockReason) throw new Error(blockReason);
+      if (blockReason) throw new AdminActionUserError(blockReason);
 
       await recordAuditEvent({
         entityType: "Company",
@@ -1175,13 +1160,15 @@ export async function deleteCompany(id: string): Promise<ActionResult> {
       const deleted = await tx.company.deleteMany({
         where: { id, status: "DRAFT", updatedAt: company.updatedAt },
       });
-      if (deleted.count !== 1) throw new Error("Company changed while deletion was in progress");
+      if (deleted.count !== 1) {
+        throw new AdminActionUserError("Company changed while deletion was in progress");
+      }
     }, { isolationLevel: "Serializable" });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("deleteCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to delete company" };
+    await logAdminActionFailure("delete_company", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to delete company") };
   }
 }
 
@@ -1199,7 +1186,13 @@ export async function publishCompany(id: string): Promise<ActionResult> {
         country: true,
         sector: true,
         description: true,
-        ownershipPeriods: { select: { id: true } },
+        ownershipPeriods: {
+          select: {
+            id: true,
+            fundId: true,
+            fund: { select: { status: true } },
+          },
+        },
         citations: { where: { isPrimary: true }, select: { id: true } },
       },
     });
@@ -1207,14 +1200,7 @@ export async function publishCompany(id: string): Promise<ActionResult> {
     if (!canPublish(company.status)) {
       return { success: false, error: "Publication requires an in-review record." };
     }
-    const missing = [
-      !company.name.trim() && "canonical identity",
-      !company.country.trim() && "location",
-      !company.sector && "sector",
-      !company.description.trim() && "description",
-      company.ownershipPeriods.length === 0 && "ownership period",
-      company.citations.length === 0 && "primary citation",
-    ].filter(Boolean);
+    const missing = missingCompanyPublicationFields(company);
     if (missing.length > 0) {
       return { success: false, error: `Publication blocked. Missing: ${missing.join(", ")}.` };
     }
@@ -1223,14 +1209,16 @@ export async function publishCompany(id: string): Promise<ActionResult> {
         where: { id, status: "IN_REVIEW", updatedAt: company.updatedAt },
         data: { status: "PUBLISHED", lastVerifiedAt: new Date() },
       });
-      if (updated.count !== 1) throw new Error("Company workflow state changed during publication");
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Company workflow state changed during publication");
+      }
       await auditMutation("Company", id, "PUBLISH", ["status", "lastVerifiedAt"], tx);
     });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("publishCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to publish company" };
+    await logAdminActionFailure("publish_company", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to publish company") };
   }
 }
 
@@ -1247,7 +1235,13 @@ export async function verifyCompany(id: string): Promise<ActionResult> {
         country: true,
         sector: true,
         description: true,
-        ownershipPeriods: { select: { id: true } },
+        ownershipPeriods: {
+          select: {
+            id: true,
+            fundId: true,
+            fund: { select: { status: true } },
+          },
+        },
         citations: { where: { isPrimary: true }, select: { id: true } },
       },
     });
@@ -1255,14 +1249,7 @@ export async function verifyCompany(id: string): Promise<ActionResult> {
     if (!canVerify(company.status)) {
       return { success: false, error: "Only published companies can be verified." };
     }
-    const missing = [
-      !company.name.trim() && "canonical identity",
-      !company.country.trim() && "location",
-      !company.sector && "sector",
-      !company.description.trim() && "description",
-      company.ownershipPeriods.length === 0 && "ownership period",
-      company.citations.length === 0 && "primary citation",
-    ].filter(Boolean);
+    const missing = missingCompanyPublicationFields(company);
     if (missing.length > 0) {
       return { success: false, error: `Verification blocked. Missing: ${missing.join(", ")}.` };
     }
@@ -1271,14 +1258,16 @@ export async function verifyCompany(id: string): Promise<ActionResult> {
         where: { id, status: "PUBLISHED", updatedAt: company.updatedAt },
         data: { lastVerifiedAt: new Date() },
       });
-      if (updated.count !== 1) throw new Error("Company workflow state changed during verification");
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Company workflow state changed during verification");
+      }
       await auditMutation("Company", id, "VERIFY", ["lastVerifiedAt"], tx);
     });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("verifyCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to verify company" };
+    await logAdminActionFailure("verify_company", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to verify company") };
   }
 }
 
@@ -1296,14 +1285,16 @@ export async function submitCompanyForReview(id: string): Promise<ActionResult> 
         where: { id, status: "DRAFT" },
         data: { status: "IN_REVIEW" },
       });
-      if (updated.count !== 1) throw new Error("Company workflow state changed during submission");
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Company workflow state changed during submission");
+      }
       await auditMutation("Company", id, "SUBMIT_FOR_REVIEW", ["status"], tx);
     });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("submitCompanyForReview error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to submit company" };
+    await logAdminActionFailure("submit_company_for_review", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to submit company") };
   }
 }
 
@@ -1319,14 +1310,16 @@ export async function archiveCompany(id: string): Promise<ActionResult> {
         where: { id, status: company.status },
         data: { status: "ARCHIVED" },
       });
-      if (updated.count !== 1) throw new Error("Company workflow state changed during archival");
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Company workflow state changed during archival");
+      }
       await auditMutation("Company", id, "ARCHIVE", ["status"], tx);
     });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("archiveCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to archive company" };
+    await logAdminActionFailure("archive_company", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to archive company") };
   }
 }
 
@@ -1356,6 +1349,11 @@ export async function addOwnershipPeriod(
     if (!parsed.success) {
       return { success: false, error: parsed.error.issues.map((i) => i.message).join(", ") };
     }
+    const companyExists = await prisma.company.findUnique({
+      where: { id: companyId },
+      select: { id: true },
+    });
+    if (!companyExists) return { success: false, error: "Company not found" };
     const o = parsed.data;
     const fundId = o.ownershipVehicle ? await findFundByVehicleName(o.ownershipVehicle) : null;
     const created = await prisma.$transaction(async (tx) => {
@@ -1382,8 +1380,8 @@ export async function addOwnershipPeriod(
     revalidateAll();
     return { success: true, id: created.id };
   } catch (error) {
-    console.error("addOwnershipPeriod error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to add ownership period" };
+    await logAdminActionFailure("add_ownership_period", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to add ownership period") };
   }
 }
 
@@ -1399,6 +1397,11 @@ export async function updateOwnershipPeriod(
     if (!parsed.success) {
       return { success: false, error: parsed.error.issues.map((i) => i.message).join(", ") };
     }
+    const existingOwnership = await prisma.ownershipPeriod.findUnique({
+      where: { id },
+      select: { id: true },
+    });
+    if (!existingOwnership) return { success: false, error: "Ownership period not found" };
     const o = parsed.data;
     const fundId = o.ownershipVehicle ? await findFundByVehicleName(o.ownershipVehicle) : null;
     await prisma.$transaction(async (tx) => {
@@ -1424,8 +1427,8 @@ export async function updateOwnershipPeriod(
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("updateOwnershipPeriod error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to update ownership period" };
+    await logAdminActionFailure("update_ownership_period", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to update ownership period") };
   }
 }
 
@@ -1434,6 +1437,12 @@ export async function deleteOwnershipPeriod(id: string): Promise<ActionResult> {
     const auth = await requireAdminAction();
     if (auth) return auth;
 
+    const existingOwnership = await prisma.ownershipPeriod.findUnique({
+      where: { id },
+      select: { id: true },
+    });
+    if (!existingOwnership) return { success: false, error: "Ownership period not found" };
+
     await prisma.$transaction(async (tx) => {
       await tx.ownershipPeriod.delete({ where: { id } });
       await auditMutation("OwnershipPeriod", id, "DELETE", [], tx);
@@ -1441,7 +1450,7 @@ export async function deleteOwnershipPeriod(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("deleteOwnershipPeriod error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to delete ownership period" };
+    await logAdminActionFailure("delete_ownership_period", error);
+    return { success: false, error: adminActionErrorMessage(error, "Failed to delete ownership period") };
   }
 }

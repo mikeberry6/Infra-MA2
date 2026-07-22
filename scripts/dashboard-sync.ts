@@ -3,6 +3,9 @@ import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
+import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
+import { SafeOperationalError } from "../src/lib/safe-error";
+import { withServerTask } from "../src/lib/server-log";
 import { getDashboardProviders } from "../src/modules/dashboard/providers";
 import {
   dashboardSyncFailureMessage,
@@ -14,15 +17,16 @@ import { completePipelineRun, failPipelineRun, startPipelineRun } from "../src/m
 
 function createPrisma(): PrismaClient {
   const connectionString = process.env.DATABASE_URL;
-  if (!connectionString) throw new Error("DATABASE_URL is not set.");
+  if (!connectionString) throw new SafeOperationalError("database_url_missing");
   return new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
 }
 
 async function main() {
   const dryRun = process.argv.includes("--dry-run");
+  if (!dryRun) assertMutationDatabaseTargetFromEnv();
   const refreshWindow = resolveEasternRefreshWindow(process.env.DASHBOARD_REFRESH_WINDOW);
   const prisma = process.env.DATABASE_URL ? createPrisma() : null;
-  if (!dryRun && !prisma) throw new Error("DATABASE_URL is not set.");
+  if (!dryRun && !prisma) throw new SafeOperationalError("database_url_missing");
   const pipelineRunId = !dryRun && prisma
     ? await startPipelineRun(prisma, "DASHBOARD_SYNC", { refreshWindow })
     : null;
@@ -41,9 +45,7 @@ async function main() {
     await mkdir("tmp", { recursive: true });
     const outPath = path.join("tmp", "dashboard-sync-summary.json");
     await writeFile(outPath, `${JSON.stringify(summary, null, 2)}\n`);
-    console.log(`Dashboard sync ${dryRun ? "dry run " : ""}complete.`);
-    console.log(`Sources: ${summary.sources.length}; observations fetched: ${summary.totals.observationsFetched}; signals fetched: ${summary.totals.signalsFetched}; failures: ${summary.totals.failedSources}; skipped: ${summary.totals.skippedSources}`);
-    console.log(`Summary written to ${outPath}`);
+    console.log("Dashboard synchronization completed; review tmp/dashboard-sync-summary.json.");
     const health = evaluateDashboardSyncHealth(summary);
     failureEvidence = {
       updated: summary.totals.observationsUpserted + summary.totals.signalsUpserted,
@@ -103,7 +105,9 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(error);
+withServerTask({
+  task: "dashboard_sync",
+  operation: "run_dashboard_sync",
+}, main).catch(() => {
   process.exitCode = 1;
 });

@@ -53,10 +53,10 @@ describe("pipeline run lifecycle", () => {
     });
   });
 
-  it("records a compact single-line failure so a later run can recover independently", async () => {
+  it("records a redacted failure classification so a later run can recover independently", async () => {
     const client = pipelineClient();
     client.pipelineRun.update.mockResolvedValue({});
-    const longError = new Error(`provider failed\n${"x".repeat(600)}`);
+    const longError = new Error(`provider failed at https://private.example/path?q=secret\n${"x".repeat(600)}`);
 
     await failPipelineRun(client as never, "run-1", longError);
 
@@ -65,9 +65,10 @@ describe("pipeline run lifecycle", () => {
     expect(call.data).toMatchObject({
       status: "FAILED",
       endedAt: new Date("2026-07-22T12:00:00.000Z"),
+      errorSummary: "upstream_error: Upstream operation failed.",
     });
     expect(call.data.errorSummary).not.toContain("\n");
-    expect(call.data.errorSummary).toHaveLength(500);
+    expect(call.data.errorSummary).not.toMatch(/private\.example|secret|x{20}/i);
 
     client.pipelineRun.create.mockResolvedValue({ id: "run-2" });
     await expect(startPipelineRun(client as never, "NEWS_SCAN")).resolves.toBe("run-2");
@@ -90,7 +91,7 @@ describe("pipeline run lifecycle", () => {
       data: {
         status: "FAILED",
         endedAt: new Date("2026-07-22T12:00:00.000Z"),
-        errorSummary: "provider threshold breached",
+        errorSummary: "upstream_error: Upstream operation failed.",
         inserted: 0,
         updated: 8,
         skipped: 2,

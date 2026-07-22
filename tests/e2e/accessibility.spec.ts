@@ -1,6 +1,11 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-import { appPath } from "./helpers";
+import {
+  ADMIN_E2E_ENV,
+  appPath,
+  configuredAdminE2E,
+  signInAsConfiguredAdmin,
+} from "./helpers";
 
 const routes = [
   "/tracker",
@@ -24,6 +29,38 @@ for (const path of routes) {
     expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
   });
 }
+
+test("authenticated administration pages have no automatically detectable WCAG A/AA violations", async ({ page }) => {
+  test.setTimeout(90_000);
+  test.skip(
+    !configuredAdminE2E(),
+    `${ADMIN_E2E_ENV.join(", ")} are required for authenticated admin accessibility checks`,
+  );
+
+  await signInAsConfiguredAdmin(page);
+  for (const path of [
+    "/admin",
+    "/admin/deals",
+    "/admin/funds",
+    "/admin/companies",
+    "/admin/sources",
+    "/admin/dashboard-signals",
+    "/admin/audit",
+    "/admin/users",
+  ]) {
+    await page.goto(appPath(path));
+    await expect(page).toHaveURL(new RegExp(`${appPath(path)}$`));
+    await page.locator("main").waitFor({ state: "visible" });
+    const results = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
+      .exclude("[data-next-badge]")
+      .analyze();
+    expect(
+      results.violations,
+      `${path}\n${JSON.stringify(results.violations, null, 2)}`,
+    ).toEqual([]);
+  }
+});
 
 test("mobile filter sheet remains accessible", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });

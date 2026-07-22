@@ -18,19 +18,19 @@ describe("dashboard recurring-source migration", () => {
     expect(auditAdditiveMigrationSql(migration)).toEqual([]);
   });
 
-  it("runs the bounded legacy-signal approval backfill immediately after migration", () => {
+  it("generates reviewer-neutral cutover manifests after migration without applying data changes", () => {
     const stageWorkflow = readFileSync(path.join(
       process.cwd(),
       ".github/workflows/stage-production-schema.yml",
     ), "utf8");
 
-    expect(stageWorkflow).toContain("npx prisma migrate deploy");
-    expect(stageWorkflow).toContain("npx tsx scripts/quarantine-dashboard-methodology-history.ts");
-    expect(stageWorkflow).toContain("npx tsx scripts/backfill-dashboard-signal-approvals.ts");
-    expect(stageWorkflow.indexOf("npx tsx scripts/quarantine-dashboard-methodology-history.ts"))
-      .toBeGreaterThan(stageWorkflow.indexOf("npx prisma migrate deploy"));
-    expect(stageWorkflow.indexOf("npx tsx scripts/backfill-dashboard-signal-approvals.ts"))
-      .toBeGreaterThan(stageWorkflow.indexOf("npx tsx scripts/quarantine-dashboard-methodology-history.ts"));
+    expect(stageWorkflow).toContain("./node_modules/.bin/prisma migrate deploy");
+    expect(stageWorkflow).toContain("dashboard-methodology-cutover-approval-template.json");
+    expect(stageWorkflow).toContain("dashboard-signal-backfill-approval-template.json");
+    expect(stageWorkflow).not.toMatch(/quarantine-dashboard-methodology-history\.ts[\s\S]{0,120}--(?:apply|rollback)/);
+    expect(stageWorkflow).not.toMatch(/backfill-dashboard-signal-approvals\.ts[\s\S]{0,120}--(?:apply|rollback)/);
+    expect(stageWorkflow.indexOf("dashboard-methodology-cutover-approval-template.json"))
+      .toBeGreaterThan(stageWorkflow.indexOf("./node_modules/.bin/prisma migrate deploy"));
   });
 
   it("gives remote cutover transactions an explicit bounded timeout", () => {
@@ -42,6 +42,11 @@ describe("dashboard recurring-source migration", () => {
       expect(contents).toContain('isolationLevel: "Serializable"');
       expect(contents).toContain("maxWait: 15_000");
       expect(contents).toContain("timeout: 120_000");
+      expect(contents).toContain("updatedAt: new Date(item.updatedAtBefore)");
+      const guardCall = 'mode === "report" ? null : assertMaintenanceMutationContext()';
+      expect(contents).toContain(guardCall);
+      expect(contents.indexOf(guardCall))
+        .toBeLessThan(contents.indexOf("const prisma = createPrisma()"));
     }
   });
 });

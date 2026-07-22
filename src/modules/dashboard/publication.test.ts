@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { isPublicDashboardSignal } from "@/modules/dashboard/publication";
+import {
+  DASHBOARD_METHODOLOGY_VERSIONS,
+  FEDERAL_REGISTER_METHODOLOGY_DOCUMENT_TYPES,
+} from "@/modules/dashboard/methodology-cutover";
 import { signalContentHash } from "@/modules/dashboard/sync";
 import { buildDashboardView } from "@/modules/dashboard/view-model";
 import type { DashboardObservation, DashboardSignal } from "@/modules/dashboard/types";
@@ -12,6 +16,11 @@ const observation: DashboardObservation = {
   value: 5,
   unit: "count",
   status: "LIVE",
+  metadata: {
+    methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.federalRegisterInfraNotices,
+    deduplicatedBy: "document_number",
+    documentTypes: [...FEDERAL_REGISTER_METHODOLOGY_DOCUMENT_TYPES],
+  },
 };
 
 function signal(index: number, reviewStatus: DashboardSignal["reviewStatus"]): DashboardSignal {

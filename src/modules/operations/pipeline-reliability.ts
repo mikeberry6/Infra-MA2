@@ -1,3 +1,5 @@
+import { SafeOperationalError } from "@/lib/safe-error";
+
 const EASTERN_TIME_ZONE = "America/New_York";
 const REFRESH_WINDOW_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -40,7 +42,7 @@ export function resolveEasternRefreshWindow(value: string | undefined, date = ne
   const configured = value?.trim();
   if (!configured) return easternRefreshWindow(date);
   if (!REFRESH_WINDOW_PATTERN.test(configured)) {
-    throw new Error("DASHBOARD_REFRESH_WINDOW must use YYYY-MM-DD Eastern calendar format.");
+    throw new SafeOperationalError("dashboard_refresh_window_invalid");
   }
   return configured;
 }

@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { deals } from "../../prisma/seed-data/deals.ts";
+import { logServerFailure } from "../../src/lib/server-log.ts";
 
 interface Options {
   start: string;
@@ -242,6 +243,6 @@ function main() {
 try {
   main();
 } catch (error) {
-  console.error(error instanceof Error ? error.message : error);
+  logServerFailure({ task: "research_prompt", operation: "build_full_universe_prompt" }, error);
   process.exit(1);
 }

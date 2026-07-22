@@ -1,5 +1,5 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
-import { appPath } from "./helpers";
+import { appPath, signInAsConfiguredAdmin, waitForApplication } from "./helpers";
 import { assertIsolatedWriteTarget } from "./isolation-guard";
 
 const WRITE_JOURNEY_ENV = [
@@ -128,6 +128,96 @@ test("invalid credentials return one generic message", async ({ page }) => {
   await page.getByLabel("Password").fill("not-the-password");
   await page.getByRole("button", { name: "Sign In" }).click();
   await expect(page.getByRole("alert")).toHaveText("The email or password was not recognized.");
+});
+
+test("configured administrator previews a CSV before explicitly committing its draft", async ({ page, context }) => {
+  test.setTimeout(90_000);
+  test.skip(
+    !configuredWriteJourney(),
+    `${WRITE_JOURNEY_ENV.join(", ")} are required for the authenticated import journey`,
+  );
+  assertIsolatedWriteTarget();
+
+  const runId = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  const legacyId = `E2E-IMPORT-${runId}`;
+  const target = `InfraSight E2E CSV Preview ${runId}`;
+  const csv = [
+    "id,title,target,buyer,seller,sellerDisclosureStatus,sellerDisclosureReason,sector,subsector,region,category,date,description,targetDescription,country,status",
+    [
+      legacyId,
+      `${target} acquisition`,
+      target,
+      "InfraSight E2E Infrastructure Manager",
+      "",
+      "NOT_APPLICABLE",
+      "No seller applies to this isolated CSV fixture.",
+      "Digital",
+      "Fiber",
+      "North America",
+      "Acquisition (Buyout)",
+      new Date().toISOString().slice(0, 10),
+      "Isolated preview-before-commit browser verification record.",
+      "A synthetic fiber platform used only in the isolated E2E database.",
+      "United States",
+      "Announced",
+    ].join(","),
+  ].join("\n");
+  const importStages: string[] = [];
+  let commitAttempted = false;
+
+  page.on("request", (request) => {
+    const url = new URL(request.url());
+    if (request.method() !== "POST" || !url.pathname.endsWith("/api/imports/deals")) return;
+    importStages.push(url.searchParams.get("preview") === "1" ? "preview" : "commit");
+  });
+
+  try {
+    await signInAsConfiguredAdmin(page, "/admin/deals");
+    await waitForApplication(page, "Deals");
+    await expect(dealRow(page, target)).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "Confirm import" })).toHaveCount(0);
+
+    await page.getByLabel("Select CSV").setInputFiles({
+      name: "isolated-deal-preview.csv",
+      mimeType: "text/csv",
+      buffer: Buffer.from(csv),
+    });
+
+    const preview = page.getByRole("region", { name: "Import preview" });
+    await expect(preview).toBeVisible();
+    await expect(preview).toContainText("no imported records have been changed");
+    await expect(preview).toContainText("Confirming will write 1 create and 0 updates");
+    await expect(preview.getByRole("button", { name: "Confirm import" })).toBeEnabled();
+    expect(importStages).toEqual(["preview"]);
+
+    // A second authenticated server render proves preview created only its
+    // short-lived confirmation record, not the domain deal.
+    const verificationPage = await context.newPage();
+    try {
+      await verificationPage.goto(appPath("/admin/deals"));
+      await waitForApplication(verificationPage, "Deals");
+      await expect(dealRow(verificationPage, target)).toHaveCount(0);
+    } finally {
+      await verificationPage.close();
+    }
+
+    commitAttempted = true;
+    await preview.getByRole("button", { name: "Confirm import" }).click();
+    await expect(page.getByText("1 deal committed as drafts.", { exact: true })).toBeVisible();
+    expect(importStages).toEqual(["preview", "commit"]);
+    await expect(page.getByRole("link", { name: "View audit event" })).toHaveAttribute(
+      "href",
+      /\/admin\/audit\?focus=/,
+    );
+
+    await page.goto(appPath("/admin/deals"));
+    const row = dealRow(page, target);
+    await expect(row).toHaveCount(1);
+    await expect(row.getByText("DRAFT", { exact: true })).toBeVisible();
+    await expect(row.locator("td").first()).toHaveText(legacyId);
+  } finally {
+    if (commitAttempted) await bestEffortDeleteCreatedDeal(page, target);
+  }
 });
 
 test("configured administrator can complete the audited draft-to-publication journey", async ({ page }) => {

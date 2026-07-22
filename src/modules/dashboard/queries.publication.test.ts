@@ -1,9 +1,10 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
   observations: vi.fn(),
   signals: vi.fn(),
   sourceRuns: vi.fn(),
+  pipelineFindFirst: vi.fn(),
 }));
 
 vi.mock("@/lib/prisma", () => ({
@@ -11,6 +12,7 @@ vi.mock("@/lib/prisma", () => ({
     dashboardObservation: { findMany: mocks.observations },
     dashboardSignal: { findMany: mocks.signals },
     dashboardSourceRun: { findMany: mocks.sourceRuns },
+    pipelineRun: { findFirst: mocks.pipelineFindFirst },
   },
 }));
 
@@ -19,6 +21,8 @@ import { dashboardSignalContentHash } from "@/modules/dashboard/content-hash";
 
 describe("public dashboard Prisma query boundary", () => {
   beforeEach(() => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-07-22T12:00:00.000Z"));
     mocks.observations.mockReset().mockResolvedValue([
       observation("2026-07-22", null),
       observation("2026-07-21", { sample: true }),
@@ -42,6 +46,16 @@ describe("public dashboard Prisma query boundary", () => {
       error: "postgres://user:password@private.example/database",
       metadata: { warnings: ["api_key=secret"] },
     }]);
+    const success = pipelineRun(
+      "SUCCEEDED",
+      "2026-07-22T11:30:00.000Z",
+      "2026-07-22T11:35:00.000Z",
+    );
+    mocks.pipelineFindFirst.mockReset().mockResolvedValue(success);
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
   });
 
   it("filters sample sources in Prisma and sample metadata before view/scoring", async () => {
@@ -77,15 +91,62 @@ describe("public dashboard Prisma query boundary", () => {
     });
     expect(treasuryHealth?.error).not.toContain("password");
     expect(treasuryHealth?.metadata).not.toHaveProperty("warnings");
+    expect(view.operations).toMatchObject({
+      state: "healthy",
+      lastSuccessfulAt: "2026-07-22T11:35:00.000Z",
+      nextExpectedAt: "2026-07-23T11:30:00.000Z",
+    });
   });
 
   it("does not report sample-only cache rows as database-backed public data", async () => {
     mocks.observations.mockResolvedValue([observation("2026-07-21", { sample: true })]);
     mocks.signals.mockResolvedValue([signal("sample", { sample: true })]);
 
-    await expect(getDashboardView()).rejects.toThrow("No dashboard cache records were found in Prisma.");
+    const view = await getDashboardView();
+
+    expect(view.hasDatabaseData).toBe(false);
+    expect(view.allSeries.every((series) => series.observations.length === 0)).toBe(true);
+    expect(view.operations.state).toBe("healthy");
+  });
+
+  it("uses the aggregate pipeline attempt for failure state, not a successful provider row", async () => {
+    mocks.sourceRuns.mockResolvedValue([{
+      id: "provider-success",
+      sourceId: "treasury",
+      sourceName: "U.S. Treasury",
+      status: "SUCCESS",
+      startedAt: new Date("2026-07-22T11:30:00.000Z"),
+      endedAt: new Date("2026-07-22T11:31:00.000Z"),
+      observationsFetched: 1,
+      observationsUpserted: 1,
+      signalsFetched: 0,
+      signalsUpserted: 0,
+    }]);
+    const failed = pipelineRun("FAILED", "2026-07-22T11:30:00.000Z", "2026-07-22T11:40:00.000Z");
+    const priorSuccess = pipelineRun("SUCCEEDED", "2026-07-21T11:30:00.000Z", "2026-07-21T11:35:00.000Z");
+    mocks.pipelineFindFirst.mockImplementation(({ where }: { where: { status?: string } }) => (
+      Promise.resolve(where.status ? priorSuccess : failed)
+    ));
+
+    const view = await getDashboardView();
+
+    expect(view.sourceHealth.find((source) => source.sourceId === "treasury")?.status).toBe("SUCCESS");
+    expect(view.operations).toMatchObject({
+      state: "failed",
+      lastAttemptAt: "2026-07-22T11:30:00.000Z",
+      lastSuccessfulAt: "2026-07-21T11:35:00.000Z",
+      nextExpectedAt: "2026-07-23T11:30:00.000Z",
+    });
   });
 });
+
+function pipelineRun(status: "RUNNING" | "SUCCEEDED" | "FAILED", startedAt: string, endedAt?: string) {
+  return {
+    status,
+    startedAt: new Date(startedAt),
+    endedAt: endedAt ? new Date(endedAt) : null,
+  };
+}
 
 function observation(date: string, metadata: Record<string, unknown> | null) {
   return {

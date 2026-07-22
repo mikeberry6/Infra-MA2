@@ -50,8 +50,7 @@ async function exportPortfolio(request: NextRequest) {
         "Content-Disposition": `attachment; filename="portfolio_export_${date}.csv"`,
       },
     });
-  } catch (error) {
-    console.error("Portfolio export failed:", error);
+  } catch {
     return NextResponse.json(
       { error: "Failed to export portfolio" },
       { status: 500 },

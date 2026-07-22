@@ -84,8 +84,46 @@ export function matchScore(title: string, body: string, query: string): number {
   return 3;
 }
 
+export function normalizeSearchQuery(value: string | string[] | undefined): string {
+  const firstValue = Array.isArray(value) ? (value[0] ?? "") : (value ?? "");
+  return firstValue.trim().slice(0, 200);
+}
+
+/**
+ * Preserve global relevance while reserving a fair share for every entity
+ * type that has hydrated candidates. This prevents a broad deal match from
+ * crowding companies or funds out of the grouped result view.
+ */
+export function selectFairSearchResults<T extends SearchResult>(
+  rankedResults: T[],
+  limit: number,
+): T[] {
+  const safeLimit = Number.isFinite(limit) ? Math.max(0, Math.floor(limit)) : 20;
+  if (safeLimit === 0 || rankedResults.length === 0) return [];
+  const types = (["deal", "company", "fund"] as const)
+    .filter((type) => rankedResults.some((result) => result.type === type));
+  const quota = Math.floor(safeLimit / Math.max(types.length, 1));
+  const selected = new Set<string>();
+  const key = (result: SearchResult) => `${result.type}:${result.id}`;
+
+  if (quota > 0) {
+    for (const type of types) {
+      for (const result of rankedResults.filter((candidate) => candidate.type === type).slice(0, quota)) {
+        selected.add(key(result));
+      }
+    }
+  }
+
+  for (const result of rankedResults) {
+    if (selected.size >= safeLimit) break;
+    selected.add(key(result));
+  }
+
+  return rankedResults.filter((result) => selected.has(key(result))).slice(0, safeLimit);
+}
+
 export async function searchAllWithMeta(query: string, limit = 20): Promise<SearchResults> {
-  const normalizedQuery = query.trim().slice(0, 200);
+  const normalizedQuery = normalizeSearchQuery(query);
   const empty: SearchResults = { results: [], total: 0, counts: { deal: 0, company: 0, fund: 0 } };
   if (normalizedQuery.length < 2) return empty;
 
@@ -98,7 +136,10 @@ export async function searchAllWithMeta(query: string, limit = 20): Promise<Sear
       {
         participants: {
           some: {
-            organization: { name: { contains: normalizedQuery, mode: "insensitive" as const } },
+            OR: [
+              { displayName: { contains: normalizedQuery, mode: "insensitive" as const } },
+              { organization: { name: { contains: normalizedQuery, mode: "insensitive" as const } } },
+            ],
           },
         },
       },
@@ -240,6 +281,7 @@ export async function searchAllWithMeta(query: string, limit = 20): Promise<Sear
   ));
 
   const resultLimit = Number.isFinite(limit) ? Math.max(0, Math.floor(limit)) : 20;
+  const selectedResults = selectFairSearchResults(rankedResults, resultLimit);
   const counts: SearchResults["counts"] = {
     deal: dealTotal,
     company: companyTotal,
@@ -247,8 +289,7 @@ export async function searchAllWithMeta(query: string, limit = 20): Promise<Sear
   };
 
   return {
-    results: rankedResults
-      .slice(0, resultLimit)
+    results: selectedResults
       .map(({ score: _score, ...result }) => result),
     total: dealTotal + companyTotal + fundTotal,
     counts,

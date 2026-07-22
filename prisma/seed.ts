@@ -1,4 +1,6 @@
 import "dotenv/config";
+import { assertNonProductionSeedTarget } from "../src/lib/database-target";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { deals } from "./seed-data/deals";
@@ -46,6 +48,7 @@ import type {
   SourceType,
 } from "../src/generated/prisma/client";
 
+assertNonProductionSeedTarget();
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
 
@@ -305,7 +308,7 @@ async function main() {
         });
         if (existing) companyIdMap.set(companyKey, existing.id);
       } else {
-        console.warn(`  ⚠ Error creating company ${pc.name}: ${err.message}`);
+        logServerFailure({ task: "database_seed", operation: "create_company" }, err);
       }
     }
   }
@@ -356,7 +359,7 @@ async function main() {
       ownershipCount++;
     } catch (err: any) {
       if (err.code !== "P2002") {
-        console.warn(`  ⚠ Error creating ownership for company ${companyId}: ${err.message}`);
+        logServerFailure({ task: "database_seed", operation: "create_ownership" }, err);
       }
     }
   }
@@ -563,7 +566,9 @@ async function main() {
           });
           participantCount++;
         } catch (err: any) {
-          if (err.code !== "P2002") console.warn(`  ⚠ Participant error: ${err.message}`);
+          if (err.code !== "P2002") {
+            logServerFailure({ task: "database_seed", operation: "create_deal_participant" }, err);
+          }
         }
         return;
       }
@@ -579,7 +584,9 @@ async function main() {
         });
         participantCount++;
       } catch (err: any) {
-        if (err.code !== "P2002") console.warn(`  ⚠ Participant error: ${err.message}`);
+        if (err.code !== "P2002") {
+          logServerFailure({ task: "database_seed", operation: "create_deal_participant" }, err);
+        }
       }
     }
 
@@ -737,10 +744,9 @@ async function main() {
   console.log(`  Citations: ${citationCount}`);
 }
 
-main()
-  .catch((e) => {
-    console.error("❌ Seed failed:", e);
-    process.exit(1);
+withServerTask({ task: "database_seed", operation: "seed_database" }, main)
+  .catch(() => {
+    process.exitCode = 1;
   })
   .finally(async () => {
     await prisma.$disconnect();

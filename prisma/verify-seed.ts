@@ -1,10 +1,17 @@
 import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaNeonHttp } from "@prisma/adapter-neon";
+import { withServerTask } from "../src/lib/server-log";
 import { deals } from "./seed-data/deals";
 import { weeklyBriefingDeals } from "./seed-data/weekly-briefing-deals";
 import { funds } from "./seed-data/funds";
 import { companies as portcos } from "./seed-data/companies";
+import {
+  findOwnershipFundIssues,
+  missingCompanyPublicationFields,
+  missingDealPublicationFields,
+  missingFundPublicationFields,
+} from "../src/modules/operations/publication-integrity";
 
 const connectionString = process.env.DATABASE_URL;
 
@@ -177,6 +184,97 @@ async function main() {
   exact("Duplicate deal legacy IDs", 0, Number(duplicateDealLegacyIds[0]?.count ?? 0));
   exact("Duplicate fund legacy IDs", 0, Number(duplicateFundLegacyIds[0]?.count ?? 0));
 
+  const [
+    publishedDealIntegrityRows,
+    publishedFundIntegrityRows,
+    publishedCompanyIntegrityRows,
+    ownershipFundRows,
+    fundLookupRows,
+  ] = await Promise.all([
+    prisma.deal.findMany({
+      where: { status: "PUBLISHED" },
+      select: {
+        legacyId: true,
+        target: true,
+        country: true,
+        date: true,
+        dealStatus: true,
+        sellerDisclosureStatus: true,
+        sellerDisclosureReason: true,
+        categories: true,
+        participants: { select: { role: true } },
+        citations: { where: { isPrimary: true }, select: { id: true } },
+      },
+    }),
+    prisma.fund.findMany({
+      where: { status: "PUBLISHED" },
+      select: {
+        legacyId: true,
+        fundName: true,
+        managerId: true,
+        strategies: true,
+        fundStatus: true,
+        size: true,
+        sourceUrls: true,
+        strategyUrl: true,
+      },
+    }),
+    prisma.company.findMany({
+      where: { status: "PUBLISHED" },
+      select: {
+        id: true,
+        name: true,
+        country: true,
+        sector: true,
+        description: true,
+        ownershipPeriods: { select: { id: true } },
+        citations: { where: { isPrimary: true }, select: { id: true } },
+      },
+    }),
+    prisma.ownershipPeriod.findMany({
+      where: { company: { status: "PUBLISHED" } },
+      select: {
+        id: true,
+        companyId: true,
+        vehicleName: true,
+        fundId: true,
+        fund: { select: { id: true, fundName: true } },
+      },
+    }),
+    prisma.fund.findMany({ select: { id: true, fundName: true } }),
+  ]);
+
+  const incompleteDeals = publishedDealIntegrityRows.flatMap((deal) => {
+    const missing = missingDealPublicationFields(deal);
+    return missing.length > 0 ? [{ label: `${deal.legacyId} (${deal.target})`, missing }] : [];
+  });
+  const incompleteFunds = publishedFundIntegrityRows.flatMap((fund) => {
+    const missing = missingFundPublicationFields(fund);
+    return missing.length > 0 ? [{ label: `${fund.legacyId} (${fund.fundName})`, missing }] : [];
+  });
+  const incompleteCompanies = publishedCompanyIntegrityRows.flatMap((company) => {
+    const missing = missingCompanyPublicationFields(company);
+    return missing.length > 0 ? [{ label: `${company.id} (${company.name})`, missing }] : [];
+  });
+  const ownershipFundIssues = findOwnershipFundIssues(ownershipFundRows, fundLookupRows);
+
+  exact("Published deals failing the complete publication contract", 0, incompleteDeals.length);
+  for (const issue of incompleteDeals.slice(0, 20)) {
+    console.log(`    ${issue.label}: ${issue.missing.join(", ")}`);
+  }
+  exact("Published funds failing the complete publication contract", 0, incompleteFunds.length);
+  for (const issue of incompleteFunds.slice(0, 20)) {
+    console.log(`    ${issue.label}: ${issue.missing.join(", ")}`);
+  }
+  exact("Published companies failing the complete publication contract", 0, incompleteCompanies.length);
+  for (const issue of incompleteCompanies.slice(0, 20)) {
+    console.log(`    ${issue.label}: ${issue.missing.join(", ")}`);
+  }
+  exact("Ownership-to-fund linkage issues", 0, ownershipFundIssues.length);
+  for (const issue of ownershipFundIssues.slice(0, 20)) {
+    console.log(`    ${issue.ownershipId} (${issue.companyId}) ${issue.code}: ${issue.message}`);
+  }
+
   const publishedDeals = await prisma.deal.findMany({
     where: { status: "PUBLISHED" },
     select: { legacyId: true, target: true, date: true },
@@ -204,10 +302,9 @@ async function main() {
   if (!allPassed) process.exit(1);
 }
 
-main()
-  .catch((error) => {
-    console.error("Verification failed:", error);
-    process.exit(1);
+withServerTask({ task: "database_verification", operation: "verify_seed_data" }, main)
+  .catch(() => {
+    process.exitCode = 1;
   })
   .finally(async () => {
     await prisma.$disconnect();

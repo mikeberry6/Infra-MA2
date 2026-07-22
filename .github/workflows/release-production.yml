@@ -41,6 +41,7 @@ jobs:
       DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+      VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
       EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
       EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
       RELEASE_SHA: ${{ inputs.release_sha }}
@@ -48,6 +49,13 @@ jobs:
       PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
       CONFIRMATION: ${{ inputs.confirmation }}
     steps:
+      - name: Require protected workflow ref
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Production release workflows must be dispatched from refs/heads/main."
+            exit 1
+          fi
+
       - name: Require explicit production authorization
         run: |
           if [ "$CONFIRMATION" != "PROMOTE" ]; then
@@ -58,7 +66,7 @@ jobs:
       - name: Checkout approved release
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ inputs.release_sha }}
+          ref: refs/heads/main
           fetch-depth: 0
           persist-credentials: false
 
@@ -144,6 +152,7 @@ jobs:
             --expected-sha="$RELEASE_SHA" \
             --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
             --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
             --require-immutable-url \
             --output=tmp/release/candidate-inspect.json
           node scripts/release-smoke.mjs --base-url="$DEPLOYMENT_URL" --expected-version="$RELEASE_SHA" --output=tmp/release/candidate-smoke.json
@@ -155,31 +164,31 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          npx prisma migrate status 2>&1 | tee tmp/release/migrate-status.log
-          npx prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/release/schema-drift.log
+          ./node_modules/.bin/prisma migrate status 2>&1 | tee tmp/release/migrate-status.log
+          ./node_modules/.bin/prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/release/schema-drift.log
 
       - name: Verify production data and source gates
         shell: bash
         run: |
           set -o pipefail
           npm run db:verify 2>&1 | tee tmp/release/database-verification.log
-          npx tsx scripts/report-primary-citation-remediation.ts --output=tmp/release/primary-citation-approval-template.json
-          npx tsx scripts/source-coverage-report.ts --require-complete --output=tmp/release/source-coverage.json
-          npx tsx scripts/report-company-merge-candidates.ts --published-only --require-clean > tmp/release/company-canonical-review.md
+          ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts --output=tmp/release/primary-citation-approval-template.json
+          ./node_modules/.bin/tsx scripts/source-coverage-report.ts --require-complete --output=tmp/release/source-coverage.json
+          ./node_modules/.bin/tsx scripts/report-company-merge-candidates.ts --published-only --require-clean > tmp/release/company-canonical-review.md
           npm run dashboard:verify -- --require-complete
           cp tmp/dashboard-verify-summary.json tmp/release/dashboard-source-verification.json
 
       - name: Require healthy critical pipelines before promotion
         run: |
-          node --experimental-strip-types scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --max-age-hours=36 --expected-runs-per-week=5 --min-success-rate=0.95 --output=tmp/release/dashboard-reliability.json
-          node --experimental-strip-types scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --output=tmp/release/news-reliability.json
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --freshness-schedule=dashboard-weekday --expected-runs-per-week=5 --min-success-rate=0.95 --output=tmp/release/dashboard-reliability.json
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --output=tmp/release/news-reliability.json
 
       - name: Reverify exact main head immediately before promotion
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
-          node --experimental-strip-types scripts/verify-release-provenance.ts \
+          ./node_modules/.bin/tsx scripts/verify-release-provenance.ts \
             --release-sha="$RELEASE_SHA" \
             --branch=main \
             --required-check=build \
@@ -193,6 +202,7 @@ jobs:
             --expected-sha="$RELEASE_SHA" \
             --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
             --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
             --require-immutable-url \
             --output=tmp/release/candidate-inspect-before-promotion.json
           deployment_id="$(jq -r '.id' tmp/release/candidate-inspect-before-promotion.json)"
@@ -200,12 +210,20 @@ jobs:
           npx --yes vercel@51.7.0 promote "$deployment_id" \
             --timeout 3m --yes --token "$VERCEL_TOKEN" --scope "$VERCEL_SCOPE"
 
-      - name: Smoke-test canonical production release
-        run: >-
-          node scripts/release-smoke.mjs
-          --base-url="$PRODUCTION_URL"
-          --expected-version="$RELEASE_SHA"
-          --output=tmp/release/production-smoke.json
+      - name: Verify canonical production release
+        shell: bash
+        run: |
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$PRODUCTION_URL" \
+            --expected-sha="$RELEASE_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
+            --output=tmp/release/canonical-production-inspect.json
+          node scripts/release-smoke.mjs \
+            --base-url="$PRODUCTION_URL" \
+            --expected-version="$RELEASE_SHA" \
+            --output=tmp/release/production-smoke.json
 
       - name: Upload immutable release evidence
         if: always()

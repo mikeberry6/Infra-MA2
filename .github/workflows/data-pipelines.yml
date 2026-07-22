@@ -30,8 +30,9 @@ permissions:
   contents: read
 
 concurrency:
-  # Scheduled and manual runs of the same pipeline share a lock.
-  group: data-pipeline-${{ inputs.pipeline || ((github.event.schedule == '30 11 * * 1-5' || github.event.schedule == '30 12 * * 1-5') && 'dashboard') || (github.event.schedule == '30 23 * * *' && 'news') || (github.event.schedule == '0 12 * * 0' && 'verify') || ((github.event.schedule == '0 12 1 * *' || github.event.schedule == '0 13 1 * *') && 'source-audit') || github.run_id }}
+  # Production reads and writes never overlap schema staging, reviewed data
+  # remediation, promotion, rollback, or another scheduled pipeline run.
+  group: production-release
   cancel-in-progress: false
 
 env:
@@ -39,6 +40,10 @@ env:
   DATABASE_URL: ${{ secrets.DATABASE_URL }}
   EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
   EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+  # Scheduled writes must use the pooled application endpoint. The distinct
+  # direct migration endpoint is explicitly forbidden so the in-process guard
+  # cannot be satisfied by swapping DATABASE_URL alone.
+  FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
 
 jobs:
   dashboard:
@@ -80,10 +85,12 @@ jobs:
         if: steps.dashboard_clock.outputs.should_run == 'true'
         shell: bash
         run: |
-          if [ -z "$EXPECTED_DATABASE_NAME" ]; then
-            echo "::error::PRODUCTION_DATABASE_NAME is required."
-            exit 1
-          fi
+          for name in EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for scheduled production pipeline access."
+              exit 1
+            fi
+          done
           node --experimental-strip-types scripts/assert-database-target.ts
       - name: Install locked dependencies
         if: steps.dashboard_clock.outputs.should_run == 'true'
@@ -136,7 +143,7 @@ jobs:
           if [ -f tmp/dashboard-sync-summary.json ]; then
             args+=(--summary=tmp/dashboard-sync-summary.json --summary-kind=dashboard)
           fi
-          node --experimental-strip-types scripts/verify-pipeline-health.ts "${args[@]}"
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts "${args[@]}"
       - name: Upload run evidence
         if: ${{ always() && steps.dashboard_clock.outputs.should_run == 'true' }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -164,10 +171,12 @@ jobs:
       - name: Require and verify production database target
         shell: bash
         run: |
-          if [ -z "$EXPECTED_DATABASE_NAME" ]; then
-            echo "::error::PRODUCTION_DATABASE_NAME is required."
-            exit 1
-          fi
+          for name in EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for scheduled production pipeline access."
+              exit 1
+            fi
+          done
           node --experimental-strip-types scripts/assert-database-target.ts
       - name: Install locked dependencies
         run: npm ci
@@ -177,7 +186,7 @@ jobs:
           npm run news:scan -- --since-days=2 --max-pages=750
       - name: Enforce scan and rolling reliability thresholds
         run: >-
-          node --experimental-strip-types scripts/verify-pipeline-health.ts
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts
           --pipeline=NEWS_SCAN
           --max-age-hours=36
           --expected-runs-per-week=7
@@ -213,10 +222,12 @@ jobs:
       - name: Require and verify production database target
         shell: bash
         run: |
-          if [ -z "$EXPECTED_DATABASE_NAME" ]; then
-            echo "::error::PRODUCTION_DATABASE_NAME is required."
-            exit 1
-          fi
+          for name in EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for scheduled production pipeline access."
+              exit 1
+            fi
+          done
           node --experimental-strip-types scripts/assert-database-target.ts
       - name: Install locked dependencies
         run: npm ci
@@ -236,8 +247,8 @@ jobs:
       - name: Verify dashboard and news freshness contracts
         run: |
           npm run dashboard:verify -- --require-complete
-          node --experimental-strip-types scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --max-age-hours=80 --expected-runs-per-week=5 --min-success-rate=0.95 --output=tmp/weekly-verification/dashboard-reliability.json
-          node --experimental-strip-types scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --output=tmp/weekly-verification/news-reliability.json
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --max-age-hours=80 --expected-runs-per-week=5 --min-success-rate=0.95 --output=tmp/weekly-verification/dashboard-reliability.json
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --output=tmp/weekly-verification/news-reliability.json
       - name: Upload weekly verification evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -287,10 +298,12 @@ jobs:
         if: steps.cadence.outputs.run == 'true'
         shell: bash
         run: |
-          if [ -z "$EXPECTED_DATABASE_NAME" ]; then
-            echo "::error::PRODUCTION_DATABASE_NAME is required."
-            exit 1
-          fi
+          for name in EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for scheduled production pipeline access."
+              exit 1
+            fi
+          done
           node --experimental-strip-types scripts/assert-database-target.ts
       - name: Install locked dependencies
         id: install
@@ -331,7 +344,7 @@ jobs:
           npm run dashboard:verify -- --require-complete
           cp tmp/dashboard-verify-summary.json tmp/monthly-audit/dashboard-source-audit.json
           npm run validate-portfolios 2>&1 | tee tmp/monthly-audit/portfolio-validation.log
-          node --experimental-strip-types scripts/audit-portfolio-duplicates.ts 2>&1 | tee tmp/monthly-audit/seed-duplicate-report.log
+          ./node_modules/.bin/tsx scripts/audit-portfolio-duplicates.ts 2>&1 | tee tmp/monthly-audit/seed-duplicate-report.log
       - name: Upload monthly audit evidence
         if: always() && steps.cadence.outputs.run == 'true'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1

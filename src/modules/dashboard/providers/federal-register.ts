@@ -1,4 +1,8 @@
 import { DASHBOARD_SOURCES } from "@/modules/dashboard/catalog";
+import {
+  DASHBOARD_METHODOLOGY_VERSIONS,
+  FEDERAL_REGISTER_METHODOLOGY_DOCUMENT_TYPES,
+} from "@/modules/dashboard/methodology-cutover";
 import type { DashboardProvider, DashboardProviderResult, DashboardSignal } from "@/modules/dashboard/types";
 import { fetchJson, isoDateDaysAgo, observation, todayIsoDate } from "@/modules/dashboard/providers/shared";
 
@@ -34,7 +38,7 @@ export const FEDERAL_REGISTER_TERMS = [
 
 const PAGE_SIZE = 100;
 const MAX_PAGES_PER_TERM = 100;
-const INCLUDED_DOCUMENT_TYPES = new Set(["Notice", "Rule", "Proposed Rule"]);
+const INCLUDED_DOCUMENT_TYPES: ReadonlySet<string> = new Set(FEDERAL_REGISTER_METHODOLOGY_DOCUMENT_TYPES);
 
 export function federalRegisterProvider(
   now = new Date(),
@@ -118,9 +122,10 @@ export function federalRegisterProvider(
           observation("federal_register_infra_notices", source.id, endDate, matches.length, {
             unit: "count",
             metadata: {
+              methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.federalRegisterInfraNotices,
               lookbackDays: 7,
               queryTerms: terms,
-              documentTypes: Array.from(INCLUDED_DOCUMENT_TYPES),
+              documentTypes: FEDERAL_REGISTER_METHODOLOGY_DOCUMENT_TYPES,
               deduplicatedBy: "document_number",
             },
           }),
