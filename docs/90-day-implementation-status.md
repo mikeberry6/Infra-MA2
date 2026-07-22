@@ -2,7 +2,7 @@
 
 **Updated:** 2026-07-22
 
-**Posture:** substantial implementation complete; staged validation and production rollout remain open.
+**Posture:** stabilized Next 15 repository implementation complete; isolated validation, production rollout, elapsed telemetry, and the separately gated modernization release remain open.
 
 ## Implemented in the repository
 
@@ -13,9 +13,9 @@
 - Publication/source gates, reviewer-neutral citation remediation, audited mutation foundations, reviewed duplicate-merge/redirect tooling, and source-coverage reporting added. No migration or release step auto-designates a primary citation or canonical survivor.
 - Database metrics/rankings, 25-row initial pages, shareable URL state, mobile filter sheets, accessible drawers, canonical `/tracker`, grouped search, preview/confirm imports, list/detail payload separation, detail APIs, health endpoint, analytics, and structured health logging added.
 - Unit/integration tests, Playwright anonymous/authentication checks, axe checks, keyboard/focus checks, responsive overflow checks, and visual baselines are present.
-- Protected-branch release aggregation, isolated migration/data/browser gate, reviewed data-remediation workflow, schema-first production promotion, rollback workflow, and release/incident/governance documentation are present.
+- Protected-branch release aggregation, isolated migration/data/browser gate, reviewed data-remediation workflow, schema-first production promotion, rollback workflow, and release/incident/governance documentation are present. Third-party workflow actions are immutable-SHA pinned to current Node 24 runtimes.
 - Release provenance is fail-closed in code: the requested SHA must equal the protected `main` head, its `build` check must be a successful GitHub Actions check for that exact SHA, migration manifests hash committed release blobs, and promotion validates the staged production deployment's Vercel project/target/Git SHA before changing domains.
-- The application includes Web Analytics and Speed Insights. Repository controls require Vercel to track `main` on Node 24 with automatic production-domain assignment disabled; that external setting still requires staged verification below.
+- The application includes Web Analytics and Speed Insights. Vercel is verified to track `main` on Node 24 with automatic production-domain assignment disabled.
 
 ## Verified locally
 
@@ -24,12 +24,23 @@
 - Local checks do not prove production database migration safety, authenticated end-to-end behavior on a migrated branch, 30-day reliability, real-user Core Web Vitals, credential rotation, or recovery readiness.
 - The 2026-07-22 schema/application mismatch was recovered through a verified application rollback; the incident record explicitly distinguishes that from the still-pending database restore exercise.
 
+## Verified external controls on 2026-07-22
+
+- GitHub reports `main` as the protected default branch with strict required `build` status, one approving review, administrator enforcement, and force-push/deletion protection.
+- Vercel project `infra-ma-2` reports production branch `main`, Node `24.x`, `autoAssignCustomDomains=false`, and enabled Web Analytics/Speed Insights. The immutable project and scope identifiers are configured in the GitHub `Production` environment.
+- GitHub repository allowlist metadata now records the production pooled host, direct migration host, and database name. `DASHBOARD_WRITES_ENABLED=false` is explicit; no production pipeline write was enabled.
+- Draft PR #223 head `8703b15832893a87b4b4a35c9d77625543ef628d` passes the complete static quality/build job and Vercel deployment check. Its isolated validation job fails before installation or database access because the validation URL, validation host/name, and validation-only administrator credentials are absent. The failed preflight retains a non-sensitive evidence artifact.
+- The protected Preview for that exact SHA returns HTTP 200 for the public route smoke set and permanently redirects `/Infra-MA2` to `/Infra-MA2/tracker`. Its health endpoint correctly returns HTTP 503 with the exact release prefix, `database=connected`, and `schema=not-ready`; this is evidence that additive production schema has not been staged, not a releasable health result.
+- The currently promoted legacy production deployment continues to return HTTP 200 for tracker, funds, portfolio, news, search, earnings, and login. It does not contain the new health endpoint, as expected after the verified rollback.
+- Vercel metadata currently represents database and NextAuth variables as shared entries targeting Production, Preview, and Development. Preview is SSO-protected, but it is not an isolated validation environment and must not be used for authenticated or mutating acceptance tests.
+- The GitHub `Production` environment currently has no required-reviewer protection rule and permits administrator bypass. Only one repository collaborator is available, so independent production approval cannot be configured without adding an authorized second reviewer or team.
+
 ## Blocking staged validation
 
-1. Reconfirm that protected `main` still requires the exact `build` context and that the GitHub `production` environment still enforces the intended reviewer, self-review, and bypass settings. Confirm the GitHub branch API reports protection before release; repository code cannot preserve external settings by itself.
+1. Add an authorized independent Engineering or Operations reviewer/team, then require that reviewer on the GitHub `Production` environment, prevent self-review, and disable administrator bypass. Protected-`main` controls are verified, but repository code cannot preserve external settings by itself.
 2. Complete Neon identity linking and identify the explicit production parent branch used for disposable validation clones.
-3. Configure `NEON_API_KEY`, `NEON_PROJECT_ID`, `NEON_VALIDATION_PARENT_BRANCH`, `MIGRATION_DATABASE_HOST`, `MIGRATION_DATABASE_NAME`, optional `MIGRATION_DATABASE_ROLE`, `PRODUCTION_DATABASE_HOST`, `PRODUCTION_MIGRATION_DATABASE_HOST`, `PRODUCTION_DATABASE_NAME`, and validation-only administrator secrets in GitHub. Mutation workflows must verify both hostname and database name.
-4. Scope Vercel Preview to the validation branch with preview-only NextAuth values. Configure `VERCEL_SCOPE` and immutable `VERCEL_PROJECT_ID`; confirm `main` is the production branch, Node 24 is selected, and automatic production-domain assignment is disabled.
+3. Configure `NEON_API_KEY`, `NEON_PROJECT_ID`, `NEON_VALIDATION_PARENT_BRANCH`, `MIGRATION_DATABASE_URL`, `MIGRATION_DATABASE_HOST`, `MIGRATION_DATABASE_NAME`, optional `MIGRATION_DATABASE_ROLE`, and validation-only administrator secrets in GitHub. The production host/database allowlist values are already configured; mutation workflows must continue verifying both hostname and database name.
+4. Replace the shared Vercel Preview database and NextAuth entries with validation-branch and preview-only values. Production branch, Node policy, automatic-domain assignment, `VERCEL_SCOPE`, and immutable `VERCEL_PROJECT_ID` are already verified/configured.
 5. Run the complete pull-request and merged-`main` Release Gates against the isolated branch. Review the exact committed-blob migration manifest and evidence artifacts.
 6. Resolve canonical company clusters and published-source gaps through the two-pass validation review: commit the all-status `company-merges.json` decision first, regenerate citation candidates after validation merges, then commit `primary-citations.json`. Both are hash/snapshot-bound and reviewed; do not fabricate citations, infer the first source, automate survivor selection, or place remediation in a schema migration.
 7. Exercise the authenticated draft/review/publish/import-preview/export journeys on Preview and retain evidence.
