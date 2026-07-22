@@ -15,6 +15,6 @@ export default async function NewsPage() {
     return <NewsFeed feed={feed} />;
   } catch (error) {
     console.error("Database query failed on /news:", error);
-    return <DataUnavailable title="News feed data could not be loaded." />;
+    return <DataUnavailable title="News feed data could not be loaded." retryHref="/news" />;
   }
 }

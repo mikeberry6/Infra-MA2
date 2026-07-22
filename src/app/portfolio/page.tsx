@@ -1,7 +1,7 @@
 export const revalidate = 300;
 
 import type { Metadata } from "next";
-import { getAllCompanies } from "@/modules/companies/queries";
+import { getAllCompanyListItems } from "@/modules/companies/queries";
 import { getFundStrategyIndex } from "@/modules/funds/queries";
 import { getDatabaseCounts } from "@/modules/insights/queries";
 import { PortfolioDatabaseClient } from "@/components/PortfolioDatabaseClient";
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default async function PortfolioPage() {
   try {
     const [companies, funds, counts] = await Promise.all([
-      getAllCompanies({ detail: false }),
+      getAllCompanyListItems(),
       getFundStrategyIndex(),
       getDatabaseCounts(),
     ]);
@@ -27,6 +27,6 @@ export default async function PortfolioPage() {
     );
   } catch (error) {
     console.error("Database query failed on /portfolio:", error);
-    return <DataUnavailable title="Portfolio company data could not be loaded." />;
+    return <DataUnavailable title="Portfolio company data could not be loaded." retryHref="/portfolio" />;
   }
 }

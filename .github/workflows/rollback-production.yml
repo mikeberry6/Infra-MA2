@@ -1,0 +1,118 @@
+name: Roll Back Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      deployment:
+        description: Previously verified Vercel deployment URL or deployment ID
+        required: true
+        type: string
+      production_url:
+        description: Canonical production origin
+        required: true
+        default: https://infra-ma-2.vercel.app
+        type: string
+      smoke_policy:
+        description: Use public-only only for a documented break-glass rollback
+        required: true
+        default: full
+        type: choice
+        options:
+          - full
+          - public-only
+      confirmation:
+        description: Type ROLLBACK to authorize production rollback
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-release
+  cancel-in-progress: false
+
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+      EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+      ROLLBACK_DEPLOYMENT: ${{ inputs.deployment }}
+      PRODUCTION_URL: ${{ inputs.production_url }}
+      CONFIRMATION: ${{ inputs.confirmation }}
+      SMOKE_POLICY: ${{ inputs.smoke_policy }}
+    steps:
+      - name: Require explicit rollback authorization
+        run: |
+          if [ "$CONFIRMATION" != "ROLLBACK" ]; then
+            echo "::error::confirmation must exactly equal ROLLBACK."
+            exit 1
+          fi
+
+      - name: Checkout rollback tooling
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "24"
+
+      - name: Require protected Vercel configuration
+        run: |
+          test -n "$VERCEL_TOKEN" || { echo "::error::VERCEL_TOKEN is required."; exit 1; }
+          test -n "$VERCEL_SCOPE" || { echo "::error::VERCEL_SCOPE is required."; exit 1; }
+          [[ "$EXPECTED_VERCEL_PROJECT_ID" =~ ^prj_[A-Za-z0-9]+$ ]] || { echo "::error::VERCEL_PROJECT_ID is required."; exit 1; }
+          node - <<'NODE'
+          const deployment = process.env.ROLLBACK_DEPLOYMENT ?? "";
+          if (!/^dpl_[A-Za-z0-9]+$/.test(deployment)) {
+            const parsed = new URL(deployment);
+            if (parsed.protocol !== "https:" || parsed.username || parsed.password || parsed.pathname !== "/" || parsed.search || parsed.hash) {
+              throw new Error("ROLLBACK_DEPLOYMENT must be a deployment ID or HTTPS deployment origin.");
+            }
+          }
+          const production = new URL(process.env.PRODUCTION_URL);
+          if (production.protocol !== "https:" || production.username || production.password || production.pathname !== "/" || production.search || production.hash) {
+            throw new Error("PRODUCTION_URL must be an HTTPS origin.");
+          }
+          NODE
+
+      - name: Inspect and smoke-test rollback candidate
+        shell: bash
+        run: |
+          mkdir -p tmp/rollback
+          npx --yes vercel@51.7.0 inspect "$ROLLBACK_DEPLOYMENT" --wait --timeout 3m --format=json --token "$VERCEL_TOKEN" --scope "$VERCEL_SCOPE" > tmp/rollback/candidate-inspect.json
+          jq -e --arg project "$EXPECTED_VERCEL_PROJECT_ID" '
+            .readyState == "READY" and .target == "production" and .projectId == $project
+          ' tmp/rollback/candidate-inspect.json >/dev/null
+          smoke_args=()
+          if [ "$SMOKE_POLICY" = "public-only" ]; then smoke_args+=(--skip-health --allow-legacy-root); fi
+          node scripts/release-smoke.mjs --base-url="$ROLLBACK_DEPLOYMENT" --output=tmp/rollback/candidate-smoke.json "${smoke_args[@]}"
+
+      # Additive migrations deliberately remain in place. This workflow changes
+      # only the Vercel deployment assigned to production.
+      - name: Roll back production deployment
+        run: >-
+          npx --yes vercel@51.7.0 rollback "$ROLLBACK_DEPLOYMENT"
+          --timeout 3m --yes --token "$VERCEL_TOKEN" --scope "$VERCEL_SCOPE"
+
+      - name: Verify canonical production after rollback
+        shell: bash
+        run: |
+          smoke_args=()
+          if [ "$SMOKE_POLICY" = "public-only" ]; then smoke_args+=(--skip-health --allow-legacy-root); fi
+          node scripts/release-smoke.mjs --base-url="$PRODUCTION_URL" --output=tmp/rollback/production-smoke.json "${smoke_args[@]}"
+
+      - name: Upload rollback evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: production-rollback-${{ github.run_id }}
+          path: tmp/rollback/
+          if-no-files-found: warn
+          retention-days: 90

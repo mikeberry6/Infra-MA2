@@ -1,0 +1,240 @@
+name: Review or Remediate Release Data
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_sha:
+        description: Full protected-main SHA whose additive schema is already staged
+        required: true
+        type: string
+      target:
+        description: Database to inspect or remediate
+        required: true
+        default: validation
+        type: choice
+        options:
+          - validation
+          - production
+      operation:
+        description: Read-only report or one explicitly reviewed mutation
+        required: true
+        default: report
+        type: choice
+        options:
+          - report
+          - apply-citations
+          - apply-company-merges
+      approval_file:
+        description: Committed audits/approvals/*.json file (apply operations only)
+        required: false
+        type: string
+      approval_sha256:
+        description: Exact SHA-256 of the reviewed approval file (apply operations only)
+        required: false
+        type: string
+      confirmation:
+        description: Type REPORT for report, or REMEDIATE for an apply operation
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  checks: read
+
+concurrency:
+  group: production-release
+  cancel-in-progress: false
+
+jobs:
+  review-or-remediate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment: production
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      RELEASE_SHA: ${{ inputs.release_sha }}
+      TARGET_DATABASE: ${{ inputs.target }}
+      OPERATION: ${{ inputs.operation }}
+      CONFIRMATION: ${{ inputs.confirmation }}
+      APPROVAL_FILE: ${{ inputs.approval_file }}
+      APPROVAL_SHA256: ${{ inputs.approval_sha256 }}
+      VALIDATION_DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
+      PRODUCTION_DATABASE_URL: ${{ secrets.PRODUCTION_MIGRATION_DATABASE_URL }}
+      VALIDATION_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+      PRODUCTION_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+      PRODUCTION_POOLED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      VALIDATION_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
+      PRODUCTION_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+    steps:
+      - name: Require explicit operation authorization
+        shell: bash
+        run: |
+          expected=REMEDIATE
+          if [ "$OPERATION" = "report" ]; then expected=REPORT; fi
+          if [ "$CONFIRMATION" != "$expected" ]; then
+            echo "::error::confirmation must exactly equal $expected for $OPERATION."
+            exit 1
+          fi
+
+      - name: Checkout approved release
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.release_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Verify protected-main and required-check provenance
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          node --experimental-strip-types scripts/verify-release-provenance.ts \
+            --release-sha="$RELEASE_SHA" \
+            --branch=main \
+            --required-check=build \
+            --output=tmp/remediation/release-provenance.json
+
+      - name: Select the exact protected database target
+        shell: bash
+        run: |
+          case "$TARGET_DATABASE" in
+            production)
+              selected_url="$PRODUCTION_DATABASE_URL"
+              selected_host="$PRODUCTION_DATABASE_HOST"
+              selected_name="$PRODUCTION_DATABASE_NAME"
+              forbidden_host="$VALIDATION_DATABASE_HOST"
+              forbidden_host_2=""
+              ;;
+            validation)
+              selected_url="$VALIDATION_DATABASE_URL"
+              selected_host="$VALIDATION_DATABASE_HOST"
+              selected_name="$VALIDATION_DATABASE_NAME"
+              forbidden_host="$PRODUCTION_DATABASE_HOST"
+              forbidden_host_2="$PRODUCTION_POOLED_DATABASE_HOST"
+              ;;
+            *)
+              echo "::error::Unsupported database target $TARGET_DATABASE."
+              exit 1
+              ;;
+          esac
+          for value_name in selected_url selected_host selected_name forbidden_host; do
+            if [ -z "${!value_name:-}" ]; then
+              echo "::error::$value_name is required for the selected target."
+              exit 1
+            fi
+          done
+          echo "::add-mask::$selected_url"
+          delimiter="DATABASE_URL_$(openssl rand -hex 16)"
+          {
+            echo "DATABASE_URL<<$delimiter"
+            echo "$selected_url"
+            echo "$delimiter"
+            echo "EXPECTED_DATABASE_HOST=$selected_host"
+            echo "EXPECTED_DATABASE_NAME=$selected_name"
+            echo "FORBIDDEN_DATABASE_HOST=$forbidden_host"
+            echo "FORBIDDEN_DATABASE_HOST_2=$forbidden_host_2"
+          } >> "$GITHUB_ENV"
+
+      - name: Validate committed approval input
+        if: inputs.operation != 'report'
+        shell: bash
+        run: |
+          if [[ ! "$APPROVAL_FILE" =~ ^audits/approvals/[A-Za-z0-9._/-]+\.json$ ]] || [[ "$APPROVAL_FILE" == *".."* ]]; then
+            echo "::error::approval_file must be a safe audits/approvals/*.json path."
+            exit 1
+          fi
+          if ! [[ "$APPROVAL_SHA256" =~ ^[0-9a-f]{64}$ ]]; then
+            echo "::error::approval_sha256 must be an exact lowercase SHA-256 digest."
+            exit 1
+          fi
+          git ls-files --error-unmatch -- "$APPROVAL_FILE" >/dev/null
+          test -f "$APPROVAL_FILE" && test ! -L "$APPROVAL_FILE"
+          resolved="$(realpath "$APPROVAL_FILE")"
+          case "$resolved" in
+            "$GITHUB_WORKSPACE"/audits/approvals/*) ;;
+            *) echo "::error::approval_file resolves outside audits/approvals."; exit 1 ;;
+          esac
+
+      - name: Install, generate, and validate
+        run: |
+          npm ci
+          npm run db:generate
+          npm run db:validate
+
+      - name: Prove database target and staged schema
+        shell: bash
+        run: |
+          mkdir -p tmp/remediation
+          node --experimental-strip-types scripts/assert-database-target.ts
+          set -o pipefail
+          ./node_modules/.bin/prisma migrate status 2>&1 | tee tmp/remediation/migrate-status.log
+          ./node_modules/.bin/prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/remediation/schema-drift.log
+
+      - name: Reverify exact main head immediately before remediation
+        if: inputs.operation != 'report'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          node --experimental-strip-types scripts/verify-release-provenance.ts \
+            --release-sha="$RELEASE_SHA" \
+            --branch=main \
+            --required-check=build \
+            --output=tmp/remediation/release-provenance-before-apply.json
+
+      - name: Apply the exact reviewed decision
+        if: inputs.operation != 'report'
+        shell: bash
+        run: |
+          set -o pipefail
+          if [ "$OPERATION" = "apply-citations" ]; then
+            ./node_modules/.bin/tsx scripts/apply-primary-citation-remediation.ts \
+              --apply \
+              --approval-file="$APPROVAL_FILE" \
+              --expected-sha256="$APPROVAL_SHA256" \
+              2>&1 | tee tmp/remediation/citation-apply.log
+          elif [ "$OPERATION" = "apply-company-merges" ]; then
+            ./node_modules/.bin/tsx scripts/merge-duplicate-companies.ts \
+              --apply \
+              --approval-file="$APPROVAL_FILE" \
+              --approval-sha256="$APPROVAL_SHA256" \
+              2>&1 | tee tmp/remediation/company-merge-apply.log
+          else
+            echo "::error::Unsupported operation $OPERATION."
+            exit 1
+          fi
+
+      - name: Generate reviewer-neutral current-state reports
+        if: always()
+        shell: bash
+        run: |
+          if [ -z "${DATABASE_URL:-}" ] || [ ! -x ./node_modules/.bin/tsx ]; then exit 0; fi
+          set -o pipefail
+          ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts \
+            --output=tmp/remediation/primary-citation-approval-template.json \
+            2>&1 | tee tmp/remediation/primary-citation-report.log
+          ./node_modules/.bin/tsx scripts/source-coverage-report.ts \
+            --output=tmp/remediation/source-coverage.json \
+            2>&1 | tee tmp/remediation/source-coverage.log
+          ./node_modules/.bin/tsx scripts/report-company-merge-candidates.ts \
+            --approval-output=tmp/remediation/company-merge-approval-template.json \
+            > tmp/remediation/company-canonical-review.md
+          ./node_modules/.bin/tsx scripts/report-company-merge-candidates.ts --published-only \
+            > tmp/remediation/company-public-duplicate-review.md
+
+      - name: Upload immutable review and remediation evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: ${{ inputs.target }}-data-remediation-${{ github.run_id }}
+          path: tmp/remediation/
+          if-no-files-found: warn
+          retention-days: 90

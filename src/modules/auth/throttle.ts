@@ -30,28 +30,37 @@ export async function isLoginThrottled(email: string, ip?: string | null): Promi
 }
 
 export async function recordFailedLogin(email: string, ip?: string | null): Promise<void> {
-  const now = new Date();
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    const now = new Date();
+    try {
+      await prisma.$transaction(async (tx) => {
+        for (const keyHash of throttleKeys(email, ip)) {
+          const existing = await tx.authThrottle.findUnique({ where: { keyHash } });
+          const windowExpired = !existing || now.getTime() - existing.windowStartedAt.getTime() >= WINDOW_MS;
+          const failedAttempts = windowExpired ? 1 : existing.failedAttempts + 1;
+          const lockedUntil = failedAttempts >= MAX_FAILURES
+            ? new Date(now.getTime() + WINDOW_MS)
+            : null;
 
-  await prisma.$transaction(async (tx) => {
-    for (const keyHash of throttleKeys(email, ip)) {
-      const existing = await tx.authThrottle.findUnique({ where: { keyHash } });
-      const windowExpired = !existing || now.getTime() - existing.windowStartedAt.getTime() >= WINDOW_MS;
-      const failedAttempts = windowExpired ? 1 : existing.failedAttempts + 1;
-      const lockedUntil = failedAttempts >= MAX_FAILURES
-        ? new Date(now.getTime() + WINDOW_MS)
-        : null;
-
-      await tx.authThrottle.upsert({
-        where: { keyHash },
-        update: {
-          failedAttempts,
-          windowStartedAt: windowExpired ? now : existing?.windowStartedAt,
-          lockedUntil,
-        },
-        create: { keyHash, failedAttempts, windowStartedAt: now, lockedUntil },
-      });
+          await tx.authThrottle.upsert({
+            where: { keyHash },
+            update: {
+              failedAttempts,
+              windowStartedAt: windowExpired ? now : existing?.windowStartedAt,
+              lockedUntil,
+            },
+            create: { keyHash, failedAttempts, windowStartedAt: now, lockedUntil },
+          });
+        }
+      }, { isolationLevel: "Serializable" });
+      return;
+    } catch (error) {
+      const code = error && typeof error === "object" && "code" in error
+        ? String((error as { code?: unknown }).code)
+        : "";
+      if (code !== "P2034" || attempt === 2) throw error;
     }
-  });
+  }
 }
 
 export async function clearLoginThrottle(email: string, ip?: string | null): Promise<void> {

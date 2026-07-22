@@ -5,7 +5,13 @@ import { PORTCO_SECTORS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
 import { getPortCoSectorColor, getPortCoRegionColor, getPortCoCountryTagColor } from "@/lib/colors";
 import { getUniqueFirms, getAllOwnerFirms } from "@/lib/portco-utils";
 import { withBasePath } from "@/lib/base-path";
-import type { CompanyView, FundStrategyView, DatabaseCounts, RecordMeta } from "@/modules/shared/types";
+import type {
+  CompanyDetail,
+  CompanyListItem,
+  FundStrategyView,
+  DatabaseCounts,
+  RecordMeta,
+} from "@/modules/shared/types";
 import {
   Search,
   Download,
@@ -15,7 +21,7 @@ import {
 } from "lucide-react";
 import { PortCoDrawer } from "@/components/PortfolioDatabase/PortCoDrawer";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam, useUrlQueryState, useUrlQueryWriter } from "@/hooks/useUrlFilterSet";
+import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam, useUrlQueryParamsWriter, useUrlQueryState, useUrlQueryWriter } from "@/hooks/useUrlFilterSet";
 import { useCanExport } from "@/hooks/useCanExport";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
@@ -30,10 +36,11 @@ import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
 import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { track } from "@vercel/analytics";
+import { subscribeToDetailCacheInvalidation } from "@/lib/detail-cache-events";
 
 const INVESTMENT_YEAR_NA = "N/A";
 const PORTCO_PAGE_SIZE = 25;
-const companyDetailCache = new Map<string, { data: CompanyView; meta: RecordMeta }>();
+const companyDetailCache = new Map<string, { data: CompanyDetail; meta: RecordMeta }>();
 
 function mostCommonLabel(items: string[]): { label: string; count: number } | null {
   const counts = new Map<string, number>();
@@ -124,7 +131,7 @@ function PortCoFilterBar({
 
 // ─── Insights Hero ──────────────────────────────────────────
 
-function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
+function PortCoInsightsHero({ companies }: { companies: CompanyListItem[] }) {
   const sectorRanking = useMemo(
     () => deriveRanking(companies.map((c) => c.sector), getPortCoSectorColor),
     [companies]
@@ -192,7 +199,7 @@ function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
 // `activeFirms` is the current filter selection. With no filter, behavior is
 // unchanged: show the primary.
 function pickDisplayedFirm(
-  company: CompanyView,
+  company: CompanyListItem,
   activeFirms: Set<string>
 ): { firm: string; isCoOwner: boolean; primaryFirm: string } {
   const primary = company.investmentFirm;
@@ -217,9 +224,9 @@ function PortCoCard({
   activeFirms,
   onSelect,
 }: {
-  company: CompanyView;
+  company: CompanyListItem;
   activeFirms: Set<string>;
-  onSelect: (company: CompanyView) => void;
+  onSelect: (company: CompanyListItem) => void;
 }) {
   const display = pickDisplayedFirm(company, activeFirms);
   return (
@@ -274,13 +281,14 @@ function PortCoTable({
   activeFirms,
   onSelect,
 }: {
-  companies: CompanyView[];
+  companies: CompanyListItem[];
   activeFirms: Set<string>;
-  onSelect: (company: CompanyView) => void;
+  onSelect: (company: CompanyListItem) => void;
 }) {
-  const [sortParam, setSortParam] = useUrlQueryState("sort", "name", { resetPage: true });
-  const [direction, setDirection] = useUrlQueryState("direction", "asc", { resetPage: true });
+  const [sortParam] = useUrlQueryState("sort", "name", { resetPage: true });
+  const [direction] = useUrlQueryState("direction", "asc", { resetPage: true });
   const [pageParam, setPageParam] = useUrlQueryState("page", "1");
+  const writeQueryParams = useUrlQueryParamsWriter();
   const sortField: "name" | "sector" | "country" | "firm" = ["sector", "country", "firm"].includes(sortParam)
     ? sortParam as "sector" | "country" | "firm"
     : "name";
@@ -310,12 +318,14 @@ function PortCoTable({
   }, [sorted, safePage]);
 
   const toggleSort = (field: typeof sortField) => {
-    if (sortField === field) {
-      setDirection(sortAsc ? "desc" : "asc");
-    } else {
-      setSortParam(field);
-      setDirection("asc");
-    }
+    const nextDirection = sortField === field && sortAsc ? "desc" : "asc";
+    writeQueryParams(
+      {
+        sort: field === "name" ? null : field,
+        direction: nextDirection === "asc" ? null : nextDirection,
+      },
+      { resetPage: true },
+    );
   };
 
   const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
@@ -373,7 +383,10 @@ function PortCoTable({
                 return (
                 <tr
                   key={`${company.name}-${company.investmentFirm}-${i}`}
-                  onClick={() => onSelect(company)}
+                  onClick={(event) => {
+                    event.currentTarget.focus();
+                    onSelect(company);
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
@@ -382,6 +395,7 @@ function PortCoTable({
                   }}
                   role="button"
                   tabIndex={0}
+                  aria-label={`Open ${company.name} company details`}
                   className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group focus:bg-[var(--bg-subtle)] focus:outline-none"
                 >
                   <td className="px-3 py-2.5 align-top max-w-[260px]">
@@ -450,17 +464,22 @@ function PortCoTable({
 
 // ─── Main Component ─────────────────────────────────────────
 
-export function PortfolioDatabase({ companies: portcos, funds, counts }: { companies: CompanyView[]; funds: FundStrategyView[]; counts: DatabaseCounts }) {
+export function PortfolioDatabase({ companies: portcos, funds, counts }: { companies: CompanyListItem[]; funds: FundStrategyView[]; counts: DatabaseCounts }) {
   const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeCountryTags, toggleCountryTag] = useUrlFilterSet("country");
   const [activeFirms, toggleFirm] = useUrlFilterSet("firm");
   const [activeInvestmentYears, toggleInvestmentYear] = useUrlFilterSet("year");
-  const [selectedCompany, setSelectedCompany] = useState<CompanyView | null>(null);
-  const [selectedCompanyDetail, setSelectedCompanyDetail] = useState<CompanyView | null>(null);
+  const [selectedCompany, setSelectedCompany] = useState<CompanyListItem | null>(null);
+  const [selectedCompanyDetail, setSelectedCompanyDetail] = useState<CompanyDetail | null>(null);
   const [detailMeta, setDetailMeta] = useState<RecordMeta | null>(null);
   const [detailState, setDetailState] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [detailRequest, setDetailRequest] = useState(0);
+
+  useEffect(() => subscribeToDetailCacheInvalidation("company", () => {
+    companyDetailCache.clear();
+    setDetailRequest((value) => value + 1);
+  }), []);
   const writeQuery = useUrlQueryWriter();
   const canExport = useCanExport();
 
@@ -532,7 +551,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     };
   }, [selectedCompany, detailRequest]);
 
-  const openCompany = useCallback((company: CompanyView) => {
+  const openCompany = useCallback((company: CompanyListItem) => {
     setSelectedCompany(company);
     openedFocus.current = company.id;
     writeQuery("focus", company.id, "push");
@@ -603,6 +622,20 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     activeFirms,
     activeInvestmentYears,
   ]);
+
+  // A restored or newly applied filter must not leave the URL claiming a
+  // hidden record is selected. Closing here also lets the dialog focus hook
+  // return keyboard focus to the row/filter that triggered the change.
+  useEffect(() => {
+    if (selectedCompany && !filteredCompanies.some((company) => company.id === selectedCompany.id)) {
+      setSelectedCompany(null);
+      setSelectedCompanyDetail(null);
+      setDetailMeta(null);
+      setDetailState("idle");
+      openedFocus.current = null;
+      writeQuery("focus", null);
+    }
+  }, [filteredCompanies, selectedCompany, writeQuery]);
 
   const headerMetrics = useMemo<IntelligenceMetric[]>(() => {
     const sponsorCount = new Set(filteredCompanies.flatMap(getAllOwnerFirms)).size;
@@ -709,7 +742,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
 
       {selectedCompany && (
         <PortCoDrawer
-          company={selectedCompanyDetail ?? selectedCompany}
+          company={selectedCompanyDetail ?? { ...selectedCompany, description: "" }}
           funds={funds}
           detailState={detailState}
           detailMeta={detailMeta}

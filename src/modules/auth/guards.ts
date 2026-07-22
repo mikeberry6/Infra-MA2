@@ -1,5 +1,7 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/modules/auth/config";
+import { prisma } from "@/lib/prisma";
+import { signedSnapshotMatchesCurrentUser } from "@/modules/auth/session";
 
 export class AuthorizationError extends Error {
   constructor(message = "Forbidden") {
@@ -13,14 +15,20 @@ export function isAuthorizationError(error: unknown): error is AuthorizationErro
 }
 
 export async function getSessionRole(): Promise<string | null> {
-  const session = await getServerSession(authOptions);
-  return session?.user?.role ?? null;
+  const identity = await getSessionIdentity();
+  return identity?.role ?? null;
 }
 
 export async function getSessionIdentity(): Promise<{ id: string; role: string } | null> {
   const session = await getServerSession(authOptions);
   if (!session?.user?.id || !session.user.role) return null;
-  return { id: session.user.id, role: session.user.role };
+
+  const user = await prisma.user.findUnique({
+    where: { id: session.user.id },
+    select: { id: true, role: true, updatedAt: true },
+  });
+  if (!signedSnapshotMatchesCurrentUser(session.user, user)) return null;
+  return { id: user.id, role: user.role };
 }
 
 export async function requireAdmin(): Promise<void> {

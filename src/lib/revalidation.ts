@@ -10,8 +10,10 @@ export function revalidateAppData() {
   revalidatePath("/portfolio");
   revalidatePath("/news");
   revalidatePath("/search");
+  revalidatePath("/dashboard");
   revalidatePath("/admin");
   revalidatePath("/admin/deals");
   revalidatePath("/admin/funds");
   revalidatePath("/admin/companies");
+  revalidatePath("/admin/dashboard-signals");
 }

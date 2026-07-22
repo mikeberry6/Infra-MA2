@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect, useCallback, useRef, Fragment } from "react";
 import { FUND_STRATEGIES, FUND_STATUSES, FUND_SIZE_RANGES, FUND_SECTORS } from "@/lib/constants";
 import { getStrategyColor, getStatusColor, getSizeRangeColor, getFundSectorColor, getPortCoSectorColor, getStructureColor } from "@/lib/colors";
-import { matchesSizeRange, groupFundsByManager, getFundStats } from "@/lib/fund-utils";
+import { matchesSizeRange, groupFundsByManager, getFundStats, paginateManagerGroups } from "@/lib/fund-utils";
 import type { FundListItem, FundView, PortfolioCompanyView, DatabaseCounts, RecordMeta } from "@/modules/shared/types";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import {
@@ -16,7 +16,7 @@ import {
   ArrowDown,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam, useUrlQueryState, useUrlQueryWriter } from "@/hooks/useUrlFilterSet";
+import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam, useUrlQueryParamsWriter, useUrlQueryState, useUrlQueryWriter } from "@/hooks/useUrlFilterSet";
 import { useCanExport } from "@/hooks/useCanExport";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
@@ -34,6 +34,7 @@ import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { withBasePath } from "@/lib/base-path";
 import { track } from "@vercel/analytics";
 import { formatDate } from "@/lib/format";
+import { subscribeToDetailCacheInvalidation } from "@/lib/detail-cache-events";
 
 const FUND_PAGE_SIZE = 25;
 const fundDetailCache = new Map<string, { data: FundView; meta: RecordMeta }>();
@@ -286,7 +287,10 @@ function FundRow({
 }) {
   return (
     <tr
-      onClick={() => onSelect(fund)}
+      onClick={(event) => {
+        event.currentTarget.focus();
+        onSelect(fund);
+      }}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
@@ -295,6 +299,7 @@ function FundRow({
       }}
       role="button"
       tabIndex={0}
+      aria-label={`Open ${fund.fundName} fund details`}
       className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group border-b border-[var(--border)] last:border-b-0 focus:bg-[var(--bg-subtle)] focus:outline-none"
     >
       <td className="px-3 py-2.5 align-top">
@@ -332,6 +337,19 @@ function ManagerGroupedTable({
   onSelectFund: (fund: FundListItem) => void;
 }) {
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
+  const [pageParam, setPageParam] = useUrlQueryState("page", "1");
+  const totalFunds = sortedManagers.reduce((sum, [, funds]) => sum + funds.length, 0);
+  const totalPages = Math.max(1, Math.ceil(totalFunds / FUND_PAGE_SIZE));
+  const page = Math.max(1, Number.parseInt(pageParam, 10) || 1);
+  const safePage = Math.min(page, totalPages);
+  const managerFundCounts = useMemo(
+    () => new Map(sortedManagers.map(([manager, funds]) => [manager, funds.length])),
+    [sortedManagers],
+  );
+  const visibleManagers = useMemo(
+    () => paginateManagerGroups(sortedManagers, safePage, FUND_PAGE_SIZE),
+    [safePage, sortedManagers],
+  );
   const toggle = (name: string) =>
     setCollapsed((prev) => {
       const next = new Set(prev);
@@ -355,7 +373,7 @@ function ManagerGroupedTable({
           <FundTableColGroup />
           <FundTableHead />
           <tbody>
-            {sortedManagers.map(([managerName, managerFunds], groupIdx) => {
+            {visibleManagers.map(([managerName, managerFunds], groupIdx) => {
               const isCollapsed = collapsed.has(managerName);
               return (
                 <Fragment key={managerName}>
@@ -364,12 +382,14 @@ function ManagerGroupedTable({
                       <td colSpan={5} className="h-2 bg-[var(--bg-app)] border-0 p-0" />
                     </tr>
                   )}
-                  <tr
-                    onClick={() => toggle(managerName)}
-                    className="bg-[var(--bg-app)] border-y border-[var(--border)] cursor-pointer hover:bg-[var(--bg-hover)] transition-colors select-none"
-                  >
-                    <td colSpan={5} className="px-3">
-                      <div className="flex items-center gap-2 h-10">
+                  <tr className="border-y border-[var(--border)] bg-[var(--bg-app)]">
+                    <td colSpan={5} className="p-0">
+                      <button
+                        type="button"
+                        onClick={() => toggle(managerName)}
+                        aria-expanded={!isCollapsed}
+                        className="flex h-10 w-full items-center gap-2 px-3 text-left transition-colors hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--accent-soft)]"
+                      >
                         <ChevronRight
                           className={`h-3.5 w-3.5 text-[var(--text-tertiary)] shrink-0 transition-transform ${
                             !isCollapsed ? "rotate-90" : ""
@@ -379,9 +399,9 @@ function ManagerGroupedTable({
                           {managerName}
                         </span>
                         <span className="type-micro mono tabular-nums">
-                          {managerFunds.length}
+                          {managerFundCounts.get(managerName) ?? managerFunds.length}
                         </span>
-                      </div>
+                      </button>
                     </td>
                   </tr>
                   {!isCollapsed &&
@@ -402,7 +422,7 @@ function ManagerGroupedTable({
 
       {/* Mobile: card-based layout per manager */}
       <div className="md:hidden">
-        {sortedManagers.map(([managerName, managerFunds]) => {
+        {visibleManagers.map(([managerName, managerFunds]) => {
           const isCollapsed = collapsed.has(managerName);
           return (
             <div key={managerName} className="border-b border-[var(--border)]">
@@ -419,7 +439,7 @@ function ManagerGroupedTable({
                   {managerName}
                 </span>
                 <span className="type-micro mono tabular-nums">
-                  {managerFunds.length}
+                  {managerFundCounts.get(managerName) ?? managerFunds.length}
                 </span>
               </button>
               {!isCollapsed && (
@@ -433,6 +453,13 @@ function ManagerGroupedTable({
           );
         })}
       </div>
+
+      <PaginationControls
+        page={safePage}
+        pageSize={FUND_PAGE_SIZE}
+        totalItems={totalFunds}
+        onPageChange={(next) => setPageParam(String(next))}
+      />
     </>
   );
 }
@@ -446,9 +473,10 @@ function AllFundsTable({
   funds: FundListItem[];
   onSelectFund: (fund: FundListItem) => void;
 }) {
-  const [sortParam, setSortParam] = useUrlQueryState("sort", "name", { resetPage: true });
-  const [direction, setDirection] = useUrlQueryState("direction", "asc", { resetPage: true });
+  const [sortParam] = useUrlQueryState("sort", "name", { resetPage: true });
+  const [direction] = useUrlQueryState("direction", "asc", { resetPage: true });
   const [pageParam, setPageParam] = useUrlQueryState("page", "1");
+  const writeQueryParams = useUrlQueryParamsWriter();
   const sortField: "name" | "strategy" | "size" | "vintage" = ["strategy", "size", "vintage"].includes(sortParam)
     ? sortParam as "strategy" | "size" | "vintage"
     : "name";
@@ -486,12 +514,16 @@ function AllFundsTable({
   }, [sorted, safePage]);
 
   const toggleSort = (field: typeof sortField) => {
-    if (sortField === field) {
-      setDirection(sortAsc ? "desc" : "asc");
-    } else {
-      setSortParam(field);
-      setDirection(field === "size" ? "desc" : "asc");
-    }
+    const nextDirection = sortField === field
+      ? (sortAsc ? "desc" : "asc")
+      : (field === "size" ? "desc" : "asc");
+    writeQueryParams(
+      {
+        sort: field === "name" ? null : field,
+        direction: nextDirection === "asc" ? null : nextDirection,
+      },
+      { resetPage: true },
+    );
   };
 
   if (displayFunds.length === 0) {
@@ -922,6 +954,11 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
   const [detailMeta, setDetailMeta] = useState<RecordMeta | null>(null);
   const [detailState, setDetailState] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [detailRequest, setDetailRequest] = useState(0);
+
+  useEffect(() => subscribeToDetailCacheInvalidation("fund", () => {
+    fundDetailCache.clear();
+    setDetailRequest((value) => value + 1);
+  }), []);
   const [fundViewParam, setFundViewParam] = useUrlQueryState("view", "all", { resetPage: true });
   const fundView: "managers" | "all" = fundViewParam === "managers" ? "managers" : "all";
   const writeQuery = useUrlQueryWriter();
@@ -998,17 +1035,22 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
     () => Array.from(groupedFunds.entries()).sort((a, b) => a[0].localeCompare(b[0])),
     [groupedFunds]
   );
+  const focusId = useUrlQueryParam("focus");
+  const openedFocus = useRef<string | null>(null);
 
   // Close drawers if filtered out
   useEffect(() => {
     if (selectedFund && !filteredFunds.find((f) => f.id === selectedFund.id)) {
       setSelectedFund(null);
+      setSelectedFundDetail(null);
+      setDetailMeta(null);
+      setDetailState("idle");
+      openedFocus.current = null;
+      writeQuery("focus", null);
     }
-  }, [filteredFunds, selectedFund]);
+  }, [filteredFunds, selectedFund, writeQuery]);
 
   // Auto-open drawer when navigated here with `?focus=<legacyId>`.
-  const focusId = useUrlQueryParam("focus");
-  const openedFocus = useRef<string | null>(null);
   useEffect(() => {
     if (!focusId) {
       if (openedFocus.current) setSelectedFund(null);

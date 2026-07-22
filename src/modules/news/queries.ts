@@ -61,17 +61,30 @@ async function getNewsRows() {
   });
 }
 
+// Keep each database access behind an async boundary. If the Prisma client is
+// unavailable (for example, a deliberately misconfigured health/failure
+// check), every failure is then owned by Promise.all instead of leaving an
+// earlier query as an unhandled rejection while a later property access
+// throws synchronously.
+async function getLatestNewsAttempt() {
+  return prisma.pipelineRun.findFirst({
+    where: { pipeline: "NEWS_SCAN" },
+    orderBy: { startedAt: "desc" },
+  });
+}
+
+async function getLatestSuccessfulNewsRun() {
+  return prisma.pipelineRun.findFirst({
+    where: { pipeline: "NEWS_SCAN", status: "SUCCEEDED" },
+    orderBy: { endedAt: "desc" },
+  });
+}
+
 async function getNewsFeedRaw(): Promise<NewsFeedView> {
   const [rows, latestAttempt, latestSuccess] = await Promise.all([
     getNewsRows(),
-    prisma.pipelineRun.findFirst({
-      where: { pipeline: "NEWS_SCAN" },
-      orderBy: { startedAt: "desc" },
-    }),
-    prisma.pipelineRun.findFirst({
-      where: { pipeline: "NEWS_SCAN", status: "SUCCEEDED" },
-      orderBy: { endedAt: "desc" },
-    }),
+    getLatestNewsAttempt(),
+    getLatestSuccessfulNewsRun(),
   ]);
   const lastSuccessfulAt = latestSuccess?.endedAt ?? latestSuccess?.startedAt;
   const nextExpected = lastSuccessfulAt
@@ -91,6 +104,8 @@ async function getNewsFeedRaw(): Promise<NewsFeedView> {
     ? "never-run"
     : latestAttempt.status === "FAILED"
       ? "failed"
+      : latestAttempt.status === "RUNNING"
+        ? "pending"
       : overdue
         ? "overdue"
         : "healthy";
@@ -108,6 +123,10 @@ async function getNewsFeedRaw(): Promise<NewsFeedView> {
         ? "The daily public-source scan completed successfully."
         : state === "failed"
           ? "The latest scan failed; the last successful results remain visible."
+          : state === "pending"
+            ? lastSuccessfulAt
+              ? "A news scan is currently running; the last successful results remain visible."
+              : "The first news scan is currently running."
           : state === "overdue"
             ? "The next scheduled scan is overdue."
             : "No completed news scan has been recorded yet.",

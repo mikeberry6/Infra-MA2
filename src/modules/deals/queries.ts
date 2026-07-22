@@ -86,6 +86,7 @@ const DEAL_INCLUDE = {
     include: { organization: { select: { name: true } } },
   },
   citations: {
+    where: { isPrimary: true },
     include: { source: { select: { label: true, url: true } } },
     take: 1,
   },
@@ -103,6 +104,7 @@ const DEAL_LIST_SELECT = {
   dealStatus: true,
   country: true,
   citations: {
+    where: { isPrimary: true },
     select: { source: { select: { label: true, url: true } } },
     take: 1,
   },
@@ -157,8 +159,8 @@ export async function getAllDeals(): Promise<DealListItem[]> {
 }
 
 export async function getDealById(legacyId: string): Promise<DealView | null> {
-  const deal = await prisma.deal.findUnique({
-    where: { legacyId },
+  const deal = await prisma.deal.findFirst({
+    where: { legacyId, status: "PUBLISHED" },
     include: DEAL_INCLUDE,
   });
   return deal ? toDealView(deal) : null;

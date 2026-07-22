@@ -1,5 +1,5 @@
 import { DASHBOARD_METRICS } from "@/modules/dashboard/catalog";
-import { createSampleDashboardObservations, createSampleDashboardSignals } from "@/modules/dashboard/sample";
+import { dashboardSignalContentHash } from "@/modules/dashboard/content-hash";
 import { getDashboardProviders } from "@/modules/dashboard/providers";
 import type {
   DashboardObservation,
@@ -8,9 +8,14 @@ import type {
   DashboardSignal,
   DashboardSource,
 } from "@/modules/dashboard/types";
+import {
+  inspectRequiredDashboardMetrics,
+  validateDashboardProviderResult,
+} from "@/modules/dashboard/validation";
 
 type PrismaDelegate = {
   upsert(args: any): Promise<any>;
+  updateMany?(args: any): Promise<any>;
   count?(args?: any): Promise<number>;
 };
 
@@ -30,16 +35,23 @@ export type DashboardSyncPrisma = {
 export interface DashboardSyncOptions {
   dryRun?: boolean;
   providers?: DashboardProvider[];
+  refreshWindow?: string;
 }
 
 export interface DashboardSyncSourceSummary {
   sourceId: string;
   sourceName: string;
+  sourceKind: DashboardSource["kind"];
+  critical: boolean;
   status: DashboardRunStatus;
   observationsFetched: number;
   observationsUpserted: number;
   signalsFetched: number;
   signalsUpserted: number;
+  requiredMetrics: number;
+  currentRequiredMetrics: number;
+  missingRequiredMetrics: string[];
+  staleRequiredMetrics: string[];
   warnings: string[];
   error?: string;
   startedAt: string;
@@ -49,6 +61,7 @@ export interface DashboardSyncSourceSummary {
 export interface DashboardSyncSummary {
   runAt: string;
   dryRun: boolean;
+  refreshWindow?: string;
   sources: DashboardSyncSourceSummary[];
   totals: {
     observationsFetched: number;
@@ -60,11 +73,21 @@ export interface DashboardSyncSummary {
   };
 }
 
+export interface DashboardSyncHealth {
+  healthy: boolean;
+  enabledSources: number;
+  failedSources: number;
+  criticalIssues: string[];
+  failureRate: number;
+  failures: string[];
+}
+
 export async function syncDashboard(
   prisma: DashboardSyncPrisma,
   options: DashboardSyncOptions = {},
 ): Promise<DashboardSyncSummary> {
   const dryRun = options.dryRun ?? false;
+  const refreshWindow = options.refreshWindow;
   const providers = options.providers ?? getDashboardProviders(prisma as any);
   if (!dryRun) await upsertDashboardMetricDefinitions(prisma);
 
@@ -80,27 +103,46 @@ export async function syncDashboard(
           sourceName: provider.source.name,
           status: "PARTIAL",
           startedAt: new Date(startedAt),
-          metadata: sourceMetadata(provider.source),
+          metadata: sourceMetadata(provider.source, refreshWindow),
         },
       });
       sourceRunId = run.id;
     }
 
     try {
-      const result = await provider.fetch();
+      const result = validateDashboardProviderResult(provider.source, await provider.fetch());
       const observations = result.observations;
       const signals = result.signals ?? [];
       const warnings = result.warnings ?? [];
+      const requiredMetricHealth = inspectRequiredDashboardMetrics(
+        provider.source.id,
+        observations,
+        new Date(),
+      );
       let observationsUpserted = 0;
       let signalsUpserted = 0;
 
       if (!dryRun) {
+        try {
+          await markNonCurrentSourceObservationsCached(
+            prisma,
+            provider.source.id,
+            new Set(requiredMetricHealth.currentMetricIds),
+          );
+        } catch (error) {
+          warnings.push(`Could not mark non-current ${provider.source.name} observations cached: ${error instanceof Error ? error.message : String(error)}`);
+        }
+        const staleMetricIds = new Set(requiredMetricHealth.staleMetricIds);
         for (const item of observations) {
-          await upsertObservation(prisma, item, sourceRunId);
+          await upsertObservation(
+            prisma,
+            staleMetricIds.has(item.metricId) ? { ...item, status: "CACHED" } : item,
+            sourceRunId,
+          );
           observationsUpserted += 1;
         }
         for (const item of signals) {
-          await upsertSignal(prisma, item);
+          await upsertSignal(prisma, item, sourceRunId);
           signalsUpserted += 1;
         }
       }
@@ -118,7 +160,14 @@ export async function syncDashboard(
             signalsFetched: signals.length,
             signalsUpserted,
             error: warnings.length > 0 ? warnings.join("\n") : null,
-            metadata: { ...sourceMetadata(provider.source), warnings },
+            metadata: {
+              ...sourceMetadata(provider.source, refreshWindow),
+              warnings,
+              requiredMetrics: requiredMetricHealth.requiredMetricIds.length,
+              currentRequiredMetrics: requiredMetricHealth.currentMetricIds.length,
+              missingRequiredMetrics: requiredMetricHealth.missingMetricIds,
+              staleRequiredMetrics: requiredMetricHealth.staleMetricIds,
+            },
           },
         });
       }
@@ -126,11 +175,17 @@ export async function syncDashboard(
       sources.push({
         sourceId: provider.source.id,
         sourceName: provider.source.name,
+        sourceKind: provider.source.kind,
+        critical: provider.source.critical === true,
         status,
         observationsFetched: observations.length,
         observationsUpserted,
         signalsFetched: signals.length,
         signalsUpserted,
+        requiredMetrics: requiredMetricHealth.requiredMetricIds.length,
+        currentRequiredMetrics: requiredMetricHealth.currentMetricIds.length,
+        missingRequiredMetrics: requiredMetricHealth.missingMetricIds,
+        staleRequiredMetrics: requiredMetricHealth.staleMetricIds,
         warnings,
         startedAt,
         endedAt,
@@ -138,6 +193,14 @@ export async function syncDashboard(
     } catch (error) {
       const endedAt = new Date().toISOString();
       const message = error instanceof Error ? error.message : String(error);
+      const requiredMetricHealth = inspectRequiredDashboardMetrics(provider.source.id, [], new Date());
+      if (!dryRun) {
+        try {
+          await markNonCurrentSourceObservationsCached(prisma, provider.source.id, new Set());
+        } catch (cacheError) {
+          console.error(`Could not mark failed ${provider.source.name} observations cached:`, cacheError);
+        }
+      }
       if (!dryRun && sourceRunId) {
         await prisma.dashboardSourceRun.update({
           where: { id: sourceRunId },
@@ -145,18 +208,30 @@ export async function syncDashboard(
             status: "FAILED",
             endedAt: new Date(endedAt),
             error: message,
-            metadata: sourceMetadata(provider.source),
+            metadata: {
+              ...sourceMetadata(provider.source, refreshWindow),
+              requiredMetrics: requiredMetricHealth.requiredMetricIds.length,
+              currentRequiredMetrics: 0,
+              missingRequiredMetrics: requiredMetricHealth.missingMetricIds,
+              staleRequiredMetrics: [],
+            },
           },
         });
       }
       sources.push({
         sourceId: provider.source.id,
         sourceName: provider.source.name,
+        sourceKind: provider.source.kind,
+        critical: provider.source.critical === true,
         status: "FAILED",
         observationsFetched: 0,
         observationsUpserted: 0,
         signalsFetched: 0,
         signalsUpserted: 0,
+        requiredMetrics: requiredMetricHealth.requiredMetricIds.length,
+        currentRequiredMetrics: 0,
+        missingRequiredMetrics: requiredMetricHealth.missingMetricIds,
+        staleRequiredMetrics: [],
         warnings: [],
         error: message,
         startedAt,
@@ -165,62 +240,27 @@ export async function syncDashboard(
     }
   }
 
-  return summarize(new Date().toISOString(), dryRun, sources);
+  return summarize(new Date().toISOString(), dryRun, sources, refreshWindow);
 }
 
-export async function seedSampleDashboardData(prisma: DashboardSyncPrisma): Promise<DashboardSyncSummary> {
-  await upsertDashboardMetricDefinitions(prisma);
-  const startedAt = new Date().toISOString();
-  const run = await prisma.dashboardSourceRun.create({
-    data: {
-      sourceId: "sample",
-      sourceName: "Sample Fallback",
-      status: "PARTIAL",
-      startedAt: new Date(startedAt),
-      metadata: { sourceKind: "sample", note: "Sample fallback only." },
+async function markNonCurrentSourceObservationsCached(
+  prisma: DashboardSyncPrisma,
+  sourceId: string,
+  currentMetricIds: Set<string>,
+): Promise<void> {
+  const nonCurrentMetricIds = DASHBOARD_METRICS
+    .filter((metric) => metric.status === "ACTIVE" && metric.source.id === sourceId)
+    .map((metric) => metric.id)
+    .filter((metricId) => !currentMetricIds.has(metricId));
+  if (nonCurrentMetricIds.length === 0 || !prisma.dashboardObservation.updateMany) return;
+  await prisma.dashboardObservation.updateMany({
+    where: {
+      sourceId,
+      metricId: { in: nonCurrentMetricIds },
+      status: { notIn: ["SAMPLE", "UNAVAILABLE"] },
     },
+    data: { status: "CACHED" },
   });
-
-  const observations = createSampleDashboardObservations();
-  const signals = createSampleDashboardSignals();
-  let observationsUpserted = 0;
-  let signalsUpserted = 0;
-
-  for (const item of observations) {
-    await upsertObservation(prisma, item, run.id);
-    observationsUpserted += 1;
-  }
-  for (const item of signals) {
-    await upsertSignal(prisma, item);
-    signalsUpserted += 1;
-  }
-
-  const endedAt = new Date().toISOString();
-  await prisma.dashboardSourceRun.update({
-    where: { id: run.id },
-    data: {
-      status: "SUCCESS",
-      endedAt: new Date(endedAt),
-      observationsFetched: observations.length,
-      observationsUpserted,
-      signalsFetched: signals.length,
-      signalsUpserted,
-      metadata: { sourceKind: "sample", note: "Sample fallback only. Do not use as market data." },
-    },
-  });
-
-  return summarize(new Date().toISOString(), false, [{
-    sourceId: "sample",
-    sourceName: "Sample Fallback",
-    status: "SUCCESS",
-    observationsFetched: observations.length,
-    observationsUpserted,
-    signalsFetched: signals.length,
-    signalsUpserted,
-    warnings: ["Sample fallback only. Do not use as market data."],
-    startedAt,
-    endedAt,
-  }]);
 }
 
 export async function upsertDashboardMetricDefinitions(prisma: DashboardSyncPrisma): Promise<void> {
@@ -238,7 +278,7 @@ export async function upsertDashboardMetricDefinitions(prisma: DashboardSyncPris
       sourceKind: metric.source.kind,
       description: metric.description,
       staleAfterDays: metric.staleAfterDays,
-      status: "ACTIVE",
+      status: metric.status,
     };
     await prisma.dashboardMetricDefinition.upsert({
       where: { id: metric.id },
@@ -285,37 +325,61 @@ async function upsertObservation(
   });
 }
 
-async function upsertSignal(prisma: DashboardSyncPrisma, item: DashboardSignal): Promise<void> {
+async function upsertSignal(
+  prisma: DashboardSyncPrisma,
+  item: DashboardSignal,
+  sourceRunId?: string,
+): Promise<void> {
+  const contentHash = signalContentHash(item);
+  const observedAt = new Date(item.observedAt);
+  const contentData = {
+    section: item.section,
+    title: item.title,
+    summary: item.summary,
+    direction: item.direction,
+    severity: item.severity,
+    sourceName: item.sourceName,
+    sourceUrl: item.sourceUrl ?? null,
+    sourceRunId,
+    contentHash,
+    metadata: item.metadata,
+  };
+  if (!prisma.dashboardSignal.updateMany) {
+    throw new Error("Dashboard signal persistence requires updateMany support.");
+  }
+  await prisma.dashboardSignal.updateMany({
+    where: {
+      signalKey: item.signalKey,
+      observedAt,
+      sourceId: item.sourceId,
+      contentHash: { not: contentHash },
+    },
+    data: {
+      ...contentData,
+      reviewStatus: "PENDING",
+      reviewedAt: null,
+      reviewedById: null,
+      reviewedContentHash: null,
+    },
+  });
   await prisma.dashboardSignal.upsert({
     where: {
       signalKey_observedAt_sourceId: {
         signalKey: item.signalKey,
-        observedAt: new Date(item.observedAt),
+        observedAt,
         sourceId: item.sourceId,
       },
     },
-    update: {
-      section: item.section,
-      title: item.title,
-      summary: item.summary,
-      direction: item.direction,
-      severity: item.severity,
-      sourceName: item.sourceName,
-      sourceUrl: item.sourceUrl,
-      metadata: item.metadata,
-    },
+    update: contentData,
     create: {
       signalKey: item.signalKey,
-      section: item.section,
-      title: item.title,
-      summary: item.summary,
-      direction: item.direction,
-      severity: item.severity,
-      observedAt: new Date(item.observedAt),
+      observedAt,
       sourceId: item.sourceId,
-      sourceName: item.sourceName,
-      sourceUrl: item.sourceUrl,
-      metadata: item.metadata,
+      ...contentData,
+      reviewStatus: "PENDING",
+      reviewedAt: null,
+      reviewedById: null,
+      reviewedContentHash: null,
     },
   });
 }
@@ -330,13 +394,97 @@ function statusForResult(
   return "SUCCESS";
 }
 
-function sourceMetadata(source: DashboardSource): Record<string, unknown> {
+function sourceMetadata(source: DashboardSource, refreshWindow?: string): Record<string, unknown> {
   return {
     sourceKind: source.kind,
+    critical: source.critical === true,
     cadence: source.cadence,
     url: source.url,
     requiresKey: source.requiresKey,
+    expectedLagHours: source.expectedLagHours,
+    termsUrl: source.termsUrl,
+    owner: source.owner,
+    observationPublicationMode: source.observationPublicationMode,
+    signalPublicationMode: source.signalPublicationMode,
     notes: source.notes,
+    ...(refreshWindow ? { refreshWindow } : {}),
+  };
+}
+
+export function signalContentHash(item: DashboardSignal): string {
+  return dashboardSignalContentHash(item);
+}
+
+export function dashboardSyncFailureMessage(
+  summary: DashboardSyncSummary,
+  health = evaluateDashboardSyncHealth(summary),
+): string {
+  const providerDetails = summary.sources.flatMap((source) => {
+    if (source.status === "SUCCESS") return [];
+    const details = [source.error, ...source.warnings]
+      .filter((value): value is string => Boolean(value?.trim()))
+      .join(" | ");
+    return details ? [`${source.sourceName}: ${details}`] : [];
+  });
+  const suffix = providerDetails.length > 0
+    ? `; provider details: ${providerDetails.join("; ")}`
+    : "";
+  return `Dashboard freshness contract failed: ${health.failures.join("; ")}${suffix}`.slice(0, 8_000);
+}
+
+/**
+ * Known placeholders and missing-key adapters report SKIPPED so their
+ * unavailability remains visible without poisoning the operational success
+ * rate. Critical sources are never optional: FAILED/SKIPPED sources and
+ * PARTIAL sources missing or returning stale required metrics make the whole
+ * synchronization unhealthy.
+ */
+export function evaluateDashboardSyncHealth(
+  summary: DashboardSyncSummary,
+  maxFailureRate = 0.25,
+): DashboardSyncHealth {
+  if (!Number.isFinite(maxFailureRate) || maxFailureRate < 0 || maxFailureRate > 1) {
+    throw new Error("maxFailureRate must be between 0 and 1.");
+  }
+
+  const enabledSources = summary.sources.filter((source) => source.status !== "SKIPPED");
+  const failedSources = enabledSources.filter((source) => source.status === "FAILED");
+  const criticalIssues = summary.sources.flatMap((source) => {
+    if (!source.critical) return [];
+    if (source.status === "FAILED" || source.status === "SKIPPED") {
+      return [`${source.sourceName} (${source.status.toLowerCase()})`];
+    }
+    const missing = source.missingRequiredMetrics ?? [];
+    const stale = source.staleRequiredMetrics ?? [];
+    if (source.status !== "PARTIAL" || (missing.length === 0 && stale.length === 0)) return [];
+    const details = [
+      missing.length > 0 ? `missing ${missing.join(", ")}` : "",
+      stale.length > 0 ? `stale ${stale.join(", ")}` : "",
+    ].filter(Boolean).join("; ");
+    return [`${source.sourceName} (partial required-metric coverage: ${details})`];
+  });
+  const failureRate = enabledSources.length ? failedSources.length / enabledSources.length : 1;
+  const failures: string[] = [];
+
+  if (criticalIssues.length > 0) {
+    failures.push(`critical source issue(s): ${criticalIssues.join(", ")}`);
+  }
+  if (failureRate > maxFailureRate) {
+    failures.push(
+      `enabled-source failure rate ${(failureRate * 100).toFixed(1)}% exceeds ${(maxFailureRate * 100).toFixed(1)}%`,
+    );
+  }
+  if (summary.totals.observationsFetched + summary.totals.signalsFetched === 0) {
+    failures.push("no dashboard observations or signals were fetched");
+  }
+
+  return {
+    healthy: failures.length === 0,
+    enabledSources: enabledSources.length,
+    failedSources: failedSources.length,
+    criticalIssues,
+    failureRate,
+    failures,
   };
 }
 
@@ -344,10 +492,12 @@ function summarize(
   runAt: string,
   dryRun: boolean,
   sources: DashboardSyncSourceSummary[],
+  refreshWindow?: string,
 ): DashboardSyncSummary {
   return {
     runAt,
     dryRun,
+    ...(refreshWindow ? { refreshWindow } : {}),
     sources,
     totals: {
       observationsFetched: sum(sources, "observationsFetched"),

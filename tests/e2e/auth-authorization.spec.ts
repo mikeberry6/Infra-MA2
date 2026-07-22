@@ -1,0 +1,269 @@
+import { expect, test, type Locator, type Page } from "@playwright/test";
+import { appPath } from "./helpers";
+import { assertIsolatedWriteTarget } from "./isolation-guard";
+
+const WRITE_JOURNEY_ENV = [
+  "E2E_DATABASE_URL",
+  "E2E_ADMIN_EMAIL",
+  "E2E_ADMIN_PASSWORD",
+] as const;
+
+function configuredWriteJourney() {
+  return WRITE_JOURNEY_ENV.every((name) => Boolean(process.env[name]));
+}
+
+function dealRow(page: Page, target: string) {
+  return page.locator("tbody tr").filter({ hasText: target });
+}
+
+async function runAdminServerAction(page: Page, button: Locator) {
+  const currentPath = new URL(page.url()).pathname;
+  const responsePromise = page.waitForResponse((response) => {
+    const request = response.request();
+    return request.method() === "POST" && new URL(response.url()).pathname === currentPath;
+  });
+
+  await expect(button).toBeEnabled();
+  await button.click();
+  const response = await responsePromise;
+  expect(response.ok(), `Server action at ${currentPath} should succeed`).toBeTruthy();
+  await page.reload({ waitUntil: "domcontentloaded" });
+}
+
+async function expectAuditEvent(page: Page, entityId: string, action: string, actorEmail: string) {
+  const row = page
+    .locator("tbody tr")
+    .filter({ hasText: entityId })
+    .filter({ has: page.getByText(action, { exact: true }) });
+  await expect(row, `${action} should be recorded for ${entityId}`).toHaveCount(1);
+  await expect(row.getByText(actorEmail, { exact: true })).toBeVisible();
+}
+
+async function createDraftDeal(page: Page, input: {
+  target: string;
+  title: string;
+  description: string;
+  sourceUrl?: string;
+}) {
+  await page.goto(appPath("/admin/deals/new"));
+  await page.getByLabel(/^Title/).fill(input.title);
+  await page.getByLabel(/^Target/).fill(input.target);
+  await page.getByLabel("Buyer (one per line)").fill("InfraSight E2E Infrastructure Manager");
+  await page.getByLabel("Seller disclosure").selectOption("NOT_APPLICABLE");
+  await page.getByLabel("Seller disclosure reason").fill("No seller applies to this isolated test fixture.");
+  await page.getByLabel(/^Country/).fill("United States");
+  await page.getByLabel(/^Date/).fill(new Date().toISOString().slice(0, 10));
+  await page.getByLabel(/^Description/).fill(input.description);
+  await page.getByRole("checkbox", { name: "Acquisition (Buyout)", exact: true }).check();
+  if (input.sourceUrl) {
+    await page.getByLabel("Primary Source Name").fill("InfraSight E2E fixture");
+    await page.getByLabel("Primary Source URL").fill(input.sourceUrl);
+  }
+  await page.getByRole("button", { name: "Create Deal" }).click();
+  await expect(page).toHaveURL(new RegExp(`${appPath("/admin/deals")}$`));
+}
+
+async function bestEffortDeleteCreatedDeal(page: Page, target: string) {
+  try {
+    await page.goto(appPath("/admin/deals"));
+    const row = dealRow(page, target);
+    if ((await row.count()) !== 1) return;
+    await row.getByRole("button", { name: "Delete", exact: true }).click();
+    await runAdminServerAction(page, row.getByRole("button", { name: "Confirm", exact: true }));
+  } catch (error) {
+    // Preserve the original assertion failure while leaving a useful cleanup
+    // diagnostic in the Playwright report. This can only run after the target
+    // guard above has proved the database is isolated.
+    console.warn("Unable to remove the E2E deal during failure cleanup", error);
+  }
+}
+
+async function bestEffortPreserveCreatedDeal(page: Page, target: string) {
+  try {
+    await page.goto(appPath("/admin/deals"));
+    const row = dealRow(page, target);
+    if ((await row.count()) !== 1) return;
+    const deleteButton = row.getByRole("button", { name: "Delete", exact: true });
+    if (await deleteButton.count()) {
+      await deleteButton.click();
+      await runAdminServerAction(page, row.getByRole("button", { name: "Confirm", exact: true }));
+      return;
+    }
+    const archiveButton = row.getByRole("button", { name: "Archive", exact: true });
+    if (await archiveButton.count()) {
+      await archiveButton.click();
+      await runAdminServerAction(page, row.getByRole("button", { name: "Confirm archive", exact: true }));
+    }
+  } catch (error) {
+    console.warn("Unable to preserve the E2E deal during failure cleanup", error);
+  }
+}
+
+test("anonymous administration access redirects safely to login", async ({ page }) => {
+  await page.goto(appPath("/admin"));
+  await expect(page).toHaveURL(/\/login\?callbackUrl=/);
+  await expect(page.getByRole("heading", { name: "Sign in" })).toBeVisible();
+  expect(decodeURIComponent(new URL(page.url()).searchParams.get("callbackUrl") || "")).toBe(appPath("/admin"));
+});
+
+test("anonymous imports and exports are forbidden", async ({ request }) => {
+  const exportResponse = await request.get(appPath("/api/exports/deals"));
+  expect(exportResponse.status()).toBe(403);
+
+  const importResponse = await request.post(`${appPath("/api/imports/deals")}?preview=1`, {
+    data: { deals: [] },
+  });
+  expect(importResponse.status()).toBe(403);
+});
+
+test("invalid credentials return one generic message", async ({ page }) => {
+  test.skip(
+    !process.env.E2E_DATABASE_URL,
+    "E2E_DATABASE_URL is required because failed-login throttling writes to the database",
+  );
+  assertIsolatedWriteTarget();
+
+  await page.goto(appPath("/login"));
+  await page.getByRole("textbox", { name: "Email" }).fill("unknown@example.com");
+  await page.getByLabel("Password").fill("not-the-password");
+  await page.getByRole("button", { name: "Sign In" }).click();
+  await expect(page.getByRole("alert")).toHaveText("The email or password was not recognized.");
+});
+
+test("configured administrator can complete the audited draft-to-publication journey", async ({ page }) => {
+  test.setTimeout(90_000);
+
+  const databaseUrl = process.env.E2E_DATABASE_URL;
+  const email = process.env.E2E_ADMIN_EMAIL;
+  const password = process.env.E2E_ADMIN_PASSWORD;
+  test.skip(
+    !configuredWriteJourney(),
+    `${WRITE_JOURNEY_ENV.join(", ")} are required for the authenticated write journey`,
+  );
+  expect(databaseUrl).toBeTruthy();
+  assertIsolatedWriteTarget();
+
+  const runId = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  const target = `InfraSight E2E Deal ${runId}`;
+  const title = `${target} acquisition`;
+  const deletionTarget = `InfraSight E2E Draft Delete ${runId}`;
+  let created = false;
+  let archived = false;
+  let deletionDraftCreated = false;
+  let deletionDraftDeleted = false;
+
+  try {
+    await page.goto(`${appPath("/login")}?callbackUrl=${encodeURIComponent(appPath("/admin"))}`);
+    await page.getByRole("textbox", { name: "Email address" }).fill(email!);
+    await page.getByLabel("Password").fill(password!);
+    await page.getByRole("button", { name: "Sign In" }).click();
+    await expect(page).toHaveURL(new RegExp(`${appPath("/admin")}$`));
+    await expect(page.getByRole("heading", { name: /Admin/i })).toBeVisible();
+
+    await createDraftDeal(page, {
+      target,
+      title,
+      description: "Isolated end-to-end publication workflow verification record.",
+      sourceUrl: `https://example.com/infrasight-e2e-deal-source-${runId}`,
+    });
+    created = true;
+
+    let row = dealRow(page, target);
+    await expect(row).toHaveCount(1);
+    await expect(row.getByText("DRAFT", { exact: true })).toBeVisible();
+    const legacyId = (await row.locator("td").first().innerText()).trim();
+    expect(legacyId).toMatch(/^INF-\d{4}-/);
+    const editHref = await row.getByRole("link", { name: "Edit", exact: true }).getAttribute("href");
+    const canonicalId = editHref?.match(/\/admin\/deals\/([^/]+)\/edit$/)?.[1];
+    expect(canonicalId, "The admin edit link should expose the canonical deal ID").toBeTruthy();
+
+    await runAdminServerAction(
+      page,
+      row.getByRole("button", { name: "Submit review", exact: true }),
+    );
+    row = dealRow(page, target);
+    await expect(row.getByText("IN_REVIEW", { exact: true })).toBeVisible();
+
+    await runAdminServerAction(
+      page,
+      row.getByRole("button", { name: "Publish", exact: true }),
+    );
+    row = dealRow(page, target);
+    await expect(row.getByText("PUBLISHED", { exact: true })).toBeVisible();
+
+    const detailPath = appPath(`/api/deals/${encodeURIComponent(legacyId)}`);
+    await expect
+      .poll(async () => (await page.request.get(detailPath)).status(), {
+        message: "The published detail endpoint should become public",
+      })
+      .toBe(200);
+
+    await page.goto(
+      `${appPath("/tracker")}?q=${encodeURIComponent(target)}&focus=${encodeURIComponent(legacyId)}`,
+    );
+    await expect(page.getByRole("heading", { name: target, level: 2, exact: true })).toBeVisible();
+    await expect(page).toHaveURL(new RegExp(`focus=${encodeURIComponent(legacyId)}`));
+
+    await page.getByRole("button", { name: "Close drawer" }).click();
+    const [download] = await Promise.all([
+      page.waitForEvent("download"),
+      page.getByRole("link", { name: "Export", exact: true }).click(),
+    ]);
+    expect(download.suggestedFilename()).toMatch(/^deals_export_\d{4}-\d{2}-\d{2}\.csv$/);
+    await download.delete();
+
+    await page.goto(appPath("/admin/audit"));
+    await expect(page.getByRole("heading", { name: "Audit log" })).toBeVisible();
+    await expectAuditEvent(page, canonicalId!, "CREATE", email!);
+    await expectAuditEvent(page, canonicalId!, "SUBMIT_FOR_REVIEW", email!);
+    await expectAuditEvent(page, canonicalId!, "PUBLISH", email!);
+
+    await page.goto(appPath("/admin/deals"));
+    row = dealRow(page, target);
+    await row.getByRole("button", { name: "Archive", exact: true }).click();
+    await runAdminServerAction(
+      page,
+      row.getByRole("button", { name: "Confirm archive", exact: true }),
+    );
+    row = dealRow(page, target);
+    await expect(row.getByText("ARCHIVED", { exact: true })).toBeVisible();
+    await expect(row.getByRole("button", { name: "Delete", exact: true })).toHaveCount(0);
+    archived = true;
+    await expect.poll(async () => (await page.request.get(detailPath)).status()).toBe(404);
+
+    await page.goto(appPath("/admin/audit"));
+    await expectAuditEvent(page, canonicalId!, "ARCHIVE", email!);
+
+    // Hard deletion is a separate never-published-draft journey. The archived
+    // fixture above remains preserved with its full editorial history.
+    await createDraftDeal(page, {
+      target: deletionTarget,
+      title: `${deletionTarget} acquisition`,
+      description: "Isolated draft-only hard-delete policy verification record.",
+      sourceUrl: `https://example.com/infrasight-e2e-draft-delete-${runId}`,
+    });
+    deletionDraftCreated = true;
+    row = dealRow(page, deletionTarget);
+    await expect(row.getByText("DRAFT", { exact: true })).toBeVisible();
+    const deletionEditHref = await row.getByRole("link", { name: "Edit", exact: true }).getAttribute("href");
+    const deletionCanonicalId = deletionEditHref?.match(/\/admin\/deals\/([^/]+)\/edit$/)?.[1];
+    expect(deletionCanonicalId, "The deletion fixture should expose the canonical deal ID").toBeTruthy();
+    await row.getByRole("button", { name: "Delete", exact: true }).click();
+    await runAdminServerAction(
+      page,
+      row.getByRole("button", { name: "Confirm", exact: true }),
+    );
+    deletionDraftDeleted = true;
+    await expect(dealRow(page, deletionTarget)).toHaveCount(0);
+
+    await page.goto(appPath("/admin/audit"));
+    await expectAuditEvent(page, deletionCanonicalId!, "DELETE", email!);
+  } finally {
+    if (deletionDraftCreated && !deletionDraftDeleted) {
+      await bestEffortDeleteCreatedDeal(page, deletionTarget);
+    }
+    if (created && !archived) {
+      await bestEffortPreserveCreatedDeal(page, target);
+    }
+  }
+});

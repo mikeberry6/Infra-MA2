@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
+import { getRequestId, logServerOperation } from "@/lib/server-log";
+import { hasUsableSignedAuthSnapshot } from "@/modules/auth/session";
 
 function requestPathWithBasePath(request: NextRequest): string {
   const basePath = request.nextUrl.basePath || "";
@@ -10,7 +12,7 @@ function requestPathWithBasePath(request: NextRequest): string {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const requestId = request.headers.get("x-request-id") || crypto.randomUUID();
+  const requestId = getRequestId(request);
   const forwardedHeaders = new Headers(request.headers);
   forwardedHeaders.set("x-request-id", requestId);
 
@@ -25,14 +27,37 @@ export async function middleware(request: NextRequest) {
     return response;
   }
 
+  const startedAt = performance.now();
+  const logRoute = pathname.startsWith("/admin")
+    ? "/admin/*"
+    : pathname.startsWith("/api/imports")
+      ? "/api/imports/*"
+      : "/api/exports/*";
+  const logDecision = (response: NextResponse, operation: string) => {
+    logServerOperation({
+      route: logRoute,
+      operation,
+      durationMs: Math.round(performance.now() - startedAt),
+      status: response.status,
+      requestId,
+    });
+    return response;
+  };
+
   const nextAuthSecret = process.env.NEXTAUTH_SECRET;
   if (!nextAuthSecret) {
     console.error("NEXTAUTH_SECRET is not configured");
-    return NextResponse.json({ error: "Server misconfigured" }, { status: 500, headers: { "x-request-id": requestId } });
+    return logDecision(
+      NextResponse.json({ error: "Server misconfigured" }, { status: 500, headers: { "x-request-id": requestId } }),
+      "authorize_privileged_request",
+    );
   }
 
   const token = await getToken({ req: request, secret: nextAuthSecret });
-  const role = (token?.role as string | undefined) ?? null;
+  // Middleware runs at the edge and deliberately does not connect to Postgres.
+  // Node-side page layouts/actions/routes perform the authoritative User-row
+  // version and role check before returning data or mutating state.
+  const role = hasUsableSignedAuthSnapshot(token) ? token.role : null;
 
   if (pathname.startsWith("/admin") && role !== "ADMIN") {
     const loginUrl = request.nextUrl.clone();
@@ -40,20 +65,30 @@ export async function middleware(request: NextRequest) {
     loginUrl.searchParams.set("callbackUrl", requestPathWithBasePath(request));
     const response = NextResponse.redirect(loginUrl);
     response.headers.set("x-request-id", requestId);
-    return response;
+    return logDecision(response, "authorize_admin_page");
   }
 
   if (pathname.startsWith("/api/imports") && role !== "ADMIN") {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403, headers: { "x-request-id": requestId } });
+    return logDecision(
+      NextResponse.json({ error: "Forbidden" }, { status: 403, headers: { "x-request-id": requestId } }),
+      "authorize_import",
+    );
   }
 
   if (pathname.startsWith("/api/exports") && role !== "ADMIN" && role !== "ANALYST") {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403, headers: { "x-request-id": requestId } });
+    return logDecision(
+      NextResponse.json({ error: "Forbidden" }, { status: 403, headers: { "x-request-id": requestId } }),
+      "authorize_export",
+    );
   }
 
   const response = NextResponse.next({ request: { headers: forwardedHeaders } });
   response.headers.set("x-request-id", requestId);
-  return response;
+  return logDecision(response, pathname.startsWith("/admin")
+    ? "authorize_admin_page"
+    : pathname.startsWith("/api/imports")
+      ? "authorize_import"
+      : "authorize_export");
 }
 
 export const config = {

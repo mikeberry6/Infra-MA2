@@ -1,0 +1,155 @@
+name: Stage Production Schema
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_sha:
+        description: Full Git commit SHA that passed the required release gate
+        required: true
+        type: string
+      production_base_sha:
+        description: Full SHA of the currently promoted production application
+        required: true
+        type: string
+      migration_manifest_sha256:
+        description: SHA-256 from the reviewed additive migration manifest for base..release
+        required: true
+        type: string
+      confirmation:
+        description: Type STAGE to authorize additive production migrations
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  checks: read
+
+concurrency:
+  group: production-release
+  cancel-in-progress: false
+
+jobs:
+  stage-schema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment: production
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      DATABASE_URL: ${{ secrets.PRODUCTION_MIGRATION_DATABASE_URL }}
+      EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+      RELEASE_SHA: ${{ inputs.release_sha }}
+      PRODUCTION_BASE_SHA: ${{ inputs.production_base_sha }}
+      MIGRATION_MANIFEST_SHA256: ${{ inputs.migration_manifest_sha256 }}
+      CONFIRMATION: ${{ inputs.confirmation }}
+    steps:
+      - name: Require explicit schema authorization
+        run: |
+          if [ "$CONFIRMATION" != "STAGE" ]; then
+            echo "::error::confirmation must exactly equal STAGE."
+            exit 1
+          fi
+
+      - name: Checkout approved release
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.release_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Verify checked-out release identity
+        run: |
+          if ! [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::release_sha must be a full lowercase Git SHA."
+            exit 1
+          fi
+          if [ "$(git rev-parse HEAD)" != "$RELEASE_SHA" ]; then
+            echo "::error::Checked-out SHA does not match release_sha."
+            exit 1
+          fi
+          if ! [[ "$PRODUCTION_BASE_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::production_base_sha must be a full Git SHA."
+            exit 1
+          fi
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Verify protected-branch and required-check provenance
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          node --experimental-strip-types scripts/verify-release-provenance.ts \
+            --release-sha="$RELEASE_SHA" \
+            --branch=main \
+            --required-check=build \
+            --output=tmp/schema-stage/release-provenance.json
+
+      - name: Require the reviewed additive migration manifest
+        run: >-
+          node --experimental-strip-types scripts/audit-additive-migrations.ts
+          --base-sha="$PRODUCTION_BASE_SHA"
+          --release-sha="$RELEASE_SHA"
+          --expected-manifest-sha256="$MIGRATION_MANIFEST_SHA256"
+          --output=tmp/schema-stage/migration-manifest.json
+
+      - name: Require protected production configuration
+        run: |
+          test -n "$DATABASE_URL" || { echo "::error::DATABASE_URL is required."; exit 1; }
+          test -n "$EXPECTED_DATABASE_HOST" || { echo "::error::PRODUCTION_MIGRATION_DATABASE_HOST is required."; exit 1; }
+          test -n "$EXPECTED_DATABASE_NAME" || { echo "::error::PRODUCTION_DATABASE_NAME is required."; exit 1; }
+          test -n "$FORBIDDEN_DATABASE_HOST" || { echo "::error::MIGRATION_DATABASE_HOST is required."; exit 1; }
+
+      - name: Install, generate, and validate
+        run: |
+          npm ci
+          npm run db:generate
+          npm run db:validate
+
+      - name: Prove production database target
+        run: node --experimental-strip-types scripts/assert-database-target.ts
+
+      - name: Reverify exact main head immediately before production writes
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          node --experimental-strip-types scripts/verify-release-provenance.ts \
+            --release-sha="$RELEASE_SHA" \
+            --branch=main \
+            --required-check=build \
+            --output=tmp/schema-stage/release-provenance-before-write.json
+
+      - name: Apply additive migrations while prior application remains active
+        shell: bash
+        run: |
+          mkdir -p tmp/schema-stage
+          set -o pipefail
+          npx prisma migrate deploy 2>&1 | tee tmp/schema-stage/migrate-deploy.log
+          npx prisma migrate status 2>&1 | tee tmp/schema-stage/migrate-status.log
+          npx prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/schema-stage/schema-drift.log
+
+      - name: Record post-stage remediation backlogs without blocking additive schema compatibility
+        shell: bash
+        run: |
+          set -o pipefail
+          npx tsx scripts/report-primary-citation-remediation.ts --output=tmp/schema-stage/primary-citation-approval-template.json
+          npx tsx scripts/source-coverage-report.ts --output=tmp/schema-stage/source-coverage.json
+          npx tsx scripts/report-company-merge-candidates.ts \
+            --published-only \
+            --approval-output=tmp/schema-stage/company-merge-approval-template.json \
+            > tmp/schema-stage/company-canonical-review.md
+
+      - name: Upload schema-stage evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: production-schema-stage-${{ github.run_id }}
+          path: tmp/schema-stage/
+          if-no-files-found: warn
+          retention-days: 90

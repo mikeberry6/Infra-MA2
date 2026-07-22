@@ -24,6 +24,7 @@ import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
+import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useClearUrlFilters, useUrlFilterSet, useUrlQueryState } from "@/hooks/useUrlFilterSet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
@@ -38,6 +39,20 @@ const DATE_WINDOWS = [
   { label: "30D", days: 30 },
   { label: "All", days: null },
 ] as const;
+
+type DateWindow = (typeof DATE_WINDOWS)[number]["label"];
+
+function isDateWindow(value: string): value is DateWindow {
+  return DATE_WINDOWS.some((option) => option.label === value);
+}
+
+export function emptyNewsStateTitle(state: FeedOperationsView["state"]): string {
+  if (state === "failed") return "The latest scan failed";
+  if (state === "pending") return "A news scan is currently running";
+  if (state === "overdue") return "The scheduled news scan is overdue";
+  if (state === "never-run") return "No news scan has run yet";
+  return "Scan completed with no qualifying signals";
+}
 
 const MENTION_COLORS: Record<NewsMentionType, string> = {
   PortCo: "#3b6cf2",
@@ -358,14 +373,74 @@ function NewsFilterBar({
   activeConfidence: Set<string>;
   onToggleConfidence: (value: string) => void;
   allItems: NewsItemView[];
-  dateWindow: (typeof DATE_WINDOWS)[number]["label"];
-  onDateWindowChange: (value: (typeof DATE_WINDOWS)[number]["label"]) => void;
+  dateWindow: DateWindow;
+  onDateWindowChange: (value: DateWindow) => void;
   onClearAll: () => void;
 }) {
+  const activeCount = activeCategories.size
+    + activeEntities.size
+    + activeSources.size
+    + activeConfidence.size
+    + (dateWindow === "Today" ? 0 : 1);
+  const dropdownControls = (
+    <>
+      <MultiSelectDropdown
+        label="Category"
+        options={NEWS_CATEGORIES}
+        selected={activeCategories}
+        onToggle={onToggleCategory}
+        getColor={getNewsCategoryColor}
+      />
+      <MultiSelectDropdown
+        label="Entity"
+        options={entityOptions}
+        selected={activeEntities}
+        onToggle={onToggleEntity}
+        getColor={(label) => getMentionColor(label, allItems)}
+        align="right"
+      />
+      <MultiSelectDropdown
+        label="Source"
+        options={sourceOptions}
+        selected={activeSources}
+        onToggle={onToggleSource}
+        getColor={() => "#0a66c2"}
+        align="right"
+      />
+      <MultiSelectDropdown
+        label="Confidence"
+        options={["High Confidence", "Medium Confidence", "Needs Review"]}
+        selected={activeConfidence}
+        onToggle={onToggleConfidence}
+        getColor={confidenceColor}
+        align="right"
+      />
+    </>
+  );
+  const dateControls = (
+    <div className="inline-flex shrink-0 items-center gap-0.5 rounded-md bg-[var(--bg-hover)] p-0.5" role="group" aria-label="Date window">
+      {DATE_WINDOWS.map((option) => (
+        <button
+          key={option.label}
+          type="button"
+          onClick={() => onDateWindowChange(option.label)}
+          aria-pressed={dateWindow === option.label}
+          className={`h-7 rounded px-2 type-micro font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] ${
+            dateWindow === option.label
+              ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
+              : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+          }`}
+        >
+          {option.label}
+        </button>
+      ))}
+    </div>
+  );
+
   return (
     <div className="mb-3 space-y-3">
-      <div className="sticky top-14 z-30 flex items-center gap-2 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
-        <div className="min-w-[210px] flex-1 sm:max-w-sm">
+      <div className="sticky top-14 z-30 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
+        <div className="min-w-0 flex-1 lg:max-w-sm">
           <TextInput
             leadingIcon={<Search />}
             value={search}
@@ -374,53 +449,22 @@ function NewsFilterBar({
             aria-label="Search news"
           />
         </div>
-        <MultiSelectDropdown
-          label="Category"
-          options={NEWS_CATEGORIES}
-          selected={activeCategories}
-          onToggle={onToggleCategory}
-          getColor={getNewsCategoryColor}
-        />
-        <MultiSelectDropdown
-          label="Entity"
-          options={entityOptions}
-          selected={activeEntities}
-          onToggle={onToggleEntity}
-          getColor={(label) => getMentionColor(label, allItems)}
-          align="right"
-        />
-        <MultiSelectDropdown
-          label="Source"
-          options={sourceOptions}
-          selected={activeSources}
-          onToggle={onToggleSource}
-          getColor={() => "#0a66c2"}
-          align="right"
-        />
-        <MultiSelectDropdown
-          label="Confidence"
-          options={["High Confidence", "Medium Confidence", "Needs Review"]}
-          selected={activeConfidence}
-          onToggle={onToggleConfidence}
-          getColor={confidenceColor}
-          align="right"
-        />
-        <div className="inline-flex shrink-0 items-center gap-0.5 rounded-md bg-[var(--bg-hover)] p-0.5">
-          {DATE_WINDOWS.map((option) => (
-            <button
-              key={option.label}
-              type="button"
-              onClick={() => onDateWindowChange(option.label)}
-              className={`h-7 rounded px-2 type-micro font-medium transition-colors ${
-                dateWindow === option.label
-                  ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
-                  : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-              }`}
-            >
-              {option.label}
-            </button>
-          ))}
+        <div className="hidden items-center gap-2 lg:flex">
+          {dropdownControls}
+          {dateControls}
         </div>
+        <MobileFilterSheet activeCount={activeCount} desktopBreakpoint="lg">
+          <div className="grid grid-cols-2 gap-3">{dropdownControls}</div>
+          <div>
+            <p className="mb-2 type-label">Date window</p>
+            {dateControls}
+          </div>
+          {activeCount > 0 && (
+            <button type="button" onClick={onClearAll} className="type-meta font-medium text-[var(--accent)]">
+              Clear all filters
+            </button>
+          )}
+        </MobileFilterSheet>
       </div>
 
       <ActiveFiltersStrip
@@ -448,6 +492,12 @@ function NewsFilterBar({
             items: activeConfidence,
             getColor: confidenceColor,
             onRemove: onToggleConfidence,
+          },
+          {
+            keyPrefix: "date",
+            items: dateWindow === "Today" ? [] : [dateWindow],
+            getColor: () => "#008253",
+            onRemove: () => onDateWindowChange("Today"),
           },
         ]}
         onClearAll={onClearAll}
@@ -879,7 +929,9 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
   const [activeEntities, toggleEntity] = useUrlFilterSet("entity");
   const [activeSources, toggleSource] = useUrlFilterSet("source");
   const [activeConfidence, toggleConfidence] = useUrlFilterSet("confidence");
-  const [dateWindow, setDateWindow] = useState<(typeof DATE_WINDOWS)[number]["label"]>("Today");
+  const [dateWindowParam, setDateWindowParam] = useUrlQueryState("window", "Today", { resetPage: true });
+  const dateWindow: DateWindow = isDateWindow(dateWindowParam) ? dateWindowParam : "Today";
+  const setDateWindow = useCallback((value: DateWindow) => setDateWindowParam(value), [setDateWindowParam]);
   const [selectedItem, setSelectedItem] = useState<NewsItemView | null>(null);
   const debouncedSearch = useDebounce(search, 250);
 
@@ -888,7 +940,7 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
     clearUrlFilters();
     setSearch("");
     setDateWindow("Today");
-  }, [clearUrlFilters, setSearch]);
+  }, [clearUrlFilters, setDateWindow, setSearch]);
 
   const entityOptions = useMemo(() => getEntityOptions(feed.items), [feed.items]);
   const sourceOptions = useMemo(() => getSourceOptions(feed.items), [feed.items]);
@@ -990,11 +1042,7 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
               <h2 className="mt-3 type-row-title">
                 {feed.items.length > 0
                   ? "Filters exclude the available signals"
-                  : feed.operations.state === "failed"
-                    ? "The latest scan failed"
-                    : feed.operations.state === "never-run"
-                      ? "The first scan is still pending"
-                      : "Scan completed with no qualifying signals"}
+                  : emptyNewsStateTitle(feed.operations.state)}
               </h2>
               <p className="mt-1 type-micro">
                 {feed.items.length > 0

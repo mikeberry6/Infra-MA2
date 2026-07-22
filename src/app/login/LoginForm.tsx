@@ -46,6 +46,7 @@ export function LoginForm({ callbackUrl }: { callbackUrl: string }) {
         value={email}
         onChange={(event) => setEmail(event.target.value)}
         placeholder="Email"
+        aria-label="Email address"
         autoComplete="email"
         autoFocus
         required
@@ -57,6 +58,7 @@ export function LoginForm({ callbackUrl }: { callbackUrl: string }) {
         value={password}
         onChange={(event) => setPassword(event.target.value)}
         placeholder="Password"
+        aria-label="Password"
         autoComplete="current-password"
         required
       />

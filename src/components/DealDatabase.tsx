@@ -5,8 +5,10 @@ import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import { DEAL_SECTORS, NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
 import type { DealListItem, DealView, DatabaseCounts, RecordMeta } from "@/modules/shared/types";
+import { parseDealSortField, sortDeals, type DealSortField } from "@/modules/deals/sort";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import { track } from "@vercel/analytics";
+import { subscribeToDetailCacheInvalidation } from "@/lib/detail-cache-events";
 
 // ─── Buyer display shortening ──────────────────────────────
 // Purely cosmetic: shortens canonical fund/buyer names for compact table cells
@@ -167,7 +169,7 @@ import {
 } from "lucide-react";
 import { DynamicInsightsHero } from "./DealDatabase/DynamicInsightsHero";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam, useUrlQueryState, useUrlQueryWriter } from "@/hooks/useUrlFilterSet";
+import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam, useUrlQueryState, useUrlQueryWriter, useUrlQueryParamsWriter } from "@/hooks/useUrlFilterSet";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
@@ -410,17 +412,18 @@ function DealTable({
   filteredDeals: DealListItem[];
   onSelectDeal: (deal: DealListItem) => void;
 }) {
+  const [sortParam] = useUrlQueryState("sort", "date");
   const [direction, setDirection] = useUrlQueryState("direction", "desc", { resetPage: true });
   const [pageParam, setPageParam] = useUrlQueryState("page", "1");
+  const writeQueryParams = useUrlQueryParamsWriter();
+  const sortField = parseDealSortField(sortParam);
   const sortDir: "asc" | "desc" = direction === "asc" ? "asc" : "desc";
   const page = Math.max(1, Number.parseInt(pageParam, 10) || 1);
 
-  const sorted = useMemo(() => {
-    return [...filteredDeals].sort((a, b) => {
-      const mul = sortDir === "desc" ? -1 : 1;
-      return mul * (new Date(a.date).getTime() - new Date(b.date).getTime());
-    });
-  }, [filteredDeals, sortDir]);
+  const sorted = useMemo(
+    () => sortDeals(filteredDeals, sortField, sortDir),
+    [filteredDeals, sortField, sortDir],
+  );
 
   const totalPages = Math.max(1, Math.ceil(sorted.length / DEAL_PAGE_SIZE));
   const safePage = Math.min(page, totalPages);
@@ -429,9 +432,41 @@ function DealTable({
     return sorted.slice(start, start + DEAL_PAGE_SIZE);
   }, [sorted, safePage]);
 
-  function toggleSort() {
-    setDirection(sortDir === "desc" ? "asc" : "desc");
+  function toggleSort(field: DealSortField) {
+    if (sortField === field) {
+      setDirection(sortDir === "desc" ? "asc" : "desc");
+      return;
+    }
+
+    const nextDirection = field === "date" ? "desc" : "asc";
+    writeQueryParams(
+      {
+        sort: field === "date" ? null : field,
+        direction: nextDirection === "desc" ? null : nextDirection,
+      },
+      { resetPage: true },
+    );
   }
+
+  const SortHeader = ({ field, label }: { field: DealSortField; label: string }) => (
+    <th
+      aria-sort={sortField === field ? (sortDir === "asc" ? "ascending" : "descending") : "none"}
+      className="px-3 py-2 text-left"
+    >
+      <button
+        type="button"
+        onClick={() => toggleSort(field)}
+        className="inline-flex items-center gap-1 type-table-header hover:text-[var(--text-primary)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
+      >
+        {label}
+        <ArrowUpDown
+          aria-hidden
+          className={`h-2.5 w-2.5 transition-opacity ${sortField === field ? "opacity-100" : "opacity-45"}`}
+          strokeWidth={1.75}
+        />
+      </button>
+    </th>
+  );
 
   return (
     <>
@@ -462,34 +497,12 @@ function DealTable({
             <DealTableColGroup />
             <thead className="sticky top-0 z-10">
               <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]/95 backdrop-blur-sm shadow-[0_1px_0_rgba(17,17,20,0.03)]">
-                <th
-                  aria-sort={sortDir === "asc" ? "ascending" : "descending"}
-                  className="px-3 py-2 text-left"
-                >
-                  <button
-                    type="button"
-                    onClick={toggleSort}
-                    className="inline-flex items-center gap-1 type-table-header hover:text-[var(--text-primary)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
-                  >
-                    Date
-                    <ArrowUpDown className="h-2.5 w-2.5" strokeWidth={1.75} />
-                  </button>
-                </th>
-                <th className="text-left px-3 py-2 type-table-header">
-                  Target / Seller
-                </th>
-                <th className="text-left px-3 py-2 type-table-header">
-                  Buyer
-                </th>
-                <th className="text-left px-3 py-2 type-table-header">
-                  Sector
-                </th>
-                <th className="text-left px-3 py-2 type-table-header">
-                  Region
-                </th>
-                <th className="text-left px-3 py-2 type-table-header">
-                  Category
-                </th>
+                <SortHeader field="date" label="Date" />
+                <SortHeader field="target" label="Target / Seller" />
+                <SortHeader field="buyer" label="Buyer" />
+                <SortHeader field="sector" label="Sector" />
+                <SortHeader field="region" label="Region" />
+                <SortHeader field="category" label="Category" />
                 <th className="text-left px-3 py-2 type-table-header">
                   Source
                 </th>
@@ -502,16 +515,12 @@ function DealTable({
                 return (
                   <tr
                     key={deal.id}
-                    onClick={() => onSelectDeal(deal)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        onSelectDeal(deal);
-                      }
+                    onClick={(event) => {
+                      const trigger = event.currentTarget.querySelector<HTMLButtonElement>("[data-row-trigger]");
+                      trigger?.focus();
+                      onSelectDeal(deal);
                     }}
-                    role="button"
-                    tabIndex={0}
-                    className="group cursor-pointer border-b border-[var(--border)] bg-[var(--bg-surface)] transition-colors last:border-b-0 hover:bg-[var(--bg-subtle)] focus:bg-[var(--bg-subtle)] focus:outline-none"
+                    className="group cursor-pointer border-b border-[var(--border)] bg-[var(--bg-surface)] transition-colors last:border-b-0 hover:bg-[var(--bg-subtle)] focus-within:bg-[var(--bg-subtle)]"
                   >
                     <td className="px-3 py-3 align-top">
                       <span className="mono type-meta tabular-nums text-[var(--text-secondary)]">
@@ -519,7 +528,12 @@ function DealTable({
                       </span>
                     </td>
                     <td className="px-3 py-3 align-top">
-                      <div className="flex min-w-0 flex-col gap-0.5">
+                      <button
+                        type="button"
+                        data-row-trigger
+                        aria-label={`Open ${deal.target} deal details`}
+                        className="flex w-full min-w-0 flex-col gap-0.5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
+                      >
                         <span title={deal.target} className="block truncate type-row-title transition-colors group-hover:text-[var(--accent)]">
                           {deal.target}
                         </span>
@@ -528,7 +542,7 @@ function DealTable({
                             {deal.seller}
                           </span>
                         )}
-                      </div>
+                      </button>
                     </td>
                     <td title={deal.buyer} className="px-3 py-3 align-top">
                       <div className="flex min-w-0 flex-col gap-0.5">
@@ -922,6 +936,11 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
   const [detailMeta, setDetailMeta] = useState<RecordMeta | null>(null);
   const [detailState, setDetailState] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [detailRequest, setDetailRequest] = useState(0);
+
+  useEffect(() => subscribeToDetailCacheInvalidation("deal", () => {
+    dealDetailCache.clear();
+    setDetailRequest((value) => value + 1);
+  }), []);
   const writeQuery = useUrlQueryWriter();
   const canExport = useCanExport();
 

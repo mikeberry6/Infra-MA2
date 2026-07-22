@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAllDeals } from "@/modules/deals/queries";
 import { toCsv } from "@/lib/csv";
+import { withServerOperation } from "@/lib/server-log";
 import { canExportData } from "@/modules/auth/guards";
 
 const DEAL_COLUMNS = [
@@ -28,7 +29,7 @@ const DEAL_COLUMNS = [
   "sourceUrl",
 ];
 
-export async function GET(request: NextRequest) {
+async function exportDeals(request: NextRequest) {
   try {
     if (!(await canExportData())) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
@@ -70,4 +71,11 @@ export async function GET(request: NextRequest) {
       { status: 500 },
     );
   }
+}
+
+export async function GET(request: NextRequest) {
+  return withServerOperation(request, {
+    route: "/api/exports/deals",
+    operation: "export_deals",
+  }, () => exportDeals(request));
 }

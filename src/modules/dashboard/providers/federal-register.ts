@@ -13,26 +13,82 @@ type FederalRegisterDocument = {
 };
 
 type FederalRegisterResponse = {
-  count: number;
-  results: FederalRegisterDocument[];
+  count?: number;
+  results?: FederalRegisterDocument[];
 };
 
-export function federalRegisterProvider(now = new Date()): DashboardProvider {
+type MatchedDocument = {
+  document: FederalRegisterDocument;
+  matchedTerms: Set<string>;
+};
+
+export const FEDERAL_REGISTER_TERMS = [
+  "infrastructure",
+  "energy",
+  "transmission",
+  "pipeline",
+  "broadband",
+  "water",
+  "transportation",
+] as const;
+
+const PAGE_SIZE = 100;
+const MAX_PAGES_PER_TERM = 100;
+
+export function federalRegisterProvider(
+  now = new Date(),
+  terms: readonly string[] = FEDERAL_REGISTER_TERMS,
+): DashboardProvider {
   return {
     source: DASHBOARD_SOURCES.federalRegister,
     async fetch(): Promise<DashboardProviderResult> {
-      const startDate = isoDateDaysAgo(7, now);
+      const startDate = isoDateDaysAgo(6, now);
       const endDate = todayIsoDate(now);
-      const url = new URL("https://www.federalregister.gov/api/v1/documents.json");
-      url.searchParams.set("conditions[term]", "infrastructure energy transmission pipeline broadband water transportation");
-      url.searchParams.set("conditions[publication_date][gte]", startDate);
-      url.searchParams.set("conditions[publication_date][lte]", endDate);
-      url.searchParams.set("order", "newest");
-      url.searchParams.set("per_page", "20");
+      const documents = new Map<string, MatchedDocument>();
 
-      const json = await fetchJson<FederalRegisterResponse>(url.toString());
+      for (const term of terms) {
+        for (let page = 1; page <= MAX_PAGES_PER_TERM; page += 1) {
+          const json = await fetchFederalRegisterPage(term, startDate, endDate, page);
+          const count = json.count;
+          if (typeof count !== "number" || !Number.isInteger(count) || count < 0) {
+            throw new Error(`Federal Register returned an invalid result count for term "${term}".`);
+          }
+
+          if (!Array.isArray(json.results)) {
+            throw new Error(`Federal Register returned no results array for term "${term}".`);
+          }
+          const results = json.results;
+          for (const item of results) {
+            if (
+              !item.document_number
+              || !item.title
+              || !item.type
+              || !item.html_url
+              || !/^\d{4}-\d{2}-\d{2}$/.test(item.publication_date)
+            ) {
+              throw new Error(`Federal Register returned a malformed document for term "${term}".`);
+            }
+            const current = documents.get(item.document_number);
+            if (current) current.matchedTerms.add(term);
+            else documents.set(item.document_number, { document: item, matchedTerms: new Set([term]) });
+          }
+
+          if (page * PAGE_SIZE >= count) break;
+          if (results.length === 0) {
+            throw new Error(`Federal Register pagination ended before all results were returned for term "${term}".`);
+          }
+          if (page === MAX_PAGES_PER_TERM) {
+            throw new Error(`Federal Register term "${term}" exceeded the ${MAX_PAGES_PER_TERM * PAGE_SIZE} document safety cap.`);
+          }
+        }
+      }
+
       const source = DASHBOARD_SOURCES.federalRegister;
-      const signals: DashboardSignal[] = (json.results ?? []).slice(0, 20).map((item) => {
+      const matches = Array.from(documents.values()).sort((left, right) => {
+        const dateOrder = right.document.publication_date.localeCompare(left.document.publication_date);
+        return dateOrder || right.document.document_number.localeCompare(left.document.document_number);
+      });
+      const signals: DashboardSignal[] = matches.map(({ document: item, matchedTerms }) => {
         const agency = item.agencies?.map((a) => a.name || a.raw_name).filter(Boolean).slice(0, 2).join(", ") || "Federal Register";
         return {
           signalKey: `federal-register-${item.document_number}`,
@@ -45,22 +101,24 @@ export function federalRegisterProvider(now = new Date()): DashboardProvider {
           sourceId: source.id,
           sourceName: source.name,
           sourceUrl: item.html_url,
+          reviewStatus: "PENDING",
           metadata: {
             documentNumber: item.document_number,
             type: item.type,
             agencies: item.agencies?.map((agencyItem) => agencyItem.name || agencyItem.raw_name).filter(Boolean) ?? [],
+            matchedTerms: Array.from(matchedTerms).sort(),
           },
         };
       });
 
       return {
         observations: [
-          observation("federal_register_infra_notices", source.id, endDate, json.count ?? signals.length, {
+          observation("federal_register_infra_notices", source.id, endDate, matches.length, {
             unit: "count",
             metadata: {
               lookbackDays: 7,
-              resultLimit: 20,
-              query: "infrastructure energy transmission pipeline broadband water transportation",
+              queryTerms: terms,
+              deduplicatedBy: "document_number",
             },
           }),
         ],
@@ -68,4 +126,20 @@ export function federalRegisterProvider(now = new Date()): DashboardProvider {
       };
     },
   };
+}
+
+async function fetchFederalRegisterPage(
+  term: string,
+  startDate: string,
+  endDate: string,
+  page: number,
+): Promise<FederalRegisterResponse> {
+  const url = new URL("https://www.federalregister.gov/api/v1/documents.json");
+  url.searchParams.set("conditions[term]", term);
+  url.searchParams.set("conditions[publication_date][gte]", startDate);
+  url.searchParams.set("conditions[publication_date][lte]", endDate);
+  url.searchParams.set("order", "newest");
+  url.searchParams.set("per_page", String(PAGE_SIZE));
+  url.searchParams.set("page", String(page));
+  return fetchJson<FederalRegisterResponse>(url.toString());
 }

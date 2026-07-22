@@ -48,9 +48,19 @@ export async function failPipelineRun(
   client: PipelineClient,
   id: string,
   error: unknown,
+  counts: PipelineCounts = {},
+  metadata?: Prisma.InputJsonValue,
 ): Promise<void> {
   await client.pipelineRun.update({
     where: { id },
-    data: { status: "FAILED", endedAt: new Date(), errorSummary: errorSummary(error) },
+    data: {
+      status: "FAILED",
+      endedAt: new Date(),
+      errorSummary: errorSummary(error),
+      inserted: counts.inserted ?? 0,
+      updated: counts.updated ?? 0,
+      skipped: counts.skipped ?? 0,
+      ...(metadata === undefined ? {} : { metadata }),
+    },
   });
 }

@@ -15,6 +15,8 @@ export interface DealView {
   target: string;
   buyer: string;
   seller: string;
+  sellerDisclosureStatus?: "DISCLOSED" | "NOT_DISCLOSED" | "NOT_APPLICABLE" | "LEGACY_UNREVIEWED";
+  sellerDisclosureReason?: string | null;
   sector: string;
   subsector: string;
   region: string;
@@ -97,9 +99,6 @@ export type FundListItem = Pick<
 
 export type FundDetail = FundView;
 
-export type CompanyListItem = CompanyView;
-export type CompanyDetail = CompanyView;
-
 export interface FundStrategyView {
   fundName: string;
   strategies: string[];
@@ -149,6 +148,30 @@ export interface CompanyView {
   sources?: SourceView[];
   owners: OwnerView[];
 }
+
+/**
+ * The portfolio index projection. Drawer-only narrative, evidence, management,
+ * milestone, and website fields are intentionally excluded from the initial
+ * page payload and are hydrated through the public detail endpoint.
+ */
+export type CompanyListItem = Pick<
+  CompanyView,
+  | "id"
+  | "focusIds"
+  | "name"
+  | "investmentFirm"
+  | "sector"
+  | "subsector"
+  | "region"
+  | "country"
+  | "ownershipVehicle"
+  | "status"
+  | "countryTags"
+  | "investmentYear"
+  | "owners"
+>;
+
+export type CompanyDetail = CompanyView;
 
 export interface MilestoneView {
   date: string;
@@ -219,7 +242,7 @@ export interface NewsFeedView {
 }
 
 export interface FeedOperationsView {
-  state: "healthy" | "overdue" | "failed" | "never-run";
+  state: "healthy" | "pending" | "overdue" | "failed" | "never-run";
   lastAttemptAt?: string;
   lastSuccessfulAt?: string;
   nextExpectedAt?: string;

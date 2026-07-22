@@ -73,6 +73,12 @@ function toFundView(
 const FUND_INCLUDE = {
   manager: { select: { name: true } },
   ownershipPeriods: {
+    // A published fund must never expose an editorial company record through
+    // its nested holdings. This relation-level predicate is deliberately kept
+    // in the database query (rather than filtering the mapped response) so
+    // draft, in-review, and archived company fields never cross the public
+    // query boundary.
+    where: { company: { status: "PUBLISHED" } },
     select: {
       isActive: true,
       investmentYear: true,
@@ -168,8 +174,8 @@ export async function getFundStrategyIndex(): Promise<FundStrategyView[]> {
 }
 
 export async function getFundById(legacyId: string): Promise<FundView | null> {
-  const fund = await prisma.fund.findUnique({
-    where: { legacyId },
+  const fund = await prisma.fund.findFirst({
+    where: { legacyId, status: "PUBLISHED" },
     include: FUND_INCLUDE,
   });
   return fund ? toFundView(fund) : null;

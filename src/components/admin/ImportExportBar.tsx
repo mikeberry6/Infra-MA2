@@ -5,19 +5,32 @@ import Link from "next/link";
 import { Download, FileUp, X } from "lucide-react";
 import { withBasePath } from "@/lib/base-path";
 import { Button } from "@/components/shared/Button";
+import { FormMessage } from "@/components/shared/FormControls";
+import { invalidateDetailCache, type DetailCacheEntity } from "@/lib/detail-cache-events";
+import {
+  buildImportErrorCsv,
+  importIssueLabel,
+  type ImportEntityType,
+  type ImportIssue,
+  type ImportOwnershipChange,
+} from "./import-preview";
 
-type EntityType = "deals" | "funds" | "portfolio";
-type ImportError = { id?: string; fundName?: string; name?: string; error?: string };
+type EntityType = ImportEntityType;
 type Preview = {
   items: Record<string, unknown>[];
+  previewToken: string;
   fileName: string;
   total: number;
   valid: number;
   creates: number;
   updates: number;
-  warnings: string[];
-  errors: ImportError[];
+  quarantined: number;
+  warnings: ImportIssue[];
+  errors: ImportIssue[];
+  ownershipChanges: ImportOwnershipChange[];
 };
+
+type StatusMessage = { tone: "success" | "error"; text: string };
 
 function clientParseCsv(csvText: string): Record<string, string>[] {
   const rows: string[][] = [];
@@ -53,50 +66,67 @@ function clientParseCsv(csvText: string): Record<string, string>[] {
   return rows.slice(1).map((values) => Object.fromEntries(headers.map((header, index) => [header, values[index] ?? ""])));
 }
 
-function csvRowToImportShape(row: Record<string, string>, entityType: EntityType): Record<string, unknown> {
-  const list = (value: string) => value ? value.split(";").map((item) => item.trim()).filter(Boolean) : [];
-  if (entityType === "deals") {
-    return { ...row, id: row.legacyId || row.id, category: list(row.category), keyHighlights: list(row.keyHighlights) };
-  }
-  if (entityType === "funds") {
-    return { ...row, id: row.legacyId || row.id, strategies: list(row.strategies), sectors: list(row.sectors), regions: list(row.regions), sourceUrls: list(row.sourceUrls), sizeUsdMm: row.sizeUsdMm ? Number(row.sizeUsdMm) : null };
-  }
-  return { ...row, countryTags: list(row.countryTags), yearFounded: row.yearFounded ? Number(row.yearFounded) : undefined, investmentYear: row.investmentYear ? Number(row.investmentYear) : undefined };
-}
-
 const LABELS: Record<EntityType, { singular: string; plural: string; bodyKey: string }> = {
   deals: { singular: "deal", plural: "deals", bodyKey: "deals" },
   funds: { singular: "fund", plural: "funds", bodyKey: "funds" },
   portfolio: { singular: "company", plural: "companies", bodyKey: "companies" },
 };
 
+const CACHE_ENTITY: Record<EntityType, DetailCacheEntity> = {
+  deals: "deal",
+  funds: "fund",
+  portfolio: "company",
+};
+
 export default function ImportExportBar({ entityType }: { entityType: EntityType }) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [preview, setPreview] = useState<Preview | null>(null);
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState<string | null>(null);
+  const [message, setMessage] = useState<StatusMessage | null>(null);
   const [auditEventId, setAuditEventId] = useState<string | null>(null);
   const labels = LABELS[entityType];
 
   async function previewFile(file: File) {
     setLoading(true);
+    setPreview(null);
     setMessage(null);
     setAuditEventId(null);
     try {
       const rows = clientParseCsv(await file.text());
       if (rows.length === 0) throw new Error("The CSV contains no data rows.");
       if (rows.length > 500) throw new Error("Imports are capped at 500 rows.");
-      const items = rows.map((row) => csvRowToImportShape(row, entityType));
+      const formData = new FormData();
+      formData.append("file", file);
       const response = await fetch(withBasePath(`/api/imports/${entityType}?preview=1`), {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ [labels.bodyKey]: items }),
+        body: formData,
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || "Preview failed");
-      setPreview({ ...result, items, fileName: file.name });
+      const warnings = Array.isArray(result.warnings) ? result.warnings : [];
+      const errors = Array.isArray(result.errors) ? result.errors : [];
+      const ownershipChanges = Array.isArray(result.ownershipChanges) ? result.ownershipChanges : [];
+      if (typeof result.previewToken !== "string" || !Array.isArray(result.items)) {
+        throw new Error("Preview confirmation could not be secured. Please preview the file again.");
+      }
+      setPreview({
+        items: result.items,
+        previewToken: result.previewToken,
+        fileName: file.name,
+        total: Number(result.total) || rows.length,
+        valid: Number(result.valid) || 0,
+        creates: Number(result.creates) || 0,
+        updates: Number(result.updates) || 0,
+        quarantined: Number(result.quarantined) || 0,
+        warnings,
+        errors,
+        ownershipChanges,
+      });
     } catch (error) {
-      setMessage(error instanceof Error ? error.message : "Preview failed");
+      setMessage({
+        tone: "error",
+        text: error instanceof Error ? error.message : "Preview failed",
+      });
     } finally {
       setLoading(false);
       if (fileInputRef.current) fileInputRef.current.value = "";
@@ -110,16 +140,26 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
     try {
       const response = await fetch(withBasePath(`/api/imports/${entityType}`), {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "X-Import-Preview-Token": preview.previewToken,
+        },
         body: JSON.stringify({ [labels.bodyKey]: preview.items }),
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || "Import failed");
-      setMessage(`${result.imported ?? 0} ${result.imported === 1 ? labels.singular : labels.plural} committed as drafts.`);
+      invalidateDetailCache(CACHE_ENTITY[entityType]);
+      setMessage({
+        tone: "success",
+        text: `${result.imported ?? 0} ${result.imported === 1 ? labels.singular : labels.plural} committed as drafts.`,
+      });
       setAuditEventId(result.auditEventId ?? null);
       setPreview(null);
     } catch (error) {
-      setMessage(error instanceof Error ? error.message : "Import failed");
+      setMessage({
+        tone: "error",
+        text: error instanceof Error ? error.message : "Import failed",
+      });
     } finally {
       setLoading(false);
     }
@@ -127,7 +167,7 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
 
   function downloadErrors() {
     if (!preview?.errors.length) return;
-    const csv = ["row,error", ...preview.errors.map((error, index) => `${index + 1},${JSON.stringify(error.error ?? "Validation error")}`)].join("\n");
+    const csv = buildImportErrorCsv(preview.errors, entityType);
     const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
     const anchor = document.createElement("a");
     anchor.href = url;
@@ -146,30 +186,126 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
           <FileUp className="h-3.5 w-3.5" /> Select CSV
           <input ref={fileInputRef} type="file" accept=".csv,text/csv" onChange={(event) => event.target.files?.[0] && previewFile(event.target.files[0])} className="sr-only" />
         </label>
-        {loading && <span className="type-micro animate-pulse">Validating…</span>}
-        {message && <span className="type-micro text-[var(--text-secondary)]">{message}</span>}
-        {auditEventId && <Link href={`/admin/audit?focus=${encodeURIComponent(auditEventId)}`} className="type-micro font-medium text-[var(--accent)]">View audit event</Link>}
+        {loading && <span role="status" className="type-micro animate-pulse">{preview ? "Importing…" : "Validating…"}</span>}
+        {auditEventId && <Link href={withBasePath(`/admin/audit?focus=${encodeURIComponent(auditEventId)}`)} className="type-micro font-medium text-[var(--accent)]">View audit event</Link>}
       </div>
 
+      {message && <FormMessage tone={message.tone}>{message.text}</FormMessage>}
+
       {preview && (
-        <section className="surface max-w-2xl overflow-hidden" aria-label="Import preview">
+        <section className="surface max-w-3xl overflow-hidden" aria-label="Import preview" aria-live="polite">
           <div className="flex items-start justify-between gap-3 border-b border-[var(--border)] px-4 py-3">
             <div>
               <h3 className="type-row-title">Import preview</h3>
-              <p className="type-micro">{preview.fileName} · no database changes have been made</p>
+              <p className="type-micro">{preview.fileName} · no imported records have been changed</p>
             </div>
-            <button type="button" onClick={() => setPreview(null)} aria-label="Dismiss import preview" className="rounded-md p-1.5 text-[var(--text-secondary)] hover:bg-[var(--bg-hover)]"><X className="h-4 w-4" /></button>
+            <Button
+              size="sm"
+              variant="ghost"
+              onClick={() => setPreview(null)}
+              aria-label="Dismiss import preview"
+              leadingIcon={<X className="h-4 w-4" />}
+              className="shrink-0 px-1.5"
+            />
           </div>
-          <dl className="grid grid-cols-2 gap-px bg-[var(--border)] sm:grid-cols-4">
-            {[["Rows", preview.total], ["Creates", preview.creates], ["Updates", preview.updates], ["Errors", preview.errors.length]].map(([label, value]) => (
+          <dl className="grid grid-cols-2 gap-px bg-[var(--border)] sm:grid-cols-5">
+            {[
+              ["Rows", preview.total],
+              ["Creates", preview.creates],
+              ["Updates", preview.updates],
+              ["Quarantined", preview.quarantined],
+              ["Errors", preview.errors.length],
+            ].map(([label, value]) => (
               <div key={String(label)} className="bg-[var(--bg-surface)] px-4 py-3"><dt className="type-micro">{label}</dt><dd className="mt-1 mono type-section-title tabular-nums">{value}</dd></div>
             ))}
           </dl>
+
+          {(preview.warnings.length > 0 || preview.errors.length > 0 || preview.ownershipChanges.length > 0) && (
+            <div className="space-y-3 border-t border-[var(--border)] px-4 py-3">
+              {preview.ownershipChanges.length > 0 && (
+                <section
+                  aria-labelledby="ownership-change-heading"
+                  className="rounded-md border border-blue-200 bg-blue-50 p-3 text-blue-950"
+                >
+                  <h4 id="ownership-change-heading" className="type-meta font-semibold">
+                    Ownership changes ({preview.ownershipChanges.length})
+                  </h4>
+                  <p className="mt-1 type-micro text-blue-900">
+                    These changes will be committed atomically with the company rows after confirmation.
+                  </p>
+                  <ul className="mt-2 max-h-40 space-y-2 overflow-y-auto" aria-label="Ownership changes">
+                    {preview.ownershipChanges.map((change, index) => (
+                      <li key={`${change.row}-${change.name}-${index}`} className="border-t border-blue-200 pt-2 first:border-0 first:pt-0">
+                        <p className="type-meta font-semibold">Row {change.row} · {change.name} · {change.action}</p>
+                        <p className="type-micro text-blue-950">{change.message}</p>
+                        <p className="mt-0.5 type-micro text-blue-900">
+                          {change.from.length > 0 ? `From: ${change.from.join(" / ")}` : "From: no active ownership"}
+                          {change.to ? ` · To: ${change.to}` : " · To: no active ownership"}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+              {preview.warnings.length > 0 && (
+                <section
+                  aria-labelledby="import-warning-heading"
+                  className="rounded-md border border-amber-200 bg-amber-50 p-3 text-amber-950"
+                >
+                  <h4 id="import-warning-heading" className="type-meta font-semibold">
+                    Warnings and quarantined rows ({preview.warnings.length})
+                  </h4>
+                  <p className="mt-1 type-micro text-amber-900">
+                    These rows require editorial review and will not be changed by this import.
+                  </p>
+                  <ul className="mt-2 max-h-40 space-y-2 overflow-y-auto" aria-label="Import warnings">
+                    {preview.warnings.map((warning, index) => (
+                      <li key={`${warning.row ?? "unknown"}-${importIssueLabel(warning, entityType)}-${index}`} className="border-t border-amber-200 pt-2 first:border-0 first:pt-0">
+                        <p className="type-meta font-semibold">{importIssueLabel(warning, entityType)}</p>
+                        <p className="type-micro text-amber-950">{warning.error || "This row was quarantined."}</p>
+                        {(warning.code || warning.existingStatus) && (
+                          <p className="mt-0.5 type-micro text-amber-900">
+                            {[warning.code, warning.existingStatus && `Existing status: ${warning.existingStatus}`].filter(Boolean).join(" · ")}
+                          </p>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+
+              {preview.errors.length > 0 && (
+                <section
+                  aria-labelledby="import-error-heading"
+                  className="rounded-md border border-red-200 bg-red-50 p-3 text-red-950"
+                >
+                  <h4 id="import-error-heading" className="type-meta font-semibold">
+                    Validation errors ({preview.errors.length})
+                  </h4>
+                  <p className="mt-1 type-micro text-red-900">
+                    Correct these CSV rows and preview the file again. They will not be imported.
+                  </p>
+                  <ul className="mt-2 max-h-40 space-y-2 overflow-y-auto" aria-label="Import validation errors">
+                    {preview.errors.map((error, index) => (
+                      <li key={`${error.row ?? "unknown"}-${importIssueLabel(error, entityType)}-${index}`} className="border-t border-red-200 pt-2 first:border-0 first:pt-0">
+                        <p className="type-meta font-semibold">{importIssueLabel(error, entityType)}</p>
+                        <p className="type-micro text-red-950">{error.error || "Validation error"}</p>
+                        {error.code && <p className="mt-0.5 type-micro text-red-900">{error.code}</p>}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+            </div>
+          )}
+
           <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3">
-            <p className="type-micro">Only valid rows will be committed. Imported records remain drafts.</p>
+            <p className="type-micro">
+              Confirming will write {preview.creates} {preview.creates === 1 ? "create" : "creates"} and {preview.updates} {preview.updates === 1 ? "update" : "updates"}. Errors and quarantined rows are skipped; imported records remain drafts.
+            </p>
             <div className="flex items-center gap-2">
-              {preview.errors.length > 0 && <Button size="sm" variant="ghost" onClick={downloadErrors}>Download errors</Button>}
-              <Button size="sm" variant="primary" loading={loading} disabled={preview.valid === 0} onClick={commitImport}>Confirm import</Button>
+              {preview.errors.length > 0 && <Button size="sm" variant="secondary" onClick={downloadErrors}>Download error CSV</Button>}
+              <Button size="sm" variant="primary" loading={loading} disabled={preview.creates + preview.updates === 0} onClick={commitImport}>Confirm import</Button>
             </div>
           </div>
         </section>

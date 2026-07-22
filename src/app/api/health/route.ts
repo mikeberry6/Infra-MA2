@@ -1,56 +1,176 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { logServerOperation } from "@/lib/server-log";
+import { withServerOperation } from "@/lib/server-log";
 
 const PIPELINES = [
   { name: "NEWS_SCAN", staleAfterHours: 36 },
   { name: "DASHBOARD_SYNC", staleAfterHours: 36 },
 ] as const;
 
+const SCHEMA_ERROR_CODES = new Set(["P2021", "P2022", "42P01", "42703"]);
+
 export const dynamic = "force-dynamic";
+
+function objectValue(value: unknown): Record<string, unknown> | null {
+  return value && typeof value === "object" ? value as Record<string, unknown> : null;
+}
+
+/** Distinguish a reachable-but-unmigrated database from a network failure. */
+function isSchemaMismatchError(error: unknown): boolean {
+  const root = objectValue(error);
+  const cause = objectValue(root?.cause);
+  const meta = objectValue(root?.meta);
+  const adapterError = objectValue(meta?.driverAdapterError);
+  const adapterCause = objectValue(adapterError?.cause);
+  const codes = [
+    root?.code,
+    cause?.code,
+    cause?.originalCode,
+    meta?.code,
+    adapterCause?.code,
+    adapterCause?.originalCode,
+  ];
+
+  if (codes.some((code) => typeof code === "string" && SCHEMA_ERROR_CODES.has(code))) {
+    return true;
+  }
+
+  const message = error instanceof Error ? error.message : "";
+  return /(?:relation|table|column) .+ does not exist|unknown (?:field|argument)/i.test(message);
+}
+
+async function schemaIsReady(): Promise<boolean> {
+  const rows = await prisma.$queryRaw<Array<{ ready: boolean }>>`
+    SELECT (
+      to_regclass('"PipelineRun"') IS NOT NULL
+      AND to_regclass('"AuditEvent"') IS NOT NULL
+      AND to_regclass('"CompanyRedirect"') IS NOT NULL
+      AND to_regclass('"AuthThrottle"') IS NOT NULL
+      AND EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_schema = current_schema()
+          AND table_name = 'Deal'
+          AND column_name = 'lastVerifiedAt'
+      )
+      AND EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_schema = current_schema()
+          AND table_name = 'Fund'
+          AND column_name = 'lastVerifiedAt'
+      )
+      AND EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_schema = current_schema()
+          AND table_name = 'Company'
+          AND column_name = 'lastVerifiedAt'
+      )
+      AND EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_schema = current_schema()
+          AND table_name = 'Citation'
+          AND column_name = 'isPrimary'
+      )
+      AND EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_schema = current_schema()
+          AND table_name = 'Deal'
+          AND column_name = 'sellerDisclosureStatus'
+      )
+      AND EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_schema = current_schema()
+          AND table_name = 'Deal'
+          AND column_name = 'sellerDisclosureReason'
+      )
+    ) AS "ready"
+  `;
+  return rows[0]?.ready === true;
+}
 
 export async function GET(request: Request) {
   const generatedAt = new Date();
-  const startedAt = performance.now();
-  const requestId = request.headers.get("x-request-id");
-  try {
-    await prisma.$queryRaw`SELECT 1`;
-    const pipelines = await Promise.all(PIPELINES.map(async ({ name, staleAfterHours }) => {
-      const [latestAttempt, latestSuccess] = await Promise.all([
-        prisma.pipelineRun.findFirst({ where: { pipeline: name }, orderBy: { startedAt: "desc" } }),
-        prisma.pipelineRun.findFirst({ where: { pipeline: name, status: "SUCCEEDED" }, orderBy: { endedAt: "desc" } }),
-      ]);
-      const successfulAt = latestSuccess?.endedAt ?? latestSuccess?.startedAt ?? null;
-      const stale = !successfulAt || generatedAt.getTime() - successfulAt.getTime() > staleAfterHours * 60 * 60 * 1000;
-      return {
-        name,
-        status: !latestAttempt ? "never-run" : latestAttempt.status === "FAILED" ? "failed" : stale ? "stale" : "healthy",
-        lastAttemptAt: latestAttempt?.startedAt.toISOString() ?? null,
-        lastSuccessfulAt: successfulAt?.toISOString() ?? null,
-      };
-    }));
-    const degraded = pipelines.some((pipeline) => pipeline.status !== "healthy");
-    const status = degraded ? 503 : 200;
-    const generationTimeMs = Math.round(performance.now() - startedAt);
-    logServerOperation({ route: "/api/health", operation: "health_check", durationMs: generationTimeMs, status, requestId });
-    return NextResponse.json({
-      status: degraded ? "degraded" : "healthy",
+
+  return withServerOperation(request, {
+    route: "/api/health",
+    operation: "health_check",
+  }, async ({ elapsedMs }) => {
+    const base = {
       version: process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 12) ?? "local",
-      database: "connected",
-      pipelines,
       generatedAt: generatedAt.toISOString(),
-      generationTimeMs,
-    }, { status });
-  } catch {
-    const generationTimeMs = Math.round(performance.now() - startedAt);
-    logServerOperation({ route: "/api/health", operation: "health_check", durationMs: generationTimeMs, status: 503, requestId });
-    return NextResponse.json({
-      status: "unhealthy",
-      version: process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 12) ?? "local",
-      database: "unavailable",
-      pipelines: [],
-      generatedAt: generatedAt.toISOString(),
-      generationTimeMs,
-    }, { status: 503 });
-  }
+    };
+
+    try {
+      await prisma.$queryRaw`SELECT 1`;
+    } catch {
+      return NextResponse.json({
+        status: "unhealthy",
+        ...base,
+        database: "unavailable",
+        schema: "unknown",
+        pipelines: [],
+        generationTimeMs: elapsedMs(),
+      }, { status: 503 });
+    }
+
+    try {
+      if (!(await schemaIsReady())) {
+        return NextResponse.json({
+          status: "unhealthy",
+          ...base,
+          database: "connected",
+          schema: "not-ready",
+          pipelines: [],
+          generationTimeMs: elapsedMs(),
+        }, { status: 503 });
+      }
+
+      const pipelines = await Promise.all(PIPELINES.map(async ({ name, staleAfterHours }) => {
+        const [latestAttempt, latestSuccess] = await Promise.all([
+          prisma.pipelineRun.findFirst({
+            where: { pipeline: name },
+            orderBy: { startedAt: "desc" },
+          }),
+          prisma.pipelineRun.findFirst({
+            where: { pipeline: name, status: "SUCCEEDED" },
+            orderBy: { endedAt: "desc" },
+          }),
+        ]);
+        const successfulAt = latestSuccess?.endedAt ?? latestSuccess?.startedAt ?? null;
+        const stale = !successfulAt
+          || generatedAt.getTime() - successfulAt.getTime() > staleAfterHours * 60 * 60 * 1000;
+        return {
+          name,
+          status: !latestAttempt
+            ? "never-run"
+            : latestAttempt.status === "FAILED"
+              ? "failed"
+              : stale
+                ? "stale"
+                : "healthy",
+          lastAttemptAt: latestAttempt?.startedAt.toISOString() ?? null,
+          lastSuccessfulAt: successfulAt?.toISOString() ?? null,
+        };
+      }));
+      const degraded = pipelines.some((pipeline) => pipeline.status !== "healthy");
+
+      return NextResponse.json({
+        status: degraded ? "degraded" : "healthy",
+        ...base,
+        database: "connected",
+        schema: "ready",
+        pipelines,
+        generationTimeMs: elapsedMs(),
+      }, { status: degraded ? 503 : 200 });
+    } catch (error) {
+      const schemaMismatch = isSchemaMismatchError(error);
+      return NextResponse.json({
+        status: "unhealthy",
+        ...base,
+        database: schemaMismatch ? "connected" : "unavailable",
+        schema: schemaMismatch ? "not-ready" : "unknown",
+        pipelines: [],
+        generationTimeMs: elapsedMs(),
+      }, { status: 503 });
+    }
+  });
 }

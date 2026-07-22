@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAllFundDetails } from "@/modules/funds/queries";
 import { toCsv } from "@/lib/csv";
+import { withServerOperation } from "@/lib/server-log";
 import { canExportData } from "@/modules/auth/guards";
 
 const FUND_COLUMNS = [
@@ -21,7 +22,7 @@ const FUND_COLUMNS = [
   "strategyUrl",
 ];
 
-export async function GET(request: NextRequest) {
+async function exportFunds(request: NextRequest) {
   try {
     if (!(await canExportData())) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
@@ -66,4 +67,11 @@ export async function GET(request: NextRequest) {
       { status: 500 },
     );
   }
+}
+
+export async function GET(request: NextRequest) {
+  return withServerOperation(request, {
+    route: "/api/exports/funds",
+    operation: "export_funds",
+  }, () => exportFunds(request));
 }

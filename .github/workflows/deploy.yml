@@ -1,40 +1,67 @@
-name: CI Build
+name: Release Gate
 
 on:
   push:
-    branches: ["main", "master", "claude/**", "codex/**"]
+    branches: ["main"]
   pull_request:
-    branches: ["main", "master", "claude/infratracker-platform-FCgI9"]
-  workflow_dispatch:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-gate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
 
 jobs:
-  build:
+  quality:
+    name: Static quality, tests, audit, and build
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "24"
-          cache: "npm"
+          cache: npm
 
-      - name: Install dependencies
+      - name: Install locked dependencies
         run: npm ci
+
+      - name: Audit changed migrations as additive-only
+        shell: bash
+        env:
+          EVENT_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          base_sha="$EVENT_BASE_SHA"
+          if ! [[ "$base_sha" =~ ^[0-9a-f]{40}$ ]] || [[ "$base_sha" =~ ^0+$ ]]; then
+            if [ "$EVENT_NAME" = "push" ]; then
+              base_sha="$(git rev-parse HEAD^)"
+            else
+              base_sha="$(git merge-base HEAD origin/main)"
+            fi
+          fi
+          node --experimental-strip-types scripts/audit-additive-migrations.ts \
+            --base-sha="$base_sha" \
+            --release-sha=HEAD \
+            --output=tmp/ci/migration-manifest.json
+
+      - name: Generate Prisma client
+        run: npm run db:generate
 
       - name: Validate Prisma schema
         run: npm run db:validate
-
-      - name: Check migration state on Neon validation branch
-        env:
-          DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
-        run: |
-          if [ -z "$DATABASE_URL" ]; then
-            echo "MIGRATION_DATABASE_URL is required for the release gate."
-            exit 1
-          fi
-          npx prisma migrate status
 
       - name: Lint
         run: npm run lint
@@ -42,27 +69,199 @@ jobs:
       - name: Type check
         run: npm run typecheck
 
-      - name: Test
+      - name: Run unit and integration tests
         run: npm test
 
-      - name: Validate seed data
+      - name: Validate offline seed and reference data
         run: npm run validate-portfolios
 
       - name: Validate latest weekly email
         run: npm run validate-weekly-email
 
-      - name: Verify database integrity and citation coverage
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      - name: Audit production dependencies
+        run: node scripts/run-with-retry.mjs --attempts=3 -- npm run audit:prod
+
+      - name: Build production application
+        run: npm run build
+
+      - name: Upload quality and migration evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: quality-evidence-${{ github.run_id }}
+          path: tmp/ci/
+          if-no-files-found: warn
+          retention-days: 30
+
+  validation:
+    name: Non-production migration, data, browser, and accessibility gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    concurrency:
+      group: neon-migration-validation-${{ github.repository_id }}
+      cancel-in-progress: false
+    env:
+      DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
+      E2E_DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
+      E2E_ADMIN_EMAIL: ${{ secrets.E2E_ADMIN_EMAIL }}
+      E2E_ADMIN_PASSWORD: ${{ secrets.E2E_ADMIN_PASSWORD }}
+      EXPECTED_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+      TARGET_DATABASE: validation
+      RELEASE_SHA: ${{ github.sha }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Require isolated validation configuration
+        shell: bash
         run: |
-          if [ -z "$DATABASE_URL" ]; then
-            echo "DATABASE_URL is required for the release gate."
+          missing=0
+          for name in DATABASE_URL E2E_ADMIN_EMAIL E2E_ADMIN_PASSWORD EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for the non-production release gate."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+          if ! [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]] || [ "$RELEASE_SHA" != "$(git rev-parse HEAD)" ]; then
+            echo "::error::RELEASE_SHA must exactly match the checked-out validation commit."
             exit 1
           fi
-          npm run db:verify
 
-      - name: Audit production dependencies
-        run: npm run audit:prod
+      - name: Install locked dependencies
+        run: npm ci
 
-      - name: Build
+      - name: Generate and validate Prisma client
+        run: |
+          npm run db:generate
+          npm run db:validate
+
+      - name: Prove database target is the isolated Neon branch
+        run: node --experimental-strip-types scripts/assert-database-target.ts
+
+      - name: Apply additive migrations to validation branch
+        shell: bash
+        run: |
+          mkdir -p tmp/ci
+          set -o pipefail
+          npx prisma migrate deploy 2>&1 | tee tmp/ci/migrate-deploy.log
+          npx prisma migrate status 2>&1 | tee tmp/ci/migrate-status.log
+          npx prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/ci/schema-drift.log
+
+      - name: Apply reviewed remediation or generate neutral review templates
+        shell: bash
+        run: |
+          set -o pipefail
+          company_approval="audits/approvals/company-merges.json"
+          citation_approval="audits/approvals/primary-citations.json"
+
+          if [ -f "$company_approval" ]; then
+            test ! -L "$company_approval"
+            git ls-files --error-unmatch -- "$company_approval" >/dev/null
+            company_sha="$(sha256sum "$company_approval" | awk '{print $1}')"
+            ./node_modules/.bin/tsx scripts/merge-duplicate-companies.ts \
+              --apply \
+              --approval-file="$company_approval" \
+              --approval-sha256="$company_sha" \
+              2>&1 | tee tmp/ci/company-merge-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-company-merge-candidates.ts \
+              --approval-output=tmp/ci/company-merge-approval-template.json \
+              > tmp/ci/company-canonical-review.md
+          fi
+
+          if [ -f "$citation_approval" ]; then
+            test ! -L "$citation_approval"
+            git ls-files --error-unmatch -- "$citation_approval" >/dev/null
+            citation_sha="$(sha256sum "$citation_approval" | awk '{print $1}')"
+            ./node_modules/.bin/tsx scripts/apply-primary-citation-remediation.ts \
+              --apply \
+              --approval-file="$citation_approval" \
+              --expected-sha256="$citation_sha" \
+              2>&1 | tee tmp/ci/primary-citation-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts \
+              --output=tmp/ci/primary-citation-approval-template.json
+          fi
+
+      - name: Verify database integrity and strict publication gates
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run db:verify 2>&1 | tee tmp/ci/database-verification.log
+          npx tsx scripts/source-coverage-report.ts --require-complete --output=tmp/ci/source-coverage.json
+          npx tsx scripts/report-company-merge-candidates.ts --published-only --require-clean > tmp/ci/company-canonical-review.md
+
+      - name: Create or rotate isolated E2E administrator
+        shell: bash
+        env:
+          ADMIN_EMAIL: ${{ secrets.E2E_ADMIN_EMAIL }}
+          ADMIN_PASSWORD: ${{ secrets.E2E_ADMIN_PASSWORD }}
+          ADMIN_NAME: CI Validation Administrator
+        run: |
+          ci_secret="$(openssl rand -hex 32)"
+          echo "::add-mask::$ci_secret"
+          echo "NEXTAUTH_SECRET=$ci_secret" >> "$GITHUB_ENV"
+          npm run admin:create
+
+      - name: Build against migrated validation database
         run: npm run build
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run end-to-end, axe, keyboard, responsive, and visual checks
+        env:
+          E2E_BASE_PATH: /Infra-MA2
+        run: npm run test:e2e
+
+      - name: Upload migration and data evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: validation-evidence-${{ github.run_id }}
+          path: tmp/ci/
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload Playwright report and failure media
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: playwright-report-${{ github.run_id }}
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: warn
+          retention-days: 30
+
+  # Branch protection requires this stable context. It succeeds only when both
+  # the offline quality gate and the isolated database/browser gate succeed.
+  build:
+    name: build
+    if: always()
+    needs: [quality, validation]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require every gate
+        env:
+          QUALITY_RESULT: ${{ needs.quality.result }}
+          VALIDATION_RESULT: ${{ needs.validation.result }}
+        run: |
+          if [ "$QUALITY_RESULT" != "success" ] || [ "$VALIDATION_RESULT" != "success" ]; then
+            echo "::error::Release gate failed: quality=$QUALITY_RESULT validation=$VALIDATION_RESULT"
+            exit 1
+          fi
+          echo "Complete release gate passed."

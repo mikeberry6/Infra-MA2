@@ -77,7 +77,7 @@ export function buildRiskScorecard(
 }
 
 export function directionForSeries(series: DashboardSeries): DashboardRiskDirection {
-  if (series.unavailable) return "needs_review";
+  if (series.unavailable || series.stale) return "needs_review";
   const id = series.metric.id;
   const weekly = series.weeklyChange;
   if (weekly == null || !Number.isFinite(weekly)) return "neutral";
@@ -112,7 +112,7 @@ function addRateContribution(
   points: number,
 ) {
   const change = series?.weeklyChange;
-  if (!series || change == null || !Number.isFinite(change)) return;
+  if (!usableSeries(series) || change == null || !Number.isFinite(change)) return;
   if (change <= -threshold) {
     contributions.push(contribution(series.metric.id, label, points, "supportive", `${series.metric.label} fell ${Math.round(Math.abs(change) * 100)} bp week over week.`));
   } else if (change >= threshold) {
@@ -128,7 +128,7 @@ function addSpreadContribution(
   points: number,
 ) {
   const change = series?.weeklyChange;
-  if (!series || change == null || !Number.isFinite(change)) return;
+  if (!usableSeries(series) || change == null || !Number.isFinite(change)) return;
   if (change <= -thresholdBp) {
     contributions.push(contribution(series.metric.id, label, points, "supportive", `${series.metric.label} tightened ${Math.round(Math.abs(change))} bp week over week.`));
   } else if (change >= thresholdBp) {
@@ -144,7 +144,7 @@ function addVolContribution(
   points: number,
 ) {
   const change = series?.weeklyChange;
-  if (!series || change == null || !Number.isFinite(change)) return;
+  if (!usableSeries(series) || change == null || !Number.isFinite(change)) return;
   if (change <= -threshold) {
     contributions.push(contribution(series.metric.id, label, points, "supportive", `${series.metric.label} declined ${Math.abs(change).toFixed(1)} points week over week.`));
   } else if (change >= threshold) {
@@ -159,7 +159,7 @@ function addPublicCompContribution(
   thresholdPct: number,
   points: number,
 ) {
-  if (!series) return;
+  if (!usableSeries(series)) return;
   const latest = latestNumeric(series);
   const prior = valueAtLeastDaysAgo(series, 7);
   if (latest == null || prior == null || prior === 0) return;
@@ -176,7 +176,7 @@ function addDemandContribution(
   series: DashboardSeries | undefined,
   points: number,
 ) {
-  if (!series) return;
+  if (!usableSeries(series)) return;
   const latest = latestNumeric(series);
   if (latest == null) return;
   if (latest > 0) {
@@ -189,7 +189,7 @@ function addDealFlowContribution(
   series: DashboardSeries | undefined,
   points: number,
 ) {
-  if (!series) return;
+  if (!usableSeries(series)) return;
   const latest = latestNumeric(series);
   if (latest == null) return;
   if (latest >= 10) {
@@ -204,7 +204,7 @@ function addPolicyContribution(
   federalRegisterSeries: DashboardSeries | undefined,
   signals: DashboardSignal[],
 ) {
-  if (!federalRegisterSeries) return;
+  if (!usableSeries(federalRegisterSeries)) return;
   const latest = latestNumeric(federalRegisterSeries);
   const reviewSignals = signals.filter((signal) => signal.section === "policy-regulatory").length;
   if (latest == null) return;
@@ -213,6 +213,10 @@ function addPolicyContribution(
   } else if (latest > 0) {
     contributions.push(contribution("policy-regulatory", "Policy/regulatory friction", -1, "needs_review", "Federal Register infrastructure notices are present but need analyst classification."));
   }
+}
+
+function usableSeries(series: DashboardSeries | undefined): series is DashboardSeries {
+  return Boolean(series && !series.stale && !series.unavailable);
 }
 
 function valueAtLeastDaysAgo(series: DashboardSeries, days: number): number | null {

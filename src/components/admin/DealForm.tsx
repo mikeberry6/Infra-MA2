@@ -10,16 +10,22 @@ import {
   DEAL_STATUSES,
 } from "@/lib/constants";
 import type { DealView } from "@/modules/shared/types";
+import { Button } from "@/components/shared/Button";
+import { TextInput } from "@/components/shared/TextInput";
+import {
+  CheckboxOption,
+  FormField,
+  FormMessage,
+  SelectInput,
+  TextArea,
+} from "@/components/shared/FormControls";
+import { invalidateDetailCache } from "@/lib/detail-cache-events";
 
 interface DealFormProps {
   initialData?: Partial<DealView>;
   action: (formData: FormData) => Promise<{ success: boolean; error?: string; id?: string }>;
   mode: "create" | "edit";
 }
-
-const inputClass =
-  "w-full rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 py-2 type-meta text-[var(--text-primary)] focus:outline-none focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent-soft)]";
-const labelClass = "mb-1 block type-meta font-medium text-[var(--text-secondary)]";
 
 export default function DealForm({ initialData, action, mode }: DealFormProps) {
   const router = useRouter();
@@ -35,6 +41,12 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
   );
   const [seller, setSeller] = useState(
     (initialData?.seller ?? "").split(" / ").filter((s) => s && s !== "N/A").join("\n"),
+  );
+  const [sellerDisclosureStatus, setSellerDisclosureStatus] = useState<string>(
+    initialData?.sellerDisclosureStatus ?? "DISCLOSED",
+  );
+  const [sellerDisclosureReason, setSellerDisclosureReason] = useState(
+    initialData?.sellerDisclosureReason ?? "",
   );
   const [sector, setSector] = useState(initialData?.sector ?? DEAL_SECTORS[0]);
   const [region, setRegion] = useState(initialData?.region ?? DEAL_REGIONS[0]);
@@ -82,6 +94,8 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
     const sellers = cleanLines(seller);
     formData.set("buyer", buyers.length ? buyers.join(" / ") : "N/A");
     formData.set("seller", sellers.length ? sellers.join(" / ") : "N/A");
+    formData.set("sellerDisclosureStatus", sellers.length ? "DISCLOSED" : sellerDisclosureStatus);
+    formData.set("sellerDisclosureReason", sellers.length ? "" : sellerDisclosureReason);
     // Also send the split list so the action can create one DealParticipant
     // per party rather than treating the joined string as a single org name.
     for (const b of buyers) formData.append("buyers", b);
@@ -112,6 +126,7 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
     startTransition(async () => {
       const result = await action(formData);
       if (result.success) {
+        invalidateDetailCache("deal", result.id);
         setMessage({ type: "success", text: mode === "create" ? "Deal created" : "Deal updated" });
         if (mode === "create") {
           router.push("/admin/deals");
@@ -123,305 +138,297 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl">
-      {message && (
-        <div
-          className={`text-sm px-4 py-2 rounded ${
-            message.type === "success"
-              ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-              : "bg-red-500/10 text-red-400 border border-red-500/20"
-          }`}
-        >
-          {message.text}
-        </div>
-      )}
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-3xl space-y-6"
+      aria-busy={isPending}
+    >
+      {message && <FormMessage tone={message.type}>{message.text}</FormMessage>}
 
-      {/* Title */}
-      <div>
-        <label className={labelClass}>Title *</label>
-        <input
-          type="text"
+      <FormField htmlFor="deal-title" label="Title" required>
+        <TextInput
+          id="deal-title"
+          size="md"
           required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className={inputClass}
         />
-      </div>
+      </FormField>
 
-      {/* Target + Buyer + Seller */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <label className={labelClass}>Target *</label>
-          <input
-            type="text"
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <FormField htmlFor="deal-target" label="Target" required>
+          <TextInput
+            id="deal-target"
+            size="md"
             required
             value={target}
             onChange={(e) => setTarget(e.target.value)}
-            className={inputClass}
           />
-        </div>
-        <div>
-          <label className={labelClass}>Buyer (one per line)</label>
-          <textarea
+        </FormField>
+        <FormField htmlFor="deal-buyers" label="Buyer (one per line)">
+          <TextArea
+            id="deal-buyers"
             value={buyer}
             onChange={(e) => setBuyer(e.target.value)}
             rows={2}
-            className={inputClass}
             placeholder="One firm per line"
           />
-        </div>
-        <div>
-          <label className={labelClass}>Seller (one per line)</label>
-          <textarea
+        </FormField>
+        <FormField htmlFor="deal-sellers" label="Seller (one per line)">
+          <TextArea
+            id="deal-sellers"
             value={seller}
             onChange={(e) => setSeller(e.target.value)}
             rows={2}
-            className={inputClass}
             placeholder="One firm per line"
           />
-        </div>
+        </FormField>
       </div>
 
-      {/* Sector + Region + Status */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <label className={labelClass}>Sector *</label>
-          <select
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <FormField htmlFor="deal-seller-disclosure" label="Seller disclosure" required>
+          <SelectInput
+            id="deal-seller-disclosure"
+            required
+            value={seller.trim() ? "DISCLOSED" : sellerDisclosureStatus}
+            onChange={(event) => setSellerDisclosureStatus(event.target.value)}
+            disabled={Boolean(seller.trim())}
+          >
+            <option value="DISCLOSED">Seller named above</option>
+            <option value="NOT_DISCLOSED">Seller not publicly disclosed</option>
+            <option value="NOT_APPLICABLE">No seller / not applicable</option>
+            <option value="LEGACY_UNREVIEWED" disabled>Legacy record — review required</option>
+          </SelectInput>
+        </FormField>
+        <FormField
+          htmlFor="deal-seller-disclosure-reason"
+          label="Seller disclosure reason"
+          hint={seller.trim() ? "Not required when a seller is named." : "Required when no seller is named (10+ characters)."}
+        >
+          <TextInput
+            id="deal-seller-disclosure-reason"
+            size="md"
+            required={!seller.trim()}
+            minLength={10}
+            value={sellerDisclosureReason}
+            onChange={(event) => setSellerDisclosureReason(event.target.value)}
+            disabled={Boolean(seller.trim())}
+            placeholder="Explain why seller information is absent"
+          />
+        </FormField>
+      </div>
+
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <FormField htmlFor="deal-sector" label="Sector" required>
+          <SelectInput
+            id="deal-sector"
+            required
             value={sector}
             onChange={(e) => setSector(e.target.value)}
-            className={inputClass}
           >
-            {DEAL_SECTORS.map((s) => (
-              <option key={s} value={s}>{s}</option>
+            {DEAL_SECTORS.map((value) => (
+              <option key={value} value={value}>{value}</option>
             ))}
-          </select>
-        </div>
-        <div>
-          <label className={labelClass}>Region *</label>
-          <select
+          </SelectInput>
+        </FormField>
+        <FormField htmlFor="deal-region" label="Region" required>
+          <SelectInput
+            id="deal-region"
+            required
             value={region}
             onChange={(e) => setRegion(e.target.value)}
-            className={inputClass}
           >
-            {DEAL_REGIONS.map((r) => (
-              <option key={r} value={r}>{r}</option>
+            {DEAL_REGIONS.map((value) => (
+              <option key={value} value={value}>{value}</option>
             ))}
-          </select>
-        </div>
-        <div>
-          <label className={labelClass}>Deal Status *</label>
-          <select
+          </SelectInput>
+        </FormField>
+        <FormField htmlFor="deal-status" label="Deal Status" required>
+          <SelectInput
+            id="deal-status"
+            required
             value={status}
             onChange={(e) => setStatus(e.target.value)}
-            className={inputClass}
           >
-            {DEAL_STATUSES.map((s) => (
-              <option key={s} value={s}>{s}</option>
+            {DEAL_STATUSES.map((value) => (
+              <option key={value} value={value}>{value}</option>
             ))}
-          </select>
-        </div>
+          </SelectInput>
+        </FormField>
       </div>
 
-      {/* Subsector + Country */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className={labelClass}>Subsector</label>
-          <input
-            type="text"
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <FormField htmlFor="deal-subsector" label="Subsector">
+          <TextInput
+            id="deal-subsector"
+            size="md"
             value={subsector}
             onChange={(e) => setSubsector(e.target.value)}
-            className={inputClass}
           />
-        </div>
-        <div>
-          <label className={labelClass}>Country</label>
-          <input
-            type="text"
+        </FormField>
+        <FormField htmlFor="deal-country" label="Country">
+          <TextInput
+            id="deal-country"
+            size="md"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
-            className={inputClass}
           />
-        </div>
+        </FormField>
       </div>
 
-      {/* Date + Closing Date */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className={labelClass}>Date *</label>
-          <input
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <FormField htmlFor="deal-date" label="Date" required>
+          <TextInput
+            id="deal-date"
+            size="md"
             type="date"
             required
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className={inputClass}
           />
-        </div>
-        <div>
-          <label className={labelClass}>Closing Date</label>
-          <input
+        </FormField>
+        <FormField htmlFor="deal-closing-date" label="Closing Date">
+          <TextInput
+            id="deal-closing-date"
+            size="md"
             type="date"
             value={closingDate}
             onChange={(e) => setClosingDate(e.target.value)}
-            className={inputClass}
           />
-        </div>
+        </FormField>
       </div>
 
-      {/* Categories (multi-select checkboxes) */}
-      <div>
-        <label className={labelClass}>Categories *</label>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-1">
-          {DEAL_CATEGORIES.map((cat) => (
-            <label key={cat} className="flex cursor-pointer items-center gap-2 type-meta text-[var(--text-secondary)]">
-              <input
-                type="checkbox"
-                checked={categories.includes(cat)}
-                onChange={() => toggleCategory(cat)}
-                className="accent-[#818CF8]"
-              />
-              {cat}
-            </label>
+      <fieldset>
+        <legend className="mb-1.5 type-meta font-medium text-[var(--text-secondary)]">
+          Categories<span aria-hidden className="ml-0.5 text-[var(--accent)]">*</span>
+          <span className="sr-only"> (required)</span>
+        </legend>
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3">
+          {DEAL_CATEGORIES.map((category) => (
+            <CheckboxOption
+              key={category}
+              checked={categories.includes(category)}
+              onChange={() => toggleCategory(category)}
+            >
+              {category}
+            </CheckboxOption>
           ))}
         </div>
-      </div>
+      </fieldset>
 
-      {/* Financials */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <label className={labelClass}>Enterprise Value</label>
-          <input
-            type="text"
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <FormField htmlFor="deal-enterprise-value" label="Enterprise Value">
+          <TextInput
+            id="deal-enterprise-value"
+            size="md"
             value={enterpriseValue}
             onChange={(e) => setEnterpriseValue(e.target.value)}
-            className={inputClass}
             placeholder="e.g. $2.5B"
           />
-        </div>
-        <div>
-          <label className={labelClass}>Equity Value</label>
-          <input
-            type="text"
+        </FormField>
+        <FormField htmlFor="deal-equity-value" label="Equity Value">
+          <TextInput
+            id="deal-equity-value"
+            size="md"
             value={equityValue}
             onChange={(e) => setEquityValue(e.target.value)}
-            className={inputClass}
             placeholder="e.g. $1.2B"
           />
-        </div>
-        <div>
-          <label className={labelClass}>Stake</label>
-          <input
-            type="text"
+        </FormField>
+        <FormField htmlFor="deal-stake" label="Stake">
+          <TextInput
+            id="deal-stake"
+            size="md"
             value={stake}
             onChange={(e) => setStake(e.target.value)}
-            className={inputClass}
             placeholder="e.g. 100%"
           />
-        </div>
+        </FormField>
       </div>
 
-      {/* Additional deal details */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <label className={labelClass}>Asset Scale</label>
-          <input
-            type="text"
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <FormField htmlFor="deal-asset-scale" label="Asset Scale">
+          <TextInput
+            id="deal-asset-scale"
+            size="md"
             value={assetScale}
             onChange={(e) => setAssetScale(e.target.value)}
-            className={inputClass}
           />
-        </div>
-        <div>
-          <label className={labelClass}>Valuation Multiple</label>
-          <input
-            type="text"
+        </FormField>
+        <FormField htmlFor="deal-valuation-multiple" label="Valuation Multiple">
+          <TextInput
+            id="deal-valuation-multiple"
+            size="md"
             value={valuationMultiple}
             onChange={(e) => setValuationMultiple(e.target.value)}
-            className={inputClass}
           />
-        </div>
-        <div>
-          <label className={labelClass}>Fund Vehicle</label>
-          <input
-            type="text"
+        </FormField>
+        <FormField htmlFor="deal-fund-vehicle" label="Fund Vehicle">
+          <TextInput
+            id="deal-fund-vehicle"
+            size="md"
             value={fundVehicle}
             onChange={(e) => setFundVehicle(e.target.value)}
-            className={inputClass}
           />
-        </div>
+        </FormField>
       </div>
 
-      {/* Description */}
-      <div>
-        <label className={labelClass}>Description</label>
-        <textarea
+      <FormField htmlFor="deal-description" label="Description">
+        <TextArea
+          id="deal-description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           rows={4}
-          className={inputClass}
         />
-      </div>
+      </FormField>
 
-      {/* Target Description */}
-      <div>
-        <label className={labelClass}>Target Description</label>
-        <textarea
+      <FormField htmlFor="deal-target-description" label="Target Description">
+        <TextArea
+          id="deal-target-description"
           value={targetDescription}
           onChange={(e) => setTargetDescription(e.target.value)}
           rows={3}
-          className={inputClass}
         />
-      </div>
+      </FormField>
 
-      {/* Key Highlights */}
-      <div>
-        <label className={labelClass}>Key Highlights (one per line)</label>
-        <textarea
+      <FormField htmlFor="deal-key-highlights" label="Key Highlights (one per line)">
+        <TextArea
+          id="deal-key-highlights"
           value={keyHighlights}
           onChange={(e) => setKeyHighlights(e.target.value)}
           rows={4}
-          className={inputClass}
           placeholder="Enter each highlight on a new line"
         />
-      </div>
+      </FormField>
 
-      {/* Source */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className={labelClass}>Source Name</label>
-          <input
-            type="text"
+      <div className="surface grid grid-cols-1 gap-4 p-4 md:grid-cols-2">
+        <FormField htmlFor="deal-source-name" label="Primary Source Name">
+          <TextInput
+            id="deal-source-name"
+            size="md"
             value={sourceName}
             onChange={(e) => setSourceName(e.target.value)}
-            className={inputClass}
           />
-        </div>
-        <div>
-          <label className={labelClass}>Source URL</label>
-          <input
+        </FormField>
+        <FormField htmlFor="deal-source-url" label="Primary Source URL">
+          <TextInput
+            id="deal-source-url"
+            size="md"
             type="url"
             value={sourceUrl}
             onChange={(e) => setSourceUrl(e.target.value)}
-            className={inputClass}
           />
-        </div>
+        </FormField>
       </div>
 
-      {/* Actions */}
-      <div className="flex items-center gap-4 pt-4 border-t border-black/[0.08]">
-        <button
-          type="submit"
-          disabled={isPending}
-          className="rounded-md bg-[var(--accent)] px-6 py-2 type-meta font-medium text-[var(--text-on-accent)] hover:bg-[var(--accent-hover)] disabled:opacity-50"
+      <div className="flex items-center gap-4 border-t border-[var(--border)] pt-4">
+        <Button type="submit" variant="primary" size="lg" loading={isPending}>
+          {mode === "create" ? "Create Deal" : "Save Changes"}
+        </Button>
+        <Link
+          href="/admin/deals"
+          className="type-meta font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
         >
-          {isPending
-            ? mode === "create"
-              ? "Creating..."
-              : "Saving..."
-            : mode === "create"
-            ? "Create Deal"
-            : "Save Changes"}
-        </button>
-        <Link href="/admin/deals" className="type-meta text-[var(--text-secondary)] hover:text-[var(--text-primary)]">
           Cancel
         </Link>
       </div>

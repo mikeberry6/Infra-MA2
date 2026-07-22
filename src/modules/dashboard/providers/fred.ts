@@ -5,6 +5,10 @@ import type {
   DashboardProviderResult,
 } from "@/modules/dashboard/types";
 import { fetchJson, isoDateDaysAgo, keyMissingProvider, observation } from "@/modules/dashboard/providers/shared";
+import {
+  applyDashboardValueTransform,
+  DASHBOARD_SOURCE_REGISTRY,
+} from "@/modules/dashboard/source-registry";
 
 type FredObservation = {
   date: string;
@@ -17,24 +21,11 @@ type FredResponse = {
   error_message?: string;
 };
 
-const FRED_SERIES: Array<{
-  metricId: string;
-  seriesId: string;
-  unit?: string;
-  transform?: (value: number) => number;
-}> = [
-  { metricId: "sofr", seriesId: "SOFR", unit: "%" },
-  { metricId: "ig_oas", seriesId: "BAMLC0A0CM", unit: "bp", transform: (value) => value * 100 },
-  { metricId: "bbb_oas", seriesId: "BAMLC0A4CBBB", unit: "bp", transform: (value) => value * 100 },
-  { metricId: "hy_oas", seriesId: "BAMLH0A0HYM2", unit: "bp", transform: (value) => value * 100 },
-  { metricId: "vix", seriesId: "VIXCLS", unit: "index" },
-  { metricId: "move", seriesId: "MOVE", unit: "index" },
-  { metricId: "sp500", seriesId: "SP500", unit: "index" },
-  { metricId: "henry_hub", seriesId: "DHHNGSP", unit: "$/MMBtu" },
-  { metricId: "wti", seriesId: "DCOILWTICO", unit: "$/bbl" },
-  { metricId: "brent", seriesId: "DCOILBRENTEU", unit: "$/bbl" },
-  { metricId: "jobless_claims", seriesId: "ICSA", unit: "claims" },
-];
+const PUBLIC_WATER_SEWER_METRIC_ID = "public_water_sewer_construction";
+
+export const FRED_SERIES = DASHBOARD_SOURCE_REGISTRY.filter(
+  (entry) => entry.sourceId === DASHBOARD_SOURCES.fred.id,
+);
 
 export function fredProvider(apiKey = process.env.FRED_API_KEY): DashboardProvider {
   if (!apiKey) return keyMissingProvider(DASHBOARD_SOURCES.fred, "FRED_API_KEY");
@@ -44,22 +35,60 @@ export function fredProvider(apiKey = process.env.FRED_API_KEY): DashboardProvid
     async fetch(): Promise<DashboardProviderResult> {
       const observations: DashboardObservation[] = [];
       const warnings: string[] = [];
-      const start = isoDateDaysAgo(260);
+      const start = isoDateDaysAgo(420);
 
       for (const item of FRED_SERIES) {
         try {
-          const rows = await fetchFredSeries(apiKey, item.seriesId, start);
+          if (!item.seriesId) continue;
+          if (item.metricId === PUBLIC_WATER_SEWER_METRIC_ID) {
+            const seriesIds = item.seriesId.split("+").filter(Boolean);
+            if (seriesIds.length !== 2) {
+              throw new Error("Public water/sewer construction requires exactly two component series.");
+            }
+            const componentRows = await Promise.all(
+              seriesIds.map((seriesId) => fetchFredSeries(apiKey, seriesId, start, item.fredUnits)),
+            );
+            for (const row of combineFredMonthlySeries(componentRows)) {
+              const transformed = applyDashboardValueTransform(row.values, item.transform);
+              observations.push(observation(
+                item.metricId,
+                DASHBOARD_SOURCES.fred.id,
+                fredPeriodEnd(row.date, item.nativeCadence),
+                Number(transformed.toFixed(4)),
+                {
+                  unit: item.unit,
+                  metadata: {
+                    fredSeriesIds: seriesIds,
+                    fredUnits: item.fredUnits ?? "lin",
+                    transform: item.transform,
+                    componentValues: Object.fromEntries(seriesIds.map((seriesId, index) => [seriesId, row.values[index]])),
+                    sourcePeriodStart: row.date,
+                    nativeCadence: item.nativeCadence,
+                  },
+                },
+              ));
+            }
+            continue;
+          }
+          const rows = await fetchFredSeries(apiKey, item.seriesId, start, item.fredUnits);
           for (const row of rows) {
             const parsed = Number(row.value);
             if (!Number.isFinite(parsed)) continue;
+            const transformed = applyDashboardValueTransform(parsed, item.transform);
             observations.push(observation(
               item.metricId,
               DASHBOARD_SOURCES.fred.id,
-              row.date,
-              Number((item.transform ? item.transform(parsed) : parsed).toFixed(4)),
+              fredPeriodEnd(row.date, item.nativeCadence),
+              Number(transformed.toFixed(4)),
               {
                 unit: item.unit,
-                metadata: { fredSeriesId: item.seriesId },
+                metadata: {
+                  fredSeriesId: item.seriesId,
+                  fredUnits: item.fredUnits ?? "lin",
+                  transform: item.transform,
+                  sourcePeriodStart: row.date,
+                  nativeCadence: item.nativeCadence,
+                },
               },
             ));
           }
@@ -68,19 +97,47 @@ export function fredProvider(apiKey = process.env.FRED_API_KEY): DashboardProvid
         }
       }
 
-      observations.push(...buildSofrAverages(observations));
       return { observations, warnings };
     },
   };
 }
 
-async function fetchFredSeries(apiKey: string, seriesId: string, observationStart: string): Promise<FredObservation[]> {
+export function combineFredMonthlySeries(
+  componentRows: readonly FredObservation[][],
+): Array<{ date: string; values: number[] }> {
+  if (componentRows.length < 2) return [];
+  const byComponent = componentRows.map((rows) => {
+    const byMonth = new Map<string, number>();
+    for (const row of rows) {
+      const month = /^(\d{4}-\d{2})-\d{2}$/.exec(row.date)?.[1];
+      const value = Number(row.value);
+      if (month && Number.isFinite(value)) byMonth.set(month, value);
+    }
+    return byMonth;
+  });
+  const [first, ...rest] = byComponent;
+  return Array.from(first.entries())
+    .filter(([month]) => rest.every((component) => component.has(month)))
+    .map(([month, firstValue]) => ({
+      date: `${month}-01`,
+      values: [firstValue, ...rest.map((component) => component.get(month) as number)],
+    }))
+    .sort((left, right) => left.date.localeCompare(right.date));
+}
+
+async function fetchFredSeries(
+  apiKey: string,
+  seriesId: string,
+  observationStart: string,
+  units: "lin" | "pc1" = "lin",
+): Promise<FredObservation[]> {
   const url = new URL("https://api.stlouisfed.org/fred/series/observations");
   url.searchParams.set("series_id", seriesId);
   url.searchParams.set("api_key", apiKey);
   url.searchParams.set("file_type", "json");
   url.searchParams.set("sort_order", "asc");
   url.searchParams.set("observation_start", observationStart);
+  url.searchParams.set("units", units);
   const json = await fetchJson<FredResponse>(url.toString());
   if (json.error_code) {
     throw new Error(json.error_message || `FRED error ${json.error_code}`);
@@ -88,23 +145,13 @@ async function fetchFredSeries(apiKey: string, seriesId: string, observationStar
   return json.observations ?? [];
 }
 
-function buildSofrAverages(observations: DashboardObservation[]): DashboardObservation[] {
-  const sofr = observations
-    .filter((item) => item.metricId === "sofr" && typeof item.value === "number")
-    .sort((a, b) => a.periodEnd.localeCompare(b.periodEnd));
-  const derived: DashboardObservation[] = [];
-
-  for (let index = 0; index < sofr.length; index += 1) {
-    for (const window of [30, 90, 180] as const) {
-      if (index + 1 < window) continue;
-      const slice = sofr.slice(index + 1 - window, index + 1);
-      const average = slice.reduce((total, item) => total + (item.value ?? 0), 0) / slice.length;
-      derived.push(observation(`sofr_${window}d_avg`, DASHBOARD_SOURCES.fred.id, sofr[index].periodEnd, Number(average.toFixed(4)), {
-        unit: "%",
-        metadata: { derivedFrom: "SOFR", window },
-      }));
-    }
-  }
-
-  return derived;
+export function fredPeriodEnd(date: string, nativeCadence: string): string {
+  if (nativeCadence !== "Monthly" && nativeCadence !== "Quarterly") return date;
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date);
+  if (!match) return date;
+  const year = Number(match[1]);
+  const monthIndex = Number(match[2]) - 1;
+  if (!Number.isInteger(year) || monthIndex < 0 || monthIndex > 11) return date;
+  const monthsInPeriod = nativeCadence === "Quarterly" ? 3 : 1;
+  return new Date(Date.UTC(year, monthIndex + monthsInPeriod, 0)).toISOString().slice(0, 10);
 }

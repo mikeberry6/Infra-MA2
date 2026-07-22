@@ -1,35 +1,51 @@
-name: Scrape LinkedIn Company Posts
+name: Collect LinkedIn Research Candidates
 
 on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: linkedin-research-candidates
+  cancel-in-progress: false
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.12"
 
-      - name: Run Apify LinkedIn Scraper
+      - name: Require Apify credential
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+        run: test -n "$APIFY_TOKEN" || { echo "::error::APIFY_TOKEN is required."; exit 1; }
+
+      - name: Collect LinkedIn company posts
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: python3 scripts/run_apify_scraper.py
 
-      - name: Run Post Filter
+      - name: Filter research candidates
         run: python3 scripts/filter_linkedin_posts.py
 
-      - name: Commit Results
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add scripts/linkedin_raw_posts.json scripts/linkedin_filtered_posts.json
-          git commit -m "Add LinkedIn scraped posts and filtered results"
-          git push
+      # Candidate output is deliberately review-only. The workflow never writes
+      # to a protected branch and never publishes deals or portfolio companies.
+      - name: Upload review candidates
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: linkedin-research-candidates-${{ github.run_id }}
+          path: |
+            scripts/linkedin_raw_posts.json
+            scripts/linkedin_filtered_posts.json
+          if-no-files-found: error
+          retention-days: 30

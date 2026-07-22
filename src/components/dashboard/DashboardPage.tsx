@@ -56,6 +56,7 @@ export function DashboardPage({
   const sector = view.sections.find((section) => section.section === "sector-micro");
   const policy = view.sections.find((section) => section.section === "policy-regulatory");
   const dealFriction = view.sections.find((section) => section.section === "deal-friction");
+  const failedSources = view.sourceHealth.filter((source) => source.status === "FAILED");
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6 sm:py-8">
@@ -67,9 +68,17 @@ export function DashboardPage({
         </StateBanner>
       )}
 
+      {failedSources.length > 0 && (
+        <StateBanner tone="restrictive" title="Data provider update failed">
+          {failedSources.length === 1
+            ? `${failedSources[0].sourceName} did not update successfully. Previously cached observations remain clearly labeled below.`
+            : `${failedSources.length} data providers did not update successfully. Previously cached observations remain clearly labeled below.`}
+        </StateBanner>
+      )}
+
       {!view.hasDatabaseData && (
-        <StateBanner tone="needs_review" title="Sample fallback active">
-          No cached dashboard observations were found. This page is rendering clearly labeled sample data so layout and scoring can be reviewed before running the sync job.
+        <StateBanner tone="needs_review" title="Dashboard data pending">
+          No validated dashboard observations are available yet. Run the synchronization pipeline or review provider status below; production never substitutes sample values.
         </StateBanner>
       )}
 
@@ -291,7 +300,7 @@ function MetricTile({ series }: { series: DashboardSeries }) {
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <div className="type-micro font-medium text-[var(--text-secondary)] truncate">
-            {series.metric.label}
+            <MetricSourceLabel series={series} />
           </div>
           <div className="mt-1 mono text-xl font-semibold leading-6 tabular-nums">
             {formatMetricValue(series.metric, series.latest)}
@@ -330,7 +339,7 @@ function ChartPanel({ title, series }: { title: string; series: DashboardSeries[
           <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {available.slice(0, 4).map((item) => (
               <div key={item.metric.id} className="flex items-center justify-between gap-2 rounded-md bg-[var(--bg-subtle)] px-2.5 py-2">
-                <span className="type-micro truncate">{item.metric.label}</span>
+                <span className="type-micro truncate"><MetricSourceLabel series={item} /></span>
                 <span className="mono type-micro font-medium text-[var(--text-secondary)] tabular-nums">
                   {formatMetricValue(item.metric, item.latest)}
                 </span>
@@ -384,7 +393,7 @@ function MiniLineChart({ series }: { series: DashboardSeries[] }) {
         {series.slice(0, 5).map((item, index) => (
           <span key={item.metric.id} className="inline-flex items-center gap-1.5 type-micro">
             <span aria-hidden className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: palette[index % palette.length] }} />
-            {item.metric.label}
+            <MetricSourceLabel series={item} />
           </span>
         ))}
       </div>
@@ -436,10 +445,10 @@ function MiniMetricRow({ series }: { series: DashboardSeries }) {
     <div className="flex items-center justify-between gap-3 rounded-md bg-[var(--bg-subtle)] px-2.5 py-2">
       <div className="min-w-0">
         <div className="type-micro font-medium text-[var(--text-secondary)] truncate">
-          {series.metric.label}
+          <MetricSourceLabel series={series} />
         </div>
         <div className="type-micro">
-          {series.unavailable ? series.metric.source.name : observationDateLabel(series.latest)}
+          {series.unavailable ? series.metric.source.name : `${observationDateLabel(series.latest)} · ${series.metric.source.name}`}
         </div>
       </div>
       <div className="shrink-0 text-right">
@@ -534,7 +543,7 @@ function SourceHealthTable({ view }: { view: DashboardView }) {
         <div>
           <SectionLabel className="mb-1">Data Source Health / Last Updated</SectionLabel>
           <p className="type-micro">
-            Public data may be delayed, cached, manually imported, licensed, or unavailable. This dashboard is decision support, not a trading system.
+            Official-source data may be delayed, cached, or unavailable. Metric labels link to their documented source; this dashboard is decision support, not a trading system.
           </p>
         </div>
         <Database className="h-4 w-4 text-[var(--text-tertiary)]" />
@@ -555,7 +564,13 @@ function SourceHealthTable({ view }: { view: DashboardView }) {
             {view.sourceHealth.map((source) => (
               <tr key={source.sourceId} className="border-b border-[var(--border)] last:border-b-0">
                 <td className="px-3 py-2 align-top">
-                  <div className="type-row-title">{source.sourceName}</div>
+                  <div className="type-row-title">
+                    {typeof source.metadata?.url === "string" ? (
+                      <a href={source.metadata.url} target={source.metadata.url.startsWith("http") ? "_blank" : undefined} rel={source.metadata.url.startsWith("http") ? "noopener noreferrer" : undefined} className="hover:text-[var(--accent)]">
+                        {source.sourceName}
+                      </a>
+                    ) : source.sourceName}
+                  </div>
                   <div className="type-micro mono">{source.sourceId}</div>
                 </td>
                 <td className="px-3 py-2 align-top">
@@ -579,6 +594,23 @@ function SourceHealthTable({ view }: { view: DashboardView }) {
         </table>
       </div>
     </article>
+  );
+}
+
+function MetricSourceLabel({ series }: { series: DashboardSeries }) {
+  const url = series.metric.source.url;
+  if (!url) return series.metric.label;
+  const external = url.startsWith("http");
+  return (
+    <a
+      href={url}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="hover:text-[var(--accent)]"
+      title={`Open ${series.metric.source.name} source`}
+    >
+      {series.metric.label}
+    </a>
   );
 }
 
@@ -606,7 +638,11 @@ function StateBanner({
   children: ReactNode;
 }) {
   return (
-    <div className="mb-3 rounded-lg border px-3 py-2.5" style={toneStyle(tone)}>
+    <div
+      className="mb-3 rounded-lg border px-3 py-2.5"
+      role={tone === "restrictive" ? "alert" : "status"}
+      style={toneStyle(tone)}
+    >
       <div className="flex items-start gap-2">
         <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
         <div>

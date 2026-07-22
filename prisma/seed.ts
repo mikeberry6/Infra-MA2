@@ -230,6 +230,12 @@ async function main() {
       investmentStrategy: fund.investmentStrategy,
       size: fund.size,
       sizeUsdMm: fund.sizeUsdMm,
+      sizeNativeCurrency: fund.sizeNativeCurrency,
+      sizeNativeAmount: fund.sizeNativeAmount,
+      sizeBasis: fund.sizeBasis,
+      sizeAsOf: fund.sizeAsOf ? new Date(`${fund.sizeAsOf}T00:00:00.000Z`) : fund.sizeAsOf,
+      sizeUsdFxRate: fund.sizeUsdFxRate,
+      sizeUsdFxDate: fund.sizeUsdFxDate ? new Date(`${fund.sizeUsdFxDate}T00:00:00.000Z`) : fund.sizeUsdFxDate,
       vintage: fund.vintage,
       strategies,
       structure,
@@ -505,6 +511,9 @@ async function main() {
         valuationMultiple: deal.valuationMultiple,
         fundVehicle: deal.fundVehicle,
         keyHighlights: deal.keyHighlights || [],
+        sellerDisclosureStatus: splitParticipants(deal.seller).length > 0
+          ? "DISCLOSED"
+          : "LEGACY_UNREVIEWED",
         // Publication requires a traceable source. Source-less seed records
         // remain reviewable in admin but never enter the public database.
         status: deal.sourceUrl ? "PUBLISHED" : "DRAFT",
@@ -667,7 +676,7 @@ async function main() {
     const sourceId = await getOrCreateSource(deal.sourceUrl, deal.sourceName || "", "ARTICLE");
     try {
       await prisma.citation.create({
-        data: { sourceId, dealId },
+        data: { sourceId, dealId, isPrimary: true },
       });
       citationCount++;
     } catch {
@@ -684,7 +693,7 @@ async function main() {
 
     const { kept: keptSources } = dedupeExactPortCoSources(pc.sources);
 
-    for (const src of keptSources) {
+    for (const [sourceIndex, src] of keptSources.entries()) {
       if (!src.url) continue;
       const sourceType = inferSourceType(src) as SourceType;
       const purpose = inferCitationPurpose(src) as CitationPurpose;
@@ -692,7 +701,7 @@ async function main() {
       const sourceId = await getOrCreateSource(src.url, src.label, sourceType);
       try {
         await prisma.citation.create({
-          data: { sourceId, companyId, purpose, evidenceLabel },
+          data: { sourceId, companyId, purpose, evidenceLabel, isPrimary: sourceIndex === 0 },
         });
         citationCount++;
       } catch {

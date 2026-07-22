@@ -5,8 +5,10 @@ import { COMPANY_SECTOR_DISPLAY, COMPANY_STATUS_DISPLAY } from "@/modules/shared
 import Link from "next/link";
 import { ArrowLeft, Plus } from "lucide-react";
 import DeleteButton from "@/components/admin/DeleteButton";
+import ArchiveButton from "@/components/admin/ArchiveButton";
+import RecordWorkflowButton from "@/components/admin/RecordWorkflowButton";
 import ImportExportBar from "@/components/admin/ImportExportBar";
-import { deleteCompany } from "@/modules/admin/actions";
+import { archiveCompany, deleteCompany, publishCompany, submitCompanyForReview, verifyCompany } from "@/modules/admin/actions";
 import { getRecordStatusColor } from "@/lib/colors";
 import { Button } from "@/components/shared/Button";
 
@@ -81,7 +83,9 @@ export default async function AdminCompaniesPage() {
                     <Link href={`/admin/companies/${company.id}/edit`}>
                       <Button variant="secondary" size="sm">Edit</Button>
                     </Link>
-                    <DeleteButton deleteAction={deleteCompany} id={company.id} />
+                    <RecordWorkflowButton entity="company" id={company.id} status={company.status} submitForReview={submitCompanyForReview} publish={publishCompany} verify={verifyCompany} />
+                    <ArchiveButton entity="company" archiveAction={archiveCompany} id={company.id} disabled={company.status === "ARCHIVED"} />
+                    <DeleteButton entity="company" deleteAction={deleteCompany} id={company.id} status={company.status} />
                   </div>
                 </td>
               </tr>

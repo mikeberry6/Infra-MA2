@@ -71,12 +71,20 @@ export function useUrlQueryState(
 
   const write = useCallback((next: string) => {
     const latest = new URLSearchParams(window.location.search);
+    const current = latest.get(paramName) ?? defaultValue;
     if (next && next !== defaultValue) latest.set(paramName, next);
     else latest.delete(paramName);
     if (resetPage && paramName !== "page") latest.delete("page");
     const query = latest.toString();
     setValue(next);
-    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+    const href = query ? `${pathname}?${query}` : pathname;
+    // Search input creates one navigable history entry, then coalesces later
+    // keystrokes into it. Discrete sort/page/view changes each remain
+    // independently reachable with browser Back and Forward.
+    const history = paramName === "q" && current !== defaultValue && next !== defaultValue
+      ? "replace"
+      : "push";
+    router[history](href, { scroll: false });
     notifyUrlFiltersChanged(query);
   }, [defaultValue, resetPage, paramName, pathname, router]);
 
@@ -98,6 +106,32 @@ export function useUrlQueryWriter() {
 }
 
 /**
+ * Applies related query-state changes in one navigation. This avoids exposing
+ * intermediate states such as a new sort field paired with the old direction,
+ * and gives the whole interaction a single Back/Forward history entry.
+ */
+export function useUrlQueryParamsWriter() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  return useCallback((
+    updates: Record<string, string | null>,
+    options: { history?: "push" | "replace"; resetPage?: boolean } = {},
+  ) => {
+    const latest = new URLSearchParams(window.location.search);
+    for (const [paramName, value] of Object.entries(updates)) {
+      if (value) latest.set(paramName, value);
+      else latest.delete(paramName);
+    }
+    if (options.resetPage) latest.delete("page");
+    const query = latest.toString();
+    const href = query ? `${pathname}?${query}` : pathname;
+    router[options.history ?? "push"](href, { scroll: false });
+    notifyUrlFiltersChanged(query);
+  }, [pathname, router]);
+}
+
+/**
  * Syncs a Set<string> filter to a URL query parameter.
  *
  * The set values are stored as a comma-separated list (e.g. `?sector=Digital,Utilities`).
@@ -107,8 +141,8 @@ export function useUrlQueryWriter() {
  * against a render-time query snapshot — this avoids races when
  * multiple filter updates fire in the same tick.
  *
- * Uses `router.replace({ scroll: false })` so filter changes don't pollute the
- * history stack or jump the scroll position.
+ * Each discrete filter change uses `router.push({ scroll: false })` so the
+ * browser's Back and Forward controls restore the prior result state.
  *
  * @param paramName The URL query parameter name (e.g. "sector")
  * @returns [set, toggle, clear, setAll] — same shape as a useState wrapper.
@@ -148,7 +182,7 @@ export function useUrlFilterSet(
       latest.delete("page");
       const query = latest.toString();
       setValue(new Set(nextValues));
-      router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+      router.push(query ? `${pathname}?${query}` : pathname, { scroll: false });
       notifyUrlFiltersChanged(query);
     },
     [paramName, router, pathname],
@@ -192,7 +226,7 @@ export function useClearUrlFilters(paramNames: string[]): () => void {
     }
     latest.delete("page");
     const query = latest.toString();
-    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+    router.push(query ? `${pathname}?${query}` : pathname, { scroll: false });
     notifyUrlFiltersChanged(query);
   }, [router, pathname, key]);
 }

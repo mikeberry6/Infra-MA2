@@ -1,0 +1,52 @@
+# InfraSight Release Record
+
+## Identity
+
+- Release/date:
+- Approved Git SHA:
+- Pull request:
+- Required CI run/artifacts:
+- Candidate Vercel deployment:
+- Prior known-good deployment:
+- Operators/approvers:
+
+## Database
+
+- Validation Neon branch/host:
+- Production restore branch and timestamp:
+- Migrations applied:
+- Migration status evidence:
+- Database verification artifact:
+- Source-coverage percentages and primary-source review:
+- Duplicate/merge action (normally none):
+
+## Pipelines and preview
+
+- Dashboard latest success / rolling success rate:
+- News latest success / rolling success rate:
+- Preview smoke and authenticated journey result:
+- Axe/keyboard/responsive/visual result:
+- Production dependency audit:
+- Public bundle sizes:
+
+## Production
+
+- Promotion workflow run:
+- Promotion time (UTC):
+- Health/version result:
+- Public route smoke result:
+- Admin/import-preview/export authorization result:
+- Vercel/database/provider observations:
+- Admin credential rotation completed by/time (no value):
+- `NEXTAUTH_SECRET` rotation completed by/time (no value):
+
+## Rollback/recovery
+
+- Rollback trigger and selected deployment:
+- Rollback test or execution evidence:
+- Database restore exercise evidence:
+- Recovery point/time achieved:
+
+## Exceptions and follow-up
+
+For each exception: scope, risk/exploitability, owner, deadline, and approval.

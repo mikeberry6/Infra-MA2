@@ -18,6 +18,7 @@ export function TrackedSearchForm({ query }: { query: string }) {
         defaultValue={query}
         leadingIcon={<Search />}
         placeholder="Search deals, companies, and funds..."
+        aria-label="Search deals, companies, and funds"
         autoFocus
       />
     </form>

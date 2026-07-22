@@ -8,6 +8,7 @@ import {
   recordFailedLogin,
   requestIp,
 } from "@/modules/auth/throttle";
+import { PRIVILEGED_SESSION_MAX_AGE_SECONDS } from "@/modules/auth/session";
 
 const DUMMY_PASSWORD_HASH = "$2b$12$jO.JJSOjJqs4/KuQ7eKiNe2n89mzPsIrPUQZq3FjGA4QTmutfH8Ci";
 
@@ -49,6 +50,7 @@ export const authOptions: NextAuthOptions = {
           email: user.email,
           name: user.name,
           role: user.role,
+          authVersion: user.updatedAt.getTime(),
         };
       },
     }),
@@ -58,6 +60,8 @@ export const authOptions: NextAuthOptions = {
       if (user) {
         token.role = user.role;
         token.id = user.id;
+        token.authVersion = user.authVersion;
+        token.authenticatedAt = Date.now();
       }
       return token;
     },
@@ -65,14 +69,17 @@ export const authOptions: NextAuthOptions = {
       if (session.user) {
         session.user.role = token.role;
         session.user.id = token.id;
+        session.user.authVersion = token.authVersion;
+        session.user.authenticatedAt = token.authenticatedAt;
       }
       return session;
     },
   },
   session: {
     strategy: "jwt",
-    maxAge: 30 * 24 * 60 * 60, // 30 days
+    maxAge: PRIVILEGED_SESSION_MAX_AGE_SECONDS,
   },
+  jwt: { maxAge: PRIVILEGED_SESSION_MAX_AGE_SECONDS },
   pages: {
     signIn: "/login",
   },

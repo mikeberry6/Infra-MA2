@@ -8,25 +8,25 @@ export function MobileFilterSheet({
   activeCount,
   children,
   title = "Filters",
+  desktopBreakpoint = "md",
 }: {
   activeCount: number;
   children: ReactNode;
   title?: string;
+  desktopBreakpoint?: "md" | "lg";
 }) {
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
+  const responsiveVisibility = desktopBreakpoint === "lg" ? "lg:hidden" : "md:hidden";
   useDialogFocus(panelRef, open);
 
   useEffect(() => {
     if (!open) return;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
     };
     document.addEventListener("keydown", onKeyDown);
     return () => {
-      document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [open]);
@@ -36,7 +36,7 @@ export function MobileFilterSheet({
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] md:hidden"
+        className={`inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] ${responsiveVisibility}`}
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-controls="mobile-filter-dialog"
@@ -51,7 +51,7 @@ export function MobileFilterSheet({
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-[10000] md:hidden" role="presentation">
+        <div className={`fixed inset-0 z-[10000] ${responsiveVisibility}`} role="presentation">
           <button
             type="button"
             aria-label="Close filters"

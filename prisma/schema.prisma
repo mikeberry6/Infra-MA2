@@ -261,6 +261,13 @@ enum DealStatusEnum {
   TERMINATED
 }
 
+enum SellerDisclosureStatus {
+  DISCLOSED
+  NOT_DISCLOSED
+  NOT_APPLICABLE
+  LEGACY_UNREVIEWED
+}
+
 model Deal {
   id                String         @id @default(cuid())
   legacyId          String         @unique
@@ -280,6 +287,8 @@ model Deal {
   stake           String?
   dealStatus      DealStatusEnum
   closingDate     DateTime?
+  sellerDisclosureStatus SellerDisclosureStatus @default(LEGACY_UNREVIEWED)
+  sellerDisclosureReason String?
 
   assetScale        String?
   valuationMultiple String?
@@ -413,6 +422,7 @@ model Citation {
   deal          Deal?           @relation(fields: [dealId], references: [id])
   companyId     String?
   company       Company?        @relation(fields: [companyId], references: [id])
+  isPrimary     Boolean         @default(false)
   purpose       CitationPurpose @default(SUPPORTING_CONTEXT)
   evidenceLabel String?
 
@@ -520,6 +530,7 @@ model DashboardMetricDefinition {
 
   @@index([section])
   @@index([sourceId])
+  @@index([status])
 }
 
 model DashboardObservation {
@@ -544,26 +555,43 @@ model DashboardObservation {
   @@index([status])
 }
 
+enum DashboardSignalReviewStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
 model DashboardSignal {
-  id         String   @id @default(cuid())
-  signalKey  String
-  section    String
-  title      String
-  summary    String   @default("")
-  direction  String   @default("NEEDS_REVIEW")
-  severity   Int      @default(1)
-  observedAt DateTime
-  sourceId   String
-  sourceName String
-  sourceUrl  String?
-  metadata   Json?
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id                  String                      @id @default(cuid())
+  signalKey           String
+  section             String
+  title               String
+  summary             String                      @default("")
+  direction           String                      @default("NEEDS_REVIEW")
+  severity            Int                         @default(1)
+  observedAt          DateTime
+  sourceId            String
+  sourceName          String
+  sourceUrl           String?
+  sourceRunId         String?
+  sourceRun           DashboardSourceRun?         @relation(fields: [sourceRunId], references: [id], onDelete: SetNull)
+  reviewStatus        DashboardSignalReviewStatus @default(PENDING)
+  reviewedAt          DateTime?
+  reviewedById        String?
+  reviewedBy          User?                       @relation("DashboardSignalReviewer", fields: [reviewedById], references: [id], onDelete: SetNull)
+  contentHash         String                      @default("")
+  reviewedContentHash String?
+  metadata            Json?
+  createdAt           DateTime                    @default(now())
+  updatedAt           DateTime                    @updatedAt
 
   @@unique([signalKey, observedAt, sourceId])
   @@index([section])
   @@index([sourceId])
+  @@index([sourceRunId])
   @@index([direction])
+  @@index([reviewStatus, observedAt])
+  @@index([reviewedById])
   @@index([observedAt])
 }
 
@@ -582,6 +610,8 @@ model DashboardSourceRun {
   metadata             Json?
   createdAt            DateTime @default(now())
 
+  signals DashboardSignal[]
+
   @@index([sourceId])
   @@index([status])
   @@index([startedAt])
@@ -599,6 +629,8 @@ model User {
   updatedAt    DateTime @updatedAt
 
   auditEvents AuditEvent[]
+  reviewedDashboardSignals DashboardSignal[] @relation("DashboardSignalReviewer")
+  importPreviews ImportPreview[]
 }
 
 // ── Operational trust and auditability ──────────────────
@@ -655,4 +687,20 @@ model AuthThrottle {
   updatedAt       DateTime @updatedAt
 
   @@index([lockedUntil])
+}
+
+model ImportPreview {
+  id          String   @id
+  tokenHash   String   @unique
+  actorId     String
+  actor       User     @relation(fields: [actorId], references: [id], onDelete: Cascade)
+  entityType  String
+  payloadHash String
+  summary     Json
+  expiresAt   DateTime
+  consumedAt  DateTime?
+  createdAt   DateTime @default(now())
+
+  @@index([actorId, entityType])
+  @@index([expiresAt])
 }

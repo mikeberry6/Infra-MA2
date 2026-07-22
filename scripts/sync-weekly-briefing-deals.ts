@@ -176,7 +176,7 @@ function dealPayload(deal: Deal) {
     valuationMultiple: deal.valuationMultiple,
     fundVehicle: deal.fundVehicle,
     keyHighlights: deal.keyHighlights || [],
-    status: "PUBLISHED" as const,
+    status: "DRAFT" as const,
   };
 }
 
@@ -185,18 +185,19 @@ async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
     async (tx) => {
       const existing = await tx.deal.findUnique({
         where: { legacyId: deal.id },
-        select: { id: true },
+        select: { id: true, status: true },
       });
+      if (existing && existing.status !== "DRAFT") {
+        throw new Error(
+          `${deal.id} is ${existing.status}; automation cannot modify a record that has entered review or publication`,
+        );
+      }
       const payload = dealPayload(deal);
-      const replaceGeneratedRecord = deal.id.startsWith("WB-");
+      const dbDeal = existing
+        ? await tx.deal.update({ where: { id: existing.id }, data: payload })
+        : await tx.deal.create({ data: { legacyId: deal.id, ...payload } });
 
-      const dbDeal = await tx.deal.upsert({
-        where: { legacyId: deal.id },
-        update: replaceGeneratedRecord ? payload : { status: "PUBLISHED" },
-        create: { legacyId: deal.id, ...payload },
-      });
-
-      if (replaceGeneratedRecord) {
+      if (existing) {
         await tx.dealParticipant.deleteMany({ where: { dealId: dbDeal.id } });
         await tx.citation.deleteMany({ where: { dealId: dbDeal.id } });
       }
@@ -260,12 +261,34 @@ async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
           where: { dealId: dbDeal.id, sourceId: source.id },
           select: { id: true },
         });
-        if (!existingCitation) {
+        await tx.citation.updateMany({
+          where: { dealId: dbDeal.id, isPrimary: true },
+          data: { isPrimary: false },
+        });
+        if (existingCitation) {
+          await tx.citation.update({
+            where: { id: existingCitation.id },
+            data: { isPrimary: true },
+          });
+        } else {
           await tx.citation.create({
-            data: { dealId: dbDeal.id, sourceId: source.id },
+            data: { dealId: dbDeal.id, sourceId: source.id, isPrimary: true },
           });
         }
       }
+
+      await tx.auditEvent.create({
+        data: {
+          entityType: "Deal",
+          entityId: dbDeal.id,
+          action: existing ? "WEEKLY_PROPOSAL_UPDATE" : "WEEKLY_PROPOSAL_CREATE",
+          changes: {
+            changedFields: ["record", "participants", "citations"],
+            resultingStatus: "DRAFT",
+          },
+          metadata: { pipeline: "WEEKLY_DEAL_SYNC", legacyId: deal.id },
+        },
+      });
 
       return existing ? "updated" : "created";
     },
@@ -323,14 +346,11 @@ async function main() {
   );
 
   console.log(`Created: ${created}`);
-  console.log(`Updated/published: ${updated}`);
+  console.log(`Updated draft proposals: ${updated}`);
   console.log(`Published deals after sync: ${afterRows.length}`);
   console.log(`Latest published deal: ${latestDeal?.toISOString() ?? "none"}`);
-  console.log(`Missing weekly briefing cards after sync: ${stillMissing.length}`);
-
-  if (stillMissing.length > 0) {
-    throw new Error(`Still missing by issue: ${JSON.stringify(groupByIssue(stillMissing))}`);
-  }
+  console.log(`Awaiting individual editorial review/publication: ${stillMissing.length}`);
+  console.log(`Pending review by issue: ${JSON.stringify(groupByIssue(stillMissing))}`);
   if (pipelineRunId) {
     await completePipelineRun(prisma, pipelineRunId, {
       inserted: created,

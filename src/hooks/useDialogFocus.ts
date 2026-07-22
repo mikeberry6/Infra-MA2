@@ -25,6 +25,8 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
     const previousActive = document.activeElement instanceof HTMLElement
       ? document.activeElement
       : null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     const focusables = visibleFocusableElements(dialog);
     (focusables[0] ?? dialog).focus();
 
@@ -51,6 +53,7 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
       previousActive?.focus();
     };
   }, [active, ref]);

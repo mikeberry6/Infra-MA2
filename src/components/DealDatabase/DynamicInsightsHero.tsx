@@ -84,7 +84,13 @@ function FundStackedBar({ row, maxTotal }: { row: FundRow; maxTotal: number }) {
       <span className="type-row-title truncate">
         {row.name}
       </span>
-      <div className="relative h-1.5 w-full bg-[var(--bg-hover)] rounded-full overflow-hidden">
+      <div
+        className="relative h-1.5 w-full bg-[var(--bg-hover)] rounded-full overflow-hidden"
+        role="img"
+        aria-label={`${row.name}: ${row.total} total transactions; ${row.breakdown
+          .map((segment) => `${segment.activity} ${segment.count}`)
+          .join(", ")}`}
+      >
         <div
           className="absolute inset-y-0 left-0 flex rounded-full overflow-hidden transition-[width] duration-500 ease-out"
           style={{ width: `${Math.max(barPct, 3)}%` }}
@@ -99,7 +105,7 @@ function FundStackedBar({ row, maxTotal }: { row: FundRow; maxTotal: number }) {
                   width: `${segPct}%`,
                   backgroundColor: getActivityColor(seg.activity),
                 }}
-                aria-label={`${seg.activity}: ${seg.count}`}
+                aria-hidden="true"
               />
             );
           })}

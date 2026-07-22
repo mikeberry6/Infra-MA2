@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAllCompanies } from "@/modules/companies/queries";
+import { getAllCompanyDetails } from "@/modules/companies/queries";
 import { toCsv } from "@/lib/csv";
+import { withServerOperation } from "@/lib/server-log";
 import { canExportData } from "@/modules/auth/guards";
 
 const PORTFOLIO_COLUMNS = [
@@ -20,7 +21,7 @@ const PORTFOLIO_COLUMNS = [
   "headquarters",
 ];
 
-export async function GET(request: NextRequest) {
+async function exportPortfolio(request: NextRequest) {
   try {
     if (!(await canExportData())) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
@@ -30,7 +31,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const wantsJson = searchParams.get("format") === "json";
 
-    const companies = await getAllCompanies();
+    const companies = await getAllCompanyDetails();
 
     if (wantsJson) {
       return NextResponse.json({
@@ -56,4 +57,11 @@ export async function GET(request: NextRequest) {
       { status: 500 },
     );
   }
+}
+
+export async function GET(request: NextRequest) {
+  return withServerOperation(request, {
+    route: "/api/exports/portfolio",
+    operation: "export_portfolio",
+  }, () => exportPortfolio(request));
 }

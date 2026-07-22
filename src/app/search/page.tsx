@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
 
-import { searchAll, type SearchResult } from "@/modules/search/queries";
+import { searchAllWithMeta, type SearchResult } from "@/modules/search/queries";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
@@ -39,10 +39,10 @@ export default async function SearchPage({
 }) {
   const { q } = await searchParams;
   const query = q || "";
-  const results = query ? await searchAll(query) : [];
-  const dealCount = results.filter((result) => result.type === "deal").length;
-  const companyCount = results.filter((result) => result.type === "company").length;
-  const fundCount = results.filter((result) => result.type === "fund").length;
+  const search = query
+    ? await searchAllWithMeta(query)
+    : { results: [], total: 0, counts: { deal: 0, company: 0, fund: 0 } };
+  const { results } = search;
   const groupedResults = (["deal", "company", "fund"] as const)
     .map((type) => ({ type, results: results.filter((result) => result.type === type) }))
     .filter((group) => group.results.length > 0);
@@ -56,25 +56,25 @@ export default async function SearchPage({
         metrics={[
           {
             label: "Results",
-            value: query ? results.length.toLocaleString() : "Ready",
+            value: query ? search.total.toLocaleString() : "Ready",
             detail: query ? `for "${query}"` : "Enter a company, fund, or buyer",
             color: "var(--accent)",
           },
           {
             label: "Deals",
-            value: dealCount.toLocaleString(),
+            value: search.counts.deal.toLocaleString(),
             detail: "Transaction records",
             color: TYPE_DOT_COLOR.deal,
           },
           {
             label: "PortCos",
-            value: companyCount.toLocaleString(),
+            value: search.counts.company.toLocaleString(),
             detail: "Portfolio companies",
             color: TYPE_DOT_COLOR.company,
           },
           {
             label: "Funds",
-            value: fundCount.toLocaleString(),
+            value: search.counts.fund.toLocaleString(),
             detail: "Fund vehicles",
             color: TYPE_DOT_COLOR.fund,
           },
@@ -85,7 +85,9 @@ export default async function SearchPage({
 
       {query && (
         <p className="type-micro mb-3">
-          <span className="mono tabular-nums text-[var(--text-secondary)]">{results.length}</span> result{results.length !== 1 ? "s" : ""} for &ldquo;{query}&rdquo;
+          Showing <span className="mono tabular-nums text-[var(--text-secondary)]">{results.length}</span>
+          {search.total > results.length && <> of <span className="mono tabular-nums text-[var(--text-secondary)]">{search.total}</span></>}
+          {" "}result{search.total !== 1 ? "s" : ""} for &ldquo;{query}&rdquo;
         </p>
       )}
 

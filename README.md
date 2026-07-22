@@ -78,7 +78,7 @@ npm run news:scan:dry-run -- --skip-source-crawl --since-days=7 --target=IAC --s
 
 ## Daily M&A Conditions Dashboard
 
-The `/dashboard` route displays a daily infrastructure M&A conditions dashboard with a Prisma-backed cache. It is decision support, not a trading system: the UI labels whether observations are live, cached, sample/manual, stale, unavailable, or require review.
+The `/dashboard` route displays a daily infrastructure M&A conditions dashboard with a Prisma-backed cache. It is decision support, not a trading system: the UI labels whether observations are live, cached, manual, stale, unavailable, or require review.
 
 Run a dry sync first:
 
@@ -96,17 +96,10 @@ Dashboard commands write summaries to:
 
 ```bash
 tmp/dashboard-sync-summary.json
-tmp/dashboard-seed-sample-summary.json
 tmp/dashboard-verify-summary.json
 ```
 
-Bootstrap demo/sample rows only when a database has no dashboard cache yet:
-
-```bash
-npm run dashboard:seed-sample
-```
-
-Verify the catalog, sample view model, and database table availability:
+Verify the catalog, empty-state view model, and database table availability:
 
 ```bash
 npm run dashboard:verify
@@ -115,16 +108,20 @@ npm run dashboard:verify
 Current working providers:
 
 - U.S. Treasury XML: nominal CMT rates, 2s10s, 5s30s, 10Y TIPS real yield, and implied 10Y breakeven inflation
+- FRED API: SOFR and averages, credit spreads, VIX, S&P 500, selected commodities, GDP, inflation, construction, employment, wages, and claims
+- EIA API v2: Lower 48 demand, net generation, interchange, gas storage, gasoline inventories, and crude inventories excluding SPR
 - USAspending.gov public API: infrastructure-keyword award activity and top returned awards
 - Federal Register public API: infrastructure-related notices/rules
+- SAM.gov public opportunities API: de-duplicated infrastructure title matches
+- SEC EDGAR submissions API: configurable CIK watchlist for transaction-related filings
 - InfraSight deal database: trailing 30-day published deal-flow count
 
-Optional providers and placeholders:
+Provider configuration:
 
-- `FRED_API_KEY`: enables FRED-based SOFR, SOFR averages, credit spreads, VIX, S&P 500, Henry Hub, WTI, Brent, and selected macro series
-- `EIA_API_KEY`: reserved for EIA grid/load/storage/generation adapters
-- `SAM_API_KEY`: reserved for SAM.gov procurement opportunities
-- `SEC_USER_AGENT`: required before enabling SEC EDGAR watchlist polling
-- `DASHBOARD_MANUAL_IMPORT_PATH`: reserved for analyst-curated or licensed CSV imports such as EMMA/MSRB, ISO/RTO prices, TSA/FHWA/AAR, FCC/NTIA, EPA ECHO, and public-comp watchlists
+- `FRED_API_KEY`, `EIA_API_KEY`, and `SAM_API_KEY` enable their respective free official APIs.
+- `SEC_USER_AGENT` must identify the application and include a monitored contact email.
+- `SEC_WATCHLIST_CIKS` optionally replaces the default public-infrastructure and hyperscaler watchlist using comma-separated `CIK:Name` entries.
+- Scheduled writes require a reviewed all-source dry-run and the repository variable `DASHBOARD_WRITES_ENABLED=true`; leave it unset or false during initial validation or a source-integrity incident.
+- Quantitative observations publish after validation. Federal Register documents, USAspending awards, SAM opportunities, and SEC filings remain pending until approved at `/admin/dashboard-signals`.
 
-Sources that require keys, licensing, manual files, or additional field mapping are deliberately shown as skipped/placeholders instead of scraped. Do not use sample fallback rows for investment decisions.
+The checked-in source registry controls active metrics, exact series/facets, units, transforms, publication lag, staleness, and review mode. Unsourced metrics remain `ROADMAP` records and are hidden from the public dashboard. Provider failures preserve the last official observation and never substitute sample data.

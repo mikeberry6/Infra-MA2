@@ -40,6 +40,13 @@ const DEAL_STATUSES = [
   "Terminated",
 ] as const;
 
+const SELLER_DISCLOSURE_STATES = [
+  "DISCLOSED",
+  "NOT_DISCLOSED",
+  "NOT_APPLICABLE",
+  "LEGACY_UNREVIEWED",
+] as const;
+
 const FUND_STRATEGIES = [
   "Core",
   "Core-Plus",
@@ -116,6 +123,8 @@ export const dealSchema = z.object({
   target: z.string().min(1, "Target is required"),
   buyer: z.string().min(1, "Buyer is required"),
   seller: z.string().min(1, "Seller is required"),
+  sellerDisclosureStatus: z.enum(SELLER_DISCLOSURE_STATES).default("LEGACY_UNREVIEWED"),
+  sellerDisclosureReason: z.string().optional(),
   sector: z.enum(DEAL_SECTORS, { message: "Invalid deal sector" }),
   subsector: z.string().optional().default(""),
   region: z.enum(DEAL_REGIONS, { message: "Invalid deal region" }),
@@ -157,6 +166,18 @@ export const dealSchema = z.object({
   financialAdvisorSeller: z.array(z.string()).optional(),
   legalAdvisorBuyer: z.array(z.string()).optional(),
   legalAdvisorSeller: z.array(z.string()).optional(),
+}).superRefine((deal, context) => {
+  const hasNamedSeller = !["", "N/A", "—"].includes(deal.seller.trim());
+  if (hasNamedSeller) return;
+  const reviewedAbsence = deal.sellerDisclosureStatus === "NOT_DISCLOSED"
+    || deal.sellerDisclosureStatus === "NOT_APPLICABLE";
+  if (!reviewedAbsence || (deal.sellerDisclosureReason?.trim().length ?? 0) < 10) {
+    context.addIssue({
+      code: "custom",
+      path: ["sellerDisclosureReason"],
+      message: "Name a seller or select a reviewed seller-disclosure state and provide a reason (10+ characters)",
+    });
+  }
 });
 
 export type DealInput = z.infer<typeof dealSchema>;
@@ -201,6 +222,8 @@ export const companySchema = z.object({
   investmentFirm: z.string().optional(),
   ownershipVehicle: z.string().optional(),
   countryTags: z.array(z.string()).optional(),
+  sourceName: z.string().optional(),
+  sourceUrl: z.string().url("Invalid source URL").optional().or(z.literal("")),
 });
 
 export type CompanyInput = z.infer<typeof companySchema>;

@@ -6,8 +6,9 @@
  *   Dry run (default — prints what it would do, no writes):
  *     npx tsx scripts/manual-merges.ts
  *
- *   Apply for real:
- *     npx tsx scripts/manual-merges.ts --apply
+ * Apply mode is intentionally disabled. Approved ID-level decisions must use
+ * `merge-duplicate-companies.ts --apply --approval-file=<reviewed JSON>` so
+ * the reviewer and exact retired IDs are persisted in the AuditEvent.
  *
  * Each entry pairs a `keep` (canonical, surviving) name with a `mergeFrom`
  * (the row whose ownership/milestone/management/citation rows are
@@ -18,6 +19,7 @@
 import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { rehomeCompanyRedirects } from "../src/modules/companies/redirects";
 
 const APPLY = process.argv.includes("--apply");
 
@@ -69,6 +71,11 @@ const MERGES: MergePair[] = [
 ];
 
 async function main() {
+  if (APPLY) {
+    throw new Error(
+      "Direct apply is disabled. Record ID-level approvals and use merge-duplicate-companies.ts --apply --approval-file=<file>.",
+    );
+  }
   console.log(APPLY ? "⚠️  APPLY MODE — writing changes" : "🔍 DRY RUN — no changes will be made");
   console.log();
 
@@ -147,13 +154,32 @@ async function main() {
       }
 
       // Move citations (dedup by sourceId).
-      const keepSourceIds = new Set(
-        (await tx.citation.findMany({ where: { companyId: keep.id }, select: { sourceId: true } })).map((c) => c.sourceId),
-      );
+      const keepCitations = await tx.citation.findMany({
+        where: { companyId: keep.id },
+        select: { id: true, sourceId: true, isPrimary: true },
+      });
+      const keepCitationsBySource = new Map(keepCitations.map((citation) => [citation.sourceId, citation]));
+      let keepHasPrimary = keepCitations.some((citation) => citation.isPrimary);
       for (const c of dup.citations) {
-        if (keepSourceIds.has(c.sourceId)) continue;
-        await tx.citation.update({ where: { id: c.id }, data: { companyId: keep.id } });
-        keepSourceIds.add(c.sourceId);
+        const existingCitation = keepCitationsBySource.get(c.sourceId);
+        if (existingCitation) {
+          if (!keepHasPrimary && c.isPrimary) {
+            await tx.citation.update({ where: { id: existingCitation.id }, data: { isPrimary: true } });
+            keepHasPrimary = true;
+          }
+          continue;
+        }
+        const retainPrimary = c.isPrimary && !keepHasPrimary;
+        await tx.citation.update({
+          where: { id: c.id },
+          data: { companyId: keep.id, isPrimary: retainPrimary },
+        });
+        keepCitationsBySource.set(c.sourceId, {
+          id: c.id,
+          sourceId: c.sourceId,
+          isPrimary: retainPrimary,
+        });
+        if (retainPrimary) keepHasPrimary = true;
         totalCitationsMoved++;
       }
 
@@ -177,7 +203,17 @@ async function main() {
       await tx.managementRole.deleteMany({ where: { companyId: dup.id } });
       await tx.citation.deleteMany({ where: { companyId: dup.id } });
       await tx.ownershipPeriod.deleteMany({ where: { companyId: dup.id } });
+      await rehomeCompanyRedirects(tx, dup.id, keep.id);
       await tx.company.delete({ where: { id: dup.id } });
+      await tx.auditEvent.create({
+        data: {
+          entityType: "Company",
+          entityId: keep.id,
+          action: "CANONICAL_MERGE",
+          changes: { retiredId: dup.id, retiredName: dup.name },
+          metadata: { source: "scripts/manual-merges.ts", rationale: pair.rationale },
+        },
+      });
     });
 
     merged++;

@@ -110,6 +110,7 @@ async function main() {
   const [
     dealsWithBuyer,
     publishedDealsMissingCitation,
+    publishedCompaniesMissingCitation,
     companiesWithOwnership,
     companiesWithMilestones,
     ownershipsWithoutInvestor,
@@ -119,9 +120,14 @@ async function main() {
   ] = await Promise.all([
     prisma.deal.count({ where: { participants: { some: { role: "BUYER" } } } }),
     prisma.deal.findMany({
-      where: { status: "PUBLISHED", citations: { none: {} } },
+      where: { status: "PUBLISHED", citations: { none: { isPrimary: true } } },
       select: { legacyId: true, target: true },
       orderBy: { date: "desc" },
+    }),
+    prisma.company.findMany({
+      where: { status: "PUBLISHED", citations: { none: { isPrimary: true } } },
+      select: { id: true, name: true },
+      orderBy: { name: "asc" },
     }),
     prisma.company.count({ where: { ownershipPeriods: { some: {} } } }),
     prisma.company.count({ where: { milestones: { some: {} } } }),
@@ -158,7 +164,11 @@ async function main() {
   check("Deals with buyer", Math.floor(dealCount * 0.95), dealsWithBuyer);
   exact("Published deals missing a primary citation", 0, publishedDealsMissingCitation.length);
   if (publishedDealsMissingCitation.length > 0) {
-    console.log(`    Missing citations: ${publishedDealsMissingCitation.map((deal) => `${deal.legacyId} (${deal.target})`).join(", ")}`);
+    console.log(`    Missing primary citations: ${publishedDealsMissingCitation.map((deal) => `${deal.legacyId} (${deal.target})`).join(", ")}`);
+  }
+  exact("Published companies missing a primary citation", 0, publishedCompaniesMissingCitation.length);
+  if (publishedCompaniesMissingCitation.length > 0) {
+    console.log(`    Missing primary citations: ${publishedCompaniesMissingCitation.map((company) => `${company.id} (${company.name})`).join(", ")}`);
   }
   check("Companies with ownership", Math.floor(companyCount * 0.95), companiesWithOwnership);
   check("Companies with milestones", Math.floor(companyCount * 0.95), companiesWithMilestones);

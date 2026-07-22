@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { parseCsv } from "@/lib/csv";
 import { revalidateAppData } from "@/lib/revalidation";
-import { isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
+import { withServerOperation } from "@/lib/server-log";
+import { AuthorizationError, getSessionIdentity, isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { fundSchema, type FundInput } from "@/modules/admin/schemas";
 import {
   FUND_STRATEGY_MAP,
@@ -18,28 +19,67 @@ import type {
   FundSectorEnum,
   FundRegionEnum,
 } from "@/generated/prisma/client";
-import { recordAuditEvent } from "@/modules/operations/audit";
+import { commitImport, sanitizeImportError } from "@/modules/imports/commit";
+import {
+  consumeImportPreviewToken,
+  createImportPreviewToken,
+  hashImportPreviewState,
+  ImportPreviewTokenError,
+  type ImportPreviewSummary,
+} from "@/modules/imports/preview-token";
 
 const MAX_IMPORT_ROWS = 500;
-const IMPORT_CHUNK_SIZE = 50;
 
 type FundImportRow = FundInput & {
   fundId: string;
+  row: number;
 };
 
-type ImportResult = { fundName?: string; dbId?: string; status?: string; error?: string };
+type ImportResult = {
+  row?: number;
+  fundId?: string;
+  fundName?: string;
+  dbId?: string;
+  status?: string;
+  existingStatus?: string;
+  code?: string;
+  error?: string;
+};
+
+type ExistingFund = {
+  id: string;
+  legacyId: string;
+  status: string;
+};
+
+const MUTABLE_EXISTING_FUND_STATUSES = new Set(["DRAFT", "IN_REVIEW"]);
+
+function canImportOverExistingFund(fund: ExistingFund): boolean {
+  return MUTABLE_EXISTING_FUND_STATUSES.has(fund.status);
+}
+
+function quarantinedFundResult(
+  row: FundImportRow,
+  existing: ExistingFund,
+): ImportResult {
+  const code = existing.status === "PUBLISHED"
+    ? "PUBLISHED_FUND_UPDATE_BLOCKED"
+    : "IMMUTABLE_FUND_UPDATE_BLOCKED";
+
+  return {
+    row: row.row,
+    fundId: row.fundId,
+    fundName: row.fundName,
+    status: "quarantined",
+    existingStatus: existing.status,
+    code,
+    error: `Existing ${existing.status} fund cannot be modified by bulk import; use the reviewed fund refresh workflow`,
+  };
+}
 
 function stringValue(value: unknown): string {
   if (value == null) return "";
   return typeof value === "string" ? value : String(value);
-}
-
-function chunkRows<T>(rows: T[]): T[][] {
-  const chunks: T[][] = [];
-  for (let i = 0; i < rows.length; i += IMPORT_CHUNK_SIZE) {
-    chunks.push(rows.slice(i, i + IMPORT_CHUNK_SIZE));
-  }
-  return chunks;
 }
 
 /**
@@ -62,12 +102,14 @@ function numberValue(value: unknown): number | undefined {
 function validateFundRows(funds: Record<string, unknown>[]): { validRows: FundImportRow[]; errors: ImportResult[] } {
   const validRows: FundImportRow[] = [];
   const errors: ImportResult[] = [];
+  const seenIds = new Set<string>();
 
-  for (const fund of funds) {
+  for (const [index, fund] of funds.entries()) {
+    const row = typeof fund.__row === "number" ? fund.__row : index + 1;
     const fundId = stringValue(fund.id || fund.legacyId).trim();
     const fundName = stringValue(fund.fundName);
     if (!fundId) {
-      errors.push({ fundName, error: "Missing id or legacyId" });
+      errors.push({ row, fundName, error: "Missing id or legacyId" });
       continue;
     }
 
@@ -89,11 +131,16 @@ function validateFundRows(funds: Record<string, unknown>[]): { validRows: FundIm
     });
 
     if (!parsed.success) {
-      errors.push({ fundName, error: parsed.error.issues.map((issue) => issue.message).join(", ") });
+      errors.push({ row, fundName, error: parsed.error.issues.map((issue) => issue.message).join(", ") });
+      continue;
+    }
+    if (seenIds.has(fundId)) {
+      errors.push({ row, fundName, error: "Duplicate fund identity in import" });
       continue;
     }
 
-    validRows.push({ ...parsed.data, fundId });
+    seenIds.add(fundId);
+    validRows.push({ ...parsed.data, fundId, row });
   }
 
   return { validRows, errors };
@@ -112,8 +159,9 @@ async function parseRequestBody(request: NextRequest): Promise<Record<string, un
       throw new Error("No file provided in form data");
     }
     const csvText = await file.text();
-    return parseCsv(csvText).map((row) => ({
+    return parseCsv(csvText).map((row, index) => ({
       ...row,
+      __row: index + 2,
       strategies: toArray(row.strategies),
       sectors: toArray(row.sectors),
       regions: toArray(row.regions),
@@ -132,9 +180,11 @@ async function parseRequestBody(request: NextRequest): Promise<Record<string, un
   throw new Error("Request body must contain a 'funds' array or be a JSON array");
 }
 
-export async function POST(request: NextRequest) {
+async function importFunds(request: NextRequest) {
   try {
     await requireAdmin();
+    const identity = await getSessionIdentity();
+    if (!identity || identity.role !== "ADMIN") throw new AuthorizationError();
 
     const funds = await parseRequestBody(request);
 
@@ -152,33 +202,87 @@ export async function POST(request: NextRequest) {
     }
 
     const { validRows, errors } = validateFundRows(funds);
-    const existing = validRows.length > 0
-      ? await prisma.fund.findMany({ where: { legacyId: { in: validRows.map((row) => row.fundId) } }, select: { legacyId: true } })
+    const previewExisting = validRows.length > 0
+      ? await prisma.fund.findMany({
+          where: { legacyId: { in: validRows.map((row) => row.fundId) } },
+          select: { id: true, legacyId: true, status: true },
+        })
       : [];
-    const existingIds = new Set(existing.map((row) => row.legacyId));
+    const previewExistingById = new Map(previewExisting.map((row) => [row.legacyId, row]));
+    const previewWarnings = validRows.flatMap((row) => {
+      const existingFund = previewExistingById.get(row.fundId);
+      return existingFund && !canImportOverExistingFund(existingFund)
+        ? [quarantinedFundResult(row, existingFund)]
+        : [];
+    });
+    const previewSummary: ImportPreviewSummary = {
+      total: funds.length,
+      valid: validRows.length,
+      creates: validRows.filter((row) => !previewExistingById.has(row.fundId)).length,
+      updates: validRows.filter((row) => {
+        const existingFund = previewExistingById.get(row.fundId);
+        return existingFund ? canImportOverExistingFund(existingFund) : false;
+      }).length,
+      quarantined: previewWarnings.length,
+      errors: errors.length,
+      stateHash: hashImportPreviewState({ warnings: previewWarnings }),
+    };
     if (request.nextUrl.searchParams.get("preview") === "1") {
+      const previewToken = await createImportPreviewToken({
+        actorId: identity.id,
+        entityType: "funds",
+        items: funds,
+        summary: previewSummary,
+      });
       return NextResponse.json({
         preview: true,
-        total: funds.length,
-        valid: validRows.length,
-        creates: validRows.filter((row) => !existingIds.has(row.fundId)).length,
-        updates: validRows.filter((row) => existingIds.has(row.fundId)).length,
-        warnings: [],
+        ...previewSummary,
+        items: funds,
+        previewToken,
+        warnings: previewWarnings,
         errors,
       });
     }
-    const results: ImportResult[] = [...errors];
+    await consumeImportPreviewToken({
+      token: request.headers.get("x-import-preview-token") ?? undefined,
+      actorId: identity.id,
+      entityType: "funds",
+      items: funds,
+      summary: previewSummary,
+    });
+    const committed = await commitImport({
+      pipeline: "BULK_IMPORT_FUNDS",
+      entityType: "Fund",
+      rowCount: funds.length,
+      execute: async (tx) => {
+        const existing = validRows.length > 0
+          ? await tx.fund.findMany({
+              where: { legacyId: { in: validRows.map((row) => row.fundId) } },
+              select: { id: true, legacyId: true, status: true },
+            })
+          : [];
+        const results: ImportResult[] = [...errors];
+        const existingById = new Map(existing.map((row) => [row.legacyId, row]));
+        let inserted = 0;
+        let updated = 0;
+        let skipped = errors.length;
+        let quarantined = 0;
 
-    for (const chunk of chunkRows(validRows)) {
-      const chunkResults = await prisma.$transaction(async (tx) => {
-        const txResults: ImportResult[] = [];
+        for (const fund of validRows) {
+          const existingFund = existingById.get(fund.fundId);
+          if (existingFund && !canImportOverExistingFund(existingFund)) {
+            results.push(quarantinedFundResult(fund, existingFund));
+            quarantined += 1;
+            skipped += 1;
+            continue;
+          }
 
-        for (const fund of chunk) {
           const structure = FUND_STRUCTURE_MAP[fund.structure] as FundStructure;
           const fundStatus = FUND_STATUS_MAP[fund.status] as FundStatusEnum;
 
           if (!structure || !fundStatus) {
-            txResults.push({ fundName: fund.fundName, error: "Invalid structure or status" });
+            results.push({ fundName: fund.fundName, error: "Invalid structure or status" });
+            skipped += 1;
             continue;
           }
 
@@ -206,80 +310,98 @@ export async function POST(request: NextRequest) {
           });
 
           const fundId = fund.fundId;
+          const fundData = {
+            managerId: manager.id,
+            fundName: fund.fundName,
+            ticker: fund.ticker || null,
+            investmentStrategy: fund.investmentStrategy || "",
+            size: fund.size || "",
+            sizeUsdMm: fund.sizeUsdMm ?? null,
+            vintage: fund.vintage || "",
+            strategies,
+            structure,
+            fundStatus,
+            sectors,
+            regions,
+            sourceUrls: toArray(fund.sourceUrls),
+            strategyUrl: fund.strategyUrl || "",
+          };
 
-          const created = await tx.fund.upsert({
-            where: { legacyId: fundId },
-            update: {
-              managerId: manager.id,
-              fundName: fund.fundName,
-              ticker: fund.ticker || null,
-              investmentStrategy: fund.investmentStrategy || "",
-              size: fund.size || "",
-              sizeUsdMm: fund.sizeUsdMm ?? null,
-              vintage: fund.vintage || "",
-              strategies,
-              structure,
-              fundStatus,
-              sectors,
-              regions,
-              sourceUrls: toArray(fund.sourceUrls),
-              strategyUrl: fund.strategyUrl || "",
-            },
-            create: {
-              legacyId: fundId,
-              managerId: manager.id,
-              fundName: fund.fundName,
-              ticker: fund.ticker || null,
-              investmentStrategy: fund.investmentStrategy || "",
-              size: fund.size || "",
-              sizeUsdMm: fund.sizeUsdMm ?? null,
-              vintage: fund.vintage || "",
-              strategies,
-              structure,
-              fundStatus,
-              sectors,
-              regions,
-              sourceUrls: toArray(fund.sourceUrls),
-              strategyUrl: fund.strategyUrl || "",
-              status: "DRAFT",
-            },
-          });
+          let dbId: string;
+          if (existingFund) {
+            const updateResult = await tx.fund.updateMany({
+              where: {
+                id: existingFund.id,
+                status: { in: ["DRAFT", "IN_REVIEW"] },
+              },
+              data: fundData,
+            });
 
-          txResults.push({ fundName: fund.fundName, dbId: created.id, status: "ok" });
+            // Guard against a concurrent review/publish transition after the
+            // initial lookup. Throwing rolls the entire import transaction back.
+            if (updateResult.count !== 1) {
+              throw new Error("Fund import review-state changed during commit");
+            }
+            dbId = existingFund.id;
+            updated += 1;
+          } else {
+            const created = await tx.fund.create({
+              data: {
+                legacyId: fundId,
+                ...fundData,
+                status: "DRAFT",
+              },
+            });
+            dbId = created.id;
+            inserted += 1;
+            existingById.set(fundId, { id: created.id, legacyId: fundId, status: "DRAFT" });
+          }
+
+          results.push({ row: fund.row, fundId, fundName: fund.fundName, dbId, status: "ok" });
         }
 
-        return txResults;
-      });
-      results.push(...chunkResults);
-    }
+        return {
+          value: {
+            imported: results.filter((result) => result.status === "ok").length,
+            results,
+          },
+          counts: { inserted, updated, skipped },
+          auditChanges: { inserted, updated, errors: skipped, quarantined },
+        };
+      },
+    });
 
-    if (results.some((result) => result.status === "ok")) {
+    if (committed.value.imported > 0) {
       revalidateAppData();
     }
 
-    const imported = results.filter((r) => r.status === "ok").length;
-    const auditEventId = await recordAuditEvent({
-      entityType: "Fund",
-      action: "BULK_IMPORT",
-      changes: { inserted: validRows.filter((row) => !existingIds.has(row.fundId)).length, updated: validRows.filter((row) => existingIds.has(row.fundId)).length, errors: errors.length },
-    });
-    await prisma.pipelineRun.create({
-      data: { pipeline: "BULK_IMPORT_FUNDS", status: "SUCCEEDED", startedAt: new Date(), endedAt: new Date(), inserted: validRows.filter((row) => !existingIds.has(row.fundId)).length, updated: validRows.filter((row) => existingIds.has(row.fundId)).length, skipped: errors.length, metadata: { auditEventId } },
-    });
     return NextResponse.json({
-      imported,
-      errors: results.filter((r) => r.error),
-      results,
-      auditEventId,
+      imported: committed.value.imported,
+      errors: committed.value.results.filter((result) => result.error),
+      results: committed.value.results,
+      quarantined: committed.value.results.filter((result) => result.status === "quarantined").length,
+      auditEventId: committed.auditEventId,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     if (isAuthorizationError(error)) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
-    console.error("Fund import failed:", error);
+    if (error instanceof ImportPreviewTokenError) {
+      return NextResponse.json({ error: error.message }, { status: 409 });
+    }
+    console.error("Fund import failed:", sanitizeImportError(error));
     return NextResponse.json(
-      { error: `Failed to import funds: ${error.message}` },
+      { error: "Failed to import funds" },
       { status: 500 },
     );
   }
+}
+
+export async function POST(request: NextRequest) {
+  return withServerOperation(request, {
+    route: "/api/imports/funds",
+    operation: request.nextUrl.searchParams.get("preview") === "1"
+      ? "preview_fund_import"
+      : "commit_fund_import",
+  }, () => importFunds(request));
 }

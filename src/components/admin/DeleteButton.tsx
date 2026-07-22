@@ -2,16 +2,21 @@
 
 import { useTransition, useState } from "react";
 import { Button } from "@/components/shared/Button";
+import { invalidateDetailCache, type DetailCacheEntity } from "@/lib/detail-cache-events";
 
 interface DeleteButtonProps {
   deleteAction: (id: string) => Promise<{ success: boolean; error?: string }>;
   id: string;
+  entity: DetailCacheEntity;
+  status: string;
 }
 
-export default function DeleteButton({ deleteAction, id }: DeleteButtonProps) {
+export default function DeleteButton({ deleteAction, id, entity, status }: DeleteButtonProps) {
   const [isPending, startTransition] = useTransition();
   const [confirming, setConfirming] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  if (status !== "DRAFT") return null;
 
   if (confirming) {
     return (
@@ -27,6 +32,8 @@ export default function DeleteButton({ deleteAction, id }: DeleteButtonProps) {
               if (!result.success) {
                 setError(result.error || "Delete failed");
                 setConfirming(false);
+              } else {
+                invalidateDetailCache(entity, id);
               }
             });
           }}
@@ -44,8 +51,11 @@ export default function DeleteButton({ deleteAction, id }: DeleteButtonProps) {
   }
 
   return (
-    <Button variant="ghost" size="sm" onClick={() => setConfirming(true)}>
-      Delete
-    </Button>
+    <span className="inline-flex items-center gap-1.5">
+      <Button variant="ghost" size="sm" onClick={() => { setError(null); setConfirming(true); }}>
+        Delete
+      </Button>
+      {error && <span className="max-w-64 whitespace-normal type-micro text-[#b91c1c]" role="alert">{error}</span>}
+    </span>
   );
 }
