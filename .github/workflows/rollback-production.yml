@@ -1,0 +1,133 @@
+name: Roll Back Dashboard Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      deployment:
+        description: Previously verified Vercel deployment URL or deployment ID
+        required: true
+        type: string
+      release_sha:
+        description: Full Git SHA represented by the rollback deployment
+        required: true
+        type: string
+      confirmation:
+        description: Type ROLLBACK to authorize production rollback
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-release
+  cancel-in-progress: false
+
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+      EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+      EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
+      ROLLBACK_DEPLOYMENT: ${{ inputs.deployment }}
+      ROLLBACK_SHA: ${{ inputs.release_sha }}
+      PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
+      CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
+      CONFIRMATION: ${{ inputs.confirmation }}
+    steps:
+      - name: Require explicit rollback authorization
+        run: |
+          if [ "$CONFIRMATION" != "ROLLBACK" ]; then
+            echo "::error::confirmation must exactly equal ROLLBACK."
+            exit 1
+          fi
+
+      - name: Checkout rollback tooling
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+
+      - name: Require protected Vercel configuration
+        shell: bash
+        run: |
+          test -n "$VERCEL_TOKEN" || { echo "::error::VERCEL_TOKEN is required."; exit 1; }
+          test -n "$VERCEL_SCOPE" || { echo "::error::VERCEL_SCOPE is required."; exit 1; }
+          [[ "$EXPECTED_VERCEL_PROJECT_ID" =~ ^prj_[A-Za-z0-9]+$ ]] || { echo "::error::VERCEL_PROJECT_ID is required."; exit 1; }
+          [[ "$EXPECTED_GITHUB_REPOSITORY_ID" =~ ^[1-9][0-9]*$ ]] || { echo "::error::GitHub repository ID is required."; exit 1; }
+          [[ "$ROLLBACK_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::release_sha must be a full lowercase Git SHA."; exit 1; }
+          if [ "$PRODUCTION_URL" != "$CANONICAL_PRODUCTION_URL" ]; then
+            echo "::error::The protected PRODUCTION_URL does not match the canonical InfraSight production alias."
+            exit 1
+          fi
+          node - <<'NODE'
+          const deployment = process.env.ROLLBACK_DEPLOYMENT ?? "";
+          if (!/^dpl_[A-Za-z0-9]+$/.test(deployment)) {
+            const parsed = new URL(deployment);
+            if (parsed.protocol !== "https:" || parsed.username || parsed.password || parsed.port || parsed.pathname !== "/" || parsed.search || parsed.hash) {
+              throw new Error("deployment must be a Vercel deployment ID or HTTPS origin.");
+            }
+          }
+          NODE
+
+      - name: Inspect and smoke-test rollback candidate
+        shell: bash
+        run: |
+          mkdir -p tmp/rollback
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment="$ROLLBACK_DEPLOYMENT" \
+            --expected-sha="$ROLLBACK_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --require-immutable-url \
+            --output=tmp/rollback/candidate-inspect.json
+          rollback_url="https://$(jq -r '.url' tmp/rollback/candidate-inspect.json)"
+          node scripts/release-smoke.mjs \
+            --base-url="$rollback_url" \
+            --skip-health \
+            --allow-legacy-root \
+            --output=tmp/rollback/candidate-smoke.json
+
+      # Additive migrations remain in place; rollback changes only the Vercel
+      # deployment assigned to the canonical production alias.
+      - name: Reverify and roll back production deployment
+        shell: bash
+        run: |
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment="$ROLLBACK_DEPLOYMENT" \
+            --expected-sha="$ROLLBACK_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --require-immutable-url \
+            --output=tmp/rollback/candidate-inspect-before-rollback.json
+          deployment_id="$(jq -r '.id' tmp/rollback/candidate-inspect-before-rollback.json)"
+          [[ "$deployment_id" =~ ^dpl_[A-Za-z0-9]+$ ]] || {
+            echo "::error::Verified deployment ID is invalid."
+            exit 1
+          }
+          npx --yes vercel@51.7.0 rollback "$deployment_id" \
+            --timeout 3m --yes --token "$VERCEL_TOKEN" --scope "$VERCEL_SCOPE"
+
+      - name: Verify canonical production after rollback
+        run: >-
+          node scripts/release-smoke.mjs
+          --base-url="$PRODUCTION_URL"
+          --skip-health
+          --allow-legacy-root
+          --output=tmp/rollback/production-smoke.json
+
+      - name: Upload rollback evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: dashboard-production-rollback-${{ github.run_id }}
+          path: tmp/rollback/
+          if-no-files-found: warn
+          retention-days: 90

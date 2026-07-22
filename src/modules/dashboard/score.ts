@@ -32,9 +32,8 @@ export function buildRiskScorecard(
   addVolContribution(contributions, byId.get("vix"), "Equity volatility", 2, 5);
   addVolContribution(contributions, byId.get("move"), "Rates volatility", 6, 4);
   addPublicCompContribution(contributions, byId.get("sp500"), "Public-comp sentiment", 0.01, 4);
-  addDemandContribution(contributions, byId.get("usaspending_infra_awards_30d"), 3);
   addDealFlowContribution(contributions, byId.get("deal_flow_30d"), 4);
-  addPolicyContribution(contributions, byId.get("federal_register_infra_notices"), signals);
+  addPolicyContribution(contributions, signals);
 
   for (const id of CORE_FRESHNESS_METRICS) {
     const item = byId.get(id);
@@ -59,7 +58,7 @@ export function buildRiskScorecard(
     .slice(0, 5);
 
   const explanations = [
-    `Deterministic score starts at 50 and adjusts for rates, real rates, spreads, volatility, public comps, sector/procurement demand, regulatory friction, and deal-flow signals.`,
+    `Deterministic score starts at 50 and adjusts for rates, real rates, spreads, volatility, public comps, explicitly classified regulatory friction, and reviewed deal-flow activity.`,
     `Current stance is ${stance} at ${score}/100.`,
     freshnessWarnings.length > 0
       ? `${freshnessWarnings.length} core source freshness warning${freshnessWarnings.length === 1 ? "" : "s"} should be reviewed before relying on the score.`
@@ -77,7 +76,7 @@ export function buildRiskScorecard(
 }
 
 export function directionForSeries(series: DashboardSeries): DashboardRiskDirection {
-  if (series.unavailable) return "needs_review";
+  if (series.unavailable || series.stale) return "needs_review";
   const id = series.metric.id;
   const weekly = series.weeklyChange;
   if (weekly == null || !Number.isFinite(weekly)) return "neutral";
@@ -112,7 +111,7 @@ function addRateContribution(
   points: number,
 ) {
   const change = series?.weeklyChange;
-  if (!series || change == null || !Number.isFinite(change)) return;
+  if (!usableSeries(series) || change == null || !Number.isFinite(change)) return;
   if (change <= -threshold) {
     contributions.push(contribution(series.metric.id, label, points, "supportive", `${series.metric.label} fell ${Math.round(Math.abs(change) * 100)} bp week over week.`));
   } else if (change >= threshold) {
@@ -128,7 +127,7 @@ function addSpreadContribution(
   points: number,
 ) {
   const change = series?.weeklyChange;
-  if (!series || change == null || !Number.isFinite(change)) return;
+  if (!usableSeries(series) || change == null || !Number.isFinite(change)) return;
   if (change <= -thresholdBp) {
     contributions.push(contribution(series.metric.id, label, points, "supportive", `${series.metric.label} tightened ${Math.round(Math.abs(change))} bp week over week.`));
   } else if (change >= thresholdBp) {
@@ -144,7 +143,7 @@ function addVolContribution(
   points: number,
 ) {
   const change = series?.weeklyChange;
-  if (!series || change == null || !Number.isFinite(change)) return;
+  if (!usableSeries(series) || change == null || !Number.isFinite(change)) return;
   if (change <= -threshold) {
     contributions.push(contribution(series.metric.id, label, points, "supportive", `${series.metric.label} declined ${Math.abs(change).toFixed(1)} points week over week.`));
   } else if (change >= threshold) {
@@ -159,7 +158,7 @@ function addPublicCompContribution(
   thresholdPct: number,
   points: number,
 ) {
-  if (!series) return;
+  if (!usableSeries(series)) return;
   const latest = latestNumeric(series);
   const prior = valueAtLeastDaysAgo(series, 7);
   if (latest == null || prior == null || prior === 0) return;
@@ -171,25 +170,12 @@ function addPublicCompContribution(
   }
 }
 
-function addDemandContribution(
-  contributions: DashboardScoreContribution[],
-  series: DashboardSeries | undefined,
-  points: number,
-) {
-  if (!series) return;
-  const latest = latestNumeric(series);
-  if (latest == null) return;
-  if (latest > 0) {
-    contributions.push(contribution(series.metric.id, "Sector demand indicators", points, "supportive", `${series.metric.label} returned ${Math.round(latest).toLocaleString()} current public awards/opportunities in the configured window.`));
-  }
-}
-
 function addDealFlowContribution(
   contributions: DashboardScoreContribution[],
   series: DashboardSeries | undefined,
   points: number,
 ) {
-  if (!series) return;
+  if (!usableSeries(series)) return;
   const latest = latestNumeric(series);
   if (latest == null) return;
   if (latest >= 10) {
@@ -201,18 +187,23 @@ function addDealFlowContribution(
 
 function addPolicyContribution(
   contributions: DashboardScoreContribution[],
-  federalRegisterSeries: DashboardSeries | undefined,
   signals: DashboardSignal[],
 ) {
-  if (!federalRegisterSeries) return;
-  const latest = latestNumeric(federalRegisterSeries);
-  const reviewSignals = signals.filter((signal) => signal.section === "policy-regulatory").length;
-  if (latest == null) return;
-  if (latest >= 20 || reviewSignals >= 10) {
-    contributions.push(contribution("policy-regulatory", "Policy/regulatory friction", -4, "restrictive", "Federal Register infrastructure notice volume is elevated and requires review."));
-  } else if (latest > 0) {
-    contributions.push(contribution("policy-regulatory", "Policy/regulatory friction", -1, "needs_review", "Federal Register infrastructure notices are present but need analyst classification."));
+  // Approval establishes relevance; it does not turn a grant, procurement
+  // opportunity, or filing into a restrictive signal. Only an explicitly
+  // classified restrictive signal may reduce the score.
+  const restrictiveSignals = signals.filter((signal) =>
+    signal.section === "policy-regulatory" && signal.direction === "restrictive",
+  ).length;
+  if (restrictiveSignals >= 10) {
+    contributions.push(contribution("policy-regulatory", "Policy/regulatory friction", -4, "restrictive", `${restrictiveSignals} approved, restrictive policy or regulatory signals are active in the dashboard window.`));
+  } else if (restrictiveSignals > 0) {
+    contributions.push(contribution("policy-regulatory", "Policy/regulatory friction", -1, "restrictive", `${restrictiveSignals} approved, restrictive policy or regulatory signal${restrictiveSignals === 1 ? " is" : "s are"} active in the dashboard window.`));
   }
+}
+
+function usableSeries(series: DashboardSeries | undefined): series is DashboardSeries {
+  return Boolean(series && !series.stale && !series.unavailable);
 }
 
 function valueAtLeastDaysAgo(series: DashboardSeries, days: number): number | null {

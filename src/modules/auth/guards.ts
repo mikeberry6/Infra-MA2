@@ -1,5 +1,12 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/modules/auth/config";
+import { prisma } from "@/lib/prisma";
+
+export interface SessionIdentity {
+  id: string;
+  email: string;
+  role: string;
+}
 
 export class AuthorizationError extends Error {
   constructor(message = "Forbidden") {
@@ -12,9 +19,18 @@ export function isAuthorizationError(error: unknown): error is AuthorizationErro
   return error instanceof AuthorizationError;
 }
 
-export async function getSessionRole(): Promise<string | null> {
+export async function getSessionIdentity(): Promise<SessionIdentity | null> {
   const session = await getServerSession(authOptions);
-  return (session?.user as { role?: string } | undefined)?.role ?? null;
+  const id = (session?.user as { id?: string } | undefined)?.id;
+  if (!id) return null;
+  return prisma.user.findUnique({
+    where: { id },
+    select: { id: true, email: true, role: true },
+  });
+}
+
+export async function getSessionRole(): Promise<string | null> {
+  return (await getSessionIdentity())?.role ?? null;
 }
 
 export async function requireAdmin(): Promise<void> {

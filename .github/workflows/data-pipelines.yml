@@ -1,0 +1,260 @@
+name: Dashboard Data Pipeline
+
+on:
+  schedule:
+    # GitHub cron is UTC. These paired slots resolve to exactly 07:30 Eastern
+    # in daylight and standard time; the first step permits only the right one.
+    - cron: "30 11 * * 1-5"
+    - cron: "30 12 * * 1-5"
+    - cron: "0 12 * * 0"
+    # Monthly all-source audit at 08:00 Eastern, DST-safe.
+    - cron: "0 12 1 * *"
+    - cron: "0 13 1 * *"
+  workflow_dispatch:
+    inputs:
+      pipeline:
+        description: Dashboard operation to run
+        required: true
+        default: verify
+        type: choice
+        options:
+          - dashboard
+          - verify
+          - source-audit
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dashboard-pipeline-${{ inputs.pipeline || ((github.event.schedule == '30 11 * * 1-5' || github.event.schedule == '30 12 * * 1-5') && 'dashboard') || (github.event.schedule == '0 12 * * 0' && 'verify') || 'source-audit' }}
+  cancel-in-progress: false
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+  EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+  FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+  FORBIDDEN_DATABASE_HOST_2: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+
+jobs:
+  dashboard:
+    name: Weekday dashboard synchronization
+    if: github.event.schedule == '30 11 * * 1-5' || github.event.schedule == '30 12 * * 1-5' || inputs.pipeline == 'dashboard'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Select the DST-safe 07:30 Eastern run
+        id: cadence
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+        shell: bash
+        run: |
+          should_run=false
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            should_run=true
+          else
+            eastern_offset="$(TZ=America/New_York date +%z)"
+            if [ "$EVENT_SCHEDULE" = "30 11 * * 1-5" ] && [ "$eastern_offset" = "-0400" ]; then
+              should_run=true
+            elif [ "$EVENT_SCHEDULE" = "30 12 * * 1-5" ] && [ "$eastern_offset" = "-0500" ]; then
+              should_run=true
+            fi
+          fi
+          echo "run=$should_run" >> "$GITHUB_OUTPUT"
+          echo "refresh_window=$(TZ=America/New_York date +%F)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        if: steps.cadence.outputs.run == 'true'
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        if: steps.cadence.outputs.run == 'true'
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Verify production database target
+        if: steps.cadence.outputs.run == 'true'
+        run: node --experimental-strip-types scripts/assert-database-target.ts
+
+      - name: Install locked dependencies
+        if: steps.cadence.outputs.run == 'true'
+        run: npm ci
+
+      - name: Require approved writes and every provider credential
+        if: steps.cadence.outputs.run == 'true'
+        env:
+          DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        shell: bash
+        run: |
+          if [ "$DASHBOARD_WRITES_ENABLED" != "true" ]; then
+            echo "::error::DASHBOARD_WRITES_ENABLED must remain false until a reviewed all-source dry-run passes."
+            exit 1
+          fi
+          missing=0
+          for name in FRED_API_KEY EIA_API_KEY SAM_API_KEY SEC_USER_AGENT; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for dashboard synchronization."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+
+      - name: Synchronize official sources with bounded retries
+        id: sync
+        if: steps.cadence.outputs.run == 'true'
+        env:
+          DASHBOARD_REFRESH_WINDOW: ${{ steps.cadence.outputs.refresh_window }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          SEC_WATCHLIST_CIKS: ${{ vars.SEC_WATCHLIST_CIKS }}
+        run: node scripts/run-with-retry.mjs --attempts=3 -- npm run dashboard:sync
+
+      - name: Enforce freshness, rolling success, and missed-window thresholds
+        if: always() && steps.cadence.outputs.run == 'true' && steps.sync.outcome != 'skipped'
+        run: >-
+          npx tsx scripts/verify-dashboard-health.ts
+          --window-days=30
+          --max-age-hours=36
+          --min-success-rate=0.95
+          --output=tmp/dashboard-reliability.json
+
+      - name: Upload synchronization evidence
+        if: always() && steps.cadence.outputs.run == 'true'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: dashboard-sync-${{ github.run_id }}
+          path: |
+            tmp/dashboard-sync-summary.json
+            tmp/dashboard-reliability.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  verify:
+    name: Weekly dashboard freshness verification
+    if: github.event.schedule == '0 12 * * 0' || inputs.pipeline == 'verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+      - name: Verify production database target
+        run: node --experimental-strip-types scripts/assert-database-target.ts
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Verify every public metric and approved signal
+        run: npm run dashboard:verify -- --require-complete
+      - name: Verify recurring-run reliability
+        run: >-
+          npx tsx scripts/verify-dashboard-health.ts
+          --window-days=30
+          --max-age-hours=80
+          --min-success-rate=0.95
+          --output=tmp/weekly-dashboard-reliability.json
+      - name: Upload weekly verification evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: dashboard-weekly-verification-${{ github.run_id }}
+          path: |
+            tmp/dashboard-verify-summary.json
+            tmp/weekly-dashboard-reliability.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  source-audit:
+    name: Monthly all-source live dry-run
+    if: github.event.schedule == '0 12 1 * *' || github.event.schedule == '0 13 1 * *' || inputs.pipeline == 'source-audit'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Select the DST-safe 08:00 Eastern run
+        id: cadence
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+        shell: bash
+        run: |
+          should_run=false
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            should_run=true
+          else
+            eastern_offset="$(TZ=America/New_York date +%z)"
+            if [ "$EVENT_SCHEDULE" = "0 12 1 * *" ] && [ "$eastern_offset" = "-0400" ]; then
+              should_run=true
+            elif [ "$EVENT_SCHEDULE" = "0 13 1 * *" ] && [ "$eastern_offset" = "-0500" ]; then
+              should_run=true
+            fi
+          fi
+          echo "run=$should_run" >> "$GITHUB_OUTPUT"
+          echo "refresh_window=$(TZ=America/New_York date +%F)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        if: steps.cadence.outputs.run == 'true'
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        if: steps.cadence.outputs.run == 'true'
+        with:
+          node-version: "24"
+          cache: npm
+      - name: Verify read-only database target
+        if: steps.cadence.outputs.run == 'true'
+        run: node --experimental-strip-types scripts/assert-database-target.ts
+      - name: Install locked dependencies
+        if: steps.cadence.outputs.run == 'true'
+        run: npm ci
+      - name: Require every provider credential
+        if: steps.cadence.outputs.run == 'true'
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        shell: bash
+        run: |
+          missing=0
+          for name in FRED_API_KEY EIA_API_KEY SAM_API_KEY SEC_USER_AGENT; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for the all-source audit."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+      - name: Exercise every source without writes
+        if: steps.cadence.outputs.run == 'true'
+        env:
+          DASHBOARD_REFRESH_WINDOW: ${{ steps.cadence.outputs.refresh_window }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          SEC_WATCHLIST_CIKS: ${{ vars.SEC_WATCHLIST_CIKS }}
+        run: node scripts/run-with-retry.mjs --attempts=3 -- npm run dashboard:sync:dry-run
+      - name: Verify checked-in source metadata
+        if: steps.cadence.outputs.run == 'true'
+        run: npx vitest run src/modules/dashboard/source-registry.test.ts
+      # Do not run --require-complete here: this audit intentionally precedes
+      # first-write enablement during rollout.
+      - name: Upload source-audit evidence
+        if: always() && steps.cadence.outputs.run == 'true'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: dashboard-source-audit-${{ github.run_id }}
+          path: tmp/dashboard-sync-summary.json
+          if-no-files-found: error
+          retention-days: 90
