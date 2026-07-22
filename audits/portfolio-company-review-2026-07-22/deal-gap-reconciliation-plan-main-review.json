@@ -1,0 +1,1094 @@
+{
+  "schemaVersion": 1,
+  "scope": "EVIDENCE_BACKED_DEAL_CARD_GAP_RECONCILIATION",
+  "timestampRepresentation": {
+    "databaseType": "timestamp without time zone",
+    "serialization": "raw PostgreSQL wall-clock value via to_char; no JavaScript Date conversion and no timezone suffix",
+    "millisecondsFormat": "YYYY-MM-DD\"T\"HH24:MI:SS.MS",
+    "microsecondsFormat": "YYYY-MM-DD\"T\"HH24:MI:SS.US"
+  },
+  "reviewedBasis": {
+    "actionCount": 30,
+    "actionSetSha256": "8b8a4db56261b28d1458d39508800e7f5f29309feb3e57835fde9e8f98a167de",
+    "manifestSha256": "2d71cd2574327244b929f1d2cbc71d4ab56dea9fed0fd8ee2e3aca1738c32b85"
+  },
+  "snapshotSha256": "35282ffb40d1623244f1f89594995d6cfbc8e04b9d14384d20a3bc41c99c34f2",
+  "tableCounts": {
+    "deals": 352,
+    "companies": 1191,
+    "ownershipPeriods": 1413,
+    "milestones": 4229,
+    "citations": 10232,
+    "sources": 4853,
+    "organizations": 325
+  },
+  "counts": {
+    "dealUpdates": 6,
+    "milestoneUpdates": 5,
+    "citationUpdates": 11,
+    "ownershipUpdates": 1,
+    "ownershipDeletes": 5,
+    "ownershipInserts": 2,
+    "protectedDeals": 3,
+    "citationGuards": 2,
+    "ownershipGuards": 10,
+    "companyGuards": 10,
+    "organizationGuards": 1,
+    "quarantinedFindings": 7
+  },
+  "actions": [
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmnva97to08nkm8lz2pcs66oc",
+      "evidence": {
+        "publisher": "Ara Partners",
+        "url": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+        "evidenceDate": "2026-03-11",
+        "finding": "Ara announced on March 11, 2026 that it had secured rights to acquire the Gate City portfolios from HF Capital, with closing still subject to conditions."
+      },
+      "current": {
+        "id": "cmnva97to08nkm8lz2pcs66oc",
+        "sourceId": "cmnva97rx08njm8lzuuq15dkt",
+        "dealId": null,
+        "companyId": "cmnva0u3800q6m8lzunge3dpu",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "Arapartners — Gate City Power",
+        "sourceUrl": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+        "sourceType": "PRESS_RELEASE"
+      },
+      "proposed": {
+        "id": "cmnva97to08nkm8lz2pcs66oc",
+        "sourceId": "cmnva97rx08njm8lzuuq15dkt",
+        "dealId": "cmnva4cny05hjm8lzwud37i6n",
+        "companyId": "cmnva0u3800q6m8lzunge3dpu",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ara agreement to acquire Gate City Power from HF Capital; announced Mar 11, 2026, closing pending.",
+        "sourceLabel": "Arapartners — Gate City Power",
+        "sourceUrl": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+        "sourceType": "PRESS_RELEASE"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmnva97ya08nom8lzrjh58gw4",
+      "evidence": {
+        "publisher": "Ara Partners",
+        "url": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+        "evidenceDate": "2026-03-11",
+        "finding": "Ara announced on March 11, 2026 that it had secured rights to acquire the Gate City portfolios from HF Capital, with closing still subject to conditions."
+      },
+      "current": {
+        "id": "cmnva97ya08nom8lzrjh58gw4",
+        "sourceId": "cmnva97rx08njm8lzuuq15dkt",
+        "dealId": null,
+        "companyId": "cmnva0u3v00q7m8lzeju2j5q0",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "Arapartners — Gate City Power",
+        "sourceUrl": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+        "sourceType": "PRESS_RELEASE"
+      },
+      "proposed": {
+        "id": "cmnva97ya08nom8lzrjh58gw4",
+        "sourceId": "cmnva97rx08njm8lzuuq15dkt",
+        "dealId": "cmnva4cny05hjm8lzwud37i6n",
+        "companyId": "cmnva0u3v00q7m8lzeju2j5q0",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ara agreement to acquire Gate City Renewable Fuels from HF Capital; announced Mar 11, 2026, closing pending.",
+        "sourceLabel": "Arapartners — Gate City Power",
+        "sourceUrl": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+        "sourceType": "PRESS_RELEASE"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwmar508ejt01fm5cnhkr2",
+      "evidence": {
+        "publisher": "Blackstone",
+        "url": "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/",
+        "evidenceDate": "2026-02-05",
+        "finding": "Blackstone described a signed majority-sale agreement to TPG Rise Climate with closing expected in the second quarter; no closing announcement was found as of July 22, 2026."
+      },
+      "current": {
+        "id": "cmoxwmar508ejt01fm5cnhkr2",
+        "sourceId": "cmnvaarlo09o6m8lzg9du0853",
+        "dealId": null,
+        "companyId": "cmnva0xcx00vim8lzauj488h7",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Blackstone initial investment / ownership",
+        "sourceLabel": "Blackstone — Sabre Industries",
+        "sourceUrl": "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/",
+        "sourceType": "ARTICLE"
+      },
+      "proposed": {
+        "id": "cmoxwmar508ejt01fm5cnhkr2",
+        "sourceId": "cmnvaarlo09o6m8lzg9du0853",
+        "dealId": "cmnva46x805fhm8lz46mi1syf",
+        "companyId": "cmnva0xcx00vim8lzauj488h7",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "TPG signed majority acquisition; Blackstone retained current ownership pending close.",
+        "sourceLabel": "Blackstone — Sabre Industries",
+        "sourceUrl": "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwmpgn0944t01fieojuot5",
+      "evidence": {
+        "publisher": "Vertical Bridge",
+        "url": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+        "evidenceDate": "2026-04-22",
+        "finding": "Vertical Bridge announced KKR's $1.5 billion strategic equity investment on April 22, primarily through KKR's core infrastructure strategy, with DigitalBridge and La Caisse also participating."
+      },
+      "current": {
+        "id": "cmoxwmpgn0944t01fieojuot5",
+        "sourceId": "cmoqc90w506g4171frc362g7k",
+        "dealId": "cmoqc7nqw05z2171fcmdj2xty",
+        "companyId": "cmnva0yg100xfm8lzipn8kron",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Vertical Bridge - INF-2026-179 - Vertical Bridge",
+        "sourceLabel": "Vertical Bridge",
+        "sourceUrl": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+        "sourceType": "ARTICLE"
+      },
+      "proposed": {
+        "id": "cmoxwmpgn0944t01fieojuot5",
+        "sourceId": "cmoqc90w506g4171frc362g7k",
+        "dealId": "cmoqc7nqw05z2171fcmdj2xty",
+        "companyId": "cmnva0yg100xfm8lzipn8kron",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "KKR $1.5bn investment, primarily through core infrastructure; DigitalBridge and La Caisse participated.",
+        "sourceLabel": "Vertical Bridge",
+        "sourceUrl": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwn8qs0a2nt01f0qnmvym6",
+      "evidence": {
+        "publisher": "EQT",
+        "url": "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21",
+        "evidenceDate": "2026-04-21",
+        "finding": "EQT described a dedicated AI Infrastructure strategy fully seeded by EdgeConneX; it did not state that EdgeConneX had completed a transfer from EQT Infrastructure into a new vehicle."
+      },
+      "current": {
+        "id": "cmoxwn8qs0a2nt01f0qnmvym6",
+        "sourceId": "cmoqc90zg06g6171fc21qllv8",
+        "dealId": "cmoqc7ntm05z3171fxlx5azok",
+        "companyId": "cmnva108n010nm8lztvho67ta",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "EQT - INF-2026-180 - EdgeConneX",
+        "sourceLabel": "EQT",
+        "sourceUrl": "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21",
+        "sourceType": "ARTICLE"
+      },
+      "proposed": {
+        "id": "cmoxwn8qs0a2nt01f0qnmvym6",
+        "sourceId": "cmoqc90zg06g6171fc21qllv8",
+        "dealId": "cmoqc7ntm05z3171fxlx5azok",
+        "companyId": "cmnva108n010nm8lztvho67ta",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "EQT - INF-2026-180 - EdgeConneX",
+        "sourceLabel": "EQT",
+        "sourceUrl": "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwo4qm0bowt01f6q7dun3t",
+      "evidence": {
+        "publisher": "Pembina Pipeline / SEC",
+        "url": "https://www.sec.gov/Archives/edgar/data/1546066/000127956922001364/ex991.pdf",
+        "evidenceDate": "2022-08-15",
+        "finding": "Pembina's closing release records the 2022 PGI joint-venture close, with Pembina retaining 60% and KKR holding 40%."
+      },
+      "current": {
+        "id": "cmoxwo4qm0bowt01f6q7dun3t",
+        "sourceId": "cmnvaefzi0c1dm8lzpfyeb2s2",
+        "dealId": null,
+        "companyId": "cmnva14ug017ym8lzuudd6lxq",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "KKR closing confirmation",
+        "sourceLabel": "SEC — Pembina Gas Infrastructure Inc.",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1546066/000127956922001364/ex991.pdf",
+        "sourceType": "SEC_FILING"
+      },
+      "proposed": {
+        "id": "cmoxwo4qm0bowt01f6q7dun3t",
+        "sourceId": "cmnvaefzi0c1dm8lzpfyeb2s2",
+        "dealId": null,
+        "companyId": "cmnva14ug017ym8lzuudd6lxq",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Pembina and KKR closed the PGI joint venture in 2022; KKR held 40% and Pembina held 60%.",
+        "sourceLabel": "SEC — Pembina Gas Infrastructure Inc.",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1546066/000127956922001364/ex991.pdf",
+        "sourceType": "SEC_FILING"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwo4r60boxt01fh7qagdch",
+      "evidence": {
+        "publisher": "Apollo",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810",
+        "evidenceDate": "2026-04-23",
+        "finding": "Apollo announced on April 23, 2026 an agreement to acquire KKR's 40% PGI interest; Pembina retained 60% and closing was expected by the end of the second quarter."
+      },
+      "current": {
+        "id": "cmoxwo4r60boxt01fh7qagdch",
+        "sourceId": "cmoqc919906gc171fx7c364au",
+        "dealId": "cmoqc7o2g05z6171fujvq3wdw",
+        "companyId": "cmnva14ug017ym8lzuudd6lxq",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Apollo - INF-2026-183 - Pembina Gas Infrastructure (PGI)",
+        "sourceLabel": "Apollo",
+        "sourceUrl": "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810",
+        "sourceType": "ARTICLE"
+      },
+      "proposed": {
+        "id": "cmoxwo4r60boxt01fh7qagdch",
+        "sourceId": "cmoqc919906gc171fx7c364au",
+        "dealId": "cmoqc7o2g05z6171fujvq3wdw",
+        "companyId": "cmnva14ug017ym8lzuudd6lxq",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Apollo agreement to acquire KKR's 40% PGI interest; announced Apr 23, 2026, closing pending.",
+        "sourceLabel": "Apollo",
+        "sourceUrl": "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwofj20c8at01fahgva73m",
+      "evidence": {
+        "publisher": "Morgan Stanley Infrastructure Partners",
+        "url": "https://www.morganstanley.com/press-releases/msip-agrees-to-sell-bayonne-energy-center",
+        "evidenceDate": "2026-03-17",
+        "finding": "MSIP announced its agreement to sell Bayonne Energy Center to Jupiter Energy Investor on March 17, 2026, with closing expected in the third quarter of 2026."
+      },
+      "current": {
+        "id": "cmoxwofj20c8at01fahgva73m",
+        "sourceId": "cmnva4u0p05wim8lz3wxy2t3c",
+        "dealId": "cmnva4dyu05i0m8lziv0bctfu",
+        "companyId": "cmnva0rwv00mdm8lz50afv9c7",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Morganstanley — Bayonne Energy Center",
+        "sourceLabel": "Morgan Stanley",
+        "sourceUrl": "https://www.morganstanley.com/press-releases/msip-agrees-to-sell-bayonne-energy-center",
+        "sourceType": "ARTICLE"
+      },
+      "proposed": {
+        "id": "cmoxwofj20c8at01fahgva73m",
+        "sourceId": "cmnva4u0p05wim8lz3wxy2t3c",
+        "dealId": "cmnva4dyu05i0m8lziv0bctfu",
+        "companyId": "cmnva0rwv00mdm8lz50afv9c7",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "MSIP agreement to sell Bayonne to Jupiter; expected Q3 2026 close.",
+        "sourceLabel": "Morgan Stanley",
+        "sourceUrl": "https://www.morganstanley.com/press-releases/msip-agrees-to-sell-bayonne-energy-center",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwoosf0cp7t01fb4i47t0e",
+      "evidence": {
+        "publisher": "Rowan Digital Infrastructure",
+        "url": "https://www.prnewswire.com/news-releases/rowan-digital-infrastructure-announces-strategic-recapitalization-302738729.html",
+        "evidenceDate": "2026-04-09",
+        "finding": "Rowan stated that Blackstone-affiliated funds acquired a significant minority interest and that Quinbrook remained the controlling sponsor."
+      },
+      "current": {
+        "id": "cmoxwoosf0cp7t01fb4i47t0e",
+        "sourceId": "cmoqc8zb106f4171fyq1c4x65",
+        "dealId": "cmoqc7mft05yk171fbj6rf6in",
+        "companyId": "cmnva0p6h00ibm8lzimyld7ll",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "PR Newswire - INF-2026-161 - Rowan Digital Infrastructure",
+        "sourceLabel": "PR Newswire",
+        "sourceUrl": "https://www.prnewswire.com/news-releases/rowan-digital-infrastructure-announces-strategic-recapitalization-302738729.html",
+        "sourceType": "PRESS_RELEASE"
+      },
+      "proposed": {
+        "id": "cmoxwoosf0cp7t01fb4i47t0e",
+        "sourceId": "cmoqc8zb106f4171fyq1c4x65",
+        "dealId": "cmoqc7mft05yk171fbj6rf6in",
+        "companyId": "cmnva0p6h00ibm8lzimyld7ll",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Blackstone-affiliated funds acquired a significant minority; Quinbrook remained controlling sponsor.",
+        "sourceLabel": "PR Newswire",
+        "sourceUrl": "https://www.prnewswire.com/news-releases/rowan-digital-infrastructure-announces-strategic-recapitalization-302738729.html",
+        "sourceType": "PRESS_RELEASE"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwosz60cwot01fq2fh9vj7",
+      "evidence": {
+        "publisher": "Stonepeak",
+        "url": "https://stonepeak.com/news/gfiber-and-stonepeaks-astound-to-combine-creating-a-leading-independent-broadband-provider",
+        "evidenceDate": "2026-03-11",
+        "finding": "Stonepeak and Alphabet announced their agreement to combine Astound Broadband and GFiber on March 11, 2026, with closing expected in the fourth quarter of 2026."
+      },
+      "current": {
+        "id": "cmoxwosz60cwot01fq2fh9vj7",
+        "sourceId": "cmnva4teb05w4m8lz8bh5jvib",
+        "dealId": "cmnva4dfl05htm8lzoxfrhqr9",
+        "companyId": "cmnva0msm00eem8lzzj5e2uxi",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Stonepeak — Astound Broadband",
+        "sourceLabel": "Stonepeak",
+        "sourceUrl": "https://stonepeak.com/news/gfiber-and-stonepeaks-astound-to-combine-creating-a-leading-independent-broadband-provider",
+        "sourceType": "ARTICLE"
+      },
+      "proposed": {
+        "id": "cmoxwosz60cwot01fq2fh9vj7",
+        "sourceId": "cmnva4teb05w4m8lz8bh5jvib",
+        "dealId": "cmnva4dfl05htm8lzoxfrhqr9",
+        "companyId": "cmnva0msm00eem8lzzj5e2uxi",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Stonepeak/Alphabet agreement to combine Astound and GFiber; expected Q4 2026 close.",
+        "sourceLabel": "Stonepeak",
+        "sourceUrl": "https://stonepeak.com/news/gfiber-and-stonepeaks-astound-to-combine-creating-a-leading-independent-broadband-provider",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwp44e0dfyt01ffeogejts",
+      "evidence": {
+        "publisher": "T-Mobile",
+        "url": "https://www.t-mobile.com/news/business/t-mobile-add-two-strategic-fiber-joint-ventures-gonetspeed-greenlight-i3",
+        "evidenceDate": "2026-04-28",
+        "finding": "T-Mobile announced the Wren House joint-venture agreement on April 28, 2026, with closing expected in the second half of 2026 and an expected approximately $700 million T-Mobile investment."
+      },
+      "current": {
+        "id": "cmoxwp44e0dfyt01ffeogejts",
+        "sourceId": "cmoqc92t406hc171fryyeu3gq",
+        "dealId": "cmoqc7pe105zo171fkqrp0yu9",
+        "companyId": "cmnva0ra500lym8lzco0glku7",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "T-Mobile - INF-2026-201 - i3 Broadband",
+        "sourceLabel": "T-Mobile",
+        "sourceUrl": "https://www.t-mobile.com/news/business/t-mobile-add-two-strategic-fiber-joint-ventures-gonetspeed-greenlight-i3",
+        "sourceType": "ARTICLE"
+      },
+      "proposed": {
+        "id": "cmoxwp44e0dfyt01ffeogejts",
+        "sourceId": "cmoqc92t406hc171fryyeu3gq",
+        "dealId": "cmoqc7pe105zo171fkqrp0yu9",
+        "companyId": "cmnva0ra500lym8lzco0glku7",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "T-Mobile/Wren House 50/50 JV agreement; pending 2H 2026 close and expected $700 million T-Mobile investment.",
+        "sourceLabel": "T-Mobile",
+        "sourceUrl": "https://www.t-mobile.com/news/business/t-mobile-add-two-strategic-fiber-joint-ventures-gonetspeed-greenlight-i3",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmnva4cny05hjm8lzwud37i6n",
+      "evidence": {
+        "publisher": "Ara Partners",
+        "url": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+        "evidenceDate": "2026-03-11",
+        "finding": "Ara announced on March 11, 2026 that it had secured rights to acquire the Gate City portfolios from HF Capital, with closing still subject to conditions."
+      },
+      "current": {
+        "id": "cmnva4cny05hjm8lzwud37i6n",
+        "legacyId": "INF-2026-113",
+        "title": "Ara Partners acquires Gate City Power, Gate City Renewable Fuels, and JET from HF Capital",
+        "target": "Gate City Power / Gate City Renewable Fuels / JET",
+        "date": "2026-03-09T08:00:00.000",
+        "description": "Ara Energy, a portfolio platform of Ara Partners, agreed to acquire Gate City Power, Gate City Renewable Fuels, and an interest in the JET retail network from HF Capital for approximately $875mm. Gate City Power owns thermal generation assets totaling approximately 2.2 GW across NYISO and ISO-NE, while Gate City Renewable Fuels comprises U.S. ethanol production assets; the JET retail network will be acquired in partnership with Ara Infrastructure.",
+        "keyHighlights": [
+          "Ara Energy acquires Gate City Power, Renewable Fuels, and JET from HF Capital for ~$875mm",
+          "Gate City Power owns ~2.2 GW thermal generation across NYISO and ISO-NE",
+          "JET retail network acquired in partnership with Ara Infrastructure"
+        ],
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED",
+        "updatedAt": "2026-04-12T04:44:14.494000"
+      },
+      "proposed": {
+        "id": "cmnva4cny05hjm8lzwud37i6n",
+        "legacyId": "INF-2026-113",
+        "title": "Ara Partners acquires Gate City Power, Gate City Renewable Fuels, and JET from HF Capital",
+        "target": "Gate City Power / Gate City Renewable Fuels / JET",
+        "date": "2026-03-11T08:00:00.000",
+        "description": "Ara Energy, a portfolio platform of Ara Partners, agreed to acquire Gate City Power, Gate City Renewable Fuels, and an interest in the JET retail network from HF Capital for approximately $875mm. Gate City Power owns thermal generation assets totaling approximately 2.2 GW across NYISO and ISO-NE, while Gate City Renewable Fuels comprises U.S. ethanol production assets; the JET retail network will be acquired in partnership with Ara Infrastructure.",
+        "keyHighlights": [
+          "Ara Energy acquires Gate City Power, Renewable Fuels, and JET from HF Capital for ~$875mm",
+          "Gate City Power owns ~2.2 GW thermal generation across NYISO and ISO-NE",
+          "JET retail network acquired in partnership with Ara Infrastructure"
+        ],
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmnva4dfl05htm8lzoxfrhqr9",
+      "evidence": {
+        "publisher": "Stonepeak",
+        "url": "https://stonepeak.com/news/gfiber-and-stonepeaks-astound-to-combine-creating-a-leading-independent-broadband-provider",
+        "evidenceDate": "2026-03-11",
+        "finding": "Stonepeak and Alphabet announced their agreement to combine Astound Broadband and GFiber on March 11, 2026, with closing expected in the fourth quarter of 2026."
+      },
+      "current": {
+        "id": "cmnva4dfl05htm8lzoxfrhqr9",
+        "legacyId": "INF-2026-123",
+        "title": "Stonepeak / Alphabet combine GFiber with Astound Broadband",
+        "target": "GFiber / Astound Broadband",
+        "date": "2026-03-12T08:00:00.000",
+        "description": "Stonepeak and Alphabet announced the combination of GFiber with Stonepeak's Astound Broadband, creating a leading independent broadband provider.",
+        "keyHighlights": [
+          "Stonepeak and Alphabet combine GFiber with Astound Broadband",
+          "Creates a leading independent broadband provider in the United States"
+        ],
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED",
+        "updatedAt": "2026-04-12T04:44:15.489000"
+      },
+      "proposed": {
+        "id": "cmnva4dfl05htm8lzoxfrhqr9",
+        "legacyId": "INF-2026-123",
+        "title": "Stonepeak / Alphabet combine GFiber with Astound Broadband",
+        "target": "GFiber / Astound Broadband",
+        "date": "2026-03-11T08:00:00.000",
+        "description": "Stonepeak and Alphabet announced the combination of GFiber with Stonepeak's Astound Broadband, creating a leading independent broadband provider.",
+        "keyHighlights": [
+          "Stonepeak and Alphabet combine GFiber with Astound Broadband",
+          "Creates a leading independent broadband provider in the United States"
+        ],
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmoqc7nqw05z2171fcmdj2xty",
+      "evidence": {
+        "publisher": "Vertical Bridge",
+        "url": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+        "evidenceDate": "2026-04-22",
+        "finding": "Vertical Bridge announced KKR's $1.5 billion strategic equity investment on April 22, primarily through KKR's core infrastructure strategy, with DigitalBridge and La Caisse also participating."
+      },
+      "current": {
+        "id": "cmoqc7nqw05z2171fcmdj2xty",
+        "legacyId": "INF-2026-179",
+        "title": "KKR invests $1.5bn in Vertical Bridge alongside DigitalBridge and La Caisse",
+        "target": "Vertical Bridge",
+        "date": "2026-04-23T09:00:00.000",
+        "description": "KKR is making a $1.5bn strategic equity investment in Vertical Bridge, joining existing sponsors DigitalBridge and La Caisse (formerly CDPQ), who both rolled into the new structure to establish a fully funded, long-term capital base. Vertical Bridge is the largest private owner and operator of communications infrastructure in the United States, with a portfolio of more than 17,000 towers; KKR has now deployed over $40bn of equity into digital infrastructure globally.",
+        "keyHighlights": [
+          "KKR is making a $1.5bn strategic equity investment in Vertical Bridge, joining existing sponsors DigitalBridge and La Caisse (formerly CDPQ), who both rolled into the new structure to establish a fully funded, long-term capital base. Vertical Bridge is the largest private owner and operator of communications infrastructure in the United States, with a portfolio of more than 17,000 towers; KKR has now deployed over $40bn of equity into digital infrastructure globally."
+        ],
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED",
+        "updatedAt": "2026-05-03T22:23:39.512000"
+      },
+      "proposed": {
+        "id": "cmoqc7nqw05z2171fcmdj2xty",
+        "legacyId": "INF-2026-179",
+        "title": "KKR invests $1.5bn in Vertical Bridge alongside DigitalBridge and La Caisse",
+        "target": "Vertical Bridge",
+        "date": "2026-04-22T09:00:00.000",
+        "description": "KKR is making a $1.5bn strategic equity investment in Vertical Bridge, joining existing sponsors DigitalBridge and La Caisse (formerly CDPQ), who both rolled into the new structure to establish a fully funded, long-term capital base. Vertical Bridge is the largest private owner and operator of communications infrastructure in the United States, with a portfolio of more than 17,000 towers; KKR has now deployed over $40bn of equity into digital infrastructure globally.",
+        "keyHighlights": [
+          "KKR is making a $1.5bn strategic equity investment in Vertical Bridge, joining existing sponsors DigitalBridge and La Caisse (formerly CDPQ), who both rolled into the new structure to establish a fully funded, long-term capital base. Vertical Bridge is the largest private owner and operator of communications infrastructure in the United States, with a portfolio of more than 17,000 towers; KKR has now deployed over $40bn of equity into digital infrastructure globally."
+        ],
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmoqc7ntm05z3171fxlx5azok",
+      "evidence": {
+        "publisher": "EQT",
+        "url": "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21",
+        "evidenceDate": "2026-04-21",
+        "finding": "EQT described a dedicated AI Infrastructure strategy fully seeded by EdgeConneX; it did not state that EdgeConneX had completed a transfer from EQT Infrastructure into a new vehicle."
+      },
+      "current": {
+        "id": "cmoqc7ntm05z3171fxlx5azok",
+        "legacyId": "INF-2026-180",
+        "title": "EQT seeds AI Infrastructure strategy with EdgeConneX",
+        "target": "EdgeConneX",
+        "date": "2026-04-21T09:00:00.000",
+        "description": "EQT launched a dedicated AI Infrastructure strategy fully seeded by portfolio company EdgeConneX, transferring the data center platform from EQT Infrastructure into the new vehicle to support its growth trajectory. Since EQT’s 2020 acquisition, EdgeConneX has scaled capacity nearly 20x and plans to develop more than 10 GW of additional data center capacity, leveraging EQT’s broader infrastructure platform of 100+ GW energy pipeline, 90+ data centers and 29mm miles of fiber.",
+        "keyHighlights": [
+          "EQT launched a dedicated AI Infrastructure strategy fully seeded by portfolio company EdgeConneX, transferring the data center platform from EQT Infrastructure into the new vehicle to support its growth trajectory. Since EQT’s 2020 acquisition, EdgeConneX has scaled capacity nearly 20x and plans to develop more than 10 GW of additional data center capacity, leveraging EQT’s broader infrastructure platform of 100+ GW energy pipeline, 90+ data centers and 29mm miles of fiber."
+        ],
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED",
+        "updatedAt": "2026-05-03T22:23:39.610000"
+      },
+      "proposed": {
+        "id": "cmoqc7ntm05z3171fxlx5azok",
+        "legacyId": "INF-2026-180",
+        "title": "EQT seeds AI Infrastructure strategy with EdgeConneX",
+        "target": "EdgeConneX",
+        "date": "2026-04-21T09:00:00.000",
+        "description": "EQT launched a dedicated AI Infrastructure strategy fully seeded by portfolio company EdgeConneX to support its growth trajectory. Since EQT’s 2020 acquisition, EdgeConneX has scaled capacity nearly 20x and plans to develop more than 10 GW of additional data center capacity, leveraging EQT’s broader infrastructure platform of 100+ GW energy pipeline, 90+ data centers and 29mm miles of fiber.",
+        "keyHighlights": [
+          "EQT launched a dedicated AI Infrastructure strategy fully seeded by portfolio company EdgeConneX to support its growth trajectory. Since EQT’s 2020 acquisition, EdgeConneX has scaled capacity nearly 20x and plans to develop more than 10 GW of additional data center capacity, leveraging EQT’s broader infrastructure platform of 100+ GW energy pipeline, 90+ data centers and 29mm miles of fiber."
+        ],
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmoqc7o2g05z6171fujvq3wdw",
+      "evidence": {
+        "publisher": "Apollo",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810",
+        "evidenceDate": "2026-04-23",
+        "finding": "Apollo announced on April 23, 2026 an agreement to acquire KKR's 40% PGI interest; Pembina retained 60% and closing was expected by the end of the second quarter."
+      },
+      "current": {
+        "id": "cmoqc7o2g05z6171fujvq3wdw",
+        "legacyId": "INF-2026-183",
+        "title": "Apollo acquires KKR stake in Pembina Gas Infrastructure",
+        "target": "Pembina Gas Infrastructure (PGI)",
+        "date": "2026-04-20T08:00:00.000",
+        "description": "Apollo-managed funds agreed to acquire KKR’s 40% interest in Pembina Gas Infrastructure, with Pembina Pipeline retaining its 60% stake and existing governance unchanged; the deal is expected to close by the end of Q2 2026. PGI — formed as a JV between Pembina and KKR in 2022 — operates roughly 5 Bcf/d of processing capacity across 23 plants, ~3,900 km of gathering pipelines and ~330,000 bpd of NGL extraction serving Montney and Duvernay producers in Alberta and British Columbia.",
+        "keyHighlights": [
+          "Apollo-managed funds agreed to acquire KKR’s 40% interest in Pembina Gas Infrastructure, with Pembina Pipeline retaining its 60% stake and existing governance unchanged; the deal is expected to close by the end of Q2 2026. PGI — formed as a JV between Pembina and KKR in 2022 — operates roughly 5 Bcf/d of processing capacity across 23 plants, ~3,900 km of gathering pipelines and ~330,000 bpd of NGL extraction serving Montney and Duvernay producers in Alberta and British Columbia."
+        ],
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED",
+        "updatedAt": "2026-05-03T22:23:39.928000"
+      },
+      "proposed": {
+        "id": "cmoqc7o2g05z6171fujvq3wdw",
+        "legacyId": "INF-2026-183",
+        "title": "Apollo acquires KKR stake in Pembina Gas Infrastructure",
+        "target": "Pembina Gas Infrastructure (PGI)",
+        "date": "2026-04-23T08:00:00.000",
+        "description": "Apollo-managed funds agreed to acquire KKR’s 40% interest in Pembina Gas Infrastructure, with Pembina Pipeline retaining its 60% stake and existing governance unchanged; the deal is expected to close by the end of Q2 2026. PGI — formed as a JV between Pembina and KKR in 2022 — operates roughly 5 Bcf/d of processing capacity across 23 plants, ~3,900 km of gathering pipelines and ~330,000 bpd of NGL extraction serving Montney and Duvernay producers in Alberta and British Columbia.",
+        "keyHighlights": [
+          "Apollo-managed funds agreed to acquire KKR’s 40% interest in Pembina Gas Infrastructure, with Pembina Pipeline retaining its 60% stake and existing governance unchanged; the deal is expected to close by the end of Q2 2026. PGI — formed as a JV between Pembina and KKR in 2022 — operates roughly 5 Bcf/d of processing capacity across 23 plants, ~3,900 km of gathering pipelines and ~330,000 bpd of NGL extraction serving Montney and Duvernay producers in Alberta and British Columbia."
+        ],
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmoqc7pe105zo171fkqrp0yu9",
+      "evidence": {
+        "publisher": "T-Mobile",
+        "url": "https://www.t-mobile.com/news/business/t-mobile-add-two-strategic-fiber-joint-ventures-gonetspeed-greenlight-i3",
+        "evidenceDate": "2026-04-28",
+        "finding": "T-Mobile announced the Wren House joint-venture agreement on April 28, 2026, with closing expected in the second half of 2026 and an expected approximately $700 million T-Mobile investment."
+      },
+      "current": {
+        "id": "cmoqc7pe105zo171fkqrp0yu9",
+        "legacyId": "INF-2026-201",
+        "title": "Wren House and T-Mobile form joint venture to acquire i3 Broadband",
+        "target": "i3 Broadband",
+        "date": "2026-04-30T13:00:00.000",
+        "description": "T-Mobile entered into a definitive agreement to form a 50/50 joint venture with Wren House to acquire i3 Broadband, with T-Mobile expected to invest approximately $700mm for its 50% equity interest. i3 Broadband is a fiber-to-the-premises operator serving customers across Illinois, Missouri, and Rhode Island.",
+        "keyHighlights": [
+          "T-Mobile entered into a definitive agreement to form a 50/50 joint venture with Wren House to acquire i3 Broadband, with T-Mobile expected to invest approximately $700mm for its 50% equity interest. i3 Broadband is a fiber-to-the-premises operator serving customers across Illinois, Missouri, and Rhode Island."
+        ],
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED",
+        "updatedAt": "2026-05-03T22:23:41.641000"
+      },
+      "proposed": {
+        "id": "cmoqc7pe105zo171fkqrp0yu9",
+        "legacyId": "INF-2026-201",
+        "title": "Wren House and T-Mobile form joint venture to acquire i3 Broadband",
+        "target": "i3 Broadband",
+        "date": "2026-04-28T13:00:00.000",
+        "description": "T-Mobile entered into a definitive agreement to form a 50/50 joint venture with Wren House to acquire i3 Broadband, with T-Mobile expected to invest approximately $700mm for its 50% equity interest. i3 Broadband is a fiber-to-the-premises operator serving customers across Illinois, Missouri, and Rhode Island.",
+        "keyHighlights": [
+          "T-Mobile entered into a definitive agreement to form a 50/50 joint venture with Wren House to acquire i3 Broadband, with T-Mobile expected to invest approximately $700mm for its 50% equity interest. i3 Broadband is a fiber-to-the-premises operator serving customers across Illinois, Missouri, and Rhode Island."
+        ],
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED"
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h7uqr016cw41f6iu6erow",
+      "evidence": {
+        "publisher": "Vertical Bridge",
+        "url": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+        "evidenceDate": "2026-04-22",
+        "finding": "Vertical Bridge announced KKR's $1.5 billion strategic equity investment on April 22, primarily through KKR's core infrastructure strategy, with DigitalBridge and La Caisse also participating."
+      },
+      "current": {
+        "id": "cmp1h7uqr016cw41f6iu6erow",
+        "companyId": "cmnva0yg100xfm8lzipn8kron",
+        "companyName": "Vertical Bridge",
+        "date": "Apr 23, 2026",
+        "event": "KKR / DigitalBridge / La Caisse announced an investment in Vertical Bridge.",
+        "category": "FINANCING",
+        "sortDate": "2026-04-23T04:00:00.000"
+      },
+      "proposed": {
+        "id": "cmp1h7uqr016cw41f6iu6erow",
+        "companyId": "cmnva0yg100xfm8lzipn8kron",
+        "companyName": "Vertical Bridge",
+        "date": "Apr 22, 2026",
+        "event": "KKR announced a $1.5 billion strategic equity investment in Vertical Bridge, primarily through its core infrastructure strategy; DigitalBridge and La Caisse also participated.",
+        "category": "FINANCING",
+        "sortDate": "2026-04-22T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h8mcz02bfw41f2ape6cu0",
+      "evidence": {
+        "publisher": "Apollo",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810",
+        "evidenceDate": "2026-04-23",
+        "finding": "Apollo announced on April 23, 2026 an agreement to acquire KKR's 40% PGI interest; Pembina retained 60% and closing was expected by the end of the second quarter."
+      },
+      "current": {
+        "id": "cmp1h8mcz02bfw41f2ape6cu0",
+        "companyId": "cmnva14ug017ym8lzuudd6lxq",
+        "companyName": "Pembina Gas Infrastructure Inc.",
+        "date": "Apr 20, 2026",
+        "event": "KKR agreed to sell Pembina Gas Infrastructure (PGI) to Apollo Global Management.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-04-20T04:00:00.000"
+      },
+      "proposed": {
+        "id": "cmp1h8mcz02bfw41f2ape6cu0",
+        "companyId": "cmnva14ug017ym8lzuudd6lxq",
+        "companyName": "Pembina Gas Infrastructure Inc.",
+        "date": "Apr 23, 2026",
+        "event": "KKR agreed to sell its 40% interest in Pembina Gas Infrastructure to Apollo-managed funds; Pembina retained 60%, with closing expected by the end of the second quarter of 2026.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-04-23T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h8rr402l5w41f8oub353u",
+      "evidence": {
+        "publisher": "Morgan Stanley Infrastructure Partners",
+        "url": "https://www.morganstanley.com/press-releases/msip-agrees-to-sell-bayonne-energy-center",
+        "evidenceDate": "2026-03-17",
+        "finding": "MSIP announced its agreement to sell Bayonne Energy Center to Jupiter Energy Investor on March 17, 2026, with closing expected in the third quarter of 2026."
+      },
+      "current": {
+        "id": "cmp1h8rr402l5w41f8oub353u",
+        "companyId": "cmnva0rwv00mdm8lz50afv9c7",
+        "companyName": "Bayonne Energy Center",
+        "date": "Mar 2026",
+        "event": "Morgan Stanley Infrastructure Partners announced an agreement to sell Bayonne Energy Center.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-03-01T05:00:00.000"
+      },
+      "proposed": {
+        "id": "cmp1h8rr402l5w41f8oub353u",
+        "companyId": "cmnva0rwv00mdm8lz50afv9c7",
+        "companyName": "Bayonne Energy Center",
+        "date": "Mar 17, 2026",
+        "event": "Morgan Stanley Infrastructure Partners agreed to sell Bayonne Energy Center to Jupiter Energy Investor, with closing expected in the third quarter of 2026.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-03-17T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h8yn602wrw41fgm1vn96y",
+      "evidence": {
+        "publisher": "Stonepeak",
+        "url": "https://stonepeak.com/news/gfiber-and-stonepeaks-astound-to-combine-creating-a-leading-independent-broadband-provider",
+        "evidenceDate": "2026-03-11",
+        "finding": "Stonepeak and Alphabet announced their agreement to combine Astound Broadband and GFiber on March 11, 2026, with closing expected in the fourth quarter of 2026."
+      },
+      "current": {
+        "id": "cmp1h8yn602wrw41fgm1vn96y",
+        "companyId": "cmnva0msm00eem8lzzj5e2uxi",
+        "companyName": "Astound Broadband",
+        "date": "Mar 2026",
+        "event": "Stonepeak and Alphabet announced an agreement to combine Astound with GFiber, with Stonepeak to be the majority shareholder of the new venture.",
+        "category": "OTHER",
+        "sortDate": "2026-03-01T05:00:00.000"
+      },
+      "proposed": {
+        "id": "cmp1h8yn602wrw41fgm1vn96y",
+        "companyId": "cmnva0msm00eem8lzzj5e2uxi",
+        "companyName": "Astound Broadband",
+        "date": "Mar 11, 2026",
+        "event": "Stonepeak and Alphabet agreed to combine Astound Broadband with GFiber, with Stonepeak to be the majority shareholder; closing is expected in the fourth quarter of 2026.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-03-11T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h947o036ew41f4splh6lj",
+      "evidence": {
+        "publisher": "T-Mobile",
+        "url": "https://www.t-mobile.com/news/business/t-mobile-add-two-strategic-fiber-joint-ventures-gonetspeed-greenlight-i3",
+        "evidenceDate": "2026-04-28",
+        "finding": "T-Mobile announced the Wren House joint-venture agreement on April 28, 2026, with closing expected in the second half of 2026 and an expected approximately $700 million T-Mobile investment."
+      },
+      "current": {
+        "id": "cmp1h947o036ew41f4splh6lj",
+        "companyId": "cmnva0ra500lym8lzco0glku7",
+        "companyName": "i3 Broadband",
+        "date": "Apr 30, 2026",
+        "event": "T-Mobile agreed to form a 50/50 joint venture with Wren House to acquire i3 Broadband.",
+        "category": "EXPANSION",
+        "sortDate": "2026-04-30T04:00:00.000"
+      },
+      "proposed": {
+        "id": "cmp1h947o036ew41f4splh6lj",
+        "companyId": "cmnva0ra500lym8lzco0glku7",
+        "companyName": "i3 Broadband",
+        "date": "Apr 28, 2026",
+        "event": "T-Mobile agreed to form a 50/50 joint venture with Wren House to acquire i3 Broadband, with closing expected in the second half of 2026.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-04-28T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_DELETE",
+      "id": "cmoel6b3d0010w2lzpiohn5sw",
+      "evidence": {
+        "publisher": "Ara Partners",
+        "url": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+        "evidenceDate": "2026-03-11",
+        "finding": "Ara announced on March 11, 2026 that it had secured rights to acquire the Gate City portfolios from HF Capital, with closing still subject to conditions."
+      },
+      "current": {
+        "id": "cmoel6b3d0010w2lzpiohn5sw",
+        "companyId": "cmnva0u3800q6m8lzunge3dpu",
+        "companyName": "Gate City Power",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zno5000fm8lzlkca6kde",
+        "organizationName": "Ara Partners",
+        "vehicleName": "Ara Energy",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:01:18.889000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_DELETE",
+      "id": "cmoel6b8d0013w2lzjik5vh1d",
+      "evidence": {
+        "publisher": "Ara Partners",
+        "url": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+        "evidenceDate": "2026-03-11",
+        "finding": "Ara announced on March 11, 2026 that it had secured rights to acquire the Gate City portfolios from HF Capital, with closing still subject to conditions."
+      },
+      "current": {
+        "id": "cmoel6b8d0013w2lzjik5vh1d",
+        "companyId": "cmnva0u3v00q7m8lzeju2j5q0",
+        "companyName": "Gate City Renewable Fuels",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zno5000fm8lzlkca6kde",
+        "organizationName": "Ara Partners",
+        "vehicleName": "Ara Energy",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:01:19.069000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_DELETE",
+      "id": "cmoel7ulq003sy1lznwoxc305",
+      "evidence": {
+        "publisher": "Vertical Bridge",
+        "url": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+        "evidenceDate": "2026-04-22",
+        "finding": "Vertical Bridge announced KKR's $1.5 billion strategic equity investment on April 22, primarily through KKR's core infrastructure strategy, with DigitalBridge and La Caisse also participating."
+      },
+      "current": {
+        "id": "cmoel7ulq003sy1lznwoxc305",
+        "companyId": "cmnva0yg100xfm8lzipn8kron",
+        "companyName": "Vertical Bridge",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zsx7002am8lzyo22qh5v",
+        "organizationName": "La Caisse de dépôt (CDPQ)",
+        "vehicleName": "CDPQ Infrastructure (30% Stake)",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:02:30.830000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_DELETE",
+      "id": "cmoxwegwa01a5t01fz76n6sag",
+      "evidence": {
+        "publisher": "Blackstone",
+        "url": "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/",
+        "evidenceDate": "2026-02-05",
+        "finding": "Blackstone described a signed majority-sale agreement to TPG Rise Climate with closing expected in the second quarter; no closing announcement was found as of July 22, 2026."
+      },
+      "current": {
+        "id": "cmoxwegwa01a5t01fz76n6sag",
+        "companyId": "cmnva0xcx00vim8lzauj488h7",
+        "companyName": "Sabre Industries",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zvhd0036m8lzmm21ksk6",
+        "organizationName": "TPG",
+        "vehicleName": "Signed agreement for TPG Rise Climate majority stake",
+        "stake": "Majority",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-05-09T05:23:12.778000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_DELETE",
+      "id": "cmoxwgcet01rxt01f6ah0r98b",
+      "evidence": {
+        "publisher": "Apollo",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810",
+        "evidenceDate": "2026-04-23",
+        "finding": "Apollo announced on April 23, 2026 an agreement to acquire KKR's 40% PGI interest; Pembina retained 60% and closing was expected by the end of the second quarter."
+      },
+      "current": {
+        "id": "cmoxwgcet01rxt01f6ah0r98b",
+        "companyId": "cmnva14ug017ym8lzuudd6lxq",
+        "companyName": "Pembina Gas Infrastructure Inc.",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9znlm000em8lzp6y6a9k0",
+        "organizationName": "Apollo Global Management",
+        "vehicleName": "Announced acquisition of KKR's 40% interest",
+        "stake": "40%",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-05-09T05:24:40.277000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_INSERT",
+      "id": "ownership_gate_city_power_hf_capital_current",
+      "evidence": {
+        "publisher": "Ara Partners",
+        "url": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+        "evidenceDate": "2026-03-11",
+        "finding": "Ara announced on March 11, 2026 that it had secured rights to acquire the Gate City portfolios from HF Capital, with closing still subject to conditions."
+      },
+      "proposed": {
+        "id": "ownership_gate_city_power_hf_capital_current",
+        "companyId": "cmnva0u3800q6m8lzunge3dpu",
+        "companyName": "Gate City Power",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnva06z50077m8lzyelvyi5y",
+        "organizationName": "HF Capital",
+        "vehicleName": "HF Capital ownership; seller in announced Ara transaction pending close",
+        "stake": null,
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": true
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_INSERT",
+      "id": "ownership_gate_city_renewable_fuels_hf_capital_current",
+      "evidence": {
+        "publisher": "Ara Partners",
+        "url": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+        "evidenceDate": "2026-03-11",
+        "finding": "Ara announced on March 11, 2026 that it had secured rights to acquire the Gate City portfolios from HF Capital, with closing still subject to conditions."
+      },
+      "proposed": {
+        "id": "ownership_gate_city_renewable_fuels_hf_capital_current",
+        "companyId": "cmnva0u3v00q7m8lzeju2j5q0",
+        "companyName": "Gate City Renewable Fuels",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnva06z50077m8lzyelvyi5y",
+        "organizationName": "HF Capital",
+        "vehicleName": "HF Capital ownership; seller in announced Ara transaction pending close",
+        "stake": null,
+        "investmentYear": null,
+        "exitYear": null,
+        "isActive": true
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoela18100a30slz15t9ca1t",
+      "evidence": {
+        "publisher": "Apollo",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810",
+        "evidenceDate": "2026-04-23",
+        "finding": "Apollo announced on April 23, 2026 an agreement to acquire KKR's 40% PGI interest; Pembina retained 60% and closing was expected by the end of the second quarter."
+      },
+      "current": {
+        "id": "cmoela18100a30slz15t9ca1t",
+        "companyId": "cmnva14ug017ym8lzuudd6lxq",
+        "companyName": "Pembina Gas Infrastructure Inc.",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zsrd0028m8lz9ag8wlwr",
+        "organizationName": "KKR",
+        "vehicleName": "KKR Global Infrastructure Investors",
+        "stake": null,
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:04:12.721000"
+      },
+      "proposed": {
+        "id": "cmoela18100a30slz15t9ca1t",
+        "companyId": "cmnva14ug017ym8lzuudd6lxq",
+        "companyName": "Pembina Gas Infrastructure Inc.",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zsrd0028m8lz9ag8wlwr",
+        "organizationName": "KKR",
+        "vehicleName": "KKR Global Infrastructure Funds",
+        "stake": "40%",
+        "investmentYear": 2022,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:04:12.721000"
+      }
+    }
+  ],
+  "quarantinedFindings": [
+    {
+      "legacyId": "INF-2026-123",
+      "companyNames": [
+        "Astound Broadband"
+      ],
+      "evidence": {
+        "publisher": "Stonepeak",
+        "url": "https://stonepeak.com/news/gfiber-and-stonepeaks-astound-to-combine-creating-a-leading-independent-broadband-provider",
+        "evidenceDate": "2026-03-11",
+        "finding": "Stonepeak and Alphabet announced their agreement to combine Astound Broadband and GFiber on March 11, 2026, with closing expected in the fourth quarter of 2026."
+      },
+      "finding": "Preserve incumbent ownership and announced lifecycle state until closing is supported by a primary source.",
+      "reason": "No close announcement was found; the official release expects a fourth-quarter 2026 close."
+    },
+    {
+      "legacyId": "INF-2026-130",
+      "companyNames": [
+        "Bayonne Energy Center"
+      ],
+      "evidence": {
+        "publisher": "Morgan Stanley Infrastructure Partners",
+        "url": "https://www.morganstanley.com/press-releases/msip-agrees-to-sell-bayonne-energy-center",
+        "evidenceDate": "2026-03-17",
+        "finding": "MSIP announced its agreement to sell Bayonne Energy Center to Jupiter Energy Investor on March 17, 2026, with closing expected in the third quarter of 2026."
+      },
+      "finding": "Preserve incumbent ownership and announced lifecycle state until closing is supported by a primary source.",
+      "reason": "No close announcement was found; the official release expects a third-quarter 2026 close."
+    },
+    {
+      "legacyId": "INF-2026-113",
+      "companyNames": [
+        "Gate City Power",
+        "Gate City Renewable Fuels"
+      ],
+      "evidence": {
+        "publisher": "Ara Partners",
+        "url": "https://www.arapartners.com/news/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million/",
+        "evidenceDate": "2026-03-11",
+        "finding": "Ara announced on March 11, 2026 that it had secured rights to acquire the Gate City portfolios from HF Capital, with closing still subject to conditions."
+      },
+      "finding": "Preserve incumbent ownership and announced lifecycle state until closing is supported by a primary source.",
+      "reason": "Ara's acquisition remained conditional, so HF Capital is retained as current owner."
+    },
+    {
+      "legacyId": "INF-2026-183",
+      "companyNames": [
+        "Pembina Gas Infrastructure Inc."
+      ],
+      "evidence": {
+        "publisher": "Apollo",
+        "url": "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810",
+        "evidenceDate": "2026-04-23",
+        "finding": "Apollo announced on April 23, 2026 an agreement to acquire KKR's 40% PGI interest; Pembina retained 60% and closing was expected by the end of the second quarter."
+      },
+      "finding": "Preserve incumbent ownership and announced lifecycle state until closing is supported by a primary source.",
+      "reason": "No close announcement was found; KKR's 40% interest remains current."
+    },
+    {
+      "legacyId": "INF-2026-038",
+      "companyNames": [
+        "Sabre Industries"
+      ],
+      "evidence": {
+        "publisher": "Blackstone",
+        "url": "https://www.blackstone.com/news/press/tpg-to-acquire-majority-stake-in-sabre-industries-from-blackstone-energy-transition-partners/",
+        "evidenceDate": "2026-02-05",
+        "finding": "Blackstone described a signed majority-sale agreement to TPG Rise Climate with closing expected in the second quarter; no closing announcement was found as of July 22, 2026."
+      },
+      "finding": "Preserve incumbent ownership and announced lifecycle state until closing is supported by a primary source.",
+      "reason": "No close announcement was found; Blackstone remains current owner."
+    },
+    {
+      "legacyId": "INF-2026-179",
+      "companyNames": [
+        "Vertical Bridge"
+      ],
+      "evidence": {
+        "publisher": "Vertical Bridge",
+        "url": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+        "evidenceDate": "2026-04-22",
+        "finding": "Vertical Bridge announced KKR's $1.5 billion strategic equity investment on April 22, primarily through KKR's core infrastructure strategy, with DigitalBridge and La Caisse also participating."
+      },
+      "finding": "Preserve incumbent ownership and announced lifecycle state until closing is supported by a primary source.",
+      "reason": "The release mixes future and present-effective language; status remains ANNOUNCED and the KKR owner is preserved pending judgment."
+    },
+    {
+      "legacyId": "INF-2026-201",
+      "companyNames": [
+        "i3 Broadband"
+      ],
+      "evidence": {
+        "publisher": "T-Mobile",
+        "url": "https://www.t-mobile.com/news/business/t-mobile-add-two-strategic-fiber-joint-ventures-gonetspeed-greenlight-i3",
+        "evidenceDate": "2026-04-28",
+        "finding": "T-Mobile announced the Wren House joint-venture agreement on April 28, 2026, with closing expected in the second half of 2026 and an expected approximately $700 million T-Mobile investment."
+      },
+      "finding": "Preserve incumbent ownership and announced lifecycle state until closing is supported by a primary source.",
+      "reason": "No close announcement was found; Wren House remains current owner until the expected second-half close."
+    }
+  ],
+  "generatedAt": "2026-07-22T21:32:51.278Z",
+  "database": {
+    "host": "ep-dawn-sky-amaxdqe4-pooler.c-5.us-east-1.aws.neon.tech",
+    "database": "neondb"
+  },
+  "dryRun": true,
+  "planSha256": "2c561b90e7b264fb3303be946d979e7f72ed42a3db0aec2f1fdcd6cd879809bd"
+}

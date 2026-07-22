@@ -1,0 +1,561 @@
+{
+  "generatedAt": "2026-07-22T20:53:52.419Z",
+  "planSha256": "74e7d65f83114e9ea61363904628d7c972f4c4c7bacdc2882a3cacb6dd906bf2",
+  "schemaVersion": 1,
+  "scope": "CORNERSTONE_GENERATION_TALEN_CLOSE_EXACT_ID_REMEDIATION",
+  "database": {
+    "host": "ep-dawn-sky-amaxdqe4-pooler.c-5.us-east-1.aws.neon.tech",
+    "database": "neondb"
+  },
+  "timestampRepresentation": {
+    "databaseType": "timestamp without time zone",
+    "serialization": "raw PostgreSQL wall-clock value via to_char; no JavaScript Date conversion and no timezone suffix",
+    "millisecondsFormat": "YYYY-MM-DD\"T\"HH24:MI:SS.MS",
+    "microsecondsFormat": "YYYY-MM-DD\"T\"HH24:MI:SS.US"
+  },
+  "reviewedManifestSha256": "226a92dafcfbcfc18feb1a5a33dd29072f27a22400cf1a84e9e9d2b0c6e82d45",
+  "snapshotSha256": "38c32bf88ddbf499b609afd0a1f36793d3e2157fa0c05edf3f1df0393a3d9d28",
+  "actionSetSha256": "786762e2aa17b04daee1fe019aafcc564988fd0eb876bd6af2d51f46a5f97021",
+  "actions": [
+    {
+      "actionType": "CITATION_INSERT",
+      "id": "citation_cornerstone_ecp_realized_2026",
+      "proposed": {
+        "id": "citation_cornerstone_ecp_realized_2026",
+        "sourceId": "cmnva62lz06ojm8lz0fi825yz",
+        "dealId": "cmnva452h05etm8lzpwozr1ef",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "ECP July 2025 investment date and realized status",
+        "isPrimary": false
+      }
+    },
+    {
+      "actionType": "CITATION_INSERT",
+      "id": "citation_cornerstone_talen_8k_20260615",
+      "proposed": {
+        "id": "citation_cornerstone_talen_8k_20260615",
+        "sourceId": "source_cornerstone_talen_8k_20260615",
+        "dealId": "cmnva452h05etm8lzpwozr1ef",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "$3.45 billion purchase price and June 15, 2026 closing",
+        "isPrimary": false
+      }
+    },
+    {
+      "actionType": "CITATION_INSERT",
+      "id": "citation_cornerstone_talen_close_20260615",
+      "proposed": {
+        "id": "citation_cornerstone_talen_close_20260615",
+        "sourceId": "source_cornerstone_talen_close_20260615",
+        "dealId": "cmnva452h05etm8lzpwozr1ef",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Talen completion of Cornerstone acquisition on June 15, 2026",
+        "isPrimary": false
+      }
+    },
+    {
+      "actionType": "COMPANY_UPDATE",
+      "id": "cmnva0o2q00gim8lzgib5tltb",
+      "current": {
+        "id": "cmnva0o2q00gim8lzgib5tltb",
+        "name": "Cornerstone Generation",
+        "sector": "POWER_ET",
+        "subsector": "Gas-fired power generation",
+        "region": "NORTH_AMERICA",
+        "country": "United States",
+        "countryTags": [
+          "United States"
+        ],
+        "description": "Cornerstone Generation owns a portfolio of PJM gas-fired generation assets consisting of Waterford in Ohio, Lawrenceburg in Indiana, and Darby in Ohio. Its customers are wholesale power markets and capacity markets, and its earnings profile is therefore more merchant than contracted compared with regulated or availability-based infrastructure businesses. The platform is asset-heavy and ECP has described it as a 2.5 GW or approximately 2.6 GW fleet across the three facilities. Public deal materials show that ECP acquired the business from Talen in 2022 and later agreed to sell it back to Talen in 2026, subject to regulatory approvals. Pending completion of that sale, Cornerstone remains an ECP-backed merchant generation platform in the Midwest PJM market.",
+        "companyStatus": "ACTIVE",
+        "website": null,
+        "yearFounded": null,
+        "headquarters": "Ohio and Indiana",
+        "recordStatus": "PUBLISHED",
+        "lastVerifiedAt": null,
+        "createdAt": "2026-04-12T04:41:22.658000",
+        "updatedAt": "2026-04-25T17:02:54.629000"
+      },
+      "proposed": {
+        "id": "cmnva0o2q00gim8lzgib5tltb",
+        "name": "Cornerstone Generation",
+        "sector": "POWER_ET",
+        "subsector": "Gas-fired power generation",
+        "region": "NORTH_AMERICA",
+        "country": "United States",
+        "countryTags": [
+          "United States"
+        ],
+        "description": "Cornerstone Generation is a 2.5 GW natural-gas generation portfolio in western PJM comprising the Waterford Energy Center and Darby Generating Station in Ohio and the Lawrenceburg Power Plant in Indiana. ECP records July 2025 as its investment date and now lists the investment as realized. Talen Energy completed its acquisition of the portfolio from ECP on June 15, 2026, for a $3.45 billion purchase price comprising approximately $2.55 billion in cash, subject to customary adjustments, and 2,399,998 Talen common shares.",
+        "companyStatus": "ACTIVE",
+        "website": null,
+        "yearFounded": null,
+        "headquarters": "Ohio and Indiana",
+        "recordStatus": "PUBLISHED",
+        "lastVerifiedAt": null,
+        "createdAt": "2026-04-12T04:41:22.658000"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmnva452h05etm8lzpwozr1ef",
+      "current": {
+        "id": "cmnva452h05etm8lzpwozr1ef",
+        "legacyId": "INF-2026-014",
+        "title": "Energy Capital Partners divests Cornerstone Generation portfolio",
+        "target": "Cornerstone Generation",
+        "sector": "POWER_ET",
+        "subsector": "Power Generation",
+        "region": "NORTH_AMERICA",
+        "categories": [
+          "SALE_BUYOUT"
+        ],
+        "date": "2026-01-15T09:00:00.000",
+        "description": "Energy Capital Partners announced the divestiture of its Cornerstone Generation portfolio.",
+        "targetDescription": "Cornerstone Generation, a power generation portfolio in the United States.",
+        "country": "United States",
+        "enterpriseValue": null,
+        "equityValue": null,
+        "stake": "100%",
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "sellerDisclosureStatus": "LEGACY_UNREVIEWED",
+        "sellerDisclosureReason": null,
+        "assetScale": null,
+        "valuationMultiple": null,
+        "fundVehicle": null,
+        "keyHighlights": [
+          "Portfolio divestiture of Cornerstone Generation by Energy Capital Partners",
+          "Part of ECP's capital recycling program"
+        ],
+        "recordStatus": "PUBLISHED",
+        "lastVerifiedAt": null,
+        "createdAt": "2026-04-12T04:44:04.649000",
+        "updatedAt": "2026-04-12T04:44:04.649000"
+      },
+      "proposed": {
+        "id": "cmnva452h05etm8lzpwozr1ef",
+        "legacyId": "INF-2026-014",
+        "title": "Talen Energy completes $3.45 billion acquisition of Cornerstone Generation from ECP",
+        "target": "Cornerstone Generation",
+        "sector": "POWER_ET",
+        "subsector": "Power Generation",
+        "region": "NORTH_AMERICA",
+        "categories": [
+          "SALE_BUYOUT"
+        ],
+        "date": "2026-01-15T09:00:00.000",
+        "description": "Talen Energy completed its acquisition of Cornerstone Generation from ECP on June 15, 2026. The $3.45 billion purchase price comprised approximately $2.55 billion in cash, subject to customary adjustments, and 2,399,998 Talen common shares; the acquired portfolio comprises the Lawrenceburg, Waterford, and Darby plants totaling 2,451 MW.",
+        "targetDescription": "Cornerstone Generation comprises the 1,120 MW Lawrenceburg Power Plant in Indiana, the 875 MW Waterford Energy Center in Ohio, and the 456 MW Darby Generating Station in Ohio, totaling 2,451 MW.",
+        "country": "United States",
+        "enterpriseValue": null,
+        "equityValue": null,
+        "stake": "100%",
+        "dealStatus": "CLOSED",
+        "closingDate": "2026-06-15T08:00:00.000",
+        "sellerDisclosureStatus": "LEGACY_UNREVIEWED",
+        "sellerDisclosureReason": null,
+        "assetScale": "2,451 MW across three western PJM natural-gas plants",
+        "valuationMultiple": null,
+        "fundVehicle": null,
+        "keyHighlights": [
+          "Talen Energy completed the acquisition from ECP on June 15, 2026",
+          "$3.45 billion purchase price: approximately $2.55 billion in cash plus 2,399,998 Talen common shares",
+          "Portfolio includes Lawrenceburg, Waterford, and Darby, totaling 2,451 MW"
+        ],
+        "recordStatus": "PUBLISHED",
+        "lastVerifiedAt": null,
+        "createdAt": "2026-04-12T04:44:04.649000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_INSERT",
+      "id": "milestone_cornerstone_talen_close_20260615",
+      "proposed": {
+        "id": "milestone_cornerstone_talen_close_20260615",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "date": "Jun 15, 2026",
+        "event": "Talen Energy completed its acquisition of Cornerstone Generation from ECP for a $3.45 billion purchase price comprising approximately $2.55 billion in cash and 2,399,998 Talen common shares.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-06-15T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoel8cvg0045yqlzx86lowbj",
+      "current": {
+        "id": "cmoel8cvg0045yqlzx86lowbj",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "companyName": "Cornerstone Generation",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zwa3003fm8lz2wzz3tkv",
+        "organizationName": "ECP",
+        "vehicleName": "ECP acquisition",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:02:54.508000"
+      },
+      "proposed": {
+        "id": "cmoel8cvg0045yqlzx86lowbj",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "companyName": "Cornerstone Generation",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zwa3003fm8lz2wzz3tkv",
+        "organizationName": "ECP",
+        "vehicleName": "ECP acquisition",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": 2026,
+        "isActive": false,
+        "createdAt": "2026-04-25T17:02:54.508000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoxwf6ps01h8t01fnizomnys",
+      "current": {
+        "id": "cmoxwf6ps01h8t01fnizomnys",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "companyName": "Cornerstone Generation",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmoxw8s000003t01filz0g5ai",
+        "organizationName": "Talen Energy",
+        "vehicleName": "Announced acquisition from ECP pending regulatory close",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-05-09T05:23:46.240000"
+      },
+      "proposed": {
+        "id": "cmoxwf6ps01h8t01fnizomnys",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "companyName": "Cornerstone Generation",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmoxw8s000003t01filz0g5ai",
+        "organizationName": "Talen Energy",
+        "vehicleName": "Talen Energy acquisition from ECP (closed June 15, 2026)",
+        "stake": "100%",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-05-09T05:23:46.240000"
+      }
+    },
+    {
+      "actionType": "PARTICIPANT_UPDATE",
+      "id": "cmnva4fj405iwm8lzfe01eoq9",
+      "current": {
+        "id": "cmnva4fj405iwm8lzfe01eoq9",
+        "dealId": "cmnva452h05etm8lzpwozr1ef",
+        "organizationId": "cmnva00tv0050m8lz7p26u1ez",
+        "organizationName": "Undisclosed Buyer",
+        "role": "BUYER",
+        "displayName": "Undisclosed Buyer"
+      },
+      "proposed": {
+        "id": "cmnva4fj405iwm8lzfe01eoq9",
+        "dealId": "cmnva452h05etm8lzpwozr1ef",
+        "organizationId": "cmoxw8s000003t01filz0g5ai",
+        "organizationName": "Talen Energy",
+        "role": "BUYER",
+        "displayName": "Talen Energy"
+      }
+    },
+    {
+      "actionType": "SOURCE_INSERT",
+      "id": "source_cornerstone_talen_8k_20260615",
+      "proposed": {
+        "id": "source_cornerstone_talen_8k_20260615",
+        "label": "SEC Form 8-K — Talen Cornerstone acquisition closing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1622536/000162253626000048/tln-20260615.htm",
+        "type": "SEC_FILING"
+      }
+    },
+    {
+      "actionType": "SOURCE_INSERT",
+      "id": "source_cornerstone_talen_close_20260615",
+      "proposed": {
+        "id": "source_cornerstone_talen_close_20260615",
+        "label": "Talen Energy — Cornerstone Generation closing",
+        "url": "https://ir.talenenergy.com/node/9436/pdf",
+        "type": "PRESS_RELEASE"
+      }
+    }
+  ],
+  "resolvedSourceIds": {
+    "TALEN_CLOSE_RELEASE": "source_cornerstone_talen_close_20260615",
+    "TALEN_CLOSE_8K": "source_cornerstone_talen_8k_20260615",
+    "ECP_PORTFOLIO": "cmnva62lz06ojm8lz0fi825yz"
+  },
+  "reusedSourceIds": [
+    "cmnva62lz06ojm8lz0fi825yz"
+  ],
+  "reusedCitationIds": [],
+  "quarantinedFields": [
+    {
+      "field": "Deal.enterpriseValue",
+      "value": null,
+      "reason": "The primary sources disclose a purchase price, not enterprise value."
+    },
+    {
+      "field": "Deal.equityValue",
+      "value": null,
+      "reason": "The reviewed correction preserves the disclosed amount as purchase-price narrative rather than assigning an unsupported valuation field."
+    },
+    {
+      "field": "Deal.valuationMultiple",
+      "value": null,
+      "reason": "No reviewed primary source provides a valuation multiple."
+    },
+    {
+      "field": "Company.yearFounded",
+      "value": null,
+      "reason": "The reviewed primary sources do not establish a corporate founding year."
+    }
+  ],
+  "schema": {
+    "citationIsPrimary": false,
+    "companyLastVerifiedAt": false,
+    "dealLastVerifiedAt": false,
+    "dealSellerDisclosure": false,
+    "sourceUrlUnique": true,
+    "citationIdentityIndex": {
+      "exists": true,
+      "isUnique": true,
+      "isValid": true,
+      "isReady": true,
+      "nullsNotDistinct": true,
+      "definition": "CREATE UNIQUE INDEX \"Citation_company_identity_unique\" ON public.\"Citation\" USING btree (\"companyId\", \"sourceId\", purpose, \"evidenceLabel\", \"dealId\") NULLS NOT DISTINCT WHERE (\"companyId\" IS NOT NULL)"
+    }
+  },
+  "tableCounts": {
+    "deals": 352,
+    "dealParticipants": 611,
+    "organizations": 325,
+    "companies": 1191,
+    "ownershipPeriods": 1413,
+    "milestones": 4226,
+    "sources": 4847,
+    "citations": 10234
+  },
+  "counts": {
+    "dealUpdates": 1,
+    "participantUpdates": 1,
+    "ownershipUpdates": 2,
+    "companyUpdates": 1,
+    "milestoneInserts": 1,
+    "sourceInserts": 2,
+    "citationInserts": 3
+  },
+  "targetSnapshot": {
+    "deal": {
+      "id": "cmnva452h05etm8lzpwozr1ef",
+      "legacyId": "INF-2026-014",
+      "title": "Energy Capital Partners divests Cornerstone Generation portfolio",
+      "target": "Cornerstone Generation",
+      "sector": "POWER_ET",
+      "subsector": "Power Generation",
+      "region": "NORTH_AMERICA",
+      "categories": [
+        "SALE_BUYOUT"
+      ],
+      "date": "2026-01-15T09:00:00.000",
+      "description": "Energy Capital Partners announced the divestiture of its Cornerstone Generation portfolio.",
+      "targetDescription": "Cornerstone Generation, a power generation portfolio in the United States.",
+      "country": "United States",
+      "enterpriseValue": null,
+      "equityValue": null,
+      "stake": "100%",
+      "dealStatus": "ANNOUNCED",
+      "closingDate": null,
+      "sellerDisclosureStatus": "LEGACY_UNREVIEWED",
+      "sellerDisclosureReason": null,
+      "assetScale": null,
+      "valuationMultiple": null,
+      "fundVehicle": null,
+      "keyHighlights": [
+        "Portfolio divestiture of Cornerstone Generation by Energy Capital Partners",
+        "Part of ECP's capital recycling program"
+      ],
+      "recordStatus": "PUBLISHED",
+      "lastVerifiedAt": null,
+      "createdAt": "2026-04-12T04:44:04.649000",
+      "updatedAt": "2026-04-12T04:44:04.649000"
+    },
+    "participants": [
+      {
+        "id": "cmnva4fj405iwm8lzfe01eoq9",
+        "dealId": "cmnva452h05etm8lzpwozr1ef",
+        "organizationId": "cmnva00tv0050m8lz7p26u1ez",
+        "organizationName": "Undisclosed Buyer",
+        "role": "BUYER",
+        "displayName": "Undisclosed Buyer"
+      },
+      {
+        "id": "cmnva4fjq05ixm8lzlv4n17f3",
+        "dealId": "cmnva452h05etm8lzpwozr1ef",
+        "organizationId": "cmnv9zqbk001dm8lzndc167e6",
+        "organizationName": "Energy Capital Partners",
+        "role": "SELLER",
+        "displayName": "Energy Capital Partners"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmnv9zqbk001dm8lzndc167e6",
+        "name": "Energy Capital Partners",
+        "types": [
+          "FUND_MANAGER"
+        ],
+        "recordStatus": "PUBLISHED"
+      },
+      {
+        "id": "cmnv9zwa3003fm8lz2wzz3tkv",
+        "name": "ECP",
+        "types": [
+          "FUND_MANAGER"
+        ],
+        "recordStatus": "PUBLISHED"
+      },
+      {
+        "id": "cmnva00tv0050m8lz7p26u1ez",
+        "name": "Undisclosed Buyer",
+        "types": [
+          "CORPORATE"
+        ],
+        "recordStatus": "PUBLISHED"
+      },
+      {
+        "id": "cmoxw8s000003t01filz0g5ai",
+        "name": "Talen Energy",
+        "types": [
+          "CORPORATE"
+        ],
+        "recordStatus": "PUBLISHED"
+      }
+    ],
+    "ownershipPeriods": [
+      {
+        "id": "cmoel8cvg0045yqlzx86lowbj",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "companyName": "Cornerstone Generation",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zwa3003fm8lz2wzz3tkv",
+        "organizationName": "ECP",
+        "vehicleName": "ECP acquisition",
+        "stake": null,
+        "investmentYear": 2025,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:02:54.508000"
+      },
+      {
+        "id": "cmoxwf6ps01h8t01fnizomnys",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "companyName": "Cornerstone Generation",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmoxw8s000003t01filz0g5ai",
+        "organizationName": "Talen Energy",
+        "vehicleName": "Announced acquisition from ECP pending regulatory close",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-05-09T05:23:46.240000"
+      }
+    ],
+    "company": {
+      "id": "cmnva0o2q00gim8lzgib5tltb",
+      "name": "Cornerstone Generation",
+      "sector": "POWER_ET",
+      "subsector": "Gas-fired power generation",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "Cornerstone Generation owns a portfolio of PJM gas-fired generation assets consisting of Waterford in Ohio, Lawrenceburg in Indiana, and Darby in Ohio. Its customers are wholesale power markets and capacity markets, and its earnings profile is therefore more merchant than contracted compared with regulated or availability-based infrastructure businesses. The platform is asset-heavy and ECP has described it as a 2.5 GW or approximately 2.6 GW fleet across the three facilities. Public deal materials show that ECP acquired the business from Talen in 2022 and later agreed to sell it back to Talen in 2026, subject to regulatory approvals. Pending completion of that sale, Cornerstone remains an ECP-backed merchant generation platform in the Midwest PJM market.",
+      "companyStatus": "ACTIVE",
+      "website": null,
+      "yearFounded": null,
+      "headquarters": "Ohio and Indiana",
+      "recordStatus": "PUBLISHED",
+      "lastVerifiedAt": null,
+      "createdAt": "2026-04-12T04:41:22.658000",
+      "updatedAt": "2026-04-25T17:02:54.629000"
+    },
+    "milestones": [
+      {
+        "id": "cmp1h80nb01fyw41flfcqspyf",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "date": "Sep 2024",
+        "event": "ECP announced an agreement to acquire Lightstone Generation from Blackstone and ArcLight, with the gas-fired plants to be carved out as Cornerstone Generation.",
+        "category": "ACQUISITION",
+        "sortDate": "2024-09-01T04:00:00.000"
+      },
+      {
+        "id": "cmp1h80nb01fzw41fc86qzio7",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "date": "2025",
+        "event": "Cornerstone began operating the Waterford, Lawrenceburg, and Darby gas plants in PJM under ECP ownership.",
+        "category": "EXPANSION",
+        "sortDate": "2025-01-01T00:00:00.000"
+      },
+      {
+        "id": "cmp1h80nb01g0w41fw1xbnfgt",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "date": "Jul 2025",
+        "event": "ECP invested in Cornerstone Generation, according to ECP's portfolio investment date.",
+        "category": "ACQUISITION",
+        "sortDate": "2025-07-01T04:00:00.000"
+      },
+      {
+        "id": "cmp1h80nb01g1w41fg8t27lr7",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "date": "Mar 19, 2025",
+        "event": "The Indiana Utility Regulatory Commission approved the sale of Lawrenceburg Power to Cornerstone, supporting the transaction's close.",
+        "category": "DIVESTITURE",
+        "sortDate": "2025-03-19T04:00:00.000"
+      },
+      {
+        "id": "cmp1h80nb01g2w41fo1oeppe9",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "date": "Jan 2026",
+        "event": "ECP and Talen announced an agreement for Talen to acquire Cornerstone Generation for $3.45 billion.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-01-01T05:00:00.000"
+      }
+    ],
+    "sourceMatches": [
+      {
+        "id": "cmnva62lz06ojm8lz0fi825yz",
+        "label": "Ecpgp — Cornerstone Generation",
+        "url": "https://www.ecpgp.com/equity/portfolio/cornerstone-generation",
+        "type": "WEBSITE"
+      }
+    ],
+    "citationMatches": [
+      {
+        "id": "cmoxwn1ip09pgt01f7wf7bnoj",
+        "sourceId": "cmnva4l4h05r2m8lzjwqhivug",
+        "dealId": "cmnva452h05etm8lzpwozr1ef",
+        "companyId": "cmnva0o2q00gim8lzgib5tltb",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Talen Energy IR transaction or milestone detail",
+        "isPrimary": false
+      }
+    ]
+  }
+}

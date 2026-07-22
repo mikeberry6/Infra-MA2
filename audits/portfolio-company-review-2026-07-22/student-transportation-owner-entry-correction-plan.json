@@ -1,0 +1,325 @@
+{
+  "generatedAt": "2026-07-22T22:50:26.312Z",
+  "mode": "APPLY",
+  "planSha256": "62636ee09ea3b736201707af31c702117ece65645676b66f9bd8b13ccf48979e",
+  "hashMaterial": {
+    "schemaVersion": 1,
+    "scope": "STUDENT_TRANSPORTATION_ULLICO_OWNER_ENTRY_MILESTONE_EXACT_CORRECTION",
+    "databaseTarget": {
+      "host": "ep-dawn-sky-amaxdqe4-pooler.c-5.us-east-1.aws.neon.tech",
+      "database": "neondb",
+      "port": "5432",
+      "schema": "public"
+    },
+    "reviewedManifestSha256": "50441f9333bd937e72b8a32e8a21bcb85f0d271a3eb124b34ec65f5a2b1b768b",
+    "seedSha256": "b0e2fc568375424b7d9c66e62f40028c48eb0d47229e04c5acec8ec410443aa9",
+    "actionSetSha256": "3a12a79141e8996377373b3be4860719b1e0fbd5094a68681f1f0d1587c8c848",
+    "snapshotSha256": "890bb28810c337ffe96b36b2ca9830926c8e5f1da648d13c77c2bf6684cebb11",
+    "actionCount": 1
+  },
+  "plan": {
+    "actions": [
+      {
+        "actionType": "MILESTONE_UPDATE",
+        "id": "cmp1h7ukh0160w41f089a3908",
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "evidence": [
+          {
+            "publisher": "Torys LLP",
+            "url": "https://www.torys.com/work/2018/02/student-transportation-acquired-by-a-group-of-investors-led-by-cdpq",
+            "evidenceDate": "2018-04-27",
+            "finding": "Torys identifies CDPQ and Ullico as the Purchaser Group and confirms that Student Transportation closed the arrangement on April 27, 2018."
+          }
+        ],
+        "current": {
+          "id": "cmp1h7ukh0160w41f089a3908",
+          "companyId": "cmnva0yee00xcm8lzevorlgbc",
+          "date": "Apr 27, 2018",
+          "event": "Student Transportation announced closing of the take-private acquisition by the CDPQ-led purchaser group.",
+          "category": "ACQUISITION",
+          "sortDate": "2018-04-27T04:00:00.000000"
+        },
+        "proposed": {
+          "id": "cmp1h7ukh0160w41f089a3908",
+          "companyId": "cmnva0yee00xcm8lzevorlgbc",
+          "date": "Apr 27, 2018",
+          "event": "Student Transportation closed the take-private acquisition by a purchaser group sponsored by CDPQ and Ullico.",
+          "category": "ACQUISITION",
+          "sortDate": "2018-04-27T04:00:00.000000"
+        }
+      }
+    ],
+    "actionCount": 1,
+    "actionSetSha256": "3a12a79141e8996377373b3be4860719b1e0fbd5094a68681f1f0d1587c8c848",
+    "snapshotSha256": "890bb28810c337ffe96b36b2ca9830926c8e5f1da648d13c77c2bf6684cebb11"
+  },
+  "snapshot": {
+    "companyGuard": {
+      "id": "cmnva0yee00xcm8lzevorlgbc",
+      "name": "Student Transportation of America and Canada",
+      "yearFounded": 1997,
+      "companyStatus": "ACTIVE",
+      "recordStatus": "PUBLISHED",
+      "updatedAt": "2026-04-25T17:02:30.289000"
+    },
+    "ownershipRows": [
+      {
+        "id": "cmoel7u48003dy1lz7wsy1am5",
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "fundId": "cmnva0ilb00bcm8lzg800fpmz",
+        "organizationId": "cmnv9zsx7002am8lzyo22qh5v",
+        "organizationName": "La Caisse de dépôt (CDPQ)",
+        "vehicleName": "CDPQ Infrastructure",
+        "stake": null,
+        "investmentYear": 2004,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:02:30.200000"
+      },
+      {
+        "id": "cmoelbkgl00ax3alzv8w7zi2o",
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "fundId": null,
+        "organizationId": "cmnv9zvpl0039m8lzp75dplge",
+        "organizationName": "Ullico",
+        "vehicleName": "UIF",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:05:24.309000"
+      }
+    ],
+    "milestoneRows": [
+      {
+        "id": "cmp1h7ukh015xw41feb355rpk",
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "date": "1997",
+        "event": "Student Transportation was founded.",
+        "category": "FOUNDING",
+        "sortDate": "1997-01-01T00:00:00.000000"
+      },
+      {
+        "id": "cmp1h7ukh015yw41ftg84tu65",
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "date": "2004",
+        "event": "CDPQ made its initial investment in Student Transportation.",
+        "category": "FINANCING",
+        "sortDate": "2004-01-01T00:00:00.000000"
+      },
+      {
+        "id": "cmp1h7ukh015zw41f9oq16e6n",
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "date": "Feb 28, 2018",
+        "event": "Student Transportation Inc. announced a definitive agreement to be acquired by a group of investors led by CDPQ.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-02-28T05:00:00.000000"
+      },
+      {
+        "id": "cmp1h7ukh0160w41f089a3908",
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "date": "Apr 27, 2018",
+        "event": "Student Transportation announced closing of the take-private acquisition by the CDPQ-led purchaser group.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-04-27T04:00:00.000000"
+      }
+    ],
+    "citationRows": [
+      {
+        "id": "cmnva503l0605m8lzed7s828c",
+        "sourceId": "cmnva501v0604m8lzlq9fncz1",
+        "dealId": null,
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "GlobeNewsWire — Student Transportation Inc.",
+        "sourceUrl": "https://www.globenewswire.com/news-release/2018/02/28/1396555/0/en/Student-Transportation-Inc-to-be-Acquired-by-a-Group-of-Investors-led-by-CDPQ.html",
+        "sourceType": "PRESS_RELEASE"
+      },
+      {
+        "id": "cmnva506u0607m8lzqknq13lc",
+        "sourceId": "cmnva50540606m8lz16ea7g3m",
+        "dealId": null,
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": null,
+        "sourceLabel": "SEC — Student Transportation Inc.",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1419465/000119312518093955/d518454dex991.htm",
+        "sourceType": "SEC_FILING"
+      },
+      {
+        "id": "cmnva50a40609m8lzglsdcimu",
+        "sourceId": "cmnva508e0608m8lztg3mrcld",
+        "dealId": null,
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "Goodmans — Student Transportation Inc.",
+        "sourceUrl": "https://www.goodmans.ca/expertise/case/student-transportation-acquired-for-us1-1-billion-by-a-group-of-investors-led-by-cdpq",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmnvabayw0a0gm8lzkarhhu1p",
+        "sourceId": "cmnvabax60a0fm8lzziqorqrm",
+        "dealId": null,
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "Ridesta — Student Transportation of America and Canada",
+        "sourceUrl": "https://ridesta.com/student-transportation-inc-to-be-acquired-by-a-group-of-investors-led-by-cdpq/",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmnvabb1x0a0im8lzmu8xwwaa",
+        "sourceId": "cmnvabb060a0hm8lz71gqqadt",
+        "dealId": null,
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "Lacaisse — Student Transportation of America and Canada",
+        "sourceUrl": "https://www.lacaisse.com/en/news/perspectives/3-factors-have-made-student-transportation-third-largest-school-transportation-player",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmnvabb550a0km8lz3fwfspro",
+        "sourceId": "cmnvabb3g0a0jm8lz17buce48",
+        "dealId": null,
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "Lacaisse — Student Transportation of America and Canada",
+        "sourceUrl": "https://www.lacaisse.com/en/news/pressreleases/student-transportation-expands-canadian-operations-through-major-acquisition",
+        "sourceType": "WEBSITE"
+      },
+      {
+        "id": "cmoqccup307w5171fi4hhuy8b",
+        "sourceId": "cmoqccunh07w4171f7qlf0287",
+        "dealId": null,
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": null,
+        "sourceLabel": "Investment date source — CDPQ — Student Transportation of America and Canada",
+        "sourceUrl": "https://www.lacaisse.com/en/news/articles/3-factors-have-made-student-transportation-third-largest-school-transportation-player",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmoqccusf07w7171fgurt8lvh",
+        "sourceId": "cmoqccuqr07w6171fw1mpd4of",
+        "dealId": null,
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": null,
+        "sourceLabel": "Close date source — CDPQ — Student Transportation of America and Canada",
+        "sourceUrl": "https://www.torys.com/work/2018/02/student-transportation-acquired-by-a-group-of-investors-led-by-cdpq",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmoxwmozo0939t01f1skj85yo",
+        "sourceId": "cmnvabax60a0fm8lzziqorqrm",
+        "dealId": null,
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Ridesta transaction or milestone detail",
+        "sourceLabel": "Ridesta — Student Transportation of America and Canada",
+        "sourceUrl": "https://ridesta.com/student-transportation-inc-to-be-acquired-by-a-group-of-investors-led-by-cdpq/",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmoxwmp0q093bt01f4mgex9el",
+        "sourceId": "cmoqccunh07w4171f7qlf0287",
+        "dealId": null,
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CDPQ initial investment / ownership",
+        "sourceLabel": "Investment date source — CDPQ — Student Transportation of America and Canada",
+        "sourceUrl": "https://www.lacaisse.com/en/news/articles/3-factors-have-made-student-transportation-third-largest-school-transportation-player",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmoxwmp1w093dt01ftmd2yz14",
+        "sourceId": "cmoqccuqr07w6171fw1mpd4of",
+        "dealId": null,
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CDPQ closing confirmation",
+        "sourceLabel": "Close date source — CDPQ — Student Transportation of America and Canada",
+        "sourceUrl": "https://www.torys.com/work/2018/02/student-transportation-acquired-by-a-group-of-investors-led-by-cdpq",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmoxwmp2y093ft01fi8ptp5bk",
+        "sourceId": "cmnvabb3g0a0jm8lz17buce48",
+        "dealId": null,
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CDPQ controlling shareholder; exact percentage not publicly disclosed",
+        "sourceLabel": "Lacaisse — Student Transportation of America and Canada",
+        "sourceUrl": "https://www.lacaisse.com/en/news/pressreleases/student-transportation-expands-canadian-operations-through-major-acquisition",
+        "sourceType": "WEBSITE"
+      }
+    ],
+    "evidenceCitationGuard": {
+      "id": "cmoqccusf07w7171fgurt8lvh",
+      "sourceId": "cmoqccuqr07w6171fw1mpd4of",
+      "dealId": null,
+      "companyId": "cmnva0yee00xcm8lzevorlgbc",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": null,
+      "sourceLabel": "Close date source — CDPQ — Student Transportation of America and Canada",
+      "sourceUrl": "https://www.torys.com/work/2018/02/student-transportation-acquired-by-a-group-of-investors-led-by-cdpq",
+      "sourceType": "ARTICLE"
+    },
+    "protection": {
+      "ownership": {
+        "count": 2,
+        "sha256": "d6dae926f6c4f232dc09fd5fda79add91e39dac3434862a896f78da592e8c8b2"
+      },
+      "milestones": {
+        "count": 4,
+        "sha256": "8337f130ad1e731df90acb8a2e9b737032a5ffa8e41c9cae18313d1e11dbc63a"
+      },
+      "citations": {
+        "count": 12,
+        "sha256": "77d309740b251056d93ac01099f876f41b97a5626230e665c1adf9eb17ce71f3"
+      }
+    },
+    "tableCounts": {
+      "companies": 1191,
+      "ownershipPeriods": 1409,
+      "milestones": 4236,
+      "sources": 4864,
+      "citations": 10246
+    },
+    "citationIndex": {
+      "exists": true,
+      "isUnique": true,
+      "isValid": true,
+      "isReady": true,
+      "nullsNotDistinct": true,
+      "definition": "CREATE UNIQUE INDEX \"Citation_company_identity_unique\" ON public.\"Citation\" USING btree (\"companyId\", \"sourceId\", purpose, \"evidenceLabel\", \"dealId\") NULLS NOT DISTINCT WHERE (\"companyId\" IS NOT NULL)"
+    },
+    "seedSha256": "b0e2fc568375424b7d9c66e62f40028c48eb0d47229e04c5acec8ec410443aa9"
+  },
+  "rollback": [
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h7ukh0160w41f089a3908",
+      "expectedApplied": {
+        "id": "cmp1h7ukh0160w41f089a3908",
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "date": "Apr 27, 2018",
+        "event": "Student Transportation closed the take-private acquisition by a purchaser group sponsored by CDPQ and Ullico.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-04-27T04:00:00.000000"
+      },
+      "restore": {
+        "id": "cmp1h7ukh0160w41f089a3908",
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "date": "Apr 27, 2018",
+        "event": "Student Transportation announced closing of the take-private acquisition by the CDPQ-led purchaser group.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-04-27T04:00:00.000000"
+      }
+    }
+  ]
+}

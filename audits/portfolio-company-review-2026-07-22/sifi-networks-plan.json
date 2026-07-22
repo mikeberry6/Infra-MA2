@@ -1,0 +1,698 @@
+{
+  "generatedAt": "2026-07-22T21:51:00.307Z",
+  "dryRun": true,
+  "planSha256": "1852baea1c076e1c48a3270bf213b0f06a7b8f5ea910353209c75ec6efc02588",
+  "schemaVersion": 1,
+  "scope": "SIFI_NETWORKS_CLOSE_AND_RESTRUCTURING_EXACT_ID_REMEDIATION",
+  "database": {
+    "host": "ep-dawn-sky-amaxdqe4-pooler.c-5.us-east-1.aws.neon.tech",
+    "database": "neondb"
+  },
+  "timestampRepresentation": {
+    "databaseType": "timestamp without time zone",
+    "serialization": "raw PostgreSQL wall-clock value via to_char; no JavaScript Date conversion and no timezone suffix",
+    "millisecondsFormat": "YYYY-MM-DD\"T\"HH24:MI:SS.MS",
+    "microsecondsFormat": "YYYY-MM-DD\"T\"HH24:MI:SS.US"
+  },
+  "reviewedBasis": {
+    "actionCount": 14,
+    "actionSetSha256": "a6435f254bd0509fa5c94fb1bd3c95210e2bc36705a3ec8697beb9096aed216e",
+    "manifestSha256": "82ebaf3f816387ac22617ba12272528a477d5ccdea2b2784e91ed67315fb7e98"
+  },
+  "snapshotSha256": "7047d57ec20c7147f9e9e30fa7685eb0ba978377093c56cfe53d337680016cff",
+  "tableCounts": {
+    "deals": 352,
+    "dealParticipants": 612,
+    "companies": 1191,
+    "ownershipPeriods": 1410,
+    "milestones": 4229,
+    "sources": 4853,
+    "citations": 10232
+  },
+  "schema": {
+    "citationIsPrimary": false,
+    "sourceUrlUnique": true,
+    "citationIdentityIndex": {
+      "exists": true,
+      "isUnique": true,
+      "isValid": true,
+      "isReady": true,
+      "nullsNotDistinct": true,
+      "definition": "CREATE UNIQUE INDEX \"Citation_company_identity_unique\" ON public.\"Citation\" USING btree (\"companyId\", \"sourceId\", purpose, \"evidenceLabel\", \"dealId\") NULLS NOT DISTINCT WHERE (\"companyId\" IS NOT NULL)"
+    }
+  },
+  "counts": {
+    "dealUpdates": 1,
+    "companyUpdates": 1,
+    "citationUpdates": 1,
+    "milestoneUpdates": 1,
+    "milestoneDeletes": 2,
+    "milestoneInserts": 2,
+    "sourceInserts": 3,
+    "citationInserts": 3,
+    "protectedOwnershipPeriods": 3,
+    "protectedParticipants": 3,
+    "protectedMilestones": 3,
+    "quarantinedFields": 9
+  },
+  "actions": [
+    {
+      "actionType": "CITATION_INSERT",
+      "id": "citation_sifi_psc_transition_20260417",
+      "evidence": {
+        "publisher": "Companies House",
+        "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history",
+        "evidenceDate": "2026-04-21",
+        "finding": "The filing history records Si-Fi Global Limited and Oaf America Ltd ceasing as persons with significant control, and ArcLink Fiber (US) Limited becoming a person with significant control, effective April 17, 2026."
+      },
+      "proposed": {
+        "id": "citation_sifi_psc_transition_20260417",
+        "sourceId": "source_sifi_companies_house_08556605",
+        "dealId": null,
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Companies House recorded Si-Fi Global Limited and Oaf America Ltd ceasing as persons with significant control, and ArcLink Fiber (US) Limited becoming a person with significant control, effective April 17, 2026.",
+        "sourceLabel": "Companies House — SiFi Networks America Limited filing history",
+        "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history",
+        "sourceType": "OTHER"
+      }
+    },
+    {
+      "actionType": "CITATION_INSERT",
+      "id": "citation_sifi_uk_prepack_20260605",
+      "evidence": {
+        "publisher": "Companies House — S&W Partners joint administrators' report",
+        "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history/MzUyNjQwNDkzMGFkaXF6a2N4/document?format=pdf&download=0",
+        "evidenceDate": "2026-06-12",
+        "finding": "The official report states that joint administrators were appointed to SiFi Networks America Limited on June 5, 2026 and completed a £600,000 pre-pack sale of its business and certain assets to ArcLink that same day; it separately states that ArcLink had acquired a 73.3% shareholding before administration without giving the acquisition date."
+      },
+      "proposed": {
+        "id": "citation_sifi_uk_prepack_20260605",
+        "sourceId": "source_sifi_administrator_report_20260612",
+        "dealId": null,
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Joint administrators were appointed and completed a £600,000 pre-pack sale of the UK company's business and certain assets to ArcLink on June 5, 2026.",
+        "sourceLabel": "Companies House — SiFi Networks America administrators' proposals",
+        "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history/MzUyNjQwNDkzMGFkaXF6a2N4/document?format=pdf&download=0",
+        "sourceType": "OTHER"
+      }
+    },
+    {
+      "actionType": "CITATION_INSERT",
+      "id": "citation_sifi_us_chapter11_20260605",
+      "evidence": {
+        "publisher": "United States Trustee Program",
+        "url": "https://www.justice.gov/ust/media/1445131/dl?inline=",
+        "evidenceDate": "2026-06-08",
+        "finding": "The U.S. Trustee filing identifies SiFi Networks America, LLC as the debtor in Chapter 11 case 26-10912 following its June 5, 2026 petition."
+      },
+      "proposed": {
+        "id": "citation_sifi_us_chapter11_20260605",
+        "sourceId": "source_sifi_us_trustee_26_10912",
+        "dealId": null,
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "purpose": "FINANCING_FILINGS",
+        "evidenceLabel": "SiFi Networks America, LLC Chapter 11 case 26-10912, filed June 5, 2026.",
+        "sourceLabel": "U.S. Trustee — SiFi Networks America LLC Chapter 11",
+        "sourceUrl": "https://www.justice.gov/ust/media/1445131/dl?inline=",
+        "sourceType": "OTHER"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwllo1074pt01f26ya8owq",
+      "evidence": {
+        "publisher": "County Times",
+        "url": "https://www.countytimes.co.uk/news/26050380.mike-harris-firm-sifi-networks-america-sold-new-owners/",
+        "evidenceDate": "2026-04-24",
+        "finding": "County Times reported on April 24, 2026 that founders Mike Harris and Roland Pickstock sold SiFi Networks America LLC to APG and PATRIZIA for an undisclosed price."
+      },
+      "current": {
+        "id": "cmoxwllo1074pt01f26ya8owq",
+        "sourceId": "cmoqc916106ga171fmzltijtf",
+        "dealId": "cmoqc7nze05z5171ftya1ijq3",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "County Times - INF-2026-182 - SiFi Networks America LLC",
+        "sourceLabel": "County Times",
+        "sourceUrl": "https://www.countytimes.co.uk/news/26050380.mike-harris-firm-sifi-networks-america-sold-new-owners/",
+        "sourceType": "ARTICLE"
+      },
+      "proposed": {
+        "id": "cmoxwllo1074pt01f26ya8owq",
+        "sourceId": "cmoqc916106ga171fmzltijtf",
+        "dealId": "cmoqc7nze05z5171ftya1ijq3",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "County Times reported on April 24, 2026 that founders Mike Harris and Roland Pickstock sold SiFi Networks America LLC to APG and PATRIZIA.",
+        "sourceLabel": "County Times",
+        "sourceUrl": "https://www.countytimes.co.uk/news/26050380.mike-harris-firm-sifi-networks-america-sold-new-owners/",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "COMPANY_UPDATE",
+      "id": "cmnva0stx00o0m8lzgjspbysk",
+      "evidence": [
+        {
+          "publisher": "County Times",
+          "url": "https://www.countytimes.co.uk/news/26050380.mike-harris-firm-sifi-networks-america-sold-new-owners/",
+          "evidenceDate": "2026-04-24",
+          "finding": "County Times reported on April 24, 2026 that founders Mike Harris and Roland Pickstock sold SiFi Networks America LLC to APG and PATRIZIA for an undisclosed price."
+        },
+        {
+          "publisher": "Companies House",
+          "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history",
+          "evidenceDate": "2026-04-21",
+          "finding": "The filing history records Si-Fi Global Limited and Oaf America Ltd ceasing as persons with significant control, and ArcLink Fiber (US) Limited becoming a person with significant control, effective April 17, 2026."
+        },
+        {
+          "publisher": "Companies House — S&W Partners joint administrators' report",
+          "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history/MzUyNjQwNDkzMGFkaXF6a2N4/document?format=pdf&download=0",
+          "evidenceDate": "2026-06-12",
+          "finding": "The official report states that joint administrators were appointed to SiFi Networks America Limited on June 5, 2026 and completed a £600,000 pre-pack sale of its business and certain assets to ArcLink that same day; it separately states that ArcLink had acquired a 73.3% shareholding before administration without giving the acquisition date."
+        },
+        {
+          "publisher": "United States Trustee Program",
+          "url": "https://www.justice.gov/ust/media/1445131/dl?inline=",
+          "evidenceDate": "2026-06-08",
+          "finding": "The U.S. Trustee filing identifies SiFi Networks America, LLC as the debtor in Chapter 11 case 26-10912 following its June 5, 2026 petition."
+        }
+      ],
+      "current": {
+        "id": "cmnva0stx00o0m8lzgjspbysk",
+        "name": "SiFi Networks America Limited",
+        "sector": "DIGITAL",
+        "subsector": "Open-access fiber-to-the-home networks",
+        "region": "NORTH_AMERICA",
+        "country": "United States",
+        "countryTags": [
+          "United States"
+        ],
+        "description": "SiFi Networks funds, builds, and operates citywide open-access fiber networks under its FiberCity brand. Its customers are municipalities, wholesale internet service providers, businesses, and households connected through citywide fiber infrastructure. The business follows an asset-heavy digital infrastructure model in which it finances and deploys open-access networks and leases access to service providers rather than operating as a retail ISP. Public materials describe SiFi as a privately funded fiber platform with multiple city deployments and a national pipeline supported by institutional capital. The platform has expanded through project-level and joint-venture financings including the Future Fiber structure used to finance U.S. FTTH deployments. APG announced a 16.7% stake in SiFi in 2021 and a related investment program to support further network rollout, while the balance of the current ownership structure is not publicly disclosed.",
+        "companyStatus": "ACTIVE",
+        "website": null,
+        "yearFounded": null,
+        "headquarters": "California; Michigan; Florida; Wisconsin; multi-city U.S. operations",
+        "recordStatus": "PUBLISHED",
+        "createdAt": "2026-04-12T04:41:28.821000",
+        "updatedAt": "2026-04-25T17:01:10.375000"
+      },
+      "proposed": {
+        "id": "cmnva0stx00o0m8lzgjspbysk",
+        "name": "SiFi Networks America Limited",
+        "sector": "DIGITAL",
+        "subsector": "Open-access fiber-to-the-home networks",
+        "region": "NORTH_AMERICA",
+        "country": "United States",
+        "countryTags": [
+          "United States"
+        ],
+        "description": "SiFi Networks America is an open-access fiber platform that develops citywide FiberCity networks for municipalities, wholesale internet service providers, businesses, and households in the United States. This portfolio record covers the operating group: SiFi Networks America Limited was its UK parent, while SiFi Networks America, LLC is the U.S. operating subsidiary named in the linked deal and bankruptcy filing. APG had held a 16.7% direct stake since 2021; County Times reported on April 24, 2026 that founders Mike Harris and Roland Pickstock sold the business to APG and PATRIZIA. Companies House separately recorded Si-Fi Global Limited and Oaf America Ltd ceasing as persons with significant control and ArcLink Fiber (US) Limited becoming a person with significant control effective April 17. On June 5, the U.S. LLC filed Chapter 11, joint administrators were appointed to the UK parent, and the administrators completed a £600,000 pre-pack sale of the UK company's business and certain assets to ArcLink, with its remaining staff transferring to the purchaser. The operating platform remains classified Active at the portfolio level, while the UK legal entity remains in administration.",
+        "companyStatus": "ACTIVE",
+        "website": null,
+        "yearFounded": null,
+        "headquarters": "California; Michigan; Florida; Wisconsin; multi-city U.S. operations",
+        "recordStatus": "PUBLISHED",
+        "createdAt": "2026-04-12T04:41:28.821000"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmoqc7nze05z5171ftya1ijq3",
+      "evidence": {
+        "publisher": "County Times",
+        "url": "https://www.countytimes.co.uk/news/26050380.mike-harris-firm-sifi-networks-america-sold-new-owners/",
+        "evidenceDate": "2026-04-24",
+        "finding": "County Times reported on April 24, 2026 that founders Mike Harris and Roland Pickstock sold SiFi Networks America LLC to APG and PATRIZIA for an undisclosed price."
+      },
+      "current": {
+        "id": "cmoqc7nze05z5171ftya1ijq3",
+        "legacyId": "INF-2026-182",
+        "title": "Patrizia takes over SiFi Networks America",
+        "target": "SiFi Networks America LLC",
+        "sector": "DIGITAL",
+        "subsector": "Fiber Networks",
+        "region": "NORTH_AMERICA",
+        "categories": [
+          "ACQUISITION_BUYOUT"
+        ],
+        "date": "2026-04-22T10:00:00.000",
+        "description": "Patrizia’s Smart City Infrastructure Fund — a partnership with Dutch pension investor APG — took over SiFi Networks America from co-founder Mike Harris’s Ubuntu Business Holdings, consolidating the FiberCity platform under its existing infrastructure backers. SiFi designs, builds and operates open-access municipal fiber networks across the US under its FiberCity model, with active deployments spanning California, Wisconsin and other markets.",
+        "targetDescription": "SiFi Networks America LLC, a fiber networks business or asset in United States.",
+        "country": "United States",
+        "enterpriseValue": null,
+        "equityValue": null,
+        "stake": null,
+        "dealStatus": "CLOSED",
+        "closingDate": null,
+        "assetScale": null,
+        "valuationMultiple": null,
+        "fundVehicle": null,
+        "keyHighlights": [
+          "Patrizia’s Smart City Infrastructure Fund — a partnership with Dutch pension investor APG — took over SiFi Networks America from co-founder Mike Harris’s Ubuntu Business Holdings, consolidating the FiberCity platform under its existing infrastructure backers. SiFi designs, builds and operates open-access municipal fiber networks across the US under its FiberCity model, with active deployments spanning California, Wisconsin and other markets."
+        ],
+        "recordStatus": "PUBLISHED",
+        "createdAt": "2026-05-03T22:23:39.818000",
+        "updatedAt": "2026-05-03T22:23:39.818000"
+      },
+      "proposed": {
+        "id": "cmoqc7nze05z5171ftya1ijq3",
+        "legacyId": "INF-2026-182",
+        "title": "Patrizia takes over SiFi Networks America",
+        "target": "SiFi Networks America LLC",
+        "sector": "DIGITAL",
+        "subsector": "Fiber Networks",
+        "region": "NORTH_AMERICA",
+        "categories": [
+          "ACQUISITION_BUYOUT"
+        ],
+        "date": "2026-04-22T10:00:00.000",
+        "description": "County Times reported that founders Mike Harris and Roland Pickstock sold SiFi Networks America LLC to APG, acting on behalf of Dutch pension funds, and PATRIZIA for an undisclosed price. The open-access FiberCity platform develops municipal fiber networks across the United States; the buyers said they would complete the rollout of existing cities while the founders pursued future city developments independently.",
+        "targetDescription": "SiFi Networks America LLC, a fiber networks business or asset in United States.",
+        "country": "United States",
+        "enterpriseValue": null,
+        "equityValue": null,
+        "stake": null,
+        "dealStatus": "CLOSED",
+        "closingDate": null,
+        "assetScale": null,
+        "valuationMultiple": null,
+        "fundVehicle": null,
+        "keyHighlights": [
+          "Founders Mike Harris and Roland Pickstock sold SiFi Networks America LLC to APG and PATRIZIA",
+          "The purchase price was not disclosed",
+          "APG and PATRIZIA said they would complete the rollout of existing FiberCity markets"
+        ],
+        "recordStatus": "PUBLISHED",
+        "createdAt": "2026-05-03T22:23:39.818000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_DELETE",
+      "id": "cmp1h7a71008bw41fvqm4mals",
+      "reason": "Remove low-signal platform-financing copy superseded by higher-signal ownership and restructuring events.",
+      "current": {
+        "id": "cmp1h7a71008bw41fvqm4mals",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "date": "Apr 2019",
+        "event": "The Smart City Infrastructure Fund and Whitehelm Capital backed SiFi's Fullerton FiberCity deployment.",
+        "category": "OTHER",
+        "sortDate": "2019-04-01T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_DELETE",
+      "id": "cmp1h7a71008cw41fe0scy81v",
+      "reason": "Remove low-signal platform-financing copy superseded by higher-signal ownership and restructuring events.",
+      "current": {
+        "id": "cmp1h7a71008cw41fe0scy81v",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "date": "May 2020",
+        "event": "SiFi announced Smart City Infrastructure Fund support for FiberCity growth.",
+        "category": "OTHER",
+        "sortDate": "2020-05-01T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_INSERT",
+      "id": "milestone_sifi_registry_control_20260417",
+      "evidence": [
+        {
+          "publisher": "Companies House",
+          "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history",
+          "evidenceDate": "2026-04-21",
+          "finding": "The filing history records Si-Fi Global Limited and Oaf America Ltd ceasing as persons with significant control, and ArcLink Fiber (US) Limited becoming a person with significant control, effective April 17, 2026."
+        },
+        {
+          "publisher": "Companies House — S&W Partners joint administrators' report",
+          "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history/MzUyNjQwNDkzMGFkaXF6a2N4/document?format=pdf&download=0",
+          "evidenceDate": "2026-06-12",
+          "finding": "The official report states that joint administrators were appointed to SiFi Networks America Limited on June 5, 2026 and completed a £600,000 pre-pack sale of its business and certain assets to ArcLink that same day; it separately states that ArcLink had acquired a 73.3% shareholding before administration without giving the acquisition date."
+        }
+      ],
+      "proposed": {
+        "id": "milestone_sifi_registry_control_20260417",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "date": "Apr 17, 2026",
+        "event": "Companies House recorded Si-Fi Global Limited and Oaf America Ltd ceasing as persons with significant control and ArcLink Fiber (US) Limited becoming a person with significant control; the administrators later reported that ArcLink had acquired a 73.3% shareholding before administration.",
+        "category": "OTHER",
+        "sortDate": "2026-04-17T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_INSERT",
+      "id": "milestone_sifi_restructuring_20260605",
+      "evidence": [
+        {
+          "publisher": "United States Trustee Program",
+          "url": "https://www.justice.gov/ust/media/1445131/dl?inline=",
+          "evidenceDate": "2026-06-08",
+          "finding": "The U.S. Trustee filing identifies SiFi Networks America, LLC as the debtor in Chapter 11 case 26-10912 following its June 5, 2026 petition."
+        },
+        {
+          "publisher": "Companies House — S&W Partners joint administrators' report",
+          "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history/MzUyNjQwNDkzMGFkaXF6a2N4/document?format=pdf&download=0",
+          "evidenceDate": "2026-06-12",
+          "finding": "The official report states that joint administrators were appointed to SiFi Networks America Limited on June 5, 2026 and completed a £600,000 pre-pack sale of its business and certain assets to ArcLink that same day; it separately states that ArcLink had acquired a 73.3% shareholding before administration without giving the acquisition date."
+        }
+      ],
+      "proposed": {
+        "id": "milestone_sifi_restructuring_20260605",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "date": "Jun 5, 2026",
+        "event": "SiFi Networks America, LLC filed Chapter 11, joint administrators were appointed to SiFi Networks America Limited, and the administrators completed a £600,000 pre-pack sale of the UK company's business and certain assets to ArcLink.",
+        "category": "OTHER",
+        "sortDate": "2026-06-05T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h7a71008fw41fkl2pd5fn",
+      "evidence": {
+        "publisher": "County Times",
+        "url": "https://www.countytimes.co.uk/news/26050380.mike-harris-firm-sifi-networks-america-sold-new-owners/",
+        "evidenceDate": "2026-04-24",
+        "finding": "County Times reported on April 24, 2026 that founders Mike Harris and Roland Pickstock sold SiFi Networks America LLC to APG and PATRIZIA for an undisclosed price."
+      },
+      "current": {
+        "id": "cmp1h7a71008fw41fkl2pd5fn",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "date": "Apr 22, 2026",
+        "event": "Patrizia / APG Asset Management announced an acquisition of SiFi Networks America LLC from Ubuntu Business Holdings.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-04-22T04:00:00.000"
+      },
+      "proposed": {
+        "id": "cmp1h7a71008fw41fkl2pd5fn",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "date": "Apr 24, 2026",
+        "event": "County Times reported that founders Mike Harris and Roland Pickstock sold SiFi Networks America LLC to APG and PATRIZIA.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-04-24T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "SOURCE_INSERT",
+      "id": "source_sifi_administrator_report_20260612",
+      "evidence": {
+        "publisher": "Companies House — S&W Partners joint administrators' report",
+        "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history/MzUyNjQwNDkzMGFkaXF6a2N4/document?format=pdf&download=0",
+        "evidenceDate": "2026-06-12",
+        "finding": "The official report states that joint administrators were appointed to SiFi Networks America Limited on June 5, 2026 and completed a £600,000 pre-pack sale of its business and certain assets to ArcLink that same day; it separately states that ArcLink had acquired a 73.3% shareholding before administration without giving the acquisition date."
+      },
+      "proposed": {
+        "id": "source_sifi_administrator_report_20260612",
+        "label": "Companies House — SiFi Networks America administrators' proposals",
+        "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history/MzUyNjQwNDkzMGFkaXF6a2N4/document?format=pdf&download=0",
+        "type": "OTHER"
+      }
+    },
+    {
+      "actionType": "SOURCE_INSERT",
+      "id": "source_sifi_companies_house_08556605",
+      "evidence": {
+        "publisher": "Companies House",
+        "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history",
+        "evidenceDate": "2026-04-21",
+        "finding": "The filing history records Si-Fi Global Limited and Oaf America Ltd ceasing as persons with significant control, and ArcLink Fiber (US) Limited becoming a person with significant control, effective April 17, 2026."
+      },
+      "proposed": {
+        "id": "source_sifi_companies_house_08556605",
+        "label": "Companies House — SiFi Networks America Limited filing history",
+        "url": "https://find-and-update.company-information.service.gov.uk/company/08556605/filing-history",
+        "type": "OTHER"
+      }
+    },
+    {
+      "actionType": "SOURCE_INSERT",
+      "id": "source_sifi_us_trustee_26_10912",
+      "evidence": {
+        "publisher": "United States Trustee Program",
+        "url": "https://www.justice.gov/ust/media/1445131/dl?inline=",
+        "evidenceDate": "2026-06-08",
+        "finding": "The U.S. Trustee filing identifies SiFi Networks America, LLC as the debtor in Chapter 11 case 26-10912 following its June 5, 2026 petition."
+      },
+      "proposed": {
+        "id": "source_sifi_us_trustee_26_10912",
+        "label": "U.S. Trustee — SiFi Networks America LLC Chapter 11",
+        "url": "https://www.justice.gov/ust/media/1445131/dl?inline=",
+        "type": "OTHER"
+      }
+    }
+  ],
+  "quarantinedFields": [
+    {
+      "field": "Deal.closingDate",
+      "value": null,
+      "reason": "The April 17 PSC effective date evidences a registry control change, but no reviewed source explicitly identifies it as the legal closing date of the APG/PATRIZIA deal."
+    },
+    {
+      "field": "Deal.date",
+      "value": "2026-04-22T10:00:00.000",
+      "reason": "The existing deal date is preserved, but the County Times article metadata is April 24 and does not corroborate April 22 as the announcement or closing date."
+    },
+    {
+      "field": "Deal.target",
+      "value": "SiFi Networks America LLC",
+      "reason": "The deal names the U.S. LLC, while the portfolio card names the UK Limited parent; the identity relationship is documented in narrative and neither record is renamed."
+    },
+    {
+      "field": "Company.companyStatus",
+      "value": "ACTIVE",
+      "reason": "Status remains Active only at the operating-platform level because the UK company's business, certain assets, and remaining staff transferred to ArcLink; the UK legal entity itself remains in administration."
+    },
+    {
+      "field": "OwnershipPeriod:cmoxwdqb80135t01fqp4q97jv",
+      "value": "Ubuntu Business Holdings / investmentYear 2018 / exitYear 2026",
+      "reason": "This legacy indirect-owner row is guarded but not used to claim the April seller or exit: reviewed sources name founders Mike Harris and Roland Pickstock, while Companies House names Si-Fi Global Limited and Oaf America Ltd in the PSC transition."
+    },
+    {
+      "field": "DealParticipant:cmoqc8lpv069h171fw2uzlju9",
+      "value": "Ubuntu Business Holdings / SELLER",
+      "reason": "The legacy seller participant remains guarded because the reviewed article names the founders as sellers and does not establish Ubuntu Business Holdings as the direct transaction seller."
+    },
+    {
+      "field": "Milestone:cmp1h7a71008aw41fp62hrty0",
+      "value": "Ubuntu Business Holdings invested in 2018",
+      "reason": "The milestone remains guarded as a legacy fact; reviewed evidence supports an indirect Ubuntu relationship but does not establish this direct 2018 investment date."
+    },
+    {
+      "field": "OwnershipPeriod.stake",
+      "value": null,
+      "reason": "No new stake percentage is inferred for Patrizia, APG, or Ubuntu from the reviewed control and restructuring filings."
+    },
+    {
+      "field": "OwnershipPeriod.vehicleName",
+      "value": null,
+      "reason": "The existing reviewed vehicles are preserved; Arclink Fiber (US) Limited is not inferred to be a fund vehicle."
+    }
+  ],
+  "targetSnapshot": {
+    "deal": {
+      "id": "cmoqc7nze05z5171ftya1ijq3",
+      "legacyId": "INF-2026-182",
+      "title": "Patrizia takes over SiFi Networks America",
+      "target": "SiFi Networks America LLC",
+      "sector": "DIGITAL",
+      "subsector": "Fiber Networks",
+      "region": "NORTH_AMERICA",
+      "categories": [
+        "ACQUISITION_BUYOUT"
+      ],
+      "date": "2026-04-22T10:00:00.000",
+      "description": "Patrizia’s Smart City Infrastructure Fund — a partnership with Dutch pension investor APG — took over SiFi Networks America from co-founder Mike Harris’s Ubuntu Business Holdings, consolidating the FiberCity platform under its existing infrastructure backers. SiFi designs, builds and operates open-access municipal fiber networks across the US under its FiberCity model, with active deployments spanning California, Wisconsin and other markets.",
+      "targetDescription": "SiFi Networks America LLC, a fiber networks business or asset in United States.",
+      "country": "United States",
+      "enterpriseValue": null,
+      "equityValue": null,
+      "stake": null,
+      "dealStatus": "CLOSED",
+      "closingDate": null,
+      "assetScale": null,
+      "valuationMultiple": null,
+      "fundVehicle": null,
+      "keyHighlights": [
+        "Patrizia’s Smart City Infrastructure Fund — a partnership with Dutch pension investor APG — took over SiFi Networks America from co-founder Mike Harris’s Ubuntu Business Holdings, consolidating the FiberCity platform under its existing infrastructure backers. SiFi designs, builds and operates open-access municipal fiber networks across the US under its FiberCity model, with active deployments spanning California, Wisconsin and other markets."
+      ],
+      "recordStatus": "PUBLISHED",
+      "createdAt": "2026-05-03T22:23:39.818000",
+      "updatedAt": "2026-05-03T22:23:39.818000"
+    },
+    "company": {
+      "id": "cmnva0stx00o0m8lzgjspbysk",
+      "name": "SiFi Networks America Limited",
+      "sector": "DIGITAL",
+      "subsector": "Open-access fiber-to-the-home networks",
+      "region": "NORTH_AMERICA",
+      "country": "United States",
+      "countryTags": [
+        "United States"
+      ],
+      "description": "SiFi Networks funds, builds, and operates citywide open-access fiber networks under its FiberCity brand. Its customers are municipalities, wholesale internet service providers, businesses, and households connected through citywide fiber infrastructure. The business follows an asset-heavy digital infrastructure model in which it finances and deploys open-access networks and leases access to service providers rather than operating as a retail ISP. Public materials describe SiFi as a privately funded fiber platform with multiple city deployments and a national pipeline supported by institutional capital. The platform has expanded through project-level and joint-venture financings including the Future Fiber structure used to finance U.S. FTTH deployments. APG announced a 16.7% stake in SiFi in 2021 and a related investment program to support further network rollout, while the balance of the current ownership structure is not publicly disclosed.",
+      "companyStatus": "ACTIVE",
+      "website": null,
+      "yearFounded": null,
+      "headquarters": "California; Michigan; Florida; Wisconsin; multi-city U.S. operations",
+      "recordStatus": "PUBLISHED",
+      "createdAt": "2026-04-12T04:41:28.821000",
+      "updatedAt": "2026-04-25T17:01:10.375000"
+    },
+    "ownershipPeriods": [
+      {
+        "id": "cmoel64g400brvflzf4tbqlec",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zngh000cm8lzme5vwpma",
+        "organizationName": "APG Asset Management",
+        "vehicleName": "Smart City Infrastructure Fund (APG JV)",
+        "stake": null,
+        "investmentYear": 2021,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:01:10.276000"
+      },
+      {
+        "id": "cmoxwdq7d0134t01f8my5730t",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnva02gh005km8lz4ygt4z2w",
+        "organizationName": "Patrizia",
+        "vehicleName": "Smart City Infrastructure Fund",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-05-09T05:22:38.185000"
+      },
+      {
+        "id": "cmoxwdqb80135t01fqp4q97jv",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmoqbwo8f0010171fmzr030qo",
+        "organizationName": "Ubuntu Business Holdings",
+        "vehicleName": "Prior SiFi Networks America ownership",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": 2026,
+        "isActive": false,
+        "createdAt": "2026-05-09T05:22:38.324000"
+      }
+    ],
+    "participants": [
+      {
+        "id": "cmoqc8los069f171fve2bmd65",
+        "dealId": "cmoqc7nze05z5171ftya1ijq3",
+        "organizationId": "cmnva02gh005km8lz4ygt4z2w",
+        "organizationName": "Patrizia",
+        "role": "BUYER",
+        "displayName": "Patrizia / APG Asset Management"
+      },
+      {
+        "id": "cmoqc8lpc069g171fmy26ii3c",
+        "dealId": "cmoqc7nze05z5171ftya1ijq3",
+        "organizationId": "cmnv9zngh000cm8lzme5vwpma",
+        "organizationName": "APG Asset Management",
+        "role": "BUYER",
+        "displayName": "Patrizia / APG Asset Management"
+      },
+      {
+        "id": "cmoqc8lpv069h171fw2uzlju9",
+        "dealId": "cmoqc7nze05z5171ftya1ijq3",
+        "organizationId": "cmoqbwo8f0010171fmzr030qo",
+        "organizationName": "Ubuntu Business Holdings",
+        "role": "SELLER",
+        "displayName": "Ubuntu Business Holdings"
+      }
+    ],
+    "milestones": [
+      {
+        "id": "cmp1h7a71008aw41fp62hrty0",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "date": "2018",
+        "event": "Ubuntu Business Holdings invested in SiFi Networks America Limited through Prior SiFi Networks America ownership.",
+        "category": "FINANCING",
+        "sortDate": "2018-01-01T00:00:00.000"
+      },
+      {
+        "id": "cmp1h7a71008bw41fvqm4mals",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "date": "Apr 2019",
+        "event": "The Smart City Infrastructure Fund and Whitehelm Capital backed SiFi's Fullerton FiberCity deployment.",
+        "category": "OTHER",
+        "sortDate": "2019-04-01T04:00:00.000"
+      },
+      {
+        "id": "cmp1h7a71008cw41fe0scy81v",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "date": "May 2020",
+        "event": "SiFi announced Smart City Infrastructure Fund support for FiberCity growth.",
+        "category": "OTHER",
+        "sortDate": "2020-05-01T04:00:00.000"
+      },
+      {
+        "id": "cmp1h7a71008dw41fr36ty957",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "date": "Sep 7, 2021",
+        "event": "APG signed an agreement to acquire a 16.7% direct stake in SiFi Networks America and establish a U.S. fiber joint venture.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-09-07T04:00:00.000"
+      },
+      {
+        "id": "cmp1h7a71008ew41fsztr3pln",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "date": "Jun 2023",
+        "event": "Future Fiber, APG, and SiFi raised $350 million of seven-year financing for U.S. FTTH deployment.",
+        "category": "FINANCING",
+        "sortDate": "2023-06-01T04:00:00.000"
+      },
+      {
+        "id": "cmp1h7a71008fw41fkl2pd5fn",
+        "companyId": "cmnva0stx00o0m8lzgjspbysk",
+        "date": "Apr 22, 2026",
+        "event": "Patrizia / APG Asset Management announced an acquisition of SiFi Networks America LLC from Ubuntu Business Holdings.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-04-22T04:00:00.000"
+      }
+    ],
+    "citationToRetag": {
+      "id": "cmoxwllo1074pt01f26ya8owq",
+      "sourceId": "cmoqc916106ga171fmzltijtf",
+      "dealId": "cmoqc7nze05z5171ftya1ijq3",
+      "companyId": "cmnva0stx00o0m8lzgjspbysk",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "County Times - INF-2026-182 - SiFi Networks America LLC",
+      "sourceLabel": "County Times",
+      "sourceUrl": "https://www.countytimes.co.uk/news/26050380.mike-harris-firm-sifi-networks-america-sold-new-owners/",
+      "sourceType": "ARTICLE"
+    },
+    "citationUpdateConflicts": [],
+    "proposedSourceMatches": [],
+    "proposedCitationMatches": [],
+    "schema": {
+      "citationIsPrimary": false,
+      "sourceUrlUnique": true,
+      "citationIdentityIndex": {
+        "exists": true,
+        "isUnique": true,
+        "isValid": true,
+        "isReady": true,
+        "nullsNotDistinct": true,
+        "definition": "CREATE UNIQUE INDEX \"Citation_company_identity_unique\" ON public.\"Citation\" USING btree (\"companyId\", \"sourceId\", purpose, \"evidenceLabel\", \"dealId\") NULLS NOT DISTINCT WHERE (\"companyId\" IS NOT NULL)"
+      }
+    },
+    "tableCounts": {
+      "deals": 352,
+      "dealParticipants": 612,
+      "companies": 1191,
+      "ownershipPeriods": 1410,
+      "milestones": 4229,
+      "sources": 4853,
+      "citations": 10232
+    }
+  }
+}

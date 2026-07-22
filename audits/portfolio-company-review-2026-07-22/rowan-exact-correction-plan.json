@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "scope": "ROWAN_MILESTONE_AND_QUINBROOK_VEHICLE_EXACT_ID_REMEDIATION",
+  "database": {
+    "host": "ep-dawn-sky-amaxdqe4-pooler.c-5.us-east-1.aws.neon.tech",
+    "database": "neondb"
+  },
+  "timestampRepresentation": {
+    "databaseType": "timestamp without time zone",
+    "serialization": "raw PostgreSQL wall-clock value via to_char; no JavaScript Date conversion and no timezone suffix",
+    "millisecondsFormat": "YYYY-MM-DD\"T\"HH24:MI:SS.MS",
+    "microsecondsFormat": "YYYY-MM-DD\"T\"HH24:MI:SS.US"
+  },
+  "reviewedBasis": {
+    "actionCount": 2,
+    "actionSetSha256": "6667fe6d5e0168d451a96b329f0b1fb82aecbd554d611c6b276375af199b12a1",
+    "manifestSha256": "14c278422fdccc61bf6b19d3caa3651ea4287828279ca878a15c064a28a9de62"
+  },
+  "snapshotSha256": "6d00d5e14bf92942426821b67b2489ec72fc31c65be66c658452da34e52d3980",
+  "tableCounts": {
+    "companies": 1191,
+    "deals": 352,
+    "dealParticipants": 612,
+    "organizations": 325,
+    "ownershipPeriods": 1410,
+    "milestones": 4229,
+    "managementRoles": 38,
+    "sources": 4856,
+    "citations": 10235
+  },
+  "counts": {
+    "ownershipUpdates": 1,
+    "milestoneUpdates": 1,
+    "guardedRows": 24,
+    "quarantinedFields": 4
+  },
+  "actions": [
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h8wg602tcw41f91blqqbv",
+      "evidence": [
+        {
+          "publisher": "Rowan Digital Infrastructure / PR Newswire",
+          "url": "https://www.prnewswire.com/news-releases/rowan-digital-infrastructure-announces-strategic-recapitalization-302738729.html",
+          "evidenceDate": "2026-04-09",
+          "finding": "The official transaction release says Blackstone-affiliated funds acquired a significant minority stake and describes Rowan as backed by Quinbrook and Blackstone; it does not state that Quinbrook retained control."
+        }
+      ],
+      "current": {
+        "id": "cmp1h8wg602tcw41f91blqqbv",
+        "companyId": "cmnva0p6h00ibm8lzimyld7ll",
+        "companyName": "Rowan Digital Infrastructure",
+        "date": "Apr 9, 2026",
+        "event": "Blackstone-affiliated funds acquired a significant minority stake in Rowan Digital Infrastructure, while Quinbrook retained control.",
+        "category": "FINANCING",
+        "sortDate": "2026-04-09T04:00:00.000"
+      },
+      "proposed": {
+        "id": "cmp1h8wg602tcw41f91blqqbv",
+        "companyId": "cmnva0p6h00ibm8lzimyld7ll",
+        "companyName": "Rowan Digital Infrastructure",
+        "date": "Apr 9, 2026",
+        "event": "Blackstone-affiliated funds acquired a significant minority stake in Rowan Digital Infrastructure in a strategic recapitalization alongside Quinbrook.",
+        "category": "FINANCING",
+        "sortDate": "2026-04-09T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoelb02q009t2olz7zuhjvwx",
+      "evidence": [
+        {
+          "publisher": "Quinbrook",
+          "url": "https://www.quinbrook.com/our-portfolio/rowan-digital-infrastructure/",
+          "evidenceDate": "2026-07-22",
+          "finding": "Quinbrook's official portfolio history says Rowan was established in 2020; it does not disclose a named ownership fund or vehicle."
+        }
+      ],
+      "current": {
+        "id": "cmoelb02q009t2olz7zuhjvwx",
+        "companyId": "cmnva0p6h00ibm8lzimyld7ll",
+        "companyName": "Rowan Digital Infrastructure",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zwqi003lm8lz8b6lw1bs",
+        "organizationName": "Quinbrook",
+        "vehicleName": "Founded by Quinbrook in 2022",
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:04:57.890000"
+      },
+      "proposed": {
+        "id": "cmoelb02q009t2olz7zuhjvwx",
+        "companyId": "cmnva0p6h00ibm8lzimyld7ll",
+        "companyName": "Rowan Digital Infrastructure",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zwqi003lm8lz8b6lw1bs",
+        "organizationName": "Quinbrook",
+        "vehicleName": null,
+        "stake": null,
+        "investmentYear": 2020,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:04:57.890000"
+      }
+    }
+  ],
+  "seedExpectation": {
+    "companyName": "Rowan Digital Infrastructure",
+    "topLevelOwnershipVehicle": "n.a.",
+    "milestone": {
+      "date": "Apr 9, 2026",
+      "event": "Blackstone-affiliated funds acquired a significant minority stake in Rowan Digital Infrastructure in a strategic recapitalization alongside Quinbrook.",
+      "category": "Financing"
+    },
+    "owners": [
+      {
+        "investmentFirm": "Quinbrook",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2020,
+        "status": "Active"
+      },
+      {
+        "investmentFirm": "Blackstone",
+        "ownershipVehicle": "n.a.",
+        "investmentYear": 2026,
+        "status": "Active"
+      }
+    ]
+  },
+  "quarantinedFields": [
+    {
+      "field": "Rowan.OwnershipPeriod.Blackstone.vehicleName",
+      "value": "Strategic minority stake",
+      "reason": "The requested exact correction targets only the self-contradictory Quinbrook vehicle; Blackstone's active ownership row is preserved exactly."
+    },
+    {
+      "field": "Rowan.Citation.evidenceLabel",
+      "value": "Quinbrook initial investment / ownership",
+      "reason": "The existing official ownership citation already has a clear, accurate label and purpose, so changing it would be unnecessary scope expansion."
+    },
+    {
+      "field": "Rowan.Deal.closingDate",
+      "value": null,
+      "reason": "The official April 9 release uses completed-acquisition language but does not disclose a separate closing date; the CLOSED deal and null closingDate remain protected."
+    },
+    {
+      "field": "Rowan.seed.ownershipVehicle",
+      "value": "n.a.",
+      "reason": "The string-only PortCo seed schema uses n.a. as the canonical undisclosed-vehicle representation; the live normalized value is null because no fund or vehicle is disclosed."
+    }
+  ],
+  "generatedAt": "2026-07-22T21:54:59.855Z",
+  "dryRun": true,
+  "planSha256": "0dcec0aef5357f45a2400eefd906e5d1f5a105aedffeac6a8feddefed8efdf79"
+}

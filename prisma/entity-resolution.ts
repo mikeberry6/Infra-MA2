@@ -12,14 +12,14 @@ export const ORG_CANONICAL: Record<string, string> = {
   "Macquarie Infrastructure Partners": "Macquarie Asset Management",
   "Northleaf Capital": "Northleaf",
   "Blackstone Energy Transition Partners": "Blackstone",
-  "InfraBridge": "DigitalBridge",
+  InfraBridge: "DigitalBridge",
   "Blackstone Infrastructure": "Blackstone",
   "Brookfield Infrastructure": "Brookfield Asset Management",
   "Brookfield Renewable": "Brookfield Asset Management",
-  "IFM": "IFM Investors",
+  IFM: "IFM Investors",
   "Greencoat Renewables": "Schroders Greencoat",
   "Goldman Sachs Alternatives": "Goldman Sachs Asset Management",
-  "Apollo": "Apollo Global Management",
+  Apollo: "Apollo Global Management",
   "Apollo-managed funds": "Apollo Global Management",
   "Apollo Funds": "Apollo Global Management",
   "Vauban Infrastructure": "Vauban Infrastructure Partners",
@@ -28,22 +28,23 @@ export const ORG_CANONICAL: Record<string, string> = {
   "APG Infrastructure": "APG Asset Management",
   "Quinbrook Infrastructure Partners": "Quinbrook Infrastructure",
   "Basalt Infrastructure": "Basalt Infrastructure Partners",
-  "EIG": "EIG Global Energy Partners",
-  "InfraVia": "InfraVia Capital Partners",
-  "Brookfield Infrastructure Structured Solutions": "Brookfield Asset Management",
+  EIG: "EIG Global Energy Partners",
+  InfraVia: "InfraVia Capital Partners",
+  "Brookfield Infrastructure Structured Solutions":
+    "Brookfield Asset Management",
   "Standard Solar / Brookfield": "Brookfield Asset Management",
   "Mainstay Maritime": "Oaktree Capital",
   "Brookfield / La Caisse": "Brookfield Asset Management",
   "Global Infrastructure Partners": "GIP",
   "Global Infrastructure Partners / BlackRock": "GIP",
-  "EQT": "EQT Infrastructure",
-  "NBIM": "Norges Bank Investment Management",
+  EQT: "EQT Infrastructure",
+  NBIM: "Norges Bank Investment Management",
 
   // Cross-dataset resolution: portco.investmentFirm -> fund.managerName
   "3i Infrastructure": "3i Group",
   "ADIA Infrastructure": "Abu Dhabi Investment Authority (ADIA)",
   "CC&L": "Connor, Clark & Lunn",
-  "CDPQ": "La Caisse de dépôt (CDPQ)",
+  CDPQ: "La Caisse de dépôt (CDPQ)",
   "La Caisse": "La Caisse de dépôt (CDPQ)",
 };
 
@@ -90,6 +91,9 @@ export const NON_INFRA_FUND_ENTITIES = new Set([
   "CleanPeak Energy",
   "BrightNight",
   "BMO Financial Group",
+  "Comstock Resources",
+  "United Community Bank",
+  "EDF Group",
   "Halliburton",
   "Craftskills Energy",
   "J&V Energy",
@@ -98,6 +102,7 @@ export const NON_INFRA_FUND_ENTITIES = new Set([
   "Kimmeridge Energy",
   "Caturus",
   "DivcoWest",
+  "Ocean Winds",
 ]);
 
 // Resolve an organization name to its canonical form
@@ -113,9 +118,14 @@ export function resolveOrgName(name: string): string {
 }
 
 // Determine org type for a name
-export function getOrgType(name: string): "FUND_MANAGER" | "CORPORATE" | "OTHER" {
+export function getOrgType(
+  name: string,
+): "FUND_MANAGER" | "CORPORATE" | "OTHER" {
   const canonical = resolveOrgName(name);
-  if (NON_INFRA_FUND_ENTITIES.has(name) || NON_INFRA_FUND_ENTITIES.has(canonical)) {
+  if (
+    NON_INFRA_FUND_ENTITIES.has(name) ||
+    NON_INFRA_FUND_ENTITIES.has(canonical)
+  ) {
     return "CORPORATE";
   }
   return "FUND_MANAGER";

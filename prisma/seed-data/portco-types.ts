@@ -33,9 +33,20 @@ export type PortCoRegion =
   | "Latin America"
   | "Global";
 
-export type PortCoCountryTag = "United States" | "Canada" | "Mexico";
+export type PortCoCountryTag =
+  | "United States"
+  | "Canada"
+  | "Mexico"
+  | "France"
+  | "United Kingdom";
 
-export const PORTCO_COUNTRY_TAGS: PortCoCountryTag[] = ["United States", "Canada", "Mexico"];
+export const PORTCO_COUNTRY_TAGS: PortCoCountryTag[] = [
+  "United States",
+  "Canada",
+  "Mexico",
+  "France",
+  "United Kingdom",
+];
 
 export type PortCoStatus = "Active" | "Realized";
 
@@ -50,6 +61,8 @@ export interface PortCoSource {
   type?: SourceFormat;
   purpose?: SourcePurpose;
   evidenceLabel?: string;
+  /** Optional deal relation for a source that evidences both the company card and a deal. */
+  dealLegacyId?: string;
 }
 
 export interface PortCoOwner {
@@ -143,6 +156,8 @@ const COUNTRY_TAG_COLORS: Record<PortCoCountryTag, string> = {
   "United States": "#3b82f6",
   "Canada": "#ef4444",
   "Mexico": "#22c55e",
+  "France": "#2563eb",
+  "United Kingdom": "#6366f1",
 };
 
 export function getPortCoCountryTagColor(tag: string): string {

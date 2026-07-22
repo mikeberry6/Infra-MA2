@@ -1,0 +1,715 @@
+{
+  "schemaVersion": 1,
+  "scope": "EVIDENCE_GATED_NON_IDENTITY_RESIDUAL_CORRECTIONS",
+  "databaseTarget": {
+    "host": "ep-dawn-sky-amaxdqe4-pooler.c-5.us-east-1.aws.neon.tech",
+    "database": "neondb",
+    "port": "5432",
+    "schema": "public"
+  },
+  "reviewedManifestSha256": "51af7ad4f77b64d46ea4f856bbd2f0e51b3d03484bdb7ce94d4b378f14e531b3",
+  "seedSha256": "00caa33236a89c5eab438b83780993f985d096737c57c188576ad082f13b8232",
+  "actionSetSha256": "cc74f7ba9889664fa965f2a9ea81c53ceea66ef32b33d0336ec9aff92eaa1b8f",
+  "executionSha256": "5332401fa7e1138fefb7461c5a5bcd96017a9fa8ebb60d6556e5d2baadb30bb2",
+  "snapshotSha256": "f86b8db1fc2c0ad5f9cf0df037c69975f1c7fd3cf501c42e668e30f3f34aa1bb",
+  "actionCount": 42,
+  "state": "APPLIED",
+  "preparedAt": "2026-07-22T22:39:43.724Z",
+  "planSha256": "48af934ad31098dded1b24af3e852f8fb42dc428ca272e2d48d504e38fd135c5",
+  "rollback": [
+    {
+      "actionType": "CITATION_INSERT",
+      "id": "res_cit_supervia_2022",
+      "deleteInsertedRow": true,
+      "expectedApplied": {
+        "id": "res_cit_supervia_2022",
+        "sourceId": "res_src_supervia_2022",
+        "dealId": null,
+        "companyId": "cmnva162v019jm8lz4lm3ae96",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "MIP V signed and closed a 50% acquisition in 2022"
+      }
+    },
+    {
+      "actionType": "CITATION_INSERT",
+      "id": "res_cit_power_factors_vista_2021",
+      "deleteInsertedRow": true,
+      "expectedApplied": {
+        "id": "res_cit_power_factors_vista_2021",
+        "sourceId": "j26_source_78a7d470e780ded2de7a407c",
+        "dealId": null,
+        "companyId": "j26_company_73d971e0f59d91410eff4415",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Vista became majority owner in 2021"
+      }
+    },
+    {
+      "actionType": "CITATION_INSERT",
+      "id": "res_cit_homer_2011",
+      "deleteInsertedRow": true,
+      "expectedApplied": {
+        "id": "res_cit_homer_2011",
+        "sourceId": "res_src_homer_2011",
+        "dealId": null,
+        "companyId": "cmnva0ob200gwm8lzylau3hcz",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Vision Ridge portfolio-company formation in 2011"
+      }
+    },
+    {
+      "actionType": "CITATION_INSERT",
+      "id": "res_cit_altius_2018",
+      "deleteInsertedRow": true,
+      "expectedApplied": {
+        "id": "res_cit_altius_2018",
+        "sourceId": "res_src_altius_2018",
+        "dealId": null,
+        "companyId": "cmnva0s6p00mvm8lz161gv8op",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Altius formation and owner-entry evidence"
+      }
+    },
+    {
+      "actionType": "SOURCE_INSERT",
+      "id": "res_src_supervia_2022",
+      "deleteInsertedRow": true,
+      "expectedApplied": {
+        "id": "res_src_supervia_2022",
+        "label": "The Legal 500 — Macquarie Supervía acquisition",
+        "url": "https://www.legal500.com/gc-powerlist/mexico-2022/thomas-heather/",
+        "type": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "SOURCE_INSERT",
+      "id": "res_src_homer_2011",
+      "deleteInsertedRow": true,
+      "expectedApplied": {
+        "id": "res_src_homer_2011",
+        "label": "Rockefeller Brothers Fund — Homer case study",
+        "url": "https://www.rbf.org/sites/default/files/rbf-investing-2020-report-final-pages.pdf",
+        "type": "PRESENTATION"
+      }
+    },
+    {
+      "actionType": "SOURCE_INSERT",
+      "id": "res_src_altius_2018",
+      "deleteInsertedRow": true,
+      "expectedApplied": {
+        "id": "res_src_altius_2018",
+        "label": "Altius Minerals — 2018 formation of Altius Renewable Royalties",
+        "url": "https://altiusminerals.com/_resources/esg/2020-12-22-sustainability-report-final-1608747310-1668212299.pdf?v=040103",
+        "type": "PRESENTATION"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwopcp0cq7t01fb6hr83te",
+      "restore": {
+        "id": "cmoxwopcp0cq7t01fb6hr83te",
+        "sourceId": "cmnva7oz907osm8lz987ptj4j",
+        "dealId": null,
+        "companyId": "cmnva0r2f00lkm8lzgbr17l7i",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ridgewoodinfrastructure — Ecosave"
+      },
+      "expectedApplied": {
+        "id": "cmoxwopcp0cq7t01fb6hr83te",
+        "sourceId": "cmnva7oz907osm8lz987ptj4j",
+        "dealId": null,
+        "companyId": "cmnva0r2f00lkm8lzgbr17l7i",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Ridgewood portfolio evidence; original investment date not disclosed"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwo8t60bwbt01friox8cn3",
+      "restore": {
+        "id": "cmoxwo8t60bwbt01friox8cn3",
+        "sourceId": "cmnva5op006glm8lzvry9ospn",
+        "dealId": null,
+        "companyId": "cmnva0neh00ffm8lzahvamxj4",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Portfolio evidence source — Manulife — Back Bay Solar, LLC"
+      },
+      "expectedApplied": {
+        "id": "cmoxwo8t60bwbt01friox8cn3",
+        "sourceId": "cmnva5op006glm8lzvry9ospn",
+        "dealId": null,
+        "companyId": "cmnva0neh00ffm8lzahvamxj4",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Manulife Fund I portfolio evidence; original investment date not disclosed"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwo82e0buyt01fnf14hjku",
+      "restore": {
+        "id": "cmoxwo82e0buyt01fnf14hjku",
+        "sourceId": "cmnvaf13h0cewm8lzwv4ecvvu",
+        "dealId": null,
+        "companyId": "cmnva162v019jm8lz4lm3ae96",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Macquarie operations / asset details"
+      },
+      "expectedApplied": {
+        "id": "cmoxwo82e0buyt01fnf14hjku",
+        "sourceId": "cmnvaf13h0cewm8lzwv4ecvvu",
+        "dealId": null,
+        "companyId": "cmnva162v019jm8lz4lm3ae96",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Macquarie current portfolio evidence"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwnu510b5mt01f7usucw1g",
+      "restore": {
+        "id": "cmoxwnu510b5mt01f7usucw1g",
+        "sourceId": "cmnvadx7j0bohm8lzvfee62sb",
+        "dealId": null,
+        "companyId": "cmnva13d80163m8lz0yrzfcfe",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Portfolio evidence — I Squared Capital — Palmetto"
+      },
+      "expectedApplied": {
+        "id": "cmoxwnu510b5mt01f7usucw1g",
+        "sourceId": "cmnvadx7j0bohm8lzvfee62sb",
+        "dealId": null,
+        "companyId": "cmnva13d80163m8lz0yrzfcfe",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current I Squared InfraTech portfolio evidence; original investment date not disclosed"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwnt4x0b3st01fk6z7dt4n",
+      "restore": {
+        "id": "cmoxwnt4x0b3st01fk6z7dt4n",
+        "sourceId": "cmoqcg7ru092x171fyjec8fnw",
+        "dealId": null,
+        "companyId": "cmnva1379015um8lztkdg1cvl",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "I Squared Capital transaction announcement"
+      },
+      "expectedApplied": {
+        "id": "cmoxwnt4x0b3st01fk6z7dt4n",
+        "sourceId": "cmoqcg7ru092x171fyjec8fnw",
+        "dealId": null,
+        "companyId": "cmnva1379015um8lztkdg1cvl",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "I Squared portfolio-company evidence; original investment date not disclosed"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwnnsy0auat01fvrxlkmw6",
+      "restore": {
+        "id": "cmoxwnnsy0auat01fvrxlkmw6",
+        "sourceId": "cmnva7c8d07h2m8lzpzc1h7v7",
+        "dealId": null,
+        "companyId": "cmnva0qn700ksm8lz9gbfksqb",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Graingp company profile"
+      },
+      "expectedApplied": {
+        "id": "cmoxwnnsy0auat01fvrxlkmw6",
+        "sourceId": "cmnva7c8d07h2m8lzpzc1h7v7",
+        "dealId": null,
+        "companyId": "cmnva0qn700ksm8lz9gbfksqb",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Grain portfolio evidence; original investment date not disclosed"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwnh470ai5t01f0tc694ql",
+      "restore": {
+        "id": "cmoxwnh470ai5t01f0tc694ql",
+        "sourceId": "cmnvad88l0b8am8lz0rit94st",
+        "dealId": null,
+        "companyId": "cmnva11xs013lm8lzbijxthhl",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Portfolio evidence source — Generate Capital — EnviraPAC Monticello"
+      },
+      "expectedApplied": {
+        "id": "cmoxwnh470ai5t01f0tc694ql",
+        "sourceId": "cmnvad88l0b8am8lz0rit94st",
+        "dealId": null,
+        "companyId": "cmnva11xs013lm8lzbijxthhl",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Generate-backed project evidence; original investment date not disclosed"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwmvnu09ett01famfaa55k",
+      "restore": {
+        "id": "cmoxwmvnu09ett01famfaa55k",
+        "sourceId": "cmnvabjdy0a5sm8lz3d8pv761",
+        "dealId": null,
+        "companyId": "cmnva0yth00y3m8lzxujaneei",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CPP Investments transaction announcement"
+      },
+      "expectedApplied": {
+        "id": "cmoxwmvnu09ett01famfaa55k",
+        "sourceId": "cmnvabjdy0a5sm8lz3d8pv761",
+        "dealId": null,
+        "companyId": "cmnva0yth00y3m8lzxujaneei",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Non-binding MOU; development remains subject to approvals and definitive agreements"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwlxnz07qst01f5hsiqj5t",
+      "restore": {
+        "id": "cmoxwlxnz07qst01f5hsiqj5t",
+        "sourceId": "cmnva9tiq0920m8lzdpknvey1",
+        "dealId": null,
+        "companyId": "cmnva0vbn00scm8lzk6qev06f",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Astatineip — Twin Parking Holdings"
+      },
+      "expectedApplied": {
+        "id": "cmoxwlxnz07qst01f5hsiqj5t",
+        "sourceId": "cmnva9tiq0920m8lzdpknvey1",
+        "dealId": null,
+        "companyId": "cmnva0vbn00scm8lzk6qev06f",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current Astatine portfolio evidence; original investment date not disclosed"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmnvaehz40c2rm8lzxlqqc8z8",
+      "restore": {
+        "id": "cmnvaehz40c2rm8lzxlqqc8z8",
+        "sourceId": "cmnvaehxi0c2qm8lznasl7f8x",
+        "dealId": null,
+        "companyId": "cmnva0yoj00xum8lzwg8dmzod",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null
+      },
+      "expectedApplied": {
+        "id": "cmnvaehz40c2rm8lzxlqqc8z8",
+        "sourceId": "cmnvaehxi0c2qm8lznasl7f8x",
+        "dealId": null,
+        "companyId": "cmnva0yoj00xum8lzwg8dmzod",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Mubadala 24.1% investment closing"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmnvaehw40c2pm8lz6fzwxurz",
+      "restore": {
+        "id": "cmnvaehw40c2pm8lz6fzwxurz",
+        "sourceId": "cmnvaehuj0c2om8lzaoowi0ey",
+        "dealId": null,
+        "companyId": "cmnva0yoj00xum8lzwg8dmzod",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null
+      },
+      "expectedApplied": {
+        "id": "cmnvaehw40c2pm8lz6fzwxurz",
+        "sourceId": "cmnvaehuj0c2om8lzaoowi0ey",
+        "dealId": null,
+        "companyId": "cmnva0yoj00xum8lzwg8dmzod",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Mubadala 24.1% investment closing and Caturus rebrand"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmnva9ep808s4m8lzycn8wj76",
+      "restore": {
+        "id": "cmnva9ep808s4m8lzycn8wj76",
+        "sourceId": "cmnva99bd08ojm8lz8l66biwv",
+        "dealId": null,
+        "companyId": "cmnva0ujt00qym8lztts9ejk4",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": null
+      },
+      "expectedApplied": {
+        "id": "cmnva9ep808s4m8lzycn8wj76",
+        "sourceId": "cmnva99bd08ojm8lz8l66biwv",
+        "dealId": null,
+        "companyId": "cmnva0ujt00qym8lztts9ejk4",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Current ArcLight Fund VIII portfolio evidence; original investment date not disclosed"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmnva531o0624m8lzcow3r63n",
+      "restore": {
+        "id": "cmnva531o0624m8lzcow3r63n",
+        "sourceId": "cmnva4zyl0602m8lzk8zi2lbr",
+        "dealId": null,
+        "companyId": "cmnva0ydv00xbm8lzgnyuwlc4",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null
+      },
+      "expectedApplied": {
+        "id": "cmnva531o0624m8lzcow3r63n",
+        "sourceId": "cmnva4zyl0602m8lzk8zi2lbr",
+        "dealId": null,
+        "companyId": "cmnva0ydv00xbm8lzgnyuwlc4",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ullico Infrastructure Fund ownership evidence"
+      }
+    },
+    {
+      "actionType": "MILESTONE_INSERT",
+      "id": "res_mil_supervia_macquarie_2022",
+      "deleteInsertedRow": true,
+      "expectedApplied": {
+        "id": "res_mil_supervia_macquarie_2022",
+        "companyId": "cmnva162v019jm8lz4lm3ae96",
+        "date": "2022",
+        "event": "Macquarie Infrastructure Partners V signed and closed the acquisition of 50% of Supervía Poniente from Grupo Copri.",
+        "category": "ACQUISITION",
+        "sortDate": "2022-01-01T00:00:00.000000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_INSERT",
+      "id": "res_mil_southern_star_ullico_2019",
+      "deleteInsertedRow": true,
+      "expectedApplied": {
+        "id": "res_mil_southern_star_ullico_2019",
+        "companyId": "cmnva0ydv00xbm8lzgnyuwlc4",
+        "date": "Feb 2019",
+        "event": "Southern Star announced a capital raise with Ullico Infrastructure Fund as a minority partner.",
+        "category": "FINANCING",
+        "sortDate": "2019-02-01T05:00:00.000000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_INSERT",
+      "id": "res_mil_power_factors_vista_2021",
+      "deleteInsertedRow": true,
+      "expectedApplied": {
+        "id": "res_mil_power_factors_vista_2021",
+        "companyId": "j26_company_73d971e0f59d91410eff4415",
+        "date": "2021",
+        "event": "Vista Equity Partners became the majority owner of Power Factors.",
+        "category": "ACQUISITION",
+        "sortDate": "2021-01-01T00:00:00.000000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_INSERT",
+      "id": "res_mil_homer_formation_2011",
+      "deleteInsertedRow": true,
+      "expectedApplied": {
+        "id": "res_mil_homer_formation_2011",
+        "companyId": "cmnva0ob200gwm8lzylau3hcz",
+        "date": "2011",
+        "event": "Renewable Resources Group established Homer as a Vision Ridge portfolio company to improve the resilience of California's water system.",
+        "category": "FINANCING",
+        "sortDate": "2011-01-01T00:00:00.000000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_INSERT",
+      "id": "res_mil_caturus_mubadala_close_20250807",
+      "deleteInsertedRow": true,
+      "expectedApplied": {
+        "id": "res_mil_caturus_mubadala_close_20250807",
+        "companyId": "cmnva0yoj00xum8lzwg8dmzod",
+        "date": "Aug 7, 2025",
+        "event": "Mubadala Energy closed a strategic investment for a 24.1% equity stake and SoTex HoldCo was rebranded as Caturus.",
+        "category": "FINANCING",
+        "sortDate": "2025-08-07T04:00:00.000000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_INSERT",
+      "id": "res_mil_altius_formation_2018",
+      "deleteInsertedRow": true,
+      "expectedApplied": {
+        "id": "res_mil_altius_formation_2018",
+        "companyId": "cmnva0s6p00mvm8lz161gv8op",
+        "date": "2018",
+        "event": "Altius Minerals formed Altius Renewable Royalties as a new subsidiary.",
+        "category": "FINANCING",
+        "sortDate": "2018-01-01T00:00:00.000000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_DELETE",
+      "id": "cmp1h7xq901ayw41fiausqy6e",
+      "restore": {
+        "id": "cmp1h7xq901ayw41fiausqy6e",
+        "companyId": "cmnva0yth00y3m8lzxujaneei",
+        "date": "2026",
+        "event": "TransAlta Keephills Data Centre JV was founded.",
+        "category": "FOUNDING",
+        "sortDate": "2026-01-01T00:00:00.000000"
+      },
+      "expectedApplied": {
+        "rowAbsent": true
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "j26_milestone_ffeef0fd3f2907e0d72be82c",
+      "restore": {
+        "id": "j26_milestone_ffeef0fd3f2907e0d72be82c",
+        "companyId": "j26_company_1687d4667f7fd0fe148ec99b",
+        "date": "May 2026",
+        "event": "Paceline Equity Partners records its R.E.L.A.M. exit in May 2026, and Basalt Infrastructure Partners lists RELAM among its current investments.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-05-01T00:00:00.000000"
+      },
+      "expectedApplied": {
+        "id": "j26_milestone_ffeef0fd3f2907e0d72be82c",
+        "companyId": "j26_company_1687d4667f7fd0fe148ec99b",
+        "date": "May 2026",
+        "event": "Paceline Equity Partners records its R.E.L.A.M. exit in May 2026, and Basalt Infrastructure Partners lists RELAM among its current investments.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-05-01T00:00:00.000000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h7gtk00iqw41ffsc3rvol",
+      "restore": {
+        "id": "cmp1h7gtk00iqw41ffsc3rvol",
+        "companyId": "cmnva0vbn00scm8lzk6qev06f",
+        "date": "2026",
+        "event": "Astatine Investment Partners identifies Twin Parking Holdings as an active transportation portfolio company.",
+        "category": "FINANCING",
+        "sortDate": "2026-01-01T00:00:00.000000"
+      },
+      "expectedApplied": {
+        "id": "cmp1h7gtk00iqw41ffsc3rvol",
+        "companyId": "cmnva0vbn00scm8lzk6qev06f",
+        "date": "2026",
+        "event": "Astatine Investment Partners identifies Twin Parking Holdings as an active transportation portfolio company.",
+        "category": "OTHER",
+        "sortDate": "2026-01-01T00:00:00.000000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "own_IYhDlVgAKBHXL_yItR2c",
+      "restore": {
+        "investmentYear": null,
+        "vehicleName": "Retained ownership",
+        "stake": "57%"
+      },
+      "expectedApplied": {
+        "investmentYear": 2018,
+        "vehicleName": "Retained ownership",
+        "stake": "57%"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "j26_owner_df3545c784510cc84bb2f28e",
+      "restore": {
+        "investmentYear": null,
+        "vehicleName": "Vista-managed investment",
+        "stake": "Existing investor (percentage undisclosed)"
+      },
+      "expectedApplied": {
+        "investmentYear": 2021,
+        "vehicleName": "Vista-managed investment",
+        "stake": "Existing investor (percentage undisclosed)"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoem3hba0038iilzxqskdojm",
+      "restore": {
+        "investmentYear": null,
+        "vehicleName": "MIP V / MMIF",
+        "stake": null
+      },
+      "expectedApplied": {
+        "investmentYear": 2022,
+        "vehicleName": "Macquarie Infrastructure Partners V",
+        "stake": "50%"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoelbmd800cm3alzmutnsowp",
+      "restore": {
+        "investmentYear": null,
+        "vehicleName": "Sustainable Asset Fund I & II",
+        "stake": null
+      },
+      "expectedApplied": {
+        "investmentYear": 2011,
+        "vehicleName": "Sustainable Asset Fund I & II",
+        "stake": null
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoelbkgl00ax3alzv8w7zi2o",
+      "restore": {
+        "investmentYear": null,
+        "vehicleName": "UIF",
+        "stake": null
+      },
+      "expectedApplied": {
+        "investmentYear": 2018,
+        "vehicleName": "UIF",
+        "stake": null
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoelbk4j00an3alznk8h3v36",
+      "restore": {
+        "investmentYear": null,
+        "vehicleName": "UIF",
+        "stake": null
+      },
+      "expectedApplied": {
+        "investmentYear": 2019,
+        "vehicleName": "UIF",
+        "stake": null
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoel9yev00840slzy1bcmd07",
+      "restore": {
+        "investmentYear": 2025,
+        "vehicleName": "Kimmeridge Flagship Funds",
+        "stake": null
+      },
+      "expectedApplied": {
+        "investmentYear": null,
+        "vehicleName": "Kimmeridge Flagship Funds",
+        "stake": null
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoel9jip009v01lzvvs8tdfg",
+      "restore": {
+        "investmentYear": 2025,
+        "vehicleName": "I Squared Capital",
+        "stake": null
+      },
+      "expectedApplied": {
+        "investmentYear": null,
+        "vehicleName": "I Squared Capital",
+        "stake": null
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoel83dz00b2y1lzdx1wxhkq",
+      "restore": {
+        "investmentYear": 2026,
+        "vehicleName": "Real Assets (Infrastructure)",
+        "stake": null
+      },
+      "expectedApplied": {
+        "investmentYear": null,
+        "vehicleName": "Real Assets (Infrastructure)",
+        "stake": null
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoel6fk80049w2lzr9aujnyi",
+      "restore": {
+        "investmentYear": 2024,
+        "vehicleName": "ArcLight Infrastructure Partners Fund VIII",
+        "stake": null
+      },
+      "expectedApplied": {
+        "investmentYear": null,
+        "vehicleName": "ArcLight Infrastructure Partners Fund VIII",
+        "stake": null
+      }
+    },
+    {
+      "actionType": "COMPANY_UPDATE",
+      "id": "cmnva162v019jm8lz4lm3ae96",
+      "restore": {
+        "yearFounded": 2013,
+        "description": "Supervía Poniente is an urban toll road in Mexico City linking the Santa Fe district with the Periférico corridor in the city's southwest. Its customers are passenger and commercial vehicle users that require faster road access into and out of one of Mexico City's main business districts. The operating model is asset-heavy and concession based, with toll revenue generated from a fixed transport corridor rather than from transport operations or rolling stock. The road comprises tunnels, elevated structures, and related urban highway infrastructure crossing complex topography in western Mexico City. The final section opened in 2013, and Macquarie Asset Management continues to identify Supervía as a portfolio transportation investment in Mexico; the current ownership percentages are not publicly disclosed."
+      },
+      "expectedApplied": {
+        "yearFounded": 2013,
+        "description": "Supervía Poniente is an urban toll road in Mexico City linking the Santa Fe district with the Periférico corridor in the city's southwest. Its customers are passenger and commercial vehicle users that require faster road access into and out of one of Mexico City's main business districts. The operating model is asset-heavy and concession based, with toll revenue generated from a fixed transport corridor rather than from transport operations or rolling stock. The road comprises tunnels, elevated structures, and related urban highway infrastructure crossing complex topography in western Mexico City. The final section opened in 2013. A 2022 Legal 500 profile of Macquarie Asset Management's Latin America M&A lead described Macquarie Infrastructure Partners V as having signed and closed the acquisition of 50% of Supervía Poniente from Grupo Copri, and Macquarie continues to identify Supervía as a portfolio transportation investment in Mexico."
+      }
+    },
+    {
+      "actionType": "COMPANY_UPDATE",
+      "id": "cmnva0yth00y3m8lzxujaneei",
+      "restore": {
+        "yearFounded": 2026,
+        "description": "TransAlta Keephills Data Centre JV is a development partnership for a large Alberta data-center project linked to dedicated power supply at the Keephills site. The venture is designed to serve high-density computing demand and depends on both digital-infrastructure development and long-term power procurement. Its model is asset-heavy because value is tied to site control, major capital deployment, and integrated electricity infrastructure rather than an asset-light colocation strategy. TransAlta announced in 2026 that it had entered into an MOU with CPP Investments and Brookfield for an initial approximately 230 MW project with potential to scale to 1 GW. Public sources reviewed do not disclose the ownership percentages of the development partners."
+      },
+      "expectedApplied": {
+        "yearFounded": null,
+        "description": "TransAlta Keephills Data Centre JV is a proposed development partnership for a large Alberta data-center project linked to dedicated power supply at the Keephills site. The venture is designed to serve high-density computing demand and depends on both digital-infrastructure development and long-term power procurement. Its model is asset-heavy because value would be tied to site control, major capital deployment, and integrated electricity infrastructure rather than an asset-light colocation strategy. On February 27, 2026, TransAlta announced a non-binding MOU with CPP Investments and Brookfield for an initial approximately 230 MW project with potential to scale to 1 GW. The parties stated that all development remained subject to regulatory approvals and definitive binding agreements, so no investment closing date or committed ownership percentages are recorded."
+      }
+    },
+    {
+      "actionType": "COMPANY_UPDATE",
+      "id": "cmnva0ob200gwm8lzylau3hcz",
+      "restore": {
+        "yearFounded": null,
+        "description": "Homer is a California water asset platform comprising water in storage, water rights, and related water storage infrastructure. Its end markets are public and private water users that require supply, storage, and water management solutions in a state facing structural water scarcity and groundwater regulation. The platform follows an asset-heavy model built around ownership or control of long-lived water assets rather than an asset-light advisory model. Public disclosures describe the business as a collection of strategic water assets in California, and the platform is managed by Renewable Resources Group, which focuses on land and water infrastructure. Vision Ridge identifies Homer as an active investment, and current public materials indicate that the asset base continues to be managed in partnership with RRG."
+      },
+      "expectedApplied": {
+        "yearFounded": 2011,
+        "description": "Homer is a California water asset platform comprising water in storage, water rights, and related water storage infrastructure. Its end markets are public and private water users that require supply, storage, and water management solutions in a state facing structural water scarcity and groundwater regulation. The platform follows an asset-heavy model built around ownership or control of long-lived water assets rather than an asset-light advisory model. Public disclosures describe the business as a collection of strategic water assets in California, and the platform is managed by Renewable Resources Group, which focuses on land and water infrastructure. A Rockefeller Brothers Fund case study states that Renewable Resources Group established Homer as a Vision Ridge portfolio company in 2011, and current public materials indicate that the asset base continues to be managed in partnership with RRG."
+      }
+    }
+  ],
+  "quarantinedFields": [
+    {
+      "company": "Phoenix Renewables",
+      "field": "investmentYear and milestones",
+      "proposedValue": null,
+      "reason": "ArcLight's dated SkyVest release does not name Phoenix and current portfolio evidence supplies no entry date."
+    },
+    {
+      "company": "Golden State / OnTrac / Tract",
+      "field": "Company identity and ownership",
+      "proposedValue": null,
+      "reason": "Complex identity replacements are excluded from this non-identity remediation."
+    },
+    {
+      "company": "Flamingo",
+      "field": "Ownership",
+      "proposedValue": null,
+      "reason": "The residual ownership inference is not supported strongly enough for an exact correction."
+    },
+    {
+      "company": "Chester County / Rocky Mountain / Trenton",
+      "field": "All proposed changes",
+      "proposedValue": null,
+      "reason": "Quarantined records remain outside this evidence-gated action set."
+    },
+    {
+      "company": "Sunstone Power",
+      "field": "live yearFounded and OwnershipPeriod.investmentYear",
+      "proposedValue": null,
+      "reason": "No primary source establishes a founding or sponsor-entry year; only seed pseudo-precision is removed."
+    },
+    {
+      "company": "Caturus Energy",
+      "field": "Kimmeridge original investment year",
+      "proposedValue": null,
+      "reason": "The August 2025 close establishes Mubadala's investment and continued Kimmeridge participation, not Kimmeridge's original entry date."
+    }
+  ],
+  "appliedAt": "2026-07-22T22:39:43.760Z",
+  "receiptSha256": "a3411a214b58f16372da310bc3738f6b5435b964a81f9850121dfbb25e6bc261"
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "scope": "STUDENT_TRANSPORTATION_ULLICO_OWNER_ENTRY_MILESTONE_EXACT_CORRECTION",
+  "databaseTarget": {
+    "host": "ep-dawn-sky-amaxdqe4-pooler.c-5.us-east-1.aws.neon.tech",
+    "database": "neondb",
+    "port": "5432",
+    "schema": "public"
+  },
+  "reviewedManifestSha256": "50441f9333bd937e72b8a32e8a21bcb85f0d271a3eb124b34ec65f5a2b1b768b",
+  "seedSha256": "b0e2fc568375424b7d9c66e62f40028c48eb0d47229e04c5acec8ec410443aa9",
+  "actionSetSha256": "3a12a79141e8996377373b3be4860719b1e0fbd5094a68681f1f0d1587c8c848",
+  "snapshotSha256": "890bb28810c337ffe96b36b2ca9830926c8e5f1da648d13c77c2bf6684cebb11",
+  "actionCount": 1,
+  "state": "APPLIED",
+  "preparedAt": "2026-07-22T22:50:26.313Z",
+  "planSha256": "62636ee09ea3b736201707af31c702117ece65645676b66f9bd8b13ccf48979e",
+  "rollback": [
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h7ukh0160w41f089a3908",
+      "expectedApplied": {
+        "id": "cmp1h7ukh0160w41f089a3908",
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "date": "Apr 27, 2018",
+        "event": "Student Transportation closed the take-private acquisition by a purchaser group sponsored by CDPQ and Ullico.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-04-27T04:00:00.000000"
+      },
+      "restore": {
+        "id": "cmp1h7ukh0160w41f089a3908",
+        "companyId": "cmnva0yee00xcm8lzevorlgbc",
+        "date": "Apr 27, 2018",
+        "event": "Student Transportation announced closing of the take-private acquisition by the CDPQ-led purchaser group.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-04-27T04:00:00.000000"
+      }
+    }
+  ],
+  "appliedAt": "2026-07-22T22:50:26.339Z",
+  "receiptSha256": "d192f57bbcc26bb0c4c1fae7774f31e2e0527cc2325b7e1a28e5e16444304ccf"
+}

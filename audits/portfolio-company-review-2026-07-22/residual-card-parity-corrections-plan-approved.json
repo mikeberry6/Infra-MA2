@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "scope": "ROVER_DESCRIPTION_VIGOR_SELLER_EXACT_ID_REMEDIATION",
+  "database": {
+    "host": "ep-dawn-sky-amaxdqe4-pooler.c-5.us-east-1.aws.neon.tech",
+    "database": "neondb"
+  },
+  "timestampRepresentation": {
+    "databaseType": "timestamp without time zone",
+    "serialization": "raw PostgreSQL wall-clock value via to_char; no JavaScript Date conversion and no timezone suffix",
+    "millisecondsFormat": "YYYY-MM-DD\"T\"HH24:MI:SS.MS",
+    "microsecondsFormat": "YYYY-MM-DD\"T\"HH24:MI:SS.US"
+  },
+  "reviewedBasis": {
+    "actionCount": 2,
+    "actionSetSha256": "fe5c6e1ae9a26d4be4633426119786b68144786f96687f17c5181849fba16355",
+    "manifestSha256": "f8bd33bfc554f1baf3c1af69c6a74c8f79c2a0f632df5d78040c9cf896467ac6"
+  },
+  "snapshotSha256": "18bb1c11d081f4a64425f16530a502656419bad5d5415f9c205a001d6c4dfc63",
+  "tableCounts": {
+    "companies": 1191,
+    "deals": 352,
+    "dealParticipants": 611,
+    "ownershipPeriods": 1410,
+    "milestones": 4229,
+    "managementRoles": 38,
+    "citations": 10232
+  },
+  "counts": {
+    "companyUpdates": 1,
+    "participantInserts": 1,
+    "protectedRows": 27,
+    "quarantinedFields": 3
+  },
+  "actions": [
+    {
+      "actionType": "COMPANY_UPDATE",
+      "id": "cmnva0xcg00vhm8lzllfqv37o",
+      "evidence": [
+        {
+          "publisher": "Blackstone and Ares Management",
+          "url": "https://www.blackstone.com/news/press/ares-acquires-stake-in-rover-pipeline-from-blackstone-energy-transition-partners-to-serve-growing-energy-demand-centers-across-north-america/",
+          "evidenceDate": "2026-04-29",
+          "finding": "Funds led by Ares Infrastructure Opportunities acquired Blackstone Energy Transition Partners' 32.4% Rover Pipeline stake on April 29, 2026."
+        }
+      ],
+      "current": {
+        "id": "cmnva0xcg00vhm8lzllfqv37o",
+        "name": "Rover Pipeline",
+        "sector": "MIDSTREAM",
+        "subsector": "Natural gas transmission",
+        "region": "NORTH_AMERICA",
+        "country": "United States",
+        "countryTags": [
+          "United States"
+        ],
+        "description": "Rover Pipeline transports natural gas from the Marcellus and Utica basins to markets in the US Midwest and Canada. Its customers are upstream producers, marketers, and downstream market participants that contract for long-haul transportation capacity. The asset is capital intensive and fee-based, with economics tied primarily to contracted transportation volumes rather than direct commodity ownership. Public disclosures describe Rover as one of the largest interstate natural gas pipelines built in the United States in recent decades. Energy Transfer sold an interest in the holding entity for Rover to Blackstone in 2017, while detailed current ownership percentages were not publicly disclosed in the cited primary materials.",
+        "companyStatus": "ACTIVE",
+        "website": null,
+        "yearFounded": null,
+        "headquarters": "Ohio, Michigan, West Virginia and Pennsylvania",
+        "recordStatus": "PUBLISHED",
+        "createdAt": "2026-04-12T04:41:34.672000",
+        "updatedAt": "2026-04-25T17:02:02.020000"
+      },
+      "proposed": {
+        "id": "cmnva0xcg00vhm8lzllfqv37o",
+        "name": "Rover Pipeline",
+        "sector": "MIDSTREAM",
+        "subsector": "Natural gas transmission",
+        "region": "NORTH_AMERICA",
+        "country": "United States",
+        "countryTags": [
+          "United States"
+        ],
+        "description": "Rover Pipeline transports natural gas from the Marcellus and Utica basins to markets in the US Midwest and Canada. Its customers are upstream producers, marketers, and downstream market participants that contract for long-haul transportation capacity. The asset is capital intensive and fee-based, with economics tied primarily to contracted transportation volumes rather than direct commodity ownership. Public disclosures describe Rover as one of the largest interstate natural gas pipelines built in the United States in recent decades. Energy Transfer sold an interest in the holding entity for Rover to Blackstone in 2017, and funds led by Ares Management's Infrastructure Opportunities strategy acquired Blackstone's 32.4% Rover stake in April 2026.",
+        "companyStatus": "ACTIVE",
+        "website": null,
+        "yearFounded": null,
+        "headquarters": "Ohio, Michigan, West Virginia and Pennsylvania",
+        "recordStatus": "PUBLISHED",
+        "createdAt": "2026-04-12T04:41:34.672000"
+      }
+    },
+    {
+      "actionType": "PARTICIPANT_INSERT",
+      "id": "participant_vigor_lone_star_seller_20260204",
+      "evidence": [
+        {
+          "publisher": "Vigor Marine Group and Antin Infrastructure Partners",
+          "url": "https://www.vigormarine.com/news-press/antin-to-acquire-vigor-marine-group",
+          "evidenceDate": "2026-02-04",
+          "finding": "The official release states that Antin reached an agreement with an affiliate of Lone Star Funds to acquire Vigor Marine Group and that the transaction remained subject to regulatory approvals."
+        }
+      ],
+      "proposed": {
+        "id": "participant_vigor_lone_star_seller_20260204",
+        "dealId": "cmnva487p05fym8lzq6z0rkyg",
+        "organizationId": "cmoxw8q2a0000t01fhj5dd9kv",
+        "organizationName": "Lone Star Funds",
+        "organizationTypes": [
+          "FUND_MANAGER"
+        ],
+        "organizationStatus": "PUBLISHED",
+        "role": "SELLER",
+        "displayName": "Lone Star Funds"
+      }
+    }
+  ],
+  "quarantinedFields": [
+    {
+      "field": "Vigor.Deal.dealStatus",
+      "value": "ANNOUNCED",
+      "reason": "The official release says the transaction remained subject to regulatory approvals; this tranche adds the disclosed seller but does not infer closing."
+    },
+    {
+      "field": "Vigor.OwnershipPeriod.Antin",
+      "value": null,
+      "reason": "A seller participant records a transaction role, not a completed ownership transition; Lone Star remains the active owner until closing evidence is available."
+    },
+    {
+      "field": "Rover.Company.otherFields",
+      "value": null,
+      "reason": "The reviewed Rover action changes only the stale description; every other Company field and all card dependency sets are protected exactly."
+    }
+  ],
+  "generatedAt": "2026-07-22T21:35:34.985Z",
+  "dryRun": true,
+  "planSha256": "8b4ce043c9e6a69907a2b55455fedce71033285ddde3d6d0e67c65e942197d80"
+}

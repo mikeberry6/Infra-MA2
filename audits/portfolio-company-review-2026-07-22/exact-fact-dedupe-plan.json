@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "scope": "EXACT_DUPLICATE_PUBLISHED_COMPANY_FACTS",
+  "generatedAt": "2026-07-22T20:06:35.047Z",
+  "database": {
+    "host": "ep-dawn-sky-amaxdqe4-pooler.c-5.us-east-1.aws.neon.tech",
+    "database": "neondb"
+  },
+  "planSha256": "a435b0e3de2b5c2dca2e063d87bdfec494d480b29bab053bfa40c66e3b7c06a6",
+  "counts": {
+    "ownershipRows": 1421,
+    "managementRows": 40,
+    "duplicateOwnershipGroups": 1,
+    "duplicateManagementGroups": 2,
+    "deleteOwnershipRows": 1,
+    "deleteManagementRows": 2
+  },
+  "ownershipSnapshotSha256": "3f42d59161cfeb01a320f377c4eea2db7400cf500ec508d667791c427cb6a4c0",
+  "managementSnapshotSha256": "53af5e234c9a23bc8e985b31c5820e6b7d46509dadb495309e0881fb3b4fc080",
+  "ownershipGroups": [
+    {
+      "identity": "cmnva0xqs00w7m8lz1jt6t84s|gic|gic infrastructure||2019||active",
+      "companyId": "cmnva0xqs00w7m8lz1jt6t84s",
+      "companyName": "Genesee & Wyoming Inc.",
+      "keep": {
+        "id": "cmoel7dho0048xdlz5ivscuwt",
+        "companyId": "cmnva0xqs00w7m8lz1jt6t84s",
+        "companyName": "Genesee & Wyoming Inc.",
+        "organizationId": "cmnv9zrbh001qm8lz5qwk1lz2",
+        "organizationName": "GIC",
+        "fundId": "cmnva0ghp00akm8lzoq7tblpa",
+        "fundName": "GIC Infrastructure",
+        "fundManagerName": "GIC",
+        "vehicleName": "GIC Infrastructure",
+        "stake": null,
+        "investmentYear": 2019,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25 17:02:08.652"
+      },
+      "delete": [
+        {
+          "id": "cmnva1ac601axm8lztr4wqqov",
+          "companyId": "cmnva0xqs00w7m8lz1jt6t84s",
+          "companyName": "Genesee & Wyoming Inc.",
+          "organizationId": null,
+          "organizationName": null,
+          "fundId": "cmnva0ghp00akm8lzoq7tblpa",
+          "fundName": "GIC Infrastructure",
+          "fundManagerName": "GIC",
+          "vehicleName": null,
+          "stake": null,
+          "investmentYear": 2019,
+          "exitYear": null,
+          "isActive": true,
+          "createdAt": "2026-04-12 04:41:51.51"
+        }
+      ]
+    }
+  ],
+  "managementGroups": [
+    {
+      "identity": "company_boralex_inc_2026|patrick decostre|president and chief executive officer||",
+      "companyId": "company_boralex_inc_2026",
+      "companyName": "Boralex Inc.",
+      "keep": {
+        "id": "role_boralex_patrick_decostre",
+        "companyId": "company_boralex_inc_2026",
+        "companyName": "Boralex Inc.",
+        "personId": "person_patrick_decostre",
+        "personName": "Patrick Decostre",
+        "title": "President and Chief Executive Officer",
+        "startDate": null,
+        "endDate": null
+      },
+      "delete": [
+        {
+          "id": "cmoxwjkcc063lt01f6xy8ftvq",
+          "companyId": "company_boralex_inc_2026",
+          "companyName": "Boralex Inc.",
+          "personId": "cmoxwjkbo063kt01fubjixazn",
+          "personName": "Patrick Decostre",
+          "title": "President and Chief Executive Officer",
+          "startDate": null,
+          "endDate": null
+        }
+      ]
+    },
+    {
+      "identity": "company_boralex_inc_2026|stéphane milot|executive vice president and chief financial officer (interim)||",
+      "companyId": "company_boralex_inc_2026",
+      "companyName": "Boralex Inc.",
+      "keep": {
+        "id": "role_boralex_stephane_milot",
+        "companyId": "company_boralex_inc_2026",
+        "companyName": "Boralex Inc.",
+        "personId": "person_stephane_milot",
+        "personName": "Stéphane Milot",
+        "title": "Executive Vice President and Chief Financial Officer (interim)",
+        "startDate": null,
+        "endDate": null
+      },
+      "delete": [
+        {
+          "id": "cmoxwjkdr063nt01fee7qcapx",
+          "companyId": "company_boralex_inc_2026",
+          "companyName": "Boralex Inc.",
+          "personId": "cmoxwjkd7063mt01fs6c11yd9",
+          "personName": "Stéphane Milot",
+          "title": "Executive Vice President and Chief Financial Officer (interim)",
+          "startDate": null,
+          "endDate": null
+        }
+      ]
+    }
+  ]
+}

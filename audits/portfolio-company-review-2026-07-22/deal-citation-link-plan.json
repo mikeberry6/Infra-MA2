@@ -1,0 +1,881 @@
+{
+  "schemaVersion": 1,
+  "scope": "STRICT_DETERMINISTIC_TARGET_EXACT_SOURCE_DEAL_CITATION_LINKS",
+  "generatedAt": "2026-07-22T20:33:23.421Z",
+  "database": {
+    "host": "ep-dawn-sky-amaxdqe4-pooler.c-5.us-east-1.aws.neon.tech",
+    "database": "neondb"
+  },
+  "dryRun": true,
+  "planSha256": "35b89adc351905ad6de424999bd67a74f32ae2941eff11c1b7f32d2d89e54db1",
+  "reviewedBasis": {
+    "coverageDatasetSha256": "952c49c3402ab5adb2867096abc823730e42d963dc66dc4fce6d342cf75a9053",
+    "updateSetSha256": "71df1951c5364c0981c6089ac6c918d6cb730d52bbace9499c1ad0c9557c49fd",
+    "updateCount": 26,
+    "dealCount": 25
+  },
+  "snapshot": {
+    "dealsSha256": "5c1e0219edb9093293830fe50614c84944bc3d8de187f7f7cf0a51778985dfa0",
+    "companiesSha256": "55b73cea53827dbb34ea28ed5e62f2806a77894991c908475bec66dc57863763",
+    "participantsSha256": "1ab44ceb0063ea1c84cfa5b1153f0aadadc1333c3f5e558b85a0afa63a1355d4",
+    "citationsSha256": "7724a19d9e5b76acc8de873d4aefbac4e5aabca1714c3d37a77136f93fede97f",
+    "sourcesSha256": "a211bc5f6d47bca864d693a4f76f5e8a49423f4563aceda6ab1909a0ddc7d9be"
+  },
+  "citationIsPrimary": false,
+  "citationIdentityIndex": {
+    "exists": true,
+    "isUnique": true,
+    "isValid": true,
+    "isReady": true,
+    "nullsNotDistinct": true,
+    "definition": "CREATE UNIQUE INDEX \"Citation_company_identity_unique\" ON public.\"Citation\" USING btree (\"companyId\", \"sourceId\", purpose, \"evidenceLabel\", \"dealId\") NULLS NOT DISTINCT WHERE (\"companyId\" IS NOT NULL)"
+  },
+  "coverageDatasetSha256": "952c49c3402ab5adb2867096abc823730e42d963dc66dc4fce6d342cf75a9053",
+  "coverageCounts": {
+    "DIRECT_DEAL_COMPANY_CITATION": 44,
+    "DETERMINISTIC_TARGET_MATCH": 29,
+    "PLATFORM_BOLT_ON_MILESTONE": 18,
+    "SOURCE_LINKED_REVIEW_CANDIDATE": 4,
+    "NO_PROVEN_EXISTING_COMPANY_RELATIONSHIP": 257,
+    "UNRESOLVED_AMBIGUITY": 0
+  },
+  "deterministicTargetDeals": 29,
+  "updateSetSha256": "71df1951c5364c0981c6089ac6c918d6cb730d52bbace9499c1ad0c9557c49fd",
+  "uniqueDealsToLink": 25,
+  "updates": [
+    {
+      "citationId": "cmoxwle4y06r2t01f7du0hzaj",
+      "companyId": "cmnva0sxp00o7m8lzb1vu9rrr",
+      "companyName": "Catalyze",
+      "identityClusterId": "cmnva0sxp00o7m8lzb1vu9rrr",
+      "dealId": "cmnva448e05eim8lzwberbpjy",
+      "legacyId": "INF-2026-003",
+      "target": "Catalyze",
+      "sourceId": "cmnva4k3j05qgm8lzvkvqozh8",
+      "sourceLabel": "Catalyze",
+      "sourceUrl": "https://catalyze.com/2026/01/26/catalyze-closes-100-mw-distributed-solar-tax-equity-financing-with-rbc/",
+      "dealCitationIds": [
+        "cmnva4k5705qhm8lzzluz7okz",
+        "cmnvcx4vs064l35lz4hg1yq65",
+        "cmoqc8mqg06av171fm4jzjrc3",
+        "cmoxwl7ay06ett01fnsupjtqu"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva448e05eim8lzwberbpjy",
+      "purpose": "FINANCING_FILINGS",
+      "evidenceLabel": "Catalyze financing or public filing",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwlk4h071wt01f0nrhjbyh",
+      "companyId": "cmnva0tj200p8m8lz8sb6e93u",
+      "companyName": "Vigor Marine Group",
+      "identityClusterId": "cmnva0tj200p8m8lz8sb6e93u",
+      "dealId": "cmnva487p05fym8lzq6z0rkyg",
+      "legacyId": "INF-2026-055",
+      "target": "Vigor Marine Group",
+      "sourceId": "cmnva4ov705tcm8lz2oiewgo7",
+      "sourceLabel": "Naval News",
+      "sourceUrl": "https://www.navalnews.com/naval-news/2026/02/french-private-equity-firm-antin-to-acquire-vigor-marine-group/",
+      "dealCitationIds": [
+        "cmnva4owy05tdm8lz3c24kf42",
+        "cmnvcx9ma066135lz6k0zqlpa",
+        "cmoqc8rhy06cb171fqez3423j",
+        "cmoxwl8zd06hpt01fxe6w9pkh"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva487p05fym8lzq6z0rkyg",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "Naval News - INF-2026-055 - Vigor Marine Group",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwllo1074pt01f26ya8owq",
+      "companyId": "cmnva0stx00o0m8lzgjspbysk",
+      "companyName": "SiFi Networks America Limited",
+      "identityClusterId": "cmnva0stx00o0m8lzgjspbysk",
+      "dealId": "cmoqc7nze05z5171ftya1ijq3",
+      "legacyId": "INF-2026-182",
+      "target": "SiFi Networks America LLC",
+      "sourceId": "cmoqc916106ga171fmzltijtf",
+      "sourceLabel": "County Times",
+      "sourceUrl": "https://www.countytimes.co.uk/news/26050380.mike-harris-firm-sifi-networks-america-sold-new-owners/",
+      "dealCitationIds": [
+        "cmoqc917n06gb171fqqnr74f4",
+        "cmoxwlcbd06nrt01ffs5gjz2l"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmoqc7nze05z5171ftya1ijq3",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "County Times - INF-2026-182 - SiFi Networks America LLC",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "CANONICAL_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwlpq007c9t01ftb5bua32",
+      "companyId": "cmnva0u3800q6m8lzunge3dpu",
+      "companyName": "Gate City Power",
+      "identityClusterId": "cmnva0u3800q6m8lzunge3dpu",
+      "dealId": "cmnva4cny05hjm8lzwud37i6n",
+      "legacyId": "INF-2026-113",
+      "target": "Gate City Power / Gate City Renewable Fuels / JET",
+      "sourceId": "cmnva4sjx05vlm8lzmllyj87k",
+      "sourceLabel": "PR Newswire",
+      "sourceUrl": "https://www.prnewswire.com/news-releases/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million-302709985.html",
+      "dealCitationIds": [
+        "cmnva4sln05vmm8lz4qwjw10y",
+        "cmnvcxd8s067635lzrv3rvmcg",
+        "cmoqc8v4o06dg171fy4ru8jkt",
+        "cmoxwla8606jyt01fjxhfio8n"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva4cny05hjm8lzwud37i6n",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "PR Newswire operations / asset details",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "TARGET_COMPONENT_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwlpsj07cdt01fw4c8cftf",
+      "companyId": "cmnva0u3v00q7m8lzeju2j5q0",
+      "companyName": "Gate City Renewable Fuels",
+      "identityClusterId": "cmnva0u3v00q7m8lzeju2j5q0",
+      "dealId": "cmnva4cny05hjm8lzwud37i6n",
+      "legacyId": "INF-2026-113",
+      "target": "Gate City Power / Gate City Renewable Fuels / JET",
+      "sourceId": "cmnva4sjx05vlm8lzmllyj87k",
+      "sourceLabel": "PR Newswire",
+      "sourceUrl": "https://www.prnewswire.com/news-releases/ara-energy-to-acquire-gate-city-power-gate-city-renewable-fuels-and-interest-in-jet-retail-network-for-875-million-302709985.html",
+      "dealCitationIds": [
+        "cmnva4sln05vmm8lz4qwjw10y",
+        "cmnvcxd8s067635lzrv3rvmcg",
+        "cmoqc8v4o06dg171fy4ru8jkt",
+        "cmoxwla8606jyt01fjxhfio8n"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva4cny05hjm8lzwud37i6n",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "PR Newswire operations / asset details",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "TARGET_COMPONENT_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwlr0r07ent01fiealorr6",
+      "companyId": "cmnva0ubj00qkm8lz6et53ta9",
+      "companyName": "Invenergy AMPCI Thermal Power",
+      "identityClusterId": "cmnva0ubj00qkm8lz6et53ta9",
+      "dealId": "cmnva4d4e05hpm8lz545qnp6z",
+      "legacyId": "INF-2026-119",
+      "target": "Invenergy AMPCI Thermal Power (IATP)",
+      "sourceId": "cmnva4t3u05vxm8lzvlal63ae",
+      "sourceLabel": "Business Wire",
+      "sourceUrl": "https://www.businesswire.com/news/home/20260311462798/en/ArcLight-to-Acquire-InfraBridges-50-Stake-in-5.4-GW-Power-Portfolio",
+      "dealCitationIds": [
+        "cmnva4t5l05vym8lzkdzr6kc0",
+        "cmnvcxdsd067c35lzx0mum9x9",
+        "cmoqc8vo206dm171fuj5hlocs",
+        "cmoxwlaep06kat01fvq211i0t"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva4d4e05hpm8lz545qnp6z",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "ArcLight Capital Partners transaction announcement",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "CANONICAL_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwlrr207g2t01fewfk3bdt",
+      "companyId": "cmnva0ug900qsm8lzme2wh1pa",
+      "companyName": "Prospect Power",
+      "identityClusterId": "cmnva0ug900qsm8lzme2wh1pa",
+      "dealId": "cmnva463505f6m8lzs5kef3dl",
+      "legacyId": "INF-2026-027",
+      "target": "Prospect Power",
+      "sourceId": "cmnva4mbm05rsm8lzbwlia1nr",
+      "sourceLabel": "Business Wire",
+      "sourceUrl": "https://www.businesswire.com/news/home/20260115405115/en/Elevate-Acquires-Prospect-Power-Storage-a-150-MW-Battery-Asset-in-Northern-Virginia",
+      "dealCitationIds": [
+        "cmnva4mdc05rtm8lzm004z3cj",
+        "cmnvcx73p065935lzvyb9c639",
+        "cmoqc8ox806bj171fmukbthbz",
+        "cmoxwl84f06g5t01fte75jpwb"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva463505f6m8lzs5kef3dl",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "ArcLight Capital Partners closing confirmation",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwm8ee08a9t01fe7k9ff9t",
+      "companyId": "cmnva0x0300uvm8lz0drkj1w9",
+      "companyName": "Advanced Cooling Technologies (ACT)",
+      "identityClusterId": "cmnva0x0300uvm8lz0drkj1w9",
+      "dealId": "cmnva4dnu05hwm8lzzlj03s3b",
+      "legacyId": "INF-2026-126",
+      "target": "Advanced Cooling Technologies (ACT)",
+      "sourceId": "cmnva4tnu05wam8lz38pdt0im",
+      "sourceLabel": "Blackstone",
+      "sourceUrl": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-agreement-to-acquire-majority-stake-in-advanced-cooling-technologies/",
+      "dealCitationIds": [
+        "cmnva4tpe05wbm8lzgptbh44k",
+        "cmnvcxed5067j35lzdvmmh4n5",
+        "cmoqc8w8e06dt171fsryrs0e5",
+        "cmoxwlalt06knt01fk9xchipf"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva4dnu05hwm8lzzlj03s3b",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Blackstone transaction announcement",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwm8h308aet01f0i0621h1",
+      "companyId": "cmnva0x0m00uwm8lzcv0jn3gr",
+      "companyName": "Alliance Technical Group",
+      "identityClusterId": "cmnva0x0m00uwm8lzcv0jn3gr",
+      "dealId": "cmnva475e05fkm8lz9ug5ngij",
+      "legacyId": "INF-2026-041",
+      "target": "Alliance Technical Group",
+      "sourceId": "cmnva4nlk05skm8lzkm6v24s3",
+      "sourceLabel": "Blackstone",
+      "sourceUrl": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-acquisition-of-alliance-technical-group/",
+      "dealCitationIds": [
+        "cmnva4nnb05slm8lza1bysqlv",
+        "cmnvcx8cp065n35lzvskyex1m",
+        "cmoqc8q8806bx171f1j2uwp45",
+        "cmoxwl8jq06gxt01fos3xn7n4"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva475e05fkm8lz9ug5ngij",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Blackstone closing confirmation",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwm8ke08ajt01fv2ppugtp",
+      "companyId": "cmnva0x1600uxm8lzd32susr5",
+      "companyName": "Arlington Industries",
+      "identityClusterId": "cmnva0x1600uxm8lzd32susr5",
+      "dealId": "cmnva44u105eqm8lzkiwi1l01",
+      "legacyId": "INF-2026-011",
+      "target": "Arlington Industries",
+      "sourceId": "cmnva4ktk05qwm8lz9wfd6ym8",
+      "sourceLabel": "Blackstone",
+      "sourceUrl": "https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-arlington-industries/",
+      "dealCitationIds": [
+        "cmnva4kv505qxm8lzmfqecc99",
+        "cmnvcx5ot064t35lz99k6011g",
+        "cmoqc8ngf06b3171fb6jjg8ko",
+        "cmoxwl7mv06f9t01fx4rsygqa"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva44u105eqm8lzkiwi1l01",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Blackstone transaction announcement",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwmalr08e9t01flsdm277l",
+      "companyId": "cmnva0xcg00vhm8lzllfqv37o",
+      "companyName": "Rover Pipeline",
+      "identityClusterId": "cmnva0xcg00vhm8lzllfqv37o",
+      "dealId": "cmoqc7pgi05zp171fml4efb7l",
+      "legacyId": "INF-2026-202",
+      "target": "Rover Pipeline",
+      "sourceId": "cmoqc92w406he171fq4smsw4q",
+      "sourceLabel": "Blackstone",
+      "sourceUrl": "https://www.blackstone.com/news/press/ares-acquires-stake-in-rover-pipeline-from-blackstone-energy-transition-partners-to-serve-growing-energy-demand-centers-across-north-america/",
+      "dealCitationIds": [
+        "cmoqc92xr06hf171fr7029rs8",
+        "cmoxwlcx606ovt01fbqoaqfe9"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmoqc7pgi05zp171fml4efb7l",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Ares Management closing confirmation",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwmauf08eot01flucsvspx",
+      "companyId": "cmnva0xcx00vim8lzauj488h7",
+      "companyName": "Sabre Industries",
+      "identityClusterId": "cmnva0xcx00vim8lzauj488h7",
+      "dealId": "cmnva46x805fhm8lz46mi1syf",
+      "legacyId": "INF-2026-038",
+      "target": "Sabre Industries",
+      "sourceId": "cmnva4nbq05sem8lzllohypj7",
+      "sourceLabel": "Business Wire",
+      "sourceUrl": "https://www.businesswire.com/news/home/20260205906188/en/TPG-to-Acquire-Majority-Stake-in-Sabre-Industries-from-Blackstone-Energy-Transition-Partners",
+      "dealCitationIds": [
+        "cmnva4ndi05sfm8lz721185dc",
+        "cmnvcx839065k35lzivoujxa6",
+        "cmoqc8pyf06bu171ft5xssoni",
+        "cmoxwl8ge06grt01fox35k6h0"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva46x805fhm8lz46mi1syf",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "Business Wire - INF-2026-038 - Sabre Industries",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwmcyb08i6t01f7d3v0wvj",
+      "companyId": "company_boralex_inc_2026",
+      "companyName": "Boralex Inc.",
+      "identityClusterId": "company_boralex_inc_2026",
+      "dealId": "cmnva4esv05ibm8lzmuenbnsm",
+      "legacyId": "INF-2026-141",
+      "target": "Boralex Inc.",
+      "sourceId": "cmnva4v0k05x4m8lztgmbr9pn",
+      "sourceLabel": "Announcement date source — Brookfield Asset Management / La Caisse — Boralex Inc.",
+      "sourceUrl": "https://www.boralex.com/en/press-releases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-la-caisse",
+      "dealCitationIds": [
+        "cmnva4v2905x5m8lzy17zlona",
+        "cmnvcxfpf067y35lz8vr1w29s",
+        "cmoqc8xko06e8171fxrf0h7a7",
+        "cmoxwlb2906lht01fomckv4l0"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva4esv05ibm8lzmuenbnsm",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "La Caisse 30% pro forma post-close; 15% pre-close",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwmpgn0944t01fieojuot5",
+      "companyId": "cmnva0yg100xfm8lzipn8kron",
+      "companyName": "Vertical Bridge",
+      "identityClusterId": "cmnva0yg100xfm8lzipn8kron",
+      "dealId": "cmoqc7nqw05z2171fcmdj2xty",
+      "legacyId": "INF-2026-179",
+      "target": "Vertical Bridge",
+      "sourceId": "cmoqc90w506g4171frc362g7k",
+      "sourceLabel": "Vertical Bridge",
+      "sourceUrl": "https://www.verticalbridge.com/press-releases/vertical-bridge-announces-1-5-billion-strategic-equity-investment-from-kkr",
+      "dealCitationIds": [
+        "cmoqc90xw06g5171fk2gtpm0p",
+        "cmoxwlc8406nlt01fk1qi2nku"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmoqc7nqw05z2171fcmdj2xty",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "Vertical Bridge - INF-2026-179 - Vertical Bridge",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwmug209cmt01frz6rogph",
+      "companyId": "cmnva0yp200xvm8lzue3btvd8",
+      "companyName": "Cordelio Power",
+      "identityClusterId": "cmnva0yp200xvm8lzue3btvd8",
+      "dealId": "cmnva44zq05esm8lz8elpwcvh",
+      "legacyId": "INF-2026-013",
+      "target": "Cordelio Power",
+      "sourceId": "cmnva4l0z05r0m8lztp0jqmy7",
+      "sourceLabel": "McCarthy Tétrault",
+      "sourceUrl": "https://www.mccarthy.ca/en/experience/cordelio-power-enters-into-definitive-agreement-in-connection-with-its-sale-to-pattern-energy-group",
+      "dealCitationIds": [
+        "cmnva4l2o05r1m8lz0u77zuyv",
+        "cmnvcx5uw064v35lz7ldtoi8d",
+        "cmoqc8nn006b5171fo7ebz34x",
+        "cmoxwl7p306fdt01f76ud0o7p"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva44zq05esm8lz8elpwcvh",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "McCarthy TéTrault transaction or milestone detail",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwn1ip09pgt01f7wf7bnoj",
+      "companyId": "cmnva0o2q00gim8lzgib5tltb",
+      "companyName": "Cornerstone Generation",
+      "identityClusterId": "cmnva0o2q00gim8lzgib5tltb",
+      "dealId": "cmnva452h05etm8lzpwozr1ef",
+      "legacyId": "INF-2026-014",
+      "target": "Cornerstone Generation",
+      "sourceId": "cmnva4l4h05r2m8lzjwqhivug",
+      "sourceLabel": "Talen Energy IR",
+      "sourceUrl": "https://ir.talenenergy.com/news-releases/news-release-details/talen-energy-continues-portfolio-expansion-acquisition",
+      "dealCitationIds": [
+        "cmnva4l6805r3m8lzma3lylpd",
+        "cmnvcx5xx064w35lzfnkc6m1a",
+        "cmoqc8nq906b6171f8ygn7w8s",
+        "cmoxwl7q506fft01f2k3x9xyt"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva452h05etm8lzpwozr1ef",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "Talen Energy IR transaction or milestone detail",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwn8qs0a2nt01f0qnmvym6",
+      "companyId": "cmnva108n010nm8lztvho67ta",
+      "companyName": "EdgeConneX",
+      "identityClusterId": "cmnva108n010nm8lztvho67ta",
+      "dealId": "cmoqc7ntm05z3171fxlx5azok",
+      "legacyId": "INF-2026-180",
+      "target": "EdgeConneX",
+      "sourceId": "cmoqc90zg06g6171fc21qllv8",
+      "sourceLabel": "EQT",
+      "sourceUrl": "https://eqtgroup.com/news/eqt-introduces-ai-infrastructure-strategy-to-help-build-the-foundation-of-the-ai-economy-2026-04-21",
+      "dealCitationIds": [
+        "cmoqc911506g7171fx5nm9omg",
+        "cmoxwlc9506nnt01fp5i9dto6"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmoqc7ntm05z3171fxlx5azok",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "EQT - INF-2026-180 - EdgeConneX",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwna8e0a5gt01fltku4le2",
+      "companyId": "cmnva10wn011sm8lz3pn2jz98",
+      "companyName": "American Roads",
+      "identityClusterId": "cmnva10wn011sm8lz3pn2jz98",
+      "dealId": "cmnva47dd05fnm8lzb1c6era3",
+      "legacyId": "INF-2026-044",
+      "target": "American Roads",
+      "sourceId": "cmnva4nve05sqm8lzsskzxgf0",
+      "sourceLabel": "ENR",
+      "sourceUrl": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+      "dealCitationIds": [
+        "cmnva4nx605srm8lz4735uah2",
+        "cmnvcx8ly065q35lzba7v2icb",
+        "cmoqc8qhu06c0171fxm1l42gj",
+        "cmoxwl8n806h3t01fqieacxuf"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva47dd05fnm8lzb1c6era3",
+      "purpose": "OPERATIONS_ASSETS",
+      "evidenceLabel": "ENR operations / asset details",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwnl7y0apkt01fcudtvubj",
+      "companyId": "cmnva105b010hm8lzznzollvy",
+      "companyName": "The AES Corporation",
+      "identityClusterId": "cmnva105b010hm8lzznzollvy",
+      "dealId": "cmnva4bfe05h4m8lz58fhnggj",
+      "legacyId": "INF-2026-098",
+      "target": "AES Corporation",
+      "sourceId": "cmnva4r6p05urm8lzzh44i9t0",
+      "sourceLabel": "PR Newswire",
+      "sourceUrl": "https://www.prnewswire.com/news-releases/consortium-led-by-global-infrastructure-partners-and-eqt-agrees-to-acquire-aes-302700916.html",
+      "dealCitationIds": [
+        "cmnva4r8e05usm8lztfj8cqvm",
+        "cmnvcxbw2066r35lzu5nix9g3",
+        "cmoqc8tsu06d1171fcoa1lpwz",
+        "cmoxwl9rg06j4t01fjymkiwiw"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva4bfe05h4m8lz58fhnggj",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "EQT Infrastructure transaction announcement",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "CANONICAL_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwo4r60boxt01fh7qagdch",
+      "companyId": "cmnva14ug017ym8lzuudd6lxq",
+      "companyName": "Pembina Gas Infrastructure Inc.",
+      "identityClusterId": "cmnva14ug017ym8lzuudd6lxq",
+      "dealId": "cmoqc7o2g05z6171fujvq3wdw",
+      "legacyId": "INF-2026-183",
+      "target": "Pembina Gas Infrastructure (PGI)",
+      "sourceId": "cmoqc919906gc171fx7c364au",
+      "sourceLabel": "Apollo",
+      "sourceUrl": "https://www.apollo.com/insights-news/pressreleases/2026/04/apollo-funds-to-acquire-40-interest-in-pembina-gas-infrastructure-3279810",
+      "dealCitationIds": [
+        "cmoqc91an06gd171f3u2enoz9",
+        "cmoxwlcce06ntt01f43ad22fh"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmoqc7o2g05z6171fujvq3wdw",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "Apollo - INF-2026-183 - Pembina Gas Infrastructure (PGI)",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "CANONICAL_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwofj20c8at01fahgva73m",
+      "companyId": "cmnva0rwv00mdm8lz50afv9c7",
+      "companyName": "Bayonne Energy Center",
+      "identityClusterId": "cmnva0rwv00mdm8lz50afv9c7",
+      "dealId": "cmnva4dyu05i0m8lziv0bctfu",
+      "legacyId": "INF-2026-130",
+      "target": "Bayonne Energy Center",
+      "sourceId": "cmnva4u0p05wim8lz3wxy2t3c",
+      "sourceLabel": "Morgan Stanley",
+      "sourceUrl": "https://www.morganstanley.com/press-releases/msip-agrees-to-sell-bayonne-energy-center",
+      "dealCitationIds": [
+        "cmnva4u2e05wjm8lzkxn2g9qy",
+        "cmnvcxepv067n35lz2s9voct4",
+        "cmoqc8wlg06dx171fe0ujkwkh",
+        "cmoxwlaq506kvt01f20vxpln8"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva4dyu05i0m8lziv0bctfu",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "Morganstanley — Bayonne Energy Center",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwoosf0cp7t01fb4i47t0e",
+      "companyId": "cmnva0p6h00ibm8lzimyld7ll",
+      "companyName": "Rowan Digital Infrastructure",
+      "identityClusterId": "cmnva0p6h00ibm8lzimyld7ll",
+      "dealId": "cmoqc7mft05yk171fbj6rf6in",
+      "legacyId": "INF-2026-161",
+      "target": "Rowan Digital Infrastructure",
+      "sourceId": "cmoqc8zb106f4171fyq1c4x65",
+      "sourceLabel": "PR Newswire",
+      "sourceUrl": "https://www.prnewswire.com/news-releases/rowan-digital-infrastructure-announces-strategic-recapitalization-302738729.html",
+      "dealCitationIds": [
+        "cmoqc8zcu06f5171fvjoy4xmh",
+        "cmoxwlbof06mlt01frs7bj7rq"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmoqc7mft05yk171fbj6rf6in",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "PR Newswire - INF-2026-161 - Rowan Digital Infrastructure",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwopzo0crat01fwylffmsd",
+      "companyId": "cmnva0r5700lpm8lz0ow0tgah",
+      "companyName": "Sierra Railroad Company",
+      "identityClusterId": "cmnva0r5700lpm8lz0ow0tgah",
+      "dealId": "cmnva4d7505hqm8lzsbw4uzs5",
+      "legacyId": "INF-2026-120",
+      "target": "Sierra Railroad Company",
+      "sourceId": "cmnva4t7605vzm8lz8221j4kd",
+      "sourceLabel": "PR Newswire",
+      "sourceUrl": "http://www.prnewswire.com/news-releases/ridgewood-infrastructure-acquires-sierra-railroad-company-302708445.html",
+      "dealCitationIds": [
+        "cmnva4t8w05w0m8lzes4l2jh6",
+        "cmnvcxdwr067d35lz6l8mup1s",
+        "cmoqc8vre06dn171f8fq6zqb5",
+        "cmoxwlafu06kct01f89p10qxv"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva4d7505hqm8lzsbw4uzs5",
+      "purpose": "MILESTONE_EVENT",
+      "evidenceLabel": "PR Newswire transaction or milestone detail",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwosz60cwot01fq2fh9vj7",
+      "companyId": "cmnva0msm00eem8lzzj5e2uxi",
+      "companyName": "Astound Broadband",
+      "identityClusterId": "cmnva0msm00eem8lzzj5e2uxi",
+      "dealId": "cmnva4dfl05htm8lzoxfrhqr9",
+      "legacyId": "INF-2026-123",
+      "target": "GFiber / Astound Broadband",
+      "sourceId": "cmnva4teb05w4m8lz8bh5jvib",
+      "sourceLabel": "Stonepeak",
+      "sourceUrl": "https://stonepeak.com/news/gfiber-and-stonepeaks-astound-to-combine-creating-a-leading-independent-broadband-provider",
+      "dealCitationIds": [
+        "cmnva4tfz05w5m8lzhzy56yhl",
+        "cmnvcxe3d067g35lzkvq01135",
+        "cmoqc8vyg06dq171fa86rq8u3",
+        "cmoxwlaij06kht01frkt4rmac"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva4dfl05htm8lzoxfrhqr9",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "Stonepeak — Astound Broadband",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "TARGET_COMPONENT_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwow6k0d2it01frrl9dpsm",
+      "companyId": "cmnva0q2100jsm8lz17c7ahxt",
+      "companyName": "BTR Jet Center",
+      "identityClusterId": "cmnva0q2100jsm8lz17c7ahxt",
+      "dealId": "cmnva47j205fpm8lzr73zqisy",
+      "legacyId": "INF-2026-046",
+      "target": "BTR Jet Center",
+      "sourceId": "cmnva4o1x05sum8lz65v0wpff",
+      "sourceLabel": "Business Wire",
+      "sourceUrl": "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center",
+      "dealCitationIds": [
+        "cmnva4o3d05svm8lzatqaoltt",
+        "cmnvcx8tl065s35lz9a7se9dg",
+        "cmoqc8qog06c2171fax9aemyu",
+        "cmoxwl8pg06h7t01fpfvm98d5"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmnva47j205fpm8lzr73zqisy",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Tallvine initial investment / ownership",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    },
+    {
+      "citationId": "cmoxwp44e0dfyt01ffeogejts",
+      "companyId": "cmnva0ra500lym8lzco0glku7",
+      "companyName": "i3 Broadband",
+      "identityClusterId": "cmnva0ra500lym8lzco0glku7",
+      "dealId": "cmoqc7pe105zo171fkqrp0yu9",
+      "legacyId": "INF-2026-201",
+      "target": "i3 Broadband",
+      "sourceId": "cmoqc92t406hc171fryyeu3gq",
+      "sourceLabel": "T-Mobile",
+      "sourceUrl": "https://www.t-mobile.com/news/business/t-mobile-add-two-strategic-fiber-joint-ventures-gonetspeed-greenlight-i3",
+      "dealCitationIds": [
+        "cmoqc92up06hd171fpk8p02en",
+        "cmoxwlcw406ott01friq0e68b"
+      ],
+      "currentDealId": null,
+      "proposedDealId": "cmoqc7pe105zo171fkqrp0yu9",
+      "purpose": "SUPPORTING_CONTEXT",
+      "evidenceLabel": "T-Mobile - INF-2026-201 - i3 Broadband",
+      "isPrimary": false,
+      "targetEvidenceTypes": [
+        "EXACT_TARGET_NAME"
+      ]
+    }
+  ],
+  "quarantinedDeals": [
+    {
+      "dealId": "cmnva491t05g9m8lz859sy8bw",
+      "legacyId": "INF-2026-066",
+      "target": "Extenet Systems (Enterprise Fiber)",
+      "reasonCodes": [
+        "CLUSTER_SHARED_SOURCE_INCOMPLETE",
+        "NO_EXACT_UNLINKED_SHARED_SOURCE_CITATION"
+      ],
+      "companyDecisions": [
+        {
+          "companyId": "cmnva0mwt00elm8lz2xp3ijr4",
+          "companyName": "ExteNet Systems",
+          "identityClusterId": "cmnva0mwt00elm8lz2xp3ijr4",
+          "clusterMemberIds": [
+            "cmnva0mwt00elm8lz2xp3ijr4",
+            "cmoqc0y7100vi171flkm8xuz4"
+          ],
+          "eligibleCitationIds": [],
+          "selectedCitationId": null,
+          "exactSharedSourceIds": [],
+          "reasonCodes": [
+            "CLUSTER_SHARED_SOURCE_INCOMPLETE",
+            "NO_EXACT_UNLINKED_SHARED_SOURCE_CITATION"
+          ]
+        },
+        {
+          "companyId": "cmoqc0y7100vi171flkm8xuz4",
+          "companyName": "Extenet",
+          "identityClusterId": "cmnva0mwt00elm8lz2xp3ijr4",
+          "clusterMemberIds": [
+            "cmnva0mwt00elm8lz2xp3ijr4",
+            "cmoqc0y7100vi171flkm8xuz4"
+          ],
+          "eligibleCitationIds": [],
+          "selectedCitationId": null,
+          "exactSharedSourceIds": [],
+          "reasonCodes": [
+            "CLUSTER_SHARED_SOURCE_INCOMPLETE",
+            "NO_EXACT_UNLINKED_SHARED_SOURCE_CITATION"
+          ]
+        }
+      ]
+    },
+    {
+      "dealId": "cmnva4byj05hbm8lzjue5sqsl",
+      "legacyId": "INF-2026-105",
+      "target": "Northview Energy",
+      "reasonCodes": [
+        "CLUSTER_SHARED_SOURCE_INCOMPLETE",
+        "NO_EXACT_UNLINKED_SHARED_SOURCE_CITATION"
+      ],
+      "companyDecisions": [
+        {
+          "companyId": "cmnva0xvs00wgm8lzqdgowwv1",
+          "companyName": "Northview Energy",
+          "identityClusterId": "cmnva0xvs00wgm8lzqdgowwv1",
+          "clusterMemberIds": [
+            "cmnva0xvs00wgm8lzqdgowwv1",
+            "cmoqbxxhq008d171ffvxr3rv9"
+          ],
+          "eligibleCitationIds": [],
+          "selectedCitationId": null,
+          "exactSharedSourceIds": [],
+          "reasonCodes": [
+            "CLUSTER_SHARED_SOURCE_INCOMPLETE",
+            "NO_EXACT_UNLINKED_SHARED_SOURCE_CITATION"
+          ]
+        },
+        {
+          "companyId": "cmoqbxxhq008d171ffvxr3rv9",
+          "companyName": "Northview Energy",
+          "identityClusterId": "cmnva0xvs00wgm8lzqdgowwv1",
+          "clusterMemberIds": [
+            "cmnva0xvs00wgm8lzqdgowwv1",
+            "cmoqbxxhq008d171ffvxr3rv9"
+          ],
+          "eligibleCitationIds": [
+            "citation_bci_037f7a0f6c7564d629474f07424fa0f0"
+          ],
+          "selectedCitationId": "citation_bci_037f7a0f6c7564d629474f07424fa0f0",
+          "exactSharedSourceIds": [
+            "cmnva4rtq05v5m8lz4qw24yai"
+          ],
+          "reasonCodes": [
+            "CLUSTER_SHARED_SOURCE_INCOMPLETE"
+          ]
+        }
+      ]
+    },
+    {
+      "dealId": "cmoqc7mi405yl171fdu5sun6w",
+      "legacyId": "INF-2026-162",
+      "target": "DataBank / Goodman Los Angeles JV (32 MW)",
+      "reasonCodes": [
+        "CLUSTER_SHARED_SOURCE_INCOMPLETE",
+        "NO_EXACT_UNLINKED_SHARED_SOURCE_CITATION"
+      ],
+      "companyDecisions": [
+        {
+          "companyId": "cmnva0of800h3m8lz45hdlerd",
+          "companyName": "DataBank",
+          "identityClusterId": "cmnva0of800h3m8lz45hdlerd",
+          "clusterMemberIds": [
+            "cmnva0of800h3m8lz45hdlerd"
+          ],
+          "eligibleCitationIds": [],
+          "selectedCitationId": null,
+          "exactSharedSourceIds": [],
+          "reasonCodes": [
+            "CLUSTER_SHARED_SOURCE_INCOMPLETE",
+            "NO_EXACT_UNLINKED_SHARED_SOURCE_CITATION"
+          ]
+        }
+      ]
+    },
+    {
+      "dealId": "cmoqc7p1505zj171ff3bqdxda",
+      "legacyId": "INF-2026-196",
+      "target": "Cleco Group",
+      "reasonCodes": [
+        "CLUSTER_SHARED_SOURCE_INCOMPLETE",
+        "NO_EXACT_UNLINKED_SHARED_SOURCE_CITATION"
+      ],
+      "companyDecisions": [
+        {
+          "companyId": "cmnva0ng800fim8lz95b1no81",
+          "companyName": "Cleco Corporate Holdings LLC",
+          "identityClusterId": "cmnva0ng800fim8lz95b1no81",
+          "clusterMemberIds": [
+            "cmnva0ng800fim8lz95b1no81",
+            "cmoqbxwj50084171fwym9a80l"
+          ],
+          "eligibleCitationIds": [],
+          "selectedCitationId": null,
+          "exactSharedSourceIds": [],
+          "reasonCodes": [
+            "CLUSTER_SHARED_SOURCE_INCOMPLETE",
+            "NO_EXACT_UNLINKED_SHARED_SOURCE_CITATION"
+          ]
+        },
+        {
+          "companyId": "cmoqbxwj50084171fwym9a80l",
+          "companyName": "Cleco Corporation",
+          "identityClusterId": "cmnva0ng800fim8lz95b1no81",
+          "clusterMemberIds": [
+            "cmnva0ng800fim8lz95b1no81",
+            "cmoqbxwj50084171fwym9a80l"
+          ],
+          "eligibleCitationIds": [],
+          "selectedCitationId": null,
+          "exactSharedSourceIds": [],
+          "reasonCodes": [
+            "CLUSTER_SHARED_SOURCE_INCOMPLETE",
+            "NO_EXACT_UNLINKED_SHARED_SOURCE_CITATION"
+          ]
+        }
+      ]
+    }
+  ],
+  "uniquenessConflicts": [],
+  "counts": {
+    "publishedDeals": 352,
+    "publishedCompanies": 1191,
+    "citationRows": 10234,
+    "sourceRows": 4847,
+    "deterministicTargetDeals": 29,
+    "strictUpdates": 26,
+    "strictDeals": 25,
+    "quarantinedDeals": 4,
+    "uniquenessConflicts": 0
+  }
+}

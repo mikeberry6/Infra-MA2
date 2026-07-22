@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "scope": "SIERRA_RAILROAD_RIDGEWOOD_CLOSE_EXACT_ID_REMEDIATION",
+  "appliedAt": "2026-07-22T21:06:03.956Z",
+  "database": {
+    "host": "ep-dawn-sky-amaxdqe4-pooler.c-5.us-east-1.aws.neon.tech",
+    "database": "neondb"
+  },
+  "planSha256": "72f310eed6a386108df81b1bc5316e9cf07ef2ee94f6ec981d76571ac55f0060",
+  "actionSetSha256": "56c8cb9edf12c9c7a73df36dbb6048cfb8d81eefd04310b96264237533a98ba7",
+  "mutations": {
+    "dealUpdates": [
+      "cmnva4d7505hqm8lzsbw4uzs5"
+    ],
+    "milestoneUpdates": [
+      "cmp1h8x2d02u8w41f1qhhu7qg"
+    ],
+    "citationUpdates": [
+      "cmoxwopwf0cr5t01fnyvhamnr"
+    ]
+  },
+  "rollbackRows": {
+    "deal": {
+      "id": "cmnva4d7505hqm8lzsbw4uzs5",
+      "legacyId": "INF-2026-120",
+      "title": "Ridgewood Infrastructure acquires controlling interest in Sierra Railroad Company",
+      "target": "Sierra Railroad Company",
+      "sector": "TRANSPORTATION",
+      "subsector": "Rail",
+      "region": "NORTH_AMERICA",
+      "categories": [
+        "ACQUISITION_BUYOUT"
+      ],
+      "date": "2026-03-11T08:00:00.000",
+      "description": "Ridgewood Infrastructure acquired a controlling interest in Sierra Railroad Company, a California-based shortline rail platform providing freight rail, switching, storage, and transloading services across approximately 130 miles of track. Founded in 1897, Sierra's network is strategically positioned near major agricultural and dairy production regions, key West Coast ports, and major industrial centers, with interconnections to both Union Pacific and BNSF Class I networks. The platform also includes Railpower, Inc., which owns the only FRA-approved hydrogen-powered locomotive in the U.S.",
+      "targetDescription": "Sierra Railroad Company, a California shortline rail platform with ~130 miles of track.",
+      "country": "United States",
+      "enterpriseValue": null,
+      "equityValue": null,
+      "stake": "100%",
+      "dealStatus": "ANNOUNCED",
+      "closingDate": null,
+      "assetScale": "~130 miles shortline rail",
+      "valuationMultiple": null,
+      "fundVehicle": null,
+      "keyHighlights": [
+        "Ridgewood Infrastructure acquires Sierra Railroad, a California shortline with ~130 miles of track",
+        "Strategically positioned near agricultural regions, West Coast ports, and Class I interconnections",
+        "Includes Railpower, owner of only FRA-approved hydrogen-powered locomotive in the U.S."
+      ],
+      "recordStatus": "PUBLISHED",
+      "createdAt": "2026-04-12T04:44:15.185000",
+      "updatedAt": "2026-04-12T04:44:15.185000"
+    },
+    "milestone": {
+      "id": "cmp1h8x2d02u8w41f1qhhu7qg",
+      "companyId": "cmnva0r5700lpm8lz0ow0tgah",
+      "companyName": "Sierra Railroad Company",
+      "date": "Mar 2026",
+      "event": "Ridgewood Infrastructure announced the acquisition of a controlling interest in Sierra Railroad Company.",
+      "category": "ACQUISITION",
+      "sortDate": "2026-03-01T05:00:00.000"
+    },
+    "citation": {
+      "id": "cmoxwopwf0cr5t01fnyvhamnr",
+      "sourceId": "cmnva7qjc07pqm8lz74xhvao2",
+      "dealId": null,
+      "companyId": "cmnva0r5700lpm8lz0ow0tgah",
+      "purpose": "OWNERSHIP_INVESTMENT",
+      "evidenceLabel": "Ridgewood initial investment / ownership",
+      "sourceLabel": "Ridgewoodinfrastructure — Sierra Railroad Company",
+      "sourceUrl": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+      "sourceType": "ARTICLE"
+    }
+  },
+  "actions": [
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwopwf0cr5t01fnyvhamnr",
+      "evidence": {
+        "publisher": "Ridgewood Infrastructure",
+        "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+        "evidenceDate": "2026-03-09",
+        "finding": "Ridgewood stated on March 9, 2026 that it had acquired a controlling interest in Sierra Railroad Company; founder Mike Hart remained a significant investor alongside Ridgewood."
+      },
+      "current": {
+        "id": "cmoxwopwf0cr5t01fnyvhamnr",
+        "sourceId": "cmnva7qjc07pqm8lz74xhvao2",
+        "dealId": null,
+        "companyId": "cmnva0r5700lpm8lz0ow0tgah",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ridgewood initial investment / ownership",
+        "sourceLabel": "Ridgewoodinfrastructure — Sierra Railroad Company",
+        "sourceUrl": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+        "sourceType": "ARTICLE"
+      },
+      "proposed": {
+        "id": "cmoxwopwf0cr5t01fnyvhamnr",
+        "sourceId": "cmnva7qjc07pqm8lz74xhvao2",
+        "dealId": "cmnva4d7505hqm8lzsbw4uzs5",
+        "companyId": "cmnva0r5700lpm8lz0ow0tgah",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Ridgewood initial investment / ownership",
+        "sourceLabel": "Ridgewoodinfrastructure — Sierra Railroad Company",
+        "sourceUrl": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmnva4d7505hqm8lzsbw4uzs5",
+      "evidence": {
+        "publisher": "Ridgewood Infrastructure",
+        "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+        "evidenceDate": "2026-03-09",
+        "finding": "Ridgewood stated on March 9, 2026 that it had acquired a controlling interest in Sierra Railroad Company; founder Mike Hart remained a significant investor alongside Ridgewood."
+      },
+      "current": {
+        "id": "cmnva4d7505hqm8lzsbw4uzs5",
+        "legacyId": "INF-2026-120",
+        "title": "Ridgewood Infrastructure acquires controlling interest in Sierra Railroad Company",
+        "target": "Sierra Railroad Company",
+        "sector": "TRANSPORTATION",
+        "subsector": "Rail",
+        "region": "NORTH_AMERICA",
+        "categories": [
+          "ACQUISITION_BUYOUT"
+        ],
+        "date": "2026-03-11T08:00:00.000",
+        "description": "Ridgewood Infrastructure acquired a controlling interest in Sierra Railroad Company, a California-based shortline rail platform providing freight rail, switching, storage, and transloading services across approximately 130 miles of track. Founded in 1897, Sierra's network is strategically positioned near major agricultural and dairy production regions, key West Coast ports, and major industrial centers, with interconnections to both Union Pacific and BNSF Class I networks. The platform also includes Railpower, Inc., which owns the only FRA-approved hydrogen-powered locomotive in the U.S.",
+        "targetDescription": "Sierra Railroad Company, a California shortline rail platform with ~130 miles of track.",
+        "country": "United States",
+        "enterpriseValue": null,
+        "equityValue": null,
+        "stake": "100%",
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "assetScale": "~130 miles shortline rail",
+        "valuationMultiple": null,
+        "fundVehicle": null,
+        "keyHighlights": [
+          "Ridgewood Infrastructure acquires Sierra Railroad, a California shortline with ~130 miles of track",
+          "Strategically positioned near agricultural regions, West Coast ports, and Class I interconnections",
+          "Includes Railpower, owner of only FRA-approved hydrogen-powered locomotive in the U.S."
+        ],
+        "recordStatus": "PUBLISHED",
+        "createdAt": "2026-04-12T04:44:15.185000",
+        "updatedAt": "2026-04-12T04:44:15.185000"
+      },
+      "proposed": {
+        "id": "cmnva4d7505hqm8lzsbw4uzs5",
+        "legacyId": "INF-2026-120",
+        "title": "Ridgewood Infrastructure acquires controlling interest in Sierra Railroad Company",
+        "target": "Sierra Railroad Company",
+        "sector": "TRANSPORTATION",
+        "subsector": "Rail",
+        "region": "NORTH_AMERICA",
+        "categories": [
+          "ACQUISITION_BUYOUT"
+        ],
+        "date": "2026-03-09T08:00:00.000",
+        "description": "Ridgewood Infrastructure acquired a controlling interest in Sierra Railroad Company, a California-based shortline rail platform whose operating subsidiaries include Sierra Northern Railway and Railpower. Sierra Northern provides switching, storage, and transloading services across approximately 130 miles of track in California, and founder Mike Hart remained a significant investor alongside Ridgewood.",
+        "targetDescription": "Sierra Railroad Company, a California shortline rail platform with ~130 miles of track.",
+        "country": "United States",
+        "enterpriseValue": null,
+        "equityValue": null,
+        "stake": "Controlling interest",
+        "dealStatus": "CLOSED",
+        "closingDate": null,
+        "assetScale": "~130 miles shortline rail",
+        "valuationMultiple": null,
+        "fundVehicle": null,
+        "keyHighlights": [
+          "Ridgewood Infrastructure acquired a controlling interest in Sierra Railroad on March 9, 2026",
+          "Founder Mike Hart remained a significant investor alongside Ridgewood",
+          "Sierra Northern provides services across approximately 130 miles of track in California"
+        ],
+        "recordStatus": "PUBLISHED",
+        "createdAt": "2026-04-12T04:44:15.185000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h8x2d02u8w41f1qhhu7qg",
+      "evidence": {
+        "publisher": "Ridgewood Infrastructure",
+        "url": "https://ridgewoodinfrastructure.com/ridgewood-infrastructure-acquires-sierra-railroad-company/",
+        "evidenceDate": "2026-03-09",
+        "finding": "Ridgewood stated on March 9, 2026 that it had acquired a controlling interest in Sierra Railroad Company; founder Mike Hart remained a significant investor alongside Ridgewood."
+      },
+      "current": {
+        "id": "cmp1h8x2d02u8w41f1qhhu7qg",
+        "companyId": "cmnva0r5700lpm8lz0ow0tgah",
+        "companyName": "Sierra Railroad Company",
+        "date": "Mar 2026",
+        "event": "Ridgewood Infrastructure announced the acquisition of a controlling interest in Sierra Railroad Company.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-03-01T05:00:00.000"
+      },
+      "proposed": {
+        "id": "cmp1h8x2d02u8w41f1qhhu7qg",
+        "companyId": "cmnva0r5700lpm8lz0ow0tgah",
+        "companyName": "Sierra Railroad Company",
+        "date": "Mar 9, 2026",
+        "event": "Ridgewood Infrastructure acquired a controlling interest in Sierra Railroad Company; founder Mike Hart remained a significant investor.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-03-09T04:00:00.000"
+      }
+    }
+  ],
+  "quarantinedFields": [
+    {
+      "field": "Deal.closingDate",
+      "value": null,
+      "reason": "The March 9 Ridgewood release states that the controlling-interest acquisition had occurred but does not separately disclose a legal closing date."
+    },
+    {
+      "field": "Deal.legacyId",
+      "value": "INF-2026-152",
+      "reason": "INF-2026-152 belongs to the unrelated 24H Frost transaction; Sierra Railroad is INF-2026-120 and the unrelated row is guarded against mutation."
+    },
+    {
+      "field": "Deal.stakePercentage",
+      "value": null,
+      "reason": "The source discloses only a controlling interest and states that Mike Hart remained a significant investor; no exact percentage is disclosed."
+    },
+    {
+      "field": "CVAT.closingStatus",
+      "value": null,
+      "reason": "The release says Sierra was acquiring CVAT, so the separate CVAT deal and milestone are protected rather than treated as conclusively closed here."
+    }
+  ],
+  "before": {
+    "snapshotSha256": "2b487812aae5b8fe13067aa458414a6d31b7f9fad3200329142d8f5ee117297c",
+    "tableCounts": {
+      "deals": 352,
+      "companies": 1191,
+      "ownershipPeriods": 1413,
+      "milestones": 4227,
+      "citations": 10237
+    }
+  },
+  "after": {
+    "snapshotSha256": "6292124c761aa2db9073d627a455632286284b0ec4945fad475878fab5e89222",
+    "tableCounts": {
+      "deals": 352,
+      "companies": 1191,
+      "ownershipPeriods": 1413,
+      "milestones": 4227,
+      "citations": 10237
+    }
+  },
+  "postconditions": {
+    "exactMutationIds": true,
+    "fullPriorRowsRecordedForRollback": true,
+    "closingDateRemainedNull": true,
+    "companyOwnershipAndParticipantUnchanged": true,
+    "cvatMilestoneUnchanged": true,
+    "unrelatedInf2026152DealUnchanged": true,
+    "tableCountsUnchanged": true
+  },
+  "receiptSha256": "9ba392bbc3b6b89efe9e968fd473a162392907d6a6af793cfd53964969b2249b"
+}

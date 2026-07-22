@@ -1,0 +1,1175 @@
+{
+  "schemaVersion": 1,
+  "scope": "AMERICAN_ROADS_JOHN_LAING_CLOSE_EXACT_ID_REMEDIATION",
+  "database": {
+    "host": "ep-dawn-sky-amaxdqe4-pooler.c-5.us-east-1.aws.neon.tech",
+    "database": "neondb"
+  },
+  "timestampRepresentation": {
+    "databaseType": "timestamp without time zone",
+    "serialization": "raw PostgreSQL wall-clock value via to_char; no JavaScript Date conversion and no timezone suffix",
+    "millisecondsFormat": "YYYY-MM-DD\"T\"HH24:MI:SS.MS",
+    "microsecondsFormat": "YYYY-MM-DD\"T\"HH24:MI:SS.US"
+  },
+  "reviewedBasis": {
+    "actionCount": 24,
+    "actionSetSha256": "1cb46fe2af7baba9d82676947373dbc65f9d4009f552a58a04890d07212a2bd5",
+    "manifestSha256": "0e06b12fba7fbcec41725a29a9c0d1b7095f1a71265f0eb4e27a85e38daa48a6"
+  },
+  "snapshotSha256": "0e645fce42ab8e3dd3a2bb488399d3ca82277f829da9f00bb653d0ce540604f8",
+  "actionSetSha256": "1cb46fe2af7baba9d82676947373dbc65f9d4009f552a58a04890d07212a2bd5",
+  "tableCounts": {
+    "deals": 352,
+    "dealParticipants": 611,
+    "organizations": 325,
+    "companies": 1191,
+    "ownershipPeriods": 1413,
+    "milestones": 4227,
+    "sources": 4849,
+    "citations": 10237
+  },
+  "schema": {
+    "sourceUrlUniqueReady": true,
+    "citationCompanyIdentityUniqueReady": true
+  },
+  "counts": {
+    "dealUpdates": 1,
+    "participantUpdates": 1,
+    "ownershipUpdates": 2,
+    "companyUpdates": 1,
+    "milestoneUpdates": 3,
+    "citationUpdates": 2,
+    "citationDeletes": 10,
+    "sourceInserts": 2,
+    "citationInserts": 2
+  },
+  "actions": [
+    {
+      "actionType": "CITATION_DELETE",
+      "id": "cmnva4nx605srm8lz4735uah2",
+      "reason": "Duplicate deal-only ENR citation; the richer deal/company operations citation is retained.",
+      "current": {
+        "id": "cmnva4nx605srm8lz4735uah2",
+        "sourceId": "cmnva4nve05sqm8lzsskzxgf0",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "companyId": null,
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "ENR",
+        "sourceUrl": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "CITATION_DELETE",
+      "id": "cmnvaco0o0avfm8lzmq3ry7ba",
+      "reason": "Sparse duplicate company-profile citation; the evidence-labeled citation is retained.",
+      "current": {
+        "id": "cmnvaco0o0avfm8lzmq3ry7ba",
+        "sourceId": "cmnvacnyz0avem8lznphrzjkl",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": null,
+        "sourceLabel": "Americanroads — American Roads",
+        "sourceUrl": "https://www.americanroads.com/",
+        "sourceType": "WEBSITE"
+      }
+    },
+    {
+      "actionType": "CITATION_DELETE",
+      "id": "cmnvaco3z0avhm8lzjfo1r4sf",
+      "reason": "Sparse duplicate operations citation; the evidence-labeled citation is retained.",
+      "current": {
+        "id": "cmnvaco3z0avhm8lzjfo1r4sf",
+        "sourceId": "cmnvaco2a0avgm8lzclj8wkju",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": null,
+        "sourceLabel": "Americanroads — American Roads",
+        "sourceUrl": "https://www.americanroads.com/Assets.aspx",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "CITATION_DELETE",
+      "id": "cmnvaco740avjm8lzvbzbe78h",
+      "reason": "Sparse duplicate CVC citation; the evidence-labeled ownership citation is relinked and retained.",
+      "current": {
+        "id": "cmnvaco740avjm8lzvbzbe78h",
+        "sourceId": "cmnvaco5i0avim8lz3gd5ysjg",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "Cvc — American Roads",
+        "sourceUrl": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+        "sourceType": "PRESS_RELEASE"
+      }
+    },
+    {
+      "actionType": "CITATION_DELETE",
+      "id": "cmnvacoa90avlm8lzzpgtmuau",
+      "reason": "Sparse duplicate John Laing citation; the evidence-labeled ownership citation is relinked and retained.",
+      "current": {
+        "id": "cmnvacoa90avlm8lzzpgtmuau",
+        "sourceId": "cmnvaco8i0avkm8lz74wdw93o",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "Laing — American Roads",
+        "sourceUrl": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+        "sourceType": "PRESS_RELEASE"
+      }
+    },
+    {
+      "actionType": "CITATION_DELETE",
+      "id": "cmnvcx8ly065q35lzba7v2icb",
+      "reason": "Duplicate deal-only ENR citation; the richer deal/company operations citation is retained.",
+      "current": {
+        "id": "cmnvcx8ly065q35lzba7v2icb",
+        "sourceId": "cmnva4nve05sqm8lzsskzxgf0",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "companyId": null,
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "ENR",
+        "sourceUrl": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "CITATION_DELETE",
+      "id": "cmoqc8qhu06c0171fxm1l42gj",
+      "reason": "Duplicate deal-only ENR citation; the richer deal/company operations citation is retained.",
+      "current": {
+        "id": "cmoqc8qhu06c0171fxm1l42gj",
+        "sourceId": "cmnva4nve05sqm8lzsskzxgf0",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "companyId": null,
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "ENR",
+        "sourceUrl": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "CITATION_DELETE",
+      "id": "cmoqcemnw08iv171fopk3umlq",
+      "reason": "Unrelated JLIL/Equitix structure evidence does not support this American Roads acquisition.",
+      "current": {
+        "id": "cmoqcemnw08iv171fopk3umlq",
+        "sourceId": "cmoqcemmb08iu171f3khjrzb3",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "sourceUrl": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "CITATION_DELETE",
+      "id": "cmoxwl8n806h3t01fqieacxuf",
+      "reason": "Duplicate deal-only ENR citation; the richer deal/company operations citation is retained.",
+      "current": {
+        "id": "cmoxwl8n806h3t01fqieacxuf",
+        "sourceId": "cmnva4nve05sqm8lzsskzxgf0",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "companyId": null,
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "ENR",
+        "sourceUrl": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "CITATION_DELETE",
+      "id": "cmoxwna7u0a5ft01fo81sgjuj",
+      "reason": "Unrelated JLIL/Equitix structure evidence does not support this American Roads acquisition.",
+      "current": {
+        "id": "cmoxwna7u0a5ft01fo81sgjuj",
+        "sourceId": "cmoqcemmb08iu171f3khjrzb3",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "sourceLabel": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "sourceUrl": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "CITATION_INSERT",
+      "id": "citation_american_roads_john_laing_close_20260428",
+      "evidence": [
+        {
+          "publisher": "John Laing",
+          "url": "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR",
+          "evidenceDate": "2026-04-28",
+          "finding": "John Laing publicly confirmed financial close on its acquisition of American Roads. The LinkedIn activity ID establishes the post timestamp, but the post does not disclose the separate legal closing date."
+        }
+      ],
+      "proposed": {
+        "id": "citation_american_roads_john_laing_close_20260428",
+        "sourceId": "source_american_roads_john_laing_close_20260428",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "John Laing public confirmation of financial close on the American Roads acquisition",
+        "sourceLabel": "John Laing — American Roads financial close",
+        "sourceUrl": "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR",
+        "sourceType": "PRESS_RELEASE"
+      }
+    },
+    {
+      "actionType": "CITATION_INSERT",
+      "id": "citation_american_roads_john_laing_current_portfolio",
+      "evidence": [
+        {
+          "publisher": "John Laing",
+          "url": "https://www.laing.com/portfolio/start/24/",
+          "evidenceDate": "2026-07-22",
+          "finding": "John Laing lists American Roads in its current portfolio as a North American road business and platform."
+        }
+      ],
+      "proposed": {
+        "id": "citation_american_roads_john_laing_current_portfolio",
+        "sourceId": "source_american_roads_john_laing_current_portfolio",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "John Laing current portfolio listing for American Roads after financial close",
+        "sourceLabel": "John Laing — American Roads portfolio",
+        "sourceUrl": "https://www.laing.com/portfolio/start/24/",
+        "sourceType": "WEBSITE"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwna5m0a5bt01f4ykmvbka",
+      "evidence": [
+        {
+          "publisher": "CVC DIF",
+          "url": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+          "evidenceDate": "2026-02-13",
+          "finding": "CVC DIF identified John Laing as buyer, said CVC DIF acquired American Roads through DIF Infrastructure V in 2018, and described four toll assets serving approximately seven million trips annually."
+        }
+      ],
+      "current": {
+        "id": "cmoxwna5m0a5bt01f4ykmvbka",
+        "sourceId": "cmnvaco5i0avim8lz3gd5ysjg",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CVC DIF transaction announcement",
+        "sourceLabel": "Cvc — American Roads",
+        "sourceUrl": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+        "sourceType": "PRESS_RELEASE"
+      },
+      "proposed": {
+        "id": "cmoxwna5m0a5bt01f4ykmvbka",
+        "sourceId": "cmnvaco5i0avim8lz3gd5ysjg",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CVC DIF sale announcement and 2018 acquisition through DIF Infrastructure V",
+        "sourceLabel": "Cvc — American Roads",
+        "sourceUrl": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+        "sourceType": "PRESS_RELEASE"
+      }
+    },
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwna6t0a5dt01ftevwd1q4",
+      "evidence": [
+        {
+          "publisher": "John Laing",
+          "url": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+          "evidenceDate": "2026-02-13",
+          "finding": "John Laing agreed to acquire 100% of American Roads from CVC DIF and identified the Detroit-Windsor Tunnel concession and three Alabama toll bridges."
+        }
+      ],
+      "current": {
+        "id": "cmoxwna6t0a5dt01ftevwd1q4",
+        "sourceId": "cmnvaco8i0avkm8lz74wdw93o",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix / John Laing transaction announcement",
+        "sourceLabel": "Laing — American Roads",
+        "sourceUrl": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+        "sourceType": "PRESS_RELEASE"
+      },
+      "proposed": {
+        "id": "cmoxwna6t0a5dt01ftevwd1q4",
+        "sourceId": "cmnvaco8i0avkm8lz74wdw93o",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "John Laing agreement to acquire 100% of American Roads",
+        "sourceLabel": "Laing — American Roads",
+        "sourceUrl": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+        "sourceType": "PRESS_RELEASE"
+      }
+    },
+    {
+      "actionType": "COMPANY_UPDATE",
+      "id": "cmnva10wn011sm8lz3pn2jz98",
+      "evidence": [
+        {
+          "publisher": "American Roads",
+          "url": "https://www.americanroads.com/",
+          "evidenceDate": "2026-07-22",
+          "finding": "American Roads identifies its official website and corporate office at 100 E Jefferson Avenue in Detroit, Michigan."
+        },
+        {
+          "publisher": "CVC DIF",
+          "url": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+          "evidenceDate": "2026-02-13",
+          "finding": "CVC DIF identified John Laing as buyer, said CVC DIF acquired American Roads through DIF Infrastructure V in 2018, and described four toll assets serving approximately seven million trips annually."
+        },
+        {
+          "publisher": "John Laing",
+          "url": "https://www.laing.com/portfolio/start/24/",
+          "evidenceDate": "2026-07-22",
+          "finding": "John Laing lists American Roads in its current portfolio as a North American road business and platform."
+        },
+        {
+          "publisher": "John Laing",
+          "url": "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR",
+          "evidenceDate": "2026-04-28",
+          "finding": "John Laing publicly confirmed financial close on its acquisition of American Roads. The LinkedIn activity ID establishes the post timestamp, but the post does not disclose the separate legal closing date."
+        }
+      ],
+      "current": {
+        "id": "cmnva10wn011sm8lz3pn2jz98",
+        "name": "American Roads",
+        "sector": "TRANSPORTATION",
+        "subsector": "Toll roads and tunnel concession",
+        "region": "NORTH_AMERICA",
+        "country": "United States / Canada",
+        "countryTags": [
+          "United States",
+          "Canada"
+        ],
+        "description": "American Roads owns and operates a portfolio of tolled transportation assets in the United States. Its user base is made up of passenger and commercial vehicle traffic using the Detroit-Windsor Tunnel and three toll bridges in Alabama. The platform is asset-heavy and revenue is tied to tolling rights and concession-based transportation operations. Public sources state that the company's four operational assets serve approximately seven million trips annually across Alabama and Michigan. As of the reviewed public record, a February 2026 announcement said John Laing had agreed to acquire the platform from CVC DIF, but closing had not been publicly confirmed. Because the current post-signing ownership structure was not publicly verified in the reviewed materials, detailed current ownership percentages are not publicly disclosed.",
+        "companyStatus": "ACTIVE",
+        "website": null,
+        "yearFounded": null,
+        "headquarters": "Alabama; Michigan",
+        "recordStatus": "PUBLISHED",
+        "createdAt": "2026-04-12T04:41:39.287000",
+        "updatedAt": "2026-04-25T17:03:10.978000"
+      },
+      "proposed": {
+        "id": "cmnva10wn011sm8lz3pn2jz98",
+        "name": "American Roads",
+        "sector": "TRANSPORTATION",
+        "subsector": "Toll roads and tunnel concession",
+        "region": "NORTH_AMERICA",
+        "country": "United States / Canada",
+        "countryTags": [
+          "United States",
+          "Canada"
+        ],
+        "description": "American Roads owns and operates four tolled transportation assets in the United States: the U.S.-side concession for the Detroit-Windsor Tunnel and three Alabama toll bridges (Tuscaloosa Bypass, Emerald Mountain Expressway and Montgomery Expressway). The portfolio serves approximately seven million trips annually and provides commuter, commercial and cross-border connectivity. CVC DIF acquired the platform through DIF Infrastructure V in 2018 and sold it to John Laing in 2026; John Laing has publicly confirmed financial close and lists American Roads in its current portfolio.",
+        "companyStatus": "ACTIVE",
+        "website": "https://www.americanroads.com/",
+        "yearFounded": null,
+        "headquarters": "Detroit, Michigan",
+        "recordStatus": "PUBLISHED",
+        "createdAt": "2026-04-12T04:41:39.287000"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmnva47dd05fnm8lzb1c6era3",
+      "evidence": [
+        {
+          "publisher": "CVC DIF",
+          "url": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+          "evidenceDate": "2026-02-13",
+          "finding": "CVC DIF identified John Laing as buyer, said CVC DIF acquired American Roads through DIF Infrastructure V in 2018, and described four toll assets serving approximately seven million trips annually."
+        },
+        {
+          "publisher": "John Laing",
+          "url": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+          "evidenceDate": "2026-02-13",
+          "finding": "John Laing agreed to acquire 100% of American Roads from CVC DIF and identified the Detroit-Windsor Tunnel concession and three Alabama toll bridges."
+        },
+        {
+          "publisher": "John Laing",
+          "url": "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR",
+          "evidenceDate": "2026-04-28",
+          "finding": "John Laing publicly confirmed financial close on its acquisition of American Roads. The LinkedIn activity ID establishes the post timestamp, but the post does not disclose the separate legal closing date."
+        }
+      ],
+      "current": {
+        "id": "cmnva47dd05fnm8lzb1c6era3",
+        "legacyId": "INF-2026-044",
+        "title": "CVC DIF divests American Roads platform",
+        "target": "American Roads",
+        "sector": "TRANSPORTATION",
+        "subsector": "Roads / Toll Roads",
+        "region": "NORTH_AMERICA",
+        "categories": [
+          "SALE_BUYOUT"
+        ],
+        "date": "2026-02-13T08:00:00.000",
+        "description": "CVC DIF announced the divestiture of American Roads, a toll road operating platform in the United States.",
+        "targetDescription": "American Roads, a toll road operating and management platform in the United States.",
+        "country": "United States",
+        "enterpriseValue": null,
+        "equityValue": null,
+        "stake": "100%",
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "assetScale": null,
+        "valuationMultiple": null,
+        "fundVehicle": null,
+        "keyHighlights": [
+          "Platform divestiture of American Roads by CVC DIF",
+          "American Roads is a toll road operating platform in the United States"
+        ],
+        "recordStatus": "PUBLISHED",
+        "createdAt": "2026-04-12T04:44:07.633000",
+        "updatedAt": "2026-04-12T04:44:07.633000"
+      },
+      "proposed": {
+        "id": "cmnva47dd05fnm8lzb1c6era3",
+        "legacyId": "INF-2026-044",
+        "title": "John Laing completes acquisition of American Roads from CVC DIF",
+        "target": "American Roads",
+        "sector": "TRANSPORTATION",
+        "subsector": "Roads / Toll Roads",
+        "region": "NORTH_AMERICA",
+        "categories": [
+          "SALE_BUYOUT"
+        ],
+        "date": "2026-02-13T08:00:00.000",
+        "description": "John Laing acquired 100% of American Roads from CVC DIF. The platform comprises the U.S.-side concession for the Detroit-Windsor Tunnel and three toll bridges in Alabama and serves approximately seven million trips annually. John Laing publicly confirmed financial close on April 28, 2026; the exact legal closing date was not disclosed.",
+        "targetDescription": "American Roads is a U.S. transportation platform comprising the U.S.-side concession for the Detroit-Windsor Tunnel and three toll bridges in Alabama.",
+        "country": "United States",
+        "enterpriseValue": null,
+        "equityValue": null,
+        "stake": "100%",
+        "dealStatus": "CLOSED",
+        "closingDate": null,
+        "assetScale": "Four operational toll assets serving approximately seven million trips annually",
+        "valuationMultiple": null,
+        "fundVehicle": null,
+        "keyHighlights": [
+          "John Laing acquired 100% of American Roads from CVC DIF",
+          "Portfolio includes the U.S.-side Detroit-Windsor Tunnel concession and three Alabama toll bridges",
+          "Four operational toll assets serve approximately seven million trips annually"
+        ],
+        "recordStatus": "PUBLISHED",
+        "createdAt": "2026-04-12T04:44:07.633000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h857n01mnw41f3ne227zf",
+      "evidence": [
+        {
+          "publisher": "CVC DIF",
+          "url": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+          "evidenceDate": "2026-02-13",
+          "finding": "CVC DIF identified John Laing as buyer, said CVC DIF acquired American Roads through DIF Infrastructure V in 2018, and described four toll assets serving approximately seven million trips annually."
+        }
+      ],
+      "current": {
+        "id": "cmp1h857n01mnw41f3ne227zf",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "date": "2018",
+        "event": "DIF acquired American Roads, according to industry reporting.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-01-01T00:00:00.000"
+      },
+      "proposed": {
+        "id": "cmp1h857n01mnw41f3ne227zf",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "date": "2018",
+        "event": "CVC DIF acquired American Roads through DIF Infrastructure V.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-01-01T00:00:00.000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h857n01mow41f5ag4404i",
+      "evidence": [
+        {
+          "publisher": "CVC DIF",
+          "url": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+          "evidenceDate": "2026-02-13",
+          "finding": "CVC DIF identified John Laing as buyer, said CVC DIF acquired American Roads through DIF Infrastructure V in 2018, and described four toll assets serving approximately seven million trips annually."
+        },
+        {
+          "publisher": "John Laing",
+          "url": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+          "evidenceDate": "2026-02-13",
+          "finding": "John Laing agreed to acquire 100% of American Roads from CVC DIF and identified the Detroit-Windsor Tunnel concession and three Alabama toll bridges."
+        }
+      ],
+      "current": {
+        "id": "cmp1h857n01mow41f5ag4404i",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "date": "Feb 2026",
+        "event": "CVC DIF announced an agreement to sell American Roads to John Laing.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-02-01T05:00:00.000"
+      },
+      "proposed": {
+        "id": "cmp1h857n01mow41f5ag4404i",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "date": "Feb 13, 2026",
+        "event": "CVC DIF agreed to sell American Roads to John Laing.",
+        "category": "DIVESTITURE",
+        "sortDate": "2026-02-13T05:00:00.000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h857n01mpw41fy3zz1y4y",
+      "evidence": [
+        {
+          "publisher": "John Laing",
+          "url": "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR",
+          "evidenceDate": "2026-04-28",
+          "finding": "John Laing publicly confirmed financial close on its acquisition of American Roads. The LinkedIn activity ID establishes the post timestamp, but the post does not disclose the separate legal closing date."
+        }
+      ],
+      "current": {
+        "id": "cmp1h857n01mpw41fy3zz1y4y",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "date": "Feb 2026",
+        "event": "Equitix-backed John Laing announced an agreement to acquire 100% of the platform from CVC DIF.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-02-01T05:00:00.000"
+      },
+      "proposed": {
+        "id": "cmp1h857n01mpw41fy3zz1y4y",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "date": "Apr 28, 2026",
+        "event": "John Laing publicly confirmed financial close on its acquisition of 100% of American Roads from CVC DIF.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-04-28T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoel8pi40005zclzqvad6cx9",
+      "evidence": [
+        {
+          "publisher": "John Laing",
+          "url": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+          "evidenceDate": "2026-02-13",
+          "finding": "John Laing agreed to acquire 100% of American Roads from CVC DIF and identified the Detroit-Windsor Tunnel concession and three Alabama toll bridges."
+        },
+        {
+          "publisher": "John Laing",
+          "url": "https://www.laing.com/insights/john-laing-strengthens-global-investment-leadership-to-support-continued-greenfield-growth/",
+          "evidenceDate": "2026-04-14",
+          "finding": "John Laing described its recent investment as a 100% stake in American Roads before its later explicit financial-close post."
+        },
+        {
+          "publisher": "John Laing",
+          "url": "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR",
+          "evidenceDate": "2026-04-28",
+          "finding": "John Laing publicly confirmed financial close on its acquisition of American Roads. The LinkedIn activity ID establishes the post timestamp, but the post does not disclose the separate legal closing date."
+        },
+        {
+          "publisher": "John Laing",
+          "url": "https://www.laing.com/portfolio/start/24/",
+          "evidenceDate": "2026-07-22",
+          "finding": "John Laing lists American Roads in its current portfolio as a North American road business and platform."
+        }
+      ],
+      "current": {
+        "id": "cmoel8pi40005zclzqvad6cx9",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "companyName": "American Roads",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zzx1004om8lzdgn666ej",
+        "organizationName": "Equitix",
+        "vehicleName": "John Laing Investments Limited (Equitix / KKR JV)",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:03:10.876000"
+      },
+      "proposed": {
+        "id": "cmoel8pi40005zclzqvad6cx9",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "companyName": "American Roads",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmoqbwmbb000c171f7mnp9rq7",
+        "organizationName": "John Laing",
+        "vehicleName": "John Laing Group",
+        "stake": "100%",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:03:10.876000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoxwff0p01jdt01f8j2f89qj",
+      "evidence": [
+        {
+          "publisher": "CVC DIF",
+          "url": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+          "evidenceDate": "2026-02-13",
+          "finding": "CVC DIF identified John Laing as buyer, said CVC DIF acquired American Roads through DIF Infrastructure V in 2018, and described four toll assets serving approximately seven million trips annually."
+        },
+        {
+          "publisher": "John Laing",
+          "url": "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR",
+          "evidenceDate": "2026-04-28",
+          "finding": "John Laing publicly confirmed financial close on its acquisition of American Roads. The LinkedIn activity ID establishes the post timestamp, but the post does not disclose the separate legal closing date."
+        }
+      ],
+      "current": {
+        "id": "cmoxwff0p01jdt01f8j2f89qj",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "companyName": "American Roads",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zpw30017m8lzxh24k4uq",
+        "organizationName": "CVC DIF",
+        "vehicleName": "Seller in announced American Roads sale to John Laing",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-05-09T05:23:57.001000"
+      },
+      "proposed": {
+        "id": "cmoxwff0p01jdt01f8j2f89qj",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "companyName": "American Roads",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zpw30017m8lzxh24k4uq",
+        "organizationName": "CVC DIF",
+        "vehicleName": "DIF Infrastructure V",
+        "stake": "100%",
+        "investmentYear": 2018,
+        "exitYear": 2026,
+        "isActive": false,
+        "createdAt": "2026-05-09T05:23:57.001000"
+      }
+    },
+    {
+      "actionType": "PARTICIPANT_UPDATE",
+      "id": "cmnva4gd905kdm8lzvfku6v8p",
+      "evidence": [
+        {
+          "publisher": "John Laing",
+          "url": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+          "evidenceDate": "2026-02-13",
+          "finding": "John Laing agreed to acquire 100% of American Roads from CVC DIF and identified the Detroit-Windsor Tunnel concession and three Alabama toll bridges."
+        },
+        {
+          "publisher": "John Laing",
+          "url": "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR",
+          "evidenceDate": "2026-04-28",
+          "finding": "John Laing publicly confirmed financial close on its acquisition of American Roads. The LinkedIn activity ID establishes the post timestamp, but the post does not disclose the separate legal closing date."
+        }
+      ],
+      "current": {
+        "id": "cmnva4gd905kdm8lzvfku6v8p",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "organizationId": "cmnva00tv0050m8lz7p26u1ez",
+        "organizationName": "Undisclosed Buyer",
+        "organizationTypes": [
+          "CORPORATE"
+        ],
+        "organizationStatus": "PUBLISHED",
+        "role": "BUYER",
+        "displayName": "Undisclosed Buyer"
+      },
+      "proposed": {
+        "id": "cmnva4gd905kdm8lzvfku6v8p",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "organizationId": "cmoqbwmbb000c171f7mnp9rq7",
+        "organizationName": "John Laing",
+        "organizationTypes": [
+          "FUND_MANAGER"
+        ],
+        "organizationStatus": "PUBLISHED",
+        "role": "BUYER",
+        "displayName": "John Laing"
+      }
+    },
+    {
+      "actionType": "SOURCE_INSERT",
+      "id": "source_american_roads_john_laing_close_20260428",
+      "evidence": [
+        {
+          "publisher": "John Laing",
+          "url": "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR",
+          "evidenceDate": "2026-04-28",
+          "finding": "John Laing publicly confirmed financial close on its acquisition of American Roads. The LinkedIn activity ID establishes the post timestamp, but the post does not disclose the separate legal closing date."
+        }
+      ],
+      "proposed": {
+        "id": "source_american_roads_john_laing_close_20260428",
+        "label": "John Laing — American Roads financial close",
+        "url": "https://www.linkedin.com/posts/john-laing_jl-american-roads-activity-7455005298681004034-0czR",
+        "type": "PRESS_RELEASE"
+      }
+    },
+    {
+      "actionType": "SOURCE_INSERT",
+      "id": "source_american_roads_john_laing_current_portfolio",
+      "evidence": [
+        {
+          "publisher": "John Laing",
+          "url": "https://www.laing.com/portfolio/start/24/",
+          "evidenceDate": "2026-07-22",
+          "finding": "John Laing lists American Roads in its current portfolio as a North American road business and platform."
+        }
+      ],
+      "proposed": {
+        "id": "source_american_roads_john_laing_current_portfolio",
+        "label": "John Laing — American Roads portfolio",
+        "url": "https://www.laing.com/portfolio/start/24/",
+        "type": "WEBSITE"
+      }
+    }
+  ],
+  "quarantinedFields": [
+    {
+      "field": "Deal.closingDate",
+      "value": null,
+      "reason": "John Laing's April 28 post confirms financial close but does not disclose the separate legal closing date; the post date must not be stored as closingDate."
+    },
+    {
+      "field": "Deal.enterpriseValue",
+      "value": null,
+      "reason": "No reviewed primary source discloses enterprise value."
+    },
+    {
+      "field": "Deal.equityValue",
+      "value": null,
+      "reason": "No reviewed primary source discloses equity value."
+    },
+    {
+      "field": "Company.yearFounded",
+      "value": null,
+      "reason": "The reviewed primary sources do not establish a founding year."
+    },
+    {
+      "field": "OwnershipPeriod.vehicleName",
+      "value": "John Laing Group",
+      "reason": "The reviewed primary sources identify John Laing Group as acquirer but do not disclose a more specific legal acquisition vehicle; no Equitix, KKR or fund vehicle is inferred."
+    }
+  ],
+  "generatedAt": "2026-07-22T21:15:55.595Z",
+  "dryRun": true,
+  "planSha256": "4c8731e4c794af97d56fd54306838db4a002bc220bbf75310d1b1e73cc5db517",
+  "targetSnapshot": {
+    "deal": {
+      "id": "cmnva47dd05fnm8lzb1c6era3",
+      "legacyId": "INF-2026-044",
+      "title": "CVC DIF divests American Roads platform",
+      "target": "American Roads",
+      "sector": "TRANSPORTATION",
+      "subsector": "Roads / Toll Roads",
+      "region": "NORTH_AMERICA",
+      "categories": [
+        "SALE_BUYOUT"
+      ],
+      "date": "2026-02-13T08:00:00.000",
+      "description": "CVC DIF announced the divestiture of American Roads, a toll road operating platform in the United States.",
+      "targetDescription": "American Roads, a toll road operating and management platform in the United States.",
+      "country": "United States",
+      "enterpriseValue": null,
+      "equityValue": null,
+      "stake": "100%",
+      "dealStatus": "ANNOUNCED",
+      "closingDate": null,
+      "assetScale": null,
+      "valuationMultiple": null,
+      "fundVehicle": null,
+      "keyHighlights": [
+        "Platform divestiture of American Roads by CVC DIF",
+        "American Roads is a toll road operating platform in the United States"
+      ],
+      "recordStatus": "PUBLISHED",
+      "createdAt": "2026-04-12T04:44:07.633000",
+      "updatedAt": "2026-04-12T04:44:07.633000"
+    },
+    "participants": [
+      {
+        "id": "cmnva4gd905kdm8lzvfku6v8p",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "organizationId": "cmnva00tv0050m8lz7p26u1ez",
+        "organizationName": "Undisclosed Buyer",
+        "organizationTypes": [
+          "CORPORATE"
+        ],
+        "organizationStatus": "PUBLISHED",
+        "role": "BUYER",
+        "displayName": "Undisclosed Buyer"
+      },
+      {
+        "id": "cmnva4gds05kem8lzgk25j1m4",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "organizationId": "cmnv9zpw30017m8lzxh24k4uq",
+        "organizationName": "CVC DIF",
+        "organizationTypes": [
+          "FUND_MANAGER"
+        ],
+        "organizationStatus": "PUBLISHED",
+        "role": "SELLER",
+        "displayName": "CVC DIF"
+      }
+    ],
+    "organizations": [
+      {
+        "id": "cmnv9zpw30017m8lzxh24k4uq",
+        "name": "CVC DIF",
+        "types": [
+          "FUND_MANAGER"
+        ],
+        "recordStatus": "PUBLISHED"
+      },
+      {
+        "id": "cmnv9zzx1004om8lzdgn666ej",
+        "name": "Equitix",
+        "types": [
+          "FUND_MANAGER"
+        ],
+        "recordStatus": "PUBLISHED"
+      },
+      {
+        "id": "cmnva00tv0050m8lz7p26u1ez",
+        "name": "Undisclosed Buyer",
+        "types": [
+          "CORPORATE"
+        ],
+        "recordStatus": "PUBLISHED"
+      },
+      {
+        "id": "cmoqbwmbb000c171f7mnp9rq7",
+        "name": "John Laing",
+        "types": [
+          "FUND_MANAGER"
+        ],
+        "recordStatus": "PUBLISHED"
+      }
+    ],
+    "ownershipPeriods": [
+      {
+        "id": "cmoel8pi40005zclzqvad6cx9",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "companyName": "American Roads",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zzx1004om8lzdgn666ej",
+        "organizationName": "Equitix",
+        "vehicleName": "John Laing Investments Limited (Equitix / KKR JV)",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:03:10.876000"
+      },
+      {
+        "id": "cmoxwff0p01jdt01f8j2f89qj",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "companyName": "American Roads",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zpw30017m8lzxh24k4uq",
+        "organizationName": "CVC DIF",
+        "vehicleName": "Seller in announced American Roads sale to John Laing",
+        "stake": null,
+        "investmentYear": 2018,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-05-09T05:23:57.001000"
+      }
+    ],
+    "company": {
+      "id": "cmnva10wn011sm8lz3pn2jz98",
+      "name": "American Roads",
+      "sector": "TRANSPORTATION",
+      "subsector": "Toll roads and tunnel concession",
+      "region": "NORTH_AMERICA",
+      "country": "United States / Canada",
+      "countryTags": [
+        "United States",
+        "Canada"
+      ],
+      "description": "American Roads owns and operates a portfolio of tolled transportation assets in the United States. Its user base is made up of passenger and commercial vehicle traffic using the Detroit-Windsor Tunnel and three toll bridges in Alabama. The platform is asset-heavy and revenue is tied to tolling rights and concession-based transportation operations. Public sources state that the company's four operational assets serve approximately seven million trips annually across Alabama and Michigan. As of the reviewed public record, a February 2026 announcement said John Laing had agreed to acquire the platform from CVC DIF, but closing had not been publicly confirmed. Because the current post-signing ownership structure was not publicly verified in the reviewed materials, detailed current ownership percentages are not publicly disclosed.",
+      "companyStatus": "ACTIVE",
+      "website": null,
+      "yearFounded": null,
+      "headquarters": "Alabama; Michigan",
+      "recordStatus": "PUBLISHED",
+      "createdAt": "2026-04-12T04:41:39.287000",
+      "updatedAt": "2026-04-25T17:03:10.978000"
+    },
+    "milestones": [
+      {
+        "id": "cmp1h857n01mnw41f3ne227zf",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "date": "2018",
+        "event": "DIF acquired American Roads, according to industry reporting.",
+        "category": "ACQUISITION",
+        "sortDate": "2018-01-01T00:00:00.000"
+      },
+      {
+        "id": "cmp1h857n01mow41f5ag4404i",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "date": "Feb 2026",
+        "event": "CVC DIF announced an agreement to sell American Roads to John Laing.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-02-01T05:00:00.000"
+      },
+      {
+        "id": "cmp1h857n01mpw41fy3zz1y4y",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "date": "Feb 2026",
+        "event": "Equitix-backed John Laing announced an agreement to acquire 100% of the platform from CVC DIF.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-02-01T05:00:00.000"
+      }
+    ],
+    "sources": [
+      {
+        "id": "cmnva4nve05sqm8lzsskzxgf0",
+        "label": "ENR",
+        "url": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+        "type": "ARTICLE"
+      },
+      {
+        "id": "cmnvacnyz0avem8lznphrzjkl",
+        "label": "Americanroads — American Roads",
+        "url": "https://www.americanroads.com/",
+        "type": "WEBSITE"
+      },
+      {
+        "id": "cmnvaco2a0avgm8lzclj8wkju",
+        "label": "Americanroads — American Roads",
+        "url": "https://www.americanroads.com/Assets.aspx",
+        "type": "ARTICLE"
+      },
+      {
+        "id": "cmnvaco5i0avim8lz3gd5ysjg",
+        "label": "Cvc — American Roads",
+        "url": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "id": "cmnvaco8i0avkm8lz74wdw93o",
+        "label": "Laing — American Roads",
+        "url": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+        "type": "PRESS_RELEASE"
+      },
+      {
+        "id": "cmoqcemmb08iu171f3khjrzb3",
+        "label": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "url": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "type": "ARTICLE"
+      }
+    ],
+    "citations": [
+      {
+        "id": "cmnva4nx605srm8lz4735uah2",
+        "sourceId": "cmnva4nve05sqm8lzsskzxgf0",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "companyId": null,
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "ENR",
+        "sourceUrl": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmnvaco0o0avfm8lzmq3ry7ba",
+        "sourceId": "cmnvacnyz0avem8lznphrzjkl",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": null,
+        "sourceLabel": "Americanroads — American Roads",
+        "sourceUrl": "https://www.americanroads.com/",
+        "sourceType": "WEBSITE"
+      },
+      {
+        "id": "cmnvaco3z0avhm8lzjfo1r4sf",
+        "sourceId": "cmnvaco2a0avgm8lzclj8wkju",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": null,
+        "sourceLabel": "Americanroads — American Roads",
+        "sourceUrl": "https://www.americanroads.com/Assets.aspx",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmnvaco740avjm8lzvbzbe78h",
+        "sourceId": "cmnvaco5i0avim8lz3gd5ysjg",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "Cvc — American Roads",
+        "sourceUrl": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+        "sourceType": "PRESS_RELEASE"
+      },
+      {
+        "id": "cmnvacoa90avlm8lzzpgtmuau",
+        "sourceId": "cmnvaco8i0avkm8lz74wdw93o",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "Laing — American Roads",
+        "sourceUrl": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+        "sourceType": "PRESS_RELEASE"
+      },
+      {
+        "id": "cmnvcx8ly065q35lzba7v2icb",
+        "sourceId": "cmnva4nve05sqm8lzsskzxgf0",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "companyId": null,
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "ENR",
+        "sourceUrl": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmoqc8qhu06c0171fxm1l42gj",
+        "sourceId": "cmnva4nve05sqm8lzsskzxgf0",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "companyId": null,
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "ENR",
+        "sourceUrl": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmoqcemnw08iv171fopk3umlq",
+        "sourceId": "cmoqcemmb08iu171f3khjrzb3",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "sourceUrl": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmoxwl8n806h3t01fqieacxuf",
+        "sourceId": "cmnva4nve05sqm8lzsskzxgf0",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "companyId": null,
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": null,
+        "sourceLabel": "ENR",
+        "sourceUrl": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmoxwna3i0a57t01fl3qxutqt",
+        "sourceId": "cmnvacnyz0avem8lznphrzjkl",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "COMPANY_PROFILE",
+        "evidenceLabel": "Americanroads company profile",
+        "sourceLabel": "Americanroads — American Roads",
+        "sourceUrl": "https://www.americanroads.com/",
+        "sourceType": "WEBSITE"
+      },
+      {
+        "id": "cmoxwna4j0a59t01f89g9b24h",
+        "sourceId": "cmnvaco2a0avgm8lzclj8wkju",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "Americanroads operations / asset details",
+        "sourceLabel": "Americanroads — American Roads",
+        "sourceUrl": "https://www.americanroads.com/Assets.aspx",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmoxwna5m0a5bt01f4ykmvbka",
+        "sourceId": "cmnvaco5i0avim8lz3gd5ysjg",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "CVC DIF transaction announcement",
+        "sourceLabel": "Cvc — American Roads",
+        "sourceUrl": "https://www.cvc.com/media/news/2026/cvc-dif-agrees-sale-of-american-roads-to-john-laing/",
+        "sourceType": "PRESS_RELEASE"
+      },
+      {
+        "id": "cmoxwna6t0a5dt01ftevwd1q4",
+        "sourceId": "cmnvaco8i0avkm8lz74wdw93o",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "OWNERSHIP_INVESTMENT",
+        "evidenceLabel": "Equitix / John Laing transaction announcement",
+        "sourceLabel": "Laing — American Roads",
+        "sourceUrl": "https://www.laing.com/insights/john-laing-agrees-to-acquire-us-road-transportation-platform-from-cvc-dif/",
+        "sourceType": "PRESS_RELEASE"
+      },
+      {
+        "id": "cmoxwna7u0a5ft01fo81sgjuj",
+        "sourceId": "cmoqcemmb08iu171f3khjrzb3",
+        "dealId": null,
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "SUPPORTING_CONTEXT",
+        "evidenceLabel": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "sourceLabel": "Ownership structure source — Equitix — John Laing Investments Limited",
+        "sourceUrl": "https://www.debevoise.com/news/2021/05/debevoise-advises-pantheon-in-its-role-in",
+        "sourceType": "ARTICLE"
+      },
+      {
+        "id": "cmoxwna8e0a5gt01fltku4le2",
+        "sourceId": "cmnva4nve05sqm8lzsskzxgf0",
+        "dealId": "cmnva47dd05fnm8lzb1c6era3",
+        "companyId": "cmnva10wn011sm8lz3pn2jz98",
+        "purpose": "OPERATIONS_ASSETS",
+        "evidenceLabel": "ENR operations / asset details",
+        "sourceLabel": "ENR",
+        "sourceUrl": "https://www.enr.com/articles/62530-john-laing-to-acquire-american-roads-signaling-durable-demand-for-us-toll-assets",
+        "sourceType": "ARTICLE"
+      }
+    ],
+    "proposedSourceConflicts": [],
+    "proposedCitationConflicts": [],
+    "schema": {
+      "sourceUrlUniqueReady": true,
+      "citationCompanyIdentityUniqueReady": true
+    },
+    "tableCounts": {
+      "deals": 352,
+      "dealParticipants": 611,
+      "organizations": 325,
+      "companies": 1191,
+      "ownershipPeriods": 1413,
+      "milestones": 4227,
+      "sources": 4849,
+      "citations": 10237
+    }
+  }
+}

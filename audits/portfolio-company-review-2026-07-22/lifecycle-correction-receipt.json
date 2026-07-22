@@ -1,0 +1,819 @@
+{
+  "schemaVersion": 1,
+  "scope": "REVIEWED_EXACT_PORTFOLIO_LIFECYCLE_CORRECTIONS",
+  "appliedAt": "2026-07-22T20:45:42.565Z",
+  "database": {
+    "host": "ep-dawn-sky-amaxdqe4-pooler.c-5.us-east-1.aws.neon.tech",
+    "database": "neondb"
+  },
+  "planSha256": "ed93a4903ef051515936b8b62cfe37043eb4760f8ea408a634d01d8b1edc0be6",
+  "actionSetSha256": "32e8a7cf125a7bbe81b1d80f14abfa377c31a12ef0e3022b9cb6bf8c2adb74ab",
+  "mutations": {
+    "dealUpdates": [
+      "cmnva44zq05esm8lz8elpwcvh",
+      "cmnva463505f6m8lzs5kef3dl",
+      "cmnva475e05fkm8lz9ug5ngij",
+      "cmnva47j205fpm8lzr73zqisy",
+      "cmoqc7mft05yk171fbj6rf6in"
+    ],
+    "ownershipUpdates": [
+      "cmoel78ak0000xdlz7gmibbn1",
+      "ownership_boralex_cdpq_2026"
+    ],
+    "ownershipDeletes": [
+      "cmoel61yl009evflzwd1cnx1v",
+      "cmoel6dh8002pw2lzdmg91gru",
+      "cmoxwgnu601uyt01fdxlgpd4z",
+      "cmoxwhbw5021it01ft1l6jhxe",
+      "ownership_boralex_brookfield_2026"
+    ],
+    "milestoneUpdates": [
+      "cmp1h7m5a00qww41f1yfgcyqx",
+      "cmp1h8wg602tcw41f91blqqbv"
+    ],
+    "milestoneInserts": [
+      "milestone_cordelio_pattern_close_2026"
+    ],
+    "companyUpdates": [
+      "company_boralex_inc_2026"
+    ],
+    "citationUpdates": [
+      "cmoxwmufj09clt01fp7007z4l"
+    ]
+  },
+  "deletedOwnershipRows": [
+    {
+      "id": "cmoxwhbw5021it01ft1l6jhxe",
+      "companyId": "cmnva0ra500lym8lzco0glku7",
+      "companyName": "i3 Broadband",
+      "fundId": null,
+      "fundName": null,
+      "organizationId": "cmoqbwp3a001b171fz6huplze",
+      "organizationName": "T-Mobile",
+      "vehicleName": "50/50 fiber joint venture with Wren House",
+      "stake": "50%",
+      "investmentYear": 2026,
+      "exitYear": null,
+      "isActive": true,
+      "createdAt": "2026-05-09T05:25:26.261000"
+    },
+    {
+      "id": "cmoxwgnu601uyt01fdxlgpd4z",
+      "companyId": "cmnva0rwv00mdm8lz50afv9c7",
+      "companyName": "Bayonne Energy Center",
+      "fundId": null,
+      "fundName": null,
+      "organizationId": "cmnva08az007om8lzluydxf4f",
+      "organizationName": "Jupiter Energy Investor",
+      "vehicleName": "Announced acquisition from MSIP pending close",
+      "stake": null,
+      "investmentYear": 2026,
+      "exitYear": null,
+      "isActive": true,
+      "createdAt": "2026-05-09T05:24:55.086000"
+    },
+    {
+      "id": "ownership_boralex_brookfield_2026",
+      "companyId": "company_boralex_inc_2026",
+      "companyName": "Boralex Inc.",
+      "fundId": null,
+      "fundName": null,
+      "organizationId": "cmnv9zysd004am8lzz4lf6gv5",
+      "organizationName": "Brookfield Asset Management",
+      "vehicleName": "Brookfield flagship infrastructure strategy",
+      "stake": "70% pro forma post-close",
+      "investmentYear": 2026,
+      "exitYear": null,
+      "isActive": true,
+      "createdAt": "2026-05-07T16:08:03.983000"
+    },
+    {
+      "id": "cmoel61yl009evflzwd1cnx1v",
+      "companyId": "cmnva0tj200p8m8lz8sb6e93u",
+      "companyName": "Vigor Marine Group",
+      "fundId": null,
+      "fundName": null,
+      "organizationId": "cmnv9zn810009m8lz35ujleyz",
+      "organizationName": "Antin Infrastructure Partners",
+      "vehicleName": "Flagship Fund V",
+      "stake": null,
+      "investmentYear": 2026,
+      "exitYear": null,
+      "isActive": true,
+      "createdAt": "2026-04-25T17:01:07.053000"
+    },
+    {
+      "id": "cmoel6dh8002pw2lzdmg91gru",
+      "companyId": "cmnva0ubj00qkm8lz6et53ta9",
+      "companyName": "Invenergy AMPCI Thermal Power",
+      "fundId": null,
+      "fundName": null,
+      "organizationId": "cmnv9znt5000hm8lzku8pqnya",
+      "organizationName": "ArcLight Capital Partners",
+      "vehicleName": "ArcLight Capital Partners",
+      "stake": null,
+      "investmentYear": 2026,
+      "exitYear": null,
+      "isActive": true,
+      "createdAt": "2026-04-25T17:01:21.980000"
+    }
+  ],
+  "actions": [
+    {
+      "actionType": "CITATION_UPDATE",
+      "id": "cmoxwmufj09clt01fp7007z4l",
+      "evidence": {
+        "sourceId": "cmnvabgvi0a44m8lz20h40bk8",
+        "sourceLabel": "Patternenergy — Cordelio Power",
+        "sourceType": "ARTICLE",
+        "publisher": "Pattern Energy",
+        "url": "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+        "evidenceDate": "2026-04-02",
+        "finding": "Pattern Energy completed the Cordelio acquisition, adding approximately 1,550 MW across 16 operating and in-construction projects plus most of Cordelio's U.S. development pipeline."
+      },
+      "current": {
+        "id": "cmoxwmufj09clt01fp7007z4l",
+        "sourceId": "cmnvabgvi0a44m8lz20h40bk8",
+        "dealId": null,
+        "companyId": "cmnva0yp200xvm8lzue3btvd8",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Patternenergy transaction or milestone detail",
+        "sourceLabel": "Patternenergy — Cordelio Power",
+        "sourceUrl": "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+        "sourceType": "ARTICLE"
+      },
+      "proposed": {
+        "id": "cmoxwmufj09clt01fp7007z4l",
+        "sourceId": "cmnvabgvi0a44m8lz20h40bk8",
+        "dealId": "cmnva44zq05esm8lz8elpwcvh",
+        "companyId": "cmnva0yp200xvm8lzue3btvd8",
+        "purpose": "MILESTONE_EVENT",
+        "evidenceLabel": "Patternenergy transaction or milestone detail",
+        "sourceLabel": "Patternenergy — Cordelio Power",
+        "sourceUrl": "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+        "sourceType": "ARTICLE"
+      }
+    },
+    {
+      "actionType": "COMPANY_UPDATE",
+      "id": "company_boralex_inc_2026",
+      "evidence": {
+        "sourceId": "source_boralex_2025_results",
+        "sourceLabel": "Scale source — Boralex Inc.",
+        "sourceType": "ARTICLE",
+        "publisher": "Boralex",
+        "url": "https://us.boralex.com/en/press-releases/boralex-annual-results-2025",
+        "evidenceDate": "2026-02-27",
+        "finding": "Boralex reports operations across Canada, the United States, France, and the United Kingdom; the canonical country field already lists all four countries."
+      },
+      "current": {
+        "id": "company_boralex_inc_2026",
+        "name": "Boralex Inc.",
+        "country": "United States / Canada / France / United Kingdom",
+        "countryTags": [
+          "United States",
+          "Canada"
+        ],
+        "region": "GLOBAL",
+        "companyStatus": "ACTIVE",
+        "recordStatus": "PUBLISHED",
+        "updatedAt": "2026-05-07T16:08:03.955000"
+      },
+      "proposed": {
+        "id": "company_boralex_inc_2026",
+        "name": "Boralex Inc.",
+        "country": "United States / Canada / France / United Kingdom",
+        "countryTags": [
+          "United States",
+          "Canada",
+          "France",
+          "United Kingdom"
+        ],
+        "region": "GLOBAL",
+        "companyStatus": "ACTIVE",
+        "recordStatus": "PUBLISHED"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmnva44zq05esm8lz8elpwcvh",
+      "evidence": {
+        "sourceId": "cmnvabgvi0a44m8lz20h40bk8",
+        "sourceLabel": "Patternenergy — Cordelio Power",
+        "sourceType": "ARTICLE",
+        "publisher": "Pattern Energy",
+        "url": "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+        "evidenceDate": "2026-04-02",
+        "finding": "Pattern Energy completed the Cordelio acquisition, adding approximately 1,550 MW across 16 operating and in-construction projects plus most of Cordelio's U.S. development pipeline."
+      },
+      "current": {
+        "id": "cmnva44zq05esm8lz8elpwcvh",
+        "legacyId": "INF-2026-013",
+        "title": "CPP Investments acquires Cordelio Power via Pattern Energy (platform merger)",
+        "target": "Cordelio Power",
+        "description": "CPP Investments, through Pattern Energy, announced a platform merger with Cordelio Power to create a combined renewable energy platform.",
+        "stake": "100%",
+        "assetScale": null,
+        "keyHighlights": [
+          "Platform merger between Cordelio Power and Pattern Energy, backed by CPP Investments",
+          "Creates a larger combined renewable energy platform across North America"
+        ],
+        "date": "2026-01-06T08:00:00.000",
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED",
+        "updatedAt": "2026-04-12T04:44:04.550000"
+      },
+      "proposed": {
+        "id": "cmnva44zq05esm8lz8elpwcvh",
+        "legacyId": "INF-2026-013",
+        "title": "CPP Investments acquires Cordelio Power via Pattern Energy (platform merger)",
+        "target": "Cordelio Power",
+        "description": "Pattern Energy completed its acquisition of Cordelio Power, adding approximately 1,550 MW across 16 operating and in-construction wind, solar and energy-storage projects in the United States and Canada, plus most of Cordelio’s U.S. development pipeline.",
+        "stake": "100%",
+        "assetScale": "Approximately 1,550 MW across 16 operating and in-construction projects",
+        "keyHighlights": [
+          "Pattern Energy completed its acquisition of Cordelio Power, adding approximately 1,550 MW across 16 operating and in-construction wind, solar and energy-storage projects in the United States and Canada, plus most of Cordelio’s U.S. development pipeline.",
+          "Pattern acquired most of Cordelio’s U.S. development pipeline and its team."
+        ],
+        "date": "2026-01-06T08:00:00.000",
+        "dealStatus": "CLOSED",
+        "closingDate": "2026-04-02T08:00:00.000",
+        "recordStatus": "PUBLISHED"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmnva463505f6m8lzs5kef3dl",
+      "evidence": {
+        "sourceId": "cmnva4mbm05rsm8lzbwlia1nr",
+        "sourceLabel": "Business Wire",
+        "sourceType": "PRESS_RELEASE",
+        "publisher": "Elevate Renewables / Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260115405115/en/Elevate-Acquires-Prospect-Power-Storage-a-150-MW-Battery-Asset-in-Northern-Virginia",
+        "evidenceDate": "2026-01-15",
+        "finding": "Elevate Renewables announced that it acquired the 150 MW Prospect Power battery-storage asset."
+      },
+      "current": {
+        "id": "cmnva463505f6m8lzs5kef3dl",
+        "legacyId": "INF-2026-027",
+        "title": "ArcLight Capital acquires Prospect Power (150 MW BESS) from IFM",
+        "target": "Prospect Power",
+        "description": "ArcLight Capital acquired the Prospect Power 150 MW battery energy storage system from IFM.",
+        "stake": "100%",
+        "assetScale": "150 MW BESS",
+        "keyHighlights": [
+          "Asset divestiture by IFM and acquisition by ArcLight Capital of the Prospect Power 150 MW BESS",
+          "Represents a significant battery storage asset transaction in the US market"
+        ],
+        "date": "2026-01-15T10:00:00.000",
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED",
+        "updatedAt": "2026-04-12T04:44:05.969000"
+      },
+      "proposed": {
+        "id": "cmnva463505f6m8lzs5kef3dl",
+        "legacyId": "INF-2026-027",
+        "title": "ArcLight Capital acquires Prospect Power (150 MW BESS) from IFM",
+        "target": "Prospect Power",
+        "description": "ArcLight Capital acquired the Prospect Power 150 MW battery energy storage system from IFM.",
+        "stake": "100%",
+        "assetScale": "150 MW BESS",
+        "keyHighlights": [
+          "Asset divestiture by IFM and acquisition by ArcLight Capital of the Prospect Power 150 MW BESS",
+          "Represents a significant battery storage asset transaction in the US market"
+        ],
+        "date": "2026-01-15T10:00:00.000",
+        "dealStatus": "CLOSED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmnva475e05fkm8lz9ug5ngij",
+      "evidence": {
+        "sourceId": "cmnva4nlk05skm8lzkm6v24s3",
+        "sourceLabel": "Blackstone",
+        "sourceType": "ARTICLE",
+        "publisher": "Blackstone",
+        "url": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-acquisition-of-alliance-technical-group/",
+        "evidenceDate": "2026-01-06",
+        "finding": "Blackstone Energy Transition Partners stated that its funds had acquired Alliance Technical Group."
+      },
+      "current": {
+        "id": "cmnva475e05fkm8lz9ug5ngij",
+        "legacyId": "INF-2026-041",
+        "title": "Blackstone acquires Alliance Technical Group platform",
+        "target": "Alliance Technical Group",
+        "description": "Blackstone announced the platform acquisition of Alliance Technical Group, an environmental services company.",
+        "stake": "100%",
+        "assetScale": null,
+        "keyHighlights": [
+          "Platform acquisition of Alliance Technical Group by Blackstone",
+          "Alliance Technical Group is a leading provider of environmental and technical services"
+        ],
+        "date": "2026-01-06T08:00:00.000",
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED",
+        "updatedAt": "2026-04-12T04:44:07.346000"
+      },
+      "proposed": {
+        "id": "cmnva475e05fkm8lz9ug5ngij",
+        "legacyId": "INF-2026-041",
+        "title": "Blackstone acquires Alliance Technical Group platform",
+        "target": "Alliance Technical Group",
+        "description": "Funds managed by Blackstone Energy Transition Partners acquired Alliance Technical Group, an environmental and technical services platform.",
+        "stake": "100%",
+        "assetScale": null,
+        "keyHighlights": [
+          "Platform acquisition of Alliance Technical Group by Blackstone",
+          "Alliance Technical Group is a leading provider of environmental and technical services"
+        ],
+        "date": "2026-01-06T08:00:00.000",
+        "dealStatus": "CLOSED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmnva47j205fpm8lzr73zqisy",
+      "evidence": {
+        "sourceId": "cmnva4o1x05sum8lz65v0wpff",
+        "sourceLabel": "Business Wire",
+        "sourceType": "PRESS_RELEASE",
+        "publisher": "Velocity FBO Network / Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260213283848/en/Tallvine-Backed-Velocity-FBO-Network-Expands-with-Acquisition-of-BTR-Jet-Center",
+        "evidenceDate": "2026-02-13",
+        "finding": "Velocity FBO Network announced its completed acquisition of BTR Jet Center."
+      },
+      "current": {
+        "id": "cmnva47j205fpm8lzr73zqisy",
+        "legacyId": "INF-2026-046",
+        "title": "Tallvine Partners acquires BTR Jet Center via Velocity FBO Network (add-on)",
+        "target": "BTR Jet Center",
+        "description": "Tallvine Partners, through Velocity FBO Network, completed an add-on acquisition of BTR Jet Center.",
+        "stake": "100%",
+        "assetScale": null,
+        "keyHighlights": [
+          "Add-on acquisition of BTR Jet Center through Tallvine Partners' Velocity FBO Network",
+          "Expands the Velocity FBO Network's geographic footprint in the US"
+        ],
+        "date": "2026-02-13T09:00:00.000",
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED",
+        "updatedAt": "2026-04-12T04:44:07.838000"
+      },
+      "proposed": {
+        "id": "cmnva47j205fpm8lzr73zqisy",
+        "legacyId": "INF-2026-046",
+        "title": "Tallvine Partners acquires BTR Jet Center via Velocity FBO Network (add-on)",
+        "target": "BTR Jet Center",
+        "description": "Tallvine Partners, through Velocity FBO Network, completed an add-on acquisition of BTR Jet Center.",
+        "stake": "100%",
+        "assetScale": null,
+        "keyHighlights": [
+          "Add-on acquisition of BTR Jet Center through Tallvine Partners' Velocity FBO Network",
+          "Expands the Velocity FBO Network's geographic footprint in the US"
+        ],
+        "date": "2026-02-13T09:00:00.000",
+        "dealStatus": "CLOSED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED"
+      }
+    },
+    {
+      "actionType": "DEAL_UPDATE",
+      "id": "cmoqc7mft05yk171fbj6rf6in",
+      "evidence": {
+        "sourceId": "cmoqc8zb106f4171fyq1c4x65",
+        "sourceLabel": "PR Newswire",
+        "sourceType": "PRESS_RELEASE",
+        "publisher": "Rowan Digital Infrastructure / PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/rowan-digital-infrastructure-announces-strategic-recapitalization-302738729.html",
+        "evidenceDate": "2026-04-09",
+        "finding": "Rowan stated that Blackstone-affiliated funds acquired a significant minority stake; the release does not disclose a 49% stake."
+      },
+      "current": {
+        "id": "cmoqc7mft05yk171fbj6rf6in",
+        "legacyId": "INF-2026-161",
+        "title": "Blackstone acquires 49% stake in Rowan Digital Infrastructure from Quinbrook",
+        "target": "Rowan Digital Infrastructure",
+        "description": "Quinbrook announced a strategic recapitalization of Rowan Digital Infrastructure through the sale of a 49% significant minority stake to funds affiliated with Blackstone. The transaction monetizes part of Quinbrook’s ownership while retaining control, partnering with Blackstone to support Rowan’s next phase of growth and continued hyperscale data center expansion serving cloud and AI-driven demand.",
+        "stake": "49%",
+        "assetScale": null,
+        "keyHighlights": [
+          "Quinbrook announced a strategic recapitalization of Rowan Digital Infrastructure through the sale of a 49% significant minority stake to funds affiliated with Blackstone. The transaction monetizes part of Quinbrook’s ownership while retaining control, partnering with Blackstone to support Rowan’s next phase of growth and continued hyperscale data center expansion serving cloud and AI-driven demand."
+        ],
+        "date": "2026-04-07T08:00:00.000",
+        "dealStatus": "ANNOUNCED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED",
+        "updatedAt": "2026-05-03T22:23:37.817000"
+      },
+      "proposed": {
+        "id": "cmoqc7mft05yk171fbj6rf6in",
+        "legacyId": "INF-2026-161",
+        "title": "Blackstone acquires significant minority stake in Rowan Digital Infrastructure",
+        "target": "Rowan Digital Infrastructure",
+        "description": "Funds affiliated with Blackstone acquired a significant minority stake in Rowan Digital Infrastructure in a strategic recapitalization alongside Quinbrook. The investment supports Rowan’s U.S. hyperscale data-center development and capacity expansion.",
+        "stake": "Significant minority",
+        "assetScale": null,
+        "keyHighlights": [
+          "Funds affiliated with Blackstone acquired a significant minority stake in Rowan Digital Infrastructure in a strategic recapitalization alongside Quinbrook. The investment supports Rowan’s U.S. hyperscale data-center development and capacity expansion."
+        ],
+        "date": "2026-04-09T08:00:00.000",
+        "dealStatus": "CLOSED",
+        "closingDate": null,
+        "recordStatus": "PUBLISHED"
+      }
+    },
+    {
+      "actionType": "MILESTONE_INSERT",
+      "id": "milestone_cordelio_pattern_close_2026",
+      "evidence": {
+        "sourceId": "cmnvabgvi0a44m8lz20h40bk8",
+        "sourceLabel": "Patternenergy — Cordelio Power",
+        "sourceType": "ARTICLE",
+        "publisher": "Pattern Energy",
+        "url": "https://patternenergy.com/pattern-energy-announces-completion-of-acquisition-of-cordelio-power/",
+        "evidenceDate": "2026-04-02",
+        "finding": "Pattern Energy completed the Cordelio acquisition, adding approximately 1,550 MW across 16 operating and in-construction projects plus most of Cordelio's U.S. development pipeline."
+      },
+      "proposed": {
+        "id": "milestone_cordelio_pattern_close_2026",
+        "companyId": "cmnva0yp200xvm8lzue3btvd8",
+        "companyName": "Cordelio Power",
+        "date": "Apr 2, 2026",
+        "event": "Pattern Energy completed its acquisition of Cordelio Power, adding approximately 1,550 MW of operating and in-construction assets.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-04-02T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h7m5a00qww41f1yfgcyqx",
+      "evidence": {
+        "sourceId": "cmnva4nlk05skm8lzkm6v24s3",
+        "sourceLabel": "Blackstone",
+        "sourceType": "ARTICLE",
+        "publisher": "Blackstone",
+        "url": "https://www.blackstone.com/news/press/blackstone-energy-transition-partners-announces-acquisition-of-alliance-technical-group/",
+        "evidenceDate": "2026-01-06",
+        "finding": "Blackstone Energy Transition Partners stated that its funds had acquired Alliance Technical Group."
+      },
+      "current": {
+        "id": "cmp1h7m5a00qww41f1yfgcyqx",
+        "companyId": "cmnva0x0m00uwm8lzcv0jn3gr",
+        "companyName": "Alliance Technical Group",
+        "date": "Jan 6, 2026",
+        "event": "Blackstone Energy Transition Partners announced the acquisition of Alliance Technical Group.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-01-06T05:00:00.000"
+      },
+      "proposed": {
+        "id": "cmp1h7m5a00qww41f1yfgcyqx",
+        "companyId": "cmnva0x0m00uwm8lzcv0jn3gr",
+        "companyName": "Alliance Technical Group",
+        "date": "Jan 6, 2026",
+        "event": "Funds managed by Blackstone Energy Transition Partners acquired Alliance Technical Group.",
+        "category": "ACQUISITION",
+        "sortDate": "2026-01-06T05:00:00.000"
+      }
+    },
+    {
+      "actionType": "MILESTONE_UPDATE",
+      "id": "cmp1h8wg602tcw41f91blqqbv",
+      "evidence": {
+        "sourceId": "cmoqc8zb106f4171fyq1c4x65",
+        "sourceLabel": "PR Newswire",
+        "sourceType": "PRESS_RELEASE",
+        "publisher": "Rowan Digital Infrastructure / PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/rowan-digital-infrastructure-announces-strategic-recapitalization-302738729.html",
+        "evidenceDate": "2026-04-09",
+        "finding": "Rowan stated that Blackstone-affiliated funds acquired a significant minority stake; the release does not disclose a 49% stake."
+      },
+      "current": {
+        "id": "cmp1h8wg602tcw41f91blqqbv",
+        "companyId": "cmnva0p6h00ibm8lzimyld7ll",
+        "companyName": "Rowan Digital Infrastructure",
+        "date": "Apr 7, 2026",
+        "event": "Quinbrook announced a strategic recapitalization of Rowan through the sale of a 49% minority stake to Blackstone-affiliated funds while retaining control.",
+        "category": "FINANCING",
+        "sortDate": "2026-04-07T04:00:00.000"
+      },
+      "proposed": {
+        "id": "cmp1h8wg602tcw41f91blqqbv",
+        "companyId": "cmnva0p6h00ibm8lzimyld7ll",
+        "companyName": "Rowan Digital Infrastructure",
+        "date": "Apr 9, 2026",
+        "event": "Blackstone-affiliated funds acquired a significant minority stake in Rowan Digital Infrastructure, while Quinbrook retained control.",
+        "category": "FINANCING",
+        "sortDate": "2026-04-09T04:00:00.000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_DELETE",
+      "id": "cmoel61yl009evflzwd1cnx1v",
+      "evidence": {
+        "sourceId": "cmnva8wtv08ghm8lzxnojf1vl",
+        "sourceLabel": "Vigormarine — Vigor Marine Group",
+        "sourceType": "PRESS_RELEASE",
+        "publisher": "Vigor Marine Group",
+        "url": "https://www.vigormarine.com/news-press/antin-to-acquire-vigor-marine-group",
+        "evidenceDate": "2026-02-03",
+        "finding": "Vigor described Antin's acquisition as an agreement subject to regulatory approvals, so Antin must not be represented as the current owner before closing."
+      },
+      "current": {
+        "id": "cmoel61yl009evflzwd1cnx1v",
+        "companyId": "cmnva0tj200p8m8lz8sb6e93u",
+        "companyName": "Vigor Marine Group",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zn810009m8lz35ujleyz",
+        "organizationName": "Antin Infrastructure Partners",
+        "vehicleName": "Flagship Fund V",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:01:07.053000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_DELETE",
+      "id": "cmoel6dh8002pw2lzdmg91gru",
+      "evidence": {
+        "sourceId": "cmnvac5ye0akhm8lzgtdxg09m",
+        "sourceLabel": "Infrabridge — Invenergy AMPCI Thermal Power",
+        "sourceType": "ARTICLE",
+        "publisher": "InfraBridge",
+        "url": "https://www.infrabridge.com/news/2026-03-12-arclight-to-acquire-infrabridge-50-stake-in-54-gw-power-portfolio",
+        "evidenceDate": "2026-03-12",
+        "finding": "InfraBridge described ArcLight's 50% IATP acquisition as a transaction expected to close in the third quarter of 2026, subject to customary conditions and approvals."
+      },
+      "current": {
+        "id": "cmoel6dh8002pw2lzdmg91gru",
+        "companyId": "cmnva0ubj00qkm8lz6et53ta9",
+        "companyName": "Invenergy AMPCI Thermal Power",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9znt5000hm8lzku8pqnya",
+        "organizationName": "ArcLight Capital Partners",
+        "vehicleName": "ArcLight Capital Partners",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:01:21.980000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_DELETE",
+      "id": "cmoxwgnu601uyt01fdxlgpd4z",
+      "evidence": {
+        "sourceId": "cmnva4u0p05wim8lz3wxy2t3c",
+        "sourceLabel": "Morgan Stanley",
+        "sourceType": "ARTICLE",
+        "publisher": "Morgan Stanley Infrastructure Partners",
+        "url": "https://www.morganstanley.com/press-releases/msip-agrees-to-sell-bayonne-energy-center",
+        "evidenceDate": "2026-05-07",
+        "finding": "MSIP announced an agreement to sell Bayonne Energy Center with closing expected in the third quarter of 2026."
+      },
+      "current": {
+        "id": "cmoxwgnu601uyt01fdxlgpd4z",
+        "companyId": "cmnva0rwv00mdm8lz50afv9c7",
+        "companyName": "Bayonne Energy Center",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnva08az007om8lzluydxf4f",
+        "organizationName": "Jupiter Energy Investor",
+        "vehicleName": "Announced acquisition from MSIP pending close",
+        "stake": null,
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-05-09T05:24:55.086000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_DELETE",
+      "id": "cmoxwhbw5021it01ft1l6jhxe",
+      "evidence": {
+        "sourceId": "cmoqc92t406hc171fryyeu3gq",
+        "sourceLabel": "T-Mobile",
+        "sourceType": "ARTICLE",
+        "publisher": "T-Mobile",
+        "url": "https://www.t-mobile.com/news/business/t-mobile-add-two-strategic-fiber-joint-ventures-gonetspeed-greenlight-i3",
+        "evidenceDate": "2026-04-29",
+        "finding": "T-Mobile described a definitive agreement for i3 Broadband that remained subject to closing conditions and was expected to close in the second half of 2026."
+      },
+      "current": {
+        "id": "cmoxwhbw5021it01ft1l6jhxe",
+        "companyId": "cmnva0ra500lym8lzco0glku7",
+        "companyName": "i3 Broadband",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmoqbwp3a001b171fz6huplze",
+        "organizationName": "T-Mobile",
+        "vehicleName": "50/50 fiber joint venture with Wren House",
+        "stake": "50%",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-05-09T05:25:26.261000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_DELETE",
+      "id": "ownership_boralex_brookfield_2026",
+      "evidence": {
+        "sourceId": "cmnva4v0k05x4m8lztgmbr9pn",
+        "sourceLabel": "Announcement date source — Brookfield Asset Management / La Caisse — Boralex Inc.",
+        "sourceType": "PRESS_RELEASE",
+        "publisher": "Boralex",
+        "url": "https://www.boralex.com/en/press-releases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-la-caisse",
+        "evidenceDate": "2026-03-25",
+        "finding": "Boralex stated that La Caisse currently owns 15%; Brookfield's 70% and La Caisse's 30% are pro-forma interests that apply only after the announced transaction closes."
+      },
+      "current": {
+        "id": "ownership_boralex_brookfield_2026",
+        "companyId": "company_boralex_inc_2026",
+        "companyName": "Boralex Inc.",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zysd004am8lzz4lf6gv5",
+        "organizationName": "Brookfield Asset Management",
+        "vehicleName": "Brookfield flagship infrastructure strategy",
+        "stake": "70% pro forma post-close",
+        "investmentYear": 2026,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-05-07T16:08:03.983000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "cmoel78ak0000xdlz7gmibbn1",
+      "evidence": {
+        "sourceId": "cmoqc92w406he171fq4smsw4q",
+        "sourceLabel": "Blackstone",
+        "sourceType": "ARTICLE",
+        "publisher": "Blackstone",
+        "url": "https://www.blackstone.com/news/press/ares-acquires-stake-in-rover-pipeline-from-blackstone-energy-transition-partners-to-serve-growing-energy-demand-centers-across-north-america/",
+        "evidenceDate": "2026-04-29",
+        "finding": "Ares acquired Blackstone Energy Transition Partners' 32.4% Rover Pipeline stake."
+      },
+      "current": {
+        "id": "cmoel78ak0000xdlz7gmibbn1",
+        "companyId": "cmnva0xcg00vhm8lzllfqv37o",
+        "companyName": "Rover Pipeline",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zow9000um8lzmxq856dz",
+        "organizationName": "Blackstone",
+        "vehicleName": "Blackstone Energy Transition Partners",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-04-25T17:02:01.916000"
+      },
+      "proposed": {
+        "id": "cmoel78ak0000xdlz7gmibbn1",
+        "companyId": "cmnva0xcg00vhm8lzllfqv37o",
+        "companyName": "Rover Pipeline",
+        "fundId": null,
+        "fundName": null,
+        "organizationId": "cmnv9zow9000um8lzmxq856dz",
+        "organizationName": "Blackstone",
+        "vehicleName": "Blackstone Energy Transition Partners",
+        "stake": null,
+        "investmentYear": 2017,
+        "exitYear": 2026,
+        "isActive": false,
+        "createdAt": "2026-04-25T17:02:01.916000"
+      }
+    },
+    {
+      "actionType": "OWNERSHIP_UPDATE",
+      "id": "ownership_boralex_cdpq_2026",
+      "evidence": {
+        "sourceId": "cmnva4v0k05x4m8lztgmbr9pn",
+        "sourceLabel": "Announcement date source — Brookfield Asset Management / La Caisse — Boralex Inc.",
+        "sourceType": "PRESS_RELEASE",
+        "publisher": "Boralex",
+        "url": "https://www.boralex.com/en/press-releases/boralex-enters-definitive-agreement-be-acquired-brookfield-alongside-la-caisse",
+        "evidenceDate": "2026-03-25",
+        "finding": "Boralex stated that La Caisse currently owns 15%; Brookfield's 70% and La Caisse's 30% are pro-forma interests that apply only after the announced transaction closes."
+      },
+      "current": {
+        "id": "ownership_boralex_cdpq_2026",
+        "companyId": "company_boralex_inc_2026",
+        "companyName": "Boralex Inc.",
+        "fundId": "cmnva0ilb00bcm8lzg800fpmz",
+        "fundName": "CDPQ Infrastructure",
+        "organizationId": "cmnv9zsx7002am8lzyo22qh5v",
+        "organizationName": "La Caisse de dépôt (CDPQ)",
+        "vehicleName": "CDPQ Infrastructure",
+        "stake": "30% pro forma post-close; shareholder/lender since 2017",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-05-07T16:08:03.983000"
+      },
+      "proposed": {
+        "id": "ownership_boralex_cdpq_2026",
+        "companyId": "company_boralex_inc_2026",
+        "companyName": "Boralex Inc.",
+        "fundId": "cmnva0ilb00bcm8lzg800fpmz",
+        "fundName": "CDPQ Infrastructure",
+        "organizationId": "cmnv9zsx7002am8lzyo22qh5v",
+        "organizationName": "La Caisse de dépôt (CDPQ)",
+        "vehicleName": "CDPQ Infrastructure",
+        "stake": "15%",
+        "investmentYear": 2017,
+        "exitYear": null,
+        "isActive": true,
+        "createdAt": "2026-05-07T16:08:03.983000"
+      }
+    }
+  ],
+  "quarantinedFindings": [
+    {
+      "companyId": "cmnva0o2q00gim8lzgib5tltb",
+      "companyName": "Cornerstone Generation",
+      "dealId": "cmnva452h05etm8lzpwozr1ef",
+      "legacyId": "INF-2026-014",
+      "relatedOwnershipIds": [
+        "cmoel8cvg0045yqlzx86lowbj",
+        "cmoxwf6ps01h8t01fnizomnys"
+      ],
+      "evidence": {
+        "sourceId": null,
+        "sourceLabel": "Talen Energy completes acquisition of high-quality Western PJM assets",
+        "sourceType": "PRESS_RELEASE",
+        "publisher": "Talen Energy",
+        "url": "https://ir.talenenergy.com/news-releases/news-release-details/talen-energy-completes-acquisition-high-quality-western-pjm",
+        "evidenceDate": "2026-06-15",
+        "finding": "Talen Energy completed its acquisition of the Cornerstone Generation portfolio on June 15, 2026."
+      },
+      "finding": "The Talen ownership row must be preserved: Talen completed the acquisition on June 15, 2026. The stale deal, buyer participant, source/citation, ECP exit, and historical investment year require a separate reviewed correction.",
+      "reason": "Quarantined because the superseding close requires coordinated participant replacement, new closing evidence, deal narrative changes, and multi-field ownership corrections outside this exact tranche."
+    },
+    {
+      "companyId": "cmnva0tj200p8m8lz8sb6e93u",
+      "companyName": "Vigor Marine Group",
+      "dealId": "cmnva487p05fym8lzq6z0rkyg",
+      "legacyId": "INF-2026-055",
+      "relatedOwnershipIds": [
+        "cmoxwdopn012nt01f6m0syzto"
+      ],
+      "evidence": {
+        "sourceId": null,
+        "sourceLabel": "Close date source — Lone Star Funds — Vigor Marine Group",
+        "sourceType": "PRESS_RELEASE",
+        "publisher": "Vigor Marine Group",
+        "url": "https://www.vigormarine.com/news-press/carlyle-and-stellex-complete-sale-of-titan-to-an-affiliate-of-lone-star-funds",
+        "evidenceDate": "2023-06-15",
+        "finding": "Lone Star completed its acquisition of Titan Acquisition Holdings, Vigor's parent platform, on June 15, 2023; the current Lone Star ownership row's 2019 investment year is stale."
+      },
+      "finding": "The Lone Star ownership row is correctly preserved as incumbent for the pending Antin deal, but its 2019 investment year predates Lone Star's June 15, 2023 acquisition of Titan and requires a separate sourced correction.",
+      "reason": "Quarantined because normalizing the historical vehicle and investment year should be reviewed separately from deleting the premature Antin row."
+    }
+  ],
+  "before": {
+    "snapshotSha256": "4f2e5579928711a285d4f0bc32f97d32334d77cacf4809245e78c97191b0e849",
+    "tableCounts": {
+      "deals": 352,
+      "companies": 1191,
+      "ownershipPeriods": 1418,
+      "milestones": 4225,
+      "citations": 10234
+    }
+  },
+  "after": {
+    "snapshotSha256": "47a6f5b5b7df8f8a02e1bc8b12d4f5ae99e74471788c92f457455678c9e2cbf1",
+    "tableCounts": {
+      "deals": 352,
+      "companies": 1191,
+      "ownershipPeriods": 1413,
+      "milestones": 4226,
+      "citations": 10234
+    }
+  },
+  "postconditions": {
+    "exactMutationIds": true,
+    "fullDeletedOwnershipRowsRecorded": true,
+    "incumbentOwnershipGuardsUnchanged": true,
+    "onlyCordelioReceivedClosingDate": true,
+    "deterministicMilestoneInserted": true,
+    "CordelioClosingCitationLinked": true,
+    "quarantinedRowsUntouched": true
+  },
+  "receiptSha256": "be69ffdc7700f70ba70597f8c47c7bf11a0cd79bb9fbe5eecf8f874343abff44"
+}
