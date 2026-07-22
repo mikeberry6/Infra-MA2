@@ -382,6 +382,7 @@ jobs:
         shell: bash
         env:
           E2E_BASE_PATH: /Infra-MA2
+          DATA_CACHE_NAMESPACE: provider-failure-${{ github.run_id }}
           PLAYWRIGHT_HTML_OUTPUT_DIR: provider-failure-playwright-report
         run: |
           set -euo pipefail

@@ -132,6 +132,9 @@ describe("isolated validation workflow remediation context", () => {
     const providerFailureBlock = workflow.slice(providerFailureGate, evidenceUpload);
     expect(providerFailureBlock).toContain("id: provider_failure_gate");
     expect(providerFailureBlock).toContain("continue-on-error: true");
+    expect(providerFailureBlock).toContain(
+      "DATA_CACHE_NAMESPACE: provider-failure-${{ github.run_id }}",
+    );
     expect(providerFailureBlock).toContain("--output=provider-failure-test-results");
     expect(evidenceUpload).toBeGreaterThan(browserGate);
     expect(enforcement).toBeGreaterThan(evidenceUpload);

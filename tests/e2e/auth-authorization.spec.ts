@@ -49,7 +49,7 @@ async function createDraftDeal(page: Page, input: {
   await page.getByLabel(/^Title/).fill(input.title);
   await page.getByRole("textbox", { name: "Target (required)", exact: true }).fill(input.target);
   await page.getByLabel("Buyer (one per line)").fill("InfraSight E2E Infrastructure Manager");
-  await page.getByLabel("Seller disclosure").selectOption("NOT_APPLICABLE");
+  await page.getByRole("combobox", { name: /^Seller disclosure/ }).selectOption("NOT_APPLICABLE");
   await page.getByLabel("Seller disclosure reason").fill("No seller applies to this isolated test fixture.");
   await page.getByLabel(/^Country/).fill("United States");
   await page.getByLabel(/^Date/).fill(new Date().toISOString().slice(0, 10));
