@@ -25,7 +25,7 @@ describe("deal seller-disclosure input validation", () => {
   it("accepts a seller-free record only with an explicit reviewed reason", () => {
     expect(dealSchema.safeParse({
       ...validDeal,
-      seller: "N/A",
+      seller: "",
       sellerDisclosureStatus: "NOT_DISCLOSED",
       sellerDisclosureReason: "The cited announcement does not identify a seller.",
     }).success).toBe(true);

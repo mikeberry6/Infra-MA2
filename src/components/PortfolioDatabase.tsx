@@ -481,6 +481,9 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     companyDetailCache.clear();
     setDetailRequest((value) => value + 1);
   }), []);
+  useEffect(() => {
+    if (selectedCompany) track("drawer_opened", { entity: "company" });
+  }, [selectedCompany]);
   const {
     detail: selectedCompanyDetail,
     meta: detailMeta,
@@ -514,9 +517,9 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     const match = portcos.find((c) => c.id === focusId || c.focusIds.includes(focusId));
     if (match) {
       // Manual opens set openedFocus before writing the URL, so direct/search
-      // focus navigation is measured and tracked exactly once here.
+      // focus navigation is measured exactly once here. Analytics runs after
+      // the shell commits.
       markDrawerOpen("company");
-      track("drawer_opened", { entity: "company" });
       setSelectedCompany(match);
       openedFocus.current = focusId;
       return;
@@ -531,7 +534,6 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     setSelectedCompany(company);
     openedFocus.current = company.id;
     writeQuery("focus", company.id, "push");
-    track("drawer_opened", { entity: "company" });
   }, [writeQuery]);
 
   const closeCompany = useCallback(() => {

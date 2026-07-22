@@ -941,6 +941,11 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
     dealDetailCache.clear();
     setDetailRequest((value) => value + 1);
   }), []);
+  // Emit analytics after the drawer shell commits so event delivery can never
+  // consume the click-to-shell performance budget.
+  useEffect(() => {
+    if (selectedDeal) track("drawer_opened", { entity: "deal" });
+  }, [selectedDeal]);
   const {
     detail: selectedDealDetail,
     meta: detailMeta,
@@ -1056,10 +1061,9 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
     const match = deals.find((d) => d.legacyId === focusId);
     if (match) {
       // Manual opens set openedFocus before writing the URL, so this branch is
-      // reserved for direct/search/history focus navigation and cannot double
-      // count the manual handler below.
+      // reserved for direct/search/history focus navigation. Analytics is
+      // emitted by the post-commit effect above.
       markDrawerOpen("deal");
-      track("drawer_opened", { entity: "deal" });
       setSelectedDeal(match);
       openedFocus.current = focusId;
       return;
@@ -1074,7 +1078,6 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
     setSelectedDeal(deal);
     openedFocus.current = deal.legacyId;
     writeQuery("focus", deal.legacyId, "push");
-    track("drawer_opened", { entity: "deal" });
   }, [writeQuery]);
 
   const closeDeal = useCallback(() => {

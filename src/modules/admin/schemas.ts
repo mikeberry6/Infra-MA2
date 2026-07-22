@@ -134,7 +134,9 @@ export const dealSchema = z.object({
   title: z.string().min(1, "Title is required"),
   target: z.string().min(1, "Target is required"),
   buyer: z.string().min(1, "Buyer is required"),
-  seller: z.string().min(1, "Seller is required"),
+  // A seller may be absent only when the reviewed disclosure fields below
+  // explain that absence. The cross-field refinement enforces that contract.
+  seller: z.string(),
   sellerDisclosureStatus: z.enum(SELLER_DISCLOSURE_STATES).default("LEGACY_UNREVIEWED"),
   sellerDisclosureReason: z.string().optional(),
   sector: z.enum(DEAL_SECTORS, { message: "Invalid deal sector" }),

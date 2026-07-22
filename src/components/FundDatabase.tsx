@@ -998,6 +998,9 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
     fundDetailCache.clear();
     setDetailRequest((value) => value + 1);
   }), []);
+  useEffect(() => {
+    if (selectedFund) track("drawer_opened", { entity: "fund" });
+  }, [selectedFund]);
   const {
     detail: selectedFundDetail,
     meta: detailMeta,
@@ -1114,9 +1117,9 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
     const match = funds.find((f) => f.legacyId === focusId);
     if (match) {
       // Manual opens set openedFocus before writing the URL, so direct/search
-      // focus navigation is measured and tracked exactly once here.
+      // focus navigation is measured exactly once here. Analytics runs after
+      // the shell commits.
       markDrawerOpen("fund");
-      track("drawer_opened", { entity: "fund" });
       setSelectedFund(match);
       openedFocus.current = focusId;
       return;
@@ -1131,7 +1134,6 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
     setSelectedFund(fund);
     openedFocus.current = fund.legacyId;
     writeQuery("focus", fund.legacyId, "push");
-    track("drawer_opened", { entity: "fund" });
   }, [writeQuery]);
 
   const closeFund = useCallback(() => {

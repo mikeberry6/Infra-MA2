@@ -1,5 +1,5 @@
 import { PrismaClient } from "@/generated/prisma/client";
-import { PrismaNeonHttp } from "@prisma/adapter-neon";
+import { PrismaPg } from "@prisma/adapter-pg";
 import { logServerOperation } from "@/lib/server-log";
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | null };
@@ -18,7 +18,10 @@ function createPrismaClient(): PrismaClient | null {
     });
     return null;
   }
-  const adapter = new PrismaNeonHttp(connectionString, { arrayMode: false, fullResults: true });
+  // The application performs atomic admin, import, audit, and throttling
+  // workflows. Neon's HTTP adapter rejects Prisma transactions, so the
+  // runtime client must use the transaction-capable PostgreSQL adapter.
+  const adapter = new PrismaPg({ connectionString });
   return new PrismaClient({ adapter });
 }
 

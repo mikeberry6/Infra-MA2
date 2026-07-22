@@ -47,7 +47,7 @@ async function createDraftDeal(page: Page, input: {
 }) {
   await page.goto(appPath("/admin/deals/new"));
   await page.getByLabel(/^Title/).fill(input.title);
-  await page.getByLabel(/^Target/).fill(input.target);
+  await page.getByRole("textbox", { name: "Target (required)", exact: true }).fill(input.target);
   await page.getByLabel("Buyer (one per line)").fill("InfraSight E2E Infrastructure Manager");
   await page.getByLabel("Seller disclosure").selectOption("NOT_APPLICABLE");
   await page.getByLabel("Seller disclosure reason").fill("No seller applies to this isolated test fixture.");

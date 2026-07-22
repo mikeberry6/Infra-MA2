@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
-import { PrismaNeonHttp } from "@prisma/adapter-neon";
+import { PrismaPg } from "@prisma/adapter-pg";
 import { companies } from "../prisma/seed-data/companies";
 import type { PortCo, PortCoOwner } from "../prisma/seed-data/portco-types";
 import { resolveOrgName } from "../prisma/entity-resolution";
@@ -30,7 +30,7 @@ if (!connectionString) {
 }
 const mutationContext = apply ? assertMaintenanceMutationContext() : undefined;
 
-const adapter = new PrismaNeonHttp(connectionString, { arrayMode: false, fullResults: true });
+const adapter = new PrismaPg({ connectionString });
 const prisma = new PrismaClient({ adapter });
 
 function ownersFor(company: PortCo): PortCoOwner[] {
