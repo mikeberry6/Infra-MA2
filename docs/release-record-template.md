@@ -7,12 +7,17 @@
 - Pull request:
 - Required CI run/artifacts:
 - Candidate Vercel deployment:
+- Candidate Vercel deployment ID / GitHub repository ID:
 - Prior known-good deployment:
+- Prior known-good deployment Git SHA:
+- Current production application SHA:
 - Operators/approvers:
 
 ## Database
 
 - Validation Neon branch/host:
+- Verified production migration-baseline SHA:
+- Migration-manifest SHA-256:
 - Production restore branch and timestamp:
 - Migrations applied:
 - Migration status evidence:

@@ -11,11 +11,6 @@ on:
         description: Ready Vercel deployment URL built from release_sha
         required: true
         type: string
-      production_url:
-        description: Canonical production origin
-        required: true
-        default: https://infra-ma-2.vercel.app
-        type: string
       confirmation:
         description: Type PROMOTE to authorize schema-first production release
         required: true
@@ -47,9 +42,10 @@ jobs:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
       EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+      EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
       RELEASE_SHA: ${{ inputs.release_sha }}
       DEPLOYMENT_URL: ${{ inputs.deployment_url }}
-      PRODUCTION_URL: ${{ inputs.production_url }}
+      PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
       CONFIRMATION: ${{ inputs.confirmation }}
     steps:
       - name: Require explicit production authorization
@@ -97,7 +93,7 @@ jobs:
       - name: Require protected production configuration
         run: |
           missing=0
-          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME VERCEL_TOKEN VERCEL_SCOPE EXPECTED_VERCEL_PROJECT_ID FRED_API_KEY EIA_API_KEY SAM_API_KEY SEC_USER_AGENT; do
+          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME VERCEL_TOKEN VERCEL_SCOPE EXPECTED_VERCEL_PROJECT_ID EXPECTED_GITHUB_REPOSITORY_ID PRODUCTION_URL FRED_API_KEY EIA_API_KEY SAM_API_KEY SEC_USER_AGENT; do
             if [ -z "${!name:-}" ]; then
               echo "::error::$name is required."
               missing=1
@@ -120,7 +116,7 @@ jobs:
             } catch {
               throw new Error(`${name} must be an absolute URL.`);
             }
-            if (parsed.protocol !== "https:" || parsed.username || parsed.password) {
+            if (parsed.protocol !== "https:" || parsed.username || parsed.password || parsed.port) {
               throw new Error(`${name} must be an HTTPS URL without embedded credentials.`);
             }
             if (parsed.pathname !== "/" || parsed.search || parsed.hash) {
@@ -143,13 +139,13 @@ jobs:
         run: |
           mkdir -p tmp/release
           set -o pipefail
-          npx --yes vercel@51.7.0 inspect "$DEPLOYMENT_URL" --wait --timeout 3m --format=json --scope "$VERCEL_SCOPE" > tmp/release/candidate-inspect.json
-          jq -e --arg sha "$RELEASE_SHA" --arg project "$EXPECTED_VERCEL_PROJECT_ID" '
-            .readyState == "READY"
-            and .target == "production"
-            and .projectId == $project
-            and .meta.githubCommitSha == $sha
-          ' tmp/release/candidate-inspect.json >/dev/null
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$DEPLOYMENT_URL" \
+            --expected-sha="$RELEASE_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --require-immutable-url \
+            --output=tmp/release/candidate-inspect.json
           node scripts/release-smoke.mjs --base-url="$DEPLOYMENT_URL" --expected-version="$RELEASE_SHA" --output=tmp/release/candidate-smoke.json
 
       - name: Prove production database target
@@ -189,10 +185,20 @@ jobs:
             --required-check=build \
             --output=tmp/release/release-provenance-before-promotion.json
 
-      - name: Promote validated deployment
-        run: >-
-          npx --yes vercel@51.7.0 promote "$DEPLOYMENT_URL"
-          --timeout 3m --yes --scope "$VERCEL_SCOPE"
+      - name: Reverify and promote the immutable validated deployment
+        shell: bash
+        run: |
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$DEPLOYMENT_URL" \
+            --expected-sha="$RELEASE_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --require-immutable-url \
+            --output=tmp/release/candidate-inspect-before-promotion.json
+          deployment_id="$(jq -r '.id' tmp/release/candidate-inspect-before-promotion.json)"
+          [[ "$deployment_id" =~ ^dpl_[A-Za-z0-9]+$ ]] || { echo "::error::Verified deployment ID is invalid."; exit 1; }
+          npx --yes vercel@51.7.0 promote "$deployment_id" \
+            --timeout 3m --yes --token "$VERCEL_TOKEN" --scope "$VERCEL_SCOPE"
 
       - name: Smoke-test canonical production release
         run: >-

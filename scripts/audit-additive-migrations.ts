@@ -17,6 +17,15 @@ function requireRevision(name: string): string {
   return value;
 }
 
+function optionalRevision(name: string): string | undefined {
+  const value = option(name);
+  if (value === undefined) return undefined;
+  if (!/^(?:[0-9a-f]{40}|HEAD|origin\/main)$/i.test(value)) {
+    throw new Error(`--${name} must be a full commit SHA, HEAD, or origin/main.`);
+  }
+  return value;
+}
+
 function sha256(value: string): string {
   return createHash("sha256").update(value).digest("hex");
 }
@@ -32,8 +41,10 @@ function resolveCommit(revision: string): string {
 async function main() {
   const baseRevision = requireRevision("base-sha");
   const releaseRevision = requireRevision("release-sha");
+  const productionAppRevision = optionalRevision("production-app-sha");
   const baseSha = resolveCommit(baseRevision);
   const releaseSha = resolveCommit(releaseRevision);
+  const productionAppSha = productionAppRevision ? resolveCommit(productionAppRevision) : undefined;
   const output = option("output") ?? "tmp/migration-manifest.json";
   const expectedManifestHash = option("expected-manifest-sha256");
   if (expectedManifestHash && !/^[0-9a-f]{64}$/i.test(expectedManifestHash)) {
@@ -66,13 +77,23 @@ async function main() {
     migrations.push({ path: migrationPath, sha256: sha256(sql) });
   }
 
-  const manifestBody = JSON.stringify({
-    version: 1,
-    policy: "additive-only",
-    baseSha,
-    releaseSha,
-    migrations,
-  });
+  const manifest = productionAppSha
+    ? {
+        version: 2,
+        policy: "additive-only",
+        productionAppSha,
+        migrationBaseSha: baseSha,
+        releaseSha,
+        migrations,
+      }
+    : {
+        version: 1,
+        policy: "additive-only",
+        baseSha,
+        releaseSha,
+        migrations,
+      };
+  const manifestBody = JSON.stringify(manifest);
   const manifestSha256 = sha256(manifestBody);
   if (expectedManifestHash && manifestSha256 !== expectedManifestHash.toLowerCase()) {
     throw new Error(`Migration manifest hash ${manifestSha256} does not match the approved hash.`);
@@ -80,10 +101,7 @@ async function main() {
 
   const report = {
     generatedAt: new Date().toISOString(),
-    version: 1,
-    baseSha,
-    releaseSha,
-    migrations,
+    ...manifest,
     manifestSha256,
     policy: "additive-only",
   };

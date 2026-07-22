@@ -7,7 +7,7 @@ InfraSight releases are exact-SHA, schema-first, and promotion-based:
 1. A pull request validates additive migrations and compatible application code against an isolated Neon branch and a Vercel Preview deployment.
 2. After merge, the release SHA must be the current protected `main` head and the GitHub Actions `build` check from the `github-actions` app must have succeeded for that exact SHA.
 3. Vercel builds that `main` commit as a staged **production** deployment with production configuration but without assigning the production domains.
-4. A reviewed manifest binds the current production application SHA, release SHA, migration paths, and committed migration-blob hashes. Only additive DDL may be staged while the prior application remains active.
+4. A reviewed v2 manifest binds the current production application SHA, exact applied production migration baseline, release SHA, migration paths, and committed migration-blob hashes. The identities remain distinct because an application deployment does not prove that its bundled migrations were applied. Only additive DDL may be staged while the prior application remains active.
 5. Citation and duplicate-company backlogs are handled separately through explicit Research decisions and audited remediation. A schema migration never invents citations, selects canonical survivors, or publishes records.
 6. Production promotion requires clean schema, data, source, pipeline, deployment-identity, and smoke gates. Promoting the staged production deployment does not rebuild it.
 7. The prior deployment and additive schema remain compatible for immediate application rollback.
@@ -19,7 +19,7 @@ Merging `main` may create a Vercel production build, but automatic production-do
 - Create the GitHub `production` environment with a required Engineering or Operations reviewer; disable self-review and administrator bypass where the plan permits.
 - Protect `main` against direct pushes, force-pushes, and deletion. Require pull requests, resolved conversations, and the `build` status context.
 - Confirm the GitHub branch API reports `main` as protected; production workflows fail closed if it does not.
-- Configure every secret and exact host/database/project variable listed in [operations.md](./operations.md), including `VERCEL_PROJECT_ID`.
+- Configure every secret and exact host/database/project variable listed in [operations.md](./operations.md), including `VERCEL_PROJECT_ID` and the protected canonical `PRODUCTION_URL`.
 - Create an isolated Neon validation branch from a recent production snapshot. Never point `MIGRATION_DATABASE_URL` at production.
 - Configure Vercel Preview with the validation database and preview-only NextAuth credentials.
 - Configure `main` as Vercel's sole production branch, use Node 24, and disable automatic production-domain assignment so successful `main` builds remain staged until promotion.
@@ -40,19 +40,25 @@ The Preview proves the pull request against non-production configuration. It is 
 
 1. Merge only after the pull-request gate succeeds. Pause additional `main` merges for the release window.
 2. Wait for the `main` push **Release Gate**. Record the full SHA; it must remain the current protected `main` head through schema staging and promotion.
-3. Identify the full SHA of the application currently serving production. This is `production_base_sha`; do not substitute a migration name, branch name, or assumed deploy time.
-4. From a clean checkout of the release SHA, generate the additive manifest:
+3. Identify the full SHA of the application currently serving production. This is `production_app_sha`; resolve it from immutable deployment metadata rather than a branch name or assumed deploy time.
+4. Identify `migration_base_sha`: the full commit whose `prisma/migrations` names and SHA-256 checksums exactly match the successfully applied production migration ledger. From a clean checkout of the release SHA, prove that baseline read-only and generate the additive manifest:
 
    ```bash
+   DATABASE_URL=<direct-production-url> \
+     node --experimental-strip-types scripts/verify-migration-baseline.ts \
+     --base-sha=<migration-base-sha> \
+     --output=tmp/release-preparation/migration-baseline.json
+
    node --experimental-strip-types scripts/audit-additive-migrations.ts \
-     --base-sha=<production-base-sha> \
+     --base-sha=<migration-base-sha> \
+     --production-app-sha=<production-app-sha> \
      --release-sha=<release-sha> \
      --output=tmp/release-preparation/migration-manifest.json
    ```
 
-   The script normalizes both revisions to full commits and reads every migration from the release commit, not the working tree. Review the base/release SHAs, ordered migration paths, blob hashes, policy, and manifest SHA-256.
+   The baseline verifier rejects missing, extra, duplicate, or checksum-mismatched migrations. The manifest script normalizes both revisions to full commits and reads every new migration from the release commit, not the working tree. Review the application SHA, migration baseline/release SHAs, ordered migration paths, blob hashes, policy, and manifest SHA-256.
 5. Confirm Vercel created a ready staged production deployment for the exact release SHA. Record its immutable deployment URL. Do not use an automatically aliased URL or a Preview candidate.
-6. Record the release SHA, current production SHA, manifest hash, CI run, validation Neon branch, staged deployment URL, restore branch, and prior deployment in a copy of [release-record-template.md](./release-record-template.md).
+6. Record the release SHA, current production application SHA, verified migration-baseline SHA, manifest hash, CI run, validation Neon branch, staged deployment URL, restore branch, and prior deployment in a copy of [release-record-template.md](./release-record-template.md).
 
 If `main` advances, stop. The old SHA is no longer eligible: rerun the `main` gate, regenerate/review the manifest, and use the new staged production deployment.
 
@@ -82,24 +88,25 @@ If adding an approval file advances `main`, that commit becomes a new release SH
 4. Run **Stage Production Schema** with:
 
    - the exact current protected-main `release_sha`;
-   - the current promoted `production_base_sha`;
+   - the current promoted `production_app_sha`;
+   - the verified applied `migration_base_sha`;
    - the reviewed `migration_manifest_sha256`;
    - confirmation `STAGE`.
 
-5. Approve the protected `production` environment. The workflow rechecks exact protected-main provenance immediately before writing, proves the production host and database name, applies only the release's additive migration history, checks status/drift, and records citation/duplicate backlogs without auto-remediating them.
+5. Approve the protected `production` environment. The workflow reads the canonical origin from protected `PRODUCTION_URL`, requires its live deployment's GitHub source SHA and repository ID to match, rechecks exact protected-main provenance plus the live app and migration ledger immediately before writing, proves the production host and database name, applies only the release's additive migration history, checks status/drift, and records citation/duplicate backlogs without auto-remediating them.
 6. Complete any approved citation/company remediation described above. Re-run reports until source coverage is complete and published duplicate clusters are clean.
 7. Manually dispatch dashboard and news pipelines from the exact release SHA. Wait for both to succeed and review provider/source threshold artifacts.
-8. Run **Promote Production Release** with the exact release SHA, its staged production deployment URL, the canonical production URL, and confirmation `PROMOTE`; approve the protected environment.
+8. Run **Promote Production Release** with the exact release SHA, its immutable staged production deployment URL (never an alias), and confirmation `PROMOTE`; approve the protected environment.
 
 The promotion workflow requires all of the following before changing domains:
 
 - the release still equals the current protected `main` head and exact-SHA `build` succeeded from GitHub Actions;
-- the candidate is ready, has Vercel target `production`, belongs to `VERCEL_PROJECT_ID`, and carries the exact `githubCommitSha`;
+- the candidate is ready, has Vercel target `production`, belongs to `VERCEL_PROJECT_ID`, and has matching GitHub source SHA, commit metadata, and immutable repository ID;
 - candidate `/api/health` reports the release's exact 12-character SHA prefix;
 - production host and database name match the allowlist, migration status is clean, and schema drift is zero;
 - database verification, explicit primary-source coverage, canonical-company, dashboard completeness, and rolling pipeline gates pass.
 
-The workflow rechecks protected-main provenance immediately before `vercel promote`, promotes the already-built staged production deployment, and smoke-tests the canonical URL. If schema staging fails after an additive migration, the old application remains active; investigate and fix forward before promotion.
+The workflow rechecks protected-main and immutable candidate provenance immediately before `vercel promote`, promotes the verified deployment ID, and smoke-tests the protected canonical URL. If schema staging fails after an additive migration, the old application remains active; investigate and fix forward before promotion.
 
 ## Post-release verification
 
@@ -120,7 +127,7 @@ Use rollback when the application regresses and the prior application is compati
 
 1. Stop imports/publication and capture the incident start time, current SHA, and failing request IDs.
 2. Select the prior verified Vercel deployment recorded in the release record.
-3. Run **Roll Back Production** with confirmation `ROLLBACK`. Use `full` smoke policy normally. `public-only` is a documented break-glass option for a legacy target without `/api/health` or the canonical root redirect.
+3. Run **Roll Back Production** with the recorded deployment ID or immutable URL, its full Git SHA, and confirmation `ROLLBACK`. The workflow verifies the GitHub repository and SHA, then rolls back by immutable deployment ID. Use `full` smoke policy normally. `public-only` is a documented break-glass option for a legacy target without `/api/health` or the canonical root redirect.
 4. Verify canonical routes, login, audit log, and authorization manually.
 5. Do not reverse additive migrations. Fix forward in a new pull request.
 

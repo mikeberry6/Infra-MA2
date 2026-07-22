@@ -7,8 +7,12 @@ on:
         description: Full Git commit SHA that passed the required release gate
         required: true
         type: string
-      production_base_sha:
-        description: Full SHA of the currently promoted production application
+      production_app_sha:
+        description: Full SHA of the application currently serving production
+        required: true
+        type: string
+      migration_base_sha:
+        description: Full SHA whose migration set exactly matches production
         required: true
         type: string
       migration_manifest_sha256:
@@ -39,9 +43,14 @@ jobs:
       EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
       EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
       FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+      EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
       RELEASE_SHA: ${{ inputs.release_sha }}
-      PRODUCTION_BASE_SHA: ${{ inputs.production_base_sha }}
+      PRODUCTION_APP_SHA: ${{ inputs.production_app_sha }}
+      MIGRATION_BASE_SHA: ${{ inputs.migration_base_sha }}
       MIGRATION_MANIFEST_SHA256: ${{ inputs.migration_manifest_sha256 }}
+      PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
       CONFIRMATION: ${{ inputs.confirmation }}
     steps:
       - name: Require explicit schema authorization
@@ -68,10 +77,18 @@ jobs:
             echo "::error::Checked-out SHA does not match release_sha."
             exit 1
           fi
-          if ! [[ "$PRODUCTION_BASE_SHA" =~ ^[0-9a-f]{40}$ ]]; then
-            echo "::error::production_base_sha must be a full Git SHA."
+          if ! [[ "$PRODUCTION_APP_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::production_app_sha must be a full Git SHA."
             exit 1
           fi
+          if ! [[ "$MIGRATION_BASE_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::migration_base_sha must be a full Git SHA."
+            exit 1
+          fi
+          git merge-base --is-ancestor "$MIGRATION_BASE_SHA" "$RELEASE_SHA" || {
+            echo "::error::migration_base_sha must be an ancestor of release_sha."
+            exit 1
+          }
 
       - name: Setup Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -93,7 +110,8 @@ jobs:
       - name: Require the reviewed additive migration manifest
         run: >-
           node --experimental-strip-types scripts/audit-additive-migrations.ts
-          --base-sha="$PRODUCTION_BASE_SHA"
+          --base-sha="$MIGRATION_BASE_SHA"
+          --production-app-sha="$PRODUCTION_APP_SHA"
           --release-sha="$RELEASE_SHA"
           --expected-manifest-sha256="$MIGRATION_MANIFEST_SHA256"
           --output=tmp/schema-stage/migration-manifest.json
@@ -104,6 +122,17 @@ jobs:
           test -n "$EXPECTED_DATABASE_HOST" || { echo "::error::PRODUCTION_MIGRATION_DATABASE_HOST is required."; exit 1; }
           test -n "$EXPECTED_DATABASE_NAME" || { echo "::error::PRODUCTION_DATABASE_NAME is required."; exit 1; }
           test -n "$FORBIDDEN_DATABASE_HOST" || { echo "::error::MIGRATION_DATABASE_HOST is required."; exit 1; }
+          test -n "$VERCEL_TOKEN" || { echo "::error::VERCEL_TOKEN is required."; exit 1; }
+          test -n "$EXPECTED_VERCEL_PROJECT_ID" || { echo "::error::VERCEL_PROJECT_ID is required."; exit 1; }
+          test -n "$EXPECTED_GITHUB_REPOSITORY_ID" || { echo "::error::GitHub repository ID is required."; exit 1; }
+          test -n "$PRODUCTION_URL" || { echo "::error::PRODUCTION_URL is required."; exit 1; }
+          node - <<'NODE'
+          const value = process.env.PRODUCTION_URL;
+          const parsed = new URL(value);
+          if (parsed.protocol !== "https:" || parsed.username || parsed.password || parsed.port || parsed.pathname !== "/" || parsed.search || parsed.hash) {
+            throw new Error("production_url must be an HTTPS origin without credentials, path, query, or fragment.");
+          }
+          NODE
 
       - name: Install, generate, and validate
         run: |
@@ -113,6 +142,21 @@ jobs:
 
       - name: Prove production database target
         run: node --experimental-strip-types scripts/assert-database-target.ts
+
+      - name: Prove the current production application SHA
+        run: >-
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts
+          --deployment-url="$PRODUCTION_URL"
+          --expected-sha="$PRODUCTION_APP_SHA"
+          --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID"
+          --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID"
+          --output=tmp/schema-stage/production-app-inspect.json
+
+      - name: Prove the applied production migration baseline
+        run: >-
+          node --experimental-strip-types scripts/verify-migration-baseline.ts
+          --base-sha="$MIGRATION_BASE_SHA"
+          --output=tmp/schema-stage/migration-baseline.json
 
       - name: Reverify exact main head immediately before production writes
         env:
@@ -130,6 +174,15 @@ jobs:
         run: |
           mkdir -p tmp/schema-stage
           set -o pipefail
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$PRODUCTION_URL" \
+            --expected-sha="$PRODUCTION_APP_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --output=tmp/schema-stage/production-app-inspect-before-write.json
+          node --experimental-strip-types scripts/verify-migration-baseline.ts \
+            --base-sha="$MIGRATION_BASE_SHA" \
+            --output=tmp/schema-stage/migration-baseline-before-write.json
           npx prisma migrate deploy 2>&1 | tee tmp/schema-stage/migrate-deploy.log
           npx tsx scripts/quarantine-dashboard-methodology-history.ts 2>&1 | tee tmp/schema-stage/dashboard-methodology-cutover.log
           npx tsx scripts/backfill-dashboard-signal-approvals.ts 2>&1 | tee tmp/schema-stage/dashboard-signal-backfill.log
