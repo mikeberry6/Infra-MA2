@@ -1,33 +1,159 @@
-name: CI Build
+name: Release Gate
 
 on:
   push:
-    branches: ["main", "master", "claude/**", "codex/**"]
+    branches: ["main"]
   pull_request:
-    branches: ["main", "master", "claude/infratracker-platform-FCgI9"]
-  workflow_dispatch:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-gate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
 
 jobs:
   build:
+    name: build
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "24"
-          cache: "npm"
+          cache: npm
 
-      - name: Install dependencies
+      - name: Install locked dependencies
         run: npm ci
 
-      - name: Type check
-        run: npx tsc --noEmit
+      - name: Audit additive migration history
+        env:
+          EVENT_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          EVENT_NAME: ${{ github.event_name }}
+        shell: bash
+        run: |
+          mkdir -p tmp/ci
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          base_sha="$EVENT_BASE_SHA"
+          if ! [[ "$base_sha" =~ ^[0-9a-f]{40}$ ]] || [[ "$base_sha" =~ ^0+$ ]]; then
+            if [ "$EVENT_NAME" = "push" ]; then
+              base_sha="$(git rev-parse HEAD^)"
+            else
+              base_sha="$(git merge-base HEAD origin/main)"
+            fi
+          fi
+          ./node_modules/.bin/tsx scripts/audit-additive-migrations.ts \
+            --base-sha="$base_sha" \
+            --release-sha=HEAD \
+            --output=tmp/ci/migration-manifest.json
 
-      - name: Test
+      - name: Generate and validate Prisma client
+        run: |
+          npm run db:generate
+          npm run db:validate
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Run unit and integration tests
         run: npm test
 
-      - name: Build
+      - name: Validate offline seed and reference data
+        run: npm run validate-portfolios
+
+      - name: Audit complete and production dependency trees
+        run: |
+          node scripts/run-with-retry.mjs --attempts=3 -- npm audit --audit-level=high
+          node scripts/run-with-retry.mjs --attempts=3 -- npm run audit:prod
+
+      - name: Build production application
         run: npm run build
+
+      - name: Upload quality evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: phase-1-quality-${{ github.run_id }}
+          path: tmp/ci/
+          if-no-files-found: warn
+          retention-days: 30
+
+  migration-validation:
+    name: Isolated Neon migration and drift validation
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: neon-migration-validation-${{ github.repository_id }}
+      cancel-in-progress: false
+    env:
+      DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
+      EXPECTED_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Require the isolated Neon validation target
+        shell: bash
+        run: |
+          missing=0
+          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for migration validation."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+          node --experimental-strip-types scripts/assert-database-target.ts
+
+      - name: Install, generate, and validate
+        run: |
+          npm ci
+          npm run db:generate
+          npm run db:validate
+
+      - name: Apply migrations and require zero drift
+        shell: bash
+        run: |
+          mkdir -p tmp/ci
+          set -o pipefail
+          npx prisma migrate deploy 2>&1 | tee tmp/ci/migrate-deploy.log
+          npx prisma migrate status 2>&1 | tee tmp/ci/migrate-status.log
+          npx prisma migrate diff \
+            --from-schema=prisma/schema.prisma \
+            --to-config-datasource \
+            --exit-code 2>&1 | tee tmp/ci/schema-drift.log
+
+      - name: Upload migration evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: phase-1-migration-${{ github.run_id }}
+          path: tmp/ci/
+          if-no-files-found: warn
+          retention-days: 30

@@ -616,3 +616,13 @@ model User {
 
   reviewedDashboardSignals DashboardSignal[] @relation("DashboardSignalReviewer")
 }
+
+model AuthThrottle {
+  keyHash         String   @id
+  failedAttempts  Int      @default(0)
+  windowStartedAt DateTime @default(now())
+  lockedUntil     DateTime?
+  updatedAt       DateTime @updatedAt
+
+  @@index([lockedUntil])
+}

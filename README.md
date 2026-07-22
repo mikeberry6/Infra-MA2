@@ -2,6 +2,10 @@
 
 Next.js + Prisma application for infrastructure M&A, portfolio company, fund, and public news monitoring.
 
+## Runtime and verification
+
+Use Node 24 and npm 11. Install with `npm ci`; `package-lock.json` is the only supported lockfile. The required local gate is documented in [`docs/operations.md`](docs/operations.md), and production recovery is documented in [`docs/release-runbook.md`](docs/release-runbook.md).
+
 ## Daily News Monitoring
 
 Run a dry scan first:
