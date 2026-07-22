@@ -170,6 +170,17 @@ jobs:
       - name: Prove database target is the isolated Neon branch
         run: node --experimental-strip-types scripts/assert-database-target.ts
 
+      # One-time repair for the zero-step migration record left when the
+      # phase-pure Phase 1 branch collided with this shared validation branch.
+      # Remove this step immediately after the guarded repair succeeds.
+      - name: Repair known Phase 1 validation migration collision
+        env:
+          VALIDATION_FAILED_MIGRATION: 20260722220000_auth_throttle
+        run: |
+          set -o pipefail
+          ./node_modules/.bin/tsx scripts/repair-validation-migration-collision.ts \
+            2>&1 | tee tmp/ci/validation-migration-repair.log
+
       - name: Apply additive migrations to validation branch
         shell: bash
         run: |

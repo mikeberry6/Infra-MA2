@@ -37,6 +37,7 @@ export type CompanyPublicationRecord = {
   ownershipPeriods: ReadonlyArray<{
     id?: string;
     fundId?: string | null;
+    organizationId?: string | null;
     fund?: { status?: string | null } | null;
   }>;
   citations: readonly unknown[];
@@ -76,7 +77,9 @@ export function missingFundPublicationFields(fund: FundPublicationRecord): strin
 
 export function missingCompanyPublicationFields(company: CompanyPublicationRecord): string[] {
   const hasPublicOwnership = company.ownershipPeriods.some(
-    (ownership) => !ownership.fundId || ownership.fund?.status === "PUBLISHED",
+    (ownership) => ownership.fundId
+      ? ownership.fund?.status === "PUBLISHED"
+      : Boolean(ownership.organizationId),
   );
   return [
     !company.name.trim() && "canonical identity",
@@ -84,7 +87,7 @@ export function missingCompanyPublicationFields(company: CompanyPublicationRecor
     !company.sector && "sector",
     !company.description.trim() && "description",
     Boolean(company.website?.trim()) && !isHttpUrl(company.website) && "valid HTTP(S) website",
-    !hasPublicOwnership && "ownership period backed by a published fund or free-text owner",
+    !hasPublicOwnership && "ownership period backed by a published fund or investor organization",
     company.citations.length === 0 && "primary citation",
   ].filter((field): field is string => Boolean(field));
 }

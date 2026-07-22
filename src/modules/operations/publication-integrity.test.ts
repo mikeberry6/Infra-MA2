@@ -34,7 +34,7 @@ describe("publication completeness", () => {
       country: "United States",
       sector: "UTILITIES",
       description: "An electric utility platform.",
-      ownershipPeriods: [{ id: "ownership-1" }],
+      ownershipPeriods: [{ id: "ownership-1", organizationId: "organization-1" }],
       citations: [{ id: "citation-1" }],
     })).toEqual([]);
   });
@@ -134,9 +134,31 @@ describe("publication completeness", () => {
         description: "An electric utility platform.",
         ownershipPeriods: [{ fundId: "fund-1", fund: { status } }],
         citations: [{ id: "citation-1" }],
-      })).toEqual(["ownership period backed by a published fund or free-text owner"]);
+      })).toEqual(["ownership period backed by a published fund or investor organization"]);
     },
   );
+
+  it("accepts an ownership linked to a published Fund", () => {
+    expect(missingCompanyPublicationFields({
+      name: "GridCo",
+      country: "United States",
+      sector: "UTILITIES",
+      description: "An electric utility platform.",
+      ownershipPeriods: [{ fundId: "fund-1", organizationId: null, fund: { status: "PUBLISHED" } }],
+      citations: [{ id: "citation-1" }],
+    })).toEqual([]);
+  });
+
+  it("blocks a company when an ownership row has neither a Fund nor an investor organization", () => {
+    expect(missingCompanyPublicationFields({
+      name: "GridCo",
+      country: "United States",
+      sector: "UTILITIES",
+      description: "An electric utility platform.",
+      ownershipPeriods: [{ id: "ownership-empty", fundId: null, organizationId: null }],
+      citations: [{ id: "citation-1" }],
+    })).toEqual(["ownership period backed by a published fund or investor organization"]);
+  });
 });
 
 describe("ownership to fund integrity", () => {

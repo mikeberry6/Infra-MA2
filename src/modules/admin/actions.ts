@@ -1197,6 +1197,7 @@ export async function publishCompany(id: string): Promise<ActionResult> {
           select: {
             id: true,
             fundId: true,
+            organizationId: true,
             fund: { select: { status: true } },
           },
         },
@@ -1247,6 +1248,7 @@ export async function verifyCompany(id: string): Promise<ActionResult> {
           select: {
             id: true,
             fundId: true,
+            organizationId: true,
             fund: { select: { status: true } },
           },
         },
