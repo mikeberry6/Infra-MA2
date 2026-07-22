@@ -16,6 +16,7 @@ type EiaRow = {
   "series-description"?: string;
   value?: string | number | null;
   "value-units"?: string;
+  units?: string;
 };
 
 type EiaResponse = {
@@ -34,29 +35,33 @@ const EIA_BASE = "https://api.eia.gov/v2";
 type EiaMetricMapping = {
   metricId: string;
   unit: string;
+  sourceUnitField: "value-units" | "units";
   sourceUnits: readonly string[];
 };
 
 const HOURLY_METRICS: Record<string, EiaMetricMapping> = {
-  D: { metricId: "eia_grid_load", unit: "MWh", sourceUnits: ["megawatthours", "MWh"] },
-  NG: { metricId: "eia_generation_mix", unit: "MWh", sourceUnits: ["megawatthours", "MWh"] },
-  TI: { metricId: "eia_interchange", unit: "MWh", sourceUnits: ["megawatthours", "MWh"] },
+  D: { metricId: "eia_grid_load", unit: "MWh", sourceUnitField: "value-units", sourceUnits: ["megawatthours", "MWh"] },
+  NG: { metricId: "eia_generation_mix", unit: "MWh", sourceUnitField: "value-units", sourceUnits: ["megawatthours", "MWh"] },
+  TI: { metricId: "eia_interchange", unit: "MWh", sourceUnitField: "value-units", sourceUnits: ["megawatthours", "MWh"] },
 };
 
 const WEEKLY_SERIES: Record<string, EiaMetricMapping> = {
   NW2_EPG0_SWO_R48_BCF: {
     metricId: "natural_gas_storage",
     unit: "Bcf",
+    sourceUnitField: "units",
     sourceUnits: ["BCF", "billion cubic feet"],
   },
   WGTSTUS1: {
     metricId: "refined_products",
     unit: "Mbbl",
+    sourceUnitField: "units",
     sourceUnits: ["MBBL", "thousand barrels"],
   },
   WCESTUS1: {
     metricId: "crude_inventories",
     unit: "Mbbl",
+    sourceUnitField: "units",
     sourceUnits: ["MBBL", "thousand barrels"],
   },
 };
@@ -216,14 +221,15 @@ function numericValue(value: EiaRow["value"]): number | null {
 }
 
 function assertExpectedEiaUnit(row: EiaRow, mapping: EiaMetricMapping): void {
-  if (typeof row["value-units"] !== "string" || !row["value-units"].trim()) {
-    throw new Error(`EIA ${mapping.metricId} returned no value-units.`);
+  const sourceUnit = row[mapping.sourceUnitField];
+  if (typeof sourceUnit !== "string" || !sourceUnit.trim()) {
+    throw new Error(`EIA ${mapping.metricId} returned no ${mapping.sourceUnitField}.`);
   }
-  const actual = normalizeEiaUnit(row["value-units"]);
+  const actual = normalizeEiaUnit(sourceUnit);
   const expected = mapping.sourceUnits.map(normalizeEiaUnit);
   if (!expected.includes(actual)) {
     throw new Error(
-      `EIA ${mapping.metricId} returned unexpected value-units "${row["value-units"]}"; expected ${mapping.sourceUnits.join(" or ")}.`,
+      `EIA ${mapping.metricId} returned unexpected ${mapping.sourceUnitField} "${sourceUnit}"; expected ${mapping.sourceUnits.join(" or ")}.`,
     );
   }
 }

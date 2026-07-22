@@ -41,9 +41,9 @@ describe("EIA provider fixtures", () => {
 
   it("retains the latest duplicate weekly value as an official revision", () => {
     const observations = mapWeeklyRows([
-      { period: "2026-07-17", series: "WGTSTUS1", value: "221000", "value-units": "MBBL" },
-      { period: "2026-07-17", series: "WGTSTUS1", value: "222500", "value-units": "thousand barrels" },
-      { period: "2026-07-17", series: "WCESTUS1", value: "invalid", "value-units": "MBBL" },
+      { period: "2026-07-17", series: "WGTSTUS1", value: "221000", units: "MBBL" },
+      { period: "2026-07-17", series: "WGTSTUS1", value: "222500", units: "thousand barrels" },
+      { period: "2026-07-17", series: "WCESTUS1", value: "invalid", units: "MBBL" },
     ]);
 
     expect(observations).toEqual([
@@ -69,8 +69,8 @@ describe("EIA provider fixtures", () => {
       period: "2026-07-17",
       series: "WGTSTUS1",
       value: 1,
-      "value-units": "BCF",
-    }])).toThrow("unexpected value-units");
+      units: "BCF",
+    }])).toThrow("unexpected units");
   });
 
   it("rejects missing units and hourly rows outside the registered US48 geography", () => {
@@ -88,6 +88,50 @@ describe("EIA provider fixtures", () => {
       value: 1,
       "value-units": "MWh",
     }])).toThrow("expected US48");
+
+    expect(() => mapWeeklyRows([{
+      period: "2026-07-17",
+      series: "WGTSTUS1",
+      value: 1,
+      "value-units": "MBBL",
+    }])).toThrow("no units");
+  });
+
+  it("maps the dataset-specific unit fields returned by all three EIA routes", async () => {
+    vi.stubGlobal("fetch", vi.fn(async (input: string | URL | Request) => {
+      const pathname = new URL(String(input)).pathname;
+      if (pathname.includes("electricity/rto/region-data")) {
+        return new Response(JSON.stringify({ response: { data: Array.from({ length: 24 }, (_, hour) => ({
+          period: `2026-07-21T${String(hour).padStart(2, "0")}`,
+          respondent: "US48",
+          type: "D",
+          value: "1",
+          "value-units": "megawatthours",
+        })) } }), { status: 200, headers: { "Content-Type": "application/json" } });
+      }
+      if (pathname.includes("natural-gas/stor/wkly")) {
+        return new Response(JSON.stringify({ response: { data: [{
+          period: "2026-07-17",
+          series: "NW2_EPG0_SWO_R48_BCF",
+          "series-description": "Weekly Lower 48 States Natural Gas Working Underground Storage (Billion Cubic Feet)",
+          value: "3024",
+          units: "BCF",
+        }] } }), { status: 200, headers: { "Content-Type": "application/json" } });
+      }
+      return new Response(JSON.stringify({ response: { data: [
+        { period: "2026-07-17", series: "WGTSTUS1", value: "211294", units: "MBBL" },
+        { period: "2026-07-17", series: "WCESTUS1", value: "411675", units: "MBBL" },
+      ] } }), { status: 200, headers: { "Content-Type": "application/json" } });
+    }));
+
+    const result = await eiaProvider("fixture-key", new Date("2026-07-22T11:30:00.000Z")).fetch();
+
+    expect(result.observations).toEqual(expect.arrayContaining([
+      expect.objectContaining({ metricId: "eia_grid_load", value: 24, unit: "MWh" }),
+      expect.objectContaining({ metricId: "natural_gas_storage", value: 3024, unit: "Bcf" }),
+      expect.objectContaining({ metricId: "refined_products", value: 211294, unit: "Mbbl" }),
+      expect.objectContaining({ metricId: "crude_inventories", value: 411675, unit: "Mbbl" }),
+    ]));
   });
 
   it("rejects a malformed HTTP-200 payload instead of treating it as an empty release", async () => {
