@@ -4,8 +4,6 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
   authBasePath: vi.fn(),
-  push: vi.fn(),
-  refresh: vi.fn(),
   signIn: vi.fn(),
 }));
 
@@ -21,10 +19,6 @@ vi.mock("next-auth/react", () => ({
     return children;
   },
   signIn: mocks.signIn,
-}));
-
-vi.mock("next/navigation", () => ({
-  useRouter: () => ({ push: mocks.push, refresh: mocks.refresh }),
 }));
 
 describe("LoginForm NextAuth endpoint", () => {

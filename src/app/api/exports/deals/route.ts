@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAllDeals } from "@/modules/deals/queries";
+import { getAllDealDetails } from "@/modules/deals/queries";
 import { toCsv } from "@/lib/csv";
 import { withServerOperation } from "@/lib/server-log";
 import { canExportData } from "@/modules/auth/guards";
@@ -39,7 +39,7 @@ async function exportDeals(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const wantsJson = searchParams.get("format") === "json";
 
-    const deals = await getAllDeals();
+    const deals = await getAllDealDetails();
 
     if (wantsJson) {
       return NextResponse.json({

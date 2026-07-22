@@ -22,6 +22,7 @@ vi.mock("@/lib/prisma", () => ({
 }));
 
 import {
+  getAllDealDetails,
   getAllDeals,
   getDealById,
   getDealCount,
@@ -116,6 +117,25 @@ describe("deal query projections", () => {
       enterpriseValue: "$1bn",
       keyHighlights: ["Scaled platform"],
     });
+  });
+
+  it("loads a full published collection for export consumers", async () => {
+    mocks.findMany.mockResolvedValue([detailRow]);
+
+    const deals = await getAllDealDetails();
+
+    expect(mocks.findMany).toHaveBeenCalledWith(expect.objectContaining({
+      where: { status: "PUBLISHED" },
+      include: expect.objectContaining({ participants: expect.any(Object), citations: expect.any(Object) }),
+      orderBy: { date: "desc" },
+    }));
+    expect(deals).toEqual([expect.objectContaining({
+      id: "DEAL-1",
+      description: "Full deal description",
+      enterpriseValue: "$1bn",
+      assetScale: "1,000 route miles",
+      fundVehicle: "Infrastructure Fund V",
+    })]);
   });
 
   it("enforces published-only weekly, latest-date, and count queries", async () => {

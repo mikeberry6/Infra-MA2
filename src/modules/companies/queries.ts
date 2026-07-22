@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { unstable_cache } from "next/cache";
 import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
+import { dataCacheKeyParts } from "@/lib/data-cache-namespace";
 import {
   COMPANY_SECTOR_DISPLAY,
   COMPANY_REGION_DISPLAY,
@@ -381,13 +382,13 @@ async function getAllCompanyDetailsRaw(): Promise<CompanyDetail[]> {
 
 const getAllCompaniesListCached = unstable_cache(
   getAllCompanyListItemsRaw,
-  ["companies:all:list"],
+  dataCacheKeyParts("companies:all:list"),
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
 const getAllCompaniesDetailCached = unstable_cache(
   getAllCompanyDetailsRaw,
-  ["companies:all:detail"],
+  dataCacheKeyParts("companies:all:detail"),
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
@@ -429,7 +430,7 @@ async function getCompanyByFocusIdRaw(focusId: string): Promise<CompanyView | nu
 
 const getCompanyByFocusIdCached = unstable_cache(
   getCompanyByFocusIdRaw,
-  ["companies:by-focus"],
+  dataCacheKeyParts("companies:by-focus"),
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 

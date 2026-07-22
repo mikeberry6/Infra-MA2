@@ -121,7 +121,18 @@ describe("isolated validation workflow remediation context", () => {
     expect(browserBlock).toContain("continue-on-error: true");
     expect(browserBlock).toContain('npx playwright test --grep-invert "@visual"');
     expect(topLevelFailureGate).toBeGreaterThan(browserGate);
+    const topLevelFailureBlock = workflow.slice(topLevelFailureGate, providerFailureGate);
+    expect(topLevelFailureBlock).toContain("id: top_level_failure_gate");
+    expect(topLevelFailureBlock).toContain("continue-on-error: true");
+    expect(topLevelFailureBlock).toContain(
+      "DATA_CACHE_NAMESPACE: top-level-failure-${{ github.run_id }}",
+    );
+    expect(topLevelFailureBlock).toContain("--output=top-level-failure-test-results");
     expect(providerFailureGate).toBeGreaterThan(topLevelFailureGate);
+    const providerFailureBlock = workflow.slice(providerFailureGate, evidenceUpload);
+    expect(providerFailureBlock).toContain("id: provider_failure_gate");
+    expect(providerFailureBlock).toContain("continue-on-error: true");
+    expect(providerFailureBlock).toContain("--output=provider-failure-test-results");
     expect(evidenceUpload).toBeGreaterThan(browserGate);
     expect(enforcement).toBeGreaterThan(evidenceUpload);
     expect(workflow.slice(enforcement)).toContain(
@@ -129,6 +140,12 @@ describe("isolated validation workflow remediation context", () => {
     );
     expect(workflow.slice(enforcement)).toContain(
       'if [ "$VISUAL_GATE_OUTCOME" != "success" ]',
+    );
+    expect(workflow.slice(enforcement)).toContain(
+      'if [ "$TOP_LEVEL_FAILURE_GATE_OUTCOME" != "success" ]',
+    );
+    expect(workflow.slice(enforcement)).toContain(
+      'if [ "$PROVIDER_FAILURE_GATE_OUTCOME" != "success" ]',
     );
     expect(workflow.slice(enforcement)).toContain(
       'if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]',

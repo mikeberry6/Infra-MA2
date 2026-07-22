@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { unstable_cache } from "next/cache";
 import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
+import { dataCacheKeyParts } from "@/lib/data-cache-namespace";
 import {
   FUND_STRATEGY_DISPLAY,
   FUND_STRUCTURE_DISPLAY,
@@ -169,7 +170,7 @@ async function getAllFundsRaw(): Promise<FundListItem[]> {
 
 const getAllFundsCached = unstable_cache(
   getAllFundsRaw,
-  ["funds:all"],
+  dataCacheKeyParts("funds:all"),
   { tags: [CACHE_TAGS.funds], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
@@ -203,7 +204,7 @@ async function getFundStrategyIndexRaw(): Promise<FundStrategyView[]> {
 
 const getFundStrategyIndexCached = unstable_cache(
   getFundStrategyIndexRaw,
-  ["funds:strategy-index"],
+  dataCacheKeyParts("funds:strategy-index"),
   { tags: [CACHE_TAGS.funds], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 

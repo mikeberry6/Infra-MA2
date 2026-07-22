@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { unstable_cache } from "next/cache";
 import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
+import { dataCacheKeyParts } from "@/lib/data-cache-namespace";
 import type { DatabaseCounts } from "@/modules/shared/types";
 
 async function getDatabaseCountsRaw(): Promise<DatabaseCounts> {
@@ -14,7 +15,7 @@ async function getDatabaseCountsRaw(): Promise<DatabaseCounts> {
 
 const getDatabaseCountsCached = unstable_cache(
   getDatabaseCountsRaw,
-  ["database:counts"],
+  dataCacheKeyParts("database:counts"),
   { tags: [CACHE_TAGS.counts], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 

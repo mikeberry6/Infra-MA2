@@ -52,6 +52,8 @@ The validation and both production host variables must differ where Neon uses di
 
 Vercel Preview must use the validation database and preview-only NextAuth settings. Vercel Production must use the production database, canonical `NEXTAUTH_URL`, and a separate `NEXTAUTH_SECRET`. In NextAuth v4, `NEXTAUTH_URL` is the complete auth API endpoint, including the retained base path: `https://infra-ma-2.vercel.app/Infra-MA2/api/auth` in production and the equivalent preview origin in Preview. Preview and production must not share writable database credentials.
 
+Public query caches are additionally scoped by a non-sensitive deployment identity. Vercel supplies that identity automatically; local or reusable-build validation may set `DATA_CACHE_NAMESPACE` to a safe label such as `validation-branch`. Never place a connection string, hostname containing credentials, token, or other secret in this value. Any process that reuses one built application against a different database must use a different namespace so persisted Next data-cache entries cannot cross targets.
+
 ## Release gate
 
 `.github/workflows/deploy.yml` has three jobs:

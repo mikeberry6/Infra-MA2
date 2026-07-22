@@ -2,7 +2,6 @@
 
 import { useState, type FormEvent } from "react";
 import { SessionProvider, signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { LogIn } from "lucide-react";
 import { Button } from "@/components/shared/Button";
 import { TextInput } from "@/components/shared/TextInput";
@@ -17,7 +16,6 @@ export function LoginForm({ callbackUrl }: { callbackUrl: string }) {
 }
 
 function LoginFields({ callbackUrl }: { callbackUrl: string }) {
-  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -42,8 +40,10 @@ function LoginFields({ callbackUrl }: { callbackUrl: string }) {
       return;
     }
 
-    router.push(callbackUrl);
-    router.refresh();
+    // Complete authentication with a document navigation. A client push plus
+    // an immediate refresh can race the first protected RSC request and leave
+    // users at the callback URL with the login render still mounted.
+    window.location.assign(result?.url ?? callbackUrl);
   }
 
   return (

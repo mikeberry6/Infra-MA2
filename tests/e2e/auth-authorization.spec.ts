@@ -127,7 +127,8 @@ test("invalid credentials return one generic message", async ({ page }) => {
   await page.getByRole("textbox", { name: "Email" }).fill("unknown@example.com");
   await page.getByLabel("Password").fill("not-the-password");
   await page.getByRole("button", { name: "Sign In" }).click();
-  await expect(page.getByRole("alert")).toHaveText("The email or password was not recognized.");
+  await expect(page.locator("form").getByRole("alert"))
+    .toHaveText("The email or password was not recognized.");
 });
 
 test("configured administrator previews a CSV before explicitly committing its draft", async ({ page, context }) => {

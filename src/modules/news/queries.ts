@@ -1,4 +1,5 @@
 import { unstable_cache } from "next/cache";
+import { dataCacheKeyParts } from "@/lib/data-cache-namespace";
 import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
 import { prisma } from "@/lib/prisma";
 import { nextNewsScanAt } from "@/modules/operations/pipeline-schedules";
@@ -150,7 +151,7 @@ async function getNewsFeedRaw(): Promise<NewsFeedView> {
 
 const getNewsFeedCached = unstable_cache(
   getNewsFeedRaw,
-  ["news:feed"],
+  dataCacheKeyParts("news:feed"),
   {
     tags: [CACHE_TAGS.news, CACHE_TAGS.deals, CACHE_TAGS.funds, CACHE_TAGS.companies],
     revalidate: CACHE_REVALIDATE_SECONDS,

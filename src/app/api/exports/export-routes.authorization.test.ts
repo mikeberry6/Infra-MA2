@@ -1,10 +1,11 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { NextRequest } from "next/server";
+import { parseCsv } from "@/lib/csv";
 
 const mocks = vi.hoisted(() => ({
   role: null as "ADMIN" | "ANALYST" | "SUBSCRIBER" | null,
   canExportData: vi.fn(),
-  getAllDeals: vi.fn(),
+  getAllDealDetails: vi.fn(),
   getAllFundDetails: vi.fn(),
   getAllCompanyDetails: vi.fn(),
 }));
@@ -13,7 +14,7 @@ vi.mock("@/modules/auth/guards", () => ({
   canExportData: mocks.canExportData,
 }));
 vi.mock("@/modules/deals/queries", () => ({
-  getAllDeals: mocks.getAllDeals,
+  getAllDealDetails: mocks.getAllDealDetails,
 }));
 vi.mock("@/modules/funds/queries", () => ({
   getAllFundDetails: mocks.getAllFundDetails,
@@ -38,7 +39,7 @@ const routes = [
     label: "deals",
     url: "http://localhost/api/exports/deals",
     get: exportDeals,
-    query: mocks.getAllDeals,
+    query: mocks.getAllDealDetails,
   },
   {
     label: "funds",
@@ -60,7 +61,7 @@ describe("export route authorization", () => {
     mocks.canExportData.mockReset().mockImplementation(
       () => Promise.resolve(mocks.role === "ADMIN" || mocks.role === "ANALYST"),
     );
-    mocks.getAllDeals.mockReset().mockResolvedValue([]);
+    mocks.getAllDealDetails.mockReset().mockResolvedValue([]);
     mocks.getAllFundDetails.mockReset().mockResolvedValue([]);
     mocks.getAllCompanyDetails.mockReset().mockResolvedValue([]);
   });
@@ -93,4 +94,56 @@ describe("export route authorization", () => {
       expect(query).toHaveBeenCalledOnce();
     });
   }
+
+  it("preserves full deal detail fields in CSV and JSON exports", async () => {
+    mocks.role = "ANALYST";
+    mocks.getAllDealDetails.mockResolvedValue([{
+      legacyId: "DEAL-1",
+      title: "Buyer acquires Target",
+      target: "Target",
+      buyer: "Buyer",
+      seller: "Seller",
+      sector: "Digital",
+      subsector: "Fiber",
+      region: "North America",
+      category: ["Acquisition (Buyout)"],
+      date: "2026-07-20T00:00:00.000Z",
+      status: "Announced",
+      description: "Full deal description",
+      country: "United States",
+      enterpriseValue: "$1bn",
+      equityValue: "$800m",
+      stake: "100%",
+      closingDate: "2026-12-31T00:00:00.000Z",
+      assetScale: "1,000 route miles",
+      valuationMultiple: "12x EBITDA",
+      fundVehicle: "Infrastructure Fund V",
+      sourceName: "Primary source",
+      sourceUrl: "https://example.test/deal",
+    }]);
+
+    const csvResponse = await exportDeals(new NextRequest("http://localhost/api/exports/deals"));
+    expect(csvResponse.status).toBe(200);
+    const [csvRow] = parseCsv(await csvResponse.text());
+    expect(csvRow).toMatchObject({
+      description: "Full deal description",
+      enterpriseValue: "$1bn",
+      equityValue: "$800m",
+      assetScale: "1,000 route miles",
+      valuationMultiple: "12x EBITDA",
+      fundVehicle: "Infrastructure Fund V",
+    });
+
+    const jsonResponse = await exportDeals(
+      new NextRequest("http://localhost/api/exports/deals?format=json"),
+    );
+    expect(jsonResponse.status).toBe(200);
+    const body = await jsonResponse.json();
+    expect(body.data[0]).toMatchObject({
+      description: "Full deal description",
+      enterpriseValue: "$1bn",
+      assetScale: "1,000 route miles",
+      fundVehicle: "Infrastructure Fund V",
+    });
+  });
 });

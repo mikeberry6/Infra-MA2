@@ -325,9 +325,12 @@ jobs:
         continue-on-error: true
         env:
           E2E_BASE_PATH: /Infra-MA2
-        run: npx playwright test --grep-invert "@visual"
+          PLAYWRIGHT_HTML_OUTPUT_DIR: browser-playwright-report
+        run: npx playwright test --grep-invert "@visual" --output=browser-test-results
 
       - name: Prove top-level database failure and retry journeys
+        id: top_level_failure_gate
+        continue-on-error: true
         shell: bash
         env:
           # The normal authenticated suite uses the allow-listed Neon branch.
@@ -335,7 +338,9 @@ jobs:
           E2E_DATABASE_URL: ""
           DATABASE_URL: postgresql://failure_fixture:failure_fixture@127.0.0.1:1/failure_fixture?connect_timeout=1
           NEXTAUTH_SECRET: loopback-failure-fixture-only
+          DATA_CACHE_NAMESPACE: top-level-failure-${{ github.run_id }}
           E2E_BASE_PATH: /Infra-MA2
+          PLAYWRIGHT_HTML_OUTPUT_DIR: top-level-failure-playwright-report
         run: |
           mkdir -p tmp/ci
           failure_port=3101
@@ -368,12 +373,16 @@ jobs:
           E2E_TOP_LEVEL_FAILURE_FIXTURE=1 \
           PLAYWRIGHT_BASE_URL="$failure_url" \
             npx playwright test tests/e2e/failure-states.spec.ts \
-              --grep "distinguishes a database failure"
+              --grep "distinguishes a database failure" \
+              --output=top-level-failure-test-results
 
       - name: Prove failed external-provider browser journeys
+        id: provider_failure_gate
+        continue-on-error: true
         shell: bash
         env:
           E2E_BASE_PATH: /Infra-MA2
+          PLAYWRIGHT_HTML_OUTPUT_DIR: provider-failure-playwright-report
         run: |
           set -euo pipefail
           mkdir -p tmp/ci
@@ -420,7 +429,8 @@ jobs:
             E2E_PROVIDER_FAILURE_FIXTURE=1 \
             PLAYWRIGHT_BASE_URL="$provider_url" \
             E2E_BASE_PATH="$E2E_BASE_PATH" \
-              npx playwright test tests/e2e/provider-failures.spec.ts
+              npx playwright test tests/e2e/provider-failures.spec.ts \
+                --output=provider-failure-test-results
 
       - name: Upload migration and data evidence
         if: always()
@@ -436,6 +446,8 @@ jobs:
         env:
           BROWSER_GATE_OUTCOME: ${{ steps.browser_gate.outcome }}
           VISUAL_GATE_OUTCOME: ${{ steps.visual_gate.outcome }}
+          TOP_LEVEL_FAILURE_GATE_OUTCOME: ${{ steps.top_level_failure_gate.outcome }}
+          PROVIDER_FAILURE_GATE_OUTCOME: ${{ steps.provider_failure_gate.outcome }}
           STRICT_PUBLICATION_GATE_OUTCOME: ${{ steps.strict_publication_gate.outcome }}
         shell: bash
         run: |
@@ -446,6 +458,14 @@ jobs:
           fi
           if [ "$VISUAL_GATE_OUTCOME" != "success" ]; then
             echo "::error::The deterministic pre-mutation visual baseline gate failed; all independent fixture evidence was still collected."
+            failed=1
+          fi
+          if [ "$TOP_LEVEL_FAILURE_GATE_OUTCOME" != "success" ]; then
+            echo "::error::The isolated top-level database failure/retry gate failed; all other independent fixture evidence was still collected."
+            failed=1
+          fi
+          if [ "$PROVIDER_FAILURE_GATE_OUTCOME" != "success" ]; then
+            echo "::error::The isolated external-provider failure gate failed; all other independent fixture evidence was still collected."
             failed=1
           fi
           if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]; then
@@ -462,8 +482,14 @@ jobs:
           path: |
             playwright-report/
             test-results/
+            browser-playwright-report/
+            browser-test-results/
             visual-playwright-report/
             visual-test-results/
+            top-level-failure-playwright-report/
+            top-level-failure-test-results/
+            provider-failure-playwright-report/
+            provider-failure-test-results/
           if-no-files-found: ignore
           retention-days: 30
 

@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { unstable_cache } from "next/cache";
 import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
+import { dataCacheKeyParts } from "@/lib/data-cache-namespace";
 import {
   DEAL_SECTOR_DISPLAY,
   DEAL_REGION_DISPLAY,
@@ -150,12 +151,32 @@ async function getAllDealsRaw(): Promise<DealListItem[]> {
 
 const getAllDealsCached = unstable_cache(
   getAllDealsRaw,
-  ["deals:all"],
+  dataCacheKeyParts("deals:all"),
+  { tags: [CACHE_TAGS.deals], revalidate: CACHE_REVALIDATE_SECONDS },
+);
+
+async function getAllDealDetailsRaw(): Promise<DealView[]> {
+  const deals = await prisma.deal.findMany({
+    where: { status: "PUBLISHED" },
+    include: DEAL_INCLUDE,
+    orderBy: { date: "desc" },
+  });
+  return deals.map(toDealView);
+}
+
+const getAllDealDetailsCached = unstable_cache(
+  getAllDealDetailsRaw,
+  dataCacheKeyParts("deals:all:detail"),
   { tags: [CACHE_TAGS.deals], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
 export async function getAllDeals(): Promise<DealListItem[]> {
   return getAllDealsCached();
+}
+
+/** Full published projection for authenticated exports and other bulk detail consumers. */
+export async function getAllDealDetails(): Promise<DealView[]> {
+  return getAllDealDetailsCached();
 }
 
 export async function getDealById(legacyId: string): Promise<DealView | null> {
