@@ -10,7 +10,7 @@ Releases are pull-request based, schema-first, and reversible at the application
 
 1. Keep `main` as the protected default branch. Disallow direct pushes, force pushes, and branch deletion; require pull requests, resolved conversations, `build`, and the isolated migration-validation check.
 2. Configure Vercel to use Node 24 and retain `/Infra-MA2` as the base path. Preview must use a separate Neon branch and separate NextAuth secret from Production.
-3. Configure GitHub variables/secrets used by `.github/workflows/deploy.yml`: `MIGRATION_DATABASE_URL`, `MIGRATION_DATABASE_HOST`, `MIGRATION_DATABASE_NAME`, `PRODUCTION_DATABASE_HOST`, and `PRODUCTION_MIGRATION_DATABASE_HOST`.
+3. Create a Phase 1-only Neon validation branch. Configure `PHASE1_MIGRATION_DATABASE_URL`, `PHASE1_MIGRATION_DATABASE_HOST`, and `PHASE1_MIGRATION_DATABASE_NAME` for that branch, plus `PRODUCTION_DATABASE_HOST` and `PRODUCTION_MIGRATION_DATABASE_HOST`. Do not point Phase 1 at a shared branch that already contains later-phase migrations.
 4. Keep a previous known-good Vercel deployment available. Confirm the production environment on the staging, promotion, and rollback workflows requires an independent reviewer and prevents self-review where supported.
 
 ## Pull-request validation

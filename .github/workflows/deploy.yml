@@ -98,12 +98,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     concurrency:
-      group: neon-migration-validation-${{ github.repository_id }}
+      group: phase-1-neon-migration-validation-${{ github.repository_id }}
       cancel-in-progress: false
     env:
-      DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
-      EXPECTED_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
-      EXPECTED_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
+      DATABASE_URL: ${{ secrets.PHASE1_MIGRATION_DATABASE_URL }}
+      EXPECTED_DATABASE_HOST: ${{ vars.PHASE1_MIGRATION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.PHASE1_MIGRATION_DATABASE_NAME }}
       FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
       FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
     steps:

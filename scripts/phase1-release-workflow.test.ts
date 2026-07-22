@@ -23,7 +23,9 @@ describe("Phase 1 release gate", () => {
   });
 
   it("validates additive migrations and drift only on the isolated database", () => {
-    expect(workflow).toContain("MIGRATION_DATABASE_URL");
+    expect(workflow).toContain("PHASE1_MIGRATION_DATABASE_URL");
+    expect(workflow).toContain("PHASE1_MIGRATION_DATABASE_HOST");
+    expect(workflow).toContain("PHASE1_MIGRATION_DATABASE_NAME");
     expect(workflow).toContain("PRODUCTION_DATABASE_HOST");
     expect(workflow).toContain("audit-additive-migrations.ts");
     expect(workflow).toContain("prisma migrate deploy");
