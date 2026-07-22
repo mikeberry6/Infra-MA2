@@ -1,5 +1,5 @@
 import { DASHBOARD_SOURCES } from "@/modules/dashboard/catalog";
-import type { DashboardProvider, DashboardProviderResult } from "@/modules/dashboard/types";
+import type { DashboardObservation, DashboardProvider, DashboardProviderResult } from "@/modules/dashboard/types";
 import { fetchText, observation } from "@/modules/dashboard/providers/shared";
 
 type TreasuryRow = {
@@ -14,15 +14,18 @@ export function treasuryProvider(now = new Date()): DashboardProvider {
   return {
     source: DASHBOARD_SOURCES.treasury,
     async fetch(): Promise<DashboardProviderResult> {
-      const [nominalXml, realXml] = await Promise.all([
-        fetchText(`${TREASURY_XML_BASE}?data=daily_treasury_yield_curve&field_tdr_date_value=${year}`),
-        fetchText(`${TREASURY_XML_BASE}?data=daily_treasury_real_yield_curve&field_tdr_date_value=${year}`),
-      ]);
-
-      const nominalRows = parseTreasuryXml(nominalXml);
-      const realRows = parseTreasuryXml(realXml);
+      let [nominalRows, realRows] = await fetchTreasuryYear(year);
+      // On the first business/holiday run of a new year, Treasury's current-
+      // year feeds can still be empty. Retain the prior official release as a
+      // valid fresh observation rather than turning the calendar boundary into
+      // a guaranteed critical-source failure.
+      if (nominalRows.length === 0 || realRows.length === 0) {
+        const [priorNominalRows, priorRealRows] = await fetchTreasuryYear(year - 1);
+        nominalRows = [...priorNominalRows, ...nominalRows];
+        realRows = [...priorRealRows, ...realRows];
+      }
       const realByDate = new Map(realRows.map((row) => [row.date, row]));
-      const observations = [];
+      const observations: DashboardObservation[] = [];
 
       for (const row of nominalRows) {
         const twoYear = row.values.BC_2YEAR;
@@ -36,16 +39,16 @@ export function treasuryProvider(now = new Date()): DashboardProvider {
         if (numberPresent(tenYear)) observations.push(observation("us_treasury_10y", DASHBOARD_SOURCES.treasury.id, row.date, tenYear, { unit: "%" }));
         if (numberPresent(thirtyYear)) observations.push(observation("us_treasury_30y", DASHBOARD_SOURCES.treasury.id, row.date, thirtyYear, { unit: "%" }));
         if (numberPresent(twoYear) && numberPresent(tenYear)) {
-          observations.push(observation("curve_2s10s", DASHBOARD_SOURCES.treasury.id, row.date, (tenYear - twoYear) * 100, { unit: "bp" }));
+          observations.push(observation("curve_2s10s", DASHBOARD_SOURCES.treasury.id, row.date, Number(((tenYear - twoYear) * 100).toFixed(4)), { unit: "bp" }));
         }
         if (numberPresent(fiveYear) && numberPresent(thirtyYear)) {
-          observations.push(observation("curve_5s30s", DASHBOARD_SOURCES.treasury.id, row.date, (thirtyYear - fiveYear) * 100, { unit: "bp" }));
+          observations.push(observation("curve_5s30s", DASHBOARD_SOURCES.treasury.id, row.date, Number(((thirtyYear - fiveYear) * 100).toFixed(4)), { unit: "bp" }));
         }
         if (numberPresent(realTenYear)) {
           observations.push(observation("tips_10y_real_yield", DASHBOARD_SOURCES.treasury.id, row.date, realTenYear, { unit: "%" }));
         }
         if (numberPresent(tenYear) && numberPresent(realTenYear)) {
-          observations.push(observation("breakeven_10y_inflation", DASHBOARD_SOURCES.treasury.id, row.date, tenYear - realTenYear, { unit: "%" }));
+          observations.push(observation("breakeven_10y_inflation", DASHBOARD_SOURCES.treasury.id, row.date, Number((tenYear - realTenYear).toFixed(4)), { unit: "%" }));
         }
       }
 
@@ -54,7 +57,15 @@ export function treasuryProvider(now = new Date()): DashboardProvider {
   };
 }
 
-function parseTreasuryXml(xml: string): TreasuryRow[] {
+async function fetchTreasuryYear(year: number): Promise<[TreasuryRow[], TreasuryRow[]]> {
+  const [nominalXml, realXml] = await Promise.all([
+    fetchText(`${TREASURY_XML_BASE}?data=daily_treasury_yield_curve&field_tdr_date_value=${year}`),
+    fetchText(`${TREASURY_XML_BASE}?data=daily_treasury_real_yield_curve&field_tdr_date_value=${year}`),
+  ]);
+  return [parseTreasuryXml(nominalXml), parseTreasuryXml(realXml)];
+}
+
+export function parseTreasuryXml(xml: string): TreasuryRow[] {
   const rows: TreasuryRow[] = [];
   const entries = xml.match(/<entry>[\s\S]*?<\/entry>/g) ?? [];
 

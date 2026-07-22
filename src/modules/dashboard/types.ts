@@ -12,6 +12,12 @@ export type DashboardSourceKind =
   | "sample"
   | "placeholder";
 
+export type DashboardPublicationMode = "AUTOMATIC" | "REVIEW";
+
+export type DashboardMetricStatus = "ACTIVE" | "ROADMAP";
+
+export type DashboardSignalReviewStatus = "PENDING" | "APPROVED" | "REJECTED";
+
 export type DashboardObservationStatus =
   | "LIVE"
   | "CACHED"
@@ -47,9 +53,16 @@ export interface DashboardSource {
   id: string;
   name: string;
   kind: DashboardSourceKind;
+  /** A failure or skip makes the overall dashboard pipeline unhealthy. */
+  critical?: boolean;
   url?: string;
   cadence: string;
   requiresKey?: string;
+  expectedLagHours: number;
+  termsUrl?: string;
+  owner: string;
+  observationPublicationMode: DashboardPublicationMode;
+  signalPublicationMode?: DashboardPublicationMode;
   notes?: string;
 }
 
@@ -64,6 +77,7 @@ export interface DashboardMetric {
   source: DashboardSource;
   description: string;
   staleAfterDays: number;
+  status: DashboardMetricStatus;
 }
 
 export interface DashboardObservation {
@@ -91,6 +105,12 @@ export interface DashboardSignal {
   sourceId: string;
   sourceName: string;
   sourceUrl?: string;
+  sourceRunId?: string;
+  reviewStatus?: DashboardSignalReviewStatus;
+  reviewedAt?: string | null;
+  reviewedById?: string | null;
+  contentHash?: string;
+  reviewedContentHash?: string | null;
   metadata?: Record<string, unknown>;
 }
 

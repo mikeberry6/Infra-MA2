@@ -516,6 +516,7 @@ model DashboardMetricDefinition {
 
   @@index([section])
   @@index([sourceId])
+  @@index([status])
 }
 
 model DashboardObservation {
@@ -540,26 +541,43 @@ model DashboardObservation {
   @@index([status])
 }
 
+enum DashboardSignalReviewStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
 model DashboardSignal {
-  id         String   @id @default(cuid())
-  signalKey  String
-  section    String
-  title      String
-  summary    String   @default("")
-  direction  String   @default("NEEDS_REVIEW")
-  severity   Int      @default(1)
-  observedAt DateTime
-  sourceId   String
-  sourceName String
-  sourceUrl  String?
-  metadata   Json?
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id                  String                      @id @default(cuid())
+  signalKey           String
+  section             String
+  title               String
+  summary             String                      @default("")
+  direction           String                      @default("NEEDS_REVIEW")
+  severity            Int                         @default(1)
+  observedAt          DateTime
+  sourceId            String
+  sourceName          String
+  sourceUrl           String?
+  sourceRunId         String?
+  sourceRun           DashboardSourceRun?         @relation(fields: [sourceRunId], references: [id], onDelete: SetNull)
+  reviewStatus        DashboardSignalReviewStatus @default(PENDING)
+  reviewedAt          DateTime?
+  reviewedById        String?
+  reviewedBy          User?                       @relation("DashboardSignalReviewer", fields: [reviewedById], references: [id], onDelete: SetNull)
+  contentHash         String                      @default("")
+  reviewedContentHash String?
+  metadata            Json?
+  createdAt           DateTime                    @default(now())
+  updatedAt           DateTime                    @updatedAt
 
   @@unique([signalKey, observedAt, sourceId])
   @@index([section])
   @@index([sourceId])
+  @@index([sourceRunId])
   @@index([direction])
+  @@index([reviewStatus, observedAt])
+  @@index([reviewedById])
   @@index([observedAt])
 }
 
@@ -578,6 +596,8 @@ model DashboardSourceRun {
   metadata             Json?
   createdAt            DateTime @default(now())
 
+  signals DashboardSignal[]
+
   @@index([sourceId])
   @@index([status])
   @@index([startedAt])
@@ -593,4 +613,6 @@ model User {
   role         UserRole @default(SUBSCRIBER)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+
+  reviewedDashboardSignals DashboardSignal[] @relation("DashboardSignalReviewer")
 }

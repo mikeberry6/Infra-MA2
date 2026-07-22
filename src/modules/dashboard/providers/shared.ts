@@ -7,6 +7,7 @@ import type {
 } from "@/modules/dashboard/types";
 
 export const USER_AGENT = "Infra-MA2-Dashboard/1.0 (market intelligence cache; contact: research@infrasight.com)";
+export const DEFAULT_PROVIDER_TIMEOUT_MS = 30_000;
 
 export function observation(
   metricId: string,
@@ -39,17 +40,11 @@ export function observation(
 export async function fetchJson<T>(
   url: string,
   init: RequestInit = {},
+  timeoutMs = DEFAULT_PROVIDER_TIMEOUT_MS,
 ): Promise<T> {
-  const response = await fetch(url, {
-    ...init,
-    headers: {
-      "User-Agent": USER_AGENT,
-      "Accept": "application/json",
-      ...(init.headers ?? {}),
-    },
-  });
+  const response = await fetchWithTimeout(url, init, "application/json", timeoutMs);
   if (!response.ok) {
-    throw new Error(`${response.status} ${response.statusText} from ${url}`);
+    throw new Error(`${response.status} ${response.statusText} from ${safeUrlForError(url)}`);
   }
   return response.json() as Promise<T>;
 }
@@ -57,17 +52,11 @@ export async function fetchJson<T>(
 export async function fetchText(
   url: string,
   init: RequestInit = {},
+  timeoutMs = DEFAULT_PROVIDER_TIMEOUT_MS,
 ): Promise<string> {
-  const response = await fetch(url, {
-    ...init,
-    headers: {
-      "User-Agent": USER_AGENT,
-      "Accept": "application/xml,text/xml,text/plain,*/*",
-      ...(init.headers ?? {}),
-    },
-  });
+  const response = await fetchWithTimeout(url, init, "application/xml,text/xml,text/plain,*/*", timeoutMs);
   if (!response.ok) {
-    throw new Error(`${response.status} ${response.statusText} from ${url}`);
+    throw new Error(`${response.status} ${response.statusText} from ${safeUrlForError(url)}`);
   }
   return response.text();
 }
@@ -105,4 +94,63 @@ export function isoDateDaysAgo(days: number, from = new Date()): string {
 
 export function todayIsoDate(now = new Date()): string {
   return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())).toISOString().slice(0, 10);
+}
+
+function safeUrlForError(rawUrl: string): string {
+  try {
+    const url = new URL(rawUrl);
+    for (const name of ["api_key", "apikey", "key", "token", "access_token"]) {
+      if (url.searchParams.has(name)) url.searchParams.set(name, "[REDACTED]");
+    }
+    return url.toString();
+  } catch {
+    return "provider endpoint";
+  }
+}
+
+async function fetchWithTimeout(
+  url: string,
+  init: RequestInit,
+  accept: string,
+  timeoutMs: number,
+): Promise<Response> {
+  if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) {
+    throw new Error("Provider request timeout must be a positive number.");
+  }
+
+  const controller = new AbortController();
+  const callerSignal = init.signal;
+  let timedOut = false;
+  const abortFromCaller = () => controller.abort(callerSignal?.reason);
+  if (callerSignal?.aborted) abortFromCaller();
+  else callerSignal?.addEventListener("abort", abortFromCaller, { once: true });
+
+  const timeout = setTimeout(() => {
+    timedOut = true;
+    controller.abort(new Error(`Provider request timed out after ${timeoutMs}ms.`));
+  }, timeoutMs);
+  timeout.unref?.();
+
+  try {
+    return await fetch(url, {
+      ...init,
+      signal: controller.signal,
+      headers: {
+        "User-Agent": USER_AGENT,
+        "Accept": accept,
+        ...(init.headers ?? {}),
+      },
+    });
+  } catch (error) {
+    if (timedOut) {
+      throw new Error(
+        `Provider request timed out after ${timeoutMs}ms from ${safeUrlForError(url)}`,
+        { cause: error },
+      );
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+    callerSignal?.removeEventListener("abort", abortFromCaller);
+  }
 }

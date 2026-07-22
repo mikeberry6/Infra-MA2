@@ -11,7 +11,7 @@ export function dateOnlyUtc(dateLike: string | Date): Date {
 }
 
 export function daysBetween(a: Date, b: Date): number {
-  return Math.floor((b.getTime() - a.getTime()) / 86_400_000);
+  return (b.getTime() - a.getTime()) / 86_400_000;
 }
 
 export function sortObservations(observations: DashboardObservation[]): DashboardObservation[] {
