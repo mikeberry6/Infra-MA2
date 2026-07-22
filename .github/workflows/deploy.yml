@@ -126,18 +126,31 @@ jobs:
       - name: Require isolated validation configuration
         shell: bash
         run: |
+          mkdir -p tmp/ci
+          preflight_report="tmp/ci/validation-preflight.txt"
+          {
+            echo "release_sha=$RELEASE_SHA"
+            echo "target_database=$TARGET_DATABASE"
+            echo "checked_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          } > "$preflight_report"
           missing=0
           for name in DATABASE_URL E2E_ADMIN_EMAIL E2E_ADMIN_PASSWORD EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2; do
             if [ -z "${!name:-}" ]; then
               echo "::error::$name is required for the non-production release gate."
+              echo "missing=$name" >> "$preflight_report"
               missing=1
             fi
           done
-          if [ "$missing" -ne 0 ]; then exit 1; fi
-          if ! [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]] || [ "$RELEASE_SHA" != "$(git rev-parse HEAD)" ]; then
-            echo "::error::RELEASE_SHA must exactly match the checked-out validation commit."
+          if [ "$missing" -ne 0 ]; then
+            echo "status=failed_missing_configuration" >> "$preflight_report"
             exit 1
           fi
+          if ! [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]] || [ "$RELEASE_SHA" != "$(git rev-parse HEAD)" ]; then
+            echo "::error::RELEASE_SHA must exactly match the checked-out validation commit."
+            echo "status=failed_release_sha" >> "$preflight_report"
+            exit 1
+          fi
+          echo "status=passed" >> "$preflight_report"
 
       - name: Install locked dependencies
         run: npm ci
@@ -243,7 +256,7 @@ jobs:
           path: |
             playwright-report/
             test-results/
-          if-no-files-found: warn
+          if-no-files-found: ignore
           retention-days: 30
 
   # Branch protection requires this stable context. It succeeds only when both
