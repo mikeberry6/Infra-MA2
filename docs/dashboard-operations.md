@@ -8,6 +8,7 @@ Repository or `production` environment secrets:
 
 - `DATABASE_URL` — pooled production connection used by the application and recurring sync.
 - `PRODUCTION_MIGRATION_DATABASE_URL` — direct production connection used only by the protected schema-stage job.
+- `DASHBOARD_MIGRATION_DATABASE_URL` — isolated Neon branch used only by the focused dashboard PR validation workflow.
 - `FRED_API_KEY`, `EIA_API_KEY`, `SAM_API_KEY` — official provider credentials.
 - `SEC_USER_AGENT` — a compliant product/contact identity, for example `InfraSight dashboard operations@example.com`.
 - `VERCEL_TOKEN` — token limited to the InfraSight Vercel project.
@@ -15,7 +16,8 @@ Repository or `production` environment secrets:
 Repository or `production` environment variables:
 
 - `PRODUCTION_DATABASE_HOST`, `PRODUCTION_MIGRATION_DATABASE_HOST`, and `PRODUCTION_DATABASE_NAME`.
-- `MIGRATION_DATABASE_HOST` — the isolated validation host; production jobs explicitly forbid it.
+- `MIGRATION_DATABASE_HOST` and `DASHBOARD_MIGRATION_DATABASE_HOST` — isolated validation hosts; production jobs explicitly forbid both.
+- `DASHBOARD_MIGRATION_DATABASE_NAME` — database name on the focused validation branch.
 - `DASHBOARD_WRITES_ENABLED` — keep `false` until the initial all-source dry-run is reviewed.
 - `SEC_WATCHLIST_CIKS` — optional comma-separated `CIK:Name` watchlist.
 - `VERCEL_PROJECT_ID`, `VERCEL_SCOPE`, and `PRODUCTION_URL`. `PRODUCTION_URL` must equal `https://infra-ma-2.vercel.app`.

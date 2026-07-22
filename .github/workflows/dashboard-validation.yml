@@ -43,10 +43,11 @@ jobs:
     timeout-minutes: 35
     env:
       NEXT_TELEMETRY_DISABLED: "1"
-      DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
-      EXPECTED_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
-      EXPECTED_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
+      DATABASE_URL: ${{ secrets.DASHBOARD_MIGRATION_DATABASE_URL }}
+      EXPECTED_DATABASE_HOST: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.DASHBOARD_MIGRATION_DATABASE_NAME }}
       FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
 
     steps:
       - name: Checkout candidate
@@ -63,9 +64,9 @@ jobs:
       - name: Require the isolated Neon validation target
         shell: bash
         run: |
-          test -n "$DATABASE_URL" || { echo "::error::MIGRATION_DATABASE_URL is required."; exit 1; }
-          test -n "$EXPECTED_DATABASE_HOST" || { echo "::error::MIGRATION_DATABASE_HOST is required."; exit 1; }
-          test -n "$EXPECTED_DATABASE_NAME" || { echo "::error::MIGRATION_DATABASE_NAME is required."; exit 1; }
+          test -n "$DATABASE_URL" || { echo "::error::DASHBOARD_MIGRATION_DATABASE_URL is required."; exit 1; }
+          test -n "$EXPECTED_DATABASE_HOST" || { echo "::error::DASHBOARD_MIGRATION_DATABASE_HOST is required."; exit 1; }
+          test -n "$EXPECTED_DATABASE_NAME" || { echo "::error::DASHBOARD_MIGRATION_DATABASE_NAME is required."; exit 1; }
           test -n "$FORBIDDEN_DATABASE_HOST" || { echo "::error::PRODUCTION_DATABASE_HOST is required."; exit 1; }
           node --experimental-strip-types scripts/assert-database-target.ts
 
