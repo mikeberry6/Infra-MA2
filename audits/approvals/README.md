@@ -6,7 +6,8 @@ workflow artifacts or `tmp/`; they are not approvals.
 
 Before committing an approval file:
 
-1. A Research owner reviews every selected primary citation or company merge.
+1. A Research owner reviews every selected primary citation, company merge, or
+   ownership-to-fund link correction.
 2. The reviewer fills `reviewedBy` and `reviewedAt` and resolves every included
    decision without changing opaque IDs from the generated template.
 3. A second reviewer checks the diff and records the exact SHA-256 of the file.

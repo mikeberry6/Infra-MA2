@@ -14,6 +14,7 @@ describe("production remediation workflow safety", () => {
     expect(workflow).not.toContain('if [ "${{ inputs.confirmation }}"');
     expect(workflow).not.toMatch(/\bnpx tsx\b/);
     expect(workflow).toContain("./node_modules/.bin/tsx scripts/merge-duplicate-companies.ts");
+    expect(workflow).toContain("./node_modules/.bin/tsx scripts/apply-ownership-fund-link-remediation.ts");
   });
 
   it("fails closed on target selection and rechecks release provenance before apply", () => {
@@ -23,6 +24,14 @@ describe("production remediation workflow safety", () => {
     expect(workflow).toContain("release-provenance-before-apply.json");
     expect(workflow).toContain("company-merge-approval-template.json");
     expect(workflow).toContain("company-public-duplicate-review.md");
+    expect(workflow).toContain("ownership-fund-link-approval-template.json");
+  });
+
+  it("routes explicit reviewed ownership-to-fund-link remediation", () => {
+    expect(workflow).toContain("apply-ownership-fund-links");
+    expect(workflow).toContain("scripts/apply-ownership-fund-link-remediation.ts");
+    expect(workflow).toContain('--expected-sha256="$APPROVAL_SHA256"');
+    expect(workflow).toContain("scripts/report-ownership-fund-link-remediation.ts");
   });
 
   it("routes explicit reviewed dashboard cutover apply and rollback operations", () => {

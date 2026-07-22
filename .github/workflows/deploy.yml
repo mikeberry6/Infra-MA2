@@ -184,6 +184,7 @@ jobs:
         run: |
           set -o pipefail
           company_approval="audits/approvals/company-merges.json"
+          ownership_approval="audits/approvals/ownership-fund-links.json"
           citation_approval="audits/approvals/primary-citations.json"
 
           if [ -f "$company_approval" ]; then
@@ -202,6 +203,23 @@ jobs:
             ./node_modules/.bin/tsx scripts/report-company-merge-candidates.ts \
               --approval-output=tmp/ci/company-merge-approval-template.json \
               > tmp/ci/company-canonical-review.md
+          fi
+
+          if [ -f "$ownership_approval" ]; then
+            test ! -L "$ownership_approval"
+            git ls-files --error-unmatch -- "$ownership_approval" >/dev/null
+            ownership_sha="$(sha256sum "$ownership_approval" | awk '{print $1}')"
+            ownership_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$ownership_approval")"
+            MUTATION_REVIEWED_BY="$ownership_reviewer" \
+            MUTATION_REASON="Validate the committed ownership-fund-link approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/apply-ownership-fund-link-remediation.ts \
+              --apply \
+              --approval-file="$ownership_approval" \
+              --expected-sha256="$ownership_sha" \
+              2>&1 | tee tmp/ci/ownership-fund-link-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-ownership-fund-link-remediation.ts \
+              --output=tmp/ci/ownership-fund-link-approval-template.json
           fi
 
           if [ -f "$citation_approval" ]; then

@@ -24,6 +24,8 @@
 - Database verification artifact:
 - Source-coverage percentages and primary-source review:
 - Duplicate/merge action (normally none):
+- Ownership-to-fund-link action (normally none):
+- Reviewed remediation file paths / SHA-256 / reviewers:
 
 ## Pipelines and preview
 

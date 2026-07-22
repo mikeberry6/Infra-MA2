@@ -24,6 +24,7 @@ on:
           - report
           - apply-citations
           - apply-company-merges
+          - apply-ownership-fund-links
           - apply-dashboard-methodology-cutover
           - rollback-dashboard-methodology-cutover
           - apply-dashboard-signal-backfill
@@ -252,6 +253,12 @@ jobs:
               --approval-file="$APPROVAL_FILE" \
               --approval-sha256="$APPROVAL_SHA256" \
               2>&1 | tee tmp/remediation/company-merge-apply.log
+          elif [ "$OPERATION" = "apply-ownership-fund-links" ]; then
+            ./node_modules/.bin/tsx scripts/apply-ownership-fund-link-remediation.ts \
+              --apply \
+              --approval-file="$APPROVAL_FILE" \
+              --expected-sha256="$APPROVAL_SHA256" \
+              2>&1 | tee tmp/remediation/ownership-fund-link-apply.log
           elif [ "$OPERATION" = "apply-dashboard-methodology-cutover" ] || [ "$OPERATION" = "rollback-dashboard-methodology-cutover" ]; then
             mode=--apply
             if [ "$OPERATION" = "rollback-dashboard-methodology-cutover" ]; then mode=--rollback; fi
@@ -288,6 +295,9 @@ jobs:
           ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts \
             --output=tmp/remediation/primary-citation-approval-template.json \
             2>&1 | tee tmp/remediation/primary-citation-report.log
+          ./node_modules/.bin/tsx scripts/report-ownership-fund-link-remediation.ts \
+            --output=tmp/remediation/ownership-fund-link-approval-template.json \
+            2>&1 | tee tmp/remediation/ownership-fund-link-report.log
           ./node_modules/.bin/tsx scripts/source-coverage-report.ts \
             --output=tmp/remediation/source-coverage.json \
             2>&1 | tee tmp/remediation/source-coverage.log

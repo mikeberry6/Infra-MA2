@@ -217,10 +217,10 @@ async function main() {
         companyId: true,
         vehicleName: true,
         fundId: true,
-        fund: { select: { id: true, fundName: true } },
+        fund: { select: { id: true, fundName: true, status: true } },
       },
     }),
-    prisma.fund.findMany({ select: { id: true, fundName: true } }),
+    prisma.fund.findMany({ select: { id: true, fundName: true, status: true } }),
   ]);
 
   const incompleteDeals = publishedDealIntegrityRows.flatMap((deal) => {

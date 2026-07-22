@@ -9,6 +9,7 @@
 | Schedules, alerts, backups, releases, recovery exercises | Operations | Operations owner |
 | Production release | Engineering + Operations | Required `production` environment reviewer |
 | Canonical company merge | Research + Engineering | Research approves survivors; Engineering approves transaction/redirect plan |
+| Ownership-to-fund link correction | Research + Engineering | Research confirms vehicle identity; Engineering approves the hash-bound link/unlink plan |
 | Credential/access change | Operations + affected account owner | Two-person review for production secrets |
 
 Automation may propose records but may not publish deals or portfolio companies. Every publish, archive, import, merge, or administrator mutation must have an audit event. Historical weekly emails remain unchanged without explicit user authorization.

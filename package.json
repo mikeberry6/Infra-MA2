@@ -43,6 +43,8 @@
     "db:duplicates:verify": "npx tsx scripts/report-company-merge-candidates.ts --published-only --require-clean",
     "db:citations:report": "npx tsx scripts/report-primary-citation-remediation.ts",
     "db:citations:apply": "npx tsx scripts/apply-primary-citation-remediation.ts",
+    "db:ownership-funds:report": "npx tsx scripts/report-ownership-fund-link-remediation.ts",
+    "db:ownership-funds:apply": "npx tsx scripts/apply-ownership-fund-link-remediation.ts",
     "db:sync-weekly-deals": "npx tsx scripts/sync-weekly-briefing-deals.ts",
     "db:sync-weekly-deals:apply": "npx tsx scripts/sync-weekly-briefing-deals.ts --apply",
     "db:generate": "npx prisma generate",

@@ -43,6 +43,7 @@ describe("legacy maintenance mutation safety", () => {
 describe("reviewed remediation mutation safety", () => {
   for (const fileName of [
     "apply-primary-citation-remediation.ts",
+    "apply-ownership-fund-link-remediation.ts",
     "merge-duplicate-companies.ts",
   ]) {
     it(`${fileName} binds maintenance and approval context before constructing Prisma`, () => {
@@ -59,6 +60,8 @@ describe("reviewed remediation mutation safety", () => {
     it(`${fileName} persists the complete execution context in audit metadata`, () => {
       const metadataFile = fileName === "apply-primary-citation-remediation.ts"
         ? path.join(process.cwd(), "src/modules/operations/primary-citation-remediation.ts")
+        : fileName === "apply-ownership-fund-link-remediation.ts"
+          ? path.join(process.cwd(), "src/modules/operations/ownership-fund-link-remediation.ts")
         : path.join(process.cwd(), "scripts", fileName);
       const source = readFileSync(metadataFile, "utf8");
       expect(source).toContain("executedBy: context.reviewedBy");
@@ -71,6 +74,14 @@ describe("reviewed remediation mutation safety", () => {
   it.each([
     [
       "apply-primary-citation-remediation.ts",
+      [
+        "--apply",
+        "--approval-file=does-not-exist.json",
+        `--expected-sha256=${"a".repeat(64)}`,
+      ],
+    ],
+    [
+      "apply-ownership-fund-link-remediation.ts",
       [
         "--apply",
         "--approval-file=does-not-exist.json",

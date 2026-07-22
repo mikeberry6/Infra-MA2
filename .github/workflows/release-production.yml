@@ -173,6 +173,7 @@ jobs:
           set -o pipefail
           npm run db:verify 2>&1 | tee tmp/release/database-verification.log
           ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts --output=tmp/release/primary-citation-approval-template.json
+          ./node_modules/.bin/tsx scripts/report-ownership-fund-link-remediation.ts --output=tmp/release/ownership-fund-link-approval-template.json
           ./node_modules/.bin/tsx scripts/source-coverage-report.ts --require-complete --output=tmp/release/source-coverage.json
           ./node_modules/.bin/tsx scripts/report-company-merge-candidates.ts --published-only --require-clean > tmp/release/company-canonical-review.md
           npm run dashboard:verify -- --require-complete

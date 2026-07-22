@@ -151,4 +151,39 @@ describe("ownership to fund integrity", () => {
       { id: "fund-3", fundName: "Global Infrastructure Fund!" },
     ])).toEqual([]);
   });
+
+  it("flags a published ownership linked to a nonpublished Fund", () => {
+    expect(findOwnershipFundIssues([{
+      id: "ownership-draft",
+      companyId: "company-1",
+      vehicleName: "Brookfield Infrastructure Fund V",
+      fundId: "fund-draft",
+      fund: {
+        id: "fund-draft",
+        fundName: "Brookfield Infrastructure Fund V",
+        status: "DRAFT",
+      },
+    }], [{
+      id: "fund-draft",
+      fundName: "Brookfield Infrastructure Fund V",
+      status: "DRAFT",
+    }])).toEqual([expect.objectContaining({
+      code: "BROKEN_FUND_LINK",
+      message: expect.stringContaining("DRAFT Fund instead of a PUBLISHED Fund"),
+    })]);
+  });
+
+  it("does not require a link when only a nonpublished Fund matches", () => {
+    expect(findOwnershipFundIssues([{
+      id: "ownership-free-text",
+      companyId: "company-1",
+      vehicleName: "Brookfield Infrastructure Fund V",
+      fundId: null,
+      fund: null,
+    }], [{
+      id: "fund-draft",
+      fundName: "Brookfield Infrastructure Fund V",
+      status: "DRAFT",
+    }])).toEqual([]);
+  });
 });

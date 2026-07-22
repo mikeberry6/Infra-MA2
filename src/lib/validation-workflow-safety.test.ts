@@ -15,11 +15,15 @@ describe("isolated validation workflow remediation context", () => {
     expect(workflow).toContain(
       "citation_reviewer=\"$(jq -er '.reviewedBy | select(type == \"string\" and length > 0)' \"$citation_approval\")\"",
     );
+    expect(workflow).toContain(
+      "ownership_reviewer=\"$(jq -er '.reviewedBy | select(type == \"string\" and length > 0)' \"$ownership_approval\")\"",
+    );
     expect(workflow).toContain('MUTATION_REVIEWED_BY="$company_reviewer"');
+    expect(workflow).toContain('MUTATION_REVIEWED_BY="$ownership_reviewer"');
     expect(workflow).toContain('MUTATION_REVIEWED_BY="$citation_reviewer"');
   });
 
-  it("supplies a validation-only reason before both guarded apply commands", () => {
+  it("supplies a validation-only reason before every guarded apply command", () => {
     const companyReason = workflow.indexOf(
       'MUTATION_REASON="Validate the committed company-merge approval on the isolated database"',
     );
@@ -28,10 +32,29 @@ describe("isolated validation workflow remediation context", () => {
       'MUTATION_REASON="Validate the committed primary-citation approval on the isolated database"',
     );
     const citationApply = workflow.indexOf("scripts/apply-primary-citation-remediation.ts", citationReason);
+    const ownershipReason = workflow.indexOf(
+      'MUTATION_REASON="Validate the committed ownership-fund-link approval on the isolated database"',
+    );
+    const ownershipApply = workflow.indexOf(
+      "scripts/apply-ownership-fund-link-remediation.ts",
+      ownershipReason,
+    );
 
     expect(companyReason).toBeGreaterThan(-1);
     expect(companyApply).toBeGreaterThan(companyReason);
+    expect(ownershipReason).toBeGreaterThan(-1);
+    expect(ownershipApply).toBeGreaterThan(ownershipReason);
     expect(citationReason).toBeGreaterThan(-1);
     expect(citationApply).toBeGreaterThan(citationReason);
+  });
+
+  it("applies merge, ownership-link, and citation decisions in dependency order", () => {
+    const companyApply = workflow.indexOf("scripts/merge-duplicate-companies.ts");
+    const ownershipApply = workflow.indexOf("scripts/apply-ownership-fund-link-remediation.ts");
+    const citationApply = workflow.indexOf("scripts/apply-primary-citation-remediation.ts");
+
+    expect(companyApply).toBeGreaterThan(-1);
+    expect(ownershipApply).toBeGreaterThan(companyApply);
+    expect(citationApply).toBeGreaterThan(ownershipApply);
   });
 });

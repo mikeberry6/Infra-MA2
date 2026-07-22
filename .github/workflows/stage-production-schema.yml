@@ -220,6 +220,7 @@ jobs:
             --output=tmp/schema-stage/dashboard-signal-backfill-approval-template.json \
             2>&1 | tee tmp/schema-stage/dashboard-signal-backfill-report.log
           ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts --output=tmp/schema-stage/primary-citation-approval-template.json
+          ./node_modules/.bin/tsx scripts/report-ownership-fund-link-remediation.ts --output=tmp/schema-stage/ownership-fund-link-approval-template.json
           ./node_modules/.bin/tsx scripts/source-coverage-report.ts --output=tmp/schema-stage/source-coverage.json
           ./node_modules/.bin/tsx scripts/report-company-merge-candidates.ts \
             --published-only \

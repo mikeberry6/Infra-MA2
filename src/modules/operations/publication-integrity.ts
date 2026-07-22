@@ -85,6 +85,7 @@ export function missingCompanyPublicationFields(company: CompanyPublicationRecor
 export type FundLookupRecord = {
   id: string;
   fundName: string;
+  status?: string | null;
 };
 
 export type OwnershipFundRecord = {
@@ -116,6 +117,10 @@ export function findOwnershipFundIssues(
 ): OwnershipFundIssue[] {
   const fundsByNormalizedName = new Map<string, FundLookupRecord[]>();
   for (const fund of funds) {
+    // Callers that do not project status retain the historical all-funds
+    // behavior. Status-aware publication checks must never propose a link to
+    // a record that is not itself public.
+    if (fund.status != null && fund.status !== "PUBLISHED") continue;
     const normalized = normalizeFundLookup(fund.fundName);
     if (!normalized) continue;
     fundsByNormalizedName.set(normalized, [
@@ -134,6 +139,13 @@ export function findOwnershipFundIssues(
           companyId: ownership.companyId,
           code: "BROKEN_FUND_LINK",
           message: `fundId ${ownership.fundId} does not resolve to its selected Fund`,
+        });
+      } else if (ownership.fund.status != null && ownership.fund.status !== "PUBLISHED") {
+        issues.push({
+          ownershipId: ownership.id,
+          companyId: ownership.companyId,
+          code: "BROKEN_FUND_LINK",
+          message: `fundId ${ownership.fundId} resolves to a ${ownership.fund.status} Fund instead of a PUBLISHED Fund`,
         });
       } else if (
         normalizedVehicle
