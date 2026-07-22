@@ -40,6 +40,11 @@ describe("focused dashboard operations workflows", () => {
     }
     expect(release).toContain("dashboard:verify -- --require-complete");
     expect(release).toContain("verify-dashboard-health.ts");
+    for (const source of [release, rollback]) {
+      expect(source).toContain("vercel@51.7.0 link");
+      expect(source).toContain("--project \"$EXPECTED_VERCEL_PROJECT_ID\"");
+      expect(source).toContain("--transport=vercel-cli");
+    }
     expect(release).not.toContain("db:verify");
     expect(release).not.toContain("NEWS_SCAN");
   });
