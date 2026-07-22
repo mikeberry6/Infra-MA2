@@ -8,7 +8,7 @@ InfraSight releases are exact-SHA, schema-first, and promotion-based:
 2. After merge, the release SHA must be the current protected `main` head and the GitHub Actions `build` check from the `github-actions` app must have succeeded for that exact SHA.
 3. Vercel builds that `main` commit as a staged **production** deployment with production configuration but without assigning the production domains.
 4. A reviewed v2 manifest binds the current production application SHA, exact applied production migration baseline, release SHA, migration paths, and committed migration-blob hashes. The application and migration baselines are independently required to be ancestors of the release; neither is assumed to precede the other because schema-first staging can advance the migration ledger while the prior application remains active. Only additive DDL may be staged during that interval.
-5. Citation, ownership-link, and duplicate-company backlogs are handled separately through explicit Research decisions and audited remediation. A schema migration never invents citations, selects canonical survivors, repairs editorial links, or publishes records.
+5. Citation, ownership-link, seller-disclosure, and duplicate-company backlogs are handled separately through explicit Research decisions and audited remediation. A schema migration never invents citations or seller treatment, selects canonical survivors, repairs editorial links, or publishes records.
 6. Production promotion requires clean schema, data, source, pipeline, deployment-identity, and smoke gates. Promoting the staged production deployment does not rebuild it.
 7. The prior deployment and additive schema remain compatible for immediate application rollback.
 
@@ -30,9 +30,9 @@ Merging `main` may create a Vercel production build, but automatic production-do
 1. Open a pull request containing one coherent phase. Do not combine framework upgrades, schema changes, and major UI work.
 2. Review every migration as additive. `DROP`, data mutation, destructive type conversion, table replacement, and column alteration are outside the normal staging workflow.
 3. Wait for the complete pull-request **Release Gate**, including exact committed-blob migration auditing, isolated database migration, source/canonical-data reports, authenticated Playwright, axe, responsive, and visual checks.
-4. When source, canonical-company, or ownership-link coverage blocks validation, download the reviewer-neutral company-merge, ownership-link, and primary-citation approval templates. A failing gate is expected until Research supplies evidence-backed decisions; do not weaken the gate.
+4. When source, canonical-company, ownership-link, or seller-treatment coverage blocks validation, download the reviewer-neutral company-merge, ownership-link, deal seller-disclosure, and primary-citation approval templates. A failing gate is expected until Research supplies evidence-backed decisions; do not weaken the gate.
 5. Review the migration manifest, source-coverage report, duplicate-company and ownership-link reports, weekly-email verification, production dependency audit, and Playwright artifacts.
-6. Exercise anonymous browse/search/filter/sort/pagination/deep-link flows and authenticated admin/import-preview/export authorization flows on the Vercel Preview. Do not commit an import solely for smoke testing.
+6. Exercise anonymous browse/search/filter/sort/pagination/deep-link flows and authenticated admin/import-preview/export authorization flows on the Vercel Preview. For each administrative list, verify the fixed 25-row `?page=N` navigation, malformed/out-of-range normalization, and browser back/forward behavior. Do not commit an import solely for smoke testing.
 
 The Preview proves the pull request against non-production configuration. It is not the deployment later promoted to production.
 
@@ -66,19 +66,20 @@ The Preview proves the pull request against non-production configuration. It is 
 
 If `main` advances, stop. The old SHA is no longer eligible: rerun the `main` gate, regenerate/review the manifest, and use the new staged production deployment. If schema was already staged and the migration tree is unchanged, use the successfully staged commit as `migration_base_sha`; the staging workflow independently proves both that baseline and the still-live application are ancestors of the new release, verifies the ledger, and performs a no-op migration deploy.
 
-## Reviewed citation, ownership-link, and duplicate remediation
+## Reviewed citation, ownership-link, seller-disclosure, and duplicate remediation
 
-Publication gates intentionally remain closed while published records lack an explicit primary citation, a public duplicate cluster remains, or an ownership period has a broken, stale, or missing exact fund link.
+Publication gates intentionally remain closed while published records lack an explicit primary citation or reviewed seller treatment, a public duplicate cluster remains, or an ownership period has a broken, stale, or missing exact fund link.
 
 The isolated validation gate uses deliberate staged review when these backlogs coexist:
 
-1. A blocked validation run emits neutral company, ownership-link, and citation templates before the strict gates fail.
+1. A blocked validation run emits neutral company, ownership-link, seller-disclosure, and citation templates before the strict gates fail.
 2. Research reviews the all-status company template first, chooses each canonical survivor, confirms ownership/citation relationships, and requires a `CompanyRedirect` for every retired public ID. Commit the exact result as `audits/approvals/company-merges.json` through review.
-3. On the next validation run, CI computes that committed file's SHA-256 and applies it only to the isolated validation branch. The apply is snapshot-bound and idempotent. CI then generates post-merge ownership-link and citation templates when their committed approvals are absent.
+3. On the next validation run, CI computes that committed file's SHA-256 and applies it only to the isolated validation branch. The apply is snapshot-bound and idempotent. CI then generates post-merge ownership-link and citation templates, plus the independent current seller-disclosure template, when their committed approvals are absent.
 4. Discard any ownership-link or citation template generated before company merges that changed a candidate entity. Research verifies each link correction and primary citation explicitly. An ownership approval may only unlink a stale fund ID or link the vehicle to an exact normalized fund-name match; it cannot rewrite ownership metadata. Citation candidate ordering is not a recommendation and must never become an automatic first-citation rule.
-5. Commit reviewed decisions as `audits/approvals/ownership-fund-links.json` and `audits/approvals/primary-citations.json`. The next validation run applies company merges, ownership links, and citations in that order, then requires complete sources, valid ownership linkage, and a clean published duplicate scope.
+5. Review every seller-free deal independently. If its evidence identifies a seller, add the seller through the editorial interface and regenerate the report. Otherwise choose only `NOT_DISCLOSED` or `NOT_APPLICABLE`, provide an evidence-based reason of at least 10 characters, and commit the exact result as `audits/approvals/deal-seller-disclosures.json`. The generated file never chooses a status or reason.
+6. Commit reviewed decisions as `audits/approvals/ownership-fund-links.json`, `audits/approvals/deal-seller-disclosures.json`, and `audits/approvals/primary-citations.json`. The next validation run applies company merges, ownership links, seller treatments, and citations in that order, then requires complete sources, reviewed seller treatment, valid ownership linkage, and a clean published duplicate scope.
 
-If no company merges are approved, Research may proceed directly with the current ownership-link and citation templates. Never edit an approval artifact after review; a changed decision requires a regenerated template and new reviewed commit.
+If no company merges are approved, Research may proceed directly with the current ownership-link, seller-disclosure, and citation templates. Never edit an approval artifact after review; a changed decision requires a regenerated template and new reviewed commit.
 
 For production, run **Review or Remediate Release Data** one operation at a time against the exact protected-main release. Supply the committed path and exact reviewed hash, retain the evidence, and rerun read-only reports after each operation. Before any production apply, create or confirm a current Neon restore branch. The operation must prove both the approved host and database name and reject stale snapshots or a mismatched approval hash.
 
@@ -97,8 +98,8 @@ If adding an approval file advances `main`, that commit becomes a new release SH
    - the reviewed `migration_manifest_sha256`;
    - confirmation `STAGE`.
 
-5. Approve the protected `production` environment. The workflow reads the canonical origin from protected `PRODUCTION_URL`, requires its live deployment's protected scope, project, GitHub source SHA, and repository ID to match, independently requires both the reviewed migration baseline and production application to be ancestors of the release, and rechecks exact protected-main provenance plus the live app and migration ledger immediately before writing. It also requires `DASHBOARD_WRITES_ENABLED=false`, proves the production host and database name, applies only the release's additive migration history, verifies the resulting migration checksums exactly match the release, checks status/drift, and records citation, duplicate, ownership-link, and dashboard-cutover backlogs without auto-remediating them.
-6. Review and commit any dashboard methodology or legacy-signal manifest. The approval commit is a new release SHA: rerun the exact-SHA gate and preparation, use the staged schema commit as the migration baseline when the migration tree is unchanged, and run the no-op schema-stage verification for that SHA. Then dispatch its explicit apply operation through **Review or Remediate Release Data** while `DASHBOARD_WRITES_ENABLED` is still exactly `false`. Supply the exact file SHA-256, matching reviewer identity, and mutation reason. Use the corresponding rollback operation only with that same committed manifest, the flag still false, and every post-apply row still matching. Complete any approved citation/company/ownership-link remediation and rerun reports until all gates are clean.
+5. Approve the protected `production` environment. The workflow reads the canonical origin from protected `PRODUCTION_URL`, requires its live deployment's protected scope, project, GitHub source SHA, and repository ID to match, independently requires both the reviewed migration baseline and production application to be ancestors of the release, and rechecks exact protected-main provenance plus the live app and migration ledger immediately before writing. It also requires `DASHBOARD_WRITES_ENABLED=false`, proves the production host and database name, applies only the release's additive migration history, verifies the resulting migration checksums exactly match the release, checks status/drift, and records citation, duplicate, ownership-link, seller-disclosure, and dashboard-cutover backlogs without auto-remediating them.
+6. Review and commit any dashboard methodology or legacy-signal manifest. The approval commit is a new release SHA: rerun the exact-SHA gate and preparation, use the staged schema commit as the migration baseline when the migration tree is unchanged, and run the no-op schema-stage verification for that SHA. Then dispatch its explicit apply operation through **Review or Remediate Release Data** while `DASHBOARD_WRITES_ENABLED` is still exactly `false`. Supply the exact file SHA-256, matching reviewer identity, and mutation reason. Use the corresponding rollback operation only with that same committed manifest, the flag still false, and every post-apply row still matching. Complete any approved citation/company/ownership-link/seller-disclosure remediation and rerun reports until all gates are clean.
 7. Keep the write flag false and manually dispatch the `source-audit` pipeline. Review the all-source read-only dry-run artifact. Only after it passes may Operations set `DASHBOARD_WRITES_ENABLED=true`; immediately dispatch dashboard synchronization and news scanning from the exact release SHA, wait for both to succeed, and review provider/source threshold artifacts. If the dry run or live synchronization fails, restore the flag to false and stop.
 8. Run **Promote Production Release** with the exact release SHA, its immutable staged production deployment URL (never an alias), and confirmation `PROMOTE`; approve the protected environment. Promotion requires the dashboard write flag to be true after the reviewed dry run and successful live synchronization.
 
@@ -106,9 +107,10 @@ The promotion workflow requires all of the following before changing domains:
 
 - the release still equals the current protected `main` head and exact-SHA `build` succeeded from GitHub Actions;
 - the candidate is ready, has Vercel target `production`, belongs to `VERCEL_PROJECT_ID`, and has matching GitHub source SHA, commit metadata, and immutable repository ID;
-- candidate `/api/health` reports the release's exact 12-character SHA prefix;
+- candidate `/api/health` returns only the documented six-field top-level contract and reports the release's exact 12-character SHA prefix;
 - production host and database name match the allowlist, migration status is clean, and schema drift is zero;
-- database verification, explicit primary-source coverage, canonical-company, dashboard completeness, and rolling pipeline gates pass.
+- database verification, explicit primary-source coverage, canonical-company, dashboard completeness, and rolling pipeline gates pass;
+- both critical-pipeline reliability artifacts have a complete 30-day observation window and `exitCriterionMet=true`; a `collecting` artifact fails promotion through `--require-full-window` even when it is currently `operationallyHealthy`.
 
 The workflow rechecks protected-main and immutable candidate provenance immediately before `vercel promote`, promotes the verified deployment ID, and smoke-tests the protected canonical URL. If schema staging fails after an additive migration, the old application remains active; investigate and fix forward before promotion.
 
@@ -116,10 +118,11 @@ The workflow rechecks protected-main and immutable candidate provenance immediat
 
 Within 15 minutes:
 
-- Confirm `/api/health` is HTTP 200, reports the expected 12-character release prefix, database connectivity, and healthy critical pipelines.
+- Confirm `/api/health` is HTTP 200, contains exactly `status`, `version`, `generatedAt`, `database`, `pipelines`, and `generationTimeMs` at the top level, reports the expected 12-character release prefix and database connectivity, and classifies both critical pipelines as healthy.
 - Confirm `/tracker`, `/funds`, `/portfolio`, `/news`, `/dashboard`, `/search`, `/earnings`, and `/login` load under `/Infra-MA2`.
 - Confirm `/` resolves permanently to `/tracker` and anonymous export remains 403.
-- Sign in as an administrator, inspect the audit log, preview (but do not commit) a small import, and verify a permitted analyst/admin export.
+- Sign in as an administrator, inspect the audit log, traverse a multi-page 25-row administrative list with back/forward navigation, preview (but do not commit) a small import, and verify a permitted analyst/admin export.
+- Open uncached deal, fund, and company drawers and confirm the loading shell commits before delayed detail data; review the payload-free browser measurement against the 100 ms regression budget without treating one smoke result as p75 evidence.
 - Check Vercel route errors, database latency, provider latency, and Core Web Vitals for regressions.
 - Resume publication/imports and attach the 90-day release evidence to the release record.
 

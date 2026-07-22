@@ -70,10 +70,17 @@ describe("GET /api/health", () => {
       status: "healthy",
       version: "local",
       database: "connected",
-      schema: "ready",
       generatedAt: NOW.toISOString(),
       generationTimeMs: expect.any(Number),
     });
+    expect(Object.keys(payload).sort()).toEqual([
+      "database",
+      "generatedAt",
+      "generationTimeMs",
+      "pipelines",
+      "status",
+      "version",
+    ]);
     expect(payload.pipelines).toEqual([
       expect.objectContaining({ name: "NEWS_SCAN", status: "healthy" }),
       expect.objectContaining({ name: "DASHBOARD_SYNC", status: "healthy" }),
@@ -90,7 +97,6 @@ describe("GET /api/health", () => {
     expect(payload).toMatchObject({
       status: "unhealthy",
       database: "unavailable",
-      schema: "unknown",
       pipelines: [],
     });
     expect(JSON.stringify(payload)).not.toContain("password");
@@ -108,7 +114,6 @@ describe("GET /api/health", () => {
     await expect(response.json()).resolves.toMatchObject({
       status: "unhealthy",
       database: "connected",
-      schema: "not-ready",
       pipelines: [],
     });
     expect(mocks.pipelineFindFirst).not.toHaveBeenCalled();
@@ -124,7 +129,6 @@ describe("GET /api/health", () => {
     expect(response.status).toBe(503);
     await expect(response.json()).resolves.toMatchObject({
       database: "connected",
-      schema: "not-ready",
     });
   });
 
@@ -149,7 +153,6 @@ describe("GET /api/health", () => {
     expect(payload).toMatchObject({
       status: "degraded",
       database: "connected",
-      schema: "ready",
     });
     expect(payload.pipelines).toEqual([
       expect.objectContaining({ name: "NEWS_SCAN", status: "stale" }),

@@ -74,6 +74,7 @@ export async function getDashboardView() {
         observationsUpserted: true,
         signalsFetched: true,
         signalsUpserted: true,
+        metadata: true,
       },
     }),
     getLatestDashboardAttempt(),
@@ -140,13 +141,7 @@ export async function getDashboardView() {
         signalsFetched: row.signalsFetched,
         signalsUpserted: row.signalsUpserted,
         error: publicSourceRunNote(status),
-        metadata: source ? {
-          sourceKind: source.kind,
-          url: source.url,
-          cadence: source.cadence,
-          expectedLagHours: source.expectedLagHours,
-          owner: source.owner,
-        } : undefined,
+        metadata: source ? publicSourceRunMetadata(source, row.metadata) : undefined,
       };
     }),
     generatedAt: now.toISOString(),
@@ -231,4 +226,46 @@ function publicSourceRunNote(status: DashboardRunStatus): string | null {
   if (status === "PARTIAL") return "Latest refresh completed with incomplete or stale source coverage.";
   if (status === "SKIPPED") return "Latest refresh did not run; the last validated value remains cached.";
   return "Latest refresh failed; the last validated value remains cached.";
+}
+
+function publicSourceRunMetadata(
+  source: (typeof ACTIVE_DASHBOARD_METRICS)[number]["source"],
+  value: unknown,
+): Record<string, unknown> {
+  const metadata = value && typeof value === "object" && !Array.isArray(value)
+    ? value as Record<string, unknown>
+    : {};
+  const knownMetricIds = new Set(
+    ACTIVE_DASHBOARD_METRICS
+      .filter((metric) => metric.source.id === source.id)
+      .map((metric) => metric.id),
+  );
+  const metricIds = (field: "missingRequiredMetrics" | "staleRequiredMetrics") => {
+    const value = metadata[field];
+    return Array.isArray(value)
+      ? Array.from(new Set(value.filter(
+          (metricId): metricId is string => typeof metricId === "string" && knownMetricIds.has(metricId),
+        )))
+      : [];
+  };
+  const count = (field: "requiredMetrics" | "currentRequiredMetrics") => {
+    const value = metadata[field];
+    return typeof value === "number" && Number.isInteger(value) && value >= 0
+      ? value
+      : undefined;
+  };
+  const requiredMetrics = count("requiredMetrics");
+  const currentRequiredMetrics = count("currentRequiredMetrics");
+
+  return {
+    sourceKind: source.kind,
+    url: source.url,
+    cadence: source.cadence,
+    expectedLagHours: source.expectedLagHours,
+    owner: source.owner,
+    ...(requiredMetrics === undefined ? {} : { requiredMetrics }),
+    ...(currentRequiredMetrics === undefined ? {} : { currentRequiredMetrics }),
+    missingRequiredMetrics: metricIds("missingRequiredMetrics"),
+    staleRequiredMetrics: metricIds("staleRequiredMetrics"),
+  };
 }

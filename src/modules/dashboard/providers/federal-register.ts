@@ -28,12 +28,12 @@ type MatchedDocument = {
 
 export const FEDERAL_REGISTER_TERMS = [
   "infrastructure",
-  "energy",
-  "transmission",
-  "pipeline",
-  "broadband",
-  "water",
-  "transportation",
+  "energy infrastructure",
+  "electric transmission",
+  "natural gas pipeline",
+  "broadband infrastructure",
+  "water infrastructure",
+  "transportation infrastructure",
 ] as const;
 
 const PAGE_SIZE = 100;

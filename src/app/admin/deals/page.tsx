@@ -12,12 +12,23 @@ import { archiveDeal, deleteDeal, publishDeal, submitDealForReview, verifyDeal }
 import { getRecordStatusColor } from "@/lib/colors";
 import { Button } from "@/components/shared/Button";
 import { formatDate } from "@/lib/format";
+import { AdminPagination } from "@/components/admin/AdminPagination";
+import { adminPagination } from "@/lib/admin-pagination";
 
 export const metadata = { title: "Admin · Deals" };
 
-export default async function AdminDealsPage() {
+export default async function AdminDealsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const { page: rawPage } = await searchParams;
+  const total = await prisma.deal.count();
+  const { page, totalPages, skip, take } = adminPagination(rawPage, total);
   const deals = await prisma.deal.findMany({
     orderBy: { date: "desc" },
+    skip,
+    take,
     select: {
       id: true,
       legacyId: true,
@@ -44,7 +55,7 @@ export default async function AdminDealsPage() {
             Deals
           </h1>
           <p className="text-xs text-[var(--text-secondary)] mt-0.5">
-            <span className="mono tabular-nums">{deals.length.toLocaleString()}</span> total
+            <span className="mono tabular-nums">{total.toLocaleString()}</span> total
           </p>
         </div>
         <Link href="/admin/deals/new">
@@ -105,6 +116,7 @@ export default async function AdminDealsPage() {
           <div className="py-12 text-center text-sm text-[var(--text-tertiary)]">No deals yet.</div>
         )}
       </div>
+      <AdminPagination pathname="/admin/deals" page={page} totalPages={totalPages} totalItems={total} />
     </div>
   );
 }

@@ -93,6 +93,7 @@ jobs:
           done
           node --experimental-strip-types scripts/assert-database-target.ts
       - name: Install locked dependencies
+        id: install
         if: steps.dashboard_clock.outputs.should_run == 'true'
         run: npm ci
       - name: Require approved dashboard writes and provider configuration
@@ -129,7 +130,7 @@ jobs:
           SEC_WATCHLIST_CIKS: ${{ vars.SEC_WATCHLIST_CIKS }}
         run: node scripts/run-with-retry.mjs --attempts=3 -- npm run dashboard:sync
       - name: Enforce provider and rolling reliability thresholds
-        if: ${{ always() && steps.dashboard_clock.outputs.should_run == 'true' }}
+        if: ${{ always() && steps.dashboard_clock.outputs.should_run == 'true' && steps.install.outcome == 'success' }}
         shell: bash
         run: |
           args=(
@@ -179,22 +180,29 @@ jobs:
           done
           node --experimental-strip-types scripts/assert-database-target.ts
       - name: Install locked dependencies
+        id: install
         run: npm ci
       - name: Scan public sources with bounded transient retries
+        id: news_scan
         run: >-
           node scripts/run-with-retry.mjs --attempts=3 --
           npm run news:scan -- --since-days=2 --max-pages=750
       - name: Enforce scan and rolling reliability thresholds
-        run: >-
-          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts
-          --pipeline=NEWS_SCAN
-          --max-age-hours=36
-          --expected-runs-per-week=7
-          --min-success-rate=0.95
-          --summary=tmp/news-scan-summary.json
-          --summary-kind=news
-          --max-source-failure-rate=0.25
-          --output=tmp/news-reliability.json
+        if: always() && steps.install.outcome == 'success'
+        shell: bash
+        run: |
+          args=(
+            --pipeline=NEWS_SCAN
+            --max-age-hours=36
+            --expected-runs-per-week=7
+            --min-success-rate=0.95
+            --max-source-failure-rate=0.25
+            --output=tmp/news-reliability.json
+          )
+          if [ -f tmp/news-scan-summary.json ]; then
+            args+=(--summary=tmp/news-scan-summary.json --summary-kind=news)
+          fi
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts "${args[@]}"
       - name: Upload run evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -230,25 +238,49 @@ jobs:
           done
           node --experimental-strip-types scripts/assert-database-target.ts
       - name: Install locked dependencies
+        id: install
         run: npm ci
       - name: Verify latest weekly email and source links
+        if: steps.install.outcome == 'success'
         shell: bash
         run: |
           mkdir -p tmp/weekly-verification
           set -o pipefail
           node scripts/run-with-retry.mjs --attempts=3 -- npm run validate-weekly-email -- --check-links 2>&1 | tee tmp/weekly-verification/email.log
       - name: Verify database integrity and source coverage
+        if: always() && steps.install.outcome == 'success'
         shell: bash
         run: |
+          mkdir -p tmp/weekly-verification
           set -o pipefail
+          overall=0
+          set +e
           npm run db:verify 2>&1 | tee tmp/weekly-verification/database.log
+          if [ "${PIPESTATUS[0]}" -ne 0 ]; then overall=1; fi
           npx tsx scripts/source-coverage-report.ts --require-complete --output=tmp/weekly-verification/source-coverage.json
+          if [ "$?" -ne 0 ]; then overall=1; fi
           npx tsx scripts/report-company-merge-candidates.ts --published-only --require-clean > tmp/weekly-verification/company-canonical-review.md
+          if [ "$?" -ne 0 ]; then overall=1; fi
+          set -e
+          exit "$overall"
       - name: Verify dashboard and news freshness contracts
+        if: always() && steps.install.outcome == 'success'
+        shell: bash
         run: |
+          mkdir -p tmp/weekly-verification
+          overall=0
+          set +e
           npm run dashboard:verify -- --require-complete
+          if [ "$?" -ne 0 ]; then overall=1; fi
+          if [ -f tmp/dashboard-verify-summary.json ]; then
+            cp tmp/dashboard-verify-summary.json tmp/weekly-verification/dashboard-source-verification.json
+          fi
           ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --max-age-hours=80 --expected-runs-per-week=5 --min-success-rate=0.95 --output=tmp/weekly-verification/dashboard-reliability.json
+          if [ "$?" -ne 0 ]; then overall=1; fi
           ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --output=tmp/weekly-verification/news-reliability.json
+          if [ "$?" -ne 0 ]; then overall=1; fi
+          set -e
+          exit "$overall"
       - name: Upload weekly verification evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -331,20 +363,35 @@ jobs:
           fi
           exit "$dry_run_status"
       - name: Audit production dependencies
-        if: steps.cadence.outputs.run == 'true'
-        run: node scripts/run-with-retry.mjs --attempts=3 -- npm run audit:prod
+        if: always() && steps.cadence.outputs.run == 'true' && steps.target_guard.outcome == 'success' && steps.install.outcome == 'success'
+        shell: bash
+        run: |
+          mkdir -p tmp/monthly-audit
+          set -o pipefail
+          node scripts/run-with-retry.mjs --attempts=3 -- npm run audit:prod 2>&1 | tee tmp/monthly-audit/dependency-audit.log
       - name: Audit database and source coverage
         if: always() && steps.cadence.outputs.run == 'true' && steps.target_guard.outcome == 'success' && steps.install.outcome == 'success'
         shell: bash
         run: |
           mkdir -p tmp/monthly-audit
           set -o pipefail
+          overall=0
+          set +e
           npm run db:verify 2>&1 | tee tmp/monthly-audit/database.log
+          if [ "${PIPESTATUS[0]}" -ne 0 ]; then overall=1; fi
           npx tsx scripts/source-coverage-report.ts --require-complete --output=tmp/monthly-audit/source-coverage.json
+          if [ "$?" -ne 0 ]; then overall=1; fi
           npm run dashboard:verify -- --require-complete
-          cp tmp/dashboard-verify-summary.json tmp/monthly-audit/dashboard-source-audit.json
+          if [ "$?" -ne 0 ]; then overall=1; fi
+          if [ -f tmp/dashboard-verify-summary.json ]; then
+            cp tmp/dashboard-verify-summary.json tmp/monthly-audit/dashboard-source-audit.json
+          fi
           npm run validate-portfolios 2>&1 | tee tmp/monthly-audit/portfolio-validation.log
+          if [ "${PIPESTATUS[0]}" -ne 0 ]; then overall=1; fi
           ./node_modules/.bin/tsx scripts/audit-portfolio-duplicates.ts 2>&1 | tee tmp/monthly-audit/seed-duplicate-report.log
+          if [ "${PIPESTATUS[0]}" -ne 0 ]; then overall=1; fi
+          set -e
+          exit "$overall"
       - name: Upload monthly audit evidence
         if: always() && steps.cadence.outputs.run == 'true'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1

@@ -251,7 +251,7 @@ export const DASHBOARD_METRICS: DashboardMetric[] = [
   metric("usaspending_infra_obligations_30d", "USAspending Infrastructure Obligations", "policy-regulatory", "P3 / Grants / Procurement", "$bn", "currency", usa, "Infrastructure-keyword prime-award obligations across all award types over the trailing 30-day window.", 3),
   metric("sam_opportunities", "SAM.gov Opportunities", "policy-regulatory", "P3 / Grants / Procurement", "count", "count", sam, "De-duplicated active pre-award infrastructure-title procurement opportunities posted in the trailing seven days.", 3),
   metric("fast41_projects", "FAST-41 Projects", "policy-regulatory", "P3 / Grants / Procurement", "count", "count", manual, "Federal Permitting Dashboard / FAST-41 project placeholder.", 14),
-  metric("federal_register_infra_notices", "Federal Register Notices", "policy-regulatory", "P3 / Grants / Procurement", "count", "count", fedReg, "Federal Register infrastructure notices, proposed rules, and rules over the trailing seven days.", 3),
+  metric("federal_register_infra_notices", "Federal Register Keyword Matches", "policy-regulatory", "P3 / Grants / Procurement", "count", "count", fedReg, "Deduplicated, unreviewed Federal Register notice and rule keyword matches over the trailing seven days; individual relevance requires analyst approval.", 3),
 
   metric("sec_ma_watchlist", "SEC M&A Watchlist", "deal-friction", "Filings", "count", "count", sec, "Transaction-related SEC 8-K, merger agreement, tender, and proxy filings from the configured watchlist.", 3),
   metric("ftc_doj_antitrust", "FTC / DOJ Antitrust Posture", "deal-friction", "Regulatory", "text", "text", manual, "Antitrust and HSR posture placeholder.", 14),

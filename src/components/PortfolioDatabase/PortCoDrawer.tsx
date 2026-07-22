@@ -21,6 +21,7 @@ import { Button } from "@/components/shared/Button";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
+import { useDrawerShellTiming } from "@/hooks/useDrawerShellTiming";
 import { track } from "@vercel/analytics";
 
 type MilestoneClassification =
@@ -691,6 +692,7 @@ export function PortCoDrawer({
   const drawerRef = useRef<HTMLDivElement>(null);
   const headerScrolled = useScrolledPast(drawerRef);
   useDialogFocus(drawerRef);
+  useDrawerShellTiming("company", company.id);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

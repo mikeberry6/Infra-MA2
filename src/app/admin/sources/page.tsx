@@ -3,13 +3,23 @@ export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
+import { AdminPagination } from "@/components/admin/AdminPagination";
+import { adminPagination } from "@/lib/admin-pagination";
 
 export const metadata = { title: "Admin · Sources" };
 
-export default async function AdminSourcesPage() {
+export default async function AdminSourcesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const { page: rawPage } = await searchParams;
+  const total = await prisma.source.count();
+  const { page, totalPages, skip, take } = adminPagination(rawPage, total);
   const sources = await prisma.source.findMany({
     orderBy: { createdAt: "desc" },
-    take: 50,
+    skip,
+    take,
     include: {
       _count: { select: { citations: true } },
     },
@@ -28,7 +38,7 @@ export default async function AdminSourcesPage() {
           Sources
         </h1>
         <p className="text-xs text-[var(--text-secondary)] mt-0.5">
-          50 most recent
+          <span className="mono tabular-nums">{total.toLocaleString()}</span> total
         </p>
       </div>
 
@@ -67,6 +77,7 @@ export default async function AdminSourcesPage() {
           <div className="py-12 text-center text-sm text-[var(--text-tertiary)]">No sources yet.</div>
         )}
       </div>
+      <AdminPagination pathname="/admin/sources" page={page} totalPages={totalPages} totalItems={total} />
     </div>
   );
 }

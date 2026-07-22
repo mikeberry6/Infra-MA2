@@ -2,6 +2,7 @@ import { unstable_cache } from "next/cache";
 import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
 import { prisma } from "@/lib/prisma";
 import { nextNewsScanAt } from "@/modules/operations/pipeline-schedules";
+import { parseNewsSourceCoverage } from "@/modules/news/source-coverage";
 import type {
   NewsCategory,
   NewsConfidence,
@@ -91,15 +92,14 @@ async function getNewsFeedRaw(): Promise<NewsFeedView> {
   const lastSuccessfulAt = latestSuccess?.endedAt ?? latestSuccess?.startedAt;
   const nextExpected = nextNewsScanAt(now);
   const overdue = !lastSuccessfulAt || now.getTime() - lastSuccessfulAt.getTime() > 36 * 60 * 60 * 1000;
-  const latestMetadata = latestSuccess?.metadata && typeof latestSuccess.metadata === "object"
+  const attemptMetadata = latestAttempt?.metadata && typeof latestAttempt.metadata === "object"
+    ? latestAttempt.metadata as Record<string, unknown>
+    : null;
+  const successMetadata = latestSuccess?.metadata && typeof latestSuccess.metadata === "object"
     ? latestSuccess.metadata as Record<string, unknown>
     : null;
-  const tracked = latestMetadata?.tracked && typeof latestMetadata.tracked === "object"
-    ? Object.values(latestMetadata.tracked as Record<string, unknown>).reduce<number>(
-        (sum, value) => sum + (typeof value === "number" ? value : 0),
-        0,
-      )
-    : undefined;
+  const sourceCoverage = parseNewsSourceCoverage(attemptMetadata?.sourceCoverage)
+    ?? parseNewsSourceCoverage(successMetadata?.sourceCoverage);
   const state = !latestAttempt
     ? "never-run"
     : latestAttempt.status === "FAILED"
@@ -118,7 +118,7 @@ async function getNewsFeedRaw(): Promise<NewsFeedView> {
       lastAttemptAt: latestAttempt?.startedAt.toISOString(),
       lastSuccessfulAt: lastSuccessfulAt?.toISOString(),
       nextExpectedAt: nextExpected.toISOString(),
-      trackedEntities: tracked,
+      sourceCoverage,
       message: state === "healthy"
         ? "The daily public-source scan completed successfully."
         : state === "failed"

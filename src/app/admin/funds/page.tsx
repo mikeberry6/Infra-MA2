@@ -11,12 +11,23 @@ import ImportExportBar from "@/components/admin/ImportExportBar";
 import { archiveFund, deleteFund, publishFund, submitFundForReview, verifyFund } from "@/modules/admin/actions";
 import { Button } from "@/components/shared/Button";
 import { getRecordStatusColor } from "@/lib/colors";
+import { AdminPagination } from "@/components/admin/AdminPagination";
+import { adminPagination } from "@/lib/admin-pagination";
 
 export const metadata = { title: "Admin · Funds" };
 
-export default async function AdminFundsPage() {
+export default async function AdminFundsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const { page: rawPage } = await searchParams;
+  const total = await prisma.fund.count();
+  const { page, totalPages, skip, take } = adminPagination(rawPage, total);
   const funds = await prisma.fund.findMany({
     orderBy: { fundName: "asc" },
+    skip,
+    take,
     include: {
       manager: { select: { name: true } },
     },
@@ -36,7 +47,7 @@ export default async function AdminFundsPage() {
             Funds
           </h1>
           <p className="text-xs text-[var(--text-secondary)] mt-0.5">
-            <span className="mono tabular-nums">{funds.length.toLocaleString()}</span> total
+            <span className="mono tabular-nums">{total.toLocaleString()}</span> total
           </p>
         </div>
         <Link href="/admin/funds/new">
@@ -93,6 +104,7 @@ export default async function AdminFundsPage() {
           <div className="py-12 text-center text-sm text-[var(--text-tertiary)]">No funds yet.</div>
         )}
       </div>
+      <AdminPagination pathname="/admin/funds" page={page} totalPages={totalPages} totalItems={total} />
     </div>
   );
 }

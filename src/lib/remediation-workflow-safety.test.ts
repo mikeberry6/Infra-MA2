@@ -15,6 +15,7 @@ describe("production remediation workflow safety", () => {
     expect(workflow).not.toMatch(/\bnpx tsx\b/);
     expect(workflow).toContain("./node_modules/.bin/tsx scripts/merge-duplicate-companies.ts");
     expect(workflow).toContain("./node_modules/.bin/tsx scripts/apply-ownership-fund-link-remediation.ts");
+    expect(workflow).toContain("./node_modules/.bin/tsx scripts/apply-deal-seller-disclosure-remediation.ts");
   });
 
   it("fails closed on target selection and rechecks release provenance before apply", () => {
@@ -25,6 +26,7 @@ describe("production remediation workflow safety", () => {
     expect(workflow).toContain("company-merge-approval-template.json");
     expect(workflow).toContain("company-public-duplicate-review.md");
     expect(workflow).toContain("ownership-fund-link-approval-template.json");
+    expect(workflow).toContain("deal-seller-disclosure-approval-template.json");
   });
 
   it("routes explicit reviewed ownership-to-fund-link remediation", () => {
@@ -32,6 +34,13 @@ describe("production remediation workflow safety", () => {
     expect(workflow).toContain("scripts/apply-ownership-fund-link-remediation.ts");
     expect(workflow).toContain('--expected-sha256="$APPROVAL_SHA256"');
     expect(workflow).toContain("scripts/report-ownership-fund-link-remediation.ts");
+  });
+
+  it("routes explicit reviewed deal seller-disclosure remediation", () => {
+    expect(workflow).toContain("apply-deal-seller-disclosures");
+    expect(workflow).toContain("scripts/apply-deal-seller-disclosure-remediation.ts");
+    expect(workflow).toContain('--expected-sha256="$APPROVAL_SHA256"');
+    expect(workflow).toContain("scripts/report-deal-seller-disclosure-remediation.ts");
   });
 
   it("routes explicit reviewed dashboard cutover apply and rollback operations", () => {

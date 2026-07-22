@@ -290,6 +290,25 @@ describe("TypeScript script runtime contract", () => {
     expect(nativeResult.status, nativeResult.stderr).toBe(0);
     expect(nativeResult.stdout).toContain("Database target guard passed");
 
+    for (const omitted of ["EXPECTED_DATABASE_NAME", "FORBIDDEN_DATABASE_HOST"] as const) {
+      const guardedEnvironment: NodeJS.ProcessEnv = {
+        ...process.env,
+        DATABASE_URL: "postgresql://runtime-test:unused@validation.invalid:5432/infrasight_validation",
+        EXPECTED_DATABASE_HOST: "validation.invalid",
+        EXPECTED_DATABASE_NAME: "infrasight_validation",
+        FORBIDDEN_DATABASE_HOST: "production.invalid",
+        FORBIDDEN_DATABASE_HOST_2: "",
+      };
+      delete guardedEnvironment[omitted];
+      const rejected = spawnSync(
+        process.execPath,
+        ["--experimental-strip-types", "scripts/assert-database-target.ts"],
+        { cwd: repository, encoding: "utf8", env: guardedEnvironment },
+      );
+      expect(rejected.status).toBe(1);
+      expect(rejected.stderr).toContain("Database target guard failed");
+    }
+
     const head = spawnSync("git", ["rev-parse", "HEAD"], {
       cwd: repository,
       encoding: "utf8",

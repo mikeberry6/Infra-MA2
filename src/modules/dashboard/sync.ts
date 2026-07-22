@@ -8,7 +8,7 @@ import type {
   DashboardSignal,
   DashboardSource,
 } from "@/modules/dashboard/types";
-import { logServerFailure } from "@/lib/server-log";
+import { logServerFailure, withServerTask } from "@/lib/server-log";
 import { formatSafeErrorSummary } from "@/lib/safe-error";
 import {
   inspectRequiredDashboardMetrics,
@@ -112,7 +112,11 @@ export async function syncDashboard(
     }
 
     try {
-      const result = validateDashboardProviderResult(provider.source, await provider.fetch());
+      const providerResult = await withServerTask({
+        task: "dashboard_provider",
+        operation: `fetch_${provider.source.id}`,
+      }, () => provider.fetch());
+      const result = validateDashboardProviderResult(provider.source, providerResult);
       const observations = result.observations;
       const signals = result.signals ?? [];
       const warnings = (result.warnings ?? []).map((warning) => formatSafeErrorSummary(warning));

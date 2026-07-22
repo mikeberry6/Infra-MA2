@@ -23,13 +23,17 @@ const observation: DashboardObservation = {
   },
 };
 
-function signal(index: number, reviewStatus: DashboardSignal["reviewStatus"]): DashboardSignal {
+function signal(
+  index: number,
+  reviewStatus: DashboardSignal["reviewStatus"],
+  direction: DashboardSignal["direction"] = "needs_review",
+): DashboardSignal {
   const item: DashboardSignal = {
     signalKey: `notice-${index}`,
     section: "policy-regulatory",
     title: `Notice ${index}`,
     summary: "Fixture",
-    direction: "needs_review",
+    direction,
     severity: 1,
     observedAt: "2026-07-22T00:00:00.000Z",
     sourceId: "federal-register",
@@ -76,9 +80,9 @@ describe("dashboard signal publication gate", () => {
     expect(signalContentHash(current)).not.toBe(signalContentHash({ ...current, summary: "Changed interpretation" }));
   });
 
-  it("excludes pending signals from both public sections and risk scoring", () => {
-    const pending = Array.from({ length: 10 }, (_, index) => signal(index, "PENDING"));
-    const approved = Array.from({ length: 10 }, (_, index) => signal(index, "APPROVED"));
+  it("excludes pending restrictive signals from both public sections and risk scoring", () => {
+    const pending = Array.from({ length: 10 }, (_, index) => signal(index, "PENDING", "restrictive"));
+    const approved = Array.from({ length: 10 }, (_, index) => signal(index, "APPROVED", "restrictive"));
     const base = {
       observations: [observation],
       sourceHealth: [],
@@ -93,11 +97,26 @@ describe("dashboard signal publication gate", () => {
 
     expect(pendingSection?.signals).toHaveLength(0);
     expect(approvedSection?.signals).toHaveLength(10);
-    expect(approvedView.scorecard.score).toBe(pendingView.scorecard.score - 3);
+    expect(approvedView.scorecard.score).toBe(pendingView.scorecard.score - 4);
+  });
+
+  it("does not score raw notice volume or approved needs-review matches as restrictive", () => {
+    const needsReview = Array.from({ length: 10 }, (_, index) => signal(index, "APPROVED"));
+    const base = {
+      observations: [observation],
+      sourceHealth: [],
+      generatedAt: "2026-07-22T12:00:00.000Z",
+      hasDatabaseData: true,
+    };
+
+    const noSignalsView = buildDashboardView({ ...base, signals: [] });
+    const needsReviewView = buildDashboardView({ ...base, signals: needsReview });
+    expect(needsReviewView.scorecard.score).toBe(noSignalsView.scorecard.score);
+    expect(needsReviewView.scorecard.negativeContributors).toHaveLength(0);
   });
 
   it("excludes approved sample signals from both sections and scoring", () => {
-    const approved = Array.from({ length: 10 }, (_, index) => signal(index, "APPROVED"));
+    const approved = Array.from({ length: 10 }, (_, index) => signal(index, "APPROVED", "restrictive"));
     const samples = approved.map((item) => ({ ...item, metadata: { sample: true } }));
     const base = {
       observations: [observation],
@@ -109,6 +128,31 @@ describe("dashboard signal publication gate", () => {
     const safeView = buildDashboardView({ ...base, signals: approved });
     const sampleView = buildDashboardView({ ...base, signals: samples });
     expect(sampleView.sections.find((section) => section.section === "policy-regulatory")?.signals).toHaveLength(0);
-    expect(sampleView.scorecard.score).toBe(safeView.scorecard.score + 3);
+    expect(sampleView.scorecard.score).toBe(safeView.scorecard.score + 4);
+  });
+
+  it("does not treat unreviewed keyword-screen award counts as supportive demand", () => {
+    const view = buildDashboardView({
+      observations: [{
+        metricId: "usaspending_infra_awards_30d",
+        sourceId: "usaspending",
+        observedAt: "2026-07-22T00:00:00.000Z",
+        periodEnd: "2026-07-22T00:00:00.000Z",
+        value: 2_724,
+        unit: "count",
+        status: "LIVE",
+        metadata: {
+          methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.usaSpendingAwards30d,
+          countEndpoint: true,
+        },
+      }],
+      signals: [],
+      sourceHealth: [],
+      generatedAt: "2026-07-22T12:00:00.000Z",
+      hasDatabaseData: true,
+    });
+
+    expect(view.scorecard.score).toBe(50);
+    expect(view.scorecard.positiveContributors).toHaveLength(0);
   });
 });

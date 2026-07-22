@@ -18,6 +18,7 @@ import {
   type NewsMatchCandidate,
 } from "../src/lib/news-utils";
 import type { NewsConfidence, NewsMentionType, NewsMentionView } from "../src/modules/shared/types";
+import { newsSourceCoverageFromSummary } from "../src/modules/news/source-coverage";
 import { completePipelineRun, failPipelineRun, startPipelineRun } from "../src/modules/operations/pipeline-runs";
 
 setDefaultResultOrder("ipv4first");
@@ -350,7 +351,10 @@ async function main() {
   };
 
   try {
-    const context = await buildTrackedContext(prisma, options);
+    const context = await withServerTask({
+      task: "news_scan",
+      operation: "load_tracked_context",
+    }, () => buildTrackedContext(prisma, options));
     summary.tracked = {
       companies: context.counts.companies,
       fundManagers: context.counts.fundManagers,
@@ -361,13 +365,19 @@ async function main() {
     const extractedCandidates: ExtractedCandidate[] = [];
 
     if (options.sourceCrawl) {
-      const crawl = await crawlTrackedSources(context.entities, context.candidates, context.candidateByKey, options);
+      const crawl = await withServerTask({
+        task: "news_provider",
+        operation: "crawl_tracked_sources",
+      }, () => crawlTrackedSources(context.entities, context.candidates, context.candidateByKey, options));
       summary.crawl = { ...summary.crawl, ...crawl.crawlSummary };
       extractedCandidates.push(...crawl.candidates);
     }
 
     if (options.newsSearch) {
-      const search = await searchTrackedNews(context.entities, context.candidates, options);
+      const search = await withServerTask({
+        task: "news_provider",
+        operation: "search_tracked_news",
+      }, () => searchTrackedNews(context.entities, context.candidates, options));
       summary.search = { ...summary.search, ...search.searchSummary };
       extractedCandidates.push(...search.candidates);
     }
@@ -391,6 +401,7 @@ async function main() {
       mentions: summary.results.mentions,
     };
     if (pipelineRunId) {
+      const sourceCoverage = newsSourceCoverageFromSummary(summary);
       await completePipelineRun(prisma, pipelineRunId, {
         inserted: summary.results.created,
         updated: summary.results.updated,
@@ -399,10 +410,22 @@ async function main() {
         tracked: summary.tracked,
         failedFetches: summary.crawl.failedFetches,
         failedQueries: summary.search.failedQueries,
+        sourceCoverage,
       });
     }
   } catch (error) {
-    if (pipelineRunId) await failPipelineRun(prisma, pipelineRunId, error);
+    if (pipelineRunId) {
+      await failPipelineRun(prisma, pipelineRunId, error, {
+        inserted: summary.results.created,
+        updated: summary.results.updated,
+        skipped: summary.results.existingSourceUrlMatches + summary.results.outsideDateWindow,
+      }, {
+        tracked: summary.tracked,
+        failedFetches: summary.crawl.failedFetches,
+        failedQueries: summary.search.failedQueries,
+        sourceCoverage: newsSourceCoverageFromSummary(summary),
+      });
+    }
     throw error;
   } finally {
     await writeSummary(summary);

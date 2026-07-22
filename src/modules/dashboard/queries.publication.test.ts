@@ -44,7 +44,13 @@ describe("public dashboard Prisma query boundary", () => {
       signalsFetched: 0,
       signalsUpserted: 0,
       error: "postgres://user:password@private.example/database",
-      metadata: { warnings: ["api_key=secret"] },
+      metadata: {
+        warnings: ["api_key=secret"],
+        requiredMetrics: 3,
+        currentRequiredMetrics: 1,
+        missingRequiredMetrics: ["us_treasury_2y", "private-secret-field"],
+        staleRequiredMetrics: ["us_treasury_10y"],
+      },
     }]);
     const success = pipelineRun(
       "SUCCEEDED",
@@ -82,8 +88,9 @@ describe("public dashboard Prisma query boundary", () => {
     expect(view.allSeries.find((series) => series.metric.id === "us_treasury_10y")?.observations).toHaveLength(1);
     expect(view.sections.find((section) => section.section === "policy-regulatory")?.signals.map((item) => item.signalKey)).toEqual(["safe"]);
     expect(mocks.sourceRuns).toHaveBeenCalledWith(expect.objectContaining({
-      select: expect.not.objectContaining({ error: true, metadata: true }),
+      select: expect.objectContaining({ metadata: true }),
     }));
+    expect(mocks.sourceRuns.mock.calls[0][0].select).not.toHaveProperty("error");
     const treasuryHealth = view.sourceHealth.find((source) => source.sourceId === "treasury");
     expect(treasuryHealth).toMatchObject({
       sourceName: "U.S. Treasury",
@@ -91,6 +98,13 @@ describe("public dashboard Prisma query boundary", () => {
     });
     expect(treasuryHealth?.error).not.toContain("password");
     expect(treasuryHealth?.metadata).not.toHaveProperty("warnings");
+    expect(treasuryHealth?.metadata).toMatchObject({
+      requiredMetrics: 3,
+      currentRequiredMetrics: 1,
+      missingRequiredMetrics: ["us_treasury_2y"],
+      staleRequiredMetrics: ["us_treasury_10y"],
+    });
+    expect(treasuryHealth?.metadata?.missingRequiredMetrics).not.toContain("private-secret-field");
     expect(view.operations).toMatchObject({
       state: "healthy",
       lastSuccessfulAt: "2026-07-22T11:35:00.000Z",

@@ -181,8 +181,10 @@ import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
 import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
+import { useDrawerShellTiming } from "@/hooks/useDrawerShellTiming";
 import { useCanExport } from "@/hooks/useCanExport";
 import { withBasePath } from "@/lib/base-path";
+import { markDrawerOpen } from "@/lib/drawer-performance";
 
 // ─── Filters ────────────────────────────────────────────────
 const SECTORS: string[] = [...DEAL_SECTORS];
@@ -674,6 +676,7 @@ function DealDrawer({
   const drawerRef = useRef<HTMLDivElement>(null);
   const headerScrolled = useScrolledPast(drawerRef);
   useDialogFocus(drawerRef);
+  useDrawerShellTiming("deal", deal.legacyId);
 
   // Escape key to close
   useEffect(() => {
@@ -1062,6 +1065,7 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
   }, [focusId, deals, writeQuery]);
 
   const openDeal = useCallback((deal: DealListItem) => {
+    markDrawerOpen("deal");
     setSelectedDeal(deal);
     openedFocus.current = deal.legacyId;
     writeQuery("focus", deal.legacyId, "push");

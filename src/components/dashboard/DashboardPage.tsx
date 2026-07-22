@@ -196,7 +196,7 @@ function DashboardHeader({ view }: { view: DashboardView }) {
       return runs;
     }, new Map<string, DashboardView["sourceHealth"][number]>()),
   ).map(([, run]) => run);
-  const successfulRuns = latestBySource.filter((run) => run.status === "SUCCESS" || run.status === "PARTIAL");
+  const successfulRuns = latestBySource.filter((run) => run.status === "SUCCESS");
   const availableSeries = view.allSeries.filter((series) => !series.unavailable).length;
 
   return (
@@ -571,6 +571,7 @@ function SignalsTable({
 }
 
 function SourceHealthTable({ view }: { view: DashboardView }) {
+  const metricLabels = new Map(view.allSeries.map((series) => [series.metric.id, series.metric.label]));
   return (
     <article className="surface overflow-hidden">
       <div className="flex items-center justify-between gap-3 border-b border-[var(--border)] px-4 py-3">
@@ -620,7 +621,7 @@ function SourceHealthTable({ view }: { view: DashboardView }) {
                   {source.endedAt?.slice(0, 10) ?? source.startedAt.slice(0, 10)}
                 </td>
                 <td className="max-w-md px-3 py-2 align-top type-micro">
-                  {source.error || "OK"}
+                  {sourceMetricCoverageNote(source, metricLabels) || source.error || "OK"}
                 </td>
               </tr>
             ))}
@@ -629,6 +630,26 @@ function SourceHealthTable({ view }: { view: DashboardView }) {
       </div>
     </article>
   );
+}
+
+function sourceMetricCoverageNote(
+  source: DashboardView["sourceHealth"][number],
+  metricLabels: Map<string, string>,
+): string | null {
+  const metricIds = (field: "missingRequiredMetrics" | "staleRequiredMetrics") => {
+    const value = source.metadata?.[field];
+    return Array.isArray(value)
+      ? value.filter((metricId): metricId is string => typeof metricId === "string")
+      : [];
+  };
+  const label = (metricId: string) => metricLabels.get(metricId) ?? metricId;
+  const missing = metricIds("missingRequiredMetrics");
+  const stale = metricIds("staleRequiredMetrics");
+  const notes = [
+    missing.length > 0 ? `Missing required: ${missing.map(label).join(", ")}.` : null,
+    stale.length > 0 ? `Stale required: ${stale.map(label).join(", ")}.` : null,
+  ].filter((note): note is string => Boolean(note));
+  return notes.length > 0 ? notes.join(" ") : null;
 }
 
 function MetricSourceLabel({ series }: { series: DashboardSeries }) {

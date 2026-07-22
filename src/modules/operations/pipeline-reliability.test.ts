@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
+  assessPipelineReliability,
   collapsePipelineAttemptsByRefreshWindow,
   easternRefreshWindow,
   findConsecutiveCriticalSourceIssues,
+  reliabilityObservationWindow,
   resolveEasternRefreshWindow,
 } from "@/modules/operations/pipeline-reliability";
 
@@ -52,6 +54,77 @@ describe("pipeline refresh-window reliability", () => {
       }),
     ];
     expect(findConsecutiveCriticalSourceIssues(rows)).toEqual(["U.S. Treasury"]);
+  });
+
+  it("keeps a pipeline in collecting status until 30 actual days have elapsed", () => {
+    const now = new Date("2026-07-22T12:00:00.000Z");
+    const observation = reliabilityObservationWindow({
+      now,
+      firstRunAt: new Date(now.getTime() - (30 * 86_400_000 - 3_600_000)),
+      windowDays: 30,
+      requiredDays: 30,
+    });
+    const assessment = assessPipelineReliability({
+      observationComplete: observation.complete,
+      failures: [],
+    });
+
+    expect(observation.observedDays).toBeCloseTo(29 + 23 / 24);
+    expect(observation.complete).toBe(false);
+    expect(assessment).toEqual({
+      status: "collecting",
+      operationallyHealthy: true,
+      healthy: false,
+      exitCriterionMet: false,
+    });
+  });
+
+  it("meets the reliability exit criterion after a full observation window", () => {
+    const now = new Date("2026-07-22T12:00:00.000Z");
+    const observation = reliabilityObservationWindow({
+      now,
+      firstRunAt: new Date(now.getTime() - 30 * 86_400_000),
+      windowDays: 30,
+      requiredDays: 30,
+    });
+
+    expect(observation.observedDays).toBe(30);
+    expect(observation.complete).toBe(true);
+    expect(assessPipelineReliability({
+      observationComplete: observation.complete,
+      failures: [],
+    })).toEqual({
+      status: "healthy",
+      operationallyHealthy: true,
+      healthy: true,
+      exitCriterionMet: true,
+    });
+  });
+
+  it("reports operational failures as unhealthy regardless of observation age", () => {
+    expect(assessPipelineReliability({
+      observationComplete: false,
+      failures: ["latest success is missing"],
+    })).toEqual({
+      status: "unhealthy",
+      operationallyHealthy: false,
+      healthy: false,
+      exitCriterionMet: false,
+    });
+  });
+
+  it("reports zero observed days before the first pipeline run", () => {
+    expect(reliabilityObservationWindow({
+      now: new Date("2026-07-22T12:00:00.000Z"),
+      firstRunAt: null,
+      windowDays: 30,
+      requiredDays: 30,
+    })).toEqual({
+      effectiveStartAt: null,
+      observedDays: 0,
+      requiredDays: 30,
+      complete: false,
+    });
   });
 });
 

@@ -253,8 +253,14 @@ export interface FeedOperationsView {
   lastAttemptAt?: string;
   lastSuccessfulAt?: string;
   nextExpectedAt?: string;
-  trackedEntities?: number;
+  sourceCoverage?: NewsSourceCoverage;
   message: string;
+}
+
+export interface NewsSourceCoverage {
+  attempted: number;
+  succeeded: number;
+  failed: number;
 }
 
 export interface RecordMeta {

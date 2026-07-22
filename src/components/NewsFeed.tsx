@@ -264,10 +264,12 @@ function OperationalStatus({ operations }: { operations: FeedOperationsView }) {
           <dt className="inline">Next expected </dt>
           <dd className="inline mono tabular-nums text-[var(--text-secondary)]">{operations.nextExpectedAt ? formatScheduledDateTime(operations.nextExpectedAt, "UTC") : "Pending schedule"}</dd>
         </div>
-        {operations.trackedEntities != null && (
+        {operations.sourceCoverage && (
           <div>
-            <dt className="inline">Coverage </dt>
-            <dd className="inline mono tabular-nums text-[var(--text-secondary)]">{operations.trackedEntities.toLocaleString()} entities</dd>
+            <dt className="inline">Source coverage </dt>
+            <dd className="inline mono tabular-nums text-[var(--text-secondary)]">
+              {operations.sourceCoverage.succeeded.toLocaleString()}/{operations.sourceCoverage.attempted.toLocaleString()} attempts
+            </dd>
           </div>
         )}
       </dl>

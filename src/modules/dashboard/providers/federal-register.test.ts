@@ -37,7 +37,7 @@ describe("Federal Register provider fixtures", () => {
 
     const result = await federalRegisterProvider(
       new Date("2026-07-22T11:30:00.000Z"),
-      ["infrastructure", "energy"],
+      ["infrastructure", "energy infrastructure"],
     ).fetch();
 
     expect(result.observations[0]).toMatchObject({
@@ -53,7 +53,7 @@ describe("Federal Register provider fixtures", () => {
     expect(result.signals?.[0]).toMatchObject({
       signalKey: "federal-register-2026-0100",
       reviewStatus: "PENDING",
-      metadata: { matchedTerms: ["energy", "infrastructure"] },
+      metadata: { matchedTerms: ["energy infrastructure", "infrastructure"] },
     });
     expect(fetchMock).toHaveBeenCalledTimes(3);
     expect(fetchMock.mock.calls.map(([input]) => new URL(String(input)).searchParams.get("page"))).toEqual(["1", "2", "1"]);

@@ -15,7 +15,11 @@ export default async function NewsPage() {
   try {
     const requestId = await currentServerRequestId();
     return await withServerTask({ route: "/news", operation: "render_news", requestId }, async () => {
-      const feed = await getNewsFeed();
+      const feed = await withServerTask({
+        route: "/news",
+        operation: "load_news_data",
+        requestId,
+      }, getNewsFeed);
       return <NewsFeed feed={feed} />;
     });
   } catch {

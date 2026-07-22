@@ -15,7 +15,11 @@ export default async function DashboardRoute() {
   try {
     const requestId = await currentServerRequestId();
     return await withServerTask({ route: "/dashboard", operation: "render_dashboard", requestId }, async () => {
-      const view = await getDashboardView();
+      const view = await withServerTask({
+        route: "/dashboard",
+        operation: "load_dashboard_data",
+        requestId,
+      }, getDashboardView);
       return <DashboardPage view={view} />;
     });
   } catch {

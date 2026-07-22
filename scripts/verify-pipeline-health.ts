@@ -6,8 +6,10 @@ import { PrismaClient } from "../src/generated/prisma/client";
 import { SafeOperationalError } from "../src/lib/safe-error";
 import { withServerTask } from "../src/lib/server-log";
 import {
+  assessPipelineReliability,
   collapsePipelineAttemptsByRefreshWindow,
   findConsecutiveCriticalSourceIssues,
+  reliabilityObservationWindow,
 } from "../src/modules/operations/pipeline-reliability";
 import { nextDashboardSyncAt } from "../src/modules/operations/pipeline-schedules";
 
@@ -23,6 +25,10 @@ function numericOption(name: string, fallback: number): number {
   const value = raw === undefined ? fallback : Number(raw);
   if (!Number.isFinite(value) || value < 0) throw new Error(`${name} must be a non-negative number.`);
   return value;
+}
+
+function hasFlag(name: string): boolean {
+  return process.argv.slice(2).includes(`--${name}`);
 }
 
 type SummaryCheck = {
@@ -104,12 +110,17 @@ async function main() {
   }
   const maxAgeHours = numericOption("max-age-hours", 36);
   const windowDays = numericOption("window-days", 30);
+  const minimumObservationDays = numericOption("minimum-observation-days", windowDays);
+  const requireFullWindow = hasFlag("require-full-window");
   const expectedRunsPerWeek = numericOption("expected-runs-per-week", 0);
   const minSuccessRate = numericOption("min-success-rate", 0.95);
   const maxRunningHours = numericOption("max-running-hours", 3);
   const maxSourceFailureRate = numericOption("max-source-failure-rate", 1);
   if (minSuccessRate > 1 || maxSourceFailureRate > 1) {
     throw new Error("Rate options must be between 0 and 1.");
+  }
+  if (minimumObservationDays > windowDays) {
+    throw new Error("minimum-observation-days cannot exceed window-days.");
   }
 
   const now = new Date();
@@ -159,10 +170,13 @@ async function main() {
       ? nextDashboardSyncAt(latestSuccessfulAt)
       : null;
 
-    const effectiveStart = firstRun && firstRun.startedAt > windowStart ? firstRun.startedAt : windowStart;
-    const observedDays = firstRun
-      ? Math.min(windowDays, Math.max(1, (now.getTime() - effectiveStart.getTime()) / DAY_MS + 1))
-      : 0;
+    const observationWindow = reliabilityObservationWindow({
+      now,
+      firstRunAt: firstRun?.startedAt ?? null,
+      windowDays,
+      requiredDays: minimumObservationDays,
+    });
+    const observedDays = observationWindow.observedDays;
     const expectedCompleted = expectedRunsPerWeek > 0
       ? observedDays * expectedRunsPerWeek / 7
       : 0;
@@ -205,6 +219,11 @@ async function main() {
     }
     if (summaryCheck?.capped) failures.push("news crawl reached its maximum-page safety cap");
 
+    const reliability = assessPipelineReliability({
+      observationComplete: observationWindow.complete,
+      failures,
+    });
+
     const report = {
       generatedAt: now.toISOString(),
       pipeline,
@@ -214,6 +233,14 @@ async function main() {
       nextExpectedAt: nextExpectedAt?.toISOString() ?? null,
       expectedRunsPerWeek,
       minSuccessRate,
+      requireFullWindow,
+      observationWindow: {
+        firstRunAt: firstRun?.startedAt.toISOString() ?? null,
+        effectiveStartAt: observationWindow.effectiveStartAt?.toISOString() ?? null,
+        observedDays: observationWindow.observedDays,
+        requiredDays: observationWindow.requiredDays,
+        complete: observationWindow.complete,
+      },
       counts: {
         succeeded,
         failed,
@@ -228,7 +255,10 @@ async function main() {
       ageHours,
       summary: summaryCheck,
       consecutiveSourceIssues,
-      healthy: failures.length === 0,
+      status: reliability.status,
+      operationallyHealthy: reliability.operationallyHealthy,
+      healthy: reliability.healthy,
+      exitCriterionMet: reliability.exitCriterionMet,
       failures,
     };
 
@@ -238,6 +268,9 @@ async function main() {
 
     console.log("Pipeline health verification completed; review the configured output artifact.");
     if (failures.length) throw new Error(failures.join("; "));
+    if (requireFullWindow && !observationWindow.complete) {
+      throw new Error(`pipeline reliability is still collecting ${observationWindow.observedDays.toFixed(2)} of ${observationWindow.requiredDays} required observation days`);
+    }
   } finally {
     await prisma.$disconnect();
   }

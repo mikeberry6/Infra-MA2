@@ -137,6 +137,31 @@ describe("dashboard pipeline idempotency and failure recovery", () => {
     }));
   });
 
+  it("emits payload-free provider latency telemetry", async () => {
+    const info = vi.spyOn(console, "info").mockImplementation(() => undefined);
+    await syncDashboard(prismaDouble(), {
+      dryRun: true,
+      providers: [provider(vi.fn().mockResolvedValue({
+        observations: completeTreasuryObservations(),
+        signals: [],
+      }))],
+    });
+
+    const entry = info.mock.calls
+      .map(([value]) => JSON.parse(String(value)) as Record<string, unknown>)
+      .find((value) => value.task === "dashboard_provider");
+    expect(entry).toEqual({
+      taskId: expect.stringMatching(/^[0-9a-f-]{36}$/i),
+      task: "dashboard_provider",
+      operation: "fetch_treasury",
+      durationMs: expect.any(Number),
+      status: 200,
+    });
+    expect(entry).not.toHaveProperty("url");
+    expect(entry).not.toHaveProperty("result");
+    info.mockRestore();
+  });
+
   it("preserves an approval for identical replays and resets changed content to pending", async () => {
     const prisma = prismaDouble();
     let storedSignal: Record<string, any> | null = null;

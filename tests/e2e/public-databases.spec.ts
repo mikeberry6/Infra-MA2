@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 import { appPath, expectNoHorizontalOverflow, waitForApplication } from "./helpers";
+import { DRAWER_SHELL_BUDGET_MS, drawerShellMeasure } from "../../src/lib/drawer-performance";
 
 test.describe("anonymous database journeys", () => {
   test("root permanently resolves to the canonical deal database", async ({ page }) => {
@@ -65,6 +66,10 @@ test.describe("anonymous database journeys", () => {
   });
 
   test("drawers are deep-linkable and restore focus", async ({ page }) => {
+    await page.route("**/api/deals/*", async (route) => {
+      await new Promise((resolve) => setTimeout(resolve, 250));
+      await route.continue();
+    });
     await page.goto(appPath("/tracker"));
     await waitForApplication(page, "Infrastructure Deal Tape");
 
@@ -73,6 +78,13 @@ test.describe("anonymous database journeys", () => {
     await row.press("Enter");
     const dialog = page.getByRole("dialog");
     await expect(dialog).toBeVisible();
+    await expect(dialog.getByRole("status")).toContainText("Loading the latest verified detail");
+    const shellDuration = await page.evaluate((measureName) => {
+      const entries = performance.getEntriesByName(measureName, "measure");
+      return entries.at(-1)?.duration ?? null;
+    }, drawerShellMeasure("deal"));
+    expect(shellDuration).not.toBeNull();
+    expect(shellDuration ?? Number.POSITIVE_INFINITY).toBeLessThan(DRAWER_SHELL_BUDGET_MS);
     await expect(page).toHaveURL(/focus=/);
     await expect(page.locator("body")).toHaveCSS("overflow", "hidden");
 

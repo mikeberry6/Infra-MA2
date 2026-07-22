@@ -37,7 +37,9 @@ import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
 import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
+import { useDrawerShellTiming } from "@/hooks/useDrawerShellTiming";
 import { withBasePath } from "@/lib/base-path";
+import { markDrawerOpen } from "@/lib/drawer-performance";
 import { track } from "@vercel/analytics";
 import { formatDate } from "@/lib/format";
 import { subscribeToDetailCacheInvalidation } from "@/lib/detail-cache-events";
@@ -635,6 +637,7 @@ function FundDrawer({
   const drawerRef = useRef<HTMLDivElement>(null);
   const headerScrolled = useScrolledPast(drawerRef);
   useDialogFocus(drawerRef);
+  useDrawerShellTiming("fund", fund.legacyId);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -1085,6 +1088,7 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
   }, [focusId, funds, writeQuery]);
 
   const openFund = useCallback((fund: FundListItem) => {
+    markDrawerOpen("fund");
     setSelectedFund(fund);
     openedFocus.current = fund.legacyId;
     writeQuery("focus", fund.legacyId, "push");

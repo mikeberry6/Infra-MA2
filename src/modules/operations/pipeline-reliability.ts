@@ -2,6 +2,7 @@ import { SafeOperationalError } from "@/lib/safe-error";
 
 const EASTERN_TIME_ZONE = "America/New_York";
 const REFRESH_WINDOW_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
+const DAY_MS = 86_400_000;
 
 export interface PipelineAttemptRow {
   status: string;
@@ -24,6 +25,22 @@ export interface CriticalSourceRunRow {
   status: string;
   startedAt: Date;
   metadata: unknown;
+}
+
+export interface ReliabilityObservationWindow {
+  effectiveStartAt: Date | null;
+  observedDays: number;
+  requiredDays: number;
+  complete: boolean;
+}
+
+export type ReliabilityStatus = "collecting" | "healthy" | "unhealthy";
+
+export interface ReliabilityAssessment {
+  status: ReliabilityStatus;
+  operationallyHealthy: boolean;
+  healthy: boolean;
+  exitCriterionMet: boolean;
 }
 
 export function easternRefreshWindow(date = new Date()): string {
@@ -134,6 +151,69 @@ export function findConsecutiveCriticalSourceIssues(rows: CriticalSourceRunRow[]
     .sort();
 }
 
+export function reliabilityObservationWindow({
+  now,
+  firstRunAt,
+  windowDays,
+  requiredDays = windowDays,
+}: {
+  now: Date;
+  firstRunAt: Date | null;
+  windowDays: number;
+  requiredDays?: number;
+}): ReliabilityObservationWindow {
+  assertValidDate(now, "Observation end");
+  if (firstRunAt) assertValidDate(firstRunAt, "First pipeline run");
+  if (!Number.isFinite(windowDays) || windowDays < 0) {
+    throw new Error("Observation window must be a non-negative number of days.");
+  }
+  if (!Number.isFinite(requiredDays) || requiredDays < 0 || requiredDays > windowDays) {
+    throw new Error("Required observation days must be between 0 and the window size.");
+  }
+
+  if (!firstRunAt) {
+    return {
+      effectiveStartAt: null,
+      observedDays: 0,
+      requiredDays,
+      complete: false,
+    };
+  }
+
+  const windowStart = new Date(now.getTime() - windowDays * DAY_MS);
+  const effectiveStartAt = firstRunAt > windowStart ? firstRunAt : windowStart;
+  const observedDays = Math.min(
+    windowDays,
+    Math.max(0, (now.getTime() - effectiveStartAt.getTime()) / DAY_MS),
+  );
+
+  return {
+    effectiveStartAt,
+    observedDays,
+    requiredDays,
+    complete: observedDays >= requiredDays,
+  };
+}
+
+export function assessPipelineReliability({
+  observationComplete,
+  failures,
+}: {
+  observationComplete: boolean;
+  failures: string[];
+}): ReliabilityAssessment {
+  const operationallyHealthy = failures.length === 0;
+  const healthy = operationallyHealthy && observationComplete;
+  return {
+    status: operationallyHealthy
+      ? observationComplete ? "healthy" : "collecting"
+      : "unhealthy",
+    operationallyHealthy,
+    healthy,
+    exitCriterionMet: healthy,
+  };
+}
+
 function sourceRunHasCriticalIssue(row: CriticalSourceRunRow): boolean {
   if (row.status === "FAILED" || row.status === "SKIPPED") return true;
   if (row.status !== "PARTIAL") return false;
@@ -147,4 +227,8 @@ function recordMetadata(value: unknown): Record<string, unknown> {
   return value && typeof value === "object" && !Array.isArray(value)
     ? value as Record<string, unknown>
     : {};
+}
+
+function assertValidDate(value: Date, label: string): void {
+  if (Number.isNaN(value.getTime())) throw new Error(`${label} date is invalid.`);
 }

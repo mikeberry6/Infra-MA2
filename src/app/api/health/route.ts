@@ -117,7 +117,6 @@ export async function GET(request: Request) {
         status: "unhealthy",
         ...base,
         database: "unavailable",
-        schema: "unknown",
         pipelines: [],
         generationTimeMs: elapsedMs(),
       }, { status: 503 });
@@ -129,7 +128,6 @@ export async function GET(request: Request) {
           status: "unhealthy",
           ...base,
           database: "connected",
-          schema: "not-ready",
           pipelines: [],
           generationTimeMs: elapsedMs(),
         }, { status: 503 });
@@ -167,7 +165,6 @@ export async function GET(request: Request) {
         status: degraded ? "degraded" : "healthy",
         ...base,
         database: "connected",
-        schema: "ready",
         pipelines,
         generationTimeMs: elapsedMs(),
       }, { status: degraded ? 503 : 200 });
@@ -177,7 +174,6 @@ export async function GET(request: Request) {
         status: "unhealthy",
         ...base,
         database: schemaMismatch ? "connected" : "unavailable",
-        schema: schemaMismatch ? "not-ready" : "unknown",
         pipelines: [],
         generationTimeMs: elapsedMs(),
       }, { status: 503 });

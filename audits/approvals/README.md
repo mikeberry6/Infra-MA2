@@ -6,8 +6,8 @@ workflow artifacts or `tmp/`; they are not approvals.
 
 Before committing an approval file:
 
-1. A Research owner reviews every selected primary citation, company merge, or
-   ownership-to-fund link correction.
+1. A Research owner reviews every selected primary citation, company merge,
+   ownership-to-fund link correction, or deal seller-disclosure treatment.
 2. The reviewer fills `reviewedBy` and `reviewedAt` and resolves every included
    decision without changing opaque IDs from the generated template.
 3. A second reviewer checks the diff and records the exact SHA-256 of the file.
@@ -16,3 +16,11 @@ Before committing an approval file:
 Never place credentials, imported row payloads, private query data, or tokens
 in an approval file. An approval is immutable after it has been applied; a
 correction requires a newly generated and reviewed file.
+
+The canonical seller-treatment file is
+`audits/approvals/deal-seller-disclosures.json`. Its generated template is only
+an evidence packet: `decisionStatus` and `decisionReason` remain `null` until
+Research reviews each deal. A reviewer may choose only `NOT_DISCLOSED` or
+`NOT_APPLICABLE`, with an evidence-based reason of at least 10 characters. If
+the evidence names a seller, add that seller through the editorial workflow
+and regenerate the template instead of encoding the seller as absent.

@@ -1,5 +1,6 @@
 /**
- * Fail closed unless DATABASE_URL resolves to the explicitly approved host.
+ * Fail closed unless DATABASE_URL resolves to the explicitly approved host
+ * and database and does not resolve to a forbidden opposite-environment host.
  * Workflows use this before any migration, verification, or pipeline write.
  * Only non-sensitive host/database identifiers are printed.
  */
@@ -21,6 +22,8 @@ function fail(message: string): never {
 
 if (!connectionString) fail("DATABASE_URL is required.");
 if (!expectedHost) fail("EXPECTED_DATABASE_HOST is required.");
+if (!expectedDatabase) fail("EXPECTED_DATABASE_NAME is required.");
+if (forbiddenHosts.length === 0) fail("at least one FORBIDDEN_DATABASE_HOST is required.");
 
 let parsed: URL;
 try {
@@ -42,7 +45,7 @@ if (actualHost !== expectedHost) {
 if (forbiddenHosts.includes(actualHost)) {
   fail("the approved target matches a forbidden database host.");
 }
-if (expectedDatabase && actualDatabase !== expectedDatabase) {
+if (actualDatabase !== expectedDatabase) {
   fail(`database ${actualDatabase || "unknown"} does not match EXPECTED_DATABASE_NAME.`);
 }
 

@@ -4,18 +4,23 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/format";
+import { AdminPagination } from "@/components/admin/AdminPagination";
+import { adminPagination } from "@/lib/admin-pagination";
 
 export const metadata = { title: "Admin · Audit log" };
 
 export default async function AdminAuditPage({
   searchParams,
 }: {
-  searchParams: Promise<{ focus?: string }>;
+  searchParams: Promise<{ focus?: string; page?: string }>;
 }) {
-  const { focus } = await searchParams;
+  const { focus, page: rawPage } = await searchParams;
+  const total = await prisma.auditEvent.count();
+  const { page, totalPages, skip, take } = adminPagination(rawPage, total);
   const events = await prisma.auditEvent.findMany({
     orderBy: { createdAt: "desc" },
-    take: 200,
+    skip,
+    take,
     include: { actor: { select: { email: true, name: true } } },
   });
 
@@ -26,7 +31,7 @@ export default async function AdminAuditPage({
           <ArrowLeft className="h-3 w-3" /> Admin
         </Link>
         <h1 className="type-page-title">Audit log</h1>
-        <p className="mt-1 type-meta">Authenticated mutations, imports, publication, and archival events. Showing the latest 200.</p>
+        <p className="mt-1 type-meta">Authenticated mutations, imports, publication, and archival events. <span className="mono tabular-nums">{total.toLocaleString()}</span> total.</p>
       </div>
 
       <div className="surface overflow-x-auto">
@@ -64,6 +69,7 @@ export default async function AdminAuditPage({
         </table>
         {events.length === 0 && <div className="px-4 py-12 text-center type-meta">No audit events have been recorded.</div>}
       </div>
+      <AdminPagination pathname="/admin/audit" page={page} totalPages={totalPages} totalItems={total} />
     </div>
   );
 }

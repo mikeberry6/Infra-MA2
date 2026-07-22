@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import type { DashboardView } from "@/modules/dashboard/types";
+import { ACTIVE_DASHBOARD_METRICS } from "@/modules/dashboard/catalog";
 import type { NewsFeedView } from "@/modules/shared/types";
 
 vi.mock("next/navigation", () => ({
@@ -31,7 +32,7 @@ describe("public external-provider failure states", () => {
         lastAttemptAt: "2026-07-22T23:00:00.000Z",
         lastSuccessfulAt: "2026-07-21T23:00:00.000Z",
         nextExpectedAt: "2026-07-22T23:00:00.000Z",
-        trackedEntities: 1174,
+        sourceCoverage: { attempted: 50, succeeded: 42, failed: 8 },
         message: "The latest scan failed; the last successful results remain visible.",
       },
     };
@@ -41,7 +42,7 @@ describe("public external-provider failure states", () => {
     const pipelineStatus = screen.getByRole("region", { name: "News pipeline status" });
     expect(pipelineStatus).toHaveTextContent("Latest scan failed");
     expect(pipelineStatus).toHaveTextContent("Jul 21, 2026");
-    expect(pipelineStatus).toHaveTextContent("1,174 entities");
+    expect(pipelineStatus).toHaveTextContent("42/50 attempts");
     expect(screen.getByRole("heading", { name: "The latest scan failed" })).toBeVisible();
     expect(screen.queryByRole("heading", { name: "Scan completed with no qualifying signals" })).not.toBeInTheDocument();
   });
@@ -96,6 +97,57 @@ describe("public external-provider failure states", () => {
     expect(within(sourceTable).getByText("Provider timed out after bounded retries")).toBeVisible();
   });
 
+  it("does not count a partial dashboard source as complete and names required-metric gaps", () => {
+    const view: DashboardView = {
+      generatedAt: "2026-07-22T12:00:00.000Z",
+      hasDatabaseData: true,
+      operations: {
+        state: "healthy",
+        lastSuccessfulAt: "2026-07-22T11:35:00.000Z",
+        nextExpectedAt: "2026-07-23T11:30:00.000Z",
+        message: "The latest weekday dashboard synchronization completed successfully.",
+      },
+      scorecard: {
+        stance: "Neutral",
+        score: 50,
+        explanations: [],
+        positiveContributors: [],
+        negativeContributors: [],
+        freshnessWarnings: [],
+      },
+      sections: [],
+      allSeries: [{
+        metric: ACTIVE_DASHBOARD_METRICS.find((metric) => metric.id === "us_treasury_2y")!,
+        observations: [],
+        stale: true,
+        unavailable: true,
+      }],
+      sourceHealth: [{
+        sourceId: "treasury",
+        sourceName: "U.S. Treasury",
+        status: "PARTIAL",
+        startedAt: "2026-07-22T11:30:00.000Z",
+        endedAt: "2026-07-22T11:31:00.000Z",
+        observationsFetched: 1,
+        observationsUpserted: 1,
+        signalsFetched: 0,
+        signalsUpserted: 0,
+        error: "Latest refresh completed with incomplete or stale source coverage.",
+        metadata: {
+          missingRequiredMetrics: ["us_treasury_2y"],
+          staleRequiredMetrics: ["us_treasury_10y"],
+        },
+      }],
+    };
+
+    render(<DashboardPage view={view} />);
+
+    expect(screen.getByText("Source coverage").nextElementSibling).toHaveTextContent("0/1");
+    const sourceTable = screen.getByRole("table");
+    expect(within(sourceTable).getByText(/Missing required: 2Y U.S. Treasury CMT/)).toBeVisible();
+    expect(within(sourceTable).getByText(/Stale required: us_treasury_10y/)).toBeVisible();
+  });
+
   it.each([
     ["pending", "Dashboard synchronization in progress"],
     ["failed", "Dashboard synchronization failed"],
@@ -145,7 +197,7 @@ describe("public external-provider failure states", () => {
         lastAttemptAt: "2026-07-22T23:00:00.000Z",
         lastSuccessfulAt: "2026-07-22T23:00:00.000Z",
         nextExpectedAt: "2026-07-23T23:00:00.000Z",
-        trackedEntities: 1174,
+        sourceCoverage: { attempted: 50, succeeded: 50, failed: 0 },
         message: "The scan completed with no qualifying signals.",
       },
     };

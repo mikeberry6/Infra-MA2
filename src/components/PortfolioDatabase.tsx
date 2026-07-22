@@ -38,6 +38,7 @@ import { track } from "@vercel/analytics";
 import { subscribeToDetailCacheInvalidation } from "@/lib/detail-cache-events";
 import { BoundedDetailCache } from "@/lib/detail-cache";
 import { useFreshDetail } from "@/hooks/useFreshDetail";
+import { markDrawerOpen } from "@/lib/drawer-performance";
 
 const INVESTMENT_YEAR_NA = "N/A";
 const PORTCO_PAGE_SIZE = 25;
@@ -521,6 +522,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
   }, [focusId, portcos, writeQuery]);
 
   const openCompany = useCallback((company: CompanyListItem) => {
+    markDrawerOpen("company");
     setSelectedCompany(company);
     openedFocus.current = company.id;
     writeQuery("focus", company.id, "push");

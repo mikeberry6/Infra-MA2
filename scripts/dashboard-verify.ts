@@ -36,6 +36,8 @@ type VerifySummary = {
     observations?: number;
     signals?: number;
     sourceRuns?: number;
+    missingCatalogDefinitions?: string[];
+    invalidCatalogStatuses?: string[];
     missingActiveDefinitions?: string[];
     invalidActiveDefinitions?: string[];
     missingActiveObservations?: string[];
@@ -108,7 +110,7 @@ async function main() {
         observations,
         signals,
         sourceRuns,
-        activeDefinitions,
+        catalogDefinitions,
         latestObservationRows,
         pendingSignals,
         approvedSignals,
@@ -118,7 +120,7 @@ async function main() {
         prisma.dashboardSignal.count(),
         prisma.dashboardSourceRun.count(),
         prisma.dashboardMetricDefinition.findMany({
-          where: { id: { in: activeIds }, status: "ACTIVE" },
+          where: { id: { in: ids } },
           select: {
             id: true,
             label: true,
@@ -178,7 +180,12 @@ async function main() {
       for (const row of latestObservationRows) {
         if (!latestByMetric.has(row.metricId)) latestByMetric.set(row.metricId, row);
       }
-      const activeDefinitionById = new Map(activeDefinitions.map((item) => [item.id, item]));
+      const catalogDefinitionById = new Map(catalogDefinitions.map((item) => [item.id, item]));
+      const activeDefinitionById = new Map(
+        catalogDefinitions
+          .filter((item) => item.status === "ACTIVE")
+          .map((item) => [item.id, item]),
+      );
       const now = Date.now();
       summary.database = {
         available: true,
@@ -186,6 +193,13 @@ async function main() {
         observations,
         signals,
         sourceRuns,
+        missingCatalogDefinitions: ids.filter((id) => !catalogDefinitionById.has(id)),
+        invalidCatalogStatuses: DASHBOARD_METRICS.flatMap((metric) => {
+          const definition = catalogDefinitionById.get(metric.id);
+          return definition && definition.status !== metric.status
+            ? [`${metric.id} (${definition.status} stored; ${metric.status} required)`]
+            : [];
+        }),
         missingActiveDefinitions: activeIds.filter((id) => !activeDefinitionById.has(id)),
         invalidActiveDefinitions: ACTIVE_DASHBOARD_METRICS.flatMap((metric) => {
           const definition = activeDefinitionById.get(metric.id);
@@ -258,6 +272,8 @@ async function main() {
   }
   if (process.argv.includes("--require-complete") && summary.database?.available) {
     const incomplete = [
+      ...(summary.database.missingCatalogDefinitions ?? []).map((id) => `missing catalog definition ${id}`),
+      ...(summary.database.invalidCatalogStatuses ?? []).map((id) => `invalid catalog status ${id}`),
       ...(summary.database.missingActiveDefinitions ?? []).map((id) => `missing definition ${id}`),
       ...(summary.database.invalidActiveDefinitions ?? []).map((id) => `invalid definition ${id}`),
       ...(summary.database.missingActiveObservations ?? []).map((id) => `missing observation ${id}`),

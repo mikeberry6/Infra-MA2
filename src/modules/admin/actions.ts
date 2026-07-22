@@ -1337,6 +1337,74 @@ function parseOwnershipFormData(formData: FormData) {
   };
 }
 
+type OwnershipParentTransition = {
+  companyId: string;
+  statusBefore: string;
+  statusAfter: string;
+};
+
+type OwnershipAuditSnapshot = {
+  id: string;
+  companyId: string;
+  organizationId: string | null;
+  fundId: string | null;
+  vehicleName: string | null;
+  investmentYear: number | null;
+  exitYear: number | null;
+  isActive: boolean;
+  stake: string | null;
+};
+
+function ownershipAuditSnapshot(ownership: OwnershipAuditSnapshot): OwnershipAuditSnapshot {
+  return {
+    id: ownership.id,
+    companyId: ownership.companyId,
+    organizationId: ownership.organizationId,
+    fundId: ownership.fundId,
+    vehicleName: ownership.vehicleName,
+    investmentYear: ownership.investmentYear,
+    exitYear: ownership.exitYear,
+    isActive: ownership.isActive,
+    stake: ownership.stake,
+  };
+}
+
+async function prepareCompanyForOwnershipMutation(
+  tx: Prisma.TransactionClient,
+  companyId: string,
+): Promise<OwnershipParentTransition> {
+  const company = await tx.company.findUnique({
+    where: { id: companyId },
+    select: { id: true, status: true, updatedAt: true },
+  });
+  if (!company) throw new AdminActionUserError("Company not found");
+  const nextStatus = statusAfterEditorialEdit(company.status);
+  if (!nextStatus) throw new AdminActionUserError("Archived companies cannot be edited.");
+
+  if (nextStatus !== company.status) {
+    const updated = await tx.company.updateMany({
+      where: { id: company.id, status: company.status, updatedAt: company.updatedAt },
+      data: { status: nextStatus },
+    });
+    if (updated.count !== 1) {
+      throw new AdminActionUserError("Company workflow state changed during ownership edit");
+    }
+    await auditMutation(
+      "Company",
+      company.id,
+      "INVALIDATE_FOR_OWNERSHIP_EDIT",
+      ["status"],
+      tx,
+    );
+  }
+
+  return {
+    companyId: company.id,
+    statusBefore: company.status,
+    statusAfter: nextStatus,
+  };
+}
+
 export async function addOwnershipPeriod(
   companyId: string,
   formData: FormData,
@@ -1349,14 +1417,10 @@ export async function addOwnershipPeriod(
     if (!parsed.success) {
       return { success: false, error: parsed.error.issues.map((i) => i.message).join(", ") };
     }
-    const companyExists = await prisma.company.findUnique({
-      where: { id: companyId },
-      select: { id: true },
-    });
-    if (!companyExists) return { success: false, error: "Company not found" };
     const o = parsed.data;
     const fundId = o.ownershipVehicle ? await findFundByVehicleName(o.ownershipVehicle) : null;
     const created = await prisma.$transaction(async (tx) => {
+      const parentCompany = await prepareCompanyForOwnershipMutation(tx, companyId);
       const organization = await tx.organization.upsert({
         where: { name: o.investmentFirm },
         update: {},
@@ -1374,7 +1438,16 @@ export async function addOwnershipPeriod(
           stake: o.stake ?? null,
         },
       });
-      await auditMutation("OwnershipPeriod", created.id, "CREATE", ["record"], tx);
+      await recordAuditEvent({
+        entityType: "OwnershipPeriod",
+        entityId: created.id,
+        action: "CREATE",
+        changes: {
+          changedFields: ["record"],
+          afterSnapshot: ownershipAuditSnapshot(created),
+          parentCompany,
+        },
+      }, tx);
       return created;
     });
     revalidateAll();
@@ -1397,20 +1470,18 @@ export async function updateOwnershipPeriod(
     if (!parsed.success) {
       return { success: false, error: parsed.error.issues.map((i) => i.message).join(", ") };
     }
-    const existingOwnership = await prisma.ownershipPeriod.findUnique({
-      where: { id },
-      select: { id: true },
-    });
-    if (!existingOwnership) return { success: false, error: "Ownership period not found" };
     const o = parsed.data;
     const fundId = o.ownershipVehicle ? await findFundByVehicleName(o.ownershipVehicle) : null;
     await prisma.$transaction(async (tx) => {
+      const existingOwnership = await tx.ownershipPeriod.findUnique({ where: { id } });
+      if (!existingOwnership) throw new AdminActionUserError("Ownership period not found");
+      const parentCompany = await prepareCompanyForOwnershipMutation(tx, existingOwnership.companyId);
       const organization = await tx.organization.upsert({
         where: { name: o.investmentFirm },
         update: {},
         create: { name: o.investmentFirm, types: ["FUND_MANAGER"] },
       });
-      await tx.ownershipPeriod.update({
+      const updated = await tx.ownershipPeriod.update({
         where: { id },
         data: {
           organizationId: organization.id,
@@ -1422,7 +1493,17 @@ export async function updateOwnershipPeriod(
           stake: o.stake ?? null,
         },
       });
-      await auditMutation("OwnershipPeriod", id, "UPDATE", ["record"], tx);
+      await recordAuditEvent({
+        entityType: "OwnershipPeriod",
+        entityId: id,
+        action: "UPDATE",
+        changes: {
+          changedFields: ["record"],
+          beforeSnapshot: ownershipAuditSnapshot(existingOwnership),
+          afterSnapshot: ownershipAuditSnapshot(updated),
+          parentCompany,
+        },
+      }, tx);
     });
     revalidateAll();
     return { success: true };
@@ -1437,15 +1518,21 @@ export async function deleteOwnershipPeriod(id: string): Promise<ActionResult> {
     const auth = await requireAdminAction();
     if (auth) return auth;
 
-    const existingOwnership = await prisma.ownershipPeriod.findUnique({
-      where: { id },
-      select: { id: true },
-    });
-    if (!existingOwnership) return { success: false, error: "Ownership period not found" };
-
     await prisma.$transaction(async (tx) => {
+      const existingOwnership = await tx.ownershipPeriod.findUnique({ where: { id } });
+      if (!existingOwnership) throw new AdminActionUserError("Ownership period not found");
+      const parentCompany = await prepareCompanyForOwnershipMutation(tx, existingOwnership.companyId);
+      await recordAuditEvent({
+        entityType: "OwnershipPeriod",
+        entityId: id,
+        action: "DELETE",
+        changes: {
+          changedFields: ["record"],
+          beforeSnapshot: ownershipAuditSnapshot(existingOwnership),
+          parentCompany,
+        },
+      }, tx);
       await tx.ownershipPeriod.delete({ where: { id } });
-      await auditMutation("OwnershipPeriod", id, "DELETE", [], tx);
     });
     revalidateAll();
     return { success: true };

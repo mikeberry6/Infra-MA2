@@ -11,12 +11,23 @@ import ImportExportBar from "@/components/admin/ImportExportBar";
 import { archiveCompany, deleteCompany, publishCompany, submitCompanyForReview, verifyCompany } from "@/modules/admin/actions";
 import { getRecordStatusColor } from "@/lib/colors";
 import { Button } from "@/components/shared/Button";
+import { AdminPagination } from "@/components/admin/AdminPagination";
+import { adminPagination } from "@/lib/admin-pagination";
 
 export const metadata = { title: "Admin · Companies" };
 
-export default async function AdminCompaniesPage() {
+export default async function AdminCompaniesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const { page: rawPage } = await searchParams;
+  const total = await prisma.company.count();
+  const { page, totalPages, skip, take } = adminPagination(rawPage, total);
   const companies = await prisma.company.findMany({
     orderBy: { name: "asc" },
+    skip,
+    take,
     select: {
       id: true,
       name: true,
@@ -41,7 +52,7 @@ export default async function AdminCompaniesPage() {
             Companies
           </h1>
           <p className="text-xs text-[var(--text-secondary)] mt-0.5">
-            <span className="mono tabular-nums">{companies.length.toLocaleString()}</span> total
+            <span className="mono tabular-nums">{total.toLocaleString()}</span> total
           </p>
         </div>
         <Link href="/admin/companies/new">
@@ -96,6 +107,7 @@ export default async function AdminCompaniesPage() {
           <div className="py-12 text-center text-sm text-[var(--text-tertiary)]">No companies yet.</div>
         )}
       </div>
+      <AdminPagination pathname="/admin/companies" page={page} totalPages={totalPages} totalItems={total} />
     </div>
   );
 }

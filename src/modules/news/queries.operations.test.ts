@@ -53,7 +53,9 @@ describe("news pipeline freshness states", () => {
       "2026-07-22T00:00:00.000Z",
       "2026-07-22T00:05:00.000Z",
     );
-    success.metadata = { tracked: { companies: 8, managers: 4, funds: 3 } } as never;
+    success.metadata = {
+      sourceCoverage: { attempted: 15, succeeded: 12, failed: 3 },
+    } as never;
     mocks.pipelineFindFirst.mockImplementation(({ where }: { where: { status?: string } }) => (
       Promise.resolve(where.status ? success : success)
     ));
@@ -64,9 +66,31 @@ describe("news pipeline freshness states", () => {
       state: "healthy",
       lastSuccessfulAt: "2026-07-22T00:05:00.000Z",
       nextExpectedAt: "2026-07-22T23:30:00.000Z",
-      trackedEntities: 15,
+      sourceCoverage: { attempted: 15, succeeded: 12, failed: 3 },
       message: "The daily public-source scan completed successfully.",
     });
+  });
+
+  it("uses the latest failed attempt coverage while retaining last-success time", async () => {
+    const failed = pipelineRun("FAILED", "2026-07-22T10:00:00.000Z");
+    failed.metadata = {
+      sourceCoverage: { attempted: 20, succeeded: 15, failed: 5 },
+    } as never;
+    const success = pipelineRun(
+      "SUCCEEDED",
+      "2026-07-21T00:00:00.000Z",
+      "2026-07-21T00:10:00.000Z",
+    );
+    success.metadata = {
+      sourceCoverage: { attempted: 18, succeeded: 18, failed: 0 },
+    } as never;
+    mocks.pipelineFindFirst.mockImplementation(({ where }: { where: { status?: string } }) => (
+      Promise.resolve(where.status ? success : failed)
+    ));
+
+    const feed = await getNewsFeed();
+
+    expect(feed.operations.sourceCoverage).toEqual({ attempted: 20, succeeded: 15, failed: 5 });
   });
 
   it("reports a first-ever running scan as pending instead of overdue", async () => {

@@ -8,6 +8,14 @@ describe("dashboard operational workflows", () => {
   const schemaStage = readFileSync(path.join(process.cwd(), ".github/workflows/stage-production-schema.yml"), "utf8");
   const rollback = readFileSync(path.join(process.cwd(), ".github/workflows/rollback-production.yml"), "utf8");
 
+  const pipelineStep = (name: string) => {
+    const marker = `      - name: ${name}\n`;
+    const start = pipeline.indexOf(marker);
+    expect(start, `missing workflow step: ${name}`).toBeGreaterThanOrEqual(0);
+    const next = pipeline.indexOf("\n      - ", start + marker.length);
+    return pipeline.slice(start, next === -1 ? pipeline.length : next);
+  };
+
   it("uses DST-safe weekday 07:30 America/New_York scheduling", () => {
     expect(pipeline).toContain('cron: "30 11 * * 1-5"');
     expect(pipeline).toContain('cron: "30 12 * * 1-5"');
@@ -27,6 +35,7 @@ describe("dashboard operational workflows", () => {
     expect(pipeline).toContain("npm run dashboard:sync:dry-run");
     expect(pipeline).toContain("npm run dashboard:verify -- --require-complete");
     expect(release).toContain("npm run dashboard:verify -- --require-complete");
+    expect(release.match(/--require-full-window/g)).toHaveLength(2);
     expect(release).toContain("verify-vercel-deployment.ts");
     expect(release).toContain("--require-immutable-url");
     expect(release).toContain('promote "$deployment_id"');
@@ -36,6 +45,43 @@ describe("dashboard operational workflows", () => {
     expect(schemaStage).toContain('if [ "$DASHBOARD_WRITES_ENABLED" != "false" ]');
     expect(schemaStage.indexOf('if [ "$DASHBOARD_WRITES_ENABLED" != "false" ]'))
       .toBeLessThan(schemaStage.indexOf("npm ci"));
+  });
+
+  it("collects independent pipeline diagnostics before returning a failure", () => {
+    const dashboardReliability = pipelineStep("Enforce provider and rolling reliability thresholds");
+    const newsReliability = pipelineStep("Enforce scan and rolling reliability thresholds");
+    const weeklyDatabase = pipelineStep("Verify database integrity and source coverage");
+    const weeklyFreshness = pipelineStep("Verify dashboard and news freshness contracts");
+    const monthlyDependencies = pipelineStep("Audit production dependencies");
+    const monthlyCoverage = pipelineStep("Audit database and source coverage");
+
+    expect(dashboardReliability).toContain("always()");
+    expect(dashboardReliability).toContain("steps.install.outcome == 'success'");
+    expect(newsReliability).toContain("if: always() && steps.install.outcome == 'success'");
+    expect(newsReliability).toContain("if [ -f tmp/news-scan-summary.json ]");
+
+    for (const step of [weeklyDatabase, weeklyFreshness, monthlyCoverage]) {
+      expect(step).toContain("if: always()");
+      expect(step).toContain("overall=0");
+      expect(step).toContain("set +e");
+      expect(step).toContain("overall=1");
+      expect(step).toContain('exit "$overall"');
+    }
+
+    expect(weeklyDatabase).toContain("source-coverage-report.ts --require-complete");
+    expect(weeklyDatabase).toContain("report-company-merge-candidates.ts --published-only --require-clean");
+    expect(weeklyDatabase.match(/overall=1/g)).toHaveLength(3);
+    expect(weeklyFreshness.match(/verify-pipeline-health\.ts/g)).toHaveLength(2);
+    expect(weeklyFreshness.match(/overall=1/g)).toHaveLength(3);
+    expect(monthlyDependencies).toContain("if: always()");
+    expect(monthlyDependencies).toContain("tmp/monthly-audit/dependency-audit.log");
+    expect(monthlyCoverage).toContain("validate-portfolios");
+    expect(monthlyCoverage).toContain("audit-portfolio-duplicates.ts");
+    expect(monthlyCoverage.match(/overall=1/g)).toHaveLength(5);
+
+    expect(pipeline.match(/      - name: Upload run evidence\n        if: .*always\(\).*\n/g)).toHaveLength(2);
+    expect(pipelineStep("Upload weekly verification evidence")).toContain("always()");
+    expect(pipelineStep("Upload monthly audit evidence")).toContain("always()");
   });
 
   it("separates the live application from the applied migration baseline", () => {

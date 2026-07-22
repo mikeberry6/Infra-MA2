@@ -32,9 +32,8 @@ export function buildRiskScorecard(
   addVolContribution(contributions, byId.get("vix"), "Equity volatility", 2, 5);
   addVolContribution(contributions, byId.get("move"), "Rates volatility", 6, 4);
   addPublicCompContribution(contributions, byId.get("sp500"), "Public-comp sentiment", 0.01, 4);
-  addDemandContribution(contributions, byId.get("usaspending_infra_awards_30d"), 3);
   addDealFlowContribution(contributions, byId.get("deal_flow_30d"), 4);
-  addPolicyContribution(contributions, byId.get("federal_register_infra_notices"), signals);
+  addPolicyContribution(contributions, signals);
 
   for (const id of CORE_FRESHNESS_METRICS) {
     const item = byId.get(id);
@@ -59,7 +58,7 @@ export function buildRiskScorecard(
     .slice(0, 5);
 
   const explanations = [
-    `Deterministic score starts at 50 and adjusts for rates, real rates, spreads, volatility, public comps, sector/procurement demand, regulatory friction, and deal-flow signals.`,
+    `Deterministic score starts at 50 and adjusts for rates, real rates, spreads, volatility, public comps, explicitly classified regulatory friction, and reviewed deal-flow activity.`,
     `Current stance is ${stance} at ${score}/100.`,
     freshnessWarnings.length > 0
       ? `${freshnessWarnings.length} core source freshness warning${freshnessWarnings.length === 1 ? "" : "s"} should be reviewed before relying on the score.`
@@ -171,19 +170,6 @@ function addPublicCompContribution(
   }
 }
 
-function addDemandContribution(
-  contributions: DashboardScoreContribution[],
-  series: DashboardSeries | undefined,
-  points: number,
-) {
-  if (!usableSeries(series)) return;
-  const latest = latestNumeric(series);
-  if (latest == null) return;
-  if (latest > 0) {
-    contributions.push(contribution(series.metric.id, "Sector demand indicators", points, "supportive", `${series.metric.label} returned ${Math.round(latest).toLocaleString()} current public awards/opportunities in the configured window.`));
-  }
-}
-
 function addDealFlowContribution(
   contributions: DashboardScoreContribution[],
   series: DashboardSeries | undefined,
@@ -201,17 +187,18 @@ function addDealFlowContribution(
 
 function addPolicyContribution(
   contributions: DashboardScoreContribution[],
-  federalRegisterSeries: DashboardSeries | undefined,
   signals: DashboardSignal[],
 ) {
-  if (!usableSeries(federalRegisterSeries)) return;
-  const latest = latestNumeric(federalRegisterSeries);
-  const reviewSignals = signals.filter((signal) => signal.section === "policy-regulatory").length;
-  if (latest == null) return;
-  if (latest >= 20 || reviewSignals >= 10) {
-    contributions.push(contribution("policy-regulatory", "Policy/regulatory friction", -4, "restrictive", "Federal Register infrastructure notice volume is elevated and requires review."));
-  } else if (latest > 0) {
-    contributions.push(contribution("policy-regulatory", "Policy/regulatory friction", -1, "needs_review", "Federal Register infrastructure notices are present but need analyst classification."));
+  // Approval establishes relevance; it does not turn a grant, procurement
+  // opportunity, or filing into a restrictive signal. Only an explicitly
+  // classified restrictive signal may reduce the score.
+  const restrictiveSignals = signals.filter((signal) =>
+    signal.section === "policy-regulatory" && signal.direction === "restrictive",
+  ).length;
+  if (restrictiveSignals >= 10) {
+    contributions.push(contribution("policy-regulatory", "Policy/regulatory friction", -4, "restrictive", `${restrictiveSignals} approved, restrictive policy or regulatory signals are active in the dashboard window.`));
+  } else if (restrictiveSignals > 0) {
+    contributions.push(contribution("policy-regulatory", "Policy/regulatory friction", -1, "restrictive", `${restrictiveSignals} approved, restrictive policy or regulatory signal${restrictiveSignals === 1 ? " is" : "s are"} active in the dashboard window.`));
   }
 }
 

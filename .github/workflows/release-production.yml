@@ -38,6 +38,7 @@ jobs:
       SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
       EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
       EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
       DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
@@ -101,7 +102,7 @@ jobs:
       - name: Require protected production configuration
         run: |
           missing=0
-          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME VERCEL_TOKEN VERCEL_SCOPE EXPECTED_VERCEL_PROJECT_ID EXPECTED_GITHUB_REPOSITORY_ID PRODUCTION_URL FRED_API_KEY EIA_API_KEY SAM_API_KEY SEC_USER_AGENT; do
+          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST VERCEL_TOKEN VERCEL_SCOPE EXPECTED_VERCEL_PROJECT_ID EXPECTED_GITHUB_REPOSITORY_ID PRODUCTION_URL FRED_API_KEY EIA_API_KEY SAM_API_KEY SEC_USER_AGENT; do
             if [ -z "${!name:-}" ]; then
               echo "::error::$name is required."
               missing=1
@@ -167,6 +168,12 @@ jobs:
           ./node_modules/.bin/prisma migrate status 2>&1 | tee tmp/release/migrate-status.log
           ./node_modules/.bin/prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/release/schema-drift.log
 
+      - name: Record the current deal seller-disclosure backlog
+        shell: bash
+        run: |
+          ./node_modules/.bin/tsx scripts/report-deal-seller-disclosure-remediation.ts \
+            --output=tmp/release/deal-seller-disclosure-approval-template.json
+
       - name: Verify production data and source gates
         shell: bash
         run: |
@@ -181,8 +188,8 @@ jobs:
 
       - name: Require healthy critical pipelines before promotion
         run: |
-          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --freshness-schedule=dashboard-weekday --expected-runs-per-week=5 --min-success-rate=0.95 --output=tmp/release/dashboard-reliability.json
-          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --output=tmp/release/news-reliability.json
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --freshness-schedule=dashboard-weekday --expected-runs-per-week=5 --min-success-rate=0.95 --require-full-window --output=tmp/release/dashboard-reliability.json
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --require-full-window --output=tmp/release/news-reliability.json
 
       - name: Reverify exact main head immediately before promotion
         env:
