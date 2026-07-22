@@ -215,7 +215,12 @@ test.describe("anonymous database journeys", () => {
     await waitForApplication(page, "Search InfraSight");
     await expect(page).toHaveURL(/\/search\?q=Brookfield/);
 
-    await page.getByRole("link", { name: /^Deals\s/ }).click();
+    const dealScope = page.getByRole("link", { name: /^Deals\s/ });
+    await expect(dealScope).toHaveAttribute(
+      "href",
+      `${appPath("/search")}?q=Brookfield&scope=deal`,
+    );
+    await dealScope.click();
     await expect(page).toHaveURL(/q=Brookfield&scope=deal/);
     await expect(page.getByRole("heading", { name: "Deals" })).toBeVisible();
     await expect(page.getByRole("link", { name: /^Deals\s/ })).toHaveAttribute("aria-current", "page");

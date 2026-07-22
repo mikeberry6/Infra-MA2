@@ -14,6 +14,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
 import { TrackedSearchForm } from "@/components/search/TrackedSearchForm";
+import { withBasePath } from "@/lib/base-path";
 import { currentServerRequestId } from "@/lib/server-request-context";
 import { withServerTask } from "@/lib/server-log";
 
@@ -174,9 +175,12 @@ export default async function SearchPage({
             {(["all", "deal", "company", "fund"] as const).map((item) => {
               const isActive = search.scope === item;
               return (
-                <Link
+                // Use a document navigation for scope changes. A client Link
+                // transition can be aborted when this page has just been
+                // restored through browser history from a deep-linked drawer.
+                <a
                   key={item}
-                  href={searchHref(query, item)}
+                  href={withBasePath(searchHref(query, item))}
                   aria-current={isActive ? "page" : undefined}
                   className={`inline-flex items-center gap-2 rounded-md border px-3 py-2 type-meta font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] ${
                     isActive
@@ -188,7 +192,7 @@ export default async function SearchPage({
                   <span className="mono tabular-nums text-[10px] opacity-75">
                     {scopeCounts[item].toLocaleString()}
                   </span>
-                </Link>
+                </a>
               );
             })}
           </nav>

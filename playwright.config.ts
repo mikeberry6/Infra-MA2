@@ -4,6 +4,8 @@ import { assertIsolatedWriteTarget } from "./tests/e2e/isolation-guard";
 const port = Number(process.env.E2E_PORT || 3100);
 const configuredUrl = process.env.PLAYWRIGHT_BASE_URL;
 const baseURL = configuredUrl ? new URL(configuredUrl).origin : `http://127.0.0.1:${port}`;
+const basePath = process.env.E2E_BASE_PATH || "/Infra-MA2";
+const authUrl = `${baseURL}${basePath}/api/auth`;
 const isolatedDatabaseConfigured = Boolean(process.env.E2E_DATABASE_URL);
 
 // Validate before Playwright starts the application. A rejected database host
@@ -47,7 +49,7 @@ export default defineConfig({
     ? undefined
     : {
         command: `npm run start -- -p ${port}`,
-        url: `${baseURL}${process.env.E2E_BASE_PATH || "/Infra-MA2"}/tracker`,
+        url: `${baseURL}${basePath}/tracker`,
         // Auth tests perform durable throttle/workflow writes whenever an
         // isolated database is configured. Never reuse a developer server
         // whose target cannot be proved from this process; fail on a busy port.
@@ -57,7 +59,7 @@ export default defineConfig({
           ...process.env,
           DATABASE_URL: process.env.E2E_DATABASE_URL || process.env.DATABASE_URL || "",
           NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET || "e2e-only-secret-change-before-production",
-          NEXTAUTH_URL: `${baseURL}${process.env.E2E_BASE_PATH || "/Infra-MA2"}`,
+          NEXTAUTH_URL: authUrl,
         },
       },
 });

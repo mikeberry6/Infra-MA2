@@ -1,13 +1,22 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { signIn } from "next-auth/react";
+import { SessionProvider, signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { LogIn } from "lucide-react";
 import { Button } from "@/components/shared/Button";
 import { TextInput } from "@/components/shared/TextInput";
+import { withBasePath } from "@/lib/base-path";
 
 export function LoginForm({ callbackUrl }: { callbackUrl: string }) {
+  return (
+    <SessionProvider basePath={withBasePath("/api/auth")} refetchOnWindowFocus={false}>
+      <LoginFields callbackUrl={callbackUrl} />
+    </SessionProvider>
+  );
+}
+
+function LoginFields({ callbackUrl }: { callbackUrl: string }) {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

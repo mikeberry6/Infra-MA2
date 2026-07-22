@@ -298,15 +298,34 @@ jobs:
           npm run admin:create
 
       - name: Build against migrated validation database
+        env:
+          # The Playwright server derives this same canonical endpoint at runtime.
+          NEXTAUTH_URL: http://127.0.0.1:3100/Infra-MA2/api/auth
         run: npm run build
 
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Run end-to-end, axe, keyboard, responsive, and visual checks
+      # Visual snapshots read shared database rankings. Run them serially before
+      # any authenticated journey can mutate the validation branch, and keep
+      # their evidence separate from the remainder of the browser suite.
+      - name: Run deterministic visual baselines before mutation journeys
+        id: visual_gate
+        continue-on-error: true
         env:
           E2E_BASE_PATH: /Infra-MA2
-        run: npm run test:e2e
+          PLAYWRIGHT_HTML_OUTPUT_DIR: visual-playwright-report
+        run: >-
+          npx playwright test tests/e2e/visual-regression.spec.ts
+          --workers=1
+          --output=visual-test-results
+
+      - name: Run end-to-end, axe, keyboard, and responsive checks
+        id: browser_gate
+        continue-on-error: true
+        env:
+          E2E_BASE_PATH: /Infra-MA2
+        run: npx playwright test --grep-invert "@visual"
 
       - name: Prove top-level database failure and retry journeys
         shell: bash
@@ -412,16 +431,28 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
 
-      - name: Enforce strict publication gate after collecting validation evidence
+      - name: Enforce browser, visual, and strict publication gates after collecting validation evidence
         if: always()
         env:
+          BROWSER_GATE_OUTCOME: ${{ steps.browser_gate.outcome }}
+          VISUAL_GATE_OUTCOME: ${{ steps.visual_gate.outcome }}
           STRICT_PUBLICATION_GATE_OUTCOME: ${{ steps.strict_publication_gate.outcome }}
         shell: bash
         run: |
+          failed=0
+          if [ "$BROWSER_GATE_OUTCOME" != "success" ]; then
+            echo "::error::The main browser/accessibility suite failed; all independent fixture evidence was still collected."
+            failed=1
+          fi
+          if [ "$VISUAL_GATE_OUTCOME" != "success" ]; then
+            echo "::error::The deterministic pre-mutation visual baseline gate failed; all independent fixture evidence was still collected."
+            failed=1
+          fi
           if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]; then
             echo "::error::Strict publication/data integrity remains blocking; browser evidence was collected without weakening the release gate."
-            exit 1
+            failed=1
           fi
+          exit "$failed"
 
       - name: Upload Playwright report and failure media
         if: always()
@@ -431,6 +462,8 @@ jobs:
           path: |
             playwright-report/
             test-results/
+            visual-playwright-report/
+            visual-test-results/
           if-no-files-found: ignore
           retention-days: 30
 

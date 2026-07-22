@@ -8,6 +8,23 @@ const workflow = readFileSync(
 );
 
 describe("isolated validation workflow remediation context", () => {
+  it("builds and serves the validation app with the full base-path auth endpoint", () => {
+    const validationJob = workflow.slice(workflow.indexOf("  validation:"));
+    const buildStep = validationJob.indexOf("- name: Build against migrated validation database");
+    const visualStep = validationJob.indexOf(
+      "- name: Run deterministic visual baselines before mutation journeys",
+    );
+
+    expect(validationJob).toContain(
+      "NEXTAUTH_URL: http://127.0.0.1:3100/Infra-MA2/api/auth",
+    );
+    expect(buildStep).toBeGreaterThan(-1);
+    expect(visualStep).toBeGreaterThan(buildStep);
+    expect(validationJob.slice(buildStep, visualStep)).toContain(
+      "NEXTAUTH_URL: http://127.0.0.1:3100/Infra-MA2/api/auth",
+    );
+  });
+
   it("derives each mutation reviewer from the committed approval", () => {
     expect(workflow).toContain(
       "company_reviewer=\"$(jq -er '.reviewedBy | select(type == \"string\" and length > 0)' \"$company_approval\")\"",
@@ -73,22 +90,49 @@ describe("isolated validation workflow remediation context", () => {
     expect(citationApply).toBeGreaterThan(sellerApply);
   });
 
-  it("collects browser evidence after an editorial gate failure but still fails closed", () => {
+  it("collects independent evidence after gate failures but still fails closed", () => {
     const strictGate = workflow.indexOf("- name: Verify database integrity and strict publication gates");
-    const browserGate = workflow.indexOf("- name: Run end-to-end, axe, keyboard, responsive, and visual checks");
+    const visualGate = workflow.indexOf(
+      "- name: Run deterministic visual baselines before mutation journeys",
+    );
+    const browserGate = workflow.indexOf(
+      "- name: Run end-to-end, axe, keyboard, and responsive checks",
+    );
+    const topLevelFailureGate = workflow.indexOf(
+      "- name: Prove top-level database failure and retry journeys",
+    );
+    const providerFailureGate = workflow.indexOf(
+      "- name: Prove failed external-provider browser journeys",
+    );
     const evidenceUpload = workflow.indexOf("- name: Upload migration and data evidence");
     const enforcement = workflow.indexOf(
-      "- name: Enforce strict publication gate after collecting validation evidence",
+      "- name: Enforce browser, visual, and strict publication gates after collecting validation evidence",
     );
 
     expect(strictGate).toBeGreaterThan(-1);
-    expect(workflow.slice(strictGate, browserGate)).toContain("continue-on-error: true");
-    expect(browserGate).toBeGreaterThan(strictGate);
+    expect(workflow.slice(strictGate, visualGate)).toContain("continue-on-error: true");
+    expect(visualGate).toBeGreaterThan(strictGate);
+    const visualBlock = workflow.slice(visualGate, browserGate);
+    expect(visualBlock).toContain("continue-on-error: true");
+    expect(visualBlock).toContain("--workers=1");
+    expect(visualBlock).toContain("--output=visual-test-results");
+    expect(browserGate).toBeGreaterThan(visualGate);
+    const browserBlock = workflow.slice(browserGate, topLevelFailureGate);
+    expect(browserBlock).toContain("continue-on-error: true");
+    expect(browserBlock).toContain('npx playwright test --grep-invert "@visual"');
+    expect(topLevelFailureGate).toBeGreaterThan(browserGate);
+    expect(providerFailureGate).toBeGreaterThan(topLevelFailureGate);
     expect(evidenceUpload).toBeGreaterThan(browserGate);
     expect(enforcement).toBeGreaterThan(evidenceUpload);
     expect(workflow.slice(enforcement)).toContain(
+      'if [ "$BROWSER_GATE_OUTCOME" != "success" ]',
+    );
+    expect(workflow.slice(enforcement)).toContain(
+      'if [ "$VISUAL_GATE_OUTCOME" != "success" ]',
+    );
+    expect(workflow.slice(enforcement)).toContain(
       'if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]',
     );
-    expect(workflow.slice(enforcement)).toContain("exit 1");
+    expect(workflow.slice(enforcement)).toContain('exit "$failed"');
   });
 });

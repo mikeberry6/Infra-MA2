@@ -50,7 +50,7 @@ No workflow should infer a database target from a generic URL. `scripts/assert-d
 
 The validation and both production host variables must differ where Neon uses distinct pooled/direct endpoints; validation guards deny both production hosts. Every mutation workflow requires an exact database name as well as its expected host. `DATABASE_URL` is a repository Actions secret because unattended schedules require it. Keep `PRODUCTION_MIGRATION_DATABASE_URL` and `VERCEL_TOKEN` in the GitHub `production` environment with a required reviewer. Never expose production secrets to pull-request jobs.
 
-Vercel Preview must use the validation database and preview-only NextAuth settings. Vercel Production must use the production database, canonical `NEXTAUTH_URL`, and a separate `NEXTAUTH_SECRET`. Preview and production must not share writable database credentials.
+Vercel Preview must use the validation database and preview-only NextAuth settings. Vercel Production must use the production database, canonical `NEXTAUTH_URL`, and a separate `NEXTAUTH_SECRET`. In NextAuth v4, `NEXTAUTH_URL` is the complete auth API endpoint, including the retained base path: `https://infra-ma-2.vercel.app/Infra-MA2/api/auth` in production and the equivalent preview origin in Preview. Preview and production must not share writable database credentials.
 
 ## Release gate
 

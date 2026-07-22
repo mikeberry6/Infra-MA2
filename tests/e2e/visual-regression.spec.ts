@@ -9,16 +9,22 @@ const viewports = [
   { name: "1440", width: 1440, height: 900 },
 ];
 
-// Baselines are versioned review artifacts. Generate or update them only with
-// `npm run test:e2e:update` against the fixed validation dataset, then inspect
-// every changed image before committing it.
+// Baselines are versioned review artifacts. Chromium text rasterization differs
+// materially between Linux CI and macOS development, so CI owns an explicit
+// Linux baseline instead of weakening the global pixel threshold. Existing
+// generic baselines remain the local-development reference until a separately
+// reviewed platform refresh replaces them. CI runs this tagged file before any
+// database-writing browser journey, keeping the validation dataset stable.
 for (const viewport of viewports) {
-  test(`deal database visual baseline at ${viewport.name}px`, async ({ page }) => {
+  test(`@visual deal database baseline at ${viewport.name}px`, async ({ page }) => {
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
     await page.goto(appPath("/tracker"));
     await waitForApplication(page, "Infrastructure Deal Tape");
     await page.evaluate(() => document.fonts.ready);
-    await expect(page).toHaveScreenshot(`tracker-${viewport.name}.png`, {
+    const baseline = process.platform === "linux"
+      ? `tracker-${viewport.name}-linux.png`
+      : `tracker-${viewport.name}.png`;
+    await expect(page).toHaveScreenshot(baseline, {
       fullPage: false,
       mask: [page.locator("footer")],
     });
