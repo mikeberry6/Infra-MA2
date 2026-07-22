@@ -7,8 +7,9 @@ import { isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { dealSchema, type DealInput } from "@/modules/admin/schemas";
 import { DEAL_SECTOR_MAP, DEAL_REGION_MAP, DEAL_CATEGORY_MAP, DEAL_STATUS_MAP } from "@/modules/shared/enum-maps";
 import type { DealSector, DealRegion, DealCategory, DealStatusEnum } from "@/generated/prisma/client";
+import { recordAuditEvent } from "@/modules/operations/audit";
 
-const MAX_IMPORT_ROWS = 1000;
+const MAX_IMPORT_ROWS = 500;
 const IMPORT_CHUNK_SIZE = 50;
 
 type DealImportRow = DealInput & {
@@ -159,6 +160,21 @@ export async function POST(request: NextRequest) {
     }
 
     const { validRows, errors } = validateDealRows(deals);
+    const existing = validRows.length > 0
+      ? await prisma.deal.findMany({ where: { legacyId: { in: validRows.map((row) => row.dealId) } }, select: { legacyId: true } })
+      : [];
+    const existingIds = new Set(existing.map((row) => row.legacyId));
+    if (request.nextUrl.searchParams.get("preview") === "1") {
+      return NextResponse.json({
+        preview: true,
+        total: deals.length,
+        valid: validRows.length,
+        creates: validRows.filter((row) => !existingIds.has(row.dealId)).length,
+        updates: validRows.filter((row) => existingIds.has(row.dealId)).length,
+        warnings: [],
+        errors,
+      });
+    }
     const results: ImportResult[] = [...errors];
 
     for (const chunk of chunkRows(validRows)) {
@@ -284,10 +300,20 @@ export async function POST(request: NextRequest) {
       revalidateAppData();
     }
 
+    const imported = results.filter((r) => r.status === "ok").length;
+    const auditEventId = await recordAuditEvent({
+      entityType: "Deal",
+      action: "BULK_IMPORT",
+      changes: { inserted: validRows.filter((row) => !existingIds.has(row.dealId)).length, updated: validRows.filter((row) => existingIds.has(row.dealId)).length, errors: errors.length },
+    });
+    await prisma.pipelineRun.create({
+      data: { pipeline: "BULK_IMPORT_DEALS", status: "SUCCEEDED", startedAt: new Date(), endedAt: new Date(), inserted: validRows.filter((row) => !existingIds.has(row.dealId)).length, updated: validRows.filter((row) => existingIds.has(row.dealId)).length, skipped: errors.length, metadata: { auditEventId } },
+    });
     return NextResponse.json({
-      imported: results.filter((r) => r.status === "ok").length,
+      imported,
       errors: results.filter((r) => r.error),
       results,
+      auditEventId,
     });
   } catch (error: any) {
     if (isAuthorizationError(error)) {

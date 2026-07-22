@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import { track } from "@vercel/analytics";
 
 const URL_FILTER_CHANGE_EVENT = "infra:url-filter-change";
 
@@ -41,6 +42,59 @@ export function useUrlQueryParam(paramName: string): string | null {
   }, [paramName]);
 
   return value;
+}
+
+export function useUrlQueryState(
+  paramName: string,
+  defaultValue = "",
+  options: { resetPage?: boolean } = {},
+): [string, (next: string) => void] {
+  const router = useRouter();
+  const pathname = usePathname();
+  const [value, setValue] = useState(defaultValue);
+  const resetPage = options.resetPage ?? false;
+
+  useEffect(() => {
+    const sync = () => setValue(readSearchParam(paramName) ?? defaultValue);
+    const syncFromEvent = (event: Event) => {
+      const search = (event as CustomEvent<{ search?: string }>).detail?.search;
+      setValue(readSearchParam(paramName, search) ?? defaultValue);
+    };
+    sync();
+    window.addEventListener("popstate", sync);
+    window.addEventListener(URL_FILTER_CHANGE_EVENT, syncFromEvent);
+    return () => {
+      window.removeEventListener("popstate", sync);
+      window.removeEventListener(URL_FILTER_CHANGE_EVENT, syncFromEvent);
+    };
+  }, [defaultValue, paramName]);
+
+  const write = useCallback((next: string) => {
+    const latest = new URLSearchParams(window.location.search);
+    if (next && next !== defaultValue) latest.set(paramName, next);
+    else latest.delete(paramName);
+    if (resetPage && paramName !== "page") latest.delete("page");
+    const query = latest.toString();
+    setValue(next);
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+    notifyUrlFiltersChanged(query);
+  }, [defaultValue, resetPage, paramName, pathname, router]);
+
+  return [value, write];
+}
+
+export function useUrlQueryWriter() {
+  const router = useRouter();
+  const pathname = usePathname();
+  return useCallback((paramName: string, value: string | null, history: "push" | "replace" = "replace") => {
+    const latest = new URLSearchParams(window.location.search);
+    if (value) latest.set(paramName, value);
+    else latest.delete(paramName);
+    const query = latest.toString();
+    const href = query ? `${pathname}?${query}` : pathname;
+    router[history](href, { scroll: false });
+    notifyUrlFiltersChanged(query);
+  }, [pathname, router]);
 }
 
 /**
@@ -91,6 +145,7 @@ export function useUrlFilterSet(
       } else {
         latest.delete(paramName);
       }
+      latest.delete("page");
       const query = latest.toString();
       setValue(new Set(nextValues));
       router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
@@ -106,6 +161,7 @@ export function useUrlFilterSet(
       if (current.has(v)) current.delete(v);
       else current.add(v);
       writeUrl(current);
+      track("filter_applied", { filter: paramName, active_count: current.size });
     },
     [paramName, writeUrl],
   );
@@ -134,6 +190,7 @@ export function useClearUrlFilters(paramNames: string[]): () => void {
     for (const name of key.split(",")) {
       latest.delete(name);
     }
+    latest.delete("page");
     const query = latest.toString();
     router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
     notifyUrlFiltersChanged(query);

@@ -2,6 +2,7 @@ import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaNeonHttp } from "@prisma/adapter-neon";
 import { deals } from "./seed-data/deals";
+import { weeklyBriefingDeals } from "./seed-data/weekly-briefing-deals";
 import { funds } from "./seed-data/funds";
 import { companies as portcos } from "./seed-data/companies";
 
@@ -14,6 +15,28 @@ if (!connectionString) {
 
 const adapter = new PrismaNeonHttp(connectionString, { arrayMode: false, fullResults: true });
 const prisma = new PrismaClient({ adapter });
+const MAX_WEEKLY_DATE_DRIFT_MS = 14 * 24 * 60 * 60 * 1000;
+
+function normalizeWeeklyTarget(value: string): string {
+  return value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\([^)]*\)/g, "")
+    .replace(/&/g, " and ")
+    .replace(/[^a-zA-Z0-9]+/g, " ")
+    .trim()
+    .replace(/\s+/g, " ")
+    .toLowerCase();
+}
+
+function weeklyTargetsMatch(left: string, right: string): boolean {
+  const a = normalizeWeeklyTarget(left);
+  const b = normalizeWeeklyTarget(right);
+  if (!a || !b) return false;
+  if (a === b) return true;
+  const [shorter, longer] = a.length < b.length ? [a, b] : [b, a];
+  return shorter.length >= 4 && longer.includes(shorter);
+}
 
 async function main() {
   console.log("Verifying database seed...\n");
@@ -56,7 +79,7 @@ async function main() {
     prisma.milestone.count(),
     prisma.person.count(),
     prisma.managementRole.count(),
-    prisma.deal.count(),
+    prisma.deal.count({ where: { status: "PUBLISHED" } }),
     prisma.dealParticipant.count(),
     prisma.source.count(),
     prisma.citation.count(),
@@ -86,7 +109,7 @@ async function main() {
 
   const [
     dealsWithBuyer,
-    dealsWithCitation,
+    publishedDealsMissingCitation,
     companiesWithOwnership,
     companiesWithMilestones,
     ownershipsWithoutInvestor,
@@ -95,7 +118,11 @@ async function main() {
     duplicateFundLegacyIds,
   ] = await Promise.all([
     prisma.deal.count({ where: { participants: { some: { role: "BUYER" } } } }),
-    prisma.deal.count({ where: { citations: { some: {} } } }),
+    prisma.deal.findMany({
+      where: { status: "PUBLISHED", citations: { none: {} } },
+      select: { legacyId: true, target: true },
+      orderBy: { date: "desc" },
+    }),
     prisma.company.count({ where: { ownershipPeriods: { some: {} } } }),
     prisma.company.count({ where: { milestones: { some: {} } } }),
     prisma.ownershipPeriod.count({ where: { fundId: null, organizationId: null } }),
@@ -129,13 +156,39 @@ async function main() {
   ]);
 
   check("Deals with buyer", Math.floor(dealCount * 0.95), dealsWithBuyer);
-  check("Deals with citation", Math.floor(dealCount * 0.85), dealsWithCitation);
+  exact("Published deals missing a primary citation", 0, publishedDealsMissingCitation.length);
+  if (publishedDealsMissingCitation.length > 0) {
+    console.log(`    Missing citations: ${publishedDealsMissingCitation.map((deal) => `${deal.legacyId} (${deal.target})`).join(", ")}`);
+  }
   check("Companies with ownership", Math.floor(companyCount * 0.95), companiesWithOwnership);
   check("Companies with milestones", Math.floor(companyCount * 0.95), companiesWithMilestones);
   exact("Ownerships without fund or organization", 0, ownershipsWithoutInvestor);
   exact("Duplicate company name/country keys", 0, Number(duplicateCompanyKeys[0]?.count ?? 0));
   exact("Duplicate deal legacy IDs", 0, Number(duplicateDealLegacyIds[0]?.count ?? 0));
   exact("Duplicate fund legacy IDs", 0, Number(duplicateFundLegacyIds[0]?.count ?? 0));
+
+  const publishedDeals = await prisma.deal.findMany({
+    where: { status: "PUBLISHED" },
+    select: { legacyId: true, target: true, date: true },
+  });
+  const missingWeeklyDeals = weeklyBriefingDeals.filter((weeklyDeal) =>
+    !publishedDeals.some((deal) =>
+      deal.legacyId === weeklyDeal.id ||
+      (
+        weeklyTargetsMatch(deal.target, weeklyDeal.target) &&
+        Math.abs(deal.date.getTime() - new Date(weeklyDeal.date).getTime()) <= MAX_WEEKLY_DATE_DRIFT_MS
+      ),
+    ),
+  );
+  exact("Missing published weekly briefing deals", 0, missingWeeklyDeals.length);
+  if (missingWeeklyDeals.length > 0) {
+    const missingByIssue = missingWeeklyDeals.reduce<Record<string, number>>((counts, deal) => {
+      const issue = deal.id.slice(3, 13);
+      counts[issue] = (counts[issue] ?? 0) + 1;
+      return counts;
+    }, {});
+    console.log(`    Missing by issue: ${JSON.stringify(missingByIssue)}`);
+  }
 
   console.log("\n" + (allPassed ? "All checks passed." : "Some checks failed."));
   if (!allPassed) process.exit(1);

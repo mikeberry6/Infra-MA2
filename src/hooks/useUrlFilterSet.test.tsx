@@ -66,6 +66,13 @@ describe("useUrlFilterSet", () => {
     await userEvent.click(screen.getByText("clear"));
     expect(replace).toHaveBeenCalledWith("/tracker?region=Europe", { scroll: false });
   });
+
+  it("resets pagination when a filter changes", async () => {
+    window.history.replaceState({}, "", "/?page=4");
+    render(<Harness />);
+    await userEvent.click(screen.getByText("toggle-digital"));
+    expect(replace).toHaveBeenCalledWith("/tracker?sector=Digital", { scroll: false });
+  });
 });
 
 describe("useClearUrlFilters", () => {

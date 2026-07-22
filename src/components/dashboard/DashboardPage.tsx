@@ -148,6 +148,21 @@ export function DashboardPage({
 function DashboardHeader({ view }: { view: DashboardView }) {
   const stance = view.scorecard.stance;
   const tone = stance === "Risk-On" ? "supportive" : stance === "Risk-Off" ? "restrictive" : "neutral";
+  const latestBySource = Array.from(
+    view.sourceHealth.reduce((runs, run) => {
+      if (!runs.has(run.sourceId)) runs.set(run.sourceId, run);
+      return runs;
+    }, new Map<string, DashboardView["sourceHealth"][number]>()),
+  ).map(([, run]) => run);
+  const successfulRuns = latestBySource.filter((run) => run.status === "SUCCESS" || run.status === "PARTIAL");
+  const latestSuccessfulRun = successfulRuns
+    .map((run) => run.endedAt ?? run.startedAt)
+    .sort()
+    .at(-1);
+  const nextExpected = latestSuccessfulRun
+    ? new Date(new Date(latestSuccessfulRun).getTime() + 24 * 60 * 60 * 1000).toISOString().slice(0, 10)
+    : "Pending";
+  const availableSeries = view.allSeries.filter((series) => !series.unavailable).length;
 
   return (
     <section className="mb-5 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] shadow-[0_1px_2px_rgba(17,17,20,0.03)]">
@@ -178,6 +193,19 @@ function DashboardHeader({ view }: { view: DashboardView }) {
             </div>
           </div>
         </div>
+        <dl className="mt-5 grid grid-cols-2 gap-2 lg:grid-cols-4" aria-label="Dashboard data operations summary">
+          {[
+            { label: "Last successful run", value: latestSuccessfulRun?.slice(0, 10) ?? "Not recorded" },
+            { label: "Next expected", value: nextExpected },
+            { label: "Metric availability", value: `${availableSeries}/${view.allSeries.length}` },
+            { label: "Source coverage", value: `${successfulRuns.length}/${latestBySource.length || 0}` },
+          ].map((metric) => (
+            <div key={metric.label} className="rounded-md border border-[var(--border)] bg-[var(--bg-subtle)] px-3 py-2.5">
+              <dt className="type-micro font-medium text-[var(--text-secondary)]">{metric.label}</dt>
+              <dd className="mt-1 mono type-meta font-semibold tabular-nums text-[var(--text-primary)]">{metric.value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

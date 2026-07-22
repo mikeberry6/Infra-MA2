@@ -14,7 +14,13 @@ export function isAuthorizationError(error: unknown): error is AuthorizationErro
 
 export async function getSessionRole(): Promise<string | null> {
   const session = await getServerSession(authOptions);
-  return (session?.user as { role?: string } | undefined)?.role ?? null;
+  return session?.user?.role ?? null;
+}
+
+export async function getSessionIdentity(): Promise<{ id: string; role: string } | null> {
+  const session = await getServerSession(authOptions);
+  if (!session?.user?.id || !session.user.role) return null;
+  return { id: session.user.id, role: session.user.role };
 }
 
 export async function requireAdmin(): Promise<void> {

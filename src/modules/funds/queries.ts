@@ -10,7 +10,7 @@ import {
   COMPANY_SECTOR_DISPLAY,
   COMPANY_REGION_DISPLAY,
 } from "@/modules/shared/enum-maps";
-import type { FundStrategyView, FundView, PortfolioCompanyView } from "@/modules/shared/types";
+import type { FundListItem, FundStrategyView, FundView, PortfolioCompanyView } from "@/modules/shared/types";
 import type { Fund as DbFund } from "@/generated/prisma/client";
 
 function toFundView(
@@ -91,13 +91,36 @@ const FUND_INCLUDE = {
   },
 } as const;
 
-async function getAllFundsRaw(): Promise<FundView[]> {
+const FUND_LIST_SELECT = {
+  legacyId: true,
+  fundName: true,
+  size: true,
+  sizeUsdMm: true,
+  vintage: true,
+  strategies: true,
+  fundStatus: true,
+  sectors: true,
+  manager: { select: { name: true } },
+} as const;
+
+async function getAllFundsRaw(): Promise<FundListItem[]> {
   const funds = await prisma.fund.findMany({
     where: { status: "PUBLISHED" },
-    include: FUND_INCLUDE,
+    select: FUND_LIST_SELECT,
     orderBy: { fundName: "asc" },
   });
-  return funds.map(toFundView);
+  return funds.map((fund) => ({
+    id: fund.legacyId,
+    legacyId: fund.legacyId,
+    managerName: fund.manager.name,
+    fundName: fund.fundName,
+    size: fund.size,
+    sizeUsdMm: fund.sizeUsdMm,
+    vintage: fund.vintage,
+    strategies: fund.strategies.map((strategy) => FUND_STRATEGY_DISPLAY[strategy]),
+    status: FUND_STATUS_DISPLAY[fund.fundStatus],
+    sectors: fund.sectors.map((sector) => FUND_SECTOR_DISPLAY[sector]),
+  }));
 }
 
 const getAllFundsCached = unstable_cache(
@@ -106,8 +129,17 @@ const getAllFundsCached = unstable_cache(
   { tags: [CACHE_TAGS.funds], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
-export async function getAllFunds(): Promise<FundView[]> {
+export async function getAllFunds(): Promise<FundListItem[]> {
   return getAllFundsCached();
+}
+
+export async function getAllFundDetails(): Promise<FundView[]> {
+  const funds = await prisma.fund.findMany({
+    where: { status: "PUBLISHED" },
+    include: FUND_INCLUDE,
+    orderBy: { fundName: "asc" },
+  });
+  return funds.map(toFundView);
 }
 
 async function getFundStrategyIndexRaw(): Promise<FundStrategyView[]> {

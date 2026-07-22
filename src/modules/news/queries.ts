@@ -62,11 +62,56 @@ async function getNewsRows() {
 }
 
 async function getNewsFeedRaw(): Promise<NewsFeedView> {
-  const rows = await getNewsRows();
+  const [rows, latestAttempt, latestSuccess] = await Promise.all([
+    getNewsRows(),
+    prisma.pipelineRun.findFirst({
+      where: { pipeline: "NEWS_SCAN" },
+      orderBy: { startedAt: "desc" },
+    }),
+    prisma.pipelineRun.findFirst({
+      where: { pipeline: "NEWS_SCAN", status: "SUCCEEDED" },
+      orderBy: { endedAt: "desc" },
+    }),
+  ]);
+  const lastSuccessfulAt = latestSuccess?.endedAt ?? latestSuccess?.startedAt;
+  const nextExpected = lastSuccessfulAt
+    ? new Date(lastSuccessfulAt.getTime() + 24 * 60 * 60 * 1000)
+    : null;
+  const overdue = !lastSuccessfulAt || Date.now() - lastSuccessfulAt.getTime() > 36 * 60 * 60 * 1000;
+  const latestMetadata = latestSuccess?.metadata && typeof latestSuccess.metadata === "object"
+    ? latestSuccess.metadata as Record<string, unknown>
+    : null;
+  const tracked = latestMetadata?.tracked && typeof latestMetadata.tracked === "object"
+    ? Object.values(latestMetadata.tracked as Record<string, unknown>).reduce<number>(
+        (sum, value) => sum + (typeof value === "number" ? value : 0),
+        0,
+      )
+    : undefined;
+  const state = !latestAttempt
+    ? "never-run"
+    : latestAttempt.status === "FAILED"
+      ? "failed"
+      : overdue
+        ? "overdue"
+        : "healthy";
 
   return {
     items: rows.map(toNewsItemView),
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: lastSuccessfulAt?.toISOString() ?? rows[0]?.updatedAt.toISOString() ?? new Date(0).toISOString(),
+    operations: {
+      state,
+      lastAttemptAt: latestAttempt?.startedAt.toISOString(),
+      lastSuccessfulAt: lastSuccessfulAt?.toISOString(),
+      nextExpectedAt: nextExpected?.toISOString(),
+      trackedEntities: tracked,
+      message: state === "healthy"
+        ? "The daily public-source scan completed successfully."
+        : state === "failed"
+          ? "The latest scan failed; the last successful results remain visible."
+          : state === "overdue"
+            ? "The next scheduled scan is overdue."
+            : "No completed news scan has been recorded yet.",
+    },
   };
 }
 

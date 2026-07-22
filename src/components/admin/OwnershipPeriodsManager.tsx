@@ -75,11 +75,11 @@ export function OwnershipPeriodsManager({
   }
 
   return (
-    <div className="bg-[#18181B] border border-black/[0.08] rounded p-5 mt-6">
+    <div className="surface mt-6 p-5">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h2 className="text-base font-semibold">Ownership History</h2>
-          <p className="text-xs text-[#999999] mt-0.5">
+          <p className="mt-0.5 type-micro">
             Every firm that has owned this company. The &quot;Active&quot; period drives the table-view firm column.
           </p>
         </div>
@@ -87,7 +87,7 @@ export function OwnershipPeriodsManager({
           <button
             type="button"
             onClick={() => setEditingId("new")}
-            className="text-xs px-3 py-1.5 bg-[#3F3F46] hover:bg-[#52525B] rounded"
+            className="rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 py-1.5 type-micro font-medium text-[var(--text-primary)] hover:bg-[var(--bg-hover)]"
           >
             + Add owner
           </button>
@@ -111,7 +111,7 @@ export function OwnershipPeriodsManager({
 
       <div className="space-y-2 mt-3">
         {periods.length === 0 && editingId !== "new" && (
-          <p className="text-xs text-[#999999]">No ownership periods recorded.</p>
+          <p className="type-micro">No ownership periods recorded.</p>
         )}
         {periods.map((p) =>
           editingId === p.id ? (
@@ -126,7 +126,7 @@ export function OwnershipPeriodsManager({
           ) : (
             <div
               key={p.id}
-              className="flex items-center justify-between bg-[#0F0F11] border border-black/[0.08] rounded px-3 py-2"
+              className="flex items-center justify-between rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 py-2"
             >
               <div className="flex items-center gap-3 min-w-0">
                 <span
@@ -136,7 +136,7 @@ export function OwnershipPeriodsManager({
                 />
                 <div className="min-w-0">
                   <div className="text-sm font-medium truncate">{p.investmentFirm}</div>
-                  <div className="text-xs text-[#999999] truncate">
+                  <div className="truncate type-micro">
                     {p.ownershipVehicle || "—"}
                     {p.investmentYear ? ` · ${p.investmentYear}` : ""}
                     {p.exitYear ? `–${p.exitYear}` : p.isActive && p.investmentYear ? "–Present" : ""}
@@ -148,7 +148,7 @@ export function OwnershipPeriodsManager({
                 <button
                   type="button"
                   onClick={() => setEditingId(p.id)}
-                  className="text-xs px-2 py-1 bg-[#27272A] hover:bg-[#3F3F46] rounded"
+                  className="rounded-md px-2 py-1 type-micro font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
                   disabled={isPending}
                 >
                   Edit
@@ -186,50 +186,50 @@ function OwnershipForm({
   return (
     <form
       action={onSubmit}
-      className="bg-[#0F0F11] border border-[#3F3F46] rounded p-3 space-y-2"
+      className="space-y-3 rounded-md border border-[var(--border)] bg-[var(--bg-subtle)] p-3"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         <label className="text-xs space-y-1">
-          <span className="block text-[#6e6e6e]">Investment firm *</span>
+          <span className="block type-micro font-medium text-[var(--text-secondary)]">Investment firm *</span>
           <input
             name="investmentFirm"
             defaultValue={initial?.investmentFirm ?? ""}
             required
-            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
+            className="w-full rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-1.5 text-[var(--text-primary)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-soft)]"
           />
         </label>
         <label className="text-xs space-y-1">
-          <span className="block text-[#6e6e6e]">Ownership vehicle (fund name)</span>
+          <span className="block type-micro font-medium text-[var(--text-secondary)]">Ownership vehicle (fund name)</span>
           <input
             name="ownershipVehicle"
             defaultValue={initial?.ownershipVehicle ?? ""}
-            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
+            className="w-full rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-1.5 text-[var(--text-primary)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-soft)]"
           />
         </label>
         <label className="text-xs space-y-1">
-          <span className="block text-[#6e6e6e]">Investment year</span>
+          <span className="block type-micro font-medium text-[var(--text-secondary)]">Investment year</span>
           <input
             name="investmentYear"
             type="number"
             defaultValue={initial?.investmentYear ?? ""}
-            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
+            className="w-full rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-1.5 text-[var(--text-primary)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-soft)]"
           />
         </label>
         <label className="text-xs space-y-1">
-          <span className="block text-[#6e6e6e]">Exit year (blank if active)</span>
+          <span className="block type-micro font-medium text-[var(--text-secondary)]">Exit year (blank if active)</span>
           <input
             name="exitYear"
             type="number"
             defaultValue={initial?.exitYear ?? ""}
-            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
+            className="w-full rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-1.5 text-[var(--text-primary)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-soft)]"
           />
         </label>
         <label className="text-xs space-y-1">
-          <span className="block text-[#6e6e6e]">Stake (e.g. &quot;30%&quot;)</span>
+          <span className="block type-micro font-medium text-[var(--text-secondary)]">Stake (e.g. &quot;30%&quot;)</span>
           <input
             name="stake"
             defaultValue={initial?.stake ?? ""}
-            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
+            className="w-full rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-1.5 text-[var(--text-primary)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-soft)]"
           />
         </label>
         <label className="text-xs flex items-center gap-2 mt-5">
@@ -239,7 +239,7 @@ function OwnershipForm({
             value="true"
             defaultChecked={initial?.isActive ?? true}
           />
-          <span className="text-[#6e6e6e]">Currently owns this company</span>
+          <span className="type-micro text-[var(--text-secondary)]">Currently owns this company</span>
         </label>
       </div>
       <div className="flex justify-end gap-2 pt-1">
@@ -247,7 +247,7 @@ function OwnershipForm({
           type="button"
           onClick={onCancel}
           disabled={isPending}
-          className="text-xs px-3 py-1.5 bg-[#27272A] hover:bg-[#3F3F46] rounded"
+          className="rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 py-1.5 type-micro font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
         >
           Cancel
         </button>

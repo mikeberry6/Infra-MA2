@@ -27,8 +27,9 @@
  *      countryTags onto the canonical row.
  *   4. Backfill canonical fields (description, headquarters, yearFounded,
  *      website) from a duplicate when canonical is missing them.
- *   5. Delete the duplicate Company rows. Cascades clean up any leftover
- *      relations.
+ *   5. Create a CompanyRedirect for every retired ID, then delete the
+ *      duplicate Company rows. Cascades clean up any leftover relations.
+ *   6. Record the reviewed merge as an AuditEvent.
  */
 import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
@@ -202,10 +203,30 @@ async function main() {
         await tx.citation.deleteMany({ where: { companyId: dup.id } });
         await tx.ownershipPeriod.deleteMany({ where: { companyId: dup.id } });
 
+        // Preserve all existing deep links before retiring the duplicate ID.
+        await tx.companyRedirect.upsert({
+          where: { retiredId: dup.id },
+          create: { retiredId: dup.id, companyId: canonical.id },
+          update: { companyId: canonical.id, reason: "CANONICAL_MERGE" },
+        });
+
         // Delete the duplicate row.
         await tx.company.delete({ where: { id: dup.id } });
         deletedCompanies++;
       }
+
+      await tx.auditEvent.create({
+        data: {
+          entityType: "Company",
+          entityId: canonical.id,
+          action: "CANONICAL_MERGE",
+          changes: {
+            retiredIds: duplicates.map((company) => company.id),
+            retiredNames: duplicates.map((company) => company.name),
+          },
+          metadata: { source: "scripts/merge-duplicate-companies.ts" },
+        },
+      });
     });
 
     mergedClusters++;

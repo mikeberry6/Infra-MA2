@@ -12,6 +12,7 @@ export default async function AdminDashboard() {
   const userCount = await prisma.user.count();
   const draftDeals = await prisma.deal.count({ where: { status: "DRAFT" } });
   const draftCompanies = await prisma.company.count({ where: { status: "DRAFT" } });
+  const auditCount = await prisma.auditEvent.count();
 
   const sections = [
     { href: "/admin/deals", label: "Deals", count: counts.deals, drafts: draftDeals },
@@ -19,6 +20,7 @@ export default async function AdminDashboard() {
     { href: "/admin/funds", label: "Funds", count: counts.funds, drafts: 0 },
     { href: "/admin/sources", label: "Sources", count: 0, drafts: 0 },
     { href: "/admin/users", label: "Users", count: userCount, drafts: 0 },
+    { href: "/admin/audit", label: "Audit log", count: auditCount, drafts: 0 },
   ];
 
   return (

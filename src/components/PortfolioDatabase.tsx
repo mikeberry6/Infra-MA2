@@ -5,7 +5,7 @@ import { PORTCO_SECTORS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
 import { getPortCoSectorColor, getPortCoRegionColor, getPortCoCountryTagColor } from "@/lib/colors";
 import { getUniqueFirms, getAllOwnerFirms } from "@/lib/portco-utils";
 import { withBasePath } from "@/lib/base-path";
-import type { CompanyView, FundStrategyView, DatabaseCounts } from "@/modules/shared/types";
+import type { CompanyView, FundStrategyView, DatabaseCounts, RecordMeta } from "@/modules/shared/types";
 import {
   Search,
   Download,
@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { PortCoDrawer } from "@/components/PortfolioDatabase/PortCoDrawer";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam } from "@/hooks/useUrlFilterSet";
+import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam, useUrlQueryState, useUrlQueryWriter } from "@/hooks/useUrlFilterSet";
 import { useCanExport } from "@/hooks/useCanExport";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
@@ -28,9 +28,12 @@ import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
+import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
+import { track } from "@vercel/analytics";
 
 const INVESTMENT_YEAR_NA = "N/A";
-const PORTCO_PAGE_SIZE = 100;
+const PORTCO_PAGE_SIZE = 25;
+const companyDetailCache = new Map<string, { data: CompanyView; meta: RecordMeta }>();
 
 function mostCommonLabel(items: string[]): { label: string; count: number } | null {
   const counts = new Map<string, number>();
@@ -74,10 +77,20 @@ function PortCoFilterBar({
   investmentYearOptions: string[];
   onClearAll: () => void;
 }) {
+  const activeCount = activeSectors.size + activeCountryTags.size + activeFirms.size + activeInvestmentYears.size;
+  const filterControls = (
+    <>
+      <MultiSelectDropdown label="Sector" options={PORTCO_SECTORS} selected={activeSectors} onToggle={onToggleSector} getColor={(v) => getPortCoSectorColor(v)} />
+      <MultiSelectDropdown label="Country" options={PORTCO_COUNTRY_TAGS as unknown as string[]} selected={activeCountryTags} onToggle={onToggleCountryTag} getColor={(v) => getPortCoCountryTagColor(v)} />
+      <MultiSelectDropdown label="Firm" options={firmOptions} selected={activeFirms} onToggle={onToggleFirm} getColor={() => "#a78bfa"} />
+      <MultiSelectDropdown label="Year" options={investmentYearOptions} selected={activeInvestmentYears} onToggle={onToggleInvestmentYear} getColor={() => "#f59e0b"} align="right" />
+    </>
+  );
+
   return (
     <div className="mb-3 space-y-3">
-      <div className="bg-[var(--bg-surface)] border border-[var(--border)] rounded-lg flex items-center gap-2 px-2 py-2 sticky top-14 z-30 overflow-x-auto">
-        <div className="flex-1 min-w-[160px] max-w-xs">
+      <div className="sticky top-14 z-30 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
+        <div className="min-w-0 flex-1 md:max-w-xs">
           <TextInput
             leadingIcon={<Search />}
             value={search}
@@ -86,36 +99,14 @@ function PortCoFilterBar({
             aria-label="Search portfolio companies"
           />
         </div>
-        <Divider orientation="vertical" />
-        <MultiSelectDropdown
-          label="Sector"
-          options={PORTCO_SECTORS}
-          selected={activeSectors}
-          onToggle={onToggleSector}
-          getColor={(v) => getPortCoSectorColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Country"
-          options={PORTCO_COUNTRY_TAGS as unknown as string[]}
-          selected={activeCountryTags}
-          onToggle={onToggleCountryTag}
-          getColor={(v) => getPortCoCountryTagColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Firm"
-          options={firmOptions}
-          selected={activeFirms}
-          onToggle={onToggleFirm}
-          getColor={() => "#a78bfa"}
-        />
-        <MultiSelectDropdown
-          label="Year"
-          options={investmentYearOptions}
-          selected={activeInvestmentYears}
-          onToggle={onToggleInvestmentYear}
-          getColor={() => "#f59e0b"}
-          align="right"
-        />
+        <div className="hidden items-center gap-2 md:flex">
+          <Divider orientation="vertical" />
+          {filterControls}
+        </div>
+        <MobileFilterSheet activeCount={activeCount}>
+          <div className="grid grid-cols-2 gap-3">{filterControls}</div>
+          {activeCount > 0 && <button type="button" onClick={onClearAll} className="type-meta font-medium text-[var(--accent)]">Clear all filters</button>}
+        </MobileFilterSheet>
       </div>
 
       <ActiveFiltersStrip
@@ -287,9 +278,14 @@ function PortCoTable({
   activeFirms: Set<string>;
   onSelect: (company: CompanyView) => void;
 }) {
-  const [sortField, setSortField] = useState<"name" | "sector" | "country" | "firm">("name");
-  const [sortAsc, setSortAsc] = useState(true);
-  const [page, setPage] = useState(1);
+  const [sortParam, setSortParam] = useUrlQueryState("sort", "name", { resetPage: true });
+  const [direction, setDirection] = useUrlQueryState("direction", "asc", { resetPage: true });
+  const [pageParam, setPageParam] = useUrlQueryState("page", "1");
+  const sortField: "name" | "sector" | "country" | "firm" = ["sector", "country", "firm"].includes(sortParam)
+    ? sortParam as "sector" | "country" | "firm"
+    : "name";
+  const sortAsc = direction !== "desc";
+  const page = Math.max(1, Number.parseInt(pageParam, 10) || 1);
 
   const sorted = useMemo(() => {
     const list = [...companies];
@@ -306,10 +302,6 @@ function PortCoTable({
     return list;
   }, [companies, sortField, sortAsc]);
 
-  useEffect(() => {
-    setPage(1);
-  }, [companies]);
-
   const totalPages = Math.max(1, Math.ceil(sorted.length / PORTCO_PAGE_SIZE));
   const safePage = Math.min(page, totalPages);
   const visibleCompanies = useMemo(() => {
@@ -319,10 +311,10 @@ function PortCoTable({
 
   const toggleSort = (field: typeof sortField) => {
     if (sortField === field) {
-      setSortAsc(!sortAsc);
+      setDirection(sortAsc ? "desc" : "asc");
     } else {
-      setSortField(field);
-      setSortAsc(true);
+      setSortParam(field);
+      setDirection("asc");
     }
   };
 
@@ -450,7 +442,7 @@ function PortCoTable({
         page={safePage}
         pageSize={PORTCO_PAGE_SIZE}
         totalItems={sorted.length}
-        onPageChange={setPage}
+        onPageChange={(next) => setPageParam(String(next))}
       />
     </>
   );
@@ -459,13 +451,17 @@ function PortCoTable({
 // ─── Main Component ─────────────────────────────────────────
 
 export function PortfolioDatabase({ companies: portcos, funds, counts }: { companies: CompanyView[]; funds: FundStrategyView[]; counts: DatabaseCounts }) {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeCountryTags, toggleCountryTag] = useUrlFilterSet("country");
   const [activeFirms, toggleFirm] = useUrlFilterSet("firm");
   const [activeInvestmentYears, toggleInvestmentYear] = useUrlFilterSet("year");
   const [selectedCompany, setSelectedCompany] = useState<CompanyView | null>(null);
   const [selectedCompanyDetail, setSelectedCompanyDetail] = useState<CompanyView | null>(null);
+  const [detailMeta, setDetailMeta] = useState<RecordMeta | null>(null);
+  const [detailState, setDetailState] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const [detailRequest, setDetailRequest] = useState(0);
+  const writeQuery = useUrlQueryWriter();
   const canExport = useCanExport();
 
   const debouncedSearch = useDebounce(search, 300);
@@ -474,7 +470,16 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
   const focusId = useUrlQueryParam("focus");
   const openedFocus = useRef<string | null>(null);
   useEffect(() => {
-    if (!focusId || openedFocus.current === focusId) return;
+    if (!focusId) {
+      if (openedFocus.current) {
+        setSelectedCompany(null);
+        setSelectedCompanyDetail(null);
+        setDetailMeta(null);
+      }
+      openedFocus.current = null;
+      return;
+    }
+    if (openedFocus.current === focusId) return;
     const match = portcos.find((c) => c.id === focusId || c.focusIds.includes(focusId));
     if (match) {
       setSelectedCompany(match);
@@ -485,33 +490,69 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
   useEffect(() => {
     if (!selectedCompany) {
       setSelectedCompanyDetail(null);
+      setDetailMeta(null);
+      setDetailState("idle");
+      return;
+    }
+
+    const cached = companyDetailCache.get(selectedCompany.id);
+    if (cached) {
+      setSelectedCompanyDetail(cached.data);
+      setDetailMeta(cached.meta);
+      setDetailState("ready");
       return;
     }
 
     let cancelled = false;
     setSelectedCompanyDetail(null);
+    setDetailMeta(null);
+    setDetailState("loading");
 
     fetch(withBasePath(`/api/portfolio/${encodeURIComponent(selectedCompany.id)}`))
       .then((response) => response.ok ? response.json() : null)
       .then((data) => {
-        if (!cancelled && data?.company) {
-          setSelectedCompanyDetail(data.company);
+        if (!cancelled && data?.data) {
+          companyDetailCache.set(selectedCompany.id, data);
+          setSelectedCompanyDetail(data.data);
+          setDetailMeta(data.meta);
+          setDetailState("ready");
+        } else if (!cancelled) {
+          setDetailState("error");
         }
       })
       .catch(() => {
-        if (!cancelled) setSelectedCompanyDetail(null);
+        if (!cancelled) {
+          setSelectedCompanyDetail(null);
+          setDetailState("error");
+        }
       });
 
     return () => {
       cancelled = true;
     };
-  }, [selectedCompany]);
+  }, [selectedCompany, detailRequest]);
+
+  const openCompany = useCallback((company: CompanyView) => {
+    setSelectedCompany(company);
+    openedFocus.current = company.id;
+    writeQuery("focus", company.id, "push");
+    track("drawer_opened", { entity: "company" });
+  }, [writeQuery]);
+
+  const closeCompany = useCallback(() => {
+    setSelectedCompany(null);
+    setSelectedCompanyDetail(null);
+    setDetailMeta(null);
+    setDetailState("idle");
+    openedFocus.current = null;
+    writeQuery("focus", null);
+  }, [writeQuery]);
 
   const clearAllUrlFilters = useClearUrlFilters(["sector", "country", "firm", "year"]);
   const clearFilters = useCallback(() => {
     clearAllUrlFilters();
     setSearch("");
-  }, [clearAllUrlFilters]);
+  }, [clearAllUrlFilters, setSearch]);
 
   const firmOptions = useMemo(() => getUniqueFirms(portcos), [portcos]);
   const investmentYearOptions = useMemo(() => {
@@ -624,6 +665,10 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
         onClearAll={clearFilters}
       />
 
+      <MarketSnapshotSection>
+        <PortCoInsightsHero companies={filteredCompanies} />
+      </MarketSnapshotSection>
+
       <div className="surface overflow-hidden">
         <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
           <span className="type-micro">
@@ -636,6 +681,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
               <a
                 href={withBasePath("/api/exports/portfolio")}
                 download
+                onClick={() => track("export_started", { entity: "company" })}
                 className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
               >
                 <Download className="h-3 w-3" />
@@ -655,24 +701,20 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
         <PortCoTable
           companies={filteredCompanies}
           activeFirms={activeFirms}
-          onSelect={setSelectedCompany}
+          onSelect={openCompany}
         />
       </div>
 
       <CTABlock />
 
-      <MarketSnapshotSection>
-        <PortCoInsightsHero companies={filteredCompanies} />
-      </MarketSnapshotSection>
-
       {selectedCompany && (
         <PortCoDrawer
           company={selectedCompanyDetail ?? selectedCompany}
           funds={funds}
-          onClose={() => {
-            setSelectedCompany(null);
-            setSelectedCompanyDetail(null);
-          }}
+          detailState={detailState}
+          detailMeta={detailMeta}
+          onRetry={() => setDetailRequest((value) => value + 1)}
+          onClose={closeCompany}
         />
       )}
     </div>

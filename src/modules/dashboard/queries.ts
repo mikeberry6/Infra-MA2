@@ -1,5 +1,4 @@
 import { prisma } from "@/lib/prisma";
-import { buildSampleDashboardView } from "@/modules/dashboard/sample";
 import { buildDashboardView } from "@/modules/dashboard/view-model";
 import type {
   DashboardObservation,
@@ -32,7 +31,7 @@ export async function getDashboardView() {
   ]);
 
   if (observationRows.length === 0 && signalRows.length === 0) {
-    return buildSampleDashboardView("No dashboard cache records were found in Prisma.");
+    throw new Error("No dashboard cache records were found in Prisma.");
   }
 
   return buildDashboardView({

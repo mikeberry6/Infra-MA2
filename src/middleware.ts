@@ -10,6 +10,9 @@ function requestPathWithBasePath(request: NextRequest): string {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const requestId = request.headers.get("x-request-id") || crypto.randomUUID();
+  const forwardedHeaders = new Headers(request.headers);
+  forwardedHeaders.set("x-request-id", requestId);
 
   const isPrivileged =
     pathname.startsWith("/admin") ||
@@ -17,13 +20,15 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith("/api/exports");
 
   if (!isPrivileged) {
-    return NextResponse.next();
+    const response = NextResponse.next({ request: { headers: forwardedHeaders } });
+    response.headers.set("x-request-id", requestId);
+    return response;
   }
 
   const nextAuthSecret = process.env.NEXTAUTH_SECRET;
   if (!nextAuthSecret) {
     console.error("NEXTAUTH_SECRET is not configured");
-    return NextResponse.json({ error: "Server misconfigured" }, { status: 500 });
+    return NextResponse.json({ error: "Server misconfigured" }, { status: 500, headers: { "x-request-id": requestId } });
   }
 
   const token = await getToken({ req: request, secret: nextAuthSecret });
@@ -33,18 +38,22 @@ export async function middleware(request: NextRequest) {
     const loginUrl = request.nextUrl.clone();
     loginUrl.pathname = "/login";
     loginUrl.searchParams.set("callbackUrl", requestPathWithBasePath(request));
-    return NextResponse.redirect(loginUrl);
+    const response = NextResponse.redirect(loginUrl);
+    response.headers.set("x-request-id", requestId);
+    return response;
   }
 
   if (pathname.startsWith("/api/imports") && role !== "ADMIN") {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    return NextResponse.json({ error: "Forbidden" }, { status: 403, headers: { "x-request-id": requestId } });
   }
 
   if (pathname.startsWith("/api/exports") && role !== "ADMIN" && role !== "ANALYST") {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    return NextResponse.json({ error: "Forbidden" }, { status: 403, headers: { "x-request-id": requestId } });
   }
 
-  return NextResponse.next();
+  const response = NextResponse.next({ request: { headers: forwardedHeaders } });
+  response.headers.set("x-request-id", requestId);
+  return response;
 }
 
 export const config = {

@@ -1,6 +1,7 @@
 "use client";
 
 import { Mail } from "lucide-react";
+import { track } from "@vercel/analytics";
 
 export function CTABlock() {
   return (
@@ -22,6 +23,7 @@ export function CTABlock() {
           </div>
           <a
             href="mailto:research@infrasight.com?subject=InfraSight%20research%20request"
+            onClick={() => track("research_contact_initiated", { placement: "database_cta" })}
             className="inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md bg-[var(--accent)] px-3.5 type-meta font-medium text-[var(--text-on-accent)] transition-colors hover:bg-[var(--accent-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
           >
             <Mail className="h-3.5 w-3.5" />

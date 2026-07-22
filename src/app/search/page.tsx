@@ -3,15 +3,15 @@ export const dynamic = "force-dynamic";
 import { searchAll, type SearchResult } from "@/modules/search/queries";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Search } from "lucide-react";
-import { TextInput } from "@/components/shared/TextInput";
 import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
+import { TrackedSearchForm } from "@/components/search/TrackedSearchForm";
 
 export const metadata: Metadata = {
   title: "Search",
 };
 
 const TYPE_LABEL = { deal: "Deal", company: "Company", fund: "Fund" } as const;
+const TYPE_PLURAL_LABEL = { deal: "Deals", company: "Companies", fund: "Funds" } as const;
 const TYPE_DOT_COLOR: Record<SearchResult["type"], string> = {
   deal: "#3b82f6",
   company: "#10b981",
@@ -43,6 +43,9 @@ export default async function SearchPage({
   const dealCount = results.filter((result) => result.type === "deal").length;
   const companyCount = results.filter((result) => result.type === "company").length;
   const fundCount = results.filter((result) => result.type === "fund").length;
+  const groupedResults = (["deal", "company", "fund"] as const)
+    .map((type) => ({ type, results: results.filter((result) => result.type === type) }))
+    .filter((group) => group.results.length > 0);
 
   return (
     <div className="mx-auto max-w-[900px] px-4 sm:px-6 py-8 sm:py-10">
@@ -78,17 +81,7 @@ export default async function SearchPage({
         ]}
       />
 
-      <form method="get" className="mb-6">
-        <TextInput
-          type="search"
-          name="q"
-          size="md"
-          defaultValue={query}
-          leadingIcon={<Search />}
-          placeholder="Search deals, companies, and funds..."
-          autoFocus
-        />
-      </form>
+      <TrackedSearchForm query={query} />
 
       {query && (
         <p className="type-micro mb-3">
@@ -96,38 +89,56 @@ export default async function SearchPage({
         </p>
       )}
 
-      <div className="space-y-2">
-        {results.map((result) => (
-          <Link
-            key={`${result.type}-${result.id}`}
-            href={resultHref(result)}
-            className="block surface px-4 py-3 hover:bg-[var(--bg-subtle)] transition-colors group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-          >
-            <div className="flex items-center gap-2 mb-1">
-              <span className="inline-flex items-center gap-1.5">
-                <span
-                  aria-hidden
-                  className="h-[5px] w-[5px] rounded-full"
-                  style={{ backgroundColor: TYPE_DOT_COLOR[result.type] }}
-                />
-                <span className="type-micro font-medium text-[var(--text-secondary)]">
-                  {TYPE_LABEL[result.type]}
-                </span>
-              </span>
-              {result.sector && (
-                <span className="type-micro">· {result.sector}</span>
-              )}
-              {result.region && (
-                <span className="type-micro">· {result.region}</span>
-              )}
+      <div className="space-y-7">
+        {groupedResults.map((group) => (
+          <section key={group.type} aria-labelledby={`results-${group.type}`}>
+            <div className="mb-2 flex items-center gap-2">
+              <h2 id={`results-${group.type}`} className="type-section-title text-[var(--text-primary)]">
+                {TYPE_PLURAL_LABEL[group.type]}
+              </h2>
+              <span className="type-micro mono tabular-nums">{group.results.length}</span>
+              <div className="h-px flex-1 bg-[var(--border)]" />
             </div>
-            <h3 className="type-row-title group-hover:text-[var(--accent)] transition-colors">
-              {result.title}
-            </h3>
-            <p className="type-meta mt-0.5">{result.subtitle}</p>
-          </Link>
+            <div className="space-y-2">
+              {group.results.map((result) => (
+                <Link
+                  key={`${result.type}-${result.id}`}
+                  href={resultHref(result)}
+                  className="block surface px-4 py-3 hover:bg-[var(--bg-subtle)] transition-colors group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span aria-hidden className="h-[5px] w-[5px] rounded-full" style={{ backgroundColor: TYPE_DOT_COLOR[result.type] }} />
+                    <span className="type-micro font-medium text-[var(--text-secondary)]">{TYPE_LABEL[result.type]}</span>
+                    {result.sector && <span className="type-micro">· {result.sector}</span>}
+                    {result.region && <span className="type-micro">· {result.region}</span>}
+                  </div>
+                  <h3 className="type-row-title group-hover:text-[var(--accent)] transition-colors">{result.title}</h3>
+                  <p className="type-meta mt-0.5">{result.subtitle}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
         ))}
       </div>
+
+      {!query && (
+        <section className="surface p-5 sm:p-6">
+          <h2 className="type-section-title">Search the research universe</h2>
+          <p className="mt-1 type-meta">Try a manager, target, fund vehicle, subsector, or transaction phrase.</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {["Brookfield", "data centers", "renewable energy", "Macquarie"].map((example) => (
+              <Link key={example} href={`/search?q=${encodeURIComponent(example)}`} className="rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 py-2 type-meta font-medium hover:bg-[var(--bg-hover)]">
+                {example}
+              </Link>
+            ))}
+          </div>
+          <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-3">
+            <Link href="/tracker" className="surface px-3 py-3 type-meta font-medium hover:bg-[var(--bg-hover)]">Browse deals →</Link>
+            <Link href="/funds" className="surface px-3 py-3 type-meta font-medium hover:bg-[var(--bg-hover)]">Browse funds →</Link>
+            <Link href="/portfolio" className="surface px-3 py-3 type-meta font-medium hover:bg-[var(--bg-hover)]">Browse PortCos →</Link>
+          </div>
+        </section>
+      )}
 
       {query && results.length === 0 && (
         <div className="py-12 text-center type-meta text-[var(--text-tertiary)]">

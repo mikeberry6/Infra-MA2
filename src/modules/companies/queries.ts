@@ -416,10 +416,17 @@ export async function getAllCompanies(options: { detail?: boolean } = {}): Promi
 }
 
 async function getCompanyByFocusIdRaw(focusId: string): Promise<CompanyView | null> {
-  const target = await prisma.company.findFirst({
+  let target = await prisma.company.findFirst({
     where: { id: focusId, status: "PUBLISHED" },
     select: { id: true },
   });
+  if (!target) {
+    const redirect = await prisma.companyRedirect.findUnique({
+      where: { retiredId: focusId },
+      select: { company: { select: { id: true, status: true } } },
+    });
+    if (redirect?.company.status === "PUBLISHED") target = { id: redirect.company.id };
+  }
   if (!target) return null;
 
   // Find dedupe siblings without loading every company's milestones, sources,

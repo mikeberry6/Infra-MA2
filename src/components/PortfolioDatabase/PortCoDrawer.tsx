@@ -15,12 +15,13 @@ import {
   groupSourcesByPurpose,
   inferSourceType,
 } from "@/lib/source-utils";
-import type { CompanyView, FundStrategyView, OwnerView, MilestoneView, SourceView } from "@/modules/shared/types";
+import type { CompanyView, FundStrategyView, OwnerView, MilestoneView, SourceView, RecordMeta } from "@/modules/shared/types";
 import { Tag } from "@/components/shared/Tag";
 import { Button } from "@/components/shared/Button";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
+import { track } from "@vercel/analytics";
 
 type MilestoneClassification =
   | { kind: "entry"; owner: OwnerView }
@@ -648,6 +649,7 @@ function EvidenceGroups({ sources, compact = false }: { sources: SourceView[]; c
                 href={source.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => track("source_link_clicked", { entity: "company", placement: "drawer" })}
                 className="group flex min-w-0 items-start gap-2 rounded-[6px] py-1.5 transition-colors hover:text-[var(--text-primary)]"
                 title={source.label || source.url}
               >
@@ -673,10 +675,16 @@ export function PortCoDrawer({
   company,
   funds,
   onClose,
+  detailState = "ready",
+  onRetry,
+  detailMeta,
 }: {
   company: CompanyView;
   funds: FundStrategyView[];
   onClose: () => void;
+  detailState?: "idle" | "loading" | "ready" | "error";
+  onRetry?: () => void;
+  detailMeta?: RecordMeta | null;
 }) {
   const [showAllMilestones, setShowAllMilestones] = useState(false);
   const [showFormerOwners, setShowFormerOwners] = useState(false);
@@ -817,6 +825,36 @@ export function PortCoDrawer({
             </button>
           </div>
         </header>
+
+        {detailState !== "ready" && detailState !== "idle" && (
+          <div
+            className={`mx-6 mt-4 rounded-md border px-3 py-2.5 type-meta sm:mx-8 lg:mx-10 ${
+              detailState === "error"
+                ? "border-red-300 bg-red-50 text-red-800"
+                : "border-[var(--border)] bg-[var(--bg-subtle)] text-[var(--text-secondary)]"
+            }`}
+            role={detailState === "error" ? "alert" : "status"}
+          >
+            {detailState === "loading" ? (
+              "Loading the latest verified detail…"
+            ) : (
+              <div className="flex items-center justify-between gap-3">
+                <span>Latest detail could not be loaded. Showing the list record.</span>
+                {onRetry && (
+                  <button type="button" onClick={onRetry} className="shrink-0 font-semibold underline underline-offset-2">
+                    Retry
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+        {detailMeta && (
+          <div className="mx-6 mt-3 type-micro sm:mx-8 lg:mx-10">
+            Last verified <span className="mono tabular-nums text-[var(--text-secondary)]">{detailMeta.lastVerifiedAt ? new Date(detailMeta.lastVerifiedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "Not recorded"}</span>
+            {" · "}<span className="mono tabular-nums text-[var(--text-secondary)]">{detailMeta.sourceCount}</span> source{detailMeta.sourceCount === 1 ? "" : "s"}
+          </div>
+        )}
 
         <div className="grid grid-cols-1 gap-8 px-6 py-8 sm:grid-cols-[minmax(0,1fr)_240px] sm:px-8 lg:grid-cols-[minmax(0,1fr)_250px] lg:px-10 lg:py-10">
           <aside className="order-1 sm:order-2">

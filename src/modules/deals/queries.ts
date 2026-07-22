@@ -7,8 +7,8 @@ import {
   DEAL_CATEGORY_DISPLAY,
   DEAL_STATUS_DISPLAY,
 } from "@/modules/shared/enum-maps";
-import type { DealView } from "@/modules/shared/types";
-import type { Deal as DbDeal, DealParticipant } from "@/generated/prisma/client";
+import type { DealListItem, DealView } from "@/modules/shared/types";
+import type { Deal as DbDeal, DealParticipant, ParticipantRole } from "@/generated/prisma/client";
 
 function uniqueNames(names: string[]): string[] {
   const seen = new Set<string>();
@@ -91,13 +91,59 @@ const DEAL_INCLUDE = {
   },
 } as const;
 
-async function getAllDealsRaw(): Promise<DealView[]> {
+const DEAL_LIST_SELECT = {
+  legacyId: true,
+  title: true,
+  target: true,
+  sector: true,
+  subsector: true,
+  region: true,
+  categories: true,
+  date: true,
+  dealStatus: true,
+  country: true,
+  citations: {
+    select: { source: { select: { label: true, url: true } } },
+    take: 1,
+  },
+  participants: {
+    where: { role: { in: ["BUYER", "SELLER"] as ParticipantRole[] } },
+    select: {
+      role: true,
+      displayName: true,
+      organization: { select: { name: true } },
+    },
+  },
+} as const;
+
+async function getAllDealsRaw(): Promise<DealListItem[]> {
   const deals = await prisma.deal.findMany({
     where: { status: "PUBLISHED" },
-    include: DEAL_INCLUDE,
+    select: DEAL_LIST_SELECT,
     orderBy: { date: "desc" },
   });
-  return deals.map(toDealView);
+  return deals.map((deal) => {
+    const buyers = uniqueNames(deal.participants.filter((participant) => participant.role === "BUYER").map((participant) => participant.displayName || participant.organization.name));
+    const sellers = uniqueNames(deal.participants.filter((participant) => participant.role === "SELLER").map((participant) => participant.displayName || participant.organization.name));
+    const primarySource = deal.citations[0]?.source;
+    return {
+      id: deal.legacyId,
+      legacyId: deal.legacyId,
+      title: deal.title,
+      target: deal.target,
+      buyer: buyers.join(" / ") || "N/A",
+      seller: sellers.join(" / ") || "N/A",
+      sector: DEAL_SECTOR_DISPLAY[deal.sector],
+      subsector: deal.subsector,
+      region: DEAL_REGION_DISPLAY[deal.region],
+      category: deal.categories.map((category) => DEAL_CATEGORY_DISPLAY[category]),
+      date: deal.date.toISOString(),
+      status: DEAL_STATUS_DISPLAY[deal.dealStatus],
+      country: deal.country,
+      sourceName: primarySource?.label ?? "",
+      sourceUrl: primarySource?.url ?? "",
+    };
+  });
 }
 
 const getAllDealsCached = unstable_cache(
@@ -106,7 +152,7 @@ const getAllDealsCached = unstable_cache(
   { tags: [CACHE_TAGS.deals], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
-export async function getAllDeals(): Promise<DealView[]> {
+export async function getAllDeals(): Promise<DealListItem[]> {
   return getAllDealsCached();
 }
 

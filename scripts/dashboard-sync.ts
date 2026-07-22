@@ -5,6 +5,7 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { getDashboardProviders } from "../src/modules/dashboard/providers";
 import { syncDashboard } from "../src/modules/dashboard/sync";
+import { completePipelineRun, failPipelineRun, startPipelineRun } from "../src/modules/operations/pipeline-runs";
 
 function createPrisma(): PrismaClient {
   const connectionString = process.env.DATABASE_URL;
@@ -16,6 +17,9 @@ async function main() {
   const dryRun = process.argv.includes("--dry-run");
   const prisma = process.env.DATABASE_URL ? createPrisma() : null;
   if (!dryRun && !prisma) throw new Error("DATABASE_URL is not set.");
+  const pipelineRunId = !dryRun && prisma
+    ? await startPipelineRun(prisma, "DASHBOARD_SYNC")
+    : null;
 
   try {
     const summary = await syncDashboard((prisma ?? {}) as any, {
@@ -28,6 +32,18 @@ async function main() {
     console.log(`Dashboard sync ${dryRun ? "dry run " : ""}complete.`);
     console.log(`Sources: ${summary.sources.length}; observations fetched: ${summary.totals.observationsFetched}; signals fetched: ${summary.totals.signalsFetched}; failures: ${summary.totals.failedSources}; skipped: ${summary.totals.skippedSources}`);
     console.log(`Summary written to ${outPath}`);
+    if (pipelineRunId && prisma) {
+      await completePipelineRun(prisma, pipelineRunId, {
+        updated: summary.totals.observationsUpserted + summary.totals.signalsUpserted,
+        skipped: summary.totals.skippedSources,
+      }, {
+        sources: summary.sources.length,
+        failedSources: summary.totals.failedSources,
+      });
+    }
+  } catch (error) {
+    if (pipelineRunId && prisma) await failPipelineRun(prisma, pipelineRunId, error);
+    throw error;
   } finally {
     await prisma?.$disconnect();
   }

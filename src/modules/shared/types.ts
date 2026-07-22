@@ -40,6 +40,27 @@ export interface DealView {
   keyHighlights: string[] | null;
 }
 
+export type DealListItem = Pick<
+  DealView,
+  | "id"
+  | "legacyId"
+  | "title"
+  | "target"
+  | "buyer"
+  | "seller"
+  | "sector"
+  | "subsector"
+  | "region"
+  | "category"
+  | "date"
+  | "status"
+  | "country"
+  | "sourceName"
+  | "sourceUrl"
+>;
+
+export type DealDetail = DealView;
+
 export interface FundView {
   id: string;
   legacyId: string;
@@ -59,6 +80,25 @@ export interface FundView {
   portfolioCompanies: PortfolioCompanyView[];
   strategyUrl: string;
 }
+
+export type FundListItem = Pick<
+  FundView,
+  | "id"
+  | "legacyId"
+  | "managerName"
+  | "fundName"
+  | "size"
+  | "sizeUsdMm"
+  | "vintage"
+  | "strategies"
+  | "status"
+  | "sectors"
+>;
+
+export type FundDetail = FundView;
+
+export type CompanyListItem = CompanyView;
+export type CompanyDetail = CompanyView;
 
 export interface FundStrategyView {
   fundName: string;
@@ -175,4 +215,26 @@ export interface NewsItemView {
 export interface NewsFeedView {
   items: NewsItemView[];
   lastUpdated: string;
+  operations: FeedOperationsView;
+}
+
+export interface FeedOperationsView {
+  state: "healthy" | "overdue" | "failed" | "never-run";
+  lastAttemptAt?: string;
+  lastSuccessfulAt?: string;
+  nextExpectedAt?: string;
+  trackedEntities?: number;
+  message: string;
+}
+
+export interface RecordMeta {
+  canonicalId: string;
+  updatedAt: string;
+  lastVerifiedAt: string | null;
+  sourceCount: number;
+}
+
+export interface DetailResponse<T> {
+  data: T;
+  meta: RecordMeta;
 }

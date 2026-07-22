@@ -1,0 +1,119 @@
+name: Data Pipelines
+
+on:
+  schedule:
+    - cron: "30 11 * * 1-5"
+    - cron: "30 23 * * *"
+    - cron: "0 12 * * 0"
+    - cron: "0 13 1 * *"
+  workflow_dispatch:
+    inputs:
+      pipeline:
+        description: Pipeline to run
+        required: true
+        default: verify
+        type: choice
+        options:
+          - dashboard
+          - news
+          - verify
+          - source-audit
+
+concurrency:
+  group: data-pipeline-${{ github.event.schedule || inputs.pipeline || 'manual' }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  dashboard:
+    if: github.event.schedule == '30 11 * * 1-5' || inputs.pipeline == 'dashboard'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - name: Synchronize dashboard
+        run: |
+          for attempt in 1 2 3; do
+            npm run dashboard:sync && exit 0
+            [ "$attempt" -eq 3 ] && exit 1
+            sleep $((attempt * 10))
+          done
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dashboard-sync-summary
+          path: tmp/dashboard-sync-summary.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  news:
+    if: github.event.schedule == '30 23 * * *' || inputs.pipeline == 'news'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - name: Scan public news sources
+        run: |
+          for attempt in 1 2 3; do
+            npm run news:scan -- --since-days=2 --max-pages=5000 && exit 0
+            [ "$attempt" -eq 3 ] && exit 1
+            sleep $((attempt * 10))
+          done
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: news-scan-summary
+          path: tmp/news-scan-summary.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  verify:
+    if: github.event.schedule == '0 12 * * 0' || inputs.pipeline == 'verify'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - name: Verify latest weekly email and source links
+        run: npm run validate-weekly-email -- --check-links
+      - name: Verify database integrity and coverage
+        run: npm run db:verify
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  source-audit:
+    if: github.event.schedule == '0 13 1 * *' || inputs.pipeline == 'source-audit'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run audit:prod
+      - run: npm run validate-portfolios

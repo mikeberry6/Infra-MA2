@@ -25,11 +25,12 @@ import { SectionLabel } from "@/components/shared/SectionLabel";
 import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useClearUrlFilters, useUrlFilterSet } from "@/hooks/useUrlFilterSet";
+import { useClearUrlFilters, useUrlFilterSet, useUrlQueryState } from "@/hooks/useUrlFilterSet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { formatDate } from "@/lib/format";
 import { getNewsCategoryColor, NEWS_CATEGORIES } from "@/lib/news-utils";
-import type { NewsCategory, NewsFeedView, NewsItemView, NewsMentionType } from "@/modules/shared/types";
+import type { FeedOperationsView, NewsCategory, NewsFeedView, NewsItemView, NewsMentionType } from "@/modules/shared/types";
+import { track } from "@vercel/analytics";
 
 const DATE_WINDOWS = [
   { label: "Today", days: 0 },
@@ -212,6 +213,46 @@ function IntelligenceHeader({
           ))}
         </div>
       </div>
+    </section>
+  );
+}
+
+function OperationalStatus({ operations }: { operations: FeedOperationsView }) {
+  const isHealthy = operations.state === "healthy";
+  const label = isHealthy
+    ? "Scan current"
+    : operations.state === "failed"
+      ? "Latest scan failed"
+      : operations.state === "overdue"
+        ? "Scan overdue"
+        : "Scan pending";
+  const color = isHealthy ? "#1d9d76" : operations.state === "never-run" ? "#71717a" : "#b45309";
+
+  return (
+    <section className="mb-5 flex flex-col gap-2 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-4 py-3 sm:flex-row sm:items-center sm:justify-between" aria-label="News pipeline status">
+      <div className="min-w-0">
+        <div className="flex items-center gap-2 type-meta font-semibold text-[var(--text-primary)]">
+          <span aria-hidden className="h-2 w-2 rounded-full" style={{ backgroundColor: color }} />
+          {label}
+        </div>
+        <p className="mt-0.5 type-micro">{operations.message}</p>
+      </div>
+      <dl className="flex shrink-0 flex-wrap gap-x-5 gap-y-1 type-micro">
+        <div>
+          <dt className="inline">Last success </dt>
+          <dd className="inline mono tabular-nums text-[var(--text-secondary)]">{operations.lastSuccessfulAt ? formatDate(operations.lastSuccessfulAt) : "Not recorded"}</dd>
+        </div>
+        <div>
+          <dt className="inline">Next expected </dt>
+          <dd className="inline mono tabular-nums text-[var(--text-secondary)]">{operations.nextExpectedAt ? formatDate(operations.nextExpectedAt) : "Pending schedule"}</dd>
+        </div>
+        {operations.trackedEntities != null && (
+          <div>
+            <dt className="inline">Coverage </dt>
+            <dd className="inline mono tabular-nums text-[var(--text-secondary)]">{operations.trackedEntities.toLocaleString()} entities</dd>
+          </div>
+        )}
+      </dl>
     </section>
   );
 }
@@ -540,6 +581,7 @@ function NewsCard({
             href={item.sourceUrl}
             target="_blank"
             rel="noreferrer"
+            onClick={() => track("source_link_clicked", { entity: "news", placement: "card" })}
             className="inline-flex h-7 items-center gap-1.5 rounded-md px-2 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
           >
             <ExternalLink className="h-3 w-3" />
@@ -816,6 +858,7 @@ function NewsDrawer({
                   href={item.sourceUrl}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => track("source_link_clicked", { entity: "news", placement: "drawer" })}
                   className="inline-flex h-8 items-center gap-1.5 rounded-md border border-[var(--border)] px-2.5 type-meta font-medium transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
                 >
                   <ExternalLink className="h-3.5 w-3.5" />
@@ -831,7 +874,7 @@ function NewsDrawer({
 }
 
 export function NewsFeed({ feed }: { feed: NewsFeedView }) {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
   const [activeCategories, toggleCategory] = useUrlFilterSet("category");
   const [activeEntities, toggleEntity] = useUrlFilterSet("entity");
   const [activeSources, toggleSource] = useUrlFilterSet("source");
@@ -845,7 +888,7 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
     clearUrlFilters();
     setSearch("");
     setDateWindow("Today");
-  }, [clearUrlFilters]);
+  }, [clearUrlFilters, setSearch]);
 
   const entityOptions = useMemo(() => getEntityOptions(feed.items), [feed.items]);
   const sourceOptions = useMemo(() => getSourceOptions(feed.items), [feed.items]);
@@ -902,6 +945,7 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
   return (
     <div className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6">
       <IntelligenceHeader counts={counts} lastUpdated={feed.lastUpdated} />
+      <OperationalStatus operations={feed.operations} />
 
       <CategorySpotlight items={filteredItems} onSelect={setSelectedItem} />
 
@@ -943,9 +987,19 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
               <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--bg-subtle)] text-[var(--text-tertiary)]">
                 <Search className="h-4 w-4" />
               </div>
-              <h2 className="mt-3 type-row-title">No signals matched</h2>
+              <h2 className="mt-3 type-row-title">
+                {feed.items.length > 0
+                  ? "Filters exclude the available signals"
+                  : feed.operations.state === "failed"
+                    ? "The latest scan failed"
+                    : feed.operations.state === "never-run"
+                      ? "The first scan is still pending"
+                      : "Scan completed with no qualifying signals"}
+              </h2>
               <p className="mt-1 type-micro">
-                Broaden the category, entity, or date filters to bring more items back into view.
+                {feed.items.length > 0
+                  ? "Broaden the category, entity, search, or date filters to bring items back into view."
+                  : feed.operations.message}
               </p>
             </div>
           )}

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAllFunds } from "@/modules/funds/queries";
+import { getAllFundDetails } from "@/modules/funds/queries";
 import { toCsv } from "@/lib/csv";
 import { canExportData } from "@/modules/auth/guards";
 
@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const wantsJson = searchParams.get("format") === "json";
 
-    const funds = await getAllFunds();
+    const funds = await getAllFundDetails();
 
     if (wantsJson) {
       return NextResponse.json({

@@ -4,8 +4,9 @@ import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import { DEAL_SECTORS, NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
-import type { DealView, DatabaseCounts } from "@/modules/shared/types";
+import type { DealListItem, DealView, DatabaseCounts, RecordMeta } from "@/modules/shared/types";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
+import { track } from "@vercel/analytics";
 
 // ─── Buyer display shortening ──────────────────────────────
 // Purely cosmetic: shortens canonical fund/buyer names for compact table cells
@@ -120,7 +121,32 @@ function mostCommonLabel(items: string[]): { label: string; count: number } | nu
     .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))[0] ?? null;
 }
 
-function latestDealDateLabel(deals: DealView[]): string {
+const dealDetailCache = new Map<string, { data: DealView; meta: RecordMeta }>();
+
+function dealDetailShell(deal: DealListItem): DealView {
+  return {
+    ...deal,
+    title: deal.target,
+    description: "",
+    targetDescription: "",
+    sourceName: "",
+    sourceUrl: "",
+    enterpriseValue: null,
+    equityValue: null,
+    stake: null,
+    closingDate: null,
+    financialAdvisorBuyer: null,
+    financialAdvisorSeller: null,
+    legalAdvisorBuyer: null,
+    legalAdvisorSeller: null,
+    assetScale: null,
+    valuationMultiple: null,
+    fundVehicle: null,
+    keyHighlights: null,
+  };
+}
+
+function latestDealDateLabel(deals: DealListItem[]): string {
   let latest = 0;
   for (const deal of deals) {
     const time = new Date(deal.date).getTime();
@@ -141,7 +167,7 @@ import {
 } from "lucide-react";
 import { DynamicInsightsHero } from "./DealDatabase/DynamicInsightsHero";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam } from "@/hooks/useUrlFilterSet";
+import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam, useUrlQueryState, useUrlQueryWriter } from "@/hooks/useUrlFilterSet";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
@@ -152,6 +178,7 @@ import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
+import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { useCanExport } from "@/hooks/useCanExport";
 import { withBasePath } from "@/lib/base-path";
@@ -181,7 +208,7 @@ const REGIONS: string[] = [
   "Latin America",
 ];
 
-const DEAL_PAGE_SIZE = 100;
+const DEAL_PAGE_SIZE = 25;
 
 function EmailAccessLinks({ compact = false }: { compact?: boolean }) {
   const className = compact
@@ -190,7 +217,7 @@ function EmailAccessLinks({ compact = false }: { compact?: boolean }) {
 
   return (
     <div className="flex flex-wrap items-center justify-end gap-1">
-      <a href={withBasePath("/email-format/latest")} className={className}>
+      <a href={withBasePath("/email-format/latest")} className={className} onClick={() => track("weekly_email_opened")}>
         <Mail className="h-3 w-3" />
         <span className="truncate">Weekly email</span>
       </a>
@@ -254,10 +281,38 @@ function FilterBar({
   onToggleCategory: (c: string) => void;
   onClearAll: () => void;
 }) {
+  const activeCount = activeSectors.size + activeRegions.size + activeCategories.size;
+  const filterControls = (
+    <>
+      <MultiSelectDropdown
+        label="Sector"
+        options={SECTORS}
+        selected={activeSectors as Set<string>}
+        onToggle={onToggleSector}
+        getColor={(v) => getSectorColor(v)}
+      />
+      <MultiSelectDropdown
+        label="Region"
+        options={REGIONS}
+        selected={activeRegions as Set<string>}
+        onToggle={onToggleRegion}
+        getColor={(v) => getRegionColor(v)}
+      />
+      <MultiSelectDropdown
+        label="Type"
+        options={CATEGORIES}
+        selected={activeCategories as Set<string>}
+        onToggle={onToggleCategory}
+        getColor={(v) => getCategoryColor(v)}
+        align="right"
+      />
+    </>
+  );
+
   return (
     <div className="mb-3 space-y-3">
-      <div className="bg-[var(--bg-surface)] border border-[var(--border)] rounded-lg flex items-center gap-2 px-2 py-2 sticky top-14 z-30 overflow-x-auto">
-        <div className="flex-1 min-w-[160px] max-w-xs">
+      <div className="sticky top-14 z-30 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
+        <div className="min-w-0 flex-1 md:max-w-xs">
           <TextInput
             leadingIcon={<Search />}
             value={search}
@@ -266,29 +321,16 @@ function FilterBar({
             aria-label="Search deals"
           />
         </div>
-        <Divider orientation="vertical" />
-        <MultiSelectDropdown
-          label="Sector"
-          options={SECTORS}
-          selected={activeSectors as Set<string>}
-          onToggle={onToggleSector}
-          getColor={(v) => getSectorColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Region"
-          options={REGIONS}
-          selected={activeRegions as Set<string>}
-          onToggle={onToggleRegion}
-          getColor={(v) => getRegionColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Type"
-          options={CATEGORIES}
-          selected={activeCategories as Set<string>}
-          onToggle={onToggleCategory}
-          getColor={(v) => getCategoryColor(v)}
-          align="right"
-        />
+        <div className="hidden items-center gap-2 md:flex">
+          <Divider orientation="vertical" />
+          {filterControls}
+        </div>
+        <MobileFilterSheet activeCount={activeCount}>
+          <div className="grid grid-cols-2 gap-3">{filterControls}</div>
+          {activeCount > 0 && (
+            <button type="button" onClick={onClearAll} className="type-meta font-medium text-[var(--accent)]">Clear all filters</button>
+          )}
+        </MobileFilterSheet>
       </div>
 
       <ActiveFiltersChips
@@ -309,8 +351,8 @@ function DealCard({
   deal,
   onSelect,
 }: {
-  deal: DealView;
-  onSelect: (deal: DealView) => void;
+  deal: DealListItem;
+  onSelect: (deal: DealListItem) => void;
 }) {
   return (
     <button
@@ -365,11 +407,13 @@ function DealTable({
   filteredDeals,
   onSelectDeal,
 }: {
-  filteredDeals: DealView[];
-  onSelectDeal: (deal: DealView) => void;
+  filteredDeals: DealListItem[];
+  onSelectDeal: (deal: DealListItem) => void;
 }) {
-  const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
-  const [page, setPage] = useState(1);
+  const [direction, setDirection] = useUrlQueryState("direction", "desc", { resetPage: true });
+  const [pageParam, setPageParam] = useUrlQueryState("page", "1");
+  const sortDir: "asc" | "desc" = direction === "asc" ? "asc" : "desc";
+  const page = Math.max(1, Number.parseInt(pageParam, 10) || 1);
 
   const sorted = useMemo(() => {
     return [...filteredDeals].sort((a, b) => {
@@ -377,10 +421,6 @@ function DealTable({
       return mul * (new Date(a.date).getTime() - new Date(b.date).getTime());
     });
   }, [filteredDeals, sortDir]);
-
-  useEffect(() => {
-    setPage(1);
-  }, [filteredDeals]);
 
   const totalPages = Math.max(1, Math.ceil(sorted.length / DEAL_PAGE_SIZE));
   const safePage = Math.min(page, totalPages);
@@ -390,7 +430,7 @@ function DealTable({
   }, [sorted, safePage]);
 
   function toggleSort() {
-    setSortDir((d) => (d === "desc" ? "asc" : "desc"));
+    setDirection(sortDir === "desc" ? "asc" : "desc");
   }
 
   return (
@@ -520,7 +560,7 @@ function DealTable({
                           href={deal.sourceUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
+                          onClick={(e) => { e.stopPropagation(); track("source_link_clicked", { entity: "deal", placement: "table" }); }}
                           className="inline-flex max-w-full items-center gap-1 type-micro transition-colors hover:text-[var(--text-primary)]"
                           title={deal.sourceName || deal.sourceUrl}
                         >
@@ -552,7 +592,7 @@ function DealTable({
         page={safePage}
         pageSize={DEAL_PAGE_SIZE}
         totalItems={sorted.length}
-        onPageChange={setPage}
+        onPageChange={(next) => setPageParam(String(next))}
       />
     </>
   );
@@ -601,9 +641,15 @@ function AdvisorCard({
 function DealDrawer({
   deal,
   onClose,
+  detailState = "ready",
+  onRetry,
+  detailMeta,
 }: {
   deal: DealView;
   onClose: () => void;
+  detailState?: "idle" | "loading" | "ready" | "error";
+  onRetry?: () => void;
+  detailMeta?: RecordMeta | null;
 }) {
   const hasAdvisors =
     deal.financialAdvisorBuyer ||
@@ -707,6 +753,23 @@ function DealDrawer({
             <span className="type-micro">{deal.country}</span>
           </div>
         </div>
+
+        {detailState !== "ready" && detailState !== "idle" && (
+          <div className={`mx-5 mt-4 rounded-md border px-3 py-2.5 type-meta lg:mx-7 ${detailState === "error" ? "border-red-300 bg-red-50 text-red-800" : "border-[var(--border)] bg-[var(--bg-subtle)] text-[var(--text-secondary)]"}`} role={detailState === "error" ? "alert" : "status"}>
+            {detailState === "loading" ? "Loading the latest verified detail…" : (
+              <div className="flex items-center justify-between gap-3">
+                <span>Latest detail could not be loaded. Showing the list record.</span>
+                {onRetry && <button type="button" onClick={onRetry} className="font-semibold underline underline-offset-2">Retry</button>}
+              </div>
+            )}
+          </div>
+        )}
+        {detailMeta && (
+          <div className="mx-5 mt-3 type-micro lg:mx-7">
+            Last verified <span className="mono tabular-nums text-[var(--text-secondary)]">{detailMeta.lastVerifiedAt ? formatDate(detailMeta.lastVerifiedAt) : "Not recorded"}</span>
+            {" · "}<span className="mono tabular-nums text-[var(--text-secondary)]">{detailMeta.sourceCount}</span> source{detailMeta.sourceCount === 1 ? "" : "s"}
+          </div>
+        )}
 
         {/* Content */}
         <div className="p-5 lg:p-7 space-y-6">
@@ -833,6 +896,7 @@ function DealDrawer({
                   href={deal.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => track("source_link_clicked", { entity: "deal", placement: "drawer" })}
                   className="inline-flex max-w-full items-center gap-1.5 type-meta font-medium hover:text-[var(--text-primary)] transition-colors group"
                 >
                   <span className="truncate">{deal.sourceName || deal.sourceUrl}</span>
@@ -848,12 +912,17 @@ function DealDrawer({
 }
 
 // ─── Main Component ─────────────────────────────────────────
-export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: DatabaseCounts }) {
-  const [search, setSearch] = useState("");
+export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts: DatabaseCounts }) {
+  const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeRegions, toggleRegion] = useUrlFilterSet("region");
   const [activeCategories, toggleCategory] = useUrlFilterSet("category");
-  const [selectedDeal, setSelectedDeal] = useState<DealView | null>(null);
+  const [selectedDeal, setSelectedDeal] = useState<DealListItem | null>(null);
+  const [selectedDealDetail, setSelectedDealDetail] = useState<DealView | null>(null);
+  const [detailMeta, setDetailMeta] = useState<RecordMeta | null>(null);
+  const [detailState, setDetailState] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const [detailRequest, setDetailRequest] = useState(0);
+  const writeQuery = useUrlQueryWriter();
   const canExport = useCanExport();
 
   // Debounce search for performance
@@ -863,7 +932,7 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
   const clearAllFilters = useCallback(() => {
     clearAllUrlFilters();
     setSearch("");
-  }, [clearAllUrlFilters]);
+  }, [clearAllUrlFilters, setSearch]);
 
   const filteredDeals = useMemo(() => {
     return deals.filter((deal) => {
@@ -934,21 +1003,77 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
   useEffect(() => {
     if (selectedDeal && !filteredDeals.find((d) => d.id === selectedDeal.id)) {
       setSelectedDeal(null);
+      writeQuery("focus", null);
     }
-  }, [filteredDeals, selectedDeal]);
+  }, [filteredDeals, selectedDeal, writeQuery]);
 
   // Auto-open drawer when navigated here with `?focus=<legacyId>` (e.g. from
   // the cross-database search page). Fires once per focus value.
   const focusId = useUrlQueryParam("focus");
   const openedFocus = useRef<string | null>(null);
   useEffect(() => {
-    if (!focusId || openedFocus.current === focusId) return;
+    if (!focusId) {
+      if (openedFocus.current) setSelectedDeal(null);
+      setSelectedDealDetail(null);
+      setDetailMeta(null);
+      openedFocus.current = null;
+      return;
+    }
+    if (openedFocus.current === focusId) return;
     const match = deals.find((d) => d.legacyId === focusId);
     if (match) {
       setSelectedDeal(match);
       openedFocus.current = focusId;
     }
   }, [focusId, deals]);
+
+  useEffect(() => {
+    if (!selectedDeal) {
+      setSelectedDealDetail(null);
+      setDetailState("idle");
+      return;
+    }
+    const cached = dealDetailCache.get(selectedDeal.legacyId);
+    if (cached) {
+      setSelectedDealDetail(cached.data);
+      setDetailMeta(cached.meta);
+      setDetailState("ready");
+      return;
+    }
+    let cancelled = false;
+    setSelectedDealDetail(null);
+    setDetailMeta(null);
+    setDetailState("loading");
+    fetch(withBasePath(`/api/deals/${encodeURIComponent(selectedDeal.legacyId)}`))
+      .then((response) => response.ok ? response.json() : null)
+      .then((response) => {
+        if (cancelled) return;
+        if (response?.data) {
+          dealDetailCache.set(selectedDeal.legacyId, response);
+          setSelectedDealDetail(response.data);
+          setDetailMeta(response.meta);
+          setDetailState("ready");
+        } else setDetailState("error");
+      })
+      .catch(() => !cancelled && setDetailState("error"));
+    return () => { cancelled = true; };
+  }, [selectedDeal, detailRequest]);
+
+  const openDeal = useCallback((deal: DealListItem) => {
+    setSelectedDeal(deal);
+    openedFocus.current = deal.legacyId;
+    writeQuery("focus", deal.legacyId, "push");
+    track("drawer_opened", { entity: "deal" });
+  }, [writeQuery]);
+
+  const closeDeal = useCallback(() => {
+    setSelectedDeal(null);
+    setSelectedDealDetail(null);
+    setDetailMeta(null);
+    setDetailState("idle");
+    openedFocus.current = null;
+    writeQuery("focus", null);
+  }, [writeQuery]);
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
@@ -977,6 +1102,10 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
         onClearAll={clearAllFilters}
       />
 
+      <MarketSnapshotSection>
+        <DynamicInsightsHero filteredDeals={filteredDeals} />
+      </MarketSnapshotSection>
+
       <div className="surface overflow-hidden">
         <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-[var(--border)]">
           <span className="type-micro">
@@ -989,6 +1118,7 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
               <a
                 href={withBasePath("/api/exports/deals")}
                 download
+                onClick={() => track("export_started", { entity: "deal" })}
                 className="hidden sm:inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
               >
                 <Download className="h-3 w-3" />
@@ -999,19 +1129,18 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
           </div>
         </div>
 
-        <DealTable filteredDeals={filteredDeals} onSelectDeal={setSelectedDeal} />
+        <DealTable filteredDeals={filteredDeals} onSelectDeal={openDeal} />
       </div>
 
       <CTABlock />
 
-      <MarketSnapshotSection>
-        <DynamicInsightsHero filteredDeals={filteredDeals} />
-      </MarketSnapshotSection>
-
       {selectedDeal && (
         <DealDrawer
-          deal={selectedDeal}
-          onClose={() => setSelectedDeal(null)}
+          deal={selectedDealDetail ?? dealDetailShell(selectedDeal)}
+          detailState={detailState}
+          detailMeta={detailMeta}
+          onRetry={() => setDetailRequest((value) => value + 1)}
+          onClose={closeDeal}
         />
       )}
     </div>

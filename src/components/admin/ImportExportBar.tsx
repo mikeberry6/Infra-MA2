@@ -1,252 +1,178 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Link from "next/link";
+import { Download, FileUp, X } from "lucide-react";
 import { withBasePath } from "@/lib/base-path";
+import { Button } from "@/components/shared/Button";
 
 type EntityType = "deals" | "funds" | "portfolio";
+type ImportError = { id?: string; fundName?: string; name?: string; error?: string };
+type Preview = {
+  items: Record<string, unknown>[];
+  fileName: string;
+  total: number;
+  valid: number;
+  creates: number;
+  updates: number;
+  warnings: string[];
+  errors: ImportError[];
+};
 
-interface ImportExportBarProps {
-  entityType: EntityType;
-}
-
-interface ImportStatus {
-  state: "idle" | "loading" | "done";
-  imported?: number;
-  errors?: number;
-  message?: string;
-}
-
-/**
- * Client-side CSV parser for import preview.
- * Parses CSV text into array of objects using header row as keys.
- */
 function clientParseCsv(csvText: string): Record<string, string>[] {
   const rows: string[][] = [];
-  let currentRow: string[] = [];
-  let currentField = "";
-  let inQuotes = false;
-  let i = 0;
-
-  while (i < csvText.length) {
-    const char = csvText[i];
-    if (inQuotes) {
-      if (char === '"') {
-        if (i + 1 < csvText.length && csvText[i + 1] === '"') {
-          currentField += '"';
-          i += 2;
-        } else {
-          inQuotes = false;
-          i++;
-        }
-      } else {
-        currentField += char;
-        i++;
-      }
-    } else {
-      if (char === '"') {
-        inQuotes = true;
-        i++;
-      } else if (char === ",") {
-        currentRow.push(currentField);
-        currentField = "";
-        i++;
-      } else if (char === "\r") {
-        currentRow.push(currentField);
-        currentField = "";
-        rows.push(currentRow);
-        currentRow = [];
-        i++;
-        if (i < csvText.length && csvText[i] === "\n") i++;
-      } else if (char === "\n") {
-        currentRow.push(currentField);
-        currentField = "";
-        rows.push(currentRow);
-        currentRow = [];
-        i++;
-      } else {
-        currentField += char;
-        i++;
-      }
-    }
+  let row: string[] = [];
+  let field = "";
+  let quoted = false;
+  for (let index = 0; index < csvText.length; index += 1) {
+    const char = csvText[index];
+    if (quoted) {
+      if (char === '"' && csvText[index + 1] === '"') {
+        field += '"';
+        index += 1;
+      } else if (char === '"') quoted = false;
+      else field += char;
+    } else if (char === '"') quoted = true;
+    else if (char === ",") {
+      row.push(field);
+      field = "";
+    } else if (char === "\n" || char === "\r") {
+      if (char === "\r" && csvText[index + 1] === "\n") index += 1;
+      row.push(field);
+      if (row.some(Boolean)) rows.push(row);
+      row = [];
+      field = "";
+    } else field += char;
   }
-
-  if (currentField !== "" || currentRow.length > 0) {
-    currentRow.push(currentField);
-    rows.push(currentRow);
+  if (field || row.length) {
+    row.push(field);
+    if (row.some(Boolean)) rows.push(row);
   }
-
   if (rows.length < 2) return [];
-
-  const headers = rows[0];
-  const results: Record<string, string>[] = [];
-  for (let r = 1; r < rows.length; r++) {
-    const row = rows[r];
-    if (row.length === 1 && row[0] === "") continue;
-    const obj: Record<string, string> = {};
-    for (let j = 0; j < headers.length; j++) {
-      obj[headers[j]] = j < row.length ? row[j] : "";
-    }
-    results.push(obj);
-  }
-  return results;
+  const headers = rows[0].map((header) => header.trim());
+  return rows.slice(1).map((values) => Object.fromEntries(headers.map((header, index) => [header, values[index] ?? ""])));
 }
 
-/** Convert a flat CSV row into the JSON shape expected by the import API. */
 function csvRowToImportShape(row: Record<string, string>, entityType: EntityType): Record<string, unknown> {
+  const list = (value: string) => value ? value.split(";").map((item) => item.trim()).filter(Boolean) : [];
   if (entityType === "deals") {
-    return {
-      ...row,
-      id: row.legacyId || row.id,
-      category: row.category ? row.category.split(";").map((s) => s.trim()).filter(Boolean) : [],
-      keyHighlights: row.keyHighlights ? row.keyHighlights.split(";").map((s) => s.trim()).filter(Boolean) : [],
-    };
+    return { ...row, id: row.legacyId || row.id, category: list(row.category), keyHighlights: list(row.keyHighlights) };
   }
-
   if (entityType === "funds") {
-    return {
-      ...row,
-      id: row.legacyId || row.id,
-      strategies: row.strategies ? row.strategies.split(";").map((s) => s.trim()).filter(Boolean) : [],
-      sectors: row.sectors ? row.sectors.split(";").map((s) => s.trim()).filter(Boolean) : [],
-      regions: row.regions ? row.regions.split(";").map((s) => s.trim()).filter(Boolean) : [],
-      sourceUrls: row.sourceUrls ? row.sourceUrls.split(";").map((s) => s.trim()).filter(Boolean) : [],
-      sizeUsdMm: row.sizeUsdMm ? Number(row.sizeUsdMm) : null,
-    };
+    return { ...row, id: row.legacyId || row.id, strategies: list(row.strategies), sectors: list(row.sectors), regions: list(row.regions), sourceUrls: list(row.sourceUrls), sizeUsdMm: row.sizeUsdMm ? Number(row.sizeUsdMm) : null };
   }
-
-  // portfolio
-  return {
-    ...row,
-    countryTags: row.countryTags ? row.countryTags.split(";").map((s) => s.trim()).filter(Boolean) : [],
-    yearFounded: row.yearFounded ? Number(row.yearFounded) : undefined,
-    investmentYear: row.investmentYear ? Number(row.investmentYear) : undefined,
-  };
+  return { ...row, countryTags: list(row.countryTags), yearFounded: row.yearFounded ? Number(row.yearFounded) : undefined, investmentYear: row.investmentYear ? Number(row.investmentYear) : undefined };
 }
 
-const ENTITY_LABELS: Record<EntityType, { singular: string; plural: string; bodyKey: string }> = {
+const LABELS: Record<EntityType, { singular: string; plural: string; bodyKey: string }> = {
   deals: { singular: "deal", plural: "deals", bodyKey: "deals" },
   funds: { singular: "fund", plural: "funds", bodyKey: "funds" },
   portfolio: { singular: "company", plural: "companies", bodyKey: "companies" },
 };
 
-export default function ImportExportBar({ entityType }: ImportExportBarProps) {
+export default function ImportExportBar({ entityType }: { entityType: EntityType }) {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [importStatus, setImportStatus] = useState<ImportStatus>({ state: "idle" });
-  const labels = ENTITY_LABELS[entityType];
+  const [preview, setPreview] = useState<Preview | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+  const [auditEventId, setAuditEventId] = useState<string | null>(null);
+  const labels = LABELS[entityType];
 
-  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    setImportStatus({ state: "loading" });
-
+  async function previewFile(file: File) {
+    setLoading(true);
+    setMessage(null);
+    setAuditEventId(null);
     try {
-      const csvText = await file.text();
-      const rows = clientParseCsv(csvText);
-
-      if (rows.length === 0) {
-        setImportStatus({ state: "done", imported: 0, errors: 0, message: "CSV file is empty or has no data rows" });
-        return;
-      }
-
-      // Convert CSV rows to the JSON shape expected by the API
+      const rows = clientParseCsv(await file.text());
+      if (rows.length === 0) throw new Error("The CSV contains no data rows.");
+      if (rows.length > 500) throw new Error("Imports are capped at 500 rows.");
       const items = rows.map((row) => csvRowToImportShape(row, entityType));
-
-      const response = await fetch(withBasePath(`/api/imports/${entityType}`), {
+      const response = await fetch(withBasePath(`/api/imports/${entityType}?preview=1`), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ [labels.bodyKey]: items }),
       });
-
       const result = await response.json();
-
-      if (!response.ok) {
-        setImportStatus({
-          state: "done",
-          imported: 0,
-          errors: rows.length,
-          message: result.error || "Import failed",
-        });
-      } else {
-        setImportStatus({
-          state: "done",
-          imported: result.imported || 0,
-          errors: result.errors?.length || 0,
-          message: undefined,
-        });
-      }
-    } catch (err: any) {
-      setImportStatus({
-        state: "done",
-        imported: 0,
-        errors: 1,
-        message: err.message || "Import failed",
-      });
+      if (!response.ok) throw new Error(result.error || "Preview failed");
+      setPreview({ ...result, items, fileName: file.name });
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Preview failed");
+    } finally {
+      setLoading(false);
+      if (fileInputRef.current) fileInputRef.current.value = "";
     }
+  }
 
-    // Reset file input so the same file can be re-selected
-    if (fileInputRef.current) fileInputRef.current.value = "";
-  };
+  async function commitImport() {
+    if (!preview) return;
+    setLoading(true);
+    setMessage(null);
+    try {
+      const response = await fetch(withBasePath(`/api/imports/${entityType}`), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ [labels.bodyKey]: preview.items }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Import failed");
+      setMessage(`${result.imported ?? 0} ${result.imported === 1 ? labels.singular : labels.plural} committed as drafts.`);
+      setAuditEventId(result.auditEventId ?? null);
+      setPreview(null);
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Import failed");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function downloadErrors() {
+    if (!preview?.errors.length) return;
+    const csv = ["row,error", ...preview.errors.map((error, index) => `${index + 1},${JSON.stringify(error.error ?? "Validation error")}`)].join("\n");
+    const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `${entityType}-import-errors.csv`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+  }
 
   return (
-    <div className="flex flex-wrap items-center gap-3">
-      {/* Export CSV */}
-      <a
-        href={withBasePath(`/api/exports/${entityType}`)}
-        download
-        className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded bg-[#27272A] hover:bg-[#3f3f46] text-white transition-colors"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
-        </svg>
-        Export CSV
-      </a>
+    <div className="space-y-3">
+      <div className="flex flex-wrap items-center gap-2">
+        <a href={withBasePath(`/api/exports/${entityType}`)} download className="inline-flex h-8 items-center justify-center gap-1.5 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-primary)] hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]">
+          <Download className="h-3.5 w-3.5" /> Export CSV
+        </a>
+        <label className="inline-flex h-8 cursor-pointer items-center justify-center gap-1.5 rounded-md bg-[var(--accent)] px-3 type-meta font-medium text-[var(--text-on-accent)] hover:bg-[var(--accent-hover)] focus-within:ring-2 focus-within:ring-[var(--accent-soft)]">
+          <FileUp className="h-3.5 w-3.5" /> Select CSV
+          <input ref={fileInputRef} type="file" accept=".csv,text/csv" onChange={(event) => event.target.files?.[0] && previewFile(event.target.files[0])} className="sr-only" />
+        </label>
+        {loading && <span className="type-micro animate-pulse">Validating…</span>}
+        {message && <span className="type-micro text-[var(--text-secondary)]">{message}</span>}
+        {auditEventId && <Link href={`/admin/audit?focus=${encodeURIComponent(auditEventId)}`} className="type-micro font-medium text-[var(--accent)]">View audit event</Link>}
+      </div>
 
-      {/* Import CSV */}
-      <label className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded bg-[#27272A] hover:bg-[#3f3f46] text-white transition-colors cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M17 8l-5-5m0 0L7 8m5-5v12" />
-        </svg>
-        Import CSV
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept=".csv,text/csv"
-          onChange={handleFileChange}
-          className="hidden"
-        />
-      </label>
-
-      {/* Status indicator */}
-      {importStatus.state === "loading" && (
-        <span className="text-xs text-[#A1A1AA] animate-pulse">
-          Importing {labels.plural}...
-        </span>
-      )}
-
-      {importStatus.state === "done" && (
-        <span className="text-xs flex items-center gap-2">
-          {importStatus.imported !== undefined && importStatus.imported > 0 && (
-            <span className="text-emerald-400">
-              {importStatus.imported} {importStatus.imported === 1 ? labels.singular : labels.plural} imported
-            </span>
-          )}
-          {importStatus.errors !== undefined && importStatus.errors > 0 && (
-            <span className="text-red-400">
-              {importStatus.errors} {importStatus.errors === 1 ? "error" : "errors"}
-            </span>
-          )}
-          {importStatus.message && (
-            <span className="text-red-400">{importStatus.message}</span>
-          )}
-          <button
-            onClick={() => setImportStatus({ state: "idle" })}
-            className="text-[#71717A] hover:text-[#1a1a1a] ml-1"
-            title="Dismiss"
-          >
-            &times;
-          </button>
-        </span>
+      {preview && (
+        <section className="surface max-w-2xl overflow-hidden" aria-label="Import preview">
+          <div className="flex items-start justify-between gap-3 border-b border-[var(--border)] px-4 py-3">
+            <div>
+              <h3 className="type-row-title">Import preview</h3>
+              <p className="type-micro">{preview.fileName} · no database changes have been made</p>
+            </div>
+            <button type="button" onClick={() => setPreview(null)} aria-label="Dismiss import preview" className="rounded-md p-1.5 text-[var(--text-secondary)] hover:bg-[var(--bg-hover)]"><X className="h-4 w-4" /></button>
+          </div>
+          <dl className="grid grid-cols-2 gap-px bg-[var(--border)] sm:grid-cols-4">
+            {[["Rows", preview.total], ["Creates", preview.creates], ["Updates", preview.updates], ["Errors", preview.errors.length]].map(([label, value]) => (
+              <div key={String(label)} className="bg-[var(--bg-surface)] px-4 py-3"><dt className="type-micro">{label}</dt><dd className="mt-1 mono type-section-title tabular-nums">{value}</dd></div>
+            ))}
+          </dl>
+          <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3">
+            <p className="type-micro">Only valid rows will be committed. Imported records remain drafts.</p>
+            <div className="flex items-center gap-2">
+              {preview.errors.length > 0 && <Button size="sm" variant="ghost" onClick={downloadErrors}>Download errors</Button>}
+              <Button size="sm" variant="primary" loading={loading} disabled={preview.valid === 0} onClick={commitImport}>Confirm import</Button>
+            </div>
+          </div>
+        </section>
       )}
     </div>
   );

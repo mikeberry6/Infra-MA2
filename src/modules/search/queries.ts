@@ -16,6 +16,16 @@ export interface SearchResult {
   region?: string;
 }
 
+export function matchScore(title: string, body: string, query: string): number {
+  const normalizedTitle = title.trim().toLowerCase();
+  const normalizedQuery = query.trim().toLowerCase();
+  if (normalizedTitle === normalizedQuery) return 0;
+  if (normalizedTitle.startsWith(normalizedQuery)) return 1;
+  if (normalizedTitle.includes(normalizedQuery)) return 2;
+  if (body.toLowerCase().includes(normalizedQuery)) return 3;
+  return 4;
+}
+
 export async function searchAll(query: string, limit = 20): Promise<SearchResult[]> {
   if (!query || query.length < 2) return [];
 
@@ -35,7 +45,7 @@ export async function searchAll(query: string, limit = 20): Promise<SearchResult
         ],
       },
       take: perTypeLimit,
-      select: { legacyId: true, title: true, target: true, sector: true, region: true },
+      select: { legacyId: true, title: true, target: true, description: true, sector: true, region: true },
     }),
     prisma.company.findMany({
       where: {
@@ -47,7 +57,7 @@ export async function searchAll(query: string, limit = 20): Promise<SearchResult
         ],
       },
       take: perTypeLimit,
-      select: { id: true, name: true, sector: true, region: true, country: true },
+      select: { id: true, name: true, description: true, subsector: true, sector: true, region: true, country: true },
     }),
     prisma.fund.findMany({
       where: {
@@ -61,12 +71,17 @@ export async function searchAll(query: string, limit = 20): Promise<SearchResult
         ],
       },
       take: perTypeLimit,
-      include: { manager: { select: { name: true } } },
+      select: {
+        legacyId: true,
+        fundName: true,
+        investmentStrategy: true,
+        manager: { select: { name: true } },
+      },
     }),
   ]);
 
-  const results: SearchResult[] = [
-    ...deals.map((d): SearchResult => ({
+  const rankedResults: Array<SearchResult & { score: number }> = [
+    ...deals.map((d): SearchResult & { score: number } => ({
       type: "deal",
       id: d.legacyId,
       legacyId: d.legacyId,
@@ -74,23 +89,29 @@ export async function searchAll(query: string, limit = 20): Promise<SearchResult
       subtitle: d.title,
       sector: DEAL_SECTOR_DISPLAY[d.sector],
       region: DEAL_REGION_DISPLAY[d.region],
+      score: matchScore(d.target, `${d.title} ${d.description}`, query),
     })),
-    ...companies.map((c): SearchResult => ({
+    ...companies.map((c): SearchResult & { score: number } => ({
       type: "company",
       id: c.id,
       title: c.name,
       subtitle: c.country,
       sector: COMPANY_SECTOR_DISPLAY[c.sector],
       region: COMPANY_REGION_DISPLAY[c.region],
+      score: matchScore(c.name, `${c.subsector} ${c.description}`, query),
     })),
-    ...funds.map((f): SearchResult => ({
+    ...funds.map((f): SearchResult & { score: number } => ({
       type: "fund",
       id: f.legacyId,
       legacyId: f.legacyId,
       title: f.fundName,
       subtitle: f.manager.name,
+      score: matchScore(f.fundName, `${f.manager.name} ${f.investmentStrategy}`, query),
     })),
   ];
 
-  return results.slice(0, limit);
+  return rankedResults
+    .sort((a, b) => a.score - b.score || a.title.localeCompare(b.title))
+    .slice(0, limit)
+    .map(({ score: _score, ...result }) => result);
 }

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -16,12 +18,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://infra-ma-2.vercel.app"),
   title: {
     template: "%s | InfraSight",
     default: "Deals | InfraSight",
   },
   description:
     "InfraSight — the data platform for global infrastructure investing. Deals, fund managers, and portfolio companies in one place.",
+  openGraph: {
+    type: "website",
+    siteName: "InfraSight",
+    title: "InfraSight — Infrastructure transaction intelligence",
+    description: "Curated infrastructure deals, fund managers, portfolio companies, and market intelligence.",
+    images: [{
+      url: "/Infra-MA2/og-infrasight.png",
+      width: 1731,
+      height: 909,
+      alt: "InfraSight infrastructure transaction intelligence",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "InfraSight — Infrastructure transaction intelligence",
+    description: "Curated infrastructure deals, fund managers, portfolio companies, and market intelligence.",
+    images: ["/Infra-MA2/og-infrasight.png"],
+  },
 };
 
 export default function RootLayout({
@@ -48,6 +69,8 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

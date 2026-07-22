@@ -18,8 +18,8 @@ interface DealFormProps {
 }
 
 const inputClass =
-  "w-full bg-white border border-black/[0.08] text-[#1a1a1a] rounded px-3 py-2 text-sm focus:outline-none focus:border-[#008253]";
-const labelClass = "block text-sm text-[#A1A1AA] mb-1";
+  "w-full rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 py-2 type-meta text-[var(--text-primary)] focus:outline-none focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent-soft)]";
+const labelClass = "mb-1 block type-meta font-medium text-[var(--text-secondary)]";
 
 export default function DealForm({ initialData, action, mode }: DealFormProps) {
   const router = useRouter();
@@ -272,7 +272,7 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
         <label className={labelClass}>Categories *</label>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-1">
           {DEAL_CATEGORIES.map((cat) => (
-            <label key={cat} className="flex items-center gap-2 text-sm text-[#A1A1AA] cursor-pointer">
+            <label key={cat} className="flex cursor-pointer items-center gap-2 type-meta text-[var(--text-secondary)]">
               <input
                 type="checkbox"
                 checked={categories.includes(cat)}
@@ -411,7 +411,7 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
         <button
           type="submit"
           disabled={isPending}
-          className="bg-[#008253] text-[#1a1a1a] px-6 py-2 rounded hover:bg-[#006d45] disabled:opacity-50 text-sm font-medium"
+          className="rounded-md bg-[var(--accent)] px-6 py-2 type-meta font-medium text-[var(--text-on-accent)] hover:bg-[var(--accent-hover)] disabled:opacity-50"
         >
           {isPending
             ? mode === "create"
@@ -421,7 +421,7 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
             ? "Create Deal"
             : "Save Changes"}
         </button>
-        <Link href="/admin/deals" className="text-sm text-[#71717A] hover:text-[#1a1a1a]">
+        <Link href="/admin/deals" className="type-meta text-[var(--text-secondary)] hover:text-[var(--text-primary)]">
           Cancel
         </Link>
       </div>

@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { revalidateAppData } from "@/lib/revalidation";
 import { parseDateInput } from "@/lib/format";
 import { isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
+import { recordAuditEvent } from "@/modules/operations/audit";
 import { dealSchema, fundSchema, companySchema, ownershipPeriodSchema } from "./schemas";
 import {
   DEAL_SECTOR_MAP,
@@ -102,6 +103,20 @@ function normalizeFundLookup(s: string): string {
 
 function revalidateAll() {
   revalidateAppData();
+}
+
+async function auditMutation(
+  entityType: string,
+  entityId: string,
+  action: string,
+  changedFields: string[] = [],
+) {
+  return recordAuditEvent({
+    entityType,
+    entityId,
+    action,
+    changes: { changedFields },
+  });
 }
 
 async function requireAdminAction(): Promise<ActionResult | null> {
@@ -216,6 +231,7 @@ export async function createDeal(formData: FormData): Promise<ActionResult> {
       return deal;
     });
 
+    await auditMutation("Deal", deal.id, "CREATE", ["record", "participants", "citations"]);
     revalidateAll();
     return { success: true, id: deal.id };
   } catch (error) {
@@ -313,6 +329,7 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
       }
     });
 
+    await auditMutation("Deal", id, "UPDATE", ["record", "participants"]);
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -332,6 +349,7 @@ export async function deleteDeal(id: string): Promise<ActionResult> {
       prisma.newsMention.deleteMany({ where: { dealId: id } }),
       prisma.deal.delete({ where: { id } }),
     ]);
+    await auditMutation("Deal", id, "DELETE");
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -345,7 +363,36 @@ export async function publishDeal(id: string): Promise<ActionResult> {
     const auth = await requireAdminAction();
     if (auth) return auth;
 
-    await prisma.deal.update({ where: { id }, data: { status: "PUBLISHED" } });
+    const deal = await prisma.deal.findUnique({
+      where: { id },
+      select: {
+        target: true,
+        country: true,
+        date: true,
+        dealStatus: true,
+        categories: true,
+        participants: { select: { role: true } },
+        citations: { select: { id: true } },
+      },
+    });
+    if (!deal) return { success: false, error: "Deal not found" };
+    const missing = [
+      !deal.target.trim() && "target",
+      !deal.country.trim() && "country",
+      !deal.date && "date",
+      !deal.dealStatus && "transaction status",
+      deal.categories.length === 0 && "category",
+      !deal.participants.some((participant) => participant.role === "BUYER") && "buyer",
+      deal.citations.length === 0 && "primary citation",
+    ].filter(Boolean);
+    if (missing.length > 0) {
+      return { success: false, error: `Publication blocked. Missing: ${missing.join(", ")}.` };
+    }
+    await prisma.deal.update({
+      where: { id },
+      data: { status: "PUBLISHED", lastVerifiedAt: new Date() },
+    });
+    await auditMutation("Deal", id, "PUBLISH", ["status", "lastVerifiedAt"]);
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -401,6 +448,7 @@ export async function createFund(formData: FormData): Promise<ActionResult> {
       },
     });
 
+    await auditMutation("Fund", fund.id, "CREATE", ["record"]);
     revalidateAll();
     return { success: true, id: fund.id };
   } catch (error) {
@@ -454,6 +502,7 @@ export async function updateFund(id: string, formData: FormData): Promise<Action
       },
     });
 
+    await auditMutation("Fund", id, "UPDATE", ["record"]);
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -472,6 +521,7 @@ export async function deleteFund(id: string): Promise<ActionResult> {
       prisma.newsMention.deleteMany({ where: { fundId: id } }),
       prisma.fund.delete({ where: { id } }),
     ]);
+    await auditMutation("Fund", id, "DELETE");
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -485,7 +535,35 @@ export async function publishFund(id: string): Promise<ActionResult> {
     const auth = await requireAdminAction();
     if (auth) return auth;
 
-    await prisma.fund.update({ where: { id }, data: { status: "PUBLISHED" } });
+    const fund = await prisma.fund.findUnique({
+      where: { id },
+      select: {
+        fundName: true,
+        managerId: true,
+        strategies: true,
+        fundStatus: true,
+        size: true,
+        sourceUrls: true,
+        strategyUrl: true,
+      },
+    });
+    if (!fund) return { success: false, error: "Fund not found" };
+    const missing = [
+      !fund.managerId && "manager",
+      !fund.fundName.trim() && "fund vehicle",
+      fund.strategies.length === 0 && "strategy",
+      !fund.fundStatus && "status",
+      !fund.size.trim() && "size basis or TBD",
+      fund.sourceUrls.length === 0 && !fund.strategyUrl.trim() && "primary source",
+    ].filter(Boolean);
+    if (missing.length > 0) {
+      return { success: false, error: `Publication blocked. Missing: ${missing.join(", ")}.` };
+    }
+    await prisma.fund.update({
+      where: { id },
+      data: { status: "PUBLISHED", lastVerifiedAt: new Date() },
+    });
+    await auditMutation("Fund", id, "PUBLISH", ["status", "lastVerifiedAt"]);
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -559,6 +637,7 @@ export async function createCompany(formData: FormData): Promise<ActionResult> {
       return company;
     });
 
+    await auditMutation("Company", company.id, "CREATE", ["record", "ownership"]);
     revalidateAll();
     return { success: true, id: company.id };
   } catch (error) {
@@ -607,6 +686,7 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
       },
     });
 
+    await auditMutation("Company", id, "UPDATE", ["record"]);
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -628,6 +708,7 @@ export async function deleteCompany(id: string): Promise<ActionResult> {
       prisma.newsMention.deleteMany({ where: { companyId: id } }),
       prisma.company.delete({ where: { id } }),
     ]);
+    await auditMutation("Company", id, "DELETE");
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -641,7 +722,34 @@ export async function publishCompany(id: string): Promise<ActionResult> {
     const auth = await requireAdminAction();
     if (auth) return auth;
 
-    await prisma.company.update({ where: { id }, data: { status: "PUBLISHED" } });
+    const company = await prisma.company.findUnique({
+      where: { id },
+      select: {
+        name: true,
+        country: true,
+        sector: true,
+        description: true,
+        ownershipPeriods: { select: { id: true } },
+        citations: { select: { id: true } },
+      },
+    });
+    if (!company) return { success: false, error: "Company not found" };
+    const missing = [
+      !company.name.trim() && "canonical identity",
+      !company.country.trim() && "location",
+      !company.sector && "sector",
+      !company.description.trim() && "description",
+      company.ownershipPeriods.length === 0 && "ownership period",
+      company.citations.length === 0 && "supporting source",
+    ].filter(Boolean);
+    if (missing.length > 0) {
+      return { success: false, error: `Publication blocked. Missing: ${missing.join(", ")}.` };
+    }
+    await prisma.company.update({
+      where: { id },
+      data: { status: "PUBLISHED", lastVerifiedAt: new Date() },
+    });
+    await auditMutation("Company", id, "PUBLISH", ["status", "lastVerifiedAt"]);
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -691,6 +799,7 @@ export async function addOwnershipPeriod(
         stake: o.stake ?? null,
       },
     });
+    await auditMutation("OwnershipPeriod", created.id, "CREATE", ["record"]);
     revalidateAll();
     return { success: true, id: created.id };
   } catch (error) {
@@ -726,6 +835,7 @@ export async function updateOwnershipPeriod(
         stake: o.stake ?? null,
       },
     });
+    await auditMutation("OwnershipPeriod", id, "UPDATE", ["record"]);
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -740,6 +850,7 @@ export async function deleteOwnershipPeriod(id: string): Promise<ActionResult> {
     if (auth) return auth;
 
     await prisma.ownershipPeriod.delete({ where: { id } });
+    await auditMutation("OwnershipPeriod", id, "DELETE");
     revalidateAll();
     return { success: true };
   } catch (error) {
