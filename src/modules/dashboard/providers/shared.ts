@@ -49,6 +49,19 @@ export async function fetchJson<T>(
   return response.json() as Promise<T>;
 }
 
+export async function fetchJsonOrNullOnNotFound<T>(
+  url: string,
+  init: RequestInit = {},
+  timeoutMs = DEFAULT_PROVIDER_TIMEOUT_MS,
+): Promise<T | null> {
+  const response = await fetchWithTimeout(url, init, "application/json", timeoutMs);
+  if (response.status === 404) return null;
+  if (!response.ok) {
+    throw new Error(`${response.status} ${response.statusText} from ${safeUrlForError(url)}`);
+  }
+  return response.json() as Promise<T>;
+}
+
 export async function fetchText(
   url: string,
   init: RequestInit = {},

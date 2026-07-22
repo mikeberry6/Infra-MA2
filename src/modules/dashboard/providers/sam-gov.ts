@@ -4,7 +4,7 @@ import type {
   DashboardProviderResult,
   DashboardSignal,
 } from "@/modules/dashboard/types";
-import { fetchJson, isoDateDaysAgo, keyMissingProvider, observation, todayIsoDate } from "@/modules/dashboard/providers/shared";
+import { fetchJsonOrNullOnNotFound, isoDateDaysAgo, keyMissingProvider, observation, todayIsoDate } from "@/modules/dashboard/providers/shared";
 
 type SamOpportunity = {
   noticeId?: string;
@@ -169,7 +169,20 @@ async function fetchSamPage(
   }
   url.searchParams.set("limit", String(PAGE_SIZE));
   url.searchParams.set("offset", String(offset));
-  return fetchJson<SamResponse>(url.toString());
+  // SAM.gov documents HTTP 404 as "No Data found" for this search API. That
+  // is a valid empty result only on the first page; a 404 after pagination has
+  // begun would make the release incomplete and must fail closed.
+  const response = await fetchJsonOrNullOnNotFound<SamResponse>(url.toString());
+  if (response) return response;
+  if (offset > 0) {
+    throw new Error(`SAM.gov title query "${keyword}" returned no data after pagination began on page ${offset}.`);
+  }
+  return {
+    totalRecords: 0,
+    limit: PAGE_SIZE,
+    offset,
+    opportunitiesData: [],
+  };
 }
 
 function samDate(isoDate: string): string {
