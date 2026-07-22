@@ -156,7 +156,19 @@ jobs:
             --team-id="$VERCEL_TEAM_ID" \
             --require-immutable-url \
             --output=tmp/release/candidate-inspect.json
-          node scripts/release-smoke.mjs --base-url="$DEPLOYMENT_URL" --expected-version="$RELEASE_SHA" --output=tmp/release/candidate-smoke.json
+          candidate_link_dir="$(mktemp -d "${RUNNER_TEMP}/vercel-candidate-link.XXXXXX")"
+          trap 'rm -rf "$candidate_link_dir"' EXIT
+          npx --yes vercel@51.7.0 link \
+            --cwd "$candidate_link_dir" \
+            --project "$EXPECTED_VERCEL_PROJECT_ID" \
+            --scope "$VERCEL_SCOPE" \
+            --token "$VERCEL_TOKEN" \
+            --yes
+          VERCEL_CLI_CWD="$candidate_link_dir" node scripts/release-smoke.mjs \
+            --base-url="$DEPLOYMENT_URL" \
+            --expected-version="$RELEASE_SHA" \
+            --transport=vercel-cli \
+            --output=tmp/release/candidate-smoke.json
 
       - name: Prove production database target
         run: node --experimental-strip-types scripts/assert-database-target.ts

@@ -122,7 +122,19 @@ jobs:
           echo "ROLLBACK_URL=$rollback_url" >> "$GITHUB_ENV"
           smoke_args=(--expected-version="$ROLLBACK_SHA")
           if [ "$SMOKE_POLICY" = "public-only" ]; then smoke_args=(--skip-health --allow-legacy-root); fi
-          node scripts/release-smoke.mjs --base-url="$rollback_url" --output=tmp/rollback/candidate-smoke.json "${smoke_args[@]}"
+          candidate_link_dir="$(mktemp -d "${RUNNER_TEMP}/vercel-rollback-link.XXXXXX")"
+          trap 'rm -rf "$candidate_link_dir"' EXIT
+          npx --yes vercel@51.7.0 link \
+            --cwd "$candidate_link_dir" \
+            --project "$EXPECTED_VERCEL_PROJECT_ID" \
+            --scope "$VERCEL_SCOPE" \
+            --token "$VERCEL_TOKEN" \
+            --yes
+          VERCEL_CLI_CWD="$candidate_link_dir" node scripts/release-smoke.mjs \
+            --base-url="$rollback_url" \
+            --transport=vercel-cli \
+            --output=tmp/rollback/candidate-smoke.json \
+            "${smoke_args[@]}"
 
       # Additive migrations deliberately remain in place. This workflow changes
       # only the Vercel deployment assigned to production.

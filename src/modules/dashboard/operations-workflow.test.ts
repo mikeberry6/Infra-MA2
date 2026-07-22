@@ -50,6 +50,11 @@ describe("dashboard operational workflows", () => {
     expect(release).toContain("--require-immutable-url");
     expect(release).toContain('promote "$deployment_id"');
     expect(release).toContain('--token "$VERCEL_TOKEN"');
+    for (const source of [release, rollback]) {
+      expect(source).toContain("vercel@51.7.0 link");
+      expect(source).toContain('--project "$EXPECTED_VERCEL_PROJECT_ID"');
+      expect(source).toContain("--transport=vercel-cli");
+    }
     expect(pipeline).toContain("group: production-release");
     expect(schemaStage).toContain("DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}");
     expect(schemaStage).toContain('if [ "$DASHBOARD_WRITES_ENABLED" != "false" ]');
@@ -204,6 +209,7 @@ describe("dashboard operational workflows", () => {
     expect(rollback).toContain("canonical-production-inspect.json");
     expect(rollback).toContain('--expected-sha="$ROLLBACK_SHA"');
     expect(rollback).toContain('--expected-version="$ROLLBACK_SHA"');
+    expect(rollback).toContain("--transport=vercel-cli");
     expect(rollback).not.toContain("vercel@51.7.0 inspect");
   });
 });
