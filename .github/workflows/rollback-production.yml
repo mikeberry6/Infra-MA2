@@ -89,8 +89,17 @@ jobs:
             --require-immutable-url \
             --output=tmp/rollback/candidate-inspect.json
           rollback_url="https://$(jq -r '.url' tmp/rollback/candidate-inspect.json)"
-          node scripts/release-smoke.mjs \
+          candidate_link_dir="$(mktemp -d "${RUNNER_TEMP}/vercel-rollback-link.XXXXXX")"
+          trap 'rm -rf "$candidate_link_dir"' EXIT
+          npx --yes vercel@51.7.0 link \
+            --cwd "$candidate_link_dir" \
+            --project "$EXPECTED_VERCEL_PROJECT_ID" \
+            --scope "$VERCEL_SCOPE" \
+            --token "$VERCEL_TOKEN" \
+            --yes
+          VERCEL_CLI_CWD="$candidate_link_dir" node scripts/release-smoke.mjs \
             --base-url="$rollback_url" \
+            --transport=vercel-cli \
             --skip-health \
             --allow-legacy-root \
             --output=tmp/rollback/candidate-smoke.json
