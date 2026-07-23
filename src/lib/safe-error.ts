@@ -126,6 +126,42 @@ const SAFE_DATABASE_DRIVER_CODES = new Set([
   "58030",
 ]);
 
+function databaseDiagnostic(messages: Array<string | undefined>): string | undefined {
+  const message = messages.filter(Boolean).join(" ");
+  if (!message) return undefined;
+  if (/password authentication failed|invalid password|tenant or user not found|role .+ does not exist|SASL/i.test(message)) {
+    return "AUTH_REJECTED";
+  }
+  if (/database .+ does not exist|unknown database/i.test(message)) {
+    return "DATABASE_MISSING";
+  }
+  if (/getaddrinfo|ENOTFOUND|name or service not known|could not translate host name/i.test(message)) {
+    return "HOST_UNREACHABLE";
+  }
+  if (/connection refused|ECONNREFUSED/i.test(message)) {
+    return "CONNECTION_REFUSED";
+  }
+  if (/timed? ?out|ETIMEDOUT|connection timeout/i.test(message)) {
+    return "CONNECTION_TIMEOUT";
+  }
+  if (/certificate|self.signed|SSL|TLS/i.test(message)) {
+    return "TLS_REJECTED";
+  }
+  if (/too many connections|remaining connection slots|connection limit/i.test(message)) {
+    return "CONNECTION_LIMIT";
+  }
+  if (/endpoint .+(?:disabled|suspended|not found)|project .+(?:disabled|suspended)|compute .+(?:suspended|unavailable)/i.test(message)) {
+    return "ENDPOINT_UNAVAILABLE";
+  }
+  if (/connection terminated unexpectedly|server closed the connection|cannot connect now/i.test(message)) {
+    return "SERVER_UNAVAILABLE";
+  }
+  if (/invalid connection string|invalid database URL|client password must be a string/i.test(message)) {
+    return "CONNECTION_CONFIG_INVALID";
+  }
+  return undefined;
+}
+
 export class SafeOperationalError extends Error {
   readonly safeCode: SafeOperationalErrorCode;
 
@@ -140,6 +176,7 @@ function errorMetadata(error: unknown): {
   name?: string;
   code?: string;
   nestedCode?: string;
+  databaseDiagnostic?: string;
   message?: string;
   httpStatus?: number;
 } {
@@ -165,6 +202,8 @@ function errorMetadata(error: unknown): {
     const meta = objectValue(candidate.meta);
     const adapterError = objectValue(meta?.driverAdapterError);
     const adapterCause = objectValue(adapterError?.cause);
+    const stringValue = (value: unknown): string | undefined =>
+      typeof value === "string" ? value : undefined;
     const nestedCode = [
       cause?.code,
       cause?.originalCode,
@@ -190,6 +229,11 @@ function errorMetadata(error: unknown): {
             .find((safeCode) => message.includes(safeCode))
           : undefined
       ),
+      databaseDiagnostic: databaseDiagnostic([
+        message,
+        stringValue(meta?.message),
+        stringValue(adapterCause?.originalMessage),
+      ]),
       message,
       httpStatus: status && status >= 400 && status <= 599 ? Math.round(status) : undefined,
     };
@@ -225,13 +269,16 @@ function classificationForMessage(message: string): SafeErrorClassification | un
 function safeCodeSuffix(
   code: string,
   nestedCode: string,
+  diagnostic: string,
   classification: SafeErrorClassification,
 ): string | undefined {
   if (classification === "database_error") {
     const prismaCode = /^P\d{4}$/.test(code) ? code : undefined;
     if (prismaCode && nestedCode) return `${prismaCode}/${nestedCode}`;
+    if (prismaCode && diagnostic) return `${prismaCode}/${diagnostic}`;
     if (prismaCode) return prismaCode;
     if (nestedCode) return nestedCode;
+    if (diagnostic) return diagnostic;
   }
   if (SAFE_SYSTEM_CODES.has(code)) return code;
   return undefined;
@@ -255,6 +302,7 @@ export function getSafeErrorDetails(
     name = "",
     code = "",
     nestedCode = "",
+    databaseDiagnostic: diagnostic = "",
     message = "",
     httpStatus: metadataStatus,
   } = errorMetadata(error);
@@ -275,7 +323,7 @@ export function getSafeErrorDetails(
 
   const baseMessage = CLASSIFICATION_MESSAGES[classification];
   const httpStatus = safeHttpStatus(message, metadataStatus);
-  const safeCode = safeCodeSuffix(code, nestedCode, classification);
+  const safeCode = safeCodeSuffix(code, nestedCode, diagnostic, classification);
   const suffix = httpStatus ? `HTTP ${httpStatus}` : safeCode;
   return {
     classification,
