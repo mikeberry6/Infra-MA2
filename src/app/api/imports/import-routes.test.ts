@@ -387,6 +387,131 @@ describe("two-step import routes", () => {
     expect(mocks.revalidateAppData).not.toHaveBeenCalled();
   });
 
+  it("audits duplicate deal-primary normalization even when the selected source is unchanged", async () => {
+    const existing = unchangedDealRecord({
+      citations: [
+        {
+          source: {
+            url: "https://example.com/test/deal",
+            label: "Company announcement",
+          },
+        },
+        {
+          source: {
+            url: "https://example.com/test/deal-duplicate",
+            label: "Duplicate primary",
+          },
+        },
+      ],
+    });
+    mocks.dealFindMany.mockResolvedValue([existing]);
+    const tx = {
+      deal: {
+        findMany: vi.fn().mockResolvedValue([existing]),
+        updateMany: vi.fn().mockResolvedValue({ count: 1 }),
+        create: vi.fn(),
+      },
+      dealParticipant: {
+        deleteMany: vi.fn().mockResolvedValue({ count: 2 }),
+        create: vi.fn().mockResolvedValue({}),
+      },
+      organization: {
+        upsert: vi.fn().mockImplementation(async ({ where }: { where: { name: string } }) => ({
+          id: `organization-${where.name.toLowerCase()}`,
+        })),
+      },
+      citation: {
+        updateMany: vi.fn().mockResolvedValue({ count: 2 }),
+        findFirst: vi.fn().mockResolvedValue({ id: "citation-selected" }),
+        update: vi.fn().mockResolvedValue({}),
+        create: vi.fn(),
+      },
+      source: { upsert: vi.fn().mockResolvedValue({ id: "source-selected" }) },
+      pipelineRun: { update: vi.fn().mockResolvedValue({}) },
+    };
+    mocks.transaction.mockImplementation(
+      async (callback: (client: typeof tx) => unknown) => callback(tx),
+    );
+
+    const response = await importDeals(jsonRequest(
+      "/api/imports/deals",
+      { deals: [deal()] },
+    ));
+
+    expect(response.status).toBe(200);
+    expect(mocks.recordAuditEvent).toHaveBeenCalledWith({
+      entityType: "Deal",
+      action: "BULK_IMPORT",
+      changes: {
+        changedFields: ["citations"],
+        inserted: 0,
+        updated: 1,
+        errors: 0,
+        quarantined: 0,
+      },
+    }, tx);
+  });
+
+  it("audits duplicate company-primary normalization even when the selected source is unchanged", async () => {
+    const sourceUrl = "https://example.com/test/company-source";
+    const sourceName = "Company announcement";
+    const existing = unchangedCompanyRecord({
+      citations: [
+        { source: { url: sourceUrl, label: sourceName } },
+        {
+          source: {
+            url: "https://example.com/test/company-source-duplicate",
+            label: "Duplicate primary",
+          },
+        },
+      ],
+    });
+    mocks.companyFindMany.mockResolvedValue([existing]);
+    mocks.fundFindMany.mockResolvedValue([{ id: "fund-1", fundName: "Infrastructure Fund V" }]);
+    const tx = {
+      company: {
+        findMany: vi.fn().mockResolvedValue([existing]),
+        updateMany: vi.fn().mockResolvedValue({ count: 1 }),
+        create: vi.fn(),
+      },
+      organization: { upsert: vi.fn().mockResolvedValue({ id: "manager-1" }) },
+      fund: { findFirst: vi.fn().mockResolvedValue({ id: "fund-1" }) },
+      ownershipPeriod: {
+        updateMany: vi.fn().mockResolvedValue({ count: 1 }),
+        upsert: vi.fn().mockResolvedValue({}),
+      },
+      citation: {
+        updateMany: vi.fn().mockResolvedValue({ count: 2 }),
+        findFirst: vi.fn().mockResolvedValue({ id: "citation-selected" }),
+        update: vi.fn().mockResolvedValue({}),
+        create: vi.fn(),
+      },
+      source: { upsert: vi.fn().mockResolvedValue({ id: "source-selected" }) },
+      pipelineRun: { update: vi.fn().mockResolvedValue({}) },
+    };
+    mocks.transaction.mockImplementation(
+      async (callback: (client: typeof tx) => unknown) => callback(tx),
+    );
+
+    const response = await importCompanies(jsonRequest(
+      "/api/imports/portfolio",
+      { companies: [company({ sourceName, sourceUrl })] },
+    ));
+
+    expect(response.status).toBe(200);
+    expect(mocks.recordAuditEvent).toHaveBeenCalledWith({
+      entityType: "Company",
+      action: "BULK_IMPORT",
+      changes: {
+        changedFields: ["citations"],
+        inserted: 0,
+        updated: 1,
+        errors: 0,
+        quarantined: 0,
+      },
+    }, tx);
+  });
+
   it("skips an unchanged deal inside a mixed import while auditing only the real write", async () => {
     const unchanged = unchangedDealRecord();
     mocks.dealFindMany.mockResolvedValue([unchanged]);
@@ -436,8 +561,24 @@ describe("two-step import routes", () => {
     expect(mocks.recordAuditEvent).toHaveBeenCalledWith({
       entityType: "Deal",
       action: "BULK_IMPORT",
-      changes: { inserted: 1, updated: 0, unchanged: 1, errors: 0, quarantined: 0 },
+      changes: expect.objectContaining({
+        changedFields: expect.arrayContaining([
+          "buyers",
+          "legacyId",
+          "primarySourceUrl",
+          "status",
+          "title",
+        ]),
+        inserted: 1,
+        updated: 0,
+        unchanged: 1,
+        errors: 0,
+        quarantined: 0,
+      }),
     }, tx);
+    expect(JSON.stringify(mocks.recordAuditEvent.mock.calls)).not.toContain(
+      "Buyer acquires another target",
+    );
     expect(tx.pipelineRun.update).toHaveBeenCalledWith(expect.objectContaining({
       data: expect.objectContaining({
         status: "SUCCEEDED",
@@ -678,6 +819,11 @@ describe("two-step import routes", () => {
     const payload = await response.json();
     expect(payload).toMatchObject({ imported: 1, auditEventId: "audit-1" });
     expect(payload.errors).toHaveLength(1);
+    expect(mocks.transaction).toHaveBeenCalledWith(expect.any(Function), {
+      isolationLevel: "Serializable",
+      maxWait: 10_000,
+      timeout: 120_000,
+    });
     expect(tx.deal.updateMany).toHaveBeenCalledWith(expect.objectContaining({
       where: { id: "database-deal-1", status: { in: ["DRAFT", "IN_REVIEW"] } },
       data: expect.objectContaining({ target: "Target" }),
@@ -690,7 +836,13 @@ describe("two-step import routes", () => {
       {
         entityType: "Deal",
         action: "BULK_IMPORT",
-        changes: { inserted: 0, updated: 1, errors: 1, quarantined: 0 },
+        changes: expect.objectContaining({
+          changedFields: expect.arrayContaining(["target", "title"]),
+          inserted: 0,
+          updated: 1,
+          errors: 1,
+          quarantined: 0,
+        }),
       },
       tx,
     );
@@ -794,7 +946,13 @@ describe("two-step import routes", () => {
       select: { id: true },
     });
     expect(mocks.recordAuditEvent).toHaveBeenLastCalledWith(
-      expect.objectContaining({ entityType: "Fund", action: "BULK_IMPORT" }),
+      expect.objectContaining({
+        entityType: "Fund",
+        action: "BULK_IMPORT",
+        changes: expect.objectContaining({
+          changedFields: expect.arrayContaining(["fundName", "managerName", "status"]),
+        }),
+      }),
       fundTx,
     );
     expect(fundTx.pipelineRun.update).toHaveBeenCalledWith(expect.objectContaining({
@@ -836,7 +994,13 @@ describe("two-step import routes", () => {
       select: { id: true },
     });
     expect(mocks.recordAuditEvent).toHaveBeenLastCalledWith(
-      expect.objectContaining({ entityType: "Company", action: "BULK_IMPORT" }),
+      expect.objectContaining({
+        entityType: "Company",
+        action: "BULK_IMPORT",
+        changes: expect.objectContaining({
+          changedFields: expect.arrayContaining(["name", "ownershipPeriods", "status"]),
+        }),
+      }),
       companyTx,
     );
     expect(companyTx.pipelineRun.update).toHaveBeenCalledWith(expect.objectContaining({
@@ -917,7 +1081,19 @@ describe("two-step import routes", () => {
     expect(mocks.recordAuditEvent).toHaveBeenCalledWith({
       entityType: "Fund",
       action: "BULK_IMPORT",
-      changes: { inserted: 1, updated: 1, errors: 1, quarantined: 1 },
+      changes: expect.objectContaining({
+        changedFields: expect.arrayContaining([
+          "fundName",
+          "legacyId",
+          "managerName",
+          "primarySourceUrl",
+          "status",
+        ]),
+        inserted: 1,
+        updated: 1,
+        errors: 1,
+        quarantined: 1,
+      }),
     }, fundTx);
     expect(fundTx.pipelineRun.update).toHaveBeenCalledWith(expect.objectContaining({
       data: expect.objectContaining({
@@ -1019,7 +1195,13 @@ describe("two-step import routes", () => {
       update: expect.objectContaining({ fundId: "fund-new", isActive: true }),
     }));
     expect(mocks.recordAuditEvent).toHaveBeenCalledWith(
-      expect.objectContaining({ entityType: "Company", action: "BULK_IMPORT" }),
+      expect.objectContaining({
+        entityType: "Company",
+        action: "BULK_IMPORT",
+        changes: expect.objectContaining({
+          changedFields: expect.arrayContaining(["ownershipPeriods"]),
+        }),
+      }),
       tx,
     );
   });

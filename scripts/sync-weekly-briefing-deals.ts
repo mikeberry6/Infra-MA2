@@ -30,6 +30,7 @@ import {
   runWeeklySyncLifecycle,
   type WeeklySyncProgress,
 } from "../src/modules/operations/weekly-sync-lifecycle";
+import { weeklyProposalChangedFields } from "../src/modules/operations/weekly-deal-audit";
 
 const applyChanges = process.argv.includes("--apply");
 const connectionString = process.env.DATABASE_URL;
@@ -116,6 +117,21 @@ function organizationType(seed: ParticipantSeed): OrgType {
   return getOrgType(seed.name);
 }
 
+function participantAuditRows(deal: Deal) {
+  const seen = new Set<string>();
+  return participantSeeds(deal).flatMap((participant) => {
+    const organizationName = resolveOrgName(participant.name);
+    const key = `${organizationName}|${participant.role}`;
+    if (seen.has(key)) return [];
+    seen.add(key);
+    return [{
+      organizationName,
+      role: participant.role,
+      displayName: participant.displayName ?? null,
+    }];
+  });
+}
+
 function dealPayload(deal: Deal) {
   const date = new Date(deal.date);
   if (Number.isNaN(date.getTime())) throw new Error(`Invalid date for ${deal.id}: ${deal.date}`);
@@ -156,10 +172,40 @@ async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
         where: { legacyId: deal.id },
         select: {
           id: true,
+          legacyId: true,
           status: true,
+          title: true,
           target: true,
+          sector: true,
+          subsector: true,
+          region: true,
+          categories: true,
           date: true,
-          citations: { select: { source: { select: { url: true } } } },
+          description: true,
+          targetDescription: true,
+          country: true,
+          enterpriseValue: true,
+          equityValue: true,
+          stake: true,
+          dealStatus: true,
+          closingDate: true,
+          assetScale: true,
+          valuationMultiple: true,
+          fundVehicle: true,
+          keyHighlights: true,
+          participants: {
+            select: {
+              role: true,
+              displayName: true,
+              organization: { select: { name: true } },
+            },
+          },
+          citations: {
+            select: {
+              isPrimary: true,
+              source: { select: { url: true } },
+            },
+          },
         },
       });
       if (existing && weeklyLegacyIdCollides(deal, {
@@ -178,6 +224,53 @@ async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
         );
       }
       const payload = dealPayload(deal);
+      const proposedParticipants = participantAuditRows(deal);
+      const proposedCitations = deal.sourceUrl
+        ? [{ sourceUrl: deal.sourceUrl, isPrimary: true }]
+        : [];
+      const changedFields = weeklyProposalChangedFields(
+        existing
+          ? {
+              record: {
+                legacyId: existing.legacyId,
+                title: existing.title,
+                target: existing.target,
+                sector: existing.sector,
+                subsector: existing.subsector,
+                region: existing.region,
+                categories: existing.categories,
+                date: existing.date,
+                description: existing.description,
+                targetDescription: existing.targetDescription,
+                country: existing.country,
+                enterpriseValue: existing.enterpriseValue,
+                equityValue: existing.equityValue,
+                stake: existing.stake,
+                dealStatus: existing.dealStatus,
+                closingDate: existing.closingDate,
+                assetScale: existing.assetScale,
+                valuationMultiple: existing.valuationMultiple,
+                fundVehicle: existing.fundVehicle,
+                keyHighlights: existing.keyHighlights,
+                status: existing.status,
+              },
+              participants: existing.participants.map((participant) => ({
+                organizationName: participant.organization.name,
+                role: participant.role,
+                displayName: participant.displayName,
+              })),
+              citations: existing.citations.map((citation) => ({
+                sourceUrl: citation.source.url,
+                isPrimary: citation.isPrimary,
+              })),
+            }
+          : null,
+        {
+          record: { legacyId: deal.id, ...payload },
+          participants: proposedParticipants,
+          citations: proposedCitations,
+        },
+      );
       const dbDeal = existing
         ? await tx.deal.update({ where: { id: existing.id }, data: payload })
         : await tx.deal.create({ data: { legacyId: deal.id, ...payload } });
@@ -268,7 +361,7 @@ async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
           entityId: dbDeal.id,
           action: existing ? "WEEKLY_PROPOSAL_UPDATE" : "WEEKLY_PROPOSAL_CREATE",
           changes: {
-            changedFields: ["record", "participants", "citations"],
+            changedFields,
             resultingStatus: "DRAFT",
           },
           metadata: { pipeline: "WEEKLY_DEAL_SYNC", legacyId: deal.id },
@@ -277,7 +370,7 @@ async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
 
       return existing ? "updated" : "created";
     },
-    { maxWait: 10_000, timeout: 30_000 },
+    { isolationLevel: "Serializable", maxWait: 10_000, timeout: 30_000 },
   );
 }
 

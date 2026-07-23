@@ -5,6 +5,7 @@ import { revalidateAppData } from "@/lib/revalidation";
 import { withServerOperation } from "@/lib/server-log";
 import { AuthorizationError, getSessionIdentity, isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { companySchema, type CompanyInput } from "@/modules/admin/schemas";
+import { changedFieldSummary } from "@/modules/admin/change-summary";
 import { COMPANY_SECTOR_MAP, COMPANY_REGION_MAP, COMPANY_STATUS_MAP } from "@/modules/shared/enum-maps";
 import type { CompanySector, CompanyRegion, CompanyStatus, Prisma } from "@/generated/prisma/client";
 import { commitImport } from "@/modules/imports/commit";
@@ -268,6 +269,62 @@ function sameCompanyImport(
     && samePrimarySource(existing.citations, row.sourceUrl, row.sourceName);
 }
 
+function companyImportChangedFields(
+  row: CompanyImportRow,
+  matchedFundId: string | null,
+  existing?: ExistingCompany,
+): string[] {
+  const normalized = normalizeCompanyImport(row);
+  if (!normalized.ok) return [];
+  const existingPrimarySources = (existing?.citations ?? [])
+    .map((citation) => citation.source)
+    .sort((left, right) => left.url.localeCompare(right.url));
+  const existingPrimarySource = existingPrimarySources.find(
+    (source) => source.url === row.sourceUrl,
+  ) ?? existingPrimarySources[0];
+  const before = existing
+    ? {
+        name: existing.name,
+        country: existing.country,
+        sector: existing.sector,
+        subsector: existing.subsector,
+        region: existing.region,
+        countryTags: existing.countryTags,
+        description: existing.description,
+        companyStatus: existing.companyStatus,
+        website: existing.website,
+        yearFounded: existing.yearFounded,
+        headquarters: existing.headquarters,
+        status: existing.status,
+        citations: existingPrimarySources.map((source) => source.url),
+        primarySourceName: existingPrimarySource?.label ?? null,
+        primarySourceUrl: existingPrimarySource?.url ?? null,
+      }
+    : {};
+  const changedFields = changedFieldSummary(before, {
+    name: row.name,
+    country: row.country,
+    ...normalized.data,
+    status: existing?.status ?? "DRAFT",
+    citations: row.sourceUrl ? [row.sourceUrl] : [],
+    primarySourceName: row.sourceName
+      || (
+        existingPrimarySource && existingPrimarySource.url === row.sourceUrl
+          ? existingPrimarySource.label
+          : null
+      ),
+    primarySourceUrl: row.sourceUrl || null,
+  });
+
+  if (
+    (!existing && row.investmentFirm)
+    || (existing && !sameCompanyOwnership(row, existing, matchedFundId))
+  ) {
+    changedFields.push("ownershipPeriods");
+  }
+  return [...new Set(changedFields)].sort();
+}
+
 function validateCompanyRows(companies: Record<string, unknown>[]): { validRows: CompanyImportRow[]; errors: ImportResult[] } {
   const validRows: CompanyImportRow[] = [];
   const errors: ImportResult[] = [];
@@ -485,6 +542,7 @@ async function importPortfolio(request: NextRequest) {
         let skipped = errors.length;
         let quarantined = 0;
         let unchanged = 0;
+        const changedFields = new Set<string>();
 
         for (const company of validRows) {
           const key = companyKey(company.name, company.country);
@@ -512,6 +570,13 @@ async function importPortfolio(request: NextRequest) {
             unchanged += 1;
             skipped += 1;
             continue;
+          }
+          for (const field of companyImportChangedFields(
+            company,
+            matchedFund?.id ?? null,
+            existingCompany,
+          )) {
+            changedFields.add(field);
           }
           const companyData = normalized.data;
 
@@ -628,6 +693,7 @@ async function importPortfolio(request: NextRequest) {
           },
           counts: { inserted, updated, skipped },
           auditChanges: {
+            changedFields: [...changedFields].sort(),
             inserted,
             updated,
             ...(unchanged > 0 ? { unchanged } : {}),

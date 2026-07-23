@@ -113,7 +113,17 @@ describe("ownership child editorial workflow", () => {
       entityId: "ownership-1",
       action: "CREATE",
       changes: expect.objectContaining({
-        changedFields: ["record"],
+        changedFields: [
+          "companyId",
+          "exitYear",
+          "fundId",
+          "id",
+          "investmentYear",
+          "isActive",
+          "organizationId",
+          "stake",
+          "vehicleName",
+        ],
         parentCompany: {
           companyId: "company-1",
           statusBefore: "PUBLISHED",
@@ -140,6 +150,7 @@ describe("ownership child editorial workflow", () => {
       entityType: "OwnershipPeriod",
       action: "UPDATE",
       changes: expect.objectContaining({
+        changedFields: ["investmentYear"],
         beforeSnapshot: expect.objectContaining({ investmentYear: 2024 }),
         afterSnapshot: expect.objectContaining({ investmentYear: 2025 }),
       }),
@@ -154,7 +165,17 @@ describe("ownership child editorial workflow", () => {
     );
     expect(deletionAudit?.[0]).toMatchObject({
       changes: {
-        changedFields: ["record"],
+        changedFields: [
+          "companyId",
+          "exitYear",
+          "fundId",
+          "id",
+          "investmentYear",
+          "isActive",
+          "organizationId",
+          "stake",
+          "vehicleName",
+        ],
         beforeSnapshot: expect.objectContaining({
           id: "ownership-1",
           companyId: "company-1",
@@ -185,5 +206,16 @@ describe("ownership child editorial workflow", () => {
     });
     expect(mocks.tx.ownershipPeriod.delete).not.toHaveBeenCalled();
     expect(mocks.recordAuditEvent).not.toHaveBeenCalled();
+  });
+
+  it("uses serializable transactions for every ownership mutation", async () => {
+    await addOwnershipPeriod("company-1", ownershipForm());
+    await updateOwnershipPeriod("ownership-1", ownershipForm({ investmentYear: "2025" }));
+    await deleteOwnershipPeriod("ownership-1");
+
+    expect(mocks.transaction).toHaveBeenCalledTimes(3);
+    for (const call of mocks.transaction.mock.calls) {
+      expect(call[1]).toEqual({ isolationLevel: "Serializable" });
+    }
   });
 });

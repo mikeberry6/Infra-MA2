@@ -153,7 +153,7 @@ interface PlannedOp {
   kind: "create-op" | "update-op" | "deactivate-op" | "create-org" | "create-source" | "create-citation";
   description: string;
   // For applying:
-  apply: (tx: Prisma.TransactionClient) => Promise<void>;
+  apply: (tx: Prisma.TransactionClient) => Promise<string[]>;
 }
 
 interface RowPlan {
@@ -237,6 +237,7 @@ async function buildPlan(
               where: { id: op.id },
               data: { isActive: false },
             });
+            return ["OwnershipPeriod.isActive"];
           },
         });
       }
@@ -255,6 +256,7 @@ async function buildPlan(
         description: `create Organization "${orgName}"`,
         apply: async (_tx) => {
           // No-op here; the create happens inline with the OwnershipPeriod create below
+          return [];
         },
       });
       ops.push({
@@ -263,6 +265,10 @@ async function buildPlan(
         apply: async (tx) => {
           // Create or find the org first (handles concurrent creates from
           // multiple rows in the same ingest run).
+          const existingOrganization = await tx.organization.findUnique({
+            where: { name: orgName },
+            select: { id: true },
+          });
           const org = await tx.organization.upsert({
             where: { name: orgName },
             update: {},
@@ -271,15 +277,20 @@ async function buildPlan(
               types: ["FUND_MANAGER"],
             },
           });
+          const ownershipKey = {
+            companyId: company.id,
+            organizationId: org.id,
+            vehicleName: orgName,
+          };
+          const existingOwnership = await tx.ownershipPeriod.findUnique({
+            where: { companyId_organizationId_vehicleName: ownershipKey },
+            select: { id: true },
+          });
           // Then create the OwnershipPeriod, guarded by the unique
           // [companyId, organizationId, vehicleName] constraint
           await tx.ownershipPeriod.upsert({
             where: {
-              companyId_organizationId_vehicleName: {
-                companyId: company.id,
-                organizationId: org.id,
-                vehicleName: orgName,
-              },
+              companyId_organizationId_vehicleName: ownershipKey,
             },
             update: {},
             create: {
@@ -290,6 +301,20 @@ async function buildPlan(
               stake: stakeFromProse(row.revisedOwnersRaw, orgName),
             },
           });
+          return [
+            ...(!existingOrganization
+              ? ["Organization.name", "Organization.status", "Organization.types"]
+              : []),
+            ...(!existingOwnership
+              ? [
+                  "OwnershipPeriod.companyId",
+                  "OwnershipPeriod.isActive",
+                  "OwnershipPeriod.organizationId",
+                  "OwnershipPeriod.stake",
+                  "OwnershipPeriod.vehicleName",
+                ]
+              : []),
+          ];
         },
       });
     } else {
@@ -297,13 +322,18 @@ async function buildPlan(
         kind: "create-op",
         description: `create OwnershipPeriod (org=${r.org.name}, isActive=true) [resolved by ${r.reason}]`,
         apply: async (tx) => {
+          const ownershipKey = {
+            companyId: company.id,
+            organizationId: r.org!.id,
+            vehicleName: r.org!.name,
+          };
+          const existingOwnership = await tx.ownershipPeriod.findUnique({
+            where: { companyId_organizationId_vehicleName: ownershipKey },
+            select: { id: true },
+          });
           await tx.ownershipPeriod.upsert({
             where: {
-              companyId_organizationId_vehicleName: {
-                companyId: company.id,
-                organizationId: r.org!.id,
-                vehicleName: r.org!.name,
-              },
+              companyId_organizationId_vehicleName: ownershipKey,
             },
             update: {},
             create: {
@@ -314,6 +344,15 @@ async function buildPlan(
               stake: stakeFromProse(row.revisedOwnersRaw, r.org!.name),
             },
           });
+          return existingOwnership
+            ? []
+            : [
+                "OwnershipPeriod.companyId",
+                "OwnershipPeriod.isActive",
+                "OwnershipPeriod.organizationId",
+                "OwnershipPeriod.stake",
+                "OwnershipPeriod.vehicleName",
+              ];
         },
       });
     }
@@ -332,6 +371,10 @@ async function buildPlan(
       kind: "create-source",
       description: `Source(${hostname}) → Citation(company=${company.name})`,
       apply: async (tx) => {
+        const existingSource = await tx.source.findUnique({
+          where: { url },
+          select: { id: true },
+        });
         const source = await tx.source.upsert({
           where: { url },
           update: {},
@@ -354,6 +397,12 @@ async function buildPlan(
             },
           });
         }
+        return [
+          ...(!existingSource ? ["Source.label", "Source.type", "Source.url"] : []),
+          ...(!existing
+            ? ["Citation.companyId", "Citation.sourceId"]
+            : []),
+        ];
       },
     });
   }
@@ -466,8 +515,10 @@ async function main() {
     if (plan.flagged) continue;
     if (plan.ops.length === 0) continue;
     await prisma.$transaction(async (tx) => {
+      const changedFields = new Set<string>();
       for (const op of plan.ops) {
-        await op.apply(tx);
+        const affectedFields = await op.apply(tx);
+        for (const field of affectedFields) changedFields.add(field);
         appliedOps++;
       }
       await tx.auditEvent.create({
@@ -477,6 +528,7 @@ async function main() {
           entityId: plan.companyId,
           action: "OWNERSHIP_CORRECTION_IMPORT",
           changes: {
+            changedFields: [...changedFields].sort(),
             sourceRow: plan.row.sourceRow,
             changeType: plan.row.changeType,
             operations: plan.ops.map((operation) => operation.kind),

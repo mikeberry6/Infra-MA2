@@ -14,7 +14,7 @@ const IMPORT_TRANSACTION_TIMEOUT_MS = 120_000;
 interface ImportCommitWork<T> {
   value: T;
   counts: Required<PipelineCounts>;
-  auditChanges: Prisma.InputJsonValue;
+  auditChanges: Prisma.InputJsonValue & { changedFields: string[] };
 }
 
 interface ImportCommitOptions<T> {
@@ -89,6 +89,7 @@ export async function commitImport<T>(
         pipelineRunId,
       };
     }, {
+      isolationLevel: "Serializable",
       maxWait: IMPORT_TRANSACTION_MAX_WAIT_MS,
       timeout: IMPORT_TRANSACTION_TIMEOUT_MS,
     });

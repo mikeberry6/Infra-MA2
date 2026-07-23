@@ -11,6 +11,7 @@ The hosted seller-disclosure template later identified Reload, Andion CH4 Renewa
 - **Authoritative primary — direct:** an announcement hosted by the buyer, seller, target, portfolio company, or other transaction party.
 - **Authoritative primary — issuer wire:** a release issued by a transaction party and distributed through Business Wire or GlobeNewswire. The issuer, not the wire service, is the evidentiary source.
 - **Authoritative primary — exchange filing:** a company filing hosted by a securities exchange; use this to resolve announcement and completion chronology when a corporate webpage conflicts.
+- **Authoritative primary — regulatory corroboration (partial):** a government permit or registry record that supports a specific asset, license, or operating-control change but does not by itself establish the complete transaction narrative.
 - **Secondary fallback only:** independent reporting used only when no reliable public primary source was found. It must not be represented as first-party verification.
 
 Publication dates below are source publication dates. They do not automatically determine the appropriate deal `date`; the reviewer must apply the repository's event-date convention consistently.
@@ -34,7 +35,7 @@ Publication dates below are source publication dates. They do not automatically 
 | `INF-2026-092` | Macquarie AirFinance | Authoritative primary — direct | Dubai Aerospace Enterprise, 2026-02-26 | **PENDING RESEARCH REVIEW** |
 | `INF-2026-093` | Lower Lakes Towing and six Canadian-flagged Lakers | Authoritative primary — issuer wire | Algoma Central Corporation, 2026-02-27 | **PENDING RESEARCH REVIEW** |
 | `INF-2026-094` | 321 Precision Conversions | Authoritative primary — direct | 321 Precision Conversions / ATSG, 2026-02-24 | **PENDING RESEARCH REVIEW** |
-| `INF-2026-095` | DTG Recycle | Secondary fallback only; no reliable public primary transaction source found | Waste Dive, 2026-02-23, updated 2026-02-24 | **PENDING RESEARCH REVIEW** |
+| `INF-2026-095` | DTG Recycle | Secondary fallback plus partial primary regulatory corroboration; no reliable public primary transaction source found | Waste Dive, 2026-02-23, updated 2026-02-24; Washington State Department of Ecology, 2026-03-24 and 2026-04-24 | **PENDING RESEARCH REVIEW** |
 | Company duplicate | `ExteNet Systems` / `Extenet` | Authoritative primary — direct | Extenet, 2022-12-15 | **PENDING RESEARCH REVIEW** |
 
 ## Deal-by-deal citation and correction review
@@ -149,7 +150,9 @@ Publication dates below are source publication dates. They do not automatically 
 - **Recommendation status:** **PENDING RESEARCH REVIEW**
 - **Secondary fallback:** [“Macquarie exits DTG Recycle with sales to founder, Waste Connections”](https://www.wastedive.com/news/macquarie-exits-dtg-recycle-with-sales-to-founder-waste-connections/812150/) — Waste Dive, February 23, 2026, updated February 24, 2026.
 - **Secondary evidence:** Waste Dive reports that founder Dan Guimont repurchased the core operation and Waste Connections acquired selected Pierce County assets.
-- **Required correction/caveat:** No reliable public primary transaction source was found. Waste Dive reports that Macquarie declined comment and Waste Connections did not respond, so the article cannot be labeled primary confirmation. Keep the primary-source gap open, do not treat `2026-02-28` as verified, and require reviewer approval before using this explicitly labeled secondary fallback or publishing the split-sale details as settled fact.
+- **Partial primary regulatory corroboration:** Washington State Department of Ecology PARIS records for [Recovery 1](https://apps.ecology.wa.gov/paris/FacilitySummary.aspx?FacilityId=75272691) (1630 E 18th St, Tacoma; permit `WAR001386`) and [Tacoma Yard DTG](https://apps.ecology.wa.gov/paris/FacilitySummary.aspx?FacilityId=96403) (2117 E River St, Tacoma; permit `WAR307170`) each list a March 24, 2026 `Full Transfer` coverage letter. Each facility record also lists April 24, 2026 submissions labeled `WasteConnections`, after March 13 submissions labeled `DTGRecycle`.
+- **Regulatory-evidence limit:** These government records support a full permit-coverage transfer and subsequent Waste Connections regulatory activity at two named Pierce County facilities. They do not identify a purchase agreement, purchase price, February transaction date, Macquarie exit, Dan Guimont repurchase, or the complete asset perimeter.
+- **Required correction/caveat:** No reliable public primary transaction source was found. Waste Dive reports that Macquarie declined comment and Waste Connections did not respond, so the article cannot be labeled primary confirmation. The regulatory records must not be promoted into confirmation of the full split-sale narrative. Keep the primary-source gap open, do not treat `2026-02-28` as verified, and require reviewer approval before using the explicitly labeled secondary fallback or publishing the split-sale details as settled fact.
 
 ## Extenet duplicate-company review
 

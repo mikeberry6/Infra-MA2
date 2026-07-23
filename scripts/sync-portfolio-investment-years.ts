@@ -188,6 +188,7 @@ async function main() {
         entityType: "OwnershipPeriod",
         action: "INVESTMENT_YEAR_RECONCILIATION",
         changes: {
+          changedFields: planned.length > 0 ? ["investmentYear"] : [],
           updatedCount: planned.length,
           ownershipPeriodIds: planned.map((update) => update.ownershipPeriodId),
         },

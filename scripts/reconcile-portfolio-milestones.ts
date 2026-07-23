@@ -153,6 +153,7 @@ async function main() {
       entityType: "MaintenanceRun",
       action: "MILESTONE_RECONCILIATION_STARTED",
       changes: {
+        changedFields: [],
         matchedCompanies: matched.length,
         dbOnlyCompanies: dbOnly.length,
         preserveDbOnly,
@@ -200,7 +201,20 @@ async function main() {
         entityType: "MaintenanceRun",
         entityId: auditStart.id,
         action: "MILESTONE_RECONCILIATION_COMPLETED",
-        changes: { deletedRows, insertedRows },
+        changes: {
+          changedFields: deletedRows + insertedRows > 0
+            ? [
+                "Milestone.category",
+                "Milestone.companyId",
+                "Milestone.date",
+                "Milestone.event",
+                "Milestone.id",
+                "Milestone.sortDate",
+              ]
+            : [],
+          deletedRows,
+          insertedRows,
+        },
         metadata: {
           source: "scripts/reconcile-portfolio-milestones.ts",
           startedAuditEventId: auditStart.id,

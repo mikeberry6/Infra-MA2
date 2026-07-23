@@ -6,6 +6,7 @@ import { revalidateAppData } from "@/lib/revalidation";
 import { withServerOperation } from "@/lib/server-log";
 import { AuthorizationError, getSessionIdentity, isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { dealSchema, type DealInput } from "@/modules/admin/schemas";
+import { changedFieldSummary } from "@/modules/admin/change-summary";
 import { DEAL_SECTOR_MAP, DEAL_REGION_MAP, DEAL_CATEGORY_MAP, DEAL_STATUS_MAP } from "@/modules/shared/enum-maps";
 import type { DealSector, DealRegion, DealCategory, DealStatusEnum, Prisma } from "@/generated/prisma/client";
 import { commitImport } from "@/modules/imports/commit";
@@ -240,6 +241,77 @@ function sameDealImport(row: DealImportRow, existing: ExistingDeal): boolean {
     && samePrimarySource(existing.citations, row.sourceUrl, row.sourceName);
 }
 
+function dealImportChangedFields(
+  row: DealImportRow,
+  existing?: ExistingDeal,
+): string[] {
+  const normalized = normalizeDealImport(row);
+  if (!normalized.ok) return [];
+  const existingPrimarySources = (existing?.citations ?? [])
+    .map((citation) => citation.source)
+    .sort((left, right) => left.url.localeCompare(right.url));
+  const existingPrimarySource = existingPrimarySources.find(
+    (source) => source.url === row.sourceUrl,
+  ) ?? existingPrimarySources[0];
+  const existingBuyers = (existing?.participants ?? [])
+    .filter((participant) => participant.role === "BUYER")
+    .map((participant) => `${participant.displayName ?? ""}\u0000${participant.organization.name}`)
+    .sort();
+  const existingSellers = (existing?.participants ?? [])
+    .filter((participant) => participant.role === "SELLER")
+    .map((participant) => `${participant.displayName ?? ""}\u0000${participant.organization.name}`)
+    .sort();
+
+  const before = existing
+    ? {
+        legacyId: existing.legacyId,
+        title: existing.title,
+        target: existing.target,
+        sector: existing.sector,
+        subsector: existing.subsector,
+        region: existing.region,
+        categories: existing.categories,
+        date: existing.date,
+        description: existing.description,
+        targetDescription: existing.targetDescription,
+        country: existing.country,
+        enterpriseValue: existing.enterpriseValue,
+        equityValue: existing.equityValue,
+        stake: existing.stake,
+        dealStatus: existing.dealStatus,
+        closingDate: existing.closingDate,
+        assetScale: existing.assetScale,
+        valuationMultiple: existing.valuationMultiple,
+        fundVehicle: existing.fundVehicle,
+        keyHighlights: existing.keyHighlights,
+        sellerDisclosureStatus: existing.sellerDisclosureStatus,
+        sellerDisclosureReason: existing.sellerDisclosureReason,
+        status: existing.status,
+        buyers: existingBuyers,
+        sellers: existingSellers,
+        citations: existingPrimarySources.map((source) => source.url),
+        primarySourceName: existingPrimarySource?.label ?? null,
+        primarySourceUrl: existingPrimarySource?.url ?? null,
+      }
+    : {};
+
+  return changedFieldSummary(before, {
+    legacyId: row.dealId,
+    ...normalized.data,
+    status: existing?.status ?? "DRAFT",
+    buyers: row.buyers.map((name) => `${name}\u0000${name}`).sort(),
+    sellers: row.sellers.map((name) => `${name}\u0000${name}`).sort(),
+    citations: row.sourceUrl ? [row.sourceUrl] : [],
+    primarySourceName: row.sourceName
+      || (
+        existingPrimarySource && existingPrimarySource.url === row.sourceUrl
+          ? existingPrimarySource.label
+          : null
+      ),
+    primarySourceUrl: row.sourceUrl || null,
+  });
+}
+
 function validateDealRows(deals: Record<string, unknown>[]): { validRows: DealImportRow[]; errors: ImportResult[] } {
   const validRows: DealImportRow[] = [];
   const errors: ImportResult[] = [];
@@ -445,6 +517,7 @@ async function importDeals(request: NextRequest) {
         let skipped = errors.length;
         let quarantined = 0;
         let unchanged = 0;
+        const changedFields = new Set<string>();
 
         for (const deal of validRows) {
           const dealId = deal.dealId;
@@ -468,6 +541,9 @@ async function importDeals(request: NextRequest) {
             continue;
           }
           const dealData = normalized.data;
+          for (const field of dealImportChangedFields(deal, existingDeal)) {
+            changedFields.add(field);
+          }
 
           let created: { id: string };
           if (existingDeal) {
@@ -564,6 +640,7 @@ async function importDeals(request: NextRequest) {
           },
           counts: { inserted, updated, skipped },
           auditChanges: {
+            changedFields: [...changedFields].sort(),
             inserted,
             updated,
             ...(unchanged > 0 ? { unchanged } : {}),

@@ -302,6 +302,25 @@ async function applyPendingCluster(input: {
   }
 
   const stats = relationStats(plan);
+  const changedFields = new Set(
+    Object.keys(plan.scalarUpdates).map((field) => `Company.${field}`),
+  );
+  const relationModels = {
+    ownershipPeriods: "OwnershipPeriod",
+    milestones: "Milestone",
+    managementRoles: "ManagementRole",
+    citations: "Citation",
+    newsMentions: "NewsMention",
+  } as const;
+  for (const [relation, relationStatsForModel] of Object.entries(stats)) {
+    const model = relationModels[relation as keyof typeof relationModels];
+    if (relationStatsForModel.moved > 0) changedFields.add(`${model}.companyId`);
+    if (relationStatsForModel.deduplicated > 0) changedFields.add(`${model}.id`);
+  }
+  if (approved.retiredIds.length > 0) changedFields.add("Company.id");
+  changedFields.add("CompanyRedirect.companyId");
+  changedFields.add("CompanyRedirect.reason");
+  changedFields.add("CompanyRedirect.retiredId");
   await tx.auditEvent.create({
     data: {
       actorId: null,
@@ -309,6 +328,7 @@ async function applyPendingCluster(input: {
       entityId: canonical.id,
       action: "CANONICAL_MERGE",
       changes: {
+        changedFields: [...changedFields].sort(),
         canonicalId: canonical.id,
         canonicalName: canonical.name,
         retiredIds: approved.retiredIds,

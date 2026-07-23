@@ -5,6 +5,7 @@ import { revalidateAppData } from "@/lib/revalidation";
 import { withServerOperation } from "@/lib/server-log";
 import { AuthorizationError, getSessionIdentity, isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { fundSchema, type FundInput } from "@/modules/admin/schemas";
+import { changedFieldSummary } from "@/modules/admin/change-summary";
 import {
   FUND_STRATEGY_MAP,
   FUND_STRUCTURE_MAP,
@@ -202,6 +203,42 @@ function sameFundImport(row: FundImportRow, existing: ExistingFund): boolean {
     && existing.strategyUrl === data.strategyUrl;
 }
 
+function fundImportChangedFields(
+  row: FundImportRow,
+  existing?: ExistingFund,
+): string[] {
+  const normalized = normalizeFundImport(row);
+  if (!normalized.ok) return [];
+  const before = existing
+    ? {
+        legacyId: existing.legacyId,
+        managerName: existing.manager?.name,
+        fundName: existing.fundName,
+        ticker: existing.ticker,
+        investmentStrategy: existing.investmentStrategy,
+        size: existing.size,
+        sizeUsdMm: existing.sizeUsdMm,
+        vintage: existing.vintage,
+        strategies: existing.strategies,
+        structure: existing.structure,
+        fundStatus: existing.fundStatus,
+        sectors: existing.sectors,
+        regions: existing.regions,
+        sourceUrls: existing.sourceUrls,
+        primarySourceUrl: existing.primarySourceUrl,
+        strategyUrl: existing.strategyUrl,
+        status: existing.status,
+      }
+    : {};
+
+  return changedFieldSummary(before, {
+    legacyId: row.fundId,
+    managerName: row.managerName,
+    ...normalized.data,
+    status: existing?.status ?? "DRAFT",
+  });
+}
+
 function validateFundRows(funds: Record<string, unknown>[]): { validRows: FundImportRow[]; errors: ImportResult[] } {
   const validRows: FundImportRow[] = [];
   const errors: ImportResult[] = [];
@@ -396,6 +433,7 @@ async function importFunds(request: NextRequest) {
         let skipped = errors.length;
         let quarantined = 0;
         let unchanged = 0;
+        const changedFields = new Set<string>();
 
         for (const fund of validRows) {
           const existingFund = existingById.get(fund.fundId);
@@ -417,6 +455,9 @@ async function importFunds(request: NextRequest) {
             unchanged += 1;
             skipped += 1;
             continue;
+          }
+          for (const field of fundImportChangedFields(fund, existingFund)) {
+            changedFields.add(field);
           }
 
           // Find or create the manager organization
@@ -480,6 +521,7 @@ async function importFunds(request: NextRequest) {
           },
           counts: { inserted, updated, skipped },
           auditChanges: {
+            changedFields: [...changedFields].sort(),
             inserted,
             updated,
             ...(unchanged > 0 ? { unchanged } : {}),

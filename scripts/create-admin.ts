@@ -5,6 +5,7 @@ import { PrismaClient } from "../src/generated/prisma/client";
 import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
 import { SafeOperationalError } from "../src/lib/safe-error";
 import { withServerTask } from "../src/lib/server-log";
+import { adminBootstrapChangedFields } from "../src/modules/operations/admin-bootstrap-audit";
 
 const email = process.env.ADMIN_EMAIL?.trim().toLowerCase();
 const password = process.env.ADMIN_PASSWORD ?? "";
@@ -29,11 +30,26 @@ async function main() {
   try {
     const passwordHash = await bcrypt.hash(password, 12);
     await prisma.$transaction(async (tx) => {
+      const before = await tx.user.findUnique({
+        where: { email },
+        select: {
+          email: true,
+          name: true,
+          passwordHash: true,
+          role: true,
+        },
+      });
       const admin = await tx.user.upsert({
         where: { email },
         update: { name, passwordHash, role: "ADMIN" },
         create: { email, name, passwordHash, role: "ADMIN" },
-        select: { id: true, email: true },
+        select: {
+          id: true,
+          email: true,
+          name: true,
+          passwordHash: true,
+          role: true,
+        },
       });
       await tx.auditEvent.create({
         data: {
@@ -41,10 +57,13 @@ async function main() {
           entityType: "User",
           entityId: admin.id,
           action: "ADMIN_BOOTSTRAP",
+          changes: {
+            changedFields: adminBootstrapChangedFields(before, admin),
+          },
           metadata: { email: admin.email },
         },
       });
-    });
+    }, { isolationLevel: "Serializable" });
     console.log("Administrator account created or rotated.");
   } finally {
     await prisma.$disconnect();

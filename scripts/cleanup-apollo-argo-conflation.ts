@@ -186,6 +186,18 @@ async function main() {
         entityType: "OwnershipPeriod",
         action: "APOLLO_ARGO_CONFLATION_CLEANUP",
         changes: {
+          changedFields: [
+            "OwnershipPeriod.companyId",
+            "OwnershipPeriod.createdAt",
+            "OwnershipPeriod.exitYear",
+            "OwnershipPeriod.fundId",
+            "OwnershipPeriod.id",
+            "OwnershipPeriod.investmentYear",
+            "OwnershipPeriod.isActive",
+            "OwnershipPeriod.organizationId",
+            "OwnershipPeriod.stake",
+            "OwnershipPeriod.vehicleName",
+          ],
           removedOwnershipPeriodIds: suspects.map((suspect) => suspect.apolloOpId),
           companyIds: [...new Set(suspects.map((suspect) => suspect.companyId))],
         },

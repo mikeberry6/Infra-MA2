@@ -86,6 +86,15 @@ describe("admin hard-delete actions", () => {
       entityId: "deal-1",
       action: "DELETE",
       changes: expect.objectContaining({
+        changedFields: [
+          "citations",
+          "id",
+          "lastVerifiedAt",
+          "legacyId",
+          "participants",
+          "status",
+          "updatedAt",
+        ],
         beforeSnapshot: expect.objectContaining({ id: "deal-1", status: "DRAFT" }),
         deletedOwnedRecords: { participants: 2, citations: 1 },
       }),

@@ -16,6 +16,7 @@ import {
 } from "@/modules/admin/workflow";
 import { draftDeletionBlockReason, toAuditSnapshot } from "@/modules/admin/deletion";
 import { AdminActionUserError, adminActionErrorMessage } from "@/modules/admin/action-error";
+import { changedFieldSummary, deletedFieldSummary } from "@/modules/admin/change-summary";
 import {
   missingCompanyPublicationFields,
   missingDealPublicationFields,
@@ -279,7 +280,35 @@ export async function createDeal(formData: FormData): Promise<ActionResult> {
         sourceName: d.sourceName,
         sourceUrl: d.sourceUrl,
       });
-      await auditMutation("Deal", deal.id, "CREATE", ["record", "participants", "citations"], tx);
+      await auditMutation("Deal", deal.id, "CREATE", [
+        "legacyId",
+        "title",
+        "target",
+        "sector",
+        "subsector",
+        "region",
+        "categories",
+        "date",
+        "description",
+        "targetDescription",
+        "country",
+        "dealStatus",
+        "enterpriseValue",
+        "equityValue",
+        "stake",
+        "closingDate",
+        "assetScale",
+        "valuationMultiple",
+        "fundVehicle",
+        "keyHighlights",
+        "sellerDisclosureStatus",
+        "sellerDisclosureReason",
+        "status",
+        "buyers",
+        "sellers",
+        "primarySourceName",
+        "primarySourceUrl",
+      ], tx);
       return deal;
     });
 
@@ -332,18 +361,6 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
     }
 
     const d = parsed.data;
-    const existingDeal = await prisma.deal.findUnique({
-      where: { id },
-      select: { status: true },
-    });
-    if (!existingDeal) return { success: false, error: "Deal not found" };
-    const nextRecordStatus = statusAfterEditorialEdit(existingDeal.status);
-    if (!nextRecordStatus) {
-      return { success: false, error: "Archived deals cannot be edited." };
-    }
-    if (existingDeal.status === "PUBLISHED" && !d.sourceUrl) {
-      return { success: false, error: "A published deal must retain a primary source." };
-    }
     const splitParty = (joined: string): string[] =>
       joined && joined !== "N/A" && joined !== "—"
         ? joined.split(" / ").map((s) => s.trim()).filter(Boolean)
@@ -352,25 +369,142 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
     const finalSellers = sellerNames.length ? sellerNames : splitParty(d.seller);
 
     await prisma.$transaction(async (tx) => {
-      const updateResult = await tx.deal.updateMany({
-        where: { id, status: existingDeal.status },
-        data: {
-          title: d.title, target: d.target,
-          sector: DEAL_SECTOR_MAP[d.sector] as DealSector,
-          subsector: d.subsector || "",
-          region: DEAL_REGION_MAP[d.region] as DealRegion,
-          categories: d.category.map((c) => DEAL_CATEGORY_MAP[c]).filter(Boolean) as DealCategory[],
-          date: parseDateInput(d.date)!, description: d.description,
-          targetDescription: d.targetDescription, country: d.country,
-          dealStatus: DEAL_STATUS_MAP[d.status] as DealStatusEnum,
-          enterpriseValue: d.enterpriseValue || null, equityValue: d.equityValue || null,
-          stake: d.stake || null, closingDate: parseDateInput(d.closingDate),
-          assetScale: d.assetScale || null, valuationMultiple: d.valuationMultiple || null,
-          fundVehicle: d.fundVehicle || null, keyHighlights: d.keyHighlights || [],
-          sellerDisclosureStatus: finalSellers.length > 0 ? "DISCLOSED" : d.sellerDisclosureStatus,
-          sellerDisclosureReason: finalSellers.length > 0 ? null : d.sellerDisclosureReason?.trim() || null,
-          status: nextRecordStatus,
+      const existingDeal = await tx.deal.findUnique({
+        where: { id },
+        select: {
+          status: true,
+          updatedAt: true,
+          title: true,
+          target: true,
+          sector: true,
+          subsector: true,
+          region: true,
+          categories: true,
+          date: true,
+          description: true,
+          targetDescription: true,
+          country: true,
+          dealStatus: true,
+          enterpriseValue: true,
+          equityValue: true,
+          stake: true,
+          closingDate: true,
+          assetScale: true,
+          valuationMultiple: true,
+          fundVehicle: true,
+          keyHighlights: true,
+          sellerDisclosureStatus: true,
+          sellerDisclosureReason: true,
+          participants: {
+            where: { role: { in: ["BUYER", "SELLER"] } },
+            select: { role: true, displayName: true },
+          },
+          citations: {
+            where: { isPrimary: true },
+            select: { source: { select: { label: true, url: true } } },
+          },
         },
+      });
+      if (!existingDeal) throw new AdminActionUserError("Deal not found");
+      const nextRecordStatus = statusAfterEditorialEdit(existingDeal.status);
+      if (!nextRecordStatus) {
+        throw new AdminActionUserError("Archived deals cannot be edited.");
+      }
+      if (existingDeal.status === "PUBLISHED" && !d.sourceUrl) {
+        throw new AdminActionUserError("A published deal must retain a primary source.");
+      }
+      const dealUpdateData = {
+        title: d.title,
+        target: d.target,
+        sector: DEAL_SECTOR_MAP[d.sector] as DealSector,
+        subsector: d.subsector || "",
+        region: DEAL_REGION_MAP[d.region] as DealRegion,
+        categories: d.category.map((c) => DEAL_CATEGORY_MAP[c]).filter(Boolean) as DealCategory[],
+        date: parseDateInput(d.date)!,
+        description: d.description,
+        targetDescription: d.targetDescription,
+        country: d.country,
+        dealStatus: DEAL_STATUS_MAP[d.status] as DealStatusEnum,
+        enterpriseValue: d.enterpriseValue || null,
+        equityValue: d.equityValue || null,
+        stake: d.stake || null,
+        closingDate: parseDateInput(d.closingDate),
+        assetScale: d.assetScale || null,
+        valuationMultiple: d.valuationMultiple || null,
+        fundVehicle: d.fundVehicle || null,
+        keyHighlights: d.keyHighlights || [],
+        sellerDisclosureStatus: finalSellers.length > 0
+          ? "DISCLOSED" as const
+          : d.sellerDisclosureStatus,
+        sellerDisclosureReason: finalSellers.length > 0
+          ? null
+          : d.sellerDisclosureReason?.trim() || null,
+        status: nextRecordStatus,
+      };
+      const existingPrimarySources = existingDeal.citations
+        .map((citation) => citation.source)
+        .sort((left, right) => left.url.localeCompare(right.url));
+      const existingPrimarySource = existingPrimarySources.find(
+        (source) => source.url === d.sourceUrl,
+      ) ?? existingPrimarySources[0];
+      const changedFields = changedFieldSummary(
+        {
+          title: existingDeal.title,
+          target: existingDeal.target,
+          sector: existingDeal.sector,
+          subsector: existingDeal.subsector,
+          region: existingDeal.region,
+          categories: existingDeal.categories,
+          date: existingDeal.date,
+          description: existingDeal.description,
+          targetDescription: existingDeal.targetDescription,
+          country: existingDeal.country,
+          dealStatus: existingDeal.dealStatus,
+          enterpriseValue: existingDeal.enterpriseValue,
+          equityValue: existingDeal.equityValue,
+          stake: existingDeal.stake,
+          closingDate: existingDeal.closingDate,
+          assetScale: existingDeal.assetScale,
+          valuationMultiple: existingDeal.valuationMultiple,
+          fundVehicle: existingDeal.fundVehicle,
+          keyHighlights: existingDeal.keyHighlights,
+          sellerDisclosureStatus: existingDeal.sellerDisclosureStatus,
+          sellerDisclosureReason: existingDeal.sellerDisclosureReason,
+          status: existingDeal.status,
+          buyers: existingDeal.participants
+            .filter((participant) => participant.role === "BUYER")
+            .map((participant) => participant.displayName)
+            .sort(),
+          sellers: existingDeal.participants
+            .filter((participant) => participant.role === "SELLER")
+            .map((participant) => participant.displayName)
+            .sort(),
+          citations: existingPrimarySources.map((source) => source.url),
+          primarySourceName: existingPrimarySource?.label ?? null,
+          primarySourceUrl: existingPrimarySource?.url ?? null,
+        },
+        {
+          ...dealUpdateData,
+          buyers: [...finalBuyers].sort(),
+          sellers: [...finalSellers].sort(),
+          citations: d.sourceUrl ? [d.sourceUrl] : [],
+          primarySourceName: d.sourceName
+            || (
+              existingPrimarySource && existingPrimarySource.url === d.sourceUrl
+                ? existingPrimarySource.label
+                : null
+            ),
+          primarySourceUrl: d.sourceUrl || null,
+        },
+      );
+      if (changedFields.length === 0) changedFields.push("updatedAt");
+      const updateResult = await tx.deal.updateMany({
+        where: {
+          id,
+          status: existingDeal.status,
+          updatedAt: existingDeal.updatedAt,
+        },
+        data: dealUpdateData,
       });
       if (updateResult.count !== 1) {
         throw new AdminActionUserError("Deal workflow state changed during edit");
@@ -409,10 +543,10 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
         "Deal",
         id,
         "UPDATE",
-        ["record", "participants", "citations", ...(nextRecordStatus !== existingDeal.status ? ["status"] : [])],
+        changedFields,
         tx,
       );
-    });
+    }, { isolationLevel: "Serializable" });
 
     revalidateAll();
     return { success: true };
@@ -451,6 +585,10 @@ export async function deleteDeal(id: string): Promise<ActionResult> {
         entityId: id,
         action: "DELETE",
         changes: toAuditSnapshot({
+          changedFields: deletedFieldSummary(deal, {
+            participants: participantCount,
+            citations: citationCount,
+          }),
           beforeSnapshot: deal,
           deletedOwnedRecords: { participants: participantCount, citations: citationCount },
         }),
@@ -670,7 +808,25 @@ export async function createFund(formData: FormData): Promise<ActionResult> {
           strategyUrl: f.strategyUrl || "", status: "DRAFT",
         },
       });
-      await auditMutation("Fund", fund.id, "CREATE", ["record"], tx);
+      await auditMutation("Fund", fund.id, "CREATE", [
+        "legacyId",
+        "managerId",
+        "fundName",
+        "ticker",
+        "investmentStrategy",
+        "sourceUrls",
+        "primarySourceUrl",
+        "size",
+        "sizeUsdMm",
+        "vintage",
+        "strategies",
+        "structure",
+        "fundStatus",
+        "sectors",
+        "regions",
+        "strategyUrl",
+        "status",
+      ], tx);
       return fund;
     });
 
@@ -711,36 +867,109 @@ export async function updateFund(id: string, formData: FormData): Promise<Action
     }
 
     const f = parsed.data;
-    const existingFund = await prisma.fund.findUnique({
-      where: { id },
-      select: { status: true },
-    });
-    if (!existingFund) return { success: false, error: "Fund not found" };
-    const nextRecordStatus = statusAfterEditorialEdit(existingFund.status);
-    if (!nextRecordStatus) {
-      return { success: false, error: "Archived funds cannot be edited." };
-    }
 
     await prisma.$transaction(async (tx) => {
+      const existingFund = await tx.fund.findUnique({
+        where: { id },
+        select: {
+          status: true,
+          updatedAt: true,
+          manager: { select: { name: true } },
+          fundName: true,
+          ticker: true,
+          investmentStrategy: true,
+          sourceUrls: true,
+          primarySourceUrl: true,
+          size: true,
+          sizeUsdMm: true,
+          vintage: true,
+          strategies: true,
+          structure: true,
+          fundStatus: true,
+          sectors: true,
+          regions: true,
+          strategyUrl: true,
+        },
+      });
+      if (!existingFund) throw new AdminActionUserError("Fund not found");
+      const nextRecordStatus = statusAfterEditorialEdit(existingFund.status);
+      if (!nextRecordStatus) {
+        throw new AdminActionUserError("Archived funds cannot be edited.");
+      }
+      const fundAuditAfter = {
+        managerName: f.managerName,
+        fundName: f.fundName,
+        ticker: f.ticker || null,
+        investmentStrategy: f.investmentStrategy || "",
+        sourceUrls: f.sourceUrls || [],
+        primarySourceUrl: f.primarySourceUrl || null,
+        size: f.size,
+        sizeUsdMm: f.sizeUsdMm ?? null,
+        vintage: f.vintage,
+        strategies: f.strategies
+          .map((strategy) => FUND_STRATEGY_MAP[strategy])
+          .filter(Boolean) as FundStrategy[],
+        structure: FUND_STRUCTURE_MAP[f.structure] as FundStructure,
+        fundStatus: FUND_STATUS_MAP[f.status] as FundStatusEnum,
+        sectors: f.sectors
+          .map((sector) => FUND_SECTOR_MAP[sector])
+          .filter(Boolean) as FundSectorEnum[],
+        regions: f.regions
+          .map((region) => FUND_REGION_MAP[region])
+          .filter(Boolean) as FundRegionEnum[],
+        strategyUrl: f.strategyUrl || "",
+        status: nextRecordStatus,
+      };
+      const changedFields = changedFieldSummary(
+        {
+          managerName: existingFund.manager.name,
+          fundName: existingFund.fundName,
+          ticker: existingFund.ticker,
+          investmentStrategy: existingFund.investmentStrategy,
+          sourceUrls: existingFund.sourceUrls,
+          primarySourceUrl: existingFund.primarySourceUrl,
+          size: existingFund.size,
+          sizeUsdMm: existingFund.sizeUsdMm,
+          vintage: existingFund.vintage,
+          strategies: existingFund.strategies,
+          structure: existingFund.structure,
+          fundStatus: existingFund.fundStatus,
+          sectors: existingFund.sectors,
+          regions: existingFund.regions,
+          strategyUrl: existingFund.strategyUrl,
+          status: existingFund.status,
+        },
+        fundAuditAfter,
+      );
+      if (changedFields.length === 0) changedFields.push("updatedAt");
       const manager = await tx.organization.upsert({
         where: { name: f.managerName },
         update: {},
         create: { name: f.managerName, types: ["FUND_MANAGER"] },
       });
       const updateResult = await tx.fund.updateMany({
-        where: { id, status: existingFund.status },
+        where: {
+          id,
+          status: existingFund.status,
+          updatedAt: existingFund.updatedAt,
+        },
         data: {
-          managerId: manager.id, fundName: f.fundName, ticker: f.ticker || null,
-          investmentStrategy: f.investmentStrategy || "", sourceUrls: f.sourceUrls || [],
-          primarySourceUrl: f.primarySourceUrl || null,
-          size: f.size, sizeUsdMm: f.sizeUsdMm ?? null, vintage: f.vintage,
-          strategies: f.strategies.map((s) => FUND_STRATEGY_MAP[s]).filter(Boolean) as FundStrategy[],
-          structure: FUND_STRUCTURE_MAP[f.structure] as FundStructure,
-          fundStatus: FUND_STATUS_MAP[f.status] as FundStatusEnum,
-          sectors: f.sectors.map((s) => FUND_SECTOR_MAP[s]).filter(Boolean) as FundSectorEnum[],
-          regions: f.regions.map((r) => FUND_REGION_MAP[r]).filter(Boolean) as FundRegionEnum[],
-          strategyUrl: f.strategyUrl || "",
-          status: nextRecordStatus,
+          managerId: manager.id,
+          fundName: fundAuditAfter.fundName,
+          ticker: fundAuditAfter.ticker,
+          investmentStrategy: fundAuditAfter.investmentStrategy,
+          sourceUrls: fundAuditAfter.sourceUrls,
+          primarySourceUrl: fundAuditAfter.primarySourceUrl,
+          size: fundAuditAfter.size,
+          sizeUsdMm: fundAuditAfter.sizeUsdMm,
+          vintage: fundAuditAfter.vintage,
+          strategies: fundAuditAfter.strategies,
+          structure: fundAuditAfter.structure,
+          fundStatus: fundAuditAfter.fundStatus,
+          sectors: fundAuditAfter.sectors,
+          regions: fundAuditAfter.regions,
+          strategyUrl: fundAuditAfter.strategyUrl,
+          status: fundAuditAfter.status,
         },
       });
       if (updateResult.count !== 1) {
@@ -750,10 +979,10 @@ export async function updateFund(id: string, formData: FormData): Promise<Action
         "Fund",
         id,
         "UPDATE",
-        ["record", ...(nextRecordStatus !== existingFund.status ? ["status"] : [])],
+        changedFields,
         tx,
       );
-    });
+    }, { isolationLevel: "Serializable" });
 
     revalidateAll();
     return { success: true };
@@ -791,7 +1020,10 @@ export async function deleteFund(id: string): Promise<ActionResult> {
         entityType: "Fund",
         entityId: id,
         action: "DELETE",
-        changes: toAuditSnapshot({ beforeSnapshot: fund }),
+        changes: toAuditSnapshot({
+          changedFields: deletedFieldSummary(fund),
+          beforeSnapshot: fund,
+        }),
       }, tx);
       const deleted = await tx.fund.deleteMany({
         where: { id, status: "DRAFT", updatedAt: fund.updatedAt },
@@ -1020,7 +1252,23 @@ export async function createCompany(formData: FormData): Promise<ActionResult> {
         sourceName: c.sourceName,
         sourceUrl: c.sourceUrl,
       });
-      await auditMutation("Company", company.id, "CREATE", ["record", "ownership", "citations"], tx);
+      await auditMutation("Company", company.id, "CREATE", [
+        "name",
+        "country",
+        "sector",
+        "subsector",
+        "region",
+        "description",
+        "companyStatus",
+        "website",
+        "yearFounded",
+        "headquarters",
+        "countryTags",
+        "status",
+        "ownershipPeriods",
+        "primarySourceName",
+        "primarySourceUrl",
+      ], tx);
       return company;
     });
 
@@ -1060,33 +1308,96 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
     }
 
     const c = parsed.data;
-    const existingCompany = await prisma.company.findUnique({
-      where: { id },
-      select: { status: true },
-    });
-    if (!existingCompany) return { success: false, error: "Company not found" };
-    const nextRecordStatus = statusAfterEditorialEdit(existingCompany.status);
-    if (!nextRecordStatus) {
-      return { success: false, error: "Archived companies cannot be edited." };
-    }
-    if (existingCompany.status === "PUBLISHED" && !c.sourceUrl) {
-      return { success: false, error: "A published company must retain a primary source." };
-    }
 
     await prisma.$transaction(async (tx) => {
-      const updateResult = await tx.company.updateMany({
-        where: { id, status: existingCompany.status },
-        data: {
-          name: c.name, country: c.country,
-          sector: COMPANY_SECTOR_MAP[c.sector] as CompanySector,
-          subsector: c.subsector || "", region: COMPANY_REGION_MAP[c.region] as CompanyRegion,
-          description: c.description || "",
-          companyStatus: COMPANY_STATUS_MAP[c.status] as CompanyStatus,
-          website: c.website || null, yearFounded: c.yearFounded ?? null,
-          headquarters: c.headquarters || null,
-          countryTags: c.countryTags ?? [],
-          status: nextRecordStatus,
+      const existingCompany = await tx.company.findUnique({
+        where: { id },
+        select: {
+          status: true,
+          updatedAt: true,
+          name: true,
+          country: true,
+          sector: true,
+          subsector: true,
+          region: true,
+          description: true,
+          companyStatus: true,
+          website: true,
+          yearFounded: true,
+          headquarters: true,
+          countryTags: true,
+          citations: {
+            where: { isPrimary: true },
+            select: { source: { select: { label: true, url: true } } },
+          },
         },
+      });
+      if (!existingCompany) throw new AdminActionUserError("Company not found");
+      const nextRecordStatus = statusAfterEditorialEdit(existingCompany.status);
+      if (!nextRecordStatus) {
+        throw new AdminActionUserError("Archived companies cannot be edited.");
+      }
+      if (existingCompany.status === "PUBLISHED" && !c.sourceUrl) {
+        throw new AdminActionUserError("A published company must retain a primary source.");
+      }
+      const companyUpdateData = {
+        name: c.name,
+        country: c.country,
+        sector: COMPANY_SECTOR_MAP[c.sector] as CompanySector,
+        subsector: c.subsector || "",
+        region: COMPANY_REGION_MAP[c.region] as CompanyRegion,
+        description: c.description || "",
+        companyStatus: COMPANY_STATUS_MAP[c.status] as CompanyStatus,
+        website: c.website || null,
+        yearFounded: c.yearFounded ?? null,
+        headquarters: c.headquarters || null,
+        countryTags: c.countryTags ?? [],
+        status: nextRecordStatus,
+      };
+      const existingPrimarySources = existingCompany.citations
+        .map((citation) => citation.source)
+        .sort((left, right) => left.url.localeCompare(right.url));
+      const existingPrimarySource = existingPrimarySources.find(
+        (source) => source.url === c.sourceUrl,
+      ) ?? existingPrimarySources[0];
+      const changedFields = changedFieldSummary(
+        {
+          name: existingCompany.name,
+          country: existingCompany.country,
+          sector: existingCompany.sector,
+          subsector: existingCompany.subsector,
+          region: existingCompany.region,
+          description: existingCompany.description,
+          companyStatus: existingCompany.companyStatus,
+          website: existingCompany.website,
+          yearFounded: existingCompany.yearFounded,
+          headquarters: existingCompany.headquarters,
+          countryTags: existingCompany.countryTags,
+          status: existingCompany.status,
+          citations: existingPrimarySources.map((source) => source.url),
+          primarySourceName: existingPrimarySource?.label ?? null,
+          primarySourceUrl: existingPrimarySource?.url ?? null,
+        },
+        {
+          ...companyUpdateData,
+          citations: c.sourceUrl ? [c.sourceUrl] : [],
+          primarySourceName: c.sourceName
+            || (
+              existingPrimarySource && existingPrimarySource.url === c.sourceUrl
+                ? existingPrimarySource.label
+                : null
+            ),
+          primarySourceUrl: c.sourceUrl || null,
+        },
+      );
+      if (changedFields.length === 0) changedFields.push("updatedAt");
+      const updateResult = await tx.company.updateMany({
+        where: {
+          id,
+          status: existingCompany.status,
+          updatedAt: existingCompany.updatedAt,
+        },
+        data: companyUpdateData,
       });
       if (updateResult.count !== 1) {
         throw new AdminActionUserError("Company workflow state changed during edit");
@@ -1100,10 +1411,10 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
         "Company",
         id,
         "UPDATE",
-        ["record", "citations", ...(nextRecordStatus !== existingCompany.status ? ["status"] : [])],
+        changedFields,
         tx,
       );
-    });
+    }, { isolationLevel: "Serializable" });
 
     revalidateAll();
     return { success: true };
@@ -1151,6 +1462,11 @@ export async function deleteCompany(id: string): Promise<ActionResult> {
         entityId: id,
         action: "DELETE",
         changes: toAuditSnapshot({
+          changedFields: deletedFieldSummary(company, {
+            milestones: milestoneCount,
+            managementRoles: managementRoleCount,
+            citations: citationCount,
+          }),
           beforeSnapshot: company,
           deletedOwnedRecords: {
             milestones: milestoneCount,
@@ -1453,13 +1769,13 @@ export async function addOwnershipPeriod(
         entityId: created.id,
         action: "CREATE",
         changes: {
-          changedFields: ["record"],
+          changedFields: changedFieldSummary({}, ownershipAuditSnapshot(created)),
           afterSnapshot: ownershipAuditSnapshot(created),
           parentCompany,
         },
       }, tx);
       return created;
-    });
+    }, { isolationLevel: "Serializable" });
     revalidateAll();
     return { success: true, id: created.id };
   } catch (error) {
@@ -1503,18 +1819,20 @@ export async function updateOwnershipPeriod(
           stake: o.stake ?? null,
         },
       });
+      const beforeSnapshot = ownershipAuditSnapshot(existingOwnership);
+      const afterSnapshot = ownershipAuditSnapshot(updated);
       await recordAuditEvent({
         entityType: "OwnershipPeriod",
         entityId: id,
         action: "UPDATE",
         changes: {
-          changedFields: ["record"],
-          beforeSnapshot: ownershipAuditSnapshot(existingOwnership),
-          afterSnapshot: ownershipAuditSnapshot(updated),
+          changedFields: changedFieldSummary(beforeSnapshot, afterSnapshot),
+          beforeSnapshot,
+          afterSnapshot,
           parentCompany,
         },
       }, tx);
-    });
+    }, { isolationLevel: "Serializable" });
     revalidateAll();
     return { success: true };
   } catch (error) {
@@ -1532,18 +1850,19 @@ export async function deleteOwnershipPeriod(id: string): Promise<ActionResult> {
       const existingOwnership = await tx.ownershipPeriod.findUnique({ where: { id } });
       if (!existingOwnership) throw new AdminActionUserError("Ownership period not found");
       const parentCompany = await prepareCompanyForOwnershipMutation(tx, existingOwnership.companyId);
+      const beforeSnapshot = ownershipAuditSnapshot(existingOwnership);
       await recordAuditEvent({
         entityType: "OwnershipPeriod",
         entityId: id,
         action: "DELETE",
         changes: {
-          changedFields: ["record"],
-          beforeSnapshot: ownershipAuditSnapshot(existingOwnership),
+          changedFields: deletedFieldSummary(beforeSnapshot),
+          beforeSnapshot,
           parentCompany,
         },
       }, tx);
       await tx.ownershipPeriod.delete({ where: { id } });
-    });
+    }, { isolationLevel: "Serializable" });
     revalidateAll();
     return { success: true };
   } catch (error) {
