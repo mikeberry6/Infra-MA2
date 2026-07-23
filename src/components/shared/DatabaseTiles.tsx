@@ -16,7 +16,7 @@ const tiles = [
     href: "/tracker",
     key: "deals" as const,
     label: "Deals",
-    matches: (pathname: string) => pathname === "/" || pathname.startsWith("/tracker"),
+    matches: (pathname: string) => pathname.startsWith("/tracker"),
   },
   {
     href: "/funds",

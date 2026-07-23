@@ -15,7 +15,11 @@ import {
   statusAfterEditorialEdit,
 } from "@/modules/admin/workflow";
 import { draftDeletionBlockReason, toAuditSnapshot } from "@/modules/admin/deletion";
-import { AdminActionUserError, adminActionErrorMessage } from "@/modules/admin/action-error";
+import {
+  AdminActionUserError,
+  adminActionErrorMessage,
+  adminActionLogOutcome,
+} from "@/modules/admin/action-error";
 import { changedFieldSummary, deletedFieldSummary } from "@/modules/admin/change-summary";
 import {
   missingCompanyPublicationFields,
@@ -58,9 +62,14 @@ type ActionResult = { success: boolean; error?: string; id?: string };
 
 // ── Helpers ───────────────────────────────────────────────────
 
-async function logAdminActionFailure(operation: string, error: unknown): Promise<void> {
+async function logAdminActionFailure(
+  operation: string,
+  error: unknown,
+  authorizationError = false,
+): Promise<void> {
   const requestId = await currentServerRequestId();
-  logServerFailure({ task: "admin_action", operation, requestId }, error);
+  const outcome = adminActionLogOutcome(error, { authorizationError });
+  logServerFailure({ task: "admin_action", operation, requestId, ...outcome }, error);
 }
 
 // Accept either repeated form fields (formData.append("key", "v1");
@@ -174,6 +183,7 @@ async function requireAdminAction(): Promise<ActionResult | null> {
     return null;
   } catch (error) {
     if (isAuthorizationError(error)) {
+      await logAdminActionFailure("authorize_admin_action", error, true);
       return { success: false, error: "Forbidden" };
     }
     throw error;

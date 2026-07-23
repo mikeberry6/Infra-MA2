@@ -27,7 +27,11 @@ import { TextInput } from "@/components/shared/TextInput";
 import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { PaginationControls } from "@/components/shared/PaginationControls";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useUrlQueryParamsWriter, useUrlQueryState } from "@/hooks/useUrlFilterSet";
+import {
+  useUrlFilterSet,
+  useUrlQueryParamsWriter,
+  useUrlQueryState,
+} from "@/hooks/useUrlFilterSet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { formatDate, formatScheduledDateTime } from "@/lib/format";
 import { getNewsCategoryColor, NEWS_CATEGORIES } from "@/lib/news-utils";
@@ -277,9 +281,6 @@ function OperationalStatus({ operations }: { operations: FeedOperationsView }) {
             <dt className="inline">Rotating window </dt>
             <dd className="inline mono tabular-nums text-[var(--text-secondary)]">
               {operations.scanWindow.selectedCount.toLocaleString()}/{operations.scanWindow.fullUniverseCount.toLocaleString()} entities
-              {operations.scanWindow.eligibleCount !== operations.scanWindow.fullUniverseCount
-                ? ` (${operations.scanWindow.eligibleCount.toLocaleString()} eligible)`
-                : ""}
               {" · "}window {operations.scanWindow.windowIndex + 1}/{operations.scanWindow.windowsPerCycle}
               {" · "}{formatDate(`${operations.scanWindow.selectionDateUtc}T12:00:00.000Z`)}
             </dd>
@@ -804,9 +805,9 @@ function NewsDrawer({
         className="absolute right-0 top-0 flex h-full w-full max-w-lg flex-col border-l border-[var(--border)] bg-[var(--bg-surface)] shadow-[0_12px_48px_rgba(17,17,20,0.14)] sm:max-w-xl"
       >
         <div className="sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 px-5 py-4 backdrop-blur-md">
-          <div className="mb-3 flex items-center justify-between gap-3">
+          <div className="mb-3 flex flex-wrap items-center gap-2">
             <span
-              className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 type-micro font-medium"
+              className="inline-flex max-w-full items-center gap-1.5 rounded-md border px-2 py-1 type-micro font-medium"
               style={{
                 color: "#444444",
                 backgroundColor: `${categoryColor}08`,
@@ -817,7 +818,7 @@ function NewsDrawer({
               {item.category}
             </span>
             <span
-              className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 type-micro font-medium"
+              className="inline-flex max-w-full items-center gap-1.5 rounded-md border px-2 py-1 type-micro font-medium"
               style={{
                 color: "#444444",
                 backgroundColor: `${confidence.color}08`,
@@ -830,7 +831,7 @@ function NewsDrawer({
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex h-8 w-8 items-center justify-center rounded-md text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
+              className="ml-auto inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
               aria-label="Close"
             >
               <X className="h-4 w-4" />
@@ -947,10 +948,15 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
   const [activeEntities, toggleEntity] = useUrlFilterSet("entity");
   const [activeSources, toggleSource] = useUrlFilterSet("source");
   const [activeConfidence, toggleConfidence] = useUrlFilterSet("confidence");
-  const [dateWindowParam, setDateWindowParam] = useUrlQueryState("window", "Today", { resetPage: true });
+  const [dateWindowParam, setDateWindowParam] = useUrlQueryState("window", "Today", {
+    resetPage: true,
+  });
   const [pageParam, setPageParam] = useUrlQueryState("page", "1");
   const dateWindow: DateWindow = isDateWindow(dateWindowParam) ? dateWindowParam : "Today";
-  const setDateWindow = useCallback((value: DateWindow) => setDateWindowParam(value), [setDateWindowParam]);
+  const setDateWindow = useCallback(
+    (value: DateWindow) => setDateWindowParam(value),
+    [setDateWindowParam],
+  );
   const [selectedItem, setSelectedItem] = useState<NewsItemView | null>(null);
   const debouncedSearch = useDebounce(search, 250);
   const openNewsItem = useCallback((item: NewsItemView) => {
@@ -1023,7 +1029,10 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
   const totalPages = Math.max(1, Math.ceil(filteredItems.length / NEWS_PAGE_SIZE));
   const safePage = Math.min(requestedPage, totalPages);
   const displayItems = useMemo(
-    () => filteredItems.slice((safePage - 1) * NEWS_PAGE_SIZE, safePage * NEWS_PAGE_SIZE),
+    () => filteredItems.slice(
+      (safePage - 1) * NEWS_PAGE_SIZE,
+      safePage * NEWS_PAGE_SIZE,
+    ),
     [filteredItems, safePage],
   );
 
@@ -1056,7 +1065,11 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_300px]">
         <div>
           <div className="mb-3 flex items-center justify-between gap-3">
-            <h2 id="news-results-heading" tabIndex={-1} className="scroll-mt-20 type-section-title text-[var(--text-tertiary)] outline-none">
+            <h2
+              id="news-results-heading"
+              tabIndex={-1}
+              className="scroll-mt-20 type-section-title text-[var(--text-tertiary)] outline-none"
+            >
               Signal Tape
             </h2>
             <span className="type-micro mono tabular-nums">
@@ -1089,7 +1102,7 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
             page={safePage}
             pageSize={NEWS_PAGE_SIZE}
             totalItems={filteredItems.length}
-            onPageChange={(next) => setPageParam(String(next))}
+            onPageChange={(nextPage) => setPageParam(String(nextPage))}
             resultHeadingId="news-results-heading"
           />
         </div>

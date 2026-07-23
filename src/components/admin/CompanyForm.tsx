@@ -49,8 +49,12 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
   const [investmentFirm, setInvestmentFirm] = useState(initialData?.investmentFirm ?? "");
   const [ownershipVehicle, setOwnershipVehicle] = useState(initialData?.ownershipVehicle ?? "");
   const [countryTags, setCountryTags] = useState((initialData?.countryTags ?? []).join(", "));
-  const [sourceName, setSourceName] = useState(initialData?.sourceName ?? "");
-  const [sourceUrl, setSourceUrl] = useState(initialData?.sourceUrl ?? "");
+  const [sourceName, setSourceName] = useState(
+    initialData?.sourceName ?? initialData?.sources?.[0]?.label ?? "",
+  );
+  const [sourceUrl, setSourceUrl] = useState(
+    initialData?.sourceUrl ?? initialData?.sources?.[0]?.url ?? "",
+  );
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();

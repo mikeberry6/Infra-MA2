@@ -17,8 +17,6 @@ const DUMMY_PASSWORD_HASH = "$2b$12$jO.JJSOjJqs4/KuQ7eKiNe2n89mzPsIrPUQZq3FjGA4Q
 export const authOptions: NextAuthOptions = {
   logger: {
     error() {
-      // NextAuth metadata can contain adapter exceptions. The route wrapper
-      // records request status; keep library diagnostics payload-free too.
       logServerOperation({
         task: "nextauth",
         operation: "auth_library_error",
@@ -37,7 +35,7 @@ export const authOptions: NextAuthOptions = {
       });
     },
     debug() {
-      // Debug metadata is intentionally not emitted in production logs.
+      // Debug metadata can include auth-library internals and is not emitted.
     },
   },
   providers: [
@@ -70,7 +68,10 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
-        await clearLoginThrottle(email, ip);
+        // A valid account resets that account's failures, but not the shared
+        // IP bucket: otherwise an attacker could use a valid account to erase
+        // aggregate failures from the same address.
+        await clearLoginThrottle(email);
 
         return {
           id: user.id,

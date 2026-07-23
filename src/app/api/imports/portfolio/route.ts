@@ -8,7 +8,7 @@ import { companySchema, type CompanyInput } from "@/modules/admin/schemas";
 import { changedFieldSummary } from "@/modules/admin/change-summary";
 import { COMPANY_SECTOR_MAP, COMPANY_REGION_MAP, COMPANY_STATUS_MAP } from "@/modules/shared/enum-maps";
 import type { CompanySector, CompanyRegion, CompanyStatus, Prisma } from "@/generated/prisma/client";
-import { commitImport } from "@/modules/imports/commit";
+import { commitImport, transactImportPreview } from "@/modules/imports/commit";
 import {
   sameOrderedValues,
   samePrimarySource,
@@ -33,6 +33,7 @@ const COMPANY_IMPORT_SELECT = {
   name: true,
   country: true,
   status: true,
+  updatedAt: true,
   sector: true,
   subsector: true,
   region: true,
@@ -74,6 +75,7 @@ type ImportResult = {
 
 type ExistingCompany = Prisma.CompanyGetPayload<{ select: typeof COMPANY_IMPORT_SELECT }>;
 type ExistingOwnership = ExistingCompany["ownershipPeriods"][number];
+type PreviewFund = { id: string; fundName: string };
 
 type OwnershipChange = {
   row: number;
@@ -176,10 +178,10 @@ function stringValue(value: unknown): string {
   return typeof value === "string" ? value : String(value);
 }
 
-function numberValue(value: unknown): number | undefined {
+function numberValue(value: unknown): unknown {
   if (value == null || value === "") return undefined;
   const parsed = Number(value);
-  return Number.isFinite(parsed) ? parsed : undefined;
+  return Number.isFinite(parsed) ? parsed : value;
 }
 
 function toArray(value: unknown): string[] {
@@ -369,6 +371,179 @@ function validateCompanyRows(companies: Record<string, unknown>[]): { validRows:
   return { validRows, errors };
 }
 
+function companyKey(name: string, country: string): string {
+  return `${name.trim().toLowerCase()}|${country.trim().toLowerCase()}`;
+}
+
+function serializedCompanyState(existing: ExistingCompany[]) {
+  return [...existing]
+    .sort((left, right) => (
+      companyKey(left.name, left.country).localeCompare(companyKey(right.name, right.country))
+      || left.id.localeCompare(right.id)
+    ))
+    .map((company) => ({
+      id: company.id,
+      name: company.name,
+      country: company.country,
+      status: company.status,
+      updatedAt: company.updatedAt instanceof Date
+        ? company.updatedAt.toISOString()
+        : String(company.updatedAt ?? ""),
+      sector: company.sector,
+      subsector: company.subsector,
+      region: company.region,
+      countryTags: [...(company.countryTags ?? [])],
+      description: company.description,
+      companyStatus: company.companyStatus,
+      website: company.website,
+      yearFounded: company.yearFounded,
+      headquarters: company.headquarters,
+      ownershipPeriods: [...(company.ownershipPeriods ?? [])]
+        .sort((left, right) => left.id.localeCompare(right.id))
+        .map((period) => ({
+          id: period.id,
+          fundId: period.fundId,
+          isActive: period.isActive,
+          vehicleName: period.vehicleName,
+          investmentYear: period.investmentYear,
+          organization: period.organization ? { name: period.organization.name } : null,
+        })),
+      citations: [...(company.citations ?? [])]
+        .map((citation) => ({
+          source: {
+            url: citation.source.url,
+            label: citation.source.label,
+          },
+        }))
+        .sort((left, right) => (
+          left.source.url.localeCompare(right.source.url)
+          || left.source.label.localeCompare(right.source.label)
+        )),
+    }));
+}
+
+function serializedFundMappings(funds: PreviewFund[]) {
+  return [...funds]
+    .sort((left, right) => (
+      left.fundName.localeCompare(right.fundName)
+      || left.id.localeCompare(right.id)
+    ))
+    .map((fund) => ({ id: fund.id, fundName: fund.fundName }));
+}
+
+function buildCompanyPreview(
+  total: number,
+  validRows: CompanyImportRow[],
+  errors: ImportResult[],
+  existing: ExistingCompany[],
+  funds: PreviewFund[],
+) {
+  const sortedExisting = [...existing].sort((left, right) => (
+    companyKey(left.name, left.country).localeCompare(companyKey(right.name, right.country))
+    || left.id.localeCompare(right.id)
+  ));
+  const existingByKey = new Map<string, ExistingCompany>();
+  for (const row of sortedExisting) {
+    const key = companyKey(row.name, row.country);
+    if (existingByKey.has(key)) {
+      throw new ImportConflictError(
+        "Multiple existing companies match an import identity. Merge duplicates before importing.",
+      );
+    }
+    existingByKey.set(key, row);
+  }
+  const sortedFundMappings = serializedFundMappings(funds);
+  const fundIdsByName = new Map<string, string[]>();
+  for (const fund of sortedFundMappings) {
+    const ids = fundIdsByName.get(fund.fundName) ?? [];
+    ids.push(fund.id);
+    fundIdsByName.set(fund.fundName, ids);
+  }
+  const ambiguousFundNames = new Set(
+    [...fundIdsByName.entries()]
+      .filter(([, ids]) => new Set(ids).size > 1)
+      .map(([fundName]) => fundName),
+  );
+  const fundIdByName = new Map<string, string>();
+  for (const [fundName, ids] of fundIdsByName) {
+    if (new Set(ids).size === 1) {
+      fundIdByName.set(fundName, ids[0]);
+    }
+  }
+  const ambiguityErrors: ImportResult[] = validRows.flatMap((row) => (
+    row.ownershipVehicle && ambiguousFundNames.has(row.ownershipVehicle)
+      ? [{
+          row: row.row,
+          name: row.name,
+          country: row.country,
+          code: "AMBIGUOUS_OWNERSHIP_VEHICLE",
+          error: "Ownership vehicle matches multiple fund records; reconcile the fund database before importing",
+        }]
+      : []
+  ));
+  const eligibleRows = validRows.filter((row) => (
+    !row.ownershipVehicle || !ambiguousFundNames.has(row.ownershipVehicle)
+  ));
+  const allErrors = [...errors, ...ambiguityErrors];
+  const warnings = eligibleRows.flatMap((row) => {
+    const existingCompany = existingByKey.get(companyKey(row.name, row.country));
+    return existingCompany && !canImportOverExistingCompany(existingCompany)
+      ? [quarantinedCompanyResult(row, existingCompany)]
+      : [];
+  });
+  const ownershipChanges = eligibleRows.flatMap((row) => {
+    const change = ownershipChangeFor(
+      row,
+      existingByKey.get(companyKey(row.name, row.country)),
+    );
+    return change ? [change] : [];
+  });
+  const actions = eligibleRows.map((row) => {
+    const key = companyKey(row.name, row.country);
+    const existingCompany = existingByKey.get(key);
+    if (!existingCompany) return { key, action: "create" as const };
+    if (!canImportOverExistingCompany(existingCompany)) {
+      return { key, action: "quarantined" as const };
+    }
+    const matchedFundId = row.ownershipVehicle
+      ? fundIdByName.get(row.ownershipVehicle) ?? null
+      : null;
+    return {
+      key,
+      action: sameCompanyImport(row, existingCompany, matchedFundId)
+        ? "unchanged" as const
+        : "update" as const,
+    };
+  });
+  const summary: ImportPreviewSummary = {
+    total,
+    valid: eligibleRows.length,
+    creates: actions.filter((item) => item.action === "create").length,
+    updates: actions.filter((item) => item.action === "update").length,
+    unchanged: actions.filter((item) => item.action === "unchanged").length,
+    quarantined: warnings.length,
+    errors: allErrors.length,
+    stateHash: hashImportPreviewState({
+      existing: serializedCompanyState(existing),
+      fundMappings: sortedFundMappings,
+      ambiguousOwnershipVehicles: [...ambiguousFundNames].sort(),
+      actions,
+      warnings,
+      ownershipChanges,
+    }),
+  };
+  return {
+    existingByKey,
+    fundIdByName,
+    eligibleRows,
+    errors: allErrors,
+    warnings,
+    ownershipChanges,
+    actions,
+    summary,
+  };
+}
+
 /**
  * Parse the incoming request body as either JSON or CSV.
  */
@@ -386,8 +561,6 @@ async function parseRequestBody(request: NextRequest): Promise<Record<string, un
       ...row,
       __row: index + 2,
       countryTags: toArray(row.countryTags),
-      yearFounded: row.yearFounded ? Number(row.yearFounded) : undefined,
-      investmentYear: row.investmentYear ? Number(row.investmentYear) : undefined,
     }));
   }
 
@@ -423,7 +596,9 @@ async function importPortfolio(request: NextRequest) {
     }
 
     const { validRows, errors } = validateCompanyRows(companies);
-    const companyKey = (name: string, country: string) => `${name.trim().toLowerCase()}|${country.trim().toLowerCase()}`;
+    const isPreview = request.nextUrl.searchParams.get("preview") === "1";
+    const token = request.headers.get("x-import-preview-token") ?? undefined;
+    if (!isPreview && !token) throw new ImportPreviewTokenError();
     const requestedVehicles = Array.from(new Set(
       validRows
         .map((row) => row.ownershipVehicle)
@@ -443,44 +618,15 @@ async function importPortfolio(request: NextRequest) {
           })
         : Promise.resolve([]),
     ]);
-    const previewExistingByKey = new Map(previewExisting.map((row) => [companyKey(row.name, row.country), row]));
-    const previewFundIdByName = new Map(previewFunds.map((fund) => [fund.fundName, fund.id]));
-    const previewWarnings = validRows.flatMap((row) => {
-      const existingCompany = previewExistingByKey.get(companyKey(row.name, row.country));
-      return existingCompany && !canImportOverExistingCompany(existingCompany)
-        ? [quarantinedCompanyResult(row, existingCompany)]
-        : [];
-    });
-    const ownershipChanges = validRows.flatMap((row) => {
-      const change = ownershipChangeFor(row, previewExistingByKey.get(companyKey(row.name, row.country)));
-      return change ? [change] : [];
-    });
-    const previewActions = validRows.map((row) => {
-      const key = companyKey(row.name, row.country);
-      const existingCompany = previewExistingByKey.get(key);
-      if (!existingCompany) return { key, action: "create" as const };
-      if (!canImportOverExistingCompany(existingCompany)) return { key, action: "quarantined" as const };
-      const matchedFundId = row.ownershipVehicle
-        ? previewFundIdByName.get(row.ownershipVehicle) ?? null
-        : null;
-      return {
-        key,
-        action: sameCompanyImport(row, existingCompany, matchedFundId)
-          ? "unchanged" as const
-          : "update" as const,
-      };
-    });
-    const previewSummary: ImportPreviewSummary = {
-      total: companies.length,
-      valid: validRows.length,
-      creates: previewActions.filter((item) => item.action === "create").length,
-      updates: previewActions.filter((item) => item.action === "update").length,
-      unchanged: previewActions.filter((item) => item.action === "unchanged").length,
-      quarantined: previewWarnings.length,
-      errors: errors.length,
-      stateHash: hashImportPreviewState({ actions: previewActions, warnings: previewWarnings, ownershipChanges }),
-    };
-    if (request.nextUrl.searchParams.get("preview") === "1") {
+    const preview = buildCompanyPreview(
+      companies.length,
+      validRows,
+      errors,
+      previewExisting,
+      previewFunds,
+    );
+    const previewSummary = preview.summary;
+    if (isPreview) {
       const previewToken = await createImportPreviewToken({
         actorId: identity.id,
         entityType: "portfolio",
@@ -492,41 +638,75 @@ async function importPortfolio(request: NextRequest) {
         ...previewSummary,
         items: companies,
         previewToken,
-        warnings: previewWarnings,
-        ownershipChanges,
-        errors,
+        warnings: preview.warnings,
+        ownershipChanges: preview.ownershipChanges,
+        errors: preview.errors,
       });
     }
-    await consumeImportPreviewToken({
-      token: request.headers.get("x-import-preview-token") ?? undefined,
-      actorId: identity.id,
-      entityType: "portfolio",
-      items: companies,
-      summary: previewSummary,
-    });
     if (previewSummary.creates === 0 && previewSummary.updates === 0) {
-      const unchangedResults = validRows.flatMap((row) => {
-        const existingCompany = previewExistingByKey.get(companyKey(row.name, row.country));
-        const matchedFundId = row.ownershipVehicle
-          ? previewFundIdByName.get(row.ownershipVehicle) ?? null
-          : null;
-        return existingCompany && sameCompanyImport(row, existingCompany, matchedFundId)
-          ? [unchangedCompanyResult(row, existingCompany)]
+      const noOp = await transactImportPreview(async (tx) => {
+        const currentExisting = validRows.length > 0
+          ? await tx.company.findMany({
+              where: { OR: validRows.map((row) => ({ name: row.name, country: row.country })) },
+              select: COMPANY_IMPORT_SELECT,
+            })
           : [];
+        const currentFunds = requestedVehicles.length > 0
+          ? await tx.fund.findMany({
+              where: { fundName: { in: requestedVehicles } },
+              select: { id: true, fundName: true },
+            })
+          : [];
+        const currentPreview = buildCompanyPreview(
+          companies.length,
+          validRows,
+          errors,
+          currentExisting,
+          currentFunds,
+        );
+        if (currentPreview.summary.creates > 0 || currentPreview.summary.updates > 0) {
+          throw new ImportConflictError(
+            "Portfolio import contains writable changes. Preview the file again.",
+          );
+        }
+        await consumeImportPreviewToken({
+          token,
+          actorId: identity.id,
+          entityType: "portfolio",
+          items: companies,
+          summary: currentPreview.summary,
+        }, tx);
+        const unchangedResults = currentPreview.eligibleRows.flatMap((row) => {
+          const existingCompany = currentPreview.existingByKey.get(
+            companyKey(row.name, row.country),
+          );
+          const matchedFundId = row.ownershipVehicle
+            ? currentPreview.fundIdByName.get(row.ownershipVehicle) ?? null
+            : null;
+          return existingCompany && sameCompanyImport(row, existingCompany, matchedFundId)
+            ? [unchangedCompanyResult(row, existingCompany)]
+            : [];
+        });
+        return {
+          unchangedResults,
+          warnings: currentPreview.warnings,
+          errors: currentPreview.errors,
+        };
       });
-      const results = [...errors, ...previewWarnings, ...unchangedResults];
+      const results = [...noOp.errors, ...noOp.warnings, ...noOp.unchangedResults];
       return NextResponse.json({
         imported: 0,
-        unchanged: unchangedResults.length,
+        unchanged: noOp.unchangedResults.length,
         errors: results.filter((result) => result.error),
         results,
-        quarantined: previewWarnings.length,
+        quarantined: noOp.warnings.length,
         auditEventId: null,
       });
     }
     const committed = await commitImport({
       pipeline: "BULK_IMPORT_COMPANIES",
       entityType: "Company",
+      actorId: identity.id,
       rowCount: companies.length,
       execute: async (tx) => {
         const existing = validRows.length > 0
@@ -535,16 +715,41 @@ async function importPortfolio(request: NextRequest) {
               select: COMPANY_IMPORT_SELECT,
             })
           : [];
-        const results: ImportResult[] = [...errors];
-        const existingByKey = new Map(existing.map((row) => [companyKey(row.name, row.country), row]));
+        const currentFunds = requestedVehicles.length > 0
+          ? await tx.fund.findMany({
+              where: { fundName: { in: requestedVehicles } },
+              select: { id: true, fundName: true },
+            })
+          : [];
+        const currentPreview = buildCompanyPreview(
+          companies.length,
+          validRows,
+          errors,
+          existing,
+          currentFunds,
+        );
+        if (currentPreview.summary.creates === 0 && currentPreview.summary.updates === 0) {
+          throw new ImportConflictError(
+            "Portfolio import no longer contains writable changes. Preview the file again.",
+          );
+        }
+        await consumeImportPreviewToken({
+          token,
+          actorId: identity.id,
+          entityType: "portfolio",
+          items: companies,
+          summary: currentPreview.summary,
+        }, tx);
+        const results: ImportResult[] = [...currentPreview.errors];
+        const existingByKey = currentPreview.existingByKey;
         let inserted = 0;
         let updated = 0;
-        let skipped = errors.length;
+        let skipped = currentPreview.errors.length;
         let quarantined = 0;
         let unchanged = 0;
         const changedFields = new Set<string>();
 
-        for (const company of validRows) {
+        for (const company of currentPreview.eligibleRows) {
           const key = companyKey(company.name, company.country);
           const existingCompany = existingByKey.get(key);
           if (existingCompany && !canImportOverExistingCompany(existingCompany)) {
@@ -559,13 +764,10 @@ async function importPortfolio(request: NextRequest) {
             skipped += 1;
             continue;
           }
-          const matchedFund = company.ownershipVehicle
-            ? await tx.fund.findFirst({
-                where: { fundName: company.ownershipVehicle },
-                select: { id: true },
-              })
+          const matchedFundId = company.ownershipVehicle
+            ? currentPreview.fundIdByName.get(company.ownershipVehicle) ?? null
             : null;
-          if (existingCompany && sameCompanyImport(company, existingCompany, matchedFund?.id ?? null)) {
+          if (existingCompany && sameCompanyImport(company, existingCompany, matchedFundId)) {
             results.push(unchangedCompanyResult(company, existingCompany));
             unchanged += 1;
             skipped += 1;
@@ -573,7 +775,7 @@ async function importPortfolio(request: NextRequest) {
           }
           for (const field of companyImportChangedFields(
             company,
-            matchedFund?.id ?? null,
+            matchedFundId,
             existingCompany,
           )) {
             changedFields.add(field);
@@ -586,6 +788,7 @@ async function importPortfolio(request: NextRequest) {
               where: {
                 id: existingCompany.id,
                 status: { in: ["DRAFT", "IN_REVIEW"] },
+                updatedAt: existingCompany.updatedAt,
               },
               data: companyData,
             });
@@ -633,14 +836,14 @@ async function importPortfolio(request: NextRequest) {
                 },
               },
               update: {
-                fundId: matchedFund?.id ?? null,
+                fundId: matchedFundId,
                 investmentYear: company.investmentYear ?? null,
                 isActive: companyData.companyStatus !== "REALIZED",
               },
               create: {
                 companyId: created.id,
                 organizationId: organization.id,
-                fundId: matchedFund?.id ?? null,
+                fundId: matchedFundId,
                 vehicleName,
                 investmentYear: company.investmentYear ?? null,
                 isActive: companyData.companyStatus !== "REALIZED",

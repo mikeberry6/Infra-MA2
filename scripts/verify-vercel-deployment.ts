@@ -32,11 +32,12 @@ async function main(): Promise<void> {
   const expectedSha = option("expected-sha");
   const expectedProjectId = option("expected-project-id");
   const expectedGithubRepositoryId = option("expected-github-repository-id");
-  if (!expectedSha || !expectedProjectId || !expectedGithubRepositoryId) {
-    throw new Error("--expected-sha, --expected-project-id, and --expected-github-repository-id are required.");
+  const teamId = option("team-id");
+  if (!expectedSha || !expectedProjectId || !expectedGithubRepositoryId || !teamId) {
+    throw new Error("--expected-sha, --expected-project-id, --expected-github-repository-id, and --team-id are required.");
   }
   const deployment = deploymentReference();
-  const response = await fetch(vercelDeploymentApiUrl(deployment.reference, option("team-id")), {
+  const response = await fetch(vercelDeploymentApiUrl(deployment.reference, teamId), {
     signal: AbortSignal.timeout(30_000),
     headers: {
       Authorization: `Bearer ${token}`,

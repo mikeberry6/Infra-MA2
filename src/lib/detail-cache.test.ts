@@ -58,6 +58,10 @@ describe("BoundedDetailCache", () => {
 
   it("rejects malformed envelopes", () => {
     expect(isDetailResponse({ data: { id: "x" }, meta: { canonicalId: "x" } })).toBe(false);
+    expect(isDetailResponse({
+      ...envelope("x"),
+      meta: { ...envelope("x").meta, updatedAt: "1" },
+    })).toBe(false);
     expect(() => cacheMalformedEnvelope()).toThrow("valid { data, meta } envelope");
   });
 });
@@ -109,7 +113,7 @@ describe("revalidateDetail", () => {
       cache,
       key: "record",
       fetcher: async () => response({ error: "not found" }, false, status),
-    })).resolves.toEqual({ status: "error", envelope: null });
+    })).resolves.toEqual({ status: "unavailable", envelope: null });
     expect(cache.peek("record")).toBeUndefined();
   });
 });

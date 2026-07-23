@@ -10,8 +10,10 @@ import "dotenv/config";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { PrismaClient } from "../src/generated/prisma/client";
-import { withServerTask } from "../src/lib/server-log";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { SafeOperationalError } from "../src/lib/safe-error";
 import { companyDedupKeys, groupByDedupKeys } from "../src/lib/company-key";
 import {
   COMPANY_MERGE_APPROVAL_SCHEMA_VERSION,
@@ -21,12 +23,7 @@ import {
   type CompanyMergeSnapshot,
 } from "../src/modules/companies/merge-approval";
 
-if (!process.env.DATABASE_URL) {
-  throw new Error("DATABASE_URL is required for the read-only duplicate report.");
-}
-
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
-const prisma = new PrismaClient({ adapter });
+let prisma: PrismaClient;
 
 type CompanyCandidate = CompanyMergeSnapshot;
 
@@ -141,14 +138,26 @@ async function main() {
 
   if (REQUIRE_CLEAN && clusters.length > 0) {
     console.error(`Canonical-company gate failed: ${clusters.length} duplicate cluster(s) remain in scope.`);
-    process.exitCode = 1;
+    throw new Error("Canonical-company validation failed.");
   }
 }
 
-withServerTask({ task: "company_merge_report", operation: "report_merge_candidates" }, main)
+async function runTask() {
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) throw new SafeOperationalError("database_url_required");
+  const client = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
+  prisma = client;
+  await runWithPreservedCleanup({
+    run: main,
+    cleanup: () => client.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "company_merge_report_cleanup",
+      operation: "disconnect_database",
+    }, error),
+  });
+}
+
+withServerTask({ task: "company_merge_report", operation: "report_merge_candidates" }, runTask)
   .catch(() => {
     process.exitCode = 1;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
   });

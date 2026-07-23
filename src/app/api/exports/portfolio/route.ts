@@ -4,6 +4,11 @@ import { toCsv } from "@/lib/csv";
 import { withServerOperation } from "@/lib/server-log";
 import { canExportData } from "@/modules/auth/guards";
 
+const PRIVATE_NO_STORE_HEADERS = {
+  "Cache-Control": "private, no-store",
+  Pragma: "no-cache",
+} as const;
+
 const PORTFOLIO_COLUMNS = [
   "name",
   "investmentFirm",
@@ -24,7 +29,10 @@ const PORTFOLIO_COLUMNS = [
 async function exportPortfolio(request: NextRequest) {
   try {
     if (!(await canExportData())) {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+      return NextResponse.json(
+        { error: "Forbidden" },
+        { status: 403, headers: PRIVATE_NO_STORE_HEADERS },
+      );
     }
 
     // Support ?format=json for backward compatibility
@@ -34,11 +42,14 @@ async function exportPortfolio(request: NextRequest) {
     const companies = await getAllCompanyDetails();
 
     if (wantsJson) {
-      return NextResponse.json({
-        data: companies,
-        count: companies.length,
-        exportedAt: new Date().toISOString(),
-      });
+      return NextResponse.json(
+        {
+          data: companies,
+          count: companies.length,
+          exportedAt: new Date().toISOString(),
+        },
+        { headers: PRIVATE_NO_STORE_HEADERS },
+      );
     }
 
     const csvString = toCsv(companies, PORTFOLIO_COLUMNS);
@@ -46,6 +57,7 @@ async function exportPortfolio(request: NextRequest) {
 
     return new Response(csvString, {
       headers: {
+        ...PRIVATE_NO_STORE_HEADERS,
         "Content-Type": "text/csv; charset=utf-8",
         "Content-Disposition": `attachment; filename="portfolio_export_${date}.csv"`,
       },
@@ -53,7 +65,7 @@ async function exportPortfolio(request: NextRequest) {
   } catch {
     return NextResponse.json(
       { error: "Failed to export portfolio" },
-      { status: 500 },
+      { status: 500, headers: PRIVATE_NO_STORE_HEADERS },
     );
   }
 }

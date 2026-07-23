@@ -1,6 +1,11 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 describe("callback URL validation", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    vi.resetModules();
+  });
+
   it("accepts application-relative paths and rejects external or protocol-relative redirects", async () => {
     vi.stubEnv("NEXT_PUBLIC_BASE_PATH", "/Infra-MA2");
     vi.resetModules();
@@ -27,6 +32,5 @@ describe("callback URL validation", () => {
     expect(normalizeNextAuthRedirect("/\\attacker.example/phish", "https://infrasight.example")).toBe(
       "https://infrasight.example/Infra-MA2/",
     );
-    vi.unstubAllEnvs();
   });
 });

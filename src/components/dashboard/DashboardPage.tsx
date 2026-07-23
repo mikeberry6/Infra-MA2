@@ -531,7 +531,12 @@ function SignalsTable({
           <EmptyPanel text="No current signals. Source may be unavailable, unconfigured, or clean for the current window." />
         </div>
       ) : (
-        <div className="overflow-x-auto">
+        <div
+          className="overflow-x-auto"
+          role="region"
+          aria-label={`${title} signals table`}
+          tabIndex={0}
+        >
           <table className="w-full min-w-[680px]">
             <thead>
               <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]">
@@ -594,7 +599,12 @@ function SourceHealthTable({ view }: { view: DashboardView }) {
         </div>
         <Database className="h-4 w-4 text-[var(--text-tertiary)]" />
       </div>
-      <div className="overflow-x-auto">
+      <div
+        className="overflow-x-auto"
+        role="region"
+        aria-label="Dashboard source health table"
+        tabIndex={0}
+      >
         <table className="w-full min-w-[760px]">
           <thead>
             <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]">

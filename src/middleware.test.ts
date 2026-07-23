@@ -57,4 +57,30 @@ describe("middleware request-ID trust boundary", () => {
     }));
     expect(JSON.stringify(mocks.logServerOperation.mock.calls)).not.toContain("spoofed-admin-request-id");
   });
+
+  it("keeps edge-denied export responses private and non-cacheable", async () => {
+    mocks.getToken.mockResolvedValue(null);
+
+    const response = await middleware(
+      new NextRequest("http://localhost/api/exports/deals"),
+    );
+
+    expect(response.status).toBe(403);
+    expect(response.headers.get("cache-control")).toBe("private, no-store");
+    expect(response.headers.get("pragma")).toBe("no-cache");
+    expect(response.headers.get("x-request-id")).toBe("server-owned-request-id");
+  });
+
+  it("keeps privileged configuration failures private and non-cacheable", async () => {
+    delete process.env.NEXTAUTH_SECRET;
+
+    const response = await middleware(
+      new NextRequest("http://localhost/api/exports/deals"),
+    );
+
+    expect(response.status).toBe(500);
+    expect(response.headers.get("cache-control")).toBe("private, no-store");
+    expect(response.headers.get("pragma")).toBe("no-cache");
+    expect(response.headers.get("x-request-id")).toBe("server-owned-request-id");
+  });
 });

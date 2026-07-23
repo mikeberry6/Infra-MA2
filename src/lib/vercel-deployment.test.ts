@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { vercelDeploymentApiUrl, verifyVercelDeployment } from "./vercel-deployment";
+import {
+  vercelDeploymentApiUrl,
+  verifyVercelDeployment,
+} from "./vercel-deployment";
 
 const projectId = "prj_4OHI8VVhIy2h8PTEOTOlpfMiu4s6";
 const sha = "a".repeat(40);
@@ -15,14 +18,20 @@ const validPayload = {
 };
 
 describe("verifyVercelDeployment", () => {
-  it("scopes team resources by immutable team ID and omits scope for personal resources", () => {
-    expect(vercelDeploymentApiUrl("dpl_example"))
-      .toBe("https://api.vercel.com/v13/deployments/dpl_example");
-    expect(vercelDeploymentApiUrl("infra-ma-2.vercel.app", "team_abc123"))
-      .toBe("https://api.vercel.com/v13/deployments/infra-ma-2.vercel.app?teamId=team_abc123");
-    expect(() => vercelDeploymentApiUrl("dpl_example", "mutable-team-slug"))
-      .toThrow("immutable team_");
+  it("scopes deployment API reads to an immutable Vercel team", () => {
+    expect(vercelDeploymentApiUrl("dpl_example", "team_example123")).toBe(
+      "https://api.vercel.com/v13/deployments/dpl_example?teamId=team_example123",
+    );
   });
+
+  it.each(["", "example-team", "team_bad-value"])(
+    "rejects invalid Vercel team identity %j",
+    (teamId) => {
+      expect(() => vercelDeploymentApiUrl("dpl_example", teamId)).toThrow(
+        "immutable team_ identifier",
+      );
+    },
+  );
 
   it("accepts exact project, target, state, and Git metadata", () => {
     expect(verifyVercelDeployment(validPayload, projectId, sha, repositoryId)).toMatchObject({

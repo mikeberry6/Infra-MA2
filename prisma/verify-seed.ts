@@ -1,7 +1,9 @@
 import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaNeonHttp } from "@prisma/adapter-neon";
-import { withServerTask } from "../src/lib/server-log";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
+import { SafeOperationalError } from "../src/lib/safe-error";
 import { deals } from "./seed-data/deals";
 import { weeklyBriefingDeals } from "./seed-data/weekly-briefing-deals";
 import { funds } from "./seed-data/funds";
@@ -16,16 +18,15 @@ import { weeklyDealIdentitiesMatch } from "../src/modules/operations/weekly-deal
 import { isHttpUrl } from "../src/lib/source-utils";
 
 const connectionString = process.env.DATABASE_URL;
-
-if (!connectionString) {
-  console.error("DATABASE_URL is not set.");
-  process.exit(1);
-}
-
-const adapter = new PrismaNeonHttp(connectionString, { arrayMode: false, fullResults: true });
-const prisma = new PrismaClient({ adapter });
+let prismaToDisconnect: PrismaClient | null = null;
 
 async function main() {
+  if (!connectionString) throw new SafeOperationalError("database_url_missing");
+
+  const adapter = new PrismaNeonHttp(connectionString, { arrayMode: false, fullResults: true });
+  const prisma = new PrismaClient({ adapter });
+  prismaToDisconnect = prisma;
+
   console.log("Verifying database seed...\n");
 
   let allPassed = true;
@@ -294,13 +295,23 @@ async function main() {
   }
 
   console.log("\n" + (allPassed ? "All checks passed." : "Some checks failed."));
-  if (!allPassed) process.exit(1);
+  if (!allPassed) throw new Error("Database seed validation failed.");
 }
 
-withServerTask({ task: "database_verification", operation: "verify_seed_data" }, main)
+async function runTask() {
+  await runWithPreservedCleanup({
+    run: main,
+    cleanup: async () => {
+      await prismaToDisconnect?.$disconnect();
+    },
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "database_verification_cleanup",
+      operation: "disconnect_database",
+    }, error),
+  });
+}
+
+withServerTask({ task: "database_verification", operation: "verify_seed_data" }, runTask)
   .catch(() => {
     process.exitCode = 1;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
   });

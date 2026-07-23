@@ -39,15 +39,16 @@ jobs:
       EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
       EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
       FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.MIGRATION_DATABASE_HOST }}
       DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
       VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
       EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
       EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
       RELEASE_SHA: ${{ inputs.release_sha }}
       DEPLOYMENT_URL: ${{ inputs.deployment_url }}
       PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
+      CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
       CONFIRMATION: ${{ inputs.confirmation }}
     steps:
       - name: Require protected workflow ref
@@ -100,9 +101,11 @@ jobs:
             --output=tmp/release/release-provenance.json
 
       - name: Require protected production configuration
+        env:
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: |
           missing=0
-          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST VERCEL_TOKEN VERCEL_SCOPE EXPECTED_VERCEL_PROJECT_ID EXPECTED_GITHUB_REPOSITORY_ID PRODUCTION_URL FRED_API_KEY EIA_API_KEY SAM_API_KEY SEC_USER_AGENT; do
+          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2 VERCEL_TOKEN VERCEL_AUTOMATION_BYPASS_SECRET VERCEL_TEAM_ID EXPECTED_VERCEL_PROJECT_ID EXPECTED_GITHUB_REPOSITORY_ID PRODUCTION_URL FRED_API_KEY EIA_API_KEY SAM_API_KEY SEC_USER_AGENT; do
             if [ -z "${!name:-}" ]; then
               echo "::error::$name is required."
               missing=1
@@ -114,6 +117,10 @@ jobs:
           fi
           if ! [[ "$EXPECTED_VERCEL_PROJECT_ID" =~ ^prj_[A-Za-z0-9]+$ ]]; then
             echo "::error::VERCEL_PROJECT_ID must be an immutable prj_ identifier."
+            missing=1
+          fi
+          if [ "$PRODUCTION_URL" != "$CANONICAL_PRODUCTION_URL" ]; then
+            echo "::error::The protected PRODUCTION_URL does not match the canonical InfraSight production alias."
             missing=1
           fi
           node - <<'NODE'
@@ -145,6 +152,8 @@ jobs:
 
       - name: Inspect and smoke-test candidate before production writes
         shell: bash
+        env:
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: |
           mkdir -p tmp/release
           set -o pipefail
@@ -156,18 +165,10 @@ jobs:
             --team-id="$VERCEL_TEAM_ID" \
             --require-immutable-url \
             --output=tmp/release/candidate-inspect.json
-          candidate_link_dir="$(mktemp -d "${RUNNER_TEMP}/vercel-candidate-link.XXXXXX")"
-          trap 'rm -rf "$candidate_link_dir"' EXIT
-          npx --yes vercel@51.7.0 link \
-            --cwd "$candidate_link_dir" \
-            --project "$EXPECTED_VERCEL_PROJECT_ID" \
-            --scope "$VERCEL_SCOPE" \
-            --token "$VERCEL_TOKEN" \
-            --yes
-          VERCEL_CLI_CWD="$candidate_link_dir" node scripts/release-smoke.mjs \
+          node scripts/release-smoke.mjs \
             --base-url="$DEPLOYMENT_URL" \
             --expected-version="$RELEASE_SHA" \
-            --transport=vercel-cli \
+            --transport=vercel-bypass \
             --output=tmp/release/candidate-smoke.json
 
       - name: Prove production database target
@@ -233,8 +234,13 @@ jobs:
             --output=tmp/release/candidate-inspect-before-promotion.json
           deployment_id="$(jq -r '.id' tmp/release/candidate-inspect-before-promotion.json)"
           [[ "$deployment_id" =~ ^dpl_[A-Za-z0-9]+$ ]] || { echo "::error::Verified deployment ID is invalid."; exit 1; }
-          npx --yes vercel@51.7.0 promote "$deployment_id" \
-            --timeout 3m --yes --token "$VERCEL_TOKEN" --scope "$VERCEL_SCOPE"
+          node --experimental-strip-types scripts/mutate-vercel-production.ts \
+            --operation=promote \
+            --deployment-id="$deployment_id" \
+            --project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
+            --production-url="$PRODUCTION_URL" \
+            --output=tmp/release/production-mutation.json
 
       - name: Verify canonical production release
         shell: bash

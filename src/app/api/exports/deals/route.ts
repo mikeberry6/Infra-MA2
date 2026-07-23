@@ -4,12 +4,19 @@ import { toCsv } from "@/lib/csv";
 import { withServerOperation } from "@/lib/server-log";
 import { canExportData } from "@/modules/auth/guards";
 
+const PRIVATE_NO_STORE_HEADERS = {
+  "Cache-Control": "private, no-store",
+  Pragma: "no-cache",
+} as const;
+
 const DEAL_COLUMNS = [
   "legacyId",
   "title",
   "target",
   "buyer",
   "seller",
+  "sellerDisclosureStatus",
+  "sellerDisclosureReason",
   "sector",
   "subsector",
   "region",
@@ -32,7 +39,10 @@ const DEAL_COLUMNS = [
 async function exportDeals(request: NextRequest) {
   try {
     if (!(await canExportData())) {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+      return NextResponse.json(
+        { error: "Forbidden" },
+        { status: 403, headers: PRIVATE_NO_STORE_HEADERS },
+      );
     }
 
     // Support ?format=json for backward compatibility
@@ -42,11 +52,14 @@ async function exportDeals(request: NextRequest) {
     const deals = await getAllDealDetails();
 
     if (wantsJson) {
-      return NextResponse.json({
-        data: deals,
-        count: deals.length,
-        exportedAt: new Date().toISOString(),
-      });
+      return NextResponse.json(
+        {
+          data: deals,
+          count: deals.length,
+          exportedAt: new Date().toISOString(),
+        },
+        { headers: PRIVATE_NO_STORE_HEADERS },
+      );
     }
 
     // Flatten category arrays for CSV output
@@ -60,6 +73,7 @@ async function exportDeals(request: NextRequest) {
 
     return new Response(csvString, {
       headers: {
+        ...PRIVATE_NO_STORE_HEADERS,
         "Content-Type": "text/csv; charset=utf-8",
         "Content-Disposition": `attachment; filename="deals_export_${date}.csv"`,
       },
@@ -67,7 +81,7 @@ async function exportDeals(request: NextRequest) {
   } catch {
     return NextResponse.json(
       { error: "Failed to export deals" },
-      { status: 500 },
+      { status: 500, headers: PRIVATE_NO_STORE_HEADERS },
     );
   }
 }

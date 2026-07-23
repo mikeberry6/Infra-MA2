@@ -10,7 +10,8 @@ import "dotenv/config";
 import { readFile } from "node:fs/promises";
 import { PrismaClient, type Prisma } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
-import { withServerTask } from "../src/lib/server-log";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { companyDedupKeys, groupByDedupKeys } from "../src/lib/company-key";
 import {
   assertApprovalReviewerMatchesMutationContext,
@@ -463,7 +464,7 @@ async function main() {
     assertApprovalReviewerMatchesMutationContext(approvalFile.approval.reviewedBy, context);
   }
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
-  try {
+  const run = async () => {
     if (!APPLY) {
       const companies = await prisma.company.findMany({ select: COMPANY_MERGE_SNAPSHOT_SELECT });
       const clusters = duplicateClusters(companies);
@@ -497,9 +498,15 @@ async function main() {
       targetDatabase: context!.targetDatabase,
       ...result,
     }, null, 2));
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "company_merge",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
 withServerTask({ task: "company_merge", operation: "merge_duplicate_companies" }, main).catch(() => {

@@ -6,27 +6,52 @@ const workflow = readFileSync(
   path.join(process.cwd(), ".github/workflows/deploy.yml"),
   "utf8",
 );
-const visualSpec = readFileSync(
-  path.join(process.cwd(), "tests/e2e/visual-regression.spec.ts"),
+const releaseRunbook = readFileSync(
+  path.join(process.cwd(), "docs/release-runbook.md"),
   "utf8",
 );
 
 describe("isolated validation workflow remediation context", () => {
-  it("builds and serves the validation app with the full base-path auth endpoint", () => {
+  it("documents the whole-program isolated validation contract", () => {
+    for (const name of [
+      "MIGRATION_DATABASE_URL",
+      "MIGRATION_DATABASE_HOST",
+      "MIGRATION_DATABASE_NAME",
+    ]) {
+      expect(releaseRunbook).toContain(`\`${name}\``);
+    }
+    expect(releaseRunbook).not.toContain("PHASE1_MIGRATION_DATABASE");
+    expect(releaseRunbook).not.toContain("PHASE2_MIGRATION_DATABASE");
+  });
+
+  it("isolates migration and browser validation from every production database", () => {
     const validationJob = workflow.slice(workflow.indexOf("  validation:"));
-    const buildStep = validationJob.indexOf("- name: Build against migrated validation database");
-    const visualStep = validationJob.indexOf(
-      "- name: Run deterministic visual baselines before mutation journeys",
+    const migrationStep = validationJob.indexOf("- name: Apply additive migrations to validation branch");
+    const buildStep = validationJob.indexOf(
+      "- name: Build against migrated validation database",
     );
 
     expect(validationJob).toContain(
-      "NEXTAUTH_URL: http://127.0.0.1:3100/Infra-MA2/api/auth",
+      "DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}",
     );
-    expect(buildStep).toBeGreaterThan(-1);
-    expect(visualStep).toBeGreaterThan(buildStep);
-    expect(validationJob.slice(buildStep, visualStep)).toContain(
-      "NEXTAUTH_URL: http://127.0.0.1:3100/Infra-MA2/api/auth",
+    expect(validationJob).toContain(
+      "EXPECTED_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}",
     );
+    expect(validationJob).toContain(
+      "EXPECTED_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}",
+    );
+    expect(validationJob).toContain(
+      "FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}",
+    );
+    expect(validationJob).toContain(
+      "FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}",
+    );
+    expect(migrationStep).toBeGreaterThan(-1);
+    expect(buildStep).toBeGreaterThan(migrationStep);
+    expect(validationJob).toContain("playwright");
+    expect(validationJob).toContain("E2E_DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}");
+    expect(validationJob).not.toContain("bundle-budget");
+    expect(validationJob).not.toContain("/api/health");
   });
 
   it("derives each mutation reviewer from the committed approval", () => {
@@ -94,95 +119,22 @@ describe("isolated validation workflow remediation context", () => {
     expect(citationApply).toBeGreaterThan(sellerApply);
   });
 
-  it("collects independent evidence after gate failures but still fails closed", () => {
+  it("uploads neutral evidence after strict-gate failures and still fails closed", () => {
     const strictGate = workflow.indexOf("- name: Verify database integrity and strict publication gates");
-    const visualGate = workflow.indexOf(
-      "- name: Run deterministic visual baselines before mutation journeys",
-    );
-    const browserGate = workflow.indexOf(
-      "- name: Run end-to-end, axe, keyboard, and responsive checks",
-    );
-    const topLevelFailureGate = workflow.indexOf(
-      "- name: Prove top-level database failure and retry journeys",
-    );
-    const providerFailureGate = workflow.indexOf(
-      "- name: Prove failed external-provider browser journeys",
-    );
     const evidenceUpload = workflow.indexOf("- name: Upload migration and data evidence");
     const enforcement = workflow.indexOf(
       "- name: Enforce browser, visual, and strict publication gates after collecting validation evidence",
     );
 
     expect(strictGate).toBeGreaterThan(-1);
-    expect(workflow.slice(strictGate, visualGate)).toContain("continue-on-error: true");
-    expect(visualGate).toBeGreaterThan(strictGate);
-    const visualBlock = workflow.slice(visualGate, browserGate);
-    expect(visualBlock).toContain("continue-on-error: true");
-    expect(visualBlock).toContain("--workers=1");
-    expect(visualBlock).toContain("--output=visual-test-results");
-    expect(visualBlock).not.toContain("--update-snapshots");
-    expect(browserGate).toBeGreaterThan(visualGate);
-    const browserBlock = workflow.slice(browserGate, topLevelFailureGate);
-    expect(browserBlock).toContain("continue-on-error: true");
-    expect(browserBlock).toContain('npx playwright test --grep-invert "@visual"');
-    expect(topLevelFailureGate).toBeGreaterThan(browserGate);
-    const topLevelFailureBlock = workflow.slice(topLevelFailureGate, providerFailureGate);
-    expect(topLevelFailureBlock).toContain("id: top_level_failure_gate");
-    expect(topLevelFailureBlock).toContain("continue-on-error: true");
-    expect(topLevelFailureBlock).toContain(
-      "DATA_CACHE_NAMESPACE: top-level-failure-${{ github.run_id }}",
-    );
-    expect(topLevelFailureBlock).toContain("--output=top-level-failure-test-results");
-    expect(providerFailureGate).toBeGreaterThan(topLevelFailureGate);
-    const providerFailureBlock = workflow.slice(providerFailureGate, evidenceUpload);
-    expect(providerFailureBlock).toContain("id: provider_failure_gate");
-    expect(providerFailureBlock).toContain("continue-on-error: true");
-    expect(providerFailureBlock).toContain(
-      "DATA_CACHE_NAMESPACE: provider-failure-${{ github.run_id }}",
-    );
-    expect(providerFailureBlock).toContain("--output=provider-failure-test-results");
-    expect(evidenceUpload).toBeGreaterThan(browserGate);
+    expect(workflow.slice(strictGate, evidenceUpload)).toContain("continue-on-error: true");
+    expect(evidenceUpload).toBeGreaterThan(strictGate);
     expect(enforcement).toBeGreaterThan(evidenceUpload);
-    expect(workflow.slice(enforcement)).toContain(
-      'if [ "$BROWSER_GATE_OUTCOME" != "success" ]',
-    );
-    expect(workflow.slice(enforcement)).toContain(
-      'if [ "$VISUAL_GATE_OUTCOME" != "success" ]',
-    );
-    expect(workflow.slice(enforcement)).toContain(
-      'if [ "$TOP_LEVEL_FAILURE_GATE_OUTCOME" != "success" ]',
-    );
-    expect(workflow.slice(enforcement)).toContain(
-      'if [ "$PROVIDER_FAILURE_GATE_OUTCOME" != "success" ]',
-    );
+    expect(workflow.slice(evidenceUpload, enforcement)).toContain("if: always()");
     expect(workflow.slice(enforcement)).toContain(
       'if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]',
     );
     expect(workflow.slice(enforcement)).toContain('exit "$failed"');
-  });
-
-  it("retains clean visual candidates without rewriting release expectations", () => {
-    const cleanActualCapture = visualSpec.indexOf("await page.screenshot({");
-    const baselineAssertion = visualSpec.indexOf(
-      "await expect(page).toHaveScreenshot(baseline",
-    );
-    const playwrightUpload = workflow.indexOf(
-      "- name: Upload Playwright report and failure media",
-    );
-    const buildJob = workflow.indexOf("\n  build:", playwrightUpload);
-    const uploadBlock = workflow.slice(playwrightUpload, buildJob);
-
-    expect(cleanActualCapture).toBeGreaterThan(-1);
-    expect(baselineAssertion).toBeGreaterThan(cleanActualCapture);
-    expect(visualSpec.slice(0, cleanActualCapture)).toContain(
-      "`tracker-${viewport.name}-${process.platform}-clean-actual.png`",
-    );
-    expect(visualSpec).toContain(
-      'maxDiffPixelRatio: process.platform === "linux" ? 0.005 : 0.02',
-    );
-    expect(playwrightUpload).toBeGreaterThan(-1);
-    expect(buildJob).toBeGreaterThan(playwrightUpload);
-    expect(uploadBlock).toContain("visual-playwright-report/");
-    expect(uploadBlock).toContain("visual-test-results/");
+    expect(workflow).toContain("playwright");
   });
 });

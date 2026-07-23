@@ -28,19 +28,23 @@ export async function GET(
         { status: 400, headers: NO_STORE_HEADERS },
       );
     }
-    const [deal, meta] = await Promise.all([
-      getDealById(decodedId),
-      prisma.deal.findUnique({
-        where: { legacyId: decodedId },
-        select: {
-          status: true,
-          updatedAt: true,
-          lastVerifiedAt: true,
-          _count: { select: { citations: true } },
-        },
-      }),
-    ]);
-    if (!deal || meta?.status !== "PUBLISHED") {
+    const deal = await getDealById(decodedId);
+    if (!deal) {
+      return NextResponse.json(
+        { error: "Deal not found" },
+        { status: 404, headers: NO_STORE_HEADERS },
+      );
+    }
+    const meta = await prisma.deal.findUnique({
+      where: { legacyId: decodedId },
+      select: {
+        status: true,
+        updatedAt: true,
+        lastVerifiedAt: true,
+        _count: { select: { citations: true } },
+      },
+    });
+    if (meta?.status !== "PUBLISHED") {
       return NextResponse.json(
         { error: "Deal not found" },
         { status: 404, headers: NO_STORE_HEADERS },

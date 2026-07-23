@@ -269,7 +269,7 @@ export interface NewsScanWindowView {
   windowsPerCycle: number;
 }
 
-export interface NewsSourceCoverage {
+export interface NewsSourceCoverage extends Record<string, number> {
   attempted: number;
   succeeded: number;
   failed: number;

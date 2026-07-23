@@ -3,12 +3,8 @@
 **Owner:** Engineering
 **Review date:** 2026-08-22
 
-Production dependencies currently pass `npm audit --omit=dev --audit-level=high` with zero critical, high, moderate, or low findings. A full development-tree audit has no critical or high findings after individually updating the affected transitive packages.
+Both the complete dependency tree and the production-only tree pass `npm audit --audit-level=high` with zero findings as of 2026-07-22. There are no accepted critical or high-severity exceptions.
 
-## Accepted development-only advisory
+The lockfile deliberately resolves patched transitive versions of `brace-expansion`, `js-yaml`, `sharp`, `tmp`, `uuid`, and `vite`. These overrides were reviewed individually instead of applying `npm audit fix --force`. The Excel workbook compatibility test covers ExcelJS after the `tmp` and `uuid` overrides.
 
-| Package path | Severity | Exposure assessment | Decision |
-| --- | --- | --- | --- |
-| `exceljs@4.4.0 > uuid@8.3.2` | Moderate, `GHSA-w5hq-g745-h8pq` | `exceljs` is a development-only utility. Its code path calls UUID v4 without a caller-provided output buffer; the advisory affects buffer handling in UUID v3/v5/v6. It is not shipped in the public application bundle or reachable from a request route. | Time-bounded acceptance. Recheck for an upstream ExcelJS release using `uuid >= 11.1.1`; do not force a cross-major transitive override without export regression testing. |
-
-The npm-suggested automated remedy downgrades ExcelJS across a major range and is therefore not accepted as an unreviewed audit rewrite. The production audit remains a required release gate; any future critical/high production finding blocks release.
+Future exceptions must record the package path, severity, reachable code path, exploitability, owner, expiration/review date, and compensating control. A critical or high production advisory blocks release unless a time-bounded exception is approved and committed here.

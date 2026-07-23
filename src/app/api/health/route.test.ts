@@ -40,6 +40,7 @@ function healthyPipelineReads() {
 
 describe("GET /api/health", () => {
   beforeEach(() => {
+    vi.stubEnv("VERCEL_GIT_COMMIT_SHA", "");
     vi.useFakeTimers();
     vi.setSystemTime(NOW);
     vi.spyOn(console, "info").mockImplementation(() => undefined);
@@ -48,6 +49,7 @@ describe("GET /api/health", () => {
   });
 
   afterEach(() => {
+    vi.unstubAllEnvs();
     vi.useRealTimers();
     vi.restoreAllMocks();
   });
@@ -85,6 +87,24 @@ describe("GET /api/health", () => {
     ]);
     const schemaQuery = mocks.queryRaw.mock.calls[1]?.[0];
     expect(Array.from(schemaQuery ?? []).join(" ")).toContain("primarySourceUrl");
+  });
+
+  it("exposes only a validated lowercase release SHA prefix", async () => {
+    mocks.queryRaw
+      .mockResolvedValue([{ ready: true }]);
+    healthyPipelineReads();
+    vi.stubEnv("VERCEL_GIT_COMMIT_SHA", "abcdef0123456789abcdef0123456789abcdef01");
+
+    const validResponse = await GET(request());
+    await expect(validResponse.json()).resolves.toMatchObject({
+      version: "abcdef012345",
+    });
+
+    vi.stubEnv("VERCEL_GIT_COMMIT_SHA", "PRIVATE-MISCONFIGURED-VALUE");
+    const malformedResponse = await GET(request());
+    const malformedPayload = await malformedResponse.json();
+    expect(malformedPayload.version).toBe("local");
+    expect(JSON.stringify(malformedPayload)).not.toContain("PRIVATE-MISCONFIGURED-VALUE");
   });
 
   it("reports an unavailable database without exposing connection errors", async () => {

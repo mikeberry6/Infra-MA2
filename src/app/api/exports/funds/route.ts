@@ -4,6 +4,11 @@ import { toCsv } from "@/lib/csv";
 import { withServerOperation } from "@/lib/server-log";
 import { canExportData } from "@/modules/auth/guards";
 
+const PRIVATE_NO_STORE_HEADERS = {
+  "Cache-Control": "private, no-store",
+  Pragma: "no-cache",
+} as const;
+
 const FUND_COLUMNS = [
   "legacyId",
   "managerName",
@@ -26,7 +31,10 @@ const FUND_COLUMNS = [
 async function exportFunds(request: NextRequest) {
   try {
     if (!(await canExportData())) {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+      return NextResponse.json(
+        { error: "Forbidden" },
+        { status: 403, headers: PRIVATE_NO_STORE_HEADERS },
+      );
     }
 
     // Support ?format=json for backward compatibility
@@ -36,11 +44,14 @@ async function exportFunds(request: NextRequest) {
     const funds = await getAllFundDetails();
 
     if (wantsJson) {
-      return NextResponse.json({
-        data: funds,
-        count: funds.length,
-        exportedAt: new Date().toISOString(),
-      });
+      return NextResponse.json(
+        {
+          data: funds,
+          count: funds.length,
+          exportedAt: new Date().toISOString(),
+        },
+        { headers: PRIVATE_NO_STORE_HEADERS },
+      );
     }
 
     // Flatten array fields for CSV output
@@ -57,6 +68,7 @@ async function exportFunds(request: NextRequest) {
 
     return new Response(csvString, {
       headers: {
+        ...PRIVATE_NO_STORE_HEADERS,
         "Content-Type": "text/csv; charset=utf-8",
         "Content-Disposition": `attachment; filename="funds_export_${date}.csv"`,
       },
@@ -64,7 +76,7 @@ async function exportFunds(request: NextRequest) {
   } catch {
     return NextResponse.json(
       { error: "Failed to export funds" },
-      { status: 500 },
+      { status: 500, headers: PRIVATE_NO_STORE_HEADERS },
     );
   }
 }

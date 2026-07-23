@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  buildFundSourceLinks,
   dedupeExactPortCoSources,
   formatSourceType,
   getSourceDisplayLabel,
@@ -99,6 +100,30 @@ describe("source-utils", () => {
     ]) {
       expect(isHttpUrl(`https://${host}/source`), host).toBe(false);
     }
+  });
+
+  it("orders a reviewed Fund primary source before unique public support links", () => {
+    expect(buildFundSourceLinks(
+      "https://www.brookfield.com/fund",
+      [
+        "https://www.brookfield.com/fund",
+        "https://www.blackrock.com/strategy",
+        "javascript:alert(1)",
+      ],
+    )).toEqual([
+      {
+        url: "https://www.brookfield.com/fund",
+        hostname: "brookfield.com",
+        label: "Primary source",
+        isPrimary: true,
+      },
+      {
+        url: "https://www.blackrock.com/strategy",
+        hostname: "blackrock.com",
+        label: "Supporting source 1",
+        isPrimary: false,
+      },
+    ]);
   });
 
   it("prunes only exact duplicate label and URL rows", () => {

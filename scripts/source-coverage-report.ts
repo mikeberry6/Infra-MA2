@@ -4,7 +4,8 @@ import path from "node:path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client.ts";
 import { SafeOperationalError } from "../src/lib/safe-error.ts";
-import { withServerTask } from "../src/lib/server-log.ts";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import {
   coveragePercentage,
   fundHasPrimarySource,
@@ -25,7 +26,7 @@ async function main() {
   const requireComplete = process.argv.includes("--require-complete");
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
 
-  try {
+  const run = async () => {
     const [
       publishedDeals,
       dealsMissingCitation,
@@ -108,9 +109,15 @@ async function main() {
     ) {
       throw new Error("Published source coverage is incomplete; review the generated report.");
     }
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "source_coverage",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
 withServerTask({

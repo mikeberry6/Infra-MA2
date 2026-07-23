@@ -38,22 +38,12 @@ CREATE TABLE "CompanyRedirect" (
   CONSTRAINT "CompanyRedirect_pkey" PRIMARY KEY ("retiredId")
 );
 
-CREATE TABLE "AuthThrottle" (
-  "keyHash" TEXT NOT NULL,
-  "failedAttempts" INTEGER NOT NULL DEFAULT 0,
-  "windowStartedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  "lockedUntil" TIMESTAMP(3),
-  "updatedAt" TIMESTAMP(3) NOT NULL,
-  CONSTRAINT "AuthThrottle_pkey" PRIMARY KEY ("keyHash")
-);
-
 CREATE INDEX "PipelineRun_pipeline_startedAt_idx" ON "PipelineRun"("pipeline", "startedAt");
 CREATE INDEX "PipelineRun_status_startedAt_idx" ON "PipelineRun"("status", "startedAt");
 CREATE INDEX "AuditEvent_actorId_idx" ON "AuditEvent"("actorId");
 CREATE INDEX "AuditEvent_entityType_entityId_idx" ON "AuditEvent"("entityType", "entityId");
 CREATE INDEX "AuditEvent_createdAt_idx" ON "AuditEvent"("createdAt");
 CREATE INDEX "CompanyRedirect_companyId_idx" ON "CompanyRedirect"("companyId");
-CREATE INDEX "AuthThrottle_lockedUntil_idx" ON "AuthThrottle"("lockedUntil");
 
 ALTER TABLE "AuditEvent" ADD CONSTRAINT "AuditEvent_actorId_fkey" FOREIGN KEY ("actorId") REFERENCES "User"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 ALTER TABLE "CompanyRedirect" ADD CONSTRAINT "CompanyRedirect_companyId_fkey" FOREIGN KEY ("companyId") REFERENCES "Company"("id") ON DELETE CASCADE ON UPDATE CASCADE;

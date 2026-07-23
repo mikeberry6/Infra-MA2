@@ -1,12 +1,13 @@
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import {
   assertMaintenanceMutationContext,
   assertMutationDatabaseTargetFromEnv,
   type MaintenanceMutationContext,
 } from "../src/lib/database-target";
-import { withServerTask } from "../src/lib/server-log";
 import {
   DASHBOARD_RECURRING_SOURCES_MIGRATION,
   LEGACY_SIGNAL_PUBLIC_LIMIT,
@@ -402,7 +403,7 @@ async function main(): Promise<void> {
     releaseSha: context.releaseSha,
   }) : null;
   const prisma = createPrisma();
-  try {
+  const run = async () => {
     const startedAt = await migrationStartedAt(prisma);
     if (mode === "report") {
       const items = buildItems(await loadReportRows(prisma, startedAt), startedAt);
@@ -430,10 +431,18 @@ async function main(): Promise<void> {
     assertApprovalContext(approval, context!);
     const result = await runMutation(prisma, mode, approval, committed!.approvalSha256, committed!.repositoryPath, context!);
     console.log(JSON.stringify({ operation: mode, ...result }));
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "dashboard_signal_backfill",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
 withServerTask({ task: "dashboard_signal_backfill", operation: "report_apply_or_rollback" }, main)
-  .catch(() => { process.exitCode = 1; });
+  .catch(() => {
+    process.exitCode = 1;
+  });

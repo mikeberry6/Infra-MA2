@@ -88,6 +88,9 @@ describe("public route database failure states", () => {
       render(await route.renderPage());
 
       const alert = screen.getByRole("alert");
+      if (route.name === "portfolio database") {
+        expect(queryMocks.getAllCompanyListItems).toHaveBeenCalledTimes(1);
+      }
       expect(within(alert).getByRole("heading", { name: route.title })).toBeVisible();
       expect(alert).not.toHaveTextContent("connection details");
       expect(within(alert).getByRole("link", { name: "Try again" })).toHaveAttribute(

@@ -15,8 +15,6 @@ export default function GlobalError({
     : null;
 
   useEffect(() => {
-    // The originating server operation owns detailed, sanitized telemetry.
-    // Do not mirror a raw exception into the browser console.
     console.error("Page operation failed", { digest: errorId ?? "unavailable" });
   }, [errorId]);
 

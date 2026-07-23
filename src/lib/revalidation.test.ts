@@ -27,10 +27,12 @@ describe("application cache invalidation", () => {
       "/portfolio",
       "/news",
       "/search",
+      "/dashboard",
       "/admin",
       "/admin/deals",
       "/admin/funds",
       "/admin/companies",
+      "/admin/dashboard-signals",
     ]));
   });
 });

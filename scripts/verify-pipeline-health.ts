@@ -4,7 +4,8 @@ import path from "node:path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { SafeOperationalError } from "../src/lib/safe-error";
-import { withServerTask } from "../src/lib/server-log";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import {
   effectiveNewsPipelineRunStatus,
   MAX_NEWS_SOURCE_FAILURE_RATE,
@@ -137,7 +138,7 @@ async function main() {
   const windowStart = new Date(now.getTime() - windowDays * DAY_MS);
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
 
-  try {
+  const run = async () => {
     const [windowRuns, firstRun, dashboardSourceRuns] = await Promise.all([
       prisma.pipelineRun.findMany({
         where: { pipeline, startedAt: { gte: windowStart } },
@@ -291,9 +292,15 @@ async function main() {
     if (requireFullWindow && !observationWindow.complete) {
       throw new Error(`pipeline reliability is still collecting ${observationWindow.observedDays.toFixed(2)} of ${observationWindow.requiredDays} required observation days`);
     }
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "pipeline_health",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
 withServerTask({

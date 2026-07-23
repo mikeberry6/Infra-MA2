@@ -9,6 +9,7 @@ import {
 const PIPELINES = ["NEWS_SCAN", "DASHBOARD_SYNC"] as const;
 
 const SCHEMA_ERROR_CODES = new Set(["P2021", "P2022", "42P01", "42703"]);
+const RELEASE_SHA = /^[0-9a-f]{40}$/;
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -21,6 +22,11 @@ const NO_STORE_HEADERS = {
 
 function objectValue(value: unknown): Record<string, unknown> | null {
   return value && typeof value === "object" ? value as Record<string, unknown> : null;
+}
+
+function releaseVersion(value = process.env.VERCEL_GIT_COMMIT_SHA): string {
+  const candidate = value?.trim() ?? "";
+  return RELEASE_SHA.test(candidate) ? candidate.slice(0, 12) : "local";
 }
 
 /** Distinguish a reachable-but-unmigrated database from a network failure. */
@@ -109,7 +115,7 @@ export async function GET(request: Request) {
     operation: "health_check",
   }, async ({ elapsedMs }) => {
     const base = {
-      version: process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 12) ?? "local",
+      version: releaseVersion(),
       generatedAt: generatedAt.toISOString(),
     };
 

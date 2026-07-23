@@ -4,8 +4,6 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import DeleteButton from "@/components/admin/DeleteButton";
 
-vi.mock("@/lib/detail-cache-events", () => ({ invalidateDetailCache: vi.fn() }));
-
 describe("DeleteButton", () => {
   it("hides hard deletion for every non-draft state", () => {
     const action = vi.fn();

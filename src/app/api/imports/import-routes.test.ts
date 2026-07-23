@@ -62,6 +62,20 @@ function jsonRequest(path: string, body: unknown, previewToken = "preview-token"
   } as unknown as NextRequest;
 }
 
+function multipartRequest(path: string, csv: string, previewToken = "preview-token"): NextRequest {
+  const file = { text: vi.fn().mockResolvedValue(csv) };
+  return {
+    headers: new Headers({
+      "content-type": "multipart/form-data; boundary=import-test",
+      ...(previewToken ? { "x-import-preview-token": previewToken } : {}),
+    }),
+    formData: vi.fn().mockResolvedValue({
+      get: (name: string) => (name === "file" ? file : null),
+    }),
+    nextUrl: new URL(`http://localhost${path}`),
+  } as unknown as NextRequest;
+}
+
 function deal(overrides: Record<string, unknown> = {}) {
   return {
     id: "DEAL-NEW",
@@ -126,6 +140,7 @@ function unchangedDealRecord(overrides: Record<string, unknown> = {}) {
     id: "database-deal-existing",
     legacyId: "DEAL-NEW",
     status: "DRAFT",
+    updatedAt: new Date("2026-07-22T12:00:00.000Z"),
     title: "Buyer acquires Target",
     target: "Target",
     sector: "DIGITAL",
@@ -166,6 +181,7 @@ function unchangedFundRecord(overrides: Record<string, unknown> = {}) {
     id: "database-fund-existing",
     legacyId: "FUND-NEW",
     status: "DRAFT",
+    updatedAt: new Date("2026-07-22T12:00:00.000Z"),
     managerId: "manager-1",
     manager: { name: "Manager" },
     fundName: "Infrastructure Fund V",
@@ -192,6 +208,7 @@ function unchangedCompanyRecord(overrides: Record<string, unknown> = {}) {
     name: "Portfolio Company",
     country: "United States",
     status: "DRAFT",
+    updatedAt: new Date("2026-07-22T12:00:00.000Z"),
     sector: "DIGITAL",
     subsector: "Fiber",
     region: "NORTH_AMERICA",
@@ -259,7 +276,8 @@ describe("two-step import routes", () => {
   });
 
   it("classifies an identical deal replay as unchanged and commits it without writes, audit, or pipeline", async () => {
-    mocks.dealFindMany.mockResolvedValue([unchangedDealRecord()]);
+    const existing = unchangedDealRecord();
+    mocks.dealFindMany.mockResolvedValue([existing]);
 
     const preview = await importDeals(jsonRequest(
       "/api/imports/deals?preview=1",
@@ -277,9 +295,25 @@ describe("two-step import routes", () => {
     });
     expect(mocks.hashImportPreviewState).toHaveBeenLastCalledWith({
       actions: [{ id: "DEAL-NEW", action: "unchanged" }],
+      existing: [expect.objectContaining({
+        id: "database-deal-existing",
+        updatedAt: "2026-07-22T12:00:00.000Z",
+        participants: expect.arrayContaining([
+          expect.objectContaining({ role: "BUYER", organizationName: "Buyer" }),
+          expect.objectContaining({ role: "SELLER", organizationName: "Seller" }),
+        ]),
+        citations: [{
+          url: "https://example.com/test/deal",
+          label: "Company announcement",
+        }],
+      })],
       warnings: [],
     });
 
+    const tx = { deal: { findMany: vi.fn().mockResolvedValue([existing]) } };
+    mocks.transaction.mockImplementation(
+      async (callback: (client: typeof tx) => unknown) => callback(tx),
+    );
     const commit = await importDeals(jsonRequest(
       "/api/imports/deals",
       { deals: [deal()] },
@@ -294,14 +328,18 @@ describe("two-step import routes", () => {
       results: [{ id: "DEAL-NEW", status: "unchanged" }],
     });
     expect(mocks.consumeImportPreviewToken).toHaveBeenCalledOnce();
-    expect(mocks.transaction).not.toHaveBeenCalled();
+    expect(mocks.transaction).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.objectContaining({ isolationLevel: "Serializable" }),
+    );
     expect(mocks.pipelineCreate).not.toHaveBeenCalled();
     expect(mocks.recordAuditEvent).not.toHaveBeenCalled();
     expect(mocks.revalidateAppData).not.toHaveBeenCalled();
   });
 
   it("classifies an identical fund replay as unchanged and commits it without writes, audit, or pipeline", async () => {
-    mocks.fundFindMany.mockResolvedValue([unchangedFundRecord()]);
+    const existing = unchangedFundRecord();
+    mocks.fundFindMany.mockResolvedValue([existing]);
 
     const preview = await importFunds(jsonRequest(
       "/api/imports/funds?preview=1",
@@ -319,9 +357,19 @@ describe("two-step import routes", () => {
     });
     expect(mocks.hashImportPreviewState).toHaveBeenLastCalledWith({
       actions: [{ id: "FUND-NEW", action: "unchanged" }],
+      existing: [expect.objectContaining({
+        id: "database-fund-existing",
+        updatedAt: "2026-07-22T12:00:00.000Z",
+        manager: { name: "Manager" },
+        sourceUrls: ["https://example.com/test/fund"],
+      })],
       warnings: [],
     });
 
+    const tx = { fund: { findMany: vi.fn().mockResolvedValue([existing]) } };
+    mocks.transaction.mockImplementation(
+      async (callback: (client: typeof tx) => unknown) => callback(tx),
+    );
     const commit = await importFunds(jsonRequest(
       "/api/imports/funds",
       { funds: [fund()] },
@@ -336,15 +384,20 @@ describe("two-step import routes", () => {
       results: [{ fundId: "FUND-NEW", status: "unchanged" }],
     });
     expect(mocks.consumeImportPreviewToken).toHaveBeenCalledOnce();
-    expect(mocks.transaction).not.toHaveBeenCalled();
+    expect(mocks.transaction).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.objectContaining({ isolationLevel: "Serializable" }),
+    );
     expect(mocks.pipelineCreate).not.toHaveBeenCalled();
     expect(mocks.recordAuditEvent).not.toHaveBeenCalled();
     expect(mocks.revalidateAppData).not.toHaveBeenCalled();
   });
 
   it("classifies an identical portfolio replay as unchanged and commits it without writes, audit, or pipeline", async () => {
-    mocks.companyFindMany.mockResolvedValue([unchangedCompanyRecord()]);
-    mocks.fundFindMany.mockResolvedValue([{ id: "fund-1", fundName: "Infrastructure Fund V" }]);
+    const existing = unchangedCompanyRecord();
+    const matchingFunds = [{ id: "fund-1", fundName: "Infrastructure Fund V" }];
+    mocks.companyFindMany.mockResolvedValue([existing]);
+    mocks.fundFindMany.mockResolvedValue(matchingFunds);
 
     const preview = await importCompanies(jsonRequest(
       "/api/imports/portfolio?preview=1",
@@ -363,10 +416,28 @@ describe("two-step import routes", () => {
     });
     expect(mocks.hashImportPreviewState).toHaveBeenLastCalledWith({
       actions: [{ key: "portfolio company|united states", action: "unchanged" }],
+      ambiguousOwnershipVehicles: [],
+      existing: [expect.objectContaining({
+        id: "database-company-existing",
+        updatedAt: "2026-07-22T12:00:00.000Z",
+        ownershipPeriods: [expect.objectContaining({
+          id: "ownership-1",
+          fundId: "fund-1",
+          organization: { name: "Manager" },
+        })],
+      })],
+      fundMappings: matchingFunds,
       warnings: [],
       ownershipChanges: [],
     });
 
+    const tx = {
+      company: { findMany: vi.fn().mockResolvedValue([existing]) },
+      fund: { findMany: vi.fn().mockResolvedValue(matchingFunds) },
+    };
+    mocks.transaction.mockImplementation(
+      async (callback: (client: typeof tx) => unknown) => callback(tx),
+    );
     const commit = await importCompanies(jsonRequest(
       "/api/imports/portfolio",
       { companies: [company()] },
@@ -381,7 +452,10 @@ describe("two-step import routes", () => {
       results: [{ name: "Portfolio Company", status: "unchanged" }],
     });
     expect(mocks.consumeImportPreviewToken).toHaveBeenCalledOnce();
-    expect(mocks.transaction).not.toHaveBeenCalled();
+    expect(mocks.transaction).toHaveBeenCalledWith(
+      expect.any(Function),
+      expect.objectContaining({ isolationLevel: "Serializable" }),
+    );
     expect(mocks.pipelineCreate).not.toHaveBeenCalled();
     expect(mocks.recordAuditEvent).not.toHaveBeenCalled();
     expect(mocks.revalidateAppData).not.toHaveBeenCalled();
@@ -440,6 +514,7 @@ describe("two-step import routes", () => {
 
     expect(response.status).toBe(200);
     expect(mocks.recordAuditEvent).toHaveBeenCalledWith({
+      actorId: "admin-1",
       entityType: "Deal",
       action: "BULK_IMPORT",
       changes: {
@@ -475,7 +550,11 @@ describe("two-step import routes", () => {
         create: vi.fn(),
       },
       organization: { upsert: vi.fn().mockResolvedValue({ id: "manager-1" }) },
-      fund: { findFirst: vi.fn().mockResolvedValue({ id: "fund-1" }) },
+      fund: {
+        findMany: vi.fn().mockResolvedValue([
+          { id: "fund-1", fundName: "Infrastructure Fund V" },
+        ]),
+      },
       ownershipPeriod: {
         updateMany: vi.fn().mockResolvedValue({ count: 1 }),
         upsert: vi.fn().mockResolvedValue({}),
@@ -500,6 +579,7 @@ describe("two-step import routes", () => {
 
     expect(response.status).toBe(200);
     expect(mocks.recordAuditEvent).toHaveBeenCalledWith({
+      actorId: "admin-1",
       entityType: "Company",
       action: "BULK_IMPORT",
       changes: {
@@ -559,6 +639,7 @@ describe("two-step import routes", () => {
     expect(tx.deal.create).toHaveBeenCalledOnce();
     expect(tx.dealParticipant.deleteMany).toHaveBeenCalledOnce();
     expect(mocks.recordAuditEvent).toHaveBeenCalledWith({
+      actorId: "admin-1",
       entityType: "Deal",
       action: "BULK_IMPORT",
       changes: expect.objectContaining({
@@ -647,6 +728,76 @@ describe("two-step import routes", () => {
     expect(mocks.pipelineCreate).not.toHaveBeenCalled();
   });
 
+  it("fails an ambiguous portfolio ownership vehicle closed as a row-level preview error", async () => {
+    mocks.fundFindMany.mockResolvedValue([
+      { id: "fund-z", fundName: "Infrastructure Fund V" },
+      { id: "fund-a", fundName: "Infrastructure Fund V" },
+    ]);
+
+    const response = await importCompanies(jsonRequest(
+      "/api/imports/portfolio?preview=1",
+      { companies: [company()] },
+    ));
+
+    expect(response.status).toBe(200);
+    await expect(response.json()).resolves.toMatchObject({
+      preview: true,
+      total: 1,
+      valid: 0,
+      creates: 0,
+      updates: 0,
+      errors: [{
+        row: 1,
+        name: "Portfolio Company",
+        code: "AMBIGUOUS_OWNERSHIP_VEHICLE",
+        error: expect.stringContaining("multiple fund records"),
+      }],
+    });
+    expect(mocks.hashImportPreviewState).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        ambiguousOwnershipVehicles: ["Infrastructure Fund V"],
+        fundMappings: [
+          { id: "fund-a", fundName: "Infrastructure Fund V" },
+          { id: "fund-z", fundName: "Infrastructure Fund V" },
+        ],
+        actions: [],
+      }),
+    );
+    expect(mocks.transaction).not.toHaveBeenCalled();
+  });
+
+  it("fails closed when multiple existing companies match one import identity", async () => {
+    mocks.companyFindMany.mockResolvedValue([
+      {
+        id: "company-b",
+        name: "Portfolio Company",
+        country: "United States",
+        status: "DRAFT",
+      },
+      {
+        id: "company-a",
+        name: "Portfolio Company",
+        country: "United States",
+        status: "DRAFT",
+      },
+    ]);
+    mocks.fundFindMany.mockResolvedValue([
+      { id: "fund-1", fundName: "Infrastructure Fund V" },
+    ]);
+
+    const response = await importCompanies(jsonRequest(
+      "/api/imports/portfolio?preview=1",
+      { companies: [company()] },
+    ));
+
+    expect(response.status).toBe(409);
+    await expect(response.json()).resolves.toEqual({
+      error: "Multiple existing companies match an import identity. Merge duplicates before importing.",
+    });
+    expect(mocks.createImportPreviewToken).not.toHaveBeenCalled();
+    expect(mocks.transaction).not.toHaveBeenCalled();
+  });
+
   it.each(["—", "N/A", "[TBU]", "unknown"])(
     "rejects an ambiguous fund size during import preview: %s",
     async (size) => {
@@ -671,6 +822,66 @@ describe("two-step import routes", () => {
       expect(mocks.pipelineCreate).not.toHaveBeenCalled();
     },
   );
+
+  it("returns a row-level preview error for an invalid multipart fund sizeUsdMm", async () => {
+    const response = await importFunds(multipartRequest(
+      "/api/imports/funds?preview=1",
+      [
+        "id,managerName,fundName,size,sizeUsdMm,vintage,strategies,structure,status,sectors,regions",
+        "FUND-BAD-NUMBER,Manager,Bad Number Fund,$5 billion,not-a-number,2026,Core,Closed-End,Raising,Digital,North America",
+      ].join("\n"),
+    ));
+
+    expect(response.status).toBe(200);
+    const payload = await response.json();
+    expect(payload).toMatchObject({
+      preview: true,
+      total: 1,
+      valid: 0,
+      creates: 0,
+      updates: 0,
+      errors: [{
+        row: 2,
+        fundName: "Bad Number Fund",
+        error: expect.stringContaining("number"),
+      }],
+      items: [{ sizeUsdMm: "not-a-number" }],
+    });
+    expect(Number.isNaN(payload.items[0].sizeUsdMm)).toBe(false);
+    expect(mocks.fundFindMany).not.toHaveBeenCalled();
+  });
+
+  it("returns row-level preview errors for invalid multipart portfolio years", async () => {
+    const response = await importCompanies(multipartRequest(
+      "/api/imports/portfolio?preview=1",
+      [
+        "name,country,sector,region,status,yearFounded,investmentYear,investmentFirm,ownershipVehicle",
+        "Bad Years Company,United States,Digital,North America,Active,unknown-year,not-a-year,Manager,Infrastructure Fund V",
+      ].join("\n"),
+    ));
+
+    expect(response.status).toBe(200);
+    const payload = await response.json();
+    expect(payload).toMatchObject({
+      preview: true,
+      total: 1,
+      valid: 0,
+      creates: 0,
+      updates: 0,
+      errors: [{
+        row: 2,
+        name: "Bad Years Company",
+        error: expect.stringContaining("number"),
+      }],
+      items: [{
+        yearFounded: "unknown-year",
+        investmentYear: "not-a-year",
+      }],
+    });
+    expect(Number.isNaN(payload.items[0].yearFounded)).toBe(false);
+    expect(Number.isNaN(payload.items[0].investmentYear)).toBe(false);
+    expect(mocks.companyFindMany).not.toHaveBeenCalled();
+  });
 
   it("previews published fund updates as quarantined instead of writable updates", async () => {
     mocks.fundFindMany.mockResolvedValue([
@@ -834,6 +1045,7 @@ describe("two-step import routes", () => {
     expect(mocks.revalidateAppData).toHaveBeenCalledOnce();
     expect(mocks.recordAuditEvent).toHaveBeenCalledWith(
       {
+        actorId: "admin-1",
         entityType: "Deal",
         action: "BULK_IMPORT",
         changes: expect.objectContaining({
@@ -904,7 +1116,11 @@ describe("two-step import routes", () => {
     await expect(response.json()).resolves.toEqual({ error: "Failed to import deals" });
     expect(tx.deal.create).toHaveBeenCalledOnce();
     expect(mocks.recordAuditEvent).toHaveBeenCalledWith(
-      expect.objectContaining({ entityType: "Deal", action: "BULK_IMPORT" }),
+      expect.objectContaining({
+        actorId: "admin-1",
+        entityType: "Deal",
+        action: "BULK_IMPORT",
+      }),
       tx,
     );
     expect(tx.pipelineRun.update).not.toHaveBeenCalled();
@@ -947,6 +1163,7 @@ describe("two-step import routes", () => {
     });
     expect(mocks.recordAuditEvent).toHaveBeenLastCalledWith(
       expect.objectContaining({
+        actorId: "admin-1",
         entityType: "Fund",
         action: "BULK_IMPORT",
         changes: expect.objectContaining({
@@ -968,7 +1185,11 @@ describe("two-step import routes", () => {
         updateMany: vi.fn(),
       },
       organization: { upsert: vi.fn().mockResolvedValue({ id: "manager-1" }) },
-      fund: { findFirst: vi.fn().mockResolvedValue({ id: "fund-1" }) },
+      fund: {
+        findMany: vi.fn().mockResolvedValue([
+          { id: "fund-1", fundName: "Infrastructure Fund V" },
+        ]),
+      },
       ownershipPeriod: {
         updateMany: vi.fn().mockResolvedValue({ count: 0 }),
         upsert: vi.fn().mockResolvedValue({}),
@@ -995,6 +1216,7 @@ describe("two-step import routes", () => {
     });
     expect(mocks.recordAuditEvent).toHaveBeenLastCalledWith(
       expect.objectContaining({
+        actorId: "admin-1",
         entityType: "Company",
         action: "BULK_IMPORT",
         changes: expect.objectContaining({
@@ -1079,6 +1301,7 @@ describe("two-step import routes", () => {
       data: expect.objectContaining({ primarySourceUrl: null }),
     }));
     expect(mocks.recordAuditEvent).toHaveBeenCalledWith({
+      actorId: "admin-1",
       entityType: "Fund",
       action: "BULK_IMPORT",
       changes: expect.objectContaining({
@@ -1161,7 +1384,11 @@ describe("two-step import routes", () => {
         create: vi.fn(),
       },
       organization: { upsert: vi.fn().mockResolvedValue({ id: "manager-new" }) },
-      fund: { findFirst: vi.fn().mockResolvedValue({ id: "fund-new" }) },
+      fund: {
+        findMany: vi.fn().mockResolvedValue([
+          { id: "fund-new", fundName: "New Fund" },
+        ]),
+      },
       ownershipPeriod: {
         updateMany: vi.fn().mockResolvedValue({ count: 1 }),
         upsert: vi.fn().mockResolvedValue({}),
@@ -1196,6 +1423,7 @@ describe("two-step import routes", () => {
     }));
     expect(mocks.recordAuditEvent).toHaveBeenCalledWith(
       expect.objectContaining({
+        actorId: "admin-1",
         entityType: "Company",
         action: "BULK_IMPORT",
         changes: expect.objectContaining({
@@ -1239,7 +1467,7 @@ describe("two-step import routes", () => {
         create: vi.fn(),
       },
       organization: { upsert: vi.fn() },
-      fund: { findFirst: vi.fn() },
+      fund: { findMany: vi.fn() },
       ownershipPeriod: {
         updateMany: vi.fn().mockResolvedValue({ count: 1 }),
         upsert: vi.fn(),
@@ -1265,16 +1493,137 @@ describe("two-step import routes", () => {
     expect(tx.organization.upsert).not.toHaveBeenCalled();
   });
 
-  it("rolls back a fund import if a draft becomes immutable during commit", async () => {
-    mocks.fundFindMany.mockResolvedValue([
-      { id: "database-fund-draft", legacyId: "FUND-DRAFT", status: "DRAFT" },
-    ]);
+  it("rejects a stale fund snapshot inside the transaction before any write", async () => {
+    mocks.hashImportPreviewState.mockImplementation((value) => JSON.stringify(value));
+    const original = unchangedFundRecord({
+      fundName: "Earlier Fund",
+      updatedAt: new Date("2026-07-21T12:00:00.000Z"),
+    });
+    mocks.fundFindMany.mockResolvedValue([original]);
+
+    const preview = await importFunds(jsonRequest(
+      "/api/imports/funds?preview=1",
+      { funds: [fund()] },
+    ));
+    expect(preview.status).toBe(200);
+    const previewSummary = mocks.createImportPreviewToken.mock.calls[0][0].summary;
+
+    const concurrent = {
+      ...original,
+      investmentStrategy: "Concurrent editor changed the strategy.",
+      updatedAt: new Date("2026-07-22T12:00:00.000Z"),
+    };
+    const fundTx = {
+      fund: {
+        findMany: vi.fn().mockResolvedValue([concurrent]),
+        create: vi.fn(),
+        updateMany: vi.fn(),
+      },
+      organization: { upsert: vi.fn() },
+      pipelineRun: { update: vi.fn() },
+    };
+    mocks.transaction.mockImplementation(
+      async (callback: (client: typeof fundTx) => unknown) => callback(fundTx),
+    );
+    mocks.consumeImportPreviewToken.mockImplementation(async (options) => {
+      if (options.summary.stateHash !== previewSummary.stateHash) {
+        throw new ImportPreviewTokenError();
+      }
+    });
+
+    const response = await importFunds(jsonRequest(
+      "/api/imports/funds",
+      { funds: [fund()] },
+    ));
+
+    expect(response.status).toBe(409);
+    await expect(response.json()).resolves.toMatchObject({
+      error: expect.stringContaining("Preview the file again"),
+    });
+    expect(mocks.consumeImportPreviewToken).toHaveBeenCalledWith(
+      expect.objectContaining({ summary: expect.any(Object) }),
+      fundTx,
+    );
+    expect(mocks.consumeImportPreviewToken.mock.calls.at(-1)?.[0].summary.stateHash)
+      .not.toBe(previewSummary.stateHash);
+    expect(fundTx.fund.updateMany).not.toHaveBeenCalled();
+    expect(fundTx.organization.upsert).not.toHaveBeenCalled();
+  });
+
+  it("rejects a stale portfolio relation snapshot inside the transaction before any write", async () => {
+    mocks.hashImportPreviewState.mockImplementation((value) => JSON.stringify(value));
+    const original = unchangedCompanyRecord({ description: "Earlier description." });
+    const matchingFunds = [{ id: "fund-1", fundName: "Infrastructure Fund V" }];
+    mocks.companyFindMany.mockResolvedValue([original]);
+    mocks.fundFindMany.mockResolvedValue(matchingFunds);
+
+    const preview = await importCompanies(jsonRequest(
+      "/api/imports/portfolio?preview=1",
+      { companies: [company()] },
+    ));
+    expect(preview.status).toBe(200);
+    const previewSummary = mocks.createImportPreviewToken.mock.calls[0][0].summary;
+
+    const concurrent = {
+      ...original,
+      ownershipPeriods: [{
+        ...original.ownershipPeriods[0],
+        investmentYear: 2025,
+      }],
+    };
+    const companyTx = {
+      company: {
+        findMany: vi.fn().mockResolvedValue([concurrent]),
+        create: vi.fn(),
+        updateMany: vi.fn(),
+      },
+      fund: { findMany: vi.fn().mockResolvedValue(matchingFunds) },
+      organization: { upsert: vi.fn() },
+      ownershipPeriod: { updateMany: vi.fn(), upsert: vi.fn() },
+      citation: { updateMany: vi.fn() },
+      pipelineRun: { update: vi.fn() },
+    };
+    mocks.transaction.mockImplementation(
+      async (callback: (client: typeof companyTx) => unknown) => callback(companyTx),
+    );
+    mocks.consumeImportPreviewToken.mockImplementation(async (options) => {
+      if (options.summary.stateHash !== previewSummary.stateHash) {
+        throw new ImportPreviewTokenError();
+      }
+    });
+
+    const response = await importCompanies(jsonRequest(
+      "/api/imports/portfolio",
+      { companies: [company()] },
+    ));
+
+    expect(response.status).toBe(409);
+    await expect(response.json()).resolves.toMatchObject({
+      error: expect.stringContaining("Preview the file again"),
+    });
+    expect(mocks.consumeImportPreviewToken).toHaveBeenCalledWith(
+      expect.objectContaining({ summary: expect.any(Object) }),
+      companyTx,
+    );
+    expect(mocks.consumeImportPreviewToken.mock.calls.at(-1)?.[0].summary.stateHash)
+      .not.toBe(previewSummary.stateHash);
+    expect(companyTx.company.updateMany).not.toHaveBeenCalled();
+    expect(companyTx.ownershipPeriod.updateMany).not.toHaveBeenCalled();
+  });
+
+  it("rolls back a fund import when its updatedAt compare-and-swap misses", async () => {
+    const updatedAt = new Date("2026-07-22T12:00:00.000Z");
+    const existing = unchangedFundRecord({
+      id: "database-fund-draft",
+      legacyId: "FUND-DRAFT",
+      fundName: "Earlier Draft Fund",
+      updatedAt,
+    });
+    mocks.fundFindMany.mockResolvedValue([existing]);
     const fundTx = {
       organization: { upsert: vi.fn().mockResolvedValue({ id: "manager-1" }) },
       fund: {
-        findMany: vi.fn().mockResolvedValue([
-          { id: "database-fund-draft", legacyId: "FUND-DRAFT", status: "DRAFT" },
-        ]),
+        findMany: vi.fn().mockResolvedValue([existing]),
         create: vi.fn(),
         updateMany: vi.fn().mockResolvedValue({ count: 0 }),
       },
@@ -1296,6 +1645,7 @@ describe("two-step import routes", () => {
       where: {
         id: "database-fund-draft",
         status: { in: ["DRAFT", "IN_REVIEW"] },
+        updatedAt,
       },
     }));
     expect(mocks.recordAuditEvent).not.toHaveBeenCalled();
@@ -1307,6 +1657,54 @@ describe("two-step import routes", () => {
         errorSummary: "internal_error: Server operation failed.",
       }),
     }));
+    expect(mocks.revalidateAppData).not.toHaveBeenCalled();
+  });
+
+  it("rolls back a portfolio import when its updatedAt compare-and-swap misses", async () => {
+    const updatedAt = new Date("2026-07-22T12:00:00.000Z");
+    const existing = unchangedCompanyRecord({
+      description: "Earlier description.",
+      updatedAt,
+    });
+    const matchingFunds = [{ id: "fund-1", fundName: "Infrastructure Fund V" }];
+    mocks.companyFindMany.mockResolvedValue([existing]);
+    mocks.fundFindMany.mockResolvedValue(matchingFunds);
+    const companyTx = {
+      company: {
+        findMany: vi.fn().mockResolvedValue([existing]),
+        create: vi.fn(),
+        updateMany: vi.fn().mockResolvedValue({ count: 0 }),
+      },
+      fund: { findMany: vi.fn().mockResolvedValue(matchingFunds) },
+      organization: { upsert: vi.fn() },
+      ownershipPeriod: { updateMany: vi.fn(), upsert: vi.fn() },
+      citation: { updateMany: vi.fn() },
+      pipelineRun: { update: vi.fn() },
+    };
+    mocks.transaction.mockImplementation(
+      async (callback: (client: typeof companyTx) => unknown) => callback(companyTx),
+    );
+
+    const response = await importCompanies(jsonRequest(
+      "/api/imports/portfolio",
+      { companies: [company()] },
+    ));
+
+    expect(response.status).toBe(409);
+    await expect(response.json()).resolves.toEqual({
+      error: "Company import review state changed during commit. Preview the file again.",
+    });
+    expect(companyTx.company.updateMany).toHaveBeenCalledWith(expect.objectContaining({
+      where: {
+        id: "database-company-existing",
+        status: { in: ["DRAFT", "IN_REVIEW"] },
+        updatedAt,
+      },
+    }));
+    expect(companyTx.ownershipPeriod.updateMany).not.toHaveBeenCalled();
+    expect(companyTx.organization.upsert).not.toHaveBeenCalled();
+    expect(mocks.recordAuditEvent).not.toHaveBeenCalled();
+    expect(companyTx.pipelineRun.update).not.toHaveBeenCalled();
     expect(mocks.revalidateAppData).not.toHaveBeenCalled();
   });
 

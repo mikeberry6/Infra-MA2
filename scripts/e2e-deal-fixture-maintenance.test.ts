@@ -19,7 +19,9 @@ describe("authenticated-write E2E deal fixture lifecycle", () => {
   it("cleans the guarded validation fixture before visual capture and after browser writes", () => {
     const preflight = workflow.indexOf("Remove stale authenticated-write E2E deal fixtures");
     const visual = workflow.indexOf("Run deterministic visual baselines before mutation journeys");
-    const browser = workflow.indexOf("Run end-to-end, axe, keyboard, and responsive checks");
+    const browser = workflow.indexOf(
+      "Run end-to-end, axe, keyboard, reduced-motion, and responsive checks",
+    );
     const postBrowser = workflow.indexOf("deal-fixture-post-browser-cleanup.json", browser);
     const nextStep = workflow.indexOf(
       "Prove top-level database failure and retry journeys",
@@ -32,7 +34,9 @@ describe("authenticated-write E2E deal fixture lifecycle", () => {
     expect(postBrowser).toBeGreaterThan(browser);
     expect(nextStep).toBeGreaterThan(postBrowser);
     expect(workflow.slice(browser, nextStep)).toContain("trap cleanup EXIT");
-    expect(workflow.slice(browser, nextStep)).toContain("cleanup_status=$?");
+    expect(workflow.slice(browser, nextStep)).toContain(
+      "cleanup_status=${PIPESTATUS[0]}",
+    );
   });
 
   it("fails closed on the database target and deletes only fully validated fixture IDs", () => {

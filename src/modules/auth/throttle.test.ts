@@ -83,9 +83,10 @@ describe("durable login throttling", () => {
     await expect(isLoginThrottled("admin@example.com", "203.0.113.5")).resolves.toBe(true);
     expect(requestIp({ "x-forwarded-for": "203.0.113.5, 10.0.0.1" })).toBe("203.0.113.5");
 
-    await clearLoginThrottle("admin@example.com", "203.0.113.5");
+    await clearLoginThrottle("admin@example.com");
     expect(mocks.deleteMany).toHaveBeenCalledWith({
-      where: { keyHash: { in: expect.arrayContaining([expect.any(String), expect.any(String)]) } },
+      where: { keyHash: expect.any(String) },
     });
+    expect(JSON.stringify(mocks.deleteMany.mock.calls)).not.toContain("203.0.113.5");
   });
 });

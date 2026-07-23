@@ -67,7 +67,7 @@ describe("MultiSelectDropdown", () => {
     await user.click(screen.getByRole("button", { name: "Filter by Sector" }));
 
     const listbox = screen.getByRole("listbox", { name: "Sector options" });
-    expect(listbox).toHaveAttribute("data-dialog-focus-owner", "mobile-filter-dialog");
+    expect(listbox).toHaveAttribute("data-dialog-focus-owner", dialog.id);
     expect(screen.getByRole("option", { name: "Power & ET" })).toHaveFocus();
 
     await user.keyboard("{Escape}");

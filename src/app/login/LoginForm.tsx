@@ -7,15 +7,30 @@ import { Button } from "@/components/shared/Button";
 import { TextInput } from "@/components/shared/TextInput";
 import { withBasePath } from "@/lib/base-path";
 
-export function LoginForm({ callbackUrl }: { callbackUrl: string }) {
+type LoginFormProps = {
+  callbackUrl: string;
+  navigate?: (url: string) => void;
+};
+
+function navigateDocument(url: string) {
+  window.location.assign(url);
+}
+
+export function LoginForm({ callbackUrl, navigate = navigateDocument }: LoginFormProps) {
   return (
     <SessionProvider basePath={withBasePath("/api/auth")} refetchOnWindowFocus={false}>
-      <LoginFields callbackUrl={callbackUrl} />
+      <LoginFields callbackUrl={callbackUrl} navigate={navigate} />
     </SessionProvider>
   );
 }
 
-function LoginFields({ callbackUrl }: { callbackUrl: string }) {
+function LoginFields({
+  callbackUrl,
+  navigate,
+}: {
+  callbackUrl: string;
+  navigate: (url: string) => void;
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -43,7 +58,7 @@ function LoginFields({ callbackUrl }: { callbackUrl: string }) {
     // Complete authentication with a document navigation. A client push plus
     // an immediate refresh can race the first protected RSC request and leave
     // users at the callback URL with the login render still mounted.
-    window.location.assign(result?.url ?? callbackUrl);
+    navigate(result?.url ?? callbackUrl);
   }
 
   return (

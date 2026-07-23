@@ -16,10 +16,12 @@ const expectedNativeEntrypoints = [
   "scripts/audit-portfolio-investment-years.ts",
   "scripts/audit-portfolio-milestones.ts",
   "scripts/curate-portfolio-milestones.ts",
+  "scripts/mutate-vercel-production.ts",
   "scripts/validate-portfolios.ts",
   "scripts/validate-weekly-email.ts",
   "scripts/verify-migration-baseline.ts",
   "scripts/verify-release-provenance.ts",
+  "scripts/verify-rollback-provenance.ts",
   "scripts/verify-vercel-deployment.ts",
 ];
 const protectedWorkflowPaths = [
@@ -299,15 +301,29 @@ describe("TypeScript script runtime contract", () => {
     const checkout = workflow.indexOf("- name: Checkout rollback tooling");
     const identity = workflow.indexOf("- name: Verify checked-out rollback tooling identity");
     const setupNode = workflow.indexOf("- name: Setup Node");
+    const provenance = workflow.indexOf("- name: Verify rollback ancestry and required-check provenance");
     const verifier = workflow.indexOf("node --experimental-strip-types scripts/verify-vercel-deployment.ts");
+    const mutation = workflow.indexOf("node --experimental-strip-types scripts/mutate-vercel-production.ts");
 
     expect(refGuard).toBeGreaterThanOrEqual(0);
     expect(refGuard).toBeLessThan(checkout);
     expect(checkout).toBeLessThan(identity);
     expect(identity).toBeLessThan(setupNode);
-    expect(setupNode).toBeLessThan(verifier);
+    expect(setupNode).toBeLessThan(provenance);
+    expect(provenance).toBeLessThan(verifier);
+    expect(verifier).toBeLessThan(mutation);
     expect(workflow.slice(checkout, identity)).toContain("ref: refs/heads/main");
+    expect(workflow.slice(checkout, identity)).toContain("fetch-depth: 0");
     expect(workflow.slice(identity, setupNode)).toContain('"$(git rev-parse HEAD)" != "$GITHUB_SHA"');
+    expect(workflow.slice(provenance, verifier)).toContain(
+      "node --experimental-strip-types scripts/verify-rollback-provenance.ts",
+    );
+    expect(workflow.slice(provenance, verifier)).toContain("--required-check=build");
+    expect(workflow).toContain("checks: read");
+    expect([
+      ...nativeGraphProblems("scripts/verify-rollback-provenance.ts", false),
+      ...nativeGraphProblems("scripts/mutate-vercel-production.ts", false),
+    ]).toEqual([]);
     expect(workflow).toContain("canonical-production-inspect.json");
   });
 

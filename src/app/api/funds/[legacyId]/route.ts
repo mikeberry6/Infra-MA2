@@ -28,21 +28,25 @@ export async function GET(
         { status: 400, headers: NO_STORE_HEADERS },
       );
     }
-    const [fund, meta] = await Promise.all([
-      getFundById(decodedId),
-      prisma.fund.findUnique({
-        where: { legacyId: decodedId },
-        select: {
-          status: true,
-          updatedAt: true,
-          lastVerifiedAt: true,
-          primarySourceUrl: true,
-          sourceUrls: true,
-          strategyUrl: true,
-        },
-      }),
-    ]);
-    if (!fund || meta?.status !== "PUBLISHED") {
+    const fund = await getFundById(decodedId);
+    if (!fund) {
+      return NextResponse.json(
+        { error: "Fund not found" },
+        { status: 404, headers: NO_STORE_HEADERS },
+      );
+    }
+    const meta = await prisma.fund.findUnique({
+      where: { legacyId: decodedId },
+      select: {
+        status: true,
+        updatedAt: true,
+        lastVerifiedAt: true,
+        primarySourceUrl: true,
+        sourceUrls: true,
+        strategyUrl: true,
+      },
+    });
+    if (meta?.status !== "PUBLISHED") {
       return NextResponse.json(
         { error: "Fund not found" },
         { status: 404, headers: NO_STORE_HEADERS },

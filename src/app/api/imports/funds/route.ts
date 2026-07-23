@@ -21,7 +21,7 @@ import type {
   FundRegionEnum,
   Prisma,
 } from "@/generated/prisma/client";
-import { commitImport } from "@/modules/imports/commit";
+import { commitImport, transactImportPreview } from "@/modules/imports/commit";
 import { sameOrderedValues } from "@/modules/imports/idempotency";
 import {
   ImportConflictError,
@@ -42,6 +42,7 @@ const FUND_IMPORT_SELECT = {
   id: true,
   legacyId: true,
   status: true,
+  updatedAt: true,
   managerId: true,
   manager: { select: { name: true } },
   fundName: true,
@@ -132,10 +133,10 @@ function toArray(value: unknown): string[] {
   return [];
 }
 
-function numberValue(value: unknown): number | undefined {
+function numberValue(value: unknown): unknown {
   if (value == null || value === "") return undefined;
   const parsed = Number(value);
-  return Number.isFinite(parsed) ? parsed : undefined;
+  return Number.isFinite(parsed) ? parsed : value;
 }
 
 function normalizeFundImport(row: FundImportRow) {
@@ -287,6 +288,76 @@ function validateFundRows(funds: Record<string, unknown>[]): { validRows: FundIm
   return { validRows, errors };
 }
 
+function serializedFundState(existing: ExistingFund[]) {
+  return [...existing]
+    .sort((left, right) => left.legacyId.localeCompare(right.legacyId))
+    .map((fund) => ({
+      id: fund.id,
+      legacyId: fund.legacyId,
+      status: fund.status,
+      updatedAt: fund.updatedAt instanceof Date
+        ? fund.updatedAt.toISOString()
+        : String(fund.updatedAt ?? ""),
+      managerId: fund.managerId,
+      manager: fund.manager ? { name: fund.manager.name } : null,
+      fundName: fund.fundName,
+      ticker: fund.ticker,
+      investmentStrategy: fund.investmentStrategy,
+      size: fund.size,
+      sizeUsdMm: fund.sizeUsdMm,
+      vintage: fund.vintage,
+      strategies: [...(fund.strategies ?? [])],
+      structure: fund.structure,
+      fundStatus: fund.fundStatus,
+      sectors: [...(fund.sectors ?? [])],
+      regions: [...(fund.regions ?? [])],
+      sourceUrls: [...(fund.sourceUrls ?? [])],
+      primarySourceUrl: fund.primarySourceUrl,
+      strategyUrl: fund.strategyUrl,
+    }));
+}
+
+function buildFundPreview(
+  total: number,
+  validRows: FundImportRow[],
+  errors: ImportResult[],
+  existing: ExistingFund[],
+) {
+  const existingById = new Map(existing.map((row) => [row.legacyId, row]));
+  const warnings = validRows.flatMap((row) => {
+    const existingFund = existingById.get(row.fundId);
+    return existingFund && !canImportOverExistingFund(existingFund)
+      ? [quarantinedFundResult(row, existingFund)]
+      : [];
+  });
+  const actions = validRows.map((row) => {
+    const existingFund = existingById.get(row.fundId);
+    if (!existingFund) return { id: row.fundId, action: "create" as const };
+    if (!canImportOverExistingFund(existingFund)) {
+      return { id: row.fundId, action: "quarantined" as const };
+    }
+    return {
+      id: row.fundId,
+      action: sameFundImport(row, existingFund) ? "unchanged" as const : "update" as const,
+    };
+  });
+  const summary: ImportPreviewSummary = {
+    total,
+    valid: validRows.length,
+    creates: actions.filter((item) => item.action === "create").length,
+    updates: actions.filter((item) => item.action === "update").length,
+    unchanged: actions.filter((item) => item.action === "unchanged").length,
+    quarantined: warnings.length,
+    errors: errors.length,
+    stateHash: hashImportPreviewState({
+      existing: serializedFundState(existing),
+      actions,
+      warnings,
+    }),
+  };
+  return { existingById, warnings, actions, summary };
+}
+
 /**
  * Parse the incoming request body as either JSON or CSV.
  */
@@ -307,7 +378,6 @@ async function parseRequestBody(request: NextRequest): Promise<Record<string, un
       sectors: toArray(row.sectors),
       regions: toArray(row.regions),
       sourceUrls: toArray(row.sourceUrls),
-      sizeUsdMm: row.sizeUsdMm ? Number(row.sizeUsdMm) : null,
     }));
   }
 
@@ -343,39 +413,18 @@ async function importFunds(request: NextRequest) {
     }
 
     const { validRows, errors } = validateFundRows(funds);
+    const isPreview = request.nextUrl.searchParams.get("preview") === "1";
+    const token = request.headers.get("x-import-preview-token") ?? undefined;
+    if (!isPreview && !token) throw new ImportPreviewTokenError();
     const previewExisting = validRows.length > 0
       ? await prisma.fund.findMany({
           where: { legacyId: { in: validRows.map((row) => row.fundId) } },
           select: FUND_IMPORT_SELECT,
         })
       : [];
-    const previewExistingById = new Map(previewExisting.map((row) => [row.legacyId, row]));
-    const previewWarnings = validRows.flatMap((row) => {
-      const existingFund = previewExistingById.get(row.fundId);
-      return existingFund && !canImportOverExistingFund(existingFund)
-        ? [quarantinedFundResult(row, existingFund)]
-        : [];
-    });
-    const previewActions = validRows.map((row) => {
-      const existingFund = previewExistingById.get(row.fundId);
-      if (!existingFund) return { id: row.fundId, action: "create" as const };
-      if (!canImportOverExistingFund(existingFund)) return { id: row.fundId, action: "quarantined" as const };
-      return {
-        id: row.fundId,
-        action: sameFundImport(row, existingFund) ? "unchanged" as const : "update" as const,
-      };
-    });
-    const previewSummary: ImportPreviewSummary = {
-      total: funds.length,
-      valid: validRows.length,
-      creates: previewActions.filter((item) => item.action === "create").length,
-      updates: previewActions.filter((item) => item.action === "update").length,
-      unchanged: previewActions.filter((item) => item.action === "unchanged").length,
-      quarantined: previewWarnings.length,
-      errors: errors.length,
-      stateHash: hashImportPreviewState({ actions: previewActions, warnings: previewWarnings }),
-    };
-    if (request.nextUrl.searchParams.get("preview") === "1") {
+    const preview = buildFundPreview(funds.length, validRows, errors, previewExisting);
+    const previewSummary = preview.summary;
+    if (isPreview) {
       const previewToken = await createImportPreviewToken({
         actorId: identity.id,
         entityType: "funds",
@@ -387,37 +436,61 @@ async function importFunds(request: NextRequest) {
         ...previewSummary,
         items: funds,
         previewToken,
-        warnings: previewWarnings,
+        warnings: preview.warnings,
         errors,
       });
     }
-    await consumeImportPreviewToken({
-      token: request.headers.get("x-import-preview-token") ?? undefined,
-      actorId: identity.id,
-      entityType: "funds",
-      items: funds,
-      summary: previewSummary,
-    });
     if (previewSummary.creates === 0 && previewSummary.updates === 0) {
-      const unchangedResults = validRows.flatMap((row) => {
-        const existingFund = previewExistingById.get(row.fundId);
-        return existingFund && sameFundImport(row, existingFund)
-          ? [unchangedFundResult(row, existingFund)]
+      const noOp = await transactImportPreview(async (tx) => {
+        const currentExisting = validRows.length > 0
+          ? await tx.fund.findMany({
+              where: { legacyId: { in: validRows.map((row) => row.fundId) } },
+              select: FUND_IMPORT_SELECT,
+            })
           : [];
+        const currentPreview = buildFundPreview(
+          funds.length,
+          validRows,
+          errors,
+          currentExisting,
+        );
+        if (currentPreview.summary.creates > 0 || currentPreview.summary.updates > 0) {
+          throw new ImportConflictError(
+            "Fund import contains writable changes. Preview the file again.",
+          );
+        }
+        await consumeImportPreviewToken({
+          token,
+          actorId: identity.id,
+          entityType: "funds",
+          items: funds,
+          summary: currentPreview.summary,
+        }, tx);
+        const unchangedResults = validRows.flatMap((row) => {
+          const existingFund = currentPreview.existingById.get(row.fundId);
+          return existingFund && sameFundImport(row, existingFund)
+            ? [unchangedFundResult(row, existingFund)]
+            : [];
+        });
+        return {
+          unchangedResults,
+          warnings: currentPreview.warnings,
+        };
       });
-      const results = [...errors, ...previewWarnings, ...unchangedResults];
+      const results = [...errors, ...noOp.warnings, ...noOp.unchangedResults];
       return NextResponse.json({
         imported: 0,
-        unchanged: unchangedResults.length,
+        unchanged: noOp.unchangedResults.length,
         errors: results.filter((result) => result.error),
         results,
-        quarantined: previewWarnings.length,
+        quarantined: noOp.warnings.length,
         auditEventId: null,
       });
     }
     const committed = await commitImport({
       pipeline: "BULK_IMPORT_FUNDS",
       entityType: "Fund",
+      actorId: identity.id,
       rowCount: funds.length,
       execute: async (tx) => {
         const existing = validRows.length > 0
@@ -426,8 +499,21 @@ async function importFunds(request: NextRequest) {
               select: FUND_IMPORT_SELECT,
             })
           : [];
+        const currentPreview = buildFundPreview(funds.length, validRows, errors, existing);
+        if (currentPreview.summary.creates === 0 && currentPreview.summary.updates === 0) {
+          throw new ImportConflictError(
+            "Fund import no longer contains writable changes. Preview the file again.",
+          );
+        }
+        await consumeImportPreviewToken({
+          token,
+          actorId: identity.id,
+          entityType: "funds",
+          items: funds,
+          summary: currentPreview.summary,
+        }, tx);
         const results: ImportResult[] = [...errors];
-        const existingById = new Map(existing.map((row) => [row.legacyId, row]));
+        const existingById = currentPreview.existingById;
         let inserted = 0;
         let updated = 0;
         let skipped = errors.length;
@@ -483,6 +569,7 @@ async function importFunds(request: NextRequest) {
               where: {
                 id: existingFund.id,
                 status: { in: ["DRAFT", "IN_REVIEW"] },
+                updatedAt: existingFund.updatedAt,
               },
               data: fundData,
             });

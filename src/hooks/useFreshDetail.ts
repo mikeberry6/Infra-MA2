@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { BoundedDetailCache, revalidateDetail } from "@/lib/detail-cache";
 import type { DetailResponse, RecordMeta } from "@/modules/shared/types";
 
-export type DetailLoadState = "idle" | "loading" | "ready" | "error";
+export type DetailLoadState = "idle" | "loading" | "ready" | "error" | "unavailable";
 
 type DetailSnapshot<T extends object> = {
   key: string | null;
@@ -85,13 +85,13 @@ export function useFreshDetail<T extends object>({
       }),
     }).then((result) => {
       if (!active) return;
-      if (result.status === "error") {
+      if (result.status === "error" || result.status === "unavailable") {
         setSnapshot({
           key: cacheKey,
           requestVersion,
           detail: null,
           meta: null,
-          state: "error",
+          state: result.status,
         });
         return;
       }

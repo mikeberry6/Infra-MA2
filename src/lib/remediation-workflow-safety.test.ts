@@ -6,8 +6,32 @@ const workflow = readFileSync(
   path.join(process.cwd(), ".github/workflows/remediate-production-data.yml"),
   "utf8",
 );
+const releaseRunbook = readFileSync(
+  path.join(process.cwd(), "docs/release-runbook.md"),
+  "utf8",
+);
 
 describe("production remediation workflow safety", () => {
+  it("uses the documented Phase 2 remediation validation-variable contract", () => {
+    for (const contract of [
+      "VALIDATION_DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}",
+      "VALIDATION_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}",
+      "VALIDATION_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}",
+    ]) {
+      expect(workflow).toContain(contract);
+    }
+    expect(workflow).not.toContain("PHASE1_MIGRATION_DATABASE");
+    expect(workflow).not.toContain("PHASE2_MIGRATION_DATABASE");
+    for (const name of [
+      "MIGRATION_DATABASE_URL",
+      "MIGRATION_DATABASE_HOST",
+      "MIGRATION_DATABASE_NAME",
+    ]) {
+      expect(releaseRunbook).toContain(`\`${name}\``);
+    }
+    expect(releaseRunbook).toContain("Review or Remediate Release Data");
+  });
+
   it("passes dispatch values through quoted environment variables and local tools", () => {
     expect(workflow).toContain("CONFIRMATION: ${{ inputs.confirmation }}");
     expect(workflow).toContain('if [ "$CONFIRMATION" != "$expected" ]');

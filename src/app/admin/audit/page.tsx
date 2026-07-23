@@ -34,7 +34,12 @@ export default async function AdminAuditPage({
         <p className="mt-1 type-meta">Authenticated mutations, imports, publication, and archival events. <span className="mono tabular-nums">{total.toLocaleString()}</span> total.</p>
       </div>
 
-      <div className="surface overflow-x-auto">
+      <div
+        className="surface overflow-x-auto"
+        role="region"
+        aria-label="Audit log table"
+        tabIndex={0}
+      >
         <table className="w-full min-w-[800px] border-collapse text-left">
           <thead>
             <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]">

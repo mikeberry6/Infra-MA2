@@ -36,4 +36,16 @@ describe("TrackedSearchForm analytics", () => {
     });
     expect(JSON.stringify(track.mock.calls)).not.toContain("confidential target");
   });
+
+  it("preserves the labelled responsive Phase 3 search contract", () => {
+    render(<TrackedSearchForm query="existing" scope="fund" />);
+
+    const searchbox = screen.getByRole("searchbox", {
+      name: "Search InfraSight databases",
+    });
+    expect(searchbox).toHaveAttribute("minlength", "2");
+    expect(searchbox).not.toHaveAttribute("autofocus");
+    expect(screen.getByRole("button", { name: "Search" })).toBeInTheDocument();
+    expect(document.querySelector('input[name="scope"]')).toHaveValue("fund");
+  });
 });

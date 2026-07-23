@@ -15,8 +15,6 @@ export default function AdminError({
     : null;
 
   useEffect(() => {
-    // The server records the underlying exception. Keep the browser console
-    // and rendered boundary free of raw database or configuration details.
     console.error("Admin operation failed", { digest: errorId ?? "unavailable" });
   }, [errorId]);
 

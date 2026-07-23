@@ -9,7 +9,7 @@ import { dealSchema, type DealInput } from "@/modules/admin/schemas";
 import { changedFieldSummary } from "@/modules/admin/change-summary";
 import { DEAL_SECTOR_MAP, DEAL_REGION_MAP, DEAL_CATEGORY_MAP, DEAL_STATUS_MAP } from "@/modules/shared/enum-maps";
 import type { DealSector, DealRegion, DealCategory, DealStatusEnum, Prisma } from "@/generated/prisma/client";
-import { commitImport } from "@/modules/imports/commit";
+import { commitImport, transactImportPreview } from "@/modules/imports/commit";
 import {
   sameDateValue,
   sameOrderedValues,
@@ -56,6 +56,7 @@ const DEAL_IMPORT_SELECT = {
   valuationMultiple: true,
   fundVehicle: true,
   keyHighlights: true,
+  updatedAt: true,
   participants: {
     select: {
       role: true,
@@ -117,6 +118,63 @@ function unchangedDealResult(row: DealImportRow, existing: ExistingDeal): Import
     dbId: existing.id,
     status: "unchanged",
   };
+}
+
+function snapshotDate(value: Date | null | undefined): string | null {
+  return value?.toISOString() ?? null;
+}
+
+/**
+ * Bind a preview to every selected value that informed its classification.
+ * Relation rows are sorted because Postgres does not promise an implicit order.
+ */
+function snapshotExistingDeals(existing: ExistingDeal[]) {
+  return existing
+    .map((deal) => ({
+      id: deal.id,
+      legacyId: deal.legacyId,
+      status: deal.status,
+      title: deal.title,
+      target: deal.target,
+      sector: deal.sector,
+      subsector: deal.subsector,
+      region: deal.region,
+      categories: [...(deal.categories ?? [])],
+      date: snapshotDate(deal.date),
+      description: deal.description,
+      targetDescription: deal.targetDescription,
+      country: deal.country,
+      enterpriseValue: deal.enterpriseValue,
+      equityValue: deal.equityValue,
+      stake: deal.stake,
+      dealStatus: deal.dealStatus,
+      closingDate: snapshotDate(deal.closingDate),
+      sellerDisclosureStatus: deal.sellerDisclosureStatus,
+      sellerDisclosureReason: deal.sellerDisclosureReason,
+      assetScale: deal.assetScale,
+      valuationMultiple: deal.valuationMultiple,
+      fundVehicle: deal.fundVehicle,
+      keyHighlights: [...(deal.keyHighlights ?? [])],
+      updatedAt: snapshotDate(deal.updatedAt),
+      participants: [...(deal.participants ?? [])]
+        .map((participant) => ({
+          role: participant.role,
+          displayName: participant.displayName,
+          organizationName: participant.organization.name,
+        }))
+        .sort((left, right) => (
+          left.role.localeCompare(right.role)
+          || (left.displayName ?? "").localeCompare(right.displayName ?? "")
+          || left.organizationName.localeCompare(right.organizationName)
+        )),
+      citations: [...(deal.citations ?? [])]
+        .map((citation) => ({
+          url: citation.source.url,
+          label: citation.source.label,
+        }))
+        .sort((left, right) => left.url.localeCompare(right.url) || left.label.localeCompare(right.label)),
+    }))
+    .sort((left, right) => left.legacyId.localeCompare(right.legacyId) || left.id.localeCompare(right.id));
 }
 
 function stringValue(value: unknown): string {
@@ -239,6 +297,48 @@ function sameDealImport(row: DealImportRow, existing: ExistingDeal): boolean {
     && sameUnorderedStrings(buyers, desiredBuyers)
     && sameUnorderedStrings(sellers, desiredSellers)
     && samePrimarySource(existing.citations, row.sourceUrl, row.sourceName);
+}
+
+function classifyDealPreview(
+  deals: Record<string, unknown>[],
+  validRows: DealImportRow[],
+  errors: ImportResult[],
+  existing: ExistingDeal[],
+) {
+  const existingById = new Map(existing.map((row) => [row.legacyId, row]));
+  const warnings = validRows.flatMap((row) => {
+    const existingDeal = existingById.get(row.dealId);
+    return existingDeal && !canImportOverExistingDeal(existingDeal)
+      ? [quarantinedDealResult(row, existingDeal)]
+      : [];
+  });
+  const actions = validRows.map((row) => {
+    const existingDeal = existingById.get(row.dealId);
+    if (!existingDeal) return { id: row.dealId, action: "create" as const };
+    if (!canImportOverExistingDeal(existingDeal)) {
+      return { id: row.dealId, action: "quarantined" as const };
+    }
+    return {
+      id: row.dealId,
+      action: sameDealImport(row, existingDeal) ? "unchanged" as const : "update" as const,
+    };
+  });
+  const summary: ImportPreviewSummary = {
+    total: deals.length,
+    valid: validRows.length,
+    creates: actions.filter((item) => item.action === "create").length,
+    updates: actions.filter((item) => item.action === "update").length,
+    unchanged: actions.filter((item) => item.action === "unchanged").length,
+    quarantined: warnings.length,
+    errors: errors.length,
+    stateHash: hashImportPreviewState({
+      actions,
+      warnings,
+      existing: snapshotExistingDeals(existing),
+    }),
+  };
+
+  return { actions, existingById, summary, warnings };
 }
 
 function dealImportChangedFields(
@@ -427,81 +527,77 @@ async function importDeals(request: NextRequest) {
     }
 
     const { validRows, errors } = validateDealRows(deals);
+    const isPreview = request.nextUrl.searchParams.get("preview") === "1";
+    const previewToken = request.headers.get("x-import-preview-token") ?? undefined;
+    if (!isPreview && !previewToken) throw new ImportPreviewTokenError();
+
     const previewExisting = validRows.length > 0
       ? await prisma.deal.findMany({
           where: { legacyId: { in: validRows.map((row) => row.dealId) } },
           select: DEAL_IMPORT_SELECT,
         })
       : [];
-    const previewExistingById = new Map(previewExisting.map((row) => [row.legacyId, row]));
-    const previewWarnings = validRows.flatMap((row) => {
-      const existingDeal = previewExistingById.get(row.dealId);
-      return existingDeal && !canImportOverExistingDeal(existingDeal)
-        ? [quarantinedDealResult(row, existingDeal)]
-        : [];
-    });
-    const previewActions = validRows.map((row) => {
-      const existingDeal = previewExistingById.get(row.dealId);
-      if (!existingDeal) return { id: row.dealId, action: "create" as const };
-      if (!canImportOverExistingDeal(existingDeal)) return { id: row.dealId, action: "quarantined" as const };
-      return {
-        id: row.dealId,
-        action: sameDealImport(row, existingDeal) ? "unchanged" as const : "update" as const,
-      };
-    });
-    const previewSummary: ImportPreviewSummary = {
-      total: deals.length,
-      valid: validRows.length,
-      creates: previewActions.filter((item) => item.action === "create").length,
-      updates: previewActions.filter((item) => item.action === "update").length,
-      unchanged: previewActions.filter((item) => item.action === "unchanged").length,
-      quarantined: previewWarnings.length,
-      errors: errors.length,
-      stateHash: hashImportPreviewState({ actions: previewActions, warnings: previewWarnings }),
-    };
-    if (request.nextUrl.searchParams.get("preview") === "1") {
+    const preview = classifyDealPreview(deals, validRows, errors, previewExisting);
+    if (isPreview) {
       const previewToken = await createImportPreviewToken({
         actorId: identity.id,
         entityType: "deals",
         items: deals,
-        summary: previewSummary,
+        summary: preview.summary,
       });
       return NextResponse.json({
         preview: true,
-        ...previewSummary,
+        ...preview.summary,
         items: deals,
         previewToken,
-        warnings: previewWarnings,
+        warnings: preview.warnings,
         errors,
       });
     }
-    await consumeImportPreviewToken({
-      token: request.headers.get("x-import-preview-token") ?? undefined,
-      actorId: identity.id,
-      entityType: "deals",
-      items: deals,
-      summary: previewSummary,
-    });
-    if (previewSummary.creates === 0 && previewSummary.updates === 0) {
-      const unchangedResults = validRows.flatMap((row) => {
-        const existingDeal = previewExistingById.get(row.dealId);
-        return existingDeal && sameDealImport(row, existingDeal)
-          ? [unchangedDealResult(row, existingDeal)]
+
+    if (preview.summary.creates === 0 && preview.summary.updates === 0) {
+      const settled = await transactImportPreview(async (tx) => {
+        const existing = validRows.length > 0
+          ? await tx.deal.findMany({
+              where: { legacyId: { in: validRows.map((row) => row.dealId) } },
+              select: DEAL_IMPORT_SELECT,
+            })
           : [];
+        const current = classifyDealPreview(deals, validRows, errors, existing);
+        await consumeImportPreviewToken({
+          token: previewToken,
+          actorId: identity.id,
+          entityType: "deals",
+          items: deals,
+          summary: current.summary,
+        }, tx);
+        if (current.summary.creates !== 0 || current.summary.updates !== 0) {
+          throw new ImportConflictError("Deal import state changed after preview. Preview the file again.");
+        }
+
+        const unchangedResults = validRows.flatMap((row) => {
+          const existingDeal = current.existingById.get(row.dealId);
+          return existingDeal && sameDealImport(row, existingDeal)
+            ? [unchangedDealResult(row, existingDeal)]
+            : [];
+        });
+        const results = [...errors, ...current.warnings, ...unchangedResults];
+        return {
+          imported: 0,
+          unchanged: unchangedResults.length,
+          errors: results.filter((result) => result.error),
+          results,
+          quarantined: current.warnings.length,
+          auditEventId: null,
+        };
       });
-      const results = [...errors, ...previewWarnings, ...unchangedResults];
-      return NextResponse.json({
-        imported: 0,
-        unchanged: unchangedResults.length,
-        errors: results.filter((result) => result.error),
-        results,
-        quarantined: previewWarnings.length,
-        auditEventId: null,
-      });
+      return NextResponse.json(settled);
     }
+
     const committed = await commitImport({
       pipeline: "BULK_IMPORT_DEALS",
       entityType: "Deal",
+      actorId: identity.id,
       rowCount: deals.length,
       execute: async (tx) => {
         const existing = validRows.length > 0
@@ -510,8 +606,20 @@ async function importDeals(request: NextRequest) {
               select: DEAL_IMPORT_SELECT,
             })
           : [];
+        const current = classifyDealPreview(deals, validRows, errors, existing);
+        await consumeImportPreviewToken({
+          token: previewToken,
+          actorId: identity.id,
+          entityType: "deals",
+          items: deals,
+          summary: current.summary,
+        }, tx);
+        if (current.summary.creates === 0 && current.summary.updates === 0) {
+          throw new ImportConflictError("Deal import no longer contains writable changes. Preview the file again.");
+        }
+
         const results: ImportResult[] = [...errors];
-        const existingById = new Map(existing.map((row) => [row.legacyId, row]));
+        const existingById = current.existingById;
         let inserted = 0;
         let updated = 0;
         let skipped = errors.length;
@@ -551,6 +659,7 @@ async function importDeals(request: NextRequest) {
               where: {
                 id: existingDeal.id,
                 status: { in: ["DRAFT", "IN_REVIEW"] },
+                updatedAt: existingDeal.updatedAt,
               },
               data: dealData,
             });

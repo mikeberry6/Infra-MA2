@@ -1,7 +1,7 @@
 import { execFileSync } from "node:child_process";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { withServerTask } from "../src/lib/server-log.ts";
+import { withServerTask } from "../src/lib/server-log";
 
 const DATED_ISSUE = /^public\/email-format\/\d{4}-\d{2}-\d{2}\.html$/;
 

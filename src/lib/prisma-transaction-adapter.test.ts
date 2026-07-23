@@ -3,7 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 describe("application Prisma adapter", () => {
-  it("uses a transaction-capable adapter for atomic application workflows", () => {
+  it("supports the transaction used by durable login throttling", () => {
     const source = readFileSync(path.join(process.cwd(), "src", "lib", "prisma.ts"), "utf8");
     const nextConfig = readFileSync(path.join(process.cwd(), "next.config.js"), "utf8");
 

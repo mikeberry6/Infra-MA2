@@ -2,19 +2,26 @@
 
 Next.js + Prisma application for infrastructure M&A, portfolio company, fund, and public news monitoring.
 
-The supported local and CI baseline is Node 24.x with npm 11.x. Use `npm ci` for clean installs and keep `package-lock.json` as the sole package-manager lockfile. See `docs/operations.md` for migrations, rollback, administrator bootstrap, and artifact retention.
+The supported local and CI baseline is Node 24.x with npm 11.x. Use `npm ci` for clean installs and keep `package-lock.json` as the sole package-manager lockfile. See [the operations handbook](docs/operations.md) for service configuration and monitoring, and [the release runbook](docs/release-runbook.md) for exact-SHA schema staging, promotion, rollback, and recovery.
 
 ## Daily News Monitoring
 
-Run a dry scan first:
+Production news scanning runs only through the protected **Data Pipelines** GitHub Actions workflow described in [news-scan-automation.md](docs/news-scan-automation.md). Do not run a second workstation production schedule.
+
+For adapter development against an explicitly guarded development or isolated validation database, run a dry scan first:
 
 ```bash
 npm run news:scan:dry-run
 ```
 
-Run the importer:
+Only after the target guard and dry-run evidence pass may a non-production operator run the importer:
 
 ```bash
+TARGET_DATABASE=validation \
+EXPECTED_DATABASE_HOST=... \
+EXPECTED_DATABASE_NAME=... \
+FORBIDDEN_DATABASE_HOST=... \
+DATABASE_URL=... \
 npm run news:scan
 ```
 
@@ -51,10 +58,10 @@ You can also pass equivalent flags, for example:
 npm run news:scan:dry-run -- --max-targets=25 --max-pages=100
 ```
 
-For a seven-day import window:
+For a seven-day non-production dry-run window:
 
 ```bash
-npm run news:scan -- --since-days=7
+npm run news:scan:dry-run -- --since-days=7
 ```
 
 The scanner now has two discovery phases:
@@ -64,10 +71,10 @@ The scanner now has two discovery phases:
 
 If a site advertises a `robots.txt` crawl-delay above `NEWS_SCAN_MAX_CRAWL_DELAY_MS`, follow-up pages from that origin are skipped rather than fetched too soon or allowed to stall the whole run.
 
-For a full universe news-search screen without the slower source-site crawl:
+For a bounded, rotating non-production news-search screen without the slower source-site crawl:
 
 ```bash
-npm run news:scan -- --since-days=7 --skip-source-crawl --search-max-results-per-entity=5
+npm run news:scan:dry-run -- --since-days=7 --skip-source-crawl --search-max-results-per-entity=5
 ```
 
 For targeted scanner QA, use `--target` one or more times or as a comma-separated list:
@@ -80,15 +87,20 @@ npm run news:scan:dry-run -- --skip-source-crawl --since-days=7 --target=IAC --s
 
 The `/dashboard` route displays a daily infrastructure M&A conditions dashboard with a Prisma-backed cache. It is decision support, not a trading system: the UI labels whether observations are live, cached, manual, stale, unavailable, or require review.
 
-Run a dry sync first:
+Production synchronization runs only through the protected **Data Pipelines** workflow after its reviewed all-source dry run and `DASHBOARD_WRITES_ENABLED` gate. For provider development against a guarded non-production database, run a dry sync first:
 
 ```bash
 npm run dashboard:sync:dry-run
 ```
 
-Run the cache upsert:
+Only after the target guard and dry-run evidence pass may a non-production operator run a cache upsert:
 
 ```bash
+TARGET_DATABASE=validation \
+EXPECTED_DATABASE_HOST=... \
+EXPECTED_DATABASE_NAME=... \
+FORBIDDEN_DATABASE_HOST=... \
+DATABASE_URL=... \
 npm run dashboard:sync
 ```
 

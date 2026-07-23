@@ -3,15 +3,10 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import ImportExportBar from "./ImportExportBar";
 
-const { invalidateDetailCache, track } = vi.hoisted(() => ({
-  invalidateDetailCache: vi.fn(),
-  track: vi.fn(),
-}));
-
-vi.mock("@/lib/detail-cache-events", () => ({
-  invalidateDetailCache,
-}));
-vi.mock("@vercel/analytics", () => ({ track }));
+const analyticsTrack = vi.hoisted(() => vi.fn());
+const invalidateDetailCache = vi.hoisted(() => vi.fn());
+vi.mock("@vercel/analytics", () => ({ track: analyticsTrack }));
+vi.mock("@/lib/detail-cache-events", () => ({ invalidateDetailCache }));
 
 function csvFile(contents: string, name = "deals.csv"): File {
   const file = new File([contents], name, { type: "text/csv" });
@@ -33,8 +28,8 @@ describe("ImportExportBar", () => {
   beforeEach(() => {
     vi.unstubAllGlobals();
     vi.restoreAllMocks();
+    analyticsTrack.mockReset();
     invalidateDetailCache.mockReset();
-    track.mockReset();
   });
 
   it("tracks an authenticated CSV export without record or query data", () => {
@@ -44,8 +39,8 @@ describe("ImportExportBar", () => {
 
     fireEvent.click(exportLink);
 
-    expect(track).toHaveBeenCalledWith("export_started", { entity: "company" });
-    expect(track.mock.calls[0]).toHaveLength(2);
+    expect(analyticsTrack).toHaveBeenCalledWith("export_started", { entity: "company" });
+    expect(analyticsTrack.mock.calls[0]).toHaveLength(2);
   });
 
   it("shows a detailed preview and only commits after explicit confirmation", async () => {
@@ -121,12 +116,40 @@ describe("ImportExportBar", () => {
       },
     });
     expect(JSON.parse(commitRequest[1].body as string).deals).toHaveLength(4);
-    expect(invalidateDetailCache).toHaveBeenCalledWith("deal");
     expect(await screen.findByText("2 deals committed as drafts.")).toBeVisible();
+    expect(invalidateDetailCache).toHaveBeenCalledWith("deal");
     expect(screen.getByRole("link", { name: "View audit event" })).toHaveAttribute(
       "href",
       "/admin/audit?focus=audit-42",
     );
+  });
+
+  it("does not invalidate detail caches when a confirmed import writes no rows", async () => {
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(response({
+        previewToken: "signed-preview-token",
+        items: [{ id: "DEAL-UPDATE" }],
+        total: 1,
+        valid: 1,
+        creates: 0,
+        updates: 1,
+        unchanged: 0,
+        quarantined: 0,
+        warnings: [],
+        errors: [],
+      }))
+      .mockResolvedValueOnce(response({ imported: 0, unchanged: 1, auditEventId: null }));
+    vi.stubGlobal("fetch", fetchMock);
+
+    render(<ImportExportBar entityType="deals" />);
+    fireEvent.change(screen.getByLabelText("Select CSV"), {
+      target: { files: [csvFile("id,title\nDEAL-UPDATE,Already current")] },
+    });
+    const preview = await screen.findByRole("region", { name: "Import preview" });
+    await userEvent.click(within(preview).getByRole("button", { name: "Confirm import" }));
+    await screen.findByText("No deals required changes. 1 unchanged.");
+
+    expect(invalidateDetailCache).not.toHaveBeenCalled();
   });
 
   it("does not offer a write when every valid row is quarantined", async () => {

@@ -22,6 +22,7 @@ export type ServerLog = ServerLogScope & {
 type ServerOperationContext = {
   requestId: string;
   elapsedMs: () => number;
+  markFailure: (error: unknown, status?: number) => void;
 };
 
 type ServerTaskDetails = ServerLogScope & {
@@ -184,8 +185,12 @@ export async function withServerOperation(
     const response = await run({
       requestId,
       elapsedMs: () => Math.round(performance.now() - startedAt),
+      markFailure: (error, failureStatus = 500) => {
+        failure = error;
+        status = safeStatus(failureStatus);
+      },
     });
-    status = response.status;
+    if (failure === undefined) status = response.status;
     return responseWithRequestId(response, requestId);
   } catch (error) {
     failure = error;

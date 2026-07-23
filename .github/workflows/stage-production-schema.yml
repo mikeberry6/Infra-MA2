@@ -43,6 +43,7 @@ jobs:
       EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
       EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
       FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_DATABASE_HOST }}
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
       EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
@@ -53,6 +54,7 @@ jobs:
       MIGRATION_BASE_SHA: ${{ inputs.migration_base_sha }}
       MIGRATION_MANIFEST_SHA256: ${{ inputs.migration_manifest_sha256 }}
       PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
+      CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
       CONFIRMATION: ${{ inputs.confirmation }}
     steps:
       - name: Require protected workflow ref
@@ -135,10 +137,16 @@ jobs:
           test -n "$EXPECTED_DATABASE_HOST" || { echo "::error::PRODUCTION_MIGRATION_DATABASE_HOST is required."; exit 1; }
           test -n "$EXPECTED_DATABASE_NAME" || { echo "::error::PRODUCTION_DATABASE_NAME is required."; exit 1; }
           test -n "$FORBIDDEN_DATABASE_HOST" || { echo "::error::MIGRATION_DATABASE_HOST is required."; exit 1; }
+          test -n "$FORBIDDEN_DATABASE_HOST_2" || { echo "::error::PRODUCTION_DATABASE_HOST is required."; exit 1; }
           test -n "$VERCEL_TOKEN" || { echo "::error::VERCEL_TOKEN is required."; exit 1; }
+          test -n "$VERCEL_TEAM_ID" || { echo "::error::VERCEL_TEAM_ID is required."; exit 1; }
           test -n "$EXPECTED_VERCEL_PROJECT_ID" || { echo "::error::VERCEL_PROJECT_ID is required."; exit 1; }
           test -n "$EXPECTED_GITHUB_REPOSITORY_ID" || { echo "::error::GitHub repository ID is required."; exit 1; }
           test -n "$PRODUCTION_URL" || { echo "::error::PRODUCTION_URL is required."; exit 1; }
+          if [ "$PRODUCTION_URL" != "$CANONICAL_PRODUCTION_URL" ]; then
+            echo "::error::The protected PRODUCTION_URL does not match the canonical InfraSight production alias."
+            exit 1
+          fi
           if [ "$DASHBOARD_WRITES_ENABLED" != "false" ]; then
             echo "::error::DASHBOARD_WRITES_ENABLED must exactly equal false throughout schema staging and reviewed dashboard cutovers."
             exit 1

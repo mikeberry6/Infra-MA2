@@ -1,56 +1,81 @@
 import type { DealListItem } from "@/modules/shared/types";
 
-export const DEAL_SORT_FIELDS = ["date", "target", "buyer", "sector", "region", "category"] as const;
+export const DEAL_PAGE_SIZE = 25;
+
+export const DEAL_SORT_FIELDS = [
+  "date",
+  "target",
+  "buyer",
+  "sector",
+  "region",
+  "category",
+] as const;
 
 export type DealSortField = (typeof DEAL_SORT_FIELDS)[number];
-export type SortDirection = "asc" | "desc";
+export type DealSortDirection = "asc" | "desc";
 
-export function parseDealSortField(value: string): DealSortField {
+export const DEFAULT_DEAL_SORT: DealSortField = "date";
+export const DEFAULT_DEAL_DIRECTION: DealSortDirection = "desc";
+
+const textCollator = new Intl.Collator("en", {
+  numeric: true,
+  sensitivity: "base",
+});
+
+export function parseDealSortField(value: string | null | undefined): DealSortField {
   return DEAL_SORT_FIELDS.includes(value as DealSortField)
     ? (value as DealSortField)
-    : "date";
+    : DEFAULT_DEAL_SORT;
 }
 
-function compareText(a: string, b: string): number {
-  return a.localeCompare(b, undefined, { sensitivity: "base", numeric: true });
+export function parseDealSortDirection(value: string | null | undefined): DealSortDirection {
+  return value === "asc" || value === "desc" ? value : DEFAULT_DEAL_DIRECTION;
 }
 
-function compareByField(a: DealListItem, b: DealListItem, field: DealSortField): number {
+export function defaultDirectionForDealSort(field: DealSortField): DealSortDirection {
+  return field === "date" ? "desc" : "asc";
+}
+
+export function parseDealPage(value: string | null | undefined): number {
+  if (!value || !/^[1-9]\d*$/.test(value)) return 1;
+  const parsed = Number(value);
+  return Number.isSafeInteger(parsed) ? parsed : 1;
+}
+
+export function clampDealPage(page: number, totalItems: number): number {
+  const totalPages = Math.max(1, Math.ceil(totalItems / DEAL_PAGE_SIZE));
+  return Math.min(Math.max(1, page), totalPages);
+}
+
+function compareDealField(a: DealListItem, b: DealListItem, field: DealSortField): number {
   switch (field) {
-    case "date": {
-      const aTime = Date.parse(a.date);
-      const bTime = Date.parse(b.date);
-      if (!Number.isFinite(aTime) && !Number.isFinite(bTime)) return 0;
-      if (!Number.isFinite(aTime)) return 1;
-      if (!Number.isFinite(bTime)) return -1;
-      return aTime - bTime;
-    }
+    case "date":
+      return Date.parse(a.date) - Date.parse(b.date);
     case "target":
-      return compareText(a.target, b.target);
+      return textCollator.compare(a.target, b.target);
     case "buyer":
-      return compareText(a.buyer, b.buyer);
+      return textCollator.compare(a.buyer, b.buyer);
     case "sector":
-      return compareText(a.sector, b.sector);
+      return textCollator.compare(a.sector, b.sector);
     case "region":
-      return compareText(a.region, b.region);
+      return textCollator.compare(a.region, b.region);
     case "category":
-      return compareText(a.category.join(", "), b.category.join(", "));
+      return textCollator.compare(a.category.join(" / "), b.category.join(" / "));
   }
 }
 
 export function sortDeals(
-  deals: DealListItem[],
+  deals: readonly DealListItem[],
   field: DealSortField,
-  direction: SortDirection,
+  direction: DealSortDirection,
 ): DealListItem[] {
-  const multiplier = direction === "desc" ? -1 : 1;
+  const multiplier = direction === "asc" ? 1 : -1;
   return [...deals].sort((a, b) => {
-    const comparison = compareByField(a, b, field);
-    if (comparison !== 0) return multiplier * comparison;
+    const primary = compareDealField(a, b, field);
+    if (primary !== 0) return primary * multiplier;
 
-    // Keep pagination deterministic when the selected values are equal.
-    const targetComparison = compareText(a.target, b.target);
-    if (targetComparison !== 0) return targetComparison;
-    return compareText(a.legacyId, b.legacyId);
+    const targetTieBreak = textCollator.compare(a.target, b.target);
+    if (targetTieBreak !== 0) return targetTieBreak;
+    return textCollator.compare(a.legacyId, b.legacyId);
   });
 }

@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import type { DealListItem } from "@/modules/shared/types";
+import type { DealView } from "@/modules/shared/types";
 import { deriveFundRanking } from "./DynamicInsightsHero";
 
-function deal(overrides: Partial<DealListItem>): DealListItem {
+function deal(overrides: Partial<DealView>): DealView {
   return {
     id: "deal-1",
     legacyId: "DEAL-1",
@@ -19,6 +19,20 @@ function deal(overrides: Partial<DealListItem>): DealListItem {
     country: "United States",
     sourceName: "Source",
     sourceUrl: "https://example.com",
+    description: "Description",
+    targetDescription: "Target description",
+    enterpriseValue: null,
+    equityValue: null,
+    stake: null,
+    closingDate: null,
+    financialAdvisorBuyer: null,
+    financialAdvisorSeller: null,
+    legalAdvisorBuyer: null,
+    legalAdvisorSeller: null,
+    assetScale: null,
+    valuationMultiple: null,
+    fundVehicle: null,
+    keyHighlights: null,
     ...overrides,
   };
 }

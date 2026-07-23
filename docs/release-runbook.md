@@ -16,12 +16,15 @@ Merging `main` may create a Vercel production build, but automatic production-do
 
 ## One-time setup
 
-- Create the GitHub `production` environment with a required Engineering or Operations reviewer; disable self-review and administrator bypass where the plan permits.
+- Create the GitHub `Production` environment with a required Engineering or Operations reviewer and self-review prevention. Set its deployment-branch policy to **Selected branches and tags**, with `main` as the only entry; an in-workflow ref guard alone cannot protect secrets from modified workflow code on a caller-selected branch. Disable administrator bypass where the plan permits.
 - Protect `main` against direct pushes, force-pushes, and deletion. Require pull requests, resolved conversations, and the `build` status context.
 - Confirm the GitHub branch API reports `main` as protected; production workflows fail closed if it does not.
 - Configure every secret and exact host/database/project variable listed in [operations.md](./operations.md), including `VERCEL_PROJECT_ID` and the protected canonical `PRODUCTION_URL`.
-- Create an isolated Neon validation branch from a recent production snapshot. Never point `MIGRATION_DATABASE_URL` at production.
+- Create a Vercel **Protection Bypass for Automation** secret for the project and store the same value only as the GitHub `Production` environment secret `VERCEL_AUTOMATION_BYPASS_SECRET`. Candidate smoke tests send it as a same-origin header, reject cross-origin redirects, and never place it in a URL or retained report.
+- Create an isolated Neon validation branch from a recent production snapshot. Configure its direct URL as `MIGRATION_DATABASE_URL`, its exact host as `MIGRATION_DATABASE_HOST`, and its database name as `MIGRATION_DATABASE_NAME`. Never point any of these validation values at production.
 - Configure Vercel Preview with the validation database and preview-only NextAuth credentials.
+- Enable Vercel's **Automatically expose System Environment Variables** setting and verify a Preview exposes `VERCEL_DEPLOYMENT_ID` during both build and runtime. If that setting is unavailable, configure a unique `DATA_CACHE_NAMESPACE` per deployment in both contexts.
+- Set `NEXT_PUBLIC_SITE_URL` to the canonical origin in Production and the intended non-production origin in Preview so Open Graph and Twitter metadata do not resolve against the fallback host.
 - Configure `main` as Vercel's sole production branch, use Node 24, and disable automatic production-domain assignment so successful `main` builds remain staged until promotion.
 - Confirm Vercel retains the prior known-good deployment and record how to identify it without guessing.
 
@@ -138,7 +141,7 @@ The promotion workflow requires all of the following before changing domains:
 - database verification, explicit primary-source coverage, canonical-company, dashboard completeness, and rolling pipeline gates pass;
 - both critical-pipeline reliability artifacts have a complete 30-day observation window and `exitCriterionMet=true`; a `collecting` artifact fails promotion through `--require-full-window` even when it is currently `operationallyHealthy`.
 
-The workflow rechecks protected-main and immutable candidate provenance immediately before `vercel promote`, promotes the verified deployment ID, and smoke-tests the protected canonical URL. If schema staging fails after an additive migration, the old application remains active; investigate and fix forward before promotion.
+The workflow rechecks protected-main and immutable candidate provenance immediately before its team-scoped Vercel promotion request, promotes the verified deployment ID through the checked-in native API client, and smoke-tests the protected canonical URL. If schema staging fails after an additive migration, the old application remains active; investigate and fix forward before promotion.
 
 ## Post-release verification
 
@@ -160,14 +163,21 @@ Use rollback when the application regresses and the prior application is compati
 
 1. Stop imports/publication and capture the incident start time, current SHA, and failing request IDs.
 2. Select the prior verified Vercel deployment recorded in the release record.
-3. Run **Roll Back Production** with the recorded deployment ID or immutable URL, its full Git SHA, and confirmation `ROLLBACK`. The workflow verifies the GitHub repository and SHA, then rolls back by immutable deployment ID. Use `full` smoke policy normally. `public-only` is a documented break-glass option for a legacy target without `/api/health` or the canonical root redirect.
+3. Run **Roll Back Production** with the recorded deployment ID or immutable URL, its full Git SHA, and confirmation `ROLLBACK`. The workflow proves the target SHA is an ancestor of the current protected `main` head and has a successful exact-SHA GitHub Actions `build` check, verifies the immutable Vercel repository and SHA identity, then rolls back by deployment ID. Use `full` smoke policy normally. `public-only` is a documented break-glass option only for a previously gated legacy target without `/api/health` or the canonical root redirect; it does not bypass ancestry or build provenance.
 4. Verify canonical routes, login, audit log, and authorization manually.
 5. Do not reverse additive migrations. Fix forward in a new pull request.
 
-If the rollback workflow is unavailable, an authorized Operations owner may run:
+If the rollback workflow is unavailable, an authorized Operations owner may run the same checked-in, team-scoped API client from a clean protected-main checkout:
 
 ```bash
-vercel rollback <known-good-deployment-id-or-url> --yes
+VERCEL_TOKEN=<authorized-token> \
+node --experimental-strip-types scripts/mutate-vercel-production.ts \
+  --operation=rollback \
+  --deployment-id=<known-good-deployment-id> \
+  --project-id=<verified-project-id> \
+  --team-id=<verified-team-id> \
+  --production-url=https://infra-ma-2.vercel.app \
+  --output=tmp/manual-rollback.json
 ```
 
 Record the command, operator, deployment ID, and verification evidence. Never guess the deployment target.

@@ -9,10 +9,6 @@ vi.mock("next/navigation", () => ({
   }),
 }));
 
-vi.mock("@/lib/detail-cache-events", () => ({
-  invalidateDetailCache: vi.fn(),
-}));
-
 describe("DealForm accessibility", () => {
   it("associates the current seller-disclosure guidance with its input", () => {
     render(<DealForm mode="create" action={vi.fn()} />);

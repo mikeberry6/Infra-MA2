@@ -63,8 +63,8 @@ export async function recordFailedLogin(email: string, ip?: string | null): Prom
   }
 }
 
-export async function clearLoginThrottle(email: string, ip?: string | null): Promise<void> {
+export async function clearLoginThrottle(email: string): Promise<void> {
   await prisma.authThrottle.deleteMany({
-    where: { keyHash: { in: throttleKeys(email, ip) } },
+    where: { keyHash: hashKey("email", email) },
   });
 }

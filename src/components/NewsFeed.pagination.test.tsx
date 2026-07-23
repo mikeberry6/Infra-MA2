@@ -12,8 +12,6 @@ vi.mock("next/navigation", () => ({
   usePathname: () => "/news",
 }));
 
-vi.mock("@vercel/analytics", () => ({ track: vi.fn() }));
-
 import { NewsFeed } from "./NewsFeed";
 
 function item(index: number): NewsItemView {

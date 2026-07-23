@@ -7,7 +7,9 @@ function isObject(value: unknown): value is Record<string, unknown> {
 }
 
 function isTimestamp(value: unknown): value is string {
-  return typeof value === "string" && value.length > 0 && Number.isFinite(Date.parse(value));
+  if (typeof value !== "string" || value.length === 0) return false;
+  const parsed = new Date(value);
+  return !Number.isNaN(parsed.getTime()) && parsed.toISOString() === value;
 }
 
 export function isRecordMeta(value: unknown): value is RecordMeta {
@@ -88,6 +90,7 @@ type DetailFetchResponse = Pick<Response, "ok" | "status" | "json">;
 export type DetailRevalidationResult<T extends object> =
   | { status: "updated"; envelope: DetailResponse<T> }
   | { status: "retained"; envelope: DetailResponse<T> }
+  | { status: "unavailable"; envelope: null }
   | { status: "error"; envelope: null };
 
 /**
@@ -116,7 +119,7 @@ export async function revalidateDetail<T extends object>({
     const response = await fetcher();
     if (response.status === 404 || response.status === 410) {
       cache.delete(key);
-      return { status: "error", envelope: null };
+      return { status: "unavailable", envelope: null };
     }
     if (signal?.aborted || !response.ok) return fallback();
     const payload: unknown = await response.json();

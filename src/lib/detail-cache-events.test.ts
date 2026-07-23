@@ -1,8 +1,10 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   DETAIL_CACHE_INVALIDATION_EVENT,
+  getDetailCacheGeneration,
   invalidateDetailCache,
   subscribeToDetailCacheInvalidation,
+  synchronizeDetailCacheGeneration,
   type DetailCacheInvalidation,
 } from "./detail-cache-events";
 
@@ -42,10 +44,29 @@ class FakeBroadcastChannel {
   }
 }
 
+function createMemoryStorage(): Storage {
+  const values = new Map<string, string>();
+  return {
+    get length() {
+      return values.size;
+    },
+    clear: () => values.clear(),
+    getItem: (key) => values.get(key) ?? null,
+    key: (index) => Array.from(values.keys())[index] ?? null,
+    removeItem: (key) => {
+      values.delete(key);
+    },
+    setItem: (key, value) => {
+      values.set(key, String(value));
+    },
+  };
+}
+
 describe("detail cache invalidation events", () => {
   beforeEach(() => {
     FakeBroadcastChannel.instances = [];
     vi.stubGlobal("BroadcastChannel", FakeBroadcastChannel);
+    vi.stubGlobal("localStorage", createMemoryStorage());
   });
 
   afterEach(() => {
@@ -89,6 +110,7 @@ describe("detail cache invalidation events", () => {
       recordId: "fund-9",
       occurredAt: Date.now(),
       sourceId: "another-tab",
+      generation: "remote-generation-1",
     };
 
     subscriberChannel.receive({ entity: "fund" });
@@ -112,7 +134,39 @@ describe("detail cache invalidation events", () => {
     );
     expect(publisherChannel.closed).toBe(true);
     expect(domListener).toHaveBeenCalledTimes(1);
+    expect(getDetailCacheGeneration("company")).toMatch(/^.+:client-.+:\d+$/);
 
     window.removeEventListener(DETAIL_CACHE_INVALIDATION_EVENT, domListener);
+  });
+
+  it("clears a cache on remount after an invalidation had no active subscriber", () => {
+    const cache = { clear: vi.fn() };
+    expect(synchronizeDetailCacheGeneration("deal", cache)).toBe(false);
+
+    invalidateDetailCache("deal", "record-id-is-not-persisted");
+
+    expect(synchronizeDetailCacheGeneration("deal", cache)).toBe(true);
+    expect(cache.clear).toHaveBeenCalledTimes(1);
+    expect(
+      Array.from({ length: window.localStorage.length }, (_, index) => (
+        window.localStorage.getItem(window.localStorage.key(index) ?? "")
+      )).join(" "),
+    ).not.toContain("record-id-is-not-persisted");
+  });
+
+  it("delivers storage generations to active subscribers without record identifiers", () => {
+    const listener = vi.fn();
+    const unsubscribe = subscribeToDetailCacheInvalidation("company", listener);
+    window.dispatchEvent(new StorageEvent("storage", {
+      key: "infrasight:detail-cache-generation:company",
+      newValue: "remote-storage-generation",
+    }));
+
+    expect(listener).toHaveBeenCalledWith(expect.objectContaining({
+      entity: "company",
+      generation: "remote-storage-generation",
+    }));
+    expect(listener.mock.calls[0][0]).not.toHaveProperty("recordId");
+    unsubscribe();
   });
 });

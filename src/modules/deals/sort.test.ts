@@ -1,9 +1,20 @@
 import { describe, expect, it } from "vitest";
-import type { DealListItem } from "@/modules/shared/types";
-import { parseDealSortField, sortDeals } from "./sort";
+import type { DealView } from "@/modules/shared/types";
+import {
+  clampDealPage,
+  defaultDirectionForDealSort,
+  parseDealPage,
+  parseDealSortDirection,
+  parseDealSortField,
+  sortDeals,
+} from "./sort";
 
-function deal(overrides: Partial<DealListItem> & Pick<DealListItem, "legacyId" | "target">): DealListItem {
-  const { legacyId, target, ...rest } = overrides;
+function deal(
+  legacyId: string,
+  target: string,
+  date: string,
+  overrides: Partial<DealView> = {},
+): DealView {
   return {
     id: legacyId,
     legacyId,
@@ -12,40 +23,95 @@ function deal(overrides: Partial<DealListItem> & Pick<DealListItem, "legacyId" |
     buyer: "Buyer",
     seller: "Seller",
     sector: "Digital",
-    subsector: "Fiber",
+    subsector: "Data Centers",
     region: "North America",
     category: ["Acquisition (Buyout)"],
-    date: "2026-07-01T00:00:00.000Z",
-    status: "Announced",
-    country: "United States",
+    date,
+    description: "Description",
+    targetDescription: "Target description",
     sourceName: "Source",
-    sourceUrl: "https://example.test",
-    ...rest,
+    sourceUrl: "https://example.com",
+    enterpriseValue: null,
+    equityValue: null,
+    stake: null,
+    status: "Announced",
+    closingDate: null,
+    financialAdvisorBuyer: null,
+    financialAdvisorSeller: null,
+    legalAdvisorBuyer: null,
+    legalAdvisorSeller: null,
+    country: "United States",
+    assetScale: null,
+    valuationMultiple: null,
+    fundVehicle: null,
+    keyHighlights: null,
+    ...overrides,
   };
 }
 
 describe("deal URL sorting", () => {
-  const deals = [
-    deal({ legacyId: "DEAL-2", target: "Zulu Grid", buyer: "Alpha", date: "2026-06-01T00:00:00.000Z" }),
-    deal({ legacyId: "DEAL-1", target: "Alpha Fiber", buyer: "Zulu", date: "2026-07-01T00:00:00.000Z" }),
-  ];
-
-  it("accepts supported URL fields and safely falls back to date", () => {
-    expect(parseDealSortField("buyer")).toBe("buyer");
-    expect(parseDealSortField("not-a-field")).toBe("date");
+  it("normalizes unsupported sort and direction values", () => {
+    expect(parseDealSortField("target")).toBe("target");
+    expect(parseDealSortField("unsupported")).toBe("date");
+    expect(parseDealSortDirection("asc")).toBe("asc");
+    expect(parseDealSortDirection("sideways")).toBe("desc");
   });
 
-  it("sorts date and text fields in either direction", () => {
-    expect(sortDeals(deals, "date", "desc").map((item) => item.legacyId)).toEqual(["DEAL-1", "DEAL-2"]);
-    expect(sortDeals(deals, "target", "asc").map((item) => item.legacyId)).toEqual(["DEAL-1", "DEAL-2"]);
-    expect(sortDeals(deals, "buyer", "asc").map((item) => item.legacyId)).toEqual(["DEAL-2", "DEAL-1"]);
+  it("uses descending dates and ascending text as field defaults", () => {
+    expect(defaultDirectionForDealSort("date")).toBe("desc");
+    expect(defaultDirectionForDealSort("target")).toBe("asc");
   });
 
-  it("uses stable tie-breakers so pagination does not shuffle", () => {
-    const tied = [
-      deal({ legacyId: "DEAL-B", target: "Same", buyer: "Buyer" }),
-      deal({ legacyId: "DEAL-A", target: "Same", buyer: "Buyer" }),
+  it("sorts without mutating the source array", () => {
+    const source = [
+      deal("DEAL-2", "Zulu", "2026-01-01"),
+      deal("DEAL-1", "Alpha", "2026-02-01"),
     ];
-    expect(sortDeals(tied, "buyer", "desc").map((item) => item.legacyId)).toEqual(["DEAL-A", "DEAL-B"]);
+
+    expect(sortDeals(source, "date", "desc").map((item) => item.legacyId)).toEqual([
+      "DEAL-1",
+      "DEAL-2",
+    ]);
+    expect(sortDeals(source, "target", "asc").map((item) => item.target)).toEqual([
+      "Alpha",
+      "Zulu",
+    ]);
+    expect(source.map((item) => item.legacyId)).toEqual(["DEAL-2", "DEAL-1"]);
+  });
+
+  it("supports the remaining public table fields", () => {
+    const source = [
+      deal("DEAL-2", "B", "2026-01-01", {
+        buyer: "Zulu",
+        sector: "Utilities",
+        region: "Europe",
+        category: ["Sale (Buyout)"],
+      }),
+      deal("DEAL-1", "A", "2026-01-01", {
+        buyer: "Alpha",
+        sector: "Digital",
+        region: "Asia-Pacific",
+        category: ["Acquisition (Buyout)"],
+      }),
+    ];
+
+    expect(sortDeals(source, "buyer", "asc")[0].legacyId).toBe("DEAL-1");
+    expect(sortDeals(source, "sector", "asc")[0].legacyId).toBe("DEAL-1");
+    expect(sortDeals(source, "region", "asc")[0].legacyId).toBe("DEAL-1");
+    expect(sortDeals(source, "category", "asc")[0].legacyId).toBe("DEAL-1");
+  });
+});
+
+describe("deal URL pagination", () => {
+  it("accepts only positive safe integers", () => {
+    expect(parseDealPage("4")).toBe(4);
+    expect(parseDealPage("0")).toBe(1);
+    expect(parseDealPage("2.5")).toBe(1);
+    expect(parseDealPage("not-a-page")).toBe(1);
+  });
+
+  it("clamps the page against the 25-record page size", () => {
+    expect(clampDealPage(9, 51)).toBe(3);
+    expect(clampDealPage(2, 0)).toBe(1);
   });
 });

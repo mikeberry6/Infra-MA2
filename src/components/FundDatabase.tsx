@@ -3,14 +3,14 @@
 import { useState, useMemo, useEffect, useCallback, useRef, Fragment } from "react";
 import { FUND_STRATEGIES, FUND_STATUSES, FUND_SIZE_RANGES, FUND_SECTORS } from "@/lib/constants";
 import { getStrategyColor, getStatusColor, getSizeRangeColor, getFundSectorColor, getPortCoSectorColor, getStructureColor } from "@/lib/colors";
-import {
-  compareOptionalNumbersUnknownLast,
-  matchesSizeRange,
-  groupFundsByManager,
-  getFundStats,
-  paginateManagerGroups,
-} from "@/lib/fund-utils";
-import type { FundListItem, FundView, FundPortfolioCompanyView, DatabaseCounts, RecordMeta } from "@/modules/shared/types";
+import { matchesSizeRange, getFundStats } from "@/lib/fund-utils";
+import type {
+  FundListItem,
+  FundView,
+  FundPortfolioCompanyView,
+  DatabaseCounts,
+  RecordMeta,
+} from "@/modules/shared/types";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import {
   Search,
@@ -22,7 +22,13 @@ import {
   ArrowDown,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useUrlQueryParam, useUrlQueryParamsWriter, useUrlQueryState, useUrlQueryWriter } from "@/hooks/useUrlFilterSet";
+import {
+  useUrlFilterSet,
+  useUrlQueryParam,
+  useUrlQueryParamsWriter,
+  useUrlQueryState,
+  useUrlQueryWriter,
+} from "@/hooks/useUrlFilterSet";
 import { useCanExport } from "@/hooks/useCanExport";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
@@ -41,13 +47,17 @@ import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { useDrawerShellTiming } from "@/hooks/useDrawerShellTiming";
 import { withBasePath } from "@/lib/base-path";
 import { markDrawerOpen } from "@/lib/drawer-performance";
+import { buildFundSourceLinks } from "@/modules/funds/sources";
 import { track } from "@vercel/analytics";
 import { formatDate } from "@/lib/format";
-import { subscribeToDetailCacheInvalidation } from "@/lib/detail-cache-events";
 import { BoundedDetailCache } from "@/lib/detail-cache";
+import { useDetailCacheInvalidation } from "@/hooks/useDetailCacheInvalidation";
+import { useTrackDrawerOpen } from "@/hooks/useTrackDrawerOpen";
 import { useFreshDetail } from "@/hooks/useFreshDetail";
+import { useRouter } from "next/navigation";
 
-const FUND_PAGE_SIZE = 25;
+export const FUND_PAGE_SIZE = 25;
+export const FUND_RESULTS_HEADING_ID = "fund-results-heading";
 const fundDetailCache = new BoundedDetailCache<FundView>();
 
 function fundDetailShell(fund: FundListItem): FundView {
@@ -63,6 +73,94 @@ function fundDetailShell(fund: FundListItem): FundView {
     managerPortfolioCompanies: [],
     strategyUrl: "",
   };
+}
+
+export type FundSortField = "name" | "strategy" | "size" | "vintage";
+export type SortDirection = "asc" | "desc";
+
+type SortableFund = Pick<FundListItem, "fundName" | "strategies" | "sizeUsdMm" | "vintage">;
+
+export function parseFundPage(value: string): number {
+  const parsed = Number(value);
+  return Number.isSafeInteger(parsed) && parsed > 0 ? parsed : 1;
+}
+
+export function clampFundPage(page: number, totalItems: number): number {
+  return Math.min(Math.max(1, page), Math.max(1, Math.ceil(totalItems / FUND_PAGE_SIZE)));
+}
+
+export function parseFundSort(value: string): FundSortField {
+  return value === "strategy" || value === "size" || value === "vintage" ? value : "name";
+}
+
+export function parseSortDirection(value: string): SortDirection {
+  return value === "desc" ? "desc" : "asc";
+}
+
+function vintageSortKey(value: string): number | null {
+  const match = value.match(/(\d{4})/);
+  return match ? Number.parseInt(match[1], 10) : null;
+}
+
+export function sortFundRows<T extends SortableFund>(
+  funds: readonly T[],
+  field: FundSortField,
+  direction: SortDirection,
+): T[] {
+  return [...funds].sort((a, b) => {
+    let comparison = 0;
+    let aMissing = false;
+    let bMissing = false;
+
+    if (field === "name") comparison = a.fundName.localeCompare(b.fundName);
+    if (field === "strategy") {
+      const aStrategy = a.strategies[0] ?? "";
+      const bStrategy = b.strategies[0] ?? "";
+      aMissing = !aStrategy;
+      bMissing = !bStrategy;
+      comparison = aStrategy.localeCompare(bStrategy);
+    }
+    if (field === "size") {
+      aMissing = a.sizeUsdMm == null;
+      bMissing = b.sizeUsdMm == null;
+      comparison = (a.sizeUsdMm ?? 0) - (b.sizeUsdMm ?? 0);
+    }
+    if (field === "vintage") {
+      const aVintage = vintageSortKey(a.vintage);
+      const bVintage = vintageSortKey(b.vintage);
+      aMissing = aVintage == null;
+      bMissing = bVintage == null;
+      comparison = (aVintage ?? 0) - (bVintage ?? 0);
+    }
+
+    if (aMissing !== bMissing) return aMissing ? 1 : -1;
+    const directed = direction === "asc" ? comparison : -comparison;
+    return directed || a.fundName.localeCompare(b.fundName);
+  });
+}
+
+export function paginateManagerFunds<T extends { managerName: string }>(
+  funds: readonly T[],
+  page: number,
+  pageSize = FUND_PAGE_SIZE,
+): [string, T[]][] {
+  const grouped = new Map<string, T[]>();
+  for (const fund of funds) {
+    const managerFunds = grouped.get(fund.managerName) ?? [];
+    managerFunds.push(fund);
+    grouped.set(fund.managerName, managerFunds);
+  }
+
+  const flattened = Array.from(grouped.entries())
+    .sort(([a], [b]) => a.localeCompare(b))
+    .flatMap(([managerName, managerFunds]) => managerFunds.map((fund) => ({ managerName, fund })));
+  const start = (page - 1) * pageSize;
+  const visible = flattened.slice(start, start + pageSize);
+  const pageGroups = new Map<string, T[]>();
+  for (const { managerName, fund } of visible) {
+    pageGroups.set(managerName, [...(pageGroups.get(managerName) ?? []), fund]);
+  }
+  return Array.from(pageGroups.entries());
 }
 
 
@@ -113,13 +211,40 @@ function FundFilterBar({
   onToggleSector: (s: string) => void;
   onClearAll: () => void;
 }) {
-  const activeCount = activeStrategies.size + activeStatuses.size + activeSizeRanges.size + activeSectors.size;
-  const filterControls = (
+  const activeCount =
+    activeStrategies.size + activeStatuses.size + activeSizeRanges.size + activeSectors.size;
+
+  const filters = (
     <>
-      <MultiSelectDropdown label="Strategy" options={FUND_STRATEGIES} selected={activeStrategies} onToggle={onToggleStrategy} getColor={(v) => getStrategyColor(v)} />
-      <MultiSelectDropdown label="Status" options={FUND_STATUSES} selected={activeStatuses} onToggle={onToggleStatus} getColor={(v) => getStatusColor(v)} />
-      <MultiSelectDropdown label="Size" options={FUND_SIZE_RANGES} selected={activeSizeRanges} onToggle={onToggleSizeRange} getColor={() => getSizeRangeColor()} />
-      <MultiSelectDropdown label="Sector" options={FUND_SECTORS} selected={activeSectors} onToggle={onToggleSector} getColor={(v) => getFundSectorColor(v)} align="right" />
+      <MultiSelectDropdown
+        label="Strategy"
+        options={FUND_STRATEGIES}
+        selected={activeStrategies}
+        onToggle={onToggleStrategy}
+        getColor={(v) => getStrategyColor(v)}
+      />
+      <MultiSelectDropdown
+        label="Status"
+        options={FUND_STATUSES}
+        selected={activeStatuses}
+        onToggle={onToggleStatus}
+        getColor={(v) => getStatusColor(v)}
+      />
+      <MultiSelectDropdown
+        label="Size"
+        options={FUND_SIZE_RANGES}
+        selected={activeSizeRanges}
+        onToggle={onToggleSizeRange}
+        getColor={() => getSizeRangeColor()}
+      />
+      <MultiSelectDropdown
+        label="Sector"
+        options={FUND_SECTORS}
+        selected={activeSectors}
+        onToggle={onToggleSector}
+        getColor={(v) => getFundSectorColor(v)}
+        align="right"
+      />
     </>
   );
 
@@ -135,14 +260,22 @@ function FundFilterBar({
             aria-label="Search funds"
           />
         </div>
-        <div className="hidden items-center gap-2 md:flex">
-          <Divider orientation="vertical" />
-          {filterControls}
-        </div>
         <MobileFilterSheet activeCount={activeCount}>
-          <div className="grid grid-cols-2 gap-3">{filterControls}</div>
-          {activeCount > 0 && <button type="button" onClick={onClearAll} className="type-meta font-medium text-[var(--accent)]">Clear all filters</button>}
+          <div className="grid gap-3">{filters}</div>
+          {activeCount > 0 && (
+            <button
+              type="button"
+              onClick={onClearAll}
+              className="inline-flex h-9 w-full items-center justify-center rounded-md border border-[var(--border)] type-meta font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+            >
+              Clear all filters
+            </button>
+          )}
         </MobileFilterSheet>
+        <div className="hidden min-w-0 items-center gap-2 md:flex">
+          <Divider orientation="vertical" />
+          {filters}
+        </div>
       </div>
 
       <ActiveFiltersStrip
@@ -224,7 +357,9 @@ function FundVehicleCard({
 }) {
   return (
     <button
+      type="button"
       onClick={() => onSelect(fund)}
+      aria-label={`Open ${fund.fundName} fund details`}
       className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
     >
       <div className="flex items-start justify-between gap-3 mb-2">
@@ -259,7 +394,17 @@ function FundVehicleCard({
 // ─── Shared column config ──────────────────────────────────
 
 const TABLE_COL_WIDTHS = ["36%", "22%", "16%", "12%", "14%"] as const;
-const TABLE_HEADERS = ["Fund Vehicle", "Strategy", "Size", "Vintage", "Status"] as const;
+const TABLE_HEADERS: Array<{
+  label: string;
+  field: FundSortField | null;
+  align: "left" | "right";
+}> = [
+  { label: "Fund vehicle", field: "name", align: "left" },
+  { label: "Strategy", field: "strategy", align: "left" },
+  { label: "Size", field: "size", align: "right" },
+  { label: "Vintage", field: "vintage", align: "right" },
+  { label: "Status", field: null, align: "right" },
+];
 
 function FundTableColGroup() {
   return (
@@ -271,18 +416,43 @@ function FundTableColGroup() {
   );
 }
 
-function FundTableHead({ sticky = true }: { sticky?: boolean }) {
+function FundTableHead({
+  sortField,
+  sortDirection,
+  onSort,
+  sticky = true,
+}: {
+  sortField: FundSortField;
+  sortDirection: SortDirection;
+  onSort: (field: FundSortField) => void;
+  sticky?: boolean;
+}) {
   return (
     <thead className={sticky ? "sticky top-0 z-10" : ""}>
       <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]/95 backdrop-blur-sm shadow-[0_1px_0_rgba(17,17,20,0.03)]">
-        {TABLE_HEADERS.map((label, i) => (
+        {TABLE_HEADERS.map(({ label, field, align }) => (
           <th
             key={label}
-            className={`px-3 py-2 type-table-header select-none ${
-              i >= 2 ? "text-right" : "text-left"
-            }`}
+            aria-sort={field ? (sortField === field ? (sortDirection === "asc" ? "ascending" : "descending") : "none") : undefined}
+            className={`px-3 py-2 ${align === "right" ? "text-right" : "text-left"}`}
           >
-            {label}
+            {field ? (
+              <button
+                type="button"
+                onClick={() => onSort(field)}
+                className={`inline-flex items-center gap-1 type-table-header hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm ${align === "right" ? "w-full justify-end" : ""}`}
+              >
+                {label}
+                {sortField === field && (
+                  <ArrowDown
+                    className={`h-3 w-3 text-[var(--text-secondary)] transition-transform ${sortDirection === "asc" ? "rotate-180" : ""}`}
+                    strokeWidth={1.75}
+                  />
+                )}
+              </button>
+            ) : (
+              <span className="type-table-header select-none">{label}</span>
+            )}
           </th>
         ))}
       </tr>
@@ -299,26 +469,17 @@ function FundRow({
   isLast?: boolean;
 }) {
   return (
-    <tr
-      onClick={(event) => {
-        event.currentTarget.focus();
-        onSelect(fund);
-      }}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          onSelect(fund);
-        }
-      }}
-      role="button"
-      tabIndex={0}
-      aria-label={`Open ${fund.fundName} fund details`}
-      className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group border-b border-[var(--border)] last:border-b-0 focus:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--accent)]"
-    >
+    <tr className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] transition-colors group border-b border-[var(--border)] last:border-b-0">
       <td className="px-3 py-2.5 align-top">
-        <span title={fund.fundName} className="type-row-title group-hover:text-[var(--accent)] transition-colors truncate block">
+        <button
+          type="button"
+          onClick={() => onSelect(fund)}
+          aria-label={`Open ${fund.fundName} fund details`}
+          title={fund.fundName}
+          className="block max-w-full truncate rounded-sm text-left type-row-title transition-colors group-hover:text-[var(--accent)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+        >
           {fund.fundName}
-        </span>
+        </button>
       </td>
       <td className="px-3 py-2.5 align-top">
         <div className="flex items-center gap-2 flex-wrap">
@@ -345,24 +506,23 @@ function FundRow({
 function ManagerGroupedTable({
   sortedManagers,
   onSelectFund,
+  sortField,
+  sortDirection,
+  onSort,
+  page,
+  totalItems,
+  onPageChange,
 }: {
   sortedManagers: [string, FundListItem[]][];
   onSelectFund: (fund: FundListItem) => void;
+  sortField: FundSortField;
+  sortDirection: SortDirection;
+  onSort: (field: FundSortField) => void;
+  page: number;
+  totalItems: number;
+  onPageChange: (page: number) => void;
 }) {
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
-  const [pageParam, setPageParam] = useUrlQueryState("page", "1");
-  const totalFunds = sortedManagers.reduce((sum, [, funds]) => sum + funds.length, 0);
-  const totalPages = Math.max(1, Math.ceil(totalFunds / FUND_PAGE_SIZE));
-  const page = Math.max(1, Number.parseInt(pageParam, 10) || 1);
-  const safePage = Math.min(page, totalPages);
-  const managerFundCounts = useMemo(
-    () => new Map(sortedManagers.map(([manager, funds]) => [manager, funds.length])),
-    [sortedManagers],
-  );
-  const visibleManagers = useMemo(
-    () => paginateManagerGroups(sortedManagers, safePage, FUND_PAGE_SIZE),
-    [safePage, sortedManagers],
-  );
   const toggle = (name: string) =>
     setCollapsed((prev) => {
       const next = new Set(prev);
@@ -381,12 +541,17 @@ function ManagerGroupedTable({
   return (
     <>
       {/* Desktop: grouped table */}
-      <div className="hidden md:block overflow-x-auto">
+      <div
+        className="hidden overflow-x-auto rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--accent)] md:block"
+        role="region"
+        aria-label="Funds by manager results table"
+        tabIndex={0}
+      >
         <table className="w-full text-left border-collapse table-fixed">
           <FundTableColGroup />
-          <FundTableHead />
+          <FundTableHead sortField={sortField} sortDirection={sortDirection} onSort={onSort} />
           <tbody>
-            {visibleManagers.map(([managerName, managerFunds], groupIdx) => {
+            {sortedManagers.map(([managerName, managerFunds], groupIdx) => {
               const isCollapsed = collapsed.has(managerName);
               return (
                 <Fragment key={managerName}>
@@ -395,13 +560,13 @@ function ManagerGroupedTable({
                       <td colSpan={5} className="h-2 bg-[var(--bg-app)] border-0 p-0" />
                     </tr>
                   )}
-                  <tr className="border-y border-[var(--border)] bg-[var(--bg-app)]">
+                  <tr className="bg-[var(--bg-app)] border-y border-[var(--border)] hover:bg-[var(--bg-hover)] transition-colors select-none">
                     <td colSpan={5} className="p-0">
                       <button
                         type="button"
                         onClick={() => toggle(managerName)}
                         aria-expanded={!isCollapsed}
-                        className="flex h-10 w-full items-center gap-2 px-3 text-left transition-colors hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--accent-soft)]"
+                        className="flex h-10 w-full items-center gap-2 px-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--accent-soft)]"
                       >
                         <ChevronRight
                           className={`h-3.5 w-3.5 text-[var(--text-tertiary)] shrink-0 transition-transform ${
@@ -412,18 +577,17 @@ function ManagerGroupedTable({
                           {managerName}
                         </span>
                         <span className="type-micro mono tabular-nums">
-                          {managerFundCounts.get(managerName) ?? managerFunds.length}
+                          {managerFunds.length}
                         </span>
                       </button>
                     </td>
                   </tr>
                   {!isCollapsed &&
-                    managerFunds.map((fund, i) => (
+                    managerFunds.map((fund) => (
                       <FundRow
                         key={fund.id}
                         fund={fund}
                         onSelect={onSelectFund}
-                        isLast={i === managerFunds.length - 1}
                       />
                     ))}
                 </Fragment>
@@ -435,12 +599,14 @@ function ManagerGroupedTable({
 
       {/* Mobile: card-based layout per manager */}
       <div className="md:hidden">
-        {visibleManagers.map(([managerName, managerFunds]) => {
+        {sortedManagers.map(([managerName, managerFunds]) => {
           const isCollapsed = collapsed.has(managerName);
           return (
             <div key={managerName} className="border-b border-[var(--border)]">
               <button
+                type="button"
                 onClick={() => toggle(managerName)}
+                aria-expanded={!isCollapsed}
                 className="w-full flex items-center gap-2 px-3 py-3 text-left bg-[var(--bg-app)] hover:bg-[var(--bg-hover)] transition-colors"
               >
                 <ChevronRight
@@ -452,7 +618,7 @@ function ManagerGroupedTable({
                   {managerName}
                 </span>
                 <span className="type-micro mono tabular-nums">
-                  {managerFundCounts.get(managerName) ?? managerFunds.length}
+                  {managerFunds.length}
                 </span>
               </button>
               {!isCollapsed && (
@@ -468,11 +634,11 @@ function ManagerGroupedTable({
       </div>
 
       <PaginationControls
-        page={safePage}
+        page={page}
         pageSize={FUND_PAGE_SIZE}
-        totalItems={totalFunds}
-        onPageChange={(next) => setPageParam(String(next))}
-        resultHeadingId="fund-results-heading"
+        totalItems={totalItems}
+        onPageChange={onPageChange}
+        resultHeadingId={FUND_RESULTS_HEADING_ID}
       />
     </>
   );
@@ -481,66 +647,32 @@ function ManagerGroupedTable({
 // ─── All Funds Flat Table ────────────────────────────────────
 
 function AllFundsTable({
-  funds: displayFunds,
+  funds,
   onSelectFund,
+  sortField,
+  sortDirection,
+  onSort,
+  page,
+  onPageChange,
 }: {
   funds: FundListItem[];
   onSelectFund: (fund: FundListItem) => void;
+  sortField: FundSortField;
+  sortDirection: SortDirection;
+  onSort: (field: FundSortField) => void;
+  page: number;
+  onPageChange: (page: number) => void;
 }) {
-  const [sortParam] = useUrlQueryState("sort", "name", { resetPage: true });
-  const [direction] = useUrlQueryState("direction", "asc", { resetPage: true });
-  const [pageParam, setPageParam] = useUrlQueryState("page", "1");
-  const writeQueryParams = useUrlQueryParamsWriter();
-  const sortField: "name" | "strategy" | "size" | "vintage" = ["strategy", "size", "vintage"].includes(sortParam)
-    ? sortParam as "strategy" | "size" | "vintage"
-    : "name";
-  const sortAsc = direction !== "desc";
-  const page = Math.max(1, Number.parseInt(pageParam, 10) || 1);
-
-  // Sort vintage numerically when both sides parse as years; non-numeric
-  // values ("Evergreen", "[TBD]", "—") sort to the end regardless of direction
-  // so they don't shuffle through the list as the user toggles asc/desc.
-  const vintageSortKey = (v: string): number | null => {
-    const m = v.match(/(\d{4})/);
-    return m ? parseInt(m[1], 10) : null;
-  };
-
-  const sorted = useMemo(() => {
-    const list = [...displayFunds];
-    list.sort((a, b) => {
-      let cmp = 0;
-      switch (sortField) {
-        case "name": cmp = a.fundName.localeCompare(b.fundName); break;
-        case "strategy": cmp = (a.strategies[0] ?? "").localeCompare(b.strategies[0] ?? ""); break;
-        case "size": return compareOptionalNumbersUnknownLast(a.sizeUsdMm, b.sizeUsdMm, sortAsc);
-        case "vintage": return compareOptionalNumbersUnknownLast(vintageSortKey(a.vintage), vintageSortKey(b.vintage), sortAsc);
-      }
-      return sortAsc ? cmp : -cmp;
-    });
-    return list;
-  }, [displayFunds, sortField, sortAsc]);
-
-  const totalPages = Math.max(1, Math.ceil(sorted.length / FUND_PAGE_SIZE));
-  const safePage = Math.min(page, totalPages);
+  const sorted = useMemo(
+    () => sortFundRows(funds, sortField, sortDirection),
+    [funds, sortDirection, sortField],
+  );
   const visibleFunds = useMemo(() => {
-    const start = (safePage - 1) * FUND_PAGE_SIZE;
+    const start = (page - 1) * FUND_PAGE_SIZE;
     return sorted.slice(start, start + FUND_PAGE_SIZE);
-  }, [sorted, safePage]);
+  }, [page, sorted]);
 
-  const toggleSort = (field: typeof sortField) => {
-    const nextDirection = sortField === field
-      ? (sortAsc ? "desc" : "asc")
-      : (field === "size" ? "desc" : "asc");
-    writeQueryParams(
-      {
-        sort: field === "name" ? null : field,
-        direction: nextDirection === "asc" ? null : nextDirection,
-      },
-      { resetPage: true },
-    );
-  };
-
-  if (displayFunds.length === 0) {
+  if (funds.length === 0) {
     return (
       <div className="flex items-center justify-center py-16 type-meta text-[var(--text-tertiary)]">
         No funds match your current filters.
@@ -548,49 +680,18 @@ function AllFundsTable({
     );
   }
 
-  const sortableFields: { field: typeof sortField; label: string; idx: number }[] = [
-    { field: "name", label: "Fund vehicle", idx: 0 },
-    { field: "strategy", label: "Strategy", idx: 1 },
-    { field: "size", label: "Size", idx: 2 },
-    { field: "vintage", label: "Vintage", idx: 3 },
-  ];
-
   return (
     <>
       {/* Desktop table */}
-      <div className="hidden md:block overflow-x-auto">
+      <div
+        className="hidden overflow-x-auto rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--accent)] md:block"
+        role="region"
+        aria-label="Fund vehicles results table"
+        tabIndex={0}
+      >
         <table className="w-full text-left border-collapse table-fixed">
           <FundTableColGroup />
-          <thead className="sticky top-0 z-10">
-            <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]/95 backdrop-blur-sm shadow-[0_1px_0_rgba(17,17,20,0.03)]">
-              {sortableFields.map(({ field, label, idx }) => (
-                <th
-                  key={field}
-                  aria-sort={sortField === field ? (sortAsc ? "ascending" : "descending") : "none"}
-                  className={`px-3 py-2 ${
-                    idx >= 2 ? "text-right" : "text-left"
-                  }`}
-                >
-                  <button
-                    type="button"
-                    onClick={() => toggleSort(field)}
-                    className={`inline-flex items-center gap-1 type-table-header hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm ${idx >= 2 ? "justify-end w-full" : ""}`}
-                  >
-                    {label}
-                    {sortField === field && (
-                      <ArrowDown
-                        className={`h-3 w-3 text-[var(--text-secondary)] transition-transform ${sortAsc ? "rotate-180" : ""}`}
-                        strokeWidth={1.75}
-                      />
-                    )}
-                  </button>
-                </th>
-              ))}
-              <th className="px-3 py-2 type-table-header text-right select-none">
-                Status
-              </th>
-            </tr>
-          </thead>
+          <FundTableHead sortField={sortField} sortDirection={sortDirection} onSort={onSort} />
           <tbody>
             {visibleFunds.map((fund) => (
               <FundRow key={fund.id} fund={fund} onSelect={onSelectFund} />
@@ -607,11 +708,11 @@ function AllFundsTable({
       </div>
 
       <PaginationControls
-        page={safePage}
+        page={page}
         pageSize={FUND_PAGE_SIZE}
         totalItems={sorted.length}
-        onPageChange={(next) => setPageParam(String(next))}
-        resultHeadingId="fund-results-heading"
+        onPageChange={onPageChange}
+        resultHeadingId={FUND_RESULTS_HEADING_ID}
       />
     </>
   );
@@ -652,16 +753,17 @@ function FundDrawer({
   const siblingFunds = allFunds.filter(
     (f) => f.managerName === fund.managerName && f.id !== fund.id
   );
-  const supportingSourceUrls = Array.from(new Set([
-    ...fund.sourceUrls,
-    fund.strategyUrl,
-  ].map((url) => url.trim()).filter(Boolean)))
-    .filter((url) => url !== fund.primarySourceUrl?.trim());
+  const fundSources = useMemo(
+    () => buildFundSourceLinks(fund.primarySourceUrl, fund.sourceUrls),
+    [fund.primarySourceUrl, fund.sourceUrls],
+  );
 
   // Aggregate all portfolio companies across the firm (all funds for this manager)
-  const firmFunds = [fund, ...siblingFunds];
+  const managerFundCount = new Set(
+    fund.managerPortfolioCompanies.map((entry) => entry.fundName),
+  ).size;
   const firmPortfolio = useMemo(() => {
-    const companiesByFund = fund.managerPortfolioCompanies;
+    const companiesByFund: FundPortfolioCompanyView[] = fund.managerPortfolioCompanies;
     // Group by sector → subsector
     const bySector: Record<string, Record<string, FundPortfolioCompanyView[]>> = {};
     for (const entry of companiesByFund) {
@@ -744,6 +846,7 @@ function FundDrawer({
               </h2>
             </div>
             <button
+              type="button"
               onClick={onClose}
               aria-label="Close drawer"
               className="p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
@@ -754,19 +857,43 @@ function FundDrawer({
         </div>
 
         {detailState !== "ready" && detailState !== "idle" && (
-          <div className={`mx-6 mt-4 rounded-md border px-3 py-2.5 type-meta lg:mx-8 ${detailState === "error" ? "border-red-300 bg-red-50 text-red-800" : "border-[var(--border)] bg-[var(--bg-subtle)] text-[var(--text-secondary)]"}`} role={detailState === "error" ? "alert" : "status"}>
-            {detailState === "loading" ? "Loading the latest verified detail…" : (
-              <div className="flex items-center justify-between gap-3">
-                <span>Latest detail could not be loaded. Showing the list record.</span>
-                {onRetry && <button type="button" onClick={onRetry} className="font-semibold underline underline-offset-2">Retry</button>}
-              </div>
-            )}
+          <div
+            className={`mx-6 mt-4 rounded-md border px-3 py-2.5 type-meta lg:mx-8 ${
+              detailState === "error"
+                ? "border-red-300 bg-red-50 text-red-800"
+                : "border-[var(--border)] bg-[var(--bg-subtle)] text-[var(--text-secondary)]"
+            }`}
+            role={detailState === "error" ? "alert" : "status"}
+          >
+            {detailState === "loading"
+              ? "Loading the latest verified detail…"
+              : (
+                <div className="flex items-center justify-between gap-3">
+                  <span>Latest detail could not be loaded. Showing the list record.</span>
+                  {onRetry && (
+                    <button
+                      type="button"
+                      onClick={onRetry}
+                      className="font-semibold underline underline-offset-2"
+                    >
+                      Retry
+                    </button>
+                  )}
+                </div>
+              )}
           </div>
         )}
         {detailMeta && (
           <div className="mx-6 mt-3 type-micro lg:mx-8">
-            Last verified <span className="mono tabular-nums text-[var(--text-secondary)]">{detailMeta.lastVerifiedAt ? formatDate(detailMeta.lastVerifiedAt) : "Not recorded"}</span>
-            {" · "}<span className="mono tabular-nums text-[var(--text-secondary)]">{detailMeta.sourceCount}</span> source{detailMeta.sourceCount === 1 ? "" : "s"}
+            Last verified{" "}
+            <span className="mono tabular-nums text-[var(--text-secondary)]">
+              {detailMeta.lastVerifiedAt ? formatDate(detailMeta.lastVerifiedAt) : "Not recorded"}
+            </span>
+            {" · "}
+            <span className="mono tabular-nums text-[var(--text-secondary)]">
+              {detailMeta.sourceCount}
+            </span>{" "}
+            source{detailMeta.sourceCount === 1 ? "" : "s"}
           </div>
         )}
 
@@ -824,63 +951,38 @@ function FundDrawer({
             </section>
           )}
 
-          {/* Reviewed primary and legacy supporting sources */}
-          <section className="border-t border-[var(--border)] pt-6">
-            <div className="type-section-title text-[var(--text-tertiary)] mb-3">
-              Provenance
-            </div>
-            <div className="surface space-y-4 px-4 py-3">
-              <div>
-                <div className="type-label mb-1.5">Primary source</div>
-                {fund.primarySourceUrl ? (() => {
-                  let hostname = fund.primarySourceUrl;
-                  try { hostname = new URL(fund.primarySourceUrl).hostname.replace(/^www\./, ""); } catch {}
-                  return (
+          {/* Reviewed primary source and supporting URLs */}
+          {fundSources.length > 0 && (
+            <section className="border-t border-[var(--border)] pt-6">
+              <div className="type-section-title text-[var(--text-tertiary)] mb-3">
+                Sources
+              </div>
+              <div className="surface px-4 py-3">
+                <div className="grid gap-2">
+                {fundSources.map((source) => (
                     <a
-                      href={fund.primarySourceUrl}
+                      key={source.url}
+                      href={source.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => track("source_link_clicked", { entity: "fund", placement: "drawer_primary" })}
-                      className="inline-flex items-center gap-1.5 type-meta font-medium hover:text-[var(--text-primary)] transition-colors group"
+                      onClick={() => track("source_link_clicked", {
+                        entity: "fund",
+                        placement: source.isPrimary ? "drawer_primary" : "drawer",
+                      })}
+                      className="inline-flex items-center gap-1.5 type-meta hover:text-[var(--text-primary)] transition-colors group"
                     >
                       <ExternalLink className="h-3 w-3 shrink-0 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)]" />
-                      <span className="truncate">{hostname}</span>
+                      <span className={source.isPrimary ? "font-medium text-[var(--text-secondary)]" : "text-[var(--text-tertiary)]"}>
+                        {source.label}
+                      </span>
+                      <span aria-hidden className="text-[var(--text-tertiary)]">·</span>
+                      <span className="truncate">{source.hostname}</span>
                     </a>
-                  );
-                })() : detailState === "loading" ? (
-                  <p className="type-meta text-[var(--text-tertiary)]">Loading verified provenance…</p>
-                ) : detailState === "error" ? (
-                  <p className="type-meta text-[var(--text-tertiary)]">Unavailable while verified detail is offline</p>
-                ) : (
-                  <p className="type-meta text-[var(--text-tertiary)]">Pending Research review</p>
-                )}
-              </div>
-              {supportingSourceUrls.length > 0 && (
-                <div className="border-t border-[var(--border)] pt-3">
-                  <div className="type-label mb-1.5">Supporting sources</div>
-                  <div className="flex flex-wrap gap-x-4 gap-y-1.5">
-                    {supportingSourceUrls.map((url, i) => {
-                      let hostname = url;
-                      try { hostname = new URL(url).hostname.replace(/^www\./, ""); } catch {}
-                      return (
-                        <a
-                          key={i}
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => track("source_link_clicked", { entity: "fund", placement: "drawer" })}
-                          className="inline-flex items-center gap-1.5 type-meta hover:text-[var(--text-primary)] transition-colors group"
-                        >
-                          <ExternalLink className="h-3 w-3 shrink-0 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)]" />
-                          <span className="truncate">{hostname}</span>
-                        </a>
-                      );
-                    })}
-                  </div>
+                  ))}
                 </div>
-              )}
-            </div>
-          </section>
+              </div>
+            </section>
+          )}
 
           {/* Portfolio Companies */}
           {firmPortfolio.total > 0 && (
@@ -932,7 +1034,7 @@ function FundDrawer({
                                     <div className="type-micro mt-0.5">
                                       {company.country}
                                       {yearLabel ? ` · ${yearLabel}` : ""}
-                                      {firmFunds.length > 1 ? ` · ${fundName}` : ""}
+                                      {managerFundCount > 1 ? ` · ${fundName}` : ""}
                                     </div>
                                   </div>
                                   <div className="flex gap-3 shrink-0 flex-wrap justify-end">
@@ -962,6 +1064,7 @@ function FundDrawer({
               <div className="space-y-2">
                 {siblingFunds.map((sib) => (
                   <button
+                    type="button"
                     key={sib.id}
                     onClick={() => onSelectFund(sib)}
                     className="w-full text-left surface p-3 hover:bg-[var(--bg-subtle)] transition-colors flex items-center justify-between gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
@@ -985,22 +1088,30 @@ function FundDrawer({
 // ─── Main Component ─────────────────────────────────────────
 
 export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts: DatabaseCounts }) {
-  // ── Fund state ──
+  const router = useRouter();
   const [fundSearch, setFundSearch] = useUrlQueryState("q", "", { resetPage: true });
+  const [rawSortField] = useUrlQueryState("sort", "name");
+  const [rawSortDirection] = useUrlQueryState("direction", "asc");
+  const [rawPage, setRawPage] = useUrlQueryState("page", "1");
+  const [rawFundView, setRawFundView] = useUrlQueryState("view", "managers", { resetPage: true });
   const [activeStrategies, toggleStrategy] = useUrlFilterSet("strategy");
   const [activeStatuses, toggleStatus] = useUrlFilterSet("status");
   const [activeSizeRanges, toggleSizeRange] = useUrlFilterSet("size");
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
-  const [selectedFund, setSelectedFund] = useState<FundListItem | null>(null);
   const [detailRequest, setDetailRequest] = useState(0);
+  const invalidationRequest = useDetailCacheInvalidation("fund", fundDetailCache);
+  const focusId = useUrlQueryParam("focus");
+  const writeQueryParam = useUrlQueryWriter();
+  const writeQueryParams = useUrlQueryParamsWriter();
+  const canExport = useCanExport();
 
-  useEffect(() => subscribeToDetailCacheInvalidation("fund", () => {
-    fundDetailCache.clear();
-    setDetailRequest((value) => value + 1);
-  }), []);
-  useEffect(() => {
-    if (selectedFund) track("drawer_opened", { entity: "fund" });
-  }, [selectedFund]);
+  const sortField = parseFundSort(rawSortField);
+  const sortDirection = parseSortDirection(rawSortDirection);
+  const fundView: "managers" | "all" = rawFundView === "all" ? "all" : "managers";
+  const selectedFund = useMemo(
+    () => focusId ? funds.find((fund) => fund.legacyId === focusId) ?? null : null,
+    [focusId, funds],
+  );
   const {
     detail: selectedFundDetail,
     meta: detailMeta,
@@ -1011,25 +1122,47 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
     requestUrl: selectedFund
       ? withBasePath(`/api/funds/${encodeURIComponent(selectedFund.legacyId)}`)
       : null,
-    requestVersion: detailRequest,
+    requestVersion: detailRequest + invalidationRequest,
   });
-  const [fundViewParam, setFundViewParam] = useUrlQueryState("view", "all", { resetPage: true });
-  const fundView: "managers" | "all" = fundViewParam === "managers" ? "managers" : "all";
-  const writeQuery = useUrlQueryWriter();
-  const writeQueryParams = useUrlQueryParamsWriter();
-  const canExport = useCanExport();
 
+  useEffect(() => {
+    if (detailState !== "unavailable" || !selectedFund) return;
+    writeQueryParam("focus", null, "replace");
+    router.refresh();
+  }, [detailState, router, selectedFund, writeQueryParam]);
+
+  useTrackDrawerOpen("fund", selectedFund?.legacyId);
   const debouncedFundSearch = useDebounce(fundSearch, 300);
 
   const clearFundFilters = useCallback(() => {
-    writeQueryParams({
-      q: null,
-      strategy: null,
-      status: null,
-      size: null,
-      sector: null,
-    }, { resetPage: true });
+    writeQueryParams(
+      { q: null, strategy: null, status: null, size: null, sector: null },
+      { history: "push", resetPage: true },
+    );
   }, [writeQueryParams]);
+
+  const openFund = useCallback((fund: FundListItem) => {
+    markDrawerOpen("fund");
+    writeQueryParam("focus", fund.legacyId, "push");
+  }, [writeQueryParam]);
+
+  const closeFund = useCallback(() => {
+    writeQueryParam("focus", null, "replace");
+  }, [writeQueryParam]);
+
+  const changeSort = useCallback((field: FundSortField) => {
+    const direction: SortDirection = field === sortField
+      ? (sortDirection === "asc" ? "desc" : "asc")
+      : field === "size" ? "desc" : "asc";
+    writeQueryParams(
+      { sort: field, direction },
+      { history: "push", resetPage: true },
+    );
+  }, [sortDirection, sortField, writeQueryParams]);
+
+  const changePage = useCallback((page: number) => {
+    setRawPage(String(page));
+  }, [setRawPage]);
 
   // ── Filtered funds ──
   const filteredFunds = useMemo(() => {
@@ -1089,58 +1222,31 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
     ];
   }, [filteredFunds, funds, activeStrategies, activeStatuses, activeSizeRanges, activeSectors, debouncedFundSearch]);
 
-  const groupedFunds = useMemo(() => groupFundsByManager(filteredFunds), [filteredFunds]);
-  const sortedManagers = useMemo(
-    () => Array.from(groupedFunds.entries()).sort((a, b) => a[0].localeCompare(b[0])),
-    [groupedFunds]
+  const requestedPage = parseFundPage(rawPage);
+  const page = clampFundPage(requestedPage, filteredFunds.length);
+
+  useEffect(() => {
+    if (rawPage === String(page)) return;
+    writeQueryParam("page", page === 1 ? null : String(page), "replace");
+  }, [page, rawPage, writeQueryParam]);
+
+  const sortedFunds = useMemo(
+    () => sortFundRows(filteredFunds, sortField, sortDirection),
+    [filteredFunds, sortDirection, sortField],
   );
-  const focusId = useUrlQueryParam("focus");
-  const openedFocus = useRef<string | null>(null);
+  const sortedManagers = useMemo(
+    () => paginateManagerFunds(sortedFunds, page),
+    [page, sortedFunds],
+  );
 
-  // Close drawers if filtered out
+  // The URL is authoritative: invalid or filtered-out focus values close the
+  // drawer without creating another browser-history entry.
   useEffect(() => {
-    if (selectedFund && !filteredFunds.find((f) => f.id === selectedFund.id)) {
-      setSelectedFund(null);
-      openedFocus.current = null;
-      writeQuery("focus", null);
+    if (!focusId) return;
+    if (!selectedFund || !filteredFunds.some((fund) => fund.id === selectedFund.id)) {
+      closeFund();
     }
-  }, [filteredFunds, selectedFund, writeQuery]);
-
-  // Auto-open drawer when navigated here with `?focus=<legacyId>`.
-  useEffect(() => {
-    if (!focusId) {
-      if (openedFocus.current) setSelectedFund(null);
-      openedFocus.current = null;
-      return;
-    }
-    if (openedFocus.current === focusId) return;
-    const match = funds.find((f) => f.legacyId === focusId);
-    if (match) {
-      // Manual opens set openedFocus before writing the URL, so direct/search
-      // focus navigation is measured exactly once here. Analytics runs after
-      // the shell commits.
-      markDrawerOpen("fund");
-      setSelectedFund(match);
-      openedFocus.current = focusId;
-      return;
-    }
-    setSelectedFund(null);
-    openedFocus.current = null;
-    writeQuery("focus", null);
-  }, [focusId, funds, writeQuery]);
-
-  const openFund = useCallback((fund: FundListItem) => {
-    markDrawerOpen("fund");
-    setSelectedFund(fund);
-    openedFocus.current = fund.legacyId;
-    writeQuery("focus", fund.legacyId, "push");
-  }, [writeQuery]);
-
-  const closeFund = useCallback(() => {
-    setSelectedFund(null);
-    openedFocus.current = null;
-    writeQuery("focus", null);
-  }, [writeQuery]);
+  }, [closeFund, filteredFunds, focusId, selectedFund]);
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
@@ -1171,16 +1277,24 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
       </MarketSnapshotSection>
 
       <div className="surface overflow-hidden">
-        <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
-          <div className="flex items-center gap-3">
-            <h2 id="fund-results-heading" tabIndex={-1} aria-label="Fund results" className="scroll-mt-20 type-micro outline-none">
+        <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-[var(--border)]">
+          <div className="flex flex-wrap items-center gap-3">
+            <h2
+              id={FUND_RESULTS_HEADING_ID}
+              tabIndex={-1}
+              className="type-micro scroll-mt-24 focus:outline-none"
+              aria-live="polite"
+            >
+              <span className="sr-only">Fund results: </span>
               <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredFunds.length}</span>
               {" "}of{" "}
               <span className="mono text-[var(--text-secondary)] tabular-nums">{funds.length}</span> funds
             </h2>
-            <div className="hidden sm:inline-flex items-center gap-1 p-0.5 rounded-md bg-[var(--bg-hover)]">
+            <div className="inline-flex items-center gap-1 p-0.5 rounded-md bg-[var(--bg-hover)]">
               <button
-                onClick={() => setFundViewParam("managers")}
+                type="button"
+                onClick={() => setRawFundView("managers")}
+                aria-pressed={fundView === "managers"}
                 className={`px-2.5 h-6 rounded type-micro font-medium transition-colors ${
                   fundView === "managers"
                     ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
@@ -1190,7 +1304,9 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
                 By manager
               </button>
               <button
-                onClick={() => setFundViewParam("all")}
+                type="button"
+                onClick={() => setRawFundView("all")}
+                aria-pressed={fundView === "all"}
                 className={`px-2.5 h-6 rounded type-micro font-medium transition-colors ${
                   fundView === "all"
                     ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
@@ -1201,13 +1317,36 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
               </button>
             </div>
           </div>
-          <div className="hidden sm:flex items-center gap-1">
+          <div className="flex flex-wrap items-center justify-end gap-1">
+            <label htmlFor="fund-mobile-sort" className="sr-only">Sort funds</label>
+            <select
+              id="fund-mobile-sort"
+              value={sortField}
+              onChange={(event) => changeSort(parseFundSort(event.target.value))}
+              className="h-7 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-2 type-micro text-[var(--text-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] md:hidden"
+            >
+              <option value="name">Name</option>
+              <option value="strategy">Strategy</option>
+              <option value="size">Size</option>
+              <option value="vintage">Vintage</option>
+            </select>
+            <button
+              type="button"
+              onClick={() => changeSort(sortField)}
+              aria-label={`Sort ${sortDirection === "asc" ? "descending" : "ascending"}`}
+              className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--bg-surface)] text-[var(--text-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] md:hidden"
+            >
+              <ArrowDown
+                className={`h-3 w-3 transition-transform ${sortDirection === "asc" ? "rotate-180" : ""}`}
+                strokeWidth={1.75}
+              />
+            </button>
             {canExport && (
               <a
                 href={withBasePath("/api/exports/funds")}
                 download
                 onClick={() => track("export_started", { entity: "fund" })}
-                className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+                className="hidden sm:inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
               >
                 <Download className="h-3 w-3" />
                 <span className="truncate">Export</span>
@@ -1219,7 +1358,7 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
                 name: "research_contact_initiated",
                 properties: { placement: "fund_database_toolbar" },
               }}
-              className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+              className="hidden sm:inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
               <Mail className="h-3 w-3" />
               <span className="truncate">Contact research</span>
@@ -1228,15 +1367,32 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
         </div>
 
         {fundView === "managers" ? (
-          <ManagerGroupedTable sortedManagers={sortedManagers} onSelectFund={openFund} />
+          <ManagerGroupedTable
+            sortedManagers={sortedManagers}
+            onSelectFund={openFund}
+            sortField={sortField}
+            sortDirection={sortDirection}
+            onSort={changeSort}
+            page={page}
+            totalItems={filteredFunds.length}
+            onPageChange={changePage}
+          />
         ) : (
-          <AllFundsTable funds={filteredFunds} onSelectFund={openFund} />
+          <AllFundsTable
+            funds={filteredFunds}
+            onSelectFund={openFund}
+            sortField={sortField}
+            sortDirection={sortDirection}
+            onSort={changeSort}
+            page={page}
+            onPageChange={changePage}
+          />
         )}
       </div>
 
       <CTABlock />
 
-      {selectedFund && (
+      {selectedFund && detailState !== "unavailable" && (
         <FundDrawer
           fund={selectedFundDetail ?? fundDetailShell(selectedFund)}
           onClose={closeFund}

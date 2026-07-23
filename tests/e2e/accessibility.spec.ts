@@ -177,7 +177,7 @@ test("reduced-motion preference suppresses drawer animation", async ({ page }) =
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto(appPath("/tracker"));
   await page.getByRole("heading", { name: "Infrastructure Deal Tape", level: 1 }).waitFor();
-  await page.locator("tbody [data-row-trigger]").first().click();
+  await page.locator("tbody [data-deal-row-trigger]").first().click();
 
   const animationDurationMs = await page.getByRole("dialog").evaluate((element) => {
     const values = getComputedStyle(element).animationDuration.split(",");

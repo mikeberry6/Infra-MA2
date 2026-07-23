@@ -98,7 +98,7 @@ describe("useFreshDetail", () => {
 
     render(<Harness cache={cache} />);
     expect(screen.getByTestId("value")).toHaveTextContent("cached");
-    await waitFor(() => expect(screen.getByTestId("state")).toHaveTextContent("error"));
+    await waitFor(() => expect(screen.getByTestId("state")).toHaveTextContent("unavailable"));
     expect(screen.getByTestId("value")).toHaveTextContent("none");
     expect(cache.peek("record")).toBeUndefined();
   });

@@ -57,6 +57,8 @@ const detailRow = {
   enterpriseValue: "$1bn",
   equityValue: null,
   stake: "100%",
+  sellerDisclosureStatus: "DISCLOSED",
+  sellerDisclosureReason: "Seller identified in the primary announcement.",
   closingDate: null,
   assetScale: "1,000 route miles",
   valuationMultiple: null,
@@ -116,6 +118,8 @@ describe("deal query projections", () => {
       description: "Full deal description",
       enterpriseValue: "$1bn",
       keyHighlights: ["Scaled platform"],
+      sellerDisclosureStatus: "DISCLOSED",
+      sellerDisclosureReason: "Seller identified in the primary announcement.",
     });
   });
 
@@ -135,6 +139,8 @@ describe("deal query projections", () => {
       enterpriseValue: "$1bn",
       assetScale: "1,000 route miles",
       fundVehicle: "Infrastructure Fund V",
+      sellerDisclosureStatus: "DISCLOSED",
+      sellerDisclosureReason: "Seller identified in the primary announcement.",
     })]);
   });
 

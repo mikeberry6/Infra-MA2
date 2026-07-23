@@ -120,7 +120,7 @@ test.describe("anonymous database journeys", () => {
     await page.goto(appPath("/tracker"));
     await waitForApplication(page, "Infrastructure Deal Tape");
 
-    const row = page.locator("tbody [data-row-trigger]").first();
+    const row = page.locator("tbody [data-deal-row-trigger]").first();
     await row.focus();
     await row.press("Enter");
     const dialog = page.getByRole("dialog");
@@ -129,11 +129,67 @@ test.describe("anonymous database journeys", () => {
     await expectDrawerShellWithinBudget(page, "deal");
     await expect(page).toHaveURL(/focus=/);
     await expect(page.locator("body")).toHaveCSS("overflow", "hidden");
+    await expect(dialog.getByRole("status")).toBeHidden();
+    await expect(dialog.getByText(/^Last verified /)).toBeVisible();
+    expect(await dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
 
     await dialog.press("Escape");
     await expect(dialog).toBeHidden();
     await expect(page).not.toHaveURL(/focus=/);
     await expect(row).toBeFocused();
+
+    await row.press("Enter");
+    const focusedUrl = page.url();
+    await expect(page.getByRole("dialog")).toBeVisible();
+    await expectDrawerShellWithinBudget(page, "deal");
+    expect(await page.getByRole("dialog").getByRole("status").count()).toBe(0);
+    await page.reload();
+    await expect(page).toHaveURL(focusedUrl);
+    await expect(page.getByRole("dialog")).toBeVisible();
+  });
+
+  test("a failed lazy deal detail can be retried without blocking or closing the drawer", async ({ page }) => {
+    let attempts = 0;
+    await page.route("**/api/deals/*", async (route) => {
+      attempts += 1;
+      if (attempts === 1) {
+        await route.fulfill({
+          status: 503,
+          contentType: "application/json",
+          body: JSON.stringify({ error: "temporarily unavailable" }),
+        });
+        return;
+      }
+      await route.continue();
+    });
+    await page.goto(appPath("/tracker"));
+    await waitForApplication(page, "Infrastructure Deal Tape");
+
+    await page.locator("[data-deal-row-trigger]").first().click();
+    const dialog = page.getByRole("dialog");
+    await expect(dialog).toBeVisible();
+    await expectDrawerShellWithinBudget(page, "deal");
+    const alert = dialog.getByRole("alert");
+    await expect(alert).toContainText("Latest detail could not be loaded");
+    await alert.getByRole("button", { name: "Retry" }).click();
+    await expect(alert).toBeHidden();
+    await expect(dialog.getByText(/^Last verified /)).toBeVisible();
+    expect(attempts).toBe(2);
+  });
+
+  test("a terminal detail response removes the stale public drawer and focus URL", async ({ page }) => {
+    await page.route("**/api/deals/*", (route) => route.fulfill({
+      status: 404,
+      contentType: "application/json",
+      body: JSON.stringify({ error: "Deal not found" }),
+    }));
+    await page.goto(appPath("/tracker"));
+    await waitForApplication(page, "Infrastructure Deal Tape");
+
+    const trigger = page.locator("[data-deal-row-trigger]").first();
+    await trigger.click();
+    await expect(page.getByRole("dialog")).toBeHidden();
+    await expect(page).not.toHaveURL(/focus=/);
   });
 
   for (const database of [
@@ -170,6 +226,7 @@ test.describe("anonymous database journeys", () => {
       await expect(page.locator("body")).toHaveCSS("overflow", "hidden");
       await expect(dialog.getByRole("status")).toBeHidden();
       await expect(dialog.getByText(/^Last verified /)).toBeVisible();
+      expect(await dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
 
       await dialog.press("Escape");
       await expect(dialog).toBeHidden();
@@ -187,6 +244,13 @@ test.describe("anonymous database journeys", () => {
       await dialog.press("Escape");
       await expect(dialog).toBeHidden();
       await expect(row).toBeFocused();
+
+      await row.press("Enter");
+      const focusedUrl = page.url();
+      await expect(page.getByRole("dialog")).toBeVisible();
+      await page.reload();
+      await expect(page).toHaveURL(focusedUrl);
+      await expect(page.getByRole("dialog")).toBeVisible();
     });
   }
 

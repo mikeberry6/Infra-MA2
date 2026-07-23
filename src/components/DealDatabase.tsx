@@ -5,12 +5,13 @@ import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import { DEAL_SECTORS, NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
 import type { DealListItem, DealView, DatabaseCounts, RecordMeta } from "@/modules/shared/types";
-import { parseDealSortField, sortDeals, type DealSortField } from "@/modules/deals/sort";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import { track } from "@vercel/analytics";
-import { subscribeToDetailCacheInvalidation } from "@/lib/detail-cache-events";
 import { BoundedDetailCache } from "@/lib/detail-cache";
+import { useDetailCacheInvalidation } from "@/hooks/useDetailCacheInvalidation";
+import { useTrackDrawerOpen } from "@/hooks/useTrackDrawerOpen";
 import { useFreshDetail } from "@/hooks/useFreshDetail";
+import { useRouter } from "next/navigation";
 
 // ─── Buyer display shortening ──────────────────────────────
 // Purely cosmetic: shortens canonical fund/buyer names for compact table cells
@@ -161,6 +162,7 @@ import {
   ExternalLink,
   X,
   ChevronRight,
+  ArrowDown,
   ArrowUpDown,
   Download,
   Mail,
@@ -168,7 +170,13 @@ import {
 } from "lucide-react";
 import { DynamicInsightsHero } from "./DealDatabase/DynamicInsightsHero";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useUrlQueryParam, useUrlQueryState, useUrlQueryWriter, useUrlQueryParamsWriter } from "@/hooks/useUrlFilterSet";
+import {
+  useUrlFilterSet,
+  useUrlQueryParam,
+  useUrlQueryParamsWriter,
+  useUrlQueryState,
+  useUrlQueryWriter,
+} from "@/hooks/useUrlFilterSet";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
@@ -185,6 +193,17 @@ import { useDrawerShellTiming } from "@/hooks/useDrawerShellTiming";
 import { useCanExport } from "@/hooks/useCanExport";
 import { withBasePath } from "@/lib/base-path";
 import { markDrawerOpen } from "@/lib/drawer-performance";
+import {
+  clampDealPage,
+  DEAL_PAGE_SIZE,
+  defaultDirectionForDealSort,
+  parseDealPage,
+  parseDealSortDirection,
+  parseDealSortField,
+  sortDeals,
+  type DealSortDirection,
+  type DealSortField,
+} from "@/modules/deals/sort";
 
 // ─── Filters ────────────────────────────────────────────────
 const SECTORS: string[] = [...DEAL_SECTORS];
@@ -211,7 +230,7 @@ const REGIONS: string[] = [
   "Latin America",
 ];
 
-const DEAL_PAGE_SIZE = 25;
+const DEAL_RESULTS_HEADING_ID = "deal-results-heading";
 
 function EmailAccessLinks({ compact = false }: { compact?: boolean }) {
   const className = compact
@@ -220,7 +239,11 @@ function EmailAccessLinks({ compact = false }: { compact?: boolean }) {
 
   return (
     <div className="flex flex-wrap items-center justify-end gap-1">
-      <a href={withBasePath("/email-format/latest")} className={className} onClick={() => track("weekly_email_opened")}>
+      <a
+        href={withBasePath("/email-format/latest")}
+        className={className}
+        onClick={() => track("weekly_email_opened")}
+      >
         <Mail className="h-3 w-3" />
         <span className="truncate">Weekly email</span>
       </a>
@@ -284,33 +307,7 @@ function FilterBar({
   onToggleCategory: (c: string) => void;
   onClearAll: () => void;
 }) {
-  const activeCount = activeSectors.size + activeRegions.size + activeCategories.size;
-  const filterControls = (
-    <>
-      <MultiSelectDropdown
-        label="Sector"
-        options={SECTORS}
-        selected={activeSectors as Set<string>}
-        onToggle={onToggleSector}
-        getColor={(v) => getSectorColor(v)}
-      />
-      <MultiSelectDropdown
-        label="Region"
-        options={REGIONS}
-        selected={activeRegions as Set<string>}
-        onToggle={onToggleRegion}
-        getColor={(v) => getRegionColor(v)}
-      />
-      <MultiSelectDropdown
-        label="Type"
-        options={CATEGORIES}
-        selected={activeCategories as Set<string>}
-        onToggle={onToggleCategory}
-        getColor={(v) => getCategoryColor(v)}
-        align="right"
-      />
-    </>
-  );
+  const activeFilterCount = activeSectors.size + activeRegions.size + activeCategories.size;
 
   return (
     <div className="mb-3 space-y-3">
@@ -324,16 +321,79 @@ function FilterBar({
             aria-label="Search deals"
           />
         </div>
-        <div className="hidden items-center gap-2 md:flex">
-          <Divider orientation="vertical" />
-          {filterControls}
-        </div>
-        <MobileFilterSheet activeCount={activeCount}>
-          <div className="grid grid-cols-2 gap-3">{filterControls}</div>
-          {activeCount > 0 && (
-            <button type="button" onClick={onClearAll} className="type-meta font-medium text-[var(--accent)]">Clear all filters</button>
+
+        <MobileFilterSheet activeCount={activeFilterCount}>
+          <div className="space-y-3">
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Sector</span>
+              <MultiSelectDropdown
+                label="Sector"
+                options={SECTORS}
+                selected={activeSectors}
+                onToggle={onToggleSector}
+                getColor={getSectorColor}
+                align="right"
+              />
+            </div>
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Region</span>
+              <MultiSelectDropdown
+                label="Region"
+                options={REGIONS}
+                selected={activeRegions}
+                onToggle={onToggleRegion}
+                getColor={getRegionColor}
+                align="right"
+              />
+            </div>
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Type</span>
+              <MultiSelectDropdown
+                label="Type"
+                options={CATEGORIES}
+                selected={activeCategories}
+                onToggle={onToggleCategory}
+                getColor={getCategoryColor}
+                align="right"
+              />
+            </div>
+          </div>
+          {activeFilterCount > 0 && (
+            <button
+              type="button"
+              onClick={onClearAll}
+              className="inline-flex h-9 w-full items-center justify-center rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+            >
+              Clear all filters
+            </button>
           )}
         </MobileFilterSheet>
+
+        <div className="hidden min-w-0 flex-1 items-center gap-2 md:flex">
+          <Divider orientation="vertical" />
+          <MultiSelectDropdown
+            label="Sector"
+            options={SECTORS}
+            selected={activeSectors}
+            onToggle={onToggleSector}
+            getColor={getSectorColor}
+          />
+          <MultiSelectDropdown
+            label="Region"
+            options={REGIONS}
+            selected={activeRegions}
+            onToggle={onToggleRegion}
+            getColor={getRegionColor}
+          />
+          <MultiSelectDropdown
+            label="Type"
+            options={CATEGORIES}
+            selected={activeCategories}
+            onToggle={onToggleCategory}
+            getColor={getCategoryColor}
+            align="right"
+          />
+        </div>
       </div>
 
       <ActiveFiltersChips
@@ -359,7 +419,12 @@ function DealCard({
 }) {
   return (
     <button
-      onClick={() => onSelect(deal)}
+      type="button"
+      onClick={(event) => {
+        event.currentTarget.focus({ preventScroll: true });
+        onSelect(deal);
+      }}
+      aria-label={`Open details for ${deal.target}`}
       className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
     >
       <div className="flex items-start justify-between gap-3 mb-2">
@@ -406,68 +471,66 @@ function DealTableColGroup() {
   );
 }
 
-function DealTable({
-  filteredDeals,
-  onSelectDeal,
+function SortableDealHeader({
+  field,
+  label,
+  activeField,
+  direction,
+  onSort,
 }: {
-  filteredDeals: DealListItem[];
-  onSelectDeal: (deal: DealListItem) => void;
+  field: DealSortField;
+  label: string;
+  activeField: DealSortField;
+  direction: DealSortDirection;
+  onSort: (field: DealSortField) => void;
 }) {
-  const [sortParam] = useUrlQueryState("sort", "date");
-  const [direction, setDirection] = useUrlQueryState("direction", "desc", { resetPage: true });
-  const [pageParam, setPageParam] = useUrlQueryState("page", "1");
-  const writeQueryParams = useUrlQueryParamsWriter();
-  const sortField = parseDealSortField(sortParam);
-  const sortDir: "asc" | "desc" = direction === "asc" ? "asc" : "desc";
-  const page = Math.max(1, Number.parseInt(pageParam, 10) || 1);
-
-  const sorted = useMemo(
-    () => sortDeals(filteredDeals, sortField, sortDir),
-    [filteredDeals, sortField, sortDir],
-  );
-
-  const totalPages = Math.max(1, Math.ceil(sorted.length / DEAL_PAGE_SIZE));
-  const safePage = Math.min(page, totalPages);
-  const visibleDeals = useMemo(() => {
-    const start = (safePage - 1) * DEAL_PAGE_SIZE;
-    return sorted.slice(start, start + DEAL_PAGE_SIZE);
-  }, [sorted, safePage]);
-
-  function toggleSort(field: DealSortField) {
-    if (sortField === field) {
-      setDirection(sortDir === "desc" ? "asc" : "desc");
-      return;
-    }
-
-    const nextDirection = field === "date" ? "desc" : "asc";
-    writeQueryParams(
-      {
-        sort: field === "date" ? null : field,
-        direction: nextDirection === "desc" ? null : nextDirection,
-      },
-      { resetPage: true },
-    );
-  }
-
-  const SortHeader = ({ field, label }: { field: DealSortField; label: string }) => (
+  const active = field === activeField;
+  return (
     <th
-      aria-sort={sortField === field ? (sortDir === "asc" ? "ascending" : "descending") : "none"}
+      aria-sort={active ? (direction === "asc" ? "ascending" : "descending") : "none"}
       className="px-3 py-2 text-left"
     >
       <button
         type="button"
-        onClick={() => toggleSort(field)}
-        className="inline-flex items-center gap-1 type-table-header hover:text-[var(--text-primary)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
+        onClick={() => onSort(field)}
+        className="inline-flex items-center gap-1 type-table-header transition-colors hover:text-[var(--text-primary)] focus:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
       >
         {label}
         <ArrowUpDown
           aria-hidden
-          className={`h-2.5 w-2.5 transition-opacity ${sortField === field ? "opacity-100" : "opacity-45"}`}
+          className={`h-2.5 w-2.5 transition-opacity ${active ? "opacity-100" : "opacity-45"}`}
           strokeWidth={1.75}
         />
       </button>
     </th>
   );
+}
+
+function DealTable({
+  filteredDeals,
+  onSelectDeal,
+  sortField,
+  sortDirection,
+  onSort,
+  page,
+  onPageChange,
+}: {
+  filteredDeals: DealListItem[];
+  onSelectDeal: (deal: DealListItem) => void;
+  sortField: DealSortField;
+  sortDirection: DealSortDirection;
+  onSort: (field: DealSortField) => void;
+  page: number;
+  onPageChange: (page: number) => void;
+}) {
+  const sorted = useMemo(
+    () => sortDeals(filteredDeals, sortField, sortDirection),
+    [filteredDeals, sortDirection, sortField],
+  );
+  const visibleDeals = useMemo(() => {
+    const start = (page - 1) * DEAL_PAGE_SIZE;
+    return sorted.slice(start, start + DEAL_PAGE_SIZE);
+  }, [page, sorted]);
 
   return (
     <>
@@ -493,17 +556,22 @@ function DealTable({
 
       {/* Desktop table */}
       <div className="hidden lg:block">
-        <div className="overflow-x-auto">
+        <div
+          className="overflow-x-auto rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--accent)]"
+          role="region"
+          aria-label="Deal database results table"
+          tabIndex={0}
+        >
           <table className="w-full table-fixed border-collapse text-left">
             <DealTableColGroup />
             <thead className="sticky top-0 z-10">
               <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]/95 backdrop-blur-sm shadow-[0_1px_0_rgba(17,17,20,0.03)]">
-                <SortHeader field="date" label="Date" />
-                <SortHeader field="target" label="Target / Seller" />
-                <SortHeader field="buyer" label="Buyer" />
-                <SortHeader field="sector" label="Sector" />
-                <SortHeader field="region" label="Region" />
-                <SortHeader field="category" label="Category" />
+                <SortableDealHeader field="date" label="Date" activeField={sortField} direction={sortDirection} onSort={onSort} />
+                <SortableDealHeader field="target" label="Target / Seller" activeField={sortField} direction={sortDirection} onSort={onSort} />
+                <SortableDealHeader field="buyer" label="Buyer" activeField={sortField} direction={sortDirection} onSort={onSort} />
+                <SortableDealHeader field="sector" label="Sector" activeField={sortField} direction={sortDirection} onSort={onSort} />
+                <SortableDealHeader field="region" label="Region" activeField={sortField} direction={sortDirection} onSort={onSort} />
+                <SortableDealHeader field="category" label="Category" activeField={sortField} direction={sortDirection} onSort={onSort} />
                 <th className="text-left px-3 py-2 type-table-header">
                   Source
                 </th>
@@ -517,8 +585,9 @@ function DealTable({
                   <tr
                     key={deal.id}
                     onClick={(event) => {
-                      const trigger = event.currentTarget.querySelector<HTMLButtonElement>("[data-row-trigger]");
-                      trigger?.focus();
+                      if ((event.target as Element).closest("a,button")) return;
+                      const trigger = event.currentTarget.querySelector<HTMLButtonElement>("[data-deal-row-trigger]");
+                      trigger?.focus({ preventScroll: true });
                       onSelectDeal(deal);
                     }}
                     className="group cursor-pointer border-b border-[var(--border)] bg-[var(--bg-surface)] transition-colors last:border-b-0 hover:bg-[var(--bg-subtle)] focus-within:bg-[var(--bg-subtle)]"
@@ -531,9 +600,14 @@ function DealTable({
                     <td className="px-3 py-3 align-top">
                       <button
                         type="button"
-                        data-row-trigger
-                        aria-label={`Open ${deal.target} deal details`}
-                        className="flex w-full min-w-0 flex-col gap-0.5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
+                        data-deal-row-trigger
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          event.currentTarget.focus({ preventScroll: true });
+                          onSelectDeal(deal);
+                        }}
+                        aria-label={`Open details for ${deal.target}`}
+                        className="flex w-full min-w-0 flex-col gap-0.5 text-left focus:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
                       >
                         <span title={deal.target} className="block truncate type-row-title transition-colors group-hover:text-[var(--accent)]">
                           {deal.target}
@@ -575,7 +649,10 @@ function DealTable({
                           href={deal.sourceUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={(e) => { e.stopPropagation(); track("source_link_clicked", { entity: "deal", placement: "table" }); }}
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            track("source_link_clicked", { entity: "deal", placement: "table" });
+                          }}
                           className="inline-flex max-w-full items-center gap-1 type-micro transition-colors hover:text-[var(--text-primary)]"
                           title={deal.sourceName || deal.sourceUrl}
                         >
@@ -604,11 +681,11 @@ function DealTable({
       </div>
 
       <PaginationControls
-        page={safePage}
+        page={page}
         pageSize={DEAL_PAGE_SIZE}
         totalItems={sorted.length}
-        onPageChange={(next) => setPageParam(String(next))}
-        resultHeadingId="deal-results-heading"
+        onPageChange={onPageChange}
+        resultHeadingId={DEAL_RESULTS_HEADING_ID}
       />
     </>
   );
@@ -772,19 +849,43 @@ function DealDrawer({
         </div>
 
         {detailState !== "ready" && detailState !== "idle" && (
-          <div className={`mx-5 mt-4 rounded-md border px-3 py-2.5 type-meta lg:mx-7 ${detailState === "error" ? "border-red-300 bg-red-50 text-red-800" : "border-[var(--border)] bg-[var(--bg-subtle)] text-[var(--text-secondary)]"}`} role={detailState === "error" ? "alert" : "status"}>
-            {detailState === "loading" ? "Loading the latest verified detail…" : (
-              <div className="flex items-center justify-between gap-3">
-                <span>Latest detail could not be loaded. Showing the list record.</span>
-                {onRetry && <button type="button" onClick={onRetry} className="font-semibold underline underline-offset-2">Retry</button>}
-              </div>
-            )}
+          <div
+            className={`mx-5 mt-4 rounded-md border px-3 py-2.5 type-meta lg:mx-7 ${
+              detailState === "error"
+                ? "border-red-300 bg-red-50 text-red-800"
+                : "border-[var(--border)] bg-[var(--bg-subtle)] text-[var(--text-secondary)]"
+            }`}
+            role={detailState === "error" ? "alert" : "status"}
+          >
+            {detailState === "loading"
+              ? "Loading the latest verified detail…"
+              : (
+                <div className="flex items-center justify-between gap-3">
+                  <span>Latest detail could not be loaded. Showing the list record.</span>
+                  {onRetry && (
+                    <button
+                      type="button"
+                      onClick={onRetry}
+                      className="font-semibold underline underline-offset-2"
+                    >
+                      Retry
+                    </button>
+                  )}
+                </div>
+              )}
           </div>
         )}
         {detailMeta && (
           <div className="mx-5 mt-3 type-micro lg:mx-7">
-            Last verified <span className="mono tabular-nums text-[var(--text-secondary)]">{detailMeta.lastVerifiedAt ? formatDate(detailMeta.lastVerifiedAt) : "Not recorded"}</span>
-            {" · "}<span className="mono tabular-nums text-[var(--text-secondary)]">{detailMeta.sourceCount}</span> source{detailMeta.sourceCount === 1 ? "" : "s"}
+            Last verified{" "}
+            <span className="mono tabular-nums text-[var(--text-secondary)]">
+              {detailMeta.lastVerifiedAt ? formatDate(detailMeta.lastVerifiedAt) : "Not recorded"}
+            </span>
+            {" · "}
+            <span className="mono tabular-nums text-[var(--text-secondary)]">
+              {detailMeta.sourceCount}
+            </span>{" "}
+            source{detailMeta.sourceCount === 1 ? "" : "s"}
           </div>
         )}
 
@@ -930,22 +1031,27 @@ function DealDrawer({
 
 // ─── Main Component ─────────────────────────────────────────
 export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts: DatabaseCounts }) {
+  const router = useRouter();
   const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
+  const [rawSortField] = useUrlQueryState("sort", "date");
+  const [rawSortDirection] = useUrlQueryState("direction", "desc");
+  const [rawPage, setRawPage] = useUrlQueryState("page", "1");
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeRegions, toggleRegion] = useUrlFilterSet("region");
   const [activeCategories, toggleCategory] = useUrlFilterSet("category");
-  const [selectedDeal, setSelectedDeal] = useState<DealListItem | null>(null);
   const [detailRequest, setDetailRequest] = useState(0);
+  const invalidationRequest = useDetailCacheInvalidation("deal", dealDetailCache);
+  const focusId = useUrlQueryParam("focus");
+  const writeQueryParam = useUrlQueryWriter();
+  const writeQueryParams = useUrlQueryParamsWriter();
+  const canExport = useCanExport();
 
-  useEffect(() => subscribeToDetailCacheInvalidation("deal", () => {
-    dealDetailCache.clear();
-    setDetailRequest((value) => value + 1);
-  }), []);
-  // Emit analytics after the drawer shell commits so event delivery can never
-  // consume the click-to-shell performance budget.
-  useEffect(() => {
-    if (selectedDeal) track("drawer_opened", { entity: "deal" });
-  }, [selectedDeal]);
+  const sortField = parseDealSortField(rawSortField);
+  const sortDirection = parseDealSortDirection(rawSortDirection);
+  const selectedDeal = useMemo(
+    () => focusId ? deals.find((deal) => deal.legacyId === focusId) ?? null : null,
+    [deals, focusId],
+  );
   const {
     detail: selectedDealDetail,
     meta: detailMeta,
@@ -956,23 +1062,49 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
     requestUrl: selectedDeal
       ? withBasePath(`/api/deals/${encodeURIComponent(selectedDeal.legacyId)}`)
       : null,
-    requestVersion: detailRequest,
+    requestVersion: detailRequest + invalidationRequest,
   });
-  const writeQuery = useUrlQueryWriter();
-  const writeQueryParams = useUrlQueryParamsWriter();
-  const canExport = useCanExport();
+
+  useEffect(() => {
+    if (detailState !== "unavailable" || !selectedDeal) return;
+    writeQueryParam("focus", null, "replace");
+    router.refresh();
+  }, [detailState, router, selectedDeal, writeQueryParam]);
+
+  useTrackDrawerOpen("deal", selectedDeal?.legacyId);
 
   // Debounce search for performance
   const debouncedSearch = useDebounce(search, 300);
 
   const clearAllFilters = useCallback(() => {
-    writeQueryParams({
-      q: null,
-      sector: null,
-      region: null,
-      category: null,
-    }, { resetPage: true });
+    writeQueryParams(
+      { q: null, sector: null, region: null, category: null },
+      { history: "push", resetPage: true },
+    );
   }, [writeQueryParams]);
+
+  const openDeal = useCallback((deal: DealListItem) => {
+    markDrawerOpen("deal");
+    writeQueryParam("focus", deal.legacyId, "push");
+  }, [writeQueryParam]);
+
+  const closeDeal = useCallback(() => {
+    writeQueryParam("focus", null, "replace");
+  }, [writeQueryParam]);
+
+  const changeSort = useCallback((field: DealSortField) => {
+    const direction = field === sortField
+      ? (sortDirection === "asc" ? "desc" : "asc")
+      : defaultDirectionForDealSort(field);
+    writeQueryParams(
+      { sort: field, direction },
+      { history: "push", resetPage: true },
+    );
+  }, [sortDirection, sortField, writeQueryParams]);
+
+  const changePage = useCallback((page: number) => {
+    setRawPage(String(page));
+  }, [setRawPage]);
 
   const filteredDeals = useMemo(() => {
     return deals.filter((deal) => {
@@ -1005,6 +1137,14 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
     });
   }, [deals, debouncedSearch, activeSectors, activeRegions, activeCategories]);
 
+  const requestedPage = parseDealPage(rawPage);
+  const page = clampDealPage(requestedPage, filteredDeals.length);
+
+  useEffect(() => {
+    if (rawPage === String(page)) return;
+    writeQueryParam("page", page === 1 ? null : String(page), "replace");
+  }, [page, rawPage, writeQueryParam]);
+
   const headerMetrics = useMemo<IntelligenceMetric[]>(() => {
     const topSector = mostCommonLabel(filteredDeals.map((deal) => deal.sector));
     const topRegion = mostCommonLabel(filteredDeals.map((deal) => deal.region));
@@ -1020,8 +1160,8 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
       },
       {
         label: "Latest disclosure",
-        value: filteredDeals.length > 0 ? latestDealDateLabel(filteredDeals) : "N/A",
-        detail: filteredDeals.length > 0 ? "Most recent matching deal" : "No matching disclosure",
+        value: latestDealDateLabel(filteredDeals.length > 0 ? filteredDeals : deals),
+        detail: "Most recent matching deal",
         color: "#3b6cf2",
       },
       {
@@ -1039,52 +1179,14 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
     ];
   }, [filteredDeals, deals, activeSectors, activeRegions, activeCategories, debouncedSearch]);
 
-  // Close drawer if selected deal is filtered out
+  // The URL is authoritative: invalid or filtered-out focus values close the
+  // drawer and are removed without adding another history entry.
   useEffect(() => {
-    if (selectedDeal && !filteredDeals.find((d) => d.id === selectedDeal.id)) {
-      setSelectedDeal(null);
-      writeQuery("focus", null);
+    if (!focusId) return;
+    if (!selectedDeal || !filteredDeals.some((deal) => deal.id === selectedDeal.id)) {
+      closeDeal();
     }
-  }, [filteredDeals, selectedDeal, writeQuery]);
-
-  // Auto-open drawer when navigated here with `?focus=<legacyId>` (e.g. from
-  // the cross-database search page). Fires once per focus value.
-  const focusId = useUrlQueryParam("focus");
-  const openedFocus = useRef<string | null>(null);
-  useEffect(() => {
-    if (!focusId) {
-      if (openedFocus.current) setSelectedDeal(null);
-      openedFocus.current = null;
-      return;
-    }
-    if (openedFocus.current === focusId) return;
-    const match = deals.find((d) => d.legacyId === focusId);
-    if (match) {
-      // Manual opens set openedFocus before writing the URL, so this branch is
-      // reserved for direct/search/history focus navigation. Analytics is
-      // emitted by the post-commit effect above.
-      markDrawerOpen("deal");
-      setSelectedDeal(match);
-      openedFocus.current = focusId;
-      return;
-    }
-    setSelectedDeal(null);
-    openedFocus.current = null;
-    writeQuery("focus", null);
-  }, [focusId, deals, writeQuery]);
-
-  const openDeal = useCallback((deal: DealListItem) => {
-    markDrawerOpen("deal");
-    setSelectedDeal(deal);
-    openedFocus.current = deal.legacyId;
-    writeQuery("focus", deal.legacyId, "push");
-  }, [writeQuery]);
-
-  const closeDeal = useCallback(() => {
-    setSelectedDeal(null);
-    openedFocus.current = null;
-    writeQuery("focus", null);
-  }, [writeQuery]);
+  }, [closeDeal, filteredDeals, focusId, selectedDeal]);
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
@@ -1119,12 +1221,42 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
 
       <div className="surface overflow-hidden">
         <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-[var(--border)]">
-          <h2 id="deal-results-heading" tabIndex={-1} aria-label="Deal results" className="scroll-mt-20 type-micro outline-none">
+          <h2
+            id={DEAL_RESULTS_HEADING_ID}
+            tabIndex={-1}
+            className="type-micro scroll-mt-24 focus:outline-none"
+          >
+            <span className="sr-only">Deal results: </span>
             <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredDeals.length}</span>
             {" "}of{" "}
             <span className="mono text-[var(--text-secondary)] tabular-nums">{deals.length}</span> deals
           </h2>
           <div className="flex flex-wrap items-center justify-end gap-1">
+            <label htmlFor="deal-mobile-sort" className="sr-only">Sort deals</label>
+            <select
+              id="deal-mobile-sort"
+              value={sortField}
+              onChange={(event) => changeSort(parseDealSortField(event.target.value))}
+              className="h-7 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-2 type-micro text-[var(--text-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] lg:hidden"
+            >
+              <option value="date">Date</option>
+              <option value="target">Target</option>
+              <option value="buyer">Buyer</option>
+              <option value="sector">Sector</option>
+              <option value="region">Region</option>
+              <option value="category">Type</option>
+            </select>
+            <button
+              type="button"
+              onClick={() => changeSort(sortField)}
+              aria-label={`Sort ${sortDirection === "asc" ? "descending" : "ascending"}`}
+              className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--bg-surface)] text-[var(--text-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] lg:hidden"
+            >
+              <ArrowDown
+                className={`h-3 w-3 transition-transform ${sortDirection === "asc" ? "rotate-180" : ""}`}
+                strokeWidth={1.75}
+              />
+            </button>
             {canExport && (
               <a
                 href={withBasePath("/api/exports/deals")}
@@ -1140,12 +1272,20 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
           </div>
         </div>
 
-        <DealTable filteredDeals={filteredDeals} onSelectDeal={openDeal} />
+        <DealTable
+          filteredDeals={filteredDeals}
+          onSelectDeal={openDeal}
+          sortField={sortField}
+          sortDirection={sortDirection}
+          onSort={changeSort}
+          page={page}
+          onPageChange={changePage}
+        />
       </div>
 
       <CTABlock />
 
-      {selectedDeal && (
+      {selectedDeal && detailState !== "unavailable" && (
         <DealDrawer
           deal={selectedDealDetail ?? dealDetailShell(selectedDeal)}
           detailState={detailState}

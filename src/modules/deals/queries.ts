@@ -56,6 +56,8 @@ function toDealView(
     target: deal.target,
     buyer: buyers.join(" / ") || "N/A",
     seller: sellers.join(" / ") || "N/A",
+    sellerDisclosureStatus: deal.sellerDisclosureStatus,
+    sellerDisclosureReason: deal.sellerDisclosureReason,
     sector: DEAL_SECTOR_DISPLAY[deal.sector],
     subsector: deal.subsector,
     region: DEAL_REGION_DISPLAY[deal.region],
@@ -89,6 +91,7 @@ const DEAL_INCLUDE = {
   citations: {
     where: { isPrimary: true },
     include: { source: { select: { label: true, url: true } } },
+    orderBy: { id: "asc" as const },
     take: 1,
   },
 } as const;
@@ -107,6 +110,7 @@ const DEAL_LIST_SELECT = {
   citations: {
     where: { isPrimary: true },
     select: { source: { select: { label: true, url: true } } },
+    orderBy: { id: "asc" as const },
     take: 1,
   },
   participants: {

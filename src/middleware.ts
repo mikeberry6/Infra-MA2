@@ -7,6 +7,14 @@ import {
 } from "@/lib/server-log";
 import { hasUsableSignedAuthSnapshot } from "@/modules/auth/session";
 
+function privilegedNoStoreHeaders(requestId: string): Record<string, string> {
+  return {
+    "x-request-id": requestId,
+    "Cache-Control": "private, no-store",
+    Pragma: "no-cache",
+  };
+}
+
 function requestPathWithBasePath(request: NextRequest): string {
   const basePath = request.nextUrl.basePath || "";
   const path = `${request.nextUrl.pathname}${request.nextUrl.search}`;
@@ -58,7 +66,10 @@ export async function middleware(request: NextRequest) {
   const nextAuthSecret = process.env.NEXTAUTH_SECRET;
   if (!nextAuthSecret) {
     return logDecision(
-      NextResponse.json({ error: "Server misconfigured" }, { status: 500, headers: { "x-request-id": requestId } }),
+      NextResponse.json(
+        { error: "Server misconfigured" },
+        { status: 500, headers: privilegedNoStoreHeaders(requestId) },
+      ),
       "authorize_privileged_request",
       "configuration_error",
     );
@@ -75,20 +86,28 @@ export async function middleware(request: NextRequest) {
     loginUrl.pathname = "/login";
     loginUrl.searchParams.set("callbackUrl", requestPathWithBasePath(request));
     const response = NextResponse.redirect(loginUrl);
-    response.headers.set("x-request-id", requestId);
+    for (const [name, value] of Object.entries(privilegedNoStoreHeaders(requestId))) {
+      response.headers.set(name, value);
+    }
     return logDecision(response, "authorize_admin_page");
   }
 
   if (pathname.startsWith("/api/imports") && role !== "ADMIN") {
     return logDecision(
-      NextResponse.json({ error: "Forbidden" }, { status: 403, headers: { "x-request-id": requestId } }),
+      NextResponse.json(
+        { error: "Forbidden" },
+        { status: 403, headers: privilegedNoStoreHeaders(requestId) },
+      ),
       "authorize_import",
     );
   }
 
   if (pathname.startsWith("/api/exports") && role !== "ADMIN" && role !== "ANALYST") {
     return logDecision(
-      NextResponse.json({ error: "Forbidden" }, { status: 403, headers: { "x-request-id": requestId } }),
+      NextResponse.json(
+        { error: "Forbidden" },
+        { status: 403, headers: privilegedNoStoreHeaders(requestId) },
+      ),
       "authorize_export",
     );
   }

@@ -164,6 +164,41 @@ export function getSourceHostname(url: string): string {
   }
 }
 
+export interface FundSourceLink {
+  url: string;
+  hostname: string;
+  label: string;
+  isPrimary: boolean;
+}
+
+/** Keep the reviewed Fund primary source first and each public support URL once. */
+export function buildFundSourceLinks(
+  primarySourceUrl: string | null,
+  sourceUrls: string[],
+): FundSourceLink[] {
+  const links: FundSourceLink[] = [];
+  const seen = new Set<string>();
+
+  const append = (rawUrl: string, isPrimary: boolean) => {
+    const candidate = rawUrl.trim();
+    if (!isHttpUrl(candidate)) return;
+    const url = new URL(candidate).href;
+    if (seen.has(url)) return;
+    seen.add(url);
+    const supportingCount = links.filter((link) => !link.isPrimary).length + 1;
+    links.push({
+      url,
+      hostname: getSourceHostname(url),
+      label: isPrimary ? "Primary source" : `Supporting source ${supportingCount}`,
+      isPrimary,
+    });
+  };
+
+  if (primarySourceUrl) append(primarySourceUrl, true);
+  for (const sourceUrl of sourceUrls) append(sourceUrl, false);
+  return links;
+}
+
 function getUrlPath(url: string): string {
   try {
     return new URL(url).pathname.toLowerCase();

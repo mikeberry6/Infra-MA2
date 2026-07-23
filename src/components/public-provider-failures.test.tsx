@@ -14,8 +14,6 @@ vi.mock("next/navigation", () => ({
   usePathname: () => "/news",
 }));
 
-vi.mock("@vercel/analytics", () => ({ track: vi.fn() }));
-
 import { DashboardPage } from "@/components/dashboard/DashboardPage";
 import { NewsFeed } from "@/components/NewsFeed";
 
@@ -23,6 +21,7 @@ describe("public external-provider failure states", () => {
   afterEach(() => {
     window.history.replaceState({}, "", "/news");
   });
+
   it("distinguishes a failed news scan from a successful empty scan", () => {
     const feed: NewsFeedView = {
       items: [],
@@ -54,7 +53,9 @@ describe("public external-provider failure states", () => {
     expect(pipelineStatus).toHaveTextContent("42/50 attempts");
     expect(pipelineStatus).toHaveTextContent("200/1,434 entities · window 7/8 · Jul 22, 2026");
     expect(screen.getByRole("heading", { name: "The latest scan failed" })).toBeVisible();
-    expect(screen.queryByRole("heading", { name: "Scan completed with no qualifying signals" })).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", { name: "Scan completed with no qualifying signals" }),
+    ).not.toBeInTheDocument();
   });
 
   it("surfaces a failed dashboard provider above the data while retaining its health record", () => {
@@ -78,20 +79,18 @@ describe("public external-provider failure states", () => {
       },
       sections: [],
       allSeries: [],
-      sourceHealth: [
-        {
-          sourceId: "treasury",
-          sourceName: "U.S. Treasury",
-          status: "FAILED",
-          startedAt: "2026-07-22T10:00:00.000Z",
-          endedAt: "2026-07-22T10:00:05.000Z",
-          observationsFetched: 0,
-          observationsUpserted: 0,
-          signalsFetched: 0,
-          signalsUpserted: 0,
-          error: "Provider timed out after bounded retries",
-        },
-      ],
+      sourceHealth: [{
+        sourceId: "treasury",
+        sourceName: "U.S. Treasury",
+        status: "FAILED",
+        startedAt: "2026-07-22T10:00:00.000Z",
+        endedAt: "2026-07-22T10:00:05.000Z",
+        observationsFetched: 0,
+        observationsUpserted: 0,
+        signalsFetched: 0,
+        signalsUpserted: 0,
+        error: "Provider timed out after bounded retries",
+      }],
     };
 
     render(<DashboardPage view={view} />);
@@ -102,6 +101,9 @@ describe("public external-provider failure states", () => {
     expect(screen.getByText("Source coverage").nextElementSibling).toHaveTextContent("0/1");
 
     const sourceTable = screen.getByRole("table");
+    expect(
+      screen.getByRole("region", { name: "Dashboard source health table" }),
+    ).toContainElement(sourceTable);
     expect(within(sourceTable).getByText("U.S. Treasury")).toBeVisible();
     expect(within(sourceTable).getByText("failed")).toBeVisible();
     expect(within(sourceTable).getByText("Provider timed out after bounded retries")).toBeVisible();

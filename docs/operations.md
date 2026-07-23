@@ -1,5 +1,7 @@
 # InfraSight Operations Handbook
 
+Direct production mutation through Prisma Studio or ad hoc SQL is prohibited. Production changes must use audited application actions or a protected, hash-bound workflow so review evidence, release identity, and the resulting mutation remain attributable.
+
 ## Service inventory
 
 | Service | Production resource |
@@ -28,6 +30,7 @@ No workflow should infer a database target from a generic URL. `scripts/assert-d
 | `DATABASE_URL` | production workflows | Production pooled connection string |
 | `PRODUCTION_MIGRATION_DATABASE_URL` | protected production environment | Direct production connection used only by schema staging |
 | `VERCEL_TOKEN` | production environment | Token limited to the InfraSight Vercel project/team |
+| `VERCEL_AUTOMATION_BYPASS_SECRET` | protected production environment | Vercel automation-bypass secret used only as a same-origin request header while smoke-testing immutable deployment URLs |
 | `FRED_API_KEY`, `EIA_API_KEY`, `SAM_API_KEY` | pipeline workflows | Required dashboard provider API credentials |
 | `SEC_USER_AGENT` | pipeline workflows | Required SEC identity string with a monitored contact email |
 | `APIFY_TOKEN` | default-branch research dispatch | LinkedIn research candidate collection |
@@ -41,24 +44,23 @@ No workflow should infer a database target from a generic URL. `scripts/assert-d
 | `PRODUCTION_DATABASE_HOST` | Exact hostname parsed from production `DATABASE_URL` |
 | `PRODUCTION_DATABASE_NAME` | Exact production database name required by unattended write workflows |
 | `PRODUCTION_MIGRATION_DATABASE_HOST` | Exact hostname parsed from `PRODUCTION_MIGRATION_DATABASE_URL` |
-| `VERCEL_SCOPE` | `mberry` |
-| `VERCEL_TEAM_ID` | Optional immutable `team_...` identifier for team-owned projects; leave unset for a personal-account project |
+| `VERCEL_TEAM_ID` | Required immutable `team_...` identifier for the owning Vercel team |
 | `VERCEL_PROJECT_ID` | Immutable Vercel project ID for `infra-ma-2` (for example, `prj_...`), not the display name |
 | `PRODUCTION_URL` | Protected canonical origin `https://infra-ma-2.vercel.app`; never accept this from a workflow dispatcher |
 | `SEC_WATCHLIST_CIKS` | Optional comma-separated `CIK:Name` SEC dashboard watchlist override |
 | `DASHBOARD_WRITES_ENABLED` | Explicitly `false` during production schema staging and every dashboard cutover apply/rollback; `true` only after the post-cutover all-source dry-run artifact passes review |
 
-The validation and both production host variables must differ where Neon uses distinct pooled/direct endpoints; validation guards deny both production hosts. Every mutation workflow requires an exact database name as well as its expected host. `DATABASE_URL` is a repository Actions secret because unattended schedules require it. Keep `PRODUCTION_MIGRATION_DATABASE_URL` and `VERCEL_TOKEN` in the GitHub `production` environment with a required reviewer. Never expose production secrets to pull-request jobs.
+The validation and both production host variables must differ where Neon uses distinct pooled/direct endpoints; validation guards deny both production hosts. Every mutation workflow requires an exact database name as well as its expected host. `DATABASE_URL` is a repository Actions secret because unattended schedules require it. Keep `PRODUCTION_MIGRATION_DATABASE_URL`, `VERCEL_TOKEN`, and `VERCEL_AUTOMATION_BYPASS_SECRET` in the GitHub `Production` environment with a required reviewer, self-review prevention, and a custom deployment-branch policy whose only entry is `main`. The in-workflow ref check is defense in depth; the environment policy is what prevents a caller-selected feature-branch workflow from receiving its secrets. Never expose production secrets to pull-request jobs.
 
-Vercel Preview must use the validation database and preview-only NextAuth settings. Vercel Production must use the production database, canonical `NEXTAUTH_URL`, and a separate `NEXTAUTH_SECRET`. In NextAuth v4, `NEXTAUTH_URL` is the complete auth API endpoint, including the retained base path: `https://infra-ma-2.vercel.app/Infra-MA2/api/auth` in production and the equivalent preview origin in Preview. Preview and production must not share writable database credentials.
+Vercel Preview must use the validation database and preview-only NextAuth settings. Vercel Production must use the production database, canonical `NEXTAUTH_URL`, a separate `NEXTAUTH_SECRET`, and `NEXT_PUBLIC_SITE_URL=https://infra-ma-2.vercel.app` for canonical social metadata. In NextAuth v4, `NEXTAUTH_URL` is the complete auth API endpoint, including the retained base path: `https://infra-ma-2.vercel.app/Infra-MA2/api/auth` in production and the equivalent preview origin in Preview. Preview and production must not share writable database credentials.
 
-Public query caches are additionally scoped by a non-sensitive deployment identity. Vercel supplies that identity automatically; local or reusable-build validation may set `DATA_CACHE_NAMESPACE` to a safe label such as `validation-branch`. Never place a connection string, hostname containing credentials, token, or other secret in this value. Any process that reuses one built application against a different database must use a different namespace so persisted Next data-cache entries cannot cross targets.
+Public query caches are additionally scoped by a non-sensitive deployment identity. In Vercel project settings, enable **Automatically expose System Environment Variables** so `VERCEL_DEPLOYMENT_ID` is available during both build and runtime. If that cannot be enabled, set a unique `DATA_CACHE_NAMESPACE` for every deployment at both build and runtime. Local or reusable-build validation may use a safe label such as `validation-branch`. Never place a connection string, hostname containing credentials, token, or other secret in this value. Any process that reuses one built application against a different database must use a different namespace so persisted Next data-cache entries cannot cross targets.
 
 ## Release gate
 
 `.github/workflows/deploy.yml` has three jobs:
 
-1. `quality` runs locked installation, Prisma generation/validation, lint, application typecheck, operational-script/Prisma TypeScript typecheck, all Vitest tests, offline portfolio and weekly-email validation, production dependency audit, and a production build.
+1. `quality` runs locked installation, Prisma generation/validation, lint, application typecheck, operational-script/Prisma TypeScript typecheck, all Vitest tests, offline portfolio and weekly-email validation, both production-only and complete dependency audits, a production build, and the public JavaScript bundle budget.
 2. `validation` serializes access to the isolated Neon branch, proves the database target, deploys migrations, checks both migration status and schema drift, verifies data/source integrity, builds against the migrated schema, creates a validation-only administrator, and runs Playwright journeys, axe checks, responsive checks, keyboard behavior, and visual baselines. Migration logs and browser failure media are retained for 30 days.
 3. `build` is the stable branch-protection context. It succeeds only if both preceding jobs succeed.
 
@@ -82,6 +84,7 @@ npm run typecheck:scripts
 npm test
 npm run validate-portfolios
 npm run validate-weekly-email
+npm audit --audit-level=high
 npm run audit:prod
 npm run build
 npm run check:bundle-budget
@@ -96,6 +99,7 @@ Administrative deal, fund, company, user, source, audit, and dashboard-signal re
 Production schema staging, reviewed data remediation, promotion, rollback, and every scheduled or on-demand data-pipeline run are serialized by the repository-wide `production-release` concurrency group. Production mutation workflows are additionally protected by the GitHub `production` environment.
 
 - `scripts/verify-release-provenance.ts` requires the checkout and fetched `origin/main` to equal the requested full SHA, confirms through GitHub that `main` is protected and still points to that exact SHA, and accepts only a successful `build` check produced by the `github-actions` app.
+- `scripts/verify-rollback-provenance.ts` requires rollback tooling to equal fetched protected `main`, proves the requested rollback SHA is an ancestor of that head, and accepts only a successful exact-SHA `build` check produced by the `github-actions` app before any Vercel mutation.
 - **Stage Production Schema** binds two independently verified baselines: the SHA of the application currently serving the protected canonical production origin and the SHA whose migration names and checksums exactly match production's successfully applied migration ledger. Both must independently be ancestors of the release; the migration baseline may be newer than the still-live application after an earlier schema-first stage. The workflow requires `DASHBOARD_WRITES_ENABLED=false`, verifies the live Vercel project, repository, scope, and Git SHA, rechecks the live app and migration ledger immediately before writing, applies additive migrations, and proves the post-write ledger exactly matches the release. It emits reviewer-neutral, migration-timestamp-bound dashboard methodology and legacy-signal manifests but never applies them. Citation, Fund primary-source, duplicate, ownership-link, seller-disclosure, and dashboard outputs are backlog evidence, not implicit approval.
 - **Review or Remediate Release Data** separates reports from mutations. Apply and rollback operations require a committed `audits/approvals/*.json` artifact, its exact SHA-256, protected-environment approval, exact database/release/reviewer/reason targeting, and one explicit operation at a time. Dashboard cutover apply and rollback additionally require `DASHBOARD_WRITES_ENABLED=false`; they preserve `updatedAt`, verify every deterministic row precondition, record an `AuditEvent` in the same serializable transaction, and permit rollback only while the reviewed post-apply rows still match exactly.
 - **Promote Production Release** accepts only a ready staged production deployment supplied by its immutable Vercel URL, whose target is `production`, project and scope match protected configuration, GitHub source SHA and repository ID match the release, and health reports its 12-character prefix. It requires clean schema/data/source/pipeline gates, rechecks exact protected-main and candidate provenance immediately before promotion, and promotes the verified deployment ID rather than a mutable alias.
@@ -200,13 +204,7 @@ Drawer shell timing is a browser-only, payload-free performance measurement name
 
 Production dependencies must have zero unaccepted high or critical advisories. Do not run an unreviewed forced audit rewrite. Patch each path deliberately and record any development-only exception with package path, exploitability, owner, and review date.
 
-The remaining development-only exception is reviewed by Engineering no later than **2026-08-22**:
-
-| Package path | Severity | Why production is not exposed |
-| --- | --- | --- |
-| `exceljs@4.4.0` → `uuid@8.3.2` | Moderate | Offline workbook scripts only; ExcelJS calls UUID v4, while the advisory concerns caller-provided buffers in v3/v5/v6. |
-
-See [dependency-exceptions.md](./dependency-exceptions.md) for the full path, exploitability review, and resolution trigger. All previously reported high-severity development paths were patched individually; the production tree has no advisories.
+The current complete and production-only dependency trees have zero reported vulnerabilities. Patched transitive overrides and the zero-exception posture are recorded in [dependency-exceptions.md](./dependency-exceptions.md). Any future exception must be time-bounded and committed before it can be accepted by the release gate.
 
 ## Retention and workspace hygiene
 

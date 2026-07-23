@@ -6,6 +6,20 @@ import { track } from "@vercel/analytics";
 
 const URL_FILTER_CHANGE_EVENT = "infra:url-filter-change";
 
+type AnalyticsFilterName =
+  | "sector"
+  | "region"
+  | "category"
+  | "country"
+  | "firm"
+  | "year"
+  | "strategy"
+  | "status"
+  | "size"
+  | "entity"
+  | "source"
+  | "confidence";
+
 function readSearchParam(paramName: string, search?: string): string | null {
   if (typeof window === "undefined" && search === undefined) return null;
   return new URLSearchParams(search ?? window.location.search).get(paramName);
@@ -148,7 +162,7 @@ export function useUrlQueryParamsWriter() {
  * @returns [set, toggle, clear, setAll] — same shape as a useState wrapper.
  */
 export function useUrlFilterSet(
-  paramName: string,
+  paramName: AnalyticsFilterName,
 ): [Set<string>, (value: string) => void, () => void, (next: Set<string>) => void] {
   const router = useRouter();
   const pathname = usePathname();

@@ -348,6 +348,8 @@ test("configured administrator can complete the audited draft-to-publication jou
     await expect(row.getByRole("button", { name: "Delete", exact: true })).toHaveCount(0);
     archived = true;
     await expect.poll(async () => (await page.request.get(detailPath)).status()).toBe(404);
+    await page.goto(`${appPath("/tracker")}?q=${encodeURIComponent(target)}`);
+    await expect(page.getByText(target, { exact: true })).toHaveCount(0);
 
     await page.goto(appPath("/admin/audit"));
     await expectAuditEvent(page, canonicalId!, "ARCHIVE", email!);

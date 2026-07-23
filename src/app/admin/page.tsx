@@ -22,8 +22,8 @@ export default async function AdminDashboard() {
     { href: "/admin/deals", label: "Deals", count: counts.deals, drafts: draftDeals },
     { href: "/admin/companies", label: "Companies", count: counts.portfolio, drafts: draftCompanies },
     { href: "/admin/funds", label: "Funds", count: counts.funds, drafts: 0 },
-    { href: "/admin/sources", label: "Sources", count: 0, drafts: 0 },
     { href: "/admin/dashboard-signals", label: "Dashboard signals", count: pendingDashboardSignals, drafts: 0 },
+    { href: "/admin/sources", label: "Sources", count: 0, drafts: 0 },
     { href: "/admin/users", label: "Users", count: userCount, drafts: 0 },
     { href: "/admin/audit", label: "Audit log", count: auditCount, drafts: 0 },
   ];
@@ -34,7 +34,7 @@ export default async function AdminDashboard() {
         Admin
       </h1>
       <p className="text-xs sm:text-sm text-[var(--text-secondary)] mb-7">
-        Manage deals, companies, funds, sources, and users.
+        Manage deals, companies, funds, dashboard signals, sources, and users.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">

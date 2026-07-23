@@ -199,7 +199,9 @@ describe("database clear-all URL state", () => {
     window.history.replaceState({}, "", "/tracker");
     render(<DealDatabase deals={[deal]} counts={counts} />);
 
-    await userEvent.click(await screen.findByRole("button", { name: "Open GridCo deal details" }));
+    const rowTrigger = document.querySelector<HTMLButtonElement>("[data-deal-row-trigger]");
+    expect(rowTrigger).not.toBeNull();
+    await userEvent.click(rowTrigger!);
 
     await waitFor(() => expect(analytics.track.mock.calls.filter(
       ([name]) => name === "drawer_opened",

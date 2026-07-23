@@ -151,9 +151,9 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || "Import failed");
-      invalidateDetailCache(CACHE_ENTITY[entityType]);
       const imported = Number(result.imported) || 0;
       const unchanged = Number(result.unchanged) || 0;
+      if (imported > 0) invalidateDetailCache(CACHE_ENTITY[entityType]);
       setMessage({
         tone: "success",
         text: imported > 0

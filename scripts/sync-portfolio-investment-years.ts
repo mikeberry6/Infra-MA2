@@ -5,7 +5,9 @@ import { companies } from "../prisma/seed-data/companies";
 import type { PortCo, PortCoOwner } from "../prisma/seed-data/portco-types";
 import { resolveOrgName } from "../prisma/entity-resolution";
 import { assertMaintenanceMutationContext } from "../src/lib/database-target";
-import { withServerTask } from "../src/lib/server-log";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
+import { SafeOperationalError } from "../src/lib/safe-error";
 
 type DesiredOwnership = {
   companyName: string;
@@ -24,14 +26,12 @@ type PlannedUpdate = DesiredOwnership & {
 const apply = process.argv.includes("--apply");
 const connectionString = process.env.DATABASE_URL;
 
-if (!connectionString) {
-  console.error("DATABASE_URL is not set.");
-  process.exit(1);
-}
-const mutationContext = apply ? assertMaintenanceMutationContext() : undefined;
+let prisma: PrismaClient | null = null;
 
-const adapter = new PrismaPg({ connectionString });
-const prisma = new PrismaClient({ adapter });
+function database(): PrismaClient {
+  if (!prisma) throw new SafeOperationalError("database_url_required");
+  return prisma;
+}
 
 function ownersFor(company: PortCo): PortCoOwner[] {
   if (company.owners?.length) return company.owners;
@@ -90,6 +90,10 @@ function buildDesiredOwnerships() {
 }
 
 async function main() {
+  if (!connectionString) throw new SafeOperationalError("database_url_missing");
+  const mutationContext = apply ? assertMaintenanceMutationContext() : undefined;
+  prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
+
   const { desired, duplicates, conflicts } = buildDesiredOwnerships();
 
   if (conflicts.length) {
@@ -101,10 +105,10 @@ async function main() {
       );
     }
     if (conflicts.length > 25) console.error(`...and ${conflicts.length - 25} more`);
-    process.exit(1);
+    throw new Error("Portfolio investment-year validation failed.");
   }
 
-  const dbCompanies = await prisma.company.findMany({
+  const dbCompanies = await database().company.findMany({
     select: {
       id: true,
       name: true,
@@ -175,7 +179,7 @@ async function main() {
     return;
   }
 
-  await prisma.$transaction(async (tx) => {
+  await database().$transaction(async (tx) => {
     for (const update of planned) {
       await tx.ownershipPeriod.update({
         where: { id: update.ownershipPeriodId },
@@ -203,10 +207,20 @@ async function main() {
   console.log(`Applied ${planned.length} investment-year updates.`);
 }
 
-withServerTask({ task: "portfolio_investment_years", operation: "sync_investment_years" }, main)
+async function runTask() {
+  await runWithPreservedCleanup({
+    run: main,
+    cleanup: async () => {
+      await prisma?.$disconnect();
+    },
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "portfolio_investment_years_cleanup",
+      operation: "disconnect_database",
+    }, error),
+  });
+}
+
+withServerTask({ task: "portfolio_investment_years", operation: "sync_investment_years" }, runTask)
   .catch(() => {
     process.exitCode = 1;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
   });

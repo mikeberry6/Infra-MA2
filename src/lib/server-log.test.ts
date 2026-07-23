@@ -91,6 +91,39 @@ describe("server request logging", () => {
     expect(serialized).not.toMatch(/secret token|imported row|person@example|password|stack/i);
   });
 
+  it("records one operational failure when a compatibility response remains HTTP 200", async () => {
+    const info = vi.spyOn(console, "info").mockImplementation(() => undefined);
+    const errorLog = vi.spyOn(console, "error").mockImplementation(() => undefined);
+    const failure = new Error("private session details");
+
+    const response = await withServerOperation(
+      new Request("http://localhost/api/export-permission", {
+        headers: { "x-request-id": "permission-compat" },
+      }),
+      {
+        route: "/api/export-permission",
+        operation: "check_export_permission",
+      },
+      ({ markFailure }) => {
+        markFailure(failure);
+        return Response.json({ canExport: false });
+      },
+    );
+
+    expect(response.status).toBe(200);
+    expect(info).not.toHaveBeenCalled();
+    expect(errorLog).toHaveBeenCalledOnce();
+    expect(JSON.parse(String(errorLog.mock.calls[0][0]))).toEqual({
+      requestId: "permission-compat",
+      route: "/api/export-permission",
+      operation: "check_export_permission",
+      durationMs: expect.any(Number),
+      status: 500,
+      errorClassification: "internal_error",
+      errorMessage: "Server operation failed.",
+    });
+  });
+
   it("redacts query strings, unsafe labels, and arbitrary caller properties", () => {
     const errorLog = vi.spyOn(console, "error").mockImplementation(() => undefined);
 

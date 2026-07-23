@@ -113,8 +113,24 @@ export async function createImportPreviewToken(options: {
   items: Record<string, unknown>[];
   summary: ImportPreviewSummary;
 }): Promise<string> {
+  const now = new Date();
+  const expiredPreviews = await prisma.importPreview.findMany({
+    where: { expiresAt: { lte: now } },
+    select: { id: true },
+    orderBy: { expiresAt: "asc" },
+    take: 500,
+  });
+  if (expiredPreviews.length > 0) {
+    await prisma.importPreview.deleteMany({
+      where: {
+        id: { in: expiredPreviews.map(({ id }) => id) },
+        expiresAt: { lte: now },
+      },
+    });
+  }
+
   const id = randomUUID();
-  const expiresAt = new Date(Date.now() + TOKEN_TTL_MS);
+  const expiresAt = new Date(now.getTime() + TOKEN_TTL_MS);
   const claims: ImportPreviewClaims = {
     v: TOKEN_VERSION,
     id,
@@ -147,7 +163,7 @@ export async function consumeImportPreviewToken(options: {
   entityType: string;
   items: Record<string, unknown>[];
   summary: ImportPreviewSummary;
-}): Promise<void> {
+}, client: Pick<Prisma.TransactionClient, "importPreview"> = prisma): Promise<void> {
   if (!options.token) throw new ImportPreviewTokenError();
   const claims = parseToken(options.token);
   const payloadHash = hashImportPayload(options.items);
@@ -162,7 +178,7 @@ export async function consumeImportPreviewToken(options: {
     throw new ImportPreviewTokenError();
   }
 
-  const consumed = await prisma.importPreview.updateMany({
+  const consumed = await client.importPreview.updateMany({
     where: {
       id: claims.id,
       tokenHash: tokenHash(options.token),

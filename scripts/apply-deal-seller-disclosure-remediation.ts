@@ -19,7 +19,8 @@ import {
   assertMaintenanceMutationContext,
   type MaintenanceMutationContext,
 } from "../src/lib/database-target";
-import { withServerTask } from "../src/lib/server-log";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import {
   applyReviewedDealSellerDisclosureApproval,
   DEAL_SELLER_DISCLOSURE_APPROVAL_REPOSITORY_PATH,
@@ -117,7 +118,7 @@ async function main() {
     throw new Error("DATABASE_URL is required for deal seller-disclosure remediation");
   }
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
-  try {
+  const run = async () => {
     const result = await prisma.$transaction(
       (tx) => applyReviewedDealSellerDisclosureApproval(
         tx,
@@ -143,9 +144,15 @@ async function main() {
       targetDatabase: context.targetDatabase,
       ...result,
     }, null, 2));
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "deal_seller_disclosure_remediation",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
 withServerTask(

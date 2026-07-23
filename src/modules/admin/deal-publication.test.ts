@@ -20,11 +20,6 @@ vi.mock("@/modules/auth/guards", () => ({
 }));
 vi.mock("@/modules/operations/audit", () => ({ recordAuditEvent: mocks.recordAuditEvent }));
 vi.mock("@/lib/revalidation", () => ({ revalidateAppData: mocks.revalidate }));
-vi.mock("@/lib/server-request-context", () => ({
-  currentServerRequestId: vi.fn().mockResolvedValue("request-test"),
-}));
-vi.mock("@/lib/server-log", () => ({ logServerFailure: vi.fn() }));
-
 import { publishDeal } from "@/modules/admin/actions";
 
 const publishable = {

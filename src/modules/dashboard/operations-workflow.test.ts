@@ -40,6 +40,9 @@ describe("dashboard operational workflows", () => {
       expect(release).toContain(key);
     }
     expect(pipeline).toContain("DASHBOARD_WRITES_ENABLED");
+    for (const source of [pipeline, schemaStage, release]) {
+      expect(source).not.toContain("PHASE2_PIPELINES_ENABLED");
+    }
     expect(pipeline).toContain("run-with-retry.mjs --attempts=3 -- npm run dashboard:sync");
     expect(pipeline).toContain("--min-success-rate=0.95");
     expect(pipeline).toContain("npm run dashboard:sync:dry-run");
@@ -48,15 +51,29 @@ describe("dashboard operational workflows", () => {
     expect(release.match(/--require-full-window/g)).toHaveLength(2);
     expect(release).toContain("verify-vercel-deployment.ts");
     expect(release).toContain("--require-immutable-url");
-    expect(release).toContain('promote "$deployment_id"');
-    expect(release).toContain('--token "$VERCEL_TOKEN"');
+    expect(release).toContain("--operation=promote");
+    expect(release).toContain("VERCEL_TOKEN");
     for (const source of [release, rollback]) {
-      expect(source).toContain("vercel@51.7.0 link");
-      expect(source).toContain('--project "$EXPECTED_VERCEL_PROJECT_ID"');
-      expect(source).toContain("--transport=vercel-cli");
+      expect(source).toContain("scripts/mutate-vercel-production.ts");
+      expect(source).toContain('--project-id="$EXPECTED_VERCEL_PROJECT_ID"');
+      expect(source).toContain("--transport=vercel-bypass");
+      expect(source).toContain("VERCEL_AUTOMATION_BYPASS_SECRET");
     }
     expect(pipeline).toContain("group: production-release");
     expect(schemaStage).toContain("DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}");
+    expect(schemaStage).toContain(
+      "FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}",
+    );
+    expect(schemaStage).toContain(
+      "FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_DATABASE_HOST }}",
+    );
+    expect(schemaStage).toContain('test -n "$VERCEL_TEAM_ID"');
+    expect(release).toContain(
+      "FORBIDDEN_DATABASE_HOST_2: ${{ vars.MIGRATION_DATABASE_HOST }}",
+    );
+    expect(release).toContain("VERCEL_TEAM_ID");
+    expect(schemaStage).not.toContain("PHASE2_MIGRATION_DATABASE_HOST");
+    expect(release).not.toContain("PHASE2_MIGRATION_DATABASE_HOST");
     expect(schemaStage).toContain('if [ "$DASHBOARD_WRITES_ENABLED" != "false" ]');
     expect(schemaStage.indexOf('if [ "$DASHBOARD_WRITES_ENABLED" != "false" ]'))
       .toBeLessThan(schemaStage.indexOf("npm ci"));
@@ -204,12 +221,15 @@ describe("dashboard operational workflows", () => {
     expect(rollback).toContain("release_sha:");
     expect(rollback).toContain("verify-vercel-deployment.ts");
     expect(rollback).toContain("--require-immutable-url");
-    expect(rollback).toContain('rollback "$deployment_id"');
+    expect(rollback).toContain("--operation=rollback");
     expect(rollback).toContain("PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}");
-    expect(rollback).toContain("canonical-production-inspect.json");
     expect(rollback).toContain('--expected-sha="$ROLLBACK_SHA"');
-    expect(rollback).toContain('--expected-version="$ROLLBACK_SHA"');
-    expect(rollback).toContain("--transport=vercel-cli");
-    expect(rollback).not.toContain("vercel@51.7.0 inspect");
+    expect(rollback).toContain("--transport=vercel-bypass");
+    expect(rollback).toContain("--skip-health");
+    expect(rollback).toContain("--allow-legacy-root");
+    expect(rollback).toContain("--output=tmp/rollback/production-smoke.json");
+    expect(rollback.match(/--expected-version="\$ROLLBACK_SHA"/g) ?? []).toHaveLength(2);
+    expect(rollback).not.toMatch(/\b(?:npx\s+|node_modules\/\.bin\/)vercel\b/);
+    expect(rollback).toContain("scripts/verify-rollback-provenance.ts");
   });
 });

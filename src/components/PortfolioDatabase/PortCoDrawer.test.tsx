@@ -1,10 +1,11 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { cleanup, render, screen, within } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { PortCoDrawer } from "@/components/PortfolioDatabase/PortCoDrawer";
 import type { CompanyView, FundStrategyView } from "@/modules/shared/types";
+import { PortCoDrawer } from "./PortCoDrawer";
 
-vi.mock("@vercel/analytics", () => ({ track: vi.fn() }));
+const track = vi.hoisted(() => vi.fn());
+vi.mock("@vercel/analytics", () => ({ track }));
 
 const company: CompanyView = {
   id: "company-1",
@@ -55,7 +56,10 @@ const funds: FundStrategyView[] = [{
   strategies: ["Core-Plus", "Value-Add"],
 }];
 
-afterEach(() => cleanup());
+afterEach(() => {
+  cleanup();
+  document.body.style.overflow = "";
+});
 
 describe("PortCo scorecard contract", () => {
   it("preserves the ambient header, section order, investment fields, and management filter", () => {
@@ -136,6 +140,24 @@ describe("PortCo scorecard contract", () => {
     expect(timelineView.getByRole("button", { name: "Show less" })).toBeVisible();
   });
 
+  it("opens a busy live loading shell and retains the complete scorecard", () => {
+    render(
+      <PortCoDrawer
+        company={company}
+        funds={funds}
+        detailState="loading"
+        onClose={vi.fn()}
+      />,
+    );
+
+    expect(screen.getByRole("dialog", { name: "Northstar Fiber" })).toHaveAttribute(
+      "aria-busy",
+      "true",
+    );
+    expect(screen.getByRole("status")).toHaveTextContent("Loading the latest verified detail");
+    expect(screen.getByRole("heading", { name: "Investment Details" })).toBeVisible();
+  });
+
   it("keeps lazy-detail failure and retry inside the labelled dialog", async () => {
     const user = userEvent.setup();
     const retry = vi.fn();
@@ -150,10 +172,49 @@ describe("PortCo scorecard contract", () => {
     );
 
     const alert = screen.getByRole("alert");
-    expect(alert).toHaveTextContent("Latest detail could not be loaded. Showing the list record.");
+    expect(alert).toHaveTextContent(
+      "Latest detail could not be loaded. Showing the list record.",
+    );
     const retryButton = within(alert).getByRole("button", { name: "Retry" });
     expect(retryButton).toHaveClass("!text-[#FECACA]");
     await user.click(retryButton);
     expect(retry).toHaveBeenCalledOnce();
+  });
+
+  it("locks background scrolling and closes with Escape", () => {
+    const onClose = vi.fn();
+    render(<PortCoDrawer company={company} funds={funds} onClose={onClose} />);
+
+    expect(document.body.style.overflow).toBe("hidden");
+    fireEvent.keyDown(document, { key: "Escape" });
+    expect(onClose).toHaveBeenCalledOnce();
+  });
+
+  it("renders canonical provenance metadata and tracks source clicks without payload data", async () => {
+    const user = userEvent.setup();
+    track.mockReset();
+    render(
+      <PortCoDrawer
+        company={company}
+        funds={funds}
+        detailMeta={{
+          canonicalId: "company-1",
+          updatedAt: "2026-07-22T12:00:00.000Z",
+          lastVerifiedAt: "2026-07-21T12:00:00.000Z",
+          sourceCount: 1,
+        }}
+        onClose={vi.fn()}
+      />,
+    );
+
+    expect(screen.getByText(/Last verified/).parentElement).toHaveTextContent(
+      "Last verified Jul 21, 2026 · 1 source",
+    );
+    await user.click(screen.getByRole("link", { name: "Company profile" }));
+    expect(track).toHaveBeenCalledWith("source_link_clicked", {
+      entity: "company",
+      placement: "drawer",
+    });
+    expect(JSON.stringify(track.mock.calls)).not.toContain("company-1");
   });
 });

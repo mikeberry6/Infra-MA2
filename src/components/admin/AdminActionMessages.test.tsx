@@ -4,8 +4,6 @@ import { describe, expect, it, vi } from "vitest";
 import ArchiveButton from "./ArchiveButton";
 import RecordWorkflowButton from "./RecordWorkflowButton";
 
-vi.mock("@/lib/detail-cache-events", () => ({ invalidateDetailCache: vi.fn() }));
-
 describe("admin action messages", () => {
   it("keeps an archive failure visible in the shared alert treatment", async () => {
     const archive = vi.fn().mockResolvedValue({

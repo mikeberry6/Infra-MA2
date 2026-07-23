@@ -6,7 +6,7 @@ const mocks = vi.hoisted(() => ({
   getCompanyByFocusId: vi.fn(),
   dealFindUnique: vi.fn(),
   fundFindUnique: vi.fn(),
-  companyFindMany: vi.fn(),
+  companyFindUnique: vi.fn(),
 }));
 
 vi.mock("@/modules/deals/queries", () => ({ getDealById: mocks.getDealById }));
@@ -16,7 +16,7 @@ vi.mock("@/lib/prisma", () => ({
   prisma: {
     deal: { findUnique: mocks.dealFindUnique },
     fund: { findUnique: mocks.fundFindUnique },
-    company: { findMany: mocks.companyFindMany },
+    company: { findUnique: mocks.companyFindUnique },
   },
 }));
 
@@ -113,28 +113,18 @@ describe("published detail API envelopes", () => {
     expect(draft.status).toBe(404);
   });
 
-  it("aggregates canonical company metadata across redirected or deduplicated rows", async () => {
+  it("uses only canonical company metadata when resolving a retired deep link", async () => {
     mocks.getCompanyByFocusId.mockResolvedValue({
       id: "company-canonical",
       focusIds: ["company-old", "company-canonical"],
       name: "Company",
     });
-    mocks.companyFindMany.mockResolvedValue([
-      {
-        id: "company-old",
-        status: "ARCHIVED",
-        updatedAt: new Date("2026-07-20T12:00:00.000Z"),
-        lastVerifiedAt: new Date("2026-07-18T12:00:00.000Z"),
-        _count: { citations: 1 },
-      },
-      {
-        id: "company-canonical",
-        status: "PUBLISHED",
-        updatedAt: new Date("2026-07-22T12:00:00.000Z"),
-        lastVerifiedAt: new Date("2026-07-21T12:00:00.000Z"),
-        _count: { citations: 3 },
-      },
-    ]);
+    mocks.companyFindUnique.mockResolvedValue({
+      status: "PUBLISHED",
+      updatedAt: new Date("2026-07-22T12:00:00.000Z"),
+      lastVerifiedAt: new Date("2026-07-21T12:00:00.000Z"),
+      _count: { citations: 3 },
+    });
 
     const response = await getCompanyDetail(
       new Request("http://localhost/api/portfolio/company-old"),
@@ -146,10 +136,10 @@ describe("published detail API envelopes", () => {
       canonicalId: "company-canonical",
       updatedAt: "2026-07-22T12:00:00.000Z",
       lastVerifiedAt: "2026-07-21T12:00:00.000Z",
-      sourceCount: 4,
+      sourceCount: 3,
     });
-    expect(mocks.companyFindMany).toHaveBeenCalledWith(expect.objectContaining({
-      where: { id: { in: ["company-old", "company-canonical"] } },
+    expect(mocks.companyFindUnique).toHaveBeenCalledWith(expect.objectContaining({
+      where: { id: "company-canonical" },
     }));
   });
 
@@ -159,22 +149,12 @@ describe("published detail API envelopes", () => {
       focusIds: ["company-old", "company-canonical"],
       name: "Stale cached company",
     });
-    mocks.companyFindMany.mockResolvedValue([
-      {
-        id: "company-old",
-        status: "ARCHIVED",
-        updatedAt: new Date("2026-07-20T12:00:00.000Z"),
-        lastVerifiedAt: null,
-        _count: { citations: 1 },
-      },
-      {
-        id: "company-canonical",
-        status: "ARCHIVED",
-        updatedAt: new Date("2026-07-22T12:00:00.000Z"),
-        lastVerifiedAt: null,
-        _count: { citations: 2 },
-      },
-    ]);
+    mocks.companyFindUnique.mockResolvedValue({
+      status: "ARCHIVED",
+      updatedAt: new Date("2026-07-22T12:00:00.000Z"),
+      lastVerifiedAt: null,
+      _count: { citations: 2 },
+    });
 
     const response = await getCompanyDetail(
       new Request("http://localhost/api/portfolio/company-old"),
@@ -195,7 +175,28 @@ describe("published detail API envelopes", () => {
     );
 
     expect(response.status).toBe(404);
-    expect(mocks.companyFindMany).not.toHaveBeenCalled();
+    expect(mocks.companyFindUnique).not.toHaveBeenCalled();
+  });
+
+  it.each([
+    ["deal", getDealDetail, mocks.getDealById, mocks.dealFindUnique, { legacyId: "missing" }],
+    ["fund", getFundDetail, mocks.getFundById, mocks.fundFindUnique, { legacyId: "missing" }],
+  ] as const)("does not query %s metadata when no published detail resolves", async (
+    _entity,
+    handler,
+    detailQuery,
+    metaQuery,
+    params,
+  ) => {
+    detailQuery.mockResolvedValue(null);
+
+    const response = await handler(
+      new Request("http://localhost/api/detail/missing"),
+      { params: Promise.resolve(params) } as never,
+    );
+
+    expect(response.status).toBe(404);
+    expect(metaQuery).not.toHaveBeenCalled();
   });
 
   it.each([

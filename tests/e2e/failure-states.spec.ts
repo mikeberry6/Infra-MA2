@@ -9,7 +9,7 @@ test.describe("public failure and retry journeys", () => {
       path: "/tracker",
       heading: "Infrastructure Deal Tape",
       apiPattern: "**/api/deals/*",
-      row: "tbody [data-row-trigger]",
+      row: "tbody [data-deal-row-trigger]",
     },
     {
       path: "/funds",

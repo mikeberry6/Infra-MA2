@@ -4,7 +4,8 @@ import path from "path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { formatSafeErrorSummary } from "../src/lib/safe-error";
-import { withServerTask } from "../src/lib/server-log";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { ACTIVE_DASHBOARD_METRICS, DASHBOARD_METRICS } from "../src/modules/dashboard/catalog";
 import {
   DASHBOARD_SOURCE_REGISTRY,
@@ -99,7 +100,8 @@ async function main() {
 
   if (process.env.DATABASE_URL) {
     const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL }) });
-    try {
+    const run = async () => {
+      try {
       const activeIds = ACTIVE_DASHBOARD_METRICS.map((metric) => metric.id);
       const activeMetricSources = ACTIVE_DASHBOARD_METRICS.map((metric) => ({
         metricId: metric.id,
@@ -241,14 +243,21 @@ async function main() {
           .filter((signal) => !isPublicDashboardSignal(signal))
           .map((signal) => `${signal.signalKey} (${signal.id})`),
       };
-    } catch (error) {
-      summary.database = {
-        available: false,
-        error: formatSafeErrorSummary(error),
-      };
-    } finally {
-      await prisma.$disconnect();
-    }
+      } catch (error) {
+        summary.database = {
+          available: false,
+          error: formatSafeErrorSummary(error),
+        };
+      }
+    };
+    await runWithPreservedCleanup({
+      run,
+      cleanup: () => prisma.$disconnect(),
+      onSuppressedCleanupError: (error) => logServerFailure({
+        task: "dashboard_verification",
+        operation: "disconnect_database",
+      }, error),
+    });
   } else {
     summary.database = {
       available: false,
