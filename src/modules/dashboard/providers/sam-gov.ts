@@ -1,4 +1,8 @@
 import { DASHBOARD_SOURCES } from "@/modules/dashboard/catalog";
+import {
+  DASHBOARD_METHODOLOGY_VERSIONS,
+  SAM_GOV_METHODOLOGY_PAGE_SIZE,
+} from "@/modules/dashboard/methodology-cutover";
 import type {
   DashboardProvider,
   DashboardProviderResult,
@@ -43,7 +47,7 @@ const TITLE_KEYWORDS = [
   "renewable",
   "data center",
 ] as const;
-const PAGE_SIZE = 1_000;
+const PAGE_SIZE = SAM_GOV_METHODOLOGY_PAGE_SIZE;
 const MAX_PAGES_PER_KEYWORD = 5;
 // SAM.gov public API ptype codes for pre-solicitation, sources sought,
 // solicitation, combined synopsis/solicitation, and intent to bundle.
@@ -65,10 +69,23 @@ export function samGovProvider(
 
       for (const keyword of TITLE_KEYWORDS) {
         let total = 0;
+        const seenPageOpportunityIds = new Set<string>();
         for (let page = 0; page < MAX_PAGES_PER_KEYWORD; page += 1) {
-          const response = await fetchSamPage(apiKey, keyword, startDate, endDate, page);
-          const pageResult = validatedSamPage(response, keyword, page);
+          // Despite the parameter name, SAM.gov's live v2 search contract uses
+          // a zero-based page index here (0, 1, 2), not a record displacement.
+          const offset = page;
+          const response = await fetchSamPage(apiKey, keyword, startDate, endDate, offset);
+          const pageResult = validatedSamPage(response, keyword, page, offset);
           total = pageResult.totalRecords;
+          const pageOpportunityIds = pageResult.opportunities.map(samOpportunityIdentity);
+          if (
+            page > 0
+            && pageOpportunityIds.length > 0
+            && pageOpportunityIds.every((id) => seenPageOpportunityIds.has(id))
+          ) {
+            throw new Error(`SAM.gov title query "${keyword}" repeated a page without advancing beyond offset ${offset}.`);
+          }
+          for (const id of pageOpportunityIds) seenPageOpportunityIds.add(id);
           for (const item of pageResult.opportunities) {
             // The public API documents `status` as not yet implemented, so the
             // server query is narrowed by ptype and the active flag is enforced
@@ -116,11 +133,14 @@ export function samGovProvider(
           observation("sam_opportunities", DASHBOARD_SOURCES.samGov.id, endDate, matched.length, {
             unit: "count",
             metadata: {
+              methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.samGovOpportunities,
               lookbackDays: 7,
               titleKeywords: TITLE_KEYWORDS,
               procurementTypes: PROCUREMENT_TYPES,
               activeOnly: true,
               deduplicated: true,
+              pagination: "offset",
+              pageSize: PAGE_SIZE,
             },
           }),
         ],
@@ -135,6 +155,7 @@ function validatedSamPage(
   response: SamResponse,
   keyword: string,
   page: number,
+  expectedOffset: number,
 ): { totalRecords: number; opportunities: SamOpportunity[] } {
   const totalRecords = response.totalRecords;
   if (typeof totalRecords !== "number" || !Number.isInteger(totalRecords) || totalRecords < 0) {
@@ -149,7 +170,24 @@ function validatedSamPage(
   if (response.opportunitiesData.some((item) => typeof item.active !== "string")) {
     throw new Error(`SAM.gov title query "${keyword}" returned a record without an active flag on page ${page}.`);
   }
+  if (
+    response.offset !== undefined
+    && (!Number.isInteger(response.offset) || response.offset !== expectedOffset)
+  ) {
+    throw new Error(`SAM.gov title query "${keyword}" echoed a non-advancing offset on page ${page}.`);
+  }
   return { totalRecords, opportunities: response.opportunitiesData };
+}
+
+function samOpportunityIdentity(item: SamOpportunity): string {
+  const noticeId = item.noticeId?.trim();
+  if (noticeId) return `notice:${noticeId}`;
+  return [
+    "fallback",
+    item.solicitationNumber?.trim() ?? "",
+    item.postedDate?.trim() ?? "",
+    item.title?.trim() ?? "",
+  ].join(":");
 }
 
 async function fetchSamPage(

@@ -19,7 +19,7 @@ export const metadata = { title: "Admin · Edit Company" };
 export default async function EditCompanyPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
 
-  const company = await prisma.company.findUnique({
+  const company = await prisma.company.findFirst({
     where: { id },
     include: {
       ownershipPeriods: {
@@ -33,6 +33,10 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
           },
         },
         orderBy: { createdAt: "desc" },
+      },
+      citations: {
+        include: { source: { select: { label: true, url: true } } },
+        orderBy: [{ isPrimary: "desc" }, { id: "asc" }],
       },
     },
   });
@@ -50,6 +54,7 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
     primaryOwnership?.fund?.fundName ||
     "";
   const investmentYear = primaryOwnership?.investmentYear || undefined;
+  const primaryCitation = company.citations.find((citation) => citation.isPrimary) ?? company.citations[0];
 
   const initialData: Partial<CompanyView> = {
     id: company.id,
@@ -66,6 +71,7 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
     yearFounded: company.yearFounded || undefined,
     investmentYear,
     headquarters: company.headquarters || undefined,
+    sources: primaryCitation ? [{ label: primaryCitation.source.label, url: primaryCitation.source.url }] : undefined,
   };
 
   const boundUpdate = updateCompany.bind(null, id);

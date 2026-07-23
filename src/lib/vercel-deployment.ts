@@ -8,6 +8,21 @@ export type VerifiedVercelDeployment = {
   githubRepositoryId: string;
 };
 
+export function vercelDeploymentApiUrl(reference: string, teamId: string): string {
+  if (!reference || !/^dpl_[A-Za-z0-9]+$/.test(reference) && !/^[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$/.test(reference)) {
+    throw new Error("Vercel deployment reference is invalid.");
+  }
+  if (!/^team_[A-Za-z0-9]+$/.test(teamId)) {
+    throw new Error("Vercel team ID must be an immutable team_ identifier.");
+  }
+
+  const endpoint = new URL(
+    `https://api.vercel.com/v13/deployments/${encodeURIComponent(reference)}`,
+  );
+  endpoint.searchParams.set("teamId", teamId);
+  return endpoint.toString();
+}
+
 function record(value: unknown): Record<string, unknown> {
   if (!value || typeof value !== "object" || Array.isArray(value)) {
     throw new Error("Vercel returned an invalid deployment payload.");

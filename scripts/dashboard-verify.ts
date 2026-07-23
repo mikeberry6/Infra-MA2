@@ -3,6 +3,7 @@ import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
+import { formatSafeErrorSummary, reportSafeScriptError } from "../src/lib/safe-error";
 import { ACTIVE_DASHBOARD_METRICS, DASHBOARD_METRICS } from "../src/modules/dashboard/catalog";
 import {
   DASHBOARD_SOURCE_REGISTRY,
@@ -242,7 +243,7 @@ async function main() {
     } catch (error) {
       summary.database = {
         available: false,
-        error: error instanceof Error ? error.message : String(error),
+        error: formatSafeErrorSummary(error),
       };
     } finally {
       await prisma.$disconnect();
@@ -257,6 +258,7 @@ async function main() {
   await mkdir("tmp", { recursive: true });
   const outPath = path.join("tmp", "dashboard-verify-summary.json");
   await writeFile(outPath, `${JSON.stringify(summary, null, 2)}\n`);
+  console.log("Dashboard verification completed; review tmp/dashboard-verify-summary.json.");
 
   if (summary.catalog.duplicateMetricIds.length > 0) {
     throw new Error(`Duplicate dashboard metric ids: ${summary.catalog.duplicateMetricIds.join(", ")}`);
@@ -281,16 +283,9 @@ async function main() {
     if (incomplete.length > 0) throw new Error(`Dashboard active-source gate failed: ${incomplete.join("; ")}`);
   }
 
-  console.log(`Dashboard verification complete. Empty-data stance ${summary.emptyView.stance} (${summary.emptyView.score}/100).`);
-  console.log(`Catalog metrics: ${summary.catalog.activeMetrics} active / ${summary.catalog.metrics} total; summary written to ${outPath}`);
-  if (summary.database?.available) {
-    console.log(`Database rows: ${summary.database.metricDefinitions} definitions, ${summary.database.observations} observations, ${summary.database.signals} signals, ${summary.database.sourceRuns} source runs.`);
-  } else {
-    console.log(`Database check skipped/failed: ${summary.database?.error}`);
-  }
 }
 
 main().catch((error) => {
-  console.error(error);
+  reportSafeScriptError("dashboard_verification", error);
   process.exitCode = 1;
 });

@@ -39,6 +39,8 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
   const [investmentFirm, setInvestmentFirm] = useState(initialData?.investmentFirm ?? "");
   const [ownershipVehicle, setOwnershipVehicle] = useState(initialData?.ownershipVehicle ?? "");
   const [countryTags, setCountryTags] = useState((initialData?.countryTags ?? []).join(", "));
+  const [sourceName, setSourceName] = useState(initialData?.sources?.[0]?.label ?? "");
+  const [sourceUrl, setSourceUrl] = useState(initialData?.sources?.[0]?.url ?? "");
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -59,6 +61,8 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
     formData.set("investmentFirm", investmentFirm);
     formData.set("ownershipVehicle", ownershipVehicle);
     formData.set("countryTags", countryTags);
+    formData.set("sourceName", sourceName);
+    formData.set("sourceUrl", sourceUrl);
 
     startTransition(async () => {
       const result = await action(formData);
@@ -248,6 +252,27 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
       </div>
 
       {/* Description */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label className={labelClass}>Primary Source Name</label>
+          <input
+            type="text"
+            value={sourceName}
+            onChange={(event) => setSourceName(event.target.value)}
+            className={inputClass}
+          />
+        </div>
+        <div>
+          <label className={labelClass}>Primary Source URL</label>
+          <input
+            type="url"
+            value={sourceUrl}
+            onChange={(event) => setSourceUrl(event.target.value)}
+            className={inputClass}
+          />
+        </div>
+      </div>
+
       <div>
         <label className={labelClass}>Description</label>
         <textarea

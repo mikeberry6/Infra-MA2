@@ -1,5 +1,6 @@
 import "dotenv/config";
 import { assertNonProductionSeedTarget } from "../src/lib/database-target";
+import { reportSafeScriptError } from "../src/lib/safe-error";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { deals } from "./seed-data/deals";
@@ -301,7 +302,7 @@ async function main() {
         });
         if (existing) companyIdMap.set(companyKey, existing.id);
       } else {
-        console.warn(`  ⚠ Error creating company ${pc.name}: ${err.message}`);
+        reportSafeScriptError("database_seed:create_company", err);
       }
     }
   }
@@ -352,7 +353,7 @@ async function main() {
       ownershipCount++;
     } catch (err: any) {
       if (err.code !== "P2002") {
-        console.warn(`  ⚠ Error creating ownership for company ${companyId}: ${err.message}`);
+        reportSafeScriptError("database_seed:create_ownership", err);
       }
     }
   }
@@ -507,7 +508,12 @@ async function main() {
         valuationMultiple: deal.valuationMultiple,
         fundVehicle: deal.fundVehicle,
         keyHighlights: deal.keyHighlights || [],
-        status: "PUBLISHED",
+        sellerDisclosureStatus: splitParticipants(deal.seller).length > 0
+          ? "DISCLOSED"
+          : "LEGACY_UNREVIEWED",
+        // Publication requires a traceable source. Source-less seed records
+        // remain reviewable in admin but never enter the public database.
+        status: deal.sourceUrl ? "PUBLISHED" : "DRAFT",
       },
     });
 
@@ -525,6 +531,7 @@ async function main() {
   for (const deal of deals) {
     const dealId = dealIdMap.get(deal.id);
     if (!dealId) continue;
+    const persistedDealId = dealId;
 
     // Helper to create participants
     async function addParticipant(name: string, role: ParticipantRole, displayName?: string) {
@@ -546,7 +553,7 @@ async function main() {
         try {
           await prisma.dealParticipant.create({
             data: {
-              dealId,
+              dealId: persistedDealId,
               organizationId: org.id,
               role,
               displayName: displayName || null,
@@ -554,7 +561,9 @@ async function main() {
           });
           participantCount++;
         } catch (err: any) {
-          if (err.code !== "P2002") console.warn(`  ⚠ Participant error: ${err.message}`);
+          if (err.code !== "P2002") {
+            reportSafeScriptError("database_seed:create_deal_participant", err);
+          }
         }
         return;
       }
@@ -562,7 +571,7 @@ async function main() {
       try {
         await prisma.dealParticipant.create({
           data: {
-            dealId,
+            dealId: persistedDealId,
             organizationId: orgId,
             role,
             displayName: displayName || null,
@@ -570,7 +579,9 @@ async function main() {
         });
         participantCount++;
       } catch (err: any) {
-        if (err.code !== "P2002") console.warn(`  ⚠ Participant error: ${err.message}`);
+        if (err.code !== "P2002") {
+          reportSafeScriptError("database_seed:create_deal_participant", err);
+        }
       }
     }
 
@@ -667,7 +678,7 @@ async function main() {
     const sourceId = await getOrCreateSource(deal.sourceUrl, deal.sourceName || "", "ARTICLE");
     try {
       await prisma.citation.create({
-        data: { sourceId, dealId },
+        data: { sourceId, dealId, isPrimary: true },
       });
       citationCount++;
     } catch {
@@ -684,7 +695,7 @@ async function main() {
 
     const { kept: keptSources } = dedupeExactPortCoSources(pc.sources);
 
-    for (const src of keptSources) {
+    for (const [sourceIndex, src] of keptSources.entries()) {
       if (!src.url) continue;
       const sourceType = inferSourceType(src) as SourceType;
       const purpose = inferCitationPurpose(src) as CitationPurpose;
@@ -692,7 +703,7 @@ async function main() {
       const sourceId = await getOrCreateSource(src.url, src.label, sourceType);
       try {
         await prisma.citation.create({
-          data: { sourceId, companyId, purpose, evidenceLabel },
+          data: { sourceId, companyId, purpose, evidenceLabel, isPrimary: sourceIndex === 0 },
         });
         citationCount++;
       } catch {
@@ -729,9 +740,9 @@ async function main() {
 }
 
 main()
-  .catch((e) => {
-    console.error("❌ Seed failed:", e);
-    process.exit(1);
+  .catch((error) => {
+    reportSafeScriptError("database_seed", error);
+    process.exitCode = 1;
   })
   .finally(async () => {
     await prisma.$disconnect();

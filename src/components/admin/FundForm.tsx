@@ -43,6 +43,7 @@ export default function FundForm({ initialData, action, mode }: FundFormProps) {
   const [sourceUrls, setSourceUrls] = useState(
     (initialData?.sourceUrls ?? []).join("\n")
   );
+  const [primarySourceUrl, setPrimarySourceUrl] = useState(initialData?.primarySourceUrl ?? "");
   const [ticker, setTicker] = useState(initialData?.ticker ?? "");
   const [strategyUrl, setStrategyUrl] = useState(initialData?.strategyUrl ?? "");
 
@@ -65,6 +66,7 @@ export default function FundForm({ initialData, action, mode }: FundFormProps) {
     formData.set("status", status);
     formData.set("ticker", ticker);
     formData.set("strategyUrl", strategyUrl);
+    formData.set("primarySourceUrl", primarySourceUrl);
 
     for (const s of strategies) {
       formData.append("strategies", s);
@@ -137,14 +139,14 @@ export default function FundForm({ initialData, action, mode }: FundFormProps) {
       {/* Size + Size USD MM + Vintage */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div>
-          <label className={labelClass}>Size (display) *</label>
+          <label className={labelClass}>Size (currency amount or TBD) *</label>
           <input
             type="text"
             required
             value={size}
             onChange={(e) => setSize(e.target.value)}
             className={inputClass}
-            placeholder="e.g. $5.0B"
+            placeholder="e.g. $5.0B, €750M, or TBD"
           />
         </div>
         <div>
@@ -285,6 +287,18 @@ export default function FundForm({ initialData, action, mode }: FundFormProps) {
       </div>
 
       {/* Source URLs */}
+      <div>
+        <label className={labelClass}>Primary Source URL *</label>
+        <input
+          type="url"
+          required
+          value={primarySourceUrl}
+          onChange={(event) => setPrimarySourceUrl(event.target.value)}
+          className={inputClass}
+          placeholder="https://official-source.example/..."
+        />
+      </div>
+
       <div>
         <label className={labelClass}>Source URLs (one per line)</label>
         <textarea

@@ -29,6 +29,28 @@ describe("news matching utilities", () => {
     expect(textContainsNewsTerm("The megawattage increased.", "Watt")).toBe(false);
   });
 
+  it("expands known short company names into public-news aliases", () => {
+    const aliases = companyAliases("IAC");
+
+    expect(aliases).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ term: "iac", confidence: "High" }),
+        expect.objectContaining({ term: "international aerospace coatings", confidence: "High" }),
+      ]),
+    );
+
+    const matches = matchNewsCandidates("H.I.G. Capital Completes Acquisition of International Aerospace Coatings", [
+      {
+        id: "company-iac",
+        label: "IAC",
+        type: "PortCo",
+        aliases,
+      },
+    ]);
+
+    expect(matches.map((match) => match.label)).toEqual(["IAC"]);
+  });
+
   it("creates short-form manager aliases with medium confidence", () => {
     const aliases = managerAliases("Brookfield Asset Management");
     expect(aliases).toEqual(
@@ -37,6 +59,28 @@ describe("news matching utilities", () => {
         expect.objectContaining({ term: "brookfield", confidence: "Medium" }),
       ]),
     );
+  });
+
+  it("matches dotted and collapsed manager acronyms", () => {
+    const aliases = managerAliases("H.I.G. Capital");
+
+    expect(aliases).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ term: "h i g capital", confidence: "High" }),
+        expect.objectContaining({ term: "hig capital", confidence: "High" }),
+      ]),
+    );
+
+    const matches = matchNewsCandidates("HIG Capital snaps up International Aerospace Coatings", [
+      {
+        id: "firm-hig",
+        label: "H.I.G. Capital",
+        type: "Investment Firm",
+        aliases,
+      },
+    ]);
+
+    expect(matches.map((match) => match.label)).toEqual(["H.I.G. Capital"]);
   });
 
   it("returns matched tracked entities in stable priority order", () => {

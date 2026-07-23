@@ -4,7 +4,7 @@ on:
   push:
     branches: ["main"]
   pull_request:
-    branches: ["main"]
+    branches: ["main", "codex/infra-90-day-phase-1-stabilize"]
 
 permissions:
   contents: read
@@ -37,13 +37,12 @@ jobs:
       - name: Install locked dependencies
         run: npm ci
 
-      - name: Audit additive migration history
+      - name: Audit additive migrations and immutable weekly history
+        shell: bash
         env:
           EVENT_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
           EVENT_NAME: ${{ github.event_name }}
-        shell: bash
         run: |
-          mkdir -p tmp/ci
           git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
           base_sha="$EVENT_BASE_SHA"
           if ! [[ "$base_sha" =~ ^[0-9a-f]{40}$ ]] || [[ "$base_sha" =~ ^0+$ ]]; then
@@ -57,11 +56,16 @@ jobs:
             --base-sha="$base_sha" \
             --release-sha=HEAD \
             --output=tmp/ci/migration-manifest.json
+          npm run audit:weekly-history -- \
+            --base-sha="$base_sha" \
+            --release-sha=HEAD \
+            --output=tmp/ci/weekly-history-audit.json
 
-      - name: Generate and validate Prisma client
-        run: |
-          npm run db:generate
-          npm run db:validate
+      - name: Generate Prisma client
+        run: npm run db:generate
+
+      - name: Validate Prisma schema
+        run: npm run db:validate
 
       - name: Lint
         run: npm run lint
@@ -69,43 +73,51 @@ jobs:
       - name: Type check
         run: npm run typecheck
 
+      - name: Type check operational scripts
+        run: npm run typecheck:scripts
+
       - name: Run unit and integration tests
         run: npm test
 
       - name: Validate offline seed and reference data
         run: npm run validate-portfolios
 
-      - name: Audit complete and production dependency trees
-        run: |
-          node scripts/run-with-retry.mjs --attempts=3 -- npm audit --audit-level=high
-          node scripts/run-with-retry.mjs --attempts=3 -- npm run audit:prod
+      - name: Validate latest weekly email
+        run: npm run validate-weekly-email
+
+      - name: Audit production dependencies
+        run: node scripts/run-with-retry.mjs --attempts=3 -- npm run audit:prod
+
+      - name: Audit complete dependency graph
+        run: node scripts/run-with-retry.mjs --attempts=3 -- npm audit --audit-level=high
 
       - name: Build production application
         run: npm run build
 
-      - name: Upload quality evidence
+      - name: Upload quality and migration evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: phase-1-quality-${{ github.run_id }}
+          name: quality-evidence-${{ github.run_id }}
           path: tmp/ci/
           if-no-files-found: warn
           retention-days: 30
 
-  migration-validation:
-    name: Isolated Neon migration and drift validation
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+  validation:
+    name: Phase 2 isolated migration and strict data-trust gate
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     concurrency:
-      group: phase-1-neon-migration-validation-${{ github.repository_id }}
+      group: neon-migration-validation-${{ github.repository_id }}
       cancel-in-progress: false
     env:
-      DATABASE_URL: ${{ secrets.PHASE1_MIGRATION_DATABASE_URL }}
-      EXPECTED_DATABASE_HOST: ${{ vars.PHASE1_MIGRATION_DATABASE_HOST }}
-      EXPECTED_DATABASE_NAME: ${{ vars.PHASE1_MIGRATION_DATABASE_NAME }}
+      DATABASE_URL: ${{ secrets.PHASE2_MIGRATION_DATABASE_URL }}
+      EXPECTED_DATABASE_HOST: ${{ vars.PHASE2_MIGRATION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.PHASE2_MIGRATION_DATABASE_NAME }}
       FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
       FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+      TARGET_DATABASE: validation
+      RELEASE_SHA: ${{ github.sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -118,60 +130,200 @@ jobs:
           node-version: "24"
           cache: npm
 
-      - name: Require the isolated Neon validation target
+      - name: Require isolated validation configuration
         shell: bash
         run: |
+          mkdir -p tmp/ci
+          preflight_report="tmp/ci/validation-preflight.txt"
+          {
+            echo "release_sha=$RELEASE_SHA"
+            echo "target_database=$TARGET_DATABASE"
+            echo "checked_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          } > "$preflight_report"
           missing=0
           for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2; do
             if [ -z "${!name:-}" ]; then
-              echo "::error::$name is required for migration validation."
+              echo "::error::$name is required for the non-production release gate."
+              echo "missing=$name" >> "$preflight_report"
               missing=1
             fi
           done
-          if [ "$missing" -ne 0 ]; then exit 1; fi
-          node --experimental-strip-types scripts/assert-database-target.ts
+          if [ "$missing" -ne 0 ]; then
+            echo "status=failed_missing_configuration" >> "$preflight_report"
+            exit 1
+          fi
+          if ! [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]] || [ "$RELEASE_SHA" != "$(git rev-parse HEAD)" ]; then
+            echo "::error::RELEASE_SHA must exactly match the checked-out validation commit."
+            echo "status=failed_release_sha" >> "$preflight_report"
+            exit 1
+          fi
+          echo "status=passed" >> "$preflight_report"
 
-      - name: Install, generate, and validate
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Generate and validate Prisma client
         run: |
-          npm ci
           npm run db:generate
           npm run db:validate
 
-      - name: Apply migrations and require zero drift
+      - name: Prove database target is the isolated Neon branch
+        run: node --experimental-strip-types scripts/assert-database-target.ts
+
+      - name: Apply additive migrations to validation branch
         shell: bash
         run: |
           mkdir -p tmp/ci
           set -o pipefail
           npx prisma migrate deploy 2>&1 | tee tmp/ci/migrate-deploy.log
           npx prisma migrate status 2>&1 | tee tmp/ci/migrate-status.log
-          npx prisma migrate diff \
-            --from-schema=prisma/schema.prisma \
-            --to-config-datasource \
-            --exit-code 2>&1 | tee tmp/ci/schema-drift.log
+          npx prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/ci/schema-drift.log
 
-      - name: Upload migration evidence
+      - name: Apply reviewed remediation or generate neutral review templates
+        shell: bash
+        run: |
+          set -o pipefail
+          company_approval="audits/approvals/company-merges.json"
+          ownership_approval="audits/approvals/ownership-fund-links.json"
+          fund_primary_source_approval="audits/approvals/fund-primary-sources.json"
+          seller_disclosure_approval="audits/approvals/deal-seller-disclosures.json"
+          citation_approval="audits/approvals/primary-citations.json"
+
+          if [ -f "$company_approval" ]; then
+            test ! -L "$company_approval"
+            git ls-files --error-unmatch -- "$company_approval" >/dev/null
+            company_sha="$(sha256sum "$company_approval" | awk '{print $1}')"
+            company_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$company_approval")"
+            MUTATION_REVIEWED_BY="$company_reviewer" \
+            MUTATION_REASON="Validate the committed company-merge approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/merge-duplicate-companies.ts \
+              --apply \
+              --approval-file="$company_approval" \
+              --approval-sha256="$company_sha" \
+              2>&1 | tee tmp/ci/company-merge-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-company-merge-candidates.ts \
+              --approval-output=tmp/ci/company-merge-approval-template.json \
+              > tmp/ci/company-canonical-review.md
+          fi
+
+          if [ -f "$ownership_approval" ]; then
+            test ! -L "$ownership_approval"
+            git ls-files --error-unmatch -- "$ownership_approval" >/dev/null
+            ownership_sha="$(sha256sum "$ownership_approval" | awk '{print $1}')"
+            ownership_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$ownership_approval")"
+            MUTATION_REVIEWED_BY="$ownership_reviewer" \
+            MUTATION_REASON="Validate the committed ownership-fund-link approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/apply-ownership-fund-link-remediation.ts \
+              --apply \
+              --approval-file="$ownership_approval" \
+              --expected-sha256="$ownership_sha" \
+              2>&1 | tee tmp/ci/ownership-fund-link-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-ownership-fund-link-remediation.ts \
+              --output=tmp/ci/ownership-fund-link-approval-template.json
+          fi
+
+          if [ -f "$fund_primary_source_approval" ]; then
+            test ! -L "$fund_primary_source_approval"
+            git ls-files --error-unmatch -- "$fund_primary_source_approval" >/dev/null
+            fund_primary_source_sha="$(sha256sum "$fund_primary_source_approval" | awk '{print $1}')"
+            fund_primary_source_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$fund_primary_source_approval")"
+            MUTATION_REVIEWED_BY="$fund_primary_source_reviewer" \
+            MUTATION_REASON="Validate the committed Fund primary-source approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/apply-fund-primary-source-remediation.ts \
+              --apply \
+              --approval-file="$fund_primary_source_approval" \
+              --expected-sha256="$fund_primary_source_sha" \
+              2>&1 | tee tmp/ci/fund-primary-source-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-fund-primary-source-remediation.ts \
+              --output=tmp/ci/fund-primary-source-approval-template.json
+          fi
+
+          if [ -f "$seller_disclosure_approval" ]; then
+            test ! -L "$seller_disclosure_approval"
+            git ls-files --error-unmatch -- "$seller_disclosure_approval" >/dev/null
+            seller_disclosure_sha="$(sha256sum "$seller_disclosure_approval" | awk '{print $1}')"
+            seller_disclosure_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$seller_disclosure_approval")"
+            MUTATION_REVIEWED_BY="$seller_disclosure_reviewer" \
+            MUTATION_REASON="Validate the committed deal seller-disclosure approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/apply-deal-seller-disclosure-remediation.ts \
+              --apply \
+              --approval-file="$seller_disclosure_approval" \
+              --expected-sha256="$seller_disclosure_sha" \
+              2>&1 | tee tmp/ci/deal-seller-disclosure-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-deal-seller-disclosure-remediation.ts \
+              --output=tmp/ci/deal-seller-disclosure-approval-template.json
+          fi
+
+          if [ -f "$citation_approval" ]; then
+            test ! -L "$citation_approval"
+            git ls-files --error-unmatch -- "$citation_approval" >/dev/null
+            citation_sha="$(sha256sum "$citation_approval" | awk '{print $1}')"
+            citation_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$citation_approval")"
+            MUTATION_REVIEWED_BY="$citation_reviewer" \
+            MUTATION_REASON="Validate the committed primary-citation approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/apply-primary-citation-remediation.ts \
+              --apply \
+              --approval-file="$citation_approval" \
+              --expected-sha256="$citation_sha" \
+              2>&1 | tee tmp/ci/primary-citation-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts \
+              --output=tmp/ci/primary-citation-approval-template.json
+          fi
+
+      - name: Verify database integrity and strict publication gates
+        id: strict_publication_gate
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run db:verify 2>&1 | tee tmp/ci/database-verification.log
+          npx tsx scripts/source-coverage-report.ts --require-complete --output=tmp/ci/source-coverage.json
+          npx tsx scripts/report-company-merge-candidates.ts --published-only --require-clean > tmp/ci/company-canonical-review.md
+
+      - name: Build against migrated Phase 2 validation database
+        run: npm run build
+
+      - name: Upload migration and data evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: phase-1-migration-${{ github.run_id }}
+          name: phase-2-validation-evidence-${{ github.run_id }}
           path: tmp/ci/
           if-no-files-found: warn
           retention-days: 30
 
+      - name: Enforce strict publication gate after collecting evidence
+        if: always()
+        env:
+          STRICT_PUBLICATION_GATE_OUTCOME: ${{ steps.strict_publication_gate.outcome }}
+        shell: bash
+        run: |
+          if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]; then
+            echo "::error::Strict publication/data integrity remains blocking; neutral review evidence was collected without weakening the release gate."
+            exit 1
+          fi
+
+  # Branch protection requires this stable context. It succeeds only when both
+  # the offline quality gate and the isolated Phase 2 data gate succeed.
   build:
     name: build
     if: always()
-    needs: [quality, migration-validation]
+    needs: [quality, validation]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Require every Phase 1 gate
+      - name: Require every gate
         env:
-          QUALITY_OUTCOME: ${{ needs.quality.result }}
-          MIGRATION_OUTCOME: ${{ needs.migration-validation.result }}
-        shell: bash
+          QUALITY_RESULT: ${{ needs.quality.result }}
+          VALIDATION_RESULT: ${{ needs.validation.result }}
         run: |
-          if [ "$QUALITY_OUTCOME" != "success" ] || [ "$MIGRATION_OUTCOME" != "success" ]; then
-            echo "::error::Phase 1 release gate failed: quality=$QUALITY_OUTCOME migration=$MIGRATION_OUTCOME"
+          if [ "$QUALITY_RESULT" != "success" ] || [ "$VALIDATION_RESULT" != "success" ]; then
+            echo "::error::Release gate failed: quality=$QUALITY_RESULT validation=$VALIDATION_RESULT"
             exit 1
           fi
+          echo "Complete release gate passed."

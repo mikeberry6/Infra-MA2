@@ -1,10 +1,10 @@
-name: Stage Dashboard Schema
+name: Stage Production Schema
 
 on:
   workflow_dispatch:
     inputs:
       release_sha:
-        description: Full Git SHA at the protected main head
+        description: Full Git commit SHA that passed the required release gate
         required: true
         type: string
       production_app_sha:
@@ -16,7 +16,7 @@ on:
         required: true
         type: string
       migration_manifest_sha256:
-        description: SHA-256 from the reviewed additive migration manifest
+        description: SHA-256 from the reviewed additive migration manifest for base..release
         required: true
         type: string
       confirmation:
@@ -42,11 +42,13 @@ jobs:
       DATABASE_URL: ${{ secrets.PRODUCTION_MIGRATION_DATABASE_URL }}
       EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
       EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
-      FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
-      FORBIDDEN_DATABASE_HOST_2: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.PHASE2_MIGRATION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_DATABASE_HOST }}
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
       EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
       EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
+      DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}
       RELEASE_SHA: ${{ inputs.release_sha }}
       PRODUCTION_APP_SHA: ${{ inputs.production_app_sha }}
       MIGRATION_BASE_SHA: ${{ inputs.migration_base_sha }}
@@ -55,6 +57,13 @@ jobs:
       CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
       CONFIRMATION: ${{ inputs.confirmation }}
     steps:
+      - name: Require protected workflow ref
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Production schema workflows must be dispatched from refs/heads/main."
+            exit 1
+          fi
+
       - name: Require explicit schema authorization
         run: |
           if [ "$CONFIRMATION" != "STAGE" ]; then
@@ -65,38 +74,44 @@ jobs:
       - name: Checkout approved release
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ inputs.release_sha }}
+          ref: refs/heads/main
           fetch-depth: 0
           persist-credentials: false
 
       - name: Verify checked-out release identity
-        shell: bash
         run: |
-          for name in RELEASE_SHA PRODUCTION_APP_SHA MIGRATION_BASE_SHA; do
-            if ! [[ "${!name}" =~ ^[0-9a-f]{40}$ ]]; then
-              echo "::error::$name must be a full lowercase Git SHA."
-              exit 1
-            fi
-          done
-          [[ "$MIGRATION_MANIFEST_SHA256" =~ ^[0-9a-f]{64}$ ]] || {
-            echo "::error::migration_manifest_sha256 must be a lowercase SHA-256 digest."
+          if ! [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::release_sha must be a full lowercase Git SHA."
             exit 1
-          }
-          [ "$(git rev-parse HEAD)" = "$RELEASE_SHA" ] || {
+          fi
+          if [ "$(git rev-parse HEAD)" != "$RELEASE_SHA" ]; then
             echo "::error::Checked-out SHA does not match release_sha."
             exit 1
-          }
+          fi
+          if ! [[ "$PRODUCTION_APP_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::production_app_sha must be a full Git SHA."
+            exit 1
+          fi
+          if ! [[ "$MIGRATION_BASE_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::migration_base_sha must be a full Git SHA."
+            exit 1
+          fi
           git merge-base --is-ancestor "$MIGRATION_BASE_SHA" "$RELEASE_SHA" || {
             echo "::error::migration_base_sha must be an ancestor of release_sha."
             exit 1
           }
+          git merge-base --is-ancestor "$PRODUCTION_APP_SHA" "$RELEASE_SHA" || {
+            echo "::error::production_app_sha must be an ancestor of release_sha."
+            exit 1
+          }
 
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "24"
           cache: npm
 
-      - name: Verify protected-main and required-check provenance
+      - name: Verify protected-branch and required-check provenance
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
@@ -117,83 +132,116 @@ jobs:
           --output=tmp/schema-stage/migration-manifest.json
 
       - name: Require protected production configuration
-        shell: bash
         run: |
-          missing=0
-          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2 VERCEL_TOKEN EXPECTED_VERCEL_PROJECT_ID EXPECTED_GITHUB_REPOSITORY_ID PRODUCTION_URL; do
-            if [ -z "${!name:-}" ]; then
-              echo "::error::$name is required."
-              missing=1
-            fi
-          done
-          [[ "$EXPECTED_VERCEL_PROJECT_ID" =~ ^prj_[A-Za-z0-9]+$ ]] || {
-            echo "::error::VERCEL_PROJECT_ID must be an immutable prj_ identifier."
-            missing=1
-          }
+          test -n "$DATABASE_URL" || { echo "::error::DATABASE_URL is required."; exit 1; }
+          test -n "$EXPECTED_DATABASE_HOST" || { echo "::error::PRODUCTION_MIGRATION_DATABASE_HOST is required."; exit 1; }
+          test -n "$EXPECTED_DATABASE_NAME" || { echo "::error::PRODUCTION_DATABASE_NAME is required."; exit 1; }
+          test -n "$FORBIDDEN_DATABASE_HOST" || { echo "::error::PHASE2_MIGRATION_DATABASE_HOST is required."; exit 1; }
+          test -n "$FORBIDDEN_DATABASE_HOST_2" || { echo "::error::PRODUCTION_DATABASE_HOST is required."; exit 1; }
+          test -n "$VERCEL_TOKEN" || { echo "::error::VERCEL_TOKEN is required."; exit 1; }
+          test -n "$VERCEL_TEAM_ID" || { echo "::error::VERCEL_TEAM_ID is required."; exit 1; }
+          test -n "$EXPECTED_VERCEL_PROJECT_ID" || { echo "::error::VERCEL_PROJECT_ID is required."; exit 1; }
+          test -n "$EXPECTED_GITHUB_REPOSITORY_ID" || { echo "::error::GitHub repository ID is required."; exit 1; }
+          test -n "$PRODUCTION_URL" || { echo "::error::PRODUCTION_URL is required."; exit 1; }
           if [ "$PRODUCTION_URL" != "$CANONICAL_PRODUCTION_URL" ]; then
             echo "::error::The protected PRODUCTION_URL does not match the canonical InfraSight production alias."
-            missing=1
+            exit 1
           fi
-          if [ "$missing" -ne 0 ]; then exit 1; fi
+          if [ "$DASHBOARD_WRITES_ENABLED" != "false" ]; then
+            echo "::error::DASHBOARD_WRITES_ENABLED must exactly equal false throughout schema staging and reviewed dashboard cutovers."
+            exit 1
+          fi
+          node - <<'NODE'
+          const value = process.env.PRODUCTION_URL;
+          const parsed = new URL(value);
+          if (parsed.protocol !== "https:" || parsed.username || parsed.password || parsed.port || parsed.pathname !== "/" || parsed.search || parsed.hash) {
+            throw new Error("production_url must be an HTTPS origin without credentials, path, query, or fragment.");
+          }
+          NODE
 
       - name: Install, generate, and validate
         run: |
           npm ci
-          npx prisma generate
-          npx prisma validate
+          npm run db:generate
+          npm run db:validate
 
       - name: Prove production database target
         run: node --experimental-strip-types scripts/assert-database-target.ts
 
-      - name: Prove current production application and migration baseline
-        run: |
-          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
-            --deployment-url="$PRODUCTION_URL" \
-            --expected-sha="$PRODUCTION_APP_SHA" \
-            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
-            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
-            --output=tmp/schema-stage/production-app-inspect.json
-          node --experimental-strip-types scripts/verify-migration-baseline.ts \
-            --base-sha="$MIGRATION_BASE_SHA" \
-            --output=tmp/schema-stage/migration-baseline.json
+      - name: Prove the current production application SHA
+        run: >-
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts
+          --deployment-url="$PRODUCTION_URL"
+          --expected-sha="$PRODUCTION_APP_SHA"
+          --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID"
+          --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID"
+          --team-id="$VERCEL_TEAM_ID"
+          --output=tmp/schema-stage/production-app-inspect.json
 
-      - name: Reverify exact release immediately before production writes
+      - name: Prove the applied production migration baseline
+        run: >-
+          node --experimental-strip-types scripts/verify-migration-baseline.ts
+          --base-sha="$MIGRATION_BASE_SHA"
+          --output=tmp/schema-stage/migration-baseline.json
+
+      - name: Reverify exact main head immediately before production writes
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
-          node --experimental-strip-types scripts/verify-release-provenance.ts \
+          ./node_modules/.bin/tsx scripts/verify-release-provenance.ts \
             --release-sha="$RELEASE_SHA" \
             --branch=main \
             --required-check=build \
             --output=tmp/schema-stage/release-provenance-before-write.json
-          node --experimental-strip-types scripts/assert-database-target.ts
+
+      - name: Apply additive migrations while prior application remains active
+        shell: bash
+        run: |
+          mkdir -p tmp/schema-stage
+          set -o pipefail
           node --experimental-strip-types scripts/verify-vercel-deployment.ts \
             --deployment-url="$PRODUCTION_URL" \
             --expected-sha="$PRODUCTION_APP_SHA" \
             --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
             --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
             --output=tmp/schema-stage/production-app-inspect-before-write.json
           node --experimental-strip-types scripts/verify-migration-baseline.ts \
             --base-sha="$MIGRATION_BASE_SHA" \
             --output=tmp/schema-stage/migration-baseline-before-write.json
+          ./node_modules/.bin/prisma migrate deploy 2>&1 | tee tmp/schema-stage/migrate-deploy.log
+          node --experimental-strip-types scripts/verify-migration-baseline.ts \
+            --base-sha="$RELEASE_SHA" \
+            --output=tmp/schema-stage/migration-baseline-after-write.json
+          ./node_modules/.bin/prisma migrate status 2>&1 | tee tmp/schema-stage/migrate-status.log
+          ./node_modules/.bin/prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/schema-stage/schema-drift.log
 
-      - name: Apply additive dashboard migration and cutovers
+      - name: Record post-stage remediation backlogs without blocking additive schema compatibility
         shell: bash
         run: |
           set -o pipefail
-          mkdir -p tmp/schema-stage
-          npx prisma migrate deploy 2>&1 | tee tmp/schema-stage/migrate-deploy.log
-          npx tsx scripts/quarantine-dashboard-methodology-history.ts 2>&1 | tee tmp/schema-stage/dashboard-methodology-cutover.log
-          npx tsx scripts/backfill-dashboard-signal-approvals.ts 2>&1 | tee tmp/schema-stage/dashboard-signal-backfill.log
-          npx prisma migrate status 2>&1 | tee tmp/schema-stage/migrate-status.log
-          npx prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/schema-stage/schema-drift.log
+          ./node_modules/.bin/tsx scripts/quarantine-dashboard-methodology-history.ts \
+            --output=tmp/schema-stage/dashboard-methodology-cutover-approval-template.json \
+            2>&1 | tee tmp/schema-stage/dashboard-methodology-cutover-report.log
+          ./node_modules/.bin/tsx scripts/backfill-dashboard-signal-approvals.ts \
+            --output=tmp/schema-stage/dashboard-signal-backfill-approval-template.json \
+            2>&1 | tee tmp/schema-stage/dashboard-signal-backfill-report.log
+          ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts --output=tmp/schema-stage/primary-citation-approval-template.json
+          ./node_modules/.bin/tsx scripts/report-ownership-fund-link-remediation.ts --output=tmp/schema-stage/ownership-fund-link-approval-template.json
+          ./node_modules/.bin/tsx scripts/report-fund-primary-source-remediation.ts --output=tmp/schema-stage/fund-primary-source-approval-template.json
+          ./node_modules/.bin/tsx scripts/report-deal-seller-disclosure-remediation.ts --output=tmp/schema-stage/deal-seller-disclosure-approval-template.json
+          ./node_modules/.bin/tsx scripts/source-coverage-report.ts --output=tmp/schema-stage/source-coverage.json
+          ./node_modules/.bin/tsx scripts/report-company-merge-candidates.ts \
+            --published-only \
+            --approval-output=tmp/schema-stage/company-merge-approval-template.json \
+            > tmp/schema-stage/company-canonical-review.md
 
       - name: Upload schema-stage evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: dashboard-schema-stage-${{ github.run_id }}
+          name: production-schema-stage-${{ github.run_id }}
           path: tmp/schema-stage/
           if-no-files-found: warn
           retention-days: 90

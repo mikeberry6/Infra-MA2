@@ -1,8 +1,10 @@
-# Phase 1 Release and Recovery Runbook
+# Phase 1–2 Release and Recovery Runbook
 
 ## Release contract
 
-Phase 1 standardizes Node 24/npm 11, patches the current Next.js/NextAuth/Prisma stack, adds durable authentication throttling, removes seeded credentials, and introduces one additive `AuthThrottle` table. It does not contain later-phase data-trust models, editorial backfills, product redesign, analytics, health endpoints, or framework-major upgrades.
+Phase 1 standardizes Node 24/npm 11, patches the current Next.js/NextAuth/Prisma stack, adds durable authentication throttling, and removes seeded credentials. Phase 2 adds additive data-trust fields and the `PipelineRun`, `AuditEvent`, and `CompanyRedirect` models; explicit primary-citation, seller-disclosure, and Fund primary-source fields; reviewed remediation commands; and bounded dashboard/news/weekly validation workflows.
+
+This release does not contain import previews, URL-state and mobile-filter redesign, browser/visual release gates, detail APIs, health endpoints, analytics, structured request observability, performance budgets, or framework-major upgrades.
 
 Releases are pull-request based, schema-first, and reversible at the application layer. Additive migrations remain in place during an application rollback, so both the candidate and the prior deployment must be compatible with the new table.
 
@@ -10,8 +12,18 @@ Releases are pull-request based, schema-first, and reversible at the application
 
 1. Keep `main` as the protected default branch. Disallow direct pushes, force pushes, and branch deletion; require pull requests, resolved conversations, `build`, and the isolated migration-validation check.
 2. Configure Vercel to use Node 24 and retain `/Infra-MA2` as the base path. Preview must use a separate Neon branch and separate NextAuth secret from Production.
-3. Create a Phase 1-only Neon validation branch. Configure `PHASE1_MIGRATION_DATABASE_URL`, `PHASE1_MIGRATION_DATABASE_HOST`, and `PHASE1_MIGRATION_DATABASE_NAME` for that branch, plus `PRODUCTION_DATABASE_HOST` and `PRODUCTION_MIGRATION_DATABASE_HOST`. Do not point Phase 1 at a shared branch that already contains later-phase migrations.
+3. Create isolated Neon validation branches for the applicable release contracts below. Do not use Production, a shared development database, or one phase's validation branch for another phase.
 4. Keep a previous known-good Vercel deployment available. Confirm the production environment on the staging, promotion, and rollback workflows requires an independent reviewer and prevents self-review where supported.
+
+## Validation database variable contracts
+
+The variable names are intentionally distinct because they address different workflows and migration baselines:
+
+- A Phase 1-only release gate uses the `PHASE1_MIGRATION_DATABASE_URL` secret and the `PHASE1_MIGRATION_DATABASE_HOST` and `PHASE1_MIGRATION_DATABASE_NAME` variables. Its Neon branch must contain the Phase 1 baseline only.
+- The current Phase 2 pull-request Release Gate uses the `PHASE2_MIGRATION_DATABASE_URL` secret and the `PHASE2_MIGRATION_DATABASE_HOST` and `PHASE2_MIGRATION_DATABASE_NAME` variables. Also configure `PRODUCTION_DATABASE_HOST` and `PRODUCTION_MIGRATION_DATABASE_HOST` so the validation target can reject both production endpoints.
+- The Phase 2 **Review or Remediate Release Data** workflow uses the `MIGRATION_DATABASE_URL` secret and the `MIGRATION_DATABASE_HOST` and `MIGRATION_DATABASE_NAME` variables for its `validation` target. It maps those values to internal `VALIDATION_DATABASE_*` names and keeps the separate `PRODUCTION_MIGRATION_DATABASE_*` contract for an explicitly selected production target.
+
+Do not alias Phase 1, Phase 2 Release Gate, or Phase 2 remediation names to one another. Each workflow must receive the exact protected secret and variables it declares.
 
 ## Pull-request validation
 
@@ -21,9 +33,11 @@ The required Release Gate uses Node 24 and npm 11 to run:
 - additive migration auditing;
 - Prisma generation and schema validation;
 - lint, typecheck, unit/integration tests, and offline reference-data validation;
+- operational-script typecheck, historical-weekly-email audit, and current weekly-email validation;
 - complete and production dependency audits;
 - a production build;
-- migration deploy, status, and zero-drift checks against the isolated Neon branch.
+- migration deploy, status, and zero-drift checks against the isolated Neon branch;
+- neutral remediation-template generation and strict publication/source/canonical-company gates.
 
 Do not weaken or bypass the migration job when secrets are missing. Fix the environment configuration and rerun it.
 
@@ -32,12 +46,14 @@ Do not weaken or bypass the migration job when secrets are missing. Fix the envi
 1. Freeze the approved `main` SHA and copy `docs/release-record-template.md` into the release record location.
 2. Create a fresh Neon restore branch and record its identifier and timestamp.
 3. Record the currently serving application SHA and immutable Vercel deployment ID.
-4. Review the additive migration manifest from CI. Confirm the only Phase 1 migration creates `AuthThrottle` and its index.
-5. Use the protected schema-staging workflow to apply the reviewed migration. Confirm `prisma migrate status` and schema drift are clean.
-6. Smoke-test the immutable candidate under `/Infra-MA2`, including anonymous public browsing, login, five rejected login attempts, the temporary generic lock response, administrator access, denied unauthorized imports, and ADMIN/ANALYST export access.
-7. Promote the exact immutable candidate through the protected production workflow. Do not rebuild or promote a mutable alias.
-8. Repeat the smoke checks on the canonical production URL.
-9. Bootstrap or rotate the administrator only with `npm run admin:create`, then rotate `NEXTAUTH_SECRET`. Record completion but never secret values. Rotation invalidates old privileged sessions through the User `updatedAt` snapshot.
+4. Review the additive migration manifest from CI. Confirm the ordered chain retains `20260722220000_auth_throttle`, then adds the Phase 2 trust foundation, non-mutating citation gate, primary-citation indexes, seller-disclosure fields, and Fund primary-source field. The trust migration must not recreate `AuthThrottle`, and `CompanyRedirect.retiredId` must remain an opaque identifier rather than a foreign key.
+5. Use the protected schema-staging workflow to apply the reviewed migrations. Confirm `prisma migrate status` and schema drift are clean.
+6. Generate neutral company-merge, ownership-link, Fund-source, seller-disclosure, and citation review templates. Apply a remediation only when its tracked approval file, exact SHA-256, named reviewer, mutation reason, and release SHA are present. Never infer approvals from a report.
+7. Run database verification, strict source coverage, and canonical-company checks on the isolated branch. A missing approval or incomplete publication gate remains a release blocker; do not weaken the check.
+8. Smoke-test the immutable candidate under `/Infra-MA2`, including public database freshness/provenance states, dashboard/news successful-empty and failure states, login throttling, administrator workflow controls, denied unauthorized imports, and ADMIN/ANALYST export access.
+9. Promote the exact immutable candidate through the protected production workflow. Do not rebuild or promote a mutable alias.
+10. Repeat the smoke checks on the canonical production URL and verify the scheduled pipeline workflows remain fail-closed until their production variables are explicitly enabled.
+11. Bootstrap or rotate the administrator only with `npm run admin:create`, then rotate `NEXTAUTH_SECRET`. Record completion but never secret values. Rotation invalidates old privileged sessions through the User `updatedAt` snapshot.
 
 ## Rollback
 
@@ -53,4 +69,4 @@ If the prior application cannot operate with the additive schema, stop and resto
 
 ## Required drill
 
-Before Phase 1 exits, Operations must execute a protected-environment rollback drill using a non-production Vercel project or an approved low-risk production window, then record the artifact and recovery time. Code review and local tests validate the workflow contract but do not substitute for this operator-controlled drill.
+Before Phase 2 exits, Operations must execute a protected-environment rollback drill using a non-production Vercel project or an approved low-risk production window, then record the artifact and recovery time. Code review and local tests validate the workflow contract but do not substitute for this operator-controlled drill.

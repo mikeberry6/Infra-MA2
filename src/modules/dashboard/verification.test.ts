@@ -4,6 +4,7 @@ import {
   dashboardObservationProblems,
   type StoredDashboardObservationState,
 } from "@/modules/dashboard/verification";
+import { DASHBOARD_METHODOLOGY_VERSIONS } from "@/modules/dashboard/methodology-cutover";
 
 const now = new Date("2026-07-22T12:00:00.000Z");
 const numericMetric = ACTIVE_DASHBOARD_METRICS.find((metric) => metric.id === "us_treasury_10y")!;
@@ -32,6 +33,29 @@ describe("dashboard release observation verification", () => {
       "unexpected numeric value",
       "missing text value",
     ]);
+  });
+
+  it("rejects pre-version methodology rows at the release gate", () => {
+    const metric = ACTIVE_DASHBOARD_METRICS.find(
+      (item) => item.id === "usaspending_infra_awards_30d",
+    )!;
+    const base = observation({
+      sourceId: metric.source.id,
+      unit: metric.unit,
+      value: 4,
+    });
+
+    expect(dashboardObservationProblems(metric, {
+      ...base,
+      metadata: { countEndpoint: true },
+    }, now)).toContain("incompatible methodology");
+    expect(dashboardObservationProblems(metric, {
+      ...base,
+      metadata: {
+        methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.usaSpendingAwards30d,
+        countEndpoint: true,
+      },
+    }, now)).not.toContain("incompatible methodology");
   });
 });
 

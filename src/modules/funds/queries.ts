@@ -55,6 +55,7 @@ function toFundView(
     ticker: fund.ticker,
     investmentStrategy: fund.investmentStrategy,
     sourceUrls: fund.sourceUrls,
+    primarySourceUrl: fund.primarySourceUrl,
     size: fund.size,
     sizeUsdMm: fund.sizeUsdMm,
     vintage: fund.vintage,
@@ -73,6 +74,7 @@ function toFundView(
 const FUND_INCLUDE = {
   manager: { select: { name: true } },
   ownershipPeriods: {
+    where: { company: { status: "PUBLISHED" } },
     select: {
       isActive: true,
       investmentYear: true,
@@ -136,8 +138,8 @@ export async function getFundStrategyIndex(): Promise<FundStrategyView[]> {
 }
 
 export async function getFundById(legacyId: string): Promise<FundView | null> {
-  const fund = await prisma.fund.findUnique({
-    where: { legacyId },
+  const fund = await prisma.fund.findFirst({
+    where: { legacyId, status: "PUBLISHED" },
     include: FUND_INCLUDE,
   });
   return fund ? toFundView(fund) : null;
