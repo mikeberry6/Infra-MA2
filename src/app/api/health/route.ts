@@ -113,7 +113,7 @@ export async function GET(request: Request) {
   return withServerOperation(request, {
     route: "/api/health",
     operation: "health_check",
-  }, async ({ elapsedMs }) => {
+  }, async ({ elapsedMs, markFailure }) => {
     const base = {
       version: releaseVersion(),
       generatedAt: generatedAt.toISOString(),
@@ -121,7 +121,8 @@ export async function GET(request: Request) {
 
     try {
       await prisma.$queryRaw`SELECT 1`;
-    } catch {
+    } catch (error) {
+      markFailure(error, 503);
       return NextResponse.json({
         status: "unhealthy",
         ...base,
@@ -166,6 +167,7 @@ export async function GET(request: Request) {
         generationTimeMs: elapsedMs(),
       }, { status: degraded ? 503 : 200, headers: NO_STORE_HEADERS });
     } catch (error) {
+      markFailure(error, 503);
       const schemaMismatch = isSchemaMismatchError(error);
       return NextResponse.json({
         status: "unhealthy",

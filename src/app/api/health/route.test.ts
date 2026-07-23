@@ -108,7 +108,11 @@ describe("GET /api/health", () => {
   });
 
   it("reports an unavailable database without exposing connection errors", async () => {
-    mocks.queryRaw.mockRejectedValueOnce(new Error("password secret at private host"));
+    const errorLog = vi.spyOn(console, "error").mockImplementation(() => undefined);
+    mocks.queryRaw.mockRejectedValueOnce(Object.assign(
+      new Error("password secret at private host"),
+      { code: "P1000" },
+    ));
 
     const response = await GET(request());
     const payload = await response.json();
@@ -121,6 +125,16 @@ describe("GET /api/health", () => {
     });
     expect(JSON.stringify(payload)).not.toContain("password");
     expect(mocks.pipelineFindMany).not.toHaveBeenCalled();
+    const serialized = String(errorLog.mock.calls[0]?.[0]);
+    expect(JSON.parse(serialized)).toMatchObject({
+      requestId: "health-request",
+      route: "/api/health",
+      operation: "health_check",
+      status: 503,
+      errorClassification: "database_error",
+      errorMessage: "Database operation failed (P1000).",
+    });
+    expect(serialized).not.toMatch(/password secret|private host/i);
   });
 
   it("distinguishes a reachable but unmigrated schema from database unavailability", async () => {
