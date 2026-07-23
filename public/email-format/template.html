@@ -19,6 +19,9 @@
        - Omit zero-deal sectors unless explicitly requested
        - Within each sector card, order deal cards largest to smallest:
          disclosed economic size first, physical asset scale second, undisclosed/no-quantum deals last
+       - Add machine-checkable scale evidence to every deal card's outer table:
+         data-scale-kind="economic|physical|undisclosed"; for disclosed scale also add
+         data-scale-value and data-scale-unit; use unique data-scale-rank values when units are incomparable
     7. Build each deal overview using the standard rubric
        - Title: {Target / Asset} | {Infrastructure fund / fund manager only}
        - After the pipe, use only the infrastructure fund/fund manager; put platforms,

@@ -6,9 +6,14 @@ import { isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { companySchema, type CompanyInput } from "@/modules/admin/schemas";
 import { COMPANY_SECTOR_MAP, COMPANY_REGION_MAP, COMPANY_STATUS_MAP } from "@/modules/shared/enum-maps";
 import type { CompanySector, CompanyRegion, CompanyStatus } from "@/generated/prisma/client";
+import { commitImport } from "@/modules/imports/commit";
+import { MUTABLE_COMPANY_WHERE } from "@/modules/companies/retirement";
+import {
+  companyIdentityConflictMessage,
+  findCompanyIdentityConflicts,
+} from "@/modules/companies/canonical-identity";
 
 const MAX_IMPORT_ROWS = 1000;
-const IMPORT_CHUNK_SIZE = 50;
 
 type CompanyImportRow = CompanyInput;
 type ImportResult = { name?: string; dbId?: string; status?: string; error?: string };
@@ -22,14 +27,6 @@ function numberValue(value: unknown): number | undefined {
   if (value == null || value === "") return undefined;
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : undefined;
-}
-
-function chunkRows<T>(rows: T[]): T[][] {
-  const chunks: T[][] = [];
-  for (let i = 0; i < rows.length; i += IMPORT_CHUNK_SIZE) {
-    chunks.push(rows.slice(i, i + IMPORT_CHUNK_SIZE));
-  }
-  return chunks;
 }
 
 function toArray(value: unknown): string[] {
@@ -61,6 +58,8 @@ function validateCompanyRows(companies: Record<string, unknown>[]): { validRows:
       investmentFirm: stringValue(company.investmentFirm) || undefined,
       ownershipVehicle: stringValue(company.ownershipVehicle) || undefined,
       countryTags: toArray(company.countryTags),
+      sourceName: stringValue(company.sourceName) || undefined,
+      sourceUrl: stringValue(company.sourceUrl) || undefined,
     });
 
     if (!parsed.success) {
@@ -125,29 +124,83 @@ export async function POST(request: NextRequest) {
     }
 
     const { validRows, errors } = validateCompanyRows(companies);
-    const results: ImportResult[] = [...errors];
+    const committed = await commitImport({
+      pipeline: "BULK_IMPORT_COMPANIES",
+      entityType: "Company",
+      rowCount: companies.length,
+      execute: async (tx) => {
+        const existing = validRows.length > 0
+          ? await tx.company.findMany({
+              select: {
+                id: true,
+                name: true,
+                country: true,
+                status: true,
+                retirement: { select: { companyId: true } },
+                redirects: { select: { retiredId: true }, take: 1 },
+              },
+            })
+          : [];
+        const keyFor = (name: string, country: string) => `${name.trim().toLowerCase()}\u0000${country.trim().toLowerCase()}`;
+        const existingByKey = new Map(existing.map((row) => [keyFor(row.name, row.country), row]));
+        const results: ImportResult[] = [...errors];
+        let inserted = 0;
+        let updated = 0;
+        let skipped = errors.length;
 
-    for (const chunk of chunkRows(validRows)) {
-      const chunkResults = await prisma.$transaction(async (tx) => {
-        const txResults: ImportResult[] = [];
-
-        for (const company of chunk) {
+        for (const company of validRows) {
+          const key = keyFor(company.name, company.country);
+          const existingCompany = existingByKey.get(key);
+          if (existingCompany?.retirement) {
+            results.push({
+              name: company.name,
+              status: "quarantined",
+              error: "Retired company identity requires reviewed canonical resolution",
+            });
+            skipped += 1;
+            continue;
+          }
+          const identityConflicts = findCompanyIdentityConflicts(
+            company.name,
+            existing,
+            existingCompany?.id,
+          );
+          if (identityConflicts.length > 0) {
+            results.push({
+              name: company.name,
+              status: "quarantined",
+              error: companyIdentityConflictMessage(identityConflicts),
+            });
+            skipped += 1;
+            continue;
+          }
+          if (existingCompany?.redirects.length) {
+            results.push({
+              name: company.name,
+              status: "quarantined",
+              error: "Canonical merge survivor is compatibility locked",
+            });
+            skipped += 1;
+            continue;
+          }
+          if (existingCompany && !["DRAFT", "IN_REVIEW"].includes(existingCompany.status)) {
+            results.push({ name: company.name, status: "quarantined", error: `Existing ${existingCompany.status.toLowerCase()} company requires editorial review` });
+            skipped += 1;
+            continue;
+          }
           const sector = COMPANY_SECTOR_MAP[company.sector] as CompanySector;
           const region = COMPANY_REGION_MAP[company.region] as CompanyRegion;
           const companyStatus = COMPANY_STATUS_MAP[company.status] as CompanyStatus;
 
           if (!sector || !region || !companyStatus) {
-            txResults.push({ name: company.name, error: "Invalid sector, region, or status" });
+            results.push({ name: company.name, error: "Invalid sector, region, or status" });
+            skipped += 1;
             continue;
           }
 
           // Mirror the create fields in update so re-imports refresh every
           // CSV-driven column (was previously updating only 5 of 10).
-          const created = await tx.company.upsert({
-            where: {
-              name_country: { name: company.name, country: company.country },
-            },
-            update: {
+          const companyData = {
               sector,
               subsector: company.subsector || "",
               region,
@@ -157,21 +210,45 @@ export async function POST(request: NextRequest) {
               website: company.website || null,
               yearFounded: company.yearFounded || null,
               headquarters: company.headquarters || null,
-            },
-            create: {
+          };
+
+          let created: { id: string };
+          if (existingCompany) {
+            const updateResult = await tx.company.updateMany({
+              where: {
+                id: existingCompany.id,
+                status: { in: ["DRAFT", "IN_REVIEW"] },
+                ...MUTABLE_COMPANY_WHERE,
+              },
+              data: companyData,
+            });
+            if (updateResult.count !== 1) throw new Error("Company import review state changed during commit");
+            created = { id: existingCompany.id };
+            updated += 1;
+          } else {
+            created = await tx.company.create({ data: { name: company.name, country: company.country, ...companyData, status: "DRAFT" } });
+            inserted += 1;
+            existingByKey.set(key, {
+              id: created.id,
               name: company.name,
-              sector,
-              subsector: company.subsector || "",
-              region,
               country: company.country,
-              countryTags: company.countryTags || [],
-              description: company.description || "",
-              companyStatus,
-              website: company.website || null,
-              yearFounded: company.yearFounded || null,
-              headquarters: company.headquarters || null,
               status: "DRAFT",
-            },
+              retirement: null,
+              redirects: [],
+            });
+            existing.push({
+              id: created.id,
+              name: company.name,
+              country: company.country,
+              status: "DRAFT",
+              retirement: null,
+              redirects: [],
+            });
+          }
+
+          await tx.ownershipPeriod.updateMany({
+            where: { companyId: created.id, isActive: true },
+            data: { isActive: false },
           });
 
           if (company.investmentFirm) {
@@ -210,13 +287,38 @@ export async function POST(request: NextRequest) {
             });
           }
 
-          txResults.push({ name: company.name, dbId: created.id, status: "ok" });
+          await tx.citation.updateMany({
+            where: { companyId: created.id, isPrimary: true },
+            data: { isPrimary: false },
+          });
+          if (company.sourceUrl) {
+            const source = await tx.source.upsert({
+              where: { url: company.sourceUrl },
+              update: { label: company.sourceName || undefined },
+              create: { url: company.sourceUrl, label: company.sourceName || "", type: "ARTICLE" },
+            });
+            const existingCitation = await tx.citation.findFirst({
+              where: { companyId: created.id, sourceId: source.id },
+              select: { id: true },
+            });
+            if (existingCitation) {
+              await tx.citation.update({ where: { id: existingCitation.id }, data: { isPrimary: true } });
+            } else {
+              await tx.citation.create({ data: { sourceId: source.id, companyId: created.id, isPrimary: true } });
+            }
+          }
+
+          results.push({ name: company.name, dbId: created.id, status: "ok" });
         }
 
-        return txResults;
-      });
-      results.push(...chunkResults);
-    }
+        return {
+          value: results,
+          counts: { inserted, updated, skipped },
+          auditChanges: { inserted, updated, errors: skipped },
+        };
+      },
+    });
+    const results = committed.value;
 
     if (results.some((result) => result.status === "ok")) {
       revalidateAppData();
@@ -226,6 +328,7 @@ export async function POST(request: NextRequest) {
       imported: results.filter((r) => r.status === "ok").length,
       errors: results.filter((r) => r.error),
       results,
+      auditEventId: committed.auditEventId,
     });
   } catch (error: any) {
     if (isAuthorizationError(error)) {

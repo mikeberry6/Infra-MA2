@@ -5,15 +5,19 @@ import { COMPANY_SECTOR_DISPLAY, COMPANY_STATUS_DISPLAY } from "@/modules/shared
 import Link from "next/link";
 import { ArrowLeft, Plus } from "lucide-react";
 import DeleteButton from "@/components/admin/DeleteButton";
+import ArchiveButton from "@/components/admin/ArchiveButton";
+import RecordWorkflowButton from "@/components/admin/RecordWorkflowButton";
 import ImportExportBar from "@/components/admin/ImportExportBar";
-import { deleteCompany } from "@/modules/admin/actions";
+import { archiveCompany, deleteCompany, publishCompany, submitCompanyForReview, verifyCompany } from "@/modules/admin/actions";
 import { getRecordStatusColor } from "@/lib/colors";
 import { Button } from "@/components/shared/Button";
+import { ACTIVE_COMPANY_WHERE } from "@/modules/companies/retirement";
 
 export const metadata = { title: "Admin · Companies" };
 
 export default async function AdminCompaniesPage() {
   const companies = await prisma.company.findMany({
+    where: ACTIVE_COMPANY_WHERE,
     orderBy: { name: "asc" },
     select: {
       id: true,
@@ -22,6 +26,7 @@ export default async function AdminCompaniesPage() {
       country: true,
       companyStatus: true,
       status: true,
+      _count: { select: { redirects: true } },
     },
   });
 
@@ -64,9 +69,18 @@ export default async function AdminCompaniesPage() {
             </tr>
           </thead>
           <tbody>
-            {companies.map((company) => (
+            {companies.map((company) => {
+              const isMergeSurvivor = company._count.redirects > 0;
+              return (
               <tr key={company.id} className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] transition-colors">
-                <td className="px-3 py-2.5 text-[13px] font-medium text-[var(--text-primary)] truncate max-w-[280px]">{company.name}</td>
+                <td className="px-3 py-2.5 text-[13px] font-medium text-[var(--text-primary)] max-w-[280px]">
+                  <span className="truncate">{company.name}</span>
+                  {isMergeSurvivor && (
+                    <span className="ml-2 text-[10px] font-medium text-[var(--text-tertiary)]">
+                      Merge survivor · compatibility locked
+                    </span>
+                  )}
+                </td>
                 <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{COMPANY_SECTOR_DISPLAY[company.sector]}</td>
                 <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{company.country}</td>
                 <td className="px-3 py-2.5 text-[12px] text-[var(--text-secondary)]">{COMPANY_STATUS_DISPLAY[company.companyStatus]}</td>
@@ -78,14 +92,24 @@ export default async function AdminCompaniesPage() {
                 </td>
                 <td className="px-3 py-2.5">
                   <div className="flex items-center gap-1.5">
-                    <Link href={`/admin/companies/${company.id}/edit`}>
-                      <Button variant="secondary" size="sm">Edit</Button>
-                    </Link>
-                    <DeleteButton deleteAction={deleteCompany} id={company.id} />
+                    {!isMergeSurvivor && (
+                      <>
+                        <Link href={`/admin/companies/${company.id}/edit`}>
+                          <Button variant="secondary" size="sm">Edit</Button>
+                        </Link>
+                        <RecordWorkflowButton entity="company" id={company.id} status={company.status} submitForReview={submitCompanyForReview} publish={publishCompany} verify={verifyCompany} />
+                        <ArchiveButton entity="company" archiveAction={archiveCompany} id={company.id} disabled={company.status === "ARCHIVED"} />
+                        <DeleteButton entity="company" deleteAction={deleteCompany} id={company.id} status={company.status} />
+                      </>
+                    )}
+                    {isMergeSurvivor && company.status === "PUBLISHED" && (
+                      <RecordWorkflowButton entity="company" id={company.id} status={company.status} submitForReview={submitCompanyForReview} publish={publishCompany} verify={verifyCompany} />
+                    )}
                   </div>
                 </td>
               </tr>
-            ))}
+              );
+            })}
           </tbody>
         </table>
         {companies.length === 0 && (

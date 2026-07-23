@@ -1,6 +1,6 @@
 import type { PortCo } from "./portco-types";
 
-export const companies: PortCo[] = [
+export const companies = Array<PortCo>(
   {
     name: "Amwaste LLC",
     investmentFirm: "3i Infrastructure",
@@ -34047,4 +34047,4 @@ export const companies: PortCo[] = [
       { investmentFirm: "Wren House", ownershipVehicle: "n.a.", investmentYear: 2023, status: "Active" },
     ],
   }
-];
+);

@@ -8,7 +8,9 @@ import {
   MILESTONE_CATEGORY_DISPLAY,
 } from "@/modules/shared/enum-maps";
 import type { CompanyView, MilestoneView, ExecutiveView, SourceView, OwnerView } from "@/modules/shared/types";
+import type { Prisma } from "@/generated/prisma/client";
 import { companyDedupKeys, groupByDedupKeys, preferredDisplayName } from "@/lib/company-key";
+import { ACTIVE_COMPANY_WHERE } from "@/modules/companies/retirement";
 
 const MONTH_INDEX: Record<string, number> = {
   jan: 1,
@@ -176,7 +178,9 @@ function toCompanyView(company: any): CompanyView {
   // then by investmentYear descending. The first entry becomes the "primary"
   // owner whose values are projected onto the scalar legacy fields below
   // (kept for filters, sorts, search, and CSV export compatibility).
-  const ownerships = company.ownershipPeriods || [];
+  const ownerships = (company.ownershipPeriods || []).filter(
+    (period: any) => !period.fundId || period.fund?.status === "PUBLISHED",
+  );
   const owners: OwnerView[] = ownerships
     .map((p: any): OwnerView => ({
       // Prefer the linked fund's manager (the canonical "investor of record")
@@ -233,7 +237,10 @@ function toCompanyView(company: any): CompanyView {
 
   return {
     id: company.id,
-    focusIds: [company.id],
+    focusIds: Array.from(new Set([
+      company.id,
+      ...(company.redirects ?? []).map((redirect: { retiredId: string }) => redirect.retiredId),
+    ])),
     name: company.name,
     investmentFirm,
     sector: COMPANY_SECTOR_DISPLAY[company.sector as keyof typeof COMPANY_SECTOR_DISPLAY] || company.sector,
@@ -255,13 +262,26 @@ function toCompanyView(company: any): CompanyView {
   };
 }
 
+const PUBLISHED_OWNERSHIP_WHERE = {
+  OR: [
+    { fundId: null },
+    { fund: { is: { status: "PUBLISHED" } } },
+  ],
+} satisfies Prisma.OwnershipPeriodWhereInput;
+
 const COMPANY_INCLUDE = {
+  redirects: {
+    select: { retiredId: true },
+    orderBy: { retiredId: "asc" as const },
+  },
   ownershipPeriods: {
+    where: PUBLISHED_OWNERSHIP_WHERE,
     include: {
       organization: { select: { name: true } },
       fund: {
         select: {
           fundName: true,
+          status: true,
           manager: { select: { name: true } },
         },
       },
@@ -280,11 +300,16 @@ const COMPANY_INCLUDE = {
     include: {
       source: { select: { label: true, url: true, type: true } },
     },
+    orderBy: [{ isPrimary: "desc" as const }, { id: "asc" as const }],
   },
 };
 
 const COMPANY_LIST_SELECT = {
   id: true,
+  redirects: {
+    select: { retiredId: true },
+    orderBy: { retiredId: "asc" as const },
+  },
   name: true,
   sector: true,
   subsector: true,
@@ -374,12 +399,12 @@ function mergeByCanonicalKey(views: CompanyView[]): CompanyView {
 async function getAllCompaniesRaw(options: { detail?: boolean } = {}): Promise<CompanyView[]> {
   const companies = options.detail === false
     ? await prisma.company.findMany({
-        where: { status: "PUBLISHED" },
+        where: { status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
         select: COMPANY_LIST_SELECT,
         orderBy: { name: "asc" },
       })
     : await prisma.company.findMany({
-        where: { status: "PUBLISHED" },
+        where: { status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
         include: COMPANY_INCLUDE,
         orderBy: { name: "asc" },
       });
@@ -416,26 +441,39 @@ export async function getAllCompanies(options: { detail?: boolean } = {}): Promi
 }
 
 async function getCompanyByFocusIdRaw(focusId: string): Promise<CompanyView | null> {
-  const target = await prisma.company.findFirst({
-    where: { id: focusId, status: "PUBLISHED" },
+  // Redirect identity wins even while the old Company row is retained as a
+  // rollback-compatibility tombstone for the prior application release.
+  const redirect = await prisma.companyRedirect.findUnique({
+    where: { retiredId: focusId },
+    select: { company: { select: { id: true, status: true } } },
+  });
+  const direct = redirect ? null : await prisma.company.findFirst({
+    where: { id: focusId, status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
     select: { id: true },
   });
-  if (!target) return null;
+  const targetId = redirect?.company.status === "PUBLISHED"
+    ? redirect.company.id
+    : direct?.id ?? null;
+  if (!targetId) return null;
 
   // Find dedupe siblings without loading every company's milestones, sources,
   // and management. This keeps the detail endpoint scoped to one company
   // cluster while preserving the existing view-layer merge semantics.
   const rows = await prisma.company.findMany({
-    where: { status: "PUBLISHED" },
+    where: { status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
     select: { id: true, name: true },
     orderBy: { name: "asc" },
   });
   const groups = groupByDedupKeys(rows, (row) => companyDedupKeys(row.name));
-  const siblingIds = groups.find((group) => group.some((row) => row.id === target.id))
-    ?.map((row) => row.id) ?? [target.id];
+  const siblingIds = groups.find((group) => group.some((row) => row.id === targetId))
+    ?.map((row) => row.id) ?? [targetId];
 
   const companies = await prisma.company.findMany({
-    where: { id: { in: siblingIds }, status: "PUBLISHED" },
+    where: {
+      id: { in: siblingIds },
+      status: "PUBLISHED",
+      ...ACTIVE_COMPANY_WHERE,
+    },
     include: COMPANY_INCLUDE,
     orderBy: { name: "asc" },
   });
@@ -455,13 +493,11 @@ export async function getCompanyByFocusId(focusId: string): Promise<CompanyView 
 }
 
 export async function getCompanyById(id: string): Promise<CompanyView | null> {
-  const company = await prisma.company.findUnique({
-    where: { id },
-    include: COMPANY_INCLUDE,
-  });
-  return company ? toCompanyView(company) : null;
+  return getCompanyByFocusId(id);
 }
 
 export async function getCompanyCount(): Promise<number> {
-  return prisma.company.count({ where: { status: "PUBLISHED" } });
+  return prisma.company.count({
+    where: { status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
+  });
 }

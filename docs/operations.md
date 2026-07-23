@@ -1,5 +1,7 @@
 # Operations
 
+Direct production mutation through Prisma Studio or ad hoc SQL is prohibited. Production changes must use the audited application actions or a protected, hash-bound remediation workflow so the mutation and its review evidence remain transactionally attributable.
+
 ## External Access
 
 This repository is connected to:
@@ -49,11 +51,13 @@ Ordinary seeding never creates an administrator. Create or rotate an account onl
 
 ```bash
 ADMIN_EMAIL=... ADMIN_PASSWORD=... ADMIN_NAME=... \
+TARGET_DATABASE=development RELEASE_SHA=<full-reviewed-sha> \
+MUTATION_REVIEWED_BY=... MUTATION_REASON=... \
 EXPECTED_DATABASE_HOST=... EXPECTED_DATABASE_NAME=... \
 FORBIDDEN_DATABASE_HOST=... npm run admin:create
 ```
 
-The password must contain at least 14 characters, upper- and lowercase letters, a number, and a symbol. Production `NEXTAUTH_URL` must include the retained base path and complete auth endpoint, for example `https://infra-ma-2.vercel.app/Infra-MA2/api/auth`.
+Use `TARGET_DATABASE=validation` or `production` only for an explicitly reviewed target and supply the exact protected release SHA. The command records bootstrap/rotation, operator/reviewer identity, reason, release, and target atomically with the user change; it never records the password or hash. The password must contain at least 14 characters, upper- and lowercase letters, a number, and a symbol. Production `NEXTAUTH_URL` must include the retained base path and complete auth endpoint, for example `https://infra-ma-2.vercel.app/Infra-MA2/api/auth`.
 
 Ordinary database seeding requires the same exact host/database guard plus `TARGET_DATABASE=development` or `TARGET_DATABASE=validation`; production seeding is rejected.
 
@@ -64,5 +68,9 @@ Rotate the production administrator password and `NEXTAUTH_SECRET` after the Pha
 - Versioned research, historical weekly emails, migrations, and release records are retained.
 - `tmp/`, reports, traces, and local agent worktrees are ephemeral and ignored.
 - Preserve unclassified dirty-worktree artifacts until ownership and retention are explicit; never mass-delete them.
-- Follow [release-runbook.md](./release-runbook.md) for schema staging, promotion, and rollback.
+- Follow [release-runbook.md](./release-runbook.md) for the Phase 1 baseline and
+  [phase-2-release-runbook.md](./phase-2-release-runbook.md) for data-trust schema staging,
+  reviewed remediation, pipeline cutover, promotion, and recovery.
+- Treat [news-scan-automation.md](./news-scan-automation.md) as the canonical news scheduler contract;
+  workstation scheduling is intentionally unsupported.
 - Track dependency decisions in [dependency-exceptions.md](./dependency-exceptions.md).

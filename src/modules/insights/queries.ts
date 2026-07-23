@@ -3,6 +3,7 @@ import { unstable_cache } from "next/cache";
 import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
 import type { DatabaseCounts } from "@/modules/shared/types";
 import { companyDedupKeys, groupByDedupKeys } from "@/lib/company-key";
+import { ACTIVE_COMPANY_WHERE } from "@/modules/companies/retirement";
 
 async function getDatabaseCountsRaw(): Promise<DatabaseCounts> {
   // The portfolio count must match the view-layer dedup in
@@ -13,7 +14,7 @@ async function getDatabaseCountsRaw(): Promise<DatabaseCounts> {
     prisma.deal.count({ where: { status: "PUBLISHED" } }),
     prisma.fund.count({ where: { status: "PUBLISHED" } }),
     prisma.company.findMany({
-      where: { status: "PUBLISHED" },
+      where: { status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
       select: { name: true },
     }),
   ]);

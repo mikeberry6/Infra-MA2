@@ -1,23 +1,21 @@
 /**
- * One-shot, hand-curated merges. Used when an automated normalizer can't
- * tell two rows apart from a parent/subsidiary or numbered-SPV pair, but a
- * human has confirmed they refer to the same entity.
+ * Legacy, hand-curated merge-candidate list retained for review history.
  *
  *   Dry run (default — prints what it would do, no writes):
  *     npx tsx scripts/manual-merges.ts
  *
- *   Apply for real:
- *     npx tsx scripts/manual-merges.ts --apply
+ * Apply mode is intentionally disabled. Approved ID-level decisions must use
+ * `merge-duplicate-companies.ts --apply --approval-file=<reviewed JSON>` so
+ * the reviewer and exact retired IDs are persisted in the AuditEvent.
  *
- * Each entry pairs a `keep` (canonical, surviving) name with a `mergeFrom`
- * (the row whose ownership/milestone/management/citation rows are
- * relocated, and whose Company row is then deleted). Names are matched
- * exactly — if the DB row has been renamed since this script was written,
- * the entry is skipped (logged) rather than merged into the wrong row.
+ * Each entry pairs a historical `keep` suggestion with a `mergeFrom` name.
+ * Names are matched exactly and reported only. This file has no write path;
+ * current ID-level decisions use the reviewed approval workflow.
  */
 import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { ACTIVE_COMPANY_WHERE } from "../src/modules/companies/retirement";
 
 const APPLY = process.argv.includes("--apply");
 
@@ -69,24 +67,25 @@ const MERGES: MergePair[] = [
 ];
 
 async function main() {
-  console.log(APPLY ? "⚠️  APPLY MODE — writing changes" : "🔍 DRY RUN — no changes will be made");
+  if (APPLY) {
+    throw new Error(
+      "Direct apply is disabled. Record ID-level approvals and use merge-duplicate-companies.ts --apply --approval-file=<file>.",
+    );
+  }
+  console.log("🔍 LEGACY REVIEW LIST — no changes will be made");
   console.log();
 
-  let totalOpsMoved = 0;
-  let totalMilestonesMoved = 0;
-  let totalRolesMoved = 0;
-  let totalCitationsMoved = 0;
-  let merged = 0;
+  let found = 0;
   let skipped = 0;
 
   for (const pair of MERGES) {
     const keep = await prisma.company.findFirst({
-      where: { name: pair.keep },
-      include: { ownershipPeriods: true, milestones: true, managementRoles: true, citations: true, _count: { select: { ownershipPeriods: true, milestones: true } } },
+      where: { name: pair.keep, ...ACTIVE_COMPANY_WHERE },
+      select: { id: true, _count: { select: { ownershipPeriods: true, milestones: true } } },
     });
     const dup = await prisma.company.findFirst({
-      where: { name: pair.mergeFrom },
-      include: { ownershipPeriods: true, milestones: true, managementRoles: true, citations: true, _count: { select: { ownershipPeriods: true, milestones: true } } },
+      where: { name: pair.mergeFrom, ...ACTIVE_COMPANY_WHERE },
+      select: { id: true, _count: { select: { ownershipPeriods: true, milestones: true } } },
     });
 
     if (!keep || !dup) {
@@ -99,103 +98,17 @@ async function main() {
     console.log(`        ${pair.rationale}`);
     console.log(`        keep: id=${keep.id} owners=${keep._count.ownershipPeriods} milestones=${keep._count.milestones}`);
     console.log(`        dup:  id=${dup.id}  owners=${dup._count.ownershipPeriods}  milestones=${dup._count.milestones}`);
-
-    if (!APPLY) {
-      merged++;
-      continue;
-    }
-
-    await prisma.$transaction(async (tx) => {
-      // Move ownership periods (skip exact org+vehicle pairs the keep row
-      // already has; one org can own through multiple vehicles).
-      const keepOwnershipKeys = new Set(
-        (await tx.ownershipPeriod.findMany({
-          where: { companyId: keep.id },
-          select: { organizationId: true, vehicleName: true },
-        }))
-          .map((p) => `${p.organizationId ?? ""}|${p.vehicleName ?? ""}`),
-      );
-      for (const op of dup.ownershipPeriods) {
-        const key = `${op.organizationId ?? ""}|${op.vehicleName ?? ""}`;
-        if (keepOwnershipKeys.has(key)) continue;
-        await tx.ownershipPeriod.update({ where: { id: op.id }, data: { companyId: keep.id } });
-        keepOwnershipKeys.add(key);
-        totalOpsMoved++;
-      }
-
-      // Move milestones (dedup by date+event).
-      const keepMilestoneKeys = new Set(
-        (await tx.milestone.findMany({ where: { companyId: keep.id } })).map((m) => `${m.date}|${m.event}`),
-      );
-      for (const m of dup.milestones) {
-        const k = `${m.date}|${m.event}`;
-        if (keepMilestoneKeys.has(k)) continue;
-        await tx.milestone.update({ where: { id: m.id }, data: { companyId: keep.id } });
-        keepMilestoneKeys.add(k);
-        totalMilestonesMoved++;
-      }
-
-      // Move management roles (dedup by personId).
-      const keepPersonIds = new Set(
-        (await tx.managementRole.findMany({ where: { companyId: keep.id }, select: { personId: true } })).map((r) => r.personId),
-      );
-      for (const r of dup.managementRoles) {
-        if (keepPersonIds.has(r.personId)) continue;
-        await tx.managementRole.update({ where: { id: r.id }, data: { companyId: keep.id } });
-        keepPersonIds.add(r.personId);
-        totalRolesMoved++;
-      }
-
-      // Move citations (dedup by sourceId).
-      const keepSourceIds = new Set(
-        (await tx.citation.findMany({ where: { companyId: keep.id }, select: { sourceId: true } })).map((c) => c.sourceId),
-      );
-      for (const c of dup.citations) {
-        if (keepSourceIds.has(c.sourceId)) continue;
-        await tx.citation.update({ where: { id: c.id }, data: { companyId: keep.id } });
-        keepSourceIds.add(c.sourceId);
-        totalCitationsMoved++;
-      }
-
-      // Backfill any blank scalar fields on the keep row.
-      const updates: Record<string, unknown> = {};
-      if (!keep.description && dup.description) updates.description = dup.description;
-      if (!keep.headquarters && dup.headquarters) updates.headquarters = dup.headquarters;
-      if (!keep.yearFounded && dup.yearFounded) updates.yearFounded = dup.yearFounded;
-      if (!keep.website && dup.website) updates.website = dup.website;
-      const mergedTags = new Set([...(keep.countryTags || []), ...(dup.countryTags || [])]);
-      if (mergedTags.size !== (keep.countryTags || []).length) {
-        updates.countryTags = Array.from(mergedTags);
-      }
-      if (Object.keys(updates).length > 0) {
-        await tx.company.update({ where: { id: keep.id }, data: updates });
-      }
-
-      // Wipe any leftover child rows still pointing at the dup row before
-      // we delete it (schema has no ON DELETE CASCADE on these FKs).
-      await tx.milestone.deleteMany({ where: { companyId: dup.id } });
-      await tx.managementRole.deleteMany({ where: { companyId: dup.id } });
-      await tx.citation.deleteMany({ where: { companyId: dup.id } });
-      await tx.ownershipPeriod.deleteMany({ where: { companyId: dup.id } });
-      await tx.company.delete({ where: { id: dup.id } });
-    });
-
-    merged++;
+    found++;
   }
 
   console.log();
-  console.log(`Merged: ${merged}   Skipped: ${skipped}`);
-  console.log(`Ownership periods moved: ${totalOpsMoved}`);
-  console.log(`Milestones moved:        ${totalMilestonesMoved}`);
-  console.log(`Management roles moved:  ${totalRolesMoved}`);
-  console.log(`Citations moved:         ${totalCitationsMoved}`);
-  if (!APPLY) console.log("\nThis was a dry run. Re-run with --apply to write changes.");
+  console.log(`Legacy pairs found: ${found}   Skipped: ${skipped}`);
+  console.log("\nGenerate a current approval template; this legacy list cannot mutate data.");
 }
 
 main()
-  .catch((e) => {
-    console.error("❌ Manual merges failed:", e);
-    process.exit(1);
+  .catch(() => {
+    process.exitCode = 1;
   })
   .finally(async () => {
     await prisma.$disconnect();

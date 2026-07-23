@@ -3,6 +3,7 @@ import {
   DASHBOARD_SOURCE_REGISTRY,
   DASHBOARD_SOURCE_REGISTRY_BY_METRIC,
 } from "@/modules/dashboard/source-registry";
+import { dashboardMethodologyCutoverReason } from "@/modules/dashboard/methodology-cutover";
 import type {
   DashboardObservation,
   DashboardProviderResult,
@@ -152,6 +153,9 @@ function validateObservation(source: DashboardSource, item: DashboardObservation
   }
   if (item.metadata !== undefined && !isPlainObject(item.metadata)) {
     throw new Error(`${source.name} returned invalid metadata for ${item.metricId}.`);
+  }
+  if (dashboardMethodologyCutoverReason(item) !== null) {
+    throw new Error(`${source.name} returned incompatible methodology metadata for ${item.metricId}.`);
   }
 
   const numericValue = item.value;
