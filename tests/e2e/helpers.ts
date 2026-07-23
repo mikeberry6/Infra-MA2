@@ -1,5 +1,5 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, type Page } from "@playwright/test";
+import { expect, type Locator, type Page } from "@playwright/test";
 import { assertIsolatedWriteTarget } from "./isolation-guard";
 
 export const BASE_PATH = process.env.E2E_BASE_PATH || "/Infra-MA2";
@@ -51,6 +51,63 @@ export async function expectNoHorizontalOverflow(page: Page, context?: string) {
 
   expect(dimensions.document, diagnostic).toBeLessThanOrEqual(dimensions.viewport);
   expect(dimensions.body, diagnostic).toBeLessThanOrEqual(dimensions.viewport);
+}
+
+export async function isEffectivelyInert(locator: Locator): Promise<boolean> {
+  return locator.evaluate((element) => {
+    let current: HTMLElement | null = element as HTMLElement;
+    while (current) {
+      if (current.inert) return true;
+      current = current.parentElement;
+    }
+    return false;
+  });
+}
+
+export async function expectDialogTabLoop(page: Page, dialog: Locator) {
+  const boundaryCount = await dialog.evaluate((element) => {
+    const selector = [
+      "a[href]",
+      "button:not([disabled])",
+      "input:not([disabled])",
+      "select:not([disabled])",
+      "textarea:not([disabled])",
+      "[tabindex]:not([tabindex='-1'])",
+    ].join(",");
+    const focusables = Array.from(element.querySelectorAll<HTMLElement>(selector))
+      .filter((candidate) => candidate.getClientRects().length > 0);
+    const first = focusables[0];
+    const last = focusables.at(-1);
+    if (!first || !last) return focusables.length;
+    if (first === last) {
+      first.dataset.e2eDialogFocusBoundary = "only";
+      first.focus();
+      return focusables.length;
+    }
+    first.dataset.e2eDialogFocusBoundary = "first";
+    last.dataset.e2eDialogFocusBoundary = "last";
+    first.focus();
+    return focusables.length;
+  });
+  expect(boundaryCount).toBeGreaterThan(0);
+
+  if (boundaryCount === 1) {
+    const only = page.locator('[data-e2e-dialog-focus-boundary="only"]');
+    await expect(only).toBeFocused();
+    await page.keyboard.press("Shift+Tab");
+    await expect(only).toBeFocused();
+    await page.keyboard.press("Tab");
+    await expect(only).toBeFocused();
+    return;
+  }
+
+  const first = page.locator('[data-e2e-dialog-focus-boundary="first"]');
+  const last = page.locator('[data-e2e-dialog-focus-boundary="last"]');
+  await expect(first).toBeFocused();
+  await page.keyboard.press("Shift+Tab");
+  await expect(last).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(first).toBeFocused();
 }
 
 export async function applyWcagTextSpacing(page: Page) {

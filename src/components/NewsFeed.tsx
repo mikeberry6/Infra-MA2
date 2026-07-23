@@ -251,7 +251,7 @@ function OperationalStatus({ operations }: { operations: FeedOperationsView }) {
   const color = isHealthy ? "#1d9d76" : operations.state === "never-run" ? "#71717a" : "#b45309";
 
   return (
-    <section className="mb-5 flex flex-col gap-2 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-4 py-3 sm:flex-row sm:items-center sm:justify-between" aria-label="News pipeline status">
+    <section className="mb-5 flex flex-col gap-2 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-4 py-3 md:flex-row md:items-center md:justify-between" aria-label="News pipeline status">
       <div className="min-w-0">
         <div className="flex items-center gap-2 type-meta font-semibold text-[var(--text-primary)]">
           <span aria-hidden className="h-2 w-2 rounded-full" style={{ backgroundColor: color }} />
@@ -259,7 +259,7 @@ function OperationalStatus({ operations }: { operations: FeedOperationsView }) {
         </div>
         <p className="mt-0.5 type-micro">{operations.message}</p>
       </div>
-      <dl className="flex shrink-0 flex-wrap gap-x-5 gap-y-1 type-micro">
+      <dl className="flex min-w-0 flex-wrap gap-x-5 gap-y-1 type-micro md:shrink-0">
         <div>
           <dt className="inline">Last success </dt>
           <dd className="inline mono tabular-nums text-[var(--text-secondary)]">{operations.lastSuccessfulAt ? formatDate(operations.lastSuccessfulAt) : "Not recorded"}</dd>

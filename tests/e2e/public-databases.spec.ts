@@ -1,5 +1,11 @@
-import { expect, test, type Locator, type Page } from "@playwright/test";
-import { appPath, expectNoHorizontalOverflow, waitForApplication } from "./helpers";
+import { expect, test, type Page } from "@playwright/test";
+import {
+  appPath,
+  expectDialogTabLoop,
+  expectNoHorizontalOverflow,
+  isEffectivelyInert,
+  waitForApplication,
+} from "./helpers";
 import {
   DRAWER_SHELL_BUDGET_MS,
   drawerShellMeasure,
@@ -17,48 +23,6 @@ async function expectDrawerShellWithinBudget(page: Page, kind: DrawerKind) {
 
   expect(shellDuration).not.toBeNull();
   expect(shellDuration ?? Number.POSITIVE_INFINITY).toBeLessThan(DRAWER_SHELL_BUDGET_MS);
-}
-
-async function isEffectivelyInert(locator: Locator): Promise<boolean> {
-  return locator.evaluate((element) => {
-    let current: HTMLElement | null = element as HTMLElement;
-    while (current) {
-      if (current.inert) return true;
-      current = current.parentElement;
-    }
-    return false;
-  });
-}
-
-async function expectDialogTabLoop(page: Page, dialog: Locator) {
-  const boundaryCount = await dialog.evaluate((element) => {
-    const selector = [
-      "a[href]",
-      "button:not([disabled])",
-      "input:not([disabled])",
-      "select:not([disabled])",
-      "textarea:not([disabled])",
-      "[tabindex]:not([tabindex='-1'])",
-    ].join(",");
-    const focusables = Array.from(element.querySelectorAll<HTMLElement>(selector))
-      .filter((candidate) => candidate.getClientRects().length > 0);
-    const first = focusables[0];
-    const last = focusables.at(-1);
-    if (!first || !last || first === last) return focusables.length;
-    first.dataset.e2eDialogFocusBoundary = "first";
-    last.dataset.e2eDialogFocusBoundary = "last";
-    first.focus();
-    return focusables.length;
-  });
-  expect(boundaryCount).toBeGreaterThan(1);
-
-  const first = page.locator('[data-e2e-dialog-focus-boundary="first"]');
-  const last = page.locator('[data-e2e-dialog-focus-boundary="last"]');
-  await expect(first).toBeFocused();
-  await page.keyboard.press("Shift+Tab");
-  await expect(last).toBeFocused();
-  await page.keyboard.press("Tab");
-  await expect(first).toBeFocused();
 }
 
 test.describe("anonymous database journeys", () => {
@@ -635,28 +599,6 @@ test.describe("anonymous database journeys", () => {
     await dialog.press("Escape");
     await expect(trigger).toBeFocused();
     await expectNoHorizontalOverflow(page);
-  });
-
-  test("news detail drawer wraps focus, isolates the page, and restores its trigger", async ({ page }) => {
-    await page.goto(appPath("/news"));
-    await waitForApplication(page, "Daily Intelligence Feed");
-
-    const trigger = page.locator("main article > button").first();
-    await expect(trigger).toBeVisible();
-    await trigger.focus();
-    await trigger.press("Enter");
-
-    const dialog = page.getByRole("dialog");
-    await expect(dialog).toBeVisible();
-    expect(await isEffectivelyInert(trigger)).toBe(true);
-    await trigger.evaluate((element) => (element as HTMLElement).focus());
-    expect(await dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
-    await expectDialogTabLoop(page, dialog);
-
-    await dialog.press("Escape");
-    await expect(dialog).toBeHidden();
-    expect(await isEffectivelyInert(trigger)).toBe(false);
-    await expect(trigger).toBeFocused();
   });
 
   for (const [path, heading] of [

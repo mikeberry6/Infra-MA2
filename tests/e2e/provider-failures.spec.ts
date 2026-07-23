@@ -1,7 +1,9 @@
 import { expect, test } from "@playwright/test";
 import {
   appPath,
+  expectDialogTabLoop,
   expectNoAutomaticWcagAaViolations,
+  isEffectivelyInert,
   waitForApplication,
 } from "./helpers";
 
@@ -34,6 +36,26 @@ test("isolated news and dashboard journeys expose failed external-provider state
   await expectNoAutomaticWcagAaViolations(page, {
     context: "failed news-provider state",
   });
+
+  const newsTrigger = page.locator("main article > button").first();
+  await expect(newsTrigger).toBeVisible();
+  await newsTrigger.focus();
+  await newsTrigger.press("Enter");
+  const newsDialog = page.getByRole("dialog");
+  await expect(newsDialog).toBeVisible();
+  expect(await isEffectivelyInert(newsTrigger)).toBe(true);
+  await newsTrigger.evaluate((element) => (element as HTMLElement).focus());
+  expect(await newsDialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+  await expectDialogTabLoop(page, newsDialog);
+  await expectNoAutomaticWcagAaViolations(page, {
+    include: '[role="dialog"]',
+    context: "news detail drawer",
+    excludeNextBadge: false,
+  });
+  await newsDialog.press("Escape");
+  await expect(newsDialog).toBeHidden();
+  expect(await isEffectivelyInert(newsTrigger)).toBe(false);
+  await expect(newsTrigger).toBeFocused();
 
   await page.goto(appPath("/dashboard"));
   await waitForApplication(page, "M&A Conditions Dashboard");

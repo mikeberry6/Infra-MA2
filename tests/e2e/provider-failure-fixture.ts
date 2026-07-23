@@ -3,6 +3,7 @@ import { assertIsolatedE2EDatabase } from "./isolation-guard";
 
 const NEWS_RUN_ID = "e2e-provider-failure-news";
 const NEWS_SUCCESS_RUN_ID = "e2e-provider-failure-news-success";
+const NEWS_ITEM_ID = "e2e-provider-failure-news-item";
 const DASHBOARD_RUN_ID = "e2e-provider-failure-dashboard";
 const DASHBOARD_SOURCE_RUN_ID = "e2e-provider-failure-dashboard-source";
 
@@ -18,6 +19,9 @@ function requireIsolatedFixtureTarget(): void {
 
 async function removeFixtureRows(): Promise<void> {
   await prisma.$transaction([
+    prisma.newsItem.deleteMany({
+      where: { id: NEWS_ITEM_ID },
+    }),
     prisma.dashboardSourceRun.deleteMany({
       where: { id: DASHBOARD_SOURCE_RUN_ID },
     }),
@@ -39,6 +43,20 @@ async function installFixtureRows(): Promise<void> {
   const priorSuccessEndedAt = new Date(priorSuccessStartedAt.getTime() + 1_000);
 
   await prisma.$transaction([
+    prisma.newsItem.create({
+      data: {
+        id: NEWS_ITEM_ID,
+        legacyId: NEWS_ITEM_ID,
+        title: "Isolated provider-failure accessibility fixture",
+        summary: "A synthetic published signal used only to validate the news drawer on the isolated database.",
+        category: "TRANSACTION_ACTIVITY",
+        sourceName: "InfraSight E2E",
+        sourceUrl: "https://example.com/infrasight-provider-failure-fixture",
+        publishedAt: startedAt,
+        confidence: "HIGH",
+        status: "PUBLISHED",
+      },
+    }),
     prisma.pipelineRun.create({
       data: {
         id: NEWS_SUCCESS_RUN_ID,
@@ -116,6 +134,7 @@ async function main(): Promise<void> {
     affectedIds: [
       NEWS_RUN_ID,
       NEWS_SUCCESS_RUN_ID,
+      NEWS_ITEM_ID,
       DASHBOARD_RUN_ID,
       DASHBOARD_SOURCE_RUN_ID,
     ],

@@ -195,7 +195,7 @@ export default async function SearchPage({
                   aria-current={isActive ? "page" : undefined}
                   className={`inline-flex items-center gap-2 rounded-md border px-3 py-2 type-meta font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] ${
                     isActive
-                      ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--accent)]"
+                      ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--accent-hover)]"
                       : "border-[var(--border)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
                   }`}
                 >

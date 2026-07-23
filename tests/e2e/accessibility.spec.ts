@@ -315,20 +315,6 @@ test("a drawer loading state has no automatically detectable WCAG A/AA violation
   await expect(loading).toBeHidden();
 });
 
-test("news detail drawer has no automatically detectable WCAG A/AA violations", async ({ page }) => {
-  await page.goto(appPath("/news"));
-  await waitForApplication(page, "Daily Intelligence Feed");
-  const trigger = page.locator("main article > button").first();
-  await expect(trigger).toBeVisible();
-  await trigger.click();
-  await expect(page.getByRole("dialog")).toBeVisible();
-  await expectNoAutomaticWcagAaViolations(page, {
-    include: '[role="dialog"]',
-    context: "news detail drawer",
-    excludeNextBadge: false,
-  });
-});
-
 test("open multiselect popup has no automatically detectable WCAG A/AA violations", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto(appPath("/tracker"));
