@@ -25,6 +25,7 @@ on:
         type: string
 
 permissions:
+  actions: read
   contents: read
   checks: read
 
@@ -120,6 +121,7 @@ jobs:
             --release-sha="$RELEASE_SHA" \
             --branch=main \
             --required-check=build \
+            --required-check=preview-smoke-lineage \
             --output=tmp/schema-stage/release-provenance.json
 
       - name: Require the reviewed additive migration manifest
@@ -193,6 +195,7 @@ jobs:
             --release-sha="$RELEASE_SHA" \
             --branch=main \
             --required-check=build \
+            --required-check=preview-smoke-lineage \
             --output=tmp/schema-stage/release-provenance-before-write.json
 
       - name: Apply additive migrations while prior application remains active

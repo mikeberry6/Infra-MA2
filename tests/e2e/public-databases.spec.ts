@@ -112,6 +112,75 @@ test.describe("anonymous database journeys", () => {
     await expect(page.locator("body")).not.toHaveCSS("overflow", "hidden");
   });
 
+  for (const database of [
+    {
+      path: "/funds",
+      heading: "Infrastructure Fund Database",
+      filterLabels: ["Strategy", "Status", "Size", "Sector"],
+      representative: { label: "Strategy", option: "Core", parameter: "strategy" },
+    },
+    {
+      path: "/portfolio",
+      heading: "Infrastructure Portfolio Company Database",
+      filterLabels: ["Sector", "Country", "Firm", "Year"],
+      representative: { label: "Sector", option: "Digital", parameter: "sector" },
+    },
+  ] as const) {
+    test(`${database.path} mobile sheet makes every filter keyboard-reachable and URL-restorable`, async ({ page }) => {
+      await page.setViewportSize({ width: 390, height: 844 });
+      await page.goto(`${appPath(database.path)}?page=2`);
+      await waitForApplication(page, database.heading);
+
+      const sheetTrigger = page.getByRole("button", { name: /^Filters/ });
+      await sheetTrigger.focus();
+      await sheetTrigger.press("Enter");
+
+      const dialog = page.getByRole("dialog", { name: "Filters" });
+      await expect(dialog).toBeVisible();
+      await expect(page.locator("body")).toHaveCSS("overflow", "hidden");
+
+      for (const label of database.filterLabels) {
+        const filterTrigger = dialog.getByRole("button", { name: `Filter by ${label}` });
+        await expect(filterTrigger).toBeVisible();
+        await filterTrigger.focus();
+        await filterTrigger.press("Enter");
+
+        const options = page.getByRole("listbox", { name: `${label} options` });
+        await expect(options).toBeVisible();
+        await expect(options.getByRole("option").first()).toBeFocused();
+
+        await options.getByRole("option").first().press("Escape");
+        await expect(filterTrigger).toBeFocused();
+        await expect(dialog).toBeVisible();
+      }
+
+      const representativeTrigger = dialog.getByRole("button", {
+        name: `Filter by ${database.representative.label}`,
+      });
+      await representativeTrigger.press("Enter");
+      const representativeOption = page.getByRole("option", {
+        name: database.representative.option,
+        exact: true,
+      });
+      await expect(representativeOption).toBeFocused();
+      await representativeOption.press("Space");
+
+      await expect.poll(() => (
+        new URL(page.url()).searchParams.get(database.representative.parameter)
+      )).toBe(database.representative.option);
+      await expect.poll(() => new URL(page.url()).searchParams.get("page")).toBeNull();
+      await expect(sheetTrigger).toContainText("1");
+
+      await representativeOption.press("Escape");
+      await expect(representativeTrigger).toBeFocused();
+      await dialog.press("Escape");
+      await expect(dialog).toBeHidden();
+      await expect(sheetTrigger).toBeFocused();
+      await expect(page.locator("body")).not.toHaveCSS("overflow", "hidden");
+      await expectNoHorizontalOverflow(page);
+    });
+  }
+
   test("drawers are deep-linkable and restore focus", async ({ page }) => {
     await page.route("**/api/deals/*", async (route) => {
       await new Promise((resolve) => setTimeout(resolve, 250));

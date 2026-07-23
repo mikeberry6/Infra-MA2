@@ -5,7 +5,7 @@
 InfraSight releases are exact-SHA, schema-first, and promotion-based:
 
 1. A pull request validates additive migrations and compatible application code against an isolated Neon branch and a Vercel Preview deployment.
-2. After merge, the release SHA must be the current protected `main` head and the GitHub Actions `build` check from the `github-actions` app must have succeeded for that exact SHA.
+2. After merge, the release SHA must be the current protected `main` head, and the exact-SHA GitHub Actions `build` and `preview-smoke-lineage` checks must both have succeeded from their allowlisted workflows.
 3. Vercel builds that `main` commit as a staged **production** deployment with production configuration but without assigning the production domains.
 4. A reviewed v2 manifest binds the current production application SHA, exact applied production migration baseline, release SHA, migration paths, and committed migration-blob hashes. The application and migration baselines are independently required to be ancestors of the release; neither is assumed to precede the other because schema-first staging can advance the migration ledger while the prior application remains active. Only additive DDL may be staged during that interval.
 5. Citation, ownership-link, seller-disclosure, and duplicate-company backlogs are handled separately through explicit Research decisions and audited remediation. A schema migration never invents citations or seller treatment, selects canonical survivors, repairs editorial links, or publishes records.
@@ -17,33 +17,35 @@ Merging `main` may create a Vercel production build, but automatic production-do
 ## One-time setup
 
 - Create the GitHub `Production` environment with a required Engineering or Operations reviewer and self-review prevention. Set its deployment-branch policy to **Selected branches and tags**, with `main` as the only entry; an in-workflow ref guard alone cannot protect secrets from modified workflow code on a caller-selected branch. Disable administrator bypass where the plan permits.
-- Protect `main` against direct pushes, force-pushes, and deletion. Require pull requests, resolved conversations, and the `build` status context.
+- Protect `main` against direct pushes, force-pushes, and deletion. Require pull requests, resolved conversations, and the `build` status context. Add `preview-smoke` only after the default-branch workflow is active and has produced its first status.
 - Confirm the GitHub branch API reports `main` as protected; production workflows fail closed if it does not.
 - Configure every secret and exact host/database/project variable listed in [operations.md](./operations.md), including `VERCEL_PROJECT_ID` and the protected canonical `PRODUCTION_URL`.
 - Create a Vercel **Protection Bypass for Automation** secret for the project and store the same value only as the GitHub `Production` environment secret `VERCEL_AUTOMATION_BYPASS_SECRET`. Candidate smoke tests send it as a same-origin header, reject cross-origin redirects, and never place it in a URL or retained report.
 - Create an isolated Neon validation branch from a recent production snapshot. Configure its direct URL as `MIGRATION_DATABASE_URL`, its exact host as `MIGRATION_DATABASE_HOST`, and its database name as `MIGRATION_DATABASE_NAME`. Never point any of these validation values at production.
 - If the reusable validation branch contains the pre-restaging migration lineage, the six byte-identical source migrations and seven no-op aliases keep Prisma history portable. `reconcile-validation-migration-lineage.ts` may resolve only the exact known zero-step failed first alias after proving the target, all six checksums, and zero schema drift. Review `validation-migration-lineage.json`; any partial lineage, checksum mismatch, unknown failure, applied DDL step, or schema diff requires replacing the validation branch instead of bypassing the failure.
 - Configure Vercel Preview with the validation database and preview-only NextAuth credentials.
+- Add a Vercel Trusted Source limited to GitHub Actions repository `mikeberry6/Infra-MA2`, branch `main`, workflow `preview-smoke.yml`, audience `https://vercel.com/infrasight-preview-smoke`, and the Preview environment. Set repository variables `VERCEL_PROJECT_ID`, `VERCEL_PROJECT_NAME=infra-ma-2`, and `VERCEL_SCOPE=mberry`; the workflow validates all three before requesting OIDC.
 - Enable Vercel's **Automatically expose System Environment Variables** setting and verify a Preview exposes `VERCEL_DEPLOYMENT_ID` during both build and runtime. If that setting is unavailable, configure a unique `DATA_CACHE_NAMESPACE` per deployment in both contexts.
 - Set `NEXT_PUBLIC_SITE_URL` to the canonical origin in Production and the intended non-production origin in Preview so Open Graph and Twitter metadata do not resolve against the fallback host.
 - Configure `main` as Vercel's sole production branch, use Node 24, and disable automatic production-domain assignment so successful `main` builds remain staged until promotion.
 - Confirm Vercel retains the prior known-good deployment and record how to identify it without guessing.
+- For the initial workflow bootstrap, keep every production mutation workflow blocked. After the workflow lands on `main`, redeploy the exact bootstrap PR head to Preview, require its trusted `preview-smoke` success, rerun the failed main `preview-smoke-lineage` job, and only then add `preview-smoke` to branch protection. Do not substitute a branch alias, production deployment, or manual status.
 
 ## Pull-request validation
 
 1. Open a pull request containing one coherent phase. Do not combine framework upgrades, schema changes, and major UI work.
 2. Review every migration as additive. `DROP`, data mutation, destructive type conversion, table replacement, and column alteration are outside the normal staging workflow.
-3. Wait for the complete pull-request **Release Gate**, including exact committed-blob migration auditing, isolated database migration, source/canonical-data reports, authenticated Playwright, axe, responsive, and visual checks.
+3. Wait for the complete pull-request **Release Gate**, including exact committed-blob migration auditing, isolated database migration, source/canonical-data reports, authenticated Playwright, axe, responsive, and visual checks. Also require `preview-smoke` from the trusted default-branch workflow against the immutable Preview URL.
 4. When source, canonical-company, ownership-link, or seller-treatment coverage blocks validation, download the reviewer-neutral company-merge, ownership-link, Fund primary-source, deal seller-disclosure, and primary-citation approval templates. A failing gate is expected until Research supplies evidence-backed decisions; do not weaken the gate.
 5. Review the migration manifest, source-coverage report, duplicate-company and ownership-link reports, weekly-email verification, production dependency audit, and Playwright artifacts.
-6. Exercise anonymous browse/search/filter/sort/pagination/deep-link flows and authenticated admin/import-preview/export authorization flows on the Vercel Preview. For each administrative list, verify the fixed 25-row `?page=N` navigation, malformed/out-of-range normalization, and browser back/forward behavior. Do not commit an import solely for smoke testing.
+6. Review the retained sanitized Preview event and runtime-smoke evidence. Confirm the full candidate SHA, project, immutable URL, healthy database/pipelines, canonical root redirect, public routes, and anonymous export denial. Exercise authenticated admin/import-preview/export authorization flows manually on that same Preview. For each administrative list, verify the fixed 25-row `?page=N` navigation, malformed/out-of-range normalization, and browser back/forward behavior. Do not commit an import solely for smoke testing.
 
 The Preview proves the pull request against non-production configuration. It is not the deployment later promoted to production.
 
 ## Exact release preparation
 
 1. Merge only after the pull-request gate succeeds. Pause additional `main` merges for the release window.
-2. Wait for the `main` push **Release Gate**. Record the full SHA; it must remain the current protected `main` head for each production dispatch. A later committed approval creates a new eligible release only after its own exact-SHA gate and preparation pass.
+2. Wait for the `main` push **Release Gate** and `preview-smoke-lineage`. The lineage job must identify the associated merged PR, prove its previewed head and the release have the same Git tree, and bind the candidate status to the trusted successful `preview-smoke.yml` run. Record the full SHA; it must remain the current protected `main` head for each production dispatch. A later committed approval creates a new eligible release only after its own exact-SHA gate and preparation pass.
 3. Identify the full SHA of the application currently serving production. This is `production_app_sha`; resolve it from immutable deployment metadata rather than a branch name or assumed deploy time.
 4. Identify `migration_base_sha`: the full commit whose `prisma/migrations` names and SHA-256 checksums exactly match the successfully applied production migration ledger. From a clean checkout of the release SHA, prove that baseline read-only and generate the additive manifest:
 
@@ -135,7 +137,7 @@ If adding an approval file advances `main`, that commit becomes a new release SH
 
 The promotion workflow requires all of the following before changing domains:
 
-- the release still equals the current protected `main` head and exact-SHA `build` succeeded from GitHub Actions;
+- the release still equals the current protected `main` head and exact-SHA `build` plus `preview-smoke-lineage` succeeded from their allowlisted GitHub Actions workflows;
 - the candidate is ready, has Vercel target `production`, belongs to `VERCEL_PROJECT_ID`, and has matching GitHub source SHA, commit metadata, and immutable repository ID;
 - candidate `/api/health` returns only the documented six-field top-level contract and reports the release's exact 12-character SHA prefix;
 - production host and database name match the allowlist, migration status is clean, and schema drift is zero;
@@ -154,6 +156,7 @@ Within 15 minutes:
 - Sign in as an administrator, inspect the audit log, traverse a multi-page 25-row administrative list with back/forward navigation, preview (but do not commit) a small import, and verify a permitted analyst/admin export.
 - Open uncached deal, fund, and company drawers and confirm the loading shell commits before delayed detail data; review the payload-free browser measurement against the 100 ms regression budget without treating one smoke result as p75 evidence.
 - Check Vercel route errors, database latency, provider latency, and Core Web Vitals for regressions.
+- Open the Vercel Web Analytics and Speed Insights project dashboards in Production. Record whether collection is active, the route/device sample count, and the observation window; do not claim p75 objectives from a sparse sample. If the Hobby plan still withholds custom events, record the seven event KPIs as blocked rather than collected.
 - Resume publication/imports and attach the 90-day release evidence to the release record.
 
 After the bootstrap/security release, rotate the production administrator credential and `NEXTAUTH_SECRET`; sign in again after rotation. Record only completion time and operator, never values.

@@ -53,6 +53,7 @@ on:
         type: string
 
 permissions:
+  actions: read
   contents: read
   checks: read
 
@@ -147,6 +148,7 @@ jobs:
             --release-sha="$RELEASE_SHA" \
             --branch=main \
             --required-check=build \
+            --required-check=preview-smoke-lineage \
             --output=tmp/remediation/release-provenance.json
 
       - name: Select the exact protected database target
@@ -236,6 +238,7 @@ jobs:
             --release-sha="$RELEASE_SHA" \
             --branch=main \
             --required-check=build \
+            --required-check=preview-smoke-lineage \
             --output=tmp/remediation/release-provenance-before-apply.json
 
       - name: Apply the exact reviewed decision

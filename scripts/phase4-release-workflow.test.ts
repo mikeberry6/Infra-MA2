@@ -21,6 +21,10 @@ describe("Phase 4 release workflow contract", () => {
     expect(releaseGate).toContain(
       "DATA_CACHE_NAMESPACE: e2e-${{ github.run_id }}-${{ github.run_attempt }}",
     );
+    expect(releaseGate).toContain("scripts/verify-news-persistence-validation.ts");
+    expect(releaseGate).toContain(
+      "NEWS_PERSISTENCE_VALIDATION_GATE_OUTCOME: ${{ steps.news_persistence_validation_gate.outcome }}",
+    );
     expect(releaseGate).toContain('branches: ["main"]');
     expect(releaseGate).not.toContain("codex/infra-90-day-phase-");
     const playwright = readFileSync(path.join(process.cwd(), "playwright.config.ts"), "utf8");
@@ -36,6 +40,50 @@ describe("Phase 4 release workflow contract", () => {
     expect(prismaRuntime).toContain(
       'process.env.NEXT_PHASE !== "phase-production-build"',
     );
+  });
+
+  it("smokes the exact Vercel Preview from trusted default-branch tooling", () => {
+    const preview = workflow("preview-smoke.yml");
+    const lineage = workflow("preview-smoke-lineage.yml");
+
+    expect(preview).toContain('types: ["vercel.deployment.success"]');
+    expect(preview).toContain("github.actor == 'vercel[bot]'");
+    expect(preview).toContain("github.event.client_payload.environment == 'preview'");
+    expect(preview).toContain("ref: refs/heads/main");
+    expect(preview).toContain("persist-credentials: false");
+    expect(preview).toContain("id-token: write");
+    expect(preview).toContain("statuses: write");
+    expect(preview).toContain("cancel-in-progress: false");
+    expect(preview).toContain("scripts/verify-vercel-preview-event.ts");
+    expect(preview).toContain('--expected-repository-id="${{ github.repository_id }}"');
+    expect(preview).toContain("core.getIDToken(\"https://vercel.com/infrasight-preview-smoke\")");
+    expect(preview).toContain("--transport=vercel-oidc");
+    expect(preview).toContain('--expected-version="$release_sha"');
+    expect(preview).toContain("--secret-env=VERCEL_TRUSTED_OIDC_TOKEN");
+    expect(preview).not.toContain("VERCEL_AUTOMATION_BYPASS_SECRET");
+    expect(preview).not.toContain("vercel/repository-dispatch/actions/status");
+    expect(preview).toContain('state: success ? "success" : "failure"');
+    expect(preview).toContain("steps.preview_artifact_secret_gate.outcome == 'success'");
+    expect(preview).toContain('job.name === "Trusted immutable Preview smoke"');
+
+    expect(lineage).toContain('branches: ["main"]');
+    expect(lineage).toContain("name: preview-smoke-lineage");
+    expect(lineage).toContain("scripts/verify-preview-smoke-lineage.ts");
+    expect(lineage).toContain("actions: read");
+    expect(lineage).toContain("statuses: read");
+    expect(lineage).not.toContain("statuses: write");
+    expect(lineage).not.toContain("id-token: write");
+
+    for (const name of [
+      "release-production.yml",
+      "stage-production-schema.yml",
+      "remediate-production-data.yml",
+    ]) {
+      const protectedWorkflow = workflow(name);
+      expect(protectedWorkflow).toContain("actions: read");
+      expect(protectedWorkflow).not.toContain("statuses: read");
+      expect(protectedWorkflow).toContain("--required-check=preview-smoke-lineage");
+    }
   });
 
   it("requires full health and exact release identity for candidate and production smoke", () => {

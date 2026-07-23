@@ -10,6 +10,7 @@ const nativeCommand = /\bnode\s+--experimental-strip-types\s+(?:"([^"]+\.ts)"|'(
 const typescriptCommand = /(?:\bnode\s+--experimental-strip-types|\bnpx\s+tsx|(?:\.\/node_modules\/\.bin\/)?\btsx)\s+(?:"([^"]+\.ts)"|'([^']+\.ts)'|([^\s\\'"`]+\.ts))/g;
 const expectedNativeEntrypoints = [
   "scripts/assert-database-target.ts",
+  "scripts/assert-playwright-artifact-secret-safety.ts",
   "scripts/audit-additive-migrations.ts",
   "scripts/audit-current-owner-funds.ts",
   "scripts/audit-portfolio-fund-ownership.ts",
@@ -20,9 +21,11 @@ const expectedNativeEntrypoints = [
   "scripts/validate-portfolios.ts",
   "scripts/validate-weekly-email.ts",
   "scripts/verify-migration-baseline.ts",
+  "scripts/verify-preview-smoke-lineage.ts",
   "scripts/verify-release-provenance.ts",
   "scripts/verify-rollback-provenance.ts",
   "scripts/verify-vercel-deployment.ts",
+  "scripts/verify-vercel-preview-event.ts",
 ];
 const protectedWorkflowPaths = [
   ".github/workflows/release-production.yml",

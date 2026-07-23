@@ -166,6 +166,50 @@ describe("release smoke", () => {
     expect(JSON.stringify(result.report)).not.toContain(secret);
   });
 
+  it("uses a short-lived trusted-source OIDC header without retaining the token", async () => {
+    const token = `${"a".repeat(32)}.${"b".repeat(32)}.${"c".repeat(32)}`;
+    const app = await serve((request, response) => {
+      if (request.headers["x-vercel-trusted-oidc-idp-token"] !== token) {
+        response.statusCode = 401;
+        response.end("missing OIDC identity");
+        return;
+      }
+      if (request.url === "/Infra-MA2/") {
+        response.writeHead(308, { location: "/Infra-MA2/tracker" }).end();
+        return;
+      }
+      response.statusCode = request.url === "/Infra-MA2/api/exports/deals" ? 403 : 200;
+      response.end("ok");
+    });
+
+    const result = await runSmoke(
+      app,
+      ["--transport=vercel-oidc"],
+      {
+        env: { VERCEL_TRUSTED_OIDC_TOKEN: token },
+      },
+    );
+    expect(result.exitCode).toBe(0);
+    expect(result.report.transport).toBe("vercel-oidc");
+    expect(JSON.stringify(result.report)).not.toContain(token);
+  });
+
+  it("rejects a malformed trusted-source token before making a request", async () => {
+    await expect(execFile(process.execPath, [
+      "scripts/release-smoke.mjs",
+      "--base-url=http://127.0.0.1:1",
+      "--transport=vercel-oidc",
+    ], {
+      env: {
+        ...process.env,
+        VERCEL_TRUSTED_OIDC_TOKEN: "not-a-jwt",
+      },
+    })).rejects.toMatchObject({
+      code: 2,
+      stderr: expect.stringContaining("must be a valid GitHub OIDC JWT"),
+    });
+  });
+
   it("rejects extra health fields, duplicate pipelines, and non-passing pipeline states", async () => {
     const invalidPayloads = [
       {

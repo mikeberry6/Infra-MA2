@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   weeklyProposalChangedFields,
+  weeklyProposalWriteDecision,
   type WeeklyProposalAuditState,
 } from "./weekly-deal-audit";
 
@@ -63,7 +64,7 @@ describe("weekly proposal audit changed-field summaries", () => {
     ]);
   });
 
-  it("ignores relation ordering and reports the actual timestamp-only write", () => {
+  it("treats an order-only replay as an exact no-op", () => {
     const existing = state({
       participants: [
         {
@@ -82,6 +83,31 @@ describe("weekly proposal audit changed-field summaries", () => {
       participants: [...existing.participants].reverse(),
     });
 
-    expect(weeklyProposalChangedFields(existing, proposed)).toEqual(["updatedAt"]);
+    expect(weeklyProposalChangedFields(existing, proposed)).toEqual([]);
+    expect(weeklyProposalWriteDecision(existing, proposed)).toEqual({
+      result: "skipped",
+      changedFields: [],
+    });
+  });
+
+  it("classifies creates and material updates for lifecycle bookkeeping", () => {
+    expect(weeklyProposalWriteDecision(null, state())).toEqual({
+      result: "created",
+      changedFields: [
+        "citations",
+        "legacyId",
+        "participants",
+        "status",
+        "title",
+      ],
+    });
+
+    const existing = state();
+    expect(weeklyProposalWriteDecision(existing, state({
+      record: { ...existing.record, title: "Revised proposal" },
+    }))).toEqual({
+      result: "updated",
+      changedFields: ["title"],
+    });
   });
 });

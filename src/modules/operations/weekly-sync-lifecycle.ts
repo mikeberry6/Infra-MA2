@@ -2,7 +2,7 @@ import type { Prisma } from "@/generated/prisma/client";
 import { reportSuppressedTaskFailure } from "@/lib/task-cleanup";
 import type { PipelineCounts } from "@/modules/operations/pipeline-runs";
 
-export type WeeklySyncResult = "created" | "updated";
+export type WeeklySyncResult = "created" | "updated" | "skipped";
 export type WeeklySyncPhase = "planning" | "syncing" | "verifying" | "completing";
 
 export type WeeklySyncLifecycleMetadata = Prisma.InputJsonObject & {
@@ -44,7 +44,8 @@ export class WeeklySyncProgress {
   record(result: WeeklySyncResult): void {
     this.#attempted += 1;
     if (result === "created") this.#inserted += 1;
-    else this.#updated += 1;
+    else if (result === "updated") this.#updated += 1;
+    else this.#skipped += 1;
   }
 
   beginVerification(): void {

@@ -31,8 +31,10 @@ import {
 import {
   runWeeklySyncLifecycle,
   type WeeklySyncProgress,
+  type WeeklySyncResult,
 } from "../src/modules/operations/weekly-sync-lifecycle";
-import { weeklyProposalChangedFields } from "../src/modules/operations/weekly-deal-audit";
+import { weeklyProposalWriteDecision } from "../src/modules/operations/weekly-deal-audit";
+import { runSerializableTransaction } from "../src/modules/operations/serializable-transaction";
 
 const applyChanges = process.argv.includes("--apply");
 const connectionString = process.env.DATABASE_URL;
@@ -151,21 +153,22 @@ function dealPayload(deal: Deal) {
     description: deal.description || "",
     targetDescription: deal.targetDescription || "",
     country: deal.country || "",
-    enterpriseValue: deal.enterpriseValue,
-    equityValue: deal.equityValue,
-    stake: deal.stake,
+    enterpriseValue: deal.enterpriseValue ?? null,
+    equityValue: deal.equityValue ?? null,
+    stake: deal.stake ?? null,
     dealStatus: DEAL_STATUS_MAP[deal.status] as DealStatusEnum,
     closingDate,
-    assetScale: deal.assetScale,
-    valuationMultiple: deal.valuationMultiple,
-    fundVehicle: deal.fundVehicle,
+    assetScale: deal.assetScale ?? null,
+    valuationMultiple: deal.valuationMultiple ?? null,
+    fundVehicle: deal.fundVehicle ?? null,
     keyHighlights: deal.keyHighlights || [],
     status: "DRAFT" as const,
   };
 }
 
-async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
-  return database().$transaction(
+async function syncDeal(deal: Deal): Promise<WeeklySyncResult> {
+  return runSerializableTransaction(
+    database(),
     async (tx) => {
       const existing = await tx.deal.findUnique({
         where: { legacyId: deal.id },
@@ -227,7 +230,7 @@ async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
       const proposedCitations = deal.sourceUrl
         ? [{ sourceUrl: deal.sourceUrl, isPrimary: true }]
         : [];
-      const changedFields = weeklyProposalChangedFields(
+      const decision = weeklyProposalWriteDecision(
         existing
           ? {
               record: {
@@ -270,6 +273,8 @@ async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
           citations: proposedCitations,
         },
       );
+      if (decision.result === "skipped") return decision.result;
+
       const dbDeal = existing
         ? await tx.deal.update({ where: { id: existing.id }, data: payload })
         : await tx.deal.create({ data: { legacyId: deal.id, ...payload } });
@@ -360,16 +365,16 @@ async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
           entityId: dbDeal.id,
           action: existing ? "WEEKLY_PROPOSAL_UPDATE" : "WEEKLY_PROPOSAL_CREATE",
           changes: {
-            changedFields,
+            changedFields: decision.changedFields,
             resultingStatus: "DRAFT",
           },
           metadata: { pipeline: "WEEKLY_DEAL_SYNC", legacyId: deal.id },
         },
       });
 
-      return existing ? "updated" : "created";
+      return decision.result;
     },
-    { isolationLevel: "Serializable", maxWait: 10_000, timeout: 30_000 },
+    { maxAttempts: 3, maxWait: 10_000, timeout: 30_000 },
   );
 }
 

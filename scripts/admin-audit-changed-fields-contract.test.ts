@@ -220,13 +220,13 @@ describe("admin audit changed-field contracts", () => {
   it("computes weekly proposal changes from record and relation snapshots", () => {
     const script = readFileSync("scripts/sync-weekly-briefing-deals.ts", "utf8");
 
-    expect(script).toContain("weeklyProposalChangedFields(");
+    expect(script).toContain("weeklyProposalWriteDecision(");
     expect(script).toContain("participants: existing.participants.map");
     expect(script).toContain("citations: existing.citations.map");
-    expect(script).toContain("changedFields,");
-    expect(script).toContain(
-      '{ isolationLevel: "Serializable", maxWait: 10_000, timeout: 30_000 }',
-    );
+    expect(script).toContain("changedFields: decision.changedFields");
+    expect(script).toContain('if (decision.result === "skipped") return decision.result');
+    expect(script).toContain("runSerializableTransaction(");
+    expect(script).toContain("{ maxAttempts: 3, maxWait: 10_000, timeout: 30_000 }");
     expect(script).not.toContain('changedFields: ["record"');
   });
 

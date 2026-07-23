@@ -26,11 +26,12 @@ if (expectedVersion && !/^[0-9a-f]{40}$/.test(expectedVersion)) {
 
 const origin = new URL(baseUrl).origin;
 const checks = [];
-if (!new Set(["fetch", "vercel-bypass"]).has(transport)) {
-  console.error("--transport must be fetch or vercel-bypass.");
+if (!new Set(["fetch", "vercel-bypass", "vercel-oidc"]).has(transport)) {
+  console.error("--transport must be fetch, vercel-bypass, or vercel-oidc.");
   process.exit(2);
 }
 const protectionBypass = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+const trustedOidcToken = process.env.VERCEL_TRUSTED_OIDC_TOKEN;
 if (
   transport === "vercel-bypass"
   && (!protectionBypass || protectionBypass.length < 16 || /[\r\n]/.test(protectionBypass))
@@ -38,17 +39,32 @@ if (
   console.error("VERCEL_AUTOMATION_BYPASS_SECRET is required for the Vercel bypass transport.");
   process.exit(2);
 }
+if (
+  transport === "vercel-oidc"
+  && (
+    !trustedOidcToken
+    || trustedOidcToken.length < 64
+    || !/^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(trustedOidcToken)
+  )
+) {
+  console.error("VERCEL_TRUSTED_OIDC_TOKEN must be a valid GitHub OIDC JWT for the Vercel OIDC transport.");
+  process.exit(2);
+}
 
 const redirectStatuses = new Set([301, 302, 303, 307, 308]);
 
-async function fetchViaVercelBypass(url, init) {
+async function fetchViaVercelProtection(url, init) {
   let currentUrl = url;
   for (let redirectCount = 0; redirectCount <= 10; redirectCount += 1) {
     if (new URL(currentUrl).origin !== origin) {
-      throw new Error(`Refusing Vercel bypass request outside candidate origin: ${new URL(currentUrl).origin}`);
+      throw new Error(`Refusing protected Vercel request outside candidate origin: ${new URL(currentUrl).origin}`);
     }
     const headers = new Headers(init.headers);
-    headers.set("x-vercel-protection-bypass", protectionBypass);
+    if (transport === "vercel-oidc") {
+      headers.set("x-vercel-trusted-oidc-idp-token", trustedOidcToken);
+    } else {
+      headers.set("x-vercel-protection-bypass", protectionBypass);
+    }
     const response = await fetch(currentUrl, {
       ...init,
       headers,
@@ -68,8 +84,8 @@ async function fetchWithRetry(url, init = {}) {
   let lastError;
   for (let attempt = 1; attempt <= 3; attempt += 1) {
     try {
-      const response = transport === "vercel-bypass"
-        ? await fetchViaVercelBypass(url, init)
+      const response = transport === "vercel-bypass" || transport === "vercel-oidc"
+        ? await fetchViaVercelProtection(url, init)
         : await fetch(url, { ...init, redirect: "follow", signal: AbortSignal.timeout(20_000) });
       if (response.status < 500 || attempt === 3) return response;
       lastError = new Error(`HTTP ${response.status}`);

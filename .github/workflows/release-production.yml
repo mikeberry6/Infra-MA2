@@ -17,6 +17,7 @@ on:
         type: string
 
 permissions:
+  actions: read
   contents: read
   checks: read
 
@@ -98,6 +99,7 @@ jobs:
             --release-sha="$RELEASE_SHA" \
             --branch=main \
             --required-check=build \
+            --required-check=preview-smoke-lineage \
             --output=tmp/release/release-provenance.json
 
       - name: Require protected production configuration
@@ -219,6 +221,7 @@ jobs:
             --release-sha="$RELEASE_SHA" \
             --branch=main \
             --required-check=build \
+            --required-check=preview-smoke-lineage \
             --output=tmp/release/release-provenance-before-promotion.json
 
       - name: Reverify and promote the immutable validated deployment

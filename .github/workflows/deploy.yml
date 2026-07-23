@@ -305,6 +305,15 @@ jobs:
           npx tsx scripts/source-coverage-report.ts --require-complete --output=tmp/ci/source-coverage.json
           npx tsx scripts/report-company-merge-candidates.ts --published-only --require-clean > tmp/ci/company-canonical-review.md
 
+      - name: Verify real news persistence transactions on the isolated database
+        id: news_persistence_validation_gate
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          ./node_modules/.bin/tsx scripts/verify-news-persistence-validation.ts \
+            2>&1 | tee tmp/ci/news-persistence-validation.jsonl
+
       - name: Create or rotate isolated E2E administrator
         shell: bash
         env:
@@ -531,6 +540,7 @@ jobs:
           VALIDATION_ARTIFACT_SECRET_GATE_OUTCOME: ${{ steps.validation_artifact_secret_gate.outcome }}
           BROWSER_ARTIFACT_SECRET_GATE_OUTCOME: ${{ steps.browser_artifact_secret_gate.outcome }}
           STRICT_PUBLICATION_GATE_OUTCOME: ${{ steps.strict_publication_gate.outcome }}
+          NEWS_PERSISTENCE_VALIDATION_GATE_OUTCOME: ${{ steps.news_persistence_validation_gate.outcome }}
         shell: bash
         run: |
           failed=0
@@ -560,6 +570,10 @@ jobs:
           fi
           if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]; then
             echo "::error::Strict publication/data integrity remains blocking; browser evidence was collected without weakening the release gate."
+            failed=1
+          fi
+          if [ "$NEWS_PERSISTENCE_VALIDATION_GATE_OUTCOME" != "success" ]; then
+            echo "::error::Real validation-database news persistence, rollback, or serialization-retry verification failed."
             failed=1
           fi
           exit "$failed"

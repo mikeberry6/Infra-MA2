@@ -17,6 +17,11 @@ export type WeeklyProposalAuditState = {
   citations: readonly WeeklyProposalCitationAudit[];
 };
 
+export type WeeklyProposalWriteDecision = {
+  result: "created" | "updated" | "skipped";
+  changedFields: string[];
+};
+
 function sortedParticipants(
   participants: readonly WeeklyProposalParticipantAudit[],
 ): WeeklyProposalParticipantAudit[] {
@@ -62,8 +67,23 @@ export function weeklyProposalChangedFields(
     changedFields.push("citations");
   }
 
-  // An otherwise identical proposal still executes a Deal update and Prisma
-  // advances the @updatedAt field.
-  if (existing && changedFields.length === 0) changedFields.push("updatedAt");
   return [...new Set(changedFields)].sort();
+}
+
+/**
+ * Decide whether a proposal needs a write before entering the mutation phase.
+ * Exact replays are no-ops so they do not advance updatedAt, replace relations,
+ * or append duplicate audit records.
+ */
+export function weeklyProposalWriteDecision(
+  existing: WeeklyProposalAuditState | null,
+  proposed: WeeklyProposalAuditState,
+): WeeklyProposalWriteDecision {
+  const changedFields = weeklyProposalChangedFields(existing, proposed);
+  return {
+    result: !existing
+      ? "created"
+      : changedFields.length > 0 ? "updated" : "skipped",
+    changedFields,
+  };
 }

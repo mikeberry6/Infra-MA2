@@ -1,0 +1,58 @@
+name: Preview Smoke Lineage
+
+on:
+  push:
+    branches: ["main"]
+
+# Bootstrap is intentionally fail-closed. The first merge that installs
+# preview-smoke.yml on the default branch cannot already have a status produced
+# by that default-branch repository_dispatch workflow. Do not bypass this
+# failure: merge a subsequent reviewed PR after Preview smoke is active, then
+# make this job a required protected-main check.
+permissions:
+  actions: read
+  contents: read
+  pull-requests: read
+  statuses: read
+
+concurrency:
+  group: preview-smoke-lineage-main
+  cancel-in-progress: true
+
+jobs:
+  preview-smoke-lineage:
+    name: preview-smoke-lineage
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # The pushed SHA must still be the protected main head when verified.
+      # Never check out or execute the associated PR head.
+      - name: Checkout current protected-main head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+
+      - name: Verify merged-tree and trusted Preview lineage
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+          VERCEL_PROJECT_NAME: ${{ vars.VERCEL_PROJECT_NAME }}
+        run: |
+          node --experimental-strip-types scripts/verify-preview-smoke-lineage.ts \
+            --output=tmp/preview-smoke-lineage/lineage.json
+
+      - name: Upload sanitized lineage evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: preview-smoke-lineage-${{ github.run_id }}
+          path: tmp/preview-smoke-lineage/lineage.json
+          if-no-files-found: error
+          retention-days: 30

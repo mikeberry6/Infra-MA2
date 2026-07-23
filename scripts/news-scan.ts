@@ -28,6 +28,11 @@ import {
   newsSourceCoverageFromSummary,
 } from "../src/modules/news/source-coverage";
 import {
+  newsPersistenceCountsFromError,
+  newsPipelineCounts,
+  persistNewsCandidates,
+} from "../src/modules/news/persistence";
+import {
   DEFAULT_NEWS_SCAN_MAX_TARGETS,
   effectiveNewsScanLookbackDays,
   parseNewsScanAsOf,
@@ -539,13 +544,21 @@ async function main() {
       if (!sourceHealth.healthy) {
         throw new Error(`News provider source coverage failed: ${sourceHealth.reason}.`);
       }
-      await completePipelineRun(prisma, pipelineRunId, {
-        inserted: summary.results.created,
-        updated: summary.results.updated,
-        skipped: summary.results.existingSourceUrlMatches + summary.results.outsideDateWindow,
-      }, pipelineRunMetadata(summary, sourceCoverage, sourceHealth));
+      await completePipelineRun(
+        prisma,
+        pipelineRunId,
+        newsPipelineCounts(summary.results),
+        pipelineRunMetadata(summary, sourceCoverage, sourceHealth),
+      );
     }
     } catch (error) {
+      const committedCounts = newsPersistenceCountsFromError(error);
+      if (committedCounts) {
+        summary.results = {
+          ...summary.results,
+          ...committedCounts,
+        };
+      }
       if (pipelineRunId) {
         const sourceCoverage = newsSourceCoverageFromSummary(summary);
         const sourceHealth = assessNewsSourceCoverage(sourceCoverage, {
@@ -554,11 +567,13 @@ async function main() {
           intentionalDeferral: summary.crawl.intentionallyDeferred,
         });
         try {
-          await failPipelineRun(prisma, pipelineRunId, error, {
-            inserted: summary.results.created,
-            updated: summary.results.updated,
-            skipped: summary.results.existingSourceUrlMatches + summary.results.outsideDateWindow,
-          }, pipelineRunMetadata(summary, sourceCoverage, sourceHealth));
+          await failPipelineRun(
+            prisma,
+            pipelineRunId,
+            error,
+            newsPipelineCounts(summary.results),
+            pipelineRunMetadata(summary, sourceCoverage, sourceHealth),
+          );
         } catch (pipelineError) {
           reportSuppressedTaskFailure({
             task: "news_scan",
@@ -1994,77 +2009,31 @@ async function persistCandidates(
   candidateByKey: Map<string, MentionCandidate>,
   dryRun: boolean,
 ) {
-  if (candidates.length === 0) {
-    return { existingSourceUrlMatches: 0, created: 0, updated: 0 };
-  }
-
-  const sourceUrls = candidates.map((candidate) => candidate.sourceUrl);
-  const existing = await prisma.newsItem.findMany({
-    where: { sourceUrl: { in: sourceUrls } },
-    select: { id: true, sourceUrl: true },
-  });
-  const existingByUrl = new Map(existing.map((item) => [item.sourceUrl, item.id]));
-
-  if (dryRun) {
-    return {
-      existingSourceUrlMatches: existing.length,
-      created: candidates.length - existing.length,
-      updated: existing.length,
-    };
-  }
-
-  let created = 0;
-  let updated = 0;
-
-  for (const candidate of candidates) {
-    const existingId = existingByUrl.get(candidate.sourceUrl);
-    const data = {
-      title: candidate.title,
-      summary: candidate.summary,
-      category: candidate.category,
-      sourceName: candidate.sourceName,
-      sourceUrl: candidate.sourceUrl,
-      linkedinUrls: candidate.linkedinUrls,
-      publishedAt: candidate.publishedAt,
-      isRumor: candidate.isRumor,
-      confidence: candidate.confidence,
-      status: "PUBLISHED" as const,
-    };
-
-    const newsItem = existingId
-      ? await prisma.newsItem.update({ where: { id: existingId }, data })
-      : await prisma.newsItem.create({
-        data: {
-          legacyId: legacyIdFor(candidate),
-          ...data,
-        },
-      });
-
-    if (existingId) updated++;
-    else created++;
-
-    await prisma.newsMention.deleteMany({ where: { newsItemId: newsItem.id } });
-    const mentions = candidate.mentions
-      .map((mention) => mentionCreateInput(newsItem.id, mention, candidateByKey))
-      .filter((mention): mention is NonNullable<ReturnType<typeof mentionCreateInput>> => !!mention);
-
-    if (mentions.length > 0) {
-      await prisma.newsMention.createMany({
-        data: mentions,
-        skipDuplicates: true,
-      });
-    }
-  }
-
-  return {
-    existingSourceUrlMatches: existing.length,
-    created,
-    updated,
-  };
+  return persistNewsCandidates(
+    prisma,
+    candidates.map((candidate) => ({
+      legacyId: legacyIdFor(candidate),
+      data: {
+        title: candidate.title,
+        summary: candidate.summary,
+        category: candidate.category,
+        sourceName: candidate.sourceName,
+        sourceUrl: candidate.sourceUrl,
+        linkedinUrls: candidate.linkedinUrls,
+        publishedAt: candidate.publishedAt,
+        isRumor: candidate.isRumor,
+        confidence: candidate.confidence,
+        status: "PUBLISHED" as const,
+      },
+      mentions: candidate.mentions
+        .map((mention) => mentionCreateInput(mention, candidateByKey))
+        .filter((mention): mention is NonNullable<ReturnType<typeof mentionCreateInput>> => !!mention),
+    })),
+    { dryRun },
+  );
 }
 
 function mentionCreateInput(
-  newsItemId: string,
   mention: NewsMentionView,
   candidateByKey: Map<string, MentionCandidate>,
 ) {
@@ -2072,7 +2041,6 @@ function mentionCreateInput(
   if (!candidate) return null;
 
   return {
-    newsItemId,
     mentionType: candidate.dbType,
     label: mention.label,
     confidence: confidenceToDb(mention.confidence),
