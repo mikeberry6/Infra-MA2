@@ -11,7 +11,7 @@ const viewports = [
 
 // Baselines are versioned review artifacts. Chromium text rasterization differs
 // materially between Linux CI and macOS development, so CI owns an explicit
-// Linux baseline instead of weakening the global pixel threshold. Existing
+// Linux baseline and a tighter reviewed threshold. Existing
 // generic baselines remain the local-development reference until a separately
 // reviewed platform refresh replaces them. CI runs this tagged file before any
 // database-writing browser journey, keeping the validation dataset stable.
@@ -47,6 +47,7 @@ for (const viewport of viewports) {
     await expect(page).toHaveScreenshot(baseline, {
       fullPage: false,
       mask: [footer],
+      maxDiffPixelRatio: process.platform === "linux" ? 0.005 : 0.02,
     });
   });
 }

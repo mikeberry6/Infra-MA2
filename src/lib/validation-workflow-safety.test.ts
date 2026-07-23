@@ -177,6 +177,9 @@ describe("isolated validation workflow remediation context", () => {
     expect(visualSpec.slice(0, cleanActualCapture)).toContain(
       "`tracker-${viewport.name}-${process.platform}-clean-actual.png`",
     );
+    expect(visualSpec).toContain(
+      'maxDiffPixelRatio: process.platform === "linux" ? 0.005 : 0.02',
+    );
     expect(playwrightUpload).toBeGreaterThan(-1);
     expect(buildJob).toBeGreaterThan(playwrightUpload);
     expect(uploadBlock).toContain("visual-playwright-report/");
