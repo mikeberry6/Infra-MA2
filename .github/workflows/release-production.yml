@@ -209,8 +209,8 @@ jobs:
 
       - name: Require healthy critical pipelines before promotion
         run: |
-          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --freshness-schedule=dashboard-weekday --expected-runs-per-week=5 --min-success-rate=0.95 --require-full-window --output=tmp/release/dashboard-reliability.json
-          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --max-source-failure-rate=0.25 --require-full-window --output=tmp/release/news-reliability.json
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --reliability-schedule=dashboard-weekday --freshness-schedule=dashboard-weekday --expected-runs-per-week=5 --min-success-rate=0.95 --require-full-window --output=tmp/release/dashboard-reliability.json
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --reliability-schedule=news-daily --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --max-source-failure-rate=0.25 --require-full-window --output=tmp/release/news-reliability.json
 
       - name: Reverify exact main head immediately before promotion
         env:

@@ -12,13 +12,20 @@ import {
 } from "../src/modules/news/source-coverage";
 import {
   assessPipelineReliability,
+  buildPipelineReliabilityLedger,
   collapsePipelineAttemptsByRefreshWindow,
   findConsecutiveCriticalSourceIssues,
+  pipelineExecutionProvenanceFromEnv,
   reliabilityObservationWindow,
 } from "../src/modules/operations/pipeline-reliability";
-import { nextDashboardSyncAt } from "../src/modules/operations/pipeline-schedules";
+import {
+  nextDashboardSyncAt,
+  scheduledPipelineRefreshSlots,
+  type PipelineReliabilitySchedule,
+} from "../src/modules/operations/pipeline-schedules";
 
 const DAY_MS = 86_400_000;
+const MAX_RELIABILITY_WINDOW_DAYS = 90;
 
 function option(name: string): string | undefined {
   const prefix = `--${name}=`;
@@ -115,9 +122,22 @@ async function main() {
   }
   const maxAgeHours = numericOption("max-age-hours", 36);
   const windowDays = numericOption("window-days", 30);
+  if (windowDays > MAX_RELIABILITY_WINDOW_DAYS) {
+    throw new Error(`window-days cannot exceed ${MAX_RELIABILITY_WINDOW_DAYS}.`);
+  }
   const minimumObservationDays = numericOption("minimum-observation-days", windowDays);
   const requireFullWindow = hasFlag("require-full-window");
   const expectedRunsPerWeek = numericOption("expected-runs-per-week", 0);
+  const reliabilitySchedule = resolveReliabilitySchedule(
+    option("reliability-schedule"),
+    pipeline,
+  );
+  const scheduledRunsPerWeek = reliabilitySchedule === "dashboard-weekday" ? 5 : 7;
+  if (expectedRunsPerWeek > 0 && expectedRunsPerWeek !== scheduledRunsPerWeek) {
+    throw new Error(
+      `expected-runs-per-week must be ${scheduledRunsPerWeek} for ${reliabilitySchedule}.`,
+    );
+  }
   const minSuccessRate = numericOption("min-success-rate", 0.95);
   const maxRunningHours = numericOption("max-running-hours", 3);
   // NEWS_SCAN must fail closed even when a caller accidentally omits the
@@ -169,18 +189,15 @@ async function main() {
       ? effectiveWindowRuns.filter((run, index) => run.status !== windowRuns[index].status).length
       : 0;
     const refreshWindows = collapsePipelineAttemptsByRefreshWindow(effectiveWindowRuns);
-    const succeeded = refreshWindows.filter((run) => run.status === "SUCCEEDED").length;
-    const failed = refreshWindows.filter((run) => run.status === "FAILED").length;
-    const completed = succeeded + failed;
     const running = windowRuns.filter((run) => run.status === "RUNNING");
     const stalled = running.filter(
       (run) => now.getTime() - run.startedAt.getTime() > maxRunningHours * 3_600_000,
     ).length;
-    const successRate = completed ? succeeded / completed : 0;
     const latestSuccessfulAt = refreshWindows
       .filter((window) => window.status === "SUCCEEDED")
       .reduce<Date | null>((latest, window) => {
-        const completedAt = window.endedAt ?? window.startedAt;
+        const completedAt = window.successfulAt;
+        if (!completedAt) return latest;
         return !latest || completedAt > latest ? completedAt : latest;
       }, null);
     const ageHours = latestSuccessfulAt
@@ -196,13 +213,19 @@ async function main() {
       windowDays,
       requiredDays: minimumObservationDays,
     });
-    const observedDays = observationWindow.observedDays;
-    const expectedCompleted = expectedRunsPerWeek > 0
-      ? observedDays * expectedRunsPerWeek / 7
-      : 0;
-    const minimumCompleted = expectedRunsPerWeek > 0
-      ? Math.max(1, Math.ceil(expectedCompleted * minSuccessRate))
-      : 0;
+    const scheduledSlots = observationWindow.effectiveStartAt
+      ? scheduledPipelineRefreshSlots({
+        schedule: reliabilitySchedule,
+        startAt: observationWindow.effectiveStartAt,
+        endAt: now,
+      })
+      : [];
+    const scheduleLedger = buildPipelineReliabilityLedger({
+      schedule: reliabilitySchedule,
+      slots: scheduledSlots,
+      attempts: effectiveWindowRuns,
+    });
+    const minimumSuccessful = Math.ceil(scheduleLedger.assessed * minSuccessRate);
 
     const summaryPath = option("summary");
     const summaryKind = option("summary-kind");
@@ -219,11 +242,13 @@ async function main() {
     } else if (!freshnessSchedule && ageHours > maxAgeHours) {
       failures.push(`latest success is missing or older than ${maxAgeHours} hours`);
     }
-    if (successRate < minSuccessRate) {
-      failures.push(`rolling success rate ${(successRate * 100).toFixed(1)}% is below ${(minSuccessRate * 100).toFixed(1)}%`);
-    }
-    if (completed < minimumCompleted) {
-      failures.push(`only ${completed} completed run(s); at least ${minimumCompleted} expected for the observed window`);
+    if (
+      scheduleLedger.successRate !== null
+      && scheduleLedger.successRate < minSuccessRate
+    ) {
+      failures.push(
+        `scheduled-window success rate ${(scheduleLedger.successRate * 100).toFixed(1)}% is below ${(minSuccessRate * 100).toFixed(1)}% (${scheduleLedger.succeeded}/${scheduleLedger.assessed} assessed; ${scheduleLedger.failed} failed, ${scheduleLedger.missing} missing, ${scheduleLedger.running} running)`,
+      );
     }
     if (stalled > 0) failures.push(`${stalled} run(s) have remained RUNNING for more than ${maxRunningHours} hours`);
     if (summaryCheck && summaryCheck.sourceIssueRate > maxSourceFailureRate) {
@@ -245,15 +270,18 @@ async function main() {
     });
 
     const report = {
+      schemaVersion: 2,
       generatedAt: now.toISOString(),
       pipeline,
       windowDays,
       freshnessSchedule: freshnessSchedule ?? null,
       maxAgeHours: freshnessSchedule ? null : maxAgeHours,
       nextExpectedAt: nextExpectedAt?.toISOString() ?? null,
+      reliabilitySchedule,
       expectedRunsPerWeek,
       minSuccessRate,
       requireFullWindow,
+      evidenceProvenance: pipelineExecutionProvenanceFromEnv(),
       observationWindow: {
         firstRunAt: firstRun?.startedAt.toISOString() ?? null,
         effectiveStartAt: observationWindow.effectiveStartAt?.toISOString() ?? null,
@@ -262,16 +290,24 @@ async function main() {
         complete: observationWindow.complete,
       },
       counts: {
-        succeeded,
-        failed,
-        running: refreshWindows.filter((window) => window.status === "RUNNING").length,
+        expected: scheduleLedger.expected,
+        assessed: scheduleLedger.assessed,
+        succeeded: scheduleLedger.succeeded,
+        failed: scheduleLedger.failed,
+        missing: scheduleLedger.missing,
+        running: scheduleLedger.running,
         stalled,
-        completed,
-        minimumCompleted,
+        completed: scheduleLedger.succeeded + scheduleLedger.failed,
+        minimumSuccessful,
         attempts: windowRuns.length,
+        eligibleScheduledAttempts: scheduleLedger.eligibleAttempts,
+        ineligibleScheduledAttempts: scheduleLedger.ineligibleAttempts,
+        observedRefreshWindows: refreshWindows.length,
+        unexpectedObserved: scheduleLedger.unexpectedObservedCount,
         sourceReclassifiedAttempts,
       },
-      successRate,
+      successRate: scheduleLedger.successRate,
+      schedule: scheduleLedger,
       latestSuccessfulAt: latestSuccessfulAt?.toISOString() ?? null,
       ageHours,
       summary: summaryCheck,
@@ -301,6 +337,22 @@ async function main() {
       operation: "disconnect_database",
     }, error),
   });
+}
+
+function resolveReliabilitySchedule(
+  configured: string | undefined,
+  pipeline: string,
+): PipelineReliabilitySchedule {
+  const expected = pipeline === "DASHBOARD_SYNC"
+    ? "dashboard-weekday"
+    : pipeline === "NEWS_SCAN" ? "news-daily" : null;
+  if (!expected) {
+    throw new Error(`No calendar reliability schedule is defined for ${pipeline}.`);
+  }
+  if (configured && configured !== expected) {
+    throw new Error(`reliability-schedule must be ${expected} for ${pipeline}.`);
+  }
+  return expected;
 }
 
 withServerTask({

@@ -68,7 +68,7 @@ async function main(): Promise<void> {
     );
     await mkdir(path.dirname(output), { recursive: true });
     await writeFile(output, `${JSON.stringify({ verifiedAt: new Date().toISOString(), migrationBaseSha: baseSha, ...report }, null, 2)}\n`);
-    console.log(`Production migration baseline verified at ${baseSha} (${report.appliedCount} migration(s)).`);
+    console.log(`Database migration baseline verified at ${baseSha} (${report.appliedCount} migration(s)).`);
   };
   await runWithPreservedCleanup({
     run,

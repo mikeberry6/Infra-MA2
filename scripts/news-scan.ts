@@ -42,6 +42,10 @@ import {
   sortNewsScanEntityUrls,
   type NewsScanWindowMetadata,
 } from "../src/modules/news/scan-window";
+import {
+  pipelineExecutionProvenanceFromEnv,
+  type PipelineExecutionProvenance,
+} from "../src/modules/operations/pipeline-reliability";
 import { completePipelineRun, failPipelineRun, startPipelineRun } from "../src/modules/operations/pipeline-runs";
 
 setDefaultResultOrder("ipv4first");
@@ -226,6 +230,7 @@ function pipelineRunMetadata(
   summary: RunSummary,
   sourceCoverage: ReturnType<typeof newsSourceCoverageFromSummary>,
   sourceHealth: ReturnType<typeof assessNewsSourceCoverage>,
+  execution: PipelineExecutionProvenance | null,
 ): Prisma.InputJsonObject {
   return {
     refreshWindow: summary.options.rotationDateUtc,
@@ -248,6 +253,7 @@ function pipelineRunMetadata(
       discoveredUrls: summary.crawl.discoveredUrls,
       deferredQueuedUrls: summary.crawl.deferredQueuedUrls,
     },
+    ...(execution ? { execution: { ...execution } } : {}),
   };
 }
 
@@ -400,6 +406,7 @@ async function main() {
   const scanAsOf = parseNewsScanAsOf(options.scanAsOfUtc);
   const rotationDate = parseNewsScanRotationDate(options.rotationDateUtc);
   if (!options.dryRun) assertMutationDatabaseTargetFromEnv();
+  const execution = pipelineExecutionProvenanceFromEnv();
   const prisma = createPrisma();
   let pipelineRunId: string | null = null;
   const summary: RunSummary = {
@@ -456,14 +463,19 @@ async function main() {
 
   const runScan = async () => {
     try {
-    pipelineRunId = options.dryRun ? null : await startPipelineRun(prisma, "NEWS_SCAN", {
-      refreshWindow: options.rotationDateUtc,
-      sourceCrawl: options.sourceCrawl,
-      newsSearch: options.newsSearch,
-      sinceDays: options.sinceDays ?? null,
-      rotationDateUtc: options.rotationDateUtc,
-      scanAsOfUtc: options.scanAsOfUtc,
-    });
+    pipelineRunId = options.dryRun ? null : await startPipelineRun(
+      prisma,
+      "NEWS_SCAN",
+      {
+        refreshWindow: options.rotationDateUtc,
+        sourceCrawl: options.sourceCrawl,
+        newsSearch: options.newsSearch,
+        sinceDays: options.sinceDays ?? null,
+        rotationDateUtc: options.rotationDateUtc,
+        scanAsOfUtc: options.scanAsOfUtc,
+        ...(execution ? { execution: { ...execution } } : {}),
+      },
+    );
     const context = await withServerTask({
       task: "news_scan",
       operation: "load_tracked_context",
@@ -548,7 +560,7 @@ async function main() {
         prisma,
         pipelineRunId,
         newsPipelineCounts(summary.results),
-        pipelineRunMetadata(summary, sourceCoverage, sourceHealth),
+        pipelineRunMetadata(summary, sourceCoverage, sourceHealth, execution),
       );
     }
     } catch (error) {
@@ -572,7 +584,7 @@ async function main() {
             pipelineRunId,
             error,
             newsPipelineCounts(summary.results),
-            pipelineRunMetadata(summary, sourceCoverage, sourceHealth),
+            pipelineRunMetadata(summary, sourceCoverage, sourceHealth, execution),
           );
         } catch (pipelineError) {
           reportSuppressedTaskFailure({

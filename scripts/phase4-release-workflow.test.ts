@@ -23,7 +23,13 @@ describe("Phase 4 release workflow contract", () => {
     );
     expect(releaseGate).toContain("scripts/verify-news-persistence-validation.ts");
     expect(releaseGate).toContain(
+      "scripts/verify-dashboard-persistence-validation.ts",
+    );
+    expect(releaseGate).toContain(
       "NEWS_PERSISTENCE_VALIDATION_GATE_OUTCOME: ${{ steps.news_persistence_validation_gate.outcome }}",
+    );
+    expect(releaseGate).toContain(
+      "DASHBOARD_PERSISTENCE_VALIDATION_GATE_OUTCOME: ${{ steps.dashboard_persistence_validation_gate.outcome }}",
     );
     expect(releaseGate).toContain('branches: ["main"]');
     expect(releaseGate).not.toContain("codex/infra-90-day-phase-");

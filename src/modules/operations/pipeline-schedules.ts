@@ -3,6 +3,14 @@ const DASHBOARD_HOUR = 7;
 const DASHBOARD_MINUTE = 30;
 const NEWS_HOUR_UTC = 23;
 const NEWS_MINUTE_UTC = 30;
+const MAX_SCHEDULE_LEDGER_SLOTS = 100;
+
+export type PipelineReliabilitySchedule = "dashboard-weekday" | "news-daily";
+
+export interface PipelineRefreshSlot {
+  refreshWindow: string;
+  scheduledAt: Date;
+}
 
 interface CalendarParts {
   year: number;
@@ -52,6 +60,100 @@ export function nextNewsScanAt(after = new Date()): Date {
   if (candidate.getTime() > after.getTime()) return candidate;
   candidate.setUTCDate(candidate.getUTCDate() + 1);
   return candidate;
+}
+
+/**
+ * Enumerate the exact scheduled refresh windows whose service dates intersect
+ * the observation interval. Slots before the effective observation start or
+ * after the current observation end are excluded.
+ */
+export function scheduledPipelineRefreshSlots({
+  schedule,
+  startAt,
+  endAt,
+}: {
+  schedule: PipelineReliabilitySchedule;
+  startAt: Date;
+  endAt: Date;
+}): PipelineRefreshSlot[] {
+  assertValidDate(startAt);
+  assertValidDate(endAt);
+  if (endAt < startAt) throw new Error("Schedule observation end precedes its start.");
+
+  const slots = schedule === "dashboard-weekday"
+    ? dashboardRefreshSlots(startAt, endAt)
+    : newsRefreshSlots(startAt, endAt);
+  if (slots.length > MAX_SCHEDULE_LEDGER_SLOTS) {
+    throw new Error(`Schedule ledger exceeds the ${MAX_SCHEDULE_LEDGER_SLOTS}-slot safety limit.`);
+  }
+  return slots;
+}
+
+function dashboardRefreshSlots(startAt: Date, endAt: Date): PipelineRefreshSlot[] {
+  const start = zonedParts(startAt, DASHBOARD_TIME_ZONE);
+  const end = zonedParts(endAt, DASHBOARD_TIME_ZONE);
+  const startDate = Date.UTC(start.year, start.month - 1, start.day);
+  const endDate = Date.UTC(end.year, end.month - 1, end.day);
+  const slots: PipelineRefreshSlot[] = [];
+
+  for (let date = startDate; date <= endDate; date += 86_400_000) {
+    const calendar = new Date(date);
+    const weekday = calendar.getUTCDay();
+    if (weekday === 0 || weekday === 6) continue;
+    const scheduledAt = zonedDateTimeToUtc({
+      year: calendar.getUTCFullYear(),
+      month: calendar.getUTCMonth() + 1,
+      day: calendar.getUTCDate(),
+      hour: DASHBOARD_HOUR,
+      minute: DASHBOARD_MINUTE,
+      second: 0,
+    }, DASHBOARD_TIME_ZONE);
+    if (scheduledAt < startAt || scheduledAt > endAt) continue;
+    slots.push({
+      refreshWindow: isoCalendarDate(calendar),
+      scheduledAt,
+    });
+  }
+  return slots;
+}
+
+function newsRefreshSlots(startAt: Date, endAt: Date): PipelineRefreshSlot[] {
+  const startDate = Date.UTC(
+    startAt.getUTCFullYear(),
+    startAt.getUTCMonth(),
+    startAt.getUTCDate(),
+  );
+  const endDate = Date.UTC(
+    endAt.getUTCFullYear(),
+    endAt.getUTCMonth(),
+    endAt.getUTCDate(),
+  );
+  const slots: PipelineRefreshSlot[] = [];
+
+  for (let date = startDate; date <= endDate; date += 86_400_000) {
+    const calendar = new Date(date);
+    const scheduledAt = new Date(Date.UTC(
+      calendar.getUTCFullYear(),
+      calendar.getUTCMonth(),
+      calendar.getUTCDate(),
+      NEWS_HOUR_UTC,
+      NEWS_MINUTE_UTC,
+    ));
+    if (scheduledAt < startAt || scheduledAt > endAt) continue;
+    slots.push({
+      refreshWindow: isoCalendarDate(calendar),
+      scheduledAt,
+    });
+  }
+  return slots;
+}
+
+function isoCalendarDate(date: Date): string {
+  return [
+    date.getUTCFullYear().toString().padStart(4, "0"),
+    (date.getUTCMonth() + 1).toString().padStart(2, "0"),
+    date.getUTCDate().toString().padStart(2, "0"),
+  ].join("-");
 }
 
 function zonedDateTimeToUtc(parts: CalendarParts, timeZone: string): Date {

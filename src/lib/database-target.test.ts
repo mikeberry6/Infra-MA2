@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   assertApprovalReviewerMatchesMutationContext,
+  assertDashboardSyncWriteAuthorization,
   assertMaintenanceMutationContext,
   assertMutationDatabaseTarget,
   assertNonProductionSeedTarget,
@@ -95,6 +96,50 @@ describe("mutation database target guard", () => {
       ...environment,
       TARGET_DATABASE: "production",
     })).toThrow(/production is forbidden/);
+  });
+
+  it("requires explicit Operations authorization only for production dashboard writes", () => {
+    const environment = {
+      DATABASE_URL: approved.connectionString,
+      EXPECTED_DATABASE_HOST: approved.expectedHost,
+      EXPECTED_DATABASE_NAME: approved.expectedDatabase,
+      FORBIDDEN_DATABASE_HOST: approved.forbiddenHosts[0],
+      TARGET_DATABASE: "validation",
+    };
+
+    expect(assertDashboardSyncWriteAuthorization(environment)).toBe("validation");
+    expect(assertDashboardSyncWriteAuthorization({
+      ...environment,
+      TARGET_DATABASE: "development",
+    })).toBe("development");
+    expect(assertDashboardSyncWriteAuthorization({
+      ...environment,
+      TARGET_DATABASE: "production",
+      DASHBOARD_WRITES_ENABLED: "true",
+    })).toBe("production");
+    expect(() => assertDashboardSyncWriteAuthorization({
+      ...environment,
+      TARGET_DATABASE: "production",
+    })).toThrow(/DASHBOARD_WRITES_ENABLED must exactly equal true/);
+    expect(() => assertDashboardSyncWriteAuthorization({
+      ...environment,
+      TARGET_DATABASE: "production",
+      DASHBOARD_WRITES_ENABLED: "TRUE",
+    })).toThrow(/DASHBOARD_WRITES_ENABLED must exactly equal true/);
+    expect(() => assertDashboardSyncWriteAuthorization({
+      ...environment,
+      TARGET_DATABASE: "",
+    })).toThrow(/TARGET_DATABASE must explicitly be/);
+  });
+
+  it("applies the exact database guard before dashboard target authorization", () => {
+    expect(() => assertDashboardSyncWriteAuthorization({
+      DATABASE_URL: approved.connectionString,
+      EXPECTED_DATABASE_HOST: "other.example",
+      EXPECTED_DATABASE_NAME: approved.expectedDatabase,
+      FORBIDDEN_DATABASE_HOST: approved.forbiddenHosts[0],
+      TARGET_DATABASE: "validation",
+    })).toThrow(/does not match/);
   });
 
   it("requires reviewed release provenance for maintenance writes", () => {

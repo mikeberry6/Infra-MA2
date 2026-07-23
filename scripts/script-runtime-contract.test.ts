@@ -18,6 +18,7 @@ const expectedNativeEntrypoints = [
   "scripts/audit-portfolio-milestones.ts",
   "scripts/curate-portfolio-milestones.ts",
   "scripts/mutate-vercel-production.ts",
+  "scripts/neon-recovery-janitor.ts",
   "scripts/validate-portfolios.ts",
   "scripts/validate-weekly-email.ts",
   "scripts/vercel-build.ts",

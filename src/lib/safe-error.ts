@@ -15,6 +15,7 @@ export type SafeErrorDetails = {
 };
 
 export type SafeOperationalErrorCode =
+  | "dashboard_writes_disabled"
   | "dashboard_refresh_window_invalid"
   | "database_protocol_invalid"
   | "database_target_forbidden"
@@ -43,6 +44,10 @@ const CLASSIFICATION_MESSAGES: Record<SafeErrorClassification, string> = {
 };
 
 const OPERATIONAL_ERRORS: Record<SafeOperationalErrorCode, SafeErrorDetails> = {
+  dashboard_writes_disabled: {
+    classification: "configuration_error",
+    message: "DASHBOARD_WRITES_ENABLED must exactly equal true for production dashboard synchronization.",
+  },
   dashboard_refresh_window_invalid: {
     classification: "configuration_error",
     message: "DASHBOARD_REFRESH_WINDOW must use YYYY-MM-DD Eastern calendar format.",

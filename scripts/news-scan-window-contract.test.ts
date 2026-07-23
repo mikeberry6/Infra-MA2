@@ -34,7 +34,13 @@ describe("scheduled news scan window contract", () => {
     expect(scanner).toContain("configuredBudgetExhausted: summary.crawl.configuredBudgetExhausted");
     expect(scanner).toContain("intentionalDeferral: summary.crawl.intentionallyDeferred");
     expect(scanner).toContain("cappedByMaxPages: summary.crawl.cappedByMaxPages");
-    expect(scanner.match(/pipelineRunMetadata\(summary, sourceCoverage, sourceHealth\)/g)).toHaveLength(2);
+    expect(scanner.match(/pipelineRunMetadata\(summary, sourceCoverage, sourceHealth, execution\)/g))
+      .toHaveLength(2);
+    expect(scanner).toContain("const execution = pipelineExecutionProvenanceFromEnv();");
+    expect(scanner).toMatch(
+      /startPipelineRun\([\s\S]*?\.\.\.\(execution \? \{ execution: \{ \.\.\.execution \} \} : \{\}\)/,
+    );
+    expect(scanner).toContain("...(execution ? { execution: { ...execution } } : {}),");
   });
 
   it("routes database-controlled crawl and robots requests through the pinned public-network boundary", () => {

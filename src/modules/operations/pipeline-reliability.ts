@@ -1,8 +1,17 @@
 import { SafeOperationalError } from "@/lib/safe-error";
+import type {
+  PipelineRefreshSlot,
+  PipelineReliabilitySchedule,
+} from "@/modules/operations/pipeline-schedules";
 
 const EASTERN_TIME_ZONE = "America/New_York";
 const REFRESH_WINDOW_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
+const GITHUB_SHA_PATTERN = /^[0-9a-f]{40}$/;
+const GITHUB_RUN_ID_PATTERN = /^[1-9]\d{0,19}$/;
+const GITHUB_EVENT_PATTERN = /^[a-z][a-z0-9_-]{0,63}$/;
 const DAY_MS = 86_400_000;
+const MAX_PROVENANCE_PER_REFRESH_WINDOW = 10;
+const MAX_UNEXPECTED_REFRESH_WINDOWS = 100;
 
 export interface PipelineAttemptRow {
   status: string;
@@ -16,7 +25,56 @@ export interface PipelineRefreshWindow {
   status: "SUCCEEDED" | "FAILED" | "RUNNING";
   startedAt: Date;
   endedAt: Date | null;
+  successfulAt: Date | null;
   attempts: number;
+  provenance: PipelineExecutionProvenance[];
+  provenanceTruncated: boolean;
+}
+
+export interface PipelineExecutionProvenance {
+  gitSha: string;
+  githubRunId: string;
+  githubRunAttempt: number;
+  githubEventName: string;
+}
+
+export type PipelineReliabilitySlotStatus =
+  | "SUCCEEDED"
+  | "FAILED"
+  | "RUNNING"
+  | "MISSING";
+
+export interface PipelineReliabilitySlot {
+  refreshWindow: string;
+  scheduledAt: Date;
+  status: PipelineReliabilitySlotStatus;
+  attempts: number;
+  startedAt: Date | null;
+  endedAt: Date | null;
+  provenance: PipelineExecutionProvenance[];
+  provenanceTruncated: boolean;
+}
+
+export interface PipelineReliabilityLedger {
+  schedule: PipelineReliabilitySchedule;
+  expected: number;
+  assessed: number;
+  succeeded: number;
+  failed: number;
+  running: number;
+  missing: number;
+  successRate: number | null;
+  slots: PipelineReliabilitySlot[];
+  unexpectedObserved: Array<{
+    refreshWindow: string;
+    status: PipelineRefreshWindow["status"];
+    attempts: number;
+    reason: "ineligible_event" | "outside_schedule";
+  }>;
+  unexpectedObservedCount: number;
+  unexpectedObservedTruncated: boolean;
+  eligibleAttempts: number;
+  ineligibleAttempts: number;
 }
 
 export interface CriticalSourceRunRow {
@@ -95,18 +153,133 @@ export function collapsePipelineAttemptsByRefreshWindow(
         if (!attempt.endedAt) return latest;
         return !latest || attempt.endedAt > latest ? attempt.endedAt : latest;
       }, null);
+      const successfulAt = attempts
+        .filter((attempt) => attempt.status === "SUCCEEDED")
+        .reduce<Date | null>((latest, attempt) => {
+          const completedAt = attempt.endedAt ?? attempt.startedAt;
+          return !latest || completedAt > latest ? completedAt : latest;
+        }, null);
       const status: PipelineRefreshWindow["status"] = succeeded
         ? "SUCCEEDED"
         : running ? "RUNNING" : "FAILED";
+      const allProvenance = attempts
+        .map((attempt) => pipelineExecutionProvenanceFromMetadata(attempt.metadata))
+        .filter((value): value is PipelineExecutionProvenance => value !== null);
+      const uniqueProvenance = uniquePipelineProvenance(allProvenance);
+      const provenance = uniqueProvenance.slice(0, MAX_PROVENANCE_PER_REFRESH_WINDOW);
       return {
         refreshWindow,
         status,
         startedAt,
         endedAt,
+        successfulAt,
         attempts: attempts.length,
+        provenance,
+        provenanceTruncated: uniqueProvenance.length > provenance.length,
       };
     })
     .sort((left, right) => left.startedAt.getTime() - right.startedAt.getTime());
+}
+
+export function buildPipelineReliabilityLedger({
+  schedule,
+  slots,
+  attempts,
+}: {
+  schedule: PipelineReliabilitySchedule;
+  slots: PipelineRefreshSlot[];
+  attempts: PipelineAttemptRow[];
+}): PipelineReliabilityLedger {
+  const eligibleAttempts = attempts.filter((attempt) =>
+    pipelineExecutionProvenanceFromMetadata(attempt.metadata)?.githubEventName === "schedule");
+  const ineligibleAttempts = attempts.filter((attempt) =>
+    pipelineExecutionProvenanceFromMetadata(attempt.metadata)?.githubEventName !== "schedule");
+  const observed = collapsePipelineAttemptsByRefreshWindow(eligibleAttempts);
+  const ineligibleObserved = collapsePipelineAttemptsByRefreshWindow(ineligibleAttempts);
+  const observedByWindow = new Map(observed.map((window) => [window.refreshWindow, window]));
+  const expectedWindows = new Set(slots.map((slot) => slot.refreshWindow));
+  const ledgerSlots = slots.map((slot): PipelineReliabilitySlot => {
+    const window = observedByWindow.get(slot.refreshWindow);
+    return {
+      refreshWindow: slot.refreshWindow,
+      scheduledAt: slot.scheduledAt,
+      status: window?.status ?? "MISSING",
+      attempts: window?.attempts ?? 0,
+      startedAt: window?.startedAt ?? null,
+      endedAt: window?.endedAt ?? null,
+      provenance: window?.provenance ?? [],
+      provenanceTruncated: window?.provenanceTruncated ?? false,
+    };
+  });
+  const outsideSchedule = observed
+    .filter((window) => !expectedWindows.has(window.refreshWindow))
+    .map((window) => ({
+      refreshWindow: window.refreshWindow,
+      status: window.status,
+      attempts: window.attempts,
+      reason: "outside_schedule" as const,
+    }));
+  const ineligible = ineligibleObserved.map((window) => ({
+      refreshWindow: window.refreshWindow,
+      status: window.status,
+      attempts: window.attempts,
+      reason: "ineligible_event" as const,
+    }));
+  const unexpected = [...outsideSchedule, ...ineligible]
+    .sort((left, right) => left.refreshWindow.localeCompare(right.refreshWindow)
+      || left.reason.localeCompare(right.reason));
+  const succeeded = ledgerSlots.filter((slot) => slot.status === "SUCCEEDED").length;
+  const failed = ledgerSlots.filter((slot) => slot.status === "FAILED").length;
+  const running = ledgerSlots.filter((slot) => slot.status === "RUNNING").length;
+  const missing = ledgerSlots.filter((slot) => slot.status === "MISSING").length;
+  const assessed = ledgerSlots.length - running;
+
+  return {
+    schedule,
+    expected: ledgerSlots.length,
+    assessed,
+    succeeded,
+    failed,
+    running,
+    missing,
+    successRate: assessed > 0 ? succeeded / assessed : null,
+    slots: ledgerSlots,
+    unexpectedObserved: unexpected.slice(0, MAX_UNEXPECTED_REFRESH_WINDOWS),
+    unexpectedObservedCount: unexpected.length,
+    unexpectedObservedTruncated: unexpected.length > MAX_UNEXPECTED_REFRESH_WINDOWS,
+    eligibleAttempts: eligibleAttempts.length,
+    ineligibleAttempts: ineligibleAttempts.length,
+  };
+}
+
+export function pipelineExecutionProvenanceFromEnv(
+  env: Record<string, string | undefined> = process.env,
+): PipelineExecutionProvenance | null {
+  if (env.GITHUB_ACTIONS !== "true") return null;
+  return validatedPipelineExecutionProvenance({
+    gitSha: env.GITHUB_SHA,
+    githubRunId: env.GITHUB_RUN_ID,
+    githubRunAttempt: env.GITHUB_RUN_ATTEMPT,
+    githubEventName: env.GITHUB_EVENT_NAME,
+  });
+}
+
+export function pipelineExecutionProvenanceFromMetadata(
+  metadata: unknown,
+): PipelineExecutionProvenance | null {
+  const execution = recordMetadata(metadata).execution;
+  if (!execution || typeof execution !== "object" || Array.isArray(execution)) return null;
+  const value = execution as Record<string, unknown>;
+  try {
+    return validatedPipelineExecutionProvenance({
+      gitSha: value.gitSha,
+      githubRunId: value.githubRunId,
+      githubRunAttempt: value.githubRunAttempt,
+      githubEventName: value.githubEventName,
+    });
+  } catch {
+    return null;
+  }
 }
 
 export function findConsecutiveCriticalSourceIssues(rows: CriticalSourceRunRow[]): string[] {
@@ -227,6 +400,59 @@ function recordMetadata(value: unknown): Record<string, unknown> {
   return value && typeof value === "object" && !Array.isArray(value)
     ? value as Record<string, unknown>
     : {};
+}
+
+function validatedPipelineExecutionProvenance(value: {
+  gitSha: unknown;
+  githubRunId: unknown;
+  githubRunAttempt: unknown;
+  githubEventName: unknown;
+}): PipelineExecutionProvenance {
+  const gitSha = typeof value.gitSha === "string" ? value.gitSha : "";
+  const githubRunId = typeof value.githubRunId === "string" ? value.githubRunId : "";
+  const rawAttempt = typeof value.githubRunAttempt === "number"
+    ? value.githubRunAttempt
+    : Number(value.githubRunAttempt);
+  const githubEventName = typeof value.githubEventName === "string"
+    ? value.githubEventName
+    : "";
+  if (!GITHUB_SHA_PATTERN.test(gitSha)) {
+    throw new Error("GitHub pipeline provenance SHA is invalid.");
+  }
+  if (!GITHUB_RUN_ID_PATTERN.test(githubRunId)) {
+    throw new Error("GitHub pipeline provenance run ID is invalid.");
+  }
+  if (!Number.isSafeInteger(rawAttempt) || rawAttempt < 1 || rawAttempt > 100) {
+    throw new Error("GitHub pipeline provenance run attempt is invalid.");
+  }
+  if (!GITHUB_EVENT_PATTERN.test(githubEventName)) {
+    throw new Error("GitHub pipeline provenance event name is invalid.");
+  }
+  return {
+    gitSha,
+    githubRunId,
+    githubRunAttempt: rawAttempt,
+    githubEventName,
+  };
+}
+
+function uniquePipelineProvenance(
+  values: PipelineExecutionProvenance[],
+): PipelineExecutionProvenance[] {
+  const byIdentity = new Map<string, PipelineExecutionProvenance>();
+  for (const value of values) {
+    const key = [
+      value.gitSha,
+      value.githubRunId,
+      value.githubRunAttempt,
+      value.githubEventName,
+    ].join("\u0000");
+    byIdentity.set(key, value);
+  }
+  return Array.from(byIdentity.values()).sort((left, right) => {
+    const run = left.githubRunId.localeCompare(right.githubRunId);
+    return run || left.githubRunAttempt - right.githubRunAttempt;
+  });
 }
 
 function assertValidDate(value: Date, label: string): void {

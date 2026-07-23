@@ -65,6 +65,26 @@ export function assertMutationDatabaseTargetFromEnv(
   assertMutationDatabaseTarget(mutationTargetInput(environment));
 }
 
+/**
+ * Dashboard synchronization may write to explicitly guarded development and
+ * validation targets without enabling the production cutover flag. Production
+ * requires both the same exact target guard and an affirmative Operations
+ * authorization.
+ */
+export function assertDashboardSyncWriteAuthorization(
+  environment: MutationEnvironment = process.env,
+): "development" | "validation" | "production" {
+  assertMutationDatabaseTarget(mutationTargetInput(environment));
+  const target = environment.TARGET_DATABASE;
+  if (!["development", "validation", "production"].includes(target ?? "")) {
+    throw new SafeOperationalError("maintenance_target_invalid");
+  }
+  if (target === "production" && environment.DASHBOARD_WRITES_ENABLED !== "true") {
+    throw new SafeOperationalError("dashboard_writes_disabled");
+  }
+  return target as "development" | "validation" | "production";
+}
+
 export function assertNonProductionSeedTarget(
   environment: MutationEnvironment = process.env,
 ): "development" | "validation" {

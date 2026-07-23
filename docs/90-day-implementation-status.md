@@ -59,6 +59,7 @@ The phase trees were reconciled in two-parent integration commit `f97ca6122eae20
 - Schema staging, reviewed remediation, exact-SHA promotion, immutable deployment verification, rollback, and restore guidance are separated and fail closed.
 - A trusted Vercel Preview smoke uses a default-branch workflow, GitHub OIDC Trusted Source, immutable deployment/event verification, full health/runtime smoke, token scanning, and explicit final status.
 - Post-merge Preview lineage proves the previewed PR head and protected-main release have the same Git tree and binds the status to the successful trusted workflow and SHA-bearing artifact before production workflows can proceed.
+- A protected, main-only Neon PITR exercise now requires independently distinct recovery/production Neon project IDs, provisions only temporary children of the allowlisted non-production validation branch, restores from an exact pre-mutation WAL LSN, verifies schema/data/application fidelity locally, scopes credentials per step, scans retained evidence, and performs annotation-bound cleanup. A separate hourly main-only janitor removes exact annotated branches older than two hours after runner loss. Neither workflow can run until its narrowly scoped environments and non-production credential are configured.
 - Next.js 16/React 19 and Tailwind 4 remain intentionally separate, time-bound upgrades after a stable 30-day Next.js 15 production window.
 
 ## Latest code-bearing hosted evidence
@@ -84,8 +85,9 @@ Together, this exact-head Release Gate and immutable Preview cover the final aud
 - The ineligible production-copy child was deleted without ever being deployed. Branch-scoped Vercel pooled/direct variables now reference the clean candidate, and the stable Preview alias is used for branch-specific auth and public-site origins.
 - `PREVIEW_DATABASE_MIGRATIONS_ENABLED` is `true` only for `codex/infra-90-day-completion`; the exact immutable Preview executed the guarded no-op migration deployment, migration status, schema drift check, and application build successfully against the clean candidate.
 - The GitHub `Production` environment prevents self-review and administrator bypass, and permits deployment only from `main`. Its sole named reviewer is still the repository owner, so production intentionally remains blocked until an independent Engineering or Operations reviewer is assigned.
+- The GitHub `Recovery` and `RecoveryCleanup` environments and their `NEON_RECOVERY_API_KEY`, `NEON_RECOVERY_PROJECT_ID`, independently sourced `NEON_PRODUCTION_PROJECT_ID`, and `NEON_VALIDATION_BRANCH_ID` are not configured. The checked-in exercise and janitor therefore remain non-runnable and have made no Neon API or database call.
 - Web Analytics is integrated on public routes, but no production traffic sample currently supports a KPI claim.
-- Speed Insights was enabled on 2026-07-22. At the 2026-07-23T18:49:23Z verification point, the Vercel project API reported `hasData: false`; collection is configured, but no Core Web Vitals result or 30-day p75 target may yet be claimed.
+- Speed Insights was enabled on 2026-07-22. At the 2026-07-23T18:49:23Z verification point, the Vercel project API reported `hasData: false`; collection is configured, but no Core Web Vitals result may yet be claimed. The verified Vercel billing plan is Hobby, whose Speed Insights reporting window is seven days, so it cannot produce the required 30-day p75 evidence. A reviewed Pro-or-higher upgrade or an approved privacy-compatible RUM sink is required before that observation window can begin.
 - The Vercel Hobby plan does not expose custom Web Analytics events. The seven event emitters exist, but event-dashboard KPI verification requires a reviewed plan upgrade or another approved privacy-compatible sink.
 - `main` currently requires `build`. Add `preview-smoke` only after the workflow is present on the default branch and has produced its first legitimate status; adding it earlier would deadlock bootstrap.
 
@@ -115,11 +117,12 @@ The immutable template digests, readiness breakdown, required review order, cano
 - Add an independent Engineering or Operations approver to the GitHub `Production` environment.
 - Stage the additive schema, apply only approved remediations, validate production-like journeys, rotate the production administrator credential and `NEXTAUTH_SECRET`, and promote through protected workflows.
 - Complete manual keyboard-only, WCAG 2.2 AA, and representative screen-reader attestation.
-- Complete a non-production Neon restore exercise. Application rollback evidence does not substitute for database recovery evidence.
+- Configure the independently reviewed, main-only GitHub `Recovery` environment and the narrow automated `RecoveryCleanup` environment with a project-scoped non-production Neon API identity and a separately sourced production project ID. Verify the janitor, then run and retain the protected PITR exercise. Application rollback or local mocks do not substitute for database recovery evidence.
+- Approve either a Vercel plan with at least 30 days of Speed Insights history or a privacy-compatible RUM sink; do not claim that the current Hobby dashboard can retain the required window.
 
 ### Time-bound
 
-- Accumulate a complete 30-day production observation window before claiming at least 95% pipeline reliability or p75 Core Web Vitals.
+- Accumulate a complete 30-day production observation window before claiming at least 95% pipeline reliability. After the approved performance-evidence capability is active, separately accumulate a complete 30-day Production mobile/desktop p75 Core Web Vitals window.
 - Upgrade Next.js 16/React 19 in a separate branch only after that stable window. Defer Tailwind 4 until the framework release is stable.
 
 ## Completion statement

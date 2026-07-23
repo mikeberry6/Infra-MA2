@@ -25,12 +25,13 @@ Automation may propose records but may not publish deals or portfolio companies.
 
 ### Monthly
 
-- Review production and development dependency advisories, administrator/analyst access, deal/fund/company source coverage, `lastVerifiedAt` backlog, Vercel/database latency and route errors, real-user LCP/INP/CLS, and source/provider coverage.
+- Review production and development dependency advisories, administrator/analyst access, deal/fund/company source coverage, `lastVerifiedAt` backlog, Vercel/database latency and route errors, real-user LCP/INP/CLS, the telemetry plan/reporting-window capability, and source/provider coverage.
 - Confirm retained artifacts contain no sensitive payloads and allow expired temporary artifacts to purge.
 
 ### Quarterly
 
 - Review taxonomy, canonical duplicate clusters, accessibility/keyboard/reduced-motion behavior, the recovery exercise, access inventory, incident themes, and roadmap. Complete the accessibility review with the procedure and human-attestation record in [`docs/accessibility-review.md`](accessibility-review.md).
+- Run the protected, main-only Neon PITR workflow against the allowlisted validation branch in a separately identified non-production Neon project. Retain its scanned evidence, exact recovery point/time, independent reviewer, cleanup result, discrepancies, and follow-up actions; application rollback alone does not satisfy this database-recovery exercise. Review the hourly recovery-janitor history and resolve any reserved-prefix anomaly or deferred cleanup.
 - Reconfirm that public data remains read-only and imports/administration/exports remain role-gated.
 
 ## Service objectives
@@ -43,6 +44,8 @@ Automation may propose records but may not publish deals or portfolio companies.
 - Accessibility: WCAG 2.2 AA for public and administrative routes, plus a recorded manual keyboard review each quarter. Automated evidence and human attestation remain separate as defined in [`docs/accessibility-review.md`](accessibility-review.md).
 
 Objectives that require elapsed telemetry are not declared complete from a one-time test. The monthly review records the actual rolling window and follow-up when an objective is missed.
+
+The current Vercel Hobby Speed Insights window is seven days and cannot substantiate the 30-day performance objective. Starting that observation requires approved Pro-or-higher history or an approved privacy-compatible RUM sink. Evidence must cover Production mobile and desktop separately and retain aggregate p75 LCP, INP, CLS, sample count, route scope, release identity, exact window, and reviewer without visitor-level data.
 
 ## Change boundaries
 

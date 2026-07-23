@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   nextDashboardSyncAt,
   nextNewsScanAt,
+  scheduledPipelineRefreshSlots,
 } from "@/modules/operations/pipeline-schedules";
 
 describe("pipeline schedules", () => {
@@ -44,5 +45,69 @@ describe("pipeline schedules", () => {
       .toBe("2026-07-22T23:30:00.000Z");
     expect(nextNewsScanAt(new Date("2026-07-22T23:30:00.000Z")).toISOString())
       .toBe("2026-07-23T23:30:00.000Z");
+  });
+
+  it("enumerates exact weekday dashboard windows instead of a weekly average", () => {
+    const slots = scheduledPipelineRefreshSlots({
+      schedule: "dashboard-weekday",
+      startAt: new Date("2025-12-06T12:00:00.000Z"),
+      endAt: new Date("2026-01-05T12:00:00.000Z"),
+    });
+
+    expect(slots).toHaveLength(20);
+    expect(slots[0]).toEqual({
+      refreshWindow: "2025-12-08",
+      scheduledAt: new Date("2025-12-08T12:30:00.000Z"),
+    });
+    expect(slots.at(-1)).toEqual({
+      refreshWindow: "2026-01-02",
+      scheduledAt: new Date("2026-01-02T12:30:00.000Z"),
+    });
+  });
+
+  it("uses the correct scheduled instant on both sides of a DST transition", () => {
+    const slots = scheduledPipelineRefreshSlots({
+      schedule: "dashboard-weekday",
+      startAt: new Date("2026-03-06T00:00:00.000Z"),
+      endAt: new Date("2026-03-10T23:59:59.999Z"),
+    });
+
+    expect(slots).toEqual([
+      {
+        refreshWindow: "2026-03-06",
+        scheduledAt: new Date("2026-03-06T12:30:00.000Z"),
+      },
+      {
+        refreshWindow: "2026-03-09",
+        scheduledAt: new Date("2026-03-09T11:30:00.000Z"),
+      },
+      {
+        refreshWindow: "2026-03-10",
+        scheduledAt: new Date("2026-03-10T11:30:00.000Z"),
+      },
+    ]);
+  });
+
+  it("includes only elapsed daily news slots", () => {
+    const slots = scheduledPipelineRefreshSlots({
+      schedule: "news-daily",
+      startAt: new Date("2026-07-21T23:45:00.000Z"),
+      endAt: new Date("2026-07-23T12:00:00.000Z"),
+    });
+
+    expect(slots).toEqual([
+      {
+        refreshWindow: "2026-07-22",
+        scheduledAt: new Date("2026-07-22T23:30:00.000Z"),
+      },
+    ]);
+  });
+
+  it("bounds the schedule ledger", () => {
+    expect(() => scheduledPipelineRefreshSlots({
+      schedule: "news-daily",
+      startAt: new Date("2026-01-01T00:00:00.000Z"),
+      endAt: new Date("2026-05-01T23:59:59.999Z"),
+    })).toThrow("100-slot safety limit");
   });
 });

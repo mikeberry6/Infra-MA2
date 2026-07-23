@@ -20,7 +20,7 @@ The workflow:
 - permits at most three bounded attempts;
 - caps each attempt at 200 targets and 750 pages;
 - writes one `PipelineRun` lifecycle record per attempt, then collapses retries into one logical `refreshWindow` for scheduled-window reliability; provider/source coverage remains separate from qualifying-item counts;
-- uploads `news-scan-summary.json` and `news-reliability.json` for 30 days;
+- uploads `news-scan-summary.json` and `news-reliability.json` for 60 days so the complete 30-day observation remains reviewable;
 - requires a successful run within 36 hours and at least 95% successful scheduled runs over the rolling 30-day window;
 - fails when provider failure coverage exceeds 25%; and
 - never creates or publishes Deals or portfolio companies.

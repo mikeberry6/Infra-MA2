@@ -3,7 +3,7 @@ import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient, type Prisma } from "../src/generated/prisma/client";
-import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
+import { assertDashboardSyncWriteAuthorization } from "../src/lib/database-target";
 import { SafeOperationalError } from "../src/lib/safe-error";
 import { withServerTask } from "../src/lib/server-log";
 import {
@@ -16,7 +16,11 @@ import {
   evaluateDashboardSyncHealth,
   syncDashboard,
 } from "../src/modules/dashboard/sync";
-import { resolveEasternRefreshWindow } from "../src/modules/operations/pipeline-reliability";
+import {
+  pipelineExecutionProvenanceFromEnv,
+  resolveEasternRefreshWindow,
+  type PipelineExecutionProvenance,
+} from "../src/modules/operations/pipeline-reliability";
 import { completePipelineRun, failPipelineRun, startPipelineRun } from "../src/modules/operations/pipeline-runs";
 
 function createPrisma(): PrismaClient {
@@ -27,8 +31,9 @@ function createPrisma(): PrismaClient {
 
 async function main() {
   const dryRun = process.argv.includes("--dry-run");
-  if (!dryRun) assertMutationDatabaseTargetFromEnv();
+  if (!dryRun) assertDashboardSyncWriteAuthorization();
   const refreshWindow = resolveEasternRefreshWindow(process.env.DASHBOARD_REFRESH_WINDOW);
+  const execution = pipelineExecutionProvenanceFromEnv();
   const prisma = process.env.DATABASE_URL ? createPrisma() : null;
   if (!dryRun && !prisma) throw new SafeOperationalError("database_url_missing");
   let pipelineRunId: string | null = null;
@@ -42,7 +47,11 @@ async function main() {
     run: async () => {
       try {
         pipelineRunId = !dryRun && prisma
-          ? await startPipelineRun(prisma, "DASHBOARD_SYNC", { refreshWindow })
+          ? await startPipelineRun(
+            prisma,
+            "DASHBOARD_SYNC",
+            pipelineMetadata({ refreshWindow }, execution),
+          )
           : null;
         const summary = await syncDashboard((prisma ?? {}) as any, {
           dryRun,
@@ -57,7 +66,7 @@ async function main() {
         failureEvidence = {
           updated: summary.totals.observationsUpserted + summary.totals.signalsUpserted,
           skipped: summary.totals.skippedSources,
-          metadata: {
+          metadata: pipelineMetadata({
             refreshWindow,
             sources: summary.sources.length,
             failedSources: summary.totals.failedSources,
@@ -70,7 +79,7 @@ async function main() {
               missing: source.missingRequiredMetrics,
               stale: source.staleRequiredMetrics,
             })),
-          },
+          }, execution),
         };
         if (!health.healthy) {
           throw new Error(dashboardSyncFailureMessage(summary, health));
@@ -79,7 +88,7 @@ async function main() {
           await completePipelineRun(prisma, pipelineRunId, {
             updated: summary.totals.observationsUpserted + summary.totals.signalsUpserted,
             skipped: summary.totals.skippedSources,
-          }, {
+          }, pipelineMetadata({
             refreshWindow,
             sources: summary.sources.length,
             failedSources: summary.totals.failedSources,
@@ -92,7 +101,7 @@ async function main() {
               missing: source.missingRequiredMetrics,
               stale: source.staleRequiredMetrics,
             })),
-          });
+          }, execution));
         }
       } catch (error) {
         if (pipelineRunId && prisma) {
@@ -126,6 +135,15 @@ async function main() {
       }, error);
     },
   });
+}
+
+function pipelineMetadata(
+  metadata: Prisma.InputJsonObject,
+  execution: PipelineExecutionProvenance | null,
+): Prisma.InputJsonObject {
+  return execution
+    ? { ...metadata, execution: { ...execution } }
+    : metadata;
 }
 
 withServerTask({

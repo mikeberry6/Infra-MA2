@@ -44,6 +44,11 @@ describe("dashboard operational workflows", () => {
       expect(source).not.toContain("PHASE2_PIPELINES_ENABLED");
     }
     expect(pipeline).toContain("run-with-retry.mjs --attempts=3 -- npm run dashboard:sync");
+    const dashboardSync = pipelineStep("Synchronize dashboard with bounded transient retries");
+    expect(dashboardSync).toContain("TARGET_DATABASE: production");
+    expect(dashboardSync).toContain(
+      "DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}",
+    );
     expect(pipeline).toContain("--min-success-rate=0.95");
     expect(pipeline).toContain("npm run dashboard:sync:dry-run");
     expect(pipeline).toContain("npm run dashboard:verify -- --require-complete");
@@ -161,7 +166,9 @@ describe("dashboard operational workflows", () => {
 
     expect(dashboardReliability).toContain("always()");
     expect(dashboardReliability).toContain("steps.install.outcome == 'success'");
+    expect(dashboardReliability).toContain("--reliability-schedule=dashboard-weekday");
     expect(newsReliability).toContain("if: always() && steps.install.outcome == 'success'");
+    expect(newsReliability).toContain("--reliability-schedule=news-daily");
     expect(newsReliability).toContain("if [ -f tmp/news-scan-summary.json ]");
     const newsScan = pipelineStep("Scan public sources with bounded transient retries");
     expect(newsScan).toMatch(/news:scan -- --max-targets=200 --max-pages=750/);
@@ -184,6 +191,12 @@ describe("dashboard operational workflows", () => {
     expect(weeklyDatabase).toContain("report-company-merge-candidates.ts --published-only --require-clean");
     expect(weeklyDatabase.match(/overall=1/g)).toHaveLength(3);
     expect(weeklyFreshness.match(/verify-pipeline-health\.ts/g)).toHaveLength(2);
+    expect(weeklyFreshness).toContain(
+      "--pipeline=DASHBOARD_SYNC --reliability-schedule=dashboard-weekday",
+    );
+    expect(weeklyFreshness).toContain(
+      "--pipeline=NEWS_SCAN --reliability-schedule=news-daily",
+    );
     expect(weeklyFreshness).toMatch(
       /--pipeline=NEWS_SCAN[^\n]*--max-source-failure-rate=0\.25/,
     );
@@ -197,6 +210,7 @@ describe("dashboard operational workflows", () => {
     expect(pipeline.match(/      - name: Upload run evidence\n        if: .*always\(\).*\n/g)).toHaveLength(2);
     expect(pipelineStep("Upload weekly verification evidence")).toContain("always()");
     expect(pipelineStep("Upload monthly audit evidence")).toContain("always()");
+    expect(pipeline.match(/retention-days: 60/g)).toHaveLength(3);
   });
 
   it("separates the live application from the applied migration baseline", () => {

@@ -190,6 +190,8 @@ jobs:
           EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
           EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
           FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          TARGET_DATABASE: production
+          DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}
           DASHBOARD_REFRESH_WINDOW: ${{ steps.dashboard_clock.outputs.refresh_window }}
           FRED_API_KEY: ${{ github.ref == 'refs/heads/main' && secrets.FRED_API_KEY || '' }}
           EIA_API_KEY: ${{ github.ref == 'refs/heads/main' && secrets.EIA_API_KEY || '' }}
@@ -205,6 +207,7 @@ jobs:
         run: |
           args=(
             --pipeline=DASHBOARD_SYNC
+            --reliability-schedule=dashboard-weekday
             --max-age-hours=30
             --expected-runs-per-week=5
             --min-success-rate=0.95
@@ -224,7 +227,7 @@ jobs:
             tmp/dashboard-sync-summary.json
             tmp/dashboard-reliability.json
           if-no-files-found: warn
-          retention-days: 30
+          retention-days: 60
 
   news:
     name: Evening news scan
@@ -311,6 +314,7 @@ jobs:
         run: |
           args=(
             --pipeline=NEWS_SCAN
+            --reliability-schedule=news-daily
             --max-age-hours=36
             --expected-runs-per-week=7
             --min-success-rate=0.95
@@ -330,7 +334,7 @@ jobs:
             tmp/news-scan-summary.json
             tmp/news-reliability.json
           if-no-files-found: warn
-          retention-days: 30
+          retention-days: 60
 
   verify:
     name: Weekly data, citation, and freshness verification
@@ -420,9 +424,9 @@ jobs:
           if [ -f tmp/dashboard-verify-summary.json ]; then
             cp tmp/dashboard-verify-summary.json tmp/weekly-verification/dashboard-source-verification.json
           fi
-          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --max-age-hours=80 --expected-runs-per-week=5 --min-success-rate=0.95 --output=tmp/weekly-verification/dashboard-reliability.json
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --reliability-schedule=dashboard-weekday --max-age-hours=80 --expected-runs-per-week=5 --min-success-rate=0.95 --output=tmp/weekly-verification/dashboard-reliability.json
           if [ "$?" -ne 0 ]; then overall=1; fi
-          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --max-source-failure-rate=0.25 --output=tmp/weekly-verification/news-reliability.json
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --reliability-schedule=news-daily --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --max-source-failure-rate=0.25 --output=tmp/weekly-verification/news-reliability.json
           if [ "$?" -ne 0 ]; then overall=1; fi
           set -e
           exit "$overall"
@@ -433,7 +437,7 @@ jobs:
           name: weekly-verification-${{ github.run_id }}
           path: tmp/weekly-verification/
           if-no-files-found: warn
-          retention-days: 30
+          retention-days: 60
 
   source-audit:
     name: Monthly dependency and source-coverage audit

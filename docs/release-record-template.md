@@ -53,7 +53,11 @@
 - Public route smoke result:
 - Admin/import-preview/export authorization result:
 - Observability review owner / route errors / database latency / provider latency:
-- Speed Insights p75 LCP / INP / CLS review window:
+- Performance evidence provider / plan / available reporting-window days:
+- Production observation start / end / release SHA / deployment ID:
+- Mobile p75 LCP / INP / CLS / sample counts / route scope:
+- Desktop p75 LCP / INP / CLS / sample counts / route scope:
+- Performance evidence reviewer / observation time / retained aggregate artifact:
 - Analytics fixed-event allowlist review:
 - Administrator credential rotation completed by / time (no value):
 - `NEXTAUTH_SECRET` rotation completed by / time (no value):
@@ -65,8 +69,14 @@
 - Rollback workflow run / artifact:
 - Canonical production smoke result:
 - Recovery time:
-- Database restore exercise evidence:
-- Recovery point/time achieved:
+- Database restore exercise workflow run / retained artifact:
+- Recovery environment reviewer / approval time:
+- Source branch ID / restored branch ID:
+- Recovery point kind / exact LSN or timestamp / recovery time achieved:
+- Migration ledger / schema drift / local public smoke / post-smoke fidelity:
+- Guarded cleanup outcome / cleanup time:
+- Recovery janitor latest successful run / orphan or anomaly count:
+- Recovery discrepancies / owner / deadline:
 - Follow-up actions:
 
 ## Exceptions and follow-up

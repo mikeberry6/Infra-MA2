@@ -10,7 +10,7 @@ describe("production release pipeline freshness contract", () => {
 
   it("uses the canonical weekday schedule for dashboard promotion checks", () => {
     expect(workflow).toMatch(
-      /verify-pipeline-health\.ts --pipeline=DASHBOARD_SYNC --freshness-schedule=dashboard-weekday\b/,
+      /verify-pipeline-health\.ts --pipeline=DASHBOARD_SYNC --reliability-schedule=dashboard-weekday --freshness-schedule=dashboard-weekday\b/,
     );
     expect(workflow).not.toMatch(
       /verify-pipeline-health\.ts --pipeline=DASHBOARD_SYNC[^\n]*--max-age-hours=/,
@@ -19,7 +19,7 @@ describe("production release pipeline freshness contract", () => {
 
   it("retains the explicit max-age contract for the daily news pipeline", () => {
     expect(workflow).toMatch(
-      /verify-pipeline-health\.ts --pipeline=NEWS_SCAN --max-age-hours=36\b[^\n]*--max-source-failure-rate=0\.25\b/,
+      /verify-pipeline-health\.ts --pipeline=NEWS_SCAN --reliability-schedule=news-daily --max-age-hours=36\b[^\n]*--max-source-failure-rate=0\.25\b/,
     );
   });
 });
