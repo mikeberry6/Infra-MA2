@@ -673,10 +673,14 @@ export function PortCoDrawer({
   company,
   funds,
   onClose,
+  detailStatus = "success",
+  onRetry,
 }: {
   company: CompanyView;
   funds: FundStrategyView[];
   onClose: () => void;
+  detailStatus?: "idle" | "loading" | "success" | "error";
+  onRetry?: () => void;
 }) {
   const [showAllMilestones, setShowAllMilestones] = useState(false);
   const [showFormerOwners, setShowFormerOwners] = useState(false);
@@ -756,6 +760,7 @@ export function PortCoDrawer({
         role="dialog"
         aria-modal="true"
         aria-labelledby="portco-drawer-title"
+        aria-busy={detailStatus === "idle" || detailStatus === "loading"}
         tabIndex={-1}
         className="fixed top-0 right-0 bottom-0 z-50 w-full bg-[var(--bg-surface)] shadow-overlay overflow-y-auto animate-slide-in-right sm:max-w-[760px] xl:max-w-[860px]"
       >
@@ -782,6 +787,7 @@ export function PortCoDrawer({
                     rel="noopener noreferrer"
                     className="mt-2 shrink-0 rounded-full p-1.5 text-[var(--text-tertiary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
                     title="Company website"
+                    aria-label={`Open ${company.name} website`}
                   >
                     <ExternalLink className="h-4 w-4" />
                   </a>
@@ -809,6 +815,7 @@ export function PortCoDrawer({
               </div>
             </div>
             <button
+              type="button"
               onClick={onClose}
               aria-label="Close drawer"
               className="shrink-0 rounded-full p-2 text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
@@ -817,6 +824,38 @@ export function PortCoDrawer({
             </button>
           </div>
         </header>
+
+        {(detailStatus === "idle" || detailStatus === "loading") && (
+          <div
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            className="mx-6 mt-6 flex items-center gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-subtle)] px-4 py-3 type-meta sm:mx-8 lg:mx-10"
+          >
+            <span
+              aria-hidden
+              className="h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-[var(--border-strong)] border-t-[var(--accent)]"
+            />
+            Loading complete company detail…
+          </div>
+        )}
+
+        {detailStatus === "error" && (
+          <div
+            role="alert"
+            aria-live="assertive"
+            className="mx-6 mt-6 rounded-lg border border-[var(--border)] bg-[var(--bg-subtle)] px-4 py-3 sm:mx-8 lg:mx-10"
+          >
+            <p className="type-meta text-[var(--text-primary)]">
+              Complete company detail is temporarily unavailable. The summary below may be incomplete.
+            </p>
+            {onRetry && (
+              <Button type="button" variant="ghost" size="sm" className="mt-2 -ml-2" onClick={onRetry}>
+                Retry detail request
+              </Button>
+            )}
+          </div>
+        )}
 
         <div className="grid grid-cols-1 gap-8 px-6 py-8 sm:grid-cols-[minmax(0,1fr)_240px] sm:px-8 lg:grid-cols-[minmax(0,1fr)_250px] lg:px-10 lg:py-10">
           <aside className="order-1 sm:order-2">

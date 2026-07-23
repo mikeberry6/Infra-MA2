@@ -10,7 +10,7 @@ import RecordWorkflowButton from "@/components/admin/RecordWorkflowButton";
 import ImportExportBar from "@/components/admin/ImportExportBar";
 import { archiveCompany, deleteCompany, publishCompany, submitCompanyForReview, verifyCompany } from "@/modules/admin/actions";
 import { getRecordStatusColor } from "@/lib/colors";
-import { Button } from "@/components/shared/Button";
+import { ButtonLink } from "@/components/shared/Button";
 import { ACTIVE_COMPANY_WHERE } from "@/modules/companies/retirement";
 
 export const metadata = { title: "Admin · Companies" };
@@ -47,17 +47,15 @@ export default async function AdminCompaniesPage() {
             <span className="mono tabular-nums">{companies.length.toLocaleString()}</span> total
           </p>
         </div>
-        <Link href="/admin/companies/new">
-          <Button variant="primary" size="md" leadingIcon={<Plus className="h-3 w-3" />}>
-            New company
-          </Button>
-        </Link>
+        <ButtonLink href="/admin/companies/new" variant="primary" size="md" leadingIcon={<Plus className="h-3 w-3" />}>
+          New company
+        </ButtonLink>
       </div>
 
       <ImportExportBar entityType="portfolio" />
 
-      <div className="surface overflow-hidden mt-4">
-        <table className="w-full text-left border-collapse whitespace-nowrap">
+      <div className="surface overflow-x-auto mt-4">
+        <table className="min-w-[880px] w-full text-left border-collapse whitespace-nowrap">
           <thead>
             <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
               <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Name</th>
@@ -94,9 +92,7 @@ export default async function AdminCompaniesPage() {
                   <div className="flex items-center gap-1.5">
                     {!isMergeSurvivor && (
                       <>
-                        <Link href={`/admin/companies/${company.id}/edit`}>
-                          <Button variant="secondary" size="sm">Edit</Button>
-                        </Link>
+                        <ButtonLink href={`/admin/companies/${company.id}/edit`} variant="secondary" size="sm">Edit</ButtonLink>
                         <RecordWorkflowButton entity="company" id={company.id} status={company.status} submitForReview={submitCompanyForReview} publish={publishCompany} verify={verifyCompany} />
                         <ArchiveButton entity="company" archiveAction={archiveCompany} id={company.id} disabled={company.status === "ARCHIVED"} />
                         <DeleteButton entity="company" deleteAction={deleteCompany} id={company.id} status={company.status} />

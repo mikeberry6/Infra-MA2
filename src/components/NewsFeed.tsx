@@ -24,6 +24,7 @@ import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
+import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useClearUrlFilters, useUrlFilterSet } from "@/hooks/useUrlFilterSet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
@@ -381,10 +382,70 @@ function NewsFilterBar({
   onDateWindowChange: (value: (typeof DATE_WINDOWS)[number]["label"]) => void;
   onClearAll: () => void;
 }) {
+  const activeCount = activeCategories.size
+    + activeEntities.size
+    + activeSources.size
+    + activeConfidence.size
+    + (dateWindow === "Today" ? 0 : 1);
+  const dropdownControls = (
+    <>
+      <MultiSelectDropdown
+        label="Category"
+        options={NEWS_CATEGORIES}
+        selected={activeCategories}
+        onToggle={onToggleCategory}
+        getColor={getNewsCategoryColor}
+      />
+      <MultiSelectDropdown
+        label="Entity"
+        options={entityOptions}
+        selected={activeEntities}
+        onToggle={onToggleEntity}
+        getColor={(label) => getMentionColor(label, allItems)}
+        align="right"
+      />
+      <MultiSelectDropdown
+        label="Source"
+        options={sourceOptions}
+        selected={activeSources}
+        onToggle={onToggleSource}
+        getColor={() => "#0a66c2"}
+        align="right"
+      />
+      <MultiSelectDropdown
+        label="Confidence"
+        options={["High Confidence", "Medium Confidence", "Needs Review"]}
+        selected={activeConfidence}
+        onToggle={onToggleConfidence}
+        getColor={confidenceColor}
+        align="right"
+      />
+    </>
+  );
+  const dateControls = (
+    <div className="inline-flex shrink-0 items-center gap-0.5 rounded-md bg-[var(--bg-hover)] p-0.5" role="group" aria-label="Date window">
+      {DATE_WINDOWS.map((option) => (
+        <button
+          key={option.label}
+          type="button"
+          onClick={() => onDateWindowChange(option.label)}
+          aria-pressed={dateWindow === option.label}
+          className={`h-7 rounded px-2 type-micro font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] ${
+            dateWindow === option.label
+              ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
+              : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+          }`}
+        >
+          {option.label}
+        </button>
+      ))}
+    </div>
+  );
+
   return (
     <div className="mb-3 space-y-3">
-      <div className="sticky top-14 z-30 flex items-center gap-2 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
-        <div className="min-w-[210px] flex-1 sm:max-w-sm">
+      <div className="sticky top-14 z-30 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
+        <div className="min-w-0 flex-1 lg:max-w-sm">
           <TextInput
             leadingIcon={<Search />}
             value={search}
@@ -393,53 +454,22 @@ function NewsFilterBar({
             aria-label="Search news"
           />
         </div>
-        <MultiSelectDropdown
-          label="Category"
-          options={NEWS_CATEGORIES}
-          selected={activeCategories}
-          onToggle={onToggleCategory}
-          getColor={getNewsCategoryColor}
-        />
-        <MultiSelectDropdown
-          label="Entity"
-          options={entityOptions}
-          selected={activeEntities}
-          onToggle={onToggleEntity}
-          getColor={(label) => getMentionColor(label, allItems)}
-          align="right"
-        />
-        <MultiSelectDropdown
-          label="Source"
-          options={sourceOptions}
-          selected={activeSources}
-          onToggle={onToggleSource}
-          getColor={() => "#0a66c2"}
-          align="right"
-        />
-        <MultiSelectDropdown
-          label="Confidence"
-          options={["High Confidence", "Medium Confidence", "Needs Review"]}
-          selected={activeConfidence}
-          onToggle={onToggleConfidence}
-          getColor={confidenceColor}
-          align="right"
-        />
-        <div className="inline-flex shrink-0 items-center gap-0.5 rounded-md bg-[var(--bg-hover)] p-0.5">
-          {DATE_WINDOWS.map((option) => (
-            <button
-              key={option.label}
-              type="button"
-              onClick={() => onDateWindowChange(option.label)}
-              className={`h-7 rounded px-2 type-micro font-medium transition-colors ${
-                dateWindow === option.label
-                  ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
-                  : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-              }`}
-            >
-              {option.label}
-            </button>
-          ))}
+        <div className="hidden items-center gap-2 lg:flex">
+          {dropdownControls}
+          {dateControls}
         </div>
+        <MobileFilterSheet activeCount={activeCount} desktopBreakpoint="lg">
+          <div className="grid grid-cols-2 gap-3">{dropdownControls}</div>
+          <div>
+            <p className="mb-2 type-label">Date window</p>
+            {dateControls}
+          </div>
+          {activeCount > 0 && (
+            <button type="button" onClick={onClearAll} className="type-meta font-medium text-[var(--accent)]">
+              Clear all filters
+            </button>
+          )}
+        </MobileFilterSheet>
       </div>
 
       <ActiveFiltersStrip
@@ -754,9 +784,9 @@ function NewsDrawer({
         className="absolute right-0 top-0 flex h-full w-full max-w-lg flex-col border-l border-[var(--border)] bg-[var(--bg-surface)] shadow-[0_12px_48px_rgba(17,17,20,0.14)] sm:max-w-xl"
       >
         <div className="sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg-surface)]/95 px-5 py-4 backdrop-blur-md">
-          <div className="mb-3 flex items-center justify-between gap-3">
+          <div className="mb-3 flex flex-wrap items-center gap-2">
             <span
-              className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 type-micro font-medium"
+              className="inline-flex max-w-full items-center gap-1.5 rounded-md border px-2 py-1 type-micro font-medium"
               style={{
                 color: "#444444",
                 backgroundColor: `${categoryColor}08`,
@@ -767,7 +797,7 @@ function NewsDrawer({
               {item.category}
             </span>
             <span
-              className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 type-micro font-medium"
+              className="inline-flex max-w-full items-center gap-1.5 rounded-md border px-2 py-1 type-micro font-medium"
               style={{
                 color: "#444444",
                 backgroundColor: `${confidence.color}08`,
@@ -780,7 +810,7 @@ function NewsDrawer({
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex h-8 w-8 items-center justify-center rounded-md text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
+              className="ml-auto inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
               aria-label="Close"
             >
               <X className="h-4 w-4" />

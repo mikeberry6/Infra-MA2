@@ -4,7 +4,10 @@ on:
   push:
     branches: ["main"]
   pull_request:
-    branches: ["main", "codex/infra-90-day-phase-1-stabilize"]
+    branches:
+      - "main"
+      - "codex/infra-90-day-phase-1-stabilize"
+      - "codex/infra-90-day-phase-2-data-trust"
 
 permissions:
   contents: read

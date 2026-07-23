@@ -10,7 +10,7 @@ import RecordWorkflowButton from "@/components/admin/RecordWorkflowButton";
 import ImportExportBar from "@/components/admin/ImportExportBar";
 import { archiveDeal, deleteDeal, publishDeal, submitDealForReview, verifyDeal } from "@/modules/admin/actions";
 import { getRecordStatusColor } from "@/lib/colors";
-import { Button } from "@/components/shared/Button";
+import { ButtonLink } from "@/components/shared/Button";
 import { formatDate } from "@/lib/format";
 
 export const metadata = { title: "Admin · Deals" };
@@ -47,17 +47,15 @@ export default async function AdminDealsPage() {
             <span className="mono tabular-nums">{deals.length.toLocaleString()}</span> total
           </p>
         </div>
-        <Link href="/admin/deals/new">
-          <Button variant="primary" size="md" leadingIcon={<Plus className="h-3 w-3" />}>
-            New deal
-          </Button>
-        </Link>
+        <ButtonLink href="/admin/deals/new" variant="primary" size="md" leadingIcon={<Plus className="h-3 w-3" />}>
+          New deal
+        </ButtonLink>
       </div>
 
       <ImportExportBar entityType="deals" />
 
-      <div className="surface overflow-hidden mt-4">
-        <table className="w-full text-left border-collapse whitespace-nowrap">
+      <div className="surface overflow-x-auto mt-4">
+        <table className="min-w-[880px] w-full text-left border-collapse whitespace-nowrap">
           <thead>
             <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
               <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">ID</th>
@@ -89,9 +87,7 @@ export default async function AdminDealsPage() {
                 <td className="px-3 py-2.5 text-[11px] mono tabular-nums text-[var(--text-tertiary)]">{formatDate(deal.date)}</td>
                 <td className="px-3 py-2.5">
                   <div className="flex items-center gap-1.5">
-                    <Link href={`/admin/deals/${deal.id}/edit`}>
-                      <Button variant="secondary" size="sm">Edit</Button>
-                    </Link>
+                    <ButtonLink href={`/admin/deals/${deal.id}/edit`} variant="secondary" size="sm">Edit</ButtonLink>
                     <RecordWorkflowButton entity="deal" id={deal.id} status={deal.status} submitForReview={submitDealForReview} publish={publishDeal} verify={verifyDeal} />
                     <ArchiveButton entity="deal" archiveAction={archiveDeal} id={deal.id} disabled={deal.status === "ARCHIVED"} />
                     <DeleteButton entity="deal" deleteAction={deleteDeal} id={deal.id} status={deal.status} />

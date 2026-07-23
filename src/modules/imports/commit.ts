@@ -21,6 +21,7 @@ interface ImportCommitWork<T> {
 interface ImportCommitOptions<T> {
   pipeline: string;
   entityType: string;
+  actorId?: string;
   rowCount: number;
   execute: (tx: Prisma.TransactionClient) => Promise<ImportCommitWork<T>>;
 }
@@ -82,6 +83,7 @@ export async function commitImport<T>(
             entityType: options.entityType,
             action: "BULK_IMPORT",
             changes: work.auditChanges,
+            actorId: options.actorId,
           }, tx);
 
           await completePipelineRun(tx, pipelineRunId, work.counts, { auditEventId });

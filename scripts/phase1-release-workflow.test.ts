@@ -4,8 +4,10 @@ import { describe, expect, it } from "vitest";
 const workflow = readFileSync(".github/workflows/deploy.yml", "utf8");
 
 describe("Phase 2 release gate", () => {
-  it("runs on protected main and the reviewed Phase 1 stack base", () => {
-    expect(workflow).toContain('branches: ["main", "codex/infra-90-day-phase-1-stabilize"]');
+  it("runs on protected main and every active reviewed stack base", () => {
+    expect(workflow).toContain('- "main"');
+    expect(workflow).toContain('- "codex/infra-90-day-phase-1-stabilize"');
+    expect(workflow).toContain('- "codex/infra-90-day-phase-2-data-trust"');
   });
 
   it("preserves the Node 24 clean-checkout quality baseline", () => {
