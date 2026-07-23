@@ -1,7 +1,17 @@
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
+import { normalizeNextAuthRedirect } from "@/lib/base-path";
 import { prisma } from "@/lib/prisma";
+import {
+  clearLoginThrottle,
+  isLoginThrottled,
+  recordFailedLogin,
+  requestIp,
+} from "@/modules/auth/throttle";
+import { PRIVILEGED_SESSION_MAX_AGE_SECONDS } from "@/modules/auth/session";
+
+const DUMMY_PASSWORD_HASH = "$2b$12$jO.JJSOjJqs4/KuQ7eKiNe2n89mzPsIrPUQZq3FjGA4QTmutfH8Ci";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -11,47 +21,72 @@ export const authOptions: NextAuthOptions = {
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials) {
+      async authorize(credentials, request) {
         if (!credentials?.email || !credentials?.password) return null;
+        const email = credentials.email.trim().toLowerCase();
+        const ip = requestIp(request.headers);
+
+        if (await isLoginThrottled(email, ip)) {
+          await bcrypt.compare(credentials.password, DUMMY_PASSWORD_HASH);
+          return null;
+        }
 
         const user = await prisma.user.findUnique({
-          where: { email: credentials.email },
+          where: { email },
         });
 
-        if (!user) return null;
+        const isValid = await bcrypt.compare(
+          credentials.password,
+          user?.passwordHash ?? DUMMY_PASSWORD_HASH,
+        );
+        if (!user || !isValid) {
+          await recordFailedLogin(email, ip);
+          return null;
+        }
 
-        const isValid = await bcrypt.compare(credentials.password, user.passwordHash);
-        if (!isValid) return null;
+        // A valid account resets that account's failures, but not the shared
+        // IP bucket: otherwise an attacker could use a valid account to erase
+        // aggregate failures from the same address.
+        await clearLoginThrottle(email);
 
         return {
           id: user.id,
           email: user.email,
           name: user.name,
           role: user.role,
+          authVersion: user.updatedAt.getTime(),
         };
       },
     }),
   ],
   callbacks: {
+    async redirect({ url, baseUrl }) {
+      return normalizeNextAuthRedirect(url, baseUrl);
+    },
     async jwt({ token, user }) {
       if (user) {
-        token.role = (user as any).role;
+        token.role = user.role;
         token.id = user.id;
+        token.authVersion = user.authVersion;
+        token.authenticatedAt = Date.now();
       }
       return token;
     },
     async session({ session, token }) {
       if (session.user) {
-        (session.user as any).role = token.role;
-        (session.user as any).id = token.id;
+        session.user.role = token.role;
+        session.user.id = token.id;
+        session.user.authVersion = token.authVersion;
+        session.user.authenticatedAt = token.authenticatedAt;
       }
       return session;
     },
   },
   session: {
     strategy: "jwt",
-    maxAge: 30 * 24 * 60 * 60, // 30 days
+    maxAge: PRIVILEGED_SESSION_MAX_AGE_SECONDS,
   },
+  jwt: { maxAge: PRIVILEGED_SESSION_MAX_AGE_SECONDS },
   pages: {
     signIn: "/login",
   },
