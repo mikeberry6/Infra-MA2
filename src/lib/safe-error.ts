@@ -125,6 +125,16 @@ const SAFE_DATABASE_DRIVER_CODES = new Set([
   "58000",
   "58030",
 ]);
+const SAFE_DATABASE_DIAGNOSTIC_KINDS = new Set([
+  "AuthenticationFailed",
+  "ConnectionClosed",
+  "DatabaseAccessDenied",
+  "DatabaseDoesNotExist",
+  "DatabaseNotReachable",
+  "SocketTimeout",
+  "TlsConnectionError",
+  "TooManyConnections",
+]);
 
 function databaseDiagnostic(messages: Array<string | undefined>): string | undefined {
   const message = messages.filter(Boolean).join(" ");
@@ -215,6 +225,7 @@ function errorMetadata(error: unknown): {
       typeof value === "string" && (
         SAFE_SYSTEM_CODES.has(value)
         || SAFE_DATABASE_DRIVER_CODES.has(value)
+        || /^[0-9A-Z]{5}$/.test(value)
       ));
     const status = typeof candidate.status === "number"
       ? candidate.status
@@ -229,11 +240,16 @@ function errorMetadata(error: unknown): {
             .find((safeCode) => message.includes(safeCode))
           : undefined
       ),
-      databaseDiagnostic: databaseDiagnostic([
-        message,
-        stringValue(meta?.message),
-        stringValue(adapterCause?.originalMessage),
-      ]),
+      databaseDiagnostic: (
+        typeof adapterCause?.kind === "string"
+          && SAFE_DATABASE_DIAGNOSTIC_KINDS.has(adapterCause.kind)
+          ? adapterCause.kind
+          : databaseDiagnostic([
+            message,
+            stringValue(meta?.message),
+            stringValue(adapterCause?.originalMessage),
+          ])
+      ),
       message,
       httpStatus: status && status >= 400 && status <= 599 ? Math.round(status) : undefined,
     };

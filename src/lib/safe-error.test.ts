@@ -71,6 +71,28 @@ describe("safe operational error summaries", () => {
     expect(summary).not.toMatch(/private endpoint|suspended|private-token/i);
   });
 
+  it("preserves only an allowlisted database-driver failure kind", () => {
+    const error = Object.assign(
+      new Error("raw query failed with private driver context"),
+      {
+        code: "P2010",
+        meta: {
+          driverAdapterError: {
+            cause: {
+              kind: "DatabaseAccessDenied",
+              originalMessage: "permission denied for private user",
+            },
+          },
+        },
+      },
+    );
+
+    const summary = formatSafeErrorSummary(error);
+
+    expect(summary).toBe("database_error: Database operation failed (P2010/DatabaseAccessDenied).");
+    expect(summary).not.toMatch(/private driver|permission denied|private user/i);
+  });
+
   it("extracts only safe HTTP or network codes from upstream failures", () => {
     expect(formatSafeErrorSummary(new Error("GET https://private.example/path?q=secret returned HTTP 429 with body token=abc")))
       .toBe("upstream_error: Upstream operation failed (HTTP 429).");
