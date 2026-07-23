@@ -348,6 +348,24 @@ describe("weekly email validation", () => {
     expect(fetchImpl.mock.calls[0]?.[1]?.signal).toBe(fetchImpl.mock.calls[1]?.[1]?.signal);
   });
 
+  it("prioritizes editorial Sources when the link-count cap is reached", async () => {
+    const html = fixtureHtml().replace(
+      '<html><body style="background-color: #FFFFFF;">',
+      '<html><body style="background-color: #FFFFFF;"><a href="https://example.com/navigation">Navigation</a>',
+    );
+    const fetchImpl = vi.fn<typeof fetch>().mockResolvedValue(new Response(null, { status: 200 }));
+    const report = await validateWeeklyEmail({
+      issuePath: "/tmp/2026-07-17.html",
+      html,
+      coverageDeals: coverage,
+      linkCheck: { enabled: true, fetchImpl, maxLinks: 1 },
+    });
+
+    expect(report.summary).toMatchObject({ linksRequested: 1, linksSkipped: 3 });
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+    expect(String(fetchImpl.mock.calls[0]?.[0])).toBe("https://example.com/alpha");
+  });
+
   it("rejects malformed non-Source HTTP(S) anchors without enabling network checks", async () => {
     const html = fixtureHtml().replace(
       '<a href="mailto:research@example.com" style="font-size: 12px; color: #1E3A5F;">research@example.com</a>',

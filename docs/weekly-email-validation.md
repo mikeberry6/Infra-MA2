@@ -31,7 +31,7 @@ For deterministic largest-to-smallest checks, put these attributes on each deal 
 
 `data-scale-kind` is `economic`, `physical`, or `undisclosed`. Economic and physical cards require a non-negative numeric value and a unit. Use a unique 1-based `data-scale-rank` on every card in a section when currencies or physical units are not directly comparable and editorial judgment determines order. If an older issue has no metadata, the validator performs conservative text inference and emits warnings instead of claiming incomparable metrics are definitive failures. If any card in a section uses explicit metadata, every card in that section must use it.
 
-## Source checks and exit codes
+## Link checks and exit codes
 
 Network checks are opt-in and bounded:
 
@@ -42,6 +42,6 @@ npm run validate-weekly-email -- public/email-format/2026-07-17.html --check-lin
 
 Every unique HTTP(S) anchor is included: editorial Sources, navigation, previous-edition links, and marketing/contact links. URL fragments are removed before de-duplication; non-network anchors such as `mailto:`, `tel:`, and in-document fragments are ignored. Malformed non-Source HTTP(S) anchors are deterministic release errors, while malformed card Sources continue to use the more specific Source-integrity finding.
 
-Only definitive HTTP 404 and 410 responses fail validation. Source failures retain Source-specific finding codes; failures from other anchors use general link finding codes. Timeouts, DNS failures, rate limits, and inconclusive provider responses are reported as warnings so an offline runner does not falsely classify a link as broken. Link checks use at most four concurrent requests and stop at both the link-count and total-time budgets.
+Only definitive HTTP 404 and 410 responses fail validation. Source failures retain Source-specific finding codes; failures from other anchors use general link finding codes. Editorial Sources are checked before other anchors when the link-count cap is reached. Timeouts, DNS failures, rate limits, and inconclusive provider responses are reported as warnings so an offline runner does not falsely classify a link as broken. Link checks use at most four concurrent requests and stop at both the link-count and total-time budgets.
 
 The command prints a machine-readable JSON report. Exit code `0` means the issue passes (warnings may remain), `1` means deterministic release errors were found, and `2` means invocation, input, or validator execution failed. `--no-static-coverage` exists only for isolated fixture testing; release and CI runs must keep static coverage enabled.

@@ -835,7 +835,11 @@ async function validateHttpLinks(
   findings: ValidationFinding[],
 ): Promise<{ requested: number; skipped: number }> {
   if (!options.enabled) return { requested: 0, skipped: 0 };
-  const unique = candidates.slice(0, options.maxLinks);
+  const prioritized = [
+    ...candidates.filter((candidate) => candidate.isSource),
+    ...candidates.filter((candidate) => !candidate.isSource),
+  ];
+  const unique = prioritized.slice(0, options.maxLinks);
   const skipped = Math.max(0, candidates.length - unique.length);
   if (skipped > 0) {
     addFinding(findings, "warning", "link-cap", `${skipped} HTTP(S) link(s) were skipped by the ${options.maxLinks}-link safety cap.`);
