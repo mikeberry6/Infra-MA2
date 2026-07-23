@@ -51,9 +51,12 @@ test.describe("public failure and retry journeys", () => {
       }
       await expect.poll(() => detailRequests).toBe(1);
 
-      await failure.getByRole("button", { name: "Retry" }).click();
+      const retry = failure.getByRole("button", { name: "Retry" });
+      await retry.focus();
+      await retry.click();
       await expect.poll(() => detailRequests).toBe(2);
       await expect(failure).toBeVisible();
+      expect(await dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
     });
   }
 });
@@ -65,6 +68,11 @@ test.describe("top-level database failure and retry journeys", () => {
     { path: "/portfolio", title: "Portfolio company data could not be loaded." },
     { path: "/news", title: "News feed data could not be loaded." },
     { path: "/dashboard", title: "Dashboard data could not be loaded." },
+    {
+      path: "/search",
+      requestPath: "/search?q=fiber",
+      title: "Search data could not be loaded.",
+    },
   ] as const;
 
   for (const route of routes) {
@@ -81,14 +89,15 @@ test.describe("top-level database failure and retry journeys", () => {
         if (request.method() === "GET" && url.pathname === appPath(route.path)) routeRequests += 1;
       });
 
-      await page.goto(appPath(route.path));
+      const requestPath = "requestPath" in route ? route.requestPath : route.path;
+      await page.goto(appPath(requestPath));
       // Next.js also renders a route-announcer div with role="alert". Scope
       // assertions to the application's semantic failure-state section.
       const alert = page.locator('section[role="alert"]');
       await expect(alert.getByRole("heading", { name: route.title })).toBeVisible();
       await expect(alert).toContainText("not showing an empty result set");
       const retry = alert.getByRole("link", { name: "Try again" });
-      await expect(retry).toHaveAttribute("href", appPath(route.path));
+      await expect(retry).toHaveAttribute("href", appPath(requestPath));
       await expect(alert.getByRole("link", { name: "Contact research" })).toHaveAttribute(
         "href",
         "mailto:research@infrasight.com",

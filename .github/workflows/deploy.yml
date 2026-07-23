@@ -300,10 +300,32 @@ jobs:
         continue-on-error: true
         shell: bash
         run: |
+          mkdir -p tmp/ci
           set -o pipefail
+          set +e
           npm run db:verify 2>&1 | tee tmp/ci/database-verification.log
+          database_status=${PIPESTATUS[0]}
           npx tsx scripts/source-coverage-report.ts --require-complete --output=tmp/ci/source-coverage.json
+          source_coverage_status=$?
           npx tsx scripts/report-company-merge-candidates.ts --published-only --require-clean > tmp/ci/company-canonical-review.md
+          company_canonical_status=$?
+          set -e
+
+          jq -n \
+            --argjson database "$database_status" \
+            --argjson sourceCoverage "$source_coverage_status" \
+            --argjson companyCanonical "$company_canonical_status" \
+            '{
+              databaseVerificationExitCode: $database,
+              sourceCoverageExitCode: $sourceCoverage,
+              companyCanonicalExitCode: $companyCanonical
+            }' > tmp/ci/strict-publication-gate.json
+
+          if [ "$database_status" -ne 0 ] \
+            || [ "$source_coverage_status" -ne 0 ] \
+            || [ "$company_canonical_status" -ne 0 ]; then
+            exit 1
+          fi
 
       - name: Verify real news persistence transactions on the isolated database
         id: news_persistence_validation_gate

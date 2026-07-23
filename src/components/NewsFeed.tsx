@@ -268,14 +268,14 @@ function OperationalStatus({ operations }: { operations: FeedOperationsView }) {
           <dt className="inline">Next expected </dt>
           <dd className="inline mono tabular-nums text-[var(--text-secondary)]">{operations.nextExpectedAt ? formatScheduledDateTime(operations.nextExpectedAt, "UTC") : "Pending schedule"}</dd>
         </div>
-        {operations.sourceCoverage && (
-          <div>
-            <dt className="inline">Source coverage </dt>
-            <dd className="inline mono tabular-nums text-[var(--text-secondary)]">
-              {operations.sourceCoverage.succeeded.toLocaleString()}/{operations.sourceCoverage.attempted.toLocaleString()} attempts
-            </dd>
-          </div>
-        )}
+        <div>
+          <dt className="inline">Source coverage </dt>
+          <dd className="inline mono tabular-nums text-[var(--text-secondary)]">
+            {operations.sourceCoverage
+              ? `${operations.sourceCoverage.succeeded.toLocaleString()}/${operations.sourceCoverage.attempted.toLocaleString()} attempts`
+              : "Not recorded"}
+          </dd>
+        </div>
         {operations.scanWindow && (
           <div>
             <dt className="inline">Rotating window </dt>
@@ -401,6 +401,7 @@ function NewsFilterBar({
     + activeSources.size
     + activeConfidence.size
     + (dateWindow === "Today" ? 0 : 1);
+  const searchInputRef = useRef<HTMLInputElement>(null);
   const dropdownControls = (
     <>
       <MultiSelectDropdown
@@ -461,6 +462,7 @@ function NewsFilterBar({
       <div className="sticky top-14 z-30 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
         <div className="min-w-0 flex-1 lg:max-w-sm">
           <TextInput
+            ref={searchInputRef}
             leadingIcon={<Search />}
             value={search}
             onChange={(event) => onSearchChange(event.target.value)}
@@ -472,17 +474,16 @@ function NewsFilterBar({
           {dropdownControls}
           {dateControls}
         </div>
-        <MobileFilterSheet activeCount={activeCount} desktopBreakpoint="lg">
+        <MobileFilterSheet
+          activeCount={activeCount}
+          desktopBreakpoint="lg"
+          onClearAll={onClearAll}
+        >
           <div className="grid grid-cols-2 gap-3">{dropdownControls}</div>
           <div>
             <p className="mb-2 type-label">Date window</p>
             {dateControls}
           </div>
-          {activeCount > 0 && (
-            <button type="button" onClick={onClearAll} className="type-meta font-medium text-[var(--accent)]">
-              Clear all filters
-            </button>
-          )}
         </MobileFilterSheet>
       </div>
 
@@ -520,6 +521,7 @@ function NewsFilterBar({
           },
         ]}
         onClearAll={onClearAll}
+        focusFallbackRef={searchInputRef}
       />
     </div>
   );

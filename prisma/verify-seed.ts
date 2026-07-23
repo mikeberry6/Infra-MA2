@@ -9,6 +9,7 @@ import { weeklyBriefingDeals } from "./seed-data/weekly-briefing-deals";
 import { funds } from "./seed-data/funds";
 import { companies as portcos } from "./seed-data/companies";
 import {
+  companyPublicationIntegritySelect,
   findOwnershipFundIssues,
   missingCompanyPublicationFields,
   missingDealPublicationFields,
@@ -213,13 +214,7 @@ async function main() {
       where: { status: "PUBLISHED" },
       select: {
         id: true,
-        name: true,
-        country: true,
-        sector: true,
-        description: true,
-        website: true,
-        ownershipPeriods: { select: { id: true } },
-        citations: { where: { isPrimary: true }, select: { id: true } },
+        ...companyPublicationIntegritySelect,
       },
     }),
     prisma.ownershipPeriod.findMany({

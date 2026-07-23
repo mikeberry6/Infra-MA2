@@ -5,8 +5,8 @@ import { FUND_STRATEGIES, FUND_STATUSES, FUND_SIZE_RANGES, FUND_SECTORS } from "
 import { getStrategyColor, getStatusColor, getSizeRangeColor, getFundSectorColor, getPortCoSectorColor, getStructureColor } from "@/lib/colors";
 import { matchesSizeRange, getFundStats } from "@/lib/fund-utils";
 import type {
+  FundDetail,
   FundListItem,
-  FundView,
   FundPortfolioCompanyView,
   DatabaseCounts,
   RecordMeta,
@@ -58,9 +58,9 @@ import { useRouter } from "next/navigation";
 
 export const FUND_PAGE_SIZE = 25;
 export const FUND_RESULTS_HEADING_ID = "fund-results-heading";
-const fundDetailCache = new BoundedDetailCache<FundView>();
+const fundDetailCache = new BoundedDetailCache<FundDetail>();
 
-function fundDetailShell(fund: FundListItem): FundView {
+function fundDetailShell(fund: FundListItem): FundDetail {
   return {
     ...fund,
     ticker: null,
@@ -139,11 +139,17 @@ export function sortFundRows<T extends SortableFund>(
   });
 }
 
+export type ManagerFundPageGroup<T> = {
+  managerName: string;
+  funds: T[];
+  totalMatchingFunds: number;
+};
+
 export function paginateManagerFunds<T extends { managerName: string }>(
   funds: readonly T[],
   page: number,
   pageSize = FUND_PAGE_SIZE,
-): [string, T[]][] {
+): ManagerFundPageGroup<T>[] {
   const grouped = new Map<string, T[]>();
   for (const fund of funds) {
     const managerFunds = grouped.get(fund.managerName) ?? [];
@@ -153,14 +159,24 @@ export function paginateManagerFunds<T extends { managerName: string }>(
 
   const flattened = Array.from(grouped.entries())
     .sort(([a], [b]) => a.localeCompare(b))
-    .flatMap(([managerName, managerFunds]) => managerFunds.map((fund) => ({ managerName, fund })));
+    .flatMap(([managerName, managerFunds]) => managerFunds.map((fund) => ({
+      managerName,
+      fund,
+      totalMatchingFunds: managerFunds.length,
+    })));
   const start = (page - 1) * pageSize;
   const visible = flattened.slice(start, start + pageSize);
-  const pageGroups = new Map<string, T[]>();
-  for (const { managerName, fund } of visible) {
-    pageGroups.set(managerName, [...(pageGroups.get(managerName) ?? []), fund]);
+  const pageGroups = new Map<string, ManagerFundPageGroup<T>>();
+  for (const { managerName, fund, totalMatchingFunds } of visible) {
+    const pageGroup = pageGroups.get(managerName) ?? {
+      managerName,
+      funds: [],
+      totalMatchingFunds,
+    };
+    pageGroup.funds.push(fund);
+    pageGroups.set(managerName, pageGroup);
   }
-  return Array.from(pageGroups.entries());
+  return Array.from(pageGroups.values());
 }
 
 
@@ -213,6 +229,7 @@ function FundFilterBar({
 }) {
   const activeCount =
     activeStrategies.size + activeStatuses.size + activeSizeRanges.size + activeSectors.size;
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const filters = (
     <>
@@ -253,6 +270,7 @@ function FundFilterBar({
       <div className="sticky top-14 z-30 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
         <div className="min-w-0 flex-1 md:max-w-xs">
           <TextInput
+            ref={searchInputRef}
             leadingIcon={<Search />}
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
@@ -260,17 +278,8 @@ function FundFilterBar({
             aria-label="Search funds"
           />
         </div>
-        <MobileFilterSheet activeCount={activeCount}>
+        <MobileFilterSheet activeCount={activeCount} onClearAll={onClearAll}>
           <div className="grid gap-3">{filters}</div>
-          {activeCount > 0 && (
-            <button
-              type="button"
-              onClick={onClearAll}
-              className="inline-flex h-9 w-full items-center justify-center rounded-md border border-[var(--border)] type-meta font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-            >
-              Clear all filters
-            </button>
-          )}
         </MobileFilterSheet>
         <div className="hidden min-w-0 items-center gap-2 md:flex">
           <Divider orientation="vertical" />
@@ -286,6 +295,7 @@ function FundFilterBar({
           { keyPrefix: "sect", items: activeSectors, getColor: getFundSectorColor, onRemove: onToggleSector },
         ]}
         onClearAll={onClearAll}
+        focusFallbackRef={searchInputRef}
       />
     </div>
   );
@@ -421,11 +431,13 @@ function FundTableHead({
   sortDirection,
   onSort,
   sticky = true,
+  sortScope = "global",
 }: {
   sortField: FundSortField;
   sortDirection: SortDirection;
   onSort: (field: FundSortField) => void;
   sticky?: boolean;
+  sortScope?: "global" | "within-manager";
 }) {
   return (
     <thead className={sticky ? "sticky top-0 z-10" : ""}>
@@ -433,13 +445,18 @@ function FundTableHead({
         {TABLE_HEADERS.map(({ label, field, align }) => (
           <th
             key={label}
-            aria-sort={field ? (sortField === field ? (sortDirection === "asc" ? "ascending" : "descending") : "none") : undefined}
+            aria-sort={field && sortScope === "global"
+              ? (sortField === field ? (sortDirection === "asc" ? "ascending" : "descending") : "none")
+              : undefined}
             className={`px-3 py-2 ${align === "right" ? "text-right" : "text-left"}`}
           >
             {field ? (
               <button
                 type="button"
                 onClick={() => onSort(field)}
+                aria-label={sortScope === "within-manager"
+                  ? `Sort funds within each manager by ${label}`
+                  : `Sort funds by ${label}`}
                 className={`inline-flex items-center gap-1 type-table-header hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm ${align === "right" ? "w-full justify-end" : ""}`}
               >
                 {label}
@@ -514,7 +531,7 @@ function ManagerGroupedTable({
   totalItems,
   onPageChange,
 }: {
-  sortedManagers: [string, FundListItem[]][];
+  sortedManagers: ManagerFundPageGroup<FundListItem>[];
   onSelectFund: (fund: FundListItem) => void;
   sortField: FundSortField;
   sortDirection: SortDirection;
@@ -550,9 +567,14 @@ function ManagerGroupedTable({
       >
         <table className="w-full text-left border-collapse table-fixed">
           <FundTableColGroup />
-          <FundTableHead sortField={sortField} sortDirection={sortDirection} onSort={onSort} />
+          <FundTableHead
+            sortField={sortField}
+            sortDirection={sortDirection}
+            onSort={onSort}
+            sortScope="within-manager"
+          />
           <tbody>
-            {sortedManagers.map(([managerName, managerFunds], groupIdx) => {
+            {sortedManagers.map(({ managerName, funds: managerFunds, totalMatchingFunds }, groupIdx) => {
               const isCollapsed = collapsed.has(managerName);
               return (
                 <Fragment key={managerName}>
@@ -578,7 +600,7 @@ function ManagerGroupedTable({
                           {managerName}
                         </span>
                         <span className="type-micro mono tabular-nums">
-                          {managerFunds.length}
+                          {totalMatchingFunds}
                         </span>
                       </button>
                     </td>
@@ -600,7 +622,7 @@ function ManagerGroupedTable({
 
       {/* Mobile: card-based layout per manager */}
       <div className="md:hidden">
-        {sortedManagers.map(([managerName, managerFunds]) => {
+        {sortedManagers.map(({ managerName, funds: managerFunds, totalMatchingFunds }) => {
           const isCollapsed = collapsed.has(managerName);
           return (
             <div key={managerName} className="border-b border-[var(--border)]">
@@ -619,7 +641,7 @@ function ManagerGroupedTable({
                   {managerName}
                 </span>
                 <span className="type-micro mono tabular-nums">
-                  {managerFunds.length}
+                  {totalMatchingFunds}
                 </span>
               </button>
               {!isCollapsed && (
@@ -730,7 +752,7 @@ function FundDrawer({
   onRetry,
   detailMeta,
 }: {
-  fund: FundView;
+  fund: FundDetail;
   onClose: () => void;
   allFunds: FundListItem[];
   onSelectFund: (fund: FundListItem) => void;
@@ -876,7 +898,10 @@ function FundDrawer({
                   {onRetry && (
                     <button
                       type="button"
-                      onClick={onRetry}
+                      onClick={() => {
+                        drawerRef.current?.focus();
+                        onRetry();
+                      }}
                       className="font-semibold underline underline-offset-2"
                     >
                       Retry
@@ -1106,7 +1131,10 @@ function FundDrawer({
                   <button
                     type="button"
                     key={sib.id}
-                    onClick={() => onSelectFund(sib)}
+                    onClick={() => {
+                      drawerRef.current?.focus();
+                      onSelectFund(sib);
+                    }}
                     className="w-full text-left surface p-3 hover:bg-[var(--bg-subtle)] transition-colors flex items-center justify-between gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
                   >
                     <div className="min-w-0">
@@ -1156,7 +1184,7 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
     detail: selectedFundDetail,
     meta: detailMeta,
     state: detailState,
-  } = useFreshDetail<FundView>({
+  } = useFreshDetail<FundDetail>({
     cache: fundDetailCache,
     cacheKey: selectedFund?.legacyId ?? null,
     requestUrl: selectedFund
@@ -1359,9 +1387,16 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
                 All funds
               </button>
             </div>
+            {fundView === "managers" && (
+              <span className="hidden type-micro text-[var(--text-tertiary)] lg:inline">
+                Managers A–Z · column sort applies within each manager
+              </span>
+            )}
           </div>
           <div className="flex flex-wrap items-center justify-end gap-1">
-            <label htmlFor="fund-mobile-sort" className="sr-only">Sort funds</label>
+            <label htmlFor="fund-mobile-sort" className="sr-only">
+              {fundView === "managers" ? "Sort funds within each manager" : "Sort funds"}
+            </label>
             <select
               id="fund-mobile-sort"
               value={sortField}
@@ -1376,7 +1411,7 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
             <button
               type="button"
               onClick={() => changeSort(sortField)}
-              aria-label={`Sort ${sortDirection === "asc" ? "descending" : "ascending"}`}
+              aria-label={`${fundView === "managers" ? "Sort funds within each manager" : "Sort funds"} ${sortDirection === "asc" ? "descending" : "ascending"}`}
               className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--bg-surface)] text-[var(--text-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] md:hidden"
             >
               <ArrowDown
@@ -1439,7 +1474,7 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
         <FundDrawer
           fund={selectedFundDetail ?? fundDetailShell(selectedFund)}
           onClose={closeFund}
-          allFunds={funds}
+          allFunds={filteredFunds}
           onSelectFund={openFund}
           detailState={detailState}
           detailMeta={detailMeta}

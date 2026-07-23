@@ -14,6 +14,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
 import { TrackedSearchForm } from "@/components/search/TrackedSearchForm";
+import { DataUnavailable } from "@/components/shared/DataUnavailable";
 import { withBasePath } from "@/lib/base-path";
 import { currentServerRequestId } from "@/lib/server-request-context";
 import { withServerTask } from "@/lib/server-log";
@@ -99,12 +100,14 @@ export default async function SearchPage({
   const scope = normalizeSearchScope(rawScope);
   const page = normalizeSearchPage(rawPage);
   const requestId = await currentServerRequestId();
-  const search = query
-    ? await withServerTask(
-        { route: "/search", operation: "search_all", requestId },
-        () => searchAllWithMeta(query, { scope, page }),
-      )
-    : {
+  let search: Awaited<ReturnType<typeof searchAllWithMeta>>;
+  try {
+    search = query
+      ? await withServerTask(
+          { route: "/search", operation: "search_all", requestId },
+          () => searchAllWithMeta(query, { scope, page }),
+        )
+      : {
         results: [],
         total: 0,
         scopeTotal: 0,
@@ -114,6 +117,14 @@ export default async function SearchPage({
         pageSize: SEARCH_PAGE_SIZE,
         totalPages: 1,
       };
+  } catch {
+    return (
+      <DataUnavailable
+        title="Search data could not be loaded."
+        retryHref={query ? searchHref(query, scope, page) : "/search"}
+      />
+    );
+  }
   const { results } = search;
   const resultStart = search.scopeTotal === 0 ? 0 : (search.page - 1) * search.pageSize + 1;
   const resultEnd = Math.min(search.page * search.pageSize, search.scopeTotal);

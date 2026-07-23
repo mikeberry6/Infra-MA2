@@ -5,7 +5,9 @@ import { withServerTask } from "../src/lib/server-log.ts";
 import { vercelDeploymentApiUrl } from "../src/lib/vercel-deployment.ts";
 import {
   currentProductionDeploymentId,
+  requireStagedPromotionConfiguration,
   type VercelProductionMutation,
+  vercelProjectApiUrl,
   vercelProductionMutationApiUrl,
 } from "../src/lib/vercel-production-mutation.ts";
 
@@ -57,6 +59,23 @@ async function main() {
     "User-Agent": "InfraSight-production-release",
   };
   const requestedAt = new Date().toISOString();
+  const stagedPromotionConfiguration = operation === "promote"
+    ? await (async () => {
+        const projectResponse = await fetch(vercelProjectApiUrl(projectId, teamId), {
+          headers,
+          signal: AbortSignal.timeout(30_000),
+        });
+        if (!projectResponse.ok) {
+          throw new Error(
+            `Vercel project configuration request failed with HTTP ${projectResponse.status}.`,
+          );
+        }
+        return requireStagedPromotionConfiguration(
+          await projectResponse.json(),
+          projectId,
+        );
+      })()
+    : null;
   const mutationResponse = await fetch(
     vercelProductionMutationApiUrl(operation, projectId, deploymentId, teamId),
     {
@@ -100,6 +119,7 @@ async function main() {
     projectId,
     deploymentId,
     productionHostname: hostname,
+    stagedPromotionConfiguration,
     requestStatus: mutationResponse.status,
     completed: true,
   };

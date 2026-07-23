@@ -78,9 +78,28 @@ describe("fund sorting and manager pagination", () => {
     );
 
     const secondPage = paginateManagerFunds(source, 2);
-    expect(secondPage.flatMap(([, funds]) => funds)).toHaveLength(25);
-    expect(secondPage[0][0]).toBe("Manager A");
-    expect(secondPage.at(-1)?.[0]).toBe("Manager B");
-    expect(paginateManagerFunds(source, 3).flatMap(([, funds]) => funds)).toHaveLength(8);
+    expect(secondPage.flatMap((group) => group.funds)).toHaveLength(25);
+    expect(secondPage[0].managerName).toBe("Manager A");
+    expect(secondPage[0].totalMatchingFunds).toBe(30);
+    expect(secondPage.at(-1)?.managerName).toBe("Manager B");
+    expect(secondPage.at(-1)?.totalMatchingFunds).toBe(28);
+    expect(paginateManagerFunds(source, 3).flatMap((group) => group.funds)).toHaveLength(8);
+  });
+
+  it("keeps managers A-Z while applying column order within each manager", () => {
+    const sorted = sortFundRows([
+      fund("Manager B", "B Small", { sizeUsdMm: 500 }),
+      fund("Manager A", "A Small", { sizeUsdMm: 250 }),
+      fund("Manager B", "B Large", { sizeUsdMm: 2_000 }),
+      fund("Manager A", "A Large", { sizeUsdMm: 1_500 }),
+    ], "size", "desc");
+
+    const groups = paginateManagerFunds(sorted, 1);
+    expect(groups.map((group) => group.managerName)).toEqual(["Manager A", "Manager B"]);
+    expect(groups.map((group) => group.funds.map((item) => item.fundName))).toEqual([
+      ["A Large", "A Small"],
+      ["B Large", "B Small"],
+    ]);
+    expect(groups.map((group) => group.totalMatchingFunds)).toEqual([2, 2]);
   });
 });

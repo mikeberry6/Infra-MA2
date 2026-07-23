@@ -63,4 +63,20 @@ describe("Phase 1 baseline inside the current release gate", () => {
     expect(workflow).toContain("visual-regression.spec.ts");
     expect(workflow).toContain("check:bundle-budget");
   });
+
+  it("collects every strict publication artifact before aggregating failures", () => {
+    expect(workflow).toContain("database_status=${PIPESTATUS[0]}");
+    expect(workflow).toContain("source_coverage_status=$?");
+    expect(workflow).toContain("company_canonical_status=$?");
+    expect(workflow).toContain("strict-publication-gate.json");
+
+    const database = workflow.indexOf("database_status=${PIPESTATUS[0]}");
+    const sourceCoverage = workflow.indexOf("source_coverage_status=$?", database);
+    const companyCanonical = workflow.indexOf("company_canonical_status=$?", sourceCoverage);
+    const aggregate = workflow.indexOf('if [ "$database_status" -ne 0 ]', companyCanonical);
+    expect(database).toBeGreaterThanOrEqual(0);
+    expect(sourceCoverage).toBeGreaterThan(database);
+    expect(companyCanonical).toBeGreaterThan(sourceCoverage);
+    expect(aggregate).toBeGreaterThan(companyCanonical);
+  });
 });

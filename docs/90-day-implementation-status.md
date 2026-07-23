@@ -63,22 +63,24 @@ The phase trees were reconciled in two-parent integration commit `f97ca6122eae20
 
 ## Latest exact hosted evidence
 
-[Release Gate run 29996759980](https://github.com/mikeberry6/Infra-MA2/actions/runs/29996759980) evaluated source head `34e201bc4a7c50b0525a7e9808ced991779e31d0` through synthetic merge `43747cd0d1e5d2096e6fd16ac85c2c7986c87ac1` against base `c4dd3f1bc0c2c25491b238dc0116aa0e37a56927`.
+[Release Gate run 30000617641](https://github.com/mikeberry6/Infra-MA2/actions/runs/30000617641) evaluated source head `7ed3947a77969ac84e4e6df8fe04d917148fe9fc`.
 
-- Static job `89172155311` passed the locked install, additive migration/history audits, Prisma generation/validation, lint, both typechecks, **174 files / 1,171 tests**, offline portfolio and weekly-email validation, complete and production dependency audits, Next.js production build, and all three bundle budgets.
-- Validation job `89172155437` passed target/lineage/migration/drift controls, migrated-database build, five visual scenarios, 43 primary browser scenarios, four sensitive-credential scenarios, five top-level database-failure scenarios, one provider-failure scenario, and both evidence secret scanners.
-- All **58 distinct Playwright scenarios** passed their intended partitions. The job remained red only because the strict editorial publication gate correctly rejected unresolved Research records.
-- The exact immutable Preview was [infra-ma-2-kwxqavrfz-mberry.vercel.app](https://infra-ma-2-kwxqavrfz-mberry.vercel.app). Vercel built it successfully, but application data failed closed because that integration branch has no functional branch-scoped Preview database/auth configuration.
+- Static job `89184680848` passed the locked install, additive migration/history audits, Prisma generation/validation, lint, both typechecks, **178 files / 1,219 tests**, offline portfolio and weekly-email validation, complete and production dependency audits, Next.js production build, and all three bundle budgets.
+- Validation job `89184681004` passed target/lineage/migration/drift controls, real transaction-persistence checks, migrated-database build, five visual scenarios, 45 primary browser scenarios, four sensitive-credential scenarios, five top-level database-failure scenarios, one provider-failure scenario, and both evidence secret scanners.
+- All **60 distinct Playwright scenarios** passed their intended partitions. The job remained red only because the strict editorial publication gate correctly rejected unresolved Research records.
+- The exact immutable Preview was [infra-ma-2-l0cdlzcqy-mberry.vercel.app](https://infra-ma-2-l0cdlzcqy-mberry.vercel.app). Vercel built it successfully, but application data failed closed because that integration branch has no functional branch-scoped Preview database/auth configuration.
 - The earlier isolated E2E credential artifact incident is closed: the credential was rotated, the affected artifact was deleted, and current scanners pass. No production credential was involved.
 
-The new trusted Preview/lineage and transactional-persistence slice must receive its own exact-head hosted run after commit and push. PR #223 is the authoritative location for that subsequent run and commit identity.
+The final audit and interaction-hardening slice must receive its own exact-head hosted run after commit and push. PR #223 is the authoritative location for that subsequent run and commit identity.
 
 ## Current external configuration evidence
 
 - GitHub repository variables `VERCEL_PROJECT_ID`, `VERCEL_PROJECT_NAME`, and `VERCEL_SCOPE` are configured.
 - Vercel has a Preview-only GitHub Actions Trusted Source for `mikeberry6/Infra-MA2@main`, workflow `preview-smoke.yml`, and audience `https://vercel.com/infrasight-preview-smoke`.
 - Vercel system environment variables are enabled.
+- Vercel automatic custom-domain assignment is disabled. The production alias remains bound to the unchanged ready deployment; promotion now independently verifies this staged-promotion setting before it can mutate production.
 - The current integration branch has no matching branch-scoped `DATABASE_URL`, `NEXTAUTH_URL`, or `NEXTAUTH_SECRET`; its Preview therefore cannot satisfy the new healthy-runtime smoke until Operations supplies an isolated validation configuration.
+- The GitHub `Production` environment prevents self-review and administrator bypass, and permits deployment only from `main`. Its sole named reviewer is still the repository owner, so production intentionally remains blocked until an independent Engineering or Operations reviewer is assigned.
 - Web Analytics is enabled but showed zero visitors/page views for the observed seven-day production window.
 - Speed Insights is collecting: `/tracker` showed four production desktop data points and a route score of 100. This proves collection, not the 30-day p75 target.
 - The Vercel Hobby plan does not expose custom Web Analytics events. The seven event emitters exist, but event-dashboard KPI verification requires a reviewed plan upgrade or another approved privacy-compatible sink.
@@ -105,7 +107,7 @@ Exact normalized duplicate keys and non-HTTP source URLs were both zero. The cit
 - Configure an isolated, current-branch Vercel Preview database and preview-only NextAuth values; then execute the trusted OIDC smoke.
 - Merge/bootstrap the default-branch Preview workflow, redeploy the exact bootstrap PR head, rerun `preview-smoke-lineage`, and add `preview-smoke` to branch protection.
 - Complete Research review and commit only evidence-backed, hash-bound approvals.
-- Add an independent Engineering or Operations approver to the GitHub `Production` environment and disable administrator bypass.
+- Add an independent Engineering or Operations approver to the GitHub `Production` environment.
 - Stage the additive schema, apply only approved remediations, validate production-like journeys, rotate the production administrator credential and `NEXTAUTH_SECRET`, and promote through protected workflows.
 - Complete manual keyboard-only, WCAG 2.2 AA, and representative screen-reader attestation.
 - Complete a non-production Neon restore exercise. Application rollback evidence does not substitute for database recovery evidence.

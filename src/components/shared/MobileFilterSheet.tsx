@@ -8,17 +8,20 @@ import { useDialogFocus } from "@/hooks/useDialogFocus";
 export function MobileFilterSheet({
   activeCount,
   children,
+  onClearAll,
   title = "Filters",
   desktopBreakpoint = "md",
 }: {
   activeCount: number;
   children: ReactNode;
+  onClearAll?: () => void;
   title?: string;
   desktopBreakpoint?: "md" | "lg";
 }) {
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
+  const viewResultsRef = useRef<HTMLButtonElement>(null);
   const reactId = useId().replace(/:/g, "");
   const dialogId = `mobile-filter-dialog-${reactId}`;
   const titleId = `mobile-filter-title-${reactId}`;
@@ -132,8 +135,21 @@ export function MobileFilterSheet({
               </button>
             </div>
             <div className="space-y-3 px-4 py-4">{children}</div>
-            <div className="sticky bottom-0 border-t border-[var(--border)] bg-[var(--bg-app)]/95 px-4 py-3 backdrop-blur-md">
+            <div className="sticky bottom-0 space-y-2 border-t border-[var(--border)] bg-[var(--bg-app)]/95 px-4 py-3 backdrop-blur-md">
+              {onClearAll && activeCount > 0 && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    viewResultsRef.current?.focus();
+                    onClearAll();
+                  }}
+                  className="inline-flex h-9 w-full items-center justify-center rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+                >
+                  Clear all filters
+                </button>
+              )}
               <button
+                ref={viewResultsRef}
                 type="button"
                 onClick={() => setOpen(false)}
                 className="inline-flex h-10 w-full items-center justify-center rounded-md bg-[var(--accent)] px-4 type-meta font-semibold text-[var(--text-on-accent)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"

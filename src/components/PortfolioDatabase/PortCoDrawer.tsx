@@ -20,7 +20,7 @@ import {
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { useDrawerShellTiming } from "@/hooks/useDrawerShellTiming";
 import type {
-  CompanyView,
+  CompanyDetail,
   FundStrategyView,
   MilestoneView,
   RecordMeta,
@@ -170,7 +170,7 @@ export function PortCoDrawer({
   onRetry,
   detailMeta,
 }: {
-  company: CompanyView;
+  company: CompanyDetail;
   funds: FundStrategyView[];
   onClose: () => void;
   detailState?: "idle" | "loading" | "ready" | "error";
@@ -313,7 +313,15 @@ export function PortCoDrawer({
           </div>
         </header>
 
-        <DetailStateNotice state={detailState} onRetry={onRetry} />
+        <DetailStateNotice
+          state={detailState}
+          onRetry={onRetry
+            ? () => {
+                drawerRef.current?.focus();
+                onRetry();
+              }
+            : undefined}
+        />
         {detailMeta && (
           <div className="mx-4 mt-3 text-micro text-[#A1A1AA] sm:mx-6 lg:mx-8">
             Last verified{" "}

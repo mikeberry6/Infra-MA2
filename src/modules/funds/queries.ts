@@ -12,10 +12,10 @@ import {
   COMPANY_REGION_DISPLAY,
 } from "@/modules/shared/enum-maps";
 import type {
+  FundDetail,
   FundListItem,
   FundPortfolioCompanyView,
   FundStrategyView,
-  FundView,
   PortfolioCompanyView,
 } from "@/modules/shared/types";
 import type { Fund as DbFund } from "@/generated/prisma/client";
@@ -58,7 +58,7 @@ function toFundView(
     ownershipPeriods: OwnershipPeriodProjection[];
   },
   managerPortfolioCompanies?: FundPortfolioCompanyView[],
-): FundView {
+): FundDetail {
   const portfolioCompanies = fund.ownershipPeriods.map(toPortfolioCompany);
   const strategies = fund.strategies.map((s) => FUND_STRATEGY_DISPLAY[s]);
 
@@ -178,7 +178,7 @@ export async function getAllFunds(): Promise<FundListItem[]> {
   return getAllFundsCached();
 }
 
-export async function getAllFundDetails(): Promise<FundView[]> {
+export async function getAllFundDetails(): Promise<FundDetail[]> {
   const funds = await prisma.fund.findMany({
     where: { status: "PUBLISHED" },
     include: FUND_INCLUDE,
@@ -212,7 +212,7 @@ export async function getFundStrategyIndex(): Promise<FundStrategyView[]> {
   return getFundStrategyIndexCached();
 }
 
-export async function getFundById(legacyId: string): Promise<FundView | null> {
+export async function getFundById(legacyId: string): Promise<FundDetail | null> {
   const fund = await prisma.fund.findFirst({
     where: { legacyId, status: "PUBLISHED" },
     include: FUND_DETAIL_INCLUDE,

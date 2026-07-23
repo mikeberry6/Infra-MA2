@@ -22,6 +22,7 @@ import {
 } from "@/modules/admin/action-error";
 import { changedFieldSummary, deletedFieldSummary } from "@/modules/admin/change-summary";
 import {
+  companyPublicationIntegritySelect,
   missingCompanyPublicationFields,
   missingDealPublicationFields,
   missingFundPublicationFields,
@@ -1514,20 +1515,7 @@ export async function publishCompany(id: string): Promise<ActionResult> {
       select: {
         status: true,
         updatedAt: true,
-        name: true,
-        country: true,
-        sector: true,
-        description: true,
-        website: true,
-        ownershipPeriods: {
-          select: {
-            id: true,
-            fundId: true,
-            organizationId: true,
-            fund: { select: { status: true } },
-          },
-        },
-        citations: { where: { isPrimary: true }, select: { id: true } },
+        ...companyPublicationIntegritySelect,
       },
     });
     if (!company) return { success: false, error: "Company not found" };
@@ -1565,20 +1553,7 @@ export async function verifyCompany(id: string): Promise<ActionResult> {
       select: {
         status: true,
         updatedAt: true,
-        name: true,
-        country: true,
-        sector: true,
-        description: true,
-        website: true,
-        ownershipPeriods: {
-          select: {
-            id: true,
-            fundId: true,
-            organizationId: true,
-            fund: { select: { status: true } },
-          },
-        },
-        citations: { where: { isPrimary: true }, select: { id: true } },
+        ...companyPublicationIntegritySelect,
       },
     });
     if (!company) return { success: false, error: "Company not found" };

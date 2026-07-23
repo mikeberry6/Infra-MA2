@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getFundById } from "@/modules/funds/queries";
 import { prisma } from "@/lib/prisma";
 import { withServerOperation } from "@/lib/server-log";
-import type { DetailResponse, FundView } from "@/modules/shared/types";
+import type { DetailResponse, FundDetail } from "@/modules/shared/types";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -59,7 +59,7 @@ export async function GET(
     ]
       .map((url) => url?.trim())
       .filter((url): url is string => Boolean(url))).size;
-    const response: DetailResponse<FundView> = {
+    const response: DetailResponse<FundDetail> = {
       data: fund,
       meta: {
         canonicalId: fund.legacyId,

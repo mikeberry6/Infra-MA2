@@ -11,7 +11,6 @@ import {
 import type {
   CompanyDetail,
   CompanyListItem,
-  CompanyView,
   MilestoneView,
   ExecutiveView,
   SourceView,
@@ -180,7 +179,7 @@ function dedupeMilestoneViews(milestones: MilestoneView[]): MilestoneView[] {
   return kept.sort((a, b) => milestoneSortKey(b) - milestoneSortKey(a));
 }
 
-function toCompanyView(company: any): CompanyView {
+function toCompanyView(company: any): CompanyDetail {
   // Map every ownership period to an OwnerView, then sort: active first,
   // then by investmentYear descending. The first entry becomes the "primary"
   // owner whose values are projected onto the scalar legacy fields below
@@ -269,7 +268,7 @@ function toCompanyView(company: any): CompanyView {
   };
 }
 
-function toCompanyListItem(company: CompanyView): CompanyListItem {
+function toCompanyListItem(company: CompanyDetail): CompanyListItem {
   return {
     id: company.id,
     focusIds: company.focusIds,
@@ -408,7 +407,7 @@ export async function getAllCompanies(
   return options.detail === false ? getAllCompanyListItems() : getAllCompanyDetails();
 }
 
-async function getCompanyByFocusIdRaw(focusId: string): Promise<CompanyView | null> {
+async function getCompanyByFocusIdRaw(focusId: string): Promise<CompanyDetail | null> {
   const direct = await prisma.company.findFirst({
     where: { id: focusId, status: "PUBLISHED" },
     include: COMPANY_INCLUDE,
@@ -434,11 +433,11 @@ const getCompanyByFocusIdCached = unstable_cache(
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
-export async function getCompanyByFocusId(focusId: string): Promise<CompanyView | null> {
+export async function getCompanyByFocusId(focusId: string): Promise<CompanyDetail | null> {
   return getCompanyByFocusIdCached(focusId);
 }
 
-export async function getCompanyById(id: string): Promise<CompanyView | null> {
+export async function getCompanyById(id: string): Promise<CompanyDetail | null> {
   const company = await prisma.company.findFirst({
     where: { id, status: "PUBLISHED" },
     include: COMPANY_INCLUDE,

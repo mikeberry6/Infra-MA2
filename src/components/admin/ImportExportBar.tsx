@@ -161,6 +161,7 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
           : `No ${labels.plural} required changes.${unchanged > 0 ? ` ${unchanged} unchanged.` : ""}`,
       });
       setAuditEventId(result.auditEventId ?? null);
+      fileInputRef.current?.focus();
       setPreview(null);
     } catch (error) {
       setMessage({
@@ -183,6 +184,11 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
     URL.revokeObjectURL(url);
   }
 
+  function dismissPreview() {
+    fileInputRef.current?.focus();
+    setPreview(null);
+  }
+
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-2">
@@ -199,7 +205,7 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
           <input ref={fileInputRef} type="file" accept=".csv,text/csv" onChange={(event) => event.target.files?.[0] && previewFile(event.target.files[0])} className="sr-only" />
         </label>
         {loading && <span role="status" className="type-micro animate-pulse">{preview ? "Importing…" : "Validating…"}</span>}
-        {auditEventId && <Link href={withBasePath(`/admin/audit?focus=${encodeURIComponent(auditEventId)}`)} className="type-micro font-medium text-[var(--accent)]">View audit event</Link>}
+        {auditEventId && <Link href={`/admin/audit?focus=${encodeURIComponent(auditEventId)}`} className="type-micro font-medium text-[var(--accent)]">View audit event</Link>}
       </div>
 
       {message && <FormMessage tone={message.tone}>{message.text}</FormMessage>}
@@ -214,7 +220,7 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
             <Button
               size="sm"
               variant="ghost"
-              onClick={() => setPreview(null)}
+              onClick={dismissPreview}
               aria-label="Dismiss import preview"
               leadingIcon={<X className="h-4 w-4" />}
               className="shrink-0 px-1.5"

@@ -235,10 +235,14 @@ test("configured administrator previews a CSV before explicitly committing its d
     await preview.getByRole("button", { name: "Confirm import" }).click();
     await expect(page.getByText("1 deal committed as drafts.", { exact: true })).toBeVisible();
     expect(importStages).toEqual(["preview", "commit"]);
-    await expect(page.getByRole("link", { name: "View audit event" })).toHaveAttribute(
-      "href",
-      /\/admin\/audit\?focus=/,
-    );
+    const auditLink = page.getByRole("link", { name: "View audit event" });
+    await expect(auditLink).toHaveAttribute("href", /\/admin\/audit\?focus=/);
+    const auditHref = await auditLink.getAttribute("href");
+    expect(auditHref).toBeTruthy();
+    expect(new URL(auditHref!, page.url()).pathname).toBe(appPath("/admin/audit"));
+    await auditLink.click();
+    await expect(page.getByRole("heading", { name: "Audit log" })).toBeVisible();
+    await expect(page).toHaveURL(/\/admin\/audit\?focus=/);
 
     await page.goto(appPath("/admin/deals"));
     const row = dealRow(page, target);

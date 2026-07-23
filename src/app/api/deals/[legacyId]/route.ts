@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getDealById } from "@/modules/deals/queries";
 import { prisma } from "@/lib/prisma";
 import { withServerOperation } from "@/lib/server-log";
-import type { DealView, DetailResponse } from "@/modules/shared/types";
+import type { DealDetail, DetailResponse } from "@/modules/shared/types";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -50,7 +50,7 @@ export async function GET(
         { status: 404, headers: NO_STORE_HEADERS },
       );
     }
-    const response: DetailResponse<DealView> = {
+    const response: DetailResponse<DealDetail> = {
       data: deal,
       meta: {
         canonicalId: deal.legacyId,

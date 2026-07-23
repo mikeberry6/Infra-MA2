@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  companyPublicationIntegritySelect,
   findOwnershipFundIssues,
   missingCompanyPublicationFields,
   missingDealPublicationFields,
@@ -8,6 +9,15 @@ import {
 } from "./publication-integrity";
 
 describe("publication completeness", () => {
+  it("projects every ownership field required by the company publication contract", () => {
+    expect(companyPublicationIntegritySelect.ownershipPeriods.select).toEqual({
+      id: true,
+      fundId: true,
+      organizationId: true,
+      fund: { select: { status: true } },
+    });
+  });
+
   it("accepts complete deal, fund, and company records", () => {
     expect(missingDealPublicationFields({
       target: "GridCo",

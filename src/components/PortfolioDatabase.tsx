@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import { PORTCO_SECTORS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
 import { getPortCoSectorColor, getPortCoRegionColor, getPortCoCountryTagColor } from "@/lib/colors";
 import { getUniqueFirms, getAllOwnerFirms } from "@/lib/portco-utils";
@@ -146,6 +146,7 @@ function PortCoFilterBar({
 }) {
   const activeCount =
     activeSectors.size + activeCountryTags.size + activeFirms.size + activeInvestmentYears.size;
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const filters = (
     <>
@@ -186,6 +187,7 @@ function PortCoFilterBar({
       <div className="sticky top-14 z-30 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
         <div className="min-w-0 flex-1 md:max-w-xs">
           <TextInput
+            ref={searchInputRef}
             leadingIcon={<Search />}
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
@@ -193,17 +195,8 @@ function PortCoFilterBar({
             aria-label="Search portfolio companies"
           />
         </div>
-        <MobileFilterSheet activeCount={activeCount}>
+        <MobileFilterSheet activeCount={activeCount} onClearAll={onClearAll}>
           <div className="grid gap-3">{filters}</div>
-          {activeCount > 0 && (
-            <button
-              type="button"
-              onClick={onClearAll}
-              className="inline-flex h-9 w-full items-center justify-center rounded-md border border-[var(--border)] type-meta font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-            >
-              Clear all filters
-            </button>
-          )}
         </MobileFilterSheet>
         <div className="hidden min-w-0 items-center gap-2 md:flex">
           <Divider orientation="vertical" />
@@ -219,6 +212,7 @@ function PortCoFilterBar({
           { keyPrefix: "yr", items: activeInvestmentYears, getColor: () => "#f59e0b", onRemove: onToggleInvestmentYear },
         ]}
         onClearAll={onClearAll}
+        focusFallbackRef={searchInputRef}
       />
     </div>
   );

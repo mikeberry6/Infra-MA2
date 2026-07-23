@@ -52,7 +52,8 @@ describe("NewsFeed pagination", () => {
     const view = render(<NewsFeed feed={feed()} />);
 
     expect(view.container.querySelectorAll("article")).toHaveLength(25);
-    expect(screen.getAllByText("Not recorded")).toHaveLength(2);
+    expect(screen.getByText("Source coverage").nextElementSibling).toHaveTextContent("Not recorded");
+    expect(screen.getAllByText("Not recorded")).toHaveLength(3);
 
     fireEvent.click(screen.getByRole("button", { name: "Next page" }));
 

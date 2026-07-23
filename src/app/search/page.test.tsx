@@ -189,4 +189,21 @@ describe("search page", () => {
       "/search?q=infra&scope=fund&page=3",
     );
   });
+
+  it("distinguishes a database failure from an empty search and preserves retry state", async () => {
+    mocks.searchAllWithMeta.mockRejectedValue(new Error("database unavailable"));
+
+    render(await SearchPage({
+      searchParams: params({ q: "fiber grid", scope: "company", page: "2" }),
+    }));
+
+    const alert = screen.getByRole("alert");
+    expect(alert).toHaveTextContent("Search data could not be loaded.");
+    expect(alert).toHaveTextContent("not showing an empty result set");
+    expect(screen.getByRole("link", { name: "Try again" })).toHaveAttribute(
+      "href",
+      "/search?q=fiber+grid&scope=company&page=2",
+    );
+    expect(screen.queryByRole("heading", { name: "No results" })).not.toBeInTheDocument();
+  });
 });

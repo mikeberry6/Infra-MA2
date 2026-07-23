@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
@@ -59,5 +60,30 @@ describe("MobileFilterSheet", () => {
     await user.click(second);
     const dialog = screen.getByRole("dialog", { name: "Second filters" });
     expect(dialog.id).toBe(second.getAttribute("aria-controls"));
+  });
+
+  it("keeps focus in the sheet when clearing the last active filter removes the action", async () => {
+    const user = userEvent.setup();
+    function ClearableSheet() {
+      const [active, setActive] = useState(true);
+      return (
+        <MobileFilterSheet
+          activeCount={active ? 1 : 0}
+          onClearAll={() => setActive(false)}
+        >
+          <span>Filter controls</span>
+        </MobileFilterSheet>
+      );
+    }
+
+    render(<ClearableSheet />);
+    await user.click(screen.getByRole("button", { name: "Filters, 1 active filter" }));
+    await user.click(screen.getByRole("button", { name: "Clear all filters" }));
+
+    expect(screen.queryByRole("button", { name: "Clear all filters" })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "View results" })).toHaveFocus();
+    expect(screen.getByRole("dialog", { name: "Filters" })).toContainElement(
+      document.activeElement as HTMLElement,
+    );
   });
 });

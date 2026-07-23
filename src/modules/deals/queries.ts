@@ -8,7 +8,7 @@ import {
   DEAL_CATEGORY_DISPLAY,
   DEAL_STATUS_DISPLAY,
 } from "@/modules/shared/enum-maps";
-import type { DealListItem, DealView } from "@/modules/shared/types";
+import type { DealDetail, DealListItem } from "@/modules/shared/types";
 import type { Deal as DbDeal, DealParticipant, ParticipantRole } from "@/generated/prisma/client";
 
 function uniqueNames(names: string[]): string[] {
@@ -21,13 +21,13 @@ function uniqueNames(names: string[]): string[] {
   });
 }
 
-// Map a DB deal + participants to the DealView that client components expect
+// Map a DB deal + participants to the complete public detail contract.
 function toDealView(
   deal: DbDeal & {
     participants: (DealParticipant & { organization: { name: string } })[];
     citations: { source: { label: string; url: string } }[];
   },
-): DealView {
+): DealDetail {
   const buyers = uniqueNames(deal.participants
     .filter((p) => p.role === "BUYER")
     .map((p) => p.displayName || p.organization.name));
@@ -159,7 +159,7 @@ const getAllDealsCached = unstable_cache(
   { tags: [CACHE_TAGS.deals], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
-async function getAllDealDetailsRaw(): Promise<DealView[]> {
+async function getAllDealDetailsRaw(): Promise<DealDetail[]> {
   const deals = await prisma.deal.findMany({
     where: { status: "PUBLISHED" },
     include: DEAL_INCLUDE,
@@ -179,11 +179,11 @@ export async function getAllDeals(): Promise<DealListItem[]> {
 }
 
 /** Full published projection for authenticated exports and other bulk detail consumers. */
-export async function getAllDealDetails(): Promise<DealView[]> {
+export async function getAllDealDetails(): Promise<DealDetail[]> {
   return getAllDealDetailsCached();
 }
 
-export async function getDealById(legacyId: string): Promise<DealView | null> {
+export async function getDealById(legacyId: string): Promise<DealDetail | null> {
   const deal = await prisma.deal.findFirst({
     where: { legacyId, status: "PUBLISHED" },
     include: DEAL_INCLUDE,
@@ -191,7 +191,7 @@ export async function getDealById(legacyId: string): Promise<DealView | null> {
   return deal ? toDealView(deal) : null;
 }
 
-export async function getWeeklyDeals(anchorDate: Date): Promise<DealView[]> {
+export async function getWeeklyDeals(anchorDate: Date): Promise<DealDetail[]> {
   const weekAgo = new Date(anchorDate.getTime() - 7 * 24 * 60 * 60 * 1000);
   const deals = await prisma.deal.findMany({
     where: {

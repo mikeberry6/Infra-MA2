@@ -33,6 +33,37 @@ export function vercelProductionMutationApiUrl(
   return endpoint.toString();
 }
 
+export function vercelProjectApiUrl(projectId: string, teamId: string): string {
+  const endpoint = new URL(
+    `https://api.vercel.com/v9/projects/${requireProjectId(projectId)}`,
+  );
+  endpoint.searchParams.set("teamId", requireTeamId(teamId));
+  return endpoint.toString();
+}
+
+export function requireStagedPromotionConfiguration(
+  payload: unknown,
+  expectedProjectId: string,
+): { projectId: string; automaticDomainAssignment: false } {
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    throw new Error("Vercel returned an invalid project configuration payload.");
+  }
+  const project = payload as Record<string, unknown>;
+  const projectId = requireProjectId(String(project.id ?? ""));
+  if (projectId !== requireProjectId(expectedProjectId)) {
+    throw new Error("Vercel project configuration belongs to the wrong project.");
+  }
+  if (project.autoAssignCustomDomains !== false) {
+    throw new Error(
+      "Vercel automatic production-domain assignment must be disabled before promotion.",
+    );
+  }
+  return {
+    projectId,
+    automaticDomainAssignment: false,
+  };
+}
+
 export function currentProductionDeploymentId(
   payload: unknown,
   expectedProjectId: string,

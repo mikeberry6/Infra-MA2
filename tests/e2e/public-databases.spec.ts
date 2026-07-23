@@ -82,7 +82,7 @@ test.describe("anonymous database journeys", () => {
   });
 
   test("mobile filters expose every taxonomy and reset pagination", async ({ page }) => {
-    await page.setViewportSize({ width: 390, height: 844 });
+    await page.setViewportSize({ width: 320, height: 844 });
     await page.goto(`${appPath("/tracker")}?page=2`);
     await waitForApplication(page, "Infrastructure Deal Tape");
 
@@ -106,7 +106,14 @@ test.describe("anonymous database journeys", () => {
     await expect(sectorFilter).toBeFocused();
     await expect(dialog).toBeVisible();
 
-    await dialog.press("Escape");
+    const clearAll = dialog.getByRole("button", { name: "Clear all filters" });
+    await clearAll.focus();
+    await clearAll.press("Enter");
+    await expect(dialog.getByRole("button", { name: "View results" })).toBeFocused();
+    await expect(page).not.toHaveURL(/sector=/);
+    await expect(trigger).not.toContainText("1");
+
+    await dialog.getByRole("button", { name: "View results" }).press("Enter");
     await expect(dialog).toBeHidden();
     await expect(trigger).toBeFocused();
     await expect(page.locator("body")).not.toHaveCSS("overflow", "hidden");
@@ -223,6 +230,13 @@ test.describe("anonymous database journeys", () => {
     await expect(page.getByRole("dialog")).toBeVisible();
     await expectDrawerShellWithinBudget(page, "deal");
     expect(await page.getByRole("dialog").getByRole("status").count()).toBe(0);
+    await page.goBack();
+    await expect(page).not.toHaveURL(/focus=/);
+    await expect(page.getByRole("dialog")).toBeHidden();
+    await expect(row).toBeFocused();
+    await page.goForward();
+    await expect(page).toHaveURL(focusedUrl);
+    await expect(page.getByRole("dialog")).toBeVisible();
     await page.reload();
     await expect(page).toHaveURL(focusedUrl);
     await expect(page.getByRole("dialog")).toBeVisible();
@@ -251,10 +265,74 @@ test.describe("anonymous database journeys", () => {
     await expectDrawerShellWithinBudget(page, "deal");
     const alert = dialog.getByRole("alert");
     await expect(alert).toContainText("Latest detail could not be loaded");
-    await alert.getByRole("button", { name: "Retry" }).click();
+    const retry = alert.getByRole("button", { name: "Retry" });
+    await retry.focus();
+    await retry.click();
+    expect(await dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
     await expect(alert).toBeHidden();
     await expect(dialog.getByText(/^Last verified /)).toBeVisible();
     expect(attempts).toBe(2);
+  });
+
+  test("fund sibling navigation keeps modal focus and restores the originating row", async ({ page }) => {
+    await page.goto(appPath("/funds"));
+    await waitForApplication(page, "Infrastructure Fund Database");
+
+    const managerGroups = page.locator("tbody button[aria-expanded]");
+    let multiFundGroupIndex = -1;
+    for (let index = 0; index < await managerGroups.count(); index += 1) {
+      const countText = await managerGroups.nth(index).locator("span").last().textContent();
+      if (Number(countText?.trim()) > 1) {
+        multiFundGroupIndex = index;
+        break;
+      }
+    }
+    expect(multiFundGroupIndex).toBeGreaterThanOrEqual(0);
+    const managerGroupRow = managerGroups.nth(multiFundGroupIndex).locator("xpath=ancestor::tr");
+    const row = managerGroupRow.locator(
+      "xpath=following-sibling::tr[.//*[@data-fund-row-trigger]][1]//*[@data-fund-row-trigger]",
+    );
+    await row.focus();
+    await row.press("Enter");
+    const dialog = page.getByRole("dialog");
+    await expect(dialog).toBeVisible();
+    await expect(dialog.getByRole("status")).toBeHidden();
+
+    const siblingSectionLabel = dialog.getByText(/^Other .+ vehicles$/);
+    await expect(siblingSectionLabel).toBeVisible();
+    const currentFundName = (await dialog.locator("#fund-drawer-title").textContent())?.trim();
+    const siblingFundNames = (await siblingSectionLabel
+      .locator("..")
+      .locator(".type-row-title")
+      .allTextContents())
+      .map((name) => name.trim())
+      .filter(Boolean);
+    const narrowFundName = [currentFundName, ...siblingFundNames]
+      .filter((name): name is string => Boolean(name))
+      .sort((left, right) => right.length - left.length)[0];
+    if (!narrowFundName) throw new Error("Expected a manager fund name.");
+    const sibling = siblingSectionLabel.locator("..").getByRole("button").first();
+    const originalUrl = page.url();
+    await sibling.focus();
+    await sibling.click();
+
+    await expect(page).not.toHaveURL(originalUrl);
+    expect(await dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+    await dialog.press("Escape");
+    await expect(dialog).toBeHidden();
+    await expect(row).toBeFocused();
+
+    await page.goto(`${appPath("/funds")}?q=${encodeURIComponent(narrowFundName)}`);
+    await waitForApplication(page, "Infrastructure Fund Database");
+    const narrowedFundTrigger = page.getByRole("button", {
+      name: `Open ${narrowFundName} fund details`,
+      exact: true,
+    });
+    await expect(page.locator("[data-fund-row-trigger]")).toHaveCount(1);
+    await narrowedFundTrigger.click();
+    const filteredDialog = page.getByRole("dialog");
+    await expect(filteredDialog).toBeVisible();
+    await expect(filteredDialog.getByText(/^Other .+ vehicles$/)).toHaveCount(0);
   });
 
   test("a terminal detail response removes the stale public drawer and focus URL", async ({ page }) => {
@@ -333,6 +411,13 @@ test.describe("anonymous database journeys", () => {
       await expect(page).toHaveURL(/[?&]focus=/);
       const focusedUrl = page.url();
       await expect(page.getByRole("dialog")).toBeVisible();
+      await page.goBack();
+      await expect(page).not.toHaveURL(/focus=/);
+      await expect(page.getByRole("dialog")).toBeHidden();
+      await expect(row).toBeFocused();
+      await page.goForward();
+      await expect(page).toHaveURL(focusedUrl);
+      await expect(page.getByRole("dialog")).toBeVisible();
       await page.reload();
       await expect(page).toHaveURL(focusedUrl);
       await expect(page.getByRole("dialog")).toBeVisible();
@@ -382,14 +467,29 @@ test.describe("anonymous database journeys", () => {
   });
 
   for (const database of [
-    { path: "/funds", heading: "Infrastructure Fund Database", sort: "Strategy" },
-    { path: "/portfolio", heading: "Infrastructure Portfolio Company Database", sort: "Sector" },
+    {
+      path: "/funds",
+      heading: "Infrastructure Fund Database",
+      sort: "Strategy",
+      sortButton: "Sort funds within each manager by Strategy",
+    },
+    {
+      path: "/portfolio",
+      heading: "Infrastructure Portfolio Company Database",
+      sort: "Sector",
+      sortButton: "Sector",
+    },
   ] as const) {
     test(`${database.path} writes sort state atomically and restores it with browser history`, async ({ page }) => {
       await page.goto(`${appPath(database.path)}?page=2`);
       await waitForApplication(page, database.heading);
 
-      await page.getByRole("button", { name: database.sort, exact: true }).click();
+      const sortButton = page.getByRole("button", { name: database.sortButton, exact: true });
+      if (database.path === "/funds") {
+        await expect(page.getByText("Managers A–Z · column sort applies within each manager")).toBeVisible();
+        await expect(sortButton.locator("xpath=ancestor::th")).not.toHaveAttribute("aria-sort");
+      }
+      await sortButton.click();
       await expect(page).toHaveURL(new RegExp(`sort=${database.sort.toLowerCase()}`));
       await expect(page).not.toHaveURL(/page=2/);
       await expect(page).not.toHaveURL(/direction=/);

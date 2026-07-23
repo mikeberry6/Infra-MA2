@@ -43,6 +43,23 @@ export type CompanyPublicationRecord = {
   citations: readonly unknown[];
 };
 
+export const companyPublicationIntegritySelect = {
+  name: true,
+  country: true,
+  sector: true,
+  description: true,
+  website: true,
+  ownershipPeriods: {
+    select: {
+      id: true,
+      fundId: true,
+      organizationId: true,
+      fund: { select: { status: true } },
+    },
+  },
+  citations: { where: { isPrimary: true }, select: { id: true } },
+} as const;
+
 export function missingDealPublicationFields(deal: DealPublicationRecord): string[] {
   return [
     !deal.target.trim() && "target",

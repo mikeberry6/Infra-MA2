@@ -1,10 +1,17 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import {
+  useState,
+  useMemo,
+  useEffect,
+  useCallback,
+  useRef,
+  type RefObject,
+} from "react";
 import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import { DEAL_SECTORS, NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
-import type { DealListItem, DealView, DatabaseCounts, RecordMeta } from "@/modules/shared/types";
+import type { DealDetail, DealListItem, DatabaseCounts, RecordMeta } from "@/modules/shared/types";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import { track } from "@vercel/analytics";
 import { BoundedDetailCache } from "@/lib/detail-cache";
@@ -126,9 +133,9 @@ function mostCommonLabel(items: string[]): { label: string; count: number } | nu
     .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))[0] ?? null;
 }
 
-const dealDetailCache = new BoundedDetailCache<DealView>();
+const dealDetailCache = new BoundedDetailCache<DealDetail>();
 
-function dealDetailShell(deal: DealListItem): DealView {
+function dealDetailShell(deal: DealListItem): DealDetail {
   return {
     ...deal,
     description: "",
@@ -264,6 +271,7 @@ function ActiveFiltersChips({
   onClearRegion,
   onClearCategory,
   onClearAll,
+  focusFallbackRef,
 }: {
   activeSectors: Set<string>;
   activeRegions: Set<string>;
@@ -272,6 +280,7 @@ function ActiveFiltersChips({
   onClearRegion: (r: string) => void;
   onClearCategory: (c: string) => void;
   onClearAll: () => void;
+  focusFallbackRef: RefObject<HTMLInputElement | null>;
 }) {
   return (
     <ActiveFiltersStrip
@@ -281,6 +290,7 @@ function ActiveFiltersChips({
         { keyPrefix: "category", items: activeCategories, getColor: getCategoryColor, onRemove: onClearCategory },
       ]}
       onClearAll={onClearAll}
+      focusFallbackRef={focusFallbackRef}
     />
   );
 }
@@ -308,12 +318,14 @@ function FilterBar({
   onClearAll: () => void;
 }) {
   const activeFilterCount = activeSectors.size + activeRegions.size + activeCategories.size;
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   return (
     <div className="mb-3 space-y-3">
       <div className="sticky top-14 z-30 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
         <div className="min-w-0 flex-1 md:max-w-xs">
           <TextInput
+            ref={searchInputRef}
             leadingIcon={<Search />}
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
@@ -322,7 +334,7 @@ function FilterBar({
           />
         </div>
 
-        <MobileFilterSheet activeCount={activeFilterCount}>
+        <MobileFilterSheet activeCount={activeFilterCount} onClearAll={onClearAll}>
           <div className="space-y-3">
             <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
               <span className="type-meta font-medium text-[var(--text-primary)]">Sector</span>
@@ -358,15 +370,6 @@ function FilterBar({
               />
             </div>
           </div>
-          {activeFilterCount > 0 && (
-            <button
-              type="button"
-              onClick={onClearAll}
-              className="inline-flex h-9 w-full items-center justify-center rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
-            >
-              Clear all filters
-            </button>
-          )}
         </MobileFilterSheet>
 
         <div className="hidden min-w-0 flex-1 items-center gap-2 md:flex">
@@ -404,6 +407,7 @@ function FilterBar({
         onClearRegion={onToggleRegion}
         onClearCategory={onToggleCategory}
         onClearAll={onClearAll}
+        focusFallbackRef={searchInputRef}
       />
     </div>
   );
@@ -738,7 +742,7 @@ function DealDrawer({
   onRetry,
   detailMeta,
 }: {
-  deal: DealView;
+  deal: DealDetail;
   onClose: () => void;
   detailState?: "idle" | "loading" | "ready" | "error";
   onRetry?: () => void;
@@ -865,7 +869,10 @@ function DealDrawer({
                   {onRetry && (
                     <button
                       type="button"
-                      onClick={onRetry}
+                      onClick={() => {
+                        drawerRef.current?.focus();
+                        onRetry();
+                      }}
                       className="font-semibold underline underline-offset-2"
                     >
                       Retry
@@ -1056,7 +1063,7 @@ export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts:
     detail: selectedDealDetail,
     meta: detailMeta,
     state: detailState,
-  } = useFreshDetail<DealView>({
+  } = useFreshDetail<DealDetail>({
     cache: dealDetailCache,
     cacheKey: selectedDeal?.legacyId ?? null,
     requestUrl: selectedDeal

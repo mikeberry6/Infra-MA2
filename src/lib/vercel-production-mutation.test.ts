@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
   currentProductionDeploymentId,
+  requireStagedPromotionConfiguration,
+  vercelProjectApiUrl,
   vercelProductionMutationApiUrl,
 } from "./vercel-production-mutation";
 
@@ -16,6 +18,28 @@ describe("Vercel production mutation contract", () => {
     expect(vercelProductionMutationApiUrl("rollback", projectId, deploymentId, teamId)).toBe(
       `https://api.vercel.com/v1/projects/${projectId}/rollback/${deploymentId}?teamId=${teamId}`,
     );
+    expect(vercelProjectApiUrl(projectId, teamId)).toBe(
+      `https://api.vercel.com/v9/projects/${projectId}?teamId=${teamId}`,
+    );
+  });
+
+  it("requires automatic production-domain assignment to remain disabled", () => {
+    expect(requireStagedPromotionConfiguration({
+      id: projectId,
+      autoAssignCustomDomains: false,
+    }, projectId)).toEqual({
+      projectId,
+      automaticDomainAssignment: false,
+    });
+
+    expect(() => requireStagedPromotionConfiguration({
+      id: projectId,
+      autoAssignCustomDomains: true,
+    }, projectId)).toThrow(/automatic production-domain assignment must be disabled/i);
+    expect(() => requireStagedPromotionConfiguration({
+      id: "prj_other",
+      autoAssignCustomDomains: false,
+    }, projectId)).toThrow(/wrong project/i);
   });
 
   it("accepts only the ready production deployment for the expected project", () => {

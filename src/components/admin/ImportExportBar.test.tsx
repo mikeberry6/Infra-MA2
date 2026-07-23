@@ -118,10 +118,36 @@ describe("ImportExportBar", () => {
     expect(JSON.parse(commitRequest[1].body as string).deals).toHaveLength(4);
     expect(await screen.findByText("2 deals committed as drafts.")).toBeVisible();
     expect(invalidateDetailCache).toHaveBeenCalledWith("deal");
+    expect(screen.getByLabelText("Select CSV")).toHaveFocus();
     expect(screen.getByRole("link", { name: "View audit event" })).toHaveAttribute(
       "href",
       "/admin/audit?focus=audit-42",
     );
+  });
+
+  it("returns focus to file selection when an import preview is dismissed", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(response({
+      previewToken: "signed-dismiss-token",
+      items: [{ id: "DEAL-NEW" }],
+      total: 1,
+      valid: 1,
+      creates: 1,
+      updates: 0,
+      unchanged: 0,
+      quarantined: 0,
+      warnings: [],
+      errors: [],
+    })));
+
+    render(<ImportExportBar entityType="deals" />);
+    fireEvent.change(screen.getByLabelText("Select CSV"), {
+      target: { files: [csvFile("id,title\nDEAL-NEW,New deal")] },
+    });
+    const preview = await screen.findByRole("region", { name: "Import preview" });
+    await userEvent.click(within(preview).getByRole("button", { name: "Dismiss import preview" }));
+
+    expect(screen.queryByRole("region", { name: "Import preview" })).not.toBeInTheDocument();
+    expect(screen.getByLabelText("Select CSV")).toHaveFocus();
   });
 
   it("does not invalidate detail caches when a confirmed import writes no rows", async () => {
