@@ -182,6 +182,13 @@ jobs:
           npx prisma migrate status 2>&1 | tee tmp/ci/migrate-status.log
           npx prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/ci/schema-drift.log
 
+      - name: Remove stale authenticated-write E2E deal fixtures
+        shell: bash
+        run: |
+          set -o pipefail
+          ./node_modules/.bin/tsx tests/e2e/deal-fixture-maintenance.ts cleanup \
+            2>&1 | tee tmp/ci/deal-fixture-preflight-cleanup.json
+
       - name: Apply reviewed remediation or generate neutral review templates
         shell: bash
         run: |
@@ -326,10 +333,30 @@ jobs:
       - name: Run end-to-end, axe, keyboard, and responsive checks
         id: browser_gate
         continue-on-error: true
+        shell: bash
         env:
           E2E_BASE_PATH: /Infra-MA2
           PLAYWRIGHT_HTML_OUTPUT_DIR: browser-playwright-report
-        run: npx playwright test --grep-invert "@visual" --output=browser-test-results
+        run: |
+          set -euo pipefail
+          cleanup() {
+            status=$?
+            trap - EXIT
+            set +e
+            ./node_modules/.bin/tsx tests/e2e/deal-fixture-maintenance.ts cleanup \
+              2>&1 | tee tmp/ci/deal-fixture-post-browser-cleanup.json
+            # pipefail keeps cleanup and evidence-capture failures equally
+            # blocking; do not silently accept a missing cleanup report.
+            cleanup_status=$?
+            set -e
+            if [ "$status" -eq 0 ] && [ "$cleanup_status" -ne 0 ]; then
+              status=$cleanup_status
+            fi
+            exit "$status"
+          }
+          trap cleanup EXIT
+
+          npx playwright test --grep-invert "@visual" --output=browser-test-results
 
       - name: Prove top-level database failure and retry journeys
         id: top_level_failure_gate

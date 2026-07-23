@@ -1,6 +1,12 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
 import { appPath, signInAsConfiguredAdmin, waitForApplication } from "./helpers";
 import { assertIsolatedWriteTarget } from "./isolation-guard";
+import {
+  E2E_DEAL_FIXTURE_BUYER,
+  E2E_DEAL_FIXTURE_SOURCE_LABEL,
+  E2E_DEAL_FIXTURE_SOURCE_URL_PREFIXES,
+  E2E_DEAL_FIXTURES,
+} from "./deal-fixture-contract";
 
 const WRITE_JOURNEY_ENV = [
   "E2E_DATABASE_URL",
@@ -50,7 +56,7 @@ async function createDraftDeal(page: Page, input: {
   await page.goto(appPath("/admin/deals/new"));
   await page.getByLabel(/^Title/).fill(input.title);
   await page.getByRole("textbox", { name: "Target (required)", exact: true }).fill(input.target);
-  await page.getByLabel("Buyer (one per line)").fill("InfraSight E2E Infrastructure Manager");
+  await page.getByLabel("Buyer (one per line)").fill(E2E_DEAL_FIXTURE_BUYER);
   await page.getByRole("combobox", { name: /^Seller disclosure/ }).selectOption("NOT_APPLICABLE");
   await page.getByLabel("Seller disclosure reason").fill("No seller applies to this isolated test fixture.");
   await page.getByLabel(/^Country/).fill("United States");
@@ -58,7 +64,7 @@ async function createDraftDeal(page: Page, input: {
   await page.getByLabel(/^Description/).fill(input.description);
   await page.getByRole("checkbox", { name: "Acquisition (Buyout)", exact: true }).check();
   if (input.sourceUrl) {
-    await page.getByLabel("Primary Source Name").fill("InfraSight E2E fixture");
+    await page.getByLabel("Primary Source Name").fill(E2E_DEAL_FIXTURE_SOURCE_LABEL);
     await page.getByLabel("Primary Source URL").fill(input.sourceUrl);
   }
   await page.getByRole("button", { name: "Create Deal" }).click();
@@ -75,9 +81,12 @@ async function bestEffortDeleteCreatedDeal(page: Page, target: string) {
   try {
     await page.goto(appPath("/admin/deals"));
     const row = dealRow(page, target);
-    if ((await row.count()) !== 1) return;
+    const rowCount = await row.count();
+    if (rowCount === 0) return;
+    expect(rowCount, `Cleanup should find at most one E2E deal named ${target}`).toBe(1);
     await row.getByRole("button", { name: "Delete", exact: true }).click();
     await runAdminServerAction(page, row.getByRole("button", { name: "Confirm", exact: true }));
+    await expect(row, `Draft fixture ${target} should be absent after cleanup`).toHaveCount(0);
   } catch (error) {
     // Preserve the original assertion failure while leaving a useful cleanup
     // diagnostic in the Playwright report. This can only run after the target
@@ -90,11 +99,14 @@ async function bestEffortPreserveCreatedDeal(page: Page, target: string) {
   try {
     await page.goto(appPath("/admin/deals"));
     const row = dealRow(page, target);
-    if ((await row.count()) !== 1) return;
+    const rowCount = await row.count();
+    if (rowCount === 0) return;
+    expect(rowCount, `Cleanup should find at most one E2E deal named ${target}`).toBe(1);
     const deleteButton = row.getByRole("button", { name: "Delete", exact: true });
     if (await deleteButton.count()) {
       await deleteButton.click();
       await runAdminServerAction(page, row.getByRole("button", { name: "Confirm", exact: true }));
+      await expect(row, `Draft fixture ${target} should be absent after cleanup`).toHaveCount(0);
       return;
     }
     const archiveButton = row.getByRole("button", { name: "Archive", exact: true });
@@ -102,6 +114,11 @@ async function bestEffortPreserveCreatedDeal(page: Page, target: string) {
       await archiveButton.click();
       await runAdminServerAction(page, row.getByRole("button", { name: "Confirm archive", exact: true }));
     }
+    await expect(
+      row.getByText("ARCHIVED", { exact: true }),
+      `Published fixture ${target} should be archived after cleanup`,
+    ).toBeVisible();
+    await expect(row.getByRole("button", { name: "Delete", exact: true })).toHaveCount(0);
   } catch (error) {
     console.warn("Unable to preserve the E2E deal during failure cleanup", error);
   }
@@ -149,14 +166,14 @@ test("configured administrator previews a CSV before explicitly committing its d
 
   const runId = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
   const legacyId = `E2E-IMPORT-${runId}`;
-  const target = `InfraSight E2E CSV Preview ${runId}`;
+  const target = `${E2E_DEAL_FIXTURES.csvPreview.targetPrefix}${runId}`;
   const csv = [
     "id,title,target,buyer,seller,sellerDisclosureStatus,sellerDisclosureReason,sector,subsector,region,category,date,description,targetDescription,country,status",
     [
       legacyId,
       `${target} acquisition`,
       target,
-      "InfraSight E2E Infrastructure Manager",
+      E2E_DEAL_FIXTURE_BUYER,
       "",
       "NOT_APPLICABLE",
       "No seller applies to this isolated CSV fixture.",
@@ -165,7 +182,7 @@ test("configured administrator previews a CSV before explicitly committing its d
       "North America",
       "Acquisition (Buyout)",
       new Date().toISOString().slice(0, 10),
-      "Isolated preview-before-commit browser verification record.",
+      E2E_DEAL_FIXTURES.csvPreview.description,
       "A synthetic fiber platform used only in the isolated E2E database.",
       "United States",
       "Announced",
@@ -243,12 +260,12 @@ test("configured administrator can complete the audited draft-to-publication jou
   assertIsolatedWriteTarget();
 
   const runId = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-  const target = `InfraSight E2E Deal ${runId}`;
+  const target = `${E2E_DEAL_FIXTURES.publishedJourney.targetPrefix}${runId}`;
   const title = `${target} acquisition`;
-  const deletionTarget = `InfraSight E2E Draft Delete ${runId}`;
-  let created = false;
+  const deletionTarget = `${E2E_DEAL_FIXTURES.draftDelete.targetPrefix}${runId}`;
+  let createAttempted = false;
   let archived = false;
-  let deletionDraftCreated = false;
+  let deletionDraftCreateAttempted = false;
   let deletionDraftDeleted = false;
 
   try {
@@ -259,13 +276,15 @@ test("configured administrator can complete the audited draft-to-publication jou
     await expect(page).toHaveURL(new RegExp(`${appPath("/admin")}$`));
     await expect(page.getByRole("heading", { name: /Admin/i })).toBeVisible();
 
+    // Mark the attempt before submitting so a committed server action whose
+    // redirect times out still receives fixture cleanup in finally.
+    createAttempted = true;
     await createDraftDeal(page, {
       target,
       title,
-      description: "Isolated end-to-end publication workflow verification record.",
-      sourceUrl: `https://example.com/infrasight-e2e-deal-source-${runId}`,
+      description: E2E_DEAL_FIXTURES.publishedJourney.description,
+      sourceUrl: `${E2E_DEAL_FIXTURE_SOURCE_URL_PREFIXES[0]}${runId}`,
     });
-    created = true;
 
     let row = dealRow(page, target);
     await expect(row).toHaveCount(1);
@@ -335,13 +354,13 @@ test("configured administrator can complete the audited draft-to-publication jou
 
     // Hard deletion is a separate never-published-draft journey. The archived
     // fixture above remains preserved with its full editorial history.
+    deletionDraftCreateAttempted = true;
     await createDraftDeal(page, {
       target: deletionTarget,
       title: `${deletionTarget} acquisition`,
-      description: "Isolated draft-only hard-delete policy verification record.",
-      sourceUrl: `https://example.com/infrasight-e2e-draft-delete-${runId}`,
+      description: E2E_DEAL_FIXTURES.draftDelete.description,
+      sourceUrl: `${E2E_DEAL_FIXTURE_SOURCE_URL_PREFIXES[1]}${runId}`,
     });
-    deletionDraftCreated = true;
     row = dealRow(page, deletionTarget);
     await expect(row.getByText("DRAFT", { exact: true })).toBeVisible();
     const deletionEditHref = await row.getByRole("link", { name: "Edit", exact: true }).getAttribute("href");
@@ -358,10 +377,10 @@ test("configured administrator can complete the audited draft-to-publication jou
     await page.goto(appPath("/admin/audit"));
     await expectAuditEvent(page, deletionCanonicalId!, "DELETE", email!);
   } finally {
-    if (deletionDraftCreated && !deletionDraftDeleted) {
+    if (deletionDraftCreateAttempted && !deletionDraftDeleted) {
       await bestEffortDeleteCreatedDeal(page, deletionTarget);
     }
-    if (created && !archived) {
+    if (createAttempted && !archived) {
       await bestEffortPreserveCreatedDeal(page, target);
     }
   }

@@ -6,6 +6,10 @@ const workflow = readFileSync(
   path.join(process.cwd(), ".github/workflows/deploy.yml"),
   "utf8",
 );
+const visualSpec = readFileSync(
+  path.join(process.cwd(), "tests/e2e/visual-regression.spec.ts"),
+  "utf8",
+);
 
 describe("isolated validation workflow remediation context", () => {
   it("builds and serves the validation app with the full base-path auth endpoint", () => {
@@ -116,6 +120,7 @@ describe("isolated validation workflow remediation context", () => {
     expect(visualBlock).toContain("continue-on-error: true");
     expect(visualBlock).toContain("--workers=1");
     expect(visualBlock).toContain("--output=visual-test-results");
+    expect(visualBlock).not.toContain("--update-snapshots");
     expect(browserGate).toBeGreaterThan(visualGate);
     const browserBlock = workflow.slice(browserGate, topLevelFailureGate);
     expect(browserBlock).toContain("continue-on-error: true");
@@ -154,5 +159,27 @@ describe("isolated validation workflow remediation context", () => {
       'if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]',
     );
     expect(workflow.slice(enforcement)).toContain('exit "$failed"');
+  });
+
+  it("retains clean visual candidates without rewriting release expectations", () => {
+    const cleanActualCapture = visualSpec.indexOf("await page.screenshot({");
+    const baselineAssertion = visualSpec.indexOf(
+      "await expect(page).toHaveScreenshot(baseline",
+    );
+    const playwrightUpload = workflow.indexOf(
+      "- name: Upload Playwright report and failure media",
+    );
+    const buildJob = workflow.indexOf("\n  build:", playwrightUpload);
+    const uploadBlock = workflow.slice(playwrightUpload, buildJob);
+
+    expect(cleanActualCapture).toBeGreaterThan(-1);
+    expect(baselineAssertion).toBeGreaterThan(cleanActualCapture);
+    expect(visualSpec.slice(0, cleanActualCapture)).toContain(
+      "`tracker-${viewport.name}-${process.platform}-clean-actual.png`",
+    );
+    expect(playwrightUpload).toBeGreaterThan(-1);
+    expect(buildJob).toBeGreaterThan(playwrightUpload);
+    expect(uploadBlock).toContain("visual-playwright-report/");
+    expect(uploadBlock).toContain("visual-test-results/");
   });
 });
