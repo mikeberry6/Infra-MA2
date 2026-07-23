@@ -2,7 +2,7 @@
 
 **Updated:** 2026-07-23
 
-**Posture:** The clean Next.js 15 implementation is assembled as four open, draft, unmerged stacked pull requests. Phase 4 is locally verified and deploys successfully to a fail-closed Preview. Whole-program reconciliation is in progress; the exact integration commit and its hosted Release Gate are not yet recorded. This is not a production-complete program.
+**Posture:** The clean Next.js 15 implementation remains available as four open, draft, unmerged stacked pull requests. Their executable trees are now reconciled with the retained integration safeguards in exact two-parent commit `f97ca6122eae2061cd26adc84c54e50ebc18e0a4` on [PR #223](https://github.com/mikeberry6/Infra-MA2/pull/223). The reconciled tree passes the complete local gate, and Phase 4 still deploys successfully to a fail-closed Preview. The exact hosted integration Release Gate, Research decisions, schema staging, and production rollout are not complete.
 
 ## Clean phase stack
 
@@ -40,21 +40,36 @@ Vercel deployment `dpl_EA7Af4xrxxwQ6qbg1edwmtiXJASv` is `READY` for the exact Ph
 
 Anonymous access is protected by Vercel SSO and returns a 302 redirect. With Vercel's authenticated protection bypass, `/Infra-MA2/api/health` returns HTTP 503 with `Cache-Control: no-store`, release prefix `9a6f9bcb67f6`, `status:"unhealthy"`, `database:"unavailable"`, and `pipelines:[]`. This is the expected fail-closed behavior of the deliberately unusable Preview database configuration. It proves build/deployment compatibility and the health failure contract, not migrated or authenticated staged operation.
 
-## Exact whole-program evidence — pending
+## Exact local whole-program reconciliation evidence
 
-Do not publish an integration-success claim until these fields are replaced with real evidence:
+At exact executable-tree commit `f97ca6122eae2061cd26adc84c54e50ebc18e0a4`:
 
-- Integration commit and pull request: `<exact SHA and PR>`
-- Synthetic merge SHA: `<exact SHA>`
-- Release Gate run and job IDs: `<URLs and IDs>`
-- Static gate result: `<tests, lint, typechecks, audit, build, bundle>`
+- Parent 1 is prior integration head `2e2f0e0780d6e9c044770a69df18cbbc89bf7b44`; parent 2 is clean Phase 4 head `9a6f9bcb67f67fbd13f7b6f09e04e2e1574588a9`. Both ancestry checks pass.
+- Node `v24.14.0`, npm `11.11.0`, locked installation, Prisma generation/validation, ESLint, application TypeScript, and operational-script/Prisma TypeScript passed.
+- Vitest: **171 files / 1,157 tests passed**.
+- Portfolio validation: **1,167 companies / 179 funds / 0 structural errors**. The reported management, linkage, and milestone warnings remain Research-quality inputs, not ignored failures.
+- The latest weekly email is valid with **13 deals / 5 sectors / 13 sources**; its ordering warnings remain editorial review inputs.
+- Complete and production-only dependency audits: **0 vulnerabilities**.
+- Next.js `15.5.21` production build passed. Gzip public-route bundles remain within the 150,000-byte budget: tracker **131.1 kB**, funds **129.5 kB**, and portfolio **129.7 kB**.
+- Playwright discovered **58 browser scenarios in six files**. Discovery is not a hosted execution claim.
+- Reconciliation added **0 migration files** relative to Phase 4; additive manifest SHA-256 is `923f777d756975b7bdd02e04f23a1c49e7b3b23093b44f8617f76ff5146daf27`.
+- Historical weekly-email audit protects **22 issues**, with **0 changed or added issues** relative to Phase 4.
+- Workflow YAML parsing, migration-tree equality, visual-baseline equality, historical-email equality, and `git diff --check` passed.
+- The checked-in Vercel bypass transport completed a read-only smoke against the immutable Phase 4 deployment: root plus all required public routes returned 200 and anonymous deal export returned 403. This validates the protected transport, not the reconciled deployment or its database.
+- The GitHub `Production` environment now has self-review prevention, a custom deployment policy whose only branch is `main`, the immutable Vercel team ID, and the Vercel automation-bypass secret. No deployment or production database mutation was run.
+
+## Hosted integration evidence — pending
+
+Do not publish a hosted or production-success claim until these fields are replaced with exact evidence for the final pushed head:
+
+- Final branch head, synthetic merge SHA, Release Gate run, and job IDs: `<exact SHAs, URLs, and IDs>`
 - Isolated Neon result: `<migration apply/status/drift and database-backed build>`
 - Strict Research/data gate result: `<pass or exact unresolved counts>`
-- Browser, axe, keyboard, visual, and failure-fixture result: `<exact counts and skips>`
+- Browser, axe, keyboard, visual, and failure-fixture execution: `<exact counts and skips>`
 - Retained artifact names, IDs, hashes, and expiry: `<values>`
 - Staged production candidate ID, URL, target, and Git SHA: `<values>`
 
-The Phase 4 Preview and GitHub's prospective pull-request merge ref are not substitutes for exact integrated evidence.
+The local gate, Phase 4 Preview, and GitHub's prospective pull-request merge ref are not substitutes for exact hosted integration evidence.
 
 ## Research decisions still pending
 
@@ -87,4 +102,4 @@ Time-bound:
 - Accumulate the full 30-day production window before claiming pipeline reliability or p75 Core Web Vitals objectives.
 - Next.js 16 and React 19 remain a separate modernization release after a stable 30-day Next.js 15 window. Tailwind 4 remains later.
 
-**Completion statement:** The clean implementation stack exists and Phase 4 passes its recorded local gate. The program is not complete until exact integration validation, external configuration, Research approvals, protected production rollout, database recovery evidence, human accessibility attestation, and elapsed telemetry are complete.
+**Completion statement:** The clean implementation stack is reconciled and its executable tree passes the recorded local gate. The program is not production-complete until exact hosted integration validation, Research approvals, protected schema/data rollout, production promotion, database recovery evidence, human accessibility attestation, and elapsed telemetry are complete.
