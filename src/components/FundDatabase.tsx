@@ -472,6 +472,7 @@ function FundRow({
     <tr className="bg-[var(--bg-surface)] hover:bg-[var(--bg-subtle)] transition-colors group border-b border-[var(--border)] last:border-b-0">
       <td className="px-3 py-2.5 align-top">
         <button
+          data-fund-row-trigger
           type="button"
           onClick={() => onSelect(fund)}
           aria-label={`Open ${fund.fundName} fund details`}
@@ -1155,7 +1156,10 @@ export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts:
       ? (sortDirection === "asc" ? "desc" : "asc")
       : field === "size" ? "desc" : "asc";
     writeQueryParams(
-      { sort: field, direction },
+      {
+        sort: field === "name" ? null : field,
+        direction: direction === "asc" ? null : direction,
+      },
       { history: "push", resetPage: true },
     );
   }, [sortDirection, sortField, writeQueryParams]);

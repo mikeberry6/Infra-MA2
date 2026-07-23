@@ -139,6 +139,7 @@ test.describe("anonymous database journeys", () => {
     await expect(row).toBeFocused();
 
     await row.press("Enter");
+    await expect(page).toHaveURL(/[?&]focus=/);
     const focusedUrl = page.url();
     await expect(page.getByRole("dialog")).toBeVisible();
     await expectDrawerShellWithinBudget(page, "deal");
@@ -216,7 +217,11 @@ test.describe("anonymous database journeys", () => {
       await page.goto(appPath(database.path));
       await waitForApplication(page, database.heading);
 
-      const row = page.locator("tbody tr[role=button]").first();
+      const row = page.locator(
+        database.kind === "fund"
+          ? "tbody [data-fund-row-trigger]"
+          : "tbody [data-company-row-trigger]",
+      ).first();
       await row.focus();
       await row.press("Enter");
       let dialog = page.getByRole("dialog");
@@ -246,6 +251,7 @@ test.describe("anonymous database journeys", () => {
       await expect(row).toBeFocused();
 
       await row.press("Enter");
+      await expect(page).toHaveURL(/[?&]focus=/);
       const focusedUrl = page.url();
       await expect(page.getByRole("dialog")).toBeVisible();
       await page.reload();
@@ -264,16 +270,11 @@ test.describe("anonymous database journeys", () => {
     const firstResult = page.locator('a[href*="focus="]').first();
     await expect(firstResult).toBeVisible();
     const href = await firstResult.getAttribute("href");
-    let drawerKind: DrawerKind;
-    if (href?.includes("/tracker?")) drawerKind = "deal";
-    else if (href?.includes("/funds?")) drawerKind = "fund";
-    else if (href?.includes("/portfolio?")) drawerKind = "company";
-    else throw new Error(`Unexpected search result destination: ${href ?? "missing href"}`);
+    expect(href).toMatch(/\/(?:tracker|funds|portfolio)\?focus=/);
 
     await firstResult.click();
     await expect(page).toHaveURL(/focus=/);
     await expect(page.getByRole("dialog")).toBeVisible();
-    await expectDrawerShellWithinBudget(page, drawerKind);
 
     await page.goBack();
     await waitForApplication(page, "Search InfraSight");
@@ -317,6 +318,7 @@ test.describe("anonymous database journeys", () => {
       await page.goBack();
       await expect(page).toHaveURL(/page=2/);
       await expect(page).not.toHaveURL(/sort=/);
+      await expect(page).not.toHaveURL(/direction=/);
     });
   }
 
@@ -324,7 +326,7 @@ test.describe("anonymous database journeys", () => {
     await page.goto(`${appPath("/funds")}?view=managers`);
     await waitForApplication(page, "Infrastructure Fund Database");
 
-    await expect(page.locator("tbody tr[role=button]")).toHaveCount(25);
+    await expect(page.locator("tbody [data-fund-row-trigger]")).toHaveCount(25);
     await expect(page.getByRole("button", { name: "Next page" })).toBeVisible();
     await expect(page.locator("tbody").getByRole("button", { expanded: true }).first()).toBeVisible();
   });

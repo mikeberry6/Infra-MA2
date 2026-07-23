@@ -364,7 +364,20 @@ jobs:
           }
           trap cleanup EXIT
 
-          npx playwright test --grep-invert "@visual" --output=browser-test-results
+          public_status=0
+          npx playwright test \
+            --grep-invert "@visual|@sensitive" \
+            --output=browser-test-results || public_status=$?
+
+          sensitive_status=0
+          npx playwright test \
+            --grep "@sensitive" \
+            --reporter=list,github \
+            --output=sensitive-browser-test-results || sensitive_status=$?
+
+          if [ "$public_status" -ne 0 ] || [ "$sensitive_status" -ne 0 ]; then
+            exit 1
+          fi
 
       - name: Prove top-level database failure and retry journeys
         id: top_level_failure_gate
@@ -471,8 +484,36 @@ jobs:
               npx playwright test tests/e2e/provider-failures.spec.ts \
                 --output=provider-failure-test-results
 
-      - name: Upload migration and data evidence
+      - name: Prove retained validation evidence contains no validation credential
+        id: validation_artifact_secret_gate
         if: always()
+        continue-on-error: true
+        run: |
+          ./node_modules/.bin/tsx scripts/assert-playwright-artifact-secret-safety.ts \
+            --root=tmp/ci \
+            --output=tmp/ci/validation-artifact-secret-safety.json
+
+      - name: Prove retained browser evidence contains no validation credential
+        id: browser_artifact_secret_gate
+        if: always()
+        continue-on-error: true
+        run: |
+          ./node_modules/.bin/tsx scripts/assert-playwright-artifact-secret-safety.ts \
+            --root=playwright-report \
+            --root=test-results \
+            --root=browser-playwright-report \
+            --root=browser-test-results \
+            --root=sensitive-browser-test-results \
+            --root=visual-playwright-report \
+            --root=visual-test-results \
+            --root=top-level-failure-playwright-report \
+            --root=top-level-failure-test-results \
+            --root=provider-failure-playwright-report \
+            --root=provider-failure-test-results \
+            --output=tmp/ci/playwright-artifact-secret-safety.json
+
+      - name: Upload migration and data evidence
+        if: always() && steps.validation_artifact_secret_gate.outcome == 'success'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: validation-evidence-${{ github.run_id }}
@@ -487,6 +528,8 @@ jobs:
           VISUAL_GATE_OUTCOME: ${{ steps.visual_gate.outcome }}
           TOP_LEVEL_FAILURE_GATE_OUTCOME: ${{ steps.top_level_failure_gate.outcome }}
           PROVIDER_FAILURE_GATE_OUTCOME: ${{ steps.provider_failure_gate.outcome }}
+          VALIDATION_ARTIFACT_SECRET_GATE_OUTCOME: ${{ steps.validation_artifact_secret_gate.outcome }}
+          BROWSER_ARTIFACT_SECRET_GATE_OUTCOME: ${{ steps.browser_artifact_secret_gate.outcome }}
           STRICT_PUBLICATION_GATE_OUTCOME: ${{ steps.strict_publication_gate.outcome }}
         shell: bash
         run: |
@@ -507,6 +550,14 @@ jobs:
             echo "::error::The isolated external-provider failure gate failed; all other independent fixture evidence was still collected."
             failed=1
           fi
+          if [ "$VALIDATION_ARTIFACT_SECRET_GATE_OUTCOME" != "success" ]; then
+            echo "::error::Retained validation evidence failed the credential safety scan and will not be uploaded."
+            failed=1
+          fi
+          if [ "$BROWSER_ARTIFACT_SECRET_GATE_OUTCOME" != "success" ]; then
+            echo "::error::Retained browser evidence failed the validation-credential safety scan and will not be uploaded."
+            failed=1
+          fi
           if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]; then
             echo "::error::Strict publication/data integrity remains blocking; browser evidence was collected without weakening the release gate."
             failed=1
@@ -514,7 +565,7 @@ jobs:
           exit "$failed"
 
       - name: Upload Playwright report and failure media
-        if: always()
+        if: always() && steps.browser_artifact_secret_gate.outcome == 'success'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: playwright-report-${{ github.run_id }}
@@ -523,6 +574,7 @@ jobs:
             test-results/
             browser-playwright-report/
             browser-test-results/
+            sensitive-browser-test-results/
             visual-playwright-report/
             visual-test-results/
             top-level-failure-playwright-report/

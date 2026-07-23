@@ -8,6 +8,10 @@ import {
   E2E_DEAL_FIXTURES,
 } from "./deal-fixture-contract";
 
+// These journeys fill an isolated administrator password. Playwright traces
+// retain action arguments verbatim, so sensitive browser flows never emit one.
+test.use({ trace: "off" });
+
 const WRITE_JOURNEY_ENV = [
   "E2E_DATABASE_URL",
   "E2E_ADMIN_EMAIL",
@@ -156,7 +160,7 @@ test("invalid credentials return one generic message", async ({ page }) => {
     .toHaveText("The email or password was not recognized.");
 });
 
-test("configured administrator previews a CSV before explicitly committing its draft", async ({ page, context }) => {
+test("configured administrator previews a CSV before explicitly committing its draft", { tag: "@sensitive" }, async ({ page, context }) => {
   test.setTimeout(90_000);
   test.skip(
     !configuredWriteJourney(),
@@ -246,7 +250,7 @@ test("configured administrator previews a CSV before explicitly committing its d
   }
 });
 
-test("configured administrator can complete the audited draft-to-publication journey", async ({ page }) => {
+test("configured administrator can complete the audited draft-to-publication journey", { tag: "@sensitive" }, async ({ page }) => {
   test.setTimeout(90_000);
 
   const databaseUrl = process.env.E2E_DATABASE_URL;

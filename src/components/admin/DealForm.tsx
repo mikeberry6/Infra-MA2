@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
   DEAL_SECTORS,
@@ -19,6 +18,7 @@ import {
   SelectInput,
   TextArea,
 } from "@/components/shared/FormControls";
+import { withBasePath } from "@/lib/base-path";
 import { invalidateDetailCache } from "@/lib/detail-cache-events";
 
 interface DealFormProps {
@@ -28,7 +28,6 @@ interface DealFormProps {
 }
 
 export default function DealForm({ initialData, action, mode }: DealFormProps) {
-  const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
@@ -129,7 +128,10 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
         invalidateDetailCache("deal", result.id);
         setMessage({ type: "success", text: mode === "create" ? "Deal created" : "Deal updated" });
         if (mode === "create") {
-          router.push("/admin/deals");
+          // The create action has already committed. Use a document
+          // navigation so an interrupted App Router transition cannot leave
+          // the user on a successfully submitted form.
+          window.location.assign(withBasePath("/admin/deals"));
         }
       } else {
         setMessage({ type: "error", text: result.error || "Something went wrong" });

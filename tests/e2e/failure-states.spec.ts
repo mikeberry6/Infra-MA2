@@ -15,13 +15,13 @@ test.describe("public failure and retry journeys", () => {
       path: "/funds",
       heading: "Infrastructure Fund Database",
       apiPattern: "**/api/funds/*",
-      row: "tbody tr[role=button]",
+      row: "tbody [data-fund-row-trigger]",
     },
     {
       path: "/portfolio",
       heading: "Infrastructure Portfolio Company Database",
       apiPattern: "**/api/portfolio/*",
-      row: "tbody tr[role=button]",
+      row: "tbody [data-company-row-trigger]",
     },
   ] as const;
 

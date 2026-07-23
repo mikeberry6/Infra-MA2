@@ -463,6 +463,7 @@ function PortCoTable({
                 >
                   <td className="px-3 py-2.5 align-top max-w-[260px]">
                     <button
+                      data-company-row-trigger
                       type="button"
                       onClick={() => onSelect(company)}
                       aria-label={`Open ${company.name} company details`}
@@ -600,7 +601,10 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
       ? (sortDirection === "asc" ? "desc" : "asc")
       : "asc";
     writeQueryParams(
-      { sort: field, direction },
+      {
+        sort: field === "name" ? null : field,
+        direction: direction === "asc" ? null : direction,
+      },
       { history: "push", resetPage: true },
     );
   }, [sortDirection, sortField, writeQueryParams]);

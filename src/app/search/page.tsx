@@ -251,13 +251,13 @@ export default async function SearchPage({
           {search.totalPages > 1 && (
             <nav aria-label="Search result pages" className="flex items-center justify-between gap-4 border-t border-[var(--border)] pt-4 type-meta">
               {search.page > 1
-                ? <Link href={searchHref(query, search.scope, search.page - 1)}>← Previous</Link>
+                ? <a href={withBasePath(searchHref(query, search.scope, search.page - 1))}>← Previous</a>
                 : <span aria-hidden />}
               <span className="mono tabular-nums text-[var(--text-tertiary)]">
                 Page {search.page} of {search.totalPages}
               </span>
               {search.page < search.totalPages
-                ? <Link href={searchHref(query, search.scope, search.page + 1)}>Next →</Link>
+                ? <a href={withBasePath(searchHref(query, search.scope, search.page + 1))}>Next →</a>
                 : <span aria-hidden />}
             </nav>
           )}

@@ -8,6 +8,10 @@ import {
   signInAsConfiguredAdmin,
 } from "./helpers";
 
+// Authenticated checks in this file fill an isolated administrator password.
+// Do not retain browser traces whose action payloads could disclose it.
+test.use({ trace: "off" });
+
 const routes = [
   "/tracker",
   "/funds",
@@ -55,7 +59,7 @@ for (const path of routes) {
   });
 }
 
-test("authenticated administration pages have no automatically detectable WCAG A/AA violations", async ({ page }) => {
+test("authenticated administration pages have no automatically detectable WCAG A/AA violations", { tag: "@sensitive" }, async ({ page }) => {
   test.setTimeout(90_000);
   test.skip(
     !configuredAdminE2E(),
@@ -79,7 +83,7 @@ test("authenticated administration pages have no automatically detectable WCAG A
   }
 });
 
-test("authenticated administration pages have no body-level horizontal overflow at required widths", async ({ page }) => {
+test("authenticated administration pages have no body-level horizontal overflow at required widths", { tag: "@sensitive" }, async ({ page }) => {
   test.setTimeout(240_000);
   test.skip(
     !configuredAdminE2E(),
@@ -160,7 +164,7 @@ test("portfolio company scorecard has no automatically detectable WCAG A/AA viol
     name: "Infrastructure Portfolio Company Database",
     level: 1,
   }).waitFor();
-  await page.locator("tbody tr[role=button]").first().click();
+  await page.locator("tbody [data-company-row-trigger]").first().click();
 
   const dialog = page.getByRole("dialog");
   await expect(dialog).toBeVisible();
