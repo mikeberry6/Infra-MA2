@@ -15,6 +15,6 @@ export default async function DashboardRoute() {
     return <DashboardPage view={view} />;
   } catch (error) {
     console.error("Dashboard query failed on /dashboard:", error);
-    return <DataUnavailable title="Dashboard data could not be loaded." />;
+    return <DataUnavailable title="Dashboard data could not be loaded." retryHref="/dashboard" />;
   }
 }

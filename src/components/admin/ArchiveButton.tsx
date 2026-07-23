@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { Button } from "@/components/shared/Button";
+import { FormMessage } from "@/components/shared/FormControls";
 
 interface ArchiveButtonProps {
   archiveAction: (id: string) => Promise<{ success: boolean; error?: string }>;
@@ -25,7 +26,7 @@ export default function ArchiveButton({ archiveAction, id, disabled = false }: A
         <Button variant="ghost" size="sm" onClick={() => setConfirming(true)}>
           Archive
         </Button>
-        {error && <span className="max-w-64 whitespace-normal text-[11px] text-[#dc2626]">{error}</span>}
+        {error && <FormMessage tone="error" className="max-w-64 whitespace-normal">{error}</FormMessage>}
       </div>
     );
   }
@@ -52,7 +53,7 @@ export default function ArchiveButton({ archiveAction, id, disabled = false }: A
       <Button variant="ghost" size="sm" onClick={() => setConfirming(false)}>
         Cancel
       </Button>
-      {error && <span className="max-w-64 whitespace-normal text-[11px] text-[#dc2626]">{error}</span>}
+      {error && <FormMessage tone="error" className="max-w-64 whitespace-normal">{error}</FormMessage>}
     </div>
   );
 }

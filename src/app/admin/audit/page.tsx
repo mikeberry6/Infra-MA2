@@ -4,13 +4,23 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/format";
+import { AdminPagination } from "@/components/admin/AdminPagination";
+import { adminPagination } from "@/lib/admin-pagination";
 
 export const metadata = { title: "Admin · Audit log" };
 
-export default async function AdminAuditPage() {
+export default async function AdminAuditPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ focus?: string; page?: string }>;
+}) {
+  const { focus, page: rawPage } = await searchParams;
+  const total = await prisma.auditEvent.count();
+  const { page, totalPages, skip, take } = adminPagination(rawPage, total);
   const events = await prisma.auditEvent.findMany({
     orderBy: { createdAt: "desc" },
-    take: 100,
+    skip,
+    take,
     include: { actor: { select: { email: true, name: true } } },
   });
 
@@ -21,9 +31,15 @@ export default async function AdminAuditPage() {
           <ArrowLeft className="h-3 w-3" /> Admin
         </Link>
         <h1 className="type-page-title">Audit log</h1>
-        <p className="mt-1 type-meta">The 100 most recent authenticated mutations, imports, publication, and archival events.</p>
+        <p className="mt-1 type-meta">Authenticated mutations, imports, publication, and archival events. <span className="mono tabular-nums">{total.toLocaleString()}</span> total.</p>
       </div>
-      <div className="surface overflow-x-auto">
+
+      <div
+        className="surface overflow-x-auto"
+        role="region"
+        aria-label="Audit log table"
+        tabIndex={0}
+      >
         <table className="w-full min-w-[800px] border-collapse text-left">
           <thead>
             <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]">
@@ -41,9 +57,11 @@ export default async function AdminAuditPage() {
                 : null;
               const fields = Array.isArray(changes?.changedFields)
                 ? changes.changedFields.join(", ")
-                : changes ? Object.keys(changes).join(", ") : "—";
+                : changes
+                  ? Object.keys(changes).join(", ")
+                  : "—";
               return (
-                <tr key={event.id} className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)]">
+                <tr key={event.id} className={`border-b border-[var(--border)] last:border-b-0 ${focus === event.id ? "bg-[var(--accent-soft)]" : "hover:bg-[var(--bg-subtle)]"}`}>
                   <td className="px-3 py-2.5 type-micro mono tabular-nums">{formatDate(event.createdAt)}</td>
                   <td className="px-3 py-2.5 type-meta">{event.actor?.email ?? "System"}</td>
                   <td className="px-3 py-2.5 type-meta font-semibold text-[var(--text-primary)]">{event.action}</td>
@@ -56,6 +74,7 @@ export default async function AdminAuditPage() {
         </table>
         {events.length === 0 && <div className="px-4 py-12 text-center type-meta">No audit events have been recorded.</div>}
       </div>
+      <AdminPagination pathname="/admin/audit" page={page} totalPages={totalPages} totalItems={total} />
     </div>
   );
 }

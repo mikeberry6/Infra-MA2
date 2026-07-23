@@ -12,7 +12,16 @@ const FOCUSABLE_SELECTOR = [
 ].join(",");
 
 function visibleFocusableElements(container: HTMLElement): HTMLElement[] {
-  return Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR))
+  const scopes = [container];
+  if (container.id) {
+    const ownedScopes = Array.from(document.querySelectorAll<HTMLElement>("[data-dialog-focus-owner]"))
+      .filter((scope) => scope.dataset.dialogFocusOwner === container.id);
+    scopes.push(...ownedScopes);
+  }
+
+  return Array.from(new Set(
+    scopes.flatMap((scope) => Array.from(scope.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR))),
+  ))
     .filter((element) => !element.hasAttribute("disabled") && element.getClientRects().length > 0);
 }
 
@@ -25,6 +34,8 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
     const previousActive = document.activeElement instanceof HTMLElement
       ? document.activeElement
       : null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     const focusables = visibleFocusableElements(dialog);
     (focusables[0] ?? dialog).focus();
 
@@ -39,10 +50,16 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
 
       const first = elements[0];
       const last = elements[elements.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
+      const activeElement = document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null;
+      if (!activeElement || !elements.includes(activeElement)) {
+        event.preventDefault();
+        (event.shiftKey ? last : first).focus();
+      } else if (event.shiftKey && activeElement === first) {
         event.preventDefault();
         last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
+      } else if (!event.shiftKey && activeElement === last) {
         event.preventDefault();
         first.focus();
       }
@@ -51,7 +68,12 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      previousActive?.focus();
+      document.body.style.overflow = previousOverflow;
+      if (previousActive?.isConnected) {
+        previousActive.focus();
+      } else {
+        document.querySelector<HTMLElement>("#main-content")?.focus();
+      }
     };
   }, [active, ref]);
 }

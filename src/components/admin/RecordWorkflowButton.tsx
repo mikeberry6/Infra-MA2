@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { Button } from "@/components/shared/Button";
+import { FormMessage } from "@/components/shared/FormControls";
 
 interface RecordWorkflowButtonProps {
   id: string;
@@ -43,7 +44,7 @@ export default function RecordWorkflowButton({
       >
         {isPublished ? "Verify" : isReview ? "Publish" : "Submit review"}
       </Button>
-      {error && <span className="max-w-64 whitespace-normal text-[11px] text-[#dc2626]">{error}</span>}
+      {error && <FormMessage tone="error" className="max-w-64 whitespace-normal">{error}</FormMessage>}
     </div>
   );
 }

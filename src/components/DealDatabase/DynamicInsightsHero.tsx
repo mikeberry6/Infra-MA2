@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import type { DealView } from "@/modules/shared/types";
 import { getSectorColor, getRegionColor } from "@/lib/colors";
 import { NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
-import { normalizeFundName, splitEntities } from "@/lib/fund-name-utils";
+import { normalizeFundEntities } from "@/lib/fund-name-utils";
 import { RankingColumn, deriveRanking } from "@/components/shared/RankingBars";
 
 // ─── Activity type colors (base category) ───────────────────
@@ -32,31 +32,30 @@ interface FundRow {
   breakdown: { activity: string; count: number }[];
 }
 
-function deriveFundRanking(deals: DealView[]): FundRow[] {
+export function deriveFundRanking(deals: DealView[]): FundRow[] {
   const fundActivities: Record<string, Record<string, number>> = {};
 
-  for (const d of deals) {
-    for (const cat of d.category) {
-      const act = baseActivity(cat);
+  const increment = (name: string, activity: string) => {
+    if (NON_INFRA_FUND_ENTITIES.has(name)) return;
+    if (!fundActivities[name]) fundActivities[name] = {};
+    fundActivities[name][activity] = (fundActivities[name][activity] ?? 0) + 1;
+  };
 
-      if (act === "Sale") {
-        if (d.seller.startsWith("N/A")) continue;
-        const sellers = splitEntities(d.seller);
-        for (const rawSeller of sellers) {
-          const seller = normalizeFundName(rawSeller);
-          if (NON_INFRA_FUND_ENTITIES.has(seller)) continue;
-          if (!fundActivities[seller]) fundActivities[seller] = {};
-          fundActivities[seller][act] = (fundActivities[seller][act] ?? 0) + 1;
-        }
-      } else {
-        const buyers = splitEntities(d.buyer);
-        for (const rawBuyer of buyers) {
-          const buyer = normalizeFundName(rawBuyer);
-          if (NON_INFRA_FUND_ENTITIES.has(buyer)) continue;
-          if (!fundActivities[buyer]) fundActivities[buyer] = {};
-          fundActivities[buyer][act] = (fundActivities[buyer][act] ?? 0) + 1;
-        }
-      }
+  for (const d of deals) {
+    const activities = Array.from(new Set(d.category.map(baseActivity)));
+
+    // A divestiture contributes once to each disclosed infrastructure-fund
+    // seller, even when the record also carries an acquisition category.
+    if (activities.includes("Sale") && !d.seller.startsWith("N/A")) {
+      for (const seller of normalizeFundEntities(d.seller)) increment(seller, "Sale");
+    }
+
+    // A fund/deal is one transaction in this ranking. Multi-category records
+    // use their first non-sale activity instead of incrementing the same buyer
+    // once per taxonomy label.
+    const buyerActivity = activities.find((activity) => activity !== "Sale");
+    if (buyerActivity) {
+      for (const buyer of normalizeFundEntities(d.buyer)) increment(buyer, buyerActivity);
     }
   }
 
@@ -84,7 +83,13 @@ function FundStackedBar({ row, maxTotal }: { row: FundRow; maxTotal: number }) {
       <span className="type-row-title truncate">
         {row.name}
       </span>
-      <div className="relative h-1.5 w-full bg-[var(--bg-hover)] rounded-full overflow-hidden">
+      <div
+        className="relative h-1.5 w-full bg-[var(--bg-hover)] rounded-full overflow-hidden"
+        role="img"
+        aria-label={`${row.name}: ${row.total} total transactions; ${row.breakdown
+          .map((segment) => `${segment.activity} ${segment.count}`)
+          .join(", ")}`}
+      >
         <div
           className="absolute inset-y-0 left-0 flex rounded-full overflow-hidden transition-[width] duration-500 ease-out"
           style={{ width: `${Math.max(barPct, 3)}%` }}
@@ -99,7 +104,7 @@ function FundStackedBar({ row, maxTotal }: { row: FundRow; maxTotal: number }) {
                   width: `${segPct}%`,
                   backgroundColor: getActivityColor(seg.activity),
                 }}
-                aria-label={`${seg.activity}: ${seg.count}`}
+                aria-hidden="true"
               />
             );
           })}
