@@ -106,6 +106,25 @@ const SAFE_SYSTEM_CODES = new Set([
   "ENOTFOUND",
   "ETIMEDOUT",
 ]);
+const SAFE_DATABASE_DRIVER_CODES = new Set([
+  "08000",
+  "08001",
+  "08003",
+  "08004",
+  "08006",
+  "08007",
+  "08P01",
+  "28P01",
+  "3D000",
+  "42703",
+  "42P01",
+  "53300",
+  "57P01",
+  "57P02",
+  "57P03",
+  "58000",
+  "58030",
+]);
 
 export class SafeOperationalError extends Error {
   readonly safeCode: SafeOperationalErrorCode;
@@ -120,6 +139,7 @@ export class SafeOperationalError extends Error {
 function errorMetadata(error: unknown): {
   name?: string;
   code?: string;
+  nestedCode?: string;
   message?: string;
   httpStatus?: number;
 } {
@@ -132,16 +152,45 @@ function errorMetadata(error: unknown): {
       name?: unknown;
       code?: unknown;
       message?: unknown;
+      cause?: unknown;
+      meta?: unknown;
       status?: unknown;
       statusCode?: unknown;
     };
+    const objectValue = (value: unknown): Record<string, unknown> | undefined =>
+      value && typeof value === "object"
+        ? value as Record<string, unknown>
+        : undefined;
+    const cause = objectValue(candidate.cause);
+    const meta = objectValue(candidate.meta);
+    const adapterError = objectValue(meta?.driverAdapterError);
+    const adapterCause = objectValue(adapterError?.cause);
+    const nestedCode = [
+      cause?.code,
+      cause?.originalCode,
+      meta?.code,
+      adapterError?.code,
+      adapterCause?.code,
+      adapterCause?.originalCode,
+    ].find((value): value is string =>
+      typeof value === "string" && (
+        SAFE_SYSTEM_CODES.has(value)
+        || SAFE_DATABASE_DRIVER_CODES.has(value)
+      ));
     const status = typeof candidate.status === "number"
       ? candidate.status
       : typeof candidate.statusCode === "number" ? candidate.statusCode : undefined;
+    const message = typeof candidate.message === "string" ? candidate.message : undefined;
     return {
       name: typeof candidate.name === "string" ? candidate.name : undefined,
       code: typeof candidate.code === "string" ? candidate.code : undefined,
-      message: typeof candidate.message === "string" ? candidate.message : undefined,
+      nestedCode: nestedCode ?? (
+        message
+          ? [...SAFE_SYSTEM_CODES, ...SAFE_DATABASE_DRIVER_CODES]
+            .find((safeCode) => message.includes(safeCode))
+          : undefined
+      ),
+      message,
       httpStatus: status && status >= 400 && status <= 599 ? Math.round(status) : undefined,
     };
   } catch {
@@ -173,8 +222,17 @@ function classificationForMessage(message: string): SafeErrorClassification | un
   return undefined;
 }
 
-function safeCodeSuffix(code: string, classification: SafeErrorClassification): string | undefined {
-  if (classification === "database_error" && /^P\d{4}$/.test(code)) return code;
+function safeCodeSuffix(
+  code: string,
+  nestedCode: string,
+  classification: SafeErrorClassification,
+): string | undefined {
+  if (classification === "database_error") {
+    const prismaCode = /^P\d{4}$/.test(code) ? code : undefined;
+    if (prismaCode && nestedCode) return `${prismaCode}/${nestedCode}`;
+    if (prismaCode) return prismaCode;
+    if (nestedCode) return nestedCode;
+  }
   if (SAFE_SYSTEM_CODES.has(code)) return code;
   return undefined;
 }
@@ -193,7 +251,13 @@ export function getSafeErrorDetails(
 ): SafeErrorDetails | undefined {
   if (error instanceof SafeOperationalError) return OPERATIONAL_ERRORS[error.safeCode];
 
-  const { name = "", code = "", message = "", httpStatus: metadataStatus } = errorMetadata(error);
+  const {
+    name = "",
+    code = "",
+    nestedCode = "",
+    message = "",
+    httpStatus: metadataStatus,
+  } = errorMetadata(error);
   const explicit = explicitClassification && SAFE_CLASSIFICATIONS.has(explicitClassification)
     ? explicitClassification
     : undefined;
@@ -211,7 +275,7 @@ export function getSafeErrorDetails(
 
   const baseMessage = CLASSIFICATION_MESSAGES[classification];
   const httpStatus = safeHttpStatus(message, metadataStatus);
-  const safeCode = safeCodeSuffix(code, classification);
+  const safeCode = safeCodeSuffix(code, nestedCode, classification);
   const suffix = httpStatus ? `HTTP ${httpStatus}` : safeCode;
   return {
     classification,

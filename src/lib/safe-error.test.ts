@@ -28,6 +28,28 @@ describe("safe operational error summaries", () => {
     expect(summary).not.toMatch(/person@example|postgres:|secret|token|password|private row/i);
   });
 
+  it("retains only an allowlisted nested database-driver code", () => {
+    const error = Object.assign(
+      new Error("raw query failed at postgres://user:secret@private/db"),
+      {
+        code: "P2010",
+        meta: {
+          driverAdapterError: {
+            cause: {
+              originalCode: "28P01",
+              message: "password authentication failed for private user",
+            },
+          },
+        },
+      },
+    );
+
+    const summary = formatSafeErrorSummary(error);
+
+    expect(summary).toBe("database_error: Database operation failed (P2010/28P01).");
+    expect(summary).not.toMatch(/postgres:|secret|private user|password authentication/i);
+  });
+
   it("extracts only safe HTTP or network codes from upstream failures", () => {
     expect(formatSafeErrorSummary(new Error("GET https://private.example/path?q=secret returned HTTP 429 with body token=abc")))
       .toBe("upstream_error: Upstream operation failed (HTTP 429).");
