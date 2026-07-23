@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { PORTCO_SECTORS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
 import { getPortCoSectorColor, getPortCoRegionColor, getPortCoCountryTagColor } from "@/lib/colors";
 import { getUniqueFirms, getAllOwnerFirms } from "@/lib/portco-utils";
@@ -15,7 +15,13 @@ import {
 } from "lucide-react";
 import { PortCoDrawer } from "@/components/PortfolioDatabase/PortCoDrawer";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam } from "@/hooks/useUrlFilterSet";
+import {
+  useUrlFilterSet,
+  useUrlQueryParam,
+  useUrlQueryParamsWriter,
+  useUrlQueryState,
+  useUrlQueryWriter,
+} from "@/hooks/useUrlFilterSet";
 import { useCanExport } from "@/hooks/useCanExport";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
@@ -28,9 +34,73 @@ import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
+import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 
 const INVESTMENT_YEAR_NA = "N/A";
-const PORTCO_PAGE_SIZE = 100;
+export const PORTCO_PAGE_SIZE = 25;
+export const PORTCO_RESULTS_HEADING_ID = "portfolio-results-heading";
+
+export type CompanySortField = "name" | "sector" | "country" | "firm";
+export type CompanySortDirection = "asc" | "desc";
+export type CompanyDetailStatus = "idle" | "loading" | "success" | "error";
+
+type SortableCompany = Pick<CompanyView, "name" | "sector" | "country" | "investmentFirm">;
+type FetchCompanyDetail = (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>;
+
+export function parseCompanyPage(value: string): number {
+  const parsed = Number(value);
+  return Number.isSafeInteger(parsed) && parsed > 0 ? parsed : 1;
+}
+
+export function clampCompanyPage(page: number, totalItems: number): number {
+  return Math.min(Math.max(1, page), Math.max(1, Math.ceil(totalItems / PORTCO_PAGE_SIZE)));
+}
+
+export function parseCompanySort(value: string): CompanySortField {
+  return value === "sector" || value === "country" || value === "firm" ? value : "name";
+}
+
+export function parseCompanySortDirection(value: string): CompanySortDirection {
+  return value === "desc" ? "desc" : "asc";
+}
+
+export function sortCompanyRows<T extends SortableCompany>(
+  companies: readonly T[],
+  field: CompanySortField,
+  direction: CompanySortDirection,
+): T[] {
+  return [...companies].sort((a, b) => {
+    let comparison = 0;
+    if (field === "name") comparison = a.name.localeCompare(b.name);
+    if (field === "sector") comparison = a.sector.localeCompare(b.sector);
+    if (field === "country") comparison = a.country.localeCompare(b.country);
+    if (field === "firm") comparison = a.investmentFirm.localeCompare(b.investmentFirm);
+    const directed = direction === "asc" ? comparison : -comparison;
+    return directed || a.name.localeCompare(b.name);
+  });
+}
+
+export async function fetchCompanyDetail(
+  companyId: string,
+  signal: AbortSignal,
+  fetcher: FetchCompanyDetail = fetch,
+): Promise<CompanyView> {
+  const response = await fetcher(
+    withBasePath(`/api/portfolio/${encodeURIComponent(companyId)}`),
+    { signal },
+  );
+  if (!response.ok) {
+    throw new Error(`Portfolio detail request failed with status ${response.status}.`);
+  }
+  const payload: unknown = await response.json();
+  const company = payload && typeof payload === "object" && "company" in payload
+    ? payload.company
+    : null;
+  if (!company || typeof company !== "object") {
+    throw new Error("Portfolio detail response did not include a company.");
+  }
+  return company as CompanyView;
+}
 
 function mostCommonLabel(items: string[]): { label: string; count: number } | null {
   const counts = new Map<string, number>();
@@ -74,10 +144,47 @@ function PortCoFilterBar({
   investmentYearOptions: string[];
   onClearAll: () => void;
 }) {
+  const activeCount =
+    activeSectors.size + activeCountryTags.size + activeFirms.size + activeInvestmentYears.size;
+
+  const filters = (
+    <>
+      <MultiSelectDropdown
+        label="Sector"
+        options={PORTCO_SECTORS}
+        selected={activeSectors}
+        onToggle={onToggleSector}
+        getColor={(v) => getPortCoSectorColor(v)}
+      />
+      <MultiSelectDropdown
+        label="Country"
+        options={PORTCO_COUNTRY_TAGS as unknown as string[]}
+        selected={activeCountryTags}
+        onToggle={onToggleCountryTag}
+        getColor={(v) => getPortCoCountryTagColor(v)}
+      />
+      <MultiSelectDropdown
+        label="Firm"
+        options={firmOptions}
+        selected={activeFirms}
+        onToggle={onToggleFirm}
+        getColor={() => "#a78bfa"}
+      />
+      <MultiSelectDropdown
+        label="Year"
+        options={investmentYearOptions}
+        selected={activeInvestmentYears}
+        onToggle={onToggleInvestmentYear}
+        getColor={() => "#f59e0b"}
+        align="right"
+      />
+    </>
+  );
+
   return (
     <div className="mb-3 space-y-3">
-      <div className="bg-[var(--bg-surface)] border border-[var(--border)] rounded-lg flex items-center gap-2 px-2 py-2 sticky top-14 z-30 overflow-x-auto">
-        <div className="flex-1 min-w-[160px] max-w-xs">
+      <div className="sticky top-14 z-30 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
+        <div className="min-w-0 flex-1 md:max-w-xs">
           <TextInput
             leadingIcon={<Search />}
             value={search}
@@ -86,36 +193,22 @@ function PortCoFilterBar({
             aria-label="Search portfolio companies"
           />
         </div>
-        <Divider orientation="vertical" />
-        <MultiSelectDropdown
-          label="Sector"
-          options={PORTCO_SECTORS}
-          selected={activeSectors}
-          onToggle={onToggleSector}
-          getColor={(v) => getPortCoSectorColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Country"
-          options={PORTCO_COUNTRY_TAGS as unknown as string[]}
-          selected={activeCountryTags}
-          onToggle={onToggleCountryTag}
-          getColor={(v) => getPortCoCountryTagColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Firm"
-          options={firmOptions}
-          selected={activeFirms}
-          onToggle={onToggleFirm}
-          getColor={() => "#a78bfa"}
-        />
-        <MultiSelectDropdown
-          label="Year"
-          options={investmentYearOptions}
-          selected={activeInvestmentYears}
-          onToggle={onToggleInvestmentYear}
-          getColor={() => "#f59e0b"}
-          align="right"
-        />
+        <MobileFilterSheet activeCount={activeCount}>
+          <div className="grid gap-3">{filters}</div>
+          {activeCount > 0 && (
+            <button
+              type="button"
+              onClick={onClearAll}
+              className="inline-flex h-9 w-full items-center justify-center rounded-md border border-[var(--border)] type-meta font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+            >
+              Clear all filters
+            </button>
+          )}
+        </MobileFilterSheet>
+        <div className="hidden min-w-0 items-center gap-2 md:flex">
+          <Divider orientation="vertical" />
+          {filters}
+        </div>
       </div>
 
       <ActiveFiltersStrip
@@ -233,7 +326,9 @@ function PortCoCard({
   const display = pickDisplayedFirm(company, activeFirms);
   return (
     <button
+      type="button"
       onClick={() => onSelect(company)}
+      aria-label={`Open ${company.name} company details`}
       className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
     >
       <div className="flex items-start justify-between gap-3 mb-2">
@@ -282,64 +377,44 @@ function PortCoTable({
   companies,
   activeFirms,
   onSelect,
+  sortField,
+  sortDirection,
+  onSort,
+  page,
+  onPageChange,
 }: {
   companies: CompanyView[];
   activeFirms: Set<string>;
   onSelect: (company: CompanyView) => void;
+  sortField: CompanySortField;
+  sortDirection: CompanySortDirection;
+  onSort: (field: CompanySortField) => void;
+  page: number;
+  onPageChange: (page: number) => void;
 }) {
-  const [sortField, setSortField] = useState<"name" | "sector" | "country" | "firm">("name");
-  const [sortAsc, setSortAsc] = useState(true);
-  const [page, setPage] = useState(1);
-
-  const sorted = useMemo(() => {
-    const list = [...companies];
-    list.sort((a, b) => {
-      let cmp = 0;
-      switch (sortField) {
-        case "name": cmp = a.name.localeCompare(b.name); break;
-        case "sector": cmp = a.sector.localeCompare(b.sector); break;
-        case "country": cmp = a.country.localeCompare(b.country); break;
-        case "firm": cmp = a.investmentFirm.localeCompare(b.investmentFirm); break;
-      }
-      return sortAsc ? cmp : -cmp;
-    });
-    return list;
-  }, [companies, sortField, sortAsc]);
-
-  useEffect(() => {
-    setPage(1);
-  }, [companies]);
-
-  const totalPages = Math.max(1, Math.ceil(sorted.length / PORTCO_PAGE_SIZE));
-  const safePage = Math.min(page, totalPages);
+  const sorted = useMemo(
+    () => sortCompanyRows(companies, sortField, sortDirection),
+    [companies, sortDirection, sortField],
+  );
   const visibleCompanies = useMemo(() => {
-    const start = (safePage - 1) * PORTCO_PAGE_SIZE;
+    const start = (page - 1) * PORTCO_PAGE_SIZE;
     return sorted.slice(start, start + PORTCO_PAGE_SIZE);
-  }, [sorted, safePage]);
+  }, [page, sorted]);
 
-  const toggleSort = (field: typeof sortField) => {
-    if (sortField === field) {
-      setSortAsc(!sortAsc);
-    } else {
-      setSortField(field);
-      setSortAsc(true);
-    }
-  };
-
-  const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
+  const SortHeader = ({ field, label }: { field: CompanySortField; label: string }) => (
     <th
-      aria-sort={sortField === field ? (sortAsc ? "ascending" : "descending") : "none"}
+      aria-sort={sortField === field ? (sortDirection === "asc" ? "ascending" : "descending") : "none"}
       className="text-left px-3 py-2"
     >
       <button
         type="button"
-        onClick={() => toggleSort(field)}
+        onClick={() => onSort(field)}
         className="inline-flex items-center gap-1 type-table-header hover:text-[var(--text-primary)] transition-colors select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
       >
         {label}
         {sortField === field && (
           <ArrowDown
-            className={`h-3 w-3 text-[var(--text-secondary)] transition-transform ${sortAsc ? "rotate-180" : ""}`}
+            className={`h-3 w-3 text-[var(--text-secondary)] transition-transform ${sortDirection === "asc" ? "rotate-180" : ""}`}
             strokeWidth={1.75}
           />
         )}
@@ -369,33 +444,28 @@ function PortCoTable({
                 <th className="text-left px-3 py-2 type-table-header">
                   Subsector
                 </th>
-                <th className="text-left px-3 py-2 type-table-header">
-                  Country
-                </th>
+                <SortHeader field="country" label="Country" />
                 <th className="w-6" aria-hidden />
               </tr>
             </thead>
             <tbody>
-              {visibleCompanies.map((company, i) => {
+              {visibleCompanies.map((company) => {
                 const display = pickDisplayedFirm(company, activeFirms);
                 return (
                 <tr
-                  key={`${company.name}-${company.investmentFirm}-${i}`}
-                  onClick={() => onSelect(company)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      onSelect(company);
-                    }
-                  }}
-                  role="button"
-                  tabIndex={0}
-                  className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] cursor-pointer transition-colors group focus:bg-[var(--bg-subtle)] focus:outline-none"
+                  key={company.id}
+                  className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)] transition-colors group"
                 >
                   <td className="px-3 py-2.5 align-top max-w-[260px]">
-                    <span title={company.name} className="type-row-title group-hover:text-[var(--accent)] transition-colors truncate block">
+                    <button
+                      type="button"
+                      onClick={() => onSelect(company)}
+                      aria-label={`Open ${company.name} company details`}
+                      title={company.name}
+                      className="block max-w-full truncate rounded-sm text-left type-row-title transition-colors group-hover:text-[var(--accent)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+                    >
                       {company.name}
-                    </span>
+                    </button>
                   </td>
                   <td className="px-3 py-2.5 align-top max-w-[200px]">
                     <div className="flex items-center gap-1.5 min-w-0">
@@ -436,9 +506,9 @@ function PortCoTable({
 
       {/* Mobile cards */}
       <div className="md:hidden space-y-2">
-        {visibleCompanies.map((company, i) => (
+        {visibleCompanies.map((company) => (
           <PortCoCard
-            key={`${company.name}-${company.investmentFirm}-${i}`}
+            key={company.id}
             company={company}
             activeFirms={activeFirms}
             onSelect={onSelect}
@@ -447,10 +517,11 @@ function PortCoTable({
       </div>
 
       <PaginationControls
-        page={safePage}
+        page={page}
         pageSize={PORTCO_PAGE_SIZE}
         totalItems={sorted.length}
-        onPageChange={setPage}
+        onPageChange={onPageChange}
+        resultHeadingId={PORTCO_RESULTS_HEADING_ID}
       />
     </>
   );
@@ -459,59 +530,85 @@ function PortCoTable({
 // ─── Main Component ─────────────────────────────────────────
 
 export function PortfolioDatabase({ companies: portcos, funds, counts }: { companies: CompanyView[]; funds: FundStrategyView[]; counts: DatabaseCounts }) {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
+  const [rawSortField] = useUrlQueryState("sort", "name");
+  const [rawSortDirection] = useUrlQueryState("direction", "asc");
+  const [rawPage, setRawPage] = useUrlQueryState("page", "1");
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeCountryTags, toggleCountryTag] = useUrlFilterSet("country");
   const [activeFirms, toggleFirm] = useUrlFilterSet("firm");
   const [activeInvestmentYears, toggleInvestmentYear] = useUrlFilterSet("year");
-  const [selectedCompany, setSelectedCompany] = useState<CompanyView | null>(null);
-  const [selectedCompanyDetail, setSelectedCompanyDetail] = useState<CompanyView | null>(null);
+  const focusId = useUrlQueryParam("focus");
+  const writeQueryParam = useUrlQueryWriter();
+  const writeQueryParams = useUrlQueryParamsWriter();
+  const [detailAttempt, setDetailAttempt] = useState(0);
+  const [detailState, setDetailState] = useState<{
+    companyId: string | null;
+    company: CompanyView | null;
+    status: CompanyDetailStatus;
+  }>({ companyId: null, company: null, status: "idle" });
   const canExport = useCanExport();
 
+  const sortField = parseCompanySort(rawSortField);
+  const sortDirection = parseCompanySortDirection(rawSortDirection);
+  const selectedCompany = useMemo(
+    () => focusId ? portcos.find((company) => company.id === focusId || company.focusIds.includes(focusId)) ?? null : null,
+    [focusId, portcos],
+  );
   const debouncedSearch = useDebounce(search, 300);
 
-  // Auto-open drawer when navigated here with `?focus=<companyId>`.
-  const focusId = useUrlQueryParam("focus");
-  const openedFocus = useRef<string | null>(null);
-  useEffect(() => {
-    if (!focusId || openedFocus.current === focusId) return;
-    const match = portcos.find((c) => c.id === focusId || c.focusIds.includes(focusId));
-    if (match) {
-      setSelectedCompany(match);
-      openedFocus.current = focusId;
-    }
-  }, [focusId, portcos]);
+  const clearFilters = useCallback(() => {
+    writeQueryParams(
+      { q: null, sector: null, country: null, firm: null, year: null },
+      { history: "push", resetPage: true },
+    );
+  }, [writeQueryParams]);
+
+  const openCompany = useCallback((company: CompanyView) => {
+    writeQueryParam("focus", company.id, "push");
+  }, [writeQueryParam]);
+
+  const closeCompany = useCallback(() => {
+    writeQueryParam("focus", null, "replace");
+  }, [writeQueryParam]);
+
+  const changeSort = useCallback((field: CompanySortField) => {
+    const direction: CompanySortDirection = field === sortField
+      ? (sortDirection === "asc" ? "desc" : "asc")
+      : "asc";
+    writeQueryParams(
+      { sort: field, direction },
+      { history: "push", resetPage: true },
+    );
+  }, [sortDirection, sortField, writeQueryParams]);
+
+  const changePage = useCallback((page: number) => {
+    setRawPage(String(page));
+  }, [setRawPage]);
 
   useEffect(() => {
     if (!selectedCompany) {
-      setSelectedCompanyDetail(null);
+      setDetailState({ companyId: null, company: null, status: "idle" });
       return;
     }
 
-    let cancelled = false;
-    setSelectedCompanyDetail(null);
-
-    fetch(withBasePath(`/api/portfolio/${encodeURIComponent(selectedCompany.id)}`))
-      .then((response) => response.ok ? response.json() : null)
-      .then((data) => {
-        if (!cancelled && data?.company) {
-          setSelectedCompanyDetail(data.company);
-        }
+    const controller = new AbortController();
+    setDetailState({ companyId: selectedCompany.id, company: null, status: "loading" });
+    fetchCompanyDetail(selectedCompany.id, controller.signal)
+      .then((company) => {
+        setDetailState({ companyId: selectedCompany.id, company, status: "success" });
       })
-      .catch(() => {
-        if (!cancelled) setSelectedCompanyDetail(null);
+      .catch((error: unknown) => {
+        if (controller.signal.aborted || (error && typeof error === "object" && "name" in error && error.name === "AbortError")) {
+          return;
+        }
+        setDetailState({ companyId: selectedCompany.id, company: null, status: "error" });
       });
 
     return () => {
-      cancelled = true;
+      controller.abort();
     };
-  }, [selectedCompany]);
-
-  const clearAllUrlFilters = useClearUrlFilters(["sector", "country", "firm", "year"]);
-  const clearFilters = useCallback(() => {
-    clearAllUrlFilters();
-    setSearch("");
-  }, [clearAllUrlFilters]);
+  }, [detailAttempt, selectedCompany]);
 
   const firmOptions = useMemo(() => getUniqueFirms(portcos), [portcos]);
   const investmentYearOptions = useMemo(() => {
@@ -562,6 +659,31 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     activeFirms,
     activeInvestmentYears,
   ]);
+
+  const requestedPage = parseCompanyPage(rawPage);
+  const page = clampCompanyPage(requestedPage, filteredCompanies.length);
+
+  useEffect(() => {
+    if (rawPage === String(page)) return;
+    writeQueryParam("page", page === 1 ? null : String(page), "replace");
+  }, [page, rawPage, writeQueryParam]);
+
+  // Focus is URL-authoritative. Invalid or filtered-out records close without
+  // adding an extra browser-history entry.
+  useEffect(() => {
+    if (!focusId) return;
+    if (!selectedCompany || !filteredCompanies.some((company) => company.id === selectedCompany.id)) {
+      closeCompany();
+    }
+  }, [closeCompany, filteredCompanies, focusId, selectedCompany]);
+
+  const hasCurrentDetail = selectedCompany != null && detailState.companyId === selectedCompany.id;
+  const drawerCompany = hasCurrentDetail && detailState.company
+    ? detailState.company
+    : selectedCompany;
+  const drawerDetailStatus: CompanyDetailStatus = hasCurrentDetail
+    ? detailState.status
+    : selectedCompany ? "loading" : "idle";
 
   const headerMetrics = useMemo<IntelligenceMetric[]>(() => {
     const sponsorCount = new Set(filteredCompanies.flatMap(getAllOwnerFirms)).size;
@@ -624,19 +746,52 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
         onClearAll={clearFilters}
       />
 
+      <MarketSnapshotSection>
+        <PortCoInsightsHero companies={filteredCompanies} />
+      </MarketSnapshotSection>
+
       <div className="surface overflow-hidden">
-        <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
-          <span className="type-micro">
+        <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-[var(--border)]">
+          <h2
+            id={PORTCO_RESULTS_HEADING_ID}
+            tabIndex={-1}
+            className="type-micro scroll-mt-24 focus:outline-none"
+            aria-live="polite"
+          >
+            <span className="sr-only">Portfolio company results: </span>
             <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredCompanies.length}</span>
             {" "}of{" "}
             <span className="mono text-[var(--text-secondary)] tabular-nums">{portcos.length}</span> companies
-          </span>
-          <div className="hidden sm:flex items-center gap-1">
+          </h2>
+          <div className="flex flex-wrap items-center justify-end gap-1">
+            <label htmlFor="portfolio-mobile-sort" className="sr-only">Sort portfolio companies</label>
+            <select
+              id="portfolio-mobile-sort"
+              value={sortField}
+              onChange={(event) => changeSort(parseCompanySort(event.target.value))}
+              className="h-7 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-2 type-micro text-[var(--text-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] md:hidden"
+            >
+              <option value="name">Company</option>
+              <option value="firm">Firm</option>
+              <option value="sector">Sector</option>
+              <option value="country">Country</option>
+            </select>
+            <button
+              type="button"
+              onClick={() => changeSort(sortField)}
+              aria-label={`Sort ${sortDirection === "asc" ? "descending" : "ascending"}`}
+              className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--bg-surface)] text-[var(--text-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] md:hidden"
+            >
+              <ArrowDown
+                className={`h-3 w-3 transition-transform ${sortDirection === "asc" ? "rotate-180" : ""}`}
+                strokeWidth={1.75}
+              />
+            </button>
             {canExport && (
               <a
                 href={withBasePath("/api/exports/portfolio")}
                 download
-                className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+                className="hidden sm:inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
               >
                 <Download className="h-3 w-3" />
                 <span className="truncate">Export</span>
@@ -644,7 +799,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
             )}
             <a
               href="mailto:research@infrasight.com"
-              className="inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+              className="hidden sm:inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
               <Mail className="h-3 w-3" />
               <span className="truncate">Contact research</span>
@@ -655,24 +810,24 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
         <PortCoTable
           companies={filteredCompanies}
           activeFirms={activeFirms}
-          onSelect={setSelectedCompany}
+          onSelect={openCompany}
+          sortField={sortField}
+          sortDirection={sortDirection}
+          onSort={changeSort}
+          page={page}
+          onPageChange={changePage}
         />
       </div>
 
       <CTABlock />
 
-      <MarketSnapshotSection>
-        <PortCoInsightsHero companies={filteredCompanies} />
-      </MarketSnapshotSection>
-
-      {selectedCompany && (
+      {selectedCompany && drawerCompany && (
         <PortCoDrawer
-          company={selectedCompanyDetail ?? selectedCompany}
+          company={drawerCompany}
           funds={funds}
-          onClose={() => {
-            setSelectedCompany(null);
-            setSelectedCompanyDetail(null);
-          }}
+          detailStatus={drawerDetailStatus}
+          onRetry={() => setDetailAttempt((attempt) => attempt + 1)}
+          onClose={closeCompany}
         />
       )}
     </div>

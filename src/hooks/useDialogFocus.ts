@@ -12,8 +12,25 @@ const FOCUSABLE_SELECTOR = [
 ].join(",");
 
 function visibleFocusableElements(container: HTMLElement): HTMLElement[] {
-  return Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR))
+  const scopes = [container];
+  if (container.id) {
+    const ownedScopes = Array.from(document.querySelectorAll<HTMLElement>("[data-dialog-focus-owner]"))
+      .filter((scope) => scope.dataset.dialogFocusOwner === container.id);
+    scopes.push(...ownedScopes);
+  }
+
+  return Array.from(new Set(
+    scopes.flatMap((scope) => Array.from(scope.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR))),
+  ))
     .filter((element) => !element.hasAttribute("disabled") && element.getClientRects().length > 0);
+}
+
+function focusIsOwnedByDialog(dialog: HTMLElement, activeElement: Element | null): boolean {
+  if (!activeElement) return false;
+  if (dialog.contains(activeElement)) return true;
+  if (!dialog.id) return false;
+  return Array.from(document.querySelectorAll<HTMLElement>("[data-dialog-focus-owner]"))
+    .some((scope) => scope.dataset.dialogFocusOwner === dialog.id && scope.contains(activeElement));
 }
 
 export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true) {
@@ -25,6 +42,11 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
     const previousActive = document.activeElement instanceof HTMLElement
       ? document.activeElement
       : null;
+    const previousOverflow = document.body.style.overflow;
+    const previousPaddingRight = document.body.style.paddingRight;
+    const scrollbarWidth = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+    document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) document.body.style.paddingRight = `${scrollbarWidth}px`;
     const focusables = visibleFocusableElements(dialog);
     (focusables[0] ?? dialog).focus();
 
@@ -39,7 +61,10 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
 
       const first = elements[0];
       const last = elements[elements.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
+      if (!focusIsOwnedByDialog(dialog, document.activeElement)) {
+        event.preventDefault();
+        (event.shiftKey ? last : first).focus();
+      } else if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
         last.focus();
       } else if (!event.shiftKey && document.activeElement === last) {
@@ -51,7 +76,13 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      previousActive?.focus();
+      document.body.style.overflow = previousOverflow;
+      document.body.style.paddingRight = previousPaddingRight;
+      if (previousActive?.isConnected) {
+        previousActive.focus();
+      } else {
+        document.querySelector<HTMLElement>("#main-content")?.focus();
+      }
     };
   }, [active, ref]);
 }

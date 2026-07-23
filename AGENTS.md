@@ -6,7 +6,7 @@
 - Public database pages fetch Prisma-backed view models from `src/modules/*/queries.ts`, then hand them to client components for filtering and drawers
 - Seed/reference data still lives under `prisma/seed-data/*`; do not treat old `src/data/*` paths as the active data source unless they are reintroduced
 - Main pages:
-  - `/` — Deal Database landing view (`src/components/DealDatabase.tsx`)
+  - `/` — Permanent redirect to the canonical Deal Database route (`/tracker`)
   - `/tracker` — Deal Database (`src/components/DealDatabase.tsx`)
   - `/portfolio` — Portfolio Database (`src/components/PortfolioDatabase.tsx`)
   - `/funds` — Fund Database (`src/components/FundDatabase.tsx`)
@@ -16,7 +16,7 @@
 
 ## Weekly Briefing Page (`/`)
 
-- Historical note: the current `/` route no longer renders the Weekly Briefing; it renders the Deal Database landing view from Prisma-backed deal data.
+- Historical note: the current `/` route no longer renders the Weekly Briefing; it permanently redirects to the Prisma-backed Deal Database at `/tracker`.
 - If the Weekly Briefing is restored, preserve the manual-curation rules below.
 - The `MarketInsightHero` component receives the weekly deals as a prop (`deals: Deal[]`)
 - It must ONLY reflect that week's deals (the same deals listed in the timeline below it), NOT all deals in the database

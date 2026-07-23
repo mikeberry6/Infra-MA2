@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import { useMemo, useEffect, useCallback, useRef } from "react";
 import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import { DEAL_SECTORS, NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
@@ -134,14 +134,20 @@ import {
   ExternalLink,
   X,
   ChevronRight,
-  ArrowUpDown,
+  ArrowDown,
   Download,
   Mail,
   FileText,
 } from "lucide-react";
 import { DynamicInsightsHero } from "./DealDatabase/DynamicInsightsHero";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam } from "@/hooks/useUrlFilterSet";
+import {
+  useUrlFilterSet,
+  useUrlQueryParam,
+  useUrlQueryParamsWriter,
+  useUrlQueryState,
+  useUrlQueryWriter,
+} from "@/hooks/useUrlFilterSet";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
@@ -152,9 +158,21 @@ import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
+import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { useCanExport } from "@/hooks/useCanExport";
 import { withBasePath } from "@/lib/base-path";
+import {
+  clampDealPage,
+  DEAL_PAGE_SIZE,
+  defaultDirectionForDealSort,
+  parseDealPage,
+  parseDealSortDirection,
+  parseDealSortField,
+  sortDeals,
+  type DealSortDirection,
+  type DealSortField,
+} from "@/modules/deals/sort";
 
 // ─── Filters ────────────────────────────────────────────────
 const SECTORS: string[] = [...DEAL_SECTORS];
@@ -181,7 +199,7 @@ const REGIONS: string[] = [
   "Latin America",
 ];
 
-const DEAL_PAGE_SIZE = 100;
+const DEAL_RESULTS_HEADING_ID = "deal-results-heading";
 
 function EmailAccessLinks({ compact = false }: { compact?: boolean }) {
   const className = compact
@@ -254,10 +272,12 @@ function FilterBar({
   onToggleCategory: (c: string) => void;
   onClearAll: () => void;
 }) {
+  const activeFilterCount = activeSectors.size + activeRegions.size + activeCategories.size;
+
   return (
     <div className="mb-3 space-y-3">
-      <div className="bg-[var(--bg-surface)] border border-[var(--border)] rounded-lg flex items-center gap-2 px-2 py-2 sticky top-14 z-30 overflow-x-auto">
-        <div className="flex-1 min-w-[160px] max-w-xs">
+      <div className="sticky top-14 z-30 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
+        <div className="min-w-0 flex-1 lg:max-w-xs">
           <TextInput
             leadingIcon={<Search />}
             value={search}
@@ -266,29 +286,79 @@ function FilterBar({
             aria-label="Search deals"
           />
         </div>
-        <Divider orientation="vertical" />
-        <MultiSelectDropdown
-          label="Sector"
-          options={SECTORS}
-          selected={activeSectors as Set<string>}
-          onToggle={onToggleSector}
-          getColor={(v) => getSectorColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Region"
-          options={REGIONS}
-          selected={activeRegions as Set<string>}
-          onToggle={onToggleRegion}
-          getColor={(v) => getRegionColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Type"
-          options={CATEGORIES}
-          selected={activeCategories as Set<string>}
-          onToggle={onToggleCategory}
-          getColor={(v) => getCategoryColor(v)}
-          align="right"
-        />
+
+        <MobileFilterSheet activeCount={activeFilterCount} desktopBreakpoint="lg">
+          <div className="space-y-3">
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Sector</span>
+              <MultiSelectDropdown
+                label="Sector"
+                options={SECTORS}
+                selected={activeSectors}
+                onToggle={onToggleSector}
+                getColor={getSectorColor}
+                align="right"
+              />
+            </div>
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Region</span>
+              <MultiSelectDropdown
+                label="Region"
+                options={REGIONS}
+                selected={activeRegions}
+                onToggle={onToggleRegion}
+                getColor={getRegionColor}
+                align="right"
+              />
+            </div>
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Type</span>
+              <MultiSelectDropdown
+                label="Type"
+                options={CATEGORIES}
+                selected={activeCategories}
+                onToggle={onToggleCategory}
+                getColor={getCategoryColor}
+                align="right"
+              />
+            </div>
+          </div>
+          {activeFilterCount > 0 && (
+            <button
+              type="button"
+              onClick={onClearAll}
+              className="inline-flex h-9 w-full items-center justify-center rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+            >
+              Clear all filters
+            </button>
+          )}
+        </MobileFilterSheet>
+
+        <div className="hidden min-w-0 flex-1 items-center gap-2 lg:flex">
+          <Divider orientation="vertical" />
+          <MultiSelectDropdown
+            label="Sector"
+            options={SECTORS}
+            selected={activeSectors}
+            onToggle={onToggleSector}
+            getColor={getSectorColor}
+          />
+          <MultiSelectDropdown
+            label="Region"
+            options={REGIONS}
+            selected={activeRegions}
+            onToggle={onToggleRegion}
+            getColor={getRegionColor}
+          />
+          <MultiSelectDropdown
+            label="Type"
+            options={CATEGORIES}
+            selected={activeCategories}
+            onToggle={onToggleCategory}
+            getColor={getCategoryColor}
+            align="right"
+          />
+        </div>
       </div>
 
       <ActiveFiltersChips
@@ -314,7 +384,12 @@ function DealCard({
 }) {
   return (
     <button
-      onClick={() => onSelect(deal)}
+      type="button"
+      onClick={(event) => {
+        event.currentTarget.focus({ preventScroll: true });
+        onSelect(deal);
+      }}
+      aria-label={`Open details for ${deal.target}`}
       className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
     >
       <div className="flex items-start justify-between gap-3 mb-2">
@@ -361,37 +436,67 @@ function DealTableColGroup() {
   );
 }
 
+function SortableDealHeader({
+  field,
+  label,
+  activeField,
+  direction,
+  onSort,
+}: {
+  field: DealSortField;
+  label: string;
+  activeField: DealSortField;
+  direction: DealSortDirection;
+  onSort: (field: DealSortField) => void;
+}) {
+  const active = field === activeField;
+  return (
+    <th
+      aria-sort={active ? (direction === "asc" ? "ascending" : "descending") : "none"}
+      className="px-3 py-2 text-left"
+    >
+      <button
+        type="button"
+        onClick={() => onSort(field)}
+        className="inline-flex items-center gap-1 type-table-header transition-colors hover:text-[var(--text-primary)] focus:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+      >
+        {label}
+        {active && (
+          <ArrowDown
+            className={`h-3 w-3 text-[var(--text-secondary)] transition-transform ${direction === "asc" ? "rotate-180" : ""}`}
+            strokeWidth={1.75}
+          />
+        )}
+      </button>
+    </th>
+  );
+}
+
 function DealTable({
   filteredDeals,
   onSelectDeal,
+  sortField,
+  sortDirection,
+  onSort,
+  page,
+  onPageChange,
 }: {
   filteredDeals: DealView[];
   onSelectDeal: (deal: DealView) => void;
+  sortField: DealSortField;
+  sortDirection: DealSortDirection;
+  onSort: (field: DealSortField) => void;
+  page: number;
+  onPageChange: (page: number) => void;
 }) {
-  const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
-  const [page, setPage] = useState(1);
-
-  const sorted = useMemo(() => {
-    return [...filteredDeals].sort((a, b) => {
-      const mul = sortDir === "desc" ? -1 : 1;
-      return mul * (new Date(a.date).getTime() - new Date(b.date).getTime());
-    });
-  }, [filteredDeals, sortDir]);
-
-  useEffect(() => {
-    setPage(1);
-  }, [filteredDeals]);
-
-  const totalPages = Math.max(1, Math.ceil(sorted.length / DEAL_PAGE_SIZE));
-  const safePage = Math.min(page, totalPages);
+  const sorted = useMemo(
+    () => sortDeals(filteredDeals, sortField, sortDirection),
+    [filteredDeals, sortDirection, sortField],
+  );
   const visibleDeals = useMemo(() => {
-    const start = (safePage - 1) * DEAL_PAGE_SIZE;
+    const start = (page - 1) * DEAL_PAGE_SIZE;
     return sorted.slice(start, start + DEAL_PAGE_SIZE);
-  }, [sorted, safePage]);
-
-  function toggleSort() {
-    setSortDir((d) => (d === "desc" ? "asc" : "desc"));
-  }
+  }, [page, sorted]);
 
   return (
     <>
@@ -422,34 +527,12 @@ function DealTable({
             <DealTableColGroup />
             <thead className="sticky top-0 z-10">
               <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]/95 backdrop-blur-sm shadow-[0_1px_0_rgba(17,17,20,0.03)]">
-                <th
-                  aria-sort={sortDir === "asc" ? "ascending" : "descending"}
-                  className="px-3 py-2 text-left"
-                >
-                  <button
-                    type="button"
-                    onClick={toggleSort}
-                    className="inline-flex items-center gap-1 type-table-header hover:text-[var(--text-primary)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] focus-visible:rounded-sm"
-                  >
-                    Date
-                    <ArrowUpDown className="h-2.5 w-2.5" strokeWidth={1.75} />
-                  </button>
-                </th>
-                <th className="text-left px-3 py-2 type-table-header">
-                  Target / Seller
-                </th>
-                <th className="text-left px-3 py-2 type-table-header">
-                  Buyer
-                </th>
-                <th className="text-left px-3 py-2 type-table-header">
-                  Sector
-                </th>
-                <th className="text-left px-3 py-2 type-table-header">
-                  Region
-                </th>
-                <th className="text-left px-3 py-2 type-table-header">
-                  Category
-                </th>
+                <SortableDealHeader field="date" label="Date" activeField={sortField} direction={sortDirection} onSort={onSort} />
+                <SortableDealHeader field="target" label="Target / Seller" activeField={sortField} direction={sortDirection} onSort={onSort} />
+                <SortableDealHeader field="buyer" label="Buyer" activeField={sortField} direction={sortDirection} onSort={onSort} />
+                <SortableDealHeader field="sector" label="Sector" activeField={sortField} direction={sortDirection} onSort={onSort} />
+                <SortableDealHeader field="region" label="Region" activeField={sortField} direction={sortDirection} onSort={onSort} />
+                <SortableDealHeader field="category" label="Category" activeField={sortField} direction={sortDirection} onSort={onSort} />
                 <th className="text-left px-3 py-2 type-table-header">
                   Source
                 </th>
@@ -462,16 +545,13 @@ function DealTable({
                 return (
                   <tr
                     key={deal.id}
-                    onClick={() => onSelectDeal(deal)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        onSelectDeal(deal);
-                      }
+                    onClick={(event) => {
+                      if ((event.target as Element).closest("a,button")) return;
+                      const trigger = event.currentTarget.querySelector<HTMLButtonElement>("[data-deal-row-trigger]");
+                      trigger?.focus({ preventScroll: true });
+                      onSelectDeal(deal);
                     }}
-                    role="button"
-                    tabIndex={0}
-                    className="group cursor-pointer border-b border-[var(--border)] bg-[var(--bg-surface)] transition-colors last:border-b-0 hover:bg-[var(--bg-subtle)] focus:bg-[var(--bg-subtle)] focus:outline-none"
+                    className="group cursor-pointer border-b border-[var(--border)] bg-[var(--bg-surface)] transition-colors last:border-b-0 hover:bg-[var(--bg-subtle)] focus-within:bg-[var(--bg-subtle)]"
                   >
                     <td className="px-3 py-3 align-top">
                       <span className="mono type-meta tabular-nums text-[var(--text-secondary)]">
@@ -479,7 +559,17 @@ function DealTable({
                       </span>
                     </td>
                     <td className="px-3 py-3 align-top">
-                      <div className="flex min-w-0 flex-col gap-0.5">
+                      <button
+                        type="button"
+                        data-deal-row-trigger
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          event.currentTarget.focus({ preventScroll: true });
+                          onSelectDeal(deal);
+                        }}
+                        aria-label={`Open details for ${deal.target}`}
+                        className="flex w-full min-w-0 flex-col gap-0.5 text-left focus:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+                      >
                         <span title={deal.target} className="block truncate type-row-title transition-colors group-hover:text-[var(--accent)]">
                           {deal.target}
                         </span>
@@ -488,7 +578,7 @@ function DealTable({
                             {deal.seller}
                           </span>
                         )}
-                      </div>
+                      </button>
                     </td>
                     <td title={deal.buyer} className="px-3 py-3 align-top">
                       <div className="flex min-w-0 flex-col gap-0.5">
@@ -549,10 +639,11 @@ function DealTable({
       </div>
 
       <PaginationControls
-        page={safePage}
+        page={page}
         pageSize={DEAL_PAGE_SIZE}
         totalItems={sorted.length}
-        onPageChange={setPage}
+        onPageChange={onPageChange}
+        resultHeadingId={DEAL_RESULTS_HEADING_ID}
       />
     </>
   );
@@ -849,21 +940,56 @@ function DealDrawer({
 
 // ─── Main Component ─────────────────────────────────────────
 export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: DatabaseCounts }) {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
+  const [rawSortField] = useUrlQueryState("sort", "date");
+  const [rawSortDirection] = useUrlQueryState("direction", "desc");
+  const [rawPage, setRawPage] = useUrlQueryState("page", "1");
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeRegions, toggleRegion] = useUrlFilterSet("region");
   const [activeCategories, toggleCategory] = useUrlFilterSet("category");
-  const [selectedDeal, setSelectedDeal] = useState<DealView | null>(null);
+  const focusId = useUrlQueryParam("focus");
+  const writeQueryParam = useUrlQueryWriter();
+  const writeQueryParams = useUrlQueryParamsWriter();
   const canExport = useCanExport();
+
+  const sortField = parseDealSortField(rawSortField);
+  const sortDirection = parseDealSortDirection(rawSortDirection);
+  const selectedDeal = useMemo(
+    () => focusId ? deals.find((deal) => deal.legacyId === focusId) ?? null : null,
+    [deals, focusId],
+  );
 
   // Debounce search for performance
   const debouncedSearch = useDebounce(search, 300);
 
-  const clearAllUrlFilters = useClearUrlFilters(["sector", "region", "category"]);
   const clearAllFilters = useCallback(() => {
-    clearAllUrlFilters();
-    setSearch("");
-  }, [clearAllUrlFilters]);
+    writeQueryParams(
+      { q: null, sector: null, region: null, category: null },
+      { history: "push", resetPage: true },
+    );
+  }, [writeQueryParams]);
+
+  const openDeal = useCallback((deal: DealView) => {
+    writeQueryParam("focus", deal.legacyId, "push");
+  }, [writeQueryParam]);
+
+  const closeDeal = useCallback(() => {
+    writeQueryParam("focus", null, "replace");
+  }, [writeQueryParam]);
+
+  const changeSort = useCallback((field: DealSortField) => {
+    const direction = field === sortField
+      ? (sortDirection === "asc" ? "desc" : "asc")
+      : defaultDirectionForDealSort(field);
+    writeQueryParams(
+      { sort: field, direction },
+      { history: "push", resetPage: true },
+    );
+  }, [sortDirection, sortField, writeQueryParams]);
+
+  const changePage = useCallback((page: number) => {
+    setRawPage(String(page));
+  }, [setRawPage]);
 
   const filteredDeals = useMemo(() => {
     return deals.filter((deal) => {
@@ -895,6 +1021,14 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
       return true;
     });
   }, [deals, debouncedSearch, activeSectors, activeRegions, activeCategories]);
+
+  const requestedPage = parseDealPage(rawPage);
+  const page = clampDealPage(requestedPage, filteredDeals.length);
+
+  useEffect(() => {
+    if (rawPage === String(page)) return;
+    writeQueryParam("page", page === 1 ? null : String(page), "replace");
+  }, [page, rawPage, writeQueryParam]);
 
   const headerMetrics = useMemo<IntelligenceMetric[]>(() => {
     const topSector = mostCommonLabel(filteredDeals.map((deal) => deal.sector));
@@ -930,25 +1064,14 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
     ];
   }, [filteredDeals, deals, activeSectors, activeRegions, activeCategories, debouncedSearch]);
 
-  // Close drawer if selected deal is filtered out
+  // The URL is authoritative: invalid or filtered-out focus values close the
+  // drawer and are removed without adding another history entry.
   useEffect(() => {
-    if (selectedDeal && !filteredDeals.find((d) => d.id === selectedDeal.id)) {
-      setSelectedDeal(null);
+    if (!focusId) return;
+    if (!selectedDeal || !filteredDeals.some((deal) => deal.id === selectedDeal.id)) {
+      closeDeal();
     }
-  }, [filteredDeals, selectedDeal]);
-
-  // Auto-open drawer when navigated here with `?focus=<legacyId>` (e.g. from
-  // the cross-database search page). Fires once per focus value.
-  const focusId = useUrlQueryParam("focus");
-  const openedFocus = useRef<string | null>(null);
-  useEffect(() => {
-    if (!focusId || openedFocus.current === focusId) return;
-    const match = deals.find((d) => d.legacyId === focusId);
-    if (match) {
-      setSelectedDeal(match);
-      openedFocus.current = focusId;
-    }
-  }, [focusId, deals]);
+  }, [closeDeal, filteredDeals, focusId, selectedDeal]);
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
@@ -977,14 +1100,48 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
         onClearAll={clearAllFilters}
       />
 
+      <MarketSnapshotSection>
+        <DynamicInsightsHero filteredDeals={filteredDeals} />
+      </MarketSnapshotSection>
+
       <div className="surface overflow-hidden">
         <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-[var(--border)]">
-          <span className="type-micro">
+          <h2
+            id={DEAL_RESULTS_HEADING_ID}
+            tabIndex={-1}
+            className="type-micro scroll-mt-24 focus:outline-none"
+          >
+            <span className="sr-only">Deal results: </span>
             <span className="mono text-[var(--text-secondary)] tabular-nums">{filteredDeals.length}</span>
             {" "}of{" "}
             <span className="mono text-[var(--text-secondary)] tabular-nums">{deals.length}</span> deals
-          </span>
+          </h2>
           <div className="flex flex-wrap items-center justify-end gap-1">
+            <label htmlFor="deal-mobile-sort" className="sr-only">Sort deals</label>
+            <select
+              id="deal-mobile-sort"
+              value={sortField}
+              onChange={(event) => changeSort(parseDealSortField(event.target.value))}
+              className="h-7 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-2 type-micro text-[var(--text-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] lg:hidden"
+            >
+              <option value="date">Date</option>
+              <option value="target">Target</option>
+              <option value="buyer">Buyer</option>
+              <option value="sector">Sector</option>
+              <option value="region">Region</option>
+              <option value="category">Type</option>
+            </select>
+            <button
+              type="button"
+              onClick={() => changeSort(sortField)}
+              aria-label={`Sort ${sortDirection === "asc" ? "descending" : "ascending"}`}
+              className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--bg-surface)] text-[var(--text-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)] lg:hidden"
+            >
+              <ArrowDown
+                className={`h-3 w-3 transition-transform ${sortDirection === "asc" ? "rotate-180" : ""}`}
+                strokeWidth={1.75}
+              />
+            </button>
             {canExport && (
               <a
                 href={withBasePath("/api/exports/deals")}
@@ -999,19 +1156,23 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
           </div>
         </div>
 
-        <DealTable filteredDeals={filteredDeals} onSelectDeal={setSelectedDeal} />
+        <DealTable
+          filteredDeals={filteredDeals}
+          onSelectDeal={openDeal}
+          sortField={sortField}
+          sortDirection={sortDirection}
+          onSort={changeSort}
+          page={page}
+          onPageChange={changePage}
+        />
       </div>
 
       <CTABlock />
 
-      <MarketSnapshotSection>
-        <DynamicInsightsHero filteredDeals={filteredDeals} />
-      </MarketSnapshotSection>
-
       {selectedDeal && (
         <DealDrawer
           deal={selectedDeal}
-          onClose={() => setSelectedDeal(null)}
+          onClose={closeDeal}
         />
       )}
     </div>

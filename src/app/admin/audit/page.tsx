@@ -7,7 +7,12 @@ import { formatDate } from "@/lib/format";
 
 export const metadata = { title: "Admin · Audit log" };
 
-export default async function AdminAuditPage() {
+export default async function AdminAuditPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ focus?: string }>;
+}) {
+  const { focus } = await searchParams;
   const events = await prisma.auditEvent.findMany({
     orderBy: { createdAt: "desc" },
     take: 100,
@@ -43,7 +48,14 @@ export default async function AdminAuditPage() {
                 ? changes.changedFields.join(", ")
                 : changes ? Object.keys(changes).join(", ") : "—";
               return (
-                <tr key={event.id} className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--bg-subtle)]">
+                <tr
+                  key={event.id}
+                  id={`audit-${event.id}`}
+                  aria-current={focus === event.id ? "true" : undefined}
+                  className={`border-b border-[var(--border)] last:border-b-0 ${
+                    focus === event.id ? "bg-[var(--accent-soft)]" : "hover:bg-[var(--bg-subtle)]"
+                  }`}
+                >
                   <td className="px-3 py-2.5 type-micro mono tabular-nums">{formatDate(event.createdAt)}</td>
                   <td className="px-3 py-2.5 type-meta">{event.actor?.email ?? "System"}</td>
                   <td className="px-3 py-2.5 type-meta font-semibold text-[var(--text-primary)]">{event.action}</td>

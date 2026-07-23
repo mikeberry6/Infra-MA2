@@ -37,8 +37,8 @@ export default async function AdminUsersPage() {
         </p>
       </div>
 
-      <div className="surface overflow-hidden">
-        <table className="w-full text-left border-collapse whitespace-nowrap">
+      <div className="surface overflow-x-auto">
+        <table className="min-w-[640px] w-full text-left border-collapse whitespace-nowrap">
           <thead>
             <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
               <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Email</th>

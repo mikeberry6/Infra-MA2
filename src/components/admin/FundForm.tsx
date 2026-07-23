@@ -11,16 +11,21 @@ import {
   FUND_STRUCTURES,
 } from "@/lib/constants";
 import type { FundView } from "@/modules/shared/types";
+import { Button } from "@/components/shared/Button";
+import { TextInput } from "@/components/shared/TextInput";
+import {
+  CheckboxOption,
+  FormField,
+  FormMessage,
+  SelectInput,
+  TextArea,
+} from "@/components/shared/FormControls";
 
 interface FundFormProps {
   initialData?: Partial<FundView>;
   action: (formData: FormData) => Promise<{ success: boolean; error?: string; id?: string }>;
   mode: "create" | "edit";
 }
-
-const inputClass =
-  "w-full bg-white border border-black/[0.08] text-[#1a1a1a] rounded px-3 py-2 text-sm focus:outline-none focus:border-[#008253]";
-const labelClass = "block text-sm text-[#A1A1AA] mb-1";
 
 export default function FundForm({ initialData, action, mode }: FundFormProps) {
   const router = useRouter();
@@ -65,8 +70,8 @@ export default function FundForm({ initialData, action, mode }: FundFormProps) {
     formData.set("structure", structure);
     formData.set("status", status);
     formData.set("ticker", ticker);
-    formData.set("strategyUrl", strategyUrl);
     formData.set("primarySourceUrl", primarySourceUrl);
+    formData.set("strategyUrl", strategyUrl);
 
     for (const s of strategies) {
       formData.append("strategies", s);
@@ -99,233 +104,213 @@ export default function FundForm({ initialData, action, mode }: FundFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl">
-      {message && (
-        <div
-          className={`text-sm px-4 py-2 rounded ${
-            message.type === "success"
-              ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-              : "bg-red-500/10 text-red-400 border border-red-500/20"
-          }`}
-        >
-          {message.text}
-        </div>
-      )}
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-3xl space-y-6"
+      aria-busy={isPending}
+    >
+      {message && <FormMessage tone={message.type}>{message.text}</FormMessage>}
 
-      {/* Manager + Fund Name */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className={labelClass}>Manager Name *</label>
-          <input
-            type="text"
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <FormField htmlFor="fund-manager-name" label="Manager Name" required>
+          <TextInput
+            id="fund-manager-name"
+            size="md"
             required
             value={managerName}
             onChange={(e) => setManagerName(e.target.value)}
-            className={inputClass}
           />
-        </div>
-        <div>
-          <label className={labelClass}>Fund Name *</label>
-          <input
-            type="text"
+        </FormField>
+        <FormField htmlFor="fund-name" label="Fund Name" required>
+          <TextInput
+            id="fund-name"
+            size="md"
             required
             value={fundName}
             onChange={(e) => setFundName(e.target.value)}
-            className={inputClass}
           />
-        </div>
+        </FormField>
       </div>
 
-      {/* Size + Size USD MM + Vintage */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <label className={labelClass}>Size (currency amount or TBD) *</label>
-          <input
-            type="text"
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <FormField
+          htmlFor="fund-size"
+          label="Size (display)"
+          required
+          hint="Enter a currency-denominated amount or use TBD when no amount is disclosed."
+        >
+          <TextInput
+            id="fund-size"
+            size="md"
             required
+            aria-describedby="fund-size-hint"
             value={size}
             onChange={(e) => setSize(e.target.value)}
-            className={inputClass}
-            placeholder="e.g. $5.0B, €750M, or TBD"
+            placeholder="e.g. $5.0B or TBD"
           />
-        </div>
-        <div>
-          <label className={labelClass}>Size (USD MM)</label>
-          <input
+        </FormField>
+        <FormField htmlFor="fund-size-usd" label="Size (USD MM)">
+          <TextInput
+            id="fund-size-usd"
+            size="md"
             type="number"
             step="any"
             value={sizeUsdMm}
             onChange={(e) => setSizeUsdMm(e.target.value)}
-            className={inputClass}
             placeholder="e.g. 5000"
           />
-        </div>
-        <div>
-          <label className={labelClass}>Vintage *</label>
-          <input
-            type="text"
+        </FormField>
+        <FormField htmlFor="fund-vintage" label="Vintage" required>
+          <TextInput
+            id="fund-vintage"
+            size="md"
             required
             value={vintage}
             onChange={(e) => setVintage(e.target.value)}
-            className={inputClass}
             placeholder="e.g. 2023"
           />
-        </div>
+        </FormField>
       </div>
 
-      {/* Structure + Status + Ticker */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <label className={labelClass}>Structure *</label>
-          <select
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <FormField htmlFor="fund-structure" label="Structure" required>
+          <SelectInput
+            id="fund-structure"
+            required
             value={structure}
             onChange={(e) => setStructure(e.target.value)}
-            className={inputClass}
           >
-            {FUND_STRUCTURES.map((s) => (
-              <option key={s} value={s}>{s}</option>
+            {FUND_STRUCTURES.map((value) => (
+              <option key={value} value={value}>{value}</option>
             ))}
-          </select>
-        </div>
-        <div>
-          <label className={labelClass}>Status *</label>
-          <select
+          </SelectInput>
+        </FormField>
+        <FormField htmlFor="fund-status" label="Status" required>
+          <SelectInput
+            id="fund-status"
+            required
             value={status}
             onChange={(e) => setStatus(e.target.value)}
-            className={inputClass}
           >
-            {FUND_STATUSES.map((s) => (
-              <option key={s} value={s}>{s}</option>
+            {FUND_STATUSES.map((value) => (
+              <option key={value} value={value}>{value}</option>
             ))}
-          </select>
-        </div>
-        <div>
-          <label className={labelClass}>Ticker</label>
-          <input
-            type="text"
+          </SelectInput>
+        </FormField>
+        <FormField htmlFor="fund-ticker" label="Ticker">
+          <TextInput
+            id="fund-ticker"
+            size="md"
             value={ticker}
             onChange={(e) => setTicker(e.target.value)}
-            className={inputClass}
           />
-        </div>
+        </FormField>
       </div>
 
-      {/* Strategies */}
-      <div>
-        <label className={labelClass}>Strategies *</label>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-1">
-          {FUND_STRATEGIES.map((s) => (
-            <label key={s} className="flex items-center gap-2 text-sm text-[#A1A1AA] cursor-pointer">
-              <input
-                type="checkbox"
-                checked={strategies.includes(s)}
-                onChange={() => toggleItem(strategies, s, setStrategies)}
-                className="accent-[#818CF8]"
-              />
-              {s}
-            </label>
+      <fieldset>
+        <legend className="mb-1.5 type-meta font-medium text-[var(--text-secondary)]">
+          Strategies<span aria-hidden className="ml-0.5 text-[var(--accent)]">*</span>
+          <span className="sr-only"> (required)</span>
+        </legend>
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3">
+          {FUND_STRATEGIES.map((strategy) => (
+            <CheckboxOption
+              key={strategy}
+              checked={strategies.includes(strategy)}
+              onChange={() => toggleItem(strategies, strategy, setStrategies)}
+            >
+              {strategy}
+            </CheckboxOption>
           ))}
         </div>
-      </div>
+      </fieldset>
 
-      {/* Sectors */}
-      <div>
-        <label className={labelClass}>Sectors</label>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-1">
-          {FUND_SECTORS.map((s) => (
-            <label key={s} className="flex items-center gap-2 text-sm text-[#A1A1AA] cursor-pointer">
-              <input
-                type="checkbox"
-                checked={sectors.includes(s)}
-                onChange={() => toggleItem(sectors, s, setSectors)}
-                className="accent-[#818CF8]"
-              />
-              {s}
-            </label>
+      <fieldset>
+        <legend className="mb-1.5 type-meta font-medium text-[var(--text-secondary)]">
+          Sectors
+        </legend>
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3">
+          {FUND_SECTORS.map((sector) => (
+            <CheckboxOption
+              key={sector}
+              checked={sectors.includes(sector)}
+              onChange={() => toggleItem(sectors, sector, setSectors)}
+            >
+              {sector}
+            </CheckboxOption>
           ))}
         </div>
-      </div>
+      </fieldset>
 
-      {/* Regions */}
-      <div>
-        <label className={labelClass}>Regions</label>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-1">
-          {FUND_REGIONS.map((r) => (
-            <label key={r} className="flex items-center gap-2 text-sm text-[#A1A1AA] cursor-pointer">
-              <input
-                type="checkbox"
-                checked={regions.includes(r)}
-                onChange={() => toggleItem(regions, r, setRegions)}
-                className="accent-[#818CF8]"
-              />
-              {r}
-            </label>
+      <fieldset>
+        <legend className="mb-1.5 type-meta font-medium text-[var(--text-secondary)]">
+          Regions
+        </legend>
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3">
+          {FUND_REGIONS.map((region) => (
+            <CheckboxOption
+              key={region}
+              checked={regions.includes(region)}
+              onChange={() => toggleItem(regions, region, setRegions)}
+            >
+              {region}
+            </CheckboxOption>
           ))}
         </div>
-      </div>
+      </fieldset>
 
-      {/* Investment Strategy */}
-      <div>
-        <label className={labelClass}>Investment Strategy (description)</label>
-        <textarea
+      <FormField htmlFor="fund-investment-strategy" label="Investment Strategy (description)">
+        <TextArea
+          id="fund-investment-strategy"
           value={investmentStrategy}
           onChange={(e) => setInvestmentStrategy(e.target.value)}
           rows={4}
-          className={inputClass}
         />
-      </div>
+      </FormField>
 
-      {/* Strategy URL */}
-      <div>
-        <label className={labelClass}>Strategy URL</label>
-        <input
-          type="url"
-          value={strategyUrl}
-          onChange={(e) => setStrategyUrl(e.target.value)}
-          className={inputClass}
-        />
-      </div>
-
-      {/* Source URLs */}
-      <div>
-        <label className={labelClass}>Primary Source URL *</label>
-        <input
-          type="url"
-          required
-          value={primarySourceUrl}
-          onChange={(event) => setPrimarySourceUrl(event.target.value)}
-          className={inputClass}
-          placeholder="https://official-source.example/..."
-        />
-      </div>
-
-      <div>
-        <label className={labelClass}>Source URLs (one per line)</label>
-        <textarea
-          value={sourceUrls}
-          onChange={(e) => setSourceUrls(e.target.value)}
-          rows={3}
-          className={inputClass}
-          placeholder="Enter each URL on a new line"
-        />
-      </div>
-
-      {/* Actions */}
-      <div className="flex items-center gap-4 pt-4 border-t border-black/[0.08]">
-        <button
-          type="submit"
-          disabled={isPending}
-          className="bg-[#008253] text-[#1a1a1a] px-6 py-2 rounded hover:bg-[#006d45] disabled:opacity-50 text-sm font-medium"
+      <div className="surface space-y-4 p-4">
+        <FormField
+          htmlFor="fund-primary-source-url"
+          label="Primary Source URL"
+          hint="Designate only after Research review. Supporting and strategy links are not promoted automatically."
         >
-          {isPending
-            ? mode === "create"
-              ? "Creating..."
-              : "Saving..."
-            : mode === "create"
-            ? "Create Fund"
-            : "Save Changes"}
-        </button>
-        <Link href="/admin/funds" className="text-sm text-[#71717A] hover:text-[#1a1a1a]">
+          <TextInput
+            id="fund-primary-source-url"
+            size="md"
+            type="url"
+            aria-describedby="fund-primary-source-url-hint"
+            value={primarySourceUrl}
+            onChange={(e) => setPrimarySourceUrl(e.target.value)}
+          />
+        </FormField>
+        <FormField htmlFor="fund-strategy-url" label="Strategy URL">
+          <TextInput
+            id="fund-strategy-url"
+            size="md"
+            type="url"
+            value={strategyUrl}
+            onChange={(e) => setStrategyUrl(e.target.value)}
+          />
+        </FormField>
+        <FormField htmlFor="fund-source-urls" label="Source URLs (one per line)">
+          <TextArea
+            id="fund-source-urls"
+            value={sourceUrls}
+            onChange={(e) => setSourceUrls(e.target.value)}
+            rows={3}
+            placeholder="Enter each URL on a new line"
+          />
+        </FormField>
+      </div>
+
+      <div className="flex items-center gap-4 border-t border-[var(--border)] pt-4">
+        <Button type="submit" variant="primary" size="lg" loading={isPending}>
+          {mode === "create" ? "Create Fund" : "Save Changes"}
+        </Button>
+        <Link
+          href="/admin/funds"
+          className="type-meta font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+        >
           Cancel
         </Link>
       </div>

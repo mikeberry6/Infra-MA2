@@ -40,6 +40,7 @@ describe("atomic import commits", () => {
     await expect(commitImport({
       pipeline: "DEAL_IMPORT",
       entityType: "Deal",
+      actorId: "admin-1",
       rowCount: 1,
       execute: async (client) => {
         await client.deal.create({ data: {} as never });
@@ -63,6 +64,7 @@ describe("atomic import commits", () => {
     expect(mocks.recordAuditEvent).toHaveBeenCalledWith(expect.objectContaining({
       entityType: "Deal",
       action: "BULK_IMPORT",
+      actorId: "admin-1",
     }), tx);
     expect(mocks.completePipelineRun).toHaveBeenCalledWith(
       tx,
