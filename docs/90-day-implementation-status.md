@@ -2,7 +2,7 @@
 
 **Updated:** 2026-07-23
 
-**Posture:** The clean Next.js 15 implementation remains available as four open, draft, unmerged stacked pull requests. Their executable trees are now reconciled with the retained integration safeguards in exact two-parent commit `f97ca6122eae2061cd26adc84c54e50ebc18e0a4` on [PR #223](https://github.com/mikeberry6/Infra-MA2/pull/223). The reconciled tree passes the complete local gate, and Phase 4 still deploys successfully to a fail-closed Preview. The exact hosted integration Release Gate, Research decisions, schema staging, and production rollout are not complete.
+**Posture:** The clean Next.js 15 implementation remains available as four open, draft, unmerged stacked pull requests. Their executable trees are reconciled with the retained integration safeguards in exact two-parent commit `f97ca6122eae2061cd26adc84c54e50ebc18e0a4` on [PR #223](https://github.com/mikeberry6/Infra-MA2/pull/223). The first exact-head hosted gate proved the static stack and Preview but exposed a reused validation-database migration-lineage collision. Follow-up commit `f7c83010da4d721fd44dc959f1db3ff671b8a7c7` repairs that lineage through Prisma-supported, validation-only controls and passes the complete local gate. The corrected exact-head hosted gate, Research decisions, schema staging, and production rollout are not complete.
 
 ## Clean phase stack
 
@@ -58,7 +58,29 @@ At exact executable-tree commit `f97ca6122eae2061cd26adc84c54e50ebc18e0a4`:
 - The checked-in Vercel bypass transport completed a read-only smoke against the immutable Phase 4 deployment: root plus all required public routes returned 200 and anonymous deal export returned 403. This validates the protected transport, not the reconciled deployment or its database.
 - The GitHub `Production` environment now has self-review prevention, a custom deployment policy whose only branch is `main`, the immutable Vercel team ID, and the Vercel automation-bypass secret. No deployment or production database mutation was run.
 
-## Hosted integration evidence — pending
+## Validation migration-lineage follow-up
+
+At exact code commit `f7c83010da4d721fd44dc959f1db3ff671b8a7c7`:
+
+- The six migrations already applied to the reused validation database are restored byte-for-byte with their reviewed SHA-256 hashes. Their seven later restaged names contain only documented `SELECT 1` compatibility aliases, so both the existing branch and a fresh database execute the schema DDL exactly once.
+- `reconcile-validation-migration-lineage.ts` repeats the exact target guard, requires `TARGET_DATABASE=validation`, the complete six-row legacy lineage, exact checksums, one known zero-step failed alias, and zero Prisma schema diff. It then uses `prisma migrate resolve --rolled-back`; it never writes Prisma's migration ledger directly and is absent from production staging.
+- Prisma generation/validation, ESLint, both TypeScript checks, **173 Vitest files / 1,166 tests**, portfolio validation, weekly-email validation, complete and production dependency audits, the Next.js production build, and bundle budgets passed.
+- Playwright still discovers **58 scenarios in six files**. Discovery is not a hosted execution claim.
+- The additive audit passes for **13 migration paths** relative to `main`: six retained schema-source migrations and seven compatibility aliases. Manifest SHA-256: `26a23cf53486c3f77f2b679660974d8585f332d31a035905e31fddd7ee793acc`.
+- The historical weekly-email audit still protects **22 issues**, with no changed or added issues.
+- Workflow YAML parsing and `git diff --check` passed.
+
+## Hosted integration evidence at `8764b5c`
+
+[Release Gate run 29992373184](https://github.com/mikeberry6/Infra-MA2/actions/runs/29992373184) tested source head `8764b5c04ecd1d3194076b89162ba1036e0f7a46` through synthetic merge `4a430ff458e978a0ea12e6e03ebe943a111eee25`:
+
+- Static job `89157906898` passed installation, migration/history audit, Prisma generation/validation, lint, both typechecks, all tests, offline data/email validation, both dependency audits, the production build, and bundle budgets.
+- Vercel passed with immutable Preview [infra-ma-2-lekodnfuq-mberry.vercel.app](https://infra-ma-2-lekodnfuq-mberry.vercel.app).
+- The isolated Neon target guard passed. Validation job `89157907101` then stopped at `prisma migrate deploy` with Prisma `P3018` / PostgreSQL `42P07` because `AuthThrottle` already existed from the complete pre-restaging lineage while `20260722220000_auth_throttle` was not recorded as applied.
+- The migrated build, browser, visual, database/provider-failure, and strict publication gates were skipped; this run is not release-success evidence and does not prove that Research is the sole remaining failure.
+- Retained evidence: [quality artifact 8557620826](https://github.com/mikeberry6/Infra-MA2/actions/runs/29992373184/artifacts/8557620826) and [validation artifact 8557555519](https://github.com/mikeberry6/Infra-MA2/actions/runs/29992373184/artifacts/8557555519). No Playwright artifact exists because those steps did not execute.
+
+## Corrected exact-head hosted evidence — pending
 
 Do not publish a hosted or production-success claim until these fields are replaced with exact evidence for the final pushed head:
 
@@ -90,7 +112,7 @@ These are planning counts from the prior evidence baseline, not approved remedia
 
 External or operator-controlled:
 
-- Configure an allow-listed isolated Neon validation database and dedicated Preview authentication values, then run the exact integration gate.
+- Rerun the exact integration gate after the validation-only lineage repair and require migration deploy/status/drift, database-backed build, browser/axe/keyboard/visual suites, both failure fixtures, and the strict publication gate to execute.
 - Add an independent Engineering or Operations approver to the GitHub `Production` environment and disable administrator bypass. The current environment has self-review prevention and a custom deployment policy whose only branch is `main`; its immutable Vercel team ID and automation-bypass secret are configured. The remaining review still shows only `mikeberry6` as collaborator/administrator and `can_admins_bypass=true`.
 - Complete Research review and commit only approved, hash-bound remediation decisions.
 - Stage and verify the additive schema, execute reviewed remediations, validate canonical public/admin journeys, rotate the administrator credential and `NEXTAUTH_SECRET`, and promote through the protected workflow.
@@ -102,4 +124,4 @@ Time-bound:
 - Accumulate the full 30-day production window before claiming pipeline reliability or p75 Core Web Vitals objectives.
 - Next.js 16 and React 19 remain a separate modernization release after a stable 30-day Next.js 15 window. Tailwind 4 remains later.
 
-**Completion statement:** The clean implementation stack is reconciled and its executable tree passes the recorded local gate. The program is not production-complete until exact hosted integration validation, Research approvals, protected schema/data rollout, production promotion, database recovery evidence, human accessibility attestation, and elapsed telemetry are complete.
+**Completion statement:** The clean implementation stack is reconciled, the validation-lineage defect has a locally verified fail-closed repair, and the executable tree passes the recorded local gate. The program is not production-complete until the corrected exact-head hosted integration validation, Research approvals, protected schema/data rollout, production promotion, database recovery evidence, human accessibility attestation, and elapsed telemetry are complete.
