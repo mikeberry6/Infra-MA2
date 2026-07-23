@@ -80,6 +80,36 @@ async function getLatestNewsAttempt() {
   });
 }
 
+async function getNewsCacheMutationWatermark() {
+  return prisma.pipelineRun.findFirst({
+    where: { pipeline: "NEWS_SCAN" },
+    orderBy: [
+      { updatedAt: "desc" },
+      { id: "desc" },
+    ],
+    select: {
+      id: true,
+      status: true,
+      startedAt: true,
+      endedAt: true,
+      updatedAt: true,
+    },
+  });
+}
+
+function newsCacheWatermark(
+  run: Awaited<ReturnType<typeof getNewsCacheMutationWatermark>>,
+): string {
+  if (!run) return "never-run";
+  return [
+    run.id,
+    run.status,
+    run.startedAt.toISOString(),
+    run.endedAt?.toISOString() ?? "open",
+    run.updatedAt.toISOString(),
+  ].join(":");
+}
+
 async function getRecentStoredSuccessfulNewsRuns() {
   return prisma.pipelineRun.findMany({
     where: { pipeline: "NEWS_SCAN", status: "SUCCEEDED" },
@@ -150,7 +180,11 @@ async function getNewsFeedRaw(): Promise<NewsFeedView> {
 }
 
 const getNewsFeedCached = unstable_cache(
-  getNewsFeedRaw,
+  // External pipeline workers cannot call Next's in-process tag invalidation.
+  // Including the most recently mutated durable run in the function arguments
+  // gives a started, completed, failed, or corrected scan a distinct cache
+  // entry immediately. Admin mutations continue to use the existing news tag.
+  async (_pipelineWatermark: string) => getNewsFeedRaw(),
   dataCacheKeyParts("news:feed"),
   {
     tags: [CACHE_TAGS.news, CACHE_TAGS.deals, CACHE_TAGS.funds, CACHE_TAGS.companies],
@@ -159,7 +193,8 @@ const getNewsFeedCached = unstable_cache(
 );
 
 export async function getNewsFeed(): Promise<NewsFeedView> {
-  return getNewsFeedCached();
+  const latestMutation = await getNewsCacheMutationWatermark();
+  return getNewsFeedCached(newsCacheWatermark(latestMutation));
 }
 
 function toNewsItemView(item: DbNewsItem): NewsItemView {

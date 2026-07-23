@@ -4,10 +4,19 @@ const mocks = vi.hoisted(() => ({
   newsFindMany: vi.fn(),
   pipelineFindFirst: vi.fn(),
   pipelineFindMany: vi.fn(),
+  cacheArguments: [] as unknown[][],
+  cacheEntries: new Map<string, unknown>(),
 }));
 
 vi.mock("next/cache", () => ({
-  unstable_cache: (fn: unknown) => fn,
+  unstable_cache: (fn: (...args: unknown[]) => unknown) => async (...args: unknown[]) => {
+    mocks.cacheArguments.push(args);
+    const key = JSON.stringify(args);
+    if (mocks.cacheEntries.has(key)) return mocks.cacheEntries.get(key);
+    const value = await fn(...args);
+    mocks.cacheEntries.set(key, value);
+    return value;
+  },
 }));
 
 vi.mock("@/lib/prisma", () => ({
@@ -24,9 +33,11 @@ import { getNewsFeed } from "@/modules/news/queries";
 
 function pipelineRun(status: "RUNNING" | "SUCCEEDED" | "FAILED", startedAt: string, endedAt?: string) {
   return {
+    id: `${status}-${startedAt}`,
     status,
     startedAt: new Date(startedAt),
     endedAt: endedAt ? new Date(endedAt) : null,
+    updatedAt: new Date(endedAt ?? startedAt),
     metadata: status === "SUCCEEDED"
       ? { sourceCoverage: { attempted: 10, succeeded: 10, failed: 0 } }
       : null,
@@ -48,6 +59,8 @@ describe("news pipeline freshness states", () => {
     mocks.newsFindMany.mockReset().mockResolvedValue([]);
     mocks.pipelineFindFirst.mockReset();
     mocks.pipelineFindMany.mockReset();
+    mocks.cacheArguments.length = 0;
+    mocks.cacheEntries.clear();
   });
 
   it("reports never-run when no attempt exists", async () => {
@@ -103,6 +116,35 @@ describe("news pipeline freshness states", () => {
       },
       message: "The current rotating public-source window completed successfully.",
     });
+  });
+
+  it("reuses an unchanged feed cache key and misses it when a durable scan changes state", async () => {
+    const running = pipelineRun("RUNNING", "2026-07-22T11:58:00.000Z");
+    mockPipelineReads(running);
+
+    await getNewsFeed();
+    await getNewsFeed();
+
+    expect(mocks.newsFindMany).toHaveBeenCalledTimes(1);
+
+    const success = pipelineRun(
+      "SUCCEEDED",
+      "2026-07-22T11:58:00.000Z",
+      "2026-07-22T12:05:00.000Z",
+    );
+    success.id = running.id;
+    mockPipelineReads(success, [success]);
+
+    await getNewsFeed();
+
+    expect(mocks.newsFindMany).toHaveBeenCalledTimes(2);
+    expect(mocks.cacheArguments).toHaveLength(3);
+    expect(mocks.cacheArguments[0]?.[0]).toContain(":RUNNING:2026-07-22T11:58:00.000Z:open");
+    expect(mocks.cacheArguments[1]?.[0]).toBe(mocks.cacheArguments[0]?.[0]);
+    expect(mocks.cacheArguments[2]?.[0]).toContain(
+      ":SUCCEEDED:2026-07-22T11:58:00.000Z:2026-07-22T12:05:00.000Z:2026-07-22T12:05:00.000Z",
+    );
+    expect(mocks.cacheArguments[0]?.[0]).not.toBe(mocks.cacheArguments[2]?.[0]);
   });
 
   it("uses the latest failed attempt coverage while retaining last-success time", async () => {
