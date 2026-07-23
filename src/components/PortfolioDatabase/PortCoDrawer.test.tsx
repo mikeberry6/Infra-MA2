@@ -70,6 +70,7 @@ describe("PortCo scorecard contract", () => {
     expect(ambientOrbs[0].style.opacity).toBe("0.1");
     expect(ambientOrbs[1].style.opacity).toBe("0.07");
     expect(screen.getByRole("link", { name: "Open Northstar Fiber website" })).toBeVisible();
+    expect(screen.getByRole("link", { name: "Company profile" })).toHaveClass("min-h-6", "py-1");
 
     const sectionHeadings = screen.getAllByRole("heading", { level: 3 }).map((heading) => heading.textContent);
     expect(sectionHeadings).toEqual([

@@ -395,7 +395,7 @@ export function PortCoDrawer({
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => track("source_link_clicked", { entity: "company", placement: "drawer" })}
-                        className="group flex items-center gap-2 rounded-sm text-[#A1A1AA] transition-colors hover:text-[#818CF8] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#818CF8]"
+                        className="group flex min-h-6 items-center gap-2 rounded-sm py-1 text-[#A1A1AA] transition-colors hover:text-[#818CF8] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#818CF8]"
                       >
                         <ExternalLink className="h-3 w-3 shrink-0 transition-colors" />
                         <span className="truncate text-micro font-medium">
