@@ -12,6 +12,7 @@ import {
 } from "@/modules/shared/enum-maps";
 import type { FundStrategyView, FundView, PortfolioCompanyView } from "@/modules/shared/types";
 import type { Fund as DbFund } from "@/generated/prisma/client";
+import { ACTIVE_COMPANY_WHERE } from "@/modules/companies/retirement";
 
 function toFundView(
   fund: DbFund & {
@@ -55,6 +56,7 @@ function toFundView(
     ticker: fund.ticker,
     investmentStrategy: fund.investmentStrategy,
     sourceUrls: fund.sourceUrls,
+    primarySourceUrl: fund.primarySourceUrl,
     size: fund.size,
     sizeUsdMm: fund.sizeUsdMm,
     vintage: fund.vintage,
@@ -73,6 +75,7 @@ function toFundView(
 const FUND_INCLUDE = {
   manager: { select: { name: true } },
   ownershipPeriods: {
+    where: { company: { status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE } },
     select: {
       isActive: true,
       investmentYear: true,
@@ -136,8 +139,8 @@ export async function getFundStrategyIndex(): Promise<FundStrategyView[]> {
 }
 
 export async function getFundById(legacyId: string): Promise<FundView | null> {
-  const fund = await prisma.fund.findUnique({
-    where: { legacyId },
+  const fund = await prisma.fund.findFirst({
+    where: { legacyId, status: "PUBLISHED" },
     include: FUND_INCLUDE,
   });
   return fund ? toFundView(fund) : null;

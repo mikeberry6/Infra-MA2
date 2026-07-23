@@ -1,101 +1,182 @@
-name: Dashboard Data Pipeline
+name: Data Pipelines
 
 on:
   schedule:
-    # GitHub cron is UTC. These paired slots resolve to exactly 07:30 Eastern
-    # in daylight and standard time; the first step permits only the right one.
+    # Both UTC dashboard slots are required for a DST-safe 07:30
+    # America/New_York run. The dashboard job permits exactly one.
     - cron: "30 11 * * 1-5"
     - cron: "30 12 * * 1-5"
+    - cron: "30 23 * * *"
     - cron: "0 12 * * 0"
-    # Monthly all-source audit at 08:00 Eastern, DST-safe.
+    # Run both UTC candidates; the source-audit job gates on 08:00 in
+    # America/New_York so daylight-saving transitions stay correct.
     - cron: "0 12 1 * *"
     - cron: "0 13 1 * *"
-  workflow_dispatch:
-    inputs:
-      pipeline:
-        description: Dashboard operation to run
-        required: true
-        default: verify
-        type: choice
-        options:
-          - dashboard
-          - verify
-          - source-audit
+  # Unlike workflow_dispatch, repository_dispatch always executes the
+  # workflow from the default branch. This preserves on-demand recovery
+  # without allowing a caller to select branch-authored code for a job that
+  # receives production credentials.
+  repository_dispatch:
+    types: [run-data-pipeline]
 
 permissions:
+  actions: read
   contents: read
 
 concurrency:
-  group: dashboard-pipeline-${{ inputs.pipeline || ((github.event.schedule == '30 11 * * 1-5' || github.event.schedule == '30 12 * * 1-5') && 'dashboard') || (github.event.schedule == '0 12 * * 0' && 'verify') || 'source-audit' }}
+  # Production reads and writes never overlap schema staging, reviewed data
+  # remediation, promotion, rollback, or another scheduled pipeline run.
+  group: production-release
   cancel-in-progress: false
 
 env:
   NEXT_TELEMETRY_DISABLED: "1"
-  DATABASE_URL: ${{ secrets.DATABASE_URL }}
-  EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
-  EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
-  FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
-  FORBIDDEN_DATABASE_HOST_2: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
 
 jobs:
+  trusted_main:
+    name: Authenticate exact main workflow provenance
+    # Missing/false is the safe merge-to-schema state: no Phase 2 pipeline
+    # code may touch production until its additive schema is staged.
+    if: vars.PHASE2_PIPELINES_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      release_sha: ${{ steps.identity.outputs.release_sha }}
+    steps:
+      - name: Require a protected main event ref
+        env:
+          REQUESTED_PIPELINE: ${{ github.event.client_payload.pipeline }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Production data pipelines may run only from refs/heads/main."
+            exit 1
+          fi
+          if [ "$GITHUB_EVENT_NAME" != "schedule" ] && [ "$GITHUB_EVENT_NAME" != "repository_dispatch" ]; then
+            echo "::error::Unexpected production data-pipeline event."
+            exit 1
+          fi
+          if [ "$GITHUB_EVENT_NAME" = "repository_dispatch" ]; then
+            case "$REQUESTED_PIPELINE" in
+              dashboard|news|verify|source-audit) ;;
+              *)
+                echo "::error::repository_dispatch client_payload.pipeline must name an approved pipeline."
+                exit 1
+                ;;
+            esac
+          fi
+          if ! [[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::The triggering main SHA is not a full lowercase Git SHA."
+            exit 1
+          fi
+      - name: Checkout triggering main revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify triggering main revision identity
+        id: identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          checked_out_sha="$(git rev-parse HEAD)"
+          checked_out_main_sha="$(git rev-parse refs/heads/main)"
+          if [ "$checked_out_sha" != "$GITHUB_SHA" ] || [ "$checked_out_main_sha" != "$GITHUB_SHA" ]; then
+            echo "::error::refs/heads/main changed after this run was created; start a new pipeline run."
+            exit 1
+          fi
+          echo "release_sha=$checked_out_sha" >> "$GITHUB_OUTPUT"
+
   dashboard:
     name: Weekday dashboard synchronization
-    if: github.event.schedule == '30 11 * * 1-5' || github.event.schedule == '30 12 * * 1-5' || inputs.pipeline == 'dashboard'
+    needs: trusted_main
+    if: needs.trusted_main.result == 'success' && (github.event.schedule == '30 11 * * 1-5' || github.event.schedule == '30 12 * * 1-5' || (github.event_name == 'repository_dispatch' && github.event.client_payload.pipeline == 'dashboard'))
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
+      - name: Checkout verified main pipeline code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify checked-out main pipeline identity
+        env:
+          TRUSTED_MAIN_SHA: ${{ needs.trusted_main.outputs.release_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! [[ "$TRUSTED_MAIN_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::Trusted main did not provide a valid revision."
+            exit 1
+          fi
+          if [ "$(git rev-parse HEAD)" != "$TRUSTED_MAIN_SHA" ] || [ "$(git rev-parse refs/heads/main)" != "$TRUSTED_MAIN_SHA" ]; then
+            echo "::error::Checked-out pipeline code is not the exact authenticated refs/heads/main revision."
+            exit 1
+          fi
       - name: Select the DST-safe 07:30 Eastern run
-        id: cadence
+        id: dashboard_clock
         env:
           EVENT_NAME: ${{ github.event_name }}
           EVENT_SCHEDULE: ${{ github.event.schedule }}
         shell: bash
         run: |
           should_run=false
-          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+          if [[ "$EVENT_NAME" == "repository_dispatch" ]]; then
             should_run=true
           else
             eastern_offset="$(TZ=America/New_York date +%z)"
-            if [ "$EVENT_SCHEDULE" = "30 11 * * 1-5" ] && [ "$eastern_offset" = "-0400" ]; then
+            if [[ "$EVENT_SCHEDULE" == "30 11 * * 1-5" && "$eastern_offset" == "-0400" ]]; then
               should_run=true
-            elif [ "$EVENT_SCHEDULE" = "30 12 * * 1-5" ] && [ "$eastern_offset" = "-0500" ]; then
+            elif [[ "$EVENT_SCHEDULE" == "30 12 * * 1-5" && "$eastern_offset" == "-0500" ]]; then
               should_run=true
             fi
           fi
-          echo "run=$should_run" >> "$GITHUB_OUTPUT"
+          echo "should_run=$should_run" >> "$GITHUB_OUTPUT"
           echo "refresh_window=$(TZ=America/New_York date +%F)" >> "$GITHUB_OUTPUT"
-
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        if: steps.cadence.outputs.run == 'true'
-        with:
-          persist-credentials: false
-
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        if: steps.cadence.outputs.run == 'true'
+        if: steps.dashboard_clock.outputs.should_run == 'true'
         with:
           node-version: "24"
           cache: npm
-
-      - name: Verify production database target
-        if: steps.cadence.outputs.run == 'true'
-        run: node --experimental-strip-types scripts/assert-database-target.ts
-
+      - name: Require and verify production database target
+        if: steps.dashboard_clock.outputs.should_run == 'true'
+        env:
+          DATABASE_URL: ${{ github.ref == 'refs/heads/main' && secrets.DATABASE_URL || '' }}
+          EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+          # Scheduled writes must use the pooled application endpoint. The
+          # distinct production and Phase 2 validation migration endpoints are
+          # explicitly forbidden.
+          FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          FORBIDDEN_DATABASE_HOST_2: ${{ vars.PHASE2_MIGRATION_DATABASE_HOST }}
+        shell: bash
+        run: |
+          for name in EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for scheduled production pipeline access."
+              exit 1
+            fi
+          done
+          node --experimental-strip-types scripts/assert-database-target.ts
       - name: Install locked dependencies
-        if: steps.cadence.outputs.run == 'true'
+        id: install
+        if: steps.dashboard_clock.outputs.should_run == 'true'
         run: npm ci
-
-      - name: Require approved writes and every provider credential
-        if: steps.cadence.outputs.run == 'true'
+      - name: Require approved dashboard writes and provider configuration
+        if: steps.dashboard_clock.outputs.should_run == 'true'
         env:
           DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
-          SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
-          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          FRED_API_KEY: ${{ github.ref == 'refs/heads/main' && secrets.FRED_API_KEY || '' }}
+          EIA_API_KEY: ${{ github.ref == 'refs/heads/main' && secrets.EIA_API_KEY || '' }}
+          SAM_API_KEY: ${{ github.ref == 'refs/heads/main' && secrets.SAM_API_KEY || '' }}
+          SEC_USER_AGENT: ${{ github.ref == 'refs/heads/main' && secrets.SEC_USER_AGENT || '' }}
         shell: bash
         run: |
           if [ "$DASHBOARD_WRITES_ENABLED" != "true" ]; then
-            echo "::error::DASHBOARD_WRITES_ENABLED must remain false until a reviewed all-source dry-run passes."
+            echo "::error::DASHBOARD_WRITES_ENABLED must be true only after an all-source live dry-run has passed and its artifact has been reviewed."
             exit 1
           fi
           missing=0
@@ -106,30 +187,42 @@ jobs:
             fi
           done
           if [ "$missing" -ne 0 ]; then exit 1; fi
-
-      - name: Synchronize official sources with bounded retries
-        id: sync
-        if: steps.cadence.outputs.run == 'true'
+      - name: Synchronize dashboard with bounded transient retries
+        id: dashboard_sync
+        if: steps.dashboard_clock.outputs.should_run == 'true'
         env:
-          DASHBOARD_REFRESH_WINDOW: ${{ steps.cadence.outputs.refresh_window }}
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
-          SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
-          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          DATABASE_URL: ${{ github.ref == 'refs/heads/main' && secrets.DATABASE_URL || '' }}
+          EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+          FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          FORBIDDEN_DATABASE_HOST_2: ${{ vars.PHASE2_MIGRATION_DATABASE_HOST }}
+          DASHBOARD_REFRESH_WINDOW: ${{ steps.dashboard_clock.outputs.refresh_window }}
+          FRED_API_KEY: ${{ github.ref == 'refs/heads/main' && secrets.FRED_API_KEY || '' }}
+          EIA_API_KEY: ${{ github.ref == 'refs/heads/main' && secrets.EIA_API_KEY || '' }}
+          SAM_API_KEY: ${{ github.ref == 'refs/heads/main' && secrets.SAM_API_KEY || '' }}
+          SEC_USER_AGENT: ${{ github.ref == 'refs/heads/main' && secrets.SEC_USER_AGENT || '' }}
           SEC_WATCHLIST_CIKS: ${{ vars.SEC_WATCHLIST_CIKS }}
         run: node scripts/run-with-retry.mjs --attempts=3 -- npm run dashboard:sync
-
-      - name: Enforce freshness, rolling success, and missed-window thresholds
-        if: always() && steps.cadence.outputs.run == 'true' && steps.sync.outcome != 'skipped'
-        run: >-
-          npx tsx scripts/verify-dashboard-health.ts
-          --window-days=30
-          --max-age-hours=36
-          --min-success-rate=0.95
-          --output=tmp/dashboard-reliability.json
-
-      - name: Upload synchronization evidence
-        if: always() && steps.cadence.outputs.run == 'true'
+      - name: Enforce provider and rolling reliability thresholds
+        if: ${{ always() && steps.dashboard_clock.outputs.should_run == 'true' && steps.install.outcome == 'success' }}
+        env:
+          DATABASE_URL: ${{ github.ref == 'refs/heads/main' && secrets.DATABASE_URL || '' }}
+        shell: bash
+        run: |
+          args=(
+            --pipeline=DASHBOARD_SYNC
+            --freshness-schedule=dashboard-weekday
+            --expected-runs-per-week=5
+            --min-success-rate=0.95
+            --max-source-failure-rate=0.25
+            --output=tmp/dashboard-reliability.json
+          )
+          if [ -f tmp/dashboard-sync-summary.json ]; then
+            args+=(--summary=tmp/dashboard-sync-summary.json --summary-kind=dashboard)
+          fi
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts "${args[@]}"
+      - name: Upload run evidence
+        if: ${{ always() && steps.dashboard_clock.outputs.should_run == 'true' }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: dashboard-sync-${{ github.run_id }}
@@ -139,50 +232,246 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
 
-  verify:
-    name: Weekly dashboard freshness verification
-    if: github.event.schedule == '0 12 * * 0' || inputs.pipeline == 'verify'
+  news:
+    name: Evening news scan
+    needs: trusted_main
+    if: needs.trusted_main.result == 'success' && (github.event.schedule == '30 23 * * *' || (github.event_name == 'repository_dispatch' && github.event.client_payload.pipeline == 'news'))
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 90
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Checkout verified main pipeline code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: refs/heads/main
+          fetch-depth: 1
           persist-credentials: false
+      - name: Verify checked-out main pipeline identity
+        env:
+          TRUSTED_MAIN_SHA: ${{ needs.trusted_main.outputs.release_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! [[ "$TRUSTED_MAIN_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::Trusted main did not provide a valid revision."
+            exit 1
+          fi
+          if [ "$(git rev-parse HEAD)" != "$TRUSTED_MAIN_SHA" ] || [ "$(git rev-parse refs/heads/main)" != "$TRUSTED_MAIN_SHA" ]; then
+            echo "::error::Checked-out pipeline code is not the exact authenticated refs/heads/main revision."
+            exit 1
+          fi
+      - name: Pin the UTC news window across every retry
+        id: news_clock
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          scan_as_of="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            # Bind a delayed 23:30 UTC cron execution to its service day.
+            rotation_date="$(date -u -d '6 hours ago' +'%Y-%m-%d')"
+          else
+            rotation_date="${scan_as_of%%T*}"
+          fi
+          echo "scan_as_of=$scan_as_of" >> "$GITHUB_OUTPUT"
+          echo "rotation_date=$rotation_date" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "24"
           cache: npm
-      - name: Verify production database target
-        run: node --experimental-strip-types scripts/assert-database-target.ts
+      - name: Require and verify production database target
+        env:
+          DATABASE_URL: ${{ github.ref == 'refs/heads/main' && secrets.DATABASE_URL || '' }}
+          EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+          FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          FORBIDDEN_DATABASE_HOST_2: ${{ vars.PHASE2_MIGRATION_DATABASE_HOST }}
+        shell: bash
+        run: |
+          for name in EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for scheduled production pipeline access."
+              exit 1
+            fi
+          done
+          node --experimental-strip-types scripts/assert-database-target.ts
       - name: Install locked dependencies
+        id: install
         run: npm ci
-      - name: Verify every public metric and approved signal
-        run: npm run dashboard:verify -- --require-complete
-      - name: Verify recurring-run reliability
+      - name: Scan public sources with bounded transient retries
+        id: news_scan
+        env:
+          DATABASE_URL: ${{ github.ref == 'refs/heads/main' && secrets.DATABASE_URL || '' }}
+          EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+          FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          FORBIDDEN_DATABASE_HOST_2: ${{ vars.PHASE2_MIGRATION_DATABASE_HOST }}
+          NEWS_SCAN_AS_OF: ${{ steps.news_clock.outputs.scan_as_of }}
+          NEWS_SCAN_ROTATION_DATE: ${{ steps.news_clock.outputs.rotation_date }}
         run: >-
-          npx tsx scripts/verify-dashboard-health.ts
-          --window-days=30
-          --max-age-hours=80
-          --min-success-rate=0.95
-          --output=tmp/weekly-dashboard-reliability.json
+          node scripts/run-with-retry.mjs --attempts=3 --
+          npm run news:scan -- --max-targets=200 --max-pages=750
+      - name: Enforce scan and rolling reliability thresholds
+        if: always() && steps.install.outcome == 'success'
+        env:
+          DATABASE_URL: ${{ github.ref == 'refs/heads/main' && secrets.DATABASE_URL || '' }}
+        shell: bash
+        run: |
+          args=(
+            --pipeline=NEWS_SCAN
+            --max-age-hours=36
+            --expected-runs-per-week=7
+            --min-success-rate=0.95
+            --max-source-failure-rate=0.25
+            --output=tmp/news-reliability.json
+          )
+          if [ -f tmp/news-scan-summary.json ]; then
+            args+=(--summary=tmp/news-scan-summary.json --summary-kind=news)
+          fi
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts "${args[@]}"
+      - name: Upload run evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: news-scan-${{ github.run_id }}
+          path: |
+            tmp/news-scan-summary.json
+            tmp/news-reliability.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  verify:
+    name: Weekly data, citation, and freshness verification
+    needs: trusted_main
+    if: needs.trusted_main.result == 'success' && (github.event.schedule == '0 12 * * 0' || (github.event_name == 'repository_dispatch' && github.event.client_payload.pipeline == 'verify'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout verified main pipeline code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify checked-out main pipeline identity
+        env:
+          TRUSTED_MAIN_SHA: ${{ needs.trusted_main.outputs.release_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! [[ "$TRUSTED_MAIN_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::Trusted main did not provide a valid revision."
+            exit 1
+          fi
+          if [ "$(git rev-parse HEAD)" != "$TRUSTED_MAIN_SHA" ] || [ "$(git rev-parse refs/heads/main)" != "$TRUSTED_MAIN_SHA" ]; then
+            echo "::error::Checked-out pipeline code is not the exact authenticated refs/heads/main revision."
+            exit 1
+          fi
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+      - name: Require and verify production database target
+        env:
+          DATABASE_URL: ${{ github.ref == 'refs/heads/main' && secrets.DATABASE_URL || '' }}
+          EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+          FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          FORBIDDEN_DATABASE_HOST_2: ${{ vars.PHASE2_MIGRATION_DATABASE_HOST }}
+        shell: bash
+        run: |
+          for name in EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for scheduled production pipeline access."
+              exit 1
+            fi
+          done
+          node --experimental-strip-types scripts/assert-database-target.ts
+      - name: Install locked dependencies
+        id: install
+        run: npm ci
+      - name: Verify latest weekly email and source links
+        if: steps.install.outcome == 'success'
+        shell: bash
+        run: |
+          mkdir -p tmp/weekly-verification
+          set -o pipefail
+          node scripts/run-with-retry.mjs --attempts=3 -- npm run validate-weekly-email -- --check-links 2>&1 | tee tmp/weekly-verification/email.log
+      - name: Verify database integrity and source coverage
+        if: always() && steps.install.outcome == 'success'
+        env:
+          DATABASE_URL: ${{ github.ref == 'refs/heads/main' && secrets.DATABASE_URL || '' }}
+        shell: bash
+        run: |
+          mkdir -p tmp/weekly-verification
+          set -o pipefail
+          overall=0
+          set +e
+          npm run db:verify 2>&1 | tee tmp/weekly-verification/database.log
+          if [ "${PIPESTATUS[0]}" -ne 0 ]; then overall=1; fi
+          npx tsx scripts/source-coverage-report.ts --require-complete --output=tmp/weekly-verification/source-coverage.json
+          if [ "$?" -ne 0 ]; then overall=1; fi
+          npx tsx scripts/report-company-merge-candidates.ts --published-only --require-clean > tmp/weekly-verification/company-canonical-review.md
+          if [ "$?" -ne 0 ]; then overall=1; fi
+          set -e
+          exit "$overall"
+      - name: Verify dashboard and news freshness contracts
+        if: always() && steps.install.outcome == 'success'
+        env:
+          DATABASE_URL: ${{ github.ref == 'refs/heads/main' && secrets.DATABASE_URL || '' }}
+        shell: bash
+        run: |
+          mkdir -p tmp/weekly-verification
+          overall=0
+          set +e
+          npm run dashboard:verify -- --require-complete
+          if [ "$?" -ne 0 ]; then overall=1; fi
+          if [ -f tmp/dashboard-verify-summary.json ]; then
+            cp tmp/dashboard-verify-summary.json tmp/weekly-verification/dashboard-source-verification.json
+          fi
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --freshness-schedule=dashboard-weekday --expected-runs-per-week=5 --min-success-rate=0.95 --output=tmp/weekly-verification/dashboard-reliability.json
+          if [ "$?" -ne 0 ]; then overall=1; fi
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --max-source-failure-rate=0.25 --output=tmp/weekly-verification/news-reliability.json
+          if [ "$?" -ne 0 ]; then overall=1; fi
+          set -e
+          exit "$overall"
       - name: Upload weekly verification evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: dashboard-weekly-verification-${{ github.run_id }}
-          path: |
-            tmp/dashboard-verify-summary.json
-            tmp/weekly-dashboard-reliability.json
+          name: weekly-verification-${{ github.run_id }}
+          path: tmp/weekly-verification/
           if-no-files-found: warn
           retention-days: 30
 
   source-audit:
-    name: Monthly all-source live dry-run
-    if: github.event.schedule == '0 12 1 * *' || github.event.schedule == '0 13 1 * *' || inputs.pipeline == 'source-audit'
+    name: Monthly dependency and source-coverage audit
+    needs: trusted_main
+    if: needs.trusted_main.result == 'success' && (github.event.schedule == '0 12 1 * *' || github.event.schedule == '0 13 1 * *' || (github.event_name == 'repository_dispatch' && github.event.client_payload.pipeline == 'source-audit'))
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
-      - name: Select the DST-safe 08:00 Eastern run
+      - name: Checkout verified main pipeline code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Verify checked-out main pipeline identity
+        env:
+          TRUSTED_MAIN_SHA: ${{ needs.trusted_main.outputs.release_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! [[ "$TRUSTED_MAIN_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::Trusted main did not provide a valid revision."
+            exit 1
+          fi
+          if [ "$(git rev-parse HEAD)" != "$TRUSTED_MAIN_SHA" ] || [ "$(git rev-parse refs/heads/main)" != "$TRUSTED_MAIN_SHA" ]; then
+            echo "::error::Checked-out pipeline code is not the exact authenticated refs/heads/main revision."
+            exit 1
+          fi
+      - name: Enforce first-of-month 08:00 America/New_York cadence
         id: cadence
         env:
           EVENT_NAME: ${{ github.event_name }}
@@ -190,7 +479,7 @@ jobs:
         shell: bash
         run: |
           should_run=false
-          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+          if [ "$EVENT_NAME" = "repository_dispatch" ]; then
             should_run=true
           else
             eastern_offset="$(TZ=America/New_York date +%z)"
@@ -202,59 +491,92 @@ jobs:
           fi
           echo "run=$should_run" >> "$GITHUB_OUTPUT"
           echo "refresh_window=$(TZ=America/New_York date +%F)" >> "$GITHUB_OUTPUT"
-
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        if: steps.cadence.outputs.run == 'true'
-        with:
-          persist-credentials: false
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         if: steps.cadence.outputs.run == 'true'
         with:
           node-version: "24"
           cache: npm
-      - name: Verify read-only database target
-        if: steps.cadence.outputs.run == 'true'
-        run: node --experimental-strip-types scripts/assert-database-target.ts
-      - name: Install locked dependencies
-        if: steps.cadence.outputs.run == 'true'
-        run: npm ci
-      - name: Require every provider credential
+      - name: Require and verify production database target
+        id: target_guard
         if: steps.cadence.outputs.run == 'true'
         env:
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
-          SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
-          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          DATABASE_URL: ${{ github.ref == 'refs/heads/main' && secrets.DATABASE_URL || '' }}
+          EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+          FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          FORBIDDEN_DATABASE_HOST_2: ${{ vars.PHASE2_MIGRATION_DATABASE_HOST }}
         shell: bash
         run: |
-          missing=0
-          for name in FRED_API_KEY EIA_API_KEY SAM_API_KEY SEC_USER_AGENT; do
+          for name in EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2; do
             if [ -z "${!name:-}" ]; then
-              echo "::error::$name is required for the all-source audit."
-              missing=1
+              echo "::error::$name is required for scheduled production pipeline access."
+              exit 1
             fi
           done
-          if [ "$missing" -ne 0 ]; then exit 1; fi
-      - name: Exercise every source without writes
+          node --experimental-strip-types scripts/assert-database-target.ts
+      - name: Install locked dependencies
+        id: install
+        if: steps.cadence.outputs.run == 'true'
+        run: npm ci
+      - name: Live dry-run all dashboard sources
         if: steps.cadence.outputs.run == 'true'
         env:
+          DATABASE_URL: ${{ github.ref == 'refs/heads/main' && secrets.DATABASE_URL || '' }}
           DASHBOARD_REFRESH_WINDOW: ${{ steps.cadence.outputs.refresh_window }}
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
-          SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
-          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          FRED_API_KEY: ${{ github.ref == 'refs/heads/main' && secrets.FRED_API_KEY || '' }}
+          EIA_API_KEY: ${{ github.ref == 'refs/heads/main' && secrets.EIA_API_KEY || '' }}
+          SAM_API_KEY: ${{ github.ref == 'refs/heads/main' && secrets.SAM_API_KEY || '' }}
+          SEC_USER_AGENT: ${{ github.ref == 'refs/heads/main' && secrets.SEC_USER_AGENT || '' }}
           SEC_WATCHLIST_CIKS: ${{ vars.SEC_WATCHLIST_CIKS }}
-        run: node scripts/run-with-retry.mjs --attempts=3 -- npm run dashboard:sync:dry-run
-      - name: Verify checked-in source metadata
-        if: steps.cadence.outputs.run == 'true'
-        run: npx vitest run src/modules/dashboard/source-registry.test.ts
-      # Do not run --require-complete here: this audit intentionally precedes
-      # first-write enablement during rollout.
-      - name: Upload source-audit evidence
+        shell: bash
+        run: |
+          mkdir -p tmp/monthly-audit
+          set -o pipefail
+          set +e
+          node scripts/run-with-retry.mjs --attempts=3 -- npm run dashboard:sync:dry-run 2>&1 | tee tmp/monthly-audit/dashboard-live-dry-run.log
+          dry_run_status=${PIPESTATUS[0]}
+          set -e
+          if [ -f tmp/dashboard-sync-summary.json ]; then
+            cp tmp/dashboard-sync-summary.json tmp/monthly-audit/dashboard-live-dry-run.json
+          fi
+          exit "$dry_run_status"
+      - name: Audit production dependencies
+        if: always() && steps.cadence.outputs.run == 'true' && steps.target_guard.outcome == 'success' && steps.install.outcome == 'success'
+        shell: bash
+        run: |
+          mkdir -p tmp/monthly-audit
+          set -o pipefail
+          node scripts/run-with-retry.mjs --attempts=3 -- npm run audit:prod 2>&1 | tee tmp/monthly-audit/dependency-audit.log
+      - name: Audit database and source coverage
+        if: always() && steps.cadence.outputs.run == 'true' && steps.target_guard.outcome == 'success' && steps.install.outcome == 'success'
+        env:
+          DATABASE_URL: ${{ github.ref == 'refs/heads/main' && secrets.DATABASE_URL || '' }}
+        shell: bash
+        run: |
+          mkdir -p tmp/monthly-audit
+          set -o pipefail
+          overall=0
+          set +e
+          npm run db:verify 2>&1 | tee tmp/monthly-audit/database.log
+          if [ "${PIPESTATUS[0]}" -ne 0 ]; then overall=1; fi
+          npx tsx scripts/source-coverage-report.ts --require-complete --output=tmp/monthly-audit/source-coverage.json
+          if [ "$?" -ne 0 ]; then overall=1; fi
+          npm run dashboard:verify -- --require-complete
+          if [ "$?" -ne 0 ]; then overall=1; fi
+          if [ -f tmp/dashboard-verify-summary.json ]; then
+            cp tmp/dashboard-verify-summary.json tmp/monthly-audit/dashboard-source-audit.json
+          fi
+          npm run validate-portfolios 2>&1 | tee tmp/monthly-audit/portfolio-validation.log
+          if [ "${PIPESTATUS[0]}" -ne 0 ]; then overall=1; fi
+          ./node_modules/.bin/tsx scripts/audit-portfolio-duplicates.ts 2>&1 | tee tmp/monthly-audit/seed-duplicate-report.log
+          if [ "${PIPESTATUS[0]}" -ne 0 ]; then overall=1; fi
+          set -e
+          exit "$overall"
+      - name: Upload monthly audit evidence
         if: always() && steps.cadence.outputs.run == 'true'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: dashboard-source-audit-${{ github.run_id }}
-          path: tmp/dashboard-sync-summary.json
-          if-no-files-found: error
+          name: monthly-source-audit-${{ github.run_id }}
+          path: tmp/monthly-audit/
+          if-no-files-found: warn
           retention-days: 90

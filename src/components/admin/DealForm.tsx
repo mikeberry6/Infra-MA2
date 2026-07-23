@@ -36,6 +36,12 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
   const [seller, setSeller] = useState(
     (initialData?.seller ?? "").split(" / ").filter((s) => s && s !== "N/A").join("\n"),
   );
+  const [sellerDisclosureStatus, setSellerDisclosureStatus] = useState<string>(
+    initialData?.sellerDisclosureStatus ?? "DISCLOSED",
+  );
+  const [sellerDisclosureReason, setSellerDisclosureReason] = useState(
+    initialData?.sellerDisclosureReason ?? "",
+  );
   const [sector, setSector] = useState(initialData?.sector ?? DEAL_SECTORS[0]);
   const [region, setRegion] = useState(initialData?.region ?? DEAL_REGIONS[0]);
   const [categories, setCategories] = useState<string[]>(initialData?.category ?? []);
@@ -82,6 +88,8 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
     const sellers = cleanLines(seller);
     formData.set("buyer", buyers.length ? buyers.join(" / ") : "N/A");
     formData.set("seller", sellers.length ? sellers.join(" / ") : "N/A");
+    formData.set("sellerDisclosureStatus", sellers.length ? "DISCLOSED" : sellerDisclosureStatus);
+    formData.set("sellerDisclosureReason", sellers.length ? "" : sellerDisclosureReason);
     // Also send the split list so the action can create one DealParticipant
     // per party rather than treating the joined string as a single org name.
     for (const b of buyers) formData.append("buyers", b);
@@ -146,6 +154,37 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
           onChange={(e) => setTitle(e.target.value)}
           className={inputClass}
         />
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label className={labelClass}>Seller Disclosure *</label>
+          <select
+            required
+            value={seller.trim() ? "DISCLOSED" : sellerDisclosureStatus}
+            onChange={(event) => setSellerDisclosureStatus(event.target.value)}
+            disabled={Boolean(seller.trim())}
+            className={inputClass}
+          >
+            <option value="DISCLOSED">Seller named above</option>
+            <option value="NOT_DISCLOSED">Seller not publicly disclosed</option>
+            <option value="NOT_APPLICABLE">No seller / not applicable</option>
+            <option value="LEGACY_UNREVIEWED" disabled>Legacy record — review required</option>
+          </select>
+        </div>
+        <div>
+          <label className={labelClass}>Seller Disclosure Reason</label>
+          <input
+            type="text"
+            required={!seller.trim()}
+            minLength={10}
+            value={sellerDisclosureReason}
+            onChange={(event) => setSellerDisclosureReason(event.target.value)}
+            disabled={Boolean(seller.trim())}
+            placeholder="Explain why seller information is absent"
+            className={inputClass}
+          />
+        </div>
       </div>
 
       {/* Target + Buyer + Seller */}
@@ -387,7 +426,7 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
       {/* Source */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className={labelClass}>Source Name</label>
+          <label className={labelClass}>Primary Source Name</label>
           <input
             type="text"
             value={sourceName}
@@ -396,7 +435,7 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
           />
         </div>
         <div>
-          <label className={labelClass}>Source URL</label>
+          <label className={labelClass}>Primary Source URL</label>
           <input
             type="url"
             value={sourceUrl}

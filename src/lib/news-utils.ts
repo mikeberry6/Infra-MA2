@@ -57,6 +57,10 @@ const MANAGER_SUFFIXES = [
   "management",
 ];
 
+const KNOWN_COMPANY_ALIASES: Record<string, string[]> = {
+  iac: ["International Aerospace Coatings"],
+};
+
 export interface NewsAlias {
   term: string;
   confidence: NewsConfidence;
@@ -105,19 +109,27 @@ export function textContainsNewsTerm(haystack: string, needle: string): boolean 
   return normalizedHaystack.includes(` ${normalizedNeedle} `);
 }
 
-export function companyAliases(name: string): NewsAlias[] {
+export function companyAliases(name: string, explicitAliases: string[] = []): NewsAlias[] {
   const aliases = new Map<string, NewsAlias>();
   const add = (term: string, confidence: NewsConfidence, reason: string) => {
     const normalized = normalizeNewsText(term);
-    if (!isUsefulNewsTerm(normalized)) return;
+    const shortExactAcronym = /^[A-Z0-9]{2,4}$/.test(term.trim());
+    if (!isUsefulNewsTerm(normalized) && !shortExactAcronym) return;
     if (!aliases.has(normalized)) {
       aliases.set(normalized, { term: normalized, confidence, reason });
     }
   };
 
   add(name, "High", "Exact PortCo name");
+  add(collapsedDottedAcronyms(name), "High", "Collapsed acronym PortCo name");
   for (const key of companyDedupKeys(name)) {
     add(key, "High", "Normalized PortCo name");
+  }
+  for (const alias of explicitAliases) {
+    add(alias, "High", "Known PortCo alias");
+  }
+  for (const alias of KNOWN_COMPANY_ALIASES[normalizeNewsText(name)] ?? []) {
+    add(alias, "High", "Known PortCo alias");
   }
 
   return Array.from(aliases.values());
@@ -134,8 +146,10 @@ export function managerAliases(name: string, explicitAliases: string[] = []): Ne
   };
 
   add(name, "High", "Exact investment firm name");
+  add(collapsedDottedAcronyms(name), "High", "Collapsed acronym investment firm name");
   for (const alias of explicitAliases) {
     add(alias, "High", "Known organization alias");
+    add(collapsedDottedAcronyms(alias), "High", "Collapsed acronym organization alias");
   }
 
   const normalized = normalizeNewsText(name);
@@ -149,10 +163,15 @@ export function managerAliases(name: string, explicitAliases: string[] = []): Ne
 }
 
 export function fundAliases(name: string): NewsAlias[] {
-  const normalized = normalizeNewsText(name);
-  return isUsefulNewsTerm(normalized)
-    ? [{ term: normalized, confidence: "High", reason: "Exact fund vehicle name" }]
-    : [];
+  const aliases = new Map<string, NewsAlias>();
+  const add = (term: string, reason: string) => {
+    const normalized = normalizeNewsText(term);
+    if (!isUsefulNewsTerm(normalized) || aliases.has(normalized)) return;
+    aliases.set(normalized, { term: normalized, confidence: "High", reason });
+  };
+  add(name, "Exact fund vehicle name");
+  add(collapsedDottedAcronyms(name), "Collapsed acronym fund vehicle name");
+  return Array.from(aliases.values());
 }
 
 export function matchNewsCandidates(
@@ -164,7 +183,7 @@ export function matchNewsCandidates(
 
   for (const candidate of candidates) {
     for (const alias of candidate.aliases) {
-      if (!textContainsNewsTerm(text, alias.term)) continue;
+      if (!textContainsAliasTerm(text, alias.term)) continue;
 
       const key = `${candidate.type}:${candidate.id}`;
       const existing = matches.get(key);
@@ -220,4 +239,14 @@ function typeRank(type: NewsMentionType): number {
   if (type === "Investment Firm") return 1;
   if (type === "Fund") return 2;
   return 3;
+}
+
+function textContainsAliasTerm(haystack: string, normalizedNeedle: string): boolean {
+  if (!normalizedNeedle) return false;
+  const normalizedHaystack = ` ${normalizeNewsText(haystack)} `;
+  return normalizedHaystack.includes(` ${normalizedNeedle} `);
+}
+
+function collapsedDottedAcronyms(value: string): string {
+  return value.replace(/(?:\b[A-Za-z]\.){2,}/g, (match) => match.replace(/\./g, ""));
 }

@@ -4,6 +4,8 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import { companies } from "../prisma/seed-data/companies";
 import type { PortCoMilestone } from "../prisma/seed-data/portco-types";
 import { MILESTONE_CATEGORY_MAP } from "../src/modules/shared/enum-maps";
+import { assertMaintenanceMutationContext } from "../src/lib/database-target";
+import { ACTIVE_COMPANY_WHERE } from "../src/modules/companies/retirement";
 
 type SeedCompany = (typeof companies)[number];
 type DbCompany = Awaited<ReturnType<typeof getPublishedCompanies>>[number];
@@ -22,6 +24,7 @@ if (!process.env.DATABASE_URL) {
   console.error("DATABASE_URL is not set.");
   process.exit(1);
 }
+const mutationContext = isApply ? assertMaintenanceMutationContext() : undefined;
 
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
 const prisma = new PrismaClient({ adapter });
@@ -75,7 +78,7 @@ function exactDuplicateExtraRows(
 
 async function getPublishedCompanies() {
   return prisma.company.findMany({
-    where: { status: "PUBLISHED" },
+    where: { status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
     select: {
       id: true,
       name: true,
@@ -144,33 +147,70 @@ async function main() {
     return;
   }
 
-  let deletedRows = 0;
-  let insertedRows = 0;
+  const auditStart = await prisma.auditEvent.create({
+    data: {
+      actorId: null,
+      entityType: "MaintenanceRun",
+      action: "MILESTONE_RECONCILIATION_STARTED",
+      changes: {
+        matchedCompanies: matched.length,
+        dbOnlyCompanies: dbOnly.length,
+        preserveDbOnly,
+      },
+      metadata: {
+        source: "scripts/reconcile-portfolio-milestones.ts",
+        ...mutationContext!,
+      },
+    },
+    select: { id: true },
+  });
 
-  for (const { seedCompany, dbCompany } of matched) {
-    const deleted = await prisma.milestone.deleteMany({ where: { companyId: dbCompany.id } });
-    deletedRows += deleted.count;
+  const { deletedRows, insertedRows } = await prisma.$transaction(async (tx) => {
+    let deletedRows = 0;
+    let insertedRows = 0;
 
-    const milestones = seedCompany.milestones ?? [];
-    if (!milestones.length) continue;
-    const created = await prisma.milestone.createMany({
-      data: milestones.map((milestone) => ({
-        companyId: dbCompany.id,
-        date: milestone.date,
-        event: milestone.event,
-        category: categoryFor(milestone),
-        sortDate: parseMilestoneDateForSort(milestone.date),
-      })),
-    });
-    insertedRows += created.count;
-  }
-
-  if (!preserveDbOnly) {
-    for (const company of dbOnly) {
-      const deleted = await prisma.milestone.deleteMany({ where: { companyId: company.id } });
+    for (const { seedCompany, dbCompany } of matched) {
+      const deleted = await tx.milestone.deleteMany({ where: { companyId: dbCompany.id } });
       deletedRows += deleted.count;
+
+      const milestones = seedCompany.milestones ?? [];
+      if (!milestones.length) continue;
+      const created = await tx.milestone.createMany({
+        data: milestones.map((milestone) => ({
+          companyId: dbCompany.id,
+          date: milestone.date,
+          event: milestone.event,
+          category: categoryFor(milestone),
+          sortDate: parseMilestoneDateForSort(milestone.date),
+        })),
+      });
+      insertedRows += created.count;
     }
-  }
+
+    if (!preserveDbOnly) {
+      for (const company of dbOnly) {
+        const deleted = await tx.milestone.deleteMany({ where: { companyId: company.id } });
+        deletedRows += deleted.count;
+      }
+    }
+
+    await tx.auditEvent.create({
+      data: {
+        actorId: null,
+        entityType: "MaintenanceRun",
+        entityId: auditStart.id,
+        action: "MILESTONE_RECONCILIATION_COMPLETED",
+        changes: { deletedRows, insertedRows },
+        metadata: {
+          source: "scripts/reconcile-portfolio-milestones.ts",
+          startedAuditEventId: auditStart.id,
+          ...mutationContext!,
+        },
+      },
+    });
+
+    return { deletedRows, insertedRows };
+  }, { isolationLevel: "Serializable", maxWait: 15_000, timeout: 120_000 });
 
   console.log("Applied reconciliation:");
   console.log(`  deleted milestone rows: ${deletedRows}`);
@@ -186,8 +226,7 @@ async function main() {
 }
 
 main()
-  .catch((error) => {
-    console.error(error);
+  .catch(() => {
     process.exitCode = 1;
   })
   .finally(async () => {

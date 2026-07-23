@@ -2,7 +2,7 @@ import "dotenv/config";
 import bcrypt from "bcryptjs";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
-import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
+import { assertMaintenanceMutationContext } from "../src/lib/database-target";
 
 const email = process.env.ADMIN_EMAIL?.trim().toLowerCase();
 const password = process.env.ADMIN_PASSWORD ?? "";
@@ -25,15 +25,49 @@ async function main() {
   if (!email || !email.includes("@")) throw new Error("ADMIN_EMAIL must be a valid email address.");
   const passwordError = validateAdminPassword(password);
   if (passwordError) throw new Error(passwordError);
-  assertMutationDatabaseTargetFromEnv();
+  const context = assertMaintenanceMutationContext();
 
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
   try {
     const passwordHash = await bcrypt.hash(password, 12);
-    await prisma.user.upsert({
-      where: { email },
-      update: { name, passwordHash, role: "ADMIN" },
-      create: { email, name, passwordHash, role: "ADMIN" },
+    await prisma.$transaction(async (tx) => {
+      const existing = await tx.user.findUnique({
+        where: { email },
+        select: { id: true },
+      });
+      const user = existing
+        ? await tx.user.update({
+            where: { id: existing.id },
+            data: { name, passwordHash, role: "ADMIN" },
+            select: { id: true },
+          })
+        : await tx.user.create({
+            data: { email, name, passwordHash, role: "ADMIN" },
+            select: { id: true },
+          });
+
+      await tx.auditEvent.create({
+        data: {
+          actorId: null,
+          entityType: "User",
+          entityId: user.id,
+          action: existing ? "ADMIN_CREDENTIAL_ROTATION" : "ADMIN_BOOTSTRAP",
+          changes: {
+            changedFields: existing
+              ? ["name", "passwordHash", "role"]
+              : ["record"],
+          },
+          metadata: {
+            executionChannel: "create-admin-cli",
+            targetRole: "ADMIN",
+            credentialMaterialRecorded: false,
+            targetDatabase: context.targetDatabase,
+            releaseSha: context.releaseSha,
+            reviewedBy: context.reviewedBy,
+            reason: context.reason,
+          },
+        },
+      });
     });
     console.log("Administrator account created or rotated.");
   } finally {

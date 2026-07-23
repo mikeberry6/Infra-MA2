@@ -1,6 +1,6 @@
 import type { Prisma } from "@/generated/prisma/client";
 
-export const DASHBOARD_SIGNAL_REVIEW_PAGE_SIZE = 50;
+export const DASHBOARD_SIGNAL_REVIEW_PAGE_SIZE = 25;
 
 export function dashboardSignalReviewQueueWhere(
   contentHashField: Prisma.StringFieldRefInput<"DashboardSignal">,

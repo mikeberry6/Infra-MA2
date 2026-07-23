@@ -1,4 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
+import { DASHBOARD_METHODOLOGY_VERSIONS } from "@/modules/dashboard/methodology-cutover";
 import { usaSpendingProvider } from "@/modules/dashboard/providers/usaspending";
 
 function jsonResponse(value: unknown, init?: ResponseInit): Response {
@@ -61,8 +62,22 @@ describe("USAspending provider fixtures", () => {
     const result = await usaSpendingProvider(new Date("2026-07-22T11:30:00.000Z")).fetch();
 
     expect(result.observations).toEqual(expect.arrayContaining([
-      expect.objectContaining({ metricId: "usaspending_infra_awards_30d", value: 35, unit: "count" }),
-      expect.objectContaining({ metricId: "usaspending_infra_obligations_30d", value: 2.5, unit: "$bn" }),
+      expect.objectContaining({
+        metricId: "usaspending_infra_awards_30d",
+        value: 35,
+        unit: "count",
+        metadata: expect.objectContaining({
+          methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.usaSpendingAwards30d,
+        }),
+      }),
+      expect.objectContaining({
+        metricId: "usaspending_infra_obligations_30d",
+        value: 2.5,
+        unit: "$bn",
+        metadata: expect.objectContaining({
+          methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.usaSpendingObligations30d,
+        }),
+      }),
     ]));
     expect(result.signals).toHaveLength(4);
     expect(result.signals?.find((signal) => signal.signalKey === "usaspending-LOAN")).toMatchObject({

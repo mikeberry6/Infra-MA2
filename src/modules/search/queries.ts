@@ -5,6 +5,7 @@ import {
   COMPANY_SECTOR_DISPLAY,
   COMPANY_REGION_DISPLAY,
 } from "@/modules/shared/enum-maps";
+import { ACTIVE_COMPANY_WHERE } from "@/modules/companies/retirement";
 
 export interface SearchResult {
   type: "deal" | "company" | "fund";
@@ -40,6 +41,7 @@ export async function searchAll(query: string, limit = 20): Promise<SearchResult
     prisma.company.findMany({
       where: {
         status: "PUBLISHED",
+        ...ACTIVE_COMPANY_WHERE,
         OR: [
           { name: { contains: query, mode: "insensitive" } },
           { description: { contains: query, mode: "insensitive" } },

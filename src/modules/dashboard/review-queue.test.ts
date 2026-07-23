@@ -27,11 +27,13 @@ describe("dashboard signal review queue", () => {
     });
     expect(dashboardSignalReviewPagination("2", 125)).toEqual({
       page: 2,
-      totalPages: 3,
-      skip: 50,
-      take: 50,
+      totalPages: Math.ceil(125 / DASHBOARD_SIGNAL_REVIEW_PAGE_SIZE),
+      skip: DASHBOARD_SIGNAL_REVIEW_PAGE_SIZE,
+      take: DASHBOARD_SIGNAL_REVIEW_PAGE_SIZE,
     });
-    expect(dashboardSignalReviewPagination("999", 125).page).toBe(3);
+    expect(dashboardSignalReviewPagination("999", 125).page).toBe(
+      Math.ceil(125 / DASHBOARD_SIGNAL_REVIEW_PAGE_SIZE),
+    );
     expect(dashboardSignalReviewPagination("-1", 125).page).toBe(1);
   });
 });

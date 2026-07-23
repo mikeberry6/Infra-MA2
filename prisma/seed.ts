@@ -27,6 +27,7 @@ import {
   inferSourceType,
   getSourceDisplayLabel,
 } from "../src/lib/source-utils";
+import { companyDedupKeys } from "../src/lib/company-key";
 import type {
   OrgType,
   FundStrategy,
@@ -263,6 +264,37 @@ async function main() {
   console.log("Step 4: Creating companies...");
   const companyIdMap = new Map<string, string>(); // "name|country" -> DB id
   let companyCount = 0;
+  const existingRedirects = await prisma.companyRedirect.findMany({
+    select: {
+      companyId: true,
+      retiredCompany: { select: { name: true, country: true } },
+    },
+  });
+  const canonicalSeedMode = existingRedirects.length > 0;
+  const activeCompanies = canonicalSeedMode
+    ? await prisma.company.findMany({
+        where: { retirement: { is: null } },
+        select: { id: true, name: true },
+      })
+    : [];
+  const activeCompanyIds = new Set(activeCompanies.map((company) => company.id));
+  const activeIdsByCanonicalKey = new Map<string, Set<string>>();
+  for (const company of activeCompanies) {
+    for (const key of companyDedupKeys(company.name)) {
+      const ids = activeIdsByCanonicalKey.get(key) ?? new Set<string>();
+      ids.add(company.id);
+      activeIdsByCanonicalKey.set(key, ids);
+    }
+  }
+  const redirectByExactSeedKey = new Map(
+    existingRedirects.map((redirect) => [
+      `${redirect.retiredCompany.name}|${redirect.retiredCompany.country}`,
+      redirect.companyId,
+    ]),
+  );
+  if (existingRedirects.some((redirect) => !activeCompanyIds.has(redirect.companyId))) {
+    throw new Error("CompanyRedirect points to a missing or retired canonical company; refusing to seed.");
+  }
 
   for (const pc of portcos) {
     const sector = safeEnum(COMPANY_SECTOR_MAP, pc.sector, "UTILITIES" as CompanySector);
@@ -273,6 +305,24 @@ async function main() {
 
     // Only create the Company record once per (name, country)
     if (companyIdMap.has(companyKey)) continue;
+
+    if (canonicalSeedMode) {
+      const candidates = new Set<string>();
+      const redirectedId = redirectByExactSeedKey.get(companyKey);
+      if (redirectedId) candidates.add(redirectedId);
+      for (const key of companyDedupKeys(pc.name)) {
+        for (const id of activeIdsByCanonicalKey.get(key) ?? []) candidates.add(id);
+      }
+      if (candidates.size !== 1) {
+        throw new Error(
+          candidates.size === 0
+            ? `Company seed row ${companyKey} has no reviewed canonical destination after CompanyRedirect state exists.`
+            : `Company seed row ${companyKey} matches multiple active canonical companies after CompanyRedirect state exists.`,
+        );
+      }
+      companyIdMap.set(companyKey, candidates.values().next().value!);
+      continue;
+    }
 
     try {
       const company = await prisma.company.create({
@@ -507,7 +557,12 @@ async function main() {
         valuationMultiple: deal.valuationMultiple,
         fundVehicle: deal.fundVehicle,
         keyHighlights: deal.keyHighlights || [],
-        status: "PUBLISHED",
+        sellerDisclosureStatus: splitParticipants(deal.seller).length > 0
+          ? "DISCLOSED"
+          : "LEGACY_UNREVIEWED",
+        // Publication requires a traceable source. Source-less seed records
+        // remain reviewable in admin but never enter the public database.
+        status: deal.sourceUrl ? "PUBLISHED" : "DRAFT",
       },
     });
 
@@ -667,7 +722,7 @@ async function main() {
     const sourceId = await getOrCreateSource(deal.sourceUrl, deal.sourceName || "", "ARTICLE");
     try {
       await prisma.citation.create({
-        data: { sourceId, dealId },
+        data: { sourceId, dealId, isPrimary: true },
       });
       citationCount++;
     } catch {
@@ -684,7 +739,7 @@ async function main() {
 
     const { kept: keptSources } = dedupeExactPortCoSources(pc.sources);
 
-    for (const src of keptSources) {
+    for (const [sourceIndex, src] of keptSources.entries()) {
       if (!src.url) continue;
       const sourceType = inferSourceType(src) as SourceType;
       const purpose = inferCitationPurpose(src) as CitationPurpose;
@@ -692,7 +747,7 @@ async function main() {
       const sourceId = await getOrCreateSource(src.url, src.label, sourceType);
       try {
         await prisma.citation.create({
-          data: { sourceId, companyId, purpose, evidenceLabel },
+          data: { sourceId, companyId, purpose, evidenceLabel, isPrimary: sourceIndex === 0 },
         });
         citationCount++;
       } catch {

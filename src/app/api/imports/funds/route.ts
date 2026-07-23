@@ -18,9 +18,9 @@ import type {
   FundSectorEnum,
   FundRegionEnum,
 } from "@/generated/prisma/client";
+import { commitImport } from "@/modules/imports/commit";
 
 const MAX_IMPORT_ROWS = 1000;
-const IMPORT_CHUNK_SIZE = 50;
 
 type FundImportRow = FundInput & {
   fundId: string;
@@ -31,14 +31,6 @@ type ImportResult = { fundName?: string; dbId?: string; status?: string; error?:
 function stringValue(value: unknown): string {
   if (value == null) return "";
   return typeof value === "string" ? value : String(value);
-}
-
-function chunkRows<T>(rows: T[]): T[][] {
-  const chunks: T[][] = [];
-  for (let i = 0; i < rows.length; i += IMPORT_CHUNK_SIZE) {
-    chunks.push(rows.slice(i, i + IMPORT_CHUNK_SIZE));
-  }
-  return chunks;
 }
 
 /**
@@ -83,6 +75,7 @@ function validateFundRows(funds: Record<string, unknown>[]): { validRows: FundIm
       sectors: toArray(fund.sectors),
       regions: toArray(fund.regions),
       sourceUrls: toArray(fund.sourceUrls),
+      primarySourceUrl: stringValue(fund.primarySourceUrl) || undefined,
       ticker: stringValue(fund.ticker) || undefined,
       strategyUrl: stringValue(fund.strategyUrl) || undefined,
     });
@@ -151,18 +144,36 @@ export async function POST(request: NextRequest) {
     }
 
     const { validRows, errors } = validateFundRows(funds);
-    const results: ImportResult[] = [...errors];
+    const committed = await commitImport({
+      pipeline: "BULK_IMPORT_FUNDS",
+      entityType: "Fund",
+      rowCount: funds.length,
+      execute: async (tx) => {
+        const existing = validRows.length > 0
+          ? await tx.fund.findMany({
+              where: { legacyId: { in: validRows.map((row) => row.fundId) } },
+              select: { id: true, legacyId: true, status: true },
+            })
+          : [];
+        const existingById = new Map(existing.map((row) => [row.legacyId, row]));
+        const results: ImportResult[] = [...errors];
+        let inserted = 0;
+        let updated = 0;
+        let skipped = errors.length;
 
-    for (const chunk of chunkRows(validRows)) {
-      const chunkResults = await prisma.$transaction(async (tx) => {
-        const txResults: ImportResult[] = [];
-
-        for (const fund of chunk) {
+        for (const fund of validRows) {
+          const existingFund = existingById.get(fund.fundId);
+          if (existingFund && !["DRAFT", "IN_REVIEW"].includes(existingFund.status)) {
+            results.push({ fundName: fund.fundName, status: "quarantined", error: `Existing ${existingFund.status.toLowerCase()} fund requires editorial review` });
+            skipped += 1;
+            continue;
+          }
           const structure = FUND_STRUCTURE_MAP[fund.structure] as FundStructure;
           const fundStatus = FUND_STATUS_MAP[fund.status] as FundStatusEnum;
 
           if (!structure || !fundStatus) {
-            txResults.push({ fundName: fund.fundName, error: "Invalid structure or status" });
+            results.push({ fundName: fund.fundName, error: "Invalid structure or status" });
+            skipped += 1;
             continue;
           }
 
@@ -191,9 +202,7 @@ export async function POST(request: NextRequest) {
 
           const fundId = fund.fundId;
 
-          const created = await tx.fund.upsert({
-            where: { legacyId: fundId },
-            update: {
+          const fundData = {
               managerId: manager.id,
               fundName: fund.fundName,
               ticker: fund.ticker || null,
@@ -207,35 +216,36 @@ export async function POST(request: NextRequest) {
               sectors,
               regions,
               sourceUrls: toArray(fund.sourceUrls),
+              primarySourceUrl: fund.primarySourceUrl || null,
               strategyUrl: fund.strategyUrl || "",
-            },
-            create: {
-              legacyId: fundId,
-              managerId: manager.id,
-              fundName: fund.fundName,
-              ticker: fund.ticker || null,
-              investmentStrategy: fund.investmentStrategy || "",
-              size: fund.size || "",
-              sizeUsdMm: fund.sizeUsdMm ?? null,
-              vintage: fund.vintage || "",
-              strategies,
-              structure,
-              fundStatus,
-              sectors,
-              regions,
-              sourceUrls: toArray(fund.sourceUrls),
-              strategyUrl: fund.strategyUrl || "",
-              status: "DRAFT",
-            },
-          });
+          };
 
-          txResults.push({ fundName: fund.fundName, dbId: created.id, status: "ok" });
+          let created: { id: string };
+          if (existingFund) {
+            const updateResult = await tx.fund.updateMany({
+              where: { id: existingFund.id, status: { in: ["DRAFT", "IN_REVIEW"] } },
+              data: fundData,
+            });
+            if (updateResult.count !== 1) throw new Error("Fund import review state changed during commit");
+            created = { id: existingFund.id };
+            updated += 1;
+          } else {
+            created = await tx.fund.create({ data: { legacyId: fundId, ...fundData, status: "DRAFT" } });
+            inserted += 1;
+            existingById.set(fundId, { id: created.id, legacyId: fundId, status: "DRAFT" });
+          }
+
+          results.push({ fundName: fund.fundName, dbId: created.id, status: "ok" });
         }
 
-        return txResults;
-      });
-      results.push(...chunkResults);
-    }
+        return {
+          value: results,
+          counts: { inserted, updated, skipped },
+          auditChanges: { inserted, updated, errors: skipped },
+        };
+      },
+    });
+    const results = committed.value;
 
     if (results.some((result) => result.status === "ok")) {
       revalidateAppData();
@@ -245,6 +255,7 @@ export async function POST(request: NextRequest) {
       imported: results.filter((r) => r.status === "ok").length,
       errors: results.filter((r) => r.error),
       results,
+      auditEventId: committed.auditEventId,
     });
   } catch (error: any) {
     if (isAuthorizationError(error)) {

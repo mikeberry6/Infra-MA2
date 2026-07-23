@@ -5,8 +5,10 @@ import { DEAL_SECTOR_DISPLAY, DEAL_STATUS_DISPLAY } from "@/modules/shared/enum-
 import Link from "next/link";
 import { ArrowLeft, Plus } from "lucide-react";
 import DeleteButton from "@/components/admin/DeleteButton";
+import ArchiveButton from "@/components/admin/ArchiveButton";
+import RecordWorkflowButton from "@/components/admin/RecordWorkflowButton";
 import ImportExportBar from "@/components/admin/ImportExportBar";
-import { deleteDeal } from "@/modules/admin/actions";
+import { archiveDeal, deleteDeal, publishDeal, submitDealForReview, verifyDeal } from "@/modules/admin/actions";
 import { getRecordStatusColor } from "@/lib/colors";
 import { Button } from "@/components/shared/Button";
 import { formatDate } from "@/lib/format";
@@ -90,7 +92,9 @@ export default async function AdminDealsPage() {
                     <Link href={`/admin/deals/${deal.id}/edit`}>
                       <Button variant="secondary" size="sm">Edit</Button>
                     </Link>
-                    <DeleteButton deleteAction={deleteDeal} id={deal.id} />
+                    <RecordWorkflowButton entity="deal" id={deal.id} status={deal.status} submitForReview={submitDealForReview} publish={publishDeal} verify={verifyDeal} />
+                    <ArchiveButton entity="deal" archiveAction={archiveDeal} id={deal.id} disabled={deal.status === "ARCHIVED"} />
+                    <DeleteButton entity="deal" deleteAction={deleteDeal} id={deal.id} status={deal.status} />
                   </div>
                 </td>
               </tr>

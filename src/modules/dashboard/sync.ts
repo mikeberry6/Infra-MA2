@@ -8,6 +8,7 @@ import type {
   DashboardSignal,
   DashboardSource,
 } from "@/modules/dashboard/types";
+import { formatSafeErrorSummary } from "@/lib/safe-error";
 import {
   inspectRequiredDashboardMetrics,
   validateDashboardProviderResult,
@@ -110,10 +111,11 @@ export async function syncDashboard(
     }
 
     try {
-      const result = validateDashboardProviderResult(provider.source, await provider.fetch());
+      const providerResult = await provider.fetch();
+      const result = validateDashboardProviderResult(provider.source, providerResult);
       const observations = result.observations;
       const signals = result.signals ?? [];
-      const warnings = result.warnings ?? [];
+      const warnings = (result.warnings ?? []).map((warning) => formatSafeErrorSummary(warning));
       const requiredMetricHealth = inspectRequiredDashboardMetrics(
         provider.source.id,
         observations,
@@ -188,14 +190,13 @@ export async function syncDashboard(
       });
     } catch (error) {
       const endedAt = new Date().toISOString();
-      let message = error instanceof Error ? error.message : String(error);
+      const message = formatSafeErrorSummary(error);
       const requiredMetricHealth = inspectRequiredDashboardMetrics(provider.source.id, [], new Date());
       if (!dryRun) {
         try {
           await markNonCurrentSourceObservationsCached(prisma, provider.source.id, new Set());
         } catch (cacheError) {
-          const cacheMessage = cacheError instanceof Error ? cacheError.message : String(cacheError);
-          message = `${message}; could not mark prior ${provider.source.name} observations cached: ${cacheMessage}`;
+          console.error("Failed to mark dashboard observations cached:", formatSafeErrorSummary(cacheError));
         }
       }
       if (!dryRun && sourceRunId) {

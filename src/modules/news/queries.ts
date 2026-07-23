@@ -1,6 +1,12 @@
 import { unstable_cache } from "next/cache";
 import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
 import { prisma } from "@/lib/prisma";
+import { nextNewsScanAt } from "@/modules/operations/pipeline-schedules";
+import {
+  effectiveNewsPipelineRunStatus,
+  parseNewsSourceCoverage,
+} from "@/modules/news/source-coverage";
+import { parsePublicNewsScanWindow } from "@/modules/news/scan-window";
 import type {
   NewsCategory,
   NewsConfidence,
@@ -61,12 +67,84 @@ async function getNewsRows() {
   });
 }
 
+// Keep each database access behind an async boundary. If the Prisma client is
+// unavailable (for example, a deliberately misconfigured health/failure
+// check), every failure is then owned by Promise.all instead of leaving an
+// earlier query as an unhandled rejection while a later property access
+// throws synchronously.
+async function getLatestNewsAttempt() {
+  return prisma.pipelineRun.findFirst({
+    where: { pipeline: "NEWS_SCAN" },
+    orderBy: { startedAt: "desc" },
+  });
+}
+
+async function getRecentStoredSuccessfulNewsRuns() {
+  return prisma.pipelineRun.findMany({
+    where: { pipeline: "NEWS_SCAN", status: "SUCCEEDED" },
+    orderBy: { endedAt: "desc" },
+    take: 100,
+  });
+}
+
 async function getNewsFeedRaw(): Promise<NewsFeedView> {
-  const rows = await getNewsRows();
+  const [rows, latestAttempt, storedSuccessfulRuns] = await Promise.all([
+    getNewsRows(),
+    getLatestNewsAttempt(),
+    getRecentStoredSuccessfulNewsRuns(),
+  ]);
+  const latestSuccess = storedSuccessfulRuns.find(
+    (run) => effectiveNewsPipelineRunStatus(run) === "SUCCEEDED",
+  );
+  const latestAttemptStatus = latestAttempt
+    ? effectiveNewsPipelineRunStatus(latestAttempt)
+    : null;
+  const now = new Date();
+  const lastSuccessfulAt = latestSuccess?.endedAt ?? latestSuccess?.startedAt;
+  const nextExpected = nextNewsScanAt(now);
+  const overdue = !lastSuccessfulAt || now.getTime() - lastSuccessfulAt.getTime() > 36 * 60 * 60 * 1000;
+  const attemptMetadata = latestAttempt?.metadata && typeof latestAttempt.metadata === "object"
+    ? latestAttempt.metadata as Record<string, unknown>
+    : null;
+  const successMetadata = latestSuccess?.metadata && typeof latestSuccess.metadata === "object"
+    ? latestSuccess.metadata as Record<string, unknown>
+    : null;
+  const sourceCoverage = parseNewsSourceCoverage(attemptMetadata?.sourceCoverage)
+    ?? parseNewsSourceCoverage(successMetadata?.sourceCoverage);
+  const scanWindow = parsePublicNewsScanWindow(attemptMetadata?.selection)
+    ?? parsePublicNewsScanWindow(successMetadata?.selection);
+  const state = !latestAttempt
+    ? "never-run"
+    : latestAttemptStatus === "FAILED"
+      ? "failed"
+      : latestAttemptStatus === "RUNNING"
+        ? "pending"
+      : overdue
+        ? "overdue"
+        : "healthy";
 
   return {
     items: rows.map(toNewsItemView),
-    lastUpdated: new Date().toISOString(),
+    lastUpdated: lastSuccessfulAt?.toISOString() ?? rows[0]?.updatedAt.toISOString() ?? null,
+    operations: {
+      state,
+      lastAttemptAt: latestAttempt?.startedAt.toISOString(),
+      lastSuccessfulAt: lastSuccessfulAt?.toISOString(),
+      nextExpectedAt: nextExpected.toISOString(),
+      sourceCoverage,
+      scanWindow,
+      message: state === "healthy"
+        ? "The current rotating public-source window completed successfully."
+        : state === "failed"
+          ? "The latest scan failed; the last successful results remain visible."
+          : state === "pending"
+            ? lastSuccessfulAt
+              ? "A news scan is currently running; the last successful results remain visible."
+              : "The first news scan is currently running."
+          : state === "overdue"
+            ? "The next scheduled scan is overdue."
+            : "No completed news scan has been recorded yet.",
+    },
   };
 }
 

@@ -7,9 +7,9 @@ import { isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { dealSchema, type DealInput } from "@/modules/admin/schemas";
 import { DEAL_SECTOR_MAP, DEAL_REGION_MAP, DEAL_CATEGORY_MAP, DEAL_STATUS_MAP } from "@/modules/shared/enum-maps";
 import type { DealSector, DealRegion, DealCategory, DealStatusEnum } from "@/generated/prisma/client";
+import { commitImport } from "@/modules/imports/commit";
 
 const MAX_IMPORT_ROWS = 1000;
-const IMPORT_CHUNK_SIZE = 50;
 
 type DealImportRow = DealInput & {
   dealId: string;
@@ -22,14 +22,6 @@ type ImportResult = { id?: string; legacyId?: string; dbId?: string; status?: st
 function stringValue(value: unknown): string {
   if (value == null) return "";
   return typeof value === "string" ? value : String(value);
-}
-
-function chunkRows<T>(rows: T[]): T[][] {
-  const chunks: T[][] = [];
-  for (let i = 0; i < rows.length; i += IMPORT_CHUNK_SIZE) {
-    chunks.push(rows.slice(i, i + IMPORT_CHUNK_SIZE));
-  }
-  return chunks;
 }
 
 function uniqueValues(values: string[]): string[] {
@@ -74,6 +66,9 @@ function validateDealRows(deals: Record<string, unknown>[]): { validRows: DealIm
       target: stringValue(deal.target),
       buyer: buyers.join(" / ") || stringValue(deal.buyer),
       seller: sellers.join(" / ") || stringValue(deal.seller),
+      sellerDisclosureStatus: stringValue(deal.sellerDisclosureStatus)
+        || (sellers.length > 0 ? "DISCLOSED" : "LEGACY_UNREVIEWED"),
+      sellerDisclosureReason: stringValue(deal.sellerDisclosureReason) || undefined,
       sector: stringValue(deal.sector),
       subsector: stringValue(deal.subsector),
       region: stringValue(deal.region),
@@ -159,14 +154,31 @@ export async function POST(request: NextRequest) {
     }
 
     const { validRows, errors } = validateDealRows(deals);
-    const results: ImportResult[] = [...errors];
+    const committed = await commitImport({
+      pipeline: "BULK_IMPORT_DEALS",
+      entityType: "Deal",
+      rowCount: deals.length,
+      execute: async (tx) => {
+        const existing = validRows.length > 0
+          ? await tx.deal.findMany({
+              where: { legacyId: { in: validRows.map((row) => row.dealId) } },
+              select: { id: true, legacyId: true, status: true },
+            })
+          : [];
+        const existingById = new Map(existing.map((row) => [row.legacyId, row]));
+        const results: ImportResult[] = [...errors];
+        let inserted = 0;
+        let updated = 0;
+        let skipped = errors.length;
 
-    for (const chunk of chunkRows(validRows)) {
-      const chunkResults = await prisma.$transaction(async (tx) => {
-        const txResults: ImportResult[] = [];
-
-        for (const deal of chunk) {
+        for (const deal of validRows) {
           const dealId = deal.dealId;
+          const existingDeal = existingById.get(dealId);
+          if (existingDeal && !["DRAFT", "IN_REVIEW"].includes(existingDeal.status)) {
+            results.push({ id: dealId, status: "quarantined", error: `Existing ${existingDeal.status.toLowerCase()} deal requires editorial review` });
+            skipped += 1;
+            continue;
+          }
           const sector = DEAL_SECTOR_MAP[deal.sector] as DealSector;
           const region = DEAL_REGION_MAP[deal.region] as DealRegion;
           const dealStatus = DEAL_STATUS_MAP[deal.status] as DealStatusEnum;
@@ -175,19 +187,19 @@ export async function POST(request: NextRequest) {
             .filter(Boolean) as DealCategory[];
 
           if (!sector || !region || !dealStatus) {
-            txResults.push({ id: dealId, error: "Invalid sector, region, or status" });
+            results.push({ id: dealId, error: "Invalid sector, region, or status" });
+            skipped += 1;
             continue;
           }
           const dealDate = parseDateInput(deal.date);
           if (!dealDate) {
-            txResults.push({ id: dealId, error: "Invalid date" });
+            results.push({ id: dealId, error: "Invalid date" });
+            skipped += 1;
             continue;
           }
           const closingDate = parseDateInput(deal.closingDate);
 
-          const created = await tx.deal.upsert({
-            where: { legacyId: dealId },
-            update: {
+          const dealData = {
               title: deal.title,
               target: deal.target,
               sector,
@@ -207,31 +219,24 @@ export async function POST(request: NextRequest) {
               valuationMultiple: deal.valuationMultiple || null,
               fundVehicle: deal.fundVehicle || null,
               keyHighlights: deal.keyHighlights || [],
-            },
-            create: {
-              legacyId: dealId,
-              title: deal.title,
-              target: deal.target,
-              sector,
-              subsector: deal.subsector || "",
-              region,
-              categories,
-              date: dealDate,
-              description: deal.description || "",
-              targetDescription: deal.targetDescription || "",
-              country: deal.country || "",
-              enterpriseValue: deal.enterpriseValue || null,
-              equityValue: deal.equityValue || null,
-              stake: deal.stake || null,
-              dealStatus,
-              closingDate,
-              assetScale: deal.assetScale || null,
-              valuationMultiple: deal.valuationMultiple || null,
-              fundVehicle: deal.fundVehicle || null,
-              keyHighlights: deal.keyHighlights || [],
-              status: "DRAFT",
-            },
-          });
+              sellerDisclosureStatus: deal.sellers.length > 0 ? "DISCLOSED" as const : deal.sellerDisclosureStatus,
+              sellerDisclosureReason: deal.sellers.length > 0 ? null : deal.sellerDisclosureReason?.trim() || null,
+          };
+
+          let created: { id: string };
+          if (existingDeal) {
+            const updateResult = await tx.deal.updateMany({
+              where: { id: existingDeal.id, status: { in: ["DRAFT", "IN_REVIEW"] } },
+              data: dealData,
+            });
+            if (updateResult.count !== 1) throw new Error("Deal import review state changed during commit");
+            created = { id: existingDeal.id };
+            updated += 1;
+          } else {
+            created = await tx.deal.create({ data: { legacyId: dealId, ...dealData, status: "DRAFT" } });
+            inserted += 1;
+            existingById.set(dealId, { id: created.id, legacyId: dealId, status: "DRAFT" });
+          }
 
           await tx.dealParticipant.deleteMany({
             where: { dealId: created.id, role: { in: ["BUYER", "SELLER"] } },
@@ -262,23 +267,38 @@ export async function POST(request: NextRequest) {
             });
           }
 
-          await tx.citation.deleteMany({ where: { dealId: created.id } });
+          await tx.citation.updateMany({
+            where: { dealId: created.id, isPrimary: true },
+            data: { isPrimary: false },
+          });
           if (deal.sourceUrl) {
             const source = await tx.source.upsert({
               where: { url: deal.sourceUrl },
               update: { label: deal.sourceName || undefined },
               create: { url: deal.sourceUrl, label: deal.sourceName || "", type: "ARTICLE" },
             });
-            await tx.citation.create({ data: { sourceId: source.id, dealId: created.id } });
+            const existingCitation = await tx.citation.findFirst({
+              where: { sourceId: source.id, dealId: created.id },
+              select: { id: true },
+            });
+            if (existingCitation) {
+              await tx.citation.update({ where: { id: existingCitation.id }, data: { isPrimary: true } });
+            } else {
+              await tx.citation.create({ data: { sourceId: source.id, dealId: created.id, isPrimary: true } });
+            }
           }
 
-          txResults.push({ id: dealId, dbId: created.id, status: "ok" });
+          results.push({ id: dealId, dbId: created.id, status: "ok" });
         }
 
-        return txResults;
-      });
-      results.push(...chunkResults);
-    }
+        return {
+          value: results,
+          counts: { inserted, updated, skipped },
+          auditChanges: { inserted, updated, errors: skipped },
+        };
+      },
+    });
+    const results = committed.value;
 
     if (results.some((result) => result.status === "ok")) {
       revalidateAppData();
@@ -288,6 +308,7 @@ export async function POST(request: NextRequest) {
       imported: results.filter((r) => r.status === "ok").length,
       errors: results.filter((r) => r.error),
       results,
+      auditEventId: committed.auditEventId,
     });
   } catch (error: any) {
     if (isAuthorizationError(error)) {

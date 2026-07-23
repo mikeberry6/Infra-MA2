@@ -1,0 +1,212 @@
+name: Build Production Candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_sha:
+        description: Full protected-main SHA that passed the required release gate
+        required: true
+        type: string
+      production_app_sha:
+        description: Full Git SHA currently assigned to the canonical production alias
+        required: true
+        type: string
+      confirmation:
+        description: Type BUILD_CANDIDATE to create an unaliased production-target build
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  checks: read
+
+concurrency:
+  group: production-release
+  cancel-in-progress: false
+
+jobs:
+  build-candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    environment: production
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+      VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
+      EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+      EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
+      PHASE2_PIPELINES_ENABLED: ${{ vars.PHASE2_PIPELINES_ENABLED }}
+      RELEASE_SHA: ${{ inputs.release_sha }}
+      PRODUCTION_APP_SHA: ${{ inputs.production_app_sha }}
+      PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
+      CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
+      CONFIRMATION: ${{ inputs.confirmation }}
+    steps:
+      - name: Require protected workflow ref and explicit authorization
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Production candidates must be dispatched from refs/heads/main."
+            exit 1
+          fi
+          if [ "$CONFIRMATION" != "BUILD_CANDIDATE" ]; then
+            echo "::error::confirmation must exactly equal BUILD_CANDIDATE."
+            exit 1
+          fi
+
+      - name: Checkout exact protected main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Verify checked-out release identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::release_sha must be a full lowercase Git SHA."
+            exit 1
+          fi
+          if ! [[ "$PRODUCTION_APP_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::production_app_sha must be a full lowercase Git SHA."
+            exit 1
+          fi
+          if [ "$(git rev-parse HEAD)" != "$RELEASE_SHA" ]; then
+            echo "::error::Checked-out protected main does not match release_sha."
+            exit 1
+          fi
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Verify protected-branch and required-check provenance
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          node --experimental-strip-types scripts/verify-release-provenance.ts \
+            --release-sha="$RELEASE_SHA" \
+            --branch=main \
+            --required-check=build \
+            --output=tmp/candidate/release-provenance.json
+
+      - name: Require protected candidate configuration
+        shell: bash
+        run: |
+          set -euo pipefail
+          for name in VERCEL_TOKEN VERCEL_SCOPE VERCEL_TEAM_ID EXPECTED_VERCEL_PROJECT_ID EXPECTED_GITHUB_REPOSITORY_ID PRODUCTION_URL; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required."
+              exit 1
+            fi
+          done
+          [[ "$VERCEL_TEAM_ID" =~ ^team_[A-Za-z0-9]+$ ]] || { echo "::error::VERCEL_TEAM_ID must be an immutable team_ identifier."; exit 1; }
+          [[ "$EXPECTED_VERCEL_PROJECT_ID" =~ ^prj_[A-Za-z0-9]+$ ]] || { echo "::error::VERCEL_PROJECT_ID must be an immutable prj_ identifier."; exit 1; }
+          [[ "$EXPECTED_GITHUB_REPOSITORY_ID" =~ ^[1-9][0-9]*$ ]] || { echo "::error::GitHub repository ID is invalid."; exit 1; }
+          if [ "$PHASE2_PIPELINES_ENABLED" != "true" ]; then
+            echo "::error::PHASE2_PIPELINES_ENABLED must be true after schema staging and before candidate creation."
+            exit 1
+          fi
+          if [ "$PRODUCTION_URL" != "$CANONICAL_PRODUCTION_URL" ]; then
+            echo "::error::The protected PRODUCTION_URL does not match the canonical InfraSight production alias."
+            exit 1
+          fi
+
+      - name: Record the unchanged canonical production deployment
+        run: >-
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts
+          --deployment-url="$PRODUCTION_URL"
+          --expected-sha="$PRODUCTION_APP_SHA"
+          --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID"
+          --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID"
+          --team-id="$VERCEL_TEAM_ID"
+          --output=tmp/candidate/canonical-before-build.json
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Link the exact checkout to the protected Vercel project
+        run: >-
+          npx --yes vercel@51.7.0 link
+          --cwd "$GITHUB_WORKSPACE"
+          --project "$EXPECTED_VERCEL_PROJECT_ID"
+          --scope "$VERCEL_SCOPE"
+          --token "$VERCEL_TOKEN"
+          --yes
+
+      - name: Build an unaliased production-target candidate
+        id: deploy
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tmp/candidate
+          repository_name="${GITHUB_REPOSITORY#*/}"
+          deployment_output="$(npx --yes vercel@51.7.0 deploy \
+            --cwd "$GITHUB_WORKSPACE" \
+            --prod \
+            --skip-domain \
+            --yes \
+            --token "$VERCEL_TOKEN" \
+            --scope "$VERCEL_SCOPE" \
+            --meta githubDeployment=1 \
+            --meta githubCommitRef=main \
+            --meta githubCommitSha="$RELEASE_SHA" \
+            --meta githubCommitOrg="$GITHUB_REPOSITORY_OWNER" \
+            --meta githubCommitRepo="$repository_name" \
+            --meta githubOrg="$GITHUB_REPOSITORY_OWNER" \
+            --meta githubRepo="$repository_name")"
+          deployment_url="$(printf '%s\n' "$deployment_output" | awk '/^https:\/\/[A-Za-z0-9.-]+\.vercel\.app\/?$/ { value=$0 } END { print value }')"
+          if ! [[ "$deployment_url" =~ ^https://[a-z0-9][a-z0-9.-]*[a-z0-9]\.vercel\.app/?$ ]]; then
+            echo "::error::Vercel did not return an immutable deployment URL."
+            exit 1
+          fi
+          deployment_url="${deployment_url%/}"
+          printf '%s\n' "$deployment_url" > tmp/candidate/deployment-url.txt
+          echo "deployment_url=$deployment_url" >> "$GITHUB_OUTPUT"
+
+      - name: Verify and smoke-test the immutable candidate
+        shell: bash
+        env:
+          DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment_url }}
+          VERCEL_CLI_CWD: ${{ github.workspace }}
+        run: |
+          set -euo pipefail
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$DEPLOYMENT_URL" \
+            --expected-sha="$RELEASE_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
+            --require-immutable-url \
+            --output=tmp/candidate/candidate-inspect.json
+          node scripts/release-smoke.mjs \
+            --base-url="$DEPLOYMENT_URL" \
+            --transport=vercel-cli \
+            --skip-health \
+            --output=tmp/candidate/candidate-smoke.json
+
+      - name: Prove candidate creation did not move the canonical alias
+        run: >-
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts
+          --deployment-url="$PRODUCTION_URL"
+          --expected-sha="$PRODUCTION_APP_SHA"
+          --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID"
+          --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID"
+          --team-id="$VERCEL_TEAM_ID"
+          --output=tmp/candidate/canonical-after-build.json
+
+      - name: Upload immutable candidate evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: production-candidate-${{ github.run_id }}
+          path: tmp/candidate/
+          if-no-files-found: warn
+          retention-days: 90

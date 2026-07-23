@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import type { CSSProperties, ReactNode } from "react";
 import { SectionLabel } from "@/components/shared/SectionLabel";
+import { formatScheduledDateTime } from "@/lib/format";
+import { isHttpUrl } from "@/lib/source-utils";
 import { directionForSeries } from "@/modules/dashboard/score";
 import {
   formatChange,
@@ -57,6 +59,7 @@ export function DashboardPage({
   const policy = view.sections.find((section) => section.section === "policy-regulatory");
   const dealFriction = view.sections.find((section) => section.section === "deal-friction");
   const failedSources = view.sourceHealth.filter((source) => source.status === "FAILED");
+  const operationalState = view.operations.state;
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6 sm:py-8">
@@ -76,82 +79,113 @@ export function DashboardPage({
         </StateBanner>
       )}
 
-      {!view.hasDatabaseData && (
-        <StateBanner tone="needs_review" title="Dashboard data pending">
-          No validated dashboard observations are available yet. Run the synchronization pipeline or review provider status below; production never substitutes sample values.
+      {view.hasDatabaseData && operationalState !== "healthy" && (
+        <StateBanner
+          tone={operationalState === "failed" ? "restrictive" : "needs_review"}
+          title={dashboardOperationalTitle(operationalState)}
+        >
+          {view.operations.message} Previously validated public data remains visible below.
         </StateBanner>
       )}
 
-      <section className="grid grid-cols-1 gap-3 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
-        <ScorecardPanel view={view} />
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {CORE_TILE_IDS.map((id) => {
-            const series = allSeriesById.get(id);
-            return series ? <MetricTile key={id} series={series} /> : null;
-          })}
-        </div>
-      </section>
-
-      {capital && (
-        <section className="mt-5">
-          <SectionHeading section={capital} />
-          <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
-            <ChartPanel title="Rates" series={pickSeries(allSeriesById, RATE_CHART_IDS)} />
-            <ChartPanel title="Credit Spreads" series={pickSeries(allSeriesById, CREDIT_CHART_IDS)} />
-            <ChartPanel title="Volatility" series={pickSeries(allSeriesById, VOL_CHART_IDS)} />
-            <CompactMetricGrid
-              title="Funding / Public Comps"
-              series={capital.series.filter((item) => ["Funding", "Public Comps"].includes(item.metric.group))}
-            />
-            <CompactMetricGrid
-              title="Curves / Inflation"
-              series={capital.series.filter((item) => item.metric.group === "Rates" && !(RATE_CHART_IDS as readonly string[]).includes(item.metric.id))}
-            />
-          </div>
-        </section>
+      {!view.hasDatabaseData && (
+        <StateBanner
+          tone={operationalState === "failed" ? "restrictive" : "needs_review"}
+          title={dashboardEmptyStateTitle(operationalState)}
+        >
+          {view.operations.message} No validated public observations or approved signals are available. Production never substitutes sample values.
+        </StateBanner>
       )}
 
-      {macro && (
-        <section className="mt-5">
-          <SectionHeading section={macro} />
-          <GroupedMetricTiles series={macro.series} />
-        </section>
-      )}
+      {view.hasDatabaseData && (
+        <>
+          <section className="grid grid-cols-1 gap-3 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
+            <ScorecardPanel view={view} />
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {CORE_TILE_IDS.map((id) => {
+                const series = allSeriesById.get(id);
+                return series ? <MetricTile key={id} series={series} /> : null;
+              })}
+            </div>
+          </section>
 
-      {sector && (
-        <section className="mt-5">
-          <SectionHeading section={sector} />
-          <div className="grid grid-cols-1 gap-3 xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
-            <ChartPanel title="Energy Prices" series={pickSeries(allSeriesById, ENERGY_CHART_IDS)} />
-            <GroupedMetricTiles series={sector.series} compact />
-          </div>
-        </section>
-      )}
+          {capital && (
+            <section className="mt-5">
+              <SectionHeading section={capital} />
+              <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
+                <ChartPanel title="Rates" series={pickSeries(allSeriesById, RATE_CHART_IDS)} />
+                <ChartPanel title="Credit Spreads" series={pickSeries(allSeriesById, CREDIT_CHART_IDS)} />
+                <ChartPanel title="Volatility" series={pickSeries(allSeriesById, VOL_CHART_IDS)} />
+                <CompactMetricGrid
+                  title="Funding / Public Comps"
+                  series={capital.series.filter((item) => ["Funding", "Public Comps"].includes(item.metric.group))}
+                />
+                <CompactMetricGrid
+                  title="Curves / Inflation"
+                  series={capital.series.filter((item) => item.metric.group === "Rates" && !(RATE_CHART_IDS as readonly string[]).includes(item.metric.id))}
+                />
+              </div>
+            </section>
+          )}
 
-      <section className="mt-5 grid grid-cols-1 gap-3 xl:grid-cols-2">
-        {policy && (
-          <SignalsTable
-            title={policy.title}
-            summary={policy.summary}
-            signals={policy.signals}
-            series={policy.series}
-          />
-        )}
-        {dealFriction && (
-          <SignalsTable
-            title={dealFriction.title}
-            summary={dealFriction.summary}
-            signals={dealFriction.signals}
-            series={dealFriction.series}
-          />
-        )}
-      </section>
+          {macro && (
+            <section className="mt-5">
+              <SectionHeading section={macro} />
+              <GroupedMetricTiles series={macro.series} />
+            </section>
+          )}
+
+          {sector && (
+            <section className="mt-5">
+              <SectionHeading section={sector} />
+              <div className="grid grid-cols-1 gap-3 xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
+                <ChartPanel title="Energy Prices" series={pickSeries(allSeriesById, ENERGY_CHART_IDS)} />
+                <GroupedMetricTiles series={sector.series} compact />
+              </div>
+            </section>
+          )}
+
+          <section className="mt-5 grid grid-cols-1 gap-3 xl:grid-cols-2">
+            {policy && (
+              <SignalsTable
+                title={policy.title}
+                summary={policy.summary}
+                signals={policy.signals}
+                series={policy.series}
+              />
+            )}
+            {dealFriction && (
+              <SignalsTable
+                title={dealFriction.title}
+                summary={dealFriction.summary}
+                signals={dealFriction.signals}
+                series={dealFriction.series}
+              />
+            )}
+          </section>
+        </>
+      )}
 
       <section className="mt-5">
         <SourceHealthTable view={view} />
       </section>
     </div>
   );
+}
+
+function dashboardOperationalTitle(state: DashboardView["operations"]["state"]): string {
+  if (state === "failed") return "Dashboard synchronization failed";
+  if (state === "pending") return "Dashboard synchronization in progress";
+  if (state === "overdue") return "Dashboard synchronization overdue";
+  return "Dashboard synchronization not recorded";
+}
+
+function dashboardEmptyStateTitle(state: DashboardView["operations"]["state"]): string {
+  if (state === "failed") return "Dashboard synchronization failed";
+  if (state === "pending") return "Dashboard synchronization in progress";
+  if (state === "overdue") return "Dashboard synchronization overdue";
+  if (state === "healthy") return "Synchronization completed without public data";
+  return "Dashboard data pending";
 }
 
 function DashboardHeader({ view }: { view: DashboardView }) {
@@ -163,14 +197,7 @@ function DashboardHeader({ view }: { view: DashboardView }) {
       return runs;
     }, new Map<string, DashboardView["sourceHealth"][number]>()),
   ).map(([, run]) => run);
-  const successfulRuns = latestBySource.filter((run) => run.status === "SUCCESS" || run.status === "PARTIAL");
-  const latestSuccessfulRun = successfulRuns
-    .map((run) => run.endedAt ?? run.startedAt)
-    .sort()
-    .at(-1);
-  const nextExpected = latestSuccessfulRun
-    ? new Date(new Date(latestSuccessfulRun).getTime() + 24 * 60 * 60 * 1000).toISOString().slice(0, 10)
-    : "Pending";
+  const successfulRuns = latestBySource.filter((run) => run.status === "SUCCESS");
   const availableSeries = view.allSeries.filter((series) => !series.unavailable).length;
 
   return (
@@ -204,8 +231,16 @@ function DashboardHeader({ view }: { view: DashboardView }) {
         </div>
         <dl className="mt-5 grid grid-cols-2 gap-2 lg:grid-cols-4" aria-label="Dashboard data operations summary">
           {[
-            { label: "Last successful run", value: latestSuccessfulRun?.slice(0, 10) ?? "Not recorded" },
-            { label: "Next expected", value: nextExpected },
+            {
+              label: "Last successful run",
+              value: view.operations.lastSuccessfulAt
+                ? formatScheduledDateTime(view.operations.lastSuccessfulAt, "America/New_York")
+                : "Not recorded",
+            },
+            {
+              label: "Next expected",
+              value: formatScheduledDateTime(view.operations.nextExpectedAt, "America/New_York"),
+            },
             { label: "Metric availability", value: `${availableSeries}/${view.allSeries.length}` },
             { label: "Source coverage", value: `${successfulRuns.length}/${latestBySource.length || 0}` },
           ].map((metric) => (
@@ -516,8 +551,13 @@ function SignalsTable({
                     <RiskBadge direction={item.direction}>{directionLabel(item.direction)}</RiskBadge>
                   </td>
                   <td className="px-3 py-2 align-top type-meta">
-                    {item.sourceUrl ? (
-                      <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-[var(--accent)]">
+                    {isHttpUrl(item.sourceUrl) ? (
+                      <a
+                        href={item.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 hover:text-[var(--accent)]"
+                      >
                         {item.sourceName}
                         <ExternalLink className="h-3 w-3" />
                       </a>
@@ -537,6 +577,7 @@ function SignalsTable({
 }
 
 function SourceHealthTable({ view }: { view: DashboardView }) {
+  const metricLabels = new Map(view.allSeries.map((series) => [series.metric.id, series.metric.label]));
   return (
     <article className="surface overflow-hidden">
       <div className="flex items-center justify-between gap-3 border-b border-[var(--border)] px-4 py-3">
@@ -565,8 +606,13 @@ function SourceHealthTable({ view }: { view: DashboardView }) {
               <tr key={source.sourceId} className="border-b border-[var(--border)] last:border-b-0">
                 <td className="px-3 py-2 align-top">
                   <div className="type-row-title">
-                    {typeof source.metadata?.url === "string" ? (
-                      <a href={source.metadata.url} target={source.metadata.url.startsWith("http") ? "_blank" : undefined} rel={source.metadata.url.startsWith("http") ? "noopener noreferrer" : undefined} className="hover:text-[var(--accent)]">
+                    {typeof source.metadata?.url === "string" && isHttpUrl(source.metadata.url) ? (
+                      <a
+                        href={source.metadata.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-[var(--accent)]"
+                      >
                         {source.sourceName}
                       </a>
                     ) : source.sourceName}
@@ -586,7 +632,7 @@ function SourceHealthTable({ view }: { view: DashboardView }) {
                   {source.endedAt?.slice(0, 10) ?? source.startedAt.slice(0, 10)}
                 </td>
                 <td className="max-w-md px-3 py-2 align-top type-micro">
-                  {source.error || "OK"}
+                  {sourceMetricCoverageNote(source, metricLabels) || source.error || "OK"}
                 </td>
               </tr>
             ))}
@@ -597,15 +643,36 @@ function SourceHealthTable({ view }: { view: DashboardView }) {
   );
 }
 
+function sourceMetricCoverageNote(
+  source: DashboardView["sourceHealth"][number],
+  metricLabels: Map<string, string>,
+): string | null {
+  const metricIds = (field: "missingRequiredMetrics" | "staleRequiredMetrics") => {
+    const value = source.metadata?.[field];
+    return Array.isArray(value)
+      ? value.filter((metricId): metricId is string => typeof metricId === "string")
+      : [];
+  };
+  const label = (metricId: string) => metricLabels.get(metricId) ?? metricId;
+  const missing = metricIds("missingRequiredMetrics");
+  const stale = metricIds("staleRequiredMetrics");
+  const notes = [
+    missing.length > 0 ? `Missing required: ${missing.map(label).join(", ")}.` : null,
+    stale.length > 0 ? `Stale required: ${stale.map(label).join(", ")}.` : null,
+  ].filter((note): note is string => Boolean(note));
+  return notes.length > 0 ? notes.join(" ") : null;
+}
+
 function MetricSourceLabel({ series }: { series: DashboardSeries }) {
   const url = series.metric.source.url;
   if (!url) return series.metric.label;
-  const external = url.startsWith("http");
+  const external = isHttpUrl(url);
+  if (!external) return series.metric.label;
   return (
     <a
       href={url}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noopener noreferrer" : undefined}
+      target="_blank"
+      rel="noopener noreferrer"
       className="hover:text-[var(--accent)]"
       title={`Open ${series.metric.source.name} source`}
     >

@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
+  assertApprovalReviewerMatchesMutationContext,
+  assertMaintenanceMutationContext,
   assertMutationDatabaseTarget,
-  assertMutationDatabaseTargetFromEnv,
   assertNonProductionSeedTarget,
 } from "@/lib/database-target";
 
@@ -21,17 +22,14 @@ describe("mutation database target guard", () => {
   });
 
   it("rejects an explicitly forbidden target and non-Postgres URLs", () => {
-    expect(() => assertMutationDatabaseTarget({ ...approved, forbiddenHosts: ["production.example"] })).toThrow(/forbidden/);
-    expect(() => assertMutationDatabaseTarget({ ...approved, connectionString: "https://production.example/db_name" })).toThrow(/postgres protocol/);
-  });
-
-  it("loads the guarded target from environment-shaped input", () => {
-    expect(() => assertMutationDatabaseTargetFromEnv({
-      DATABASE_URL: approved.connectionString,
-      EXPECTED_DATABASE_HOST: approved.expectedHost,
-      EXPECTED_DATABASE_NAME: approved.expectedDatabase,
-      FORBIDDEN_DATABASE_HOST: approved.forbiddenHosts[0],
-    })).not.toThrow();
+    expect(() => assertMutationDatabaseTarget({
+      ...approved,
+      forbiddenHosts: ["production.example"],
+    })).toThrow(/explicitly forbidden/);
+    expect(() => assertMutationDatabaseTarget({
+      ...approved,
+      connectionString: "https://production.example/db_name",
+    })).toThrow(/postgres protocol/);
   });
 
   it("forbids ordinary seeding against production", () => {
@@ -46,6 +44,39 @@ describe("mutation database target guard", () => {
     expect(() => assertNonProductionSeedTarget({
       ...environment,
       TARGET_DATABASE: "production",
-    })).toThrow(/production seeding is forbidden/);
+    })).toThrow(/production is forbidden/);
+  });
+
+  it("requires reviewed release provenance for maintenance writes", () => {
+    const environment = {
+      DATABASE_URL: approved.connectionString,
+      EXPECTED_DATABASE_HOST: approved.expectedHost,
+      EXPECTED_DATABASE_NAME: approved.expectedDatabase,
+      FORBIDDEN_DATABASE_HOST: approved.forbiddenHosts[0],
+      TARGET_DATABASE: "production",
+      RELEASE_SHA: "a".repeat(40),
+      MUTATION_REVIEWED_BY: "Research Owner",
+      MUTATION_REASON: "Approved correction",
+    };
+    expect(assertMaintenanceMutationContext(environment)).toMatchObject({
+      targetDatabase: "production",
+      reviewedBy: "Research Owner",
+    });
+    expect(() => assertMaintenanceMutationContext({
+      ...environment,
+      MUTATION_REASON: "",
+    })).toThrow(/MUTATION_REVIEWED_BY and MUTATION_REASON/);
+  });
+
+  it("binds the execution reviewer to the committed approval reviewer", () => {
+    const context = {
+      targetDatabase: "production" as const,
+      releaseSha: "a".repeat(40),
+      reviewedBy: "Research Owner",
+      reason: "Approved correction",
+    };
+    expect(() => assertApprovalReviewerMatchesMutationContext("Research Owner", context)).not.toThrow();
+    expect(() => assertApprovalReviewerMatchesMutationContext("Different Reviewer", context))
+      .toThrow(/exactly match the committed approval reviewer/);
   });
 });

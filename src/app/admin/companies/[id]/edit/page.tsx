@@ -13,14 +13,15 @@ import {
   COMPANY_STATUS_DISPLAY,
 } from "@/modules/shared/enum-maps";
 import type { CompanyView } from "@/modules/shared/types";
+import { MUTABLE_COMPANY_WHERE } from "@/modules/companies/retirement";
 
 export const metadata = { title: "Admin · Edit Company" };
 
 export default async function EditCompanyPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
 
-  const company = await prisma.company.findUnique({
-    where: { id },
+  const company = await prisma.company.findFirst({
+    where: { id, ...MUTABLE_COMPANY_WHERE },
     include: {
       ownershipPeriods: {
         include: {
@@ -33,6 +34,10 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
           },
         },
         orderBy: { createdAt: "desc" },
+      },
+      citations: {
+        include: { source: { select: { label: true, url: true } } },
+        orderBy: [{ isPrimary: "desc" }, { id: "asc" }],
       },
     },
   });
@@ -50,6 +55,7 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
     primaryOwnership?.fund?.fundName ||
     "";
   const investmentYear = primaryOwnership?.investmentYear || undefined;
+  const primaryCitation = company.citations.find((citation) => citation.isPrimary) ?? company.citations[0];
 
   const initialData: Partial<CompanyView> = {
     id: company.id,
@@ -66,6 +72,7 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
     yearFounded: company.yearFounded || undefined,
     investmentYear,
     headquarters: company.headquarters || undefined,
+    sources: primaryCitation ? [{ label: primaryCitation.source.label, url: primaryCitation.source.url }] : undefined,
   };
 
   const boundUpdate = updateCompany.bind(null, id);

@@ -31,6 +31,7 @@ import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { withBasePath } from "@/lib/base-path";
+import { buildFundSourceLinks } from "@/modules/funds/sources";
 
 const FUND_PAGE_SIZE = 100;
 
@@ -592,6 +593,10 @@ function FundDrawer({
   const siblingFunds = allFunds.filter(
     (f) => f.managerName === fund.managerName && f.id !== fund.id
   );
+  const fundSources = useMemo(
+    () => buildFundSourceLinks(fund.primarySourceUrl, fund.sourceUrls),
+    [fund.primarySourceUrl, fund.sourceUrls],
+  );
 
   // Aggregate all portfolio companies across the firm (all funds for this manager)
   const firmFunds = [fund, ...siblingFunds];
@@ -748,30 +753,30 @@ function FundDrawer({
             </section>
           )}
 
-          {/* Source URLs */}
-          {fund.sourceUrls.length > 0 && (
+          {/* Reviewed primary source and supporting URLs */}
+          {fundSources.length > 0 && (
             <section className="border-t border-[var(--border)] pt-6">
               <div className="type-section-title text-[var(--text-tertiary)] mb-3">
                 Sources
               </div>
               <div className="surface px-4 py-3">
-                <div className="flex flex-wrap gap-x-4 gap-y-1.5">
-                {fund.sourceUrls.map((url, i) => {
-                  let hostname = url;
-                  try { hostname = new URL(url).hostname.replace(/^www\./, ""); } catch {}
-                  return (
+                <div className="grid gap-2">
+                {fundSources.map((source) => (
                     <a
-                      key={i}
-                      href={url}
+                      key={source.url}
+                      href={source.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 type-meta hover:text-[var(--text-primary)] transition-colors group"
                     >
                       <ExternalLink className="h-3 w-3 shrink-0 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)]" />
-                      <span className="truncate">{hostname}</span>
+                      <span className={source.isPrimary ? "font-medium text-[var(--text-secondary)]" : "text-[var(--text-tertiary)]"}>
+                        {source.label}
+                      </span>
+                      <span aria-hidden className="text-[var(--text-tertiary)]">·</span>
+                      <span className="truncate">{source.hostname}</span>
                     </a>
-                  );
-                })}
+                  ))}
                 </div>
               </div>
             </section>

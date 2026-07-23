@@ -6,6 +6,7 @@ const mocks = vi.hoisted(() => ({
   transaction: vi.fn(),
   findUnique: vi.fn(),
   updateMany: vi.fn(),
+  recordAuditEvent: vi.fn(),
   revalidatePath: vi.fn(),
 }));
 
@@ -16,6 +17,9 @@ vi.mock("@/modules/auth/guards", () => ({
 }));
 vi.mock("@/lib/prisma", () => ({
   prisma: { $transaction: mocks.transaction },
+}));
+vi.mock("@/modules/operations/audit", () => ({
+  recordAuditEvent: mocks.recordAuditEvent,
 }));
 vi.mock("next/cache", () => ({ revalidatePath: mocks.revalidatePath }));
 
@@ -48,6 +52,7 @@ describe("dashboard signal review actions", () => {
     mocks.getSessionIdentity.mockReset().mockResolvedValue({ id: "admin-1", role: "ADMIN" });
     mocks.findUnique.mockReset().mockResolvedValue(signal);
     mocks.updateMany.mockReset().mockResolvedValue({ count: 1 });
+    mocks.recordAuditEvent.mockReset().mockResolvedValue("audit-1");
     mocks.revalidatePath.mockReset();
     mocks.transaction.mockReset().mockImplementation(async (callback) => callback({
       dashboardSignal: {
@@ -80,9 +85,16 @@ describe("dashboard signal review actions", () => {
         reviewedContentHash: renderedHash,
       }),
     });
+    expect(mocks.recordAuditEvent).toHaveBeenCalledWith(
+      expect.objectContaining({
+        action: "APPROVED",
+        metadata: expect.objectContaining({ reviewedContentHash: renderedHash }),
+      }),
+      expect.anything(),
+    );
   });
 
-  it("fails without a write when content changed after rendering", async () => {
+  it("fails without a write or audit when content changed after rendering", async () => {
     mocks.findUnique.mockResolvedValue({ ...signal, title: "Revised notice" });
 
     const result = await rejectDashboardSignal("signal-1", renderedHash);
@@ -92,6 +104,7 @@ describe("dashboard signal review actions", () => {
       error: "This signal changed after it was rendered. Refresh the review queue before reviewing it.",
     });
     expect(mocks.updateMany).not.toHaveBeenCalled();
+    expect(mocks.recordAuditEvent).not.toHaveBeenCalled();
   });
 
   it("fails the optimistic compare-and-set when content changes during review", async () => {
@@ -101,5 +114,17 @@ describe("dashboard signal review actions", () => {
 
     expect(result.success).toBe(false);
     expect(result.error).toContain("changed during review");
+    expect(mocks.recordAuditEvent).not.toHaveBeenCalled();
+  });
+
+  it("does not expose unexpected database details", async () => {
+    mocks.transaction.mockRejectedValueOnce(
+      new Error("connection failed for postgresql://admin:secret@private-db/signals"),
+    );
+
+    await expect(approveDashboardSignal("signal-1", renderedHash)).resolves.toEqual({
+      success: false,
+      error: "Dashboard signal review failed.",
+    });
   });
 });
