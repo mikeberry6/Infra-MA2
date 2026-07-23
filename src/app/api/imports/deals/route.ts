@@ -7,8 +7,14 @@ import { withServerOperation } from "@/lib/server-log";
 import { AuthorizationError, getSessionIdentity, isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { dealSchema, type DealInput } from "@/modules/admin/schemas";
 import { DEAL_SECTOR_MAP, DEAL_REGION_MAP, DEAL_CATEGORY_MAP, DEAL_STATUS_MAP } from "@/modules/shared/enum-maps";
-import type { DealSector, DealRegion, DealCategory, DealStatusEnum } from "@/generated/prisma/client";
+import type { DealSector, DealRegion, DealCategory, DealStatusEnum, Prisma } from "@/generated/prisma/client";
 import { commitImport } from "@/modules/imports/commit";
+import {
+  sameDateValue,
+  sameOrderedValues,
+  samePrimarySource,
+  sameUnorderedStrings,
+} from "@/modules/imports/idempotency";
 import {
   ImportConflictError,
   ImportRequestError,
@@ -23,6 +29,46 @@ import {
 } from "@/modules/imports/preview-token";
 
 const MAX_IMPORT_ROWS = 500;
+
+const DEAL_IMPORT_SELECT = {
+  id: true,
+  legacyId: true,
+  status: true,
+  title: true,
+  target: true,
+  sector: true,
+  subsector: true,
+  region: true,
+  categories: true,
+  date: true,
+  description: true,
+  targetDescription: true,
+  country: true,
+  enterpriseValue: true,
+  equityValue: true,
+  stake: true,
+  dealStatus: true,
+  closingDate: true,
+  sellerDisclosureStatus: true,
+  sellerDisclosureReason: true,
+  assetScale: true,
+  valuationMultiple: true,
+  fundVehicle: true,
+  keyHighlights: true,
+  participants: {
+    select: {
+      role: true,
+      displayName: true,
+      organization: { select: { name: true } },
+    },
+  },
+  citations: {
+    where: { isPrimary: true },
+    select: {
+      source: { select: { url: true, label: true } },
+    },
+  },
+} as const;
 
 type DealImportRow = DealInput & {
   dealId: string;
@@ -42,11 +88,7 @@ type ImportResult = {
   error?: string;
 };
 
-type ExistingDeal = {
-  id: string;
-  legacyId: string;
-  status: string;
-};
+type ExistingDeal = Prisma.DealGetPayload<{ select: typeof DEAL_IMPORT_SELECT }>;
 
 const MUTABLE_EXISTING_DEAL_STATUSES = new Set(["DRAFT", "IN_REVIEW"]);
 
@@ -64,6 +106,15 @@ function quarantinedDealResult(row: DealImportRow, existing: ExistingDeal): Impo
       ? "PUBLISHED_DEAL_UPDATE_BLOCKED"
       : "IMMUTABLE_DEAL_UPDATE_BLOCKED",
     error: `Existing ${existing.status} deal cannot be modified by bulk import; submit an editorial change for review`,
+  };
+}
+
+function unchangedDealResult(row: DealImportRow, existing: ExistingDeal): ImportResult {
+  return {
+    row: row.row,
+    id: row.dealId,
+    dbId: existing.id,
+    status: "unchanged",
   };
 }
 
@@ -94,6 +145,99 @@ function toArray(value: unknown): string[] {
     return value.split(";").map((s) => s.trim()).filter(Boolean);
   }
   return [];
+}
+
+function normalizeDealImport(row: DealImportRow) {
+  const sector = DEAL_SECTOR_MAP[row.sector] as DealSector;
+  const region = DEAL_REGION_MAP[row.region] as DealRegion;
+  const dealStatus = DEAL_STATUS_MAP[row.status] as DealStatusEnum;
+  const categories = row.category
+    .map((category: string) => DEAL_CATEGORY_MAP[category])
+    .filter(Boolean) as DealCategory[];
+
+  if (!sector || !region || !dealStatus) {
+    return { ok: false as const, error: "Invalid sector, region, or status" };
+  }
+
+  const date = parseDateInput(row.date);
+  if (!date) {
+    return { ok: false as const, error: "Invalid date" };
+  }
+
+  return {
+    ok: true as const,
+    data: {
+      title: row.title,
+      target: row.target,
+      sector,
+      subsector: row.subsector || "",
+      region,
+      categories,
+      date,
+      description: row.description || "",
+      targetDescription: row.targetDescription || "",
+      country: row.country || "",
+      enterpriseValue: row.enterpriseValue || null,
+      equityValue: row.equityValue || null,
+      stake: row.stake || null,
+      dealStatus,
+      closingDate: parseDateInput(row.closingDate),
+      assetScale: row.assetScale || null,
+      valuationMultiple: row.valuationMultiple || null,
+      fundVehicle: row.fundVehicle || null,
+      keyHighlights: row.keyHighlights || [],
+      sellerDisclosureStatus: row.sellers.length > 0 ? "DISCLOSED" as const : row.sellerDisclosureStatus,
+      sellerDisclosureReason: row.sellers.length > 0 ? null : row.sellerDisclosureReason?.trim() || null,
+    },
+  };
+}
+
+function sameDealImport(row: DealImportRow, existing: ExistingDeal): boolean {
+  if (
+    !("title" in existing)
+    || !Array.isArray(existing.categories)
+    || !Array.isArray(existing.keyHighlights)
+    || !Array.isArray(existing.participants)
+    || !Array.isArray(existing.citations)
+  ) {
+    return false;
+  }
+  const normalized = normalizeDealImport(row);
+  if (!normalized.ok) return false;
+  const data = normalized.data;
+  const buyers = existing.participants
+    .filter((participant) => participant.role === "BUYER")
+    .map((participant) => `${participant.displayName ?? ""}\u0000${participant.organization.name}`);
+  const sellers = existing.participants
+    .filter((participant) => participant.role === "SELLER")
+    .map((participant) => `${participant.displayName ?? ""}\u0000${participant.organization.name}`);
+  const desiredBuyers = row.buyers.map((name) => `${name}\u0000${name}`);
+  const desiredSellers = row.sellers.map((name) => `${name}\u0000${name}`);
+
+  return existing.title === data.title
+    && existing.target === data.target
+    && existing.sector === data.sector
+    && existing.subsector === data.subsector
+    && existing.region === data.region
+    && sameOrderedValues(existing.categories, data.categories)
+    && sameDateValue(existing.date, data.date)
+    && existing.description === data.description
+    && existing.targetDescription === data.targetDescription
+    && existing.country === data.country
+    && existing.enterpriseValue === data.enterpriseValue
+    && existing.equityValue === data.equityValue
+    && existing.stake === data.stake
+    && existing.dealStatus === data.dealStatus
+    && sameDateValue(existing.closingDate, data.closingDate)
+    && existing.assetScale === data.assetScale
+    && existing.valuationMultiple === data.valuationMultiple
+    && existing.fundVehicle === data.fundVehicle
+    && sameOrderedValues(existing.keyHighlights, data.keyHighlights)
+    && existing.sellerDisclosureStatus === data.sellerDisclosureStatus
+    && existing.sellerDisclosureReason === data.sellerDisclosureReason
+    && sameUnorderedStrings(buyers, desiredBuyers)
+    && sameUnorderedStrings(sellers, desiredSellers)
+    && samePrimarySource(existing.citations, row.sourceUrl, row.sourceName);
 }
 
 function validateDealRows(deals: Record<string, unknown>[]): { validRows: DealImportRow[]; errors: ImportResult[] } {
@@ -214,7 +358,7 @@ async function importDeals(request: NextRequest) {
     const previewExisting = validRows.length > 0
       ? await prisma.deal.findMany({
           where: { legacyId: { in: validRows.map((row) => row.dealId) } },
-          select: { id: true, legacyId: true, status: true },
+          select: DEAL_IMPORT_SELECT,
         })
       : [];
     const previewExistingById = new Map(previewExisting.map((row) => [row.legacyId, row]));
@@ -224,17 +368,24 @@ async function importDeals(request: NextRequest) {
         ? [quarantinedDealResult(row, existingDeal)]
         : [];
     });
+    const previewActions = validRows.map((row) => {
+      const existingDeal = previewExistingById.get(row.dealId);
+      if (!existingDeal) return { id: row.dealId, action: "create" as const };
+      if (!canImportOverExistingDeal(existingDeal)) return { id: row.dealId, action: "quarantined" as const };
+      return {
+        id: row.dealId,
+        action: sameDealImport(row, existingDeal) ? "unchanged" as const : "update" as const,
+      };
+    });
     const previewSummary: ImportPreviewSummary = {
       total: deals.length,
       valid: validRows.length,
-      creates: validRows.filter((row) => !previewExistingById.has(row.dealId)).length,
-      updates: validRows.filter((row) => {
-        const existingDeal = previewExistingById.get(row.dealId);
-        return existingDeal ? canImportOverExistingDeal(existingDeal) : false;
-      }).length,
+      creates: previewActions.filter((item) => item.action === "create").length,
+      updates: previewActions.filter((item) => item.action === "update").length,
+      unchanged: previewActions.filter((item) => item.action === "unchanged").length,
       quarantined: previewWarnings.length,
       errors: errors.length,
-      stateHash: hashImportPreviewState({ warnings: previewWarnings }),
+      stateHash: hashImportPreviewState({ actions: previewActions, warnings: previewWarnings }),
     };
     if (request.nextUrl.searchParams.get("preview") === "1") {
       const previewToken = await createImportPreviewToken({
@@ -259,6 +410,23 @@ async function importDeals(request: NextRequest) {
       items: deals,
       summary: previewSummary,
     });
+    if (previewSummary.creates === 0 && previewSummary.updates === 0) {
+      const unchangedResults = validRows.flatMap((row) => {
+        const existingDeal = previewExistingById.get(row.dealId);
+        return existingDeal && sameDealImport(row, existingDeal)
+          ? [unchangedDealResult(row, existingDeal)]
+          : [];
+      });
+      const results = [...errors, ...previewWarnings, ...unchangedResults];
+      return NextResponse.json({
+        imported: 0,
+        unchanged: unchangedResults.length,
+        errors: results.filter((result) => result.error),
+        results,
+        quarantined: previewWarnings.length,
+        auditEventId: null,
+      });
+    }
     const committed = await commitImport({
       pipeline: "BULK_IMPORT_DEALS",
       entityType: "Deal",
@@ -267,7 +435,7 @@ async function importDeals(request: NextRequest) {
         const existing = validRows.length > 0
           ? await tx.deal.findMany({
               where: { legacyId: { in: validRows.map((row) => row.dealId) } },
-              select: { id: true, legacyId: true, status: true },
+              select: DEAL_IMPORT_SELECT,
             })
           : [];
         const results: ImportResult[] = [...errors];
@@ -276,6 +444,7 @@ async function importDeals(request: NextRequest) {
         let updated = 0;
         let skipped = errors.length;
         let quarantined = 0;
+        let unchanged = 0;
 
         for (const deal of validRows) {
           const dealId = deal.dealId;
@@ -286,49 +455,19 @@ async function importDeals(request: NextRequest) {
             skipped += 1;
             continue;
           }
-          const sector = DEAL_SECTOR_MAP[deal.sector] as DealSector;
-          const region = DEAL_REGION_MAP[deal.region] as DealRegion;
-          const dealStatus = DEAL_STATUS_MAP[deal.status] as DealStatusEnum;
-          const categories = deal.category
-            .map((c: string) => DEAL_CATEGORY_MAP[c])
-            .filter(Boolean) as DealCategory[];
-
-          if (!sector || !region || !dealStatus) {
-            results.push({ id: dealId, error: "Invalid sector, region, or status" });
+          const normalized = normalizeDealImport(deal);
+          if (!normalized.ok) {
+            results.push({ id: dealId, error: normalized.error });
             skipped += 1;
             continue;
           }
-          const dealDate = parseDateInput(deal.date);
-          if (!dealDate) {
-            results.push({ id: dealId, error: "Invalid date" });
+          if (existingDeal && sameDealImport(deal, existingDeal)) {
+            results.push(unchangedDealResult(deal, existingDeal));
+            unchanged += 1;
             skipped += 1;
             continue;
           }
-          const closingDate = parseDateInput(deal.closingDate);
-
-          const dealData = {
-              title: deal.title,
-              target: deal.target,
-              sector,
-              subsector: deal.subsector || "",
-              region,
-              categories,
-              date: dealDate,
-              description: deal.description || "",
-              targetDescription: deal.targetDescription || "",
-              country: deal.country || "",
-              enterpriseValue: deal.enterpriseValue || null,
-              equityValue: deal.equityValue || null,
-              stake: deal.stake || null,
-              dealStatus,
-              closingDate,
-              assetScale: deal.assetScale || null,
-              valuationMultiple: deal.valuationMultiple || null,
-              fundVehicle: deal.fundVehicle || null,
-              keyHighlights: deal.keyHighlights || [],
-              sellerDisclosureStatus: deal.sellers.length > 0 ? "DISCLOSED" as const : deal.sellerDisclosureStatus,
-              sellerDisclosureReason: deal.sellers.length > 0 ? null : deal.sellerDisclosureReason?.trim() || null,
-          };
+          const dealData = normalized.data;
 
           let created: { id: string };
           if (existingDeal) {
@@ -353,7 +492,6 @@ async function importDeals(request: NextRequest) {
               },
             });
             inserted += 1;
-            existingById.set(dealId, { id: created.id, legacyId: dealId, status: "DRAFT" });
           }
 
           await tx.dealParticipant.deleteMany({
@@ -414,13 +552,24 @@ async function importDeals(request: NextRequest) {
           results.push({ row: deal.row, id: dealId, dbId: created.id, status: "ok" });
         }
 
+        if (inserted + updated === 0) {
+          throw new ImportConflictError("Deal import no longer contains writable changes. Preview the file again.");
+        }
+
         return {
           value: {
             imported: results.filter((result) => result.status === "ok").length,
+            unchanged,
             results,
           },
           counts: { inserted, updated, skipped },
-          auditChanges: { inserted, updated, errors: skipped, quarantined },
+          auditChanges: {
+            inserted,
+            updated,
+            ...(unchanged > 0 ? { unchanged } : {}),
+            errors: skipped - unchanged,
+            quarantined,
+          },
         };
       },
     });
@@ -431,6 +580,7 @@ async function importDeals(request: NextRequest) {
 
     return NextResponse.json({
       imported: committed.value.imported,
+      unchanged: committed.value.unchanged,
       errors: committed.value.results.filter((result) => result.error),
       results: committed.value.results,
       quarantined: committed.value.results.filter((result) => result.status === "quarantined").length,

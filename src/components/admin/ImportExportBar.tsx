@@ -25,6 +25,7 @@ type Preview = {
   valid: number;
   creates: number;
   updates: number;
+  unchanged: number;
   quarantined: number;
   warnings: ImportIssue[];
   errors: ImportIssue[];
@@ -118,6 +119,7 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
         valid: Number(result.valid) || 0,
         creates: Number(result.creates) || 0,
         updates: Number(result.updates) || 0,
+        unchanged: Number(result.unchanged) || 0,
         quarantined: Number(result.quarantined) || 0,
         warnings,
         errors,
@@ -150,9 +152,13 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || "Import failed");
       invalidateDetailCache(CACHE_ENTITY[entityType]);
+      const imported = Number(result.imported) || 0;
+      const unchanged = Number(result.unchanged) || 0;
       setMessage({
         tone: "success",
-        text: `${result.imported ?? 0} ${result.imported === 1 ? labels.singular : labels.plural} committed as drafts.`,
+        text: imported > 0
+          ? `${imported} ${imported === 1 ? labels.singular : labels.plural} committed as drafts.${unchanged > 0 ? ` ${unchanged} unchanged.` : ""}`
+          : `No ${labels.plural} required changes.${unchanged > 0 ? ` ${unchanged} unchanged.` : ""}`,
       });
       setAuditEventId(result.auditEventId ?? null);
       setPreview(null);
@@ -214,11 +220,12 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
               className="shrink-0 px-1.5"
             />
           </div>
-          <dl className="grid grid-cols-2 gap-px bg-[var(--border)] sm:grid-cols-5">
+          <dl className="grid grid-cols-2 gap-px bg-[var(--border)] sm:grid-cols-3 lg:grid-cols-6">
             {[
               ["Rows", preview.total],
               ["Creates", preview.creates],
               ["Updates", preview.updates],
+              ["Unchanged", preview.unchanged],
               ["Quarantined", preview.quarantined],
               ["Errors", preview.errors.length],
             ].map(([label, value]) => (
@@ -307,7 +314,7 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
 
           <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3">
             <p className="type-micro">
-              Confirming will write {preview.creates} {preview.creates === 1 ? "create" : "creates"} and {preview.updates} {preview.updates === 1 ? "update" : "updates"}. Errors and quarantined rows are skipped; imported records remain drafts.
+              Confirming will write {preview.creates} {preview.creates === 1 ? "create" : "creates"} and {preview.updates} {preview.updates === 1 ? "update" : "updates"}. {preview.unchanged} unchanged {preview.unchanged === 1 ? "row" : "rows"}, plus any errors and quarantined rows, will be skipped; imported records remain drafts.
             </p>
             <div className="flex items-center gap-2">
               {preview.errors.length > 0 && <Button size="sm" variant="secondary" onClick={downloadErrors}>Download error CSV</Button>}

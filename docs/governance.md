@@ -30,7 +30,7 @@ Automation may propose records but may not publish deals or portfolio companies.
 
 ### Quarterly
 
-- Review taxonomy, canonical duplicate clusters, accessibility/keyboard/reduced-motion behavior, the recovery exercise, access inventory, incident themes, and roadmap.
+- Review taxonomy, canonical duplicate clusters, accessibility/keyboard/reduced-motion behavior, the recovery exercise, access inventory, incident themes, and roadmap. Complete the accessibility review with the procedure and human-attestation record in [`docs/accessibility-review.md`](accessibility-review.md).
 - Reconfirm that public data remains read-only and imports/administration/exports remain role-gated.
 
 ## Service objectives
@@ -40,7 +40,7 @@ Automation may propose records but may not publish deals or portfolio companies.
 - Public database first-load JavaScript below 150 KB unless a release record documents a reviewed exception.
 - Initial list rendering: no more than 25 rows.
 - Published deals, Funds, and companies: 100% required source presence. Deals and companies require a Research-designated primary citation; Funds require a Research-designated HTTP(S) `primarySourceUrl`. Missing or invalid Fund designations use the neutral candidate report, immutable reviewed approval, and protected hash-bound apply workflow before release.
-- Accessibility: WCAG 2.2 AA for public and administrative routes, plus manual keyboard review each quarter.
+- Accessibility: WCAG 2.2 AA for public and administrative routes, plus a recorded manual keyboard review each quarter. Automated evidence and human attestation remain separate as defined in [`docs/accessibility-review.md`](accessibility-review.md).
 
 Objectives that require elapsed telemetry are not declared complete from a one-time test. The monthly review records the actual rolling window and follow-up when an objective is missed.
 

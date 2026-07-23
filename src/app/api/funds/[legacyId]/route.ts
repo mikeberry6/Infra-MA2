@@ -4,6 +4,12 @@ import { prisma } from "@/lib/prisma";
 import { withServerOperation } from "@/lib/server-log";
 import type { DetailResponse, FundView } from "@/modules/shared/types";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+export const fetchCache = "force-no-store";
+
+const NO_STORE_HEADERS = { "Cache-Control": "no-store, max-age=0" } as const;
+
 export async function GET(
   request: Request,
   { params }: { params: Promise<{ legacyId: string }> },
@@ -13,7 +19,15 @@ export async function GET(
     operation: "read_fund_detail",
   }, async () => {
     const { legacyId } = await params;
-    const decodedId = decodeURIComponent(legacyId);
+    let decodedId: string;
+    try {
+      decodedId = decodeURIComponent(legacyId);
+    } catch {
+      return NextResponse.json(
+        { error: "Invalid fund identifier" },
+        { status: 400, headers: NO_STORE_HEADERS },
+      );
+    }
     const [fund, meta] = await Promise.all([
       getFundById(decodedId),
       prisma.fund.findUnique({
@@ -29,7 +43,10 @@ export async function GET(
       }),
     ]);
     if (!fund || meta?.status !== "PUBLISHED") {
-      return NextResponse.json({ error: "Fund not found" }, { status: 404 });
+      return NextResponse.json(
+        { error: "Fund not found" },
+        { status: 404, headers: NO_STORE_HEADERS },
+      );
     }
     const sourceCount = new Set([
       meta.primarySourceUrl,
@@ -47,6 +64,6 @@ export async function GET(
         sourceCount,
       },
     };
-    return NextResponse.json(response);
+    return NextResponse.json(response, { headers: NO_STORE_HEADERS });
   });
 }

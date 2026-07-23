@@ -49,6 +49,7 @@ describe("published detail API envelopes", () => {
     );
 
     expect(response.status).toBe(200);
+    expect(response.headers.get("cache-control")).toBe("no-store, max-age=0");
     await expect(response.json()).resolves.toEqual({
       data: expect.objectContaining({ legacyId: "DEAL/1" }),
       meta: {
@@ -121,12 +122,14 @@ describe("published detail API envelopes", () => {
     mocks.companyFindMany.mockResolvedValue([
       {
         id: "company-old",
+        status: "ARCHIVED",
         updatedAt: new Date("2026-07-20T12:00:00.000Z"),
         lastVerifiedAt: new Date("2026-07-18T12:00:00.000Z"),
         _count: { citations: 1 },
       },
       {
         id: "company-canonical",
+        status: "PUBLISHED",
         updatedAt: new Date("2026-07-22T12:00:00.000Z"),
         lastVerifiedAt: new Date("2026-07-21T12:00:00.000Z"),
         _count: { citations: 3 },
@@ -150,6 +153,39 @@ describe("published detail API envelopes", () => {
     }));
   });
 
+  it("fails closed when a cached company detail points at a depublished canonical row", async () => {
+    mocks.getCompanyByFocusId.mockResolvedValue({
+      id: "company-canonical",
+      focusIds: ["company-old", "company-canonical"],
+      name: "Stale cached company",
+    });
+    mocks.companyFindMany.mockResolvedValue([
+      {
+        id: "company-old",
+        status: "ARCHIVED",
+        updatedAt: new Date("2026-07-20T12:00:00.000Z"),
+        lastVerifiedAt: null,
+        _count: { citations: 1 },
+      },
+      {
+        id: "company-canonical",
+        status: "ARCHIVED",
+        updatedAt: new Date("2026-07-22T12:00:00.000Z"),
+        lastVerifiedAt: null,
+        _count: { citations: 2 },
+      },
+    ]);
+
+    const response = await getCompanyDetail(
+      new Request("http://localhost/api/portfolio/company-old"),
+      { params: Promise.resolve({ id: "company-old" }) },
+    );
+
+    expect(response.status).toBe(404);
+    expect(response.headers.get("cache-control")).toBe("no-store, max-age=0");
+    await expect(response.json()).resolves.toEqual({ error: "Company not found" });
+  });
+
   it("returns 404 when no published canonical company can be resolved", async () => {
     mocks.getCompanyByFocusId.mockResolvedValue(null);
 
@@ -160,5 +196,28 @@ describe("published detail API envelopes", () => {
 
     expect(response.status).toBe(404);
     expect(mocks.companyFindMany).not.toHaveBeenCalled();
+  });
+
+  it.each([
+    ["deal", getDealDetail, { legacyId: "%E0%A4%A" }, "Invalid deal identifier"],
+    ["fund", getFundDetail, { legacyId: "%E0%A4%A" }, "Invalid fund identifier"],
+    ["company", getCompanyDetail, { id: "%E0%A4%A" }, "Invalid company identifier"],
+  ] as const)("rejects a malformed encoded %s identifier without querying data", async (
+    _entity,
+    handler,
+    params,
+    error,
+  ) => {
+    const response = await handler(
+      new Request("http://localhost/api/detail/%E0%A4%A"),
+      { params: Promise.resolve(params) } as never,
+    );
+
+    expect(response.status).toBe(400);
+    expect(response.headers.get("cache-control")).toBe("no-store, max-age=0");
+    await expect(response.json()).resolves.toEqual({ error });
+    expect(mocks.getDealById).not.toHaveBeenCalled();
+    expect(mocks.getFundById).not.toHaveBeenCalled();
+    expect(mocks.getCompanyByFocusId).not.toHaveBeenCalled();
   });
 });

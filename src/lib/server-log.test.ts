@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
+  createRequestId,
   getRequestId,
   logServerFailure,
   logServerOperation,
@@ -10,6 +11,15 @@ import {
 describe("server request logging", () => {
   afterEach(() => {
     vi.restoreAllMocks();
+  });
+
+  it("creates fresh server-owned correlation IDs for the public request boundary", () => {
+    const first = createRequestId();
+    const second = createRequestId();
+
+    expect(first).toMatch(/^[0-9a-f-]{36}$/i);
+    expect(second).toMatch(/^[0-9a-f-]{36}$/i);
+    expect(second).not.toBe(first);
   });
 
   it("keeps a safe upstream request ID and replaces unsafe values", () => {

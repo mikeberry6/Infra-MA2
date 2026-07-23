@@ -1,14 +1,23 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { withServerOperation } from "@/lib/server-log";
-import { effectiveNewsPipelineRunStatus } from "@/modules/news/source-coverage";
-import { nextDashboardSyncAt } from "@/modules/operations/pipeline-schedules";
+import {
+  classifyCriticalPipeline,
+  pipelineHealthPasses,
+} from "@/app/api/health/pipeline-health";
 
 const PIPELINES = ["NEWS_SCAN", "DASHBOARD_SYNC"] as const;
 
 const SCHEMA_ERROR_CODES = new Set(["P2021", "P2022", "42P01", "42703"]);
 
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
+export const fetchCache = "force-no-store";
+
+const NO_STORE_HEADERS = {
+  "Cache-Control": "no-store, max-age=0",
+  Pragma: "no-cache",
+} as const;
 
 function objectValue(value: unknown): Record<string, unknown> | null {
   return value && typeof value === "object" ? value as Record<string, unknown> : null;
@@ -92,19 +101,6 @@ async function schemaIsReady(): Promise<boolean> {
   return rows[0]?.ready === true;
 }
 
-function pipelineIsStale(
-  name: (typeof PIPELINES)[number],
-  successfulAt: Date | null,
-  generatedAt: Date,
-): boolean {
-  if (!successfulAt) return true;
-  if (name === "DASHBOARD_SYNC") {
-    return nextDashboardSyncAt(successfulAt).getTime() <= generatedAt.getTime();
-  }
-  return generatedAt.getTime() - successfulAt.getTime()
-    > 36 * 60 * 60 * 1000;
-}
-
 export async function GET(request: Request) {
   const generatedAt = new Date();
 
@@ -126,7 +122,7 @@ export async function GET(request: Request) {
         database: "unavailable",
         pipelines: [],
         generationTimeMs: elapsedMs(),
-      }, { status: 503 });
+      }, { status: 503, headers: NO_STORE_HEADERS });
     }
 
     try {
@@ -137,47 +133,24 @@ export async function GET(request: Request) {
           database: "connected",
           pipelines: [],
           generationTimeMs: elapsedMs(),
-        }, { status: 503 });
+        }, { status: 503, headers: NO_STORE_HEADERS });
       }
 
       const pipelines = await Promise.all(PIPELINES.map(async (name) => {
-        const [latestAttempt, latestSuccess] = await Promise.all([
-          prisma.pipelineRun.findFirst({
-            where: { pipeline: name },
-            orderBy: { startedAt: "desc" },
-          }),
-          name === "NEWS_SCAN"
-            ? prisma.pipelineRun.findMany({
-              where: { pipeline: name, status: "SUCCEEDED" },
-              orderBy: { endedAt: "desc" },
-              take: 100,
-            }).then((runs) => runs.find(
-              (run) => effectiveNewsPipelineRunStatus(run) === "SUCCEEDED",
-            ))
-            : prisma.pipelineRun.findFirst({
-              where: { pipeline: name, status: "SUCCEEDED" },
-              orderBy: { endedAt: "desc" },
-            }),
-        ]);
-        const successfulAt = latestSuccess?.endedAt ?? latestSuccess?.startedAt ?? null;
-        const stale = pipelineIsStale(name, successfulAt, generatedAt);
-        const latestAttemptStatus = name === "NEWS_SCAN" && latestAttempt
-          ? effectiveNewsPipelineRunStatus(latestAttempt)
-          : latestAttempt?.status;
-        return {
-          name,
-          status: !latestAttempt
-            ? "never-run"
-            : latestAttemptStatus === "FAILED"
-              ? "failed"
-              : stale
-                ? "stale"
-                : "healthy",
-          lastAttemptAt: latestAttempt?.startedAt.toISOString() ?? null,
-          lastSuccessfulAt: successfulAt?.toISOString() ?? null,
-        };
+        const rows = await prisma.pipelineRun.findMany({
+          where: { pipeline: name },
+          orderBy: { startedAt: "desc" },
+          take: 100,
+          select: {
+            status: true,
+            startedAt: true,
+            endedAt: true,
+            metadata: true,
+          },
+        });
+        return classifyCriticalPipeline(name, rows, generatedAt);
       }));
-      const degraded = pipelines.some((pipeline) => pipeline.status !== "healthy");
+      const degraded = pipelines.some((pipeline) => !pipelineHealthPasses(pipeline));
 
       return NextResponse.json({
         status: degraded ? "degraded" : "healthy",
@@ -185,7 +158,7 @@ export async function GET(request: Request) {
         database: "connected",
         pipelines,
         generationTimeMs: elapsedMs(),
-      }, { status: degraded ? 503 : 200 });
+      }, { status: degraded ? 503 : 200, headers: NO_STORE_HEADERS });
     } catch (error) {
       const schemaMismatch = isSchemaMismatchError(error);
       return NextResponse.json({
@@ -194,7 +167,7 @@ export async function GET(request: Request) {
         database: schemaMismatch ? "connected" : "unavailable",
         pipelines: [],
         generationTimeMs: elapsedMs(),
-      }, { status: 503 });
+      }, { status: 503, headers: NO_STORE_HEADERS });
     }
   });
 }

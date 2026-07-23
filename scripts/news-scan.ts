@@ -3,7 +3,7 @@ import { createHash } from "crypto";
 import { setDefaultResultOrder } from "dns";
 import { mkdir, writeFile } from "fs/promises";
 import path from "path";
-import { PrismaClient } from "../src/generated/prisma/client";
+import { PrismaClient, type Prisma } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
 import { fetchPublicText } from "../src/lib/server/public-network-fetch";
@@ -212,6 +212,35 @@ type RunSummary = {
     sourceUrl: string;
   }>;
 };
+
+function pipelineRunMetadata(
+  summary: RunSummary,
+  sourceCoverage: ReturnType<typeof newsSourceCoverageFromSummary>,
+  sourceHealth: ReturnType<typeof assessNewsSourceCoverage>,
+): Prisma.InputJsonObject {
+  return {
+    refreshWindow: summary.options.rotationDateUtc,
+    tracked: { ...summary.tracked },
+    selection: summary.selection ? { ...summary.selection } : null,
+    lookback: summary.lookback ? { ...summary.lookback } : null,
+    failedFetches: summary.crawl.failedFetches,
+    failedQueries: summary.search.failedQueries,
+    sourceCoverage: { ...sourceCoverage },
+    sourceHealth: { ...sourceHealth },
+    cappedByMaxPages: summary.crawl.cappedByMaxPages,
+    configuredBudgetExhausted: summary.crawl.configuredBudgetExhausted,
+    intentionalDeferral: summary.crawl.intentionallyDeferred,
+    crawlBudget: {
+      maxPages: summary.options.maxPages,
+      initialSeedUrls: summary.crawl.initialSeedUrls,
+      plannedInitialSeedUrls: summary.crawl.plannedInitialSeedUrls,
+      deferredInitialSeedUrls: summary.crawl.deferredInitialSeedUrls,
+      requiredInitialSeedsDeferred: summary.crawl.requiredInitialSeedsDeferred,
+      discoveredUrls: summary.crawl.discoveredUrls,
+      deferredQueuedUrls: summary.crawl.deferredQueuedUrls,
+    },
+  };
+}
 
 const USER_AGENT = "Infra-MA2-NewsMonitor/1.0 (+public news review queue; no LinkedIn scraping)";
 const COMMON_NEWS_PATHS = [
@@ -499,62 +528,21 @@ async function main() {
         inserted: summary.results.created,
         updated: summary.results.updated,
         skipped: summary.results.existingSourceUrlMatches + summary.results.outsideDateWindow,
-      }, {
-        refreshWindow: options.rotationDateUtc,
-        tracked: summary.tracked,
-        selection: summary.selection,
-        lookback: summary.lookback,
-        failedFetches: summary.crawl.failedFetches,
-        failedQueries: summary.search.failedQueries,
-        sourceCoverage,
-        sourceHealth,
-        cappedByMaxPages: summary.crawl.cappedByMaxPages,
-        configuredBudgetExhausted: summary.crawl.configuredBudgetExhausted,
-        intentionalDeferral: summary.crawl.intentionallyDeferred,
-        crawlBudget: {
-          maxPages: options.maxPages,
-          initialSeedUrls: summary.crawl.initialSeedUrls,
-          plannedInitialSeedUrls: summary.crawl.plannedInitialSeedUrls,
-          deferredInitialSeedUrls: summary.crawl.deferredInitialSeedUrls,
-          requiredInitialSeedsDeferred: summary.crawl.requiredInitialSeedsDeferred,
-          discoveredUrls: summary.crawl.discoveredUrls,
-          deferredQueuedUrls: summary.crawl.deferredQueuedUrls,
-        },
-      });
+      }, pipelineRunMetadata(summary, sourceCoverage, sourceHealth));
     }
   } catch (error) {
     if (pipelineRunId) {
       const sourceCoverage = newsSourceCoverageFromSummary(summary);
+      const sourceHealth = assessNewsSourceCoverage(sourceCoverage, {
+        cappedByMaxPages: summary.crawl.cappedByMaxPages,
+        configuredBudgetExhausted: summary.crawl.configuredBudgetExhausted,
+        intentionalDeferral: summary.crawl.intentionallyDeferred,
+      });
       await failPipelineRun(prisma, pipelineRunId, error, {
         inserted: summary.results.created,
         updated: summary.results.updated,
         skipped: summary.results.existingSourceUrlMatches + summary.results.outsideDateWindow,
-      }, {
-        refreshWindow: options.rotationDateUtc,
-        tracked: summary.tracked,
-        selection: summary.selection,
-        lookback: summary.lookback,
-        failedFetches: summary.crawl.failedFetches,
-        failedQueries: summary.search.failedQueries,
-        sourceCoverage,
-        sourceHealth: assessNewsSourceCoverage(sourceCoverage, {
-          cappedByMaxPages: summary.crawl.cappedByMaxPages,
-          configuredBudgetExhausted: summary.crawl.configuredBudgetExhausted,
-          intentionalDeferral: summary.crawl.intentionallyDeferred,
-        }),
-        cappedByMaxPages: summary.crawl.cappedByMaxPages,
-        configuredBudgetExhausted: summary.crawl.configuredBudgetExhausted,
-        intentionalDeferral: summary.crawl.intentionallyDeferred,
-        crawlBudget: {
-          maxPages: options.maxPages,
-          initialSeedUrls: summary.crawl.initialSeedUrls,
-          plannedInitialSeedUrls: summary.crawl.plannedInitialSeedUrls,
-          deferredInitialSeedUrls: summary.crawl.deferredInitialSeedUrls,
-          requiredInitialSeedsDeferred: summary.crawl.requiredInitialSeedsDeferred,
-          discoveredUrls: summary.crawl.discoveredUrls,
-          deferredQueuedUrls: summary.crawl.deferredQueuedUrls,
-        },
-      });
+      }, pipelineRunMetadata(summary, sourceCoverage, sourceHealth));
     }
     throw error;
   } finally {

@@ -4,6 +4,7 @@ import {
   ADMIN_E2E_ENV,
   appPath,
   configuredAdminE2E,
+  expectNoHorizontalOverflow,
   signInAsConfiguredAdmin,
 } from "./helpers";
 
@@ -17,6 +18,22 @@ const routes = [
   "/earnings",
   "/login",
 ];
+
+const ADMIN_ROUTES = [
+  { path: "/admin", heading: "Admin" },
+  { path: "/admin/deals", heading: "Deals" },
+  { path: "/admin/deals/new", heading: "New deal" },
+  { path: "/admin/funds", heading: "Funds" },
+  { path: "/admin/funds/new", heading: "New fund" },
+  { path: "/admin/companies", heading: "Companies" },
+  { path: "/admin/companies/new", heading: "New company" },
+  { path: "/admin/sources", heading: "Sources" },
+  { path: "/admin/dashboard-signals", heading: "Dashboard signal review" },
+  { path: "/admin/audit", heading: "Audit log" },
+  { path: "/admin/users", heading: "Users" },
+] as const;
+
+const RESPONSIVE_WIDTHS = [320, 390, 768, 1280, 1440] as const;
 
 for (const path of routes) {
   test(`${path} has no automatically detectable WCAG A/AA violations`, async ({ page }) => {
@@ -38,16 +55,7 @@ test("authenticated administration pages have no automatically detectable WCAG A
   );
 
   await signInAsConfiguredAdmin(page);
-  for (const path of [
-    "/admin",
-    "/admin/deals",
-    "/admin/funds",
-    "/admin/companies",
-    "/admin/sources",
-    "/admin/dashboard-signals",
-    "/admin/audit",
-    "/admin/users",
-  ]) {
+  for (const { path } of ADMIN_ROUTES) {
     await page.goto(appPath(path));
     await expect(page).toHaveURL(new RegExp(`${appPath(path)}$`));
     await page.locator("main").waitFor({ state: "visible" });
@@ -62,6 +70,31 @@ test("authenticated administration pages have no automatically detectable WCAG A
   }
 });
 
+test("authenticated administration pages have no body-level horizontal overflow at required widths", async ({ page }) => {
+  test.setTimeout(240_000);
+  test.skip(
+    !configuredAdminE2E(),
+    `${ADMIN_E2E_ENV.join(", ")} are required for authenticated admin responsive checks`,
+  );
+
+  await signInAsConfiguredAdmin(page);
+  for (const width of RESPONSIVE_WIDTHS) {
+    await page.setViewportSize({ width, height: 900 });
+    await expect.poll(() => page.evaluate(() => window.innerWidth)).toBe(width);
+
+    for (const { path, heading } of ADMIN_ROUTES) {
+      const response = await page.goto(appPath(path));
+      expect(response?.ok(), `${path} should load successfully at ${width}px`).toBeTruthy();
+      await expect(page).toHaveURL(new RegExp(`${appPath(path)}$`));
+      await expect(
+        page.getByRole("heading", { name: heading, level: 1, exact: true }),
+        `${path} should render its authenticated admin heading at ${width}px`,
+      ).toBeVisible();
+      await expectNoHorizontalOverflow(page, `${path} at ${width}px`);
+    }
+  }
+});
+
 test("mobile filter sheet remains accessible", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(appPath("/tracker"));
@@ -70,6 +103,25 @@ test("mobile filter sheet remains accessible", async ({ page }) => {
   const results = await new AxeBuilder({ page })
     .include('[role="dialog"]')
     .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+    .analyze();
+  expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
+});
+
+test("portfolio company scorecard has no automatically detectable WCAG A/AA violations", async ({ page }) => {
+  await page.goto(appPath("/portfolio"));
+  await page.getByRole("heading", {
+    name: "Infrastructure Portfolio Company Database",
+    level: 1,
+  }).waitFor();
+  await page.locator("tbody tr[role=button]").first().click();
+
+  const dialog = page.getByRole("dialog");
+  await expect(dialog).toBeVisible();
+  await expect(dialog.getByRole("status")).toBeHidden();
+  await expect(dialog.getByText(/^Last verified /)).toBeVisible();
+  const results = await new AxeBuilder({ page })
+    .include('[role="dialog"]')
+    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
     .analyze();
   expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
 });

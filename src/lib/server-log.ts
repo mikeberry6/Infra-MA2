@@ -88,7 +88,12 @@ export function logServerOperation(entry: ServerLog): void {
 }
 
 export function getRequestId(request: Request): string {
-  return getRequestIdFromHeaders(request.headers) ?? crypto.randomUUID();
+  return getRequestIdFromHeaders(request.headers) ?? createRequestId();
+}
+
+/** Creates a server-owned correlation ID at the public request boundary. */
+export function createRequestId(): string {
+  return crypto.randomUUID();
 }
 
 export function getRequestIdFromHeaders(headers: Pick<Headers, "get">): string | undefined {

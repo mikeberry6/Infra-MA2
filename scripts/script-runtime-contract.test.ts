@@ -183,6 +183,49 @@ function nativeGraphProblems(entrypoint: string, allowExternalPackages = true): 
 }
 
 describe("TypeScript script runtime contract", () => {
+  it("strictly type-checks operational scripts and Prisma TypeScript in the release gate", () => {
+    const packageJson = JSON.parse(
+      readFileSync(path.join(repository, "package.json"), "utf8"),
+    ) as { scripts?: Record<string, string> };
+    const scriptsConfig = JSON.parse(
+      readFileSync(path.join(repository, "scripts/tsconfig.json"), "utf8"),
+    ) as {
+      compilerOptions?: {
+        lib?: string[];
+        noEmit?: boolean;
+        strict?: boolean;
+        target?: string;
+      };
+      include?: string[];
+    };
+    const workflow = readFileSync(
+      path.join(repository, ".github/workflows/deploy.yml"),
+      "utf8",
+    );
+
+    expect(packageJson.scripts?.["typecheck:scripts"]).toBe(
+      "tsc -p scripts/tsconfig.json --pretty false",
+    );
+    expect(scriptsConfig.compilerOptions).toMatchObject({
+      lib: ["ES2022", "DOM", "DOM.Iterable"],
+      noEmit: true,
+      strict: true,
+      target: "ES2022",
+    });
+    expect(scriptsConfig.include).toEqual(expect.arrayContaining([
+      "./**/*.ts",
+      "../prisma/**/*.ts",
+      "../prisma.config.ts",
+    ]));
+
+    const applicationTypecheck = workflow.indexOf("run: npm run typecheck\n");
+    const scriptsTypecheck = workflow.indexOf("run: npm run typecheck:scripts");
+    const tests = workflow.indexOf("run: npm test");
+    expect(applicationTypecheck).toBeGreaterThanOrEqual(0);
+    expect(scriptsTypecheck).toBeGreaterThan(applicationTypecheck);
+    expect(tests).toBeGreaterThan(scriptsTypecheck);
+  });
+
   it("keeps the complete native-Node command inventory explicit and resolvable", () => {
     const nativeEntrypoints = captureEntrypoints(commandSources(true), nativeCommand);
     expect(nativeEntrypoints).toEqual(expectedNativeEntrypoints);

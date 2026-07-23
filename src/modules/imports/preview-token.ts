@@ -10,6 +10,7 @@ export interface ImportPreviewSummary {
   valid: number;
   creates: number;
   updates: number;
+  unchanged: number;
   quarantined: number;
   errors: number;
   stateHash?: string;

@@ -2,7 +2,6 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
   queryRaw: vi.fn(),
-  pipelineFindFirst: vi.fn(),
   pipelineFindMany: vi.fn(),
 }));
 
@@ -10,7 +9,6 @@ vi.mock("@/lib/prisma", () => ({
   prisma: {
     $queryRaw: mocks.queryRaw,
     pipelineRun: {
-      findFirst: mocks.pipelineFindFirst,
       findMany: mocks.pipelineFindMany,
     },
   },
@@ -30,30 +28,14 @@ function request() {
 }
 
 function healthyPipelineReads() {
-  mocks.pipelineFindFirst.mockImplementation(({ where }: {
-    where: { pipeline: string; status?: string };
-  }) => {
-    if (where.status === "SUCCEEDED") {
-      return Promise.resolve({
-        status: "SUCCEEDED",
-        startedAt: new Date("2026-07-22T12:00:00.000Z"),
-        endedAt: new Date("2026-07-22T12:05:00.000Z"),
-        metadata: where.pipeline === "NEWS_SCAN" ? HEALTHY_NEWS_COVERAGE : null,
-      });
-    }
-    return Promise.resolve({
+  mocks.pipelineFindMany.mockImplementation(({ where }: {
+    where: { pipeline: string };
+  }) => Promise.resolve([{
       status: "SUCCEEDED",
       startedAt: new Date("2026-07-22T12:00:00.000Z"),
       endedAt: new Date("2026-07-22T12:05:00.000Z"),
       metadata: where.pipeline === "NEWS_SCAN" ? HEALTHY_NEWS_COVERAGE : null,
-    });
-  });
-  mocks.pipelineFindMany.mockResolvedValue([{
-    status: "SUCCEEDED",
-    startedAt: new Date("2026-07-22T12:00:00.000Z"),
-    endedAt: new Date("2026-07-22T12:05:00.000Z"),
-    metadata: HEALTHY_NEWS_COVERAGE,
-  }]);
+    }]));
 }
 
 describe("GET /api/health", () => {
@@ -62,7 +44,6 @@ describe("GET /api/health", () => {
     vi.setSystemTime(NOW);
     vi.spyOn(console, "info").mockImplementation(() => undefined);
     mocks.queryRaw.mockReset();
-    mocks.pipelineFindFirst.mockReset();
     mocks.pipelineFindMany.mockReset();
   });
 
@@ -81,6 +62,7 @@ describe("GET /api/health", () => {
     const payload = await response.json();
 
     expect(response.status).toBe(200);
+    expect(response.headers.get("cache-control")).toBe("no-store, max-age=0");
     expect(response.headers.get("x-request-id")).toBe("health-request");
     expect(payload).toMatchObject({
       status: "healthy",
@@ -118,7 +100,7 @@ describe("GET /api/health", () => {
       pipelines: [],
     });
     expect(JSON.stringify(payload)).not.toContain("password");
-    expect(mocks.pipelineFindFirst).not.toHaveBeenCalled();
+    expect(mocks.pipelineFindMany).not.toHaveBeenCalled();
   });
 
   it("distinguishes a reachable but unmigrated schema from database unavailability", async () => {
@@ -134,7 +116,7 @@ describe("GET /api/health", () => {
       database: "connected",
       pipelines: [],
     });
-    expect(mocks.pipelineFindFirst).not.toHaveBeenCalled();
+    expect(mocks.pipelineFindMany).not.toHaveBeenCalled();
   });
 
   it("classifies a missing schema object raised by Prisma as not-ready", async () => {
@@ -154,22 +136,14 @@ describe("GET /api/health", () => {
     mocks.queryRaw
       .mockResolvedValueOnce([{ connected: 1 }])
       .mockResolvedValueOnce([{ ready: true }]);
-    mocks.pipelineFindFirst.mockImplementation(({ where }: {
-      where: { pipeline: string; status?: string };
-    }) => Promise.resolve({
-      status: "SUCCEEDED",
-      startedAt: new Date("2026-07-19T12:00:00.000Z"),
-      endedAt: where.status === "SUCCEEDED"
-        ? new Date("2026-07-19T12:05:00.000Z")
-        : new Date("2026-07-19T12:05:00.000Z"),
-      metadata: where.pipeline === "NEWS_SCAN" ? HEALTHY_NEWS_COVERAGE : null,
-    }));
-    mocks.pipelineFindMany.mockResolvedValue([{
+    mocks.pipelineFindMany.mockImplementation(({ where }: {
+      where: { pipeline: string };
+    }) => Promise.resolve([{
       status: "SUCCEEDED",
       startedAt: new Date("2026-07-19T12:00:00.000Z"),
       endedAt: new Date("2026-07-19T12:05:00.000Z"),
-      metadata: HEALTHY_NEWS_COVERAGE,
-    }]);
+      metadata: where.pipeline === "NEWS_SCAN" ? HEALTHY_NEWS_COVERAGE : null,
+    }]));
 
     const response = await GET(request());
     const payload = await response.json();
@@ -190,25 +164,19 @@ describe("GET /api/health", () => {
     mocks.queryRaw
       .mockResolvedValueOnce([{ connected: 1 }])
       .mockResolvedValueOnce([{ ready: true }]);
-    mocks.pipelineFindFirst.mockImplementation(({ where }: {
-      where: { pipeline: string; status?: string };
+    mocks.pipelineFindMany.mockImplementation(({ where }: {
+      where: { pipeline: string };
     }) => {
       const endedAt = where.pipeline === "DASHBOARD_SYNC"
         ? new Date("2026-07-24T11:35:00.000Z")
         : new Date("2026-07-26T01:00:00.000Z");
-      return Promise.resolve({
+      return Promise.resolve([{
         status: "SUCCEEDED",
         startedAt: endedAt,
         endedAt,
         metadata: where.pipeline === "NEWS_SCAN" ? HEALTHY_NEWS_COVERAGE : null,
-      });
+      }]);
     });
-    mocks.pipelineFindMany.mockResolvedValue([{
-      status: "SUCCEEDED",
-      startedAt: new Date("2026-07-26T01:00:00.000Z"),
-      endedAt: new Date("2026-07-26T01:00:00.000Z"),
-      metadata: HEALTHY_NEWS_COVERAGE,
-    }]);
 
     const response = await GET(request());
     const payload = await response.json();
@@ -225,25 +193,19 @@ describe("GET /api/health", () => {
     mocks.queryRaw
       .mockResolvedValueOnce([{ connected: 1 }])
       .mockResolvedValueOnce([{ ready: true }]);
-    mocks.pipelineFindFirst.mockImplementation(({ where }: {
-      where: { pipeline: string; status?: string };
+    mocks.pipelineFindMany.mockImplementation(({ where }: {
+      where: { pipeline: string };
     }) => {
       const endedAt = where.pipeline === "DASHBOARD_SYNC"
         ? new Date("2026-07-24T11:35:00.000Z")
         : new Date("2026-07-27T00:00:00.000Z");
-      return Promise.resolve({
+      return Promise.resolve([{
         status: "SUCCEEDED",
         startedAt: endedAt,
         endedAt,
         metadata: where.pipeline === "NEWS_SCAN" ? HEALTHY_NEWS_COVERAGE : null,
-      });
+      }]);
     });
-    mocks.pipelineFindMany.mockResolvedValue([{
-      status: "SUCCEEDED",
-      startedAt: new Date("2026-07-27T00:00:00.000Z"),
-      endedAt: new Date("2026-07-27T00:00:00.000Z"),
-      metadata: HEALTHY_NEWS_COVERAGE,
-    }]);
 
     const response = await GET(request());
     const payload = await response.json();
@@ -265,17 +227,16 @@ describe("GET /api/health", () => {
       endedAt: new Date("2026-07-22T12:05:00.000Z"),
       metadata: { sourceCoverage: { attempted: 10, succeeded: 5, failed: 5 } },
     };
-    mocks.pipelineFindFirst.mockImplementation(({ where }: {
-      where: { pipeline: string; status?: string };
-    }) => Promise.resolve(where.pipeline === "NEWS_SCAN"
+    mocks.pipelineFindMany.mockImplementation(({ where }: {
+      where: { pipeline: string };
+    }) => Promise.resolve([where.pipeline === "NEWS_SCAN"
       ? badNewsRun
       : {
         status: "SUCCEEDED",
         startedAt: new Date("2026-07-22T12:00:00.000Z"),
         endedAt: new Date("2026-07-22T12:05:00.000Z"),
         metadata: null,
-      }));
-    mocks.pipelineFindMany.mockResolvedValue([badNewsRun]);
+      }]));
 
     const response = await GET(request());
     const payload = await response.json();

@@ -17,7 +17,15 @@ import {
 } from "./preview-token";
 
 const items = [{ target: "Asset", id: "DEAL-1", categories: ["Acquisition"] }];
-const summary = { total: 1, valid: 1, creates: 1, updates: 0, quarantined: 0, errors: 0 };
+const summary = {
+  total: 1,
+  valid: 1,
+  creates: 1,
+  updates: 0,
+  unchanged: 0,
+  quarantined: 0,
+  errors: 0,
+};
 
 describe("import preview tokens", () => {
   beforeEach(() => {

@@ -73,6 +73,9 @@ jobs:
       - name: Type check
         run: npm run typecheck
 
+      - name: Type check operational scripts and Prisma TypeScript
+        run: npm run typecheck:scripts
+
       - name: Run unit and integration tests
         run: npm test
 

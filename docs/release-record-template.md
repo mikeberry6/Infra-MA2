@@ -36,6 +36,7 @@
 - News latest success / rolling success rate:
 - Preview smoke and authenticated journey result:
 - Axe/keyboard/responsive/visual result:
+- Human accessibility review record/status (do not infer from automation):
 - Production dependency audit:
 - Public bundle sizes:
 

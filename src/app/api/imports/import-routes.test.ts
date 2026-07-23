@@ -121,6 +121,99 @@ function company(overrides: Record<string, unknown> = {}) {
   };
 }
 
+function unchangedDealRecord(overrides: Record<string, unknown> = {}) {
+  return {
+    id: "database-deal-existing",
+    legacyId: "DEAL-NEW",
+    status: "DRAFT",
+    title: "Buyer acquires Target",
+    target: "Target",
+    sector: "DIGITAL",
+    subsector: "Fiber",
+    region: "NORTH_AMERICA",
+    categories: ["ACQUISITION_BUYOUT"],
+    date: new Date("2026-07-20T12:00:00.000Z"),
+    description: "A complete transaction description.",
+    targetDescription: "A fiber platform.",
+    country: "United States",
+    enterpriseValue: null,
+    equityValue: null,
+    stake: null,
+    dealStatus: "ANNOUNCED",
+    closingDate: null,
+    sellerDisclosureStatus: "DISCLOSED",
+    sellerDisclosureReason: null,
+    assetScale: null,
+    valuationMultiple: null,
+    fundVehicle: null,
+    keyHighlights: [],
+    participants: [
+      { role: "BUYER", displayName: "Buyer", organization: { name: "Buyer" } },
+      { role: "SELLER", displayName: "Seller", organization: { name: "Seller" } },
+    ],
+    citations: [{
+      source: {
+        url: "https://example.com/test/deal",
+        label: "Company announcement",
+      },
+    }],
+    ...overrides,
+  };
+}
+
+function unchangedFundRecord(overrides: Record<string, unknown> = {}) {
+  return {
+    id: "database-fund-existing",
+    legacyId: "FUND-NEW",
+    status: "DRAFT",
+    managerId: "manager-1",
+    manager: { name: "Manager" },
+    fundName: "Infrastructure Fund V",
+    ticker: null,
+    investmentStrategy: "Core infrastructure",
+    size: "$5 billion",
+    sizeUsdMm: 5000,
+    vintage: "2026",
+    strategies: ["CORE"],
+    structure: "CLOSED_END",
+    fundStatus: "RAISING",
+    sectors: ["DIGITAL"],
+    regions: ["NORTH_AMERICA"],
+    sourceUrls: ["https://example.com/test/fund"],
+    primarySourceUrl: null,
+    strategyUrl: "",
+    ...overrides,
+  };
+}
+
+function unchangedCompanyRecord(overrides: Record<string, unknown> = {}) {
+  return {
+    id: "database-company-existing",
+    name: "Portfolio Company",
+    country: "United States",
+    status: "DRAFT",
+    sector: "DIGITAL",
+    subsector: "Fiber",
+    region: "NORTH_AMERICA",
+    countryTags: [],
+    description: "A fiber platform.",
+    companyStatus: "ACTIVE",
+    website: "https://example.com/test/company",
+    yearFounded: 2012,
+    headquarters: null,
+    ownershipPeriods: [{
+      id: "ownership-1",
+      fundId: "fund-1",
+      isActive: true,
+      vehicleName: "Infrastructure Fund V",
+      investmentYear: 2024,
+      organization: { name: "Manager" },
+    }],
+    citations: [],
+    ...overrides,
+  };
+}
+
 describe("two-step import routes", () => {
   beforeEach(() => {
     Object.values(mocks).forEach((mock) => mock.mockReset());
@@ -163,6 +256,197 @@ describe("two-step import routes", () => {
     expect(mocks.recordAuditEvent).not.toHaveBeenCalled();
     expect(mocks.pipelineCreate).not.toHaveBeenCalled();
     expect(mocks.revalidateAppData).not.toHaveBeenCalled();
+  });
+
+  it("classifies an identical deal replay as unchanged and commits it without writes, audit, or pipeline", async () => {
+    mocks.dealFindMany.mockResolvedValue([unchangedDealRecord()]);
+
+    const preview = await importDeals(jsonRequest(
+      "/api/imports/deals?preview=1",
+      { deals: [deal()] },
+    ));
+
+    expect(preview.status).toBe(200);
+    await expect(preview.json()).resolves.toMatchObject({
+      preview: true,
+      creates: 0,
+      updates: 0,
+      unchanged: 1,
+      quarantined: 0,
+      errors: [],
+    });
+    expect(mocks.hashImportPreviewState).toHaveBeenLastCalledWith({
+      actions: [{ id: "DEAL-NEW", action: "unchanged" }],
+      warnings: [],
+    });
+
+    const commit = await importDeals(jsonRequest(
+      "/api/imports/deals",
+      { deals: [deal()] },
+    ));
+
+    expect(commit.status).toBe(200);
+    await expect(commit.json()).resolves.toMatchObject({
+      imported: 0,
+      unchanged: 1,
+      quarantined: 0,
+      auditEventId: null,
+      results: [{ id: "DEAL-NEW", status: "unchanged" }],
+    });
+    expect(mocks.consumeImportPreviewToken).toHaveBeenCalledOnce();
+    expect(mocks.transaction).not.toHaveBeenCalled();
+    expect(mocks.pipelineCreate).not.toHaveBeenCalled();
+    expect(mocks.recordAuditEvent).not.toHaveBeenCalled();
+    expect(mocks.revalidateAppData).not.toHaveBeenCalled();
+  });
+
+  it("classifies an identical fund replay as unchanged and commits it without writes, audit, or pipeline", async () => {
+    mocks.fundFindMany.mockResolvedValue([unchangedFundRecord()]);
+
+    const preview = await importFunds(jsonRequest(
+      "/api/imports/funds?preview=1",
+      { funds: [fund()] },
+    ));
+
+    expect(preview.status).toBe(200);
+    await expect(preview.json()).resolves.toMatchObject({
+      preview: true,
+      creates: 0,
+      updates: 0,
+      unchanged: 1,
+      quarantined: 0,
+      errors: [],
+    });
+    expect(mocks.hashImportPreviewState).toHaveBeenLastCalledWith({
+      actions: [{ id: "FUND-NEW", action: "unchanged" }],
+      warnings: [],
+    });
+
+    const commit = await importFunds(jsonRequest(
+      "/api/imports/funds",
+      { funds: [fund()] },
+    ));
+
+    expect(commit.status).toBe(200);
+    await expect(commit.json()).resolves.toMatchObject({
+      imported: 0,
+      unchanged: 1,
+      quarantined: 0,
+      auditEventId: null,
+      results: [{ fundId: "FUND-NEW", status: "unchanged" }],
+    });
+    expect(mocks.consumeImportPreviewToken).toHaveBeenCalledOnce();
+    expect(mocks.transaction).not.toHaveBeenCalled();
+    expect(mocks.pipelineCreate).not.toHaveBeenCalled();
+    expect(mocks.recordAuditEvent).not.toHaveBeenCalled();
+    expect(mocks.revalidateAppData).not.toHaveBeenCalled();
+  });
+
+  it("classifies an identical portfolio replay as unchanged and commits it without writes, audit, or pipeline", async () => {
+    mocks.companyFindMany.mockResolvedValue([unchangedCompanyRecord()]);
+    mocks.fundFindMany.mockResolvedValue([{ id: "fund-1", fundName: "Infrastructure Fund V" }]);
+
+    const preview = await importCompanies(jsonRequest(
+      "/api/imports/portfolio?preview=1",
+      { companies: [company()] },
+    ));
+
+    expect(preview.status).toBe(200);
+    await expect(preview.json()).resolves.toMatchObject({
+      preview: true,
+      creates: 0,
+      updates: 0,
+      unchanged: 1,
+      quarantined: 0,
+      errors: [],
+      ownershipChanges: [],
+    });
+    expect(mocks.hashImportPreviewState).toHaveBeenLastCalledWith({
+      actions: [{ key: "portfolio company|united states", action: "unchanged" }],
+      warnings: [],
+      ownershipChanges: [],
+    });
+
+    const commit = await importCompanies(jsonRequest(
+      "/api/imports/portfolio",
+      { companies: [company()] },
+    ));
+
+    expect(commit.status).toBe(200);
+    await expect(commit.json()).resolves.toMatchObject({
+      imported: 0,
+      unchanged: 1,
+      quarantined: 0,
+      auditEventId: null,
+      results: [{ name: "Portfolio Company", status: "unchanged" }],
+    });
+    expect(mocks.consumeImportPreviewToken).toHaveBeenCalledOnce();
+    expect(mocks.transaction).not.toHaveBeenCalled();
+    expect(mocks.pipelineCreate).not.toHaveBeenCalled();
+    expect(mocks.recordAuditEvent).not.toHaveBeenCalled();
+    expect(mocks.revalidateAppData).not.toHaveBeenCalled();
+  });
+
+  it("skips an unchanged deal inside a mixed import while auditing only the real write", async () => {
+    const unchanged = unchangedDealRecord();
+    mocks.dealFindMany.mockResolvedValue([unchanged]);
+    const tx = {
+      deal: {
+        findMany: vi.fn().mockResolvedValue([unchanged]),
+        updateMany: vi.fn(),
+        create: vi.fn().mockResolvedValue({ id: "database-deal-created" }),
+      },
+      dealParticipant: {
+        deleteMany: vi.fn().mockResolvedValue({ count: 0 }),
+        create: vi.fn().mockResolvedValue({}),
+      },
+      organization: {
+        upsert: vi.fn().mockImplementation(async ({ where }: { where: { name: string } }) => ({
+          id: `organization-${where.name.toLowerCase()}`,
+        })),
+      },
+      citation: {
+        updateMany: vi.fn().mockResolvedValue({ count: 0 }),
+        findFirst: vi.fn().mockResolvedValue(null),
+        update: vi.fn().mockResolvedValue({}),
+        create: vi.fn().mockResolvedValue({}),
+      },
+      source: { upsert: vi.fn().mockResolvedValue({ id: "source-created" }) },
+      pipelineRun: { update: vi.fn().mockResolvedValue({}) },
+    };
+    mocks.transaction.mockImplementation(async (callback: (client: typeof tx) => unknown) => callback(tx));
+
+    const response = await importDeals(jsonRequest("/api/imports/deals", {
+      deals: [deal(), deal({ id: "DEAL-CREATE", title: "Buyer acquires another target" })],
+    }));
+
+    expect(response.status).toBe(200);
+    await expect(response.json()).resolves.toMatchObject({
+      imported: 1,
+      unchanged: 1,
+      auditEventId: "audit-1",
+      results: [
+        { id: "DEAL-NEW", status: "unchanged" },
+        { id: "DEAL-CREATE", status: "ok" },
+      ],
+    });
+    expect(tx.deal.updateMany).not.toHaveBeenCalled();
+    expect(tx.deal.create).toHaveBeenCalledOnce();
+    expect(tx.dealParticipant.deleteMany).toHaveBeenCalledOnce();
+    expect(mocks.recordAuditEvent).toHaveBeenCalledWith({
+      entityType: "Deal",
+      action: "BULK_IMPORT",
+      changes: { inserted: 1, updated: 0, unchanged: 1, errors: 0, quarantined: 0 },
+    }, tx);
+    expect(tx.pipelineRun.update).toHaveBeenCalledWith(expect.objectContaining({
+      data: expect.objectContaining({
+        status: "SUCCEEDED",
+        inserted: 1,
+        updated: 0,
+        skipped: 1,
+      }),
+    }));
+    expect(mocks.revalidateAppData).toHaveBeenCalledOnce();
   });
 
   it("rejects a direct commit when its preview token is missing, changed, expired, or consumed", async () => {

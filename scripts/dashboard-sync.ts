@@ -2,7 +2,7 @@ import "dotenv/config";
 import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 import { PrismaPg } from "@prisma/adapter-pg";
-import { PrismaClient } from "../src/generated/prisma/client";
+import { PrismaClient, type Prisma } from "../src/generated/prisma/client";
 import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
 import { SafeOperationalError } from "../src/lib/safe-error";
 import { withServerTask } from "../src/lib/server-log";
@@ -33,7 +33,7 @@ async function main() {
   let failureEvidence: {
     updated: number;
     skipped: number;
-    metadata: Record<string, unknown>;
+    metadata: Prisma.InputJsonObject;
   } | null = null;
 
   try {

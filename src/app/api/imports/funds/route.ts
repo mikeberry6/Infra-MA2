@@ -18,8 +18,10 @@ import type {
   FundStatusEnum,
   FundSectorEnum,
   FundRegionEnum,
+  Prisma,
 } from "@/generated/prisma/client";
 import { commitImport } from "@/modules/imports/commit";
+import { sameOrderedValues } from "@/modules/imports/idempotency";
 import {
   ImportConflictError,
   ImportRequestError,
@@ -34,6 +36,28 @@ import {
 } from "@/modules/imports/preview-token";
 
 const MAX_IMPORT_ROWS = 500;
+
+const FUND_IMPORT_SELECT = {
+  id: true,
+  legacyId: true,
+  status: true,
+  managerId: true,
+  manager: { select: { name: true } },
+  fundName: true,
+  ticker: true,
+  investmentStrategy: true,
+  size: true,
+  sizeUsdMm: true,
+  vintage: true,
+  strategies: true,
+  structure: true,
+  fundStatus: true,
+  sectors: true,
+  regions: true,
+  sourceUrls: true,
+  primarySourceUrl: true,
+  strategyUrl: true,
+} as const;
 
 type FundImportRow = FundInput & {
   fundId: string;
@@ -51,11 +75,7 @@ type ImportResult = {
   error?: string;
 };
 
-type ExistingFund = {
-  id: string;
-  legacyId: string;
-  status: string;
-};
+type ExistingFund = Prisma.FundGetPayload<{ select: typeof FUND_IMPORT_SELECT }>;
 
 const MUTABLE_EXISTING_FUND_STATUSES = new Set(["DRAFT", "IN_REVIEW"]);
 
@@ -82,6 +102,19 @@ function quarantinedFundResult(
   };
 }
 
+function unchangedFundResult(
+  row: FundImportRow,
+  existing: ExistingFund,
+): ImportResult {
+  return {
+    row: row.row,
+    fundId: row.fundId,
+    fundName: row.fundName,
+    dbId: existing.id,
+    status: "unchanged",
+  };
+}
+
 function stringValue(value: unknown): string {
   if (value == null) return "";
   return typeof value === "string" ? value : String(value);
@@ -102,6 +135,71 @@ function numberValue(value: unknown): number | undefined {
   if (value == null || value === "") return undefined;
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : undefined;
+}
+
+function normalizeFundImport(row: FundImportRow) {
+  const structure = FUND_STRUCTURE_MAP[row.structure] as FundStructure;
+  const fundStatus = FUND_STATUS_MAP[row.status] as FundStatusEnum;
+  if (!structure || !fundStatus) {
+    return { ok: false as const, error: "Invalid structure or status" };
+  }
+
+  return {
+    ok: true as const,
+    data: {
+      fundName: row.fundName,
+      ticker: row.ticker || null,
+      investmentStrategy: row.investmentStrategy || "",
+      size: row.size || "",
+      sizeUsdMm: row.sizeUsdMm ?? null,
+      vintage: row.vintage || "",
+      strategies: toArray(row.strategies)
+        .map((strategy: string) => FUND_STRATEGY_MAP[strategy])
+        .filter(Boolean) as FundStrategy[],
+      structure,
+      fundStatus,
+      sectors: toArray(row.sectors)
+        .map((sector: string) => FUND_SECTOR_MAP[sector])
+        .filter(Boolean) as FundSectorEnum[],
+      regions: toArray(row.regions)
+        .map((region: string) => FUND_REGION_MAP[region])
+        .filter(Boolean) as FundRegionEnum[],
+      sourceUrls: toArray(row.sourceUrls),
+      primarySourceUrl: row.primarySourceUrl || null,
+      strategyUrl: row.strategyUrl || "",
+    },
+  };
+}
+
+function sameFundImport(row: FundImportRow, existing: ExistingFund): boolean {
+  if (
+    !existing.manager
+    || !Array.isArray(existing.strategies)
+    || !Array.isArray(existing.sectors)
+    || !Array.isArray(existing.regions)
+    || !Array.isArray(existing.sourceUrls)
+  ) {
+    return false;
+  }
+  const normalized = normalizeFundImport(row);
+  if (!normalized.ok) return false;
+  const data = normalized.data;
+
+  return existing.manager.name === row.managerName
+    && existing.fundName === data.fundName
+    && existing.ticker === data.ticker
+    && existing.investmentStrategy === data.investmentStrategy
+    && existing.size === data.size
+    && existing.sizeUsdMm === data.sizeUsdMm
+    && existing.vintage === data.vintage
+    && sameOrderedValues(existing.strategies, data.strategies)
+    && existing.structure === data.structure
+    && existing.fundStatus === data.fundStatus
+    && sameOrderedValues(existing.sectors, data.sectors)
+    && sameOrderedValues(existing.regions, data.regions)
+    && sameOrderedValues(existing.sourceUrls, data.sourceUrls)
+    && existing.primarySourceUrl === data.primarySourceUrl
+    && existing.strategyUrl === data.strategyUrl;
 }
 
 function validateFundRows(funds: Record<string, unknown>[]): { validRows: FundImportRow[]; errors: ImportResult[] } {
@@ -211,7 +309,7 @@ async function importFunds(request: NextRequest) {
     const previewExisting = validRows.length > 0
       ? await prisma.fund.findMany({
           where: { legacyId: { in: validRows.map((row) => row.fundId) } },
-          select: { id: true, legacyId: true, status: true },
+          select: FUND_IMPORT_SELECT,
         })
       : [];
     const previewExistingById = new Map(previewExisting.map((row) => [row.legacyId, row]));
@@ -221,17 +319,24 @@ async function importFunds(request: NextRequest) {
         ? [quarantinedFundResult(row, existingFund)]
         : [];
     });
+    const previewActions = validRows.map((row) => {
+      const existingFund = previewExistingById.get(row.fundId);
+      if (!existingFund) return { id: row.fundId, action: "create" as const };
+      if (!canImportOverExistingFund(existingFund)) return { id: row.fundId, action: "quarantined" as const };
+      return {
+        id: row.fundId,
+        action: sameFundImport(row, existingFund) ? "unchanged" as const : "update" as const,
+      };
+    });
     const previewSummary: ImportPreviewSummary = {
       total: funds.length,
       valid: validRows.length,
-      creates: validRows.filter((row) => !previewExistingById.has(row.fundId)).length,
-      updates: validRows.filter((row) => {
-        const existingFund = previewExistingById.get(row.fundId);
-        return existingFund ? canImportOverExistingFund(existingFund) : false;
-      }).length,
+      creates: previewActions.filter((item) => item.action === "create").length,
+      updates: previewActions.filter((item) => item.action === "update").length,
+      unchanged: previewActions.filter((item) => item.action === "unchanged").length,
       quarantined: previewWarnings.length,
       errors: errors.length,
-      stateHash: hashImportPreviewState({ warnings: previewWarnings }),
+      stateHash: hashImportPreviewState({ actions: previewActions, warnings: previewWarnings }),
     };
     if (request.nextUrl.searchParams.get("preview") === "1") {
       const previewToken = await createImportPreviewToken({
@@ -256,6 +361,23 @@ async function importFunds(request: NextRequest) {
       items: funds,
       summary: previewSummary,
     });
+    if (previewSummary.creates === 0 && previewSummary.updates === 0) {
+      const unchangedResults = validRows.flatMap((row) => {
+        const existingFund = previewExistingById.get(row.fundId);
+        return existingFund && sameFundImport(row, existingFund)
+          ? [unchangedFundResult(row, existingFund)]
+          : [];
+      });
+      const results = [...errors, ...previewWarnings, ...unchangedResults];
+      return NextResponse.json({
+        imported: 0,
+        unchanged: unchangedResults.length,
+        errors: results.filter((result) => result.error),
+        results,
+        quarantined: previewWarnings.length,
+        auditEventId: null,
+      });
+    }
     const committed = await commitImport({
       pipeline: "BULK_IMPORT_FUNDS",
       entityType: "Fund",
@@ -264,7 +386,7 @@ async function importFunds(request: NextRequest) {
         const existing = validRows.length > 0
           ? await tx.fund.findMany({
               where: { legacyId: { in: validRows.map((row) => row.fundId) } },
-              select: { id: true, legacyId: true, status: true },
+              select: FUND_IMPORT_SELECT,
             })
           : [];
         const results: ImportResult[] = [...errors];
@@ -273,6 +395,7 @@ async function importFunds(request: NextRequest) {
         let updated = 0;
         let skipped = errors.length;
         let quarantined = 0;
+        let unchanged = 0;
 
         for (const fund of validRows) {
           const existingFund = existingById.get(fund.fundId);
@@ -283,26 +406,18 @@ async function importFunds(request: NextRequest) {
             continue;
           }
 
-          const structure = FUND_STRUCTURE_MAP[fund.structure] as FundStructure;
-          const fundStatus = FUND_STATUS_MAP[fund.status] as FundStatusEnum;
-
-          if (!structure || !fundStatus) {
-            results.push({ fundName: fund.fundName, error: "Invalid structure or status" });
+          const normalized = normalizeFundImport(fund);
+          if (!normalized.ok) {
+            results.push({ fundName: fund.fundName, error: normalized.error });
             skipped += 1;
             continue;
           }
-
-          const strategies = toArray(fund.strategies)
-            .map((s: string) => FUND_STRATEGY_MAP[s])
-            .filter(Boolean) as FundStrategy[];
-
-          const sectors = toArray(fund.sectors)
-            .map((s: string) => FUND_SECTOR_MAP[s])
-            .filter(Boolean) as FundSectorEnum[];
-
-          const regions = toArray(fund.regions)
-            .map((r: string) => FUND_REGION_MAP[r])
-            .filter(Boolean) as FundRegionEnum[];
+          if (existingFund && sameFundImport(fund, existingFund)) {
+            results.push(unchangedFundResult(fund, existingFund));
+            unchanged += 1;
+            skipped += 1;
+            continue;
+          }
 
           // Find or create the manager organization
           const manager = await tx.organization.upsert({
@@ -318,20 +433,7 @@ async function importFunds(request: NextRequest) {
           const fundId = fund.fundId;
           const fundData = {
             managerId: manager.id,
-            fundName: fund.fundName,
-            ticker: fund.ticker || null,
-            investmentStrategy: fund.investmentStrategy || "",
-            size: fund.size || "",
-            sizeUsdMm: fund.sizeUsdMm ?? null,
-            vintage: fund.vintage || "",
-            strategies,
-            structure,
-            fundStatus,
-            sectors,
-            regions,
-            sourceUrls: toArray(fund.sourceUrls),
-            primarySourceUrl: fund.primarySourceUrl || null,
-            strategyUrl: fund.strategyUrl || "",
+            ...normalized.data,
           };
 
           let dbId: string;
@@ -361,19 +463,29 @@ async function importFunds(request: NextRequest) {
             });
             dbId = created.id;
             inserted += 1;
-            existingById.set(fundId, { id: created.id, legacyId: fundId, status: "DRAFT" });
           }
 
           results.push({ row: fund.row, fundId, fundName: fund.fundName, dbId, status: "ok" });
         }
 
+        if (inserted + updated === 0) {
+          throw new ImportConflictError("Fund import no longer contains writable changes. Preview the file again.");
+        }
+
         return {
           value: {
             imported: results.filter((result) => result.status === "ok").length,
+            unchanged,
             results,
           },
           counts: { inserted, updated, skipped },
-          auditChanges: { inserted, updated, errors: skipped, quarantined },
+          auditChanges: {
+            inserted,
+            updated,
+            ...(unchanged > 0 ? { unchanged } : {}),
+            errors: skipped - unchanged,
+            quarantined,
+          },
         };
       },
     });
@@ -384,6 +496,7 @@ async function importFunds(request: NextRequest) {
 
     return NextResponse.json({
       imported: committed.value.imported,
+      unchanged: committed.value.unchanged,
       errors: committed.value.results.filter((result) => result.error),
       results: committed.value.results,
       quarantined: committed.value.results.filter((result) => result.status === "quarantined").length,

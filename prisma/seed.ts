@@ -233,12 +233,6 @@ async function main() {
       investmentStrategy: fund.investmentStrategy,
       size: fund.size,
       sizeUsdMm: fund.sizeUsdMm,
-      sizeNativeCurrency: fund.sizeNativeCurrency,
-      sizeNativeAmount: fund.sizeNativeAmount,
-      sizeBasis: fund.sizeBasis,
-      sizeAsOf: fund.sizeAsOf ? new Date(`${fund.sizeAsOf}T00:00:00.000Z`) : fund.sizeAsOf,
-      sizeUsdFxRate: fund.sizeUsdFxRate,
-      sizeUsdFxDate: fund.sizeUsdFxDate ? new Date(`${fund.sizeUsdFxDate}T00:00:00.000Z`) : fund.sizeUsdFxDate,
       vintage: fund.vintage,
       strategies,
       structure,
@@ -537,6 +531,7 @@ async function main() {
   for (const deal of deals) {
     const dealId = dealIdMap.get(deal.id);
     if (!dealId) continue;
+    const persistedDealId = dealId;
 
     // Helper to create participants
     async function addParticipant(name: string, role: ParticipantRole, displayName?: string) {
@@ -558,7 +553,7 @@ async function main() {
         try {
           await prisma.dealParticipant.create({
             data: {
-              dealId,
+              dealId: persistedDealId,
               organizationId: org.id,
               role,
               displayName: displayName || null,
@@ -576,7 +571,7 @@ async function main() {
       try {
         await prisma.dealParticipant.create({
           data: {
-            dealId,
+            dealId: persistedDealId,
             organizationId: orgId,
             role,
             displayName: displayName || null,

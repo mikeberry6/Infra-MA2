@@ -30,10 +30,11 @@ describe("scheduled news scan window contract", () => {
 
   it("persists rotation and intentional-deferral evidence separately from incomplete coverage", () => {
     expect(scanner).toContain("selection: summary.selection");
-    expect(scanner.match(/refreshWindow: options\.rotationDateUtc/g)).toHaveLength(3);
+    expect(scanner).toContain("refreshWindow: summary.options.rotationDateUtc");
     expect(scanner).toContain("configuredBudgetExhausted: summary.crawl.configuredBudgetExhausted");
     expect(scanner).toContain("intentionalDeferral: summary.crawl.intentionallyDeferred");
     expect(scanner).toContain("cappedByMaxPages: summary.crawl.cappedByMaxPages");
+    expect(scanner.match(/pipelineRunMetadata\(summary, sourceCoverage, sourceHealth\)/g)).toHaveLength(2);
   });
 
   it("routes database-controlled crawl and robots requests through the pinned public-network boundary", () => {

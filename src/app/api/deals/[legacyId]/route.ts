@@ -4,6 +4,12 @@ import { prisma } from "@/lib/prisma";
 import { withServerOperation } from "@/lib/server-log";
 import type { DealView, DetailResponse } from "@/modules/shared/types";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+export const fetchCache = "force-no-store";
+
+const NO_STORE_HEADERS = { "Cache-Control": "no-store, max-age=0" } as const;
+
 export async function GET(
   request: Request,
   { params }: { params: Promise<{ legacyId: string }> },
@@ -13,7 +19,15 @@ export async function GET(
     operation: "read_deal_detail",
   }, async () => {
     const { legacyId } = await params;
-    const decodedId = decodeURIComponent(legacyId);
+    let decodedId: string;
+    try {
+      decodedId = decodeURIComponent(legacyId);
+    } catch {
+      return NextResponse.json(
+        { error: "Invalid deal identifier" },
+        { status: 400, headers: NO_STORE_HEADERS },
+      );
+    }
     const [deal, meta] = await Promise.all([
       getDealById(decodedId),
       prisma.deal.findUnique({
@@ -27,7 +41,10 @@ export async function GET(
       }),
     ]);
     if (!deal || meta?.status !== "PUBLISHED") {
-      return NextResponse.json({ error: "Deal not found" }, { status: 404 });
+      return NextResponse.json(
+        { error: "Deal not found" },
+        { status: 404, headers: NO_STORE_HEADERS },
+      );
     }
     const response: DetailResponse<DealView> = {
       data: deal,
@@ -38,6 +55,6 @@ export async function GET(
         sourceCount: meta._count.citations,
       },
     };
-    return NextResponse.json(response);
+    return NextResponse.json(response, { headers: NO_STORE_HEADERS });
   });
 }

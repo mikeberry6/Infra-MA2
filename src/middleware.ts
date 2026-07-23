@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
 import {
-  getRequestId,
+  createRequestId,
   logServerOperation,
   type ServerErrorClassification,
 } from "@/lib/server-log";
@@ -16,7 +16,9 @@ function requestPathWithBasePath(request: NextRequest): string {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const requestId = getRequestId(request);
+  // This is the public trust boundary. Always replace a caller-supplied value;
+  // downstream handlers may then safely reuse this middleware-owned ID.
+  const requestId = createRequestId();
   const forwardedHeaders = new Headers(request.headers);
   forwardedHeaders.set("x-request-id", requestId);
 

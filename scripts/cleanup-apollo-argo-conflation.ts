@@ -89,7 +89,7 @@ async function main() {
 
   // Find every OwnershipPeriod whose org is Apollo, with the company and
   // sibling ownerships included so we can detect the Argo / AIA pattern.
-  const where: Parameters<typeof prisma.ownershipPeriod.findMany>[0]["where"] = {
+  const where: NonNullable<Parameters<typeof prisma.ownershipPeriod.findMany>[0]>["where"] = {
     organizationId: { in: Array.from(apolloIds) },
   };
   if (DUQUESNE_ONLY) {

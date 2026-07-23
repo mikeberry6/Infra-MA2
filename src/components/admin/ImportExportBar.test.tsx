@@ -62,6 +62,7 @@ describe("ImportExportBar", () => {
         valid: 3,
         creates: 1,
         updates: 1,
+        unchanged: 0,
         quarantined: 1,
         warnings: [{
           row: 3,
@@ -96,6 +97,7 @@ describe("ImportExportBar", () => {
 
     expect(within(preview).getByText("Creates").nextElementSibling).toHaveTextContent("1");
     expect(within(preview).getByText("Updates").nextElementSibling).toHaveTextContent("1");
+    expect(within(preview).getByText("Unchanged").nextElementSibling).toHaveTextContent("0");
     expect(within(preview).getByText("Quarantined").nextElementSibling).toHaveTextContent("1");
     expect(within(preview).getByRole("heading", { name: "Warnings and quarantined rows (1)" })).toBeVisible();
     expect(within(preview).getByText("Row 3 · DEAL-PUBLISHED")).toBeVisible();
@@ -147,6 +149,33 @@ describe("ImportExportBar", () => {
 
     expect(await screen.findByRole("button", { name: "Confirm import" })).toBeDisabled();
     expect(screen.getByText(/Confirming will write 0 creates and 0 updates/)).toBeVisible();
+  });
+
+  it("shows identical rows as unchanged and does not offer a no-op write", async () => {
+    const fetchMock = vi.fn().mockResolvedValue(response({
+      previewToken: "signed-replay-preview-token",
+      items: [{ id: "DEAL-1" }],
+      total: 1,
+      valid: 1,
+      creates: 0,
+      updates: 0,
+      unchanged: 1,
+      quarantined: 0,
+      warnings: [],
+      errors: [],
+    }));
+    vi.stubGlobal("fetch", fetchMock);
+
+    render(<ImportExportBar entityType="deals" />);
+    fireEvent.change(screen.getByLabelText("Select CSV"), {
+      target: { files: [csvFile("id,title\nDEAL-1,Existing deal")] },
+    });
+
+    const preview = await screen.findByRole("region", { name: "Import preview" });
+    expect(within(preview).getByText("Unchanged").nextElementSibling).toHaveTextContent("1");
+    expect(within(preview).getByText(/1 unchanged row, plus any errors and quarantined rows, will be skipped/)).toBeVisible();
+    expect(within(preview).getByRole("button", { name: "Confirm import" })).toBeDisabled();
+    expect(fetchMock).toHaveBeenCalledOnce();
   });
 
   it("shows portfolio ownership replacements as atomic preview changes", async () => {

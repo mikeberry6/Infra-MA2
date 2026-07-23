@@ -17,12 +17,39 @@ export async function waitForApplication(page: Page, heading: string | RegExp) {
   await expect(page.getByRole("heading", { name: heading, level: 1 })).toBeVisible();
 }
 
-export async function expectNoHorizontalOverflow(page: Page) {
+export async function expectNoHorizontalOverflow(page: Page, context?: string) {
   const dimensions = await page.evaluate(() => ({
     viewport: window.innerWidth,
     document: document.documentElement.scrollWidth,
+    body: document.body.scrollWidth,
+    offenders: Array.from(document.querySelectorAll<HTMLElement>("body *"))
+      .map((element) => {
+        const bounds = element.getBoundingClientRect();
+        return {
+          tag: element.tagName.toLowerCase(),
+          id: element.id,
+          className: typeof element.className === "string" ? element.className : "",
+          left: Math.round(bounds.left),
+          right: Math.round(bounds.right),
+        };
+      })
+      .filter(({ left, right }) => left < -1 || right > window.innerWidth + 1)
+      .slice(0, 10),
   }));
-  expect(dimensions.document).toBeLessThanOrEqual(dimensions.viewport);
+  const diagnostic = [
+    context,
+    `viewport=${dimensions.viewport}`,
+    `document=${dimensions.document}`,
+    `body=${dimensions.body}`,
+    dimensions.offenders.length > 0
+      ? `possible offenders=${JSON.stringify(dimensions.offenders)}`
+      : undefined,
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  expect(dimensions.document, diagnostic).toBeLessThanOrEqual(dimensions.viewport);
+  expect(dimensions.body, diagnostic).toBeLessThanOrEqual(dimensions.viewport);
 }
 
 export function configuredAdminE2E(): boolean {

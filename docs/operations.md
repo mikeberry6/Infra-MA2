@@ -58,7 +58,7 @@ Public query caches are additionally scoped by a non-sensitive deployment identi
 
 `.github/workflows/deploy.yml` has three jobs:
 
-1. `quality` runs locked installation, Prisma generation/validation, lint, typecheck, all Vitest tests, offline portfolio and weekly-email validation, production dependency audit, and a production build.
+1. `quality` runs locked installation, Prisma generation/validation, lint, application typecheck, operational-script/Prisma TypeScript typecheck, all Vitest tests, offline portfolio and weekly-email validation, production dependency audit, and a production build.
 2. `validation` serializes access to the isolated Neon branch, proves the database target, deploys migrations, checks both migration status and schema drift, verifies data/source integrity, builds against the migrated schema, creates a validation-only administrator, and runs Playwright journeys, axe checks, responsive checks, keyboard behavior, and visual baselines. Migration logs and browser failure media are retained for 30 days.
 3. `build` is the stable branch-protection context. It succeeds only if both preceding jobs succeed.
 
@@ -78,6 +78,7 @@ npm run db:generate
 npm run db:validate
 npm run lint
 npm run typecheck
+npm run typecheck:scripts
 npm test
 npm run validate-portfolios
 npm run validate-weekly-email
@@ -193,7 +194,7 @@ Drawer shell timing is a browser-only, payload-free performance measurement name
 
 ## Health contract
 
-`GET /api/health` exposes exactly six top-level fields: `status`, `version`, `generatedAt`, `database`, `pipelines`, and `generationTimeMs`. Each critical-pipeline item contains only its name, classified status, last-attempt time, and last-success time. The endpoint never returns schema checks, hostnames, database names, branch identifiers, credentials, or query details. It returns HTTP 503 when the database is unavailable, the additive operational schema is not ready, or a critical pipeline is not healthy (`never-run`, `failed`, or `stale`); callers must not treat a reachable 503 as healthy. On a Vercel release, `version` is the 12-character release prefix used by promotion provenance checks; an unversioned local process reports `local`.
+`GET /api/health` is dynamic, explicitly non-cacheable, and exposes exactly six top-level fields: `status`, `version`, `generatedAt`, `database`, `pipelines`, and `generationTimeMs`. Each critical-pipeline item contains only its name, classified status, last-attempt time, and last-success time. The endpoint never returns schema checks, hostnames, database names, branch identifiers, credentials, or query details. It returns HTTP 503 when the database is unavailable, the additive operational schema is not ready, or a critical pipeline is `never-run`, `failed`, `stale`, or `stalled`. A currently `running` pipeline passes only while it is within the schedule grace contract, has not exceeded the three-hour stall limit, and has a prior successful run; callers must not treat another reachable 503 as healthy. Malformed, impossible, or future-dated run timestamps do not count as freshness evidence. On a Vercel release, `version` is the 12-character release prefix used by promotion provenance checks; an unversioned local process reports `local`.
 
 ## Dependency policy
 
