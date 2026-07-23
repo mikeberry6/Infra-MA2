@@ -4,7 +4,8 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
 import { SafeOperationalError } from "../src/lib/safe-error";
-import { withSafeTask } from "../src/lib/safe-task";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { adminBootstrapChangedFields } from "../src/modules/operations/admin-bootstrap-audit";
 
 const email = process.env.ADMIN_EMAIL?.trim().toLowerCase();
@@ -27,7 +28,7 @@ async function main() {
   assertMutationDatabaseTargetFromEnv();
 
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
-  try {
+  const run = async () => {
     const passwordHash = await bcrypt.hash(password, 12);
     await prisma.$transaction(async (tx) => {
       const before = await tx.user.findUnique({
@@ -65,12 +66,18 @@ async function main() {
       });
     }, { isolationLevel: "Serializable" });
     console.log("Administrator account created or rotated.");
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "create_admin",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
-withSafeTask({
+withServerTask({
   task: "create_admin",
   operation: "create_or_rotate_admin",
 }, main).catch(() => {

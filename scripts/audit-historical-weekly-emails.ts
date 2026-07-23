@@ -1,7 +1,7 @@
 import { execFileSync } from "node:child_process";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { withSafeTask } from "../src/lib/safe-task";
+import { withServerTask } from "../src/lib/server-log";
 
 const DATED_ISSUE = /^public\/email-format\/\d{4}-\d{2}-\d{2}\.html$/;
 
@@ -84,6 +84,6 @@ async function main() {
   );
 }
 
-withSafeTask({ task: "weekly_email_history", operation: "audit_historical_emails" }, main).catch(() => {
+withServerTask({ task: "weekly_email_history", operation: "audit_historical_emails" }, main).catch(() => {
   process.exitCode = 1;
 });

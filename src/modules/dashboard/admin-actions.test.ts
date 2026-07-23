@@ -1,6 +1,12 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
+  AuthorizationError: class AuthorizationError extends Error {
+    constructor() {
+      super("Forbidden");
+      this.name = "AuthorizationError";
+    }
+  },
   requireAdmin: vi.fn(),
   getSessionIdentity: vi.fn(),
   transaction: vi.fn(),
@@ -11,9 +17,10 @@ const mocks = vi.hoisted(() => ({
 }));
 
 vi.mock("@/modules/auth/guards", () => ({
+  AuthorizationError: mocks.AuthorizationError,
   requireAdmin: mocks.requireAdmin,
   getSessionIdentity: mocks.getSessionIdentity,
-  isAuthorizationError: () => false,
+  isAuthorizationError: (error: unknown) => error instanceof mocks.AuthorizationError,
 }));
 vi.mock("@/lib/prisma", () => ({
   prisma: { $transaction: mocks.transaction },
@@ -65,6 +72,7 @@ describe("dashboard signal review actions", () => {
       },
     }));
     vi.spyOn(console, "error").mockImplementation(() => undefined);
+    vi.spyOn(console, "warn").mockImplementation(() => undefined);
   });
 
   it("binds approval to the content hash that the administrator rendered", async () => {
@@ -250,5 +258,28 @@ describe("dashboard signal review actions", () => {
       success: false,
       error: "Dashboard signal review failed.",
     });
+  });
+
+  it("logs a stale or revoked identity as one sanitized authorization failure", async () => {
+    mocks.getSessionIdentity.mockResolvedValueOnce(null);
+
+    await expect(approveDashboardSignal("signal-1", renderedHash)).resolves.toEqual({
+      success: false,
+      error: "Forbidden",
+    });
+
+    expect(mocks.transaction).not.toHaveBeenCalled();
+    expect(console.warn).toHaveBeenCalledTimes(1);
+    const payload = JSON.parse(
+      (console.warn as ReturnType<typeof vi.fn>).mock.calls[0][0] as string,
+    ) as Record<string, unknown>;
+    expect(payload).toMatchObject({
+      task: "dashboard_admin_action",
+      operation: "authorize_dashboard_admin_action",
+      status: 403,
+      errorClassification: "authorization_error",
+      errorMessage: "Operation is not authorized.",
+    });
+    expect(JSON.stringify(payload)).not.toContain("signal-1");
   });
 });

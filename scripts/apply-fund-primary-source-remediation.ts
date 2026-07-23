@@ -19,7 +19,8 @@ import {
   assertMaintenanceMutationContext,
   type MaintenanceMutationContext,
 } from "../src/lib/database-target";
-import { withSafeTask } from "../src/lib/safe-task";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import {
   applyReviewedFundPrimarySourceApproval,
   FUND_PRIMARY_SOURCE_APPROVAL_REPOSITORY_PATH,
@@ -123,7 +124,7 @@ async function main() {
     throw new Error("DATABASE_URL is required for fund primary-source remediation");
   }
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
-  try {
+  const run = async () => {
     const result = await prisma.$transaction(
       (tx) => applyReviewedFundPrimarySourceApproval(
         tx,
@@ -149,12 +150,18 @@ async function main() {
       targetDatabase: context.targetDatabase,
       ...result,
     }, null, 2));
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "fund_primary_source_remediation",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
-withSafeTask(
+withServerTask(
   { task: "fund_primary_source_remediation", operation: "apply_fund_primary_sources" },
   main,
 ).catch(() => {

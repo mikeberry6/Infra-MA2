@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import { PublicObservability } from "@/components/shared/PublicObservability";
+import { TrackedAnalyticsLink } from "@/components/shared/TrackedAnalyticsLink";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -48,12 +50,20 @@ export default function RootLayout({
                 <span className="font-medium text-[var(--text-secondary)]">InfraSight</span>
                 <span>· &copy; 2026</span>
               </div>
-              <a href="mailto:research@infrasight.com" className="hover:text-[var(--text-primary)] transition-colors">
+              <TrackedAnalyticsLink
+                href="mailto:research@infrasight.com"
+                analyticsEvent={{
+                  name: "research_contact_initiated",
+                  properties: { placement: "footer" },
+                }}
+                className="hover:text-[var(--text-primary)] transition-colors"
+              >
                 Contact research
-              </a>
+              </TrackedAnalyticsLink>
             </div>
           </div>
         </footer>
+        <PublicObservability />
       </body>
     </html>
   );

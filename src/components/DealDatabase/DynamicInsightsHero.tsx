@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import type { DealView } from "@/modules/shared/types";
+import type { DealListItem } from "@/modules/shared/types";
 import { getSectorColor, getRegionColor } from "@/lib/colors";
 import { NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
 import { normalizeFundEntities } from "@/lib/fund-name-utils";
@@ -32,7 +32,7 @@ interface FundRow {
   breakdown: { activity: string; count: number }[];
 }
 
-export function deriveFundRanking(deals: DealView[]): FundRow[] {
+export function deriveFundRanking(deals: DealListItem[]): FundRow[] {
   const fundActivities: Record<string, Record<string, number>> = {};
 
   const increment = (name: string, activity: string) => {
@@ -137,7 +137,7 @@ function ActivityLegend({ activities }: { activities: string[] }) {
 export function DynamicInsightsHero({
   filteredDeals,
 }: {
-  filteredDeals: DealView[];
+  filteredDeals: DealListItem[];
 }) {
   const fundRanking = useMemo(() => deriveFundRanking(filteredDeals), [filteredDeals]);
 

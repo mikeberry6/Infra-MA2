@@ -3,6 +3,7 @@ import { execFileSync } from "node:child_process";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { auditAdditiveMigrationSql } from "../src/lib/migration-safety.ts";
+import { withServerTask } from "../src/lib/server-log.ts";
 
 function option(name: string): string | undefined {
   const prefix = `--${name}=`;
@@ -110,7 +111,6 @@ async function main() {
   console.log(`Additive migration audit passed for ${migrations.length} file(s); manifest SHA-256 ${manifestSha256}.`);
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : error);
+withServerTask({ task: "migration_audit", operation: "audit_additive_migrations" }, main).catch(() => {
   process.exitCode = 1;
 });

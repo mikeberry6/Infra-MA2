@@ -18,7 +18,7 @@ describe("legacy maintenance mutation safety", () => {
   });
 
   it("keeps every milestone rewrite and its completion audit atomic", () => {
-    const transaction = source.indexOf("await prisma.$transaction(async (tx)");
+    const transaction = source.indexOf("await database().$transaction(async (tx)");
     const deleteWrite = source.indexOf("tx.milestone.deleteMany", transaction);
     const insertWrite = source.indexOf("tx.milestone.createMany", transaction);
     const completionAudit = source.indexOf(

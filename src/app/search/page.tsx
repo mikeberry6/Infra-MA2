@@ -12,11 +12,11 @@ import {
 } from "@/modules/search/queries";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Search } from "lucide-react";
 import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
-import { TextInput } from "@/components/shared/TextInput";
-import { Button } from "@/components/shared/Button";
+import { TrackedSearchForm } from "@/components/search/TrackedSearchForm";
 import { withBasePath } from "@/lib/base-path";
+import { currentServerRequestId } from "@/lib/server-request-context";
+import { withServerTask } from "@/lib/server-log";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -98,8 +98,12 @@ export default async function SearchPage({
   const query = normalizeSearchQuery(q);
   const scope = normalizeSearchScope(rawScope);
   const page = normalizeSearchPage(rawPage);
+  const requestId = await currentServerRequestId();
   const search = query
-    ? await searchAllWithMeta(query, { scope, page })
+    ? await withServerTask(
+        { route: "/search", operation: "search_all", requestId },
+        () => searchAllWithMeta(query, { scope, page }),
+      )
     : {
         results: [],
         total: 0,
@@ -163,24 +167,7 @@ export default async function SearchPage({
         ]}
       />
 
-      <form method="get" className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center">
-        <label htmlFor="site-search" className="sr-only">Search InfraSight databases</label>
-        <TextInput
-          id="site-search"
-          type="search"
-          name="q"
-          size="md"
-          minLength={2}
-          defaultValue={query}
-          leadingIcon={<Search />}
-          placeholder="Search deals, companies, funds, or buyers..."
-          autoFocus={!query}
-        />
-        {search.scope !== "all" && <input type="hidden" name="scope" value={search.scope} />}
-        <Button type="submit" variant="primary" size="lg" className="w-full sm:w-auto">
-          Search
-        </Button>
-      </form>
+      <TrackedSearchForm query={query} scope={search.scope} />
 
       {query && (
         <>

@@ -3,9 +3,11 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { Download, FileUp, X } from "lucide-react";
+import { track } from "@vercel/analytics";
 import { withBasePath } from "@/lib/base-path";
 import { Button } from "@/components/shared/Button";
 import { FormMessage } from "@/components/shared/FormControls";
+import { invalidateDetailCache, type DetailCacheEntity } from "@/lib/detail-cache-events";
 import {
   buildImportErrorCsv,
   importIssueLabel,
@@ -70,6 +72,12 @@ const LABELS: Record<EntityType, { singular: string; plural: string; bodyKey: st
   deals: { singular: "deal", plural: "deals", bodyKey: "deals" },
   funds: { singular: "fund", plural: "funds", bodyKey: "funds" },
   portfolio: { singular: "company", plural: "companies", bodyKey: "companies" },
+};
+
+const CACHE_ENTITY: Record<EntityType, DetailCacheEntity> = {
+  deals: "deal",
+  funds: "fund",
+  portfolio: "company",
 };
 
 export default function ImportExportBar({ entityType }: { entityType: EntityType }) {
@@ -145,6 +153,7 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
       if (!response.ok) throw new Error(result.error || "Import failed");
       const imported = Number(result.imported) || 0;
       const unchanged = Number(result.unchanged) || 0;
+      if (imported > 0) invalidateDetailCache(CACHE_ENTITY[entityType]);
       setMessage({
         tone: "success",
         text: imported > 0
@@ -180,6 +189,7 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
         <a
           href={withBasePath(`/api/exports/${entityType}`)}
           download
+          onClick={() => track("export_started", { entity: CACHE_ENTITY[entityType] })}
           className="inline-flex h-8 items-center justify-center gap-1.5 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 type-meta font-medium text-[var(--text-primary)] hover:bg-[var(--bg-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
         >
           <Download className="h-3.5 w-3.5" /> Export CSV

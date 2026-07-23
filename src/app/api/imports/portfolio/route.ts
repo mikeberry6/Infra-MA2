@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { parseCsv } from "@/lib/csv";
 import { revalidateAppData } from "@/lib/revalidation";
+import { withServerOperation } from "@/lib/server-log";
 import { AuthorizationError, getSessionIdentity, isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { companySchema, type CompanyInput } from "@/modules/admin/schemas";
 import { changedFieldSummary } from "@/modules/admin/change-summary";
@@ -937,5 +938,10 @@ async function importPortfolio(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  return importPortfolio(request);
+  return withServerOperation(request, {
+    route: "/api/imports/portfolio",
+    operation: request.nextUrl.searchParams.get("preview") === "1"
+      ? "preview_portfolio_import"
+      : "commit_portfolio_import",
+  }, () => importPortfolio(request));
 }

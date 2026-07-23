@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { parseCsv } from "@/lib/csv";
 import { revalidateAppData } from "@/lib/revalidation";
+import { withServerOperation } from "@/lib/server-log";
 import { AuthorizationError, getSessionIdentity, isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { fundSchema, type FundInput } from "@/modules/admin/schemas";
 import { changedFieldSummary } from "@/modules/admin/change-summary";
@@ -649,5 +650,10 @@ async function importFunds(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  return importFunds(request);
+  return withServerOperation(request, {
+    route: "/api/imports/funds",
+    operation: request.nextUrl.searchParams.get("preview") === "1"
+      ? "preview_fund_import"
+      : "commit_fund_import",
+  }, () => importFunds(request));
 }

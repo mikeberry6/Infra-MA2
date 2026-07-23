@@ -36,6 +36,7 @@ import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { formatDate, formatScheduledDateTime } from "@/lib/format";
 import { getNewsCategoryColor, NEWS_CATEGORIES } from "@/lib/news-utils";
 import type { FeedOperationsView, NewsCategory, NewsFeedView, NewsItemView, NewsMentionType } from "@/modules/shared/types";
+import { track } from "@vercel/analytics";
 
 const DATE_WINDOWS = [
   { label: "Today", days: 0 },
@@ -649,6 +650,7 @@ function NewsCard({
             href={item.sourceUrl}
             target="_blank"
             rel="noreferrer"
+            onClick={() => track("source_link_clicked", { entity: "news", placement: "card" })}
             className="inline-flex h-7 items-center gap-1.5 rounded-md px-2 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
           >
             <ExternalLink className="h-3 w-3" />
@@ -925,6 +927,7 @@ function NewsDrawer({
                   href={item.sourceUrl}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => track("source_link_clicked", { entity: "news", placement: "drawer" })}
                   className="inline-flex h-8 items-center gap-1.5 rounded-md border border-[var(--border)] px-2.5 type-meta font-medium transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
                 >
                   <ExternalLink className="h-3.5 w-3.5" />
@@ -956,6 +959,10 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
   );
   const [selectedItem, setSelectedItem] = useState<NewsItemView | null>(null);
   const debouncedSearch = useDebounce(search, 250);
+  const openNewsItem = useCallback((item: NewsItemView) => {
+    setSelectedItem(item);
+    track("drawer_opened", { entity: "news" });
+  }, []);
 
   const writeQueryParams = useUrlQueryParamsWriter();
   const clearAll = useCallback(() => {
@@ -1034,7 +1041,7 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
       <IntelligenceHeader counts={counts} lastUpdated={feed.lastUpdated} />
       <OperationalStatus operations={feed.operations} />
 
-      <CategorySpotlight items={filteredItems} onSelect={setSelectedItem} />
+      <CategorySpotlight items={filteredItems} onSelect={openNewsItem} />
 
       <NewsFilterBar
         search={search}
@@ -1071,7 +1078,7 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
           </div>
           <div className="space-y-3">
           {displayItems.map((item) => (
-            <NewsCard key={item.id} item={item} onSelect={setSelectedItem} />
+            <NewsCard key={item.id} item={item} onSelect={openNewsItem} />
           ))}
           {displayItems.length === 0 && (
             <div className="surface px-4 py-12 text-center">

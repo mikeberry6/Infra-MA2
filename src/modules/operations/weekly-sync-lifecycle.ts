@@ -1,4 +1,5 @@
 import type { Prisma } from "@/generated/prisma/client";
+import { reportSuppressedTaskFailure } from "@/lib/task-cleanup";
 import type { PipelineCounts } from "@/modules/operations/pipeline-runs";
 
 export type WeeklySyncResult = "created" | "updated";
@@ -91,7 +92,14 @@ export async function runWeeklySyncLifecycle(input: {
     progress.beginCompletion();
     await input.complete(progress.counts(), progress.metadata());
   } catch (error) {
-    await input.fail(error, progress.counts(), progress.metadata());
+    try {
+      await input.fail(error, progress.counts(), progress.metadata());
+    } catch (failureRecordingError) {
+      reportSuppressedTaskFailure({
+        task: "weekly_deal_sync",
+        operation: "record_pipeline_failure",
+      }, failureRecordingError);
+    }
     throw error;
   }
 }

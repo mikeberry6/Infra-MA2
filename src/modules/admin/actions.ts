@@ -3,6 +3,8 @@
 import { prisma } from "@/lib/prisma";
 import { revalidateAppData } from "@/lib/revalidation";
 import { parseDateInput } from "@/lib/format";
+import { currentServerRequestId } from "@/lib/server-request-context";
+import { logServerFailure } from "@/lib/server-log";
 import { isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { recordAuditEvent } from "@/modules/operations/audit";
 import {
@@ -13,7 +15,11 @@ import {
   statusAfterEditorialEdit,
 } from "@/modules/admin/workflow";
 import { draftDeletionBlockReason, toAuditSnapshot } from "@/modules/admin/deletion";
-import { AdminActionUserError, adminActionErrorMessage } from "@/modules/admin/action-error";
+import {
+  AdminActionUserError,
+  adminActionErrorMessage,
+  adminActionLogOutcome,
+} from "@/modules/admin/action-error";
 import { changedFieldSummary, deletedFieldSummary } from "@/modules/admin/change-summary";
 import {
   missingCompanyPublicationFields,
@@ -55,6 +61,16 @@ import type {
 type ActionResult = { success: boolean; error?: string; id?: string };
 
 // ── Helpers ───────────────────────────────────────────────────
+
+async function logAdminActionFailure(
+  operation: string,
+  error: unknown,
+  authorizationError = false,
+): Promise<void> {
+  const requestId = await currentServerRequestId();
+  const outcome = adminActionLogOutcome(error, { authorizationError });
+  logServerFailure({ task: "admin_action", operation, requestId, ...outcome }, error);
+}
 
 // Accept either repeated form fields (formData.append("key", "v1");
 // formData.append("key", "v2")) or a single comma-separated string.
@@ -167,6 +183,7 @@ async function requireAdminAction(): Promise<ActionResult | null> {
     return null;
   } catch (error) {
     if (isAuthorizationError(error)) {
+      await logAdminActionFailure("authorize_admin_action", error, true);
       return { success: false, error: "Forbidden" };
     }
     throw error;
@@ -308,6 +325,7 @@ export async function createDeal(formData: FormData): Promise<ActionResult> {
     revalidateAll();
     return { success: true, id: deal.id };
   } catch (error) {
+    await logAdminActionFailure("create_deal", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to create deal") };
   }
 }
@@ -543,6 +561,7 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("update_deal", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to update deal") };
   }
 }
@@ -596,6 +615,7 @@ export async function deleteDeal(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("delete_deal", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to delete deal") };
   }
 }
@@ -642,6 +662,7 @@ export async function publishDeal(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("publish_deal", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to publish deal") };
   }
 }
@@ -687,6 +708,7 @@ export async function verifyDeal(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("verify_deal", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to verify deal") };
   }
 }
@@ -713,6 +735,7 @@ export async function submitDealForReview(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("submit_deal_for_review", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to submit deal") };
   }
 }
@@ -737,6 +760,7 @@ export async function archiveDeal(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("archive_deal", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to archive deal") };
   }
 }
@@ -819,6 +843,7 @@ export async function createFund(formData: FormData): Promise<ActionResult> {
     revalidateAll();
     return { success: true, id: fund.id };
   } catch (error) {
+    await logAdminActionFailure("create_fund", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to create fund") };
   }
 }
@@ -972,6 +997,7 @@ export async function updateFund(id: string, formData: FormData): Promise<Action
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("update_fund", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to update fund") };
   }
 }
@@ -1019,6 +1045,7 @@ export async function deleteFund(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("delete_fund", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to delete fund") };
   }
 }
@@ -1064,6 +1091,7 @@ export async function publishFund(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("publish_fund", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to publish fund") };
   }
 }
@@ -1108,6 +1136,7 @@ export async function verifyFund(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("verify_fund", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to verify fund") };
   }
 }
@@ -1134,6 +1163,7 @@ export async function submitFundForReview(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("submit_fund_for_review", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to submit fund") };
   }
 }
@@ -1158,6 +1188,7 @@ export async function archiveFund(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("archive_fund", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to archive fund") };
   }
 }
@@ -1254,6 +1285,7 @@ export async function createCompany(formData: FormData): Promise<ActionResult> {
     revalidateAll();
     return { success: true, id: company.id };
   } catch (error) {
+    await logAdminActionFailure("create_company", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to create company") };
   }
 }
@@ -1397,6 +1429,7 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("update_company", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to update company") };
   }
 }
@@ -1466,6 +1499,7 @@ export async function deleteCompany(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("delete_company", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to delete company") };
   }
 }
@@ -1517,6 +1551,7 @@ export async function publishCompany(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("publish_company", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to publish company") };
   }
 }
@@ -1567,6 +1602,7 @@ export async function verifyCompany(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("verify_company", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to verify company") };
   }
 }
@@ -1593,6 +1629,7 @@ export async function submitCompanyForReview(id: string): Promise<ActionResult> 
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("submit_company_for_review", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to submit company") };
   }
 }
@@ -1617,6 +1654,7 @@ export async function archiveCompany(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("archive_company", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to archive company") };
   }
 }
@@ -1751,6 +1789,7 @@ export async function addOwnershipPeriod(
     revalidateAll();
     return { success: true, id: created.id };
   } catch (error) {
+    await logAdminActionFailure("add_ownership_period", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to add ownership period") };
   }
 }
@@ -1807,6 +1846,7 @@ export async function updateOwnershipPeriod(
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("update_ownership_period", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to update ownership period") };
   }
 }
@@ -1836,6 +1876,7 @@ export async function deleteOwnershipPeriod(id: string): Promise<ActionResult> {
     revalidateAll();
     return { success: true };
   } catch (error) {
+    await logAdminActionFailure("delete_ownership_period", error);
     return { success: false, error: adminActionErrorMessage(error, "Failed to delete ownership period") };
   }
 }

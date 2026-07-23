@@ -10,7 +10,8 @@
  */
 import "dotenv/config";
 import { readFile } from "node:fs/promises";
-import { withSafeTask } from "../src/lib/safe-task";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import path from "node:path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
@@ -55,7 +56,7 @@ async function main() {
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) throw new Error("DATABASE_URL is required for citation remediation");
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
-  try {
+  const run = async () => {
     const result = await prisma.$transaction(
       (tx) => applyReviewedPrimaryCitationApproval(tx, approval, approvalSha256, context),
       { isolationLevel: "Serializable", maxWait: 10_000, timeout: 60_000 },
@@ -73,11 +74,17 @@ async function main() {
       targetDatabase: context.targetDatabase,
       ...result,
     }, null, 2));
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "citation_remediation",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
-withSafeTask({ task: "citation_remediation", operation: "apply_primary_citations" }, main).catch(() => {
+withServerTask({ task: "citation_remediation", operation: "apply_primary_citations" }, main).catch(() => {
   process.exitCode = 1;
 });

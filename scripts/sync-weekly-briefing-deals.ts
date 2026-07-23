@@ -10,7 +10,9 @@ import type {
   ParticipantRole,
 } from "../src/generated/prisma/client";
 import { resolveOrgName, getOrgType } from "../prisma/entity-resolution";
-import { withSafeTask } from "../src/lib/safe-task";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
+import { SafeOperationalError } from "../src/lib/safe-error";
 import { deals, type Deal } from "../prisma/seed-data/deals";
 import { weeklyBriefingDeals } from "../prisma/seed-data/weekly-briefing-deals";
 import {
@@ -35,15 +37,12 @@ import { weeklyProposalChangedFields } from "../src/modules/operations/weekly-de
 const applyChanges = process.argv.includes("--apply");
 const connectionString = process.env.DATABASE_URL;
 
-if (!connectionString) {
-  console.error("DATABASE_URL is not set.");
-  process.exit(1);
-}
-if (applyChanges) assertMutationDatabaseTargetFromEnv();
+let prisma: PrismaClient | null = null;
 
-const prisma = new PrismaClient({
-  adapter: new PrismaPg({ connectionString }),
-});
+function database(): PrismaClient {
+  if (!prisma) throw new SafeOperationalError("database_url_required");
+  return prisma;
+}
 
 type CoverageRow = {
   legacyId: string;
@@ -166,7 +165,7 @@ function dealPayload(deal: Deal) {
 }
 
 async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
-  return prisma.$transaction(
+  return database().$transaction(
     async (tx) => {
       const existing = await tx.deal.findUnique({
         where: { legacyId: deal.id },
@@ -375,7 +374,7 @@ async function syncDeal(deal: Deal): Promise<"created" | "updated"> {
 }
 
 async function publishedCoverageRows(): Promise<CoverageRow[]> {
-  const rows = await prisma.deal.findMany({
+  const rows = await database().deal.findMany({
     where: { status: "PUBLISHED" },
     select: {
       legacyId: true,
@@ -393,7 +392,7 @@ async function publishedCoverageRows(): Promise<CoverageRow[]> {
 }
 
 async function persistedIdentityRows(): Promise<CoverageRow[]> {
-  const rows = await prisma.deal.findMany({
+  const rows = await database().deal.findMany({
     select: {
       legacyId: true,
       target: true,
@@ -481,23 +480,27 @@ async function executeSync(progress: WeeklySyncProgress | null) {
 }
 
 async function main() {
+  if (!connectionString) throw new SafeOperationalError("database_url_missing");
+  if (applyChanges) assertMutationDatabaseTargetFromEnv();
+  prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
+
   if (!applyChanges) {
     await executeSync(null);
     return;
   }
 
-  const pipelineRunId = await startPipelineRun(prisma, "WEEKLY_DEAL_SYNC");
+  const pipelineRunId = await startPipelineRun(database(), "WEEKLY_DEAL_SYNC");
   await runWeeklySyncLifecycle({
     weeklyCardCount: weeklyBriefingDeals.length,
     execute: executeSync,
     complete: (counts, metadata) => completePipelineRun(
-      prisma,
+      database(),
       pipelineRunId,
       counts,
       metadata,
     ),
     fail: (error, counts, metadata) => failPipelineRun(
-      prisma,
+      database(),
       pipelineRunId,
       error,
       counts,
@@ -506,10 +509,20 @@ async function main() {
   });
 }
 
-withSafeTask({ task: "weekly_briefing_deals", operation: "sync_weekly_deals" }, main)
+async function runTask() {
+  await runWithPreservedCleanup({
+    run: main,
+    cleanup: async () => {
+      await prisma?.$disconnect();
+    },
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "weekly_briefing_cleanup",
+      operation: "disconnect_database",
+    }, error),
+  });
+}
+
+withServerTask({ task: "weekly_briefing_deals", operation: "sync_weekly_deals" }, runTask)
   .catch(() => {
     process.exitCode = 1;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
   });

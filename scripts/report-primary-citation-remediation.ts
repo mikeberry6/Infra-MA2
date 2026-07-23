@@ -10,7 +10,8 @@
  *   npx tsx scripts/report-primary-citation-remediation.ts > approval.json
  */
 import "dotenv/config";
-import { withSafeTask } from "../src/lib/safe-task";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { PrismaPg } from "@prisma/adapter-pg";
@@ -32,7 +33,7 @@ async function main() {
   if (!connectionString) throw new Error("DATABASE_URL is required for the read-only citation report");
 
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
-  try {
+  const run = async () => {
     const input = await loadPrimaryCitationReportInput(prisma);
     const template = buildPrimaryCitationApprovalTemplate(input);
     const json = `${JSON.stringify(template, null, 2)}\n`;
@@ -48,11 +49,17 @@ async function main() {
     console.error(
       `Published records missing explicit primary citation: ${template.items.length}; template SHA-256: ${sha256Hex(json)}`,
     );
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "citation_report",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
-withSafeTask({ task: "citation_report", operation: "report_primary_citations" }, main).catch(() => {
+withServerTask({ task: "citation_report", operation: "report_primary_citations" }, main).catch(() => {
   process.exitCode = 1;
 });

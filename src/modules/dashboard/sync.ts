@@ -8,6 +8,7 @@ import type {
   DashboardSignal,
   DashboardSource,
 } from "@/modules/dashboard/types";
+import { logServerFailure, withServerTask } from "@/lib/server-log";
 import { formatSafeErrorSummary } from "@/lib/safe-error";
 import {
   inspectRequiredDashboardMetrics,
@@ -111,7 +112,10 @@ export async function syncDashboard(
     }
 
     try {
-      const providerResult = await provider.fetch();
+      const providerResult = await withServerTask({
+        task: "dashboard_provider",
+        operation: `fetch_${provider.source.id}`,
+      }, () => provider.fetch());
       const result = validateDashboardProviderResult(provider.source, providerResult);
       const observations = result.observations;
       const signals = result.signals ?? [];
@@ -196,7 +200,10 @@ export async function syncDashboard(
         try {
           await markNonCurrentSourceObservationsCached(prisma, provider.source.id, new Set());
         } catch (cacheError) {
-          console.error("Failed to mark dashboard observations cached:", formatSafeErrorSummary(cacheError));
+          logServerFailure({
+            task: "dashboard_sync",
+            operation: "mark_failed_observations_cached",
+          }, cacheError);
         }
       }
       if (!dryRun && sourceRunId) {

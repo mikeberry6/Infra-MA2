@@ -14,7 +14,8 @@ import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { prepareReviewerNeutralJsonOutput } from "../src/lib/reviewer-neutral-output";
-import { withSafeTask } from "../src/lib/safe-task";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import {
   buildOwnershipFundLinkApprovalTemplate,
   loadOwnershipFundLinkReportInput,
@@ -38,7 +39,7 @@ async function main() {
     output: option("output") ?? DEFAULT_OUTPUT,
   });
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
-  try {
+  const run = async () => {
     const input = await loadOwnershipFundLinkReportInput(prisma);
     const template = buildOwnershipFundLinkApprovalTemplate(input);
     const json = `${JSON.stringify(template, null, 2)}\n`;
@@ -50,11 +51,17 @@ async function main() {
       issues: template.items.length,
       templateSha256: digest,
     }, null, 2));
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "ownership_fund_report",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
-withSafeTask({ task: "ownership_fund_report", operation: "report_ownership_fund_links" }, main).catch(() => {
+withServerTask({ task: "ownership_fund_report", operation: "report_ownership_fund_links" }, main).catch(() => {
   process.exitCode = 1;
 });

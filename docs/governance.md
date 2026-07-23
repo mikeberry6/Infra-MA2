@@ -25,7 +25,7 @@ Automation may propose records but may not publish deals or portfolio companies.
 
 ### Monthly
 
-- Review production and development dependency advisories, administrator/analyst access, deal/fund/company source coverage, `lastVerifiedAt` backlog, pipeline reliability, and source/provider coverage.
+- Review production and development dependency advisories, administrator/analyst access, deal/fund/company source coverage, `lastVerifiedAt` backlog, pipeline reliability, source/provider coverage, public-route bundle budgets, route/database/provider latency, and p75 Core Web Vitals.
 - Confirm retained artifacts contain no sensitive payloads and allow expired temporary artifacts to purge.
 
 ### Quarterly

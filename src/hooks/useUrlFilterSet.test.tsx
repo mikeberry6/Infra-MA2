@@ -18,6 +18,8 @@ vi.mock("next/navigation", () => ({
   usePathname: () => "/tracker",
 }));
 
+vi.mock("@vercel/analytics", () => ({ track: vi.fn() }));
+
 import { useUrlFilterSet, useClearUrlFilters } from "./useUrlFilterSet";
 
 function Harness() {

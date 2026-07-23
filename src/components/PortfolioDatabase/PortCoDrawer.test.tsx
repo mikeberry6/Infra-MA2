@@ -1,9 +1,11 @@
-import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import type { CompanyView, FundStrategyView } from "@/modules/shared/types";
 import { PortCoDrawer } from "./PortCoDrawer";
+
+const track = vi.hoisted(() => vi.fn());
+vi.mock("@vercel/analytics", () => ({ track }));
 
 const company: CompanyView = {
   id: "company-1",
@@ -143,7 +145,7 @@ describe("PortCo scorecard contract", () => {
       <PortCoDrawer
         company={company}
         funds={funds}
-        detailStatus="loading"
+        detailState="loading"
         onClose={vi.fn()}
       />,
     );
@@ -152,7 +154,7 @@ describe("PortCo scorecard contract", () => {
       "aria-busy",
       "true",
     );
-    expect(screen.getByRole("status")).toHaveTextContent("Loading complete company detail");
+    expect(screen.getByRole("status")).toHaveTextContent("Loading the latest verified detail");
     expect(screen.getByRole("heading", { name: "Investment Details" })).toBeVisible();
   });
 
@@ -163,7 +165,7 @@ describe("PortCo scorecard contract", () => {
       <PortCoDrawer
         company={{ ...company, description: "", milestones: [], management: [], sources: [] }}
         funds={funds}
-        detailStatus="error"
+        detailState="error"
         onRetry={retry}
         onClose={vi.fn()}
       />,
@@ -171,9 +173,9 @@ describe("PortCo scorecard contract", () => {
 
     const alert = screen.getByRole("alert");
     expect(alert).toHaveTextContent(
-      "Company detail is temporarily unavailable. Showing the list record.",
+      "Latest detail could not be loaded. Showing the list record.",
     );
-    const retryButton = within(alert).getByRole("button", { name: "Retry detail request" });
+    const retryButton = within(alert).getByRole("button", { name: "Retry" });
     expect(retryButton).toHaveClass("!text-[#FECACA]");
     await user.click(retryButton);
     expect(retry).toHaveBeenCalledOnce();
@@ -188,12 +190,31 @@ describe("PortCo scorecard contract", () => {
     expect(onClose).toHaveBeenCalledOnce();
   });
 
-  it("keeps Phase 4 analytics, timing, and provenance out of the Phase 3 drawer", () => {
-    const source = readFileSync(
-      `${process.cwd()}/src/components/PortfolioDatabase/PortCoDrawer.tsx`,
-      "utf8",
+  it("renders canonical provenance metadata and tracks source clicks without payload data", async () => {
+    const user = userEvent.setup();
+    track.mockReset();
+    render(
+      <PortCoDrawer
+        company={company}
+        funds={funds}
+        detailMeta={{
+          canonicalId: "company-1",
+          updatedAt: "2026-07-22T12:00:00.000Z",
+          lastVerifiedAt: "2026-07-21T12:00:00.000Z",
+          sourceCount: 1,
+        }}
+        onClose={vi.fn()}
+      />,
     );
 
-    expect(source).not.toMatch(/@vercel\/analytics|useDrawerShellTiming|RecordMeta|detailMeta/);
+    expect(screen.getByText(/Last verified/).parentElement).toHaveTextContent(
+      "Last verified Jul 21, 2026 · 1 source",
+    );
+    await user.click(screen.getByRole("link", { name: "Company profile" }));
+    expect(track).toHaveBeenCalledWith("source_link_clicked", {
+      entity: "company",
+      placement: "drawer",
+    });
+    expect(JSON.stringify(track.mock.calls)).not.toContain("company-1");
   });
 });

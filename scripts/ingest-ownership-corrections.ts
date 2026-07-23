@@ -41,7 +41,9 @@
  * transaction per row when applying, exhaustive logging in dry-run.
  */
 import "dotenv/config";
-import { withSafeTask } from "../src/lib/safe-task";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
+import { SafeOperationalError } from "../src/lib/safe-error";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { PrismaClient, type Prisma } from "../src/generated/prisma/client";
@@ -56,19 +58,12 @@ const expectedSha256 = process.argv
   .find((argument) => argument.startsWith("--expected-sha256="))
   ?.slice("--expected-sha256=".length);
 
-if (!inputPath) {
-  console.error(
-    "Usage: npx tsx scripts/ingest-ownership-corrections.ts <input.json> [--apply] [--review-flagged]",
-  );
-  process.exit(1);
-}
-if (APPLY && !/^[0-9a-f]{64}$/.test(expectedSha256 ?? "")) {
-  throw new Error("--apply requires --expected-sha256=<reviewed lowercase SHA-256>");
-}
-const mutationContext = APPLY ? assertMaintenanceMutationContext() : undefined;
+let prisma: PrismaClient | null = null;
 
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
-const prisma = new PrismaClient({ adapter });
+function database(): PrismaClient {
+  if (!prisma) throw new SafeOperationalError("database_url_required");
+  return prisma;
+}
 
 interface InputRow {
   sourceRow: string;
@@ -118,7 +113,7 @@ async function resolveOrganization(
   if (exact) return { org: exact, reason: "exact" };
 
   // Alias lookup (DB-side, since aliases aren't pre-indexed)
-  const alias = await prisma.alias.findFirst({
+  const alias = await database().alias.findFirst({
     where: { alias: { equals: cleaned, mode: "insensitive" } },
     include: { organization: { select: { id: true, name: true } } },
   });
@@ -177,7 +172,7 @@ async function buildPlan(
   let flagged = false;
 
   // Find the company in the DB
-  const company = await prisma.company.findFirst({
+  const company = await database().company.findFirst({
     where: { name: row.company },
     include: {
       ownershipPeriods: {
@@ -419,6 +414,21 @@ async function buildPlan(
 // ── Main ─────────────────────────────────────────────────────────
 
 async function main() {
+  if (!inputPath) {
+    console.error(
+      "Usage: npx tsx scripts/ingest-ownership-corrections.ts <input.json> [--apply] [--review-flagged]",
+    );
+    throw new Error("Ownership ingest argument validation failed.");
+  }
+  if (APPLY && !/^[0-9a-f]{64}$/.test(expectedSha256 ?? "")) {
+    console.error("--apply requires --expected-sha256=<reviewed lowercase SHA-256>");
+    throw new Error("Ownership ingest argument validation failed.");
+  }
+  const mutationContext = APPLY ? assertMaintenanceMutationContext() : undefined;
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) throw new SafeOperationalError("database_url_required");
+  prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
+
   console.log(APPLY ? "⚠️  APPLY MODE — writing changes" : "🔍 DRY RUN — no changes will be made");
   if (REVIEW_FLAGGED) console.log("ℹ️  --review-flagged: showing only rows that need manual attention");
   console.log();
@@ -432,7 +442,7 @@ async function main() {
   console.log(`Loaded ${inputJson.length} rows from ${inputPath}`);
 
   // Pre-fetch all organizations into an in-memory index
-  const allOrgs = await prisma.organization.findMany({
+  const allOrgs = await database().organization.findMany({
     select: { id: true, name: true },
   });
   const orgIndex = {
@@ -514,7 +524,7 @@ async function main() {
   for (const plan of plans) {
     if (plan.flagged) continue;
     if (plan.ops.length === 0) continue;
-    await prisma.$transaction(async (tx) => {
+    await database().$transaction(async (tx) => {
       const changedFields = new Set<string>();
       for (const op of plan.ops) {
         const affectedFields = await op.apply(tx);
@@ -547,10 +557,20 @@ async function main() {
   console.log(`Skipped ${flaggedCount} flagged rows — re-run with --review-flagged to inspect.`);
 }
 
-withSafeTask({ task: "ownership_ingest", operation: "ingest_ownership_corrections" }, main)
+async function runTask() {
+  await runWithPreservedCleanup({
+    run: main,
+    cleanup: async () => {
+      await prisma?.$disconnect();
+    },
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "ownership_ingest_cleanup",
+      operation: "disconnect_database",
+    }, error),
+  });
+}
+
+withServerTask({ task: "ownership_ingest", operation: "ingest_ownership_corrections" }, runTask)
   .catch(() => {
     process.exitCode = 1;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
   });

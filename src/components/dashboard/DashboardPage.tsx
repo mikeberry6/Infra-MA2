@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import type { CSSProperties, ReactNode } from "react";
 import { SectionLabel } from "@/components/shared/SectionLabel";
+import { TrackedAnalyticsLink } from "@/components/shared/TrackedAnalyticsLink";
 import { formatScheduledDateTime } from "@/lib/format";
 import { isHttpUrl } from "@/lib/source-utils";
 import { directionForSeries } from "@/modules/dashboard/score";
@@ -557,15 +558,19 @@ function SignalsTable({
                   </td>
                   <td className="px-3 py-2 align-top type-meta">
                     {isHttpUrl(item.sourceUrl) ? (
-                      <a
+                      <TrackedAnalyticsLink
                         href={item.sourceUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        analyticsEvent={{
+                          name: "source_link_clicked",
+                          properties: { entity: "dashboard", placement: "signal" },
+                        }}
                         className="inline-flex items-center gap-1.5 hover:text-[var(--accent)]"
                       >
                         {item.sourceName}
                         <ExternalLink className="h-3 w-3" />
-                      </a>
+                      </TrackedAnalyticsLink>
                     ) : item.sourceName}
                   </td>
                   <td className="px-3 py-2 text-right align-top mono type-micro tabular-nums">
@@ -617,14 +622,18 @@ function SourceHealthTable({ view }: { view: DashboardView }) {
                 <td className="px-3 py-2 align-top">
                   <div className="type-row-title">
                     {typeof source.metadata?.url === "string" && isHttpUrl(source.metadata.url) ? (
-                      <a
+                      <TrackedAnalyticsLink
                         href={source.metadata.url}
                         target="_blank"
                         rel="noopener noreferrer"
+                        analyticsEvent={{
+                          name: "source_link_clicked",
+                          properties: { entity: "dashboard", placement: "source_health" },
+                        }}
                         className="hover:text-[var(--accent)]"
                       >
                         {source.sourceName}
-                      </a>
+                      </TrackedAnalyticsLink>
                     ) : source.sourceName}
                   </div>
                   <div className="type-micro mono">{source.sourceId}</div>
@@ -679,15 +688,19 @@ function MetricSourceLabel({ series }: { series: DashboardSeries }) {
   const external = isHttpUrl(url);
   if (!external) return series.metric.label;
   return (
-    <a
+    <TrackedAnalyticsLink
       href={url}
       target="_blank"
       rel="noopener noreferrer"
+      analyticsEvent={{
+        name: "source_link_clicked",
+        properties: { entity: "dashboard", placement: "metric" },
+      }}
       className="hover:text-[var(--accent)]"
       title={`Open ${series.metric.source.name} source`}
     >
       {series.metric.label}
-    </a>
+    </TrackedAnalyticsLink>
   );
 }
 

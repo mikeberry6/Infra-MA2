@@ -10,9 +10,13 @@ export default function GlobalError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const errorId = error.digest && /^[A-Za-z0-9_-]{1,128}$/.test(error.digest)
+    ? error.digest
+    : null;
+
   useEffect(() => {
-    console.error("Page error:", error);
-  }, [error]);
+    console.error("Page operation failed", { digest: errorId ?? "unavailable" });
+  }, [errorId]);
 
   return (
     <div className="mx-auto max-w-[640px] px-4 sm:px-6 py-16">
@@ -26,9 +30,9 @@ export default function GlobalError({
         <p className="mt-2 type-meta">
           An unexpected error occurred while loading this page.
         </p>
-        {error.digest && (
+        {errorId && (
           <p className="mt-3 type-micro mono tabular-nums">
-            ID: {error.digest}
+            ID: {errorId}
           </p>
         )}
         <div className="mt-6">

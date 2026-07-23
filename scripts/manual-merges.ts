@@ -17,15 +17,16 @@
  * the entry is skipped (logged) rather than merged into the wrong row.
  */
 import "dotenv/config";
-import { withSafeTask } from "../src/lib/safe-task";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { rehomeCompanyRedirects } from "../src/modules/companies/redirects";
+import { SafeOperationalError } from "../src/lib/safe-error";
 
 const APPLY = process.argv.includes("--apply");
 
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
-const prisma = new PrismaClient({ adapter });
+let prisma: PrismaClient;
 
 interface MergePair {
   keep: string;
@@ -249,10 +250,22 @@ async function main() {
   if (!APPLY) console.log("\nThis was a dry run. Re-run with --apply to write changes.");
 }
 
-withSafeTask({ task: "manual_merges", operation: "review_manual_merges" }, main)
+async function runTask() {
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) throw new SafeOperationalError("database_url_required");
+  const client = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
+  prisma = client;
+  await runWithPreservedCleanup({
+    run: main,
+    cleanup: () => client.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "manual_merges_cleanup",
+      operation: "disconnect_database",
+    }, error),
+  });
+}
+
+withServerTask({ task: "manual_merges", operation: "review_manual_merges" }, runTask)
   .catch(() => {
     process.exitCode = 1;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
   });

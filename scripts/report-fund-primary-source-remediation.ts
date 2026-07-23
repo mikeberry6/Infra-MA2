@@ -13,7 +13,8 @@ import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { prepareReviewerNeutralJsonOutput } from "../src/lib/reviewer-neutral-output";
-import { withSafeTask } from "../src/lib/safe-task";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import {
   buildFundPrimarySourceApprovalTemplate,
   fundPrimarySourceSha256,
@@ -38,7 +39,7 @@ async function main() {
     output: option("output") ?? DEFAULT_OUTPUT,
   });
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
-  try {
+  const run = async () => {
     const input = await loadFundPrimarySourceReportInput(prisma);
     const template = buildFundPrimarySourceApprovalTemplate(input);
     const json = `${JSON.stringify(template, null, 2)}\n`;
@@ -52,12 +53,18 @@ async function main() {
       ).length,
       templateSha256: fundPrimarySourceSha256(json),
     }, null, 2));
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "fund_primary_source_report",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
-withSafeTask(
+withServerTask(
   { task: "fund_primary_source_report", operation: "report_fund_primary_sources" },
   main,
 ).catch(() => {

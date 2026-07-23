@@ -1,7 +1,8 @@
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
-import { reportSafeScriptError } from "../src/lib/safe-error";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import {
   assertMaintenanceMutationContext,
   assertMutationDatabaseTargetFromEnv,
@@ -314,7 +315,7 @@ async function main(): Promise<void> {
     releaseSha: context.releaseSha,
   }) : null;
   const prisma = createPrisma();
-  try {
+  const run = async () => {
     const startedAt = await migrationStartedAt(prisma);
     if (mode === "report") {
       const items = buildItems(await loadRows(prisma, startedAt), startedAt);
@@ -342,13 +343,18 @@ async function main(): Promise<void> {
     assertApprovalContext(approval, context!);
     const result = await runMutation(prisma, mode, approval, committed!.approvalSha256, committed!.repositoryPath, context!);
     console.log(JSON.stringify({ operation: mode, ...result }));
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "dashboard_methodology_cutover",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
-main()
-  .catch((error) => {
-    reportSafeScriptError("dashboard_methodology_cutover", error);
+withServerTask({ task: "dashboard_methodology_cutover", operation: "report_apply_or_rollback" }, main)
+  .catch(() => {
     process.exitCode = 1;
   });

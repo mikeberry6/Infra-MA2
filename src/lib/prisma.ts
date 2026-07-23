@@ -1,13 +1,25 @@
 import { PrismaClient } from "@/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { logServerOperation } from "@/lib/server-log";
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | null };
 
 function createPrismaClient(): PrismaClient | null {
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) {
-    // Don't throw during build — DATABASE_URL is only available at runtime
-    console.warn("DATABASE_URL not set — database queries will fail");
+    // DATABASE_URL is intentionally absent in the offline production build.
+    // Runtime misses remain observable, but build workers must not emit false
+    // 503 incidents while evaluating dynamic route modules.
+    if (process.env.NEXT_PHASE !== "phase-production-build") {
+      logServerOperation({
+        taskId: crypto.randomUUID(),
+        task: "prisma_client",
+        operation: "initialize_database",
+        durationMs: 0,
+        status: 503,
+        errorClassification: "configuration_error",
+      });
+    }
     return null;
   }
   // Authentication throttling is atomic. Neon's HTTP adapter rejects Prisma
