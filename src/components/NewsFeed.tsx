@@ -27,9 +27,9 @@ import { TextInput } from "@/components/shared/TextInput";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useClearUrlFilters, useUrlFilterSet } from "@/hooks/useUrlFilterSet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
-import { formatDate } from "@/lib/format";
+import { formatDate, formatScheduledDateTime } from "@/lib/format";
 import { getNewsCategoryColor, NEWS_CATEGORIES } from "@/lib/news-utils";
-import type { NewsCategory, NewsFeedView, NewsItemView, NewsMentionType } from "@/modules/shared/types";
+import type { FeedOperationsView, NewsCategory, NewsFeedView, NewsItemView, NewsMentionType } from "@/modules/shared/types";
 
 const DATE_WINDOWS = [
   { label: "Today", days: 0 },
@@ -37,6 +37,14 @@ const DATE_WINDOWS = [
   { label: "30D", days: 30 },
   { label: "All", days: null },
 ] as const;
+
+export function emptyNewsStateTitle(state: FeedOperationsView["state"]): string {
+  if (state === "failed") return "The latest scan failed";
+  if (state === "pending") return "A news scan is currently running";
+  if (state === "overdue") return "The scheduled news scan is overdue";
+  if (state === "never-run") return "No news scan has run yet";
+  return "Scan completed with no qualifying signals";
+}
 
 const MENTION_COLORS: Record<NewsMentionType, string> = {
   PortCo: "#3b6cf2",
@@ -167,7 +175,7 @@ function IntelligenceHeader({
   lastUpdated,
 }: {
   counts: NewsCounts;
-  lastUpdated: string;
+  lastUpdated: string | null;
 }) {
   const metrics = [
     { label: "Review Items", value: counts.total, color: "#111114" },
@@ -194,7 +202,7 @@ function IntelligenceHeader({
             </p>
           </div>
           <div className="type-micro">
-            Updated <span className="mono tabular-nums">{formatDate(lastUpdated)}</span>
+            Updated <span className="mono tabular-nums">{lastUpdated ? formatDate(lastUpdated) : "Not recorded"}</span>
           </div>
         </div>
 
@@ -212,6 +220,58 @@ function IntelligenceHeader({
           ))}
         </div>
       </div>
+    </section>
+  );
+}
+
+function OperationalStatus({ operations }: { operations: FeedOperationsView }) {
+  const isHealthy = operations.state === "healthy";
+  const label = isHealthy
+    ? "Window current"
+    : operations.state === "failed"
+      ? "Latest scan failed"
+      : operations.state === "overdue"
+        ? "Scan overdue"
+        : "Scan pending";
+  const color = isHealthy ? "#1d9d76" : operations.state === "never-run" ? "#71717a" : "#b45309";
+
+  return (
+    <section className="mb-5 flex flex-col gap-2 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-4 py-3 sm:flex-row sm:items-center sm:justify-between" aria-label="News pipeline status">
+      <div className="min-w-0">
+        <div className="flex items-center gap-2 type-meta font-semibold text-[var(--text-primary)]">
+          <span aria-hidden className="h-2 w-2 rounded-full" style={{ backgroundColor: color }} />
+          {label}
+        </div>
+        <p className="mt-0.5 type-micro">{operations.message}</p>
+      </div>
+      <dl className="flex shrink-0 flex-wrap gap-x-5 gap-y-1 type-micro">
+        <div>
+          <dt className="inline">Last success </dt>
+          <dd className="inline mono tabular-nums text-[var(--text-secondary)]">{operations.lastSuccessfulAt ? formatDate(operations.lastSuccessfulAt) : "Not recorded"}</dd>
+        </div>
+        <div>
+          <dt className="inline">Next expected </dt>
+          <dd className="inline mono tabular-nums text-[var(--text-secondary)]">{operations.nextExpectedAt ? formatScheduledDateTime(operations.nextExpectedAt, "UTC") : "Pending schedule"}</dd>
+        </div>
+        {operations.sourceCoverage && (
+          <div>
+            <dt className="inline">Source coverage </dt>
+            <dd className="inline mono tabular-nums text-[var(--text-secondary)]">
+              {operations.sourceCoverage.succeeded.toLocaleString()}/{operations.sourceCoverage.attempted.toLocaleString()} attempts
+            </dd>
+          </div>
+        )}
+        {operations.scanWindow && (
+          <div>
+            <dt className="inline">Rotating window </dt>
+            <dd className="inline mono tabular-nums text-[var(--text-secondary)]">
+              {operations.scanWindow.selectedCount.toLocaleString()}/{operations.scanWindow.fullUniverseCount.toLocaleString()} entities
+              {" · "}window {operations.scanWindow.windowIndex + 1}/{operations.scanWindow.windowsPerCycle}
+              {" · "}{formatDate(`${operations.scanWindow.selectionDateUtc}T12:00:00.000Z`)}
+            </dd>
+          </div>
+        )}
+      </dl>
     </section>
   );
 }
@@ -902,6 +962,7 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
   return (
     <div className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6">
       <IntelligenceHeader counts={counts} lastUpdated={feed.lastUpdated} />
+      <OperationalStatus operations={feed.operations} />
 
       <CategorySpotlight items={filteredItems} onSelect={setSelectedItem} />
 
@@ -943,9 +1004,15 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
               <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--bg-subtle)] text-[var(--text-tertiary)]">
                 <Search className="h-4 w-4" />
               </div>
-              <h2 className="mt-3 type-row-title">No signals matched</h2>
+              <h2 className="mt-3 type-row-title">
+                {feed.items.length > 0
+                  ? "Filters exclude the available signals"
+                  : emptyNewsStateTitle(feed.operations.state)}
+              </h2>
               <p className="mt-1 type-micro">
-                Broaden the category, entity, or date filters to bring more items back into view.
+                {feed.items.length > 0
+                  ? "Broaden the category, entity, search, or date filters to bring more items back into view."
+                  : feed.operations.message}
               </p>
             </div>
           )}

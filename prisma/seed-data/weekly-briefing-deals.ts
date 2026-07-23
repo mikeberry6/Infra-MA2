@@ -3,7 +3,7 @@ import { join } from "node:path";
 import type { Deal, DealCategory, DealRegion, DealSector, DealStatus } from "./deals";
 
 const EMAIL_DIR = join(process.cwd(), "public", "email-format");
-const EMAIL_FILE_PATTERN = /^2026-\d{2}-\d{2}\.html$/;
+const EMAIL_FILE_PATTERN = /^\d{4}-\d{2}-\d{2}\.html$/;
 
 const DEAL_SECTORS = new Set<DealSector>([
   "Power & ET",

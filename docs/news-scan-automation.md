@@ -1,68 +1,58 @@
-# News Scan Daily Automation
+# News scan operations
 
-This repo's News Feed scanner persists review-queue records only to `NewsItem` and `NewsMention`.
+The canonical production scheduler is the **Data Pipelines** GitHub Actions workflow. It runs the news scanner from the exact protected `main` revision every day at 23:30 UTC with one shared, non-cancelling production lock.
 
-## Daily command
+The former workstation `launchd` schedule has been removed. Do not run a second local production schedule: overlapping scans would weaken the bounded-run, provenance, and retained-evidence contracts.
 
-Run this command at the end of each day:
-
-```sh
-cd /Users/mikeberry6/Infra-MA2 && npm run news:scan -- --since-days=2 --max-pages=5000
-```
-
-Use `--since-days=2` for the daily job so late-posted items are still picked up on the next run. The scanner performs both source-site crawling and exact-name public-news search by default, so the daily job screens tracked companies, fund managers, and funds even when their own websites do not expose recent news pages.
-
-For an ad hoc full-universe news-search screen without the slower source-site crawl:
+Before enabling the hosted schedule, verify that the old service label is not still loaded:
 
 ```sh
-cd /Users/mikeberry6/Infra-MA2 && npm run news:scan -- --since-days=7 --skip-source-crawl --search-max-results-per-entity=5
+launchctl print "gui/$(id -u)/com.mikeberry6.infra-ma2.news-scan"
 ```
 
-## launchd template
+If it exists, an authorized operator must run `launchctl bootout "gui/$(id -u)/com.mikeberry6.infra-ma2.news-scan"` and then repeat the print command until it returns not found. Deleting the plist from the repository does not unload a previously bootstrapped service. Record the host, operator, time, and result in the Phase 2 release record.
 
-A local launchd plist template is available at:
+## Scheduled contract
 
-```text
-docs/com.mikeberry6.infra-ma2.news-scan.plist
-```
+The workflow:
 
-The template:
+- pins one UTC `NEWS_SCAN_AS_OF` and rotation date across every retry;
+- permits at most three bounded attempts;
+- caps each attempt at 200 targets and 750 pages;
+- writes one `PipelineRun` lifecycle record per attempt, then collapses retries into one logical `refreshWindow` for scheduled-window reliability; provider/source coverage remains separate from qualifying-item counts;
+- uploads `news-scan-summary.json` and `news-reliability.json` for 30 days;
+- requires a successful run within 36 hours and at least 95% successful scheduled runs over the rolling 30-day window;
+- fails when provider failure coverage exceeds 25%; and
+- never creates or publishes Deals or portfolio companies.
 
-- Runs daily at 7:30 PM local Mac time.
-- Uses `/Users/mikeberry6/Infra-MA2` as `WorkingDirectory`.
-- Runs `/opt/homebrew/bin/npm run news:scan -- --since-days=2 --max-pages=5000`.
-- Writes stdout to `tmp/news-scan.log`.
-- Writes stderr to `tmp/news-scan-error.log`.
-- Relies on `scripts/news-scan.ts` loading `.env` from the repo via `dotenv/config`.
+A successful scan with no qualifying items is a valid empty result. A pending scan, failed scan, provider-coverage failure, and filters excluding available items remain distinct public states.
 
-Do not load the plist automatically without explicit approval.
+## Approved on-demand run
 
-Before loading it manually, verify:
+Use the `run-data-pipeline` repository dispatch event with `client_payload.pipeline=news`. Repository dispatch executes workflow code from the default branch; the workflow then proves the checked-out `main` SHA before receiving production credentials.
+
+Do not add a credentialed `workflow_dispatch` or accept a caller-selected ref. Do not invoke the production scanner from a developer workstation.
+
+## Non-production dry run
+
+For adapter development only, use a guarded development or isolated validation database and the same production bounds:
 
 ```sh
-cd /Users/mikeberry6/Infra-MA2
-mkdir -p tmp
-npm run news:scan:dry-run -- --since-days=2 --max-pages=5000
+TARGET_DATABASE=validation \
+EXPECTED_DATABASE_HOST=... \
+EXPECTED_DATABASE_NAME=... \
+FORBIDDEN_DATABASE_HOST=... \
+DATABASE_URL=... \
+npm run news:scan:dry-run -- --max-targets=200 --max-pages=750
 ```
 
-If approved later, it can be loaded with:
+Never use production connection values for this command. The dry run does not replace the hosted pipeline evidence.
 
-```sh
-launchctl bootstrap "gui/$(id -u)" /Users/mikeberry6/Infra-MA2/docs/com.mikeberry6.infra-ma2.news-scan.plist
-```
+## Editorial and source guardrails
 
-And unloaded with:
-
-```sh
-launchctl bootout "gui/$(id -u)" /Users/mikeberry6/Infra-MA2/docs/com.mikeberry6.infra-ma2.news-scan.plist
-```
-
-## Operating guardrails
-
-- Do not scrape LinkedIn directly.
-- Only capture LinkedIn URLs discovered from public pages.
-- Respect robots.txt.
-- If a provider or site fails, continue the scan and inspect `tmp/news-scan-summary.json`.
-- Do not create new deals from the scanner.
-- Treat `/news` as a review queue; imported items still need editorial review.
-- The Next.js `/news` page may take up to 5 minutes to reflect new records if route caching is active.
+- Respect `robots.txt` and the scanner's public-network/SSRF protections.
+- Do not scrape LinkedIn directly; retain only LinkedIn URLs discovered on public pages.
+- Keep imported news in its review workflow. Automation may propose records but cannot publish Deals or portfolio companies.
+- Inspect both qualifying-item counts and attempted-provider coverage. Zero items does not prove that upstream scanning succeeded.
+- On failure, leave existing public records intact, inspect the retained artifact, correct the provider or credential contract, and rerun through the approved dispatch.
+- Escalate an unresolved freshness breach or repeated provider failure to Operations and Engineering; do not substitute sample content.

@@ -1,0 +1,11 @@
+-- Intentionally non-mutating.
+--
+-- Publication remediation is an editorial action, not a schema migration.
+-- After the additive trust schema and explicit primary-citation designation
+-- are installed, `scripts/source-coverage-report.ts --require-complete` blocks
+-- release while any published deal lacks a primary citation. An editor must
+-- attach the source, review the record, and publish/verify it through the
+-- audited application workflow. This keeps schema-first staging compatible
+-- with the currently deployed application and prevents a migration from
+-- silently removing records from public results.
+SELECT 1;

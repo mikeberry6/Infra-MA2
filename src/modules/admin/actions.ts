@@ -4,6 +4,23 @@ import { prisma } from "@/lib/prisma";
 import { revalidateAppData } from "@/lib/revalidation";
 import { parseDateInput } from "@/lib/format";
 import { isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
+import { recordAuditEvent } from "@/modules/operations/audit";
+import {
+  canArchive,
+  canPublish,
+  canSubmitForReview,
+  canVerify,
+  statusAfterEditorialEdit,
+} from "@/modules/admin/workflow";
+import { draftDeletionBlockReason, toAuditSnapshot } from "@/modules/admin/deletion";
+import { AdminActionUserError, adminActionErrorMessage } from "@/modules/admin/action-error";
+import { changedFieldSummary, deletedFieldSummary } from "@/modules/admin/change-summary";
+import {
+  missingCompanyPublicationFields,
+  missingDealPublicationFields,
+  missingFundPublicationFields,
+  normalizeFundLookup,
+} from "@/modules/operations/publication-integrity";
 import { dealSchema, fundSchema, companySchema, ownershipPeriodSchema } from "./schemas";
 import {
   DEAL_SECTOR_MAP,
@@ -32,7 +49,7 @@ import type {
   CompanySector,
   CompanyRegion,
   CompanyStatus,
-  OrgType,
+  Prisma,
 } from "@/generated/prisma/client";
 
 type ActionResult = { success: boolean; error?: string; id?: string };
@@ -60,23 +77,6 @@ function parseFormNumber(formData: FormData, key: string): number | undefined {
   return isNaN(n) ? undefined : n;
 }
 
-// Resolve an Organization by name, creating it with the given default types
-// if it doesn't yet exist. Uses `upsert` against the unique `name` constraint
-// so concurrent calls with the same name don't race a duplicate insert.
-// `defaultTypes` is only applied on creation — existing orgs keep their type
-// list to avoid silently widening a record's classification.
-async function findOrCreateOrg(
-  name: string,
-  defaultTypes: OrgType[] = ["OTHER"],
-): Promise<string> {
-  const org = await prisma.organization.upsert({
-    where: { name },
-    update: {},
-    create: { name, types: defaultTypes },
-  });
-  return org.id;
-}
-
 // Resolve a vehicle name (e.g. "Brookfield Fund III") to a Fund row by
 // matching on a normalized fundName (case-insensitive, whitespace collapsed,
 // punctuation stripped). Returns the Fund's id or null if no match.
@@ -92,16 +92,73 @@ async function findFundByVehicleName(vehicleName: string): Promise<string | null
   return hit?.id ?? null;
 }
 
-function normalizeFundLookup(s: string): string {
-  return s
-    .toLowerCase()
-    .replace(/[^\w\s]/g, " ") // strip punctuation (keeps roman numerals as-is)
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
 function revalidateAll() {
   revalidateAppData();
+}
+
+async function auditMutation(
+  entityType: string,
+  entityId: string,
+  action: string,
+  changedFields: string[] = [],
+  client?: Prisma.TransactionClient,
+) {
+  return recordAuditEvent({
+    entityType,
+    entityId,
+    action,
+    changes: { changedFields },
+  }, client);
+}
+
+async function replacePrimaryCitation(
+  tx: Prisma.TransactionClient,
+  input: {
+    dealId?: string;
+    companyId?: string;
+    sourceName?: string;
+    sourceUrl?: string;
+  },
+) {
+  const relation = input.dealId
+    ? { dealId: input.dealId }
+    : { companyId: input.companyId! };
+
+  await tx.citation.updateMany({
+    where: { ...relation, isPrimary: true },
+    data: { isPrimary: false },
+  });
+
+  if (!input.sourceUrl) return;
+
+  const source = await tx.source.upsert({
+    where: { url: input.sourceUrl },
+    update: input.sourceName ? { label: input.sourceName } : {},
+    create: {
+      url: input.sourceUrl,
+      label: input.sourceName || "",
+      type: "ARTICLE",
+    },
+  });
+  const existing = await tx.citation.findFirst({
+    where: { ...relation, sourceId: source.id },
+    select: { id: true },
+  });
+  if (existing) {
+    await tx.citation.update({
+      where: { id: existing.id },
+      data: { isPrimary: true },
+    });
+  } else {
+    await tx.citation.create({
+      data: {
+        sourceId: source.id,
+        dealId: input.dealId ?? null,
+        companyId: input.companyId ?? null,
+        isPrimary: true,
+      },
+    });
+  }
 }
 
 async function requireAdminAction(): Promise<ActionResult | null> {
@@ -128,6 +185,8 @@ export async function createDeal(formData: FormData): Promise<ActionResult> {
       target: formData.get("target") as string,
       buyer: formData.get("buyer") as string,
       seller: formData.get("seller") as string,
+      sellerDisclosureStatus: (formData.get("sellerDisclosureStatus") as string) || "LEGACY_UNREVIEWED",
+      sellerDisclosureReason: (formData.get("sellerDisclosureReason") as string) || undefined,
       sector: formData.get("sector") as string,
       subsector: (formData.get("subsector") as string) || "",
       region: formData.get("region") as string,
@@ -167,20 +226,12 @@ export async function createDeal(formData: FormData): Promise<ActionResult> {
 
     const legacyId = `INF-${new Date().getFullYear()}-${Date.now().toString(36).toUpperCase()}`;
 
-    // Resolve buyer/seller participants up front so the transaction body is
-    // pure DB writes (interactive transactions have a default 5s timeout).
     const splitParty = (joined: string): string[] =>
       joined && joined !== "N/A" && joined !== "—"
         ? joined.split(" / ").map((s) => s.trim()).filter(Boolean)
         : [];
     const finalBuyers = buyerNames.length ? buyerNames : splitParty(d.buyer);
     const finalSellers = sellerNames.length ? sellerNames : splitParty(d.seller);
-    const buyerOrgs = await Promise.all(
-      finalBuyers.map((name) => findOrCreateOrg(name, ["OTHER"]).then((id) => ({ id, name }))),
-    );
-    const sellerOrgs = await Promise.all(
-      finalSellers.map((name) => findOrCreateOrg(name, ["OTHER"]).then((id) => ({ id, name }))),
-    );
 
     const deal = await prisma.$transaction(async (tx) => {
       const deal = await tx.deal.create({
@@ -192,35 +243,72 @@ export async function createDeal(formData: FormData): Promise<ActionResult> {
           stake: d.stake || null, closingDate: parseDateInput(d.closingDate),
           assetScale: d.assetScale || null, valuationMultiple: d.valuationMultiple || null,
           fundVehicle: d.fundVehicle || null, keyHighlights: d.keyHighlights || [],
+          sellerDisclosureStatus: finalSellers.length > 0 ? "DISCLOSED" : d.sellerDisclosureStatus,
+          sellerDisclosureReason: finalSellers.length > 0 ? null : d.sellerDisclosureReason?.trim() || null,
           status: "DRAFT",
         },
       });
-      for (const { id: organizationId, name } of buyerOrgs) {
-        await tx.dealParticipant.create({
-          data: { dealId: deal.id, organizationId, role: "BUYER", displayName: name },
-        });
-      }
-      for (const { id: organizationId, name } of sellerOrgs) {
-        await tx.dealParticipant.create({
-          data: { dealId: deal.id, organizationId, role: "SELLER", displayName: name },
-        });
-      }
-      if (d.sourceUrl) {
-        const source = await tx.source.upsert({
-          where: { url: d.sourceUrl },
+      for (const name of finalBuyers) {
+        const organization = await tx.organization.upsert({
+          where: { name },
           update: {},
-          create: { url: d.sourceUrl, label: d.sourceName || "", type: "ARTICLE" },
+          create: { name, types: ["OTHER"] },
         });
-        await tx.citation.create({ data: { sourceId: source.id, dealId: deal.id } });
+        await tx.dealParticipant.create({
+          data: { dealId: deal.id, organizationId: organization.id, role: "BUYER", displayName: name },
+        });
       }
+      for (const name of finalSellers) {
+        const organization = await tx.organization.upsert({
+          where: { name },
+          update: {},
+          create: { name, types: ["OTHER"] },
+        });
+        await tx.dealParticipant.create({
+          data: { dealId: deal.id, organizationId: organization.id, role: "SELLER", displayName: name },
+        });
+      }
+      await replacePrimaryCitation(tx, {
+        dealId: deal.id,
+        sourceName: d.sourceName,
+        sourceUrl: d.sourceUrl,
+      });
+      await auditMutation("Deal", deal.id, "CREATE", [
+        "legacyId",
+        "title",
+        "target",
+        "sector",
+        "subsector",
+        "region",
+        "categories",
+        "date",
+        "description",
+        "targetDescription",
+        "country",
+        "dealStatus",
+        "enterpriseValue",
+        "equityValue",
+        "stake",
+        "closingDate",
+        "assetScale",
+        "valuationMultiple",
+        "fundVehicle",
+        "keyHighlights",
+        "sellerDisclosureStatus",
+        "sellerDisclosureReason",
+        "status",
+        "buyers",
+        "sellers",
+        "primarySourceName",
+        "primarySourceUrl",
+      ], tx);
       return deal;
     });
 
     revalidateAll();
     return { success: true, id: deal.id };
   } catch (error) {
-    console.error("createDeal error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to create deal" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to create deal") };
   }
 }
 
@@ -234,6 +322,8 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
       target: formData.get("target") as string,
       buyer: formData.get("buyer") as string,
       seller: formData.get("seller") as string,
+      sellerDisclosureStatus: (formData.get("sellerDisclosureStatus") as string) || "LEGACY_UNREVIEWED",
+      sellerDisclosureReason: (formData.get("sellerDisclosureReason") as string) || undefined,
       sector: formData.get("sector") as string,
       subsector: (formData.get("subsector") as string) || "",
       region: formData.get("region") as string,
@@ -251,6 +341,8 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
       valuationMultiple: (formData.get("valuationMultiple") as string) || undefined,
       fundVehicle: (formData.get("fundVehicle") as string) || undefined,
       keyHighlights: parseFormArray(formData, "keyHighlights"),
+      sourceName: (formData.get("sourceName") as string) || undefined,
+      sourceUrl: (formData.get("sourceUrl") as string) || undefined,
     };
     const buyerNames = parseFormArray(formData, "buyers");
     const sellerNames = parseFormArray(formData, "sellers");
@@ -268,56 +360,190 @@ export async function updateDeal(id: string, formData: FormData): Promise<Action
     const finalBuyers = buyerNames.length ? buyerNames : splitParty(d.buyer);
     const finalSellers = sellerNames.length ? sellerNames : splitParty(d.seller);
 
-    // Resolve all participant orgs up front so the transaction body is
-    // entirely DB writes — Prisma's interactive transactions have a default
-    // 5-second timeout and serial upserts inside one would be slow.
-    const buyerOrgIds = await Promise.all(
-      finalBuyers.map((name) => findOrCreateOrg(name, ["OTHER"]).then((id) => ({ id, name }))),
-    );
-    const sellerOrgIds = await Promise.all(
-      finalSellers.map((name) => findOrCreateOrg(name, ["OTHER"]).then((id) => ({ id, name }))),
-    );
-
     await prisma.$transaction(async (tx) => {
-      await tx.deal.update({
+      const existingDeal = await tx.deal.findUnique({
         where: { id },
-        data: {
-          title: d.title, target: d.target,
-          sector: DEAL_SECTOR_MAP[d.sector] as DealSector,
-          subsector: d.subsector || "",
-          region: DEAL_REGION_MAP[d.region] as DealRegion,
-          categories: d.category.map((c) => DEAL_CATEGORY_MAP[c]).filter(Boolean) as DealCategory[],
-          date: parseDateInput(d.date)!, description: d.description,
-          targetDescription: d.targetDescription, country: d.country,
-          dealStatus: DEAL_STATUS_MAP[d.status] as DealStatusEnum,
-          enterpriseValue: d.enterpriseValue || null, equityValue: d.equityValue || null,
-          stake: d.stake || null, closingDate: parseDateInput(d.closingDate),
-          assetScale: d.assetScale || null, valuationMultiple: d.valuationMultiple || null,
-          fundVehicle: d.fundVehicle || null, keyHighlights: d.keyHighlights || [],
+        select: {
+          status: true,
+          updatedAt: true,
+          title: true,
+          target: true,
+          sector: true,
+          subsector: true,
+          region: true,
+          categories: true,
+          date: true,
+          description: true,
+          targetDescription: true,
+          country: true,
+          dealStatus: true,
+          enterpriseValue: true,
+          equityValue: true,
+          stake: true,
+          closingDate: true,
+          assetScale: true,
+          valuationMultiple: true,
+          fundVehicle: true,
+          keyHighlights: true,
+          sellerDisclosureStatus: true,
+          sellerDisclosureReason: true,
+          participants: {
+            where: { role: { in: ["BUYER", "SELLER"] } },
+            select: { role: true, displayName: true },
+          },
+          citations: {
+            where: { isPrimary: true },
+            select: { source: { select: { label: true, url: true } } },
+          },
         },
       });
+      if (!existingDeal) throw new AdminActionUserError("Deal not found");
+      const nextRecordStatus = statusAfterEditorialEdit(existingDeal.status);
+      if (!nextRecordStatus) {
+        throw new AdminActionUserError("Archived deals cannot be edited.");
+      }
+      if (existingDeal.status === "PUBLISHED" && !d.sourceUrl) {
+        throw new AdminActionUserError("A published deal must retain a primary source.");
+      }
+      const dealUpdateData = {
+        title: d.title,
+        target: d.target,
+        sector: DEAL_SECTOR_MAP[d.sector] as DealSector,
+        subsector: d.subsector || "",
+        region: DEAL_REGION_MAP[d.region] as DealRegion,
+        categories: d.category.map((c) => DEAL_CATEGORY_MAP[c]).filter(Boolean) as DealCategory[],
+        date: parseDateInput(d.date)!,
+        description: d.description,
+        targetDescription: d.targetDescription,
+        country: d.country,
+        dealStatus: DEAL_STATUS_MAP[d.status] as DealStatusEnum,
+        enterpriseValue: d.enterpriseValue || null,
+        equityValue: d.equityValue || null,
+        stake: d.stake || null,
+        closingDate: parseDateInput(d.closingDate),
+        assetScale: d.assetScale || null,
+        valuationMultiple: d.valuationMultiple || null,
+        fundVehicle: d.fundVehicle || null,
+        keyHighlights: d.keyHighlights || [],
+        sellerDisclosureStatus: finalSellers.length > 0
+          ? "DISCLOSED" as const
+          : d.sellerDisclosureStatus,
+        sellerDisclosureReason: finalSellers.length > 0
+          ? null
+          : d.sellerDisclosureReason?.trim() || null,
+        status: nextRecordStatus,
+      };
+      const existingPrimarySources = existingDeal.citations
+        .map((citation) => citation.source)
+        .sort((left, right) => left.url.localeCompare(right.url));
+      const existingPrimarySource = existingPrimarySources.find(
+        (source) => source.url === d.sourceUrl,
+      ) ?? existingPrimarySources[0];
+      const changedFields = changedFieldSummary(
+        {
+          title: existingDeal.title,
+          target: existingDeal.target,
+          sector: existingDeal.sector,
+          subsector: existingDeal.subsector,
+          region: existingDeal.region,
+          categories: existingDeal.categories,
+          date: existingDeal.date,
+          description: existingDeal.description,
+          targetDescription: existingDeal.targetDescription,
+          country: existingDeal.country,
+          dealStatus: existingDeal.dealStatus,
+          enterpriseValue: existingDeal.enterpriseValue,
+          equityValue: existingDeal.equityValue,
+          stake: existingDeal.stake,
+          closingDate: existingDeal.closingDate,
+          assetScale: existingDeal.assetScale,
+          valuationMultiple: existingDeal.valuationMultiple,
+          fundVehicle: existingDeal.fundVehicle,
+          keyHighlights: existingDeal.keyHighlights,
+          sellerDisclosureStatus: existingDeal.sellerDisclosureStatus,
+          sellerDisclosureReason: existingDeal.sellerDisclosureReason,
+          status: existingDeal.status,
+          buyers: existingDeal.participants
+            .filter((participant) => participant.role === "BUYER")
+            .map((participant) => participant.displayName)
+            .sort(),
+          sellers: existingDeal.participants
+            .filter((participant) => participant.role === "SELLER")
+            .map((participant) => participant.displayName)
+            .sort(),
+          citations: existingPrimarySources.map((source) => source.url),
+          primarySourceName: existingPrimarySource?.label ?? null,
+          primarySourceUrl: existingPrimarySource?.url ?? null,
+        },
+        {
+          ...dealUpdateData,
+          buyers: [...finalBuyers].sort(),
+          sellers: [...finalSellers].sort(),
+          citations: d.sourceUrl ? [d.sourceUrl] : [],
+          primarySourceName: d.sourceName
+            || (
+              existingPrimarySource && existingPrimarySource.url === d.sourceUrl
+                ? existingPrimarySource.label
+                : null
+            ),
+          primarySourceUrl: d.sourceUrl || null,
+        },
+      );
+      if (changedFields.length === 0) changedFields.push("updatedAt");
+      const updateResult = await tx.deal.updateMany({
+        where: {
+          id,
+          status: existingDeal.status,
+          updatedAt: existingDeal.updatedAt,
+        },
+        data: dealUpdateData,
+      });
+      if (updateResult.count !== 1) {
+        throw new AdminActionUserError("Deal workflow state changed during edit");
+      }
       // Replace buyer/seller participants. Advisor participants are managed
       // elsewhere (advisor-card UI) so we leave those rows alone.
       await tx.dealParticipant.deleteMany({
         where: { dealId: id, role: { in: ["BUYER", "SELLER"] } },
       });
-      for (const { id: organizationId, name } of buyerOrgIds) {
+      for (const name of finalBuyers) {
+        const organization = await tx.organization.upsert({
+          where: { name },
+          update: {},
+          create: { name, types: ["OTHER"] },
+        });
         await tx.dealParticipant.create({
-          data: { dealId: id, organizationId, role: "BUYER", displayName: name },
+          data: { dealId: id, organizationId: organization.id, role: "BUYER", displayName: name },
         });
       }
-      for (const { id: organizationId, name } of sellerOrgIds) {
+      for (const name of finalSellers) {
+        const organization = await tx.organization.upsert({
+          where: { name },
+          update: {},
+          create: { name, types: ["OTHER"] },
+        });
         await tx.dealParticipant.create({
-          data: { dealId: id, organizationId, role: "SELLER", displayName: name },
+          data: { dealId: id, organizationId: organization.id, role: "SELLER", displayName: name },
         });
       }
-    });
+      await replacePrimaryCitation(tx, {
+        dealId: id,
+        sourceName: d.sourceName,
+        sourceUrl: d.sourceUrl,
+      });
+      await auditMutation(
+        "Deal",
+        id,
+        "UPDATE",
+        changedFields,
+        tx,
+      );
+    }, { isolationLevel: "Serializable" });
 
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("updateDeal error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to update deal" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to update deal") };
   }
 }
 
@@ -326,17 +552,51 @@ export async function deleteDeal(id: string): Promise<ActionResult> {
     const auth = await requireAdminAction();
     if (auth) return auth;
 
-    await prisma.$transaction([
-      prisma.dealParticipant.deleteMany({ where: { dealId: id } }),
-      prisma.citation.deleteMany({ where: { dealId: id } }),
-      prisma.newsMention.deleteMany({ where: { dealId: id } }),
-      prisma.deal.delete({ where: { id } }),
-    ]);
+    await prisma.$transaction(async (tx) => {
+      const deal = await tx.deal.findUnique({ where: { id } });
+      if (!deal) throw new AdminActionUserError("Deal not found");
+      const publicationAuditCount = await tx.auditEvent.count({
+        where: { entityType: "Deal", entityId: id, action: { in: ["PUBLISH", "VERIFY"] } },
+      });
+      // Participants and citations are owned parts of an unpublished draft;
+      // external news references are not and must be reconciled first.
+      const newsMentionCount = await tx.newsMention.count({ where: { dealId: id } });
+      const participantCount = await tx.dealParticipant.count({ where: { dealId: id } });
+      const citationCount = await tx.citation.count({ where: { dealId: id } });
+      const blockReason = draftDeletionBlockReason({
+        status: deal.status,
+        lastVerifiedAt: deal.lastVerifiedAt,
+        publicationAuditCount,
+        blockingDependencies: { "news mentions": newsMentionCount },
+      });
+      if (blockReason) throw new AdminActionUserError(blockReason);
+
+      await recordAuditEvent({
+        entityType: "Deal",
+        entityId: id,
+        action: "DELETE",
+        changes: toAuditSnapshot({
+          changedFields: deletedFieldSummary(deal, {
+            participants: participantCount,
+            citations: citationCount,
+          }),
+          beforeSnapshot: deal,
+          deletedOwnedRecords: { participants: participantCount, citations: citationCount },
+        }),
+      }, tx);
+      await tx.dealParticipant.deleteMany({ where: { dealId: id } });
+      await tx.citation.deleteMany({ where: { dealId: id } });
+      const deleted = await tx.deal.deleteMany({
+        where: { id, status: "DRAFT", updatedAt: deal.updatedAt },
+      });
+      if (deleted.count !== 1) {
+        throw new AdminActionUserError("Deal changed while deletion was in progress");
+      }
+    }, { isolationLevel: "Serializable" });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("deleteDeal error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to delete deal" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to delete deal") };
   }
 }
 
@@ -345,12 +605,139 @@ export async function publishDeal(id: string): Promise<ActionResult> {
     const auth = await requireAdminAction();
     if (auth) return auth;
 
-    await prisma.deal.update({ where: { id }, data: { status: "PUBLISHED" } });
+    const deal = await prisma.deal.findUnique({
+      where: { id },
+      select: {
+        status: true,
+        updatedAt: true,
+        target: true,
+        country: true,
+        date: true,
+        dealStatus: true,
+        sellerDisclosureStatus: true,
+        sellerDisclosureReason: true,
+        categories: true,
+        participants: { select: { role: true } },
+        citations: { where: { isPrimary: true }, select: { id: true } },
+      },
+    });
+    if (!deal) return { success: false, error: "Deal not found" };
+    if (!canPublish(deal.status)) {
+      return { success: false, error: "Publication requires an in-review record." };
+    }
+    const missing = missingDealPublicationFields(deal);
+    if (missing.length > 0) {
+      return { success: false, error: `Publication blocked. Missing: ${missing.join(", ")}.` };
+    }
+    await prisma.$transaction(async (tx) => {
+      const updated = await tx.deal.updateMany({
+        where: { id, status: "IN_REVIEW", updatedAt: deal.updatedAt },
+        data: { status: "PUBLISHED", lastVerifiedAt: new Date() },
+      });
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Deal workflow state changed during publication");
+      }
+      await auditMutation("Deal", id, "PUBLISH", ["status", "lastVerifiedAt"], tx);
+    });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("publishDeal error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to publish deal" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to publish deal") };
+  }
+}
+
+export async function verifyDeal(id: string): Promise<ActionResult> {
+  try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+    const deal = await prisma.deal.findUnique({
+      where: { id },
+      select: {
+        status: true,
+        updatedAt: true,
+        target: true,
+        country: true,
+        date: true,
+        dealStatus: true,
+        sellerDisclosureStatus: true,
+        sellerDisclosureReason: true,
+        categories: true,
+        participants: { select: { role: true } },
+        citations: { where: { isPrimary: true }, select: { id: true } },
+      },
+    });
+    if (!deal) return { success: false, error: "Deal not found" };
+    if (!canVerify(deal.status)) {
+      return { success: false, error: "Only published deals can be verified." };
+    }
+    const missing = missingDealPublicationFields(deal);
+    if (missing.length > 0) {
+      return { success: false, error: `Verification blocked. Missing: ${missing.join(", ")}.` };
+    }
+    await prisma.$transaction(async (tx) => {
+      const updated = await tx.deal.updateMany({
+        where: { id, status: "PUBLISHED", updatedAt: deal.updatedAt },
+        data: { lastVerifiedAt: new Date() },
+      });
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Deal workflow state changed during verification");
+      }
+      await auditMutation("Deal", id, "VERIFY", ["lastVerifiedAt"], tx);
+    });
+    revalidateAll();
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: adminActionErrorMessage(error, "Failed to verify deal") };
+  }
+}
+
+export async function submitDealForReview(id: string): Promise<ActionResult> {
+  try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+    const deal = await prisma.deal.findUnique({ where: { id }, select: { status: true } });
+    if (!deal) return { success: false, error: "Deal not found" };
+    if (!canSubmitForReview(deal.status)) {
+      return { success: false, error: "Only draft deals can be submitted for review." };
+    }
+    await prisma.$transaction(async (tx) => {
+      const updated = await tx.deal.updateMany({
+        where: { id, status: "DRAFT" },
+        data: { status: "IN_REVIEW" },
+      });
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Deal workflow state changed during submission");
+      }
+      await auditMutation("Deal", id, "SUBMIT_FOR_REVIEW", ["status"], tx);
+    });
+    revalidateAll();
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: adminActionErrorMessage(error, "Failed to submit deal") };
+  }
+}
+
+export async function archiveDeal(id: string): Promise<ActionResult> {
+  try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+    const deal = await prisma.deal.findUnique({ where: { id }, select: { status: true } });
+    if (!deal) return { success: false, error: "Deal not found" };
+    if (!canArchive(deal.status)) return { success: false, error: "Deal is already archived." };
+    await prisma.$transaction(async (tx) => {
+      const updated = await tx.deal.updateMany({
+        where: { id, status: deal.status },
+        data: { status: "ARCHIVED" },
+      });
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Deal workflow state changed during archival");
+      }
+      await auditMutation("Deal", id, "ARCHIVE", ["status"], tx);
+    });
+    revalidateAll();
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: adminActionErrorMessage(error, "Failed to archive deal") };
   }
 }
 
@@ -374,6 +761,7 @@ export async function createFund(formData: FormData): Promise<ActionResult> {
       sectors: parseFormArray(formData, "sectors"),
       regions: parseFormArray(formData, "regions"),
       sourceUrls: parseFormArray(formData, "sourceUrls"),
+      primarySourceUrl: (formData.get("primarySourceUrl") as string) || undefined,
       ticker: (formData.get("ticker") as string) || undefined,
       strategyUrl: (formData.get("strategyUrl") as string) || undefined,
     };
@@ -384,28 +772,54 @@ export async function createFund(formData: FormData): Promise<ActionResult> {
     }
 
     const f = parsed.data;
-    const managerId = await findOrCreateOrg(f.managerName, ["FUND_MANAGER"]);
     const legacyId = `FUND-${Date.now().toString(36).toUpperCase()}`;
 
-    const fund = await prisma.fund.create({
-      data: {
-        legacyId, managerId, fundName: f.fundName, ticker: f.ticker || null,
-        investmentStrategy: f.investmentStrategy || "", sourceUrls: f.sourceUrls || [],
-        size: f.size, sizeUsdMm: f.sizeUsdMm ?? null, vintage: f.vintage,
-        strategies: f.strategies.map((s) => FUND_STRATEGY_MAP[s]).filter(Boolean) as FundStrategy[],
-        structure: FUND_STRUCTURE_MAP[f.structure] as FundStructure,
-        fundStatus: FUND_STATUS_MAP[f.status] as FundStatusEnum,
-        sectors: f.sectors.map((s) => FUND_SECTOR_MAP[s]).filter(Boolean) as FundSectorEnum[],
-        regions: f.regions.map((r) => FUND_REGION_MAP[r]).filter(Boolean) as FundRegionEnum[],
-        strategyUrl: f.strategyUrl || "", status: "DRAFT",
-      },
+    const fund = await prisma.$transaction(async (tx) => {
+      const manager = await tx.organization.upsert({
+        where: { name: f.managerName },
+        update: {},
+        create: { name: f.managerName, types: ["FUND_MANAGER"] },
+      });
+      const fund = await tx.fund.create({
+        data: {
+          legacyId, managerId: manager.id, fundName: f.fundName, ticker: f.ticker || null,
+          investmentStrategy: f.investmentStrategy || "", sourceUrls: f.sourceUrls || [],
+          primarySourceUrl: f.primarySourceUrl || null,
+          size: f.size, sizeUsdMm: f.sizeUsdMm ?? null, vintage: f.vintage,
+          strategies: f.strategies.map((s) => FUND_STRATEGY_MAP[s]).filter(Boolean) as FundStrategy[],
+          structure: FUND_STRUCTURE_MAP[f.structure] as FundStructure,
+          fundStatus: FUND_STATUS_MAP[f.status] as FundStatusEnum,
+          sectors: f.sectors.map((s) => FUND_SECTOR_MAP[s]).filter(Boolean) as FundSectorEnum[],
+          regions: f.regions.map((r) => FUND_REGION_MAP[r]).filter(Boolean) as FundRegionEnum[],
+          strategyUrl: f.strategyUrl || "", status: "DRAFT",
+        },
+      });
+      await auditMutation("Fund", fund.id, "CREATE", [
+        "legacyId",
+        "managerId",
+        "fundName",
+        "ticker",
+        "investmentStrategy",
+        "sourceUrls",
+        "primarySourceUrl",
+        "size",
+        "sizeUsdMm",
+        "vintage",
+        "strategies",
+        "structure",
+        "fundStatus",
+        "sectors",
+        "regions",
+        "strategyUrl",
+        "status",
+      ], tx);
+      return fund;
     });
 
     revalidateAll();
     return { success: true, id: fund.id };
   } catch (error) {
-    console.error("createFund error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to create fund" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to create fund") };
   }
 }
 
@@ -427,6 +841,7 @@ export async function updateFund(id: string, formData: FormData): Promise<Action
       sectors: parseFormArray(formData, "sectors"),
       regions: parseFormArray(formData, "regions"),
       sourceUrls: parseFormArray(formData, "sourceUrls"),
+      primarySourceUrl: (formData.get("primarySourceUrl") as string) || undefined,
       ticker: (formData.get("ticker") as string) || undefined,
       strategyUrl: (formData.get("strategyUrl") as string) || undefined,
     };
@@ -437,28 +852,127 @@ export async function updateFund(id: string, formData: FormData): Promise<Action
     }
 
     const f = parsed.data;
-    const managerId = await findOrCreateOrg(f.managerName, ["FUND_MANAGER"]);
 
-    await prisma.fund.update({
-      where: { id },
-      data: {
-        managerId, fundName: f.fundName, ticker: f.ticker || null,
-        investmentStrategy: f.investmentStrategy || "", sourceUrls: f.sourceUrls || [],
-        size: f.size, sizeUsdMm: f.sizeUsdMm ?? null, vintage: f.vintage,
-        strategies: f.strategies.map((s) => FUND_STRATEGY_MAP[s]).filter(Boolean) as FundStrategy[],
+    await prisma.$transaction(async (tx) => {
+      const existingFund = await tx.fund.findUnique({
+        where: { id },
+        select: {
+          status: true,
+          updatedAt: true,
+          manager: { select: { name: true } },
+          fundName: true,
+          ticker: true,
+          investmentStrategy: true,
+          sourceUrls: true,
+          primarySourceUrl: true,
+          size: true,
+          sizeUsdMm: true,
+          vintage: true,
+          strategies: true,
+          structure: true,
+          fundStatus: true,
+          sectors: true,
+          regions: true,
+          strategyUrl: true,
+        },
+      });
+      if (!existingFund) throw new AdminActionUserError("Fund not found");
+      const nextRecordStatus = statusAfterEditorialEdit(existingFund.status);
+      if (!nextRecordStatus) {
+        throw new AdminActionUserError("Archived funds cannot be edited.");
+      }
+      const fundAuditAfter = {
+        managerName: f.managerName,
+        fundName: f.fundName,
+        ticker: f.ticker || null,
+        investmentStrategy: f.investmentStrategy || "",
+        sourceUrls: f.sourceUrls || [],
+        primarySourceUrl: f.primarySourceUrl || null,
+        size: f.size,
+        sizeUsdMm: f.sizeUsdMm ?? null,
+        vintage: f.vintage,
+        strategies: f.strategies
+          .map((strategy) => FUND_STRATEGY_MAP[strategy])
+          .filter(Boolean) as FundStrategy[],
         structure: FUND_STRUCTURE_MAP[f.structure] as FundStructure,
         fundStatus: FUND_STATUS_MAP[f.status] as FundStatusEnum,
-        sectors: f.sectors.map((s) => FUND_SECTOR_MAP[s]).filter(Boolean) as FundSectorEnum[],
-        regions: f.regions.map((r) => FUND_REGION_MAP[r]).filter(Boolean) as FundRegionEnum[],
+        sectors: f.sectors
+          .map((sector) => FUND_SECTOR_MAP[sector])
+          .filter(Boolean) as FundSectorEnum[],
+        regions: f.regions
+          .map((region) => FUND_REGION_MAP[region])
+          .filter(Boolean) as FundRegionEnum[],
         strategyUrl: f.strategyUrl || "",
-      },
-    });
+        status: nextRecordStatus,
+      };
+      const changedFields = changedFieldSummary(
+        {
+          managerName: existingFund.manager.name,
+          fundName: existingFund.fundName,
+          ticker: existingFund.ticker,
+          investmentStrategy: existingFund.investmentStrategy,
+          sourceUrls: existingFund.sourceUrls,
+          primarySourceUrl: existingFund.primarySourceUrl,
+          size: existingFund.size,
+          sizeUsdMm: existingFund.sizeUsdMm,
+          vintage: existingFund.vintage,
+          strategies: existingFund.strategies,
+          structure: existingFund.structure,
+          fundStatus: existingFund.fundStatus,
+          sectors: existingFund.sectors,
+          regions: existingFund.regions,
+          strategyUrl: existingFund.strategyUrl,
+          status: existingFund.status,
+        },
+        fundAuditAfter,
+      );
+      if (changedFields.length === 0) changedFields.push("updatedAt");
+      const manager = await tx.organization.upsert({
+        where: { name: f.managerName },
+        update: {},
+        create: { name: f.managerName, types: ["FUND_MANAGER"] },
+      });
+      const updateResult = await tx.fund.updateMany({
+        where: {
+          id,
+          status: existingFund.status,
+          updatedAt: existingFund.updatedAt,
+        },
+        data: {
+          managerId: manager.id,
+          fundName: fundAuditAfter.fundName,
+          ticker: fundAuditAfter.ticker,
+          investmentStrategy: fundAuditAfter.investmentStrategy,
+          sourceUrls: fundAuditAfter.sourceUrls,
+          primarySourceUrl: fundAuditAfter.primarySourceUrl,
+          size: fundAuditAfter.size,
+          sizeUsdMm: fundAuditAfter.sizeUsdMm,
+          vintage: fundAuditAfter.vintage,
+          strategies: fundAuditAfter.strategies,
+          structure: fundAuditAfter.structure,
+          fundStatus: fundAuditAfter.fundStatus,
+          sectors: fundAuditAfter.sectors,
+          regions: fundAuditAfter.regions,
+          strategyUrl: fundAuditAfter.strategyUrl,
+          status: fundAuditAfter.status,
+        },
+      });
+      if (updateResult.count !== 1) {
+        throw new AdminActionUserError("Fund workflow state changed during edit");
+      }
+      await auditMutation(
+        "Fund",
+        id,
+        "UPDATE",
+        changedFields,
+        tx,
+      );
+    }, { isolationLevel: "Serializable" });
 
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("updateFund error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to update fund" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to update fund") };
   }
 }
 
@@ -467,16 +981,45 @@ export async function deleteFund(id: string): Promise<ActionResult> {
     const auth = await requireAdminAction();
     if (auth) return auth;
 
-    await prisma.$transaction([
-      prisma.ownershipPeriod.deleteMany({ where: { fundId: id } }),
-      prisma.newsMention.deleteMany({ where: { fundId: id } }),
-      prisma.fund.delete({ where: { id } }),
-    ]);
+    await prisma.$transaction(async (tx) => {
+      const fund = await tx.fund.findUnique({ where: { id } });
+      if (!fund) throw new AdminActionUserError("Fund not found");
+      const publicationAuditCount = await tx.auditEvent.count({
+        where: { entityType: "Fund", entityId: id, action: { in: ["PUBLISH", "VERIFY"] } },
+      });
+      const ownershipPeriodCount = await tx.ownershipPeriod.count({ where: { fundId: id } });
+      const newsMentionCount = await tx.newsMention.count({ where: { fundId: id } });
+      const blockReason = draftDeletionBlockReason({
+        status: fund.status,
+        lastVerifiedAt: fund.lastVerifiedAt,
+        publicationAuditCount,
+        blockingDependencies: {
+          "ownership periods": ownershipPeriodCount,
+          "news mentions": newsMentionCount,
+        },
+      });
+      if (blockReason) throw new AdminActionUserError(blockReason);
+
+      await recordAuditEvent({
+        entityType: "Fund",
+        entityId: id,
+        action: "DELETE",
+        changes: toAuditSnapshot({
+          changedFields: deletedFieldSummary(fund),
+          beforeSnapshot: fund,
+        }),
+      }, tx);
+      const deleted = await tx.fund.deleteMany({
+        where: { id, status: "DRAFT", updatedAt: fund.updatedAt },
+      });
+      if (deleted.count !== 1) {
+        throw new AdminActionUserError("Fund changed while deletion was in progress");
+      }
+    }, { isolationLevel: "Serializable" });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("deleteFund error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to delete fund" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to delete fund") };
   }
 }
 
@@ -485,12 +1028,137 @@ export async function publishFund(id: string): Promise<ActionResult> {
     const auth = await requireAdminAction();
     if (auth) return auth;
 
-    await prisma.fund.update({ where: { id }, data: { status: "PUBLISHED" } });
+    const fund = await prisma.fund.findUnique({
+      where: { id },
+      select: {
+        status: true,
+        updatedAt: true,
+        fundName: true,
+        managerId: true,
+        strategies: true,
+        fundStatus: true,
+        size: true,
+        primarySourceUrl: true,
+        sourceUrls: true,
+        strategyUrl: true,
+      },
+    });
+    if (!fund) return { success: false, error: "Fund not found" };
+    if (!canPublish(fund.status)) {
+      return { success: false, error: "Publication requires an in-review record." };
+    }
+    const missing = missingFundPublicationFields(fund);
+    if (missing.length > 0) {
+      return { success: false, error: `Publication blocked. Missing: ${missing.join(", ")}.` };
+    }
+    await prisma.$transaction(async (tx) => {
+      const updated = await tx.fund.updateMany({
+        where: { id, status: "IN_REVIEW", updatedAt: fund.updatedAt },
+        data: { status: "PUBLISHED", lastVerifiedAt: new Date() },
+      });
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Fund workflow state changed during publication");
+      }
+      await auditMutation("Fund", id, "PUBLISH", ["status", "lastVerifiedAt"], tx);
+    });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("publishFund error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to publish fund" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to publish fund") };
+  }
+}
+
+export async function verifyFund(id: string): Promise<ActionResult> {
+  try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+    const fund = await prisma.fund.findUnique({
+      where: { id },
+      select: {
+        status: true,
+        updatedAt: true,
+        fundName: true,
+        managerId: true,
+        strategies: true,
+        fundStatus: true,
+        size: true,
+        primarySourceUrl: true,
+        sourceUrls: true,
+        strategyUrl: true,
+      },
+    });
+    if (!fund) return { success: false, error: "Fund not found" };
+    if (!canVerify(fund.status)) {
+      return { success: false, error: "Only published funds can be verified." };
+    }
+    const missing = missingFundPublicationFields(fund);
+    if (missing.length > 0) {
+      return { success: false, error: `Verification blocked. Missing: ${missing.join(", ")}.` };
+    }
+    await prisma.$transaction(async (tx) => {
+      const updated = await tx.fund.updateMany({
+        where: { id, status: "PUBLISHED", updatedAt: fund.updatedAt },
+        data: { lastVerifiedAt: new Date() },
+      });
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Fund workflow state changed during verification");
+      }
+      await auditMutation("Fund", id, "VERIFY", ["lastVerifiedAt"], tx);
+    });
+    revalidateAll();
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: adminActionErrorMessage(error, "Failed to verify fund") };
+  }
+}
+
+export async function submitFundForReview(id: string): Promise<ActionResult> {
+  try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+    const fund = await prisma.fund.findUnique({ where: { id }, select: { status: true } });
+    if (!fund) return { success: false, error: "Fund not found" };
+    if (!canSubmitForReview(fund.status)) {
+      return { success: false, error: "Only draft funds can be submitted for review." };
+    }
+    await prisma.$transaction(async (tx) => {
+      const updated = await tx.fund.updateMany({
+        where: { id, status: "DRAFT" },
+        data: { status: "IN_REVIEW" },
+      });
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Fund workflow state changed during submission");
+      }
+      await auditMutation("Fund", id, "SUBMIT_FOR_REVIEW", ["status"], tx);
+    });
+    revalidateAll();
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: adminActionErrorMessage(error, "Failed to submit fund") };
+  }
+}
+
+export async function archiveFund(id: string): Promise<ActionResult> {
+  try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+    const fund = await prisma.fund.findUnique({ where: { id }, select: { status: true } });
+    if (!fund) return { success: false, error: "Fund not found" };
+    if (!canArchive(fund.status)) return { success: false, error: "Fund is already archived." };
+    await prisma.$transaction(async (tx) => {
+      const updated = await tx.fund.updateMany({
+        where: { id, status: fund.status },
+        data: { status: "ARCHIVED" },
+      });
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Fund workflow state changed during archival");
+      }
+      await auditMutation("Fund", id, "ARCHIVE", ["status"], tx);
+    });
+    revalidateAll();
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: adminActionErrorMessage(error, "Failed to archive fund") };
   }
 }
 
@@ -516,6 +1184,8 @@ export async function createCompany(formData: FormData): Promise<ActionResult> {
       investmentFirm: (formData.get("investmentFirm") as string) || undefined,
       ownershipVehicle: (formData.get("ownershipVehicle") as string) || undefined,
       countryTags: parseFormArray(formData, "countryTags"),
+      sourceName: (formData.get("sourceName") as string) || undefined,
+      sourceUrl: (formData.get("sourceUrl") as string) || undefined,
     };
 
     const parsed = companySchema.safeParse(raw);
@@ -524,11 +1194,6 @@ export async function createCompany(formData: FormData): Promise<ActionResult> {
     }
 
     const c = parsed.data;
-    // Resolve org + fund lookups outside the transaction (their queries hit
-    // separate Prisma calls and would inflate the tx body's wall-clock).
-    const orgId = c.investmentFirm
-      ? await findOrCreateOrg(c.investmentFirm, ["FUND_MANAGER"])
-      : null;
     const fundId = c.ownershipVehicle
       ? await findFundByVehicleName(c.ownershipVehicle)
       : null;
@@ -547,23 +1212,49 @@ export async function createCompany(formData: FormData): Promise<ActionResult> {
           status: "DRAFT",
         },
       });
-      if (c.investmentFirm && orgId) {
+      if (c.investmentFirm) {
+        const organization = await tx.organization.upsert({
+          where: { name: c.investmentFirm },
+          update: {},
+          create: { name: c.investmentFirm, types: ["FUND_MANAGER"] },
+        });
         await tx.ownershipPeriod.create({
           data: {
-            companyId: company.id, organizationId: orgId, fundId,
+            companyId: company.id, organizationId: organization.id, fundId,
             vehicleName: c.ownershipVehicle || c.investmentFirm,
             investmentYear: c.investmentYear ?? null, isActive: c.status !== "Realized",
           },
         });
       }
+      await replacePrimaryCitation(tx, {
+        companyId: company.id,
+        sourceName: c.sourceName,
+        sourceUrl: c.sourceUrl,
+      });
+      await auditMutation("Company", company.id, "CREATE", [
+        "name",
+        "country",
+        "sector",
+        "subsector",
+        "region",
+        "description",
+        "companyStatus",
+        "website",
+        "yearFounded",
+        "headquarters",
+        "countryTags",
+        "status",
+        "ownershipPeriods",
+        "primarySourceName",
+        "primarySourceUrl",
+      ], tx);
       return company;
     });
 
     revalidateAll();
     return { success: true, id: company.id };
   } catch (error) {
-    console.error("createCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to create company" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to create company") };
   }
 }
 
@@ -585,6 +1276,8 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
       investmentYear: parseFormNumber(formData, "investmentYear"),
       headquarters: (formData.get("headquarters") as string) || undefined,
       countryTags: parseFormArray(formData, "countryTags"),
+      sourceName: (formData.get("sourceName") as string) || undefined,
+      sourceUrl: (formData.get("sourceUrl") as string) || undefined,
     };
 
     const parsed = companySchema.safeParse(raw);
@@ -593,25 +1286,118 @@ export async function updateCompany(id: string, formData: FormData): Promise<Act
     }
 
     const c = parsed.data;
-    await prisma.company.update({
-      where: { id },
-      data: {
-        name: c.name, country: c.country,
+
+    await prisma.$transaction(async (tx) => {
+      const existingCompany = await tx.company.findUnique({
+        where: { id },
+        select: {
+          status: true,
+          updatedAt: true,
+          name: true,
+          country: true,
+          sector: true,
+          subsector: true,
+          region: true,
+          description: true,
+          companyStatus: true,
+          website: true,
+          yearFounded: true,
+          headquarters: true,
+          countryTags: true,
+          citations: {
+            where: { isPrimary: true },
+            select: { source: { select: { label: true, url: true } } },
+          },
+        },
+      });
+      if (!existingCompany) throw new AdminActionUserError("Company not found");
+      const nextRecordStatus = statusAfterEditorialEdit(existingCompany.status);
+      if (!nextRecordStatus) {
+        throw new AdminActionUserError("Archived companies cannot be edited.");
+      }
+      if (existingCompany.status === "PUBLISHED" && !c.sourceUrl) {
+        throw new AdminActionUserError("A published company must retain a primary source.");
+      }
+      const companyUpdateData = {
+        name: c.name,
+        country: c.country,
         sector: COMPANY_SECTOR_MAP[c.sector] as CompanySector,
-        subsector: c.subsector || "", region: COMPANY_REGION_MAP[c.region] as CompanyRegion,
+        subsector: c.subsector || "",
+        region: COMPANY_REGION_MAP[c.region] as CompanyRegion,
         description: c.description || "",
         companyStatus: COMPANY_STATUS_MAP[c.status] as CompanyStatus,
-        website: c.website || null, yearFounded: c.yearFounded ?? null,
+        website: c.website || null,
+        yearFounded: c.yearFounded ?? null,
         headquarters: c.headquarters || null,
         countryTags: c.countryTags ?? [],
-      },
-    });
+        status: nextRecordStatus,
+      };
+      const existingPrimarySources = existingCompany.citations
+        .map((citation) => citation.source)
+        .sort((left, right) => left.url.localeCompare(right.url));
+      const existingPrimarySource = existingPrimarySources.find(
+        (source) => source.url === c.sourceUrl,
+      ) ?? existingPrimarySources[0];
+      const changedFields = changedFieldSummary(
+        {
+          name: existingCompany.name,
+          country: existingCompany.country,
+          sector: existingCompany.sector,
+          subsector: existingCompany.subsector,
+          region: existingCompany.region,
+          description: existingCompany.description,
+          companyStatus: existingCompany.companyStatus,
+          website: existingCompany.website,
+          yearFounded: existingCompany.yearFounded,
+          headquarters: existingCompany.headquarters,
+          countryTags: existingCompany.countryTags,
+          status: existingCompany.status,
+          citations: existingPrimarySources.map((source) => source.url),
+          primarySourceName: existingPrimarySource?.label ?? null,
+          primarySourceUrl: existingPrimarySource?.url ?? null,
+        },
+        {
+          ...companyUpdateData,
+          citations: c.sourceUrl ? [c.sourceUrl] : [],
+          primarySourceName: c.sourceName
+            || (
+              existingPrimarySource && existingPrimarySource.url === c.sourceUrl
+                ? existingPrimarySource.label
+                : null
+            ),
+          primarySourceUrl: c.sourceUrl || null,
+        },
+      );
+      if (changedFields.length === 0) changedFields.push("updatedAt");
+      const updateResult = await tx.company.updateMany({
+        where: {
+          id,
+          status: existingCompany.status,
+          updatedAt: existingCompany.updatedAt,
+        },
+        data: companyUpdateData,
+      });
+      if (updateResult.count !== 1) {
+        throw new AdminActionUserError("Company workflow state changed during edit");
+      }
+      await replacePrimaryCitation(tx, {
+        companyId: id,
+        sourceName: c.sourceName,
+        sourceUrl: c.sourceUrl,
+      });
+      await auditMutation(
+        "Company",
+        id,
+        "UPDATE",
+        changedFields,
+        tx,
+      );
+    }, { isolationLevel: "Serializable" });
 
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("updateCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to update company" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to update company") };
   }
 }
 
@@ -620,19 +1406,67 @@ export async function deleteCompany(id: string): Promise<ActionResult> {
     const auth = await requireAdminAction();
     if (auth) return auth;
 
-    await prisma.$transaction([
-      prisma.ownershipPeriod.deleteMany({ where: { companyId: id } }),
-      prisma.milestone.deleteMany({ where: { companyId: id } }),
-      prisma.managementRole.deleteMany({ where: { companyId: id } }),
-      prisma.citation.deleteMany({ where: { companyId: id } }),
-      prisma.newsMention.deleteMany({ where: { companyId: id } }),
-      prisma.company.delete({ where: { id } }),
-    ]);
+    await prisma.$transaction(async (tx) => {
+      const company = await tx.company.findUnique({ where: { id } });
+      if (!company) throw new AdminActionUserError("Company not found");
+      const publicationAuditCount = await tx.auditEvent.count({
+        where: { entityType: "Company", entityId: id, action: { in: ["PUBLISH", "VERIFY"] } },
+      });
+      // Scorecard details are owned by the draft. Ownership history, news
+      // references, and canonical redirects are durable external dependencies.
+      const ownershipPeriodCount = await tx.ownershipPeriod.count({ where: { companyId: id } });
+      const newsMentionCount = await tx.newsMention.count({ where: { companyId: id } });
+      const redirectCount = await tx.companyRedirect.count({
+        where: { OR: [{ companyId: id }, { retiredId: id }] },
+      });
+      const milestoneCount = await tx.milestone.count({ where: { companyId: id } });
+      const managementRoleCount = await tx.managementRole.count({ where: { companyId: id } });
+      const citationCount = await tx.citation.count({ where: { companyId: id } });
+      const blockReason = draftDeletionBlockReason({
+        status: company.status,
+        lastVerifiedAt: company.lastVerifiedAt,
+        publicationAuditCount,
+        blockingDependencies: {
+          "ownership periods": ownershipPeriodCount,
+          "news mentions": newsMentionCount,
+          redirects: redirectCount,
+        },
+      });
+      if (blockReason) throw new AdminActionUserError(blockReason);
+
+      await recordAuditEvent({
+        entityType: "Company",
+        entityId: id,
+        action: "DELETE",
+        changes: toAuditSnapshot({
+          changedFields: deletedFieldSummary(company, {
+            milestones: milestoneCount,
+            managementRoles: managementRoleCount,
+            citations: citationCount,
+          }),
+          beforeSnapshot: company,
+          deletedOwnedRecords: {
+            milestones: milestoneCount,
+            managementRoles: managementRoleCount,
+            citations: citationCount,
+          },
+        }),
+      }, tx);
+      await tx.ownershipPeriod.deleteMany({ where: { companyId: id } });
+      await tx.milestone.deleteMany({ where: { companyId: id } });
+      await tx.managementRole.deleteMany({ where: { companyId: id } });
+      await tx.citation.deleteMany({ where: { companyId: id } });
+      const deleted = await tx.company.deleteMany({
+        where: { id, status: "DRAFT", updatedAt: company.updatedAt },
+      });
+      if (deleted.count !== 1) {
+        throw new AdminActionUserError("Company changed while deletion was in progress");
+      }
+    }, { isolationLevel: "Serializable" });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("deleteCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to delete company" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to delete company") };
   }
 }
 
@@ -641,12 +1475,149 @@ export async function publishCompany(id: string): Promise<ActionResult> {
     const auth = await requireAdminAction();
     if (auth) return auth;
 
-    await prisma.company.update({ where: { id }, data: { status: "PUBLISHED" } });
+    const company = await prisma.company.findUnique({
+      where: { id },
+      select: {
+        status: true,
+        updatedAt: true,
+        name: true,
+        country: true,
+        sector: true,
+        description: true,
+        website: true,
+        ownershipPeriods: {
+          select: {
+            id: true,
+            fundId: true,
+            organizationId: true,
+            fund: { select: { status: true } },
+          },
+        },
+        citations: { where: { isPrimary: true }, select: { id: true } },
+      },
+    });
+    if (!company) return { success: false, error: "Company not found" };
+    if (!canPublish(company.status)) {
+      return { success: false, error: "Publication requires an in-review record." };
+    }
+    const missing = missingCompanyPublicationFields(company);
+    if (missing.length > 0) {
+      return { success: false, error: `Publication blocked. Missing: ${missing.join(", ")}.` };
+    }
+    await prisma.$transaction(async (tx) => {
+      const updated = await tx.company.updateMany({
+        where: { id, status: "IN_REVIEW", updatedAt: company.updatedAt },
+        data: { status: "PUBLISHED", lastVerifiedAt: new Date() },
+      });
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Company workflow state changed during publication");
+      }
+      await auditMutation("Company", id, "PUBLISH", ["status", "lastVerifiedAt"], tx);
+    });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("publishCompany error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to publish company" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to publish company") };
+  }
+}
+
+export async function verifyCompany(id: string): Promise<ActionResult> {
+  try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+    const company = await prisma.company.findUnique({
+      where: { id },
+      select: {
+        status: true,
+        updatedAt: true,
+        name: true,
+        country: true,
+        sector: true,
+        description: true,
+        website: true,
+        ownershipPeriods: {
+          select: {
+            id: true,
+            fundId: true,
+            organizationId: true,
+            fund: { select: { status: true } },
+          },
+        },
+        citations: { where: { isPrimary: true }, select: { id: true } },
+      },
+    });
+    if (!company) return { success: false, error: "Company not found" };
+    if (!canVerify(company.status)) {
+      return { success: false, error: "Only published companies can be verified." };
+    }
+    const missing = missingCompanyPublicationFields(company);
+    if (missing.length > 0) {
+      return { success: false, error: `Verification blocked. Missing: ${missing.join(", ")}.` };
+    }
+    await prisma.$transaction(async (tx) => {
+      const updated = await tx.company.updateMany({
+        where: { id, status: "PUBLISHED", updatedAt: company.updatedAt },
+        data: { lastVerifiedAt: new Date() },
+      });
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Company workflow state changed during verification");
+      }
+      await auditMutation("Company", id, "VERIFY", ["lastVerifiedAt"], tx);
+    });
+    revalidateAll();
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: adminActionErrorMessage(error, "Failed to verify company") };
+  }
+}
+
+export async function submitCompanyForReview(id: string): Promise<ActionResult> {
+  try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+    const company = await prisma.company.findUnique({ where: { id }, select: { status: true } });
+    if (!company) return { success: false, error: "Company not found" };
+    if (!canSubmitForReview(company.status)) {
+      return { success: false, error: "Only draft companies can be submitted for review." };
+    }
+    await prisma.$transaction(async (tx) => {
+      const updated = await tx.company.updateMany({
+        where: { id, status: "DRAFT" },
+        data: { status: "IN_REVIEW" },
+      });
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Company workflow state changed during submission");
+      }
+      await auditMutation("Company", id, "SUBMIT_FOR_REVIEW", ["status"], tx);
+    });
+    revalidateAll();
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: adminActionErrorMessage(error, "Failed to submit company") };
+  }
+}
+
+export async function archiveCompany(id: string): Promise<ActionResult> {
+  try {
+    const auth = await requireAdminAction();
+    if (auth) return auth;
+    const company = await prisma.company.findUnique({ where: { id }, select: { status: true } });
+    if (!company) return { success: false, error: "Company not found" };
+    if (!canArchive(company.status)) return { success: false, error: "Company is already archived." };
+    await prisma.$transaction(async (tx) => {
+      const updated = await tx.company.updateMany({
+        where: { id, status: company.status },
+        data: { status: "ARCHIVED" },
+      });
+      if (updated.count !== 1) {
+        throw new AdminActionUserError("Company workflow state changed during archival");
+      }
+      await auditMutation("Company", id, "ARCHIVE", ["status"], tx);
+    });
+    revalidateAll();
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: adminActionErrorMessage(error, "Failed to archive company") };
   }
 }
 
@@ -664,6 +1635,74 @@ function parseOwnershipFormData(formData: FormData) {
   };
 }
 
+type OwnershipParentTransition = {
+  companyId: string;
+  statusBefore: string;
+  statusAfter: string;
+};
+
+type OwnershipAuditSnapshot = {
+  id: string;
+  companyId: string;
+  organizationId: string | null;
+  fundId: string | null;
+  vehicleName: string | null;
+  investmentYear: number | null;
+  exitYear: number | null;
+  isActive: boolean;
+  stake: string | null;
+};
+
+function ownershipAuditSnapshot(ownership: OwnershipAuditSnapshot): OwnershipAuditSnapshot {
+  return {
+    id: ownership.id,
+    companyId: ownership.companyId,
+    organizationId: ownership.organizationId,
+    fundId: ownership.fundId,
+    vehicleName: ownership.vehicleName,
+    investmentYear: ownership.investmentYear,
+    exitYear: ownership.exitYear,
+    isActive: ownership.isActive,
+    stake: ownership.stake,
+  };
+}
+
+async function prepareCompanyForOwnershipMutation(
+  tx: Prisma.TransactionClient,
+  companyId: string,
+): Promise<OwnershipParentTransition> {
+  const company = await tx.company.findUnique({
+    where: { id: companyId },
+    select: { id: true, status: true, updatedAt: true },
+  });
+  if (!company) throw new AdminActionUserError("Company not found");
+  const nextStatus = statusAfterEditorialEdit(company.status);
+  if (!nextStatus) throw new AdminActionUserError("Archived companies cannot be edited.");
+
+  if (nextStatus !== company.status) {
+    const updated = await tx.company.updateMany({
+      where: { id: company.id, status: company.status, updatedAt: company.updatedAt },
+      data: { status: nextStatus },
+    });
+    if (updated.count !== 1) {
+      throw new AdminActionUserError("Company workflow state changed during ownership edit");
+    }
+    await auditMutation(
+      "Company",
+      company.id,
+      "INVALIDATE_FOR_OWNERSHIP_EDIT",
+      ["status"],
+      tx,
+    );
+  }
+
+  return {
+    companyId: company.id,
+    statusBefore: company.status,
+    statusAfter: nextStatus,
+  };
+}
+
 export async function addOwnershipPeriod(
   companyId: string,
   formData: FormData,
@@ -677,25 +1716,42 @@ export async function addOwnershipPeriod(
       return { success: false, error: parsed.error.issues.map((i) => i.message).join(", ") };
     }
     const o = parsed.data;
-    const orgId = await findOrCreateOrg(o.investmentFirm, ["FUND_MANAGER"]);
     const fundId = o.ownershipVehicle ? await findFundByVehicleName(o.ownershipVehicle) : null;
-    const created = await prisma.ownershipPeriod.create({
-      data: {
-        companyId,
-        organizationId: orgId,
-        fundId,
-        vehicleName: o.ownershipVehicle || o.investmentFirm,
-        investmentYear: o.investmentYear ?? null,
-        exitYear: o.exitYear ?? null,
-        isActive: o.isActive,
-        stake: o.stake ?? null,
-      },
-    });
+    const created = await prisma.$transaction(async (tx) => {
+      const parentCompany = await prepareCompanyForOwnershipMutation(tx, companyId);
+      const organization = await tx.organization.upsert({
+        where: { name: o.investmentFirm },
+        update: {},
+        create: { name: o.investmentFirm, types: ["FUND_MANAGER"] },
+      });
+      const created = await tx.ownershipPeriod.create({
+        data: {
+          companyId,
+          organizationId: organization.id,
+          fundId,
+          vehicleName: o.ownershipVehicle || o.investmentFirm,
+          investmentYear: o.investmentYear ?? null,
+          exitYear: o.exitYear ?? null,
+          isActive: o.isActive,
+          stake: o.stake ?? null,
+        },
+      });
+      await recordAuditEvent({
+        entityType: "OwnershipPeriod",
+        entityId: created.id,
+        action: "CREATE",
+        changes: {
+          changedFields: changedFieldSummary({}, ownershipAuditSnapshot(created)),
+          afterSnapshot: ownershipAuditSnapshot(created),
+          parentCompany,
+        },
+      }, tx);
+      return created;
+    }, { isolationLevel: "Serializable" });
     revalidateAll();
     return { success: true, id: created.id };
   } catch (error) {
-    console.error("addOwnershipPeriod error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to add ownership period" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to add ownership period") };
   }
 }
 
@@ -712,25 +1768,46 @@ export async function updateOwnershipPeriod(
       return { success: false, error: parsed.error.issues.map((i) => i.message).join(", ") };
     }
     const o = parsed.data;
-    const orgId = await findOrCreateOrg(o.investmentFirm, ["FUND_MANAGER"]);
     const fundId = o.ownershipVehicle ? await findFundByVehicleName(o.ownershipVehicle) : null;
-    await prisma.ownershipPeriod.update({
-      where: { id },
-      data: {
-        organizationId: orgId,
-        fundId,
-        vehicleName: o.ownershipVehicle || o.investmentFirm,
-        investmentYear: o.investmentYear ?? null,
-        exitYear: o.exitYear ?? null,
-        isActive: o.isActive,
-        stake: o.stake ?? null,
-      },
-    });
+    await prisma.$transaction(async (tx) => {
+      const existingOwnership = await tx.ownershipPeriod.findUnique({ where: { id } });
+      if (!existingOwnership) throw new AdminActionUserError("Ownership period not found");
+      const parentCompany = await prepareCompanyForOwnershipMutation(tx, existingOwnership.companyId);
+      const organization = await tx.organization.upsert({
+        where: { name: o.investmentFirm },
+        update: {},
+        create: { name: o.investmentFirm, types: ["FUND_MANAGER"] },
+      });
+      const updated = await tx.ownershipPeriod.update({
+        where: { id },
+        data: {
+          organizationId: organization.id,
+          fundId,
+          vehicleName: o.ownershipVehicle || o.investmentFirm,
+          investmentYear: o.investmentYear ?? null,
+          exitYear: o.exitYear ?? null,
+          isActive: o.isActive,
+          stake: o.stake ?? null,
+        },
+      });
+      const beforeSnapshot = ownershipAuditSnapshot(existingOwnership);
+      const afterSnapshot = ownershipAuditSnapshot(updated);
+      await recordAuditEvent({
+        entityType: "OwnershipPeriod",
+        entityId: id,
+        action: "UPDATE",
+        changes: {
+          changedFields: changedFieldSummary(beforeSnapshot, afterSnapshot),
+          beforeSnapshot,
+          afterSnapshot,
+          parentCompany,
+        },
+      }, tx);
+    }, { isolationLevel: "Serializable" });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("updateOwnershipPeriod error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to update ownership period" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to update ownership period") };
   }
 }
 
@@ -739,11 +1816,26 @@ export async function deleteOwnershipPeriod(id: string): Promise<ActionResult> {
     const auth = await requireAdminAction();
     if (auth) return auth;
 
-    await prisma.ownershipPeriod.delete({ where: { id } });
+    await prisma.$transaction(async (tx) => {
+      const existingOwnership = await tx.ownershipPeriod.findUnique({ where: { id } });
+      if (!existingOwnership) throw new AdminActionUserError("Ownership period not found");
+      const parentCompany = await prepareCompanyForOwnershipMutation(tx, existingOwnership.companyId);
+      const beforeSnapshot = ownershipAuditSnapshot(existingOwnership);
+      await recordAuditEvent({
+        entityType: "OwnershipPeriod",
+        entityId: id,
+        action: "DELETE",
+        changes: {
+          changedFields: deletedFieldSummary(beforeSnapshot),
+          beforeSnapshot,
+          parentCompany,
+        },
+      }, tx);
+      await tx.ownershipPeriod.delete({ where: { id } });
+    }, { isolationLevel: "Serializable" });
     revalidateAll();
     return { success: true };
   } catch (error) {
-    console.error("deleteOwnershipPeriod error:", error);
-    return { success: false, error: error instanceof Error ? error.message : "Failed to delete ownership period" };
+    return { success: false, error: adminActionErrorMessage(error, "Failed to delete ownership period") };
   }
 }

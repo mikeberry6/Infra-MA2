@@ -6,12 +6,16 @@ import { Button } from "@/components/shared/Button";
 interface DeleteButtonProps {
   deleteAction: (id: string) => Promise<{ success: boolean; error?: string }>;
   id: string;
+  entity: "deal" | "fund" | "company";
+  status: string;
 }
 
-export default function DeleteButton({ deleteAction, id }: DeleteButtonProps) {
+export default function DeleteButton({ deleteAction, id, status }: DeleteButtonProps) {
   const [isPending, startTransition] = useTransition();
   const [confirming, setConfirming] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  if (status !== "DRAFT") return null;
 
   if (confirming) {
     return (

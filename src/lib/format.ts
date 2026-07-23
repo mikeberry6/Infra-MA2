@@ -28,3 +28,17 @@ export function formatTime(dateStr: string): string {
     hour12: false,
   });
 }
+
+export function formatScheduledDateTime(date: string | Date, timeZone: string): string {
+  const parsed = typeof date === "string" ? new Date(date) : date;
+  if (Number.isNaN(parsed.getTime())) return "";
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZone,
+    timeZoneName: "short",
+  }).format(parsed);
+}

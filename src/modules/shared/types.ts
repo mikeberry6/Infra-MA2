@@ -15,6 +15,8 @@ export interface DealView {
   target: string;
   buyer: string;
   seller: string;
+  sellerDisclosureStatus?: "DISCLOSED" | "NOT_DISCLOSED" | "NOT_APPLICABLE" | "LEGACY_UNREVIEWED";
+  sellerDisclosureReason?: string | null;
   sector: string;
   subsector: string;
   region: string;
@@ -48,6 +50,7 @@ export interface FundView {
   ticker: string | null;
   investmentStrategy: string;
   sourceUrls: string[];
+  primarySourceUrl: string | null;
   size: string;
   sizeUsdMm: number | null;
   vintage: string;
@@ -174,5 +177,32 @@ export interface NewsItemView {
 
 export interface NewsFeedView {
   items: NewsItemView[];
-  lastUpdated: string;
+  lastUpdated: string | null;
+  operations: FeedOperationsView;
+}
+
+export interface FeedOperationsView {
+  state: "healthy" | "pending" | "overdue" | "failed" | "never-run";
+  lastAttemptAt?: string;
+  lastSuccessfulAt?: string;
+  nextExpectedAt?: string;
+  sourceCoverage?: NewsSourceCoverage;
+  scanWindow?: NewsScanWindowView;
+  message: string;
+}
+
+export interface NewsScanWindowView {
+  selectionDateUtc: string;
+  fullUniverseCount: number;
+  eligibleCount: number;
+  selectedCount: number;
+  offset: number;
+  windowIndex: number;
+  windowsPerCycle: number;
+}
+
+export interface NewsSourceCoverage extends Record<string, number> {
+  attempted: number;
+  succeeded: number;
+  failed: number;
 }

@@ -1,0 +1,49 @@
+# InfraSight Governance
+
+## Accountabilities
+
+| Area | Responsible owner | Approval/accountability |
+| --- | --- | --- |
+| Taxonomy, citations, canonical merges, publication | Research | Research owner |
+| Application code, migrations, security, tests, performance | Engineering | Engineering owner |
+| Schedules, alerts, backups, releases, recovery exercises | Operations | Operations owner |
+| Production release | Engineering + Operations | Required `production` environment reviewer |
+| Canonical company merge | Research + Engineering | Research approves survivors; Engineering approves transaction/redirect plan |
+| Ownership-to-fund link correction | Research + Engineering | Research confirms vehicle identity; Engineering approves the hash-bound link/unlink plan |
+| Fund primary-source designation | Research + Engineering | Research selects an exact HTTP(S) candidate; Engineering approves the hash-bound designation path |
+| Deal seller-disclosure treatment | Research + Engineering | Research verifies each source-backed absence classification; Engineering approves the hash-bound status/reason-only plan |
+| Credential/access change | Operations + affected account owner | Two-person review for production secrets |
+
+Automation may propose records but may not publish deals or portfolio companies. Every publish, archive, import, merge, or administrator mutation must have an audit event. Historical weekly emails remain unchanged without explicit user authorization.
+
+## Operating cadence
+
+### Weekly
+
+- Review failed/stalled runs, stale providers, rolling success rate, current-week coverage, draft/review queue, missing/broken sources, and weekly-email validation.
+- Assign every actionable failure an owner and due date.
+
+### Monthly
+
+- Review production and development dependency advisories, administrator/analyst access, deal/fund/company source coverage, `lastVerifiedAt` backlog, pipeline reliability, and source/provider coverage.
+- Confirm retained artifacts contain no sensitive payloads and allow expired temporary artifacts to purge.
+
+### Quarterly
+
+- Review taxonomy, canonical duplicate clusters, the recovery exercise, access inventory, incident themes, and roadmap.
+- Reconfirm that public data remains read-only and imports/administration/exports remain role-gated.
+
+## Service objectives
+
+- Dashboard and news pipelines: at least 95% successful completed runs over the rolling 30-day window, with schedule coverage enforced and stalled runs treated as failures.
+- Published deals, Funds, and companies: 100% required source presence. Deals and companies require a Research-designated primary citation; Funds require a Research-designated HTTP(S) `primarySourceUrl`. Missing or invalid Fund designations use the neutral candidate report, immutable reviewed approval, and protected hash-bound apply workflow before release.
+
+Objectives that require elapsed telemetry are not declared complete from a one-time test. The monthly review records the actual rolling window and follow-up when an objective is missed.
+
+## Change boundaries
+
+- Keep Vercel, Neon/Postgres, Prisma, NextAuth, GitHub Actions, npm, and `/Infra-MA2` during this program.
+- Preserve the restrained research-terminal identity; cleanup is not a brand redesign.
+- Do not add subscriptions, client workspaces, CMS, native applications, or bulk unreviewed deal/PortCo publication.
+- Use additive migrations, compatible application releases, and reviewed backfills. Defer destructive cleanup until restore points and redirects are verified.
+- Preserve unclassified worktree artifacts until ownership and retention are explicit.
