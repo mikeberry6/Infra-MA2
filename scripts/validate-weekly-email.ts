@@ -87,6 +87,11 @@ type LinkCheckOptions = {
   fetchImpl?: typeof fetch;
 };
 
+type LinkCandidate = {
+  url: string;
+  isSource: boolean;
+};
+
 export type ValidateWeeklyEmailOptions = {
   issuePath: string;
   html?: string;
@@ -406,6 +411,40 @@ function validateCardStructure(cards: Card[], findings: ValidationFinding[]) {
       }
     }
   });
+}
+
+function collectHttpLinks(
+  document: Document,
+  cardSourceUrls: ReadonlySet<string>,
+  findings: ValidationFinding[],
+): LinkCandidate[] {
+  const links = new Map<string, LinkCandidate>();
+  Array.from(document.querySelectorAll<HTMLAnchorElement>("a[href]")).forEach((anchor) => {
+    const rawHref = anchor.getAttribute("href")?.trim() ?? "";
+    if (!/^https?:/i.test(rawHref)) return;
+    const isSource = normalizeText(anchor.textContent).toLowerCase() === "source";
+    try {
+      const url = new URL(rawHref);
+      if (url.protocol !== "https:" && url.protocol !== "http:") return;
+      url.hash = "";
+      const normalized = url.toString();
+      const existing = links.get(normalized);
+      links.set(normalized, {
+        url: normalized,
+        isSource: isSource || existing?.isSource === true,
+      });
+    } catch {
+      if (!isSource || !cardSourceUrls.has(rawHref)) {
+        addFinding(
+          findings,
+          "error",
+          "invalid-link",
+          `HTTP(S) anchor has an invalid URL: ${rawHref}`,
+        );
+      }
+    }
+  });
+  return [...links.values()];
 }
 
 function scaleKindOrder(kind: ScaleKind): number {
@@ -771,15 +810,16 @@ function validateStaticCoverage(
   return matched;
 }
 
-async function requestSource(
+async function requestLink(
   url: string,
   timeoutMs: number,
   fetchImpl: typeof fetch,
 ): Promise<Response> {
+  const signal = AbortSignal.timeout(timeoutMs);
   const request = (method: "HEAD" | "GET") => fetchImpl(url, {
     method,
     redirect: "follow",
-    signal: AbortSignal.timeout(timeoutMs),
+    signal,
     headers: {
       "user-agent": "InfraSight-Link-Validator/2.0",
       ...(method === "GET" ? { range: "bytes=0-0" } : {}),
@@ -789,16 +829,16 @@ async function requestSource(
   return [403, 405, 501].includes(head.status) ? request("GET") : head;
 }
 
-async function validateSourceLinks(
-  urls: string[],
+async function validateHttpLinks(
+  candidates: LinkCandidate[],
   options: LinkCheckOptions,
   findings: ValidationFinding[],
 ): Promise<{ requested: number; skipped: number }> {
   if (!options.enabled) return { requested: 0, skipped: 0 };
-  const unique = [...new Set(urls)].slice(0, options.maxLinks);
-  const skipped = Math.max(0, new Set(urls).size - unique.length);
+  const unique = candidates.slice(0, options.maxLinks);
+  const skipped = Math.max(0, candidates.length - unique.length);
   if (skipped > 0) {
-    addFinding(findings, "warning", "link-cap", `${skipped} Source link(s) were skipped by the ${options.maxLinks}-link safety cap.`);
+    addFinding(findings, "warning", "link-cap", `${skipped} HTTP(S) link(s) were skipped by the ${options.maxLinks}-link safety cap.`);
   }
   const deadline = Date.now() + options.budgetMs;
   const fetchImpl = options.fetchImpl ?? fetch;
@@ -807,28 +847,39 @@ async function validateSourceLinks(
   let budgetWarningAdded = false;
   const workers = Array.from({ length: Math.min(MAX_LINK_CONCURRENCY, unique.length) }, async () => {
     while (cursor < unique.length) {
-      const url = unique[cursor++];
+      const candidate = unique[cursor++];
+      const { url } = candidate;
       const remaining = deadline - Date.now();
       if (remaining <= 0) {
         if (!budgetWarningAdded) {
           budgetWarningAdded = true;
-          addFinding(findings, "warning", "link-budget", "Source checks stopped at the total network time budget; unverified links are warnings, not publish failures.");
+          addFinding(findings, "warning", "link-budget", "HTTP(S) link checks stopped at the total network time budget; unverified links are warnings, not publish failures.");
         }
         continue;
       }
       requested += 1;
       try {
-        const response = await requestSource(url, Math.min(options.timeoutMs, remaining), fetchImpl);
+        const response = await requestLink(url, Math.min(options.timeoutMs, remaining), fetchImpl);
         if (response.status === 404 || response.status === 410) {
-          addFinding(findings, "error", "broken-source", `${response.status} ${url}`);
+          addFinding(
+            findings,
+            "error",
+            candidate.isSource ? "broken-source" : "broken-link",
+            `${response.status} ${url}`,
+          );
         } else if (!response.ok) {
-          addFinding(findings, "warning", "inconclusive-source", `${response.status} ${url}`);
+          addFinding(
+            findings,
+            "warning",
+            candidate.isSource ? "inconclusive-source" : "inconclusive-link",
+            `${response.status} ${url}`,
+          );
         }
       } catch (error) {
         addFinding(
           findings,
           "warning",
-          "inconclusive-source",
+          candidate.isSource ? "inconclusive-source" : "inconclusive-link",
           `${error instanceof Error ? error.message : "request failed"} ${url}`,
         );
       }
@@ -864,6 +915,11 @@ export async function validateWeeklyEmail(
     options.requireStaticCoverage ?? false,
     findings,
   );
+  const httpLinks = collectHttpLinks(
+    document,
+    new Set(cards.map((card) => card.sourceUrl).filter(Boolean)),
+    findings,
+  );
 
   const linkOptions: LinkCheckOptions = {
     enabled: options.linkCheck?.enabled ?? false,
@@ -872,8 +928,8 @@ export async function validateWeeklyEmail(
     maxLinks: options.linkCheck?.maxLinks ?? DEFAULT_MAX_LINKS,
     fetchImpl: options.linkCheck?.fetchImpl,
   };
-  const linkSummary = await validateSourceLinks(
-    cards.map((card) => card.sourceUrl).filter((url) => /^https?:\/\//i.test(url)),
+  const linkSummary = await validateHttpLinks(
+    httpLinks,
     linkOptions,
     findings,
   );

@@ -40,6 +40,8 @@ npm run validate-weekly-email -- --check-links
 npm run validate-weekly-email -- public/email-format/2026-07-17.html --check-links --max-links=80 --link-timeout-ms=5000 --link-budget-ms=30000
 ```
 
-Only definitive HTTP 404 and 410 responses fail validation. Timeouts, DNS failures, rate limits, and inconclusive provider responses are reported as warnings so an offline runner does not falsely classify a source as broken. Link checks use at most four concurrent requests and stop at both the link-count and total-time budgets.
+Every unique HTTP(S) anchor is included: editorial Sources, navigation, previous-edition links, and marketing/contact links. URL fragments are removed before de-duplication; non-network anchors such as `mailto:`, `tel:`, and in-document fragments are ignored. Malformed non-Source HTTP(S) anchors are deterministic release errors, while malformed card Sources continue to use the more specific Source-integrity finding.
+
+Only definitive HTTP 404 and 410 responses fail validation. Source failures retain Source-specific finding codes; failures from other anchors use general link finding codes. Timeouts, DNS failures, rate limits, and inconclusive provider responses are reported as warnings so an offline runner does not falsely classify a link as broken. Link checks use at most four concurrent requests and stop at both the link-count and total-time budgets.
 
 The command prints a machine-readable JSON report. Exit code `0` means the issue passes (warnings may remain), `1` means deterministic release errors were found, and `2` means invocation, input, or validator execution failed. `--no-static-coverage` exists only for isolated fixture testing; release and CI runs must keep static coverage enabled.

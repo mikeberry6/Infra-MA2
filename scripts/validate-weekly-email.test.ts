@@ -297,6 +297,85 @@ describe("weekly email validation", () => {
     }));
   });
 
+  it("checks every unique HTTP(S) anchor while preserving Source-specific findings", async () => {
+    const html = fixtureHtml().replace(
+      '<a href="mailto:research@example.com" style="font-size: 12px; color: #1E3A5F;">research@example.com</a>',
+      [
+        '<a href="https://example.com/about#team">About</a>',
+        '<a href="https://example.com/previous">Previous edition</a>',
+        '<a href="https://example.com/about#contact">About duplicate</a>',
+        '<a href="mailto:research@example.com">research@example.com</a>',
+      ].join(" · "),
+    );
+    const fetchImpl = vi.fn<typeof fetch>().mockImplementation(async (input) => {
+      const url = String(input);
+      return new Response(null, { status: url === "https://example.com/previous" ? 410 : 200 });
+    });
+    const report = await validateWeeklyEmail({
+      issuePath: "/tmp/2026-07-17.html",
+      html,
+      coverageDeals: coverage,
+      linkCheck: { enabled: true, fetchImpl },
+    });
+
+    expect(errorCodes(report)).toContain("broken-link");
+    expect(errorCodes(report)).not.toContain("broken-source");
+    expect(report.summary).toMatchObject({ linksRequested: 5, linksSkipped: 0 });
+    expect(fetchImpl).toHaveBeenCalledTimes(5);
+    expect(new Set(fetchImpl.mock.calls.map((call) => String(call[0])))).toEqual(new Set([
+      "https://example.com/alpha",
+      "https://example.com/beta",
+      "https://example.com/gamma",
+      "https://example.com/about",
+      "https://example.com/previous",
+    ]));
+  });
+
+  it("shares one timeout budget between a HEAD request and its fallback GET", async () => {
+    const fetchImpl = vi.fn<typeof fetch>()
+      .mockResolvedValueOnce(new Response(null, { status: 405 }))
+      .mockResolvedValueOnce(new Response(null, { status: 200 }));
+    const report = await validateWeeklyEmail({
+      issuePath: "/tmp/2026-07-17.html",
+      html: fixtureHtml(),
+      coverageDeals: coverage,
+      linkCheck: { enabled: true, fetchImpl, maxLinks: 1 },
+    });
+
+    expect(report.status).toBe("valid");
+    expect(fetchImpl).toHaveBeenCalledTimes(2);
+    expect(fetchImpl.mock.calls.map((call) => call[1]?.method)).toEqual(["HEAD", "GET"]);
+    expect(fetchImpl.mock.calls[0]?.[1]?.signal).toBe(fetchImpl.mock.calls[1]?.[1]?.signal);
+  });
+
+  it("rejects malformed non-Source HTTP(S) anchors without enabling network checks", async () => {
+    const html = fixtureHtml().replace(
+      '<a href="mailto:research@example.com" style="font-size: 12px; color: #1E3A5F;">research@example.com</a>',
+      '<a href="https://">Broken navigation link</a> · <a href="http://">Source</a>',
+    );
+    const report = await validateWeeklyEmail({
+      issuePath: "/tmp/2026-07-17.html",
+      html,
+      coverageDeals: coverage,
+    });
+
+    expect(errorCodes(report)).toContain("invalid-link");
+    expect(report.findings.filter((finding) => finding.code === "invalid-link")).toHaveLength(2);
+    expect(report.summary).toMatchObject({ linksRequested: 0, linksSkipped: 0 });
+  });
+
+  it("keeps malformed deal-card Sources on the specific Source-integrity finding", async () => {
+    const html = fixtureHtml().replace("https://example.com/alpha", "https://");
+    const report = await validateWeeklyEmail({
+      issuePath: "/tmp/2026-07-17.html",
+      html,
+      coverageDeals: coverage,
+    });
+
+    expect(errorCodes(report)).toContain("invalid-source");
+    expect(errorCodes(report)).not.toContain("invalid-link");
+  });
+
   it("returns documented CLI exit codes for valid, invalid, and usage-error runs", () => {
     const directory = mkdtempSync(join(tmpdir(), "weekly-validator-"));
     temporaryDirectories.push(directory);
