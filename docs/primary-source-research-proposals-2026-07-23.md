@@ -4,9 +4,11 @@
 
 ## Scope and method
 
-This proposal addresses the 17 records that still have no citation candidate in the pre-merge template from code-bearing validation run [30040590884](https://github.com/mikeberry6/Infra-MA2/actions/runs/30040590884): Deals `INF-2026-080` through `INF-2026-095`, plus the duplicate-candidate Company record `Extenet`. That exact set was rechecked in retained artifact `validation-evidence-30040590884` at source head `2141b01053f6c858bbee54aa9e36790c774775e6`.
+This proposal addresses the 17 records that still have no citation candidate in the pre-merge template from code-bearing validation run [30046462334](https://github.com/mikeberry6/Infra-MA2/actions/runs/30046462334): Deals `INF-2026-080` through `INF-2026-095`, plus the duplicate-candidate Company record `Extenet`. That exact set was rechecked in retained artifact `validation-evidence-30046462334` at source head `ebc8c88a419b22dee4e813de6152403d8d32b804`.
 
-The underlying source research was performed against source head `18ca497ee5862cfcb7a78ba1244b2ed6db518208`. The current seed facts and related Company citations were inspected first. Candidate evidence was then limited to issuer, buyer, seller, manager, public-company filing, or other first-party sources wherever one could be found. Every linked candidate returned HTTP 200 on 2026-07-23.
+The underlying source research was performed against source head `18ca497ee5862cfcb7a78ba1244b2ed6db518208`. The current seed facts and related Company citations were inspected first. Candidate evidence was then limited to issuer, buyer, seller, manager, public-company filing, or other first-party sources wherever one could be found.
+
+The validation artifact attests the exact 17-record absence set; it does not attest this proposal's external URLs, classifications, or factual analysis. A reproducible transport check is retained in [`audits/primary-source-research-url-health-2026-07-23.json`](../audits/primary-source-research-url-health-2026-07-23.json). At the recorded check, 23 of 24 research URLs were reachable by GET and the Lyten source returned an access-control 403. Reachability is transport evidence only: it neither validates source quality nor constitutes editorial approval.
 
 No source, citation, Deal, Company, approval file, or publication state was changed. These proposals must not be copied mechanically into an approval file. Research must first resolve every stated inconsistency, add or correct evidence through the editorial workflow, and regenerate the neutral templates.
 
@@ -129,6 +131,7 @@ No source, citation, Deal, Company, approval file, or publication state was chan
 - **Secondary transaction evidence:** [Waste Dive — Macquarie exits DTG Recycle](https://www.wastedive.com/news/macquarie-exits-dtg-recycle-with-sales-to-founder-waste-connections/812150/)
 - **Proposed classification:** `WEBSITE` / `SUPPORTING_CONTEXT` for the official page; `ARTICLE` / `OWNERSHIP_INVESTMENT` for the secondary report.
 - **Supports:** The official page confirms a 2026 operational restructuring and the surviving business focus. The secondary report explicitly describes Macquarie's exit and sales to the founder, Waste Connections, and United Ventures.
+- **Primary/regulatory corroboration:** The companion [seller-disclosure source-gap review](../audits/deal-seller-disclosure-source-gap-review-2026-07-22.md#related-unresolved-citation-gap--inf-2026-095-dtg-recycle) records DTG's current history, Washington Ecology permit-transfer records for Recovery 1 and Tacoma Yard, Waste Connections' Q1 2026 Form 10-Q, and Macquarie's 2022 acquisition release. Those sources corroborate an operational change and two facility-level permit transfers, but not the complete transaction narrative.
 - **Not primary-source ready:** No official transaction announcement naming Macquarie, Dan Guimont, Waste Connections, and the affected assets was located. Do not designate the Company profile as the primary transaction citation. Continue source research or retain the Deal in review.
 
 ### Company `Extenet` — pending canonical merge

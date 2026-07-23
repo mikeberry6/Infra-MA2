@@ -5,20 +5,24 @@
 This handoff is bound to:
 
 - pull request [#223](https://github.com/mikeberry6/Infra-MA2/pull/223);
-- source head `2141b01053f6c858bbee54aa9e36790c774775e6`;
-- pull-request merge revision `ccd863693e5b51fc76602817df86e6dd2e4c0bfe`;
-- validation run [30040590884](https://github.com/mikeberry6/Infra-MA2/actions/runs/30040590884);
-- artifact `validation-evidence-30040590884` (artifact ID `8577168817`, digest `sha256:51d80c48cb86474232a1822e49176e7bbf84df48b9a7db013b105106c8414267`, retained through 2026-08-22); and
+- source head `ebc8c88a419b22dee4e813de6152403d8d32b804`;
+- pull-request merge revision `822e81c1a418dc57829f24292aad19dceafaab73`;
+- validation run [30046462334](https://github.com/mikeberry6/Infra-MA2/actions/runs/30046462334);
+- artifact `validation-evidence-30046462334` (artifact ID `8579420097`, digest `sha256:88fee1e35a2ecdc45910ab55009db9dc20a5a16b19cf7db6d79072c125c6e624`, retained through 2026-08-22T21:35:28Z); and
 - the isolated validation database used by that run.
 
 The packet is review-only. It contains no Research decisions, grants no permission to publish or merge records, and has not been applied to Preview or Production. Candidate order is deliberately neutral.
+
+This packet supersedes the earlier run-30040590884 packet. The workload counts and 17 records without a candidate are unchanged, but generated timestamps, snapshots, opaque citation rows, and template digests must be reviewed only from the current artifact.
+
+Run 30046462334 concluded **failure solely because the three strict publication/data-integrity checks remained blocking**. Its static, browser, visual, failure-state, persistence, migration, and secret-safety partitions passed. It is an evidence-bearing failed validation run, not a passing release gate. This packet attests only source head `ebc8c88a419b22dee4e813de6152403d8d32b804` and merge revision `822e81c1a418dc57829f24292aad19dceafaab73`; it does not attest any later pull-request commit, including documentation-only descendants.
 
 Download the exact retained evidence into a new temporary directory:
 
 ```bash
 review_dir=$(mktemp -d /tmp/infrasight-research-review.XXXXXX)
-gh run download 30040590884 \
-  --name validation-evidence-30040590884 \
+gh run download 30046462334 \
+  --name validation-evidence-30046462334 \
   --dir "$review_dir"
 ```
 
@@ -26,11 +30,11 @@ Verify the five input templates before review:
 
 | Template | SHA-256 |
 | --- | --- |
-| `company-merge-approval-template.json` | `6120d2f5186b59144615f75714e64425d4880304682d5c4b442533500f8194e3` |
-| `ownership-fund-link-approval-template.json` | `646e1d58354fa6df84f0f221cb39cdfae3e47316dec08865ded944a634a32376` |
-| `fund-primary-source-approval-template.json` | `da8f03537ddf1c6009a0c23b4256a08859de6f6f6663f57075aa00f1c9b55af3` |
-| `deal-seller-disclosure-approval-template.json` | `34edb970103786d5358c12002598e709a47cd75c4e7c1f4ed9cff5e8f07a3749` |
-| `primary-citation-approval-template.json` | `2268602d56f08be8d74b7b9aeb328291f19b1253bc304d5ddd367298cc65c457` |
+| `company-merge-approval-template.json` | `a5574806ad344f7b795295e47c4f402251f45a19c2ba42b49cd37eb610ae80e2` |
+| `ownership-fund-link-approval-template.json` | `24f87bee2b81e6379bc5adc7d8b4f1fcb411df530f10d544360d864367eb7ea4` |
+| `fund-primary-source-approval-template.json` | `fd3fdfe10a6eb294769c083c9de5d62c58b70bbf830788c5020d4872fe163aaa` |
+| `deal-seller-disclosure-approval-template.json` | `ade3e27a912e440f3a9cedf7b1f1f1dfd996ba6bab5021ceae99277ec042d138` |
+| `primary-citation-approval-template.json` | `7176b8a3dcfbdcd9fbadb76778a2cb2ee68d884f85770a7d2446496a76465e34` |
 
 ```bash
 shasum -a 256 "$review_dir"/*approval-template.json
@@ -50,10 +54,10 @@ Review and commit each stage independently in this order. Regenerate downstream 
    - Company: Extenet. This record is also in a pending canonical merge cluster.
    - Deals: `INF-2026-080` through `INF-2026-095` inclusive.
 
-   The [2026-07-23 primary-source research proposal](./primary-source-research-proposals-2026-07-23.md) records verified first-party candidates and the Deal facts that require correction before citation approval. It remains a proposal, not an approval. Add accepted sources and corrections through the editorial workflow, then regenerate. Never turn candidate array position into an automatic selection rule.
+   The [2026-07-23 primary-source research proposal](./primary-source-research-proposals-2026-07-23.md) records candidate research, remaining evidence gaps, and the Deal facts that require correction before citation approval. It remains a proposal, not an approval. Add accepted sources and corrections through the editorial workflow, then regenerate. Never turn candidate array position into an automatic selection rule.
 6. **Historical weekly coverage:** 5 published-deal gaps remain for the 2026-07-03 issue. Do not edit that historical email. Run the weekly synchronization as a dry run on an isolated database, create only reviewable proposals through the guarded apply path, and review each proposed Deal individually before publication.
 
-The current exact-name duplicate count and invalid non-HTTP source count are both zero; those checks need no Research action.
+The current duplicate exact name-and-country key count and invalid non-HTTP source count are both zero; those checks need no Research action. Exact names may still repeat across different country strings and remain subject to the fuzzy canonical-company review.
 
 ## Approval outputs
 

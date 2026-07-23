@@ -19,6 +19,18 @@ The fund manifest row with legacy ID `FUND-146` was historically named `TPG Rise
 
 That persistence is a stale-link condition, not evidence that any of the four investments belongs to `TPG Rise Climate II`. The existing first-party source trails recorded in `audits/portfolio-current-owner-fund-verification-2026-05-13.csv` support the editorial ownership assertions only to the level documented there. For all four rows, the CSV leaves the verified fund vehicle as `n.a.`; it does not establish Rise Climate II as the investing fund.
 
+### Supplemental fund-lineage evidence — 2026-07-23
+
+Additional first-party and filing-grade research strengthens the proposed unlink while preserving the human-review boundary:
+
+- TPG's [2026 Operating Principles report](https://cms.tpg.com/wp-content/uploads/2026/05/OPFIM_TPG-Impact-2026.pdf) identifies `TPG Rise Climate, L.P.` and the collective `TPG Rise Climate II` vehicles as legally distinct.
+- The [Rise Climate II Form D](https://www.sec.gov/Archives/edgar/data/2014691/000201469126000001/xslFormDX01/primary_doc.xml) reports formation in 2023 and a first sale on 2024-08-02.
+- Monarch Bioenergy's [2022 transaction announcement](https://monarchbio.com/press-releases-articles-whitepapers/tpg-rise-climate-accelerates-renewable-energy-development-with-investment-in-monarch-bioenergy-joint-venture) and Summit Agricultural Group's [2022 financing announcement](https://www.summitag.com/summit-carbon-solutions-announces-successful-completion-of-1-billion-equity-raise-following-300-million-investment-from-tpg-rise-climate/) name only the Rise Climate strategy. Fund II is chronologically impossible for those investments, but neither source identifies the exact legal LP required for an exact Fund link.
+- TPG's [2024 Olympus announcement](https://www.tpg.com/news-and-insights/tpg-rise-climate-to-acquire-olympus-terminals-leading-renewable-fuels-logistics-provider) predates Fund II's reported first sale and names only the strategy. TPG reported zero Fund II invested capital at [2024 year-end](https://www.sec.gov/Archives/edgar/data/1880661/000188066125000014/tpg-20241231.htm) and [2025 first quarter-end](https://www.sec.gov/Archives/edgar/data/1880661/000188066125000032/tpg1q25earningsreleasefi.htm). That weighs against the current link but does not resolve signing, warehouse, co-investment, or later-closing mechanics.
+- TPG's [2025 Pike announcement](https://www.tpg.com/news-and-insights/pike-corporation-to-accelerate-growth-through-partnership-with-tpg-la-caisse-and-management) names the multi-pool Rise Climate platform rather than a numbered fund. Fund II is chronologically plausible, but the exact vehicle remains unproven.
+
+The resulting recommendation remains **UNLINK all four stale `fundId` values while preserving `organizationId` and `vehicleName`**. No exact `LINK` is supportable from the current evidence. A future link to Fund I, Fund II, a co-investment vehicle, or another pool requires a matching Fund record, transaction-level vehicle evidence, and a regenerated approval artifact. This recommendation is still **PENDING RESEARCH REVIEW** and is not an approval.
+
 ## Proposed mechanical action and preservation boundary
 
 For each item, the only proposed mechanical action is:
