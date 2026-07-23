@@ -1,5 +1,9 @@
 import { expect, test } from "@playwright/test";
-import { appPath, waitForApplication } from "./helpers";
+import {
+  appPath,
+  expectNoAutomaticWcagAaViolations,
+  waitForApplication,
+} from "./helpers";
 
 const PROVIDER_FAILURE_FIXTURE = "E2E_PROVIDER_FAILURE_FIXTURE";
 
@@ -27,6 +31,9 @@ test("isolated news and dashboard journeys expose failed external-provider state
   await expect(newsStatus).toContainText("Latest scan failed");
   await expect(newsStatus).toContainText("last successful results remain visible");
   await expect(newsStatus).toContainText("3/4 attempts");
+  await expectNoAutomaticWcagAaViolations(page, {
+    context: "failed news-provider state",
+  });
 
   await page.goto(appPath("/dashboard"));
   await waitForApplication(page, "M&A Conditions Dashboard");
@@ -42,4 +49,7 @@ test("isolated news and dashboard journeys expose failed external-provider state
   await expect(
     page.getByRole("alert").filter({ hasText: "Dashboard synchronization failed" }),
   ).toBeVisible();
+  await expectNoAutomaticWcagAaViolations(page, {
+    context: "failed dashboard-provider state",
+  });
 });

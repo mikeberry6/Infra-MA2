@@ -1,4 +1,4 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Locator, type Page } from "@playwright/test";
 import { appPath, expectNoHorizontalOverflow, waitForApplication } from "./helpers";
 import {
   DRAWER_SHELL_BUDGET_MS,
@@ -6,7 +6,8 @@ import {
   type DrawerKind,
 } from "../../src/lib/drawer-performance";
 
-const RESPONSIVE_WIDTHS = [320, 390, 768, 1280, 1440] as const;
+// 640 CSS px is the 200%-equivalent reflow viewport for a 1280px-wide layout.
+const RESPONSIVE_WIDTHS = [320, 390, 640, 768, 1280, 1440] as const;
 
 async function expectDrawerShellWithinBudget(page: Page, kind: DrawerKind) {
   const shellDuration = await page.evaluate((measureName) => {
@@ -16,6 +17,48 @@ async function expectDrawerShellWithinBudget(page: Page, kind: DrawerKind) {
 
   expect(shellDuration).not.toBeNull();
   expect(shellDuration ?? Number.POSITIVE_INFINITY).toBeLessThan(DRAWER_SHELL_BUDGET_MS);
+}
+
+async function isEffectivelyInert(locator: Locator): Promise<boolean> {
+  return locator.evaluate((element) => {
+    let current: HTMLElement | null = element as HTMLElement;
+    while (current) {
+      if (current.inert) return true;
+      current = current.parentElement;
+    }
+    return false;
+  });
+}
+
+async function expectDialogTabLoop(page: Page, dialog: Locator) {
+  const boundaryCount = await dialog.evaluate((element) => {
+    const selector = [
+      "a[href]",
+      "button:not([disabled])",
+      "input:not([disabled])",
+      "select:not([disabled])",
+      "textarea:not([disabled])",
+      "[tabindex]:not([tabindex='-1'])",
+    ].join(",");
+    const focusables = Array.from(element.querySelectorAll<HTMLElement>(selector))
+      .filter((candidate) => candidate.getClientRects().length > 0);
+    const first = focusables[0];
+    const last = focusables.at(-1);
+    if (!first || !last || first === last) return focusables.length;
+    first.dataset.e2eDialogFocusBoundary = "first";
+    last.dataset.e2eDialogFocusBoundary = "last";
+    first.focus();
+    return focusables.length;
+  });
+  expect(boundaryCount).toBeGreaterThan(1);
+
+  const first = page.locator('[data-e2e-dialog-focus-boundary="first"]');
+  const last = page.locator('[data-e2e-dialog-focus-boundary="last"]');
+  await expect(first).toBeFocused();
+  await page.keyboard.press("Shift+Tab");
+  await expect(last).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(first).toBeFocused();
 }
 
 test.describe("anonymous database journeys", () => {
@@ -91,11 +134,31 @@ test.describe("anonymous database journeys", () => {
     const dialog = page.getByRole("dialog", { name: "Filters" });
     await expect(dialog).toBeVisible();
     await expect(page.locator("body")).toHaveCSS("overflow", "hidden");
+    expect(await isEffectivelyInert(trigger)).toBe(true);
+    await expectDialogTabLoop(page, dialog);
 
     const sectorFilter = dialog.getByRole("button", { name: "Filter by Sector" });
+    const regionFilter = dialog.getByRole("button", { name: "Filter by Region" });
     await sectorFilter.focus();
     await sectorFilter.press("Enter");
-    const powerOption = page.getByRole("option", { name: /Power & ET/ });
+    let powerOption = page.getByRole("option", { name: /Power & ET/ });
+    await expect(powerOption).toBeFocused();
+    expect(await isEffectivelyInert(powerOption)).toBe(false);
+    await powerOption.press("Shift+Tab");
+    await expect(page.getByRole("listbox", { name: "Sector options" })).toBeHidden();
+    await expect(dialog.getByRole("button", { name: "Close filters" })).toBeFocused();
+
+    await sectorFilter.focus();
+    await sectorFilter.press("Enter");
+    powerOption = page.getByRole("option", { name: /Power & ET/ });
+    await expect(powerOption).toBeFocused();
+    await powerOption.press("Tab");
+    await expect(page.getByRole("listbox", { name: "Sector options" })).toBeHidden();
+    await expect(regionFilter).toBeFocused();
+
+    await sectorFilter.focus();
+    await sectorFilter.press("Enter");
+    powerOption = page.getByRole("option", { name: /Power & ET/ });
     await expect(powerOption).toBeFocused();
     await powerOption.press("Space");
     await expect(page).toHaveURL(/sector=Power(?:\+|%20)%26(?:\+|%20)ET/);
@@ -116,7 +179,43 @@ test.describe("anonymous database journeys", () => {
     await dialog.getByRole("button", { name: "View results" }).press("Enter");
     await expect(dialog).toBeHidden();
     await expect(trigger).toBeFocused();
+    expect(await isEffectivelyInert(trigger)).toBe(false);
     await expect(page.locator("body")).not.toHaveCSS("overflow", "hidden");
+  });
+
+  test("desktop multiselect exits in both directions and dismisses without changing state", async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto(appPath("/tracker"));
+    await waitForApplication(page, "Infrastructure Deal Tape");
+
+    const search = page.getByRole("textbox", { name: "Search deals" });
+    const sector = page.getByRole("button", { name: "Filter by Sector" });
+    const region = page.getByRole("button", { name: "Filter by Region" });
+    expect(await isEffectivelyInert(sector)).toBe(false);
+
+    await sector.press("Enter");
+    let firstOption = page.getByRole("listbox", { name: "Sector options" }).getByRole("option").first();
+    await expect(firstOption).toBeFocused();
+    await firstOption.press("Tab");
+    await expect(region).toBeFocused();
+    await expect(page.getByRole("listbox", { name: "Sector options" })).toBeHidden();
+
+    await sector.focus();
+    await sector.press("Enter");
+    firstOption = page.getByRole("listbox", { name: "Sector options" }).getByRole("option").first();
+    await expect(firstOption).toBeFocused();
+    await firstOption.press("Shift+Tab");
+    await expect(search).toBeFocused();
+    await expect(page.getByRole("listbox", { name: "Sector options" })).toBeHidden();
+
+    const startingUrl = page.url();
+    await sector.focus();
+    await sector.press("Enter");
+    await expect(page.getByRole("listbox", { name: "Sector options" })).toBeVisible();
+    await page.locator("[data-multiselect-overlay]").click({ position: { x: 1, y: 1 } });
+    await expect(page.getByRole("listbox", { name: "Sector options" })).toBeHidden();
+    await expect(sector).toBeFocused();
+    expect(page.url()).toBe(startingUrl);
   });
 
   for (const database of [
@@ -218,11 +317,16 @@ test.describe("anonymous database journeys", () => {
     await expect(dialog.getByRole("status")).toBeHidden();
     await expect(dialog.getByText(/^Last verified /)).toBeVisible();
     expect(await dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+    expect(await isEffectivelyInert(row)).toBe(true);
+    await row.evaluate((element) => (element as HTMLElement).focus());
+    expect(await dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+    await expectDialogTabLoop(page, dialog);
 
     await dialog.press("Escape");
     await expect(dialog).toBeHidden();
     await expect(page).not.toHaveURL(/focus=/);
     await expect(row).toBeFocused();
+    expect(await isEffectivelyInert(row)).toBe(false);
 
     await row.press("Enter");
     await expect(page).toHaveURL(/[?&]focus=/);
@@ -389,10 +493,15 @@ test.describe("anonymous database journeys", () => {
       await expect(dialog.getByRole("status")).toBeHidden();
       await expect(dialog.getByText(/^Last verified /)).toBeVisible();
       expect(await dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+      expect(await isEffectivelyInert(row)).toBe(true);
+      await row.evaluate((element) => (element as HTMLElement).focus());
+      expect(await dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+      await expectDialogTabLoop(page, dialog);
 
       await dialog.press("Escape");
       await expect(dialog).toBeHidden();
       await expect(row).toBeFocused();
+      expect(await isEffectivelyInert(row)).toBe(false);
       await expect(page).not.toHaveURL(/focus=/);
 
       await row.press("Enter");
@@ -526,6 +635,28 @@ test.describe("anonymous database journeys", () => {
     await dialog.press("Escape");
     await expect(trigger).toBeFocused();
     await expectNoHorizontalOverflow(page);
+  });
+
+  test("news detail drawer wraps focus, isolates the page, and restores its trigger", async ({ page }) => {
+    await page.goto(appPath("/news"));
+    await waitForApplication(page, "Daily Intelligence Feed");
+
+    const trigger = page.locator("main article > button").first();
+    await expect(trigger).toBeVisible();
+    await trigger.focus();
+    await trigger.press("Enter");
+
+    const dialog = page.getByRole("dialog");
+    await expect(dialog).toBeVisible();
+    expect(await isEffectivelyInert(trigger)).toBe(true);
+    await trigger.evaluate((element) => (element as HTMLElement).focus());
+    expect(await dialog.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+    await expectDialogTabLoop(page, dialog);
+
+    await dialog.press("Escape");
+    await expect(dialog).toBeHidden();
+    expect(await isEffectivelyInert(trigger)).toBe(false);
+    await expect(trigger).toBeFocused();
   });
 
   for (const [path, heading] of [

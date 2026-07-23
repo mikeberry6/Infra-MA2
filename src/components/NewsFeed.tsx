@@ -792,13 +792,14 @@ function NewsDrawer({
 
   return (
     <div className="fixed inset-0 z-50">
-      <button
-        type="button"
-        aria-label="Close news detail"
+      <div
+        aria-hidden="true"
+        data-dialog-backdrop-owner="news-drawer-dialog"
         className="absolute inset-0 bg-[var(--bg-overlay)]"
         onClick={onClose}
       />
       <aside
+        id="news-drawer-dialog"
         ref={drawerRef}
         role="dialog"
         aria-modal="true"

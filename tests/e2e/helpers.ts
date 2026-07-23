@@ -1,3 +1,4 @@
+import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page } from "@playwright/test";
 import { assertIsolatedWriteTarget } from "./isolation-guard";
 
@@ -50,6 +51,47 @@ export async function expectNoHorizontalOverflow(page: Page, context?: string) {
 
   expect(dimensions.document, diagnostic).toBeLessThanOrEqual(dimensions.viewport);
   expect(dimensions.body, diagnostic).toBeLessThanOrEqual(dimensions.viewport);
+}
+
+export async function applyWcagTextSpacing(page: Page) {
+  await page.addStyleTag({
+    content: `
+      body *:not(svg):not(path) {
+        line-height: 1.5 !important;
+        letter-spacing: 0.12em !important;
+        word-spacing: 0.16em !important;
+      }
+      p {
+        margin-bottom: 2em !important;
+      }
+    `,
+  });
+  await page.evaluate(() => new Promise<void>((resolve) => {
+    requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+  }));
+}
+
+export async function expectNoAutomaticWcagAaViolations(
+  page: Page,
+  {
+    include,
+    context,
+    excludeNextBadge = true,
+  }: {
+    include?: string;
+    context?: string;
+    excludeNextBadge?: boolean;
+  } = {},
+) {
+  let builder = new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]);
+  if (include) builder = builder.include(include);
+  if (excludeNextBadge) builder = builder.exclude("[data-next-badge]");
+  const results = await builder.analyze();
+  expect(
+    results.violations,
+    [context, JSON.stringify(results.violations, null, 2)].filter(Boolean).join("\n"),
+  ).toEqual([]);
 }
 
 export function configuredAdminE2E(): boolean {

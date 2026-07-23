@@ -1,5 +1,10 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
-import { appPath, signInAsConfiguredAdmin, waitForApplication } from "./helpers";
+import {
+  appPath,
+  expectNoAutomaticWcagAaViolations,
+  signInAsConfiguredAdmin,
+  waitForApplication,
+} from "./helpers";
 import { assertIsolatedWriteTarget } from "./isolation-guard";
 import {
   E2E_DEAL_FIXTURE_BUYER,
@@ -158,6 +163,9 @@ test("invalid credentials return one generic message", async ({ page }) => {
   await page.getByRole("button", { name: "Sign In" }).click();
   await expect(page.locator("form").getByRole("alert"))
     .toHaveText("The email or password was not recognized.");
+  await expectNoAutomaticWcagAaViolations(page, {
+    context: "invalid-login error state",
+  });
 });
 
 test("configured administrator previews a CSV before explicitly committing its draft", { tag: "@sensitive" }, async ({ page, context }) => {

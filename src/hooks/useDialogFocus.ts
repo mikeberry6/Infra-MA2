@@ -25,6 +25,62 @@ function visibleFocusableElements(container: HTMLElement): HTMLElement[] {
     .filter((element) => !element.hasAttribute("disabled") && element.getClientRects().length > 0);
 }
 
+function branchBelongsToDialog(element: HTMLElement, dialogId: string): boolean {
+  if (!dialogId) return false;
+  if (
+    element.dataset.dialogFocusOwner === dialogId
+    || element.dataset.dialogBackdropOwner === dialogId
+  ) {
+    return true;
+  }
+
+  return Array.from(
+    element.querySelectorAll<HTMLElement>(
+      "[data-dialog-focus-owner], [data-dialog-backdrop-owner]",
+    ),
+  ).some((candidate) => (
+    candidate.dataset.dialogFocusOwner === dialogId
+    || candidate.dataset.dialogBackdropOwner === dialogId
+  ));
+}
+
+/**
+ * Make every sibling branch outside the active dialog non-interactive without
+ * making an ancestor that contains the dialog itself inert. This works for
+ * inline drawers as well as portaled sheets and preserves any pre-existing
+ * inert state.
+ */
+function isolateDialogBackground(dialog: HTMLElement): () => void {
+  const changed: HTMLElement[] = [];
+  let activeBranch: HTMLElement | null = dialog;
+
+  while (activeBranch && activeBranch !== document.body) {
+    const parentElement: HTMLElement | null = activeBranch.parentElement;
+    if (!parentElement) break;
+
+    for (const sibling of Array.from(parentElement.children)) {
+      if (
+        !(sibling instanceof HTMLElement)
+        || sibling === activeBranch
+        || branchBelongsToDialog(sibling, dialog.id)
+        || sibling.inert
+      ) {
+        continue;
+      }
+      sibling.inert = true;
+      changed.push(sibling);
+    }
+
+    activeBranch = parentElement;
+  }
+
+  return () => {
+    for (const element of changed.reverse()) {
+      element.inert = false;
+    }
+  };
+}
+
 export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true) {
   useEffect(() => {
     if (!active) return;
@@ -36,6 +92,7 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
       : null;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    const restoreBackground = isolateDialogBackground(dialog);
     const focusables = visibleFocusableElements(dialog);
     (focusables[0] ?? dialog).focus();
 
@@ -69,6 +126,7 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = previousOverflow;
+      restoreBackground();
       if (previousActive?.isConnected) {
         previousActive.focus();
       } else {

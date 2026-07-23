@@ -105,9 +105,9 @@ export function MobileFilterSheet({
           className={`fixed inset-0 z-[10000] ${responsiveVisibility}`}
           role="presentation"
         >
-          <button
-            type="button"
-            aria-label={`Dismiss ${title.toLowerCase()}`}
+          <div
+            aria-hidden="true"
+            data-dialog-backdrop-owner={dialogId}
             className="absolute inset-0 bg-black/35 backdrop-blur-[1px]"
             onClick={() => setOpen(false)}
           />

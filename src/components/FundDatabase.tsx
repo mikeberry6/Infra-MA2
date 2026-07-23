@@ -824,10 +824,13 @@ function FundDrawer({
   return (
     <>
       <div
+        aria-hidden="true"
+        data-dialog-backdrop-owner="fund-drawer-dialog"
         className="fixed inset-0 z-50 bg-[var(--bg-overlay)] backdrop-blur-[2px] animate-fade-in"
         onClick={onClose}
       />
       <div
+        id="fund-drawer-dialog"
         ref={drawerRef}
         role="dialog"
         aria-modal="true"

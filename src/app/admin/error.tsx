@@ -19,14 +19,18 @@ export default function AdminError({
   }, [errorId]);
 
   return (
-    <div className="mx-auto max-w-[640px] px-4 sm:px-6 py-12">
+    <div
+      role="alert"
+      aria-live="assertive"
+      className="mx-auto max-w-[640px] px-4 sm:px-6 py-12"
+    >
       <div className="surface px-6 py-7 sm:px-8 sm:py-8">
         <div className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
           Error
         </div>
-        <h2 className="mt-1 text-lg font-semibold text-[var(--text-primary)] tracking-tight">
+        <h1 className="mt-1 text-lg font-semibold text-[var(--text-primary)] tracking-tight">
           Admin action failed
-        </h2>
+        </h1>
         <p className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
           The admin page could not complete this operation. Retry, or use the error ID when contacting support.
         </p>

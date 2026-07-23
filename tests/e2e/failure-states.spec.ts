@@ -1,5 +1,9 @@
 import { expect, test } from "@playwright/test";
-import { appPath, waitForApplication } from "./helpers";
+import {
+  appPath,
+  expectNoAutomaticWcagAaViolations,
+  waitForApplication,
+} from "./helpers";
 
 const TOP_LEVEL_FAILURE_FIXTURE = "E2E_TOP_LEVEL_FAILURE_FIXTURE";
 
@@ -49,6 +53,11 @@ test.describe("public failure and retry journeys", () => {
         await expect(dialog.getByText("Unavailable while verified detail is offline")).toBeVisible();
         await expect(dialog.getByText("Pending Research review")).toHaveCount(0);
       }
+      await expectNoAutomaticWcagAaViolations(page, {
+        include: '[role="dialog"]',
+        context: `${database.path} drawer detail failure`,
+        excludeNextBadge: false,
+      });
       await expect.poll(() => detailRequests).toBe(1);
 
       const retry = failure.getByRole("button", { name: "Retry" });
@@ -102,6 +111,9 @@ test.describe("top-level database failure and retry journeys", () => {
         "href",
         "mailto:research@infrasight.com",
       );
+      await expectNoAutomaticWcagAaViolations(page, {
+        context: `${route.path} top-level database failure`,
+      });
 
       const requestsBeforeRetry = routeRequests;
       await retry.click();

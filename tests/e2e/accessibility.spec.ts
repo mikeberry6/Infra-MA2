@@ -1,9 +1,10 @@
-import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 import {
   ADMIN_E2E_ENV,
+  applyWcagTextSpacing,
   appPath,
   configuredAdminE2E,
+  expectNoAutomaticWcagAaViolations,
   expectNoHorizontalOverflow,
   signInAsConfiguredAdmin,
   waitForApplication,
@@ -14,15 +15,15 @@ import {
 test.use({ trace: "off" });
 
 const routes = [
-  "/tracker",
-  "/funds",
-  "/portfolio",
-  "/search",
-  "/news",
-  "/dashboard",
-  "/earnings",
-  "/login",
-];
+  { path: "/tracker", heading: "Infrastructure Deal Tape" },
+  { path: "/funds", heading: "Infrastructure Fund Database" },
+  { path: "/portfolio", heading: "Infrastructure Portfolio Company Database" },
+  { path: "/search", heading: "Search InfraSight" },
+  { path: "/news", heading: "Daily Intelligence Feed" },
+  { path: "/dashboard", heading: "M&A Conditions Dashboard" },
+  { path: "/earnings", heading: "Earnings Tracker" },
+  { path: "/login", heading: "Sign in" },
+] as const;
 
 const ADMIN_ROUTES = [
   { path: "/admin", heading: "Admin" },
@@ -38,7 +39,9 @@ const ADMIN_ROUTES = [
   { path: "/admin/users", heading: "Users" },
 ] as const;
 
-const RESPONSIVE_WIDTHS = [320, 390, 768, 1280, 1440] as const;
+// 640 CSS px is the 200%-equivalent reflow viewport for a 1280px-wide layout.
+// Keep the separate visual-regression matrix at its mandated five widths.
+const RESPONSIVE_WIDTHS = [320, 390, 640, 768, 1280, 1440] as const;
 const ADMIN_SCROLL_REGIONS = new Map([
   ["/admin/deals", { name: "Deals table", lastColumn: "Actions" }],
   ["/admin/funds", { name: "Funds table", lastColumn: "Actions" }],
@@ -47,16 +50,12 @@ const ADMIN_SCROLL_REGIONS = new Map([
   ["/admin/users", { name: "Users table", lastColumn: "Created" }],
 ]);
 
-for (const path of routes) {
+for (const { path, heading } of routes) {
   test(`${path} has no automatically detectable WCAG A/AA violations`, async ({ page }) => {
     await page.goto(appPath(path));
-    await page.locator("main").waitFor({ state: "visible" });
+    await waitForApplication(page, heading);
     await expect(page.locator("a button")).toHaveCount(0);
-    const results = await new AxeBuilder({ page })
-      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
-      .exclude("[data-next-badge]")
-      .analyze();
-    expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
+    await expectNoAutomaticWcagAaViolations(page, { context: path });
   });
 }
 
@@ -68,19 +67,14 @@ test("authenticated administration pages have no automatically detectable WCAG A
   );
 
   await signInAsConfiguredAdmin(page);
-  for (const { path } of ADMIN_ROUTES) {
+  for (const { path, heading } of ADMIN_ROUTES) {
     await page.goto(appPath(path));
     await expect(page).toHaveURL(new RegExp(`${appPath(path)}$`));
-    await page.locator("main").waitFor({ state: "visible" });
+    await expect(
+      page.getByRole("heading", { name: heading, level: 1, exact: true }),
+    ).toBeVisible();
     await expect(page.locator("a button")).toHaveCount(0);
-    const results = await new AxeBuilder({ page })
-      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
-      .exclude("[data-next-badge]")
-      .analyze();
-    expect(
-      results.violations,
-      `${path}\n${JSON.stringify(results.violations, null, 2)}`,
-    ).toEqual([]);
+    await expectNoAutomaticWcagAaViolations(page, { context: path });
   }
 });
 
@@ -125,6 +119,57 @@ test("authenticated administration pages have no body-level horizontal overflow 
   }
 });
 
+test("public routes retain content and controls under WCAG text-spacing overrides", async ({ page }) => {
+  test.setTimeout(120_000);
+  await page.setViewportSize({ width: 390, height: 900 });
+
+  for (const { path, heading } of routes) {
+    await page.goto(appPath(path));
+    await waitForApplication(page, heading);
+    await applyWcagTextSpacing(page);
+    await expect(
+      page.getByRole("heading", { name: heading, level: 1, exact: true }),
+      `${path} heading should remain visible with WCAG text spacing`,
+    ).toBeVisible();
+    await expectNoHorizontalOverflow(page, `${path} with WCAG text spacing`);
+
+    const representativeControl = page.locator(
+      "main a:visible, main button:visible, main input:visible, main select:visible, main textarea:visible",
+    ).first();
+    if (await representativeControl.count()) {
+      await representativeControl.focus();
+      await expect(representativeControl).toBeFocused();
+    }
+  }
+});
+
+test("authenticated administration retains content and controls under WCAG text-spacing overrides", { tag: "@sensitive" }, async ({ page }) => {
+  test.setTimeout(180_000);
+  test.skip(
+    !configuredAdminE2E(),
+    `${ADMIN_E2E_ENV.join(", ")} are required for authenticated admin text-spacing checks`,
+  );
+
+  await signInAsConfiguredAdmin(page);
+  await page.setViewportSize({ width: 390, height: 900 });
+  for (const { path, heading } of ADMIN_ROUTES) {
+    await page.goto(appPath(path));
+    await expect(page).toHaveURL(new RegExp(`${appPath(path)}$`));
+    await expect(
+      page.getByRole("heading", { name: heading, level: 1, exact: true }),
+    ).toBeVisible();
+    await applyWcagTextSpacing(page);
+    await expectNoHorizontalOverflow(page, `${path} with WCAG text spacing`);
+
+    const representativeControl = page.locator(
+      "main a:visible, main button:visible, main input:visible, main select:visible, main textarea:visible",
+    ).first();
+    await expect(representativeControl).toBeVisible();
+    await representativeControl.focus();
+    await expect(representativeControl).toBeFocused();
+  }
+});
+
 test("the skip link is the first keyboard stop and targets main content", async ({ page }) => {
   await page.goto(appPath("/tracker"));
   const skipLink = page.getByRole("link", { name: "Skip to content" });
@@ -145,6 +190,48 @@ test("the not-found action is a single link rather than nested interactive conte
     appPath("/tracker"),
   );
   await expect(page.locator("a button")).toHaveCount(0);
+  await expectNoAutomaticWcagAaViolations(page, { context: "not-found state" });
+});
+
+test("deterministic no-result states have no automatically detectable WCAG A/AA violations", async ({ page }) => {
+  const impossibleQuery = "a11y-no-match-7f91c4d2";
+  const emptyStates = [
+    {
+      path: `/tracker?q=${impossibleQuery}`,
+      heading: "Infrastructure Deal Tape",
+      message: "No deals match your current filters.",
+    },
+    {
+      path: `/funds?q=${impossibleQuery}`,
+      heading: "Infrastructure Fund Database",
+      message: "No funds match your current filters.",
+    },
+    {
+      path: `/portfolio?q=${impossibleQuery}`,
+      heading: "Infrastructure Portfolio Company Database",
+      message: "No portfolio companies match your current filters.",
+    },
+    {
+      path: `/news?q=${impossibleQuery}`,
+      heading: "Daily Intelligence Feed",
+      message: "0 items",
+    },
+    {
+      path: `/search?q=${impossibleQuery}`,
+      heading: "Search InfraSight",
+      message: "No results matched your query.",
+    },
+  ] as const;
+
+  await page.setViewportSize({ width: 390, height: 900 });
+  for (const state of emptyStates) {
+    await page.goto(appPath(state.path));
+    await waitForApplication(page, state.heading);
+    await expect(page.getByText(state.message, { exact: true }).first()).toBeVisible();
+    await expectNoAutomaticWcagAaViolations(page, {
+      context: `${state.path} no-result state`,
+    });
+  }
 });
 
 test("mobile filter sheet remains accessible", async ({ page }) => {
@@ -152,11 +239,11 @@ test("mobile filter sheet remains accessible", async ({ page }) => {
   await page.goto(appPath("/tracker"));
   await page.getByRole("button", { name: /^Filters/ }).click();
   await expect(page.getByRole("dialog", { name: "Filters" })).toBeVisible();
-  const results = await new AxeBuilder({ page })
-    .include('[role="dialog"]')
-    .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
-    .analyze();
-  expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
+  await expectNoAutomaticWcagAaViolations(page, {
+    include: '[role="dialog"]',
+    context: "mobile filter sheet",
+    excludeNextBadge: false,
+  });
 });
 
 for (const database of [
@@ -191,13 +278,56 @@ for (const database of [
     await expect(dialog).toBeVisible();
     await expect(dialog.getByRole("status")).toBeHidden();
     await expect(dialog.getByText(/^Last verified /)).toBeVisible();
-    const results = await new AxeBuilder({ page })
-      .include('[role="dialog"]')
-      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
-      .analyze();
-    expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
+    await expectNoAutomaticWcagAaViolations(page, {
+      include: '[role="dialog"]',
+      context: database.name,
+      excludeNextBadge: false,
+    });
   });
 }
+
+test("a drawer loading state has no automatically detectable WCAG A/AA violations", async ({ page }) => {
+  let releaseRequest: () => void = () => {};
+  const requestGate = new Promise<void>((resolve) => {
+    releaseRequest = resolve;
+  });
+  await page.route("**/api/deals/*", async (route) => {
+    await requestGate;
+    await route.continue();
+  });
+
+  await page.goto(appPath("/tracker"));
+  await waitForApplication(page, "Infrastructure Deal Tape");
+  await page.locator("tbody [data-deal-row-trigger]").first().click();
+  const dialog = page.getByRole("dialog");
+  const loading = dialog.getByRole("status");
+
+  try {
+    await expect(loading).toContainText("Loading the latest verified detail");
+    await expectNoAutomaticWcagAaViolations(page, {
+      include: '[role="dialog"]',
+      context: "deal drawer loading state",
+      excludeNextBadge: false,
+    });
+  } finally {
+    releaseRequest();
+  }
+  await expect(loading).toBeHidden();
+});
+
+test("news detail drawer has no automatically detectable WCAG A/AA violations", async ({ page }) => {
+  await page.goto(appPath("/news"));
+  await waitForApplication(page, "Daily Intelligence Feed");
+  const trigger = page.locator("main article > button").first();
+  await expect(trigger).toBeVisible();
+  await trigger.click();
+  await expect(page.getByRole("dialog")).toBeVisible();
+  await expectNoAutomaticWcagAaViolations(page, {
+    include: '[role="dialog"]',
+    context: "news detail drawer",
+    excludeNextBadge: false,
+  });
+});
 
 test("open multiselect popup has no automatically detectable WCAG A/AA violations", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
@@ -206,11 +336,7 @@ test("open multiselect popup has no automatically detectable WCAG A/AA violation
   await page.getByRole("button", { name: "Filter by Sector" }).click();
   await expect(page.getByRole("listbox", { name: "Sector options" })).toBeVisible();
 
-  const results = await new AxeBuilder({ page })
-    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
-    .exclude("[data-next-badge]")
-    .analyze();
-  expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
+  await expectNoAutomaticWcagAaViolations(page, { context: "open multiselect popup" });
 });
 
 test("admin import preview has no automatically detectable WCAG A/AA violations", { tag: "@sensitive" }, async ({ page }) => {
@@ -232,9 +358,20 @@ test("admin import preview has no automatically detectable WCAG A/AA violations"
         creates: 1,
         updates: 0,
         unchanged: 0,
-        quarantined: 0,
-        warnings: [],
-        errors: [],
+        quarantined: 1,
+        warnings: [{
+          row: 2,
+          id: "A11Y-PREVIEW-WARNING",
+          code: "PUBLISHED_DEAL_UPDATE_BLOCKED",
+          existingStatus: "PUBLISHED",
+          error: "Published deal requires editorial review",
+        }],
+        errors: [{
+          row: 3,
+          id: "A11Y-PREVIEW-ERROR",
+          code: "MISSING_REQUIRED_FIELD",
+          error: "Buyer is required",
+        }],
         ownershipChanges: [],
       }),
     }),
@@ -252,11 +389,17 @@ test("admin import preview has no automatically detectable WCAG A/AA violations"
   const preview = page.getByRole("region", { name: "Import preview" });
   await expect(preview).toBeVisible();
   await expect(preview).toContainText("no imported records have been changed");
-  const results = await new AxeBuilder({ page })
-    .include('[aria-label="Import preview"]')
-    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
-    .analyze();
-  expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
+  await expect(
+    preview.getByRole("heading", { name: "Warnings and quarantined rows (1)" }),
+  ).toBeVisible();
+  await expect(
+    preview.getByRole("heading", { name: "Validation errors (1)" }),
+  ).toBeVisible();
+  await expectNoAutomaticWcagAaViolations(page, {
+    include: '[aria-label="Import preview"]',
+    context: "admin import preview",
+    excludeNextBadge: false,
+  });
 });
 
 test("reduced-motion preference suppresses drawer animation", async ({ page }) => {
