@@ -8,6 +8,8 @@ import {
   verifyMigrationBaseline,
   type MigrationChecksum,
 } from "../src/lib/migration-baseline.ts";
+import { logServerFailure, withServerTask } from "../src/lib/server-log.ts";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup.ts";
 
 function option(name: string): string | undefined {
   const prefix = `--${name}=`;
@@ -48,8 +50,8 @@ async function main(): Promise<void> {
   const baseSha = resolveBaseSha();
   const output = option("output") ?? "tmp/migration-baseline.json";
   const client = new Client({ connectionString });
-  await client.connect();
-  try {
+  const run = async () => {
+    await client.connect();
     const result = await client.query<{ migration_name: string; checksum: string; finished_at: Date | null }>(`
       SELECT migration_name, checksum, finished_at
       FROM "_prisma_migrations"
@@ -67,12 +69,17 @@ async function main(): Promise<void> {
     await mkdir(path.dirname(output), { recursive: true });
     await writeFile(output, `${JSON.stringify({ verifiedAt: new Date().toISOString(), migrationBaseSha: baseSha, ...report }, null, 2)}\n`);
     console.log(`Production migration baseline verified at ${baseSha} (${report.appliedCount} migration(s)).`);
-  } finally {
-    await client.end();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => client.end(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "migration_baseline",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : error);
+withServerTask({ task: "migration_baseline", operation: "verify_applied_migrations" }, main).catch(() => {
   process.exitCode = 1;
 });

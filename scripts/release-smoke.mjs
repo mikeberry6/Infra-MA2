@@ -24,6 +24,10 @@ if (!baseUrl) {
   console.error("--base-url is required.");
   process.exit(2);
 }
+if (expectedVersion && !/^[0-9a-f]{40}$/.test(expectedVersion)) {
+  console.error("--expected-version must be a full lowercase Git SHA.");
+  process.exit(2);
+}
 
 const origin = new URL(baseUrl).origin;
 const checks = [];
@@ -115,6 +119,49 @@ function pathMatches(actualPath, expectedPath) {
   return actualPath === expectedPath || (expectedPath !== "/" && actualPath === `${expectedPath}/`);
 }
 
+const HEALTH_KEYS = [
+  "database",
+  "generatedAt",
+  "generationTimeMs",
+  "pipelines",
+  "status",
+  "version",
+];
+const PIPELINE_KEYS = [
+  "lastAttemptAt",
+  "lastSuccessfulAt",
+  "name",
+  "status",
+];
+const CRITICAL_PIPELINES = new Set(["DASHBOARD_SYNC", "NEWS_SCAN"]);
+
+function isIsoTimestamp(value) {
+  return typeof value === "string"
+    && !Number.isNaN(Date.parse(value))
+    && new Date(value).toISOString() === value;
+}
+
+function isPassingPipeline(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  if (JSON.stringify(Object.keys(value).sort()) !== JSON.stringify(PIPELINE_KEYS)) return false;
+  if (!CRITICAL_PIPELINES.has(value.name)) return false;
+  if (!isIsoTimestamp(value.lastAttemptAt)) return false;
+  if (!isIsoTimestamp(value.lastSuccessfulAt)) return false;
+  return value.status === "healthy" || value.status === "running";
+}
+
+function isHealthyEnvelope(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  if (JSON.stringify(Object.keys(value).sort()) !== JSON.stringify(HEALTH_KEYS)) return false;
+  if (value.status !== "healthy" || value.database !== "connected") return false;
+  if (value.version !== "local" && !/^[0-9a-f]{12}$/.test(value.version)) return false;
+  if (!isIsoTimestamp(value.generatedAt)) return false;
+  if (!Number.isFinite(value.generationTimeMs) || value.generationTimeMs < 0) return false;
+  if (!Array.isArray(value.pipelines) || value.pipelines.length !== CRITICAL_PIPELINES.size) return false;
+  if (!value.pipelines.every(isPassingPipeline)) return false;
+  return new Set(value.pipelines.map((pipeline) => pipeline.name)).size === CRITICAL_PIPELINES.size;
+}
+
 async function statusCheck(name, route, expectedStatus, expectedPaths = [`${basePath}${route}`]) {
   const startedAt = performance.now();
   const response = await fetchWithRetry(urlFor(route));
@@ -133,8 +180,8 @@ async function statusCheck(name, route, expectedStatus, expectedPaths = [`${base
   return response;
 }
 
-const rootPaths = [basePath];
-if (allowLegacyRoot) rootPaths.push(`${basePath}/tracker`);
+const rootPaths = [`${basePath}/tracker`];
+if (allowLegacyRoot) rootPaths.push(basePath);
 await statusCheck("canonical root", "/", 200, rootPaths);
 
 for (const route of ["/tracker", "/funds", "/portfolio", "/news", "/dashboard", "/search", "/earnings", "/login"]) {
@@ -151,7 +198,7 @@ if (!skipHealth) {
     checks.at(-1).passed = false;
   }
   if (health) {
-    checks.at(-1).passed &&= health.status === "healthy" && health.database === "connected";
+    checks.at(-1).passed &&= isHealthyEnvelope(health);
     if (expectedVersion) checks.at(-1).passed &&= health.version === expectedVersion.slice(0, 12);
   }
 }

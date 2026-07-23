@@ -1,4 +1,4 @@
-# Phase 1–2 Release Record
+# Phase 1–4 Release Record
 
 - Release SHA:
 - Pull request:
@@ -15,8 +15,15 @@
 - Restore branch ID and creation time:
 - Prior production deployment ID / immutable URL:
 - Candidate deployment ID / immutable URL:
+- Candidate `VERCEL_DEPLOYMENT_ID` or approved non-sensitive cache namespace:
+- Candidate health HTTP status / exact 12-character version / critical-pipeline states:
+- Public database bundle-budget artifact / tracker, funds, portfolio results:
 - Production promotion time:
 - Post-release smoke owner and result:
+- Production health HTTP status / exact 12-character version / critical-pipeline states:
+- Observability review owner / route errors / database latency / provider latency:
+- Speed Insights p75 LCP / INP / CLS review window:
+- Analytics fixed-event allowlist review:
 - Administrator credential rotation completed by / time:
 - `NEXTAUTH_SECRET` rotation completed by / time:
 

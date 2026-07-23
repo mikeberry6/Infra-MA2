@@ -1,4 +1,4 @@
-import type { DealView } from "@/modules/shared/types";
+import type { DealListItem } from "@/modules/shared/types";
 
 export const DEAL_PAGE_SIZE = 25;
 
@@ -47,7 +47,7 @@ export function clampDealPage(page: number, totalItems: number): number {
   return Math.min(Math.max(1, page), totalPages);
 }
 
-function compareDealField(a: DealView, b: DealView, field: DealSortField): number {
+function compareDealField(a: DealListItem, b: DealListItem, field: DealSortField): number {
   switch (field) {
     case "date":
       return Date.parse(a.date) - Date.parse(b.date);
@@ -65,10 +65,10 @@ function compareDealField(a: DealView, b: DealView, field: DealSortField): numbe
 }
 
 export function sortDeals(
-  deals: readonly DealView[],
+  deals: readonly DealListItem[],
   field: DealSortField,
   direction: DealSortDirection,
-): DealView[] {
+): DealListItem[] {
   const multiplier = direction === "asc" ? 1 : -1;
   return [...deals].sort((a, b) => {
     const primary = compareDealField(a, b, field);

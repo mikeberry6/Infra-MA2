@@ -1,11 +1,17 @@
 "use client";
 
-import { useMemo, useEffect, useCallback, useRef } from "react";
+import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import { DEAL_SECTORS, NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
-import type { DealView, DatabaseCounts } from "@/modules/shared/types";
+import type { DealListItem, DealView, DatabaseCounts, RecordMeta } from "@/modules/shared/types";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
+import { track } from "@vercel/analytics";
+import { BoundedDetailCache } from "@/lib/detail-cache";
+import { useDetailCacheInvalidation } from "@/hooks/useDetailCacheInvalidation";
+import { useTrackDrawerOpen } from "@/hooks/useTrackDrawerOpen";
+import { useFreshDetail } from "@/hooks/useFreshDetail";
+import { useRouter } from "next/navigation";
 
 // ─── Buyer display shortening ──────────────────────────────
 // Purely cosmetic: shortens canonical fund/buyer names for compact table cells
@@ -120,7 +126,29 @@ function mostCommonLabel(items: string[]): { label: string; count: number } | nu
     .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))[0] ?? null;
 }
 
-function latestDealDateLabel(deals: DealView[]): string {
+const dealDetailCache = new BoundedDetailCache<DealView>();
+
+function dealDetailShell(deal: DealListItem): DealView {
+  return {
+    ...deal,
+    description: "",
+    targetDescription: "",
+    enterpriseValue: null,
+    equityValue: null,
+    stake: null,
+    closingDate: null,
+    financialAdvisorBuyer: null,
+    financialAdvisorSeller: null,
+    legalAdvisorBuyer: null,
+    legalAdvisorSeller: null,
+    assetScale: null,
+    valuationMultiple: null,
+    fundVehicle: null,
+    keyHighlights: null,
+  };
+}
+
+function latestDealDateLabel(deals: DealListItem[]): string {
   let latest = 0;
   for (const deal of deals) {
     const time = new Date(deal.date).getTime();
@@ -161,8 +189,10 @@ import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
 import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
+import { useDrawerShellTiming } from "@/hooks/useDrawerShellTiming";
 import { useCanExport } from "@/hooks/useCanExport";
 import { withBasePath } from "@/lib/base-path";
+import { markDrawerOpen } from "@/lib/drawer-performance";
 import {
   clampDealPage,
   DEAL_PAGE_SIZE,
@@ -209,7 +239,11 @@ function EmailAccessLinks({ compact = false }: { compact?: boolean }) {
 
   return (
     <div className="flex flex-wrap items-center justify-end gap-1">
-      <a href={withBasePath("/email-format/latest")} className={className}>
+      <a
+        href={withBasePath("/email-format/latest")}
+        className={className}
+        onClick={() => track("weekly_email_opened")}
+      >
         <Mail className="h-3 w-3" />
         <span className="truncate">Weekly email</span>
       </a>
@@ -380,8 +414,8 @@ function DealCard({
   deal,
   onSelect,
 }: {
-  deal: DealView;
-  onSelect: (deal: DealView) => void;
+  deal: DealListItem;
+  onSelect: (deal: DealListItem) => void;
 }) {
   return (
     <button
@@ -481,8 +515,8 @@ function DealTable({
   page,
   onPageChange,
 }: {
-  filteredDeals: DealView[];
-  onSelectDeal: (deal: DealView) => void;
+  filteredDeals: DealListItem[];
+  onSelectDeal: (deal: DealListItem) => void;
   sortField: DealSortField;
   sortDirection: DealSortDirection;
   onSort: (field: DealSortField) => void;
@@ -615,7 +649,10 @@ function DealTable({
                           href={deal.sourceUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            track("source_link_clicked", { entity: "deal", placement: "table" });
+                          }}
                           className="inline-flex max-w-full items-center gap-1 type-micro transition-colors hover:text-[var(--text-primary)]"
                           title={deal.sourceName || deal.sourceUrl}
                         >
@@ -697,9 +734,15 @@ function AdvisorCard({
 function DealDrawer({
   deal,
   onClose,
+  detailState = "ready",
+  onRetry,
+  detailMeta,
 }: {
   deal: DealView;
   onClose: () => void;
+  detailState?: "idle" | "loading" | "ready" | "error";
+  onRetry?: () => void;
+  detailMeta?: RecordMeta | null;
 }) {
   const hasAdvisors =
     deal.financialAdvisorBuyer ||
@@ -710,6 +753,7 @@ function DealDrawer({
   const drawerRef = useRef<HTMLDivElement>(null);
   const headerScrolled = useScrolledPast(drawerRef);
   useDialogFocus(drawerRef);
+  useDrawerShellTiming("deal", deal.legacyId);
 
   // Escape key to close
   useEffect(() => {
@@ -803,6 +847,47 @@ function DealDrawer({
             <span className="type-micro">{deal.country}</span>
           </div>
         </div>
+
+        {detailState !== "ready" && detailState !== "idle" && (
+          <div
+            className={`mx-5 mt-4 rounded-md border px-3 py-2.5 type-meta lg:mx-7 ${
+              detailState === "error"
+                ? "border-red-300 bg-red-50 text-red-800"
+                : "border-[var(--border)] bg-[var(--bg-subtle)] text-[var(--text-secondary)]"
+            }`}
+            role={detailState === "error" ? "alert" : "status"}
+          >
+            {detailState === "loading"
+              ? "Loading the latest verified detail…"
+              : (
+                <div className="flex items-center justify-between gap-3">
+                  <span>Latest detail could not be loaded. Showing the list record.</span>
+                  {onRetry && (
+                    <button
+                      type="button"
+                      onClick={onRetry}
+                      className="font-semibold underline underline-offset-2"
+                    >
+                      Retry
+                    </button>
+                  )}
+                </div>
+              )}
+          </div>
+        )}
+        {detailMeta && (
+          <div className="mx-5 mt-3 type-micro lg:mx-7">
+            Last verified{" "}
+            <span className="mono tabular-nums text-[var(--text-secondary)]">
+              {detailMeta.lastVerifiedAt ? formatDate(detailMeta.lastVerifiedAt) : "Not recorded"}
+            </span>
+            {" · "}
+            <span className="mono tabular-nums text-[var(--text-secondary)]">
+              {detailMeta.sourceCount}
+            </span>{" "}
+            source{detailMeta.sourceCount === 1 ? "" : "s"}
+          </div>
+        )}
 
         {/* Content */}
         <div className="p-5 lg:p-7 space-y-6">
@@ -929,6 +1014,7 @@ function DealDrawer({
                   href={deal.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => track("source_link_clicked", { entity: "deal", placement: "drawer" })}
                   className="inline-flex max-w-full items-center gap-1.5 type-meta font-medium hover:text-[var(--text-primary)] transition-colors group"
                 >
                   <span className="truncate">{deal.sourceName || deal.sourceUrl}</span>
@@ -944,7 +1030,8 @@ function DealDrawer({
 }
 
 // ─── Main Component ─────────────────────────────────────────
-export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: DatabaseCounts }) {
+export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts: DatabaseCounts }) {
+  const router = useRouter();
   const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
   const [rawSortField] = useUrlQueryState("sort", "date");
   const [rawSortDirection] = useUrlQueryState("direction", "desc");
@@ -952,6 +1039,8 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeRegions, toggleRegion] = useUrlFilterSet("region");
   const [activeCategories, toggleCategory] = useUrlFilterSet("category");
+  const [detailRequest, setDetailRequest] = useState(0);
+  const invalidationRequest = useDetailCacheInvalidation("deal", dealDetailCache);
   const focusId = useUrlQueryParam("focus");
   const writeQueryParam = useUrlQueryWriter();
   const writeQueryParams = useUrlQueryParamsWriter();
@@ -963,6 +1052,26 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
     () => focusId ? deals.find((deal) => deal.legacyId === focusId) ?? null : null,
     [deals, focusId],
   );
+  const {
+    detail: selectedDealDetail,
+    meta: detailMeta,
+    state: detailState,
+  } = useFreshDetail<DealView>({
+    cache: dealDetailCache,
+    cacheKey: selectedDeal?.legacyId ?? null,
+    requestUrl: selectedDeal
+      ? withBasePath(`/api/deals/${encodeURIComponent(selectedDeal.legacyId)}`)
+      : null,
+    requestVersion: detailRequest + invalidationRequest,
+  });
+
+  useEffect(() => {
+    if (detailState !== "unavailable" || !selectedDeal) return;
+    writeQueryParam("focus", null, "replace");
+    router.refresh();
+  }, [detailState, router, selectedDeal, writeQueryParam]);
+
+  useTrackDrawerOpen("deal", selectedDeal?.legacyId);
 
   // Debounce search for performance
   const debouncedSearch = useDebounce(search, 300);
@@ -974,7 +1083,8 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
     );
   }, [writeQueryParams]);
 
-  const openDeal = useCallback((deal: DealView) => {
+  const openDeal = useCallback((deal: DealListItem) => {
+    markDrawerOpen("deal");
     writeQueryParam("focus", deal.legacyId, "push");
   }, [writeQueryParam]);
 
@@ -1151,6 +1261,7 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
               <a
                 href={withBasePath("/api/exports/deals")}
                 download
+                onClick={() => track("export_started", { entity: "deal" })}
                 className="hidden sm:inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
               >
                 <Download className="h-3 w-3" />
@@ -1174,9 +1285,12 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
 
       <CTABlock />
 
-      {selectedDeal && (
+      {selectedDeal && detailState !== "unavailable" && (
         <DealDrawer
-          deal={selectedDeal}
+          deal={selectedDealDetail ?? dealDetailShell(selectedDeal)}
+          detailState={detailState}
+          detailMeta={detailMeta}
+          onRetry={() => setDetailRequest((value) => value + 1)}
           onClose={closeDeal}
         />
       )}

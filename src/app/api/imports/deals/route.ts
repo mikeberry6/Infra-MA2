@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { parseCsv } from "@/lib/csv";
 import { parseDateInput } from "@/lib/format";
 import { revalidateAppData } from "@/lib/revalidation";
+import { withServerOperation } from "@/lib/server-log";
 import { AuthorizationError, getSessionIdentity, isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
 import { dealSchema, type DealInput } from "@/modules/admin/schemas";
 import { changedFieldSummary } from "@/modules/admin/change-summary";
@@ -790,5 +791,10 @@ async function importDeals(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  return importDeals(request);
+  return withServerOperation(request, {
+    route: "/api/imports/deals",
+    operation: request.nextUrl.searchParams.get("preview") === "1"
+      ? "preview_deal_import"
+      : "commit_deal_import",
+  }, () => importDeals(request));
 }

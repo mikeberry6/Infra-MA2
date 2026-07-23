@@ -19,7 +19,8 @@ import {
   assertMaintenanceMutationContext,
   type MaintenanceMutationContext,
 } from "../src/lib/database-target";
-import { withSafeTask } from "../src/lib/safe-task";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import {
   applyReviewedOwnershipFundLinkApproval,
   OWNERSHIP_FUND_LINK_APPROVAL_REPOSITORY_PATH,
@@ -106,7 +107,7 @@ async function main() {
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) throw new Error("DATABASE_URL is required for ownership-fund remediation");
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
-  try {
+  const run = async () => {
     const result = await prisma.$transaction(
       (tx) => applyReviewedOwnershipFundLinkApproval(tx, approval, expectedSha256, context),
       { isolationLevel: "Serializable", maxWait: 10_000, timeout: 60_000 },
@@ -124,11 +125,17 @@ async function main() {
       targetDatabase: context.targetDatabase,
       ...result,
     }, null, 2));
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "ownership_fund_remediation",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
-withSafeTask({ task: "ownership_fund_remediation", operation: "apply_ownership_fund_links" }, main).catch(() => {
+withServerTask({ task: "ownership_fund_remediation", operation: "apply_ownership_fund_links" }, main).catch(() => {
   process.exitCode = 1;
 });

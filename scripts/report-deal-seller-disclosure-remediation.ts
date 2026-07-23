@@ -14,7 +14,8 @@ import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { prepareReviewerNeutralJsonOutput } from "../src/lib/reviewer-neutral-output";
-import { withSafeTask } from "../src/lib/safe-task";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import {
   buildDealSellerDisclosureApprovalTemplate,
   dealSellerDisclosureSha256,
@@ -39,7 +40,7 @@ async function main() {
     output: option("output") ?? DEFAULT_OUTPUT,
   });
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
-  try {
+  const run = async () => {
     const input = await loadDealSellerDisclosureReportInput(prisma);
     const template = buildDealSellerDisclosureApprovalTemplate(input);
     const json = `${JSON.stringify(template, null, 2)}\n`;
@@ -50,12 +51,18 @@ async function main() {
       dealsMissingReviewedSellerTreatment: template.items.length,
       templateSha256: dealSellerDisclosureSha256(json),
     }, null, 2));
-  } finally {
-    await prisma.$disconnect();
-  }
+  };
+  await runWithPreservedCleanup({
+    run,
+    cleanup: () => prisma.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "deal_seller_disclosure_report",
+      operation: "disconnect_database",
+    }, error),
+  });
 }
 
-withSafeTask(
+withServerTask(
   { task: "deal_seller_disclosure_report", operation: "report_deal_seller_disclosures" },
   main,
 ).catch(() => {

@@ -11,6 +11,14 @@ on:
         description: Full Git SHA represented by the rollback deployment
         required: true
         type: string
+      smoke_policy:
+        description: Use public-only only for a documented break-glass rollback
+        required: true
+        default: full
+        type: choice
+        options:
+          - full
+          - public-only
       confirmation:
         description: Type ROLLBACK to authorize production rollback
         required: true
@@ -39,6 +47,7 @@ jobs:
       PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
       CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
       CONFIRMATION: ${{ inputs.confirmation }}
+      SMOKE_POLICY: ${{ inputs.smoke_policy }}
     steps:
       - name: Require protected workflow ref
         run: |
@@ -85,6 +94,7 @@ jobs:
           [[ "$EXPECTED_VERCEL_PROJECT_ID" =~ ^prj_[A-Za-z0-9]+$ ]] || { echo "::error::VERCEL_PROJECT_ID is required."; exit 1; }
           [[ "$EXPECTED_GITHUB_REPOSITORY_ID" =~ ^[1-9][0-9]*$ ]] || { echo "::error::GitHub repository ID is required."; exit 1; }
           [[ "$ROLLBACK_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::release_sha must be a full lowercase Git SHA."; exit 1; }
+          [[ "$SMOKE_POLICY" = "full" || "$SMOKE_POLICY" = "public-only" ]] || { echo "::error::smoke_policy is invalid."; exit 1; }
           if [ "$PRODUCTION_URL" != "$CANONICAL_PRODUCTION_URL" ]; then
             echo "::error::The protected PRODUCTION_URL does not match the canonical InfraSight production alias."
             exit 1
@@ -112,6 +122,8 @@ jobs:
             --require-immutable-url \
             --output=tmp/rollback/candidate-inspect.json
           rollback_url="https://$(jq -r '.url' tmp/rollback/candidate-inspect.json)"
+          smoke_args=(--expected-version="$ROLLBACK_SHA")
+          if [ "$SMOKE_POLICY" = "public-only" ]; then smoke_args=(--skip-health --allow-legacy-root); fi
           candidate_link_dir="$(mktemp -d "${RUNNER_TEMP}/vercel-rollback-link.XXXXXX")"
           trap 'rm -rf "$candidate_link_dir"' EXIT
           npx --yes vercel@51.7.0 link \
@@ -123,9 +135,8 @@ jobs:
           VERCEL_CLI_CWD="$candidate_link_dir" node scripts/release-smoke.mjs \
             --base-url="$rollback_url" \
             --transport=vercel-cli \
-            --skip-health \
-            --allow-legacy-root \
-            --output=tmp/rollback/candidate-smoke.json
+            --output=tmp/rollback/candidate-smoke.json \
+            "${smoke_args[@]}"
 
       # Additive migrations remain in place; rollback changes only the Vercel
       # deployment assigned to the canonical production alias.
@@ -158,11 +169,12 @@ jobs:
             --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
             --team-id="$VERCEL_TEAM_ID" \
             --output=tmp/rollback/canonical-production-inspect.json
+          smoke_args=(--expected-version="$ROLLBACK_SHA")
+          if [ "$SMOKE_POLICY" = "public-only" ]; then smoke_args=(--skip-health --allow-legacy-root); fi
           node scripts/release-smoke.mjs \
             --base-url="$PRODUCTION_URL" \
-            --skip-health \
-            --allow-legacy-root \
-            --output=tmp/rollback/production-smoke.json
+            --output=tmp/rollback/production-smoke.json \
+            "${smoke_args[@]}"
 
       - name: Upload rollback evidence
         if: always()

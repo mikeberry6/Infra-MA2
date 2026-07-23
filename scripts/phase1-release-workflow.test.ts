@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 
 const workflow = readFileSync(".github/workflows/deploy.yml", "utf8");
 
-describe("Phase 1 baseline inside the Phase 3 release gate", () => {
+describe("Phase 1 baseline inside the current release gate", () => {
   it("pins Node 24 and executes the complete clean-checkout quality gate", () => {
     expect(workflow.match(/node-version: "24"/g)).toHaveLength(2);
     for (const contract of [
@@ -44,13 +44,11 @@ describe("Phase 1 baseline inside the Phase 3 release gate", () => {
     );
   });
 
-  it("retains Phase 2 editorial gates and adds only the Phase 3 browser gate", () => {
+  it("retains editorial/browser gates and adds the Phase 4 performance gate", () => {
     expect(workflow).toContain("source-coverage-report");
     expect(workflow).toContain("report-company-merge-candidates");
     expect(workflow).toContain("playwright");
     expect(workflow).toContain("visual-regression.spec.ts");
-    for (const laterPhaseContract of ["bundle-budget", "/api/health"]) {
-      expect(workflow).not.toContain(laterPhaseContract);
-    }
+    expect(workflow).toContain("check:bundle-budget");
   });
 });

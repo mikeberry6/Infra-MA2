@@ -4,6 +4,7 @@ import {
   vercelDeploymentApiUrl,
   verifyVercelDeployment,
 } from "../src/lib/vercel-deployment.ts";
+import { withServerTask } from "../src/lib/server-log.ts";
 
 function option(name: string): string | undefined {
   const prefix = `--${name}=`;
@@ -60,7 +61,6 @@ async function main(): Promise<void> {
   console.log(`Vercel deployment ${verified.id} verified for ${verified.githubCommitSha}.`);
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : error);
+withServerTask({ task: "vercel_deployment_verification", operation: "verify_deployment" }, main).catch(() => {
   process.exitCode = 1;
 });

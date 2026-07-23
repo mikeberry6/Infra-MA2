@@ -1,11 +1,26 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
 import { appPath, expectNoHorizontalOverflow, waitForApplication } from "./helpers";
+import {
+  DRAWER_SHELL_BUDGET_MS,
+  drawerShellMeasure,
+  type DrawerKind,
+} from "../../src/lib/drawer-performance";
 
 const RESPONSIVE_WIDTHS = [320, 390, 768, 1280, 1440] as const;
 
 async function firstRecordTrigger(page: Page, path: "/tracker" | "/funds" | "/portfolio"): Promise<Locator> {
   if (path === "/tracker") return page.locator("[data-deal-row-trigger]").first();
   return page.locator("tbody button").filter({ hasText: /.+/ }).first();
+}
+
+async function expectDrawerShellWithinBudget(page: Page, kind: DrawerKind) {
+  const shellDuration = await page.evaluate((measureName) => {
+    const entries = performance.getEntriesByName(measureName, "measure");
+    return entries.at(-1)?.duration ?? null;
+  }, drawerShellMeasure(kind));
+
+  expect(shellDuration).not.toBeNull();
+  expect(shellDuration ?? Number.POSITIVE_INFINITY).toBeLessThan(DRAWER_SHELL_BUDGET_MS);
 }
 
 test.describe("anonymous database journeys", () => {
@@ -74,11 +89,30 @@ test.describe("anonymous database journeys", () => {
   });
 
   for (const database of [
-    { path: "/tracker", heading: "Infrastructure Deal Tape" },
-    { path: "/funds", heading: "Infrastructure Fund Database" },
-    { path: "/portfolio", heading: "Infrastructure Portfolio Company Database" },
+    {
+      path: "/tracker",
+      heading: "Infrastructure Deal Tape",
+      apiPattern: "**/api/deals/*",
+      kind: "deal",
+    },
+    {
+      path: "/funds",
+      heading: "Infrastructure Fund Database",
+      apiPattern: "**/api/funds/*",
+      kind: "fund",
+    },
+    {
+      path: "/portfolio",
+      heading: "Infrastructure Portfolio Company Database",
+      apiPattern: "**/api/portfolio/*",
+      kind: "company",
+    },
   ] as const) {
     test(`${database.path} drawer is deep-linkable, keyboard closable, and restores focus`, async ({ page }) => {
+      await page.route(database.apiPattern, async (route) => {
+        await new Promise((resolve) => setTimeout(resolve, 250));
+        await route.continue();
+      });
       await page.goto(appPath(database.path));
       await waitForApplication(page, database.heading);
 
@@ -87,8 +121,12 @@ test.describe("anonymous database journeys", () => {
       await trigger.press("Enter");
       const dialog = page.getByRole("dialog");
       await expect(dialog).toBeVisible();
+      await expect(dialog.getByRole("status")).toContainText("Loading the latest verified detail");
+      await expectDrawerShellWithinBudget(page, database.kind);
       await expect(page).toHaveURL(/focus=/);
       await expect(page.locator("body")).toHaveCSS("overflow", "hidden");
+      await expect(dialog.getByRole("status")).toBeHidden();
+      await expect(dialog.getByText(/^Last verified /)).toBeVisible();
 
       const focusedInsideDialog = await dialog.evaluate((element) => element.contains(document.activeElement));
       expect(focusedInsideDialog).toBe(true);
@@ -102,11 +140,57 @@ test.describe("anonymous database journeys", () => {
       await trigger.press("Enter");
       const focusedUrl = page.url();
       await expect(page.getByRole("dialog")).toBeVisible();
+      await expectDrawerShellWithinBudget(page, database.kind);
+      expect(await page.getByRole("dialog").getByRole("status").count()).toBe(0);
       await page.reload();
       await expect(page).toHaveURL(focusedUrl);
       await expect(page.getByRole("dialog")).toBeVisible();
     });
   }
+
+  test("a failed lazy deal detail can be retried without blocking or closing the drawer", async ({ page }) => {
+    let attempts = 0;
+    await page.route("**/api/deals/*", async (route) => {
+      attempts += 1;
+      if (attempts === 1) {
+        await route.fulfill({
+          status: 503,
+          contentType: "application/json",
+          body: JSON.stringify({ error: "temporarily unavailable" }),
+        });
+        return;
+      }
+      await route.continue();
+    });
+    await page.goto(appPath("/tracker"));
+    await waitForApplication(page, "Infrastructure Deal Tape");
+
+    await page.locator("[data-deal-row-trigger]").first().click();
+    const dialog = page.getByRole("dialog");
+    await expect(dialog).toBeVisible();
+    await expectDrawerShellWithinBudget(page, "deal");
+    const alert = dialog.getByRole("alert");
+    await expect(alert).toContainText("Latest detail could not be loaded");
+    await alert.getByRole("button", { name: "Retry" }).click();
+    await expect(alert).toBeHidden();
+    await expect(dialog.getByText(/^Last verified /)).toBeVisible();
+    expect(attempts).toBe(2);
+  });
+
+  test("a terminal detail response removes the stale public drawer and focus URL", async ({ page }) => {
+    await page.route("**/api/deals/*", (route) => route.fulfill({
+      status: 404,
+      contentType: "application/json",
+      body: JSON.stringify({ error: "Deal not found" }),
+    }));
+    await page.goto(appPath("/tracker"));
+    await waitForApplication(page, "Infrastructure Deal Tape");
+
+    const trigger = page.locator("[data-deal-row-trigger]").first();
+    await trigger.click();
+    await expect(page.getByRole("dialog")).toBeHidden();
+    await expect(page).not.toHaveURL(/focus=/);
+  });
 
   test("cross-database search keeps a global relevance rank, grouping, scopes, and drawer links", async ({ page }) => {
     await page.goto(`${appPath("/search")}?q=Brookfield`);

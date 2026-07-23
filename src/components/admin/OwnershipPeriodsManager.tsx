@@ -14,6 +14,7 @@ import {
   FormField,
   FormMessage,
 } from "@/components/shared/FormControls";
+import { invalidateDetailCache } from "@/lib/detail-cache-events";
 
 export interface OwnershipPeriodRow {
   id: string;
@@ -49,6 +50,7 @@ export function OwnershipPeriodsManager({
         refreshError(result.error || "Failed to add owner");
         return;
       }
+      invalidateDetailCache("company", companyId);
       // Update list in place — the simplest correct path is to ask the
       // user to reload, since reading the new row needs another fetch.
       setEditingId(null);
@@ -64,6 +66,7 @@ export function OwnershipPeriodsManager({
         refreshError(result.error || "Failed to update owner");
         return;
       }
+      invalidateDetailCache("company", companyId);
       setEditingId(null);
       window.location.reload();
     });
@@ -78,6 +81,7 @@ export function OwnershipPeriodsManager({
         refreshError(result.error || "Failed to delete owner");
         return;
       }
+      invalidateDetailCache("company", companyId);
       setPeriods((prev) => prev.filter((p) => p.id !== id));
     });
   }

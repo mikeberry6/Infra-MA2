@@ -5,7 +5,9 @@ import { companies } from "../prisma/seed-data/companies";
 import type { PortCoMilestone } from "../prisma/seed-data/portco-types";
 import { MILESTONE_CATEGORY_MAP } from "../src/modules/shared/enum-maps";
 import { assertMaintenanceMutationContext } from "../src/lib/database-target";
-import { withSafeTask } from "../src/lib/safe-task";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
+import { SafeOperationalError } from "../src/lib/safe-error";
 
 type SeedCompany = (typeof companies)[number];
 type DbCompany = Awaited<ReturnType<typeof getPublishedCompanies>>[number];
@@ -15,19 +17,12 @@ const isDryRun = args.has("--dry-run");
 const isApply = args.has("--apply");
 const preserveDbOnly = args.has("--preserve-db-only");
 
-if (isDryRun === isApply) {
-  console.error("Use exactly one mode: --dry-run or --apply.");
-  process.exit(1);
-}
+let prisma: PrismaClient | null = null;
 
-if (!process.env.DATABASE_URL) {
-  console.error("DATABASE_URL is not set.");
-  process.exit(1);
+function database(): PrismaClient {
+  if (!prisma) throw new SafeOperationalError("database_url_required");
+  return prisma;
 }
-const mutationContext = isApply ? assertMaintenanceMutationContext() : undefined;
-
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
-const prisma = new PrismaClient({ adapter });
 
 function companyKey(name: string, country: string): string {
   return `${name}||${country}`;
@@ -77,7 +72,7 @@ function exactDuplicateExtraRows(
 }
 
 async function getPublishedCompanies() {
-  return prisma.company.findMany({
+  return database().company.findMany({
     where: { status: "PUBLISHED" },
     select: {
       id: true,
@@ -114,6 +109,15 @@ async function summarizeLive(label: string) {
 }
 
 async function main() {
+  if (isDryRun === isApply) {
+    console.error("Use exactly one mode: --dry-run or --apply.");
+    throw new Error("Portfolio milestone mode validation failed.");
+  }
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) throw new SafeOperationalError("database_url_missing");
+  const mutationContext = isApply ? assertMaintenanceMutationContext() : undefined;
+  prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
+
   const seedByKey = new Map(companies.map((company) => [companyKey(company.name, company.country), company]));
   const seedMilestoneCount = companies.reduce((sum, company) => sum + (company.milestones?.length ?? 0), 0);
 
@@ -147,7 +151,7 @@ async function main() {
     return;
   }
 
-  const auditStart = await prisma.auditEvent.create({
+  const auditStart = await database().auditEvent.create({
     data: {
       actorId: null,
       entityType: "MaintenanceRun",
@@ -166,7 +170,7 @@ async function main() {
     select: { id: true },
   });
 
-  const { deletedRows, insertedRows } = await prisma.$transaction(async (tx) => {
+  const { deletedRows, insertedRows } = await database().$transaction(async (tx) => {
     let deletedRows = 0;
     let insertedRows = 0;
 
@@ -239,10 +243,20 @@ async function main() {
   }
 }
 
-withSafeTask({ task: "portfolio_milestones", operation: "reconcile_milestones" }, main)
+async function runTask() {
+  await runWithPreservedCleanup({
+    run: main,
+    cleanup: async () => {
+      await prisma?.$disconnect();
+    },
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "portfolio_milestones_cleanup",
+      operation: "disconnect_database",
+    }, error),
+  });
+}
+
+withServerTask({ task: "portfolio_milestones", operation: "reconcile_milestones" }, runTask)
   .catch(() => {
     process.exitCode = 1;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
   });

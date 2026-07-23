@@ -38,17 +38,19 @@
  * per company, exhaustive logging in audit mode.
  */
 import "dotenv/config";
-import { withSafeTask } from "../src/lib/safe-task";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
-import { assertMaintenanceMutationContext } from "../src/lib/database-target";
+import {
+  assertMaintenanceMutationContext,
+  type MaintenanceMutationContext,
+} from "../src/lib/database-target";
+import { SafeOperationalError } from "../src/lib/safe-error";
 
 const APPLY = process.argv.includes("--apply");
 const DUQUESNE_ONLY = process.argv.includes("--duquesne-only");
-const mutationContext = APPLY ? assertMaintenanceMutationContext() : undefined;
-
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
-const prisma = new PrismaClient({ adapter });
+let prisma: PrismaClient;
 
 // Names we treat as "Apollo" for purposes of detection (in case the
 // Organization table has variants). Matched case-insensitively.
@@ -70,7 +72,7 @@ interface SuspectFinding {
   otherOwners: string[];
 }
 
-async function main() {
+async function main(mutationContext: MaintenanceMutationContext | undefined) {
   console.log(APPLY ? "⚠️  APPLY MODE — will remove rows" : "🔍 AUDIT — read-only");
   if (DUQUESNE_ONLY) console.log("   scope: Duquesne Light Company only");
   console.log();
@@ -212,10 +214,23 @@ async function main() {
   console.log(`Removed ${removed} OwnershipPeriod row(s).`);
 }
 
-withSafeTask({ task: "ownership_cleanup", operation: "cleanup_apollo_argo_conflation" }, main)
+async function runTask() {
+  const mutationContext = APPLY ? assertMaintenanceMutationContext() : undefined;
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) throw new SafeOperationalError("database_url_required");
+  const client = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
+  prisma = client;
+  await runWithPreservedCleanup({
+    run: () => main(mutationContext),
+    cleanup: () => client.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "ownership_cleanup",
+      operation: "disconnect_database",
+    }, error),
+  });
+}
+
+withServerTask({ task: "ownership_cleanup", operation: "cleanup_apollo_argo_conflation" }, runTask)
   .catch(() => {
     process.exitCode = 1;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
   });

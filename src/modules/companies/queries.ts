@@ -1,13 +1,22 @@
 import { prisma } from "@/lib/prisma";
 import { unstable_cache } from "next/cache";
 import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
+import { dataCacheKeyParts } from "@/lib/data-cache-namespace";
 import {
   COMPANY_SECTOR_DISPLAY,
   COMPANY_REGION_DISPLAY,
   COMPANY_STATUS_DISPLAY,
   MILESTONE_CATEGORY_DISPLAY,
 } from "@/modules/shared/enum-maps";
-import type { CompanyView, MilestoneView, ExecutiveView, SourceView, OwnerView } from "@/modules/shared/types";
+import type {
+  CompanyDetail,
+  CompanyListItem,
+  CompanyView,
+  MilestoneView,
+  ExecutiveView,
+  SourceView,
+  OwnerView,
+} from "@/modules/shared/types";
 import type { Prisma } from "@/generated/prisma/client";
 
 const MONTH_INDEX: Record<string, number> = {
@@ -260,6 +269,24 @@ function toCompanyView(company: any): CompanyView {
   };
 }
 
+function toCompanyListItem(company: CompanyView): CompanyListItem {
+  return {
+    id: company.id,
+    focusIds: company.focusIds,
+    name: company.name,
+    investmentFirm: company.investmentFirm,
+    sector: company.sector,
+    subsector: company.subsector,
+    region: company.region,
+    country: company.country,
+    ownershipVehicle: company.ownershipVehicle,
+    status: company.status,
+    countryTags: company.countryTags,
+    investmentYear: company.investmentYear,
+    owners: company.owners,
+  };
+}
+
 const PUBLISHED_OWNERSHIP_WHERE = {
   OR: [
     { fundId: null },
@@ -278,8 +305,8 @@ const COMPANY_INCLUDE = {
       organization: { select: { name: true } },
       fund: {
         select: {
-          fundName: true,
           status: true,
+          fundName: true,
           manager: { select: { name: true } },
         },
       },
@@ -315,40 +342,70 @@ const COMPANY_LIST_SELECT = {
   country: true,
   countryTags: true,
   companyStatus: true,
-  ownershipPeriods: COMPANY_INCLUDE.ownershipPeriods,
+  ownershipPeriods: {
+    where: PUBLISHED_OWNERSHIP_WHERE,
+    select: {
+      fundId: true,
+      vehicleName: true,
+      investmentYear: true,
+      isActive: true,
+      organization: { select: { name: true } },
+      fund: {
+        select: {
+          status: true,
+          fundName: true,
+          manager: { select: { name: true } },
+        },
+      },
+    },
+    orderBy: { createdAt: "desc" as const },
+  },
 } as const;
 
-async function getAllCompaniesRaw(options: { detail?: boolean } = {}): Promise<CompanyView[]> {
-  const companies = options.detail === false
-    ? await prisma.company.findMany({
-        where: { status: "PUBLISHED" },
-        select: COMPANY_LIST_SELECT,
-        orderBy: { name: "asc" },
-      })
-    : await prisma.company.findMany({
-        where: { status: "PUBLISHED" },
-        include: COMPANY_INCLUDE,
-        orderBy: { name: "asc" },
-      });
+async function getAllCompanyListItemsRaw(): Promise<CompanyListItem[]> {
+  const companies = await prisma.company.findMany({
+    where: { status: "PUBLISHED" },
+    select: COMPANY_LIST_SELECT,
+    orderBy: { name: "asc" },
+  });
+  return companies.map(toCompanyView).map(toCompanyListItem);
+}
+
+async function getAllCompanyDetailsRaw(): Promise<CompanyDetail[]> {
+  const companies = await prisma.company.findMany({
+    where: { status: "PUBLISHED" },
+    include: COMPANY_INCLUDE,
+    orderBy: { name: "asc" },
+  });
   return companies.map(toCompanyView);
 }
 
 const getAllCompaniesListCached = unstable_cache(
-  () => getAllCompaniesRaw({ detail: false }),
-  ["companies:all:list"],
+  getAllCompanyListItemsRaw,
+  dataCacheKeyParts("companies:all:list"),
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
 const getAllCompaniesDetailCached = unstable_cache(
-  () => getAllCompaniesRaw({ detail: true }),
-  ["companies:all:detail"],
+  getAllCompanyDetailsRaw,
+  dataCacheKeyParts("companies:all:detail"),
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
-export async function getAllCompanies(options: { detail?: boolean } = {}): Promise<CompanyView[]> {
-  return options.detail === false
-    ? getAllCompaniesListCached()
-    : getAllCompaniesDetailCached();
+export async function getAllCompanyListItems(): Promise<CompanyListItem[]> {
+  return getAllCompaniesListCached();
+}
+
+export async function getAllCompanyDetails(): Promise<CompanyDetail[]> {
+  return getAllCompaniesDetailCached();
+}
+
+export function getAllCompanies(options: { detail: false }): Promise<CompanyListItem[]>;
+export function getAllCompanies(options?: { detail?: true }): Promise<CompanyDetail[]>;
+export async function getAllCompanies(
+  options: { detail?: boolean } = {},
+): Promise<CompanyListItem[] | CompanyDetail[]> {
+  return options.detail === false ? getAllCompanyListItems() : getAllCompanyDetails();
 }
 
 async function getCompanyByFocusIdRaw(focusId: string): Promise<CompanyView | null> {
@@ -373,7 +430,7 @@ async function getCompanyByFocusIdRaw(focusId: string): Promise<CompanyView | nu
 
 const getCompanyByFocusIdCached = unstable_cache(
   getCompanyByFocusIdRaw,
-  ["companies:by-focus"],
+  dataCacheKeyParts("companies:by-focus"),
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 

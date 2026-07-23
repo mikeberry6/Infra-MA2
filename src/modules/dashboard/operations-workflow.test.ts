@@ -226,7 +226,7 @@ describe("dashboard operational workflows", () => {
     expect(rollback).toContain("--skip-health");
     expect(rollback).toContain("--allow-legacy-root");
     expect(rollback).toContain("--output=tmp/rollback/production-smoke.json");
-    expect(rollback).not.toContain('--expected-version="$ROLLBACK_SHA"');
+    expect(rollback.match(/--expected-version="\$ROLLBACK_SHA"/g) ?? []).toHaveLength(2);
     expect(rollback).not.toContain("vercel@51.7.0 inspect");
   });
 });

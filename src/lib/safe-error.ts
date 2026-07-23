@@ -228,14 +228,3 @@ export function formatSafeErrorSummary(
     ?? { classification: "internal_error" as const, message: CLASSIFICATION_MESSAGES.internal_error };
   return `${details.classification}: ${details.message}`;
 }
-
-/** Emit a bounded script failure without raw exception or payload fields. */
-export function reportSafeScriptError(task: string, error: unknown): void {
-  const details = getSafeErrorDetails(error)
-    ?? { classification: "internal_error" as const, message: CLASSIFICATION_MESSAGES.internal_error };
-  console.error(JSON.stringify({
-    task,
-    errorClassification: details.classification,
-    errorMessage: details.message,
-  }));
-}

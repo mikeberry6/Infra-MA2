@@ -30,11 +30,13 @@ npm run db:generate
 npm run db:validate
 npm run lint
 npm run typecheck
+npm run typecheck:scripts
 npm test
 npm run validate-portfolios
 npm audit --audit-level=high
 npm run audit:prod
 npm run build
+npm run check:bundle-budget
 ```
 
 `npm run doctor` checks local GitHub/Vercel auth, env names, typecheck, and tests.
@@ -44,6 +46,18 @@ npm run build
 - `.nvmrc`, `.node-version`, package engines, GitHub Actions, and Vercel use Node 24.x; npm 11 is the only package manager.
 - Admin, import, and export routes require NextAuth roles.
 - Database writes should go through explicit scripts or admin actions, never ad hoc manual edits without a logged command path.
+- Hosted data caches require a unique `VERCEL_DEPLOYMENT_ID` or a non-sensitive `DATA_CACHE_NAMESPACE`; do not use database URLs, branch credentials, or user-provided text in that namespace. A local production server must be started with an explicit value, for example `DATA_CACHE_NAMESPACE=local-smoke-1 npm run start`; Playwright supplies a run-scoped value automatically.
+- Vercel operator preflight: confirm the project setting **Automatically expose System Environment Variables** is enabled so `VERCEL_DEPLOYMENT_ID` exists at build and runtime. If that setting is intentionally disabled, configure a unique, non-sensitive `DATA_CACHE_NAMESPACE` for every deployment at both build and runtime before release.
+
+## Health, logs, analytics, and performance
+
+- `/api/health` exposes only six top-level fields: `status`, `version`, `generatedAt`, `database`, `pipelines`, and `generationTimeMs`. It returns 503 for database/schema failure or a breached critical-pipeline freshness contract. It does not expose providers, connection details, exceptions, or configuration.
+- Server operations emit one allowlisted JSON envelope with route or task, fixed operation name, duration, status, a server-owned request/task ID, and a fixed error classification/message when applicable. Never add request bodies, query/search values, destination URLs, imported rows, credentials, tokens, record labels, or raw exceptions.
+- Automatic Web Analytics pageviews and Speed Insights vitals are public-route only. The client boundary drops login/admin events (including base-path routes) and removes query strings and fragments from every forwarded public URL and route label; custom product events remain fixed-name, payload-minimized interactions.
+- The global `Referrer-Policy: strict-origin` prevents public search/filter/drawer query state from reaching same-origin observability script requests in the HTTP `Referer` header before client-side event filters can run.
+- Custom Analytics events record only the approved interaction names and fixed coarse properties; Speed Insights supplies real-user Core Web Vitals. Neither integration authorizes cookies, identity enrichment, record names, search terms, filter values, or private route data.
+- Monitor route error rate, database latency, provider latency, pipeline failures, and p75 LCP/INP/CLS. Targets remain LCP below 2.5 seconds, INP below 200 ms, CLS below 0.1, and public first-load JavaScript at or below 150 KB gzip per enforced route.
+- Use the response `x-request-id` to correlate Vercel logs during an incident. Follow [incident-response.md](./incident-response.md); preserve request IDs and timestamps, never sensitive payloads.
 
 ## Authentication bootstrap and rotation
 

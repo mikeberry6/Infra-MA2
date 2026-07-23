@@ -1,8 +1,7 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import {
   PORTCO_PAGE_SIZE,
   clampCompanyPage,
-  fetchCompanyDetail,
   parseCompanyPage,
   parseCompanySort,
   parseCompanySortDirection,
@@ -54,33 +53,5 @@ describe("portfolio URL result state", () => {
     expect(sortCompanyRows(source, "country", "asc")[0].name).toBe("Alpha");
     expect(sortCompanyRows(source, "firm", "desc")[0].name).toBe("Zulu");
     expect(source[0].name).toBe("Zulu");
-  });
-});
-
-describe("portfolio lazy detail request", () => {
-  it("passes the AbortSignal and returns the company envelope", async () => {
-    const controller = new AbortController();
-    const detail = { id: "company/1", name: "GridCo" };
-    const fetcher = vi.fn(async (_input: RequestInfo | URL, init?: RequestInit) =>
-      new Response(JSON.stringify({ company: detail }), {
-        status: 200,
-        headers: { "content-type": "application/json" },
-      }),
-    );
-
-    await expect(fetchCompanyDetail("company/1", controller.signal, fetcher)).resolves.toEqual(detail);
-    expect(fetcher).toHaveBeenCalledWith(
-      expect.stringContaining("/api/portfolio/company%2F1"),
-      { signal: controller.signal },
-    );
-  });
-
-  it("rejects failed and malformed responses so the drawer can offer retry", async () => {
-    const controller = new AbortController();
-    const failed = vi.fn(async () => new Response(null, { status: 503 }));
-    const malformed = vi.fn(async () => new Response(JSON.stringify({ data: null }), { status: 200 }));
-
-    await expect(fetchCompanyDetail("company-1", controller.signal, failed)).rejects.toThrow("status 503");
-    await expect(fetchCompanyDetail("company-1", controller.signal, malformed)).rejects.toThrow("include a company");
   });
 });

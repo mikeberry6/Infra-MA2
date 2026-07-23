@@ -16,7 +16,7 @@ describe("application security headers", () => {
     expect(headers["Content-Security-Policy"]).toContain("default-src 'self'");
     expect(headers["Content-Security-Policy"]).toContain("frame-ancestors 'none'");
     expect(headers["X-Content-Type-Options"]).toBe("nosniff");
-    expect(headers["Referrer-Policy"]).toBe("strict-origin-when-cross-origin");
+    expect(headers["Referrer-Policy"]).toBe("strict-origin");
     expect(headers["Permissions-Policy"]).toContain("camera=()");
     expect(headers["X-Frame-Options"]).toBe("DENY");
   });

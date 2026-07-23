@@ -1,6 +1,7 @@
 import { execFileSync } from "node:child_process";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { withServerTask } from "../src/lib/server-log.ts";
 import {
   findSuccessfulGitHubActionsCheck,
   type GitHubBranchPayload,
@@ -81,7 +82,6 @@ async function main() {
   console.log(`Release provenance verified: ${normalizedReleaseSha} is the protected ${branch} head and ${requiredCheck} succeeded.`);
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : error);
+withServerTask({ task: "release_provenance", operation: "verify_release_provenance" }, main).catch(() => {
   process.exitCode = 1;
 });

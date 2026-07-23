@@ -58,4 +58,26 @@ describe("weekly sync pipeline lifecycle", () => {
       /private\.example|secret/i,
     );
   });
+
+  it("preserves the sync failure when pipeline-failure recording also fails", async () => {
+    const primary = new Error("failed at https://private.example/deal?q=secret");
+    const bookkeeping = new Error("pipeline database unavailable with token=private");
+    const consoleError = vi.spyOn(console, "error").mockImplementation(() => {});
+
+    await expect(runWeeklySyncLifecycle({
+      weeklyCardCount: 1,
+      execute: async () => {
+        throw primary;
+      },
+      complete: vi.fn(),
+      fail: vi.fn().mockRejectedValue(bookkeeping),
+    })).rejects.toBe(primary);
+
+    expect(consoleError).toHaveBeenCalledTimes(1);
+    const serialized = String(consoleError.mock.calls[0]?.[0]);
+    expect(serialized).toContain('"task":"weekly_deal_sync"');
+    expect(serialized).toContain('"operation":"record_pipeline_failure"');
+    expect(serialized).not.toMatch(/private\.example|secret|token=private/i);
+    consoleError.mockRestore();
+  });
 });

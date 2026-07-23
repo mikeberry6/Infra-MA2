@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { track } from "@vercel/analytics";
 import {
   Briefcase,
   Clock,
@@ -17,10 +18,12 @@ import {
   getStrategyColor,
 } from "@/lib/colors";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
+import { useDrawerShellTiming } from "@/hooks/useDrawerShellTiming";
 import type {
   CompanyView,
   FundStrategyView,
   MilestoneView,
+  RecordMeta,
 } from "@/modules/shared/types";
 
 const MONTHS: Record<string, number> = {
@@ -77,6 +80,17 @@ function milestoneSortKey(milestone: MilestoneView): number {
   return year ? Number(year[1]) * 10_000 : 0;
 }
 
+function verificationDate(value: string): string {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime())
+    ? "Not recorded"
+    : date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+}
+
 function DarkSurfaceTag({
   label,
   color,
@@ -108,11 +122,11 @@ function DetailStateNotice({
   state,
   onRetry,
 }: {
-  state: "idle" | "loading" | "success" | "error";
+  state: "idle" | "loading" | "ready" | "error";
   onRetry?: () => void;
 }) {
-  if (state === "success") return null;
-  if (state === "idle" || state === "loading") {
+  if (state === "ready" || state === "idle") return null;
+  if (state === "loading") {
     return (
       <div
         role="status"
@@ -123,7 +137,7 @@ function DetailStateNotice({
           aria-hidden
           className="h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-[#3F3F46] border-t-[#818CF8]"
         />
-        Loading complete company detail…
+        Loading the latest verified detail…
       </div>
     );
   }
@@ -132,14 +146,13 @@ function DetailStateNotice({
       role="alert"
       className="mx-4 mt-4 flex items-center justify-between gap-3 rounded-[4px] border border-[#7F1D1D] bg-[#450A0A]/40 px-4 py-3 text-sm-dense text-[#FECACA] sm:mx-6 lg:mx-8"
     >
-      <span>Company detail is temporarily unavailable. Showing the list record.</span>
+      <span>Latest detail could not be loaded. Showing the list record.</span>
       {onRetry && (
         <Button
           type="button"
           variant="ghost"
           size="sm"
           onClick={onRetry}
-          aria-label="Retry detail request"
           className="!text-[#FECACA] hover:!bg-white/10 hover:!text-white"
         >
           Retry
@@ -153,18 +166,21 @@ export function PortCoDrawer({
   company,
   funds,
   onClose,
-  detailStatus = "success",
+  detailState = "ready",
   onRetry,
+  detailMeta,
 }: {
   company: CompanyView;
   funds: FundStrategyView[];
   onClose: () => void;
-  detailStatus?: "idle" | "loading" | "success" | "error";
+  detailState?: "idle" | "loading" | "ready" | "error";
   onRetry?: () => void;
+  detailMeta?: RecordMeta | null;
 }) {
   const [showAllMilestones, setShowAllMilestones] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
   useDialogFocus(drawerRef);
+  useDrawerShellTiming("company", company.id);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -230,7 +246,7 @@ export function PortCoDrawer({
         role="dialog"
         aria-modal="true"
         aria-labelledby="portco-drawer-title"
-        aria-busy={detailStatus === "idle" || detailStatus === "loading"}
+        aria-busy={detailState === "loading"}
         tabIndex={-1}
         className="fixed bottom-0 right-0 top-0 z-50 w-full max-w-lg overflow-y-auto border-l border-[#27272A] bg-[#09090B] shadow-overlay animate-slide-in-right lg:max-w-xl xl:max-w-2xl"
       >
@@ -297,7 +313,22 @@ export function PortCoDrawer({
           </div>
         </header>
 
-        <DetailStateNotice state={detailStatus} onRetry={onRetry} />
+        <DetailStateNotice state={detailState} onRetry={onRetry} />
+        {detailMeta && (
+          <div className="mx-4 mt-3 text-micro text-[#A1A1AA] sm:mx-6 lg:mx-8">
+            Last verified{" "}
+            <span className="mono tabular-nums text-[#EDEDED]">
+              {detailMeta.lastVerifiedAt
+                ? verificationDate(detailMeta.lastVerifiedAt)
+                : "Not recorded"}
+            </span>
+            {" · "}
+            <span className="mono tabular-nums text-[#EDEDED]">
+              {detailMeta.sourceCount}
+            </span>
+            {" "}source{detailMeta.sourceCount === 1 ? "" : "s"}
+          </div>
+        )}
 
         <div className="space-y-6 p-4 sm:p-6 lg:space-y-8 lg:p-8">
           <section aria-labelledby="investment-details-heading">
@@ -365,6 +396,10 @@ export function PortCoDrawer({
                         href={source.url}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => track("source_link_clicked", {
+                          entity: "company",
+                          placement: "drawer",
+                        })}
                         className="group flex min-h-6 items-center gap-2 rounded-sm py-1 text-[#A1A1AA] transition-colors hover:text-[#818CF8] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#818CF8]"
                       >
                         <ExternalLink className="h-3 w-3 shrink-0 transition-colors" />

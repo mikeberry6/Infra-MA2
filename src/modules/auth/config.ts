@@ -3,6 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { normalizeNextAuthRedirect } from "@/lib/base-path";
 import { prisma } from "@/lib/prisma";
+import { logServerOperation } from "@/lib/server-log";
 import {
   clearLoginThrottle,
   isLoginThrottled,
@@ -14,6 +15,29 @@ import { PRIVILEGED_SESSION_MAX_AGE_SECONDS } from "@/modules/auth/session";
 const DUMMY_PASSWORD_HASH = "$2b$12$jO.JJSOjJqs4/KuQ7eKiNe2n89mzPsIrPUQZq3FjGA4QTmutfH8Ci";
 
 export const authOptions: NextAuthOptions = {
+  logger: {
+    error() {
+      logServerOperation({
+        task: "nextauth",
+        operation: "auth_library_error",
+        durationMs: 0,
+        status: 500,
+        errorClassification: "internal_error",
+      });
+    },
+    warn() {
+      logServerOperation({
+        task: "nextauth",
+        operation: "auth_library_warning",
+        durationMs: 0,
+        status: 400,
+        errorClassification: "validation_error",
+      });
+    },
+    debug() {
+      // Debug metadata can include auth-library internals and is not emitted.
+    },
+  },
   providers: [
     CredentialsProvider({
       name: "Credentials",

@@ -172,8 +172,8 @@ jobs:
             --yes
           VERCEL_CLI_CWD="$candidate_link_dir" node scripts/release-smoke.mjs \
             --base-url="$DEPLOYMENT_URL" \
+            --expected-version="$RELEASE_SHA" \
             --transport=vercel-cli \
-            --skip-health \
             --output=tmp/release/candidate-smoke.json
 
       - name: Prove production database target
@@ -254,7 +254,7 @@ jobs:
             --output=tmp/release/canonical-production-inspect.json
           node scripts/release-smoke.mjs \
             --base-url="$PRODUCTION_URL" \
-            --skip-health \
+            --expected-version="$RELEASE_SHA" \
             --output=tmp/release/production-smoke.json
 
       - name: Upload immutable release evidence

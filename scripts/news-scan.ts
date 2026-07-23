@@ -8,7 +8,11 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
 import { fetchPublicText } from "../src/lib/server/public-network-fetch";
 import { SafeOperationalError } from "../src/lib/safe-error";
-import { reportSafeScriptError } from "../src/lib/safe-error";
+import { withServerTask } from "../src/lib/server-log";
+import {
+  reportSuppressedTaskFailure,
+  runWithPreservedCleanup,
+} from "../src/lib/task-cleanup";
 import {
   companyAliases,
   fundAliases,
@@ -392,14 +396,7 @@ async function main() {
   const rotationDate = parseNewsScanRotationDate(options.rotationDateUtc);
   if (!options.dryRun) assertMutationDatabaseTargetFromEnv();
   const prisma = createPrisma();
-  const pipelineRunId = options.dryRun ? null : await startPipelineRun(prisma, "NEWS_SCAN", {
-    refreshWindow: options.rotationDateUtc,
-    sourceCrawl: options.sourceCrawl,
-    newsSearch: options.newsSearch,
-    sinceDays: options.sinceDays ?? null,
-    rotationDateUtc: options.rotationDateUtc,
-    scanAsOfUtc: options.scanAsOfUtc,
-  });
+  let pipelineRunId: string | null = null;
   const summary: RunSummary = {
     runAt: runStartedAt.toISOString(),
     dryRun: options.dryRun,
@@ -452,8 +449,20 @@ async function main() {
     sampleCandidates: [],
   };
 
-  try {
-    const context = await buildTrackedContext(prisma, options, rotationDate);
+  const runScan = async () => {
+    try {
+    pipelineRunId = options.dryRun ? null : await startPipelineRun(prisma, "NEWS_SCAN", {
+      refreshWindow: options.rotationDateUtc,
+      sourceCrawl: options.sourceCrawl,
+      newsSearch: options.newsSearch,
+      sinceDays: options.sinceDays ?? null,
+      rotationDateUtc: options.rotationDateUtc,
+      scanAsOfUtc: options.scanAsOfUtc,
+    });
+    const context = await withServerTask({
+      task: "news_scan",
+      operation: "load_tracked_context",
+    }, () => buildTrackedContext(prisma, options, rotationDate));
     summary.tracked = {
       companies: context.counts.companies,
       fundManagers: context.counts.fundManagers,
@@ -476,22 +485,28 @@ async function main() {
     const extractedCandidates: ExtractedCandidate[] = [];
 
     if (options.sourceCrawl) {
-      const crawl = await crawlTrackedSources(
+      const crawl = await withServerTask({
+        task: "news_provider",
+        operation: "crawl_tracked_sources",
+      }, () => crawlTrackedSources(
         context.entities,
         context.candidates,
         context.candidateByKey,
         effectiveOptions,
-      );
+      ));
       summary.crawl = { ...summary.crawl, ...crawl.crawlSummary };
       extractedCandidates.push(...crawl.candidates);
     }
 
     if (options.newsSearch) {
-      const search = await searchTrackedNews(
+      const search = await withServerTask({
+        task: "news_provider",
+        operation: "search_tracked_news",
+      }, () => searchTrackedNews(
         context.entities,
         context.candidates,
         effectiveOptions,
-      );
+      ));
       summary.search = { ...summary.search, ...search.searchSummary };
       extractedCandidates.push(...search.candidates);
     }
@@ -530,25 +545,63 @@ async function main() {
         skipped: summary.results.existingSourceUrlMatches + summary.results.outsideDateWindow,
       }, pipelineRunMetadata(summary, sourceCoverage, sourceHealth));
     }
-  } catch (error) {
-    if (pipelineRunId) {
-      const sourceCoverage = newsSourceCoverageFromSummary(summary);
-      const sourceHealth = assessNewsSourceCoverage(sourceCoverage, {
-        cappedByMaxPages: summary.crawl.cappedByMaxPages,
-        configuredBudgetExhausted: summary.crawl.configuredBudgetExhausted,
-        intentionalDeferral: summary.crawl.intentionallyDeferred,
-      });
-      await failPipelineRun(prisma, pipelineRunId, error, {
-        inserted: summary.results.created,
-        updated: summary.results.updated,
-        skipped: summary.results.existingSourceUrlMatches + summary.results.outsideDateWindow,
-      }, pipelineRunMetadata(summary, sourceCoverage, sourceHealth));
+    } catch (error) {
+      if (pipelineRunId) {
+        const sourceCoverage = newsSourceCoverageFromSummary(summary);
+        const sourceHealth = assessNewsSourceCoverage(sourceCoverage, {
+          cappedByMaxPages: summary.crawl.cappedByMaxPages,
+          configuredBudgetExhausted: summary.crawl.configuredBudgetExhausted,
+          intentionalDeferral: summary.crawl.intentionallyDeferred,
+        });
+        try {
+          await failPipelineRun(prisma, pipelineRunId, error, {
+            inserted: summary.results.created,
+            updated: summary.results.updated,
+            skipped: summary.results.existingSourceUrlMatches + summary.results.outsideDateWindow,
+          }, pipelineRunMetadata(summary, sourceCoverage, sourceHealth));
+        } catch (pipelineError) {
+          reportSuppressedTaskFailure({
+            task: "news_scan",
+            operation: "record_pipeline_failure",
+          }, pipelineError);
+        }
+      }
+      throw error;
     }
-    throw error;
-  } finally {
-    await writeSummary(summary);
-    await prisma.$disconnect();
-  }
+  };
+
+  const cleanupErrors: Array<{ operation: string; error: unknown }> = [];
+  await runWithPreservedCleanup({
+    run: runScan,
+    cleanup: async () => {
+      try {
+        await writeSummary(summary);
+      } catch (error) {
+        cleanupErrors.push({ operation: "write_summary", error });
+      }
+      try {
+        await prisma.$disconnect();
+      } catch (error) {
+        cleanupErrors.push({ operation: "disconnect_database", error });
+      }
+      if (cleanupErrors.length > 0) {
+        throw cleanupErrors.length === 1
+          ? cleanupErrors[0].error
+          : new AggregateError(
+              cleanupErrors.map((cleanup) => cleanup.error),
+              "News scan cleanup failed.",
+            );
+      }
+    },
+    onSuppressedCleanupError: () => {
+      for (const cleanup of cleanupErrors) {
+        reportSuppressedTaskFailure({
+          task: "news_scan_cleanup",
+          operation: cleanup.operation,
+        }, cleanup.error);
+      }
+    },
+  });
 
   console.log("News scan completed; review tmp/news-scan-summary.json.");
 }
@@ -2231,7 +2284,9 @@ async function writeSummary(summary: RunSummary) {
   );
 }
 
-main().catch((error) => {
-  reportSafeScriptError("news_scan", error);
-  process.exit(1);
+withServerTask({
+  task: "news_scan",
+  operation: "run_news_scan",
+}, main).catch(() => {
+  process.exitCode = 1;
 });

@@ -2,11 +2,22 @@
 
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
-import { getSessionIdentity, isAuthorizationError, requireAdmin } from "@/modules/auth/guards";
+import {
+  AuthorizationError,
+  getSessionIdentity,
+  isAuthorizationError,
+  requireAdmin,
+} from "@/modules/auth/guards";
 import { recordAuditEvent } from "@/modules/operations/audit";
 import type { DashboardSignalReviewStatus } from "@/generated/prisma/client";
 import { dashboardSignalContentHash } from "@/modules/dashboard/content-hash";
-import { AdminActionUserError, adminActionErrorMessage } from "@/modules/admin/action-error";
+import { currentServerRequestId } from "@/lib/server-request-context";
+import { logServerFailure } from "@/lib/server-log";
+import {
+  AdminActionUserError,
+  adminActionErrorMessage,
+  adminActionLogOutcome,
+} from "@/modules/admin/action-error";
 import { changedFieldSummary } from "@/modules/admin/change-summary";
 import { dashboardSignalNeedsReview } from "@/modules/dashboard/review-queue";
 
@@ -47,7 +58,7 @@ async function reviewDashboardSignal(
   try {
     await requireAdmin();
     const identity = await getSessionIdentity();
-    if (!identity) return { success: false, error: "Forbidden" };
+    if (!identity) throw new AuthorizationError();
 
     await prisma.$transaction(async (tx) => {
       const signal = await tx.dashboardSignal.findUnique({
@@ -148,6 +159,17 @@ async function reviewDashboardSignal(
     revalidatePath("/admin/dashboard-signals");
     return { success: true };
   } catch (error) {
+    const authorizationError = isAuthorizationError(error);
+    const requestId = await currentServerRequestId();
+    const outcome = adminActionLogOutcome(error, { authorizationError });
+    logServerFailure({
+      task: "dashboard_admin_action",
+      operation: authorizationError
+        ? "authorize_dashboard_admin_action"
+        : "review_dashboard_signal",
+      requestId,
+      ...outcome,
+    }, error);
     return {
       success: false,
       error: isAuthorizationError(error)

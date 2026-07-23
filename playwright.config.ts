@@ -1,5 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
 import { assertIsolatedWriteTarget } from "./tests/e2e/isolation-guard";
+import { resolvePlaywrightCacheNamespace } from "./scripts/playwright-cache-namespace";
 
 const port = Number(process.env.E2E_PORT || 3100);
 const configuredUrl = process.env.PLAYWRIGHT_BASE_URL;
@@ -7,6 +8,7 @@ const baseURL = configuredUrl ? new URL(configuredUrl).origin : `http://127.0.0.
 const basePath = process.env.E2E_BASE_PATH || "/Infra-MA2";
 const authUrl = `${baseURL}${basePath}/api/auth`;
 const isolatedDatabaseConfigured = Boolean(process.env.E2E_DATABASE_URL);
+const dataCacheNamespace = resolvePlaywrightCacheNamespace(process.env, port);
 
 // Validate before Playwright starts the application. A rejected database host
 // therefore cannot even become the runtime target of the local test server.
@@ -60,6 +62,7 @@ export default defineConfig({
           DATABASE_URL: process.env.E2E_DATABASE_URL || process.env.DATABASE_URL || "",
           NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET || "e2e-only-secret-change-before-production",
           NEXTAUTH_URL: authUrl,
+          DATA_CACHE_NAMESPACE: dataCacheNamespace,
         },
       },
 });

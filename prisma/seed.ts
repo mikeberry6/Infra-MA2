@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { assertNonProductionSeedTarget } from "../src/lib/database-target";
-import { reportSafeScriptError } from "../src/lib/safe-error";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { deals } from "./seed-data/deals";
@@ -48,14 +49,21 @@ import type {
   SourceType,
 } from "../src/generated/prisma/client";
 
-assertNonProductionSeedTarget();
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
-const prisma = new PrismaClient({ adapter });
+let prisma: PrismaClient;
 
 // ── Helpers ─────────────────────────────────────────────────
 
 function safeEnum<T>(map: Record<string, T>, value: string, fallback: T): T {
   return map[value] ?? fallback;
+}
+
+function isPrismaUniqueConstraint(error: unknown): boolean {
+  return Boolean(
+    error
+    && typeof error === "object"
+    && "code" in error
+    && (error as { code?: unknown }).code === "P2002",
+  );
 }
 
 function parseDateSafe(dateStr: string | null): Date | null {
@@ -295,14 +303,15 @@ async function main() {
 
       companyIdMap.set(companyKey, company.id);
       companyCount++;
-    } catch (err: any) {
-      if (err.code === "P2002") {
+    } catch (error: unknown) {
+      if (isPrismaUniqueConstraint(error)) {
         const existing = await prisma.company.findFirst({
           where: { name: pc.name, country: pc.country },
         });
-        if (existing) companyIdMap.set(companyKey, existing.id);
+        if (!existing) throw error;
+        companyIdMap.set(companyKey, existing.id);
       } else {
-        reportSafeScriptError("database_seed:create_company", err);
+        throw error;
       }
     }
   }
@@ -351,10 +360,8 @@ async function main() {
         },
       });
       ownershipCount++;
-    } catch (err: any) {
-      if (err.code !== "P2002") {
-        reportSafeScriptError("database_seed:create_ownership", err);
-      }
+    } catch (error: unknown) {
+      if (!isPrismaUniqueConstraint(error)) throw error;
     }
   }
 
@@ -560,10 +567,8 @@ async function main() {
             },
           });
           participantCount++;
-        } catch (err: any) {
-          if (err.code !== "P2002") {
-            reportSafeScriptError("database_seed:create_deal_participant", err);
-          }
+        } catch (error: unknown) {
+          if (!isPrismaUniqueConstraint(error)) throw error;
         }
         return;
       }
@@ -578,10 +583,8 @@ async function main() {
           },
         });
         participantCount++;
-      } catch (err: any) {
-        if (err.code !== "P2002") {
-          reportSafeScriptError("database_seed:create_deal_participant", err);
-        }
+      } catch (error: unknown) {
+        if (!isPrismaUniqueConstraint(error)) throw error;
       }
     }
 
@@ -681,8 +684,8 @@ async function main() {
         data: { sourceId, dealId, isPrimary: true },
       });
       citationCount++;
-    } catch {
-      // Skip duplicates
+    } catch (error: unknown) {
+      if (!isPrismaUniqueConstraint(error)) throw error;
     }
   }
 
@@ -706,8 +709,8 @@ async function main() {
           data: { sourceId, companyId, purpose, evidenceLabel, isPrimary: sourceIndex === 0 },
         });
         citationCount++;
-      } catch {
-        // Skip duplicates
+      } catch (error: unknown) {
+        if (!isPrismaUniqueConstraint(error)) throw error;
       }
     }
   }
@@ -739,11 +742,22 @@ async function main() {
   console.log(`  Citations: ${citationCount}`);
 }
 
-main()
-  .catch((error) => {
-    reportSafeScriptError("database_seed", error);
+async function runTask() {
+  assertNonProductionSeedTarget();
+  const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
+  const client = new PrismaClient({ adapter });
+  prisma = client;
+  await runWithPreservedCleanup({
+    run: main,
+    cleanup: () => client.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "database_seed_cleanup",
+      operation: "disconnect_database",
+    }, error),
+  });
+}
+
+withServerTask({ task: "database_seed", operation: "seed_database" }, runTask)
+  .catch(() => {
     process.exitCode = 1;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
   });
