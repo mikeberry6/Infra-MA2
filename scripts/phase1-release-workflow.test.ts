@@ -8,6 +8,7 @@ describe("Phase 2 release gate", () => {
     expect(workflow).toContain('- "main"');
     expect(workflow).toContain('- "codex/infra-90-day-phase-1-stabilize"');
     expect(workflow).toContain('- "codex/infra-90-day-phase-2-data-trust"');
+    expect(workflow).toContain('- "codex/infra-90-day-phase-3-product-ux"');
   });
 
   it("preserves the Node 24 clean-checkout quality baseline", () => {
@@ -23,6 +24,7 @@ describe("Phase 2 release gate", () => {
       "npm run validate-portfolios",
       "npm run audit:prod",
       "npm run build",
+      "npm run check:bundle-budget",
     ]) {
       expect(workflow).toContain(contract);
     }
@@ -39,15 +41,12 @@ describe("Phase 2 release gate", () => {
     expect(workflow).toContain("--to-config-datasource");
   });
 
-  it("adds Phase 2 trust gates without pulling in Phase 3 or Phase 4 contracts", () => {
+  it("preserves the Phase 2 trust gates alongside additive later-phase checks", () => {
     expect(workflow).toContain("source-coverage-report");
     expect(workflow).toContain("report-company-merge-candidates");
-    for (const laterPhaseContract of [
-      "playwright",
-      "bundle-budget",
-      "/api/health",
-    ]) {
-      expect(workflow).not.toContain(laterPhaseContract);
-    }
+    expect(workflow).toContain("bundle-budget");
+    expect(workflow).toContain("E2E_DATABASE_URL");
+    expect(workflow).toContain("playwright install --with-deps chromium");
+    expect(workflow).toContain("npm run test:e2e");
   });
 });

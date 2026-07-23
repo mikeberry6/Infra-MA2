@@ -1,8 +1,14 @@
 "use client";
 
 import { Mail } from "lucide-react";
+import { ResearchContactLink } from "@/components/ResearchContactLink";
+import type { ProductEventProperties } from "@/lib/analytics-contract";
 
-export function CTABlock() {
+export function CTABlock({
+  surface,
+}: {
+  surface: ProductEventProperties["research_contact_initiated"]["surface"];
+}) {
   return (
     <div className="my-8">
       <div className="surface px-5 py-6 sm:px-8 sm:py-7">
@@ -20,13 +26,14 @@ export function CTABlock() {
               or package the evidence behind a transaction, fund, or portfolio company.
             </p>
           </div>
-          <a
-            href="mailto:research@infrasight.com?subject=InfraSight%20research%20request"
+          <ResearchContactLink
+            surface={surface}
+            subject="InfraSight research request"
             className="inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md bg-[var(--accent)] px-3.5 type-meta font-medium text-[var(--text-on-accent)] transition-colors hover:bg-[var(--accent-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
           >
             <Mail className="h-3.5 w-3.5" />
             Contact research
-          </a>
+          </ResearchContactLink>
         </div>
       </div>
     </div>

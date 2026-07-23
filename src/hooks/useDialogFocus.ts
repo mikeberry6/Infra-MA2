@@ -78,7 +78,11 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = previousOverflow;
       document.body.style.paddingRight = previousPaddingRight;
-      if (previousActive?.isConnected) {
+      if (
+        previousActive?.isConnected
+        && previousActive !== document.body
+        && previousActive !== document.documentElement
+      ) {
         previousActive.focus();
       } else {
         document.querySelector<HTMLElement>("#main-content")?.focus();

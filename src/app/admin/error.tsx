@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { Button } from "@/components/shared/Button";
 
 export default function AdminError({
@@ -10,10 +9,6 @@ export default function AdminError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  useEffect(() => {
-    console.error("Admin error:", error);
-  }, [error]);
-
   return (
     <div className="mx-auto max-w-[640px] px-4 sm:px-6 py-12">
       <div className="surface px-6 py-7 sm:px-8 sm:py-8">
@@ -24,7 +19,7 @@ export default function AdminError({
           Admin action failed
         </h2>
         <p className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
-          {error.message || "Unknown error"}
+          The requested administration action could not be completed. Retry, or include the error ID below if one is shown.
         </p>
         {error.digest && (
           <p className="mt-3 mono text-[11px] text-[var(--text-tertiary)] tabular-nums">

@@ -1,13 +1,22 @@
 import { prisma } from "@/lib/prisma";
 import { unstable_cache } from "next/cache";
 import { CACHE_REVALIDATE_SECONDS, CACHE_TAGS } from "@/lib/cache-tags";
+import { dataCacheKeyParts } from "@/lib/data-cache-namespace";
 import {
   COMPANY_SECTOR_DISPLAY,
   COMPANY_REGION_DISPLAY,
   COMPANY_STATUS_DISPLAY,
   MILESTONE_CATEGORY_DISPLAY,
 } from "@/modules/shared/enum-maps";
-import type { CompanyView, MilestoneView, ExecutiveView, SourceView, OwnerView } from "@/modules/shared/types";
+import type {
+  CompanyDetail,
+  CompanyListItem,
+  DetailResponse,
+  ExecutiveView,
+  MilestoneView,
+  OwnerView,
+  SourceView,
+} from "@/modules/shared/types";
 import type { Prisma } from "@/generated/prisma/client";
 import { companyDedupKeys, groupByDedupKeys, preferredDisplayName } from "@/lib/company-key";
 import { ACTIVE_COMPANY_WHERE } from "@/modules/companies/retirement";
@@ -173,7 +182,7 @@ function dedupeMilestoneViews(milestones: MilestoneView[]): MilestoneView[] {
   return kept.sort((a, b) => milestoneSortKey(b) - milestoneSortKey(a));
 }
 
-function toCompanyView(company: any): CompanyView {
+function toCompanyView(company: any): CompanyDetail {
   // Map every ownership period to an OwnerView, then sort: active first,
   // then by investmentYear descending. The first entry becomes the "primary"
   // owner whose values are projected onto the scalar legacy fields below
@@ -326,13 +335,25 @@ const COMPANY_LIST_SELECT = {
 // ", LLC", parenthetical aliases like " (ASTP)", punctuation drift. We dedupe
 // at the view layer using `canonicalCompanyKey` so the UI shows one card per
 // real company without a destructive DB change.
-function mergeByCanonicalKey(views: CompanyView[]): CompanyView {
+function mergeByCanonicalKey(
+  views: CompanyDetail[],
+  preferredSpineId?: string,
+): CompanyDetail {
   if (views.length === 1) return views[0];
   // Pick the row with the most ownership periods as the "spine" (its scalar
-  // fields propagate). Ties go to the longer description.
-  const spine = [...views].sort((a, b) => {
+  // fields propagate). Every tie-break field is present in both the minimal
+  // list projection and full detail projection so the list ID, detail
+  // canonicalId, and client cache key cannot diverge. Prefer the row that owns
+  // redirects, then the stable lexical database ID.
+  const preferredSpine = preferredSpineId
+    ? views.find((view) => view.id === preferredSpineId)
+    : undefined;
+  const spine = preferredSpine ?? [...views].sort((a, b) => {
     if (b.owners.length !== a.owners.length) return b.owners.length - a.owners.length;
-    return (b.description?.length ?? 0) - (a.description?.length ?? 0);
+    const aRedirectCount = a.focusIds.filter((id) => id !== a.id).length;
+    const bRedirectCount = b.focusIds.filter((id) => id !== b.id).length;
+    if (bRedirectCount !== aRedirectCount) return bRedirectCount - aRedirectCount;
+    return a.id.localeCompare(b.id);
   })[0];
 
   // Display name: prefer the longest user-friendly variant, not the spine's.
@@ -396,18 +417,25 @@ function mergeByCanonicalKey(views: CompanyView[]): CompanyView {
   };
 }
 
-async function getAllCompaniesRaw(options: { detail?: boolean } = {}): Promise<CompanyView[]> {
-  const companies = options.detail === false
-    ? await prisma.company.findMany({
-        where: { status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
-        select: COMPANY_LIST_SELECT,
-        orderBy: { name: "asc" },
-      })
-    : await prisma.company.findMany({
-        where: { status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
-        include: COMPANY_INCLUDE,
-        orderBy: { name: "asc" },
-      });
+function projectCompanyListItem(company: CompanyDetail): CompanyListItem {
+  return {
+    id: company.id,
+    focusIds: company.focusIds,
+    name: company.name,
+    investmentFirm: company.investmentFirm,
+    sector: company.sector,
+    subsector: company.subsector,
+    region: company.region,
+    country: company.country,
+    ownershipVehicle: company.ownershipVehicle,
+    status: company.status,
+    countryTags: company.countryTags,
+    investmentYear: company.investmentYear,
+    owners: company.owners,
+  };
+}
+
+function mergeCompanyRows(companies: any[]): CompanyDetail[] {
   const views = companies.map(toCompanyView);
   // Group by `companyDedupKeys(name)` via union-find — two views collapse if
   // any of their canonical keys overlap. Country is intentionally NOT part of
@@ -418,81 +446,143 @@ async function getAllCompaniesRaw(options: { detail?: boolean } = {}): Promise<C
   // produced the visible duplicates the user flagged.
   const groups = groupByDedupKeys(views, (v) => companyDedupKeys(v.name));
   return groups
-    .map(mergeByCanonicalKey)
+    .map((group) => mergeByCanonicalKey(group))
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
-const getAllCompaniesListCached = unstable_cache(
-  () => getAllCompaniesRaw({ detail: false }),
-  ["companies:all:list"],
-  { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
-);
-
-const getAllCompaniesDetailCached = unstable_cache(
-  () => getAllCompaniesRaw({ detail: true }),
-  ["companies:all:detail"],
-  { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
-);
-
-export async function getAllCompanies(options: { detail?: boolean } = {}): Promise<CompanyView[]> {
-  return options.detail === false
-    ? getAllCompaniesListCached()
-    : getAllCompaniesDetailCached();
-}
-
-async function getCompanyByFocusIdRaw(focusId: string): Promise<CompanyView | null> {
-  // Redirect identity wins even while the old Company row is retained as a
-  // rollback-compatibility tombstone for the prior application release.
-  const redirect = await prisma.companyRedirect.findUnique({
-    where: { retiredId: focusId },
-    select: { company: { select: { id: true, status: true } } },
-  });
-  const direct = redirect ? null : await prisma.company.findFirst({
-    where: { id: focusId, status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
-    select: { id: true },
-  });
-  const targetId = redirect?.company.status === "PUBLISHED"
-    ? redirect.company.id
-    : direct?.id ?? null;
-  if (!targetId) return null;
-
-  // Find dedupe siblings without loading every company's milestones, sources,
-  // and management. This keeps the detail endpoint scoped to one company
-  // cluster while preserving the existing view-layer merge semantics.
-  const rows = await prisma.company.findMany({
+async function getAllCompaniesRaw(): Promise<CompanyListItem[]> {
+  const companies = await prisma.company.findMany({
     where: { status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
-    select: { id: true, name: true },
+    select: COMPANY_LIST_SELECT,
     orderBy: { name: "asc" },
   });
-  const groups = groupByDedupKeys(rows, (row) => companyDedupKeys(row.name));
-  const siblingIds = groups.find((group) => group.some((row) => row.id === targetId))
-    ?.map((row) => row.id) ?? [targetId];
+  return mergeCompanyRows(companies).map(projectCompanyListItem);
+}
 
+const getAllCompaniesListCached = unstable_cache(
+  getAllCompaniesRaw,
+  dataCacheKeyParts("companies", "list"),
+  { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
+);
+
+async function getAllCompanyDetailsRaw(): Promise<CompanyDetail[]> {
   const companies = await prisma.company.findMany({
-    where: {
-      id: { in: siblingIds },
-      status: "PUBLISHED",
-      ...ACTIVE_COMPANY_WHERE,
-    },
+    where: { status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
     include: COMPANY_INCLUDE,
     orderBy: { name: "asc" },
   });
-
-  if (companies.length === 0) return null;
-  return mergeByCanonicalKey(companies.map(toCompanyView));
+  return mergeCompanyRows(companies);
 }
 
-const getCompanyByFocusIdCached = unstable_cache(
-  getCompanyByFocusIdRaw,
-  ["companies:by-focus"],
+const getAllCompaniesDetailCached = unstable_cache(
+  getAllCompanyDetailsRaw,
+  dataCacheKeyParts("companies", "export-details"),
   { tags: [CACHE_TAGS.companies], revalidate: CACHE_REVALIDATE_SECONDS },
 );
 
-export async function getCompanyByFocusId(focusId: string): Promise<CompanyView | null> {
-  return getCompanyByFocusIdCached(focusId);
+export async function getAllCompanies(): Promise<CompanyListItem[]> {
+  return getAllCompaniesListCached();
 }
 
-export async function getCompanyById(id: string): Promise<CompanyView | null> {
+/** Full published collection for authenticated exports. */
+export async function getAllCompanyDetails(): Promise<CompanyDetail[]> {
+  return getAllCompaniesDetailCached();
+}
+
+/**
+ * Resolve redirects first, then read the active published canonical group and
+ * metadata in one repeatable-read query-layer operation. The transaction keeps
+ * a concurrent publish/archive from mixing detail and provenance snapshots.
+ */
+export async function getCompanyDetailResponse(
+  focusId: string,
+): Promise<DetailResponse<CompanyDetail> | null> {
+  return prisma.$transaction(async (transaction) => {
+    const redirect = await transaction.companyRedirect.findUnique({
+      where: { retiredId: focusId },
+      select: {
+        company: {
+          select: {
+            id: true,
+            status: true,
+            retirement: { select: { retiredId: true } },
+          },
+        },
+      },
+    });
+
+    // A redirect is authoritative even if its target is no longer public. Do
+    // not fall back to a retained retired row from the previous release.
+    if (redirect && (
+      redirect.company.status !== "PUBLISHED" ||
+      redirect.company.retirement !== null
+    )) {
+      return null;
+    }
+
+    const direct = redirect ? null : await transaction.company.findFirst({
+      where: { id: focusId, status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
+      select: { id: true },
+    });
+    const targetId = redirect?.company.id ?? direct?.id ?? null;
+    if (!targetId) return null;
+
+    // Resolve only the view-layer canonical cluster, retaining the current
+    // grouping until Research approves destructive database merges.
+    const activeRows = await transaction.company.findMany({
+      where: { status: "PUBLISHED", ...ACTIVE_COMPANY_WHERE },
+      select: { id: true, name: true },
+      orderBy: { name: "asc" },
+    });
+    const groups = groupByDedupKeys(activeRows, (row) => companyDedupKeys(row.name));
+    const siblingIds = groups.find((group) => group.some((row) => row.id === targetId))
+      ?.map((row) => row.id) ?? [targetId];
+
+    const companies = await transaction.company.findMany({
+      where: {
+        id: { in: siblingIds },
+        status: "PUBLISHED",
+        ...ACTIVE_COMPANY_WHERE,
+      },
+      include: COMPANY_INCLUDE,
+      orderBy: { name: "asc" },
+    });
+    if (companies.length === 0) return null;
+
+    const detail = mergeByCanonicalKey(
+      companies.map(toCompanyView),
+      redirect ? targetId : undefined,
+    );
+    const updatedAt = companies.reduce(
+      (latest, company) => company.updatedAt > latest ? company.updatedAt : latest,
+      companies[0].updatedAt,
+    );
+    const lastVerifiedAt = companies.some((company) => company.lastVerifiedAt === null)
+      ? null
+      : companies.reduce<Date>(
+          (oldest, company) => company.lastVerifiedAt! < oldest
+            ? company.lastVerifiedAt!
+            : oldest,
+          companies[0].lastVerifiedAt!,
+        );
+
+    return {
+      data: detail,
+      meta: {
+        canonicalId: detail.id,
+        updatedAt: updatedAt.toISOString(),
+        lastVerifiedAt: lastVerifiedAt?.toISOString() ?? null,
+        sourceCount: detail.sources?.length ?? 0,
+      },
+    };
+  }, { isolationLevel: "RepeatableRead" });
+}
+
+export async function getCompanyByFocusId(focusId: string): Promise<CompanyDetail | null> {
+  return (await getCompanyDetailResponse(focusId))?.data ?? null;
+}
+
+export async function getCompanyById(id: string): Promise<CompanyDetail | null> {
   return getCompanyByFocusId(id);
 }
 

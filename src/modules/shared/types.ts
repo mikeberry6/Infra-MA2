@@ -4,64 +4,76 @@ import type { SourceFormat, SourcePurpose } from "@/lib/source-utils";
 
 export type { RecordStatus, UserRole } from "@/generated/prisma/client";
 
-// View model types used to pass data from Server Components to Client Components.
-// These mirror the TS-file interfaces so client components can switch from
-// importing static data to receiving props without changing their internal logic.
-
-export interface DealView {
+// Public list payloads intentionally contain only fields used by the index
+// table/cards and filters. Narrative, diligence, and advisor fields are loaded
+// from the corresponding detail endpoint when a drawer opens.
+export interface DealListItem {
   id: string;
   legacyId: string;
   title: string;
   target: string;
   buyer: string;
   seller: string;
-  sellerDisclosureStatus?: "DISCLOSED" | "NOT_DISCLOSED" | "NOT_APPLICABLE" | "LEGACY_UNREVIEWED";
-  sellerDisclosureReason?: string | null;
   sector: string;
   subsector: string;
   region: string;
   category: string[];
   date: string;
-  description: string;
-  targetDescription: string;
   sourceName: string;
   sourceUrl: string;
+  status: string;
+  country: string;
+}
+
+export interface DealDetail extends DealListItem {
+  sellerDisclosureStatus?: "DISCLOSED" | "NOT_DISCLOSED" | "NOT_APPLICABLE" | "LEGACY_UNREVIEWED";
+  sellerDisclosureReason?: string | null;
+  description: string;
+  targetDescription: string;
   enterpriseValue: string | null;
   equityValue: string | null;
   stake: string | null;
-  status: string;
   closingDate: string | null;
   financialAdvisorBuyer: string[] | null;
   financialAdvisorSeller: string[] | null;
   legalAdvisorBuyer: string[] | null;
   legalAdvisorSeller: string[] | null;
-  country: string;
   assetScale: string | null;
   valuationMultiple: string | null;
   fundVehicle: string | null;
   keyHighlights: string[] | null;
 }
 
-export interface FundView {
+/** Full-detail compatibility name used by admin forms and legacy utilities. */
+export type DealView = DealDetail;
+
+export interface FundListItem {
   id: string;
   legacyId: string;
   managerName: string;
   fundName: string;
-  ticker: string | null;
-  investmentStrategy: string;
-  sourceUrls: string[];
-  primarySourceUrl: string | null;
   size: string;
   sizeUsdMm: number | null;
   vintage: string;
   strategies: string[];
-  structure: string;
   status: string;
   sectors: string[];
+}
+
+export interface FundDetail extends FundListItem {
+  ticker: string | null;
+  investmentStrategy: string;
+  sourceUrls: string[];
+  primarySourceUrl: string | null;
+  structure: string;
   regions: string[];
   portfolioCompanies: PortfolioCompanyView[];
+  managerPortfolioCompanies: FundPortfolioCompanyView[];
   strategyUrl: string;
 }
+
+/** Full-detail compatibility name used by admin forms and legacy utilities. */
+export type FundView = FundDetail;
 
 export interface FundStrategyView {
   fundName: string;
@@ -80,6 +92,12 @@ export interface PortfolioCompanyView {
   exitYear?: number;
 }
 
+export interface FundPortfolioCompanyView {
+  company: PortfolioCompanyView;
+  fundName: string;
+  strategies: string[];
+}
+
 export interface OwnerView {
   firm: string;
   vehicle: string;
@@ -90,7 +108,7 @@ export interface OwnerView {
   stake?: string;
 }
 
-export interface CompanyView {
+export interface CompanyListItem {
   id: string;
   focusIds: string[];
   name: string;
@@ -100,18 +118,24 @@ export interface CompanyView {
   region: string;
   country: string;
   ownershipVehicle: string;
-  description: string;
   status: string;
   countryTags: string[];
+  investmentYear?: number;
+  owners: OwnerView[];
+}
+
+export interface CompanyDetail extends CompanyListItem {
+  description: string;
   website?: string;
   yearFounded?: number;
-  investmentYear?: number;
   headquarters?: string;
   milestones?: MilestoneView[];
   management?: ExecutiveView[];
   sources?: SourceView[];
-  owners: OwnerView[];
 }
+
+/** Full-detail compatibility name used by admin forms and legacy utilities. */
+export type CompanyView = CompanyDetail;
 
 export interface MilestoneView {
   date: string;
@@ -130,6 +154,18 @@ export interface SourceView {
   type?: SourceFormat;
   purpose?: SourcePurpose;
   evidenceLabel?: string;
+}
+
+export interface RecordMeta {
+  canonicalId: string;
+  updatedAt: string;
+  lastVerifiedAt: string | null;
+  sourceCount: number;
+}
+
+export interface DetailResponse<T> {
+  data: T;
+  meta: RecordMeta;
 }
 
 export interface DatabaseCounts {

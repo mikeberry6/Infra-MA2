@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import { Telemetry } from "@/components/Telemetry";
+import { ResearchContactLink } from "@/components/ResearchContactLink";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -48,12 +50,13 @@ export default function RootLayout({
                 <span className="font-medium text-[var(--text-secondary)]">InfraSight</span>
                 <span>· &copy; 2026</span>
               </div>
-              <a href="mailto:research@infrasight.com" className="hover:text-[var(--text-primary)] transition-colors">
+              <ResearchContactLink surface="footer" className="hover:text-[var(--text-primary)] transition-colors">
                 Contact research
-              </a>
+              </ResearchContactLink>
             </div>
           </div>
         </footer>
+        <Telemetry />
       </body>
     </html>
   );

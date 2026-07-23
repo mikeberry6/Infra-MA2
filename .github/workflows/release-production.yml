@@ -11,6 +11,14 @@ on:
         description: Ready Vercel deployment URL built from release_sha
         required: true
         type: string
+      production_app_sha:
+        description: Full canonical application SHA recorded in the candidate promotion baseline
+        required: true
+        type: string
+      production_deployment_id:
+        description: Immutable canonical deployment ID recorded in the candidate promotion baseline
+        required: true
+        type: string
       confirmation:
         description: Type PROMOTE to authorize schema-first production release
         required: true
@@ -49,6 +57,8 @@ jobs:
       EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
       RELEASE_SHA: ${{ inputs.release_sha }}
       DEPLOYMENT_URL: ${{ inputs.deployment_url }}
+      PRODUCTION_APP_SHA: ${{ inputs.production_app_sha }}
+      PRODUCTION_DEPLOYMENT_ID: ${{ inputs.production_deployment_id }}
       PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
       CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
       CONFIRMATION: ${{ inputs.confirmation }}
@@ -80,8 +90,20 @@ jobs:
             echo "::error::release_sha must be a full lowercase Git SHA."
             exit 1
           fi
+          if ! [[ "$PRODUCTION_APP_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::production_app_sha must be a full lowercase Git SHA."
+            exit 1
+          fi
+          if ! [[ "$PRODUCTION_DEPLOYMENT_ID" =~ ^dpl_[A-Za-z0-9]+$ ]]; then
+            echo "::error::production_deployment_id must be an immutable Vercel deployment ID."
+            exit 1
+          fi
           if [ "$(git rev-parse HEAD)" != "$RELEASE_SHA" ]; then
             echo "::error::Checked-out SHA does not match release_sha."
+            exit 1
+          fi
+          if ! git merge-base --is-ancestor "$PRODUCTION_APP_SHA" "$RELEASE_SHA"; then
+            echo "::error::production_app_sha must be an ancestor of release_sha."
             exit 1
           fi
 
@@ -178,7 +200,7 @@ jobs:
           VERCEL_CLI_CWD="$candidate_link_dir" node scripts/release-smoke.mjs \
             --base-url="$DEPLOYMENT_URL" \
             --transport=vercel-cli \
-            --skip-health \
+            --expected-version="$RELEASE_SHA" \
             --output=tmp/release/candidate-smoke.json
 
       - name: Prove production database target
@@ -231,9 +253,10 @@ jobs:
             --required-check=build \
             --output=tmp/release/release-provenance-before-promotion.json
 
-      - name: Reverify and promote the immutable validated deployment
+      - name: Reverify baseline and promote the immutable validated deployment
         shell: bash
         run: |
+          set -euo pipefail
           node --experimental-strip-types scripts/verify-vercel-deployment.ts \
             --deployment-url="$DEPLOYMENT_URL" \
             --expected-sha="$RELEASE_SHA" \
@@ -242,6 +265,18 @@ jobs:
             --team-id="$VERCEL_TEAM_ID" \
             --require-immutable-url \
             --output=tmp/release/candidate-inspect-before-promotion.json
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$PRODUCTION_URL" \
+            --expected-sha="$PRODUCTION_APP_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
+            --output=tmp/release/canonical-baseline-before-promotion.json
+          canonical_deployment_id="$(jq -r '.id' tmp/release/canonical-baseline-before-promotion.json)"
+          if [ "$canonical_deployment_id" != "$PRODUCTION_DEPLOYMENT_ID" ]; then
+            echo "::error::Canonical production changed after candidate validation; refusing to overwrite it."
+            exit 1
+          fi
           deployment_id="$(jq -r '.id' tmp/release/candidate-inspect-before-promotion.json)"
           [[ "$deployment_id" =~ ^dpl_[A-Za-z0-9]+$ ]] || { echo "::error::Verified deployment ID is invalid."; exit 1; }
           npx --yes vercel@51.7.0 promote "$deployment_id" \
@@ -259,7 +294,7 @@ jobs:
             --output=tmp/release/canonical-production-inspect.json
           node scripts/release-smoke.mjs \
             --base-url="$PRODUCTION_URL" \
-            --skip-health \
+            --expected-version="$RELEASE_SHA" \
             --output=tmp/release/production-smoke.json
 
       - name: Upload immutable release evidence

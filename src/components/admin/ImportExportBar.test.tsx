@@ -2,6 +2,7 @@ import { fireEvent, render, screen, waitFor, within } from "@testing-library/rea
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { AnchorHTMLAttributes, ReactNode } from "react";
+import { DETAIL_CACHE_INVALIDATION_EVENT } from "@/lib/detail-cache-events";
 
 vi.mock("@/lib/base-path", () => ({
   withBasePath: (path: string) => `/Infra-MA2${path}`,
@@ -39,6 +40,8 @@ describe("ImportExportBar", () => {
   });
 
   it("shows a detailed preview and only commits after explicit confirmation", async () => {
+    const invalidationListener = vi.fn();
+    window.addEventListener(DETAIL_CACHE_INVALIDATION_EVENT, invalidationListener);
     const fetchMock = vi.fn()
       .mockResolvedValueOnce(response({
         previewToken: "signed-preview-token",
@@ -114,6 +117,11 @@ describe("ImportExportBar", () => {
       "href",
       "/Infra-MA2/admin/audit?focus=audit-42",
     );
+    expect(invalidationListener).toHaveBeenCalledTimes(1);
+    expect((invalidationListener.mock.calls[0][0] as CustomEvent).detail).toEqual(
+      expect.objectContaining({ entity: "deal" }),
+    );
+    window.removeEventListener(DETAIL_CACHE_INVALIDATION_EVENT, invalidationListener);
   });
 
   it("does not offer a write when every valid row is quarantined", async () => {

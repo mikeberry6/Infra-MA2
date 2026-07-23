@@ -9,6 +9,7 @@ describe("protected production candidate workflow", () => {
     expect(workflow).toContain('if [ "$CONFIRMATION" != "BUILD_CANDIDATE" ]');
     expect(workflow).toContain('if [ "$(git rev-parse HEAD)" != "$RELEASE_SHA" ]');
     expect(workflow).toContain('if ! [[ "$PRODUCTION_APP_SHA" =~ ^[0-9a-f]{40}$ ]]');
+    expect(workflow).toContain('git merge-base --is-ancestor "$PRODUCTION_APP_SHA" "$RELEASE_SHA"');
     expect(workflow).toContain("--required-check=build");
     expect(workflow).toContain("environment: production");
     expect(workflow).toContain("group: production-release");
@@ -35,6 +36,9 @@ describe("protected production candidate workflow", () => {
     expect(workflow).toContain("tmp/candidate/candidate-smoke.json");
     expect(workflow).toContain("tmp/candidate/canonical-before-build.json");
     expect(workflow).toContain("tmp/candidate/canonical-after-build.json");
+    expect(workflow).toContain('if [ "$before_id" != "$after_id" ]');
+    expect(workflow).toContain("tmp/candidate/promotion-baseline.json");
+    expect(workflow).toContain("productionDeploymentId");
     expect(workflow.match(/--expected-sha=\"\$PRODUCTION_APP_SHA\"/g)).toHaveLength(2);
   });
 });

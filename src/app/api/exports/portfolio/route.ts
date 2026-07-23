@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAllCompanies } from "@/modules/companies/queries";
+import { getAllCompanyDetails } from "@/modules/companies/queries";
 import { toCsv } from "@/lib/csv";
 import { canExportData } from "@/modules/auth/guards";
+import { trackServerProductEvent } from "@/lib/server-product-analytics";
+import { SERVER_OPERATIONS, SERVER_ROUTES, withServerOperationLogging } from "@/lib/server-log";
+import { runWithServerRequestContext } from "@/lib/server-request-context";
 
 const PORTFOLIO_COLUMNS = [
   "name",
@@ -21,6 +24,14 @@ const PORTFOLIO_COLUMNS = [
 ];
 
 export async function GET(request: NextRequest) {
+  return runWithServerRequestContext(request.headers, () => withServerOperationLogging(
+    SERVER_ROUTES.exportPortfolio,
+    SERVER_OPERATIONS.exportRead,
+    () => getPortfolioExportResponse(request),
+  ));
+}
+
+async function getPortfolioExportResponse(request: NextRequest) {
   try {
     if (!(await canExportData())) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
@@ -30,7 +41,8 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const wantsJson = searchParams.get("format") === "json";
 
-    const companies = await getAllCompanies();
+    await trackServerProductEvent("export_started", { entity: "portfolio" });
+    const companies = await getAllCompanyDetails();
 
     if (wantsJson) {
       return NextResponse.json({
@@ -49,8 +61,7 @@ export async function GET(request: NextRequest) {
         "Content-Disposition": `attachment; filename="portfolio_export_${date}.csv"`,
       },
     });
-  } catch (error) {
-    console.error("Portfolio export failed:", error);
+  } catch {
     return NextResponse.json(
       { error: "Failed to export portfolio" },
       { status: 500 },

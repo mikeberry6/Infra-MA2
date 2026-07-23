@@ -2,10 +2,11 @@
 
 import { useState, useTransition } from "react";
 import { Button } from "@/components/shared/Button";
+import { invalidateDetailCache, type DetailCacheEntity } from "@/lib/detail-cache-events";
 
 interface RecordWorkflowButtonProps {
   id: string;
-  entity: "deal" | "fund" | "company";
+  entity: DetailCacheEntity;
   status: string;
   submitForReview: (id: string) => Promise<{ success: boolean; error?: string }>;
   publish: (id: string) => Promise<{ success: boolean; error?: string }>;
@@ -14,6 +15,7 @@ interface RecordWorkflowButtonProps {
 
 export default function RecordWorkflowButton({
   id,
+  entity,
   status,
   submitForReview,
   publish,
@@ -38,6 +40,7 @@ export default function RecordWorkflowButton({
             setError(null);
             const result = await action(id);
             if (!result.success) setError(result.error || "Workflow update failed");
+            else invalidateDetailCache(entity, id);
           });
         }}
       >

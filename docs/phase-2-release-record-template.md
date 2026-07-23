@@ -24,6 +24,7 @@
 - Vercel protected candidate-path preflight:
 - Candidate deployment ID / immutable URL:
 - Build Production Candidate run / artifact:
+- Candidate promotion baseline artifact / SHA / deployment ID:
 - Candidate project/team/repository/SHA verification:
 - Dashboard all-source audit artifact:
 - Dashboard live synchronization artifact:

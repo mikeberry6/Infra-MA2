@@ -20,6 +20,7 @@ import {
   SelectInput,
   TextArea,
 } from "@/components/shared/FormControls";
+import { invalidateDetailCache } from "@/lib/detail-cache-events";
 
 interface FundFormProps {
   initialData?: Partial<FundView>;
@@ -93,6 +94,7 @@ export default function FundForm({ initialData, action, mode }: FundFormProps) {
     startTransition(async () => {
       const result = await action(formData);
       if (result.success) {
+        invalidateDetailCache("fund", result.id);
         setMessage({ type: "success", text: mode === "create" ? "Fund created" : "Fund updated" });
         if (mode === "create") {
           router.push("/admin/funds");

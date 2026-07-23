@@ -24,6 +24,10 @@ if (!baseUrl) {
   console.error("--base-url is required.");
   process.exit(2);
 }
+if (expectedVersion && !/^[0-9a-f]{40}$/.test(expectedVersion)) {
+  console.error("--expected-version must be a full lowercase 40-character Git SHA.");
+  process.exit(2);
+}
 
 const origin = new URL(baseUrl).origin;
 const checks = [];
@@ -71,6 +75,7 @@ async function vercelCliRequest(url) {
       url: match[2],
       location,
       async json() { return JSON.parse(body); },
+      async text() { return body; },
     };
   } finally {
     await rm(requestDir, { recursive: true, force: true });
@@ -133,11 +138,50 @@ async function statusCheck(name, route, expectedStatus, expectedPaths = [`${base
   return response;
 }
 
-const rootPaths = [basePath];
-if (allowLegacyRoot) rootPaths.push(`${basePath}/tracker`);
-await statusCheck("canonical root", "/", 200, rootPaths);
+async function contentCheck(
+  name,
+  route,
+  requiredContent,
+  expectedPaths = [`${basePath}${route}`],
+) {
+  const response = await statusCheck(name, route, 200, expectedPaths);
+  const check = checks.at(-1);
+  const expectedContent = Array.isArray(requiredContent) ? requiredContent : [requiredContent];
+  try {
+    const body = await response.text();
+    check.expectedContent = expectedContent;
+    check.missingContent = expectedContent.filter((value) => !body.includes(value));
+    check.dataUnavailablePresent = body.includes("Data unavailable");
+    check.passed &&= check.missingContent.length === 0 && !check.dataUnavailablePresent;
+  } catch {
+    check.expectedContent = expectedContent;
+    check.missingContent = expectedContent;
+    check.dataUnavailablePresent = null;
+    check.passed = false;
+  }
+}
 
-for (const route of ["/tracker", "/funds", "/portfolio", "/news", "/dashboard", "/search", "/earnings", "/login"]) {
+const rootPaths = [`${basePath}/tracker`];
+if (allowLegacyRoot) rootPaths.push(basePath);
+await contentCheck("canonical root", "/", "Infrastructure Deal Tape", rootPaths);
+
+for (const [route, expectedText] of [
+  ["/tracker", ["Infrastructure Deal Tape", "data-deal-row-trigger"]],
+  ["/funds", [
+    "Infrastructure Fund Database",
+    allowLegacyRoot ? " fund details\"" : "data-fund-row-trigger",
+  ]],
+  ["/portfolio", [
+    "Infrastructure Portfolio Company Database",
+    allowLegacyRoot ? " company details\"" : "data-company-row-trigger",
+  ]],
+  ["/news", "Daily Intelligence Feed"],
+  ["/dashboard", "M&amp;A Conditions Dashboard"],
+]) {
+  await contentCheck(`public ${route}`, route, expectedText);
+}
+
+for (const route of ["/search", "/earnings", "/login"]) {
   await statusCheck(`public ${route}`, route, 200);
 }
 
@@ -152,7 +196,7 @@ if (!skipHealth) {
   }
   if (health) {
     checks.at(-1).passed &&= health.status === "healthy" && health.database === "connected";
-    if (expectedVersion) checks.at(-1).passed &&= health.version === expectedVersion.slice(0, 12);
+    if (expectedVersion) checks.at(-1).passed &&= health.version === expectedVersion;
   }
 }
 
@@ -160,7 +204,7 @@ const report = {
   generatedAt: new Date().toISOString(),
   origin,
   basePath,
-  expectedVersion: expectedVersion?.slice(0, 12) ?? null,
+  expectedVersion: expectedVersion ?? null,
   healthCheckSkipped: skipHealth,
   legacyRootAllowed: allowLegacyRoot,
   transport,

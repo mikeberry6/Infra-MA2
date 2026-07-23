@@ -8,6 +8,7 @@ on:
       - "main"
       - "codex/infra-90-day-phase-1-stabilize"
       - "codex/infra-90-day-phase-2-data-trust"
+      - "codex/infra-90-day-phase-3-product-ux"
 
 permissions:
   contents: read
@@ -94,6 +95,9 @@ jobs:
       - name: Build production application
         run: npm run build
 
+      - name: Enforce public JavaScript bundle budgets
+        run: npm run check:bundle-budget -- --output=tmp/ci/bundle-budget.json
+
       - name: Upload quality and migration evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -112,6 +116,7 @@ jobs:
       cancel-in-progress: false
     env:
       DATABASE_URL: ${{ secrets.PHASE2_MIGRATION_DATABASE_URL }}
+      E2E_DATABASE_URL: ${{ secrets.PHASE2_MIGRATION_DATABASE_URL }}
       EXPECTED_DATABASE_HOST: ${{ vars.PHASE2_MIGRATION_DATABASE_HOST }}
       EXPECTED_DATABASE_NAME: ${{ vars.PHASE2_MIGRATION_DATABASE_NAME }}
       FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
@@ -141,7 +146,7 @@ jobs:
             echo "checked_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           } > "$preflight_report"
           missing=0
-          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2; do
+          for name in DATABASE_URL E2E_DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2; do
             if [ -z "${!name:-}" ]; then
               echo "::error::$name is required for the non-production release gate."
               echo "missing=$name" >> "$preflight_report"
@@ -288,12 +293,23 @@ jobs:
       - name: Build against migrated Phase 2 validation database
         run: npm run build
 
+      - name: Install isolated-browser runtime
+        run: npx playwright install --with-deps chromium
+
+      - name: Run responsive, accessibility, and public-journey browser tests
+        env:
+          RELEASE_SHA: ${{ github.sha }}
+        run: npm run test:e2e
+
       - name: Upload migration and data evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: phase-2-validation-evidence-${{ github.run_id }}
-          path: tmp/ci/
+          path: |
+            tmp/ci/
+            playwright-report/
+            test-results/
           if-no-files-found: warn
           retention-days: 30
 

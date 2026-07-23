@@ -106,6 +106,12 @@ const SAFE_SYSTEM_CODES = new Set([
   "ENOTFOUND",
   "ETIMEDOUT",
 ]);
+const DATABASE_SCHEMA_READINESS_CODES = new Set([
+  "42P01", // PostgreSQL undefined_table
+  "42703", // PostgreSQL undefined_column
+  "P2021", // Prisma table does not exist
+  "P2022", // Prisma column does not exist
+]);
 
 export class SafeOperationalError extends Error {
   readonly safeCode: SafeOperationalErrorCode;
@@ -227,6 +233,15 @@ export function formatSafeErrorSummary(
   const details = getSafeErrorDetails(error, status, explicitClassification)
     ?? { classification: "internal_error" as const, message: CLASSIFICATION_MESSAGES.internal_error };
   return `${details.classification}: ${details.message}`;
+}
+
+/**
+ * Identify only the fixed database codes that mean the deployed application
+ * schema is not yet readable. No message parsing is used because driver
+ * messages can contain database, table, host, or query details.
+ */
+export function isDatabaseSchemaReadinessError(error: unknown): boolean {
+  return DATABASE_SCHEMA_READINESS_CODES.has(errorMetadata(error).code ?? "");
 }
 
 /**

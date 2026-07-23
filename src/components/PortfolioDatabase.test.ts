@@ -60,18 +60,41 @@ describe("portfolio URL result state", () => {
 describe("portfolio lazy detail request", () => {
   it("passes the AbortSignal and returns the company envelope", async () => {
     const controller = new AbortController();
-    const detail = { id: "company/1", name: "GridCo" };
+    const detail = {
+      id: "company/1",
+      focusIds: ["PORTCO-1"],
+      name: "GridCo",
+      investmentFirm: "Alpha Infrastructure",
+      sector: "Utilities",
+      subsector: "Electricity Networks",
+      region: "North America",
+      country: "United States",
+      ownershipVehicle: "Alpha Fund I",
+      status: "Active",
+      countryTags: ["United States"],
+      owners: [],
+      description: "GridCo operates electricity networks.",
+    };
+    const envelope = {
+      data: detail,
+      meta: {
+        canonicalId: "company/1",
+        updatedAt: "2026-07-22T12:00:00.000Z",
+        lastVerifiedAt: null,
+        sourceCount: 0,
+      },
+    };
     const fetcher = vi.fn(async (_input: RequestInfo | URL, init?: RequestInit) =>
-      new Response(JSON.stringify({ company: detail }), {
+      new Response(JSON.stringify(envelope), {
         status: 200,
         headers: { "content-type": "application/json" },
       }),
     );
 
-    await expect(fetchCompanyDetail("company/1", controller.signal, fetcher)).resolves.toEqual(detail);
+    await expect(fetchCompanyDetail("company/1", controller.signal, fetcher)).resolves.toEqual(envelope);
     expect(fetcher).toHaveBeenCalledWith(
       expect.stringContaining("/api/portfolio/company%2F1"),
-      { signal: controller.signal },
+      { cache: "no-store", signal: controller.signal },
     );
   });
 
@@ -81,6 +104,6 @@ describe("portfolio lazy detail request", () => {
     const malformed = vi.fn(async () => new Response(JSON.stringify({ data: null }), { status: 200 }));
 
     await expect(fetchCompanyDetail("company-1", controller.signal, failed)).rejects.toThrow("status 503");
-    await expect(fetchCompanyDetail("company-1", controller.signal, malformed)).rejects.toThrow("include a company");
+    await expect(fetchCompanyDetail("company-1", controller.signal, malformed)).rejects.toThrow("complete company envelope");
   });
 });
