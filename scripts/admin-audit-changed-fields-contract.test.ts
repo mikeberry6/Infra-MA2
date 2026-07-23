@@ -225,8 +225,16 @@ describe("admin audit changed-field contracts", () => {
     expect(script).toContain("citations: existing.citations.map");
     expect(script).toContain("changedFields: decision.changedFields");
     expect(script).toContain('if (decision.result === "skipped") return decision.result');
+    expect(script).toContain("assertWeeklyProposalIdentitySnapshot(");
+    expect(script).toContain("preserving the existing DRAFT for manual review");
+    expect(script).toContain("if (!isHttpUrl(weeklyDeal.sourceUrl))");
+    expect(script).toContain("isHttpUrl(seedDeal.sourceUrl) ? seedDeal : weeklyDeal");
+    expect(script).toContain("if (!isHttpUrl(deal.sourceUrl))");
     expect(script).toContain("runSerializableTransaction(");
     expect(script).toContain("{ maxAttempts: 3, maxWait: 10_000, timeout: 30_000 }");
+    expect(script).not.toContain("tx.deal.update(");
+    expect(script).not.toContain("tx.dealParticipant.deleteMany(");
+    expect(script).not.toContain("tx.citation.deleteMany(");
     expect(script).not.toContain('changedFields: ["record"');
   });
 

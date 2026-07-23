@@ -3,55 +3,29 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { deals, type Deal } from "../prisma/seed-data/deals";
 import { weeklyBriefingDeals } from "../prisma/seed-data/weekly-briefing-deals";
+import { WEEKLY_DEAL_SEED_LINEAGE } from "../prisma/seed-data/weekly-deal-lineage";
+import {
+  findWeeklySeedDeal,
+  weeklyDealIsCoveredByPersisted,
+  weeklyDealSourcesMatch,
+} from "../src/modules/operations/weekly-deal-identity";
 
 const EMAIL_DIR = join(process.cwd(), "public", "email-format");
 const WEEKLY_ISSUE_PATTERN = /^2026-\d{2}-\d{2}\.html$/;
-const MAX_DATE_DRIFT_MS = 14 * 24 * 60 * 60 * 1000;
+const PERSISTED_DEAL_IDENTITIES = deals.map((deal) => ({
+  legacyId: deal.id,
+  target: deal.target,
+  date: deal.date,
+  sourceUrl: deal.sourceUrl,
+}));
 
-function normalizeSourceUrl(value: string): string {
-  const raw = value.trim();
-  if (!raw || raw === "#") return "";
-
-  try {
-    const url = new URL(raw);
-    url.hash = "";
-    return decodeURI(url.toString()).replace(/\/$/, "").toLowerCase();
-  } catch {
-    return raw.replace(/\/$/, "").toLowerCase();
-  }
-}
-
-function normalizeTarget(value: string): string {
-  return value
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/\([^)]*\)/g, "")
-    .replace(/&/g, " and ")
-    .replace(/[^a-zA-Z0-9]+/g, " ")
-    .trim()
-    .replace(/\s+/g, " ")
-    .toLowerCase();
-}
-
-function targetsMatch(left: string, right: string): boolean {
-  const a = normalizeTarget(left);
-  const b = normalizeTarget(right);
-  if (!a || !b) return false;
-  if (a === b) return true;
-
-  const [shorter, longer] = a.length < b.length ? [a, b] : [b, a];
-  return shorter.length >= 4 && longer.includes(shorter);
-}
-
-function datesAreNear(left: string, right: string): boolean {
-  return Math.abs(new Date(left).getTime() - new Date(right).getTime()) <= MAX_DATE_DRIFT_MS;
-}
-
-function isWeeklyDealCovered(weeklyDeal: Deal, sourceUrls: Set<string>): boolean {
-  const sourceUrl = normalizeSourceUrl(weeklyDeal.sourceUrl);
-  if (sourceUrl && sourceUrls.has(sourceUrl)) return true;
-
-  return deals.some((deal) => targetsMatch(deal.target, weeklyDeal.target) && datesAreNear(deal.date, weeklyDeal.date));
+function isWeeklyDealCovered(weeklyDeal: Deal): boolean {
+  return weeklyDealIsCoveredByPersisted(
+    weeklyDeal,
+    PERSISTED_DEAL_IDENTITIES,
+    deals,
+    WEEKLY_DEAL_SEED_LINEAGE,
+  );
 }
 
 describe("weekly briefing deal coverage", () => {
@@ -65,11 +39,32 @@ describe("weekly briefing deal coverage", () => {
   });
 
   it("keeps every weekly briefing deal represented in the deal database", () => {
-    const sourceUrls = new Set(deals.map((deal) => normalizeSourceUrl(deal.sourceUrl)).filter(Boolean));
     const missing = weeklyBriefingDeals
-      .filter((deal) => !isWeeklyDealCovered(deal, sourceUrls))
+      .filter((deal) => !isWeeklyDealCovered(deal))
       .map((deal) => `${deal.id}: ${deal.target}`);
 
     expect(missing).toEqual([]);
+  });
+
+  it("binds every explicit lineage exception to one matching canonical seed", () => {
+    const weeklyById = new Map(weeklyBriefingDeals.map((deal) => [deal.id, deal]));
+    const seedById = new Map(deals.map((deal) => [deal.id, deal]));
+    const lineageEntries = Object.entries(WEEKLY_DEAL_SEED_LINEAGE);
+    expect(lineageEntries).toHaveLength(25);
+    expect(new Set(lineageEntries.map(([, seedId]) => seedId))).toHaveLength(25);
+
+    for (const [weeklyId, seedId] of lineageEntries) {
+      const weekly = weeklyById.get(weeklyId);
+      const seed = seedById.get(seedId);
+      expect(weekly, weeklyId).toBeDefined();
+      expect(seed, seedId).toBeDefined();
+      expect(weeklyDealSourcesMatch(weekly!, seed!)).toBe(false);
+      expect(findWeeklySeedDeal(weekly!, deals)).toBeNull();
+      expect(findWeeklySeedDeal(
+        weekly!,
+        deals,
+        WEEKLY_DEAL_SEED_LINEAGE,
+      )).toBe(seed);
+    }
   });
 });

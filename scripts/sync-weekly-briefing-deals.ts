@@ -8,13 +8,16 @@ import type {
   DealStatusEnum,
   OrgType,
   ParticipantRole,
+  RecordStatus,
 } from "../src/generated/prisma/client";
 import { resolveOrgName, getOrgType } from "../prisma/entity-resolution";
 import { logServerFailure, withServerTask } from "../src/lib/server-log";
 import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { SafeOperationalError } from "../src/lib/safe-error";
+import { isHttpUrl } from "../src/lib/source-utils";
 import { deals, type Deal } from "../prisma/seed-data/deals";
 import { weeklyBriefingDeals } from "../prisma/seed-data/weekly-briefing-deals";
+import { WEEKLY_DEAL_SEED_LINEAGE } from "../prisma/seed-data/weekly-deal-lineage";
 import {
   DEAL_CATEGORY_MAP,
   DEAL_REGION_MAP,
@@ -24,9 +27,13 @@ import {
 import { completePipelineRun, failPipelineRun, startPipelineRun } from "../src/modules/operations/pipeline-runs";
 import { assertMutationDatabaseTargetFromEnv } from "../src/lib/database-target";
 import {
-  resolveWeeklySeedDeal,
-  weeklyDealIdentitiesMatch,
+  assertGeneratedWeeklyCardCollisionSafe,
+  assertWeeklyProposalIdentitySnapshot,
+  weeklyDealIsCoveredByPersisted,
+  resolveWeeklyProposalIdentity,
+  resolveWeeklyProposalMatch,
   weeklyLegacyIdCollides,
+  weeklyProposalDisposition,
 } from "../src/modules/operations/weekly-deal-identity";
 import {
   runWeeklySyncLifecycle,
@@ -38,6 +45,7 @@ import { runSerializableTransaction } from "../src/modules/operations/serializab
 
 const applyChanges = process.argv.includes("--apply");
 const connectionString = process.env.DATABASE_URL;
+const WEEKLY_IDENTITY_DATE_DRIFT_MS = 14 * 24 * 60 * 60 * 1000;
 
 let prisma: PrismaClient | null = null;
 
@@ -51,6 +59,14 @@ type CoverageRow = {
   target: string;
   date: Date;
   sourceUrls: string[];
+  status: RecordStatus;
+  updatedAt: Date;
+};
+
+type SyncCandidate = {
+  deal: Deal;
+  weeklyCardIds: string[];
+  expectedPersisted: CoverageRow | null;
 };
 
 type ParticipantSeed = {
@@ -60,7 +76,12 @@ type ParticipantSeed = {
 };
 
 function isCovered(weeklyDeal: Deal, rows: CoverageRow[]): boolean {
-  return rows.some((row) => weeklyDealIdentitiesMatch(weeklyDeal, row));
+  return weeklyDealIsCoveredByPersisted(
+    weeklyDeal,
+    rows,
+    deals,
+    WEEKLY_DEAL_SEED_LINEAGE,
+  );
 }
 
 function issueId(deal: Deal): string {
@@ -73,10 +94,6 @@ function groupByIssue(items: Deal[]): Record<string, number> {
     counts[issue] = (counts[issue] ?? 0) + 1;
     return counts;
   }, {});
-}
-
-function resolveSeedDeal(weeklyDeal: Deal): Deal {
-  return resolveWeeklySeedDeal(weeklyDeal, deals);
 }
 
 function splitParticipants(value: string): string[] {
@@ -166,10 +183,125 @@ function dealPayload(deal: Deal) {
   };
 }
 
-async function syncDeal(deal: Deal): Promise<WeeklySyncResult> {
+function resolveSyncCandidate(
+  weeklyDeal: Deal,
+  persistedRows: CoverageRow[],
+): SyncCandidate {
+  if (!isHttpUrl(weeklyDeal.sourceUrl)) {
+    throw new Error(
+      `Cannot resolve a weekly proposal without a public HTTP(S) source for ${weeklyDeal.id}`,
+    );
+  }
+  const resolved = resolveWeeklyProposalIdentity(
+    weeklyDeal,
+    persistedRows,
+    deals,
+    WEEKLY_DEAL_SEED_LINEAGE,
+  );
+  const seedDeal = resolved.seed ?? weeklyDeal;
+  const sourceDeal = isHttpUrl(seedDeal.sourceUrl) ? seedDeal : weeklyDeal;
+
+  return {
+    deal: {
+      ...seedDeal,
+      id: resolved.legacyId,
+      sourceUrl: sourceDeal.sourceUrl,
+      sourceName: sourceDeal.sourceName,
+    },
+    weeklyCardIds: [weeklyDeal.id],
+    expectedPersisted: resolved.persisted,
+  };
+}
+
+function consolidateSyncCandidates(candidates: SyncCandidate[]): SyncCandidate[] {
+  const byLegacyId = new Map<string, SyncCandidate>();
+  for (const candidate of candidates) {
+    const existing = byLegacyId.get(candidate.deal.id);
+    if (!existing) {
+      byLegacyId.set(candidate.deal.id, candidate);
+      continue;
+    }
+
+    assertGeneratedWeeklyCardCollisionSafe(
+      candidate.deal.id,
+      existing.weeklyCardIds,
+      candidate.weeklyCardIds,
+    );
+    const compatible = resolveWeeklyProposalMatch(candidate.deal, [existing.deal]);
+    if (!compatible) {
+      throw new Error(
+        `Multiple weekly cards resolved incompatibly to proposal ID ${candidate.deal.id}`,
+      );
+    }
+    if (
+      existing.expectedPersisted?.legacyId
+        !== candidate.expectedPersisted?.legacyId
+      || existing.expectedPersisted?.status
+        !== candidate.expectedPersisted?.status
+      || existing.expectedPersisted?.updatedAt.getTime()
+        !== candidate.expectedPersisted?.updatedAt.getTime()
+    ) {
+      throw new Error(
+        `Multiple weekly cards resolved with incompatible persisted state for ${candidate.deal.id}`,
+      );
+    }
+    existing.weeklyCardIds.push(...candidate.weeklyCardIds);
+  }
+  return [...byLegacyId.values()];
+}
+
+async function syncDeal(
+  deal: Deal,
+  weeklyCardIds: string[],
+  expectedPersisted: CoverageRow | null,
+): Promise<WeeklySyncResult> {
+  if (!isHttpUrl(deal.sourceUrl)) {
+    throw new Error(
+      `Cannot sync weekly proposal ${deal.id} without a public HTTP(S) source`,
+    );
+  }
   return runSerializableTransaction(
     database(),
     async (tx) => {
+      const identityDate = new Date(deal.date);
+      if (Number.isNaN(identityDate.getTime())) {
+        throw new Error(`Invalid identity date for ${deal.id}`);
+      }
+      const identityRows = (await tx.deal.findMany({
+        where: {
+          OR: [
+            { legacyId: deal.id },
+            {
+              date: {
+                gte: new Date(identityDate.getTime() - WEEKLY_IDENTITY_DATE_DRIFT_MS),
+                lte: new Date(identityDate.getTime() + WEEKLY_IDENTITY_DATE_DRIFT_MS),
+              },
+            },
+          ],
+        },
+        select: {
+          legacyId: true,
+          target: true,
+          date: true,
+          status: true,
+          updatedAt: true,
+          citations: { select: { source: { select: { url: true } } } },
+        },
+      })).map((row) => ({
+        legacyId: row.legacyId,
+        target: row.target,
+        date: row.date,
+        status: row.status,
+        updatedAt: row.updatedAt,
+        sourceUrls: row.citations.map((citation) => citation.source.url),
+      }));
+      assertWeeklyProposalIdentitySnapshot(
+        deal,
+        deal.id,
+        expectedPersisted,
+        identityRows,
+      );
+
       const existing = await tx.deal.findUnique({
         where: { legacyId: deal.id },
         select: {
@@ -210,15 +342,18 @@ async function syncDeal(deal: Deal): Promise<WeeklySyncResult> {
           },
         },
       });
-      if (existing && weeklyLegacyIdCollides(deal, {
-        legacyId: deal.id,
-        target: existing.target,
-        date: existing.date,
-        sourceUrls: existing.citations.map((citation) => citation.source.url),
-      })) {
-        throw new Error(
-          `Refusing to reuse weekly legacy ID ${deal.id}: it belongs to ${existing.target}, not ${deal.target}`,
-        );
+      if (existing) {
+        const identityMatch = resolveWeeklyProposalMatch(deal, [{
+          legacyId: existing.legacyId,
+          target: existing.target,
+          date: existing.date,
+          sourceUrls: existing.citations.map((citation) => citation.source.url),
+        }]);
+        if (!identityMatch) {
+          throw new Error(
+            `Refusing to reuse resolved weekly proposal ID ${deal.id}: it belongs to ${existing.target}, not ${deal.target}`,
+          );
+        }
       }
       if (existing && existing.status !== "DRAFT") {
         throw new Error(
@@ -274,15 +409,15 @@ async function syncDeal(deal: Deal): Promise<WeeklySyncResult> {
         },
       );
       if (decision.result === "skipped") return decision.result;
-
-      const dbDeal = existing
-        ? await tx.deal.update({ where: { id: existing.id }, data: payload })
-        : await tx.deal.create({ data: { legacyId: deal.id, ...payload } });
-
       if (existing) {
-        await tx.dealParticipant.deleteMany({ where: { dealId: dbDeal.id } });
-        await tx.citation.deleteMany({ where: { dealId: dbDeal.id } });
+        throw new Error(
+          `${deal.id} differs from its generated proposal snapshot; preserving the existing DRAFT for manual review`,
+        );
       }
+
+      const dbDeal = await tx.deal.create({
+        data: { legacyId: deal.id, ...payload },
+      });
 
       const seenParticipants = new Set<string>();
       for (const participant of participantSeeds(deal)) {
@@ -339,36 +474,26 @@ async function syncDeal(deal: Deal): Promise<WeeklySyncResult> {
             type: "ARTICLE",
           },
         });
-        const existingCitation = await tx.citation.findFirst({
-          where: { dealId: dbDeal.id, sourceId: source.id },
-          select: { id: true },
+        await tx.citation.create({
+          data: { dealId: dbDeal.id, sourceId: source.id, isPrimary: true },
         });
-        await tx.citation.updateMany({
-          where: { dealId: dbDeal.id, isPrimary: true },
-          data: { isPrimary: false },
-        });
-        if (existingCitation) {
-          await tx.citation.update({
-            where: { id: existingCitation.id },
-            data: { isPrimary: true },
-          });
-        } else {
-          await tx.citation.create({
-            data: { dealId: dbDeal.id, sourceId: source.id, isPrimary: true },
-          });
-        }
       }
 
       await tx.auditEvent.create({
         data: {
           entityType: "Deal",
           entityId: dbDeal.id,
-          action: existing ? "WEEKLY_PROPOSAL_UPDATE" : "WEEKLY_PROPOSAL_CREATE",
+          action: "WEEKLY_PROPOSAL_CREATE",
           changes: {
             changedFields: decision.changedFields,
             resultingStatus: "DRAFT",
           },
-          metadata: { pipeline: "WEEKLY_DEAL_SYNC", legacyId: deal.id },
+          metadata: {
+            pipeline: "WEEKLY_DEAL_SYNC",
+            legacyId: deal.id,
+            resolvedProposalLegacyId: deal.id,
+            weeklyCardIds,
+          },
         },
       });
 
@@ -385,6 +510,8 @@ async function publishedCoverageRows(): Promise<CoverageRow[]> {
       legacyId: true,
       target: true,
       date: true,
+      status: true,
+      updatedAt: true,
       citations: { select: { source: { select: { url: true } } } },
     },
   });
@@ -392,6 +519,8 @@ async function publishedCoverageRows(): Promise<CoverageRow[]> {
     legacyId: row.legacyId,
     target: row.target,
     date: row.date,
+    status: row.status,
+    updatedAt: row.updatedAt,
     sourceUrls: row.citations.map((citation) => citation.source.url),
   }));
 }
@@ -402,6 +531,8 @@ async function persistedIdentityRows(): Promise<CoverageRow[]> {
       legacyId: true,
       target: true,
       date: true,
+      status: true,
+      updatedAt: true,
       citations: { select: { source: { select: { url: true } } } },
     },
   });
@@ -409,6 +540,8 @@ async function persistedIdentityRows(): Promise<CoverageRow[]> {
     legacyId: row.legacyId,
     target: row.target,
     date: row.date,
+    status: row.status,
+    updatedAt: row.updatedAt,
     sourceUrls: row.citations.map((citation) => citation.source.url),
   }));
 }
@@ -423,17 +556,20 @@ async function executeSync(progress: WeeklySyncProgress | null) {
     persistedRows
       .filter((persistedDeal) => weeklyLegacyIdCollides(weeklyDeal, persistedDeal))
       .map((persistedDeal) => ({ weeklyDeal, persistedDeal })));
-  const syncCandidates = Array.from(
-    new Map(missingWeeklyDeals.map((weeklyDeal) => {
-      const seedDeal = resolveSeedDeal(weeklyDeal);
-      return [seedDeal.id, seedDeal] as const;
-    })).values(),
+  const resolvedCandidates = consolidateSyncCandidates(
+    missingWeeklyDeals.map((weeklyDeal) =>
+      resolveSyncCandidate(weeklyDeal, persistedRows)),
   );
+  const trackedCandidates = resolvedCandidates.filter((candidate) =>
+    weeklyProposalDisposition(candidate.expectedPersisted) === "TRACKED");
+  const syncCandidates = resolvedCandidates.filter((candidate) =>
+    weeklyProposalDisposition(candidate.expectedPersisted) === "SYNC");
 
   console.log(`Weekly briefing cards: ${weeklyBriefingDeals.length}`);
   console.log(`Published deals before sync: ${beforeRows.length}`);
   console.log(`Missing weekly briefing cards: ${missingWeeklyDeals.length}`);
   console.log(`Deal records to sync: ${syncCandidates.length}`);
+  console.log(`Protected proposals tracked without changes: ${trackedCandidates.length}`);
   console.log(`Missing by issue: ${JSON.stringify(groupByIssue(missingWeeklyDeals))}`);
   console.log(`Ordinal legacy-ID collisions: ${legacyIdCollisions.length}`);
 
@@ -443,23 +579,37 @@ async function executeSync(progress: WeeklySyncProgress | null) {
         `  ${collision.weeklyDeal.id}: ${collision.weeklyDeal.target} conflicts with ${collision.persistedDeal.target}`,
       );
     }
+    for (const candidate of syncCandidates) {
+      console.log(
+        `  ${candidate.weeklyCardIds.join(", ")} -> ${candidate.deal.id}: ${candidate.deal.target}`,
+      );
+    }
+    for (const candidate of trackedCandidates) {
+      console.log(
+        `  tracked ${candidate.expectedPersisted?.status} ${candidate.deal.id}: ${candidate.deal.target}`,
+      );
+    }
     console.log("Dry run only. Re-run with --apply to write the missing deals.");
     return;
   }
   if (!progress) throw new Error("Weekly sync progress is required in apply mode.");
   progress.setPlan(
     syncCandidates.length,
-    weeklyBriefingDeals.length - missingWeeklyDeals.length,
+    weeklyBriefingDeals.length
+      - missingWeeklyDeals.length
+      + trackedCandidates.reduce(
+        (count, candidate) => count + candidate.weeklyCardIds.length,
+        0,
+      ),
   );
-  if (legacyIdCollisions.length > 0) {
-    throw new Error(
-      "Weekly sync found ordinal legacy-ID collisions; assign stable, non-conflicting identities before applying any proposals",
-    );
-  }
 
   progress.beginSync();
-  for (const [index, deal] of syncCandidates.entries()) {
-    const result = await syncDeal(deal);
+  for (const [index, candidate] of syncCandidates.entries()) {
+    const result = await syncDeal(
+      candidate.deal,
+      candidate.weeklyCardIds,
+      candidate.expectedPersisted,
+    );
     progress.record(result);
 
     if ((index + 1) % 25 === 0 || index === syncCandidates.length - 1) {

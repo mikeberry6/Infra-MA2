@@ -5,17 +5,28 @@
 This artifact documents five true missing weekly records for individual research review. It is review-only: every item remains **PENDING RESEARCH REVIEW**, and nothing in this document constitutes approval to publish, sync, backfill, or change a live record.
 
 - Do **not** edit any historical weekly email file, including `public/email-format/2026-07-03.html`.
-- Do **not** write to any public or database-backed deal surface. This prohibits Prisma/Neon mutations, seed or fixture edits, public deal-record changes, source replacements, and any sync or import command with an apply/write mode.
+- Do **not** write to any public or database-backed deal surface. This prohibits Prisma/Neon mutations, Deal seed-record or fixture edits, public deal-record changes, source replacements, and any sync or import command with an apply/write mode. The review-neutral weekly lineage manifest records existing card-to-seed identity only; it cannot alter a Deal fact or publication state.
 - Do **not** infer batch approval. Each record requires an explicit, individual reviewer decision before a separately authorized implementation change may be prepared.
 - Preserve the source claims and caveats below. A primary source supports the stated facts; it does not automatically settle classification, participant modeling, or publication eligibility.
 
-| Legacy ID | Record | Status |
-| --- | --- | --- |
-| `WB-2026-07-03-004` | SK / KKR Korea renewables platform | **PENDING RESEARCH REVIEW** |
-| `WB-2026-07-03-014` | Nippon Gateway Infrastructure | **PENDING RESEARCH REVIEW** |
-| `WB-2026-07-03-019` | UK passenger rolling stock platform | **PENDING RESEARCH REVIEW** |
-| `WB-2026-07-03-021` | Avenue Capital aviation leasing portfolio | **PENDING RESEARCH REVIEW** |
-| `WB-2026-07-03-024` | Genus Power Infrastructures | **PENDING RESEARCH REVIEW** |
+The card ordinal remains useful issue provenance but is not a safe database
+identity. Against the retained validation state, the collision-safe proposal
+resolver produces the following deterministic DRAFT IDs without changing the
+historical email or any existing record:
+
+| Weekly card ID | Resolved DRAFT proposal ID | Record | Status |
+| --- | --- | --- | --- |
+| `WB-2026-07-03-004` | `WB-2026-07-03-H51d8779aff30cbe26ae12c54` | SK / KKR Korea renewables platform | **PENDING RESEARCH REVIEW** |
+| `WB-2026-07-03-014` | `WB-2026-07-03-H77dfa5d1f31ce4d2c7cd1f6c` | Nippon Gateway Infrastructure | **PENDING RESEARCH REVIEW** |
+| `WB-2026-07-03-019` | `WB-2026-07-03-H28d24dd65b37593e9094af84` | UK passenger rolling stock platform | **PENDING RESEARCH REVIEW** |
+| `WB-2026-07-03-021` | `WB-2026-07-03-Hcd440cdb9811de846f6bbcad` | Avenue Capital aviation leasing portfolio | **PENDING RESEARCH REVIEW** |
+| `WB-2026-07-03-024` | `WB-2026-07-03-Hbea094e0e7cb1d0d5da2ceaa` | Genus Power Infrastructures | **PENDING RESEARCH REVIEW** |
+
+These are planned proposal identities, not evidence that a DRAFT was written.
+The resolver treats an exact matching DRAFT as an idempotent replay, refuses to
+overwrite a changed DRAFT, tracks matching `IN_REVIEW`, `PUBLISHED`, or
+`ARCHIVED` records without mutation, rejects ambiguous matches, and fails
+before mutation if a resolved ID is occupied by a different transaction.
 
 ## `WB-2026-07-03-004` — SK / KKR Korea renewables platform
 
@@ -132,12 +143,12 @@ Buyer qualification must remain: **multiple open-market buyers / not fully discl
 
 ## Reviewer decision log
 
-| Legacy ID | Decision | Reviewer | Decision date | Notes |
-| --- | --- | --- | --- | --- |
-| `WB-2026-07-03-004` | **PENDING RESEARCH REVIEW** | — | — | Confirm category and SK participant treatment. |
-| `WB-2026-07-03-014` | **PENDING RESEARCH REVIEW** | — | — | Resolve platform formation versus acquisition and participant fields. |
-| `WB-2026-07-03-019` | **PENDING RESEARCH REVIEW** | — | — | Resolve continuation-vehicle counterparties and stake classification. |
-| `WB-2026-07-03-021` | **PENDING RESEARCH REVIEW** | — | — | Resolve Avenue/continuation-vehicle fields and geography. |
-| `WB-2026-07-03-024` | **PENDING RESEARCH REVIEW** | — | — | Preserve the buyer-disclosure caveat and review sale classification. |
+| Weekly card ID | Resolved DRAFT proposal ID | Decision | Reviewer | Decision date | Notes |
+| --- | --- | --- | --- | --- | --- |
+| `WB-2026-07-03-004` | `WB-2026-07-03-H51d8779aff30cbe26ae12c54` | **PENDING RESEARCH REVIEW** | — | — | Confirm category and SK participant treatment. |
+| `WB-2026-07-03-014` | `WB-2026-07-03-H77dfa5d1f31ce4d2c7cd1f6c` | **PENDING RESEARCH REVIEW** | — | — | Resolve platform formation versus acquisition and participant fields. |
+| `WB-2026-07-03-019` | `WB-2026-07-03-H28d24dd65b37593e9094af84` | **PENDING RESEARCH REVIEW** | — | — | Resolve continuation-vehicle counterparties and stake classification. |
+| `WB-2026-07-03-021` | `WB-2026-07-03-Hcd440cdb9811de846f6bbcad` | **PENDING RESEARCH REVIEW** | — | — | Resolve Avenue/continuation-vehicle fields and geography. |
+| `WB-2026-07-03-024` | `WB-2026-07-03-Hbea094e0e7cb1d0d5da2ceaa` | **PENDING RESEARCH REVIEW** | — | — | Preserve the buyer-disclosure caveat and review sale classification. |
 
 No record may advance from this log without an explicit reviewer decision. Approval, if later granted, authorizes neither a historical email edit nor a public/database write by itself.

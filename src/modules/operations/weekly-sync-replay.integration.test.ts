@@ -94,8 +94,12 @@ async function syncProposal(
     store as never,
     async (rawTx) => {
       const tx = rawTx as unknown as TransactionView;
-      const decision = weeklyProposalWriteDecision(tx.read(), proposed);
+      const existing = tx.read();
+      const decision = weeklyProposalWriteDecision(existing, proposed);
       if (decision.result === "skipped") return decision.result;
+      if (existing) {
+        throw new Error("preserving the existing DRAFT for manual review");
+      }
       tx.write(proposed);
       tx.audit(decision.changedFields);
       return decision.result;
@@ -159,18 +163,40 @@ describe("weekly sync transactional replay and idempotency", () => {
     expect(counts).toEqual({ inserted: 0, updated: 0, skipped: 1 });
   });
 
-  it("records one material update after an idempotent replay", async () => {
+  it("fails closed instead of overwriting a changed DRAFT", async () => {
     const store = new IsolatedProposalStore();
     await runPipelineAttempt(store, proposal());
     await runPipelineAttempt(store, proposal());
 
-    const [counts] = await runPipelineAttempt(store, proposal("Revised proposal"));
-
-    expect(store.state?.record.title).toBe("Revised proposal");
+    await expect(runPipelineAttempt(
+      store,
+      proposal("Revised proposal"),
+    )).rejects.toThrow("preserving the existing DRAFT");
+    expect(store.state).toEqual(proposal());
     expect(store.audits).toEqual([
       ["citations", "legacyId", "participants", "status", "title"],
-      ["title"],
     ]);
-    expect(counts).toEqual({ inserted: 0, updated: 1, skipped: 0 });
+  });
+
+  it("preserves a manually added DRAFT citation", async () => {
+    const store = new IsolatedProposalStore();
+    await runPipelineAttempt(store, proposal());
+    store.state = {
+      ...proposal(),
+      citations: [
+        ...proposal().citations,
+        {
+          sourceUrl: "https://example.com/researcher-added",
+          isPrimary: false,
+        },
+      ],
+    };
+    const manuallyEdited = cloneState(store.state);
+
+    await expect(runPipelineAttempt(store, proposal())).rejects.toThrow(
+      "preserving the existing DRAFT",
+    );
+    expect(store.state).toEqual(manuallyEdited);
+    expect(store.audits).toHaveLength(1);
   });
 });

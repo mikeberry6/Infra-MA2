@@ -6,6 +6,7 @@ import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { SafeOperationalError } from "../src/lib/safe-error";
 import { deals } from "./seed-data/deals";
 import { weeklyBriefingDeals } from "./seed-data/weekly-briefing-deals";
+import { WEEKLY_DEAL_SEED_LINEAGE } from "./seed-data/weekly-deal-lineage";
 import { funds } from "./seed-data/funds";
 import { companies as portcos } from "./seed-data/companies";
 import {
@@ -15,7 +16,7 @@ import {
   missingDealPublicationFields,
   missingFundPublicationFields,
 } from "../src/modules/operations/publication-integrity";
-import { weeklyDealIdentitiesMatch } from "../src/modules/operations/weekly-deal-identity";
+import { weeklyDealIsCoveredByPersisted } from "../src/modules/operations/weekly-deal-identity";
 import { isHttpUrl } from "../src/lib/source-utils";
 
 const connectionString = process.env.DATABASE_URL;
@@ -277,15 +278,19 @@ async function main() {
       citations: { select: { source: { select: { url: true } } } },
     },
   });
+  const publishedWeeklyIdentities = publishedDeals.map((deal) => ({
+    legacyId: deal.legacyId,
+    target: deal.target,
+    date: deal.date,
+    sourceUrls: deal.citations.map((citation) => citation.source.url),
+  }));
   const missingWeeklyDeals = weeklyBriefingDeals.filter((weeklyDeal) =>
-    !publishedDeals.some((deal) =>
-      weeklyDealIdentitiesMatch(weeklyDeal, {
-        target: deal.target,
-        date: deal.date,
-        sourceUrls: deal.citations.map((citation) => citation.source.url),
-      }),
-    ),
-  );
+    !weeklyDealIsCoveredByPersisted(
+      weeklyDeal,
+      publishedWeeklyIdentities,
+      deals,
+      WEEKLY_DEAL_SEED_LINEAGE,
+    ));
   exact("Missing published weekly briefing deals", 0, missingWeeklyDeals.length);
   if (missingWeeklyDeals.length > 0) {
     const missingByIssue = missingWeeklyDeals.reduce<Record<string, number>>((counts, deal) => {
