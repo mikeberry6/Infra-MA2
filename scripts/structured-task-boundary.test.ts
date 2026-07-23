@@ -31,6 +31,7 @@ const PRESERVED_CLEANUP_TASK_FILES = [
   "scripts/merge-duplicate-companies.ts",
   "scripts/news-scan.ts",
   "scripts/quarantine-dashboard-methodology-history.ts",
+  "scripts/reconcile-validation-migration-lineage.ts",
   "scripts/reconcile-portfolio-milestones.ts",
   "scripts/report-company-merge-candidates.ts",
   "scripts/report-deal-seller-disclosure-remediation.ts",

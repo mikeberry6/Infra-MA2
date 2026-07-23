@@ -177,6 +177,12 @@ jobs:
       - name: Prove database target is the isolated Neon branch
         run: node --experimental-strip-types scripts/assert-database-target.ts
 
+      - name: Reconcile reviewed validation-only migration lineage
+        run: |
+          ./node_modules/.bin/tsx scripts/reconcile-validation-migration-lineage.ts \
+            --apply \
+            --output=tmp/ci/validation-migration-lineage.json
+
       - name: Apply additive migrations to validation branch
         shell: bash
         run: |

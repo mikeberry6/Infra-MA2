@@ -28,9 +28,21 @@ describe("Phase 1 baseline inside the current release gate", () => {
     expect(workflow).toContain("MIGRATION_DATABASE_NAME");
     expect(workflow).toContain("PRODUCTION_DATABASE_HOST");
     expect(workflow).toContain("audit-additive-migrations.ts");
+    expect(workflow).toContain("reconcile-validation-migration-lineage.ts");
+    expect(workflow).toContain("validation-migration-lineage.json");
     expect(workflow).toContain("prisma migrate deploy");
     expect(workflow).toContain("prisma migrate status");
     expect(workflow).toContain("--to-config-datasource");
+
+    const targetGuard = workflow.indexOf("scripts/assert-database-target.ts");
+    const reconciliation = workflow.indexOf("scripts/reconcile-validation-migration-lineage.ts");
+    const deploy = workflow.indexOf("prisma migrate deploy");
+    const status = workflow.indexOf("prisma migrate status");
+    const drift = workflow.indexOf("--to-config-datasource", status);
+    expect(reconciliation).toBeGreaterThan(targetGuard);
+    expect(deploy).toBeGreaterThan(reconciliation);
+    expect(status).toBeGreaterThan(deploy);
+    expect(drift).toBeGreaterThan(status);
   });
 
   it("keeps the protected build check red unless static, migration, and data gates pass", () => {

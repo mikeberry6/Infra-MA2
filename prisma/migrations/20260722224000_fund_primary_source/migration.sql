@@ -1,5 +1,3 @@
--- Add an explicit, research-reviewed primary source designation for funds.
--- Existing sourceUrls and strategyUrl values remain supporting evidence and
--- are intentionally not promoted by this additive migration.
-ALTER TABLE "Fund"
-ADD COLUMN "primarySourceUrl" TEXT;
+-- Compatibility alias for the Fund primary-source DDL installed by
+-- 20260722210000_fund_primary_source.
+SELECT 1;
