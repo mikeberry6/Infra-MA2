@@ -4,6 +4,8 @@ import { companyDedupKeys } from "@/lib/company-key";
 import { parseCsv } from "@/lib/csv";
 import { prisma } from "@/lib/prisma";
 import { revalidateAppData } from "@/lib/revalidation";
+import { SERVER_OPERATIONS, SERVER_ROUTES, withServerOperationLogging } from "@/lib/server-log";
+import { runWithServerRequestContext } from "@/lib/server-request-context";
 import { companySchema, type CompanyInput } from "@/modules/admin/schemas";
 import {
   AuthorizationError,
@@ -573,6 +575,17 @@ async function applyPrimaryCitation(
 }
 
 export async function POST(request: NextRequest) {
+  const operation = request.nextUrl.searchParams.get("preview") === "1"
+    ? SERVER_OPERATIONS.importPreview
+    : SERVER_OPERATIONS.importCommit;
+  return runWithServerRequestContext(request.headers, () => withServerOperationLogging(
+    SERVER_ROUTES.importPortfolio,
+    operation,
+    () => processPortfolioImport(request),
+  ));
+}
+
+async function processPortfolioImport(request: NextRequest) {
   try {
     const actor = await requireImportActor();
     const companies = await parseRequestBody(request);
@@ -696,7 +709,6 @@ export async function POST(request: NextRequest) {
     if (isAuthorizationError(error)) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     if (error instanceof ImportPreviewTokenError) return NextResponse.json({ error: error.message }, { status: 400 });
     if (error instanceof StaleImportPreviewError) return NextResponse.json({ error: error.message }, { status: 409 });
-    console.error("Portfolio import failed", error instanceof Error ? error.name : "UnknownError");
     return NextResponse.json({ error: "Failed to process portfolio import" }, { status: 500 });
   }
 }

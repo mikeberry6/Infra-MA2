@@ -17,6 +17,7 @@ import { ArrowLeft, ArrowRight, Search } from "lucide-react";
 import { TextInput } from "@/components/shared/TextInput";
 import { Button } from "@/components/shared/Button";
 import { DatabaseIntelligenceHeader } from "@/components/shared/DatabaseIntelligenceHeader";
+import { SearchTelemetryForm } from "@/components/search/SearchTelemetryForm";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -253,7 +254,7 @@ export default async function SearchPage({
         ]}
       />
 
-      <form method="get" className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center">
+      <SearchTelemetryForm className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center">
         <label htmlFor="site-search" className="sr-only">Search InfraSight databases</label>
         <TextInput
           id="site-search"
@@ -268,7 +269,7 @@ export default async function SearchPage({
         />
         {scope !== "all" && <input type="hidden" name="scope" value={scope} />}
         <Button type="submit" variant="primary" size="lg" className="w-full sm:w-auto">Search</Button>
-      </form>
+      </SearchTelemetryForm>
 
       {!hasQuery && (
         <SearchGuidance

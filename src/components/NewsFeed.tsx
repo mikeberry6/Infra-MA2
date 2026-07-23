@@ -28,6 +28,7 @@ import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useClearUrlFilters, useUrlFilterSet } from "@/hooks/useUrlFilterSet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
+import { trackProductEvent } from "@/lib/product-analytics";
 import { formatDate, formatScheduledDateTime } from "@/lib/format";
 import { getNewsCategoryColor, NEWS_CATEGORIES } from "@/lib/news-utils";
 import type { FeedOperationsView, NewsCategory, NewsFeedView, NewsItemView, NewsMentionType } from "@/modules/shared/types";
@@ -630,6 +631,7 @@ function NewsCard({
             href={item.sourceUrl}
             target="_blank"
             rel="noreferrer"
+            onClick={() => trackProductEvent("source_link_clicked", { entity: "news" })}
             className="inline-flex h-7 items-center gap-1.5 rounded-md px-2 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
           >
             <ExternalLink className="h-3 w-3" />
@@ -880,6 +882,7 @@ function NewsDrawer({
                     href={url}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => trackProductEvent("source_link_clicked", { entity: "news" })}
                     className="surface flex items-center justify-between gap-3 px-3 py-2.5 transition-colors hover:bg-[var(--bg-subtle)]"
                   >
                     <span className="min-w-0 truncate type-meta text-[var(--text-secondary)]">{url}</span>
@@ -906,6 +909,7 @@ function NewsDrawer({
                   href={item.sourceUrl}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => trackProductEvent("source_link_clicked", { entity: "news" })}
                   className="inline-flex h-8 items-center gap-1.5 rounded-md border border-[var(--border)] px-2.5 type-meta font-medium transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]"
                 >
                   <ExternalLink className="h-3.5 w-3.5" />
@@ -929,6 +933,41 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
   const [dateWindow, setDateWindow] = useState<(typeof DATE_WINDOWS)[number]["label"]>("Today");
   const [selectedItem, setSelectedItem] = useState<NewsItemView | null>(null);
   const debouncedSearch = useDebounce(search, 250);
+
+  const openItem = useCallback((item: NewsItemView) => {
+    trackProductEvent("drawer_opened", { entity: "news" });
+    setSelectedItem(item);
+  }, []);
+  const toggleCategoryWithTelemetry = useCallback((value: string) => {
+    if (!activeCategories.has(value)) {
+      trackProductEvent("filter_applied", { entity: "news", filter: "category" });
+    }
+    toggleCategory(value);
+  }, [activeCategories, toggleCategory]);
+  const toggleEntityWithTelemetry = useCallback((value: string) => {
+    if (!activeEntities.has(value)) {
+      trackProductEvent("filter_applied", { entity: "news", filter: "entity" });
+    }
+    toggleEntity(value);
+  }, [activeEntities, toggleEntity]);
+  const toggleSourceWithTelemetry = useCallback((value: string) => {
+    if (!activeSources.has(value)) {
+      trackProductEvent("filter_applied", { entity: "news", filter: "source" });
+    }
+    toggleSource(value);
+  }, [activeSources, toggleSource]);
+  const toggleConfidenceWithTelemetry = useCallback((value: string) => {
+    if (!activeConfidence.has(value)) {
+      trackProductEvent("filter_applied", { entity: "news", filter: "confidence" });
+    }
+    toggleConfidence(value);
+  }, [activeConfidence, toggleConfidence]);
+  const changeDateWindow = useCallback((value: (typeof DATE_WINDOWS)[number]["label"]) => {
+    if (value !== "Today") {
+      trackProductEvent("filter_applied", { entity: "news", filter: "date_window" });
+    }
+    setDateWindow(value);
+  }, []);
 
   const clearUrlFilters = useClearUrlFilters(["category", "entity", "source", "confidence"]);
   const clearAll = useCallback(() => {
@@ -994,24 +1033,24 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
       <IntelligenceHeader counts={counts} lastUpdated={feed.lastUpdated} />
       <OperationalStatus operations={feed.operations} />
 
-      <CategorySpotlight items={filteredItems} onSelect={setSelectedItem} />
+      <CategorySpotlight items={filteredItems} onSelect={openItem} />
 
       <NewsFilterBar
         search={search}
         onSearchChange={setSearch}
         activeCategories={activeCategories}
-        onToggleCategory={toggleCategory}
+        onToggleCategory={toggleCategoryWithTelemetry}
         activeEntities={activeEntities}
-        onToggleEntity={toggleEntity}
+        onToggleEntity={toggleEntityWithTelemetry}
         entityOptions={entityOptions}
         activeSources={activeSources}
-        onToggleSource={toggleSource}
+        onToggleSource={toggleSourceWithTelemetry}
         sourceOptions={sourceOptions}
         activeConfidence={activeConfidence}
-        onToggleConfidence={toggleConfidence}
+        onToggleConfidence={toggleConfidenceWithTelemetry}
         allItems={feed.items}
         dateWindow={dateWindow}
-        onDateWindowChange={setDateWindow}
+        onDateWindowChange={changeDateWindow}
         onClearAll={clearAll}
       />
 
@@ -1027,7 +1066,7 @@ export function NewsFeed({ feed }: { feed: NewsFeedView }) {
           </div>
           <div className="space-y-3">
           {displayItems.map((item) => (
-            <NewsCard key={item.id} item={item} onSelect={setSelectedItem} />
+            <NewsCard key={item.id} item={item} onSelect={openItem} />
           ))}
           {displayItems.length === 0 && (
             <div className="surface px-4 py-12 text-center">

@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   formatSafeErrorSummary,
   getSafeErrorDetails,
+  isDatabaseSchemaReadinessError,
   reportSafeScriptError,
   SafeOperationalError,
 } from "@/lib/safe-error";
@@ -67,5 +68,15 @@ describe("safe operational error summaries", () => {
       errorMessage: "Server operation failed.",
     });
     expect(output[0]).not.toMatch(/postgresql|secret|private/i);
+  });
+
+  it("recognizes only fixed missing-table and missing-column codes as schema readiness failures", () => {
+    expect(isDatabaseSchemaReadinessError(Object.assign(new Error("private table"), { code: "P2021" })))
+      .toBe(true);
+    expect(isDatabaseSchemaReadinessError(Object.assign(new Error("private column"), { code: "42703" })))
+      .toBe(true);
+    expect(isDatabaseSchemaReadinessError(Object.assign(new Error("connection failed"), { code: "ECONNRESET" })))
+      .toBe(false);
+    expect(isDatabaseSchemaReadinessError(new Error("P2021 private table"))).toBe(false);
   });
 });

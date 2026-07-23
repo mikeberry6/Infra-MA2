@@ -1,10 +1,15 @@
 "use client";
 
-import { useMemo, useEffect, useCallback, useRef } from "react";
+import { useMemo, useEffect, useCallback, useRef, useState } from "react";
 import { formatDate } from "@/lib/format";
 import { getSectorColor, getCategoryColor, getRegionColor } from "@/lib/colors";
 import { DEAL_SECTORS, NON_INFRA_FUND_ENTITIES } from "@/lib/constants";
-import type { DealView, DatabaseCounts } from "@/modules/shared/types";
+import type {
+  DealDetail,
+  DealListItem,
+  DatabaseCounts,
+  RecordMeta,
+} from "@/modules/shared/types";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 
 // ─── Buyer display shortening ──────────────────────────────
@@ -120,7 +125,29 @@ function mostCommonLabel(items: string[]): { label: string; count: number } | nu
     .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))[0] ?? null;
 }
 
-function latestDealDateLabel(deals: DealView[]): string {
+const dealDetailCache = new BoundedDetailCache<DealDetail>(100, isDealDetail);
+
+function dealDetailShell(deal: DealListItem): DealDetail {
+  return {
+    ...deal,
+    description: "",
+    targetDescription: "",
+    enterpriseValue: null,
+    equityValue: null,
+    stake: null,
+    closingDate: null,
+    financialAdvisorBuyer: null,
+    financialAdvisorSeller: null,
+    legalAdvisorBuyer: null,
+    legalAdvisorSeller: null,
+    assetScale: null,
+    valuationMultiple: null,
+    fundVehicle: null,
+    keyHighlights: null,
+  };
+}
+
+function latestDealDateLabel(deals: DealListItem[]): string {
   let latest = 0;
   for (const deal of deals) {
     const time = new Date(deal.date).getTime();
@@ -162,6 +189,13 @@ import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { useCanExport } from "@/hooks/useCanExport";
 import { withBasePath } from "@/lib/base-path";
+import { BoundedDetailCache } from "@/lib/detail-cache";
+import { subscribeToDetailCacheInvalidation } from "@/lib/detail-cache-events";
+import { isDealDetail } from "@/lib/detail-validators";
+import { markDrawerOpen } from "@/lib/drawer-performance";
+import { trackProductEvent } from "@/lib/product-analytics";
+import { useFreshDetail } from "@/hooks/useFreshDetail";
+import { useDrawerShellTiming } from "@/hooks/useDrawerShellTiming";
 import {
   clampDealPage,
   DEAL_PAGE_SIZE,
@@ -208,7 +242,11 @@ function EmailAccessLinks({ compact = false }: { compact?: boolean }) {
 
   return (
     <div className="flex flex-wrap items-center justify-end gap-1">
-      <a href={withBasePath("/email-format/latest")} className={className}>
+      <a
+        href={withBasePath("/email-format/latest")}
+        className={className}
+        onClick={() => trackProductEvent("weekly_email_opened", { surface: "deal_database" })}
+      >
         <Mail className="h-3 w-3" />
         <span className="truncate">Weekly email</span>
       </a>
@@ -379,8 +417,8 @@ function DealCard({
   deal,
   onSelect,
 }: {
-  deal: DealView;
-  onSelect: (deal: DealView) => void;
+  deal: DealListItem;
+  onSelect: (deal: DealListItem) => void;
 }) {
   return (
     <button
@@ -481,8 +519,8 @@ function DealTable({
   page,
   onPageChange,
 }: {
-  filteredDeals: DealView[];
-  onSelectDeal: (deal: DealView) => void;
+  filteredDeals: DealListItem[];
+  onSelectDeal: (deal: DealListItem) => void;
   sortField: DealSortField;
   sortDirection: DealSortDirection;
   onSort: (field: DealSortField) => void;
@@ -610,7 +648,10 @@ function DealTable({
                           href={deal.sourceUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            trackProductEvent("source_link_clicked", { entity: "deal" });
+                          }}
                           className="inline-flex max-w-full items-center gap-1 type-micro transition-colors hover:text-[var(--text-primary)]"
                           title={deal.sourceName || deal.sourceUrl}
                         >
@@ -692,9 +733,15 @@ function AdvisorCard({
 function DealDrawer({
   deal,
   onClose,
+  detailState,
+  detailMeta,
+  onRetry,
 }: {
-  deal: DealView;
+  deal: DealDetail;
   onClose: () => void;
+  detailState: "idle" | "loading" | "ready" | "stale" | "error";
+  detailMeta: RecordMeta | null;
+  onRetry: () => void;
 }) {
   const hasAdvisors =
     deal.financialAdvisorBuyer ||
@@ -705,6 +752,7 @@ function DealDrawer({
   const drawerRef = useRef<HTMLDivElement>(null);
   const headerScrolled = useScrolledPast(drawerRef);
   useDialogFocus(drawerRef);
+  useDrawerShellTiming("deal", deal.legacyId);
 
   // Escape key to close
   useEffect(() => {
@@ -739,6 +787,7 @@ function DealDrawer({
         role="dialog"
         aria-modal="true"
         aria-labelledby="deal-drawer-title"
+        aria-busy={detailState === "loading"}
         tabIndex={-1}
         className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl border-l border-[var(--border)] surface-overlay rounded-none bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right"
       >
@@ -798,6 +847,66 @@ function DealDrawer({
             <span className="type-micro">{deal.country}</span>
           </div>
         </div>
+
+        {detailState === "loading" && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="mx-5 mt-4 flex items-center gap-3 rounded-md border border-[var(--border)] bg-[var(--bg-subtle)] px-3 py-2.5 type-meta text-[var(--text-secondary)] lg:mx-7"
+          >
+            <span
+              aria-hidden
+              className="h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-[var(--border-strong)] border-t-[var(--accent)]"
+            />
+            Loading the latest verified detail…
+          </div>
+        )}
+        {detailState === "error" && (
+          <div
+            role="alert"
+            className="mx-5 mt-4 rounded-md border border-[#fecaca] bg-[#fef2f2] px-3 py-2.5 type-meta text-[#991b1b] lg:mx-7"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <span>Complete deal detail is temporarily unavailable. The summary below may be incomplete.</span>
+              <button
+                type="button"
+                onClick={onRetry}
+                className="shrink-0 font-semibold underline underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#fecaca]"
+              >
+                Retry
+              </button>
+            </div>
+          </div>
+        )}
+        {detailState === "stale" && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="mx-5 mt-4 rounded-md border border-[#fde68a] bg-[#fffbeb] px-3 py-2.5 type-meta text-[#854d0e] lg:mx-7"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <span>Latest refresh failed. Showing cached deal detail.</span>
+              <button
+                type="button"
+                onClick={onRetry}
+                className="shrink-0 font-semibold underline underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#fde68a]"
+              >
+                Retry
+              </button>
+            </div>
+          </div>
+        )}
+        {detailMeta && (
+          <div className="mx-5 mt-3 type-micro lg:mx-7">
+            Last verified{" "}
+            <span className="mono tabular-nums text-[var(--text-secondary)]">
+              {detailMeta.lastVerifiedAt ? formatDate(detailMeta.lastVerifiedAt) : "Not recorded"}
+            </span>
+            {" · "}
+            <span className="mono tabular-nums text-[var(--text-secondary)]">{detailMeta.sourceCount}</span>
+            {" "}source{detailMeta.sourceCount === 1 ? "" : "s"}
+          </div>
+        )}
 
         {/* Content */}
         <div className="p-5 lg:p-7 space-y-6">
@@ -924,6 +1033,7 @@ function DealDrawer({
                   href={deal.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackProductEvent("source_link_clicked", { entity: "deal" })}
                   className="inline-flex max-w-full items-center gap-1.5 type-meta font-medium hover:text-[var(--text-primary)] transition-colors group"
                 >
                   <span className="truncate">{deal.sourceName || deal.sourceUrl}</span>
@@ -939,7 +1049,7 @@ function DealDrawer({
 }
 
 // ─── Main Component ─────────────────────────────────────────
-export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: DatabaseCounts }) {
+export function DealDatabase({ deals, counts }: { deals: DealListItem[]; counts: DatabaseCounts }) {
   const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
   const [rawSortField] = useUrlQueryState("sort", "date");
   const [rawSortDirection] = useUrlQueryState("direction", "desc");
@@ -958,6 +1068,31 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
     () => focusId ? deals.find((deal) => deal.legacyId === focusId) ?? null : null,
     [deals, focusId],
   );
+  const [detailRequest, setDetailRequest] = useState(0);
+
+  useEffect(() => subscribeToDetailCacheInvalidation("deal", () => {
+    dealDetailCache.clear();
+    setDetailRequest((value) => value + 1);
+  }), []);
+
+  useEffect(() => {
+    if (selectedDeal) {
+      trackProductEvent("drawer_opened", { entity: "deal" });
+    }
+  }, [selectedDeal]);
+
+  const {
+    detail: selectedDealDetail,
+    meta: detailMeta,
+    state: detailState,
+  } = useFreshDetail<DealDetail>({
+    cache: dealDetailCache,
+    cacheKey: selectedDeal?.legacyId ?? null,
+    requestUrl: selectedDeal
+      ? withBasePath(`/api/deals/${encodeURIComponent(selectedDeal.legacyId)}`)
+      : null,
+    requestVersion: detailRequest,
+  });
 
   // Debounce search for performance
   const debouncedSearch = useDebounce(search, 300);
@@ -969,13 +1104,35 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
     );
   }, [writeQueryParams]);
 
-  const openDeal = useCallback((deal: DealView) => {
+  const openDeal = useCallback((deal: DealListItem) => {
+    markDrawerOpen("deal");
     writeQueryParam("focus", deal.legacyId, "push");
   }, [writeQueryParam]);
 
   const closeDeal = useCallback(() => {
     writeQueryParam("focus", null, "replace");
   }, [writeQueryParam]);
+
+  const toggleTrackedSector = useCallback((sector: string) => {
+    if (!activeSectors.has(sector)) {
+      trackProductEvent("filter_applied", { entity: "deals", filter: "sector" });
+    }
+    toggleSector(sector);
+  }, [activeSectors, toggleSector]);
+
+  const toggleTrackedRegion = useCallback((region: string) => {
+    if (!activeRegions.has(region)) {
+      trackProductEvent("filter_applied", { entity: "deals", filter: "region" });
+    }
+    toggleRegion(region);
+  }, [activeRegions, toggleRegion]);
+
+  const toggleTrackedCategory = useCallback((category: string) => {
+    if (!activeCategories.has(category)) {
+      trackProductEvent("filter_applied", { entity: "deals", filter: "category" });
+    }
+    toggleCategory(category);
+  }, [activeCategories, toggleCategory]);
 
   const changeSort = useCallback((field: DealSortField) => {
     const direction = field === sortField
@@ -1092,11 +1249,11 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
         search={search}
         onSearchChange={setSearch}
         activeSectors={activeSectors}
-        onToggleSector={toggleSector}
+        onToggleSector={toggleTrackedSector}
         activeRegions={activeRegions}
-        onToggleRegion={toggleRegion}
+        onToggleRegion={toggleTrackedRegion}
         activeCategories={activeCategories}
-        onToggleCategory={toggleCategory}
+        onToggleCategory={toggleTrackedCategory}
         onClearAll={clearAllFilters}
       />
 
@@ -1167,11 +1324,14 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
         />
       </div>
 
-      <CTABlock />
+      <CTABlock surface="deal_database" />
 
       {selectedDeal && (
         <DealDrawer
-          deal={selectedDeal}
+          deal={selectedDealDetail ?? dealDetailShell(selectedDeal)}
+          detailState={detailState}
+          detailMeta={detailMeta}
+          onRetry={() => setDetailRequest((value) => value + 1)}
           onClose={closeDeal}
         />
       )}

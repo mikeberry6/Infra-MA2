@@ -1,10 +1,10 @@
 "use client";
 
 import { FundDatabase } from "@/components/FundDatabase";
-import type { FundView, DatabaseCounts } from "@/modules/shared/types";
+import type { FundListItem, DatabaseCounts } from "@/modules/shared/types";
 
 interface FundDatabaseClientProps {
-  funds: FundView[];
+  funds: FundListItem[];
   counts: DatabaseCounts;
 }
 

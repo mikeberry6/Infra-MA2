@@ -216,6 +216,19 @@ describe("dashboard operational workflows", () => {
     expect(schemaStage).not.toContain("production_base_sha");
   });
 
+  it("uses the candidate-recorded canonical deployment as a promotion compare-and-swap guard", () => {
+    expect(release).toContain("production_app_sha:");
+    expect(release).toContain("production_deployment_id:");
+    expect(release).toContain("PRODUCTION_APP_SHA: ${{ inputs.production_app_sha }}");
+    expect(release).toContain("PRODUCTION_DEPLOYMENT_ID: ${{ inputs.production_deployment_id }}");
+    expect(release).toContain('git merge-base --is-ancestor "$PRODUCTION_APP_SHA" "$RELEASE_SHA"');
+    expect(release).toContain('--expected-sha="$PRODUCTION_APP_SHA"');
+    expect(release).toContain("canonical-baseline-before-promotion.json");
+    expect(release).toContain('if [ "$canonical_deployment_id" != "$PRODUCTION_DEPLOYMENT_ID" ]');
+    expect(release.indexOf("canonical-baseline-before-promotion.json"))
+      .toBeLessThan(release.indexOf('vercel@51.7.0 promote "$deployment_id"'));
+  });
+
   it("verifies rollback provenance and uses immutable deployment identity", () => {
     expect(rollback).toContain("release_sha:");
     expect(rollback).toContain("verify-vercel-deployment.ts");

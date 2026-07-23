@@ -4,7 +4,13 @@ import { useState, useMemo, useEffect, useCallback, useRef, Fragment } from "rea
 import { FUND_STRATEGIES, FUND_STATUSES, FUND_SIZE_RANGES, FUND_SECTORS } from "@/lib/constants";
 import { getStrategyColor, getStatusColor, getSizeRangeColor, getFundSectorColor, getPortCoSectorColor, getStructureColor } from "@/lib/colors";
 import { matchesSizeRange, getFundStats } from "@/lib/fund-utils";
-import type { FundView, PortfolioCompanyView, DatabaseCounts } from "@/modules/shared/types";
+import type {
+  FundDetail,
+  FundListItem,
+  PortfolioCompanyView,
+  DatabaseCounts,
+  RecordMeta,
+} from "@/modules/shared/types";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import {
   Search,
@@ -39,6 +45,15 @@ import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { withBasePath } from "@/lib/base-path";
 import { buildFundSourceLinks } from "@/modules/funds/sources";
+import { formatDate } from "@/lib/format";
+import { BoundedDetailCache } from "@/lib/detail-cache";
+import { subscribeToDetailCacheInvalidation } from "@/lib/detail-cache-events";
+import { isFundDetail } from "@/lib/detail-validators";
+import { markDrawerOpen } from "@/lib/drawer-performance";
+import { trackProductEvent } from "@/lib/product-analytics";
+import { useFreshDetail } from "@/hooks/useFreshDetail";
+import { useDrawerShellTiming } from "@/hooks/useDrawerShellTiming";
+import { ResearchContactLink } from "@/components/ResearchContactLink";
 
 export const FUND_PAGE_SIZE = 25;
 export const FUND_RESULTS_HEADING_ID = "fund-results-heading";
@@ -46,7 +61,24 @@ export const FUND_RESULTS_HEADING_ID = "fund-results-heading";
 export type FundSortField = "name" | "strategy" | "size" | "vintage";
 export type SortDirection = "asc" | "desc";
 
-type SortableFund = Pick<FundView, "fundName" | "strategies" | "sizeUsdMm" | "vintage">;
+type SortableFund = Pick<FundListItem, "fundName" | "strategies" | "sizeUsdMm" | "vintage">;
+
+const fundDetailCache = new BoundedDetailCache<FundDetail>(100, isFundDetail);
+
+function fundDetailShell(fund: FundListItem): FundDetail {
+  return {
+    ...fund,
+    ticker: null,
+    investmentStrategy: "",
+    sourceUrls: [],
+    primarySourceUrl: null,
+    structure: "",
+    regions: [],
+    portfolioCompanies: [],
+    managerPortfolioCompanies: [],
+    strategyUrl: "",
+  };
+}
 
 export function parseFundPage(value: string): number {
   const parsed = Number(value);
@@ -262,7 +294,7 @@ function FundFilterBar({
 
 // ─── Fund Insights Hero ─────────────────────────────────────
 
-function FundsInsightsHero({ filteredFunds }: { filteredFunds: FundView[] }) {
+function FundsInsightsHero({ filteredFunds }: { filteredFunds: FundListItem[] }) {
   const stats = useMemo(() => getFundStats(filteredFunds), [filteredFunds]);
 
   const strategyRanking = useMemo(
@@ -320,12 +352,13 @@ function FundVehicleCard({
   fund,
   onSelect,
 }: {
-  fund: FundView;
-  onSelect: (fund: FundView) => void;
+  fund: FundListItem;
+  onSelect: (fund: FundListItem) => void;
 }) {
   return (
     <button
       type="button"
+      data-fund-row-trigger
       onClick={() => onSelect(fund)}
       aria-label={`Open ${fund.fundName} fund details`}
       className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
@@ -432,8 +465,8 @@ function FundRow({
   fund,
   onSelect,
 }: {
-  fund: FundView;
-  onSelect: (fund: FundView) => void;
+  fund: FundListItem;
+  onSelect: (fund: FundListItem) => void;
   isLast?: boolean;
 }) {
   return (
@@ -441,6 +474,7 @@ function FundRow({
       <td className="px-3 py-2.5 align-top">
         <button
           type="button"
+          data-fund-row-trigger
           onClick={() => onSelect(fund)}
           aria-label={`Open ${fund.fundName} fund details`}
           title={fund.fundName}
@@ -481,8 +515,8 @@ function ManagerGroupedTable({
   totalItems,
   onPageChange,
 }: {
-  sortedManagers: [string, FundView[]][];
-  onSelectFund: (fund: FundView) => void;
+  sortedManagers: [string, FundListItem[]][];
+  onSelectFund: (fund: FundListItem) => void;
   sortField: FundSortField;
   sortDirection: SortDirection;
   onSort: (field: FundSortField) => void;
@@ -618,8 +652,8 @@ function AllFundsTable({
   page,
   onPageChange,
 }: {
-  funds: FundView[];
-  onSelectFund: (fund: FundView) => void;
+  funds: FundListItem[];
+  onSelectFund: (fund: FundListItem) => void;
   sortField: FundSortField;
   sortDirection: SortDirection;
   onSort: (field: FundSortField) => void;
@@ -683,15 +717,22 @@ function FundDrawer({
   onClose,
   allFunds,
   onSelectFund,
+  detailState,
+  detailMeta,
+  onRetry,
 }: {
-  fund: FundView;
+  fund: FundDetail;
   onClose: () => void;
-  allFunds: FundView[];
-  onSelectFund: (fund: FundView) => void;
+  allFunds: FundListItem[];
+  onSelectFund: (fund: FundListItem) => void;
+  detailState: "idle" | "loading" | "ready" | "stale" | "error";
+  detailMeta: RecordMeta | null;
+  onRetry: () => void;
 }) {
   const drawerRef = useRef<HTMLDivElement>(null);
   const headerScrolled = useScrolledPast(drawerRef);
   useDialogFocus(drawerRef);
+  useDrawerShellTiming("fund", fund.legacyId);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -709,15 +750,12 @@ function FundDrawer({
     [fund.primarySourceUrl, fund.sourceUrls],
   );
 
-  // Aggregate all portfolio companies across the firm (all funds for this manager)
-  const firmFunds = [fund, ...siblingFunds];
+  const managerVehicleCount = siblingFunds.length + 1;
+  // The detail endpoint supplies a compact, firm-wide portfolio projection so
+  // the initial index payload never needs every vehicle's drawer detail.
   const firmPortfolio = useMemo(() => {
-    const companiesByFund: { company: PortfolioCompanyView; fundName: string; strategies: string[] }[] = [];
-    for (const ff of firmFunds) {
-      for (const pc of ff.portfolioCompanies) {
-        companiesByFund.push({ company: pc, fundName: ff.fundName, strategies: ff.strategies });
-      }
-    }
+    const companiesByFund: { company: PortfolioCompanyView; fundName: string; strategies: string[] }[] =
+      [...fund.managerPortfolioCompanies];
     // Group by sector → subsector
     const bySector: Record<string, Record<string, { company: PortfolioCompanyView; fundName: string; strategies: string[] }[]>> = {};
     for (const entry of companiesByFund) {
@@ -748,8 +786,7 @@ function FundDrawer({
     const activeCount = companiesByFund.filter((e) => e.company.isActive).length;
     const realizedCount = companiesByFund.length - activeCount;
     return { sectors: sortedSectors, total: companiesByFund.length, activeCount, realizedCount };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [fund.id, siblingFunds.length]);
+  }, [fund.managerPortfolioCompanies]);
 
   return (
     <>
@@ -762,6 +799,7 @@ function FundDrawer({
         role="dialog"
         aria-modal="true"
         aria-labelledby="fund-drawer-title"
+        aria-busy={detailState === "loading"}
         tabIndex={-1}
         className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-lg lg:max-w-xl xl:max-w-2xl shadow-overlay bg-[var(--bg-surface)] overflow-y-auto animate-slide-in-right"
       >
@@ -811,6 +849,66 @@ function FundDrawer({
           </div>
         </div>
 
+        {detailState === "loading" && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="mx-6 mt-4 flex items-center gap-3 rounded-md border border-[var(--border)] bg-[var(--bg-subtle)] px-3 py-2.5 type-meta text-[var(--text-secondary)] lg:mx-8"
+          >
+            <span
+              aria-hidden
+              className="h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-[var(--border-strong)] border-t-[var(--accent)]"
+            />
+            Loading the latest verified detail…
+          </div>
+        )}
+        {detailState === "error" && (
+          <div
+            role="alert"
+            className="mx-6 mt-4 rounded-md border border-[#fecaca] bg-[#fef2f2] px-3 py-2.5 type-meta text-[#991b1b] lg:mx-8"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <span>Complete fund detail is temporarily unavailable. The summary below may be incomplete.</span>
+              <button
+                type="button"
+                onClick={onRetry}
+                className="shrink-0 font-semibold underline underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#fecaca]"
+              >
+                Retry
+              </button>
+            </div>
+          </div>
+        )}
+        {detailState === "stale" && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="mx-6 mt-4 rounded-md border border-[#fde68a] bg-[#fffbeb] px-3 py-2.5 type-meta text-[#854d0e] lg:mx-8"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <span>Latest refresh failed. Showing cached fund detail.</span>
+              <button
+                type="button"
+                onClick={onRetry}
+                className="shrink-0 font-semibold underline underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#fde68a]"
+              >
+                Retry
+              </button>
+            </div>
+          </div>
+        )}
+        {detailMeta && (
+          <div className="mx-6 mt-3 type-micro lg:mx-8">
+            Last verified{" "}
+            <span className="mono tabular-nums text-[var(--text-secondary)]">
+              {detailMeta.lastVerifiedAt ? formatDate(detailMeta.lastVerifiedAt) : "Not recorded"}
+            </span>
+            {" · "}
+            <span className="mono tabular-nums text-[var(--text-secondary)]">{detailMeta.sourceCount}</span>
+            {" "}source{detailMeta.sourceCount === 1 ? "" : "s"}
+          </div>
+        )}
+
         {/* Content */}
         <div className="px-6 lg:px-8 py-6 space-y-7">
           {/* Fund overview */}
@@ -824,8 +922,12 @@ function FundDrawer({
               ))}
               <span className="text-[var(--text-tertiary)]">·</span>
               <Tag color={getStatusColor(fund.status)}>{fund.status}</Tag>
-              <span className="text-[var(--text-tertiary)]">·</span>
-              <Tag color={getStructureColor(fund.structure)}>{fund.structure}</Tag>
+              {fund.structure && (
+                <>
+                  <span className="text-[var(--text-tertiary)]">·</span>
+                  <Tag color={getStructureColor(fund.structure)}>{fund.structure}</Tag>
+                </>
+              )}
             </div>
             <dl className="grid grid-cols-2 gap-x-6 gap-y-2.5">
               <div>
@@ -879,6 +981,7 @@ function FundDrawer({
                       href={source.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackProductEvent("source_link_clicked", { entity: "fund" })}
                       className="inline-flex items-center gap-1.5 type-meta hover:text-[var(--text-primary)] transition-colors group"
                     >
                       <ExternalLink className="h-3 w-3 shrink-0 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)]" />
@@ -944,7 +1047,7 @@ function FundDrawer({
                                     <div className="type-micro mt-0.5">
                                       {company.country}
                                       {yearLabel ? ` · ${yearLabel}` : ""}
-                                      {firmFunds.length > 1 ? ` · ${fundName}` : ""}
+                                      {managerVehicleCount > 1 ? ` · ${fundName}` : ""}
                                     </div>
                                   </div>
                                   <div className="flex gap-3 shrink-0 flex-wrap justify-end">
@@ -997,7 +1100,7 @@ function FundDrawer({
 
 // ─── Main Component ─────────────────────────────────────────
 
-export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: DatabaseCounts }) {
+export function FundDatabase({ funds, counts }: { funds: FundListItem[]; counts: DatabaseCounts }) {
   const [fundSearch, setFundSearch] = useUrlQueryState("q", "", { resetPage: true });
   const [rawSortField] = useUrlQueryState("sort", "name");
   const [rawSortDirection] = useUrlQueryState("direction", "asc");
@@ -1019,6 +1122,31 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
     () => focusId ? funds.find((fund) => fund.legacyId === focusId) ?? null : null,
     [focusId, funds],
   );
+  const [detailRequest, setDetailRequest] = useState(0);
+
+  useEffect(() => subscribeToDetailCacheInvalidation("fund", () => {
+    fundDetailCache.clear();
+    setDetailRequest((value) => value + 1);
+  }), []);
+
+  useEffect(() => {
+    if (selectedFund) {
+      trackProductEvent("drawer_opened", { entity: "fund" });
+    }
+  }, [selectedFund]);
+
+  const {
+    detail: selectedFundDetail,
+    meta: detailMeta,
+    state: detailState,
+  } = useFreshDetail<FundDetail>({
+    cache: fundDetailCache,
+    cacheKey: selectedFund?.legacyId ?? null,
+    requestUrl: selectedFund
+      ? withBasePath(`/api/funds/${encodeURIComponent(selectedFund.legacyId)}`)
+      : null,
+    requestVersion: detailRequest,
+  });
   const debouncedFundSearch = useDebounce(fundSearch, 300);
 
   const clearFundFilters = useCallback(() => {
@@ -1028,13 +1156,42 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
     );
   }, [writeQueryParams]);
 
-  const openFund = useCallback((fund: FundView) => {
+  const openFund = useCallback((fund: FundListItem) => {
+    markDrawerOpen("fund");
     writeQueryParam("focus", fund.legacyId, "push");
   }, [writeQueryParam]);
 
   const closeFund = useCallback(() => {
     writeQueryParam("focus", null, "replace");
   }, [writeQueryParam]);
+
+  const toggleTrackedStrategy = useCallback((strategy: string) => {
+    if (!activeStrategies.has(strategy)) {
+      trackProductEvent("filter_applied", { entity: "funds", filter: "strategy" });
+    }
+    toggleStrategy(strategy);
+  }, [activeStrategies, toggleStrategy]);
+
+  const toggleTrackedStatus = useCallback((status: string) => {
+    if (!activeStatuses.has(status)) {
+      trackProductEvent("filter_applied", { entity: "funds", filter: "status" });
+    }
+    toggleStatus(status);
+  }, [activeStatuses, toggleStatus]);
+
+  const toggleTrackedSize = useCallback((size: string) => {
+    if (!activeSizeRanges.has(size)) {
+      trackProductEvent("filter_applied", { entity: "funds", filter: "size" });
+    }
+    toggleSizeRange(size);
+  }, [activeSizeRanges, toggleSizeRange]);
+
+  const toggleTrackedSector = useCallback((sector: string) => {
+    if (!activeSectors.has(sector)) {
+      trackProductEvent("filter_applied", { entity: "funds", filter: "sector" });
+    }
+    toggleSector(sector);
+  }, [activeSectors, toggleSector]);
 
   const changeSort = useCallback((field: FundSortField) => {
     const direction: SortDirection = field === sortField
@@ -1148,13 +1305,13 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
         search={fundSearch}
         onSearchChange={setFundSearch}
         activeStrategies={activeStrategies}
-        onToggleStrategy={toggleStrategy}
+        onToggleStrategy={toggleTrackedStrategy}
         activeStatuses={activeStatuses}
-        onToggleStatus={toggleStatus}
+        onToggleStatus={toggleTrackedStatus}
         activeSizeRanges={activeSizeRanges}
-        onToggleSizeRange={toggleSizeRange}
+        onToggleSizeRange={toggleTrackedSize}
         activeSectors={activeSectors}
-        onToggleSector={toggleSector}
+        onToggleSector={toggleTrackedSector}
         onClearAll={clearFundFilters}
       />
 
@@ -1237,13 +1394,13 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
                 <span className="truncate">Export</span>
               </a>
             )}
-            <a
-              href="mailto:research@infrasight.com"
+            <ResearchContactLink
+              surface="fund_database"
               className="hidden sm:inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
               <Mail className="h-3 w-3" />
               <span className="truncate">Contact research</span>
-            </a>
+            </ResearchContactLink>
           </div>
         </div>
 
@@ -1271,14 +1428,17 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
         )}
       </div>
 
-      <CTABlock />
+      <CTABlock surface="fund_database" />
 
       {selectedFund && (
         <FundDrawer
-          fund={selectedFund}
+          fund={selectedFundDetail ?? fundDetailShell(selectedFund)}
           onClose={closeFund}
           allFunds={funds}
           onSelectFund={openFund}
+          detailState={detailState}
+          detailMeta={detailMeta}
+          onRetry={() => setDetailRequest((value) => value + 1)}
         />
       )}
     </div>

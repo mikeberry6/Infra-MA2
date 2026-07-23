@@ -2,15 +2,16 @@
 
 import { useState, useTransition } from "react";
 import { Button } from "@/components/shared/Button";
+import { invalidateDetailCache, type DetailCacheEntity } from "@/lib/detail-cache-events";
 
 interface ArchiveButtonProps {
   archiveAction: (id: string) => Promise<{ success: boolean; error?: string }>;
   id: string;
-  entity: "deal" | "fund" | "company";
+  entity: DetailCacheEntity;
   disabled?: boolean;
 }
 
-export default function ArchiveButton({ archiveAction, id, disabled = false }: ArchiveButtonProps) {
+export default function ArchiveButton({ archiveAction, id, entity, disabled = false }: ArchiveButtonProps) {
   const [isPending, startTransition] = useTransition();
   const [confirming, setConfirming] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -43,6 +44,8 @@ export default function ArchiveButton({ archiveAction, id, disabled = false }: A
             if (!result.success) {
               setError(result.error || "Archive failed");
               setConfirming(false);
+            } else {
+              invalidateDetailCache(entity, id);
             }
           });
         }}

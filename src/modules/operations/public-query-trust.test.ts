@@ -33,6 +33,15 @@ vi.mock("@/lib/prisma", () => ({
       findUnique: mocks.redirectFindUnique,
       findMany: mocks.redirectFindMany,
     },
+    $transaction: (callback: (client: unknown) => unknown) => callback({
+      company: {
+        findFirst: mocks.companyFindFirst,
+        findMany: mocks.companyFindMany,
+      },
+      companyRedirect: {
+        findUnique: mocks.redirectFindUnique,
+      },
+    }),
   },
 }));
 
@@ -99,7 +108,7 @@ describe("public query trust contracts", () => {
 
   it("resolves a retired ID only when its canonical company is published", async () => {
     mocks.redirectFindUnique.mockResolvedValue({
-      company: { id: "company-canonical", status: "PUBLISHED" },
+      company: { id: "company-canonical", status: "PUBLISHED", retirement: null },
     });
     mocks.companyFindMany
       .mockResolvedValueOnce([{ id: "company-canonical", name: "GridCo" }])
@@ -109,7 +118,15 @@ describe("public query trust contracts", () => {
 
     expect(mocks.redirectFindUnique).toHaveBeenCalledWith({
       where: { retiredId: "company-retired" },
-      select: { company: { select: { id: true, status: true } } },
+      select: {
+        company: {
+          select: {
+            id: true,
+            status: true,
+            retirement: { select: { retiredId: true } },
+          },
+        },
+      },
     });
     expect(mocks.companyFindFirst).not.toHaveBeenCalled();
     expect(mocks.companyFindMany).toHaveBeenLastCalledWith(expect.objectContaining({
@@ -123,7 +140,7 @@ describe("public query trust contracts", () => {
 
   it("does not follow retired IDs to a nonpublished canonical company", async () => {
     mocks.redirectFindUnique.mockResolvedValue({
-      company: { id: "company-draft", status: "IN_REVIEW" },
+      company: { id: "company-draft", status: "IN_REVIEW", retirement: null },
     });
 
     await expect(getCompanyByFocusId("company-retired")).resolves.toBeNull();

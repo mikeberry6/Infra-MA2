@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Search, User } from "lucide-react";
 import { TextInput } from "@/components/shared/TextInput";
 import { withBasePath } from "@/lib/base-path";
+import { trackProductEvent } from "@/lib/product-analytics";
 
 const navLinks = [
   {
@@ -93,6 +94,7 @@ export function Navbar() {
             action={withBasePath("/search")}
             className="w-[260px]"
             role="search"
+            onSubmit={() => trackProductEvent("search_submitted", { surface: "global_nav" })}
           >
             <TextInput
               type="search"
@@ -132,7 +134,10 @@ export function Navbar() {
               action={withBasePath("/search")}
               role="search"
               className="mb-3"
-              onSubmit={() => setMenuOpen(false)}
+              onSubmit={() => {
+                trackProductEvent("search_submitted", { surface: "global_nav" });
+                setMenuOpen(false);
+              }}
             >
               <TextInput
                 type="search"

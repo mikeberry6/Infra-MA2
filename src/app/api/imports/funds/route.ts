@@ -10,6 +10,8 @@ import type {
 import { prisma } from "@/lib/prisma";
 import { parseCsv } from "@/lib/csv";
 import { revalidateAppData } from "@/lib/revalidation";
+import { SERVER_OPERATIONS, SERVER_ROUTES, withServerOperationLogging } from "@/lib/server-log";
+import { runWithServerRequestContext } from "@/lib/server-request-context";
 import {
   AuthorizationError,
   getSessionIdentity,
@@ -323,6 +325,17 @@ async function requireImportActor() {
 }
 
 export async function POST(request: NextRequest) {
+  const operation = request.nextUrl.searchParams.get("preview") === "1"
+    ? SERVER_OPERATIONS.importPreview
+    : SERVER_OPERATIONS.importCommit;
+  return runWithServerRequestContext(request.headers, () => withServerOperationLogging(
+    SERVER_ROUTES.importFunds,
+    operation,
+    () => processFundImport(request),
+  ));
+}
+
+async function processFundImport(request: NextRequest) {
   try {
     const actor = await requireImportActor();
     const funds = await parseRequestBody(request);
@@ -433,7 +446,6 @@ export async function POST(request: NextRequest) {
     if (isAuthorizationError(error)) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     if (error instanceof ImportPreviewTokenError) return NextResponse.json({ error: error.message }, { status: 400 });
     if (error instanceof StaleImportPreviewError) return NextResponse.json({ error: error.message }, { status: 409 });
-    console.error("Fund import failed", error instanceof Error ? error.name : "UnknownError");
     return NextResponse.json({ error: "Failed to process fund import" }, { status: 500 });
   }
 }

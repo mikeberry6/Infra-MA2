@@ -79,6 +79,10 @@ jobs:
             echo "::error::Checked-out protected main does not match release_sha."
             exit 1
           fi
+          if ! git merge-base --is-ancestor "$PRODUCTION_APP_SHA" "$RELEASE_SHA"; then
+            echo "::error::production_app_sha must be an ancestor of release_sha."
+            exit 1
+          fi
 
       - name: Setup Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -189,18 +193,35 @@ jobs:
           node scripts/release-smoke.mjs \
             --base-url="$DEPLOYMENT_URL" \
             --transport=vercel-cli \
-            --skip-health \
+            --expected-version="$RELEASE_SHA" \
             --output=tmp/candidate/candidate-smoke.json
 
       - name: Prove candidate creation did not move the canonical alias
-        run: >-
-          node --experimental-strip-types scripts/verify-vercel-deployment.ts
-          --deployment-url="$PRODUCTION_URL"
-          --expected-sha="$PRODUCTION_APP_SHA"
-          --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID"
-          --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID"
-          --team-id="$VERCEL_TEAM_ID"
-          --output=tmp/candidate/canonical-after-build.json
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$PRODUCTION_URL" \
+            --expected-sha="$PRODUCTION_APP_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
+            --output=tmp/candidate/canonical-after-build.json
+          before_id="$(jq -r '.id' tmp/candidate/canonical-before-build.json)"
+          after_id="$(jq -r '.id' tmp/candidate/canonical-after-build.json)"
+          if ! [[ "$before_id" =~ ^dpl_[A-Za-z0-9]+$ ]] || ! [[ "$after_id" =~ ^dpl_[A-Za-z0-9]+$ ]]; then
+            echo "::error::Canonical deployment identity is invalid."
+            exit 1
+          fi
+          if [ "$before_id" != "$after_id" ]; then
+            echo "::error::The canonical production deployment changed while the candidate was being built."
+            exit 1
+          fi
+          jq -n \
+            --arg productionAppSha "$PRODUCTION_APP_SHA" \
+            --arg productionDeploymentId "$before_id" \
+            '{productionAppSha: $productionAppSha, productionDeploymentId: $productionDeploymentId}' \
+            > tmp/candidate/promotion-baseline.json
 
       - name: Upload immutable candidate evidence
         if: always()

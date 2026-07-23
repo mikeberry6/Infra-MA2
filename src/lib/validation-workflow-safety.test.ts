@@ -14,6 +14,9 @@ describe("isolated validation workflow remediation context", () => {
     const buildStep = validationJob.indexOf(
       "- name: Build against migrated Phase 2 validation database",
     );
+    const browserStep = validationJob.indexOf(
+      "- name: Run responsive, accessibility, and public-journey browser tests",
+    );
 
     expect(validationJob).toContain(
       "DATABASE_URL: ${{ secrets.PHASE2_MIGRATION_DATABASE_URL }}",
@@ -27,7 +30,13 @@ describe("isolated validation workflow remediation context", () => {
     expect(validationJob).not.toContain("secrets.MIGRATION_DATABASE_URL");
     expect(migrationStep).toBeGreaterThan(-1);
     expect(buildStep).toBeGreaterThan(migrationStep);
-    expect(validationJob).not.toContain("playwright");
+    expect(browserStep).toBeGreaterThan(buildStep);
+    expect(validationJob).toContain(
+      "E2E_DATABASE_URL: ${{ secrets.PHASE2_MIGRATION_DATABASE_URL }}",
+    );
+    expect(validationJob).not.toContain("PLAYWRIGHT_BASE_URL");
+    expect(validationJob).not.toContain("E2E_ADMIN_EMAIL");
+    expect(validationJob).not.toContain("E2E_ADMIN_PASSWORD");
   });
 
   it("derives each mutation reviewer from the committed approval", () => {
@@ -101,16 +110,23 @@ describe("isolated validation workflow remediation context", () => {
     const enforcement = workflow.indexOf(
       "- name: Enforce strict publication gate after collecting evidence",
     );
+    const browserStep = workflow.indexOf(
+      "- name: Run responsive, accessibility, and public-journey browser tests",
+    );
 
     expect(strictGate).toBeGreaterThan(-1);
     expect(workflow.slice(strictGate, evidenceUpload)).toContain("continue-on-error: true");
     expect(evidenceUpload).toBeGreaterThan(strictGate);
+    expect(evidenceUpload).toBeGreaterThan(browserStep);
     expect(enforcement).toBeGreaterThan(evidenceUpload);
     expect(workflow.slice(evidenceUpload, enforcement)).toContain("if: always()");
     expect(workflow.slice(enforcement)).toContain(
       'if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]',
     );
     expect(workflow.slice(enforcement)).toContain("exit 1");
-    expect(workflow).not.toContain("playwright");
+    expect(workflow).toContain("npx playwright install --with-deps chromium");
+    expect(workflow).toContain("npm run test:e2e");
+    expect(workflow).toContain("playwright-report/");
+    expect(workflow).toContain("test-results/");
   });
 });

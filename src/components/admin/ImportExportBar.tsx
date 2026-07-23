@@ -6,6 +6,7 @@ import { Download, FileUp, X } from "lucide-react";
 import { withBasePath } from "@/lib/base-path";
 import { Button } from "@/components/shared/Button";
 import { FormMessage } from "@/components/shared/FormControls";
+import { invalidateDetailCache, type DetailCacheEntity } from "@/lib/detail-cache-events";
 import {
   buildImportErrorCsv,
   importIssueLabel,
@@ -70,6 +71,12 @@ const LABELS: Record<EntityType, { singular: string; plural: string; bodyKey: st
   deals: { singular: "deal", plural: "deals", bodyKey: "deals" },
   funds: { singular: "fund", plural: "funds", bodyKey: "funds" },
   portfolio: { singular: "company", plural: "companies", bodyKey: "companies" },
+};
+
+const CACHE_ENTITY: Record<EntityType, DetailCacheEntity> = {
+  deals: "deal",
+  funds: "fund",
+  portfolio: "company",
 };
 
 export default function ImportExportBar({ entityType }: { entityType: EntityType }) {
@@ -146,6 +153,7 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
         if (response.status === 409) setPreview(null);
         throw new Error(result.error || "Import failed");
       }
+      invalidateDetailCache(CACHE_ENTITY[entityType]);
       setMessage({
         tone: "success",
         text: `${result.imported ?? 0} ${result.imported === 1 ? labels.singular : labels.plural} committed as drafts.`,

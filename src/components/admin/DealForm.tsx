@@ -19,6 +19,7 @@ import {
   SelectInput,
   TextArea,
 } from "@/components/shared/FormControls";
+import { invalidateDetailCache } from "@/lib/detail-cache-events";
 
 interface DealFormProps {
   initialData?: Partial<DealView>;
@@ -125,6 +126,7 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
     startTransition(async () => {
       const result = await action(formData);
       if (result.success) {
+        invalidateDetailCache("deal", result.id);
         setMessage({ type: "success", text: mode === "create" ? "Deal created" : "Deal updated" });
         if (mode === "create") {
           router.push("/admin/deals");

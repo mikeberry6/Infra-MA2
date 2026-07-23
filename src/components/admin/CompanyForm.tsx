@@ -13,6 +13,7 @@ import {
   SelectInput,
   TextArea,
 } from "@/components/shared/FormControls";
+import { invalidateDetailCache } from "@/lib/detail-cache-events";
 
 type CompanyFormData = Partial<CompanyView> & {
   sourceName?: string;
@@ -80,6 +81,7 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
     startTransition(async () => {
       const result = await action(formData);
       if (result.success) {
+        invalidateDetailCache("company", result.id);
         setMessage({ type: "success", text: mode === "create" ? "Company created" : "Company updated" });
         if (mode === "create") {
           router.push("/admin/companies");

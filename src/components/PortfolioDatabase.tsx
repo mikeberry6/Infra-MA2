@@ -5,7 +5,13 @@ import { PORTCO_SECTORS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
 import { getPortCoSectorColor, getPortCoRegionColor, getPortCoCountryTagColor } from "@/lib/colors";
 import { getUniqueFirms, getAllOwnerFirms } from "@/lib/portco-utils";
 import { withBasePath } from "@/lib/base-path";
-import type { CompanyView, FundStrategyView, DatabaseCounts } from "@/modules/shared/types";
+import type {
+  CompanyDetail,
+  CompanyListItem,
+  DetailResponse,
+  FundStrategyView,
+  DatabaseCounts,
+} from "@/modules/shared/types";
 import {
   Search,
   Download,
@@ -35,6 +41,13 @@ import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
 import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
+import { BoundedDetailCache, isDetailResponse } from "@/lib/detail-cache";
+import { subscribeToDetailCacheInvalidation } from "@/lib/detail-cache-events";
+import { isCompanyDetail } from "@/lib/detail-validators";
+import { markDrawerOpen } from "@/lib/drawer-performance";
+import { trackProductEvent } from "@/lib/product-analytics";
+import { useFreshDetail } from "@/hooks/useFreshDetail";
+import { ResearchContactLink } from "@/components/ResearchContactLink";
 
 const INVESTMENT_YEAR_NA = "N/A";
 export const PORTCO_PAGE_SIZE = 25;
@@ -42,10 +55,10 @@ export const PORTCO_RESULTS_HEADING_ID = "portfolio-results-heading";
 
 export type CompanySortField = "name" | "sector" | "country" | "firm";
 export type CompanySortDirection = "asc" | "desc";
-export type CompanyDetailStatus = "idle" | "loading" | "success" | "error";
-
-type SortableCompany = Pick<CompanyView, "name" | "sector" | "country" | "investmentFirm">;
+type SortableCompany = Pick<CompanyListItem, "name" | "sector" | "country" | "investmentFirm">;
 type FetchCompanyDetail = (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>;
+
+const companyDetailCache = new BoundedDetailCache<CompanyDetail>(100, isCompanyDetail);
 
 export function parseCompanyPage(value: string): number {
   const parsed = Number(value);
@@ -84,22 +97,19 @@ export async function fetchCompanyDetail(
   companyId: string,
   signal: AbortSignal,
   fetcher: FetchCompanyDetail = fetch,
-): Promise<CompanyView> {
+): Promise<DetailResponse<CompanyDetail>> {
   const response = await fetcher(
     withBasePath(`/api/portfolio/${encodeURIComponent(companyId)}`),
-    { signal },
+    { cache: "no-store", signal },
   );
   if (!response.ok) {
     throw new Error(`Portfolio detail request failed with status ${response.status}.`);
   }
   const payload: unknown = await response.json();
-  const company = payload && typeof payload === "object" && "company" in payload
-    ? payload.company
-    : null;
-  if (!company || typeof company !== "object") {
-    throw new Error("Portfolio detail response did not include a company.");
+  if (!isDetailResponse(payload, isCompanyDetail)) {
+    throw new Error("Portfolio detail response did not include a complete company envelope.");
   }
-  return company as CompanyView;
+  return payload;
 }
 
 function mostCommonLabel(items: string[]): { label: string; count: number } | null {
@@ -226,7 +236,7 @@ function PortCoFilterBar({
 
 // ─── Insights Hero ──────────────────────────────────────────
 
-function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
+function PortCoInsightsHero({ companies }: { companies: CompanyListItem[] }) {
   const sectorRanking = useMemo(
     () => deriveRanking(companies.map((c) => c.sector), getPortCoSectorColor),
     [companies]
@@ -294,7 +304,7 @@ function PortCoInsightsHero({ companies }: { companies: CompanyView[] }) {
 // `activeFirms` is the current filter selection. With no filter, behavior is
 // unchanged: show the primary.
 function pickDisplayedFirm(
-  company: CompanyView,
+  company: CompanyListItem,
   activeFirms: Set<string>
 ): { firm: string; isCoOwner: boolean; primaryFirm: string } {
   const primary = company.investmentFirm;
@@ -319,14 +329,15 @@ function PortCoCard({
   activeFirms,
   onSelect,
 }: {
-  company: CompanyView;
+  company: CompanyListItem;
   activeFirms: Set<string>;
-  onSelect: (company: CompanyView) => void;
+  onSelect: (company: CompanyListItem) => void;
 }) {
   const display = pickDisplayedFirm(company, activeFirms);
   return (
     <button
       type="button"
+      data-company-row-trigger
       onClick={() => onSelect(company)}
       aria-label={`Open ${company.name} company details`}
       className="w-full text-left surface p-3.5 transition-colors hover:bg-[var(--bg-subtle)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
@@ -383,9 +394,9 @@ function PortCoTable({
   page,
   onPageChange,
 }: {
-  companies: CompanyView[];
+  companies: CompanyListItem[];
   activeFirms: Set<string>;
-  onSelect: (company: CompanyView) => void;
+  onSelect: (company: CompanyListItem) => void;
   sortField: CompanySortField;
   sortDirection: CompanySortDirection;
   onSort: (field: CompanySortField) => void;
@@ -459,6 +470,7 @@ function PortCoTable({
                   <td className="px-3 py-2.5 align-top max-w-[260px]">
                     <button
                       type="button"
+                      data-company-row-trigger
                       onClick={() => onSelect(company)}
                       aria-label={`Open ${company.name} company details`}
                       title={company.name}
@@ -529,7 +541,7 @@ function PortCoTable({
 
 // ─── Main Component ─────────────────────────────────────────
 
-export function PortfolioDatabase({ companies: portcos, funds, counts }: { companies: CompanyView[]; funds: FundStrategyView[]; counts: DatabaseCounts }) {
+export function PortfolioDatabase({ companies: portcos, funds, counts }: { companies: CompanyListItem[]; funds: FundStrategyView[]; counts: DatabaseCounts }) {
   const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
   const [rawSortField] = useUrlQueryState("sort", "name");
   const [rawSortDirection] = useUrlQueryState("direction", "asc");
@@ -541,12 +553,7 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
   const focusId = useUrlQueryParam("focus");
   const writeQueryParam = useUrlQueryWriter();
   const writeQueryParams = useUrlQueryParamsWriter();
-  const [detailAttempt, setDetailAttempt] = useState(0);
-  const [detailState, setDetailState] = useState<{
-    companyId: string | null;
-    company: CompanyView | null;
-    status: CompanyDetailStatus;
-  }>({ companyId: null, company: null, status: "idle" });
+  const [detailRequest, setDetailRequest] = useState(0);
   const canExport = useCanExport();
 
   const sortField = parseCompanySort(rawSortField);
@@ -555,6 +562,30 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     () => focusId ? portcos.find((company) => company.id === focusId || company.focusIds.includes(focusId)) ?? null : null,
     [focusId, portcos],
   );
+
+  useEffect(() => subscribeToDetailCacheInvalidation("company", () => {
+    companyDetailCache.clear();
+    setDetailRequest((value) => value + 1);
+  }), []);
+
+  useEffect(() => {
+    if (selectedCompany) {
+      trackProductEvent("drawer_opened", { entity: "company" });
+    }
+  }, [selectedCompany]);
+
+  const {
+    detail: selectedCompanyDetail,
+    meta: detailMeta,
+    state: detailState,
+  } = useFreshDetail<CompanyDetail>({
+    cache: companyDetailCache,
+    cacheKey: selectedCompany?.id ?? null,
+    requestUrl: selectedCompany
+      ? withBasePath(`/api/portfolio/${encodeURIComponent(selectedCompany.id)}`)
+      : null,
+    requestVersion: detailRequest,
+  });
   const debouncedSearch = useDebounce(search, 300);
 
   const clearFilters = useCallback(() => {
@@ -564,13 +595,42 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     );
   }, [writeQueryParams]);
 
-  const openCompany = useCallback((company: CompanyView) => {
+  const openCompany = useCallback((company: CompanyListItem) => {
+    markDrawerOpen("company");
     writeQueryParam("focus", company.id, "push");
   }, [writeQueryParam]);
 
   const closeCompany = useCallback(() => {
     writeQueryParam("focus", null, "replace");
   }, [writeQueryParam]);
+
+  const toggleTrackedSector = useCallback((sector: string) => {
+    if (!activeSectors.has(sector)) {
+      trackProductEvent("filter_applied", { entity: "portfolio", filter: "sector" });
+    }
+    toggleSector(sector);
+  }, [activeSectors, toggleSector]);
+
+  const toggleTrackedCountry = useCallback((country: string) => {
+    if (!activeCountryTags.has(country)) {
+      trackProductEvent("filter_applied", { entity: "portfolio", filter: "country" });
+    }
+    toggleCountryTag(country);
+  }, [activeCountryTags, toggleCountryTag]);
+
+  const toggleTrackedFirm = useCallback((firm: string) => {
+    if (!activeFirms.has(firm)) {
+      trackProductEvent("filter_applied", { entity: "portfolio", filter: "firm" });
+    }
+    toggleFirm(firm);
+  }, [activeFirms, toggleFirm]);
+
+  const toggleTrackedYear = useCallback((year: string) => {
+    if (!activeInvestmentYears.has(year)) {
+      trackProductEvent("filter_applied", { entity: "portfolio", filter: "year" });
+    }
+    toggleInvestmentYear(year);
+  }, [activeInvestmentYears, toggleInvestmentYear]);
 
   const changeSort = useCallback((field: CompanySortField) => {
     const direction: CompanySortDirection = field === sortField
@@ -585,30 +645,6 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
   const changePage = useCallback((page: number) => {
     setRawPage(String(page));
   }, [setRawPage]);
-
-  useEffect(() => {
-    if (!selectedCompany) {
-      setDetailState({ companyId: null, company: null, status: "idle" });
-      return;
-    }
-
-    const controller = new AbortController();
-    setDetailState({ companyId: selectedCompany.id, company: null, status: "loading" });
-    fetchCompanyDetail(selectedCompany.id, controller.signal)
-      .then((company) => {
-        setDetailState({ companyId: selectedCompany.id, company, status: "success" });
-      })
-      .catch((error: unknown) => {
-        if (controller.signal.aborted || (error && typeof error === "object" && "name" in error && error.name === "AbortError")) {
-          return;
-        }
-        setDetailState({ companyId: selectedCompany.id, company: null, status: "error" });
-      });
-
-    return () => {
-      controller.abort();
-    };
-  }, [detailAttempt, selectedCompany]);
 
   const firmOptions = useMemo(() => getUniqueFirms(portcos), [portcos]);
   const investmentYearOptions = useMemo(() => {
@@ -677,14 +713,6 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     }
   }, [closeCompany, filteredCompanies, focusId, selectedCompany]);
 
-  const hasCurrentDetail = selectedCompany != null && detailState.companyId === selectedCompany.id;
-  const drawerCompany = hasCurrentDetail && detailState.company
-    ? detailState.company
-    : selectedCompany;
-  const drawerDetailStatus: CompanyDetailStatus = hasCurrentDetail
-    ? detailState.status
-    : selectedCompany ? "loading" : "idle";
-
   const headerMetrics = useMemo<IntelligenceMetric[]>(() => {
     const sponsorCount = new Set(filteredCompanies.flatMap(getAllOwnerFirms)).size;
     const activeCount = filteredCompanies.filter((company) => company.status === "Active").length;
@@ -734,14 +762,14 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
         search={search}
         onSearchChange={setSearch}
         activeSectors={activeSectors}
-        onToggleSector={toggleSector}
+        onToggleSector={toggleTrackedSector}
         activeCountryTags={activeCountryTags}
-        onToggleCountryTag={toggleCountryTag}
+        onToggleCountryTag={toggleTrackedCountry}
         activeFirms={activeFirms}
-        onToggleFirm={toggleFirm}
+        onToggleFirm={toggleTrackedFirm}
         firmOptions={firmOptions}
         activeInvestmentYears={activeInvestmentYears}
-        onToggleInvestmentYear={toggleInvestmentYear}
+        onToggleInvestmentYear={toggleTrackedYear}
         investmentYearOptions={investmentYearOptions}
         onClearAll={clearFilters}
       />
@@ -797,13 +825,13 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
                 <span className="truncate">Export</span>
               </a>
             )}
-            <a
-              href="mailto:research@infrasight.com"
+            <ResearchContactLink
+              surface="portfolio_database"
               className="hidden sm:inline-flex h-7 shrink-0 items-center justify-center gap-1.5 rounded-md bg-transparent px-2.5 type-micro font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
             >
               <Mail className="h-3 w-3" />
               <span className="truncate">Contact research</span>
-            </a>
+            </ResearchContactLink>
           </div>
         </div>
 
@@ -819,14 +847,15 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
         />
       </div>
 
-      <CTABlock />
+      <CTABlock surface="portfolio_database" />
 
-      {selectedCompany && drawerCompany && (
+      {selectedCompany && (
         <PortCoDrawer
-          company={drawerCompany}
+          company={selectedCompanyDetail ?? { ...selectedCompany, description: "" }}
           funds={funds}
-          detailStatus={drawerDetailStatus}
-          onRetry={() => setDetailAttempt((attempt) => attempt + 1)}
+          detailStatus={detailState}
+          detailMeta={detailMeta}
+          onRetry={() => setDetailRequest((value) => value + 1)}
           onClose={closeCompany}
         />
       )}

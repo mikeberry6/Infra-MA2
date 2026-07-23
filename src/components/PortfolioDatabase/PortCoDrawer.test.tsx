@@ -61,4 +61,22 @@ describe("PortCoDrawer detail request states", () => {
     await userEvent.click(screen.getByRole("button", { name: "Retry detail request" }));
     expect(onRetry).toHaveBeenCalledTimes(1);
   });
+
+  it("retains cached detail with a non-silent refresh warning and retry", async () => {
+    const onRetry = vi.fn();
+    render(
+      <PortCoDrawer
+        company={company}
+        funds={[]}
+        detailStatus="stale"
+        onRetry={onRetry}
+        onClose={vi.fn()}
+      />,
+    );
+
+    expect(screen.getByRole("status")).toHaveTextContent("Showing cached company detail");
+    expect(screen.getByText("GridCo owns and operates regulated electricity networks.")).toBeVisible();
+    await userEvent.click(screen.getByRole("button", { name: "Retry detail request" }));
+    expect(onRetry).toHaveBeenCalledTimes(1);
+  });
 });

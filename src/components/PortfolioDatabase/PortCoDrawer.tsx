@@ -15,12 +15,22 @@ import {
   groupSourcesByPurpose,
   inferSourceType,
 } from "@/lib/source-utils";
-import type { CompanyView, FundStrategyView, OwnerView, MilestoneView, SourceView } from "@/modules/shared/types";
+import type {
+  CompanyDetail,
+  FundStrategyView,
+  OwnerView,
+  MilestoneView,
+  RecordMeta,
+  SourceView,
+} from "@/modules/shared/types";
 import { Tag } from "@/components/shared/Tag";
 import { Button } from "@/components/shared/Button";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
+import { useDrawerShellTiming } from "@/hooks/useDrawerShellTiming";
+import { trackProductEvent } from "@/lib/product-analytics";
+import { formatDate } from "@/lib/format";
 
 type MilestoneClassification =
   | { kind: "entry"; owner: OwnerView }
@@ -268,11 +278,11 @@ function isRedundantText(a?: string | null, b?: string | null): boolean {
   return shared >= 2 && shared / Math.min(leftWords.size, rightWords.size) >= 0.65;
 }
 
-function getIdentityDescriptor(company: CompanyView): string {
+function getIdentityDescriptor(company: CompanyDetail): string {
   return company.subsector?.trim() || company.sector || "Portfolio company";
 }
 
-function formatHeaderStatusPeriod(company: CompanyView, owner: OwnerView | null): string {
+function formatHeaderStatusPeriod(company: CompanyDetail, owner: OwnerView | null): string {
   const investmentYear = owner?.investmentYear ?? company.investmentYear;
 
   if (owner?.investmentYear && owner.exitYear) return `Held ${owner.investmentYear}-${owner.exitYear}`;
@@ -648,6 +658,7 @@ function EvidenceGroups({ sources, compact = false }: { sources: SourceView[]; c
                 href={source.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackProductEvent("source_link_clicked", { entity: "company" })}
                 className="group flex min-w-0 items-start gap-2 rounded-[6px] py-1.5 transition-colors hover:text-[var(--text-primary)]"
                 title={source.label || source.url}
               >
@@ -673,13 +684,15 @@ export function PortCoDrawer({
   company,
   funds,
   onClose,
-  detailStatus = "success",
+  detailStatus = "ready",
+  detailMeta,
   onRetry,
 }: {
-  company: CompanyView;
+  company: CompanyDetail;
   funds: FundStrategyView[];
   onClose: () => void;
-  detailStatus?: "idle" | "loading" | "success" | "error";
+  detailStatus?: "idle" | "loading" | "ready" | "stale" | "error";
+  detailMeta?: RecordMeta | null;
   onRetry?: () => void;
 }) {
   const [showAllMilestones, setShowAllMilestones] = useState(false);
@@ -687,6 +700,7 @@ export function PortCoDrawer({
   const drawerRef = useRef<HTMLDivElement>(null);
   const headerScrolled = useScrolledPast(drawerRef);
   useDialogFocus(drawerRef);
+  useDrawerShellTiming("company", company.id);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -854,6 +868,35 @@ export function PortCoDrawer({
                 Retry detail request
               </Button>
             )}
+          </div>
+        )}
+
+        {detailStatus === "stale" && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="mx-6 mt-6 rounded-lg border border-[#fde68a] bg-[#fffbeb] px-4 py-3 text-[#854d0e] sm:mx-8 lg:mx-10"
+          >
+            <p className="type-meta text-current">
+              Latest refresh failed. Showing cached company detail.
+            </p>
+            {onRetry && (
+              <Button type="button" variant="ghost" size="sm" className="mt-2 -ml-2" onClick={onRetry}>
+                Retry detail request
+              </Button>
+            )}
+          </div>
+        )}
+
+        {detailMeta && (
+          <div className="mx-6 mt-4 type-micro sm:mx-8 lg:mx-10">
+            Last verified{" "}
+            <span className="mono tabular-nums text-[var(--text-secondary)]">
+              {detailMeta.lastVerifiedAt ? formatDate(detailMeta.lastVerifiedAt) : "Not recorded"}
+            </span>
+            {" · "}
+            <span className="mono tabular-nums text-[var(--text-secondary)]">{detailMeta.sourceCount}</span>
+            {" "}source{detailMeta.sourceCount === 1 ? "" : "s"}
           </div>
         )}
 

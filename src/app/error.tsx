@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { Button } from "@/components/shared/Button";
 
 export default function GlobalError({
@@ -10,10 +9,6 @@ export default function GlobalError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  useEffect(() => {
-    console.error("Page error:", error);
-  }, [error]);
-
   return (
     <div className="mx-auto max-w-[640px] px-4 sm:px-6 py-16">
       <div className="surface px-6 py-8 sm:px-8 sm:py-10">

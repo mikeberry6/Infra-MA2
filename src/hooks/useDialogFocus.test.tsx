@@ -22,6 +22,21 @@ function Harness() {
   );
 }
 
+function DirectOpenHarness() {
+  const [open, setOpen] = useState(true);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useDialogFocus(dialogRef, open);
+  return (
+    <main id="main-content" tabIndex={-1}>
+      {open && (
+        <div ref={dialogRef} role="dialog" aria-label="Direct dialog" tabIndex={-1}>
+          <button type="button" onClick={() => setOpen(false)}>Close direct dialog</button>
+        </div>
+      )}
+    </main>
+  );
+}
+
 describe("useDialogFocus", () => {
   beforeEach(() => {
     vi.spyOn(HTMLElement.prototype, "getClientRects").mockReturnValue({ length: 1 } as DOMRectList);
@@ -69,5 +84,12 @@ describe("useDialogFocus", () => {
     outside.focus();
     fireEvent.keyDown(document, { key: "Tab", shiftKey: true });
     expect(screen.getByRole("button", { name: "Last" })).toHaveFocus();
+  });
+
+  it("restores a direct-open dialog to the main-content landmark", async () => {
+    const user = userEvent.setup();
+    render(<DirectOpenHarness />);
+    await user.click(screen.getByRole("button", { name: "Close direct dialog" }));
+    expect(document.querySelector("#main-content")).toHaveFocus();
   });
 });

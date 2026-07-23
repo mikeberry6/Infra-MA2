@@ -30,12 +30,19 @@ npm run db:generate
 npm run db:validate
 npm run lint
 npm run typecheck
+npm run typecheck:scripts
 npm test
 npm run validate-portfolios
+npm run validate-weekly-email
 npm audit --audit-level=high
 npm run audit:prod
 npm run build
+npm run check:bundle-budget
 ```
+
+Database-backed browser tests run only with the allow-listed Phase 2 validation
+branch described in [phase-4-observability-runbook.md](./phase-4-observability-runbook.md).
+They intentionally refuse a remote application URL or an unverified database target.
 
 `npm run doctor` checks local GitHub/Vercel auth, env names, typecheck, and tests.
 
@@ -74,3 +81,6 @@ Rotate the production administrator password and `NEXTAUTH_SECRET` after the Pha
 - Treat [news-scan-automation.md](./news-scan-automation.md) as the canonical news scheduler contract;
   workstation scheduling is intentionally unsupported.
 - Track dependency decisions in [dependency-exceptions.md](./dependency-exceptions.md).
+- Follow [phase-4-observability-runbook.md](./phase-4-observability-runbook.md) for the
+  health contract, isolated browser gate, Vercel telemetry activation, alert setup,
+  real-user performance acceptance, and exact-SHA smoke checks.

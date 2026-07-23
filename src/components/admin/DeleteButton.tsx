@@ -2,15 +2,16 @@
 
 import { useTransition, useState } from "react";
 import { Button } from "@/components/shared/Button";
+import { invalidateDetailCache, type DetailCacheEntity } from "@/lib/detail-cache-events";
 
 interface DeleteButtonProps {
   deleteAction: (id: string) => Promise<{ success: boolean; error?: string }>;
   id: string;
-  entity: "deal" | "fund" | "company";
+  entity: DetailCacheEntity;
   status: string;
 }
 
-export default function DeleteButton({ deleteAction, id, status }: DeleteButtonProps) {
+export default function DeleteButton({ deleteAction, id, entity, status }: DeleteButtonProps) {
   const [isPending, startTransition] = useTransition();
   const [confirming, setConfirming] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -31,6 +32,8 @@ export default function DeleteButton({ deleteAction, id, status }: DeleteButtonP
               if (!result.success) {
                 setError(result.error || "Delete failed");
                 setConfirming(false);
+              } else {
+                invalidateDetailCache(entity, id);
               }
             });
           }}

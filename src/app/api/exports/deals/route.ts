@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAllDeals } from "@/modules/deals/queries";
+import { getAllDealDetails } from "@/modules/deals/queries";
 import { toCsv } from "@/lib/csv";
 import { canExportData } from "@/modules/auth/guards";
+import { trackServerProductEvent } from "@/lib/server-product-analytics";
+import { SERVER_OPERATIONS, SERVER_ROUTES, withServerOperationLogging } from "@/lib/server-log";
+import { runWithServerRequestContext } from "@/lib/server-request-context";
 
 const DEAL_COLUMNS = [
   "legacyId",
@@ -29,6 +32,14 @@ const DEAL_COLUMNS = [
 ];
 
 export async function GET(request: NextRequest) {
+  return runWithServerRequestContext(request.headers, () => withServerOperationLogging(
+    SERVER_ROUTES.exportDeals,
+    SERVER_OPERATIONS.exportRead,
+    () => getDealsExportResponse(request),
+  ));
+}
+
+async function getDealsExportResponse(request: NextRequest) {
   try {
     if (!(await canExportData())) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
@@ -38,7 +49,8 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const wantsJson = searchParams.get("format") === "json";
 
-    const deals = await getAllDeals();
+    await trackServerProductEvent("export_started", { entity: "deals" });
+    const deals = await getAllDealDetails();
 
     if (wantsJson) {
       return NextResponse.json({
@@ -63,8 +75,7 @@ export async function GET(request: NextRequest) {
         "Content-Disposition": `attachment; filename="deals_export_${date}.csv"`,
       },
     });
-  } catch (error) {
-    console.error("Deal export failed:", error);
+  } catch {
     return NextResponse.json(
       { error: "Failed to export deals" },
       { status: 500 },
