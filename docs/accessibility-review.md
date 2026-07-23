@@ -14,11 +14,13 @@ A release may record automated checks and a human review separately. Passing Pla
 
 The Release Gate can provide repeatable evidence for:
 
-- axe rules tagged for WCAG A/AA on public routes, authenticated administration surfaces, and the mobile filter dialog;
-- body- and document-level horizontal overflow at 320, 390, 768, 1280, and 1440 CSS pixels, including authenticated administration list and create-form surfaces;
-- keyboard mechanics for navigation, filters, drawers, focus trapping, Escape dismissal, and focus restoration;
+- axe rules tagged for WCAG A/AA on populated and no-result public routes, authenticated administration surfaces, mobile filters, loading/error/retry states, provider failures, invalid login, not-found, and import warning/error previews;
+- body- and document-level horizontal overflow at 320, 390, 640, 768, 1280, and 1440 CSS pixels, including authenticated administration list and create-form surfaces;
+- automated WCAG text-spacing stress on all primary public and authenticated administration routes;
+- keyboard mechanics for navigation, filters, every drawer type, bidirectional focus wrapping, effective background inertness, Escape dismissal, and exact trigger restoration;
+- accessible live-region semantics for route loading and error boundaries;
 - reduced-motion behavior;
-- deterministic tracker-page visual snapshots at the five required widths.
+- deterministic representative public-route visual snapshots at the five required widths.
 
 The authoritative record is the report artifact produced for the exact release Git SHA. A report from an older commit is historical context, not release evidence.
 
@@ -59,7 +61,8 @@ Review each applicable route in its default, populated, empty, loading, error, v
 
 Responsive and zoom review must include:
 
-- 320, 390, 768, 1280, and 1440 CSS-pixel viewport widths;
+- 320, 390, 640, 768, 1280, and 1440 CSS-pixel viewport widths;
+- the 640 CSS-pixel viewport as an automated 200%-equivalent reflow check for a 1280-pixel layout;
 - 200% browser zoom for general usability;
 - 400% zoom or an equivalent 320 CSS-pixel reflow check for content that must reflow;
 - increased text spacing using the WCAG text-spacing values;
@@ -158,9 +161,11 @@ Leave the status as **Not performed** until the named human reviewer completes t
 | Authenticated admin axe WCAG A/AA scan |  | Not recorded |  |
 | Public responsive overflow matrix |  | Not recorded |  |
 | Authenticated admin responsive overflow matrix |  | Not recorded |  |
+| Public/admin WCAG text-spacing stress |  | Not recorded |  |
 | Keyboard/focus browser journeys |  | Not recorded |  |
+| Loading/empty/error/provider/validation states |  | Not recorded |  |
 | Reduced-motion journey |  | Not recorded |  |
-| Tracker five-width visual snapshots |  | Not recorded |  |
+| Representative five-width visual snapshots |  | Not recorded |  |
 
 ## Human route matrix
 
