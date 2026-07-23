@@ -35,4 +35,18 @@ describe("import preview helpers", () => {
     expect(importIssueLabel({ row: 12, fundId: "FUND-12" }, "funds"))
       .toBe("Row 12 · FUND-12");
   });
+
+  it.each(["=", "+", "-", "@", "\t", "\r"])(
+    "neutralizes spreadsheet formulas beginning with %j",
+    (prefix) => {
+      const dangerous = `${prefix}HYPERLINK("https://example.test")`;
+      const csv = buildImportErrorCsv([
+        { row: 4, id: dangerous, code: dangerous, error: dangerous },
+      ], "deals");
+      const escapedCell = `'${dangerous}`.replace(/"/g, '""');
+
+      expect(csv).toContain(`"${escapedCell}"`);
+      expect(csv).toMatch(/^row,identifier,code,error\r\n4,/);
+    },
+  );
 });

@@ -48,8 +48,13 @@ export default async function AdminUsersPage({
         </p>
       </div>
 
-      <div className="surface overflow-hidden">
-        <table className="w-full text-left border-collapse whitespace-nowrap">
+      <div
+        className="surface overflow-x-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+        role="region"
+        aria-label="Users table"
+        tabIndex={0}
+      >
+        <table className="w-full min-w-[640px] text-left border-collapse whitespace-nowrap">
           <thead>
             <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
               <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Email</th>

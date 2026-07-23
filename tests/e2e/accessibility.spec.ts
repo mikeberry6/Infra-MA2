@@ -34,11 +34,19 @@ const ADMIN_ROUTES = [
 ] as const;
 
 const RESPONSIVE_WIDTHS = [320, 390, 768, 1280, 1440] as const;
+const ADMIN_SCROLL_REGIONS = new Map([
+  ["/admin/deals", { name: "Deals table", lastColumn: "Actions" }],
+  ["/admin/funds", { name: "Funds table", lastColumn: "Actions" }],
+  ["/admin/companies", { name: "Companies table", lastColumn: "Actions" }],
+  ["/admin/sources", { name: "Sources table", lastColumn: "URL" }],
+  ["/admin/users", { name: "Users table", lastColumn: "Created" }],
+]);
 
 for (const path of routes) {
   test(`${path} has no automatically detectable WCAG A/AA violations`, async ({ page }) => {
     await page.goto(appPath(path));
     await page.locator("main").waitFor({ state: "visible" });
+    await expect(page.locator("a button")).toHaveCount(0);
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
       .exclude("[data-next-badge]")
@@ -59,6 +67,7 @@ test("authenticated administration pages have no automatically detectable WCAG A
     await page.goto(appPath(path));
     await expect(page).toHaveURL(new RegExp(`${appPath(path)}$`));
     await page.locator("main").waitFor({ state: "visible" });
+    await expect(page.locator("a button")).toHaveCount(0);
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
       .exclude("[data-next-badge]")
@@ -91,8 +100,46 @@ test("authenticated administration pages have no body-level horizontal overflow 
         `${path} should render its authenticated admin heading at ${width}px`,
       ).toBeVisible();
       await expectNoHorizontalOverflow(page, `${path} at ${width}px`);
+
+      const scrollRegion = ADMIN_SCROLL_REGIONS.get(path);
+      if (scrollRegion && width <= 390) {
+        const region = page.getByRole("region", { name: scrollRegion.name });
+        await expect(region).toBeVisible();
+        expect(
+          await region.evaluate((element) => element.scrollWidth > element.clientWidth),
+          `${path} should expose a horizontal table scroll region at ${width}px`,
+        ).toBe(true);
+        await region.evaluate((element) => {
+          element.scrollLeft = element.scrollWidth;
+        });
+        await expect(
+          region.getByRole("columnheader", { name: scrollRegion.lastColumn }),
+        ).toBeInViewport();
+      }
     }
   }
+});
+
+test("the skip link is the first keyboard stop and targets main content", async ({ page }) => {
+  await page.goto(appPath("/tracker"));
+  const skipLink = page.getByRole("link", { name: "Skip to content" });
+
+  await page.keyboard.press("Tab");
+  await expect(skipLink).toBeFocused();
+  await expect(skipLink).toBeVisible();
+
+  await page.keyboard.press("Enter");
+  await expect(page.locator("#main-content")).toBeFocused();
+});
+
+test("the not-found action is a single link rather than nested interactive content", async ({ page }) => {
+  await page.goto(appPath("/this-route-does-not-exist"));
+  await expect(page.getByRole("heading", { name: "Page not found" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Back to deals" })).toHaveAttribute(
+    "href",
+    appPath("/tracker"),
+  );
+  await expect(page.locator("a button")).toHaveCount(0);
 });
 
 test("mobile filter sheet remains accessible", async ({ page }) => {

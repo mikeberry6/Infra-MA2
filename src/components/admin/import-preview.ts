@@ -27,7 +27,8 @@ export interface ImportOwnershipChange {
 }
 
 function csvCell(value: string | number | undefined): string {
-  const text = value == null ? "" : String(value);
+  const raw = value == null ? "" : String(value);
+  const text = /^[=+\-@\t\r]/.test(raw) ? `'${raw}` : raw;
   return /[",\r\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
 }
 

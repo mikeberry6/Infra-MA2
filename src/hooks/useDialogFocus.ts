@@ -63,7 +63,11 @@ export function useDialogFocus(ref: RefObject<HTMLElement | null>, active = true
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = previousOverflow;
-      previousActive?.focus();
+      if (previousActive?.isConnected) {
+        previousActive.focus();
+      } else {
+        document.querySelector<HTMLElement>("#main-content")?.focus();
+      }
     };
   }, [active, ref]);
 }

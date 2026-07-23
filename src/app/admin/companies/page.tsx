@@ -10,7 +10,7 @@ import RecordWorkflowButton from "@/components/admin/RecordWorkflowButton";
 import ImportExportBar from "@/components/admin/ImportExportBar";
 import { archiveCompany, deleteCompany, publishCompany, submitCompanyForReview, verifyCompany } from "@/modules/admin/actions";
 import { getRecordStatusColor } from "@/lib/colors";
-import { Button } from "@/components/shared/Button";
+import { ButtonLink } from "@/components/shared/Button";
 import { AdminPagination } from "@/components/admin/AdminPagination";
 import { adminPagination } from "@/lib/admin-pagination";
 
@@ -55,17 +55,20 @@ export default async function AdminCompaniesPage({
             <span className="mono tabular-nums">{total.toLocaleString()}</span> total
           </p>
         </div>
-        <Link href="/admin/companies/new">
-          <Button variant="primary" size="md" leadingIcon={<Plus className="h-3 w-3" />}>
-            New company
-          </Button>
-        </Link>
+        <ButtonLink href="/admin/companies/new" variant="primary" size="md" leadingIcon={<Plus className="h-3 w-3" />}>
+          New company
+        </ButtonLink>
       </div>
 
       <ImportExportBar entityType="portfolio" />
 
-      <div className="surface overflow-hidden mt-4">
-        <table className="w-full text-left border-collapse whitespace-nowrap">
+      <div
+        className="surface overflow-x-auto mt-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+        role="region"
+        aria-label="Companies table"
+        tabIndex={0}
+      >
+        <table className="w-full min-w-[880px] text-left border-collapse whitespace-nowrap">
           <thead>
             <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
               <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">Name</th>
@@ -91,9 +94,9 @@ export default async function AdminCompaniesPage({
                 </td>
                 <td className="px-3 py-2.5">
                   <div className="flex items-center gap-1.5">
-                    <Link href={`/admin/companies/${company.id}/edit`}>
-                      <Button variant="secondary" size="sm">Edit</Button>
-                    </Link>
+                    <ButtonLink href={`/admin/companies/${company.id}/edit`} variant="secondary" size="sm">
+                      Edit
+                    </ButtonLink>
                     <RecordWorkflowButton entity="company" id={company.id} status={company.status} submitForReview={submitCompanyForReview} publish={publishCompany} verify={verifyCompany} />
                     <ArchiveButton entity="company" archiveAction={archiveCompany} id={company.id} disabled={company.status === "ARCHIVED"} />
                     <DeleteButton entity="company" deleteAction={deleteCompany} id={company.id} status={company.status} />

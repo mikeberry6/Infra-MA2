@@ -207,6 +207,7 @@ export default function DealForm({ initialData, action, mode }: DealFormProps) {
         >
           <TextInput
             id="deal-seller-disclosure-reason"
+            aria-describedby="deal-seller-disclosure-reason-hint"
             size="md"
             required={!seller.trim()}
             minLength={10}

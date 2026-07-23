@@ -54,8 +54,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="min-h-screen bg-[var(--bg-app)] text-[var(--text-primary)] antialiased">
+        <a
+          href="#main-content"
+          className="fixed left-3 top-3 z-[20000] -translate-y-20 rounded-md bg-[var(--accent)] px-3 py-2 type-meta font-medium text-[var(--text-on-accent)] shadow-lg transition-transform focus:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+        >
+          Skip to content
+        </a>
         <Navbar />
-        <main className="pt-14">{children}</main>
+        <main id="main-content" tabIndex={-1} className="pt-14 outline-none">
+          {children}
+        </main>
         <footer className="border-t border-[var(--border)] bg-[var(--bg-app)] mt-16">
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-5">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 type-micro">
