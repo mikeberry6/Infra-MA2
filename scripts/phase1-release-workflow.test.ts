@@ -33,6 +33,21 @@ describe("Phase 1 release gate", () => {
     expect(workflow).toContain("--to-config-datasource");
   });
 
+  it("keeps the protected build check red unless static and migration gates pass", () => {
+    expect(workflow).toContain("quality:");
+    expect(workflow).toContain("migration-validation:");
+    expect(workflow).toContain("needs: [quality, migration-validation]");
+    expect(workflow).toContain(
+      "QUALITY_OUTCOME: ${{ needs.quality.result }}",
+    );
+    expect(workflow).toContain(
+      "MIGRATION_OUTCOME: ${{ needs.migration-validation.result }}",
+    );
+    expect(workflow).toContain(
+      'if [ "$QUALITY_OUTCOME" != "success" ] || [ "$MIGRATION_OUTCOME" != "success" ]; then',
+    );
+  });
+
   it("does not pull later-phase editorial, browser, analytics, or health gates into Phase 1", () => {
     for (const laterPhaseContract of [
       "source-coverage-report",

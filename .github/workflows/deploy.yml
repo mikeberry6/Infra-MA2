@@ -17,8 +17,8 @@ env:
   NEXT_TELEMETRY_DISABLED: "1"
 
 jobs:
-  build:
-    name: build
+  quality:
+    name: Static quality, tests, audit, and build
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -157,3 +157,21 @@ jobs:
           path: tmp/ci/
           if-no-files-found: warn
           retention-days: 30
+
+  build:
+    name: build
+    if: always()
+    needs: [quality, migration-validation]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require every Phase 1 gate
+        env:
+          QUALITY_OUTCOME: ${{ needs.quality.result }}
+          MIGRATION_OUTCOME: ${{ needs.migration-validation.result }}
+        shell: bash
+        run: |
+          if [ "$QUALITY_OUTCOME" != "success" ] || [ "$MIGRATION_OUTCOME" != "success" ]; then
+            echo "::error::Phase 1 release gate failed: quality=$QUALITY_OUTCOME migration=$MIGRATION_OUTCOME"
+            exit 1
+          fi
