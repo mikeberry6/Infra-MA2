@@ -49,7 +49,7 @@ Review and commit each stage independently in this order. Regenerate downstream 
    - Company: Extenet. This record is also in a pending canonical merge cluster.
    - Deals: `INF-2026-080` through `INF-2026-095` inclusive.
 
-   Add missing sources through the editorial workflow, then regenerate. Never turn candidate array position into an automatic selection rule.
+   The [2026-07-23 primary-source research proposal](./primary-source-research-proposals-2026-07-23.md) records verified first-party candidates and the Deal facts that require correction before citation approval. It remains a proposal, not an approval. Add accepted sources and corrections through the editorial workflow, then regenerate. Never turn candidate array position into an automatic selection rule.
 6. **Historical weekly coverage:** 5 published-deal gaps remain for the 2026-07-03 issue. Do not edit that historical email. Run the weekly synchronization as a dry run on an isolated database, create only reviewable proposals through the guarded apply path, and review each proposed Deal individually before publication.
 
 The current exact-name duplicate count and invalid non-HTTP source count are both zero; those checks need no Research action.
