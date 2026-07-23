@@ -24,4 +24,14 @@ describe("Playwright NextAuth configuration", () => {
       "http://127.0.0.1:3199/CustomBase/api/auth",
     );
   });
+
+  it("never writes missing visual baselines in CI", async () => {
+    vi.stubEnv("CI", "true");
+    vi.stubEnv("E2E_DATABASE_URL", "");
+    vi.stubEnv("PLAYWRIGHT_BASE_URL", "");
+
+    const { default: config } = await import("../../playwright.config");
+
+    expect(config.updateSnapshots).toBe("none");
+  });
 });

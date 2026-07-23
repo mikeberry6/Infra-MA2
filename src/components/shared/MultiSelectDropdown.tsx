@@ -205,7 +205,11 @@ export function MultiSelectDropdown({
             aria-multiselectable="true"
             data-multiselect-popup
             data-dialog-focus-owner={dialogOwnerId ?? undefined}
-            className="fixed w-60 max-h-72 overflow-y-auto p-1 surface-overlay animate-fade-in"
+            // Opacity-based entrance animations blend the 12px option text
+            // into the page background and temporarily drop it below AA
+            // contrast. Keep the interactive popup fully opaque from its
+            // first rendered frame.
+            className="fixed w-60 max-h-72 overflow-y-auto p-1 surface-overlay"
             style={{
               zIndex: FILTER_PORTAL_POPUP_Z_INDEX,
               top: pos.top,

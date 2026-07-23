@@ -27,3 +27,42 @@ show the clean 352-deal validation state, and the 1280/1440 images were visually
 reviewed before being versioned. This statement does not imply that any separate
 canonical-company or citation backlog is complete. Generic local files are
 intentionally retained and must not be used to infer a future Linux refresh.
+
+## Representative public-route candidates
+
+Generic macOS candidates for Funds, Portfolio, News, Dashboard, Search, and
+Login were added at 320, 390, 768, 1280, and 1440 CSS-pixel widths. They were
+captured from a local production build based on
+`4f112b3bae5bec9996f252df033ec394d6be73c4`, using Node 24.14.0,
+Playwright 1.61.1, and the clean, non-production Neon Preview branch
+`br-sparkling-firefly-ambnknjv` through its least-privilege
+`preview_app_clean` role. The SHA-256 digest of the 30 candidate file hashes,
+ordered by C-locale repository path, is
+`8025d574aa746586160a619a41b1830ccb4f81fd567a02af4650a6df4ddeacf5`.
+It is reproduced from the repository root with:
+
+```sh
+find tests/e2e/visual-regression.spec.ts-snapshots -maxdepth 1 -type f \
+  | awk '/\/(funds|portfolio|news|dashboard|search|login)-(320|390|768|1280|1440)\.png$/' \
+  | LC_ALL=C sort \
+  | xargs shasum -a 256 \
+  | awk '{print $1}' \
+  | shasum -a 256
+```
+
+All six five-width contact sheets were visually reviewed.
+
+The captures preserve route structure while masking only volatile values:
+active database counts and metric values on Funds and Portfolio; updated time
+and metric values on News; score, stance, updated time, and operations values
+on Dashboard; metric values on Search; and nothing on Login. Each route-width
+pair is an isolated test so one missing snapshot cannot prevent later actuals
+from being collected.
+
+These generic files are macOS review references, not Linux substitutes. No new
+`*-linux.png` file should be copied or manufactured from them, and the Linux
+`maxDiffPixelRatio: 0.005` must not be relaxed. The first trusted validation
+run is expected to fail closed for the missing Linux baselines while retaining
+all 30 Linux actuals in the Playwright artifact. Promote those files only after
+visual review, recording the exact run, tested commit, validation-data state,
+and per-file hashes here.

@@ -19,6 +19,10 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 2 : 0,
+  // Missing visual references must remain a hard CI failure. Playwright's
+  // default "missing" mode writes the expected file during attempt one, which
+  // would let a retry pass against an unreviewed image in the same job.
+  updateSnapshots: process.env.CI ? "none" : "missing",
   workers: process.env.CI ? 2 : undefined,
   timeout: 30_000,
   expect: {

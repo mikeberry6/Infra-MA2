@@ -6,6 +6,7 @@ import {
   configuredAdminE2E,
   expectNoHorizontalOverflow,
   signInAsConfiguredAdmin,
+  waitForApplication,
 } from "./helpers";
 
 // Authenticated checks in this file fill an isolated administrator password.
@@ -158,20 +159,98 @@ test("mobile filter sheet remains accessible", async ({ page }) => {
   expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
 });
 
-test("portfolio company scorecard has no automatically detectable WCAG A/AA violations", async ({ page }) => {
-  await page.goto(appPath("/portfolio"));
-  await page.getByRole("heading", {
-    name: "Infrastructure Portfolio Company Database",
-    level: 1,
-  }).waitFor();
-  await page.locator("tbody [data-company-row-trigger]").first().click();
+for (const database of [
+  {
+    path: "/tracker",
+    heading: "Infrastructure Deal Tape",
+    trigger: "tbody [data-deal-row-trigger]",
+    name: "deal drawer",
+  },
+  {
+    path: "/funds",
+    heading: "Infrastructure Fund Database",
+    trigger: "tbody [data-fund-row-trigger]",
+    name: "fund drawer",
+  },
+  {
+    path: "/portfolio",
+    heading: "Infrastructure Portfolio Company Database",
+    trigger: "tbody [data-company-row-trigger]",
+    name: "portfolio company scorecard",
+  },
+] as const) {
+  test(`${database.name} has no automatically detectable WCAG A/AA violations`, async ({ page }) => {
+    await page.goto(appPath(database.path));
+    await page.getByRole("heading", {
+      name: database.heading,
+      level: 1,
+    }).waitFor();
+    await page.locator(database.trigger).first().click();
 
-  const dialog = page.getByRole("dialog");
-  await expect(dialog).toBeVisible();
-  await expect(dialog.getByRole("status")).toBeHidden();
-  await expect(dialog.getByText(/^Last verified /)).toBeVisible();
+    const dialog = page.getByRole("dialog");
+    await expect(dialog).toBeVisible();
+    await expect(dialog.getByRole("status")).toBeHidden();
+    await expect(dialog.getByText(/^Last verified /)).toBeVisible();
+    const results = await new AxeBuilder({ page })
+      .include('[role="dialog"]')
+      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
+      .analyze();
+    expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
+  });
+}
+
+test("open multiselect popup has no automatically detectable WCAG A/AA violations", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto(appPath("/tracker"));
+  await waitForApplication(page, "Infrastructure Deal Tape");
+  await page.getByRole("button", { name: "Filter by Sector" }).click();
+  await expect(page.getByRole("listbox", { name: "Sector options" })).toBeVisible();
+
   const results = await new AxeBuilder({ page })
-    .include('[role="dialog"]')
+    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
+    .exclude("[data-next-badge]")
+    .analyze();
+  expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
+});
+
+test("admin import preview has no automatically detectable WCAG A/AA violations", { tag: "@sensitive" }, async ({ page }) => {
+  test.skip(
+    !configuredAdminE2E(),
+    `${ADMIN_E2E_ENV.join(", ")} are required for authenticated import-preview accessibility checks`,
+  );
+
+  await page.route(
+    (url) => url.pathname.endsWith("/api/imports/deals") && url.searchParams.get("preview") === "1",
+    (route) => route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({
+        items: [{ id: "A11Y-PREVIEW-ONLY", title: "Accessibility preview fixture" }],
+        previewToken: "accessibility-preview-token",
+        total: 1,
+        valid: 1,
+        creates: 1,
+        updates: 0,
+        unchanged: 0,
+        quarantined: 0,
+        warnings: [],
+        errors: [],
+        ownershipChanges: [],
+      }),
+    }),
+  );
+  await signInAsConfiguredAdmin(page, "/admin/deals");
+  await page.getByLabel("Select CSV").setInputFiles({
+    name: "accessibility-preview.csv",
+    mimeType: "text/csv",
+    buffer: Buffer.from("id,title\nA11Y-PREVIEW-ONLY,Accessibility preview fixture"),
+  });
+
+  const preview = page.getByRole("region", { name: "Import preview" });
+  await expect(preview).toBeVisible();
+  await expect(preview).toContainText("no imported records have been changed");
+  const results = await new AxeBuilder({ page })
+    .include('[aria-label="Import preview"]')
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
     .analyze();
   expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
