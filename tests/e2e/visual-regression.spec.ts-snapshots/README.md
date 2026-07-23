@@ -28,6 +28,38 @@ reviewed before being versioned. This statement does not imply that any separate
 canonical-company or citation backlog is complete. Generic local files are
 intentionally retained and must not be used to infer a future Linux refresh.
 
+## Representative public-route Linux baselines
+
+The 30 Linux baselines for Funds, Portfolio, News, Dashboard, Search, and Login
+were promoted from the retained actuals produced by GitHub Actions run
+[30033130425](https://github.com/mikeberry6/Infra-MA2/actions/runs/30033130425),
+job `89294317244`. The run checked PR head
+`9131de36401f8598d88d888657981509b83c6793` as exact merge commit
+`075dd4a1ab788bd807121885e9dd76a3b0c249f3`.
+
+The deterministic visual gate ran before authenticated mutation journeys.
+Its fixture preflight found no stale synthetic deal or source records to
+remove. For every route-width pair, the initial actual, both retry actuals,
+and the attached clean-actual evidence were byte-identical. All six
+five-width contact sheets were visually reviewed for clipping, overflow,
+missing content, responsive layout, and masking before promotion.
+
+Per-file hashes are recorded in
+`representative-linux-baselines.sha256`. Its SHA-256 is
+`09b375060c3e17d14d8459d6f3f8bb1397a5640cee03a9e2d6f9b7e43e30a199`.
+Verify the retained files from the repository root with:
+
+```sh
+(
+  cd tests/e2e/visual-regression.spec.ts-snapshots
+  shasum -a 256 -c representative-linux-baselines.sha256
+)
+```
+
+This promotion validates visual references only. It does not imply that the
+separate strict publication, citation, duplicate-company, or ownership-link
+review queues are complete.
+
 ## Representative public-route candidates
 
 Generic macOS candidates for Funds, Portfolio, News, Dashboard, Search, and
@@ -59,10 +91,9 @@ on Dashboard; metric values on Search; and nothing on Login. Each route-width
 pair is an isolated test so one missing snapshot cannot prevent later actuals
 from being collected.
 
-These generic files are macOS review references, not Linux substitutes. No new
-`*-linux.png` file should be copied or manufactured from them, and the Linux
-`maxDiffPixelRatio: 0.005` must not be relaxed. The first trusted validation
-run is expected to fail closed for the missing Linux baselines while retaining
-all 30 Linux actuals in the Playwright artifact. Promote those files only after
-visual review, recording the exact run, tested commit, validation-data state,
-and per-file hashes here.
+These generic files remain macOS review references, not Linux substitutes. The
+Linux files documented above came from reviewed CI actuals and were not copied
+or manufactured from the generic candidates. Future refreshes must preserve
+the Linux `maxDiffPixelRatio: 0.005`, fail closed for missing references, and
+record the exact run, tested commit, validation-data state, and per-file hashes
+before promotion.

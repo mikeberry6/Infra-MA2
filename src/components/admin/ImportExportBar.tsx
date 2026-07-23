@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Download, FileUp, X } from "lucide-react";
 import { track } from "@vercel/analytics";
@@ -82,11 +82,18 @@ const CACHE_ENTITY: Record<EntityType, DetailCacheEntity> = {
 
 export default function ImportExportBar({ entityType }: { entityType: EntityType }) {
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isHydrated, setIsHydrated] = useState(false);
   const [preview, setPreview] = useState<Preview | null>(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<StatusMessage | null>(null);
   const [auditEventId, setAuditEventId] = useState<string | null>(null);
   const labels = LABELS[entityType];
+
+  useEffect(() => {
+    // File selection depends on the client-side change handler. Keep the
+    // control unavailable until hydration so early interaction cannot be lost.
+    setIsHydrated(true);
+  }, []);
 
   async function previewFile(file: File) {
     setLoading(true);
@@ -200,9 +207,9 @@ export default function ImportExportBar({ entityType }: { entityType: EntityType
         >
           <Download className="h-3.5 w-3.5" /> Export CSV
         </a>
-        <label className="inline-flex h-8 cursor-pointer items-center justify-center gap-1.5 rounded-md bg-[var(--accent)] px-3 type-meta font-medium text-[var(--text-on-accent)] hover:bg-[var(--accent-hover)] focus-within:ring-2 focus-within:ring-[var(--accent-soft)]">
+        <label className={`inline-flex h-8 items-center justify-center gap-1.5 rounded-md bg-[var(--accent)] px-3 type-meta font-medium text-[var(--text-on-accent)] focus-within:ring-2 focus-within:ring-[var(--accent-soft)] ${isHydrated ? "cursor-pointer hover:bg-[var(--accent-hover)]" : "cursor-not-allowed opacity-60"}`}>
           <FileUp className="h-3.5 w-3.5" /> Select CSV
-          <input ref={fileInputRef} type="file" accept=".csv,text/csv" onChange={(event) => event.target.files?.[0] && previewFile(event.target.files[0])} className="sr-only" />
+          <input ref={fileInputRef} type="file" accept=".csv,text/csv" disabled={!isHydrated} onChange={(event) => event.target.files?.[0] && previewFile(event.target.files[0])} className="sr-only" />
         </label>
         {loading && <span role="status" className="type-micro animate-pulse">{preview ? "Importing…" : "Validating…"}</span>}
         {auditEventId && <Link href={`/admin/audit?focus=${encodeURIComponent(auditEventId)}`} className="type-micro font-medium text-[var(--accent)]">View audit event</Link>}

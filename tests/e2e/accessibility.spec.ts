@@ -240,7 +240,10 @@ test("admin import preview has no automatically detectable WCAG A/AA violations"
     }),
   );
   await signInAsConfiguredAdmin(page, "/admin/deals");
-  await page.getByLabel("Select CSV").setInputFiles({
+  await waitForApplication(page, "Deals");
+  const fileInput = page.getByLabel("Select CSV");
+  await expect(fileInput).toBeEnabled();
+  await fileInput.setInputFiles({
     name: "accessibility-preview.csv",
     mimeType: "text/csv",
     buffer: Buffer.from("id,title\nA11Y-PREVIEW-ONLY,Accessibility preview fixture"),
