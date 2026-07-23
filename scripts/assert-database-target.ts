@@ -2,6 +2,8 @@
  * Fail closed unless DATABASE_URL resolves to the explicitly approved host and
  * database. Only non-sensitive target identifiers are printed.
  */
+import { hasSafeDatabaseConnectionQuery } from "../src/lib/database-connection-query.ts";
+
 const connectionString = process.env.DATABASE_URL;
 const expectedHost = process.env.EXPECTED_DATABASE_HOST?.trim().toLowerCase();
 const expectedDatabase = process.env.EXPECTED_DATABASE_NAME?.trim();
@@ -29,6 +31,9 @@ try {
   fail("DATABASE_URL is not a valid URL.");
 }
 if (!['postgres:', 'postgresql:'].includes(parsed.protocol)) fail("DATABASE_URL must use the postgres protocol.");
+if (parsed.hash || !hasSafeDatabaseConnectionQuery(parsed)) {
+  fail("DATABASE_URL contains unsupported or unsafe connection parameters.");
+}
 
 const actualHost = parsed.hostname.toLowerCase();
 const actualDatabase = decodeURIComponent(parsed.pathname.replace(/^\//, ""));

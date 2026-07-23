@@ -105,4 +105,21 @@ describe("structured database task boundaries", () => {
       /onSuppressedCleanupError:[\s\S]*task: "database_seed_cleanup"[\s\S]*operation: "disconnect_database"/,
     );
   });
+
+  it("keeps ordinary seeding separate from administrator bootstrap", () => {
+    const packageJson = JSON.parse(source("package.json")) as {
+      scripts: Record<string, string>;
+    };
+    const seed = source("prisma/seed.ts");
+    const verification = source("prisma/verify-seed.ts");
+
+    expect(seed).not.toMatch(/prisma\.user\.(?:create|createMany|upsert|update|updateMany)/);
+    expect(packageJson.scripts["db:verify:fresh-seed"]).toContain("--fresh-seed");
+    expect(verification).toContain(
+      'const requireFreshSeedWithoutUsers = process.argv.includes("--fresh-seed");',
+    );
+    expect(verification).toContain("if (requireFreshSeedWithoutUsers)");
+    expect(verification).toContain('exact("Users created by ordinary seed", 0, userCount);');
+    expect(verification).not.toMatch(/check\("Users[^"]*",\s*1,\s*userCount\)/);
+  });
 });

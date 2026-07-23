@@ -19,6 +19,7 @@ import { weeklyDealIdentitiesMatch } from "../src/modules/operations/weekly-deal
 import { isHttpUrl } from "../src/lib/source-utils";
 
 const connectionString = process.env.DATABASE_URL;
+const requireFreshSeedWithoutUsers = process.argv.includes("--fresh-seed");
 let prismaToDisconnect: PrismaClient | null = null;
 
 async function main() {
@@ -84,7 +85,12 @@ async function main() {
   // can include retired references, so verify broad coverage plus integrity.
   check("Deals", Math.floor(deals.length * 0.9), dealCount);
   check("Deal participants", dealCount, participantCount);
-  check("Users", 1, userCount);
+  // The shared verifier also runs against established validation and production
+  // databases, where legitimate users can exist. Only a caller explicitly
+  // verifying a freshly seeded database may require the table to remain empty.
+  if (requireFreshSeedWithoutUsers) {
+    exact("Users created by ordinary seed", 0, userCount);
+  }
 
   console.log(`\n  Aliases: ${aliasCount}`);
   console.log(`  Ownership Periods: ${ownershipCount}`);
@@ -93,6 +99,7 @@ async function main() {
   console.log(`  Management Roles: ${roleCount}`);
   console.log(`  Sources: ${sourceCount}`);
   console.log(`  Citations: ${citationCount}`);
+  if (!requireFreshSeedWithoutUsers) console.log(`  Users: ${userCount}`);
 
   console.log("\nIntegrity checks:");
 

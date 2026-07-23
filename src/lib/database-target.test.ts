@@ -32,6 +32,56 @@ describe("mutation database target guard", () => {
     })).toThrow(/postgres protocol/);
   });
 
+  it("allows only reviewed non-identity connection query parameters", () => {
+    expect(() => assertMutationDatabaseTarget({
+      ...approved,
+      connectionString:
+        `${approved.connectionString}&channel_binding=require&connect_timeout=15`,
+    })).not.toThrow();
+  });
+
+  it.each([
+    "host",
+    "hostaddr",
+    "port",
+    "user",
+    "username",
+    "password",
+    "db",
+    "database",
+    "dbname",
+    "service",
+    "servicefile",
+    "passfile",
+    "options",
+    "schema",
+  ])("rejects DATABASE_URL query override %s", (name) => {
+    const connectionString =
+      `${approved.connectionString}&${name}=${encodeURIComponent("private-override")}`;
+
+    expect(() => assertMutationDatabaseTarget({
+      ...approved,
+      connectionString,
+    })).toThrow(/unsupported or unsafe connection parameters/);
+  });
+
+  it("rejects recursive connection strings without exposing their value", () => {
+    const recursive =
+      "postgresql://other:private-secret@production.example/db_name?sslmode=require";
+    const connectionString =
+      `${approved.connectionString}&connectionString=${encodeURIComponent(recursive)}`;
+
+    let failure: unknown;
+    try {
+      assertMutationDatabaseTarget({ ...approved, connectionString });
+    } catch (error) {
+      failure = error;
+    }
+    expect(String(failure)).toContain("unsupported or unsafe connection parameters");
+    expect(String(failure)).not.toContain("private-secret");
+    expect(String(failure)).not.toContain("postgresql://");
+  });
+
   it("forbids ordinary seeding against production", () => {
     const environment = {
       DATABASE_URL: approved.connectionString,

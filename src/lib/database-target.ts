@@ -1,4 +1,5 @@
 import { SafeOperationalError } from "@/lib/safe-error";
+import { hasSafeDatabaseConnectionQuery } from "@/lib/database-connection-query";
 
 /**
  * Fail closed before a script creates a database client capable of mutation.
@@ -29,6 +30,9 @@ export function assertMutationDatabaseTarget(input: {
   }
   if (parsed.protocol !== "postgres:" && parsed.protocol !== "postgresql:") {
     throw new SafeOperationalError("database_protocol_invalid");
+  }
+  if (parsed.hash || !hasSafeDatabaseConnectionQuery(parsed)) {
+    throw new SafeOperationalError("database_url_query_unsafe");
   }
 
   const host = parsed.hostname.toLowerCase();

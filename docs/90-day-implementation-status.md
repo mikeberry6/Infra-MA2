@@ -63,12 +63,11 @@ The phase trees were reconciled in two-parent integration commit `f97ca6122eae20
 
 ## Latest exact hosted evidence
 
-[Release Gate run 30000617641](https://github.com/mikeberry6/Infra-MA2/actions/runs/30000617641) evaluated source head `7ed3947a77969ac84e4e6df8fe04d917148fe9fc`.
+[Release Gate run 30021727375](https://github.com/mikeberry6/Infra-MA2/actions/runs/30021727375) evaluated source head `851f12480ce6f2a930540852116b6c715f66aa38`.
 
-- Static job `89184680848` passed the locked install, additive migration/history audits, Prisma generation/validation, lint, both typechecks, **178 files / 1,219 tests**, offline portfolio and weekly-email validation, complete and production dependency audits, Next.js production build, and all three bundle budgets.
-- Validation job `89184681004` passed target/lineage/migration/drift controls, real transaction-persistence checks, migrated-database build, five visual scenarios, 45 primary browser scenarios, four sensitive-credential scenarios, five top-level database-failure scenarios, one provider-failure scenario, and both evidence secret scanners.
-- All **60 distinct Playwright scenarios** passed their intended partitions. The job remained red only because the strict editorial publication gate correctly rejected unresolved Research records.
-- The exact immutable Preview was [infra-ma-2-l0cdlzcqy-mberry.vercel.app](https://infra-ma-2-l0cdlzcqy-mberry.vercel.app). Vercel built it successfully, but application data failed closed because that integration branch has no functional branch-scoped Preview database/auth configuration.
+- The static job passed the locked install, additive migration/history audits, Prisma generation/validation, lint, both typechecks, offline portfolio and weekly-email validation, complete and production dependency audits, Next.js production build, and all three bundle budgets.
+- The validation job passed the engineering controls and all **62 Playwright scenarios** in their intended partitions. It remained red only because the strict editorial publication gate correctly rejected unresolved Research records.
+- The exact immutable Preview was [infra-ma-2-9bbytlhuo-mberry.vercel.app](https://infra-ma-2-9bbytlhuo-mberry.vercel.app), deployment `dpl_2eTq9WGuEueuMgcvVhfiJqKfATZH`. Vercel built it successfully, while runtime health failed closed with HTTP 503 and safe `P2010` / `DatabaseNotReachable` classification.
 - The earlier isolated E2E credential artifact incident is closed: the credential was rotated, the affected artifact was deleted, and current scanners pass. No production credential was involved.
 
 The final audit and interaction-hardening slice must receive its own exact-head hosted run after commit and push. PR #223 is the authoritative location for that subsequent run and commit identity.
@@ -79,7 +78,10 @@ The final audit and interaction-hardening slice must receive its own exact-head 
 - Vercel has a Preview-only GitHub Actions Trusted Source for `mikeberry6/Infra-MA2@main`, workflow `preview-smoke.yml`, and audience `https://vercel.com/infrasight-preview-smoke`.
 - Vercel system environment variables are enabled.
 - Vercel automatic custom-domain assignment is disabled. The production alias remains bound to the unchanged ready deployment; promotion now independently verifies this staged-promotion setting before it can mutate production.
-- The current integration branch has no matching branch-scoped `DATABASE_URL`, `NEXTAUTH_URL`, or `NEXTAUTH_SECRET`; its Preview therefore cannot satisfy the new healthy-runtime smoke until Operations supplies an isolated validation configuration.
+- The Vercel Neon integration is restricted to Production only; generated production database variables are absent from Preview and Development, and automatic deployment-branch actions are disabled.
+- A schema-originated candidate exists as `preview-codex-infra-90-day-clean` (branch `br-sparkling-firefly-ambnknjv`; pooled host `ep-soft-feather-am7a9o9j-pooler.c-5.us-east-1.aws.neon.tech`; direct host `ep-soft-feather-am7a9o9j.c-5.us-east-1.aws.neon.tech`). Its migration ledger, migration status, and schema drift check are current; it was initialized exclusively from version-controlled seed data, and ordinary seeding created no users. Its branch-only credential was proved unable to authenticate to production. Strict Research verification still reports the review-gated seller, fund-source, and historical weekly decisions described below.
+- The ineligible production-copy child was deleted without ever being deployed. Branch-scoped Vercel pooled/direct variables now reference the clean candidate, and the stable Preview alias is used for branch-specific auth and public-site origins.
+- `PREVIEW_DATABASE_MIGRATIONS_ENABLED` is `true` only for `codex/infra-90-day-completion`; a real guarded no-op deployment, migration status, schema drift check, and application build passed against the clean candidate before the flag was enabled.
 - The GitHub `Production` environment prevents self-review and administrator bypass, and permits deployment only from `main`. Its sole named reviewer is still the repository owner, so production intentionally remains blocked until an independent Engineering or Operations reviewer is assigned.
 - Web Analytics is enabled but showed zero visitors/page views for the observed seven-day production window.
 - Speed Insights is collecting: `/tracker` showed four production desktop data points and a route score of 100. This proves collection, not the 30-day p75 target.
@@ -104,7 +106,7 @@ Exact normalized duplicate keys and non-HTTP source URLs were both zero. The cit
 
 ### External or operator-controlled
 
-- Configure an isolated, current-branch Vercel Preview database and preview-only NextAuth values; then execute the trusted OIDC smoke.
+- Configure and initialize a schema-only or explicitly sanitized current-branch Vercel Preview database and preview-only NextAuth values; then execute the trusted OIDC smoke.
 - Merge/bootstrap the default-branch Preview workflow, redeploy the exact bootstrap PR head, rerun `preview-smoke-lineage`, and add `preview-smoke` to branch protection.
 - Complete Research review and commit only evidence-backed, hash-bound approvals.
 - Add an independent Engineering or Operations approver to the GitHub `Production` environment.

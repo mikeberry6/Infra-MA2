@@ -20,6 +20,7 @@ const expectedNativeEntrypoints = [
   "scripts/mutate-vercel-production.ts",
   "scripts/validate-portfolios.ts",
   "scripts/validate-weekly-email.ts",
+  "scripts/vercel-build.ts",
   "scripts/verify-migration-baseline.ts",
   "scripts/verify-preview-smoke-lineage.ts",
   "scripts/verify-release-provenance.ts",

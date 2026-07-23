@@ -23,6 +23,7 @@ export type SafeOperationalErrorCode =
   | "database_url_invalid"
   | "database_url_missing"
   | "database_url_mutation_required"
+  | "database_url_query_unsafe"
   | "database_url_required"
   | "maintenance_review_metadata_missing"
   | "maintenance_target_invalid"
@@ -73,6 +74,10 @@ const OPERATIONAL_ERRORS: Record<SafeOperationalErrorCode, SafeErrorDetails> = {
   database_url_mutation_required: {
     classification: "configuration_error",
     message: "DATABASE_URL is required for a database mutation",
+  },
+  database_url_query_unsafe: {
+    classification: "configuration_error",
+    message: "DATABASE_URL contains unsupported or unsafe connection parameters",
   },
   database_url_required: {
     classification: "configuration_error",
