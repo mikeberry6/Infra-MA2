@@ -8,6 +8,8 @@ const WRITE_JOURNEY_ENV = [
   "E2E_ADMIN_PASSWORD",
 ] as const;
 
+const MUTATION_NAVIGATION_TIMEOUT_MS = 20_000;
+
 function configuredWriteJourney() {
   return WRITE_JOURNEY_ENV.every((name) => Boolean(process.env[name]));
 }
@@ -60,7 +62,13 @@ async function createDraftDeal(page: Page, input: {
     await page.getByLabel("Primary Source URL").fill(input.sourceUrl);
   }
   await page.getByRole("button", { name: "Create Deal" }).click();
-  await expect(page).toHaveURL(new RegExp(`${appPath("/admin/deals")}$`));
+  // The isolated Neon branch can incur a cold transaction on the first
+  // audited mutation. Keep the assertion strict, but give the successful
+  // server-action redirect a bounded mutation-specific window.
+  await expect(page).toHaveURL(
+    new RegExp(`${appPath("/admin/deals")}$`),
+    { timeout: MUTATION_NAVIGATION_TIMEOUT_MS },
+  );
 }
 
 async function bestEffortDeleteCreatedDeal(page: Page, target: string) {
