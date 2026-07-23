@@ -19,6 +19,6 @@ export default async function FundsPage() {
     return <FundDatabaseClient funds={funds} counts={counts} />;
   } catch (error) {
     console.error("Database query failed on /funds:", error);
-    return <DataUnavailable title="Fund data could not be loaded." />;
+    return <DataUnavailable title="Fund data could not be loaded." retryHref="/funds" />;
   }
 }

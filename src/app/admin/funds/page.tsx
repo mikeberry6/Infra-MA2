@@ -9,14 +9,25 @@ import ArchiveButton from "@/components/admin/ArchiveButton";
 import RecordWorkflowButton from "@/components/admin/RecordWorkflowButton";
 import ImportExportBar from "@/components/admin/ImportExportBar";
 import { archiveFund, deleteFund, publishFund, submitFundForReview, verifyFund } from "@/modules/admin/actions";
-import { Button } from "@/components/shared/Button";
+import { ButtonLink } from "@/components/shared/Button";
 import { getRecordStatusColor } from "@/lib/colors";
+import { AdminPagination } from "@/components/admin/AdminPagination";
+import { adminPagination } from "@/lib/admin-pagination";
 
 export const metadata = { title: "Admin · Funds" };
 
-export default async function AdminFundsPage() {
+export default async function AdminFundsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const { page: rawPage } = await searchParams;
+  const total = await prisma.fund.count();
+  const { page, totalPages, skip, take } = adminPagination(rawPage, total);
   const funds = await prisma.fund.findMany({
     orderBy: { fundName: "asc" },
+    skip,
+    take,
     include: {
       manager: { select: { name: true } },
     },
@@ -36,20 +47,23 @@ export default async function AdminFundsPage() {
             Funds
           </h1>
           <p className="text-xs text-[var(--text-secondary)] mt-0.5">
-            <span className="mono tabular-nums">{funds.length.toLocaleString()}</span> total
+            <span className="mono tabular-nums">{total.toLocaleString()}</span> total
           </p>
         </div>
-        <Link href="/admin/funds/new">
-          <Button variant="primary" size="md" leadingIcon={<Plus className="h-3 w-3" />}>
-            New fund
-          </Button>
-        </Link>
+        <ButtonLink href="/admin/funds/new" variant="primary" size="md" leadingIcon={<Plus className="h-3 w-3" />}>
+          New fund
+        </ButtonLink>
       </div>
 
       <ImportExportBar entityType="funds" />
 
-      <div className="surface overflow-hidden mt-4">
-        <table className="w-full text-left border-collapse whitespace-nowrap">
+      <div
+        className="surface overflow-x-auto mt-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
+        role="region"
+        aria-label="Funds table"
+        tabIndex={0}
+      >
+        <table className="w-full min-w-[760px] text-left border-collapse whitespace-nowrap">
           <thead>
             <tr className="bg-[var(--bg-app)] border-b border-[var(--border)]">
               <th className="text-left px-3 py-2 text-[10px] font-medium text-[var(--text-tertiary)] uppercase tracking-wider">ID</th>
@@ -77,9 +91,9 @@ export default async function AdminFundsPage() {
                 <td className="px-3 py-2.5 text-[12px] mono tabular-nums text-[var(--text-secondary)]">{fund.size}</td>
                 <td className="px-3 py-2.5">
                   <div className="flex items-center gap-1.5">
-                    <Link href={`/admin/funds/${fund.id}/edit`}>
-                      <Button variant="secondary" size="sm">Edit</Button>
-                    </Link>
+                    <ButtonLink href={`/admin/funds/${fund.id}/edit`} variant="secondary" size="sm">
+                      Edit
+                    </ButtonLink>
                     <RecordWorkflowButton entity="fund" id={fund.id} status={fund.status} submitForReview={submitFundForReview} publish={publishFund} verify={verifyFund} />
                     <ArchiveButton entity="fund" archiveAction={archiveFund} id={fund.id} disabled={fund.status === "ARCHIVED"} />
                     <DeleteButton entity="fund" deleteAction={deleteFund} id={fund.id} status={fund.status} />
@@ -93,6 +107,7 @@ export default async function AdminFundsPage() {
           <div className="py-12 text-center text-sm text-[var(--text-tertiary)]">No funds yet.</div>
         )}
       </div>
+      <AdminPagination pathname="/admin/funds" page={page} totalPages={totalPages} totalItems={total} />
     </div>
   );
 }

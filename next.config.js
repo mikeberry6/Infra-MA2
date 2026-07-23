@@ -43,6 +43,9 @@ const nextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+  async redirects() {
+    return [{ source: "/", destination: "/tracker", permanent: true }];
+  },
 };
 
 module.exports = nextConfig;

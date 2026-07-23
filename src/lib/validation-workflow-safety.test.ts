@@ -27,11 +27,11 @@ describe("isolated validation workflow remediation context", () => {
     );
   });
 
-  it("isolates Phase 2 migration validation from every production database", () => {
+  it("isolates Phase 3 migration and browser validation from every production database", () => {
     const validationJob = workflow.slice(workflow.indexOf("  validation:"));
     const migrationStep = validationJob.indexOf("- name: Apply additive migrations to validation branch");
     const buildStep = validationJob.indexOf(
-      "- name: Build against migrated Phase 2 validation database",
+      "- name: Build against migrated Phase 3 validation database",
     );
 
     expect(validationJob).toContain(
@@ -46,7 +46,10 @@ describe("isolated validation workflow remediation context", () => {
     expect(validationJob).not.toContain("secrets.MIGRATION_DATABASE_URL");
     expect(migrationStep).toBeGreaterThan(-1);
     expect(buildStep).toBeGreaterThan(migrationStep);
-    expect(validationJob).not.toContain("playwright");
+    expect(validationJob).toContain("playwright");
+    expect(validationJob).toContain("E2E_DATABASE_URL: ${{ secrets.PHASE2_MIGRATION_DATABASE_URL }}");
+    expect(validationJob).not.toContain("bundle-budget");
+    expect(validationJob).not.toContain("/api/health");
   });
 
   it("derives each mutation reviewer from the committed approval", () => {
@@ -116,9 +119,9 @@ describe("isolated validation workflow remediation context", () => {
 
   it("uploads neutral evidence after strict-gate failures and still fails closed", () => {
     const strictGate = workflow.indexOf("- name: Verify database integrity and strict publication gates");
-    const evidenceUpload = workflow.indexOf("- name: Upload migration and data evidence");
+    const evidenceUpload = workflow.indexOf("- name: Upload migration, data, and browser evidence");
     const enforcement = workflow.indexOf(
-      "- name: Enforce strict publication gate after collecting evidence",
+      "- name: Enforce browser, visual, and strict publication gates after collecting evidence",
     );
 
     expect(strictGate).toBeGreaterThan(-1);
@@ -129,7 +132,7 @@ describe("isolated validation workflow remediation context", () => {
     expect(workflow.slice(enforcement)).toContain(
       'if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]',
     );
-    expect(workflow.slice(enforcement)).toContain("exit 1");
-    expect(workflow).not.toContain("playwright");
+    expect(workflow.slice(enforcement)).toContain('exit "$failed"');
+    expect(workflow).toContain("playwright");
   });
 });

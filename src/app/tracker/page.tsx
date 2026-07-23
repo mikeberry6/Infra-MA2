@@ -19,6 +19,6 @@ export default async function TrackerPage() {
     return <DealDatabaseClient deals={deals} counts={counts} />;
   } catch (error) {
     console.error("Database query failed on /tracker:", error);
-    return <DataUnavailable title="Deal data could not be loaded." />;
+    return <DataUnavailable title="Deal data could not be loaded." retryHref="/tracker" />;
   }
 }

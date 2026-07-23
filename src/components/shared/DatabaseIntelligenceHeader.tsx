@@ -21,6 +21,7 @@ export function DatabaseIntelligenceHeader({
   eyebrow,
   title,
   summary,
+  metrics,
   actions,
 }: DatabaseIntelligenceHeaderProps) {
   return (
@@ -47,6 +48,30 @@ export function DatabaseIntelligenceHeader({
           </div>
         )}
       </div>
+
+      {metrics.length > 0 && (
+        <dl className="mt-5 grid grid-cols-2 gap-2 lg:grid-cols-4" aria-label={`${title} summary metrics`}>
+          {metrics.map((metric) => (
+            <div
+              key={metric.label}
+              className="min-w-0 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 py-2.5 shadow-[0_1px_2px_rgba(17,17,20,0.03)]"
+            >
+              <dt className="flex items-center gap-2 type-micro font-medium text-[var(--text-secondary)]">
+                <span
+                  aria-hidden
+                  className="h-1.5 w-1.5 shrink-0 rounded-full"
+                  style={{ backgroundColor: metric.color ?? "var(--accent)" }}
+                />
+                <span className="truncate">{metric.label}</span>
+              </dt>
+              <dd className="mt-1 min-w-0">
+                <div className="truncate type-section-title text-[var(--text-primary)]">{metric.value}</div>
+                {metric.detail && <div className="mt-0.5 truncate type-micro">{metric.detail}</div>}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )}
     </section>
   );
 }

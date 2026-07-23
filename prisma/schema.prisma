@@ -631,6 +631,7 @@ model User {
 
   auditEvents AuditEvent[]
   reviewedDashboardSignals DashboardSignal[] @relation("DashboardSignalReviewer")
+  importPreviews ImportPreview[]
 }
 
 // ── Operational trust and auditability ──────────────────
@@ -687,4 +688,20 @@ model AuthThrottle {
   updatedAt       DateTime @updatedAt
 
   @@index([lockedUntil])
+}
+
+model ImportPreview {
+  id          String   @id
+  tokenHash   String   @unique
+  actorId     String
+  actor       User     @relation(fields: [actorId], references: [id], onDelete: Cascade)
+  entityType  String
+  payloadHash String
+  summary     Json
+  expiresAt   DateTime
+  consumedAt  DateTime?
+  createdAt   DateTime @default(now())
+
+  @@index([actorId, entityType])
+  @@index([expiresAt])
 }

@@ -10,6 +10,11 @@ import {
 
 const IMPORT_TRANSACTION_MAX_WAIT_MS = 10_000;
 const IMPORT_TRANSACTION_TIMEOUT_MS = 120_000;
+const IMPORT_TRANSACTION_OPTIONS = {
+  isolationLevel: "Serializable" as const,
+  maxWait: IMPORT_TRANSACTION_MAX_WAIT_MS,
+  timeout: IMPORT_TRANSACTION_TIMEOUT_MS,
+};
 
 interface ImportCommitWork<T> {
   value: T;
@@ -20,6 +25,7 @@ interface ImportCommitWork<T> {
 interface ImportCommitOptions<T> {
   pipeline: string;
   entityType: string;
+  actorId: string;
   rowCount: number;
   execute: (tx: Prisma.TransactionClient) => Promise<ImportCommitWork<T>>;
 }
@@ -61,6 +67,18 @@ export function sanitizeImportError(error: unknown): string {
 }
 
 /**
+ * Revalidate and consume a no-op import preview without creating operational
+ * records. The caller must perform the complete state read and token consume
+ * inside this callback so the preview cannot go stale between verification
+ * and consumption.
+ */
+export async function transactImportPreview<T>(
+  execute: (tx: Prisma.TransactionClient) => Promise<T>,
+): Promise<T> {
+  return prisma.$transaction(execute, IMPORT_TRANSACTION_OPTIONS);
+}
+
+/**
  * Run an import as one atomic commit. The PipelineRun is created beforehand so
  * a rolled-back commit can still be marked FAILED, while its SUCCEEDED update
  * is part of the same transaction as all imported rows and the AuditEvent.
@@ -76,6 +94,7 @@ export async function commitImport<T>(
     return await prisma.$transaction(async (tx) => {
       const work = await options.execute(tx);
       const auditEventId = await recordAuditEvent({
+        actorId: options.actorId,
         entityType: options.entityType,
         action: "BULK_IMPORT",
         changes: work.auditChanges,
@@ -88,11 +107,7 @@ export async function commitImport<T>(
         auditEventId,
         pipelineRunId,
       };
-    }, {
-      isolationLevel: "Serializable",
-      maxWait: IMPORT_TRANSACTION_MAX_WAIT_MS,
-      timeout: IMPORT_TRANSACTION_TIMEOUT_MS,
-    });
+    }, IMPORT_TRANSACTION_OPTIONS);
   } catch (error) {
     const summary = sanitizeImportError(error);
     try {

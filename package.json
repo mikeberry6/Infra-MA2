@@ -12,7 +12,7 @@
     "postinstall": "prisma generate",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src prisma scripts next.config.js --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint src prisma scripts tests next.config.js playwright.config.ts --ext .js,.jsx,.ts,.tsx",
     "typecheck": "tsc --noEmit",
     "typecheck:scripts": "tsc -p scripts/tsconfig.json --pretty false",
     "db:validate": "prisma validate",
@@ -20,6 +20,9 @@
     "audit:weekly-history": "tsx scripts/audit-historical-weekly-emails.ts",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:update": "playwright test tests/e2e/visual-regression.spec.ts --update-snapshots",
+    "test:a11y": "playwright test tests/e2e/accessibility.spec.ts",
     "doctor": "npx tsx scripts/doctor.ts",
     "dashboard:sync": "npx tsx scripts/dashboard-sync.ts",
     "dashboard:sync:dry-run": "npx tsx scripts/dashboard-sync.ts --dry-run",
@@ -70,6 +73,8 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@playwright/test": "^1.61.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
