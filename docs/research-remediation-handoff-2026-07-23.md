@@ -5,9 +5,10 @@
 This handoff is bound to:
 
 - pull request [#223](https://github.com/mikeberry6/Infra-MA2/pull/223);
-- source head `4fee1d933390bd349cae9952809982491eafe257`;
-- validation run [30034397931](https://github.com/mikeberry6/Infra-MA2/actions/runs/30034397931);
-- artifact `validation-evidence-30034397931`; and
+- source head `2141b01053f6c858bbee54aa9e36790c774775e6`;
+- pull-request merge revision `ccd863693e5b51fc76602817df86e6dd2e4c0bfe`;
+- validation run [30040590884](https://github.com/mikeberry6/Infra-MA2/actions/runs/30040590884);
+- artifact `validation-evidence-30040590884` (artifact ID `8577168817`, digest `sha256:51d80c48cb86474232a1822e49176e7bbf84df48b9a7db013b105106c8414267`, retained through 2026-08-22); and
 - the isolated validation database used by that run.
 
 The packet is review-only. It contains no Research decisions, grants no permission to publish or merge records, and has not been applied to Preview or Production. Candidate order is deliberately neutral.
@@ -16,8 +17,8 @@ Download the exact retained evidence into a new temporary directory:
 
 ```bash
 review_dir=$(mktemp -d /tmp/infrasight-research-review.XXXXXX)
-gh run download 30034397931 \
-  --name validation-evidence-30034397931 \
+gh run download 30040590884 \
+  --name validation-evidence-30040590884 \
   --dir "$review_dir"
 ```
 
@@ -25,11 +26,11 @@ Verify the five input templates before review:
 
 | Template | SHA-256 |
 | --- | --- |
-| `company-merge-approval-template.json` | `1209b790617ef91a01067532b3a487eb44873a526b6222a7523e51d07ec22b54` |
-| `ownership-fund-link-approval-template.json` | `19b0817df3063c55f6f398073b89efbc6905c33e2f771c552cc0b84f2b476cf1` |
-| `fund-primary-source-approval-template.json` | `66c8afd6f22bd4041128c44df20eb413ea9809672a43fd521ff638bfdb0c6643` |
-| `deal-seller-disclosure-approval-template.json` | `a1ee4f9ca075ab19c015f209cafc778c0b665cd627ef7076a45971772327a429` |
-| `primary-citation-approval-template.json` | `33882de48e3c0af5ba56ea7b9addc81e9088506704c4cb19e665ea676af1e89a` |
+| `company-merge-approval-template.json` | `6120d2f5186b59144615f75714e64425d4880304682d5c4b442533500f8194e3` |
+| `ownership-fund-link-approval-template.json` | `646e1d58354fa6df84f0f221cb39cdfae3e47316dec08865ded944a634a32376` |
+| `fund-primary-source-approval-template.json` | `da8f03537ddf1c6009a0c23b4256a08859de6f6f6663f57075aa00f1c9b55af3` |
+| `deal-seller-disclosure-approval-template.json` | `34edb970103786d5358c12002598e709a47cd75c4e7c1f4ed9cff5e8f07a3749` |
+| `primary-citation-approval-template.json` | `2268602d56f08be8d74b7b9aeb328291f19b1253bc304d5ddd367298cc65c457` |
 
 ```bash
 shasum -a 256 "$review_dir"/*approval-template.json

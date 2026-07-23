@@ -4,9 +4,9 @@
 
 ## Scope and method
 
-This proposal addresses the 17 records with no citation candidate in the pre-merge template from validation run [30034397931](https://github.com/mikeberry6/Infra-MA2/actions/runs/30034397931): Deals `INF-2026-080` through `INF-2026-095`, plus the duplicate-candidate Company record `Extenet`.
+This proposal addresses the 17 records that still have no citation candidate in the pre-merge template from code-bearing validation run [30040590884](https://github.com/mikeberry6/Infra-MA2/actions/runs/30040590884): Deals `INF-2026-080` through `INF-2026-095`, plus the duplicate-candidate Company record `Extenet`. That exact set was rechecked in retained artifact `validation-evidence-30040590884` at source head `2141b01053f6c858bbee54aa9e36790c774775e6`.
 
-Research was performed against source head `18ca497ee5862cfcb7a78ba1244b2ed6db518208`. The current seed facts and related Company citations were inspected first. Candidate evidence was then limited to issuer, buyer, seller, manager, public-company filing, or other first-party sources wherever one could be found. Every linked candidate returned HTTP 200 on 2026-07-23.
+The underlying source research was performed against source head `18ca497ee5862cfcb7a78ba1244b2ed6db518208`. The current seed facts and related Company citations were inspected first. Candidate evidence was then limited to issuer, buyer, seller, manager, public-company filing, or other first-party sources wherever one could be found. Every linked candidate returned HTTP 200 on 2026-07-23.
 
 No source, citation, Deal, Company, approval file, or publication state was changed. These proposals must not be copied mechanically into an approval file. Research must first resolve every stated inconsistency, add or correct evidence through the editorial workflow, and regenerate the neutral templates.
 
