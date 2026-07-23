@@ -758,6 +758,8 @@ function FundDrawer({
     () => buildFundSourceLinks(fund.primarySourceUrl, fund.sourceUrls),
     [fund.primarySourceUrl, fund.sourceUrls],
   );
+  const primaryFundSource = fundSources.find((source) => source.isPrimary) ?? null;
+  const supportingFundSources = fundSources.filter((source) => !source.isPrimary);
 
   // Aggregate all portfolio companies across the firm (all funds for this manager)
   const managerFundCount = new Set(
@@ -952,38 +954,75 @@ function FundDrawer({
             </section>
           )}
 
-          {/* Reviewed primary source and supporting URLs */}
-          {fundSources.length > 0 && (
-            <section className="border-t border-[var(--border)] pt-6">
-              <div className="type-section-title text-[var(--text-tertiary)] mb-3">
-                Sources
+          {/* Reviewed provenance and supporting URLs */}
+          <section className="border-t border-[var(--border)] pt-6">
+            <div className="type-section-title text-[var(--text-tertiary)] mb-3">
+              Provenance
+            </div>
+            <div className="surface space-y-4 px-4 py-3">
+              <div>
+                <div className="type-label mb-1.5">Primary source</div>
+                {primaryFundSource ? (
+                  <a
+                    href={primaryFundSource.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => track("source_link_clicked", {
+                      entity: "fund",
+                      placement: "drawer_primary",
+                    })}
+                    className="inline-flex items-center gap-1.5 type-meta hover:text-[var(--text-primary)] transition-colors group"
+                  >
+                    <ExternalLink className="h-3 w-3 shrink-0 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)]" />
+                    <span className="font-medium text-[var(--text-secondary)]">
+                      {primaryFundSource.label}
+                    </span>
+                    <span aria-hidden className="text-[var(--text-tertiary)]">·</span>
+                    <span className="truncate">{primaryFundSource.hostname}</span>
+                  </a>
+                ) : detailState === "loading" ? (
+                  <p className="type-meta text-[var(--text-tertiary)]">
+                    Loading verified provenance…
+                  </p>
+                ) : detailState === "error" ? (
+                  <p className="type-meta text-[var(--text-tertiary)]">
+                    Unavailable while verified detail is offline
+                  </p>
+                ) : (
+                  <p className="type-meta text-[var(--text-tertiary)]">
+                    Pending Research review
+                  </p>
+                )}
               </div>
-              <div className="surface px-4 py-3">
-                <div className="grid gap-2">
-                {fundSources.map((source) => (
-                    <a
-                      key={source.url}
-                      href={source.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => track("source_link_clicked", {
-                        entity: "fund",
-                        placement: source.isPrimary ? "drawer_primary" : "drawer",
-                      })}
-                      className="inline-flex items-center gap-1.5 type-meta hover:text-[var(--text-primary)] transition-colors group"
-                    >
-                      <ExternalLink className="h-3 w-3 shrink-0 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)]" />
-                      <span className={source.isPrimary ? "font-medium text-[var(--text-secondary)]" : "text-[var(--text-tertiary)]"}>
-                        {source.label}
-                      </span>
-                      <span aria-hidden className="text-[var(--text-tertiary)]">·</span>
-                      <span className="truncate">{source.hostname}</span>
-                    </a>
-                  ))}
+              {supportingFundSources.length > 0 && (
+                <div className="border-t border-[var(--border)] pt-3">
+                  <div className="type-label mb-1.5">Supporting sources</div>
+                  <div className="grid gap-2">
+                    {supportingFundSources.map((source) => (
+                      <a
+                        key={source.url}
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => track("source_link_clicked", {
+                          entity: "fund",
+                          placement: "drawer",
+                        })}
+                        className="inline-flex items-center gap-1.5 type-meta hover:text-[var(--text-primary)] transition-colors group"
+                      >
+                        <ExternalLink className="h-3 w-3 shrink-0 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)]" />
+                        <span className="text-[var(--text-tertiary)]">
+                          {source.label}
+                        </span>
+                        <span aria-hidden className="text-[var(--text-tertiary)]">·</span>
+                        <span className="truncate">{source.hostname}</span>
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </section>
-          )}
+              )}
+            </div>
+          </section>
 
           {/* Portfolio Companies */}
           {firmPortfolio.total > 0 && (

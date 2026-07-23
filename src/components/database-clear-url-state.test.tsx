@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import type { CompanyListItem, DealListItem, FundListItem } from "@/modules/shared/types";
 
@@ -206,5 +206,42 @@ describe("database clear-all URL state", () => {
     await waitFor(() => expect(analytics.track.mock.calls.filter(
       ([name]) => name === "drawer_opened",
     )).toEqual([["drawer_opened", { entity: "deal" }]]));
+  });
+
+  it("distinguishes offline Fund provenance from a pending Research review", async () => {
+    navigation.pathname = "/funds";
+    window.history.replaceState({}, "", "/funds");
+    const offlineFund = {
+      ...fund,
+      id: "fund-offline",
+      legacyId: "FUND-OFFLINE",
+      fundName: "Offline Infrastructure Fund",
+    };
+    vi.stubGlobal("fetch", vi.fn(async (input: RequestInfo | URL) => {
+      const url = typeof input === "string" ? input : input.toString();
+      if (url.includes("/api/funds/")) {
+        return {
+          ok: false,
+          status: 503,
+          json: async () => ({ error: "Detail temporarily unavailable" }),
+        };
+      }
+      return {
+        ok: true,
+        status: 200,
+        json: async () => ({ canExport: false }),
+      };
+    }));
+
+    render(<FundDatabase funds={[offlineFund]} counts={counts} />);
+    const rowTrigger = document.querySelector<HTMLButtonElement>("[data-fund-row-trigger]");
+    expect(rowTrigger).not.toBeNull();
+    await userEvent.click(rowTrigger!);
+
+    const dialog = await screen.findByRole("dialog");
+    await waitFor(() => {
+      expect(within(dialog).getByText("Unavailable while verified detail is offline")).toBeVisible();
+    });
+    expect(within(dialog).queryByText("Pending Research review")).not.toBeInTheDocument();
   });
 });
