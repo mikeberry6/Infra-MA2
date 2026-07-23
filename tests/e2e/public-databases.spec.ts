@@ -158,10 +158,20 @@ test.describe("anonymous database journeys", () => {
         name: `Filter by ${database.representative.label}`,
       });
       await representativeTrigger.press("Enter");
-      const representativeOption = page.getByRole("option", {
-        name: database.representative.option,
-        exact: true,
-      });
+      const representativeOptions = page
+        .getByRole("listbox", {
+          name: `${database.representative.label} options`,
+        })
+        .getByRole("option");
+      const representativeIndex = (await representativeOptions.allTextContents())
+        .map((label) => label.trim())
+        .indexOf(database.representative.option);
+      expect(representativeIndex).toBeGreaterThanOrEqual(0);
+      await expect(representativeOptions.first()).toBeFocused();
+      for (let index = 0; index < representativeIndex; index += 1) {
+        await page.keyboard.press("ArrowDown");
+      }
+      const representativeOption = representativeOptions.nth(representativeIndex);
       await expect(representativeOption).toBeFocused();
       await representativeOption.press("Space");
 
