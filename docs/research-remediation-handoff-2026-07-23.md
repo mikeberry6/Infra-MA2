@@ -5,24 +5,24 @@
 This handoff is bound to:
 
 - pull request [#223](https://github.com/mikeberry6/Infra-MA2/pull/223);
-- source head `ebc8c88a419b22dee4e813de6152403d8d32b804`;
-- pull-request merge revision `822e81c1a418dc57829f24292aad19dceafaab73`;
-- validation run [30046462334](https://github.com/mikeberry6/Infra-MA2/actions/runs/30046462334);
-- artifact `validation-evidence-30046462334` (artifact ID `8579420097`, digest `sha256:88fee1e35a2ecdc45910ab55009db9dc20a5a16b19cf7db6d79072c125c6e624`, retained through 2026-08-22T21:35:28Z); and
+- source head `a74b44489d6dd0a55fdf3e7b89466b26f2b84a1d`;
+- pull-request merge revision `9647cebd6b7b00a77d309fe9d0a6ece63c947790`;
+- validation run [30056009981](https://github.com/mikeberry6/Infra-MA2/actions/runs/30056009981);
+- artifact `validation-evidence-30056009981` (artifact ID `8582844857`, digest `sha256:d08396707ccb56a6e102ca8e2d17a52713aa8c564daeb154a0d90d364bb965e1`, retained through 2026-08-23T00:27:20Z); and
 - the isolated validation database used by that run.
 
 The packet is review-only. It contains no Research decisions, grants no permission to publish or merge records, and has not been applied to Preview or Production. Candidate order is deliberately neutral.
 
-This packet supersedes the earlier run-30040590884 packet. The workload counts and 17 records without a candidate are unchanged, but generated timestamps, snapshots, opaque citation rows, and template digests must be reviewed only from the current artifact.
+This packet supersedes every earlier validation packet, including run 30052780591. The workload counts and 17 records without a citation candidate are unchanged from that immediate predecessor, while canonical-company review is now 18 clusters covering 38 rows. Generated timestamps, snapshots, opaque rows, and template digests must be reviewed only from the current artifact.
 
-Run 30046462334 concluded **failure solely because the three strict publication/data-integrity checks remained blocking**. Its static, browser, visual, failure-state, persistence, migration, and secret-safety partitions passed. It is an evidence-bearing failed validation run, not a passing release gate. This packet attests only source head `ebc8c88a419b22dee4e813de6152403d8d32b804` and merge revision `822e81c1a418dc57829f24292aad19dceafaab73`; it does not attest any later pull-request commit, including documentation-only descendants.
+Run 30056009981 concluded **failure solely because the three strict publication/data-integrity checks remained blocking**. Its static, browser, visual, failure-state, persistence, migration, and secret-safety partitions passed. It is an evidence-bearing failed validation run, not a passing release gate. This packet attests only source head `a74b44489d6dd0a55fdf3e7b89466b26f2b84a1d` and merge revision `9647cebd6b7b00a77d309fe9d0a6ece63c947790`; it does not attest any later pull-request commit, including this documentation-only descendant.
 
 Download the exact retained evidence into a new temporary directory:
 
 ```bash
 review_dir=$(mktemp -d /tmp/infrasight-research-review.XXXXXX)
-gh run download 30046462334 \
-  --name validation-evidence-30046462334 \
+gh run download 30056009981 \
+  --name validation-evidence-30056009981 \
   --dir "$review_dir"
 ```
 
@@ -30,11 +30,11 @@ Verify the five input templates before review:
 
 | Template | SHA-256 |
 | --- | --- |
-| `company-merge-approval-template.json` | `a5574806ad344f7b795295e47c4f402251f45a19c2ba42b49cd37eb610ae80e2` |
-| `ownership-fund-link-approval-template.json` | `24f87bee2b81e6379bc5adc7d8b4f1fcb411df530f10d544360d864367eb7ea4` |
-| `fund-primary-source-approval-template.json` | `fd3fdfe10a6eb294769c083c9de5d62c58b70bbf830788c5020d4872fe163aaa` |
-| `deal-seller-disclosure-approval-template.json` | `ade3e27a912e440f3a9cedf7b1f1f1dfd996ba6bab5021ceae99277ec042d138` |
-| `primary-citation-approval-template.json` | `7176b8a3dcfbdcd9fbadb76778a2cb2ee68d884f85770a7d2446496a76465e34` |
+| `company-merge-approval-template.json` | `bea72ad815179255e5e3ab324000eb34fa27980845e885ae8bc8e11d4d3993aa` |
+| `ownership-fund-link-approval-template.json` | `5bbe296c32ce04c2e673b7bdf76bafe612482fc1e67863fc69ea3fb8f5a45ad7` |
+| `fund-primary-source-approval-template.json` | `6c8863c6bc12ef415ffd67da991d21938a2674858399a7a5bfa3b0fa040452f6` |
+| `deal-seller-disclosure-approval-template.json` | `b2ef10578a82d042a307710be1ede510561c18c8f3f065c47ef549b5efb8fc9d` |
+| `primary-citation-approval-template.json` | `ee4b33298b051547566aba91cad1ad680007da07655753f8b31de16580de8795` |
 
 ```bash
 shasum -a 256 "$review_dir"/*approval-template.json
@@ -46,7 +46,7 @@ If any digest differs, stop and obtain the exact artifact again. Do not combine 
 
 Review and commit each stage independently in this order. Regenerate downstream templates whenever an earlier stage changes entity identity or candidate evidence.
 
-1. **Canonical companies:** 21 fuzzy clusters covering 43 candidate records. Twenty clusters have two candidates and one has three. Research must choose the survivor and retired IDs for each approved merge or explicitly remove a rejected/deferred cluster, following the template instructions.
+1. **Canonical companies:** 18 fuzzy clusters covering 38 candidate records. Sixteen clusters have two candidates and two have three. Research must choose the survivor and retired IDs for each approved merge or explicitly remove a rejected/deferred cluster, following the template instructions.
 2. **Ownership-to-Fund links:** 4 records, all involving a `TPG Rise Climate` vehicle linked to `TPG Rise Climate II`. The current template contains no exact-name Fund candidate. Research may approve only an allowed `UNLINK`, or correct the underlying Fund/vehicle evidence through the editorial workflow and regenerate; it must not force an inexact `LINK`.
 3. **Fund primary sources:** 150 Funds. Every item has at least one existing HTTP(S) candidate; 25 have one candidate and 125 require a choice among multiple candidates. Lexical URL order is not a quality ranking.
 4. **Seller treatment:** 194 Deals. Three have no source evidence in the current snapshot: `INF-2026-080` Reload, `INF-2026-082` Andion CH4 Renewables, and `INF-2026-088` Ori Industries. Research must add evidence and regenerate before deciding those rows. Whenever evidence names a seller, add that seller through the editorial interface instead of marking it not disclosed.
