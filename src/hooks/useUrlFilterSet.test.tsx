@@ -13,12 +13,13 @@ const navigation = vi.hoisted(() => ({
     window.history.pushState({}, "", `/${qs ? `?${qs}` : ""}`);
   }),
 }));
+const analytics = vi.hoisted(() => ({ track: vi.fn() }));
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ replace: navigation.replace, push: navigation.push, back: vi.fn() }),
   usePathname: () => "/tracker",
 }));
 
-vi.mock("@vercel/analytics", () => ({ track: vi.fn() }));
+vi.mock("@vercel/analytics", () => ({ track: analytics.track }));
 
 import { useUrlFilterSet, useClearUrlFilters } from "./useUrlFilterSet";
 
@@ -40,6 +41,7 @@ describe("useUrlFilterSet", () => {
   beforeEach(() => {
     navigation.replace.mockClear();
     navigation.push.mockClear();
+    analytics.track.mockReset();
     window.history.replaceState({}, "", "/");
   });
 
@@ -58,6 +60,11 @@ describe("useUrlFilterSet", () => {
     render(<Harness />);
     await userEvent.click(screen.getByText("toggle-digital"));
     expect(navigation.push).toHaveBeenCalledWith("/tracker?sector=Digital", { scroll: false });
+    expect(analytics.track).toHaveBeenCalledWith("filter_applied", {
+      filter: "sector",
+      active_count: 1,
+    });
+    expect(analytics.track.mock.calls.flat()).not.toContain("Digital");
   });
 
   it("toggle on an already-present value removes it", async () => {
@@ -66,6 +73,10 @@ describe("useUrlFilterSet", () => {
     await userEvent.click(screen.getByText("toggle-digital"));
     // With Digital removed, the param should be gone entirely
     expect(navigation.push).toHaveBeenCalledWith("/tracker", { scroll: false });
+    expect(analytics.track).toHaveBeenCalledWith("filter_applied", {
+      filter: "sector",
+      active_count: 0,
+    });
   });
 
   it("clear() wipes only this param, not others", async () => {
@@ -87,6 +98,7 @@ describe("useClearUrlFilters", () => {
   beforeEach(() => {
     navigation.replace.mockClear();
     navigation.push.mockClear();
+    analytics.track.mockReset();
     window.history.replaceState({}, "", "/");
   });
 

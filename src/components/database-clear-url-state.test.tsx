@@ -141,6 +141,20 @@ describe("database clear-all URL state", () => {
     });
   });
 
+  it("tracks weekly email access without attaching record or query data", async () => {
+    navigation.pathname = "/tracker";
+    window.history.replaceState({}, "", "/tracker?q=private-query");
+    render(<DealDatabase deals={[]} counts={counts} />);
+
+    const weeklyEmailLink = screen.getAllByRole("link", { name: "Weekly email" })[0];
+    weeklyEmailLink.addEventListener("click", (event) => event.preventDefault(), { once: true });
+    await userEvent.click(weeklyEmailLink);
+
+    expect(analytics.track).toHaveBeenCalledWith("weekly_email_opened");
+    expect(analytics.track).toHaveBeenCalledTimes(1);
+    expect(JSON.stringify(analytics.track.mock.calls)).not.toContain("private-query");
+  });
+
   it.each([
     ["/tracker", <DealDatabase key="deal" deals={[]} counts={counts} />],
     ["/funds", <FundDatabase key="fund" funds={[]} counts={counts} />],

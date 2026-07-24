@@ -50,4 +50,17 @@ describe("scheduled news scan window contract", () => {
     expect(scanner).toContain("extractLinks(response.body, response.finalUrl)");
     expect(scanner).toContain("url: normalizeUrl(response.finalUrl) ?? response.finalUrl");
   });
+
+  it("times both external-provider phases through fixed, payload-free structured task labels", () => {
+    const providerBoundaries = scanner.match(
+      /withServerTask\(\{\s*task: "news_provider",\s*operation: "[a-z_]+",\s*\}/g,
+    ) ?? [];
+
+    expect(providerBoundaries).toHaveLength(2);
+    expect(providerBoundaries.join("\n")).toContain('operation: "crawl_tracked_sources"');
+    expect(providerBoundaries.join("\n")).toContain('operation: "search_tracked_news"');
+    expect(providerBoundaries.join("\n")).not.toMatch(
+      /title|url|query|candidate|entity|token|credential/i,
+    );
+  });
 });
