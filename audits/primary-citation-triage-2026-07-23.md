@@ -87,7 +87,7 @@ These items cannot be completed from the bound template because `candidates` is 
 | `INF-2026-094` | 321 Precision Conversions |
 | `INF-2026-095` | DTG Recycle |
 
-The existing [Primary-Source Research Proposals — 2026-07-23](../docs/primary-source-research-proposals-2026-07-23.md) and [Primary Citation Source-Gap Review — 2026-07-22](primary-citation-source-gap-review-2026-07-22.md) contain review-only research for this set. They are bound to earlier evidence states and do not populate this template or authorize copying a proposed URL into an approval.
+The existing [Primary-Source Research Proposals — 2026-07-23](../docs/primary-source-research-proposals-2026-07-23.md) and [Primary Citation Source-Gap Review — 2026-07-22](primary-citation-source-gap-review-2026-07-22.md) contain review-only research for this set. The proposal rebinds the unchanged 17-record absence set to later code-bearing validation run `30056009981`; the source-gap review remains bound to an earlier evidence state. Neither document populates this template or authorizes copying a proposed URL into an approval.
 
 The proposal also identifies fact corrections or unresolved classification questions for several rows, especially `INF-2026-082`, `INF-2026-085`, `INF-2026-087`, `INF-2026-088`, `INF-2026-089`, `INF-2026-091`, `INF-2026-093`, and `INF-2026-095`. Those facts must be resolved before citation designation so a citation is not used to make an unsupported Deal appear publication-ready.
 

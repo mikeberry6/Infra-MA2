@@ -4,13 +4,20 @@
 
 ## Scope and method
 
-This proposal addresses the 17 records that still have no citation candidate in the pre-merge template from code-bearing validation run [30046462334](https://github.com/mikeberry6/Infra-MA2/actions/runs/30046462334): Deals `INF-2026-080` through `INF-2026-095`, plus the duplicate-candidate Company record `Extenet`. That exact set was rechecked in retained artifact `validation-evidence-30046462334` at source head `ebc8c88a419b22dee4e813de6152403d8d32b804`.
+This proposal addresses the 17 records that still have no citation candidate in the pre-merge template from code-bearing validation run [30056009981](https://github.com/mikeberry6/Infra-MA2/actions/runs/30056009981): Deals `INF-2026-080` through `INF-2026-095`, plus the duplicate-candidate Company record `Extenet`. That exact set was rechecked in retained artifact `validation-evidence-30056009981` (artifact ID `8582844857`, digest `sha256:d08396707ccb56a6e102ca8e2d17a52713aa8c564daeb154a0d90d364bb965e1`) at source head `a74b44489d6dd0a55fdf3e7b89466b26f2b84a1d`.
 
-The underlying source research was performed against source head `18ca497ee5862cfcb7a78ba1244b2ed6db518208`. The current seed facts and related Company citations were inspected first. Candidate evidence was then limited to issuer, buyer, seller, manager, public-company filing, or other first-party sources wherever one could be found.
+The underlying source research was performed against source head `18ca497ee5862cfcb7a78ba1244b2ed6db518208`. The Deal and Company seed files were rechecked at source head `a74b44489d6dd0a55fdf3e7b89466b26f2b84a1d` and are byte-for-byte unchanged across that interval. Candidate evidence was limited to issuer, buyer, seller, manager, public-company filing, or other first-party sources wherever one could be found.
 
 The validation artifact attests the exact 17-record absence set; it does not attest this proposal's external URLs, classifications, or factual analysis. A reproducible transport check is retained in [`audits/primary-source-research-url-health-2026-07-23.json`](../audits/primary-source-research-url-health-2026-07-23.json). At the recorded check, 23 of 24 research URLs were reachable by GET and the Lyten source returned an access-control 403. Reachability is transport evidence only: it neither validates source quality nor constitutes editorial approval.
 
 No source, citation, Deal, Company, approval file, or publication state was changed. These proposals must not be copied mechanically into an approval file. Research must first resolve every stated inconsistency, add or correct evidence through the editorial workflow, and regenerate the neutral templates.
+
+## Current evidence outcome
+
+- Fifteen of the 16 Deal rows now have first-party evidence for the underlying event. This does not make all 15 publication-ready: multiple sources contradict or qualify the seeded date, category, status, stake, seller, value, or transaction structure.
+- `INF-2026-095` remains the sole Deal for which no reliable public primary transaction source was found. Its official Company page and regulatory records provide only partial context; the complete split-sale narrative remains secondary-source evidence.
+- Extenet has first-party identity and rebrand evidence, but citation designation must wait for the pending canonical-company decision so evidence is attached to the surviving record.
+- The generated validation template still correctly contains 17 empty candidate arrays. This proposal does not alter that template, reduce the formal Research queue, or authorize any approval; accepted evidence and fact corrections must be entered through the editorial workflow before regeneration.
 
 ## Candidate evidence and required review
 
