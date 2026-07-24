@@ -534,26 +534,36 @@ jobs:
         run: |
           ./node_modules/.bin/tsx scripts/assert-playwright-artifact-secret-safety.ts \
             --root=tmp/ci \
-            --output=tmp/ci/validation-artifact-secret-safety.json
+            --output=tmp/validation-secret-scans/validation-artifact-secret-safety.json
 
       - name: Prove retained browser evidence contains no validation credential
         id: browser_artifact_secret_gate
         if: always()
         continue-on-error: true
         run: |
+          scan_args=(
+            --root=browser-playwright-report
+            --root=visual-playwright-report
+            --root=top-level-failure-playwright-report
+            --root=provider-failure-playwright-report
+          )
+          for optional_root in \
+            playwright-report \
+            test-results \
+            browser-test-results \
+            sensitive-browser-test-results \
+            visual-test-results \
+            top-level-failure-test-results \
+            provider-failure-test-results
+          do
+            if [ -e "$optional_root" ]; then
+              scan_args+=("--root=$optional_root")
+            fi
+          done
+
           ./node_modules/.bin/tsx scripts/assert-playwright-artifact-secret-safety.ts \
-            --root=playwright-report \
-            --root=test-results \
-            --root=browser-playwright-report \
-            --root=browser-test-results \
-            --root=sensitive-browser-test-results \
-            --root=visual-playwright-report \
-            --root=visual-test-results \
-            --root=top-level-failure-playwright-report \
-            --root=top-level-failure-test-results \
-            --root=provider-failure-playwright-report \
-            --root=provider-failure-test-results \
-            --output=tmp/ci/playwright-artifact-secret-safety.json
+            "${scan_args[@]}" \
+            --output=tmp/validation-secret-scans/playwright-artifact-secret-safety.json
 
       - name: Upload migration and data evidence
         if: always() && steps.validation_artifact_secret_gate.outcome == 'success'
