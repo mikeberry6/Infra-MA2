@@ -27,6 +27,10 @@ No workflow should infer a database target from a generic URL. `scripts/assert-d
 | `MIGRATION_DATABASE_URL` | CI only | Direct, branch-scoped connection string for an isolated Neon validation branch |
 | `E2E_ADMIN_EMAIL` | CI only | Administrator on the isolated validation branch |
 | `E2E_ADMIN_PASSWORD` | CI only | Strong, unique validation password; never use a production credential |
+| `PREVIEW_DATABASE_URL`, `PREVIEW_MIGRATION_DATABASE_URL` | protected `preview-bootstrap` environment | Pooled and direct credentials for the same sanitized, non-production Preview database |
+| `PREVIEW_FRED_API_KEY`, `PREVIEW_EIA_API_KEY`, `PREVIEW_SAM_API_KEY`, `PREVIEW_SEC_USER_AGENT` | protected `preview-bootstrap` environment | Preview-only names for the dashboard provider configuration used by the reviewed bootstrap |
+| `PREVIEW_NEON_API_KEY` | protected `preview-bootstrap` environment | Control-plane credential scoped only to the non-production Preview Neon project and used only for identity reads |
+| `PREVIEW_VERCEL_TOKEN` | protected `preview-bootstrap` environment | Project/team-limited Vercel API token used only to prove the supplied immutable deployment is an exact-SHA Preview target |
 | `DATABASE_URL` | production workflows | Production pooled connection string |
 | `PRODUCTION_MIGRATION_DATABASE_URL` | protected production environment | Direct production connection used only by schema staging |
 | `VERCEL_TOKEN` | production environment | Token limited to the InfraSight Vercel project/team |
@@ -42,6 +46,13 @@ No workflow should infer a database target from a generic URL. `scripts/assert-d
 | --- | --- |
 | `MIGRATION_DATABASE_HOST` | Exact hostname parsed from `MIGRATION_DATABASE_URL` |
 | `MIGRATION_DATABASE_NAME` | Exact database name parsed from `MIGRATION_DATABASE_URL` |
+| `DASHBOARD_MIGRATION_DATABASE_HOST` | Exact long-lived dashboard-migration validation hostname; Preview and recovery guards use it only as a forbidden target |
+| `PREVIEW_DATABASE_HOST` | Exact pooled hostname parsed from `PREVIEW_DATABASE_URL` |
+| `PREVIEW_DATABASE_NAME` | Exact database name shared by both protected Preview URLs |
+| `PREVIEW_MIGRATION_DATABASE_HOST` | Exact direct hostname parsed from `PREVIEW_MIGRATION_DATABASE_URL`; must differ from Preview pooled and both production hosts |
+| `PREVIEW_NEON_PROJECT_ID` | Exact non-production Neon project containing the approved Preview database |
+| `PREVIEW_NEON_BRANCH_ID` | Exact ready, non-default Neon branch used by the immutable Preview deployment |
+| `PREVIEW_NEON_ENDPOINT_ID` | Exact read-write endpoint on `PREVIEW_NEON_BRANCH_ID` whose host is `PREVIEW_MIGRATION_DATABASE_HOST` |
 | `PRODUCTION_DATABASE_HOST` | Exact hostname parsed from production `DATABASE_URL` |
 | `PRODUCTION_DATABASE_NAME` | Exact production database name required by unattended write workflows |
 | `PRODUCTION_MIGRATION_DATABASE_HOST` | Exact hostname parsed from `PRODUCTION_MIGRATION_DATABASE_URL` |
@@ -68,6 +79,58 @@ Keep the Vercel Neon integration connection scoped to Production only. Neon Free
 
 Preview migrations are additionally gated by `PREVIEW_DATABASE_MIGRATIONS_ENABLED`. Unset or exact `false` skips all migration commands and runs only the normal application build. Exact `true` is rejected outside Vercel Preview and, in Preview, requires matching pooled/direct Neon endpoints with TLS, expected project/repository/Neon/database identifiers, and all four long-lived host denylist values: `PRODUCTION_DATABASE_HOST`, `PRODUCTION_MIGRATION_DATABASE_HOST`, `MIGRATION_DATABASE_HOST`, and `DASHBOARD_MIGRATION_DATABASE_HOST`. The guarded build uses the direct URL only for `prisma migrate deploy`, status, and drift checks, retains the pooled URL for the application build, and never prints credentials. Keep Vercel's checked-in Build Command as `npm run vercel-build`.
 
+### Protected Preview dashboard bootstrap
+
+Configure a GitHub environment named `preview-bootstrap` with a required independent Engineering or Operations reviewer, self-review prevention, and a custom deployment-branch policy whose only entry is `main`. Store only the branch-scoped, non-production credentials `PREVIEW_DATABASE_URL`, `PREVIEW_MIGRATION_DATABASE_URL`, `PREVIEW_FRED_API_KEY`, `PREVIEW_EIA_API_KEY`, `PREVIEW_SAM_API_KEY`, `PREVIEW_SEC_USER_AGENT`, `PREVIEW_NEON_API_KEY`, and `PREVIEW_VERCEL_TOKEN` there. Limit the Vercel token to read access for the exact InfraSight project/team. Grant the Neon key the narrowest available access scoped only to `PREVIEW_NEON_PROJECT_ID`; the workflow uses it only for control-plane GET requests. That project ID must differ from the independently maintained `NEON_PRODUCTION_PROJECT_ID`. Configure the exact non-default branch and read-write endpoint IDs in `PREVIEW_NEON_BRANCH_ID` and `PREVIEW_NEON_ENDPOINT_ID`. The workflow queries Neon directly and rejects a default/unready branch, a mismatched endpoint or host, and any Preview/production project-ID equality.
+
+Configure a second Vercel Trusted Source for the bootstrap workflow. Restrict it to GitHub Actions repository `mikeberry6/Infra-MA2`, branch `main`, workflow `.github/workflows/bootstrap-preview-dashboard.yml`, GitHub environment `preview-bootstrap`, custom audience `https://vercel.com/infrasight-preview-bootstrap`, and the Vercel Preview environment only. Require the repository, protected branch, workflow-ref, environment-subject, and custom-audience claims rather than trusting a caller-provided URL. Do not reuse the `preview-smoke` audience. Keep Vercel Deployment Protection enabled on the immutable deployment with no path exception for `/Infra-MA2/api/health`. The workflow proves that the health path is protected by requiring either Vercel's direct HTTP 401 response or its tightly validated authentication redirect; it then requires an OIDC-authenticated request to reach the application. This proves protection enforcement on the health path, not the exact project-wide protection-plan label. The workflow independently queries Vercel's API and requires the logical Preview target (represented as `null` by the current deployment API schema), exact project/repository/SHA, ready state, and the same immutable hostname. Separate pre-write and post-write jobs mint independent short-lived OIDC tokens immediately before their reads so a long provider run cannot reuse an expired credential. They never accept a branch alias or production domain.
+
+Configure `PREVIEW_DATABASE_HOST`, `PREVIEW_DATABASE_NAME`, and the distinct direct `PREVIEW_MIGRATION_DATABASE_HOST` as environment variables. `MIGRATION_DATABASE_HOST`, `DASHBOARD_MIGRATION_DATABASE_HOST`, `PRODUCTION_DATABASE_HOST`, and `PRODUCTION_MIGRATION_DATABASE_HOST` are mandatory denylist inputs. The pooled and direct URLs must be the `-pooler` and direct host for one Neon endpoint and must have the same database, username, password, and normalized port. The username must be 8–256 bytes and the password 14–512 bytes; both must use only canonical, unescaped `A–Z`, `a–z`, `0–9`, `.`, `_`, and `-` characters. Whitespace, control characters, percent-escaped credentials, invalid encoding, and unbounded values fail before any connection or artifact scan. Regenerate the branch role credential if an existing password does not meet this log-masking contract. The URLs must identify the same schema-current, sanitized Preview database used by the immutable Vercel deployment and must be independently unable to authenticate to long-lived validation, dashboard-migration, or production endpoints. Do not use a production-derived branch with copied rows or shared role credentials.
+
+After `.github/workflows/bootstrap-preview-dashboard.yml` exists on protected `main`, dispatch the one-time bootstrap from an authenticated operator shell:
+
+```bash
+release_sha="$(gh api "repos/mikeberry6/Infra-MA2/branches/main" --jq '.commit.sha')"
+preview_deployment_url="https://infra-ma-2-<immutable-deployment-token>-mberry.vercel.app"
+preview_git_sha="<40-character Git SHA recorded on that Vercel deployment>"
+gh api --method POST \
+  -H "Accept: application/vnd.github+json" \
+  "repos/mikeberry6/Infra-MA2/dispatches" \
+  -f event_type=bootstrap-preview-dashboard \
+  -F 'client_payload[confirmation]=BOOTSTRAP_PREVIEW_DASHBOARD' \
+  -F "client_payload[release_sha]=$release_sha" \
+  -F "client_payload[preview_deployment_url]=$preview_deployment_url" \
+  -F "client_payload[preview_git_sha]=$preview_git_sha"
+```
+
+The workflow creates three sequential `preview-bootstrap` environment approval pauses; approving the first does not approve jobs that have not yet reached the environment gate. For the preflight request, match the unprivileged job summary's protected-main SHA, immutable URL, and Preview Git SHA to the reviewed release evidence. Approve the synchronization request only after the preflight job and its `runtime-before` evidence packet succeed for that same run and tuple. Approve the postflight request only after the synchronization job and its exact PipelineRun proof/time evidence succeed, again checking the same run and tuple. Reject any unexpected job name, run attempt, SHA, or URL instead of approving through the queue.
+
+Before any environment secret is referenced, the unprivileged job validates and prints the three bounded identity values, binds the dispatch to the triggering and checked-out `main` SHA, and proves the Preview commit has the same Git tree. The three protected jobs then separate authority: the preflight and postflight jobs can mint Vercel OIDC identities but never install packages or receive database/provider credentials; the synchronization job can receive only the non-production database/provider credentials and has no `id-token: write` permission. Both runtime jobs re-prove the exact Vercel deployment through the API before minting their token and prove that Deployment Protection is enforced on the health path.
+
+The preflight accepts an HTTP 200 healthy state. It also permits a retryable HTTP 503 only when `NEWS_SCAN` is passing and `DASHBOARD_SYNC` is `never-run`, `failed`, `stale`, or `stalled`, with a valid or consistently absent prior success proof/time pair. An actively `running` dashboard attempt is not retryable; Operations must allow it to finish or cross the existing stalled threshold before redispatching. This prevents concurrent writes while avoiding permanent lockout after a failed run or runner loss.
+
+Before writing, the workflow records the immutable deployment's prior dashboard completion time, installs the locked dependencies without OIDC authority, registers full and component-level GitHub log masks for both Preview database URLs, proves the exact pooled/direct connection identity, verifies the distinct Neon project/branch/endpoint through the control plane, maps the Preview target to the existing non-production `TARGET_DATABASE=validation` authorization, keeps `DASHBOARD_WRITES_ENABLED=false`, requires a clean Prisma migration ledger and zero schema diff, and runs every dashboard provider in dry-run mode. Live synchronization can start only after that dry run succeeds; complete-source verification follows. The live summary is bound to exact GitHub execution provenance and carries a one-way SHA-256 proof of the precise successful `PipelineRun` plus the exact persisted completion time. A freshly minted postflight OIDC health read must return HTTP 200 from the same immutable deployment and expose that exact proof/time pair, not merely a newer run. This deployment-to-database challenge is required in addition to hostname and variable checks.
+
+Each protected job creates a separate bounded evidence packet containing only its sanitized health, provenance, external-identity, synchronization, or outcome records; raw headers, raw command logs, tokens, and scan reports are not artifacts. Each fixed-schema outcome manifest is written before the final credential scan, and its evidence tree is not mutated afterward. The applicable final scan includes decoded, percent/form-encoded, JSON-escaped, and base64 database credential components. Upload occurs only after that post-manifest scan passes; a valid `result: "failed"` packet may still be retained for diagnosis, but never authorizes approval. Approval requires all three protected jobs to succeed and these checks against their separately downloaded artifacts:
+
+```bash
+evidence_dir="$(mktemp -d)"
+for packet in runtime-before bootstrap runtime-after; do
+  gh run download <run-id> \
+    --repo mikeberry6/Infra-MA2 \
+    --name "preview-dashboard-${packet}-<run-id>-<attempt>" \
+    --dir "$evidence_dir/$packet"
+done
+jq -e '.result == "success" and ([.steps[]] | all(. == "success"))' \
+  "$evidence_dir/runtime-before/outcome.json"
+jq -e '.result == "success" and ([.steps[]] | all(. == "success"))' \
+  "$evidence_dir/bootstrap/outcome.json"
+jq -e '.result == "success" and ([.steps[]] | all(. == "success"))' \
+  "$evidence_dir/runtime-after/outcome.json"
+```
+
+An artifact may be retained after a failed job only when that job's post-manifest secret scan itself passed. Its manifest intentionally reports `result: "failed"` and is diagnostic evidence, never bootstrap approval. Require successful `runtime-before`, `bootstrap`, and `runtime-after` packets before redeploying the exact Preview candidate and accepting the trusted `preview-smoke` health result. This bootstrap is not scheduled and does not satisfy the production 30-day reliability window.
+
 The Preview smoke uses no long-lived Vercel bypass secret. Configure one Vercel Trusted Source for GitHub Actions, restricted to repository `mikeberry6/Infra-MA2`, branch `main`, workflow `preview-smoke.yml`, custom audience `https://vercel.com/infrasight-preview-smoke`, and the Preview environment only. `.github/workflows/preview-smoke.yml` is loaded from protected `main`, validates the Vercel GitHub App sender, repository ID, project ID/name, non-production ref, full candidate SHA, successful state, and immutable deployment hostname before requesting a short-lived OIDC token. It executes only trusted default-branch smoke tooling, rejects cross-origin redirects, requires the full health contract, scans retained evidence for the token, and publishes `preview-smoke` success only after the evidence upload succeeds. Cancellation leaves a pending or failed status, never a success.
 
 Normal merge, squash, and rebase operations do not preserve the PR Preview SHA. `.github/workflows/preview-smoke-lineage.yml` therefore runs on the exact `main` push and accepts the Preview only when the associated merged PR head has the same Git tree as the release, its newest `preview-smoke` status succeeded, and that status is bound to the successful trusted `repository_dispatch` workflow run. Production schema, remediation, and promotion workflows require both the exact-SHA `build` check and the exact-main `preview-smoke-lineage` check. This proves code-tree equivalence without pretending a Preview deployment was itself a production candidate.
@@ -91,6 +154,25 @@ The migration gate accepts only newly added `prisma/migrations/*/migration.sql` 
 The validation database guard requires `MIGRATION_DATABASE_HOST` and `MIGRATION_DATABASE_NAME` and denies both production endpoints. Before strict source/canonical gates can fail, CI writes reviewer-neutral all-status company-merge, ownership-to-fund-link, Fund primary-source, deal seller-disclosure, and citation templates. If fixed reviewed files exist at `audits/approvals/company-merges.json`, `audits/approvals/ownership-fund-links.json`, `audits/approvals/fund-primary-sources.json`, `audits/approvals/deal-seller-disclosures.json`, and `audits/approvals/primary-citations.json`, CI hashes and applies them only to the isolated validation database, in that order, before strict checks. Reruns are idempotent and require the exact prior audit for an already-applied decision.
 
 Use staged review passes when merges can change ownership or citation candidates: commit the reviewed company file first, let validation apply it and regenerate the ownership-link and citation templates, then review and commit those post-merge files. Deal seller treatment is independent of company merging, but its immutable snapshot must still match the current deal, participants, and source evidence. Do not approve a stale template. Ownership-link remediation can only link an exact normalized vehicle name to a reviewed fund or remove a stale fund link; it never changes the vehicle label or underlying ownership assertion. Seller-disclosure remediation never infers a seller or absence classification and updates only `sellerDisclosureStatus` and `sellerDisclosureReason`. This process allows the gate to become green without weakening it; production still requires the protected manual remediation workflow.
+
+The primary-citation artifact also includes a smaller semantic review worksheet generated from the exact neutral template bytes. It combines candidates only when source ID, label, URL, type, purpose, evidence label, and current-primary state are exactly equal, retains every opaque citation ID in the group, orders groups by an opaque hash, and leaves every `selectedGroupKey` null. Its `sourceTemplateSha256` binds the worksheet to the byte-exact source packet. Records with no candidate remain present and cannot be compiled; Research must add accepted evidence through the editorial workflow and regenerate. Generate the same worksheet locally with:
+
+```bash
+npm run db:citations:worksheet -- \
+  --template=tmp/primary-citation-approval-template.json \
+  --output=tmp/primary-citation-review-worksheet.json
+```
+
+Research may set only top-level `reviewedBy` and `reviewedAt` plus one listed `selectedGroupKey` per item. After review, compile against the unchanged source template:
+
+```bash
+npm run db:citations:compile-review -- \
+  --template=tmp/primary-citation-approval-template.json \
+  --worksheet=tmp/primary-citation-review-worksheet.json \
+  --output=tmp/primary-citation-reviewed-approval.json
+```
+
+The compiler re-derives the complete worksheet, rejects template drift, structural edits, missing selections, and unknown groups, then preserves the original candidate arrays while resolving an exact-equivalent group to its lexically smallest opaque member ID. This is an operational mapping among semantically identical candidates, not a source recommendation. Both commands are read-only with respect to the database, write only new JSON files under ignored `tmp/`, and never create a canonical approval. Inspect the compiled bytes, commit the reviewed result deliberately to `audits/approvals/primary-citations.json`, and record its printed SHA-256 before protected validation. Use `--include-exact-url-index` on both the worksheet and compile commands only when the larger cross-record page-reuse index is useful. The compiler flag independently binds that worksheet variant; adding or removing the index after generation is rejected, and the index never infers source quality.
 
 Run the local portion before pushing:
 
@@ -231,7 +313,7 @@ Before starting the performance observation window, obtain explicit approval eit
 
 ## Health contract
 
-`GET /api/health` is dynamic, explicitly non-cacheable, and exposes exactly six top-level fields: `status`, `version`, `generatedAt`, `database`, `pipelines`, and `generationTimeMs`. Each critical-pipeline item contains only its name, classified status, last-attempt time, and last-success time. The endpoint never returns schema checks, hostnames, database names, branch identifiers, credentials, or query details. It returns HTTP 503 when the database is unavailable, the additive operational schema is not ready, or a critical pipeline is `never-run`, `failed`, `stale`, or `stalled`. A currently `running` pipeline passes only while it is within the schedule grace contract, has not exceeded the three-hour stall limit, and has a prior successful run; callers must not treat another reachable 503 as healthy. Malformed, impossible, or future-dated run timestamps do not count as freshness evidence. On a Vercel release, `version` is the 12-character release prefix used by promotion provenance checks; an unversioned local process reports `local`.
+`GET /api/health` is dynamic, explicitly non-cacheable, and exposes exactly six top-level fields: `status`, `version`, `generatedAt`, `database`, `pipelines`, and `generationTimeMs`. Each critical-pipeline item contains only its name, classified status, last-attempt time, last-success time, and `lastSuccessfulRunProof`: a namespaced SHA-256 proof of the exact persisted row ID. The raw row ID is never exposed. The endpoint never returns schema checks, hostnames, database names, branch identifiers, credentials, or query details. It returns HTTP 503 when the database is unavailable, the additive operational schema is not ready, or a critical pipeline is `never-run`, `failed`, `stale`, or `stalled`. A currently `running` pipeline passes only while it is within the schedule grace contract, has not exceeded the three-hour stall limit, and has a prior successful run; callers must not treat another reachable 503 as healthy. Malformed identities, impossible timestamps, or future-dated run timestamps do not count as freshness evidence. On a Vercel release, `version` is the 12-character release prefix used by promotion provenance checks; an unversioned local process reports `local`.
 
 ## Dependency policy
 

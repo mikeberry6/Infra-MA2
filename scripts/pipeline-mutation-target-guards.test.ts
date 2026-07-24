@@ -143,6 +143,14 @@ describe("pipeline mutation target entry guards", () => {
       /completePipelineRun\([\s\S]*?pipelineMetadata\(\{[\s\S]*?\}, execution\)\)/,
     );
     expect(source).toContain("failureEvidence?.metadata");
+    const completion = source.indexOf("const completedPipelineRun = await completePipelineRun(");
+    const clearCompletedRun = source.indexOf("pipelineRunId = null;", completion);
+    const publicProof = source.indexOf("pipelineRunProof(completedPipelineRun.id)", completion);
+    const successEvidenceWrite = source.indexOf("await writeFile(outPath", completion);
+    expect(completion).toBeGreaterThan(-1);
+    expect(clearCompletedRun).toBeGreaterThan(completion);
+    expect(publicProof).toBeGreaterThan(clearCompletedRun);
+    expect(successEvidenceWrite).toBeGreaterThan(clearCompletedRun);
   });
 });
 

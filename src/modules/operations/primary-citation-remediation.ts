@@ -1,6 +1,8 @@
 import { createHash } from "node:crypto";
 import type { Prisma, PrismaClient } from "@/generated/prisma/client";
 import type { MaintenanceMutationContext } from "@/lib/database-target";
+import { compareUnicodeCodePoints } from "@/lib/deterministic-string-order";
+import { parseStrictJson } from "@/lib/strict-json";
 import {
   PUBLISHED_COMPANY_MISSING_PRIMARY_WHERE,
   PUBLISHED_DEAL_MISSING_PRIMARY_WHERE,
@@ -170,7 +172,7 @@ function candidateFromCitation(
 
 function compareCandidates(a: PrimaryCitationCandidate, b: PrimaryCitationCandidate): number {
   // Opaque IDs provide deterministic output without ranking source quality.
-  return a.citationId.localeCompare(b.citationId);
+  return compareUnicodeCodePoints(a.citationId, b.citationId);
 }
 
 export async function loadPrimaryCitationReportInput(
@@ -246,9 +248,9 @@ export function buildPrimaryCitationApprovalTemplate(
       "Compute SHA-256 from the exact reviewed file bytes and provide it to the apply command.",
     ],
     items: [...dealItems, ...companyItems].sort((a, b) =>
-      a.entityType.localeCompare(b.entityType)
-      || a.entityLabel.localeCompare(b.entityLabel)
-      || a.entityId.localeCompare(b.entityId),
+      compareUnicodeCodePoints(a.entityType, b.entityType)
+      || compareUnicodeCodePoints(a.entityLabel, b.entityLabel)
+      || compareUnicodeCodePoints(a.entityId, b.entityId),
     ),
   };
 }
@@ -280,6 +282,19 @@ function stringValue(value: unknown, label: string): string {
   return value.trim();
 }
 
+function exactStringValue(value: unknown, label: string): string {
+  if (
+    typeof value !== "string"
+    || !value.trim()
+    || value !== value.trim()
+  ) {
+    throw new Error(
+      `${label} must be a non-empty string without surrounding whitespace`,
+    );
+  }
+  return value;
+}
+
 function isoTimestamp(value: unknown, label: string): string {
   const timestamp = stringValue(value, label);
   if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/.test(timestamp) || Number.isNaN(Date.parse(timestamp))) {
@@ -298,12 +313,31 @@ function parseCandidate(value: unknown, itemLabel: string): PrimaryCitationCandi
     throw new Error(`${itemLabel} candidates must retain currentlyPrimary=false from the generated template`);
   }
   return {
-    citationId: stringValue(candidate.citationId, `${itemLabel} candidate citationId`),
-    sourceId: stringValue(candidate.sourceId, `${itemLabel} candidate sourceId`),
-    sourceLabel: typeof candidate.sourceLabel === "string" ? candidate.sourceLabel : "",
-    sourceUrl: stringValue(candidate.sourceUrl, `${itemLabel} candidate sourceUrl`),
-    sourceType: stringValue(candidate.sourceType, `${itemLabel} candidate sourceType`),
-    purpose: stringValue(candidate.purpose, `${itemLabel} candidate purpose`),
+    citationId: exactStringValue(
+      candidate.citationId,
+      `${itemLabel} candidate citationId`,
+    ),
+    sourceId: exactStringValue(
+      candidate.sourceId,
+      `${itemLabel} candidate sourceId`,
+    ),
+    sourceLabel: typeof candidate.sourceLabel === "string"
+      ? candidate.sourceLabel
+      : (() => {
+          throw new Error(`${itemLabel} candidate sourceLabel must be a string`);
+        })(),
+    sourceUrl: exactStringValue(
+      candidate.sourceUrl,
+      `${itemLabel} candidate sourceUrl`,
+    ),
+    sourceType: exactStringValue(
+      candidate.sourceType,
+      `${itemLabel} candidate sourceType`,
+    ),
+    purpose: exactStringValue(
+      candidate.purpose,
+      `${itemLabel} candidate purpose`,
+    ),
     evidenceLabel: candidate.evidenceLabel === null
       ? null
       : typeof candidate.evidenceLabel === "string"
@@ -376,6 +410,30 @@ export function parseReviewedPrimaryCitationApproval(
       stringValue(instruction, `instructions[${index}]`)),
     items,
   };
+}
+
+export function parseReviewedPrimaryCitationApprovalBytes(
+  value: string | Uint8Array,
+  now = new Date(),
+): ReviewedPrimaryCitationApproval {
+  let source: string;
+  try {
+    source = typeof value === "string"
+      ? value
+      : new TextDecoder("utf-8", { fatal: true }).decode(value);
+  } catch {
+    throw new Error("Approval file must contain valid UTF-8 JSON");
+  }
+
+  let parsed: unknown;
+  try {
+    parsed = parseStrictJson(source);
+  } catch {
+    throw new Error(
+      "Approval file must contain valid JSON without duplicate object keys",
+    );
+  }
+  return parseReviewedPrimaryCitationApproval(parsed, now);
 }
 
 export interface PrimaryCitationApplyResult {

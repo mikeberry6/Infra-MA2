@@ -21,7 +21,7 @@ import {
 } from "../src/lib/database-target";
 import {
   applyReviewedPrimaryCitationApproval,
-  parseReviewedPrimaryCitationApproval,
+  parseReviewedPrimaryCitationApprovalBytes,
   verifyExactSha256,
 } from "../src/modules/operations/primary-citation-remediation";
 
@@ -44,13 +44,7 @@ async function main() {
   const approvalPath = path.resolve(approvalFile);
   const raw = await readFile(approvalPath);
   const approvalSha256 = verifyExactSha256(raw, expectedSha256);
-  let parsed: unknown;
-  try {
-    parsed = JSON.parse(raw.toString("utf8"));
-  } catch {
-    throw new Error("Approval file is not valid JSON");
-  }
-  const approval = parseReviewedPrimaryCitationApproval(parsed);
+  const approval = parseReviewedPrimaryCitationApprovalBytes(raw);
   assertApprovalReviewerMatchesMutationContext(approval.reviewedBy, context);
 
   const connectionString = process.env.DATABASE_URL;

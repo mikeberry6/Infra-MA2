@@ -3,6 +3,7 @@ import {
   nextDashboardSyncAt,
   nextNewsScanAt,
 } from "@/modules/operations/pipeline-schedules";
+import { pipelineRunProof } from "@/modules/operations/pipeline-run-proof";
 
 const NEWS_MAX_AGE_MS = 36 * 60 * 60 * 1_000;
 const MAX_RUNNING_MS = 3 * 60 * 60 * 1_000;
@@ -19,6 +20,7 @@ export type CriticalPipelineStatus =
   | "stalled";
 
 export interface PipelineHealthRow {
+  id: string;
   status: string;
   startedAt: Date;
   endedAt: Date | null;
@@ -30,6 +32,7 @@ export interface CriticalPipelineHealth {
   status: CriticalPipelineStatus;
   lastAttemptAt: string | null;
   lastSuccessfulAt: string | null;
+  lastSuccessfulRunProof: string | null;
 }
 
 /**
@@ -52,19 +55,25 @@ export function classifyCriticalPipeline(
       status: rows.length === 0 ? "never-run" : "failed",
       lastAttemptAt: null,
       lastSuccessfulAt: null,
+      lastSuccessfulRunProof: null,
     };
   }
 
   const latestAttempt = orderedRows[0];
   const successfulRuns = orderedRows.flatMap((row) => {
     const completedAt = validCompletionDate(row, now);
-    return effectiveStatus(name, row, now) === "SUCCEEDED" && completedAt
-      ? [{ completedAt }]
+    const proof = validPipelineRunProof(row.id);
+    return effectiveStatus(name, row, now) === "SUCCEEDED" && completedAt && proof
+      ? [{ completedAt, proof }]
       : [];
   });
-  const lastSuccessfulAt = successfulRuns.reduce<Date | null>((latest, run) => (
-    !latest || run.completedAt > latest ? run.completedAt : latest
+  const lastSuccessfulRun = successfulRuns.reduce<{
+    completedAt: Date;
+    proof: string;
+  } | null>((latest, run) => (
+    !latest || run.completedAt > latest.completedAt ? run : latest
   ), null);
+  const lastSuccessfulAt = lastSuccessfulRun?.completedAt ?? null;
 
   const latestStatus = effectiveStatus(name, latestAttempt, now);
   const runningMs = now.getTime() - latestAttempt.startedAt.getTime();
@@ -98,12 +107,15 @@ export function classifyCriticalPipeline(
     status,
     lastAttemptAt: latestAttempt.startedAt.toISOString(),
     lastSuccessfulAt: lastSuccessfulAt?.toISOString() ?? null,
+    lastSuccessfulRunProof: lastSuccessfulRun?.proof ?? null,
   };
 }
 
 export function pipelineHealthPasses(health: CriticalPipelineHealth): boolean {
-  return health.status === "healthy"
-    || (health.status === "running" && health.lastSuccessfulAt !== null);
+  const hasBoundSuccess = health.lastSuccessfulAt !== null
+    && health.lastSuccessfulRunProof !== null;
+  return hasBoundSuccess
+    && (health.status === "healthy" || health.status === "running");
 }
 
 function effectiveStatus(
@@ -112,6 +124,7 @@ function effectiveStatus(
   now: Date,
 ): string {
   if (row.status === "SUCCEEDED" && !validCompletionDate(row, now)) return "FAILED";
+  if (row.status === "SUCCEEDED" && !validPipelineRunProof(row.id)) return "FAILED";
   if (name === "DASHBOARD_SYNC") return row.status;
   try {
     return effectiveNewsPipelineRunStatus(row);
@@ -135,4 +148,12 @@ function validCompletionDate(row: PipelineHealthRow, now: Date): Date | null {
 
 function validDate(value: Date | null | undefined): value is Date {
   return value instanceof Date && !Number.isNaN(value.getTime());
+}
+
+function validPipelineRunProof(id: string): string | null {
+  try {
+    return pipelineRunProof(id);
+  } catch {
+    return null;
+  }
 }

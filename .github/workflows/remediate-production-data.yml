@@ -332,6 +332,10 @@ jobs:
           ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts \
             --output=tmp/remediation/primary-citation-approval-template.json \
             2>&1 | tee tmp/remediation/primary-citation-report.log
+          ./node_modules/.bin/tsx scripts/build-primary-citation-review-worksheet.ts \
+            --template=tmp/remediation/primary-citation-approval-template.json \
+            --output=tmp/remediation/primary-citation-review-worksheet.json \
+            2>&1 | tee tmp/remediation/primary-citation-review-worksheet.log
           ./node_modules/.bin/tsx scripts/report-ownership-fund-link-remediation.ts \
             --output=tmp/remediation/ownership-fund-link-approval-template.json \
             2>&1 | tee tmp/remediation/ownership-fund-link-report.log

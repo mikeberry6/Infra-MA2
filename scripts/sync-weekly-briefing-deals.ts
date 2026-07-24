@@ -648,12 +648,14 @@ async function main() {
   await runWeeklySyncLifecycle({
     weeklyCardCount: weeklyBriefingDeals.length,
     execute: executeSync,
-    complete: (counts, metadata) => completePipelineRun(
-      database(),
-      pipelineRunId,
-      counts,
-      metadata,
-    ),
+    complete: async (counts, metadata) => {
+      await completePipelineRun(
+        database(),
+        pipelineRunId,
+        counts,
+        metadata,
+      );
+    },
     fail: (error, counts, metadata) => failPipelineRun(
       database(),
       pipelineRunId,

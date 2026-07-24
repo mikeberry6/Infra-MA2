@@ -117,6 +117,7 @@ const HEALTH_KEYS = [
 const PIPELINE_KEYS = [
   "lastAttemptAt",
   "lastSuccessfulAt",
+  "lastSuccessfulRunProof",
   "name",
   "status",
 ];
@@ -134,6 +135,7 @@ function isPassingPipeline(value) {
   if (!CRITICAL_PIPELINES.has(value.name)) return false;
   if (!isIsoTimestamp(value.lastAttemptAt)) return false;
   if (!isIsoTimestamp(value.lastSuccessfulAt)) return false;
+  if (!/^[0-9a-f]{64}$/.test(value.lastSuccessfulRunProof)) return false;
   return value.status === "healthy" || value.status === "running";
 }
 

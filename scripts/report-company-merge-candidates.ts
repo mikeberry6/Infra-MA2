@@ -7,9 +7,8 @@
  * runs only after the additive trust migrations have been staged.
  */
 import "dotenv/config";
-import { mkdir, writeFile } from "node:fs/promises";
-import path from "node:path";
 import { PrismaClient } from "../src/generated/prisma/client";
+import { prepareReviewerNeutralJsonOutput } from "../src/lib/reviewer-neutral-output";
 import { logServerFailure, withServerTask } from "../src/lib/server-log";
 import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { PrismaPg } from "@prisma/adapter-pg";
@@ -100,10 +99,12 @@ async function main() {
         candidates: cluster.map(mergeApprovalCandidateFromSnapshot),
       })),
     };
-    const outputPath = path.resolve(APPROVAL_OUTPUT);
-    await mkdir(path.dirname(outputPath), { recursive: true });
-    await writeFile(outputPath, `${JSON.stringify(approvalTemplate, null, 2)}\n`, { flag: "wx" });
-    console.error(`Wrote reviewer-neutral merge approval template to ${outputPath}`);
+    const destination = await prepareReviewerNeutralJsonOutput({
+      repositoryRoot: process.cwd(),
+      output: APPROVAL_OUTPUT,
+    });
+    await destination.write(`${JSON.stringify(approvalTemplate, null, 2)}\n`);
+    console.error(`Wrote reviewer-neutral merge approval template to ${destination.outputPath}`);
   }
 
   console.log("# Canonical Company Merge Review");

@@ -9,6 +9,11 @@ export interface PipelineCounts {
   skipped?: number;
 }
 
+export interface CompletedPipelineRun {
+  id: string;
+  endedAt: Date;
+}
+
 export async function startPipelineRun(
   client: PipelineClient,
   pipeline: string,
@@ -26,18 +31,20 @@ export async function completePipelineRun(
   id: string,
   counts: PipelineCounts = {},
   metadata?: Prisma.InputJsonValue,
-): Promise<void> {
+): Promise<CompletedPipelineRun> {
+  const endedAt = new Date();
   await client.pipelineRun.update({
     where: { id },
     data: {
       status: "SUCCEEDED",
-      endedAt: new Date(),
+      endedAt,
       inserted: counts.inserted ?? 0,
       updated: counts.updated ?? 0,
       skipped: counts.skipped ?? 0,
       ...(metadata === undefined ? {} : { metadata }),
     },
   });
+  return { id, endedAt };
 }
 
 export async function failPipelineRun(

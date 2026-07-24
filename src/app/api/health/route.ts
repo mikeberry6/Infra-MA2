@@ -149,6 +149,7 @@ export async function GET(request: Request) {
           orderBy: { startedAt: "desc" },
           take: 100,
           select: {
+            id: true,
             status: true,
             startedAt: true,
             endedAt: true,

@@ -4,6 +4,7 @@ import {
   buildPrimaryCitationApprovalTemplate,
   loadPrimaryCitationReportInput,
   parseReviewedPrimaryCitationApproval,
+  parseReviewedPrimaryCitationApprovalBytes,
   sha256Hex,
   verifyExactSha256,
   type PrimaryCitationApprovalTemplate,
@@ -189,6 +190,74 @@ describe("primary-citation approval validation", () => {
       reviewedAt,
       items: [selected[0], selected[0]],
     }, new Date("2026-07-22T14:00:00.000Z"))).toThrow("duplicate mapping");
+  });
+
+  it("rejects duplicate JSON keys and invalid UTF-8 from exact approval bytes", () => {
+    const base = template();
+    const approval = {
+      ...base,
+      reviewedBy: "Research Reviewer",
+      reviewedAt,
+      items: base.items.map((item) => ({
+        ...item,
+        selectedCitationId: item.candidates[0]?.citationId,
+      })),
+    };
+    const json = JSON.stringify(approval, null, 2);
+    const selected = approval.items[0].selectedCitationId;
+    const duplicateSelection = json.replace(
+      `"selectedCitationId": "${selected}"`,
+      `"selectedCitationId": "${selected}",\n      "selectedCitationId": "citation-b"`,
+    );
+
+    expect(() => parseReviewedPrimaryCitationApprovalBytes(
+      duplicateSelection,
+      new Date("2026-07-22T14:00:00.000Z"),
+    )).toThrow("without duplicate object keys");
+    expect(() => parseReviewedPrimaryCitationApprovalBytes(
+      new Uint8Array([0xc3, 0x28]),
+      new Date("2026-07-22T14:00:00.000Z"),
+    )).toThrow("valid UTF-8 JSON");
+  });
+
+  it("rejects noncanonical candidate fields instead of trimming template data", () => {
+    const base = template();
+    const items = base.items.map((item, itemIndex) => ({
+      ...item,
+      candidates: item.candidates.map((candidate, candidateIndex) =>
+        itemIndex === 0 && candidateIndex === 0
+          ? { ...candidate, sourceUrl: ` ${candidate.sourceUrl}` }
+          : candidate),
+      selectedCitationId: item.candidates[0]?.citationId,
+    }));
+
+    expect(() => parseReviewedPrimaryCitationApproval({
+      ...base,
+      reviewedBy: "Research Reviewer",
+      reviewedAt,
+      items,
+    }, new Date("2026-07-22T14:00:00.000Z"))).toThrow(
+      "without surrounding whitespace",
+    );
+
+    expect(() => parseReviewedPrimaryCitationApproval({
+      ...base,
+      reviewedBy: "Research Reviewer",
+      reviewedAt,
+      items: items.map((item, itemIndex) => ({
+        ...item,
+        candidates: item.candidates.map((candidate, candidateIndex) =>
+          itemIndex === 0 && candidateIndex === 0
+            ? {
+                ...candidate,
+                sourceUrl: candidate.sourceUrl.trim(),
+                sourceLabel: 7,
+              }
+            : candidate),
+      })),
+    }, new Date("2026-07-22T14:00:00.000Z"))).toThrow(
+      "candidate sourceLabel must be a string",
+    );
   });
 });
 

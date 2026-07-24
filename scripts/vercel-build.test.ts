@@ -14,8 +14,8 @@ import {
 const repository = process.cwd();
 const previewDirectHost = "ep-preview-branch.c-5.us-east-1.aws.neon.tech";
 const previewPooledHost = "ep-preview-branch-pooler.c-5.us-east-1.aws.neon.tech";
-const directUrl = `postgresql://preview_user:shared-secret@${previewDirectHost}/neondb?sslmode=require`;
-const pooledUrl = `postgresql://preview_user:shared-secret@${previewPooledHost}/neondb?sslmode=require`;
+const directUrl = `postgresql://preview_user:shared-secret-2026@${previewDirectHost}/neondb?sslmode=require`;
+const pooledUrl = `postgresql://preview_user:shared-secret-2026@${previewPooledHost}/neondb?sslmode=require`;
 
 function previewEnvironment(): BuildEnvironment {
   return {
@@ -207,7 +207,7 @@ describe("Vercel Preview migration plan", () => {
     const plan = createVercelBuildPlan(environment, repository);
     const serializedArgs = plan.commands.flatMap((item) => item.args).join(" ");
 
-    expect(serializedArgs).not.toContain("shared-secret");
+    expect(serializedArgs).not.toContain("shared-secret-2026");
     expect(serializedArgs).not.toContain(directUrl);
     expect(serializedArgs).not.toContain(pooledUrl);
     for (const migration of plan.commands.slice(0, -1)) {
@@ -317,7 +317,7 @@ describe("Vercel Preview metadata guard", () => {
   ])("rejects the no-SSL database URL alias %s", (name) => {
     const environment = previewEnvironment();
     environment[name] =
-      `postgresql://preview_user:shared-secret@${previewDirectHost}/neondb`;
+      `postgresql://preview_user:shared-secret-2026@${previewDirectHost}/neondb`;
 
     expect(() => createVercelBuildPlan(environment, repository))
       .toThrow("forbidden_preview_database_url_present");
@@ -345,7 +345,7 @@ describe("Vercel Preview metadata guard", () => {
   it("requires matching URL usernames, passwords, databases, and normalized ports", () => {
     for (const runtimeUrl of [
       pooledUrl.replace("preview_user", "other_user"),
-      pooledUrl.replace("shared-secret", "other-secret"),
+      pooledUrl.replace("shared-secret-2026", "other-secret-2026"),
       pooledUrl.replace("/neondb?", "/other?"),
       pooledUrl.replace(previewPooledHost, `${previewPooledHost}:5433`),
     ]) {
@@ -430,7 +430,7 @@ describe("Vercel Preview metadata guard", () => {
   it.each([
     [directUrl.replace("sslmode=require", "sslmode=disable"), "database_url_unpooled_invalid"],
     [`${directUrl}#fragment`, "database_url_unpooled_invalid"],
-    [directUrl.replace("shared-secret", ""), "database_url_unpooled_invalid"],
+    [directUrl.replace("shared-secret-2026", ""), "database_url_unpooled_invalid"],
     [`${directUrl}&sslmode=require`, "database_url_unpooled_invalid"],
     [`${directUrl}&unknown=value`, "database_url_unpooled_invalid"],
   ])("rejects an unsafe direct connection URL", (url, expectedCode) => {
@@ -465,7 +465,7 @@ describe("Vercel Preview metadata guard", () => {
     const environment = previewEnvironment();
     const forbidden = environment.PRODUCTION_MIGRATION_DATABASE_HOST;
     environment.DATABASE_PRISMA_URL =
-      `postgresql://preview_user:shared-secret@${forbidden}/neondb?sslmode=require`;
+      `postgresql://preview_user:shared-secret-2026@${forbidden}/neondb?sslmode=require`;
 
     expect(() => createVercelBuildPlan(environment, repository))
       .toThrow("database_connection_alias_is_long_lived");
@@ -474,7 +474,7 @@ describe("Vercel Preview metadata guard", () => {
   it("never includes credentials in validation failures", () => {
     const environment = previewEnvironment();
     environment.DATABASE_URL_UNPOOLED =
-      "postgresql://preview_user:do-not-leak@not-neon.invalid/neondb?sslmode=require";
+      "postgresql://preview_user:do-not-leak-2026@not-neon.invalid/neondb?sslmode=require";
 
     let failure: unknown;
     try {
@@ -483,14 +483,14 @@ describe("Vercel Preview metadata guard", () => {
       failure = error;
     }
     expect(String(failure)).toContain("database_url_unpooled_host_not_neon_direct");
-    expect(String(failure)).not.toContain("do-not-leak");
+    expect(String(failure)).not.toContain("do-not-leak-2026");
     expect(String(failure)).not.toContain("postgresql://");
   });
 
   it("prints only a safe failure code when invoked as a native entrypoint", () => {
     const environment = previewEnvironment();
     environment.DATABASE_URL_UNPOOLED =
-      "postgresql://preview_user:do-not-log@not-neon.invalid/neondb?sslmode=require";
+      "postgresql://preview_user:do-not-log-2026@not-neon.invalid/neondb?sslmode=require";
     const result = spawnSync(
       process.execPath,
       [
@@ -512,7 +512,7 @@ describe("Vercel Preview metadata guard", () => {
     expect(result.stderr).toContain(
       "Vercel build guard failed: database_url_unpooled_host_not_neon_direct.",
     );
-    expect(`${result.stdout}\n${result.stderr}`).not.toContain("do-not-log");
+    expect(`${result.stdout}\n${result.stderr}`).not.toContain("do-not-log-2026");
     expect(`${result.stdout}\n${result.stderr}`).not.toContain("postgresql://");
   });
 });

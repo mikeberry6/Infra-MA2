@@ -4,6 +4,7 @@ import {
   pipelineHealthPasses,
   type PipelineHealthRow,
 } from "@/app/api/health/pipeline-health";
+import { pipelineRunProof } from "@/modules/operations/pipeline-run-proof";
 
 const NOW = new Date("2026-07-27T12:00:00.000Z");
 const HEALTHY_NEWS_COVERAGE = {
@@ -15,8 +16,10 @@ function run(
   startedAt: string,
   endedAt: string | null = null,
   metadata: unknown = null,
+  id = "run-1",
 ): PipelineHealthRow {
   return {
+    id,
     status,
     startedAt: new Date(startedAt),
     endedAt: endedAt ? new Date(endedAt) : null,
@@ -33,7 +36,11 @@ describe("critical pipeline health classification", () => {
     expect(classifyCriticalPipeline("DASHBOARD_SYNC", [
       run("SUCCEEDED", "invalid", "invalid"),
       run("SUCCEEDED", "2026-07-27T12:05:00.001Z", "2026-07-27T12:06:00.000Z"),
-    ], NOW)).toMatchObject({ status: "failed", lastSuccessfulAt: null });
+    ], NOW)).toMatchObject({
+      status: "failed",
+      lastSuccessfulAt: null,
+      lastSuccessfulRunProof: null,
+    });
   });
 
   it("rejects nominal successes without a trustworthy completion time", () => {
@@ -89,5 +96,53 @@ describe("critical pipeline health classification", () => {
     )], NOW);
     expect(failedCoverage).toMatchObject({ status: "failed", lastSuccessfulAt: null });
     expect(pipelineHealthPasses(failedCoverage)).toBe(false);
+  });
+
+  it("binds freshness to the exact successful row without exposing its ID", () => {
+    const health = classifyCriticalPipeline("DASHBOARD_SYNC", [
+      run(
+        "SUCCEEDED",
+        "2026-07-27T11:00:00.000Z",
+        "2026-07-27T11:05:00.000Z",
+        null,
+        "dashboard-run-2",
+      ),
+      run(
+        "SUCCEEDED",
+        "2026-07-27T10:00:00.000Z",
+        "2026-07-27T10:05:00.000Z",
+        null,
+        "dashboard-run-1",
+      ),
+    ], NOW);
+
+    expect(health.lastSuccessfulRunProof).toBe(pipelineRunProof("dashboard-run-2"));
+    expect(health.lastSuccessfulRunProof).not.toContain("dashboard-run-2");
+  });
+
+  it("fails closed when a nominally successful row has an unsafe identity", () => {
+    expect(classifyCriticalPipeline("DASHBOARD_SYNC", [
+      run(
+        "SUCCEEDED",
+        "2026-07-27T11:00:00.000Z",
+        "2026-07-27T11:05:00.000Z",
+        null,
+        "../unsafe",
+      ),
+    ], NOW)).toMatchObject({
+      status: "failed",
+      lastSuccessfulAt: null,
+      lastSuccessfulRunProof: null,
+    });
+  });
+
+  it("never passes a synthetic status without bound success evidence", () => {
+    expect(pipelineHealthPasses({
+      name: "DASHBOARD_SYNC",
+      status: "healthy",
+      lastAttemptAt: NOW.toISOString(),
+      lastSuccessfulAt: NOW.toISOString(),
+      lastSuccessfulRunProof: null,
+    })).toBe(false);
   });
 });

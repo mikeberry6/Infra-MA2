@@ -41,6 +41,39 @@ describe("verifyVercelDeployment", () => {
     });
   });
 
+  it("accepts an explicitly required Preview deployment target", () => {
+    expect(verifyVercelDeployment(
+      { ...validPayload, target: null },
+      projectId,
+      sha,
+      repositoryId,
+      "preview",
+    )).toMatchObject({
+      id: "dpl_example",
+      target: "preview",
+    });
+  });
+
+  it("retains compatibility with an explicit Preview target value", () => {
+    expect(verifyVercelDeployment(
+      { ...validPayload, target: "preview" },
+      projectId,
+      sha,
+      repositoryId,
+      "preview",
+    )).toMatchObject({ target: "preview" });
+  });
+
+  it("rejects a production deployment when Preview is required", () => {
+    expect(() => verifyVercelDeployment(
+      validPayload,
+      projectId,
+      sha,
+      repositoryId,
+      "preview",
+    )).toThrow("not a preview-target build");
+  });
+
   it.each([
     ["project", { projectId: "prj_other" }],
     ["target", { target: "preview" }],

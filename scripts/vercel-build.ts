@@ -1,7 +1,14 @@
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { hasSafeDatabaseConnectionQuery } from "../src/lib/database-connection-query.ts";
+import {
+  assertPreviewDatabasePair,
+  neonEndpointIdentity,
+  normalizeDatabaseHost,
+  parseDatabaseConnection,
+  PreviewDatabasePairGuardError,
+  sameConnectionIdentity,
+} from "./preview-database-pair.ts";
 
 export type BuildEnvironment = Record<string, string | undefined>;
 
@@ -69,120 +76,6 @@ function requireExact(
   const expected = required(environment, expectedName);
   if (actual !== expected) fail(failureCode);
   return actual;
-}
-
-function parsePostgresUrl(value: string, failureCode: string): URL {
-  let parsed: URL;
-  try {
-    parsed = new URL(value);
-  } catch {
-    fail(failureCode);
-  }
-  if (parsed.protocol !== "postgres:" && parsed.protocol !== "postgresql:") {
-    fail(failureCode);
-  }
-  if (!parsed.hostname || !databaseName(parsed)) fail(failureCode);
-  return parsed;
-}
-
-function databaseName(parsed: URL): string {
-  try {
-    const encoded = parsed.pathname.replace(/^\/+/, "");
-    if (!encoded || encoded.includes("/")) fail("database_name_invalid");
-    return decodeURIComponent(encoded);
-  } catch {
-    fail("database_name_invalid");
-  }
-}
-
-function decodedCredential(
-  value: string,
-  failureCode: string,
-): string {
-  try {
-    const decoded = decodeURIComponent(value);
-    if (!decoded) fail(failureCode);
-    return decoded;
-  } catch {
-    fail(failureCode);
-  }
-}
-
-function normalizeHost(value: string, failureCode: string): string {
-  const host = value.trim().toLowerCase().replace(/\.$/, "");
-  if (
-    !host
-    || host.includes("/")
-    || host.includes(":")
-    || host.includes("@")
-    || host.includes("?")
-    || host.includes("#")
-    || !/^[a-z0-9.-]+$/.test(host)
-  ) {
-    fail(failureCode);
-  }
-  return host;
-}
-
-function neonEndpointIdentity(host: string): string {
-  const [label, ...suffix] = host.split(".");
-  return [label.replace(/-pooler$/, ""), ...suffix].join(".");
-}
-
-function requireNeonDirectHost(host: string, failureCode: string): void {
-  if (
-    !/^ep-[a-z0-9-]+\.[a-z0-9.-]+\.neon\.tech$/.test(host)
-    || host.split(".", 1)[0].endsWith("-pooler")
-  ) {
-    fail(failureCode);
-  }
-}
-
-function requireNeonPooledPair(
-  pooledHost: string,
-  directHost: string,
-  failureCode: string,
-): void {
-  const [directLabel, ...suffix] = directHost.split(".");
-  const expectedPooledHost = [`${directLabel}-pooler`, ...suffix].join(".");
-  if (pooledHost !== expectedPooledHost) fail(failureCode);
-}
-
-type ParsedDatabaseConnection = {
-  host: string;
-  database: string;
-  username: string;
-  password: string;
-  port: string;
-};
-
-function parseDatabaseConnection(
-  value: string,
-  failureCode: string,
-): ParsedDatabaseConnection {
-  const parsed = parsePostgresUrl(value, failureCode);
-  if (parsed.hash) fail(failureCode);
-  if (!hasSafeDatabaseConnectionQuery(parsed, { requireSslMode: true })) {
-    fail(failureCode);
-  }
-  return {
-    host: normalizeHost(parsed.hostname, failureCode),
-    database: databaseName(parsed),
-    username: decodedCredential(parsed.username, failureCode),
-    password: decodedCredential(parsed.password, failureCode),
-    port: parsed.port || "5432",
-  };
-}
-
-function sameConnectionIdentity(
-  actual: ParsedDatabaseConnection,
-  expected: ParsedDatabaseConnection,
-): boolean {
-  return actual.host === expected.host
-    && actual.database === expected.database
-    && actual.username === expected.username
-    && actual.password === expected.password
-    && actual.port === expected.port;
 }
 
 function isOptionalConnectionAlias(name: string): boolean {
@@ -315,48 +208,16 @@ function assertPreviewNeonMetadata(
 ): PreviewDatabaseTarget {
   assertNoForbiddenPreviewDatabaseUrls(environment);
   const directUrl = required(environment, "DATABASE_URL_UNPOOLED");
-  const direct = parseDatabaseConnection(
-    directUrl,
-    "database_url_unpooled_invalid",
-  );
-  const runtime = parseDatabaseConnection(
-    required(environment, "DATABASE_URL"),
-    "database_url_invalid",
-  );
-  const directHost = direct.host;
-  const runtimeHost = runtime.host;
-  requireNeonDirectHost(directHost, "database_url_unpooled_host_not_neon_direct");
-  requireNeonPooledPair(runtimeHost, directHost, "database_url_host_not_pooled_pair");
-  if (
-    direct.database !== runtime.database
-    || direct.username !== runtime.username
-    || direct.password !== runtime.password
-    || direct.port !== runtime.port
-  ) {
-    fail("database_connection_identity_mismatch");
-  }
-
-  const metadataHost = normalizeHost(
+  const metadataHost = normalizeDatabaseHost(
     required(environment, "DATABASE_PGHOST_UNPOOLED"),
     "database_pghost_unpooled_invalid",
   );
-  if (metadataHost !== directHost) fail("database_unpooled_host_metadata_mismatch");
-  const pooledMetadataHost = normalizeHost(
+  const pooledMetadataHost = normalizeDatabaseHost(
     required(environment, "DATABASE_PGHOST"),
     "database_pghost_invalid",
   );
-  if (pooledMetadataHost !== runtimeHost) fail("database_pooled_host_metadata_mismatch");
-
   const expectedDatabase = required(environment, "EXPECTED_DATABASE_NAME");
   const metadataDatabase = required(environment, "DATABASE_PGDATABASE");
-  if (
-    metadataDatabase !== expectedDatabase
-    || direct.database !== expectedDatabase
-    || runtime.database !== expectedDatabase
-  ) {
-    fail("database_name_metadata_mismatch");
-  }
-
   const neonProjectId = requireExact(
     environment,
     "DATABASE_NEON_PROJECT_ID",
@@ -368,18 +229,20 @@ function assertPreviewNeonMetadata(
   }
 
   const forbiddenHosts = LONG_LIVED_DATABASE_HOST_VARIABLES.map((name) =>
-    normalizeHost(required(environment, name), `${name.toLowerCase()}_invalid`)
-  );
-  const previewEndpoint = neonEndpointIdentity(directHost);
-  if (
-    forbiddenHosts.some((host) =>
-      host === directHost
-      || host === runtimeHost
-      || neonEndpointIdentity(host) === previewEndpoint
+    normalizeDatabaseHost(
+      required(environment, name),
+      `${name.toLowerCase()}_invalid`,
     )
-  ) {
-    fail("preview_database_host_is_long_lived");
-  }
+  );
+  const pair = assertPreviewDatabasePair({
+    pooledUrl: required(environment, "DATABASE_URL"),
+    directUrl,
+    expectedPooledHost: pooledMetadataHost,
+    expectedDirectHost: metadataHost,
+    expectedDatabase,
+    forbiddenHosts,
+  });
+  if (metadataDatabase !== expectedDatabase) fail("database_name_metadata_mismatch");
 
   for (const [name, value] of Object.entries(environment)) {
     if (!isOptionalConnectionAlias(name) || value === undefined) continue;
@@ -392,7 +255,7 @@ function assertPreviewNeonMetadata(
     ) {
       fail("database_connection_alias_is_long_lived");
     }
-    const expected = name.endsWith("_NON_POOLING") ? direct : runtime;
+    const expected = name.endsWith("_NON_POOLING") ? pair.direct : pair.pooled;
     if (!sameConnectionIdentity(alias, expected)) {
       fail("database_connection_alias_mismatch");
     }
@@ -400,7 +263,7 @@ function assertPreviewNeonMetadata(
 
   return {
     directUrl,
-    directHost,
+    directHost: pair.direct.host,
     database: expectedDatabase,
     forbiddenHosts,
   };
@@ -530,6 +393,7 @@ if (invokedPath === import.meta.url) {
     runVercelBuild();
   } catch (error) {
     const code = error instanceof VercelBuildGuardError
+      || error instanceof PreviewDatabasePairGuardError
       ? error.code
       : "unexpected_failure";
     console.error(`Vercel build guard failed: ${code}.`);

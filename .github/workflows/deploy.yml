@@ -293,6 +293,9 @@ jobs:
           else
             ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts \
               --output=tmp/ci/primary-citation-approval-template.json
+            ./node_modules/.bin/tsx scripts/build-primary-citation-review-worksheet.ts \
+              --template=tmp/ci/primary-citation-approval-template.json \
+              --output=tmp/ci/primary-citation-review-worksheet.json
           fi
 
       - name: Verify database integrity and strict publication gates

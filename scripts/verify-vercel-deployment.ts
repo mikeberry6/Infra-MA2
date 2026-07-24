@@ -1,9 +1,9 @@
-import { mkdir, writeFile } from "node:fs/promises";
-import path from "node:path";
 import {
   vercelDeploymentApiUrl,
   verifyVercelDeployment,
+  type VercelDeploymentTarget,
 } from "../src/lib/vercel-deployment.ts";
+import { prepareProtectedTemporaryJsonOutput } from "../src/lib/reviewer-neutral-output.ts";
 import { withServerTask } from "../src/lib/server-log.ts";
 
 function option(name: string): string | undefined {
@@ -32,9 +32,13 @@ async function main(): Promise<void> {
   const expectedSha = option("expected-sha");
   const expectedProjectId = option("expected-project-id");
   const expectedGithubRepositoryId = option("expected-github-repository-id");
+  const expectedTarget = option("expected-target") ?? "production";
   const teamId = option("team-id");
   if (!expectedSha || !expectedProjectId || !expectedGithubRepositoryId || !teamId) {
     throw new Error("--expected-sha, --expected-project-id, --expected-github-repository-id, and --team-id are required.");
+  }
+  if (expectedTarget !== "preview" && expectedTarget !== "production") {
+    throw new Error("--expected-target must be preview or production.");
   }
   const deployment = deploymentReference();
   const response = await fetch(vercelDeploymentApiUrl(deployment.reference, teamId), {
@@ -51,13 +55,19 @@ async function main(): Promise<void> {
     expectedProjectId,
     expectedSha,
     expectedGithubRepositoryId,
+    expectedTarget as VercelDeploymentTarget,
   );
   if (flag("require-immutable-url") && deployment.requestedHostname && deployment.requestedHostname !== verified.url) {
     throw new Error("The supplied URL is an alias, not the deployment's immutable Vercel URL.");
   }
   const output = option("output") ?? "tmp/vercel-deployment.json";
-  await mkdir(path.dirname(output), { recursive: true });
-  await writeFile(output, `${JSON.stringify({ verifiedAt: new Date().toISOString(), ...verified }, null, 2)}\n`);
+  const destination = await prepareProtectedTemporaryJsonOutput({
+    repositoryRoot: process.cwd(),
+    output,
+  });
+  await destination.write(
+    `${JSON.stringify({ verifiedAt: new Date().toISOString(), ...verified }, null, 2)}\n`,
+  );
   console.log(`Vercel deployment ${verified.id} verified for ${verified.githubCommitSha}.`);
 }
 

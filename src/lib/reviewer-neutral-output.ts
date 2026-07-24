@@ -2,7 +2,7 @@ import { constants } from "node:fs";
 import { lstat, mkdir, open, realpath } from "node:fs/promises";
 import path from "node:path";
 
-export interface PreparedReviewerNeutralJsonOutput {
+export interface PreparedProtectedTemporaryJsonOutput {
   outputPath: string;
   write(contents: string): Promise<void>;
 }
@@ -27,7 +27,7 @@ async function ensurePlainDirectory(directory: string): Promise<void> {
     stats = await lstat(directory);
   }
   if (stats.isSymbolicLink() || !stats.isDirectory()) {
-    throw new Error(`Reviewer-neutral output parent must be a plain directory: ${directory}`);
+    throw new Error(`Protected temporary JSON output parent must be a plain directory: ${directory}`);
   }
 }
 
@@ -50,7 +50,7 @@ async function validateAndPrepareDestination(input: {
     || path.isAbsolute(relativeOutput)
     || path.extname(outputPath) !== ".json"
   ) {
-    throw new Error("Reviewer-neutral templates must be written to a .json file under tmp/");
+    throw new Error("Review artifacts must be written to a .json file under tmp/");
   }
 
   await ensurePlainDirectory(tmpRoot);
@@ -66,15 +66,15 @@ async function validateAndPrepareDestination(input: {
     realpath(path.dirname(outputPath)),
   ]);
   if (realTmpRoot !== tmpRoot || !isContainedPath(realTmpRoot, realParent)) {
-    throw new Error("Reviewer-neutral output parent resolves outside the repository tmp/ directory");
+    throw new Error("Protected temporary JSON output parent resolves outside the repository tmp/ directory");
   }
   return { outputPath, realTmpRoot };
 }
 
-export async function prepareReviewerNeutralJsonOutput(input: {
+export async function prepareProtectedTemporaryJsonOutput(input: {
   repositoryRoot: string;
   output: string;
-}): Promise<PreparedReviewerNeutralJsonOutput> {
+}): Promise<PreparedProtectedTemporaryJsonOutput> {
   const prepared = await validateAndPrepareDestination(input);
   return {
     outputPath: prepared.outputPath,
@@ -83,7 +83,7 @@ export async function prepareReviewerNeutralJsonOutput(input: {
       // be introduced between report generation and the filesystem write.
       const current = await validateAndPrepareDestination(input);
       if (current.outputPath !== prepared.outputPath || current.realTmpRoot !== prepared.realTmpRoot) {
-        throw new Error("Reviewer-neutral output destination changed after validation");
+        throw new Error("Protected temporary JSON output destination changed after validation");
       }
       const handle = await open(
         current.outputPath,
@@ -93,7 +93,7 @@ export async function prepareReviewerNeutralJsonOutput(input: {
       try {
         const actualPath = await realpath(current.outputPath);
         if (!isContainedPath(current.realTmpRoot, actualPath)) {
-          throw new Error("Reviewer-neutral output file resolves outside the repository tmp/ directory");
+          throw new Error("Protected temporary JSON output file resolves outside the repository tmp/ directory");
         }
         await handle.writeFile(contents, { encoding: "utf8" });
       } finally {
@@ -102,3 +102,8 @@ export async function prepareReviewerNeutralJsonOutput(input: {
     },
   };
 }
+
+// Reviewer-neutral report generators retain their explicit content-oriented
+// name, while reviewed compilers share the same tmp-only, no-overwrite
+// filesystem boundary through the generic export above.
+export const prepareReviewerNeutralJsonOutput = prepareProtectedTemporaryJsonOutput;

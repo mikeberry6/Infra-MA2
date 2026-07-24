@@ -31,6 +31,7 @@ function healthyPipelineReads() {
   mocks.pipelineFindMany.mockImplementation(({ where }: {
     where: { pipeline: string };
   }) => Promise.resolve([{
+      id: where.pipeline === "NEWS_SCAN" ? "news-run-1" : "dashboard-run-1",
       status: "SUCCEEDED",
       startedAt: new Date("2026-07-22T12:00:00.000Z"),
       endedAt: new Date("2026-07-22T12:05:00.000Z"),
@@ -82,9 +83,19 @@ describe("GET /api/health", () => {
       "version",
     ]);
     expect(payload.pipelines).toEqual([
-      expect.objectContaining({ name: "NEWS_SCAN", status: "healthy" }),
-      expect.objectContaining({ name: "DASHBOARD_SYNC", status: "healthy" }),
+      expect.objectContaining({
+        name: "NEWS_SCAN",
+        status: "healthy",
+        lastSuccessfulRunProof: expect.stringMatching(/^[0-9a-f]{64}$/),
+      }),
+      expect.objectContaining({
+        name: "DASHBOARD_SYNC",
+        status: "healthy",
+        lastSuccessfulRunProof: expect.stringMatching(/^[0-9a-f]{64}$/),
+      }),
     ]);
+    expect(payload.pipelines[0].lastSuccessfulRunProof)
+      .not.toBe(payload.pipelines[1].lastSuccessfulRunProof);
     const schemaQuery = mocks.queryRaw.mock.calls[1]?.[0];
     expect(Array.from(schemaQuery ?? []).join(" ")).toContain("primarySourceUrl");
   });
@@ -173,6 +184,7 @@ describe("GET /api/health", () => {
     mocks.pipelineFindMany.mockImplementation(({ where }: {
       where: { pipeline: string };
     }) => Promise.resolve([{
+      id: where.pipeline === "NEWS_SCAN" ? "news-stale-run" : "dashboard-stale-run",
       status: "SUCCEEDED",
       startedAt: new Date("2026-07-19T12:00:00.000Z"),
       endedAt: new Date("2026-07-19T12:05:00.000Z"),
@@ -205,6 +217,7 @@ describe("GET /api/health", () => {
         ? new Date("2026-07-24T11:35:00.000Z")
         : new Date("2026-07-26T01:00:00.000Z");
       return Promise.resolve([{
+        id: where.pipeline === "NEWS_SCAN" ? "news-weekend-run" : "dashboard-friday-run",
         status: "SUCCEEDED",
         startedAt: endedAt,
         endedAt,
@@ -234,6 +247,7 @@ describe("GET /api/health", () => {
         ? new Date("2026-07-24T11:35:00.000Z")
         : new Date("2026-07-27T00:00:00.000Z");
       return Promise.resolve([{
+        id: where.pipeline === "NEWS_SCAN" ? "news-monday-run" : "dashboard-friday-run",
         status: "SUCCEEDED",
         startedAt: endedAt,
         endedAt,
@@ -256,6 +270,7 @@ describe("GET /api/health", () => {
       .mockResolvedValueOnce([{ connected: 1 }])
       .mockResolvedValueOnce([{ ready: true }]);
     const badNewsRun = {
+      id: "news-bad-coverage-run",
       status: "SUCCEEDED",
       startedAt: new Date("2026-07-22T12:00:00.000Z"),
       endedAt: new Date("2026-07-22T12:05:00.000Z"),
@@ -266,6 +281,7 @@ describe("GET /api/health", () => {
     }) => Promise.resolve([where.pipeline === "NEWS_SCAN"
       ? badNewsRun
       : {
+        id: "dashboard-good-run",
         status: "SUCCEEDED",
         startedAt: new Date("2026-07-22T12:00:00.000Z"),
         endedAt: new Date("2026-07-22T12:05:00.000Z"),

@@ -6,14 +6,13 @@
  * This script never mutates data and never recommends or infers a selection.
  *
  * Usage:
- *   npm run db:citations:report -- --output=audits/primary-citation-approval.json
- *   npx tsx scripts/report-primary-citation-remediation.ts > approval.json
+ *   npm run db:citations:report
+ *   npm run db:citations:report -- --output=tmp/primary-citation-approval-template.json
  */
 import "dotenv/config";
+import { prepareReviewerNeutralJsonOutput } from "../src/lib/reviewer-neutral-output";
 import { logServerFailure, withServerTask } from "../src/lib/server-log";
 import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
-import { mkdir, writeFile } from "node:fs/promises";
-import path from "node:path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
 import {
@@ -21,6 +20,8 @@ import {
   loadPrimaryCitationReportInput,
   sha256Hex,
 } from "../src/modules/operations/primary-citation-remediation";
+
+const DEFAULT_OUTPUT = "tmp/primary-citation-approval-template.json";
 
 function option(name: string): string | undefined {
   return process.argv.slice(2)
@@ -32,23 +33,25 @@ async function main() {
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) throw new Error("DATABASE_URL is required for the read-only citation report");
 
+  const destination = await prepareReviewerNeutralJsonOutput({
+    repositoryRoot: process.cwd(),
+    output: option("output") ?? DEFAULT_OUTPUT,
+  });
   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
   const run = async () => {
     const input = await loadPrimaryCitationReportInput(prisma);
     const template = buildPrimaryCitationApprovalTemplate(input);
     const json = `${JSON.stringify(template, null, 2)}\n`;
-    const output = option("output");
-    if (output) {
-      const outputPath = path.resolve(output);
-      await mkdir(path.dirname(outputPath), { recursive: true });
-      await writeFile(outputPath, json, { encoding: "utf8", flag: "wx" });
-      console.error(`Wrote reviewer-neutral approval template to ${outputPath}`);
-    } else {
-      process.stdout.write(json);
-    }
-    console.error(
-      `Published records missing explicit primary citation: ${template.items.length}; template SHA-256: ${sha256Hex(json)}`,
-    );
+    await destination.write(json);
+    console.log(JSON.stringify({
+      reportWritten: true,
+      output: destination.outputPath,
+      publishedRecordsMissingPrimaryCitation: template.items.length,
+      recordsWithoutSelectableCandidates: template.items.filter(
+        (item) => item.candidates.length === 0,
+      ).length,
+      templateSha256: sha256Hex(json),
+    }, null, 2));
   };
   await runWithPreservedCleanup({
     run,

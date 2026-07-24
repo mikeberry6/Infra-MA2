@@ -39,7 +39,12 @@ describe("pipeline run lifecycle", () => {
     const client = pipelineClient();
     client.pipelineRun.update.mockResolvedValue({});
 
-    await completePipelineRun(client as never, "run-1", { inserted: 2, skipped: 3 });
+    await expect(
+      completePipelineRun(client as never, "run-1", { inserted: 2, skipped: 3 }),
+    ).resolves.toEqual({
+      id: "run-1",
+      endedAt: new Date("2026-07-22T12:00:00.000Z"),
+    });
 
     expect(client.pipelineRun.update).toHaveBeenCalledWith({
       where: { id: "run-1" },

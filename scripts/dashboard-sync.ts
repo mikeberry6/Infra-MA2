@@ -21,6 +21,7 @@ import {
   resolveEasternRefreshWindow,
   type PipelineExecutionProvenance,
 } from "../src/modules/operations/pipeline-reliability";
+import { pipelineRunProof } from "../src/modules/operations/pipeline-run-proof";
 import { completePipelineRun, failPipelineRun, startPipelineRun } from "../src/modules/operations/pipeline-runs";
 
 function createPrisma(): PrismaClient {
@@ -85,7 +86,7 @@ async function main() {
           throw new Error(dashboardSyncFailureMessage(summary, health));
         }
         if (pipelineRunId && prisma) {
-          await completePipelineRun(prisma, pipelineRunId, {
+          const completedPipelineRun = await completePipelineRun(prisma, pipelineRunId, {
             updated: summary.totals.observationsUpserted + summary.totals.signalsUpserted,
             skipped: summary.totals.skippedSources,
           }, pipelineMetadata({
@@ -102,6 +103,16 @@ async function main() {
               stale: source.staleRequiredMetrics,
             })),
           }, execution));
+          // The database transaction is already complete. Do not let a later
+          // local evidence-write failure overwrite the successful run as FAILED.
+          pipelineRunId = null;
+          await writeFile(outPath, `${JSON.stringify({
+            ...summary,
+            pipelineRunStatus: "SUCCEEDED",
+            pipelineRunEndedAt: completedPipelineRun.endedAt.toISOString(),
+            pipelineRunProof: pipelineRunProof(completedPipelineRun.id),
+            execution,
+          }, null, 2)}\n`);
         }
       } catch (error) {
         if (pipelineRunId && prisma) {
