@@ -1,10 +1,15 @@
+import { RouteLoadingRegion } from "@/components/shared/RouteLoadingRegion";
+
 /**
  * Loading skeleton for public database pages. Mirrors the intelligence header,
  * filter bar, and table panel so the layout doesn't jump when content streams in.
  */
 export default function Loading() {
   return (
-    <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
+    <RouteLoadingRegion
+      label="Loading database"
+      className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6"
+    >
       <div className="animate-pulse">
         {/* Intelligence header */}
         <div className="mb-5 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--bg-surface)]">
@@ -59,6 +64,6 @@ export default function Loading() {
           </div>
         </div>
       </div>
-    </div>
+    </RouteLoadingRegion>
   );
 }

@@ -4,6 +4,7 @@ import { getDatabaseCounts } from "@/modules/insights/queries";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { dashboardSignalReviewQueueWhere } from "@/modules/dashboard/review-queue";
 
 export const metadata = { title: "Admin" };
 
@@ -12,8 +13,9 @@ export default async function AdminDashboard() {
   const userCount = await prisma.user.count();
   const draftDeals = await prisma.deal.count({ where: { status: "DRAFT" } });
   const draftCompanies = await prisma.company.count({ where: { status: "DRAFT" } });
+  const auditCount = await prisma.auditEvent.count();
   const pendingDashboardSignals = await prisma.dashboardSignal.count({
-    where: { reviewStatus: "PENDING" },
+    where: dashboardSignalReviewQueueWhere(prisma.dashboardSignal.fields.contentHash),
   });
 
   const sections = [
@@ -23,6 +25,7 @@ export default async function AdminDashboard() {
     { href: "/admin/dashboard-signals", label: "Dashboard signals", count: pendingDashboardSignals, drafts: 0 },
     { href: "/admin/sources", label: "Sources", count: 0, drafts: 0 },
     { href: "/admin/users", label: "Users", count: userCount, drafts: 0 },
+    { href: "/admin/audit", label: "Audit log", count: auditCount, drafts: 0 },
   ];
 
   return (

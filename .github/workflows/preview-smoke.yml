@@ -1,0 +1,170 @@
+name: Vercel Preview Smoke
+
+on:
+  repository_dispatch:
+    types: ["vercel.deployment.success"]
+
+run-name: >-
+  Preview smoke — ${{ github.event.client_payload.project.name }}
+  @ ${{ github.event.client_payload.git.shortSha }}
+
+permissions:
+  actions: read
+  contents: read
+  id-token: write
+  statuses: write
+
+concurrency:
+  group: preview-smoke-${{ github.event.client_payload.git.sha }}
+  # The upstream Vercel status action classifies cancelled steps as success.
+  # Queue duplicate events instead so cancellation can never become a green
+  # candidate status.
+  cancel-in-progress: false
+
+jobs:
+  preview-smoke:
+    name: Trusted immutable Preview smoke
+    if: >-
+      github.actor == 'vercel[bot]' &&
+      github.event.client_payload.environment == 'preview' &&
+      github.event.client_payload.project.id == vars.VERCEL_PROJECT_ID
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # repository_dispatch workflows are loaded from the default branch.
+      # Check out only that trusted tooling; never execute candidate source in
+      # the OIDC-bearing job.
+      - name: Checkout trusted smoke tooling
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+
+      - name: Verify Vercel App event and immutable Preview identity
+        id: preview_event
+        run: |
+          node --experimental-strip-types scripts/verify-vercel-preview-event.ts \
+            --expected-project-id="${{ vars.VERCEL_PROJECT_ID }}" \
+            --expected-project-name="${{ vars.VERCEL_PROJECT_NAME }}" \
+            --expected-scope="${{ vars.VERCEL_SCOPE }}" \
+            --expected-repository="${{ github.repository }}" \
+            --expected-repository-id="${{ github.repository_id }}" \
+            --expected-sender-id=35613825 \
+            --expected-sender-login='vercel[bot]' \
+            --output=tmp/preview-smoke/deployment.json
+
+      - name: Publish pending candidate status
+        id: pending_status
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        env:
+          CANDIDATE_SHA: ${{ github.event.client_payload.git.sha }}
+        with:
+          script: |
+            const jobs = await github.rest.actions.listJobsForWorkflowRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.runId,
+              filter: "latest",
+              per_page: 100,
+            });
+            const currentJob = jobs.data.jobs.filter(
+              (job) => job.name === "Trusted immutable Preview smoke",
+            );
+            if (currentJob.length !== 1 || !currentJob[0].html_url) {
+              throw new Error("Could not bind Preview status to the current trusted job.");
+            }
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: process.env.CANDIDATE_SHA,
+              state: "pending",
+              context: "preview-smoke",
+              description: "Trusted immutable Vercel Preview smoke is running.",
+              target_url: currentJob[0].html_url,
+            });
+
+      - name: Request short-lived GitHub OIDC identity
+        id: oidc
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          script: |
+            const token = await core.getIDToken("https://vercel.com/infrasight-preview-smoke");
+            core.setSecret(token);
+            core.setOutput("token", token);
+
+      - name: Smoke exact deployed runtime, data health, and anonymous authorization
+        env:
+          VERCEL_TRUSTED_OIDC_TOKEN: ${{ steps.oidc.outputs.token }}
+        run: |
+          preview_url="$(jq -er '.deploymentUrl' tmp/preview-smoke/deployment.json)"
+          release_sha="$(jq -er '.gitSha' tmp/preview-smoke/deployment.json)"
+          node scripts/release-smoke.mjs \
+            --base-url="$preview_url" \
+            --expected-version="$release_sha" \
+            --transport=vercel-oidc \
+            --output=tmp/preview-smoke/runtime-smoke.json
+
+      - name: Prove retained Preview evidence contains no OIDC token
+        id: preview_artifact_secret_gate
+        if: always() && steps.oidc.outcome == 'success'
+        env:
+          VERCEL_TRUSTED_OIDC_TOKEN: ${{ steps.oidc.outputs.token }}
+        run: |
+          node --experimental-strip-types scripts/assert-playwright-artifact-secret-safety.ts \
+            --root=tmp/preview-smoke \
+            --secret-env=VERCEL_TRUSTED_OIDC_TOKEN \
+            --output=tmp/preview-smoke-secret-safety.json
+
+      - name: Upload sanitized Preview evidence
+        if: always() && steps.preview_artifact_secret_gate.outcome == 'success'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: preview-smoke-evidence-${{ github.run_id }}
+          path: |
+            tmp/preview-smoke/
+            tmp/preview-smoke-secret-safety.json
+          if-no-files-found: error
+          retention-days: 30
+
+      # Publish success only after the runtime smoke, secret scan, and evidence
+      # upload all pass. Cancellation before this step leaves the newest status
+      # pending, which the lineage verifier rejects.
+      - name: Publish final candidate status
+        if: always() && steps.preview_event.outcome == 'success' && steps.pending_status.outcome == 'success'
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        env:
+          CANDIDATE_SHA: ${{ github.event.client_payload.git.sha }}
+          PREVIEW_JOB_STATUS: ${{ job.status }}
+        with:
+          script: |
+            const success = process.env.PREVIEW_JOB_STATUS === "success";
+            const jobs = await github.rest.actions.listJobsForWorkflowRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.runId,
+              filter: "latest",
+              per_page: 100,
+            });
+            const currentJob = jobs.data.jobs.filter(
+              (job) => job.name === "Trusted immutable Preview smoke",
+            );
+            if (currentJob.length !== 1 || !currentJob[0].html_url) {
+              throw new Error("Could not bind Preview status to the current trusted job.");
+            }
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: process.env.CANDIDATE_SHA,
+              state: success ? "success" : "failure",
+              context: "preview-smoke",
+              description: success
+                ? "Trusted immutable Vercel Preview smoke passed."
+                : "Trusted immutable Vercel Preview smoke failed.",
+              target_url: currentJob[0].html_url,
+            });

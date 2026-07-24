@@ -1,0 +1,400 @@
+name: Non-production Neon PITR Exercise
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_sha:
+        description: Exact protected-main SHA whose application will be exercised
+        required: true
+        type: string
+      confirmation:
+        description: Type EXERCISE to authorize temporary non-production branches
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  checks: read
+  contents: read
+
+concurrency:
+  # Serialize with the reusable validation branch before deriving a child.
+  group: neon-migration-validation-${{ github.repository_id }}
+  cancel-in-progress: false
+
+jobs:
+  recovery:
+    name: Protected non-production point-in-time recovery
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    # Operations must configure this main-only environment with an independent
+    # Engineering/Operations reviewer and self-review prevention.
+    environment: Recovery
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      RELEASE_SHA: ${{ inputs.release_sha }}
+      RECOVERY_CONFIRMATION: ${{ inputs.confirmation }}
+      DATA_CACHE_NAMESPACE: recovery-${{ github.run_id }}-${{ github.run_attempt }}
+      VERCEL_GIT_COMMIT_SHA: ${{ inputs.release_sha }}
+    steps:
+      - name: Require protected main and explicit exercise authorization
+        shell: bash
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Recovery exercises must be dispatched from refs/heads/main."
+            exit 1
+          fi
+          if [ "$RECOVERY_CONFIRMATION" != "EXERCISE" ]; then
+            echo "::error::confirmation must exactly equal EXERCISE."
+            exit 1
+          fi
+          if ! [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]] || [ "$GITHUB_SHA" != "$RELEASE_SHA" ]; then
+            echo "::error::release_sha must be the exact dispatched protected-main SHA."
+            exit 1
+          fi
+
+      - name: Checkout exact protected main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Prove protected-main and successful release-gate provenance
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          node --experimental-strip-types scripts/verify-release-provenance.ts \
+            --release-sha="$RELEASE_SHA" \
+            --branch=main \
+            --required-check=build \
+            --output=tmp/recovery/public/release-provenance.json
+
+      - name: Require protected recovery configuration
+        shell: bash
+        env:
+          NEON_RECOVERY_API_KEY: ${{ secrets.NEON_RECOVERY_API_KEY }}
+          NEON_RECOVERY_PROJECT_ID: ${{ vars.NEON_RECOVERY_PROJECT_ID }}
+          NEON_PRODUCTION_PROJECT_ID: ${{ vars.NEON_PRODUCTION_PROJECT_ID }}
+          NEON_VALIDATION_BRANCH_ID: ${{ vars.NEON_VALIDATION_BRANCH_ID }}
+          VALIDATION_DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
+          VALIDATION_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+          VALIDATION_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
+          PRODUCTION_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          PRODUCTION_MIGRATION_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          DASHBOARD_MIGRATION_DATABASE_HOST: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+        run: |
+          missing=0
+          for name in NEON_RECOVERY_API_KEY NEON_RECOVERY_PROJECT_ID NEON_PRODUCTION_PROJECT_ID NEON_VALIDATION_BRANCH_ID VALIDATION_DATABASE_URL VALIDATION_DATABASE_HOST VALIDATION_DATABASE_NAME PRODUCTION_DATABASE_HOST PRODUCTION_MIGRATION_DATABASE_HOST DASHBOARD_MIGRATION_DATABASE_HOST; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for the protected recovery exercise."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then exit 1; fi
+          if ! [[ "$NEON_RECOVERY_PROJECT_ID" =~ ^[a-z0-9-]{1,60}$ ]]; then
+            echo "::error::NEON_RECOVERY_PROJECT_ID is invalid."
+            exit 1
+          fi
+          if ! [[ "$NEON_PRODUCTION_PROJECT_ID" =~ ^[a-z0-9-]{1,60}$ ]]; then
+            echo "::error::NEON_PRODUCTION_PROJECT_ID is invalid."
+            exit 1
+          fi
+          if [ "$NEON_RECOVERY_PROJECT_ID" = "$NEON_PRODUCTION_PROJECT_ID" ]; then
+            echo "::error::Recovery and production Neon projects must be independently distinct."
+            exit 1
+          fi
+          if ! [[ "$NEON_VALIDATION_BRANCH_ID" =~ ^[a-z0-9-]{1,60}$ ]]; then
+            echo "::error::NEON_VALIDATION_BRANCH_ID is invalid."
+            exit 1
+          fi
+
+      - name: Install locked dependencies and validate Prisma
+        run: |
+          npm ci
+          npm run db:generate
+          npm run db:validate
+
+      - name: Create and verify isolated PITR branches
+        id: prepare
+        env:
+          NEON_RECOVERY_API_KEY: ${{ secrets.NEON_RECOVERY_API_KEY }}
+          NEON_RECOVERY_PROJECT_ID: ${{ vars.NEON_RECOVERY_PROJECT_ID }}
+          NEON_PRODUCTION_PROJECT_ID: ${{ vars.NEON_PRODUCTION_PROJECT_ID }}
+          NEON_VALIDATION_BRANCH_ID: ${{ vars.NEON_VALIDATION_BRANCH_ID }}
+          VALIDATION_DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
+          VALIDATION_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+          VALIDATION_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
+          PRODUCTION_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          PRODUCTION_MIGRATION_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          DASHBOARD_MIGRATION_DATABASE_HOST: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+        run: >-
+          ./node_modules/.bin/tsx scripts/run-neon-recovery-exercise.ts prepare
+          --state=tmp/recovery/private/state.json
+          --evidence=tmp/recovery/public/prepare-evidence.json
+
+      - name: Reprove exact restored target before read-only checks
+        env:
+          NEON_RECOVERY_API_KEY: ${{ secrets.NEON_RECOVERY_API_KEY }}
+          NEON_RECOVERY_PROJECT_ID: ${{ vars.NEON_RECOVERY_PROJECT_ID }}
+          NEON_PRODUCTION_PROJECT_ID: ${{ vars.NEON_PRODUCTION_PROJECT_ID }}
+          NEON_VALIDATION_BRANCH_ID: ${{ vars.NEON_VALIDATION_BRANCH_ID }}
+          VALIDATION_DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
+          VALIDATION_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+          VALIDATION_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
+          PRODUCTION_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          PRODUCTION_MIGRATION_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          DASHBOARD_MIGRATION_DATABASE_HOST: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+        run: >-
+          ./node_modules/.bin/tsx scripts/run-neon-recovery-exercise.ts assert-target
+          --state=tmp/recovery/private/state.json
+
+      - name: Verify restored migration ledger and schema
+        shell: bash
+        run: |
+          mkdir -p tmp/recovery/private tmp/recovery/public
+          set -o pipefail
+          set +e
+          ./node_modules/.bin/prisma migrate status \
+            2>&1 | tee tmp/recovery/private/migrate-status.log
+          migration_status=${PIPESTATUS[0]}
+          ./node_modules/.bin/prisma migrate diff \
+            --from-schema=prisma/schema.prisma \
+            --to-config-datasource \
+            --exit-code \
+            2>&1 | tee tmp/recovery/private/schema-drift.log
+          drift_status=${PIPESTATUS[0]}
+          set -e
+          jq -n \
+            --argjson migrationStatus "$migration_status" \
+            --argjson schemaDrift "$drift_status" \
+            '{
+              migrationStatusExitCode: $migrationStatus,
+              schemaDriftExitCode: $schemaDrift,
+              passed: ($migrationStatus == 0 and $schemaDrift == 0)
+            }' > tmp/recovery/public/migration-checks.json
+          if [ "$migration_status" -ne 0 ] || [ "$drift_status" -ne 0 ]; then
+            exit 1
+          fi
+          node --experimental-strip-types scripts/verify-migration-baseline.ts \
+            --base-sha="$RELEASE_SHA" \
+            --output=tmp/recovery/public/migration-baseline.json
+
+      - name: Verify restored database and publication integrity
+        shell: bash
+        run: |
+          mkdir -p tmp/recovery/private tmp/recovery/public
+          set +e
+          npm run db:verify \
+            > tmp/recovery/private/database-verification.log 2>&1
+          database_status=$?
+          ./node_modules/.bin/tsx scripts/source-coverage-report.ts \
+            --require-complete \
+            --output=tmp/recovery/private/source-coverage.json \
+            > tmp/recovery/private/source-coverage.log 2>&1
+          source_status=$?
+          npm run db:duplicates:verify \
+            > tmp/recovery/private/company-canonical.log 2>&1
+          canonical_status=$?
+          set -e
+          jq -n \
+            --argjson database "$database_status" \
+            --argjson sources "$source_status" \
+            --argjson canonical "$canonical_status" \
+            '{
+              databaseVerificationExitCode: $database,
+              sourceCoverageExitCode: $sources,
+              canonicalCompanyExitCode: $canonical,
+              passed: ($database == 0 and $sources == 0 and $canonical == 0)
+            }' > tmp/recovery/public/data-integrity-checks.json
+          if [ "$database_status" -ne 0 ] \
+            || [ "$source_status" -ne 0 ] \
+            || [ "$canonical_status" -ne 0 ]; then
+            exit 1
+          fi
+
+      - name: Build current application only against the restored branch
+        shell: bash
+        env:
+          NEXTAUTH_URL: http://127.0.0.1:3110/Infra-MA2/api/auth
+        run: |
+          recovery_auth_secret="$(openssl rand -hex 32)"
+          echo "::add-mask::$recovery_auth_secret"
+          echo "RECOVERY_NEXTAUTH_SECRET=$recovery_auth_secret" >> "$GITHUB_ENV"
+          echo "NEXTAUTH_SECRET=$recovery_auth_secret" >> "$GITHUB_ENV"
+          export NEXTAUTH_SECRET="$recovery_auth_secret"
+          npm run build
+
+      - name: Run read-only public smoke against a loopback server
+        shell: bash
+        env:
+          NEXTAUTH_URL: http://127.0.0.1:3110/Infra-MA2/api/auth
+        run: |
+          set -euo pipefail
+          mkdir -p tmp/recovery/private tmp/recovery/public
+          recovery_port=3110
+          recovery_origin="http://127.0.0.1:${recovery_port}"
+          npm run start -- -p "$recovery_port" > tmp/recovery/private/server.log 2>&1 &
+          recovery_pid=$!
+          cleanup_server() {
+            kill "$recovery_pid" 2>/dev/null || true
+            wait "$recovery_pid" 2>/dev/null || true
+          }
+          trap cleanup_server EXIT
+
+          ready=0
+          for _ in $(seq 1 60); do
+            if ! kill -0 "$recovery_pid" 2>/dev/null; then break; fi
+            if curl --silent --output /dev/null --max-time 2 \
+              "${recovery_origin}/Infra-MA2/api/health"; then
+              ready=1
+              break
+            fi
+            sleep 1
+          done
+          if [ "$ready" -ne 1 ]; then
+            echo "::error::Restored-branch loopback server did not become ready."
+            exit 1
+          fi
+
+          node scripts/release-smoke.mjs \
+            --base-url="$recovery_origin" \
+            --expected-version="$RELEASE_SHA" \
+            --skip-health \
+            --output=tmp/recovery/public/public-smoke.json
+
+          health_status="$(curl --silent --show-error \
+            --output tmp/recovery/public/health.json \
+            --write-out '%{http_code}' \
+            --max-time 20 \
+            "${recovery_origin}/Infra-MA2/api/health")"
+          if [ "$health_status" != "200" ] && [ "$health_status" != "503" ]; then
+            echo "::error::Restored-branch health returned unexpected HTTP $health_status."
+            exit 1
+          fi
+          expected_version="${RELEASE_SHA:0:12}"
+          jq -e --arg expected "$expected_version" '
+            (keys | sort) == [
+              "database",
+              "generatedAt",
+              "generationTimeMs",
+              "pipelines",
+              "status",
+              "version"
+            ]
+            and .database == "connected"
+            and .version == $expected
+            and (.generatedAt | fromdateiso8601)
+            and (.generationTimeMs | type == "number")
+            and (.pipelines | type == "array")
+          ' tmp/recovery/public/health.json >/dev/null
+
+      - name: Prove public smoke did not alter restored fidelity
+        env:
+          NEON_RECOVERY_API_KEY: ${{ secrets.NEON_RECOVERY_API_KEY }}
+          NEON_RECOVERY_PROJECT_ID: ${{ vars.NEON_RECOVERY_PROJECT_ID }}
+          NEON_PRODUCTION_PROJECT_ID: ${{ vars.NEON_PRODUCTION_PROJECT_ID }}
+          NEON_VALIDATION_BRANCH_ID: ${{ vars.NEON_VALIDATION_BRANCH_ID }}
+          VALIDATION_DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
+          VALIDATION_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+          VALIDATION_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
+          PRODUCTION_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          PRODUCTION_MIGRATION_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          DASHBOARD_MIGRATION_DATABASE_HOST: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+        run: >-
+          ./node_modules/.bin/tsx scripts/run-neon-recovery-exercise.ts assert-target
+          --state=tmp/recovery/private/state.json
+
+      - name: Delete only exact branches created by this run
+        id: cleanup
+        # `always()` also evaluates on job cancellation. The prepare command
+        # persists each exact annotated create request before POST, allowing
+        # this step to reconcile a response-lost or interrupted create safely.
+        if: always()
+        env:
+          NEON_RECOVERY_API_KEY: ${{ secrets.NEON_RECOVERY_API_KEY }}
+          NEON_RECOVERY_PROJECT_ID: ${{ vars.NEON_RECOVERY_PROJECT_ID }}
+          NEON_PRODUCTION_PROJECT_ID: ${{ vars.NEON_PRODUCTION_PROJECT_ID }}
+          NEON_VALIDATION_BRANCH_ID: ${{ vars.NEON_VALIDATION_BRANCH_ID }}
+          VALIDATION_DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
+          VALIDATION_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+          VALIDATION_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
+          PRODUCTION_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          PRODUCTION_MIGRATION_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          DASHBOARD_MIGRATION_DATABASE_HOST: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+        run: >-
+          ./node_modules/.bin/tsx scripts/run-neon-recovery-exercise.ts cleanup
+          --state=tmp/recovery/private/state.json
+          --evidence=tmp/recovery/public/cleanup-evidence.json
+
+      - name: Prove retained recovery evidence contains no credentials
+        id: recovery_secret_gate
+        if: always() && steps.cleanup.outcome == 'success'
+        shell: bash
+        env:
+          NEON_RECOVERY_API_KEY: ${{ secrets.NEON_RECOVERY_API_KEY }}
+          VALIDATION_DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
+          VALIDATION_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+        run: |
+          test ! -e tmp/recovery/private/state.json
+          mkdir -p tmp/recovery/scans
+          ./node_modules/.bin/tsx scripts/assert-playwright-artifact-secret-safety.ts \
+            --root=tmp/recovery/public \
+            --secret-env=NEON_RECOVERY_API_KEY \
+            --output=tmp/recovery/scans/neon-api-key-safety.json
+          ./node_modules/.bin/tsx scripts/assert-playwright-artifact-secret-safety.ts \
+            --root=tmp/recovery/public \
+            --secret-env=VALIDATION_DATABASE_URL \
+            --output=tmp/recovery/scans/validation-url-safety.json
+          ./node_modules/.bin/tsx scripts/assert-playwright-artifact-secret-safety.ts \
+            --root=tmp/recovery/public \
+            --secret-env=VALIDATION_DATABASE_HOST \
+            --output=tmp/recovery/scans/validation-host-safety.json
+          if [ -n "${DATABASE_URL:-}" ]; then
+            ./node_modules/.bin/tsx scripts/assert-playwright-artifact-secret-safety.ts \
+              --root=tmp/recovery/public \
+              --secret-env=DATABASE_URL \
+              --output=tmp/recovery/scans/restored-url-safety.json
+          fi
+          if [ -n "${EXPECTED_DATABASE_HOST:-}" ]; then
+            ./node_modules/.bin/tsx scripts/assert-playwright-artifact-secret-safety.ts \
+              --root=tmp/recovery/public \
+              --secret-env=EXPECTED_DATABASE_HOST \
+              --output=tmp/recovery/scans/restored-host-safety.json
+          fi
+          if [ -n "${RECOVERY_NEXTAUTH_SECRET:-}" ]; then
+            ./node_modules/.bin/tsx scripts/assert-playwright-artifact-secret-safety.ts \
+              --root=tmp/recovery/public \
+              --secret-env=RECOVERY_NEXTAUTH_SECRET \
+              --output=tmp/recovery/scans/auth-secret-safety.json
+          fi
+
+      - name: Clear restored runtime credentials before artifact actions
+        id: clear_runtime_credentials
+        if: always() && steps.recovery_secret_gate.outcome == 'success'
+        shell: bash
+        run: |
+          {
+            echo "DATABASE_URL="
+            echo "EXPECTED_DATABASE_HOST="
+            echo "NEXTAUTH_SECRET="
+            echo "RECOVERY_NEXTAUTH_SECRET="
+          } >> "$GITHUB_ENV"
+
+      - name: Upload redacted recovery evidence
+        if: always() && steps.clear_runtime_credentials.outcome == 'success'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: neon-recovery-exercise-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            tmp/recovery/public/
+            tmp/recovery/scans/
+          if-no-files-found: error
+          retention-days: 90

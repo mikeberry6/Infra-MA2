@@ -1,6 +1,11 @@
+import { RouteLoadingRegion } from "@/components/shared/RouteLoadingRegion";
+
 export default function DashboardLoading() {
   return (
-    <div className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6 sm:py-8">
+    <RouteLoadingRegion
+      label="Loading dashboard"
+      className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6 sm:py-8"
+    >
       <div className="mb-5 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--bg-surface)]">
         <div className="h-[2px] bg-[var(--bg-hover)]" />
         <div className="px-4 py-4 sm:px-5 sm:py-5">
@@ -28,6 +33,6 @@ export default function DashboardLoading() {
         <div className="surface h-64 animate-pulse bg-[var(--bg-surface)]" />
         <div className="surface h-64 animate-pulse bg-[var(--bg-surface)]" />
       </div>
-    </div>
+    </RouteLoadingRegion>
   );
 }

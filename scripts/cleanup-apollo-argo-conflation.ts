@@ -38,14 +38,19 @@
  * per company, exhaustive logging in audit mode.
  */
 import "dotenv/config";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import {
+  assertMaintenanceMutationContext,
+  type MaintenanceMutationContext,
+} from "../src/lib/database-target";
+import { SafeOperationalError } from "../src/lib/safe-error";
 
 const APPLY = process.argv.includes("--apply");
 const DUQUESNE_ONLY = process.argv.includes("--duquesne-only");
-
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
-const prisma = new PrismaClient({ adapter });
+let prisma: PrismaClient;
 
 // Names we treat as "Apollo" for purposes of detection (in case the
 // Organization table has variants). Matched case-insensitively.
@@ -67,7 +72,7 @@ interface SuspectFinding {
   otherOwners: string[];
 }
 
-async function main() {
+async function main(mutationContext: MaintenanceMutationContext | undefined) {
   console.log(APPLY ? "⚠️  APPLY MODE — will remove rows" : "🔍 AUDIT — read-only");
   if (DUQUESNE_ONLY) console.log("   scope: Duquesne Light Company only");
   console.log();
@@ -86,7 +91,7 @@ async function main() {
 
   // Find every OwnershipPeriod whose org is Apollo, with the company and
   // sibling ownerships included so we can detect the Argo / AIA pattern.
-  const where: Parameters<typeof prisma.ownershipPeriod.findMany>[0]["where"] = {
+  const where: NonNullable<Parameters<typeof prisma.ownershipPeriod.findMany>[0]>["where"] = {
     organizationId: { in: Array.from(apolloIds) },
   };
   if (DUQUESNE_ONLY) {
@@ -177,15 +182,55 @@ async function main() {
       await tx.ownershipPeriod.delete({ where: { id: s.apolloOpId } });
       removed++;
     }
+    await tx.auditEvent.create({
+      data: {
+        actorId: null,
+        entityType: "OwnershipPeriod",
+        action: "APOLLO_ARGO_CONFLATION_CLEANUP",
+        changes: {
+          changedFields: [
+            "OwnershipPeriod.companyId",
+            "OwnershipPeriod.createdAt",
+            "OwnershipPeriod.exitYear",
+            "OwnershipPeriod.fundId",
+            "OwnershipPeriod.id",
+            "OwnershipPeriod.investmentYear",
+            "OwnershipPeriod.isActive",
+            "OwnershipPeriod.organizationId",
+            "OwnershipPeriod.stake",
+            "OwnershipPeriod.vehicleName",
+          ],
+          removedOwnershipPeriodIds: suspects.map((suspect) => suspect.apolloOpId),
+          companyIds: [...new Set(suspects.map((suspect) => suspect.companyId))],
+        },
+        metadata: {
+          source: "scripts/cleanup-apollo-argo-conflation.ts",
+          duquesneOnly: DUQUESNE_ONLY,
+          ...mutationContext!,
+        },
+      },
+    });
   });
   console.log(`Removed ${removed} OwnershipPeriod row(s).`);
 }
 
-main()
-  .catch((e) => {
-    console.error("❌ Cleanup failed:", e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
+async function runTask() {
+  const mutationContext = APPLY ? assertMaintenanceMutationContext() : undefined;
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) throw new SafeOperationalError("database_url_required");
+  const client = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
+  prisma = client;
+  await runWithPreservedCleanup({
+    run: () => main(mutationContext),
+    cleanup: () => client.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "ownership_cleanup",
+      operation: "disconnect_database",
+    }, error),
+  });
+}
+
+withServerTask({ task: "ownership_cleanup", operation: "cleanup_apollo_argo_conflation" }, runTask)
+  .catch(() => {
+    process.exitCode = 1;
   });

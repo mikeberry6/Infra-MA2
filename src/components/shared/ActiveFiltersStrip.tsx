@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, type MouseEvent, type RefObject } from "react";
 import { FilterChip } from "@/components/shared/FilterChip";
 import { Button } from "@/components/shared/Button";
 
@@ -19,10 +20,16 @@ export interface FilterGroup {
 export function ActiveFiltersStrip({
   groups,
   onClearAll,
+  focusFallbackRef,
 }: {
   groups: FilterGroup[];
   onClearAll: () => void;
+  focusFallbackRef?: RefObject<HTMLElement | null>;
 }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const items = groups.flatMap((group) =>
+    Array.from(group.items).map((value) => ({ group, value })),
+  );
   const total = groups.reduce(
     (sum, g) => sum + (Array.from(g.items).length),
     0
@@ -30,23 +37,55 @@ export function ActiveFiltersStrip({
 
   if (total === 0) return null;
 
+  function focusFallback() {
+    const automaticFallback = containerRef.current?.parentElement?.querySelector<HTMLElement>(
+      "input, button[aria-haspopup='dialog']",
+    );
+    (focusFallbackRef?.current
+      ?? automaticFallback
+      ?? document.querySelector<HTMLElement>("#main-content"))
+      ?.focus();
+  }
+
+  function removeWithFocusHandoff(
+    event: MouseEvent<HTMLButtonElement>,
+    onRemove: () => void,
+  ) {
+    const chips = Array.from(
+      containerRef.current?.querySelectorAll<HTMLButtonElement>("[data-filter-chip]") ?? [],
+    );
+    const index = chips.indexOf(event.currentTarget);
+    const nextChip = chips[index + 1] ?? chips[index - 1];
+    if (nextChip) nextChip.focus();
+    else focusFallback();
+    onRemove();
+  }
+
   return (
-    <div className="flex items-center gap-2 flex-wrap">
+    <div ref={containerRef} className="flex items-center gap-2 flex-wrap">
       <span className="type-label">
         Active:
       </span>
-      {groups.flatMap((group) =>
-        Array.from(group.items).map((value) => (
-          <FilterChip
-            key={`${group.keyPrefix}-${value}`}
-            label={value}
-            color={group.getColor(value)}
-            onRemove={() => group.onRemove(value)}
-          />
-        ))
-      )}
+      {items.map(({ group, value }) => (
+        <FilterChip
+          key={`${group.keyPrefix}-${value}`}
+          label={value}
+          color={group.getColor(value)}
+          onRemove={(event) => removeWithFocusHandoff(
+            event,
+            () => group.onRemove(value),
+          )}
+        />
+      ))}
       {total > 1 && (
-        <Button variant="ghost" size="sm" onClick={onClearAll}>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => {
+            focusFallback();
+            onClearAll();
+          }}
+        >
           Clear all
         </Button>
       )}

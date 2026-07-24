@@ -207,7 +207,7 @@ All components must look good on mobile. Touch targets ≥ 40px (use `h-10` for 
 
 ## Build & Deploy
 
-- Node 22 (pinned via `.nvmrc` and package.json `engines`)
+- Node 24 with npm 11 (pinned via `.nvmrc`, `.node-version`, `package.json` engines, and strict npm engine enforcement)
 - CI: [.github/workflows/deploy.yml](.github/workflows/deploy.yml) runs `tsc --noEmit`, `npm test`, `next build`
 - After cloning, run `npx prisma generate` (or `npm install`, which triggers `postinstall`) to generate the Prisma client into `src/generated/prisma/`
 - App boundary files: [src/app/error.tsx](src/app/error.tsx), [src/app/loading.tsx](src/app/loading.tsx), [src/app/not-found.tsx](src/app/not-found.tsx), plus admin-scoped [src/app/admin/error.tsx](src/app/admin/error.tsx) and [src/app/admin/loading.tsx](src/app/admin/loading.tsx)

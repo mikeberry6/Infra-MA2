@@ -143,4 +143,81 @@ describe("additive migration manifest", () => {
     ) as { manifestSha256: string };
     expect(otherAppManifest.manifestSha256).not.toBe(manifest.manifestSha256);
   });
+
+  it("accepts independently ancestral app and migration baselines after schema-first staging", async () => {
+    const repository = await mkdtemp(path.join(os.tmpdir(), "infrasight-migration-restage-"));
+    temporaryRepositories.push(repository);
+    git(repository, ["init", "--quiet"]);
+    git(repository, ["config", "user.email", "release-test@example.com"]);
+    git(repository, ["config", "user.name", "Release Test"]);
+
+    const appliedDirectory = path.join(repository, "prisma/migrations/20260101000000_applied");
+    await mkdir(appliedDirectory, { recursive: true });
+    await writeFile(path.join(appliedDirectory, "migration.sql"), 'CREATE TABLE "Applied" ("id" TEXT NOT NULL);\n');
+    git(repository, ["add", "."]);
+    git(repository, ["commit", "--quiet", "-m", "production application"]);
+    const productionAppSha = git(repository, ["rev-parse", "HEAD"]);
+
+    const stagedDirectory = path.join(repository, "prisma/migrations/20260201000000_staged");
+    await mkdir(stagedDirectory, { recursive: true });
+    await writeFile(path.join(stagedDirectory, "migration.sql"), 'CREATE TABLE "Staged" ("id" TEXT NOT NULL);\n');
+    git(repository, ["add", "."]);
+    git(repository, ["commit", "--quiet", "-m", "stage additive schema"]);
+    const migrationBaseSha = git(repository, ["rev-parse", "HEAD"]);
+
+    await writeFile(path.join(repository, "approval.json"), '{"reviewed":true}\n');
+    git(repository, ["add", "."]);
+    git(repository, ["commit", "--quiet", "-m", "commit reviewed approval"]);
+    const releaseSha = git(repository, ["rev-parse", "HEAD"]);
+
+    runAudit(repository, [
+      `--base-sha=${migrationBaseSha}`,
+      `--production-app-sha=${productionAppSha}`,
+      `--release-sha=${releaseSha}`,
+      "--output=tmp/rebound-manifest.json",
+    ]);
+    const manifest = JSON.parse(
+      await readFile(path.join(repository, "tmp/rebound-manifest.json"), "utf8"),
+    ) as {
+      productionAppSha: string;
+      migrationBaseSha: string;
+      releaseSha: string;
+      migrations: Array<{ path: string; sha256: string }>;
+    };
+
+    expect(manifest).toMatchObject({ productionAppSha, migrationBaseSha, releaseSha });
+    expect(manifest.migrations).toEqual([]);
+  });
+
+  it("rejects a production application outside the release ancestry chain", async () => {
+    const repository = await mkdtemp(path.join(os.tmpdir(), "infrasight-migration-divergence-"));
+    temporaryRepositories.push(repository);
+    git(repository, ["init", "--quiet"]);
+    git(repository, ["config", "user.email", "release-test@example.com"]);
+    git(repository, ["config", "user.name", "Release Test"]);
+
+    await writeFile(path.join(repository, "README.md"), "base\n");
+    git(repository, ["add", "."]);
+    git(repository, ["commit", "--quiet", "-m", "base"]);
+    const baseSha = git(repository, ["rev-parse", "HEAD"]);
+
+    git(repository, ["checkout", "--quiet", "-b", "production-app"]);
+    await writeFile(path.join(repository, "production.txt"), "deployed\n");
+    git(repository, ["add", "."]);
+    git(repository, ["commit", "--quiet", "-m", "deployed branch"]);
+    const productionAppSha = git(repository, ["rev-parse", "HEAD"]);
+
+    git(repository, ["checkout", "--quiet", "-b", "release", baseSha]);
+    await writeFile(path.join(repository, "release.txt"), "release\n");
+    git(repository, ["add", "."]);
+    git(repository, ["commit", "--quiet", "-m", "divergent release"]);
+    const releaseSha = git(repository, ["rev-parse", "HEAD"]);
+
+    expect(() => runAudit(repository, [
+      `--base-sha=${baseSha}`,
+      `--production-app-sha=${productionAppSha}`,
+      `--release-sha=${releaseSha}`,
+      "--output=tmp/must-not-exist.json",
+    ])).toThrow();
+  });
 });

@@ -36,6 +36,91 @@ export interface SourceGroup<T extends SourceLike = SourceLike> {
   sources: T[];
 }
 
+const NON_PUBLIC_SOURCE_HOSTS = new Set([
+  "localhost",
+  "localhost.localdomain",
+  "ip6-localhost",
+  "ip6-loopback",
+  "instance-data",
+  "metadata",
+]);
+
+const NON_PUBLIC_SOURCE_SUFFIXES = [
+  ".localhost",
+  ".local",
+  ".lan",
+  ".home",
+  ".internal",
+  ".corp",
+  ".home.arpa",
+  ".test",
+  ".example",
+  ".invalid",
+  ".onion",
+];
+
+function isObviouslyPublicIpv4(hostname: string): boolean {
+  const octets = hostname.split(".").map(Number);
+  if (octets.length !== 4 || octets.some((part) => !Number.isInteger(part) || part < 0 || part > 255)) {
+    return false;
+  }
+  const [a, b] = octets;
+  if (a === 0 || a === 10 || a === 127 || a >= 224) return false;
+  if (a === 100 && b >= 64 && b <= 127) return false;
+  if (a === 169 && b === 254) return false;
+  if (a === 172 && b >= 16 && b <= 31) return false;
+  if (a === 192 && (b === 0 || b === 168)) return false;
+  if (
+    a === 192
+    && [
+      "31.196",
+      "52.193",
+      "88.99",
+      "175.48",
+    ].includes(`${b}.${octets[2]}`)
+  ) return false;
+  if (a === 198 && (b === 18 || b === 19)) return false;
+  if (a === 192 && b === 0 && octets[2] === 2) return false;
+  if (a === 198 && b === 51 && octets[2] === 100) return false;
+  if (a === 203 && b === 0 && octets[2] === 113) return false;
+  return true;
+}
+
+function isPotentiallyPublicSourceHostname(hostname: string): boolean {
+  const normalized = hostname.toLowerCase().replace(/^\[|\]$/g, "").replace(/\.$/, "");
+  if (!normalized || NON_PUBLIC_SOURCE_HOSTS.has(normalized)) return false;
+  if (NON_PUBLIC_SOURCE_SUFFIXES.some((suffix) => normalized.endsWith(suffix))) return false;
+  // Raw IPv6 source literals are unnecessary here and are rejected fail-closed;
+  // DNS names may still resolve to vetted public IPv6 addresses at fetch time.
+  if (normalized.includes(":")) return false;
+  if (/^\d+(?:\.\d+){3}$/.test(normalized)) return isObviouslyPublicIpv4(normalized);
+  if (!normalized.includes(".") || normalized.length > 253) return false;
+  return normalized.split(".").every(
+    (label) => /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(label),
+  );
+}
+
+/**
+ * Public source and website links are rendered into anchors and may also be
+ * fetched by link-verification jobs. Accept only absolute HTTP(S) URLs; a
+ * generic URL parser also accepts executable or non-web schemes such as
+ * javascript:, data:, and ftp:.
+ */
+export function isHttpUrl(value: string | null | undefined): boolean {
+  if (!value?.trim()) return false;
+  try {
+    const url = new URL(value.trim());
+    return (url.protocol === "http:" || url.protocol === "https:")
+      && Boolean(url.hostname)
+      && !url.username
+      && !url.password
+      && !url.port
+      && isPotentiallyPublicSourceHostname(url.hostname);
+  } catch {
+    return false;
+  }
+}
+
 export const SOURCE_PURPOSE_LABELS: Record<SourcePurpose, string> = {
   COMPANY_PROFILE: "Company profile",
   OWNERSHIP_INVESTMENT: "Ownership & investment",
@@ -77,6 +162,41 @@ export function getSourceHostname(url: string): string {
   } catch {
     return url;
   }
+}
+
+export interface FundSourceLink {
+  url: string;
+  hostname: string;
+  label: string;
+  isPrimary: boolean;
+}
+
+/** Keep the reviewed Fund primary source first and each public support URL once. */
+export function buildFundSourceLinks(
+  primarySourceUrl: string | null,
+  sourceUrls: string[],
+): FundSourceLink[] {
+  const links: FundSourceLink[] = [];
+  const seen = new Set<string>();
+
+  const append = (rawUrl: string, isPrimary: boolean) => {
+    const candidate = rawUrl.trim();
+    if (!isHttpUrl(candidate)) return;
+    const url = new URL(candidate).href;
+    if (seen.has(url)) return;
+    seen.add(url);
+    const supportingCount = links.filter((link) => !link.isPrimary).length + 1;
+    links.push({
+      url,
+      hostname: getSourceHostname(url),
+      label: isPrimary ? "Primary source" : `Supporting source ${supportingCount}`,
+      isPrimary,
+    });
+  };
+
+  if (primarySourceUrl) append(primarySourceUrl, true);
+  for (const sourceUrl of sourceUrls) append(sourceUrl, false);
+  return links;
 }
 
 function getUrlPath(url: string): string {

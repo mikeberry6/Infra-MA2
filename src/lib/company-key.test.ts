@@ -30,6 +30,55 @@ describe("canonicalCompanyKey", () => {
     expect(canonicalCompanyKey("CVC (CVC DIF)")).toBe(canonicalCompanyKey("CVC"));
   });
 
+  it("normalizes AlphaGen to Alpha Generation", () => {
+    expect(canonicalCompanyKey("AlphaGen")).toBe("alpha generation");
+    expect(canonicalCompanyKey("Alpha Generation, LLC")).toBe("alpha generation");
+    expect(canonicalCompanyKey("Alpha Generation (AlphaGen)")).toBe("alpha generation");
+  });
+
+  it.each(["US", "U.S.", "United States"])(
+    "preserves a geographic (%s) parenthetical",
+    (scope) => {
+      expect(canonicalCompanyKey(`Boldyn Networks (${scope})`)).not.toBe(
+        canonicalCompanyKey("Boldyn Networks"),
+      );
+    },
+  );
+
+  it("normalizes equivalent geographic parenthetical scopes", () => {
+    const scopedNames = ["US", "U.S.", "USA", "United States"]
+      .map((scope) => canonicalCompanyKey(`Boldyn Networks (${scope})`));
+    expect(new Set(scopedNames)).toEqual(new Set(["boldyn networks united states"]));
+  });
+
+  it("preserves identity-defining JV parentheticals", () => {
+    expect(canonicalCompanyKey(
+      "U.S. Medical Outpatient Facilities Portfolio (Montecito JV)",
+    )).not.toBe(canonicalCompanyKey(
+      "U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)",
+    ));
+  });
+
+  it.each([
+    ["SOLCAP (KeyState Renewables JVs)", "SOLCAP"],
+    ["Platform (North America)", "Platform"],
+    ["Platform (United Kingdom)", "Platform"],
+    ["Platform (Asia Pacific)", "Platform"],
+    ["Platform (Latin America)", "Platform"],
+    ["Platform (Global)", "Platform"],
+  ])("preserves other explicit scope parentheticals: %s", (scoped, unscoped) => {
+    expect(canonicalCompanyKey(scoped)).not.toBe(canonicalCompanyKey(unscoped));
+  });
+
+  it.each([
+    "Platform (via Acme JV)",
+    "Platform (formerly Legacy JV)",
+    "Platform (aka Legacy JV)",
+    "Platform (including Acme JV)",
+  ])("continues stripping explicit alias parentheticals: %s", (variant) => {
+    expect(canonicalCompanyKey(variant)).toBe(canonicalCompanyKey("Platform"));
+  });
+
   it("strips '(via X)' subsidiary tags", () => {
     expect(canonicalCompanyKey("Brookfield Renewable (via TerraForm)")).toBe(
       canonicalCompanyKey("Brookfield Renewable"),
@@ -103,6 +152,48 @@ describe("companyDedupKeys — multi-key matching", () => {
     expect(intersects(a, b)).toBe(true);
   });
 
+  it("clusters all Alpha Generation and AlphaGen variants", () => {
+    const groups = groupByDedupKeys([
+      "Alpha Generation, LLC",
+      "Alpha Generation (AlphaGen)",
+      "AlphaGen",
+    ], companyDedupKeys);
+    expect(groups).toEqual([[
+      "Alpha Generation, LLC",
+      "Alpha Generation (AlphaGen)",
+      "AlphaGen",
+    ]]);
+  });
+
+  it.each([
+    ["American Student Transportation Partners (ASTP)", "American Student Transportation Partners"],
+    ["Direct ChassisLink Inc. (DCLI)", "Direct ChassisLink Inc."],
+    ["Gulf Coast Express Pipeline (GCX)", "Gulf Coast Express Pipeline"],
+    ["Transportation Equipment Network (TEN)", "Transportation Equipment Network"],
+    ["Skyservice US (formerly Leading Edge Jet Center)", "Skyservice US"],
+  ])("continues collapsing non-identity parenthetical variants: %s", (variant, base) => {
+    expect(intersects(companyDedupKeys(variant), companyDedupKeys(base))).toBe(true);
+  });
+
+  it("keeps geographic and JV parenthetical scopes distinct", () => {
+    for (const scope of ["US", "U.S.", "United States"]) {
+      expect(intersects(
+        companyDedupKeys(`Boldyn Networks (${scope})`),
+        companyDedupKeys("Boldyn Networks"),
+      )).toBe(false);
+    }
+
+    expect(intersects(
+      companyDedupKeys("Boldyn Networks (US)"),
+      companyDedupKeys("Boldyn Networks (United States)"),
+    )).toBe(true);
+
+    expect(intersects(
+      companyDedupKeys("U.S. Medical Outpatient Facilities Portfolio (Montecito JV)"),
+      companyDedupKeys("U.S. Medical Outpatient Facilities Portfolio (MedCraft JV)"),
+    )).toBe(false);
+  });
+
   it("collapses ALLO-style entity-suffix dupes", () => {
     const a = companyDedupKeys("ALLO Communications, LLC");
     const b = companyDedupKeys("ALLO Communications");
@@ -125,7 +216,7 @@ describe("companyDedupKeys — multi-key matching", () => {
     )).toBe(true);
   });
 
-  it("collapses BCI portfolio company duplicate variants", () => {
+  it("collapses intended BCI portfolio-company variants", () => {
     const cleco = companyDedupKeys("Cleco Corporation");
     expect(intersects(
       cleco,
@@ -137,14 +228,16 @@ describe("companyDedupKeys — multi-key matching", () => {
     )).toBe(true);
 
     expect(intersects(
-      companyDedupKeys("Puget Energy / Puget Sound Energy"),
-      companyDedupKeys("Puget Sound Energy"),
-    )).toBe(true);
-
-    expect(intersects(
       companyDedupKeys("GCT Global Container Terminals"),
       companyDedupKeys("GCT Global Container Terminals Inc."),
     )).toBe(true);
+  });
+
+  it("does not conflate Puget Energy / Puget Sound Energy with the utility", () => {
+    expect(intersects(
+      companyDedupKeys("Puget Energy / Puget Sound Energy"),
+      companyDedupKeys("Puget Sound Energy"),
+    )).toBe(false);
   });
 
   it("does NOT collapse legitimately different companies", () => {
@@ -200,10 +293,6 @@ describe("preferredDisplayName", () => {
       "Cleco Corporate Holdings LLC",
       "Cleco Corporation",
     ])).toBe("Cleco Corporation");
-    expect(preferredDisplayName([
-      "Puget Energy / Puget Sound Energy",
-      "Puget Sound Energy",
-    ])).toBe("Puget Sound Energy");
     expect(preferredDisplayName([
       "GCT Global Container Terminals Inc.",
       "GCT Global Container Terminals",

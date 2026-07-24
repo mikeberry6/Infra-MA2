@@ -1,14 +1,36 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { SessionProvider, signIn } from "next-auth/react";
 import { LogIn } from "lucide-react";
 import { Button } from "@/components/shared/Button";
 import { TextInput } from "@/components/shared/TextInput";
+import { withBasePath } from "@/lib/base-path";
 
-export function LoginForm({ callbackUrl }: { callbackUrl: string }) {
-  const router = useRouter();
+type LoginFormProps = {
+  callbackUrl: string;
+  navigate?: (url: string) => void;
+};
+
+function navigateDocument(url: string) {
+  window.location.assign(url);
+}
+
+export function LoginForm({ callbackUrl, navigate = navigateDocument }: LoginFormProps) {
+  return (
+    <SessionProvider basePath={withBasePath("/api/auth")} refetchOnWindowFocus={false}>
+      <LoginFields callbackUrl={callbackUrl} navigate={navigate} />
+    </SessionProvider>
+  );
+}
+
+function LoginFields({
+  callbackUrl,
+  navigate,
+}: {
+  callbackUrl: string;
+  navigate: (url: string) => void;
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -33,8 +55,10 @@ export function LoginForm({ callbackUrl }: { callbackUrl: string }) {
       return;
     }
 
-    router.push(callbackUrl);
-    router.refresh();
+    // Complete authentication with a document navigation. A client push plus
+    // an immediate refresh can race the first protected RSC request and leave
+    // users at the callback URL with the login render still mounted.
+    navigate(result?.url ?? callbackUrl);
   }
 
   return (
@@ -46,6 +70,7 @@ export function LoginForm({ callbackUrl }: { callbackUrl: string }) {
         value={email}
         onChange={(event) => setEmail(event.target.value)}
         placeholder="Email"
+        aria-label="Email address"
         autoComplete="email"
         autoFocus
         required
@@ -57,6 +82,7 @@ export function LoginForm({ callbackUrl }: { callbackUrl: string }) {
         value={password}
         onChange={(event) => setPassword(event.target.value)}
         placeholder="Password"
+        aria-label="Password"
         autoComplete="current-password"
         required
       />

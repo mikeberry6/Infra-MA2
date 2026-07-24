@@ -1,33 +1,668 @@
-name: CI Build
+name: Release Gate
 
 on:
   push:
-    branches: ["main", "master", "claude/**", "codex/**"]
+    branches: ["main"]
   pull_request:
-    branches: ["main", "master", "claude/infratracker-platform-FCgI9"]
-  workflow_dispatch:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-gate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
 
 jobs:
-  build:
+  quality:
+    name: Static quality, tests, audit, and build
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "24"
-          cache: "npm"
+          cache: npm
 
-      - name: Install dependencies
+      - name: Install locked dependencies
         run: npm ci
 
-      - name: Type check
-        run: npx tsc --noEmit
+      - name: Audit additive migrations and immutable weekly history
+        shell: bash
+        env:
+          EVENT_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          base_sha="$EVENT_BASE_SHA"
+          if ! [[ "$base_sha" =~ ^[0-9a-f]{40}$ ]] || [[ "$base_sha" =~ ^0+$ ]]; then
+            if [ "$EVENT_NAME" = "push" ]; then
+              base_sha="$(git rev-parse HEAD^)"
+            else
+              base_sha="$(git merge-base HEAD origin/main)"
+            fi
+          fi
+          ./node_modules/.bin/tsx scripts/audit-additive-migrations.ts \
+            --base-sha="$base_sha" \
+            --release-sha=HEAD \
+            --output=tmp/ci/migration-manifest.json
+          npm run audit:weekly-history -- \
+            --base-sha="$base_sha" \
+            --release-sha=HEAD \
+            --output=tmp/ci/weekly-history-audit.json
 
-      - name: Test
+      - name: Generate Prisma client
+        run: npm run db:generate
+
+      - name: Validate Prisma schema
+        run: npm run db:validate
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Type check operational scripts and Prisma TypeScript
+        run: npm run typecheck:scripts
+
+      - name: Run unit and integration tests
         run: npm test
 
-      - name: Build
+      - name: Validate offline seed and reference data
+        run: npm run validate-portfolios
+
+      - name: Validate latest weekly email
+        run: npm run validate-weekly-email
+
+      - name: Audit production dependencies
+        run: node scripts/run-with-retry.mjs --attempts=3 -- npm run audit:prod
+
+      - name: Audit complete dependency graph
+        run: node scripts/run-with-retry.mjs --attempts=3 -- npm audit --audit-level=high
+
+      - name: Build production application
         run: npm run build
+
+      - name: Enforce public JavaScript bundle budgets
+        run: npm run check:bundle-budget
+
+      - name: Upload quality and migration evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: quality-evidence-${{ github.run_id }}
+          path: tmp/ci/
+          if-no-files-found: warn
+          retention-days: 30
+
+  validation:
+    name: Non-production migration, data, browser, and accessibility gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    concurrency:
+      group: neon-migration-validation-${{ github.repository_id }}
+      cancel-in-progress: false
+    env:
+      DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
+      E2E_DATABASE_URL: ${{ secrets.MIGRATION_DATABASE_URL }}
+      E2E_ADMIN_EMAIL: ${{ secrets.E2E_ADMIN_EMAIL }}
+      E2E_ADMIN_PASSWORD: ${{ secrets.E2E_ADMIN_PASSWORD }}
+      EXPECTED_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.MIGRATION_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+      TARGET_DATABASE: validation
+      RELEASE_SHA: ${{ github.sha }}
+      DATA_CACHE_NAMESPACE: e2e-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Require isolated validation configuration
+        shell: bash
+        run: |
+          mkdir -p tmp/ci
+          preflight_report="tmp/ci/validation-preflight.txt"
+          {
+            echo "release_sha=$RELEASE_SHA"
+            echo "target_database=$TARGET_DATABASE"
+            echo "checked_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          } > "$preflight_report"
+          missing=0
+          for name in DATABASE_URL E2E_ADMIN_EMAIL E2E_ADMIN_PASSWORD EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for the non-production release gate."
+              echo "missing=$name" >> "$preflight_report"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo "status=failed_missing_configuration" >> "$preflight_report"
+            exit 1
+          fi
+          if ! [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]] || [ "$RELEASE_SHA" != "$(git rev-parse HEAD)" ]; then
+            echo "::error::RELEASE_SHA must exactly match the checked-out validation commit."
+            echo "status=failed_release_sha" >> "$preflight_report"
+            exit 1
+          fi
+          echo "status=passed" >> "$preflight_report"
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Generate and validate Prisma client
+        run: |
+          npm run db:generate
+          npm run db:validate
+
+      - name: Prove database target is the isolated Neon branch
+        run: node --experimental-strip-types scripts/assert-database-target.ts
+
+      - name: Reconcile reviewed validation-only migration lineage
+        run: |
+          ./node_modules/.bin/tsx scripts/reconcile-validation-migration-lineage.ts \
+            --apply \
+            --output=tmp/ci/validation-migration-lineage.json
+
+      - name: Apply additive migrations to validation branch
+        shell: bash
+        run: |
+          mkdir -p tmp/ci
+          set -o pipefail
+          npx prisma migrate deploy 2>&1 | tee tmp/ci/migrate-deploy.log
+          npx prisma migrate status 2>&1 | tee tmp/ci/migrate-status.log
+          npx prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/ci/schema-drift.log
+
+      - name: Remove stale authenticated-write E2E deal fixtures
+        shell: bash
+        run: |
+          set -o pipefail
+          ./node_modules/.bin/tsx tests/e2e/deal-fixture-maintenance.ts cleanup \
+            2>&1 | tee tmp/ci/deal-fixture-preflight-cleanup.json
+
+      - name: Apply reviewed remediation or generate neutral review templates
+        shell: bash
+        run: |
+          set -o pipefail
+          company_approval="audits/approvals/company-merges.json"
+          ownership_approval="audits/approvals/ownership-fund-links.json"
+          fund_primary_source_approval="audits/approvals/fund-primary-sources.json"
+          seller_disclosure_approval="audits/approvals/deal-seller-disclosures.json"
+          citation_approval="audits/approvals/primary-citations.json"
+
+          if [ -f "$company_approval" ]; then
+            test ! -L "$company_approval"
+            git ls-files --error-unmatch -- "$company_approval" >/dev/null
+            company_sha="$(sha256sum "$company_approval" | awk '{print $1}')"
+            company_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$company_approval")"
+            MUTATION_REVIEWED_BY="$company_reviewer" \
+            MUTATION_REASON="Validate the committed company-merge approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/merge-duplicate-companies.ts \
+              --apply \
+              --approval-file="$company_approval" \
+              --approval-sha256="$company_sha" \
+              2>&1 | tee tmp/ci/company-merge-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-company-merge-candidates.ts \
+              --approval-output=tmp/ci/company-merge-approval-template.json \
+              > tmp/ci/company-canonical-review.md
+          fi
+
+          if [ -f "$ownership_approval" ]; then
+            test ! -L "$ownership_approval"
+            git ls-files --error-unmatch -- "$ownership_approval" >/dev/null
+            ownership_sha="$(sha256sum "$ownership_approval" | awk '{print $1}')"
+            ownership_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$ownership_approval")"
+            MUTATION_REVIEWED_BY="$ownership_reviewer" \
+            MUTATION_REASON="Validate the committed ownership-fund-link approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/apply-ownership-fund-link-remediation.ts \
+              --apply \
+              --approval-file="$ownership_approval" \
+              --expected-sha256="$ownership_sha" \
+              2>&1 | tee tmp/ci/ownership-fund-link-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-ownership-fund-link-remediation.ts \
+              --output=tmp/ci/ownership-fund-link-approval-template.json
+          fi
+
+          if [ -f "$fund_primary_source_approval" ]; then
+            test ! -L "$fund_primary_source_approval"
+            git ls-files --error-unmatch -- "$fund_primary_source_approval" >/dev/null
+            fund_primary_source_sha="$(sha256sum "$fund_primary_source_approval" | awk '{print $1}')"
+            fund_primary_source_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$fund_primary_source_approval")"
+            MUTATION_REVIEWED_BY="$fund_primary_source_reviewer" \
+            MUTATION_REASON="Validate the committed Fund primary-source approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/apply-fund-primary-source-remediation.ts \
+              --apply \
+              --approval-file="$fund_primary_source_approval" \
+              --expected-sha256="$fund_primary_source_sha" \
+              2>&1 | tee tmp/ci/fund-primary-source-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-fund-primary-source-remediation.ts \
+              --output=tmp/ci/fund-primary-source-approval-template.json
+          fi
+
+          if [ -f "$seller_disclosure_approval" ]; then
+            test ! -L "$seller_disclosure_approval"
+            git ls-files --error-unmatch -- "$seller_disclosure_approval" >/dev/null
+            seller_disclosure_sha="$(sha256sum "$seller_disclosure_approval" | awk '{print $1}')"
+            seller_disclosure_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$seller_disclosure_approval")"
+            MUTATION_REVIEWED_BY="$seller_disclosure_reviewer" \
+            MUTATION_REASON="Validate the committed deal seller-disclosure approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/apply-deal-seller-disclosure-remediation.ts \
+              --apply \
+              --approval-file="$seller_disclosure_approval" \
+              --expected-sha256="$seller_disclosure_sha" \
+              2>&1 | tee tmp/ci/deal-seller-disclosure-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-deal-seller-disclosure-remediation.ts \
+              --output=tmp/ci/deal-seller-disclosure-approval-template.json
+          fi
+
+          if [ -f "$citation_approval" ]; then
+            test ! -L "$citation_approval"
+            git ls-files --error-unmatch -- "$citation_approval" >/dev/null
+            citation_sha="$(sha256sum "$citation_approval" | awk '{print $1}')"
+            citation_reviewer="$(jq -er '.reviewedBy | select(type == "string" and length > 0)' "$citation_approval")"
+            MUTATION_REVIEWED_BY="$citation_reviewer" \
+            MUTATION_REASON="Validate the committed primary-citation approval on the isolated database" \
+              ./node_modules/.bin/tsx scripts/apply-primary-citation-remediation.ts \
+              --apply \
+              --approval-file="$citation_approval" \
+              --expected-sha256="$citation_sha" \
+              2>&1 | tee tmp/ci/primary-citation-validation-apply.log
+          else
+            ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts \
+              --output=tmp/ci/primary-citation-approval-template.json
+            ./node_modules/.bin/tsx scripts/build-primary-citation-review-worksheet.ts \
+              --template=tmp/ci/primary-citation-approval-template.json \
+              --output=tmp/ci/primary-citation-review-worksheet.json
+          fi
+
+      - name: Verify database integrity and strict publication gates
+        id: strict_publication_gate
+        continue-on-error: true
+        shell: bash
+        run: |
+          mkdir -p tmp/ci
+          set -o pipefail
+          set +e
+          npm run db:verify 2>&1 | tee tmp/ci/database-verification.log
+          database_status=${PIPESTATUS[0]}
+          npx tsx scripts/source-coverage-report.ts --require-complete --output=tmp/ci/source-coverage.json
+          source_coverage_status=$?
+          npx tsx scripts/report-company-merge-candidates.ts --published-only --require-clean > tmp/ci/company-canonical-review.md
+          company_canonical_status=$?
+          set -e
+
+          jq -n \
+            --argjson database "$database_status" \
+            --argjson sourceCoverage "$source_coverage_status" \
+            --argjson companyCanonical "$company_canonical_status" \
+            '{
+              databaseVerificationExitCode: $database,
+              sourceCoverageExitCode: $sourceCoverage,
+              companyCanonicalExitCode: $companyCanonical
+            }' > tmp/ci/strict-publication-gate.json
+
+          if [ "$database_status" -ne 0 ] \
+            || [ "$source_coverage_status" -ne 0 ] \
+            || [ "$company_canonical_status" -ne 0 ]; then
+            exit 1
+          fi
+
+      - name: Verify real news persistence transactions on the isolated database
+        id: news_persistence_validation_gate
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          ./node_modules/.bin/tsx scripts/verify-news-persistence-validation.ts \
+            2>&1 | tee tmp/ci/news-persistence-validation.jsonl
+
+      - name: Verify real dashboard persistence and rollback on the isolated database
+        id: dashboard_persistence_validation_gate
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          ./node_modules/.bin/tsx scripts/verify-dashboard-persistence-validation.ts \
+            2>&1 | tee tmp/ci/dashboard-persistence-validation.jsonl
+
+      - name: Create or rotate isolated E2E administrator
+        shell: bash
+        env:
+          ADMIN_EMAIL: ${{ secrets.E2E_ADMIN_EMAIL }}
+          ADMIN_PASSWORD: ${{ secrets.E2E_ADMIN_PASSWORD }}
+          ADMIN_NAME: CI Validation Administrator
+        run: |
+          ci_secret="$(openssl rand -hex 32)"
+          echo "::add-mask::$ci_secret"
+          echo "NEXTAUTH_SECRET=$ci_secret" >> "$GITHUB_ENV"
+          npm run admin:create
+
+      - name: Build against migrated validation database
+        env:
+          # The Playwright server derives this same canonical endpoint at runtime.
+          NEXTAUTH_URL: http://127.0.0.1:3100/Infra-MA2/api/auth
+        run: npm run build
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      # Visual snapshots read shared database rankings. Run them serially before
+      # any authenticated journey can mutate the validation branch, and keep
+      # their evidence separate from the remainder of the browser suite.
+      - name: Run deterministic visual baselines before mutation journeys
+        id: visual_gate
+        continue-on-error: true
+        env:
+          E2E_BASE_PATH: /Infra-MA2
+          PLAYWRIGHT_HTML_OUTPUT_DIR: visual-playwright-report
+        run: >-
+          npx playwright test tests/e2e/visual-regression.spec.ts
+          --workers=1
+          --output=visual-test-results
+
+      - name: Run end-to-end, axe, keyboard, reduced-motion, and responsive checks
+        id: browser_gate
+        continue-on-error: true
+        shell: bash
+        env:
+          E2E_BASE_PATH: /Infra-MA2
+          PLAYWRIGHT_HTML_OUTPUT_DIR: browser-playwright-report
+        run: |
+          set -euo pipefail
+          cleanup() {
+            status=$?
+            trap - EXIT
+            set +e
+            ./node_modules/.bin/tsx tests/e2e/deal-fixture-maintenance.ts cleanup \
+              2>&1 | tee tmp/ci/deal-fixture-post-browser-cleanup.json
+            cleanup_status=${PIPESTATUS[0]}
+            set -e
+            if [ "$status" -eq 0 ] && [ "$cleanup_status" -ne 0 ]; then
+              status=$cleanup_status
+            fi
+            exit "$status"
+          }
+          trap cleanup EXIT
+
+          public_status=0
+          npx playwright test \
+            --grep-invert "@visual|@sensitive" \
+            --output=browser-test-results || public_status=$?
+
+          sensitive_status=0
+          npx playwright test \
+            --grep "@sensitive" \
+            --reporter=list,github \
+            --output=sensitive-browser-test-results || sensitive_status=$?
+
+          if [ "$public_status" -ne 0 ] || [ "$sensitive_status" -ne 0 ]; then
+            exit 1
+          fi
+
+      - name: Prove top-level database failure and retry journeys
+        id: top_level_failure_gate
+        continue-on-error: true
+        shell: bash
+        env:
+          # The normal authenticated suite uses the allow-listed Neon branch.
+          # This separate, read-only server must never inherit that write URL.
+          E2E_DATABASE_URL: ""
+          DATABASE_URL: postgresql://failure_fixture:failure_fixture@127.0.0.1:1/failure_fixture?connect_timeout=1
+          NEXTAUTH_SECRET: loopback-failure-fixture-only
+          DATA_CACHE_NAMESPACE: top-level-failure-${{ github.run_id }}-${{ github.run_attempt }}
+          E2E_BASE_PATH: /Infra-MA2
+          PLAYWRIGHT_HTML_OUTPUT_DIR: top-level-failure-playwright-report
+        run: |
+          mkdir -p tmp/ci
+          failure_port=3101
+          failure_url="http://127.0.0.1:${failure_port}"
+          npm run start -- -p "$failure_port" > tmp/ci/top-level-failure-server.log 2>&1 &
+          failure_pid=$!
+          cleanup() {
+            kill "$failure_pid" 2>/dev/null || true
+            wait "$failure_pid" 2>/dev/null || true
+          }
+          trap cleanup EXIT
+
+          ready=0
+          for _ in $(seq 1 60); do
+            if ! kill -0 "$failure_pid" 2>/dev/null; then
+              break
+            fi
+            if curl --silent --output /dev/null --max-time 2 "${failure_url}/Infra-MA2/tracker"; then
+              ready=1
+              break
+            fi
+            sleep 1
+          done
+          if [ "$ready" -ne 1 ]; then
+            echo "::error::Loopback failure server did not become ready."
+            sed -n '1,200p' tmp/ci/top-level-failure-server.log
+            exit 1
+          fi
+
+          E2E_TOP_LEVEL_FAILURE_FIXTURE=1 \
+          PLAYWRIGHT_BASE_URL="$failure_url" \
+            npx playwright test tests/e2e/failure-states.spec.ts \
+              --grep "distinguishes a database failure" \
+              --output=top-level-failure-test-results
+
+      - name: Prove failed external-provider browser journeys
+        id: provider_failure_gate
+        continue-on-error: true
+        shell: bash
+        env:
+          E2E_BASE_PATH: /Infra-MA2
+          DATA_CACHE_NAMESPACE: provider-failure-${{ github.run_id }}-${{ github.run_attempt }}
+          PLAYWRIGHT_HTML_OUTPUT_DIR: provider-failure-playwright-report
+        run: |
+          set -euo pipefail
+          mkdir -p tmp/ci
+          provider_port=3102
+          provider_url="http://127.0.0.1:${provider_port}"
+          provider_pid=""
+          cleanup() {
+            status=$?
+            if [ -n "$provider_pid" ]; then
+              kill "$provider_pid" 2>/dev/null || true
+              wait "$provider_pid" 2>/dev/null || true
+            fi
+            set +e
+            ./node_modules/.bin/tsx tests/e2e/provider-failure-fixture.ts cleanup \
+              2>&1 | tee tmp/ci/provider-failure-fixture-cleanup.json
+            cleanup_status=${PIPESTATUS[0]}
+            set -e
+            if [ "$status" -eq 0 ] && [ "$cleanup_status" -ne 0 ]; then status=$cleanup_status; fi
+            exit "$status"
+          }
+          trap cleanup EXIT
+
+          ./node_modules/.bin/tsx tests/e2e/provider-failure-fixture.ts setup \
+            2>&1 | tee tmp/ci/provider-failure-fixture-setup.json
+          npm run start -- -p "$provider_port" > tmp/ci/provider-failure-server.log 2>&1 &
+          provider_pid=$!
+
+          ready=0
+          for _ in $(seq 1 60); do
+            if ! kill -0 "$provider_pid" 2>/dev/null; then break; fi
+            if curl --silent --fail --output /dev/null --max-time 2 "${provider_url}/Infra-MA2/news"; then
+              ready=1
+              break
+            fi
+            sleep 1
+          done
+          if [ "$ready" -ne 1 ]; then
+            echo "::error::Provider-failure fixture server did not become ready."
+            sed -n '1,200p' tmp/ci/provider-failure-server.log
+            exit 1
+          fi
+
+          env -u DATABASE_URL -u E2E_DATABASE_URL \
+            E2E_PROVIDER_FAILURE_FIXTURE=1 \
+            PLAYWRIGHT_BASE_URL="$provider_url" \
+            E2E_BASE_PATH="$E2E_BASE_PATH" \
+              npx playwright test tests/e2e/provider-failures.spec.ts \
+                --output=provider-failure-test-results
+
+      - name: Prove retained validation evidence contains no validation credential
+        id: validation_artifact_secret_gate
+        if: always()
+        continue-on-error: true
+        run: |
+          ./node_modules/.bin/tsx scripts/assert-playwright-artifact-secret-safety.ts \
+            --root=tmp/ci \
+            --output=tmp/validation-secret-scans/validation-artifact-secret-safety.json
+
+      - name: Prove retained browser evidence contains no validation credential
+        id: browser_artifact_secret_gate
+        if: always()
+        continue-on-error: true
+        run: |
+          scan_args=(
+            --root=browser-playwright-report
+            --root=visual-playwright-report
+            --root=top-level-failure-playwright-report
+            --root=provider-failure-playwright-report
+          )
+          for optional_root in \
+            playwright-report \
+            test-results \
+            browser-test-results \
+            sensitive-browser-test-results \
+            visual-test-results \
+            top-level-failure-test-results \
+            provider-failure-test-results
+          do
+            if [ -e "$optional_root" ]; then
+              scan_args+=("--root=$optional_root")
+            fi
+          done
+
+          ./node_modules/.bin/tsx scripts/assert-playwright-artifact-secret-safety.ts \
+            "${scan_args[@]}" \
+            --output=tmp/validation-secret-scans/playwright-artifact-secret-safety.json
+
+      - name: Upload migration and data evidence
+        if: always() && steps.validation_artifact_secret_gate.outcome == 'success'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: validation-evidence-${{ github.run_id }}
+          path: tmp/ci/
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Enforce browser, visual, and strict publication gates after collecting validation evidence
+        if: always()
+        env:
+          BROWSER_GATE_OUTCOME: ${{ steps.browser_gate.outcome }}
+          VISUAL_GATE_OUTCOME: ${{ steps.visual_gate.outcome }}
+          TOP_LEVEL_FAILURE_GATE_OUTCOME: ${{ steps.top_level_failure_gate.outcome }}
+          PROVIDER_FAILURE_GATE_OUTCOME: ${{ steps.provider_failure_gate.outcome }}
+          VALIDATION_ARTIFACT_SECRET_GATE_OUTCOME: ${{ steps.validation_artifact_secret_gate.outcome }}
+          BROWSER_ARTIFACT_SECRET_GATE_OUTCOME: ${{ steps.browser_artifact_secret_gate.outcome }}
+          STRICT_PUBLICATION_GATE_OUTCOME: ${{ steps.strict_publication_gate.outcome }}
+          NEWS_PERSISTENCE_VALIDATION_GATE_OUTCOME: ${{ steps.news_persistence_validation_gate.outcome }}
+          DASHBOARD_PERSISTENCE_VALIDATION_GATE_OUTCOME: ${{ steps.dashboard_persistence_validation_gate.outcome }}
+        shell: bash
+        run: |
+          failed=0
+          if [ "$BROWSER_GATE_OUTCOME" != "success" ]; then
+            echo "::error::The main browser/accessibility suite failed; all independent fixture evidence was still collected."
+            failed=1
+          fi
+          if [ "$VISUAL_GATE_OUTCOME" != "success" ]; then
+            echo "::error::The deterministic pre-mutation visual baseline gate failed; all independent fixture evidence was still collected."
+            failed=1
+          fi
+          if [ "$TOP_LEVEL_FAILURE_GATE_OUTCOME" != "success" ]; then
+            echo "::error::The isolated top-level database failure/retry gate failed; all other independent fixture evidence was still collected."
+            failed=1
+          fi
+          if [ "$PROVIDER_FAILURE_GATE_OUTCOME" != "success" ]; then
+            echo "::error::The isolated external-provider failure gate failed; all other independent fixture evidence was still collected."
+            failed=1
+          fi
+          if [ "$VALIDATION_ARTIFACT_SECRET_GATE_OUTCOME" != "success" ]; then
+            echo "::error::Retained validation evidence failed the credential safety scan and will not be uploaded."
+            failed=1
+          fi
+          if [ "$BROWSER_ARTIFACT_SECRET_GATE_OUTCOME" != "success" ]; then
+            echo "::error::Retained browser evidence failed the validation-credential safety scan and will not be uploaded."
+            failed=1
+          fi
+          if [ "$STRICT_PUBLICATION_GATE_OUTCOME" != "success" ]; then
+            echo "::error::Strict publication/data integrity remains blocking; browser evidence was collected without weakening the release gate."
+            failed=1
+          fi
+          if [ "$NEWS_PERSISTENCE_VALIDATION_GATE_OUTCOME" != "success" ]; then
+            echo "::error::Real validation-database news persistence, rollback, or serialization-retry verification failed."
+            failed=1
+          fi
+          if [ "$DASHBOARD_PERSISTENCE_VALIDATION_GATE_OUTCOME" != "success" ]; then
+            echo "::error::Real validation-database dashboard persistence, idempotent replay, review gate, or rollback verification failed."
+            failed=1
+          fi
+          exit "$failed"
+
+      - name: Upload Playwright report and failure media
+        if: always() && steps.browser_artifact_secret_gate.outcome == 'success'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: playwright-report-${{ github.run_id }}
+          path: |
+            playwright-report/
+            test-results/
+            browser-playwright-report/
+            browser-test-results/
+            sensitive-browser-test-results/
+            visual-playwright-report/
+            visual-test-results/
+            top-level-failure-playwright-report/
+            top-level-failure-test-results/
+            provider-failure-playwright-report/
+            provider-failure-test-results/
+          if-no-files-found: ignore
+          retention-days: 30
+
+  # Branch protection requires this stable context. It succeeds only when both
+  # the offline quality gate and the isolated database/browser gate succeed.
+  build:
+    name: build
+    if: always()
+    needs: [quality, validation]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require every gate
+        env:
+          QUALITY_RESULT: ${{ needs.quality.result }}
+          VALIDATION_RESULT: ${{ needs.validation.result }}
+        run: |
+          if [ "$QUALITY_RESULT" != "success" ] || [ "$VALIDATION_RESULT" != "success" ]; then
+            echo "::error::Release gate failed: quality=$QUALITY_RESULT validation=$VALIDATION_RESULT"
+            exit 1
+          fi
+          echo "Complete release gate passed."

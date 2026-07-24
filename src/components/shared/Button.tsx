@@ -1,4 +1,10 @@
-import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
+import Link from "next/link";
+import {
+  forwardRef,
+  type ButtonHTMLAttributes,
+  type ComponentProps,
+  type ReactNode,
+} from "react";
 import { Loader2 } from "lucide-react";
 
 type Variant = "primary" | "secondary" | "ghost" | "danger";
@@ -31,6 +37,26 @@ const sizeClasses: Record<Size, string> = {
   lg: "h-10 px-4 type-row-title gap-2 rounded-md",
 };
 
+const baseClass =
+  "inline-flex items-center justify-center font-medium select-none transition-colors duration-150 " +
+  "focus:outline-none focus-visible:ring-2 disabled:opacity-50 disabled:cursor-not-allowed";
+
+export function buttonClassName({
+  variant = "secondary",
+  size = "md",
+  fullWidth = false,
+  className = "",
+}: {
+  variant?: Variant;
+  size?: Size;
+  fullWidth?: boolean;
+  className?: string;
+} = {}) {
+  return `${baseClass} ${variantClasses[variant]} ${sizeClasses[size]} ${
+    fullWidth ? "w-full" : ""
+  } ${className}`;
+}
+
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   {
     variant = "secondary",
@@ -47,18 +73,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
   },
   ref
 ) {
-  const base =
-    "inline-flex items-center justify-center font-medium select-none transition-colors duration-150 " +
-    "focus:outline-none focus-visible:ring-2 disabled:opacity-50 disabled:cursor-not-allowed";
-
   return (
     <button
       ref={ref}
       type={type}
       disabled={disabled || loading}
-      className={`${base} ${variantClasses[variant]} ${sizeClasses[size]} ${
-        fullWidth ? "w-full" : ""
-      } ${className}`}
+      className={buttonClassName({ variant, size, fullWidth, className })}
       {...rest}
     >
       {loading ? (
@@ -71,5 +91,42 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
         <span className="inline-flex shrink-0">{trailingIcon}</span>
       )}
     </button>
+  );
+});
+
+export interface ButtonLinkProps extends Omit<ComponentProps<typeof Link>, "className" | "children"> {
+  variant?: Variant;
+  size?: Size;
+  leadingIcon?: ReactNode;
+  trailingIcon?: ReactNode;
+  fullWidth?: boolean;
+  className?: string;
+  children: ReactNode;
+}
+
+/** Link navigation with the same visual contract as Button, without nested interactive controls. */
+export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(function ButtonLink(
+  {
+    variant = "secondary",
+    size = "md",
+    leadingIcon,
+    trailingIcon,
+    fullWidth = false,
+    className = "",
+    children,
+    ...rest
+  },
+  ref,
+) {
+  return (
+    <Link
+      ref={ref}
+      className={buttonClassName({ variant, size, fullWidth, className })}
+      {...rest}
+    >
+      {leadingIcon && <span className="inline-flex shrink-0">{leadingIcon}</span>}
+      <span className="truncate">{children}</span>
+      {trailingIcon && <span className="inline-flex shrink-0">{trailingIcon}</span>}
+    </Link>
   );
 });

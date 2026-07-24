@@ -1,7 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAllFunds } from "@/modules/funds/queries";
+import { getAllFundDetails } from "@/modules/funds/queries";
 import { toCsv } from "@/lib/csv";
+import { withServerOperation } from "@/lib/server-log";
 import { canExportData } from "@/modules/auth/guards";
+
+const PRIVATE_NO_STORE_HEADERS = {
+  "Cache-Control": "private, no-store",
+  Pragma: "no-cache",
+} as const;
 
 const FUND_COLUMNS = [
   "legacyId",
@@ -16,29 +22,36 @@ const FUND_COLUMNS = [
   "sectors",
   "regions",
   "investmentStrategy",
+  "primarySourceUrl",
   "sourceUrls",
   "ticker",
   "strategyUrl",
 ];
 
-export async function GET(request: NextRequest) {
+async function exportFunds(request: NextRequest) {
   try {
     if (!(await canExportData())) {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+      return NextResponse.json(
+        { error: "Forbidden" },
+        { status: 403, headers: PRIVATE_NO_STORE_HEADERS },
+      );
     }
 
     // Support ?format=json for backward compatibility
     const { searchParams } = new URL(request.url);
     const wantsJson = searchParams.get("format") === "json";
 
-    const funds = await getAllFunds();
+    const funds = await getAllFundDetails();
 
     if (wantsJson) {
-      return NextResponse.json({
-        data: funds,
-        count: funds.length,
-        exportedAt: new Date().toISOString(),
-      });
+      return NextResponse.json(
+        {
+          data: funds,
+          count: funds.length,
+          exportedAt: new Date().toISOString(),
+        },
+        { headers: PRIVATE_NO_STORE_HEADERS },
+      );
     }
 
     // Flatten array fields for CSV output
@@ -55,15 +68,22 @@ export async function GET(request: NextRequest) {
 
     return new Response(csvString, {
       headers: {
+        ...PRIVATE_NO_STORE_HEADERS,
         "Content-Type": "text/csv; charset=utf-8",
         "Content-Disposition": `attachment; filename="funds_export_${date}.csv"`,
       },
     });
-  } catch (error) {
-    console.error("Fund export failed:", error);
+  } catch {
     return NextResponse.json(
       { error: "Failed to export funds" },
-      { status: 500 },
+      { status: 500, headers: PRIVATE_NO_STORE_HEADERS },
     );
   }
+}
+
+export async function GET(request: NextRequest) {
+  return withServerOperation(request, {
+    route: "/api/exports/funds",
+    operation: "export_funds",
+  }, () => exportFunds(request));
 }

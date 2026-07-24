@@ -1,6 +1,7 @@
 import { readdir } from "fs/promises";
 import path from "path";
 import { NextRequest, NextResponse } from "next/server";
+import { withServerOperation } from "@/lib/server-log";
 
 const EMAIL_FORMAT_DIR = path.join(process.cwd(), "public", "email-format");
 const WEEKLY_BRIEFING_FILE = /^\d{4}-\d{2}-\d{2}\.html$/;
@@ -8,7 +9,7 @@ const WEEKLY_BRIEFING_FILE = /^\d{4}-\d{2}-\d{2}\.html$/;
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-export async function GET(request: NextRequest) {
+async function resolveLatestEmail(request: NextRequest) {
   try {
     const files = await readdir(EMAIL_FORMAT_DIR);
     const latestBriefing = files
@@ -26,11 +27,17 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(
       new URL(`${basePath}/email-format/${latestBriefing}`, request.url),
     );
-  } catch (error) {
-    console.error("Failed to resolve latest weekly briefing email:", error);
+  } catch {
     return NextResponse.json(
       { error: "Failed to resolve latest weekly briefing email" },
       { status: 500 },
     );
   }
+}
+
+export async function GET(request: NextRequest) {
+  return withServerOperation(request, {
+    route: "/email-format/latest",
+    operation: "resolve_latest_email",
+  }, () => resolveLatestEmail(request));
 }
