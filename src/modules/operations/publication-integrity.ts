@@ -8,6 +8,8 @@ import {
 export type DealPublicationRecord = {
   target: string;
   country: string;
+  sector: string | null | undefined;
+  region: string | null | undefined;
   date: Date | string | null | undefined;
   dealStatus: string | null | undefined;
   sellerDisclosureStatus: SellerDisclosureState;
@@ -16,6 +18,20 @@ export type DealPublicationRecord = {
   participants: ReadonlyArray<{ role: string }>;
   citations: readonly unknown[];
 };
+
+export const dealPublicationIntegritySelect = {
+  target: true,
+  country: true,
+  sector: true,
+  region: true,
+  date: true,
+  dealStatus: true,
+  sellerDisclosureStatus: true,
+  sellerDisclosureReason: true,
+  categories: true,
+  participants: { select: { role: true } },
+  citations: { where: { isPrimary: true }, select: { id: true } },
+} as const;
 
 export type FundPublicationRecord = {
   managerId: string | null | undefined;
@@ -64,6 +80,8 @@ export function missingDealPublicationFields(deal: DealPublicationRecord): strin
   return [
     !deal.target.trim() && "target",
     !deal.country.trim() && "country",
+    !deal.sector?.trim() && "sector",
+    !deal.region?.trim() && "region",
     !deal.date && "date",
     !deal.dealStatus && "transaction status",
     deal.categories.length === 0 && "category",

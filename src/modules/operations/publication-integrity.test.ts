@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   companyPublicationIntegritySelect,
+  dealPublicationIntegritySelect,
   findOwnershipFundIssues,
   missingCompanyPublicationFields,
   missingDealPublicationFields,
@@ -9,6 +10,13 @@ import {
 } from "./publication-integrity";
 
 describe("publication completeness", () => {
+  it("projects every taxonomy field required by the deal publication contract", () => {
+    expect(dealPublicationIntegritySelect).toMatchObject({
+      sector: true,
+      region: true,
+    });
+  });
+
   it("projects every ownership field required by the company publication contract", () => {
     expect(companyPublicationIntegritySelect.ownershipPeriods.select).toEqual({
       id: true,
@@ -22,6 +30,8 @@ describe("publication completeness", () => {
     expect(missingDealPublicationFields({
       target: "GridCo",
       country: "United States",
+      sector: "UTILITIES",
+      region: "NORTH_AMERICA",
       date: new Date("2026-07-01"),
       dealStatus: "ANNOUNCED",
       categories: ["ACQUISITION_BUYOUT"],
@@ -53,6 +63,8 @@ describe("publication completeness", () => {
     expect(missingDealPublicationFields({
       target: " ",
       country: "",
+      sector: " ",
+      region: "",
       date: null,
       dealStatus: null,
       categories: [],
@@ -63,6 +75,8 @@ describe("publication completeness", () => {
     })).toEqual([
       "target",
       "country",
+      "sector",
+      "region",
       "date",
       "transaction status",
       "category",

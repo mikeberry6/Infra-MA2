@@ -1,11 +1,20 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import bcrypt from "bcryptjs";
 
-vi.mock("@/lib/prisma", () => ({ prisma: { user: { findUnique: vi.fn() } } }));
-vi.mock("@/modules/auth/throttle", () => ({
+const mocks = vi.hoisted(() => ({
   clearLoginThrottle: vi.fn(),
+  findUnique: vi.fn(),
   isLoginThrottled: vi.fn(),
   recordFailedLogin: vi.fn(),
   requestIp: vi.fn(),
+}));
+
+vi.mock("@/lib/prisma", () => ({ prisma: { user: { findUnique: mocks.findUnique } } }));
+vi.mock("@/modules/auth/throttle", () => ({
+  clearLoginThrottle: mocks.clearLoginThrottle,
+  isLoginThrottled: mocks.isLoginThrottled,
+  recordFailedLogin: mocks.recordFailedLogin,
+  requestIp: mocks.requestIp,
 }));
 
 import { authOptions } from "@/modules/auth/config";
@@ -13,8 +22,11 @@ import { PRIVILEGED_SESSION_MAX_AGE_SECONDS } from "@/modules/auth/session";
 
 describe("NextAuth privileged-session configuration", () => {
   beforeEach(() => {
+    vi.clearAllMocks();
     vi.useFakeTimers();
     vi.setSystemTime(new Date("2026-07-22T12:00:00Z"));
+    mocks.isLoginThrottled.mockResolvedValue(false);
+    mocks.requestIp.mockReturnValue("203.0.113.7");
   });
 
   afterEach(() => vi.useRealTimers());
@@ -90,5 +102,53 @@ describe("NextAuth privileged-session configuration", () => {
     });
     expect(serialized).not.toMatch(/private-db|admin:secret|password|do-not-log/i);
     errorLog.mockRestore();
+  });
+
+  it.each([
+    {
+      label: "ASCII",
+      accepted: `Aa1!${"x".repeat(68)}`,
+      truncatedAlias: `Aa1!${"x".repeat(69)}`,
+    },
+    {
+      label: "multibyte",
+      accepted: `Aa1!${"é".repeat(34)}`,
+      truncatedAlias: `Aa1!${"é".repeat(35)}`,
+    },
+  ])("rejects a bcrypt-truncated $label login alias", async ({ accepted, truncatedAlias }) => {
+    vi.useRealTimers();
+    const passwordHash = bcrypt.hashSync(accepted, 4);
+    mocks.findUnique.mockResolvedValue({
+      id: "admin-1",
+      email: "admin@example.com",
+      name: "Administrator",
+      role: "ADMIN",
+      passwordHash,
+      updatedAt: new Date("2026-07-22T11:00:00Z"),
+    });
+    const credentialsProvider = authOptions.providers[0] as unknown as {
+      options: {
+        authorize: (
+          credentials: { email: string; password: string },
+          request: { headers: Headers },
+        ) => Promise<{ id: string } | null>;
+      };
+    };
+    const authorize = credentialsProvider.options.authorize;
+    const request = { headers: new Headers() };
+
+    await expect(authorize({
+      email: "admin@example.com",
+      password: truncatedAlias,
+    }, request)).resolves.toBeNull();
+    expect(mocks.recordFailedLogin).toHaveBeenCalledWith(
+      "admin@example.com",
+      "203.0.113.7",
+    );
+
+    await expect(authorize({
+      email: "admin@example.com",
+      password: accepted,
+    }, request)).resolves.toMatchObject({ id: "admin-1" });
   });
 });

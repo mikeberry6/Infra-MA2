@@ -7,23 +7,22 @@ import { SafeOperationalError } from "../src/lib/safe-error";
 import { logServerFailure, withServerTask } from "../src/lib/server-log";
 import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { adminBootstrapChangedFields } from "../src/modules/operations/admin-bootstrap-audit";
+import {
+  normalizeAdminEmail,
+  validateAdminEmail,
+  validateAdminPassword,
+} from "./admin-credentials";
 
-const email = process.env.ADMIN_EMAIL?.trim().toLowerCase();
+const email = normalizeAdminEmail(process.env.ADMIN_EMAIL);
 const password = process.env.ADMIN_PASSWORD ?? "";
 const name = process.env.ADMIN_NAME?.trim() || "Administrator";
 const connectionString = process.env.DATABASE_URL;
 
-function validatePassword(value: string): string | null {
-  if (value.length < 14) return "ADMIN_PASSWORD must contain at least 14 characters.";
-  if (!/[a-z]/.test(value) || !/[A-Z]/.test(value)) return "ADMIN_PASSWORD must include upper- and lowercase letters.";
-  if (!/\d/.test(value) || !/[^A-Za-z0-9]/.test(value)) return "ADMIN_PASSWORD must include a number and a symbol.";
-  return null;
-}
-
 async function main() {
   if (!connectionString) throw new SafeOperationalError("database_url_missing");
-  if (!email || !email.includes("@")) throw new Error("ADMIN_EMAIL must be a valid email address.");
-  const passwordError = validatePassword(password);
+  const emailError = validateAdminEmail(email);
+  if (emailError) throw new Error(emailError);
+  const passwordError = validateAdminPassword(password);
   if (passwordError) throw new Error(passwordError);
   assertMutationDatabaseTargetFromEnv();
 

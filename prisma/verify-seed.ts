@@ -11,6 +11,7 @@ import { funds } from "./seed-data/funds";
 import { companies as portcos } from "./seed-data/companies";
 import {
   companyPublicationIntegritySelect,
+  dealPublicationIntegritySelect,
   findOwnershipFundIssues,
   missingCompanyPublicationFields,
   missingDealPublicationFields,
@@ -193,15 +194,7 @@ async function main() {
       where: { status: "PUBLISHED" },
       select: {
         legacyId: true,
-        target: true,
-        country: true,
-        date: true,
-        dealStatus: true,
-        sellerDisclosureStatus: true,
-        sellerDisclosureReason: true,
-        categories: true,
-        participants: { select: { role: true } },
-        citations: { where: { isPrimary: true }, select: { id: true } },
+        ...dealPublicationIntegritySelect,
       },
     }),
     prisma.fund.findMany({

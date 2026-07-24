@@ -5,7 +5,9 @@
     1. cp template.html YYYY-MM-DD.html
     2. Replace {{DEAL_SUMMARY}}, {{DATE_RANGE_SHORT}} in preheader
        - List active sectors by current-week deal count, most to least active
+       - The stated deal total and complete sector list must exactly match the active sections
     3. Replace {{PREVIOUS_EDITIONS}} in HTML comment
+       - Use each active sector exactly once; sector counts must sum to the stated edition total
     4. Replace {{EDITION_DATE_RANGE}} in masthead
     5. Replace {{KEY_THEME_1}} and {{KEY_THEME_2}}
        - Key themes should highlight the week's strongest capital deployment angles, not just sector volume
@@ -13,6 +15,11 @@
          with named transactions
        - Name the strongest U.S. operating-asset, platform, and portfolio-company transactions;
          use non-U.S. platform activity only as contrast
+       - On every U.S. deal-card table, set data-us-theme-category to
+         "operating-asset", "platform", or "portfolio-company" and assign a unique,
+         contiguous data-us-theme-priority within that category (1 = strongest)
+       - The final theme must name the priority-1 card from every represented U.S. category;
+         priorities must respect disclosed scale, with editorial judgment used for incomparable units
     6. Build sector sections for sectors with deals only
        - Order sections by current-week deal count, most to least active
        - Break ties in this order: Power & ET, Digital, Transportation, Utilities, Midstream, Social Infra
@@ -28,8 +35,14 @@
          portfolio companies, developers, sellers, or co-developers in metadata/body
        - Use canonical sponsor short names consistently; Goldman Sachs Asset Management = GSAM
        - Metadata: {Sponsor} ({transaction type}) · {subsector} · {region/country}
+       - Use one controlled transaction label exactly: Buyout, Minority Stake, Majority Stake,
+         Joint Venture, Platform Launch, Bolt-On, Portfolio Company Acquisition,
+         Portfolio Company Divestiture, Primary Capital Raise, Sale, or Co-Investment
        - Body: one concise factual paragraph, usually 1-2 sentences
        - Source: one link labeled "Source"
+       - Weekly link verification attempts every Source regardless of the general link cap;
+         malformed, missing, confirmed 404/410, or budget-skipped Sources block publication,
+         while bot blocks and transient network/provider failures remain visible warnings
        - Include concrete facts when available: capacity, geography, market role, value, capital commitment, customers, development status, or strategic rationale
     8. Update YTD bar charts (sector + region counts and bar widths)
        - Sort both charts by count in descending order
@@ -92,7 +105,7 @@
                 </tr>
                 <!-- Subtitle -->
                 <tr>
-                  <td style="padding-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 400; color: #AAAAAA; letter-spacing: 2px; text-transform: uppercase;">INFRASTRUCTURE COVERAGE &amp; ADVISORY</td>
+                  <td style="padding-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 400; color: #4B5563; letter-spacing: 2px; text-transform: uppercase;">INFRASTRUCTURE COVERAGE &amp; ADVISORY</td>
                 </tr>
                 <!-- Gold Accent Rule -->
                 <tr>
@@ -110,7 +123,7 @@
                 </tr>
                 <!-- Edition -->
                 <tr>
-                  <td style="padding-top: 6px; padding-bottom: 18px; font-family: Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 400; color: #AAAAAA; letter-spacing: 1.5px; text-transform: uppercase;">Weekly Briefing <span style="color: #B4A87D;">&#8226;</span> {{EDITION_DATE_RANGE}}</td>
+                  <td style="padding-top: 6px; padding-bottom: 18px; font-family: Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 400; color: #4B5563; letter-spacing: 1.5px; text-transform: uppercase;">Weekly Briefing <span style="color: #B4A87D;">&#8226;</span> {{EDITION_DATE_RANGE}}</td>
                 </tr>
               </table>
 
@@ -131,12 +144,12 @@
                 <tr>
                   <td style="padding: 20px 24px; border-left: 3px solid #B4A87D;">
                     <div style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #B4A87D; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">KEY THEMES</div>
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #888888; font-style: italic; line-height: 1.6;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #4B5563; font-style: italic; line-height: 1.6;">
                       <tr>
-                        <td style="padding: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #888888; font-style: italic; line-height: 1.6;">{{KEY_THEME_1}}</td>
+                        <td style="padding: 0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #4B5563; font-style: italic; line-height: 1.6;">{{KEY_THEME_1}}</td>
                       </tr>
                       <tr>
-                        <td style="padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #888888; font-style: italic; line-height: 1.6;">{{KEY_THEME_2}}</td>
+                        <td style="padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 300; color: #4B5563; font-style: italic; line-height: 1.6;">{{KEY_THEME_2}}</td>
                       </tr>
                     </table>
                   </td>
@@ -165,7 +178,7 @@
                         <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
                           Digital
                         </td>
-                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
+                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #52525B; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
                       </tr>
                     </table>
                   </td>
@@ -192,7 +205,7 @@
                         <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
                           Midstream
                         </td>
-                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
+                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #52525B; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
                       </tr>
                     </table>
                   </td>
@@ -219,7 +232,7 @@
                         <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
                           Power &amp; ET
                         </td>
-                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
+                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #52525B; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
                       </tr>
                     </table>
                   </td>
@@ -246,7 +259,7 @@
                         <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
                           Social Infra
                         </td>
-                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
+                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #52525B; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
                       </tr>
                     </table>
                   </td>
@@ -273,7 +286,7 @@
                         <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
                           Transportation
                         </td>
-                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
+                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #52525B; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
                       </tr>
                     </table>
                   </td>
@@ -300,7 +313,7 @@
                         <td style="padding: 10px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; text-transform: uppercase; letter-spacing: 0.5px;">
                           Utilities
                         </td>
-                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
+                        <td width="1%" style="padding: 10px 20px; white-space: nowrap; text-align: right; vertical-align: middle; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; color: #52525B; letter-spacing: 0.5px;" valign="middle">0 Deals</td>
                       </tr>
                     </table>
                   </td>
@@ -567,10 +580,10 @@
                               <td style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #442142; line-height: 1.2;">Mike Berry</td>
                             </tr>
                             <tr>
-                              <td style="padding-top: 4px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 400; color: #888888; text-transform: uppercase; letter-spacing: 0.5px;">Vice President</td>
+                              <td style="padding-top: 4px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 400; color: #4B5563; text-transform: uppercase; letter-spacing: 0.5px;">Vice President</td>
                             </tr>
                             <tr>
-                              <td style="padding-top: 4px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 400; color: #888888; text-transform: uppercase; letter-spacing: 0.5px;">Infrastructure Coverage &amp; Advisory</td>
+                              <td style="padding-top: 4px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 400; color: #4B5563; text-transform: uppercase; letter-spacing: 0.5px;">Infrastructure Coverage &amp; Advisory</td>
                             </tr>
                             <tr>
                               <td style="padding-top: 4px;">

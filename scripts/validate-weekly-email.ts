@@ -2,6 +2,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { basename, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { JSDOM } from "jsdom";
+import { funds } from "../prisma/seed-data/funds.ts";
 import { formatSafeErrorSummary } from "../src/lib/safe-error.ts";
 
 const EMAIL_DIRECTORY = join(process.cwd(), "public", "email-format");
@@ -20,9 +21,48 @@ const DEFAULT_LINK_BUDGET_MS = 30_000;
 const DEFAULT_MAX_LINKS = 80;
 const MAX_LINK_CONCURRENCY = 4;
 const SCALE_METADATA_CUTOVER = "2026-07-24";
+const EDITORIAL_CONTRACT_CUTOVER = "2026-07-24";
+const CONTROLLED_TRANSACTION_LABELS = new Set([
+  "Buyout",
+  "Minority Stake",
+  "Majority Stake",
+  "Joint Venture",
+  "Platform Launch",
+  "Bolt-On",
+  "Portfolio Company Acquisition",
+  "Portfolio Company Divestiture",
+  "Primary Capital Raise",
+  "Sale",
+  "Co-Investment",
+]);
+const US_THEME_CATEGORIES = [
+  "operating-asset",
+  "platform",
+  "portfolio-company",
+] as const;
+const EDITORIAL_FUND_MANAGER_ALIASES = [
+  "ADIA",
+  "Allianz",
+  "Antin",
+  "CBRE IM",
+  "CIP",
+  "ECP",
+  "EIG",
+  "EQT",
+  "GIP",
+  "GSAM",
+  "IFM",
+  "Igneo",
+  "PSP Investments",
+  "Swiss Life AM",
+  "IMCO",
+  "MEAG",
+];
 
 type Severity = "error" | "warning";
 type ScaleKind = "economic" | "physical" | "undisclosed";
+type UsThemeCategory = (typeof US_THEME_CATEGORIES)[number];
+type UsClassification = "us" | "non-us" | "ambiguous" | "conflict";
 
 export type ValidationFinding = {
   severity: Severity;
@@ -34,6 +74,7 @@ export type StaticCoverageDeal = {
   id?: string;
   target: string;
   sector?: string;
+  country?: string;
   sourceUrl?: string;
 };
 
@@ -62,6 +103,10 @@ type Card = {
   sourceUrl: string;
   sourceCount: number;
   scale: ScaleMetric;
+  usThemeCategory?: string;
+  usThemePriority?: number;
+  hasUsThemeCategory: boolean;
+  hasUsThemePriority: boolean;
 };
 
 type SectorSection = {
@@ -98,6 +143,7 @@ export type ValidateWeeklyEmailOptions = {
   coverageDeals?: StaticCoverageDeal[];
   requireStaticCoverage?: boolean;
   requireScaleMetadata?: boolean;
+  requireEditorialContract?: boolean;
   linkCheck?: Partial<LinkCheckOptions> & { enabled?: boolean };
 };
 
@@ -132,6 +178,32 @@ function normalizeTarget(value: string): string {
     .toLowerCase();
 }
 
+function normalizeFundIdentity(value: string): string {
+  return value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/&/g, " and ")
+    .replace(/[^a-zA-Z0-9]+/g, " ")
+    .trim()
+    .replace(/\s+/g, " ")
+    .toLowerCase();
+}
+
+const RECOGNIZED_FUND_IDENTITIES = new Set(
+  [
+    ...funds.flatMap((fund) => [fund.managerName, fund.fundName]),
+    ...EDITORIAL_FUND_MANAGER_ALIASES,
+  ].map(normalizeFundIdentity),
+);
+
+function isRecognizedFundIdentity(value: string): boolean {
+  const normalized = normalizeFundIdentity(value);
+  if (!normalized) return false;
+  if (RECOGNIZED_FUND_IDENTITIES.has(normalized)) return true;
+  const identities = value.split(/\s+\/\s+/).map(normalizeFundIdentity).filter(Boolean);
+  return identities.length > 1 && identities.every((identity) => RECOGNIZED_FUND_IDENTITIES.has(identity));
+}
+
 function targetsMatch(left: string, right: string): boolean {
   const a = normalizeTarget(left);
   const b = normalizeTarget(right);
@@ -152,6 +224,174 @@ function normalizeSourceUrl(value: string): string {
   } catch {
     return value.trim().replace(/\/$/, "").toLowerCase();
   }
+}
+
+type CoverageMatches = {
+  dealByCard: Map<Card, StaticCoverageDeal>;
+  cardByDeal: Map<StaticCoverageDeal, Card>;
+};
+
+function matchCardsToCoverageDeals(
+  cards: Card[],
+  coverageDeals: StaticCoverageDeal[] | undefined,
+): CoverageMatches {
+  const dealByCard = new Map<Card, StaticCoverageDeal>();
+  const cardByDeal = new Map<StaticCoverageDeal, Card>();
+  if (!coverageDeals) return { dealByCard, cardByDeal };
+
+  const assignMutuallyUniqueTargetMatches = (exact: boolean) => {
+    let assigned = true;
+    while (assigned) {
+      assigned = false;
+      const candidates = cards
+        .filter((card) => !dealByCard.has(card))
+        .map((card) => {
+          const normalizedCardTarget = normalizeTarget(card.target);
+          const deals = coverageDeals.filter((deal) => {
+            if (cardByDeal.has(deal) || (deal.sector && deal.sector !== card.sector)) return false;
+            const normalizedDealTarget = normalizeTarget(deal.target);
+            return exact
+              ? normalizedCardTarget === normalizedDealTarget
+              : normalizedCardTarget !== normalizedDealTarget && targetsMatch(card.target, deal.target);
+          });
+          return { card, deals };
+        });
+      const reverseCounts = new Map<StaticCoverageDeal, number>();
+      candidates.forEach(({ deals }) => {
+        deals.forEach((deal) => reverseCounts.set(deal, (reverseCounts.get(deal) ?? 0) + 1));
+      });
+      candidates.forEach(({ card, deals }) => {
+        if (
+          dealByCard.has(card) ||
+          deals.length !== 1 ||
+          reverseCounts.get(deals[0]) !== 1
+        ) {
+          return;
+        }
+        dealByCard.set(card, deals[0]);
+        cardByDeal.set(deals[0], card);
+        assigned = true;
+      });
+    }
+  };
+
+  // Exact target/sector identity is authoritative. Conservative fuzzy matching
+  // is only attempted for still-unmatched records and must be unambiguous in
+  // both directions so one email card can never satisfy two coverage rows.
+  assignMutuallyUniqueTargetMatches(true);
+  assignMutuallyUniqueTargetMatches(false);
+
+  const unmatchedCards = cards.filter((card) => !dealByCard.has(card));
+  const unmatchedDeals = coverageDeals.filter((deal) => !cardByDeal.has(deal));
+  const cardsBySource = new Map<string, Card[]>();
+  unmatchedCards.forEach((card) => {
+    const source = normalizeSourceUrl(card.sourceUrl);
+    if (!source) return;
+    cardsBySource.set(source, [...(cardsBySource.get(source) ?? []), card]);
+  });
+  const dealsBySource = new Map<string, StaticCoverageDeal[]>();
+  unmatchedDeals.forEach((deal) => {
+    const source = normalizeSourceUrl(deal.sourceUrl ?? "");
+    if (!source) return;
+    dealsBySource.set(source, [...(dealsBySource.get(source) ?? []), deal]);
+  });
+  cardsBySource.forEach((sourceCards, source) => {
+    const sourceDeals = dealsBySource.get(source) ?? [];
+    if (sourceCards.length !== 1 || sourceDeals.length !== 1) return;
+    if (sourceDeals[0].sector && sourceDeals[0].sector !== sourceCards[0].sector) return;
+    dealByCard.set(sourceCards[0], sourceDeals[0]);
+    cardByDeal.set(sourceDeals[0], sourceCards[0]);
+  });
+
+  return { dealByCard, cardByDeal };
+}
+
+function stripNegatedUsReferences(value: string): string {
+  return normalizeText(value)
+    .replace(
+      /\b(?:outside(?:\s+of)?|excluding|except(?:\s+for)?|other\s+than|not\s+in)\s+(?:the\s+)?United States(?:\s+of America)?\b/gi,
+      " ",
+    )
+    .replace(
+      /\b(?:outside(?:\s+of)?|excluding|except(?:\s+for)?|other\s+than|not\s+in)\s+(?:the\s+)?U\.?S\.?(?:A\.?)?(?=$|[^a-zA-Z$])/gi,
+      " ",
+    )
+    .replace(
+      /\b(?:non|ex)[\-\u2010-\u2015\u2212\s]?(?:United States(?:\s+of America)?|U\.?S\.?(?:A\.?)?)(?=$|[^a-zA-Z$])/gi,
+      " ",
+    );
+}
+
+function hasNegatedUsReference(value: string): boolean {
+  const text = normalizeText(value);
+  return stripNegatedUsReferences(text) !== text;
+}
+
+function hasExplicitUsReference(value: string): boolean {
+  const text = stripNegatedUsReferences(value)
+    .replace(
+      /\b(?:United States(?:\s+of America)?|U\.?S\.?(?:A\.?)?)[\-\u2010-\u2015\u2212\s]*(?:dollars?(?:[\-\u2010-\u2015\u2212\s]+denominated)?\b|\$\s*(?=[\d,.]))/gi,
+      " ",
+    )
+    .replace(
+      /\b(?:United States(?:\s+of America)?|U\.?S\.?(?:A\.?)?)[\-\u2010-\u2015\u2212\s]+(?:(?:based|headquartered|domiciled)[\-\u2010-\u2015\u2212\s]+)?(?:[a-z]+\s+){0,3}(?:sponsor|fund|manager|investor|buyer|seller|acquirer|firm|company|operator|developer|owner)\b/gi,
+      " ",
+    )
+    .replace(
+      /\b(?:[a-z]+\s+){0,3}(?:sponsor|fund|manager|investor|buyer|seller|acquirer|firm|company|operator|developer|owner)\s+(?:based|headquartered|domiciled)\s+in\s+(?:the\s+)?(?:United States(?:\s+of America)?|U\.?S\.?(?:A\.?)?)(?=$|[^a-zA-Z$])/gi,
+      " ",
+    );
+  if (/\bUnited States(?: of America)?\b/i.test(text)) return true;
+  // Keep bare abbreviations case-sensitive so normal prose such as “help us”
+  // is not treated as a country reference. Exclude US$ currency notation.
+  return /(?:^|[^a-zA-Z$])U\.?S\.?(?:A\.?)?(?=$|[^a-zA-Z$])/.test(text);
+}
+
+function isUsCountry(value: string | undefined): boolean {
+  if (!value) return false;
+  const normalized = value.replace(/[^a-zA-Z]/g, "").toLowerCase();
+  return normalized === "us" ||
+    normalized === "usa" ||
+    normalized === "unitedstates" ||
+    normalized === "unitedstatesofamerica";
+}
+
+function isNonSpecificCoverageCountry(value: string): boolean {
+  const locations = value
+    .split(/\s*(?:\/|,|;|\||&|\band\b)\s*/i)
+    .map(normalizeTarget)
+    .filter(Boolean);
+  return locations.length > 0 && locations.every((location) =>
+    /^(?:north america|americas|global|worldwide|multiple(?: countries| markets)?|various(?: countries| markets)?)$/.test(location)
+  );
+}
+
+function classifyUsCard(
+  card: Card,
+  coverageDeal: StaticCoverageDeal | undefined,
+): UsClassification {
+  const coverageCountry = coverageDeal?.country;
+  const metadataLocation = card.metadata.split("·").at(-1) ?? "";
+  const hasCardUsEvidence =
+    hasExplicitUsReference(metadataLocation) || hasExplicitUsReference(card.overview);
+  if (coverageCountry) {
+    if (isUsCountry(coverageCountry) || hasExplicitUsReference(coverageCountry)) return "us";
+    if (!isNonSpecificCoverageCountry(coverageCountry)) {
+      return hasCardUsEvidence ? "conflict" : "non-us";
+    }
+  }
+  if (hasCardUsEvidence) return "us";
+  if (coverageDeal && (!coverageCountry || isNonSpecificCoverageCountry(coverageCountry))) {
+    if (
+      normalizeText(metadataLocation) &&
+      !isNonSpecificCoverageCountry(metadataLocation) &&
+      !hasNegatedUsReference(metadataLocation)
+    ) {
+      return "non-us";
+    }
+    return "ambiguous";
+  }
+  return "non-us";
 }
 
 function addFinding(
@@ -290,6 +530,10 @@ function parseCard(table: HTMLTableElement, sector: string): Card {
     sourceUrl: sourceAnchors[0]?.getAttribute("href")?.trim() ?? "",
     sourceCount: sourceAnchors.length,
     scale: explicitScaleMetric(table) ?? inferScaleMetric(overview),
+    usThemeCategory: normalizeText(table.getAttribute("data-us-theme-category")).toLowerCase() || undefined,
+    usThemePriority: parseNumber(table.getAttribute("data-us-theme-priority")),
+    hasUsThemeCategory: table.hasAttribute("data-us-theme-category"),
+    hasUsThemePriority: table.hasAttribute("data-us-theme-priority"),
   };
 }
 
@@ -378,12 +622,23 @@ function validateSectorOrder(sections: SectorSection[], findings: ValidationFind
   });
 }
 
-function validateCardStructure(cards: Card[], findings: ValidationFinding[]) {
+function validateCardStructure(
+  cards: Card[],
+  findings: ValidationFinding[],
+  requireEditorialContract: boolean,
+) {
   cards.forEach((card, index) => {
     const label = `${card.sector} card ${index + 1}`;
-    const titleParts = card.title.split("|").map((part) => part.trim()).filter(Boolean);
-    if (titleParts.length !== 2) {
+    const titleParts = card.title.split("|").map((part) => part.trim());
+    if (titleParts.length !== 2 || titleParts.some((part) => !part)) {
       addFinding(findings, "error", "card-title", `${label} title must be “Target / Asset | fund manager”.`);
+    } else if (requireEditorialContract && !isRecognizedFundIdentity(titleParts[1])) {
+      addFinding(
+        findings,
+        "error",
+        "card-title-fund",
+        `${label} title suffix “${titleParts[1]}” is not a recognized infrastructure fund or fund manager.`,
+      );
     }
     const metadataParts = card.metadata.split("·").map((part) => part.trim());
     const sponsorAndType = metadataParts[0]?.match(/^(.+?)\s+\(([^()]+)\)$/);
@@ -393,6 +648,18 @@ function validateCardStructure(cards: Card[], findings: ValidationFinding[]) {
         "error",
         "card-metadata",
         `${label} metadata must be “Sponsor (transaction type) · subsector · region/country”.`,
+      );
+    }
+    if (
+      requireEditorialContract &&
+      sponsorAndType &&
+      !CONTROLLED_TRANSACTION_LABELS.has(sponsorAndType[2].trim())
+    ) {
+      addFinding(
+        findings,
+        "error",
+        "transaction-label",
+        `${label} uses unsupported transaction label “${sponsorAndType[2].trim()}”.`,
       );
     }
     if (!card.overview || card.overview.length < 40) {
@@ -747,23 +1014,436 @@ function validateContrast(document: Document, findings: ValidationFinding[]): nu
   return checked;
 }
 
-function validateThemes(document: Document, sections: SectorSection[], findings: ValidationFinding[]) {
+function keyThemeParagraphs(document: Document): string[] {
+  const keyThemesLabel = Array.from(document.querySelectorAll("div, td"))
+    .find((element) => normalizeText(element.textContent) === "KEY THEMES");
+  const keyThemesRoot = keyThemesLabel?.closest("table");
+  if (!keyThemesRoot) return [];
+  return Array.from(keyThemesRoot.querySelectorAll("td"))
+    .filter((cell) => !cell.querySelector("td"))
+    .map((cell) => normalizeText(cell.textContent))
+    .filter((text) => text && text !== "KEY THEMES");
+}
+
+function isUsThemeCategory(value: string | undefined): value is UsThemeCategory {
+  return US_THEME_CATEGORIES.includes(value as UsThemeCategory);
+}
+
+function transactionLabel(card: Card): string | undefined {
+  return card.metadata.split("·")[0]?.match(/^.+?\s+\(([^()]+)\)$/)?.[1]?.trim();
+}
+
+function requiredUsThemeCategory(card: Card): UsThemeCategory | undefined {
+  const label = transactionLabel(card);
+  if (label === "Platform Launch") return "platform";
+  if (label === "Portfolio Company Acquisition" || label === "Portfolio Company Divestiture") {
+    return "portfolio-company";
+  }
+  return undefined;
+}
+
+function validateUsThemePriorityOrder(
+  category: UsThemeCategory,
+  cards: Card[],
+  findings: ValidationFinding[],
+) {
+  const ordered = [...cards].sort((left, right) =>
+    (left.usThemePriority ?? Number.MAX_SAFE_INTEGER) -
+    (right.usThemePriority ?? Number.MAX_SAFE_INTEGER)
+  );
+  for (let index = 1; index < ordered.length; index += 1) {
+    const prior = ordered[index - 1];
+    const current = ordered[index];
+    if (scaleKindOrder(current.scale.kind) < scaleKindOrder(prior.scale.kind)) {
+      addFinding(
+        findings,
+        "error",
+        "us-theme-priority-order",
+        `${category} priority ranks place “${current.target}” (${current.scale.kind}) behind “${prior.target}” (${prior.scale.kind}).`,
+      );
+      continue;
+    }
+    if (
+      current.scale.kind === prior.scale.kind &&
+      current.scale.kind !== "undisclosed" &&
+      current.scale.unit === prior.scale.unit &&
+      current.scale.value !== undefined &&
+      prior.scale.value !== undefined &&
+      current.scale.value > prior.scale.value
+    ) {
+      addFinding(
+        findings,
+        "error",
+        "us-theme-priority-order",
+        `${category} priority ranks place “${current.target}” (${current.scale.value} ${current.scale.unit}) behind the smaller “${prior.target}” (${prior.scale.value} ${prior.scale.unit}).`,
+      );
+    }
+  }
+}
+
+function validateUsThemeMarkers(
+  cards: Card[],
+  usCards: Card[],
+  finalParagraph: string,
+  findings: ValidationFinding[],
+) {
+  const usSet = new Set(usCards);
+  cards.filter((card) => !usSet.has(card)).forEach((card) => {
+    if (card.hasUsThemeCategory || card.hasUsThemePriority) {
+      addFinding(
+        findings,
+        "error",
+        "us-theme-marker-non-us",
+        `“${card.target}” has U.S. theme metadata but is not identified as a U.S. transaction.`,
+      );
+    }
+  });
+
+  const grouped = new Map<UsThemeCategory, Card[]>();
+  usCards.forEach((card) => {
+    if (!isUsThemeCategory(card.usThemeCategory)) {
+      addFinding(
+        findings,
+        "error",
+        "us-theme-category",
+        `U.S. transaction “${card.target}” must set data-us-theme-category to operating-asset, platform, or portfolio-company.`,
+      );
+      return;
+    }
+    if (
+      card.usThemePriority === undefined ||
+      !Number.isInteger(card.usThemePriority) ||
+      card.usThemePriority <= 0
+    ) {
+      addFinding(
+        findings,
+        "error",
+        "us-theme-priority",
+        `U.S. transaction “${card.target}” must set a positive integer data-us-theme-priority within its category.`,
+      );
+      return;
+    }
+    const requiredCategory = requiredUsThemeCategory(card);
+    if (requiredCategory && card.usThemeCategory !== requiredCategory) {
+      addFinding(
+        findings,
+        "error",
+        "us-theme-category-label",
+        `“${card.target}” uses ${transactionLabel(card)} and must use data-us-theme-category="${requiredCategory}".`,
+      );
+    }
+    const categoryCards = grouped.get(card.usThemeCategory) ?? [];
+    categoryCards.push(card);
+    grouped.set(card.usThemeCategory, categoryCards);
+  });
+
+  const missingRepresentatives: Array<{ category: UsThemeCategory; target: string }> = [];
+  grouped.forEach((categoryCards, category) => {
+    const priorities = categoryCards.map((card) => card.usThemePriority as number);
+    const sortedPriorities = [...priorities].sort((left, right) => left - right);
+    const expectedPriorities = Array.from({ length: categoryCards.length }, (_, index) => index + 1);
+    if (
+      new Set(priorities).size !== priorities.length ||
+      !sortedPriorities.every((priority, index) => priority === expectedPriorities[index])
+    ) {
+      addFinding(
+        findings,
+        "error",
+        "us-theme-priority-sequence",
+        `${category} U.S. theme priorities must be unique and contiguous from 1 through ${categoryCards.length}.`,
+      );
+    }
+    validateUsThemePriorityOrder(category, categoryCards, findings);
+    const representative = categoryCards.find((card) => card.usThemePriority === 1);
+    if (representative && !targetsMatch(finalParagraph, representative.target)) {
+      missingRepresentatives.push({ category, target: representative.target });
+    }
+  });
+
+  if (missingRepresentatives.length > 0) {
+    addFinding(
+      findings,
+      "error",
+      "us-deployment-named-transactions",
+      `The final Key Themes paragraph must name each priority-1 U.S. category representative: ${
+        missingRepresentatives.map(({ category, target }) => `${category} “${target}”`).join("; ")
+      }.`,
+    );
+  }
+}
+
+function validateThemes(
+  document: Document,
+  sections: SectorSection[],
+  dealByCard: Map<Card, StaticCoverageDeal>,
+  findings: ValidationFinding[],
+  requireEditorialContract: boolean,
+) {
   const bodyText = normalizeText(document.body.textContent);
   if (!/KEY THEMES/i.test(bodyText)) {
     addFinding(findings, "error", "key-themes", "Key Themes section is missing.");
     return;
   }
-  const hasUsDeal = sections.some((section) =>
-    section.cards.some((card) => /(?:United States|U\.S\.)/i.test(card.metadata)),
+  const cards = sections.flatMap((section) => section.cards);
+  if (!requireEditorialContract) {
+    const hasLegacyUsDeal = cards.some((card) =>
+      /(?:United States|U\.S\.)/i.test(card.metadata)
+    );
+    if (hasLegacyUsDeal && !/U\.S\. deployment/i.test(bodyText)) {
+      addFinding(
+        findings,
+        "error",
+        "us-deployment",
+        "U.S. deals are present but Key Themes do not explicitly address U.S. deployment.",
+      );
+    }
+    return;
+  }
+  const classifications = cards.map((card) => ({
+    card,
+    classification: classifyUsCard(card, dealByCard.get(card)),
+  }));
+  const usCards = classifications
+    .filter(({ classification }) => classification === "us")
+    .map(({ card }) => card);
+  classifications
+    .filter(({ classification }) => classification === "ambiguous")
+    .forEach(({ card }) => {
+      addFinding(
+        findings,
+        "error",
+        "us-country-ambiguous",
+        `“${card.target}” has only regional/global country coverage; provide a country-specific coverage value or explicit U.S./non-U.S. location evidence.`,
+      );
+    });
+  classifications
+    .filter(({ classification }) => classification === "conflict")
+    .forEach(({ card }) => {
+      addFinding(
+        findings,
+        "error",
+        "us-country-conflict",
+        `“${card.target}” contains explicit U.S. location evidence that conflicts with its non-U.S. coverage country.`,
+      );
+    });
+  if (usCards.length === 0) {
+    validateUsThemeMarkers(cards, [], "", findings);
+    return;
+  }
+
+  const paragraphs = keyThemeParagraphs(document);
+  const finalParagraph = paragraphs.at(-1) ?? "";
+  if (!/U\.S\. deployment/i.test(finalParagraph)) {
+    addFinding(
+      findings,
+      "error",
+      "us-deployment-final-theme",
+      "U.S. deals are present but the final Key Themes paragraph does not explicitly address U.S. deployment.",
+    );
+  }
+  validateUsThemeMarkers(cards, usCards, finalParagraph, findings);
+}
+
+function sameOrder(left: string[], right: string[]): boolean {
+  return left.length === right.length && left.every((value, index) => value === right[index]);
+}
+
+function splitHumanList(value: string): string[] {
+  return value
+    .split(/\s*,\s*(?:and\s+)?|\s+and\s+/i)
+    .map((entry) => entry.trim())
+    .filter(Boolean);
+}
+
+function validatePreheaderSectorOrder(
+  document: Document,
+  sections: SectorSection[],
+  findings: ValidationFinding[],
+) {
+  const preheader = Array.from(document.querySelectorAll<HTMLElement>("div"))
+    .find((element) => /display\s*:\s*none/i.test(element.getAttribute("style") ?? "") &&
+      /Weekly Briefing/i.test(normalizeText(element.textContent)));
+  if (!preheader) {
+    addFinding(findings, "error", "missing-preheader", "The hidden Weekly Briefing preheader is missing.");
+    return;
+  }
+  const text = normalizeText(preheader.textContent);
+  const summary = text.match(/\b(\d+)\s+deals?\s+across\s+(.+)$/i);
+  const sectorSummary = summary?.[2]?.split(/\s+[–—-]\s+/)[0]?.trim();
+  if (!summary || !sectorSummary) {
+    addFinding(
+      findings,
+      "error",
+      "preheader-format",
+      "The hidden preheader must include “N deals across {ordered active sectors} – {date range}”.",
+    );
+    return;
+  }
+  const entries = splitHumanList(sectorSummary);
+  const actual = entries.map(canonicalSector);
+  const unknown = actual.filter((sector) => !KNOWN_SECTORS.has(sector));
+  if (unknown.length > 0) {
+    addFinding(
+      findings,
+      "error",
+      "preheader-sectors",
+      `Preheader contains unknown sector(s): ${unknown.join(", ")}.`,
+    );
+  }
+  if (new Set(actual).size !== actual.length) {
+    addFinding(findings, "error", "preheader-sectors", "Preheader sector list contains duplicates.");
+  }
+  const expected = sections.map((section) => section.label);
+  if (!sameOrder(actual, expected)) {
+    addFinding(
+      findings,
+      "error",
+      "preheader-sector-order",
+      `Preheader sectors are “${actual.join(", ") || "(none)"}”; expected “${expected.join(", ")}”.`,
+    );
+  }
+  const statedDeals = Number(summary[1]);
+  const expectedDeals = sections.reduce((total, section) => total + section.count, 0);
+  if (statedDeals !== expectedDeals) {
+    addFinding(
+      findings,
+      "error",
+      "preheader-deal-count",
+      `Preheader states ${statedDeals} deal(s); active sections contain ${expectedDeals}.`,
+    );
+  }
+}
+
+function previousEditionsComment(document: Document): string | undefined {
+  const walker = document.createTreeWalker(
+    document,
+    document.defaultView?.NodeFilter.SHOW_COMMENT ?? 128,
   );
-  if (hasUsDeal && !/U\.S\. deployment/i.test(bodyText)) {
-    addFinding(findings, "error", "us-deployment", "U.S. deals are present but Key Themes do not explicitly address U.S. deployment.");
+  let node: Node | null = walker.nextNode();
+  while (node) {
+    if (/Previous Editions:/i.test(node.nodeValue ?? "")) return node.nodeValue ?? "";
+    node = walker.nextNode();
+  }
+  return undefined;
+}
+
+function validatePreviousEditionSectorOrder(
+  document: Document,
+  sections: SectorSection[],
+  findings: ValidationFinding[],
+) {
+  const comment = previousEditionsComment(document);
+  if (!comment) {
+    addFinding(findings, "error", "missing-previous-editions", "The Previous Editions summary comment is missing.");
+    return;
+  }
+  const summaryLines = comment
+    .split(/\r?\n/)
+    .map((line) => decodeHtml(line))
+    .map((line) => line.trim())
+    .filter((line) => /\bdeals?\s*\(/i.test(line));
+  if (summaryLines.length === 0) {
+    addFinding(findings, "error", "missing-previous-editions", "The Previous Editions comment has no parseable summaries.");
+    return;
+  }
+
+  summaryLines.forEach((line, lineIndex) => {
+    const summary = line.match(/\b(\d+)\s+deals?\s*\(([^()]*)\)\s*$/i);
+    if (!summary) {
+      addFinding(
+        findings,
+        "error",
+        "previous-editions-sectors",
+        `Previous Editions summary ${lineIndex + 1} must end with “N deals (Sector N, …)”.`,
+      );
+      return;
+    }
+    const entries = splitHumanList(summary[2]);
+    const counts = entries.flatMap((entry) => {
+      const match = entry.match(/^(.+?)\s+(\d+)$/);
+      if (!match) return [];
+      return [{ label: canonicalSector(match[1]), count: Number(match[2]) }];
+    });
+    if (
+      counts.length !== entries.length ||
+      counts.length === 0 ||
+      counts.some(({ label, count }) =>
+        !KNOWN_SECTORS.has(label) || !Number.isInteger(count) || count <= 0
+      )
+    ) {
+      addFinding(
+        findings,
+        "error",
+        "previous-editions-sectors",
+        `Previous Editions summary ${lineIndex + 1} has an unknown sector or an unparseable/non-positive sector count.`,
+      );
+      return;
+    }
+    if (new Set(counts.map(({ label }) => label)).size !== counts.length) {
+      addFinding(
+        findings,
+        "error",
+        "previous-editions-sectors",
+        `Previous Editions summary ${lineIndex + 1} contains a duplicate sector.`,
+      );
+    }
+    const statedTotal = Number(summary[1]);
+    const sectorTotal = counts.reduce((total, { count }) => total + count, 0);
+    if (statedTotal !== sectorTotal) {
+      addFinding(
+        findings,
+        "error",
+        "previous-editions-total",
+        `Previous Editions summary ${lineIndex + 1} states ${statedTotal} deal(s), but its sector counts sum to ${sectorTotal}.`,
+      );
+    }
+    const expected = [...counts].sort((left, right) =>
+      right.count - left.count ||
+      SECTOR_TIE_BREAK.indexOf(left.label as (typeof SECTOR_TIE_BREAK)[number]) -
+        SECTOR_TIE_BREAK.indexOf(right.label as (typeof SECTOR_TIE_BREAK)[number])
+    );
+    if (!sameOrder(counts.map(({ label }) => label), expected.map(({ label }) => label))) {
+      addFinding(
+        findings,
+        "error",
+        "previous-editions-sector-order",
+        `Previous Editions summary ${lineIndex + 1} does not order sectors by descending count and the fixed tie-break.`,
+      );
+    }
+    if (lineIndex === 0) {
+      const current = sections.map(({ label, count }) => ({ label, count }));
+      const matchesCurrent = counts.length === current.length &&
+        counts.every(({ label, count }, index) =>
+          label === current[index]?.label && count === current[index]?.count
+        );
+      if (!matchesCurrent) {
+        addFinding(
+          findings,
+          "error",
+          "previous-editions-current-summary",
+          "The first Previous Editions summary must exactly match the current issue’s active sector counts and order.",
+        );
+      }
+    }
+  });
+}
+
+function validateCanonicalSponsorNaming(document: Document, findings: ValidationFinding[]) {
+  const bodyText = normalizeText(document.body.textContent);
+  if (/\bGoldman Sachs (?:Asset Management|Alternatives)\b/i.test(bodyText)) {
+    addFinding(
+      findings,
+      "error",
+      "canonical-gsam",
+      "Use the canonical sponsor name “GSAM” instead of Goldman Sachs Asset Management or Goldman Sachs Alternatives.",
+    );
   }
 }
 
 function validateStaticCoverage(
   cards: Card[],
   coverageDeals: StaticCoverageDeal[] | undefined,
+  matches: CoverageMatches,
   requireCoverage: boolean,
   findings: ValidationFinding[],
 ): number {
@@ -775,15 +1455,8 @@ function validateStaticCoverage(
     }
     return 0;
   }
-  let matched = 0;
   cards.forEach((card) => {
-    const source = normalizeSourceUrl(card.sourceUrl);
-    const match = coverageDeals.find((deal) =>
-      (source && deal.sourceUrl && normalizeSourceUrl(deal.sourceUrl) === source) ||
-      (targetsMatch(card.target, deal.target) && (!deal.sector || deal.sector === card.sector)),
-    );
-    if (match) matched += 1;
-    else {
+    if (!matches.dealByCard.has(card)) {
       addFinding(
         findings,
         "error",
@@ -793,12 +1466,7 @@ function validateStaticCoverage(
     }
   });
   coverageDeals.forEach((deal) => {
-    const source = normalizeSourceUrl(deal.sourceUrl ?? "");
-    const match = cards.find((card) =>
-      (source && card.sourceUrl && normalizeSourceUrl(card.sourceUrl) === source) ||
-      (targetsMatch(card.target, deal.target) && (!deal.sector || deal.sector === card.sector)),
-    );
-    if (!match) {
+    if (!matches.cardByDeal.has(deal)) {
       addFinding(
         findings,
         "error",
@@ -807,7 +1475,7 @@ function validateStaticCoverage(
       );
     }
   });
-  return matched;
+  return matches.dealByCard.size;
 }
 
 async function requestLink(
@@ -835,30 +1503,34 @@ async function validateHttpLinks(
   findings: ValidationFinding[],
 ): Promise<{ requested: number; skipped: number }> {
   if (!options.enabled) return { requested: 0, skipped: 0 };
-  const prioritized = [
-    ...candidates.filter((candidate) => candidate.isSource),
-    ...candidates.filter((candidate) => !candidate.isSource),
+  const sourceCandidates = candidates.filter((candidate) => candidate.isSource);
+  const otherCandidates = candidates.filter((candidate) => !candidate.isSource);
+  const availableOtherSlots = Math.max(0, options.maxLinks - sourceCandidates.length);
+  const selected = [
+    ...sourceCandidates,
+    ...otherCandidates.slice(0, availableOtherSlots),
   ];
-  const unique = prioritized.slice(0, options.maxLinks);
-  const skipped = Math.max(0, candidates.length - unique.length);
-  if (skipped > 0) {
-    addFinding(findings, "warning", "link-cap", `${skipped} HTTP(S) link(s) were skipped by the ${options.maxLinks}-link safety cap.`);
+  const skippedByCap = Math.max(0, otherCandidates.length - availableOtherSlots);
+  if (skippedByCap > 0) {
+    addFinding(
+      findings,
+      "warning",
+      "link-cap",
+      `${skippedByCap} non-Source HTTP(S) link(s) were skipped by the ${options.maxLinks}-link safety cap; all ${sourceCandidates.length} Source link(s) remain mandatory.`,
+    );
   }
   const deadline = Date.now() + options.budgetMs;
   const fetchImpl = options.fetchImpl ?? fetch;
   let cursor = 0;
   let requested = 0;
-  let budgetWarningAdded = false;
-  const workers = Array.from({ length: Math.min(MAX_LINK_CONCURRENCY, unique.length) }, async () => {
-    while (cursor < unique.length) {
-      const candidate = unique[cursor++];
+  const skippedByBudget: LinkCandidate[] = [];
+  const workers = Array.from({ length: Math.min(MAX_LINK_CONCURRENCY, selected.length) }, async () => {
+    while (cursor < selected.length) {
+      const candidate = selected[cursor++];
       const { url } = candidate;
       const remaining = deadline - Date.now();
       if (remaining <= 0) {
-        if (!budgetWarningAdded) {
-          budgetWarningAdded = true;
-          addFinding(findings, "warning", "link-budget", "HTTP(S) link checks stopped at the total network time budget; unverified links are warnings, not publish failures.");
-        }
+        skippedByBudget.push(candidate);
         continue;
       }
       requested += 1;
@@ -890,7 +1562,28 @@ async function validateHttpLinks(
     }
   });
   await Promise.all(workers);
-  return { requested, skipped: skipped + Math.max(0, unique.length - requested) };
+  const sourceLinksSkippedByBudget = skippedByBudget.filter((candidate) => candidate.isSource).length;
+  const otherLinksSkippedByBudget = skippedByBudget.length - sourceLinksSkippedByBudget;
+  if (sourceLinksSkippedByBudget > 0) {
+    addFinding(
+      findings,
+      "error",
+      "source-link-budget",
+      `${sourceLinksSkippedByBudget} Source link(s) were not checked before the total network time budget expired.`,
+    );
+  }
+  if (otherLinksSkippedByBudget > 0) {
+    addFinding(
+      findings,
+      "warning",
+      "link-budget",
+      `${otherLinksSkippedByBudget} non-Source HTTP(S) link(s) were not checked before the total network time budget expired.`,
+    );
+  }
+  return {
+    requested,
+    skipped: skippedByCap + skippedByBudget.length,
+  };
 }
 
 export async function validateWeeklyEmail(
@@ -905,17 +1598,27 @@ export async function validateWeeklyEmail(
   const requireScaleMetadata = options.requireScaleMetadata ?? (
     /^\d{4}-\d{2}-\d{2}$/.test(issueId) && issueId >= SCALE_METADATA_CUTOVER
   );
+  const requireEditorialContract = options.requireEditorialContract ?? (
+    /^\d{4}-\d{2}-\d{2}$/.test(issueId) && issueId >= EDITORIAL_CONTRACT_CUTOVER
+  );
+  const coverageMatches = matchCardsToCoverageDeals(cards, options.coverageDeals);
 
   validateSectorOrder(sections, findings);
-  validateCardStructure(cards, findings);
+  validateCardStructure(cards, findings, requireEditorialContract);
   sections.forEach((section) => validateScaleOrder(section, findings, requireScaleMetadata));
-  validateThemes(document, sections, findings);
+  validateThemes(document, sections, coverageMatches.dealByCard, findings, requireEditorialContract);
+  if (requireEditorialContract) {
+    validatePreheaderSectorOrder(document, sections, findings);
+    validatePreviousEditionSectorOrder(document, sections, findings);
+    validateCanonicalSponsorNaming(document, findings);
+  }
   validateYtdTable(document, "Deal Count By Sector (YTD)", findings);
   validateYtdTable(document, "Deal Count By Region (YTD)", findings);
   const contrastTextRunsChecked = validateContrast(document, findings);
   const staticCoverageMatched = validateStaticCoverage(
     cards,
     options.coverageDeals,
+    coverageMatches,
     options.requireStaticCoverage ?? false,
     findings,
   );
@@ -1013,6 +1716,7 @@ async function loadStaticCoverage(issuePath: string): Promise<StaticCoverageDeal
       id: deal.id,
       target: deal.target,
       sector: deal.sector,
+      country: deal.country,
       sourceUrl: deal.sourceUrl,
     }));
 }
@@ -1034,6 +1738,7 @@ function loadCoverageFile(path: string): StaticCoverageDeal[] {
       id: typeof value.id === "string" ? value.id : undefined,
       target: value.target as string,
       sector: typeof value.sector === "string" ? value.sector : undefined,
+      country: typeof value.country === "string" ? value.country : undefined,
       sourceUrl: typeof value.sourceUrl === "string" ? value.sourceUrl : undefined,
     };
   });

@@ -27,6 +27,8 @@ const publishable = {
   updatedAt: new Date("2026-07-22T12:00:00.000Z"),
   target: "Target",
   country: "United States",
+  sector: "UTILITIES",
+  region: "NORTH_AMERICA",
   date: new Date("2026-07-21T00:00:00.000Z"),
   dealStatus: "ANNOUNCED",
   categories: ["ACQUISITION_BUYOUT"],
@@ -51,6 +53,25 @@ describe("deal publication seller gate", () => {
     await expect(publishDeal("deal-1")).resolves.toMatchObject({
       success: false,
       error: expect.stringContaining("seller or reviewed seller-disclosure reason"),
+    });
+    expect(mocks.transaction).not.toHaveBeenCalled();
+  });
+
+  it.each([
+    ["sector", { sector: null }],
+    ["region", { region: null }],
+  ])("blocks publication when %s is absent from a legacy record", async (field, missing) => {
+    mocks.findUnique.mockResolvedValue({
+      ...publishable,
+      ...missing,
+      sellerDisclosureStatus: "DISCLOSED",
+      sellerDisclosureReason: null,
+      participants: [{ role: "BUYER" }, { role: "SELLER" }],
+    });
+
+    await expect(publishDeal("deal-1")).resolves.toEqual({
+      success: false,
+      error: `Publication blocked. Missing: ${field}.`,
     });
     expect(mocks.transaction).not.toHaveBeenCalled();
   });

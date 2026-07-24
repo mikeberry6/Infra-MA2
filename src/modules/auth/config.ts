@@ -10,9 +10,11 @@ import {
   recordFailedLogin,
   requestIp,
 } from "@/modules/auth/throttle";
+import { exceedsBcryptPasswordLimit } from "@/modules/auth/password-policy";
 import { PRIVILEGED_SESSION_MAX_AGE_SECONDS } from "@/modules/auth/session";
 
 const DUMMY_PASSWORD_HASH = "$2b$12$jO.JJSOjJqs4/KuQ7eKiNe2n89mzPsIrPUQZq3FjGA4QTmutfH8Ci";
+const INVALID_PASSWORD = "invalid-overlong-password";
 
 export const authOptions: NextAuthOptions = {
   logger: {
@@ -59,10 +61,13 @@ export const authOptions: NextAuthOptions = {
           where: { email },
         });
 
-        const isValid = await bcrypt.compare(
-          credentials.password,
-          user?.passwordHash ?? DUMMY_PASSWORD_HASH,
-        );
+        const passwordExceedsBcryptLimit = exceedsBcryptPasswordLimit(credentials.password);
+        const isValid = passwordExceedsBcryptLimit
+          ? await bcrypt.compare(INVALID_PASSWORD, DUMMY_PASSWORD_HASH)
+          : await bcrypt.compare(
+              credentials.password,
+              user?.passwordHash ?? DUMMY_PASSWORD_HASH,
+            );
         if (!user || !isValid) {
           await recordFailedLogin(email, ip);
           return null;

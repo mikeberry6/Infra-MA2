@@ -17,6 +17,38 @@ const SOURCE_EXTENSIONS = new Set([
 const PRODUCTION_SOURCE_ROOTS = ["src", "scripts", "prisma"];
 const AUDIT_FACTORY_PATH = "src/modules/operations/audit.ts";
 const IMPORT_COMMIT_PATH = "src/modules/imports/commit.ts";
+const ADMIN_CONTENT_TRANSACTION_PATHS = [
+  "src/modules/admin/actions.ts",
+  "src/modules/dashboard/admin-actions.ts",
+];
+const ADMIN_CONTENT_MODELS = new Set([
+  "alias",
+  "citation",
+  "company",
+  "companyRedirect",
+  "dashboardSignal",
+  "deal",
+  "dealParticipant",
+  "fund",
+  "managementRole",
+  "milestone",
+  "newsMention",
+  "organization",
+  "ownershipPeriod",
+  "source",
+]);
+const ADMIN_CONTENT_MUTATION_METHODS = new Set([
+  "create",
+  "createMany",
+  "delete",
+  "deleteMany",
+  "update",
+  "updateMany",
+  "upsert",
+]);
+const ADMIN_CONTENT_MUTATION_HELPERS = new Set([
+  "replacePrimaryCitation",
+]);
 
 function productionSourceFiles(directory: string): string[] {
   const files: string[] = [];
@@ -61,6 +93,178 @@ function isAuditEventCreate(node: ts.CallExpression): boolean {
 
 function isRecordAuditEventCall(node: ts.CallExpression): boolean {
   return ts.isIdentifier(node.expression) && node.expression.text === "recordAuditEvent";
+}
+
+function isAuditMutationCall(node: ts.CallExpression): boolean {
+  return ts.isIdentifier(node.expression) && node.expression.text === "auditMutation";
+}
+
+function hasIdentifierArgument(
+  node: ts.CallExpression,
+  argumentIndex: number,
+  expectedName: string,
+): boolean {
+  const argument = node.arguments[argumentIndex];
+  return Boolean(argument && ts.isIdentifier(argument) && argument.text === expectedName);
+}
+
+function isAuditEventCreateUsingClient(
+  node: ts.CallExpression,
+  expectedName: string,
+): boolean {
+  if (!isAuditEventCreate(node) || !ts.isPropertyAccessExpression(node.expression)) {
+    return false;
+  }
+  const auditEventReceiver = node.expression.expression;
+  return ts.isPropertyAccessExpression(auditEventReceiver)
+    && ts.isIdentifier(auditEventReceiver.expression)
+    && auditEventReceiver.expression.text === expectedName;
+}
+
+function isTransactionCall(node: ts.CallExpression): boolean {
+  return ts.isPropertyAccessExpression(node.expression)
+    && node.expression.name.text === "$transaction";
+}
+
+function contentMutationDescription(
+  node: ts.CallExpression,
+  transactionClientName: string,
+  includeHelpers = true,
+): string | null {
+  if (
+    includeHelpers
+    && ts.isIdentifier(node.expression)
+    && ADMIN_CONTENT_MUTATION_HELPERS.has(node.expression.text)
+  ) {
+    return node.expression.text;
+  }
+  if (
+    !ts.isPropertyAccessExpression(node.expression)
+    || !ADMIN_CONTENT_MUTATION_METHODS.has(node.expression.name.text)
+  ) {
+    return null;
+  }
+  const receiver = node.expression.expression;
+  if (
+    !ts.isPropertyAccessExpression(receiver)
+    || !ts.isIdentifier(receiver.expression)
+    || receiver.expression.text !== transactionClientName
+    || !ADMIN_CONTENT_MODELS.has(receiver.name.text)
+  ) {
+    return null;
+  }
+  return `${receiver.name.text}.${node.expression.name.text}`;
+}
+
+function nonTransactionalAdminContentWrites(
+  sourceText: string,
+  sourcePath: string,
+): string[] {
+  const sourceFile = ts.createSourceFile(
+    sourcePath,
+    sourceText,
+    ts.ScriptTarget.Latest,
+    true,
+    sourcePath.endsWith("x") ? ts.ScriptKind.TSX : ts.ScriptKind.TS,
+  );
+  const failures: string[] = [];
+  const inspect = (node: ts.Node): void => {
+    if (ts.isCallExpression(node)) {
+      const mutation = contentMutationDescription(node, "prisma", false);
+      if (mutation) {
+        const { line } = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile));
+        failures.push(`${sourcePath}:${line + 1} (${mutation})`);
+      }
+    }
+    ts.forEachChild(node, inspect);
+  };
+  inspect(sourceFile);
+  return failures;
+}
+
+function unauditedAdminContentTransactions(
+  sourceText: string,
+  sourcePath: string,
+): string[] {
+  const sourceFile = ts.createSourceFile(
+    sourcePath,
+    sourceText,
+    ts.ScriptTarget.Latest,
+    true,
+    sourcePath.endsWith("x") ? ts.ScriptKind.TSX : ts.ScriptKind.TS,
+  );
+  const failures: string[] = [];
+
+  const inspect = (node: ts.Node): void => {
+    if (ts.isCallExpression(node) && isTransactionCall(node)) {
+      const callback = node.arguments[0];
+      if (
+        callback
+        && (ts.isArrowFunction(callback) || ts.isFunctionExpression(callback))
+        && callback.parameters.length > 0
+        && ts.isIdentifier(callback.parameters[0].name)
+      ) {
+        const transactionClientName = callback.parameters[0].name.text;
+        const mutations: string[] = [];
+        let hasAudit = false;
+        const inspectTransaction = (transactionNode: ts.Node): void => {
+          if (ts.isCallExpression(transactionNode)) {
+            const mutation = contentMutationDescription(
+              transactionNode,
+              transactionClientName,
+            );
+            if (mutation) mutations.push(mutation);
+            if (
+              (
+                isAuditMutationCall(transactionNode)
+                && hasIdentifierArgument(transactionNode, 4, transactionClientName)
+              )
+              || (
+                isRecordAuditEventCall(transactionNode)
+                && hasIdentifierArgument(transactionNode, 1, transactionClientName)
+              )
+              || isAuditEventCreateUsingClient(transactionNode, transactionClientName)
+            ) {
+              hasAudit = true;
+            }
+          }
+          ts.forEachChild(transactionNode, inspectTransaction);
+        };
+        inspectTransaction(callback.body);
+        if (mutations.length > 0 && !hasAudit) {
+          const { line } = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile));
+          failures.push(
+            `${sourcePath}:${line + 1} (${[...new Set(mutations)].sort().join(", ")})`,
+          );
+        }
+      }
+    }
+    ts.forEachChild(node, inspect);
+  };
+
+  inspect(sourceFile);
+  return failures;
+}
+
+function exportedAsyncFunctionBlocks(sourceText: string): Array<{ name: string; body: string }> {
+  const sourceFile = ts.createSourceFile(
+    "actions.ts",
+    sourceText,
+    ts.ScriptTarget.Latest,
+    true,
+    ts.ScriptKind.TS,
+  );
+  return sourceFile.statements.flatMap((node) => {
+    if (
+      !ts.isFunctionDeclaration(node)
+      || !node.name
+      || !node.modifiers?.some((modifier) => modifier.kind === ts.SyntaxKind.ExportKeyword)
+      || !node.modifiers.some((modifier) => modifier.kind === ts.SyntaxKind.AsyncKeyword)
+    ) {
+      return [];
+    }
+    return [{ name: node.name.text, body: node.getText(sourceFile) }];
+  });
 }
 
 function propertyName(node: ts.ObjectLiteralElementLike): string | null {
@@ -236,6 +440,104 @@ describe("admin audit changed-field contracts", () => {
     expect(script).not.toContain("tx.dealParticipant.deleteMany(");
     expect(script).not.toContain("tx.citation.deleteMany(");
     expect(script).not.toContain('changedFields: ["record"');
+  });
+
+  it("requires every exported editorial action to own an audited transaction", () => {
+    const exportedActions = exportedAsyncFunctionBlocks(actions);
+
+    expect(exportedActions.length).toBeGreaterThan(0);
+    for (const action of exportedActions) {
+      expect(action.body, `${action.name} must use an atomic transaction`).toContain(
+        "prisma.$transaction",
+      );
+      expect(
+        action.body.includes("auditMutation(") || action.body.includes("recordAuditEvent("),
+        `${action.name} must write its AuditEvent inside the content transaction`,
+      ).toBe(true);
+    }
+  });
+
+  it("requires each admin content-write transaction to contain an audit write", () => {
+    const failures = ADMIN_CONTENT_TRANSACTION_PATHS.flatMap((sourcePath) =>
+      unauditedAdminContentTransactions(readFileSync(sourcePath, "utf8"), sourcePath)
+    );
+
+    expect(
+      failures,
+      "Admin content transactions with writes but no AuditEvent in the same callback",
+    ).toEqual([]);
+  });
+
+  it("forbids non-transactional admin content writes that could escape their audit", () => {
+    const failures = ADMIN_CONTENT_TRANSACTION_PATHS.flatMap((sourcePath) =>
+      nonTransactionalAdminContentWrites(readFileSync(sourcePath, "utf8"), sourcePath)
+    );
+
+    expect(
+      failures,
+      "Admin content writes must be enclosed by the same transaction as their AuditEvent",
+    ).toEqual([]);
+  });
+
+  it("detects an admin content transaction that mutates without an audit", () => {
+    const fixture = `
+      export async function unsafeUpdate() {
+        await prisma.$transaction(async (tx) => {
+          await tx.deal.update({ where: { id: "deal-1" }, data: { target: "Changed" } });
+        });
+      }
+    `;
+
+    expect(unauditedAdminContentTransactions(fixture, "unsafe-action.ts")).toEqual([
+      "unsafe-action.ts:3 (deal.update)",
+    ]);
+  });
+
+  it("rejects an audit helper call that omits the current transaction client", () => {
+    const fixture = `
+      export async function unsafeUpdate() {
+        await prisma.$transaction(async (tx) => {
+          await tx.deal.update({ where: { id: "deal-1" }, data: { target: "Changed" } });
+          await auditMutation("Deal", "deal-1", "UPDATE", ["target"]);
+        });
+      }
+    `;
+
+    expect(unauditedAdminContentTransactions(fixture, "unsafe-action.ts")).toEqual([
+      "unsafe-action.ts:3 (deal.update)",
+    ]);
+  });
+
+  it("rejects an audit write that uses a different client", () => {
+    const fixture = `
+      export async function unsafeUpdate() {
+        await prisma.$transaction(async (tx) => {
+          await tx.deal.update({ where: { id: "deal-1" }, data: { target: "Changed" } });
+          await recordAuditEvent({
+            entityType: "Deal",
+            entityId: "deal-1",
+            action: "UPDATE",
+            changes: { changedFields: ["target"] },
+          }, prisma);
+        });
+      }
+    `;
+
+    expect(unauditedAdminContentTransactions(fixture, "unsafe-action.ts")).toEqual([
+      "unsafe-action.ts:3 (deal.update)",
+    ]);
+  });
+
+  it("detects a non-transactional admin content write", () => {
+    const fixture = `
+      export async function unsafeUpdate() {
+        await prisma.company.update({ where: { id: "company-1" }, data: { name: "Changed" } });
+      }
+    `;
+
+    expect(nonTransactionalAdminContentWrites(fixture, "unsafe-action.ts")).toEqual([
+      "unsafe-action.ts:3 (company.update)",
+    ]);
   });
 
   it("requires every production mutation audit call to provide a changedFields contract", () => {

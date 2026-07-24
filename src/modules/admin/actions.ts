@@ -23,6 +23,7 @@ import {
 import { changedFieldSummary, deletedFieldSummary } from "@/modules/admin/change-summary";
 import {
   companyPublicationIntegritySelect,
+  dealPublicationIntegritySelect,
   missingCompanyPublicationFields,
   missingDealPublicationFields,
   missingFundPublicationFields,
@@ -117,8 +118,8 @@ async function auditMutation(
   entityType: string,
   entityId: string,
   action: string,
-  changedFields: string[] = [],
-  client?: Prisma.TransactionClient,
+  changedFields: string[],
+  client: Prisma.TransactionClient,
 ) {
   return recordAuditEvent({
     entityType,
@@ -631,15 +632,7 @@ export async function publishDeal(id: string): Promise<ActionResult> {
       select: {
         status: true,
         updatedAt: true,
-        target: true,
-        country: true,
-        date: true,
-        dealStatus: true,
-        sellerDisclosureStatus: true,
-        sellerDisclosureReason: true,
-        categories: true,
-        participants: { select: { role: true } },
-        citations: { where: { isPrimary: true }, select: { id: true } },
+        ...dealPublicationIntegritySelect,
       },
     });
     if (!deal) return { success: false, error: "Deal not found" };
@@ -677,15 +670,7 @@ export async function verifyDeal(id: string): Promise<ActionResult> {
       select: {
         status: true,
         updatedAt: true,
-        target: true,
-        country: true,
-        date: true,
-        dealStatus: true,
-        sellerDisclosureStatus: true,
-        sellerDisclosureReason: true,
-        categories: true,
-        participants: { select: { role: true } },
-        citations: { where: { isPrimary: true }, select: { id: true } },
+        ...dealPublicationIntegritySelect,
       },
     });
     if (!deal) return { success: false, error: "Deal not found" };
