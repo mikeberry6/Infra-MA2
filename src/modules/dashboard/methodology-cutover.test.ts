@@ -1,52 +1,106 @@
 import { describe, expect, it } from "vitest";
-import { dashboardMethodologyCutoverReason } from "@/modules/dashboard/methodology-cutover";
+import {
+  DASHBOARD_METHODOLOGY_CUTOVER_TARGETS,
+  DASHBOARD_METHODOLOGY_VERSIONS,
+  dashboardMethodologyCutoverReason,
+  FEDERAL_REGISTER_METHODOLOGY_DOCUMENT_TYPES,
+  SAM_GOV_METHODOLOGY_PAGE_SIZE,
+} from "@/modules/dashboard/methodology-cutover";
 
 describe("dashboard methodology cutover", () => {
-  it("quarantines legacy first-page USAspending history", () => {
-    expect(dashboardMethodologyCutoverReason({
-      metricId: "usaspending_infra_awards_30d",
-      sourceId: "usaspending",
-      status: "LIVE",
-      metadata: { returnedAwards: 25, hasNext: true },
-    })).toBe("legacy USAspending first-page count");
+  it("quarantines old USAspending award rows even when countEndpoint metadata is present", () => {
+    expect(cutoverReason(
+      "usaspending_infra_awards_30d",
+      "usaspending",
+      { countEndpoint: true, awardTypeCounts: { contracts: 10 } },
+    )).toBe("pre-version USAspending award-count methodology");
 
-    expect(dashboardMethodologyCutoverReason({
-      metricId: "usaspending_infra_awards_30d",
-      sourceId: "usaspending",
-      status: "LIVE",
-      metadata: { countEndpoint: true, awardTypeCounts: { contracts: 10 } },
-    })).toBeNull();
-  });
-
-  it("quarantines legacy combined-query Federal Register history", () => {
-    expect(dashboardMethodologyCutoverReason({
-      metricId: "federal_register_infra_notices",
-      sourceId: "federal-register",
-      status: "CACHED",
-      metadata: { resultLimit: 20, query: "infrastructure energy" },
-    })).toBe("legacy Federal Register combined-query count");
-
-    expect(dashboardMethodologyCutoverReason({
-      metricId: "federal_register_infra_notices",
-      sourceId: "federal-register",
-      status: "LIVE",
-      metadata: {
-        deduplicatedBy: "document_number",
-        documentTypes: ["Notice", "Rule", "Proposed Rule"],
+    expect(cutoverReason(
+      "usaspending_infra_awards_30d",
+      "usaspending",
+      {
+        methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.usaSpendingAwards30d,
+        countEndpoint: false,
       },
-    })).toBeNull();
+    )).toBe("pre-version USAspending award-count methodology");
   });
 
-  it("leaves sample, unavailable, unrelated, and current-method rows untouched", () => {
+  it("quarantines old USAspending obligations and SAM.gov rows", () => {
+    expect(cutoverReason(
+      "usaspending_infra_obligations_30d",
+      "usaspending",
+      { aggregation: "spending_over_time.aggregated_amount" },
+    )).toBe("pre-version USAspending obligations methodology");
+
+    expect(cutoverReason(
+      "sam_opportunities",
+      "sam-gov",
+      { pagination: "offset", pageSize: SAM_GOV_METHODOLOGY_PAGE_SIZE },
+    )).toBe("pre-version SAM.gov opportunities methodology");
+  });
+
+  it("requires an exact Federal Register document-type set", () => {
+    expect(cutoverReason(
+      "federal_register_infra_notices",
+      "federal-register",
+      {
+        methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.federalRegisterInfraNotices,
+        deduplicatedBy: "document_number",
+        documentTypes: [...FEDERAL_REGISTER_METHODOLOGY_DOCUMENT_TYPES, "Presidential Document"],
+      },
+    )).toBe("pre-version Federal Register term-deduplication methodology");
+  });
+
+  it("accepts every current, structurally valid methodology version", () => {
+    expect(cutoverReason(
+      "usaspending_infra_awards_30d",
+      "usaspending",
+      {
+        methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.usaSpendingAwards30d,
+        countEndpoint: true,
+      },
+    )).toBeNull();
+    expect(cutoverReason(
+      "usaspending_infra_obligations_30d",
+      "usaspending",
+      {
+        methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.usaSpendingObligations30d,
+        aggregation: "spending_over_time.aggregated_amount",
+      },
+    )).toBeNull();
+    expect(cutoverReason(
+      "sam_opportunities",
+      "sam-gov",
+      {
+        methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.samGovOpportunities,
+        pagination: "offset",
+        pageSize: SAM_GOV_METHODOLOGY_PAGE_SIZE,
+      },
+    )).toBeNull();
+    expect(cutoverReason(
+      "federal_register_infra_notices",
+      "federal-register",
+      {
+        methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.federalRegisterInfraNotices,
+        deduplicatedBy: "document_number",
+        documentTypes: ["Proposed Rule", "Notice", "Rule"],
+      },
+    )).toBeNull();
+  });
+
+  it("exports one complete cutover target per affected metric", () => {
+    expect(DASHBOARD_METHODOLOGY_CUTOVER_TARGETS.map((target) => target.metricId)).toEqual([
+      "usaspending_infra_awards_30d",
+      "usaspending_infra_obligations_30d",
+      "sam_opportunities",
+      "federal_register_infra_notices",
+    ]);
+  });
+
+  it("leaves already-unavailable and unrelated rows untouched", () => {
     expect(dashboardMethodologyCutoverReason({
-      metricId: "usaspending_infra_awards_30d",
-      sourceId: "usaspending",
-      status: "SAMPLE",
-      metadata: null,
-    })).toBeNull();
-    expect(dashboardMethodologyCutoverReason({
-      metricId: "federal_register_infra_notices",
-      sourceId: "federal-register",
+      metricId: "sam_opportunities",
+      sourceId: "sam-gov",
       status: "UNAVAILABLE",
       metadata: null,
     })).toBeNull();
@@ -58,3 +112,11 @@ describe("dashboard methodology cutover", () => {
     })).toBeNull();
   });
 });
+
+function cutoverReason(
+  metricId: string,
+  sourceId: string,
+  metadata: Record<string, unknown>,
+): string | null {
+  return dashboardMethodologyCutoverReason({ metricId, sourceId, status: "LIVE", metadata });
+}

@@ -56,7 +56,51 @@ function peelSuffixes(s: string): string {
   return n;
 }
 
+function normalizeIdentityDefiningParenthetical(value: string): string | null {
+  const normalized = stripPunctAndCollapse(value.toLowerCase());
+  const geographicScopeAliases: Record<string, string> = {
+    us: "united states",
+    "u s": "united states",
+    usa: "united states",
+    "u s a": "united states",
+    "united states": "united states",
+    uk: "united kingdom",
+    "u k": "united kingdom",
+    "united kingdom": "united kingdom",
+    canada: "canada",
+    europe: "europe",
+    "north america": "north america",
+    "asia pacific": "asia pacific",
+    apac: "asia pacific",
+    "latin america": "latin america",
+    latam: "latin america",
+    global: "global",
+  };
+  const geographicScope = geographicScopeAliases[normalized];
+  if (geographicScope) return geographicScope;
+
+  if (/^(?:via|formerly|aka|also known as|including)\b/.test(normalized)) {
+    return null;
+  }
+  if (/\b(?:jv|jvs|joint venture|joint ventures)\b/.test(normalized)) {
+    return normalized
+      .replace(/\bjvs\b/g, "joint ventures")
+      .replace(/\bjv\b/g, "joint venture");
+  }
+  return null;
+}
+
+function stripNonIdentityParentheticals(s: string): string {
+  return s.replace(/\s*\(([^)]*)\)\s*/g, (_match, content: string) => {
+    const identity = normalizeIdentityDefiningParenthetical(content);
+    return identity ? ` ${identity} ` : " ";
+  });
+}
+
 function applyCuratedAliases(s: string): string {
+  if (s === "alphagen") {
+    return "alpha generation";
+  }
   if (
     s === "vantage sdc" ||
     s === "vantage data centers north america" ||
@@ -66,9 +110,6 @@ function applyCuratedAliases(s: string): string {
   }
   if (s === "cleco corporate" || s === "cleco group") {
     return "cleco";
-  }
-  if (s === "puget energy puget sound energy") {
-    return "puget sound energy";
   }
   return s;
 }
@@ -80,12 +121,12 @@ const PREFERRED_DISPLAY_BY_KEY: Record<string, string> = {
   "gct global container terminals": "GCT Global Container Terminals",
 };
 
-// Returns the primary canonical key (parens stripped to nothing). Kept as a
-// named export for callers that just want a single key (most callers should
-// use `companyDedupKeys` instead).
+// Returns the primary canonical key (non-identity parens stripped to
+// nothing). Kept as a named export for callers that just want a single key
+// (most callers should use `companyDedupKeys` instead).
 export function canonicalCompanyKey(name: string): string {
   let n = name.toLowerCase().trim();
-  n = n.replace(/\s*\([^)]*\)\s*/g, " ");
+  n = stripNonIdentityParentheticals(n);
   n = stripPunctAndCollapse(n);
   n = n.replace(/^the\s+/, "").trim();
   return applyCuratedAliases(peelSuffixes(n));
@@ -94,8 +135,9 @@ export function canonicalCompanyKey(name: string): string {
 // Returns the SET of equivalence keys for a company name. Two companies
 // match if these sets intersect.
 //
-//  - keyA: parens stripped to nothing — collapses "X (alias)" with "X".
-//          Catches the ASTP / ALLO / via-X patterns.
+//  - keyA: non-identity parens stripped to nothing — collapses "X (alias)"
+//          with "X". Catches the ASTP / ALLO / via-X patterns without
+//          removing geographic or JV identity.
 //  - keyB: parens flattened to bare tokens — collapses
 //          "Etobicoke General Hospital (Phase 1 Patient Tower)" with the
 //          same string written without the parens.
@@ -105,8 +147,9 @@ export function companyDedupKeys(name: string): Set<string> {
   const lower = name.toLowerCase().trim();
   const keys = new Set<string>();
 
-  // Variant A: parens stripped entirely.
-  let a = lower.replace(/\s*\([^)]*\)\s*/g, " ");
+  // Variant A: non-identity parens stripped entirely. Geographic scopes and
+  // JV names remain because removing them would conflate distinct entities.
+  let a = stripNonIdentityParentheticals(lower);
   a = stripPunctAndCollapse(a);
   a = a.replace(/^the\s+/, "").trim();
   a = applyCuratedAliases(peelSuffixes(a));

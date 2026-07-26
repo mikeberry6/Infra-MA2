@@ -34,6 +34,10 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
         },
         orderBy: { createdAt: "desc" },
       },
+      citations: {
+        include: { source: { select: { label: true, url: true } } },
+        orderBy: [{ isPrimary: "desc" }, { id: "asc" }],
+      },
     },
   });
 
@@ -51,7 +55,8 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
     "";
   const investmentYear = primaryOwnership?.investmentYear || undefined;
 
-  const initialData: Partial<CompanyView> = {
+  const primaryCitation = company.citations.find((citation) => citation.isPrimary) ?? company.citations[0];
+  const initialData: Partial<CompanyView> & { sourceName?: string; sourceUrl?: string } = {
     id: company.id,
     name: company.name,
     investmentFirm,
@@ -66,6 +71,8 @@ export default async function EditCompanyPage({ params }: { params: Promise<{ id
     yearFounded: company.yearFounded || undefined,
     investmentYear,
     headquarters: company.headquarters || undefined,
+    sourceName: primaryCitation?.source.label || "",
+    sourceUrl: primaryCitation?.source.url || "",
   };
 
   const boundUpdate = updateCompany.bind(null, id);

@@ -4,6 +4,7 @@ import {
   applyDashboardValueTransform,
   DASHBOARD_SOURCE_REGISTRY,
 } from "@/modules/dashboard/source-registry";
+import { DASHBOARD_METHODOLOGY_VERSION_BY_METRIC_ID } from "@/modules/dashboard/methodology-cutover";
 
 describe("dashboard source registry", () => {
   it("is the exact publication allowlist and contains the required source contract", () => {
@@ -55,5 +56,16 @@ describe("dashboard source registry", () => {
     expect(DASHBOARD_SOURCE_REGISTRY
       .filter((entry) => entry.sourceId === "treasury")
       .every((entry) => entry.staleAfterDays === 5)).toBe(true);
+  });
+
+  it("declares the immutable methodology version for every cutover metric", () => {
+    const entries = new Map(DASHBOARD_SOURCE_REGISTRY.map((entry) => [entry.metricId, entry]));
+
+    for (const [metricId, methodologyVersion] of Object.entries(DASHBOARD_METHODOLOGY_VERSION_BY_METRIC_ID)) {
+      expect(entries.get(metricId)).toMatchObject({ methodologyVersion });
+    }
+    expect(DASHBOARD_SOURCE_REGISTRY
+      .filter((entry) => entry.methodologyVersion !== undefined))
+      .toHaveLength(Object.keys(DASHBOARD_METHODOLOGY_VERSION_BY_METRIC_ID).length);
   });
 });

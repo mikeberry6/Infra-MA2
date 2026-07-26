@@ -1,4 +1,5 @@
 import { isSampleDashboardRecord } from "@/modules/dashboard/publication";
+import { dashboardMethodologyCutoverReason } from "@/modules/dashboard/methodology-cutover";
 import { DASHBOARD_SOURCE_REGISTRY_BY_METRIC } from "@/modules/dashboard/source-registry";
 import type { DashboardMetric } from "@/modules/dashboard/types";
 
@@ -30,6 +31,12 @@ export function dashboardObservationProblems(
   if (row.sourceId !== metric.source.id) problems.push(`source ${row.sourceId}`);
   if (!(["LIVE", "CACHED"] as string[]).includes(row.status)) problems.push(`status ${row.status}`);
   if (isSampleDashboardRecord({ sourceId: row.sourceId, metadata: row.metadata })) problems.push("sample provenance");
+  if (dashboardMethodologyCutoverReason({
+    metricId: metric.id,
+    sourceId: row.sourceId,
+    status: row.status,
+    metadata: row.metadata,
+  }) !== null) problems.push("incompatible methodology");
   if (numericMetric && !hasFiniteNumber) problems.push("missing numeric value");
   if (numericMetric && hasText) problems.push("unexpected text value");
   if (!numericMetric && row.value !== null) problems.push("unexpected numeric value");

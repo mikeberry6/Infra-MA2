@@ -1,12 +1,7 @@
 #!/usr/bin/env node
 
-import { execFile as execFileCallback } from "node:child_process";
-import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
-import { tmpdir } from "node:os";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { promisify } from "node:util";
-
-const execFile = promisify(execFileCallback);
 
 function option(name, fallback) {
   const prefix = `--${name}=`;
@@ -24,65 +19,61 @@ if (!baseUrl) {
   console.error("--base-url is required.");
   process.exit(2);
 }
+if (expectedVersion && !/^[0-9a-f]{40}$/.test(expectedVersion)) {
+  console.error("--expected-version must be a full lowercase Git SHA.");
+  process.exit(2);
+}
 
 const origin = new URL(baseUrl).origin;
 const checks = [];
-if (!new Set(["fetch", "vercel-cli"]).has(transport)) {
-  console.error("--transport must be fetch or vercel-cli.");
+if (!new Set(["fetch", "vercel-bypass", "vercel-oidc"]).has(transport)) {
+  console.error("--transport must be fetch, vercel-bypass, or vercel-oidc.");
   process.exit(2);
 }
-if (transport === "vercel-cli" && (!process.env.VERCEL_CLI_CWD || !process.env.VERCEL_TOKEN || !process.env.VERCEL_SCOPE)) {
-  console.error("VERCEL_CLI_CWD, VERCEL_TOKEN, and VERCEL_SCOPE are required for the Vercel CLI transport.");
+const protectionBypass = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+const trustedOidcToken = process.env.VERCEL_TRUSTED_OIDC_TOKEN;
+if (
+  transport === "vercel-bypass"
+  && (!protectionBypass || protectionBypass.length < 16 || /[\r\n]/.test(protectionBypass))
+) {
+  console.error("VERCEL_AUTOMATION_BYPASS_SECRET is required for the Vercel bypass transport.");
+  process.exit(2);
+}
+if (
+  transport === "vercel-oidc"
+  && (
+    !trustedOidcToken
+    || trustedOidcToken.length < 64
+    || !/^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(trustedOidcToken)
+  )
+) {
+  console.error("VERCEL_TRUSTED_OIDC_TOKEN must be a valid GitHub OIDC JWT for the Vercel OIDC transport.");
   process.exit(2);
 }
 
 const redirectStatuses = new Set([301, 302, 303, 307, 308]);
 
-async function vercelCliRequest(url) {
-  const parsed = new URL(url);
-  if (parsed.origin !== origin) throw new Error(`Refusing Vercel CLI request outside candidate origin: ${parsed.origin}`);
-  const requestPath = `${parsed.pathname}${parsed.search}`;
-  const requestDir = await mkdtemp(path.join(tmpdir(), "release-smoke-"));
-  const headersPath = path.join(requestDir, "headers.txt");
-  const bodyPath = path.join(requestDir, "body.txt");
-  const marker = "__RELEASE_SMOKE__";
-  try {
-    const { stdout } = await execFile("npx", [
-      "--yes", "vercel@51.7.0", "curl", requestPath,
-      "--deployment", origin,
-      "--yes",
-      "--cwd", process.env.VERCEL_CLI_CWD,
-      "--scope", process.env.VERCEL_SCOPE,
-      "--token", process.env.VERCEL_TOKEN,
-      "--",
-      "--silent", "--show-error", "--connect-timeout", "10", "--max-time", "20", "--max-redirs", "0",
-      "--dump-header", headersPath,
-      "--output", bodyPath,
-      "--write-out", `\n${marker}%{http_code}\t%{url_effective}\n`,
-    ], { maxBuffer: 4 * 1024 * 1024, timeout: 45_000 });
-    const matches = [...stdout.matchAll(new RegExp(`${marker}(\\d{3})\\t([^\\r\\n]+)`, "g"))];
-    const match = matches.at(-1);
-    if (!match) throw new Error("Vercel CLI transport did not return HTTP metadata.");
-    const rawHeaders = await readFile(headersPath, "utf8");
-    const body = await readFile(bodyPath, "utf8");
-    const location = rawHeaders.match(/^location:\s*(.+)$/im)?.[1]?.trim() ?? null;
-    return {
-      status: Number(match[1]),
-      url: match[2],
-      location,
-      async json() { return JSON.parse(body); },
-    };
-  } finally {
-    await rm(requestDir, { recursive: true, force: true });
-  }
-}
-
-async function fetchViaVercelCli(url) {
+async function fetchViaVercelProtection(url, init) {
   let currentUrl = url;
   for (let redirectCount = 0; redirectCount <= 10; redirectCount += 1) {
-    const response = await vercelCliRequest(currentUrl);
-    if (!redirectStatuses.has(response.status) || !response.location) return response;
-    const nextUrl = new URL(response.location, currentUrl);
+    if (new URL(currentUrl).origin !== origin) {
+      throw new Error(`Refusing protected Vercel request outside candidate origin: ${new URL(currentUrl).origin}`);
+    }
+    const headers = new Headers(init.headers);
+    if (transport === "vercel-oidc") {
+      headers.set("x-vercel-trusted-oidc-idp-token", trustedOidcToken);
+    } else {
+      headers.set("x-vercel-protection-bypass", protectionBypass);
+    }
+    const response = await fetch(currentUrl, {
+      ...init,
+      headers,
+      redirect: "manual",
+      signal: AbortSignal.timeout(20_000),
+    });
+    const location = response.headers.get("location");
+    if (!redirectStatuses.has(response.status) || !location) return response;
+    const nextUrl = new URL(location, currentUrl);
     if (nextUrl.origin !== origin) throw new Error(`Refusing cross-origin redirect to ${nextUrl.origin}.`);
     currentUrl = nextUrl.toString();
   }
@@ -93,8 +84,8 @@ async function fetchWithRetry(url, init = {}) {
   let lastError;
   for (let attempt = 1; attempt <= 3; attempt += 1) {
     try {
-      const response = transport === "vercel-cli"
-        ? await fetchViaVercelCli(url)
+      const response = transport === "vercel-bypass" || transport === "vercel-oidc"
+        ? await fetchViaVercelProtection(url, init)
         : await fetch(url, { ...init, redirect: "follow", signal: AbortSignal.timeout(20_000) });
       if (response.status < 500 || attempt === 3) return response;
       lastError = new Error(`HTTP ${response.status}`);
@@ -115,6 +106,51 @@ function pathMatches(actualPath, expectedPath) {
   return actualPath === expectedPath || (expectedPath !== "/" && actualPath === `${expectedPath}/`);
 }
 
+const HEALTH_KEYS = [
+  "database",
+  "generatedAt",
+  "generationTimeMs",
+  "pipelines",
+  "status",
+  "version",
+];
+const PIPELINE_KEYS = [
+  "lastAttemptAt",
+  "lastSuccessfulAt",
+  "lastSuccessfulRunProof",
+  "name",
+  "status",
+];
+const CRITICAL_PIPELINES = new Set(["DASHBOARD_SYNC", "NEWS_SCAN"]);
+
+function isIsoTimestamp(value) {
+  return typeof value === "string"
+    && !Number.isNaN(Date.parse(value))
+    && new Date(value).toISOString() === value;
+}
+
+function isPassingPipeline(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  if (JSON.stringify(Object.keys(value).sort()) !== JSON.stringify(PIPELINE_KEYS)) return false;
+  if (!CRITICAL_PIPELINES.has(value.name)) return false;
+  if (!isIsoTimestamp(value.lastAttemptAt)) return false;
+  if (!isIsoTimestamp(value.lastSuccessfulAt)) return false;
+  if (!/^[0-9a-f]{64}$/.test(value.lastSuccessfulRunProof)) return false;
+  return value.status === "healthy" || value.status === "running";
+}
+
+function isHealthyEnvelope(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  if (JSON.stringify(Object.keys(value).sort()) !== JSON.stringify(HEALTH_KEYS)) return false;
+  if (value.status !== "healthy" || value.database !== "connected") return false;
+  if (value.version !== "local" && !/^[0-9a-f]{12}$/.test(value.version)) return false;
+  if (!isIsoTimestamp(value.generatedAt)) return false;
+  if (!Number.isFinite(value.generationTimeMs) || value.generationTimeMs < 0) return false;
+  if (!Array.isArray(value.pipelines) || value.pipelines.length !== CRITICAL_PIPELINES.size) return false;
+  if (!value.pipelines.every(isPassingPipeline)) return false;
+  return new Set(value.pipelines.map((pipeline) => pipeline.name)).size === CRITICAL_PIPELINES.size;
+}
+
 async function statusCheck(name, route, expectedStatus, expectedPaths = [`${basePath}${route}`]) {
   const startedAt = performance.now();
   const response = await fetchWithRetry(urlFor(route));
@@ -133,8 +169,8 @@ async function statusCheck(name, route, expectedStatus, expectedPaths = [`${base
   return response;
 }
 
-const rootPaths = [basePath];
-if (allowLegacyRoot) rootPaths.push(`${basePath}/tracker`);
+const rootPaths = [`${basePath}/tracker`];
+if (allowLegacyRoot) rootPaths.push(basePath);
 await statusCheck("canonical root", "/", 200, rootPaths);
 
 for (const route of ["/tracker", "/funds", "/portfolio", "/news", "/dashboard", "/search", "/earnings", "/login"]) {
@@ -151,7 +187,7 @@ if (!skipHealth) {
     checks.at(-1).passed = false;
   }
   if (health) {
-    checks.at(-1).passed &&= health.status === "healthy" && health.database === "connected";
+    checks.at(-1).passed &&= isHealthyEnvelope(health);
     if (expectedVersion) checks.at(-1).passed &&= health.version === expectedVersion.slice(0, 12);
   }
 }

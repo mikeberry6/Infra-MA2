@@ -25,12 +25,40 @@ export type LegacyDashboardSignalCandidate = {
   reviewedContentHash: string | null;
   metadata: unknown;
   createdAt: Date;
+  updatedAt: Date;
 };
 
 export type LegacyDashboardSignalApproval = {
   id: string;
   contentHash: string;
 };
+
+/**
+ * Reconstruct the exact trailing public page without applying the page limit
+ * before eligibility checks. Callers may feed deterministic database pages in
+ * any batch size; ineligible/sample rows can never starve an older eligible
+ * signal from the bounded legacy-public set.
+ */
+export function selectLegacyDashboardSignalApprovals(
+  signals: readonly LegacyDashboardSignalCandidate[],
+  migrationStartedAt: Date,
+  limit = LEGACY_SIGNAL_PUBLIC_LIMIT,
+): LegacyDashboardSignalApproval[] {
+  if (!Number.isInteger(limit) || limit < 0) {
+    throw new Error("Legacy dashboard signal approval limit must be a non-negative integer.");
+  }
+
+  return [...signals]
+    .sort((left, right) => (
+      right.observedAt.getTime() - left.observedAt.getTime()
+      || right.id.localeCompare(left.id)
+    ))
+    .flatMap((signal) => {
+      const approval = legacyDashboardSignalApproval(signal, migrationStartedAt);
+      return approval ? [approval] : [];
+    })
+    .slice(0, limit);
+}
 
 /**
  * Select only records that provably pre-date the review workflow. The schema
@@ -44,7 +72,7 @@ export function legacyDashboardSignalApproval(
 ): LegacyDashboardSignalApproval | null {
   if (
     signal.createdAt > migrationStartedAt
-    || signal.observedAt < new Date(migrationStartedAt.getTime() - LEGACY_SIGNAL_PUBLIC_LOOKBACK_DAYS * 86_400_000)
+    || signal.updatedAt < new Date(migrationStartedAt.getTime() - LEGACY_SIGNAL_PUBLIC_LOOKBACK_DAYS * 86_400_000)
     || !ACTIVE_DASHBOARD_SIGNAL_SOURCE_IDS.has(signal.sourceId)
     || signal.reviewStatus !== "PENDING"
     || signal.sourceRunId !== null

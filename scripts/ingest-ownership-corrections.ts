@@ -12,7 +12,8 @@
  *
  *   Apply for real:
  *     npx tsx scripts/ingest-ownership-corrections.ts \
- *       prisma/seed-data/ownership-corrections-2026-04.json --apply
+ *       prisma/seed-data/ownership-corrections-2026-04.json --apply \
+ *       --expected-sha256=<reviewed-lowercase-sha256>
  *
  *   Show only flagged rows (for human review before re-running):
  *     npx tsx scripts/ingest-ownership-corrections.ts \
@@ -40,24 +41,29 @@
  * transaction per row when applying, exhaustive logging in dry-run.
  */
 import "dotenv/config";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
+import { SafeOperationalError } from "../src/lib/safe-error";
+import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
-import { PrismaClient } from "../src/generated/prisma/client";
+import { PrismaClient, type Prisma } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { parseOwners, stakeFromProse, type ParsedOwners } from "./parse-owner-prose";
+import { assertMaintenanceMutationContext } from "../src/lib/database-target";
 
 const APPLY = process.argv.includes("--apply");
 const REVIEW_FLAGGED = process.argv.includes("--review-flagged");
 const inputPath = process.argv.find((a) => a.endsWith(".json"));
+const expectedSha256 = process.argv
+  .find((argument) => argument.startsWith("--expected-sha256="))
+  ?.slice("--expected-sha256=".length);
 
-if (!inputPath) {
-  console.error(
-    "Usage: npx tsx scripts/ingest-ownership-corrections.ts <input.json> [--apply] [--review-flagged]",
-  );
-  process.exit(1);
+let prisma: PrismaClient | null = null;
+
+function database(): PrismaClient {
+  if (!prisma) throw new SafeOperationalError("database_url_required");
+  return prisma;
 }
-
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
-const prisma = new PrismaClient({ adapter });
 
 interface InputRow {
   sourceRow: string;
@@ -107,7 +113,7 @@ async function resolveOrganization(
   if (exact) return { org: exact, reason: "exact" };
 
   // Alias lookup (DB-side, since aliases aren't pre-indexed)
-  const alias = await prisma.alias.findFirst({
+  const alias = await database().alias.findFirst({
     where: { alias: { equals: cleaned, mode: "insensitive" } },
     include: { organization: { select: { id: true, name: true } } },
   });
@@ -142,10 +148,11 @@ interface PlannedOp {
   kind: "create-op" | "update-op" | "deactivate-op" | "create-org" | "create-source" | "create-citation";
   description: string;
   // For applying:
-  apply: () => Promise<void>;
+  apply: (tx: Prisma.TransactionClient) => Promise<string[]>;
 }
 
 interface RowPlan {
+  companyId?: string;
   row: InputRow;
   parsedOwners: ParsedOwners;
   pastOwners: ParsedOwners;
@@ -165,7 +172,7 @@ async function buildPlan(
   let flagged = false;
 
   // Find the company in the DB
-  const company = await prisma.company.findFirst({
+  const company = await database().company.findFirst({
     where: { name: row.company },
     include: {
       ownershipPeriods: {
@@ -220,11 +227,12 @@ async function buildPlan(
         ops.push({
           kind: "deactivate-op",
           description: `deactivate OwnershipPeriod for ${op.organization?.name} (replace mode)`,
-          apply: async () => {
-            await prisma.ownershipPeriod.update({
+          apply: async (tx) => {
+            await tx.ownershipPeriod.update({
               where: { id: op.id },
               data: { isActive: false },
             });
+            return ["OwnershipPeriod.isActive"];
           },
         });
       }
@@ -241,17 +249,22 @@ async function buildPlan(
       ops.push({
         kind: "create-org",
         description: `create Organization "${orgName}"`,
-        apply: async () => {
+        apply: async (_tx) => {
           // No-op here; the create happens inline with the OwnershipPeriod create below
+          return [];
         },
       });
       ops.push({
         kind: "create-op",
         description: `create OwnershipPeriod (org=${orgName} [new], isActive=true)`,
-        apply: async () => {
+        apply: async (tx) => {
           // Create or find the org first (handles concurrent creates from
           // multiple rows in the same ingest run).
-          const org = await prisma.organization.upsert({
+          const existingOrganization = await tx.organization.findUnique({
+            where: { name: orgName },
+            select: { id: true },
+          });
+          const org = await tx.organization.upsert({
             where: { name: orgName },
             update: {},
             create: {
@@ -259,15 +272,20 @@ async function buildPlan(
               types: ["FUND_MANAGER"],
             },
           });
+          const ownershipKey = {
+            companyId: company.id,
+            organizationId: org.id,
+            vehicleName: orgName,
+          };
+          const existingOwnership = await tx.ownershipPeriod.findUnique({
+            where: { companyId_organizationId_vehicleName: ownershipKey },
+            select: { id: true },
+          });
           // Then create the OwnershipPeriod, guarded by the unique
           // [companyId, organizationId, vehicleName] constraint
-          await prisma.ownershipPeriod.upsert({
+          await tx.ownershipPeriod.upsert({
             where: {
-              companyId_organizationId_vehicleName: {
-                companyId: company.id,
-                organizationId: org.id,
-                vehicleName: orgName,
-              },
+              companyId_organizationId_vehicleName: ownershipKey,
             },
             update: {},
             create: {
@@ -278,20 +296,39 @@ async function buildPlan(
               stake: stakeFromProse(row.revisedOwnersRaw, orgName),
             },
           });
+          return [
+            ...(!existingOrganization
+              ? ["Organization.name", "Organization.status", "Organization.types"]
+              : []),
+            ...(!existingOwnership
+              ? [
+                  "OwnershipPeriod.companyId",
+                  "OwnershipPeriod.isActive",
+                  "OwnershipPeriod.organizationId",
+                  "OwnershipPeriod.stake",
+                  "OwnershipPeriod.vehicleName",
+                ]
+              : []),
+          ];
         },
       });
     } else {
       ops.push({
         kind: "create-op",
         description: `create OwnershipPeriod (org=${r.org.name}, isActive=true) [resolved by ${r.reason}]`,
-        apply: async () => {
-          await prisma.ownershipPeriod.upsert({
+        apply: async (tx) => {
+          const ownershipKey = {
+            companyId: company.id,
+            organizationId: r.org!.id,
+            vehicleName: r.org!.name,
+          };
+          const existingOwnership = await tx.ownershipPeriod.findUnique({
+            where: { companyId_organizationId_vehicleName: ownershipKey },
+            select: { id: true },
+          });
+          await tx.ownershipPeriod.upsert({
             where: {
-              companyId_organizationId_vehicleName: {
-                companyId: company.id,
-                organizationId: r.org!.id,
-                vehicleName: r.org!.name,
-              },
+              companyId_organizationId_vehicleName: ownershipKey,
             },
             update: {},
             create: {
@@ -302,6 +339,15 @@ async function buildPlan(
               stake: stakeFromProse(row.revisedOwnersRaw, r.org!.name),
             },
           });
+          return existingOwnership
+            ? []
+            : [
+                "OwnershipPeriod.companyId",
+                "OwnershipPeriod.isActive",
+                "OwnershipPeriod.organizationId",
+                "OwnershipPeriod.stake",
+                "OwnershipPeriod.vehicleName",
+              ];
         },
       });
     }
@@ -319,8 +365,12 @@ async function buildPlan(
     ops.push({
       kind: "create-source",
       description: `Source(${hostname}) → Citation(company=${company.name})`,
-      apply: async () => {
-        const source = await prisma.source.upsert({
+      apply: async (tx) => {
+        const existingSource = await tx.source.findUnique({
+          where: { url },
+          select: { id: true },
+        });
+        const source = await tx.source.upsert({
           where: { url },
           update: {},
           create: {
@@ -331,17 +381,23 @@ async function buildPlan(
         });
         // No unique constraint on Citation(sourceId, companyId), so guard
         // against duplicates with a findFirst-then-create check.
-        const existing = await prisma.citation.findFirst({
+        const existing = await tx.citation.findFirst({
           where: { sourceId: source.id, companyId: company.id },
         });
         if (!existing) {
-          await prisma.citation.create({
+          await tx.citation.create({
             data: {
               sourceId: source.id,
               companyId: company.id,
             },
           });
         }
+        return [
+          ...(!existingSource ? ["Source.label", "Source.type", "Source.url"] : []),
+          ...(!existing
+            ? ["Citation.companyId", "Citation.sourceId"]
+            : []),
+        ];
       },
     });
   }
@@ -350,7 +406,7 @@ async function buildPlan(
     warnings.push(`Skipped fragments: ${parsedOwners.flagged.join(" | ")}`);
   }
 
-  return { row, parsedOwners, pastOwners, ops, warnings, flagged };
+  return { companyId: company.id, row, parsedOwners, pastOwners, ops, warnings, flagged };
 }
 
 // `stakeFromProse` is also re-exported from ./parse-owner-prose.
@@ -358,15 +414,35 @@ async function buildPlan(
 // ── Main ─────────────────────────────────────────────────────────
 
 async function main() {
+  if (!inputPath) {
+    console.error(
+      "Usage: npx tsx scripts/ingest-ownership-corrections.ts <input.json> [--apply] [--review-flagged]",
+    );
+    throw new Error("Ownership ingest argument validation failed.");
+  }
+  if (APPLY && !/^[0-9a-f]{64}$/.test(expectedSha256 ?? "")) {
+    console.error("--apply requires --expected-sha256=<reviewed lowercase SHA-256>");
+    throw new Error("Ownership ingest argument validation failed.");
+  }
+  const mutationContext = APPLY ? assertMaintenanceMutationContext() : undefined;
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) throw new SafeOperationalError("database_url_required");
+  prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
+
   console.log(APPLY ? "⚠️  APPLY MODE — writing changes" : "🔍 DRY RUN — no changes will be made");
   if (REVIEW_FLAGGED) console.log("ℹ️  --review-flagged: showing only rows that need manual attention");
   console.log();
 
-  const inputJson: InputRow[] = JSON.parse(readFileSync(inputPath!, "utf8"));
+  const inputBytes = readFileSync(inputPath!);
+  const inputSha256 = createHash("sha256").update(inputBytes).digest("hex");
+  if (APPLY && inputSha256 !== expectedSha256) {
+    throw new Error(`Input SHA-256 ${inputSha256} does not match the reviewed digest.`);
+  }
+  const inputJson: InputRow[] = JSON.parse(inputBytes.toString("utf8"));
   console.log(`Loaded ${inputJson.length} rows from ${inputPath}`);
 
   // Pre-fetch all organizations into an in-memory index
-  const allOrgs = await prisma.organization.findMany({
+  const allOrgs = await database().organization.findMany({
     select: { id: true, name: true },
   });
   const orgIndex = {
@@ -448,11 +524,32 @@ async function main() {
   for (const plan of plans) {
     if (plan.flagged) continue;
     if (plan.ops.length === 0) continue;
-    await prisma.$transaction(async () => {
+    await database().$transaction(async (tx) => {
+      const changedFields = new Set<string>();
       for (const op of plan.ops) {
-        await op.apply();
+        const affectedFields = await op.apply(tx);
+        for (const field of affectedFields) changedFields.add(field);
         appliedOps++;
       }
+      await tx.auditEvent.create({
+        data: {
+          actorId: null,
+          entityType: "Company",
+          entityId: plan.companyId,
+          action: "OWNERSHIP_CORRECTION_IMPORT",
+          changes: {
+            changedFields: [...changedFields].sort(),
+            sourceRow: plan.row.sourceRow,
+            changeType: plan.row.changeType,
+            operations: plan.ops.map((operation) => operation.kind),
+          },
+          metadata: {
+            source: "scripts/ingest-ownership-corrections.ts",
+            inputSha256,
+            ...mutationContext!,
+          },
+        },
+      });
     });
     appliedRows++;
   }
@@ -460,11 +557,20 @@ async function main() {
   console.log(`Skipped ${flaggedCount} flagged rows — re-run with --review-flagged to inspect.`);
 }
 
-main()
-  .catch((e) => {
-    console.error("❌ Ingest failed:", e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
+async function runTask() {
+  await runWithPreservedCleanup({
+    run: main,
+    cleanup: async () => {
+      await prisma?.$disconnect();
+    },
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "ownership_ingest_cleanup",
+      operation: "disconnect_database",
+    }, error),
+  });
+}
+
+withServerTask({ task: "ownership_ingest", operation: "ingest_ownership_corrections" }, runTask)
+  .catch(() => {
+    process.exitCode = 1;
   });

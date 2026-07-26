@@ -1,0 +1,1439 @@
+name: Bootstrap Preview Dashboard
+
+on:
+  # repository_dispatch loads workflow code from the default branch and does
+  # not permit a caller-selected ref to receive Preview credentials.
+  repository_dispatch:
+    types: [bootstrap-preview-dashboard]
+
+run-name: Preview dashboard bootstrap @ ${{ github.sha }}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview-dashboard-bootstrap
+  cancel-in-progress: false
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+
+jobs:
+  trusted_main:
+    name: Authenticate exact main bootstrap provenance
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      preview_deployment_url: ${{ steps.identity.outputs.preview_deployment_url }}
+      preview_git_sha: ${{ steps.identity.outputs.preview_git_sha }}
+      release_sha: ${{ steps.identity.outputs.release_sha }}
+    steps:
+      - name: Checkout triggering main revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Verify exact default-branch dispatch
+        id: identity
+        env:
+          CONFIRMATION: ${{ github.event.client_payload.confirmation }}
+          PREVIEW_DEPLOYMENT_URL: ${{ github.event.client_payload.preview_deployment_url }}
+          PREVIEW_GIT_SHA: ${{ github.event.client_payload.preview_git_sha }}
+          REQUESTED_RELEASE_SHA: ${{ github.event.client_payload.release_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_EVENT_NAME" != "repository_dispatch" ] || [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Preview dashboard bootstrap must execute from refs/heads/main."
+            exit 1
+          fi
+          if [ "$CONFIRMATION" != "BOOTSTRAP_PREVIEW_DASHBOARD" ]; then
+            echo "::error::The exact Preview dashboard bootstrap confirmation is required."
+            exit 1
+          fi
+          if ! [[ "$REQUESTED_RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]] \
+            || [ "$REQUESTED_RELEASE_SHA" != "$GITHUB_SHA" ]; then
+            echo "::error::client_payload.release_sha must exactly match the triggering main SHA."
+            exit 1
+          fi
+          if ! [[ "$PREVIEW_GIT_SHA" =~ ^[0-9a-f]{40}$ ]] \
+            || ! [[ "$PREVIEW_DEPLOYMENT_URL" =~ ^https://[a-z0-9][a-z0-9.-]*[a-z0-9]\.vercel\.app$ ]]; then
+            echo "::error::An exact Preview Git SHA and HTTPS vercel.app deployment origin are required."
+            exit 1
+          fi
+          checked_out_sha="$(git rev-parse HEAD)"
+          checked_out_main_sha="$(git rev-parse refs/heads/main)"
+          if [ "$checked_out_sha" != "$GITHUB_SHA" ] || [ "$checked_out_main_sha" != "$GITHUB_SHA" ]; then
+            echo "::error::refs/heads/main changed after this run was created; dispatch a new bootstrap."
+            exit 1
+          fi
+          git fetch --no-tags --depth=1 origin "$PREVIEW_GIT_SHA"
+          if [ "$(git rev-parse FETCH_HEAD)" != "$PREVIEW_GIT_SHA" ] \
+            || [ "$(git rev-parse "$PREVIEW_GIT_SHA^{tree}")" != "$(git rev-parse "$GITHUB_SHA^{tree}")" ]; then
+            echo "::error::The Preview candidate must be a repository commit with the exact protected-main Git tree."
+            exit 1
+          fi
+          echo "preview_deployment_url=$PREVIEW_DEPLOYMENT_URL" >> "$GITHUB_OUTPUT"
+          echo "preview_git_sha=$PREVIEW_GIT_SHA" >> "$GITHUB_OUTPUT"
+          echo "release_sha=$checked_out_sha" >> "$GITHUB_OUTPUT"
+          {
+            printf '%s\n' '### Preview dashboard bootstrap approval'
+            printf -- '- Protected main release SHA: `%s`\n' "$checked_out_sha"
+            printf -- '- Immutable Preview Git SHA: `%s`\n' "$PREVIEW_GIT_SHA"
+            printf -- '- Immutable Preview URL: `%s`\n' "$PREVIEW_DEPLOYMENT_URL"
+            printf '%s\n' \
+              '- Approve the `preview-bootstrap` environment only after matching all three values to the reviewed release evidence.'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  preview_runtime_before:
+    name: Attest protected Preview before synchronization
+    needs: trusted_main
+    if: needs.trusted_main.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: preview-bootstrap
+    permissions:
+      contents: read
+      id-token: write
+    outputs:
+      dashboard_last_successful_at: ${{ steps.preview_health.outputs.dashboard_last_successful_at }}
+    steps:
+      - name: Checkout verified main runtime verifier
+        id: checkout
+        continue-on-error: true
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Setup Node without package execution
+        id: setup_node
+        if: steps.checkout.outcome == 'success'
+        continue-on-error: true
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+
+      - name: Reverify main and record runtime provenance
+        id: provenance
+        if: steps.setup_node.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_DEPLOYMENT_URL: ${{ needs.trusted_main.outputs.preview_deployment_url }}
+          PREVIEW_GIT_SHA: ${{ needs.trusted_main.outputs.preview_git_sha }}
+          TRUSTED_MAIN_SHA: ${{ needs.trusted_main.outputs.release_sha }}
+          VERCEL_PROJECT_NAME: ${{ vars.VERCEL_PROJECT_NAME }}
+          VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! [[ "$TRUSTED_MAIN_SHA" =~ ^[0-9a-f]{40}$ ]] \
+            || [ "$(git rev-parse HEAD)" != "$TRUSTED_MAIN_SHA" ] \
+            || [ "$(git rev-parse refs/heads/main)" != "$TRUSTED_MAIN_SHA" ]; then
+            echo "::error::Runtime verifier is not the authenticated main revision."
+            exit 1
+          fi
+          if ! [[ "$PREVIEW_GIT_SHA" =~ ^[0-9a-f]{40}$ ]] \
+            || ! [[ "$VERCEL_PROJECT_NAME" =~ ^[a-z0-9][a-z0-9-]*[a-z0-9]$ ]] \
+            || ! [[ "$VERCEL_SCOPE" =~ ^[a-z0-9][a-z0-9-]*[a-z0-9]$ ]]; then
+            echo "::error::Protected Preview identity metadata is invalid."
+            exit 1
+          fi
+          deployment_host="${PREVIEW_DEPLOYMENT_URL#https://}"
+          deployment_token="${deployment_host#"$VERCEL_PROJECT_NAME"-}"
+          deployment_token="${deployment_token%-"$VERCEL_SCOPE".vercel.app}"
+          if [ "$deployment_host" != "$VERCEL_PROJECT_NAME-$deployment_token-$VERCEL_SCOPE.vercel.app" ] \
+            || ! [[ "$deployment_token" =~ ^[a-z0-9]+$ ]]; then
+            echo "::error::Preview URL is not the immutable hostname for the protected project and scope."
+            exit 1
+          fi
+          mkdir -p tmp/preview-dashboard-runtime-before
+          jq -n \
+            --arg releaseSha "$TRUSTED_MAIN_SHA" \
+            --arg repository "$GITHUB_REPOSITORY" \
+            --arg runId "$GITHUB_RUN_ID" \
+            --arg runAttempt "$GITHUB_RUN_ATTEMPT" \
+            --arg eventName "$GITHUB_EVENT_NAME" \
+            --arg previewDeploymentUrl "$PREVIEW_DEPLOYMENT_URL" \
+            --arg previewGitSha "$PREVIEW_GIT_SHA" \
+            '{
+              schemaVersion: 1,
+              job: "preview_runtime_before",
+              target: "preview",
+              releaseSha: $releaseSha,
+              repository: $repository,
+              githubRunId: $runId,
+              githubRunAttempt: $runAttempt,
+              githubEventName: $eventName,
+              previewDeploymentUrl: $previewDeploymentUrl,
+              previewGitSha: $previewGitSha
+            }' > tmp/preview-dashboard-runtime-before/provenance.json
+
+      - name: Require protected Vercel verification credential
+        id: vercel_configuration
+        if: steps.provenance.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_VERCEL_TOKEN: ${{ secrets.PREVIEW_VERCEL_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$(printf '%s' "$PREVIEW_VERCEL_TOKEN" | wc -c | tr -d ' ')" -lt 14 ]; then
+            echo "::error::PREVIEW_VERCEL_TOKEN is missing or too short for fail-closed verification."
+            exit 1
+          fi
+
+      - name: Prove the immutable Vercel deployment is the exact Preview
+        id: vercel_deployment
+        if: steps.vercel_configuration.outcome == 'success'
+        continue-on-error: true
+        env:
+          VERCEL_TOKEN: ${{ secrets.PREVIEW_VERCEL_TOKEN }}
+          PREVIEW_DEPLOYMENT_URL: ${{ needs.trusted_main.outputs.preview_deployment_url }}
+          PREVIEW_GIT_SHA: ${{ needs.trusted_main.outputs.preview_git_sha }}
+          VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+          VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
+          GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$PREVIEW_DEPLOYMENT_URL" \
+            --expected-sha="$PREVIEW_GIT_SHA" \
+            --expected-project-id="$VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
+            --expected-target=preview \
+            --require-immutable-url \
+            --output=tmp/preview-dashboard-runtime-before/vercel-deployment.json
+
+      - name: Verify deployment protection on the health path before OIDC
+        id: deployment_protection
+        if: steps.vercel_deployment.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_DEPLOYMENT_URL: ${{ needs.trusted_main.outputs.preview_deployment_url }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          requested_url="$PREVIEW_DEPLOYMENT_URL/Infra-MA2/api/health"
+          header_capture="$RUNNER_TEMP/preview-health-before-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.headers"
+          trap 'rm -f "$header_capture"' EXIT
+          unauthenticated_status="$(curl \
+            --proto '=https' \
+            --tlsv1.2 \
+            --silent \
+            --show-error \
+            --max-time 25 \
+            --max-redirs 0 \
+            --dump-header "$header_capture" \
+            --output /dev/null \
+            --write-out '%{http_code}' \
+            "$requested_url")"
+          node --experimental-strip-types scripts/verify-vercel-protected-health.ts \
+            --status="$unauthenticated_status" \
+            --headers="$header_capture" \
+            --requested-url="$requested_url" \
+            --output=tmp/preview-dashboard-runtime-before/deployment-protection.json
+          jq -e '
+            keys == ["healthPathProtected", "responseKind", "result", "status"]
+            and .healthPathProtected == true
+            and .result == "passed"
+            and (
+              (.status == 401 and .responseKind == "unauthorized")
+              or (.status == 302 and .responseKind == "sso_redirect")
+            )
+          ' tmp/preview-dashboard-runtime-before/deployment-protection.json >/dev/null
+
+      - name: Request Preview-scoped Vercel OIDC identity
+        id: preview_oidc
+        if: steps.deployment_protection.outcome == 'success'
+        continue-on-error: true
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          script: |
+            const token = await core.getIDToken("https://vercel.com/infrasight-preview-bootstrap");
+            core.setSecret(token);
+            core.setOutput("token", token);
+
+      - name: Verify the recoverable pre-bootstrap health contract
+        id: preview_health
+        if: steps.preview_oidc.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_DEPLOYMENT_URL: ${{ needs.trusted_main.outputs.preview_deployment_url }}
+          PREVIEW_GIT_SHA: ${{ needs.trusted_main.outputs.preview_git_sha }}
+          VERCEL_TRUSTED_OIDC_TOKEN: ${{ steps.preview_oidc.outputs.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          health_status="$(curl \
+            --proto '=https' \
+            --tlsv1.2 \
+            --silent \
+            --show-error \
+            --max-time 25 \
+            --max-redirs 0 \
+            --header "x-vercel-trusted-oidc-idp-token: $VERCEL_TRUSTED_OIDC_TOKEN" \
+            --output tmp/preview-dashboard-runtime-before/immutable-preview-health-before.json \
+            --write-out '%{http_code}' \
+            "$PREVIEW_DEPLOYMENT_URL/Infra-MA2/api/health")"
+          if [ "$health_status" != "200" ] && [ "$health_status" != "503" ]; then
+            echo "::error::Immutable Preview health returned HTTP $health_status."
+            exit 1
+          fi
+          jq -e \
+            --arg expectedVersion "${PREVIEW_GIT_SHA:0:12}" \
+            --argjson healthStatus "$health_status" '
+              def iso:
+                type == "string"
+                and test("^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$");
+              def proof:
+                type == "string" and test("^[0-9a-f]{64}$");
+              def valid_success_binding:
+                (
+                  .lastSuccessfulAt == null
+                  and .lastSuccessfulRunProof == null
+                )
+                or (
+                  (.lastSuccessfulAt | iso)
+                  and (.lastSuccessfulRunProof | proof)
+                );
+              def passing:
+                (.status == "healthy" or .status == "running")
+                and (.lastSuccessfulAt | iso)
+                and (.lastSuccessfulRunProof | proof);
+              keys == [
+                "database",
+                "generatedAt",
+                "generationTimeMs",
+                "pipelines",
+                "status",
+                "version"
+              ]
+              and .version == $expectedVersion
+              and .database == "connected"
+              and (.generatedAt | iso)
+              and (.generationTimeMs | type == "number" and . >= 0)
+              and (.pipelines | type == "array" and length == 2)
+              and ([.pipelines[].name] | sort == ["DASHBOARD_SYNC", "NEWS_SCAN"])
+              and all(
+                .pipelines[];
+                keys == [
+                  "lastAttemptAt",
+                  "lastSuccessfulAt",
+                  "lastSuccessfulRunProof",
+                  "name",
+                  "status"
+                ]
+                and (
+                  .lastAttemptAt == null
+                  or (.lastAttemptAt | iso)
+                )
+                and valid_success_binding
+              )
+              and (
+                if $healthStatus == 200 then
+                  .status == "healthy"
+                  and any(
+                    .pipelines[];
+                    .name == "NEWS_SCAN" and passing
+                  )
+                  and any(
+                    .pipelines[];
+                    .name == "DASHBOARD_SYNC"
+                    and .status == "healthy"
+                    and (.lastSuccessfulAt | iso)
+                    and (.lastSuccessfulRunProof | proof)
+                  )
+                else
+                  .status == "degraded"
+                  and any(
+                    .pipelines[];
+                    .name == "NEWS_SCAN" and passing
+                  )
+                  and any(
+                    .pipelines[];
+                    .name == "DASHBOARD_SYNC"
+                    and (
+                      .status == "never-run"
+                      or .status == "failed"
+                      or .status == "stale"
+                      or .status == "stalled"
+                    )
+                    and valid_success_binding
+                    and (
+                      if .status == "never-run" then
+                        .lastAttemptAt == null
+                        and .lastSuccessfulAt == null
+                        and .lastSuccessfulRunProof == null
+                      else
+                        (.lastAttemptAt | iso)
+                      end
+                    )
+                  )
+                end
+              )
+            ' tmp/preview-dashboard-runtime-before/immutable-preview-health-before.json >/dev/null
+          dashboard_last_successful_at="$(
+            jq -er '
+              first(
+                .pipelines[]
+                | select(.name == "DASHBOARD_SYNC")
+                | .lastSuccessfulAt
+              )
+              | if . == null then "none" else . end
+            ' tmp/preview-dashboard-runtime-before/immutable-preview-health-before.json
+          )"
+          if [ "$dashboard_last_successful_at" != "none" ] \
+            && ! [[ "$dashboard_last_successful_at" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?Z$ ]]; then
+            echo "::error::Immutable Preview returned an invalid dashboard completion time."
+            exit 1
+          fi
+          echo "dashboard_last_successful_at=$dashboard_last_successful_at" >> "$GITHUB_OUTPUT"
+
+      - name: Record fixed-schema pre-runtime outcome
+        id: runtime_before_outcome
+        if: always()
+        env:
+          CHECKOUT: ${{ steps.checkout.outcome }}
+          SETUP_NODE: ${{ steps.setup_node.outcome }}
+          PROVENANCE: ${{ steps.provenance.outcome }}
+          VERCEL_CONFIGURATION: ${{ steps.vercel_configuration.outcome }}
+          VERCEL_DEPLOYMENT: ${{ steps.vercel_deployment.outcome }}
+          DEPLOYMENT_PROTECTION: ${{ steps.deployment_protection.outcome }}
+          PREVIEW_OIDC: ${{ steps.preview_oidc.outcome }}
+          PREVIEW_HEALTH: ${{ steps.preview_health.outcome }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tmp/preview-dashboard-runtime-before
+          jq -n \
+            --arg checkout "$CHECKOUT" \
+            --arg setupNode "$SETUP_NODE" \
+            --arg provenance "$PROVENANCE" \
+            --arg vercelConfiguration "$VERCEL_CONFIGURATION" \
+            --arg vercelDeployment "$VERCEL_DEPLOYMENT" \
+            --arg deploymentProtection "$DEPLOYMENT_PROTECTION" \
+            --arg previewOidc "$PREVIEW_OIDC" \
+            --arg previewHealth "$PREVIEW_HEALTH" \
+            '{
+              schemaVersion: 1,
+              job: "preview_runtime_before",
+              target: "preview",
+              steps: {
+                checkout: $checkout,
+                setupNode: $setupNode,
+                provenance: $provenance,
+                vercelConfiguration: $vercelConfiguration,
+                vercelDeployment: $vercelDeployment,
+                deploymentProtection: $deploymentProtection,
+                previewOidc: $previewOidc,
+                previewHealth: $previewHealth
+              }
+            }
+            | .result = (
+                if ([.steps[]] | all(. == "success"))
+                then "success"
+                else "failed"
+                end
+              )' > tmp/preview-dashboard-runtime-before/outcome.json
+
+      - name: Final secret scan of immutable pre-runtime evidence
+        id: runtime_before_secret_gate
+        if: always() && steps.vercel_configuration.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_VERCEL_TOKEN: ${{ secrets.PREVIEW_VERCEL_TOKEN }}
+          VERCEL_TRUSTED_OIDC_TOKEN: ${{ steps.preview_oidc.outputs.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          evidence_root=tmp/preview-dashboard-runtime-before
+          scan_root=tmp/preview-dashboard-runtime-before-scans
+          jq -e '
+            .schemaVersion == 1
+            and .job == "preview_runtime_before"
+            and .target == "preview"
+            and (.result == "success" or .result == "failed")
+            and (
+              .steps
+              | keys == [
+                  "checkout",
+                  "deploymentProtection",
+                  "previewHealth",
+                  "previewOidc",
+                  "provenance",
+                  "setupNode",
+                  "vercelConfiguration",
+                  "vercelDeployment"
+                ]
+            )
+            and .result == (
+              if ([.steps[]] | all(. == "success"))
+              then "success"
+              else "failed"
+              end
+            )
+          ' "$evidence_root/outcome.json" >/dev/null
+          mkdir -p "$scan_root"
+          node --experimental-strip-types scripts/assert-playwright-artifact-secret-safety.ts \
+            --root="$evidence_root" \
+            --secret-env=PREVIEW_VERCEL_TOKEN \
+            --output="$scan_root/preview-vercel-token.json"
+          if [ -n "${VERCEL_TRUSTED_OIDC_TOKEN:-}" ]; then
+            node --experimental-strip-types scripts/assert-playwright-artifact-secret-safety.ts \
+              --root="$evidence_root" \
+              --secret-env=VERCEL_TRUSTED_OIDC_TOKEN \
+              --output="$scan_root/vercel-trusted-oidc-token.json"
+          fi
+
+      - name: Upload sanitized pre-runtime evidence
+        id: upload_runtime_before
+        if: always() && steps.runtime_before_outcome.outcome == 'success' && steps.runtime_before_secret_gate.outcome == 'success'
+        continue-on-error: true
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: preview-dashboard-runtime-before-${{ github.run_id }}-${{ github.run_attempt }}
+          path: tmp/preview-dashboard-runtime-before/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Enforce successful pre-runtime attestation
+        if: always()
+        env:
+          OUTCOME_MANIFEST: ${{ steps.runtime_before_outcome.outcome }}
+          SECRET_GATE: ${{ steps.runtime_before_secret_gate.outcome }}
+          UPLOAD_EVIDENCE: ${{ steps.upload_runtime_before.outcome }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$OUTCOME_MANIFEST" != "success" ] \
+            || [ "$SECRET_GATE" != "success" ] \
+            || [ "$UPLOAD_EVIDENCE" != "success" ] \
+            || [ "$(jq -r '.result // "invalid"' tmp/preview-dashboard-runtime-before/outcome.json 2>/dev/null || true)" != "success" ]; then
+            echo "::error::Preview pre-runtime attestation did not satisfy every required outcome."
+            exit 1
+          fi
+
+  bootstrap:
+    name: Synchronize the protected Preview database
+    needs: [trusted_main, preview_runtime_before]
+    if: needs.trusted_main.result == 'success' && needs.preview_runtime_before.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: preview-bootstrap
+    permissions:
+      contents: read
+    outputs:
+      bootstrap_started_at: ${{ steps.provenance.outputs.started_at }}
+      pipeline_run_ended_at: ${{ steps.dashboard_sync.outputs.pipeline_run_ended_at }}
+      pipeline_run_proof: ${{ steps.dashboard_sync.outputs.pipeline_run_proof }}
+    steps:
+      - name: Checkout verified main bootstrap code
+        id: checkout
+        continue-on-error: true
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Reverify main and record non-sensitive provenance
+        id: provenance
+        if: steps.checkout.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_DEPLOYMENT_URL: ${{ needs.trusted_main.outputs.preview_deployment_url }}
+          PREVIEW_GIT_SHA: ${{ needs.trusted_main.outputs.preview_git_sha }}
+          TRUSTED_MAIN_SHA: ${{ needs.trusted_main.outputs.release_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! [[ "$TRUSTED_MAIN_SHA" =~ ^[0-9a-f]{40}$ ]] \
+            || [ "$(git rev-parse HEAD)" != "$TRUSTED_MAIN_SHA" ] \
+            || [ "$(git rev-parse refs/heads/main)" != "$TRUSTED_MAIN_SHA" ]; then
+            echo "::error::Checked-out bootstrap code is not the authenticated main revision."
+            exit 1
+          fi
+          refresh_window="$(TZ=America/New_York date +%F)"
+          started_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          echo "refresh_window=$refresh_window" >> "$GITHUB_OUTPUT"
+          echo "started_at=$started_at" >> "$GITHUB_OUTPUT"
+          mkdir -p tmp/preview-dashboard-bootstrap
+          jq -n \
+            --arg releaseSha "$TRUSTED_MAIN_SHA" \
+            --arg repository "$GITHUB_REPOSITORY" \
+            --arg runId "$GITHUB_RUN_ID" \
+            --arg runAttempt "$GITHUB_RUN_ATTEMPT" \
+            --arg eventName "$GITHUB_EVENT_NAME" \
+            --arg previewDeploymentUrl "$PREVIEW_DEPLOYMENT_URL" \
+            --arg previewGitSha "$PREVIEW_GIT_SHA" \
+            --arg refreshWindow "$refresh_window" \
+            --arg startedAt "$started_at" \
+            '{
+              schemaVersion: 1,
+              job: "bootstrap",
+              target: "preview",
+              releaseSha: $releaseSha,
+              repository: $repository,
+              githubRunId: $runId,
+              githubRunAttempt: $runAttempt,
+              githubEventName: $eventName,
+              previewDeploymentUrl: $previewDeploymentUrl,
+              previewGitSha: $previewGitSha,
+              refreshWindow: $refreshWindow,
+              startedAt: $startedAt
+            }' > tmp/preview-dashboard-bootstrap/provenance.json
+
+      - name: Setup Node
+        id: setup_node
+        if: steps.provenance.outcome == 'success'
+        continue-on-error: true
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install locked dependencies
+        id: install
+        if: steps.setup_node.outcome == 'success'
+        continue-on-error: true
+        run: npm ci
+
+      - name: Register derived Preview database credential masks
+        id: database_secret_masks
+        if: steps.install.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_DATABASE_URL: ${{ secrets.PREVIEW_DATABASE_URL }}
+          PREVIEW_MIGRATION_DATABASE_URL: ${{ secrets.PREVIEW_MIGRATION_DATABASE_URL }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --experimental-strip-types scripts/register-github-database-secret-masks.ts \
+            --database-url-env=PREVIEW_DATABASE_URL \
+            --database-url-env=PREVIEW_MIGRATION_DATABASE_URL
+
+      - name: Require protected Preview provider credentials
+        id: provider_configuration
+        if: steps.database_secret_masks.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_DATABASE_URL: ${{ secrets.PREVIEW_DATABASE_URL }}
+          PREVIEW_MIGRATION_DATABASE_URL: ${{ secrets.PREVIEW_MIGRATION_DATABASE_URL }}
+          PREVIEW_FRED_API_KEY: ${{ secrets.PREVIEW_FRED_API_KEY }}
+          PREVIEW_EIA_API_KEY: ${{ secrets.PREVIEW_EIA_API_KEY }}
+          PREVIEW_SAM_API_KEY: ${{ secrets.PREVIEW_SAM_API_KEY }}
+          PREVIEW_SEC_USER_AGENT: ${{ secrets.PREVIEW_SEC_USER_AGENT }}
+          PREVIEW_NEON_API_KEY: ${{ secrets.PREVIEW_NEON_API_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for name in PREVIEW_DATABASE_URL PREVIEW_MIGRATION_DATABASE_URL PREVIEW_FRED_API_KEY PREVIEW_EIA_API_KEY PREVIEW_SAM_API_KEY PREVIEW_SEC_USER_AGENT PREVIEW_NEON_API_KEY; do
+            value="${!name:-}"
+            if [ "$(printf '%s' "$value" | wc -c | tr -d ' ')" -lt 14 ]; then
+              echo "::error::$name is missing or too short for fail-closed artifact scanning."
+              exit 1
+            fi
+          done
+          if ! [[ "$PREVIEW_NEON_API_KEY" =~ ^[A-Za-z0-9_-]{32,256}$ ]]; then
+            echo "::error::PREVIEW_NEON_API_KEY is not a valid project-scoped Neon API credential."
+            exit 1
+          fi
+
+      - name: Prove the exact non-production Preview database target
+        id: target_guard
+        if: steps.provider_configuration.outcome == 'success'
+        continue-on-error: true
+        env:
+          DATABASE_URL: ${{ secrets.PREVIEW_DATABASE_URL }}
+          EXPECTED_DATABASE_HOST: ${{ vars.PREVIEW_DATABASE_HOST }}
+          EXPECTED_DATABASE_NAME: ${{ vars.PREVIEW_DATABASE_NAME }}
+          PREVIEW_MIGRATION_DATABASE_HOST: ${{ vars.PREVIEW_MIGRATION_DATABASE_HOST }}
+          FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          TARGET_DATABASE: validation
+          DASHBOARD_WRITES_ENABLED: "false"
+        shell: bash
+        run: |
+          set -euo pipefail
+          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME PREVIEW_MIGRATION_DATABASE_HOST FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required for protected Preview bootstrap."
+              exit 1
+            fi
+          done
+          preview_host="${EXPECTED_DATABASE_HOST,,}"
+          preview_migration_host="${PREVIEW_MIGRATION_DATABASE_HOST,,}"
+          production_host="${FORBIDDEN_DATABASE_HOST,,}"
+          production_migration_host="${FORBIDDEN_DATABASE_HOST_2,,}"
+          if [ "$preview_host" = "$preview_migration_host" ] \
+            || [ "$preview_host" = "$production_host" ] \
+            || [ "$preview_host" = "$production_migration_host" ] \
+            || [ "$preview_migration_host" = "$production_host" ] \
+            || [ "$preview_migration_host" = "$production_migration_host" ]; then
+            echo "::error::Preview pooled/direct hosts must be distinct from both production hosts."
+            exit 1
+          fi
+          node --experimental-strip-types scripts/assert-database-target.ts
+          jq -n '{
+            schemaVersion: 1,
+            target: "preview",
+            authorizationTarget: "validation",
+            dashboardWritesEnabled: false,
+            result: "passed"
+          }' > tmp/preview-dashboard-bootstrap/target-guard.json
+
+      - name: Prove exact Preview pooled and direct database identity
+        id: database_pair
+        if: steps.target_guard.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_DATABASE_URL: ${{ secrets.PREVIEW_DATABASE_URL }}
+          PREVIEW_MIGRATION_DATABASE_URL: ${{ secrets.PREVIEW_MIGRATION_DATABASE_URL }}
+          PREVIEW_DATABASE_HOST: ${{ vars.PREVIEW_DATABASE_HOST }}
+          PREVIEW_MIGRATION_DATABASE_HOST: ${{ vars.PREVIEW_MIGRATION_DATABASE_HOST }}
+          PREVIEW_DATABASE_NAME: ${{ vars.PREVIEW_DATABASE_NAME }}
+          PRODUCTION_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          PRODUCTION_MIGRATION_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          MIGRATION_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
+          DASHBOARD_MIGRATION_DATABASE_HOST: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --experimental-strip-types scripts/preview-database-pair.ts \
+            --output=tmp/preview-dashboard-bootstrap/database-pair.json
+
+      - name: Verify distinct Preview Neon project branch and endpoint
+        id: neon_identity
+        if: steps.database_pair.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_NEON_API_KEY: ${{ secrets.PREVIEW_NEON_API_KEY }}
+          PREVIEW_NEON_PROJECT_ID: ${{ vars.PREVIEW_NEON_PROJECT_ID }}
+          NEON_PRODUCTION_PROJECT_ID: ${{ vars.NEON_PRODUCTION_PROJECT_ID }}
+          PREVIEW_NEON_BRANCH_ID: ${{ vars.PREVIEW_NEON_BRANCH_ID }}
+          PREVIEW_NEON_ENDPOINT_ID: ${{ vars.PREVIEW_NEON_ENDPOINT_ID }}
+          PREVIEW_MIGRATION_DATABASE_HOST: ${{ vars.PREVIEW_MIGRATION_DATABASE_HOST }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --experimental-strip-types scripts/verify-preview-neon-target.ts \
+            --output=tmp/preview-dashboard-bootstrap/neon-control-plane.json
+
+      - name: Require current Preview migration ledger and schema
+        id: schema_preflight
+        if: steps.neon_identity.outcome == 'success'
+        continue-on-error: true
+        env:
+          DATABASE_URL: ${{ secrets.PREVIEW_MIGRATION_DATABASE_URL }}
+          EXPECTED_DATABASE_HOST: ${{ vars.PREVIEW_MIGRATION_DATABASE_HOST }}
+          EXPECTED_DATABASE_NAME: ${{ vars.PREVIEW_DATABASE_NAME }}
+          FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --experimental-strip-types scripts/assert-database-target.ts
+          set +e
+          ./node_modules/.bin/prisma migrate status
+          migration_status=$?
+          ./node_modules/.bin/prisma migrate diff \
+            --from-schema=prisma/schema.prisma \
+            --to-config-datasource \
+            --exit-code
+          schema_drift=$?
+          set -e
+          jq -n \
+            --argjson migrationStatus "$migration_status" \
+            --argjson schemaDrift "$schema_drift" \
+            '{
+              schemaVersion: 1,
+              operation: "read-only-preview-schema-preflight",
+              migrationStatusExitCode: $migrationStatus,
+              schemaDriftExitCode: $schemaDrift,
+              result: (if $migrationStatus == 0 and $schemaDrift == 0 then "passed" else "failed" end)
+            }' > tmp/preview-dashboard-bootstrap/schema-preflight.json
+          if [ "$migration_status" -ne 0 ] || [ "$schema_drift" -ne 0 ]; then
+            exit 1
+          fi
+
+      - name: Dry-run all Preview dashboard providers
+        id: dashboard_dry_run
+        if: steps.schema_preflight.outcome == 'success'
+        continue-on-error: true
+        env:
+          DATABASE_URL: ${{ secrets.PREVIEW_DATABASE_URL }}
+          FRED_API_KEY: ${{ secrets.PREVIEW_FRED_API_KEY }}
+          EIA_API_KEY: ${{ secrets.PREVIEW_EIA_API_KEY }}
+          SAM_API_KEY: ${{ secrets.PREVIEW_SAM_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.PREVIEW_SEC_USER_AGENT }}
+          SEC_WATCHLIST_CIKS: ${{ vars.SEC_WATCHLIST_CIKS }}
+          DASHBOARD_REFRESH_WINDOW: ${{ steps.provenance.outputs.refresh_window }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f tmp/dashboard-sync-summary.json
+          set +e
+          node scripts/run-with-retry.mjs --attempts=3 -- npm run dashboard:sync:dry-run
+          dry_run_status=$?
+          set -e
+          if [ -f tmp/dashboard-sync-summary.json ]; then
+            jq -e \
+              --arg refreshWindow "$DASHBOARD_REFRESH_WINDOW" \
+              '.dryRun == true and .refreshWindow == $refreshWindow' \
+              tmp/dashboard-sync-summary.json >/dev/null
+            cp tmp/dashboard-sync-summary.json tmp/preview-dashboard-bootstrap/dashboard-dry-run-summary.json
+          elif [ "$dry_run_status" -eq 0 ]; then
+            echo "::error::Successful dashboard dry run did not produce its required summary."
+            exit 1
+          fi
+          exit "$dry_run_status"
+
+      - name: Synchronize all dashboard providers with bounded retries
+        id: dashboard_sync
+        if: steps.dashboard_dry_run.outcome == 'success'
+        continue-on-error: true
+        env:
+          DATABASE_URL: ${{ secrets.PREVIEW_DATABASE_URL }}
+          EXPECTED_DATABASE_HOST: ${{ vars.PREVIEW_DATABASE_HOST }}
+          EXPECTED_DATABASE_NAME: ${{ vars.PREVIEW_DATABASE_NAME }}
+          FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+          FORBIDDEN_DATABASE_HOST_2: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+          TARGET_DATABASE: validation
+          DASHBOARD_WRITES_ENABLED: "false"
+          FRED_API_KEY: ${{ secrets.PREVIEW_FRED_API_KEY }}
+          EIA_API_KEY: ${{ secrets.PREVIEW_EIA_API_KEY }}
+          SAM_API_KEY: ${{ secrets.PREVIEW_SAM_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.PREVIEW_SEC_USER_AGENT }}
+          SEC_WATCHLIST_CIKS: ${{ vars.SEC_WATCHLIST_CIKS }}
+          DASHBOARD_REFRESH_WINDOW: ${{ steps.provenance.outputs.refresh_window }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f tmp/dashboard-sync-summary.json
+          set +e
+          node scripts/run-with-retry.mjs --attempts=3 -- npm run dashboard:sync
+          sync_status=$?
+          set -e
+          if [ -f tmp/dashboard-sync-summary.json ]; then
+            jq -e \
+              --arg refreshWindow "$DASHBOARD_REFRESH_WINDOW" \
+              --arg gitSha "$GITHUB_SHA" \
+              --arg githubRunId "$GITHUB_RUN_ID" \
+              --argjson githubRunAttempt "$GITHUB_RUN_ATTEMPT" \
+              --arg githubEventName "$GITHUB_EVENT_NAME" '
+                .dryRun == false
+                and .refreshWindow == $refreshWindow
+                and .pipelineRunStatus == "SUCCEEDED"
+                and (
+                  .pipelineRunProof
+                  | type == "string" and test("^[0-9a-f]{64}$")
+                )
+                and (
+                  .pipelineRunEndedAt
+                  | type == "string"
+                    and test("^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$")
+                )
+                and .execution == {
+                  gitSha: $gitSha,
+                  githubRunId: $githubRunId,
+                  githubRunAttempt: $githubRunAttempt,
+                  githubEventName: $githubEventName
+                }
+              ' tmp/dashboard-sync-summary.json >/dev/null
+            cp tmp/dashboard-sync-summary.json tmp/preview-dashboard-bootstrap/dashboard-sync-summary.json
+            pipeline_run_proof="$(jq -er '.pipelineRunProof' tmp/dashboard-sync-summary.json)"
+            pipeline_run_ended_at="$(jq -er '.pipelineRunEndedAt' tmp/dashboard-sync-summary.json)"
+            echo "pipeline_run_proof=$pipeline_run_proof" >> "$GITHUB_OUTPUT"
+            echo "pipeline_run_ended_at=$pipeline_run_ended_at" >> "$GITHUB_OUTPUT"
+          elif [ "$sync_status" -eq 0 ]; then
+            echo "::error::Successful dashboard synchronization did not produce its required summary."
+            exit 1
+          fi
+          exit "$sync_status"
+
+      - name: Verify complete Preview dashboard persistence
+        id: dashboard_verify
+        if: steps.dashboard_sync.outcome == 'success'
+        continue-on-error: true
+        env:
+          DATABASE_URL: ${{ secrets.PREVIEW_DATABASE_URL }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          set +e
+          npm run dashboard:verify -- --require-complete
+          verify_status=$?
+          set -e
+          if [ -f tmp/dashboard-verify-summary.json ]; then
+            cp tmp/dashboard-verify-summary.json tmp/preview-dashboard-bootstrap/dashboard-source-verification.json
+          elif [ "$verify_status" -eq 0 ]; then
+            echo "::error::Successful dashboard verification did not produce its required summary."
+            exit 1
+          fi
+          exit "$verify_status"
+
+      - name: Record fixed-schema bootstrap outcome
+        id: bootstrap_outcome
+        if: always()
+        env:
+          CHECKOUT: ${{ steps.checkout.outcome }}
+          PROVENANCE: ${{ steps.provenance.outcome }}
+          SETUP_NODE: ${{ steps.setup_node.outcome }}
+          INSTALL: ${{ steps.install.outcome }}
+          DATABASE_SECRET_MASKS: ${{ steps.database_secret_masks.outcome }}
+          PROVIDER_CONFIGURATION: ${{ steps.provider_configuration.outcome }}
+          TARGET_GUARD: ${{ steps.target_guard.outcome }}
+          DATABASE_PAIR: ${{ steps.database_pair.outcome }}
+          NEON_IDENTITY: ${{ steps.neon_identity.outcome }}
+          SCHEMA_PREFLIGHT: ${{ steps.schema_preflight.outcome }}
+          DASHBOARD_DRY_RUN: ${{ steps.dashboard_dry_run.outcome }}
+          DASHBOARD_SYNC: ${{ steps.dashboard_sync.outcome }}
+          DASHBOARD_VERIFY: ${{ steps.dashboard_verify.outcome }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tmp/preview-dashboard-bootstrap
+          jq -n \
+            --arg checkout "$CHECKOUT" \
+            --arg provenance "$PROVENANCE" \
+            --arg setupNode "$SETUP_NODE" \
+            --arg install "$INSTALL" \
+            --arg databaseSecretMasks "$DATABASE_SECRET_MASKS" \
+            --arg providerConfiguration "$PROVIDER_CONFIGURATION" \
+            --arg targetGuard "$TARGET_GUARD" \
+            --arg databasePair "$DATABASE_PAIR" \
+            --arg neonIdentity "$NEON_IDENTITY" \
+            --arg schemaPreflight "$SCHEMA_PREFLIGHT" \
+            --arg dashboardDryRun "$DASHBOARD_DRY_RUN" \
+            --arg dashboardSync "$DASHBOARD_SYNC" \
+            --arg dashboardVerify "$DASHBOARD_VERIFY" \
+            '{
+              schemaVersion: 1,
+              job: "bootstrap",
+              target: "preview",
+              steps: {
+                checkout: $checkout,
+                provenance: $provenance,
+                setupNode: $setupNode,
+                install: $install,
+                databaseSecretMasks: $databaseSecretMasks,
+                providerConfiguration: $providerConfiguration,
+                targetGuard: $targetGuard,
+                databasePair: $databasePair,
+                neonIdentity: $neonIdentity,
+                schemaPreflight: $schemaPreflight,
+                dashboardDryRun: $dashboardDryRun,
+                dashboardSync: $dashboardSync,
+                dashboardVerify: $dashboardVerify
+              }
+            }
+            | .result = (
+                if ([.steps[]] | all(. == "success"))
+                then "success"
+                else "failed"
+                end
+              )' > tmp/preview-dashboard-bootstrap/outcome.json
+
+      - name: Final secret scan of immutable bootstrap evidence
+        id: bootstrap_secret_gate
+        if: always() && steps.provider_configuration.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_DATABASE_URL: ${{ secrets.PREVIEW_DATABASE_URL }}
+          PREVIEW_MIGRATION_DATABASE_URL: ${{ secrets.PREVIEW_MIGRATION_DATABASE_URL }}
+          PREVIEW_FRED_API_KEY: ${{ secrets.PREVIEW_FRED_API_KEY }}
+          PREVIEW_EIA_API_KEY: ${{ secrets.PREVIEW_EIA_API_KEY }}
+          PREVIEW_SAM_API_KEY: ${{ secrets.PREVIEW_SAM_API_KEY }}
+          PREVIEW_SEC_USER_AGENT: ${{ secrets.PREVIEW_SEC_USER_AGENT }}
+          PREVIEW_NEON_API_KEY: ${{ secrets.PREVIEW_NEON_API_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          evidence_root=tmp/preview-dashboard-bootstrap
+          scan_root=tmp/preview-dashboard-bootstrap-scans
+          jq -e '
+            .schemaVersion == 1
+            and .job == "bootstrap"
+            and .target == "preview"
+            and (.result == "success" or .result == "failed")
+            and (
+              .steps
+              | keys == [
+                  "checkout",
+                  "dashboardDryRun",
+                  "dashboardSync",
+                  "dashboardVerify",
+                  "databasePair",
+                  "databaseSecretMasks",
+                  "install",
+                  "neonIdentity",
+                  "provenance",
+                  "providerConfiguration",
+                  "schemaPreflight",
+                  "setupNode",
+                  "targetGuard"
+                ]
+            )
+            and .result == (
+              if ([.steps[]] | all(. == "success"))
+              then "success"
+              else "failed"
+              end
+            )
+          ' "$evidence_root/outcome.json" >/dev/null
+          mkdir -p "$scan_root"
+          for name in PREVIEW_DATABASE_URL PREVIEW_MIGRATION_DATABASE_URL; do
+            report_name="$(printf '%s' "$name" | tr '[:upper:]_' '[:lower:]-')"
+            node --experimental-strip-types scripts/assert-playwright-artifact-secret-safety.ts \
+              --root="$evidence_root" \
+              --database-url-secret-env="$name" \
+              --output="$scan_root/${report_name}.json"
+          done
+          for name in PREVIEW_FRED_API_KEY PREVIEW_EIA_API_KEY PREVIEW_SAM_API_KEY PREVIEW_SEC_USER_AGENT PREVIEW_NEON_API_KEY; do
+            report_name="$(printf '%s' "$name" | tr '[:upper:]_' '[:lower:]-')"
+            node --experimental-strip-types scripts/assert-playwright-artifact-secret-safety.ts \
+              --root="$evidence_root" \
+              --secret-env="$name" \
+              --output="$scan_root/${report_name}.json"
+          done
+
+      - name: Upload sanitized bootstrap evidence
+        id: upload_bootstrap
+        if: always() && steps.bootstrap_outcome.outcome == 'success' && steps.bootstrap_secret_gate.outcome == 'success'
+        continue-on-error: true
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: preview-dashboard-bootstrap-${{ github.run_id }}-${{ github.run_attempt }}
+          path: tmp/preview-dashboard-bootstrap/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Enforce successful dashboard synchronization
+        if: always()
+        env:
+          OUTCOME_MANIFEST: ${{ steps.bootstrap_outcome.outcome }}
+          SECRET_GATE: ${{ steps.bootstrap_secret_gate.outcome }}
+          UPLOAD_EVIDENCE: ${{ steps.upload_bootstrap.outcome }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$OUTCOME_MANIFEST" != "success" ] \
+            || [ "$SECRET_GATE" != "success" ] \
+            || [ "$UPLOAD_EVIDENCE" != "success" ] \
+            || [ "$(jq -r '.result // "invalid"' tmp/preview-dashboard-bootstrap/outcome.json 2>/dev/null || true)" != "success" ]; then
+            echo "::error::Preview dashboard synchronization did not satisfy every required outcome."
+            exit 1
+          fi
+
+  preview_runtime_after:
+    name: Bind synchronization to the protected Preview runtime
+    needs: [trusted_main, preview_runtime_before, bootstrap]
+    if: needs.trusted_main.result == 'success' && needs.preview_runtime_before.result == 'success' && needs.bootstrap.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: preview-bootstrap
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout verified main runtime verifier
+        id: checkout
+        continue-on-error: true
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Setup Node without package execution
+        id: setup_node
+        if: steps.checkout.outcome == 'success'
+        continue-on-error: true
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+
+      - name: Reverify main and record post-runtime provenance
+        id: provenance
+        if: steps.setup_node.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_DEPLOYMENT_URL: ${{ needs.trusted_main.outputs.preview_deployment_url }}
+          PREVIEW_GIT_SHA: ${{ needs.trusted_main.outputs.preview_git_sha }}
+          TRUSTED_MAIN_SHA: ${{ needs.trusted_main.outputs.release_sha }}
+          VERCEL_PROJECT_NAME: ${{ vars.VERCEL_PROJECT_NAME }}
+          VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+          BOOTSTRAP_STARTED_AT: ${{ needs.bootstrap.outputs.bootstrap_started_at }}
+          EXPECTED_PIPELINE_RUN_ENDED_AT: ${{ needs.bootstrap.outputs.pipeline_run_ended_at }}
+          EXPECTED_PIPELINE_RUN_PROOF: ${{ needs.bootstrap.outputs.pipeline_run_proof }}
+          DASHBOARD_LAST_SUCCESSFUL_BEFORE: ${{ needs.preview_runtime_before.outputs.dashboard_last_successful_at }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! [[ "$TRUSTED_MAIN_SHA" =~ ^[0-9a-f]{40}$ ]] \
+            || [ "$(git rev-parse HEAD)" != "$TRUSTED_MAIN_SHA" ] \
+            || [ "$(git rev-parse refs/heads/main)" != "$TRUSTED_MAIN_SHA" ]; then
+            echo "::error::Post-runtime verifier is not the authenticated main revision."
+            exit 1
+          fi
+          if ! [[ "$PREVIEW_GIT_SHA" =~ ^[0-9a-f]{40}$ ]] \
+            || ! [[ "$EXPECTED_PIPELINE_RUN_PROOF" =~ ^[0-9a-f]{64}$ ]] \
+            || ! [[ "$EXPECTED_PIPELINE_RUN_ENDED_AT" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?Z$ ]] \
+            || ! [[ "$BOOTSTRAP_STARTED_AT" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?Z$ ]] \
+            || { [ "$DASHBOARD_LAST_SUCCESSFUL_BEFORE" != "none" ] && ! [[ "$DASHBOARD_LAST_SUCCESSFUL_BEFORE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]+)?Z$ ]]; }; then
+            echo "::error::Synchronization proof inputs are invalid."
+            exit 1
+          fi
+          if ! [[ "$VERCEL_PROJECT_NAME" =~ ^[a-z0-9][a-z0-9-]*[a-z0-9]$ ]] \
+            || ! [[ "$VERCEL_SCOPE" =~ ^[a-z0-9][a-z0-9-]*[a-z0-9]$ ]]; then
+            echo "::error::Protected Vercel project and scope metadata are invalid."
+            exit 1
+          fi
+          deployment_host="${PREVIEW_DEPLOYMENT_URL#https://}"
+          deployment_token="${deployment_host#"$VERCEL_PROJECT_NAME"-}"
+          deployment_token="${deployment_token%-"$VERCEL_SCOPE".vercel.app}"
+          if [ "$deployment_host" != "$VERCEL_PROJECT_NAME-$deployment_token-$VERCEL_SCOPE.vercel.app" ] \
+            || ! [[ "$deployment_token" =~ ^[a-z0-9]+$ ]]; then
+            echo "::error::Preview URL is not the immutable hostname for the protected project and scope."
+            exit 1
+          fi
+          mkdir -p tmp/preview-dashboard-runtime-after
+          jq -n \
+            --arg releaseSha "$TRUSTED_MAIN_SHA" \
+            --arg repository "$GITHUB_REPOSITORY" \
+            --arg runId "$GITHUB_RUN_ID" \
+            --arg runAttempt "$GITHUB_RUN_ATTEMPT" \
+            --arg eventName "$GITHUB_EVENT_NAME" \
+            --arg previewDeploymentUrl "$PREVIEW_DEPLOYMENT_URL" \
+            --arg previewGitSha "$PREVIEW_GIT_SHA" \
+            --arg bootstrapStartedAt "$BOOTSTRAP_STARTED_AT" \
+            --arg previousSuccessfulAt "$DASHBOARD_LAST_SUCCESSFUL_BEFORE" \
+            --arg pipelineRunEndedAt "$EXPECTED_PIPELINE_RUN_ENDED_AT" \
+            --arg pipelineRunProof "$EXPECTED_PIPELINE_RUN_PROOF" \
+            '{
+              schemaVersion: 1,
+              job: "preview_runtime_after",
+              target: "preview",
+              releaseSha: $releaseSha,
+              repository: $repository,
+              githubRunId: $runId,
+              githubRunAttempt: $runAttempt,
+              githubEventName: $eventName,
+              previewDeploymentUrl: $previewDeploymentUrl,
+              previewGitSha: $previewGitSha,
+              bootstrapStartedAt: $bootstrapStartedAt,
+              dashboardLastSuccessfulBefore: $previousSuccessfulAt,
+              expectedPipelineRunEndedAt: $pipelineRunEndedAt,
+              expectedPipelineRunProof: $pipelineRunProof
+            }' > tmp/preview-dashboard-runtime-after/provenance.json
+
+      - name: Require protected Vercel verification credential
+        id: vercel_configuration
+        if: steps.provenance.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_VERCEL_TOKEN: ${{ secrets.PREVIEW_VERCEL_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$(printf '%s' "$PREVIEW_VERCEL_TOKEN" | wc -c | tr -d ' ')" -lt 14 ]; then
+            echo "::error::PREVIEW_VERCEL_TOKEN is missing or too short for fail-closed verification."
+            exit 1
+          fi
+
+      - name: Reprove the immutable Vercel deployment before fresh OIDC
+        id: vercel_deployment
+        if: steps.vercel_configuration.outcome == 'success'
+        continue-on-error: true
+        env:
+          VERCEL_TOKEN: ${{ secrets.PREVIEW_VERCEL_TOKEN }}
+          PREVIEW_DEPLOYMENT_URL: ${{ needs.trusted_main.outputs.preview_deployment_url }}
+          PREVIEW_GIT_SHA: ${{ needs.trusted_main.outputs.preview_git_sha }}
+          VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+          VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
+          GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$PREVIEW_DEPLOYMENT_URL" \
+            --expected-sha="$PREVIEW_GIT_SHA" \
+            --expected-project-id="$VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
+            --expected-target=preview \
+            --require-immutable-url \
+            --output=tmp/preview-dashboard-runtime-after/vercel-deployment.json
+
+      - name: Reverify deployment protection on the health path before OIDC
+        id: deployment_protection
+        if: steps.vercel_deployment.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_DEPLOYMENT_URL: ${{ needs.trusted_main.outputs.preview_deployment_url }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          requested_url="$PREVIEW_DEPLOYMENT_URL/Infra-MA2/api/health"
+          header_capture="$RUNNER_TEMP/preview-health-after-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.headers"
+          trap 'rm -f "$header_capture"' EXIT
+          unauthenticated_status="$(curl \
+            --proto '=https' \
+            --tlsv1.2 \
+            --silent \
+            --show-error \
+            --max-time 25 \
+            --max-redirs 0 \
+            --dump-header "$header_capture" \
+            --output /dev/null \
+            --write-out '%{http_code}' \
+            "$requested_url")"
+          node --experimental-strip-types scripts/verify-vercel-protected-health.ts \
+            --status="$unauthenticated_status" \
+            --headers="$header_capture" \
+            --requested-url="$requested_url" \
+            --output=tmp/preview-dashboard-runtime-after/deployment-protection.json
+          jq -e '
+            keys == ["healthPathProtected", "responseKind", "result", "status"]
+            and .healthPathProtected == true
+            and .result == "passed"
+            and (
+              (.status == 401 and .responseKind == "unauthorized")
+              or (.status == 302 and .responseKind == "sso_redirect")
+            )
+          ' tmp/preview-dashboard-runtime-after/deployment-protection.json >/dev/null
+
+      - name: Request fresh Preview-scoped Vercel OIDC identity
+        id: preview_oidc
+        if: steps.deployment_protection.outcome == 'success'
+        continue-on-error: true
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          script: |
+            const token = await core.getIDToken("https://vercel.com/infrasight-preview-bootstrap");
+            core.setSecret(token);
+            core.setOutput("token", token);
+
+      - name: Bind the exact successful run to immutable Preview health
+        id: preview_health
+        if: steps.preview_oidc.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_DEPLOYMENT_URL: ${{ needs.trusted_main.outputs.preview_deployment_url }}
+          PREVIEW_GIT_SHA: ${{ needs.trusted_main.outputs.preview_git_sha }}
+          BOOTSTRAP_STARTED_AT: ${{ needs.bootstrap.outputs.bootstrap_started_at }}
+          DASHBOARD_LAST_SUCCESSFUL_BEFORE: ${{ needs.preview_runtime_before.outputs.dashboard_last_successful_at }}
+          EXPECTED_PIPELINE_RUN_PROOF: ${{ needs.bootstrap.outputs.pipeline_run_proof }}
+          EXPECTED_PIPELINE_RUN_ENDED_AT: ${{ needs.bootstrap.outputs.pipeline_run_ended_at }}
+          VERCEL_TRUSTED_OIDC_TOKEN: ${{ steps.preview_oidc.outputs.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          health_status="$(curl \
+            --proto '=https' \
+            --tlsv1.2 \
+            --silent \
+            --show-error \
+            --max-time 25 \
+            --max-redirs 0 \
+            --header "x-vercel-trusted-oidc-idp-token: $VERCEL_TRUSTED_OIDC_TOKEN" \
+            --output tmp/preview-dashboard-runtime-after/immutable-preview-health-after.json \
+            --write-out '%{http_code}' \
+            "$PREVIEW_DEPLOYMENT_URL/Infra-MA2/api/health")"
+          if [ "$health_status" != "200" ]; then
+            echo "::error::Synchronized immutable Preview health returned HTTP $health_status."
+            exit 1
+          fi
+          jq -e \
+            --arg expectedVersion "${PREVIEW_GIT_SHA:0:12}" \
+            --arg startedAt "$BOOTSTRAP_STARTED_AT" \
+            --arg previousSuccessfulAt "$DASHBOARD_LAST_SUCCESSFUL_BEFORE" \
+            --arg expectedPipelineRunProof "$EXPECTED_PIPELINE_RUN_PROOF" \
+            --arg expectedPipelineRunEndedAt "$EXPECTED_PIPELINE_RUN_ENDED_AT" '
+              def iso:
+                type == "string"
+                and test("^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$");
+              def proof:
+                type == "string" and test("^[0-9a-f]{64}$");
+              ($startedAt | sub("\\.[0-9]+Z$"; "Z") | fromdateiso8601) as $started
+              | keys == [
+                  "database",
+                  "generatedAt",
+                  "generationTimeMs",
+                  "pipelines",
+                  "status",
+                  "version"
+                ]
+              and .version == $expectedVersion
+              and .database == "connected"
+              and .status == "healthy"
+              and (.generatedAt | iso)
+              and (.generationTimeMs | type == "number" and . >= 0)
+              and (.pipelines | type == "array" and length == 2)
+              and ([.pipelines[].name] | sort == ["DASHBOARD_SYNC", "NEWS_SCAN"])
+              and all(
+                .pipelines[];
+                keys == [
+                  "lastAttemptAt",
+                  "lastSuccessfulAt",
+                  "lastSuccessfulRunProof",
+                  "name",
+                  "status"
+                ]
+                and (.status == "healthy" or .status == "running")
+                and (.lastAttemptAt | iso)
+                and (.lastSuccessfulAt | iso)
+                and (.lastSuccessfulRunProof | proof)
+              )
+              and any(
+                .pipelines[];
+                .name == "DASHBOARD_SYNC"
+                and .lastSuccessfulAt == $expectedPipelineRunEndedAt
+                and .lastSuccessfulRunProof == $expectedPipelineRunProof
+                and (
+                  (.lastSuccessfulAt | sub("\\.[0-9]+Z$"; "Z") | fromdateiso8601)
+                  >= $started
+                )
+                and (
+                  $previousSuccessfulAt == "none"
+                  or (
+                    (.lastSuccessfulAt | sub("\\.[0-9]+Z$"; "Z") | fromdateiso8601)
+                    > (
+                      $previousSuccessfulAt
+                      | sub("\\.[0-9]+Z$"; "Z")
+                      | fromdateiso8601
+                    )
+                  )
+                )
+              )
+            ' tmp/preview-dashboard-runtime-after/immutable-preview-health-after.json >/dev/null
+
+      - name: Record fixed-schema post-runtime outcome
+        id: runtime_after_outcome
+        if: always()
+        env:
+          CHECKOUT: ${{ steps.checkout.outcome }}
+          SETUP_NODE: ${{ steps.setup_node.outcome }}
+          PROVENANCE: ${{ steps.provenance.outcome }}
+          VERCEL_CONFIGURATION: ${{ steps.vercel_configuration.outcome }}
+          VERCEL_DEPLOYMENT: ${{ steps.vercel_deployment.outcome }}
+          DEPLOYMENT_PROTECTION: ${{ steps.deployment_protection.outcome }}
+          PREVIEW_OIDC: ${{ steps.preview_oidc.outcome }}
+          PREVIEW_HEALTH: ${{ steps.preview_health.outcome }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tmp/preview-dashboard-runtime-after
+          jq -n \
+            --arg checkout "$CHECKOUT" \
+            --arg setupNode "$SETUP_NODE" \
+            --arg provenance "$PROVENANCE" \
+            --arg vercelConfiguration "$VERCEL_CONFIGURATION" \
+            --arg vercelDeployment "$VERCEL_DEPLOYMENT" \
+            --arg deploymentProtection "$DEPLOYMENT_PROTECTION" \
+            --arg previewOidc "$PREVIEW_OIDC" \
+            --arg previewHealth "$PREVIEW_HEALTH" \
+            '{
+              schemaVersion: 1,
+              job: "preview_runtime_after",
+              target: "preview",
+              steps: {
+                checkout: $checkout,
+                setupNode: $setupNode,
+                provenance: $provenance,
+                vercelConfiguration: $vercelConfiguration,
+                vercelDeployment: $vercelDeployment,
+                deploymentProtection: $deploymentProtection,
+                previewOidc: $previewOidc,
+                previewHealth: $previewHealth
+              }
+            }
+            | .result = (
+                if ([.steps[]] | all(. == "success"))
+                then "success"
+                else "failed"
+                end
+              )' > tmp/preview-dashboard-runtime-after/outcome.json
+
+      - name: Final secret scan of immutable post-runtime evidence
+        id: runtime_after_secret_gate
+        if: always() && steps.vercel_configuration.outcome == 'success'
+        continue-on-error: true
+        env:
+          PREVIEW_VERCEL_TOKEN: ${{ secrets.PREVIEW_VERCEL_TOKEN }}
+          VERCEL_TRUSTED_OIDC_TOKEN: ${{ steps.preview_oidc.outputs.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          evidence_root=tmp/preview-dashboard-runtime-after
+          scan_root=tmp/preview-dashboard-runtime-after-scans
+          jq -e '
+            .schemaVersion == 1
+            and .job == "preview_runtime_after"
+            and .target == "preview"
+            and (.result == "success" or .result == "failed")
+            and (
+              .steps
+              | keys == [
+                  "checkout",
+                  "deploymentProtection",
+                  "previewHealth",
+                  "previewOidc",
+                  "provenance",
+                  "setupNode",
+                  "vercelConfiguration",
+                  "vercelDeployment"
+                ]
+            )
+            and .result == (
+              if ([.steps[]] | all(. == "success"))
+              then "success"
+              else "failed"
+              end
+            )
+          ' "$evidence_root/outcome.json" >/dev/null
+          mkdir -p "$scan_root"
+          node --experimental-strip-types scripts/assert-playwright-artifact-secret-safety.ts \
+            --root="$evidence_root" \
+            --secret-env=PREVIEW_VERCEL_TOKEN \
+            --output="$scan_root/preview-vercel-token.json"
+          if [ -n "${VERCEL_TRUSTED_OIDC_TOKEN:-}" ]; then
+            node --experimental-strip-types scripts/assert-playwright-artifact-secret-safety.ts \
+              --root="$evidence_root" \
+              --secret-env=VERCEL_TRUSTED_OIDC_TOKEN \
+              --output="$scan_root/vercel-trusted-oidc-token.json"
+          fi
+
+      - name: Upload sanitized post-runtime evidence
+        id: upload_runtime_after
+        if: always() && steps.runtime_after_outcome.outcome == 'success' && steps.runtime_after_secret_gate.outcome == 'success'
+        continue-on-error: true
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: preview-dashboard-runtime-after-${{ github.run_id }}-${{ github.run_attempt }}
+          path: tmp/preview-dashboard-runtime-after/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Enforce successful post-runtime binding
+        if: always()
+        env:
+          OUTCOME_MANIFEST: ${{ steps.runtime_after_outcome.outcome }}
+          SECRET_GATE: ${{ steps.runtime_after_secret_gate.outcome }}
+          UPLOAD_EVIDENCE: ${{ steps.upload_runtime_after.outcome }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$OUTCOME_MANIFEST" != "success" ] \
+            || [ "$SECRET_GATE" != "success" ] \
+            || [ "$UPLOAD_EVIDENCE" != "success" ] \
+            || [ "$(jq -r '.result // "invalid"' tmp/preview-dashboard-runtime-after/outcome.json 2>/dev/null || true)" != "success" ]; then
+            echo "::error::Preview post-runtime binding did not satisfy every required outcome."
+            exit 1
+          fi

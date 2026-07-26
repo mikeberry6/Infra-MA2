@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Button } from "@/components/shared/Button";
+import { ButtonLink } from "@/components/shared/Button";
 
 export default function NotFound() {
   return (
@@ -15,11 +14,9 @@ export default function NotFound() {
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
         <div className="mt-6">
-          <Link href="/">
-            <Button variant="primary" size="md">
-              Back to deals
-            </Button>
-          </Link>
+          <ButtonLink href="/tracker" variant="primary" size="md">
+            Back to deals
+          </ButtonLink>
         </div>
       </div>
     </div>

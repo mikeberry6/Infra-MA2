@@ -36,6 +36,7 @@ export const FUND_NAME_ALIASES: Record<string, string> = {
   EIG: "EIG Global Energy Partners",
   InfraVia: "InfraVia Capital Partners",
   "Brookfield Infrastructure Structured Solutions": "Brookfield Asset Management",
+  Brookfield: "Brookfield Asset Management",
   "Standard Solar / Brookfield": "Brookfield Asset Management",
   "Mainstay Maritime": "Oaktree Capital",
   "Brookfield / La Caisse": "Brookfield Asset Management",
@@ -44,6 +45,15 @@ export const FUND_NAME_ALIASES: Record<string, string> = {
   EQT: "EQT Infrastructure",
   CDPQ: "La Caisse de dépôt (CDPQ)",
   "La Caisse": "La Caisse de dépôt (CDPQ)",
+};
+
+// Compound labels sometimes describe an operating acquirer plus its sponsor,
+// a renamed parent, or genuine co-sponsors. Keep that editorial distinction
+// explicit so splitting on " / " cannot invent or erase fund activity.
+const COMPOUND_FUND_ENTITY_POLICY: Record<string, string[]> = {
+  "Standard Solar / Brookfield": ["Brookfield Asset Management"],
+  "Global Infrastructure Partners / BlackRock": ["GIP"],
+  "Brookfield / La Caisse": ["Brookfield", "La Caisse"],
 };
 
 /** Normalize a fund name to its canonical form using known aliases. */
@@ -60,4 +70,10 @@ export function splitEntities(field: string): string[] {
     .split(/\s+&\s+|\s+\/\s+/)
     .map((s) => s.trim())
     .filter(Boolean);
+}
+
+/** Resolve a buyer/seller field to unique canonical fund-manager entities. */
+export function normalizeFundEntities(field: string): string[] {
+  const entities = COMPOUND_FUND_ENTITY_POLICY[field] ?? splitEntities(field);
+  return Array.from(new Set(entities.map(normalizeFundName).filter(Boolean)));
 }

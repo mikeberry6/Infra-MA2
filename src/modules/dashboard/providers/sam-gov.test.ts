@@ -1,4 +1,8 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
+import {
+  DASHBOARD_METHODOLOGY_VERSIONS,
+  SAM_GOV_METHODOLOGY_PAGE_SIZE,
+} from "@/modules/dashboard/methodology-cutover";
 import { samGovProvider } from "@/modules/dashboard/providers/sam-gov";
 
 describe("SAM.gov provider fixtures", () => {
@@ -29,7 +33,16 @@ describe("SAM.gov provider fixtures", () => {
 
     const result = await samGovProvider("fixture-key", new Date("2026-07-22T11:30:00.000Z")).fetch();
 
-    expect(result.observations[0]).toMatchObject({ metricId: "sam_opportunities", value: 2, unit: "count" });
+    expect(result.observations[0]).toMatchObject({
+      metricId: "sam_opportunities",
+      value: 2,
+      unit: "count",
+      metadata: {
+        methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.samGovOpportunities,
+        pagination: "offset",
+        pageSize: SAM_GOV_METHODOLOGY_PAGE_SIZE,
+      },
+    });
     expect(result.signals).toHaveLength(2);
     expect(result.signals?.[0]).toMatchObject({ signalKey: "sam-opportunity-A", reviewStatus: "PENDING" });
     expect(fetchMock).toHaveBeenCalledTimes(9);
@@ -44,6 +57,87 @@ describe("SAM.gov provider fixtures", () => {
       .toEqual(new Set(["07/16/2026"]));
     expect(new URL(String(fetchMock.mock.calls[0][0])).searchParams.getAll("ptype"))
       .toEqual(["p", "r", "o", "k", "i"]);
+  });
+
+  it("retrieves a 2,000-record result set at page-index offsets 0 and 1", async () => {
+    const firstPage = Array.from({ length: 1_000 }, (_, index) => ({
+      noticeId: `first-${index}`,
+      title: `Infrastructure first page ${index}`,
+      postedDate: "2026-07-21",
+      active: "Yes",
+    }));
+    const secondPage = Array.from({ length: 1_000 }, (_, index) => ({
+      noticeId: `second-${index}`,
+      title: `Infrastructure second page ${index}`,
+      postedDate: "2026-07-20",
+      active: "Yes",
+    }));
+    const fetchMock = vi.fn(async (input: string | URL | Request) => {
+      const url = new URL(String(input));
+      if (url.searchParams.get("title") !== "infrastructure") {
+        return jsonResponse({ totalRecords: 0, opportunitiesData: [] });
+      }
+      const offset = Number(url.searchParams.get("offset"));
+      return jsonResponse({
+        totalRecords: 2_000,
+        offset,
+        opportunitiesData: offset === 0 ? firstPage : secondPage,
+      });
+    });
+    vi.stubGlobal("fetch", fetchMock);
+
+    const result = await samGovProvider("fixture-key", new Date("2026-07-22T11:30:00.000Z")).fetch();
+
+    expect(result.observations[0]).toMatchObject({ value: 2_000 });
+    expect(result.signals).toHaveLength(2_000);
+    expect(fetchMock.mock.calls
+      .filter(([input]) => new URL(String(input)).searchParams.get("title") === "infrastructure")
+      .map(([input]) => Number(new URL(String(input)).searchParams.get("offset"))))
+      .toEqual([0, 1]);
+  });
+
+  it("rejects a repeated page that makes no opportunity progress", async () => {
+    vi.stubGlobal("fetch", vi.fn(async (input: string | URL | Request) => {
+      const url = new URL(String(input));
+      if (url.searchParams.get("title") !== "infrastructure") {
+        return jsonResponse({ totalRecords: 0, opportunitiesData: [] });
+      }
+      return jsonResponse({
+        totalRecords: 2_000,
+        opportunitiesData: [{
+          noticeId: "repeated",
+          title: "Repeated infrastructure opportunity",
+          postedDate: "2026-07-21",
+          active: "Yes",
+        }],
+      });
+    }));
+
+    await expect(samGovProvider("fixture-key", new Date("2026-07-22T11:30:00.000Z")).fetch())
+      .rejects.toThrow("repeated a page without advancing");
+  });
+
+  it("rejects a response that echoes an earlier offset", async () => {
+    vi.stubGlobal("fetch", vi.fn(async (input: string | URL | Request) => {
+      const url = new URL(String(input));
+      if (url.searchParams.get("title") !== "infrastructure") {
+        return jsonResponse({ totalRecords: 0, opportunitiesData: [] });
+      }
+      const requestedOffset = Number(url.searchParams.get("offset"));
+      return jsonResponse({
+        totalRecords: 2_000,
+        offset: 0,
+        opportunitiesData: [{
+          noticeId: `offset-${requestedOffset}`,
+          title: "Infrastructure opportunity",
+          postedDate: "2026-07-21",
+          active: "Yes",
+        }],
+      });
+    }));
+
+    await expect(samGovProvider("fixture-key", new Date("2026-07-22T11:30:00.000Z")).fetch())
+      .rejects.toThrow("echoed a non-advancing offset");
   });
 
   it("emits every matched opportunity for analyst review", async () => {
@@ -149,3 +243,10 @@ describe("SAM.gov provider fixtures", () => {
       .rejects.toThrow(message);
   });
 });
+
+function jsonResponse(value: unknown): Response {
+  return new Response(JSON.stringify(value), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
+}

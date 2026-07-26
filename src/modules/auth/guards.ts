@@ -1,12 +1,7 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/modules/auth/config";
 import { prisma } from "@/lib/prisma";
-
-export interface SessionIdentity {
-  id: string;
-  email: string;
-  role: string;
-}
+import { signedSnapshotMatchesCurrentUser } from "@/modules/auth/session";
 
 export class AuthorizationError extends Error {
   constructor(message = "Forbidden") {
@@ -19,18 +14,21 @@ export function isAuthorizationError(error: unknown): error is AuthorizationErro
   return error instanceof AuthorizationError;
 }
 
-export async function getSessionIdentity(): Promise<SessionIdentity | null> {
-  const session = await getServerSession(authOptions);
-  const id = (session?.user as { id?: string } | undefined)?.id;
-  if (!id) return null;
-  return prisma.user.findUnique({
-    where: { id },
-    select: { id: true, email: true, role: true },
-  });
+export async function getSessionRole(): Promise<string | null> {
+  const identity = await getSessionIdentity();
+  return identity?.role ?? null;
 }
 
-export async function getSessionRole(): Promise<string | null> {
-  return (await getSessionIdentity())?.role ?? null;
+export async function getSessionIdentity(): Promise<{ id: string; role: string } | null> {
+  const session = await getServerSession(authOptions);
+  if (!session?.user?.id || !session.user.role) return null;
+
+  const user = await prisma.user.findUnique({
+    where: { id: session.user.id },
+    select: { id: true, role: true, updatedAt: true },
+  });
+  if (!signedSnapshotMatchesCurrentUser(session.user, user)) return null;
+  return { id: user.id, role: user.role };
 }
 
 export async function requireAdmin(): Promise<void> {

@@ -15,6 +15,8 @@ export interface DealView {
   target: string;
   buyer: string;
   seller: string;
+  sellerDisclosureStatus?: "DISCLOSED" | "NOT_DISCLOSED" | "NOT_APPLICABLE" | "LEGACY_UNREVIEWED";
+  sellerDisclosureReason?: string | null;
   sector: string;
   subsector: string;
   region: string;
@@ -40,6 +42,27 @@ export interface DealView {
   keyHighlights: string[] | null;
 }
 
+export type DealListItem = Pick<
+  DealView,
+  | "id"
+  | "legacyId"
+  | "title"
+  | "target"
+  | "buyer"
+  | "seller"
+  | "sector"
+  | "subsector"
+  | "region"
+  | "category"
+  | "date"
+  | "status"
+  | "country"
+  | "sourceName"
+  | "sourceUrl"
+>;
+
+export type DealDetail = DealView;
+
 export interface FundView {
   id: string;
   legacyId: string;
@@ -48,6 +71,7 @@ export interface FundView {
   ticker: string | null;
   investmentStrategy: string;
   sourceUrls: string[];
+  primarySourceUrl: string | null;
   size: string;
   sizeUsdMm: number | null;
   vintage: string;
@@ -57,8 +81,25 @@ export interface FundView {
   sectors: string[];
   regions: string[];
   portfolioCompanies: PortfolioCompanyView[];
+  managerPortfolioCompanies: FundPortfolioCompanyView[];
   strategyUrl: string;
 }
+
+export type FundListItem = Pick<
+  FundView,
+  | "id"
+  | "legacyId"
+  | "managerName"
+  | "fundName"
+  | "size"
+  | "sizeUsdMm"
+  | "vintage"
+  | "strategies"
+  | "status"
+  | "sectors"
+>;
+
+export type FundDetail = FundView;
 
 export interface FundStrategyView {
   fundName: string;
@@ -75,6 +116,12 @@ export interface PortfolioCompanyView {
   isActive: boolean;
   investmentYear?: number;
   exitYear?: number;
+}
+
+export interface FundPortfolioCompanyView {
+  company: PortfolioCompanyView;
+  fundName: string;
+  strategies: string[];
 }
 
 export interface OwnerView {
@@ -109,6 +156,30 @@ export interface CompanyView {
   sources?: SourceView[];
   owners: OwnerView[];
 }
+
+/**
+ * The portfolio index projection. Drawer-only narrative, evidence, management,
+ * milestone, and website fields are intentionally excluded from the initial
+ * page payload and are hydrated through the public detail endpoint.
+ */
+export type CompanyListItem = Pick<
+  CompanyView,
+  | "id"
+  | "focusIds"
+  | "name"
+  | "investmentFirm"
+  | "sector"
+  | "subsector"
+  | "region"
+  | "country"
+  | "ownershipVehicle"
+  | "status"
+  | "countryTags"
+  | "investmentYear"
+  | "owners"
+>;
+
+export type CompanyDetail = CompanyView;
 
 export interface MilestoneView {
   date: string;
@@ -174,5 +245,44 @@ export interface NewsItemView {
 
 export interface NewsFeedView {
   items: NewsItemView[];
-  lastUpdated: string;
+  lastUpdated: string | null;
+  operations: FeedOperationsView;
+}
+
+export interface FeedOperationsView {
+  state: "healthy" | "pending" | "overdue" | "failed" | "never-run";
+  lastAttemptAt?: string;
+  lastSuccessfulAt?: string;
+  nextExpectedAt?: string;
+  sourceCoverage?: NewsSourceCoverage;
+  scanWindow?: NewsScanWindowView;
+  message: string;
+}
+
+export interface NewsScanWindowView {
+  selectionDateUtc: string;
+  fullUniverseCount: number;
+  eligibleCount: number;
+  selectedCount: number;
+  offset: number;
+  windowIndex: number;
+  windowsPerCycle: number;
+}
+
+export interface NewsSourceCoverage extends Record<string, number> {
+  attempted: number;
+  succeeded: number;
+  failed: number;
+}
+
+export interface RecordMeta {
+  canonicalId: string;
+  updatedAt: string;
+  lastVerifiedAt: string | null;
+  sourceCount: number;
+}
+
+export interface DetailResponse<T> {
+  data: T;
+  meta: RecordMeta;
 }

@@ -1,4 +1,8 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
+import {
+  DASHBOARD_METHODOLOGY_VERSIONS,
+  FEDERAL_REGISTER_METHODOLOGY_DOCUMENT_TYPES,
+} from "@/modules/dashboard/methodology-cutover";
 import { federalRegisterProvider } from "@/modules/dashboard/providers/federal-register";
 
 function document(documentNumber: string, publicationDate = "2026-07-21") {
@@ -40,6 +44,10 @@ describe("Federal Register provider fixtures", () => {
       metricId: "federal_register_infra_notices",
       value: 101,
       unit: "count",
+      metadata: expect.objectContaining({
+        methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.federalRegisterInfraNotices,
+        documentTypes: FEDERAL_REGISTER_METHODOLOGY_DOCUMENT_TYPES,
+      }),
     });
     expect(result.signals).toHaveLength(101);
     expect(result.signals?.[0]).toMatchObject({

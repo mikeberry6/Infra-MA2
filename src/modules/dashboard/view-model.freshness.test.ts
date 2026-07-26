@@ -5,6 +5,7 @@ import {
   DASHBOARD_SOURCES,
 } from "@/modules/dashboard/catalog";
 import { buildDashboardView } from "@/modules/dashboard/view-model";
+import { DASHBOARD_METHODOLOGY_VERSIONS } from "@/modules/dashboard/methodology-cutover";
 import type { DashboardObservation, DashboardRunSummary } from "@/modules/dashboard/types";
 
 const generatedAt = "2026-07-22T12:00:00.000Z";
@@ -118,6 +119,32 @@ describe("dashboard freshness classification", () => {
 
     expect(view.allSeries.some((series) => series.metric.id === roadmap.id)).toBe(false);
     expect(view.allSeries.find((series) => series.metric.id === active.id)?.observations).toEqual([]);
+  });
+
+  it("keeps pre-version methodology rows out of public series before database remediation", () => {
+    const metricId = "usaspending_infra_awards_30d";
+    const legacy = {
+      ...observation(metricId, "2026-07-21"),
+      metadata: { countEndpoint: true, awardTypes: ["old-contracts-only"] },
+    };
+    const current = {
+      ...observation(metricId, "2026-07-22"),
+      metadata: {
+        methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.usaSpendingAwards30d,
+        countEndpoint: true,
+      },
+    };
+
+    const view = buildDashboardView({
+      observations: [legacy, current],
+      signals: [],
+      sourceHealth: [],
+      generatedAt,
+      hasDatabaseData: true,
+    });
+
+    expect(view.allSeries.find((series) => series.metric.id === metricId)?.observations)
+      .toEqual([current]);
   });
 
   it("marks a current cached value stale after its provider fails", () => {

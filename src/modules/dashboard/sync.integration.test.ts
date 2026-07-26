@@ -137,6 +137,31 @@ describe("dashboard pipeline idempotency and failure recovery", () => {
     }));
   });
 
+  it("emits payload-free provider latency telemetry", async () => {
+    const info = vi.spyOn(console, "info").mockImplementation(() => undefined);
+    await syncDashboard(prismaDouble(), {
+      dryRun: true,
+      providers: [provider(vi.fn().mockResolvedValue({
+        observations: completeTreasuryObservations(),
+        signals: [],
+      }))],
+    });
+
+    const entry = info.mock.calls
+      .map(([value]) => JSON.parse(String(value)) as Record<string, unknown>)
+      .find((value) => value.task === "dashboard_provider");
+    expect(entry).toEqual({
+      taskId: expect.stringMatching(/^[0-9a-f-]{36}$/i),
+      task: "dashboard_provider",
+      operation: "fetch_treasury",
+      durationMs: expect.any(Number),
+      status: 200,
+    });
+    expect(entry).not.toHaveProperty("url");
+    expect(entry).not.toHaveProperty("result");
+    info.mockRestore();
+  });
+
   it("preserves an approval for identical replays and resets changed content to pending", async () => {
     const prisma = prismaDouble();
     let storedSignal: Record<string, any> | null = null;
@@ -216,7 +241,7 @@ describe("dashboard pipeline idempotency and failure recovery", () => {
     expect(summary.sources[0]).toMatchObject({
       sourceId: "failed",
       status: "FAILED",
-      error: "upstream timeout",
+      error: "timeout_error: Server operation timed out.",
     });
     expect(summary.sources[1]).toMatchObject({
       sourceId: "treasury",
@@ -230,7 +255,10 @@ describe("dashboard pipeline idempotency and failure recovery", () => {
       observationsUpserted: 1,
     });
     expect(vi.mocked(prisma.dashboardSourceRun.update)).toHaveBeenCalledWith(expect.objectContaining({
-      data: expect.objectContaining({ status: "FAILED", error: "upstream timeout" }),
+      data: expect.objectContaining({
+        status: "FAILED",
+        error: "timeout_error: Server operation timed out.",
+      }),
     }));
     expect(vi.mocked(prisma.dashboardSourceRun.update)).toHaveBeenCalledWith(expect.objectContaining({
       data: expect.objectContaining({ status: "PARTIAL", observationsUpserted: 1 }),
@@ -253,7 +281,10 @@ describe("dashboard pipeline idempotency and failure recovery", () => {
     }));
     expect(prisma.dashboardSignal.upsert).not.toHaveBeenCalled();
     expect(prisma.dashboardSourceRun.update).toHaveBeenLastCalledWith(expect.objectContaining({
-      data: expect.objectContaining({ status: "FAILED", error: "temporary outage" }),
+      data: expect.objectContaining({
+        status: "FAILED",
+        error: "upstream_error: Upstream operation failed.",
+      }),
     }));
   });
 
@@ -271,16 +302,17 @@ describe("dashboard pipeline idempotency and failure recovery", () => {
     expect(summary.sources[0]).toMatchObject({
       status: "FAILED",
       observationsUpserted: 0,
-      error: expect.stringContaining("could not mark prior U.S. Treasury observations cached"),
+      error: "internal_error: Server operation failed.",
     });
     expect(prisma.dashboardObservation.upsert).not.toHaveBeenCalled();
     expect(prisma.dashboardObservation.updateMany).toHaveBeenCalledTimes(2);
     expect(prisma.dashboardSourceRun.update).toHaveBeenLastCalledWith(expect.objectContaining({
       data: expect.objectContaining({
         status: "FAILED",
-        error: expect.stringContaining("database write unavailable"),
+        error: "internal_error: Server operation failed.",
       }),
     }));
+    expect(JSON.stringify(summary)).not.toContain("database write unavailable");
   });
 
   it("demotes stale returned metrics and their cached history instead of leaving LIVE values public", async () => {
@@ -319,7 +351,9 @@ describe("dashboard pipeline idempotency and failure recovery", () => {
     expect(summary.sources[0]).toMatchObject({
       status: "SKIPPED",
     });
-    expect(summary.sources[0].warnings).toContain("EIA_API_KEY is not configured");
+    expect(summary.sources[0].warnings).toContain(
+      "configuration_error: Required server configuration is unavailable.",
+    );
     expect(summary.totals.skippedSources).toBe(1);
   });
 
@@ -421,13 +455,15 @@ describe("dashboard pipeline idempotency and failure recovery", () => {
     expect(health.failures).toContain("no dashboard observations or signals were fetched");
   });
 
-  it("keeps transient provider detail in the process-level failure message", async () => {
+  it("keeps only the safe HTTP status in the process-level failure message", async () => {
     const prisma = prismaDouble();
     const summary = await syncDashboard(prisma, {
       dryRun: true,
       providers: [provider(vi.fn().mockRejectedValue(new Error("429 rate limit from upstream")))],
     });
 
-    expect(dashboardSyncFailureMessage(summary)).toContain("429 rate limit from upstream");
+    const failure = dashboardSyncFailureMessage(summary);
+    expect(failure).toContain("upstream_error: Upstream operation failed (HTTP 429).");
+    expect(failure).not.toContain("rate limit from upstream");
   });
 });

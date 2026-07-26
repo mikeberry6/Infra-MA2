@@ -8,8 +8,10 @@ import {
   isSampleDashboardRecord,
 } from "@/modules/dashboard/publication";
 import { buildDashboardView } from "@/modules/dashboard/view-model";
+import { nextDashboardSyncAt } from "@/modules/operations/pipeline-schedules";
 import type {
   DashboardObservation,
+  DashboardOperationsView,
   DashboardRunStatus,
   DashboardSignal,
 } from "@/modules/dashboard/types";
@@ -29,7 +31,7 @@ export async function getDashboardView() {
     sourceId: metric.source.id,
   }));
 
-  const [observationRows, signalRows, runRows] = await Promise.all([
+  const [observationRows, signalRows, runRows, latestAttempt, latestSuccess] = await Promise.all([
     prisma.dashboardObservation.findMany({
       where: {
         periodEnd: { gte: observationSince },
@@ -72,8 +74,11 @@ export async function getDashboardView() {
         observationsUpserted: true,
         signalsFetched: true,
         signalsUpserted: true,
+        metadata: true,
       },
     }),
+    getLatestDashboardAttempt(),
+    getLatestSuccessfulDashboardRun(),
   ]);
 
   const publicObservationRows = observationRows.filter((row) => !isSampleDashboardRecord({
@@ -82,9 +87,7 @@ export async function getDashboardView() {
   }));
   const publicSignalRows = signalRows.filter(isPublicDashboardSignal);
 
-  if (publicObservationRows.length === 0 && publicSignalRows.length === 0) {
-    throw new Error("No dashboard cache records were found in Prisma.");
-  }
+  const hasDatabaseData = publicObservationRows.length > 0 || publicSignalRows.length > 0;
 
   return buildDashboardView({
     observations: publicObservationRows
@@ -138,18 +141,84 @@ export async function getDashboardView() {
         signalsFetched: row.signalsFetched,
         signalsUpserted: row.signalsUpserted,
         error: publicSourceRunNote(status),
-        metadata: source ? {
-          sourceKind: source.kind,
-          url: source.url,
-          cadence: source.cadence,
-          expectedLagHours: source.expectedLagHours,
-          owner: source.owner,
-        } : undefined,
+        metadata: source ? publicSourceRunMetadata(source, row.metadata) : undefined,
       };
     }),
     generatedAt: now.toISOString(),
-    hasDatabaseData: true,
+    hasDatabaseData,
+    operations: dashboardOperations({ latestAttempt, latestSuccess, now }),
   });
+}
+
+async function getLatestDashboardAttempt() {
+  return prisma.pipelineRun.findFirst({
+    where: { pipeline: "DASHBOARD_SYNC" },
+    orderBy: { startedAt: "desc" },
+    select: {
+      status: true,
+      startedAt: true,
+      endedAt: true,
+    },
+  });
+}
+
+async function getLatestSuccessfulDashboardRun() {
+  return prisma.pipelineRun.findFirst({
+    where: { pipeline: "DASHBOARD_SYNC", status: "SUCCEEDED" },
+    orderBy: [{ endedAt: "desc" }, { startedAt: "desc" }],
+    select: {
+      status: true,
+      startedAt: true,
+      endedAt: true,
+    },
+  });
+}
+
+function dashboardOperations({
+  latestAttempt,
+  latestSuccess,
+  now,
+}: {
+  latestAttempt: Awaited<ReturnType<typeof getLatestDashboardAttempt>>;
+  latestSuccess: Awaited<ReturnType<typeof getLatestSuccessfulDashboardRun>>;
+  now: Date;
+}): DashboardOperationsView {
+  const successfulRun = latestSuccess
+    ?? (latestAttempt?.status === "SUCCEEDED" ? latestAttempt : null);
+  const lastSuccessfulAt = successfulRun?.endedAt ?? successfulRun?.startedAt;
+  const nextExpectedAt = nextDashboardSyncAt(now);
+  const missedScheduledRun = lastSuccessfulAt
+    ? nextDashboardSyncAt(lastSuccessfulAt).getTime() <= now.getTime()
+    : false;
+  const state: DashboardOperationsView["state"] = !latestAttempt
+    ? "never-run"
+    : latestAttempt.status === "FAILED"
+      ? "failed"
+      : latestAttempt.status === "RUNNING"
+        ? "pending"
+        : latestAttempt.status !== "SUCCEEDED"
+          ? "failed"
+          : missedScheduledRun
+            ? "overdue"
+            : "healthy";
+
+  return {
+    state,
+    lastAttemptAt: latestAttempt?.startedAt.toISOString(),
+    lastSuccessfulAt: lastSuccessfulAt?.toISOString(),
+    nextExpectedAt: nextExpectedAt.toISOString(),
+    message: state === "healthy"
+      ? "The latest weekday dashboard synchronization completed successfully."
+      : state === "failed"
+        ? "The latest dashboard synchronization failed."
+        : state === "pending"
+          ? lastSuccessfulAt
+            ? "A dashboard synchronization is running."
+            : "The first dashboard synchronization is running."
+          : state === "overdue"
+            ? "The scheduled weekday dashboard synchronization is overdue."
+            : "No dashboard synchronization has been recorded yet.",
+  };
 }
 
 function publicSourceRunNote(status: DashboardRunStatus): string | null {
@@ -157,4 +226,46 @@ function publicSourceRunNote(status: DashboardRunStatus): string | null {
   if (status === "PARTIAL") return "Latest refresh completed with incomplete or stale source coverage.";
   if (status === "SKIPPED") return "Latest refresh did not run; the last validated value remains cached.";
   return "Latest refresh failed; the last validated value remains cached.";
+}
+
+function publicSourceRunMetadata(
+  source: (typeof ACTIVE_DASHBOARD_METRICS)[number]["source"],
+  value: unknown,
+): Record<string, unknown> {
+  const metadata = value && typeof value === "object" && !Array.isArray(value)
+    ? value as Record<string, unknown>
+    : {};
+  const knownMetricIds = new Set(
+    ACTIVE_DASHBOARD_METRICS
+      .filter((metric) => metric.source.id === source.id)
+      .map((metric) => metric.id),
+  );
+  const metricIds = (field: "missingRequiredMetrics" | "staleRequiredMetrics") => {
+    const value = metadata[field];
+    return Array.isArray(value)
+      ? Array.from(new Set(value.filter(
+          (metricId): metricId is string => typeof metricId === "string" && knownMetricIds.has(metricId),
+        )))
+      : [];
+  };
+  const count = (field: "requiredMetrics" | "currentRequiredMetrics") => {
+    const value = metadata[field];
+    return typeof value === "number" && Number.isInteger(value) && value >= 0
+      ? value
+      : undefined;
+  };
+  const requiredMetrics = count("requiredMetrics");
+  const currentRequiredMetrics = count("currentRequiredMetrics");
+
+  return {
+    sourceKind: source.kind,
+    url: source.url,
+    cadence: source.cadence,
+    expectedLagHours: source.expectedLagHours,
+    owner: source.owner,
+    ...(requiredMetrics === undefined ? {} : { requiredMetrics }),
+    ...(currentRequiredMetrics === undefined ? {} : { currentRequiredMetrics }),
+    missingRequiredMetrics: metricIds("missingRequiredMetrics"),
+    staleRequiredMetrics: metricIds("staleRequiredMetrics"),
+  };
 }

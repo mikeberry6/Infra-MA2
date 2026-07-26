@@ -1,4 +1,7 @@
 import "dotenv/config";
+import { assertNonProductionSeedTarget } from "../src/lib/database-target";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { deals } from "./seed-data/deals";
@@ -45,15 +48,22 @@ import type {
   CitationPurpose,
   SourceType,
 } from "../src/generated/prisma/client";
-import * as bcrypt from "bcryptjs";
 
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
-const prisma = new PrismaClient({ adapter });
+let prisma: PrismaClient;
 
 // ── Helpers ─────────────────────────────────────────────────
 
 function safeEnum<T>(map: Record<string, T>, value: string, fallback: T): T {
   return map[value] ?? fallback;
+}
+
+function isPrismaUniqueConstraint(error: unknown): boolean {
+  return Boolean(
+    error
+    && typeof error === "object"
+    && "code" in error
+    && (error as { code?: unknown }).code === "P2002",
+  );
 }
 
 function parseDateSafe(dateStr: string | null): Date | null {
@@ -293,14 +303,15 @@ async function main() {
 
       companyIdMap.set(companyKey, company.id);
       companyCount++;
-    } catch (err: any) {
-      if (err.code === "P2002") {
+    } catch (error: unknown) {
+      if (isPrismaUniqueConstraint(error)) {
         const existing = await prisma.company.findFirst({
           where: { name: pc.name, country: pc.country },
         });
-        if (existing) companyIdMap.set(companyKey, existing.id);
+        if (!existing) throw error;
+        companyIdMap.set(companyKey, existing.id);
       } else {
-        console.warn(`  ⚠ Error creating company ${pc.name}: ${err.message}`);
+        throw error;
       }
     }
   }
@@ -349,10 +360,8 @@ async function main() {
         },
       });
       ownershipCount++;
-    } catch (err: any) {
-      if (err.code !== "P2002") {
-        console.warn(`  ⚠ Error creating ownership for company ${companyId}: ${err.message}`);
-      }
+    } catch (error: unknown) {
+      if (!isPrismaUniqueConstraint(error)) throw error;
     }
   }
 
@@ -506,7 +515,12 @@ async function main() {
         valuationMultiple: deal.valuationMultiple,
         fundVehicle: deal.fundVehicle,
         keyHighlights: deal.keyHighlights || [],
-        status: "PUBLISHED",
+        sellerDisclosureStatus: splitParticipants(deal.seller).length > 0
+          ? "DISCLOSED"
+          : "LEGACY_UNREVIEWED",
+        // Publication requires a traceable source. Source-less seed records
+        // remain reviewable in admin but never enter the public database.
+        status: deal.sourceUrl ? "PUBLISHED" : "DRAFT",
       },
     });
 
@@ -524,6 +538,7 @@ async function main() {
   for (const deal of deals) {
     const dealId = dealIdMap.get(deal.id);
     if (!dealId) continue;
+    const persistedDealId = dealId;
 
     // Helper to create participants
     async function addParticipant(name: string, role: ParticipantRole, displayName?: string) {
@@ -545,15 +560,15 @@ async function main() {
         try {
           await prisma.dealParticipant.create({
             data: {
-              dealId,
+              dealId: persistedDealId,
               organizationId: org.id,
               role,
               displayName: displayName || null,
             },
           });
           participantCount++;
-        } catch (err: any) {
-          if (err.code !== "P2002") console.warn(`  ⚠ Participant error: ${err.message}`);
+        } catch (error: unknown) {
+          if (!isPrismaUniqueConstraint(error)) throw error;
         }
         return;
       }
@@ -561,15 +576,15 @@ async function main() {
       try {
         await prisma.dealParticipant.create({
           data: {
-            dealId,
+            dealId: persistedDealId,
             organizationId: orgId,
             role,
             displayName: displayName || null,
           },
         });
         participantCount++;
-      } catch (err: any) {
-        if (err.code !== "P2002") console.warn(`  ⚠ Participant error: ${err.message}`);
+      } catch (error: unknown) {
+        if (!isPrismaUniqueConstraint(error)) throw error;
       }
     }
 
@@ -666,11 +681,11 @@ async function main() {
     const sourceId = await getOrCreateSource(deal.sourceUrl, deal.sourceName || "", "ARTICLE");
     try {
       await prisma.citation.create({
-        data: { sourceId, dealId },
+        data: { sourceId, dealId, isPrimary: true },
       });
       citationCount++;
-    } catch {
-      // Skip duplicates
+    } catch (error: unknown) {
+      if (!isPrismaUniqueConstraint(error)) throw error;
     }
   }
 
@@ -683,7 +698,7 @@ async function main() {
 
     const { kept: keptSources } = dedupeExactPortCoSources(pc.sources);
 
-    for (const src of keptSources) {
+    for (const [sourceIndex, src] of keptSources.entries()) {
       if (!src.url) continue;
       const sourceType = inferSourceType(src) as SourceType;
       const purpose = inferCitationPurpose(src) as CitationPurpose;
@@ -691,11 +706,11 @@ async function main() {
       const sourceId = await getOrCreateSource(src.url, src.label, sourceType);
       try {
         await prisma.citation.create({
-          data: { sourceId, companyId, purpose, evidenceLabel },
+          data: { sourceId, companyId, purpose, evidenceLabel, isPrimary: sourceIndex === 0 },
         });
         citationCount++;
-      } catch {
-        // Skip duplicates
+      } catch (error: unknown) {
+        if (!isPrismaUniqueConstraint(error)) throw error;
       }
     }
   }
@@ -710,23 +725,6 @@ async function main() {
   }
 
   console.log(`  Created ${sourceCount} sources, ${citationCount} citations`);
-
-  // ── Step 11: Create admin user ────────────────────────────
-
-  console.log("Step 11: Creating admin user...");
-  const passwordHash = await bcrypt.hash("admin123", 10);
-  await prisma.user.upsert({
-    where: { email: "admin@infra-ma2.com" },
-    update: {},
-    create: {
-      email: "admin@infra-ma2.com",
-      passwordHash,
-      name: "Admin",
-      role: "ADMIN",
-    },
-  });
-
-  console.log("  Created admin user (admin@infra-ma2.com)");
 
   // ── Summary ───────────────────────────────────────────────
 
@@ -744,11 +742,22 @@ async function main() {
   console.log(`  Citations: ${citationCount}`);
 }
 
-main()
-  .catch((e) => {
-    console.error("❌ Seed failed:", e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
+async function runTask() {
+  assertNonProductionSeedTarget();
+  const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
+  const client = new PrismaClient({ adapter });
+  prisma = client;
+  await runWithPreservedCleanup({
+    run: main,
+    cleanup: () => client.$disconnect(),
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "database_seed_cleanup",
+      operation: "disconnect_database",
+    }, error),
+  });
+}
+
+withServerTask({ task: "database_seed", operation: "seed_database" }, runTask)
+  .catch(() => {
+    process.exitCode = 1;
   });

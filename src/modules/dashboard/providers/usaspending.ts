@@ -1,4 +1,5 @@
 import { DASHBOARD_SOURCES } from "@/modules/dashboard/catalog";
+import { DASHBOARD_METHODOLOGY_VERSIONS } from "@/modules/dashboard/methodology-cutover";
 import type { DashboardProvider, DashboardProviderResult, DashboardSignal } from "@/modules/dashboard/types";
 import { fetchJson, isoDateDaysAgo, observation, todayIsoDate } from "@/modules/dashboard/providers/shared";
 
@@ -130,6 +131,7 @@ export function usaSpendingProvider(now = new Date()): DashboardProvider {
           observation("usaspending_infra_awards_30d", source.id, endDate, awardCount, {
             unit: "count",
             metadata: {
+              methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.usaSpendingAwards30d,
               lookbackDays: 30,
               countEndpoint: true,
               awardTypeCounts,
@@ -139,6 +141,7 @@ export function usaSpendingProvider(now = new Date()): DashboardProvider {
           observation("usaspending_infra_obligations_30d", source.id, endDate, Number((obligations / 1_000_000_000).toFixed(4)), {
             unit: "$bn",
             metadata: {
+              methodologyVersion: DASHBOARD_METHODOLOGY_VERSIONS.usaSpendingObligations30d,
               lookbackDays: 30,
               sourceUnit: "USD",
               aggregation: "spending_over_time.aggregated_amount",

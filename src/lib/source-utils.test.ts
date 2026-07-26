@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  buildFundSourceLinks,
   dedupeExactPortCoSources,
   formatSourceType,
   getSourceDisplayLabel,
@@ -7,6 +8,7 @@ import {
   groupSourcesByPurpose,
   inferCitationPurpose,
   inferSourceType,
+  isHttpUrl,
 } from "./source-utils";
 
 describe("source-utils", () => {
@@ -70,6 +72,58 @@ describe("source-utils", () => {
     expect(getSourceHostname("https://www.3i.com/infrastructure/our-portfolio/amwaste/")).toBe("3i.com");
     expect(formatSourceType("WEBSITE")).toBe("Website");
     expect(formatSourceType(undefined)).toBe("Other");
+  });
+
+  it("accepts only credential-free absolute HTTP(S) public links", () => {
+    expect(isHttpUrl(" https://example.com/source ")).toBe(true);
+    expect(isHttpUrl("http://example.com/source")).toBe(true);
+    expect(isHttpUrl("javascript:alert(1)")).toBe(false);
+    expect(isHttpUrl("data:text/html,unsafe")).toBe(false);
+    expect(isHttpUrl("ftp://example.com/source")).toBe(false);
+    expect(isHttpUrl("https://user:secret@example.com/source")).toBe(false);
+    expect(isHttpUrl("https://example.com:8443/source")).toBe(false);
+    expect(isHttpUrl("https://example.com:443/source")).toBe(true);
+    expect(isHttpUrl("/relative/source")).toBe(false);
+    expect(isHttpUrl("http://localhost/source")).toBe(false);
+    expect(isHttpUrl("http://metadata.google.internal/source")).toBe(false);
+    expect(isHttpUrl("http://127.0.0.1/source")).toBe(false);
+    expect(isHttpUrl("http://2130706433/source")).toBe(false);
+    expect(isHttpUrl("http://10.0.0.2/source")).toBe(false);
+    expect(isHttpUrl("http://169.254.169.254/latest/meta-data")).toBe(false);
+    expect(isHttpUrl("http://[::1]/source")).toBe(false);
+    for (const host of [
+      "192.31.196.1",
+      "192.52.193.1",
+      "192.88.99.1",
+      "192.175.48.1",
+      "foo_bar.example.com",
+    ]) {
+      expect(isHttpUrl(`https://${host}/source`), host).toBe(false);
+    }
+  });
+
+  it("orders a reviewed Fund primary source before unique public support links", () => {
+    expect(buildFundSourceLinks(
+      "https://www.brookfield.com/fund",
+      [
+        "https://www.brookfield.com/fund",
+        "https://www.blackrock.com/strategy",
+        "javascript:alert(1)",
+      ],
+    )).toEqual([
+      {
+        url: "https://www.brookfield.com/fund",
+        hostname: "brookfield.com",
+        label: "Primary source",
+        isPrimary: true,
+      },
+      {
+        url: "https://www.blackrock.com/strategy",
+        hostname: "blackrock.com",
+        label: "Supporting source 1",
+        isPrimary: false,
+      },
+    ]);
   });
 
   it("prunes only exact duplicate label and URL rows", () => {

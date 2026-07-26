@@ -4,6 +4,10 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import { companies } from "../prisma/seed-data/companies";
 import type { PortCoMilestone } from "../prisma/seed-data/portco-types";
 import { MILESTONE_CATEGORY_MAP } from "../src/modules/shared/enum-maps";
+import { assertMaintenanceMutationContext } from "../src/lib/database-target";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
+import { SafeOperationalError } from "../src/lib/safe-error";
 
 type SeedCompany = (typeof companies)[number];
 type DbCompany = Awaited<ReturnType<typeof getPublishedCompanies>>[number];
@@ -13,18 +17,12 @@ const isDryRun = args.has("--dry-run");
 const isApply = args.has("--apply");
 const preserveDbOnly = args.has("--preserve-db-only");
 
-if (isDryRun === isApply) {
-  console.error("Use exactly one mode: --dry-run or --apply.");
-  process.exit(1);
-}
+let prisma: PrismaClient | null = null;
 
-if (!process.env.DATABASE_URL) {
-  console.error("DATABASE_URL is not set.");
-  process.exit(1);
+function database(): PrismaClient {
+  if (!prisma) throw new SafeOperationalError("database_url_required");
+  return prisma;
 }
-
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
-const prisma = new PrismaClient({ adapter });
 
 function companyKey(name: string, country: string): string {
   return `${name}||${country}`;
@@ -74,7 +72,7 @@ function exactDuplicateExtraRows(
 }
 
 async function getPublishedCompanies() {
-  return prisma.company.findMany({
+  return database().company.findMany({
     where: { status: "PUBLISHED" },
     select: {
       id: true,
@@ -111,6 +109,15 @@ async function summarizeLive(label: string) {
 }
 
 async function main() {
+  if (isDryRun === isApply) {
+    console.error("Use exactly one mode: --dry-run or --apply.");
+    throw new Error("Portfolio milestone mode validation failed.");
+  }
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) throw new SafeOperationalError("database_url_missing");
+  const mutationContext = isApply ? assertMaintenanceMutationContext() : undefined;
+  prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
+
   const seedByKey = new Map(companies.map((company) => [companyKey(company.name, company.country), company]));
   const seedMilestoneCount = companies.reduce((sum, company) => sum + (company.milestones?.length ?? 0), 0);
 
@@ -144,33 +151,84 @@ async function main() {
     return;
   }
 
-  let deletedRows = 0;
-  let insertedRows = 0;
+  const auditStart = await database().auditEvent.create({
+    data: {
+      actorId: null,
+      entityType: "MaintenanceRun",
+      action: "MILESTONE_RECONCILIATION_STARTED",
+      changes: {
+        changedFields: [],
+        matchedCompanies: matched.length,
+        dbOnlyCompanies: dbOnly.length,
+        preserveDbOnly,
+      },
+      metadata: {
+        source: "scripts/reconcile-portfolio-milestones.ts",
+        ...mutationContext!,
+      },
+    },
+    select: { id: true },
+  });
 
-  for (const { seedCompany, dbCompany } of matched) {
-    const deleted = await prisma.milestone.deleteMany({ where: { companyId: dbCompany.id } });
-    deletedRows += deleted.count;
+  const { deletedRows, insertedRows } = await database().$transaction(async (tx) => {
+    let deletedRows = 0;
+    let insertedRows = 0;
 
-    const milestones = seedCompany.milestones ?? [];
-    if (!milestones.length) continue;
-    const created = await prisma.milestone.createMany({
-      data: milestones.map((milestone) => ({
-        companyId: dbCompany.id,
-        date: milestone.date,
-        event: milestone.event,
-        category: categoryFor(milestone),
-        sortDate: parseMilestoneDateForSort(milestone.date),
-      })),
-    });
-    insertedRows += created.count;
-  }
-
-  if (!preserveDbOnly) {
-    for (const company of dbOnly) {
-      const deleted = await prisma.milestone.deleteMany({ where: { companyId: company.id } });
+    for (const { seedCompany, dbCompany } of matched) {
+      const deleted = await tx.milestone.deleteMany({ where: { companyId: dbCompany.id } });
       deletedRows += deleted.count;
+
+      const milestones = seedCompany.milestones ?? [];
+      if (!milestones.length) continue;
+      const created = await tx.milestone.createMany({
+        data: milestones.map((milestone) => ({
+          companyId: dbCompany.id,
+          date: milestone.date,
+          event: milestone.event,
+          category: categoryFor(milestone),
+          sortDate: parseMilestoneDateForSort(milestone.date),
+        })),
+      });
+      insertedRows += created.count;
     }
-  }
+
+    if (!preserveDbOnly) {
+      for (const company of dbOnly) {
+        const deleted = await tx.milestone.deleteMany({ where: { companyId: company.id } });
+        deletedRows += deleted.count;
+      }
+    }
+
+    await tx.auditEvent.create({
+      data: {
+        actorId: null,
+        entityType: "MaintenanceRun",
+        entityId: auditStart.id,
+        action: "MILESTONE_RECONCILIATION_COMPLETED",
+        changes: {
+          changedFields: deletedRows + insertedRows > 0
+            ? [
+                "Milestone.category",
+                "Milestone.companyId",
+                "Milestone.date",
+                "Milestone.event",
+                "Milestone.id",
+                "Milestone.sortDate",
+              ]
+            : [],
+          deletedRows,
+          insertedRows,
+        },
+        metadata: {
+          source: "scripts/reconcile-portfolio-milestones.ts",
+          startedAuditEventId: auditStart.id,
+          ...mutationContext!,
+        },
+      },
+    });
+
+    return { deletedRows, insertedRows };
+  }, { isolationLevel: "Serializable", maxWait: 15_000, timeout: 120_000 });
 
   console.log("Applied reconciliation:");
   console.log(`  deleted milestone rows: ${deletedRows}`);
@@ -185,11 +243,20 @@ async function main() {
   }
 }
 
-main()
-  .catch((error) => {
-    console.error(error);
+async function runTask() {
+  await runWithPreservedCleanup({
+    run: main,
+    cleanup: async () => {
+      await prisma?.$disconnect();
+    },
+    onSuppressedCleanupError: (error) => logServerFailure({
+      task: "portfolio_milestones_cleanup",
+      operation: "disconnect_database",
+    }, error),
+  });
+}
+
+withServerTask({ task: "portfolio_milestones", operation: "reconcile_milestones" }, runTask)
+  .catch(() => {
     process.exitCode = 1;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
   });

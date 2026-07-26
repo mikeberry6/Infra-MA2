@@ -46,7 +46,12 @@ export default async function AdminDashboardSignalsPage({
         {totalPages > 1 && <span> · page {page} of {totalPages}</span>}
       </div>
 
-      <div className="surface overflow-x-auto">
+      <div
+        className="surface overflow-x-auto"
+        role="region"
+        aria-label="Dashboard signal review table"
+        tabIndex={0}
+      >
         <table className="w-full min-w-[1160px] border-collapse text-left">
           <thead>
             <tr className="border-b border-[var(--border)] bg-[var(--bg-app)]">

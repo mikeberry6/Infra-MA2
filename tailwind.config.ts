@@ -40,6 +40,8 @@ const config: Config = {
         "fade-in-up": "fade-in-up 0.5s var(--ease-out, ease-out) forwards",
         "slide-in-right": "slide-in-right 0.25s var(--ease-out, ease-out) forwards",
         "scale-in": "scale-in 0.2s var(--ease-out, ease-out) forwards",
+        "pulse-slow": "ambient-pulse 8s ease-in-out infinite",
+        "pulse-slower": "ambient-pulse 12s ease-in-out infinite",
       },
       keyframes: {
         "fade-in": {
@@ -57,6 +59,12 @@ const config: Config = {
         "scale-in": {
           "0%": { opacity: "0", transform: "scale(0.95)" },
           "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        "ambient-pulse": {
+          // Keep opacity on the orb itself: animating opacity here would
+          // override the restrained 0.10/0.07 inline design values.
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.08)" },
         },
       },
       transitionTimingFunction: {

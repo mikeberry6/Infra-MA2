@@ -6,6 +6,15 @@ import {
   updateOwnershipPeriod,
   deleteOwnershipPeriod,
 } from "@/modules/admin/actions";
+import { Button } from "@/components/shared/Button";
+import { TextInput } from "@/components/shared/TextInput";
+import { Tag } from "@/components/shared/Tag";
+import {
+  CheckboxOption,
+  FormField,
+  FormMessage,
+} from "@/components/shared/FormControls";
+import { invalidateDetailCache } from "@/lib/detail-cache-events";
 
 export interface OwnershipPeriodRow {
   id: string;
@@ -41,6 +50,7 @@ export function OwnershipPeriodsManager({
         refreshError(result.error || "Failed to add owner");
         return;
       }
+      invalidateDetailCache("company", companyId);
       // Update list in place — the simplest correct path is to ask the
       // user to reload, since reading the new row needs another fetch.
       setEditingId(null);
@@ -56,6 +66,7 @@ export function OwnershipPeriodsManager({
         refreshError(result.error || "Failed to update owner");
         return;
       }
+      invalidateDetailCache("company", companyId);
       setEditingId(null);
       window.location.reload();
     });
@@ -70,34 +81,33 @@ export function OwnershipPeriodsManager({
         refreshError(result.error || "Failed to delete owner");
         return;
       }
+      invalidateDetailCache("company", companyId);
       setPeriods((prev) => prev.filter((p) => p.id !== id));
     });
   }
 
   return (
-    <div className="bg-[#18181B] border border-black/[0.08] rounded p-5 mt-6">
-      <div className="flex items-center justify-between mb-4">
+    <section className="surface mt-6 p-5" aria-labelledby="ownership-history-heading">
+      <div className="mb-4 flex items-start justify-between gap-4">
         <div>
-          <h2 className="text-base font-semibold">Ownership History</h2>
-          <p className="text-xs text-[#999999] mt-0.5">
+          <h2 id="ownership-history-heading" className="text-base font-semibold">
+            Ownership History
+          </h2>
+          <p className="mt-0.5 type-micro">
             Every firm that has owned this company. The &quot;Active&quot; period drives the table-view firm column.
           </p>
         </div>
         {editingId !== "new" && (
-          <button
-            type="button"
-            onClick={() => setEditingId("new")}
-            className="text-xs px-3 py-1.5 bg-[#3F3F46] hover:bg-[#52525B] rounded"
-          >
+          <Button type="button" size="sm" onClick={() => setEditingId("new")}>
             + Add owner
-          </button>
+          </Button>
         )}
       </div>
 
       {error && (
-        <div className="mb-3 px-3 py-2 bg-red-900/30 border border-red-700 rounded text-xs text-red-200">
+        <FormMessage tone="error" className="mb-3">
           {error}
-        </div>
+        </FormMessage>
       )}
 
       {editingId === "new" && (
@@ -109,9 +119,9 @@ export function OwnershipPeriodsManager({
         />
       )}
 
-      <div className="space-y-2 mt-3">
+      <div className="mt-3 space-y-2">
         {periods.length === 0 && editingId !== "new" && (
-          <p className="text-xs text-[#999999]">No ownership periods recorded.</p>
+          <p className="type-micro">No ownership periods recorded.</p>
         )}
         {periods.map((p) =>
           editingId === p.id ? (
@@ -126,17 +136,20 @@ export function OwnershipPeriodsManager({
           ) : (
             <div
               key={p.id}
-              className="flex items-center justify-between bg-[#0F0F11] border border-black/[0.08] rounded px-3 py-2"
+              className="flex items-center justify-between gap-3 rounded-md border border-[var(--border)] bg-[var(--bg-surface)] px-3 py-2.5"
             >
-              <div className="flex items-center gap-3 min-w-0">
-                <span
-                  className={`inline-block h-2 w-2 rounded-full shrink-0 ${
-                    p.isActive ? "bg-emerald-500" : "bg-zinc-500"
-                  }`}
-                />
+              <div className="min-w-0">
                 <div className="min-w-0">
-                  <div className="text-sm font-medium truncate">{p.investmentFirm}</div>
-                  <div className="text-xs text-[#999999] truncate">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="truncate text-sm font-medium">{p.investmentFirm}</span>
+                    <Tag
+                      variant="dot"
+                      color={p.isActive ? "#008253" : "#6b6b75"}
+                    >
+                      {p.isActive ? "Active" : "Historical"}
+                    </Tag>
+                  </div>
+                  <div className="mt-0.5 truncate type-micro">
                     {p.ownershipVehicle || "—"}
                     {p.investmentYear ? ` · ${p.investmentYear}` : ""}
                     {p.exitYear ? `–${p.exitYear}` : p.isActive && p.investmentYear ? "–Present" : ""}
@@ -144,29 +157,31 @@ export function OwnershipPeriodsManager({
                   </div>
                 </div>
               </div>
-              <div className="flex gap-1.5 shrink-0">
-                <button
+              <div className="flex shrink-0 gap-1.5">
+                <Button
                   type="button"
+                  variant="ghost"
+                  size="sm"
                   onClick={() => setEditingId(p.id)}
-                  className="text-xs px-2 py-1 bg-[#27272A] hover:bg-[#3F3F46] rounded"
                   disabled={isPending}
                 >
                   Edit
-                </button>
-                <button
+                </Button>
+                <Button
                   type="button"
+                  variant="danger"
+                  size="sm"
                   onClick={() => handleDelete(p.id)}
-                  className="text-xs px-2 py-1 bg-red-900/40 hover:bg-red-900/70 text-red-200 rounded"
                   disabled={isPending}
                 >
                   Delete
-                </button>
+                </Button>
               </div>
             </div>
           ),
         )}
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -186,78 +201,81 @@ function OwnershipForm({
   return (
     <form
       action={onSubmit}
-      className="bg-[#0F0F11] border border-[#3F3F46] rounded p-3 space-y-2"
+      className="space-y-3 rounded-md border border-[var(--border)] bg-[var(--bg-subtle)] p-4"
+      aria-busy={isPending}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-        <label className="text-xs space-y-1">
-          <span className="block text-[#6e6e6e]">Investment firm *</span>
-          <input
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+        <FormField htmlFor={`ownership-${mode}-firm`} label="Investment firm" required>
+          <TextInput
+            id={`ownership-${mode}-firm`}
+            size="md"
             name="investmentFirm"
             defaultValue={initial?.investmentFirm ?? ""}
             required
-            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
           />
-        </label>
-        <label className="text-xs space-y-1">
-          <span className="block text-[#6e6e6e]">Ownership vehicle (fund name)</span>
-          <input
+        </FormField>
+        <FormField htmlFor={`ownership-${mode}-vehicle`} label="Ownership vehicle (fund name)">
+          <TextInput
+            id={`ownership-${mode}-vehicle`}
+            size="md"
             name="ownershipVehicle"
             defaultValue={initial?.ownershipVehicle ?? ""}
-            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
           />
-        </label>
-        <label className="text-xs space-y-1">
-          <span className="block text-[#6e6e6e]">Investment year</span>
-          <input
+        </FormField>
+        <FormField htmlFor={`ownership-${mode}-investment-year`} label="Investment year">
+          <TextInput
+            id={`ownership-${mode}-investment-year`}
+            size="md"
             name="investmentYear"
             type="number"
             defaultValue={initial?.investmentYear ?? ""}
-            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
           />
-        </label>
-        <label className="text-xs space-y-1">
-          <span className="block text-[#6e6e6e]">Exit year (blank if active)</span>
-          <input
+        </FormField>
+        <FormField htmlFor={`ownership-${mode}-exit-year`} label="Exit year (blank if active)">
+          <TextInput
+            id={`ownership-${mode}-exit-year`}
+            size="md"
             name="exitYear"
             type="number"
             defaultValue={initial?.exitYear ?? ""}
-            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
           />
-        </label>
-        <label className="text-xs space-y-1">
-          <span className="block text-[#6e6e6e]">Stake (e.g. &quot;30%&quot;)</span>
-          <input
+        </FormField>
+        <FormField htmlFor={`ownership-${mode}-stake`} label="Stake (e.g. 30%)">
+          <TextInput
+            id={`ownership-${mode}-stake`}
+            size="md"
             name="stake"
             defaultValue={initial?.stake ?? ""}
-            className="w-full bg-[#18181B] border border-black/[0.08] px-2 py-1 rounded"
           />
-        </label>
-        <label className="text-xs flex items-center gap-2 mt-5">
-          <input
-            type="checkbox"
+        </FormField>
+        <div className="self-end">
+          <CheckboxOption
             name="isActive"
             value="true"
             defaultChecked={initial?.isActive ?? true}
-          />
-          <span className="text-[#6e6e6e]">Currently owns this company</span>
-        </label>
+          >
+            Currently owns this company
+          </CheckboxOption>
+        </div>
       </div>
-      <div className="flex justify-end gap-2 pt-1">
-        <button
+      <div className="flex justify-end gap-2 border-t border-[var(--border)] pt-3">
+        <Button
           type="button"
+          variant="secondary"
+          size="sm"
           onClick={onCancel}
           disabled={isPending}
-          className="text-xs px-3 py-1.5 bg-[#27272A] hover:bg-[#3F3F46] rounded"
         >
           Cancel
-        </button>
-        <button
+        </Button>
+        <Button
           type="submit"
-          disabled={isPending}
-          className="text-xs px-3 py-1.5 bg-emerald-700 hover:bg-emerald-600 rounded disabled:opacity-50"
+          variant="primary"
+          size="sm"
+          loading={isPending}
         >
           {mode === "add" ? "Add owner" : "Save changes"}
-        </button>
+        </Button>
       </div>
     </form>
   );

@@ -44,7 +44,9 @@ describe("DashboardSignalReviewButtons", () => {
 
     await userEvent.click(screen.getByRole("button", { name: "Reject" }));
 
-    expect(await screen.findByRole("alert")).toHaveTextContent("changed after it was rendered");
+    const alert = await screen.findByRole("alert");
+    expect(alert).toHaveTextContent("changed after it was rendered");
+    expect(alert).toHaveClass("border-red-200", "bg-red-50", "text-red-900");
     expect(mocks.refresh).not.toHaveBeenCalled();
   });
 });

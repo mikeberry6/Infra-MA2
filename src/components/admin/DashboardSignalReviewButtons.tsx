@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { Button } from "@/components/shared/Button";
+import { FormMessage } from "@/components/shared/FormControls";
 import {
   approveDashboardSignal,
   rejectDashboardSignal,
@@ -41,7 +42,11 @@ export function DashboardSignalReviewButtons({
       <Button variant="secondary" size="sm" disabled={isPending} onClick={() => run(rejectDashboardSignal)}>
         Reject
       </Button>
-      {error && <span role="alert" className="max-w-48 whitespace-normal type-micro text-[#b91c1c]">{error}</span>}
+      {error && (
+        <FormMessage tone="error" className="max-w-64 whitespace-normal">
+          {error}
+        </FormMessage>
+      )}
     </div>
   );
 }

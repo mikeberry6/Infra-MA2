@@ -1,6 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
+import type { MouseEvent } from "react";
 
 /**
  * Removable chip used in the active-filter strip.
@@ -15,10 +16,12 @@ export function FilterChip({
 }: {
   label: string;
   color: string;
-  onRemove: () => void;
+  onRemove: (event: MouseEvent<HTMLButtonElement>) => void;
 }) {
   return (
     <button
+      type="button"
+      data-filter-chip
       onClick={onRemove}
       aria-label={`Remove ${label} filter`}
       className="inline-flex items-center gap-1.5 h-6 pl-2 pr-1.5 rounded-md type-micro font-medium transition-colors group bg-[var(--bg-surface)] border border-[var(--border)] text-[var(--text-primary)] hover:bg-[var(--bg-hover)] hover:border-[var(--border-strong)]"

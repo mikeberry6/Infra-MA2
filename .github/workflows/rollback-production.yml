@@ -1,4 +1,4 @@
-name: Roll Back Dashboard Release
+name: Roll Back Production
 
 on:
   workflow_dispatch:
@@ -11,6 +11,14 @@ on:
         description: Full Git SHA represented by the rollback deployment
         required: true
         type: string
+      smoke_policy:
+        description: Use public-only only for a documented break-glass rollback
+        required: true
+        default: full
+        type: choice
+        options:
+          - full
+          - public-only
       confirmation:
         description: Type ROLLBACK to authorize production rollback
         required: true
@@ -18,6 +26,7 @@ on:
 
 permissions:
   contents: read
+  checks: read
 
 concurrency:
   group: production-release
@@ -30,7 +39,7 @@ jobs:
     environment: production
     env:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+      VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
       EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
       EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
       ROLLBACK_DEPLOYMENT: ${{ inputs.deployment }}
@@ -38,7 +47,15 @@ jobs:
       PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
       CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
       CONFIRMATION: ${{ inputs.confirmation }}
+      SMOKE_POLICY: ${{ inputs.smoke_policy }}
     steps:
+      - name: Require protected workflow ref
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Production rollback workflows must be dispatched from refs/heads/main."
+            exit 1
+          fi
+
       - name: Require explicit rollback authorization
         run: |
           if [ "$CONFIRMATION" != "ROLLBACK" ]; then
@@ -49,20 +66,49 @@ jobs:
       - name: Checkout rollback tooling
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: refs/heads/main
+          fetch-depth: 0
           persist-credentials: false
 
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      - name: Verify checked-out rollback tooling identity
+        run: |
+          if ! [[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::The dispatched tooling SHA must be a full lowercase Git SHA."
+            exit 1
+          fi
+          if [ "$(git rev-parse HEAD)" != "$GITHUB_SHA" ]; then
+            echo "::error::Protected main changed after rollback dispatch; dispatch again."
+            exit 1
+          fi
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "24"
 
+      - name: Verify rollback ancestry and required-check provenance
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          node --experimental-strip-types scripts/verify-rollback-provenance.ts \
+            --rollback-sha="$ROLLBACK_SHA" \
+            --branch=main \
+            --required-check=build \
+            --output=tmp/rollback/rollback-provenance.json
+
       - name: Require protected Vercel configuration
+        env:
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         shell: bash
         run: |
           test -n "$VERCEL_TOKEN" || { echo "::error::VERCEL_TOKEN is required."; exit 1; }
-          test -n "$VERCEL_SCOPE" || { echo "::error::VERCEL_SCOPE is required."; exit 1; }
+          test -n "$VERCEL_AUTOMATION_BYPASS_SECRET" || { echo "::error::VERCEL_AUTOMATION_BYPASS_SECRET is required."; exit 1; }
+          test -n "$VERCEL_TEAM_ID" || { echo "::error::VERCEL_TEAM_ID is required."; exit 1; }
           [[ "$EXPECTED_VERCEL_PROJECT_ID" =~ ^prj_[A-Za-z0-9]+$ ]] || { echo "::error::VERCEL_PROJECT_ID is required."; exit 1; }
           [[ "$EXPECTED_GITHUB_REPOSITORY_ID" =~ ^[1-9][0-9]*$ ]] || { echo "::error::GitHub repository ID is required."; exit 1; }
           [[ "$ROLLBACK_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::release_sha must be a full lowercase Git SHA."; exit 1; }
+          [[ "$SMOKE_POLICY" = "full" || "$SMOKE_POLICY" = "public-only" ]] || { echo "::error::smoke_policy is invalid."; exit 1; }
           if [ "$PRODUCTION_URL" != "$CANONICAL_PRODUCTION_URL" ]; then
             echo "::error::The protected PRODUCTION_URL does not match the canonical InfraSight production alias."
             exit 1
@@ -79,6 +125,8 @@ jobs:
 
       - name: Inspect and smoke-test rollback candidate
         shell: bash
+        env:
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: |
           mkdir -p tmp/rollback
           node --experimental-strip-types scripts/verify-vercel-deployment.ts \
@@ -86,23 +134,17 @@ jobs:
             --expected-sha="$ROLLBACK_SHA" \
             --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
             --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
             --require-immutable-url \
             --output=tmp/rollback/candidate-inspect.json
           rollback_url="https://$(jq -r '.url' tmp/rollback/candidate-inspect.json)"
-          candidate_link_dir="$(mktemp -d "${RUNNER_TEMP}/vercel-rollback-link.XXXXXX")"
-          trap 'rm -rf "$candidate_link_dir"' EXIT
-          npx --yes vercel@51.7.0 link \
-            --cwd "$candidate_link_dir" \
-            --project "$EXPECTED_VERCEL_PROJECT_ID" \
-            --scope "$VERCEL_SCOPE" \
-            --token "$VERCEL_TOKEN" \
-            --yes
-          VERCEL_CLI_CWD="$candidate_link_dir" node scripts/release-smoke.mjs \
+          smoke_args=(--expected-version="$ROLLBACK_SHA")
+          if [ "$SMOKE_POLICY" = "public-only" ]; then smoke_args=(--skip-health --allow-legacy-root); fi
+          node scripts/release-smoke.mjs \
             --base-url="$rollback_url" \
-            --transport=vercel-cli \
-            --skip-health \
-            --allow-legacy-root \
-            --output=tmp/rollback/candidate-smoke.json
+            --transport=vercel-bypass \
+            --output=tmp/rollback/candidate-smoke.json \
+            "${smoke_args[@]}"
 
       # Additive migrations remain in place; rollback changes only the Vercel
       # deployment assigned to the canonical production alias.
@@ -114,6 +156,7 @@ jobs:
             --expected-sha="$ROLLBACK_SHA" \
             --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
             --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
             --require-immutable-url \
             --output=tmp/rollback/candidate-inspect-before-rollback.json
           deployment_id="$(jq -r '.id' tmp/rollback/candidate-inspect-before-rollback.json)"
@@ -121,22 +164,36 @@ jobs:
             echo "::error::Verified deployment ID is invalid."
             exit 1
           }
-          npx --yes vercel@51.7.0 rollback "$deployment_id" \
-            --timeout 3m --yes --token "$VERCEL_TOKEN" --scope "$VERCEL_SCOPE"
+          node --experimental-strip-types scripts/mutate-vercel-production.ts \
+            --operation=rollback \
+            --deployment-id="$deployment_id" \
+            --project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
+            --production-url="$PRODUCTION_URL" \
+            --output=tmp/rollback/production-mutation.json
 
       - name: Verify canonical production after rollback
-        run: >-
-          node scripts/release-smoke.mjs
-          --base-url="$PRODUCTION_URL"
-          --skip-health
-          --allow-legacy-root
-          --output=tmp/rollback/production-smoke.json
+        shell: bash
+        run: |
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$PRODUCTION_URL" \
+            --expected-sha="$ROLLBACK_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
+            --output=tmp/rollback/canonical-production-inspect.json
+          smoke_args=(--expected-version="$ROLLBACK_SHA")
+          if [ "$SMOKE_POLICY" = "public-only" ]; then smoke_args=(--skip-health --allow-legacy-root); fi
+          node scripts/release-smoke.mjs \
+            --base-url="$PRODUCTION_URL" \
+            --output=tmp/rollback/production-smoke.json \
+            "${smoke_args[@]}"
 
       - name: Upload rollback evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: dashboard-production-rollback-${{ github.run_id }}
+          name: infrasight-production-rollback-${{ github.run_id }}
           path: tmp/rollback/
           if-no-files-found: warn
           retention-days: 90

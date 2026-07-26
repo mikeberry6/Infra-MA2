@@ -3,15 +3,23 @@ import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 // Mock next/navigation BEFORE importing the hook
-const replace = vi.fn((url: string) => {
-  // Simulate the router by syncing window.location.search
-  const qs = url.includes("?") ? url.split("?")[1] : "";
-  window.history.replaceState({}, "", `/${qs ? `?${qs}` : ""}`);
-});
+const navigation = vi.hoisted(() => ({
+  replace: vi.fn((url: string) => {
+    const qs = url.includes("?") ? url.split("?")[1] : "";
+    window.history.replaceState({}, "", `/${qs ? `?${qs}` : ""}`);
+  }),
+  push: vi.fn((url: string) => {
+    const qs = url.includes("?") ? url.split("?")[1] : "";
+    window.history.pushState({}, "", `/${qs ? `?${qs}` : ""}`);
+  }),
+}));
+const analytics = vi.hoisted(() => ({ track: vi.fn() }));
 vi.mock("next/navigation", () => ({
-  useRouter: () => ({ replace, push: vi.fn(), back: vi.fn() }),
+  useRouter: () => ({ replace: navigation.replace, push: navigation.push, back: vi.fn() }),
   usePathname: () => "/tracker",
 }));
+
+vi.mock("@vercel/analytics", () => ({ track: analytics.track }));
 
 import { useUrlFilterSet, useClearUrlFilters } from "./useUrlFilterSet";
 
@@ -31,7 +39,9 @@ function Harness() {
 
 describe("useUrlFilterSet", () => {
   beforeEach(() => {
-    replace.mockClear();
+    navigation.replace.mockClear();
+    navigation.push.mockClear();
+    analytics.track.mockReset();
     window.history.replaceState({}, "", "/");
   });
 
@@ -49,7 +59,12 @@ describe("useUrlFilterSet", () => {
   it("toggle adds a value and writes it to the URL", async () => {
     render(<Harness />);
     await userEvent.click(screen.getByText("toggle-digital"));
-    expect(replace).toHaveBeenCalledWith("/tracker?sector=Digital", { scroll: false });
+    expect(navigation.push).toHaveBeenCalledWith("/tracker?sector=Digital", { scroll: false });
+    expect(analytics.track).toHaveBeenCalledWith("filter_applied", {
+      filter: "sector",
+      active_count: 1,
+    });
+    expect(analytics.track.mock.calls.flat()).not.toContain("Digital");
   });
 
   it("toggle on an already-present value removes it", async () => {
@@ -57,20 +72,33 @@ describe("useUrlFilterSet", () => {
     render(<Harness />);
     await userEvent.click(screen.getByText("toggle-digital"));
     // With Digital removed, the param should be gone entirely
-    expect(replace).toHaveBeenCalledWith("/tracker", { scroll: false });
+    expect(navigation.push).toHaveBeenCalledWith("/tracker", { scroll: false });
+    expect(analytics.track).toHaveBeenCalledWith("filter_applied", {
+      filter: "sector",
+      active_count: 0,
+    });
   });
 
   it("clear() wipes only this param, not others", async () => {
     window.history.replaceState({}, "", "/?sector=Digital&region=Europe");
     render(<Harness />);
     await userEvent.click(screen.getByText("clear"));
-    expect(replace).toHaveBeenCalledWith("/tracker?region=Europe", { scroll: false });
+    expect(navigation.push).toHaveBeenCalledWith("/tracker?region=Europe", { scroll: false });
+  });
+
+  it("resets pagination when a filter changes", async () => {
+    window.history.replaceState({}, "", "/?page=4");
+    render(<Harness />);
+    await userEvent.click(screen.getByText("toggle-digital"));
+    expect(navigation.push).toHaveBeenCalledWith("/tracker?sector=Digital", { scroll: false });
   });
 });
 
 describe("useClearUrlFilters", () => {
   beforeEach(() => {
-    replace.mockClear();
+    navigation.replace.mockClear();
+    navigation.push.mockClear();
+    analytics.track.mockReset();
     window.history.replaceState({}, "", "/");
   });
 
@@ -79,13 +107,13 @@ describe("useClearUrlFilters", () => {
     render(<Harness />);
     await userEvent.click(screen.getByText("clear-all"));
     // sector and region are wiped; keep survives
-    expect(replace).toHaveBeenCalledWith("/tracker?keep=yes", { scroll: false });
+    expect(navigation.push).toHaveBeenCalledWith("/tracker?keep=yes", { scroll: false });
   });
 
   it("wipes the whole query string when no other params remain", async () => {
     window.history.replaceState({}, "", "/?sector=Digital&region=Europe");
     render(<Harness />);
     await userEvent.click(screen.getByText("clear-all"));
-    expect(replace).toHaveBeenCalledWith("/tracker", { scroll: false });
+    expect(navigation.push).toHaveBeenCalledWith("/tracker", { scroll: false });
   });
 });

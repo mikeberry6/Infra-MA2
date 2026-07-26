@@ -1,7 +1,9 @@
 // ─── Fund Utility Functions ─────────────────────────────────
 
 export function matchesSizeRange(sizeUsdMm: number | null, range: string): boolean {
-  if (sizeUsdMm === null) return true; // Unknown size always passes
+  // A numeric size filter must never imply that an undisclosed/TBD vehicle is
+  // inside the selected range.
+  if (sizeUsdMm === null) return false;
   switch (range) {
     case "< $500M": return sizeUsdMm < 500;
     case "$500M – $1B": return sizeUsdMm >= 500 && sizeUsdMm < 1000;
@@ -10,6 +12,18 @@ export function matchesSizeRange(sizeUsdMm: number | null, range: string): boole
     case "$10B+": return sizeUsdMm >= 10000;
     default: return true;
   }
+}
+
+/** Compare optional numeric values while keeping unknowns last in either direction. */
+export function compareOptionalNumbersUnknownLast(
+  left: number | null,
+  right: number | null,
+  ascending: boolean,
+): number {
+  if (left === null && right === null) return 0;
+  if (left === null) return 1;
+  if (right === null) return -1;
+  return ascending ? left - right : right - left;
 }
 
 export function groupFundsByManager<T extends { managerName: string }>(fundList: T[]): Map<string, T[]> {
@@ -23,6 +37,38 @@ export function groupFundsByManager<T extends { managerName: string }>(fundList:
     }
   }
   return map;
+}
+
+/**
+ * Slices a grouped fund list by result count while preserving manager
+ * headings. A page can begin or end inside a manager group, but it never
+ * contains more than `pageSize` fund records.
+ */
+export function paginateManagerGroups<T>(
+  groups: [string, T[]][],
+  page: number,
+  pageSize: number,
+): [string, T[]][] {
+  const safePageSize = Math.max(1, Math.floor(pageSize));
+  const safePage = Math.max(1, Math.floor(page));
+  const start = (safePage - 1) * safePageSize;
+  const end = start + safePageSize;
+  let cursor = 0;
+  const visible: [string, T[]][] = [];
+
+  for (const [manager, funds] of groups) {
+    const groupStart = cursor;
+    const groupEnd = cursor + funds.length;
+    cursor = groupEnd;
+    if (groupEnd <= start || groupStart >= end) continue;
+
+    const sliceStart = Math.max(0, start - groupStart);
+    const sliceEnd = Math.min(funds.length, end - groupStart);
+    const pageFunds = funds.slice(sliceStart, sliceEnd);
+    if (pageFunds.length > 0) visible.push([manager, pageFunds]);
+  }
+
+  return visible;
 }
 
 export function getFundStats(fundList: { managerName: string; sizeUsdMm: number | null }[]) {

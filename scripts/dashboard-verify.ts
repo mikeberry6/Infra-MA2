@@ -3,6 +3,9 @@ import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
+import { formatSafeErrorSummary } from "../src/lib/safe-error";
+import { logServerFailure, withServerTask } from "../src/lib/server-log";
+import { runWithPreservedCleanup } from "../src/lib/task-cleanup";
 import { ACTIVE_DASHBOARD_METRICS, DASHBOARD_METRICS } from "../src/modules/dashboard/catalog";
 import {
   DASHBOARD_SOURCE_REGISTRY,
@@ -97,7 +100,8 @@ async function main() {
 
   if (process.env.DATABASE_URL) {
     const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL }) });
-    try {
+    const run = async () => {
+      try {
       const activeIds = ACTIVE_DASHBOARD_METRICS.map((metric) => metric.id);
       const activeMetricSources = ACTIVE_DASHBOARD_METRICS.map((metric) => ({
         metricId: metric.id,
@@ -239,14 +243,21 @@ async function main() {
           .filter((signal) => !isPublicDashboardSignal(signal))
           .map((signal) => `${signal.signalKey} (${signal.id})`),
       };
-    } catch (error) {
-      summary.database = {
-        available: false,
-        error: error instanceof Error ? error.message : String(error),
-      };
-    } finally {
-      await prisma.$disconnect();
-    }
+      } catch (error) {
+        summary.database = {
+          available: false,
+          error: formatSafeErrorSummary(error),
+        };
+      }
+    };
+    await runWithPreservedCleanup({
+      run,
+      cleanup: () => prisma.$disconnect(),
+      onSuppressedCleanupError: (error) => logServerFailure({
+        task: "dashboard_verification",
+        operation: "disconnect_database",
+      }, error),
+    });
   } else {
     summary.database = {
       available: false,
@@ -257,6 +268,7 @@ async function main() {
   await mkdir("tmp", { recursive: true });
   const outPath = path.join("tmp", "dashboard-verify-summary.json");
   await writeFile(outPath, `${JSON.stringify(summary, null, 2)}\n`);
+  console.log("Dashboard verification completed; review tmp/dashboard-verify-summary.json.");
 
   if (summary.catalog.duplicateMetricIds.length > 0) {
     throw new Error(`Duplicate dashboard metric ids: ${summary.catalog.duplicateMetricIds.join(", ")}`);
@@ -281,16 +293,11 @@ async function main() {
     if (incomplete.length > 0) throw new Error(`Dashboard active-source gate failed: ${incomplete.join("; ")}`);
   }
 
-  console.log(`Dashboard verification complete. Empty-data stance ${summary.emptyView.stance} (${summary.emptyView.score}/100).`);
-  console.log(`Catalog metrics: ${summary.catalog.activeMetrics} active / ${summary.catalog.metrics} total; summary written to ${outPath}`);
-  if (summary.database?.available) {
-    console.log(`Database rows: ${summary.database.metricDefinitions} definitions, ${summary.database.observations} observations, ${summary.database.signals} signals, ${summary.database.sourceRuns} source runs.`);
-  } else {
-    console.log(`Database check skipped/failed: ${summary.database?.error}`);
-  }
 }
 
-main().catch((error) => {
-  console.error(error);
+withServerTask({
+  task: "dashboard_verification",
+  operation: "verify_dashboard_data",
+}, main).catch(() => {
   process.exitCode = 1;
 });

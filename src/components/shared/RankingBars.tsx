@@ -45,14 +45,18 @@ export function SimpleBarRow({
       <span className="type-row-title truncate">
         {row.name}
       </span>
-      <div className="relative h-1.5 w-full bg-[var(--bg-hover)] rounded-full overflow-hidden">
+      <div
+        className="relative h-1.5 w-full bg-[var(--bg-hover)] rounded-full overflow-hidden"
+        role="img"
+        aria-label={`${row.name}: ${row.count}`}
+      >
         <div
           className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-500 ease-out"
           style={{
             width: `${Math.max(barPct, 5)}%`,
             backgroundColor: row.color,
           }}
-          aria-label={`${row.name}: ${row.count}`}
+          aria-hidden="true"
         />
       </div>
       <span className="type-micro mono text-[var(--text-secondary)] tabular-nums">

@@ -1,4 +1,16 @@
 import { z } from "zod";
+import { isHttpUrl } from "@/lib/source-utils";
+import {
+  FUND_SIZE_VALIDATION_MESSAGE,
+  isValidFundSize,
+  normalizeFundSize,
+} from "@/modules/funds/size";
+
+function httpUrlSchema(message: string) {
+  return z.string().trim().url(message).refine(isHttpUrl, {
+    message: `${message}; use an absolute http or https URL`,
+  });
+}
 
 // ── Valid display-string values (derived from enum-maps) ──────────────
 
@@ -38,6 +50,13 @@ const DEAL_STATUSES = [
   "Closed",
   "Pending Regulatory Approval",
   "Terminated",
+] as const;
+
+const SELLER_DISCLOSURE_STATES = [
+  "DISCLOSED",
+  "NOT_DISCLOSED",
+  "NOT_APPLICABLE",
+  "LEGACY_UNREVIEWED",
 ] as const;
 
 const FUND_STRATEGIES = [
@@ -115,7 +134,11 @@ export const dealSchema = z.object({
   title: z.string().min(1, "Title is required"),
   target: z.string().min(1, "Target is required"),
   buyer: z.string().min(1, "Buyer is required"),
-  seller: z.string().min(1, "Seller is required"),
+  // A seller may be absent only when the reviewed disclosure fields below
+  // explain that absence. The cross-field refinement enforces that contract.
+  seller: z.string(),
+  sellerDisclosureStatus: z.enum(SELLER_DISCLOSURE_STATES).default("LEGACY_UNREVIEWED"),
+  sellerDisclosureReason: z.string().optional(),
   sector: z.enum(DEAL_SECTORS, { message: "Invalid deal sector" }),
   subsector: z.string().optional().default(""),
   region: z.enum(DEAL_REGIONS, { message: "Invalid deal region" }),
@@ -150,13 +173,25 @@ export const dealSchema = z.object({
 
   // Source
   sourceName: z.string().optional(),
-  sourceUrl: z.string().url("Invalid source URL").optional().or(z.literal("")),
+  sourceUrl: httpUrlSchema("Invalid source URL").optional().or(z.literal("")),
 
   // Advisors
   financialAdvisorBuyer: z.array(z.string()).optional(),
   financialAdvisorSeller: z.array(z.string()).optional(),
   legalAdvisorBuyer: z.array(z.string()).optional(),
   legalAdvisorSeller: z.array(z.string()).optional(),
+}).superRefine((deal, context) => {
+  const hasNamedSeller = !["", "N/A", "—"].includes(deal.seller.trim());
+  if (hasNamedSeller) return;
+  const reviewedAbsence = deal.sellerDisclosureStatus === "NOT_DISCLOSED"
+    || deal.sellerDisclosureStatus === "NOT_APPLICABLE";
+  if (!reviewedAbsence || (deal.sellerDisclosureReason?.trim().length ?? 0) < 10) {
+    context.addIssue({
+      code: "custom",
+      path: ["sellerDisclosureReason"],
+      message: "Name a seller or select a reviewed seller-disclosure state and provide a reason (10+ characters)",
+    });
+  }
 });
 
 export type DealInput = z.infer<typeof dealSchema>;
@@ -167,7 +202,11 @@ export const fundSchema = z.object({
   managerName: z.string().min(1, "Manager name is required"),
   fundName: z.string().min(1, "Fund name is required"),
   investmentStrategy: z.string().optional(),
-  size: z.string().min(1, "Size is required"),
+  size: z.string()
+    .trim()
+    .min(1, "Size is required")
+    .transform(normalizeFundSize)
+    .refine(isValidFundSize, { message: FUND_SIZE_VALIDATION_MESSAGE }),
   sizeUsdMm: z.number().optional(),
   vintage: z.string().min(1, "Vintage is required"),
   strategies: z
@@ -177,9 +216,10 @@ export const fundSchema = z.object({
   status: z.enum(FUND_STATUSES, { message: "Invalid fund status" }),
   sectors: z.array(z.enum(FUND_SECTORS, { message: "Invalid fund sector" })).default([]),
   regions: z.array(z.enum(FUND_REGIONS, { message: "Invalid fund region" })).default([]),
-  sourceUrls: z.array(z.string().url("Invalid source URL")).optional(),
+  sourceUrls: z.array(httpUrlSchema("Invalid source URL")).optional(),
+  primarySourceUrl: httpUrlSchema("Invalid primary source URL").optional().or(z.literal("")),
   ticker: z.string().optional(),
-  strategyUrl: z.string().url("Invalid strategy URL").optional().or(z.literal("")),
+  strategyUrl: httpUrlSchema("Invalid strategy URL").optional().or(z.literal("")),
 });
 
 export type FundInput = z.infer<typeof fundSchema>;
@@ -194,13 +234,15 @@ export const companySchema = z.object({
   region: z.enum(COMPANY_REGIONS, { message: "Invalid company region" }),
   description: z.string().optional(),
   status: z.enum(COMPANY_STATUSES, { message: "Invalid company status" }).default("Active"),
-  website: z.string().url("Invalid website URL").optional().or(z.literal("")),
+  website: httpUrlSchema("Invalid website URL").optional().or(z.literal("")),
   yearFounded: z.number().int().min(1800).max(2100).optional(),
   investmentYear: z.number().int().min(1900).max(2100).optional(),
   headquarters: z.string().optional(),
   investmentFirm: z.string().optional(),
   ownershipVehicle: z.string().optional(),
   countryTags: z.array(z.string()).optional(),
+  sourceName: z.string().optional(),
+  sourceUrl: httpUrlSchema("Invalid source URL").optional().or(z.literal("")),
 });
 
 export type CompanyInput = z.infer<typeof companySchema>;

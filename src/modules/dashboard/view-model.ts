@@ -8,10 +8,13 @@ import {
   isPublicDashboardSignal,
   isSampleDashboardRecord,
 } from "@/modules/dashboard/publication";
+import { dashboardMethodologyCutoverReason } from "@/modules/dashboard/methodology-cutover";
 import { buildRiskScorecard } from "@/modules/dashboard/score";
+import { nextDashboardSyncAt } from "@/modules/operations/pipeline-schedules";
 import type {
   DashboardSource,
   DashboardObservation,
+  DashboardOperationsView,
   DashboardRunSummary,
   DashboardSeries,
   DashboardSignal,
@@ -24,12 +27,14 @@ export function buildDashboardView({
   sourceHealth,
   generatedAt = new Date().toISOString(),
   hasDatabaseData,
+  operations = defaultDashboardOperations(generatedAt),
 }: {
   observations: DashboardObservation[];
   signals: DashboardSignal[];
   sourceHealth: DashboardRunSummary[];
   generatedAt?: string;
   hasDatabaseData: boolean;
+  operations?: DashboardOperationsView;
 }): DashboardView {
   const now = new Date(generatedAt);
   const publishedSignals = signals.filter(isPublicDashboardSignal);
@@ -44,6 +49,7 @@ export function buildDashboardView({
       || metric.source.id !== observation.sourceId
       || observation.status === "SAMPLE"
       || isSampleDashboardRecord(observation)
+      || dashboardMethodologyCutoverReason(observation) !== null
     ) continue;
     const current = observationsByMetric.get(observation.metricId) ?? [];
     current.push(observation);
@@ -93,10 +99,19 @@ export function buildDashboardView({
   return {
     generatedAt,
     hasDatabaseData,
+    operations,
     scorecard,
     sections,
     sourceHealth: completeSourceHealth(sourceHealth, generatedAt),
     allSeries,
+  };
+}
+
+function defaultDashboardOperations(generatedAt: string): DashboardOperationsView {
+  return {
+    state: "never-run",
+    nextExpectedAt: nextDashboardSyncAt(new Date(generatedAt)).toISOString(),
+    message: "No dashboard synchronization has been recorded yet.",
   };
 }
 

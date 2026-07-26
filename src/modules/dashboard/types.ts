@@ -165,9 +165,18 @@ export interface DashboardSectionView {
   signals: DashboardSignal[];
 }
 
+export interface DashboardOperationsView {
+  state: "healthy" | "pending" | "overdue" | "failed" | "never-run";
+  lastAttemptAt?: string;
+  lastSuccessfulAt?: string;
+  nextExpectedAt: string;
+  message: string;
+}
+
 export interface DashboardView {
   generatedAt: string;
   hasDatabaseData: boolean;
+  operations: DashboardOperationsView;
   scorecard: DashboardScorecard;
   sections: DashboardSectionView[];
   sourceHealth: DashboardRunSummary[];

@@ -1,22 +1,23 @@
-name: Promote Dashboard Release
+name: Promote Production Release
 
 on:
   workflow_dispatch:
     inputs:
       release_sha:
-        description: Full Git SHA at the protected main head
+        description: Full Git commit SHA that passed the required release gate
         required: true
         type: string
       deployment_url:
-        description: Immutable Vercel deployment URL built from release_sha
+        description: Ready Vercel deployment URL built from release_sha
         required: true
         type: string
       confirmation:
-        description: Type PROMOTE to authorize production promotion
+        description: Type PROMOTE to authorize schema-first production release
         required: true
         type: string
 
 permissions:
+  actions: read
   contents: read
   checks: read
 
@@ -32,17 +33,17 @@ jobs:
     env:
       NEXT_TELEMETRY_DISABLED: "1"
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
-      EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
-      FORBIDDEN_DATABASE_HOST: ${{ vars.MIGRATION_DATABASE_HOST }}
-      FORBIDDEN_DATABASE_HOST_2: ${{ vars.DASHBOARD_MIGRATION_DATABASE_HOST }}
       FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
       EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
       SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
       SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      EXPECTED_DATABASE_HOST: ${{ vars.PRODUCTION_DATABASE_HOST }}
+      EXPECTED_DATABASE_NAME: ${{ vars.PRODUCTION_DATABASE_NAME }}
+      FORBIDDEN_DATABASE_HOST: ${{ vars.PRODUCTION_MIGRATION_DATABASE_HOST }}
+      FORBIDDEN_DATABASE_HOST_2: ${{ vars.MIGRATION_DATABASE_HOST }}
       DASHBOARD_WRITES_ENABLED: ${{ vars.DASHBOARD_WRITES_ENABLED }}
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+      VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
       EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
       EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
       RELEASE_SHA: ${{ inputs.release_sha }}
@@ -51,6 +52,13 @@ jobs:
       CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
       CONFIRMATION: ${{ inputs.confirmation }}
     steps:
+      - name: Require protected workflow ref
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Production release workflows must be dispatched from refs/heads/main."
+            exit 1
+          fi
+
       - name: Require explicit production authorization
         run: |
           if [ "$CONFIRMATION" != "PROMOTE" ]; then
@@ -61,27 +69,28 @@ jobs:
       - name: Checkout approved release
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ inputs.release_sha }}
+          ref: refs/heads/main
           fetch-depth: 0
           persist-credentials: false
 
       - name: Verify checked-out release identity
         run: |
-          [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]] || {
+          if ! [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]]; then
             echo "::error::release_sha must be a full lowercase Git SHA."
             exit 1
-          }
-          [ "$(git rev-parse HEAD)" = "$RELEASE_SHA" ] || {
+          fi
+          if [ "$(git rev-parse HEAD)" != "$RELEASE_SHA" ]; then
             echo "::error::Checked-out SHA does not match release_sha."
             exit 1
-          }
+          fi
 
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "24"
           cache: npm
 
-      - name: Verify protected-main and required-check provenance
+      - name: Verify protected-branch and required-check provenance
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
@@ -90,103 +99,135 @@ jobs:
             --release-sha="$RELEASE_SHA" \
             --branch=main \
             --required-check=build \
+            --required-check=preview-smoke-lineage \
             --output=tmp/release/release-provenance.json
 
       - name: Require protected production configuration
-        shell: bash
+        env:
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: |
           missing=0
-          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2 FRED_API_KEY EIA_API_KEY SAM_API_KEY SEC_USER_AGENT VERCEL_TOKEN VERCEL_SCOPE EXPECTED_VERCEL_PROJECT_ID EXPECTED_GITHUB_REPOSITORY_ID PRODUCTION_URL; do
+          for name in DATABASE_URL EXPECTED_DATABASE_HOST EXPECTED_DATABASE_NAME FORBIDDEN_DATABASE_HOST FORBIDDEN_DATABASE_HOST_2 VERCEL_TOKEN VERCEL_AUTOMATION_BYPASS_SECRET VERCEL_TEAM_ID EXPECTED_VERCEL_PROJECT_ID EXPECTED_GITHUB_REPOSITORY_ID PRODUCTION_URL FRED_API_KEY EIA_API_KEY SAM_API_KEY SEC_USER_AGENT; do
             if [ -z "${!name:-}" ]; then
               echo "::error::$name is required."
               missing=1
             fi
           done
           if [ "$DASHBOARD_WRITES_ENABLED" != "true" ]; then
-            echo "::error::DASHBOARD_WRITES_ENABLED must be true only after the all-source dry-run is reviewed."
+            echo "::error::DASHBOARD_WRITES_ENABLED must be true only after a reviewed all-source live dry-run."
             missing=1
           fi
-          [[ "$EXPECTED_VERCEL_PROJECT_ID" =~ ^prj_[A-Za-z0-9]+$ ]] || {
+          if ! [[ "$EXPECTED_VERCEL_PROJECT_ID" =~ ^prj_[A-Za-z0-9]+$ ]]; then
             echo "::error::VERCEL_PROJECT_ID must be an immutable prj_ identifier."
             missing=1
-          }
+          fi
           if [ "$PRODUCTION_URL" != "$CANONICAL_PRODUCTION_URL" ]; then
             echo "::error::The protected PRODUCTION_URL does not match the canonical InfraSight production alias."
             missing=1
           fi
           node - <<'NODE'
-          const parsed = new URL(process.env.DEPLOYMENT_URL);
-          if (parsed.protocol !== "https:" || parsed.username || parsed.password || parsed.port || parsed.pathname !== "/" || parsed.search || parsed.hash) {
-            throw new Error("deployment_url must be an HTTPS origin without credentials, path, query, or fragment.");
+          for (const name of ["DEPLOYMENT_URL", "PRODUCTION_URL"]) {
+            const value = process.env[name];
+            let parsed;
+            try {
+              parsed = new URL(value);
+            } catch {
+              throw new Error(`${name} must be an absolute URL.`);
+            }
+            if (parsed.protocol !== "https:" || parsed.username || parsed.password || parsed.port) {
+              throw new Error(`${name} must be an HTTPS URL without embedded credentials.`);
+            }
+            if (parsed.pathname !== "/" || parsed.search || parsed.hash) {
+              throw new Error(`${name} must be an origin without a path, query, or fragment.`);
+            }
           }
           NODE
           if [ "$missing" -ne 0 ]; then exit 1; fi
 
-      - name: Install, generate, and validate
-        run: |
-          npm ci
-          npx prisma generate
-          npx prisma validate
+      - name: Install locked dependencies
+        run: npm ci
 
-      - name: Inspect and smoke-test immutable candidate
+      - name: Generate and validate Prisma client
+        run: |
+          npm run db:generate
+          npm run db:validate
+
+      - name: Inspect and smoke-test candidate before production writes
         shell: bash
+        env:
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: |
           mkdir -p tmp/release
+          set -o pipefail
           node --experimental-strip-types scripts/verify-vercel-deployment.ts \
             --deployment-url="$DEPLOYMENT_URL" \
             --expected-sha="$RELEASE_SHA" \
             --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
             --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
             --require-immutable-url \
             --output=tmp/release/candidate-inspect.json
-          candidate_link_dir="$(mktemp -d "${RUNNER_TEMP}/vercel-candidate-link.XXXXXX")"
-          trap 'rm -rf "$candidate_link_dir"' EXIT
-          npx --yes vercel@51.7.0 link \
-            --cwd "$candidate_link_dir" \
-            --project "$EXPECTED_VERCEL_PROJECT_ID" \
-            --scope "$VERCEL_SCOPE" \
-            --token "$VERCEL_TOKEN" \
-            --yes
-          VERCEL_CLI_CWD="$candidate_link_dir" node scripts/release-smoke.mjs \
+          node scripts/release-smoke.mjs \
             --base-url="$DEPLOYMENT_URL" \
             --expected-version="$RELEASE_SHA" \
-            --transport=vercel-cli \
-            --skip-health \
+            --transport=vercel-bypass \
             --output=tmp/release/candidate-smoke.json
 
-      - name: Require staged production schema
-        shell: bash
-        run: |
-          set -o pipefail
-          node --experimental-strip-types scripts/assert-database-target.ts
-          npx prisma migrate status 2>&1 | tee tmp/release/migrate-status.log
-          npx prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/release/schema-drift.log
+      - name: Prove production database target
+        run: node --experimental-strip-types scripts/assert-database-target.ts
 
-      - name: Verify dashboard publication and recurring-run gates
+      - name: Require production schema to be staged already
         shell: bash
         run: |
           set -o pipefail
+          ./node_modules/.bin/prisma migrate status 2>&1 | tee tmp/release/migrate-status.log
+          ./node_modules/.bin/prisma migrate diff --from-schema=prisma/schema.prisma --to-config-datasource --exit-code 2>&1 | tee tmp/release/schema-drift.log
+
+      - name: Record the current deal seller-disclosure backlog
+        shell: bash
+        run: |
+          ./node_modules/.bin/tsx scripts/report-deal-seller-disclosure-remediation.ts \
+            --output=tmp/release/deal-seller-disclosure-approval-template.json
+
+      - name: Record the current Fund primary-source backlog
+        shell: bash
+        run: |
+          ./node_modules/.bin/tsx scripts/report-fund-primary-source-remediation.ts \
+            --output=tmp/release/fund-primary-source-approval-template.json
+
+      - name: Verify production data and source gates
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run db:verify 2>&1 | tee tmp/release/database-verification.log
+          ./node_modules/.bin/tsx scripts/report-primary-citation-remediation.ts --output=tmp/release/primary-citation-approval-template.json
+          ./node_modules/.bin/tsx scripts/build-primary-citation-review-worksheet.ts \
+            --template=tmp/release/primary-citation-approval-template.json \
+            --output=tmp/release/primary-citation-review-worksheet.json
+          ./node_modules/.bin/tsx scripts/report-ownership-fund-link-remediation.ts --output=tmp/release/ownership-fund-link-approval-template.json
+          ./node_modules/.bin/tsx scripts/source-coverage-report.ts --require-complete --output=tmp/release/source-coverage.json
+          ./node_modules/.bin/tsx scripts/report-company-merge-candidates.ts --published-only --require-clean > tmp/release/company-canonical-review.md
           npm run dashboard:verify -- --require-complete
           cp tmp/dashboard-verify-summary.json tmp/release/dashboard-source-verification.json
-          npx tsx scripts/verify-dashboard-health.ts \
-            --window-days=30 \
-            --max-age-hours=36 \
-            --min-success-rate=0.95 \
-            --output=tmp/release/dashboard-reliability.json
 
-      - name: Reverify exact release immediately before promotion
+      - name: Require healthy critical pipelines before promotion
+        run: |
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=DASHBOARD_SYNC --reliability-schedule=dashboard-weekday --freshness-schedule=dashboard-weekday --expected-runs-per-week=5 --min-success-rate=0.95 --require-full-window --output=tmp/release/dashboard-reliability.json
+          ./node_modules/.bin/tsx scripts/verify-pipeline-health.ts --pipeline=NEWS_SCAN --reliability-schedule=news-daily --max-age-hours=36 --expected-runs-per-week=7 --min-success-rate=0.95 --max-source-failure-rate=0.25 --require-full-window --output=tmp/release/news-reliability.json
+
+      - name: Reverify exact main head immediately before promotion
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
-          node --experimental-strip-types scripts/verify-release-provenance.ts \
+          ./node_modules/.bin/tsx scripts/verify-release-provenance.ts \
             --release-sha="$RELEASE_SHA" \
             --branch=main \
             --required-check=build \
+            --required-check=preview-smoke-lineage \
             --output=tmp/release/release-provenance-before-promotion.json
-          node --experimental-strip-types scripts/assert-database-target.ts
 
-      - name: Reverify and promote the immutable candidate
+      - name: Reverify and promote the immutable validated deployment
         shell: bash
         run: |
           node --experimental-strip-types scripts/verify-vercel-deployment.ts \
@@ -194,29 +235,39 @@ jobs:
             --expected-sha="$RELEASE_SHA" \
             --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
             --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
             --require-immutable-url \
             --output=tmp/release/candidate-inspect-before-promotion.json
           deployment_id="$(jq -r '.id' tmp/release/candidate-inspect-before-promotion.json)"
-          [[ "$deployment_id" =~ ^dpl_[A-Za-z0-9]+$ ]] || {
-            echo "::error::Verified deployment ID is invalid."
-            exit 1
-          }
-          npx --yes vercel@51.7.0 promote "$deployment_id" \
-            --timeout 3m --yes --token "$VERCEL_TOKEN" --scope "$VERCEL_SCOPE"
+          [[ "$deployment_id" =~ ^dpl_[A-Za-z0-9]+$ ]] || { echo "::error::Verified deployment ID is invalid."; exit 1; }
+          node --experimental-strip-types scripts/mutate-vercel-production.ts \
+            --operation=promote \
+            --deployment-id="$deployment_id" \
+            --project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
+            --production-url="$PRODUCTION_URL" \
+            --output=tmp/release/production-mutation.json
 
-      - name: Smoke-test canonical production release
-        run: >-
-          node scripts/release-smoke.mjs
-          --base-url="$PRODUCTION_URL"
-          --expected-version="$RELEASE_SHA"
-          --skip-health
-          --output=tmp/release/production-smoke.json
+      - name: Verify canonical production release
+        shell: bash
+        run: |
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$PRODUCTION_URL" \
+            --expected-sha="$RELEASE_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --team-id="$VERCEL_TEAM_ID" \
+            --output=tmp/release/canonical-production-inspect.json
+          node scripts/release-smoke.mjs \
+            --base-url="$PRODUCTION_URL" \
+            --expected-version="$RELEASE_SHA" \
+            --output=tmp/release/production-smoke.json
 
       - name: Upload immutable release evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: dashboard-production-release-${{ github.run_id }}
+          name: production-release-${{ github.run_id }}
           path: tmp/release/
           if-no-files-found: warn
           retention-days: 90

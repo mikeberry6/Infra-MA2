@@ -131,8 +131,10 @@ model Fund {
   sectors            FundSectorEnum[]
   regions            FundRegionEnum[]
   sourceUrls         String[]
+  primarySourceUrl   String?
   strategyUrl        String           @default("")
   status             RecordStatus     @default(PUBLISHED)
+  lastVerifiedAt     DateTime?
   createdAt          DateTime         @default(now())
   updatedAt          DateTime         @updatedAt
 
@@ -181,6 +183,7 @@ model Company {
   yearFounded   Int?
   headquarters  String?
   status        RecordStatus  @default(PUBLISHED)
+  lastVerifiedAt DateTime?
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
 
@@ -189,6 +192,7 @@ model Company {
   managementRoles  ManagementRole[]
   citations        Citation[]
   newsMentions     NewsMention[]
+  redirects        CompanyRedirect[]
 
   @@unique([name, country])
   @@index([name])
@@ -258,6 +262,13 @@ enum DealStatusEnum {
   TERMINATED
 }
 
+enum SellerDisclosureStatus {
+  DISCLOSED
+  NOT_DISCLOSED
+  NOT_APPLICABLE
+  LEGACY_UNREVIEWED
+}
+
 model Deal {
   id                String         @id @default(cuid())
   legacyId          String         @unique
@@ -277,6 +288,8 @@ model Deal {
   stake           String?
   dealStatus      DealStatusEnum
   closingDate     DateTime?
+  sellerDisclosureStatus SellerDisclosureStatus @default(LEGACY_UNREVIEWED)
+  sellerDisclosureReason String?
 
   assetScale        String?
   valuationMultiple String?
@@ -284,6 +297,7 @@ model Deal {
   keyHighlights     String[]
 
   status    RecordStatus @default(PUBLISHED)
+  lastVerifiedAt DateTime?
   createdAt DateTime     @default(now())
   updatedAt DateTime     @updatedAt
 
@@ -409,6 +423,7 @@ model Citation {
   deal          Deal?           @relation(fields: [dealId], references: [id])
   companyId     String?
   company       Company?        @relation(fields: [companyId], references: [id])
+  isPrimary     Boolean         @default(false)
   purpose       CitationPurpose @default(SUPPORTING_CONTEXT)
   evidenceLabel String?
 
@@ -614,5 +629,79 @@ model User {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
+  auditEvents AuditEvent[]
   reviewedDashboardSignals DashboardSignal[] @relation("DashboardSignalReviewer")
+  importPreviews ImportPreview[]
+}
+
+// ── Operational trust and auditability ──────────────────
+
+model PipelineRun {
+  id           String   @id @default(cuid())
+  pipeline     String
+  status       String   @default("RUNNING")
+  startedAt    DateTime @default(now())
+  endedAt      DateTime?
+  inserted     Int      @default(0)
+  updated      Int      @default(0)
+  skipped      Int      @default(0)
+  errorSummary String?
+  metadata     Json?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([pipeline, startedAt])
+  @@index([status, startedAt])
+}
+
+model AuditEvent {
+  id         String   @id @default(cuid())
+  actorId    String?
+  actor      User?    @relation(fields: [actorId], references: [id], onDelete: SetNull)
+  entityType String
+  entityId   String?
+  action     String
+  changes    Json?
+  metadata   Json?
+  createdAt  DateTime @default(now())
+
+  @@index([actorId])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}
+
+model CompanyRedirect {
+  retiredId String   @id
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  reason    String   @default("CANONICAL_MERGE")
+  createdAt DateTime @default(now())
+
+  @@index([companyId])
+}
+
+model AuthThrottle {
+  keyHash         String   @id
+  failedAttempts  Int      @default(0)
+  windowStartedAt DateTime @default(now())
+  lockedUntil     DateTime?
+  updatedAt       DateTime @updatedAt
+
+  @@index([lockedUntil])
+}
+
+model ImportPreview {
+  id          String   @id
+  tokenHash   String   @unique
+  actorId     String
+  actor       User     @relation(fields: [actorId], references: [id], onDelete: Cascade)
+  entityType  String
+  payloadHash String
+  summary     Json
+  expiresAt   DateTime
+  consumedAt  DateTime?
+  createdAt   DateTime @default(now())
+
+  @@index([actorId, entityType])
+  @@index([expiresAt])
 }

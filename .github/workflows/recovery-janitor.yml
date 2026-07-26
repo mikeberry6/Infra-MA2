@@ -1,0 +1,107 @@
+name: Neon Recovery Branch Janitor
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: neon-migration-validation-${{ github.repository_id }}
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    name: Delete stale annotated recovery branches
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: RecoveryCleanup
+    steps:
+      - name: Require protected main provenance
+        shell: bash
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Recovery cleanup may run only from refs/heads/main."
+            exit 1
+          fi
+          if [ "$GITHUB_EVENT_NAME" != "schedule" ] \
+            && [ "$GITHUB_EVENT_NAME" != "workflow_dispatch" ]; then
+            echo "::error::Unexpected recovery cleanup event."
+            exit 1
+          fi
+          if ! [[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::Recovery cleanup requires an exact protected-main SHA."
+            exit 1
+          fi
+
+      - name: Checkout exact protected main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Reprove checked-out main identity
+        shell: bash
+        run: |
+          if [ "$(git rev-parse HEAD)" != "$GITHUB_SHA" ]; then
+            echo "::error::Checked-out main does not match the triggering SHA."
+            exit 1
+          fi
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+
+      - name: Delete only stale, exact-run recovery branches
+        id: janitor
+        continue-on-error: true
+        env:
+          NEON_RECOVERY_API_KEY: ${{ secrets.NEON_RECOVERY_API_KEY }}
+          NEON_RECOVERY_PROJECT_ID: ${{ vars.NEON_RECOVERY_PROJECT_ID }}
+          NEON_PRODUCTION_PROJECT_ID: ${{ vars.NEON_PRODUCTION_PROJECT_ID }}
+          NEON_VALIDATION_BRANCH_ID: ${{ vars.NEON_VALIDATION_BRANCH_ID }}
+        run: >-
+          node --experimental-strip-types scripts/neon-recovery-janitor.ts
+          --output=tmp/recovery-janitor/public/summary.json
+
+      - name: Scan retained janitor evidence
+        id: secret_gate
+        if: always()
+        env:
+          NEON_RECOVERY_API_KEY: ${{ secrets.NEON_RECOVERY_API_KEY }}
+        run: >-
+          node --experimental-strip-types
+          scripts/assert-playwright-artifact-secret-safety.ts
+          --root=tmp/recovery-janitor/public
+          --secret-env=NEON_RECOVERY_API_KEY
+          --output=tmp/recovery-janitor/scans/api-key-safety.json
+
+      - name: Upload bounded janitor evidence
+        if: always() && steps.secret_gate.outcome == 'success'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: neon-recovery-janitor-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            tmp/recovery-janitor/public/
+            tmp/recovery-janitor/scans/
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Enforce cleanup and evidence outcomes
+        if: always()
+        env:
+          JANITOR_OUTCOME: ${{ steps.janitor.outcome }}
+          SECRET_GATE_OUTCOME: ${{ steps.secret_gate.outcome }}
+        run: |
+          if [ "$JANITOR_OUTCOME" != "success" ]; then
+            echo "::error::Recovery branch janitor failed or found an untrusted reserved-prefix branch."
+            exit 1
+          fi
+          if [ "$SECRET_GATE_OUTCOME" != "success" ]; then
+            echo "::error::Recovery janitor evidence scan failed."
+            exit 1
+          fi

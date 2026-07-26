@@ -1,10 +1,15 @@
+import { RouteLoadingRegion } from "@/components/shared/RouteLoadingRegion";
+
 /**
  * Loading skeleton for admin pages. Mirrors the post-overhaul admin chrome:
  * back-link → page title → action button → table.
  */
 export default function AdminLoading() {
   return (
-    <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-10">
+    <RouteLoadingRegion
+      label="Loading administration"
+      className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-10"
+    >
       <div className="animate-pulse">
         {/* Header */}
         <div className="flex items-end justify-between flex-wrap gap-4 mb-6">
@@ -31,6 +36,6 @@ export default function AdminLoading() {
           </div>
         </div>
       </div>
-    </div>
+    </RouteLoadingRegion>
   );
 }

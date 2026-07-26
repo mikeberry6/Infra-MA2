@@ -5,16 +5,26 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { PORTCO_SECTORS, PORTCO_REGIONS, PORTCO_STATUSES } from "@/lib/constants";
 import type { CompanyView } from "@/modules/shared/types";
+import { Button } from "@/components/shared/Button";
+import { TextInput } from "@/components/shared/TextInput";
+import {
+  FormField,
+  FormMessage,
+  SelectInput,
+  TextArea,
+} from "@/components/shared/FormControls";
+import { invalidateDetailCache } from "@/lib/detail-cache-events";
+
+type CompanyFormData = Partial<CompanyView> & {
+  sourceName?: string;
+  sourceUrl?: string;
+};
 
 interface CompanyFormProps {
-  initialData?: Partial<CompanyView>;
+  initialData?: CompanyFormData;
   action: (formData: FormData) => Promise<{ success: boolean; error?: string; id?: string }>;
   mode: "create" | "edit";
 }
-
-const inputClass =
-  "w-full bg-white border border-black/[0.08] text-[#1a1a1a] rounded px-3 py-2 text-sm focus:outline-none focus:border-[#008253]";
-const labelClass = "block text-sm text-[#A1A1AA] mb-1";
 
 export default function CompanyForm({ initialData, action, mode }: CompanyFormProps) {
   const router = useRouter();
@@ -39,6 +49,12 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
   const [investmentFirm, setInvestmentFirm] = useState(initialData?.investmentFirm ?? "");
   const [ownershipVehicle, setOwnershipVehicle] = useState(initialData?.ownershipVehicle ?? "");
   const [countryTags, setCountryTags] = useState((initialData?.countryTags ?? []).join(", "));
+  const [sourceName, setSourceName] = useState(
+    initialData?.sourceName ?? initialData?.sources?.[0]?.label ?? "",
+  );
+  const [sourceUrl, setSourceUrl] = useState(
+    initialData?.sourceUrl ?? initialData?.sources?.[0]?.url ?? "",
+  );
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -59,10 +75,13 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
     formData.set("investmentFirm", investmentFirm);
     formData.set("ownershipVehicle", ownershipVehicle);
     formData.set("countryTags", countryTags);
+    formData.set("sourceName", sourceName);
+    formData.set("sourceUrl", sourceUrl);
 
     startTransition(async () => {
       const result = await action(formData);
       if (result.success) {
+        invalidateDetailCache("company", result.id);
         setMessage({ type: "success", text: mode === "create" ? "Company created" : "Company updated" });
         if (mode === "create") {
           router.push("/admin/companies");
@@ -74,206 +93,207 @@ export default function CompanyForm({ initialData, action, mode }: CompanyFormPr
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl">
-      {message && (
-        <div
-          className={`text-sm px-4 py-2 rounded ${
-            message.type === "success"
-              ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-              : "bg-red-500/10 text-red-400 border border-red-500/20"
-          }`}
-        >
-          {message.text}
-        </div>
-      )}
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-3xl space-y-6"
+      aria-busy={isPending}
+    >
+      {message && <FormMessage tone={message.type}>{message.text}</FormMessage>}
 
-      {/* Name */}
-      <div>
-        <label className={labelClass}>Company Name *</label>
-        <input
-          type="text"
+      <FormField htmlFor="company-name" label="Company Name" required>
+        <TextInput
+          id="company-name"
+          size="md"
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className={inputClass}
         />
-      </div>
+      </FormField>
 
-      {/* Investment Firm + Ownership Vehicle */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className={labelClass}>Investment Firm</label>
-          <input
-            type="text"
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <FormField htmlFor="company-investment-firm" label="Investment Firm">
+          <TextInput
+            id="company-investment-firm"
+            size="md"
             value={investmentFirm}
             onChange={(e) => setInvestmentFirm(e.target.value)}
-            className={inputClass}
             placeholder="e.g. Brookfield Asset Management"
           />
-        </div>
-        <div>
-          <label className={labelClass}>Ownership Vehicle</label>
-          <input
-            type="text"
+        </FormField>
+        <FormField
+          htmlFor="company-ownership-vehicle"
+          label="Ownership Vehicle"
+          hint="Must exactly match a fund name in the fund database."
+        >
+          <TextInput
+            id="company-ownership-vehicle"
+            size="md"
             value={ownershipVehicle}
             onChange={(e) => setOwnershipVehicle(e.target.value)}
-            className={inputClass}
-            placeholder="Must match a fundName in funds DB"
+            aria-describedby="company-ownership-vehicle-hint"
           />
-        </div>
+        </FormField>
       </div>
 
-      {/* Sector + Region + Status */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <label className={labelClass}>Sector *</label>
-          <select
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <FormField htmlFor="company-sector" label="Sector" required>
+          <SelectInput
+            id="company-sector"
+            required
             value={sector}
             onChange={(e) => setSector(e.target.value)}
-            className={inputClass}
           >
-            {PORTCO_SECTORS.map((s) => (
-              <option key={s} value={s}>{s}</option>
+            {PORTCO_SECTORS.map((value) => (
+              <option key={value} value={value}>{value}</option>
             ))}
-          </select>
-        </div>
-        <div>
-          <label className={labelClass}>Region *</label>
-          <select
+          </SelectInput>
+        </FormField>
+        <FormField htmlFor="company-region" label="Region" required>
+          <SelectInput
+            id="company-region"
+            required
             value={region}
             onChange={(e) => setRegion(e.target.value)}
-            className={inputClass}
           >
-            {PORTCO_REGIONS.map((r) => (
-              <option key={r} value={r}>{r}</option>
+            {PORTCO_REGIONS.map((value) => (
+              <option key={value} value={value}>{value}</option>
             ))}
-          </select>
-        </div>
-        <div>
-          <label className={labelClass}>Status *</label>
-          <select
+          </SelectInput>
+        </FormField>
+        <FormField htmlFor="company-status" label="Status" required>
+          <SelectInput
+            id="company-status"
+            required
             value={status}
             onChange={(e) => setStatus(e.target.value)}
-            className={inputClass}
           >
-            {PORTCO_STATUSES.map((s) => (
-              <option key={s} value={s}>{s}</option>
+            {PORTCO_STATUSES.map((value) => (
+              <option key={value} value={value}>{value}</option>
             ))}
-          </select>
-        </div>
+          </SelectInput>
+        </FormField>
       </div>
 
-      {/* Subsector + Country */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className={labelClass}>Subsector</label>
-          <input
-            type="text"
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <FormField htmlFor="company-subsector" label="Subsector">
+          <TextInput
+            id="company-subsector"
+            size="md"
             value={subsector}
             onChange={(e) => setSubsector(e.target.value)}
-            className={inputClass}
           />
-        </div>
-        <div>
-          <label className={labelClass}>Country *</label>
-          <input
-            type="text"
+        </FormField>
+        <FormField htmlFor="company-country" label="Country" required>
+          <TextInput
+            id="company-country"
+            size="md"
             required
             value={country}
             onChange={(e) => setCountry(e.target.value)}
-            className={inputClass}
           />
-        </div>
+        </FormField>
       </div>
 
-      {/* Country tags */}
-      <div>
-        <label className={labelClass}>Country tags</label>
-        <input
-          type="text"
+      <FormField
+        htmlFor="company-country-tags"
+        label="Country tags"
+        hint="Separate multiple countries with commas."
+      >
+        <TextInput
+          id="company-country-tags"
+          size="md"
           value={countryTags}
           onChange={(e) => setCountryTags(e.target.value)}
-          className={inputClass}
-          placeholder="Comma-separated, e.g. United States, Canada"
+          placeholder="e.g. United States, Canada"
+          aria-describedby="company-country-tags-hint"
         />
-      </div>
+      </FormField>
 
-      {/* Headquarters + Website */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className={labelClass}>Headquarters</label>
-          <input
-            type="text"
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <FormField htmlFor="company-headquarters" label="Headquarters">
+          <TextInput
+            id="company-headquarters"
+            size="md"
             value={headquarters}
             onChange={(e) => setHeadquarters(e.target.value)}
-            className={inputClass}
             placeholder="e.g. Houston, TX"
           />
-        </div>
-        <div>
-          <label className={labelClass}>Website</label>
-          <input
+        </FormField>
+        <FormField htmlFor="company-website" label="Website">
+          <TextInput
+            id="company-website"
+            size="md"
             type="url"
             value={website}
             onChange={(e) => setWebsite(e.target.value)}
-            className={inputClass}
           />
-        </div>
+        </FormField>
       </div>
 
-      {/* Year Founded + Investment Year */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className={labelClass}>Year Founded</label>
-          <input
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <FormField htmlFor="company-year-founded" label="Year Founded">
+          <TextInput
+            id="company-year-founded"
+            size="md"
             type="number"
             min="1800"
             max="2100"
             value={yearFounded}
             onChange={(e) => setYearFounded(e.target.value)}
-            className={inputClass}
           />
-        </div>
-        <div>
-          <label className={labelClass}>Investment Year</label>
-          <input
+        </FormField>
+        <FormField htmlFor="company-investment-year" label="Investment Year">
+          <TextInput
+            id="company-investment-year"
+            size="md"
             type="number"
             min="1900"
             max="2100"
             value={investmentYear}
             onChange={(e) => setInvestmentYear(e.target.value)}
-            className={inputClass}
           />
-        </div>
+        </FormField>
       </div>
 
-      {/* Description */}
-      <div>
-        <label className={labelClass}>Description</label>
-        <textarea
+      <FormField htmlFor="company-description" label="Description">
+        <TextArea
+          id="company-description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           rows={5}
-          className={inputClass}
         />
+      </FormField>
+
+      <div className="surface grid grid-cols-1 gap-4 p-4 md:grid-cols-2">
+        <FormField htmlFor="company-source-name" label="Primary Source Name">
+          <TextInput
+            id="company-source-name"
+            size="md"
+            value={sourceName}
+            onChange={(e) => setSourceName(e.target.value)}
+            placeholder="Publisher or official source"
+          />
+        </FormField>
+        <FormField htmlFor="company-source-url" label="Primary Source URL">
+          <TextInput
+            id="company-source-url"
+            size="md"
+            type="url"
+            value={sourceUrl}
+            onChange={(e) => setSourceUrl(e.target.value)}
+            placeholder="https://…"
+          />
+        </FormField>
       </div>
 
-      {/* Actions */}
-      <div className="flex items-center gap-4 pt-4 border-t border-black/[0.08]">
-        <button
-          type="submit"
-          disabled={isPending}
-          className="bg-[#008253] text-[#1a1a1a] px-6 py-2 rounded hover:bg-[#006d45] disabled:opacity-50 text-sm font-medium"
+      <div className="flex items-center gap-4 border-t border-[var(--border)] pt-4">
+        <Button type="submit" variant="primary" size="lg" loading={isPending}>
+          {mode === "create" ? "Create Company" : "Save Changes"}
+        </Button>
+        <Link
+          href="/admin/companies"
+          className="type-meta font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-soft)]"
         >
-          {isPending
-            ? mode === "create"
-              ? "Creating..."
-              : "Saving..."
-            : mode === "create"
-            ? "Create Company"
-            : "Save Changes"}
-        </button>
-        <Link href="/admin/companies" className="text-sm text-[#71717A] hover:text-[#1a1a1a]">
           Cancel
         </Link>
       </div>

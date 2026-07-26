@@ -27,6 +27,7 @@ export default async function EditDealPage({ params }: { params: Promise<{ id: s
       },
       citations: {
         include: { source: { select: { label: true, url: true } } },
+        orderBy: [{ isPrimary: "desc" }, { id: "asc" }],
       },
     },
   });
@@ -40,7 +41,7 @@ export default async function EditDealPage({ params }: { params: Promise<{ id: s
   const sellers = deal.participants
     .filter((p) => p.role === "SELLER")
     .map((p) => p.displayName || p.organization.name);
-  const firstCitation = deal.citations[0];
+  const firstCitation = deal.citations.find((citation) => citation.isPrimary) ?? deal.citations[0];
 
   const initialData: Partial<DealView> = {
     id: deal.id,
@@ -49,6 +50,8 @@ export default async function EditDealPage({ params }: { params: Promise<{ id: s
     target: deal.target,
     buyer: buyers.join(" / ") || "",
     seller: sellers.join(" / ") || "",
+    sellerDisclosureStatus: deal.sellerDisclosureStatus,
+    sellerDisclosureReason: deal.sellerDisclosureReason,
     sector: DEAL_SECTOR_DISPLAY[deal.sector],
     subsector: deal.subsector,
     region: DEAL_REGION_DISPLAY[deal.region],

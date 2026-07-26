@@ -8,6 +8,8 @@ import type {
   DashboardSignal,
   DashboardSource,
 } from "@/modules/dashboard/types";
+import { logServerFailure, withServerTask } from "@/lib/server-log";
+import { formatSafeErrorSummary } from "@/lib/safe-error";
 import {
   inspectRequiredDashboardMetrics,
   validateDashboardProviderResult,
@@ -110,10 +112,14 @@ export async function syncDashboard(
     }
 
     try {
-      const result = validateDashboardProviderResult(provider.source, await provider.fetch());
+      const providerResult = await withServerTask({
+        task: "dashboard_provider",
+        operation: `fetch_${provider.source.id}`,
+      }, () => provider.fetch());
+      const result = validateDashboardProviderResult(provider.source, providerResult);
       const observations = result.observations;
       const signals = result.signals ?? [];
-      const warnings = result.warnings ?? [];
+      const warnings = (result.warnings ?? []).map((warning) => formatSafeErrorSummary(warning));
       const requiredMetricHealth = inspectRequiredDashboardMetrics(
         provider.source.id,
         observations,
@@ -188,14 +194,16 @@ export async function syncDashboard(
       });
     } catch (error) {
       const endedAt = new Date().toISOString();
-      let message = error instanceof Error ? error.message : String(error);
+      const message = formatSafeErrorSummary(error);
       const requiredMetricHealth = inspectRequiredDashboardMetrics(provider.source.id, [], new Date());
       if (!dryRun) {
         try {
           await markNonCurrentSourceObservationsCached(prisma, provider.source.id, new Set());
         } catch (cacheError) {
-          const cacheMessage = cacheError instanceof Error ? cacheError.message : String(cacheError);
-          message = `${message}; could not mark prior ${provider.source.name} observations cached: ${cacheMessage}`;
+          logServerFailure({
+            task: "dashboard_sync",
+            operation: "mark_failed_observations_cached",
+          }, cacheError);
         }
       }
       if (!dryRun && sourceRunId) {

@@ -34,8 +34,13 @@
     --border-focus:  var(--accent-500);
 
     --text-primary:    var(--gray-900);
-    --text-secondary:  var(--gray-500);
-    --text-tertiary:   var(--gray-400);
+    /*
+     * Small metadata is used throughout the research terminal. Keep both
+     * secondary tiers above the WCAG AA 4.5:1 threshold on every light
+     * surface; gray-400 was only ~3:1 and made 10–11px labels unreadable.
+     */
+    --text-secondary:  var(--gray-600);
+    --text-tertiary:   var(--gray-500);
     --text-on-accent:  var(--gray-0);
 
     --accent:       var(--accent-500);
@@ -193,6 +198,19 @@
     line-height: 14px;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0;
+  }
+
+  /* Legacy scorecard type aliases retained for the PortCo drawer contract. */
+  .text-sm-dense {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0;
+  }
+
+  .text-micro {
+    font-size: 10px;
+    line-height: 14px;
     letter-spacing: 0;
   }
 
