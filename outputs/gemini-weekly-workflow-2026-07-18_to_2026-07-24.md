@@ -1987,16 +1987,15 @@ After a comprehensive review and audit of the 20 batch outputs, the findings wer
 
 ### Final editorial reconciliation
 
-Gemini returned 15 proposed includes. Independent source QA overrode four of those rows—Majis, Pembina Gas Infrastructure, Nicollin Environnement, and Carester—and retained three qualifying rows that were absent from Gemini's final table: Gabia, the Altus Power / New Leaf Energy Virginia portfolio, and OIL! Tankstellen. That source-QA reconciliation produced 14 transactions. At the user's direction on July 25, Chargepoly and Atlantic Towing were subsequently removed from the published briefing, leaving 12 transactions; their original research outputs above remain verbatim.
+Gemini returned 15 proposed includes. Independent source QA overrode four of those rows—Majis, Pembina Gas Infrastructure, Nicollin Environnement, and Carester—and retained three qualifying rows that were absent from Gemini's final table: Gabia, the Altus Power / New Leaf Energy Virginia portfolio, and OIL! Tankstellen. That source-QA reconciliation produced 14 transactions. At the user's direction on July 25, Chargepoly, Atlantic Towing, and Gabia were subsequently removed from the published briefing, leaving 11 transactions; their original research outputs above remain verbatim.
 
 | Sector | Final count |
 |---|---:|
 | Power & ET | 7 |
 | Utilities | 2 |
-| Digital | 1 |
 | Transportation | 1 |
 | Social Infra | 1 |
-| **Total** | **12** |
+| **Total** | **11** |
 
 ## Candidates added to the weekly briefing
 
@@ -2005,7 +2004,7 @@ Gemini returned 15 proposed includes. Independent source QA overrode four of tho
 | Burton Wold and Winscales Moor wind farms | Power & ET | Tiger Infrastructure Partners-backed Forsa Energy acquired two operating UK wind farms. GCP's June 30 RNS described only a disposal pipeline being progressed; its July 20 RNS was the first formal completion disclosure and named the assets. | [GCP July 20 RNS](https://www.lse.co.uk/rns/GCP/onshore-wind-sale-for-approximately-16311-million-ijvophpnrpa2rih.html) / [Forsa Energy](https://www.forsaenergy.com/news-database/forsa-energy-expands-portfolio-with-acquisition-of-operational-wind-assets) |
 | Vena Energy KN Wind Power | Power & ET | Orient Cement approved the acquisition of a 9.04% interest in the equity and cumulative convertible preference shares of the GIP-backed 46 MW Karnataka wind project. | [Official NSE filing](https://nsearchives.nseindia.com/corporate/ORIENTCEM_23072026202757_OCL_Outcome_23072026.pdf) |
 
-### Source-QA corrections to retained candidates
+### Source-QA corrections before editorial removals
 
 | Candidate | Correction applied |
 |---|---|
@@ -2019,6 +2018,7 @@ Gemini returned 15 proposed includes. Independent source QA overrode four of tho
 |---|---|---|---|
 | Chargepoly | Transportation | Removed from published briefing | Removed at the user's direction on July 25, 2026; this is an editorial removal and does not revise the verbatim Gemini research record. |
 | Atlantic Towing offshore division | Transportation | Removed from published briefing | Removed at the user's direction on July 25, 2026; this is an editorial removal and does not revise the verbatim Gemini research record. |
+| Gabia | Digital | Removed from published briefing | Removed at the user's direction on July 25, 2026; the empty Digital section was omitted and the verbatim Gemini research record remains unchanged. |
 
 ## Candidates rejected / watchlist
 
