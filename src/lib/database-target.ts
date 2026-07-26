@@ -31,3 +31,34 @@ export function assertMutationDatabaseTarget(input: {
   }
   if (forbiddenHosts.includes(host)) throw new Error("Database mutation target is explicitly forbidden");
 }
+
+type MutationEnvironment = Record<string, string | undefined>;
+
+function mutationTargetInput(environment: MutationEnvironment) {
+  return {
+    connectionString: environment.DATABASE_URL,
+    expectedHost: environment.EXPECTED_DATABASE_HOST,
+    expectedDatabase: environment.EXPECTED_DATABASE_NAME,
+    forbiddenHosts: [
+      environment.FORBIDDEN_DATABASE_HOST,
+      environment.FORBIDDEN_DATABASE_HOST_2,
+    ],
+  };
+}
+
+export function assertMutationDatabaseTargetFromEnv(
+  environment: MutationEnvironment = process.env,
+): void {
+  assertMutationDatabaseTarget(mutationTargetInput(environment));
+}
+
+export function assertNonProductionSeedTarget(
+  environment: MutationEnvironment = process.env,
+): "development" | "validation" {
+  assertMutationDatabaseTarget(mutationTargetInput(environment));
+  const target = environment.TARGET_DATABASE;
+  if (target !== "development" && target !== "validation") {
+    throw new Error("TARGET_DATABASE must be development or validation; production seeding is forbidden");
+  }
+  return target;
+}

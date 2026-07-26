@@ -1,5 +1,5 @@
 import { PrismaClient } from "@/generated/prisma/client";
-import { PrismaNeonHttp } from "@prisma/adapter-neon";
+import { PrismaPg } from "@prisma/adapter-pg";
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | null };
 
@@ -10,7 +10,10 @@ function createPrismaClient(): PrismaClient | null {
     console.warn("DATABASE_URL not set — database queries will fail");
     return null;
   }
-  const adapter = new PrismaNeonHttp(connectionString, { arrayMode: false, fullResults: true });
+  // Authentication throttling is atomic. Neon's HTTP adapter rejects Prisma
+  // transactions, so the application runtime uses the transaction-capable
+  // PostgreSQL adapter against the pooled Neon connection string.
+  const adapter = new PrismaPg({ connectionString });
   return new PrismaClient({ adapter });
 }
 

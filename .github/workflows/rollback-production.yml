@@ -1,4 +1,4 @@
-name: Roll Back Dashboard Release
+name: Roll Back Production
 
 on:
   workflow_dispatch:
@@ -39,6 +39,13 @@ jobs:
       CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
       CONFIRMATION: ${{ inputs.confirmation }}
     steps:
+      - name: Require protected workflow ref
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Production rollback workflows must be dispatched from refs/heads/main."
+            exit 1
+          fi
+
       - name: Require explicit rollback authorization
         run: |
           if [ "$CONFIRMATION" != "ROLLBACK" ]; then
@@ -49,9 +56,22 @@ jobs:
       - name: Checkout rollback tooling
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: refs/heads/main
           persist-credentials: false
 
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      - name: Verify checked-out rollback tooling identity
+        run: |
+          if ! [[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::The dispatched tooling SHA must be a full lowercase Git SHA."
+            exit 1
+          fi
+          if [ "$(git rev-parse HEAD)" != "$GITHUB_SHA" ]; then
+            echo "::error::Protected main changed after rollback dispatch; dispatch again."
+            exit 1
+          fi
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "24"
 

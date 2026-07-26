@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
+import { hasUsableSignedAuthSnapshot } from "@/modules/auth/session";
 
 function requestPathWithBasePath(request: NextRequest): string {
   const basePath = request.nextUrl.basePath || "";
@@ -27,7 +28,9 @@ export async function middleware(request: NextRequest) {
   }
 
   const token = await getToken({ req: request, secret: nextAuthSecret });
-  const role = (token?.role as string | undefined) ?? null;
+  // Edge middleware validates the signed snapshot without connecting to
+  // Postgres. Node-side guards still compare it with the current User row.
+  const role = hasUsableSignedAuthSnapshot(token) ? token.role : null;
 
   if (pathname.startsWith("/admin") && role !== "ADMIN") {
     const loginUrl = request.nextUrl.clone();

@@ -2,8 +2,10 @@
   "name": "infra-tracker",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "npm@11.11.0",
   "engines": {
-    "node": ">=24 <26"
+    "node": "24.x",
+    "npm": "11.x"
   },
   "scripts": {
     "dev": "next dev",
@@ -11,6 +13,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint src prisma scripts next.config.js --ext .js,.jsx,.ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "db:validate": "prisma validate",
+    "audit:prod": "npm audit --omit=dev --audit-level=high",
     "test": "vitest run",
     "test:watch": "vitest",
     "doctor": "npx tsx scripts/doctor.ts",
@@ -30,21 +35,23 @@
     "db:verify": "npx tsx prisma/verify-seed.ts",
     "db:generate": "npx prisma generate",
     "db:migrate": "npx prisma migrate dev",
-    "db:studio": "npx prisma studio"
+    "db:studio": "npx prisma studio",
+    "admin:create": "npx tsx scripts/create-admin.ts"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^1.0.2",
-    "@prisma/adapter-neon": "^7.7.0",
-    "@prisma/adapter-pg": "^7.7.0",
-    "@prisma/client": "^7.7.0",
+    "@neondatabase/serverless": "^1.1.0",
+    "@prisma/adapter-neon": "7.9.0",
+    "@prisma/adapter-pg": "7.9.0",
+    "@prisma/client": "7.9.0",
     "bcryptjs": "^3.0.3",
     "exceljs": "^4.4.0",
     "lucide-react": "0.453.0",
-    "next": "^15.5.15",
-    "next-auth": "^4.24.13",
+    "next": "15.5.21",
+    "next-auth": "4.24.15",
     "pg": "^8.20.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "undici": "7.28.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {
@@ -53,7 +60,7 @@
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "@types/bcryptjs": "^2.4.6",
-    "@types/node": "^22.19.17",
+    "@types/node": "^24.0.0",
     "@types/pg": "^8.20.0",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
@@ -62,19 +69,24 @@
     "autoprefixer": "10.4.19",
     "dotenv": "^17.4.1",
     "eslint": "^8.57.1",
-    "eslint-config-next": "^15.5.15",
+    "eslint-config-next": "15.5.21",
     "jsdom": "^29.0.2",
-    "postcss": "8.5.10",
-    "prisma": "^7.7.0",
+    "postcss": "8.5.21",
+    "prisma": "7.9.0",
     "tailwindcss": "3.4.4",
-    "tsx": "^4.21.0",
+    "tsx": "^4.23.1",
     "typescript": "5.4.5",
     "vitest": "^4.1.5"
   },
   "overrides": {
-    "@prisma/dev": {
-      "@hono/node-server": "1.19.14"
-    },
-    "postcss": "8.5.10"
+    "brace-expansion@<1.1.16": "1.1.16",
+    "brace-expansion@>=2.0.0 <2.1.2": "2.1.2",
+    "brace-expansion@>=3.0.0 <5.0.7": "5.0.7",
+    "js-yaml@>=4.0.0 <4.3.0": "4.3.0",
+    "postcss": "8.5.21",
+    "sharp": "0.35.0",
+    "tmp": "0.2.7",
+    "uuid@<11.1.1": "11.1.1",
+    "vite@>=8.0.0 <=8.0.15": "8.0.16"
   }
 }
