@@ -1987,16 +1987,16 @@ After a comprehensive review and audit of the 20 batch outputs, the findings wer
 
 ### Final editorial reconciliation
 
-Gemini returned 15 proposed includes. Independent source QA overrode four of those rows—Majis, Pembina Gas Infrastructure, Nicollin Environnement, and Carester—and retained three qualifying rows that were absent from Gemini's final table: Gabia, the Altus Power / New Leaf Energy Virginia portfolio, and OIL! Tankstellen. The final briefing therefore contains 14 transactions.
+Gemini returned 15 proposed includes. Independent source QA overrode four of those rows—Majis, Pembina Gas Infrastructure, Nicollin Environnement, and Carester—and retained three qualifying rows that were absent from Gemini's final table: Gabia, the Altus Power / New Leaf Energy Virginia portfolio, and OIL! Tankstellen. That source-QA reconciliation produced 14 transactions. At the user's direction on July 25, Chargepoly and Atlantic Towing were subsequently removed from the published briefing, leaving 12 transactions; their original research outputs above remain verbatim.
 
 | Sector | Final count |
 |---|---:|
 | Power & ET | 7 |
-| Transportation | 3 |
 | Utilities | 2 |
 | Digital | 1 |
+| Transportation | 1 |
 | Social Infra | 1 |
-| **Total** | **14** |
+| **Total** | **12** |
 
 ## Candidates added to the weekly briefing
 
@@ -2012,6 +2012,13 @@ Gemini returned 15 proposed includes. Independent source QA overrode four of tho
 | Five Virginia community-solar projects | Retained as a July 23 Path 2 transaction; identified both ECP-backed New Leaf Energy and TPG-backed Altus Power, and described the 32 MW portfolio as under development. |
 | OIL! Tankstellen | Retained under Transportation/mobility infrastructure; corrected the seller to Prax and removed the zero-deal Midstream section. |
 | Gabia | Retained under Path 1's traditional digital-infrastructure prong; identified MKOF6 as a private-equity vehicle and July 20 as the first public disclosure of the control transaction. |
+
+## Post-workflow editorial removals
+
+| Candidate | Previous sector | Final treatment | Reason |
+|---|---|---|---|
+| Chargepoly | Transportation | Removed from published briefing | Removed at the user's direction on July 25, 2026; this is an editorial removal and does not revise the verbatim Gemini research record. |
+| Atlantic Towing offshore division | Transportation | Removed from published briefing | Removed at the user's direction on July 25, 2026; this is an editorial removal and does not revise the verbatim Gemini research record. |
 
 ## Candidates rejected / watchlist
 
