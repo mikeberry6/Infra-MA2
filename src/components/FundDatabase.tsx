@@ -16,7 +16,13 @@ import {
   ArrowDown,
 } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam } from "@/hooks/useUrlFilterSet";
+import {
+  useUrlFilterSet,
+  useUrlQueryParam,
+  useUrlQueryParamsWriter,
+  useUrlQueryState,
+  useUrlQueryWriter,
+} from "@/hooks/useUrlFilterSet";
 import { useCanExport } from "@/hooks/useCanExport";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
@@ -29,10 +35,11 @@ import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
+import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { withBasePath } from "@/lib/base-path";
 
-const FUND_PAGE_SIZE = 100;
+const FUND_PAGE_SIZE = 25;
 
 
 // Fund size values in seed data sometimes carry editorial brackets — "[TBD]"
@@ -82,10 +89,13 @@ function FundFilterBar({
   onToggleSector: (s: string) => void;
   onClearAll: () => void;
 }) {
+  const activeFilterCount =
+    activeStrategies.size + activeStatuses.size + activeSizeRanges.size + activeSectors.size;
+
   return (
     <div className="mb-3 space-y-3">
-      <div className="bg-[var(--bg-surface)] border border-[var(--border)] rounded-lg flex items-center gap-2 px-2 py-2 sticky top-14 z-30 overflow-x-auto">
-        <div className="flex-1 min-w-[160px] max-w-xs">
+      <div className="sticky top-14 z-30 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
+        <div className="min-w-0 flex-1 md:max-w-xs">
           <TextInput
             leadingIcon={<Search />}
             value={search}
@@ -94,36 +104,60 @@ function FundFilterBar({
             aria-label="Search funds"
           />
         </div>
-        <Divider orientation="vertical" />
-        <MultiSelectDropdown
-          label="Strategy"
-          options={FUND_STRATEGIES}
-          selected={activeStrategies}
-          onToggle={onToggleStrategy}
-          getColor={(v) => getStrategyColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Status"
-          options={FUND_STATUSES}
-          selected={activeStatuses}
-          onToggle={onToggleStatus}
-          getColor={(v) => getStatusColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Size"
-          options={FUND_SIZE_RANGES}
-          selected={activeSizeRanges}
-          onToggle={onToggleSizeRange}
-          getColor={() => getSizeRangeColor()}
-        />
-        <MultiSelectDropdown
-          label="Sector"
-          options={FUND_SECTORS}
-          selected={activeSectors}
-          onToggle={onToggleSector}
-          getColor={(v) => getFundSectorColor(v)}
-          align="right"
-        />
+
+        <MobileFilterSheet activeCount={activeFilterCount} onClearAll={onClearAll}>
+          <div className="space-y-3">
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Strategy</span>
+              <MultiSelectDropdown label="Strategy" options={FUND_STRATEGIES} selected={activeStrategies} onToggle={onToggleStrategy} getColor={getStrategyColor} align="right" />
+            </div>
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Status</span>
+              <MultiSelectDropdown label="Status" options={FUND_STATUSES} selected={activeStatuses} onToggle={onToggleStatus} getColor={getStatusColor} align="right" />
+            </div>
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Size</span>
+              <MultiSelectDropdown label="Size" options={FUND_SIZE_RANGES} selected={activeSizeRanges} onToggle={onToggleSizeRange} getColor={() => getSizeRangeColor()} align="right" />
+            </div>
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Sector</span>
+              <MultiSelectDropdown label="Sector" options={FUND_SECTORS} selected={activeSectors} onToggle={onToggleSector} getColor={getFundSectorColor} align="right" />
+            </div>
+          </div>
+        </MobileFilterSheet>
+
+        <div className="hidden min-w-0 flex-1 items-center gap-2 md:flex">
+          <Divider orientation="vertical" />
+          <MultiSelectDropdown
+            label="Strategy"
+            options={FUND_STRATEGIES}
+            selected={activeStrategies}
+            onToggle={onToggleStrategy}
+            getColor={getStrategyColor}
+          />
+          <MultiSelectDropdown
+            label="Status"
+            options={FUND_STATUSES}
+            selected={activeStatuses}
+            onToggle={onToggleStatus}
+            getColor={getStatusColor}
+          />
+          <MultiSelectDropdown
+            label="Size"
+            options={FUND_SIZE_RANGES}
+            selected={activeSizeRanges}
+            onToggle={onToggleSizeRange}
+            getColor={() => getSizeRangeColor()}
+          />
+          <MultiSelectDropdown
+            label="Sector"
+            options={FUND_SECTORS}
+            selected={activeSectors}
+            onToggle={onToggleSector}
+            getColor={getFundSectorColor}
+            align="right"
+          />
+        </div>
       </div>
 
       <ActiveFiltersStrip
@@ -327,6 +361,34 @@ function ManagerGroupedTable({
   onSelectFund: (fund: FundView) => void;
 }) {
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
+  const [rawPage, setRawPage] = useUrlQueryState("page", "1");
+  const totalItems = sortedManagers.reduce((sum, [, managerFunds]) => sum + managerFunds.length, 0);
+  const totalPages = Math.max(1, Math.ceil(totalItems / FUND_PAGE_SIZE));
+  const requestedPage = Number.parseInt(rawPage, 10);
+  const safePage = Math.min(
+    Number.isFinite(requestedPage) && requestedPage > 0 ? requestedPage : 1,
+    totalPages,
+  );
+  const managerTotals = useMemo(
+    () => new Map(sortedManagers.map(([managerName, managerFunds]) => [managerName, managerFunds.length])),
+    [sortedManagers],
+  );
+  const visibleManagers = useMemo(() => {
+    const start = (safePage - 1) * FUND_PAGE_SIZE;
+    const pageFunds = sortedManagers
+      .flatMap(([managerName, managerFunds]) => (
+        managerFunds.map((fund) => ({ managerName, fund }))
+      ))
+      .slice(start, start + FUND_PAGE_SIZE);
+    const groups = new Map<string, FundView[]>();
+    for (const { managerName, fund } of pageFunds) {
+      const existing = groups.get(managerName) ?? [];
+      existing.push(fund);
+      groups.set(managerName, existing);
+    }
+    return Array.from(groups.entries());
+  }, [safePage, sortedManagers]);
+
   const toggle = (name: string) =>
     setCollapsed((prev) => {
       const next = new Set(prev);
@@ -350,7 +412,7 @@ function ManagerGroupedTable({
           <FundTableColGroup />
           <FundTableHead />
           <tbody>
-            {sortedManagers.map(([managerName, managerFunds], groupIdx) => {
+            {visibleManagers.map(([managerName, managerFunds], groupIdx) => {
               const isCollapsed = collapsed.has(managerName);
               return (
                 <Fragment key={managerName}>
@@ -359,12 +421,14 @@ function ManagerGroupedTable({
                       <td colSpan={5} className="h-2 bg-[var(--bg-app)] border-0 p-0" />
                     </tr>
                   )}
-                  <tr
-                    onClick={() => toggle(managerName)}
-                    className="bg-[var(--bg-app)] border-y border-[var(--border)] cursor-pointer hover:bg-[var(--bg-hover)] transition-colors select-none"
-                  >
-                    <td colSpan={5} className="px-3">
-                      <div className="flex items-center gap-2 h-10">
+                  <tr className="bg-[var(--bg-app)] border-y border-[var(--border)] hover:bg-[var(--bg-hover)] transition-colors select-none">
+                    <td colSpan={5} className="p-0">
+                      <button
+                        type="button"
+                        onClick={() => toggle(managerName)}
+                        aria-expanded={!isCollapsed}
+                        className="flex h-10 w-full items-center gap-2 px-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--accent-soft)]"
+                      >
                         <ChevronRight
                           className={`h-3.5 w-3.5 text-[var(--text-tertiary)] shrink-0 transition-transform ${
                             !isCollapsed ? "rotate-90" : ""
@@ -374,18 +438,17 @@ function ManagerGroupedTable({
                           {managerName}
                         </span>
                         <span className="type-micro mono tabular-nums">
-                          {managerFunds.length}
+                          {managerTotals.get(managerName) ?? managerFunds.length}
                         </span>
-                      </div>
+                      </button>
                     </td>
                   </tr>
                   {!isCollapsed &&
-                    managerFunds.map((fund, i) => (
+                    managerFunds.map((fund) => (
                       <FundRow
                         key={fund.id}
                         fund={fund}
                         onSelect={onSelectFund}
-                        isLast={i === managerFunds.length - 1}
                       />
                     ))}
                 </Fragment>
@@ -397,12 +460,14 @@ function ManagerGroupedTable({
 
       {/* Mobile: card-based layout per manager */}
       <div className="md:hidden">
-        {sortedManagers.map(([managerName, managerFunds]) => {
+        {visibleManagers.map(([managerName, managerFunds]) => {
           const isCollapsed = collapsed.has(managerName);
           return (
             <div key={managerName} className="border-b border-[var(--border)]">
               <button
+                type="button"
                 onClick={() => toggle(managerName)}
+                aria-expanded={!isCollapsed}
                 className="w-full flex items-center gap-2 px-3 py-3 text-left bg-[var(--bg-app)] hover:bg-[var(--bg-hover)] transition-colors"
               >
                 <ChevronRight
@@ -414,7 +479,7 @@ function ManagerGroupedTable({
                   {managerName}
                 </span>
                 <span className="type-micro mono tabular-nums">
-                  {managerFunds.length}
+                  {managerTotals.get(managerName) ?? managerFunds.length}
                 </span>
               </button>
               {!isCollapsed && (
@@ -428,6 +493,13 @@ function ManagerGroupedTable({
           );
         })}
       </div>
+
+      <PaginationControls
+        page={safePage}
+        pageSize={FUND_PAGE_SIZE}
+        totalItems={totalItems}
+        onPageChange={(nextPage) => setRawPage(String(nextPage))}
+      />
     </>
   );
 }
@@ -441,9 +513,15 @@ function AllFundsTable({
   funds: FundView[];
   onSelectFund: (fund: FundView) => void;
 }) {
-  const [sortField, setSortField] = useState<"name" | "strategy" | "size" | "vintage">("name");
-  const [sortAsc, setSortAsc] = useState(true);
-  const [page, setPage] = useState(1);
+  type SortField = "name" | "strategy" | "size" | "vintage";
+  const [rawSortField] = useUrlQueryState("sort", "name");
+  const [rawSortDirection] = useUrlQueryState("direction", "asc");
+  const [rawPage, setRawPage] = useUrlQueryState("page", "1");
+  const writeQueryParams = useUrlQueryParamsWriter();
+  const sortField: SortField = ["strategy", "size", "vintage"].includes(rawSortField)
+    ? rawSortField as SortField
+    : "name";
+  const sortAsc = rawSortDirection !== "desc";
 
   // Sort vintage numerically when both sides parse as years; non-numeric
   // values ("Evergreen", "[TBD]", "—") sort to the end regardless of direction
@@ -468,24 +546,28 @@ function AllFundsTable({
     return list;
   }, [displayFunds, sortField, sortAsc]);
 
-  useEffect(() => {
-    setPage(1);
-  }, [displayFunds]);
-
   const totalPages = Math.max(1, Math.ceil(sorted.length / FUND_PAGE_SIZE));
-  const safePage = Math.min(page, totalPages);
+  const requestedPage = Number.parseInt(rawPage, 10);
+  const safePage = Math.min(
+    Number.isFinite(requestedPage) && requestedPage > 0 ? requestedPage : 1,
+    totalPages,
+  );
   const visibleFunds = useMemo(() => {
     const start = (safePage - 1) * FUND_PAGE_SIZE;
     return sorted.slice(start, start + FUND_PAGE_SIZE);
   }, [sorted, safePage]);
 
-  const toggleSort = (field: typeof sortField) => {
-    if (sortField === field) {
-      setSortAsc(!sortAsc);
-    } else {
-      setSortField(field);
-      setSortAsc(field === "size" ? false : true);
-    }
+  const toggleSort = (field: SortField) => {
+    const direction = sortField === field
+      ? (sortAsc ? "desc" : "asc")
+      : field === "size" ? "desc" : "asc";
+    writeQueryParams(
+      {
+        sort: field === "name" ? null : field,
+        direction: direction === "asc" ? null : direction,
+      },
+      { history: "push", resetPage: true },
+    );
   };
 
   if (displayFunds.length === 0) {
@@ -496,7 +578,7 @@ function AllFundsTable({
     );
   }
 
-  const sortableFields: { field: typeof sortField; label: string; idx: number }[] = [
+  const sortableFields: { field: SortField; label: string; idx: number }[] = [
     { field: "name", label: "Fund vehicle", idx: 0 },
     { field: "strategy", label: "Strategy", idx: 1 },
     { field: "size", label: "Size", idx: 2 },
@@ -558,7 +640,7 @@ function AllFundsTable({
         page={safePage}
         pageSize={FUND_PAGE_SIZE}
         totalItems={sorted.length}
-        onPageChange={setPage}
+        onPageChange={(nextPage) => setRawPage(String(nextPage))}
       />
     </>
   );
@@ -881,22 +963,37 @@ function FundDrawer({
 
 export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: DatabaseCounts }) {
   // ── Fund state ──
-  const [fundSearch, setFundSearch] = useState("");
+  const [fundSearch, setFundSearch] = useUrlQueryState("q", "", { resetPage: true });
+  const [rawFundView, setRawFundView] = useUrlQueryState("view", "managers", { resetPage: true });
   const [activeStrategies, toggleStrategy] = useUrlFilterSet("strategy");
   const [activeStatuses, toggleStatus] = useUrlFilterSet("status");
   const [activeSizeRanges, toggleSizeRange] = useUrlFilterSet("size");
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [selectedFund, setSelectedFund] = useState<FundView | null>(null);
-  const [fundView, setFundView] = useState<"managers" | "all">("managers");
+  const fundView: "managers" | "all" = rawFundView === "all" ? "all" : "managers";
+  const focusId = useUrlQueryParam("focus");
+  const writeQueryParam = useUrlQueryWriter();
+  const writeQueryParams = useUrlQueryParamsWriter();
   const canExport = useCanExport();
 
   const debouncedFundSearch = useDebounce(fundSearch, 300);
 
-  const clearAllUrlFilters = useClearUrlFilters(["strategy", "status", "size", "sector"]);
   const clearFundFilters = useCallback(() => {
-    clearAllUrlFilters();
-    setFundSearch("");
-  }, [clearAllUrlFilters]);
+    writeQueryParams(
+      { q: null, strategy: null, status: null, size: null, sector: null },
+      { history: "push", resetPage: true },
+    );
+  }, [writeQueryParams]);
+
+  const openFund = useCallback((fund: FundView) => {
+    setSelectedFund(fund);
+    writeQueryParam("focus", fund.legacyId, "push");
+  }, [writeQueryParam]);
+
+  const closeFund = useCallback(() => {
+    setSelectedFund(null);
+    writeQueryParam("focus", null, "replace");
+  }, [writeQueryParam]);
 
   // ── Filtered funds ──
   const filteredFunds = useMemo(() => {
@@ -965,21 +1062,20 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
   // Close drawers if filtered out
   useEffect(() => {
     if (selectedFund && !filteredFunds.find((f) => f.id === selectedFund.id)) {
-      setSelectedFund(null);
+      closeFund();
     }
-  }, [filteredFunds, selectedFund]);
+  }, [closeFund, filteredFunds, selectedFund]);
 
-  // Auto-open drawer when navigated here with `?focus=<legacyId>`.
-  const focusId = useUrlQueryParam("focus");
-  const openedFocus = useRef<string | null>(null);
+  // URL state remains authoritative for direct links and Back/Forward.
   useEffect(() => {
-    if (!focusId || openedFocus.current === focusId) return;
-    const match = funds.find((f) => f.legacyId === focusId);
-    if (match) {
-      setSelectedFund(match);
-      openedFocus.current = focusId;
+    if (!focusId) {
+      setSelectedFund(null);
+      return;
     }
-  }, [focusId, funds]);
+    const match = funds.find((f) => f.legacyId === focusId);
+    setSelectedFund(match ?? null);
+    if (!match) writeQueryParam("focus", null, "replace");
+  }, [focusId, funds, writeQueryParam]);
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
@@ -1005,6 +1101,10 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
         onClearAll={clearFundFilters}
       />
 
+      <MarketSnapshotSection>
+        <FundsInsightsHero filteredFunds={filteredFunds} />
+      </MarketSnapshotSection>
+
       <div className="surface overflow-hidden">
         <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
           <div className="flex items-center gap-3">
@@ -1015,7 +1115,9 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
             </span>
             <div className="hidden sm:inline-flex items-center gap-1 p-0.5 rounded-md bg-[var(--bg-hover)]">
               <button
-                onClick={() => setFundView("managers")}
+                type="button"
+                onClick={() => setRawFundView("managers")}
+                aria-pressed={fundView === "managers"}
                 className={`px-2.5 h-6 rounded type-micro font-medium transition-colors ${
                   fundView === "managers"
                     ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
@@ -1025,7 +1127,9 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
                 By manager
               </button>
               <button
-                onClick={() => setFundView("all")}
+                type="button"
+                onClick={() => setRawFundView("all")}
+                aria-pressed={fundView === "all"}
                 className={`px-2.5 h-6 rounded type-micro font-medium transition-colors ${
                   fundView === "all"
                     ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[0_1px_2px_rgba(17,17,20,0.06)]"
@@ -1058,24 +1162,20 @@ export function FundDatabase({ funds, counts }: { funds: FundView[]; counts: Dat
         </div>
 
         {fundView === "managers" ? (
-          <ManagerGroupedTable sortedManagers={sortedManagers} onSelectFund={setSelectedFund} />
+          <ManagerGroupedTable sortedManagers={sortedManagers} onSelectFund={openFund} />
         ) : (
-          <AllFundsTable funds={filteredFunds} onSelectFund={setSelectedFund} />
+          <AllFundsTable funds={filteredFunds} onSelectFund={openFund} />
         )}
       </div>
 
       <CTABlock />
 
-      <MarketSnapshotSection>
-        <FundsInsightsHero filteredFunds={filteredFunds} />
-      </MarketSnapshotSection>
-
       {selectedFund && (
         <FundDrawer
           fund={selectedFund}
-          onClose={() => setSelectedFund(null)}
-          allFunds={funds}
-          onSelectFund={setSelectedFund}
+          onClose={closeFund}
+          allFunds={filteredFunds}
+          onSelectFund={openFund}
         />
       )}
     </div>

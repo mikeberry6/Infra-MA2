@@ -45,7 +45,6 @@ import type {
   CitationPurpose,
   SourceType,
 } from "../src/generated/prisma/client";
-import * as bcrypt from "bcryptjs";
 
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
@@ -710,23 +709,6 @@ async function main() {
   }
 
   console.log(`  Created ${sourceCount} sources, ${citationCount} citations`);
-
-  // ── Step 11: Create admin user ────────────────────────────
-
-  console.log("Step 11: Creating admin user...");
-  const passwordHash = await bcrypt.hash("admin123", 10);
-  await prisma.user.upsert({
-    where: { email: "admin@infra-ma2.com" },
-    update: {},
-    create: {
-      email: "admin@infra-ma2.com",
-      passwordHash,
-      name: "Admin",
-      role: "ADMIN",
-    },
-  });
-
-  console.log("  Created admin user (admin@infra-ma2.com)");
 
   // ── Summary ───────────────────────────────────────────────
 

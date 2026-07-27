@@ -15,8 +15,45 @@ export function withoutBasePath(path: string): string {
 
 export function normalizeBasePathCallback(callbackUrl: string | undefined): string {
   if (!callbackUrl) return withBasePath("/");
-  if (callbackUrl.startsWith("/") && !callbackUrl.startsWith("//")) {
-    return withBasePath(callbackUrl);
+  if (
+    !callbackUrl.startsWith("/") ||
+    callbackUrl.startsWith("//") ||
+    callbackUrl.includes("\\") ||
+    /[\u0000-\u001F\u007F]/.test(callbackUrl)
+  ) return withBasePath("/");
+
+  try {
+    const origin = "https://infrasight.invalid";
+    const parsed = new URL(callbackUrl, origin);
+    if (parsed.origin !== origin) return withBasePath("/");
+    return withBasePath(`${parsed.pathname}${parsed.search}${parsed.hash}`);
+  } catch {
+    return withBasePath("/");
   }
-  return callbackUrl;
+}
+
+export function normalizeNextAuthRedirect(callbackUrl: string | undefined, baseUrl: string): string {
+  let applicationUrl: URL;
+  try {
+    applicationUrl = new URL(baseUrl);
+  } catch {
+    return normalizeBasePathCallback(undefined);
+  }
+
+  let applicationPath = callbackUrl;
+  if (callbackUrl && !callbackUrl.startsWith("/")) {
+    try {
+      const parsedCallback = new URL(callbackUrl);
+      applicationPath = parsedCallback.origin === applicationUrl.origin
+        ? `${parsedCallback.pathname}${parsedCallback.search}${parsedCallback.hash}`
+        : undefined;
+    } catch {
+      applicationPath = undefined;
+    }
+  }
+
+  return new URL(
+    normalizeBasePathCallback(applicationPath),
+    applicationUrl.origin,
+  ).toString();
 }

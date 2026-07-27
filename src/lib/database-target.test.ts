@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { assertMutationDatabaseTarget } from "@/lib/database-target";
+import {
+  assertMutationDatabaseTarget,
+  assertMutationDatabaseTargetFromEnv,
+} from "@/lib/database-target";
 
 describe("mutation database target guard", () => {
   const approved = {
@@ -19,5 +22,14 @@ describe("mutation database target guard", () => {
   it("rejects an explicitly forbidden target and non-Postgres URLs", () => {
     expect(() => assertMutationDatabaseTarget({ ...approved, forbiddenHosts: ["production.example"] })).toThrow(/forbidden/);
     expect(() => assertMutationDatabaseTarget({ ...approved, connectionString: "https://production.example/db_name" })).toThrow(/postgres protocol/);
+  });
+
+  it("reads the same guard contract from explicit environment values", () => {
+    expect(() => assertMutationDatabaseTargetFromEnv({
+      DATABASE_URL: approved.connectionString,
+      EXPECTED_DATABASE_HOST: approved.expectedHost,
+      EXPECTED_DATABASE_NAME: approved.expectedDatabase,
+      FORBIDDEN_DATABASE_HOST: approved.forbiddenHosts[0],
+    })).not.toThrow();
   });
 });

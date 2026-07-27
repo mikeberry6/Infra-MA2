@@ -43,6 +43,90 @@ export function useUrlQueryParam(paramName: string): string | null {
   return value;
 }
 
+export function useUrlQueryState(
+  paramName: string,
+  defaultValue = "",
+  options: { resetPage?: boolean } = {},
+): [string, (next: string) => void] {
+  const router = useRouter();
+  const pathname = usePathname();
+  const [value, setValue] = useState(defaultValue);
+  const resetPage = options.resetPage ?? false;
+
+  useEffect(() => {
+    const sync = () => setValue(readSearchParam(paramName) ?? defaultValue);
+    const syncFromEvent = (event: Event) => {
+      const search = (event as CustomEvent<{ search?: string }>).detail?.search;
+      setValue(readSearchParam(paramName, search) ?? defaultValue);
+    };
+    sync();
+    window.addEventListener("popstate", sync);
+    window.addEventListener(URL_FILTER_CHANGE_EVENT, syncFromEvent);
+    return () => {
+      window.removeEventListener("popstate", sync);
+      window.removeEventListener(URL_FILTER_CHANGE_EVENT, syncFromEvent);
+    };
+  }, [defaultValue, paramName]);
+
+  const write = useCallback((next: string) => {
+    const latest = new URLSearchParams(window.location.search);
+    const current = latest.get(paramName) ?? defaultValue;
+    if (next && next !== defaultValue) latest.set(paramName, next);
+    else latest.delete(paramName);
+    if (resetPage && paramName !== "page") latest.delete("page");
+    const query = latest.toString();
+    setValue(next);
+    const href = query ? `${pathname}?${query}` : pathname;
+    const history = paramName === "q" && current !== defaultValue && next !== defaultValue
+      ? "replace"
+      : "push";
+    router[history](href, { scroll: false });
+    notifyUrlFiltersChanged(query);
+  }, [defaultValue, resetPage, paramName, pathname, router]);
+
+  return [value, write];
+}
+
+export function useUrlQueryWriter() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  return useCallback((
+    paramName: string,
+    value: string | null,
+    history: "push" | "replace" = "replace",
+  ) => {
+    const latest = new URLSearchParams(window.location.search);
+    if (value) latest.set(paramName, value);
+    else latest.delete(paramName);
+    const query = latest.toString();
+    const href = query ? `${pathname}?${query}` : pathname;
+    router[history](href, { scroll: false });
+    notifyUrlFiltersChanged(query);
+  }, [pathname, router]);
+}
+
+export function useUrlQueryParamsWriter() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  return useCallback((
+    updates: Record<string, string | null>,
+    options: { history?: "push" | "replace"; resetPage?: boolean } = {},
+  ) => {
+    const latest = new URLSearchParams(window.location.search);
+    for (const [paramName, value] of Object.entries(updates)) {
+      if (value) latest.set(paramName, value);
+      else latest.delete(paramName);
+    }
+    if (options.resetPage) latest.delete("page");
+    const query = latest.toString();
+    const href = query ? `${pathname}?${query}` : pathname;
+    router[options.history ?? "push"](href, { scroll: false });
+    notifyUrlFiltersChanged(query);
+  }, [pathname, router]);
+}
+
 /**
  * Syncs a Set<string> filter to a URL query parameter.
  *
@@ -53,8 +137,8 @@ export function useUrlQueryParam(paramName: string): string | null {
  * against a render-time query snapshot — this avoids races when
  * multiple filter updates fire in the same tick.
  *
- * Uses `router.replace({ scroll: false })` so filter changes don't pollute the
- * history stack or jump the scroll position.
+ * Uses `router.push({ scroll: false })` so browser Back and Forward restore
+ * prior filter states without jumping the page.
  *
  * @param paramName The URL query parameter name (e.g. "sector")
  * @returns [set, toggle, clear, setAll] — same shape as a useState wrapper.
@@ -91,9 +175,10 @@ export function useUrlFilterSet(
       } else {
         latest.delete(paramName);
       }
+      latest.delete("page");
       const query = latest.toString();
       setValue(new Set(nextValues));
-      router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+      router.push(query ? `${pathname}?${query}` : pathname, { scroll: false });
       notifyUrlFiltersChanged(query);
     },
     [paramName, router, pathname],
@@ -134,8 +219,9 @@ export function useClearUrlFilters(paramNames: string[]): () => void {
     for (const name of key.split(",")) {
       latest.delete(name);
     }
+    latest.delete("page");
     const query = latest.toString();
-    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+    router.push(query ? `${pathname}?${query}` : pathname, { scroll: false });
     notifyUrlFiltersChanged(query);
   }, [router, pathname, key]);
 }
