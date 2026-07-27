@@ -9,6 +9,22 @@ export const metadata: Metadata = {
 
 const ONE_OFF_REQUESTS = [
   {
+    title: "TEN 2026 specialized fleet disclosure guide",
+    description:
+      "BamSEC reading list focused on TEN's LNG carriers and DP2 shuttle tankers, with priority pages, slides, and Q&A.",
+    href: "/one-off-requests/ten-2026-specialized-fleet-disclosures-outlook.html",
+    format: "Outlook HTML",
+    date: "Jul 2026",
+  },
+  {
+    title: "TEN 2026 business disclosure guide",
+    description:
+      "BamSEC reading list for TEN's Q1 2026 release, presentation and call transcript, with priority sections and slides.",
+    href: "/one-off-requests/ten-2026-business-disclosures-outlook.html",
+    format: "Outlook HTML",
+    date: "Jul 2026",
+  },
+  {
     title: "Operating benchmark source compendium - full evidence archive",
     description:
       "Full provenance pack with five research reports, a 35-metric and 19-business evidence audit, and final briefs that repeat every comp-derived input on the relevant company page.",
