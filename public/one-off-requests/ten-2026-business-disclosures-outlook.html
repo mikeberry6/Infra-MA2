@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TEN 2026 Business Disclosure Guide</title>
+  </head>
+  <body style="margin:0;padding:24px 12px;background:#FFFFFF;font-family:Arial,Helvetica,sans-serif;color:#000000;">
+    <div style="width:100%;max-width:680px;margin:0 auto 14px auto;">
+      <button id="copy-button" type="button" style="padding:8px 14px;border:1px solid #000000;border-radius:3px;background:#000000;color:#FFFFFF;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;cursor:pointer;">Copy for Outlook</button>
+      <span id="copy-status" role="status" aria-live="polite" style="margin-left:8px;font-size:12px;line-height:16px;color:#444444;">Copies only the disclosure guide below.</span>
+    </div>
+
+    <div id="email-content" style="width:100%;max-width:680px;margin:0 auto;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#000000;">
+      <p style="margin:0 0 5px 0;font-size:18px;line-height:23px;font-weight:700;">TEN 2026 Business Disclosure Guide</p>
+      <p style="margin:0 0 16px 0;color:#444444;">Priority reading list current through July 27, 2026.</p>
+
+      <ol style="margin:0;padding:0 0 0 22px;">
+        <li style="margin:0 0 22px 0;padding-left:4px;">
+          <p style="margin:0 0 3px 0;font-size:14px;line-height:19px;font-weight:700;">
+            Q1 2026 earnings release and financial tables
+          </p>
+          <p style="margin:0 0 8px 0;color:#444444;">Quarter ended March 31, 2026 · Released May 21 and filed May 22, 2026 · Unaudited 6-K exhibit</p>
+          <ul style="margin:0 0 9px 18px;padding:0 0 0 14px;">
+            <li style="margin:0 0 5px 0;"><strong>Q1 2026 Summary Results:</strong> TCE, utilization, earnings and EPS.</li>
+            <li style="margin:0 0 5px 0;"><strong>Subsequent Events:</strong> Suezmax repurchases, DP2 extensions and the VLCC sale.</li>
+            <li style="margin:0;"><strong>Newbuilding Program + financial tables:</strong> Backlog, delivery schedule, cash, debt and construction advances.</li>
+          </ul>
+          <p style="margin:0;">
+            <a href="https://www.bamsec.com/filing/119312526236934/2?cik=1166663" target="_blank" rel="noopener noreferrer" style="color:#442142;font-weight:700;text-decoration:underline;">Open the Q1 2026 earnings release in BamSEC</a>
+          </p>
+        </li>
+
+        <li style="margin:0 0 22px 0;padding-left:4px;">
+          <p style="margin:0 0 3px 0;font-size:14px;line-height:19px;font-weight:700;">
+            Q1 2026 earnings presentation and prepared remarks
+          </p>
+          <p style="margin:0 0 8px 0;color:#444444;">May 21, 2026 · BamSEC call record, “Presentation” section</p>
+          <ul style="margin:0 0 9px 18px;padding:0 0 0 14px;">
+            <li style="margin:0 0 5px 0;"><strong>Slides 4–5:</strong> Fleet composition and fixed, profit-sharing and spot exposure.</li>
+            <li style="margin:0 0 5px 0;"><strong>Slide 7:</strong> Vessel-class breakevens and spot-rate EPS sensitivity.</li>
+            <li style="margin:0;"><strong>Slides 8–9:</strong> Debt profile and fleet-renewal program.</li>
+          </ul>
+          <p style="margin:0 0 5px 0;">
+            <a href="https://www.bamsec.com/transcripts/50be0095-a54a-43f7-969d-111b7ae17e3b" target="_blank" rel="noopener noreferrer" style="color:#442142;font-weight:700;text-decoration:underline;">Open the Q1 2026 presentation record in BamSEC</a>
+          </p>
+          <p style="margin:0;color:#555555;font-size:11px;line-height:15px;">BamSEC does not separately host TEN’s slide PDF; this link opens the call record containing the prepared Presentation section keyed to the slides.</p>
+        </li>
+
+        <li style="margin:0;padding-left:4px;">
+          <p style="margin:0 0 3px 0;font-size:14px;line-height:19px;font-weight:700;">
+            Q1 2026 earnings-call transcript
+          </p>
+          <p style="margin:0 0 8px 0;color:#444444;">May 21, 2026 · Final edited transcript</p>
+          <ul style="margin:0 0 9px 18px;padding:0 0 0 14px;">
+            <li style="margin:0 0 5px 0;"><strong>Prepared remarks — Saroglou and Kosmatos:</strong> Charter mix, rate sensitivity and the Q1 earnings bridge.</li>
+            <li style="margin:0 0 5px 0;"><strong>Q&amp;A — Poe Fratt:</strong> Profit sharing, operating costs and Suezmax repurchases.</li>
+            <li style="margin:0;"><strong>Q&amp;A — Omar Nokta and Climent Molins:</strong> Shuttle-tanker structure, LNG strategy and vessel sales.</li>
+          </ul>
+          <p style="margin:0;">
+            <a href="https://www.bamsec.com/transcripts/50be0095-a54a-43f7-969d-111b7ae17e3b/download-pdf" target="_blank" rel="noopener noreferrer" style="color:#442142;font-weight:700;text-decoration:underline;">Open the Q1 2026 transcript PDF in BamSEC</a>
+          </p>
+        </li>
+      </ol>
+    </div>
+
+    <script>
+      document.getElementById("copy-button").addEventListener("click", async function () {
+        var content = document.getElementById("email-content");
+        var status = document.getElementById("copy-status");
+        var html = '<div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;color:#000000;">' + content.innerHTML + "</div>";
+        var text = content.innerText;
+
+        try {
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              "text/html": new Blob([html], { type: "text/html" }),
+              "text/plain": new Blob([text], { type: "text/plain" })
+            })
+          ]);
+          this.textContent = "Copied";
+          status.textContent = "Paste directly into Outlook.";
+        } catch (error) {
+          status.textContent = "Select the guide below, copy, and paste into Outlook.";
+        }
+      });
+    </script>
+  </body>
+</html>
