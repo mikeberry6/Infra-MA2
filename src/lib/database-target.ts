@@ -31,3 +31,19 @@ export function assertMutationDatabaseTarget(input: {
   }
   if (forbiddenHosts.includes(host)) throw new Error("Database mutation target is explicitly forbidden");
 }
+
+type MutationEnvironment = Record<string, string | undefined>;
+
+export function assertMutationDatabaseTargetFromEnv(
+  environment: MutationEnvironment = process.env,
+): void {
+  assertMutationDatabaseTarget({
+    connectionString: environment.DATABASE_URL,
+    expectedHost: environment.EXPECTED_DATABASE_HOST,
+    expectedDatabase: environment.EXPECTED_DATABASE_NAME,
+    forbiddenHosts: [
+      environment.FORBIDDEN_DATABASE_HOST,
+      environment.FORBIDDEN_DATABASE_HOST_2,
+    ],
+  });
+}

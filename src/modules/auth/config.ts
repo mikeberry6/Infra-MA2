@@ -1,7 +1,12 @@
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
+import { normalizeNextAuthRedirect } from "@/lib/base-path";
 import { prisma } from "@/lib/prisma";
+import { exceedsBcryptPasswordLimit } from "@/modules/auth/password-policy";
+
+const DUMMY_PASSWORD_HASH = "$2b$12$jO.JJSOjJqs4/KuQ7eKiNe2n89mzPsIrPUQZq3FjGA4QTmutfH8Ci";
+const INVALID_PASSWORD = "invalid-overlong-password";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -13,15 +18,18 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
+        const email = credentials.email.trim().toLowerCase();
 
         const user = await prisma.user.findUnique({
-          where: { email: credentials.email },
+          where: { email },
         });
 
-        if (!user) return null;
-
-        const isValid = await bcrypt.compare(credentials.password, user.passwordHash);
-        if (!isValid) return null;
+        const passwordExceedsLimit = exceedsBcryptPasswordLimit(credentials.password);
+        const isValid = await bcrypt.compare(
+          passwordExceedsLimit ? INVALID_PASSWORD : credentials.password,
+          passwordExceedsLimit ? DUMMY_PASSWORD_HASH : user?.passwordHash ?? DUMMY_PASSWORD_HASH,
+        );
+        if (!user || passwordExceedsLimit || !isValid) return null;
 
         return {
           id: user.id,
@@ -33,17 +41,20 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
+    async redirect({ url, baseUrl }) {
+      return normalizeNextAuthRedirect(url, baseUrl);
+    },
     async jwt({ token, user }) {
       if (user) {
-        token.role = (user as any).role;
+        token.role = user.role;
         token.id = user.id;
       }
       return token;
     },
     async session({ session, token }) {
       if (session.user) {
-        (session.user as any).role = token.role;
-        (session.user as any).id = token.id;
+        session.user.role = token.role;
+        session.user.id = token.id;
       }
       return session;
     },

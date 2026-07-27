@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { PORTCO_SECTORS, PORTCO_COUNTRY_TAGS } from "@/lib/constants";
 import { getPortCoSectorColor, getPortCoRegionColor, getPortCoCountryTagColor } from "@/lib/colors";
 import { getUniqueFirms, getAllOwnerFirms } from "@/lib/portco-utils";
@@ -15,7 +15,13 @@ import {
 } from "lucide-react";
 import { PortCoDrawer } from "@/components/PortfolioDatabase/PortCoDrawer";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam } from "@/hooks/useUrlFilterSet";
+import {
+  useUrlFilterSet,
+  useUrlQueryParam,
+  useUrlQueryParamsWriter,
+  useUrlQueryState,
+  useUrlQueryWriter,
+} from "@/hooks/useUrlFilterSet";
 import { useCanExport } from "@/hooks/useCanExport";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
@@ -28,9 +34,10 @@ import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
+import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 
 const INVESTMENT_YEAR_NA = "N/A";
-const PORTCO_PAGE_SIZE = 100;
+const PORTCO_PAGE_SIZE = 25;
 
 function mostCommonLabel(items: string[]): { label: string; count: number } | null {
   const counts = new Map<string, number>();
@@ -74,10 +81,13 @@ function PortCoFilterBar({
   investmentYearOptions: string[];
   onClearAll: () => void;
 }) {
+  const activeFilterCount =
+    activeSectors.size + activeCountryTags.size + activeFirms.size + activeInvestmentYears.size;
+
   return (
     <div className="mb-3 space-y-3">
-      <div className="bg-[var(--bg-surface)] border border-[var(--border)] rounded-lg flex items-center gap-2 px-2 py-2 sticky top-14 z-30 overflow-x-auto">
-        <div className="flex-1 min-w-[160px] max-w-xs">
+      <div className="sticky top-14 z-30 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
+        <div className="min-w-0 flex-1 md:max-w-xs">
           <TextInput
             leadingIcon={<Search />}
             value={search}
@@ -86,36 +96,60 @@ function PortCoFilterBar({
             aria-label="Search portfolio companies"
           />
         </div>
-        <Divider orientation="vertical" />
-        <MultiSelectDropdown
-          label="Sector"
-          options={PORTCO_SECTORS}
-          selected={activeSectors}
-          onToggle={onToggleSector}
-          getColor={(v) => getPortCoSectorColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Country"
-          options={PORTCO_COUNTRY_TAGS as unknown as string[]}
-          selected={activeCountryTags}
-          onToggle={onToggleCountryTag}
-          getColor={(v) => getPortCoCountryTagColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Firm"
-          options={firmOptions}
-          selected={activeFirms}
-          onToggle={onToggleFirm}
-          getColor={() => "#a78bfa"}
-        />
-        <MultiSelectDropdown
-          label="Year"
-          options={investmentYearOptions}
-          selected={activeInvestmentYears}
-          onToggle={onToggleInvestmentYear}
-          getColor={() => "#f59e0b"}
-          align="right"
-        />
+
+        <MobileFilterSheet activeCount={activeFilterCount} onClearAll={onClearAll}>
+          <div className="space-y-3">
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Sector</span>
+              <MultiSelectDropdown label="Sector" options={PORTCO_SECTORS} selected={activeSectors} onToggle={onToggleSector} getColor={getPortCoSectorColor} align="right" />
+            </div>
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Country</span>
+              <MultiSelectDropdown label="Country" options={PORTCO_COUNTRY_TAGS as unknown as string[]} selected={activeCountryTags} onToggle={onToggleCountryTag} getColor={getPortCoCountryTagColor} align="right" />
+            </div>
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Firm</span>
+              <MultiSelectDropdown label="Firm" options={firmOptions} selected={activeFirms} onToggle={onToggleFirm} getColor={() => "#a78bfa"} align="right" />
+            </div>
+            <div className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+              <span className="type-meta font-medium text-[var(--text-primary)]">Year</span>
+              <MultiSelectDropdown label="Year" options={investmentYearOptions} selected={activeInvestmentYears} onToggle={onToggleInvestmentYear} getColor={() => "#f59e0b"} align="right" />
+            </div>
+          </div>
+        </MobileFilterSheet>
+
+        <div className="hidden min-w-0 flex-1 items-center gap-2 md:flex">
+          <Divider orientation="vertical" />
+          <MultiSelectDropdown
+            label="Sector"
+            options={PORTCO_SECTORS}
+            selected={activeSectors}
+            onToggle={onToggleSector}
+            getColor={getPortCoSectorColor}
+          />
+          <MultiSelectDropdown
+            label="Country"
+            options={PORTCO_COUNTRY_TAGS as unknown as string[]}
+            selected={activeCountryTags}
+            onToggle={onToggleCountryTag}
+            getColor={getPortCoCountryTagColor}
+          />
+          <MultiSelectDropdown
+            label="Firm"
+            options={firmOptions}
+            selected={activeFirms}
+            onToggle={onToggleFirm}
+            getColor={() => "#a78bfa"}
+          />
+          <MultiSelectDropdown
+            label="Year"
+            options={investmentYearOptions}
+            selected={activeInvestmentYears}
+            onToggle={onToggleInvestmentYear}
+            getColor={() => "#f59e0b"}
+            align="right"
+          />
+        </div>
       </div>
 
       <ActiveFiltersStrip
@@ -287,9 +321,15 @@ function PortCoTable({
   activeFirms: Set<string>;
   onSelect: (company: CompanyView) => void;
 }) {
-  const [sortField, setSortField] = useState<"name" | "sector" | "country" | "firm">("name");
-  const [sortAsc, setSortAsc] = useState(true);
-  const [page, setPage] = useState(1);
+  type SortField = "name" | "sector" | "country" | "firm";
+  const [rawSortField] = useUrlQueryState("sort", "name");
+  const [rawSortDirection] = useUrlQueryState("direction", "asc");
+  const [rawPage, setRawPage] = useUrlQueryState("page", "1");
+  const writeQueryParams = useUrlQueryParamsWriter();
+  const sortField: SortField = ["sector", "country", "firm"].includes(rawSortField)
+    ? rawSortField as SortField
+    : "name";
+  const sortAsc = rawSortDirection !== "desc";
 
   const sorted = useMemo(() => {
     const list = [...companies];
@@ -306,27 +346,29 @@ function PortCoTable({
     return list;
   }, [companies, sortField, sortAsc]);
 
-  useEffect(() => {
-    setPage(1);
-  }, [companies]);
-
   const totalPages = Math.max(1, Math.ceil(sorted.length / PORTCO_PAGE_SIZE));
-  const safePage = Math.min(page, totalPages);
+  const requestedPage = Number.parseInt(rawPage, 10);
+  const safePage = Math.min(
+    Number.isFinite(requestedPage) && requestedPage > 0 ? requestedPage : 1,
+    totalPages,
+  );
   const visibleCompanies = useMemo(() => {
     const start = (safePage - 1) * PORTCO_PAGE_SIZE;
     return sorted.slice(start, start + PORTCO_PAGE_SIZE);
   }, [sorted, safePage]);
 
-  const toggleSort = (field: typeof sortField) => {
-    if (sortField === field) {
-      setSortAsc(!sortAsc);
-    } else {
-      setSortField(field);
-      setSortAsc(true);
-    }
+  const toggleSort = (field: SortField) => {
+    const direction = sortField === field && sortAsc ? "desc" : "asc";
+    writeQueryParams(
+      {
+        sort: field === "name" ? null : field,
+        direction: direction === "asc" ? null : direction,
+      },
+      { history: "push", resetPage: true },
+    );
   };
 
-  const SortHeader = ({ field, label }: { field: typeof sortField; label: string }) => (
+  const SortHeader = ({ field, label }: { field: SortField; label: string }) => (
     <th
       aria-sort={sortField === field ? (sortAsc ? "ascending" : "descending") : "none"}
       className="text-left px-3 py-2"
@@ -450,7 +492,7 @@ function PortCoTable({
         page={safePage}
         pageSize={PORTCO_PAGE_SIZE}
         totalItems={sorted.length}
-        onPageChange={setPage}
+        onPageChange={(nextPage) => setRawPage(String(nextPage))}
       />
     </>
   );
@@ -459,28 +501,41 @@ function PortCoTable({
 // ─── Main Component ─────────────────────────────────────────
 
 export function PortfolioDatabase({ companies: portcos, funds, counts }: { companies: CompanyView[]; funds: FundStrategyView[]; counts: DatabaseCounts }) {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeCountryTags, toggleCountryTag] = useUrlFilterSet("country");
   const [activeFirms, toggleFirm] = useUrlFilterSet("firm");
   const [activeInvestmentYears, toggleInvestmentYear] = useUrlFilterSet("year");
   const [selectedCompany, setSelectedCompany] = useState<CompanyView | null>(null);
   const [selectedCompanyDetail, setSelectedCompanyDetail] = useState<CompanyView | null>(null);
+  const focusId = useUrlQueryParam("focus");
+  const writeQueryParam = useUrlQueryWriter();
+  const writeQueryParams = useUrlQueryParamsWriter();
   const canExport = useCanExport();
 
   const debouncedSearch = useDebounce(search, 300);
 
-  // Auto-open drawer when navigated here with `?focus=<companyId>`.
-  const focusId = useUrlQueryParam("focus");
-  const openedFocus = useRef<string | null>(null);
+  const openCompany = useCallback((company: CompanyView) => {
+    setSelectedCompany(company);
+    writeQueryParam("focus", company.id, "push");
+  }, [writeQueryParam]);
+
+  const closeCompany = useCallback(() => {
+    setSelectedCompany(null);
+    setSelectedCompanyDetail(null);
+    writeQueryParam("focus", null, "replace");
+  }, [writeQueryParam]);
+
+  // URL state remains authoritative for direct links and Back/Forward.
   useEffect(() => {
-    if (!focusId || openedFocus.current === focusId) return;
-    const match = portcos.find((c) => c.id === focusId || c.focusIds.includes(focusId));
-    if (match) {
-      setSelectedCompany(match);
-      openedFocus.current = focusId;
+    if (!focusId) {
+      setSelectedCompany(null);
+      return;
     }
-  }, [focusId, portcos]);
+    const match = portcos.find((c) => c.id === focusId || c.focusIds.includes(focusId));
+    setSelectedCompany(match ?? null);
+    if (!match) writeQueryParam("focus", null, "replace");
+  }, [focusId, portcos, writeQueryParam]);
 
   useEffect(() => {
     if (!selectedCompany) {
@@ -507,11 +562,12 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     };
   }, [selectedCompany]);
 
-  const clearAllUrlFilters = useClearUrlFilters(["sector", "country", "firm", "year"]);
   const clearFilters = useCallback(() => {
-    clearAllUrlFilters();
-    setSearch("");
-  }, [clearAllUrlFilters]);
+    writeQueryParams(
+      { q: null, sector: null, country: null, firm: null, year: null },
+      { history: "push", resetPage: true },
+    );
+  }, [writeQueryParams]);
 
   const firmOptions = useMemo(() => getUniqueFirms(portcos), [portcos]);
   const investmentYearOptions = useMemo(() => {
@@ -562,6 +618,12 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
     activeFirms,
     activeInvestmentYears,
   ]);
+
+  useEffect(() => {
+    if (selectedCompany && !filteredCompanies.some((company) => company.id === selectedCompany.id)) {
+      closeCompany();
+    }
+  }, [closeCompany, filteredCompanies, selectedCompany]);
 
   const headerMetrics = useMemo<IntelligenceMetric[]>(() => {
     const sponsorCount = new Set(filteredCompanies.flatMap(getAllOwnerFirms)).size;
@@ -624,6 +686,10 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
         onClearAll={clearFilters}
       />
 
+      <MarketSnapshotSection>
+        <PortCoInsightsHero companies={filteredCompanies} />
+      </MarketSnapshotSection>
+
       <div className="surface overflow-hidden">
         <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--border)]">
           <span className="type-micro">
@@ -655,24 +721,17 @@ export function PortfolioDatabase({ companies: portcos, funds, counts }: { compa
         <PortCoTable
           companies={filteredCompanies}
           activeFirms={activeFirms}
-          onSelect={setSelectedCompany}
+          onSelect={openCompany}
         />
       </div>
 
       <CTABlock />
 
-      <MarketSnapshotSection>
-        <PortCoInsightsHero companies={filteredCompanies} />
-      </MarketSnapshotSection>
-
       {selectedCompany && (
         <PortCoDrawer
           company={selectedCompanyDetail ?? selectedCompany}
           funds={funds}
-          onClose={() => {
-            setSelectedCompany(null);
-            setSelectedCompanyDetail(null);
-          }}
+          onClose={closeCompany}
         />
       )}
     </div>

@@ -1,0 +1,237 @@
+name: Promote Code-Only Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_sha:
+        description: Full Git SHA at the protected main head
+        required: true
+        type: string
+      deployment_url:
+        description: Immutable Vercel deployment URL built from release_sha
+        required: true
+        type: string
+      production_sha:
+        description: Full Git SHA currently assigned to production
+        required: true
+        type: string
+      confirmation:
+        description: Type PROMOTE-CODE-ONLY to authorize production promotion
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  checks: read
+
+concurrency:
+  group: production-release
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: production
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_SCOPE: ${{ vars.VERCEL_SCOPE }}
+      EXPECTED_VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+      EXPECTED_GITHUB_REPOSITORY_ID: ${{ github.repository_id }}
+      RELEASE_SHA: ${{ inputs.release_sha }}
+      DEPLOYMENT_URL: ${{ inputs.deployment_url }}
+      PRODUCTION_SHA: ${{ inputs.production_sha }}
+      PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
+      CANONICAL_PRODUCTION_URL: https://infra-ma-2.vercel.app
+      CONFIRMATION: ${{ inputs.confirmation }}
+
+    steps:
+      - name: Require protected-main dispatch and explicit authorization
+        shell: bash
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Code-only promotion must be dispatched from main."
+            exit 1
+          fi
+          if [ "$CONFIRMATION" != "PROMOTE-CODE-ONLY" ]; then
+            echo "::error::confirmation must exactly equal PROMOTE-CODE-ONLY."
+            exit 1
+          fi
+          for value in "$RELEASE_SHA" "$PRODUCTION_SHA"; do
+            [[ "$value" =~ ^[0-9a-f]{40}$ ]] || {
+              echo "::error::release_sha and production_sha must be full lowercase Git SHAs."
+              exit 1
+            }
+          done
+
+      - name: Checkout protected main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Verify checked-out release identity
+        run: |
+          [ "$(git rev-parse HEAD)" = "$RELEASE_SHA" ] || {
+            echo "::error::Protected main no longer equals release_sha."
+            exit 1
+          }
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+
+      - name: Require protected Vercel configuration
+        shell: bash
+        run: |
+          for name in VERCEL_TOKEN VERCEL_SCOPE EXPECTED_VERCEL_PROJECT_ID EXPECTED_GITHUB_REPOSITORY_ID PRODUCTION_URL; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::$name is required."
+              exit 1
+            fi
+          done
+          [[ "$EXPECTED_VERCEL_PROJECT_ID" =~ ^prj_[A-Za-z0-9]+$ ]] || {
+            echo "::error::VERCEL_PROJECT_ID must be an immutable prj_ identifier."
+            exit 1
+          }
+          if [ "$PRODUCTION_URL" != "$CANONICAL_PRODUCTION_URL" ]; then
+            echo "::error::The protected PRODUCTION_URL does not match the canonical alias."
+            exit 1
+          fi
+          node - <<'NODE'
+          const parsed = new URL(process.env.DEPLOYMENT_URL);
+          if (parsed.protocol !== "https:" || parsed.username || parsed.password || parsed.port || parsed.pathname !== "/" || parsed.search || parsed.hash) {
+            throw new Error("deployment_url must be an HTTPS origin without credentials, path, query, or fragment.");
+          }
+          NODE
+
+      - name: Verify protected-main and required-check provenance
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          node --experimental-strip-types scripts/verify-release-provenance.ts \
+            --release-sha="$RELEASE_SHA" \
+            --branch=main \
+            --required-check=build \
+            --output=tmp/code-only-release/release-provenance.json
+
+      - name: Prove schema is unchanged from current production
+        shell: bash
+        run: |
+          git merge-base --is-ancestor "$PRODUCTION_SHA" "$RELEASE_SHA" || {
+            echo "::error::production_sha is not an ancestor of release_sha."
+            exit 1
+          }
+          if ! git diff --quiet "$PRODUCTION_SHA" "$RELEASE_SHA" -- \
+            prisma/schema.prisma prisma/migrations prisma.config.ts; then
+            echo "::error::Code-only releases cannot change Prisma schema, migrations, or config."
+            git diff --name-only "$PRODUCTION_SHA" "$RELEASE_SHA" -- \
+              prisma/schema.prisma prisma/migrations prisma.config.ts
+            exit 1
+          fi
+
+      - name: Verify current production and immutable candidate
+        shell: bash
+        run: |
+          mkdir -p tmp/code-only-release
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment="$PRODUCTION_URL" \
+            --expected-sha="$PRODUCTION_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --output=tmp/code-only-release/current-production.json
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$DEPLOYMENT_URL" \
+            --expected-sha="$RELEASE_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --require-immutable-url \
+            --output=tmp/code-only-release/candidate.json
+
+      - name: Smoke-test protected candidate
+        shell: bash
+        run: |
+          candidate_link_dir="$(mktemp -d "${RUNNER_TEMP}/vercel-code-release.XXXXXX")"
+          trap 'rm -rf "$candidate_link_dir"' EXIT
+          npx --yes vercel@51.7.0 link \
+            --cwd "$candidate_link_dir" \
+            --project "$EXPECTED_VERCEL_PROJECT_ID" \
+            --scope "$VERCEL_SCOPE" \
+            --token "$VERCEL_TOKEN" \
+            --yes
+          VERCEL_CLI_CWD="$candidate_link_dir" node scripts/release-smoke.mjs \
+            --base-url="$DEPLOYMENT_URL" \
+            --expected-version="$RELEASE_SHA" \
+            --transport=vercel-cli \
+            --skip-health \
+            --allow-legacy-root \
+            --output=tmp/code-only-release/candidate-smoke.json
+
+      - name: Reverify release, baseline, and candidate immediately before promotion
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          node --experimental-strip-types scripts/verify-release-provenance.ts \
+            --release-sha="$RELEASE_SHA" \
+            --branch=main \
+            --required-check=build \
+            --output=tmp/code-only-release/release-provenance-before-promotion.json
+          git merge-base --is-ancestor "$PRODUCTION_SHA" "$RELEASE_SHA"
+          git diff --quiet "$PRODUCTION_SHA" "$RELEASE_SHA" -- \
+            prisma/schema.prisma prisma/migrations prisma.config.ts
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment="$PRODUCTION_URL" \
+            --expected-sha="$PRODUCTION_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --output=tmp/code-only-release/current-production-before-promotion.json
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment-url="$DEPLOYMENT_URL" \
+            --expected-sha="$RELEASE_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --require-immutable-url \
+            --output=tmp/code-only-release/candidate-before-promotion.json
+
+      - name: Promote verified candidate
+        shell: bash
+        run: |
+          deployment_id="$(jq -r '.id' tmp/code-only-release/candidate-before-promotion.json)"
+          [[ "$deployment_id" =~ ^dpl_[A-Za-z0-9]+$ ]] || {
+            echo "::error::Verified deployment ID is invalid."
+            exit 1
+          }
+          npx --yes vercel@51.7.0 promote "$deployment_id" \
+            --timeout 3m --yes --token "$VERCEL_TOKEN" --scope "$VERCEL_SCOPE"
+
+      - name: Verify canonical production assignment
+        run: |
+          node --experimental-strip-types scripts/verify-vercel-deployment.ts \
+            --deployment="$PRODUCTION_URL" \
+            --expected-sha="$RELEASE_SHA" \
+            --expected-project-id="$EXPECTED_VERCEL_PROJECT_ID" \
+            --expected-github-repository-id="$EXPECTED_GITHUB_REPOSITORY_ID" \
+            --output=tmp/code-only-release/promoted-production.json
+
+      - name: Smoke-test canonical production
+        run: >-
+          node scripts/release-smoke.mjs
+          --base-url="$PRODUCTION_URL"
+          --expected-version="$RELEASE_SHA"
+          --skip-health
+          --allow-legacy-root
+          --output=tmp/code-only-release/production-smoke.json
+
+      - name: Upload immutable release evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: code-only-production-release-${{ github.run_id }}
+          path: tmp/code-only-release/
+          if-no-files-found: warn
+          retention-days: 90

@@ -141,7 +141,13 @@ import {
 } from "lucide-react";
 import { DynamicInsightsHero } from "./DealDatabase/DynamicInsightsHero";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useUrlFilterSet, useClearUrlFilters, useUrlQueryParam } from "@/hooks/useUrlFilterSet";
+import {
+  useUrlFilterSet,
+  useUrlQueryParam,
+  useUrlQueryParamsWriter,
+  useUrlQueryState,
+  useUrlQueryWriter,
+} from "@/hooks/useUrlFilterSet";
 import { MultiSelectDropdown } from "@/components/shared/MultiSelectDropdown";
 import { ActiveFiltersStrip } from "@/components/shared/ActiveFiltersStrip";
 import { DatabaseTiles } from "@/components/shared/DatabaseTiles";
@@ -152,6 +158,7 @@ import { Tag } from "@/components/shared/Tag";
 import { TextInput } from "@/components/shared/TextInput";
 import { Divider } from "@/components/shared/Divider";
 import { PaginationControls } from "@/components/shared/PaginationControls";
+import { MobileFilterSheet } from "@/components/shared/MobileFilterSheet";
 import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { useCanExport } from "@/hooks/useCanExport";
 import { withBasePath } from "@/lib/base-path";
@@ -181,7 +188,7 @@ const REGIONS: string[] = [
   "Latin America",
 ];
 
-const DEAL_PAGE_SIZE = 100;
+const DEAL_PAGE_SIZE = 25;
 
 function EmailAccessLinks({ compact = false }: { compact?: boolean }) {
   const className = compact
@@ -254,10 +261,12 @@ function FilterBar({
   onToggleCategory: (c: string) => void;
   onClearAll: () => void;
 }) {
+  const activeFilterCount = activeSectors.size + activeRegions.size + activeCategories.size;
+
   return (
     <div className="mb-3 space-y-3">
-      <div className="bg-[var(--bg-surface)] border border-[var(--border)] rounded-lg flex items-center gap-2 px-2 py-2 sticky top-14 z-30 overflow-x-auto">
-        <div className="flex-1 min-w-[160px] max-w-xs">
+      <div className="sticky top-14 z-30 flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] px-2 py-2">
+        <div className="min-w-0 flex-1 md:max-w-xs">
           <TextInput
             leadingIcon={<Search />}
             value={search}
@@ -266,29 +275,72 @@ function FilterBar({
             aria-label="Search deals"
           />
         </div>
-        <Divider orientation="vertical" />
-        <MultiSelectDropdown
-          label="Sector"
-          options={SECTORS}
-          selected={activeSectors as Set<string>}
-          onToggle={onToggleSector}
-          getColor={(v) => getSectorColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Region"
-          options={REGIONS}
-          selected={activeRegions as Set<string>}
-          onToggle={onToggleRegion}
-          getColor={(v) => getRegionColor(v)}
-        />
-        <MultiSelectDropdown
-          label="Type"
-          options={CATEGORIES}
-          selected={activeCategories as Set<string>}
-          onToggle={onToggleCategory}
-          getColor={(v) => getCategoryColor(v)}
-          align="right"
-        />
+
+        <MobileFilterSheet activeCount={activeFilterCount} onClearAll={onClearAll}>
+          <div className="space-y-3">
+            {[
+              {
+                label: "Sector",
+                options: SECTORS,
+                selected: activeSectors,
+                onToggle: onToggleSector,
+                getColor: getSectorColor,
+              },
+              {
+                label: "Region",
+                options: REGIONS,
+                selected: activeRegions,
+                onToggle: onToggleRegion,
+                getColor: getRegionColor,
+              },
+              {
+                label: "Type",
+                options: CATEGORIES,
+                selected: activeCategories,
+                onToggle: onToggleCategory,
+                getColor: getCategoryColor,
+              },
+            ].map((filter) => (
+              <div key={filter.label} className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] p-3">
+                <span className="type-meta font-medium text-[var(--text-primary)]">{filter.label}</span>
+                <MultiSelectDropdown
+                  label={filter.label}
+                  options={filter.options}
+                  selected={filter.selected}
+                  onToggle={filter.onToggle}
+                  getColor={filter.getColor}
+                  align="right"
+                />
+              </div>
+            ))}
+          </div>
+        </MobileFilterSheet>
+
+        <div className="hidden min-w-0 flex-1 items-center gap-2 md:flex">
+          <Divider orientation="vertical" />
+          <MultiSelectDropdown
+            label="Sector"
+            options={SECTORS}
+            selected={activeSectors}
+            onToggle={onToggleSector}
+            getColor={getSectorColor}
+          />
+          <MultiSelectDropdown
+            label="Region"
+            options={REGIONS}
+            selected={activeRegions}
+            onToggle={onToggleRegion}
+            getColor={getRegionColor}
+          />
+          <MultiSelectDropdown
+            label="Type"
+            options={CATEGORIES}
+            selected={activeCategories}
+            onToggle={onToggleCategory}
+            getColor={getCategoryColor}
+            align="right"
+          />
+        </div>
       </div>
 
       <ActiveFiltersChips
@@ -368,8 +420,10 @@ function DealTable({
   filteredDeals: DealView[];
   onSelectDeal: (deal: DealView) => void;
 }) {
-  const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
-  const [page, setPage] = useState(1);
+  const [rawSortDir] = useUrlQueryState("direction", "desc");
+  const [rawPage, setRawPage] = useUrlQueryState("page", "1");
+  const writeQueryParams = useUrlQueryParamsWriter();
+  const sortDir: "asc" | "desc" = rawSortDir === "asc" ? "asc" : "desc";
 
   const sorted = useMemo(() => {
     return [...filteredDeals].sort((a, b) => {
@@ -378,19 +432,26 @@ function DealTable({
     });
   }, [filteredDeals, sortDir]);
 
-  useEffect(() => {
-    setPage(1);
-  }, [filteredDeals]);
-
   const totalPages = Math.max(1, Math.ceil(sorted.length / DEAL_PAGE_SIZE));
-  const safePage = Math.min(page, totalPages);
+  const parsedPage = Number.parseInt(rawPage, 10);
+  const safePage = Math.min(
+    Number.isFinite(parsedPage) && parsedPage > 0 ? parsedPage : 1,
+    totalPages,
+  );
   const visibleDeals = useMemo(() => {
     const start = (safePage - 1) * DEAL_PAGE_SIZE;
     return sorted.slice(start, start + DEAL_PAGE_SIZE);
   }, [sorted, safePage]);
 
   function toggleSort() {
-    setSortDir((d) => (d === "desc" ? "asc" : "desc"));
+    const direction = sortDir === "desc" ? "asc" : "desc";
+    writeQueryParams(
+      {
+        sort: direction === "desc" ? null : "date",
+        direction: direction === "desc" ? null : direction,
+      },
+      { history: "push", resetPage: true },
+    );
   }
 
   return (
@@ -552,7 +613,7 @@ function DealTable({
         page={safePage}
         pageSize={DEAL_PAGE_SIZE}
         totalItems={sorted.length}
-        onPageChange={setPage}
+        onPageChange={(nextPage) => setRawPage(String(nextPage))}
       />
     </>
   );
@@ -849,21 +910,35 @@ function DealDrawer({
 
 // ─── Main Component ─────────────────────────────────────────
 export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: DatabaseCounts }) {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useUrlQueryState("q", "", { resetPage: true });
   const [activeSectors, toggleSector] = useUrlFilterSet("sector");
   const [activeRegions, toggleRegion] = useUrlFilterSet("region");
   const [activeCategories, toggleCategory] = useUrlFilterSet("category");
   const [selectedDeal, setSelectedDeal] = useState<DealView | null>(null);
+  const focusId = useUrlQueryParam("focus");
+  const writeQueryParam = useUrlQueryWriter();
+  const writeQueryParams = useUrlQueryParamsWriter();
   const canExport = useCanExport();
 
   // Debounce search for performance
   const debouncedSearch = useDebounce(search, 300);
 
-  const clearAllUrlFilters = useClearUrlFilters(["sector", "region", "category"]);
   const clearAllFilters = useCallback(() => {
-    clearAllUrlFilters();
-    setSearch("");
-  }, [clearAllUrlFilters]);
+    writeQueryParams(
+      { q: null, sector: null, region: null, category: null },
+      { history: "push", resetPage: true },
+    );
+  }, [writeQueryParams]);
+
+  const openDeal = useCallback((deal: DealView) => {
+    setSelectedDeal(deal);
+    writeQueryParam("focus", deal.legacyId, "push");
+  }, [writeQueryParam]);
+
+  const closeDeal = useCallback(() => {
+    setSelectedDeal(null);
+    writeQueryParam("focus", null, "replace");
+  }, [writeQueryParam]);
 
   const filteredDeals = useMemo(() => {
     return deals.filter((deal) => {
@@ -933,22 +1008,20 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
   // Close drawer if selected deal is filtered out
   useEffect(() => {
     if (selectedDeal && !filteredDeals.find((d) => d.id === selectedDeal.id)) {
-      setSelectedDeal(null);
+      closeDeal();
     }
-  }, [filteredDeals, selectedDeal]);
+  }, [closeDeal, filteredDeals, selectedDeal]);
 
-  // Auto-open drawer when navigated here with `?focus=<legacyId>` (e.g. from
-  // the cross-database search page). Fires once per focus value.
-  const focusId = useUrlQueryParam("focus");
-  const openedFocus = useRef<string | null>(null);
+  // URL state remains authoritative for direct links and Back/Forward.
   useEffect(() => {
-    if (!focusId || openedFocus.current === focusId) return;
-    const match = deals.find((d) => d.legacyId === focusId);
-    if (match) {
-      setSelectedDeal(match);
-      openedFocus.current = focusId;
+    if (!focusId) {
+      setSelectedDeal(null);
+      return;
     }
-  }, [focusId, deals]);
+    const match = deals.find((d) => d.legacyId === focusId);
+    setSelectedDeal(match ?? null);
+    if (!match) writeQueryParam("focus", null, "replace");
+  }, [focusId, deals, writeQueryParam]);
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-6">
@@ -977,6 +1050,10 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
         onClearAll={clearAllFilters}
       />
 
+      <MarketSnapshotSection>
+        <DynamicInsightsHero filteredDeals={filteredDeals} />
+      </MarketSnapshotSection>
+
       <div className="surface overflow-hidden">
         <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-[var(--border)]">
           <span className="type-micro">
@@ -999,19 +1076,15 @@ export function DealDatabase({ deals, counts }: { deals: DealView[]; counts: Dat
           </div>
         </div>
 
-        <DealTable filteredDeals={filteredDeals} onSelectDeal={setSelectedDeal} />
+        <DealTable filteredDeals={filteredDeals} onSelectDeal={openDeal} />
       </div>
 
       <CTABlock />
 
-      <MarketSnapshotSection>
-        <DynamicInsightsHero filteredDeals={filteredDeals} />
-      </MarketSnapshotSection>
-
       {selectedDeal && (
         <DealDrawer
           deal={selectedDeal}
-          onClose={() => setSelectedDeal(null)}
+          onClose={closeDeal}
         />
       )}
     </div>

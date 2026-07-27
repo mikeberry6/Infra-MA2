@@ -60,6 +60,7 @@ export function MultiSelectDropdown({
   return (
     <div className="relative inline-block">
       <button
+        type="button"
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
@@ -90,15 +91,16 @@ export function MultiSelectDropdown({
         <>
           <div
             className="fixed inset-0"
-            style={{ zIndex: 9998 }}
+            style={{ zIndex: 10010 }}
             onClick={() => setIsOpen(false)}
           />
           <div
+            data-multiselect-popup
             role="listbox"
             aria-label={`${label} options`}
             className="fixed w-60 max-h-72 overflow-y-auto p-1 surface-overlay animate-fade-in"
             style={{
-              zIndex: 9999,
+              zIndex: 10020,
               top: pos.top,
               ...(pos.left != null ? { left: pos.left } : {}),
               ...(pos.right != null ? { right: pos.right } : {}),
@@ -114,6 +116,7 @@ export function MultiSelectDropdown({
                 const isSelected = selected.has(option);
                 return (
                   <button
+                    type="button"
                     key={option}
                     role="option"
                     aria-selected={isSelected}
